@@ -14,9 +14,14 @@ RUN_DEPENDS=	rubygem-ffi>=1.0.6:devel/rubygem-ffi \
 		rubygem-msgpack>=0.4.3:devel/rubygem-msgpack \
 		rubygem-optimist>=3.0.0:devel/rubygem-optimist
 
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/rbtrace
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 .include <bsd.port.mk>

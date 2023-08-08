@@ -12,7 +12,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	21.3.8
+MESABASEVERSION=	22.3.7
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -30,7 +30,9 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 COMPONENT=	${PORTNAME:tl:C/^lib//:C/mesa-//}
 
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
+# Depend on mako from PYTHON_SITELIBDIR to allow to use a pre-installed hybrid
+# ABI version.
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/mako:textproc/py-mako@${PY_FLAVOR}
 LIB_DEPENDS+=	libexpat.so:textproc/expat2
 .if ${COMPONENT} != clover
 .if ${PORT_OPTIONS:MPLATFORM_X11}
@@ -40,10 +42,7 @@ USES+=	xorg
 .if ${COMPONENT} != osmesa
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .endif
-.if ${COMPONENT} != libs
-LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
-.endif
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 .if ${OPSYS} == DragonFly
@@ -51,9 +50,7 @@ LIB_DEPENDS+=	libelf.so:devel/libelf
 .endif
 
 USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
-		python:3.6+,build shebangfix tar:xz
-
-USE_LDCONFIG=	yes
+		python:build shebangfix tar:xz
 
 .if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
 # --build-id isn't supported by old GNU ld.bfd in base
@@ -88,21 +85,15 @@ EXTRA_PATCHES+=	${PATCHDIR}/5da8c280b7451335c915d9be0a25d0d3a8055d3e.patch:-p1
 
 .include <bsd.port.pre.mk>
 
-# Depend on mako from PYTHON_SITELIBDIR to allow to use a pre-installed hybrid
-# ABI version.
-BUILD_DEPENDS+= ${PYTHON_SITELIBDIR}/mako:textproc/py-mako@${PY_FLAVOR}
 BINARY_ALIAS+=	python3=${PYTHON_CMD}
 
 .if !${ABI:Mpurecap}
 USE_BINUTILS=		yes
 
-LLVM_DEFAULT=	13
+LLVM_DEFAULT=	15
 BUILD_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-.if ${COMPONENT} != libs
-RUN_DEPENDS+=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-.endif
+CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT}
 
-MESON_ARGS+=	--native-file="${WRKSRC}/llvm.ini"
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_DEFAULT}/lib
 MESON_ARGS+=	-Dllvm=enabled
 .endif

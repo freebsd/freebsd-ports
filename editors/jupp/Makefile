@@ -1,5 +1,5 @@
 PORTNAME=	jupp
-PORTVERSION=	3.1.38
+PORTVERSION=	3.1.41
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/

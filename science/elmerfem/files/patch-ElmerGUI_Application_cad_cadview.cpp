@@ -1,6 +1,6 @@
 - includes workaround for https://github.com/ElmerCSC/elmerfem/issues/304
 
---- ElmerGUI/Application/cad/cadview.cpp.orig	2021-11-10 14:49:01 UTC
+--- ElmerGUI/Application/cad/cadview.cpp.orig	2020-11-10 19:52:44 UTC
 +++ ElmerGUI/Application/cad/cadview.cpp
 @@ -74,7 +74,7 @@
  #include <BRepAdaptor_Curve2d.hxx>
@@ -11,6 +11,34 @@
  #include <BRepTools.hxx>
  #include <BRep_Builder.hxx>
  #include <BRep_Tool.hxx>
+@@ -104,7 +104,7 @@ static void pickEventHandler(vtkObject* caller, unsign
+   QVTKWidget* qvtkWidget = cadView->GetQVTKWidget();
+ #endif
+ 
+-  vtkAbstractPicker* picker = qvtkWidget->GetInteractor()->GetPicker();
++  vtkAbstractPicker* picker = qvtkWidget->interactor()->GetPicker();
+   vtkPropPicker* propPicker = vtkPropPicker::SafeDownCast(picker);
+   vtkActor* actor = propPicker->GetActor();
+ 
+@@ -146,15 +146,15 @@ CadView::CadView(QWidget *parent) : QMainWindow(parent
+ 
+   renderer = vtkRenderer::New();
+   renderer->SetBackground(1, 1, 1);
+-  qVTKWidget->GetRenderWindow()->AddRenderer(renderer);
++  qVTKWidget->renderWindow()->AddRenderer(renderer);
+   renderer->GetRenderWindow()->Render();
+ 
+   vtkPropPicker *propPicker = vtkPropPicker::New();
+   vtkCallbackCommand *cbcPick = vtkCallbackCommand::New();
+-  qVTKWidget->GetInteractor()->SetPicker(propPicker);
++  qVTKWidget->interactor()->SetPicker(propPicker);
+   cbcPick->SetClientData(this);
+   cbcPick->SetCallback(pickEventHandler);
+-  qVTKWidget->GetInteractor()->GetPicker()->AddObserver(vtkCommand::PickEvent,
++  qVTKWidget->interactor()->GetPicker()->AddObserver(vtkCommand::PickEvent,
+                                                         cbcPick);
+   propPicker->Delete();
+   cbcPick->Delete();
 @@ -343,9 +343,6 @@ bool CadView::readFile(QString fileName) {
  
      const gp_Trsf &Transformation = Location.Transformation();
@@ -62,3 +90,12 @@
      }
  
      partGrid->SetPoints(partPoints);
+@@ -490,7 +487,7 @@ bool CadView::readFile(QString fileName) {
+   // Draw:
+   //------
+   renderer->ResetCamera();  
+-  qVTKWidget->GetRenderWindow()->Render();
++  qVTKWidget->renderWindow()->Render();
+ 
+   QCoreApplication::processEvents();
+ 

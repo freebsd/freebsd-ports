@@ -1,0 +1,9 @@
+Cocoon makes it easier to handle nested forms.
+
+Nested forms are forms that handle nested models and attributes in one form;
+e.g. a project with its tasks or an invoice with its line items.
+
+Cocoon is form builder-agnostic, so it works with standard Rails, Formtastic, or
+SimpleForm. It is compatible with rails 3, 4 and 5.
+
+This project is not related to Apache Cocoon.

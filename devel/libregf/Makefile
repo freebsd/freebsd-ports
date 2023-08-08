@@ -1,5 +1,5 @@
 PORTNAME=	libregf
-DISTVERSION=	alpha-20220131
+DISTVERSION=	alpha-20221026
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libregf/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		fuse libtool pathfix pkgconfig python:3.5+
+USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}

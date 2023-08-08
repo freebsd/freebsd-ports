@@ -1,0 +1,8 @@
+%%ETCDIR%%/ipp-usb.conf.sample
+man/man8/ipp-usb.8.gz
+sbin/ipp-usb
+%%DATADIR%%/quirks/HP.conf
+%%DATADIR%%/quirks/README
+%%DATADIR%%/quirks/blacklist.conf
+%%DATADIR%%/quirks/default.conf
+@dir %%ETCDIR%%/quirks

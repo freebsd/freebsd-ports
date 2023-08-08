@@ -1,12 +1,12 @@
 PORTNAME=	clojure
-PORTVERSION=	1.10.3.1058
+PORTVERSION=	1.11.1.1200
 CATEGORIES=	lang lisp java
 MASTER_SITES=	https://download.clojure.org/install/
 DISTNAME=	clojure-tools-${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@jan0sch.de
 COMMENT=	Dynamic programming language for the JVM
-WWW=		http://clojure.sourceforge.net/
+WWW=		https://clojure.org/
 
 LICENSE=	EPL
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		rlwrap:devel/rlwrap
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

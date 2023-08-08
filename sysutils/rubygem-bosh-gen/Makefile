@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0<5.0:devel/rubygem-activesupport4 \
 		rubygem-thor>=0:devel/rubygem-thor
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

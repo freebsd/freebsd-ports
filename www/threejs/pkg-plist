@@ -39,6 +39,7 @@
 %%WWWDIR%%/core/Layers.js
 %%WWWDIR%%/core/Object3D.js
 %%WWWDIR%%/core/Raycaster.js
+%%WWWDIR%%/core/RenderTarget.js
 %%WWWDIR%%/core/Uniform.js
 %%WWWDIR%%/core/UniformsGroup.js
 %%WWWDIR%%/extras/DataUtils.js
@@ -193,6 +194,8 @@
 %%WWWDIR%%/renderers/WebGLRenderTarget.js
 %%WWWDIR%%/renderers/WebGLRenderer.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js
@@ -214,6 +217,8 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_vertex.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/common.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/default_fragment.glsl.js
@@ -225,8 +230,6 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js
@@ -274,7 +277,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normal_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normal_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/output_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/opaque_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/packing.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/project_vertex.glsl.js
@@ -297,12 +300,10 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_vertex.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/background.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderLib/backgroundCube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/cube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/depth.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/distanceRGBA.glsl.js
@@ -357,6 +358,8 @@
 %%WWWDIR%%/scenes/FogExp2.js
 %%WWWDIR%%/scenes/Scene.js
 %%WWWDIR%%/textures/CanvasTexture.js
+%%WWWDIR%%/textures/CompressedArrayTexture.js
+%%WWWDIR%%/textures/CompressedCubeTexture.js
 %%WWWDIR%%/textures/CompressedTexture.js
 %%WWWDIR%%/textures/CubeTexture.js
 %%WWWDIR%%/textures/Data3DTexture.js

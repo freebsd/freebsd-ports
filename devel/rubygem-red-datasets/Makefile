@@ -1,5 +1,5 @@
 PORTNAME=	red-datasets
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,12 +10,11 @@ WWW=		https://github.com/red-data-tools/red-datasets
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-csv>=3.0.5:devel/rubygem-csv \
+RUN_DEPENDS=	rubygem-csv>=3.2.4:devel/rubygem-csv \
 		rubygem-rexml>=0:textproc/rubygem-rexml \
 		rubygem-rubyzip>=0:archivers/rubygem-rubyzip
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

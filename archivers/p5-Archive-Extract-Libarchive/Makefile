@@ -1,6 +1,6 @@
 PORTNAME=	Archive-Extract-Libarchive
 PORTVERSION=	0.38
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ TEST_DEPENDS=	p5-File-Slurp>=0:devel/p5-File-Slurp \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-Test-Pod>=1.04:devel/p5-Test-Pod
 
-USES=		libarchive perl5
+USES=		perl5
 USE_PERL5=	modbuild
 
 post-install:

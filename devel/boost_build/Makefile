@@ -1,6 +1,7 @@
-PORTNAME=	boost_build
-DISTVERSION=	4.8.2.20220318
+PORTNAME=	build
+DISTVERSION=	4.9.4
 CATEGORIES=	devel
+PKGNAMEPREFIX=	boost-
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Extensible cross-platform build tool suite
@@ -16,7 +17,9 @@ USES=		compiler:c++11-lang python:test shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	boostorg
 GH_PROJECT=	build
-GH_TAGNAME=	d4352f0
+GH_TAGNAME=	9f488e0
+
+DATADIR=	${PREFIX}/share/b2
 
 CONFLICTS_INSTALL=	b2
 
@@ -24,8 +27,12 @@ SHEBANG_GLOB=	*.py
 
 SUB_FILES=	pkg-message
 
-do-build:
-	@cd ${WRKSRC} && CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" ./bootstrap.sh
+MAKE_CMD=	./bootstrap.sh
+ALL_TARGET=	${CHOSEN_COMPILER_TYPE} ${WITH_DEBUG:D--debug}
+MAKE_FLAGS=	--cxx="${CXX}" --cxxflags="${CXXFLAGS:N-O*}" BOOST_BUILD_PATH=${DATADIR}
+_MAKE_JOBS=	#
+MAKEFILE=	#
+INSTALL_ENV=	BOOST_BUILD_PATH=${DATADIR}
 
 do-install:
 	cd ${WRKSRC} && ./b2 toolset=${CHOSEN_COMPILER_TYPE} install --prefix=${STAGEDIR}${PREFIX}

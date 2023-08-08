@@ -1,8 +1,7 @@
 PORTNAME=	vile
-PORTVERSION=	9.8w
+PORTVERSION=	9.8y
 CATEGORIES=	editors
 MASTER_SITES=	https://invisible-island.net/archives/vile/current/ \
-		ftp://ftp.invisible-island.net/pub/vile/current/ \
 		https://invisible-mirror.net/archives/vile/current/
 PKGNAMEPREFIX=	x
 

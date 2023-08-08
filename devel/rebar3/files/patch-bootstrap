@@ -1,6 +1,6 @@
---- bootstrap.orig	2020-11-20 13:29:24 UTC
+--- bootstrap.orig	2022-10-15 12:48:23 UTC
 +++ bootstrap
-@@ -13,18 +13,18 @@ main(_) ->
+@@ -24,16 +24,16 @@ main(Args) ->
  
      %% Clear directories for builds since bootstrapping may require
      %% a changed structure from an older one
@@ -14,12 +14,10 @@
 +    %% rm_rf("_build/prod"),
      %% The same pattern happens with default/ as well, particularly when
      %% developing new things.
-     %% Keep other deps in <profile>/lib for build environments like Nix
-     %% where internet access is disabled that deps are not downloadable.
--    rm_rf("_build/default/lib/rebar"),
--    rm_rf("_build/test/lib/rebar"),
-+    %% rm_rf("_build/default/lib/rebar"),
-+    %% rm_rf("_build/test/lib/rebar"),
+-    rm_rf("_build/default/"),
+-    rm_rf("_build/test/"),
++    %% rm_rf("_build/default/"),
++    %% rm_rf("_build/test/"),
  
      filelib:ensure_dir("_build/bootstrap/lib/rebar/ebin/"),
  

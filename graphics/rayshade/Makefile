@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}.${PORTVERSION}.tar.Z
 DIST_SUBDIR=	rayshade
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensible system for creating ray-traced images
 WWW=		http://www-graphics.stanford.edu/~cek/rayshade/
 
@@ -20,23 +20,31 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librle.a:graphics/urt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
-
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
+
 ALL_TARGET=	# empty
 
+WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION:R}
+
+PLIST_FILES=	bin/rayshade
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/rayshade
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
 DOCS_DISTFILES=	guide.ps.Z
 
 .include <bsd.port.options.mk>
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS=	< ${WRKDIR}/config.ans
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 pre-configure:
@@ -60,4 +68,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

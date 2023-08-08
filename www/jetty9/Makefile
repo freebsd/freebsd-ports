@@ -1,8 +1,8 @@
 PORTNAME=	jetty
-PORTVERSION=	9.4.48
+PORTVERSION=	9.4.49
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/${PORTVERSION}.${JDVDATE}/
-PKGNAMESUFFIX=	9
+PKGNAMESUFFIX=	9-${FLAVOR:U}
 DISTNAME=	jetty-distribution-${PORTVERSION}.${JDVDATE}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,16 +16,17 @@ LICENSE_FILE=	${WRKSRC}/license-eplv10-aslv20.html
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe shebangfix
+FLAVORS=	openjdk8 openjdk11
+FLAVOR?=	${FLAVORS:[1]}
 
-CONFLICTS=	jetty-8.*
+CONFLICTS=	jetty-8.* jetty-10.*
 
-JDVDATE=	v20220622
+JDVDATE=	v20220914
 USE_JAVA=	yes
 NO_ARCH=	yes
 CPE_VENDOR=	eclipse
 SHEBANG_FILES=	bin/jetty.sh
 NO_BUILD=	yes
-JAVA_VERSION=	8+
 JAVA_VENDOR=	openjdk
 USE_RC_SUBR=	${PORTNAME}
 
@@ -53,6 +54,12 @@ PLIST_SUB=	\
 		WWWDIR=${WWWDIR} \
 		PORTVERSION=${PORTVERSION} \
 		JDVDATE=${JDVDATE}
+
+.if ${FLAVOR:U} == openjdk8
+JAVA_VERSION=	8+
+.elif ${FLAVOR:U} == openjdk11
+JAVA_VERSION=	11+
+.endif
 
 do-install:
 		${MKDIR} ${STAGEDIR}${APP_HOME}

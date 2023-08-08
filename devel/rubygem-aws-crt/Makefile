@@ -1,5 +1,5 @@
 PORTNAME=	aws-crt
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,13 +14,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
-#NO_ARCH=	yes
-
-SHEBANG_FILES=	aws-crt-ffi/crt/s2n/tests/litani/* \
-		aws-crt-ffi/crt/s2n/tests/litani/*/* \
-		aws-crt-ffi/crt/s2n/tests/litani/*/*/*
 SHEBANG_GLOB=	*.py *.sh
 
 post-install:

@@ -1,6 +1,6 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.18.0
-PORTREVISION?=	0
+PORTVERSION=	1.21.0
+PORTREVISION?=	1
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -18,7 +18,8 @@ USES=		compiler:c11 cpe gmake libtool localbase:ldflags tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+CFLAGS+=	-Wno-suggest-override -Wno-unknown-warning-option
+INSTALL_TARGET?=install-strip
 TEST_TARGET=	check
 
 CPE_VENDOR=	gnu
@@ -54,7 +55,7 @@ BUILD_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 INSTALL_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}
 TEST_WRKSRC=	${WRKSRC}/lang/${BINDING_NAME}/tests
 
-.  if ${SLAVEPORT} != "cpp"
+.  if ${SLAVEPORT} != "cpp" && ${SLAVEPORT} != "qt-headers"
 OPTIONS_DEFINE+=	TEST
 .  endif
 
@@ -64,24 +65,47 @@ CONFIGURE_ARGS+=--enable-languages="cpp"
 NO_TEST=	yes
 .  endif
 
-.  if ${SLAVEPORT} == "qt5"
+.  if ${SLAVEPORT} == "qt-headers"
+CONFIGURE_ARGS+=--enable-languages=""
+ALL_TARGET=	all-am
+INSTALL_TARGET=	install-data
+NO_TEST=	yes
+.  endif
+
+.  if ${SLAVEPORT} == "qt"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
+RUN_DEPENDS+=	${LOCALBASE}/include/qgpgme/qgpgme_version.h:security/gpgme-qt-headers
+
+FLAVORS=		qt5 qt6
+FLAVOR?=		${FLAVORS:[1]}
+qt5_PKGNAMESUFFIX=	-qt5
+qt6_PKGNAMESUFFIX=	-qt6
+
+.    if ${FLAVOR:U} == "qt5"
 USES+=		compiler:c++11-lib pkgconfig qt:5
-USE_QT=	buildtools:build core
-CONFIGURE_ARGS+=--enable-languages="cpp qt"
-DOCSDIR=	${PORTNAME}${PKGNAMESUFFIX}
+USE_QT=		buildtools:build core
+TEST_USE=	QT=testlib:build
+PLIST_SUB=	QT_SUFFIX="" qt_SUFFIX=""
+.    else
+USES+=		compiler:c++17-lang pkgconfig qt:6
+USE_QT=		base
+USE_CXXSTD=	c++17
+PLIST_SUB=	QT_SUFFIX="Qt6" qt_SUFFIX="qt6"
+.    endif
+
+CONFIGURE_ARGS+=--enable-languages="cpp ${FLAVOR}"
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE+=	DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
-TEST_USE=		QT=testlib:build
 .  endif
 
 .  if ${SLAVEPORT} == "python"
 BUILD_DEPENDS+=	swig:devel/swig \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-USES+=		python:3.8+
+		${PY_SETUPTOOLS}
+RUN_DEPENDS+=	${PY_SETUPTOOLS}
+USES+=		python
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--enable-languages="python"
 CONFIGURE_ENV+=	BSD_PYTHON="${PYTHON_CMD}" \
@@ -95,16 +119,20 @@ post-patch:
 .if defined(SLAVEPORT)
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'
-.  if ${SLAVEPORT} == "qt5"
+.  if ${SLAVEPORT} == "qt"
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../cpp/src/libgpgmepp.la|-lgpgmepp|g'
+	@${REINPLACE_CMD} -e 's|install-exec-am install-data-am|install-exec-am install-data-local|' \
+		${WRKSRC}/lang/qt/src/Makefile.in
+.  endif
+.  if ${SLAVEPORT} == "qt-headers"
+	@${REINPLACE_CMD} -e '/^all-am/s|$$(LTLIBRARIES)||' \
+		-e '/^install-data-am/s|install-data-local||' \
+		${WRKSRC}/lang/qt/src/Makefile.in
 .  endif
 .endif
 	@${REINPLACE_CMD} -e 's|^clfilesdir.*|clfilesdir=$$\(libdir\)/common-lisp/gpgme|g' \
 		${WRKSRC}/lang/cl/Makefile.in
-	@${REINPLACE_CMD} -e 's|-Wsuggest-override||g' \
-		${WRKSRC}/lang/cpp/src/Makefile.in \
-		${WRKSRC}/lang/qt/src/Makefile.in
 
 post-patch-DOXYGEN-off:
 	@${REINPLACE_CMD} -e '/SUBDIRS/s|doc||' \

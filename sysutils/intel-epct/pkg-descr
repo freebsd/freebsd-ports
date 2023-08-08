@@ -1,0 +1,4 @@
+The Ethernet Port Configuration Tool (EPCT) is a command line utility that
+allows users to change the link type of a device. The supported types are
+defined within the adapter's NVM. This utility displays only the devices that
+potentially support reconfiguration.

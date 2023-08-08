@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-faraday-em_http>=1.0<2:www/rubygem-faraday-em_http \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

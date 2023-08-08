@@ -1,7 +1,7 @@
 PORTNAME=	pylibmc
 PORTVERSION=	1.6.3
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 TEST_DEPENDS=	memcached:databases/memcached
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils nose
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"

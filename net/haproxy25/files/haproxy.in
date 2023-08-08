@@ -75,6 +75,7 @@ if [ -n "$2" ]; then
         exit 1
     fi
     eval haproxy_config="\${haproxy_${profile}_config:-%%PREFIX%%/etc/haproxy-${profile}.conf}"
+    eval haproxy_fib="\${haproxy_${profile}_fib:${haproxy_fib}}"
     eval pidfile="\${haproxy_${profile}_pidfile:-/var/run/haproxy-${profile}.pid}"
 else
     if [ "x${haproxy_profiles}" != "x" -a "x$1" != "x" ]; then

@@ -6,9 +6,9 @@ Set the default theme and cursor theme to breeze, because sddm is most likely
 used together with Plasma.  If they aren't available sddm falls back to a
 compiled-in theme.
 
---- src/common/Configuration.h.orig	2020-11-03 09:55:31 UTC
+--- src/common/Configuration.h.orig	2021-10-12 20:26:16 UTC
 +++ src/common/Configuration.h
-@@ -47,10 +47,10 @@ namespace SDDM {
+@@ -51,10 +51,10 @@ namespace SDDM {
          //  Name   Entries (but it's a regular class again)
          Section(Theme,
              Entry(ThemeDir,            QString,     _S(DATA_INSTALL_DIR "/themes"),             _S("Theme directory path"));
@@ -18,6 +18,6 @@ compiled-in theme.
                                                                                                     "The files should be named <username>.face.icon"));
 -            Entry(CursorTheme,         QString,     QString(),                                  _S("Cursor theme used in the greeter"));
 +            Entry(CursorTheme,         QString,     _S("breeze_cursors"),                       _S("Cursor theme used in the greeter"));
+             Entry(CursorSize,          QString,     QString(),                                  _S("Cursor size used in the greeter"));
              Entry(Font,                QString,     QString(),                                  _S("Font used in the greeter"));
              Entry(EnableAvatars,       bool,        true,                                       _S("Enable display of custom user avatars"));
-             Entry(DisableAvatarsThreshold,int,      7,                                          _S("Number of users to use as threshold\n"

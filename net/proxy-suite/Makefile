@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--enable-rfc1579
 # OPTIONAL: include ldap-support
 #
 .if defined(WITH_LDAP)
-USE_OPENLDAP=		yes
+USES+=	ldap
 CONFIGURE_ARGS+=	--with-libldap=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--without-libldap

@@ -5,9 +5,9 @@ CMake Error at /usr/local/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package):
 Call Stack (most recent call first):
   CMakeLists.txt:26 (find_package)
 
---- CMakeLists.txt.orig	2021-10-14 15:47:28 UTC
+--- CMakeLists.txt.orig	2022-06-14 20:47:09 UTC
 +++ CMakeLists.txt
-@@ -23,19 +23,27 @@ include(FeatureSummary)
+@@ -24,19 +24,27 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
  set(CMAKE_CXX_STANDARD 17)
  set(CMAKE_CXX_STANDARD_REQUIRED ON)
  
@@ -26,7 +26,7 @@ Call Stack (most recent call first):
 +)
 +
  set(MIN_DISMAN_VERSION "0.519.80")
- find_package(Disman ${MIN_DISMAN_VERSION} REQUIRED)
+ find_package(disman ${MIN_DISMAN_VERSION} REQUIRED)
  
  add_subdirectory(kcm)
  add_subdirectory(plasma-integration)

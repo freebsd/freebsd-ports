@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-credential
-PORTVERSION=	5.0.8
+PORTVERSION=	5.0.9
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -22,6 +22,5 @@ RUN_DEPENDS=	rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

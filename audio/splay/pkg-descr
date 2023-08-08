@@ -1,3 +1,0 @@
-Splay program uses the MPEG/wave sound library to play sound files in
-several formats, notably the MPEG audio and Wave format.  This early
-version has only limited functionally and a simplistic user interface.

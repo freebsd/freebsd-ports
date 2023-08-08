@@ -1,14 +1,14 @@
 bin/cinnamon-screensaver
 bin/cinnamon-screensaver-command
+bin/cinnamon-unlock-desktop
 etc/pam.d/cinnamon-screensaver
-include/cinnamon-screensaver/libcscreensaver/cs-auth.h
-include/cinnamon-screensaver/libcscreensaver/setuid.h
 lib/girepository-1.0/CScreensaver-1.0.typelib
 lib/libcscreensaver.so
 lib/libcscreensaver.so.0
 lib/libcscreensaver.so.0.0.0
 libdata/pkgconfig/cscreensaver.pc
-libexec/cinnamon-screensaver-pam-helper
+@(,,4555) libexec/cinnamon-screensaver-pam-helper
+libexec/cs-backup-locker
 %%DATADIR%%/__init__.py
 %%DATADIR%%/albumArt.py
 %%DATADIR%%/audioPanel.py
@@ -29,7 +29,6 @@ libexec/cinnamon-screensaver-pam-helper
 %%DATADIR%%/dbusdepot/logindClient.py
 %%DATADIR%%/dbusdepot/mediaPlayerWatcher.py
 %%DATADIR%%/dbusdepot/nameBlocker.py
-%%DATADIR%%/dbusdepot/screensaverClient.py
 %%DATADIR%%/dbusdepot/sessionClient.py
 %%DATADIR%%/dbusdepot/uPowerClient.py
 %%DATADIR%%/floating.py
@@ -49,7 +48,6 @@ libexec/cinnamon-screensaver-pam-helper
 %%DATADIR%%/util/eventHandler.py
 %%DATADIR%%/util/fader.py
 %%DATADIR%%/util/focusNavigator.py
-%%DATADIR%%/util/grabHelper.py
 %%DATADIR%%/util/keybindings.py
 %%DATADIR%%/util/settings.py
 %%DATADIR%%/util/trackers.py
@@ -62,10 +60,11 @@ libexec/cinnamon-screensaver-pam-helper
 %%DATADIR%%/widgets/powerWidget.py
 %%DATADIR%%/widgets/transparentButton.py
 %%DATADIR%%/widgets/volumeSlider.py
-share/applications/cinnamon-screensaver.desktop
+share/applications/org.cinnamon.ScreenSaver.desktop
 share/dbus-1/services/org.cinnamon.ScreenSaver.service
 share/gir-1.0/CScreensaver-1.0.gir
 share/icons/hicolor/scalable/actions/screensaver-switch-users-symbolic.svg
 share/icons/hicolor/scalable/actions/screensaver-unlock-symbolic.svg
+share/icons/hicolor/scalable/apps/csr-backup-locker-icon.svg
 share/icons/hicolor/scalable/status/screensaver-blank.svg
 share/icons/hicolor/scalable/status/screensaver-notification-symbolic.svg

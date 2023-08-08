@@ -1,10 +1,9 @@
 include/bezctx.h
-include/bezctx_intf.h
 include/spiro.h
 include/spiroentrypoints.h
 lib/libspiro.a
 lib/libspiro.so
 lib/libspiro.so.1
-lib/libspiro.so.1.0.1
+lib/libspiro.so.1.0.3
 libdata/pkgconfig/libspiro.pc
 man/man3/libspiro.3.gz

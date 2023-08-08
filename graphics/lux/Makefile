@@ -1,11 +1,11 @@
 PORTNAME=	lux
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/kfj/pv/get/
 PKGNAMESUFFIX=	-pv	# distinguish from www/lux
 DISTNAME=	${COMMIT}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Panorama and image viewer
 WWW=		https://bitbucket.org/kfj/pv
 
@@ -29,8 +29,7 @@ CXXFLAGS+=	-Wno-deprecated-declarations
 CONFLICTS=	lux
 
 WRKSRC=		${WRKDIR}/kfj-pv-${COMMIT}
-COMMIT=		402942545a06
-
+COMMIT=		8230eb57d67b
 OPTIONS_DEFINE_amd64=	SSSE3 SSE42 AVX AVX2 AVX512
 OPTIONS_DEFINE_i386=	SSE2 SSSE3 SSE42 AVX AVX2 AVX512
 OPTIONS_DEFAULT_amd64=	SSSE3 SSE42 AVX AVX2 AVX512

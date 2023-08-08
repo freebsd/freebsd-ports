@@ -81,6 +81,7 @@ share/metainfo/simplescreenrecorder.metainfo.xml
 %%DATADIR%%/translations/simplescreenrecorder_pl.qm
 %%DATADIR%%/translations/simplescreenrecorder_pt_BR.qm
 %%DATADIR%%/translations/simplescreenrecorder_ru.qm
+%%DATADIR%%/translations/simplescreenrecorder_sk.qm
 %%DATADIR%%/translations/simplescreenrecorder_sr.qm
 %%DATADIR%%/translations/simplescreenrecorder_sv.qm
 %%DATADIR%%/translations/simplescreenrecorder_uk.qm

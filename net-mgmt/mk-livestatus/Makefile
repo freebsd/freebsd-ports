@@ -62,7 +62,7 @@ post-install-EXAMPLES-on:
 .include <bsd.port.pre.mk>
 
 # Fix building with clang 11 ("ld: error: duplicate symbol: g_mainthread_id")
-.if ${OSVERSION} >= 1300000
+.if ${OSVERSION} >= 1204000
 CFLAGS+=	-fcommon
 .endif
 

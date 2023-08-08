@@ -1,0 +1,3 @@
+bin/darkhttpd
+@dir %%WWWDIR%%
+@dir(%%USER%%,%%GROUP%%,755) /var/run/darkhttpd

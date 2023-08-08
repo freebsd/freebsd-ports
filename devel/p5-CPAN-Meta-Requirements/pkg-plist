@@ -1,2 +1,4 @@
 %%SITE_PERL%%/CPAN/Meta/Requirements.pm
+%%SITE_PERL%%/CPAN/Meta/Requirements/Range.pm
 %%PERL5_MAN3%%/CPAN::Meta::Requirements.3.gz
+%%PERL5_MAN3%%/CPAN::Meta::Requirements::Range.3.gz

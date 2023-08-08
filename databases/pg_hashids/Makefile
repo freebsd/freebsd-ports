@@ -8,7 +8,7 @@ WWW=		https://github.com/iCyberon/pg_hashids
 
 LICENSE=	MIT
 
-USES=		gmake pgsql:9.6+
+USES=		gmake pgsql:11+
 WANT_PGSQL=	server
 
 USE_GITHUB=	yes

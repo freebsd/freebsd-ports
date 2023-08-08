@@ -1,7 +1,9 @@
 PORTNAME=	gromacs
-DISTVERSION=	2022.3
+DISTVERSION=	2023.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
@@ -13,25 +15,29 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchange' #`
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
-LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
-USES=		cmake compiler:c++17-lang fortran gnome perl5 pkgconfig python:build shebangfix xorg
+USES=		cmake compiler:c++17-lang gnome perl5 pkgconfig python:build shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	nodefault
+GH_TUPLE=	google:googletest:v1.13.0:googletest
 
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
 
 CMAKE_OFF=	GMX_USE_RDTSCP \
 		USE_PYTHON_SCRIPTS
-CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
+CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} \
+		-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=		ATLAS FLOAT LEGACY OPENCL OPENMP SIMD X11
-OPTIONS_SINGLE=		MP
+OPTIONS_DEFINE=		ATLAS FLOAT HWLOC LEGACY OPENMP SIMD
+OPTIONS_SINGLE=		MP OPENCL
 OPTIONS_SINGLE_MP=	NOMP MPICH OPENMPI THREAD_MPI
-OPTIONS_DEFAULT=	LEGACY OPENMP THREAD_MPI X11 # FLOAT should not a default because science/votca needs double precision. This is likely the same for many other uses.
+OPTIONS_SINGLE_OPENCL=	OPENCL_NONE OPENCL_ICD OPENCL_SYCL
+OPTIONS_DEFAULT=	HWLOC LEGACY OPENCL_NONE OPENMP THREAD_MPI # FLOAT should not be a default because science/votca needs double precision. This is likely the same for many other uses.
 OPTIONS_SUB=		yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
@@ -51,21 +57,33 @@ FLOAT_CMAKE_OFF=	-DGMX_DOUBLE:BOOL=ON
 FLOAT_PLIST_SUB=	SUFFIX_D=""
 FLOAT_PLIST_SUB_OFF=	SUFFIX_D="_d"
 
+HWLOC_DESC=		Build with HWLOC2, portable hardware locality package
+HWLOC_CMAKE_BOOL=	GMX_HWLOC
+HWLOC_LIB_DEPENDS=	libhwloc.so:devel/hwloc2
+
 LEGACY_DESC=		Install legacy API # expected by science/votca
 LEGACY_CMAKE_BOOL=	GMX_INSTALL_LEGACY_API
 
-OPENCL_CMAKE_BOOL=	GMX_USE_OPENCL
-OPENCL_CMAKE_ON=	-DGMX_GPU:STRING=OpenCL # one of: OFF, CUDA, OpenCL, SYCL
-OPENCL_CMAKE_OFF=	-DGMX_GPU:STRING=OFF
-OPENCL_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd
+OPENCL_NONE_DESC=	No OpenCL
+OPENCL_NONE_CMAKE_ON=	-DGMX_GPU:STRING=OFF # one of: OFF, CUDA, OpenCL, SYCL
 
-OPENMP_CMAKE_ON=	-DGMX_CXX11:BOOL=OFF
-OPENMP_CMAKE_OFF=	-DGMX_OPENMP:BOOL=OFF
+OPENCL_ICD_DESC=	OpenCL via Installable Client Driver
+OPENCL_ICD_CMAKE_ON=	-DGMX_GPU:STRING=OpenCL -DGMX_GPU:STRING=OpenCL
+OPENCL_ICD_LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+			libclFFT.so:math/clfft
+OPENCL_ICD_IMPLIES=	FLOAT
+
+OPENCL_SYCL_DESC=	OpenCL via the OpenSYCL implementation of SYCL
+OPENCL_SYCL_USES=	localbase
+OPENCL_SYCL_CMAKE_ON=	-DGMX_GPU:STRING=OpenCL -DGMX_GPU:STRING=SYCL -DGMX_SYCL_HIPSYCL=ON
+OPENCL_SYCL_LIB_DEPENDS=	libhipSYCL-rt.so:lang/opensycl
+OPENCL_SYCL_IMPLIES=	FLOAT
+OPENCL_SYCL_BROKEN=	configure uses a wrong namespace to find CYCL, see https://gitlab.com/gromacs/gromacs/-/issues/4838
+
+OPENMP_CMAKE_BOOL=	GMX_OPENMP
 
 SIMD_CMAKE_OFF=		-DGMX_SIMD:STRING="None"
-
-X11_USE=		XORG=ice,sm,xext,x11
-X11_CMAKE_BOOL=		GMX_X11
+SIMD_CMAKE_ON=		-DGMX_SIMD:STRING="AUTO"
 
 MP_DESC=		Multiprocessing
 
@@ -87,15 +105,17 @@ THREAD_MPI_DESC=	Build a thread-MPI-based multithreaded version of GROMACS
 THREAD_MPI_CMAKE_BOOL=	GMX_THREAD_MPI
 THREAD_MPI_PLIST_SUB=	SUFFIX_MPI=""
 
+post-extract: # replace outdated bundled googletest with a newer version to fix tests build, see https://gitlab.com/gromacs/gromacs/-/issues/4825
+	@${RM} -r ${WRKSRC}/src/external/googletest
+	@${RLN} ${WRKSRC_googletest} ${WRKSRC}/src/external/googletest
+
 post-patch:
-	@${FIND} ${WRKSRC} -name "CMakeLists.txt" | ${XARGS} \
-		${REINPLACE_CMD} -e \
-		's|share/man|man| ; \
-		 /pkgconfig/s|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|'
 	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
 	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
+
+# tests fail to compile, see https://gitlab.com/gromacs/gromacs/-/issues/4825
 
 .include <bsd.port.mk>

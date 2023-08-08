@@ -1,21 +1,25 @@
 PORTNAME=	llfuse
-PORTVERSION=	1.3.8
+PORTVERSION=	1.4.4
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	stdin@niklaas.eu
-COMMENT=	Python bindings for low-level FUSE API
-WWW=		https://bitbucket.org/nikratio/python-llfuse
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python bindings for the low-level FUSE API
+WWW=		https://github.com/python-llfuse/python-llfuse
 
 LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-py27_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextlib2>0:devel/py-contextlib2@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang fuse pkgconfig python:3.7-3.10 # 3.11 fails because llfuse.c includes longintrepr.h directly, see https://docs.python.org/3.11/whatsnew/3.11.html
-USE_PYTHON=	distutils autoplist
+USES=		compiler:c++11-lang fuse pkgconfig python
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/llfuse*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

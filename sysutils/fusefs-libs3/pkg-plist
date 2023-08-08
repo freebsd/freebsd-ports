@@ -4,6 +4,7 @@ include/fuse3/fuse_common.h
 include/fuse3/fuse_log.h
 include/fuse3/fuse_lowlevel.h
 include/fuse3/fuse_opt.h
+include/fuse3/libfuse_config.h
 lib/libfuse3.so
 lib/libfuse3.so.3
 lib/libfuse3.so.%%VERSION%%

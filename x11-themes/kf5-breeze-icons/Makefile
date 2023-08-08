@@ -10,7 +10,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING-ICONS
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++11-lang cmake kde:5 python:3.5+,build qt:5 shebangfix tar:xz
+USES=		compiler:c++11-lang cmake kde:5 python:build qt:5 shebangfix tar:xz
 USE_KDE=	ecm:build
 USE_QT=		buildtools:build qmake:build testlib:build
 

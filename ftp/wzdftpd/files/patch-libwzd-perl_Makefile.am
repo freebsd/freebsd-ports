@@ -1,0 +1,19 @@
+--- libwzd-perl/Makefile.am.orig	2006-06-13 07:34:54 UTC
++++ libwzd-perl/Makefile.am
+@@ -7,14 +7,14 @@ ext: ext/Makefile ext/wzdftpd.pm ../libwzd/libwzd.la
+ 	cd ext && $(MAKE) LD_RUN_PATH=""
+ 
+ ext/Makefile: ext/Makefile.PL ext/wzdftpd.pm ext/wzdftpd.xs
+-	cd ext && $(PERL) Makefile.PL $(PERLFLAGS) $(PERL_MAKE_OPTIONS) INSTALLDIRS=vendor
++	cd ext && $(PERL) Makefile.PL $(PERLFLAGS) $(PERL_MAKE_OPTIONS) INSTALLPRIVLIB=${prefix}/lib
+ 
+ 
+ all-local: ext
+ 
+ install-data-local: all-local
+ 	echo "Installing wzdftpd.pm"; \
+-	cd ext && $(MAKE) install
++	cd ext && $(MAKE) pure_install
+ 
+ clean-local:
+ 	cd ext && test -f Makefile && $(MAKE) clean || true \

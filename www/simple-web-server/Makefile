@@ -16,7 +16,7 @@ USES=		cmake compiler:c++11-lang
 USE_GITLAB=	yes
 GL_ACCOUNT=	eidheim
 GL_PROJECT=	Simple-Web-Server
-GL_COMMIT=	0f8b26ff19d757db039d6f70e252219326cc3d8f
+GL_TAGNAME=	0f8b26ff19d757db039d6f70e252219326cc3d8f
 
 NO_ARCH=	yes
 NO_BUILD=	yes

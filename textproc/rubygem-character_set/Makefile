@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-sorted_set>=1.0<2:devel/rubygem-sorted_set
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

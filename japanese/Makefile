@@ -125,7 +125,6 @@
     SUBDIR += ibus-skk
     SUBDIR += icanna
     SUBDIR += ipadic
-    SUBDIR += ja-tex-xdvik
     SUBDIR += jacode.pl
     SUBDIR += japana
     SUBDIR += japaneseAFM
@@ -145,7 +144,6 @@
     SUBDIR += kiten
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
-    SUBDIR += kterm
     SUBDIR += latex-jlisting
     SUBDIR += leafrogue
     SUBDIR += less
@@ -172,7 +170,6 @@
     SUBDIR += mozc-el
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
-    SUBDIR += mutt-devel
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2

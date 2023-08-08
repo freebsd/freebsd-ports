@@ -1,8 +1,9 @@
 PORTNAME=	purple-googlechat
-DISTVERSION=	g20211018
+DISTVERSION=	g20221106
+PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Chat Plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-googlechat
 
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	56ba7f7
+GH_TAGNAME=	b6b824a
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2017-01-01 23:21:43 UTC
++++ CMakeLists.txt
+@@ -11,7 +11,7 @@ include_directories(.)
+ 
+ include_directories(.)
+ 
+-add_library(${PROJECT_NAME} STATIC
++add_library(${PROJECT_NAME} SHARED
+     utp.cpp
+     utp_utils.cpp
+     ${${PROJECT_NAME}_ADD_SOURCES}

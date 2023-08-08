@@ -12,6 +12,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USES=		cmake gnome iconv libtool pkgconfig tar:bzip2
+USE_CXXSTD=	c++14
 USE_GNOME=	libgsf
 USE_LDCONFIG=	yes
 

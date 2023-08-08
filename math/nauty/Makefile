@@ -1,9 +1,10 @@
 PORTNAME=	nauty
-PORTVERSION=	2.7r3
+PORTVERSION=	2.8.6
 PORTEPOCH=	1
 CATEGORIES=	math
-MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/ \
+		https://pallini.di.uniroma1.it/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Nauty & Traces are programs for computing graph automorphism
@@ -33,7 +34,7 @@ post-build: # build shared libraries: based on how static libraries are created
 		objects=$$(ls *.o) ; \
 		${RM} $${objects} ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} ${MAKE_ARGS} FREEBSD_EXTRA_CFLAGS="-fPIC" $${objects}
-	# build libraries
+	# build shared libraries
 	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnauty.so -Wl,-soname,libnauty.so \
 		nauty.o nautil.o nausparse.o naugraph.o schreier.o naurng.o traces.o gtools.o naututil.o \
 		nautinv.o gutil1.o gutil2.o gtnauty.o naugroup.o nautycliquer.o
@@ -52,10 +53,16 @@ post-build: # build shared libraries: based on how static libraries are created
 	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyL1.so -Wl,-soname,libnautyL1.so \
 		nautyL1.o nautilL1.o nausparseL.o naugraphL1.o schreierL.o naurng.o traces.o gtoolsL.o naututilL1.o \
 		nautinvL1.o gutil1L1.o gutil2L1.o gtnautyL1.o naugroupL.o nautycliquerL.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyS.so -Wl,-soname,libnautyS.so \
+		nautyS.o nautilS.o nausparseS.o naugraphS.o schreierS.o naurng.o traces.o gtoolsS.o naututilS.o \
+		nautinvS.o gutil1S.o gutil2S.o gtnautyS.o naugroupS.o nautycliquerS.o
+	cd ${WRKSRC} && ${CC} ${LDFLAGS} -shared -o libnautyS1.so -Wl,-soname,libnautyS.so \
+		nautyS1.o nautilS1.o nausparseS.o naugraphS1.o schreierS.o naurng.o traces.o gtoolsS.o naututilS1.o \
+		nautinvS1.o gutil1S1.o gutil2S1.o gtnautyS1.o naugroupS.o nautycliquerS.o
 
 post-install:
 	# install shared libraries
-.for l in libnauty.so libnauty1.so libnautyW.so libnautyW1.so libnautyL.so libnautyL1.so
+.for l in libnauty.so libnauty1.so libnautyW.so libnautyW1.so libnautyL.so libnautyL1.so libnautyS.so libnautyS1.so
 	${INSTALL_LIB} ${WRKSRC}/${l} ${STAGEDIR}${PREFIX}/lib
 .endfor
 	# correct the include path in .pc files
@@ -65,6 +72,6 @@ post-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/nug27.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/nug28.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

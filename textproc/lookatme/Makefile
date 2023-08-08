@@ -1,9 +1,8 @@
 PORTNAME=	lookatme
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
-PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+MASTER_SITES=	PYPI
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Interactive, terminal-based markdown presenter
@@ -21,14 +20,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}marshmallow>=0:devel/py-marshmallow@${PY_FLA
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
-USES=		cpe python:3.6+ pytest
+USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils noflavors pytest
 NO_ARCH=	yes
-
-# https://github.com/d0c-s4vage/lookatme/issues/126
-PYTEST_BROKEN_TESTS=	test_sanity_check_that_errors_are_detected \
-			test_styles_defaults
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|>.*||' ${WRKSRC}/requirements.txt

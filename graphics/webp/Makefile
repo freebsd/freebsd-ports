@@ -1,13 +1,14 @@
 PORTNAME=	webp
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
 		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/
-DISTNAME=	lib${PORTNAME}-${PORTVERSION}
+DISTNAME=	libwebp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google WebP image format conversion tool
-WWW=		https://developers.google.com/speed/webp/
+WWW=		https://developers.google.com/speed/webp
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

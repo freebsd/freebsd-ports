@@ -12,11 +12,7 @@ WWW=		http://www.mit.edu/people/marc/pks/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl
-BROKEN_SSL_REASON_openssl=	member access into incomplete type 'EVP_PKEY' (aka 'evp_pkey_st')
-
 USES=		bdb ssl
-USE_GCC=	yes
 USE_RC_SUBR=	pksd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -24,18 +20,22 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--localstatedir=/var/pks \
-		--with-libwrap \
+		--with-db --with-ipv6 --with-libwrap \
 		--with-openssl=${OPENSSLBASE}
-MAKE_ENV+=	SUBDIRS=
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" \
-		DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
+		DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h cflags="${CFLAGS}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME="${PORTNAME}"
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	pks_help.* README EMAIL
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-extract:
 	@${CP} -a ${FILESDIR}/EMAIL ${WRKSRC}
@@ -50,11 +50,5 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base
-BROKEN=	Does not build with OpenSSL 1.1
-.endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,3 @@
+libcifpp is a library the contains code to work with mmCIF and PDB files.
+
+It allows to read/write the above mentioned molecule interchange formats.

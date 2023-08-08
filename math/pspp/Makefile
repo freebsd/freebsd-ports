@@ -1,5 +1,6 @@
 PORTNAME=	pspp
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libgslcblas.so:math/gsl
 
 USES=		cpe charsetfix gettext-tools gmake gnome iconv localbase \
-		libtool perl5 pkgconfig python:3.7+,build readline
+		libtool perl5 pkgconfig python:build readline
 
 CPE_VENDOR=	gnu
 USE_GNOME=	libxml2

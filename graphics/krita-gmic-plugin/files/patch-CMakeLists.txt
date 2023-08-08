@@ -1,0 +1,31 @@
+--- CMakeLists.txt.orig	2023-05-04 22:27:01 UTC
++++ CMakeLists.txt
+@@ -153,7 +153,7 @@ find_package(Threads REQUIRED)
+ #
+ # Qt
+ #
+-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
++find_package(QT NAMES Qt5 REQUIRED COMPONENTS Core)
+ find_package(Qt${QT_VERSION_MAJOR} ${MIN_QT_VERSION}
+         REQUIRED COMPONENTS
+         Core
+@@ -328,6 +328,7 @@ if (UNIX)
+         set(gmic_qt_LIBRARIES
+             ${gmic_qt_LIBRARIES}
+             ${X11_LIBRARIES} # XXX: Search for X11: Wayland is coming!
++            Threads::Threads
+         )
+     endif()
+ endif()
+@@ -645,9 +646,9 @@ if (UNIX OR APPLE OR MSYS)
+ 
+ if (UNIX OR APPLE OR MSYS)
+   message("Producing translation .qm files")
+-  execute_process(COMMAND make WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations OUTPUT_QUIET)
++  execute_process(COMMAND gmake WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations OUTPUT_QUIET)
+   message("Producing filter translation .qm files")
+-  execute_process(COMMAND make WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations/filters OUTPUT_QUIET)
++  execute_process(COMMAND gmake WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations/filters OUTPUT_QUIET)
+ else()
+   set(gmic_translation_files
+       translations/cs.ts

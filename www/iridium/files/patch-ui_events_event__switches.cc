@@ -1,8 +1,8 @@
---- ui/events/event_switches.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/events/event_switches.cc.orig	2022-10-05 07:34:01 UTC
 +++ ui/events/event_switches.cc
-@@ -14,7 +14,7 @@ namespace switches {
- const char kCompensateForUnstablePinchZoom[] =
-     "compensate-for-unstable-pinch-zoom";
+@@ -21,7 +21,7 @@ const char kCompensateForUnstablePinchZoom[] =
+ // value is a floating point number that is interpreted as a distance in pixels.
+ const char kTouchSlopDistance[] = "touch-slop-distance";
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

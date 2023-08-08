@@ -1,7 +1,7 @@
 PORTNAME=	python-slimta
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.5
 CATEGORIES=	mail
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nc@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=1.1rc:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycares>=1:dns/py-pycares@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysasl>=0.4.0:mail/py-pysasl@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

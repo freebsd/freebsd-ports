@@ -1,12 +1,13 @@
 PORTNAME=	oslo.cache
-PORTVERSION=	3.1.0
+PORTVERSION=	3.4.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cache storage for OpenStack projects
-WWW=		https://docs.openstack.org/oslo.cache/latest/
+WWW=		https://docs.openstack.org/oslo.cache/latest/ \
+		https://github.com/openstack/oslo.cache
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dogpile.cache>=1.1.5:devel/py-dogpile.cache@
 		${PYTHON_PKGNAMEPREFIX}oslo.log>=4.2.1:devel/py-oslo.log@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=4.2.0:devel/py-oslo.utils@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

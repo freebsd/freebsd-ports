@@ -1,9 +1,0 @@
---- libservices/CMakeLists.txt.orig	2019-10-21 05:17:49 UTC
-+++ libservices/CMakeLists.txt
-@@ -31,4 +31,6 @@ SET(MYSQLSERVICES_SOURCES
-   mysql_string_service.c)
- 
- ADD_LIBRARY(mysqlservices ${MYSQLSERVICES_SOURCES})
-+IF(FALSE)
- INSTALL(TARGETS mysqlservices DESTINATION ${INSTALL_LIBDIR} COMPONENT Development)
-+ENDIF()

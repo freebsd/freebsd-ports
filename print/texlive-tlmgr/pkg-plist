@@ -15,9 +15,11 @@ bin/tlmgr
 %%TEXMFDISTDIR%%/.texlive-tlmgr
 %%TEXMFDISTDIR%%/scripts/texlive/tlmgr.pl
 share/tlpkg
+/var/db/tlpkg/installer/config.guess
 /var/db/tlpkg/texlive.tlpdb
 /var/db/tlpkg/texmf.cnf
 /var/db/tlpkg/tlmgr.log
 @dir /var/db/tlpkg/backups
+@dir /var/db/tlpkg/installer
 @dir /var/db/tlpkg/tlpobj
 @dir /var/db/tlpkg

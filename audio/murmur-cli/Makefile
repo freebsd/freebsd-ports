@@ -1,9 +1,9 @@
 PORTNAME=	murmur-cli
 PORTVERSION=	0.0.0.20200528
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	audio
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRPC client for Murmur server
 WWW=		https://github.com/layeh/murmur-cli
 

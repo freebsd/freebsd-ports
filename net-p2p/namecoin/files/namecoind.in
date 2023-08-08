@@ -11,7 +11,7 @@
 # namecoind_user (str)		Set to "namecoin" by default.
 # namecoind_group (str)		Set to "namecoin" by default.
 # namecoind_conf (str)		Set to "%%PREFIX%%/etc/namecoind.conf" by default.
-# namecoind_data (str)		Set to "/var/lib/namecoind" by default.
+# namecoind_data_dir (str)	Set to "/var/db/namecoin" by default.
 # namecoindlimits_enable (bool)	Set to "NO" by default.
 #				Set it to "YES" to enable namecoindlimits
 # namecoindlimits_args		Set to "-e -U ${namecoind_user}" by default
@@ -31,9 +31,8 @@ status_cmd="namecoind_status"
 stop_cmd="namecoind_stop"
 stop_postcmd="namecoind_wait"
 command="%%PREFIX%%/bin/namecoind"
-cli_command="%%PREFIX%%/bin/namecoin-cli"
 daemon_command="/usr/sbin/daemon"
-#pidfile="/var/run/${name}.pid"
+pidfile="/var/run/${name}.pid"
 extra_commands="configtest"
 
 
@@ -44,13 +43,12 @@ load_rc_config ${name}
 
 : ${namecoind_user:="namecoin"}
 : ${namecoind_group:="namecoin"}
-: ${namecoind_data_dir:="/var/db/namecoind"}
+: ${namecoind_data_dir:="/var/db/namecoin"}
 : ${namecoind_config_file:="%%PREFIX%%/etc/namecoin.conf"}
 : ${namecoindlimits_args:="-e -U ${namecoind_user}"}
 
 # set up dependant variables
 procname="${command}"
-pidfile="${namecoind_data_dir}/namecoind.pid"
 required_files="${namecoind_config_file}"
 
 
@@ -118,10 +116,10 @@ namecoind_start()
 {
   echo "Starting namecoind:"
   cd "${namecoind_data_dir}" || return 1
-  ${daemon_command} -u "${namecoind_user}" -p "${pidfile}" \
+  ${daemon_command} -u "${namecoind_user}" -p "${pidfile}" -f \
     ${command} \
     -conf="${namecoind_config_file}" \
-    -datadir="${namecoind_data_dir}" 2> /tmp/namecoind.stderr > /tmp/namecoind.stdout
+    -datadir="${namecoind_data_dir}"
 }
 
 namecoind_stop()
@@ -133,7 +131,7 @@ namecoind_stop()
     echo "Namecoind is not running"
     return 1
   else
-    ${cli_command} -conf="${namecoind_config_file}" -datadir="${namecoind_data_dir}" stop
+    kill ${pid}
   fi
 }
 

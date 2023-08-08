@@ -1,7 +1,7 @@
 PORTNAME=	mathics_pygments
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	Mathics3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils  noflavors
 
 NO_ARCH=	yes

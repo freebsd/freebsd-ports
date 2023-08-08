@@ -8,7 +8,7 @@ WWW=		https://ebassi.github.io/graphene/
 
 LICENSE=	MIT
 
-USES=		compiler:c11 gnome meson pkgconfig python:3.6+ shebangfix
+USES=		compiler:c11 gnome meson pkgconfig python shebangfix
 USE_GNOME=	glib20 pygobject3
 USE_LDCONFIG=	yes
 

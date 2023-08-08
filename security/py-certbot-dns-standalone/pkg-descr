@@ -1,0 +1,4 @@
+Standalone DNS Authenticator plugin for Certbot (security/py-certbot).
+
+This is a plugin that uses an integrated DNS server to respond to the
+_acme-challenge records, so the domain's records do not have to be modified.

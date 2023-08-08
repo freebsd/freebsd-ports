@@ -4,18 +4,19 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://uniquesoftwaredesigns.com/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lambda calculus interpreter
 WWW=		https://uniquesoftwaredesigns.com/lambda/docs/lambda.html
 
 LICENSE=	GPLv2
 
 USES=		perl5 ncurses readline shebangfix
+USE_CXXSTD=	c++14
 USE_PERL5=	build
-SHEBANG_FILES=	docs/trans_xml_for_cat.pl
-GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DOCS
+SHEBANG_FILES=	docs/trans_xml_for_cat.pl
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/lambda \
 		share/lambda/definitions \
@@ -23,6 +24,8 @@ PLIST_FILES=	bin/lambda \
 
 DOCS=		lambda.html lambdamanual.html user_manual_style.css
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-ltermcap|-lncurses|' ${WRKSRC}/configure \

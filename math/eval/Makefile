@@ -13,9 +13,15 @@ COMMENT=	Full featured floating point expression evaluator
 
 USES=		lha readline
 
+WRKSRC=		${WRKDIR}/Eval/source
+
 PLIST_FILES=	bin/Eval
 
-WRKSRC=		${WRKDIR}/Eval/source
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-extract:
 	-${LN} -s Makefile.unx ${WRKSRC}/Makefile

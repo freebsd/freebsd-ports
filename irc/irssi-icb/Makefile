@@ -29,4 +29,11 @@ INSTALL_TARGET=	install-strip
 PLIST_FILES=	lib/irssi/modules/libfe_icb.so \
 		lib/irssi/modules/libicb_core.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Fixes build failure for Clang 16.0.6
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
+CFLAGS+=       -Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>

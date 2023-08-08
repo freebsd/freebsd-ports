@@ -12,7 +12,7 @@ WWW=		https://ccache.samba.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
-CONFLICTS_INSTALL?=	ccache-static ccache-memcached ccache-memcached-static
+CONFLICTS_INSTALL?=	ccache-static ccache-memcached ccache-memcached-static ccache4
 
 GNU_CONFIGURE=	yes
 

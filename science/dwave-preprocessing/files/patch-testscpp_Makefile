@@ -1,32 +1,21 @@
---- testscpp/Makefile.orig	2022-05-07 23:28:35 UTC
+--- testscpp/Makefile.orig	2023-07-06 22:19:16 UTC
 +++ testscpp/Makefile
-@@ -1,22 +1,22 @@
- ROOT := ../
- SRC := $(ROOT)/dwave/preprocessing/
+@@ -1,15 +1,15 @@
+ ROOT := ..
+ INCLUDE := $(ROOT)/dwave/preprocessing/include
+ SRC := $(ROOT)/dwave/preprocessing/src
 -DIMOD := $(shell python -c 'import dimod; print(dimod.get_include())')
 +#DIMOD := $(shell python -c 'import dimod; print(dimod.get_include())')
+ CATCH2 := $(ROOT)/testscpp/Catch2/single_include/
+ SPDLOG := $(ROOT)/extern/spdlog/include/
+-FLAGS := -std=c++17 -Wall -Wno-unknown-pragmas -fcompare-debug-second -O3
++FLAGS := ${CXXFLAGS} -std=c++17 -Wall -Wno-unknown-pragmas
  
- all: catch2 test_main test_main_parallel tests tests_parallel
+ all: update tests
  
--tests: test_main.out
-+tests: test_main
- 	./test_main 
+ test_main.o:
+-	$(CXX) test_main.cpp -c
++	$(CXX) $(FLAGS) test_main.cpp -c
  
--tests_parallel: test_main_parallel.out
-+tests_parallel: test_main_parallel
- 	./test_main_parallel
- 
- test_main: test_main.cpp
--	g++ -std=c++11 -Wall -c test_main.cpp
--	g++ -std=c++11 -Wall test_main.o tests/*.cpp -o test_main -I $(SRC)/include/ -I $(DIMOD)
-+	${CXX} `pkg-config --cflags catch2` -std=c++11 -Wall -c test_main.cpp
-+	${CXX} `pkg-config --cflags catch2` -std=c++11 -Wall test_main.o tests/*.cpp -o test_main -I $(SRC)/include/ -I $(DIMOD)
- 
- test_main_parallel: test_main.cpp
--	g++ -std=c++11 -fopenmp -Wall -c test_main.cpp -o test_main_parallel.o
--	g++ -std=c++11 -fopenmp -Wall test_main_parallel.o tests/*.cpp -o test_main_parallel -I $(SRC)/include/ -I $(DIMOD)
-+	${CXX} `pkg-config --cflags catch2` -std=c++11 -fopenmp -Wall -c test_main.cpp -o test_main_parallel.o
-+	${CXX} `pkg-config --cflags catch2` -std=c++11 -fopenmp -Wall test_main_parallel.o tests/*.cpp -o test_main_parallel -I $(SRC)/include/ -I $(DIMOD)
- 
- catch2:
- 	git submodule init
+ # Developer note: we could make this more generic, but because the package structure
+ # is not at all consistent and because we have so few test files I think it's clearer to

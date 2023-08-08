@@ -1,6 +1,5 @@
 PORTNAME=	xcb-util
-PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTVERSION=	0.4.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
@@ -12,7 +11,7 @@ WWW=		https://xcb.freedesktop.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake tar:bzip2 xorg xorg-cat:lib
+USES=		gmake tar:xz xorg xorg-cat:lib
 USE_XORG=	xau xcb xdmcp
 INSTALL_TARGET=	install-strip
 

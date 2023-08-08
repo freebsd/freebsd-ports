@@ -1,7 +1,7 @@
 PORTNAME=	aniso8601
 PORTVERSION=	6.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	6
 
@@ -12,7 +12,7 @@ WWW=		https://bitbucket.org/nielsenb/aniso8601/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes

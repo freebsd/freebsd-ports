@@ -2,7 +2,7 @@ PORTNAME=	zope.i18n
 PORTVERSION=	3.8.0
 PORTREVISION=	1
 CATEGORIES=	devel www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.event>=0:devel/py-zope.event@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0:devel/py-zope.interface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
 
-USES=		gettext python:3.6+
+USES=		gettext python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

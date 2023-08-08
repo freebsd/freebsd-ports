@@ -15,4 +15,6 @@ RUN_DEPENDS=	p5-SQL-Abstract>=1.6:databases/p5-SQL-Abstract \
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2023-06-18 16:39:33 UTC
++++ pyproject.toml
+@@ -1,12 +1,12 @@
+ [build-system]
+ requires = [
+-    "setuptools>=67.4",
+-    "wheel", "pytest-runner",
++    "setuptools>=61",
++    "wheel",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "pyHanko"
++name = "pyhanko"
+ description = "Tools for stamping and signing PDF files"
+ authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+ maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
+@@ -64,7 +64,7 @@ opentype = [
+     "fonttools>=4.33.3",
+     # uharfbuzz sometimes includes breaking changes, so
+     # we set an explicit range
+-    "uharfbuzz>=0.25.0,<0.36.0",
++    "uharfbuzz>=0.25.0",
+ ]
+ image-support = [
+     # Only tested systematically on 8.x,

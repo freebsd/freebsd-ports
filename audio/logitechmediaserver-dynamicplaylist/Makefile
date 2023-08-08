@@ -1,5 +1,6 @@
 PORTNAME=	dynamicplaylist
 PORTVERSION=	2.9.3853
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.isaksson.info/download/do/downloadapplication?name=slimserver-dynamicplaylist&filename=/
 PKGNAMEPREFIX=	logitechmediaserver-

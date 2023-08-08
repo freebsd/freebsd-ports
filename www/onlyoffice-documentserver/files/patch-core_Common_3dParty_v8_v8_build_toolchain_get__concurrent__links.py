@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/toolchain/get_concurrent_links.py.orig	2021-05-01 21:15:31 UTC
-+++ core/Common/3dParty/v8/v8/build/toolchain/get_concurrent_links.py
+--- core/Common/3dParty/v8_89/v8/build/toolchain/get_concurrent_links.py.orig	2021-05-01 21:15:31 UTC
++++ core/Common/3dParty/v8_89/v8/build/toolchain/get_concurrent_links.py
 @@ -53,6 +53,14 @@ def _GetTotalMemoryInBytes():
        return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
      except Exception:

@@ -38,6 +38,7 @@ TRANSLATOR_DESC=	Tools for translators
 
 CJK_RUN_DEPENDS=	html2text:textproc/html2text
 DBLATEX_RUN_DEPENDS=	dblatex:textproc/dblatex
+DBLATEX_USES=		tex
 DBLATEX_USE=		TEX=xetex
 FOP_RUN_DEPENDS=	${_FONTS} \
 			fop:textproc/fop

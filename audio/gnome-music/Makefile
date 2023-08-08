@@ -1,5 +1,6 @@
 PORTNAME=	gnome-music
 PORTVERSION=	42.1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -26,7 +27,7 @@ RUN_DEPENDS=	grilo-plugins>0:net/grilo-plugins
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gnome gstreamer localbase meson pkgconfig \
-		python:3.4+ shebangfix tar:xz
+		python shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gtk40 introspection pygobject3
 USE_GSTREAMER=	mpg123 ogg

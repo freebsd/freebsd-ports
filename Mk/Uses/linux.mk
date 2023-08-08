@@ -53,12 +53,12 @@ _linux_c7_at-spi2-core=			linux-c7-at-spi2-core>0:accessibility/linux-c7-at-spi2
 _linux_${linux_ARGS}_atk=		linux-${linux_ARGS}-atk>0:accessibility/linux-${linux_ARGS}-atk
 _linux_${linux_ARGS}_avahi-libs=	linux-${linux_ARGS}-avahi-libs>0:net/linux-${linux_ARGS}-avahi-libs
 _linux_c7_base=				linux_base-c7>=7.6.1810_7:emulators/linux_base-c7
+_linux_c7_ca-certificates=		linux-c7-ca-certificates>0:security/linux-c7-ca-certificates
 _linux_${linux_ARGS}_cairo=		linux-${linux_ARGS}-cairo>0:graphics/linux-${linux_ARGS}-cairo
 _linux_c7_cairo-gobject=		linux-c7-cairo-gobject>0:graphics/linux-c7-cairo-gobject
 _linux_${linux_ARGS}_cups-libs=		linux-${linux_ARGS}-cups-libs>0:print/linux-${linux_ARGS}-cups-libs
 _linux_${linux_ARGS}_curl=		linux-${linux_ARGS}-curl>0:ftp/linux-${linux_ARGS}-curl
 _linux_${linux_ARGS}_cyrus-sasl2=	linux-${linux_ARGS}-cyrus-sasl-lib>0:security/linux-${linux_ARGS}-cyrus-sasl2
-_linux_${linux_ARGS}_dbusglib=		linux-${linux_ARGS}-dbus-glib>0:devel/linux-${linux_ARGS}-dbus-glib
 _linux_${linux_ARGS}_dbuslibs=		linux-${linux_ARGS}-dbus-libs>0:devel/linux-${linux_ARGS}-dbus-libs
 _linux_${linux_ARGS}_devtools=		linux-${linux_ARGS}-devtools>0:devel/linux-${linux_ARGS}-devtools
 _linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools

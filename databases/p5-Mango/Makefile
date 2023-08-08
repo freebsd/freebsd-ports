@@ -14,7 +14,7 @@ LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	mongo:databases/mongodb36 \
+RUN_DEPENDS=	mongo:databases/mongodb44 \
 		p5-Mojolicious>=5.40:www/p5-Mojolicious
 
 USES=		perl5

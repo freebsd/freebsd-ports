@@ -1,0 +1,8 @@
+bin/pdfmixtool
+share/applications/eu.scarpetta.PDFMixTool.desktop
+share/icons/hicolor/128x128/apps/eu.scarpetta.PDFMixTool.png
+share/icons/hicolor/256x256/apps/eu.scarpetta.PDFMixTool.png
+share/icons/hicolor/48x48/apps/eu.scarpetta.PDFMixTool.png
+share/icons/hicolor/64x64/apps/eu.scarpetta.PDFMixTool.png
+share/icons/hicolor/scalable/apps/eu.scarpetta.PDFMixTool.svg
+share/metainfo/eu.scarpetta.PDFMixTool.appdata.xml

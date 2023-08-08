@@ -35,6 +35,7 @@ libdata/pkgconfig/weechat.pc
 %%HEADLESS%%%%MANPAGES%%man/sr/man1/weechat-headless.1.gz
 %%ASPELL%%lib/weechat/plugins/spell.so
 %%CHARSET%%lib/weechat/plugins/charset.so
+%%GUILE%%lib/weechat/plugins/guile.so
 %%JAVASCRIPT%%lib/weechat/plugins/javascript.so
 %%LUA%%lib/weechat/plugins/lua.so
 %%PERL%%lib/weechat/plugins/perl.so

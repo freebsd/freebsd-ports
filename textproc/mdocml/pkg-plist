@@ -20,3 +20,5 @@ man/man7/mdoc.7.gz
 man/man7/tbl.7.gz
 man/man8/makewhatis.8.gz
 sbin/makewhatis
+%%WWWDIR%%/cgi-bin/man.cgi
+%%WWWDIR%%/htdocs/mandoc.css

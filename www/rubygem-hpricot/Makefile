@@ -1,5 +1,6 @@
 PORTNAME=	hpricot
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +10,6 @@ WWW=		https://github.com/hpricot/hpricot
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

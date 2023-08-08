@@ -11,11 +11,15 @@ WWW=		http://xtrader.sourceforge.net/
 LIB_DEPENDS=	libptypes.so:devel/ptypes \
 		libfltk.so.1:x11-toolkits/fltk
 
-MAKEFILE=	Makefile.linux
 USES=		gmake xorg
 USE_XORG=	x11 xpm
-BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
+
+MAKEFILE=	Makefile.linux
+
+CFLAGS+=	--std=c++14
+
 NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 
 PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt

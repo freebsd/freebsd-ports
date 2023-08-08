@@ -9,6 +9,7 @@ MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Support for Japanese text within lstlisting environment
 WWW=		https://sourceforge.jp/projects/mytexpert/
 
+USES=		tex
 NO_BUILD=	yes
 USE_TEX=	latex texhash
 JLDIR=		${TEXMFLOCALDIR}/tex/latex/jlisting

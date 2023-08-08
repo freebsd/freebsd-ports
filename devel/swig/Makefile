@@ -1,22 +1,23 @@
 PORTNAME=	swig
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/swig/swig/swig-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate wrappers for calling C/C++ code from other languages
-WWW=		https://www.swig.org/
+WWW=		https://swig.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE-GPL
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		lua:build
 
 ALL_TARGET=	# empty
 CFLAGS+=	-fPIC -DPIC
-CONFIGURE_ARGS=	--with-lua=${LOCALBASE}/bin/${LUA_CMD} \
+CONFIGURE_ARGS=	--with-boost=no \
+		--with-lua=${LOCALBASE}/bin/${LUA_CMD} \
 		--with-luaincl=${LUA_INCDIR} \
 		--with-lualib=${LUA_LIBDIR}
 GNU_CONFIGURE=	yes

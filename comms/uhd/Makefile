@@ -25,7 +25,7 @@ BUILD_DEPENDS=	orcc:devel/orc \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang cmake ncurses pkgconfig \
-		dos2unix python:3.7+ shebangfix
+		dos2unix python shebangfix
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	EttusResearch

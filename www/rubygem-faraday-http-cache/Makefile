@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-faraday1>=0.8:www/rubygem-faraday1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

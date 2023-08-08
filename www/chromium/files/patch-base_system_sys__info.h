@@ -1,15 +1,15 @@
---- base/system/sys_info.h.orig	2022-08-31 12:19:35 UTC
+--- base/system/sys_info.h.orig	2023-07-16 15:47:57 UTC
 +++ base/system/sys_info.h
-@@ -211,6 +211,8 @@ class BASE_EXPORT SysInfo {
-   // On Desktop this returns true when memory <= 2GB.
-   static bool IsLowEndDevice();
+@@ -258,6 +258,8 @@ class BASE_EXPORT SysInfo {
+   static void SetIsCpuSecurityMitigationsEnabled(bool is_enabled);
+ #endif
  
 +  static uint64_t MaxSharedMemorySize();
 +
   private:
+   friend class test::ScopedAmountOfPhysicalMemoryOverride;
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
-   FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
-@@ -221,7 +223,7 @@ class BASE_EXPORT SysInfo {
+@@ -270,7 +272,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

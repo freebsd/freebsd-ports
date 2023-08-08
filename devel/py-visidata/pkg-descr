@@ -1,0 +1,2 @@
+VisiData provides a terminal interface for exploring and arranging tabular data.
+It supports tsv, csv, sqlite, json, xlsx (Excel), hdf5, and many other formats.

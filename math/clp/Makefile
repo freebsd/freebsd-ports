@@ -1,8 +1,7 @@
 PORTNAME=	Clp
-DISTVERSION=	1.17.6
-PORTREVISION=	1
+DISTVERSIONPREFIX=	releases/
+DISTVERSION=	1.17.8
 CATEGORIES=	math
-MASTER_SITES=	https://www.coin-or.org/download/source/${PORTNAME}/
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	co9co9@gmail.com
@@ -22,8 +21,12 @@ RUN_DEPENDS=	coin-or-Data-Sample>0:math/coin-or-data-sample \
 		coin-or-Data-Netlib>0:math/coin-or-data-netlib
 
 USES=		blaslapack compiler:c++11-lang fortran libtool pathfix pkgconfig tar:tgz
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	coin-or
+
+GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 

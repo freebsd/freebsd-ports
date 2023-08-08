@@ -1,6 +1,6 @@
 PORTNAME=	drumstick
-DISTVERSION=	2.7.1
-PORTREVISION=	2
+DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -11,8 +11,9 @@ WWW=		https://sourceforge.net/projects/drumstick
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang cmake desktop-file-utils pkgconfig qt:6 shared-mime-info tar:bz2
+USES=		compiler:c++11-lang cmake desktop-file-utils gl pkgconfig qt:6 shared-mime-info tar:bz2
 USE_QT=		base svg 5compat tools:build
+USE_GL=		gl opengl
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DUSE_QT=6
@@ -48,6 +49,6 @@ SONIVOX_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 post-patch:
 	# instead of default.sf2 use FluidR3_GM.sf2 installed by fluid-soundfont
 	@${REINPLACE_CMD} -e 's|"default.sf2"|"${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2"|' \
-		${WRKSRC}/library/widgets/fluidsettingsdialog.cpp
+		${WRKSRC}/library/rt-backends/fluidsynth/fluidsynthengine.cpp
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.16
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
@@ -21,8 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 
 DIST_SUBDIR=	${PORTNAME}
-USES=		uidfix
-USE_RUBY=	yes
+USES=		ruby uidfix
 
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
 

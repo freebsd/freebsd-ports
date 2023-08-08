@@ -1,6 +1,6 @@
 PORTNAME=	tome4
-DISTVERSION?=	1.7.4
-PORTREVISION=	2
+DISTVERSION?=	1.7.6
+PORTREVISION?=	0
 CATEGORIES=	games
 MASTER_SITES=	https://te4.org/dl/t-engine/ \
 		SF/lifanov-ports-distfiles/${PORTNAME}/:icons
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	premake4:devel/premake4
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libpng.so:graphics/png
 
-USES=		gl gmake openal:al sdl tar:bzip2 xorg
+USES=		compiler:c++11-lang gl gmake openal:al sdl tar:bzip2 xorg
 USE_SDL=	image2 sdl2 ttf2
 USE_GL=		gl glu
 SUB_FILES=	tome4
@@ -32,14 +32,14 @@ DESKTOP_ENTRIES="ToME 4" "" "${PORTNAME}" \
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/t-engine4-src-${DISTVERSION}
 MAKE_ARGS+=	config=release verbose=yes ARCH="" CC="${CC}" CXX="${CXX}"
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 LDFLAGS_i386=	-Wl,-znotext
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lang
+.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-fno-integrated-as
 .endif
 
 pre-build:
@@ -61,4 +61,4 @@ do-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

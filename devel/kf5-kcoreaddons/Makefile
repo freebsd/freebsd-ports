@@ -27,6 +27,8 @@ FAM_DESC=		Filesystem alteration notifications using fam (broken: hangs on NFS)
 FAM_USES=		fam
 FAM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FAM
 
+CMAKE_ARGS=	-DACCOUNTS_SERVICE_ICON_DIR:PATH=/var/db/AccountsService/icons
+
 .include <bsd.port.pre.mk>
 
 .if !${ABI:Mpurecap}

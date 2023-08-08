@@ -1,6 +1,6 @@
 PORTNAME=	genius
 DISTVERSION=	1.0.27
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME \
 		http://ftp.5z.com/pub/genius/

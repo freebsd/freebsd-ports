@@ -1,5 +1,5 @@
 PORTNAME=	colordiff
-PORTVERSION=	1.0.20
+PORTVERSION=	1.0.21
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.colordiff.org/ LOCAL/ehaupt
 

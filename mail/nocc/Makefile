@@ -1,5 +1,5 @@
 PORTNAME=	nocc
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.13
 CATEGORIES=	mail www
 MASTER_SITES=	SF/${PORTNAME}/NOCC/${PORTVERSION}
 
@@ -13,7 +13,7 @@ USES=		cpe php:web
 
 OPTIONS_DEFINE=	DOCS
 
-USE_PHP=	ctype iconv imap mbstring openssl pcre session
+USE_PHP=	ctype iconv imap mbstring session
 
 SUB_FILES=	pkg-message
 NO_ARCH=	yes

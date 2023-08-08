@@ -1,5 +1,5 @@
-TIMESTAMP = 1656712755
-SHA256 (barman-3.0.0-manual.pdf) = aacdbc62fa78d6c9bb4751e328bf54efb6be892f6daae32987968e3fc87526a4
-SIZE (barman-3.0.0-manual.pdf) = 1356209
-SHA256 (EnterpriseDB-barman-release-3.0.0_GH0.tar.gz) = 3a3851624e6613685e4321f1afcac0666ef70f9048487086dad8f68ca2b879d6
-SIZE (EnterpriseDB-barman-release-3.0.0_GH0.tar.gz) = 1445801
+TIMESTAMP = 1690487425
+SHA256 (barman-3.7.0-manual.pdf) = 2bdc6e899aa6faa37cde8f778b4d871cacba91f0fd1639c1ba20fa8694367a87
+SIZE (barman-3.7.0-manual.pdf) = 1192640
+SHA256 (EnterpriseDB-barman-release-3.7.0_GH0.tar.gz) = 60c1d59188c8db62a5678c146f4a5825cf66d87425fd1e58e0d345ddc605f076
+SIZE (EnterpriseDB-barman-release-3.7.0_GH0.tar.gz) = 1811333

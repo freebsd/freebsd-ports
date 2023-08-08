@@ -1,0 +1,85 @@
+#!/bin/sh
+
+# PROVIDE: caldera
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+#
+# Configuration settings for caldera in /etc/rc.conf:
+#
+# caldera_enable:          run caldera as service (default=NO)
+# caldera_flags:           additional flags for caldera server
+#
+
+. /etc/rc.subr
+
+name=caldera
+rcvar=caldera_enable
+
+load_rc_config ${name}
+
+export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
+
+: ${caldera_enable:=NO}
+: ${caldera_flags="--insecure"}
+
+caldera_env="GOCACHE=/tmp/caldera/.cache GOMODCACHE=/tmp/caldera/.vendor"
+caldera_user="caldera"
+caldera_wwwdir="%%WWWDIR%%"
+caldera_logfile="/var/log/caldera.log"
+
+pidfile="/var/run/${name}.pid"
+python_command="%%PYTHON_CMD%%"
+python_script="${caldera_wwwdir}/server.py"
+start_cmd=${name}_start
+status_cmd=${name}_status
+stop_cmd=${name}_stop
+restart_cmd=${name}_restart
+extra_commands="status"
+
+caldera_start()
+{
+	if [ ! -f ${pidfile} ]
+	then
+		cd ${caldera_wwwdir} && \
+			daemon -u ${caldera_user} -p ${pidfile} -t ${name} -o ${caldera_logfile} \
+				${python_command} ${python_script}  \
+				${caldera_flags}
+
+		echo "Starting ${name}"
+	else
+		echo "${name} is running as pid" `cat ${pidfile}`
+	fi
+}
+
+caldera_status()
+{
+        # If running, show pid
+	if [ -f ${pidfile} ]
+	then
+		echo "${name} is running as pid" `cat ${pidfile}`
+	else
+		echo "${name} is not running"
+	fi
+}
+
+caldera_stop()
+{
+	if [ -f ${pidfile} ]
+	then
+		kill `cat ${pidfile}`
+		rm ${pidfile}
+		echo "Stopping ${name}"
+	else
+		echo "${name} not running? (check ${pidfile})."
+	fi
+}
+
+caldera_restart()
+{
+        echo "Performing restart ${name}"
+        caldera_stop
+        sleep 3
+        caldera_start
+}
+
+run_rc_command "$1"

@@ -1,7 +1,7 @@
 PORTNAME=	certifi
-PORTVERSION=	2022.6.15
+PORTVERSION=	2023.5.7
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/certifi/python-certifi
 
 LICENSE=	MPL20
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

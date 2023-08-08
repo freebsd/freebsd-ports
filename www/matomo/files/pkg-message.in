@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-1) Create a user and a empty database for Matomo to store all
+1) Create a user and an empty database for Matomo to store all
    its tables in (or choose an existing database).
 
 2) Add the following to your Apache configuration, and
@@ -11,10 +11,16 @@
    Alias /matomo %%WWWDIR%%
    AcceptPathInfo On
    <Directory %%WWWDIR%%>
-      AllowOverride All
-      Options Indexes FollowSymLinks
-      # Apache 2.4 no longer accepts "Order" or "Allow from ..."
-      Require all granted
+     DirectoryIndex index.php
+     Options FollowSymLinks
+     AllowOverride All
+     <IfVersion < 2.4>
+        Order allow,deny
+        Allow from all
+     </IfVersion>
+     <IfVersion >= 2.4>
+       Require all granted
+     </IfVersion>
    </Directory>
 
 3) Visit your Matomo site with a browser (i.e.,
@@ -30,19 +36,19 @@ EOM
 {
   type: upgrade
   message: <<EOM
-Console upgrade recommended on medium and hight traffic sites:
+Console upgrade recommended on medium and high traffic sites:
 
 1) Disable Matomo Tracking
     In config/config.ini.php, add the following
     [Tracker]
     record_statistics = 0
-        
+
 2) Disable the Matomo User Interface and APIs
     In config/config.ini.php, add the following
     [General]
     maintenance_mode = 1
 
-3) Run the update 
+3) Run the update
 
     php %%WWWDIR%%/console core:update
 

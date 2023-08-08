@@ -1,7 +1,7 @@
 PORTNAME=	berkeleydb
-PORTVERSION=	18.1.5
+PORTVERSION=	18.1.6
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://www.jcea.es/programacion/pybsddb.htm
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		bdb python:3.7+
+USES=		bdb python
 USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_CONFIGUREARGS=--libs="-l${BDB_LIB_NAME}" --berkeley-db=${LOCALBASE}

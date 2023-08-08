@@ -13,6 +13,7 @@ or providing a separate entry for "foot --term=foot" e.g.,
   	:it#8:\
   	:IC=\E[%d@:K2@:SF=\E[%dS:SR=\E[%dT:bt=\E[Z:ds=\E]2;\E\\:\
   	:ec=\E[%dX:fs=\E\\:kb=\177:mb=\E[5m:me=\E[0m:mh=\E[2m:nw@:\
+  	:is=\E[!p\E[4l\E>:rs=\E[!p\E[4l\E>:\
   	:te=\E[?1049l\E[23;0;0t:ti=\E[?1049h\E[22;0;0t:\
   	:ts=\E]2;:vb=\E]555\E\\:tc=xterm-256color:
 EOM

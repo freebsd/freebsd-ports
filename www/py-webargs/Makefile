@@ -1,5 +1,6 @@
 PORTNAME=	webargs
 DISTVERSION=	8.2.0
+PORTREVISION=	1
 CATEGORIES=	www devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,9 +19,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyramid>0:www/py-pyramid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=4.5.2:www/py-tornado@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}WebTest>0:www/py-WebTest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}webtest>0:www/py-webtest@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes # tests not packaged with PyPI sdist
 GH_ACCOUNT=	marshmallow-code

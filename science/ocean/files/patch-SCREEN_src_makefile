@@ -1,0 +1,11 @@
+--- SCREEN/src/makefile.orig	2022-10-30 02:27:41 UTC
++++ SCREEN/src/makefile
+@@ -99,7 +99,7 @@ screen_driver.o: screen_driver.f90 ../../Modules/ai_ki
+                  screen_chi_driver.mod screen_centralpotential.mod ../../Modules/screen_opf.mod ../../Modules/screen_timekeeper.mod
+ 
+ screen_driver.x: $(OBJS)
+-	$(MPIFORT) $(OPTIONS) -o screen_driver.x $(OBJS) $(MODOBJS) $(FFTWL) $(BLAS) $(FFTWL)
++	$(MPIFORT) $(MPI_LDFLAGS) $(OPTIONS) -o screen_driver.x $(OBJS) $(MODOBJS) $(FFTWL) $(BLAS) $(FFTWL)
+ 
+ 
+ clean:

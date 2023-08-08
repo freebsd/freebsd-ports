@@ -1,6 +1,6 @@
 PORTNAME=	scilab
 PORTVERSION=	6.1.1
-PORTREVISION=	3
+PORTREVISION=	10
 CATEGORIES=	math cad java
 MASTER_SITES=	https://cgit.scilab.org/scilab/snapshot/
 
@@ -67,7 +67,7 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/flexdock.jar:devel/flexdock \
 		${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging \
 		${JAVALIBDIR}/jgraphx.jar:java/jgraphx \
 		${JAVALIBDIR}/jlatexmath.jar:math/jlatexmath \
-		${LOCALBASE}/share/java/ecj-4.5.jar:lang/gcc-ecj45 \
+		${JAVALIBDIR}/ecj-4.4.2.jar:java/eclipse-ecj \
 		${JAVALIBDIR}/lucene-core-5.5.5.jar:textproc/lucene5
 # Documentation, graphic export:
 _GUI_DEPENDS+=	${LOCALBASE}/share/java/fop/build/fop.jar:textproc/fop \
@@ -83,7 +83,7 @@ _GUI_DEPENDS+=	${JAVALIBDIR}/commons-beanutils.jar:java/apache-commons-beanutils
 		${LOCALBASE}/bin/splint:devel/splint
 # Documentation building:
 _GUI_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/javahelp/javahelp.xsl:textproc/docbook-xsl \
-		${JAVALIBDIR}/saxon9he.jar:textproc/saxon-he \
+		${JAVALIBDIR}/saxon-he-10.6.jar:textproc/saxon-he \
 		${JAVALIBDIR}/xml-apis-ext.jar:textproc/xml-commons \
 		xsltproc:textproc/libxslt
 # Other gui deps:
@@ -131,6 +131,10 @@ CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 .if ${GCC_DEFAULT} >= 10
 # workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)

@@ -10,10 +10,12 @@ WWW=		https://mdocml.bsd.lv/docbook2mdoc/
 
 LICENSE=	ISCL
 
+USES=	tar:tgz
+
 PLIST_FILES=	bin/docbook2mdoc \
 		man/man1/docbook2mdoc.1.gz
 
-USES=	tar:tgz
+MAKE_ARGS=	PREFIX="${PREFIX}"
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^PREFIX = /usr/local|PREFIX = ${PREFIX}|' \

@@ -48,6 +48,7 @@ share/themes/Breeze-Dark/assets/breeze-minimize-symbolic.svg
 share/themes/Breeze-Dark/assets/breeze-radio-checked-symbolic.svg
 share/themes/Breeze-Dark/assets/breeze-radio-indeterminate-symbolic.svg
 share/themes/Breeze-Dark/assets/breeze-radio-unchecked-symbolic.svg
+share/themes/Breeze-Dark/assets/bullet-symbolic.svg
 share/themes/Breeze-Dark/assets/button-active.png
 share/themes/Breeze-Dark/assets/button-hover.png
 share/themes/Breeze-Dark/assets/button-insensitive.png
@@ -106,12 +107,14 @@ share/themes/Breeze-Dark/assets/check-unchecked-insensitive.png
 share/themes/Breeze-Dark/assets/check-unchecked-insensitive@2.png
 share/themes/Breeze-Dark/assets/check-unchecked.png
 share/themes/Breeze-Dark/assets/check-unchecked@2.png
+share/themes/Breeze-Dark/assets/checkmark-symbolic.svg
 share/themes/Breeze-Dark/assets/combo-entry-active.png
 share/themes/Breeze-Dark/assets/combo-entry-button-active.png
 share/themes/Breeze-Dark/assets/combo-entry-button-insensitive.png
 share/themes/Breeze-Dark/assets/combo-entry-button.png
 share/themes/Breeze-Dark/assets/combo-entry-insensitive.png
 share/themes/Breeze-Dark/assets/combo-entry.png
+share/themes/Breeze-Dark/assets/dash-symbolic.svg
 share/themes/Breeze-Dark/assets/entry-active.png
 share/themes/Breeze-Dark/assets/entry-insensitive.png
 share/themes/Breeze-Dark/assets/entry.png
@@ -326,6 +329,7 @@ share/themes/Breeze/assets/breeze-minimize-symbolic.svg
 share/themes/Breeze/assets/breeze-radio-checked-symbolic.svg
 share/themes/Breeze/assets/breeze-radio-indeterminate-symbolic.svg
 share/themes/Breeze/assets/breeze-radio-unchecked-symbolic.svg
+share/themes/Breeze/assets/bullet-symbolic.svg
 share/themes/Breeze/assets/button-active.png
 share/themes/Breeze/assets/button-hover.png
 share/themes/Breeze/assets/button-insensitive.png
@@ -384,12 +388,14 @@ share/themes/Breeze/assets/check-unchecked-insensitive.png
 share/themes/Breeze/assets/check-unchecked-insensitive@2.png
 share/themes/Breeze/assets/check-unchecked.png
 share/themes/Breeze/assets/check-unchecked@2.png
+share/themes/Breeze/assets/checkmark-symbolic.svg
 share/themes/Breeze/assets/combo-entry-active.png
 share/themes/Breeze/assets/combo-entry-button-active.png
 share/themes/Breeze/assets/combo-entry-button-insensitive.png
 share/themes/Breeze/assets/combo-entry-button.png
 share/themes/Breeze/assets/combo-entry-insensitive.png
 share/themes/Breeze/assets/combo-entry.png
+share/themes/Breeze/assets/dash-symbolic.svg
 share/themes/Breeze/assets/entry-active.png
 share/themes/Breeze/assets/entry-insensitive.png
 share/themes/Breeze/assets/entry.png
@@ -553,5 +559,6 @@ share/themes/Breeze/gtk-2.0/widgets/styles
 share/themes/Breeze/gtk-2.0/widgets/toolbar
 share/themes/Breeze/gtk-3.0/gtk-dark.css
 share/themes/Breeze/gtk-3.0/gtk.css
+share/themes/Breeze/gtk-4.0/gtk-dark.css
 share/themes/Breeze/gtk-4.0/gtk.css
 share/themes/Breeze/settings.ini

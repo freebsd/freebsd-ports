@@ -1,11 +1,11 @@
---- makefile.orig	2016-03-25 04:33:28.000000000 +0100
-+++ makefile	2017-01-12 10:10:40.481484000 +0100
-@@ -1626,7 +1626,7 @@
- 	@make $(DEFINES) CFLAGS="$(CFLAGS) -DUSE_ASM -fomit-frame-pointer -O3"
+--- makefile.orig	2021-09-10 22:27:18 UTC
++++ makefile
+@@ -1859,7 +1859,7 @@ BSD/OS:
+ 	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -O3"
  
  FreeBSD:
--	make $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread"
-+	make $(DEFINES) CFLAGS="$(CFLAGS) %%CFLAGS%%"
+-	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread"
++	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -O2 -pipe  -DUSE_PKCS11 -fstack-protector-strong -fno-strict-aliasing "
  
  NetBSD:
- 	make $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread" 
+ 	$(MAKE) $(DEFINES) CFLAGS="$(CFLAGS) -fomit-frame-pointer -pthread"

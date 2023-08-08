@@ -64,6 +64,7 @@ share/mime/packages/semantik.xml
 %%DATADIR%%/templates/java/main.html
 %%DATADIR%%/templates/java/run.sh
 %%DATADIR%%/templates/markdown.sem.py
+%%DATADIR%%/templates/markdown/doc.md
 %%DATADIR%%/templates/odp.sem.py
 %%DATADIR%%/templates/odp/content.xml
 %%DATADIR%%/templates/odp/manifest.xml

@@ -1,7 +1,7 @@
 PORTNAME=	zstd
 DISTVERSION=	1.5.2.6
 CATEGORIES=	archivers python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+ localbase
+USES=		python localbase
 USE_PYTHON=	distutils autoplist
 
 PYDISTUTILS_BUILDARGS=	--external

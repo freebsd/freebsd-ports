@@ -1,6 +1,6 @@
 PORTNAME=	sdl12-compat
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.2.56
+DISTVERSION=	1.2.64
 CATEGORIES=	devel wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -30,9 +30,6 @@ post-patch:
 # Add library suffix to co-exist with sdl12 package
 	@${REINPLACE_CMD} -e '/OUTPUT_NAME/s/")$$/${SUFFIX}&/' \
 		${WRKSRC}/CMakeLists.txt
-# <alloca.h> doesn't exist on BSDs and is included by <stdlib.h> on Linux
-	@${REINPLACE_CMD} -e '/ALLOCA_H/d' \
-		${WRKSRC}/include/SDL/SDL_config.h
 # Drop unused dependency on libGLU
 	@${REINPLACE_CMD} -e '/glu\.h/d' \
 		${WRKSRC}/include/SDL/SDL_opengl.h

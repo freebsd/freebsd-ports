@@ -1,18 +1,17 @@
-PORTREVISION=	5
+PORTREVISION=	1
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
 WWW=		https://tigervnc.org/
-
-EXTRA_PATCHES=	${FILESDIR}/xorg-1.21.patch:-p1 \
-		${FILESDIR}/xvnc-adapt-xorg-1.21.patch:-p1
 
 PATCH_DEPENDS+=	${NONEXISTENT}:x11-servers/xorg-server:patch
 BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		bash:shells/bash
 LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
-		libxcvt.so:x11/libxcvt
+		libxcvt.so:x11/libxcvt \
+		libnettle.so:security/nettle \
+		libgmp.so:math/gmp
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
@@ -23,7 +22,6 @@ USE_GL+=	gl
 USE_XORG+=	ice pixman sm x11 xau xdamage xdmcp xext xfixes xfont2 \
 		xkbfile xorg-macros xorgproto xrandr xrender xtrans xtst
 
-SHEBANG_LANG=	bash
 SHEBANG_FILES=	unix/vncserver/vncsession-start.in
 BINARY_WRAPPERS=	gm4
 
@@ -40,20 +38,31 @@ GNUTLS_LIB_DEPENDS=	libtasn1.so:security/libtasn1 \
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
 CONFIGURE_ARGS+=	\
-		--prefix=${PREFIX} --mandir=${PREFIX}/share/man/ \
+		--prefix=${PREFIX} --mandir=${MANPREFIX}/share/man \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
 		--disable-xinerama --disable-xvfb --disable-xnest --disable-xorg \
 		--disable-dmx --disable-xwin --disable-xephyr --disable-kdrive \
 		--disable-config-dbus --disable-config-hal \
 		--disable-dri2 --enable-install-libxf86config --enable-glx \
-		--with-default-font-path="catalogue:${LOCALBASE}/share/fonts,built-ins" \
 		--with-xkb-path=${LOCALBASE}/share/X11/xkb \
 		--with-xkb-bin-directory=${LOCALBASE}/bin \
 		--with-serverconfig-path=${LOCALBASE}/lib/X11 \
 		--disable-selective-werror \
 		--disable-xwayland \
 		--with-fontrootdir=${LOCALBASE}/share/fonts
+
+FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
+FONTPATHD?=	${PREFIX}/etc/X11/fontpath.d
+DEFAULT_FONTPATH_LIST= \
+	${FONTPATH_ROOT}/misc/  \
+	${FONTPATH_ROOT}/TTF/ \
+	${FONTPATH_ROOT}/OTF/ \
+	${FONTPATH_ROOT}/Type1/ \
+	${FONTPATH_ROOT}/100dpi/ \
+	${FONTPATH_ROOT}/75dpi/ \
+	catalogue:${FONTPATHD}
+CONFIGURE_ARGS+=	--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}"
 
 CFLAGS+=	-I${LOCALBASE}/include/libdrm
 
@@ -66,24 +75,32 @@ TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${.CURDIR}/../../x11-servers/xorg-server" -
 XORG_WRKSRC=	${MAKE} -C ${.CURDIR}/../../x11-servers/xorg-server -VWRKSRC
 
 pre-patch:
-	@${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
+	${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
+	# workaround: upstream changed patch naming
+	${LN} -sf ${WRKSRC}/unix/xserver21.1.1.patch ${WRKSRC}/unix/xserver211.patch
 
 post-patch:
 	# do not build tests
-	@${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${FILESDIR}/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
+	${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
+	cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} ${AUTORECONF_ARGS}
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} ${AUTORECONF_ARGS}
+	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} SHELL=${LOCALBASE}/bin/bash
+	cd ${WRKSRC}/unix/xserver/ && \
+	    ${DO_MAKE_BUILD} SHELL=${LOCALBASE}/bin/bash ${ALL_TARGET}
+
+post-stage:
+	# Install v1.10.0 vncserver script and manpage.
+	# See: https://cgit.freebsd.org/ports/commit/net/tigervnc-server?id=e6d3d07
+	${INSTALL_SCRIPT} ${FILESDIR}/v1.10.0-vncserver ${STAGEDIR}${PREFIX}/bin/vncserver
+	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${MANPREFIX}/share/man/man8/vncserver.8
 
 post-install:
-	@cd ${WRKSRC}/unix/xserver/hw/vnc/ && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/Xvnc ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/libvnc.so
-	@${INSTALL_SCRIPT} ${FILESDIR}/vncserver.ports ${STAGEDIR}${PREFIX}/bin/vncserver
+	cd ${WRKSRC}/unix/xserver/hw/vnc/ && \
+	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-strip
 
 .include "${.CURDIR}/Makefile.common.mk"
 
@@ -105,6 +122,6 @@ CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
 # keep in sync with all platforms where libunwind is available
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif

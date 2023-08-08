@@ -48,4 +48,27 @@ If you somehow run into problems, please remove the already installed
 user installation and the problems should go away.
 EOM
 }
+{ type: upgrade
+  maximum_version: "%%AOOVERSION%%"
+  message: <<EOM
+In general, it is always a good idea to do a backup of important
+and personal data, so we recommend to always back up your OpenOffice
+user profile before doing an upgrade to a newer release.
+
+Users can back up their profile by copying this directory:
+  /home/<user name>/.openoffice
+EOM
+}
+{ type: upgrade
+  maximum_version: "1678061694"
+  message: <<EOM
+It is recommended to make a backup of the Apache OpenOffice users
+profile before upgrading. It is especially essential for users who
+use the Master Password functionality and may decide to use an older
+version later. There is a change in the encoding of stored passwords
+between the 4.1.2 and  4.1.13 releases (and in a similar timeframe
+for the -devel port) that may make your user profile unusable for
+previous versions.
+EOM
+}
 ]

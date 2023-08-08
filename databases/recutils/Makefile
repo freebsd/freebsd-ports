@@ -1,6 +1,5 @@
 PORTNAME=	recutils
-PORTVERSION=	1.8
-PORTREVISION=	1
+DISTVERSION=	1.9
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -52,10 +51,6 @@ TEST_TEST_TARGET=	check
 post-patch:
 	@${REINPLACE_CMD} -e 's,mdb_init,mdb_get_version,' \
 		${WRKSRC}/configure
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/etc/*.el \
-		${STAGEDIR}${PREFIX}/share/emacs/site-lisp
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

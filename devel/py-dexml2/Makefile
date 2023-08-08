@@ -1,7 +1,7 @@
 PORTNAME=	dexml2
 PORTVERSION=	0.5.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		http://www.rfk.id.au/software/
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

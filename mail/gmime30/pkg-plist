@@ -67,5 +67,5 @@ lib/libgmime-3.0.so.0
 lib/libgmime-3.0.so.0.206.1
 libdata/pkgconfig/gmime-3.0.pc
 share/gir-1.0/GMime-3.0.gir
-%%VALA%%share/vala/vapi/gmime-3.0.deps
-%%VALA%%share/vala/vapi/gmime-3.0.vapi
+%%VAPI%%share/vala/vapi/gmime-3.0.deps
+%%VAPI%%share/vala/vapi/gmime-3.0.vapi

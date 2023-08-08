@@ -1,6 +1,6 @@
 PORTNAME=	ssht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://astro-informatics.github.io/ssht/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	fftw3>0:math/fftw3 # see https://github.com/astro-informatics/ssht/issues/6
+LIB_DEPENDS=	libfftw3.so:math/fftw3
 
 USES=		cmake:testing pkgconfig # tests clone cmocka, see https://github.com/astro-informatics/ssht/issues/63
 

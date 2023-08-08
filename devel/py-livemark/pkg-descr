@@ -1,0 +1,13 @@
+Data presentation framework for Python that generates static sites from extended
+Markdown with interactive charts, tables, scripts, and other features.
+
+Purpose:
+- Data Journalism: Livemark provides a complete toolset for working with data,
+  starting from data extraction and ending with a published website containing
+  interactive charts, tables, and other features.
+- Software Education: Livemark is perfectly suited for writing education
+  materials as it uses code execution model in markdown documents. It solves a
+  range of problems with testing and having your code example up-to-date.
+- Python Development: Livemark can be used in software development as a helper
+  tool for working on Python projects. It provides an ability to create
+  documentation sites and works as a task runner.

@@ -1,12 +1,13 @@
 PORTNAME=	cabextract
-PORTVERSION=	1.9.1
+PORTVERSION=	1.11
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.cabextract.org.uk/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Program to extract Microsoft cabinet (.CAB) files
-WWW=		https://www.cabextract.org.uk/
+WWW=		https://www.cabextract.org.uk/ \
+		https://github.com/kyz/libmspack/tree/master/cabextract
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

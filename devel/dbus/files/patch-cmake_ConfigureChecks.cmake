@@ -1,6 +1,6 @@
---- cmake/ConfigureChecks.cmake.orig	2018-02-23 10:25:17 UTC
+--- cmake/ConfigureChecks.cmake.orig	2022-09-14 12:12:21 UTC
 +++ cmake/ConfigureChecks.cmake
-@@ -47,6 +47,7 @@ check_symbol_exists(getpwnam_r   "errno.h pwd.h"    HA
+@@ -51,6 +51,7 @@ check_symbol_exists(clearenv     "stdlib.h"         HA
  check_symbol_exists(setenv       "stdlib.h"         HAVE_SETENV)             #  dbus-sysdeps.c
  check_symbol_exists(unsetenv     "stdlib.h"         HAVE_UNSETENV)           #  dbus-sysdeps.c
  check_symbol_exists(clearenv     "stdlib.h"         HAVE_CLEARENV)           #  dbus-sysdeps.c

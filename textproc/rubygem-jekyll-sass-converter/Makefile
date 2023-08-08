@@ -12,8 +12,10 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sassc>=2.1.0<3.0:textproc/rubygem-sassc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+# jekyll-sass-converter 3.0.0+ requires Dart Sass implementation
+PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.mk>

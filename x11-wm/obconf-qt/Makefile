@@ -1,6 +1,5 @@
 PORTNAME=	obconf-qt
-PORTVERSION=	0.16.1
-PORTREVISION=	2
+PORTVERSION=	0.16.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	LXQT/${PORTNAME}
 
@@ -13,10 +12,13 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libobt.so:x11-wm/openbox \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libImlib2.so:graphics/imlib2
+		libImlib2.so:graphics/imlib2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		cmake compiler:c++11-lang gettext-runtime localbase qt:5 \
-		gnome lxqt pkgconfig tar:xz xorg
+		gnome lxqt perl5 pkgconfig tar:xz xorg
+
+USE_PERL5=	build
 
 USE_QT=		buildtools:build qmake:build core gui linguisttools \
 		widgets x11extras

@@ -1,7 +1,7 @@
 PORTNAME=	httpcore
-PORTVERSION=	0.15.0
+PORTVERSION=	0.17.3
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.0<4:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h11>=0.11<0.14:net/py-h11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h11>=0.13<0.15:net/py-h11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=1.0<2:devel/py-sniffio@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

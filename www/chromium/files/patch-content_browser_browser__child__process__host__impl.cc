@@ -1,6 +1,6 @@
---- content/browser/browser_child_process_host_impl.cc.orig	2022-06-17 14:20:10 UTC
+--- content/browser/browser_child_process_host_impl.cc.orig	2023-07-16 15:47:57 UTC
 +++ content/browser/browser_child_process_host_impl.cc
-@@ -294,6 +294,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+@@ -321,6 +321,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kDisableBestEffortTasks,
        switches::kDisableLogging,
        switches::kEnableLogging,

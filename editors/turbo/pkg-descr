@@ -1,0 +1,8 @@
+Turbo is an experimental text editor for the terminal, based on the
+Scintilla editing component and the Turbo Vision application framework.
+
+It aims at being intuitive and easy to use.  Usability and productivity
+are its two other major objectives, although it has not got that far yet.
+And only for being a Turbo Vision application, it offers a vintage look
+and feel, while being fully Unicode/UTF-8 aware, including support for
+CJK (wide) characters.

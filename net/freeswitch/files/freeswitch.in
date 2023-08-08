@@ -18,11 +18,11 @@ rcvar=${name}_enable
 load_rc_config $name
 
 : ${freeswitch_enable:="NO"}
-: ${freeswitch_user:=freeswitch}
-: ${freeswitch_group:=freeswitch}
+: ${freeswitch_username:=freeswitch}
+: ${freeswitch_groupname:=freeswitch}
 
 command=%%PREFIX%%/bin/freeswitch
 
-command_args="-nc"
+command_args="-nc -u ${freeswitch_username} -g ${freeswitch_groupname}"
 
 run_rc_command "$1"

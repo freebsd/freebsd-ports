@@ -1,5 +1,6 @@
 PORTNAME=	deadbeef-musical-spectrum-plugin
 DISTVERSION=	0.0.2015.10.13
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

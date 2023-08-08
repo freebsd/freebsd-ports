@@ -4,12 +4,12 @@ UNIT_MODNAME=	ruby${RUBY_VER}
 
 COMMENT=	Ruby module for NGINX Unit
 
-RUN_DEPENDS=	rackup:www/rubygem-rack \
+RUN_DEPENDS=	rackup:www/rubygem-rack22 \
 		unitd:www/unit
 
 PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 
-USE_RUBY=	yes
+USES=	ruby
 
 CFLAGS+=	-fdeclspec
 
@@ -30,7 +30,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
-	${INSTALL_LIB} ${WRKSRC}/build/${UNIT_MODNAME}.unit.so \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/unit/modules/${UNIT_MODNAME}.unit.so \
 		${STAGEDIR}${PREFIX}/libexec/unit/modules/
 
 # Overwrite the target in the ${MASTERDIR}/Makefile

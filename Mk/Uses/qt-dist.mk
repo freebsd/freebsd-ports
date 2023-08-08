@@ -21,14 +21,15 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_COMMON_DISTS=		3d base charts datavis3d declarative imageformats multimedia \
+_COMMON_DISTS=		3d base charts datavis3d declarative imageformats location multimedia \
 			networkauth quick3d quicktimeline remoteobjects scxml sensors \
-			serialbus serialport svg tools translations virtualkeyboard \
-			wayland webchannel websockets
-_QT5_DISTS=		connectivity gamepad graphicaleffects location quickcontrols \
-			quickcontrols2 script speech webengine webglplugin webview \
+			serialbus serialport speech svg tools translations virtualkeyboard \
+			wayland webchannel webengine websockets
+_QT5_DISTS=		connectivity gamepad graphicaleffects quickcontrols \
+			quickcontrols2 script webglplugin webview \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat doc languageserver lottie positioning shadertools
+_QT6_DISTS=		5compat doc httpserver languageserver lottie positioning \
+			quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
@@ -59,6 +60,7 @@ IGNORE=			Unsupported qt-dist ${_QT_DIST} for qt:${_QT_VER}
 
 # Set standard bsd.port.mk variables.
 LICENSE?=		LGPL21
+WWW?=		https://www.qt.io/
 
 .  if !exists(${PKGDIR}/pkg-descr)
 DESCR?=			${PORTSDIR}/devel/${_QT_RELNAME}/pkg-descr
@@ -84,7 +86,11 @@ _QT6_MASTER_SITES=		${MASTER_SITE_QT}
 _QT6_MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules \
 				official_releases/additional_libraries/${_QT_VERSION:R}/${_QT_VERSION}/
 # Qt5 specific distnames
+.  if ${_QT_DIST} == webengine
+_QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-opensource-src-${DISTVERSION},}
+.  else
 _QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
+.  endif
 _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 # Qt6 specific distnames
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
@@ -98,42 +104,43 @@ DIST_SUBDIR=			KDE/Qt/${_QT_VERSION}
 
 .  if ${_QT_VER:M5}
 # KDE maintains a repository with a patched Qt5 distribution.
-_KDE_3d=		15
-_KDE_base=		165
-_KDE_charts=		1
+_KDE_3d=		0
+_KDE_base=		157
+_KDE_charts=		0
 _KDE_connectivity=	5
 _KDE_datavis3d=		0
-_KDE_declarative=	19
+_KDE_declarative=	21
 _KDE_gamepad=		0
 _KDE_graphicaleffects=	0
-_KDE_imageformats=	3
+_KDE_imageformats=	6
 _KDE_location=		3
 _KDE_multimedia=	1
 _KDE_networkauth=	0
 _KDE_quick3d=		1
 _KDE_quickcontrols=	0
-_KDE_quickcontrols2=	6
+_KDE_quickcontrols2=	7
 _KDE_quicktimeline=	0
 _KDE_remoteobjects=	0
 _KDE_script=		0
-_KDE_script_ORIGIN_TAG=	v5.15.10-lts
-_KDE_script_VERSION=	5.15.10
+_KDE_script_ORIGIN_TAG=	v5.15.11-lts
+_KDE_script_VERSION=	5.15.11
 _KDE_scxml=		0
 _KDE_sensors=		0
 _KDE_serialbus=		0
 _KDE_serialport=	0
 _KDE_speech=		1
-_KDE_svg=		10
+_KDE_svg=		8
 _KDE_tools=		1
-_KDE_translations=	2
-_KDE_virtualkeyboard=	3
-_KDE_wayland=		39
+_KDE_translations=	0
+_KDE_virtualkeyboard=	0
+_KDE_wayland=		57
 _KDE_webchannel=	3
 _KDE_webglplugin=	0
-_KDE_websockets=	3
+_KDE_websockets=	2
 _KDE_webview=		0
 _KDE_x11extras=		0
 _KDE_xmlpatterns=	0
+
 .    if defined(_KDE_${_QT_DIST})
 QT5_KDE_PATCH=		p${_KDE_${_QT_DIST}}
 _KDE_${_QT_DIST}_VERSION?=	${_QT_VERSION}
@@ -440,10 +447,10 @@ _sub_need_add=
 _sub_need_remove=	\#\#
 .    else
 _sub_need_add=		\#\#
-_sub_need_remove=	
+_sub_need_remove=
 .    endif
-# If a port installs Qt version-specific binaries (e.g. "designer" which 
-# existed as a Qt4 application and exists as a Qt5 application and will 
+# If a port installs Qt version-specific binaries (e.g. "designer" which
+# existed as a Qt4 application and exists as a Qt5 application and will
 # probably be a Qt6 application) the port should set `QT_BINARIES=yes`.
 .    if defined(QT_BINARIES)
 _sub_need_bin=
@@ -453,11 +460,15 @@ _sub_need_bin=		\#\#
 .    if ${QT_MODNAME} == core
 # QtCore (e.g. devel/qt5-core) is the one that starts the header,
 # and is also the one that can clean it up when deinstalled.
-_sub_need_clean=	
+_sub_need_clean=
 .    else
 _sub_need_clean=	\#\#
 .    endif
+# The Qt modules have an install- and deinstall-step for wrangling
+# the qconfig-modules.h header, but qmake does not.
+.    if ${PORTNAME} != "qmake"
 post-install: qt-post-install
+.    endif # PORTNAME != qmake
 qt-post-install:
 # We can't use SUB_FILES with the shared pkg-change.in.
 # We need it to be a script instead of a group of @unexecs.
@@ -515,6 +526,7 @@ qt6-post-stage:
 .  endif
 
 qt-create-kde-distfile:
+	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
 	${SH} ${PORTSDIR}/devel/${_QT_RELNAME}/files/create_kde-qt_release.sh \
 		${_QT_DIST} \
 		${DISTDIR}/${DIST_SUBDIR} \

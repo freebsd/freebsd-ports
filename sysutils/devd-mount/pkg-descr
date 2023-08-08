@@ -1,0 +1,5 @@
+devd-mount(8) is a devd(8) based automounter for FreeBSD.  It supports
+most popular filesystems such as exFAT, ISO9660, UDF, and FreeBSD's
+native UFS.  The devd-mount script mounts recognized filesystems and
+invokes a specified command (typically qmediamanager) with the mount
+point, device, and filesystem type as optional arguments.

@@ -1,0 +1,9 @@
+Container images and related state is stored in /var/db/containers. It
+is recommended to use ZFS for this:
+
+# zfs create -o mountpoint=/var/db/containers zroot/containers
+
+If your system cannot use ZFS, change storage.conf to use the vfs
+storage driver:
+
+# sed -I .bak -e 's/driver = "zfs"/driver = "vfs"/' /usr/local/etc/containers/storage.conf

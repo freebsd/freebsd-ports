@@ -1,7 +1,6 @@
 PORTNAME=	fake-useragent
-PORTVERSION=	0.1.11
+PORTVERSION=	1.2.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,7 +10,10 @@ WWW=		https://pypi.org/project/fake-useragent/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
+
+USES=		python
+USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

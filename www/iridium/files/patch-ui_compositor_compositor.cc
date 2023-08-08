@@ -1,6 +1,6 @@
---- ui/compositor/compositor.cc.orig	2022-04-01 07:48:30 UTC
+--- ui/compositor/compositor.cc.orig	2023-07-24 14:27:53 UTC
 +++ ui/compositor/compositor.cc
-@@ -860,7 +860,7 @@ void Compositor::OnResume() {
+@@ -897,7 +897,7 @@ void Compositor::OnResume() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

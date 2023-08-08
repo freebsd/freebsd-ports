@@ -1,0 +1,2 @@
+mnnpy is an implementation of MNN correct in python featuring low memory usage,
+full multicore support and compatibility with the scanpy framework.

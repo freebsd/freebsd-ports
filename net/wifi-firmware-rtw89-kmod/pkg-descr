@@ -1,0 +1,6 @@
+Firmware files for Realtek WiFi NICs supported by the rtw89 driver.
+
+Currently supported chipsets:
+- 8852a
+- 8852b
+- 8852c

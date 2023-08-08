@@ -1,4 +1,0 @@
-lib/vdr/libvdr-vnsiserver.so.%%APIVERSION%%
-@sample etc/vdr/plugins/vnsiserver/allowed_hosts.conf.sample
-share/locale/de_DE/LC_MESSAGES/vdr-vnsiserver.mo
-share/locale/lt_LT/LC_MESSAGES/vdr-vnsiserver.mo

@@ -2,6 +2,7 @@ lib/xfce4/panel/plugins/libwckbuttons.so
 lib/xfce4/panel/plugins/libwckmenu.so
 lib/xfce4/panel/plugins/libwindowck.so
 share/icons/hicolor/48x48/apps/wckbuttons-plugin.png
+share/icons/hicolor/48x48/apps/wckmenu-plugin.png
 share/icons/hicolor/48x48/apps/windowck-plugin.png
 %%NLS%%share/locale/bg/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/xfce4-windowck-plugin.mo
@@ -10,6 +11,7 @@ share/icons/hicolor/48x48/apps/windowck-plugin.png
 %%NLS%%share/locale/et/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/he/LC_MESSAGES/xfce4-windowck-plugin.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/xfce4-windowck-plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/xfce4-windowck-plugin.mo

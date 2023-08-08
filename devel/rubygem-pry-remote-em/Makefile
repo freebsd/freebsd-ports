@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=1<2:devel/rubygem-eventmachine \
 		rubygem-ruby-termios>=1.0<2:comms/rubygem-ruby-termios
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

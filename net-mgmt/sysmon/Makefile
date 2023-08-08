@@ -11,8 +11,9 @@ WWW=		https://puck.nether.net/sysmon/
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
 USES=		alias ssl
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -20,6 +21,12 @@ DOCS=		Changes.html binaries.html config.html docs.html index.html \
 		jclient.jpg net-example.png sysmon.conf.man.html sysmon.jpg \
 		sysmon.man.html reporting.xml-spec.txt
 MANPAGE=	sysmon.man.8 sysmon.conf.man.8
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sysmon ${STAGEDIR}${PREFIX}/bin
@@ -30,6 +37,8 @@ do-install:
 .for man in ${MANPAGE}
 	${INSTALL_MAN} ${WRKSRC}/docs/${man:S/.8//} ${STAGEDIR}${MANPREFIX}/man/man8/${man}
 .endfor
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}

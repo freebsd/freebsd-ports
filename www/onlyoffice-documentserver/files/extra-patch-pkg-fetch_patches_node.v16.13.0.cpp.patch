@@ -4,7 +4,31 @@ https://github.com/vercel/pkg-fetch/blob/main/patches/node.v16.14.2.cpp.patch
 
 --- server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch.orig	2021-12-30 20:04:18.203959000 +0100
 +++ server/node_modules/pkg-fetch/patches/node.v16.13.0.cpp.patch	2021-12-30 20:09:53.210319000 +0100
-@@ -521,3 +521,171 @@ index 0000000000..fb2d47f52b
+@@ -1,5 +1,5 @@
+---- node/common.gypi
+-+++ node/common.gypi
++--- common.gypi.orig	2021-10-26 14:00:54.000000000 +0200
+++++ common.gypi	2023-07-18 12:52:05.744323000 +0200
+ @@ -171,7 +171,7 @@
+                'MSVC_runtimeType': 2   # MultiThreadedDLL (/MD)
+              }],
+@@ -9,6 +9,15 @@ +              'lto': ' -flto=4 -ffat-lto-objects ', #
+              }, {
+                'lto': ' -flto ', # Clang
+              }],
++@@ -386,7 +386,7 @@
++       }],
++       [ 'OS in "linux freebsd openbsd solaris android aix cloudabi"', {
++         'cflags': [ '-Wall', '-Wextra', '-Wno-unused-parameter', ],
++-        'cflags_cc': [ '-fno-rtti', '-fno-exceptions', '-std=gnu++14' ],
+++        'cflags_cc': [ '-fno-rtti', '-fno-exceptions', '-std=gnu++14', '-Wno-error=enum-constexpr-conversion' ],
++         'defines': [ '__STDC_FORMAT_MACROS' ],
++         'ldflags': [ '-rdynamic' ],
++         'target_conditions': [
+ --- node/deps/v8/include/v8.h
+ +++ node/deps/v8/include/v8.h
+ @@ -10092,6 +10092,10 @@ class V8_EXPORT V8 {
+@@ -521,6 +530,174 @@ +            'cflags_cc': [ '-frtti', '-fno-lto' ],
               'cflags_cc!': [ '-fno-rtti' ],
             }],
             [ 'OS == "mac" or OS == "ios"', {
@@ -176,3 +200,6 @@ https://github.com/vercel/pkg-fetch/blob/main/patches/node.v16.14.2.cpp.patch
 + 
 + namespace node {
 + namespace cares_wrap {
+ --- node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi.orig	2019-08-06 20:46:23 UTC
+ +++ node/deps/openssl/config/archs/linux-elf/no-asm/openssl-cl.gypi
+ @@ -12,7 +12,7 @@

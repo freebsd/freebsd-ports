@@ -269,6 +269,7 @@ man/man1/ne.1.gz
 %%DATADIR%%/syntax/tcl.jsf
 %%DATADIR%%/syntax/tex.jsf
 %%DATADIR%%/syntax/texinfo.jsf
+%%DATADIR%%/syntax/toml.jsf
 %%DATADIR%%/syntax/troff.jsf
 %%DATADIR%%/syntax/txt2tags.jsf
 %%DATADIR%%/syntax/typescript.jsf

@@ -25,9 +25,9 @@
 +       -lpthread -lm
  
 +
- ccx_2.20: $(OCCXMAIN) ccx_2.20.a  $(LIBS)
--	./date.pl; $(CC) $(CFLAGS) -c ccx_2.20.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.20.a $(LIBS) -fopenmp
-+	./date.pl; $(CC) $(CFLAGS) -c ccx_2.20.c; $(FC) $(FFLAGS) -o $@ $(OCCXMAIN) ccx_2.20.a $(LIBS) -fopenmp
+ ccx_2.21: $(OCCXMAIN) ccx_2.21.a  $(LIBS)
+-	./date.pl; $(CC) $(CFLAGS) -c ccx_2.21.c; $(FC)  -Wall -O2 -o $@ $(OCCXMAIN) ccx_2.21.a $(LIBS) -fopenmp
++	./date.pl; $(CC) $(CFLAGS) -c ccx_2.21.c; $(FC) $(FFLAGS) -o $@ $(OCCXMAIN) ccx_2.21.a $(LIBS) -fopenmp
  
- ccx_2.20.a: $(OCCXF) $(OCCXC)
+ ccx_2.21.a: $(OCCXF) $(OCCXC)
  	ar vr $@ $?

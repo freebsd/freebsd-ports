@@ -97,7 +97,7 @@ include/claws-mail/gtk/about.h
 include/claws-mail/gtk/authors.h
 include/claws-mail/gtk/claws-marshal.h
 include/claws-mail/gtk/colorlabel.h
-include/claws-mail/gtk/colorsel.h
+%%GTK2%%include/claws-mail/gtk/colorsel.h
 include/claws-mail/gtk/combobox.h
 include/claws-mail/gtk/description_window.h
 include/claws-mail/gtk/filesel.h
@@ -105,7 +105,7 @@ include/claws-mail/gtk/foldersort.h
 include/claws-mail/gtk/gtkaspell.h
 include/claws-mail/gtk/gtkcmclist.h
 include/claws-mail/gtk/gtkcmctree.h
-include/claws-mail/gtk/gtkcmoptionmenu.h
+%%GTK2%%include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
 include/claws-mail/gtk/gtkunit.h
@@ -293,7 +293,7 @@ share/icons/hicolor/64x64/apps/claws-mail.png
 %%NLS%%share/locale/nl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
+%%GTK2%%%%NLS%%share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/claws-mail.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/claws-mail.mo

@@ -7,6 +7,7 @@ DISTFILES=	# none
 MAINTAINER=	michaelo@apache.org
 COMMENT=	Wrapper script for the various installations of Maven
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	mvn.sh
 SUB_LIST=	ETCDIR=${ETCDIR} CAT=${CAT} FIND=${FIND} TAIL=${TAIL}

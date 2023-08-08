@@ -1,6 +1,6 @@
 PORTNAME=	appleseed
 DISTVERSION=	2.1.0-beta
-PORTREVISION=	9
+PORTREVISION=	13
 CATEGORIES=	graphics
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -60,7 +60,7 @@ EMBREE_DESC=	Embree intersection backend support
 EMBREE_LIB_DEPENDS=	libembree3.so:graphics/embree
 EMBREE_CMAKE_ON=	-DWITH_EMBREE:BOOL=ON
 
-PYTHON_USES=	gl python:3.5+,build,run
+PYTHON_USES=	gl python:build,run
 PYTHON_USE=	GL=gl
 PYTHON_CMAKE_ON=	-DWITH_PYTHON3_BINDINGS:BOOL=ON
 

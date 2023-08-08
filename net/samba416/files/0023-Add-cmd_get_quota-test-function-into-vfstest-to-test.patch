@@ -1,0 +1,121 @@
+From 2e927425e04d65027db5348b3e89a69a5e447556 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 31 May 2021 03:07:40 +0200
+Subject: [PATCH 23/28] Add `cmd_get_quota()` test function into vfstest, to
+ test disk quota interface.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/torture/cmd_vfs.c     | 78 +++++++++++++++++++++++++++++++++++
+ source3/torture/wscript_build |  2 +-
+ 2 files changed, 79 insertions(+), 1 deletion(-)
+
+diff --git a/source3/torture/cmd_vfs.c b/source3/torture/cmd_vfs.c
+index 38ce0dc4ff6..1bc4639d2a2 100644
+--- a/source3/torture/cmd_vfs.c
++++ b/source3/torture/cmd_vfs.c
+@@ -145,6 +145,83 @@ static NTSTATUS cmd_disk_free(struct vfs_state *vfs, TALLOC_CTX *mem_ctx, int ar
+ 	return NT_STATUS_OK;
+ }
+ 
++static NTSTATUS cmd_get_quota(struct vfs_state *vfs, TALLOC_CTX *mem_ctx, int argc, const char **argv)
++{
++	struct smb_filename *smb_fname = NULL;
++	uint64_t bsize, dfree, dsize;
++	enum SMB_QUOTA_TYPE qtype;
++	SMB_DISK_QUOTA D;
++	unid_t id;
++	int r;
++
++	if (argc != 4) {
++		printf("Usage: get_quota <path> [user|group] id\n");
++		return NT_STATUS_OK;
++	}
++
++	smb_fname = synthetic_smb_fname(talloc_tos(),
++					argv[1],
++					NULL,
++					NULL,
++					0,
++					ssf_flags());
++	if (smb_fname == NULL) {
++		return NT_STATUS_NO_MEMORY;
++	}
++
++	if(strcmp(argv[2], "user") == 0) {
++		qtype = SMB_USER_FS_QUOTA_TYPE;
++	}
++	else if(strcmp(argv[2], "group") == 0) {
++		qtype = SMB_GROUP_FS_QUOTA_TYPE;
++	}
++	else {
++		printf("Usage: get_quota <path> [user|group] id\n");
++		return NT_STATUS_OK;
++	}
++
++	id.uid = atoi(argv[3]);
++
++	ZERO_STRUCT(D);
++
++	r = SMB_VFS_GET_QUOTA(vfs->conn, smb_fname, qtype, id, &D);
++
++	if (r == -1 && errno != ENOSYS) {
++		return NT_STATUS_UNSUCCESSFUL;
++	}
++
++	if (r == 0 && (D.qflags & QUOTAS_DENY_DISK) == 0) {
++		return NT_STATUS_UNSUCCESSFUL;
++	}
++
++	bsize = D.bsize;
++	/* Use softlimit to determine disk space, except when it has been exceeded */
++	if (
++		(D.softlimit && D.curblocks >= D.softlimit) ||
++		(D.hardlimit && D.curblocks >= D.hardlimit) ||
++		(D.isoftlimit && D.curinodes >= D.isoftlimit) ||
++		(D.ihardlimit && D.curinodes>=D.ihardlimit)
++	) {
++		dfree = 0;
++		dsize = D.curblocks;
++	} else if (D.softlimit==0 && D.hardlimit==0) {
++		return NT_STATUS_UNSUCCESSFUL;
++	} else {
++		if (D.softlimit == 0) {
++			D.softlimit = D.hardlimit;
++		}
++		dfree = D.softlimit - D.curblocks;
++		dsize = D.softlimit;
++	}
++
++	printf("get_quota: bsize = %lu, dfree = %lu, dsize = %lu\n",
++			(unsigned long)bsize,
++			(unsigned long)dfree,
++			(unsigned long)dsize);
++
++	return NT_STATUS_OK;
++}
++
+ 
+ static NTSTATUS cmd_opendir(struct vfs_state *vfs, TALLOC_CTX *mem_ctx, int argc, const char **argv)
+ {
+@@ -2257,6 +2334,7 @@ struct cmd_set vfs_commands[] = {
+ 	{ "connect",   cmd_connect,   "VFS connect()",    "connect" },
+ 	{ "disconnect",   cmd_disconnect,   "VFS disconnect()",    "disconnect" },
+ 	{ "disk_free",   cmd_disk_free,   "VFS disk_free()",    "disk_free <path>" },
++	{ "get_quota",   cmd_get_quota,   "VFS get_quota()",    "get_quota <path> [user|group] id" },
+ 	{ "opendir",   cmd_opendir,   "VFS opendir()",    "opendir <fname>" },
+ 	{ "readdir",   cmd_readdir,   "VFS readdir()",    "readdir" },
+ 	{ "mkdir",   cmd_mkdir,   "VFS mkdir()",    "mkdir <path>" },
+diff --git a/source3/torture/wscript_build b/source3/torture/wscript_build
+index 0c4275de795..f75c4bfe2be 100644
+--- a/source3/torture/wscript_build
++++ b/source3/torture/wscript_build
+@@ -124,4 +124,4 @@ bld.SAMBA3_BINARY('vfstest',
+                       smbconf
+                       SMBREADLINE
+                       ''',
+-                 for_selftest=True)
++                 install=True)
+-- 
+2.37.1
+

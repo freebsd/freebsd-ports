@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sagemath
 
+USE_CXXSTD=	c++14 # fix compilation failure on 14 due to use of the 'register' keyword
+
 PLIST_FILES=	bin/QuadraticSieve
 
 .include <bsd.port.mk>

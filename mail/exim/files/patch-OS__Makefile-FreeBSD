@@ -1,11 +1,13 @@
---- OS/Makefile-FreeBSD.orig	2009-11-14 21:13:45.000000000 +0300
-+++ OS/Makefile-FreeBSD	2009-11-14 21:15:39.000000000 +0300
-@@ -7,7 +7,7 @@
- PORTOBJFORMAT!= test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+--- OS/Makefile-FreeBSD.orig	2023-04-09 09:45:04.226201000 +0200
++++ OS/Makefile-FreeBSD	2023-04-09 09:48:01.819463000 +0200
+@@ -18,8 +18,8 @@
+ # Dynamically loaded modules need to be built with -fPIC
+ CFLAGS_DYNAMIC=-shared -rdynamic -fPIC
  
- CHOWN_COMMAND=/usr/sbin/chown
--STRIP_COMMAND=/usr/bin/strip
-+STRIP_COMMAND=XX_STRIPCMD_XX
- CHMOD_COMMAND=/bin/chmod
+-# FreeBSD always ships with Berkeley DB
+-USE_DB=yes
++# FreeBSD ships with Berkeley DB until 13.1, but ndbm is always included
++USE_NDBM=yes
  
- HAVE_SA_LEN=YES
+ # This code for building outside ports suggested by Richard Clayton
+ .ifdef   X11BASE

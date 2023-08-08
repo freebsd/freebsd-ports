@@ -1,0 +1,35 @@
+From 639b8d650685476016a6d5b1c996a04ac54f8a6f Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sun, 30 May 2021 04:00:08 +0200
+Subject: [PATCH 02/28] Adjust abi_gen.sh script to run under FreeBSD with it's
+ own bintools and slightly different output of GDB.
+
+Substitution: yes
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ buildtools/scripts/abi_gen.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/buildtools/scripts/abi_gen.sh b/buildtools/scripts/abi_gen.sh
+index ddb0a7cc36f..d2750705ff9 100755
+--- a/buildtools/scripts/abi_gen.sh
++++ b/buildtools/scripts/abi_gen.sh
+@@ -9,6 +9,7 @@ GDBSCRIPT="gdb_syms.$$"
+ cat <<EOF
+ set height 0
+ set width 0
++set print sevenbit-strings on
+ EOF
+ 
+ # On older linker versions _init|_fini symbols are not hidden.
+@@ -22,5 +23,5 @@ done
+ ) > $GDBSCRIPT
+ 
+ # forcing the terminal avoids a problem on Fedora12
+-TERM=none gdb -n -batch -x $GDBSCRIPT "$SHAREDLIB" < /dev/null
++TERM=none %%GDB_CMD%% -n -batch -x $GDBSCRIPT "$SHAREDLIB" < /dev/null
+ rm -f $GDBSCRIPT
+-- 
+2.37.1
+

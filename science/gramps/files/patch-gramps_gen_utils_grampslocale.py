@@ -1,6 +1,6 @@
---- gramps/gen/utils/grampslocale.py.orig	2022-06-08 13:02:30.116272000 +0200
-+++ gramps/gen/utils/grampslocale.py	2022-06-08 12:40:34.253581000 +0200
-@@ -527,9 +527,14 @@
+--- gramps/gen/utils/grampslocale.py.orig	2023-06-29 20:37:13 UTC
++++ gramps/gen/utils/grampslocale.py
+@@ -525,9 +525,14 @@ class GrampsLocale:
          # with locale instead of gettext. Win32 doesn't support bindtextdomain.
          if self.localedir:
              if not sys.platform == 'win32':

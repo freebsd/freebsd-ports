@@ -1,0 +1,6 @@
+Treelib implements the tree structure in Python.
+
+Tree is an important data structure in computer science. Examples are shown in
+ML algorithm designs such as random forest tree and software engineering such
+as file system index. treelib is created to provide an efficient implementation
+of tree data structure in Python.

@@ -11,6 +11,7 @@ lib/seed7/bin/seed7_05.a
 lib/seed7/lib/aes.s7i
 lib/seed7/lib/ar.s7i
 lib/seed7/lib/arc4.s7i
+lib/seed7/lib/archive_base.s7i
 lib/seed7/lib/array.s7i
 lib/seed7/lib/asn1.s7i
 lib/seed7/lib/bigfile.s7i

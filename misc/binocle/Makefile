@@ -1,0 +1,227 @@
+PORTNAME=	binocle
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
+PORTREVISION=	3
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Graphical tool to visualize binary data
+WWW=		https://github.com/sharkdp/binocle
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sharkdp
+
+CARGO_CRATES=	ab_glyph-0.2.20 \
+		ab_glyph_rasterizer-0.1.8 \
+		ahash-0.7.6 \
+		aho-corasick-0.7.20 \
+		anyhow-1.0.70 \
+		arrayvec-0.7.2 \
+		ash-0.33.3+1.2.191 \
+		atomic_refcell-0.1.9 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
+		bitflags-1.3.2 \
+		block-0.1.6 \
+		bumpalo-3.12.0 \
+		bytemuck-1.13.1 \
+		byteorder-1.4.3 \
+		calloop-0.9.3 \
+		cc-1.0.79 \
+		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
+		cfg_aliases-0.1.1 \
+		clap-3.2.23 \
+		clap_derive-3.2.18 \
+		clap_lex-0.2.4 \
+		cocoa-0.24.1 \
+		cocoa-foundation-0.1.1 \
+		codespan-reporting-0.11.1 \
+		colorgrad-0.5.0 \
+		copyless-0.1.5 \
+		core-foundation-0.7.0 \
+		core-foundation-0.9.3 \
+		core-foundation-sys-0.7.0 \
+		core-foundation-sys-0.8.3 \
+		core-graphics-0.19.2 \
+		core-graphics-0.22.3 \
+		core-graphics-types-0.1.1 \
+		core-video-sys-0.1.4 \
+		csscolorparser-0.5.0 \
+		cty-0.2.2 \
+		d3d12-0.4.1 \
+		darling-0.13.4 \
+		darling_core-0.13.4 \
+		darling_macro-0.13.4 \
+		dispatch-0.2.0 \
+		dlib-0.5.0 \
+		downcast-rs-1.2.0 \
+		egui-0.15.0 \
+		egui_wgpu_backend-0.14.0 \
+		egui_winit_platform-0.12.0 \
+		emath-0.15.0 \
+		env_logger-0.9.3 \
+		epaint-0.15.0 \
+		epi-0.15.0 \
+		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
+		fxhash-0.2.1 \
+		getrandom-0.1.16 \
+		getrandom-0.2.8 \
+		glow-0.11.2 \
+		gpu-alloc-0.5.3 \
+		gpu-alloc-types-0.2.0 \
+		gpu-descriptor-0.2.3 \
+		gpu-descriptor-types-0.1.1 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hexf-parse-0.2.1 \
+		humansize-1.1.1 \
+		humantime-2.1.0 \
+		ident_case-1.0.1 \
+		indexmap-1.9.3 \
+		inplace_it-0.3.5 \
+		instant-0.1.12 \
+		jni-sys-0.3.0 \
+		js-sys-0.3.61 \
+		khronos-egl-4.1.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.140 \
+		libloading-0.7.4 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		malloc_buf-0.0.6 \
+		memchr-2.5.0 \
+		memmap2-0.3.1 \
+		memmap2-0.5.10 \
+		memoffset-0.6.5 \
+		metal-0.23.1 \
+		minimal-lexical-0.2.1 \
+		mio-0.8.6 \
+		naga-0.7.3 \
+		ndk-0.5.0 \
+		ndk-context-0.1.1 \
+		ndk-glue-0.5.2 \
+		ndk-macro-0.3.0 \
+		ndk-sys-0.2.2 \
+		nix-0.22.3 \
+		nix-0.24.3 \
+		nohash-hasher-0.2.0 \
+		nom-7.1.3 \
+		num-traits-0.2.15 \
+		num_enum-0.5.11 \
+		num_enum_derive-0.5.11 \
+		objc-0.2.7 \
+		objc_exception-0.1.2 \
+		once_cell-1.17.1 \
+		os_str_bytes-6.5.0 \
+		owned_ttf_parser-0.18.1 \
+		parking_lot-0.11.2 \
+		parking_lot_core-0.8.6 \
+		percent-encoding-2.2.0 \
+		phf-0.8.0 \
+		phf_generator-0.8.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
+		pixels-0.7.0 \
+		pkg-config-0.3.26 \
+		pollster-0.2.5 \
+		ppv-lite86-0.2.17 \
+		proc-macro-crate-1.3.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.55 \
+		profiling-1.0.7 \
+		quote-1.0.26 \
+		rand-0.7.3 \
+		rand_chacha-0.2.2 \
+		rand_core-0.5.1 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
+		range-alloc-0.1.3 \
+		raw-window-handle-0.3.4 \
+		raw-window-handle-0.4.3 \
+		redox_syscall-0.2.16 \
+		regex-1.7.3 \
+		regex-syntax-0.6.29 \
+		renderdoc-sys-0.7.1 \
+		safe_arch-0.5.2 \
+		scoped-tls-1.0.1 \
+		scopeguard-1.1.0 \
+		siphasher-0.3.10 \
+		slotmap-1.0.6 \
+		smallvec-1.10.0 \
+		smithay-client-toolkit-0.15.4 \
+		spirv-0.2.0+1.5.4 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.13 \
+		termcolor-1.2.0 \
+		textwrap-0.16.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.8 \
+		ttf-parser-0.18.1 \
+		ultraviolet-0.8.1 \
+		unicode-ident-1.0.8 \
+		unicode-width-0.1.10 \
+		version_check-0.9.4 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-futures-0.4.34 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
+		wayland-client-0.29.5 \
+		wayland-commons-0.29.5 \
+		wayland-cursor-0.29.5 \
+		wayland-protocols-0.29.5 \
+		wayland-scanner-0.29.5 \
+		wayland-sys-0.29.5 \
+		web-sys-0.3.57 \
+		wgpu-0.11.1 \
+		wgpu-core-0.11.3 \
+		wgpu-hal-0.11.5 \
+		wgpu-types-0.11.0 \
+		wide-0.6.5 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.2 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_msvc-0.42.2 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_msvc-0.42.2 \
+		winit-0.26.1 \
+		winit_input_helper-0.11.1 \
+		winnow-0.4.1 \
+		x11-dl-2.21.0 \
+		xcursor-0.3.4 \
+		xml-rs-0.8.4
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

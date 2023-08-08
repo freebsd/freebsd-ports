@@ -10,5 +10,3 @@ chunks, and the parsing begins as soon as the parser receives the first document
 chunk. LuaExpat reports parsing events (such as the start and end of elements)
 directly to the application through callbacks. The parsing of huge documents can
 benefit from this piecemeal operation.
-
-See also: https://github.com/lunarmodules/luaexpat

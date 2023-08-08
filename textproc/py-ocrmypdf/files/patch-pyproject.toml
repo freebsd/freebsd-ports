@@ -1,0 +1,13 @@
+Allow build with older versions of devel/py-setuptools_scm .
+
+--- pyproject.toml.orig	2023-02-23 20:43:57 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = [
+ [build-system]
+ requires = [
+   "setuptools >= 61",
+-  "setuptools_scm[toml] >= 7.0.5",
++  "setuptools_scm[toml]",
+   "wheel"
+ ]
+ build-backend = "setuptools.build_meta"

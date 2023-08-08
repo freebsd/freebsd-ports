@@ -1,7 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.17.0
-PORTREVISION=	2
+DISTVERSION=	1.12.13.0
+# PORTREVISION must be set with ?= so as not to stomp over
+# py-openimageio's PORTREVISION.
+# Also, just to be on the safe side, when resetting,
+# best keep PORTREVISION?=	0.
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -14,15 +18,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: llvm_ops.cpp:101:10: fatal error: 'iostream' file not found
 BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__threading_support:135:3: Unsupported architecture
 
-BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
 		libpugixml.so:textproc/pugixml
-RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-USES=		bison cmake compiler:c++14-lang localbase ncurses qt:5
+USES=		bison cmake compiler:c++14-lang llvm:max=15,lib localbase ncurses qt:5
 
 USE_QT=		buildtools:build qmake:build
 
@@ -31,17 +33,11 @@ GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenShadingLanguage
 
 CMAKE_ON=	ENABLERTTI OSL_BUILD_TESTS USE_LLVM_BITCODE USE_LIBCPLUSPLUS
-CMAKE_OFF=	USE_BOOST_WAVE
-CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VER}" \
+CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} -DCMAKE_CXX_STANDARD=14
-# This flag fixes linking with clang 9.0 ??
-CXXFLAGS+=	-DNDEBUG
 
-OPTIONS_DEFINE=		MATERIALX OSLTOY
+OPTIONS_DEFINE=		OSLTOY
 OPTIONS_SUB=		yes
-
-MATERIALX_DESC=		Install material library
-MATERIALX_CMAKE_BOOL=	OSL_BUILD_MATERIALX
 
 OSLTOY_DESC=		Interactive shader edit and visualize tool
 OSLTOY_CMAKE_BOOL=	USE_QT
@@ -55,17 +51,10 @@ PLIST_SUB=	SHL3=${PORTVERSION:R} SHL2=${PORTVERSION:R:R}
 
 .include <bsd.port.options.mk>
 
-.if ${LLVM_DEFAULT:M[678]0}
-LLVM_VER=	90
-.else
-LLVM_VER=	${LLVM_DEFAULT}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},' \
 		-e 's,%%PYCMD%%,${PYTHON_CMD},' \
 		${WRKSRC}/src/shaders/CMakeLists.txt \
-		${WRKSRC}/src/shaders/MaterialX/CMakeLists.txt \
 		${WRKSRC}/src/doc/CMakeLists.txt \
 		${WRKSRC}/src/liboslexec/CMakeLists.txt
 

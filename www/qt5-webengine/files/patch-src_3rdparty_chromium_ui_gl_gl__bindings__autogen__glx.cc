@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gl/gl_bindings_autogen_glx.cc
 @@ -119,6 +119,8 @@ void DriverGLX::InitializeExtensionBindings() {
  
@@ -32,7 +32,7 @@
  void GLXApiBase::glXGetSelectedEventFn(Display* dpy,
                                         GLXDrawable drawable,
                                         unsigned long* mask) {
-@@ -650,6 +661,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -651,6 +662,11 @@ bool TraceGLXApi::glXGetMscRateOMLFn(Display* dpy,
    return glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);
  }
  
@@ -44,7 +44,7 @@
  void TraceGLXApi::glXGetSelectedEventFn(Display* dpy,
                                          GLXDrawable drawable,
                                          unsigned long* mask) {
-@@ -1072,6 +1088,14 @@ bool DebugGLXApi::glXGetMscRateOMLFn(Display* dpy,
+@@ -1072,6 +1088,14 @@ bool LogGLXApi::glXGetMscRateOMLFn(Display* dpy,
                   << static_cast<const void*>(denominator) << ")");
    bool result =
        glx_api_->glXGetMscRateOMLFn(dpy, drawable, numerator, denominator);

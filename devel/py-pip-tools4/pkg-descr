@@ -2,5 +2,3 @@ pip-tools = pip-compile + pip-sync
 
 It is a set of command line tools to help you keep your pip-based packages
 fresh, even when you've pinned them.
-
-See also: https://github.com/jazzband/pip-tools

@@ -54,6 +54,8 @@ SSL_CFLAGS_OFF=		-DNO_SSL_SUPPORT
 SSL_LDFLAGS=		-L${OPENSSLLIB}
 SSL_LIBS=		-lcrypto -lssl
 SSL_USES=		ssl
+SSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
+		BROKEN_SSL_REASON="Fails to build with error: 'ERR_func_error_string' is deprecated"
 
 USER_DESC=		Optional /~user transformation (-e, -p, -u)
 USER_CFLAGS_OFF=	-DNO_USER_SUPPORT

@@ -22,6 +22,10 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-Wno-empty-body -Wno-constant-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=deprecated-non-prototype -Wno-error=strict-prototypes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sendip
 .for slib in ipv4.so ipv6.so icmp.so tcp.so udp.so rip.so ripng.so ntp.so \

@@ -1,4 +1,4 @@
---- media/audio/sndio/audio_manager_sndio.cc.orig	2022-03-28 18:11:04 UTC
+--- media/audio/sndio/audio_manager_sndio.cc.orig	2022-12-01 10:35:46 UTC
 +++ media/audio/sndio/audio_manager_sndio.cc
 @@ -0,0 +1,181 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -75,7 +75,7 @@
 +      user_buffer_size : kDefaultInputBufferSize;
 +
 +  return AudioParameters(
-+      AudioParameters::AUDIO_PCM_LOW_LATENCY, CHANNEL_LAYOUT_STEREO,
++      AudioParameters::AUDIO_PCM_LOW_LATENCY, ChannelLayoutConfig::Stereo(),
 +      kDefaultSampleRate, buffer_size);
 +}
 +
@@ -128,12 +128,12 @@
 +  DLOG_IF(ERROR, !output_device_id.empty()) << "Not implemented!";
 +  static const int kDefaultOutputBufferSize = 2048;
 +
-+  ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
++  ChannelLayoutConfig channel_layout_config = ChannelLayoutConfig::Stereo();
 +  int sample_rate = kDefaultSampleRate;
 +  int buffer_size = kDefaultOutputBufferSize;
 +  if (input_params.IsValid()) {
 +    sample_rate = input_params.sample_rate();
-+    channel_layout = input_params.channel_layout();
++    channel_layout_config = input_params.channel_layout_config();
 +    buffer_size = std::min(buffer_size, input_params.frames_per_buffer());
 +  }
 +
@@ -142,8 +142,8 @@
 +    buffer_size = user_buffer_size;
 +
 +  return AudioParameters(
-+      AudioParameters::AUDIO_PCM_LOW_LATENCY, channel_layout,
-+      sample_rate, buffer_size);
++      AudioParameters::AUDIO_PCM_LOW_LATENCY,
++      channel_layout_config, sample_rate, buffer_size);
 +}
 +
 +AudioInputStream* AudioManagerSndio::MakeInputStream(

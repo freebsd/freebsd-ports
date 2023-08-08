@@ -1,0 +1,2 @@
+PyQt6 is a set of Python bindings for Qt6 application framework.
+This package provides the Qsci module for the Qscintilla2 editor component.

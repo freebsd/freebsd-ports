@@ -275,6 +275,7 @@ include/simgear/scene/util/DeletionManager.hxx
 include/simgear/scene/util/NodeAndDrawableVisitor.hxx
 include/simgear/scene/util/Noise.hxx
 include/simgear/scene/util/OptionsReadFileCallback.hxx
+include/simgear/scene/util/OrthophotoManager.hxx
 include/simgear/scene/util/OsgDebug.hxx
 include/simgear/scene/util/OsgMath.hxx
 include/simgear/scene/util/OsgSingleton.hxx

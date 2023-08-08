@@ -1,7 +1,7 @@
 PORTNAME=	openroad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0-2930
-PORTREVISION=	1
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-gaa6d690df
 PORTEPOCH=	1
 CATEGORIES=	cad
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libcudd.so:math/cudd \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 
-USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 localbase:ldflags python:3.7+,build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
+USES=		bison compiler:c++17-lang cmake eigen:3 qt:5 localbase:ldflags python:build readline tcl:86 # the code asks for tcl-87, but build fails: https://github.com/The-OpenROAD-Project/OpenROAD/issues/508
 USE_QT=		core gui widgets buildtools:build qmake:build
 
 USE_GITHUB=	yes

@@ -1,5 +1,6 @@
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
@@ -10,6 +11,9 @@ WWW=		https://fusioninventory.org/
 
 LICENSE=	AGPLv3
 
+DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
+EXPIRATION_DATE=	2023-12-31
+
 RUN_DEPENDS=	glpi>=9.5:www/glpi
 
 USES=		gettext php shebangfix
@@ -18,7 +22,7 @@ GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
 USE_PHP=	fileinfo simplexml
-IGNORE_WITH_PHP=	81 82
+IGNORE_WITH_PHP=	81 82 83
 
 GLPI_VER=	9.5.0
 FUNV_VER=	1.5

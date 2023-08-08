@@ -1,5 +1,6 @@
 PORTNAME=	minorminer
-DISTVERSION=	0.2.9
+DISTVERSION=	0.2.11
+PORTREVISION=	1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,15 +21,21 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fasteners>=0.15:devel/py-fasteners@${PY_FLAVO
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.6+
-USE_PYTHON=	distutils cython autoplist
+USES=		python
+USE_PYTHON=	distutils cython autoplist pytest # 9 tests fail, see https://github.com/dwavesystems/minorminer/issues/231
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems
+GH_TUPLE=	boothby:glasgow-subgraph-solver:568c45f:glasgow_subgraph_solver/external/glasgow-subgraph-solver \
+		nemequ:portable-snippets:84abba9:portable_snippets/external/portable-snippets
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/tests
 
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/_minorminer${PYTHON_EXT_SUFFIX}.so \
-		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/busclique${PYTHON_EXT_SUFFIX}.so
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/busclique${PYTHON_EXT_SUFFIX}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/minorminer/subgraph${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>

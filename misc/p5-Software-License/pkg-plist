@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Software/License/Apache_1_1.pm
 %%SITE_PERL%%/Software/License/Apache_2_0.pm
 %%SITE_PERL%%/Software/License/Artistic_1_0.pm
+%%SITE_PERL%%/Software/License/Artistic_1_0_Perl.pm
 %%SITE_PERL%%/Software/License/Artistic_2_0.pm
 %%SITE_PERL%%/Software/License/BSD.pm
 %%SITE_PERL%%/Software/License/CC0_1_0.pm
@@ -36,6 +37,7 @@
 %%PERL5_MAN3%%/Software::License::Apache_1_1.3.gz
 %%PERL5_MAN3%%/Software::License::Apache_2_0.3.gz
 %%PERL5_MAN3%%/Software::License::Artistic_1_0.3.gz
+%%PERL5_MAN3%%/Software::License::Artistic_1_0_Perl.3.gz
 %%PERL5_MAN3%%/Software::License::Artistic_2_0.3.gz
 %%PERL5_MAN3%%/Software::License::BSD.3.gz
 %%PERL5_MAN3%%/Software::License::CC0_1_0.3.gz

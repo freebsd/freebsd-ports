@@ -1,6 +1,6 @@
 PORTNAME=	srain
 DISTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		compiler:c11 gettext-tools gnome meson pkgconfig ssl
+USES=		compiler:c11 gettext-tools desktop-file-utils gnome meson pkgconfig ssl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 
 OPTIONS_DEFINE=	DOCS

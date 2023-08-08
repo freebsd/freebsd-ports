@@ -1,5 +1,6 @@
 PORTNAME=	gnome-shell-extension-mediaplayer
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 
@@ -11,7 +12,7 @@ BUILD_DEPENDS=	gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gnome-shell>=0:x11/gnome-shell \
 		gsettings-desktop-schemas>=3.12.0:devel/gsettings-desktop-schemas
 
-USES=		gettext gnome meson pkgconfig python:3.4+,build
+USES=		gettext gnome meson pkgconfig python:build
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 

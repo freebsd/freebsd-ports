@@ -1,0 +1,3 @@
+To create a password encrypted zip file in python. And the zip file is able to
+extract in WINDOWS, GNU/Linux, BSD and others. This is a simple Minizip wrapper
+of python.

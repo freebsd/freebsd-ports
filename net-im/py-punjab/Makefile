@@ -1,7 +1,7 @@
 PORTNAME=	punjab
 PORTVERSION=	0.15
 CATEGORIES=	net-im python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/twonds/punjab
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	punjab
 

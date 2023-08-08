@@ -1,6 +1,6 @@
 PORTNAME=	openspc
 PORTVERSION=	0.3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	http://membres.lycos.fr/pixels/ \
 		LOCAL/ehaupt

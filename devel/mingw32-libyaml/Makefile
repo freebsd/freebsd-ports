@@ -1,6 +1,6 @@
 PORTNAME=	libyaml
 PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 PKGNAMEPREFIX=	mingw32-

@@ -16,7 +16,7 @@ GH_ACCOUNT=	bareos
 GH_PROJECT=	bareos
 
 USES=		cpe php
-USE_PHP=	openssl gettext ctype hash json session iconv
+USE_PHP=	gettext ctype session iconv
 NO_BUILD=	yes
 NO_ARCH=	yes
 

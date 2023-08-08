@@ -19,7 +19,7 @@ LICENSE_TEXT=	Packaging prohibited by Oracle license
 LICENSE_PERMS=	auto-accept
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.7 1.8
+JAVA_VERSION=	8
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	aws-sigv4
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-aws-eventstream>=1.0.2<2:devel/rubygem-aws-eventstream
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

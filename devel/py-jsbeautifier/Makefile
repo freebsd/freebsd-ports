@@ -1,7 +1,7 @@
 PORTNAME=	jsbeautifier
-PORTVERSION=	1.11.0
+PORTVERSION=	1.14.7
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.6.1:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}editorconfig>=0.12.0:editors/py-editorconfig@${PY_FLAVOR}
 
-USES?=		python:3.6+
+USES?=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

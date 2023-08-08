@@ -97,7 +97,7 @@ WRKSRC_crate_${_crate}=	${WRKDIR}/${_wrksrc}
 
 CARGO_BUILDDEP?=	yes
 .  if ${CARGO_BUILDDEP:tl} == "yes"
-BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.65.0:lang/${RUST_DEFAULT}
+BUILD_DEPENDS+=	${RUST_DEFAULT}>=1.71.0:lang/${RUST_DEFAULT}
 .  elif ${CARGO_BUILDDEP:tl} == "any-version"
 BUILD_DEPENDS+=	${RUST_DEFAULT}>=0:lang/${RUST_DEFAULT}
 .  endif
@@ -139,11 +139,18 @@ CARGO_ENV+= \
 CARGO_ENV+=	RUST_BACKTRACE=1
 .  endif
 
+.  if !defined(LTO_UNSAFE) || (defined(LTO_DISABLE_CHECK) && ${ARCH} == powerpc64) || (defined(LTO_DISABLE_CHECK) && ${ARCH} == riscv64)
+_CARGO_MSG=	"===>   Additional optimization to port applied"
+WITH_LTO=	yes
+.  endif
+
 # Adjust -C target-cpu if -march/-mcpu is set by bsd.cpu.mk
 .  if ${ARCH} == amd64 || ${ARCH} == i386
 RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
 .  elif ${ARCH:Mpowerpc*}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/:S/power/pwr/}
+.  elif ${ARCH} == aarch64 || ${ARCH} == armv7
+RUSTFLAGS+=	-C target-cpu=${CPUTYPE:C/\+.+//g}
 .  else
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .  endif
@@ -198,7 +205,7 @@ CARGO_INSTALL_ARGS+=	--debug
 .  endif
 
 .  if ${_CARGO_CRATES:Mcmake}
-BUILD_DEPENDS+=	cmake:devel/cmake
+BUILD_DEPENDS+=	cmake:devel/cmake-core
 .  endif
 
 .  if ${_CARGO_CRATES:Mgettext-sys}
@@ -242,6 +249,11 @@ CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 
 .  if ${_CARGO_CRATES:Mpkg-config}
 .include "${USESDIR}/pkgconfig.mk"
+.  endif
+
+.  if ${_CARGO_CRATES:Mzstd-sys}
+# Use the system's zstd instead of building the bundled version
+CARGO_ENV+=	ZSTD_SYS_USE_PKG_CONFIG=1
 .  endif
 
 .  for _index _crate _name _version in ${_CARGO_CRATES}
@@ -295,6 +307,9 @@ cargo-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
+.    if defined(_CARGO_MSG)
+	@${ECHO_MSG} ${_CARGO_MSG}
+.    endif
 	@${ECHO_MSG} "===>   Cargo config:"
 	@${MKDIR} ${WRKDIR}/.cargo
 	@: > ${WRKDIR}/.cargo/config.toml

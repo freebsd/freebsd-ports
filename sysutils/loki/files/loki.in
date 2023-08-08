@@ -22,6 +22,10 @@
 # loki_logfile (string)
 #     Set full path to log file
 #     Default is "/var/log/loki/loki.log"
+# loki_loglevel (string)
+#     Set log level. Only log messages with the given severity or above.
+#     Valid levels: [debug, info, warn, error]
+#     Default is "warn"
 # loki_args (string)
 #     Set additional command line arguments
 #     Default is ""
@@ -38,6 +42,7 @@ load_rc_config $name
 : ${loki_group:="%%LOKI_GROUP%%"}
 : ${loki_config:="%%PREFIX%%/etc/loki.yaml"}
 : ${loki_logfile:="/var/log/loki/loki.log"}
+: ${loki_loglevel:="warn"}
 
 pidfile="/var/run/${name}/${name}.pid"
 required_files="${loki_config}"
@@ -47,6 +52,7 @@ command="/usr/sbin/daemon"
 command_args="-p ${pidfile} -t ${name} -o ${loki_logfile} \
 	${procname} \
 	--config.file=${loki_config} \
+	--log.level=${loki_loglevel} \
 	${loki_args}"
 
 start_precmd="loki_start_precmd"

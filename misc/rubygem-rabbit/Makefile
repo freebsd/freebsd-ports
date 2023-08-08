@@ -1,6 +1,6 @@
 PORTNAME=	rabbit
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -22,13 +22,12 @@ RUN_DEPENDS=	rubygem-coderay>=1.0.0:textproc/rubygem-coderay \
 		rubygem-nokogiri>0:textproc/rubygem-nokogiri \
 		rubygem-poppler>=3.2.5:x11-toolkits/rubygem-poppler \
 		rubygem-rdtool>0:textproc/rubygem-rdtool \
-		rubygem-rouge>0:textproc/rubygem-rouge \
+		rubygem-rouge3>0:textproc/rubygem-rouge3 \
 		rubygem-rsvg2>=3.1.4:graphics/rubygem-rsvg2 \
 		rubygem-rttool>0:textproc/rubygem-rttool
 
 NO_ARCH=	yes
 USES=		gem gettext
-USE_RUBY=	yes
 PLIST_FILES=	bin/rabbit bin/rabbirc bin/rabbit-command bin/rabbit-slide \
 		bin/rabbit-theme
 

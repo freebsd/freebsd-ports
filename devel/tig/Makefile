@@ -1,5 +1,5 @@
 PORTNAME=	tig
-DISTVERSION=	2.5.5
+DISTVERSION=	2.5.8
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jonas/tig/releases/download/${DISTNAME}/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	git:devel/git
 
-USES=		iconv gmake ncurses readline
+USES=		gmake iconv ncurses readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
 MAKE_ARGS=	V=1
@@ -22,8 +22,8 @@ INSTALL_TARGET=	install install-doc-man
 # Tests fail when running as part of a non-interactive Poudriere
 # build, but using script(1) seems to be a good enough workaround and
 # allows them to run successfully anyway.
-TEST_TARGET=	test
-DO_MAKE_TEST=	/usr/bin/script -q /dev/null ${SETENV} ${TEST_ENV} ${GMAKE}
+TEST_TARGET=	test-address-sanitizer
+DO_MAKE_TEST=	script -q /dev/null ${SETENV} ${TEST_ENV} ${GMAKE}
 
 PLIST_FILES=	bin/tig \
 		'@sample etc/tigrc.sample' \
@@ -31,12 +31,14 @@ PLIST_FILES=	bin/tig \
 		man/man5/tigrc.5.gz \
 		man/man7/tigmanual.7.gz
 
-OPTIONS_DEFINE=	GIT
+OPTIONS_DEFINE=	GIT PCRE
 
 GIT_DESC=	Install devel/git as runtime dependency
 
 GIT_RUN_DEPENDS=	git:devel/git
-GIT_VARS_OFF=	PKGMESSAGE="${.CURDIR}/pkg-message-git"
+GIT_VARS_OFF=		PKGMESSAGE="${.CURDIR}/pkg-message-git"
+PCRE_LIB_DEPENDS=	lpcre2-posix.so:devel/pcre2
+PCRE_CONFIGURE_WITH=	pcre
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/tigrc ${STAGEDIR}${PREFIX}/etc/tigrc.sample

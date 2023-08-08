@@ -1,6 +1,7 @@
 PORTNAME=	ponscripter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${GH_ACCOUNT}
 
@@ -24,6 +25,7 @@ GH_ACCOUNT=	07th-mod
 GH_PROJECT=	${PORTNAME}-fork
 
 USES=		compiler:c++11-lang gmake pkgconfig sdl shebangfix
+USE_CXXSTD=	gnu++98
 USE_SDL=	image2 mixer2
 EXTRACT_AFTER_ARGS=--exclude src/extlib
 SHEBANG_FILES=	util/xml-template
@@ -39,6 +41,7 @@ OPTIONS_DEFINE=	DOCS MANPAGES NOTIFY TREMOR
 OPTIONS_DEFAULT=MANPAGES NOTIFY ${MACHINE_CPU:Msoftfp:C/.+/TREMOR/}
 
 MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto
+MANPAGES_CONFIGURE_OFF=	--no-docs
 MANPAGES_PLIST_FILES=\
 	man/man6/ponscr.6.gz \
 	man/man7/ponscr-ext.7.gz \
@@ -46,6 +49,8 @@ MANPAGES_PLIST_FILES=\
 	man/man7/ponscripter.7.gz
 
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
+NOTIFY_USES=		gnome
+NOTIFY_USE=		GNOME=glib20 # g_object_unref
 NOTIFY_CONFIGURE_WITH=	libnotify
 
 TREMOR_LIB_DEPENDS=	libvorbisidec.so:audio/libtremor
@@ -62,7 +67,6 @@ post-patch:
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -i .manpages.bak \
 		-e '/install-man/d' \
-		-e 's/xmlto/${FALSE}/' \
 		${WRKSRC}/configure
 
 post-patch-TREMOR-on:

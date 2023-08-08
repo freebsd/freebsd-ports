@@ -13,6 +13,7 @@ LICENSE=	GPLv2+
 OPTIONS_DEFINE=	SDL
 
 USES=		compiler gmake makeinfo tar:bzip2 xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-alternate-scoresdir=${SCOREDIR} \

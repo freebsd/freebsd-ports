@@ -1,0 +1,4 @@
+BinGrok is a binary/hexadecimal editor created specifically with
+the goal of reverse-engineering proprietary data formats in mind.
+It allows for creation of C-struct-like "views" of your data for
+better visualization of the parts that you have deciphered.

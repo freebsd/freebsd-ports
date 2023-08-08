@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-06-01 04:04:25 UTC
++++ Makefile
+@@ -60,8 +60,6 @@ DATA = orafce--4.3.sql\
+ 		orafce--4.2--4.3.sql
+ 
+ 
+-DOCS = README.asciidoc COPYRIGHT.orafce INSTALL.orafce
+-
+ PG_CONFIG ?= pg_config
+ 
+ # make "all" the default target

@@ -1,129 +1,212 @@
 PORTNAME=	baresip
-PORTVERSION=	0.5.8
-PORTREVISION=	9
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.12.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.creytiv.com/pub/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small SIP client
-WWW=		http://www.creytiv.com/baresip.html
+WWW=		https://github.com/baresip
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/docs/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	re>=0.5.8:audio/re \
-		rem>=0.5.3:audio/rem
+BUILD_DEPENDS=	re>=${PORTVERSION}:audio/re \
+		rem>=${PORTVERSION}:audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		gmake pkgconfig ssl
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ilbc
-MAKE_ARGS=	MOD_AUTODETECT=""
-PLIST_FILES=	bin/baresip
-PORTDATA=	*
-PORTDOCS=	*
-PORTEXAMPLES=	*
+USES=		cmake ssl pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	baresip
 
-#OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC ISAC OPENGLES
-OPTIONS_DEFINE=	CONS DOCS EXAMPLES FFMPEG G711 G722 G726 GSM GSTREAMER ILBC \
-	L16 OPUS OSS PORTAUDIO PULSEAUDIO SDL SNDFILE SPEEX STDIO UUID V4L V4L2 X11 \
-	DTLS_SRTP AUBRIDGE VIDBRIDGE HTTPD DSHOW DIRECTFB ACCOUNT \
-	NATPMP SDL MIW SNAPSHOT SELFVIEW VUMETER AULOOP CONTACT \
-	MENU PRESENCE SYSLOG VIDLOOP
-OPTIONS_DEFAULT=CONS G711 G722 G726 L16 OSS STDIO
+# FIXME values of the next 3 variables taken from source code Makefile
+ABI_MAJOR=	4
+ABI_AGE=	12
+ABI_REV=	0
+PLIST_SUB=	ABI_MAJOR=${ABI_MAJOR}
+PLIST_SUB+=	ABI_AGE=${ABI_AGE}
+PLIST_SUB+=	ABI_REV=${ABI_REV}
 
-AULOOP_DESC=	Audio-loop test module
-BV32_DESC=	BroadVoice32 Wideband Audio codec
-CONTACT_DESC=	Contacts module
-CONS_DESC=	Console input driver
-DTLS_SRTP_DESC=	DTLS Secure RTP module [broken]
+OPTIONS_DEFINE=	\
+	ALSA AV1 AVCODEC AVFILTER AVFORMAT \
+	CTRL_DBUS \
+	DOCS \
+	EXAMPLES \
+	G711 G722 G726 GST \
+	MQTT \
+	OPUS OPUS_MS \
+	PLC PORTAUDIO PULSEAUDIO \
+	SDL SNAPSHOT SNDFILE SWSCALE \
+	V4L2 VPX \
+	X11
+OPTIONS_DEFAULT=DOCS EXAMPLES
+OPTIONS_SUB=	yes
+
+ALSA_DESC=	ALSA audio driver
+AV1_DESC=	AV1 Video Codec
+AVCODEC_DESC=	Video codecs using libavcodec
+AVFILTER_DESC=	Video filter using libavfilter
+AVFORMAT_DESC=	libavformat media-source
+CTRL_DBUS_DESC=	[broken] DBUS interface for baresip
 G711_DESC=	G.711 audio codec
 G722_DESC=	G.722 audio codec
-G722_1_DESC=	G.722.1 audio codec
 G726_DESC=	G.726 audio codec
-ILBC_DESC=	iLBC audio codec
-L16_DESC=	L16 audio codec
-MENU_DESC=	Interactive menu
-OPENGLES_DESC=	OpenGL ES video output
+GST_DESC=	Gstreamer audio module
+MQTT_DESC=	Message Queue Telemetry Transport (MQTT) client
+OPUS_DESC=	Opus audio codec
+OPUS_MS_DESC=	Opus Multistream audio codec
 PLC_DESC=	Packet Loss Concealment
-PRESENCE_DESC=	Presence module
-STDIO_DESC=	stdio input driver
-SYSLOG_DESC=	Syslog module
-UUID_DESC=	UUID module
-V4L_DESC=	Video4Linux module [broken]
-V4L2_DESC=	Video4Linux2 module [broken]
-VIDLOOP_DESC=	Video-loop test module
-X11_DESC=	X11 module [broken]
+PORTAUDIO_DESC=	Portaudio audio driver
+PULSEAUDIO_DESC=	Pulseaudio audio driver
+SDL_DESC=	libSDL2 video output
+SNAPSHOT_DESC=	Snapshot video module
+SNDFILE_DESC=	sndfile wav dumper
+SWSCALE_DESC=	Video filter for scaling and pixel conversion
+V4L2_DESC=	Video4Linux2 module
+VPX_DESC=	VP8/VP9 video codecs
+X11_DESC=	X11 video output
 
-.for o in ${OPTIONS_DEFINE}
-.  ifndef $o_DESC
-$o_DESC=	${o:C,^(.).*,\1,}${o:C,^.,,:tl} module
-.  endif
-.endfor
+MODULES_LIST:=	account;aubridge;auconv;aufile;auresamp;ausine
+MODULES_LIST:=	$(MODULES_LIST);cons;contact;ctrl_tcp
+MODULES_LIST:=	$(MODULES_LIST);debug_cmd;dtls_srtp
+MODULES_LIST:=	$(MODULES_LIST);ebuacip;echo
+MODULES_LIST:=	$(MODULES_LIST);fakevideo;httpd;httpreq;ice;l16
+MODULES_LIST:=	$(MODULES_LIST);menu;mixausrc;mixminus;multicast;mwi;natpmp;netroam
+MODULES_LIST:=	$(MODULES_LIST);pcp;presence;rtcpsummary
+MODULES_LIST:=	$(MODULES_LIST);selfview;serreg;srtp;stdio;stun;syslog
+MODULES_LIST:=	$(MODULES_LIST);turn;uuid;vidbridge;vidinfo;vumeter
 
 .include <bsd.port.options.mk>
 
-.include "${.CURDIR}/Makefile.depends"
+.if ${PORT_OPTIONS:MALSA}
+ALSA_DEPEND=	${LOCALBASE}/include/alsa/asoundlib.h:audio/alsa-lib
+MODULES_LIST:=	$(MODULES_LIST);alsa
+.endif
 
-# Port used to call it GST, if it's set in make.conf let's not annoy people
+.if ${PORT_OPTIONS:MAV1}
+LIB_DEPENDS+=	libaom.so:multimedia/aom
+MODULES_LIST:=	$(MODULES_LIST);av1
+.endif
+
+.if ${PORT_OPTIONS:MAVCODEC}
+AVCODEC_DEPEND=	${LOCALBASE}/include/libavcodec/avcodec.h:multimedia/ffmpeg
+MODULES_LIST:=	$(MODULES_LIST);avcodec
+.endif
+
+.if ${PORT_OPTIONS:MAVFILTER}
+AVFILTER_DEPEND=	${LOCALBASE}/include/libavfilter/avfilter.h:multimedia/ffmpeg
+MODULES_LIST:=	$(MODULES_LIST);avfilter
+.endif
+
+.if ${PORT_OPTIONS:MAVFORMAT}
+AVFORMAT_DEPEND=	${LOCALBASE}/include/libavformat/avformat.h:multimedia/ffmpeg
+MODULES_LIST:=	$(MODULES_LIST);avformat
+.endif
+
+.if ${PORT_OPTIONS:MG711}
+G711_DEPEND=	${LOCALBASE}/include/spandsp/g711.h:comms/spandsp
+MODULES_LIST:=	$(MODULES_LIST);g711
+.endif
+
+.if ${PORT_OPTIONS:MG722}
+G722_DEPEND=	${LOCALBASE}/include/spandsp/g722.h:comms/spandsp
+MODULES_LIST:=	$(MODULES_LIST);g722
+.endif
+
+.if ${PORT_OPTIONS:MG726}
+G726_DEPEND=	${LOCALBASE}/include/spandsp/g726.h:comms/spandsp
+MODULES_LIST:=	$(MODULES_LIST);g726
+.endif
+
 .if ${PORT_OPTIONS:MGST}
+GST_DEPEND=	${LOCALBASE}/include/gstreamer-1.0/gst/gst.h:multimedia/gstreamer1
 PORT_OPTIONS+=	GSTREAMER
+USES+=		gnome
+USE_GNOME+=	glib20
+USE_GSTREAMER1+=	yes
+.endif
+
+.if ${PORT_OPTIONS:MMQTT}
+LIB_DEPENDS+=	libmosquitto.so:net/mosquitto
+MODULES_LIST:=	$(MODULES_LIST);mqtt
+.endif
+
+.if ${PORT_OPTIONS:MOPUS}
+OPUS_DEPEND=	${LOCALBASE}/include/opus/opus.h:audio/opus
+MODULES_LIST:=	$(MODULES_LIST);opus
+.endif
+
+.if ${PORT_OPTIONS:MOPUS_MS}
+OPUS_MS_DEPEND=	${LOCALBASE}/include/opus/opus.h:audio/opus
+MODULES_LIST:=	$(MODULES_LIST);opus_multistream
+.endif
+
+.if ${PORT_OPTIONS:MPLC}
+PLC_DEPEND=	${LOCALBASE}/include/spandsp/plc.h:comms/spandsp
+MODULES_LIST:=	$(MODULES_LIST);plc
+.endif
+
+.if ${PORT_OPTIONS:MPORTAUDIO}
+PORTAUDIO_DEPEND=	${LOCALBASE}/include/portaudio.h:audio/portaudio
+MODULES_LIST:=	$(MODULES_LIST);portaudio
 .endif
 
 # Port calls it PULSE, standard OPTION is PULSEAUDIO
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 PORT_OPTIONS+=	PULSE
+PULSEAUDIO_DEPEND=	${LOCALBASE}/include/pulse/pulseaudio.h:audio/pulseaudio
+MODULES_LIST:=	$(MODULES_LIST);pulse
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
 USES+=		sdl
-USE_SDL=	sdl sound
+USE_SDL=	sdl2
+MODULES_LIST:=	$(MODULES_LIST);sdl
 .endif
 
-# SPEEX forces install of speex, therefore may as well enable all methods
-.if ${PORT_OPTIONS:MSPEEX}
-. for s in SPEEX_AEC SPEEX_PP SPEEX_RESAMP
-MAKE_ARGS+=	USE_$s=yes
-. endfor
-MAKE_ARGS+=	HAVE_SPEEXDSP=yes
+.if ${PORT_OPTIONS:MSNAPSHOT}
+LIB_DEPENDS+=	libpng16.so:graphics/png
+MODULES_LIST:=	$(MODULES_LIST);snapshot
 .endif
 
-.for o in V4L DTLS_SRTP V4L2 X11
-.  if ${PORT_OPTIONS:M$o}
-BROKEN=	OPTIONS marked as BROKEN have not been updated to the new Baresip API
-.  endif
-.endfor
+.if ${PORT_OPTIONS:MSNDFILE}
+SNDFILE_DEPEND=	${LOCALBASE}/include/sndfile.h:audio/libsndfile
+MODULES_LIST:=	$(MODULES_LIST);sndfile
+.endif
+
+.if ${PORT_OPTIONS:MSWSCALE}
+SWSCALE_DEPEND=	${LOCALBASE}/include/libavformat/avformat.h:multimedia/ffmpeg
+MODULES_LIST:=	$(MODULES_LIST);swscale
+.endif
+
+.if ${PORT_OPTIONS:MV4L2}
+V4L2_DEPEND=	${LOCALBASE}/include/libv4l2.h:multimedia/libv4l
+MODULES_LIST:=	$(MODULES_LIST);v4l2
+.endif
+
+.if ${PORT_OPTIONS:MVPX}
+VPX_DEPEND=	${LOCALBASE}/include/vpx/vp8.h:multimedia/libvpx
+MODULES_LIST:=	$(MODULES_LIST);vp8;vp9
+.endif
 
 .if ${PORT_OPTIONS:MX11}
 USES+=		xorg
 USE_XORG=	x11
+USE_XORG+=	xext
+USE_XORG+=	sm
+USE_XORG+=	ice
+MODULES_LIST:=	$(MODULES_LIST);x11
 .endif
 
 .for o in ${PORT_OPTIONS}
-MAKE_ARGS+=	USE_$o=yes
 BUILD_DEPENDS+=	${$o_DEPEND}
 RUN_DEPENDS+=	${$o_DEPEND}
 .endfor
 
-# GNU Make does not do make -V, which makes life difficult
-post-patch:
-	${ECHO_CMD} >> ${WRKSRC}/Makefile
-	${ECHO_CMD} ".PHONY: showmodules" >> ${WRKSRC}/Makefile
-	${ECHO_CMD} "showmodules:" >> ${WRKSRC}/Makefile
-	${ECHO_CMD} '	@${ECHO_CMD} $$(MODULES)' >> ${WRKSRC}/Makefile
-	${REINPLACE_CMD} 's,-lportaudio[0-9]*,-L${LOCALBASE}/lib -lportaudio,' \
-		${WRKSRC}/modules/portaudio/module.mk
+CMAKE_ARGS+=	-DRE_INCLUDE_DIR:STRING="${LOCALBASE}/include/re" \
+		-DREM_INCLUDE_DIR:STRING="${LOCALBASE}/include/rem" \
+		-DMODULES="$(MODULES_LIST)"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
-
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules
-	for m in $$(${SETENV} ${MAKE_ENV} ${MAKE_CMD} -sC ${WRKSRC} ${MAKE_ARGS} showmodules); \
-	do ${INSTALL_LIB} ${WRKSRC}/$$m.so \
-		${STAGEDIR}${PREFIX}/lib/baresip/modules; \
-	   ${ECHO_CMD} lib/${PORTNAME}/modules/$$m.so >> ${TMPPLIST}; \
-	done
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 	${MV} ${STAGEDIR}${DOCSDIR}/examples/* ${STAGEDIR}${EXAMPLESDIR}

@@ -1,6 +1,6 @@
 PORTNAME=	xtensa-esp32-elf
 DISTVERSION=	1.22.0.g20200907
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/binutils:source1 \

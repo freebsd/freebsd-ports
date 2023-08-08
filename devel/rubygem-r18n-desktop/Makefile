@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-r18n-core>=5.0<6:devel/rubygem-r18n-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

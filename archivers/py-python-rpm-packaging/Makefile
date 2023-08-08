@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml-include>0:devel/py-pyyaml-include@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python shebangfix
@@ -24,6 +24,7 @@ GH_PROJECT=	python-rpm-packaging
 GH_TAGNAME=	a18ca48959c95aefa725317084dd2d3e242e4f71
 
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/pythondistdeps.py
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	lib/rpm/brp-python-bytecompile \

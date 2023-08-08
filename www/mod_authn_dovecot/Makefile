@@ -9,7 +9,7 @@ WWW=		https://github.com/bmanojlovic/mod_authn_dovecot
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4
+USES=		apache
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bmanojlovic

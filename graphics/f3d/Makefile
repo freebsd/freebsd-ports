@@ -1,53 +1,70 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9de4c11b62b16519a46f2634eea3385b7c799729.patch:-p1 # FreeBSD compatibility patch, https://github.com/f3d-app/f3d/pull/893
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
 WWW=		https://f3d-app.github.io/f3d/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg4 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreeimage.so:graphics/freeimage \
+		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
+		libImath-3_1.so:math/Imath \
 		libnetcdf.so:science/netcdf \
-		libvtkCommonMisc-9.1.so:math/vtk9
+		libvtkCommonMisc-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl xorg
+USES=		cmake:testing compiler:c++17-lang desktop-file-utils gl shared-mime-info tcl tk xorg
 USE_GL=		gl glu
 USE_XORG=	ice sm x11 xt
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	f3d-app
 
-OPTIONS_GROUP=			MODULES
-OPTIONS_GROUP_MODULES=		ALEMBIC ASSIMP EXODUS EXTERNAL_RENDERING OCCT RAYTRACING
-OPTIONS_DEFAULT=		ALEMBIC ASSIMP EXODUS OCCT
+CMAKE_OFF=	F3D_STRICT_BUILD # disable -Werror
+CMAKE_OFF+=	F3D_LINUX_APPLICATION_LINK_FILESYSTEM
+
+# dependency descroptions are in https://f3d.app/doc/dev/BUILD.html
+OPTIONS_GROUP=			MODULES PLUGINS
+OPTIONS_GROUP_MODULES=		EXTERNAL_RENDERING RAYTRACING
+OPTIONS_GROUP_PLUGINS=		ALEMBIC ASSIMP DRACO EXODUS OCCT
+OPTIONS_DEFAULT=		ALEMBIC ASSIMP DRACO EXODUS OCCT
+OPTIONS_SUB=			yes
 
 MODULES_DESC=			Build modules:
 
-ALEMBIC_DESC=			Alembic module (ABC files)
-ALEMBIC_CMAKE_BOOL=		F3D_MODULE_ALEMBIC
+ALEMBIC_DESC=			Alembic plugin (for ABC files)
+ALEMBIC_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ALEMBIC
 ALEMBIC_LIB_DEPENDS=		libAlembic.so:graphics/alembic
 
-ASSIMP_DESC=			Assimp module (FBX, OFF, DAE and DXF files)
-ASSIMP_CMAKE_BOOL=		F3D_MODULE_ASSIMP
+ASSIMP_DESC=			Assimp plugin (for FBX, OFF, DAE and DXF files)
+ASSIMP_CMAKE_BOOL=		F3D_PLUGIN_BUILD_ASSIMP
 ASSIMP_LIB_DEPENDS=		libassimp.so:multimedia/assimp
 
-EXODUS_DESC=			ExodusII module
-EXODUS_CMAKE_BOOL=		F3D_MODULE_EXODUS
+DRACO_DESC=			Draco plugin
+DRACO_CMAKE_BOOL=		F3D_PLUGIN_BUILD_DRACO
+DRACO_LIB_DEPENDS=		libdraco.so:archivers/draco
+
+EXODUS_DESC=			ExodusII plugin
+EXODUS_CMAKE_BOOL=		F3D_PLUGIN_BUILD_EXODUS
 
 EXTERNAL_RENDERING_DESC=	External rendering module
 EXTERNAL_RENDERING_CMAKE_BOOL=	F3D_MODULE_EXTERNAL_RENDERING
 EXTERNAL_RENDERING_BROKEN=	Requires VTK::RenderingExternal enabled in VTK
 
-OCCT_DESC=			OpenCASCADE module (STEP and IGES files)
+OCCT_DESC=			OpenCASCADE plugin (for STEP and IGES files)
 OCCT_USES=			localbase:ldflags
-OCCT_CMAKE_BOOL=		F3D_MODULE_OCCT
-OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade
+OCCT_CMAKE_BOOL=		F3D_PLUGIN_BUILD_OCCT
+OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade \
+				libdraco.so:archivers/draco
 OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
 
 RAYTRACING_DESC=		Raytracing module
@@ -56,5 +73,11 @@ RAYTRACING_BROKEN=		Requires VTK::RenderingRayTracing enabled in VTK
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DOCSDIR}
+	# component-based install
+	cd ${BUILD_WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${CMAKE_BIN} --install . --component configuration && \
+		${SETENV} ${MAKE_ENV} ${CMAKE_BIN} --install . --component sdk && \
+		${SETENV} ${MAKE_ENV} ${CMAKE_BIN} --install . --component mimetypes
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

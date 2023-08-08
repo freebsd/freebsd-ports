@@ -1,6 +1,6 @@
 PORTNAME=	streamio-ffmpeg
 PORTVERSION=	3.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-multi_json>=1.8<2:devel/rubygem-multi_json \
 		ffmpeg>=3.4.2,1:multimedia/ffmpeg
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	libcbor
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,8 +21,5 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	PJK
 USE_GITHUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-flto||; /subdirs(examples)/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

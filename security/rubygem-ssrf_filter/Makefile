@@ -10,7 +10,6 @@ WWW=		https://github.com/arkadiyt/ssrf_filter
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

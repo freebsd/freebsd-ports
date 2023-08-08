@@ -1,9 +1,9 @@
 PORTNAME=	utf8proc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
+DISTVERSION=	2.8.0
 CATEGORIES=	textproc devel
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	UTF-8 processing library
 WWW=		https://juliastrings.github.io/utf8proc/
 
@@ -21,7 +21,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 PLIST_FILES=	include/utf8proc.h \
 		lib/libutf8proc.so \
 		lib/libutf8proc.so.2 \
-		lib/libutf8proc.so.2.5.0 \
+		lib/libutf8proc.so.2.6.0 \
 		libdata/pkgconfig/libutf8proc.pc
 PORTDOCS=	NEWS.md README.md
 

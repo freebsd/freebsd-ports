@@ -20,9 +20,6 @@ CONFLICTS_INSTALL=	mysql5[0-68-9]-client \
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1 \
 		-DWITH_NDBCLUSTER=1
 
-CFLAGS+=	-DNDEBUG
-CXXFLAGS+=	-DNDEBUG
-
 USE_LDCONFIG+=	${PREFIX}/lib/mysql
 
 MMAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mysql_find_rows.1 \
@@ -37,7 +34,7 @@ OPTIONS_GROUP_PLUGINS=	SASLCLIENT
 SASLCLIENT_DESC=	SASL client plugin module
 SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
 SASLCLIENT_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
-SASLCLIENT_USE=		OPENLDAP=yes
+SASLCLIENT_USES=		ldap
 OPTIONS_DEFAULT+=	SASLCLIENT
 
 # issue 166367: adding symlinks for back-compatibility with ${lib}_r

@@ -1,7 +1,6 @@
     COMMENT = Peer-to-peer network applications
 
     SUBDIR += amule
-    SUBDIR += amule-devel
     SUBDIR += arbitrum-avm
     SUBDIR += autoscan
     SUBDIR += awgg
@@ -28,7 +27,7 @@
     SUBDIR += deluge
     SUBDIR += deluge-cli
     SUBDIR += ed2k
-    SUBDIR += edonkey-tool-hash
+    SUBDIR += ed2k-hash
     SUBDIR += eiskaltdcpp-cli
     SUBDIR += eiskaltdcpp-daemon
     SUBDIR += eiskaltdcpp-data
@@ -50,11 +49,13 @@
     SUBDIR += libtorrent
     SUBDIR += libtorrent-rasterbar
     SUBDIR += libtorrent-rasterbar2
+    SUBDIR += libutp
     SUBDIR += lidarr
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
     SUBDIR += litecoin-daemon
     SUBDIR += litecoin-utils
+    SUBDIR += lxmf
     SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mktorrent
@@ -66,9 +67,9 @@
     SUBDIR += namecoin-daemon
     SUBDIR += namecoin-utils
     SUBDIR += ncdc
+    SUBDIR += nomadnet
     SUBDIR += ogmios
     SUBDIR += opendchub
-    SUBDIR += openethereum
     SUBDIR += oura
     SUBDIR += p5-Net-BitTorrent
     SUBDIR += p5-Net-BitTorrent-File
@@ -77,20 +78,22 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
     SUBDIR += prowlarr
+    SUBDIR += py-ed2k-tools
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-nicotine-plus
     SUBDIR += py-transmission-rpc
     SUBDIR += py-tremc
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
-    SUBDIR += qtum
     SUBDIR += radarr
     SUBDIR += readarr
+    SUBDIR += reticulum
     SUBDIR += retroshare
     SUBDIR += rslsync
     SUBDIR += rtorrent
     SUBDIR += shx
     SUBDIR += sonarr
+    SUBDIR += tooth
     SUBDIR += torrent-file-editor
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
@@ -104,9 +107,7 @@
     SUBDIR += udpt
     SUBDIR += uhub
     SUBDIR += vuze
+    SUBDIR += xbt
     SUBDIR += xmrig
-    SUBDIR += zetacoin
-    SUBDIR += zetacoin-daemon
-    SUBDIR += zetacoin-utils
 
 .include <bsd.port.subdir.mk>

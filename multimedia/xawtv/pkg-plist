@@ -29,11 +29,9 @@ lib/xawtv/linear-blend.so
 lib/xawtv/linedoubler.so
 lib/xawtv/read-avi.so
 %%DV%%lib/xawtv/read-dv.so
-%%QUICKTIME%%lib/xawtv/read-qt.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 %%DV%%lib/xawtv/write-dv.so
-%%QUICKTIME%%lib/xawtv/write-qt.so
 man/man1/alevtd.1.gz
 man/man1/dump-mixers.1.gz
 man/man1/fbtv.1.gz

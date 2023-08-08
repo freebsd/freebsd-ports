@@ -8,9 +8,8 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
 WWW=		https://gp2x.org/adtool/
 
-USES=		gmake libtool
+USES=		gmake ldap libtool
 GNU_CONFIGURE=	yes
-USE_OPENLDAP=	yes
 
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 

@@ -354,6 +354,7 @@ include/broker/zeek.hh
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std.hpp
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std_fwd.hpp
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std_impl.hpp
+%%SPICY%%include/hilti/rt/3rdparty/nlohmann/json.hpp
 %%SPICY%%include/hilti/rt/3rdparty/nlohmann/json_fwd.hpp
 %%SPICY%%include/hilti/rt/3rdparty/tinyformat/tinyformat.h
 %%SPICY%%include/hilti/rt/any.h
@@ -380,7 +381,6 @@ include/broker/zeek.hh
 %%SPICY%%include/hilti/rt/iterator.h
 %%SPICY%%include/hilti/rt/json-fwd.h
 %%SPICY%%include/hilti/rt/json.h
-%%SPICY%%include/hilti/rt/lambda.h
 %%SPICY%%include/hilti/rt/libhilti.h
 %%SPICY%%include/hilti/rt/library.h
 %%SPICY%%include/hilti/rt/linker.h
@@ -1288,6 +1288,7 @@ lib/zeek/python/broker/zeek.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/lb_myricom.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/ps.py
+%%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 %%ZEEKCTL%%man/man1/trace-summary.1.gz
 man/man1/zeek-cut.1.gz
 man/man8/zeek.8.gz

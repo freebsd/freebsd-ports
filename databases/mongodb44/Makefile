@@ -1,13 +1,13 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.4.16
+DISTVERSION=	4.4.23
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Distributed document-oriented "NoSQL" database (4.4.x Branch)
 WWW=		https://docs.mongodb.com/v4.4/
 
@@ -22,23 +22,13 @@ ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		${LOCALBASE}/bin/ar:devel/binutils
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++17-lang cpe python:3.5+,build scons
+USES=		compiler:c++17-lang cpe python:build scons
 USE_RC_SUBR=	mongod
-
-PORTSCOUT=	limit:^4\.4\.
-
-CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
-
-OPTIONS_DEFINE=	LTO SASL SSL
-OPTIONS_DEFAULT=LTO SASL SSL
-OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
-OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12 on aarch64.
 
 MAKE_ARGS=	--use-system-zlib \
 		--use-system-pcre \
@@ -49,10 +39,30 @@ MAKE_ARGS=	--use-system-zlib \
 		-j ${MAKE_JOBS_NUMBER} \
 		--disable-warnings-as-errors \
 		VERBOSE=on \
-		AR=${PREFIX}/bin/ar
+		AR=llvm-ar
+
+CFLAGS+=	-D_HAS_AUTO_PTR_ETC=0
+
+CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
+
+PORTSCOUT=	limit:^4\.4\.
 
 USERS=		mongodb
 GROUPS=		mongodb
+
+OPTIONS_DEFINE=			LTO SASL SSL
+OPTIONS_DEFINE_aarch64=	ARMV80A
+OPTIONS_DEFAULT=		LTO SASL SSL
+OPTIONS_DEFAULT_aarch64=	ARMV80A
+OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
+OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12 on aarch64.
+
+# MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
+# Can give corruption on high concurrency.
+# Please read https://jira.mongodb.org/browse/SERVER-71772.
+ARMV80A_DESC=	Enable non-LSE ARM64 CPUs like RPI4.
+
+ARMV80A_EXTRA_PATCHES=	${FILESDIR}/extrapatch-SConstruct
 
 LTO_MAKE_ARGS=	--lto=on
 
@@ -65,7 +75,7 @@ SSL_MAKE_ARGS=	--ssl
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
-EXTRA_PATCHES=	${FILESDIR}/${ARCH}
+EXTRA_PATCHES+=	${FILESDIR}/${ARCH}
 .endif
 
 ALL_TARGET=	install-core

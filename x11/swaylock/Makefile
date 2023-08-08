@@ -1,5 +1,6 @@
 PORTNAME=	swaylock
-DISTVERSION?=	1.6
+DISTVERSIONPREFIX?=	v
+DISTVERSION?=	1.7.2
 PORTREVISION?=	1
 CATEGORIES=	x11 wayland
 
@@ -43,8 +44,5 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
-# Respect LOCALBASE for unix-selfauth-helper
-	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/pam/${PORTNAME}
 
 .include <bsd.port.mk>

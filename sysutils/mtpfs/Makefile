@@ -19,9 +19,16 @@ USES=		autoreconf fuse gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	cjd
 GH_TAGNAME=	fd3864dd6f0e8183fa2598d4cf890401d3a1e09a
-
 USE_GNOME=	glib20
+
 GNU_CONFIGURE=	yes
+
 PLIST_FILES=	bin/mtpfs
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>

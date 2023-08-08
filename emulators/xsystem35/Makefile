@@ -1,11 +1,11 @@
 PORTNAME=	xsystem35
 DISTVERSION=	1.7.3-pre5
-PORTREVISION=	4
+PORTREVISION=	7
 CATEGORIES=	emulators games
 MASTER_SITES=	DEBIAN
 DISTFILES=	${DISTNAME:S/-/_/}.orig${EXTRACT_SUFX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 WWW=		https://web.archive.org/web/20121222144009/http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/
 

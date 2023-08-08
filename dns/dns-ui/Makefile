@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		pgsql php:cli
 USE_GITHUB=	yes
 GH_ACCOUNT=	operasoftware
-USE_PHP=	curl intl json ldap mbstring pdo_pgsql
+USE_PHP=	curl intl ldap mbstring pdo_pgsql
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
@@ -23,7 +23,7 @@ OPTIONS_DEFAULT=	APACHE PGSQLSRV
 APACHE_DESC=		Use apache as webserver
 PGSQLSRV_DESC=		Use local postgres instance
 
-APACHE_USES=		apache:run,2.2+ php:mod
+APACHE_USES=		apache:run php:mod
 APACHE_USES_OFF=	php:web
 PGSQLSRV_VARS=		WANT_PGSQL=server
 

@@ -1,7 +1,7 @@
 PORTNAME=	watermark
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,17 +11,18 @@ WWW=		https://github.com/rasbt/watermark
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.4:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipython>=6.0:devel/ipython@${PY_FLAVOR} \
+		${PY_SETUPTOOLS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GPU
+GPU_DESC=	GPU (Graphic Processing Unit) support
 
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.4:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
+GPU_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py3nvml>=0.2:devel/py-py3nvml@${PY_FLAVOR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

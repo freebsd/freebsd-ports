@@ -24,6 +24,7 @@ bin/solve_conic
 bin/solve_legendre
 include/eclib/GetOpt.h
 include/eclib/arith.h
+include/eclib/bigcomplex.h
 include/eclib/bigrat.h
 include/eclib/bitspace.h
 include/eclib/compproc.h
@@ -118,7 +119,7 @@ include/eclib/xsplit_data.h
 lib/libec.a
 lib/libec.so
 lib/libec.so.10
-lib/libec.so.10.0.0
+lib/libec.so.10.2.0
 libdata/pkgconfig/eclib.pc
 man/man1/mwrank.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/g0n.txt

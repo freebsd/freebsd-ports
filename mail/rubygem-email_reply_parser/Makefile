@@ -1,5 +1,5 @@
 PORTNAME=	email_reply_parser
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,11 +1,11 @@
---- opt_parse_validator.gemspec.orig	2021-10-25 11:59:38 UTC
+--- opt_parse_validator.gemspec.orig	2023-01-05 19:51:17 UTC
 +++ opt_parse_validator.gemspec
-@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
  
-   if s.respond_to? :add_runtime_dependency then
-     s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.2", "< 6.2.0"])
--    s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.5", "< 2.8"])
-+    s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.5", "< 2.9"])
-     s.add_development_dependency(%q<bundler>.freeze, [">= 1.6"])
-     s.add_development_dependency(%q<rake>.freeze, ["~> 13.0"])
-     s.add_development_dependency(%q<rspec>.freeze, ["~> 3.10.0"])
+   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 5.2", "< 6.2.0"])
+-  s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.5", "< 2.8"])
++  s.add_runtime_dependency(%q<addressable>.freeze, [">= 2.5", "< 2.9"])
+   s.add_development_dependency(%q<bundler>.freeze, [">= 1.6"])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0"])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.10.0"])

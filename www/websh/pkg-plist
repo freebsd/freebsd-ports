@@ -6,5 +6,5 @@ lib/websh/htmlhandler.ws3
 lib/websh/otherhandler.ws3
 etc/websh.conf.dist
 %%APACHEMODDIR%%/mod_websh.so
-@exec %D/sbin/apxs -e -A -n websh %D/%F
-@unexec %D/sbin/apxs -e -A -n websh %D/%F
+@postexec %D/sbin/apxs -e -A -n websh %D/%F
+@preunexec %D/sbin/apxs -e -A -n websh %D/%F

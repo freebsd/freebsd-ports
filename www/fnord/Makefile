@@ -4,10 +4,13 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fefe.de/fnord/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Small and fast webserver with CGI-capability
+COMMENT=	Small and fast web server with CGI-capability
 WWW=		https://www.fefe.de/fnord/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Deprecated upstream, consider using www/apache24, www/lighttpd or www/nginx
+EXPIRATION_DATE=2023-09-30
 
 USES=		gmake tar:bzip2
 

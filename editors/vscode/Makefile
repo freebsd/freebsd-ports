@@ -1,20 +1,10 @@
 PORTNAME=	vscode
-DISTVERSION=	1.70.2
-PORTREVISION=	2
+DISTVERSION=	1.80.2
 CATEGORIES=	editors
-MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
-		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
-		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
-DISTFILES=	esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz:esbuild_binary \
-		esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz:esbuild_binary \
-		node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
+DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		node-v${NODE_VER}-headers${EXTRACT_SUFX} \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
-		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
@@ -30,13 +20,15 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		rg:textproc/ripgrep \
 		npm-node${NODE_VER_MAJOR}>0:www/npm-node${NODE_VER_MAJOR} \
 		yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
-LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
-		libasound.so:audio/alsa-lib \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
+		libsndio.so:audio/sndio \
 		libdbus-1.so:devel/dbus \
+		libicuuc.so:devel/icu \
+		libevent.so:devel/libevent \
 		libinotify.so:devel/libinotify \
 		libnotify.so:devel/libnotify \
 		libpci.so:devel/libpci \
@@ -59,19 +51,18 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxshmfence.so:x11/libxshmfence \
 		libfontconfig.so:x11-fonts/fontconfig
-RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
-		xdg-open:devel/xdg-utils \
+RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
 TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
-		python:build shebangfix xorg
+USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
+		localbase:ldflags pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	e4503b30fc78200f846c62cf8091b76ff5547662
+SOURCE_COMMIT_HASH=	2ccd690cbff1569e4a83d7c43d45101f817401dc
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -82,13 +73,9 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 
 USE_LDCONFIG=	${DATADIR}
 
-# See ${WRKSRC}/remote/.yarnrc for NODE_VER
-NODE_VER=	16.13.2
+# Keep NODE_VER in sync with www/node16 DISTVERSION
+NODE_VER=	16.20.1
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
-# See ${WRKSRC}/build/package.json for ESBUILD_VER_BUILD
-ESBUILD_VER_BUILD=	0.14.2
-# See ${WRKSRC}/extensions/package.json for ESBUILD_VER_EXTENSIONS
-ESBUILD_VER_EXTENSIONS=	0.11.23
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -106,7 +93,11 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron18
+OPTIONS_DEFINE=	REH
+OPTIONS_DEFAULT=# none
+REH_DESC=	Build remote extension host
+
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron22
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
@@ -122,31 +113,26 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-extract:
-	# setup download cache for esbuild binary
-	${MKDIR} ${WRKDIR}/.cache/esbuild/bin
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz \
-		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
-	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}/package/bin/esbuild \
-		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_BUILD}
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz \
-		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
-	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}/package/bin/esbuild \
-		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_EXTENSIONS}
+	${CP} ${WRKSRC}/build/.moduleignore.linux \
+		${WRKSRC}/build/.moduleignore.freebsd
 
 post-patch:
 	# force use of electron version matching port one
 	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${ELECTRON_VER}\2|' \
 		${WRKSRC}/.yarnrc
+	# force use of node version matching port one
+	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${NODE_VER}\2|' \
+		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for using local node headers
 	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> \
 		${WRKSRC}/.yarnrc
-	${ECHO_CMD} 'nodedir "${WRKDIR}/node-v${NODE_VER}"' >> \
+	${ECHO_CMD} 'nodedir "${LOCALBASE}"' >> \
 		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for offline node_modules installation
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' >> \
 		${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'yarn-offline-mirror "../../yarn-offline-cache"' >> \
+		${WRKSRC}/remote/.yarnrc
 	(cd ${WRKSRC} && \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
@@ -174,23 +160,45 @@ post-patch:
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" \
 					-e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' {} ';')
 
-pre-build:
-	# # install node_modules without executing post-installation scripts
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	# 	yarn --frozen-lockfile --ignore-scripts --offline
-	# # copy rg binary files to vscode-ripgrep module directory
-	# ${MKDIR} ${WRKSRC}/node_modules/vscode-ripgrep/bin
-	# ${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/vscode-ripgrep/bin
-	# ${MKDIR} ${WRKSRC}/remote/node_modules/vscode-ripgrep/bin
-	# ${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/vscode-ripgrep/bin
-	# install node_modules
+pre-build: install-node-modules patch-node-modules rebuild-node-modules copy-rg-binary
+install-node-modules:
+	# install node_modules without executing post-installation scripts
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		yarn --frozen-lockfile --offline
+		yarn --frozen-lockfile --ignore-scripts --offline
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		yarn postinstall --frozen-lockfile --ignore-scripts --offline
+patch-node-modules:
+	# patch install node modules before building native node modules
+	for p in ${PATCHDIR}/node_modules/patch-*; do \
+		${PATCH} -p0 -s -d ${WRKSRC} < $${p}; \
+	done
+rebuild-node-modules:
+	# rebuild native node modules for electron
+	for subdir in `${FIND} ${WRKSRC}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';'`; do \
+		cd $${subdir} && \
+		${SETENV} ${MAKE_ENV} \
+			npm_config_runtime=electron \
+			npm_config_target=${ELECTRON_VER} \
+			npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
+			node ${LOCALBASE}/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js rebuild; \
+	done
+	cd ${WRKSRC}/extensions && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_runtime=electron \
+		npm_config_target=${ELECTRON_VER} \
+		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
+		npm rebuild --verbose
+	# rebuild native node modules for node
+.for dir in build remote
+	cd ${WRKSRC}/${dir} && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_nodedir=${LOCALBASE} \
+		npm rebuild --verbose
+.endfor
+copy-rg-binary:
 	# copy rg binary files to vscode-ripgrep module directory
 	${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
-	${MKDIR} ${WRKSRC}/node_modules/vscode-ripgrep/bin
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/vscode-ripgrep/bin
 	${MKDIR} ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 
@@ -202,13 +210,27 @@ do-build:
 	cd ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH} && \
 		${SHA256} -r *-v${ELECTRON_VER}-linux-*.zip | \
 		${SED} -e 's/ / */' > SHASUMS256.txt
+	cd ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH} && \
+		${SHA256} -r *-v${ELECTRON_VER}-linux-*.zip | \
+		${SED} -e 's/ / */' >> ${WRKSRC}/build/checksums/electron.txt
 	# build and package vscode
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn run tsc -p build/tsconfig.build.json
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-linux-x64-min
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
 	# copy marketplace extensions
 	${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-x64/resources/app/extensions
+
+do-build-REH-on:
+	# setup download cache for node
+	${MKDIR} ${WRKSRC}/.build/node/v${NODE_VER}/linux-x64
+	${CP} ${LOCALBASE}/bin/node ${WRKSRC}/.build/node/v${NODE_VER}/linux-x64
+	# build vscode remote extension host
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
+	${MKDIR} ${WRKDIR}/vscode-reh/bin/${SOURCE_COMMIT_HASH}
+	cd ${WRKDIR}/vscode-reh-linux-x64 && ${TAR} -cf - . | \
+		${TAR} -xf - -C ${WRKDIR}/vscode-reh/bin/${SOURCE_COMMIT_HASH}
+	cd ${WRKDIR}/vscode-reh && \
+		${TAR} -czf ../vscode-reh-${DISTVERSION}-${OPSYS:tl}${OSREL:R}-${ARCH}.tar.gz .
+	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
@@ -232,7 +254,8 @@ do-install:
 	cd ${WRKDIR}/VSCode-linux-x64 && \
 		${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked && \
-		${FIND} . -type f -name '*.node' -exec ${STRIP_CMD} {} ';'
+		${FIND} . -type f -exec ${FILE} {} ';' | \
+		${GREP} 'ELF.*FreeBSD' | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${STRIP_CMD}
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor
@@ -263,7 +286,7 @@ make-yarn-cache:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		yarn --frozen-lockfile --ignore-scripts
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		yarn postinstall --frozen-lockfile
+		yarn postinstall --frozen-lockfile --ignore-scripts
 	cd ${WRKDIR} && ${TAR} -czf \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
 

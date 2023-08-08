@@ -1,0 +1,13 @@
+--- meson_options.txt.orig	2023-01-23 19:29:34 UTC
++++ meson_options.txt
+@@ -16,6 +16,10 @@ option('x264', type : 'feature', value : 'auto', descr
+ option('mpeg2dec', type : 'feature', value : 'auto', description : 'MPEG 2 video decoder plugin based on libmpeg2 (GPL - only built if gpl option is also enabled!)')
+ option('sidplay', type : 'feature', value : 'auto', description : 'Commodore 64 audio decoder plugin based on libsidplay (GPL - only built if gpl option is also enabled!)')
+ option('x264', type : 'feature', value : 'auto', description : 'H.264 video encoder plugin based on libx264 (GPL - only built if gpl option is also enabled!)')
++option('defaultaudiosink', type : 'string', value : 'autoaudiosink',
++        description: 'set default audio sink')
++option('defaultaudiosrc', type : 'string', value : 'autoaudiosrc',
++        description: 'set default audio src')
+ 
+ # License-related feature options
+ option('gpl', type: 'feature', value: 'disabled', yield: true,

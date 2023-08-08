@@ -1,8 +1,7 @@
 PORTNAME=	reportlab
-PORTVERSION=	3.5.68
-PORTREVISION=	1
+PORTVERSION=	3.6.13
 CATEGORIES=	print python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://www.reportlab.com/ftp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -17,8 +16,8 @@ LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PY_PILLOW}
 
-USES=		cpe python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		cpe python
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-reportlab[^3]-[^3].* \
 		py*-reportlab-[^3].*

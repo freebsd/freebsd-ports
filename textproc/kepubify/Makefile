@@ -1,10 +1,10 @@
 PORTNAME=	kepubify
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.0.4
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	textproc converters
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	EPUB to KEPUB converter
 WWW=		https://pgaskin.net/kepubify
 

@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2021-09-17 04:54:52 UTC
++++ src/CMakeLists.txt
+@@ -127,7 +127,7 @@ target_compile_options(dispatch PRIVATE -fblocks)
+ # FIXME(compnerd) add check for -fblocks?
+ target_compile_options(dispatch PRIVATE -fblocks)
+ 
+-check_c_compiler_flag("-momit-leaf-frame-pointer -Werror -Wall -O3" C_SUPPORTS_OMIT_LEAF_FRAME_POINTER)
++check_c_compiler_flag("-momit-leaf-frame-pointer -Wall" C_SUPPORTS_OMIT_LEAF_FRAME_POINTER)
+ if (C_SUPPORTS_OMIT_LEAF_FRAME_POINTER)
+   target_compile_options(dispatch PRIVATE -momit-leaf-frame-pointer)
+ endif()

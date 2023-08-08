@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-macaddr>=1.0:net/rubygem-macaddr
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/uuid

@@ -1,6 +1,6 @@
 PORTNAME=	android-tools
 PORTVERSION=	31.0.3p2.0
-PORTREVISION=	1
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	GH
 
@@ -11,6 +11,8 @@ WWW=		https://github.com/neelchauhan/freebsd-android-tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	ld: error: undefined symbol: OPENSSL_cpuid_setup
+
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libgmock.so:devel/googletest \
 		liblz4.so:archivers/liblz4 \
@@ -18,7 +20,7 @@ LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli \
 		libprotobuf.so:devel/protobuf \
 		libzstd.so:archivers/zstd
 
-USES=		cmake go:no_targets perl5 python:3.7+ shebangfix
+USES=		cmake go:no_targets perl5 python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	neelchauhan

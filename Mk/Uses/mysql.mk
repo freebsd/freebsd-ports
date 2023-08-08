@@ -5,7 +5,7 @@
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
-#		necessary (MySQL-5.7 = 57, look at bsd.default-versions.mk for
+#		necessary (MySQL-8.0 = 80, look at bsd.default-versions.mk for
 #		possible values).
 # client	Depends on the libmysqlclient library (default)
 # server/embedded
@@ -64,17 +64,12 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  for v in 56 100m 101m
-MYSQL${v}_LIBVER=	18
-.  endfor
 MYSQL57_LIBVER=		20
 MYSQL57p_LIBVER=	20
 MYSQL80_LIBVER=		21
-MYSQL102m_LIBVER=	3
-MYSQL103m_LIBVER=	3
-MYSQL104m_LIBVER=	3
-MYSQL105m_LIBVER=	3
-MYSQL106m_LIBVER=	3
+.  for v in 5 6 11
+MYSQL10${v}m_LIBVER=	3
+.  endfor
 
 # Setting/finding MySQL version we want.
 .  if exists(${LOCALBASE}/bin/mysql)
@@ -134,7 +129,7 @@ _MYSQL_SHLIB=	libmysqlclient
 .  if (${MYSQL_VER:C/[0-9]*//} == "m")
 _MYSQL_SERVER_FLAVOUR=	mariadb
 _MYSQL_CLIENT_FLAVOUR=	mariadb
-.    if ${MYSQL_VER:C/m//} >= 102
+.    if ${MYSQL_VER:C/m//} >= 105
 _MYSQL_SHLIB=	libmariadb
 .    endif
 .  elif (${MYSQL_VER:C/[0-9]*//} == "p")

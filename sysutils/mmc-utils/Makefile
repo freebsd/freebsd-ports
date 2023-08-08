@@ -1,18 +1,19 @@
 PORTNAME=	mmc-utils
-DISTVERSION=	20211202
+DISTVERSION=	20230612
 DISTVERSIONSUFFIX=	-${MMC_GITSHASH}
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git/snapshot/${MMC_GITHASH}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Userspace tools for MMC/SD devices
-WWW=		https://www.kernel.org/doc/Documentation/mmc/mmc-tools.txt
+WWW=		https://www.kernel.org/doc/html/latest/driver-api/mmc/mmc-tools.html
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 IGNORE_DragonFly=	only supported on FreeBSD
-MMC_GITHASH=	a1b233c2a31baa5b77cb67c0c3be4767be86f727
+CFLAGS+=	-DVERSION='\"${MMC_GITSHASH}\"'
+MMC_GITHASH=	6d593efc3cd00e4debd0ffc5806246390dc66242
 MMC_GITSHASH=	${MMC_GITHASH:C/^(........).*/\1/}
 PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
 USES=		gmake
@@ -20,8 +21,8 @@ WRKSRC=		${WRKDIR}/${MMC_GITHASH}
 
 post-patch:
 .for i in Makefile mmc_cmds.c mmc.c man/mmc.1
-	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|#^|; s|path/to|dev|g;\
-		s|mmcblk|mmcsd|g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -Ee 's|^(override CFLAGS.*)\$$\(AM_CFLAGS\) |\1|; \
+		s|path/to|dev|g; s|mmcblk|mmcsd|g' ${WRKSRC}/${i}
 .endfor
 
 do-install:

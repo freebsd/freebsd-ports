@@ -1,6 +1,6 @@
---- configure.orig	2019-06-07 06:23:13 UTC
-+++ configure
-@@ -792,6 +792,8 @@ CAPNG_CFLAGS
+--- configure.orig	2022-11-15 10:58:55.000000000 -0800
++++ configure	2022-11-24 07:15:39.173234000 -0800
+@@ -819,6 +819,8 @@
  PKG_CONFIG
  PKINIT_FALSE
  PKINIT_TRUE
@@ -9,8 +9,17 @@
  OPENLDAP_MODULE_FALSE
  OPENLDAP_MODULE_TRUE
  LIB_openldap
-@@ -15041,9 +15043,15 @@ if test "$enable_kx509" != no ;then
- $as_echo "#define KX509 1" >>confdefs.h
+@@ -14915,7 +14917,7 @@
+   done
+ IFS=$as_save_IFS
+ 
+-  test -z "$ac_cv_prog_CLANG_FORMAT" && ac_cv_prog_CLANG_FORMAT="no"
++  test -z "$ac_cv_prog_CLANG_FORMAT" && ac_cv_prog_CLANG_FORMAT=""
+ fi
+ fi
+ CLANG_FORMAT=$ac_cv_prog_CLANG_FORMAT
+@@ -16561,9 +16563,15 @@
+ printf "%s\n" "#define KX509 1" >>confdefs.h
  
  fi
 + if test "$enable_kx509" != no; then
@@ -26,7 +35,7 @@
  if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
  	if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
-@@ -16103,7 +16111,7 @@ case "$host" in
+@@ -17649,7 +17657,7 @@
      ;;
  *-*-freebsd*)
  	native_pthread_support=yes
@@ -35,18 +44,18 @@
  	;;
  *-*-openbsd*)
  	native_pthread_support=yes
-@@ -16339,7 +16347,7 @@ if ${ac_cv_funclib_db_create+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+@@ -17907,7 +17915,7 @@
+   printf %s "(cached) " >&6
+ else $as_nop
  
 -if eval "test \"\$ac_cv_func_db_create\" != yes" ; then
 +if eval "test \"\$ac_cv_func_db_create\" = yes" ; then
  	ac_save_LIBS="$LIBS"
- 	for ac_lib in "" $dbheader db-5 db5 db4 db3 db; do
+ 	for ac_lib in "" $dbheader db-6 db-5 db4 db3 db; do
  		case "$ac_lib" in
-@@ -16912,6 +16920,9 @@ esac
+@@ -18448,6 +18456,9 @@
  
- $as_echo "#define HAVE_NDBM 1" >>confdefs.h
+ printf "%s\n" "#define HAVE_NDBM 1" >>confdefs.h
        have_ndbm=yes
 +      if test "$db_type" = "unknown"; then
 +      db_type=ndbm
@@ -54,7 +63,7 @@
      else
  
        $as_unset ac_cv_func_dbm_firstkey
-@@ -28663,7 +28674,7 @@ fi
+@@ -30678,7 +30689,7 @@
  
  krb_cv_compile_et="no"
  krb_cv_com_err_need_r=""
@@ -62,8 +71,8 @@
 +krb_cv_compile_et_cross=yes
  if test "${COMPILE_ET}" != "no"; then
  
- { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compile_et has the features we need" >&5
-@@ -29176,6 +29187,10 @@ Usually this means the macro was only invoked conditio
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether compile_et has the features we need" >&5
+@@ -31185,6 +31196,10 @@
  fi
  if test -z "${PKINIT_TRUE}" && test -z "${PKINIT_FALSE}"; then
    as_fn_error $? "conditional \"PKINIT\" was never defined.

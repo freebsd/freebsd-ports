@@ -1,7 +1,7 @@
 PORTNAME=	povray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.0-beta.2
-PORTREVISION=	2
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/POV-Ray/povray/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 PKGNAMESUFFIX=	38
@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s/povray/${PKGBASE}/' \

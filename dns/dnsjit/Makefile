@@ -1,6 +1,7 @@
 PORTNAME=	dnsjit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	dns net
 
 MAINTAINER=	freebsd@dns.company
@@ -13,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb \
-		libluajit-5.1.so:lang/luajit-openresty \
 		libpcap.so:net/libpcap \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
 		# Mind PR 262976 about libpcap
 
-USES=		autoreconf libtool pkgconfig
+USES=		autoreconf libtool luajit pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	DNS-OARC
 

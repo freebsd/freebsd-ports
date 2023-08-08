@@ -1,27 +1,23 @@
 PORTNAME=	golly
-PORTVERSION=	3.3
+DISTVERSION=	4.2
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Conway's Game of Life and other cellular automata
 WWW=		http://golly.sourceforge.net/
 
 LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/../docs/License.html
 
-USES=		autoreconf compiler:c++11-lib gl localbase xorg
-USE_GL=		gl glu
-USE_WX=		3.0+
+USES=		gl gmake localbase python sdl
+USE_GL=		gl
+USE_SDL=	sdl2
+USE_WX=		3.2
 
-GNU_CONFIGURE=	yes
-# Pretend objdump is available even if it is not e.g. on aarch64.
-# The Python shared library name is already looked up via
-# distutils.sysconfig.get_config_var("LDLIBRARY") which is unlikely
-# to fail; objdump is never actually used.
-CONFIGURE_ARGS=	ac_cv_prog_OBJDUMP=/usr/bin/false \
-		--with-wx-config=${WX_CONFIG:T}
+MAKEFILE=	makefile-gtk
+BINARY_ALIAS=	g++=${CC} python3=${PYTHON_CMD} wx-config=${WX_CONFIG}
 
 DESKTOP_ENTRIES=	"Golly" \
 			"${COMMENT}" \
@@ -30,14 +26,27 @@ DESKTOP_ENTRIES=	"Golly" \
 			"Education;" \
 			""
 
-WRKSRC_SUBDIR=	gui-wx/configure
-PATCH_WRKSRC=	${WRKSRC}/../..
+PATCH_WRKSRC=	${WRKSRC}/..
+WRKSRC_SUBDIR=	gui-wx
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/bgolly \
+		bin/golly \
+		share/pixmaps/golly.xpm
+PORTDATA=	Help Patterns Rules Scripts
 
-post-install:
+pre-build:
+	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/wxmain.cpp ${WRKSRC}/wxhelp.cpp
+
+# There is no install target at makefile-gtk
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/../golly ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../bgolly ${STAGEDIR}${PREFIX}/bin
+
+	(cd ${WRKSRC}/.. && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
+
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/../icons/appicon.xpm \
+	${INSTALL_DATA} ${WRKSRC}/icons/appicon.xpm \
 		${STAGEDIR}${PREFIX}/share/pixmaps/golly.xpm
 
 .include <bsd.port.mk>

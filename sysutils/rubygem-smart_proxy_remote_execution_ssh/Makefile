@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_remote_execution_ssh
-PORTVERSION=	0.8.0
+PORTVERSION=	0.10.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy \
 		rubygem-smart_proxy_dynflow>=0.8<1:sysutils/rubygem-smart_proxy_dynflow
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

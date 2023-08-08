@@ -1,0 +1,46 @@
+[
+{ type: install
+  message: <<EOM
+Wazuh dashboard components were installed
+
+1) Wazuh dashboard is based on opensearch-dashboards and wazuh-kibana-app
+   projects. This guide help to adapt wazuh configuration for it works on
+   FreeBSD using apps are part of ports tree.
+
+2) Copy %%PREFIX%%/etc/wazuh-dashboard/opensearch_dashboards.yml to %%PREFIX%%/etc/opensearch-dashboards/
+   directory
+
+3) You can use my own version of wazuh certificates generator for generate root,
+   admin, indexer, server and dashboard certificates used by wazuh components.
+  
+   https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz
+
+4) Edit opensearch_dashboard.yml file and changes options accord to your
+   setup. For example host, ssl, etc. Sample files can give you a good
+   guide about that.
+
+5) Add OpenSearch Dashboard to /etc/rc.conf
+
+   # sysrc opensearch_dashboards_enable="YES"
+
+6) Start OpenSearch Dashboard service
+   
+   # service opensearch-dashboards start
+
+7) Login at OpenSearch Dashboard from any supported browser at:
+
+   https://10.0.0.30:5601
+
+   Listen port can be changed from opensearch_dashboard.yml file
+
+8) You can look more useful information at the following link:
+
+   https://documentation.wazuh.com/current/installation-guide/wazuh-dashboard/step-by-step.html
+
+   Take on mind wazuh arquitecture on FreeBSD is configurated not similar like
+   you can read at wazuh guide.
+
+9) Enjoy it
+EOM
+}
+]

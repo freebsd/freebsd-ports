@@ -1,17 +1,17 @@
---- media/video/video_encode_accelerator_adapter.cc.orig	2022-08-31 12:19:35 UTC
+--- media/video/video_encode_accelerator_adapter.cc.orig	2023-04-28 17:01:32 UTC
 +++ media/video/video_encode_accelerator_adapter.cc
-@@ -128,7 +128,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
+@@ -140,7 +140,7 @@ VideoEncodeAccelerator::Config SetUpVeaConfig(
    if (is_rgb)
      config.input_format = PIXEL_FORMAT_I420;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (storage_type == VideoFrame::STORAGE_DMABUFS ||
-       storage_type == VideoFrame::STORAGE_GPU_MEMORY_BUFFER) {
-     if (is_rgb)
-@@ -297,7 +297,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
+   if (format != PIXEL_FORMAT_I420 ||
+       !VideoFrame::IsStorageTypeMappable(storage_type)) {
+     // ChromeOS/Linux hardware video encoders supports I420 on-memory
+@@ -473,7 +473,7 @@ void VideoEncodeAcceleratorAdapter::InitializeInternal
        SetUpVeaConfig(profile_, options_, format, first_frame->storage_type(),
-                      supported_rc_modes_);
+                      supported_rc_modes_, required_encoder_type_);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

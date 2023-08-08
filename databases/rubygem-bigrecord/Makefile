@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activerecord4>=0:databases/rubygem-activerecord4 \
 		rubygem-uuidtools>=2.0.0:devel/rubygem-uuidtools
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

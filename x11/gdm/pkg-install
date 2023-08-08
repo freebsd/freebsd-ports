@@ -22,10 +22,6 @@ POST-INSTALL)
 	${CHOWN} root:${GROUP} /var/cache/gdm
 	${CHOWN} root:wheel ${PKG_PREFIX}/share/gdm
 	${CHMOD} 0755 ${PKG_PREFIX}/share/gdm
-	gconftool-2 --direct --config-source=xml:merged:${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory --recursive-unset /
-	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
-	${CHMOD} 1750 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory
-	${CHMOD} 1640 ${PKG_PREFIX}/etc/gdm/home/.gconf.mandatory/*.xml
 
 	${MKDIR} -p ${PKG_PREFIX}/etc/gdm/Sessions
 	${MKDIR} -p ${PKG_PREFIX}/etc/dm/Sessions

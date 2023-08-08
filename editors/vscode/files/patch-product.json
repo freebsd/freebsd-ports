@@ -1,14 +1,13 @@
---- product.json.orig	2022-06-08 11:20:55 UTC
+--- product.json.orig	2023-07-04 10:23:33 UTC
 +++ product.json
-@@ -28,6 +28,17 @@
- 	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
+@@ -33,6 +33,16 @@
+ 	"nodejsRepository": "https://nodejs.org",
  	"urlProtocol": "code-oss",
- 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/3c8520fab514b9f56070214496b26ff68d1b1cb5/out/vs/workbench/contrib/webview/browser/pre/",
+ 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
-+		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-+		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-+		"itemUrl": "https://marketplace.visualstudio.com/items"
++		"serviceUrl": "https://open-vsx.org/vscode/gallery",
++		"itemUrl": "https://open-vsx.org/vscode/item"
 +	},
 +	"introductoryVideosUrl": "https://go.microsoft.com/fwlink/?linkid=832146",
 +	"keyboardShortcutsUrlLinux": "https://go.microsoft.com/fwlink/?linkid=832144",

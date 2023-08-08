@@ -1,0 +1,11 @@
+--- cmake/BuildParameters.cmake.orig	2023-06-25 15:34:40 UTC
++++ cmake/BuildParameters.cmake
+@@ -120,7 +120,7 @@ if(${PCSX2_TARGET_ARCHITECTURES} MATCHES "x86_64")
+ 			endif()
+ 		else()
+ 			#set(ARCH_FLAG "-march=native -fabi-version=6")
+-			set(ARCH_FLAG "-march=native")
++			#set(ARCH_FLAG "-march=native")
+ 		endif()
+ 	endif()
+ 	list(APPEND PCSX2_DEFS _ARCH_64=1 _M_X86=1)

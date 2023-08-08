@@ -1,5 +1,5 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.2
+PORTVERSION=	3.5
 PORTREVISION=	1
 CATEGORIES=	mail
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
+USES=		cmake compiler:c++20-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	rspamd_project
 USE_GITHUB=	yes
 USE_GNOME=	glib20
@@ -75,7 +75,7 @@ GPERF_CMAKE_ON=		-DENABLE_GPERF_TOOLS=ON
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51+
 LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
@@ -83,9 +83,6 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 .if ${ARCH} == powerpc64
 CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-.elif ${ARCH} == powerpc64le
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
 post-install:

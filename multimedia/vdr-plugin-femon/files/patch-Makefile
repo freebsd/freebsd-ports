@@ -1,9 +1,0 @@
---- femon-1.7.7/Makefile.orig
-+++ femon-1.7.7/Makefile
-@@ -131,3 +134,6 @@ dist: clean
- 
- clean:
- 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~ $(PODIR)/*.mo $(PODIR)/*.pot
-+
-+install:
-+	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)

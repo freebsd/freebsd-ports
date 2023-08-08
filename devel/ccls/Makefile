@@ -1,5 +1,5 @@
 PORTNAME=	ccls
-DISTVERSION=	0.20210330
+DISTVERSION=	0.20230115
 CATEGORIES=	devel
 
 MAINTAINER=	khng@FreeBSD.org
@@ -10,15 +10,15 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rapidjson>=1.1.0_4:devel/rapidjson
-LIB_DEPENDS=	libclang-cpp.so:devel/llvm${LLVM_DEFAULT}
 
-USES=		cmake compiler:c++17-lang localbase
+USES=		cmake compiler:c++17-lang llvm:lib localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	MaskRay
+GH_TAGNAME=	8bc3959537ad
 
 CMAKE_ARGS=	-DCCLS_VERSION:STRING="${DISTVERSION}" \
-		-DClang_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/clang" \
-		-DLLVM_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/llvm"
+		-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
+		-DLLVM_DIR:PATH="${LLVM_PREFIX}/lib/cmake/llvm"
 CXXFLAGS+=	-DNDEBUG
 
 PLIST_FILES=	bin/ccls

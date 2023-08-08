@@ -3,6 +3,7 @@ man/man1/wmforecast.1.gz
 share/applications/wmforecast.desktop
 share/icons/hicolor/48x48/apps/wmforecast.png
 share/icons/hicolor/scalable/apps/wmforecast.svg
+share/metainfo/org.friedcheese.wmforecast.metainfo.xml
 %%DATADIR%%/dialog-error.png
 %%DATADIR%%/weather-clear-night.png
 %%DATADIR%%/weather-clear.png

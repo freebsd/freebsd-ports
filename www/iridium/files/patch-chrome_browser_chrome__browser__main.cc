@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -231,11 +231,11 @@
+@@ -244,11 +244,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -11,20 +11,28 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "components/crash/core/app/breakpad_linux.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -270,7 +270,7 @@
  
+@@ -283,14 +283,14 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/metrics/desktop_session_duration/desktop_session_duration_tracker.h"
  #include "chrome/browser/metrics/desktop_session_duration/touch_mode_stats_tracker.h"
-@@ -1007,7 +1007,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
-       AddFirstRunNewTabs(browser_creator_.get(), master_prefs_->new_tabs);
+ #include "chrome/browser/profiles/profile_activity_metrics_recorder.h"
+ #include "ui/base/pointer/touch_ui_controller.h"
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
+ #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
+@@ -1005,7 +1005,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+       browser_creator_->AddFirstRunTabs(master_prefs_->new_tabs);
      }
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -32,21 +40,21 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1020,7 +1020,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
-   }
- #endif  // !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_CHROMEOS_ASH)
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OPENBSD)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-   // Set the product channel for crash reports.
-   if (!crash_reporter::IsCrashpadEnabled()) {
-     breakpad::SetChannelCrashKey(
-@@ -1041,7 +1041,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
- 
+@@ -1061,7 +1061,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
+   TouchModeStatsTracker::Initialize(
+@@ -1295,7 +1295,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+       *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   if (headless::IsHeadlessMode()) {
+     headless::ReportHeadlessActionMetrics();
+   }

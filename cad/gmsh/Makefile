@@ -1,5 +1,5 @@
 PORTNAME=	gmsh
-DISTVERSION=	4.9.2
+DISTVERSION=	4.11.1
 PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://gmsh.info/src/
@@ -26,10 +26,11 @@ USES=		blaslapack compiler:c++11-lang cmake fortran gl jpeg tar:tgz \
 		xorg
 
 USE_GL=		gl glu
-USE_XORG=	x11 xcursor xext xinerama xfixes xft xrender
+USE_XORG=	ice sm x11 xcursor xext xinerama xfixes xft xrender
 
 CMAKE_ARGS=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
+CXXFLAGS_powerpc64=	-mvsx
 LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	CGNS DOCS MED OCC SHARED STATIC

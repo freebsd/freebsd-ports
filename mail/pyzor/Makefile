@@ -2,7 +2,7 @@ PORTNAME=	pyzor
 PORTVERSION=	1.0.0
 PORTREVISION=	2
 CATEGORIES=	mail python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 PATCH_SITES=	https://github.com/SpamExperts/pyzor/commit/
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>=0:databases/py-gdbm@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

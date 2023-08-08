@@ -1,6 +1,6 @@
 PORTNAME=	libplacebo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.208.0
+DISTVERSION=	6.292.1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,11 +10,11 @@ WWW=		https://code.videolan.org/videolan/libplacebo
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 localbase:ldflags meson pkgconfig python:3.6+,build
+USES=		compiler:c11 localbase:ldflags meson pkgconfig python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	haasn
-MESON_ARGS=	-Ddemos=false
+MESON_ARGS=	-Dd3d11=disabled -Dlibdovi=disabled -Ddemos=false
 
 OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN
 OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC
@@ -35,7 +35,7 @@ LIBUNWIND_DESC=		Use libunwind for stacktraces
 LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 LIBUNWIND_MESON_ENABLED=	unwind
 
-OPENGL_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+OPENGL_GH_TUPLE=	Dav1dde:glad:v2.0.4:glad/3rdparty/glad
 OPENGL_MESON_ENABLED=	opengl
 
 SHADERC_DESC=		libshaderc SPIR-V compiler
@@ -47,15 +47,19 @@ TEST_MESON_TRUE=	tests
 
 VULKAN_DESC=		Vulkan-based renderer
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-			${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=	vulkan
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/src/vulkan/utils_gen.py
+# https://github.com/mesonbuild/meson/issues/7746
+	@${REINPLACE_CMD} "s,static:,dirs: '${LOCALBASE}/lib'\, &," \
+		${WRKSRC}/src/glsl/meson.build
 # Extract (snapshot) version from port version instead of meson.build
-	@${REINPLACE_CMD} "s/version_pretty/'${DISTVERSIONFULL}'/" \
+	@${REINPLACE_CMD} -e "s/'git'/'${FALSE}'/" \
+		-e "s/version_pretty/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/src/meson.build
 
 pre-install-TEST-on:	do-test

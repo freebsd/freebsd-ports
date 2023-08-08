@@ -1,0 +1,6 @@
+optking (also known as pyoptking) is a rewrite of the c++ optking module in
+psi4.This rewrite was undertaken to enable future development and for use with
+recent interoperability efforts (e.g. MolSSI QCArchive and QCDB). optking is
+focused on optimization of molecular geometries: finding minima, transition
+states, and reaction paths. Current work is focused especially on expanding
+the reaction path methods.

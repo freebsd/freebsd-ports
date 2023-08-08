@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-dm-do-adapter>=${PORTVERSION}:databases/rubygem-dm-do-adapt
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

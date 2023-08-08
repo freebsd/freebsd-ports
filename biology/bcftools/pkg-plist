@@ -30,6 +30,7 @@ libexec/bcftools/impute-info.so
 libexec/bcftools/indel-stats.so
 libexec/bcftools/isecGT.so
 libexec/bcftools/mendelian.so
+libexec/bcftools/mendelian2.so
 libexec/bcftools/missing2ref.so
 libexec/bcftools/parental-origin.so
 libexec/bcftools/prune.so
@@ -43,5 +44,6 @@ libexec/bcftools/tag2tag.so
 libexec/bcftools/trio-dnm2.so
 libexec/bcftools/trio-stats.so
 libexec/bcftools/trio-switch-rate.so
+libexec/bcftools/variant-distance.so
 libexec/bcftools/variantkey-hex.so
 man/man1/bcftools.1.gz

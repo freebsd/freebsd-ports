@@ -1,5 +1,5 @@
 PORTNAME=	Horde_Service_Weather
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=	www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -16,5 +16,7 @@ USE_HORDE_RUN=	Horde_Role \
 		Horde_Url
 
 CONFLICTS_INSTALL=	php*-pear-horde-Horde_Service_Weather # bin/horde-service-weather-metar-database
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

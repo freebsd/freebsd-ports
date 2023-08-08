@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-oxidized>=0.25:net-mgmt/rubygem-oxidized \
 		rubygem-slop3>=3.5:devel/rubygem-slop3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

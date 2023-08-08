@@ -1,26 +1,29 @@
 PORTNAME=	PySceneDetect
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+DISTVERSIONSUFFIX=	-release
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	OpenCV-based video scene detection program and Python library
-WWW=		https://pyscenedetect.readthedocs.io/en/latest/
+WWW=		https://www.scenedetect.com
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}click>=3.2:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
 		opencv>=0:graphics/opencv \
 		mkvmerge:multimedia/mkvtoolnix
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	Breakthrough
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

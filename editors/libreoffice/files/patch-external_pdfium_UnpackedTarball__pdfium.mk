@@ -1,9 +1,9 @@
 Index: external/pdfium/UnpackedTarball_pdfium.mk
---- external/pdfium/UnpackedTarball_pdfium.mk.orig	2022-01-26 14:35:29 UTC
+--- external/pdfium/UnpackedTarball_pdfium.mk.orig	2022-12-22 00:14:09 UTC
 +++ external/pdfium/UnpackedTarball_pdfium.mk
-@@ -24,6 +24,8 @@ pdfium_patches += AndroidNDK19.patch.1
- # --with-latest-c++:
- pdfium_patches += gcc-c++20-comparison.patch
+@@ -25,6 +25,8 @@ pdfium_patches += constexpr-template.patch
+ 
+ pdfium_patches += constexpr-template.patch
  
 +pdfium_patches += pdfium-bsd.patch
 +

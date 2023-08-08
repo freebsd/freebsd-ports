@@ -1,6 +1,6 @@
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}wm/${PORTNAME}wm/Blackbox%20${PORTVERSION}
 
@@ -12,23 +12,26 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pathfix pkgconfig iconv xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11 xft
 
 GNU_CONFIGURE=	yes
+
 LDFLAGS+=	${ICONV_LIB}
 
 PORTDOCS=	README.bbtools README.bsetbg
-MANPAGES=	bsetbg.1 bsetroot.1
 
 OPTIONS_DEFINE=	TOOLS_ONLY DOCS
 
 TOOLS_ONLY_DESC=	Do not install window manager, only tools
 
-TOOLS_ONLY_INSTALL_TARGET=	-C util install # XXX dirty hack :(
 TOOLS_ONLY_MAKE_ARGS=		SUBDIRS="doc lib util" bin_PROGRAMS=bsetroot
+TOOLS_ONLY_INSTALL_TARGET=	-C util install # XXX dirty hack :(
 TOOLS_ONLY_VARS=		PKGNAMESUFFIX=-tools \
 				COMMENT+="(tools only)"
 TOOLS_ONLY_VARS_OFF=		PORTDOCS+="AUTHORS COMPLIANCE ChangeLog README RELNOTES TODO"
+
+MANPAGES=	bsetbg.1 bsetroot.1
 
 .include <bsd.port.options.mk>
 

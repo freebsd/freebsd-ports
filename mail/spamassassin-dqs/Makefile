@@ -1,6 +1,6 @@
 PORTNAME=		spamassassin-dqs
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.2.2
+DISTVERSION=		1.4.0
 CATEGORIES=		mail
 
 MAINTAINER=	ler@FreeBSD.org
@@ -15,10 +15,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	spamhaus
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	etc/mail/spamassassin/SH.pm \
-		"@sample etc/mail/spamassassin/sh.cf.sample" \
+PLIST_FILES=	"@sample etc/mail/spamassassin/sh.cf.sample" \
 		etc/mail/spamassassin/sh_scores.cf \
-		etc/mail/spamassassin/sh.pre \
 		share/doc/spamassassin-dqs/README.md
 
 NO_ARCH=	yes
@@ -31,20 +29,15 @@ HBL_PLIST_FILES=	"@sample etc/mail/spamassassin/sh_hbl.cf.sample" \
 			etc/mail/spamassassin/hbltest.sh \
 			etc/mail/spamassassin/sh_hbl_scores.cf
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|<config_directory>|${PREFIX}/etc/mail/spamassassin|' ${WRKSRC}/sh.pre
-
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mail/spamassassin
-	${INSTALL_DATA} ${WRKSRC}/sh.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh.cf.sample
-	${INSTALL_DATA} ${WRKSRC}/sh.pre ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
-	${INSTALL_DATA} ${WRKSRC}/SH.pm ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
-	${INSTALL_DATA} ${WRKSRC}/sh_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh.cf.sample
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN}  ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 do-install-HBL-on:
-	${INSTALL_DATA} ${WRKSRC}/sh_hbl.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh_hbl.cf.sample
-	${INSTALL_DATA} ${WRKSRC}/sh_hbl_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_hbl.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/sh_hbl.cf.sample
+	${INSTALL_DATA} ${WRKSRC}/4.0.0+/sh_hbl_scores.cf ${STAGEDIR}${PREFIX}/etc/mail/spamassassin/
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	idn-ruby
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

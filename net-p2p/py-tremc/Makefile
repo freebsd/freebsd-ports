@@ -10,7 +10,7 @@ WWW=		https://github.com/tremc/tremc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes

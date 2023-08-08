@@ -1,6 +1,6 @@
 PORTNAME=	papi
 PORTVERSION=	5.4.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://icl.cs.utk.edu/projects/papi/downloads/
 

@@ -1,3 +1,6 @@
+Help glad find local headers:
+3rdparty/glad/include/glad_egl.h:212:10: fatal error: 'KHR/khrplatform.h' file not found
+
 --- 3rdparty/glad/CMakeLists.txt.orig	2022-09-02 10:21:30 UTC
 +++ 3rdparty/glad/CMakeLists.txt
 @@ -12,6 +12,7 @@ elseif(X11_API OR WAYLAND_API)

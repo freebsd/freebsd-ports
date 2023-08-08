@@ -1,7 +1,7 @@
 PORTNAME=	pysha3
 DISTVERSION=	1.0.2
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_mips64=		fails to compile: KeccakP-1600-opt64.c: error: Not yet implemented
 
 # Actually Python 2.7,3.4+
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:

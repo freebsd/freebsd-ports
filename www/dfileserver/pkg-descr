@@ -1,4 +1,4 @@
-A small and simple webserver programmed in C++ that was designed to make
+A small and simple web server programmed in C++ that was designed to make
 sharing files easy.
 
 By default, it shares whatever folder it was executed from on port 2000.

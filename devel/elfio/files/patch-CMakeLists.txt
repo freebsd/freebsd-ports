@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-11-28 05:02:09 UTC
++++ CMakeLists.txt
+@@ -140,7 +140,7 @@ if(IS_TOP_PROJECT)
+     set(CPACK_SOURCE_IGNORE_FILES "/.git/;/.github/;/.vscode/;/build;/.clang-format;/.gitignore;/.travis.yml;/doc/images/;/doc/site;/doc/elfio.docx;/examples/sudo_gdb.sh;/tests")
+ 
+     install(FILES ${CPACK_RESOURCE_FILE_README} ${CPACK_RESOURCE_FILE_LICENSE}
+-        DESTINATION share/docs/${PROJECT_NAME})
++        DESTINATION share/doc/${PROJECT_NAME})
+ 
+     include(CPack)
+ endif()

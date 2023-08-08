@@ -1,10 +1,8 @@
 bin/pipe-viewer
 %%SITE_PERL%%/WWW/PipeViewer.pm
-%%SITE_PERL%%/WWW/PipeViewer/Activities.pm
 %%SITE_PERL%%/WWW/PipeViewer/Channels.pm
 %%SITE_PERL%%/WWW/PipeViewer/CommentThreads.pm
 %%SITE_PERL%%/WWW/PipeViewer/GetCaption.pm
-%%SITE_PERL%%/WWW/PipeViewer/GuideCategories.pm
 %%SITE_PERL%%/WWW/PipeViewer/InitialData.pm
 %%SITE_PERL%%/WWW/PipeViewer/Itags.pm
 %%SITE_PERL%%/WWW/PipeViewer/ParseJSON.pm
@@ -19,11 +17,9 @@ bin/pipe-viewer
 %%SITE_PERL%%/WWW/PipeViewer/Videos.pm
 %%PERL5_MAN1%%/pipe-viewer.1.gz
 %%PERL5_MAN3%%/WWW::PipeViewer.3.gz
-%%PERL5_MAN3%%/WWW::PipeViewer::Activities.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::Channels.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::CommentThreads.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::GetCaption.3.gz
-%%PERL5_MAN3%%/WWW::PipeViewer::GuideCategories.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::InitialData.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::Itags.3.gz
 %%PERL5_MAN3%%/WWW::PipeViewer::ParseJSON.3.gz
@@ -46,3 +42,5 @@ bin/pipe-viewer
 %%GTK3%%%%SITE_PERL%%/auto/share/dist/WWW-PipeViewer/icons/user.png
 %%GTK3%%share/applications/gtk-pipe-viewer.desktop
 %%GTK3%%share/pixmaps/gtk-pipe-viewer.png
+%%SITE_PERL%%/WWW/PipeViewer/DiskCache.pm
+%%SITE_PERL%%/WWW/PipeViewer/Worker.pm

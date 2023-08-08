@@ -1,11 +1,12 @@
---- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig	2021-09-22 23:05:58 UTC
+Index: Source/JavaScriptCore/assembler/ARMv7Assembler.h
+--- Source/JavaScriptCore/assembler/ARMv7Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARMv7Assembler.h
-@@ -2402,6 +2402,8 @@ class ARMv7Assembler { (public)
-     {
- #if OS(DARWIN)
-         sys_cache_control(kCacheFunctionPrepareForExecution, code, size);
-+#elif OS(FREEBSD) || OS(NETBSD)
-+        __clear_cache(code, reinterpret_cast<char*>(code) + size);
- #elif OS(LINUX)
-         size_t page = pageSize();
-         uintptr_t current = reinterpret_cast<uintptr_t>(code);
+@@ -2573,6 +2573,8 @@ class ARMv7Assembler { (public)
+             linuxPageFlush(current, current + page);
+ 
+         linuxPageFlush(current, end);
++#elif CPU(ARM_TRADITIONAL) && (OS(FREEBSD) || OS(OPENBSD)) && COMPILER(CLANG)
++       __clear_cache(code, reinterpret_cast<char*>(code) + size);
+ #else
+ #error "The cacheFlush support is missing on this platform."
+ #endif

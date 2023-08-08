@@ -1,4 +1,3 @@
 %%PERL5_MAN3%%/Amon2::Plugin::Web::CSRFDefender.3.gz
-%%PERL5_MAN3%%/Amon2::Plugin::Web::CSRFDefender::Random.3.gz
 %%SITE_PERL%%/Amon2/Plugin/Web/CSRFDefender.pm
 %%SITE_PERL%%/Amon2/Plugin/Web/CSRFDefender/Random.pm

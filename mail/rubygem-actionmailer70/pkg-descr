@@ -10,5 +10,3 @@ Controller renders views using templates.
 Additionally, an Action Mailer class can be used to process incoming email, such
 as allowing a blog to accept new posts from an email (which could even have been
 sent from a phone).
-
-See also: https://rubyonrails.org/

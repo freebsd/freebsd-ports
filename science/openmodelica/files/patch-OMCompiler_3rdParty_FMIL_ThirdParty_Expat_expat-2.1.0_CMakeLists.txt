@@ -1,0 +1,10 @@
+--- OMCompiler/3rdParty/FMIL/ThirdParty/Expat/expat-2.1.0/CMakeLists.txt.orig	2022-12-10 10:46:09 UTC
++++ OMCompiler/3rdParty/FMIL/ThirdParty/Expat/expat-2.1.0/CMakeLists.txt
+@@ -62,6 +62,7 @@ else(BUILD_shared)
+ endif(BUILD_shared)
+ 
+ add_library(expat ${_SHARED} ${expat_SRCS})
++target_include_directories(expat PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+ 
+ if(NOT BUILD_shared)
+   target_compile_definitions(expat PUBLIC XML_STATIC)

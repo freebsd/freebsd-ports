@@ -5,5 +5,3 @@ provides:
 - Integration with the googleauth gem for authentication using OAuth, API keys,
   and service accounts.
 - Control of retry, pagination, and timeouts.
-
-See also: https://github.com/googleapis/google-api-ruby-client

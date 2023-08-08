@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/list_interfaces.rb
 

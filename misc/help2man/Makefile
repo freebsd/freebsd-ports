@@ -1,5 +1,5 @@
 PORTNAME=	help2man
-PORTVERSION=	1.49.2
+PORTVERSION=	1.49.3
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
@@ -32,7 +32,7 @@ NLS_VARS_OFF=		NO_ARCH=yes
 NLS_INFO+=		help2man-${lang}
 .endfor
 
-.for lang in da de el eo es fi fr hr hu it ja nb pl pt_BR ro ru sr sv ta uk vi zh_CN
+.for lang in da de el eo es fi fr hr hu it ja ko nb pl pt_BR ro ru sr sv ta uk vi zh_CN
 NLS_PLIST_FILES+=	man/${lang}/man1/help2man.1.gz \
 			share/locale/${lang}/LC_MESSAGES/help2man.mo
 .endfor

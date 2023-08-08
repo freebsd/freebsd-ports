@@ -26,4 +26,3 @@ USE_KDE=	itemmodels \
 KDE_INVENT=	942274185cc89fabf74f5f1efb886ecf210ab2fb sdk
 
 .include <bsd.port.mk>
-

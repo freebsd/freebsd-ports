@@ -1,4 +1,4 @@
---- src/Widgets/TerminalWidget.vala.orig	2021-12-13 18:31:36 UTC
+--- src/Widgets/TerminalWidget.vala.orig	2022-10-27 16:47:44 UTC
 +++ src/Widgets/TerminalWidget.vala
 @@ -68,13 +68,6 @@ namespace Terminal {
          }
@@ -9,15 +9,16 @@
 -                                                  "/io/elementary/terminal " +
 -                                                  "io.elementary.terminal.ProcessFinished " +
 -                                                  "string:$PANTHEON_TERMINAL_ID " +
--                                                  "string:\"$(history 1 | cut -c 8-)\" " +
+-                                                  "string:\"$(fc -nl -1 | cut -c 3-)\" " +
 -                                                  "int32:\$__bp_last_ret_value >/dev/null 2>&1";
  
          /* Following strings are used to build RegEx for matching URIs */
          const string USERCHARS = "-[:alnum:]";
-@@ -364,14 +357,7 @@ namespace Terminal {
+@@ -351,15 +344,7 @@ namespace Terminal {
+                 shell = Vte.get_user_shell ();
  
              envv = {
-                 // Export ID so we can identify the terminal for which the process completion is reported
+-                // Export ID so we can identify the terminal for which the process completion is reported
 -                "PANTHEON_TERMINAL_ID=" + terminal_id,
 -
 -                // Export callback command a BASH-specific variable, see "man bash" for details
@@ -30,7 +31,7 @@
              };
  
              /* We need opening uri to be available asap when constructing window with working directory
-@@ -454,12 +440,49 @@ namespace Terminal {
+@@ -436,12 +421,49 @@ namespace Terminal {
              return this.match_check_event (event, null);
          }
  
@@ -47,14 +48,14 @@
 +
          public string get_shell_location () {
 +            string[] spawn_env = GLib.Environ.get ();
-+            string[] procstat_cmd = {"/usr/bin/pwdx", "--libxo:T",};
++            string[] procstat_cmd = { "/usr/bin/pwdx", "--libxo:T", };
 +            string standard_output = null;
 +            bool res;
 +            string cwd = null;
 +
              int pid = (!) (this.child_pid);
  
-+            /* Update procstat(1) argument */
++            // Update procstat(1) argument
 +            procstat_cmd += pid.to_string ();
 +
              try {

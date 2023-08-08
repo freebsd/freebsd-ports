@@ -1,5 +1,6 @@
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libowfat.a:${LIBOWFAT_PORT}
 
 SNAPSHOT=	20170319
-USES=		tar:bzip2 gmake ssl
+USES=		tar:bzip2 gmake localbase ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CFLAGS+=	-DATTRIBS=512
 SBINFILES=	acl addindex bindrequest dumpacls dumpidx idx2ldif parse \

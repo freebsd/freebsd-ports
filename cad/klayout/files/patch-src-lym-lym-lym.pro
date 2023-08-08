@@ -1,6 +1,6 @@
---- src/lym/lym/lym.pro.orig	2021-08-28 16:46:14 UTC
+--- src/lym/lym/lym.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/lym/lym/lym.pro
-@@ -20,22 +20,22 @@ HEADERS = \
+@@ -23,22 +23,22 @@ HEADERS = \
  INCLUDEPATH += $$TL_INC $$GSI_INC
  DEPENDPATH += $$TL_INC $$GSI_INC
  

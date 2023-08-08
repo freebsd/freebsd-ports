@@ -1,0 +1,11 @@
+--- setup.cfg.orig	2023-01-14 21:23:03.797249800 +0000
++++ setup.cfg	2023-01-15 13:13:52.728391000 +0000
+@@ -46,8 +46,6 @@
+ 
+ [options.entry_points]
+ console_scripts = 
+-	pymodbus.console = pymodbus.repl.client.main:main
+-	pymodbus.server  = pymodbus.repl.server.main:app
+ 	pymodbus.simulator = pymodbus.server.simulator.main:main
+ 
+ [options.packages.find]

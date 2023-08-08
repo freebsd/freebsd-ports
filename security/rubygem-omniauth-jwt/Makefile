@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-jwt>=0:www/rubygem-jwt \
 		rubygem-omniauth1>=1.1<2:security/rubygem-omniauth1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

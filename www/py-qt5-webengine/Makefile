@@ -1,6 +1,6 @@
 PORTNAME=	webengine
 DISTVERSION=	${PYQTWEBENGINE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITES_PYQTWEBENGINE}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -14,7 +14,7 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 
 LICENSE=	GPLv3
 
-USES=		gl python:3.8+ pyqt:5 qt:5
+USES=		gl python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip:build pyqt5
 USE_PYTHON=	concurrent flavors py3kplist

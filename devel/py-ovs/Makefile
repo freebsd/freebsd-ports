@@ -1,7 +1,7 @@
 PORTNAME=	ovs
 PORTVERSION=	2.9.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	akoshibe@gmail.com
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 NO_ARCH=	yes
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

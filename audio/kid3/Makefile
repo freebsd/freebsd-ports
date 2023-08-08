@@ -1,5 +1,5 @@
 PORTNAME=	kid3
-PORTVERSION=	3.9.2
+PORTVERSION=	3.9.4
 PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
@@ -39,7 +39,7 @@ PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 USES+=		qt:5
 USE_QT=		core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ON+=	WITH_QT5
+CMAKE_OFF+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -48,7 +48,7 @@ KID3_APPS+=	QT
 USES+=		gl qt:6
 USE_GL=		opengl
 USE_QT=		base multimedia tools:build
-CMAKE_OFF+=	WITH_QT5
+CMAKE_ON+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -59,7 +59,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons kio \
 		service widgetsaddons xmlgui doctools:build ecm:build
 USE_QT=		concurrent core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ON+=	WITH_QT5
+CMAKE_OFF+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="" \
 		QT="@comment " \
 		QT_SUFX=""
@@ -82,7 +82,7 @@ ACOUSTID_LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 ACOUSTID_CMAKE_BOOL=	WITH_CHROMAPRINT WITH_FFMPEG
 
 CLI_DESC=		Build and install command line utility
-CLI_USES=		python:3.7+,test readline
+CLI_USES=		python:test readline
 CLI_VARS=		KID3_APPS+=CLI
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac

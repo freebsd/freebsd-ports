@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	XCONTRIB/applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Image pick up utility for X Window System
 
 LICENSE=	xwpick

@@ -47,5 +47,6 @@ SQLITE3_PLIST_FILES=	lib/dbd/libdbdsqlite3.so
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/drivers/*/dbd_*/*
+	@${REINPLACE_CMD} 's/tests //' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

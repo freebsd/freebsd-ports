@@ -1,12 +1,14 @@
 PORTNAME=	liberasurecode
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Unified Erasure Coding interface for common storage workloads
 WWW=		https://github.com/openstack/liberasurecode
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig autoreconf libtool
 USE_GITHUB=	yes
@@ -15,7 +17,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		--disable-werror
-
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	test
 
 CFLAGS_amd64=	-DINTEL_SSE2

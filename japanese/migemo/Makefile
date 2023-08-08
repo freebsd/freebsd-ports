@@ -23,8 +23,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/romkan.rb:japanese/ruby-romkan \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rubydir=${RUBY_SITELIBDIR}
-USES+=		autoreconf
-USE_RUBY=	yes
+USES+=		autoreconf ruby
 
 .if !defined(SLAVE_PORT)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am \

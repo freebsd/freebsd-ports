@@ -1,7 +1,7 @@
 PORTNAME=	urwid
 PORTVERSION=	2.1.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://urwid.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 PORTEXAMPLES=	*

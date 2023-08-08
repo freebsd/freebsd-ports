@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachetools>0:devel/py-cachetools@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}z3-solver>4.8.5.0:math/py-z3-solver@${PY_FLAVOR}
 TEST_DEPENDS=	z3>4.8.5.0:math/z3
 
-USES=		angr:nose python:3.6+
+USES=		angr:nose python
 USE_GITHUB=	yes
 GH_ACCOUNT=	angr
 USE_PYTHON=	autoplist distutils

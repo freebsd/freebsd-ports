@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.3.3
+PORTVERSION=	4.3.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	-43
@@ -11,7 +11,7 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pgsql:9.6+
+USES=		gmake libtool pgsql:11+
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
 
@@ -35,6 +35,12 @@ MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
 PAM_CONFIGURE_ON=	--with-pam
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool

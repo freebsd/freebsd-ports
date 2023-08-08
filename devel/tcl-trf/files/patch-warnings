@@ -49,3 +49,12 @@
 +#endif
      Tcl_ChannelType*    parentType     = Tcl_GetChannelType  (parent);
      Tcl_DriverSeekProc* parentSeekProc = Tcl_ChannelSeekProc (parentType);
+--- generic/otpcode.c	2009-06-18 00:54:43.000000000 -0400
++++ generic/otpcode.c	2023-02-13 00:25:46.660181000 -0500
+@@ -2757,5 +2757,5 @@
+   int    i;
+   unsigned long p;
+-  char   b[9];
++  char   b[11];
+ 
+   if ((c -> wordCount == 5) && (c -> charCount > 0))

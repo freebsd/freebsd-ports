@@ -1,11 +1,15 @@
-KSH-93 is the most recent version of the KornShell Language described
-in "The KornShell Command and Programming Language," by Morris
-Bolsky and David Korn of AT&T Bell Laboratories.  The KornShell is
-a shell programming language, which is upward compatible with "sh"
-(the Bourne Shell), and is intended to conform to the IEEE P1003.2/ISO
-9945.2 Shell and Utilities standard.  KSH-93 provides an enhanced
-programming environment in addition to the major command-entry
-features of the BSD shell "csh".  With KSH-93, medium-sized programming
-tasks can be performed at shell-level without a significant loss
-in performance.  In addition, "sh" scripts can be run on KSH-93
-without modification.
+ksh93u+m is the ksh93 reboot aims to develop bugfixes to the last
+stable release (93u+ 2012-08-01) of ksh93, formerly developed by
+AT&T Software Technology (AST). This ksh 93u+m reboot now incorporates
+many of these bugfixes, plus patches from OpenSUSE, Red Hat, and Solaris,
+as well as many new fixes from the community.
+
+Between 2017 and 2020 there was an ultimately unsuccessful attempt to
+breathe new life into the KornShell by extensively refactoring the last
+unstable AST beta version (93v-). While that ksh2020 effort is now
+abandoned and still has many critical bugs, it also had a lot of bugs
+fixed. More importantly, the AST issue tracker now contains a lot of
+documentation on how to fix those bugs, which made it possible to
+backport many of them to the last stable release instead.
+
+The shells/ksh port tracks releases.

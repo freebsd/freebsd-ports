@@ -10,7 +10,6 @@ lib/liteide/plugins/libbookmarks.so
 lib/liteide/plugins/libdlvdebugger.so
 lib/liteide/plugins/libfakevimedit.so
 lib/liteide/plugins/libfilebrowser.so
-lib/liteide/plugins/libgdbdebugger.so
 lib/liteide/plugins/libgolangast.so
 lib/liteide/plugins/libgolangcode.so
 lib/liteide/plugins/libgolangdoc.so
@@ -139,6 +138,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/language.dtd
 %%DATADIR%%/liteeditor/kate/less.xml
 %%DATADIR%%/liteeditor/kate/lua.xml
+%%DATADIR%%/liteeditor/kate/makefile.xml
 %%DATADIR%%/liteeditor/kate/markdown.xml
 %%DATADIR%%/liteeditor/kate/perl.xml
 %%DATADIR%%/liteeditor/kate/python.xml

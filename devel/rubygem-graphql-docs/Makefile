@@ -1,5 +1,6 @@
 PORTNAME=	graphql-docs
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-commonmarker>=0.16<2.0:textproc/rubygem-commonmarker \
 		rubygem-escape_utils>=1.2<2.0:textproc/rubygem-escape_utils \
 		rubygem-extended-markdown-filter>=0.4<1.0:textproc/rubygem-extended-markdown-filter \
-		rubygem-gemoji>=3.0<4.0:textproc/rubygem-gemoji \
+		rubygem-gemoji3>=3.0<4.0:textproc/rubygem-gemoji3 \
 		rubygem-graphql>=1.12<2.0:devel/rubygem-graphql \
 		rubygem-html-pipeline>=2.9<3.0:textproc/rubygem-html-pipeline \
 		rubygem-sass>=3.4<4.0:textproc/rubygem-sass
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

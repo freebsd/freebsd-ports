@@ -1,6 +1,6 @@
 PORTNAME=	phalcon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.0RC4
+DISTVERSION=	5.2.3
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -10,15 +10,12 @@ WWW=		https://phalcon.io/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		localbase php:ext
+USES=		localbase php:build,ext
 USE_GITHUB=	yes
 GH_PROJECT=	c${PORTNAME}
-USE_PHP=	json:build mbstring pdo:build session:build
-IGNORE_WITH_PHP=	82
+USE_PHP=	mbstring pdo:build session:build
 
 CONFIGURE_ARGS=	--enable-phalcon
-
-CONFLICTS_INSTALL=	${PKGNAMEPREFIX}phalcon4
 
 WRKSRC_SUBDIR=	build/phalcon
 

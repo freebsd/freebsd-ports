@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-librarianp>=0.6.3:devel/rubygem-librarianp \
 		rubygem-rsync>0:net/rubygem-rsync
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/librarian-puppet
 

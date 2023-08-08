@@ -2,12 +2,12 @@ bin/kvazaar
 include/kvazaar.h
 lib/libkvazaar.a
 lib/libkvazaar.so
-lib/libkvazaar.so.6
-lib/libkvazaar.so.6.6.0
+lib/libkvazaar.so.7
+lib/libkvazaar.so.7.2.0
 libdata/pkgconfig/kvazaar.pc
 man/man1/kvazaar.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.greatest
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.x264asm
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.EXT.greatest
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.EXT.x264asm
 %%PORTDOCS%%%%DOCSDIR%%/README.md

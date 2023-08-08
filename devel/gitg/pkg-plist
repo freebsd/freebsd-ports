@@ -23,13 +23,8 @@ share/gir-1.0/Gitg-1.0.gir
 share/gir-1.0/GitgExt-1.0.gir
 %%DATADIR%%/icons/hicolor/scalable/actions/diff-symbolic.svg
 share/glade/catalogs/gitg-glade.xml
-share/icons/hicolor/16x16/apps/org.gnome.gitg.png
-share/icons/hicolor/22x22/apps/org.gnome.gitg.png
-share/icons/hicolor/24x24/apps/org.gnome.gitg.png
-share/icons/hicolor/256x256/apps/org.gnome.gitg.png
-share/icons/hicolor/32x32/apps/org.gnome.gitg.png
-share/icons/hicolor/48x48/apps/org.gnome.gitg.png
 share/icons/hicolor/scalable/apps/org.gnome.gitg-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.gitg.svg
 share/locale/as/LC_MESSAGES/gitg.mo
 share/locale/bg/LC_MESSAGES/gitg.mo
 share/locale/bs/LC_MESSAGES/gitg.mo
@@ -57,6 +52,7 @@ share/locale/ko/LC_MESSAGES/gitg.mo
 share/locale/lt/LC_MESSAGES/gitg.mo
 share/locale/lv/LC_MESSAGES/gitg.mo
 share/locale/ml/LC_MESSAGES/gitg.mo
+share/locale/ms/LC_MESSAGES/gitg.mo
 share/locale/nb/LC_MESSAGES/gitg.mo
 share/locale/ne/LC_MESSAGES/gitg.mo
 share/locale/nl/LC_MESSAGES/gitg.mo

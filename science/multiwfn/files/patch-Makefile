@@ -1,0 +1,46 @@
+--- Makefile.orig	2023-02-06 10:17:38 UTC
++++ Makefile
+@@ -1,6 +1,6 @@
+ SIMD = -msse3
+-OPT = -O2 -qopenmp -qopenmp-link=static -threads -qopt-matmul $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
+-OPT1 = -O1 -qopenmp -qopenmp-link=static -threads $(SIMD) -diag-disable 8290,8291,6371,10316,6178 -fpp -mkl -static-intel -DINTEL_MKL
++OPT = $(FCFLAGS) -O2 $(SIMD) -DINTEL_MKL
++OPT1 = $(FCFLAGS) -O1 $(SIMD) -DINTEL_MKL
+ #Options in the next line is for debugging purpose
+ #OPTDBG = -O0 -qopenmp -diag-disable 8290,8291,6371 -threads -qopenmp-link=static -debug all -g -traceback -check all -fstack-protector -fpp -mkl -static-intel
+ 
+@@ -43,10 +43,10 @@ default : $(objects)
+ 	@echo " ------------------------------------------------------ "
+ 
+ GUI: $(objects)
+-	$(FC) $(OPT) $(objects) $(LIB_GUI) -o $(EXE)
++	$(FC) $(LDFLAGS) $(OPT) $(objects) $(LIB_GUI) -o $(EXE)
+ 
+ noGUI: $(objects) $(objects_noGUI)
+-	$(FC) $(OPT) $(objects) $(objects_noGUI) $(LIB_noGUI) -o $(EXE_noGUI)
++	$(FC) $(LDFLAGS) $(OPT) $(objects) $(objects_noGUI) $(LIB_noGUI) -o $(EXE_noGUI)
+ 
+ clean:
+ 	rm -f $(EXE) *.o *.mod
+@@ -230,7 +230,7 @@ cp2kmate.o : cp2kmate.f90 $(modules)
+ 
+ 
+ noGUI/dislin_d_empty.o : noGUI/dislin_d_empty.f90
+-	$(FC) $(OPT) -c noGUI/dislin_d_empty.f90 -o noGUI/dislin_d_empty.o -diag-disable 6178,6843
++	$(FC) $(OPT) -c noGUI/dislin_d_empty.f90 -o noGUI/dislin_d_empty.o
+ 
+ 
+ # Interfaces of libreta-ESP to Multiwfn
+@@ -241,10 +241,10 @@ libreta.o: ${LIBRETAPATH}/libreta.f90 hrr_012345.o blo
+ # Pure libreta files for ESP
+ 
+ hrr_012345.o: ${LIBRETAPATH}/hrr_012345.f90
+-	$(FC) $(OPT) -diag-disable 6843 $(SIMD) -c ${LIBRETAPATH}/hrr_012345.f90
++	$(FC) $(OPT) $(SIMD) -c ${LIBRETAPATH}/hrr_012345.f90
+ 
+ blockhrr_012345.o: ${LIBRETAPATH}/blockhrr_012345.f90
+-	$(FC) -O1 -diag-disable 6843 $(SIMD) -c ${LIBRETAPATH}/blockhrr_012345.f90
++	$(FC) -O1 $(SIMD) -c ${LIBRETAPATH}/blockhrr_012345.f90
+ 
+ ean.o: ${LIBRETAPATH}/ean.f90 hrr_012345.o eanvrr_012345.o boysfunc.o ${LIBRETAPATH}/ean_data1.h ${LIBRETAPATH}/ean_data2.h
+ 	$(FC) $(OPT) -c ${LIBRETAPATH}/ean.f90

@@ -1,0 +1,7 @@
+Recursive directory iterator supporting:
+
+- flexible filtering including wildcard path matching
+- in memory representation of file-tree (for repeated access)
+- efficient access to directory entry properties (posix.DirEntry interface)
+  extended with real path and path relative to the recursion root directory
+- detection and handling of cyclic symlinks

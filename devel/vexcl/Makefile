@@ -17,6 +17,9 @@ BUILD_DEPENDS=	${HPP_DEPENDS} \
 RUN_DEPENDS=	${HPP_DEPENDS}
 
 USES=		cmake:testing localbase:ldflags
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ddemidov

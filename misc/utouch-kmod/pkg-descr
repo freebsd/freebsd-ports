@@ -1,4 +1,4 @@
-utouch - Kernel driver for absolute USB HID mouses emulated by some
+utouch - Kernel driver for absolute USB HID mice emulated by some
 virtualization systems like Virtual Box, BHyve, etc. It uses evdev
 protocol to communicate with userland applications like libinput and
 xf86-input-evdev.

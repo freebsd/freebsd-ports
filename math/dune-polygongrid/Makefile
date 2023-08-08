@@ -1,5 +1,6 @@
 PORTNAME=	dune-polygongrid
 DISTVERSION=	2.8.0
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +25,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	90840c3d36f5fa6e18a00e7df7be01832cd7e23b
+GL_TAGNAME=	90840c3d36f5fa6e18a00e7df7be01832cd7e23b
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 

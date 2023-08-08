@@ -1,6 +1,7 @@
 PORTNAME=	dosbox-staging
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.78.1
+DISTVERSION=	0.80.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -9,18 +10,20 @@ WWW=		https://dosbox-staging.github.io/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libopusfile.so:audio/opusfile \
+LIB_DEPENDS=	libiir.so:audio/iir1 \
+		libopusfile.so:audio/opusfile \
+		libspeexdsp.so:audio/speexdsp \
 		libpng.so:graphics/png \
 		libslirp.so:net/libslirp
 
 USES=		compiler:c++14-lang gl meson pkgconfig sdl
 
 USE_GL=		gl
-USE_SDL=	sdl2 net2
+USE_SDL=	sdl2 image2 net2
 USE_GITHUB=	yes
 
-MESON_ARGS=	-Duse_mt32emu=false
-LDFLAGS+=	-pthread
+MESON_ARGS=	-Dunit_tests=disabled -Duse_mt32emu=false
+LDFLAGS+=	-pthread -lz
 
 OPTIONS_DEFINE=	ALSA DOCS FLUIDSYNTH
 OPTIONS_DEFAULT=	FLUIDSYNTH

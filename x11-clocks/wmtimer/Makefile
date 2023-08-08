@@ -1,11 +1,11 @@
 PORTNAME=	wmtimer
 PORTVERSION=	2.92
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	https://github.com/bbidulock/wmtimer/releases/download/${PORTVERSION}/ \
 		LOCAL/uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
 WWW=		https://github.com/bbidulock/wmtimer
 

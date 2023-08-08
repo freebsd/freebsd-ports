@@ -1,6 +1,3 @@
-#-*- tab-width: 4; -*-
-# ex:ts=4
-#
 # apache.mk - Apache related macros.
 # Author: Clement Laforet <clement@FreeBSD.org>
 # Author: Olli Hauer <ohauer@FreeBSD.org>
@@ -15,9 +12,8 @@
 # version	If your port requires a specific Apache httpd version, you can
 #			set this to [min]-[max] or min+ or -max or an explicit version
 #
-#				USES=apache:2.2		# Only use Apache 2.2
+#				USES=apache:2.4		# Only use Apache 2.4
 #				USES=apache:2.4+	# Use Apache 2.4 or newer
-#				USES=apache:2.2-2.4	# Use Apache 2.2 or 2.4
 #				USES=apache:-2.4	# Use Apache 2.4 or earlier
 #				USES=apache			# Use the default apache version
 #
@@ -51,13 +47,13 @@
 # Variables, for internal use by the Apache ports framework only
 #  The following values for USE_APACHE are reserved and only valid
 #  in apache-server ports!
-#      USES= apache:server,2.2
+#      USES= apache:server,2.4
 #
 #
 # The following variables can be read by ports and must not be modified
 #
 #  APACHE_VERSION		The major-minor release version of the chosen
-#						Apache server, e.g. 2.2 or 2.4
+#						Apache server, e.g. 2.4
 #
 #  APACHEETCDIR			Location of the Apache configuration directory
 #						Default: ${LOCALBASE}/etc/apache24
@@ -77,7 +73,7 @@ _USES_POST+=	apache
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_APACHE_SUPPORTED_VERSIONS=	2.4 2.2 2.5	# preferred version first
+_APACHE_SUPPORTED_VERSIONS=	2.4 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from apache.mk.
@@ -260,7 +256,7 @@ _APACHE_WANTED_VERSIONS=	${_APACHE_SUPPORTED_VERSIONS}
 _APACHE_WANTED_VERSIONS:=	${_APACHE_WANTED_VERSIONS:N${_ver}}
 .      endif
 .      if !empty(_APACHE_VERSION_MAX) && ${_ver} > ${_APACHE_VERSION_MAX}
-_APACHE_WANTED_VERSIONS:=	${_APACHE_WANTED_VERSIONS:N${_ver}}		
+_APACHE_WANTED_VERSIONS:=	${_APACHE_WANTED_VERSIONS:N${_ver}}
 .      endif
 .    endfor
 
@@ -281,11 +277,7 @@ APACHE_VERSION:=	${_APACHE_WANTED_VERSION}
 BROKEN=	${_ERROR_MSG} Apache ${_APACHE_VERSION} is installed and port requires ${_APACHE_WANTED_VERSION}
 .    endif
 
-.    if ${APACHE_VERSION} >= 2.5
-APXS?=	${LOCALBASE}/bin/apxs
-.    else
 APXS?=	${LOCALBASE}/sbin/apxs
-.    endif
 
 .    if exists(${APXS})
 APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || echo NULL
@@ -300,11 +292,7 @@ IGNORE?=	PREFIX must be equal to APXS_PREFIX.
 APACHEMODDIR=		libexec/apache${APACHE_VERSION:S/.//}
 APACHEINCLUDEDIR=	include/apache${APACHE_VERSION:S/.//}
 APACHEETCDIR=		etc/apache${APACHE_VERSION:S/.//}
-.    if ${APACHE_VERSION} == 2.5
-_APACHE_PORT?=		www/apache${APACHE_VERSION:S/.//}-devel
-.    else
 _APACHE_PORT?=		www/apache${APACHE_VERSION:S/.//}
-.    endif
 
 PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
 		APACHEINCLUDEDIR="${APACHEINCLUDEDIR}" \

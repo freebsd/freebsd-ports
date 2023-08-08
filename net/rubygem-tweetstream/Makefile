@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-daemons>=1.1<2:devel/rubygem-daemons \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

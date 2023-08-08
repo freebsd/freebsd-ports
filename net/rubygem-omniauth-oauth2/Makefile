@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-oauth2>=1.4<3:net/rubygem-oauth2 \
 		rubygem-omniauth>=1.9<3:security/rubygem-omniauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

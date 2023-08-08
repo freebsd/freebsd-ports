@@ -10,7 +10,6 @@
     SUBDIR += copperspice
     SUBDIR += ctk
     SUBDIR += fltk
-    SUBDIR += fox14
     SUBDIR += fox16
     SUBDIR += fox17
     SUBDIR += fpc-gtk2
@@ -18,14 +17,12 @@
     SUBDIR += fxscintilla
     SUBDIR += gdl
     SUBDIR += girara
-    SUBDIR += gnocl
     SUBDIR += gnome-pty-helper
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += granite
     SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
-    SUBDIR += gstreamer1-plugins-gtk4
     SUBDIR += gstreamer1-plugins-pango
     SUBDIR += gtk-layer-shell
     SUBDIR += gtk-sharp-beans
@@ -33,6 +30,7 @@
     SUBDIR += gtk-sharp30
     SUBDIR += gtk20
     SUBDIR += gtk30
+    SUBDIR += gtk4-layer-shell
     SUBDIR += gtk40
     SUBDIR += gtkd
     SUBDIR += gtkdatabox
@@ -41,7 +39,6 @@
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
     SUBDIR += gtkimageview
-    SUBDIR += gtkmathview
     SUBDIR += gtkmm24
     SUBDIR += gtkmm30
     SUBDIR += gtksourceview2
@@ -50,9 +47,11 @@
     SUBDIR += gtksourceview5
     SUBDIR += gtksourceviewmm3
     SUBDIR += guile-gnome-platform
+    SUBDIR += imgui
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
+    SUBDIR += kddockwidgets
     SUBDIR += kf5-attica
     SUBDIR += kf5-kcompletion
     SUBDIR += kf5-kconfigwidgets
@@ -64,6 +63,7 @@
     SUBDIR += kf5-ktextwidgets
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
+    SUBDIR += kirigami-addons
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
@@ -75,9 +75,7 @@
     SUBDIR += libgdiplus
     SUBDIR += libhandy
     SUBDIR += libhandy0
-    SUBDIR += libsexy
     SUBDIR += libshumate
-    SUBDIR += libshumate-shortwave
     SUBDIR += libunique3
     SUBDIR += libwnck
     SUBDIR += libwnck3
@@ -99,6 +97,7 @@
     SUBDIR += ntk
     SUBDIR += nuklear
     SUBDIR += ocaml-lablgtk2
+    SUBDIR += ocaml-lablgtk3
     SUBDIR += ocaml-labltk
     SUBDIR += open-motif
     SUBDIR += open-motif-devel
@@ -122,6 +121,7 @@
     SUBDIR += p5-Gtk3-SimpleList
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
+    SUBDIR += p5-Test-Tk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Action
     SUBDIR += p5-Tk-Autoscroll
@@ -160,9 +160,12 @@
     SUBDIR += py-guietta
     SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
+    SUBDIR += py-qt6-chart
+    SUBDIR += py-qt6-datavis3d
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
+    SUBDIR += pythonqt
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
@@ -185,6 +188,7 @@
     SUBDIR += qt6-quicktimeline
     SUBDIR += qt6-shadertools
     SUBDIR += qt6-virtualkeyboard
+    SUBDIR += qt6pas
     SUBDIR += qtermwidget
     SUBDIR += qwt5-qt5
     SUBDIR += qwt6
@@ -221,22 +225,19 @@
     SUBDIR += tktray
     SUBDIR += tktreectrl
     SUBDIR += unique
-    SUBDIR += vdk
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte3
     SUBDIR += wlroots
     SUBDIR += wlroots-devel
+    SUBDIR += wlroots015
     SUBDIR += wmapp
-    SUBDIR += wxgtk28
-    SUBDIR += wxgtk28-common
-    SUBDIR += wxgtk28-contrib
-    SUBDIR += wxgtk28-contrib-common
     SUBDIR += wxgtk30
-    SUBDIR += wxgtk31
+    SUBDIR += wxgtk32
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml
+    SUBDIR += xwallpaper
     SUBDIR += ztoolkit
 
 .include <bsd.port.subdir.mk>

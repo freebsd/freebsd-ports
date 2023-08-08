@@ -1,5 +1,5 @@
 PORTNAME=	css-parser
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ebook-utils

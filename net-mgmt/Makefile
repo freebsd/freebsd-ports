@@ -45,7 +45,6 @@
     SUBDIR += check_ups_health
     SUBDIR += chillispot
     SUBDIR += choparp
-    SUBDIR += chronograf
     SUBDIR += cidr
     SUBDIR += ciscoconf
     SUBDIR += clog
@@ -69,6 +68,7 @@
     SUBDIR += etherape
     SUBDIR += ettercap
     SUBDIR += fastnetmon
+    SUBDIR += fence-agents
     SUBDIR += fetchconfig
     SUBDIR += flow-tools
     SUBDIR += flowd
@@ -76,12 +76,16 @@
     SUBDIR += fprobe
     SUBDIR += glpi-plugins-fusioninventory-server
     SUBDIR += gnu-ipcalc
+    SUBDIR += gping
     SUBDIR += grepcidr
     SUBDIR += grepip
     SUBDIR += grok_exporter
     SUBDIR += gsnmp
     SUBDIR += guifi-snpservices
     SUBDIR += hastmon
+    SUBDIR += icinga-ipl-i18n
+    SUBDIR += icinga-php-library
+    SUBDIR += icinga-php-thirdparty
     SUBDIR += icinga2
     SUBDIR += icingaweb2
     SUBDIR += icingaweb2-module-businessprocess
@@ -94,7 +98,6 @@
     SUBDIR += icingaweb2-module-graphite
     SUBDIR += icingaweb2-module-idoreports
     SUBDIR += icingaweb2-module-incubator
-    SUBDIR += icingaweb2-module-ipl
     SUBDIR += icingaweb2-module-jira
     SUBDIR += icingaweb2-module-map
     SUBDIR += icingaweb2-module-pdfexport
@@ -126,6 +129,7 @@
     SUBDIR += libsmi
     SUBDIR += lldpd
     SUBDIR += mac-telnet
+    SUBDIR += makenl
     SUBDIR += mbrowse
     SUBDIR += mdata-client
     SUBDIR += metronome
@@ -168,7 +172,6 @@
     SUBDIR += nagios4
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
-    SUBDIR += nagircbot
     SUBDIR += nagnu
     SUBDIR += nagstamon
     SUBDIR += nagtail
@@ -201,7 +204,7 @@
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
-    SUBDIR += nrpe3
+    SUBDIR += nrpe
     SUBDIR += nsca
     SUBDIR += nsca-client
     SUBDIR += nsca-ng
@@ -236,6 +239,7 @@
     SUBDIR += p5-Nagios-Plugin
     SUBDIR += p5-Nagios-Plugin-Beanstalk
     SUBDIR += p5-Nagios-Plugin-LDAP
+    SUBDIR += p5-Nagios-Plugin_check_raid
     SUBDIR += p5-Nagios-Plugins-Memcached
     SUBDIR += p5-Net-ACL
     SUBDIR += p5-Net-Abuse-Utils
@@ -283,10 +287,10 @@
     SUBDIR += pandorafms_server
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
-    SUBDIR += php74-snmp
     SUBDIR += php80-snmp
     SUBDIR += php81-snmp
     SUBDIR += php82-snmp
+    SUBDIR += php83-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += phpweathermap
@@ -366,10 +370,10 @@
     SUBDIR += seafile-gui
     SUBDIR += seafile-server
     SUBDIR += semaphore
-    SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
     SUBDIR += sjitter
+    SUBDIR += smartctl_exporter
     SUBDIR += smokeping
     SUBDIR += snmp4nagios
     SUBDIR += snmptt
@@ -399,12 +403,10 @@
     SUBDIR += xymon-server
     SUBDIR += yaf
     SUBDIR += zabbix4-agent
-    SUBDIR += zabbix4-frontend
     SUBDIR += zabbix4-java
     SUBDIR += zabbix4-proxy
     SUBDIR += zabbix4-server
     SUBDIR += zabbix5-agent
-    SUBDIR += zabbix5-frontend
     SUBDIR += zabbix5-java
     SUBDIR += zabbix5-proxy
     SUBDIR += zabbix5-server
@@ -413,10 +415,10 @@
     SUBDIR += zabbix6-java
     SUBDIR += zabbix6-proxy
     SUBDIR += zabbix6-server
-    SUBDIR += zabbix62-agent
-    SUBDIR += zabbix62-frontend
-    SUBDIR += zabbix62-java
-    SUBDIR += zabbix62-proxy
-    SUBDIR += zabbix62-server
+    SUBDIR += zabbix64-agent
+    SUBDIR += zabbix64-frontend
+    SUBDIR += zabbix64-java
+    SUBDIR += zabbix64-proxy
+    SUBDIR += zabbix64-server
 
 .include <bsd.port.subdir.mk>

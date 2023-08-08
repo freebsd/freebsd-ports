@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-azure>=0.6<1:net/rubygem-azure \
 		rubygem-fog-xml>=0.1<1:textproc/rubygem-fog-xml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

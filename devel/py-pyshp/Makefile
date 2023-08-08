@@ -1,7 +1,7 @@
 PORTNAME=	pyshp
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel python geography
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/GeospatialPython/pyshp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

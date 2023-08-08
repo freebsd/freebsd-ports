@@ -1,0 +1,30 @@
+--- texk/gsftopk/Makefile.in.orig	2023-03-01 22:59:32 UTC
++++ texk/gsftopk/Makefile.in
+@@ -112,8 +112,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_HEADER = c-auto.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(gsftopkpsheaderdir)"
++am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am_gsftopk_OBJECTS = gsftopk.$(OBJEXT)
+ gsftopk_OBJECTS = $(am_gsftopk_OBJECTS)
+@@ -837,7 +836,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) c-auto.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(gsftopkpsheaderdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -894,7 +893,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-dist_gsftopkpsheaderDATA install-man
++install-data-am: install-man
+ 
+ install-dvi: install-dvi-am
+ 

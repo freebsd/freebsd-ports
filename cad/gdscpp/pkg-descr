@@ -1,0 +1,10 @@
+GDScpp is a C++ library that make GDS file manipulation easier.
+
+Features:
+* Convert GDS data to ASCII.
+* Easily create GDS files.
+* Import GDS files.
+* Extract the root GDS structures.
+* Create a hierarchy diagram of all the GDS structure dependencies.
+* Direct importing of GDS files with redundancy checking.
+* Create bounding box of all the GDS structures.

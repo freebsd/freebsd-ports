@@ -1,31 +1,24 @@
---- check_mk_agent.freebsd.orig	2021-10-31 19:22:57 UTC
+--- check_mk_agent.freebsd.orig	2023-02-22 23:45:20 UTC
 +++ check_mk_agent.freebsd
-@@ -27,15 +27,15 @@ $MK_RUN_SYNC_PARTS || {
- export LC_ALL=C
- unset LANG
+@@ -105,8 +105,8 @@ set_up_get_epoch() {
+ #
  
--export MK_LIBDIR="/usr/local/lib/check_mk_agent"
--export MK_CONFDIR="/etc/check_mk"
--export MK_TMPDIR="/var/run/check_mk"
-+export MK_LIBDIR="%%CHECKMK_LIBDIR%%"
-+export MK_CONFDIR="%%CHECKMK_CONFDIR%%"
-+export MK_TMPDIR="%%CHECKMK_TMPDIR%%"
+ set_variable_defaults() {
+-    : "${MK_LIBDIR:=/usr/local/lib/check_mk_agent}"
+-    : "${MK_CONFDIR:=/etc/check_mk}"
++    : "${MK_LIBDIR:=%%CHECKMK_LIBDIR%%}"
++    : "${MK_CONFDIR:=%%CHECKMK_CONFDIR%%}"
+     : "${MK_VARDIR:=/var/lib/check_mk_agent}"
+     : "${MK_LOGDIR:=/var/log/check_mk_agent}"
  
- # Optionally set a tempdir for all subsequent calls
- #export TMPDIR=
+@@ -126,8 +126,8 @@ preamble_1() {
+     # Make sure locally installed binaries are found
+     # Only add binaries if they are not already in the path! If you append to path in a loop the process will
+     # eventually each the 128k size limit for the environment and become a zombie process. See execve manpage.
+-    [ "${PATH#*"/usr/local/bin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/bin"
+-    [ "${PATH#*"/usr/local/sbin"}" != "${PATH}" ] || PATH="${PATH}:/usr/local/sbin"
++    [ "${PATH#*"%%LOCALBASE%%/bin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/bin"
++    [ "${PATH#*"%%LOCALBASE%%/sbin"}" != "${PATH}" ] || PATH="${PATH}:%%LOCALBASE%%/sbin"
+     [ -d "/var/qmail/bin" ] && { [ "${PATH#*"/var/qmail/bin"}" != "${PATH}" ] || PATH="${PATH}:/var/qmail/bin"; }
  
- # Make sure, locally installed binaries are found
--PATH=$PATH:/usr/local/bin:/usr/local/sbin
-+PATH=$PATH:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin
- [ -d /var/qmail/bin ] && PATH=$PATH:/var/qmail/bin
- 
- # All executables in PLUGINSDIR will simply be executed and their
-@@ -102,7 +102,7 @@ function run_cached() {
- 
-     # Cache file outdated and new job not yet running? Start it
-     if [ -z "$USE_CACHEFILE" -a ! -e "$CACHEFILE.new" ] ; then
--        echo "$CMDLINE" | daemon /usr/local/bin/bash -o noclobber > $CACHEFILE.new && mv $CACHEFILE.new $CACHEFILE || rm -f $CACHEFILE $CACHEFILE.new &
-+        echo "$CMDLINE" | daemon %%BASH%% -o noclobber > $CACHEFILE.new && mv $CACHEFILE.new $CACHEFILE || rm -f $CACHEFILE $CACHEFILE.new &
-     fi
- }
- 
+     # All executables in PLUGINSDIR will simply be executed and their

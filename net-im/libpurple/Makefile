@@ -1,5 +1,5 @@
 PORTNAME?=	libpurple
-PORTVERSION=	2.14.10
+PORTVERSION=	2.14.12
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -87,6 +87,10 @@ PLIST_SUB+=	CONSOLEUI="@comment not installed: "
 CONFIGURE_ARGS+=--disable-doxygen
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .if ${PORT_OPTIONS:MTCLTK}
 USES+=			tk
@@ -199,7 +203,7 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-USES+=			python:3.5+
+USES+=			python
 LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}

@@ -1,5 +1,5 @@
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qshaderbaker_p.h
-%%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qshaderbatchablerewriter_p.h
+%%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qshaderrewriter_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvcompiler_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshader_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshaderremap_p.h

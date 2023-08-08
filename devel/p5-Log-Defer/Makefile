@@ -1,6 +1,5 @@
 PORTNAME=	Log-Defer
-PORTVERSION=	0.311
-PORTREVISION=	2
+DISTVERSION=	0.312
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,13 +10,14 @@ WWW=		https://metacpan.org/release/Log-Defer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Guard>=0:devel/p5-Guard
 
-NO_ARCH=	yes
-
-USES=	perl5
+USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

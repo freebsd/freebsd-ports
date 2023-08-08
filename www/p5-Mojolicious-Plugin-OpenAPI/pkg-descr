@@ -1,0 +1,4 @@
+Mojolicious::Plugin::OpenAPI is Mojolicious::Plugin that add
+routes and input/output validation to your Mojolicious application
+based on a OpenAPI (Swagger) specification.  This plugin supports
+both version 2.0 and 3.x, though 3.x might have some missing features.

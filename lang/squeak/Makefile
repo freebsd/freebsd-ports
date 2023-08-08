@@ -1,6 +1,6 @@
 PORTNAME=	squeak
 PORTVERSION=	4.10.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang
 MASTER_SITES=	http://www.squeakvm.org/unix/release/:vmsrc \
 		http://ftp.squeak.org/${IMAGE_VERSION}/:src \
@@ -27,11 +27,12 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libdbus-1.so:devel/dbus \
 		libffi.so:devel/libffi \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libasound.so:audio/alsa-lib \
 		libpulse-simple.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		gl gnome iconv pkgconfig xorg
+USES=		gl gnome iconv:wchar_t pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo pango
 USE_XORG=	ice sm x11 xext xrender
@@ -61,6 +62,15 @@ PLIST_SUB=	SQUEAK_LIB_DIR=${SQUEAK_LIB_DIR} \
 IMAGES=		Squeak${IMAGE_FULL_VERSION}.image \
 		Squeak${IMAGE_FULL_VERSION}.changes \
 		${SQUEAK_SRC}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<utmp\.h>,<utmpx.h>,' \

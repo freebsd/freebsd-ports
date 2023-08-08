@@ -11,6 +11,6 @@ include/apreq2/apreq_version.h
 lib/libapreq2.a
 lib/libapreq2.so
 lib/libapreq2.so.3
-lib/libapreq2.so.3.8.0
+lib/libapreq2.so.3.8.1
 %%APACHEMODDIR%%/mod_apreq2.a
 %%APACHEMODDIR%%/mod_apreq2.so

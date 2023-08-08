@@ -1,18 +1,16 @@
 PORTNAME=	kiwix-tools
-DISTVERSION=	3.1.2
-PORTREVISION=	3
+DISTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	me@int19h.org
+MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Command-line Kiwix tools
 WWW=		https://www.kiwix.org/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libkiwix.so:devel/kiwix-lib \
-		libmicrohttpd.so:www/libmicrohttpd \
-		libctpp2.so:textproc/ctpp2 \
+LIB_DEPENDS=	libkiwix.so:devel/libkiwix \
 		libzim.so:devel/libzim
 
 USES=		compiler:c++11-lang meson pkgconfig

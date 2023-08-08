@@ -1,7 +1,7 @@
 PORTNAME=	yume
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	16
+PORTREVISION=	25
 CATEGORIES=	net-im
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,7 @@ CARGO_CRATES=	aead-0.2.0 \
 		bumpalo-3.2.1 \
 		cc-1.0.52 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chacha20-0.3.3 \
 		chacha20poly1305-0.4.1 \
 		clap-2.33.0 \
@@ -106,7 +107,7 @@ CARGO_CRATES=	aead-0.2.0 \
 		slab-0.4.2 \
 		smallvec-1.1.0 \
 		smol-0.1.10 \
-		socket2-0.3.12 \
+		socket2-0.3.19 \
 		spin-0.5.2 \
 		stream-cipher-0.3.2 \
 		strsim-0.8.0 \

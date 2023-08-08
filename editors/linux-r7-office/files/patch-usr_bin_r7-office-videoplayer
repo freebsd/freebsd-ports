@@ -1,0 +1,10 @@
+--- usr/bin/r7-office-videoplayer.orig	2022-12-11 00:52:25 UTC
++++ usr/bin/r7-office-videoplayer
+@@ -1,5 +1,6 @@
+ #!/bin/sh
+ 
+-DIR=/opt/r7-office/mediaviewer
++DIR=%%LOCALBASE%%/share/r7-office/mediaviewer
+ export LD_LIBRARY_PATH=$DIR:$LD_LIBRARY_PATH
++export LC_CTYPE=ru_RU.UTF-8
+ exec $DIR/VideoPlayer "$@"

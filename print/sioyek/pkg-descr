@@ -1,0 +1,36 @@
+Sioyek is a PDF viewer with a focus on technical books and research papers.
+
+Searchable
+	Quickly search your previously opened documents, table of
+	contents, bookmarks, and highlights.  Sioyek can even generate
+	the table of contents if the document doesn't have one!
+
+Smart Jump
+	You can preview or jump to references (e.g. bibliography, figures,
+	equations, etc.) even when the document doesn't have links.  You
+	can also search references in google scholar with one click!
+
+Portals
+	You can create portals from parts of documents to other parts
+	displayed in a second window.  So when you are reading a paragraph
+	that is talking about a figure, table, algorithm, theorem, etc.
+	you don't have to keep jumping between the two locations.
+
+Marks and Bookmarks
+	Mark locations with one-character symbols and then quickly jump
+	back to them. You can also create bookmarks which are like marks,
+	but use a descriptive text instead of a symbol and can be searched.
+
+Keyboard Focused
+	While sioyek fully supports many mouse actions, it is still
+	possible to use sioyek only using a keyboard. This includes
+	functionality such as text selection too!
+
+Synctex
+	Sioyek autoreloads the document so you can preview the changes
+	as you edit the latex file. You can also jump between the
+	corresponding locations in PDF and latex files with one click.
+
+Other features include configurability, extensibility with external
+commands and scripts, text highlighting, a discoverable command palette,
+and a visual ruler highlighting the current line.

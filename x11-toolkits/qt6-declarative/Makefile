@@ -21,11 +21,11 @@ LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang gettext-runtime gl gnome pkgconfig python:3.5+ xorg \
+USES=		cmake compiler:c++17-lang gettext-runtime gl gnome pkgconfig python xorg \
 		qt-dist:6
-USE_GL=		gl
+USE_GL=		opengl
 USE_GNOME=	glib20
-USE_QT=		base shadertools
+USE_QT=		base shadertools languageserver
 USE_XORG=	x11 xau xcb xdmcp
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 

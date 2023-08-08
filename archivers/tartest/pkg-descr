@@ -1,0 +1,11 @@
+Tartest reads a tar archive from stdin
+and checks this archive for compliance with POSIX.1-1990.
+
+As tartest is limited to tests the data that is delivered by the tar
+archiver that is going to be checked, it cannot tests if the tar
+archiver in question will produce correct archives under all
+circumstances.  There may be borderline cases that trigger bugs in the
+tar archiver.
+
+This port also contains the various test scripts belonging to
+archivers/star.

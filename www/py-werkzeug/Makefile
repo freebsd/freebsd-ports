@@ -1,21 +1,24 @@
 PORTNAME=	werkzeug
-PORTVERSION=	2.2.2
+PORTVERSION=	2.3.6
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Werkzeug-${DISTVERSION}
+DISTNAME=	Werkzeug-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python utilities collection for building WSGI applications
-WWW=		https://palletsprojects.com/p/werkzeug/
+WWW=		https://palletsprojects.com/p/werkzeug/ \
+		https://github.com/pallets/werkzeug
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

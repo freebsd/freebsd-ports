@@ -1569,7 +1569,7 @@ diff --git ssl/record/rec_layer_s3.c ssl/record/rec_layer_s3.c
 index 8249b4ace9..1356bd7b7b 100644
 --- ssl/record/rec_layer_s3.c
 +++ ssl/record/rec_layer_s3.c
-@@ -268,11 +268,15 @@ int ssl3_read_n(SSL *s, size_t n, size_t max, int extend, int clearold,
+@@ -281,11 +281,15 @@
          return -1;
      }
  
@@ -1588,7 +1588,7 @@ index 8249b4ace9..1356bd7b7b 100644
          if (max < n)
              max = n;
          if (max > rb->len - rb->offset)
-@@ -422,6 +426,7 @@ int ssl3_write_bytes(SSL *s, int type, const void *buf_, size_t len,
+@@ -435,6 +439,7 @@
          len >= 4 * (max_send_fragment = ssl_get_max_send_fragment(s)) &&
          s->compress == NULL && s->msg_callback == NULL &&
          !SSL_WRITE_ETM(s) && SSL_USE_EXPLICIT_IV(s) &&
@@ -1596,7 +1596,7 @@ index 8249b4ace9..1356bd7b7b 100644
          EVP_CIPHER_flags(EVP_CIPHER_CTX_cipher(s->enc_write_ctx)) &
          EVP_CIPH_FLAG_TLS1_1_MULTIBLOCK) {
          unsigned char aad[13];
-@@ -751,6 +756,19 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -764,6 +769,19 @@
          s->s3->empty_fragment_done = 1;
      }
  
@@ -1616,7 +1616,7 @@ index 8249b4ace9..1356bd7b7b 100644
      if (create_empty_fragment) {
          wb = &s->rlayer.wbuf[0];
  #if defined(SSL3_ALIGN_PAYLOAD) && SSL3_ALIGN_PAYLOAD!=0
-@@ -820,6 +838,8 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -833,6 +851,8 @@
          }
      }
  
@@ -1625,7 +1625,7 @@ index 8249b4ace9..1356bd7b7b 100644
      totlen = 0;
      /* Clear our SSL3_RECORD structures */
      memset(wr, 0, sizeof(wr));
-@@ -861,15 +881,19 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -874,15 +894,19 @@
          if (s->compress != NULL)
              maxcomplen += SSL3_RT_MAX_COMPRESSED_OVERHEAD;
  
@@ -1648,7 +1648,7 @@ index 8249b4ace9..1356bd7b7b 100644
              SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
                       ERR_R_INTERNAL_ERROR);
              goto err;
-@@ -895,15 +919,20 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -908,15 +932,20 @@
                  goto err;
              }
          } else {
@@ -1674,7 +1674,7 @@ index 8249b4ace9..1356bd7b7b 100644
                  && s->enc_write_ctx != NULL
                  && (s->statem.enc_write_state != ENC_WRITE_STATE_WRITE_PLAIN_ALERTS
                      || type != SSL3_RT_ALERT)) {
-@@ -959,7 +988,7 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -972,7 +1001,7 @@
           * in the wb->buf
           */
  
@@ -1683,11 +1683,13 @@ index 8249b4ace9..1356bd7b7b 100644
              unsigned char *mac;
  
              if (!WPACKET_allocate_bytes(thispkt, mac_size, &mac)
-@@ -975,24 +1004,26 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
-          * This will be at most one cipher block or the tag length if using
-          * AEAD. SSL_RT_MAX_CIPHER_BLOCK_SIZE covers either case.
-          */
--        if (!WPACKET_reserve_bytes(thispkt, SSL_RT_MAX_CIPHER_BLOCK_SIZE,
+@@ -989,26 +1018,27 @@
+         * max encrypted overhead does not need to include an allocation for that
+         * MAC
+         */
+-        if (!WPACKET_reserve_bytes(thispkt,
+-                                   SSL3_RT_SEND_MAX_ENCRYPTED_OVERHEAD
+-                                   - mac_size,
 -                                   NULL)
 -                   /*
 -                    * We also need next the amount of bytes written to this
@@ -1695,7 +1697,8 @@ index 8249b4ace9..1356bd7b7b 100644
 -                    */
 +        if (!BIO_get_ktls_send(s->wbio)) {
 +            if (!WPACKET_reserve_bytes(thispkt,
-+                                        SSL_RT_MAX_CIPHER_BLOCK_SIZE,
++                                       SSL3_RT_SEND_MAX_ENCRYPTED_OVERHEAD
++                                       - mac_size,
 +                                        NULL)
 +                /*
 +                 * We also need next the amount of bytes written to this
@@ -1705,25 +1708,25 @@ index 8249b4ace9..1356bd7b7b 100644
              SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
                       ERR_R_INTERNAL_ERROR);
              goto err;
+-        }
 +            }
-+
-+            /* Get a pointer to the start of this record excluding header */
-+            recordstart = WPACKET_get_curr(thispkt) - len;
-+            SSL3_RECORD_set_data(thiswr, recordstart);
-+            SSL3_RECORD_reset_input(thiswr);
-+            SSL3_RECORD_set_length(thiswr, len);
-         }
--
+ 
 -        /* Get a pointer to the start of this record excluding header */
 -        recordstart = WPACKET_get_curr(thispkt) - len;
 -
 -        SSL3_RECORD_set_data(thiswr, recordstart);
 -        SSL3_RECORD_reset_input(thiswr);
 -        SSL3_RECORD_set_length(thiswr, len);
++            /* Get a pointer to the start of this record excluding header */
++            recordstart = WPACKET_get_curr(thispkt) - len;
++            SSL3_RECORD_set_data(thiswr, recordstart);
++            SSL3_RECORD_reset_input(thiswr);
++            SSL3_RECORD_set_length(thiswr, len);
++        }
      }
  
      if (s->statem.enc_write_state == ENC_WRITE_STATE_WRITE_PLAIN_ALERTS) {
-@@ -1008,12 +1039,14 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -1024,12 +1054,14 @@
              goto err;
          }
      } else {
@@ -1743,16 +1746,17 @@ index 8249b4ace9..1356bd7b7b 100644
          }
      }
  
-@@ -1023,13 +1056,17 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -1039,6 +1071,9 @@
          thispkt = &pkt[j];
          thiswr = &wr[j];
  
-+        if (BIO_get_ktls_send(s->wbio))
++       if (BIO_get_ktls_send(s->wbio))
 +            goto mac_done;
 +
          /* Allocate bytes for the encryption overhead */
          if (!WPACKET_get_length(thispkt, &origlen)
-                    /* Encryption should never shrink the data! */
+                    /* Check we allowed enough room for the encryption growth */
+@@ -1048,7 +1083,8 @@
                  || origlen > thiswr->length
                  || (thiswr->length > origlen
                      && !WPACKET_allocate_bytes(thispkt,
@@ -1762,7 +1766,7 @@ index 8249b4ace9..1356bd7b7b 100644
              SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
                       ERR_R_INTERNAL_ERROR);
              goto err;
-@@ -1074,13 +1111,8 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -1093,13 +1129,8 @@
              goto err;
          }
  
@@ -1778,7 +1782,7 @@ index 8249b4ace9..1356bd7b7b 100644
  
          if (create_empty_fragment) {
              /*
-@@ -1097,6 +1129,14 @@ int do_ssl3_write(SSL *s, int type, const unsigned char *buf,
+@@ -1116,6 +1147,14 @@
              return 1;
          }
  
@@ -1793,7 +1797,7 @@ index 8249b4ace9..1356bd7b7b 100644
          /* now let's set up wb */
          SSL3_BUFFER_set_left(&s->rlayer.wbuf[j],
                               prefix_len + SSL3_RECORD_get_length(thiswr));
-@@ -1150,6 +1190,17 @@ int ssl3_write_pending(SSL *s, int type, const unsigned char *buf, size_t len,
+@@ -1169,6 +1208,17 @@
          clear_sys_error();
          if (s->wbio != NULL) {
              s->rwstate = SSL_WRITING;
@@ -1811,7 +1815,7 @@ index 8249b4ace9..1356bd7b7b 100644
              /* TODO(size_t): Convert this call */
              i = BIO_write(s->wbio, (char *)
                            &(SSL3_BUFFER_get_buf(&wb[currbuf])
-@@ -1162,7 +1213,15 @@ int ssl3_write_pending(SSL *s, int type, const unsigned char *buf, size_t len,
+@@ -1181,7 +1231,15 @@
                       SSL_R_BIO_NOT_SET);
              i = -1;
          }

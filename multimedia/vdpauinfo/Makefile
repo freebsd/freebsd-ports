@@ -16,7 +16,7 @@ USE_XORG=	x11
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	vdpau
-GL_COMMIT=	d3c5bd63bf8878d59b22d618d2bb5116db392d28
+GL_TAGNAME=	d3c5bd63bf8878d59b22d618d2bb5116db392d28
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/vdpauinfo
 

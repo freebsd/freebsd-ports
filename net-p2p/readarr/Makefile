@@ -1,26 +1,26 @@
 PORTNAME=	readarr
-PORTVERSION=	0.1.1.1320
-PORTREVISION=	1
+DISTVERSION=	0.3.0.2091
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Readarr/Readarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Readarr.develop.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Readarr.develop.${DISTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Book Manager and Automation (Sonarr for Ebooks)
 WWW=		https://readarr.com
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
+		krb5>0:security/krb5 \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind \
-		sqlite3>0:databases/sqlite3
+		libunwind>0:devel/libunwind
 
-USES=	ssl:run
+USES=	ssl:run sqlite:3
 
 USE_RC_SUBR=	${PORTNAME}
 

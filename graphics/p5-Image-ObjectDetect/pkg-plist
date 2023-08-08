@@ -1,4 +1,0 @@
-%%SITE_ARCH%%/Image/ObjectDetect.pm
-%%SITE_ARCH%%/Image/ObjectDetect.xs
-%%SITE_ARCH%%/auto/Image/ObjectDetect/ObjectDetect.so
-%%PERL5_MAN3%%/Image::ObjectDetect.3.gz

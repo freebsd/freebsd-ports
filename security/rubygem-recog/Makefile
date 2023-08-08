@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 SHEBANG_FILES=	update_cpes.py .vscode/bin/monitor-recog-fingerprints.sh

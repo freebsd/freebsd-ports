@@ -1,7 +1,7 @@
 PORTNAME=	colored
-DISTVERSION=	1.4.3
+DISTVERSION=	1.4.4
 CATEGORIES=	misc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	timp87@gmail.com
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/dslackw/colored
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

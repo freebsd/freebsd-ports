@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LGPLv3.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}doit>0:devel/py-doit@${PY_FLAVOR}
 
-USES=		gettext-runtime gnome pkgconfig python:3.7+,build shebangfix tar:xz vala:build
+USES=		gettext-runtime gnome pkgconfig python:build shebangfix tar:xz vala:build
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	configure install.py

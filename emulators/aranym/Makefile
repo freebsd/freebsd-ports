@@ -1,6 +1,6 @@
 PORTNAME=	aranym
 DISTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}.orig
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	openjpeg>0:graphics/openjpeg \
 		sdl-config:devel/sdl12
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake perl5 pkgconfig gl localbase:ldflags sdl shebangfix xorg
+USES=		gmake jpeg perl5 pkgconfig gl localbase:ldflags sdl shebangfix xorg
 USE_GL=		gl
 USE_SDL=	sdl2 image2
 USE_XORG=	x11
@@ -27,5 +27,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-disable-nat-debug --disable-nat-debug --enable-nfjpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Dregister=
+.endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2022-01-13 02:13:14 UTC
+--- CMakeLists.txt.orig	2022-09-28 23:03:18 UTC
 +++ CMakeLists.txt
-@@ -1006,7 +1006,7 @@ include(CTest)
+@@ -292,7 +292,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
+ include(Testlibstdc++)
+ 
+ # Check that a C++ standard library is configured properly
+-include(TestCxx17Library)
++#include(TestCxx17Library) # this test fails for clang-14 from base on 13-STABLE
+ 
+ #-----------------------------------------------------------------------
+ # SETUP SANITIZERS FLAGS
+@@ -1043,7 +1043,7 @@ include(CTest)
  #-------------------------------------------------------------------
  # Verify Python3 available
  #-------------------------------------------------------------------

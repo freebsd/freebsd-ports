@@ -1,7 +1,6 @@
 PORTNAME=	blackbox_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
-PORTREVISION=	2
+DISTVERSION=	0.24.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -14,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe go:modules
 CPE_VENDOR=	prometheus
 USE_RC_SUBR=	blackbox_exporter
-
 GO_MODULE=	github.com/prometheus/blackbox_exporter
 
 SUB_FILES=	pkg-message

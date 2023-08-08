@@ -1,8 +1,8 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.1
-PORTREVISION=	2
-CATEGORIES=	graphics wayland
+PORTREVISION=	4
+CATEGORIES=	graphics
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -37,6 +37,7 @@ FREEIMAGE_DESC=	FreeImage backend (support for many image formats)
 NSGIF_DESC=	NetSurf GIF backend (support for animated GIF)
 WIN_DESC=	Windowing system
 
+ALL_CATEGORIES=		wayland
 ALL_LIB_DEPENDS+=	libwayland-client.so:graphics/wayland
 ALL_USES=		xorg
 ALL_USE=		GL=glu \
@@ -67,6 +68,7 @@ TEST_MESON_ENABLED=	test
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_MESON_ENABLED=	libtiff
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-egl.so:graphics/wayland
 WAYLAND_MESON_ON=	-Dwindows=wayland

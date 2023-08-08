@@ -20,6 +20,7 @@
 %%QT_L10NDIR%%/assistant_uk.qm
 %%QT_L10NDIR%%/assistant_zh_CN.qm
 %%QT_L10NDIR%%/assistant_zh_TW.qm
+%%QT_L10NDIR%%/catalogs.json
 %%QT_L10NDIR%%/designer_ar.qm
 %%QT_L10NDIR%%/designer_bg.qm
 %%QT_L10NDIR%%/designer_cs.qm

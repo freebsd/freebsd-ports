@@ -1,0 +1,41 @@
+Index: src/contrib/libpdel/io/ssl_fp.c
+===================================================================
+--- src/contrib/libpdel/io/ssl_fp.c	(revision 2544)
++++ src/contrib/libpdel/io/ssl_fp.c	(revision 2546)
+@@ -53,6 +53,7 @@
+ 
+ #include <openssl/ssl.h>
+ #include <openssl/err.h>
++#include <openssl/opensslv.h>
+ 
+ #include "structs/structs.h"
+ #include "structs/type/array.h"
+@@ -364,6 +365,7 @@ ssl_log(ssl_logger_t *logger, void *logarg)
+ 		}
+ #endif
+ 
++#if defined(OPENSSL_VERSION_NUMBER) && OPENSSL_VERSION_NUMBER < 0x30000000L
+ 		/* Add function */
+ 		if ((t = ERR_func_error_string(e)) != NULL) {
+ 			strlcat(buf, t, sizeof(buf));
+@@ -372,6 +374,7 @@ ssl_log(ssl_logger_t *logger, void *logarg)
+ 			snprintf(buf + strlen(buf), sizeof(buf) - strlen(buf),
+ 			    "func=%u: ", ERR_GET_FUNC(e));
+ 		}
++#endif
+ 
+ 		/* Add reason */
+ 		if ((t = ERR_reason_error_string(e)) != NULL) {
+Index: src/Makefile
+===================================================================
+--- src/Makefile	(revision 2544)
++++ src/Makefile	(revision 2546)
+@@ -147,6 +147,8 @@ CFLAGS+=	-DMPD_VENDOR='"${MPD_VENDOR}"'
+ CFLAGS+=	-DSYSLOG_FACILITY='"${SYSLOG_FACILITY}"'
+ .endif
+ 
++CFLAGS+=	-DOPENSSL_API_COMPAT=10100
++
+ # Standard sources
+ 
+ STDSRCS=        assert.c auth.c bund.c rep.c ccp.c chap.c \

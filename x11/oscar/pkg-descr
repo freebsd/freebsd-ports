@@ -1,0 +1,8 @@
+OpenSource CPAP Analysis Reporter
+
+OSCAR is a derivative of SleepyHead version 1.1.0, created when that
+was abandoned by Mark Watkins.
+
+SleepyHead was a cross platform, opensource sleep tracking program for
+reviewing CPAP and Oximetry data, which are devices used in the
+treatment of Sleep Disorders like Obstructive Sleep Apnea.

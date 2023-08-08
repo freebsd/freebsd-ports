@@ -1,5 +1,5 @@
 PORTNAME=	Cache-Memcached-Fast
-PORTVERSION=	0.27
+PORTVERSION=	0.28
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,8 @@ WWW=		https://metacpan.org/release/Cache-Memcached-Fast
 
 LICENSE=	ART10 GPLv2+
 LICENSE_COMB=	dual
+
+TEST_DEPENDS=	p5-Test2-Suite>=0.000072:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	configure

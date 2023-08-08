@@ -1,4 +1,4 @@
---- include/opendht/value.h.orig	2016-11-12 22:38:27 UTC
+--- include/opendht/value.h.orig	2022-09-02 21:01:23 UTC
 +++ include/opendht/value.h
 @@ -26,6 +26,11 @@
  
@@ -10,5 +10,5 @@
 +#endif
 +
  #include <string>
+ #include <string_view>
  #include <sstream>
- #include <bitset>

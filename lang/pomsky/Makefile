@@ -1,0 +1,199 @@
+PORTNAME=	pomsky
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.10
+PORTREVISION=	0
+CATEGORIES=	lang textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Portable, modern regular expression language
+WWW=		https://pomsky-lang.org
+
+LICENSE=	MIT APACHE20
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	rulex-rs
+
+WRKSRC_SUBDIR=	pomsky-bin
+
+CARGO_CRATES=	ahash-0.7.6 \
+		aho-corasick-0.7.20 \
+		anes-0.1.6 \
+		ansi_term-0.12.1 \
+		anstyle-0.3.5 \
+		arbitrary-1.3.0 \
+		assert_cmd-2.0.10 \
+		assert_fs-1.0.12 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bindgen-0.59.2 \
+		bitflags-1.3.2 \
+		block-buffer-0.10.4 \
+		bstr-1.4.0 \
+		bumpalo-3.12.0 \
+		cast-0.3.0 \
+		cc-1.0.79 \
+		cexpr-0.6.0 \
+		cfg-if-1.0.0 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
+		clang-sys-1.6.0 \
+		clap-2.34.0 \
+		clap-3.2.23 \
+		clap_lex-0.2.4 \
+		cpufeatures-0.2.5 \
+		crossbeam-channel-0.5.7 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
+		crossbeam-utils-0.8.15 \
+		crypto-common-0.1.6 \
+		derive_arbitrary-1.3.0 \
+		difflib-0.4.0 \
+		digest-0.10.6 \
+		doc-comment-0.3.3 \
+		either-1.8.1 \
+		env_logger-0.9.3 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		generic-array-0.14.6 \
+		getrandom-0.2.8 \
+		glob-0.3.1 \
+		globset-0.4.10 \
+		globwalk-0.8.1 \
+		half-1.8.2 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
+		humantime-2.1.0 \
+		ignore-0.4.20 \
+		indexmap-1.9.2 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.9 \
+		is-terminal-0.4.5 \
+		is_ci-1.1.1 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
+		jobserver-0.1.26 \
+		js-sys-0.3.61 \
+		lazy_static-1.4.0 \
+		lazycell-1.3.0 \
+		lexopt-0.3.0 \
+		libc-0.2.140 \
+		libloading-0.7.4 \
+		linux-raw-sys-0.1.4 \
+		log-0.4.17 \
+		melody_compiler-0.18.1 \
+		memchr-2.5.0 \
+		memoffset-0.8.0 \
+		miette-5.6.0 \
+		miette-derive-5.6.0 \
+		minimal-lexical-0.2.1 \
+		nom-7.1.3 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		once_cell-1.17.1 \
+		onig-6.4.0 \
+		onig_sys-69.8.1 \
+		oorandom-11.1.3 \
+		os_str_bytes-6.5.0 \
+		owo-colors-3.5.0 \
+		pcre2-0.2.3 \
+		pcre2-sys-0.2.5 \
+		peeking_take_while-0.1.2 \
+		pest-2.5.6 \
+		pest_derive-2.5.6 \
+		pest_generator-2.5.6 \
+		pest_meta-2.5.6 \
+		pkg-config-0.3.26 \
+		plotters-0.3.4 \
+		plotters-backend-0.3.4 \
+		plotters-svg-0.3.3 \
+		predicates-2.1.5 \
+		predicates-3.0.1 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-1.0.52 \
+		quote-1.0.26 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.2.16 \
+		regex-1.7.2 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.6.29 \
+		rustc-hash-1.1.0 \
+		rustix-0.36.11 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		scopeguard-1.1.0 \
+		serde-1.0.158 \
+		serde_derive-1.0.158 \
+		serde_json-1.0.94 \
+		sha2-0.10.6 \
+		shlex-1.1.0 \
+		smawk-0.3.1 \
+		strsim-0.8.0 \
+		strsim-0.10.0 \
+		supports-color-2.0.0 \
+		supports-hyperlinks-2.0.0 \
+		supports-unicode-2.0.0 \
+		syn-1.0.109 \
+		syn-2.0.4 \
+		tempfile-3.4.0 \
+		termcolor-1.2.0 \
+		terminal_size-0.1.17 \
+		termtree-0.4.1 \
+		textwrap-0.11.0 \
+		textwrap-0.15.2 \
+		textwrap-0.16.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		thread_local-1.1.7 \
+		tinytemplate-1.2.1 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		unicode-ident-1.0.8 \
+		unicode-linebreak-0.1.4 \
+		unicode-width-0.1.10 \
+		vec_map-0.8.2 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
+		web-sys-0.3.61 \
+		which-4.4.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.2 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_msvc-0.42.2 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_msvc-0.42.2 \
+		criterion,criterion-plot@git+https://github.com/bheisler/criterion.rs?branch=version-0.4\#935c6327e152e44f2b9178797682b9b99b5123a5
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

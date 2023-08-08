@@ -1,7 +1,7 @@
 PORTNAME=	Genshi
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.7
 CATEGORIES=	textproc www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,17 +11,18 @@ WWW=		https://genshi.edgewall.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	BABEL
 BABEL_DESC=	I18n support through the Babel plugin
 
 BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=0.8:devel/py-babel@${PY_FLAVOR}
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/genshi/_speedups${PYTHON_EXT_SUFFIX}.so
+
 do-test:
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>

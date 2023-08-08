@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-10-11 09:38:23.000000000 -0500
-+++ CMakeLists.txt	2021-11-04 10:31:40.191911000 -0500
-@@ -134,7 +134,7 @@
+--- CMakeLists.txt.orig	2022-07-18 08:40:56 UTC
++++ CMakeLists.txt
+@@ -136,7 +136,7 @@ if (SYSCONF_INSTALL_DIR)
  endif (SYSCONF_INSTALL_DIR)
  
  if (NOT SYSCONFDIR)
@@ -9,7 +9,7 @@
  endif (NOT SYSCONFDIR)
  
  if (NOT EXEC_PREFIX)
-@@ -174,7 +174,7 @@
+@@ -176,7 +176,7 @@ if (NOT DATADIR)
  endif (NOT DATADIR)
  
  if (NOT GVM_RUN_DIR)
@@ -17,8 +17,8 @@
 +  set (GVM_RUN_DIR  "${LOCALSTATEDIR}/run/gvm")
  endif (NOT GVM_RUN_DIR)
  
- if (NOT GVM_PID_DIR)
-@@ -187,7 +187,7 @@
+ if (NOT GVM_SYSCONF_DIR)
+@@ -185,7 +185,7 @@ endif (NOT GVM_SYSCONF_DIR)
  
  
  if (NOT REDIS_SOCKET_PATH)
@@ -27,3 +27,11 @@
  endif ()
  
  add_definitions (-DREDIS_SOCKET_PATH="${REDIS_SOCKET_PATH}")
+@@ -208,7 +208,6 @@ set (
+     -std=c11 \
+     -Wall \
+     -Wextra \
+-    -Werror \
+     -Wpedantic \
+     -Wmissing-prototypes \
+     -Wshadow \

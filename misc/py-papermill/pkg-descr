@@ -1,0 +1,6 @@
+papermill is a tool for parameterizing, executing, and analyzing
+Jupyter Notebooks.
+
+Papermill lets you:
+* parameterize notebooks
+* execute notebooks

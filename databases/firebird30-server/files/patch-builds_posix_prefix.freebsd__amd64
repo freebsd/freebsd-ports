@@ -1,0 +1,18 @@
+--- builds/posix/prefix.freebsd_amd64.orig	2022-06-07 08:18:52 UTC
++++ builds/posix/prefix.freebsd_amd64
+@@ -20,5 +20,13 @@
+ 
+ EXE_LINK_OPTIONS+=-Wl,-rpath,../gen/firebird/lib
+ 
+-PROD_FLAGS=-O -fno-builtin -DFREEBSD -DAMD64 -pipe -MMD -fPIC
+-DEV_FLAGS=-ggdb -DFREEBSD -DAMD64 -pipe -MMD -p -fPIC -Wall -Wno-non-virtual-dtor
++COMMON_FLAGS=-DFREEBSD -DAMD64 -pipe -MMD -fPIC 
++PROD_FLAGS=$(COMMON_FLAGS) -O0 -g -fno-builtin -Wno-deprecated
++DEV_FLAGS=$(COMMON_FLAGS) -ggdb -p -Wall -Wno-non-virtual-dtor
++
++# This file must be compiled with SSE4.2 support
++%/CRC32C.o: COMMON_FLAGS += -msse4
++
++# These files are generated incorrectly (e.g. array.epp => array.cpp)
++%/array.o %/blob.o %/alice_meta.o %/restore.o %/backup.o: COMMON_FLAGS += -Wno-narrowing
++%/OdsDetection.o %/dba.o: COMMON_FLAGS += -Wno-narrowing

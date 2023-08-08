@@ -1,6 +1,6 @@
---- driver/targetmachine.cpp.orig	2020-06-16 18:15:55 UTC
+--- driver/targetmachine.cpp.orig	2022-07-20 17:05:27 UTC
 +++ driver/targetmachine.cpp
-@@ -444,6 +444,10 @@ createTargetMachine(const std::string targetTriple, co
+@@ -431,6 +431,10 @@ createTargetMachine(const std::string targetTriple, co
        // these OSes.
        // On Android, PIC is default as well.
        relocModel = llvm::Reloc::PIC_;

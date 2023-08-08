@@ -1,20 +1,24 @@
 PORTNAME=	minisign
-PORTVERSION=	0.9
+PORTVERSION=	0.11
 CATEGORIES=	security
+MASTER_SITES=	https://github.com/jedisct1/minisign/releases/download/${PORTVERSION}/
 
-MAINTAINER=	feld@FreeBSD.org
-COMMENT=	Simple tool to sign files and verify signatures
-WWW=		https://github.com/jedisct1/minisign
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Simple tool to sign files and verify digital signatures
+WWW=		https://jedisct1.github.io/minisign/ \
+		https://github.com/jedisct1/minisign
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
-USES=	cmake localbase pkgconfig
+USES=		cmake localbase pkgconfig
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	jedisct1
+CMAKE_OFF=	BUILD_STATIC_EXECUTABLES STATIC_LIBSODIUM
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	bin/minisign share/man/man1/minisign.1.gz
+PLIST_FILES=	bin/minisign \
+		share/man/man1/minisign.1.gz
 
 .include <bsd.port.mk>

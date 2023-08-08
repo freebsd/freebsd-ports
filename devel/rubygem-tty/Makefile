@@ -37,7 +37,6 @@ RUN_DEPENDS=	rubygem-bundler>=1.16:sysutils/rubygem-bundler \
 		rubygem-tty-which>=0.4<1:devel/rubygem-tty-which
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0
+DISTVERSION=	0.23.2
 PORTREVISION=	1
 CATEGORIES=	security
 
@@ -21,11 +21,7 @@ GO_MODULE=	github.com/smallstep/certificates
 
 USE_RC_SUBR=	step-ca
 
-GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca  \
-		./cmd/step-cloudkms-init  \
-		./cmd/step-awskms-init \
-		./cmd/step-yubikey-init \
-		./cmd/step-pkcs11-init
+GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca
 
 GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${PORTVERSION}"
 
@@ -35,6 +31,11 @@ GROUPS=		step
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/step
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${INSTALL_MAN} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/CHANGELOG.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/CONTRIBUTING.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/SECURITY.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

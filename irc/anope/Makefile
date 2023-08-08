@@ -1,8 +1,8 @@
 PORTNAME=	anope
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.13
 CATEGORIES=	irc
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	devnull@apt322.org
 COMMENT=	Set of IRC services for IRC networks
 WWW=		https://www.anope.org/
 
@@ -27,7 +27,7 @@ TRE_DESC=	Tre Regex Module
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-LDAP_USE=	OPENLDAP=yes
+LDAP_USES=	ldap
 
 MYSQL_USES=	mysql
 

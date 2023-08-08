@@ -1,0 +1,21 @@
+--- builds/posix/Makefile.in.orig	2022-06-07 08:18:52 UTC
++++ builds/posix/Makefile.in
+@@ -191,16 +191,16 @@ master_process:
+ 	$(MAKE) preliminaryCheck
+ 	$(MAKE) boot
+ 	$(MAKE) yvalve
++	$(MAKE) engine
+ ifeq ($(IsDeveloper), Y)
+ # In developer mode we must regenerate various files in include/gen
+ 	$(MAKE) ids
+ endif
+-	$(MAKE) engine
+ 	$(MAKE) fbintl
+ 	$(MAKE) utilities
+ # Now having ready such useful tools as gbak and isql, we may restore / create
+ # required databases and switch to full-featured gpre
+-	$(MAKE) gpre
++	$(MAKE) gbak gfix gpre
+ # Pay attention - after build force gpre_current to point to gpre
+ # even if gpre itself was not rebuilt
+ 	-$(RM) $(GPRE_CURRENT)

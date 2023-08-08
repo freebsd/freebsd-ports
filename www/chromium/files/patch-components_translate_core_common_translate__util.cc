@@ -1,11 +1,11 @@
---- components/translate/core/common/translate_util.cc.orig	2022-03-25 21:59:56 UTC
+--- components/translate/core/common/translate_util.cc.orig	2023-04-05 11:05:06 UTC
 +++ components/translate/core/common/translate_util.cc
-@@ -34,7 +34,7 @@ const base::Feature kTranslateSubFrames{"TranslateSubF
- const base::Feature kTFLiteLanguageDetectionEnabled{
-   "TFLiteLanguageDetectionEnabled",
+@@ -33,7 +33,7 @@ BASE_FEATURE(kTranslateSubFrames,
+ BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
+              "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
--    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
+-    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
  #else
-       base::FEATURE_DISABLED_BY_DEFAULT
+              base::FEATURE_DISABLED_BY_DEFAULT

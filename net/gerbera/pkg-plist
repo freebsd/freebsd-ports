@@ -1,6 +1,7 @@
 bin/gerbera
 %%DATADIR%%/js/common.js
 %%DATADIR%%/js/import.js
+%%DATADIR%%/js/metadata.js
 %%DATADIR%%/js/playlists.js
 %%DATADIR%%/mysql-upgrade.xml
 %%DATADIR%%/mysql.sql

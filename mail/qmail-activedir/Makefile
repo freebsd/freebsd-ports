@@ -8,18 +8,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to allow qmail to authenticate users through a MS ad
 WWW=		http://fo2k.com/qmail-activedir/
 
-USES=		qmail:run
+USES=		ldap qmail:run
 SUB_FILES=	pkg-message
 SUB_LIST+=	QMAIL_PREFIX=${QMAIL_PREFIX}
-USE_OPENLDAP=	yes
 
 BINARIES=	checkadpassword qmail-adgetpw create_alias_files
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -Wall -lldap
-
-.if defined(WITH_OPENLDAP_VER)
-WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-.endif
 
 OPTIONS_DEFINE=	DOCS
 

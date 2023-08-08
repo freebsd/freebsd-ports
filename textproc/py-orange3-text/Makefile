@@ -1,5 +1,6 @@
 PORTNAME=	orange3-text
 DISTVERSION=	1.3.1
+PORTREVISION=	2
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,7 +28,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}ufal.udpipe>0:textproc/py-ufal.udpipe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wikipedia>0:www/py-wikipedia@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

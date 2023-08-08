@@ -1,11 +1,12 @@
 PORTNAME=	c-blosc2
-PORTVERSION=	2.3.1
+PORTVERSION=	2.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High performance compressor optimized for binary data
-WWW=		https://www.blosc.org/
+WWW=		https://www.blosc.org/ \
+		https://github.com/Blosc/c-blosc2
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

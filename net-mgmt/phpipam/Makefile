@@ -1,5 +1,5 @@
 PORTNAME=	phpipam
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	jake@xz.cx
@@ -11,13 +11,13 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 
 USES=		cpe gettext php:web tar:
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 USE_GITHUB=	yes
-GH_TAGNAME=	f8c651d
+GH_TAGNAME=	be8a2c4
 
-USE_PHP=	ctype curl dom filter gd gettext gmp iconv json mbstring mcrypt \
-		openssl pcntl pdo pdo_mysql posix session simplexml sockets
+USE_PHP=	ctype curl dom filter gd gettext gmp iconv mbstring mcrypt \
+		pcntl pdo pdo_mysql posix session simplexml sockets
 
 NO_ARCH=	yes
 NO_BUILD=	yes

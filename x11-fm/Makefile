@@ -1,5 +1,6 @@
     COMMENT = X11 file managers
 
+    SUBDIR += 4pane
     SUBDIR += arqiver
     SUBDIR += caja
     SUBDIR += catseye-fm
@@ -27,7 +28,6 @@
     SUBDIR += sushi
     SUBDIR += tdfsb
     SUBDIR += thunar
-    SUBDIR += wcmcommander
     SUBDIR += worker
     SUBDIR += xcruise
     SUBDIR += xdiskusage

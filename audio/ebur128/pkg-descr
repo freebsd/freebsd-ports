@@ -1,0 +1,2 @@
+Rust port of the libebur128 C library which implements the EBU R 128 standard
+for loudness normalization produces the same results as the C library

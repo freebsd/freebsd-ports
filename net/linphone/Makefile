@@ -1,6 +1,5 @@
 PORTNAME=	linphone
-PORTVERSION=	4.4.8
-PORTREVISION=	2
+PORTVERSION=	5.0.18
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -21,7 +20,6 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 GL_PROJECT=	linphone-desktop
-GL_COMMIT=	da40aed848da44e851d67a2039e7e966c5257d3b
 USE_QT=		concurrent core dbus declarative gui linguisttools network \
 		quickcontrols2 speech svg testlib widgets buildtools:build \
 		qmake:build graphicaleffects:run quickcontrols:run

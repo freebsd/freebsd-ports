@@ -1,14 +1,9 @@
-- make this file into a project CMake file
-
---- CMakeLists.txt.orig	2018-10-18 17:54:14 UTC
+--- CMakeLists.txt.orig	2022-07-21 15:20:28 UTC
 +++ CMakeLists.txt
-@@ -1,4 +1,8 @@
--find_package(PythonInterp 3 REQUIRED)
-+cmake_minimum_required(VERSION 3.12)
+@@ -1,3 +1,6 @@
++cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
 +
-+link_directories(${CMAKE_INSTALL_PREFIX}/lib)
-+
-+find_package(PythonInterp 3 REQUIRED)
++find_package(AvogadroLibs REQUIRED)
+ find_package(PythonInterp 3 REQUIRED)
  find_package(PythonLibs 3 REQUIRED)
  set(PYBIND11_PYTHON_VERSION "3" CACHE STRING "")
- set(PYBIND11_CPP_STANDARD "-std=c++11" CACHE STRING "")

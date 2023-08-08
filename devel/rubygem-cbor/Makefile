@@ -10,6 +10,11 @@ WWW=		https://cbor.io/
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 .include <bsd.port.mk>

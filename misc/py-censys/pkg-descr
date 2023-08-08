@@ -1,0 +1,5 @@
+censys is an easy-to-use and lightweight API wrapper for Censys APIs
+(censys.io).
+
+Censys is an Attack Surface Management system. It searches and proactively
+monitores your digital footprint.

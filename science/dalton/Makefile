@@ -1,5 +1,6 @@
 PORTNAME=	dalton
 DISTVERSION=	2020.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -7,6 +8,8 @@ COMMENT=	Powerful molecular electronic structure program for quantum chemistry
 WWW=		https://daltonprogram.org/
 
 LICENSE=	LGPL21
+
+BROKEN_armv7=	fortran runs out of memory
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
@@ -16,7 +19,7 @@ USES=		cmake:noninja fortran python:build shebangfix
 SHEBANG_FILES=	dalton.in
 
 USE_GITLAB=	yes
-GL_COMMIT=	66052b3af5ea7225e31178bf9a8b031913c72190
+GL_TAGNAME=	66052b3af5ea7225e31178bf9a8b031913c72190
 GL_TUPLE=	bingao:gen1int:1e4148ecd676761b3399801acba443925a1fee6b:gen1int/external/gen1int \
 		pe-software:pelib-public:cf49a6e04fdca09af6245fb68a36d20b68552ace:pelib/external/pelib
 

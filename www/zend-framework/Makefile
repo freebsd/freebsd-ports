@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gettext php:web,flavors tar:tgz
-USE_PHP=	spl
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -36,11 +35,11 @@ MEMCACHE_USE=	PHP=memcache,memcached
 MYSQLI_USE=	PHP=mysqli
 MYSQL_USE=	PHP=pdo_mysql
 ODBC_USE=	PHP=pdo_odbc
-OPTPHP_USE=	PHP=bcmath,bitset,json,posix
+OPTPHP_USE=	PHP=bcmath,bitset,posix
 PGSQL_USE=	PHP=pdo_pgsql
 # Add all of the required and/or optional PHP extension dependencies,
 # if chosen by the user.
-REQPHP_USE=	PHP=ctype,curl,dom,gd,hash,iconv,ldap,mbstring,mcrypt,opcache,pcre,pdo,session,simplexml,soap,sqlite3,xml,zlib
+REQPHP_USE=	PHP=ctype,curl,dom,gd,iconv,ldap,mbstring,mcrypt,opcache,pdo,session,simplexml,soap,sqlite3,xml,zlib
 SQLITE_USE=	PHP=pdo_sqlite
 
 do-install:

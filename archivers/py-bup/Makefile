@@ -18,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		git>1.5.6:devel/git
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake python:3.6+ shebangfix
+USES=		gmake python shebangfix
 USE_PYTHON=	autoplist
 SHEBANG_FILES=	test/ext/test-sparse-files lib/cmd/import-rdiff-backup-cmd.sh
 

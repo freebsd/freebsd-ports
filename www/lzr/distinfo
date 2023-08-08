@@ -1,0 +1,13 @@
+TIMESTAMP = 1687677007
+SHA256 (stanford-esrg-lzr-v1_GH0.tar.gz) = bf76f8e05b031705871429c783f2eec3a70b2982918f219046d787b24cc34340
+SIZE (stanford-esrg-lzr-v1_GH0.tar.gz) = 578065
+SHA256 (go-check-check-10cb98267c6c_GH0.tar.gz) = 0a42d9d5a49ebc30174e5840238e446f5fb16899bfaa6a6f63d12ab9953df293
+SIZE (go-check-check-10cb98267c6c_GH0.tar.gz) = 32375
+SHA256 (go-mgo-mgo-a6b53ec6cb22_GH0.tar.gz) = e3373369ed1eefc88cb2ee55fa8fcb30c988b6979eaf6db0889d1520b83f302c
+SIZE (go-mgo-mgo-a6b53ec6cb22_GH0.tar.gz) = 376779
+SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da44f701755babf99b3daf0faac0
+SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
+SHA256 (golang-sys-97732733099d_GH0.tar.gz) = 8d60fa6ab0c2b099f2c7d6f8c0a5df177c5c524183a2a38e0e8d2d18cde53532
+SIZE (golang-sys-97732733099d_GH0.tar.gz) = 1350239
+SHA256 (google-gopacket-v1.1.19_GH0.tar.gz) = 31efa87cc9d2b41e5e66c7daa8839d841d2a43cc477bf595c9e8c24ef6903830
+SIZE (google-gopacket-v1.1.19_GH0.tar.gz) = 950745

@@ -1,5 +1,6 @@
 PORTNAME=	ocamlgraph
 PORTVERSION=	1.8.8
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ocamlgraph.lri.fr/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/ocamlgraph/

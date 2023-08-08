@@ -1,7 +1,8 @@
 PORTNAME=	unixbench
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.3
-PORTREVISION=	2
+DISTVERSION=	5.1.3-51
+DISTVERSIONSUFFIX=	-g6705203
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -12,14 +13,28 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	x11perf:x11/x11perf
 
-USES=		gmake perl5 shebangfix
+USES=		gmake gl perl5 shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	kdlucas
 GH_PROJECT=	byte-unixbench
 WRKSRC_SUBDIR=	UnixBench
+USE_GL=	gl
+USE_XORG=	x11 xext
+CFLAGS+=	-I${LOCALBASE}/include \
+			-L${LOCALBASE}/lib
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
+OPTIONS_EXCLUDE_aarch64=	OPTIMIZED_CFLAGS
+MAKE_ENV=	"UB_GCC_OPTIONS=-O3 -ffast-math -fomit-frame-pointer"
+#march generates code that can be incompatibe with previous CPU generations
+OPTIMIZED_CFLAGS_MAKE_ENV=	"UB_GCC_OPTIONS=-O3 -ffast-math -fomit-frame-pointer -march=native"
 
 SUB_FILES=	unixbench
 SHEBANG_FILES=	Run pgms/gfx-x11
+
+post-patch:
+	${REINPLACE_CMD} -e 's/^CC=gcc/#CC=gcc/' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/^# GRAPHIC_TESTS = defined/GRAPHIC_TESTS = defined/' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/unixbench ${STAGEDIR}${PREFIX}/bin/

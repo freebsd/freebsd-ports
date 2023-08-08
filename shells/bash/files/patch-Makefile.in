@@ -1,6 +1,6 @@
---- Makefile.in.orig	2020-12-19 20:55:00 UTC
+--- Makefile.in.orig	2022-09-27 16:41:33 UTC
 +++ Makefile.in
-@@ -824,7 +824,9 @@ install:	.made installdirs
+@@ -846,7 +846,9 @@ install:	.made installdirs
  		infodir=$(infodir) htmldir=$(htmldir) DESTDIR=$(DESTDIR) $@ )
  	-( cd $(DEFDIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )
  	-( cd $(PO_DIR) ; $(MAKE) $(MFLAGS) DESTDIR=$(DESTDIR) $@ )

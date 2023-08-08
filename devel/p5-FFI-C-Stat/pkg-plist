@@ -1,0 +1,4 @@
+%%SITE_ARCH%%/FFI/C/Stat.pm
+%%SITE_ARCH%%/auto/FFI/C/Stat/Stat.txt
+%%SITE_ARCH%%/auto/share/dist/FFI-C-Stat/lib/libFFI-C-Stat.so
+%%PERL5_MAN3%%/FFI::C::Stat.3.gz

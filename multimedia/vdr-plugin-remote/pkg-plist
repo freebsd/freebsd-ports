@@ -1,7 +1,0 @@
-lib/vdr/libvdr-remote.so.%%APIVERSION%%
-%%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-remote.mo
-%%NLS%%share/locale/fi_FI/LC_MESSAGES/vdr-remote.mo
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/vdr-remote.mo
-%%NLS%%share/locale/it_IT/LC_MESSAGES/vdr-remote.mo
-%%NLS%%share/locale/pl_PL/LC_MESSAGES/vdr-remote.mo
-%%NLS%%share/locale/ru_RU/LC_MESSAGES/vdr-remote.mo

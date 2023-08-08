@@ -1,0 +1,22 @@
+--- ext/gtk2/rbgdkscreen.c.orig	2023-06-13 15:11:58 UTC
++++ ext/gtk2/rbgdkscreen.c
+@@ -255,7 +255,7 @@ rg_window_stack(VALUE self)
+ static void
+ child_setup(gpointer func)
+ {
+-    if (! NIL_P(func)){
++    if (! NIL_P((VALUE) func)){
+         rb_funcall((VALUE)func, id_call, 0);
+     }
+ }
+--- ext/gtk2/rbgtkdrag.c.orig	2023-06-13 15:21:51 UTC
++++ ext/gtk2/rbgtkdrag.c
+@@ -358,7 +358,7 @@ static VALUE
+ rg_m_source_get_target_list(G_GNUC_UNUSED VALUE self, VALUE widget)
+ {
+     GtkTargetList* ret = gtk_drag_source_get_target_list(RVAL2WIDGET(widget));
+-    return NIL_P(ret) ? Qnil : BOXED2RVAL(ret, GTK_TYPE_TARGET_LIST);
++    return NIL_P((VALUE) ret) ? Qnil : BOXED2RVAL(ret, GTK_TYPE_TARGET_LIST);
+ }
+ 
+ static VALUE

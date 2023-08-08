@@ -1,5 +1,5 @@
-TIMESTAMP = 1627051195
-SHA256 (fop-2.6-src.tar.gz) = 084fa6c9d0a3cc7b76502f69579ba52495a7390cb86341c6aa8b54c006bcb890
-SIZE (fop-2.6-src.tar.gz) = 27478217
+TIMESTAMP = 1675879419
+SHA256 (fop-2.8-src.tar.gz) = 6fb02fd7bc2ee80aff9e928e8b062ace5bc115222e5d3a6a4da70cd6cc6d06f7
+SIZE (fop-2.8-src.tar.gz) = 22855369
 SHA256 (offo-hyphenation.zip) = df0b863a2ef269ac7defd497f74da54480cd2c03ad665304e7c05334ab3f289f
 SIZE (offo-hyphenation.zip) = 883080

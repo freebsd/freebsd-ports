@@ -448,7 +448,6 @@
 %%WWWDIR%%/includes/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Metadata.php
 %%WWWDIR%%/includes/vendor/maxmind-db/reader/src/MaxMind/Db/Reader/Util.php
 %%WWWDIR%%/includes/vendor/maxmind-db/reader/src/MaxMind/Db/Reader.php
-%%WWWDIR%%/includes/vendor/ozh/bookmarkletgen/README.md
 %%WWWDIR%%/includes/vendor/ozh/bookmarkletgen/src/Ozh/Bookmarkletgen/Bookmarkletgen.php
 %%WWWDIR%%/includes/vendor/pomo/pomo/README.md
 %%WWWDIR%%/includes/vendor/pomo/pomo/src/MO.php

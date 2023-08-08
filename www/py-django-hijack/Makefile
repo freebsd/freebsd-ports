@@ -1,7 +1,7 @@
 PORTNAME=	django-hijack
-PORTVERSION=	3.2.1
+PORTVERSION=	3.4.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://ports.caomhin.org/:npmcache
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-django>0:devel/py-pytest-django@${PY_FLAVOR}
 
-USES=		gettext-tools:build python:3.6+
+USES=		gettext-tools:build python
 USE_PYTHON=	distutils autoplist
 
 MAKE_ENV=	npm_config_offline=true

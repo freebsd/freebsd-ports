@@ -6,6 +6,4 @@ and letters in the Basic Multilingual Plane of Unicode. It also provides limited
 coverage of CJK Ideographs in Plane 2 of Unicode as necessary to support
 standards from China and Japan.
 
-This port is the set of Traditional Chinese Hong Kong fonts.
-
-See also: https://github.com/googlefonts/noto-cjk
+This port is the meta port for Traditional Chinese Hong Kong fonts.

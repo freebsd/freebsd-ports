@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+
+To run the guest agent on startup:
+
+sysrc qemu_guest_agent_enable="YES"
+
+Start the service with:
+service qemu-guest-agent start
+
+EOM
+}
+]

@@ -1,5 +1,5 @@
 PORTNAME=	phpbb
-DISTVERSION=	3.3.7
+DISTVERSION=	3.3.9
 CATEGORIES=	www
 MASTER_SITES=	https://download.phpbb.com/pub/release/${PORTVERSION:C/([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 USES=		cpe php tar:bzip2
-USE_PHP=	ctype dom filter hash json tokenizer
+USE_PHP=	ctype dom filter tokenizer
 
 CONFLICTS=	phpbb-[0-2]*
 

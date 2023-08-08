@@ -8,13 +8,23 @@ MAINTAINER=	bmah@FreeBSD.org
 COMMENT=	Sendmail Milter (mail filter) plugin for SpamAssassin
 WWW=		https://savannah.nongnu.org/projects/spamass-milt/
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	spamc:mail/spamassassin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-LICENSE=	GPLv2
+USE_RC_SUBR=	spamass-milter
+
+GNU_CONFIGURE=	yes
+
+SUB_FILES=	pkg-message
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
 OPTIONS_DEFINE=	LDAP MILTER_PORT DOCS
 MILTER_PORT_DESC=	Build against libmilter port
+
+LDAP_USES=	ldap localbase:ldflags
 
 .include <bsd.port.pre.mk>
 
@@ -23,36 +33,19 @@ WITH_LDAP=yes
 .undef WITHOUT_LDAP
 .endif
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-.endif
-
-USE_RC_SUBR=	spamass-milter
-GNU_CONFIGURE=	yes
-
-SUB_FILES=	pkg-message
-
 post-patch:
 	@${SED} -e's,%%PREFIX%%,${PREFIX},g' \
 		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
-.if ${PORT_OPTIONS:MLDAP} && ${PORT_OPTIONS:MLDAP}
-	@${REINPLACE_CMD} -e 's|-lmilter|-lmilter -lldap|g' ${WRKSRC}/configure
-.endif
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
+post-patch-LDAP-on:
+	@${REINPLACE_CMD} -e 's|-lmilter|-lmilter -lldap|g' ${WRKSRC}/configure
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/activation.txt ${STAGEDIR}${DOCSDIR}/activation.txt
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 .include <bsd.port.post.mk>

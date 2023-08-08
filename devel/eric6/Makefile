@@ -2,7 +2,7 @@
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	devel python
 
 WWW=		https://eric-ide.python-projects.org/index.html
@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:C/^/${PORTNAME}-qt5-/}
 
-USES+=		desktop-file-utils python:3.5+ pyqt:5 shebangfix
+USES+=		desktop-file-utils python pyqt:5 shebangfix
 USE_PYTHON=	flavors
 USE_PYQT=	qscintilla2 webengine \
 		pyqt5

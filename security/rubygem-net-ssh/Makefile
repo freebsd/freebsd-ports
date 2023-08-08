@@ -1,5 +1,5 @@
 PORTNAME=	net-ssh
-PORTVERSION=	7.0.1
+PORTVERSION=	7.1.0
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

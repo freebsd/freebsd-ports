@@ -83,8 +83,11 @@
     SUBDIR += cyrus-imapd30
     SUBDIR += cyrus-imapd32
     SUBDIR += cyrus-imapd34
+    SUBDIR += cyrus-imapd36
+    SUBDIR += cyrus-imapd38
     SUBDIR += cyrus2courier
     SUBDIR += cyrus2dovecot
+    SUBDIR += datovka
     SUBDIR += davmail
     SUBDIR += dbmail
     SUBDIR += dcc-dccd
@@ -94,6 +97,7 @@
     SUBDIR += dkfilter
     SUBDIR += dkimproxy
     SUBDIR += dma
+    SUBDIR += dmarcts-report-parser
     SUBDIR += dot-forward
     SUBDIR += dovecot
     SUBDIR += dovecot-coi
@@ -101,6 +105,7 @@
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
     SUBDIR += dovecot-pigeonhole
+    SUBDIR += dovecot-xaps
     SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm
@@ -109,7 +114,6 @@
     SUBDIR += enma
     SUBDIR += eps
     SUBDIR += epstools
-    SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += evolution-ews
     SUBDIR += exilog
@@ -152,10 +156,6 @@
     SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
-    SUBDIR += horde-imp
-    SUBDIR += horde-ingo
-    SUBDIR += horde-turba
-    SUBDIR += horde-webmail
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
@@ -205,7 +205,9 @@
     SUBDIR += mailman-exim4
     SUBDIR += mailman-postfix
     SUBDIR += mailman3
+    SUBDIR += mailpit
     SUBDIR += mailscanner
+    SUBDIR += mailslurper
     SUBDIR += mailsync
     SUBDIR += mailutils
     SUBDIR += mailx
@@ -237,6 +239,7 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mlmmj
+    SUBDIR += mlmmj-archive-mid
     SUBDIR += mlmmj-archiver
     SUBDIR += mlmmj-webview
     SUBDIR += mls
@@ -453,10 +456,10 @@
     SUBDIR += perdition
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
-    SUBDIR += php74-imap
     SUBDIR += php80-imap
     SUBDIR += php81-imap
     SUBDIR += php82-imap
+    SUBDIR += php83-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer6
@@ -481,6 +484,7 @@
     SUBDIR += postfixadmin-lite
     SUBDIR += postfixadmin33
     SUBDIR += postfixadmin33-lite
+    SUBDIR += postforward
     SUBDIR += postgrey
     SUBDIR += postsrsd
     SUBDIR += prepflog
@@ -503,6 +507,7 @@
     SUBDIR += py-flufl.bounce
     SUBDIR += py-fuglu
     SUBDIR += py-imapclient
+    SUBDIR += py-imaplib2
     SUBDIR += py-mail-parser
     SUBDIR += py-mailmanclient
     SUBDIR += py-mailnag
@@ -511,13 +516,16 @@
     SUBDIR += py-milter
     SUBDIR += py-notmuch
     SUBDIR += py-notmuch2
+    SUBDIR += py-offlineimap3
     SUBDIR += py-postfix-mta-sts-resolver
     SUBDIR += py-premailer
+    SUBDIR += py-pyisemail
     SUBDIR += py-pymailq
     SUBDIR += py-pysasl
     SUBDIR += py-pyspf
     SUBDIR += py-python-slimta
     SUBDIR += py-pyzmail
+    SUBDIR += py-rfc6555
     SUBDIR += py-spf-engine
     SUBDIR += py-validate_email
     SUBDIR += pymsgauth
@@ -607,6 +615,7 @@
     SUBDIR += rubygem-roadie
     SUBDIR += rubygem-roadie-rails-rails4
     SUBDIR += rubygem-roadie-rails-rails52
+    SUBDIR += rubygem-roadie-rails-rails61
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
     SUBDIR += rubygem-valid_email
@@ -647,7 +656,6 @@
     SUBDIR += spambnc
     SUBDIR += spamcup
     SUBDIR += spamd
-    SUBDIR += spamdyke
     SUBDIR += spamguard
     SUBDIR += spamilter
     SUBDIR += spampd

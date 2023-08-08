@@ -1,5 +1,5 @@
 PORTNAME=	sfsexp
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mjsottile/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Small Fast S-Expression Library
 WWW=		https://github.com/mjsottile/sfsexp
 
 LICENSE=	LGPL21+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE_LGPL
 
 USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes

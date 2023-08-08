@@ -1,4 +1,5 @@
 bin/check_postgres.pl
+%%PERL5_MAN1%%/check_postgres.1p.gz
 %%NAGIOS%%libexec/nagios/check_postgres_archive_ready
 %%NAGIOS%%libexec/nagios/check_postgres_autovac_freeze
 %%NAGIOS%%libexec/nagios/check_postgres_backends
@@ -28,6 +29,7 @@ bin/check_postgres.pl
 %%NAGIOS%%libexec/nagios/check_postgres_new_version_cp
 %%NAGIOS%%libexec/nagios/check_postgres_new_version_pg
 %%NAGIOS%%libexec/nagios/check_postgres_new_version_tnm
+%%NAGIOS%%libexec/nagios/check_postgres_partman_premake
 %%NAGIOS%%libexec/nagios/check_postgres_pgagent_jobs
 %%NAGIOS%%libexec/nagios/check_postgres_pgb_pool_cl_active
 %%NAGIOS%%libexec/nagios/check_postgres_pgb_pool_cl_waiting
@@ -39,6 +41,7 @@ bin/check_postgres.pl
 %%NAGIOS%%libexec/nagios/check_postgres_pgb_pool_sv_used
 %%NAGIOS%%libexec/nagios/check_postgres_pgbouncer_backends
 %%NAGIOS%%libexec/nagios/check_postgres_pgbouncer_checksum
+%%NAGIOS%%libexec/nagios/check_postgres_pgbouncer_maxwait
 %%NAGIOS%%libexec/nagios/check_postgres_prepared_txns
 %%NAGIOS%%libexec/nagios/check_postgres_query_runtime
 %%NAGIOS%%libexec/nagios/check_postgres_query_time
@@ -55,5 +58,4 @@ bin/check_postgres.pl
 %%NAGIOS%%libexec/nagios/check_postgres_txn_wraparound
 %%NAGIOS%%libexec/nagios/check_postgres_version
 %%NAGIOS%%libexec/nagios/check_postgres_wal_files
-%%PERL5_MAN1%%/check_postgres.1p.gz
 %%CACTI%%share/cacti/scripts/check_postgres_dbstats

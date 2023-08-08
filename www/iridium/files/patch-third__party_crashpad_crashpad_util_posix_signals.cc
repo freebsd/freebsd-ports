@@ -1,4 +1,4 @@
---- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/crashpad/crashpad/util/posix/signals.cc.orig	2022-10-05 07:34:01 UTC
 +++ third_party/crashpad/crashpad/util/posix/signals.cc
 @@ -51,7 +51,7 @@ constexpr int kCrashSignals[] = {
  #if defined(SIGEMT)
@@ -18,7 +18,7 @@
      SIGIO,
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  };
-@@ -233,8 +233,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
+@@ -251,8 +251,12 @@ bool Signals::WillSignalReraiseAutonomously(const sigi
           // remains. See 10.12.3 xnu-3789.41.3/bsd/kern/kern_sig.c
           // psignal_internal().
           (code > 0 &&

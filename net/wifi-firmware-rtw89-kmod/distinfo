@@ -1,0 +1,13 @@
+TIMESTAMP = 1681001995
+SHA256 (linux-firmware/rtw89fw/rtw89/rtw8852a_fw.bin?h=20230310) = c3dc625eefc631280e3e3359514a71ecb99c5c6a3bc768f127e8e00d8f26db85
+SIZE (linux-firmware/rtw89fw/rtw89/rtw8852a_fw.bin?h=20230310) = 1423232
+SHA256 (linux-firmware/rtw89fw/rtw89/rtw8852b_fw.bin?h=20230310) = da3731580a9f9280ea5e4d91e98314381bb6c310c8043d30ee5770b2faa856fe
+SIZE (linux-firmware/rtw89fw/rtw89/rtw8852b_fw.bin?h=20230310) = 1188488
+SHA256 (linux-firmware/rtw89fw/rtw89/rtw8852c_fw.bin?h=20230310) = 256c0a1bab637b22cae529ada70892d10f65a680a240a57d946a4d96980e4b12
+SIZE (linux-firmware/rtw89fw/rtw89/rtw8852c_fw.bin?h=20230310) = 1532656
+SHA256 (linux-firmware/rtw89fw/LICENCE.rtlwifi_firmware.txt?h=20230310) = a61351665b4f264f6c631364f85b907d8f8f41f8b369533ef4021765f9f3b62e
+SIZE (linux-firmware/rtw89fw/LICENCE.rtlwifi_firmware.txt?h=20230310) = 2115
+SHA256 (linux-firmware/rtw89fw/WHENCE?h=20230310) = 866f14018cd82a4465cd13a278bec2f0750ca3e5b03c34082a16458ebd464d64
+SIZE (linux-firmware/rtw89fw/WHENCE?h=20230310) = 203894
+SHA256 (linux-firmware/rtw89fw/modules_rtw89fw_20230310.tar.gz) = 12989358e849dc910ff4a5ec839f02a8c238d68374536e74ae75a97f8de9bee5
+SIZE (linux-firmware/rtw89fw/modules_rtw89fw_20230310.tar.gz) = 9728

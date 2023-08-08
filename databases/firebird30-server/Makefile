@@ -1,10 +1,10 @@
 PORTNAME=	firebird
-PORTVERSION=	3.0.7
-PORTREVISION=	2
+PORTVERSION=	3.0.10
+PORTREVISION=	3
 CATEGORIES?=	databases
-MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/R3_0_7/
+MASTER_SITES=	https://github.com/FirebirdSQL/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX?=	${PORTVERSION:R:S/.//}-server
-DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33374-0
+DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}.33601-0
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--prefix=${LOCALSTATEDIR} \
 CONFIGURE_ENV+=	PTHREAD_LIBS="-lpthread" \
 		ac_cv_header_atomic_ops_h="no" \
 		ac_cv_lib_atomic_ops_main="no"
-CPPFLAGS+=	-DU_NOEXCEPT= # For USE_CXXSTD=gnu++98
+CPPFLAGS+=	-DU_NOEXCEPT= -fno-delete-null-pointer-checks # For USE_CXXSTD=gnu++98
 
 LOCALSTATEDIR=	/var/db/firebird
 CONFDIR=	etc/firebird
@@ -96,7 +96,7 @@ CONFIGURE_ENV+=	ac_cv_lib_edit_readline="yes"
 
 USE_LDCONFIG=	yes
 CLIENT_BIN=	gpre isql-fb qli
-CLIENT_HEADER=	extlib/ib_util.h include/ibase.h include/iberror.h yvalve/perf.h
+CLIENT_HEADER=	ib_util.h ibase.h iberror.h perf.h
 
 OPTIONS_DEFINE=	DOCS
 
@@ -120,7 +120,7 @@ CFLAGS+=	-DAMD64
 USERS=	${PORTNAME}
 GROUPS=	${USERS}
 
-MAKE_ENV+=	IsServer=Y
+#MAKE_ENV+=	IsServer=Y
 .endif
 
 post-patch:
@@ -177,12 +177,12 @@ do-install:
 	${LN} -fs libfbclient.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libfbclient.so
 
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/firebird
-	${INSTALL_DATA} ${CLIENT_HEADER:S!^!${WRKSRC}/src/!} ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${CLIENT_HEADER:S!^!${WRKSRC}/gen/Release/firebird/include/!} ${STAGEDIR}${PREFIX}/include
 
-	@cd ${WRKSRC}/src/include/firebird && \
+	@cd ${WRKSRC}/gen/Release/firebird/include/firebird && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${PREFIX}/include/firebird/{}" \;
 
-	@cd ${WRKSRC}/src/include/firebird && \
+	@cd ${WRKSRC}/gen/Release/firebird/include/firebird && \
 		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${PREFIX}/include/firebird/{}" \;
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}

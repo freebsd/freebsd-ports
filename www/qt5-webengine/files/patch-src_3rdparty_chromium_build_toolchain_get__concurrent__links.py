@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/toolchain/get_concurrent_links.py.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/build/toolchain/get_concurrent_links.py.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/build/toolchain/get_concurrent_links.py
-@@ -46,6 +46,14 @@ def _GetTotalMemoryInBytes():
+@@ -53,6 +53,14 @@ def _GetTotalMemoryInBytes():
        return int(subprocess.check_output(['sysctl', '-n', 'hw.memsize']))
      except Exception:
        return 0

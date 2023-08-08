@@ -1,4 +1,4 @@
---- base/process/process_metrics.cc.orig	2022-06-17 14:20:10 UTC
+--- base/process/process_metrics.cc.orig	2023-05-31 08:12:17 UTC
 +++ base/process/process_metrics.cc
 @@ -17,7 +17,7 @@ namespace base {
  namespace {
@@ -18,25 +18,32 @@
    GetSystemMemoryInfo(&system_metrics.memory_info_);
    GetVmStatInfo(&system_metrics.vmstat_info_);
    GetSystemDiskInfo(&system_metrics.disk_info_);
-@@ -73,7 +73,7 @@ Value SystemMetrics::ToValue() const {
-   Value res(Value::Type::DICTIONARY);
+@@ -73,7 +73,7 @@ Value::Dict SystemMetrics::ToDict() const {
+   Value::Dict res;
  
-   res.SetIntKey("committed_memory", static_cast<int>(committed_memory_));
+   res.Set("committed_memory", static_cast<int>(committed_memory_));
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-   Value meminfo = memory_info_.ToValue();
-   Value vmstat = vmstat_info_.ToValue();
-   meminfo.MergeDictionary(&vmstat);
-@@ -99,7 +99,7 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
+   Value::Dict meminfo = memory_info_.ToDict();
+   meminfo.Merge(vmstat_info_.ToDict());
+   res.Set("meminfo", std::move(meminfo));
+@@ -100,7 +100,6 @@ std::unique_ptr<ProcessMetrics> ProcessMetrics::Create
  #endif  // !BUILDFLAG(IS_MAC)
  }
  
 -#if !BUILDFLAG(IS_FREEBSD) || !BUILDFLAG(IS_POSIX)
-+#if !BUILDFLAG(IS_BSD) || !BUILDFLAG(IS_POSIX)
- double ProcessMetrics::GetPlatformIndependentCPUUsage() {
-   TimeDelta cumulative_cpu = GetCumulativeCPUUsage();
+ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+     TimeDelta cumulative_cpu) {
    TimeTicks time = TimeTicks::Now();
-@@ -150,7 +150,7 @@ double ProcessMetrics::GetPreciseCPUUsage() {
+@@ -126,7 +125,6 @@ double ProcessMetrics::GetPlatformIndependentCPUUsage(
+ double ProcessMetrics::GetPlatformIndependentCPUUsage() {
+   return GetPlatformIndependentCPUUsage(GetCumulativeCPUUsage());
+ }
+-#endif
+ 
+ #if BUILDFLAG(IS_WIN)
+ double ProcessMetrics::GetPreciseCPUUsage(TimeDelta cumulative_cpu) {
+@@ -157,7 +155,7 @@ double ProcessMetrics::GetPreciseCPUUsage() {
  #endif  // BUILDFLAG(IS_WIN)
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

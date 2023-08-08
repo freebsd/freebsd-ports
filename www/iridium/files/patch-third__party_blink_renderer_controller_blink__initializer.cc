@@ -1,7 +1,7 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2023-07-24 14:27:53 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
-@@ -71,12 +71,12 @@
- #include "third_party/blink/renderer/controller/oom_intervention_impl.h"
+@@ -78,12 +78,12 @@
+ #include "third_party/blink/renderer/controller/private_memory_footprint_provider.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -10,26 +10,26 @@
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
--    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "third_party/blink/renderer/controller/highest_pmf_reporter.h"
  #include "third_party/blink/renderer/controller/user_level_memory_pressure_signal_generator.h"
  #endif
-@@ -156,7 +156,7 @@ void InitializeCommon(Platform* platform, mojo::Binder
- #endif
- 
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
--    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   // Initialize UserLevelMemoryPressureSignalGenerator so it starts monitoring.
-   if (UserLevelMemoryPressureSignalGenerator::Enabled())
-     UserLevelMemoryPressureSignalGenerator::Instance();
-@@ -227,7 +227,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
-               main_thread->GetTaskRunner());
+@@ -231,7 +231,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+       main_thread_task_runner);
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   binders.Add(ConvertToBaseRepeatingCallback(
-                   CrossThreadBindRepeating(&MemoryUsageMonitorPosix::Bind)),
-               main_thread->GetTaskRunner());
+   binders.Add<mojom::blink::MemoryUsageMonitorLinux>(
+       ConvertToBaseRepeatingCallback(
+           CrossThreadBindRepeating(&MemoryUsageMonitorPosix::Bind)),
+@@ -270,7 +270,7 @@ void BlinkInitializer::RegisterMemoryWatchers(Platform
+ #endif
+ 
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+   // Start reporting the highest private memory footprint after the first
+   // navigation.
+   HighestPmfReporter::Initialize(main_thread_task_runner);

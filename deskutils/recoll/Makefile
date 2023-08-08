@@ -1,17 +1,17 @@
 PORTNAME=	recoll
-PORTVERSION=	1.31.4
-PORTREVISION=	7
+PORTVERSION=	1.33.1
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.lesbonscomptes.com/recoll/
 
-MAINTAINER=	jjuanino@gmail.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Personal full text search package, based on Xapian
 WWW=		https://www.lesbonscomptes.com/recoll/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	antiword:textproc/antiword \
 		catdoc:textproc/catdoc \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	antiword:textproc/antiword \
 		wpd2html:textproc/libwpd010
 
 USES=		bison compiler:c++11-lang gmake gnome iconv libtool localbase \
-		pkgconfig python:3.5+ shebangfix
+		pkgconfig python shebangfix
 USE_GNOME=	libxslt
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
@@ -28,11 +28,7 @@ PYDISTUTILS_PKGNAME=	Recoll
 PYDISTUTILS_PKGVERSION=	1.0
 USE_QT=		core gui printsupport widgets xml buildtools:build qmake:build
 
-SHEBANG_FILES=	desktop/hotrecoll.py filters/*.py filters/rcl7z \
-		filters/rclaudio filters/rclchm filters/rcldia filters/rclepub \
-		filters/rclepub1 filters/rclics filters/rclimg filters/rclinfo \
-		filters/rclkar filters/rclrar filters/rcltar filters/rclwar \
-		filters/rclzip
+SHEBANG_FILES=	desktop/hotrecoll.py filters/*.py filters/rclimg
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-recollq \
@@ -56,8 +52,8 @@ CHM_LIB_DEPENDS=		libchm.so:misc/chmlib
 CHM_CONFIGURE_OFF=		--disable-python-chm
 DJVU_RUN_DEPENDS=		djvutxt:graphics/djvulibre
 IMAGE_RUN_DEPENDS=		exiftool:graphics/p5-Image-ExifTool
-LATEX_USE=			dvipsk:run \
-				latex:run
+LATEX_USES=			tex
+LATEX_USE=			TEX=dvipsk:run,latex:run
 PDF_RUN_DEPENDS=		pdftotext:graphics/poppler-utils
 PS_RUN_DEPENDS=			pstotext:print/pstotext
 QT5_USES=			gl qt:5
@@ -78,6 +74,8 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|override const|const override|' \
+		${WRKSRC}/index/rclmonrcv.cpp
 
 pre-build-QT5-on:
 	@cd ${WRKSRC}/qtgui && \

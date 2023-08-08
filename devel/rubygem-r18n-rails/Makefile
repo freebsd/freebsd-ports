@@ -1,5 +1,6 @@
 PORTNAME=	r18n-rails
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,6 @@ RUN_DEPENDS=	rubygem-r18n-rails-api>=5.0<6:devel/rubygem-r18n-rails-api \
 		rubygem-rails60>=5.0<7:www/rubygem-rails60
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

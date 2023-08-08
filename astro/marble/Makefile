@@ -1,11 +1,6 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	astro education kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/education/marble/-/commit/
-PATCHFILES=	677153cc8c1450a8a370fbd1c7505dd7e4ea50fc.diff:-p1 \
-		78a351ad21832a2ec3ae3c3917573241c2ea396b.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
@@ -14,7 +9,7 @@ WWW=		https://marble.kde.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip
+LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip@qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 shared-mime-info tar:xz xorg

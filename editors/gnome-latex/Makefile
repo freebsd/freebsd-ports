@@ -1,5 +1,6 @@
 PORTNAME=	gnome-latex
-PORTVERSION=	3.40.0
+PORTVERSION=	3.44.0
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libgspell-1.so:textproc/gspell
 
 USES=		compiler:c11 desktop-file-utils gettext gmake gnome \
-		pkgconfig tar:xz vala:build
+		pkgconfig tar:xz tex vala:build
 GNU_CONFIGURE=	yes
 USE_GNOME=	cairo dconf intltool gtksourceview4
 USE_TEX=	latex dvipsk

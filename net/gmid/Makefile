@@ -1,5 +1,5 @@
 PORTNAME=	gmid
-DISTVERSION=	1.8.4
+DISTVERSION=	1.8.6
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/omar-polo/gmid/releases/download/${DISTVERSION}/
 
@@ -11,7 +11,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libtls.so:security/libressl
+		libtls.so:security/libretls
 
 USES=		localbase pkgconfig ssl
 USE_RC_SUBR=	gmid
@@ -24,10 +24,6 @@ LDFLAGS+=	-lcrypto -lssl
 
 USERS=		_gmid
 GROUPS=		_gmid
-
-post-build:
-	${STRIP_CMD} ${WRKSRC}/gg
-	${STRIP_CMD} ${WRKSRC}/gmid
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/gmid.conf.sample \

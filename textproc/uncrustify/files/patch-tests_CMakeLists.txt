@@ -1,0 +1,23 @@
+https://github.com/uncrustify/uncrustify/issues/4015
+
+--- tests/CMakeLists.txt.orig	2023-05-13 16:28:21 UTC
++++ tests/CMakeLists.txt
+@@ -67,18 +67,6 @@ if (NOT ENABLE_CODECOVERAGE)
+   )
+ endif()
+ 
+-add_test(
+-  NAME cli_options
+-  COMMAND ${PYTHON_EXECUTABLE}
+-    test_cli_options.py
+-    --config $<CONFIG>
+-    --build ${uncrustify_BINARY_DIR}
+-    --diff
+-    --test ${CMAKE_CURRENT_BINARY_DIR}/cli
+-  ${_configs}
+-  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/cli
+-)
+-
+ add_custom_target(update-cli-options
+   COMMAND ${PYTHON_EXECUTABLE}
+     test_cli_options.py

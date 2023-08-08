@@ -1,6 +1,5 @@
 PORTNAME=	libgcrypt
-DISTVERSION=	1.9.4
-PORTREVISION=	1
+DISTVERSION=	1.10.2
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -48,6 +47,10 @@ CONFIGURE_ARGS+=	--disable-jent-support
 
 .if ${ABI:Mpurecap}
 CONFIGURE_ARGS+=	--disable-asm
+.endif
+
+.if defined(WITH_DEBUG)
+CFLAGS+=	-DWITH_DEBUG
 .endif
 
 post-patch:

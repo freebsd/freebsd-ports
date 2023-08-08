@@ -1,5 +1,5 @@
 PORTNAME=	mixlib-install
-PORTVERSION=	3.12.20
+PORTVERSION=	3.12.27
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-mixlib-shellout>=0:devel/rubygem-mixlib-shellout \
 		rubygem-thor>=0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

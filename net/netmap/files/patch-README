@@ -1,0 +1,21 @@
+--- README.orig	2001-12-23 15:42:29 UTC
++++ README
+@@ -54,3 +54,18 @@ Suggestions, comments and bug-reports welcome!
+ Wouter Godefroy
+ wouter@belgoline.com
+   
++
++As dotty was removed in 2022,
++you can use "dot" and any suited viewer for the results.
++
++Some Examples:
++
++dot -Tpdf netmap.pdf netmap.dot
++xpdf netmap.pdf
++
++dot -Tsvg netmap.svg netmap.dot
++gqview netmap.svg
++
++dot -Tpng netmap.png netmap.dot
++xv netmap.png
++

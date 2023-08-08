@@ -1,5 +1,5 @@
 PORTNAME=	autoprefixer-rails
-PORTVERSION=	10.4.7.0
+PORTVERSION=	10.4.13.0
 CATEGORIES=	textproc ruby
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-execjs>=2<3:devel/rubygem-execjs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

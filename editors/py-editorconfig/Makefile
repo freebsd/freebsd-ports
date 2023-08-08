@@ -1,7 +1,7 @@
 PORTNAME=	editorconfig
 PORTVERSION=	0.12.3
 CATEGORIES=	editors python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	EditorConfig-${DISTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://editorconfig.org/
 LICENSE=	BSD2CLAUSE PSFL
 LICENSE_COMB=	multi
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	editorconfig-core-c

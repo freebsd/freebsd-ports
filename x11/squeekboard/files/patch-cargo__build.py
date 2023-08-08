@@ -1,3 +1,5 @@
+Add explicit <triple> subdir for --target from USES=cargo
+
 --- cargo_build.py.orig	2021-09-10 16:56:00 UTC
 +++ cargo_build.py
 @@ -6,6 +6,7 @@ instead of the source tree.

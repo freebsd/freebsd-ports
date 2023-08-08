@@ -1,7 +1,7 @@
 bin/warzone2100
 share/man/man6/warzone2100.6.gz
-share/applications/warzone2100.desktop
-share/icons/warzone2100.png
+share/applications/net.wz2100.warzone2100.desktop
+share/icons/net.wz2100.warzone2100.png
 %%NLS%%share/locale/af_ZA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ar_SA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/bg_BG/LC_MESSAGES/warzone2100.mo
@@ -25,6 +25,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/id/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/it/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/warzone2100.mo
@@ -43,4 +44,4 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/warzone2100.mo
-share/metainfo/warzone2100.appdata.xml
+share/metainfo/net.wz2100.warzone2100.appdata.xml

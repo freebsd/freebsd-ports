@@ -1,6 +1,12 @@
+[
+{	type: install
+	message: <<EOM
 OpenCL (Open Computing Language) is an open royalty-free standard
 for general purpose parallel programming across CPUs, GPUs and
 other processors, giving software developers portable and efficient
 access to the power of these heterogeneous processing platforms.
 
 These header are covering OpenCL API 3.0
+EOM
+}
+]

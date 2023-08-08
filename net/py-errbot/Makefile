@@ -1,7 +1,8 @@
 PORTNAME=	errbot
 PORTVERSION=	6.1.9
+PORTREVISION=	4
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,16 +16,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi>=0.2.0:devel/py-ansi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorlog>=6.6.0:devel/py-colorlog@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}daemonize>=2.5.0:devel/py-daemonize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deepmerge>=1.0.1:devel/py-deepmerge@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dulwich>=0.19.16:devel/dulwich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dulwich>=0.20.31:devel/py-dulwich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask>=2.0.2:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.1:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.6:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.9.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=21.0.0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.11.2:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=21.0.0,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.27.1:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}WebTest>=2.0.32:www/py-WebTest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}webtest>=3.0.0:www/py-webtest@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

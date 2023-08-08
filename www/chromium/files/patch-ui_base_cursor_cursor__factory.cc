@@ -1,6 +1,6 @@
---- ui/base/cursor/cursor_factory.cc.orig	2022-05-19 14:06:27 UTC
+--- ui/base/cursor/cursor_factory.cc.orig	2023-03-09 06:31:50 UTC
 +++ ui/base/cursor/cursor_factory.cc
-@@ -83,7 +83,7 @@ void CursorFactory::ObserveThemeChanges() {
+@@ -89,7 +89,7 @@ void CursorFactory::ObserveThemeChanges() {
  
  void CursorFactory::SetDeviceScaleFactor(float scale) {}
  

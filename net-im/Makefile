@@ -28,6 +28,7 @@
     SUBDIR += gomuks
     SUBDIR += gotktrix
     SUBDIR += gotosocial
+    SUBDIR += gtkcord4
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabberd
@@ -38,6 +39,7 @@
     SUBDIR += jitsi-prosody-plugins
     SUBDIR += jitsi-srtp-native
     SUBDIR += jitsi-videobridge
+    SUBDIR += jsxc
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
@@ -69,6 +71,7 @@
     SUBDIR += libstrophe
     SUBDIR += loudmouth
     SUBDIR += lurch
+    SUBDIR += mastodon
     SUBDIR += matterbridge
     SUBDIR += matterhorn
     SUBDIR += matterircd
@@ -117,7 +120,6 @@
     SUBDIR += purple-discord
     SUBDIR += purple-facebook
     SUBDIR += purple-googlechat
-    SUBDIR += purple-hangouts
     SUBDIR += purple-mattermost
     SUBDIR += purple-plugin-pack
     SUBDIR += purple-rocketchat
@@ -134,7 +136,7 @@
     SUBDIR += py-unmessage
     SUBDIR += qTox
     SUBDIR += quaternion
-    SUBDIR += qxmpp-qt5
+    SUBDIR += qxmpp
     SUBDIR += ricochet
     SUBDIR += rubygem-discordrb-webhooks
     SUBDIR += rubygem-discordrb-webhooks-blackst0ne
@@ -161,6 +163,7 @@
     SUBDIR += telegram-desktop
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
+    SUBDIR += teleirc
     SUBDIR += telepathy-accounts-signon
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
@@ -175,6 +178,7 @@
     SUBDIR += tg_owt
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
+    SUBDIR += tokodon
     SUBDIR += toot
     SUBDIR += tox
     SUBDIR += tox_extension_messages

@@ -1,4 +1,4 @@
---- stellarsolver/stellarsolver.cpp.orig	2020-11-15 04:11:58 UTC
+--- stellarsolver/stellarsolver.cpp.orig	2022-07-29 16:11:55 UTC
 +++ stellarsolver/stellarsolver.cpp
 @@ -7,6 +7,9 @@
  */
@@ -10,7 +10,7 @@
  #elif defined(_WIN32)
  #include "windows.h"
  #else //Linux
-@@ -799,8 +802,12 @@ bool StellarSolver::appendStarsRAandDEC(QList<FITSImag
+@@ -987,8 +990,12 @@ bool StellarSolver::getAvailableRAM(double &availableR
  //But from what I read, getting the Available RAM is inconsistent and buggy on many systems.
  bool StellarSolver::getAvailableRAM(double &availableRAM, double &totalRAM)
  {

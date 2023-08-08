@@ -1,5 +1,6 @@
 PORTNAME=	muse-sequencer
 DISTVERSION=	4.1.0
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org

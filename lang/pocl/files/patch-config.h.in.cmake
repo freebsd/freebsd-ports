@@ -1,6 +1,6 @@
---- config.h.in.cmake.orig	2020-12-16 13:02:13 UTC
+--- config.h.in.cmake.orig	2022-06-10 10:09:05 UTC
 +++ config.h.in.cmake
-@@ -39,6 +39,8 @@
+@@ -57,6 +57,8 @@
  
  #cmakedefine HAVE_VFORK
  

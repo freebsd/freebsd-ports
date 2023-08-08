@@ -1,6 +1,6 @@
 PORTNAME=	totem
 PORTVERSION=	3.38.2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
-		pylint:devel/pylint \
+		pylint:devel/pylint@${PY_FLAVOR} \
 		appstream-glib>=0:devel/appstream-glib \
 		itstool:textproc/itstool \
 		grilo-plugins>=0:net/grilo-plugins
@@ -38,7 +38,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler desktop-file-utils gettext gl gnome gstreamer localbase meson \
-		pkgconfig python:3.6+ tar:xz xorg
+		pkgconfig python tar:xz xorg
 USE_GNOME=	cairo gtk30 intlhack introspection libxml2 pygobject3 gnomedesktop3
 USE_XORG=	x11 xorgproto xtst ice sm
 USE_GSTREAMER=	core good bad soup ugly

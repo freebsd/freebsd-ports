@@ -1,5 +1,6 @@
 PORTNAME=	react
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erratique.ch/software/react/releases/
 PKGNAMEPREFIX=	ocaml-

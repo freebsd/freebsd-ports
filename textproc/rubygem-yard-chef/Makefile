@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-yard>=0.9.9:textproc/rubygem-yard \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

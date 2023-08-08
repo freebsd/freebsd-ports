@@ -2,11 +2,11 @@ PORTNAME=	steelstorm
 DISTVERSION=	beta-r1591
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old school top down arcade shooter
-WWW=		https://www.steel-storm.com
+WWW=		https://www.steel-storm.com/
 
 LICENSE=	GPLv2 CC-BY-NC-SA-3.0 EULA
 LICENSE_COMB=	multi

@@ -1,2 +1,3 @@
-SHA256 (postfix-policyd-spf-perl-2.010.tar.gz) = aafc09ed52e946572acf804b3c79caf464a1062df5710c2f2426276442f04042
-SIZE (postfix-policyd-spf-perl-2.010.tar.gz) = 13981
+TIMESTAMP = 1670852909
+SHA256 (postfix-policyd-spf-perl-2.011.tar.gz) = 51e295c8bfc714f7e827bd39d674430a9da9ce1658339b7c6cc2537949d82d61
+SIZE (postfix-policyd-spf-perl-2.011.tar.gz) = 15562

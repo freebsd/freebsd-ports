@@ -1,6 +1,6 @@
 PORTNAME=	latex
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	13
 CATEGORIES=	net-im
 MASTER_SITES=	SF/pidgin-${PORTNAME}/pidgin-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	pidgin-
@@ -15,7 +15,7 @@ RUN_DEPENDS=	pidgin:net-im/pidgin
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
 
-USES=		gmake gnome magick:6,run pkgconfig tar:bzip2
+USES=		gmake gnome magick:6,run pkgconfig tar:bzip2 tex
 USE_TEX=	latex
 USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC}"

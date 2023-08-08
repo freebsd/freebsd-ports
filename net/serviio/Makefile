@@ -1,6 +1,6 @@
 PORTNAME=	serviio
-PORTVERSION=	2.2.1
-PORTREVISION=	0
+PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	net multimedia java www
 MASTER_SITES=	https://download.serviio.org/releases/
 EXTRACT_SUFX=	-linux.tar.gz
@@ -19,7 +19,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 USES=		dos2unix
 DOS2UNIX_GLOB=	derby.properties
 
@@ -50,8 +50,8 @@ do-install:
 
 # to be used with a non-standard PREFIX for just this port
 # e.g. PREFIX=/porttest
-mkplist:
-	${FIND} ${STAGEDIR}${PREFIX}/ -type f | ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; s:share/java/classes:%%JAVAJARDIR%%:g ; s:etc/serviio:@sample %%ETCDIR%%:g" | ${GREP} -v etc/rc.d | ${SORT} >${PLIST}.new
+gen-plist:
+	${FIND} ${STAGEDIR}${PREFIX}/ -type f | ${SED} -e "s:${STAGEDIR}${PREFIX}/::g ; s:share/java/classes:%%JAVAJARDIR%%:g ; s:etc/serviio:@sample %%ETCDIR%%:g" | ${GREP} -Ev '(etc/rc.d|licenses)' | ${SORT} >${PLIST}.new
 #	${FIND} ${STAGEDIR}${PREFIX}/ -type d | ${SED} -e "s:${STAGEDIR}${PREFIX}/:@dirrm :g ; s:etc/serviio:%%ETCDIR%%:g ; s:share/java/classes:%%JAVAJARDIR%%:g" | ${SORT} -r >>${PLIST}.new
 
 .include <bsd.port.mk>

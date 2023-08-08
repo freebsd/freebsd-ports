@@ -1,32 +1,27 @@
 PORTNAME=	octave-forge-msh
-PORTVERSION=	1.0.10
-PORTREVISION=	18
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.12
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/splines.tar.gz:math/octave-forge-splines \
+		gmsh:cad/gmsh
 
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-GNU_CONFIGURE=	yes
+USES=		octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	carlodefalco
+GH_PROJECT=	msh
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:math/octave-forge-splines
-RUN_DEPENDS+=	gmsh:cad/gmsh
+OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-patch:
-	${REINPLACE_CMD} 's/ $$(LDFLAGS)//' ${WRKSRC}/Makefile.in
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 .include <bsd.port.mk>

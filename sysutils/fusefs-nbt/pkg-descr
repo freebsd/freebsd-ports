@@ -1,0 +1,11 @@
+Named Binary Tag (NBT) is a binary format designed for and used by the game
+Minecraft to store various data including worlds, player data and many other
+things. This project provides a way to access those data by simply mounting
+the corresponding data file as a file system, then reading and writing any
+value as usual file system nodes.
+
+NBT parser and writer are originally written by Lukas Niederbremer as cNBT
+project which this project is based on.
+
+This package provides the FUSE-based file system implementation, as well as
+NBT maintenance command-line tools and library (cNBT).

@@ -1,3 +1,5 @@
-TIMESTAMP = 1630838383
-SHA256 (firmware-iwlwifi_20210315-3_all.deb) = b822a5a623037c20e85d865c8d55351b33c809b9157c35a9519aecb95fcdb568
-SIZE (firmware-iwlwifi_20210315-3_all.deb) = 13448168
+TIMESTAMP = 1669462817
+SHA256 (firmware-iwlwifi_20221109-2_all.deb) = 593f01beec59fd4de2f76a907a32798bac4f4658ff5b22624f4eb8528e8c2370
+SIZE (firmware-iwlwifi_20221109-2_all.deb) = 20085936
+SHA256 (ibt-hw-37.8.10-fw-22.50.19.14.f.bseq?id=6be4747ea1d731f661c5320acf3f1273a459d6da) = d1d25082ee30e971454e512e6a07af9c093bb8086f3b56f6afcc22de8e63d59a
+SIZE (ibt-hw-37.8.10-fw-22.50.19.14.f.bseq?id=6be4747ea1d731f661c5320acf3f1273a459d6da) = 47463

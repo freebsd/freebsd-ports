@@ -1,5 +1,5 @@
 PORTNAME=	metasploit_payloads-mettle
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.20
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/rapid7/mettle
 LICENSE=	BSD3CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 STRIP=

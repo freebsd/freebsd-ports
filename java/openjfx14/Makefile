@@ -1,6 +1,6 @@
 PORTNAME=	openjfx
 DISTVERSION=	14.0.2.1+1
-PORTREVISION=	7
+PORTREVISION=	13
 CATEGORIES=	java x11-toolkits devel
 MASTER_SITES=	https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-core/7.7.1/:core \
 		https://repo.maven.apache.org/maven2/org/apache/lucene/lucene-grouping/7.7.1/:grouping \
@@ -16,7 +16,7 @@ DISTFILES=	lucene-core-7.7.1.jar:core \
 		lucene-sandbox-7.7.1.jar:sandbox \
 		antlr4-4.7.2-complete.jar:antlr
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX SDK overlay for OpenJDK 11
 WWW=		https://openjdk.java.net/projects/openjfx/
 
@@ -46,7 +46,8 @@ JAVA_VERSION=	11
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xtst xxf86vm
 
-CFLAGS+=	-Wno-unused-command-line-argument
+CFLAGS+=	-Wno-unused-command-line-argument \
+		-Wno-int-conversion
 
 PLIST_SUB=	INSTALLDIR=${_INSTALLDIR}
 
@@ -57,7 +58,7 @@ OPTIONS_SUB=	yes
 MEDIA_DESC=	Media module
 SWT_DESC=	SWT support
 
-MEDIA_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+MEDIA_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 			libsndio.so:audio/sndio
 MEDIA_USES=	gmake
 MEDIA_VARS=	COMPILE_MEDIA=true
@@ -73,12 +74,11 @@ TEST_VARS=	AWT_TEST=true FULL_TEST=true
 WEBKIT_IMPLIES=	MEDIA
 WEBKIT_BUILD_DEPENDS=	cmake:devel/cmake-core
 WEBKIT_LIB_DEPENDS=	libicui18n.so:devel/icu
-WEBKIT_USES=	bison gmake gperf perl5 python:3.5+,build
+WEBKIT_USES=	bison gmake gperf perl5 python:build ruby:build
 WEBKIT_USE=	GNOME=libxslt,libxml2 \
 		PERL5=build \
-		RUBY=yes \
 		XORG=xcomposite,xdamage,xfixes,xrender,xt
-WEBKIT_VARS=	RUBY_NO_RUN_DEPENDS=yes COMPILE_WEBKIT=true
+WEBKIT_VARS=	COMPILE_WEBKIT=true
 
 # Move Gradle's home below ${WRKDIR} instead of using ${HOME}/.gradle
 _GRADLE_ENV=	CC=${WRKDIR}/bin/ccwrapper \
@@ -88,6 +88,12 @@ _GRADLE_ENV=	CC=${WRKDIR}/bin/ccwrapper \
 _GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle62 --no-daemon
 
 _INSTALLDIR=	${PREFIX}/${PKGBASE}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-extract:
 	${MKDIR} ${WRKDIR}/jars
@@ -133,6 +139,9 @@ post-patch:
 	@${RM} -r ${WRKSRC}/modules/javafx.web/src/main/native/Source/WTF/icu
 	@cd ${WRKSRC}/modules/javafx.media/src/main/native/gstreamer/3rd_party && \
 		${RM} -r glib libffi
+# Environment variables gets lost so hardcode where we can find FFmpeg 4.x
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/modules/javafx.media/src/main/native/gstreamer/projects/linux/avplugin/Makefile
 
 do-configure:
 	@${MKDIR} ${WRKDIR}/gradle-home

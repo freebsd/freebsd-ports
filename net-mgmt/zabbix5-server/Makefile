@@ -1,5 +1,5 @@
 PORTNAME=	zabbix5
-DISTVERSION=	5.0.27
+DISTVERSION=	5.0.36
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -17,9 +17,10 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-46-9]${PKGNAMESUFFIX}
 
+PORTSCOUT=	limit:^5\.0\.
+
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE} --cache-file=${WRKSRC}/config.cache
 LIB_DEPENDS+=	libevent.so:devel/libevent
@@ -37,12 +38,10 @@ GROUPS=		zabbix
 PLIST_SUB=	PROXY="@comment "
 .else
 PLIST_SUB=	PROXY=""
-PLIST_FILES+=	bin/zabbix_proxy_js
 .endif
 
 .if ${ZABBIX_BUILD} == "server"
 PLIST_SUB+=	SERVER=""
-PLIST_FILES+=	bin/zabbix_js
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
@@ -58,25 +57,20 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
-LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
-
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-PORTSCOUT=	limit:^5\.0\.
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--with-net-snmp
+OPTIONS_DEFINE=		IPV6 FPING CURL LDAP IPMI SNMP SSH NMAP LIBXML2 UNIXODBC
 
-OPTIONS_DEFINE=		IPV6 FPING CURL LDAP IPMI SSH NMAP LIBXML2 UNIXODBC
-
-OPTIONS_DEFAULT=	FPING CURL UNIXODBC MYSQL OPENSSL
+OPTIONS_DEFAULT=	IPV6 FPING CURL SNMP SSH LIBXML2 MYSQL OPENSSL UNIXODBC
 OPTIONS_SUB=		yes
 
 FPING_DESC=		Build/install fping for ping checks
 IPMI_DESC=		Support for IPMI checks
 LDAP_DESC=		Support for LDAP server checks
 NMAP_DESC=		Build/install nmap for o/s detection
+SNMP_DESC=		Support for SNMP checks
 SSH_DESC=		Support for SSH-based checks
 UNIXODBC_DESC=		Support for database checks via ODBC
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
@@ -91,13 +85,16 @@ MYSQL_USES+=		compiler:c11 mysql
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
 
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_CONFIGURE_WITH=	net-snmp
+
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USES+=		sqlite:3
 
 ORACLE_CONFIGURE_WITH=	oracle
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 IPMI_CONFIGURE_WITH=	openipmi
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
@@ -214,10 +211,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "proxy"
 	${MV} ${STAGEDIR}${LOCALBASE}/bin/zabbix_js \
 		${STAGEDIR}${LOCALBASE}/bin/zabbix_proxy_js
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>

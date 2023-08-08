@@ -1,3 +1,3 @@
-TIMESTAMP = 1661951016
-SHA256 (rubygem/aws-sdk-voiceid-1.9.0.gem) = ea754d29f8670d4f7007fe68a927815cbcee148f1e71708c0048c55eb887475d
-SIZE (rubygem/aws-sdk-voiceid-1.9.0.gem) = 35328
+TIMESTAMP = 1689399591
+SHA256 (rubygem/aws-sdk-voiceid-1.17.0.gem) = f2db0fb5bf4c6c82b0996776280bbc5a49ada9866a3a2fe0250bc2b557dcdf0a
+SIZE (rubygem/aws-sdk-voiceid-1.17.0.gem) = 40960

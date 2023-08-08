@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-actionpack50>=${PORTVERSION}:www/rubygem-actionpack50 \
 		rubygem-rails-dom-testing-rails50>=2.0<3:textproc/rubygem-rails-dom-testing-rails50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

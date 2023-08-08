@@ -1,5 +1,6 @@
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
+PORTREVISION=	1
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -78,6 +79,11 @@ post-patch:
 	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/pdf/pdf.pro
 	${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
 		${WRKSRC}/build/wkhtmltox
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${FIND} ${PATCH_WRKSRC}/../qt-5db36ec -name "*.cpp" -o -name "*.h" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|register ||g'
+.endif
+
 
 post-build:
 	cd ${WRKSRC}/build/app && ${SETENV} ${MAKE_ENV} \

@@ -1,6 +1,6 @@
 PORTNAME=	vice
-PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTVERSION=	3.7.1
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -31,6 +31,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgnutls.so:security/gnutls \
 		libharfbuzz.so:print/harfbuzz
 
+BROKEN_FreeBSD_aarch64=		undeclared function 'inb'
+
 USES=		compiler:c++11-lang pkgconfig perl5 localbase:ldflags \
 		gmake iconv:wchar_t jpeg readline gettext xorg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
@@ -38,8 +40,8 @@ USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
-CONFIGURE_ARGS+=	--enable-ipv6 \
-			--enable-external-ffmpeg \
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--enable-ipv6 \
 			--enable-x64 \
 			--disable-realdevice \
 			--disable-pdf-docs \
@@ -47,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-ipv6 \
 			--disable-dependency-tracking \
 			DOS2UNIX=true
 
-OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO DOCS
+OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO FFMPEG DOCS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GTK3UI SDLUI2
 OPTIONS_DEFAULT?=	GTK3UI SDLSOUND ALSA
@@ -56,13 +58,14 @@ OPTIONS_SUB=	yes
 GTK3UI_DESC=	use GTK3 user interface
 SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 
 GTK3UI_USES=			desktop-file-utils
-GTK3UI_CONFIGURE_ENABLE=	native-gtk3ui desktop-files
+GTK3UI_CONFIGURE_ENABLE=	gtk3ui desktop-files
 GTK3UI_BUILD_DEPENDS=		bash:shells/bash
 SDLUI2_USES=			sdl
 SDLUI2_USE=			SDL=sdl2 SDL=image2
-SDLUI2_CONFIGURE_ENABLE=	sdlui2
+SDLUI2_CONFIGURE_ENABLE=	sdl2ui
 SDLSOUND_USES=			sdl
 SDLSOUND_USE=			SDL=sdl2
 SDLSOUND_CONFIGURE_ON=		--with-sdlsound

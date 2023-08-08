@@ -1,5 +1,5 @@
 PORTNAME=	webmin
-PORTVERSION=	1.997
+PORTVERSION=	2.013
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
@@ -23,9 +23,7 @@ USE_PYTHON=	py3kplist
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL=${PERL}
 SUB_FILES=	pkg-message
-SHEBANG_FILES=	${WRKSRC}/ajaxterm/ajaxterm/ajaxterm.py \
-		${WRKSRC}/ajaxterm/ajaxterm/configure \
-		${WRKSRC}/webmin/acme_tiny.py
+SHEBANG_FILES=	${WRKSRC}/webmin/acme_tiny.py
 
 WEBMIN_MODULES=
 
@@ -43,7 +41,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.sh
 
-	@${FIND} ${WRKSRC} \( -type f -and \( -name config-freebsd\* -or -name config \) \) \
+	@${FIND} ${WRKSRC} \( -type f -and \( -name config-freebsd\* -or -name config -or -name setup.sh \) \) \
 		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
 		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
 
@@ -51,8 +49,6 @@ post-patch:
 		${REINPLACE_CMD} -e "s@%%PERL%%@${PERL}@g; s@#!/usr/bin/perl@#!${PERL}@; s@#!/usr/local/bin/perl@#!${PERL}@" {} \;
 
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" -or -name "*.pyc" \) -delete
-
-	@${PRINTF} "g/^FreeBSD/m0\nwq\n" | ex ${WRKSRC}/os_list.txt
 
 do-build:
 	@${PYTHON_CMD} -mcompileall ${WRKSRC}/ajaxterm/ajaxterm/

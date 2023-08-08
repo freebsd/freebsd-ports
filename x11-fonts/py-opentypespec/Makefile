@@ -1,7 +1,7 @@
 PORTNAME=	opentypespec
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.1
 CATEGORIES=	x11-fonts python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/simoncozens/opentypespec-py
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

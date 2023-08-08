@@ -24,6 +24,7 @@
 %%SITE_PERL%%/PDF/Builder/Content/Hyphenate_basic.pm
 %%SITE_PERL%%/PDF/Builder/Content/Text.pm
 %%SITE_PERL%%/PDF/Builder/Docs.pm
+%%SITE_PERL%%/PDF/Builder/FontManager.pm
 %%SITE_PERL%%/PDF/Builder/Lite.pm
 %%SITE_PERL%%/PDF/Builder/Matrix.pm
 %%SITE_PERL%%/PDF/Builder/NamedDestination.pm
@@ -118,7 +119,7 @@
 %%SITE_PERL%%/PDF/Builder/Resource/uniglyph.txt
 %%SITE_PERL%%/PDF/Builder/UniWrap.pm
 %%SITE_PERL%%/PDF/Builder/Util.pm
-%%SITE_PERL%%/PDF/optional_update.pl
+%%SITE_PERL%%/PDF/Builder/ViewerPreferences.pm
 %%PERL5_MAN3%%/PDF::Builder.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Annotation.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Basic::PDF.3.gz
@@ -145,6 +146,7 @@
 %%PERL5_MAN3%%/PDF::Builder::Content::Hyphenate_basic.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Content::Text.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Docs.3.gz
+%%PERL5_MAN3%%/PDF::Builder::FontManager.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Lite.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Matrix.3.gz
 %%PERL5_MAN3%%/PDF::Builder::NamedDestination.3.gz
@@ -227,3 +229,4 @@
 %%PERL5_MAN3%%/PDF::Builder::Resource::XObject::Image::TIFF_GT.3.gz
 %%PERL5_MAN3%%/PDF::Builder::UniWrap.3.gz
 %%PERL5_MAN3%%/PDF::Builder::Util.3.gz
+%%PERL5_MAN3%%/PDF::Builder::ViewerPreferences.3.gz

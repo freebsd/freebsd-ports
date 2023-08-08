@@ -1,5 +1,6 @@
 PORTNAME=	gcc
-PORTVERSION=	12.1.0
+PORTVERSION=	12.2.0
+PORTREVISION=	8
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -11,6 +12,8 @@ WWW=		https://gcc.gnu.org/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
+
+IGNORE_FreeBSD_12= Not supported on FreeBSD 12
 
 BUILD_DEPENDS=	${BU_PREFIX}-as:devel/binutils@${BU_FLAVOR} \
 		objdump:devel/binutils
@@ -85,12 +88,6 @@ post-patch:
 CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
-.endif
-
-.if ${TARGETARCH:Marm*} || ${TARGETARCH} == "aarch64"
-. if ${CHOSEN_COMPILER_TYPE} == clang
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
-. endif
 .endif
 
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "powerpc64"

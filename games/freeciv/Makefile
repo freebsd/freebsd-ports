@@ -1,5 +1,5 @@
 PORTNAME=	freeciv
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.8
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION} \
 		http://files.freeciv.org/stable/
@@ -11,12 +11,17 @@ WWW=		https://www.freeciv.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicuuc.so:devel/icu \
 		libltdl.so:devel/libltdl
 
-USES=		autoreconf compiler:c++11-lang cpe gmake iconv libtool lua:53 \
-		pkgconfig readline ssl tar:xz
+USES=		autoreconf compiler:c++11-lang cpe desktop-file-utils gmake \
+		iconv:wchar_t libtool lua:53 pkgconfig readline shebangfix ssl tar:xz
+SHEBANG_FILES=	bootstrap/*.sh data/flags/convert* scripts/mapimg2anim \
+		scripts/setup_auth_server.sh translations/*.sh
+
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
@@ -28,7 +33,7 @@ CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--enable-mapimg=no \
 		--enable-shared
 
-LDFLAGS+=	-Wl,--as-needed
+LDFLAGS+=	-Wl,--as-needed ${ICONV_LIB}
 
 PORTDATA=	*
 

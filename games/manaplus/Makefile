@@ -1,6 +1,6 @@
 PORTNAME=	manaplus
 DISTVERSION=	2.1.3.17
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libcurl.so:ftp/curl
 
 USES=		autoreconf compiler:c++11-lang pkgconfig:build sdl tar:xz xorg
+USE_CXXSTD=	c++11
 USE_SDL=	sdl2 gfx2 image2 mixer2 net2 ttf2
 USE_XORG=	x11
 

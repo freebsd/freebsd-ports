@@ -3,7 +3,7 @@ PORTVERSION=	2.6.3
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Native code Forth system for ARM
 WWW=		http://mecrisp.sourceforge.net
 

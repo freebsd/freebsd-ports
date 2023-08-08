@@ -22,8 +22,9 @@ _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
-QT5_VERSION?=		5.15.5
-QT6_VERSION?=		6.3.2
+QT5_VERSION?=		5.15.8
+QT6_VERSION?=		6.5.2
+PYSIDE6_VERSION?=	${QT6_VERSION}
 
 # We accept the Qt version to be passed by either or all of the three mk files.
 .  if empty(qt_ARGS) && empty(qmake_ARGS) && empty(qt-dist_ARGS)
@@ -130,26 +131,27 @@ _USES_POST+=		qt
 _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
-_USE_QT_COMMON=		3d charts datavis3d declarative doc imageformats multimedia \
-			networkauth quick3d quicktimeline remoteobjects scxml \
-			sensors serialbus serialport svg virtualkeyboard wayland \
-			webchannel websockets
+_USE_QT_COMMON=		3d charts datavis3d declarative doc examples imageformats location \
+			multimedia networkauth quick3d quicktimeline remoteobjects scxml \
+			sensors serialbus serialport speech svg virtualkeyboard wayland \
+			webchannel webengine websockets
 
 _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
-			declarative-test designer diag examples gamepad \
-			graphicaleffects gui help l10n linguist linguisttools location \
+			declarative-test designer diag gamepad \
+			graphicaleffects gui help l10n linguist linguisttools \
 			network opengl paths phonon4 pixeltool plugininfo printsupport \
 			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
-			quickcontrols2 script scripttools speech sql sql-mysql sql-odbc \
+			quickcontrols2 script scripttools sql sql-mysql sql-odbc \
 			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
-			uitools webengine webglplugin webkit websockets-qml webview \
+			uitools webglplugin webkit websockets-qml webview \
 			widgets x11extras xml xmlpatterns
 .  if ${ARCH} == amd64 || ${ARCH} == i386
 _USE_QT5_ONLY+=		sql-ibase
 .  endif
 
-_USE_QT6_ONLY=		5compat base languageserver lottie positioning shadertools \
-			tools translations
+_USE_QT6_ONLY=		5compat base httpserver languageserver lottie positioning \
+			quickeffectmaker shadertools tools translations \
+			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
 qt-3d_PORT=		graphics/${_QT_RELNAME}-3d
@@ -215,6 +217,9 @@ qt-gui_LIB=		libQt${_QT_LIBVER}Gui.so
 
 qt-help_PORT=		devel/${_QT_RELNAME}-help
 qt-help_LIB=		libQt${_QT_LIBVER}Help.so
+
+qt-httpserver_PORT=	www/${_QT_RELNAME}-httpserver
+qt-httpserver_LIB=	libQt${_QT_LIBVER}HttpServer.so
 
 qt-imageformats_PORT=	graphics/${_QT_RELNAME}-imageformats
 qt-imageformats_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/imageformats/libqtiff.so
@@ -295,6 +300,9 @@ qt-quickcontrols_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Controls/qmldir
 qt-quickcontrols2_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols2
 qt-quickcontrols2_LIB=	libQt${_QT_LIBVER}QuickControls2.so
 
+qt-quickeffectmaker_PORT=	graphics/${_QT_RELNAME}-quickeffectmaker
+qt-quickeffectmaker_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/qqem
+
 qt-quicktimeline_PORT=	x11-toolkits/${_QT_RELNAME}-quicktimeline
 qt-quicktimeline_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Timeline/libqtquicktimelineplugin.so
 
@@ -337,6 +345,11 @@ qt-sql-${db}_PORT=	databases/${_QT_RELNAME}-sqldrivers-${db}
 qt-sql-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${db:C/^sql//}.so
 .  endfor
 
+.  for db in sqlite mysql psql odbc
+qt-sqldriver-${db}_PORT=	databases/${_QT_RELNAME}-base_sqldriver@${db}
+qt-sqldriver-${db}_PATH?=	${LOCALBASE}/${QT_PLUGINDIR_REL}/sqldrivers/libqsql${db:C/^sql//}.so
+.  endfor
+
 qt-svg_PORT=		graphics/${_QT_RELNAME}-svg
 qt-svg_LIB=		libQt${_QT_LIBVER}Svg.so
 
@@ -347,7 +360,7 @@ qt-tools_PORT=		devel/${_QT_RELNAME}-tools
 qt-tools_PATH=		${LOCALBASE}/${QT_BINDIR_REL}/lupdate
 
 qt-translations_PORT=	devel/${_QT_RELNAME}-translations
-qt-translations_PATH=	${LOCALBASE}/${QT_DATADIR_REL}/translations
+qt-translations_PATH=	${LOCALBASE}/${QT_DATADIR_REL}/translations/qt_en.qm
 
 qt-uiplugin_PORT=	x11-toolkits/${_QT_RELNAME}-uiplugin
 qt-uiplugin_PATH=	${LOCALBASE}/${QT_INCDIR_REL}/QtUiPlugin/QtUiPlugin
@@ -365,7 +378,7 @@ qt-webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 qt-webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so
 
 qt-webengine_PORT=	www/${_QT_RELNAME}-webengine
-qt-webengine_LIB=	libQt${_QT_LIBVER}WebEngine.so
+qt-webengine_LIB=	libQt${_QT_LIBVER}WebEngineCore.so
 
 qt-webglplugin_PORT=     www/${_QT_RELNAME}-webglplugin
 qt-webglplugin_PATH=     ${LOCALBASE}/${QT_PLUGINDIR_REL}/platforms/libqwebgl.so

@@ -58,6 +58,7 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Lspci/Videos.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Lsusb.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Lsusb/Usb.pm
+%%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/OS.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/AppImage.pm
 %%SITE_PERL%%/Ocsinventory/Agent/Backend/OS/Generic/Packaging/BSDpkg.pm

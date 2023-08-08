@@ -1,3 +1,3 @@
-TIMESTAMP = 1662558080
-SHA256 (rubygem/google-apis-compute_v1-0.49.0.gem) = 605c025842ab12b1ea56557e61268e26076af6161e565f5c83d1d500d27ad0ed
-SIZE (rubygem/google-apis-compute_v1-0.49.0.gem) = 381952
+TIMESTAMP = 1689399619
+SHA256 (rubygem/google-apis-compute_v1-0.73.0.gem) = a4aaa89bb58f6dfd2ecf282c5a35b1e3562faa11a658a3bcae57f286ea8aa0dc
+SIZE (rubygem/google-apis-compute_v1-0.73.0.gem) = 410624

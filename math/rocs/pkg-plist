@@ -16,12 +16,12 @@ lib/librocsgraphtheory.so.0
 %%QT_PLUGINDIR%%/rocs/fileformats/tikzfileformat.so
 share/applications/org.kde.rocs.desktop
 share/config.kcfg/rocs.kcfg
+share/icons/hicolor/128x128/apps/rocs.png
 share/icons/hicolor/16x16/apps/rocs.png
 share/icons/hicolor/22x22/apps/rocs.png
 share/icons/hicolor/32x32/apps/rocs.png
 share/icons/hicolor/48x48/apps/rocs.png
 share/icons/hicolor/64x64/apps/rocs.png
-share/icons/hicolor/128x128/apps/rocs.png
 share/icons/hicolor/scalable/actions/rocsadvancedsetup.svgz
 share/icons/hicolor/scalable/actions/rocsalignbottom.svgz
 share/icons/hicolor/scalable/actions/rocsaligncircle.svgz
@@ -82,6 +82,8 @@ share/locale/it/LC_MESSAGES/libgraphtheory.mo
 share/locale/it/LC_MESSAGES/rocs.mo
 share/locale/ja/LC_MESSAGES/libgraphtheory.mo
 share/locale/ja/LC_MESSAGES/rocs.mo
+share/locale/ka/LC_MESSAGES/libgraphtheory.mo
+share/locale/ka/LC_MESSAGES/rocs.mo
 share/locale/kk/LC_MESSAGES/libgraphtheory.mo
 share/locale/kk/LC_MESSAGES/rocs.mo
 share/locale/ko/LC_MESSAGES/libgraphtheory.mo
@@ -120,6 +122,8 @@ share/locale/sl/LC_MESSAGES/libgraphtheory.mo
 share/locale/sl/LC_MESSAGES/rocs.mo
 share/locale/sv/LC_MESSAGES/libgraphtheory.mo
 share/locale/sv/LC_MESSAGES/rocs.mo
+share/locale/th/LC_MESSAGES/libgraphtheory.mo
+share/locale/th/LC_MESSAGES/rocs.mo
 share/locale/tr/LC_MESSAGES/libgraphtheory.mo
 share/locale/tr/LC_MESSAGES/rocs.mo
 share/locale/ug/LC_MESSAGES/libgraphtheory.mo

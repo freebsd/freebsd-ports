@@ -1,5 +1,5 @@
-TIMESTAMP = 1653273596
-SHA256 (jitsi-videobridge-2.1-681-deps.tar.gz) = 8cd50855acd89cc2bc2d324c454ddc902489389de1297a95f66a758dfd2a77e3
-SIZE (jitsi-videobridge-2.1-681-deps.tar.gz) = 243043143
-SHA256 (jitsi-jitsi-videobridge-2.1-681-3544ed05_GH0.tar.gz) = 7370050eeb89be0f677b01756c53225f896ff3fdc1f054ec85b0e24cc152627b
-SIZE (jitsi-jitsi-videobridge-2.1-681-3544ed05_GH0.tar.gz) = 379386
+TIMESTAMP = 1680490623
+SHA256 (jitsi-videobridge-2.2-79-deps.tar.gz) = bfee262a041526a2bdbd6f5a4175f3959392c619d3f484499826c4c26a875953
+SIZE (jitsi-videobridge-2.2-79-deps.tar.gz) = 189360468
+SHA256 (jitsi-jitsi-videobridge-2.2-79-f6426ea_GH0.tar.gz) = 6cbb8f5cb55738aabb0bec89c967fee107b8536cd30469c7fd65f7deb50e9c69
+SIZE (jitsi-jitsi-videobridge-2.2-79-f6426ea_GH0.tar.gz) = 62322862

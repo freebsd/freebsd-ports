@@ -1,5 +1,5 @@
 PORTNAME=	thin
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-daemons>=1.0.9<2:devel/rubygem-daemons \
 		rubygem-rack16>=1<3:www/rubygem-rack16
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/thin
 

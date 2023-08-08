@@ -22,4 +22,15 @@ GH_ACCOUNT=	cisco
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CFLAGS+=	-Wno-error=deprecated-declarations
+.endif
+
+
+.include <bsd.port.post.mk>

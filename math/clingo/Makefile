@@ -1,6 +1,6 @@
 PORTNAME=	clingo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.6.1
+DISTVERSION=	5.6.2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,13 +12,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	re2c:devel/re2c
 
-USES=		cmake:testing compiler:c++14-lang
+USES=		cmake:testing compiler:c++14-lang python:test
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	potassco
 GH_TUPLE=	potassco:clasp:4c708a7:potassco_clasp/clasp \
-		catchorg:Catch2:62fd660:catch/third_party/catch \
+		catchorg:Catch2:97313f9:catch/third_party/catch \
 		mpark:variant:23cb94f:variant/third_party/variant \
 		TartanLlama:optional:c28fcf7:optional/third_party/optional \
 		Tessil:hopscotch-map:4442316:hopscotch_map/third_party/hopscotch-map \
@@ -27,6 +27,7 @@ GH_TUPLE=	potassco:clasp:4c708a7:potassco_clasp/clasp \
 
 CMAKE_OFF=	CLINGO_BUILD_WITH_PYTHON # broken, see https://github.com/potassco/clingo/issues/178
 CMAKE_OFF+=	CLINGO_BUILD_WITH_LUA
+CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 CMAKE_TESTING_ON=	CLINGO_BUILD_TESTS
 
 CONFLICTS_INSTALL=	clasp # only installs bin/clasp that is included in clingo

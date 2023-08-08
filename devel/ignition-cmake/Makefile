@@ -9,8 +9,7 @@ WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 
-USES=		cmake pkgconfig
-USE_RUBY=	yes
+USES=		cmake pkgconfig ruby
 
 CMAKE_OFF=	BUILD_TESTING
 
@@ -22,5 +21,17 @@ WRKSRC=		${WRKDIR}/${BB_ACCOUNT}-${BB_PROJECT}-${BB_COMMIT}
 NO_ARCH=	yes
 
 PLIST_SUB+=	CMAKE_IGN_VER=cmake${DISTVERSION:R:R}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindAVCODEC.cmake
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindAVDEVICE.cmake
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindAVFORMAT.cmake
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindAVUTIL.cmake
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindSWSCALE.cmake
 
 .include <bsd.port.mk>

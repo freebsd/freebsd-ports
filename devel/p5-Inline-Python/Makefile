@@ -1,5 +1,5 @@
 PORTNAME=	Inline-Python
-PORTVERSION=	0.56
+PORTVERSION=	0.57
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ TEST_DEPENDS=	p5-Proc-ProcessTable>=0.53:devel/p5-Proc-ProcessTable \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
 
-USE_PERL5=	configure
 USES=		perl5 python
+USE_PERL5=	configure
+
 CONFIGURE_ENV=	INLINE_PYTHON_EXECUTABLE="${PYTHON_CMD}"
 
 post-install:

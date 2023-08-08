@@ -1,5 +1,5 @@
 PORTNAME=	turbo-rails
-PORTVERSION=	1.1.1
+PORTVERSION=	1.4.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=6.0.0:www/rubygem-actionpack70 \
 		rubygem-railties70>=6.0.0:www/rubygem-railties70
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

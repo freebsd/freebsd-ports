@@ -1,18 +1,23 @@
 PORTNAME=	octave-forge-zenity
 PORTVERSION=	0.5.7
-PORTREVISION=	27
+PORTREVISION=	29
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-05-08
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-
 RUN_DEPENDS+=	zenity:x11/zenity
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+USES=			octave
+
+GNU_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${OCTAVE_SRC}
+
 .include <bsd.port.mk>

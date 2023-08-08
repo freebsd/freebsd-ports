@@ -1,6 +1,6 @@
---- libray/libtext/texture.c.orig	1992-02-10 12:04:02.000000000 +0900
-+++ libray/libtext/texture.c	2013-05-28 22:41:59.000000000 +0900
-@@ -162,7 +162,7 @@
+--- libray/libtext/texture.c.orig	1992-02-10 03:04:02 UTC
++++ libray/libtext/texture.c
+@@ -162,7 +162,7 @@ Float *u, *v;
  	*u = ptmp.x;
  	*v = ptmp.y;
  	if (dpdu == (Vector *)NULL || dpdv == (Vector *)NULL)

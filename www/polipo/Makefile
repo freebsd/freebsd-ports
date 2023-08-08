@@ -11,6 +11,9 @@ WWW=		http://www.pps.jussieu.fr/~jch/software/polipo/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer maintained upstream
+EXPIRATION_DATE=2023-09-30
+
 USES=		cpe makeinfo
 CPE_VENDOR=	${PORTNAME}_project
 USE_RC_SUBR=	polipo

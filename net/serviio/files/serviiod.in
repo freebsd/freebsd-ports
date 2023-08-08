@@ -7,6 +7,7 @@
 
 PATH=$PATH:%%PREFIX%%/bin
 HOME=/var/db/serviio/home
+: ${SERVIIO_MEM="-Xmx512M -Xms20M"}
 SERVIIO_HOME=%%JAVAJARDIR%%/serviio
 SERVIIO_CLASS_PATH="$SERVIIO_HOME/serviio.jar"
 # Setup the classpath
@@ -33,4 +34,4 @@ done
 
 # Execute the JVM in the foreground
 export HOME PATH JAVA_VERSION
-exec java -Xmx512M -Xms20M -XX:+UseG1GC -XX:GCTimeRatio=1 -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null
+exec java ${SERVIIO_MEM} -XX:+UseG1GC -XX:GCTimeRatio=1 -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 $JAVA_OPTS -classpath "$SERVIIO_CLASS_PATH" org.serviio.MediaServer "$@" 2>&1 >/dev/null

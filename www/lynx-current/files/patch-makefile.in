@@ -1,6 +1,6 @@
---- makefile.in.orig	2021-08-01 20:50:51.000000000 +0200
-+++ makefile.in	2021-08-13 17:31:19.742347000 +0200
-@@ -325,7 +325,7 @@
+--- makefile.in.orig	2023-06-13 14:30:49 UTC
++++ makefile.in
+@@ -327,7 +327,7 @@ install-doc : $(DOCDIR) $(HELPDIR)
  		cd $(HELPDIR) && rm -f $$name ;\
  		r= ;\
  		test "$(LN_S)" = "ln -s" || r=`echo $(helpdir)|sed -e "s%[^/]\+%..%g" -e "s%^.%%"`; \
@@ -9,7 +9,7 @@
  		done';\
  	$(SHELL) -c 'set -x; \
  		case `id|sed -e "s/(.*//"` in \
-@@ -403,14 +403,10 @@
+@@ -405,14 +405,10 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -28,7 +28,7 @@
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
  		$(SYSCONFDIR)/lynx.tmp | \
-@@ -418,8 +414,8 @@
+@@ -420,8 +416,8 @@ install-help : htmlized_cfg help_files.sed $(HELPDIR) 
  	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
  	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
@@ -39,12 +39,12 @@
  	rm -f $(SYSCONFDIR)/lynx.tmp
  
  LYHelp.h : help_files.sed $(srcdir)/LYHelp.hin
-@@ -442,17 +438,15 @@
- 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
+@@ -444,17 +440,15 @@ cfg_defs.h : $(scripts_dir)/cfg_defs.sh $(scripts_dir)
+ 	@$(SHELL) -c 'SHELL=$(SHELL) FGREP="$(FGREP)" $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(SYSCONFDIR)
--	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg
-+	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample
+-	@$(SHELL) -c 'SHELL=$(SHELL) EGREP="$(EGREP)" FGREP="$(FGREP)" $(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg'
++	@$(SHELL) -c 'SHELL=$(SHELL) EGREP="$(EGREP)" FGREP="$(FGREP)" $(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.sample'
  
  install-lss : $(SYSCONFDIR)
 -	@$(SHELL) $(scripts_dir)/install-lss.sh "$(INSTALL_DATA)" $(srcdir)/samples/lynx.lss $(SYSCONFDIR)/lynx.lss

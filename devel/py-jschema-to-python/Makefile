@@ -1,11 +1,11 @@
 PORTNAME=	jschema-to-python
 DISTVERSION=	1.2.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jschema_to_python-${DISTVERSION}
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Generate Python classes from a JSON schema
 WWW=		https://pypi.org/project/jschema-to-python/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpickle>0:devel/py-jsonpickle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>0:devel/py-pbr@${PY_FLAVOR}
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

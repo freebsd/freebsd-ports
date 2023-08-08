@@ -1,45 +1,27 @@
 PORTNAME=	cppcheck
-PORTVERSION=	2.7.5
-PORTREVISION?=	0	# devel/cppcheck-gui
+PORTVERSION=	2.10.3
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
-COMMENT?=	Tool for static C/C++ code analysis
-WWW=		https://cppcheck.sourceforge.io/
+COMMENT=	Tool for static C/C++ code analysis
+WWW=		https://cppcheck.sourceforge.io/ \
+		https://github.com/danmar/cppcheck
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2
 
-USES=		compiler:c++11-lib cmake:insource tar:bzip2
+USES=		compiler:c++11-lib cmake shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	danmar
+SHEBANG_FILES=	htmlreport/cppcheck-htmlreport
 CMAKE_OFF=	USE_BUNDLED_TINYXML2
-
-.if defined(GUI_ONLY)
-COMMENT=		Static analysis of C/C++ code (GUI)
-
-RUN_DEPENDS=		cppcheck:devel/cppcheck
-
-CMAKE_ON+=		BUILD_GUI
-USES+=			qt:5
-USE_QT=			core gui widgets printsupport help qmake:build buildtools:build linguisttools:build
-
-BUILD_WRKSRC=		${WRKSRC}/gui
-INSTALL_WRKSRC=		${WRKSRC}/gui
-
-PLIST=			${PKGDIR}/pkg-plist-gui
-
-PKGNAMESUFFIX=		-gui
-.else
-USES+=			shebangfix
-SHEBANG_FILES=		htmlreport/cppcheck-htmlreport
 
 PORTDATA=		*
 
-OPTIONS_DEFINE=		RULES HTMLREPORT MANPAGES MATCHCOMPILER TEST
-OPTIONS_DEFAULT=	RULES HTMLREPORT MANPAGES MATCHCOMPILER
+OPTIONS_DEFINE=		RULES HTMLREPORT MANPAGES MATCHCOMPILER GUI CHARTS TEST
+OPTIONS_DEFAULT=	RULES HTMLREPORT MANPAGES MATCHCOMPILER GUI
 OPTIONS_SUB=		yes
 
 RULES_DESC=		User-defined rule support (requires PCRE)
@@ -48,6 +30,8 @@ RULES_LIB_DEPENDS=	libpcre.so:devel/pcre
 RULES_USES=		localbase:ldflags
 
 TEST_CMAKE_BOOL=	BUILD_TESTS
+TEST_IMPLIES=		GUI
+TEST_USE=		QT=testlib
 
 HTMLREPORT_DESC=	Install cppcheck-htmlreport
 HTMLREPORT_USES=	python:${PYUSE:C/ /,/W}
@@ -59,9 +43,20 @@ MANPAGES_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 			${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
 MATCHCOMPILER_DESC=	Build-time optimizations via Python
-MATCHCOMPILER_CMAKE_BOOL=	USE_MATCHCOMPILER
+MATCHCOMPILER_CMAKE_ON=	-DUSE_MATCHCOMPILER=On
+MATCHCOMPILER_CMAKE_OFF=-DUSE_MATCHCOMPILER=Off
 MATCHCOMPILER_USES=	python:${PYUSE:C/ /,/W}
 MATCHCOMPILER_VARS=	PYUSE+=build
+
+GUI_DESC=		Build the Qt GUI application
+GUI_CMAKE_BOOL=		BUILD_GUI
+GUI_USES=		qt:5
+GUI_USE=		QT=core,gui,widgets,printsupport,help,network,qmake:build,buildtools:build,linguisttools:build
+
+CHARTS_DESC=		Enable QtCharts usage in the GUI
+CHARTS_CMAKE_BOOL=	WITH_QCHART
+CHARTS_IMPLIES=		GUI
+CHARTS_USE=		QT=charts
 
 post-install-HTMLREPORT-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/htmlreport/cppcheck-htmlreport ${STAGEDIR}${PREFIX}/bin
@@ -71,10 +66,9 @@ post-build-MANPAGES-on:
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl cppcheck.1.xml
 
 post-install-MANPAGES-on:
-	${INSTALL_MAN} ${WRKSRC}/man/cppcheck.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cppcheck.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 do-test-TEST-on:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ctest
-.endif
+	cd ${BUILD_WRKSRC} && ${SETENV} ${TEST_ENV} ctest
 
 .include <bsd.port.mk>

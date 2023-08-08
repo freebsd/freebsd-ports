@@ -1,5 +1,5 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.7.2.20220607
+DISTVERSION=	0.8.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,8 +8,6 @@ WWW=		https://openquantumsafe.org/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_aarch64=	build breaks: use of undeclared identifier 'ID_AA64ISAR0_SHA3_BASE', see https://github.com/open-quantum-safe/liboqs/issues/1266
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \

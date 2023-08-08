@@ -1,5 +1,6 @@
 PORTNAME=	cdo
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	cdo:science/cdo
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

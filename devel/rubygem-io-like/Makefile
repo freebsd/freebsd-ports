@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems \
 		${LOCALBASE}/bin/rake:devel/rubygem-rake
 RUN_DEPENDS=	${RUBYGEMBIN}:devel/ruby-gems
 
-USE_RUBY=	yes
+USES=	ruby
 
 NO_ARCH=	yes
 

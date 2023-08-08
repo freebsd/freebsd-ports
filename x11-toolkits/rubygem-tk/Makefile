@@ -14,7 +14,6 @@ CONFIGURE_ARGS=--with-tcltkversion=8.6,8.6 \
 		--with-tcl-include=${LOCALBASE}/include/tcl8.6
 
 USES=		gem tk:86 xorg
-USE_RUBY=	yes
 USE_XORG=	x11
 
 .include <bsd.port.mk>

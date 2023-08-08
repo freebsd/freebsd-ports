@@ -1,5 +1,6 @@
 PORTNAME=	commander
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +11,9 @@ WWW=		https://github.com/commander-rb/commander
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-highline>=2.0.0<2.1:devel/rubygem-highline
+RUN_DEPENDS=	rubygem-highline>=2.0.0<3:devel/rubygem-highline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,7 +1,7 @@
 PORTNAME=	pytest-black-multipy
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-black>=0:devel/py-pytest-black@${PY_F
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-checkdocs>=0:devel/py-pytest-checkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes

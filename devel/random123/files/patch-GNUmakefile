@@ -1,0 +1,11 @@
+--- GNUmakefile.orig	2022-01-17 21:45:51 UTC
++++ GNUmakefile
+@@ -24,7 +24,7 @@ install: install-html install-include install-examples
+ # recursively copy include/Random123 to $(includedir)
+ install-include:
+ 	mkdir -p $(DESTDIR)$(includedir)
+-	cp -dr include/Random123 $(DESTDIR)$(includedir)
++	cp -r include/Random123 $(DESTDIR)$(includedir)
+ .PHONY: install-include
+ 
+ # docs/main.md is the same as README.md, but it has a @mainpage

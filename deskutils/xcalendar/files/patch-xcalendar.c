@@ -1,5 +1,5 @@
---- xcalendar.c.dist	Tue Jul  4 06:59:01 1995
-+++ xcalendar.c	Mon Mar 12 20:53:10 2001
+--- xcalendar.c.orig	1995-07-03 14:59:01.000000000 -0700
++++ xcalendar.c	2023-04-30 21:04:24.168420000 -0700
 @@ -1091,10 +1091,10 @@
  struct tm      *
  gettime()
@@ -34,7 +34,7 @@
 +    if (sizeof(buf) == len) {
 +      buf = XtRealloc(buf, len + 1);
 +    }
-+    buf[len] = NULL;
++    buf[len] = 0;
 +
      start = buf;
  

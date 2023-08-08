@@ -1,5 +1,5 @@
 PORTNAME=	agrum
-DISTVERSION=	1.2.0
+DISTVERSION=	1.9.0
 CATEGORIES=	science math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,9 @@ WWW=		https://agrum.gitlab.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang shebangfix # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
+BROKEN_FreeBSD_12=	requires modern C++ compiler: error: invalid value 'c++2b'
+
+USES=		cmake compiler:c++20-lang shebangfix # the 'act' executable uses 'python' and is broken, when act is broken CMakeLists.txt builds with default configuration which is fine
 USE_LDCONFIG=	yes
 
 LLD_UNSAFE=	yes
@@ -17,10 +19,11 @@ LLD_UNSAFE=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	agrumery
 GL_PROJECT=	aGrUM
-GL_COMMIT=	8141e589aaca335b9582c2ca8bbd6594bc4b174b
+GL_TAGNAME=	7c2adb9092fd8e3f85bc16ffc748c39ea0c056f4
 
 SHEBANG_FILES=	act
 
+CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	USE_SWIG
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
@@ -36,7 +39,7 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 
 PYTHON_CMAKE_BOOL=	BUILD_PYTHON
-PYTHON_USES=		python:3.7+
+PYTHON_USES=		python
 PYTHON_PLIST_SUB=	PYTHON_VER_MAJ=${PYTHON_VER:R}
 PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}configparser>0:devel/py-configparser@${PY_FLAVOR} \

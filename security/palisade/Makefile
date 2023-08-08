@@ -11,11 +11,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=		fails to build: a declaration of 'Mul128' must be available
-BROKEN_powerpc64=	fails to build: math/native_int/binint.h:510:11: error: Architecture not supported for MultD()
-BROKEN_riscv64=		fails to build: math/bigintnat/ubintnat.h:2250:2: error: Architecture not supported for MultD()
-.if !exists(/usr/include/omp.h)
-BROKEN=			requires OpenMP support that is missing on this architecture
-.endif
 
 BUILD_DEPENDS=	autoconf:devel/autoconf # possibly a mistake in the project
 
@@ -23,7 +18,7 @@ USES=		cmake:noninja,testing localbase # compiler:c++11-lang
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-release # there's also palisade-development
-GL_COMMIT=	0860127401ab794591f931fa2c61426c7b56ee2d
+GL_TAGNAME=	0860127401ab794591f931fa2c61426c7b56ee2d
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
 		google:benchmark:e451e50e:benchmark/third-party/google-benchmark \
@@ -43,7 +38,9 @@ BINARY_ALIAS=	git=false
 LDFLAGS+=	-pthread # only for tests: see https://gitlab.com/palisade/palisade-release/-/issues/23
 
 OPTIONS_DEFINE=		OPENMP HEXL
+.if exists(/usr/include/omp.h)
 OPTIONS_DEFAULT=	OPENMP
+.endif
 
 HEXL_DESC=		Use Intel Hexl Library
 
@@ -51,4 +48,10 @@ OPENMP_CMAKE_BOOL=	WITH_OPENMP
 HEXL_CMAKE_BOOL=	WITH_HEXL
 HEXL_LIB_DEPENDS=	libhexl.so:security/hexl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CXXFLAGS+=	-Wno-error=unused-but-set-variable
+.endif
+
+.include <bsd.port.post.mk>

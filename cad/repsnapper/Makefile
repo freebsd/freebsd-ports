@@ -1,6 +1,6 @@
 PORTNAME=	repsnapper
 DISTVERSION=	2.5a4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	cad
 
 MAINTAINER=	martin.dieringer@gmx.de

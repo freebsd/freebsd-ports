@@ -1,7 +1,7 @@
 PORTNAME=	heapdict
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	HeapDict-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/DanielStutzbach/heapdict
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes

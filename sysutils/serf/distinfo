@@ -1,3 +1,11 @@
-TIMESTAMP = 1591638415
-SHA256 (hashicorp-serf-v0.8.5_GH0.tar.gz) = bee75f213c661b84cc1ab6436b56ba0169ec7780976605f640ecb6ebb658766b
-SIZE (hashicorp-serf-v0.8.5_GH0.tar.gz) = 1972387
+TIMESTAMP = 1679744468
+SHA256 (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/v0.10.1.mod) = 3396cc40bae0a0b33dc43748296ce745f803fd24e0959b7e75d14e89e3cfa9ae
+SIZE (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/v0.10.1.mod) = 831
+SHA256 (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/v0.10.1.zip) = 661b6ad5df497dcda0f581607b003e40646ef9f3ca09d12bdeec7cb3d16ad370
+SIZE (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/v0.10.1.zip) = 556099
+SHA256 (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/hashicorp-serf-v0.10.1_GH0.tar.gz) = cd98087010275887e90d0761a3c63c6c1be7fb00f5a827ae57ac4c82e8a55ec5
+SIZE (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/hashicorp-serf-v0.10.1_GH0.tar.gz) = 447396
+SHA256 (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/golang-net-v0.8.0_GH0.tar.gz) = f9e2128a2d6861db0595428c7cce62fe5a131348a6c7651b6efa8b03d0b10831
+SIZE (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/golang-net-v0.8.0_GH0.tar.gz) = 1244302
+SHA256 (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/sysutils_serf/hashicorp-serf-v0.10.1_GH0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

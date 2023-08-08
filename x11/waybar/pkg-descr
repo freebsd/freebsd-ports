@@ -2,16 +2,19 @@ Waybar is highly customizable Wayland bar for Sway and wlroots-based
 compositors providing the following features:
 
 - Sway (Workspaces, Binding mode, Focused window name)
+- River (Mapping mode, Tags, Focused window name)
+- Hyprland (Focused window name)
 - Tray [#21](https://github.com/Alexays/Waybar/issues/21)
 - Local time
-- Battery (Linux-only)
+- Battery
+- UPower
 - Network (Linux-only)
 - Bluetooth (Linux-only)
-- PulseAudio / sndio
+- PulseAudio / JACK / sndio
 - Disk
 - Memory
 - CPU load average
-- Temperature (Linux-only)
+- Temperature
 - MPD
 - Custom scripts
 - Multiple output configuration

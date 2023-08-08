@@ -1,5 +1,5 @@
 PORTNAME=	sys-uname
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-ffi>=1.1<2:devel/rubygem-ffi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

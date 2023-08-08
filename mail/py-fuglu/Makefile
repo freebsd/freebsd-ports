@@ -1,10 +1,10 @@
 PORTNAME=	fuglu
-PORTVERSION=	0.8.0
+PORTVERSION=	1.2.0
 CATEGORIES=	mail python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@caomhin.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Mail scanning daemon for Postfix written in Python
 WWW=		https://fuglu.org/
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	postfix:mail/postfix \
 		${PYTHON_PKGNAMEPREFIX}rarfile>0:archivers/py-rarfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lzma>0:archivers/py-lzma@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 USE_RC_SUBR=	fuglu
@@ -49,7 +49,6 @@ post-extract:
 	@${REINPLACE_CMD} -e "s|=/etc|=${PREFIX}/etc|g" ${WRKSRC}/conf/fuglu.conf.dist
 	@${REINPLACE_CMD} -e "s|'/etc|'${PREFIX}/etc|g" \
 		${WRKSRC}/compareconfig.py \
-		${WRKSRC}/src/fuglu/plugins/actionoverride.py \
 		${WRKSRC}/src/fuglu/plugins/archive.py \
 		${WRKSRC}/src/fuglu/plugins/attachment.py \
 		${WRKSRC}/src/fuglu/plugins/domainauth.py \

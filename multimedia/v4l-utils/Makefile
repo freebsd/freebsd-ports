@@ -1,5 +1,4 @@
 PORTNAME?=	v4l-utils
-PORTREVISION=	1
 
 COMMENT=	Video4Linux utilities
 

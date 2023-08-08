@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-celluloid>=0.17.3:devel/rubygem-celluloid \
 		rubygem-sidekiq>=4.1.0:devel/rubygem-sidekiq
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

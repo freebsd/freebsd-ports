@@ -1,11 +1,12 @@
 PORTNAME=	uncrustify
-PORTVERSION=	0.75.1
+PORTVERSION=	0.77.1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Highly configurable source code beautifier
-WWW=		http://uncrustify.sourceforge.net/
+WWW=		https://uncrustify.sourceforge.net/ \
+		https://github.com/uncrustify/uncrustify
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

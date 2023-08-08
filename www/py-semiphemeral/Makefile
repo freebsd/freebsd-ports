@@ -1,7 +1,7 @@
 PORTNAME=	semiphemeral
 PORTVERSION=	0.7
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy-json>=0:databases/py-sqlalchemy-json@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tweepy>=0:net/py-tweepy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

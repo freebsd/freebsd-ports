@@ -1,5 +1,6 @@
 PORTNAME=	welle.io
 DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	audio hamradio
 
 MAINTAINER=	nsonack@outlook.com

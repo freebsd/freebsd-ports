@@ -1,6 +1,5 @@
 PORTNAME=	pixman
-PORTVERSION=	0.40.0
-PORTREVISION=	1
+PORTVERSION=	0.42.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -32,7 +31,9 @@ CONFIGURE_ARGS+=	--disable-a64-neon
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
 LLD_UNSAFE=	yes
-.elif ${ARCH} == "powerpc"
+.elif ${ARCH} == "aarch64"
+CONFIGURE_ARGS+=	--disable-arm-a64-neon
+.elif (defined(MACHINE_CPU) && !${MACHINE_CPU:Maltivec}) || (${ARCH} == powerpc && !defined(MACHINE_CPU))
 CONFIGURE_ARGS+=	--disable-vmx
 .endif
 

@@ -1,7 +1,7 @@
 PORTNAME=	netsnmpagent
 PORTVERSION=	0.6.0
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	vladimirv@ixsystems.com
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/netsnmpagent/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

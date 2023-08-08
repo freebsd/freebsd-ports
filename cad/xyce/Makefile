@@ -1,10 +1,8 @@
 PORTNAME=	xyce
-DISTVERSION=	7.5.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	Release-
+DISTVERSION=	7.6.0
+PORTREVISION=	4
 CATEGORIES=	cad
-MASTER_SITES=	https://github.com/Xyce/Xyce/archive/refs/tags/
-DISTNAME=	Release-${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Xyce electronic simulator
@@ -32,7 +30,9 @@ USE_CXXSTD=	c++14 # otherwise configure fails because of c++14 features like std
 USE_LDCONFIG=	yes
 USE_PERL5=	test
 
-WRKSRC=		${WRKDIR}/Xyce-Release-${DISTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	Xyce
+GH_PROJECT=	Xyce
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LEX=/usr/bin/flex \

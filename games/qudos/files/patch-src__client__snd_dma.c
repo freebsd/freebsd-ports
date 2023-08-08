@@ -1,51 +1,16 @@
 --- src/client/snd_dma.c.orig	Fri Jun  9 16:42:59 2006
 +++ src/client/snd_dma.c	Thu Sep 13 20:17:11 2007
-@@ -1,27 +1,23 @@
- /*
-- * Copyright (C) 1997-2001 Id Software, Inc.
-- *
-- * This program is free software; you can redistribute it and/or modify it under
-- * the terms of the GNU General Public License as published by the Free
-- * Software Foundation; either version 2 of the License, or (at your option)
-- * any later version.
-- *
-- * This program is distributed in the hope that it will be useful, but WITHOUT
-- * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-- * FITNESS FOR A PARTICULAR PURPOSE.
-- *
-- * See the GNU General Public License for more details.
-- *
-- * You should have received a copy of the GNU General Public License along with
-- * this program; if not, write to the Free Software Foundation, Inc., 59
-- * Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-- *
-- */
--/* snd_dma.c -- main control for any streaming sound output device */
-+Copyright (C) 1997-2001 Id Software, Inc.
+@@ -19,10 +19,6 @@
+  */
+ /* snd_dma.c -- main control for any streaming sound output device */
  
 -#include "client.h"
 -#include "snd_loc.h"
 -#include "snd_ogg.h"
-+This program is free software; you can redistribute it and/or
-+modify it under the terms of the GNU General Public License
-+as published by the Free Software Foundation; either version 2
-+of the License, or (at your option) any later version.
-+
-+This program is distributed in the hope that it will be useful,
-+but WITHOUT ANY WARRANTY; without even the implied warranty of
-+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
-+
-+See the GNU General Public License for more details.
-+
-+You should have received a copy of the GNU General Public License
-+along with this program; if not, write to the Free Software
-+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-+
-+*/
-+// snd_dma.c -- main control for any streaming sound output device
- 
+-
  #if defined (__unix__)
  #include <sys/types.h>
+ #include <sys/stat.h>
 @@ -31,26 +27,30 @@
  #include <dlfcn.h>
  #endif

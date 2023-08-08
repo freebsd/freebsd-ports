@@ -1,17 +1,15 @@
 PORTNAME=	plan9port
-PORTVERSION=	20200816
+PORTVERSION=	20220913
 CATEGORIES=	devel plan9
 DIST_SUBDIR=	plan9port
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	felix@userspace.com.au
 COMMENT=	Plan 9 from User Space
 WWW=		https://9fans.github.io/plan9port/
 
-LICENSE=	LUCENT
-LICENSE_NAME=	Lucent Public License Version 1.02
+LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_armv6=	fails to compile: thread.c:130:5: no member named 'arm_r0' in 'mcontext_t'
 BROKEN_armv7=	fails to compile: thread.c:130:5: no member named 'arm_r0' in 'mcontext_t'
@@ -23,7 +21,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		compiler:c11 localbase:ldflags perl5 shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	9fans
-GH_TAGNAME=	1f098efb7370a0b28306d10681e21883fb1c1507
+GH_TAGNAME=	ffbdd1aa20c8a20a8e9dcd3cec644b6dfa3c6acb
 USE_PERL5=	build
 USE_XORG=	x11 xext xt
 
@@ -73,7 +71,8 @@ do-build:
 	@cd ${WRKSRC} && ${SETENV} CC9=${CC} ./INSTALL -b
 
 do-install:
-.for l in .cvsignore .hg .hgignore .hgtags .gitignore .gitkeep *.bak *.orig *.beforesubst .travis.yml
+.for l in .cvsignore .hg .hgignore .hgtags .gitignore .gitkeep *.bak *.orig \
+	*.beforesubst .travis.yml
 	@${FIND} ${WRKSRC} -name "${l}" -delete
 .endfor
 	@cd ${WRKSRC} && ${SED} -i '' 's#/usr/local#${PREFIX}#' \
@@ -84,7 +83,8 @@ do-install:
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/plan9 && \
-		for f in bin/* bin/disk/* bin/fossil/* bin/fs/* bin/venti/* src/cmd/devdraw/o.devdraw; do \
+		for f in bin/* bin/disk/* bin/fossil/* bin/fs/* bin/venti/* \
+		src/cmd/devdraw/o.devdraw; do \
 			${STRIP_CMD} $$f > /dev/null 2>&1 || ${TRUE}; \
 		done
 

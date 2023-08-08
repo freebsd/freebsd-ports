@@ -10,7 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Perl like formats for Ruby
 WWW=		http://formatr.sourceforge.net/
 
-USE_RUBY=	yes
+USES=	ruby
 
 NO_BUILD=	yes
 

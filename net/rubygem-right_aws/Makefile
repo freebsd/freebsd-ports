@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-right_http_connection>=1.2.5:net/rubygem-right_http_connection
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

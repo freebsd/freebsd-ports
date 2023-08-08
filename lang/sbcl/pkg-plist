@@ -61,8 +61,6 @@ lib/sbcl/contrib/sb-executable.asd
 lib/sbcl/contrib/sb-executable.fasl
 lib/sbcl/contrib/sb-gmp.asd
 lib/sbcl/contrib/sb-gmp.fasl
-lib/sbcl/contrib/sb-graph.asd
-lib/sbcl/contrib/sb-graph.fasl
 lib/sbcl/contrib/sb-grovel.asd
 lib/sbcl/contrib/sb-grovel.fasl
 lib/sbcl/contrib/sb-introspect.asd

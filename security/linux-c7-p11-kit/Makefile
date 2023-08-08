@@ -1,6 +1,7 @@
 PORTNAME=	p11-kit
 PORTVERSION=	0.23.5
 DISTVERSIONSUFFIX=	-3.el7
+PORTREVISION=	1
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -9,7 +10,11 @@ WWW=		https://p11-glue.freedesktop.org/p11-kit.html
 
 USES=		linux:c7
 USE_LDCONFIG=	yes
+USE_LINUX=	libtasn1
 USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${DISTNAME} \
+		p11-kit-trust-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 

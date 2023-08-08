@@ -26,7 +26,7 @@ PDF_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-disable-pdf
 
 .include <bsd.port.options.mk>
 
-USE_PHP=	gd iconv json pcre session simplexml sockets xml zlib
+USE_PHP=	gd iconv session simplexml sockets xml zlib
 
 USE_RC_SUBR=	npcd
 

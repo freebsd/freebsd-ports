@@ -1,79 +1,53 @@
 PORTNAME=	naev
-PORTVERSION=	0.7.0
-PORTREVISION=	12
+PORTVERSION=	0.10.6
+DISTVERSIONSUFFIX=	-source
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	2D action/RPG space game
 WWW=		https://naev.org/
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	GPLv2 GPLv3 CC-BY-3.0 CC-BY-SA-3.0 PD
+LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: nglActiveTexture
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: nglActiveTexture
-
-LIB_DEPENDS=	libpng.so:graphics/png \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libbacktrace.so:devel/libbacktrace \
+		libblas.so:math/blas \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libcxsparse.so:math/suitesparse-cxsparse \
+		libenet.so:net/enet \
 		libfreetype.so:print/freetype2 \
+		libglpk.so:math/glpk \
+		libopenblas.so:math/openblas \
+		libpcre2-8.so:devel/pcre2 \
+		libphysfs.so:devel/physfs \
+		libpng.so:graphics/png \
+		libunibreak.so:textproc/libunibreak \
 		libvorbisfile.so:audio/libvorbis \
-		libzip.so:archivers/libzip
-RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/${DISTNAME}-ndata.zip:games/naev-data
+		libwebp.so:graphics/webp \
+ 		libzip.so:archivers/libzip
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		autoreconf:build compiler:features gl gmake gnome pkgconfig sdl \
-		tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		desktop-file-utils gettext gl gnome localbase:ldflags \
+		luajit:luajit-openresty meson openal pkgconfig python sdl \
+		shebangfix tar:xz
 USE_GL=		gl glu
-USE_GNOME=	libxml2
+USE_GNOME=	intltool libxml2
+USE_SDL=	sdl2 image2
 
-CONFIGURE_ARGS=	--with-ndata-path="${DATADIR}/${DISTNAME}-ndata.zip" \
-		--enable-debug=no
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lm
+SHEBANG_GLOB=	*.py
+SHEBANG_LANG=	python
 
-PORTDATA=	*
-PORTDOCS=	*
+MESON_ARGS=	-Ddocs_c=disabled -Ddocs_lua=disabled
 
-PLIST_FILES=	bin/${PORTNAME} man/man6/${PORTNAME}.6.gz \
-		share/applications/${PORTNAME}.desktop \
-		share/appdata/${PORTNAME}.appdata.xml \
-		share/pixmaps/${PORTNAME}.png
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	DOCS OPENAL SDL2 SDL_MIXER
-OPTIONS_DEFAULT=	LUA_JIT OPENAL SDL2 SDL_MIXER
-OPTIONS_DEFAULT_powerpc64=	LUA_SHARED
-OPTIONS_EXCLUDE_powerpc64=	LUA_JIT
-OPTIONS_SINGLE=		LUA
-OPTIONS_SINGLE_LUA=	LUA_INTERNAL LUA_SHARED LUA_JIT
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-LUA_INTERNAL_DESC=	Use bundled Lua
-LUA_INTERNAL_CONFIGURE_ON=	--enable-lua=internal
-LUA_SHARED_DESC=	Use Lua from lang/lua51
-LUA_SHARED_CONFIGURE_ON=	--enable-lua=shared
-LUA_SHARED_USES=	lua:51
-LUA_JIT_DESC=		Use LuaJIT from lang/luajit
-LUA_JIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-OPENAL_USES=	openal
-OPENAL_CONFIGURE_WITH=	openal
-SDL_MIXER_DESC=	SDL_mixer sound backend
-SDL_MIXER_CONFIGURE_WITH=	sdlmixer
-SDL2_DESC=	Use SDL2 instead of SDL
-SDL2_CONFIGURE_WITH=	sdl2
-SDL2_USE=	SDL=sdl2
-SDL2_USE_OFF=	SDL=sdl
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == "gcc"
-USE_GCC=	yes
-.endif
-
-.if ${PORT_OPTIONS:MSDL_MIXER}
-.	if ${PORT_OPTIONS:MSDL2}
-USE_SDL+=	mixer2
-.	else
-USE_SDL+=	mixer
-.	endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,9 +1,10 @@
 PORTNAME=	seabattle
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Curses based battleship type game
 WWW=		http://www.deater.net/weave/vmwprod/seabattle.html
 

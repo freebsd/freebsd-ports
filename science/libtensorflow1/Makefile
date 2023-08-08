@@ -31,7 +31,7 @@ noavx_CONFLICTS_INSTALL=	libtensorflow1
 default_CONFLICTS_INSTALL=	libtensorflow1-noavx
 CONFLICTS_INSTALL=	science/libtensorflow2
 
-USES=		gmake python:3.7-3.9,build
+USES=		gmake python:3.8-3.9,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tensorflow

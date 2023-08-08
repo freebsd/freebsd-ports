@@ -1,9 +1,12 @@
 include/d/dparse/ast.d
+include/d/dparse/astprinter.d
 include/d/dparse/entities.d
 include/d/dparse/formatter.d
 include/d/dparse/lexer.d
 include/d/dparse/parser.d
 include/d/dparse/rollback_allocator.d
 include/d/dparse/stack_buffer.d
+include/d/dparse/strings.d
+include/d/dparse/trivia.d
 include/d/std/experimental/lexer.d
 lib/d/libdparse.a

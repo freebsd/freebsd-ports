@@ -1,6 +1,6 @@
 PORTNAME=		pooler
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.85
+DISTVERSION=		1.86
 CATEGORIES=		biology
 
 MAINTAINER=	ssb22@cam.ac.uk
@@ -10,6 +10,7 @@ WWW=		https://ssb22.user.srcf.net/pooler/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/${GH_PROJECT}-${PORTVERSION}/LICENSE
 
+USES=		desktop-file-utils
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	ssb22

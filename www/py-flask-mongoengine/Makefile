@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:www/py-flask@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest-cov@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_GITHUB=	yes # tests not packaged with PyPI sdist
 GH_ACCOUNT=	MongoEngine
 USE_PYTHON=	autoplist concurrent distutils

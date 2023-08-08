@@ -10,7 +10,7 @@ WWW=		https://pear.php.net/package/Net_Gearman
 LICENSE=	BSD2CLAUSE
 
 USES=		pear
-USE_PHP=	json mbstring sockets
+USE_PHP=	mbstring sockets
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 bin/nitrokey-app
-etc/bash_completion.d/nitrokey-app
+share/bash-completion/completions/nitrokey-app
 share/applications/nitrokey-app.desktop
 share/icons/hicolor/128x128/apps/nitrokey-app.png
 share/icons/hicolor/16x16/apps/nitrokey-app.png

@@ -1,0 +1,10 @@
+XML/Ada is a full XML suite for use with Ada compilers, such as GNAT AUX.
+
+XML/Ada is a set of modules that provide a simple manipulation of XML
+streams.  It supports the whole XML 1.1 specification and can parse any file
+that follows this standard, including the contents of the DTD although no
+validation of the documents is performed based on those.
+
+It provides support for a number of standards associated with XML such as
+SAX, DOM, and XML schemas.  Additionally, it includes a module to manipulate
+unicode streams since this is required by the XML standard.

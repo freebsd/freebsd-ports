@@ -1,5 +1,5 @@
 PORTNAME=	dropbear
-PORTVERSION=	2022.82
+PORTVERSION=	2022.83
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -23,10 +23,10 @@ OPTIONS_DEFAULT=	AES128 AES256 CURVE25519 ECDSA ED25519 GCM \
 			GROUP14_SHA256 GROUP16 RSA SHA2_256
 OPTIONS_MULTI=		ENC KEY KEX MAC MODE
 OPTIONS_MULTI_ENC=	3DES AES128 AES256 CHACHA20POLY1305
-OPTIONS_MULTI_KEY=	ECDSA ED25519 RSA
+OPTIONS_MULTI_KEY=	DSS ECDSA ED25519 RSA
 OPTIONS_MULTI_KEX=	CURVE25519 ECDH GROUP1 GROUP14_SHA1 GROUP14_SHA256 \
 			GROUP16
-OPTIONS_MULTI_MAC=	MD5 SHA1 SHA1_96 SHA2_256 SHA2_512
+OPTIONS_MULTI_MAC=	MD5 RSA_SHA1 SHA1 SHA1_96 SHA2_256 SHA2_512
 OPTIONS_MULTI_MODE=	CBC CTR GCM
 
 3DES_DESC=		Enable 3DES-based encryption
@@ -36,6 +36,7 @@ CBC_DESC=		Use CBC mode for ciphers (less secure)
 CHACHA20POLY1305_DESC=	Enable chacha20poly1305-based encryption
 CTR_DESC=		Use CTR mode for ciphers
 CURVE25519_DESC=	Enable Curve25519
+DSS_DESC=		Enable DSS (insecure)
 ECDH_DESC=		Enable ECDH (insecure)
 ECDSA_DESC=		Enable ECDSA public key support
 ED25519_DESC=		Enable ED25519 public key support
@@ -46,6 +47,7 @@ GROUP16_DESC=		Enable Group16 Diffie-Hellman
 GROUP1_DESC=		Enable Group1 Diffie-Hellman (insecure)
 MD5_DESC=		Enable MD5 MAC (broken)
 RSA_DESC=		Enable RSA public key support
+RSA_SHA1_DESC=		Enable RSA SHA1 MAC (insecure)
 SHA1_96_DESC=		Enable SHA1_96 MAC (less secure)
 SHA1_DESC=		Enable SHA1 MAC (less secure)
 SHA2_256_DESC=		Enable SHA2_256 MAC
@@ -89,6 +91,9 @@ post-patch-GCM-on:
 post-patch-CURVE25519-off:
 	@${ECHO} "#define DROPBEAR_CURVE25519 0" >> ${WRKSRC}/localoptions.h
 
+post-patch-DSS-on:
+	@${ECHO} "#define DROPBEAR_DSS 1" >> ${WRKSRC}/localoptions.h
+
 post-patch-ECDH-off:
 	@${ECHO} "#define DROPBEAR_ECDH 0" >> ${WRKSRC}/localoptions.h
 
@@ -106,6 +111,9 @@ post-patch-GROUP16-on:
 
 post-patch-RSA-off:
 	@${ECHO} "#define DROPBEAR_RSA 0" >> ${WRKSRC}/localoptions.h
+
+post-patch-RSA_SHA1-off:
+	@${ECHO} "#define DROPBEAR_RSA_SHA1 0" >> ${WRKSRC}/localoptions.h
 
 post-patch-ECDSA-off:
 	@${ECHO} "#define DROPBEAR_ECDSA 0" >> ${WRKSRC}/localoptions.h

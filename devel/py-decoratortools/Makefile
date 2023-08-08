@@ -2,7 +2,7 @@ PORTNAME=	decoratortools
 PORTVERSION=	1.8
 PORTREVISION=	4
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	DecoratorTools-${PORTVERSION}
 
@@ -13,7 +13,7 @@ WWW=		https://pypi.org/project/DecoratorTools/
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

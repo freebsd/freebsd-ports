@@ -9,7 +9,6 @@ WWW=		https://github.com/postmodern/rubyzip2
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		cpe gem
 
 CPE_VENDOR=	rubyzip_project

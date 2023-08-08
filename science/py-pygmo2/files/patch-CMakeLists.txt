@@ -1,13 +1,13 @@
 - Fix the python version to one used by the port.
 
---- CMakeLists.txt.orig	2021-08-05 03:52:20 UTC
+--- CMakeLists.txt.orig	2023-04-09 15:01:42 UTC
 +++ CMakeLists.txt
 @@ -137,7 +137,7 @@ if(${pagmo_VERSION} VERSION_LESS ${_PYGMO_MIN_PAGMO_VE
  endif()
  
  # python.
--find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
-+find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} EXACT REQUIRED COMPONENTS Interpreter Development)
+-find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
++find_package(Python3 ${FREEBSD_PYTHON_DISTVERSION} EXACT REQUIRED COMPONENTS Interpreter Development.Module)
  message(STATUS "Python3 interpreter: ${Python3_EXECUTABLE}")
  message(STATUS "Python3 installation directory: ${Python3_SITEARCH}")
  set(PYGMO_INSTALL_PATH "" CACHE STRING "pygmo module installation path")

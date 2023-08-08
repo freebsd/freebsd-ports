@@ -1,5 +1,5 @@
 PORTNAME=	mediawiki
-PORTVERSION=	1.35.7
+PORTVERSION=	1.35.11
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	135${PHP_PKGNAMESUFFIX}
@@ -10,7 +10,7 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki13[6-8]
+CONFLICTS=	mediawiki13[8-9] mediawiki140
 
 USES=		cpe php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
@@ -20,8 +20,8 @@ SHEBANG_FILES=	maintenance/dev/*.sh \
 SHEBANG_LANG=	hhvm
 hhvm_OLD_CMD=	/usr/bin/hhvm
 hhvm_CMD=	${LOCALBASE}/bin/hhvm # not installed by anything yet
-USE_PHP=	ctype dom fileinfo filter hash iconv intl json mbstring openssl \
-		pcre readline session xml xmlreader zlib
+USE_PHP=	ctype dom fileinfo filter iconv intl mbstring \
+		readline session xml xmlreader zlib
 MEDIAWIKIDIR?=	www/mediawiki
 
 NO_BUILD=	yes

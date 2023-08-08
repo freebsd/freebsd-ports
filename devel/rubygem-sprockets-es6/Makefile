@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-babel-source>=5.8.11:textproc/rubygem-babel-source \
 		rubygem-sprockets3>=3.0:devel/rubygem-sprockets3
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

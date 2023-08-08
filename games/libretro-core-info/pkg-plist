@@ -56,7 +56,16 @@ share/libretro/info/fbalpha2012_cps2_libretro.info
 share/libretro/info/fbalpha2012_cps3_libretro.info
 share/libretro/info/fbalpha2012_libretro.info
 share/libretro/info/fbalpha2012_neogeo_libretro.info
-share/libretro/info/fbalpha_libretro.info
+share/libretro/info/chimerasnes_libretro.info
+share/libretro/info/dirksimple_libretro.info
+share/libretro/info/emuscv_libretro.info
+share/libretro/info/ep128emu_core_libretro.info
+share/libretro/info/fake08_libretro.info
+share/libretro/info/mamemess_libretro.info
+share/libretro/info/mojozork_libretro.info
+share/libretro/info/numero_libretro.info
+share/libretro/info/onscripter_libretro.info
+share/libretro/info/puzzlescript_libretro.info
 share/libretro/info/fbneo_libretro.info
 share/libretro/info/fceumm_libretro.info
 share/libretro/info/ffmpeg_libretro.info

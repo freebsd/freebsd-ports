@@ -16,6 +16,8 @@ BROKEN_powerpc64=	fails to compile: tools.h: incompatible types in assignment
 BROKEN_sparc64=		fails to compile
 
 USES=		tar:bzip2 gmake
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src/enet
 BUILD_WRKSRC=	${WRKSRC}/src

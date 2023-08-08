@@ -1,5 +1,5 @@
 PORTNAME=	Starman
-PORTVERSION=	0.4015
+PORTVERSION=	0.4016
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -27,7 +27,7 @@ TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires \
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
-USE_RC_SUBR=	starman
 NO_ARCH=	yes
+USE_RC_SUBR=	starman
 
 .include <bsd.port.mk>

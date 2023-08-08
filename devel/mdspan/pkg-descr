@@ -1,0 +1,4 @@
+The ISO-C++ proposal P0009 will add support for non-owning multi-dimensional
+array references to the C++ standard library. This repository aims to provide
+a production-quality implementation of the proposal as written (with a few
+caveats, see below) in preparation for the addition of mdspan to the standard.

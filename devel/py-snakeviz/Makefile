@@ -1,7 +1,7 @@
 PORTNAME=	snakeviz
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,9 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=2.0:www/py-tornado@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+post-extract:
+	@${ECHO_CMD} 'from setuptools import setup; setup()' > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

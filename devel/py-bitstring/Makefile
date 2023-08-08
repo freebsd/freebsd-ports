@@ -1,7 +1,7 @@
 PORTNAME=	bitstring
 PORTVERSION=	3.1.9
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/bitstring/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

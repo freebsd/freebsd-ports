@@ -1,6 +1,6 @@
 PORTNAME=	bugzilla
 PORTVERSION=	4.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	MOZILLA/webtools MOZILLA/webtools/archived
 
@@ -45,7 +45,7 @@ EMPTY_DIRS_LIST=data graphs contrib lib t xt
 .include "${.CURDIR}/Makefile.common"
 .include "${.CURDIR}/Makefile.options"
 
-MODPERL_USE=		APACHE_RUN=22+
+MODPERL_USES=		apache:run
 MYSQL_USES=		mysql
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=4.0001:databases/p5-DBD-mysql
 PGSQL_USES=		pgsql

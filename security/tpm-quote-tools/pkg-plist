@@ -1,0 +1,17 @@
+bin/tpm_getpcrhash
+bin/tpm_getquote
+bin/tpm_loadkey
+bin/tpm_mkaik
+bin/tpm_mkuuid
+bin/tpm_unloadkey
+bin/tpm_updatepcrhash
+bin/tpm_verifyquote
+man/man8/tpm_getpcrhash.8.gz
+man/man8/tpm_getquote.8.gz
+man/man8/tpm_loadkey.8.gz
+man/man8/tpm_mkaik.8.gz
+man/man8/tpm_mkuuid.8.gz
+man/man8/tpm_quote_tools.8.gz
+man/man8/tpm_unloadkey.8.gz
+man/man8/tpm_updatepcrhash.8.gz
+man/man8/tpm_verifyquote.8.gz

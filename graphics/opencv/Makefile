@@ -1,6 +1,10 @@
 PORTNAME=	opencv
 DISTVERSION=	4.6.0
+PORTREVISION=	11
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	496eed950f6d0e7fd92619d47e3cec8f06e96ace.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Open Source Computer Vision library
@@ -103,7 +107,7 @@ PROTOBUF_LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 PYTHON_DESC=		Enable Python Support 3.6 or greater
 PYTHON_BUILD_DEPENDS=	${PYNUMPY}
 PYTHON_RUN_DEPENDS=	${PYNUMPY}
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	BUILD_opencv_python3
 PYTHON_CMAKE_ON=	-DOPENCV_PYTHON3_INSTALL_PATH=${PYTHON_SITELIBDIR}
 
@@ -123,7 +127,7 @@ GTK3_CMAKE_BOOL=	WITH_GTK
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_LIB_DEPENDS=	libvtkCommonCore-9.1.so:math/vtk9
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 VTK_USES=		qt:5
 VTK_USE=		QT=buildtools:build,qmake:build
 ###
@@ -185,11 +189,13 @@ XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 # BLAS group options (ATLAS OPENBLAS NOBLAS)
 ATLAS_DESC=		ATLAS blas implementation with lapacke
 ATLAS_USES=		blaslapack:atlas
-ATLAS_LIB_DEPENDS=	liblapacke.so:math/lapacke
+ATLAS_BUILD_DEPENDS=	cblas>0:math/cblas \
+			lapacke>0:math/lapacke
 
 OPENBLAS_DESC=		OpenBLAS blas implementation with lapacke
 OPENBLAS_USES=		blaslapack:openblas
-OPENBLAS_LIB_DEPENDS=	liblapacke.so:math/lapacke
+OPENBLAS_BUILD_DEPENDS=	cblas>0:math/cblas \
+			lapacke>0:math/lapacke
 
 NOBLAS_DESC=		Disable support for lapack/blas
 NOBLAS_CMAKE_BOOL_OFF=	WITH_LAPACK
@@ -207,6 +213,12 @@ OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
 _IPPICV_i386=		ippicv/ippicv_2020_lnx_ia32_20191018_general.tgz
 _IPPICV_amd64=		ippicv/ippicv_2020_lnx_intel64_20191018_general.tgz
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le && defined(MACHINE_CPU) && ${MACHINE_CPU:Mvsx3}
+CMAKE_ARGS+=		-DCPU_BASELINE:STRING="VSX;VSX3;"
+.endif
 
 post-extract:
 	# Handle contrib
@@ -234,4 +246,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/usr/lib/atlas-base|${LOCALBASE}/lib|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
 	${REINPLACE_CMD} -e 's|/usr/include/atlas|${LOCALBASE}/include|g' ${WRKSRC}/cmake/OpenCVFindAtlas.cmake
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

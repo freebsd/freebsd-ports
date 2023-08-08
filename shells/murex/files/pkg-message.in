@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+For inline spellchecking install the aspell package.
+
+Depending on your language, you may optionally want to
+install an accompanying language dictionary, such as
+en-aspell.
+
+For further information, visit
+
+   https://murex.rocks/docs/user-guide/spellcheck.html
+EOM
+}
+]

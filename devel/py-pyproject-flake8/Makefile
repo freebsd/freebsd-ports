@@ -1,0 +1,28 @@
+PORTNAME=	pyproject-flake8
+PORTVERSION=	6.0.0.post1
+CATEGORIES=	devel python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Monkey patching wrapper to connect flake8 with pyproject.toml configuration
+WWW=		https://github.com/csachs/pyproject-flake8
+
+LICENSE=	UNLICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=6.0.0<6.0.0_99:devel/py-flake8@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,8 +1,8 @@
 PORTNAME=	primecountpy
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpari.so:math/pari			\
 		libprimesieve.so:math/primesieve
 RUN_DEPENDS=	${PYDEPS}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	cython distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s

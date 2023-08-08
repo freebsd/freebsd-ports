@@ -10,6 +10,149 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230728:
+AUTHOR: andrew@tao11.riddles.org.uk, fuz@FreeBSD.org
+
+  A new uses 'guile' has been added to transparently depend on the
+  proper variant of guile depending on the default version set by the
+  user and the demands of the port.
+
+  See Mk/Uses/guile.mk for in-depth documentation.
+
+20230722:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new uses 'pycryptography' has been added to transparently depend on the
+  proper variant of 'rust' or 'legacy' depending on the default version set
+  by the user.
+
+  Supported arguments: <none>,build,run
+  Passing no arguments (<none>) is equivalent to passing both build and run.
+
+  Usage:
+	USES=pycryptography:build
+		-> adds a BUILD_DEPENDS only
+	USES=pycryptography:run
+		-> adds a RUN_DEPENDS only
+	USES=pycryptography:test
+		-> adds a TEST_DEPENDS only
+	USES=pycryptography:build,run   or   USES=pycryptography
+		-> adds a BUILD_ and RUN_DEPENDS
+
+20230712:
+AUTHOR: zirias@FreeBSD.org
+
+  USE_GITLAB has been changed to allow fetching by tag name. This was done by
+  removing the GL_COMMIT variable and introducing GL_TAGNAME instead.
+
+  Similar to USE_GITHUB/GH_TAGNAME, you can still use a commit hash with
+  GL_TAGNAME (the full 40-character hash is required for that). If not
+  specified, GL_TAGNAME defaults to DISTVERSIONFULL.
+
+  Note fetching by tag name might not work on gitlab installations running
+  very old versions; in that case, you must still specify a commit hash.
+
+  For now, GL_COMMIT is still recognized but deprecated, using it will issue
+  a warning in developer mode.
+
+20230712:
+AUTHOR: 0mp@FreeBSD.org
+
+  Two new targets are now available: fetch-url-recursive-list
+  and fetch-urlall-recursive-list. They are the recursive variants
+  of the well-established targets fetch-url-list and fetch-urlall-list,
+  which allow for listing the complete URLs of DISTFILES and PATCHFILES
+  of a port. The recursive variants add the URLs of the port's dependencies
+  to the output.
+
+20230430:
+AUTHOR: zirias@FreeBSD.org
+
+  USES=magick has been updated based on flavorized ports.
+
+  A new argument 'x11' is available to specifically depend on the flavor
+  with X11 support. Fallback to DEFAULT_VERSIONS now happens
+  independently for the version (currently 6 or 7) and the flavor
+  (currently x11 or nox11).
+
+  Only use arguments for version or flavor if your port really requires
+  it. Also, there is no need to add options for selecting the -nox11
+  flavor any more, as the user setting in DEFAULT_VERSIONS will be
+  honored.
+
+20230111:
+AUTHOR: vishwin@FreeBSD.org
+
+  USE_PYTHON=pep517 has been added to facilitate building using the
+  new format.
+
+  USE_PYTHON=pep517 takes no arguments. Operation is similar to
+  USE_PYTHON=distutils, although the build backend specified in
+  pyproject.toml shall be specified in BUILD_DEPENDS.
+
+  A usage guide and implementation primer is available at:
+        https://wiki.freebsd.org/Python/PEP-517
+
+20221217:
+AUTHOR: tcberner@FreeBSD.org
+
+  USES=llvm has been added to more easily depend on llvm.
+
+  USES=llvm supports two kinds of arguments:
+
+  * mode
+	<none>:	defaults to build
+	build:	add a BUILD_DEPENDS on chosen llvm-port
+	run:	add a RUN_DEPENDS on chosen llvm-port
+	lib:	add a LIB_DEPENDS on chosen llvm-port
+
+  * version
+	<none>:		defaults to ${LLVM_DEFAULT}
+	number:		use explicitly the specified version
+	min=number:	use specified min if ${LLVM_DEFAULT} is lower
+	max=number:	use specified max if ${LLVM_DEFAULT} is higher
+
+  An example usage might be:
+	USES=	llvm
+  or
+	USES=	llvm:13,build
+  or
+	USES=	llvm:min=14,lib
+
+  The following variables are exposed to be used in the ports tree at the moment:
+	* LLVM_VERSION	version chosen from the arguments to llvm.mk
+	* LLVM_PORT	chosen llvm port
+	* LLVM_CONFIG	llvm-config of the chosen port
+	* LLVM_LIBLLVM	libLLVM.so of the chosen port
+	* LLVM_PREFIX	installation prefix of the chosen port
+
+20221026:
+AUTHOR: bapt@FreeBSD.org
+  3 new features are available now: PIE, RELRO, BIND_NOW, each port can
+  specify the inability to support any via <feature>_UNSAFE
+
+  All 3 are off by default, the intent is to activate following the freebsd
+  base activation of the same features.
+
+  End users can activate/deactivate globally via WITH_/WITHOUT_ <feature>
+
+20221014:
+AUTHOR: adamw@FreeBSD.org
+
+  USES=luajit has been added to support a unified luajit version. The
+  default here is luajit-devel, which should be the right version for
+  nearly everybody.
+
+  luajit-openresty is a drop-in replacement for anything that luajit-devel
+  works in, though not necessarily the other way around. If a program uses
+  the openresty-specific API then you will need USES=luajit:luajit-openresty.
+
+  The standard USES for most ports:
+    USES=luajit
+
+  For anything that requires the openresty API:
+    USES=luajit:luajit-openresty
+
 20220911:
 AUTHOR: zirias@FreeBSD.org
 

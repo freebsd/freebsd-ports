@@ -19,6 +19,7 @@ share/locale/hu/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ia/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/it/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ja/LC_MESSAGES/ktp-filetransfer-handler.mo
+share/locale/ka/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/kk/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ko/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/lt/LC_MESSAGES/ktp-filetransfer-handler.mo
@@ -35,6 +36,9 @@ share/locale/ru/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/sk/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/sl/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/sr/LC_MESSAGES/ktp-filetransfer-handler.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ktp-filetransfer-handler.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ktp-filetransfer-handler.mo
+share/locale/sr@latin/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/sv/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/tr/LC_MESSAGES/ktp-filetransfer-handler.mo
 share/locale/ug/LC_MESSAGES/ktp-filetransfer-handler.mo

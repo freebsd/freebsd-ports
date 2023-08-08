@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-elasticsearch-indexer
-PORTVERSION=	3.0.1
+PORTVERSION=	4.3.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	git>=2.16.2:devel/git
+BUILD_DEPENDS=	git>=2.38.1:devel/git
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libicuuc.so:devel/icu
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
@@ -21,7 +20,7 @@ USES=		gmake go:modules,no_targets pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer/-/tags
-GL_COMMIT=	13a14c697ada73449b9b8ed15d58b74b4d4a4d9b
+GL_TAGNAME=	f5b02c19bc905e7759ffd3466c4daca0c1f22fbc
 
 MAKE_ENV=	GOFLAGS="${GO_BUILDFLAGS}"
 # make sure to pass go build options into make process

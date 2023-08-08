@@ -1,5 +1,6 @@
 PORTNAME=	stdx-allocator
 PORTVERSION=	3.0.2
+PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -19,12 +20,13 @@ GH_ACCOUNT=	dlang-community
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
 	${REINPLACE_CMD} '6d' ${WRKSRC}/dub.sdl
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}

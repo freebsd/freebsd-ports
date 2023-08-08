@@ -1,32 +1,30 @@
 PORTNAME=	httrack
-PORTVERSION=	3.49.2
-PORTREVISION=	1
+PORTVERSION=	3.49.4
 CATEGORIES=	www
-MASTER_SITES=	https://download.httrack.com/ \
-		https://mirror.httrack.com/ \
-		https://mirror.httrack.com/historical/ \
-		http://download.httrack.com/ \
-		http://mirror.httrack.com/ \
-		http://mirror.httrack.com/historical/ \
-		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
-WWW=		https://www.httrack.com/
+WWW=		https://www.httrack.com/ \
+		https://github.com/xroche/httrack
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-OPTIONS_DEFINE=	DOCS ICONS
-OPTIONS_SUB=	yes
+USES=		alias cpe gmake iconv libtool shebangfix ssl
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${PREFIX}/lib/httrack
-USES=		alias cpe gmake iconv libtool shebangfix ssl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xroche
+GH_TUPLE=	xroche:coucal:73ada07:xroche_coucal/src/coucal
 
 SHEBANG_FILES=	src/webhttrack
+
+OPTIONS_DEFINE=	DOCS ICONS
+OPTIONS_SUB=	yes
 
 ICONS_USES=	gnome
 

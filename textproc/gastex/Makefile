@@ -10,13 +10,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphs and Automata Simplified in TeX
 WWW=		https://www.lsv.ens-cachan.fr/~gastin/gastex/
 
-NO_ARCH=	yes
+USES=		tex
 USE_TEX=	latex:run
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 EXAMPLES_DISTFILES=	ex-gastex.tex
 
-TEXMFDIR?=	share/texmf
 GASTEXDIR=	${PREFIX}/${TEXMFDIR}/tex/latex/gastex
 GASDVIDIR=	${PREFIX}/${TEXMFDIR}/dvips/gastex
 

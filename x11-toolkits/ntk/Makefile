@@ -1,6 +1,7 @@
 PORTNAME=	ntk
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1001
+PORTREVISION=	1
 MASTER_SITES=	https://git.kx.studio/non/ntk/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ # was at GH_ACCOUNT=original-male
 CATEGORIES=	x11-toolkits
 
@@ -16,6 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 
 USES=		gnome jpeg localbase:ldflags pkgconfig waf xorg
+USE_CXXSTD=	c++14
 USE_GNOME=	cairo
 USE_XORG=	x11 xft
 USE_LDCONFIG=	yes

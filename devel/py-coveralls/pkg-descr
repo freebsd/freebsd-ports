@@ -1,0 +1,7 @@
+coveralls.io is a service for publishing your coverage stats online.
+This package provides seamless integration with coverage.py (and thus
+pytest, nosetests, etc...) in your Python projects:
+
+> pip install coveralls
+> coverage run --source=mypkg -m pytest tests/
+> coveralls

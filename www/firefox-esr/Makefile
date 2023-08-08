@@ -1,5 +1,6 @@
 PORTNAME=	firefox
-DISTVERSION=	102.3.0
+DISTVERSION=	102.14.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
@@ -47,7 +48,7 @@ MOZ_OPTIONS=	--enable-application=browser \
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
-MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
+MOZ_OPTIONS+=	--without-wasm-sandboxed-libraries
 .else
 BUILD_DEPENDS+= ${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \

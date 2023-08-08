@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=4.0.0:databases/rubygem-activemodel61 \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

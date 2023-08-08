@@ -16,16 +16,19 @@ LICENSE_FILE=	${WRKRSC}/COPYRIGHT
 BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-GNU_CONFIGURE=	yes
 USES=		iconv pkgconfig ssl
+USE_RC_SUBR=	ldmud
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--bindir=${PREFIX}/sbin \
 		--enable-use-pcre \
 		--enable-use-tls=ssl
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-ALL_TARGET=	ldmud
-USE_RC_SUBR=	ldmud
+
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	ldmud
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USERS=		mud
 GROUPS=		mud
@@ -39,33 +42,30 @@ LPMUD_DESC=	Install default mudlib (LP-245)
 IPV6_CONFIGURE_ENABLE=	use-ipv6
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	use-mysql
+MYSQL_LDFLAGS=	-L${LOCALBASE}/lib/mysql
+MYSQL_VARS=	IGNORE_WITH_MYSQL=80
 PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ENABLE=	use-pgsql
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ENABLE=use-sqlite
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/log/${PORTNAME} \
 		${STAGEDIR}/var/run/${PORTNAME}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ldmud
-.if ${PORT_OPTIONS:MLPMUD}
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
-		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
-.else
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
-		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
 		| ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}
 	@${RM} ${STAGEDIR}${DOCSDIR}/Makefile
-.endif
+
+post-install-LPMUD-on:
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
+		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
+
+post-install-LPMUD-off:
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
+		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

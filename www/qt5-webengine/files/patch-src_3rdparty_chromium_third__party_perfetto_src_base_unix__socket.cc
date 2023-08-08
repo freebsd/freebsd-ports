@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
 @@ -37,7 +37,7 @@
  #include "perfetto/ext/base/string_utils.h"
  #include "perfetto/ext/base/utils.h"
  
--#if PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX)
-+#if PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) || PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) || PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
  #include <sys/ucred.h>
  #endif
  
-@@ -601,7 +601,7 @@ void UnixSocket::ReadPeerCredentials() {
+@@ -625,7 +625,7 @@ void UnixSocket::ReadPeerCredentials() {
    if (sock_raw_.family() != SockFamily::kUnix)
      return;
  

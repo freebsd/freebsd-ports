@@ -11,9 +11,11 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	miguelmarco
 
-USES=		autoreconf libtool
+USES=		autoreconf  compiler:c++11-lang libtool
 
+CXXFLAGS+=	-std=c++11
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

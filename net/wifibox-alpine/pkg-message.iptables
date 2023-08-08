@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+
+The package was built with components that need to be aligned with the
+network packet filtering in order to make them work properly.  Please
+consult the wifibox-alpine(5) manual page to learn about the details.
+
+EOM
+}
+]

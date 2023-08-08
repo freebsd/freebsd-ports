@@ -1,7 +1,7 @@
 PORTNAME=	vecrec
 PORTVERSION=	0.3.0
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/vecrec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

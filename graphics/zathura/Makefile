@@ -1,5 +1,6 @@
 PORTNAME=	zathura
-DISTVERSION=	0.4.9
+DISTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	https://git.pwmt.org/pwmt/${PORTNAME}/-/archive/${DISTVERSION}/
 
@@ -16,9 +17,10 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libgirara-gtk3.so:x11-toolkits/girara \
 		libsynctex.so:devel/tex-synctex
 
-USES=		compiler:c11 gettext-tools:build gnome meson ninja pkgconfig \
-		python:3.6+
-USE_GNOME=	glib20 gtk30 gdkpixbuf2
+USES=		compiler:c11 desktop-file-utils gettext-tools:build gnome meson \
+		ninja pkgconfig python
+USE_GNOME=	gdkpixbuf2 glib20 gtk30
+MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled
 
 OPTIONS_DEFINE=		SQLITE SYNCTEX
 OPTIONS_DEFAULT=	SQLITE SYNCTEX

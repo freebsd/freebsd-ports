@@ -1,4 +1,4 @@
---- sandbox/policy/mojom/sandbox.mojom.orig	2022-04-21 18:48:31 UTC
+--- sandbox/policy/mojom/sandbox.mojom.orig	2023-07-16 15:47:57 UTC
 +++ sandbox/policy/mojom/sandbox.mojom
 @@ -72,6 +72,12 @@ enum Sandbox {
    [EnableIf=is_fuchsia]

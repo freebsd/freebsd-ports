@@ -12,6 +12,9 @@ MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication clients
 WWW=			https://web.mit.edu/kerberos/
 
+DEPRECATED=		Desupported by upstream, uses old ciphers
+EXPIRATION_DATE=	2023-10-01
+
 BUILD_DEPENDS=		krb5-config:security/krb5
 
 CONFLICTS=		heimdal srp bsdftpd-ssl

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-actionpack52>=${PORTVERSION}:www/rubygem-actionpack52 \
 		rubygem-websocket-driver>=0.6.1:www/rubygem-websocket-driver
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

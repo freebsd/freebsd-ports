@@ -1,4 +1,4 @@
---- include/config.h.orig	2022-05-26 12:31:08 UTC
+--- include/config.h.orig	2023-05-16 21:33:58 UTC
 +++ include/config.h
 @@ -312,11 +312,11 @@
  
@@ -26,15 +26,24 @@
  
  /*
 @@ -662,7 +662,7 @@ typedef unsigned char uchar;
- #ifdef DUMPLOG
  
+ /* TEMPORARY - MAKE UNCONDITIONAL BEFORE RELEASE */
+ /* undef this to check if sandbox breaks something */
+-#define NHL_SANDBOX
++/* #define NHL_SANDBOX */
+ 
+ /* End of Section 4 */
+ 
+@@ -691,7 +691,7 @@ typedef unsigned char uchar;
+ #define DUMPLOG_MSG_COUNT   50
+ #endif /* DUMPLOG_MSG_COUNT */
  #ifndef DUMPLOG_FILE
 -#define DUMPLOG_FILE        "/tmp/xnethack.%n.%d.log"
 +#define DUMPLOG_FILE        "/tmp/xnethack.%v.%u.%n.%D.log"
  /* DUMPLOG_FILE allows following placeholders:
     %% literal '%'
     %v version (eg. "3.6.3-0")
-@@ -697,7 +697,7 @@ typedef unsigned char uchar;
+@@ -720,7 +720,7 @@ typedef unsigned char uchar;
  
  /* TEMPORARY - MAKE UNCONDITIONAL BEFORE RELEASE */
  /* undef this to check if sandbox breaks something */

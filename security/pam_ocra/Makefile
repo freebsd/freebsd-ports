@@ -1,5 +1,5 @@
 PORTNAME=	pam_ocra
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	security
 
 MAINTAINER=	sg2342@googlemail.com
@@ -21,5 +21,11 @@ PLIST_FILES=	lib/pam_ocra.so \
 		sbin/ocra_tool \
 		man/man8/pam_ocra.8.gz \
 		man/man8/ocra_tool.8.gz
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=cast-align
+.endif
 
 .include <bsd.port.mk>

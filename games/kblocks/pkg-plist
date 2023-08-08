@@ -37,6 +37,7 @@ share/locale/fi/LC_MESSAGES/kblocks.mo
 share/locale/fr/LC_MESSAGES/kblocks.mo
 share/locale/ga/LC_MESSAGES/kblocks.mo
 share/locale/gl/LC_MESSAGES/kblocks.mo
+share/locale/gu/LC_MESSAGES/kblocks.mo
 share/locale/hi/LC_MESSAGES/kblocks.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
 share/locale/hu/LC_MESSAGES/kblocks.mo
@@ -44,11 +45,13 @@ share/locale/id/LC_MESSAGES/kblocks.mo
 share/locale/is/LC_MESSAGES/kblocks.mo
 share/locale/it/LC_MESSAGES/kblocks.mo
 share/locale/ja/LC_MESSAGES/kblocks.mo
+share/locale/ka/LC_MESSAGES/kblocks.mo
 share/locale/kk/LC_MESSAGES/kblocks.mo
 share/locale/km/LC_MESSAGES/kblocks.mo
 share/locale/ko/LC_MESSAGES/kblocks.mo
 share/locale/lt/LC_MESSAGES/kblocks.mo
 share/locale/lv/LC_MESSAGES/kblocks.mo
+share/locale/mai/LC_MESSAGES/kblocks.mo
 share/locale/ml/LC_MESSAGES/kblocks.mo
 share/locale/mr/LC_MESSAGES/kblocks.mo
 share/locale/nb/LC_MESSAGES/kblocks.mo
@@ -64,7 +67,11 @@ share/locale/sk/LC_MESSAGES/kblocks.mo
 share/locale/sl/LC_MESSAGES/kblocks.mo
 share/locale/sq/LC_MESSAGES/kblocks.mo
 share/locale/sr/LC_MESSAGES/kblocks.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kblocks.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kblocks.mo
+share/locale/sr@latin/LC_MESSAGES/kblocks.mo
 share/locale/sv/LC_MESSAGES/kblocks.mo
+share/locale/th/LC_MESSAGES/kblocks.mo
 share/locale/tr/LC_MESSAGES/kblocks.mo
 share/locale/ug/LC_MESSAGES/kblocks.mo
 share/locale/uk/LC_MESSAGES/kblocks.mo

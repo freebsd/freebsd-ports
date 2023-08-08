@@ -1,9 +1,8 @@
 PORTNAME=	ocp
-PORTVERSION=	0.2.99
-PORTREVISION=	1
+PORTVERSION=	0.2.106
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/mywave82/opencubicplayer/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://stian.cubic.org/ocp/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Legendary Open Cubic Player
@@ -15,20 +14,23 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
 BUILD_DEPENDS=	xa65:devel/xa65
-LIB_DEPENDS=	libcjson.so:devel/libcjson \
+LIB_DEPENDS=	libancient.so:archivers/ancient \
+		libcjson.so:devel/libcjson \
 		libdiscid.so:audio/libdiscid \
 		libid3tag.so:audio/libid3tag \
 		libmad.so:audio/libmad \
 		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c11 dos2unix gmake gnome iconv localbase:ldflags \
-		makeinfo ncurses pkgconfig tar:bz2
+USES=		compiler:c11 dos2unix gmake gnome iconv jpeg localbase:ldflags \
+		makeinfo ncurses pkgconfig shared-mime-info tar:xz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dir-suffix="" \
-		--without-sdl
+		--without-sdl \
+		--without-update-desktop-database
 CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared" \
 		XA=${PREFIX}/bin/xa65
 
@@ -63,10 +65,9 @@ OSS_CONFIGURE_WITH=	oss
 
 SDL_IMPLIES=		X11
 SDL_BUILD_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
-SDL_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libpng.so:graphics/png
+SDL_LIB_DEPENDS=	libfreetype.so:print/freetype2
 SDL_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
-SDL_USES=		desktop-file-utils jpeg sdl
+SDL_USES=		desktop-file-utils sdl
 SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_WITH=	sdl2 \
 			unifontdir=${LOCALBASE}/share/fonts/gnu-unifont-ttf
@@ -74,12 +75,12 @@ SDL_PLIST_SUB=		DESKTOP=''
 SDL_PLIST_SUB_OFF=	DESKTOP='@comment '
 
 X11_BUILD_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
-X11_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-			libpng.so:graphics/png
+X11_LIB_DEPENDS=	libfreetype.so:print/freetype2
 X11_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont-ttf/unifont.ttf:x11-fonts/gnu-unifont-ttf
-X11_USES=		desktop-file-utils jpeg xorg
+X11_USES=		desktop-file-utils xorg
 X11_USE=		XORG=x11,xext,xpm,xxf86dga,xxf86vm
-X11_CONFIGURE_WITH=	unifontdir=${LOCALBASE}/share/fonts/gnu-unifont-ttf x11
+X11_CONFIGURE_WITH=	unifontdir-ttf=${LOCALBASE}/share/fonts/gnu-unifont-ttf \
+			x11
 X11_PLIST_SUB=		DESKTOP='' \
 			XORG=''
 X11_PLIST_SUB_OFF=	DESKTOP='@comment ' \
@@ -87,15 +88,15 @@ X11_PLIST_SUB_OFF=	DESKTOP='@comment ' \
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
-post-patch-SDL-off:
-	@${REINPLACE_CMD} -E '/(LIBJPEG|LIBPNG_LIBS)/d' ${WRKSRC}/Rules.make.in
+.include <bsd.port.pre.mk>
 
-post-patch-X11-off:
-	@${REINPLACE_CMD} -E '/(LIBJPEG|LIBPNG_LIBS)/d' ${WRKSRC}/Rules.make.in
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/autoload/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

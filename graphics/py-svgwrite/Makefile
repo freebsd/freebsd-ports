@@ -1,7 +1,7 @@
 PORTNAME=	svgwrite
 PORTVERSION=	1.4.3
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	george@m5p.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -21,11 +21,13 @@ include/mp4v2/sample.h
 include/mp4v2/streaming.h
 include/mp4v2/track.h
 include/mp4v2/track_prop.h
-lib/libmp4v2.a
 lib/libmp4v2.so
 lib/libmp4v2.so.2
-lib/libmp4v2.so.2.0.0
+lib/libmp4v2.so.2.1.3
+libdata/pkgconfig/mp4v2.pc
 man/man1/mp4art.1.gz
+man/man1/mp4chaps.1.gz
 man/man1/mp4file.1.gz
 man/man1/mp4subtitle.1.gz
+man/man1/mp4tags.1.gz
 man/man1/mp4track.1.gz

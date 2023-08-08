@@ -1,8 +1,8 @@
---- src/openssl/app.c.orig	2022-05-03 23:36:17.000000000 +0900
-+++ src/openssl/app.c	2022-05-07 05:18:46.065103000 +0900
-@@ -43,6 +43,29 @@
+--- src/openssl/app.c.orig	2022-11-28 21:40:24 UTC
++++ src/openssl/app.c
+@@ -46,6 +46,29 @@
  
- #include "openssl_compat.h"
+ #include "../cast_helpers.h"
  
 +#if defined(XMLSEC_OPENSSL_API_110) && defined(LIBRESSL_VERSION_NUMBER)
 +static UI_METHOD *
@@ -27,10 +27,10 @@
 +}
 +#endif
 +
- static int      xmlSecOpenSSLAppLoadRANDFile            (const char *filename);
- static int      xmlSecOpenSSLAppSaveRANDFile            (const char *filename);
  static int      xmlSecOpenSSLDefaultPasswordCallback    (char *buf,
-@@ -415,6 +438,11 @@
+                                                          int bufsiz,
+                                                          int verify,
+@@ -462,6 +485,11 @@ xmlSecOpenSSLAppEngineKeyLoad(const char *engineName, 
      EVP_PKEY* pKey = NULL;
      int engineInit = 0;
      int ret;
@@ -40,9 +40,9 @@
 +    const UI_METHOD *ui_null = ui_null_create();
 +#endif
  
- #ifndef OPENSSL_NO_ENGINE
      xmlSecAssert2(engineName != NULL, NULL);
-@@ -437,7 +465,7 @@
+     xmlSecAssert2(engineKeyId != NULL, NULL);
+@@ -487,7 +515,7 @@ xmlSecOpenSSLAppEngineKeyLoad(const char *engineName, 
          }
      }
  
@@ -51,7 +51,7 @@
          xmlSecOpenSSLError("ENGINE_ctrl_cmd_string(SET_USER_INTERFACE)", NULL);
          goto done;
      }
-@@ -453,7 +481,7 @@
+@@ -503,7 +531,7 @@ xmlSecOpenSSLAppEngineKeyLoad(const char *engineName, 
  
      /* load private key */
      pKey = ENGINE_load_private_key(engine, engineKeyId,
@@ -60,7 +60,7 @@
                                     NULL);
      if(pKey == NULL) {
          xmlSecOpenSSLError("ENGINE_load_private_key", NULL);
-@@ -484,6 +512,7 @@
+@@ -534,6 +562,7 @@ done:
      data = NULL;
  
  done:

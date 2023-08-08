@@ -8,8 +8,6 @@ bin/vss_strip
 etc/burp/clientconfdir/incexc/example
 @sample etc/burp/clientconfdir/testclient.sample
 man/man8/bedup.8.gz
-man/man8/bsigs.8.gz
-man/man8/bsparse.8.gz
 man/man8/burp.8.gz
 man/man8/burp_ca.8.gz
 man/man8/vss_strip.8.gz

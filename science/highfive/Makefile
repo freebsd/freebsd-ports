@@ -1,6 +1,6 @@
 PORTNAME=	highfive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.7.1
 PORTREVISION=	1
 CATEGORIES=	science devel
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${LOCALBASE}/include/boost/multi_array.hpp:devel/boost-libs \
 		${LOCALBASE}/include/xtensor/xtensor.hpp:math/xtensor
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake eigen:3,run
 USE_GITHUB=	yes
@@ -26,7 +26,7 @@ CMAKE_OFF=	HIGHFIVE_USE_BOOST HIGHFIVE_UNIT_TESTS HIGHFIVE_EXAMPLES
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-do-test:
+do-test: # one test fails, see https://github.com/BlueBrain/HighFive/issues/634
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DHIGHFIVE_UNIT_TESTS:BOOL=ON -DHIGHFIVE_USE_BOOST=ON -DHIGHFIVE_USE_EIGEN:BOOL=ON -DHIGHFIVE_USE_XTENSOR=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \

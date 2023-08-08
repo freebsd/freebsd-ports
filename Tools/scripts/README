@@ -42,8 +42,6 @@ splitpatch.pl - A small script to convert multi-file patches to several
 tindex - script used to build INDEXes for supported FreeBSD branches, which
          are the source of the 'make fetchindex' INDEXes, and the build
          failure reports on ports@FreeBSD.org
-update-patches - generates updated patches.
-
 update_crates - script used to generate an updated Makefile using make cargo-crates
                 output
 
@@ -118,18 +116,3 @@ portsearch - A utility for searching the ports tree.
      All searches are case-insensitive
 
 See the file README.portsearch for further information.
-
-----------------------------------------------------------------------
-
-The update-patches script looks for files in $WRKSRC (if unset, this defaults
-to the work/ subdirectory of the current directory) which have a matching .orig
-file.  It also looks in $PATCHDIR (if unset, this defaults to the files/
-subdirectory of the current directory) for patches that correspond to the first
-set.  If the changes in an existing patch do not reflect the changes in the
-files in $WRKSRC, the script renames the existing patch by adding the suffix
-.orig and generates a new patch in its place.  If no patch existed, the new one
-is created with a name that contains the path and filename of the file being
-patched, except that "/" separators and "." characters are replaced by
-underscores:  for example, a new patch to $WRKSRC/foo/bar.c would be created as
-$PATCHDIR/patch-foo_bar_c.  If you save a .orig backup of a file, but don't
-change the file, update-patches will generate an empty patch.

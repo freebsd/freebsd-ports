@@ -10,10 +10,10 @@ WWW=		http://jue.li/crux/ck4up/
 
 RUN_DEPENDS=	rubygem-gdbm>=2.0.0,2:databases/rubygem-gdbm
 
+USES=	ruby:run
+
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_RUBY=	yes
-RUBY_NO_BUILD_DEPENDS=	yes
 
 PORTEXAMPLES=	ck4up.conf
 

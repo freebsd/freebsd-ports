@@ -1,10 +1,10 @@
 PORTNAME=	smtube
 DISTVERSION=	21.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/smtube/SMTube/${PORTVERSION}/
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	SMPlayer YouTube browser
 WWW=		https://www.smtube.org/
 

@@ -17,9 +17,7 @@ OPTIONS_DEFINE=	BDB4 MYSQL PGSQL DOCS
 BDB4_DESC=	bdb4 support for faster flat file indexing
 
 NO_ARCH=	yes
-USES=		shebangfix
-USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
+USES=		ruby:setup shebangfix
 SHEBANG_FILES=	sample/biofetch.rb
 ruby_OLD_CMD=	/usr/proj/bioruby/bin/ruby
 

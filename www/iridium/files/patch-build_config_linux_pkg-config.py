@@ -1,6 +1,6 @@
---- build/config/linux/pkg-config.py.orig	2022-03-28 18:11:04 UTC
+--- build/config/linux/pkg-config.py.orig	2023-03-13 07:33:08 UTC
 +++ build/config/linux/pkg-config.py
-@@ -109,7 +109,7 @@ def main():
+@@ -108,7 +108,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate
    # success. This allows us to "kind of emulate" a Linux build from other
    # platforms.

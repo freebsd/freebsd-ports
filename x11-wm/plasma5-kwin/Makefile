@@ -1,6 +1,5 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,10 +22,14 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libxcvt.so:x11/libxcvt
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
-		xwayland-devel>0:x11-servers/xwayland-devel
-RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
+		xwayland-devel>0:x11-servers/xwayland-devel \
+		wayland-protocols>0:graphics/wayland-protocols \
+		hwdata>0:misc/hwdata
+RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel \
+		hwdata>0:misc/hwdata
 
 CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
@@ -35,10 +38,10 @@ USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig \
 USE_GL=		egl gbm
 USE_GNOME=	glib20
 USE_KDE=	activities attica auth breeze codecs completion config \
-		configwidgets coreaddons crash dbusaddons decoration globalaccel i18n \
-		iconthemes idletime init jobwidgets kcmutils kdeclarative kio \
-		kscreenlocker kwayland-integration kwayland-server newstuff \
-		notifications package plasma-framework \
+		configwidgets coreaddons crash dbusaddons decoration \
+		globalaccel i18n iconthemes idletime init itemviews jobwidgets \
+		kcmutils kdeclarative kio kscreenlocker kwayland-integration \
+		newstuff notifications package plasma-framework \
 		plasma-wayland-protocols runner service sonnet textwidgets \
 		wayland widgetsaddons windowsystem xmlgui \
 		ecm:build
@@ -49,7 +52,16 @@ USE_QT=		concurrent core dbus declarative gui network \
 		quickcontrols2:run virtualkeyboard:run
 USE_XORG=	ice sm x11 xcb xext xi
 SHEBANG_FILES=	kconf_update/*.py \
-		kconf_update/*.pl
+		kconf_update/*.pl \
+		src/effects/strip-effect-metadata.py
+
+# A (hopefully) temporary workaround for
+# https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/2026
+post-patch:
+	${FIND} ${WRKSRC}/src/effects -name metadata.json -exec \
+		${REINPLACE_CMD} -E \
+			's|https://files.kde.org/plasma/kwin/effect-videos/([a-z_]+)\.ogv|https://arrowd.name/kwin-effect-videos/\1\.webm|' \
+			{} \;
 
 OPTIONS_DEFINE=		DOCS LIBSEAT
 OPTIONS_DEFAULT=	DOCS LIBSEAT
@@ -60,7 +72,7 @@ LIBSEAT_LIB_DEPENDS=	libseat.so:sysutils/seatd
 .include <bsd.port.pre.mk>
 
 .if !${ABI:Mpurecap}
-USES+=		gnome python:3.7+,run
+USES+=		gnome python:run
 USE_QT+=	multimedia script
 .endif
 

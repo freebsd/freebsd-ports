@@ -1,3 +1,4 @@
+bin/av1encode
 bin/avcenc
 bin/avcstreamoutdemo
 bin/h264encode
@@ -9,13 +10,16 @@ bin/mpeg2vldemo
 %%X11%%bin/putsurface
 %%WAYLAND%%bin/putsurface_wayland
 bin/sfcsample
+bin/vacopy
 bin/vainfo
 bin/vavpp
 bin/vp8enc
 bin/vp9enc
+bin/vpp3dlut
 bin/vppblending
 bin/vppchromasitting
 bin/vppdenoise
+bin/vpphdr_tm
 bin/vppscaling_csc
 bin/vppscaling_n_out_usrptr
 bin/vppsharpness

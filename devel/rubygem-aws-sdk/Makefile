@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-aws-sdk-resources>=3<4:devel/rubygem-aws-sdk-resources
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

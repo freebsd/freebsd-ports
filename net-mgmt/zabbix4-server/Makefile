@@ -1,12 +1,12 @@
 PORTNAME=	zabbix4
-PORTVERSION=	4.0.30
+PORTVERSION=	4.0.47
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
 PKGNAMESUFFIX?=	-server
 DISTNAME=	zabbix-${PORTVERSION}
 
-MAINTAINER=	pg@pakhom.spb.ru
+MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/^-//}) LTS
 WWW=		https://www.zabbix.com/
 
@@ -20,7 +20,6 @@ CONFLICTS_INSTALL=	zabbix[0-35-9]${PKGNAMESUFFIX} \
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
-.if ${ZABBIX_BUILD} != "frontend" # frontend only needs the version/distribution settings
 .if ${ZABBIX_BUILD} != "agent"
 CONFIGURE_ARGS+=	--cache-file=${WRKSRC}/config.cache \
 			--with-libevent=${LOCALBASE}
@@ -97,7 +96,7 @@ SQLITE_USES+=		sqlite:3
 ORACLE_CONFIGURE_WITH=	oracle
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 IPMI_CONFIGURE_WITH=	openipmi
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
@@ -206,10 +205,6 @@ post-install:
 .if ${ZABBIX_BUILD} == "agent"
 	${MV} ${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf \
 		${STAGEDIR}${ETCDIR}/zabbix_${ZABBIX_BUILD}d.conf.sample
-.endif
-
-.else # frontend
-.include <bsd.port.pre.mk>
 .endif
 
 .include <bsd.port.post.mk>

@@ -13,7 +13,9 @@ include/cinnamon-desktop/libcinnamon-desktop/gnome-xkb-info.h
 include/cinnamon-desktop/libcvc/gvc-channel-map.h
 include/cinnamon-desktop/libcvc/gvc-mixer-card.h
 include/cinnamon-desktop/libcvc/gvc-mixer-control.h
+include/cinnamon-desktop/libcvc/gvc-mixer-event-role.h
 include/cinnamon-desktop/libcvc/gvc-mixer-sink-input.h
+include/cinnamon-desktop/libcvc/gvc-mixer-sink.h
 include/cinnamon-desktop/libcvc/gvc-mixer-source-output.h
 include/cinnamon-desktop/libcvc/gvc-mixer-source.h
 include/cinnamon-desktop/libcvc/gvc-mixer-stream.h

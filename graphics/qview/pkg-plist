@@ -1,0 +1,10 @@
+bin/qview
+share/applications/com.interversehq.qView.desktop
+share/icons/hicolor/16x16/apps/com.interversehq.qView.png
+share/icons/hicolor/32x32/apps/com.interversehq.qView.png
+share/icons/hicolor/64x64/apps/com.interversehq.qView.png
+share/icons/hicolor/128x128/apps/com.interversehq.qView.png
+share/icons/hicolor/256x256/apps/com.interversehq.qView.png
+share/icons/hicolor/scalable/apps/com.interversehq.qView.svg
+share/icons/hicolor/symbolic/apps/com.interversehq.qView-symbolic.svg
+share/metainfo/com.interversehq.qView.appdata.xml

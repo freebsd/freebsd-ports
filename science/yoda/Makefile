@@ -1,5 +1,5 @@
 PORTNAME=	yoda
-DISTVERSION=	1.9.6
+DISTVERSION=	1.9.8
 CATEGORIES=	science
 MASTER_SITES=	https://yoda.hepforge.org/downloads/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
@@ -15,7 +15,7 @@ TEST_DEPENDS=	bash:shells/bash \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gmake libtool python:test shebangfix
+USES=		compiler:c++11-lang gettext-runtime gmake libtool python:test shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=		PYTHON
 OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
-PYTHON_USES=			python
+PYTHON_USES=			python:run
 PYTHON_USE=			PYTHON=cython
 PYTHON_CONFIGURE_ENABLE=	pyext
 PYTHON_MAKE_ENV=		PYTHON_VERSION=${PYTHON_VER} PYTHON=${PYTHON_CMD}

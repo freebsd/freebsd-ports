@@ -1,0 +1,24 @@
+--- django_bleach/tests/test_forms.py.orig	2022-10-12 00:33:48 UTC
++++ django_bleach/tests/test_forms.py
+@@ -147,7 +147,7 @@ class TestCustomWidget(TestCase):
+             no_tags = BleachField(
+                 max_length=100,
+                 strip_tags=True,
+-                allowed_tags=[]
++                allowed_tags={}
+             )
+             no_strip = BleachField(
+                 max_length=100,
+--- testproject/models.py.orig	2022-10-12 00:33:48 UTC
++++ testproject/models.py
+@@ -10,8 +10,8 @@ class Person(models.Model):
+     biography = BleachField(
+         max_length=100,
+         verbose_name='Person biography',
+-        allowed_tags=['p', 'a', 'li', 'ul', 'strong'],
++        allowed_tags={'p', 'a', 'li', 'ul', 'strong'},
+         allowed_attributes=['class', 'href', 'style'],
+-        allowed_protocols=['http', 'https'],
++        allowed_protocols={'http', 'https'},
+         css_sanitizer=CSSSanitizer(allowed_css_properties=['color', 'background-color'])
+     )

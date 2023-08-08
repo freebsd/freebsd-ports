@@ -1,0 +1,2 @@
+Command line utility to inspect images and repositories directly on Docker
+registries without the need to pull them.

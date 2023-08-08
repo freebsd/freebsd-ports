@@ -1,0 +1,11 @@
+--- plugins/response/data/abilities/setup/f313a0d7-2327-4f69-8da4-a6efd6135121.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/setup/f313a0d7-2327-4f69-8da4-a6efd6135121.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           output="";

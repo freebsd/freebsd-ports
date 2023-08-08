@@ -1,6 +1,6 @@
 PORTNAME=	zaproxy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.1
+DISTVERSION=	2.13.0
 CATEGORIES=	security java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -8,8 +8,6 @@ COMMENT=	The OWASP zed attack proxy
 WWW=		https://www.zaproxy.org/
 
 LICENSE=	APACHE20
-
-BROKEN=		does not build: could not resolve plugin artifact 'org.gradle.kotlin.kotlin-dsl:...'
 
 BUILD_DEPENDS=	gradle:devel/gradle
 
@@ -37,11 +35,13 @@ DESKTOP_ENTRIES="ZAP" "OWASP ZAP" "${PREFIX}/share/pixmaps/zaproxy.png" "${PORTN
 DEV_UPDATE_MODE=	no
 
 DEPS_CACHE_DIR=	${WRKDIR}
+EXCLUDE_TASK=	--exclude-task :zap:downloadMainAddOns
 
 MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
 .if (${DEV_UPDATE_MODE} == "yes")
+EXCLUDE_TASK=	#
 post-build:
 	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX} gradle-${PORTNAME}
 	@cd ${WRKSRC}/zap/build && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-plugins${EXTRACT_SUFX} mainAddOns
@@ -57,7 +57,6 @@ post-extract: # need a separate extract step because the cache is in /tmp, and n
 	@cd ${DEPS_CACHE_DIR} && ${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}
 
 post-patch:
-	@${ECHO} "" > ${WRKSRC}/zap/src/main/add-ons.txt
 	@${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
 		-e 's|%%JAVA_HOME%%|${JAVA_HOME}|g' \
 		-e 's|%%VERSION%%|${DISTVERSION}|g' ${WRKSRC}/zap/src/main/dist/zap.sh
@@ -66,7 +65,7 @@ post-patch:
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
-		${GRADLE_ARGS} --build-cache :zap:distCore
+		${GRADLE_ARGS} --build-cache :zap:distCore ${EXCLUDE_TASK}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zap/build/distFiles/zap.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

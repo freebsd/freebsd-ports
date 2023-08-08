@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	rubygem-hammer_cli_foreman>=2.0.0<4.0.0:sysutils/rubygem-hammer_cli_foreman
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

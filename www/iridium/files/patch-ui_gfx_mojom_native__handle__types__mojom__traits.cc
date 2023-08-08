@@ -1,11 +1,11 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2023-01-17 19:19:00 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -8,11 +8,11 @@
  
  namespace mojo {
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_BSD)
  mojo::PlatformHandle StructTraits<
      gfx::mojom::NativePixmapPlaneDataView,
      gfx::NativePixmapPlane>::buffer_handle(gfx::NativePixmapPlane& plane) {
@@ -23,12 +23,12 @@
    if (!handle.is_fd())
      return false;
    out->fd = handle.TakeFD();
-@@ -45,7 +45,7 @@ bool StructTraits<
+@@ -54,7 +54,7 @@ bool StructTraits<
      gfx::mojom::NativePixmapHandleDataView,
      gfx::NativePixmapHandle>::Read(gfx::mojom::NativePixmapHandleDataView data,
                                     gfx::NativePixmapHandle* out) {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    out->modifier = data.modifier();
- #endif
- 
+   out->supports_zero_copy_webgpu_import =
+       data.supports_zero_copy_webgpu_import();

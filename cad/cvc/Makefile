@@ -1,6 +1,6 @@
 PORTNAME=	cvc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.5
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ BUILD_DEPENDS=	pyinstaller:devel/py-pyinstaller@${PY_FLAVOR} \
 		bash:shells/bash
 
 USES=		autoreconf bison gettext-runtime gettext-tools gmake python readline shebangfix
-USE_GCC=	yes # clang fails, see https://github.com/d-m-bailey/cvc/issues/239
+USE_GCC=	11 # clang fails, see https://github.com/d-m-bailey/cvc/issues/239
+		   # GCC 12 fails, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266189
 
 SHEBANG_FILES=	scripts/calibre_cvc scripts/clean_cvc_log scripts/expand_cells.py
 
@@ -24,9 +25,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	d-m-bailey
 
 MAKE_ARGS=	INTLLIBS=-lintl
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
 
 .include <bsd.port.mk>

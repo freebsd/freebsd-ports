@@ -1,5 +1,5 @@
 PORTNAME=	connection_pool
-PORTVERSION=	2.2.5
+PORTVERSION=	2.4.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

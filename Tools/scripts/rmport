@@ -4,7 +4,7 @@
 #
 # Copyright 2006-2007 Vasil Dimov
 # Copyright 2012-2018 Chris Rees
-# Copyright 2016-2021 René Ladan
+# Copyright 2016-2023 René Ladan
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -316,7 +316,7 @@ commit()
 	answer=$(ask "Do you want to tweak the commit message")
 	if [ "${answer}" = "y" ] ; then
 		${GIT} pull --ff-only --rebase 2>&1
-		${GIT} commit 2>&1 # modify final commit message
+		${GIT} commit --amend # modify final commit message
 		echo "All done, check the result and push when everything is OK."
 	fi
 }
@@ -352,6 +352,8 @@ usage()
 
 # main
 
+trap cleanup 1 2 3 15
+
 if [ ! -r ${INDEX} ] ; then
 	echo "${INDEX} not readable, exiting" >&2
 	exit 66
@@ -366,7 +368,7 @@ else
 	cd "${git_dir}/.." || exit 1
 fi
 if ! ${GIT} diff --exit-code remotes/origin/main ; then
-	echo "you have local commits, exiting" >&2
+	echo "you have local commits or are behind origin/main, exiting" >&2
 	exit 65
 fi
 
@@ -410,7 +412,18 @@ fi
 gitlog=$(mktemp -t gitlog)
 gitrmlist=$(mktemp -t gitrmlist)
 
-echo "cleanup: Remove expired ports:" > ${gitlog}
+if [ $# -eq 1 ] ; then
+	topic="${1%/}"
+	plural=""
+	colon=""
+else
+	log "/!\\ Removing multiple ports at once, commit topic will be generic /!\\"
+	topic="cleanup"
+	plural="s"
+	colon=":"
+fi
+
+echo "${topic}: Remove expired port${plural}${colon}" > ${gitlog}
 echo "" >> ${gitlog}
 
 for catport in $* ; do
@@ -464,5 +477,3 @@ done
 commit
 
 cleanup
-
-# EOF

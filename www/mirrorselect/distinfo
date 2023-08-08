@@ -1,4 +1,4 @@
-TIMESTAMP = 1612841638
+TIMESTAMP = 1680002020
 SHA256 (DragonFlyBSD-mirrorselect-v0.9.0_GH0.tar.gz) = cf55425e133423c07a9caee7943068b50e079bb94ffe4845217664d05979d6d6
 SIZE (DragonFlyBSD-mirrorselect-v0.9.0_GH0.tar.gz) = 34353
 SHA256 (fsnotify-fsnotify-v1.4.7_GH0.tar.gz) = b7530d973d0ab0e58ad8ce1b9a4b963d6f57b3d72f2f9e13d49846976361b1cd
@@ -19,8 +19,8 @@ SHA256 (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 9632d0760e9a07c414f2b2b6cd453d6225e42e
 SIZE (go-yaml-yaml-v2.2.8_GH0.tar.gz) = 72732
 SHA256 (golang-protobuf-v1.3.3_GH0.tar.gz) = b3a1440808d6ed4dc0d194c482de029f6c116b1de7f7a3bf927324d965ff3853
 SIZE (golang-protobuf-v1.3.3_GH0.tar.gz) = 315377
-SHA256 (golang-sys-b77594299b42_GH0.tar.gz) = 484bf05a828f18a9ea48f32b64322d6cc8e716b5cbfd455be72f445db8495b82
-SIZE (golang-sys-b77594299b42_GH0.tar.gz) = 1534631
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (hashicorp-hcl-v1.0.0_GH0.tar.gz) = 50632428210503070fd2fde748c88b7414bf84a6a0eadebf9d8e596a033bead2

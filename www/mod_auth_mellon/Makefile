@@ -1,5 +1,5 @@
 PORTNAME=	mod_auth_mellon
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTVERSIONPREFIX=	v
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
     		liblasso.so:security/lasso
 
-USES=		apache:2.2+ autoreconf cpe gettext-runtime gnome libtool \
+USES=		apache autoreconf cpe gettext-runtime gnome libtool \
 		pkgconfig ssl
 USE_GNOME=	glib20
 USE_GITHUB=	yes

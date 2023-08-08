@@ -1,5 +1,5 @@
 PORTNAME=	stimulus-rails
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-railties70>=6.0.0:www/rubygem-railties70
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

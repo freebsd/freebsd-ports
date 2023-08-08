@@ -1,0 +1,220 @@
+PORTNAME=	pqrs
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.1
+PORTREVISION=	2
+CATEGORIES=	misc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command line tool for inspecting Apache Parquet files
+WWW=		https://github.com/manojkarthick/pqrs
+
+LICENSE=	APACHE20 MIT
+LICENSE_COMB=	dual
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
+
+BROKEN_i386=	ld: error: undefined symbol: __atomic_load
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+USES=		cargo pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	manojkarthick
+
+CARGO_CRATES=	adler-1.0.2 \
+		ahash-0.8.3 \
+		aho-corasick-1.0.1 \
+		alloc-no-stdlib-2.0.4 \
+		alloc-stdlib-0.2.2 \
+		android_system_properties-0.1.5 \
+		anstream-0.3.2 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		arrow-40.0.0 \
+		arrow-arith-40.0.0 \
+		arrow-array-40.0.0 \
+		arrow-buffer-40.0.0 \
+		arrow-cast-40.0.0 \
+		arrow-csv-40.0.0 \
+		arrow-data-40.0.0 \
+		arrow-ipc-40.0.0 \
+		arrow-json-40.0.0 \
+		arrow-ord-40.0.0 \
+		arrow-row-40.0.0 \
+		arrow-schema-40.0.0 \
+		arrow-select-40.0.0 \
+		arrow-string-40.0.0 \
+		assert_cmd-2.0.11 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		base64-0.21.1 \
+		bitflags-1.3.2 \
+		brotli-3.3.4 \
+		brotli-decompressor-2.3.4 \
+		bstr-1.5.0 \
+		bumpalo-3.13.0 \
+		byteorder-1.4.3 \
+		bytes-1.4.0 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		chrono-0.4.24 \
+		chrono-tz-0.8.2 \
+		chrono-tz-build-0.1.0 \
+		clap-4.3.0 \
+		clap_builder-4.3.0 \
+		clap_derive-4.3.0 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
+		const-random-0.1.15 \
+		const-random-macro-0.1.15 \
+		core-foundation-sys-0.8.4 \
+		crc32fast-1.3.2 \
+		crunchy-0.2.2 \
+		csv-1.2.1 \
+		csv-core-0.1.10 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.8.1 \
+		env_logger-0.9.3 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
+		flatbuffers-23.1.21 \
+		flate2-1.0.26 \
+		float-cmp-0.9.0 \
+		getrandom-0.2.9 \
+		half-2.2.1 \
+		hashbrown-0.12.3 \
+		hashbrown-0.13.2 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
+		humantime-2.1.0 \
+		iana-time-zone-0.1.56 \
+		iana-time-zone-haiku-0.1.2 \
+		indexmap-1.9.3 \
+		instant-0.1.12 \
+		integer-encoding-3.0.4 \
+		io-lifetimes-1.0.10 \
+		is-terminal-0.4.7 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
+		jobserver-0.1.26 \
+		js-sys-0.3.63 \
+		lazy_static-1.4.0 \
+		lexical-core-0.8.5 \
+		lexical-parse-float-0.8.5 \
+		lexical-parse-integer-0.8.6 \
+		lexical-util-0.8.5 \
+		lexical-write-float-0.8.5 \
+		lexical-write-integer-0.8.5 \
+		libc-0.2.144 \
+		libm-0.2.7 \
+		linux-raw-sys-0.3.8 \
+		log-0.4.17 \
+		lz4-1.24.0 \
+		lz4-sys-1.9.4 \
+		memchr-2.5.0 \
+		miniz_oxide-0.7.1 \
+		normalize-line-endings-0.3.0 \
+		num-0.4.0 \
+		num-bigint-0.4.3 \
+		num-complex-0.4.3 \
+		num-integer-0.1.45 \
+		num-iter-0.1.43 \
+		num-rational-0.4.1 \
+		num-traits-0.2.15 \
+		once_cell-1.17.1 \
+		ordered-float-2.10.0 \
+		parquet-40.0.0 \
+		parse-zoneinfo-0.3.0 \
+		paste-1.0.12 \
+		phf-0.11.1 \
+		phf_codegen-0.11.1 \
+		phf_generator-0.11.1 \
+		phf_shared-0.11.1 \
+		pkg-config-0.3.27 \
+		ppv-lite86-0.2.17 \
+		predicates-2.1.5 \
+		predicates-3.0.3 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.58 \
+		quote-1.0.27 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.3.5 \
+		regex-1.8.2 \
+		regex-automata-0.1.10 \
+		regex-syntax-0.7.2 \
+		rustc_version-0.4.0 \
+		rustix-0.37.19 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		semver-1.0.17 \
+		seq-macro-0.3.3 \
+		serde-1.0.163 \
+		serde_derive-1.0.163 \
+		serde_json-1.0.96 \
+		siphasher-0.3.10 \
+		snap-1.1.0 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		syn-2.0.16 \
+		tempfile-3.5.0 \
+		termcolor-1.2.0 \
+		termtree-0.4.1 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		thrift-0.17.0 \
+		tiny-keccak-2.0.2 \
+		twox-hash-1.6.3 \
+		unicode-ident-1.0.8 \
+		utf8parse-0.2.1 \
+		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.86 \
+		wasm-bindgen-backend-0.2.86 \
+		wasm-bindgen-macro-0.2.86 \
+		wasm-bindgen-macro-support-0.2.86 \
+		wasm-bindgen-shared-0.2.86 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.48.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		zstd-0.12.3+zstd.1.5.2 \
+		zstd-safe-6.0.5+zstd.1.5.4 \
+		zstd-sys-2.0.8+zstd.1.5.5
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

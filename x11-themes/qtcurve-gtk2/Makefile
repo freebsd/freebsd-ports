@@ -1,5 +1,5 @@
 PORTNAME=	qtcurve
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	QtCurve GTK+ 2.x engine and theme
 

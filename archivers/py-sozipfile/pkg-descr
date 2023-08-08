@@ -1,0 +1,3 @@
+sozipfile is a fork of Python zipfile module, from its implementation in CPython
+3.11, which implements the SOZip optimization, when writing deflate compressed
+files whose size exceeds the chunk size (defaults to 32768 bytes).

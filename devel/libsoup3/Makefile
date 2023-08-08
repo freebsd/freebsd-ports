@@ -1,5 +1,5 @@
 PORTNAME=	libsoup
-PORTVERSION=	3.1.4
+PORTVERSION=	3.2.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 
 RUN_DEPENDS=	glib-networking>0:net/glib-networking
 
-USES=		cpe gettext gnome meson pkgconfig python:3.6+,build sqlite \
+USES=		cpe gettext gnome meson pkgconfig python:build sqlite \
 		ssl tar:xz
 USE_GNOME=	glib20 intlhack introspection:build libxml2
 USE_LDCONFIG=	yes
@@ -61,4 +61,3 @@ GSSAPI_NONE_MESON_DISABLED=	gssapi
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
-

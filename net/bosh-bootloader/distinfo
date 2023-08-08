@@ -1,3 +1,5 @@
-TIMESTAMP = 1557134989
+TIMESTAMP = 1679927440
 SHA256 (cloudfoundry-bosh-bootloader-7.6.0-v7.6.0_GH0.tar.gz) = d82e6f02c176933228026225718b2142dba6d076e005665faf3880a82cbb4f8d
 SIZE (cloudfoundry-bosh-bootloader-7.6.0-v7.6.0_GH0.tar.gz) = 9225507
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

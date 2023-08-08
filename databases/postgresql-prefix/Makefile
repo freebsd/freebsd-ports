@@ -10,7 +10,7 @@ WWW=		https://github.com/dimitri/prefix
 
 LICENSE=	PostgreSQL
 
-USES=		gmake pgsql:9.1+
+USES=		gmake pgsql:11+
 WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	dimitri

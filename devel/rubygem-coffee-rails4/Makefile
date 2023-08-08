@@ -15,7 +15,6 @@ RUN_DEPENDS?=	rubygem-coffee-script>=2.2.0:devel/rubygem-coffee-script \
 		rubygem-railties4>=4.0.0:www/rubygem-railties4
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

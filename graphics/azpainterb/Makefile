@@ -1,5 +1,6 @@
 PORTNAME=	azpainterb
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 
@@ -17,7 +18,7 @@ USES=		compiler:c11 desktop-file-utils gmake jpeg pkgconfig \
 		tar:xz xorg
 USE_XORG=	x11 xext xi
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir="${DOCSDIR}" CC="${CC}"
+CONFIGURE_ARGS=	--docdir="${DOCSDIR}" CC="${CC}" LIBS="-lz"
 
 PORTDOCS=	AUTHORS ChangeLog ReadMe_en ReadMe_ja manual_ja.html
 

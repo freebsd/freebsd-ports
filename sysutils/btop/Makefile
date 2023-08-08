@@ -1,6 +1,7 @@
 PORTNAME=	btop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.9
+DISTVERSION=	1.2.13
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -17,6 +18,6 @@ GH_ACCOUNT=	aristocratos
 
 CXXFLAGS_i386=	-latomic
 CXXFLAGS_powerpc=	-latomic
-MAKE_ARGS=	STRIP=true ADDFLAGS="${CXXFLAGS} ${LDFLAGS}"
+MAKE_ARGS=	STRIP=true ADDFLAGS="${CXXFLAGS} ${LDFLAGS}" VERBOSE=true
 
 .include <bsd.port.mk>

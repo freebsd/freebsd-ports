@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.23
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -17,8 +17,7 @@ BUILD_DEPENDS=	rubygem-rdoc>=0:devel/rubygem-rdoc \
 		xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool tar:xz
-USE_RUBY=	yes
+USES=		compiler:c++11-lang libtool ruby tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--docdir=${DOCSDIR} \
@@ -43,8 +42,5 @@ CONFLICTS_INSTALL=	xapian-bindings12
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -1,0 +1,238 @@
+PORTNAME=	git-cliff
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.2.0
+PORTREVISION=	2
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Highly customizable changelog generator
+WWW=		https://git-cliff.org
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	orhun
+
+WRKSRC_SUBDIR=	git-cliff
+CARGO_CARGOLOCK=	${WRKSRC}/../Cargo.lock
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.20 \
+		aho-corasick-1.0.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.3.1 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		async-trait-0.1.68 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		base64-0.13.1 \
+		bitflags-1.3.2 \
+		block-buffer-0.10.4 \
+		bstr-1.4.0 \
+		bumpalo-3.12.1 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		chrono-0.4.24 \
+		chrono-tz-0.6.1 \
+		chrono-tz-build-0.0.2 \
+		clap-4.2.5 \
+		clap_builder-4.2.5 \
+		clap_complete-4.2.1 \
+		clap_derive-4.2.0 \
+		clap_lex-0.4.1 \
+		clap_mangen-0.2.10 \
+		codespan-reporting-0.11.1 \
+		colorchoice-1.0.0 \
+		config-0.13.3 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.7 \
+		crc32fast-1.3.2 \
+		crypto-common-0.1.6 \
+		ctor-0.1.26 \
+		cxx-1.0.94 \
+		cxx-build-1.0.94 \
+		cxxbridge-flags-1.0.94 \
+		cxxbridge-macro-1.0.94 \
+		deunicode-0.4.3 \
+		diff-0.1.13 \
+		digest-0.10.6 \
+		directories-4.0.1 \
+		dirs-next-2.0.0 \
+		dirs-sys-0.3.7 \
+		dirs-sys-next-0.1.2 \
+		doc-comment-0.3.3 \
+		env_logger-0.7.1 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		flate2-1.0.25 \
+		fnv-1.0.7 \
+		form_urlencoded-1.1.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.9 \
+		git-conventional-0.12.3 \
+		git2-0.17.1 \
+		glob-0.3.1 \
+		globset-0.4.10 \
+		globwalk-0.8.1 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
+		humansize-2.1.3 \
+		humantime-1.3.0 \
+		iana-time-zone-0.1.56 \
+		iana-time-zone-haiku-0.1.1 \
+		idna-0.3.0 \
+		ignore-0.4.20 \
+		indexmap-1.9.3 \
+		io-lifetimes-1.0.10 \
+		is-terminal-0.4.7 \
+		itoa-1.0.6 \
+		jobserver-0.1.26 \
+		js-sys-0.3.61 \
+		lazy-regex-2.5.0 \
+		lazy-regex-proc_macros-2.4.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.142 \
+		libgit2-sys-0.15.1+1.6.4 \
+		libm-0.2.6 \
+		libz-sys-1.1.8 \
+		link-cplusplus-1.0.8 \
+		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.3.5 \
+		log-0.4.17 \
+		memchr-2.5.0 \
+		minimal-lexical-0.2.1 \
+		miniz_oxide-0.6.2 \
+		nom-7.1.3 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		once_cell-1.17.1 \
+		output_vt100-0.1.3 \
+		parse-zoneinfo-0.3.0 \
+		pathdiff-0.2.1 \
+		percent-encoding-2.2.0 \
+		pest-2.6.0 \
+		pest_derive-2.6.0 \
+		pest_generator-2.6.0 \
+		pest_meta-2.6.0 \
+		phf-0.10.1 \
+		phf_codegen-0.10.0 \
+		phf_generator-0.10.0 \
+		phf_shared-0.10.0 \
+		pkg-config-0.3.26 \
+		ppv-lite86-0.2.17 \
+		pretty_assertions-1.3.0 \
+		pretty_env_logger-0.4.0 \
+		proc-macro2-1.0.56 \
+		quick-error-1.2.3 \
+		quote-1.0.26 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.8.1 \
+		regex-syntax-0.7.1 \
+		ring-0.16.20 \
+		roff-0.2.1 \
+		rust-embed-6.6.1 \
+		rust-embed-impl-6.5.0 \
+		rust-embed-utils-7.5.0 \
+		rustix-0.37.15 \
+		rustls-0.20.8 \
+		ryu-1.0.13 \
+		same-file-1.0.6 \
+		scratch-1.0.5 \
+		sct-0.7.0 \
+		semver-1.0.17 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
+		serde_regex-1.1.0 \
+		serde_spanned-0.6.1 \
+		sha2-0.10.6 \
+		siphasher-0.3.10 \
+		slug-0.1.4 \
+		spin-0.5.2 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.15 \
+		tera-1.18.1 \
+		termcolor-1.2.0 \
+		terminal_size-0.2.6 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		thread_local-1.1.4 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		toml-0.5.11 \
+		toml-0.7.3 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.8 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		uncased-0.9.7 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-segment-0.9.0 \
+		unic-ucd-segment-0.9.0 \
+		unic-ucd-version-0.9.0 \
+		unicase-2.6.0 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.8 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		untrusted-0.7.1 \
+		update-informer-0.6.0 \
+		ureq-2.6.2 \
+		url-2.3.1 \
+		utf8parse-0.2.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
+		web-sys-0.3.61 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.6 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.48.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0 \
+		winnow-0.4.1 \
+		yaml-rust-0.4.5 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/git-cliff-completions \
+		bin/git-cliff-mangen
+
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/git-cliff-completions \
+		${STAGEDIR}${PREFIX}/bin/git-cliff-mangen
+
+.include <bsd.port.mk>

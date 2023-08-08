@@ -1,5 +1,5 @@
 PORTNAME=	cython
-DISTVERSION=	3.0.0a11
+DISTVERSION=	3.0.0b2
 CATEGORIES=	lang python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -11,7 +11,7 @@ WWW=		https://cython.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c11 python:2.7+
+USES=		compiler:c11 python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 USE_GITHUB=	yes
 
@@ -19,5 +19,8 @@ CONFLICTS_INSTALL=	py*-cython # bin/cygdb bin/cygdb-3.8 bin/cython bin/cython-3.
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython -name '*.so' -exec ${STRIP_CMD} {} +
+
+do-test:
+	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py -vv
 
 .include <bsd.port.mk>

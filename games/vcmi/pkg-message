@@ -6,8 +6,8 @@ of Death or Complete editions.  Data files from native GNU/Linux port made
 by Loki Entertainment Software (The Restoration of Erathia) will not work.
 
 Install the game in Wine or manually unpack GOG installer, and copy "Data",
-"Maps" and "Mp3" from Heroes III to /home/$USER/.local/share/vcmi/ or, if
-$XDG_DATA_HOME is set, to $XDG_DATA_HOME/vcmi/.
+"Maps", and "MP3" directories from the installation to ~/.local/share/vcmi/
+or, if XDG_DATA_HOME environment variable is set, to $XDG_DATA_HOME/vcmi/.
 EOM
 }
 ]

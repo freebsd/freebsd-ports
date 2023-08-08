@@ -1,9 +1,10 @@
 PORTNAME=	librsvg
-PORTVERSION=	2.54.5
+PORTVERSION=	2.56.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	2-rust
-DIST_SUBDIR=	gnome2
+# XXX Teach USES=cargo to have proper default
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Library for parsing and rendering SVG vector-graphic files
@@ -11,14 +12,13 @@ WWW=		https://live.gnome.org/LibRsvg
 
 LICENSE=	LGPL20
 
-BUILD_DEPENDS=	${RUST_DEFAULT}>=1.39.0:lang/${RUST_DEFAULT} \
-		rst2man:textproc/py-docutils
+BUILD_DEPENDS=	rst2man:textproc/py-docutils
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libpng.so:graphics/png
 
-USES=		compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz vala:build
+USES=		cargo compiler:c11 cpe gettext gmake gnome libtool pkgconfig tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo gdkpixbuf2 libxml2 pango introspection:build
 USE_LDCONFIG=	yes
@@ -29,13 +29,12 @@ CONFIGURE_ARGS=	--disable-Bsymbolic \
 		--disable-dependency-tracking \
 		--disable-static \
 		--enable-vala
-# Make sure it uses the Rust toolchain from ports.
-CONFIGURE_ENV=	CARGO=${LOCALBASE}/bin/cargo \
-		RUSTC=${LOCALBASE}/bin/rustc \
-		RUSTFLAGS="${RUSTFLAGS} -C linker=${CC:Q} ${LDFLAGS:C/.+/-C link-arg=&/}"
-MAKE_ENV=	CARGO_BUILD_JOBS=${MAKE_JOBS_NUMBER} \
-		RUSTC=${LOCALBASE}/bin/rustc \
-		RUSTFLAGS="${RUSTFLAGS} -C linker=${CC:Q} ${LDFLAGS:C/.+/-C link-arg=&/}"
+CONFIGURE_ENV=	${CARGO_ENV}
+MAKE_ENV=	${CARGO_ENV}
+CARGO_ENV=	RUST_TARGET=${CARGO_BUILD_TARGET}
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
@@ -47,11 +46,8 @@ DOCS_BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
 DOCS_CONFIGURE_ENABLE=	gtk-doc
 
 post-patch:
-# Disable vendor checksums
-	@${REINPLACE_CMD} -e 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/vendor/*/.cargo-checksum.json
-
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/cargo update
+# Add explicit <triple> subdir for --target from USES=cargo
+	@${REINPLACE_CMD} 's/test "x$$cross_compiling" = "xyes"/true/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

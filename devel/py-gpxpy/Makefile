@@ -1,7 +1,7 @@
 PORTNAME=	gpxpy
 PORTVERSION=	1.5.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	stl@koffein.net
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/gpxpy/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -2,7 +2,7 @@ PORTNAME=	antioch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0-156
 DISTVERSIONSUFFIX=	-g90ffa43
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,11 +18,12 @@ LIB_DEPENDS=	libgsl.so:math/gsl \
 		libOpenCL.so:devel/ocl-icd
 
 USES=		autoreconf compiler:c++11-lang eigen:3 gmake libtool localbase
+USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	libantioch
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--enable-eigen --with-eigen-include=${LOCALBASE}/include/eigen3 \
 		--enable-opencl \

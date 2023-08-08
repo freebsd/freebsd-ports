@@ -1,9 +1,11 @@
 PORTNAME=	emacsql
-DISTVERSION=	3.0.0-17
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-g3747260
+DISTVERSION=	3.1.1
+PORTREVISION=	4
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+PATCH_SITES=	https://github.com/magit/emacsql/commit/
+PATCHFILES=	3cec7dcb201568a09ee9cebf0ea1e43cba9d334a.patch:-p1
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	High-level Emacs Lisp RDBMS front-end
@@ -16,16 +18,16 @@ BUILD_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.13:databases/pg.el@${EMACS_FLAVOR}
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 RUN_DEPENDS=	pg.el${EMACS_PKGNAMESUFFIX}>=0.13:databases/pg.el@${EMACS_FLAVOR}
 
-USES=		emacs localbase:ldflags
+USES=		emacs gmake localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
 MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}"
-ALL_TARGET=	binary compile
-TEST_TARGET=	check
+MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	test
 
-CONFLICTS_INSTALL=	emacsql emacsql-emacs_*
+CONFLICTS_INSTALL=	emacsql emacsql-devel* emacsql-emacs_*
 
 PORTDOCS=	README.md
 

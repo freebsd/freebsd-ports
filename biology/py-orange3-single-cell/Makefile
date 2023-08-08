@@ -1,6 +1,6 @@
 PORTNAME=	orange3-single-cell
 DISTVERSION=	0.8.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	biology python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,10 +22,12 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY}
 
 # Supports 3.4+ but loompy 3.6+ only.
-USES=		python:3.7+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	biolab
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 

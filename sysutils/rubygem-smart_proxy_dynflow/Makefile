@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_dynflow
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy \
 		rubygem-sqlite3>=0:databases/rubygem-sqlite3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

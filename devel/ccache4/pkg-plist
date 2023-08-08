@@ -1,0 +1,9 @@
+etc/periodic/daily/ccache_clean
+bin/ccache
+bin/ccache-update-links
+%%PORTDOCS%%share/man/man1/ccache.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
+%%CCLINKDIR%%/world/ccache
+@postexec echo "Create compiler links..."
+@postexec %D/bin/ccache-update-links -v
+@preunexec find %D/%%CCLINKDIR%% -type l -exec rm -f {} \;

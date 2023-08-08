@@ -1,5 +1,6 @@
 PORTNAME=	${GH_ACCOUNT:tl}
-PORTVERSION=	3.5.4
+PORTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -27,6 +28,10 @@ PLIST_FILES=	bin/cine_encoder man/man1/cine-encoder.1.gz \
 PORTDOCS=	ABOUT AUTHORS
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e '/#if defined/s,linux,${OPSYS},' \
+		${WRKSRC}/app/encoderstream.h
 
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} \

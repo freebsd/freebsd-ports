@@ -1,6 +1,6 @@
 PORTNAME=	homard
 DISTVERSION=	11.12-aster2
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	french cad linux
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/aster/${VER}/bin/aster:french/aster
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash		\
 		${LOCALBASE}/aster/${VER}/bin/aster:french/aster
 
-USES=		linux python:3.6+ shebangfix
+USES=		linux python shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/ASTER_HOMARD/homard	\
 		${WRKSRC}/homard_base ${WRKSRC}/setup_homard.py

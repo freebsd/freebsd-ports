@@ -1,5 +1,6 @@
 PORTNAME=	image_processing
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +15,6 @@ RUN_DEPENDS=	rubygem-mini_magick>=4.9.5<5:graphics/rubygem-mini_magick \
 		rubygem-ruby-vips>=2.0.17<3:graphics/rubygem-ruby-vips
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

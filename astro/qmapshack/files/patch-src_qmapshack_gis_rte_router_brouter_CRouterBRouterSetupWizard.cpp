@@ -1,11 +1,11 @@
---- src/qmapshack/gis/rte/router/brouter/CRouterBRouterSetupWizard.cpp.orig	2021-05-24 09:18:08 UTC
+--- src/qmapshack/gis/rte/router/brouter/CRouterBRouterSetupWizard.cpp.orig	2023-07-20 14:13:59 UTC
 +++ src/qmapshack/gis/rte/router/brouter/CRouterBRouterSetupWizard.cpp
-@@ -24,7 +24,7 @@
- #include "helpers/CWebPage.h"
- #include "setup/IAppSetup.h"
+@@ -18,7 +18,7 @@
+ 
+ #include "gis/rte/router/brouter/CRouterBRouterSetupWizard.h"
  
 -#include <JlCompress.h>
 +#include <quazip/JlCompress.h>
+ 
  #include <QFileDialog>
  #include <QMessageBox>
- #include <QNetworkReply>

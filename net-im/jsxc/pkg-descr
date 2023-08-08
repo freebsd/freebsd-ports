@@ -1,0 +1,16 @@
+JSXC is a browser-based XMPP Client which suports video calls, file transfer and
+encrypted communication
+
+Features:
+* Federated real-time communication with XMPP
+* One-to-one conversation
+* Multi-user conversation
+* File transfer
+* Video calls
+* Internationalisation
+* Desktop notifications
+* End-to-end encrypted two-party communication
+* Responsive layout
+* Emoticons two_hearts
+* Multi-Tab
+* Screen sharing

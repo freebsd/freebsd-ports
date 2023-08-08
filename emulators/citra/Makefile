@@ -1,16 +1,16 @@
 PORTNAME=	citra
 PORTVERSION=	s20220902
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.citra-emu.org/gamedb/?dummy=/:gamedb
 .else
 MASTER_SITES=	LOCAL/jbeich:gamedb
 .endif
-DISTFILES=	${PORTNAME}/compatibility_list.json:gamedb
+DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
 WWW=		https://citra-emu.org
 

@@ -1,6 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.5
-PORTREVISION=	1
+PORTVERSION=	8.9
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -23,13 +22,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	unsupported platform
 
-LIB_DEPENDS=	libffi.so:devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		liblz4.so:archivers/liblz4
 
 USES=		cpe gmake iconv libtool localbase tar:tgz
 CPE_VENDOR=	${PORTNAME}-lang
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libffi \
-		--enable-places \
+CONFIGURE_ARGS=	--enable-liblz4 \
 		--enable-pthread \
 		--mandir=${MANPREFIX}/man
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
@@ -44,10 +43,12 @@ OPTIONS_SUB=		yes
 
 OPTIONS_DEFAULT_powerpc=	BC
 OPTIONS_DEFAULT_powerpc64=	BC
+OPTIONS_DEFAULT_powerpc64le=	BC
 OPTIONS_DEFINE_amd64=	FUTURES JIT
 OPTIONS_DEFINE_i386=	FUTURES JIT
 OPTIONS_EXCLUDE_powerpc=	CS
 OPTIONS_EXCLUDE_powerpc64=	CS
+OPTIONS_EXCLUDE_powerpc64le=	CS
 
 OPTIONS_SINGLE=		BACKEND
 OPTIONS_SINGLE_BACKEND=	BC CS

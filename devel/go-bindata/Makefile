@@ -1,10 +1,10 @@
 PORTNAME=	go-bindata
 PORTVERSION=	3.1.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generates Go code from any file
 WWW=		https://github.com/go-bindata/go-bindata
 

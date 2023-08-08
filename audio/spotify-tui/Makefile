@@ -1,7 +1,7 @@
 PORTNAME=	spotify-tui
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.0
-PORTREVISION=	11
+PORTREVISION=	20
 CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -11,7 +11,10 @@ WWW=		https://github.com/Rigellute/spotify-tui
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo localbase:ldflags python:3.6+,build ssl xorg
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+
+USES=		cargo localbase:ldflags python:build ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Rigellute
 USE_XORG=	xcb
@@ -214,7 +217,7 @@ CARGO_CRATES=	addr2line-0.14.1 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.2 \
 		smallvec-1.4.1 \
-		socket2-0.3.12 \
+		socket2-0.3.19 \
 		str-buf-1.0.5 \
 		strsim-0.7.0 \
 		strsim-0.8.0 \

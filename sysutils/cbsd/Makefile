@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	13.1.14
+DISTVERSION=	13.2.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -28,7 +28,7 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
 OPTIONS_DEFINE=	BHYVE_GOP
-OPTIONS_DEFAULT=
+OPTIONS_SUB=	yes
 BHYVE_GOP_DESC=	Include bhyve UEFI firmware with GPU PPT+GOP support
 
 CBSD_HOME?=	${PREFIX}/cbsd
@@ -36,9 +36,9 @@ CBSD_HOME?=	${PREFIX}/cbsd
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == x86_64
-PLIST_SUB=	X86=""
+PLIST_SUB+=	X86=""
 .else
-PLIST_SUB=	X86="@comment "
+PLIST_SUB+=	X86="@comment "
 .endif
 
 .if ${OPSYS} != FreeBSD
@@ -47,12 +47,6 @@ LIB_DEPENDS+=	libelf.so:devel/libelf
 RUN_DEPENDS+=	sysrc:sysutils/sysrc
 .else
 PLIST_SUB+=	FBSD=""
-.endif
-
-.if !${PORT_OPTIONS:MBHYVE_GOP}
-PLIST_SUB+=	BHYVE_GOP="@comment "
-.else
-PLIST_SUB+=	BHYVE_GOP=""
 .endif
 
 do-install:
@@ -69,9 +63,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/cbsd/sbin/src \
 		${STAGEDIR}${PREFIX}/cbsd/tools/src
 	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 ${STAGEDIR}${PREFIX}/man/man8/cbsd.8
-.if !${PORT_OPTIONS:MBHYVE_GOP}
-	${RM} -f ${STAGEDIR}${PREFIX}/cbsd/upgrade/patch/efigop.fd
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig

@@ -1,5 +1,6 @@
 PORTNAME=	mate-applet-appmenu
 DISTVERSION=	0.7.6
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -27,12 +28,12 @@ MESON_ARGS=	-Dvalapanel=disabled \
 		-Dappmenu-gtk-module=disabled
 
 USE_MATE=	panel
-USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
+USE_GNOME=	gtk30 glib20 gdkpixbuf2
 GLIB_SCHEMAS=	org.valapanel.appmenu.gschema.xml
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project
 GL_PROJECT=	vala-panel-appmenu
-GL_COMMIT=	4e362c22ab3a23c98f13fb379c782786ee057cf6
+GL_TAGNAME=	4e362c22ab3a23c98f13fb379c782786ee057cf6
 
 .include <bsd.port.mk>

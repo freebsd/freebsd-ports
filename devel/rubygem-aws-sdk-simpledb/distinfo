@@ -1,3 +1,3 @@
-TIMESTAMP = 1646058712
-SHA256 (rubygem/aws-sdk-simpledb-1.35.0.gem) = 9d624cc14e6214e8ed214c73895763426ef3639b2f3a62ab528724b3957a033c
-SIZE (rubygem/aws-sdk-simpledb-1.35.0.gem) = 24064
+TIMESTAMP = 1689399537
+SHA256 (rubygem/aws-sdk-simpledb-1.40.0.gem) = a1ece8621245a7e4c96786e16740a5f59865106284661742aa57855296ed4791
+SIZE (rubygem/aws-sdk-simpledb-1.40.0.gem) = 24064

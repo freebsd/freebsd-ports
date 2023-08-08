@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 PKGNAMESUFFIX=	18
 DIST_SUBDIR=	${PORTNAME}
@@ -54,7 +54,7 @@ WRKSRC_SUBDIR=	build
 PATCH_WRKSRC=	${WRKSRC}/../
 MAKE_ARGS+=	-Dlight_bundle=true -Dlocal_sources=true -Dno_arduino_builder=true
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 USE_ANT=	yes
 OS_DIR=		${WRKSRC}/linux
 BUILD_DIR=	${OS_DIR}/work

@@ -1,7 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	22.3.4.26
-PORTREVISION=	0
+PORTREVISION=	1
 # NB when bumping OTP versions also bump PORTREVISION in databases/couchdb3
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime22
@@ -15,7 +15,7 @@ LICENSE=	APACHE20
 
 BROKEN_sparc64=	Fails to build: error: fp_except undeclared
 
-USES=		autoreconf:build cpe gmake ncurses perl5
+USES=		autoreconf:build compiler cpe gmake ncurses perl5
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	erlang:otp,corba
 GH_PROJECT=	otp:otp corba:corba
@@ -84,15 +84,22 @@ ODBC_CFLAGS=			-I/usr/local/include
 ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
+OPENSSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
+				BROKEN_SSL_REASON="Cannot find function FIPS_mode"
 SCTP_CONFIGURE_ENABLE=		sctp
 THREADS_CONFIGURE_ENABLE=	threads
 WX_USES=			gl
 WX_CONFIGURE_WITH=		wx-config=${WX_CONFIG}
 WX_VARS=			USE_GL="gl glu" \
-				USE_WX=3.1+ \
+				USE_WX=3.2+ \
 				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 130
+# PR 258494
+CONFIGURE_ARGS+=	--disable-pgo
+.endif
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-DMAP_NORESERVE=0
@@ -118,17 +125,21 @@ pre-configure-WX-off:
 post-configure-ODBC-on:
 	${RM} ${WRKSRC}/lib/odbc/SKIP
 
+post-configure-ODBC-off:
+	echo "disabled by port options" > ${WRKSRC}/lib/odbc/SKIP
+
 pre-build-NATIVE-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} clean
 
 post-build-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD}
 
 post-install-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
-			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 post-install-DTRACE-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/dtrace
@@ -155,8 +166,11 @@ post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
 post-stage:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o -type l \
-		| ${SORT} >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty \
+		-delete
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
+		-type l | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@ MASTER_SITES=	https://git.tizen.org/cgit/tools/testlab/sd-mux/snapshot/sd-mux-9d
 PATCH_SITES=	https://github.com/emaste/sd-mux/commit/
 PATCHFILES=	83f2783ac56bbf42f9bb877c5937cd1f17bb2999.patch:-p1
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Control utility for Tizen SD card multiplexer
 WWW=		https://git.tizen.org/cgit/tools/testlab/sd-mux/
 

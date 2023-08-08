@@ -4,12 +4,12 @@
 
 crowdsec-firewall-bouncer is installed.
 
-The bouncer should register itself with the Local API but you may want to check the
-configuration file, which has been moved to %%ETCDIR%%/crowdsec-firewall-bouncer.yaml
-(for consistency with the other platforms).
+If you are running crowdsec on this machine, the bouncer will register itself with
+the Local API when it's started the first time.
 
-In previous versions, the configuration was in /usr/local/etc/crowdsec-firewall-bouncer, you may need
-to check if you made any changes there.
+If the LAPI is on another machine, you need to manually register the bouncer
+and fill api_key and api_url in %%ETCDIR%%/crowdsec-firewall-bouncer.yaml before
+starting the service.
 
 This package depends on the Packet Filter service.
 To make sure it's active:

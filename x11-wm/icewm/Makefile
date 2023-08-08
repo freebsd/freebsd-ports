@@ -1,5 +1,5 @@
 PORTNAME=	icewm
-PORTVERSION=	2.9.9
+PORTVERSION=	3.4.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/ice-wm/icewm/releases/download/${PORTVERSION}/
 
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-icesound=oss
 SHEBANG_FILES=	contrib/icewm-menu-xrandr
 
-OPTIONS_DEFINE=		BEASTIE DOCS IMLIB2 NLS SVG XFT XINERAMA XRANDR
+OPTIONS_DEFINE=		BEASTIE DOCS IMLIB2 LIBRSVG2 NLS XFT XINERAMA XRANDR
 OPTIONS_DEFAULT=	BEASTIE IMLIB2 XFT XINERAMA XRANDR
 OPTIONS_SUB=		yes
 
@@ -37,11 +37,12 @@ IMLIB2_DESC=		Use Imlib2 for rendering
 IMLIB2_CONFIGURE_OFF=	--disable-imlib2 --enable-gdk-pixbuf
 IMLIB2_USE_OFF=		GNOME=gdkpixbuf2xlib
 
+LIBRSVG2_BUILD_DEPENDS_OFF=	${LOCALBASE}/include/nanosvg.h:graphics/nanosvg
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_CONFIGURE_OFF=	--disable-rsvg --enable-nanosvg
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-SVG_USE=		GNOME=librsvg2
-SVG_CONFIGURE_OFF=	--disable-rsvg
 
 XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
 XFT_CONFIGURE_OFF=	--enable-corefonts --disable-xfreetype
@@ -58,6 +59,10 @@ post-extract:
 	@${LN} -sf ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/${dir}
 	@${LN} -sf ${STARTUP_PIXMAP} ${WRKSRC}/lib/${dir}/start.xpm
 .endfor
+
+post-patch-LIBRSVG2-off:
+	@${LN} -sf ${LOCALBASE}/include/nanosvg.h \
+		${LOCALBASE}/include/nanosvgrast.h ${WRKSRC}/src
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -2,8 +2,7 @@ etc/snoopy.ini
 lib/libsnoopy.so
 lib/libsnoopy.so.0
 lib/libsnoopy.so.0.0.0
-sbin/snoopy-disable
-sbin/snoopy-enable
+sbin/snoopyctl
 %%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.md

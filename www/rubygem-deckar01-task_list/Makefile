@@ -1,5 +1,5 @@
 PORTNAME=	deckar01-task_list
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-html-pipeline>=0:textproc/rubygem-html-pipeline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

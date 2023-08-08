@@ -1,6 +1,6 @@
 PORTNAME=	stmp
 PORTVERSION=	0.0.2
-PORTREVISION=	6
+PORTREVISION=	15
 CATEGORIES=	audio
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/wildeyedskies/stmp/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with mpv 0.35, see bug 267114
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libHLSL.a:graphics/glslang
 LIB_DEPENDS=	libmpv.so:multimedia/mpv

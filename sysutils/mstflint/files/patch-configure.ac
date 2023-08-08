@@ -1,6 +1,6 @@
---- configure.ac.orig	2020-10-02 01:05:50.612135000 +0200
-+++ configure.ac	2020-10-02 01:06:26.890856000 +0200
-@@ -233,7 +233,7 @@
+--- configure.ac.orig	2022-10-31 08:38:13 UTC
++++ configure.ac
+@@ -248,7 +248,7 @@ AS_IF([test "x$enable_static_libstdcpp" = "xyes" -o "x
      AS_HELP_STRING([--enable-static-libstdcpp], [Enable link static to libstdc++]))
  
  AS_IF([test "x$enable_static_libstdcpp" = "xyes" -o "x$enable_all_static" = "xyes" ], [

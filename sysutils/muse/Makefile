@@ -7,6 +7,8 @@ MAINTAINER=	freebsd@spatula.net
 COMMENT=	Shows memory usage data
 WWW=		http://www.spatula.net/proc/muse/index.src
 
+DEPRECATED=	Broken on all supported FreeBSD releases for more than an year
+EXPIRATION_DATE=	2023-08-16
 BROKEN_FreeBSD_12=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 BROKEN_FreeBSD_13=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'
 BROKEN_FreeBSD_14=	fails to compile: read_mem.c: invalid use of undefined type 'struct vmmeter'

@@ -1,7 +1,7 @@
 PORTNAME=	markuppy
 PORTVERSION=	1.14
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MarkupPy-${PORTVERSION}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/tylerbakke/MarkupPy
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

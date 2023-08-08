@@ -1,5 +1,5 @@
 PORTNAME=	seatd
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.sr.ht/~kennylevinsen/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -14,6 +14,7 @@ USES=		compiler:c11 cpe meson pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 CPE_VENDOR=	${PORTNAME}_project
+MESON_ARGS=	-Dlibseat-logind=disabled
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		"@(,video,4750) bin/${PORTNAME}-launch" \

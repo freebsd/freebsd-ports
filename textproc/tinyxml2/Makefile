@@ -25,9 +25,6 @@ CPE_VENDOR=	tinyxml2_project
 
 OPTIONS_DEFINE=	EXAMPLES
 
-post-patch:
-	@${REINPLACE_CMD} -e '/CMAKE_DEBUG_POSTFIX/d' ${WRKSRC}/CMakeLists.txt
-
 post-install:
 	${AR} cq ${STAGEDIR}${PREFIX}/lib/libtinyxml2.a ${WRKSRC}/CMakeFiles/tinyxml2.dir/tinyxml2.cpp.o
 

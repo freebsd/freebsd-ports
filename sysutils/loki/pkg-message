@@ -1,0 +1,9 @@
+[
+{ type: upgrade
+  maximum_version: "2.6.1_5"
+  message: <<EOM
+Upgrading from before 2.6.1_5 changes default log level "info" to "warn".
+Adjust loki_loglevel in ${ETCDIR}/rc.d/loki if needed.
+EOM
+}
+]

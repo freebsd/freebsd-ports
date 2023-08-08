@@ -1,0 +1,10 @@
+Quickwit is the fastest search engine on cloud storage.
+
+ o Full-text search and aggregation queries
+ o Sub-second search on cloud storage (Amazon S3, Azure Blob Storage, ...)
+ o Decoupled compute and storage, stateless indexers & searchers
+ o Schemaless or strict schema indexing
+ o Kubernetes ready - See our helm-chart
+ o OTEL-native for logs and traces
+ o Jaeger-native
+ o RESTful API

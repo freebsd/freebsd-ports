@@ -1,0 +1,7 @@
+pytest-random-order is a pytest plugin that randomises the order of tests. This
+can be useful to detect a test that passes just because it happens to run after
+an unrelated test that leaves the system in a favourable state.
+
+The plugin allows user to control the level of randomness they want to introduce
+and to disable reordering on subsets of tests. Tests can be rerun in a specific
+order by passing a seed value reported in a previous test run.

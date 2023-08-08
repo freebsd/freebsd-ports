@@ -1,6 +1,6 @@
---- lib/libimhex/source/helpers/fs.cpp.orig	2022-08-05 10:52:34 UTC
+--- lib/libimhex/source/helpers/fs.cpp.orig	2023-06-24 10:07:39 UTC
 +++ lib/libimhex/source/helpers/fs.cpp
-@@ -14,10 +14,15 @@
+@@ -12,10 +12,15 @@
      #include <shlobj.h>
  #elif defined(OS_LINUX)
      #include <xdg.hpp>
@@ -15,13 +15,13 @@
 +#include <array>
  #include <filesystem>
  
- namespace hex::fs {
-@@ -179,7 +184,7 @@ namespace hex::fs {
-         #endif
-     }
+ #include <wolv/io/file.hpp>
+@@ -120,7 +125,7 @@ namespace hex::fs {
+                 result = NFD::PickFolder(outPath, defaultPath.empty() ? nullptr : defaultPath.c_str());
+                 break;
+             default:
+-                std::unreachable();
++                __builtin_unreachable();
+         }
  
--    constexpr std::vector<std::fs::path> appendPath(std::vector<std::fs::path> paths, const std::fs::path &folder) {
-+    std::vector<std::fs::path> appendPath(std::vector<std::fs::path> paths, const std::fs::path &folder) {
-         for (auto &path : paths)
-             path = path / folder;
- 
+         if (result == NFD_OKAY){

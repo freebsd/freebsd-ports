@@ -1,7 +1,7 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.4
 CATEGORIES=	archivers python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -11,22 +11,24 @@ WWW=		https://pypi.org/project/borgbackup/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# note that borgbackup pins the msgpack version range per patchlevel version!
+_BB_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2<1.0.5_99:devel/py-msgpack@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
+		${_BB_DEPENDS}
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libxxhash.so:devel/xxhash
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
-MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
+		${_BB_DEPENDS}
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>3.2:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		fakeroot:security/fakeroot
-USES=		pkgconfig python:3.8+ ssl
+USES=		pkgconfig python ssl
 USE_PYTHON=	autoplist distutils
+MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 
 OPTIONS_DEFINE=		FUSE
 OPTIONS_DEFAULT=	FUSE
@@ -35,7 +37,7 @@ FUSE_DESC=	Support to mount locally borg backup files
 FUSE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}llfuse>0:devel/py-llfuse@${PY_FLAVOR}
 
 _BORGHOME=${WRKDIR}/testhome
-_BORGENV=BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
+_BORGENV=-i BORG_PASSPHRASE=secret123 PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR} HOME=${_BORGHOME}
 post-install:
 	${MKDIR} ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/docs/man/* ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
@@ -64,6 +66,6 @@ post-install:
 	${SETENV} ${_BORGENV} ${STAGEDIR}${PREFIX}/bin/borg info ${WRKDIR}/borgrepo
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${_BORGENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
+	cd ${WRKSRC} && ${SETENV} ${_BORGENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} -vv
 
 .include <bsd.port.mk>

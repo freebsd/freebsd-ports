@@ -1,6 +1,6 @@
 PORTNAME=	lidia
 DISTVERSION=	2.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	https://www.math.ucdavis.edu/~latte/software/packages/lidia/current/
 DISTNAME=	${PORTNAME}-${DISTVERSION}+latte-patches-2014-10-04

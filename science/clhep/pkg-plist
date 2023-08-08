@@ -187,7 +187,8 @@ include/CLHEP/Matrix/Vector.h
 include/CLHEP/Matrix/Vector.icc
 include/CLHEP/Matrix/defs.h
 include/CLHEP/Random/DRand48Engine.h
-include/CLHEP/Random/DoubConv.hh
+include/CLHEP/Random/DoubConv.h
+include/CLHEP/Random/RanluxppEngine.h
 include/CLHEP/Random/DualRand.h
 include/CLHEP/Random/EngineFactory.h
 include/CLHEP/Random/Hurd160Engine.h
@@ -305,6 +306,7 @@ include/CLHEP/Vector/TwoVector.h
 include/CLHEP/Vector/TwoVector.icc
 include/CLHEP/Vector/ZMxpv.h
 include/CLHEP/Vector/defs.h
+include/clhep.modulemap
 lib/libCLHEP-%%VERSION%%.a
 lib/libCLHEP-%%VERSION%%.so
 lib/libCLHEP-Cast-%%VERSION%%.a

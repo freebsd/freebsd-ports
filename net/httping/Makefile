@@ -1,49 +1,36 @@
 PORTNAME=	httping
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	https://www.vanheusden.com/httping/ \
-		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
-WWW=		https://www.vanheusden.com/httping/
+WWW=		https://github.com/folkertvanheusden/HTTPing
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake gettext tar:tgz
+USES=		gettext-runtime gettext-tools gmake localbase:ldflags ssl \
+		tar:tgz
+USE_GITHUB=	yes
+GH_ACCOUNT=	folkertvanheusden
+GH_PROJECT=	HTTPing
 
-PLIST_FILES=	bin/httping man/man1/httping.1.gz
+OPTIONS_DEFINE=		FFTW NCURSES NLS
+OPTIONS_DEFAULT=	NCURSES
+OPTIONS_SUB=		NLS
 
-OPTIONS_DEFINE=	NCURSES FFTW SSL
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
+FFTW_MAKE_ENV=		FW=yes
+FFTW_MAKE_ENV_OFF=	FW=no
+NCURSES_USES=		ncurses
+NCURSES_MAKE_ENV=	NC=yes
+NCURSES_MAKE_ENV_OFF=	NC=yes
+NLS_MAKE_ENV_OFF=	NO_GETTEXT=yes
 
-OPTIONS_DEFAULT=NCURSES SSL
-NCURSES_USES=	ncurses
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNCURSES}
-MAKE_ENV+=	NC=yes
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-MAKE_ENV+=	NC=no
-.endif
-
-.if ${PORT_OPTIONS:MFFTW}
-MAKE_ENV+=	FW=yes
-LIB_DEPENDS+=	libfftw3.so:math/fftw3
-.else
-MAKE_ENV+=	FW=no
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-MAKE_ENV+=	SSL=yes
-USES+=		ssl
-.else
-MAKE_ENV+=	SSL=no
-.endif
-
+# DragonFly seems to require this
 .if ${OPSYS} == FreeBSD
 MAKE_ENV+=	TFO=yes
 .endif
@@ -51,8 +38,4 @@ MAKE_ENV+=	TFO=yes
 post-patch-NCURSES-on:
 	@${REINPLACE_CMD} "s/-lncursesw/${NCURSESLIBS}/g" ${WRKSRC}/Makefile
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

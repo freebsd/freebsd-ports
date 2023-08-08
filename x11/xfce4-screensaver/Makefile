@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-screensaver
-PORTVERSION=	4.16.0
-PORTREVISION=	2
+PORTVERSION=	4.18.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -17,9 +16,10 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 BUILD_DEPENDS=	xdt-csource:devel/xfce4-dev-tools
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
-		libxklavier.so:x11/libxklavier
+		libxklavier.so:x11/libxklavier \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c11 gettext-tools gl gmake gnome pkgconfig python:3.5+ \
+USES=		compiler:c11 gettext-tools gl gmake gnome pkgconfig python \
 		shebangfix tar:bzip2 xfce xorg
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3

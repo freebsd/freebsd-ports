@@ -1,5 +1,6 @@
 PORTNAME=	plumed
 DISTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}2/releases/download/v${DISTVERSION}/
 

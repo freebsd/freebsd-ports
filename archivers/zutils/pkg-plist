@@ -6,7 +6,7 @@ bin/zfgrep
 bin/zgrep
 bin/zupdate
 bin/ztest
-etc/zutilsrc
+etc/zutils.conf
 man/man1/zcat.1.gz
 man/man1/zcmp.1.gz
 man/man1/zdiff.1.gz

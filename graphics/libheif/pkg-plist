@@ -12,12 +12,13 @@ lib/cmake/libheif/libheif-config.cmake
 lib/gdk-pixbuf-2.0/%%GTK2_VERSION%%/loaders/libpixbufloader-heif.so
 lib/libheif.so
 lib/libheif.so.1
-lib/libheif.so.1.13.0.0
+lib/libheif.so.%%LIB_VER%%
+%%SVTAV1%%lib/libheif/libheif-svtenc.so
+%%RAV1E%%lib/libheif/libheif-rav1e.so
 libdata/pkgconfig/libheif.pc
 %%PORTEXAMPLES%%share/man/man1/heif-convert.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-enc.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-info.1.gz
 %%PORTEXAMPLES%%share/man/man1/heif-thumbnailer.1.gz
-share/mime/packages/avif.xml
-share/mime/packages/heif.xml
 share/thumbnailers/heif.thumbnailer
+@dir lib/libheif

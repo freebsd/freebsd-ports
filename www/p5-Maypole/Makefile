@@ -60,7 +60,7 @@ DOC_FILES=	../Manual.pod \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-MODPERL2_USE=		APACHE_RUN=22+
+MODPERL2_USES=		apache:run
 MODPERL2_BUILD_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2
 
 post-install:

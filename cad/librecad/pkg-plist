@@ -1,8 +1,6 @@
 bin/librecad
 bin/ttf2lff
 share/applications/librecad.desktop
-%%DATADIR%%/fonts/OpenGostTypeA-Regular.lff
-%%DATADIR%%/fonts/OpenGostTypeB-Regular.lff
 %%DATADIR%%/fonts/amiri-regular.lff
 %%DATADIR%%/fonts/azomix.lff
 %%DATADIR%%/fonts/azomix_i.lff
@@ -27,6 +25,8 @@ share/applications/librecad.desktop
 %%DATADIR%%/fonts/kst32b.lff
 %%DATADIR%%/fonts/lc_opengost-ar.lff
 %%DATADIR%%/fonts/lc_opengost-br.lff
+%%DATADIR%%/fonts/opengosttypea-regular.lff
+%%DATADIR%%/fonts/opengosttypeb-regular.lff
 %%DATADIR%%/fonts/romanc.lff
 %%DATADIR%%/fonts/romancs.lff
 %%DATADIR%%/fonts/romand.lff
@@ -1386,7 +1386,6 @@ share/applications/librecad.desktop
 %%DATADIR%%/plugins/libasciifile.so
 %%DATADIR%%/plugins/libdivide.so
 %%DATADIR%%/plugins/libgear.so
-%%DATADIR%%/plugins/libimportshp.so
 %%DATADIR%%/plugins/liblist.so
 %%DATADIR%%/plugins/libpicfile.so
 %%DATADIR%%/plugins/libplotequation.so
@@ -1508,5 +1507,5 @@ share/applications/librecad.desktop
 %%DATADIR%%/qm/plugins_uk.qm
 %%DATADIR%%/qm/plugins_zh_cn.qm
 %%DATADIR%%/qm/plugins_zh_tw.qm
-share/metainfo/librecad.appdata.xml
+share/metainfo/org.librecad.librecad.appdata.xml
 share/pixmaps/librecad.png

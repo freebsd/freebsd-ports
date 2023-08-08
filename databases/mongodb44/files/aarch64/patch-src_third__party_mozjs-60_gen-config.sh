@@ -1,6 +1,6 @@
---- src/third_party/mozjs-60/gen-config.sh.orig	2019-10-11 03:28:57 UTC
+--- src/third_party/mozjs-60/gen-config.sh.orig	2023-05-10 02:21:42 UTC
 +++ src/third_party/mozjs-60/gen-config.sh
-@@ -28,6 +28,9 @@ _xcode_setup() {
+@@ -28,6 +28,9 @@ case "$_Path" in
  }
  
  case "$_Path" in
@@ -10,7 +10,7 @@
      "platform/aarch64/linux")
          _CONFIG_OPTS="--host=aarch64-linux"
  	;;
-@@ -82,9 +85,9 @@ esac
+@@ -82,9 +85,9 @@ rm config.cache || true
  cd mozilla-release/js/src
  rm config.cache || true
  

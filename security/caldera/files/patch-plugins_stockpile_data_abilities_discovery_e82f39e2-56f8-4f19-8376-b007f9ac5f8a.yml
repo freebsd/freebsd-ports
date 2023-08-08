@@ -1,0 +1,20 @@
+--- plugins/stockpile/data/abilities/discovery/e82f39e2-56f8-4f19-8376-b007f9ac5f8a.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/e82f39e2-56f8-4f19-8376-b007f9ac5f8a.yml
+@@ -12,6 +12,10 @@
+       sh:
+         command: |
+           pwpolicy getaccountpolicies
++    freebsd:
++      sh:
++        command: |
++          cat /etc/pam.d/passwd
+     linux:
+       sh:
+         command: |
+@@ -19,4 +23,4 @@
+     windows:
+       psh:
+         command: |
+-          net accounts
+\ No newline at end of file
++          net accounts

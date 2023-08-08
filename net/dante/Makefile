@@ -16,7 +16,7 @@ LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc \
 
 CONFLICTS=	socks5
 
-USES=		libtool localbase
+USES=		autoreconf libtool localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 		--with-sockd-conf=${PREFIX}/etc/sockd.conf

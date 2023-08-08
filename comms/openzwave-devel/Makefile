@@ -10,6 +10,9 @@ WWW=		https://code.google.com/p/open-zwave/
 
 LICENSE=	LGPL20
 
+DEPRECATED=	Upstream no longer maintained, indicates to move to openzwave JS instead
+EXPIRATION_DATE=2023-12-28
+
 USES=		compiler:c++11-lang gmake tar:bz2 iconv pkgconfig
 
 # Manually update this when makefile is updated

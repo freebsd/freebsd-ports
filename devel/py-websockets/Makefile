@@ -1,7 +1,7 @@
 PORTNAME=	websockets
-PORTVERSION=	10.3
+PORTVERSION=	11.0.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/websockets/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils
 

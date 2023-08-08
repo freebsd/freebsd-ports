@@ -1,5 +1,5 @@
 PORTNAME=	openvpn
-DISTVERSION=	g20220820
+DISTVERSION=	g20230331
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security net net-vpn
@@ -18,13 +18,15 @@ BUILD_DEPENDS+=	cmocka>=0:sysutils/cmocka \
 		rst2man:textproc/py-docutils
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2
 
-USES=		autoreconf cpe libtool pkgconfig shebangfix tar:xz
+USES=		autoreconf cpe libtool pkgconfig python:build shebangfix tar:xz
 IGNORE_SSL=	libressl libressl-devel
 USE_GITLAB=	yes
-GL_COMMIT=	734de8f9aa2df56bcb45ebab7cfa799a23f36403
+GL_TAGNAME=	fafb05f6f3a7a1b46c278961ec8d2d8970f01096
 USE_RC_SUBR=	openvpn
 
-SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl sample/sample-scripts/ucn.pl \
+SHEBANG_FILES=	sample/sample-scripts/auth-pam.pl \
+		sample/sample-scripts/totpauth.py \
+		sample/sample-scripts/ucn.pl \
 		sample/sample-scripts/verify-cn
 
 GNU_CONFIGURE=		yes
@@ -38,7 +40,7 @@ CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DCONFIGURE_GIT_REVISION='\"${GL_COMMIT}\"' -DCONFIGURE_GIT_FLAGS=
+CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include -DCONFIGURE_GIT_REVISION='\"${GL_TAGNAME}\"' -DCONFIGURE_GIT_FLAGS=
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL?=	openvpn-2.[!4].* openvpn-[!2].* openvpn-beta \
@@ -51,7 +53,7 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=		DOCS EASYRSA EXAMPLES LZ4 PKCS11 SMALL DCO TEST \
 			X509ALTUSERNAME
-OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST
+OPTIONS_DEFAULT=	EASYRSA LZ4 OPENSSL TEST DCO
 OPTIONS_EXCLUDE_FreeBSD_12=	DCO # FreeBSD 14 only
 OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 OPTIONS_SINGLE=		SSL
@@ -91,7 +93,7 @@ PKCS11_CONFIGURE_ENABLE=	pkcs11
 
 SMALL_CONFIGURE_ON=	--enable-small
 
-DCO_CONFIGURE_ON=	--enable-dco
+DCO_CONFIGURE_OFF=	--disable-dco
 
 TEST_ALL_TARGET=	check
 TEST_TEST_TARGET_OFF=	check

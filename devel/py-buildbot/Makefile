@@ -1,7 +1,7 @@
 PORTNAME=	buildbot
-PORTVERSION=	3.5.0
+PORTVERSION=	3.8.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=1.6.0:databases/py-alembic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}autobahn>=0.16.0:www/py-autobahn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}buildbot-www>0:devel/py-buildbot-www@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=0:www/py-pyjwt@${PY_FLAVOR} \
@@ -32,9 +33,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}treq>0:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}txrequests>0:www/py-txrequests@${PY_FLAVOR}
 
-USES=		cpe python:3.5+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 USE_RC_SUBR=	buildbot
+
+USERS=	${PORTNAME}
+GROUPS=	${PORTNAME}
 
 NO_ARCH=	yes
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \

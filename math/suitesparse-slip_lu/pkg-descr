@@ -1,9 +1,0 @@
-This port installs the module SLIP_LU of SuiteSparse.
-
-SLIP_LU is software package used to solve a sparse systems of linear equations
-exactly using the Sparse Left-looking Integer-Preserving LU factorization.
-
-SLIPLU Purpose: Exactly solve a sparse system of linear equations using a given
-input matrix and right hand side vector file. This code can output the final
-solution to a user specified output file in either double precision or full
-precision rational numbers.

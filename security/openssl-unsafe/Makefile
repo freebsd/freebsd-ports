@@ -13,9 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe perl5
 CPE_VERSION=	1.0.2k
 
-.if ${MACHINE} == "i386"
-#USE_GCC=	8+
-.endif
 USE_GITHUB=	yes
 GH_ACCOUNT=	PeterMosmans
 GH_TAGNAME=	c9ba19c

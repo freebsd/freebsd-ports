@@ -1,6 +1,6 @@
 PORTNAME=	vtk
-DISTVERSION=	9.1.0
-PORTREVISION=	4
+DISTVERSION=	9.2.6
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
@@ -24,10 +24,11 @@ USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm xcursor xfixes xrender
 
+CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		VTK_INSTALL_NO_DOCUMENTATION \
 		Module_vtkTestingCore Module_vtkTestingRendering
-.for m in expat freetype hdf5 jpeg netcdf png tiff zlib
+.for m in expat freetype hdf5 jpeg netcdf png tiff zlib # mpi4py should be here, but this fails, see https://gitlab.kitware.com/vtk/vtk/-/issues/18693
 CMAKE_ON+=	VTK_MODULE_USE_EXTERNAL_VTK_${m}
 .endfor
 CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
@@ -35,6 +36,14 @@ CMAKE_ARGS=	-DVTK_INSTALL_LIBRARY_DIR=lib/vtk-${VTK_SHORT_VER} \
 		-DVTK_INSTALL_QT_DIR=/${QT_LIBDIR_REL}/plugins/designer \
 		-DSTAGEDIR=${STAGEDIR}
 		# all build options are documented here: https://gitlab.kitware.com/vtk/vtk/blob/master/Documentation/dev/build.md
+		# all modules can be obtailed by: find . -name vtk.module
+		# there's also CMake/vtkWrapSettings.cmake with options
+
+# disable finding Qt6
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6
+
+# enable all modules
+#CMAKE_ON+=	VTK_BUILD_ALL_MODULES
 
 VTK_SHORT_VER=	${PORTVERSION:R}
 
@@ -42,40 +51,45 @@ DOCSDIR=	${PREFIX}/share/doc/vtk-${VTK_SHORT_VER}
 DATADIR=	${PREFIX}/share/vtk-${VTK_SHORT_VER}
 
 # Options
-OPTIONS_DEFINE=	DESIGNER DOCS MPI OSMESA PYTHON QT5 EXAMPLES
-OPTIONS_DEFAULT=	MPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
+OPTIONS_DEFINE=	DESIGNER DOCS OMPI OSMESA PYTHON QT5 EXAMPLES
+OPTIONS_DEFAULT=	OMPI PYTHON QT5 # vtk python binding is needed by other packages, and is unfortunately is unseparable. It is a candidate to be a subpackage.
 OSMESA_DESC=	Use Mesa for off-screen rendering
+OMPI_DESC=	OpenMPI (Message Passing Interface) support
 DESIGNER_DESC=	Build the Qt Designer plugin
 OPTIONS_SUB=	yes
 
-# Options groups
-VTK_WRAPS=	JAVA TCLTK
-OPTIONS_GROUP=	WRAPPING
-OPTIONS_GROUP_WRAPPING=${VTK_WRAPS}
-GROUPS_DESC=	Groups
-WRAPPING_DESC=	Wrapping
-.for w in ${VTK_WRAPS}
-$w_DESC=	$w wrapping
+# Option groups that enable groups of modules in VTK
+VTK_GROUPS=		JAVA TCLTK
+OPTIONS_GROUP=		GROUPS
+OPTIONS_GROUP_GROUPS=	${VTK_GROUPS}
+GROUPS_DESC=		Groups
+.for w in ${VTK_GROUPS}
+$w_DESC=		Enable $w group
 .endfor
 
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	VTK_WRAP_PYTHON
 PYTHON_CMAKE_ON=	-DVTK_PYTHON_VERSION=${PYTHON_MAJOR_VER} -DPython3_EXECUTABLE=${PYTHON_CMD}
 PYTHON_VARS=		SUB_FILES=PKG-INFO SUB_LIST=PORTVERSION=${PORTVERSION}
 
 QT5_USES=		qt:5
-QT5_USE=		QT=core,declarative,gui,network,opengl,sql,uiplugin,widgets,x11extras,qmake:build,buildtools:build
-QT5_CMAKE_ON=		-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5 \
-			-DVTK_GROUP_ENABLE_Qt:STRING=YES \
-			-DVTK_MODULE_ENABLE_VTK_GUISupportQt:STRING=YES
+QT5_USE=		QT=core,declarative,gui,network,opengl,sql,uiplugin,widgets,x11extras,qmake,buildtools # qmake and buildtools should be with :build, but see https://gitlab.kitware.com/vtk/vtk/-/issues/18705
+QT5_CMAKE_ON=		-DVTK_GROUP_ENABLE_Qt:STRING=YES \
+			-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
+
+#QT6_USES=		qt:6
+#QT6_USE=		QT=base,declarative,tools:build
+#QT6_CMAKE_ON=		-DVTK_GROUP_ENABLE_Qt:STRING=YES \
+			-DCMAKE_PREFIX_PATH:STRING=${LOCALBASE}/lib/qt5
 
 DESIGNER_CMAKE_BOOL=	QT_DESIGNER_PLUGIN
 DESIGNER_USE=		QT=designer
 DESIGNER_IMPLIES=	QT5
 
-MPI_CMAKE_BOOL=		VTK_USE_MPI
-MPI_LIB_DEPENDS=	libmpi.so:net/mpich
-MPI_CMAKE_ON=		-DMPIEXEC=${LOCALBASE}/mpi/openmpi/bin/mpiexec
+OMPI_CMAKE_BOOL=	VTK_USE_MPI
+OMPI_USES=		mpi:openmpi
+OMPI_CMAKE_ON=		-DMPI_HOME=${LOCALBASE}/mpi/openmpi
+OMPI_LDFLAGS=		${MPI_LIBS}
 
 OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
@@ -84,17 +98,15 @@ OSMESA_CMAKE_ON=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 			-DVTK_USE_X:BOOL=OFF
 OSMESA_LIB_DEPENDS=	libOSMesa.so:graphics/libosmesa
 
-# Wrapping
-JAVA_CATEGORIES=	java
 JAVA_VARS=		USE_JAVA=yes
-JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA Module_vtkWrappingJava
+JAVA_CMAKE_BOOL=	VTK_WRAP_JAVA
 JAVA_CMAKE_ON=		-DJAVA_INCLUDE_PATH:PATH=${JAVA_HOME}/include \
 			-DJAVA_AWT_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ARCH}/libjawt.so \
 			-DJAVA_JVM_LIBRARY:PATH=${JAVA_HOME}/jre/lib/${ATCH}/libjava.so
 
 TCLTK_USES=		tk
-TCLTK_CMAKE_BOOL=	VTK_WRAP_TCL VTK_Group_Tk
-TCLTK_CMAKE_ON=		-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
+TCLTK_CMAKE_ON=		-DVTK_GROUP_ENABLE_Tk:STRING=YES \
+			-DTCL_INCLUDE_PATH:PATH=${TCL_INCLUDEDIR} \
 			-DTK_INCLUDE_PATH:PATH=${TK_INCLUDEDIR}  \
 			-DVTK_INSTALL_TCL_DIR=lib/vtk-${VTK_SHORT_VER}
 
@@ -110,11 +122,19 @@ USES+=		gl
 USE_GL=		gl glu
 .endif
 
+.if ${PORT_OPTIONS:MPYTHON} && ${PORT_OPTIONS:MOMPI}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}
+.endif
+
 CONFLICTS=	vtk6 vtk8
 
-do-install-PYTHON-on: # cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
+do-install-PYTHON-on:
+	# cmake doesn't install pip's .egg-info: https://gitlab.kitware.com/vtk/vtk/-/issues/18087
 	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
 	@${INSTALL_DATA} ${WRKDIR}/PKG-INFO ${STAGEDIR}${PYTHON_SITELIBDIR}/vtk-${DISTVERSION}-py${PYTHON_VER}.egg-info
+	# workaround for: VTK installs mpi4py which makes it to conflict with the standalone mpi4py package, see https://gitlab.kitware.com/vtk/vtk/-/issues/18691
+	@${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/mpi4py
 
 post-install: # autoplist: thousands of files, complex dependencies on options
 	@cd ${STAGEDIR}${PREFIX} && \

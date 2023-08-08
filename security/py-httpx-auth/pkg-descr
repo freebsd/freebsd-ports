@@ -1,0 +1,2 @@
+httpx-auth provides authentication classes to be used with httpx authentication
+parameter.

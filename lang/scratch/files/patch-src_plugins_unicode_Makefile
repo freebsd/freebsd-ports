@@ -1,0 +1,13 @@
+--- src/plugins/unicode/Makefile.orig	2011-06-03 14:56:20 UTC
++++ src/plugins/unicode/Makefile
+@@ -1,8 +1,8 @@
+ all: clean build
+ 
+ build:	
+-	gcc $(CFLAGS) -fPIC -c `pkg-config --cflags pangocairo` *.c 
+-	gcc -shared `pkg-config --libs pangocairo` -lc *.o -o ../../../Plugins/so.UnicodePlugin
++	$(CC) $(CFLAGS) -fPIC -c `pkg-config --cflags pangocairo` *.c 
++	$(CC) -shared `pkg-config --libs pangocairo` -lc *.o -o ../../../Plugins/so.UnicodePlugin
+ 
+ clean:
+ 	rm -f *.o ../../../Plugins/so.UnicodePlugin

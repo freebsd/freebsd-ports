@@ -1,5 +1,6 @@
 PORTNAME=	gmime
 PORTVERSION=	3.2.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	30
@@ -23,12 +24,11 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	VALA
-OPTIONS_DEFAULT=	VALA
+OPTIONS_DEFINE=	VAPI
+OPTIONS_DEFAULT=	VAPI
 OPTIONS_SUB=	yes
-VALA_DESC=	Install vala binding
-VALA_USES=		vala:build
-VALA_CONFIGURE_ENABLE=	vala
+VAPI_USES=		vala:build
+VAPI_CONFIGURE_ENABLE=	vala
 
 # www.freebsd.org/cgi/query-pr.cgi?pr=118092
 # Rename uudecode and uuencode to gmime-* to not conflict with userland

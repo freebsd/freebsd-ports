@@ -1,5 +1,5 @@
 PORTNAME=	hoe
-PORTVERSION=	3.25.0
+PORTVERSION=	3.26.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rake>=0.8<15.0:devel/rubygem-rake
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

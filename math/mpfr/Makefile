@@ -1,12 +1,13 @@
 PORTNAME=	mpfr
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+DISTVERSION=	4.2.0
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	math devel
-MASTER_SITES=	https://www.mpfr.org/mpfr-${PORTVERSION}/ \
-		GNU
+MASTER_SITES=	GNU \
+		https://www.mpfr.org/mpfr-${DISTVERSION}/
 DIST_SUBDIR=	${DISTNAME}
 
-PATCH_SITES=	${MASTER_SITES}
+PATCH_SITES=	https://www.mpfr.org/mpfr-${DISTVERSION}/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
@@ -18,10 +19,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-PATCHLEVEL=	13
+PATCHLEVEL=	12
 PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 
-USES=		gmake libtool makeinfo tar:xz
+USES=		gmake libtool makeinfo pathfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gmp=${LOCALBASE}
 INSTALL_TARGET=	install-strip

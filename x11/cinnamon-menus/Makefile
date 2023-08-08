@@ -1,5 +1,5 @@
 PORTNAME=	cinnamon-menus
-PORTVERSION=	4.8.2
+PORTVERSION=	5.4.0
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 

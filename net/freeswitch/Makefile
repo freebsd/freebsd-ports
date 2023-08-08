@@ -1,6 +1,6 @@
 PORTNAME=	freeswitch
-PORTVERSION=	1.10.3
-PORTREVISION=	2
+PORTVERSION=	1.10.9
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	https://files.freeswitch.org/releases/freeswitch/ \
 		https://files.freeswitch.org/releases/sounds/:sounds
@@ -12,9 +12,13 @@ WWW=		https://freeswitch.org
 
 LICENSE=	MPL11
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+BROKEN_i386=	error: expected ')'
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
-BUILD_DEPENDS=	gdiff:textproc/diffutils
+BUILD_DEPENDS=	gdiff:textproc/diffutils \
+		doxygen:devel/doxygen \
+		erlang>=21.3:lang/erlang
+RUN_DEPENDS=	erlang>=21.3:lang/erlang
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl \
 		libavformat.so:multimedia/ffmpeg \
@@ -29,10 +33,14 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libpng.so:graphics/png \
 		libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
-		libuuid.so:misc/e2fsprogs-libuuid
+		libuuid.so:misc/e2fsprogs-libuuid \
+		libmariadb.so:databases/mariadb-connector-c \
+		libspandsp.so:comms/spandsp \
+		libsofia-sip-ua.so:net/sofia-sip
 
-USES=		compiler:c11 cpe gmake iconv jpeg libedit autoreconf libtool lua \
-		perl5 pkgconfig shebangfix ssl
+USES=		compiler:c11 cpe gmake iconv jpeg libedit autoreconf \
+		libtool lua:53 openal perl5 pkgconfig shebangfix ssl tar:xz
+
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	freeswitch
 BINARY_ALIAS=	diff=gdiff
@@ -76,6 +84,54 @@ FRENCH_CA_DESC=		French Canadian Language Sounds
 RUSSIAN_DESC=		Russian Language Sounds
 SWEDISH_DESC=		Swedish Language Sounds
 
+ALL_MODULES_BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
+				${LOCALBASE}/bin/aclocal:devel/automake \
+				${LOCALBASE}/bin/erl:lang/erlang \
+				${LOCALBASE}/bin/bash:shells/bash \
+				${LOCALBASE}/bin/mariadb:databases/mariadb104-client \
+				${LOCALBASE}/bin/php:lang/php80
+ALL_MODULES_CONFLICTS_BUILD=	apr
+ALL_MODULES_EXTRA_PATCHES=	${FILESDIR}/extrapatch-modules.conf
+ALL_MODULES_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
+				libopencv_video.so:graphics/opencv \
+				libopencv_core.so:graphics/opencv-core \
+				libhiredis.so:databases/hiredis \
+				libldap.so:net/openldap24-client \
+				libmemcached.so:databases/libmemcached \
+				libSoundTouch.so:audio/soundtouch \
+				libasound.so:audio/alsa-lib \
+				libcodec2.so:audio/codec2 \
+				libflite.so:audio/flite \
+				libh2o.so:www/h2o \
+				libh323.so:net/h323plus \
+				libhiredis.so:databases/hiredis \
+				libilbc.so:net/ilbc \
+				libmemcached.so:databases/libmemcached \
+				libmongoc-1.0.so:devel/mongo-c-driver \
+				libmp3lame.so:audio/lame \
+				libmp4v2.so:multimedia/mp4v2 \
+				libmpg123.so:audio/mpg123 \
+				libnetsnmp.so:net-mgmt/net-snmp \
+				libopencv_core.so:graphics/opencv-core \
+				libopusfile.so:audio/opusfile \
+				libphp.so:lang/php80 \
+				libportaudio.so:audio/portaudio \
+				libpt.so:devel/ptlib \
+				librabbitmq.so:net/rabbitmq-c \
+				libshout.so:audio/libshout \
+				libtheora.so:multimedia/libtheora \
+				libtonezone.so:misc/dahdi \
+				libvlc.so:multimedia/vlc \
+				libyaml.so:textproc/libyaml
+ALL_MODULES_RUN_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
+ALL_MODULES_USE=		XORG=x11 OPENLDAP=yes JAVA=yes
+ALL_MODULES_VARS=		USE_JAVA=yes
+ALL_MODULES_USES=		python:2.7 xorg # required by mod_unimrcp
+ALL_MODULES_CFLAGS=		-I${LOCALBASE}/include/openh323/ \
+				-I${JAVA_HOME}/include/ \
+				-I${JAVA_HOME}/include/freebsd
+JAVA_VERSION=			11
+
 8K_VARS=	BITRATES+=8000
 16K_VARS=	BITRATES+=16000
 32K_VARS=	BITRATES+=32000
@@ -110,7 +166,7 @@ EXTRADISTFILES+=	${EDPRE}-zh-cn-sinmei-${rate}-${EDPOST}
 EXTRADISTFILES+=	${EDPRE}-zh-hk-sinmei-${rate}-${EDPOST}
 .endif
 .if ${PORT_OPTIONS:MENGLISH}
-EXTRADISTFILES+=	${EDPRE}-en-us-callie-${rate}-${EDPOST}
+EXTRADISTFILES+=	${EDPRE}-en-us-callie-${rate}-${EDPOST_MUSIC}
 .endif
 .if ${PORT_OPTIONS:MENGLISH_CA}
 EXTRADISTFILES+=	${EDPRE}-en-ca-june-${rate}-${EDPOST}
@@ -130,9 +186,11 @@ EXTRADISTFILES+=	${EDPRE}-sv-se-jakob-${rate}-${EDPOST_SV}
 DISTFILES+=	${distfile}:sounds
 .endfor
 
-# Patch out mod_signalwire as it requires libks that isn't available, yet.
+# Patch out mod_signalwire & mod_verto as they require libks that isn't available, yet.
 post-patch:
 		${REINPLACE_CMD} -Ee 's|^(applications/mod_signalwire)|#\1|' \
+			${WRKSRC}/modules.conf
+		${REINPLACE_CMD} -Ee 's|^(endpoints/mod_verto)|#\1|' \
 			${WRKSRC}/modules.conf
 
 post-patch-PGSQL-off:
@@ -150,4 +208,5 @@ post-install:
 		(cd ${WRKSRC}/conf && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
+.include "${.CURDIR:H:H}/multimedia/ffmpeg4/override.mk"
 .include <bsd.port.mk>

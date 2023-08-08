@@ -16,6 +16,8 @@ CONFIGURE_ARGS=	--with-ssl-incdir=${OPENSSLINC} \
 		--with-ssl-libdir=${OPENSSLLIB}
 
 USES=		gmake libtool perl5 ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to build with error undefined reference due to --no-allow-shlib-undefined: EVP
 USE_RC_SUBR=	milter-enma
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -27,6 +29,13 @@ SUB_FILES=	milter-enma
 OPTIONS_DEFINE=	DOCS LIBBIND
 
 LIBBIND_DESC=	Link against dns/libbind instead of dns/ldns
+
+LIBBIND_CONFIGURE_ON=	--with-resolver=libbind \
+			--with-libbind-incdir=${LOCALBASE}/include/bind \
+			--with-libbind-libdir=${LOCALBASE}/lib
+LIBBIND_BUILD_DEPENDS=	${LOCALBASE}/lib/libbind.a:dns/libbind
+LIBBIND_CONFIGURE_OFF=	--with-resolver=ldns
+LIBBIND_LIB_DEPENDS_OFF=	libldns.so:dns/ldns
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 CONF_SUB=	${REINPLACE_CMD} -e '/milter\.postfix/s/false/true/' ${WRKSRC}/enma/etc/enma.conf.sample
@@ -40,14 +49,10 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:mail/postfix
 .include <bsd.port.options.mk>
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
 
-.if ${PORT_OPTIONS:MLIBBIND}
-CONFIGURE_ARGS+=	--with-resolver=libbind \
-			--with-libbind-incdir=${LOCALBASE}/include/bind \
-			--with-libbind-libdir=${LOCALBASE}/lib
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libbind.a:dns/libbind
-.else
-CONFIGURE_ARGS+=	--with-resolver=ldns
-LIB_DEPENDS+=	libldns.so:dns/ldns
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 pre-configure:
@@ -66,4 +71,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib/libsauth.so \
 		${STAGEDIR}${PREFIX}/libexec/enma
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

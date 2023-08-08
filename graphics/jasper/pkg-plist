@@ -26,12 +26,12 @@ include/jasper/jas_types.h
 include/jasper/jas_version.h
 include/jasper/jasper.h
 lib/libjasper.so
-lib/libjasper.so.6
-lib/libjasper.so.6.0.0
+lib/libjasper.so.7
+lib/libjasper.so.7.0.0
 libdata/pkgconfig/jasper.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/jpeg2000.pdf
 share/man/man1/imgcmp.1.gz
 share/man/man1/imginfo.1.gz
 share/man/man1/jasper.1.gz
 %%OPENGL%%share/man/man1/jiv.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/jpeg2000.pdf

@@ -1,5 +1,5 @@
 PORTNAME?=	mysql
-PORTVERSION=	5.7.39
+PORTVERSION=	5.7.42
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.7
@@ -12,12 +12,16 @@ WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=     Upstream support ended in October 2019
+EXPIRATION_DATE=        2023-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SLAVEDIRS=	databases/mysql57-client
 USES=		bison:build cmake:noninja compiler:c11 compiler:c++11-lib \
 		cpe groff:run libedit localbase perl5 shebangfix ssl
-
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	Upstream only supports OpenSSL 1.0.1 upto 1.1.X
 CPE_VENDOR=	oracle
 
 USE_PERL5=	run
@@ -32,9 +36,6 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libprotobuf.so:devel/protobuf
 
 CMAKE_BUILD_TYPE=	Release
-
-CFLAGS+=	-DNDEBUG
-CXXFLAGS+=	-DNDEBUG
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_LDCONFIGDIR="${LOCALBASE}/libdata/ldconfig" \
@@ -167,6 +168,8 @@ post-patch:
 	# issue 220865: MySQL developers forgot that FreeBSD != Linux
 	@${REINPLACE_CMD} -e 's|%%FREEBSD_LOCAL_LIB%%|${LOCALBASE}/lib|g' \
 	    ${WRKSRC}/configure.cmake
+	@${REINPLACE_CMD} -e 's|__clang__|__undefined__|g' \
+	    ${WRKSRC}/boost/boost_1_59_0/boost/atomic/detail/ops_gcc_x86_dcas.hpp
 
 .if !defined(CLIENT_ONLY)
 post-install:

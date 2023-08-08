@@ -1,0 +1,5 @@
+MySQL++ is a C++ wrapper for the MySQL and MariaDB C APIs. It is built on the
+same principles as the Standard C++ Library to make dealing with the database
+as easy as dealing with std containers. MySQL++ lets you avoid the most
+repetitive sorts of SQL by providing native C++ interfaces for these common
+tasks.

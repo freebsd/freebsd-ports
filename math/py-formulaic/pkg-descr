@@ -1,0 +1,16 @@
+Formulaic is a high-performance implementation of Wilkinson formulas for Python.
+
+It provides:
+* high-performance dataframe to model-matrix conversions.
+* support for reusing the encoding choices made during conversion of one
+  data-set on other datasets.
+* extensible formula parsing.
+* extensible data input/output plugins, with implementations for:
+  * input:
+    * pandas.DataFrame
+    * pyarrow.Table
+  * output:
+    * pandas.DataFrame
+    * numpy.ndarray
+    * scipy.sparse.CSCMatrix
+* support for symbolic differentiation of formulas (and hence model matrices).

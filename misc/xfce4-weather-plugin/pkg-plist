@@ -1,5 +1,9 @@
 lib/xfce4/panel/plugins/libweather.so
-%%NLS%%share/icons/hicolor/48x48/apps/xfce4-weather.png
+share/icons/hicolor/128x128/apps/org.xfce.panel.weather.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.weather.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.weather.png
+share/icons/hicolor/48x48/apps/org.xfce.panel.weather.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.weather.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/xfce4-weather-plugin.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/xfce4-weather-plugin.mo
 %%NLS%%share/locale/be/LC_MESSAGES/xfce4-weather-plugin.mo

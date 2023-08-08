@@ -26,7 +26,6 @@ man/man8/pkg-alias.8.gz
 man/man8/pkg-annotate.8.gz
 man/man8/pkg-audit.8.gz
 man/man8/pkg-autoremove.8.gz
-man/man8/pkg-backup.8.gz
 man/man8/pkg-check.8.gz
 man/man8/pkg-clean.8.gz
 man/man8/pkg-config.8.gz

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-murmurhash3>=0.1.6<0.2.0:devel/rubygem-murmurhash3
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

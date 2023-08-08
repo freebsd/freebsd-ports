@@ -1,5 +1,5 @@
 PORTNAME=	pg
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
 USES=		gem pgsql
-USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-pgsql-include-dir=`${PG_CONFIG} --includedir` \
 		--with-pgsql-lib-dir=`${PG_CONFIG} --libdir`

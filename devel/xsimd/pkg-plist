@@ -28,13 +28,13 @@ include/xsimd/arch/xsimd_sse3.hpp
 include/xsimd/arch/xsimd_sse4_1.hpp
 include/xsimd/arch/xsimd_sse4_2.hpp
 include/xsimd/arch/xsimd_ssse3.hpp
+include/xsimd/arch/xsimd_sve.hpp
 include/xsimd/config/xsimd_arch.hpp
 include/xsimd/config/xsimd_config.hpp
 include/xsimd/config/xsimd_cpuid.hpp
 include/xsimd/math/xsimd_rem_pio2.hpp
 include/xsimd/memory/xsimd_aligned_allocator.hpp
 include/xsimd/memory/xsimd_alignment.hpp
-include/xsimd/stl/algorithms.hpp
 include/xsimd/types/xsimd_all_registers.hpp
 include/xsimd/types/xsimd_api.hpp
 include/xsimd/types/xsimd_avx2_register.hpp
@@ -58,6 +58,7 @@ include/xsimd/types/xsimd_sse3_register.hpp
 include/xsimd/types/xsimd_sse4_1_register.hpp
 include/xsimd/types/xsimd_sse4_2_register.hpp
 include/xsimd/types/xsimd_ssse3_register.hpp
+include/xsimd/types/xsimd_sve_register.hpp
 include/xsimd/types/xsimd_traits.hpp
 include/xsimd/types/xsimd_utils.hpp
 include/xsimd/xsimd.hpp

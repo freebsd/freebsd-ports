@@ -3,7 +3,7 @@
 
 PORTNAME=	atril
 PORTVERSION=	1.26.0
-PORTREVISION=	12
+PORTREVISION=	20
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -83,7 +83,8 @@ EPUB_CONFIGURE_ENABLE=	epub
 EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
 DVI_DESC=		DVI viewer support
-DVI_USE=		tex=base
+DVI_USES=		tex
+DVI_USE=		TEX=base
 DVI_CONFIGURE_ENABLE=	dvi
 
 T1LIB_DESC=		T1LIB for TYPE1 fonts to DVI (Enables DVI)

@@ -1,5 +1,6 @@
 include/zmq_utils.h
 include/zmq.h
+%%STATIC%%lib/libzmq.a
 lib/libzmq.so
 lib/libzmq.so.5
 lib/libzmq.so.5.2.4

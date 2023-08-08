@@ -1,4 +1,4 @@
---- src/hidapi/CMakeLists.txt.orig	2020-03-21 10:55:51 UTC
+--- src/hidapi/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
 +++ src/hidapi/CMakeLists.txt
 @@ -1,8 +1,9 @@
 -

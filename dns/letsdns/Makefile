@@ -1,0 +1,22 @@
+PORTNAME=	letsdns
+DISTVERSION=	1.0.1
+PORTREVISION=	2
+CATEGORIES=	dns
+
+MAINTAINER=	flo@FreeBSD.org
+COMMENT=	Manage DANE TLSA records in DNS servers
+WWW=		https://letsdns.org/
+
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
+
+USES=		python pycryptography:run
+USE_GITHUB=	yes
+GH_ACCOUNT=	LetsDNS
+USE_PYTHON=	autoplist pep517
+
+.include <bsd.port.mk>

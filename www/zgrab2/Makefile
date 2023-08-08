@@ -1,0 +1,20 @@
+PORTNAME=	zgrab2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.7
+CATEGORIES=	www
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Fast Go application scanner
+WWW=		https://github.com/zmap/zgrab2
+
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		go:modules
+
+GO_MODULE=	github.com/zmap/zgrab2
+GO_TARGET=	./cmd/${PORTNAME}
+
+PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.mk>

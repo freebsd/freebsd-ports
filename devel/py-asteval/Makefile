@@ -1,7 +1,7 @@
 PORTNAME=	asteval
-PORTVERSION=	0.9.27
+PORTVERSION=	0.9.31
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 		${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes

@@ -1,7 +1,7 @@
 PORTNAME=	pyjwt1
 PORTVERSION=	1.7.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyJWT-${PORTVERSION}
 
@@ -12,16 +12,12 @@ WWW=		https://github.com/progrium/pyjwt
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired security/py-pycrypto
-EXPIRATION_DATE=2022-09-30
-
 # Some tests are skipped without pycrypto, but its not
 # referenced as a requirement anymore.
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-pyjwt
@@ -29,7 +25,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-pyjwt
 OPTIONS_DEFINE=	RSASSA
 
 RSASSA_DESC=		RSASSA-PKCS1 v1.5 signature support
-RSASSA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR}
+RSASSA_USES=		pycryptography:run,test
+RSASSA_USES_OFF=	pycryptography:test
 
 NO_ARCH=	yes
 

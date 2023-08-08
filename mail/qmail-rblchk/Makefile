@@ -11,16 +11,22 @@ WWW=		http://www.morettoni.net/qmail-rblchk.en.html
 
 USES=		groff qmail:run
 
-LDFLAGS?=	-s
-CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \
-		-Wshadow -Wcast-qual -Wcast-align -Wwrite-strings
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 ALL_TARGET=	default
 INSTALL_TARGET=	setup
 
+CFLAGS?=	-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \
+		-Wshadow -Wcast-qual -Wcast-align -Wwrite-strings
+LDFLAGS?=	-s
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/"cat/d; s|,02755|,0755|' ${WRKSRC}/hier.c

@@ -1,0 +1,2 @@
+The PyVCD package writes Value Change Dump (VCD) files as specified
+in IEEE 1364-2005.

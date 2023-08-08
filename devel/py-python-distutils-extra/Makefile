@@ -1,5 +1,5 @@
 PORTNAME=	python-distutils-extra
-PORTVERSION=	2.47
+PORTVERSION=	2.50
 CATEGORIES=	devel python
 MASTER_SITES=	DEBIAN
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://salsa.debian.org/python-team/packages/python-distutils-extra
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ tar:xz
+USES=		python tar:xz
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

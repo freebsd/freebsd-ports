@@ -1,5 +1,7 @@
 PORTNAME=	msgpack-d
-DISTVERSION=	1.0.0-beta8
+PORTVERSION=	1.0.4
+PORTREVISION=	3
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,17 +15,14 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	msgpack
-# FIXME: Remove this once it goes out of beta.
-# Side note, 1.0.0-beta.6 was a perfectly reasonable version to be used in
-# DISTVERSION.
-GH_TAGNAME=	v${DISTVERSION:S/beta/beta./}
 
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}

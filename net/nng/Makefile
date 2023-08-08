@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.2
 CATEGORIES=	net
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lightweight, broker-less messaging
 WWW=		https://nanomsg.github.io/nng/
 

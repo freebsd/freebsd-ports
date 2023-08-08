@@ -89,7 +89,6 @@ include/vst3sdk/conststringtable.cpp
 include/vst3sdk/conststringtable.h
 include/vst3sdk/coreiids.cpp
 include/vst3sdk/dllmain.cpp
-include/vst3sdk/doc.cpp
 include/vst3sdk/doc.h
 include/vst3sdk/docAUv2.h
 include/vst3sdk/docAUv3.h
@@ -167,6 +166,7 @@ include/vst3sdk/iparameterclient.h
 include/vst3sdk/ipersistent.h
 include/vst3sdk/iplatform.h
 include/vst3sdk/ipluginbase.h
+include/vst3sdk/iplugincompatibility.h
 include/vst3sdk/iplugview.h
 include/vst3sdk/iplugviewcontentscalesupport.h
 include/vst3sdk/istringresult.h
@@ -198,6 +198,8 @@ include/vst3sdk/ivsttestplugprovider.h
 include/vst3sdk/ivstunits.h
 include/vst3sdk/iwindow.h
 include/vst3sdk/jackclient.cpp
+include/vst3sdk/json.h
+include/vst3sdk/jsoncxx.h
 include/vst3sdk/keycodes.h
 include/vst3sdk/keyswitch.cpp
 include/vst3sdk/keyswitch.h
@@ -362,6 +364,11 @@ include/vst3sdk/module.cpp
 include/vst3sdk/module.h
 include/vst3sdk/module_linux.cpp
 include/vst3sdk/module_win32.cpp
+include/vst3sdk/moduleinfo.h
+include/vst3sdk/moduleinfocreator.cpp
+include/vst3sdk/moduleinfocreator.h
+include/vst3sdk/moduleinfoparser.cpp
+include/vst3sdk/moduleinfoparser.h
 include/vst3sdk/moduleinit.cpp
 include/vst3sdk/moduleinit.h
 include/vst3sdk/mpeprocessor.cpp
@@ -378,6 +385,7 @@ include/vst3sdk/note_touch_controller.cpp
 include/vst3sdk/note_touch_controller.h
 include/vst3sdk/noteexpression.cpp
 include/vst3sdk/noteexpression.h
+include/vst3sdk/objcclassbuilder.h
 include/vst3sdk/openurl.cpp
 include/vst3sdk/openurl.h
 include/vst3sdk/optional.h
@@ -396,6 +404,8 @@ include/vst3sdk/platform.cpp
 include/vst3sdk/plug.cpp
 include/vst3sdk/plug.h
 include/vst3sdk/plugcids.h
+include/vst3sdk/plugcompat.cpp
+include/vst3sdk/plugcompat.h
 include/vst3sdk/plugcontroller.cpp
 include/vst3sdk/plugcontroller.h
 include/vst3sdk/plugentry.cpp
@@ -564,9 +574,9 @@ lib/vst3/A2EAF7DB320640F48EDE380DDF89562C_snapshot.png
 lib/vst3/A2EAF7DB320640F48EDE380DDF89562C_snapshot_2.0x.png
 lib/vst3/about.png
 lib/vst3/adelay.so
+lib/vst3/again-sampleaccurate.so
 lib/vst3/again.so
 lib/vst3/again.uidesc
-lib/vst3/again_sampleaccurate.so
 lib/vst3/againsimple.so
 lib/vst3/animation_knob.png
 lib/vst3/animation_knob_3x.png
@@ -582,14 +592,14 @@ lib/vst3/knob.png
 lib/vst3/knob2.png
 lib/vst3/legacymidiccout.so
 lib/vst3/mda-vst3.so
+lib/vst3/multiple-program-changes.so
 lib/vst3/note_expression_synth.uidesc
 lib/vst3/noteexpressionsynth.so
 lib/vst3/noteexpressiontext.so
 lib/vst3/panner.so
 lib/vst3/pitchnames.so
-lib/vst3/pitchnames.uidesc
 lib/vst3/plug.uidesc
-lib/vst3/prefetchablesupport.so
+lib/vst3/prefetchable.so
 lib/vst3/programchange.so
 lib/vst3/slider_background.png
 lib/vst3/slider_handle.png

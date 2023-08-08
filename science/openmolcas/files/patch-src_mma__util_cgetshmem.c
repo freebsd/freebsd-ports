@@ -1,11 +1,11 @@
---- src/mma_util/cgetshmem.c.orig	2022-05-24 05:38:26 UTC
+--- src/mma_util/cgetshmem.c.orig	2023-06-12 11:58:03 UTC
 +++ src/mma_util/cgetshmem.c
-@@ -134,6 +134,8 @@ INT add_shmentry(mstat *MM, mentry *tmp, char *path, I
-       shmid = shmget(SHM_key, (size_t) tmp->len, 0644|IPC_CREAT|IPC_EXCL);
- #elif _AIX_
-       shmid = shmget(SHM_key, (size_t) tmp->len, 0644|IPC_CREAT|IPC_EXCL|SHM_PIN);
+@@ -137,6 +137,8 @@ INT add_shmentry(mstat *MM, mentry *tmp, char *path, I
+   shmid = shmget(SHM_key, (size_t)tmp->len, 0644 | IPC_CREAT | IPC_EXCL);
+ #   elif _AIX_
+   shmid = shmget(SHM_key, (size_t)tmp->len, 0644 | IPC_CREAT | IPC_EXCL | SHM_PIN);
 +#elif __FreeBSD__
-+      shmid = shmget(SHM_key, (size_t) tmp->len, 0644|IPC_CREAT|IPC_EXCL);
- #else
-       shmid = shmget(SHM_key, (size_t) tmp->len, 0644|IPC_CREAT|IPC_EXCL|SHM_LOCKED);
- /*    shmid = shmget(SHM_key, (size_t) tmp->len, 0644|IPC_CREAT|IPC_EXCL|SHM_LOCKED|SHM_NORESERVE);*/
++  shmid = shmget(SHM_key, (size_t) tmp->len, 0644 | IPC_CREAT | IPC_EXCL);
+ #   else
+   shmid = shmget(SHM_key, (size_t)tmp->len, 0644 | IPC_CREAT | IPC_EXCL | SHM_LOCKED);
+   /* shmid = shmget(SHM_key, (size_t)tmp->len, 0644 | IPC_CREAT | IPC_EXCL | SHM_LOCKED | SHM_NORESERVE);*/

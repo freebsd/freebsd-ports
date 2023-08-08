@@ -15,6 +15,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 
 USES=		meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Ddocs=disabled
 PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

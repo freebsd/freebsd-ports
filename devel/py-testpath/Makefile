@@ -1,7 +1,7 @@
 PORTNAME=	testpath
 PORTVERSION=	0.6.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/jupyter/testpath
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils pytest
 
 NO_ARCH=	yes

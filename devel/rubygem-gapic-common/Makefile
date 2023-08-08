@@ -1,11 +1,12 @@
 PORTNAME=	gapic-common
-PORTVERSION=	0.11.1
+PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common code for GAPIC-generated API clients
-WWW=		https://github.com/googleapis/gapic-generator-ruby/tree/master/gapic-common
+WWW=		https://github.com/googleapis/gapic-generator-ruby/tree/master/gapic-common \
+		https://github.com/googleapis/gapic-generator-ruby
 
 LICENSE=	APACHE20
 
@@ -18,7 +19,6 @@ RUN_DEPENDS=	rubygem-faraday>=1.9<3:www/rubygem-faraday \
 		rubygem-grpc>=1.36<2:net/rubygem-grpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

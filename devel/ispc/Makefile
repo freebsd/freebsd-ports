@@ -1,6 +1,7 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.18.0
+DISTVERSION=	1.20.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,9 +16,10 @@ ONLY_FOR_ARCHS_REASON=	only available for these architectures
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex \
 		m4:devel/m4
-LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libLLVM.so:devel/llvm${LLVM_VERSION} \
+		libtbb.so:devel/onetbb
 
-USES=		bison cmake compiler:c++14-lang python:build,test shebangfix
+USES=		bison cmake compiler:c++17-lang llvm:lib,min=15,max=15 python:build,test shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -27,9 +29,11 @@ SHEBANG_FILES=	*.py
 
 CONFIGURE_ENV=	PATH=${LOCALBASE}/llvm${LLVM_VERSION}/bin:${PATH} # see https://github.com/ispc/ispc/issues/2318
 CMAKE_OFF=	ISPC_NO_DUMPS DISPCRT_BUILD_GPU ISPC_INCLUDE_TESTS ISPCRT_BUILD_TESTS ISPC_INCLUDE_EXAMPLES
-CMAKE_ARGS=	-DFREEBSD_LLVM_VERSION=${LLVM_VERSION} # see https://github.com/ispc/ispc/issues/2318
+CMAKE_ARGS=	-DLLVM_CONFIG_EXECUTABLE=${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config
 
 BINARY_ALIAS=	flex=${LOCALBASE}/bin/flex python=${PYTHON_CMD} m4=${LOCALBASE}/bin/gm4
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE_amd64=	ARM XE
 OPTIONS_DEFINE_i386=	ARM
@@ -59,15 +63,6 @@ XE_PLIST_FILES=		include/ispcrt/ispcrt.h \
 			lib/libispcrt.so.${PORTVERSION} \
 			lib/libispcrt_static.a
 XE_BROKEN=		Unknown architecture
-
-#.include <bsd.port.options.mk>
-#.if ${LLVM_DEFAULT:M[7891]0} || ${LLVM_DEFAULT:M1[12]} # max(LLVM_DEFAULT,13)
-#LLVM_VERSION=	13
-#.else
-#LLVM_VERSION=	${LLVM_DEFAULT}
-#.endif
-
-LLVM_VERSION?=	13
 
 do-test: # all tests pass
 	@cd ${WRKSRC} && ISPC_HOME=${BUILD_WRKSRC}/bin ./run_tests.py

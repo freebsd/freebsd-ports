@@ -1,5 +1,6 @@
 PORTNAME=	dsymbol
-PORTVERSION=	0.6.2
+PORTVERSION=	0.14.1
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -23,6 +24,7 @@ GH_ACCOUNT=	dlang-community
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
 	${REINPLACE_CMD} -e '7,11d' ${WRKSRC}/dub.json
@@ -30,12 +32,12 @@ post-patch:
 		${WRKSRC}/src/dsymbol/modulecache.d
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}
 	@${MKDIR} ${STAGEDIR}${D_LIB_DIR}
-	${INSTALL_DATA} ${WRKSRC}/libdsymbol.a ${STAGEDIR}${D_LIB_DIR}
+	${INSTALL_DATA} ${WRKSRC}/build/libdsymbol.a ${STAGEDIR}${D_LIB_DIR}
 	cd ${WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${D_INCLUDE_DIR} "-name *\.d"
 
 .include <bsd.port.mk>

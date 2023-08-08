@@ -1,8 +1,8 @@
 PORTNAME=	uade
-PORTVERSION=	2.13
-PORTREVISION=	2
+PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
+MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,50 +11,46 @@ WWW=		https://zakalwe.fi/uade/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libao.so:audio/libao
+BUILD_DEPENDS=	bash:shells/bash \
+		vasmm68k_mot:devel/vasm
+LIB_DEPENDS=	libao.so:audio/libao \
+		libbencodetools.so:devel/bencodetools
 
-USES=		gmake pkgconfig tar:bzip2
+USES=		gmake localbase:ldflags pathfix pkgconfig python:build \
+		shebangfix tar:bzip2
+
+SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view
+
 HAS_CONFIGURE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/uade2
-DATADIR=	${PREFIX}/share/uade2
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
+		--no-debug \
+		--prefix=${PREFIX} \
+		--without-write-audio
+CONFIGURE_ENV=	PYTHON_INTERPRETER=${PYTHON_CMD} \
+		SYSCFLAGS='${CFLAGS}'
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--mandir=${MANPREFIX}/man/man1 \
-		--no-debug --without-audacious \
-		--package-prefix=${STAGEDIR}
+SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view
+PORTDOCS=	*
 
-CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
-
-PORTDOCS=	BUGS PLANS REDUNDANT_REPLAYERS UAE-CREDITS UAE-README \
-		VERSION_CONTROL_TAGGING audio_emulation.txt design.tex \
-		download.html faq.html layers.eps layers.xfig \
-		play_loop_state_diagram.dia play_loop_state_diagram.eps \
-		play_loop_state_diagram.txt uade.html
-
-OPTIONS_DEFINE=	TEXTSCOPE FUSE DOCS
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS TEXTSCOPE
+OPTIONS_DEFAULT=	TEXTSCOPE
+OPTIONS_SUB=		yes
 
 TEXTSCOPE_DESC=	Audio register debug mode
 
 TEXTSCOPE_CONFIGURE_WITH=	text-scope
 
-FUSE_USES=		fuse
-FUSE_CONFIGURE_WITH=	uadefs
-
 post-extract:
 	@${RM} -r ${WRKSRC}/players/S
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' \
-		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uade123 \
-		${STAGEDIR}${PREFIX}/lib/uade2/uadecore
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uade123 \
+	${STAGEDIR}${PREFIX}/lib/libuade.so \
+	${STAGEDIR}${PREFIX}/lib/uade/uadecore
 
 .include <bsd.port.mk>

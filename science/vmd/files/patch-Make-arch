@@ -1,4 +1,4 @@
---- ../plugins/Make-arch.orig	2016-10-21 23:34:39.000000000 +0200
+--- ../plugins/Make-arch.orig	2016-10-21 23:34:39 UTC
 +++ ../plugins/Make-arch
 @@ -272,10 +272,8 @@
  	"CC = gcc" \

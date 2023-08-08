@@ -1,7 +1,6 @@
 PORTNAME=	nest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3
-PORTREVISION=	2
+DISTVERSION=	3.5
 CATEGORIES=	science biology # NEST is used in neuroscience
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,6 +43,7 @@ USES+=		compiler:c++11-lang
 
 # 2 tests are known to fail, see https://github.com/nest/nest-simulator/issues/2190
 # tests require the port to be installed with DOCS=ON, see https://github.com/nest/nest-simulator/issues/2191
+# many tests fail, see https://github.com/nest/nest-simulator/issues/2848
 
 post-install:
 	@${REINPLACE_CMD} -i '' -e 's|^python3 |${PYTHON_CMD} |' ${STAGEDIR}${PREFIX}/share/nest/testsuite/do_tests.sh

@@ -9,3 +9,12 @@
    case "$host" in
      *-*-linux*)
        OS_LINUX=yes
+@@ -20127,7 +20127,7 @@ fi
+ 
+     # If a prefix to search was specified, then add the appropriate
+     # flags.
+-    if test "X$libstroke_use" = "X"; then
++    if test -n "$libstroke_prefix"; then
+       LIBSTROKE_LDFLAGS="-L$libstroke_prefix/lib"
+       LIBSTROKE_CFLAGS="-I$libstroke_prefix/include"
+     fi

@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2023-03-28 19:45:02 UTC
++++ src/3rdparty/chromium/components/crash/core/common/BUILD.gn
+@@ -8,7 +8,7 @@ declare_args() {
+ 
+ declare_args() {
+   # If set to true, this will stub out and disable the entire crash key system.
+-  use_crash_key_stubs = is_fuchsia
++  use_crash_key_stubs = is_fuchsia || is_bsd
+ }
+ 
+ group("common") {

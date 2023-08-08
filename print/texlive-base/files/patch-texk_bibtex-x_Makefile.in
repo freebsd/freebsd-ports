@@ -1,0 +1,131 @@
+--- texk/bibtex-x/Makefile.in.orig	2023-03-01 22:59:32 UTC
++++ texk/bibtex-x/Makefile.in
+@@ -123,9 +123,7 @@ CONFIG_CLEAN_VPATH_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+ @BIBTEX8_TRUE@am__EXEEXT_1 = bibtex8$(EXEEXT)
+ @BIBTEXU_TRUE@am__EXEEXT_2 = bibtexu$(EXEEXT)
+-am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" \
+-	"$(DESTDIR)$(btdocdir)" "$(DESTDIR)$(btudocdir)" \
+-	"$(DESTDIR)$(btuexdir)" "$(DESTDIR)$(csfdir)"
++am__installdirs = "$(DESTDIR)$(bindir)"
+ PROGRAMS = $(bin_PROGRAMS)
+ am__objects_1 = bibtex8-bibtex-1.$(OBJEXT) bibtex8-bibtex-2.$(OBJEXT) \
+ 	bibtex8-bibtex-3.$(OBJEXT) bibtex8-bibtex-4.$(OBJEXT) \
+@@ -137,7 +135,7 @@ am__v_lt_0 = --silent
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+-am__v_lt_1 = 
++am__v_lt_1 =
+ am__objects_2 = bibtexu-bibtex-1.$(OBJEXT) bibtexu-bibtex-2.$(OBJEXT) \
+ 	bibtexu-bibtex-3.$(OBJEXT) bibtexu-bibtex-4.$(OBJEXT) \
+ 	bibtexu-bibtex.$(OBJEXT) bibtexu-utils.$(OBJEXT)
+@@ -152,11 +150,11 @@ am__v_GEN_0 = @echo "  GEN     " $@;
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/../../build-aux/depcomp
+ am__maybe_remake_depfiles = depfiles
+@@ -179,7 +177,7 @@ am__v_CC_0 = @echo "  CC      " $@;
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -187,7 +185,7 @@ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+@@ -197,14 +195,14 @@ am__v_CXX_0 = @echo "  CXX     " $@;
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+ 	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES) \
+ 	$(nodist_EXTRA_bibtexu_SOURCES)
+ DIST_SOURCES = $(bibtex8_SOURCES) $(bibtexu_SOURCES)
+@@ -774,7 +772,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config
+ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status config.h
+-$(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps) 
++$(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
+ 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+ 	rm -f stamp-h1
+ 	touch $@
+@@ -831,11 +829,11 @@ clean-binPROGRAMS:
+ 	echo " rm -f" $$list; \
+ 	rm -f $$list
+ 
+-bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES) 
++bibtex8$(EXEEXT): $(bibtex8_OBJECTS) $(bibtex8_DEPENDENCIES) $(EXTRA_bibtex8_DEPENDENCIES)
+ 	@rm -f bibtex8$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(bibtex8_OBJECTS) $(bibtex8_LDADD) $(LIBS)
+ 
+-bibtexu$(EXEEXT): $(bibtexu_OBJECTS) $(bibtexu_DEPENDENCIES) $(EXTRA_bibtexu_DEPENDENCIES) 
++bibtexu$(EXEEXT): $(bibtexu_OBJECTS) $(bibtexu_DEPENDENCIES) $(EXTRA_bibtexu_DEPENDENCIES)
+ 	@rm -f bibtexu$(EXEEXT)
+ 	$(AM_V_CXXLD)$(CXXLINK) $(bibtexu_OBJECTS) $(bibtexu_LDADD) $(LIBS)
+ 
+@@ -1408,7 +1406,7 @@ $(TEST_SUITE_LOG): $(TEST_LOGS)
+ 	fi;								\
+ 	$$success || exit 1
+ 
+-check-TESTS: 
++check-TESTS:
+ 	@list='$(RECHECK_LOGS)';           test -z "$$list" || rm -f $$list
+ 	@list='$(RECHECK_LOGS:.log=.trs)'; test -z "$$list" || rm -f $$list
+ 	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
+@@ -1418,7 +1416,7 @@ check-TESTS: 
+ 	log_list=`echo $$log_list`; trs_list=`echo $$trs_list`; \
+ 	$(MAKE) $(AM_MAKEFLAGS) $(TEST_SUITE_LOG) TEST_LOGS="$$log_list"; \
+ 	exit $$?;
+-recheck: all 
++recheck: all
+ 	@test -z "$(TEST_SUITE_LOG)" || rm -f $(TEST_SUITE_LOG)
+ 	@set +e; $(am__set_TESTS_bases); \
+ 	bases=`for i in $$bases; do echo $$i; done \
+@@ -1620,7 +1618,7 @@ installdirs:
+ check: check-am
+ all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
+ installdirs:
+-	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(btdocdir)" "$(DESTDIR)$(btudocdir)" "$(DESTDIR)$(btuexdir)" "$(DESTDIR)$(csfdir)"; do \
++	for dir in "$(DESTDIR)$(bindir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+ install: install-am
+@@ -1692,8 +1690,7 @@ info-am:
+ 
+ info-am:
+ 
+-install-data-am: install-dist_btdocDATA install-dist_btudocDATA \
+-	install-dist_btuexDATA install-dist_csfDATA install-man
++install-data-am: install-dist_csfDATA
+ 
+ install-dvi: install-dvi-am
+ 

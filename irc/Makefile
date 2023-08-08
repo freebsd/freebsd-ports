@@ -15,7 +15,6 @@
     SUBDIR += catgirl
     SUBDIR += cgiirc
     SUBDIR += ctrlproxy
-    SUBDIR += cwirc
     SUBDIR += dancer
     SUBDIR += darkbot
     SUBDIR += dircproxy
@@ -85,6 +84,7 @@
     SUBDIR += pounce
     SUBDIR += py-irc
     SUBDIR += py-limnoria
+    SUBDIR += py-sopel
     SUBDIR += quassel
     SUBDIR += quassel-core
     SUBDIR += quirc
@@ -110,6 +110,7 @@
     SUBDIR += weechat
     SUBDIR += weechat-otr
     SUBDIR += znc
+    SUBDIR += znc-clientbuffer
     SUBDIR += znc-push
 
 .include <bsd.port.subdir.mk>

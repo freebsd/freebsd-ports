@@ -6,4 +6,33 @@ The V1 scheduler is no longer supported.  If you have not yet updated to V2 or
 V3, you will be prompted to update when you attempt to review cards in 2.1.50+.
 EOD
 }
+{ type: upgrade
+  maximum_version: 2.1.62
+  message: <<EOD
+  The 2.1.58 release fixes an issue in 2.1.57 that caused cards and deck
+  presets to be reset to the default ease, if you exported a .colpkg with
+  compatibility with older clients enabled, or used the downgrade and quit
+  option, then opened the collection again.
+
+  For the former issue, this occurred to the collection you were exporting
+  from, and not just the .colpkg file. If you were affected by this, running
+  the following in the debug console after updating should restore your cards
+  to the ease they were at when you last reviewed them, if they were not
+  reviewed after the problem occurred. Please make a backup before proceeding.
+
+  updated = 0
+  for cid, old, new in mw.col.db.all("select id, factor, (select factor from revlog where cid=cards.id order by id desc limit 1) as factor2 from cards where type=2"):
+    if new and old != new:
+      card = mw.col.get_card(cid)
+      card.factor = new
+      mw.col.update_card(card)
+      updated += 1
+  print("updated", updated)
+
+  It will print the number of updated cards.  Instructions how to use the debug
+  console can be found here:
+
+  https://docs.ankiweb.net/misc.html#debug-console
+EOD
+}
 ]

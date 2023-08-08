@@ -1,5 +1,5 @@
 PORTNAME=	Astro-FITS-CFITSIO
-PORTVERSION=	1.16
+PORTVERSION=	1.18
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,6 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		localbase perl5
 USE_PERL5=	configure

@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-hpricot>=0.6:www/rubygem-hpricot \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

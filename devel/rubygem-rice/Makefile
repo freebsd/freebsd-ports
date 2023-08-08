@@ -1,5 +1,5 @@
 PORTNAME=	rice
-PORTVERSION=	4.0.4
+PORTVERSION=	4.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_FreeBSD_12_powerpc64=	fails to configure: could not find ruby.h
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

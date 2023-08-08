@@ -1,25 +1,11 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2022-03-28 18:11:04 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.h.orig	2023-07-24 14:27:53 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.h
-@@ -12,7 +12,7 @@
- #include "build/build_config.h"
- #include "content/child/blink_platform_impl.h"
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "components/services/font/public/cpp/font_loader.h"
- #include "third_party/skia/include/core/SkRefCnt.h"
- #endif
-@@ -39,11 +39,11 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
-   blink::WebThemeEngine* ThemeEngine() override;
+@@ -33,7 +33,7 @@ class PpapiBlinkPlatformImpl : public BlinkPlatformImp
+   blink::WebString DefaultLocale() override;
  
   private:
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
- #endif
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   sk_sp<font_service::FontLoader> font_loader_;
  #endif
  };

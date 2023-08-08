@@ -1,5 +1,5 @@
 PORTNAME=	biosoup
-DISTVERSION=	g20201216
+DISTVERSION=	0.11.0
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,11 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake
+USES=		cmake compiler:gcc-c++11-lib
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvaser
-GH_TAGNAME=	e2b39f1
+
+CMAKE_OFF=	biosoup_build_tests
 
 NO_ARCH=	yes
 

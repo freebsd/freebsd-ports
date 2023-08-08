@@ -1,6 +1,6 @@
 PORTNAME=	xnotify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.3
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,14 +17,12 @@ USES=		xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xft xinerama
 GH_ACCOUNT=	phillbush
-MAKE_ARGS=	CC="${CC}" CPPFLAGS="${CPPFLAGS} ${CFLAGS}" \
-		LDFLAGS="${LDFLAGS} \$${LIBS}" \
-		PREFIX="${PREFIX}" \
-		LOCALINC="${LOCALBASE}/include" \
+EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
+MANPREFIX=	${PREFIX}/share/man
+MAKE_ENV=	LOCALINC="${LOCALBASE}/include" \
 		LOCALLIB="${LOCALBASE}/lib" \
 		X11INC="${LOCALBASE}/include" \
 		X11LIB="${LOCALBASE}/lib" \
-		FREETYPEINC="${LOCALBASE}/include/freetype2" \
 		${NULL}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
@@ -34,6 +32,10 @@ pre-everything::
 	@${ECHO_MSG} "To build ${PORTNAME} with your own config.h set ${PORTNAME:tu}_CONF variable"
 	@${ECHO_MSG} "either in ${.CURDIR:T}/Makefile.local, make.conf(5), environ(7) or command line e.g.,"
 	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_CONF=/path/to/${PORTNAME}/config.h"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To apply your own patches set ${PORTNAME:tu}_PATCHES (like ${PORTNAME:tu}_CONF)"
+	@${ECHO_MSG} "to a list of files separated by space with optional -pX suffix e.g.,"
+	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_PATCHES='/path/to/foo.patch:-p1'"
 
 post-extract:
 # .if exists(...) before bsd.port.mk ignores *_CONF in make.conf(5) and Makefile.local

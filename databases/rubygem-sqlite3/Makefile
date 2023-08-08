@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,11 +10,8 @@ WWW=		https://github.com/sparklemotion/sqlite3-ruby
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+USES=		gem sqlite
 
-USES=		gem
-USE_RUBY=	yes
-
-CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-system-libraries --with-sqlite3-dir=${LOCALBASE}
 
 .include <bsd.port.mk>

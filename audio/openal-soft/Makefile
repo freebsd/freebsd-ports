@@ -59,6 +59,16 @@ SNDIO_CMAKE_BOOL=	ALSOFT_BACKEND_SNDIO ALSOFT_REQUIRE_SNDIO
 UTILS_LIB_DEPENDS=	libmysofa.so:audio/libmysofa
 UTILS_CMAKE_BOOL=	ALSOFT_UTILS
 
+.include <bsd.port.pre.mk>
+
+# The following is actually meant for lld 15.0 and later, but the ports
+# framework does not support LINKER_TYPE and LINKER_VERSION yet.
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+# Turn off checking of dynamic relocations, to avoid lld diagnostics about
+# possibly incorrect addend values.
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|/etc/openal|${ETCDIR}|' \
 		${WRKSRC}/alc/alconfig.cpp
@@ -67,4 +77,4 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

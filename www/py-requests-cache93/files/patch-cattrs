@@ -1,3 +1,35 @@
+--- requests_cache/serializers/cattrs.py.orig	2022-02-23 03:10:56 UTC
++++ requests_cache/serializers/cattrs.py
+@@ -14,7 +14,7 @@ serialization format.
+ from datetime import datetime, timedelta
+ from typing import Callable, Dict, ForwardRef, MutableMapping
+ 
+-from cattr import GenConverter
++from cattr import Converter
+ from requests.cookies import RequestsCookieJar, cookiejar_from_dict
+ from requests.structures import CaseInsensitiveDict
+ from urllib3._collections import HTTPHeaderDict
+@@ -28,7 +28,7 @@ class CattrStage(Stage):
+     on its own, or as a stage within a :py:class:`.SerializerPipeline`.
+     """
+ 
+-    def __init__(self, factory: Callable[..., GenConverter] = None):
++    def __init__(self, factory: Callable[..., Converter] = None):
+         self.converter = init_converter(factory)
+ 
+     def dumps(self, value: CachedResponse) -> Dict:
+@@ -42,9 +42,9 @@ class CattrStage(Stage):
+         return self.converter.structure(value, cl=CachedResponse)
+ 
+ 
+-def init_converter(factory: Callable[..., GenConverter] = None):
++def init_converter(factory: Callable[..., Converter] = None):
+     """Make a converter to structure and unstructure nested objects within a :py:class:`.CachedResponse`"""
+-    factory = factory or GenConverter
++    factory = factory or Converter
+     converter = factory(omit_if_default=True)
+ 
+     # Convert datetimes to and from iso-formatted strings
 Obtained from:	https://github.com/requests-cache/requests-cache/commit/66550b5355f4a4f063b4b22c3139a2f941c91eb4
 
 --- requests_cache/serializers/preconf.py.orig	2022-02-23 03:10:56 UTC
@@ -26,7 +58,7 @@ Obtained from:	https://github.com/requests-cache/requests-cache/commit/66550b535
 -from cattr.preconf import bson as bson_preconf
 -from cattr.preconf import json as json_preconf
 -from cattr.preconf import msgpack, orjson, pyyaml, tomlkit, ujson
-+from cattr import GenConverter
++from cattr import Converter
  
  from .._utils import get_placeholder_class
  from .cattrs import CattrStage
@@ -180,7 +212,7 @@ Obtained from:	https://github.com/requests-cache/requests-cache/commit/66550b535
  ['appdirs>=1.4.4,<2.0.0',
   'attrs>=21.2,<22.0',
 - 'cattrs>=1.8,<2.0',
-+ 'cattrs>=1.8,<22.2',
++ 'cattrs>=1.8,<22.3',
   'requests>=2.22,<3.0',
   'url-normalize>=1.4,<2.0',
   'urllib3>=1.25.5,<2.0.0']

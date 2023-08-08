@@ -1,5 +1,5 @@
 PORTNAME=	libdatadog
-PORTVERSION=	0.7.0.1.1
+PORTVERSION=	2.0.0.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,5 @@ WWW=		https://github.com/DataDog/libdatadog/tree/main/ruby
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
-
-#NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 libdata/pkgconfig/uctodata.pc
+%%DATADIR%%/deu.abr
 %%DATADIR%%/e-mail.rule
 %%DATADIR%%/exotic-eos.eos
 %%DATADIR%%/exotic-quotes.quote
@@ -15,6 +16,7 @@ libdata/pkgconfig/uctodata.pc
 %%DATADIR%%/swe.abr
 %%DATADIR%%/tokconfig-deu
 %%DATADIR%%/tokconfig-eng
+%%DATADIR%%/tokconfig-eng-twitter
 %%DATADIR%%/tokconfig-fra
 %%DATADIR%%/tokconfig-fry
 %%DATADIR%%/tokconfig-generic

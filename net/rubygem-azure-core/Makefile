@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-faraday0>=0.9<1:www/rubygem-faraday0 \
 		rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

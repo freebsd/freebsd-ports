@@ -1,9 +1,7 @@
 PORTNAME=	muon
-PORTVERSION=	0.0.1.p1
-PORTREVISION=	1
+DISTVERSION=	0.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://git.sr.ht/~lattis/muon/archive/
-DISTNAME=	b44e90f
+MASTER_SITES=	https://git.sr.ht/~lattis/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Build system compatible with meson
@@ -16,7 +14,6 @@ BUILD_DEPENDS=	scdoc:textproc/scdoc
 
 USES=		ninja pkgconfig:both
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/_build
 INSTALL_WRKSRC=	${WRKSRC}/_build
 

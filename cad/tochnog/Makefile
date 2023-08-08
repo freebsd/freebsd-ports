@@ -1,6 +1,6 @@
 PORTNAME=	tochnog
 PORTVERSION=	20140100
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/Tochnog%20Latest%20January%202014
 DISTFILES=	Sources${EXTRACT_SUFX} gid${EXTRACT_SUFX} \
@@ -45,6 +45,10 @@ BLAS_LIBS=	-llapack -lblas
 ALL_TARGET=	freebsd_old
 LIB_DEPENDS+=	libsuperlu.so:math/superlu
 SUPERLU=	superlu
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Dregister=
+.endif
 
 post-extract:
 .for sup in gid tools test

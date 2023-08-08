@@ -13,11 +13,15 @@ man/man1/koi8rxterm.1.gz
 man/man1/uxterm.1.gz
 man/man1/xterm.1.gz
 share/applications/xterm.desktop
+share/pixmaps/filled-xterm_16x16.xpm
 share/pixmaps/filled-xterm_32x32.xpm
 share/pixmaps/filled-xterm_48x48.xpm
+share/pixmaps/mini.xterm_16x16.xpm
 share/pixmaps/mini.xterm_32x32.xpm
 share/pixmaps/mini.xterm_48x48.xpm
+share/pixmaps/xterm-color_16x16.xpm
 share/pixmaps/xterm-color_32x32.xpm
 share/pixmaps/xterm-color_48x48.xpm
+share/pixmaps/xterm_16x16.xpm
 share/pixmaps/xterm_32x32.xpm
 share/pixmaps/xterm_48x48.xpm

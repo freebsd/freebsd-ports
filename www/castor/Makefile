@@ -1,6 +1,6 @@
 PORTNAME=	castor
 DISTVERSION=	0.8.16
-PORTREVISION=	17
+PORTREVISION=	27
 CATEGORIES=	www
 MASTER_SITES=	https://git.sr.ht/~julienxx/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,6 +13,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo desktop-file-utils gnome ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 library
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 
 CARGO_CRATES=	aho-corasick-0.7.13 \

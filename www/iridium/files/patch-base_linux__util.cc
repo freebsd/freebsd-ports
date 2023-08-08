@@ -1,4 +1,4 @@
---- base/linux_util.cc.orig	2022-03-28 18:11:04 UTC
+--- base/linux_util.cc.orig	2022-10-05 07:34:01 UTC
 +++ base/linux_util.cc
 @@ -15,6 +15,7 @@
  
@@ -6,9 +6,9 @@
  #include <memory>
 +#include <sstream>
  
+ #include "base/base_export.h"
  #include "base/files/dir_reader_posix.h"
- #include "base/files/file_util.h"
-@@ -134,6 +135,9 @@ void SetLinuxDistro(const std::string& distro) {
+@@ -135,6 +136,9 @@ void SetLinuxDistro(const std::string& distro) {
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {
@@ -18,7 +18,7 @@
    // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
    char buf[25];
    strings::SafeSPrintf(buf, "/proc/%d/task", pid);
-@@ -153,6 +157,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+@@ -152,6 +156,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
    }
  
    return true;

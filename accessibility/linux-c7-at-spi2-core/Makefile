@@ -16,8 +16,6 @@ USE_LDCONFIG=	yes
 USE_LINUX=	dbuslibs xorglibs
 USE_LINUX_RPM=	yes
 
-DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 

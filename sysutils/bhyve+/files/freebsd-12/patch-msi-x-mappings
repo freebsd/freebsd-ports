@@ -1,4 +1,4 @@
---- usr.sbin/bhyve/pci_emul.h.orig	2021-08-19 23:00:57 UTC
+--- usr.sbin/bhyve/pci_emul.h.orig
 +++ usr.sbin/bhyve/pci_emul.h
 @@ -146,6 +146,7 @@ struct pci_devinst {
  		struct msix_table_entry *table;	/* allocated at runtime */
@@ -8,7 +8,7 @@
  	} pi_msix;
  
  	void      *pi_arg;		/* devemu-private data */
---- usr.sbin/bhyve/pci_passthru.c.orig	2021-08-19 23:00:57 UTC
+--- usr.sbin/bhyve/pci_passthru.c.orig
 +++ usr.sbin/bhyve/pci_passthru.c
 @@ -324,13 +324,14 @@ msix_table_read(struct passthru_softc *sc, uint64_t of
  		return (data);

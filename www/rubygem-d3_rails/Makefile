@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/MIT_LICENSE
 
 RUN_DEPENDS=	rubygem-railties4>=3.1.0:www/rubygem-railties4
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

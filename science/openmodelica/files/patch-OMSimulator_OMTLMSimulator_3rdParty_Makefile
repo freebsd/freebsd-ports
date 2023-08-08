@@ -1,0 +1,11 @@
+--- OMSimulator/OMTLMSimulator/3rdParty/Makefile.orig	2022-12-11 02:57:08 UTC
++++ OMSimulator/OMTLMSimulator/3rdParty/Makefile
+@@ -8,7 +8,7 @@ ifeq ($(detected_OS),Darwin)
+   #Dont build rtime on Mac
+   buildlibs=misc/src
+ else
+-  buildlibs=misc/src rtime
++  buildlibs=misc/src
+ endif
+ else
+   # This is for BEAST

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-pastel>=0.8<1:devel/rubygem-pastel \
 		rubygem-tty-reader>=0.8<1:devel/rubygem-tty-reader
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

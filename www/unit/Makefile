@@ -1,5 +1,6 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 
@@ -18,6 +19,7 @@ CPE_PRODUCT=	unit
 OPTIONS_DEFINE?=	\
 	DEBUG \
 	IPV6 \
+	NJS \
 	SSL \
 	UNIXSOCK
 OPTIONS_DEFAULT?=	IPV6 PCRE2 SSL UNIXSOCK
@@ -27,6 +29,7 @@ OPTIONS_RADIO_REGEX=	NOPCRE PCRE PCRE2
 
 DEBUG_DESC=	Enable debug logging
 REGEX_DESC=	Support regular expressions
+NJS_DESC=	Enable NGINX JavaScript
 NOPCRE_DESC=	No support for Regular Expressions
 PCRE_DESC=	Regular Expressions via devel/pcre
 PCRE2_DESC=	Regular Expressions via devel/pcre2
@@ -49,10 +52,12 @@ UNIT_TMPDIR?=	${UNIT_VARDIR}/tmp/unit
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--ld-opt="-L${LOCALBASE}/lib" \
 		--log=${UNIT_LOGFILE} \
-		--modules=libexec/unit/modules \
+		--logdir=${UNIT_LOGDIR} \
+		--modulesdir=${PREFIX}/libexec/unit/modules \
 		--pid=${UNIT_PIDFILE} \
-		--state=${UNIT_DBDIR} \
-		--tmp=${UNIT_TMPDIR} \
+		--runstatedir=${UNIT_RUNDIR} \
+		--statedir=${UNIT_DBDIR} \
+		--tmpdir=${UNIT_TMPDIR} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 USERS?=	${WWWOWN}
@@ -81,6 +86,14 @@ CONFIGURE_ARGS+=--debug
 CONFIGURE_ARGS+=--no-ipv6
 .endif
 
+.if ${PORT_OPTIONS:MNJS}
+USES+=	pkgconfig
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libnjs.a:devel/libnjs
+CONFIGURE_ARGS+=--njs \
+	--cc-opt="-I${LOCALBASE}/include" \
+	--ld-opt="-L${LOCALBASE}/lib"
+.endif
+
 .if ${PORT_OPTIONS:MNOPCRE}
 CONFIGURE_ARGS+=--no-regex
 .endif
@@ -107,7 +120,7 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 
 .if defined(UNIT_MODNAME) && ${UNIT_MODNAME:Mperl*}
 # Fix build failure on clang >= 12
-.if ${OSVERSION} >= 1301000
+.if ${OSVERSION} >= 1204000
 CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 .endif
@@ -123,7 +136,8 @@ post-install:
 	${ECHO_CMD} @dir ${UNIT_RUNDIR} >> ${TMPPLIST}
 	${ECHO_CMD} @dir ${UNIT_TMPDIR} >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
-	${INSTALL_MAN} ${WRKSRC}/build/unitd.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/build/share/man/man8/unitd.8 \
+		${STAGEDIR}${MAN8PREFIX}/share/man/man8
 .endif
 
 .include "../../www/unit/version.mk"

@@ -1,5 +1,5 @@
 PORTNAME=	gretl
-PORTVERSION=	2022b
+PORTVERSION=	2023b
 CATEGORIES=	math finance
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
@@ -19,8 +19,10 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c11 fortran gmake gnome localbase libtool ncurses \
 		pathfix pkgconfig readline tar:xz
-GNU_CONFIGURE=	yes
+USE_WX=		3.0
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 BINARY_ALIAS=	make=${GMAKE}
 ALL_TARGET=	# empty
@@ -36,7 +38,8 @@ OPTIONS_SUB=		yes
 
 ADDONS_DESC=		Build gretl addons
 ADDONS_CONFIGURE_ENABLE=	build-addons
-ADDONS_VARS=		USE_TEX="formats dvipsk:build"
+ADDONS_USES=		tex
+ADDONS_USE=			TEX=formats,dvipsk:build
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas

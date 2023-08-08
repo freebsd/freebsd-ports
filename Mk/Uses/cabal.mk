@@ -19,6 +19,9 @@
 #			When creating a new port, the initial list can be built
 #			using make-use-cabal auxiliary target.
 #
+#  CABAL_REVISION	Specifies a Haskell package revision. Set this to an
+#			integer to pull in revised .cabal file from Hackage.
+#
 #  CABAL_FLAGS		List of Cabal flags to be passed verbatim into --flags
 #			argument of cabal-install utility. Used for both
 #			cabal configure and cabal build.
@@ -27,6 +30,10 @@
 #			Consult the .cabal file of the project being ported to find
 #			out possible values for this variable.
 #					default: ${PORTNAME}
+#
+#  HACKAGE_DISTNAME	Use this knob if PORTNAME or PORTVERSION doesn't match
+#			with package name and version on Hackage.
+#					default: ${PORTNAME}-${PORTVERSION}
 #
 #  opt_USE_CABAL	Variant of USE_CABAL to be used with options framework.
 #  opt_CABAL_FLAGS	Variant of CABAL_FLAGS to be used with options framework.
@@ -74,6 +81,12 @@ IGNORE=		CABAL_PROJECT: invalid value: ${CABAL_PROJECT}
 BROKEN=		${USE_CABAL:Mbasement-0.0.1[4-5]} package doesn't compile on i386
 .  endif
 
+.  if ${OSVERSION} < 1302000 && defined(USE_CABAL) && ${USE_CABAL:Mtext-2.*}
+# Band-aids for a Clang bug that is shipped with FreeBSD < 13.2
+BUILD_DEPENDS+=	clang15:devel/llvm15
+BUILD_ARGS+=	--ghc-options='-pgmc clang++15'
+.  endif
+
 PKGNAMEPREFIX?=	hs-
 
 CABAL_EXECUTABLES?=	${PORTNAME}
@@ -81,6 +94,7 @@ CABAL_EXECUTABLES?=	${PORTNAME}
 CABAL_CMD?=	cabal
 CABAL_PORT=	devel/hs-cabal-install
 CABAL_HOME=	${WRKDIR}/cabal-home
+CABAL_HOME_ENV=XDG_DATA_HOME=${CABAL_HOME} XDG_CONFIG_HOME=${CABAL_HOME} XDG_CACHE_HOME=${CABAL_HOME} HOME=${CABAL_HOME}
 CABAL_LIBEXEC=	libexec/cabal
 CABAL_EXTRACT_SUFX=	.tar.gz
 CABAL_ARCH=	${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/powerpc64/ppc64/}
@@ -120,10 +134,23 @@ _hackage_is_default=	yes
 _hackage_is_default=	no
 .  endif
 
+.  if defined(HACKAGE_DISTNAME) && ${_hackage_is_default} == no
+IGNORE=		HACKAGE_DISTNAME is set, but it makes no sense if the default MASTER_SITES isn't HACKAGE
+.  endif
+
+MASTER_SITES+=		HACKAGE/${_hackage_group}
+.  if defined(HACKAGE_DISTNAME)
+WRKSRC?=		${WRKDIR}/${HACKAGE_DISTNAME}
+.  endif
+HACKAGE_DISTNAME?=	${PORTNAME}-${PORTVERSION}
+
 .  if ${_hackage_is_default} == yes
-MASTER_SITES=	https://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/ \
-		http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
-DISTFILES+=	${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+DISTFILES+=	${HACKAGE_DISTNAME}/${HACKAGE_DISTNAME}${CABAL_EXTRACT_SUFX}
+.    ifdef CABAL_REVISION
+DISTFILES+=	${HACKAGE_DISTNAME}/revision/${CABAL_REVISION}.cabal
+.    endif
+.  else
+_hackage_group=	:cabal_mk_hackage
 .  endif
 
 _USES_extract=	701:cabal-post-extract
@@ -136,19 +163,22 @@ BUILD_TARGET?=	${CABAL_EXECUTABLES:S/^/exe:&/}
 _use_cabal=	${USE_CABAL:O:u}
 
 .  for package in ${_use_cabal}
-_PKG_GROUP=		${package:C/[\.-]//g}
-_PKG_WITHOUT_REV=	${package:C/_[0-9]+//}
-_REV=			${package:C/[^_]*//:S/_//}
-
-MASTER_SITES+=	https://hackage.haskell.org/package/:${package:C/[\.-]//g} \
-		http://hackage.haskell.org/package/:${package:C/[\.-]//g}
-DISTFILES+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}:${package:C/[\.-]//g}
-
-.    if ${package:C/[^_]*//:S/_//} != ""
-DISTFILES+=	${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal:${package:C/[\.-]//g}
-.    endif
-
-_CABAL_EXTRACT_ONLY+=	${package:C/_[0-9]+//}/${package:C/_[0-9]+//}${CABAL_EXTRACT_SUFX}
+.    for pkg_without_group xgroup in ${package:C/:.*$$//} x${package:S/${package:C/:.*$$//}//:C/^.*://}
+.      for pkg_name xrev in ${pkg_without_group:C/_[0-9]+//} x${pkg_without_group:C/[^_]*//:S/_//}
+.        if ${xgroup} == "x"
+DISTFILES+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}${_hackage_group}
+.          if ${xrev} != "x"
+DISTFILES+=	${pkg_name}/revision/${xrev:S/^x//}.cabal${_hackage_group}
+.          endif
+.        else
+DISTFILES+=	${pkg_name}${CABAL_EXTRACT_SUFX}:${xgroup:S/^x//}
+.          if ${xrev} != "x"
+DISTFILES+=	${pkg_name}/revision/${xrev:S/^x//}.cabal:${xgroup:S/^x//}
+.          endif
+.        endif # ${xgroup} == "x"
+_CABAL_EXTRACT_ONLY+=	${pkg_name}/${pkg_name}${CABAL_EXTRACT_SUFX}
+.      endfor
+.    endfor
 .  endfor
 
 .  if !defined(EXTRACT_ONLY)
@@ -159,6 +189,11 @@ EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
 .    endif
 .  endif
 
+.  if defined(CABAL_REPOSITORIES) && !empty(CABAL_REPOSITORIES)
+.    for r in ${CABAL_REPOSITORIES}
+CABAL2TUPLE_ARGS+=	--group=${r} --master-site=${MASTER_SITES:M*\:${r}:[1]:S/:${r}//:S|/package/||}
+.    endfor
+.  endif
 
 # Auxiliary targets used during port creation/updating.
 
@@ -169,37 +204,51 @@ EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
 cabal-extract: check-cabal
 .  if ${_hackage_is_default} == no
 	@${ECHO_MSG} "===> Recursing down to make extract"
-	@${MAKE} -C ${.CURDIR} extract SKIP_CABAL_EXTRACT=yes
-	${RM} -rf ${CABAL_HOME}
+	@${MAKE} -C ${.CURDIR} extract SKIP_CABAL_EXTRACT=yes USE_CABAL=
+	${RM} -r ${CABAL_HOME}
 .  endif
-	@${ECHO_MSG} "===> Fetching Cabal package index into ${CABAL_HOME}/.cabal"
-	@${SETENV} HOME=${CABAL_HOME} ${CABAL_CMD} update
+	@${ECHO_MSG} "===> Fetching Hackage index into ${CABAL_HOME}/.cabal"
+	${SETENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
 .  if ${_hackage_is_default} == yes
-	@cd ${WRKDIR} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} get ${PORTNAME}-${PORTVERSION}
+	cd ${WRKDIR} && \
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} get ${HACKAGE_DISTNAME}
 .  else
 .    if ${cabal_ARGS:Mhpack}
 	@${ECHO_MSG} "===> Running ${HPACK_CMD} to generate .cabal file"
-	@cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} ${HPACK_CMD}
+	cd ${WRKSRC} && ${SETENV} ${CABAL_HOME_ENV} ${HPACK_CMD}
 .    endif
 .  endif
+# Remove Haskell dependencies that come from GH_TUPLE
 	@${RM} -r ${WRKSRC}/dist-newstyle
+.  ifdef CABAL_REPOSITORIES
+	@${ECHO_MSG} "===> Fetching additional Cabal repositories index into ${CABAL_HOME}/.cabal"
+	@cd ${WRKSRC} && \
+		${SETENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
+.  endif
+# Create a cookie for cabal-post-patch
 	@${TOUCH} ${EXTRACT_COOKIE} ${CABAL_COOKIE}
 
-# Calls cabal configure on the Haskell package located in ${WRKSRC}
+# Calls cabal build --dry-run on the Haskell package located in ${WRKSRC}
+# This is a Cabal way of doing configure step of the building process
+# This pulls in all source dependencies, resolves them and generates build plan
 cabal-configure: check-cabal
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} configure --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CABAL_WITH_ARGS} ${CONFIGURE_ARGS}
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --dry-run --disable-benchmarks --disable-tests --flags="${CABAL_FLAGS}" ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} ${BUILD_ARGS} ${BUILD_TARGET}
 
 # Calls cabal build on the Haskell package located in ${WRKSRC}
 cabal-build: check-cabal
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} build --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} ${BUILD_ARGS} ${BUILD_TARGET}
 
 # Generates USE_CABAL= ... line ready to be pasted into the port based on the plan.json file generated by cabal configure.
 make-use-cabal: check-cabal2tuple
 	@${ECHO_MSG} "===> Processing plan.json"
-	@${_CABAL2TUPLE_CMD} ${WRKSRC} || (${ECHO_CMD} "Did you forget to make cabal-configure ?" ; exit 1)
+	@${_CABAL2TUPLE_CMD} ${CABAL2TUPLE_ARGS} ${WRKSRC} || (${ECHO_CMD} "Did you forget to make cabal-configure ?" ; exit 1)
+.  if ${_hackage_is_default} == yes
+	@if ${GREP} -q 'x-revision' ${WRKSRC}/*.cabal; then \
+		${ECHO_MSG} "Downloaded .cabal file contains x-revision, make sure to add CABAL_REVISION=" `${GREP} 'x-revision' ${WRKSRC}/*.cabal | ${SED} -e s/x-revision://`; \
+	fi
+.  endif
 
 check-cabal:
 	@if ! type ${CABAL_CMD} > /dev/null 2>&1; then \
@@ -216,28 +265,33 @@ check-cabal2tuple:
 
 cabal-post-extract:
 .  if !defined(SKIP_CABAL_EXTRACT)
-# Remove the project file as requested
 .    if "${CABAL_PROJECT}" == "remove"
+# Remove the project file if requested
 	${RM} ${WRKSRC}/cabal.project
 .    endif
-# Save the original project file so that users can patch them
-.    if "${CABAL_PROJECT}" == "append"
-	${MV} ${WRKSRC}/cabal.project ${WRKSRC}/cabal.project.${PORTNAME}
-.    endif
-
+.    ifndef(CABAL_PROJECT)
 	@${TEST} ! -f ${WRKSRC}/cabal.project || \
 		(${ECHO_CMD} "cabal.project file is already present in WRKSRC! Set CABAL_PROJECT variable." && false)
+.    endif
+# Copy revised .cabal file if present
+.    if defined(CABAL_REVISION) && ${_hackage_is_default} == yes
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HACKAGE_DISTNAME}/revision/${CABAL_REVISION}.cabal `find ${WRKSRC} -name '*.cabal' -depth 1`
+.    endif
 
 # Move extracted dependencies into ${CABAL_DEPSDIR} directory
 	${MKDIR} ${CABAL_DEPSDIR}
 .    for package in ${_use_cabal}
+.      for pkg_without_group in ${package:C/:.*$$//}
+.        for pkg_name xrev in ${pkg_without_group:C/_[0-9]+//} x${pkg_without_group:C/[^_]*//:S/_//}
 # Copy revised .cabal file if present
-.      if ${package:C/[^_]*//:S/_//} != ""
-		cp ${DISTDIR}/${DIST_SUBDIR}/${package:C/_[0-9]+//}/revision/${package:C/[^_]*//:S/_//}.cabal `find ${WRKDIR}/${package:C/_[0-9]+//} -name '*.cabal' -depth 1`
-.      endif
+.          if ${xrev} != "x"
+		${CP} ${DISTDIR}/${DIST_SUBDIR}/${pkg_name}/revision/${xrev:S/^x//}.cabal `find ${WRKDIR}/${pkg_name} -name '*.cabal' -depth 1`
+.          endif
 # Move the dependency source itself
 	cd ${WRKDIR} && \
-		mv ${package:C/_[0-9]+//} ${CABAL_DEPSDIR}/
+		${MV} ${pkg_name} ${CABAL_DEPSDIR}/
+.        endfor
+.      endfor
 .    endfor
 # Create the cabal-install config
 	${MKDIR} ${CABAL_HOME}/.cabal
@@ -248,30 +302,29 @@ cabal-post-patch:
 .  if !defined(SKIP_CABAL_EXTRACT)
 	@${TEST} ! -f ${CABAL_COOKIE} || \
 		(${ECHO_CMD} "===> Patching done, skipping cabal-post-patch" && false)
-# Create our own cabal.project
-	${ECHO_CMD} "packages:" > ${WRKSRC}/cabal.project
-.    if "${CABAL_PROJECT}" != "append"
-	${ECHO_CMD} "        ." >> ${WRKSRC}/cabal.project
-.    endif
+# Append our stuff to possibly existing cabal.project.local
+	${ECHO_CMD} "" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "-- added by USES=cabal" >> ${WRKSRC}/cabal.project.local
+	${ECHO_CMD} "packages:" >> ${WRKSRC}/cabal.project.local
 .    for package in ${_use_cabal}
-	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${package:C/_[0-9]+//}" >> ${WRKSRC}/cabal.project
+.      for pkg_without_group in ${package:C/:.*$$//}
+.        for pkg_name in ${pkg_without_group:C/_[0-9]+//}
+	${ECHO_CMD} "        ${CABAL_DEPS_SUBDIR}/${pkg_name}" >> ${WRKSRC}/cabal.project.local
+.        endfor
+.      endfor
 .    endfor
-# Append the (possibly patched) original cabal.project, if requested
-.    if "${CABAL_PROJECT}" == "append"
-	${CAT} ${WRKSRC}/cabal.project.${PORTNAME} >> ${WRKSRC}/cabal.project
-.    endif
 .  endif # SKIP_CABAL_EXTRACT && !CABAL_COOKIE
 
 cabal-pre-configure:
 # Generate .cabal file with hpack if requested
 .  if ${cabal_ARGS:Mhpack}
-	cd ${WRKSRC} && ${SETENV} HOME=${CABAL_HOME} hpack
+	cd ${WRKSRC} && ${SETENV} ${CABAL_HOME_ENV} hpack
 .  endif
 
 .  if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} HOME=${CABAL_HOME} ${CABAL_CMD} new-build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)
@@ -303,11 +356,11 @@ do-install:
 
 .  if !defined(SKIP_CABAL_PLIST)
 cabal-post-install-script:
-.      for exe in ${CABAL_EXECUTABLES}
+.    for exe in ${CABAL_EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
-.        if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
+.      if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 		${ECHO_CMD} '${CABAL_LIBEXEC}/${exe}' >> ${TMPPLIST}
-.        endif
+.      endif
 .    endfor
 .  endif
 

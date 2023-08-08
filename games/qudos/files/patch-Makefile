@@ -6,7 +6,7 @@
    else
 -CFLAGS+=	-O3 -ffast-math -funroll-loops -fomit-frame-pointer \
 -		-fexpensive-optimizations
-+CFLAGS+=	-fcommon -ffast-math -funroll-loops -fomit-frame-pointer
++CFLAGS+=	-fcommon -ffast-math -Wno-incompatible-function-pointer-types
      ifeq ($(ARCH),i386)
 -CFLAGS+=	-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
 +CFLAGS+=	-falign-functions=2 \

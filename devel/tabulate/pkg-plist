@@ -12,6 +12,7 @@ include/tabulate/markdown_exporter.hpp
 include/tabulate/optional_lite.hpp
 include/tabulate/printer.hpp
 include/tabulate/row.hpp
+include/tabulate/string_view_lite.hpp
 include/tabulate/table.hpp
 include/tabulate/table_internal.hpp
 include/tabulate/tabulate.hpp

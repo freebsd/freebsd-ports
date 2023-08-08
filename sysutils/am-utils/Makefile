@@ -14,6 +14,9 @@ WWW=		https://www.am-utils.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Upstream recommends using autofs
+EXPIRATION_DATE=	2026-01-31
+
 OPTIONS_DEFINE=	OPENLDAP DOCS
 OPTIONS_DEFAULT=OPENLDAP
 OPENLDAP_DESC=	OpenLDAP support
@@ -34,8 +37,7 @@ INSTALL_TARGET=	install-strip
 INFO=		am-utils
 PORTDOCS=	AUTHORS BUGS FAQ NEWS README.attrcache
 
-OPENLDAP_USES=			localbase:ldflags
-OPENLDAP_USE=			OPENLDAP=yes
+OPENLDAP_USES=			ldap localbase:ldflags
 OPENLDAP_CONFIGURE_WITH=	ldap
 OPENLDAP_PORTDOCS=		README.ldap ldap-id.txt ldap.schema
 

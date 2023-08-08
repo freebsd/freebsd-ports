@@ -1,5 +1,5 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.20.0.g20220612
+PORTVERSION=	3.21.0.g20230218
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -14,23 +14,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		cpe pathfix pkgconfig gmake perl5 shebangfix autoreconf
-USE_PERL5=	build
-
-GNU_CONFIGURE=	yes
-SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
-SSP_UNSAFE=	yes
-LIB32_PATH?=	/usr/lib32/libc.so
-
+USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	paulfloyd
 GH_PROJECT=	freebsd_valgrind
-GH_TAGNAME=	d785030d3
-
-CONFLICTS=	valgrind
-
+GH_TAGNAME=	3b3d74d9d
+USE_PERL5=	build
+SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
+SSP_UNSAFE=	yes
+LIB32_PATH?=	/usr/lib32/libc.so
+
+CONFLICTS=	valgrind
 PORTDOCS=	html
 
 OPTIONS_DEFINE=		DOCS MANPAGES MPI
@@ -39,7 +36,7 @@ OPTIONS_DEFAULT=	MANPAGES
 .if exists(${LIB32_PATH})
 OPTIONS_DEFAULT_amd64=	32BIT
 .endif
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
@@ -53,33 +50,28 @@ MPI_LIB_DEPENDS=	libmpich.so:net/mpich
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64"
-PLIST_SUB+=	AMD64=""
+PLIST_SUB+=		AMD64=""
 . if !${PORT_OPTIONS:M32BIT}
 CONFIGURE_ARGS+=	--enable-only64bit
-PLIST_SUB+=	X86="@comment "
+PLIST_SUB+=		X86="@comment "
 . else
 .  if !exists(${LIB32_PATH})
-IGNORE=The lib32 distribution was not found. Please install the lib32\
-distribution or run 'make config' and uncheck 32BIT option
+IGNORE=			please either install the lib32 distribution or unset the 32BIT option
 .  endif
-PLIST_SUB+=	X86=""
+PLIST_SUB+=		X86=""
 . endif
 .else
-PLIST_SUB+=	AMD64="@comment "
-PLIST_SUB+=	X86=""
+PLIST_SUB+=		AMD64="@comment " \
+			X86=""
 .endif
 
-.if !${PORT_OPTIONS:MDOCS}
-post-patch:
+post-patch-DOCS-off:
 	@${RM} -r ${WRKSRC}/docs/html
-.endif
 
-post-build:
-.if ${PORT_OPTIONS:MMANPAGES}
-	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man-pages
-.endif
-.if ${PORT_OPTIONS:MDOCS}
+post-build-DOCS-on:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} html-docs
-.endif
+
+post-build-MANPAGES-on:
+	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} man-pages
 
 .include <bsd.port.mk>

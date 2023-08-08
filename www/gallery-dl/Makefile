@@ -1,6 +1,6 @@
 PORTNAME=	gallery-dl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.23.1
+DISTVERSION=	1.25.8
 CATEGORIES=	www
 
 # Implicit approval to commit trivial version updates.
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.0:www/py-requests@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.4+
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils unittest
 GH_ACCOUNT=	mikf

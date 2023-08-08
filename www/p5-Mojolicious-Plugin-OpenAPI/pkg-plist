@@ -1,0 +1,16 @@
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Guides/Swagger2.pod
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Guides/OpenAPIv2.pod
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Guides/OpenAPIv3.pod
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/SpecRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Security.pm
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Parameters.pm
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI/Cors.pm
+%%SITE_PERL%%/Mojolicious/Plugin/OpenAPI.pm
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Guides::OpenAPIv3.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Guides::Swagger2.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Parameters.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Security.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::SpecRenderer.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Cors.3.gz
+%%PERL5_MAN3%%/Mojolicious::Plugin::OpenAPI::Guides::OpenAPIv2.3.gz

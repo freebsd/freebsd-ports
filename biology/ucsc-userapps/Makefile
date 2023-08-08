@@ -26,7 +26,7 @@ LIB_DEPENDS=	libiconv.so:converters/libiconv \
 		libpng.so:graphics/png
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake localbase:ldflags shebangfix perl5 python:3.6+ ssl tar:tgz
+USES=		gmake localbase:ldflags shebangfix perl5 python ssl tar:tgz
 
 RESTRICTED=	Redistribution is limited, see license
 

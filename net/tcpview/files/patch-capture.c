@@ -1,6 +1,6 @@
---- capture.c.orig	Tue Oct 28 02:13:49 2003
-+++ capture.c	Tue Oct 28 02:15:57 2003
-@@ -37,7 +37,6 @@
+--- capture.c.orig	1993-04-22 20:39:50 UTC
++++ capture.c
+@@ -37,7 +37,6 @@ static char rcsid[] =
  #endif
  
  #include <stdio.h>

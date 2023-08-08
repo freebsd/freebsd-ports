@@ -10,7 +10,6 @@ WWW=		https://oshuma.github.io/app_config/
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,11 +13,8 @@
 @sample %%DATADIR%%/conf/toolchains.xml.sample
 %%DATADIR%%/lib/commons-cli-1.4.jar
 %%DATADIR%%/lib/commons-cli.license
-%%DATADIR%%/lib/commons-io-2.6.jar
-%%DATADIR%%/lib/commons-io.license
 %%DATADIR%%/lib/commons-lang3-3.8.1.jar
 %%DATADIR%%/lib/commons-lang3.license
-%%DATADIR%%/lib/ext/README.txt
 %%DATADIR%%/lib/guava-25.1-android.jar
 %%DATADIR%%/lib/guava.license
 %%DATADIR%%/lib/guice-4.2.2-no_aop.jar
@@ -66,7 +63,8 @@
 %%DATADIR%%/lib/plexus-utils.license
 %%DATADIR%%/lib/slf4j-api-1.7.36.jar
 %%DATADIR%%/lib/slf4j-api.license
-%%DATADIR%%/lib/wagon-file-3.5.1.jar
-%%DATADIR%%/lib/wagon-http-3.5.1-shaded.jar
-%%DATADIR%%/lib/wagon-provider-api-3.5.1.jar
+%%DATADIR%%/lib/wagon-file-3.5.3.jar
+%%DATADIR%%/lib/wagon-http-3.5.3-shaded.jar
+%%DATADIR%%/lib/wagon-provider-api-3.5.3.jar
+%%DATADIR%%/lib/ext/README.txt
 %%DATADIR%%/maven-%%PORTVERSION%%

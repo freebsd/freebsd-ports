@@ -5,7 +5,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	PORTS_JP
 DISTNAME=	${PORTNAME}-4.0+i18n
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Calendar with a notebook for X11 (internationalized version)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

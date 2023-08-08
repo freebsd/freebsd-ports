@@ -98,6 +98,7 @@
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/code3of9.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/ean13.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/int2of5.pm
+%%SITE_PERL%%/PDF/API2/Resource/XObject/Form/BarCode/qrcode.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Form/Hybrid.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image.pm
 %%SITE_PERL%%/PDF/API2/Resource/XObject/Image/GD.pm
@@ -148,6 +149,7 @@
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode::code128.3.gz
+%%PERL5_MAN3%%/PDF::API2::Resource::XObject::Form::BarCode::qrcode.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image.3.gz
 %%PERL5_MAN3%%/PDF::API2::Resource::XObject::Image::TIFF.3.gz
 %%PERL5_MAN3%%/PDF::API2::ViewerPreferences.3.gz

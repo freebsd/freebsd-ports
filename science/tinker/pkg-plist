@@ -1,7 +1,7 @@
 bin/alchemy
 bin/analyze
 bin/anneal
-bin/archive
+bin/arcedit
 bin/bar
 bin/correlate
 bin/critical
@@ -63,6 +63,7 @@ bin/xyzint
 bin/xyzmol2
 bin/xyzpdb
 %%DATADIR%%/params/0README
+%%DATADIR%%/params/amber14sb.prm
 %%DATADIR%%/params/amber94.prm
 %%DATADIR%%/params/amber96.prm
 %%DATADIR%%/params/amber98.prm
@@ -72,6 +73,7 @@ bin/xyzpdb
 %%DATADIR%%/params/amoeba09.prm
 %%DATADIR%%/params/amoebabio09.prm
 %%DATADIR%%/params/amoebabio18.prm
+%%DATADIR%%/params/amoebail22.prm
 %%DATADIR%%/params/amoebanuc17.prm
 %%DATADIR%%/params/amoebaplus.prm
 %%DATADIR%%/params/amoebapro04.prm
@@ -81,6 +83,7 @@ bin/xyzpdb
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm22cmap.prm
 %%DATADIR%%/params/dang.prm
+%%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
 %%DATADIR%%/params/iwater.prm
 %%DATADIR%%/params/mm2.prm
@@ -89,6 +92,7 @@ bin/xyzpdb
 %%DATADIR%%/params/mmff.prm
 %%DATADIR%%/params/oplsaa.prm
 %%DATADIR%%/params/oplsaal.prm
+%%DATADIR%%/params/oplsaam.prm
 %%DATADIR%%/params/oplsua.prm
 %%DATADIR%%/params/smoothaa.prm
 %%DATADIR%%/params/smoothua.prm
@@ -107,6 +111,13 @@ bin/xyzpdb
 %%DATADIR%%/test/argon.key
 %%DATADIR%%/test/argon.log
 %%DATADIR%%/test/argon.run
+%%DATADIR%%/test/cation.ckey
+%%DATADIR%%/test/cation.cxyz
+%%DATADIR%%/test/cation.log
+%%DATADIR%%/test/cation.rkey
+%%DATADIR%%/test/cation.run
+%%DATADIR%%/test/cation.rxyz
+%%DATADIR%%/test/clean.make
 %%DATADIR%%/test/cluster.dat
 %%DATADIR%%/test/cluster.key
 %%DATADIR%%/test/cluster.log
@@ -116,11 +127,11 @@ bin/xyzpdb
 %%DATADIR%%/test/crambin.log
 %%DATADIR%%/test/crambin.pdb
 %%DATADIR%%/test/crambin.run
-%%DATADIR%%/test/cyclohex.boat
-%%DATADIR%%/test/cyclohex.chair
-%%DATADIR%%/test/cyclohex.key
-%%DATADIR%%/test/cyclohex.log
-%%DATADIR%%/test/cyclohex.run
+%%DATADIR%%/test/cyclohexane.boat
+%%DATADIR%%/test/cyclohexane.chair
+%%DATADIR%%/test/cyclohexane.key
+%%DATADIR%%/test/cyclohexane.log
+%%DATADIR%%/test/cyclohexane.run
 %%DATADIR%%/test/dhfr.dyn
 %%DATADIR%%/test/dhfr.key
 %%DATADIR%%/test/dhfr.log
@@ -198,9 +209,14 @@ bin/xyzpdb
 %%DATADIR%%/test/salt.key
 %%DATADIR%%/test/salt.log
 %%DATADIR%%/test/salt.run
+%%DATADIR%%/test/vasopressin.key
+%%DATADIR%%/test/vasopressin.log
+%%DATADIR%%/test/vasopressin.run
+%%DATADIR%%/test/vasopressin.xyz
 %%DATADIR%%/test/water.amoeba
 %%DATADIR%%/test/water.hippo
 %%DATADIR%%/test/water.log
 %%DATADIR%%/test/water.pot
 %%DATADIR%%/test/water.run
+%%DATADIR%%/test/water.tip3p
 %%DATADIR%%/test/water.xyz

@@ -1,26 +1,29 @@
 PORTNAME=	superiotool
-DISTVERSION=	20121019
-PORTREVISION=	1
+DISTVERSION=	4.18
+PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	LOCAL/avg \
-		http://www.icyb.net.ua/~avg/distfiles/
+MASTER_SITES=	https://coreboot.org/releases/
+DISTFILES=	coreboot-4.18.tar.xz
 
 MAINTAINER=	avg@FreeBSD.org
 COMMENT=	Helper tool for Super I/O chip detection and analysis
 WWW=		http://www.coreboot.org/Superiotool
 
-LIB_DEPENDS=	libpci.so:devel/libpci
+LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	this tool is for x86-specific hardware
+
+LIB_DEPENDS=	libpci.so:devel/libpci
 
 USES=		gmake tar:bzip2
 
 PLIST_FILES=	sbin/superiotool \
 		man/man8/superiotool.8.gz
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-UPSTREAM_VERS=	4.0-2827-g1a00cf0
+WRKSRC=		${WRKDIR}/coreboot-${DISTVERSION}
+WRKSRC_SUBDIR=	util/superiotool
+#UPSTREAM_VERS=	4.17-8da4bfe5b
 MAKE_ENV+=	VERSION=-DSUPERIOTOOL_VERSION='\"${UPSTREAM_VERS}\"'
 
 post-patch:

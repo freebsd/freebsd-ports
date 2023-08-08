@@ -1,5 +1,5 @@
---- demo3.c.orig	Sat Aug 12 19:31:16 2006
-+++ demo3.c	Sat Aug 12 19:31:29 2006
+--- demo3.c.orig	2012-06-12 02:35:49 UTC
++++ demo3.c
 @@ -37,17 +37,17 @@
  #include <locale.h>
  #include <setjmp.h>

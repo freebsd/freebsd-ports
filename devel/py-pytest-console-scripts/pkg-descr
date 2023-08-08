@@ -1,0 +1,9 @@
+Pytest-console-scripts is a pytest plugin for running python scripts from within
+tests. It's quite similar to subprocess.run(), but it also has an in-process
+mode, where the scripts are executed by the interpreter that's running pytest
+(using some amount of sandboxing).
+
+In-process mode significantly reduces the run time of the test suites that run
+many external scripts. This is speeds up development. In the CI environment
+subprocess mode can be used to make sure the scripts also work (and behave the
+same) when run by a fresh interpreter.

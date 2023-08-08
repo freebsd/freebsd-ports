@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/execution/b1d41972-3ad9-4aa1-8f7f-05f049a2980e.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/execution/b1d41972-3ad9-4aa1-8f7f-05f049a2980e.yml
+@@ -14,7 +14,7 @@
+           pkill -f sandcat
+         payloads:
+         - sandcat.go
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           nohup ./sandcat.go -server #{server} &

@@ -1,5 +1,5 @@
 PORTNAME=	toml-rb
-PORTVERSION=	2.0.1
+PORTVERSION=	2.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-citrus>=3.0<4:textproc/rubygem-citrus
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

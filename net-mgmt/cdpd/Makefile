@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://snar.spb.ru/prog/cdpd/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to send CDP/LLDP announces over ethernet
 
 LICENSE=	BSD2CLAUSE

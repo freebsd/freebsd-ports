@@ -1,14 +1,18 @@
 PORTNAME=	add
-PORTVERSION=	20220117
+PORTVERSION=	20230205
 CATEGORIES=	math
 MASTER_SITES=	ftp://dickey.his.com/add/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 WWW=		https://dickey.his.com/add/add.html
 
-GNU_CONFIGURE=	yes
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		ncurses tar:tgz
+GNU_CONFIGURE=	yes
+
 MAKEFILE=	makefile
 
 do-install:

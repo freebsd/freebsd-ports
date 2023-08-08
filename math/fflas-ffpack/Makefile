@@ -1,6 +1,6 @@
 PORTNAME=	fflas-ffpack
 PORTVERSION=	2.4.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,6 +19,7 @@ GH_ACCOUNT=	linbox-team
 
 USES=		autoreconf blaslapack:openblas compiler:c++11-lang gmake	\
 		libtool localbase pkgconfig shebangfix
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	fflas-ffpack-config.in
 TEST_TARGET=	check

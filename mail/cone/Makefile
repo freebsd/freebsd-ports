@@ -1,35 +1,38 @@
 PORTNAME=	cone
-PORTVERSION=	1.6
+DISTVERSION=	1.11
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
 #		http://www.lerctr.org/~ler/
 # This is for release versions, leave it in please:
-MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/courier/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 WWW=		https://www.courier-mta.org/cone/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
+BUILD_DEPENDS=	gnupg>0:security/gnupg
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
-		libidn.so:dns/libidn \
 		libcourier-unicode.so:devel/courier-unicode \
-		libldap_r.so:net/openldap24-client
+		libidn2.so:dns/libidn2
+RUN_DEPENDS=	gnupg>0:security/gnupg
 
-BUILD_DEPENDS=	gpgv:security/gnupg1
-RUN_DEPENDS=	gpgv:security/gnupg1
-
-USES=		compiler:c++11-lang fam gettext gmake gnome iconv \
+USES=		compiler:c++11-lang fam gettext gmake gnome iconv ldap:24 \
 		localbase:ldflags ncurses perl5 pkgconfig shebangfix ssl \
 		tar:bzip2
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-certdb=${PREFIX}/share/cone/rootcerts --exec-prefix=${PREFIX} \
-		--with-notice=unicode
-SHEBANG_FILES=	sysconftool
 USE_GNOME=	libxml2
+
+SHEBANG_FILES=	sysconftool
+
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
+		--with-certdb=${PREFIX}/share/cone/rootcerts \
+		--with-notice=unicode
+
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED

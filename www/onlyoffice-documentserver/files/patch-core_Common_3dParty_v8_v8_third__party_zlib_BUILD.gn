@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/third_party/zlib/BUILD.gn.orig	2020-11-16 13:31:04 UTC
-+++ core/Common/3dParty/v8/v8/third_party/zlib/BUILD.gn
+--- core/Common/3dParty/v8_89/v8/third_party/zlib/BUILD.gn.orig	2020-11-16 13:31:04 UTC
++++ core/Common/3dParty/v8_89/v8/third_party/zlib/BUILD.gn
 @@ -108,6 +108,8 @@ if (use_arm_neon_optimizations) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {

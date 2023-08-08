@@ -1,10 +1,10 @@
 PORTNAME=	ifcopenshell
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	cad
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source IFC library and geometry engine
 WWW=		http://ifcopenshell.org
 
@@ -29,7 +29,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_CMAKE_BOOL=	BUILD_IFCPYTHON
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_BUILD_DEPENDS=	swig>=3.0.0:devel/swig
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/cmake

@@ -1,5 +1,6 @@
 PORTNAME=	xloadimage
 PORTVERSION=	4.1.24
+PORTREVISION=	1
 CATEGORIES=	x11 graphics
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}.${VERSION}
@@ -29,6 +30,8 @@ USES=		jpeg xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+# Temporary fix, waiting for k&r cleanup patch from debian
+CFLAGS+=	-Wno-int-conversion
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

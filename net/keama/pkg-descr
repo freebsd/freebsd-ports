@@ -1,0 +1,3 @@
+Kea migration assistant is an experimental extension to ISC DHCP
+that is able to read an isc-dhcp configuration
+and produce a JSON configuration in Kea format.

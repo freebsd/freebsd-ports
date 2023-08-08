@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2022-12-27 21:57:03 UTC
++++ pyproject.toml
+@@ -79,7 +79,7 @@ test = ["flake8", "freezegun", "pytest", "coverage"]
+ 
+ [build-system]
+ requires = [
+-  "poetry>=1.1.15",
++  "poetry-core>=1.1.0",
+   "setuptools >= 40.1.0",
+   "wheel"
+ ]

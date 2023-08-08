@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libmcpp.so:devel/mcpp
 USES+=			compiler:c++11-lang ssl
+USE_CXXSTD=	c++11
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
 LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice

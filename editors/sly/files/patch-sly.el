@@ -1,6 +1,6 @@
---- sly.el.orig	2021-01-14 09:12:56 UTC
+--- sly.el.orig	2023-05-23 12:54:52 UTC
 +++ sly.el
-@@ -7463,22 +7463,30 @@ can be found."
+@@ -7475,22 +7475,30 @@ can be found."
  ;;;###autoload
  (add-hook 'lisp-mode-hook 'sly-editing-mode)
  
@@ -33,8 +33,8 @@
    (dolist (buffer (buffer-list))
      (with-current-buffer buffer
        (when (eq major-mode 'lisp-mode)
--        (sly-editing-mode 1)
--        (ignore-errors (funcall 'slime-mode -1))))))
+-        (unless sly-editing-mode (sly-editing-mode 1))
+-        (ignore-errors (and (featurep 'slime) (funcall 'slime-mode -1)))))))
 - (t
 -  (warn
 -   "`sly.el' loaded OK. To use SLY, customize `lisp-mode-hook' and remove `slime-lisp-mode-hook'.")))

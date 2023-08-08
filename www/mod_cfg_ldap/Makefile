@@ -1,6 +1,6 @@
 PORTNAME=	mod_cfg_ldap
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	SF/modcfgldap/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	apache2
@@ -11,8 +11,7 @@ WWW=		https://sourceforge.net/projects/modcfgldap/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		apache:2.2+
-USE_OPENLDAP=	yes
+USES=		apache ldap
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

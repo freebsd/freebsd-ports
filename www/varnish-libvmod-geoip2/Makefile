@@ -1,5 +1,5 @@
 PORTNAME=	libvmod-geoip2
-PORTVERSION=	20210423
+PORTVERSION=	20230405
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -13,11 +13,11 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USES=		autoreconf:build gmake libtool pkgconfig \
-		python:3.7+,build varnish:7
+		python:build varnish:7
 USE_GITHUB=	yes
 GH_ACCOUNT=	fgsch
 GH_PROJECT=	libvmod-geoip2
-GH_TAGNAME=	68a7f45
+GH_TAGNAME=	ee5f049
 USE_LDCONFIG=	${PREFIX}/lib/varnish/vmods
 
 GNU_CONFIGURE=	yes

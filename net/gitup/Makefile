@@ -1,12 +1,7 @@
 PORTNAME=	gitup
-DISTVERSION=	0.97
-PORTREVISION=	3
+DISTVERSION=	0.98-8
+DISTVERSIONSUFFIX=	-g097fa9f
 CATEGORIES=	net
-
-PATCH_SITES=	https://github.com/johnmehr/gitup/commit/
-PATCHFILES=	dfbe3f0f847cb09225b5d09c4a09d654356bab68.patch:-p1 # fix i386 build #84
-PATCHFILES+=	1ca66a63365f1b7477ae0d2b51f1a6121efb6a85.patch:-p1 \
-		f9669405abb777514a8be9dd86f6f91008af5984.patch:-p1 # fix /usr/src not updated when empty #85
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalist, dependency-free program to clone/pull git repositories
@@ -16,20 +11,19 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnmehr
 
 MAKE_ENV+=	CONFIG_FILE_PATH=${LOCALBASE}/etc/gitup.conf
 
+SUB_FILES=	pkg-message
+PLIST_FILES=	bin/gitup \
+		etc/gitup.conf.sample \
+		share/man/man1/gitup.1.gz \
+		share/man/man5/gitup.conf.5.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|stable\/12|stable\/${OSREL:R}| ; \
-		s|releng\/11.4|releng\/${OSREL}|' \
-		${WRKSRC}/gitup.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

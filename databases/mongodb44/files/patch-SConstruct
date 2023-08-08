@@ -1,6 +1,6 @@
---- SConstruct.orig	2021-07-07 09:17:06 UTC
+--- SConstruct.orig	2023-05-10 02:21:42 UTC
 +++ SConstruct
-@@ -1213,9 +1213,9 @@ if has_option('variables-help'):
+@@ -1269,9 +1269,9 @@ if has_option('variables-help'):
      print(env_vars.GenerateHelpText(env))
      Exit(0)
  
@@ -11,9 +11,9 @@
 +#if unknown_vars:
 +#    env.FatalError("Unknown variables specified: {0}", ", ".join(list(unknown_vars.keys())))
  
- if get_option('install-action') != 'default' and get_option('ninja') != "disabled":
-     env.FatalError("Cannot use non-default install actions when generating Ninja.")
-@@ -2091,7 +2091,7 @@ if env.TargetOSIs('posix'):
+ install_actions.setup(env, get_option('install-action'))
+ 
+@@ -2196,7 +2196,7 @@ if env.TargetOSIs('posix'):
              # If runtime hardening is requested, then build anything
              # destined for an executable with the necessary flags for PIE.
              env.AppendUnique(
@@ -22,7 +22,7 @@
                  PROGLINKFLAGS=['-pie'],
              )
  
-@@ -2106,7 +2106,7 @@ if env.TargetOSIs('posix'):
+@@ -2211,7 +2211,7 @@ if env.TargetOSIs('posix'):
                           "-Wno-unknown-pragmas",
                           "-Winvalid-pch"] )
      # env.Append( " -Wconversion" ) TODO: this doesn't really work yet

@@ -4,5 +4,3 @@ i.e., shapes drawn on a sphere rather than on a planar 2D map. This makes it
 especially suitable for working with geographic data.
 
 This port is the Python binding of S2 Geometry Library.
-
-See also: https://github.com/google/s2geometry

@@ -1,0 +1,2 @@
+PostgreSQL extension required for storing Prometheus metrics in
+PostgreSQL via TimescaleDB.

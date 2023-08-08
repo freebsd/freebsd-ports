@@ -1,5 +1,5 @@
 PORTNAME=	newt
-PORTVERSION=	0.52.21
+PORTVERSION=	0.52.22
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/newt/
 

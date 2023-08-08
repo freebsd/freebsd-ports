@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-12-25 09:02:08 UTC
+--- CMakeLists.txt.orig	2023-07-20 03:46:10 UTC
 +++ CMakeLists.txt
-@@ -22,7 +22,7 @@ macro(require_cpp11)
+@@ -22,7 +22,7 @@ macro(require_cpp14)
  endmacro()
  
  option(test "Build all tests" OFF)
@@ -28,7 +28,7 @@
                  add_definitions(-DELPP_UTC_DATETIME)
          endif()
  
-         require_cpp11()
+         require_cpp14()
 -        add_library(easyloggingpp STATIC src/easylogging++.cc)
 +        add_library(easyloggingpp SHARED src/easylogging++.cc)
          set_property(TARGET easyloggingpp PROPERTY POSITION_INDEPENDENT_CODE ON)
@@ -40,14 +40,14 @@
  endif()
  
  export(PACKAGE ${PROJECT_NAME})
-@@ -98,7 +98,9 @@ if (test)
+@@ -97,7 +97,9 @@ if (test)
      )
  
      # Standard linking to gtest stuff.
--    target_link_libraries(easyloggingpp-unit-tests gtest gtest_main)
+-    target_link_libraries(easyloggingpp-unit-tests ${GTEST_BOTH_LIBRARIES})
 +    target_include_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/include)
 +    target_link_directories(easyloggingpp-unit-tests PRIVATE ${CMAKE_INSTALL_PREFIX}/lib)
-+    target_link_libraries(easyloggingpp-unit-tests gtest gtest_main execinfo)
++    target_link_libraries(easyloggingpp-unit-tests ${GTEST_BOTH_LIBRARIES} execinfo)
  
      add_test(NAME easyloggingppUnitTests COMMAND easyloggingpp-unit-tests -v)
  endif()

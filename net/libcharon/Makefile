@@ -12,7 +12,7 @@ WWW=		https://github.com/Ultimaker/libCharon
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake python:3.4+
+USES=		cmake python
 STRIP=
 
 USE_GITHUB=	yes

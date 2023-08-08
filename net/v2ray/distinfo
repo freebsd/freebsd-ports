@@ -1,4 +1,4 @@
-TIMESTAMP = 1616297186
+TIMESTAMP = 1679411079
 SHA256 (v2fly-v2ray-core-v4.36.2_GH0.tar.gz) = e7f7ceefd4cd9d2e57d18cecf55228a5a126c6ed5ee53767660601c35e70535c
 SIZE (v2fly-v2ray-core-v4.36.2_GH0.tar.gz) = 2230993
 SHA256 (cheekybits-genny-v1.0.0_GH0.tar.gz) = 6982bf513333fb3ee3e6e0633500a3800fb6a3d6beb9e6c6084a96c85a49dd73
@@ -21,8 +21,8 @@ SHA256 (golang-protobuf-v1.4.3_GH0.tar.gz) = 5736f943f8647362f5559689df6154f3c85
 SIZE (golang-protobuf-v1.4.3_GH0.tar.gz) = 171969
 SHA256 (golang-sync-036812b2e83c_GH0.tar.gz) = 75ac8fc16bdceb2496c4a9cc98584b70c29032d91a9e57a624acb073e3232fda
 SIZE (golang-sync-036812b2e83c_GH0.tar.gz) = 18752
-SHA256 (golang-sys-8fe3ee5dd75b_GH0.tar.gz) = 88091001fc7f8d89561f7ce6c28b9eafef82ddecebf8ab9cdaf27d76c18accdd
-SIZE (golang-sys-8fe3ee5dd75b_GH0.tar.gz) = 1216988
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.3_GH0.tar.gz) = 1604233637e3593749fbbb13b5069b08e6feba6d2b55a02fd3148793d5871185
 SIZE (golang-text-v0.3.3_GH0.tar.gz) = 7747332
 SHA256 (golang-xerrors-5ec99f83aff1_GH0.tar.gz) = 71975d658357e170fd6a41f92539cde8b39c9cd8bfe5931b6311bc5f5c0da0d7

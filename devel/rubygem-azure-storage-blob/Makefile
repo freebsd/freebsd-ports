@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-azure-storage-common>=2.0<3:devel/rubygem-azure-storage-com
 		rubygem-nokogiri>=1.10.8<2:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

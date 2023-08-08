@@ -1,4 +1,10 @@
 bin/kosmorro
+%%PYTHON_SITELIBDIR%%/CHANGELOG.md
+%%PYTHON_SITELIBDIR%%/kosmorro-%%VE%%.dist-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/kosmorro-%%VE%%.dist-info/LICENSE.md
+%%PYTHON_SITELIBDIR%%/kosmorro-%%VE%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/kosmorro-%%VE%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/kosmorro-%%VE%%.dist-info/WHEEL
 %%PYTHON_SITELIBDIR%%/kosmorro/__init__.py
 %%PYTHON_SITELIBDIR%%/kosmorro/__main__.py
 %%PYTHON_SITELIBDIR%%/kosmorro/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc

@@ -1,5 +1,6 @@
 PORTNAME=	langid
 DISTVERSION=	1.1.6-20170715
+PORTREVISION=	1
 CATEGORIES=	textproc devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +19,7 @@ GH_ACCOUNT=	saffsd
 GH_PROJECT=	${PORTNAME}.py
 GH_TAGNAME=	4153583
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils
 SHEBANG_GLOB=	*.py
 

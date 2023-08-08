@@ -2,12 +2,12 @@
 .\"     Title: git-filter-repo
 .\"    Author: [FIXME: author] [see http://www.docbook.org/tdg5/en/html/author]
 .\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
-.\"      Date: 06/07/2021
+.\"      Date: 10/10/2022
 .\"    Manual: Git Manual
-.\"    Source: Git 2.32.0.dirty
+.\"    Source: Git 2.38.0.dirty
 .\"  Language: English
 .\"
-.TH "GIT\-FILTER\-REPO" "1" "06/07/2021" "Git 2\&.32\&.0\&.dirty" "Git Manual"
+.TH "GIT\-FILTER\-REPO" "1" "10/10/2022" "Git 2\&.38\&.0\&.dirty" "Git Manual"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -236,6 +236,8 @@ See also the section called \(lqVERSATILITY\(rq, the section called \(lqDISCUSSI
 Analyze repository history and create a report that may be useful in determining what to filter in a subsequent run (or in determining if a previous filtering command did what you wanted)\&. Will not modify your repo\&.
 .RE
 .SS "Filtering based on paths (see also \-\-filename\-callback)"
+.sp
+These options specify the paths to select\&. Note that much like git itself, renames are NOT followed so you may need to specify multiple paths, e\&.g\&. \fB\-\-path olddir/ \-\-path newdir/\fR
 .PP
 \-\-invert\-paths
 .RS 4
@@ -333,6 +335,11 @@ Read git object ids from each line of the given file, and strip all of them from
 Rename tags starting with <old> to start with <new>\&. For example, \-\-tag\-rename foo:bar will rename tag foo\-1\&.2\&.3 to bar\-1\&.2\&.3; either <old> or <new> can be empty\&.
 .RE
 .SS "Filtering of commit messages (see also \-\-message\-callback)"
+.PP
+\-\-replace\-message <expressions_file>
+.RS 4
+A file with expressions that, if found in commit or tag messages, will be replaced\&. This file uses the same syntax as \-\-replace\-text\&.
+.RE
 .PP
 \-\-preserve\-commit\-hashes
 .RS 4
@@ -522,7 +529,7 @@ Pass \-\-quiet to other git commands called\&.
 .RE
 .SH "OUTPUT"
 .sp
-Every time filter\-repo is run, files are created in the \fB\&.git/filter\-repo/\fR directory\&. These files overwritten unconditionally on every run\&.
+Every time filter\-repo is run, files are created in the \fB\&.git/filter\-repo/\fR directory\&. These files are overwritten unconditionally on every run\&.
 .SS "Commit map"
 .sp
 The \fB\&.git/filter\-repo/commit\-map\fR file contains a mapping of how all commits were (or were not) changed\&.
@@ -568,7 +575,7 @@ All commits in range of the rewrite will be listed, even commits that are unchan
 .sp -1
 .IP \(bu 2.3
 .\}
-An all\-zeros hash, or null SHA, represents a non\-existant object\&. When in the "new" column, this means the commit was removed entirely\&.
+An all\-zeros hash, or null SHA, represents a non\-existent object\&. When in the "new" column, this means the commit was removed entirely\&.
 .RE
 .SS "Reference map"
 .sp
@@ -582,7 +589,7 @@ The \fB\&.git/filter\-repo/ref\-map\fR file contains a mapping of which local re
 .sp -1
 .IP \(bu 2.3
 .\}
-A header is the first line with the text "old" and "new"
+A header is the first line with the text "old", "new" and "ref"
 .RE
 .sp
 .RS 4
@@ -604,7 +611,7 @@ Reference mappings are in no particular order
 .sp -1
 .IP \(bu 2.3
 .\}
-An all\-zeros hash, or null SHA, represents a non\-existant object\&. When in the "new" column, this means the ref was removed entirely\&.
+An all\-zeros hash, or null SHA, represents a non\-existent object\&. When in the "new" column, this means the ref was removed entirely\&.
 .RE
 .SH "FRESH CLONE SAFETY CHECK AND \-\-FORCE"
 .sp
@@ -1087,7 +1094,7 @@ git filter\-repo \-\-paths\-from\-file stuff\-i\-want\&.txt
 .\}
 .sp
 .sp
-to get a repo containing only the toplevel README\&.md file, the guides/ and tools/releases/ directories, all python files, files whose name was of the form YYYY\&.MM\-DD\&.txt at least two subdirectories deep, and would rename tools/ to scripts/ and rename files like foo/bar/baz\&.text to bar/foo/baz\&.txt\&. Note the special line prefixes of \fBglob:\fR and \fBregex:\fR and the special string \fB==>\fR denoting renames\&.
+to get a repo containing only the toplevel README\&.md file, the guides/ and tools/releases/ directories, all python files, files whose name was of the form YYYY\-MM\-DD\&.txt at least two subdirectories deep, and would rename tools/ to scripts/ and rename files like foo/bar/baz\&.text to bar/foo/baz\&.txt\&. Note the special line prefixes of \fBglob:\fR and \fBregex:\fR and the special string \fB==>\fR denoting renames\&.
 .sp
 Sometimes you have a way of easily generating all the files you want\&. For example, if you know that none of the currently tracked files have any newlines or special characters in them (see core\&.quotePath from \fBgit config \-\-help\fR) so that \fBgit ls\-files\fR would print all files literally one per line, and you knew that you wanted to keep only the files that are currently tracked (thus deleting from all commits in history any files that only appear on other branches or that only appear in older commits), then you could use a pair of commands such as
 .sp
@@ -1320,6 +1327,37 @@ for details\&.
 .RE
 .sp
 See also the \fB\-\-blob\-callback\fR from the section called \(lqCALLBACKS\(rq\&.
+.SS "Updating commit/tag messages"
+.sp
+If you want to modify commit or tag messages, you can do so with the same syntax as \fB\-\-replace\-text\fR, explained above\&. For example, with a file named expressions\&.txt containing
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+foo==>bar
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.sp
+then running
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+git filter\-repo \-\-replace\-message expressions\&.txt
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+.sp
+will replace \fBfoo\fR in commit or tag messages with \fBbar\fR\&.
+.sp
+See also the \fB\-\-message\-callback\fR from the section called \(lqCALLBACKS\(rq\&.
 .SS "Refname based filtering"
 .sp
 To rename tags, use \fB\-\-tag\-rename\fR, e\&.g\&.:
@@ -1474,7 +1512,7 @@ def foo_callback(foo):
 .sp
 Thus, you just need to make sure your \fIBODY\fR modifies and returns \fIfoo\fR appropriately\&. One important thing to note for all callbacks is that filter\-repo uses bytestrings (see \m[blue]\fBhttps://docs\&.python\&.org/3/library/stdtypes\&.html#bytes\fR\m[]) everywhere instead of strings\&.
 .sp
-There are four callbacks that allow you to operate directly on raw objects that contain data that\(cqs easy to write in \fBfast-import\fR(1) format:
+There are four callbacks that allow you to operate directly on raw objects that contain data that\(cqs easy to write in \fBgit-fast-import\fR(1) format:
 .sp
 .if n \{\
 .RS 4
@@ -2259,7 +2297,7 @@ options will continue to be supported since there are people with usecases for t
 \fBComments on reversibility\fR
 .RS 4
 .sp
-Some people are interested in reversibility of of a rewrite; e\&.g\&. rewrite history, possibly add some commits, then unrewrite and get the original history back plus a few new "unrewritten" commits\&. Obviously this is impossible if your rewrite involves throwing away information (e\&.g\&. filtering out files or replacing several different strings with \fB***REMOVED***\fR), but may be possible with some rewrites\&. filter\-repo is likely to be a poor fit for this type of workflow for a few reasons:
+Some people are interested in reversibility of a rewrite; e\&.g\&. rewrite history, possibly add some commits, then unrewrite and get the original history back plus a few new "unrewritten" commits\&. Obviously this is impossible if your rewrite involves throwing away information (e\&.g\&. filtering out files or replacing several different strings with \fB***REMOVED***\fR), but may be possible with some rewrites\&. filter\-repo is likely to be a poor fit for this type of workflow for a few reasons:
 .sp
 .RS 4
 .ie n \{\
@@ -2302,7 +2340,7 @@ rewriting of commit hashes will probably be reversible, but it is possible for r
 .sp -1
 .IP \(bu 2.3
 .\}
-filter\-repo defaults to several forms of unreversible rewriting that you may need to turn off (e\&.g\&. the last two bullet points above or reencoding commit messages into UTF\-8); it\(cqs possible that additional forms of unreversible rewrites will be added in the future\&.
+filter\-repo defaults to several forms of irreversible rewriting that you may need to turn off (e\&.g\&. the last two bullet points above or reencoding commit messages into UTF\-8); it\(cqs possible that additional forms of irreversible rewrites will be added in the future\&.
 .RE
 .sp
 .RS 4

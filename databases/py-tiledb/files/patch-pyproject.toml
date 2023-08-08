@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-06-08 15:51:33 UTC
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ 
+ # https://askubuntu.com/a/1407138
+ # we encounter the above error in versions of setuptools<=58.3.0
+-requires = ["setuptools>=42,<=58.3.0", "wheel", "pybind11>=2.6.2"]
++requires = ["setuptools>=42", "wheel", "pybind11>=2.6.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.pytest.ini_options]

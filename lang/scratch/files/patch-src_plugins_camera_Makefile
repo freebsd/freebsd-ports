@@ -1,0 +1,13 @@
+--- src/plugins/camera/Makefile.orig	2011-10-18 21:24:46 UTC
++++ src/plugins/camera/Makefile
+@@ -1,8 +1,8 @@
+ all: clean build
+ 
+ build:	
+-	gcc $(CFLAGS) -fPIC -c *.c
+-	gcc -shared *.o -o ../../../Plugins/so.CameraPlugin
++	$(CC) $(CFLAGS) -fPIC -I ${PREFIX}/include -c *.c
++	$(CC) -shared *.o -o ../../../Plugins/so.CameraPlugin
+ 
+ clean:
+ 	rm -f *.o ../../../Plugins/so.CameraPlugin

@@ -1,9 +1,56 @@
---- CMakeLists.txt.orig	2020-11-19 11:17:49 UTC
+--- CMakeLists.txt.orig	2023-04-03 10:48:28 UTC
 +++ CMakeLists.txt
-@@ -1297,22 +1297,6 @@ endif()
+@@ -430,8 +430,6 @@ if(WITH_EXPAT)
+     set(LIBSBML_XML_LIBRARY_INCLUDE ${EXPAT_INCLUDE_DIR})
+     set(LIBSBML_XML_LIBRARY_LIBS ${EXPAT_LIBRARY})
+ 
+-    list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindEXPAT.cmake")
+-
+ endif(WITH_EXPAT)
+ 
+ 
+@@ -452,8 +450,6 @@ if(WITH_LIBXML)
+   set(LIBSBML_XML_LIBRARY_INCLUDE ${LIBXML_INCLUDE_DIR})
+   set(LIBSBML_XML_LIBRARY_LIBS ${LIBXML_LIBRARY})
+ 
+-  list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindLIBXML.cmake")
+-
+ endif(WITH_LIBXML)
+ 
+ 
+@@ -473,8 +469,6 @@ if(WITH_XERCES)
+     set(LIBSBML_XML_LIBRARY_INCLUDE ${XERCES_INCLUDE_DIR})
+     set(LIBSBML_XML_LIBRARY_LIBS ${XERCES_LIBRARY})
+ 
+-    list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindXERCES.cmake")
+-
+ endif(WITH_XERCES)
  
  ###############################################################################
- #
+@@ -498,7 +492,6 @@ if(WITH_BZIP2)
+   set(USE_BZ2 ON)
+   add_definitions( -DUSE_BZ2 )
+   list(APPEND SWIG_EXTRA_ARGS -DUSE_BZ2)
+-  list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindBZ2.cmake")
+ endif(WITH_BZIP2)
+ 
+ 
+@@ -608,8 +601,6 @@ valid. It should contain the file zlib.h, but it does 
+       INTERFACE_INCLUDE_DIRECTORIES "${LIBZ_INCLUDE_DIR}")
+   endif()
+ 
+-  list(APPEND LIBSBML_FIND_MODULES "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/FindZLIB.cmake")
+-
+ endif(WITH_ZLIB)
+ 
+ # install find scripts only for used dependencies
+@@ -981,22 +972,6 @@ if(WITH_DOXYGEN)
+     add_subdirectory(docs)
+ endif()
+ 
+-
+-###############################################################################
+-#
 -# Install documentation
 -#
 -
@@ -17,9 +64,6 @@
 -)
 -
 -install(FILES ${DOCUMENTATION_FILES} DESTINATION ${MISC_PREFIX})
--
--###############################################################################
--#
- # Write libsbml.pc
- #
  
+ ###############################################################################
+ #

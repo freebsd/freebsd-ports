@@ -1,5 +1,5 @@
 PORTNAME=	x42-plugins
-DISTVERSION=	20220714 # the version is published here: http://gareus.org/misc/x42-plugins.php
+DISTVERSION=	20230706 # the version is published here: http://gareus.org/misc/x42-plugins.php
 CATEGORIES=	audio
 MASTER_SITES=	http://gareus.org/misc/x42-plugins/
 PKGNAMESUFFIX=	-lv2
@@ -10,6 +10,8 @@ COMMENT=	Collection of LV2 plugins (submodules)
 WWW=		https://github.com/x42/x42-plugins/
 
 LICENSE=	GPLv2
+
+BROKEN_i386=	compilation fails: unsupported option '--fast-math'; did you mean '-ffast-math', reported to the author on 2022-11-06
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		${LOCALBASE}/include/fftw3.h:math/fftw3 \

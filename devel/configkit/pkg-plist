@@ -3,4 +3,4 @@ include/configkit.h
 include/configkit_int.h
 include/configkit_src.h
 lib/libconfigkit.a
-lib/libconfigkit_p.a
+%%PROFILE%%lib/libconfigkit_p.a

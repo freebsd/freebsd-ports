@@ -1,0 +1,14 @@
+amber is a code search and replace tool written in Rust.
+This tool is inspired by 'ack', 'ag', and other grep-like tools.
+
+Features:
+- Recursively search from the current directory
+- Ignore VCS directories (.git, .hg, .svn, .bzr)
+- Ignore binary files
+- Output by the colored format
+
+Large files (> 1MB by default) are divided and searched in parallel.
+
+amber can replace a keyword over directories (traditionally by
+`find ... | xargs sed -i '...'`) .
+User can decide to do replacing or not interactively.

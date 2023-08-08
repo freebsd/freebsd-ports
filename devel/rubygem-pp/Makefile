@@ -1,5 +1,5 @@
 PORTNAME=	pp
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-prettyprint>=0:devel/rubygem-prettyprint
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

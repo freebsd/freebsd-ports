@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-google-apis-core>=0.1<1:devel/rubygem-google-apis-core \
 		rubygem-google-apis-generator>=0.1<1:devel/rubygem-google-apis-generator
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

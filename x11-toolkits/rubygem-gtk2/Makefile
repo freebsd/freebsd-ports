@@ -1,6 +1,6 @@
 PORTNAME=	gtk2
 PORTVERSION=	3.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +17,11 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
 
 USES=		gem gnome
 USE_GNOME=	gtk20
-USE_RUBY=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 .include <bsd.port.mk>

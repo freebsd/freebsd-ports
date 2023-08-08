@@ -9,7 +9,7 @@ WWW=		https://www.openfst.org/
 
 LICENSE=	APACHE20
 
-USES=		compiler:c++17-lang libtool python:3.6+
+USES=		compiler:c++17-lang libtool python
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

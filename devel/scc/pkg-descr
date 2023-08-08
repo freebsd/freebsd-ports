@@ -1,0 +1,2 @@
+scc is a very fast and accurate code counter. In addition, it estimates
+code complexity and performs COCOMO (constructive code model) calculations.

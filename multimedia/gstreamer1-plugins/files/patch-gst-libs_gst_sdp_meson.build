@@ -1,0 +1,12 @@
+--- gst-libs/gst/sdp/meson.build.orig	2022-09-06 21:08:38 UTC
++++ gst-libs/gst/sdp/meson.build
+@@ -1,3 +1,4 @@
++if get_option('sdp').enabled()
+ gst_sdp_headers = files([
+   'sdp.h',
+   'sdp-prelude.h',
+@@ -60,3 +61,4 @@ sdp_dep = declare_dependency(link_with: gstsdp,
+   sources: sdp_gen_sources)
+ 
+ meson.override_dependency(pkg_name, sdp_dep)
++endif

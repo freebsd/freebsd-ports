@@ -8,5 +8,3 @@ introducing conflicts in their dependencies.
 
 Pew is completely shell-agnostic and thus works on bash, zsh, fish, powershell,
 etc.
-
-See also: https://github.com/berdario/pew

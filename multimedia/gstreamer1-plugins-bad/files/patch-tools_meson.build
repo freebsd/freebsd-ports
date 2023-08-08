@@ -1,0 +1,12 @@
+--- tools/meson.build.orig	2023-01-23 19:29:34 UTC
++++ tools/meson.build
+@@ -1,3 +1,4 @@
++if get_option('tools').enabled()
+ executable('gst-transcoder-' + api_version,
+   'gst-transcoder.c', 'utils.c',
+   install : true,
+@@ -5,3 +6,4 @@ executable('gst-transcoder-' + api_version,
+   dependencies : [gst_dep, gstpbutils_dep, gst_transcoder_dep],
+   c_args: ['-DG_LOG_DOMAIN="gst-transcoder-@0@"'.format(api_version)],
+ )
++endif

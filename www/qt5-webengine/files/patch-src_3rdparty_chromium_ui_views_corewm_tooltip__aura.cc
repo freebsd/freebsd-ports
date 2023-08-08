@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/views/corewm/tooltip_aura.cc
-@@ -41,7 +41,7 @@ constexpr int kVerticalPaddingBottom = 5;
+@@ -46,7 +46,7 @@ bool CanUseTranslucentTooltipWidget() {
  
  // TODO(varkha): Update if native widget can be transparent on Linux.
  bool CanUseTranslucentTooltipWidget() {

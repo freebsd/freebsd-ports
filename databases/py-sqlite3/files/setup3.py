@@ -35,6 +35,9 @@ major, minor = map(int, platform.python_version_tuple()[:2])
 if (major, minor) <= (3, 10):
     sqlite_srcs.append('_sqlite/cache.c',)
 
+if (major, minor) >= (3, 11):
+    sqlite_srcs.append('_sqlite/blob.c',)
+
 try:
     import ctypes
     ctypes.CDLL('libsqlite3.so').sqlite3_load_extension

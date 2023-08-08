@@ -1,10 +1,10 @@
 PORTNAME=	dillo
 PORTVERSION=	3.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/ \
 		LOCAL/bf/dillo/ \
-		TEX_CTAN/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
+		TEX/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/:hyphen
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

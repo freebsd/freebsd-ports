@@ -32,7 +32,7 @@ load_rc_config $name
 : ${matterircd_uid:="matterircd"}
 : ${matterircd_flags:=""}
 : ${matterircd_conf:="%%PREFIX%%/etc/matterircd.toml"}
-: ${matterircd_options:="${matterircd_flags} -conf=${matterircd_conf}"}
+: ${matterircd_options:="${matterircd_flags} --conf=${matterircd_conf}"}
 
 command="/usr/sbin/daemon"
 command_args="-p ${pidfile} -u ${matterircd_uid} -S -T ${name} ${procname} ${matterircd_options}"

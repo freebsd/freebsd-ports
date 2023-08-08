@@ -1,10 +1,10 @@
-TIMESTAMP = 1582013789
+TIMESTAMP = 1678299951
 SHA256 (ssh-vault-ssh-vault-0.12.6_GH0.tar.gz) = f8823fd1c859e48d8b46b0425e6be8160b14350cdb877e00a3ed7cd753ed669d
 SIZE (ssh-vault-ssh-vault-0.12.6_GH0.tar.gz) = 21320
 SHA256 (golang-crypto-a0c6ece_GH0.tar.gz) = fe57403274dd7e04500283a2fd93fb364887abf938fa05228e138104f7275fd3
 SIZE (golang-crypto-a0c6ece_GH0.tar.gz) = 1723208
-SHA256 (golang-sys-d101bd2_GH0.tar.gz) = 1c40216bb4b72e5cf04619bc3b9ec0f66861977afdacd83d6193318843e1f4bd
-SIZE (golang-sys-d101bd2_GH0.tar.gz) = 1536730
+SHA256 (golang-sys-v0.5.0_GH0.tar.gz) = 810c8f1b7704674971ab6b2b614aba20a5a1765018fd2c639f528dbbcbf88b1f
+SIZE (golang-sys-v0.5.0_GH0.tar.gz) = 1429723
 SHA256 (ssh-vault-crypto-3700ed0_GH0.tar.gz) = 7e017498258fbb770a2141cc476cecb9aacd8c239502e28f9a23bbd5829cdd03
 SIZE (ssh-vault-crypto-3700ed0_GH0.tar.gz) = 2063
 SHA256 (ssh-vault-ssh2pem-fdda4b3_GH0.tar.gz) = 6b8cd83ceca53e5c39eabb28dee4f06b4b3a256f4917291a346a246f1ef2b8f5

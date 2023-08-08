@@ -1,4 +1,4 @@
---- chrome/browser/media/audio_service_util.cc.orig	2022-05-19 14:06:27 UTC
+--- chrome/browser/media/audio_service_util.cc.orig	2023-01-11 09:17:16 UTC
 +++ chrome/browser/media/audio_service_util.cc
 @@ -21,7 +21,7 @@
  
@@ -7,9 +7,9 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
- bool GetPolicyOrFeature(const char* policy_name, const base::Feature& feature) {
+ const base::Value* GetPolicy(const char* policy_name) {
    const policy::PolicyMap& policies =
-@@ -40,7 +40,7 @@ bool GetPolicyOrFeature(const char* policy_name, const
+@@ -43,7 +43,7 @@ bool GetPolicyOrFeature(const char* policy_name, const
  bool IsAudioServiceSandboxEnabled() {
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
  // built with OS_CHROMEOS instead of OS_LINUX.

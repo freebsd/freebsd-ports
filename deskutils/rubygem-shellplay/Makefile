@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-cliprompt>=0.1.2:devel/rubygem-cliprompt \
 		rubygem-shell2html>=0.0.6:textproc/rubygem-shell2html
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

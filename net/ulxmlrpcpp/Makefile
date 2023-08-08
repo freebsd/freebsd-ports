@@ -11,16 +11,17 @@ WWW=		http://ulxmlrpcpp.sourceforge.net/
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-USES=		compiler:c++11-lang tar:bzip2 pathfix iconv libtool ssl
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
-INSTALL_TARGET=	install-strip
+USES=		compiler:c++11-lang iconv libtool localbase:ldflags \
+		pathfix ssl tar:bzip2
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
+
+INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

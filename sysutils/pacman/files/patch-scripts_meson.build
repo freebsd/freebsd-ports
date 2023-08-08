@@ -1,0 +1,11 @@
+--- scripts/meson.build.orig	2020-12-03 11:37:30 UTC
++++ scripts/meson.build
+@@ -66,7 +66,7 @@ configure_file(
+ 	configuration : { 'libmakepkgdir': LIBMAKEPKGDIR, 'PACKAGE_VERSION': PACKAGE_VERSION },
+ 	input : 'libmakepkg.pc.in',
+ 	output : '@BASENAME@',
+-	install_dir : join_paths(DATAROOTDIR, 'pkgconfig'))
++	install_dir : join_paths(get_option('prefix'), 'libdata', 'pkgconfig'))
+ 
+ custom_target(
+   'bash_completion',

@@ -1,8 +1,6 @@
 PORTNAME=	bctoolbox
-PORTVERSION=	5.1.38
-PORTREVISION=	1
+DISTVERSION=	5.2.94
 CATEGORIES=	net
-MASTER_SITES=	https://gitlab.linphone.org/BC/public/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belledonne Communications utility library
@@ -15,7 +13,10 @@ BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
 LIB_DEPENDS=	libbcunit.so:devel/bcunit \
 	libmbedtls.so:security/mbedtls
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++17-lang
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org/BC
+GL_ACCOUNT=	public
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO \

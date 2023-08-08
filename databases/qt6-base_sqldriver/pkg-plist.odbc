@@ -1,0 +1,7 @@
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfigVersion.cmake
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake
+%%QT_PLUGINDIR%%/sqldrivers/libqsqlodbc.so

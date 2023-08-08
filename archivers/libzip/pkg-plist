@@ -7,6 +7,9 @@ lib/cmake/libzip/libzip-config-version.cmake
 lib/cmake/libzip/libzip-config.cmake
 lib/cmake/libzip/libzip-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libzip/libzip-targets.cmake
+lib/cmake/libzip/modules/FindMbedTLS.cmake
+lib/cmake/libzip/modules/FindNettle.cmake
+lib/cmake/libzip/modules/Findzstd.cmake
 lib/libzip.so
 lib/libzip.so.5
 lib/libzip.so.5.5
@@ -109,7 +112,10 @@ share/man/man3/zip_source_free.3.gz
 share/man/man3/zip_source_function.3.gz
 share/man/man3/zip_source_function_create.3.gz
 share/man/man3/zip_source_is_deleted.3.gz
+share/man/man3/zip_source_is_seekable.3.gz
 share/man/man3/zip_source_keep.3.gz
+share/man/man3/zip_source_layered.3.gz
+share/man/man3/zip_source_layered_create.3.gz
 share/man/man3/zip_source_make_command_bitmap.3.gz
 share/man/man3/zip_source_open.3.gz
 share/man/man3/zip_source_read.3.gz
@@ -126,9 +132,12 @@ share/man/man3/zip_source_win32handle.3.gz
 share/man/man3/zip_source_win32handle_create.3.gz
 share/man/man3/zip_source_win32w.3.gz
 share/man/man3/zip_source_win32w_create.3.gz
-share/man/man3/zip_source_window.3.gz
+share/man/man3/zip_source_window_create.3.gz
 share/man/man3/zip_source_write.3.gz
 share/man/man3/zip_source_zip.3.gz
+share/man/man3/zip_source_zip_create.3.gz
+share/man/man3/zip_source_zip_file.3.gz
+share/man/man3/zip_source_zip_file_create.3.gz
 share/man/man3/zip_stat.3.gz
 share/man/man3/zip_stat_index.3.gz
 share/man/man3/zip_stat_init.3.gz

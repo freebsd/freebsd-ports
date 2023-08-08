@@ -20,7 +20,7 @@ PLIST_FILES=	bin/checkrestart \
 		share/man/man1/checkrestart.1.gz \
 		${PERIODIC_SECURITY}/checkrestart
 
-PERIODIC_SECURITY=	etc/periodic/security/
+PERIODIC_SECURITY=	etc/periodic/security
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/checkrestart ${STAGEDIR}${PREFIX}/bin

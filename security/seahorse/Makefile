@@ -1,5 +1,6 @@
 PORTNAME=	seahorse
 PORTVERSION=	41.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 RUN_DEPENDS=	gnupg>=2.1.4:security/gnupg
 
 USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.5+,build tar:xz vala:build xorg
+		python:build tar:xz vala:build xorg
 USE_CSTD=	c99
 USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \
@@ -50,7 +51,13 @@ LDAP_DESC=	LDAP keyserver support (for gpg)
 
 AVAHI_LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 AVAHI_MESON_TRUE=	key-sharing
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_MESON_TRUE=	ldap-support
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>

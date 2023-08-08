@@ -1,24 +1,24 @@
---- chrome/browser/renderer_preferences_util.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/renderer_preferences_util.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/renderer_preferences_util.cc
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
  #include "ui/views/controls/textfield/textfield.h"
  #endif
  
--#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
+-#if defined(USE_AURA) && BUILDFLAG(IS_LINUX)
++#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
  #include "chrome/browser/themes/theme_service.h"
  #include "chrome/browser/themes/theme_service_factory.h"
- #include "ui/views/linux_ui/linux_ui.h"
-@@ -159,7 +159,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+ #include "ui/linux/linux_ui.h"
+@@ -149,7 +149,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
    prefs->caret_blink_interval = views::Textfield::GetCaretBlinkInterval();
  #endif
  
--#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
-   views::LinuxUI* linux_ui = views::LinuxUI::instance();
-   if (linux_ui) {
+-#if defined(USE_AURA) && BUILDFLAG(IS_LINUX)
++#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+   auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile);
+   if (linux_ui_theme) {
      if (ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme()) {
-@@ -179,7 +179,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
+@@ -172,7 +172,7 @@ void UpdateFromSystemSettings(blink::RendererPreferenc
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

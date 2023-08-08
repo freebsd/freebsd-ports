@@ -16,7 +16,7 @@
 # teleport_roles (dir):         Set roles to run teleport in.
 #                               Default is "node".
 #                               Can be any combination of
-#                               "proxy" "node" and "auth", separated by commas
+#                               "node", "app", "proxy" and "auth", separated by commas
 
 . /etc/rc.subr
 

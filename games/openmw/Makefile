@@ -1,5 +1,5 @@
 PORTNAME=	openmw
-PORTREVISION=	3
+PORTREVISION=	7
 DISTVERSIONPREFIX=	openmw-
 DISTVERSION=	0.47.0
 CATEGORIES=	games
@@ -11,7 +11,7 @@ WWW=		https://openmw.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libboost_thread.so:devel/boost-libs \
 		libMyGUIEngine.so:x11-toolkits/mygui \
 		libBulletCollision.so:devel/bullet@double \
@@ -44,6 +44,9 @@ DOCS_USES=		python:build
 
 PORTDOCS=	*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindFFmpeg.cmake
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 

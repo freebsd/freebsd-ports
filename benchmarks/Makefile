@@ -32,6 +32,7 @@
     SUBDIR += imb
     SUBDIR += inferno
     SUBDIR += interbench
+    SUBDIR += ior
     SUBDIR += iorate
     SUBDIR += iozone
     SUBDIR += iozone21
@@ -71,6 +72,7 @@
     SUBDIR += perftest
     SUBDIR += phoronix-test-suite
     SUBDIR += pipebench
+    SUBDIR += plow
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
@@ -98,7 +100,6 @@
     SUBDIR += spp
     SUBDIR += stream
     SUBDIR += stress-ng
-    SUBDIR += super-smack
     SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
@@ -111,6 +112,7 @@
     SUBDIR += uperf
     SUBDIR += vegeta
     SUBDIR += vkmark
+    SUBDIR += vkoverhead
     SUBDIR += vkpeak
     SUBDIR += webbench
     SUBDIR += wrk

@@ -1,6 +1,7 @@
 PORTNAME=	rnp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.1
+DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -22,14 +23,20 @@ LIB_DEPENDS=	libbotan-2.so:security/botan2 \
 USES=		cmake compiler:c++11-lang pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	rnpgp
+GH_TUPLE=	rnpgp:sexp:b6bf033:sexp/src/libsexp
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS=on \
 		-DBUILD_TESTING=off
 
+PLIST_SUB=	VERS=${DISTVERSION}
+
 pre-configure:
 		${CP} ${FILESDIR}/version.cmake ${WRKSRC}/cmake/
 		${REINPLACE_CMD} 's/%%DISTVERSION%%/${DISTVERSION}/' \
 					${WRKSRC}/cmake/version.cmake
+
+post-install:
+		${RM} ${STAGEDIR}${PREFIX}/lib/libsexp.a
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	geogebra
-PORTVERSION=	5.0.625.0
-PORTREVISION=	1
+PORTVERSION=	5.0.752.0
 CATEGORIES=	math education java
 MASTER_SITES=	http://download.geogebra.org/installers/5.0/ \
 		https://static.geogebra.org/images/ \

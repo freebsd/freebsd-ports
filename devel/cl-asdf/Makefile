@@ -13,7 +13,7 @@ LICENSE=	MIT
 USES=		gmake
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.common-lisp.net
-GL_COMMIT=	a58828745a610c1af841a86587ba197707c89eb3
+GL_TAGNAME=	a58828745a610c1af841a86587ba197707c89eb3
 
 ALL_TARGET=	build/asdf.lisp
 SUB_FILES=	pkg-message

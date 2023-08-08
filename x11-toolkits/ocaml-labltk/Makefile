@@ -1,7 +1,6 @@
 PORTNAME=	labltk
-PORTVERSION=	8.06.5
+PORTVERSION=	8.06.7
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	https://download.ocamlcore.org/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,6 +19,9 @@ MAKE_JOBS_UNSAFE=yes
 USE_OCAML=	yes
 
 ALL_TARGET=	all opt
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	garrigue
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} ${REINPLACE_CMD} \

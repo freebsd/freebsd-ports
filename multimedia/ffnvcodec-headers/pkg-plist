@@ -1,0 +1,6 @@
+include/ffnvcodec/dynlink_cuda.h
+include/ffnvcodec/dynlink_cuviddec.h
+include/ffnvcodec/dynlink_loader.h
+include/ffnvcodec/dynlink_nvcuvid.h
+include/ffnvcodec/nvEncodeAPI.h
+libdata/pkgconfig/ffnvcodec.pc

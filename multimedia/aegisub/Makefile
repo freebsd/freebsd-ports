@@ -1,6 +1,6 @@
 PORTNAME=	aegisub
 PORTVERSION=	3.2.2
-PORTREVISION=	54
+PORTREVISION=	59
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/archives/releases/source/ \
 		ftp://ftp.aegisub.org/pub/archives/releases/source/ \
@@ -14,6 +14,7 @@ WWW=		http://www.aegisub.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+BROKEN=		fails to build
 BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
 NOT_FOR_ARCHS=		powerpc64 powerpc64le
 NOT_FOR_ARCHS_REASON_powerpc64=		No support for PowerPC 64 bit mode

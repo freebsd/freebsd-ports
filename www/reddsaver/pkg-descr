@@ -1,0 +1,10 @@
+reddsaver is a command line tool to download saved/upvoted media from Reddit.
+
+It supports:
+- Reddit: PNG/JPG images, GIFs, Image galleries, videos
+- Giphy: GIFs
+- Imgur: Direct images and GIFVs
+- Gfycat/Redgifs: GIFs
+
+* GIF/GIFV from Imgur/Gfycat/Redgifs are downloaded as mp4
+* Does *not* support downloading images from Imgur post links

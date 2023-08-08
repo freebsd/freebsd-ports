@@ -1,7 +1,7 @@
 PORTNAME=	tinyarray
 PORTVERSION=	1.2.4
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6-3.9
+USES=		python:3.8-3.9
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

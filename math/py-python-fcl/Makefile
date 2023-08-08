@@ -1,8 +1,8 @@
 PORTNAME=	python-fcl
 PORTVERSION=	0.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfcl05.so:math/fcl05 \
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang eigen:3 python:3.6+
+USES=		compiler:c++11-lang eigen:3 python
 
 USE_PYTHON=	distutils autoplist concurrent cython
 

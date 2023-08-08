@@ -1,0 +1,4 @@
+grapheme is a Python package for working with user perceived characters. More
+specifically, string manipulation and calculation functions for working with
+grapheme cluster groups (graphemes) as defined by the Unicode Standard Annex
+#29.

@@ -1,6 +1,5 @@
 PORTNAME=	kwallet
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -33,7 +32,7 @@ OPTIONS_SUB=		yes
 LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libqgpgme.so:security/gpgme-qt5 \
+		libqgpgme.so:security/gpgme-qt@qt5 \
 		libgpgmepp.so:security/gpgme-cpp
 .endif
 

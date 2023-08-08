@@ -1,6 +1,8 @@
 TIMESTAMP = 1653561072
 SHA256 (intel-media-driver-intel-media-22.4.3_GH0.tar.gz) = c30a63414d4aaf1a3b5c09db02b6c4da23b5998620ff8c950bb8258104576568
 SIZE (intel-media-driver-intel-media-22.4.3_GH0.tar.gz) = 27415572
+SHA256 (7debae1bd149.patch) = 1da22fd6a97e00f5014d48b4a240cd107e2430689759bfc793dd90cea5064b48
+SIZE (7debae1bd149.patch) = 1969
 SHA256 (3ee693b2bad3.patch) = 565445b42b6edd39c73fc0b3689da0753366787f5c22b5daf0f648245ae9ae0c
 SIZE (3ee693b2bad3.patch) = 1241
 SHA256 (a4313cae8533.patch) = c52bf061c693dc2eb7ba64117b8f84c2894c42017d1f186c9f3757aeae8f95a8

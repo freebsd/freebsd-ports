@@ -1,7 +1,7 @@
 PORTNAME=	mitogen
 DISTVERSION=	0.3.3
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 # PATCH_SITES=	https://github.com/mitogen-hq/${PORTNAME}/pull/
@@ -14,7 +14,7 @@ WWW=		https://mitogen.networkgenomics.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	networkgenomics
 USE_PYTHON=	distutils autoplist concurrent
 

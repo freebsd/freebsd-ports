@@ -1,5 +1,5 @@
-TIMESTAMP = 1614939753
+TIMESTAMP = 1690822959
 SHA256 (raspberrypi-firmware-1.20210303.g20210303-fcf8d2f_GH0.tar.gz) = 5a0d7247490e0207f0fc32baabcec25a0e97ebdab9cbee216bf9537a1de22e69
 SIZE (raspberrypi-firmware-1.20210303.g20210303-fcf8d2f_GH0.tar.gz) = 192233875
-SHA256 (gonzoua-rpi3-psci-monitor-558620c_GH0.tar.gz) = 7621db7933eedaa17a03c282ef8a50be597bd14366149dfa93172d1b3985dbb7
-SIZE (gonzoua-rpi3-psci-monitor-558620c_GH0.tar.gz) = 5614
+SHA256 (freebsd-rpi3-psci-monitor-558620c_GH0.tar.gz) = 7621db7933eedaa17a03c282ef8a50be597bd14366149dfa93172d1b3985dbb7
+SIZE (freebsd-rpi3-psci-monitor-558620c_GH0.tar.gz) = 5614

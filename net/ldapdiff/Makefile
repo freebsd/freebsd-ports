@@ -11,8 +11,7 @@ WWW=		https://launchpad.net/ldapdiff
 
 LICENSE=	GPLv3+
 
-USES=		cpe iconv tar:tgz
-USE_OPENLDAP=	yes
+USES=		cpe iconv ldap tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} \
 		--with-ldap-dir=${LOCALBASE}

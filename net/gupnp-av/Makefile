@@ -1,5 +1,6 @@
 PORTNAME=	gupnp-av
 PORTVERSION=	0.14.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	glib>=2.58:devel/glib20 \
 USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 
-MESON_ARGS=	-Dgtk_doc=false -Dintrospection=true
+MESON_ARGS=	--default-library=both -Dgtk_doc=false -Dintrospection=true
 USE_CSTD=	c11
 USE_LDCONFIG=	yes
 

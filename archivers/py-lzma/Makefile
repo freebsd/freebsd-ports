@@ -1,7 +1,7 @@
 PORTNAME=	lzma
 PORTVERSION=	0.5.0
 CATEGORIES=	archivers python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	concurrent distutils autoplist
 
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
@@ -31,4 +31,10 @@ post-install-DOCS-on:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}/${PYTHONPREFIX_SITELIBDIR}/pylzma*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=       -Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,9 @@
+Vedo is a lightweight and powerful python module for scientific analysis and
+visualization of 3d objects.
+
+The library includes a large set of working examples for a wide range of
+functionalities:
+* working with polygonal meshes and point clouds
+* working with volumetric data and tetrahedral meshes
+* plotting and histogramming in 2D and 3D
+* integration with other libraries

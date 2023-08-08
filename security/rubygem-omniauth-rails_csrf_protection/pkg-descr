@@ -1,0 +1,5 @@
+This gem provides a mitigation against CVE-2015-9284
+(Cross-Site Request Forgery on the request phrase when
+using OmniAuth gem with a Ruby on Rails application) by
+implementing a CSRF token verifier that directly utilize
+`ActionController::RequestForgeryProtection` code from Rails.

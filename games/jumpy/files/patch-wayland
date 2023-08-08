@@ -1,0 +1,274 @@
+https://github.com/bevyengine/bevy/issues/4106
+
+--- Cargo.lock.orig	2023-05-04 20:07:38 UTC
++++ Cargo.lock
+@@ -1258,6 +1258,19 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
+ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f4710dc03ceb8748637775692c"
+ 
+ [[package]]
++name = "calloop"
++version = "0.10.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "1a59225be45a478d772ce015d9743e49e92798ece9e34eda9a6aa2a6a7f40192"
++dependencies = [
++ "log",
++ "nix 0.25.1",
++ "slotmap",
++ "thiserror",
++ "vec_map",
++]
++
++[[package]]
+ name = "cc"
+ version = "1.0.79"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1768,6 +1781,15 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "dlib"
++version = "0.5.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "ac1b7517328c04c2aa68422fc60a41b92208182142ed04a25879c26c8f878794"
++dependencies = [
++ "libloading",
++]
++
++[[package]]
+ name = "downcast-rs"
+ version = "1.2.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -3084,6 +3106,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
+ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
+ 
+ [[package]]
++name = "memmap2"
++version = "0.5.10"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "83faa42c0a078c393f6b29d5db232d8be22776a891f8f56e5284faee4a20b327"
++dependencies = [
++ "libc",
++]
++
++[[package]]
+ name = "memoffset"
+ version = "0.6.5"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -3288,6 +3319,7 @@ dependencies = [
+  "bitflags",
+  "cfg-if",
+  "libc",
++ "memoffset 0.6.5",
+ ]
+ 
+ [[package]]
+@@ -4367,6 +4399,12 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "scoped-tls"
++version = "1.0.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "e1cf6437eb19a8f4a6cc0f7dca544973b0b78843adbfeb3683d1a94a0024a294"
++
++[[package]]
+ name = "scopeguard"
+ version = "1.1.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -4530,6 +4568,25 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "smithay-client-toolkit"
++version = "0.16.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "f307c47d32d2715eb2e0ece5589057820e0e5e70d07c247d1063e844e107f454"
++dependencies = [
++ "bitflags",
++ "calloop",
++ "dlib",
++ "lazy_static",
++ "log",
++ "memmap2",
++ "nix 0.24.3",
++ "pkg-config",
++ "wayland-client",
++ "wayland-cursor",
++ "wayland-protocols",
++]
++
++[[package]]
+ name = "socket2"
+ version = "0.4.9"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -5228,6 +5285,78 @@ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b6
+ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b677e57ebe37e49358989b5d"
+ 
+ [[package]]
++name = "wayland-client"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "3f3b068c05a039c9f755f881dc50f01732214f5685e379829759088967c46715"
++dependencies = [
++ "bitflags",
++ "downcast-rs",
++ "libc",
++ "nix 0.24.3",
++ "scoped-tls",
++ "wayland-commons",
++ "wayland-scanner",
++ "wayland-sys",
++]
++
++[[package]]
++name = "wayland-commons"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "8691f134d584a33a6606d9d717b95c4fa20065605f798a3f350d78dced02a902"
++dependencies = [
++ "nix 0.24.3",
++ "once_cell",
++ "smallvec",
++ "wayland-sys",
++]
++
++[[package]]
++name = "wayland-cursor"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "6865c6b66f13d6257bef1cd40cbfe8ef2f150fb8ebbdb1e8e873455931377661"
++dependencies = [
++ "nix 0.24.3",
++ "wayland-client",
++ "xcursor",
++]
++
++[[package]]
++name = "wayland-protocols"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "b950621f9354b322ee817a23474e479b34be96c2e909c14f7bc0100e9a970bc6"
++dependencies = [
++ "bitflags",
++ "wayland-client",
++ "wayland-commons",
++ "wayland-scanner",
++]
++
++[[package]]
++name = "wayland-scanner"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "8f4303d8fa22ab852f789e75a967f0a2cdc430a607751c0499bada3e451cbd53"
++dependencies = [
++ "proc-macro2",
++ "quote",
++ "xml-rs",
++]
++
++[[package]]
++name = "wayland-sys"
++version = "0.29.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "be12ce1a3c39ec7dba25594b97b42cb3195d54953ddb9d3d95a7c3902bc6e9d4"
++dependencies = [
++ "dlib",
++ "pkg-config",
++]
++
++[[package]]
+ name = "web-sys"
+ version = "0.3.61"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -5280,7 +5409,7 @@ dependencies = [
+  "js-sys",
+  "log",
+  "naga",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "raw-window-handle 0.5.2",
+  "smallvec",
+  "static_assertions",
+@@ -5306,7 +5435,7 @@ dependencies = [
+  "fxhash",
+  "log",
+  "naga",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "profiling",
+  "raw-window-handle 0.5.2",
+  "smallvec",
+@@ -5342,7 +5471,7 @@ dependencies = [
+  "metal",
+  "naga",
+  "objc",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "profiling",
+  "range-alloc",
+  "raw-window-handle 0.5.2",
+@@ -5594,7 +5723,10 @@ dependencies = [
+  "percent-encoding",
+  "raw-window-handle 0.4.3",
+  "raw-window-handle 0.5.2",
++ "smithay-client-toolkit",
+  "wasm-bindgen",
++ "wayland-client",
++ "wayland-protocols",
+  "web-sys",
+  "windows-sys 0.36.1",
+  "x11-dl",
+@@ -5641,6 +5773,21 @@ dependencies = [
+ dependencies = [
+  "nix 0.24.3",
+ ]
++
++[[package]]
++name = "xcursor"
++version = "0.3.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "463705a63313cd4301184381c5e8042f0a7e9b4bb63653f216311d4ae74690b7"
++dependencies = [
++ "nom",
++]
++
++[[package]]
++name = "xml-rs"
++version = "0.8.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "374b609fb36c36ce3501094dc0548f7df5d8d102224b65bc59812e4a5425d571"
+ 
+ [[package]]
+ name = "yasna"
+--- Cargo.toml.orig	2023-05-04 20:07:38 UTC
++++ Cargo.toml
+@@ -66,7 +66,7 @@ default-features = false
+ 
+ [dependencies.bevy]
+ default-features = false
+-features         = ["x11", "png", "filesystem_watcher", "bevy_gilrs"]
++features         = ["wayland", "x11", "png", "filesystem_watcher", "bevy_gilrs"]
+ version          = "0.9.1"
+ 
+ [target.'cfg(target_arch = "wasm32")'.dependencies]
+--- cargo-crates/bevy-0.9.1/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/bevy-0.9.1/Cargo.toml
+@@ -1545,6 +1545,7 @@ default = [
+     "png",
+     "hdr",
+     "vorbis",
++    "wayland",
+     "x11",
+     "filesystem_watcher",
+ ]
+--- cargo-crates/bevy_winit-0.9.1/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/bevy_winit-0.9.1/Cargo.toml
+@@ -52,7 +52,7 @@ default-features = false
+ default-features = false
+ 
+ [features]
+-wayland = ["winit/wayland"]
++wayland = ["winit/wayland", "winit/wayland-dlopen"]
+ x11 = ["winit/x11"]
+ 
+ [target."cfg(target_arch = \"wasm32\")".dependencies.crossbeam-channel]

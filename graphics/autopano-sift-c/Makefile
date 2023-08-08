@@ -1,6 +1,6 @@
 PORTNAME=	autopano-sift-C
 PORTVERSION=	2.5.1
-PORTREVISION=	7
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/hugin/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -8,14 +8,18 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Automatic panorama control point generation tool, C port
 WWW=		http://hugin.sourceforge.net/docs/manual/Autopano-sift-C.html
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
 		libpano13.so:graphics/libpano13
 
 CONFLICTS=	autopano-sift
 
-USE_GNOME=	libxml2
 USES=		cmake gnome jpeg
+USE_CXXSTD=	c++14
+USE_GNOME=	libxml2
 
 PORTDOCS=	*
 

@@ -1,5 +1,5 @@
 PORTNAME=	metasploit_data_models
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-activerecord60>=6.0:databases/rubygem-activerecord60 \
 		rubygem-webrick>=0:www/rubygem-webrick
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

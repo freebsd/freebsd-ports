@@ -1,5 +1,10 @@
 include/yder-cfg.h
 include/yder.h
+lib/cmake/Yder/FindSystemd.cmake
+lib/cmake/Yder/YderConfig.cmake
+lib/cmake/Yder/YderConfigVersion.cmake
+lib/cmake/Yder/YderTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Yder/YderTargets.cmake
 lib/libyder.so
 lib/libyder.so.1.4
 lib/libyder.so.%%PORTVERSION%%

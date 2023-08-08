@@ -8,8 +8,6 @@ share/ruby-install/logging.sh
 share/ruby-install/mruby/dependencies.txt
 share/ruby-install/mruby/functions.sh
 share/ruby-install/package_manager.sh
-share/ruby-install/rbx/dependencies.txt
-share/ruby-install/rbx/functions.sh
 share/ruby-install/ruby-install.sh
 share/ruby-install/ruby-versions.sh
 share/ruby-install/ruby/dependencies.txt

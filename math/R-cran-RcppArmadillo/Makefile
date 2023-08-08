@@ -1,9 +1,9 @@
 PORTNAME=	RcppArmadillo
-PORTVERSION=	0.11.2.4.0
+DISTVERSION=	0.12.4.1.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Rcpp integration for Armadillo templated linear algebra library
 WWW=		https://cran.r-project.org/web/packages/RcppArmadillo/
 

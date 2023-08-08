@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+%%EXAMPLES%%#
+%%EXAMPLES%%# PortAudio test programs can be built like this:
+%%EXAMPLES%%#
+%%EXAMPLES%%# cd %%EXAMPLESDIR%%
+%%EXAMPLES%%# cc -L%%PREFIX%%/lib -lm -lpthread -lportaudio -I%%PREFIX%%/include \
+%%EXAMPLES%%#		pa_unix*.c pa_allocation.c pa_ringbuffer.c pa_debugprint.c \
+%%EXAMPLES%%#		pa_front.c paex_ocean_shore.c
+%%EXAMPLES%%#
+EOM
+}
+]

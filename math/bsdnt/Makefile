@@ -3,7 +3,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Bignum Library
 WWW=		https://github.com/wbhart/bsdnt
 

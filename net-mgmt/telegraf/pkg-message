@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOF
+Running telegraf in a jail requires setting
+allow.mlock=1;
+in /etc/jail.conf
+
+A config file can be created by running `telegraf config`.
+EOF
+}
+]

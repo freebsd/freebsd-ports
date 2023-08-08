@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.10.6
+DISTVERSION=	2.11.6
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspot.so:math/spot
 
-USES=		compiler:c++14-lang gmake libtool python:3.4+
+USES=		compiler:c++17-lang gmake libtool python
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --disable-static
 
@@ -33,5 +34,7 @@ post-configure:
 
 post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+# to test: cd ../spot && make test WITH_PYTHON=yes
 
 .include <bsd.port.mk>

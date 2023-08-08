@@ -5,9 +5,6 @@ share/applications/fish.desktop
 share/pixmaps/fish.png
 @sample %%ETCDIR%%/config.fish.sample
 libdata/pkgconfig/fish.pc
-%%MANPAGES%%share/man/man1/fish.1.gz
-%%MANPAGES%%share/man/man1/fish_indent.1.gz
-%%MANPAGES%%share/man/man1/fish_key_reader.1.gz
 %%DATADIR%%/__fish_build_paths.fish
 %%DATADIR%%/completions/..fish
 %%DATADIR%%/completions/7z.fish
@@ -45,6 +42,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/ant.fish
 %%DATADIR%%/completions/apack.fish
 %%DATADIR%%/completions/apk.fish
+%%DATADIR%%/completions/apkanalyzer.fish
 %%DATADIR%%/completions/apm.fish
 %%DATADIR%%/completions/apropos.fish
 %%DATADIR%%/completions/apt-build.fish
@@ -76,9 +74,11 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/archlinux-java.fish
 %%DATADIR%%/completions/arepack.fish
 %%DATADIR%%/completions/argparse.fish
+%%DATADIR%%/completions/ark.fish
 %%DATADIR%%/completions/arp.fish
 %%DATADIR%%/completions/as.fish
 %%DATADIR%%/completions/asciidoctor.fish
+%%DATADIR%%/completions/asciinema.fish
 %%DATADIR%%/completions/asd.fish
 %%DATADIR%%/completions/asp.fish
 %%DATADIR%%/completions/at.fish
@@ -154,6 +154,8 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/clean.fish
 %%DATADIR%%/completions/cleanmgr.fish
 %%DATADIR%%/completions/climate.fish
+%%DATADIR%%/completions/clj.fish
+%%DATADIR%%/completions/clojure.fish
 %%DATADIR%%/completions/cmark.fish
 %%DATADIR%%/completions/cmd.fish
 %%DATADIR%%/completions/cmdkey.fish
@@ -174,6 +176,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/configure.fish
 %%DATADIR%%/completions/conjure.fish
 %%DATADIR%%/completions/connmanctl.fish
+%%DATADIR%%/completions/contains.fish
 %%DATADIR%%/completions/continue.fish
 %%DATADIR%%/completions/convert.fish
 %%DATADIR%%/completions/coredumpctl.fish
@@ -185,6 +188,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/createdb.fish
 %%DATADIR%%/completions/cryptsetup.fish
 %%DATADIR%%/completions/csc.fish
+%%DATADIR%%/completions/csh.fish
 %%DATADIR%%/completions/csharp.fish
 %%DATADIR%%/completions/csi.fish
 %%DATADIR%%/completions/cupsaccept.fish
@@ -210,8 +214,11 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/dhcpcd.fish
 %%DATADIR%%/completions/diff.fish
 %%DATADIR%%/completions/dig.fish
+%%DATADIR%%/completions/direnv.fish
 %%DATADIR%%/completions/diskutil.fish
+%%DATADIR%%/completions/disown.fish
 %%DATADIR%%/completions/display.fish
+%%DATADIR%%/completions/dive.fish
 %%DATADIR%%/completions/djview.fish
 %%DATADIR%%/completions/djview4.fish
 %%DATADIR%%/completions/djxl.fish
@@ -221,6 +228,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/dnf.fish
 %%DATADIR%%/completions/doas.fish
 %%DATADIR%%/completions/docker.fish
+%%DATADIR%%/completions/dolphin.fish
 %%DATADIR%%/completions/dotnet.fish
 %%DATADIR%%/completions/downgrade.fish
 %%DATADIR%%/completions/dpkg-reconfigure.fish
@@ -228,6 +236,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/dropdb.fish
 %%DATADIR%%/completions/dscacheutil.fish
 %%DATADIR%%/completions/du.fish
+%%DATADIR%%/completions/dua.fish
 %%DATADIR%%/completions/dumpcap.fish
 %%DATADIR%%/completions/duply.fish
 %%DATADIR%%/completions/dvipdf.fish
@@ -235,6 +244,8 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/ebuild.fish
 %%DATADIR%%/completions/echo.fish
 %%DATADIR%%/completions/efibootmgr.fish
+%%DATADIR%%/completions/efivar.fish
+%%DATADIR%%/completions/eg.fish
 %%DATADIR%%/completions/egrep.fish
 %%DATADIR%%/completions/eix-sync.fish
 %%DATADIR%%/completions/eix.fish
@@ -244,12 +255,14 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/emacs.fish
 %%DATADIR%%/completions/emaint.fish
 %%DATADIR%%/completions/emerge.fish
+%%DATADIR%%/completions/emit.fish
 %%DATADIR%%/completions/encfs.fish
 %%DATADIR%%/completions/entr.fish
 %%DATADIR%%/completions/env.fish
 %%DATADIR%%/completions/eopkg.fish
 %%DATADIR%%/completions/epkginfo.fish
 %%DATADIR%%/completions/equery.fish
+%%DATADIR%%/completions/es.fish
 %%DATADIR%%/completions/eselect.fish
 %%DATADIR%%/completions/etex.fish
 %%DATADIR%%/completions/ethtool.fish
@@ -263,6 +276,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/expect.fish
 %%DATADIR%%/completions/ezjail-admin.fish
 %%DATADIR%%/completions/fab.fish
+%%DATADIR%%/completions/fail2ban-client.fish
 %%DATADIR%%/completions/fastboot.fish
 %%DATADIR%%/completions/feh.fish
 %%DATADIR%%/completions/ffmpeg.fish
@@ -274,10 +288,13 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/file.fish
 %%DATADIR%%/completions/find.fish
 %%DATADIR%%/completions/findstr.fish
+%%DATADIR%%/completions/firefox-developer-edition.fish
+%%DATADIR%%/completions/firefox.fish
 %%DATADIR%%/completions/firewall-cmd.fish
 %%DATADIR%%/completions/fish.fish
 %%DATADIR%%/completions/fish_add_path.fish
 %%DATADIR%%/completions/fish_config.fish
+%%DATADIR%%/completions/fish_delta.fish
 %%DATADIR%%/completions/fish_indent.fish
 %%DATADIR%%/completions/fish_key_reader.fish
 %%DATADIR%%/completions/fish_opt.fish
@@ -286,6 +303,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/fluxbox-remote.fish
 %%DATADIR%%/completions/for.fish
 %%DATADIR%%/completions/forfiles.fish
+%%DATADIR%%/completions/fortune.fish
 %%DATADIR%%/completions/fossil.fish
 %%DATADIR%%/completions/fsharpc.fish
 %%DATADIR%%/completions/fsharpi.fish
@@ -389,17 +407,21 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/julia.fish
 %%DATADIR%%/completions/k3d.fish
 %%DATADIR%%/completions/kak.fish
+%%DATADIR%%/completions/kb.fish
 %%DATADIR%%/completions/kcmshell5.fish
 %%DATADIR%%/completions/kdeconnect-cli.fish
 %%DATADIR%%/completions/keepassxc-cli.fish
 %%DATADIR%%/completions/keybase.fish
 %%DATADIR%%/completions/kill.fish
 %%DATADIR%%/completions/killall.fish
+%%DATADIR%%/completions/kind.fish
 %%DATADIR%%/completions/kitchen.fish
 %%DATADIR%%/completions/kitty.fish
 %%DATADIR%%/completions/kldload.fish
 %%DATADIR%%/completions/kldunload.fish
 %%DATADIR%%/completions/kmutil.fish
+%%DATADIR%%/completions/konsole.fish
+%%DATADIR%%/completions/ksh.fish
 %%DATADIR%%/completions/kubectl.fish
 %%DATADIR%%/completions/latex.fish
 %%DATADIR%%/completions/latexmk.fish
@@ -410,6 +432,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/light.fish
 %%DATADIR%%/completions/lightdm.fish
 %%DATADIR%%/completions/ln.fish
+%%DATADIR%%/completions/loadkeys.fish
 %%DATADIR%%/completions/localectl.fish
 %%DATADIR%%/completions/locate.fish
 %%DATADIR%%/completions/loginctl.fish
@@ -523,13 +546,18 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/nodeenv.fish
 %%DATADIR%%/completions/not.fish
 %%DATADIR%%/completions/npm.fish
+%%DATADIR%%/completions/nu.fish
 %%DATADIR%%/completions/nvim.fish
+%%DATADIR%%/completions/nvme.fish
 %%DATADIR%%/completions/nvram.fish
 %%DATADIR%%/completions/objdump.fish
 %%DATADIR%%/completions/obnam.fish
 %%DATADIR%%/completions/octave.fish
 %%DATADIR%%/completions/oggenc.fish
+%%DATADIR%%/completions/oksh.fish
+%%DATADIR%%/completions/okular.fish
 %%DATADIR%%/completions/omega.fish
+%%DATADIR%%/completions/op.fish
 %%DATADIR%%/completions/opam.fish
 %%DATADIR%%/completions/open.fish
 %%DATADIR%%/completions/openocd.fish
@@ -538,6 +566,8 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/optimus-manager.fish
 %%DATADIR%%/completions/optipng.fish
 %%DATADIR%%/completions/or.fish
+%%DATADIR%%/completions/otool.fish
+%%DATADIR%%/completions/ouch.fish
 %%DATADIR%%/completions/p4.fish
 %%DATADIR%%/completions/pabcnetcclear.fish
 %%DATADIR%%/completions/pacaur.fish
@@ -575,6 +605,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/pip2.fish
 %%DATADIR%%/completions/pip3.fish
 %%DATADIR%%/completions/pipenv.fish
+%%DATADIR%%/completions/pix.fish
 %%DATADIR%%/completions/pkg-config.fish
 %%DATADIR%%/completions/pkg.fish
 %%DATADIR%%/completions/pkg_add.fish
@@ -595,8 +626,10 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/poweroff.fish
 %%DATADIR%%/completions/powerpill.fish
 %%DATADIR%%/completions/powershell.fish
+%%DATADIR%%/completions/pre-commit.fish
 %%DATADIR%%/completions/prevd.fish
 %%DATADIR%%/completions/prime-run.fish
+%%DATADIR%%/completions/proxychains.fish
 %%DATADIR%%/completions/prt-get.fish
 %%DATADIR%%/completions/ps.fish
 %%DATADIR%%/completions/ps2pdf.fish
@@ -609,6 +642,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/psub.fish
 %%DATADIR%%/completions/pushd.fish
 %%DATADIR%%/completions/pv.fish
+%%DATADIR%%/completions/pwd.fish
 %%DATADIR%%/completions/pydf.fish
 %%DATADIR%%/completions/pyenv.fish
 %%DATADIR%%/completions/pygmentize.fish
@@ -618,6 +652,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/pzstd.fish
 %%DATADIR%%/completions/qdbus.fish
 %%DATADIR%%/completions/qmk.fish
+%%DATADIR%%/completions/qshell.fish
 %%DATADIR%%/completions/qubes-gpg-client.fish
 %%DATADIR%%/completions/quilt.fish
 %%DATADIR%%/completions/rakudo.fish
@@ -627,9 +662,11 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/rc-service.fish
 %%DATADIR%%/completions/rc-status.fish
 %%DATADIR%%/completions/rc-update.fish
+%%DATADIR%%/completions/rc.fish
 %%DATADIR%%/completions/rcctl.fish
 %%DATADIR%%/completions/rclone.fish
 %%DATADIR%%/completions/read.fish
+%%DATADIR%%/completions/readelf.fish
 %%DATADIR%%/completions/readlink.fish
 %%DATADIR%%/completions/realpath.fish
 %%DATADIR%%/completions/reflector.fish
@@ -664,6 +701,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/rustc.fish
 %%DATADIR%%/completions/rustup.fish
 %%DATADIR%%/completions/s3cmd.fish
+%%DATADIR%%/completions/sad.fish
 %%DATADIR%%/completions/sass-convert.fish
 %%DATADIR%%/completions/sass.fish
 %%DATADIR%%/completions/sbcl.fish
@@ -674,6 +712,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/scp.fish
 %%DATADIR%%/completions/screen.fish
 %%DATADIR%%/completions/scrot.fish
+%%DATADIR%%/completions/scrypt.fish
 %%DATADIR%%/completions/scss.fish
 %%DATADIR%%/completions/sed.fish
 %%DATADIR%%/completions/seq.fish
@@ -707,12 +746,14 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/sphinx-quickstart.fish
 %%DATADIR%%/completions/sqlsharp.fish
 %%DATADIR%%/completions/src.fish
+%%DATADIR%%/completions/ssh-copy-id.fish
 %%DATADIR%%/completions/ssh.fish
 %%DATADIR%%/completions/sshfs.fish
 %%DATADIR%%/completions/stack.fish
 %%DATADIR%%/completions/starship.fish
 %%DATADIR%%/completions/stat.fish
 %%DATADIR%%/completions/status.fish
+%%DATADIR%%/completions/stow.fish
 %%DATADIR%%/completions/strace.fish
 %%DATADIR%%/completions/stream.fish
 %%DATADIR%%/completions/string.fish
@@ -727,10 +768,12 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/sysctl.fish
 %%DATADIR%%/completions/systemctl.fish
 %%DATADIR%%/completions/systemd-analyze.fish
+%%DATADIR%%/completions/systemd-cryptenroll.fish
 %%DATADIR%%/completions/systemd-nspawn.fish
 %%DATADIR%%/completions/tail.fish
 %%DATADIR%%/completions/tar.fish
 %%DATADIR%%/completions/tcpdump.fish
+%%DATADIR%%/completions/tcsh.fish
 %%DATADIR%%/completions/tee.fish
 %%DATADIR%%/completions/telnet.fish
 %%DATADIR%%/completions/termite.fish
@@ -745,15 +788,22 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/tmux.fish
 %%DATADIR%%/completions/tmuxinator.fish
 %%DATADIR%%/completions/tokei.fish
+%%DATADIR%%/completions/toot.fish
 %%DATADIR%%/completions/top.fish
 %%DATADIR%%/completions/topgrade.fish
 %%DATADIR%%/completions/totem.fish
 %%DATADIR%%/completions/touch.fish
+%%DATADIR%%/completions/tox.fish
 %%DATADIR%%/completions/tr.fish
 %%DATADIR%%/completions/tracepath.fish
 %%DATADIR%%/completions/traceroute.fish
 %%DATADIR%%/completions/transmission-remote.fish
 %%DATADIR%%/completions/trap.fish
+%%DATADIR%%/completions/trash-empty.fish
+%%DATADIR%%/completions/trash-list.fish
+%%DATADIR%%/completions/trash-put.fish
+%%DATADIR%%/completions/trash-restore.fish
+%%DATADIR%%/completions/trash.fish
 %%DATADIR%%/completions/travis.fish
 %%DATADIR%%/completions/tree.fish
 %%DATADIR%%/completions/tsc.fish
@@ -775,6 +825,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/unzstd.fish
 %%DATADIR%%/completions/update-eix-remote.fish
 %%DATADIR%%/completions/update-eix.fish
+%%DATADIR%%/completions/usbip.fish
 %%DATADIR%%/completions/useradd.fish
 %%DATADIR%%/completions/userdbctl.fish
 %%DATADIR%%/completions/usermod.fish
@@ -809,6 +860,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/wineboot.fish
 %%DATADIR%%/completions/winemaker.fish
 %%DATADIR%%/completions/wireshark.fish
+%%DATADIR%%/completions/wish.fish
 %%DATADIR%%/completions/wpa_cli.fish
 %%DATADIR%%/completions/wslpath.fish
 %%DATADIR%%/completions/wvdial.fish
@@ -831,18 +883,23 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/xclip.fish
 %%DATADIR%%/completions/xdg-mime.fish
 %%DATADIR%%/completions/xdvi.fish
+%%DATADIR%%/completions/xed.fish
 %%DATADIR%%/completions/xelatex.fish
 %%DATADIR%%/completions/xgettext.fish
 %%DATADIR%%/completions/xinput.fish
 %%DATADIR%%/completions/xmms.fish
+%%DATADIR%%/completions/xonsh.fish
 %%DATADIR%%/completions/xpdf.fish
+%%DATADIR%%/completions/xplayer.fish
 %%DATADIR%%/completions/xprop.fish
 %%DATADIR%%/completions/xrandr.fish
 %%DATADIR%%/completions/xrdb.fish
+%%DATADIR%%/completions/xreader.fish
 %%DATADIR%%/completions/xsel.fish
 %%DATADIR%%/completions/xsp.fish
 %%DATADIR%%/completions/xsv.fish
 %%DATADIR%%/completions/xterm.fish
+%%DATADIR%%/completions/xviewer.fish
 %%DATADIR%%/completions/xxh128sum.fish
 %%DATADIR%%/completions/xxh32sum.fish
 %%DATADIR%%/completions/xxh64sum.fish
@@ -851,11 +908,14 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/completions/yadm.fish
 %%DATADIR%%/completions/yaourt.fish
 %%DATADIR%%/completions/yarn.fish
+%%DATADIR%%/completions/yash.fish
 %%DATADIR%%/completions/yast2.fish
+%%DATADIR%%/completions/ykman.fish
 %%DATADIR%%/completions/yum.fish
 %%DATADIR%%/completions/zcat.fish
 %%DATADIR%%/completions/zef.fish
 %%DATADIR%%/completions/zfs.fish
+%%DATADIR%%/completions/zig.fish
 %%DATADIR%%/completions/zip.fish
 %%DATADIR%%/completions/zopfli.fish
 %%DATADIR%%/completions/zopflipng.fish
@@ -921,7 +981,6 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/__fish_config_interactive.fish
 %%DATADIR%%/functions/__fish_contains_opt.fish
 %%DATADIR%%/functions/__fish_crux_packages.fish
-%%DATADIR%%/functions/__fish_cursor_1337.fish
 %%DATADIR%%/functions/__fish_cursor_konsole.fish
 %%DATADIR%%/functions/__fish_cursor_xterm.fish
 %%DATADIR%%/functions/__fish_describe_command.fish
@@ -1014,6 +1073,7 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/__fish_vcs_prompt.fish
 %%DATADIR%%/functions/__fish_whatis.fish
 %%DATADIR%%/functions/__fish_whatis_current_token.fish
+%%DATADIR%%/functions/__ssh_history_completions.fish
 %%DATADIR%%/functions/__terlar_git_prompt.fish
 %%DATADIR%%/functions/_validate_int.fish
 %%DATADIR%%/functions/abbr.fish
@@ -1037,14 +1097,13 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/fish_config.fish
 %%DATADIR%%/functions/fish_default_key_bindings.fish
 %%DATADIR%%/functions/fish_default_mode_prompt.fish
+%%DATADIR%%/functions/fish_delta.fish
 %%DATADIR%%/functions/fish_git_prompt.fish
 %%DATADIR%%/functions/fish_greeting.fish
 %%DATADIR%%/functions/fish_hg_prompt.fish
 %%DATADIR%%/functions/fish_hybrid_key_bindings.fish
-%%DATADIR%%/functions/fish_indent.fish
 %%DATADIR%%/functions/fish_is_root_user.fish
 %%DATADIR%%/functions/fish_job_summary.fish
-%%DATADIR%%/functions/fish_key_reader.fish
 %%DATADIR%%/functions/fish_mode_prompt.fish
 %%DATADIR%%/functions/fish_opt.fish
 %%DATADIR%%/functions/fish_print_git_action.fish
@@ -1085,7 +1144,64 @@ libdata/pkgconfig/fish.pc
 %%DATADIR%%/functions/up-or-search.fish
 %%DATADIR%%/functions/vared.fish
 %%DATADIR%%/groff/fish.tmac
-%%DATADIR%%/lynx.lss
+%%DATADIR%%/tools/create_manpage_completions.py
+%%DATADIR%%/tools/deroff.py
+%%DATADIR%%/tools/web_config/delete.png
+%%DATADIR%%/tools/web_config/favicon.png
+%%DATADIR%%/tools/web_config/fishconfig.css
+%%DATADIR%%/tools/web_config/index.html
+%%DATADIR%%/tools/web_config/js/angular-route.js
+%%DATADIR%%/tools/web_config/js/angular-sanitize.js
+%%DATADIR%%/tools/web_config/js/angular.js
+%%DATADIR%%/tools/web_config/js/app.js
+%%DATADIR%%/tools/web_config/js/colorutils.js
+%%DATADIR%%/tools/web_config/js/controllers.js
+%%DATADIR%%/tools/web_config/js/filters.js
+%%DATADIR%%/tools/web_config/partials/bindings.html
+%%DATADIR%%/tools/web_config/partials/colors.html
+%%DATADIR%%/tools/web_config/partials/functions.html
+%%DATADIR%%/tools/web_config/partials/history.html
+%%DATADIR%%/tools/web_config/partials/prompt.html
+%%DATADIR%%/tools/web_config/partials/variables.html
+%%DATADIR%%/tools/web_config/sample_prompts/acidhub.fish
+%%DATADIR%%/tools/web_config/sample_prompts/arrow.fish
+%%DATADIR%%/tools/web_config/sample_prompts/astronaut.fish
+%%DATADIR%%/tools/web_config/sample_prompts/default.fish
+%%DATADIR%%/tools/web_config/sample_prompts/disco.fish
+%%DATADIR%%/tools/web_config/sample_prompts/informative.fish
+%%DATADIR%%/tools/web_config/sample_prompts/informative_vcs.fish
+%%DATADIR%%/tools/web_config/sample_prompts/minimalist.fish
+%%DATADIR%%/tools/web_config/sample_prompts/nim.fish
+%%DATADIR%%/tools/web_config/sample_prompts/pythonista.fish
+%%DATADIR%%/tools/web_config/sample_prompts/scales.fish
+%%DATADIR%%/tools/web_config/sample_prompts/simple.fish
+%%DATADIR%%/tools/web_config/sample_prompts/terlar.fish
+%%DATADIR%%/tools/web_config/themes/Base16 Default Dark.theme
+%%DATADIR%%/tools/web_config/themes/Base16 Default Light.theme
+%%DATADIR%%/tools/web_config/themes/Base16 Eighties.theme
+%%DATADIR%%/tools/web_config/themes/Bay Cruise.theme
+%%DATADIR%%/tools/web_config/themes/Dracula.theme
+%%DATADIR%%/tools/web_config/themes/Fairground.theme
+%%DATADIR%%/tools/web_config/themes/Just a Touch.theme
+%%DATADIR%%/tools/web_config/themes/Lava.theme
+%%DATADIR%%/tools/web_config/themes/Mono Lace.theme
+%%DATADIR%%/tools/web_config/themes/Mono Smoke.theme
+%%DATADIR%%/tools/web_config/themes/None.theme
+%%DATADIR%%/tools/web_config/themes/Nord.theme
+%%DATADIR%%/tools/web_config/themes/Old School.theme
+%%DATADIR%%/tools/web_config/themes/Seaweed.theme
+%%DATADIR%%/tools/web_config/themes/Snow Day.theme
+%%DATADIR%%/tools/web_config/themes/Solarized Dark.theme
+%%DATADIR%%/tools/web_config/themes/Solarized Light.theme
+%%DATADIR%%/tools/web_config/themes/Tomorrow Night Bright.theme
+%%DATADIR%%/tools/web_config/themes/Tomorrow Night.theme
+%%DATADIR%%/tools/web_config/themes/Tomorrow.theme
+%%DATADIR%%/tools/web_config/themes/ayu Dark.theme
+%%DATADIR%%/tools/web_config/themes/ayu Light.theme
+%%DATADIR%%/tools/web_config/themes/ayu Mirage.theme
+%%DATADIR%%/tools/web_config/themes/coolbeans.theme
+%%DATADIR%%/tools/web_config/themes/fish default.theme
+%%DATADIR%%/tools/web_config/webconfig.py
 %%MANPAGES%%%%DATADIR%%/man/man1/_.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/abbr.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/alias.1.gz
@@ -1130,8 +1246,11 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/fish.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_add_path.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_breakpoint_prompt.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish_clipboard_copy.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish_clipboard_paste.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_command_not_found.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_config.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/fish_delta.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_git_prompt.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_greeting.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/fish_hg_prompt.1.gz
@@ -1189,6 +1308,7 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/string-pad.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/string-repeat.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/string-replace.1.gz
+%%MANPAGES%%%%DATADIR%%/man/man1/string-shorten.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/string-split.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/string-split0.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/string-sub.1.gz
@@ -1208,65 +1328,9 @@ libdata/pkgconfig/fish.pc
 %%MANPAGES%%%%DATADIR%%/man/man1/vared.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/wait.1.gz
 %%MANPAGES%%%%DATADIR%%/man/man1/while.1.gz
-%%DATADIR%%/tools/create_manpage_completions.py
-%%DATADIR%%/tools/deroff.py
-%%DATADIR%%/tools/web_config/delete.png
-%%DATADIR%%/tools/web_config/favicon.png
-%%DATADIR%%/tools/web_config/fishconfig.css
-%%DATADIR%%/tools/web_config/index.html
-%%DATADIR%%/tools/web_config/js/angular-route.js
-%%DATADIR%%/tools/web_config/js/angular-sanitize.js
-%%DATADIR%%/tools/web_config/js/angular.js
-%%DATADIR%%/tools/web_config/js/app.js
-%%DATADIR%%/tools/web_config/js/colorutils.js
-%%DATADIR%%/tools/web_config/js/controllers.js
-%%DATADIR%%/tools/web_config/js/filters.js
-%%DATADIR%%/tools/web_config/partials/abbreviations.html
-%%DATADIR%%/tools/web_config/partials/bindings.html
-%%DATADIR%%/tools/web_config/partials/colors.html
-%%DATADIR%%/tools/web_config/partials/functions.html
-%%DATADIR%%/tools/web_config/partials/history.html
-%%DATADIR%%/tools/web_config/partials/prompt.html
-%%DATADIR%%/tools/web_config/partials/variables.html
-%%DATADIR%%/tools/web_config/sample_prompts/acidhub.fish
-%%DATADIR%%/tools/web_config/sample_prompts/arrow.fish
-%%DATADIR%%/tools/web_config/sample_prompts/astronaut.fish
-%%DATADIR%%/tools/web_config/sample_prompts/default.fish
-%%DATADIR%%/tools/web_config/sample_prompts/disco.fish
-%%DATADIR%%/tools/web_config/sample_prompts/informative.fish
-%%DATADIR%%/tools/web_config/sample_prompts/informative_vcs.fish
-%%DATADIR%%/tools/web_config/sample_prompts/minimalist.fish
-%%DATADIR%%/tools/web_config/sample_prompts/nim.fish
-%%DATADIR%%/tools/web_config/sample_prompts/pythonista.fish
-%%DATADIR%%/tools/web_config/sample_prompts/scales.fish
-%%DATADIR%%/tools/web_config/sample_prompts/simple.fish
-%%DATADIR%%/tools/web_config/sample_prompts/terlar.fish
-%%DATADIR%%/tools/web_config/themes/Base16 Default Dark.theme
-%%DATADIR%%/tools/web_config/themes/Base16 Default Light.theme
-%%DATADIR%%/tools/web_config/themes/Base16 Eighties.theme
-%%DATADIR%%/tools/web_config/themes/Bay Cruise.theme
-%%DATADIR%%/tools/web_config/themes/Dracula.theme
-%%DATADIR%%/tools/web_config/themes/Fairground.theme
-%%DATADIR%%/tools/web_config/themes/Just a Touch.theme
-%%DATADIR%%/tools/web_config/themes/Lava.theme
-%%DATADIR%%/tools/web_config/themes/Mono Lace.theme
-%%DATADIR%%/tools/web_config/themes/Mono Smoke.theme
-%%DATADIR%%/tools/web_config/themes/None.theme
-%%DATADIR%%/tools/web_config/themes/Nord.theme
-%%DATADIR%%/tools/web_config/themes/Old School.theme
-%%DATADIR%%/tools/web_config/themes/Seaweed.theme
-%%DATADIR%%/tools/web_config/themes/Snow Day.theme
-%%DATADIR%%/tools/web_config/themes/Solarized Dark.theme
-%%DATADIR%%/tools/web_config/themes/Solarized Light.theme
-%%DATADIR%%/tools/web_config/themes/Tomorrow Night Bright.theme
-%%DATADIR%%/tools/web_config/themes/Tomorrow Night.theme
-%%DATADIR%%/tools/web_config/themes/Tomorrow.theme
-%%DATADIR%%/tools/web_config/themes/ayu Dark.theme
-%%DATADIR%%/tools/web_config/themes/ayu Light.theme
-%%DATADIR%%/tools/web_config/themes/ayu Mirage.theme
-%%DATADIR%%/tools/web_config/themes/coolbeans.theme
-%%DATADIR%%/tools/web_config/themes/fish default.theme
-%%DATADIR%%/tools/web_config/webconfig.py
+%%MANPAGES%%share/man/man1/fish.1.gz
+%%MANPAGES%%share/man/man1/fish_indent.1.gz
+%%MANPAGES%%share/man/man1/fish_key_reader.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/fish.mo
 %%NLS%%share/locale/en/LC_MESSAGES/fish.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/fish.mo

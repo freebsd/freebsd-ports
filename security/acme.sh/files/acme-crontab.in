@@ -1,0 +1,12 @@
+#
+# This file should be copied to /usr/local/etc/cron.d/acme
+
+# use /bin/sh to run commands, overriding the default set by cron
+#SHELL=/bin/sh
+
+# mail any output to here, no matter whose crontab this is
+#MAILTO=me@example.org
+
+# set mm and hh to the time (e.g. hh:mm) of day you want the
+# cronjob to run
+mm hh * * * %%ACME_USER%% %%PREFIX%%/sbin/acme.sh --cron --home /var/db/acme/.acme.sh  > /dev/null

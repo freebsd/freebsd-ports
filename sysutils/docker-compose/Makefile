@@ -2,7 +2,7 @@ PORTNAME=	docker-compose
 PORTVERSION=	1.24.0
 PORTREVISION=	1
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Define and run multi-container applications with Docker
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cached-property>=1.2.0:devel/py-cached-prope
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 
 .include <bsd.port.mk>

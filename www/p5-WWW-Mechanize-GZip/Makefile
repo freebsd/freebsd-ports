@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Use WWW::Mechanize by requesting gzip-compression from the webserver
+COMMENT=	Use WWW::Mechanize by requesting gzip-compression from the web server
 WWW=		https://metacpan.org/release/WWW-Mechanize-GZip
 
 LICENSE=	ART10 GPLv1+

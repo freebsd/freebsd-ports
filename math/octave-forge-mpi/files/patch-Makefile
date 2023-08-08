@@ -1,0 +1,12 @@
+--- Makefile.orig	2019-03-06 23:19:54 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+ MPICC     ?= mpicxx
+-OFMPIINC  ?= $(shell $(MPICC) -showme:compile | sed -e "s/-pthread/ /g")
++OFMPIINC  ?= $(shell $(MPICC) -compile_info | sed -e "s/c++ //g")
+ MPIINC    := $(OFMPIINC)
+-OFMPILIBS ?= $(shell $(MPICC) -showme:link | sed -e "s/-pthread/ /g")
++OFMPILIBS ?= $(shell $(MPICC) -link_info | sed -e "s/c++ //g")
+ MPILIBS   := $(OFMPILIBS)
+ MKOCTFILE ?= mkoctfile
+ 

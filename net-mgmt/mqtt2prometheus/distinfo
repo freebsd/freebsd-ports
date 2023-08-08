@@ -1,4 +1,4 @@
-TIMESTAMP = 1651494981
+TIMESTAMP = 1679877009
 SHA256 (hikhvar-mqtt2prometheus-v0.1.6_GH0.tar.gz) = 61b046469b76411641d4fcb4d56ac29b4e86b4374111da60b988de91267df848
 SIZE (hikhvar-mqtt2prometheus-v0.1.6_GH0.tar.gz) = 59608
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
@@ -47,8 +47,8 @@ SHA256 (matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz) = 2def0ee6f6b12
 SIZE (matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz) = 37184
 SHA256 (mwitkow-go-conntrack-2f068394615f_GH0.tar.gz) = 5bb72eaf9a4ffd7d0353fa6944951d244df89d879ac36d4b9860fd159162dd81
 SIZE (mwitkow-go-conntrack-2f068394615f_GH0.tar.gz) = 17140
-SHA256 (golang-sys-47abb6519492_GH0.tar.gz) = c52177674b0381f88e1ec97ba6dac5e8cac3f1b1fe159c0c30d01d87015090c9
-SIZE (golang-sys-47abb6519492_GH0.tar.gz) = 1218592
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (jpillora-backoff-v1.0.0_GH0.tar.gz) = 611b29ce95acfa2997e3449762a3df68fcaa773db045535f26eb5c686106351f

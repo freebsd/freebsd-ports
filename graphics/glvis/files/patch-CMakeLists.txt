@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2022-08-24 16:49:50 UTC
+--- CMakeLists.txt.orig	2022-05-24 00:33:38 UTC
 +++ CMakeLists.txt
+@@ -22,7 +22,7 @@ if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR
+   message(FATAL_ERROR "In-source builds are prohibited.")
+ endif ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
+ 
+-project(glvis NONE)
++project(glvis C)
+ 
+ # Import MFEM. The following variables can be used to help CMake find MFEM:
+ #  * MFEM_DIR - absolute path to the MFEM build or install prefix.
 @@ -333,10 +333,12 @@ if(NOT EMSCRIPTEN)
    install(TARGETS app
      RUNTIME DESTINATION .

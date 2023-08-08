@@ -1,16 +1,15 @@
---- Makefile.in.in.orig	2021-02-21 22:44:32 UTC
+--- Makefile.in.in.orig	2023-06-05 07:01:01 UTC
 +++ Makefile.in.in
-@@ -72,9 +72,6 @@ install: all xfce4-panel-profiles.1
+@@ -74,8 +74,6 @@ install: all xfce4-panel-profiles.1
  	install -d $(DESTDIR)/$(PREFIX)/share/metainfo
  	install data/metainfo/*.xml $(DESTDIR)/$(PREFIX)/share/metainfo
  
 -	cp -rf locale $(DESTDIR)/$(PREFIX)/share
--	ln -sf $(PREFIX)/share/locale $(DESTDIR)/$(PREFIX)/share/$(APPNAME)/locale
 -
  	install -d $(DESTDIR)/$(MANDIR)/man1
  	install xfce4-panel-profiles.1 $(DESTDIR)/$(MANDIR)/man1
  
-@@ -86,6 +83,9 @@ install: all xfce4-panel-profiles.1
+@@ -87,6 +85,9 @@ install: all xfce4-panel-profiles.1
  	install data/icons/48x48/org.xfce.PanelProfiles.png $(DESTDIR)/$(PREFIX)/share/icons/hicolor/48x48/apps
  	install data/icons/16x16/org.xfce.PanelProfiles.png $(DESTDIR)/$(PREFIX)/share/icons/hicolor/16x16/apps
  	install data/icons/scalable/org.xfce.PanelProfiles.svg $(DESTDIR)/$(PREFIX)/share/icons/hicolor/scalable/apps

@@ -26,9 +26,12 @@ tcsd_precmd()
 {
 	/usr/bin/install -d -m 0700 -o %%USERS%% -g %%GROUPS%% \
 	    /var/run/tpm /var/run/ima %%PREFIX%%/var/lib/tpm
-	/usr/sbin/chown %%USERS%%:%%GROUPS%% \
+	# The configuration files must be owned by root so
+	# that the %%USERS%% user can only read (but not manipulate)
+	# the configuration file.
+	/usr/sbin/chown root:%%GROUPS%% \
 	    %%PREFIX%%/etc/tcsd.conf
-	/bin/chmod 0600 \
+	/bin/chmod 0640 \
 	    %%PREFIX%%/etc/tcsd.conf
 }
 

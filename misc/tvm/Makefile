@@ -1,6 +1,6 @@
 PORTNAME=	tvm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
+DISTVERSION=	0.13.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	apache
 GH_PROJECT=	tvm
-GH_TUPLE=	dmlc:dlpack:ddeb264:dlpack/3rdparty/dlpack
+GH_TUPLE=	dmlc:dlpack:e2bdd3b:dlpack/3rdparty/dlpack
 
 CMAKE_ON=	INSTALL_DEV # Install compiler infrastructure (as opposed to runtime-only)
 CMAKE_ARGS=	-DDMLC_PATH=${LOCALBASE}/include -DRANG_PATH=${LOCALBASE}/include
@@ -43,7 +43,11 @@ LLVM_RUN_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 CMAKE_ARGS+=	-DUSE_RPC:BOOL=OFF
 .endif
 
-post-test:
+post-install: # remove empty directories
+	@${RMDIR} ${STAGEDIR}${PREFIX}/include/tvm/meta_schedule/schedule/cpu
+	@${RMDIR} ${STAGEDIR}${PREFIX}/include/tvm/meta_schedule/schedule/x86
+
+post-test: # 1 test fails, see https://github.com/apache/tvm/issues/13131
 	@cd ${TEST_WRKSRC} && ./cpptest
 
 .include <bsd.port.mk>

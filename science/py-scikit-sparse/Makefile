@@ -1,7 +1,8 @@
 PORTNAME=	scikit-sparse
-DISTVERSION=	0.4.6
+DISTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,11 +13,12 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack
+LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack	\
+		libcholmod.so:math/suitesparse-cholmod
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		fortran python:3.6+
+USES=		fortran python
 USE_PYTHON=	distutils cython autoplist
 
 CFLAGS+=	-I${LOCALBASE}/include/suitesparse

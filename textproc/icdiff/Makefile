@@ -1,5 +1,5 @@
 PORTNAME=	icdiff
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 
@@ -10,7 +10,7 @@ WWW=		https://www.jefftk.com/icdiff
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 
 USE_GITHUB=	yes

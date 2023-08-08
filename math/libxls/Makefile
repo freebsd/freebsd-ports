@@ -9,8 +9,10 @@ WWW=		https://github.com/libxls/libxls
 
 LICENSE=	BSD2CLAUSE
 
-USES=	compiler:c++11-lang cpe libtool
+USES=		compiler:c++11-lang cpe libtool
 CPE_VENDOR=	${PORTNAME}_project
+
+CONFLICTS_INSTALL=	catdoc p5-Spreadsheet-Read xls2txt
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

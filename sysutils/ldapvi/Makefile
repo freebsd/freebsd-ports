@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 
-USES=		gmake gnome iconv ncurses pkgconfig
-USE_OPENLDAP=	yes
+USES=		gmake gnome iconv ldap ncurses pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile

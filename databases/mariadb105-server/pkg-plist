@@ -66,6 +66,7 @@ bin/resolveip
 %%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
 @sample %%ETCDIR%%/user_map.conf.sample
 @comment data/test/db.opt
+@comment include/mysql/my_alloca.h
 include/mysql/server/big_endian.h
 include/mysql/server/byte_order_generic.h
 include/mysql/server/byte_order_generic_x86.h
@@ -80,7 +81,9 @@ include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
+include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
@@ -148,7 +151,7 @@ include/mysql/server/mysql/service_thd_rnd.h
 include/mysql/server/mysql/service_thd_specifics.h
 include/mysql/server/mysql/service_thd_timezone.h
 include/mysql/server/mysql/service_thd_wait.h
-include/mysql/server/mysql/service_wsrep.h
+%%WSREP%%include/mysql/server/mysql/service_wsrep.h
 include/mysql/server/mysql/services.h
 include/mysql/server/mysql_com.h
 include/mysql/server/mysql_com_server.h
@@ -181,6 +184,7 @@ lib/mysql/plugin/auth_pam_tool_dir/auth_pam_tool
 lib/mysql/plugin/auth_pam_v1.so
 @comment lib/mysql/plugin/caching_sha2_password.so
 lib/mysql/plugin/debug_key_management.so
+lib/mysql/plugin/disks.so
 lib/mysql/plugin/file_key_management.so
 lib/mysql/plugin/func_test.so
 lib/mysql/plugin/ha_archive.so
@@ -221,8 +225,8 @@ share/man/man1/aria_ftdump.1.gz
 share/man/man1/aria_pack.1.gz
 share/man/man1/aria_read_log.1.gz
 %%S3%%share/man/man1/aria_s3_copy.1.gz
-share/man/man1/galera_new_cluster.1.gz
-share/man/man1/galera_recovery.1.gz
+%%WSREP%%share/man/man1/galera_new_cluster.1.gz
+%%WSREP%%share/man/man1/galera_recovery.1.gz
 share/man/man1/innochecksum.1.gz
 share/man/man1/mariabackup.1.gz
 share/man/man1/mariadb-backup.1.gz

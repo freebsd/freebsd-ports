@@ -3,15 +3,12 @@ DISTVERSIONPREFIX=	V_
 DISTVERSION=	0_8_1
 CATEGORIES=	security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Daemon that provides fingerprint scanning functionality over D-Bus
 WWW=		https://www.freedesktop.org/wiki/Software/fprint/fprintd/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Very outdated, unsupported upstream which now have systemd as a non optional requirement
-EXPIRATION_DATE=2022-12-31
 
 LIB_DEPENDS=	libfprint.so:security/libfprint \
 		libdbus-1.so:devel/dbus \

@@ -1,6 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	8.3.0
-PORTREVISION=	3
+PORTVERSION=	9.1.1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -15,34 +14,43 @@ LICENSE_COMB=	multi
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
-		swig:devel/swig
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
 		libhdf5.so:science/hdf5 \
 		libhpdf.so:print/libharu \
-		libjasper.so:graphics/jasper \
 		libodbc.so:databases/unixODBC \
 		libopencv_core.so:graphics/opencv \
 		libpdal_base.so:math/pdal \
 		libproj.so:graphics/proj \
-		libqhull_r.so:math/qhull \
 		libsvm.so:science/libsvm \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	swig:devel/swig
 
-USES=		cmake compiler:c++11-lib dos2unix gnome \
+USES=		cmake compiler:c++17-lang desktop-file-utils dos2unix gnome \
 		iconv:wchar_t libtool localbase pkgconfig python
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
-USE_WX=		3.1+
+USE_WX=		3.2+
 
-CMAKE_ARGS+=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
-CMAKE_ON=	WITH_DEV_TOOLS WITH_EXCERCISES WITH_MRMR WITH_SYSTEM_SVM
-CMAKE_ON+=	CMAKE_VERBOSE_MAKEFILE
-CMAKE_OFF+=	WITH_TOOLS_LAS WITH_TRIANGLE
+GIT_TAGNAME=	8a8add6b5
+
+CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
+CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
+CMAKE_ON+=	WITH_DEV_TOOLS
+CMAKE_ON+=	WITH_EXCERCISES
+CMAKE_ON+=	WITH_MRMR
+CMAKE_ON+=	WITH_SYSTEM_SVM
+CMAKE_ON+=	WITH_TOOLS_HPDF
+CMAKE_ON+=	WITH_TOOLS_OPENCV
+CMAKE_ON+=	WITH_PYTHON_PKG
+CMAKE_ON+=	WITH_TOOLS_PDAL
+CMAKE_ON+=	WITH_TOOLS_POSTGRES
+CMAKE_ON+=	WITH_TOOLS_PROJ
+CMAKE_OFF=	WITH_CLIPPER_ONE
+CMAKE_OFF+=	WITH_TOOLS_RIEGL
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/saga-gis
 
@@ -67,11 +75,6 @@ VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 
 .include <bsd.port.pre.mk>
 
-# make describe needs them here
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
-
 SUB_FILES=	pkg-message
 
 post-patch:
@@ -79,7 +82,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h
 .endif
-	@${REINPLACE_CMD} -e 's|PORTVERSION|${PORTVERSION}|' \
+	@${REINPLACE_CMD} -e 's|GIT_TAGNAME|${GIT_TAGNAME}|g' \
+		${WRKSRC}/src/saga_core/saga_gui/CMakeLists.txt \
 		${WRKSRC}/src/saga_core/saga_gui/dlg_about.cpp
 	@${REINPLACE_CMD} -e 's|-lgomp|-lomp|' \
 		${WRKSRC}/src/accessories/templates/template4saga-tools/my_tool_library/Makefile

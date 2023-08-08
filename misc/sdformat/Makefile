@@ -10,8 +10,6 @@ WWW=		https://bitbucket.org/osrf/sdformat/src/default/
 
 LICENSE=	APACHE20
 
-BROKEN=		does not build: src/parser_urdf.cc:30:10: fatal error: 'urdf_model/model.h' file not found
-
 BUILD_DEPENDS=	ignition-cmake==2:devel/ignition-cmake \
 		ignition-tools>0:devel/ignition-tools \
 		rubygem-rexml>0:textproc/rubygem-rexml

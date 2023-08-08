@@ -1,11 +1,8 @@
---- Makefile.in.orig	2013-11-25 13:56:47.000000000 +1100
-+++ Makefile.in	2013-11-25 13:57:14.868607062 +1100
-@@ -251,7 +251,7 @@
- sharedstatedir = @sharedstatedir@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- Makefile.am.orig	2022-10-21 23:32:27 UTC
++++ Makefile.am
+@@ -1,4 +1,4 @@
 -SUBDIRS = src engines external ui
 +SUBDIRS = src engines external ui examples
  DIST_SUBDIRS = ${SUBDIRS} examples
  EXTRA_DIST = librcc.spec
- pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 

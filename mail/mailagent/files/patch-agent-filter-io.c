@@ -1,6 +1,14 @@
---- ./agent/filter/io.c.orig	2008-08-19 17:44:07.000000000 +0900
-+++ ./agent/filter/io.c	2014-08-14 01:59:33.537704696 +0900
-@@ -141,6 +141,9 @@
+--- agent/filter/io.c.orig	2020-04-09 14:16:46 UTC
++++ agent/filter/io.c
+@@ -100,6 +100,7 @@
+ #include <stdio.h>
+ #include <errno.h>
+ #include <sys/stat.h>
++#include <signal.h>
+ 
+ #ifdef I_UNISTD
+ #include <unistd.h>		/* R_OK and friends */
+@@ -141,6 +142,9 @@ extern char *malloc();				/* Memory allocation */
  #ifdef I_SYS_IOCTL
  #include <sys/ioctl.h>
  #endif
@@ -10,7 +18,7 @@
  
  /*
   * The following should be defined in <sys/stat.h>.
-@@ -739,7 +742,7 @@
+@@ -739,7 +743,7 @@ char *location;
  	 */
  
  	char **envp;			/* Environment pointer */

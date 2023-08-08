@@ -1,5 +1,6 @@
 PORTNAME=	opusfile
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
 		https://ftp.osuosl.org/pub/xiph/releases/opus/

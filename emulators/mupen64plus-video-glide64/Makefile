@@ -6,20 +6,21 @@ COMMENT=	Glide64 video plugin for Mupen64Plus
 
 LIB_DEPENDS=	libmupen64plus.so.2:emulators/mupen64plus-core
 
-USES+=		gl sdl
+USES+=		gl localbase:ldflags sdl
+USE_CXXSTD=	c++14
 USE_GL=		gl
 USE_SDL=	sdl2
 
+CFLAGS+=	-I${LOCALBASE}/include/${PORTNAME}
+
 MASTERDIR=	${.CURDIR}/../mupen64plus-core
-
-OPTIONS_DEFINE=	#
-
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/${PORTNAME}
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-DISTINFO_FILE=		${.CURDIR}/distinfo
 EXTRACT_AFTER_ARGS=	#
+
 BUILD_WRKSRC=		${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX}/projects/unix
 WRKSRC=			${WRKDIR}
+
+DISTINFO_FILE=		${.CURDIR}/distinfo
+
+OPTIONS_DEFINE=	#
 
 .include "${MASTERDIR}/Makefile"

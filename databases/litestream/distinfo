@@ -1,4 +1,4 @@
-TIMESTAMP = 1658960714
+TIMESTAMP = 1679789087
 SHA256 (benbjohnson-litestream-v0.3.9_GH0.tar.gz) = c30b85679a120fba2614574f98586d693639224683d585af2c02931fd285c2f9
 SIZE (benbjohnson-litestream-v0.3.9_GH0.tar.gz) = 94243
 SHA256 (Azure-azure-pipeline-go-v0.2.3_GH0.tar.gz) = 99bd58f4a07dd02d9615e3638b3bb6dbfad80ef678ccdb8e17e3fa2b0fef343e
@@ -33,8 +33,8 @@ SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
 SHA256 (golang-sync-886fb9371eb4_GH0.tar.gz) = 77a7fcc229c2d550e657f4e8f860f0d73b4c385d356eac80515a37ea8c64dcba
 SIZE (golang-sync-886fb9371eb4_GH0.tar.gz) = 19385
-SHA256 (golang-sys-da31bd327af9_GH0.tar.gz) = 0c834c593096084aa9458c2ad0ff9177a6397950f4dc7376c9d67367f0687623
-SIZE (golang-sys-da31bd327af9_GH0.tar.gz) = 1257001
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.6_GH0.tar.gz) = f66bebcf21985b0a713d67c6c35dfc9800d3b6d00d62b83ed0ce5b2ed4cb9760
 SIZE (golang-text-v0.3.6_GH0.tar.gz) = 8351095
 SHA256 (golang-tools-v0.1.0_GH0.tar.gz) = 88f66c1a7ff0f7fce20c0808d2769baa977f56f74197c9681cd864d0977e97a2

@@ -1,6 +1,6 @@
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 
@@ -41,6 +41,10 @@ OPTIONS_DEFINE=	DOCS
 .if ${CHOSEN_COMPILER_TYPE} == clang
 JAMARG+=	"-sCLANG=1"
 .endif
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 
 post-patch:

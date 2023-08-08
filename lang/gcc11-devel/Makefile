@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	11.3.1.s20220916
+PORTVERSION=	11.4.1.s20230727
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -43,9 +43,9 @@ CFLAGS:=	${CFLAGS:N-mretpoline}
 CXXFLAGS:=	${CXXFLAGS:N-mretpoline}
 
 OPTIONS_DEFINE=		GRAPHITE
-OPTIONS_DEFAULT_aarch64=LTO_BOOTSTRAP
-OPTIONS_DEFAULT_amd64=	LTO_BOOTSTRAP
-OPTIONS_DEFAULT_i386=	LTO_BOOTSTRAP
+OPTIONS_DEFAULT_aarch64=STANDARD_BOOTSTRAP
+OPTIONS_DEFAULT_amd64=	STANDARD_BOOTSTRAP
+OPTIONS_DEFAULT_i386=	STANDARD_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc=LTO_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc64=LTO_BOOTSTRAP
 OPTIONS_DEFAULT_powerpc64le=LTO_BOOTSTRAP
@@ -66,6 +66,11 @@ MULTILIB_CONFIGURE_ENABLE=	multilib
 CONFIGURE_ARGS+=	--disable-multilib
 .endif
 
+.if defined(CPUTYPE) && ${CPUTYPE:Mg[3-5]}
+CFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
+CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
@@ -75,7 +80,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 
-LANGUAGES:=	c,c++,objc,fortran,jit
+LANGUAGES:=	c,c++,d,objc,fortran,jit
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
@@ -86,9 +91,11 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .elif ${PORT_OPTIONS:MLTO_BOOTSTRAP}
 CONFIGURE_ARGS+=--with-build-config=bootstrap-lto-noplugin
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .endif
 INSTALL_TARGET=	install-strip
 .if ${UID} != 0
@@ -120,12 +127,15 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
+		gcc${SUFFIX}/gdc \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgccjit \
 		gcc${SUFFIX}/libgomp
 .if ${ARCH} == amd64 || ${ARCH} == i386
-INFO+=		gcc${SUFFIX}/libquadmath \
-		gcc${SUFFIX}/libitm
+INFO+=		gcc${SUFFIX}/libquadmath
+.endif
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64
+INFO+=		gcc${SUFFIX}/libitm
 .endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}

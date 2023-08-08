@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMESUFFIX=	6
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance HTTP accelerator
 WWW=		https://www.varnish-cache.org/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR} \
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		autoreconf compiler cpe gmake libedit libtool ncurses pathfix \
-		pkgconfig python:3.4+,build readline shebangfix
+		pkgconfig python:build readline shebangfix
 
 CONFLICTS=	varnish4 varnish7
 
@@ -48,6 +48,10 @@ EXTRA_PATCHES+=	${FILESDIR}/no-inet6.patch
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=deprecated-non-prototype
+.endif
 
 post-patch:
 .if defined(BAD_TESTS)

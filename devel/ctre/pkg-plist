@@ -17,6 +17,7 @@ include/ctre/actions/class.inc.hpp
 include/ctre/actions/fusion.inc.hpp
 include/ctre/actions/hexdec.inc.hpp
 include/ctre/actions/look.inc.hpp
+include/ctre/actions/mode.inc.hpp
 include/ctre/actions/named_class.inc.hpp
 include/ctre/actions/options.inc.hpp
 include/ctre/actions/properties.inc.hpp

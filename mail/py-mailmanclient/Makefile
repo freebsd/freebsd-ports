@@ -1,10 +1,10 @@
 PORTNAME=	mailmanclient
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.5
 CATEGORIES=	mail
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Python bindings for the GNU Mailman 3 REST API
 WWW=		https://gitlab.com/mailman/mailmanclient
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>3.0:devel/py-flake8@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mailman>0:mail/mailman3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}falcon>0:www/py-falcon@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

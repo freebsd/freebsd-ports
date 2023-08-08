@@ -4,7 +4,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
 		LOCAL/uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-tech ttyrec player with improvements over ttyplay
 WWW=		https://www.chiark.greenend.org.uk/~sgtatham/ipbt/
 

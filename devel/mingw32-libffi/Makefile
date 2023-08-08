@@ -1,6 +1,6 @@
 PORTNAME=	libffi
 PORTVERSION=	3.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://sourceware.org/pub/libffi/
 PKGNAMEPREFIX=	mingw32-

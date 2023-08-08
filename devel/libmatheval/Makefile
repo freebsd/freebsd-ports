@@ -1,6 +1,6 @@
 PORTNAME=	libmatheval
 PORTVERSION=	1.1.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel math
 MASTER_SITES=	GNU
 
@@ -12,11 +12,12 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	flex>=2.5.39_1:textproc/flex
-LIB_DEPENDS=	libguile.so:lang/guile1
 
-USES=		libtool localbase makeinfo pathfix
+USES=		guile:1.8 libtool localbase makeinfo \
+		pathfix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LEXLIB=-lfl MAKEINFO="${MAKEINFO} --no-split"
+CONFIGURE_ENV=	LEXLIB=-lfl MAKEINFO="${MAKEINFO} --no-split" \
+		ac_cv_type_scm_t_bits=yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 

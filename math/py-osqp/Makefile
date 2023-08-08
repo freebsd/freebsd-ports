@@ -1,8 +1,9 @@
 PORTNAME=	osqp
 PORTVERSION=	0.6.2.post5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		cmake:devel/cmake-core
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

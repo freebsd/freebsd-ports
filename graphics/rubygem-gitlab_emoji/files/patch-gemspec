@@ -1,11 +1,10 @@
---- gitlab_emoji.gemspec.orig	2021-10-25 12:09:21 UTC
+--- gitlab_emoji.gemspec.orig	2023-01-05 20:33:48 UTC
 +++ gitlab_emoji.gemspec
-@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
-   end
+@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
  
-   if s.respond_to? :add_runtime_dependency then
--    s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 2.2", ">= 2.2.1"])
-+    s.add_runtime_dependency(%q<gemojione>.freeze, [">= 2.2.1"])
-   else
-     s.add_dependency(%q<gemojione>.freeze, ["~> 2.2", ">= 2.2.1"])
-   end
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 2.2", ">= 2.2.1"])
++  s.add_runtime_dependency(%q<gemojione>.freeze, [">= 2.2.1"])
+ end
+ 

@@ -1,5 +1,5 @@
-TIMESTAMP = 1645213160
-SHA256 (go/net-im_gomuks/gomuks-v0.2.4/v0.2.4.mod) = c507dca8fc78772c149694a5b0ec0804db6a2e3582ba2a92b5dea8bc296c23c0
-SIZE (go/net-im_gomuks/gomuks-v0.2.4/v0.2.4.mod) = 1014
-SHA256 (go/net-im_gomuks/gomuks-v0.2.4/v0.2.4.zip) = fccf7de1aca55e3e1cd7137e3323b4f6be3b795808ac049af92c31ab711118d0
-SIZE (go/net-im_gomuks/gomuks-v0.2.4/v0.2.4.zip) = 341183
+TIMESTAMP = 1668959577
+SHA256 (go/net-im_gomuks/gomuks-v0.3.0/v0.3.0.mod) = eb7fb17c9c73239b459ea644617aab27470db1cf3febfbf6a6d54e687d86573f
+SIZE (go/net-im_gomuks/gomuks-v0.3.0/v0.3.0.mod) = 1778
+SHA256 (go/net-im_gomuks/gomuks-v0.3.0/v0.3.0.zip) = dd26ad3126f701536e33899e299f1fecec403ec416e61a1086f02098b1ba0d7f
+SIZE (go/net-im_gomuks/gomuks-v0.3.0/v0.3.0.zip) = 350458

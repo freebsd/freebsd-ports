@@ -14,6 +14,7 @@ share/icons/hicolor/64x64/apps/xfce4-calculator-plugin.png
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-calculator-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xfce4-calculator-plugin.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-calculator-plugin.mo

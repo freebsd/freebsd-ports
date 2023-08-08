@@ -1,5 +1,5 @@
 PORTNAME=	freeradius
-DISTVERSION=	3.0.25
+DISTVERSION=	3.2.3
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
 		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
@@ -15,15 +15,19 @@ WWW=		https://www.freeradius.org/
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=			libressl libressl-devel
+BROKEN_SSL_REASON_libressl=	LibreSSL is no longer supported
+BROKEN_SSL_REASON_libressl-devel=	${BROKEN_SSL_REASON_libressl}
+
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 		libtalloc.so:devel/talloc
 
 FLAVORS=	default ldap mysql pgsql sqlite3
 FLAVOR?=	${FLAVORS:[1]}
-ldap_PKGNAMESUFFIX=	-ldap
-mysql_PKGNAMESUFFIX=	-mysql
-pgsql_PKGNAMESUFFIX=	-pgsql
-sqlite3_PKGNAMESUFFIX=	-sqlite3
+ldap_PKGNAMESUFFIX=	3-ldap
+mysql_PKGNAMESUFFIX=	3-mysql
+pgsql_PKGNAMESUFFIX=	3-pgsql
+sqlite3_PKGNAMESUFFIX=	3-sqlite3
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
@@ -52,7 +56,7 @@ OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	USER LDAP MYSQL PGSQL UNIXODBC FIREBIRD REDIS \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
 		FREETDS IDN DOCS SQLITE3 PYTHON RUBY UNBOUND PCRE \
-		WINBIND EXAMPLES
+		WINBIND EXAMPLES JSON
 OPTIONS_DEFAULT=USER PERL HEIMDAL UDPFROMTO
 OPTIONS_SINGLE=	KRB
 OPTIONS_SINGLE_KRB=	NOKRB HEIMDAL HEIMDAL_PORT MITKRB_PORT
@@ -85,6 +89,7 @@ DEVELOPER_DESC=		Enable developer options
 EDIR_DESC=		Enable eDirectory support (implies LDAP)
 REST_DESC=		Enable RESTful API support
 WINBIND_DESC=		Enable native winbind support in rlm_mschap
+JSON_DESC=		With JSON support
 
 EDIR_CONFIGURE_WITH=		edir
 EDIR_IMPLIES=			LDAP
@@ -101,7 +106,7 @@ FIREBIRD_CONFIGURE_WITH=	rlm_sql_firebird
 FIREBIRD_USES=			firebird
 LDAP_CONFIGURE_WITH=		rlm_ldap
 LDAP_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
-LDAP_USE=			OPENLDAP
+LDAP_USES=			ldap
 LDAP_VARS=			_REQUIRE+=slapd
 MITKRB_PORT_CONFIGURE_ON=	--with-rlm-krb5-dir=${LOCALBASE}
 MITKRB_PORT_LIB_DEPENDS=	libkrb5support.so:security/krb5
@@ -135,7 +140,7 @@ REST_CONFIGURE_ON=		--with-libcurl=${LOCALBASE} \
 REST_LIB_DEPENDS=		libcurl.so:ftp/curl \
 				libjson-c.so:devel/json-c
 RUBY_CONFIGURE_WITH=		rlm_ruby
-RUBY_USE=			RUBY
+RUBY_USES=			ruby
 RUBY_IGNORE=			with ruby support leaks memory, breaks signal handling.  Please disable RUBY support
 SQLITE3_CONFIGURE_WITH=		rlm_sql_sqlite
 SQLITE3_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3
@@ -147,6 +152,10 @@ UNIXODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
 WINBIND_USES=			samba:build,lib
 WINBIND_CONFIGURE_ON=		--with-winbind-include-dir=${LOCALBASE}/include/samba4 \
 				--with-winbind-lib-dir=${LOCALBASE}/lib/samba4
+JSON_CONFIGURE_WITH=		rlm_json
+JSON_CONFIGURE_ON=		--with-jsonc-lib-dir=${LOCALBASE}/lib \
+				--with-jsonc-include-dir=${LOCALBASE}/include
+JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 
 .include <bsd.port.options.mk>
 
@@ -195,6 +204,11 @@ EXPM=		yes
 
 # idn module is still experimental
 .if ${PORT_OPTIONS:MIDN} && empty(PORT_OPTIONS:MEXPERIMENTAL)
+EXPM=		yes
+.endif
+
+# json module is still experimental
+.if ${PORT_OPTIONS:MJSON} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 
@@ -298,6 +312,6 @@ post-build:
 	@${FIND} ${WRKSRC}/build/bin -type f -exec ${STRIP_CMD} {} \;
 
 post-install:
-	${MKDIR} ${STAGEDIR}/var/run/radiusd
+	${MKDIR} ${STAGEDIR}/var/run/radiusd ${STAGEDIR}/var/log/radacct
 
 .include <bsd.port.post.mk>

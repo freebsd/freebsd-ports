@@ -3,7 +3,7 @@ PORTVERSION=	10.2.1
 CATEGORIES=	lang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional and object-oriented language for the .NET platform
 WWW=		https://fsharp.org/
 

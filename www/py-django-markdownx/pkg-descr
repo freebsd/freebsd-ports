@@ -1,4 +1,3 @@
-Django Markdownx is a Markdown editor built for Django. It enables raw
-editing, live preview and image uploads (stored locally in MEDIA folder) with
-drag&drop functionality and auto tag insertion. Also, django-markdownx
-supports multiple editors on one page.
+Django MarkdownX is a comprehensive Markdown plugin built for Django, the
+renowned high-level Python web framework, with flexibility, extensibility, and
+ease-of-use at its core.

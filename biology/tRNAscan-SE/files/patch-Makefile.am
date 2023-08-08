@@ -22,8 +22,8 @@
  
  # process scripts
  # treat tRNAscan-SE.conf as a script since it's just easier
--dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter tRNAscan-SE tRNAscan-SE.conf
-+dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter tRNAscan-SE
+-dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter bin/MitoHighConfidenceFilter tRNAscan-SE tRNAscan-SE.conf
++dist_bin_SCRIPTS = bin/sstofa bin/fasta2gsi bin/EukHighConfidenceFilter bin/MitoHighConfidenceFilter tRNAscan-SE
 +sysconf_DATA = tRNAscan-SE.conf
  # for a few files, need to substitute perl path, bin directory, and lib directory
  # first, define a function for it
@@ -34,7 +34,7 @@
  CLEANFILES = $(dist_bin_SCRIPTS) $(srcdir)/lib/*
 -include_HEADERS = $(srcdir)/src/*.h 
 +#include_HEADERS = $(srcdir)/src/*.h 
- EXTRA_DIST = lib src/sstofa.in src/fasta2gsi.in EukHighConfidenceFilter tRNAscan-SE.src tRNAscan-SE.conf.src 
+ EXTRA_DIST = lib src/sstofa.in src/fasta2gsi.in EukHighConfidenceFilter MitoHighConfidenceFilter tRNAscan-SE.src tRNAscan-SE.conf.src 
  
  # then create build rules
 @@ -61,16 +62,9 @@ bin/EukHighConfidenceFilter: EukHighConf

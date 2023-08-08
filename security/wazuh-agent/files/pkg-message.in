@@ -22,9 +22,13 @@ Wazuh Agent was installed
 
   # sysrc wazuh_agent_enable="YES"
 
+  or
+
+  # service wazuh-agent enable
+
 5) Start Wazuh agent
 
-  # service wazuh_agent start
+  # service wazuh-agent start
 
 6) Enjoy it ;)
 EOM

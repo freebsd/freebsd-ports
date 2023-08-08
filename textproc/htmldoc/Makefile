@@ -1,9 +1,10 @@
 PORTNAME=	htmldoc
 PORTVERSION=	1.9.16
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Converts HTML to PDF and/or PostScript
 WWW=		https://michaelrsweet.github.io/htmldoc
 

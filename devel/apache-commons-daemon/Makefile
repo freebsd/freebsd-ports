@@ -1,9 +1,8 @@
 PORTNAME=	commons-daemon
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source/:src \
 		https://archive.apache.org/dist/commons/daemon/binaries/:bin
-
 PKGNAMEPREFIX=	apache-
 DISTFILES=	${PORTNAME}-${PORTVERSION}-native-src${EXTRACT_SUFX}:src \
 		${PORTNAME}-${PORTVERSION}-bin${EXTRACT_SUFX}:bin
@@ -27,6 +26,12 @@ WRKBIN=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${STAGEDIR}${PREFIX}/bin

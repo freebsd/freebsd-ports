@@ -1,5 +1,5 @@
 PORTNAME=	tRNAscan-SE
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.11
 CATEGORIES=	biology
 MASTER_SITES=	http://trna.ucsc.edu/software/
 DISTFILES=	${DISTNAME:tl}${EXTRACT_SUFX}
@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	cmsearch:biology/infernal
 
-USES=		perl5 autoreconf
-
-WRKSRC=		${WRKDIR}/${DISTNAME:C,\.[0-9]+$,,}
+USES=		autoreconf perl5
 
 GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME:C,\.[0-9]+$,,}
 
 .include <bsd.port.mk>

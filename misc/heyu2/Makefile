@@ -1,16 +1,19 @@
 PORTNAME=	heyu2
-PORTVERSION=	2.10
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.10.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.heyu.org/download/
-DISTNAME=	heyu-${PORTVERSION}
+#DISTNAME=	heyu-${PORTVERSION}
 
-MAINTAINER=	mstowe@chicago.us.mensa.org
+MAINTAINER=	mstowe@baddomain.com
 COMMENT=	Control a CM11A interface from the command line
 WWW=		https://www.heyu.org/
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: newsb
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: newsb
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	HeyuX10Automation
+GH_PROJECT=	heyu
 
 CONFLICTS=	heyu
 

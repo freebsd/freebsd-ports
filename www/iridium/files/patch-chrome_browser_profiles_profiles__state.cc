@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profiles_state.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/profiles/profiles_state.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/profiles/profiles_state.cc
-@@ -176,7 +176,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
+@@ -182,7 +182,7 @@ bool IsGuestModeRequested(const base::CommandLine& com
                            PrefService* local_state,
                            bool show_warning) {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

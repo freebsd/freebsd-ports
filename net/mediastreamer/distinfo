@@ -1,3 +1,3 @@
-TIMESTAMP = 1661322319
-SHA256 (public-mediastreamer2-a48ff7d92ddfdce17f47cf71b1867ed85fc826cd_GL0.tar.gz) = 68cd1a45af7d07774c830c8f0e545b3af1b98d80aca25f517434d01c793f44b0
-SIZE (public-mediastreamer2-a48ff7d92ddfdce17f47cf71b1867ed85fc826cd_GL0.tar.gz) = 25305400
+TIMESTAMP = 1690560106
+SHA256 (mediastreamer2-5.2.94.tar.bz2) = ae44d252f95c41e754960197a51a1b178d5fc04d2f5df574c3fd024359bb3c6c
+SIZE (mediastreamer2-5.2.94.tar.bz2) = 22833409

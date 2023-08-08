@@ -1,8 +1,8 @@
 PORTNAME=	ammonite
-DISTVERSION=	2.5.3
+DISTVERSION=	2.5.6
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/lihaoyi/Ammonite/releases/download/${PORTVERSION}/
-DISTNAME=	2.13-${PORTVERSION}
+DISTNAME=	3.2-${PORTVERSION}
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
@@ -14,7 +14,7 @@ WWW=		https://ammonite.io/
 LICENSE=	MIT
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 NO_ARCH=	yes
 NO_BUILD=	yes

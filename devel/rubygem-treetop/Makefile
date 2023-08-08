@@ -1,5 +1,5 @@
 PORTNAME=	treetop
-PORTVERSION=	1.6.11
+PORTVERSION=	1.6.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-polyglot>=0.3<1:devel/rubygem-polyglot
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

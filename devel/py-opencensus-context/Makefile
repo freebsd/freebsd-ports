@@ -1,7 +1,7 @@
 PORTNAME=	opencensus-context
 PORTVERSION=	0.1.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
 
-USES=		dos2unix python:3.7+
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -1,7 +1,7 @@
---- src/common.inc.orig	2019-08-27 15:43:26 UTC
+--- src/common.inc.orig	2023-05-31 11:28:01 UTC
 +++ src/common.inc
-@@ -193,9 +193,9 @@ else
- export WSTRINGOP_TRUNCATION_AVAILABLE
+@@ -179,9 +179,9 @@ else
+ export OG_AVAILABLE
  endif
  
 -install_recursive = $(shell cd $(1) && find . -type f -exec install -m $(2) -D {} $(3)/{} \;)
@@ -12,7 +12,7 @@
  
  define create-deps
  	@cp $(objdir)/$*.d $(objdir)/.deps/$*.P; \
-@@ -216,7 +216,7 @@ export prefix = /usr/local
+@@ -202,7 +202,7 @@ export prefix = /usr/local
  export exec_prefix := $(prefix)
  export sysconfdir := $(prefix)/etc
  export datarootdir := $(prefix)/share

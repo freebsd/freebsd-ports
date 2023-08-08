@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/url_request/url_fetcher.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/net/url_request/url_fetcher.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/net/url_request/url_fetcher.h
-@@ -113,7 +113,7 @@ class NET_EXPORT URLFetcher {
+@@ -355,7 +355,7 @@ class NET_EXPORT URLFetcher {
    // The unannotated Create() methods are not available on desktop Linux +
    // Windows. They are available on other platforms, since we only audit network
    // annotations on Linux & Windows.

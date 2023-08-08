@@ -1,6 +1,6 @@
---- vcl/qt5/QtInstance.cxx.orig	2022-01-26 14:35:29 UTC
+--- vcl/qt5/QtInstance.cxx.orig	2022-12-22 00:14:09 UTC
 +++ vcl/qt5/QtInstance.cxx
-@@ -479,7 +479,7 @@ QtInstance::createPicker(css::uno::Reference<css::uno:
+@@ -492,7 +492,7 @@ QtInstance::createPicker(css::uno::Reference<css::uno:
      {
          SolarMutexGuard g;
          rtl::Reference<QtFilePicker> pPicker;
@@ -9,7 +9,7 @@
          assert(pPicker);
          return pPicker;
      }
-@@ -689,7 +689,7 @@ std::unique_ptr<QApplication> QtInstance::CreateQAppli
+@@ -751,7 +751,7 @@ VCLPLUG_QT_PUBLIC SalInstance* create_SalInstance()
  extern "C" {
  VCLPLUG_QT_PUBLIC SalInstance* create_SalInstance()
  {

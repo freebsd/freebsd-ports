@@ -1,6 +1,6 @@
 PORTNAME=	dynare
-DISTVERSION=	5.2
-PORTREVISION=	1
+DISTVERSION=	5.4
+PORTREVISION=	2
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	epstool:graphics/epstool \
 		pstoedit:graphics/pstoedit \
 		xfig:graphics/xfig # README says that these executables are required for the test suite
 
-USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz
+USES=		bison compiler:c++17-lang fortran gmake localbase tar:xz tex
 USE_TEX=	pdftex
 
 GNU_CONFIGURE=	yes
@@ -46,7 +46,8 @@ OCTAVE_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 				libfftw3f.so:math/fftw3-float \
 				libgsl.so:math/gsl \
 				libumfpack.so:math/suitesparse-umfpack
-OCTAVE_RUN_DEPENDS=		octave:math/octave
+OCTAVE_RUN_DEPENDS=		octave:math/octave \
+				octave-forge-statistics>0:math/octave-forge-statistics
 
 post-install:
 	# remove empty directories, see https://git.dynare.org/Dynare/dynare/-/issues/1835

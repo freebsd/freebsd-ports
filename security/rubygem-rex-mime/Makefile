@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rex-text>=0:security/rubygem-rex-text
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	ss5
 DISTVERSION=	3.8.9-8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -11,13 +11,7 @@ WWW=		http://ss5.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: ACMutex
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: ACMutex
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
-
-USES=		ssl
-USE_OPENLDAP=	yes
+USES=		ldap ssl
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
@@ -26,10 +20,20 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-confpathbase=${PREFIX}/etc \
 		--with-libpath=${PREFIX}/lib
 
-MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 MAKE_ARGS+=	CC="${CC}"
+MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
+
+CFLAGS+=	-fcommon
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/etc/opt/ss5,${PREFIX}/etc/ss5,' \

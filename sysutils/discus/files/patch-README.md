@@ -1,4 +1,4 @@
---- README.md.orig	2021-04-26 14:05:27 UTC
+--- README.md.orig	2023-01-15 08:07:06 UTC
 +++ README.md
 @@ -11,9 +11,9 @@ Features include color, bar graphs, and smart formatti
  gigabytes, or terabytes). Or choose your own size, along with specifying the
@@ -33,4 +33,4 @@
 +make install; make clean
  ```
  
- ## Test
+ ## Development

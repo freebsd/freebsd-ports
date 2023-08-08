@@ -1,6 +1,7 @@
 PORTNAME=	tensorflow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.9.1
+PORTREVISION=	11
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	${PORTNAME}
@@ -20,9 +21,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		bash:shells/bash \
 		cython:lang/cython \
 		swig:devel/swig \
-		bazel:devel/bazel \
-		git:devel/git \
-		clang-devel:devel/llvm-devel
+		bazel:devel/bazel5 \
+		git:devel/git
 LIB_DEPENDS=	libnsync.so:devel/nsync \
 		libgpr.so:devel/grpc \
 		libpng.so:graphics/png \
@@ -60,11 +60,12 @@ RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
 		pybind11>=2.6.2:devel/pybind11
 
-USES=		python:3.7+ shebangfix jpeg ssl
+USES=		jpeg llvm:16 python shebangfix ssl
 USE_CXXSTD=     c++17
-SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
+
+SHEBANG_GLOB=	*.py
 
 BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
 
@@ -74,7 +75,7 @@ OPTIONS_DEFINE=			CPU_OPTS XLA
 OPTIONS_RADIO=			PARALLEL_JOBS
 OPTIONS_RADIO_PARALLEL_JOBS=	JOBS_1 JOBS_HALF JOBS_ALL
 PARALLEL_JOBS_DESC=		How many jobs to run during build?
-OPTIONS_DEFAULT=		JOBS_1
+OPTIONS_DEFAULT=		JOBS_HALF
 
 JOBS_1_DESC=			Run one job
 JOBS_1_VARS=			TF_JOBS_NUMBER=1
@@ -137,7 +138,11 @@ post-patch:
 
 	@${REINPLACE_CMD} "s#%%PYTHON%%#${PYTHON_CMD}#" ${WRKSRC}/.bazelrc
 
-	@${REINPLACE_CMD} "s#%%LOCALBASE%%#${LOCALBASE}#" ${WRKDIR}/bazelrc \
+	@${REINPLACE_CMD} \
+		-e "s#%%LOCALBASE%%#${LOCALBASE}#" \
+		-e "s#%%LLVM_PREFIX%%#${LLVM_PREFIX}#g" \
+		-e "s#%%LLVM_VERSION%%#${LLVM_VERSION}#g" \
+		${WRKDIR}/bazelrc \
 		${WRKSRC}/third_party/absl/system.absl.strings.BUILD \
 		${WRKSRC}/freebsd/cc_toolchain_config.bzl \
 		${WRKSRC}/.bazelrc \

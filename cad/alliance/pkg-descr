@@ -4,3 +4,6 @@ synthesis tools, and automatic place and route tools.  A complete set
 of portable CMOS libraries is provided.  Alliance is the result of a
 twelve year effort spent at ASIM department of LIP6 laboratory of
 the Pierre et Marie Curie University (Paris VI, France).
+
+Remark: Coriolis was started in the year 2000 as a replacement for the place &
+route stage of Alliance, and thus Alliance does not get many development.

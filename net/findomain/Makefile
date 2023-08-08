@@ -1,6 +1,6 @@
 PORTNAME=	findomain
 DISTVERSION=	5.0.0
-PORTREVISION=	11
+PORTREVISION=	20
 CATEGORIES=	net security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/Findomain/findomain
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		Unfetchable
 
 USES=		cargo ssl
 USE_GITHUB=	yes

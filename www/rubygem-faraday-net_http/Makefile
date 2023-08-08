@@ -1,5 +1,5 @@
 PORTNAME=	faraday-net_http
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

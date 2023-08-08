@@ -1,7 +1,7 @@
 PORTNAME=	xdoctest
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP # has no tests
+MASTER_SITES=	PYPI # has no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +18,15 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.0.15:devel/py-codecov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist pytest # some tests fail, see https://github.com/Erotemic/xdoctest/issues/131
+USES=		python
+USE_PYTHON=	distutils concurrent autoplist pytest
 
 NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+do-test: # 5 tests fail, see https://github.com/Erotemic/xdoctest/issues/131; more failures w/out the below arguments to pytest
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -k '' -p pytester -rs -v -o addopts=
 
 alt-test: # tests using the xdoctest executable
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/xdoctest -m xdoctest

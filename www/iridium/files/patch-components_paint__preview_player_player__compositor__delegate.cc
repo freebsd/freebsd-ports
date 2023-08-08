@@ -1,6 +1,6 @@
---- components/paint_preview/player/player_compositor_delegate.cc.orig	2022-03-28 18:11:04 UTC
+--- components/paint_preview/player/player_compositor_delegate.cc.orig	2023-03-13 07:33:08 UTC
 +++ components/paint_preview/player/player_compositor_delegate.cc
-@@ -445,8 +445,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
+@@ -452,8 +452,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
    // use the AXTreeUpdate.
    auto chrome_version = capture_result_->proto.metadata().chrome_version();
    if (capture_result_->proto.metadata().has_chrome_version() &&

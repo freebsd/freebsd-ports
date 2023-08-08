@@ -1,5 +1,6 @@
 bin/fcitx5-config-qt
 bin/fcitx5-migrator
+bin/fcitx5-plasma-theme-generator
 bin/kbd-layout-viewer5
 lib/libFcitx5Migrator.so
 lib/libFcitx5Migrator.so.5
@@ -37,6 +38,8 @@ share/locale/da/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/de/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/de/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/es/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
+share/locale/fr/LC_MESSAGES/fcitx5-configtool.mo
+share/locale/fr/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/he/LC_MESSAGES/fcitx5-configtool.mo
 share/locale/he/LC_MESSAGES/org.fcitx.fcitx5.kcm.mo
 share/locale/ja/LC_MESSAGES/fcitx5-configtool.mo

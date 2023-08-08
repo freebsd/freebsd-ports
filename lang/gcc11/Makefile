@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	11.3.0
-PORTREVISION=	1
+PORTREVISION=	8
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -60,7 +60,21 @@ MULTILIB_CONFIGURE_ENABLE=	multilib
 CONFIGURE_ARGS+=	--disable-multilib
 .endif
 
+.if defined(CPUTYPE) && ${CPUTYPE:Mg[3-5]}
+CFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
+CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
+.endif
+
 .include <bsd.port.pre.mk>
+
+# Extraction fails with poudriere on aarch64 for GCC 11.
+# It seems that the bug is specific to lang/gcc11 and lang/gcc12 only.
+# No other GCC port is affected.
+# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=271052
+# and https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=246670
+.if ${ARCH} == aarch64
+EXTRACT_CMD=    ${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+.endif
 
 .if ${ARCH} == amd64
 CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
@@ -69,7 +83,7 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 CONFIGURE_ARGS+=	--with-abi=elfv2
 .endif
 
-LANGUAGES:=	c,c++,objc,fortran,jit
+LANGUAGES:=	c,c++,d,objc,fortran,jit
 TARGLIB=	${PREFIX}/lib/gcc${SUFFIX}
 TARGLIB32=	${PREFIX}/lib32	# The version information is added later
 LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
@@ -80,9 +94,11 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .elif ${PORT_OPTIONS:MLTO_BOOTSTRAP}
 CONFIGURE_ARGS+=--with-build-config=bootstrap-lto-noplugin
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .endif
 INSTALL_TARGET=	install-strip
 .if ${UID} != 0
@@ -114,6 +130,7 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gcc \
 		gcc${SUFFIX}/gccinstall \
 		gcc${SUFFIX}/gccint \
+		gcc${SUFFIX}/gdc \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgccjit \
 		gcc${SUFFIX}/libgomp

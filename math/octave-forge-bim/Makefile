@@ -1,31 +1,27 @@
 PORTNAME=	octave-forge-bim
-PORTVERSION=	1.1.5
-PORTREVISION=	16
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.6
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/fpl.tar.gz:math/octave-forge-fpl \
+		${OCTAVE_TARBALLS_DIR}/msh.tar.gz:math/octave-forge-msh
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:math/octave-forge-fpl
-RUN_DEPENDS+=	${TARBALLS_DIR}/msh.tar.gz:math/octave-forge-msh
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
+USES=		octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	carlodefalco
+GH_PROJECT=	bim
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 PORTNAME=	clingo
-DISTVERSION=	5.6.1
+DISTVERSION=	5.6.2
+PORTREVISION=	1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python:3.6+
-USE_PYTHON=	distutils autoplist unittest # some tests break, see https://github.com/potassco/clingo/issues/390
+USES=		compiler:c++14-lang python
+USE_PYTHON=	distutils autoplist unittest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/clingo
 TEST_WRKSRC=	${WRKSRC}/libpyclingo

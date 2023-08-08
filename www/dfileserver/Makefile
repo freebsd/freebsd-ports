@@ -2,12 +2,11 @@ PORTNAME=	DFileServer
 PORTVERSION=	1.1.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
-		http://harpy.soarwitheagles.net/~dashy/
+MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Compact webserver designed to make sharing files easy
-WWW=		http://www.bebik.net/doku.php?id=software:dfileserver
+COMMENT=	Compact web server designed to make sharing files easy
+WWW=		https://osorio.me/projects/dev/dfileserver/
 
 LICENSE=	BSD3CLAUSE
 

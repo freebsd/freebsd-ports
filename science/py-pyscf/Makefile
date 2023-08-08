@@ -1,12 +1,12 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
+DISTVERSION=	2.3.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python module for quantum chemistry
-WWW=		https://www.pymol.org/
+WWW=		https://pyscf.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -23,12 +23,14 @@ LIB_DEPENDS=	libcint.so:science/libcint \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		fortran blaslapack:openblas compiler:c++11-lang python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist pytest # 3818 warnings, 57 errors in tests, see https://github.com/pyscf/pyscf/issues/1536
 USE_GITHUB=	yes
 
 POST_PLIST=	fix-plist
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_WRKSRC=	${WRKSRC}/pyscf
+TEST_ARGS=	-c ${WRKSRC}/setup.cfg
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyscf/lib/lib*.so

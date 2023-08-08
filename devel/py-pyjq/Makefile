@@ -1,7 +1,7 @@
 PORTNAME=	pyjq
 PORTVERSION=	2.4.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjq.so:textproc/jq \
 		libonig.so:devel/oniguruma
 
-USES=		localbase python:3.6-3.9
+USES=		localbase python:3.8-3.9
 USE_PYTHON=	autoplist distutils
 
 post-patch:

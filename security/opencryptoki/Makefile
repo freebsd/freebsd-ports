@@ -1,5 +1,5 @@
 PORTNAME=	opencryptoki
-PORTVERSION=	3.18.0
+PORTVERSION=	3.19.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -15,8 +15,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libtspi.so:security/trousers \
 		libepoll-shim.so:devel/libepoll-shim
 
-USES=		alias autoreconf bison gmake libtool localbase ssl tar:tgz
-USE_OPENLDAP=	yes
+USES=		alias autoreconf bison gmake ldap libtool localbase ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
@@ -44,6 +43,12 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USERS=		_pkcs11
 GROUPS=		_pkcs11
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	cd ${WRKSRC} && \
 	    ${REINPLACE_CMD} 's,%%DLLDIR%%,${PREFIX}/lib/opencryptoki/stdll,' \
@@ -57,4 +62,4 @@ post-install:
 	${RMDIR} ${STAGEDIR}/var/run/opencryptoki/* \
 	    ${STAGEDIR}/var/run/opencryptoki
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

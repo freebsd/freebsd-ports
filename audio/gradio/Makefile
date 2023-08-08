@@ -1,6 +1,7 @@
 PORTNAME=	gradio
 PORTVERSION=	7.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib
 
-USES=		gettext gnome gstreamer meson pkgconfig python:3.4+,env sqlite vala:build
+USES=		gettext gnome gstreamer meson pkgconfig python:env sqlite vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haecker-felix
 GH_PROJECT=	Gradio

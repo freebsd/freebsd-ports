@@ -12,7 +12,7 @@ WWW=		https://github.com/uwabami/rdtool
 
 BUILD_DEPENDS=	${NONEXISTENT}:textproc/ruby-rdtool:patch
 
-USE_RUBY=	yes
+USES=	ruby
 
 WRKSRC=		${WRKDIR}/utils
 NO_BUILD=	yes

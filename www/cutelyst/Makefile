@@ -1,7 +1,6 @@
 PORTNAME=	cutelyst
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.0
-PORTREVISION=	1
+DISTVERSION=	3.7.0
 CATEGORIES=	www
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -10,6 +9,8 @@ WWW=		https://cutelyst.org
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
 USES=		cmake compiler:c++11-lang localbase qt:5
 USE_GITHUB=	yes

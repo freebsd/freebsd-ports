@@ -1,9 +1,8 @@
-#
-
 PORTNAME=	ebaysdk
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	finance python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -14,9 +13,13 @@ LICENSE=	CDDL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
+
+post-extract:
+	@${MV} ${WRKSRC}/samples ${WRKSRC}/ebaysdk/
+	@${MV} ${WRKSRC}/tests ${WRKSRC}/ebaysdk/
 
 .include <bsd.port.mk>

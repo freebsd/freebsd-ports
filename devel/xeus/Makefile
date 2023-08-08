@@ -1,5 +1,5 @@
 PORTNAME=	xeus
-DISTVERSION=	0.24.4
+DISTVERSION=	3.1.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -10,23 +10,18 @@ WWW=		https://github.com/jupyter-xeus/xeus
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
-		nlohmann-json>0:devel/nlohmann-json \
+BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
 		xtl-quant-stack>0:devel/xtl-quant-stack
-LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-		libzmq.so:net/libzmq4
+LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
+TEST_DEPENDS=	doctest>0:devel/doctest
 
-USES=		cmake compiler:c++14-lang localbase:ldflags pkgconfig ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	jupyter-xeus
+USES=		cmake:testing localbase:ldflags pkgconfig
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	jupyter-xeus
+
 CMAKE_OFF=	BUILD_STATIC_LIBS
-
-OPTIONS_DEFINE=		NATIVE
-
-NATIVE_DESC=		Build with native optimizations (-march=native)
-NATIVE_CMAKE_ON=	-DXEUS_DISABLE_ARCH_NATIVE=OFF
-NATIVE_CMAKE_OFF=	-DXEUS_DISABLE_ARCH_NATIVE=ON
+CMAKE_TESTING_ON=	XEUS_BUILD_TESTS
 
 .include <bsd.port.mk>

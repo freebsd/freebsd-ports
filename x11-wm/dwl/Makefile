@@ -1,10 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	cba259e9bf4a.patch:-p1 # https://github.com/djpohly/dwl/pull/212
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
@@ -18,7 +15,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.dwm
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
-		wlroots>=0.15.0:x11-toolkits/wlroots
+		wlroots>=0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -27,6 +24,8 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	djpohly
+EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
+MAKE_ARGS=	VERSION="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
 		share/wayland-sessions/${PORTNAME}.desktop
@@ -36,17 +35,22 @@ OPTIONS_DEFINE=	ADDONS DOCS X11
 OPTIONS_DEFAULT=ADDONS X11
 
 ADDONS_DESC=		Install extra applications: ${ADDONS_RUN_DEPENDS:C/\:.*//}
-ADDONS_RUN_DEPENDS?=	alacritty:x11/alacritty \
+ADDONS_RUN_DEPENDS?=	foot:x11/foot \
 			bemenu-run:x11/bemenu
 
+X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 X11_USES=		xorg
 X11_USE=		XORG=xcb
-X11_CFLAGS=		-DXWAYLAND
+X11_MAKE_ARGS=		XWAYLAND="-DXWAYLAND" XLIBS="xcb xcb-icccm"
 
 pre-everything::
 	@${ECHO_MSG} "To build ${PORTNAME} with your own config.h set ${PORTNAME:tu}_CONF variable"
 	@${ECHO_MSG} "either in ${.CURDIR:T}/Makefile.local, make.conf(5), environ(7) or command line e.g.,"
 	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_CONF=/path/to/${PORTNAME}/config.h"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To apply your own patches set ${PORTNAME:tu}_PATCHES (like ${PORTNAME:tu}_CONF)"
+	@${ECHO_MSG} "to a list of files separated by space with optional -pX suffix e.g.,"
+	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_PATCHES='/path/to/foo.patch:-p1'"
 
 post-extract:
 # .if exists(...) before bsd.port.mk ignores *_CONF in make.conf(5) and Makefile.local
@@ -54,9 +58,6 @@ post-extract:
 		${ECHO_MSG} "Creating symlink: config.h -> ${${PORTNAME:tu}_CONF}"; \
 		${LN} -fs "${${PORTNAME:tu}_CONF}" ${WRKSRC}/config.h; \
 	fi
-
-post-patch-X11-off:
-	@${REINPLACE_CMD} 's/ xcb//' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

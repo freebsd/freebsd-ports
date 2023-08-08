@@ -43,6 +43,7 @@ share/mime/packages/openscad.xml
 %%DATADIR%%/examples/Basics/CSG-modules.scad
 %%DATADIR%%/examples/Basics/CSG.scad
 %%DATADIR%%/examples/Basics/LetterBlock.scad
+%%DATADIR%%/examples/Basics/hull.scad
 %%DATADIR%%/examples/Basics/linear_extrude.scad
 %%DATADIR%%/examples/Basics/logo.scad
 %%DATADIR%%/examples/Basics/logo_and_text.scad

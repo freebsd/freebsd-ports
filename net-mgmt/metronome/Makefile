@@ -1,6 +1,6 @@
 PORTNAME=	metronome
 DISTVERSION=	0.9.0
-PORTREVISION=	14
+PORTREVISION=	18
 CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	krion@FreeBSD.org
@@ -13,16 +13,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		autoreconf:build compiler:c++11-lang eigen:3 libtool:build \
-		pathfix pkgconfig
-
+	localbase:ldflags pathfix pkgconfig
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	ahupowerdns
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
-USE_LDCONFIG=	yes
-SUB_FILES=	pkg-message
+
 INSTALL_TARGET=	install-strip
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 

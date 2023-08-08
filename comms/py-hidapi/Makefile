@@ -1,10 +1,10 @@
 PORTNAME=	hidapi
 DISTVERSION=	0.11.0.post2
 CATEGORIES=	comms python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cython interface to comms/hidapi
 WWW=		https://pypi.org/project/hidapi/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist cython distutils
 
 MAKE_ENV+=	DISTUTILS_DEBUG=1

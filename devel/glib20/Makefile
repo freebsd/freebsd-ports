@@ -1,9 +1,12 @@
 PORTNAME=	glib
-DISTVERSION=	2.72.3
+DISTVERSION=	2.76.4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
+PATCHFILES+=	f6c40b1d27ed.patch:-p1 # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3335
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
@@ -12,12 +15,12 @@ WWW=		https://www.gtk.org/
 LICENSE=	LGPL20
 
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
-		meson perl5 pkgconfig python:3.7+ tar:xz trigger
+		meson perl5 pkgconfig python tar:xz trigger
 TRIGGERS=	gio-modules glib-schemas
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -26,7 +29,7 @@ MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
 		-Dlibmount=disabled \
-		-Dlocalstatedir=/var \
+		-Druntime_dir=/var/run \
 		-Dselinux=disabled \
 		-Dxattr=false
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -35,16 +38,16 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7200.3
+_LIBVERSION=	0.7600.4
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
-OPTIONS_DEFINE=		DEBUG DOCS FAM_ALTBACKEND MANPAGES NLS TEST
+OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
-DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
-DOCS_IMPLIES=		TEST
-DOCS_MESON_TRUE=	gtk_doc
+GTKDOC_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+GTKDOC_IMPLIES=		TEST
+GTKDOC_MESON_TRUE=	gtk_doc
 
 FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 
@@ -60,13 +63,6 @@ TEST_MESON_TRUE=	tests
 
 # doesn't build yet
 MESON_ARGS+=	-Ddtrace=false
-
-.if empty(ICONV_LIB)
-# native?
-MESON_ARGS+=	-Diconv=libc
-.else
-MESON_ARGS+=	-Diconv=external
-.endif
 
 pre-configure-FAM_ALTBACKEND-on:
 	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
@@ -88,7 +84,7 @@ pre-configure-FAM_ALTBACKEND-on:
 # Meson does not seem to provide a way to express that dependency.
 #
 # Hack it into the generated ninja build instead.
-post-configure-DOCS-on:
+post-configure-GTKDOC-on:
 	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:

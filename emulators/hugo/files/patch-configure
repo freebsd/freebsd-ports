@@ -1,6 +1,6 @@
---- configure.orig	2005-04-05 14:28:53.000000000 -0500
-+++ configure	2007-10-09 21:55:43.000000000 -0500
-@@ -3256,7 +3256,7 @@
+--- configure.orig	2005-04-05 19:28:53 UTC
++++ configure
+@@ -3256,7 +3256,7 @@ if test "${ac_cv_lib_SDL_main+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -3312,7 +3312,7 @@
+@@ -3312,7 +3312,7 @@ if test $ac_cv_lib_SDL_main = yes; then
  #define HAVE_LIBSDL 1
  _ACEOF
  
@@ -18,7 +18,7 @@
  
  fi
   #,,[AC_MSG_ERROR([need SDL. See #http://www.libsdl.org])])
-@@ -7877,7 +7877,7 @@
+@@ -7877,7 +7877,7 @@ _ACEOF
  echo "$as_me:$LINENO: checking whether netplay support was asked" >&5
  echo $ECHO_N "checking whether netplay support was asked...            $ECHO_C" >&6
  
@@ -27,7 +27,7 @@
  then
  
  
-@@ -8657,13 +8657,13 @@
+@@ -8657,13 +8657,13 @@ fi
  
  		 fi
  	 ;;
@@ -44,10 +44,11 @@
  
  
  
-@@ -8675,6 +8675,35 @@
+@@ -8674,6 +8674,35 @@ else
+   SDL_FREEBSD_TRUE='#'
    SDL_FREEBSD_FALSE=
  fi
- 
++
 +
 +			 if test "$USE_SDL_mixer" = "yes"; then
 +				LIBS="$LIBS -lSDL_mixer "
@@ -76,7 +77,6 @@
 +fi
 + # ZE_: needs to be processed after SDL_MIXER_LINUX...
 +			 fi
-+
+ 
  	 ;;
  	sun4u-SunOS)
- 	  echo "Solaris build enabled"

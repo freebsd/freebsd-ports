@@ -1,5 +1,6 @@
 PORTNAME=	scrypt
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.tarsnap.com/scrypt/
 
@@ -19,6 +20,8 @@ CONFIGURE_ARGS=	--enable-libscrypt-kdf --disable-static
 
 PLIST_FILES=	bin/scrypt \
 		include/scrypt-kdf.h \
+		lib/libscrypt-kdf.so \
+		lib/libscrypt-kdf.so.1 \
 		lib/libscrypt-kdf.so.1.0.0 \
 		man/man1/scrypt.1.gz
 

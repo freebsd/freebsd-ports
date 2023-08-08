@@ -2,7 +2,7 @@ PORTNAME=	antlr4-python3-runtime
 PORTVERSION=	4.9
 PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antoine@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/response/e846973a-767b-4f9c-8b9e-5249cfcd7b97.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/response/e846973a-767b-4f9c-8b9e-5249cfcd7b97.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: False
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           cp -f /tmp/sensitive_file_backups/#{file.backup.name} #{file.sensitive.path}
+@@ -31,4 +31,4 @@
+     - plugins.stockpile.app.requirements.paw_provenance:
+         - source: file.backup.name
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: file.sensitive.path
+\ No newline at end of file
++        - source: file.sensitive.path

@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R:R}
 PATCH_SITES=	https://raw.githubusercontent.com/netzbasis/openbsd-ports/11f6e510cbdf022a7b6c71ee125a41ba443fe927/databases/sqsh/patches/
 PATCHFILES=	patch-src_cmd_connect_c
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 WWW=		https://sourceforge.net/projects/sqsh
 

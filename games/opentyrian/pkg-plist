@@ -1,5 +1,9 @@
 bin/opentyrian
 share/applications/opentyrian.desktop
+share/icons/hicolor/128x128/apps/opentyrian.png
+share/icons/hicolor/22x22/apps/opentyrian.png
+share/icons/hicolor/24x24/apps/opentyrian.png
+share/icons/hicolor/32x32/apps/opentyrian.png
+share/icons/hicolor/48x48/apps/opentyrian.png
 share/man/man6/opentyrian.6.gz
-share/pixmaps/opentyrian.png
-%%DATADIR%%/.keepme
+@dir %%DATADIR%%

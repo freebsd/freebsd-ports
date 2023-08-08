@@ -1,5 +1,6 @@
 PORTNAME=	sip4
 PORTVERSION=	${SIP4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.riverbankcomputing.com/static/Downloads/sip/${SIP4_VERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

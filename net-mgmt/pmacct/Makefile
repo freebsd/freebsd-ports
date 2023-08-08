@@ -1,5 +1,5 @@
 PORTNAME=	pmacct
-DISTVERSION=	1.7.7
+DISTVERSION=	1.7.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/
 
@@ -8,6 +8,8 @@ COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 WWW=		http://www.pmacct.net/
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libcdada.so:devel/libcdada
 
 USES=		gmake libtool pkgconfig localbase autoreconf
 USE_RC_SUBR=	pmacctd nfacctd sfacctd
@@ -45,7 +47,7 @@ SQLITE3_VARS=		SQLDOC=""
 LAYER2_CONFIGURE_ENABLE=	l2
 DEBUG_CONFIGURE_ENABLE=		debug
 
-RABBITMQ_LIB_DEPENDS=		librabbitmq.so:net/rabbitmq-c-devel
+RABBITMQ_LIB_DEPENDS=		librabbitmq.so:net/rabbitmq-c
 RABBITMQ_CONFIGURE_ENABLE=	rabbitmq
 
 REDIS_LIB_DEPENDS=		libhiredis.so:databases/hiredis
@@ -65,7 +67,7 @@ GEOIP2_CONFIGURE_ENABLE=	geoipv2
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-i386
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-i386
 .endif
 
 PLIST_SUB+=	SQLDOC=${SQLDOC}

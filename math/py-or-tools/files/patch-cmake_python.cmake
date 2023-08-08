@@ -1,6 +1,6 @@
---- cmake/python.cmake.orig	2021-12-14 20:57:53 UTC
+--- cmake/python.cmake.orig	2022-11-25 09:21:54 UTC
 +++ cmake/python.cmake
-@@ -23,7 +23,7 @@ if(UNIX AND NOT APPLE)
+@@ -40,7 +40,7 @@ if(UNIX AND NOT APPLE)
  endif()
  
  # Find Python 3
@@ -9,15 +9,15 @@
  list(APPEND CMAKE_SWIG_FLAGS "-py3" "-DPY3")
  
  # Find if the python module is available,
-@@ -294,9 +294,9 @@ if(BUILD_TESTING)
-     #COMMAND ${VENV_EXECUTABLE} ${VENV_DIR}
+@@ -367,9 +367,9 @@ if(BUILD_VENV)
      # Must NOT call it in a folder containing the setup.py otherwise pip call it
      # (i.e. "python setup.py bdist") while we want to consume the wheel package
--    COMMAND ${VENV_Python3_EXECUTABLE} -m pip install --find-links=${CMAKE_CURRENT_BINARY_DIR}/python/dist ${PYTHON_PROJECT}
-+    COMMAND ${VENV_Python3_EXECUTABLE} -m pip install --no-index --find-links=${CMAKE_CURRENT_BINARY_DIR}/python/dist ${PYTHON_PROJECT}
+     COMMAND ${VENV_Python3_EXECUTABLE} -m pip install
+-      --find-links=${CMAKE_CURRENT_BINARY_DIR}/python/dist ${PYTHON_PROJECT}==${PROJECT_VERSION}
++      --no-index --find-links=${CMAKE_CURRENT_BINARY_DIR}/python/dist ${PYTHON_PROJECT}==${PROJECT_VERSION}
      # install modules only required to run examples
--    COMMAND ${VENV_Python3_EXECUTABLE} -m pip install pandas matplotlib
-+    #COMMAND ${VENV_Python3_EXECUTABLE} -m pip install pandas matplotlib
+-    COMMAND ${VENV_Python3_EXECUTABLE} -m pip install pandas matplotlib pytest
++    #COMMAND ${VENV_Python3_EXECUTABLE} -m pip install pandas matplotlib pytest
      BYPRODUCTS ${VENV_DIR}
      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
      COMMENT "Create venv and install ${PYTHON_PROJECT}"

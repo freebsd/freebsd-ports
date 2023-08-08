@@ -1,7 +1,7 @@
 PORTNAME=	hcloud
-DISTVERSION=	1.18.0
+DISTVERSION=	1.26.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -11,18 +11,22 @@ WWW=		https://hcloud-python.readthedocs.io/en/latest/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>=0.17.1<1:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.5,<3:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=3.6.0:devel/py-flake8@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}isort>=4.3.4:devel/py-isort@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.5:devel/py-dateutil@${PY_FLAVOR}
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pre-commit>=0:devel/py-pre-commit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyupgrade>=3.6.0:devel/py-pyupgrade@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flake8>=6.0.0:devel/py-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isort>=5.12.0:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=3.23.1:devel/py-tox@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}black>=22.3.0:devel/py-black@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}black>=23.3.0:devel/py-black@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils pytest
+USES=		python:3.8+
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 .include <bsd.port.mk>

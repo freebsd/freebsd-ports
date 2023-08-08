@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/taviso/${PORTNAME}/releases/download/v${PORTVERSION}/
 DISTNAME=	ctypes-sh-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Foreign function interface for bash
 WWW=		https://github.com/taviso/ctypes.sh
 

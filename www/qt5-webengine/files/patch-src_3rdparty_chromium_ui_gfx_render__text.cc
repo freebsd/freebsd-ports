@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/render_text.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gfx/render_text.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gfx/render_text.cc
-@@ -942,32 +942,33 @@ void RenderText::SetDisplayOffset(int horizontal_offse
+@@ -1191,32 +1191,33 @@ void RenderText::SetDisplayOffset(int horizontal_offse
    const int extra_content = GetContentWidth() - display_rect_.width();
    const int cursor_width = cursor_enabled_ ? 1 : 0;
  

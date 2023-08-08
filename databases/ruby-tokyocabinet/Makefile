@@ -10,16 +10,24 @@ MAINTAINER=	dgerow@afflictions.org
 COMMENT=	Ruby interface to the Tokyo Cabinet DB engine
 WWW=		https://dbmx.net/tokyocabinet/
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USES=	ruby:extconf
 
 INSTALL_TARGET=	site-install
 
 DOCS=	doc/*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}

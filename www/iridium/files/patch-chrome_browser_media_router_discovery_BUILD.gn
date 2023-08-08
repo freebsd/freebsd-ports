@@ -1,6 +1,6 @@
---- chrome/browser/media/router/discovery/BUILD.gn.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/media/router/discovery/BUILD.gn.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/media/router/discovery/BUILD.gn
-@@ -94,7 +94,7 @@ static_library("discovery") {
+@@ -80,7 +80,7 @@ static_library("discovery") {
      "media_sink_discovery_metrics.h",
    ]
  

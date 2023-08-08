@@ -13,7 +13,6 @@ RUN_DEPENDS=	\
 	rubygem-fluentd>0:sysutils/rubygem-fluentd \
 	rubygem-ltsv>0:textproc/rubygem-ltsv
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -20,6 +20,8 @@ BROKEN_mips64=		fails to compile: /usr/include/sigfpe.h: No such file or directo
 USES=		gmake
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=	yes
+
 LIBVER=		2
 SIMPLEDIST=	changes f2c.1 f2c.1t f2c.h f2c.pdf fc getopt.c README
 

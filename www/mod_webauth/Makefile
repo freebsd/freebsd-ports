@@ -12,8 +12,7 @@ WWW=		http://webauth.stanford.edu/
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libsasl2.so:security/cyrus-sasl2
 
-USES=		apache:2.4 libtool pathfix pkgconfig ssl
-USE_OPENLDAP=	yes
+USES=		apache ldap libtool pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-lib=${LOCALBASE}/lib \

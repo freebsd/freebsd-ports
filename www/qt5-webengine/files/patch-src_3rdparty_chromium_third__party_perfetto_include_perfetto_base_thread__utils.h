@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/base/thread_utils.h
-@@ -33,6 +33,9 @@
- #include <sys/types.h>
- #include <unistd.h>
+@@ -35,6 +35,9 @@
+ #else
+ #include <pthread.h>
  #endif
 +#if PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD)
 +#include <pthread_np.h>
@@ -10,7 +10,7 @@
  
  namespace perfetto {
  namespace base {
-@@ -41,6 +44,11 @@ namespace base {
+@@ -43,6 +46,11 @@ inline PlatformThreadId GetThreadId() {
  using PlatformThreadId = pid_t;
  inline PlatformThreadId GetThreadId() {
    return gettid();

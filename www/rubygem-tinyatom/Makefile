@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-public_suffix>=0:dns/rubygem-public_suffix
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

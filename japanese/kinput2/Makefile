@@ -8,24 +8,31 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese text input server for X11 applications
 
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	MIT
 
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
+
+MAKE_JOBS_UNSAFE=	yes
+
 SUB_FILES=	Kinput2.conf
 PLIST_FILES=	bin/kinput2 lib/X11/app-defaults/Kinput2 man/man1/kinput2.1.gz
 
 OPTIONS_DEFINE=	CANNA FREEWNN WNN6 WNN7 SJ3 TCP
 OPTIONS_DEFAULT=CANNA FREEWNN           SJ3
-TCP_DESC=		TCP transport support (not needed for most cases)
 
 CANNA_DESC=		Canna support
+FREEWNN_DESC=		FreeWnn support
+SJ3_DESC=		SJ3 support
+TCP_DESC=		TCP transport support (not needed for most cases)
+WNN6_DESC=		Wnn6 support
+WNN7_DESC=		Wnn7 support
+
 CANNA_LIB_DEPENDS=	libcanna16.so:japanese/canna-lib
 CANNA_CONF=		'\#define UseCanna' \
 			CANNASRC=${LOCALBASE}/include \
 			CANNALIB="-L${LOCALBASE}/lib -lcanna16"
 
-WNN6_DESC=		Wnn6 support
 WNN6_LIB_DEPENDS=	libwnn6.so:japanese/Wnn6-lib
 WNN6_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
@@ -33,7 +40,6 @@ WNN6_CONF=		'\#define UseWnn' \
 			WNNLIB="-L${LOCALBASE}/lib -lwnn6 -lcrypt"
 WNN6_PLIST_FILES=	${WNN_PLIST_FILES}
 
-WNN7_DESC=		Wnn7 support
 WNN7_LIB_DEPENDS=	libwnn7.so:japanese/Wnn7-lib
 WNN7_CONF=		'\#define UseWnn' \
 			'\#define UseWnn6' \
@@ -41,14 +47,12 @@ WNN7_CONF=		'\#define UseWnn' \
 			WNNLIB="-L${LOCALBASE}/lib -lwnn7 -lcrypt"
 WNN7_PLIST_FILES=	${WNN_PLIST_FILES}
 
-FREEWNN_DESC=		FreeWnn support
 FREEWNN_LIB_DEPENDS=	libwnn.so:japanese/FreeWnn-lib
 FREEWNN_CONF=		'\#define UseWnn' \
 			WNNINCDIR=${LOCALBASE}/include/wnn \
 			WNNLIB="-L${LOCALBASE}/lib -lwnn -lcrypt"
 FREEWNN_PLIST_FILES=	${WNN_PLIST_FILES}
 
-SJ3_DESC=		SJ3 support
 SJ3_LIB_DEPENDS=	libsj3lib.so:japanese/sj3-lib
 SJ3_CONF=		'\#define UseSj3' \
 			SJ3SRC=${LOCALBASE}/include \
@@ -85,8 +89,14 @@ CONF+=		${${I}_CONF}
 CONF+=	TRANSPORTDEFS="-DNO_TCP_TRANSPORT"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 pre-configure:
 	${INSTALL_DATA} ${WRKDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
 	${PRINTF} "%s\n" ${CONF} > ${WRKSRC}/Kinput2_im.conf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+--- resources/packaging/linux/sniffnet.desktop.orig	2023-06-10 07:00:22 UTC
++++ resources/packaging/linux/sniffnet.desktop
+@@ -5,6 +5,6 @@ Name=Sniffnet
+ Comment=Application to comfortably monitor your network traffic
+ Categories=Network;Utility;
+ Icon=sniffnet
+-Exec=/usr/bin/sniffnet
++Exec=sniffnet
+ StartupWMClass=sniffnet
+ Terminal=false

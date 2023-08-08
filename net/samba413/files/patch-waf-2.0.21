@@ -1,0 +1,703 @@
+From 6718b5e6d059e5668fc538be802ebd9fbe5ce9af Mon Sep 17 00:00:00 2001
+From: Stefan Metzmacher <metze@samba.org>
+Date: Wed, 25 Nov 2020 16:29:06 +0100
+Subject: [PATCH] waf: upgrade to 2.0.21
+
+This commit message was wrong:
+
+    commit 5fc3a71d0f54b176d3cb2e399718d0468507e797
+    Author: David Mulder <dmulder@suse.com>
+    Date:   Mon Aug 24 13:12:46 2020 -0600
+
+        waf: upgrade to 2.0.20
+
+        This contain an important change:
+        "Fix gccdeps.scan() returning nodes that no longer exist on disk."
+        https://gitlab.com/ita1024/waf/-/merge_requests/2293
+
+        Signed-off-by: David Mulder <dmulder@suse.com>
+        Reviewed-by: Stefan Metzmacher <metze@samba.org>
+Reviewed-by: Andrew Bartlett <abartlet@samba.org>
+
+The fix was in in waf master, but not included in 2.0.20,
+but it's now included in 2.0.21.
+
+Signed-off-by: Stefan Metzmacher <metze@samba.org>
+Reviewed-by: Andrew Bartlett <abartlet@samba.org>
+---
+ buildtools/bin/waf                            |  2 +-
+ buildtools/wafsamba/wafsamba.py               |  2 +-
+ third_party/waf/waflib/Build.py               |  6 ++-
+ third_party/waf/waflib/Context.py             |  8 ++--
+ third_party/waf/waflib/Tools/asm.py           |  5 +-
+ third_party/waf/waflib/Tools/c_config.py      |  1 +
+ third_party/waf/waflib/Tools/msvc.py          |  8 +++-
+ third_party/waf/waflib/Tools/qt5.py           | 26 +++++++++--
+ third_party/waf/waflib/Tools/waf_unit_test.py | 10 +++-
+ third_party/waf/waflib/extras/boost.py        |  5 +-
+ .../waf/waflib/extras/c_dumbpreproc.py        |  2 +-
+ third_party/waf/waflib/extras/doxygen.py      |  4 +-
+ .../waf/waflib/extras/file_to_object.py       |  9 +++-
+ third_party/waf/waflib/extras/gccdeps.py      | 21 +++++++--
+ third_party/waf/waflib/extras/msvcdeps.py     | 27 +++++++++--
+ third_party/waf/waflib/extras/pch.py          |  4 +-
+ third_party/waf/waflib/extras/sphinx.py       | 40 ++++++++++++----
+ third_party/waf/waflib/extras/wafcache.py     | 46 +++++++++++++++----
+ third_party/waf/waflib/extras/xcode6.py       | 18 ++++----
+ 19 files changed, 181 insertions(+), 63 deletions(-)
+
+diff --git buildtools/bin/waf buildtools/bin/waf
+index feabe25d131..041450fc131 100755
+--- buildtools/bin/waf
++++ buildtools/bin/waf
+@@ -32,7 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
+ 
+ import os, sys, inspect
+ 
+-VERSION="2.0.20"
++VERSION="2.0.21"
+ REVISION="x"
+ GIT="x"
+ INSTALL="x"
+diff --git buildtools/wafsamba/wafsamba.py buildtools/wafsamba/wafsamba.py
+index 9dd6d05b91b..d1baa3b4940 100644
+--- buildtools/wafsamba/wafsamba.py
++++ buildtools/wafsamba/wafsamba.py
+@@ -38,7 +38,7 @@ LIB_PATH="shared"
+ 
+ os.environ['PYTHONUNBUFFERED'] = '1'
+ 
+-if Context.HEXVERSION not in (0x2001400,):
++if Context.HEXVERSION not in (0x2001500,):
+     Logs.error('''
+ Please use the version of waf that comes with Samba, not
+ a system installed version. See http://wiki.samba.org/index.php/Waf
+diff --git third_party/waf/waflib/Build.py third_party/waf/waflib/Build.py
+index 39f0991918b..52837618577 100644
+--- third_party/waf/waflib/Build.py
++++ third_party/waf/waflib/Build.py
+@@ -753,10 +753,12 @@ class BuildContext(Context.Context):
+ 		else:
+ 			ln = self.launch_node()
+ 			if ln.is_child_of(self.bldnode):
+-				Logs.warn('Building from the build directory, forcing --targets=*')
++				if Logs.verbose > 1:
++					Logs.warn('Building from the build directory, forcing --targets=*')
+ 				ln = self.srcnode
+ 			elif not ln.is_child_of(self.srcnode):
+-				Logs.warn('CWD %s is not under %s, forcing --targets=* (run distclean?)', ln.abspath(), self.srcnode.abspath())
++				if Logs.verbose > 1:
++					Logs.warn('CWD %s is not under %s, forcing --targets=* (run distclean?)', ln.abspath(), self.srcnode.abspath())
+ 				ln = self.srcnode
+ 
+ 			def is_post(tg, ln):
+diff --git third_party/waf/waflib/Context.py third_party/waf/waflib/Context.py
+index 3f1b4fa48ab..0ce9df6e91f 100644
+--- third_party/waf/waflib/Context.py
++++ third_party/waf/waflib/Context.py
+@@ -18,13 +18,13 @@ else:
+ 	import imp
+ 
+ # the following 3 constants are updated on each new release (do not touch)
+-HEXVERSION=0x2001400
++HEXVERSION=0x2001500
+ """Constant updated on new releases"""
+ 
+-WAFVERSION="2.0.20"
++WAFVERSION="2.0.21"
+ """Constant updated on new releases"""
+ 
+-WAFREVISION="668769470956da8c5b60817cb8884cd7d0f87cd4"
++WAFREVISION="edde20a6425a5c3eb6b47d5f3f5c4fbc93fed5f4"
+ """Git revision when the waf version is updated"""
+ 
+ WAFNAME="waf"
+@@ -530,7 +530,7 @@ class Context(ctx):
+ 		"""
+ 		Prints a configuration message of the form ``msg: result``.
+ 		The second part of the message will be in colors. The output
+-		can be disabled easly by setting ``in_msg`` to a positive value::
++		can be disabled easily by setting ``in_msg`` to a positive value::
+ 
+ 			def configure(conf):
+ 				self.in_msg = 1
+diff --git third_party/waf/waflib/Tools/asm.py third_party/waf/waflib/Tools/asm.py
+index a57e83bb5ec..1d34ddaca7f 100644
+--- third_party/waf/waflib/Tools/asm.py
++++ third_party/waf/waflib/Tools/asm.py
+@@ -56,13 +56,11 @@ class asm(Task.Task):
+ 	Compiles asm files by gas/nasm/yasm/...
+ 	"""
+ 	color = 'BLUE'
+-	run_str = '${AS} ${ASFLAGS} ${ASMPATH_ST:INCPATHS} ${DEFINES_ST:DEFINES} ${AS_SRC_F}${SRC} ${AS_TGT_F}${TGT}'
++	run_str = '${AS} ${ASFLAGS} ${ASMPATH_ST:INCPATHS} ${ASMDEFINES_ST:DEFINES} ${AS_SRC_F}${SRC} ${AS_TGT_F}${TGT}'
+ 
+ 	def scan(self):
+ 		if self.env.ASM_NAME == 'gas':
+ 			return c_preproc.scan(self)
+-			Logs.warn('There is no dependency scanner for Nasm!')
+-			return  [[], []]
+ 		elif self.env.ASM_NAME == 'nasm':
+ 			Logs.warn('The Nasm dependency scanner is incomplete!')
+ 
+@@ -106,3 +104,4 @@ class asmstlib(stlink_task):
+ 
+ def configure(conf):
+ 	conf.env.ASMPATH_ST = '-I%s'
++	conf.env.ASMDEFINES_ST = '-D%s'
+diff --git third_party/waf/waflib/Tools/c_config.py third_party/waf/waflib/Tools/c_config.py
+index 98187fac2e2..03b6bf61bc0 100644
+--- third_party/waf/waflib/Tools/c_config.py
++++ third_party/waf/waflib/Tools/c_config.py
+@@ -68,6 +68,7 @@ MACRO_TO_DEST_CPU = {
+ '__s390__'    : 's390',
+ '__sh__'      : 'sh',
+ '__xtensa__'  : 'xtensa',
++'__e2k__'     : 'e2k',
+ }
+ 
+ @conf
+diff --git third_party/waf/waflib/Tools/msvc.py third_party/waf/waflib/Tools/msvc.py
+index f169c7f441b..37233be8242 100644
+--- third_party/waf/waflib/Tools/msvc.py
++++ third_party/waf/waflib/Tools/msvc.py
+@@ -99,7 +99,13 @@ all_icl_platforms = [ ('intel64', 'amd64'), ('em64t', 'amd64'), ('ia32', 'x86'),
+ """List of icl platforms"""
+ 
+ def options(opt):
+-	opt.add_option('--msvc_version', type='string', help = 'msvc version, eg: "msvc 10.0,msvc 9.0"', default='')
++	default_ver = ''
++	vsver = os.getenv('VSCMD_VER')
++	if vsver:
++		m = re.match(r'(^\d+\.\d+).*', vsver)
++		if m:
++			default_ver = 'msvc %s' % m.group(1)
++	opt.add_option('--msvc_version', type='string', help = 'msvc version, eg: "msvc 10.0,msvc 9.0"', default=default_ver)
+ 	opt.add_option('--msvc_targets', type='string', help = 'msvc targets, eg: "x64,arm"', default='')
+ 	opt.add_option('--no-msvc-lazy', action='store_false', help = 'lazily check msvc target environments', default=True, dest='msvc_lazy')
+ 
+diff --git third_party/waf/waflib/Tools/qt5.py third_party/waf/waflib/Tools/qt5.py
+index 99e021bae61..cff2028174f 100644
+--- third_party/waf/waflib/Tools/qt5.py
++++ third_party/waf/waflib/Tools/qt5.py
+@@ -57,7 +57,23 @@ A few options (--qt{dir,bin,...}) and environment variables
+ (QT5_{ROOT,DIR,MOC,UIC,XCOMPILE}) allow finer tuning of the tool,
+ tool path selection, etc; please read the source for more info.
+ 
+-The detection uses pkg-config on Linux by default. To force static library detection use:
++The detection uses pkg-config on Linux by default. The list of
++libraries to be requested to pkg-config is formulated by scanning
++in the QTLIBS directory (that can be passed via --qtlibs or by
++setting the environment variable QT5_LIBDIR otherwise is derived
++by querying qmake for QT_INSTALL_LIBS directory) for shared/static
++libraries present.
++Alternatively the list of libraries to be requested via pkg-config
++can be set using the qt5_vars attribute, ie:
++
++      conf.qt5_vars = ['Qt5Core', 'Qt5Gui', 'Qt5Widgets', 'Qt5Test'];
++
++This can speed up configuration phase if needed libraries are
++known beforehand, can improve detection on systems with a
++sparse QT5 libraries installation (ie. NIX) and can improve
++detection of some header-only Qt modules (ie. Qt5UiPlugin).
++
++To force static library detection use:
+ QT5_XCOMPILE=1 QT5_FORCE_STATIC=1 waf configure
+ """
+ 
+@@ -466,6 +482,9 @@ def configure(self):
+ 
+ 	The detection uses the program ``pkg-config`` through :py:func:`waflib.Tools.config_c.check_cfg`
+ 	"""
++	if 'COMPILER_CXX' not in self.env:
++		self.fatal('No CXX compiler defined: did you forget to configure compiler_cxx first?')
++
+ 	self.find_qt5_binaries()
+ 	self.set_qt5_libs_dir()
+ 	self.set_qt5_libs_to_check()
+@@ -478,9 +497,6 @@ def configure(self):
+ 	if not has_xml:
+ 		Logs.error('No xml.sax support was found, rcc dependencies will be incomplete!')
+ 
+-	if 'COMPILER_CXX' not in self.env:
+-		self.fatal('No CXX compiler defined: did you forget to configure compiler_cxx first?')
+-
+ 	# Qt5 may be compiled with '-reduce-relocations' which requires dependent programs to have -fPIE or -fPIC?
+ 	frag = '#include <QMap>\nint main(int argc, char **argv) {QMap<int,int> m;return m.keys().size();}\n'
+ 	uses = 'QT5CORE'
+@@ -637,7 +653,7 @@ def set_qt5_libs_dir(self):
+ 		except Errors.WafError:
+ 			qtdir = self.cmd_and_log(env.QMAKE + ['-query', 'QT_INSTALL_PREFIX']).strip()
+ 			qtlibs = os.path.join(qtdir, 'lib')
+-	self.msg('Found the Qt5 libraries in', qtlibs)
++	self.msg('Found the Qt5 library path', qtlibs)
+ 	env.QTLIBS = qtlibs
+ 
+ @conf
+diff --git third_party/waf/waflib/Tools/waf_unit_test.py third_party/waf/waflib/Tools/waf_unit_test.py
+index 6ff6f72739f..dc66fe9c184 100644
+--- third_party/waf/waflib/Tools/waf_unit_test.py
++++ third_party/waf/waflib/Tools/waf_unit_test.py
+@@ -97,6 +97,7 @@ def make_interpreted_test(self):
+ 		if isinstance(v, str):
+ 			v = v.split(os.pathsep)
+ 		self.ut_env[k] = os.pathsep.join(p + v)
++	self.env.append_value('UT_DEPS', ['%r%r' % (key, self.ut_env[key]) for key in self.ut_env])
+ 
+ @feature('test')
+ @after_method('apply_link', 'process_use')
+@@ -108,7 +109,8 @@ def make_test(self):
+ 	tsk = self.create_task('utest', self.link_task.outputs)
+ 	if getattr(self, 'ut_str', None):
+ 		self.ut_run, lst = Task.compile_fun(self.ut_str, shell=getattr(self, 'ut_shell', False))
+-		tsk.vars = lst + tsk.vars
++		tsk.vars = tsk.vars + lst
++		self.env.append_value('UT_DEPS', self.ut_str)
+ 
+ 	self.handle_ut_cwd('ut_cwd')
+ 
+@@ -139,6 +141,10 @@ def make_test(self):
+ 	if not hasattr(self, 'ut_cmd'):
+ 		self.ut_cmd = getattr(Options.options, 'testcmd', False)
+ 
++	self.env.append_value('UT_DEPS', str(self.ut_cmd))
++	self.env.append_value('UT_DEPS', self.ut_paths)
++	self.env.append_value('UT_DEPS', ['%r%r' % (key, self.ut_env[key]) for key in self.ut_env])
++
+ @taskgen_method
+ def add_test_results(self, tup):
+ 	"""Override and return tup[1] to interrupt the build immediately if a test does not run"""
+@@ -159,7 +165,7 @@ class utest(Task.Task):
+ 	"""
+ 	color = 'PINK'
+ 	after = ['vnum', 'inst']
+-	vars = []
++	vars = ['UT_DEPS']
+ 
+ 	def runnable_status(self):
+ 		"""
+diff --git third_party/waf/waflib/extras/boost.py third_party/waf/waflib/extras/boost.py
+index c2aaaa938a2..93b312a1e6e 100644
+--- third_party/waf/waflib/extras/boost.py
++++ third_party/waf/waflib/extras/boost.py
+@@ -270,10 +270,12 @@ def boost_get_libs(self, *k, **kw):
+ 				return file
+ 		return None
+ 
++	# extensions from Tools.ccroot.lib_patterns
++	wo_ext = re.compile(r"\.(a|so|lib|dll|dylib)(\.[0-9\.]+)?$")
+ 	def format_lib_name(name):
+ 		if name.startswith('lib') and self.env.CC_NAME != 'msvc':
+ 			name = name[3:]
+-		return name[:name.rfind('.')]
++		return wo_ext.sub("", name)
+ 
+ 	def match_libs(lib_names, is_static):
+ 		libs = []
+@@ -522,4 +524,3 @@ def install_boost(self):
+ 		except:
+ 			continue
+ install_boost.done = False
+-
+diff --git third_party/waf/waflib/extras/c_dumbpreproc.py third_party/waf/waflib/extras/c_dumbpreproc.py
+index ce9e1a400b9..1fdd5c364ae 100644
+--- third_party/waf/waflib/extras/c_dumbpreproc.py
++++ third_party/waf/waflib/extras/c_dumbpreproc.py
+@@ -66,7 +66,7 @@ class dumb_parser(parser):
+ 			if x == c_preproc.POPFILE:
+ 				self.currentnode_stack.pop()
+ 				continue
+-			self.tryfind(y)
++			self.tryfind(y, env=env)
+ 
+ c_preproc.c_parser = dumb_parser
+ 
+diff --git third_party/waf/waflib/extras/doxygen.py third_party/waf/waflib/extras/doxygen.py
+index de75bc2738a..0fda70361f3 100644
+--- third_party/waf/waflib/extras/doxygen.py
++++ third_party/waf/waflib/extras/doxygen.py
+@@ -208,10 +208,10 @@ def process_doxy(self):
+ 		self.bld.fatal('doxygen file %s not found' % self.doxyfile)
+ 
+ 	# the task instance
+-	dsk = self.create_task('doxygen', node)
++	dsk = self.create_task('doxygen', node, always_run=getattr(self, 'always', False))
+ 
+ 	if getattr(self, 'doxy_tar', None):
+-		tsk = self.create_task('tar')
++		tsk = self.create_task('tar', always_run=getattr(self, 'always', False))
+ 		tsk.input_tasks = [dsk]
+ 		tsk.set_outputs(self.path.find_or_declare(self.doxy_tar))
+ 		if self.doxy_tar.endswith('bz2'):
+diff --git third_party/waf/waflib/extras/file_to_object.py third_party/waf/waflib/extras/file_to_object.py
+index 1393b511d63..13d2aef37df 100644
+--- third_party/waf/waflib/extras/file_to_object.py
++++ third_party/waf/waflib/extras/file_to_object.py
+@@ -31,7 +31,7 @@ Known issues:
+ 
+ """
+ 
+-import os
++import os, sys
+ from waflib import Task, TaskGen, Errors
+ 
+ def filename_c_escape(x):
+@@ -95,12 +95,17 @@ class file_to_object_c(Task.Task):
+ 
+ 		name = "_binary_" + "".join(name)
+ 
++		def char_to_num(ch):
++			if sys.version_info[0] < 3:
++				return ord(ch)
++			return ch
++
+ 		data = self.inputs[0].read('rb')
+ 		lines, line = [], []
+ 		for idx_byte, byte in enumerate(data):
+ 			line.append(byte)
+ 			if len(line) > 15 or idx_byte == size-1:
+-				lines.append(", ".join(("0x%02x" % ord(x)) for x in line))
++				lines.append(", ".join(("0x%02x" % char_to_num(x)) for x in line))
+ 				line = []
+ 		data = ",\n ".join(lines)
+ 
+diff --git third_party/waf/waflib/extras/gccdeps.py third_party/waf/waflib/extras/gccdeps.py
+index c3a809e252a..1fc9373489a 100644
+--- third_party/waf/waflib/extras/gccdeps.py
++++ third_party/waf/waflib/extras/gccdeps.py
+@@ -163,10 +163,25 @@ def post_run(self):
+ def sig_implicit_deps(self):
+ 	if not self.__class__.__name__ in self.env.ENABLE_GCCDEPS:
+ 		return super(self.derived_gccdeps, self).sig_implicit_deps()
++	bld = self.generator.bld
++
+ 	try:
+-		return Task.Task.sig_implicit_deps(self)
+-	except Errors.WafError:
+-		return Utils.SIG_NIL
++		return self.compute_sig_implicit_deps()
++	except Errors.TaskNotReady:
++		raise ValueError("Please specify the build order precisely with gccdeps (asm/c/c++ tasks)")
++	except EnvironmentError:
++		# If a file is renamed, assume the dependencies are stale and must be recalculated
++		for x in bld.node_deps.get(self.uid(), []):
++			if not x.is_bld() and not x.exists():
++				try:
++					del x.parent.children[x.name]
++				except KeyError:
++					pass
++
++	key = self.uid()
++	bld.node_deps[key] = []
++	bld.raw_deps[key] = []
++	return Utils.SIG_NIL
+ 
+ def wrap_compiled_task(classname):
+ 	derived_class = type(classname, (Task.classes[classname],), {})
+diff --git third_party/waf/waflib/extras/msvcdeps.py third_party/waf/waflib/extras/msvcdeps.py
+index 873a4193150..52985dce058 100644
+--- third_party/waf/waflib/extras/msvcdeps.py
++++ third_party/waf/waflib/extras/msvcdeps.py
+@@ -150,11 +150,25 @@ def scan(self):
+ def sig_implicit_deps(self):
+ 	if self.env.CC_NAME not in supported_compilers:
+ 		return super(self.derived_msvcdeps, self).sig_implicit_deps()
++	bld = self.generator.bld
+ 
+ 	try:
+-		return Task.Task.sig_implicit_deps(self)
+-	except Errors.WafError:
+-		return Utils.SIG_NIL
++		return self.compute_sig_implicit_deps()
++	except Errors.TaskNotReady:
++		raise ValueError("Please specify the build order precisely with msvcdeps (c/c++ tasks)")
++	except EnvironmentError:
++		# If a file is renamed, assume the dependencies are stale and must be recalculated
++		for x in bld.node_deps.get(self.uid(), []):
++			if not x.is_bld() and not x.exists():
++				try:
++					del x.parent.children[x.name]
++				except KeyError:
++					pass
++
++	key = self.uid()
++	bld.node_deps[key] = []
++	bld.raw_deps[key] = []
++	return Utils.SIG_NIL
+ 
+ def exec_command(self, cmd, **kw):
+ 	if self.env.CC_NAME not in supported_compilers:
+@@ -211,11 +225,14 @@ def exec_command(self, cmd, **kw):
+ 			# get one from the exception object
+ 			ret = getattr(e, 'returncode', 1)
+ 
++		Logs.debug('msvcdeps: Running for: %s' % self.inputs[0])
+ 		for line in raw_out.splitlines():
+ 			if line.startswith(INCLUDE_PATTERN):
+-				inc_path = line[len(INCLUDE_PATTERN):].strip()
++				# Only strip whitespace after log to preserve
++				# dependency structure in debug output
++				inc_path = line[len(INCLUDE_PATTERN):]
+ 				Logs.debug('msvcdeps: Regex matched %s', inc_path)
+-				self.msvcdeps_paths.append(inc_path)
++				self.msvcdeps_paths.append(inc_path.strip())
+ 			else:
+ 				out.append(line)
+ 
+diff --git third_party/waf/waflib/extras/pch.py third_party/waf/waflib/extras/pch.py
+index 103e752838c..b44c7a2e8fd 100644
+--- third_party/waf/waflib/extras/pch.py
++++ third_party/waf/waflib/extras/pch.py
+@@ -90,7 +90,7 @@ def apply_pch(self):
+ 
+ 	if getattr(self, 'name', None):
+ 		try:
+-			task = self.bld.pch_tasks["%s.%s" % (self.name, self.idx)]
++			task = self.bld.pch_tasks[self.name]
+ 			self.bld.fatal("Duplicated 'pch' task with name %r" % "%s.%s" % (self.name, self.idx))
+ 		except KeyError:
+ 			pass
+@@ -104,7 +104,7 @@ def apply_pch(self):
+ 
+ 	self.pch_task = task
+ 	if getattr(self, 'name', None):
+-		self.bld.pch_tasks["%s.%s" % (self.name, self.idx)] = task
++		self.bld.pch_tasks[self.name] = task
+ 
+ @TaskGen.feature('cxx')
+ @TaskGen.after_method('process_source', 'propagate_uselib_vars')
+diff --git third_party/waf/waflib/extras/sphinx.py third_party/waf/waflib/extras/sphinx.py
+index ce11110e634..71d1028393b 100644
+--- third_party/waf/waflib/extras/sphinx.py
++++ third_party/waf/waflib/extras/sphinx.py
+@@ -20,7 +20,7 @@ def build(bld):
+ 
+ from waflib.Node import Node
+ from waflib import Utils
+-from waflib.Task import Task
++from waflib import Task
+ from waflib.TaskGen import feature, after_method
+ 
+ 
+@@ -55,13 +55,9 @@ def build_sphinx(self):
+     sphinx_build_task.set_outputs(self.path.get_bld())
+ 
+     # the sphinx-build results are in <build + output_format> directory
+-    sphinx_output_directory = self.path.get_bld().make_node(self.env.SPHINX_OUTPUT_FORMAT)
+-    sphinx_output_directory.mkdir()
++    self.sphinx_output_directory = self.path.get_bld().make_node(self.env.SPHINX_OUTPUT_FORMAT)
++    self.sphinx_output_directory.mkdir()
+     Utils.def_attrs(self, install_path=get_install_path(self))
+-    self.add_install_files(install_to=self.install_path,
+-                           install_from=sphinx_output_directory.ant_glob('**/*'),
+-                           cwd=sphinx_output_directory,
+-                           relative_trick=True)
+ 
+ 
+ def get_install_path(tg):
+@@ -73,9 +69,37 @@ def get_install_path(tg):
+         return tg.env.DOCDIR
+ 
+ 
+-class SphinxBuildingTask(Task):
++class SphinxBuildingTask(Task.Task):
+     color = 'BOLD'
+     run_str = '${SPHINX_BUILD} -M ${SPHINX_OUTPUT_FORMAT} ${SRC} ${TGT} ${SPHINX_OPTIONS}'
+ 
+     def keyword(self):
+         return 'Compiling (%s)' % self.env.SPHINX_OUTPUT_FORMAT
++
++    def runnable_status(self):
++
++        for x in self.run_after:
++            if not x.hasrun:
++                return Task.ASK_LATER
++
++        self.signature()
++        ret = Task.Task.runnable_status(self)
++        if ret == Task.SKIP_ME:
++            # in case the files were removed
++            self.add_install()
++        return ret
++
++
++    def post_run(self):
++        self.add_install()
++        return Task.Task.post_run(self)
++
++
++    def add_install(self):
++        nodes = self.generator.sphinx_output_directory.ant_glob('**/*', quiet=True)
++        self.outputs += nodes
++        self.generator.add_install_files(install_to=self.generator.install_path,
++                                         install_from=nodes,
++                                         postpone=False,
++                                         cwd=self.generator.sphinx_output_directory,
++                                         relative_trick=True)
+diff --git third_party/waf/waflib/extras/wafcache.py third_party/waf/waflib/extras/wafcache.py
+index 8b9567faf14..088fd0d098d 100644
+--- third_party/waf/waflib/extras/wafcache.py
++++ third_party/waf/waflib/extras/wafcache.py
+@@ -16,10 +16,19 @@ The following environment variables may be set:
+   - URL to a cache server, for example:
+     export WAFCACHE=http://localhost:8080/files/
+     in that case, GET/POST requests are made to urls of the form
+-    http://localhost:8080/files/000000000/0 (cache management is then up to the server)
+-  - GCS or S3 bucket
+-    gs://my-bucket/
+-    s3://my-bucket/
++    http://localhost:8080/files/000000000/0 (cache management is delegated to the server)
++  - GCS, S3 or MINIO bucket
++    gs://my-bucket/    (uses gsutil command line tool or WAFCACHE_CMD)
++    s3://my-bucket/    (uses aws command line tool or WAFCACHE_CMD)
++    minio://my-bucket/ (uses mc command line tool or WAFCACHE_CMD)
++* WAFCACHE_CMD: bucket upload/download command, for example:
++    WAFCACHE_CMD="gsutil cp %{SRC} %{TGT}"
++  Note that the WAFCACHE bucket value is used for the source or destination
++  depending on the operation (upload or download). For example, with:
++    WAFCACHE="gs://mybucket/"
++  the following commands may be run:
++    gsutil cp build/myprogram  gs://mybucket/aa/aaaaa/1
++    gsutil cp gs://mybucket/bb/bbbbb/2 build/somefile
+ * WAFCACHE_NO_PUSH: if set, disables pushing to the cache
+ * WAFCACHE_VERBOSITY: if set, displays more detailed cache operations
+ 
+@@ -30,6 +39,7 @@ File cache specific options:
+ * WAFCACHE_EVICT_MAX_BYTES: maximum amount of cache size in bytes (10GB)
+ * WAFCACHE_EVICT_INTERVAL_MINUTES: minimum time interval to try
+                                    and trim the cache (3 minutess)
++
+ Usage::
+ 
+ 	def build(bld):
+@@ -41,7 +51,7 @@ To troubleshoot::
+ 	waf clean build --zones=wafcache
+ """
+ 
+-import atexit, base64, errno, fcntl, getpass, os, shutil, sys, time, traceback, urllib3
++import atexit, base64, errno, fcntl, getpass, os, re, shutil, sys, time, traceback, urllib3, shlex
+ try:
+ 	import subprocess32 as subprocess
+ except ImportError:
+@@ -53,6 +63,7 @@ if not os.path.isdir(base_cache):
+ default_wafcache_dir = os.path.join(base_cache, 'wafcache_' + getpass.getuser())
+ 
+ CACHE_DIR = os.environ.get('WAFCACHE', default_wafcache_dir)
++WAFCACHE_CMD = os.environ.get('WAFCACHE_CMD')
+ TRIM_MAX_FOLDERS = int(os.environ.get('WAFCACHE_TRIM_MAX_FOLDER', 1000000))
+ EVICT_INTERVAL_MINUTES = int(os.environ.get('WAFCACHE_EVICT_INTERVAL_MINUTES', 3))
+ EVICT_MAX_BYTES = int(os.environ.get('WAFCACHE_EVICT_MAX_BYTES', 10**10))
+@@ -60,6 +71,8 @@ WAFCACHE_NO_PUSH = 1 if os.environ.get('WAFCACHE_NO_PUSH') else 0
+ WAFCACHE_VERBOSITY = 1 if os.environ.get('WAFCACHE_VERBOSITY') else 0
+ OK = "ok"
+ 
++re_waf_cmd = re.compile('(?P<src>%{SRC})|(?P<tgt>%{TGT})')
++
+ try:
+ 	import cPickle
+ except ImportError:
+@@ -233,8 +246,9 @@ def build(bld):
+ 		# already called once
+ 		return
+ 
+-	for x in range(bld.jobs):
+-		process_pool.append(get_process())
++	# pre-allocation
++	processes = [get_process() for x in range(bld.jobs)]
++	process_pool.extend(processes)
+ 
+ 	Task.Task.can_retrieve_cache = can_retrieve_cache
+ 	Task.Task.put_files_cache = put_files_cache
+@@ -449,10 +463,20 @@ class fcache(object):
+ 
+ class bucket_cache(object):
+ 	def bucket_copy(self, source, target):
+-		if CACHE_DIR.startswith('s3://'):
++		if WAFCACHE_CMD:
++			def replacer(match):
++				if match.group('src'):
++					return source
++				elif match.group('tgt'):
++					return target
++			cmd = [re_waf_cmd.sub(replacer, x) for x in shlex.split(WAFCACHE_CMD)]
++		elif CACHE_DIR.startswith('s3://'):
+ 			cmd = ['aws', 's3', 'cp', source, target]
+-		else:
++		elif CACHE_DIR.startswith('gs://'):
+ 			cmd = ['gsutil', 'cp', source, target]
++		else:
++			cmd = ['mc', 'cp', source, target]
++
+ 		proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+ 		out, err = proc.communicate()
+ 		if proc.returncode:
+@@ -510,7 +534,9 @@ def loop(service):
+ 	sys.stdout.flush()
+ 
+ if __name__ == '__main__':
+-	if CACHE_DIR.startswith('s3://') or CACHE_DIR.startswith('gs://'):
++	if CACHE_DIR.startswith('s3://') or CACHE_DIR.startswith('gs://') or CACHE_DIR.startswith('minio://'):
++		if CACHE_DIR.startswith('minio://'):
++			CACHE_DIR = CACHE_DIR[8:]   # minio doesn't need the protocol part, uses config aliases
+ 		service = bucket_cache()
+ 	elif CACHE_DIR.startswith('http'):
+ 		service = netcache()
+diff --git third_party/waf/waflib/extras/xcode6.py third_party/waf/waflib/extras/xcode6.py
+index 91bbff181ec..c5b309120c9 100644
+--- third_party/waf/waflib/extras/xcode6.py
++++ third_party/waf/waflib/extras/xcode6.py
+@@ -99,7 +99,7 @@ env.PROJ_CONFIGURATION = {
+ 		...
+ 	}
+ 	'Release': {
+-		'ARCHS' x86_64'
++		'ARCHS': x86_64'
+ 		...
+ 	}
+ }
+@@ -163,12 +163,12 @@ class XCodeNode(object):
+ 			result = result + "\t\t}"
+ 			return result
+ 		elif isinstance(value, str):
+-			return "\"%s\"" % value
++			return '"%s"' % value.replace('"', '\\\\\\"')
+ 		elif isinstance(value, list):
+ 			result = "(\n"
+ 			for i in value:
+-				result = result + "\t\t\t%s,\n" % self.tostring(i)
+-			result = result + "\t\t)"
++				result = result + "\t\t\t\t%s,\n" % self.tostring(i)
++			result = result + "\t\t\t)"
+ 			return result
+ 		elif isinstance(value, XCodeNode):
+ 			return value._id
+@@ -565,13 +565,13 @@ def process_xcode(self):
+ 	# Override target specific build settings
+ 	bldsettings = {
+ 		'HEADER_SEARCH_PATHS': ['$(inherited)'] + self.env['INCPATHS'],
+-		'LIBRARY_SEARCH_PATHS': ['$(inherited)'] + Utils.to_list(self.env.LIBPATH) + Utils.to_list(self.env.STLIBPATH) + Utils.to_list(self.env.LIBDIR) ,
++		'LIBRARY_SEARCH_PATHS': ['$(inherited)'] + Utils.to_list(self.env.LIBPATH) + Utils.to_list(self.env.STLIBPATH) + Utils.to_list(self.env.LIBDIR),
+ 		'FRAMEWORK_SEARCH_PATHS': ['$(inherited)'] + Utils.to_list(self.env.FRAMEWORKPATH),
+-		'OTHER_LDFLAGS': libs + ' ' + frameworks,
+-		'OTHER_LIBTOOLFLAGS': bld.env['LINKFLAGS'],
++		'OTHER_LDFLAGS': libs + ' ' + frameworks + ' ' + ' '.join(bld.env['LINKFLAGS']),
+ 		'OTHER_CPLUSPLUSFLAGS': Utils.to_list(self.env['CXXFLAGS']),
+ 		'OTHER_CFLAGS': Utils.to_list(self.env['CFLAGS']),
+-		'INSTALL_PATH': []
++		'INSTALL_PATH': [],
++		'GCC_PREPROCESSOR_DEFINITIONS': self.env['DEFINES']
+ 	}
+ 
+ 	# Install path
+@@ -591,7 +591,7 @@ def process_xcode(self):
+ 
+ 	# The keys represents different build configuration, e.g. Debug, Release and so on..
+ 	# Insert our generated build settings to all configuration names
+-	keys = set(settings.keys() + bld.env.PROJ_CONFIGURATION.keys())
++	keys = set(settings.keys()) | set(bld.env.PROJ_CONFIGURATION.keys())
+ 	for k in keys:
+ 		if k in settings:
+ 			settings[k].update(bldsettings)
+-- 
+2.37.3
+

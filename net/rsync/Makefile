@@ -1,5 +1,5 @@
 PORTNAME=	rsync
-DISTVERSION=	3.2.5
+DISTVERSION=	3.2.7
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -18,7 +18,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
-USES=		cpe python shebangfix ssl
+USES=		cpe python shebangfix ssl autoreconf
 PYTHON_NO_DEPENDS=	yes
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
@@ -58,18 +58,15 @@ ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 PTS_DESC=	Functionality provided by third party patches
 RENAMED_DESC=	Add support for renamed file detection
 
-FLAGS_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 FLAGS_EXTRA_PATCHES=	${WRKSRC}/patches/fileflags.diff \
 			${FILESDIR}/extrapatch-main.c
 
-ICONV_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv iconv-open
 
 POPT_PORT_LIB_DEPENDS=		libpopt.so:devel/popt
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
 
-RENAMED_DISTFILES=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 RENAMED_EXTRA_PATCHES=	${WRKSRC}/patches/detect-renamed.diff
 
 SSH_CONFIGURE_ON=	--with-rsh=ssh
@@ -77,7 +74,9 @@ SSH_CONFIGURE_OFF=	--with-rsh=rsh
 
 ZLIB_BASE_CONFIGURE_ON=	--with-included-zlib=no
 
-.if make(makesum)
+.include <bsd.port.options.mk>
+
+.if make(makesum) || ${PORT_OPTIONS:MRENAMED} || ${PORT_OPTIONS:MICONV} || ${PORT_OPTIONS:MFLAGS}
 DISTFILES+=	${PORTNAME}-patches-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 

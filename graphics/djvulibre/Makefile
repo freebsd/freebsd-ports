@@ -1,6 +1,6 @@
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		cpe gmake iconv jpeg libtool
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	djvulibre_project

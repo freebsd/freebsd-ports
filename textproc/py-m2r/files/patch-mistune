@@ -1,0 +1,22 @@
+--- m2r.py.orig	2022-11-17 08:04:26 UTC
++++ m2r.py
+@@ -10,7 +10,7 @@ from argparse import ArgumentParser, Namespace
+ from docutils import statemachine, nodes, io, utils
+ from docutils.parsers import rst
+ from docutils.utils import column_width
+-import mistune
++import mistune0 as mistune
+ from urllib.parse import urlparse
+ 
+ __version__ = '0.3.1'
+--- setup.py.orig	2022-11-17 08:04:26 UTC
++++ setup.py
+@@ -16,7 +16,7 @@ except ImportError:
+     with open(readme_file) as f:
+         readme = f.read()
+ 
+-install_requires = ['mistune<2', 'docutils']
++install_requires = ['mistune0<2', 'docutils']
+ test_requirements = ['pygments']
+ 
+ setup(

@@ -1,5 +1,4 @@
-    The UnRAR library is a minor part of the RAR archiver and contains
-    RAR uncompression algorithm. UnRAR requires very small volume of
-    memory to operate.
-    UnRAR library can be used by other programs to extract RAR archives.
-    This package contains small fixes from the http://mcmcc.bat.ru/clamav/.
+The UnRAR library is a minor part of the RAR archiver and contains
+the RAR uncompression algorithm. UnRAR requires a very small amount
+of memory to operate. It can be used by other programs to extract
+RAR archives.

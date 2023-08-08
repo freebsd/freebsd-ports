@@ -59,7 +59,7 @@ CONS25_EXTRA_PATCHES=		${FILESDIR}/cons25-alpine_keymenu.c
 IPV6_CONFIGURE_WITH=		ipv6
 
 # Option LDAP
-LDAP_USE=			openldap=yes
+LDAP_USES=			ldap
 LDAP_CONFIGURE_WITH=		ldap
 LDAP_CFLAGS=			-I${LOCALBASE}/include
 LDAP_LDFLAGS=			-L${LOCALBASE}/lib

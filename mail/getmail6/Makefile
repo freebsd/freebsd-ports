@@ -1,6 +1,6 @@
 PORTNAME=	getmail6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.18.10
+DISTVERSION=	6.18.12
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/getmail6/getmail6/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	getmail getmail-gmail-xoauth-tokens getmail_*

@@ -1,6 +1,6 @@
 PORTNAME=	bastet
 PORTVERSION=	0.43.2
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://fph.altervista.org/prog/files/
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs
 
+USES=		compiler:c++11-lang gmake localbase:ldflags ncurses tar:tgz
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	fph
-
-USES=		compiler:c++11-lang gmake localbase:ldflags ncurses tar:tgz
 
 PORTDOCS=	AUTHORS README NEWS
 

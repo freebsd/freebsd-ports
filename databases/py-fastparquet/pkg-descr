@@ -1,0 +1,6 @@
+fastparquet is a python implementation of the parquet format, aiming integrate
+into python-based big data work-flows. It is used implicitly by the projects
+Dask, Pandas and intake-parquet.
+
+We offer a high degree of support for the features of the parquet format, and
+very competitive performance, in a small install size and codebase.

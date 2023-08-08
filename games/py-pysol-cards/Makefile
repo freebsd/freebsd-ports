@@ -1,7 +1,7 @@
 PORTNAME=	pysol-cards
-PORTVERSION=	0.14.2
+PORTVERSION=	0.14.3
 CATEGORIES=	games python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysol_cards-${PORTVERSION}
 
@@ -18,5 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

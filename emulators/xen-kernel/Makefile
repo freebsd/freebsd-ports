@@ -1,6 +1,6 @@
 PORTNAME=	xen
-PORTVERSION=	4.16.0
-PORTREVISION=	0
+PORTVERSION=	4.17.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
@@ -26,17 +26,16 @@ PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug \
 		lib/debug/boot/xen-debug.debug
 
-# XSA-395
-EXTRA_PATCHES+=	${PATCHDIR}/xsa395.patch:-p1
-
-# XSA-398
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-spec-ctrl-Drop-use_spec_ctrl-boolean.patch:-p1 \
-		${PATCHDIR}/0002-x86-spec-ctrl-Introduce-new-has_spec_ctrl-boolean.patch:-p1 \
-		${PATCHDIR}/xsa398-4.16-6-x86-spec-ctrl-Cease-using-thunk-lfence-on-AMD.patch:-p1
-
-# Add retpoline support for clang builds
-EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-retpoline-split-retpoline-compiler-support-into-.patch:-p1 \
-		${PATCHDIR}/0002-x86-clang-add-retpoline-support.patch:-p1
+# XSAs
+EXTRA_PATCHES+=	${PATCHDIR}/xsa425.patch:-p1 \
+		${PATCHDIR}/xsa426.patch:-p1 \
+		${PATCHDIR}/0001-xen-Work-around-Clang-IAS-macro-expansion-bug.patch:-p1
+# Backports
+# clang build fixes
+EXTRA_PATCHES+=	${PATCHDIR}/0001-xen-x86-Remove-the-use-of-K-R-functions.patch:-p1
+# Support for fetching video mode from PVH dom0
+EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-platform-introduce-hypercall-to-get-initial-vide.patch:-p1 \
+		${PATCHDIR}/0001-x86-platform-make-XENPF_get_dom0_console-actually-us.patch:-p1
 
 .include <bsd.port.options.mk>
 

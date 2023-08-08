@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	help2man:misc/help2man
 
 USES=		cmake compiler:c++11-lang desktop-file-utils ghostscript:run \
-		gl qt:5 shared-mime-info tar:bzip2 localbase
+		gl qt:5 shared-mime-info tar:bzip2 localbase tex
 USE_GL=		gl
 USE_QT=		core dbus gui sql svg widgets x11extras xml \
 		buildtools:build designer:build linguisttools:build \

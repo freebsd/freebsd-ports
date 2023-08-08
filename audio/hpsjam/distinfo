@@ -1,3 +1,5 @@
-TIMESTAMP = 1652955031
-SHA256 (hselasky-hpsjam-v1.0.25_GH0.tar.gz) = 3623747b9115e5e4d6f4c900cf42e1fc29fa3e9227d0387293f1ab04203e554e
-SIZE (hselasky-hpsjam-v1.0.25_GH0.tar.gz) = 1232160
+TIMESTAMP = 1668543583
+SHA256 (hselasky-hpsjam-v1.2.7_GH0.tar.gz) = 9167eb805d376ffd58e6ee0219d986cd29f8c239e6aac0b54f70bb99580e055d
+SIZE (hselasky-hpsjam-v1.2.7_GH0.tar.gz) = 1380577
+SHA256 (mborgerding-kissfft-131.1.0_GH0.tar.gz) = 76c1aac87ddb7258f34b08a13f0eebf9e53afa299857568346aa5c82bcafaf1a
+SIZE (mborgerding-kissfft-131.1.0_GH0.tar.gz) = 52383

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-byebug>=11.0<12:devel/rubygem-byebug \
 		rubygem-pry>=0.13<0.15:devel/rubygem-pry
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

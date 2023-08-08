@@ -11,7 +11,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}MIME_Type>=0:mail/pear-MIME_Type@${PHP_FLAVOR}
 
 USES=		pear
-USE_PHP=	bz2 pcre zlib
+USE_PHP=	bz2 zlib
 
 NO_ARCH=	yes
 

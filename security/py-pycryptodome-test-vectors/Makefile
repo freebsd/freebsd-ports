@@ -1,7 +1,7 @@
 PORTNAME=	pycryptodome-test-vectors
-DISTVERSION=	1.0.10
+DISTVERSION=	1.0.12
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@saltant.com
@@ -12,8 +12,8 @@ LICENSE=	BSD2CLAUSE APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-# Officially: 2.7, 3-5-3.10 (same as security/py-cryptodome)
-USES=		cpe python:3.7+ zip
+# Officially: 2.7, 3.5-3.11 (same as security/py-cryptodome)
+USES=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist distutils
 

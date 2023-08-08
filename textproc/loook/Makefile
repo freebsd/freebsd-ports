@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>=0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		python:3.4+ gettext-tools:build
+USES=		python gettext-tools:build
 
 WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/${PORTNAME} \

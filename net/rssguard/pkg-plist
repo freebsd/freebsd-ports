@@ -17,6 +17,6 @@ include/librssguard/services/abstract/serviceentrypoint.h
 include/librssguard/services/abstract/serviceroot.h
 include/librssguard/services/abstract/unreadnode.h
 lib/librssguard.so
-share/applications/com.github.rssguard.desktop
-share/icons/hicolor/256x256/apps/rssguard.png
-share/metainfo/com.github.rssguard.appdata.xml
+share/applications/io.github.martinrotter.%%PROGNAME%%.desktop
+share/icons/hicolor/256x256/apps/io.github.martinrotter.%%PROGNAME%%.png
+share/metainfo/io.github.martinrotter.%%PROGNAME%%.metainfo.xml

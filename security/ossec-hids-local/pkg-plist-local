@@ -119,7 +119,7 @@
 @(,ossec,0640) %%OSSEC_HOME%%/rules/last_rootlogin_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/lighttpd_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/linux_usbdetect_rules.xml
-@(,ossec,0640) %%OSSEC_HOME%%/rules/local_rules.xml
+@sample(,ossec,0640) %%OSSEC_HOME%%/rules/local_rules.xml.sample
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mailscanner_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mcafee_av_rules.xml
 @(,ossec,0640) %%OSSEC_HOME%%/rules/mhn_cowrie_rules.xml

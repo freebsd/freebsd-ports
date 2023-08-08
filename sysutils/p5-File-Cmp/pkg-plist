@@ -1,2 +1,4 @@
 %%SITE_PERL%%/File/Cmp.pm
+%%SITE_PERL%%/File/Cmp/ConfigData.pm
 %%PERL5_MAN3%%/File::Cmp.3.gz
+%%PERL5_MAN3%%/File::Cmp::ConfigData.3.gz

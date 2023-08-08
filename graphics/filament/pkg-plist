@@ -1,8 +1,8 @@
 %%SAMPLES%%bin/assets/fonts/Roboto-License.txt
 %%SAMPLES%%bin/assets/fonts/Roboto-Medium.ttf
-%%SAMPLES%%bin/assets/lightroom_14b/lightroom_14b_ibl.ktx
-%%SAMPLES%%bin/assets/lightroom_14b/lightroom_14b_skybox.ktx
-%%SAMPLES%%bin/assets/lightroom_14b/sh.txt
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/lightroom_14b_ibl.ktx
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/lightroom_14b_skybox.ktx
+%%SAMPLES%%bin/assets/ibl/lightroom_14b/sh.txt
 bin/basisu
 bin/cmgen
 bin/filamesh
@@ -17,6 +17,7 @@ bin/resgen
 bin/roughness-prefilter
 bin/specular-color
 bin/uberz
+include/backend/AcquiredImage.h
 include/backend/BufferDescriptor.h
 include/backend/CallbackHandler.h
 include/backend/DriverApiForward.h
@@ -27,8 +28,19 @@ include/backend/PixelBufferDescriptor.h
 include/backend/Platform.h
 include/backend/PresentCallable.h
 include/backend/Program.h
+include/backend/README.md
 include/backend/SamplerDescriptor.h
 include/backend/TargetBufferInfo.h
+include/backend/platforms/OpenGLPlatform.h
+include/backend/platforms/PlatformCocoaGL.h
+include/backend/platforms/PlatformCocoaTouchGL.h
+include/backend/platforms/PlatformEGL.h
+include/backend/platforms/PlatformEGLAndroid.h
+include/backend/platforms/PlatformEGLHeadless.h
+include/backend/platforms/PlatformGLX.h
+include/backend/platforms/PlatformWGL.h
+include/backend/platforms/PlatformWebGL.h
+include/backend/platforms/VulkanPlatform.h
 include/camutils/Bookmark.h
 include/camutils/Manipulator.h
 include/camutils/compiler.h
@@ -42,6 +54,7 @@ include/filament/BufferObject.h
 include/filament/Camera.h
 include/filament/Color.h
 include/filament/ColorGrading.h
+include/filament/ColorSpace.h
 include/filament/DebugRegistry.h
 include/filament/Engine.h
 include/filament/Exposure.h
@@ -50,6 +63,7 @@ include/filament/FilamentAPI.h
 include/filament/Frustum.h
 include/filament/IndexBuffer.h
 include/filament/IndirectLight.h
+include/filament/InstanceBuffer.h
 include/filament/LightManager.h
 include/filament/Material.h
 include/filament/MaterialChunkType.h
@@ -74,6 +88,7 @@ include/filament/View.h
 include/filament/Viewport.h
 include/filameshio/MeshReader.h
 include/geometry/SurfaceOrientation.h
+include/geometry/TangentSpaceMesh.h
 include/geometry/Transcoder.h
 include/gltfio/Animator.h
 include/gltfio/AssetLoader.h
@@ -115,6 +130,7 @@ include/math/vec2.h
 include/math/vec3.h
 include/math/vec4.h
 include/mathio/ostream.h
+include/mikktspace/mikktspace.h
 include/tsl/robin_growth_policy.h
 include/tsl/robin_hash.h
 include/tsl/robin_map.h
@@ -147,7 +163,7 @@ include/utils/bitset.h
 include/utils/compiler.h
 include/utils/compressed_pair.h
 include/utils/debug.h
-include/utils/linux/Mutex.h
+include/utils/generic/Mutex.h
 include/utils/memalign.h
 include/utils/ostream.h
 include/utils/unwindows.h
@@ -179,6 +195,7 @@ lib/libimage.a
 lib/libktxreader.a
 lib/libmatdbg.a
 lib/libmeshoptimizer.a
+lib/libmikktspace.a
 lib/libshaders.a
 lib/libsmol-v.a
 lib/libstb.a

@@ -1,5 +1,6 @@
 PORTNAME=	penaltymodel
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +20,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.10:science/py-dimod@${PY_FLAVOR} 
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes

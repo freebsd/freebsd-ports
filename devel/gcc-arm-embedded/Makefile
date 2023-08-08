@@ -12,7 +12,7 @@ WWW=		https://launchpad.net/gcc-arm-embedded
 LICENSE=	GPLv2 LGPL20 LGPL21 GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-NOT_FOR_ARCHS=		arm armeb armv6 armv7 \
+NOT_FOR_ARCHS=		arm armv6 armv7 \
 			mips mips64 mips64el mipsel mipsn32
 NOT_FOR_ARCHS_REASON=	Very slow to build on emulator
 
@@ -33,6 +33,7 @@ PURE_LIB_DEPENDS_OFF=	libexpat.so:textproc/expat2 \
 			libmpc.so:math/mpc \
 			libisl.so:devel/isl
 
+PDF_USES=		tex
 PDF_USE=		TEX=base:build,tex:build,dvipsk:build
 PDF_BUILD_DEPENDS=	texi2dvi:print/texinfo
 PYGDB_USES=		python

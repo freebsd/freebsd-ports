@@ -1,6 +1,7 @@
 PORTNAME=	sway-audio-idle-inhibit
 DISTVERSIONPREFIX=	v
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

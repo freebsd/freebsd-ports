@@ -1,6 +1,7 @@
 PORTNAME=	pulseaudio-qt
 DISTVERSION=	1.3
 MASTER_SITES=	KDE/stable/${PORTNAME}
+PORTREVISION=	1
 CATEGORIES=	audio kde
 
 MAINTAINER=	kde@FreeBSD.org

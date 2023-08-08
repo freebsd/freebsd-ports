@@ -1,6 +1,6 @@
 PORTNAME=	virtuoso
 PORTVERSION=	7.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -12,6 +12,8 @@ WWW=		http://virtuoso.openlinksw.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Broken on all supported FreeBSD releases for more than an year
+EXPIRATION_DATE=	2023-08-16
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_mips64=		Does not compile: error: DV_INT_TAG_WORD undeclared
 BROKEN_powerpc64=	Does not compile: error: DV_INT_TAG_WORD undeclared
@@ -99,7 +101,7 @@ CONFIGURE_ARGS+=--disable-krb
 
 .if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
-USE_OPENLDAP=	yes
+USES=	ldap
 .else
 CONFIGURE_ARGS+=--disable-openldap
 .endif

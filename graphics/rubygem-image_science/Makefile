@@ -1,5 +1,5 @@
 PORTNAME=	image_science
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rubyinline>=3.9<4:devel/rubygem-rubyinline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

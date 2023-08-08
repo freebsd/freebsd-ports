@@ -1,6 +1,6 @@
 PORTNAME=	autozen
 PORTVERSION=	2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linuxlabs.com/download/
 

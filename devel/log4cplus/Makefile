@@ -1,31 +1,31 @@
 PORTNAME=	log4cplus
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/REL_${PORTVERSION:S:.:_:g}/
 
-MAINTAINER=	reed@reedmedia.net
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Logging library for C++
-WWW=		http://log4cplus.sourceforge.net/
+WWW=		https://log4cplus.github.io/log4cplus/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cmake compiler:c++11-lang tar:xz
+
 OPTIONS_DEFINE=	DOCS
 
-USES=		compiler:c++11-lang libtool pathfix tar:xz
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-threads=yes
-INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=	yes
+CMAKE_OFF=	LOG4CPLUS_BUILD_TESTING
 
 PORTDOCS=	*
 
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+
+post-build-DOCS-on:
+	cd ${WRKDIR} && doxygen ${DISTNAME}/docs/doxygen.config
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.config ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/doxygen.css ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

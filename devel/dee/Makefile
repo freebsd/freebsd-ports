@@ -1,6 +1,6 @@
 PORTNAME=	dee
 PORTVERSION=	1.2.7
-PORTREVISION=	22
+PORTREVISION=	24
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/151383425/ \
 	https://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
@@ -17,7 +17,7 @@ EXTRA_PATCHES=	${FILESDIR}/dee-1.2.7-deprecated-g_type_class_add_private.patch:-
 LIB_DEPENDS=	libicutu.so:devel/icu
 
 USES=		compiler:c11 gmake gnome libtool localbase pathfix pkgconfig \
-		python:3.5+ vala:build
+		python vala:build
 USE_GNOME=	glib20 introspection:build pygobject3
 
 CONFIGURE_ARGS=	--disable-gcov \

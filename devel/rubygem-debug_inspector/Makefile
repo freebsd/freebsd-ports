@@ -10,6 +10,5 @@ WWW=		https://github.com/banister/debug_inspector
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

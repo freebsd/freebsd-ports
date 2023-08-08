@@ -20,6 +20,7 @@
     SUBDIR += cmios9
     SUBDIR += cocot
     SUBDIR += convmv
+    SUBDIR += dos2unix
     SUBDIR += dosunix
     SUBDIR += drg2sbg
     SUBDIR += dumpasn1
@@ -136,14 +137,14 @@
     SUBDIR += pear-Services_JSON
     SUBDIR += pecl-igbinary
     SUBDIR += php-bsdconv
-    SUBDIR += php74-iconv
-    SUBDIR += php74-mbstring
     SUBDIR += php80-iconv
     SUBDIR += php80-mbstring
     SUBDIR += php81-iconv
     SUBDIR += php81-mbstring
     SUBDIR += php82-iconv
     SUBDIR += php82-mbstring
+    SUBDIR += php83-iconv
+    SUBDIR += php83-mbstring
     SUBDIR += psiconv
     SUBDIR += py-bencode.py
     SUBDIR += py-bencoder

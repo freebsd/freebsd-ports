@@ -1,5 +1,5 @@
 PORTNAME=	json-schema
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-addressable>=2.8:www/rubygem-addressable
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

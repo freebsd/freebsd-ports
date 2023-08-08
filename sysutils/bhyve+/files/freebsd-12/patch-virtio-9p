@@ -1,4 +1,4 @@
---- usr.sbin/bhyve/Makefile.orig	2021-08-19 23:00:57 UTC
+--- usr.sbin/bhyve/Makefile.orig
 +++ usr.sbin/bhyve/Makefile
 @@ -3,6 +3,7 @@
  #
@@ -22,11 +22,11 @@
  
 -LIBADD=	vmmapi md pthread z util sbuf cam
 +LIBADD=	md pthread z util sbuf cam casper cap_pwd cap_grp
-+LDADD=  ../../contrib/lib9p/lib9p.so.1.1 ../../lib/libvmmapi/libvmmapi.so.5.1
++LDADD=  ../../contrib/lib9p/lib9p.so.%%9P_SHLIB_MAJOR%% ../../lib/libvmmapi/libvmmapi.so.%%VMMAPI_SHLIB_MAJOR%%
  
  .if ${MK_INET_SUPPORT} != "no"
  CFLAGS+=-DINET
---- usr.sbin/bhyve/pci_virtio_9p.c.orig	2021-08-19 22:44:10 UTC
+--- usr.sbin/bhyve/pci_virtio_9p.c.orig
 +++ usr.sbin/bhyve/pci_virtio_9p.c
 @@ -0,0 +1,344 @@
 +/*-

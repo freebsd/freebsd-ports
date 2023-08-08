@@ -1,3 +1,0 @@
-The extension implements a high resolution StopWatch class. It uses the the best
-possible APIs on different platforms. It also makes possible to implement a
-custom stopwatch using low level ticks delivered by the underlaying APIs.

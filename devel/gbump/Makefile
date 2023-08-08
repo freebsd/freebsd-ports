@@ -1,6 +1,6 @@
 PORTNAME=	gbump
 PORTVERSION=	1.0.1
-PORTREVISION=	25
+PORTREVISION=	34
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -16,6 +16,8 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to find OpenSSL development headers
 
 CARGO_CRATES=	aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \

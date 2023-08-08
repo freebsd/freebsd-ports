@@ -1,33 +1,113 @@
---- acinclude.m4.orig	2020-06-08 07:19:38 UTC
+--- acinclude.m4.orig	2022-10-15 15:02:38 UTC
 +++ acinclude.m4
-@@ -222,7 +222,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
-         dnl See if we already have the paths we need in the environment.
- 	dnl ...but only if --with-ldap was given without a specific path.
-         if ( test [ "x$lookforldap" = "xyes" ] || test [ "x$lookforauthldap" = "xyes" ] ); then
--            AC_CHECK_HEADERS([ldap.h],[LDAPLIB="-lldap"], [LDAPLIB="failed"])
-+            AC_CHECK_HEADERS([ldap.h],[LDAPLIB="-lldap_r"], [LDAPLIB="failed"])
-             if test [ "x$LDAPLIB" != "xfailed" ]; then
+@@ -43,7 +43,7 @@ AC_DEFINE_UNQUOTED([DM_VERSION], "$PACKAGE_VERSION", [
+ AC_DEFINE_UNQUOTED([DM_PWD], "$ac_pwd", [Build directory])
+ AC_DEFINE_UNQUOTED([DM_VERSION], "$PACKAGE_VERSION", [DBMail Version])
+ ])
+-	
++
+ AC_DEFUN([DM_SET_SHARED_OR_STATIC], [dnl
+ if test [ "$enable_shared" = "yes" -a "$enable_static" = "yes" ]; then
+      AC_MSG_ERROR([
+@@ -89,7 +89,7 @@ if test [ "x$lookforsieve" != "xno" ]; then
+     fi
+     AC_MSG_CHECKING([for libSieve headers])
+     STOP_LOOKING_FOR_SIEVE=""
+-    while test [ -z $STOP_LOOKING_FOR_SIEVE ]; do 
++    while test [ -z $STOP_LOOKING_FOR_SIEVE ]; do
+ 
+ 	if test [ "x$lookforsieve" = "xyes" ]; then
+             DM_SIEVE_INC([SIEVEINC=""], [SIEVEINC="failed"])
+@@ -97,7 +97,7 @@ if test [ "x$lookforsieve" != "xno" ]; then
                  break
              fi
-@@ -234,7 +234,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+         fi
+- 
++
+         for TEST_PATH in $sieveprefixes; do
+ 	    TEST_PATH="$TEST_PATH/include"
              SAVE_CFLAGS=$CFLAGS
- 	    dnl The headers might be in a funny place, so we need to use -Ipath
-             CFLAGS="$CFLAGS -L$TEST_PATH $LDAPINC"
--            AC_CHECK_HEADERS([ldap.h],[LDAPLIB="-L$TEST_PATH -lldap"], [LDAPLIB="failed"])
-+            AC_CHECK_HEADERS([ldap.h],[LDAPLIB="-L$TEST_PATH -lldap_r"], [LDAPLIB="failed"])
-             CFLAGS=$SAVE_CFLAGS
-             if test [ "x$LDAPLIB" != "xfailed" ]; then
-                 break 2
-@@ -248,7 +248,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
-         AC_MSG_ERROR([Could not find LDAP library.])
-     else
-         AC_DEFINE([AUTHLDAP], 1, [Define if LDAP will be used.])
--        AC_SEARCH_LIBS(ldap_initialize, ldap, AC_DEFINE([HAVE_LDAP_INITIALIZE], 1, [ldap_initialize() can be used instead of ldap_init()]))
-+        AC_SEARCH_LIBS(ldap_initialize, ldap_r, AC_DEFINE([HAVE_LDAP_INITIALIZE], 1, [ldap_initialize() can be used instead of ldap_init()]))
-         AC_SUBST(LDAPLIB)
-         AC_SUBST(LDAPINC)
-         AUTHALIB="modules/.libs/libauth_ldap.a"
-@@ -334,7 +334,7 @@ AC_DEFUN([DM_CHECK_EVENT], [
+@@ -120,7 +120,7 @@ if test [ "x$lookforsieve" != "xno" ]; then
+ 
+     AC_MSG_CHECKING([for libSieve libraries])
+     STOP_LOOKING_FOR_SIEVE=""
+-    while test [ -z $STOP_LOOKING_FOR_SIEVE ]; do 
++    while test [ -z $STOP_LOOKING_FOR_SIEVE ]; do
+ 
+         if test [ "x$lookforsieve" = "xyes" ]; then
+             DM_SIEVE_LIB([SIEVELIB="-lsieve"], [SIEVELIB="failed"])
+@@ -128,7 +128,7 @@ if test [ "x$lookforsieve" != "xno" ]; then
+                 break
+             fi
+         fi
+- 
++
+         for TEST_PATH in $sieveprefixes; do
+ 	    TEST_PATH="$TEST_PATH/lib"
+             SAVE_CFLAGS=$CFLAGS
+@@ -186,7 +186,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+     fi
+ 
+     STOP_LOOKING_FOR_LDAP=""
+-    while test [ -z $STOP_LOOKING_FOR_LDAP ]; do 
++    while test [ -z $STOP_LOOKING_FOR_LDAP ]; do
+ 
+         dnl See if we already have the paths we need in the environment.
+ 	dnl ...but only if --with-ldap was given without a specific path.
+@@ -196,7 +196,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+                 break
+             fi
+         fi
+- 
++
+         dnl Explicitly test paths from --with-ldap or configure.in
+         for TEST_PATH in $ldapprefixes; do
+ 	    TEST_PATH="$TEST_PATH/include"
+@@ -217,7 +217,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+     fi
+ 
+     STOP_LOOKING_FOR_LDAP=""
+-    while test [ -z $STOP_LOOKING_FOR_LDAP ]; do 
++    while test [ -z $STOP_LOOKING_FOR_LDAP ]; do
+ 
+         dnl See if we already have the paths we need in the environment.
+ 	dnl ...but only if --with-ldap was given without a specific path.
+@@ -227,7 +227,7 @@ if ( test [ "x$lookforldap" != "xno" ] || test [ "x$lo
+                 break
+             fi
+         fi
+- 
++
+         dnl Explicitly test paths from --with-ldap or configure.in
+         for TEST_PATH in $ldapprefixes; do
+ 	    TEST_PATH="$TEST_PATH/lib"
+@@ -261,14 +261,14 @@ AC_DEFUN([DM_CHECK_JEMALLOC], [dnl
+ 	AC_ARG_WITH(jemalloc,[  --with-jemalloc=PATH	  path to libjemalloc base directory (e.g. /usr/local or /usr)],
+ 		[lookforjemalloc="$withval"],[lookforjemalloc="yes"])
+ 	if test [ "x$lookforjemalloc" != "xno" ] ; then
+-		if test [ "x$lookforjemalloc" = "xyes" ] ; then 
++		if test [ "x$lookforjemalloc" = "xyes" ] ; then
+ 			CFLAGS="$CFLAGS -I${ac_default_prefix}/include/jemalloc -I/usr/include/jemalloc"
+ 		else
+ 			CFLAGS="$CFLAGS -I${lookforjemalloc}/include/jemalloc"
+ 		fi
+ 	fi
+ 	AC_CHECK_HEADERS([jemalloc.h],
+-		[JEMALLOCLIB="-ljemalloc"], 
++		[JEMALLOCLIB="-ljemalloc"],
+ 		[JEMALLOCLIB="no"],
+ 	[[
+ #include <jemalloc.h>
+@@ -288,7 +288,7 @@ AC_DEFUN([DM_CHECK_ZDB], [dnl
+ 		CFLAGS="$CFLAGS -I${lookforzdb}/include/zdb"
+ 	fi
+ 	AC_CHECK_HEADERS([zdb.h],
+-		[ZDBLIB="-lzdb"], 
++		[ZDBLIB="-lzdb"],
+ 		[ZDBLIB="failed"],
+ 	[[
+          #include <zdb.h>
+@@ -334,7 +334,7 @@ AC_DEFUN([DM_CHECK_SSL], [
  
  AC_DEFUN([DM_CHECK_SSL], [
  	AC_CHECK_HEADERS([openssl/ssl.h],
@@ -36,7 +116,34 @@
  	if test [ "x$SSLLIB" = "xfailed" ]; then
  		AC_MSG_ERROR([Could not find OPENSSL library.])
  	else
-@@ -544,15 +544,15 @@ AC_DEFUN([CMU_SOCKETS], [
+@@ -389,7 +389,7 @@ else
+ 		AC_MSG_RESULT([no])
+ 		AC_MSG_ERROR([Unable to locate glib development files])
+ 	fi
+- 
++
+ 	CFLAGS="$CFLAGS $ac_glib_cflags"
+ 	AC_MSG_RESULT([$ac_glib_cflags])
+         AC_MSG_CHECKING([Glib libraries])
+@@ -428,7 +428,7 @@ else
+ 		CFLAGS="$CFLAGS $ac_gmime_cflags"
+ 		AC_MSG_RESULT([$ac_gmime_cflags])
+ 	fi
+-	
++
+         AC_MSG_CHECKING([GMime libraries])
+ 	ac_gmime_libs=`${gmimeconfig} --libs gmime-3.0 2>/dev/null|| ${gmimeconfig} --libs gmime-3.0 2>/dev/null`
+ 	if test -z "$ac_gmime_libs"
+@@ -447,7 +447,7 @@ AC_DEFUN([DM_PATH_CHECK],[dnl
+   [  --with-check=PATH       prefix where check is installed [default=auto]],
+   [test x"$with_check" = xno && with_check="no"],
+   [with_check="no"])
+-  
++
+ if test "x$with_check" != xno; then
+ 	AC_PATH_PROG(checkconfig,pkg-config)
+ 	if test [ -z "$checkconfig" ]
+@@ -546,15 +546,15 @@ AC_DEFUN([CMU_SOCKETS], [
  	save_LIBS="$LIBS"
  	SOCKETLIB=""
  	AC_CHECK_FUNC(connect, :,
@@ -54,7 +161,31 @@
 -                AC_CHECK_LIB(resolv, res_search,
 -                              SOCKETLIB="-lresolv $SOCKETLIB") 
 +                AC_CHECK_LIB(c, res_search,
-+                              SOCKETLIB="-lc $SOCKETLIB") 
++                              SOCKETLIB="-lc $SOCKETLIB")
          )
  	LIBS="$SOCKETLIB $save_LIBS"
  	AC_CHECK_FUNCS(dn_expand dns_lookup)
+@@ -592,19 +592,19 @@ AC_DEFUN([DM_UPGRADE_STEPS], [dnl
+ 	PGSQL_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/postgresql/upgrades/32004.psql`
+ 	MYSQL_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/mysql/upgrades/32004.mysql`
+ 	SQLITE_32004=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/sqlite/upgrades/32004.sqlite`
+-	
++
+ 	AC_SUBST(PGSQL_32004)
+ 	AC_SUBST(MYSQL_32004)
+ 	AC_SUBST(SQLITE_32004)
+-	
++
+ 	PGSQL_32005=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/postgresql/upgrades/32005.psql`
+ 	MYSQL_32005=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/mysql/upgrades/32005.mysql`
+ 	SQLITE_32005=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/sqlite/upgrades/32005.sqlite`
+-	
++
+ 	AC_SUBST(PGSQL_32005)
+ 	AC_SUBST(MYSQL_32005)
+ 	AC_SUBST(SQLITE_32005)
+-	
++
+ 	PGSQL_32006=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/postgresql/upgrades/32006.psql`
+ 	MYSQL_32006=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/mysql/upgrades/32006.mysql`
+ 	SQLITE_32006=`sed -e 's/\"/\\\"/g' -e 's/^/\"/' -e 's/$/\\\n\"/' -e '$!s/$/ \\\\/'  sql/sqlite/upgrades/32006.sqlite`

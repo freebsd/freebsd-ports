@@ -1,5 +1,6 @@
 PORTNAME=	hplip
-PORTVERSION=	3.22.4
+PORTVERSION=	3.23.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	cups-filters>=0:print/cups-filters \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.0.1:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
-USES=		dos2unix jpeg libtool localbase pkgconfig python:3.6+ \
+USES=		dos2unix jpeg libtool localbase pkgconfig python \
 		shebangfix
 USE_LDCONFIG=	yes
 
@@ -119,9 +120,5 @@ post-install-X11-on:
 	${LN} ${STAGEDIR}${DATADIR}/data/images/${s}x${s}/hp_logo.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 .endfor
-
-post-install-X11-off:
-	${RMDIR} ${STAGEDIR}${DATADIR}/data/images/* \
-		${STAGEDIR}${DATADIR}/data/images
 
 .include <bsd.port.mk>

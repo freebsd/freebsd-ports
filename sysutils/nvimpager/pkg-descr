@@ -1,4 +1,4 @@
-Using neovim as a pager to view man pages, git diffs, whatnot with neovim's
+Use neovim as a pager to view man pages, git diffs, and whatnot with neovim's
 syntax highlighting and mouse support.
 
 The script also has a "cat mode" which will not start up the neovim interface

@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/config/freetype/freetype.gni.orig	2019-03-18 08:59:45 UTC
-+++ core/Common/3dParty/v8/v8/build/config/freetype/freetype.gni
+--- core/Common/3dParty/v8_89/v8/build/config/freetype/freetype.gni.orig	2019-03-18 08:59:45 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/freetype/freetype.gni
 @@ -10,5 +10,5 @@ declare_args() {
    # than version 2.7.1 and have color bitmap support compiled in. WARNING:
    # System FreeType configurations other than as described WILL INTRODUCE TEXT

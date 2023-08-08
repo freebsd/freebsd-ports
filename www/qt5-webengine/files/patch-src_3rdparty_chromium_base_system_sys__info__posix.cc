@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/base/system/sys_info_posix.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_posix.cc
-@@ -220,6 +220,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -223,6 +223,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

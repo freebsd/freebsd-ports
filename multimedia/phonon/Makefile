@@ -32,4 +32,10 @@ PULSEAUDIO_USES=	gnome
 PULSEAUDIO_USE=		GNOME=glib20
 PULSEAUDIO_CMAKE_BOOL=	WITH_PulseAudio
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
+
+.include <bsd.port.post.mk>

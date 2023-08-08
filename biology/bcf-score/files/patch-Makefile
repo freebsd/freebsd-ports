@@ -1,0 +1,33 @@
+--- Makefile.orig	2021-03-17 09:16:18 UTC
++++ Makefile
+@@ -58,13 +58,14 @@ pluginpath  = $(plugindir)
+ # Installation location for $(MISC_PROGRAMS) and $(MISC_SCRIPTS)
+ misc_bindir = $(bindir)
+ 
+-MKDIR_P = mkdir -p
+-INSTALL = install -p
+-INSTALL_DATA    = $(INSTALL) -m 644
+-INSTALL_DIR     = $(MKDIR_P) -m 755
+-INSTALL_MAN     = $(INSTALL_DATA)
+-INSTALL_PROGRAM = $(INSTALL)
+-INSTALL_SCRIPT  = $(INSTALL_PROGRAM)
++# Use BSD_INSTALL_PROGRAM to strip when WITH_DEBUG not set
++MKDIR_P 	= mkdir -p
++INSTALL 	= install -p
++INSTALL_DATA    = ${BSD_INSTALL_DATA}
++INSTALL_DIR     = $(MKDIR_P)
++INSTALL_MAN     = ${BSD_INSTALL_MAN}
++INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
++INSTALL_SCRIPT  = ${BSD_INSTALL_SCRIPT}
+ 
+ PROGRAMS = bcftools
+ MISC_SCRIPTS = \
+@@ -142,7 +143,7 @@ print-version:
+ ifdef USE_GPL
+     main.o : EXTRA_CPPFLAGS += -DUSE_GPL
+     OBJS += polysomy.o peakfit.o
+-    GSL_LIBS ?= -lgsl -lcblas
++    GSL_LIBS ?= -lgslcblas
+ endif
+ 
+ print-%:

@@ -1,7 +1,6 @@
 PORTNAME=	with-editor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.0
-PORTREVISION=	3
+DISTVERSION=	3.3.0
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,10 +11,15 @@ WWW=		https://github.com/magit/with-editor
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR}
+
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
+MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat"
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	lisp info
 
 CONFLICTS_INSTALL=	with-editor-devel-emacs*
@@ -26,7 +30,7 @@ INFO=		with-editor
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/with-editor-autoloads.el \
 		${EMACS_VERSION_SITE_LISPDIR}/with-editor.el \
 		${EMACS_VERSION_SITE_LISPDIR}/with-editor.elc
-PORTDOCS=	AUTHORS.md README.md with-editor.html
+PORTDOCS=	README.org with-editor.html
 
 OPTIONS_DEFINE=	DOCS PDF
 
@@ -36,6 +40,7 @@ DOCS_BUILD_DEPENDS=	gsed:textproc/gsed
 DOCS_ALL_TARGET=	html
 DOCS_BINARY_ALIAS=	sed=gsed
 PDF_BUILD_DEPENDS=	texi2pdf:print/texinfo
+PDF_USES=		tex
 PDF_USE=		TEX=dvipdfmx:build
 PDF_ALL_TARGET=		pdf
 PDF_PLIST_FILES=	${DOCSDIR}/with-editor.pdf
@@ -48,7 +53,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/docs/AUTHORS.md \
+	${INSTALL_DATA} ${WRKSRC}/README.org \
 		${WRKSRC}/docs/with-editor.html ${STAGEDIR}${DOCSDIR}
 
 do-install-PDF-on:

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-omniauth>=1.0<3.0:security/rubygem-omniauth \
 		rubygem-rack-openid>=1.4.0<1.5:www/rubygem-rack-openid
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

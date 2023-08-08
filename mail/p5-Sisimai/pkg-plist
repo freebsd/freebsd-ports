@@ -112,6 +112,8 @@
 %%SITE_PERL%%/Sisimai/Rhost/GoogleApps.pm
 %%SITE_PERL%%/Sisimai/Rhost/IUA.pm
 %%SITE_PERL%%/Sisimai/Rhost/KDDI.pm
+%%SITE_PERL%%/Sisimai/Rhost/Mimecast.pm
+%%SITE_PERL%%/Sisimai/Rhost/NTTDOCOMO.pm
 %%SITE_PERL%%/Sisimai/Rhost/Spectrum.pm
 %%SITE_PERL%%/Sisimai/Rhost/TencentQQ.pm
 %%SITE_PERL%%/Sisimai/SMTP.pm
@@ -234,6 +236,8 @@
 %%PERL5_MAN3%%/Sisimai::Rhost::GoogleApps.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::IUA.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::KDDI.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::Mimecast.3.gz
+%%PERL5_MAN3%%/Sisimai::Rhost::NTTDOCOMO.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::Spectrum.3.gz
 %%PERL5_MAN3%%/Sisimai::Rhost::TencentQQ.3.gz
 %%PERL5_MAN3%%/Sisimai::SMTP.3.gz

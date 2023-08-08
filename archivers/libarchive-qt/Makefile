@@ -15,6 +15,6 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	marcusbritanicus
-GL_COMMIT=	9863127fb8dda7242215c09efbc976193365fee4
+GL_TAGNAME=	9863127fb8dda7242215c09efbc976193365fee4
 
 .include <bsd.port.mk>

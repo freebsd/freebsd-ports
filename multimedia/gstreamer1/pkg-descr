@@ -16,5 +16,5 @@ the license of the code they were derived from, usually GPL or BSD.
 No, GStreamer is a development framework for creating applications
 like media players, video editors, streaming media broadcasters and
 so on. That said, very good media players can easily be built on
-top of GStreamer and we even include a simple yet functional
-mediaplayer with GStreamer called Gst-Player
+top of GStreamer and a simple yet functional player gst-play is
+included in the framework via the plugins port.

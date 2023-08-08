@@ -31,8 +31,6 @@ man/man1/recinf.1.gz
 man/man1/recins.1.gz
 man/man1/recsel.1.gz
 man/man1/recset.1.gz
-share/emacs/site-lisp/ob-rec.el
-share/emacs/site-lisp/rec-mode.el
 %%NLS%%share/locale/de/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/recutils.mo

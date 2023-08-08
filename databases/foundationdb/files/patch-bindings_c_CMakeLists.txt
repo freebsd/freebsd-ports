@@ -1,6 +1,6 @@
---- bindings/c/CMakeLists.txt.orig	2021-12-29 13:15:46 UTC
+--- bindings/c/CMakeLists.txt.orig	2022-09-19 11:42:41 UTC
 +++ bindings/c/CMakeLists.txt
-@@ -65,7 +65,7 @@ if(WIN32)
+@@ -78,7 +78,7 @@ endif()
  endif()
  
  # The tests don't build on windows

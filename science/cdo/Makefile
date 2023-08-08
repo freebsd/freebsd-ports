@@ -1,15 +1,16 @@
 PORTNAME=	cdo
-PORTVERSION=	2.0.6
+PORTVERSION=	2.2.0
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27276/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/28013/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
 WWW=		https://code.mpimet.mpg.de/projects/cdo
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
 OPTIONS_DEFAULT=CGRIBEX ECCODES HDF5 JASPER NETCDF PROJ SZIP UDUNITS UUID
@@ -22,7 +23,7 @@ UUID_DESC=	UUID support
 
 PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
 
-USES=		compiler:c++17-lang gmake libtool localbase pathfix
+USES=		compiler:c++17-lang gmake libtool localbase pathfix python:build
 
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
@@ -33,6 +34,7 @@ CONFIGURE_ARGS=	--disable-data \
 		--enable-cdi-lib \
 		--program-transform-name="" \
 		--with-zlib=/usr
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes

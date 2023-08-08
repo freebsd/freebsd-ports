@@ -1,0 +1,4 @@
+typeshare is
+* tool to rule the types
+* tool to FFI them
+* tool to parse your Rust

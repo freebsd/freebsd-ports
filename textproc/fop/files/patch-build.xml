@@ -1,6 +1,6 @@
 This patch reverts FOP-2895 to avoid dependency on maven.
 
---- fop/build.xml.orig	2021-01-12 12:15:02 UTC
+--- fop/build.xml	2022-11-02
 +++ fop/build.xml
 @@ -207,7 +207,7 @@ list of possible build targets.
    <property name="lib.dir" value="${basedir}/lib"/>
@@ -80,7 +80,7 @@ This patch reverts FOP-2895 to avoid dependency on maven.
    <fileset dir="${build.classes.dir}" id="transcoder-classes-files">
      <patternset refid="transcoder-classes"/>
    </fileset>
-@@ -623,28 +676,60 @@ list of possible build targets.
+@@ -623,30 +676,60 @@ list of possible build targets.
      <os family="unix" />
    </condition>
    
@@ -92,6 +92,7 @@ This patch reverts FOP-2895 to avoid dependency on maven.
 -      <arg value="clean"/>
 -      <arg value="install"/>
 -      <arg value="-DskipTests"/>
+-      <arg value="-U"/>
 -    </exec>	
 -    <copy file="${basedir}/../fop-transcoder/target/fop-transcoder-${version}.jar" tofile="${build.dir}/fop-transcoder.jar"/>
 -    <copy file="${basedir}/../fop-transcoder-allinone/target/fop-transcoder-allinone-${version}.jar" tofile="${build.dir}/fop-transcoder-allinone.jar"/>
@@ -108,6 +109,7 @@ This patch reverts FOP-2895 to avoid dependency on maven.
 -      <arg value="clean"/>
 -      <arg value="install"/>
 -      <arg value="-DskipTests"/>
+-      <arg value="-U"/>
 -    </exec>
 -    <copy file="${basedir}/../fop-transcoder/target/fop-transcoder-${version}.jar" tofile="${build.dir}/fop-transcoder.jar"/>
 -    <copy file="${basedir}/../fop-transcoder-allinone/target/fop-transcoder-allinone-${version}.jar" tofile="${build.dir}/fop-transcoder-allinone.jar"/>

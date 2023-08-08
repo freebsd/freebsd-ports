@@ -1,4 +1,4 @@
---- Makefile.rules.orig	2022-08-18 15:18:29 UTC
+--- Makefile.rules.orig	2023-01-12 11:42:40 UTC
 +++ Makefile.rules
 @@ -107,6 +107,11 @@ ifeq ($(C_COMPILER_FAMILY),clang)
  # Clang -Werror warning suppressions
@@ -16,12 +16,12 @@
  # extern const size_t _binary_abc_def_xml_size;
  %.o: %.xml
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
--	$(CMD_PREFIX) $(CC) -g -nostartfiles  -nodefaultlibs -nostdlib -r -Wl,-b,binary -o $@ $^
-+	$(CMD_PREFIX) $(CC) -g -nostartfiles  -nodefaultlibs -nostdlib $(BINARY_LLD_FLAGS) -r -Wl,-b,binary,-m,$(LLD_EMULATION) -o $@ $^
+-	$(CMD_PREFIX) $(CC) -g -Wl,-znoexecstack -nostartfiles  -nodefaultlibs -nostdlib -r -Wl,-b,binary -o $@ $^
++	$(CMD_PREFIX) $(CC) -g -Wl,-znoexecstack -nostartfiles  -nodefaultlibs -nostdlib $(BINARY_LLD_FLAGS) -r -Wl,-b,binary,-m,$(LLD_EMULATION) -o $@ $^
  
  %.o: %.xslt
  	$(ECHO_PREFIX) echo "   [LD] $^ -> $@"
--	$(CMD_PREFIX) $(CC) -g -nostartfiles  -nodefaultlibs -nostdlib -r -Wl,-b,binary -o $@ $^
-+	$(CMD_PREFIX) $(CC) -g -nostartfiles  -nodefaultlibs -nostdlib $(BINARY_LLD_FLAGS) -r -Wl,-b,binary,-m,$(LLD_EMULATION) -o $@ $^
+-	$(CMD_PREFIX) $(CC) -g -Wl,-znoexecstack -nostartfiles  -nodefaultlibs -nostdlib -r -Wl,-b,binary -o $@ $^
++	$(CMD_PREFIX) $(CC) -g -Wl,-znoexecstack -nostartfiles  -nodefaultlibs -nostdlib $(BINARY_LLD_FLAGS) -r -Wl,-b,binary,-m,$(LLD_EMULATION) -o $@ $^
  
  dist-clean:: clean

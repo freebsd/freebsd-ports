@@ -1,6 +1,6 @@
---- getc_putc_helper.cpp.orig	2009-07-03 04:26:05.000000000 +0200
-+++ getc_putc_helper.cpp	2019-09-05 12:09:25.707876000 +0200
-@@ -45,7 +45,7 @@
+--- getc_putc_helper.cpp.orig	2009-07-03 02:26:05 UTC
++++ getc_putc_helper.cpp
+@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
      return 1;
    }
    fflush(NULL);

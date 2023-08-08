@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-babel-source>=4.0:textproc/rubygem-babel-source \
 		rubygem-execjs>=2.0:devel/rubygem-execjs
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

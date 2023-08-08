@@ -2,6 +2,7 @@ PORTNAME=	invada-studio-plugins
 DISTVERSIONPREFIX=	lv2_
 DISTVERSION=	1.2.0
 DISTVERSIONSUFFIX=	-nopkg
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://launchpad.net/invada-studio/lv2/1.2/+download/
 PKGNAMESUFFIX=	-lv2

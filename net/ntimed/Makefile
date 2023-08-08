@@ -3,7 +3,7 @@ PORTVERSION=	0.0.2015.01.30
 PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network time synchronization client
 WWW=		https://github.com/bsdphk/Ntimed
 

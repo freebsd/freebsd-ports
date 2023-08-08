@@ -1,5 +1,5 @@
 PORTNAME=	zephir
-DISTVERSION=	0.16.0
+DISTVERSION=	0.17.0
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/zephir-lang/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.phar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	cmcdonald@netgate.com
+MAINTAINER=	rcm@rcm.sh
 COMMENT=	Zephir is a transpiled language used for creating C-extensions for PHP
 WWW=		https://github.com/zephir-lang/zephir
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	re2c>0:devel/re2c
 
 USES=		php:cli,flavors
 USE_PHP=	dom filter iconv phar xml zephir_parser zlib
-IGNORE_WITH_PHP=	82
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -1,8 +1,6 @@
 PORTNAME=	cmake
-DISTVERSION=	3.24.0
+DISTVERSION=	${_CMAKE_VERSION}
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}/ \
-		https://www.cmake.org/files/v${DISTVERSION}/
 PKGNAMESUFFIX=	-man
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,6 +8,8 @@ COMMENT=	Manual pages for CMake
 WWW=		https://www.cmake.org/
 
 LICENSE=	BSD3CLAUSE
+
+DISTINFO_FILE=	${.CURDIR}/../cmake-core/distinfo
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
 

@@ -1,6 +1,6 @@
 PORTNAME=	paje
 PORTVERSION=	1.97
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	science gnustep
 MASTER_SITES=	SF/${PORTNAME}/Releases
 DISTNAME=	Paje_${PORTVERSION}
@@ -16,6 +16,12 @@ USES=		gnustep
 USE_GNUSTEP=	gui base back build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \

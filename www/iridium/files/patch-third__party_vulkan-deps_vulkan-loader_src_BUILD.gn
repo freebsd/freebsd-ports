@@ -1,6 +1,6 @@
---- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2022-03-28 18:11:04 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2023-07-24 14:27:53 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
-@@ -61,7 +61,7 @@ config("vulkan_internal_config") {
+@@ -59,7 +59,7 @@ config("vulkan_internal_config") {
      defines += [
        "SYSCONFDIR=\"/etc\"",
        "FALLBACK_CONFIG_DIRS=\"/etc/xdg\"",
@@ -8,4 +8,4 @@
 +      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
      ]
    }
- }
+   if (!vulkan_loader_shared) {

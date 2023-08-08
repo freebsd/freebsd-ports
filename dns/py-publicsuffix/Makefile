@@ -1,8 +1,8 @@
 PORTNAME=	publicsuffix
 PORTVERSION=	1.1.0
-PORTREVISION=	56
+PORTREVISION=	66
 CATEGORIES=	dns python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	d.pryadko@rambler-co.ru
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

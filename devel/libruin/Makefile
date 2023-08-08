@@ -1,6 +1,6 @@
 PORTNAME=	libruin
 PORTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
 
@@ -14,14 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NOT_FOR_ARCHS=	mips
 NOT_FOR_ARCHS_REASON=	glib needs GCC (not available for mips)
 
-BUILD_DEPENDS=	guile-lib>0:devel/guile-lib
-LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
-		libgc-threaded.so:devel/boehm-gc-threaded
-RUN_DEPENDS=	guile-lib>0:devel/guile-lib
+BUILD_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
+RUN_DEPENDS=	guile-lib-${GUILE_FLAVOR}>0:devel/guile-lib@${GUILE_FLAVOR}
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		gnome libtool ncurses pkgconfig
+USES=		gnome guile:2.2,alias libtool ncurses pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

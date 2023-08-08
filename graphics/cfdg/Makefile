@@ -1,12 +1,12 @@
 PORTNAME=	cfdg
-PORTVERSION=	3.3
+DISTVERSION=	3.4.1
 PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
-DISTNAME=	ContextFreeSource${PORTVERSION}
+DISTNAME=	ContextFreeSource${DISTVERSION}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Context Free Design Grammar compiler
 WWW=		https://www.contextfreeart.org/
 
@@ -20,7 +20,13 @@ USES=		bison gmake tar:xz
 MAKE_ARGS=	prefix=${PREFIX} \
 		DESTDIR=${STAGEDIR}
 TEST_TARGET=	check
-NO_WRKSUBDIR=	yes
+CXXFLAGS+=	-Wno-register
+
+# graphics/agg cannot be unbundled: version in ports too outdated
+# furthermore, its header files conflict with the headers bundled by cfdg
+CONFLICTS_BUILD=	agg
+
+WRKSRC=		${WRKDIR}/context-free${DISTVERSION}
 PLIST_FILES=	bin/cfdg \
 		share/man/man1/cfdg.1.gz
 
@@ -33,7 +39,7 @@ FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 FFMPEG_MAKE_ARGS=	WANT_FFMPEG=yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/Makefile
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

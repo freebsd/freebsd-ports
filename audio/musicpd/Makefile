@@ -1,5 +1,5 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.23.9
+PORTVERSION=	0.23.13
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -19,7 +19,7 @@ USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
 		python:build tar:xz
 
 USE_RC_SUBR=	${PORTNAME}
-MESON_ARGS=	-Dauto_features=disabled \
+MESON_ARGS=	--auto-features=disabled \
 		-Dbzip2=enabled \
 		-Dhttpd=true \
 		-Dicu=enabled \
@@ -65,7 +65,6 @@ ISO9660_DESC=	Direct support for ISO 9660 images
 PROXYDB_DESC=	Proxy database support via libmpdclient
 LAME_DESC=	Support for MP3 Icecast Streams
 OPENMPT_DESC=	Support for OpenMPT playback
-PIPEWIRE_DESC=	PipeWire support
 PLAYLISTS_DESC=	Enable extra playlist support (wma, RSS)
 QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY_DESC=	Sidplay support (C64 mono and stereo files)
@@ -78,7 +77,8 @@ YAJL_DESC=	JSON support via libyajl
 ZZIP_DESC=	Support for zzip archives
 
 OPTIONS_DEFAULT=CURL FFMPEG FLAC ID3TAG LAME MANPAGES OPUS \
-		PLAYLISTS PROXYDB SNDFILE VORBIS VORBISENC
+		PLAYLISTS PROXYDB SNDFILE VORBIS VORBISENC \
+		WAVPACK
 
 MANPAGES_MESON_ENABLED=	documentation
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
@@ -167,7 +167,7 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 # Input plugins
 CDPARANOIA_MESON_ENABLED=	cdio_paranoia
 CDPARANOIA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
-CURL_MESON_ENABLED=	curl
+CURL_MESON_ENABLED=	curl webdav
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 SMB_MESON_ENABLED=	smbclient
 SMB_USES=		samba:lib

@@ -1,0 +1,56 @@
+#!/bin/sh
+
+# PROVIDE: xapsd
+# REQUIRE: DAEMON NETWORKING
+# BEFORE: mail
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/xapsd to enable this service:
+#
+#  xapsd_enable (bool):	        Set to NO by default.
+#                               Set it to "YES" to enable xapsd.
+#  xapsd_flags (str):		Optional extra flags to pass.
+#                               Empty by default.
+#  xapsd_user (string):         User to run xapsd as
+#                               Set to "xapsd" by default.
+#  xapsd_group (string):        Group to run xapsd as
+#                               Set to "xapsd" by default.
+
+. /etc/rc.subr
+
+name=xapsd
+rcvar=xapsd_enable
+start_precmd="${name}_precmd"
+
+load_rc_config $name
+
+: ${xapsd_enable:="NO"}
+: ${xapsd_flags:=""}
+: ${xapsd_user:="xapsd"}
+: ${xapsd_group:="xapsd"}
+
+pidfile="/var/run/${name}/${name}.pid"
+procname="%%PREFIX%%/sbin/${name}"
+command="/usr/sbin/daemon"
+command_args="-m 3 -t ${name} -T ${name} -p ${pidfile} -c -f -S -u ${xapsd_user} ${procname} -configPath %%PREFIX%%/etc/xapsd ${xapsd_flags}"
+
+required_files=%%PREFIX%%/etc/xapsd/xapsd.yaml
+
+start_cmd=xapsd_start
+
+xapsd_precmd() {
+	/usr/bin/install -d -m 0755 -o ${xapsd_user} /var/run/${name}
+	dbdir=$(/usr/bin/dirname `awk '/^databaseFile/ {print $2}' %%PREFIX%%/etc/xapsd/xapsd.yaml`)
+	if [ ! -d ${dbdir} ]; then
+		install -d -o ${xapsd_user} -g ${xapsd_group} ${dbdir};
+	fi
+}
+
+xapsd_start() {
+	echo "Starting xapsd."
+	umask 007
+	${command} ${command_args}
+}
+
+run_rc_command "$1"

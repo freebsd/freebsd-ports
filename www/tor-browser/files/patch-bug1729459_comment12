@@ -1,0 +1,93 @@
+--- modules/fdlibm/src/math_private.h.orig	2021-09-30 19:32:33.764224000 +0200
++++ modules/fdlibm/src/math_private.h	2021-10-02 22:15:33.265122000 +0200
+@@ -30,7 +30,11 @@
+  * Adapted from https://github.com/freebsd/freebsd-src/search?q=__double_t
+  */
+ 
+-typedef double      __double_t;
++#ifdef __LP64__
++typedef double __double_t;
++#else
++typedef long double __double_t;
++#endif
+ typedef __double_t  double_t;
+ 
+ /*
+@@ -630,7 +634,37 @@
+ 	return ((double)(x + 0x1.8p52) - 0x1.8p52);
+ }
+ 
++static inline float
++rnintf(__float_t x)
++{
++	/*
++	 * As for rnint(), except we could just call that to handle the
++	 * extra precision case, usually without losing efficiency.
++	 */
++	return ((float)(x + 0x1.8p23F) - 0x1.8p23F);
++}
++
++#ifdef LDBL_MANT_DIG
+ /*
++ * The complications for extra precision are smaller for rnintl() since it
++ * can safely assume that the rounding precision has been increased from
++ * its default to FP_PE on x86.  We don't exploit that here to get small
++ * optimizations from limiting the rangle to double.  We just need it for
++ * the magic number to work with long doubles.  ld128 callers should use
++ * rnint() instead of this if possible.  ld80 callers should prefer
++ * rnintl() since for amd64 this avoids swapping the register set, while
++ * for i386 it makes no difference (assuming FP_PE), and for other arches
++ * it makes little difference.
++ */
++static inline long double
++rnintl(long double x)
++{
++	return (x + __CONCAT(0x1.8p, LDBL_MANT_DIG) / 2 -
++		__CONCAT(0x1.8p, LDBL_MANT_DIG) / 2);
++}
++#endif /* LDBL_MANT_DIG */
++
++/*
+  * irint() and i64rint() give the same result as casting to their integer
+  * return type provided their arg is a floating point integer.  They can
+  * sometimes be more efficient because no rounding is required.
+@@ -644,6 +678,39 @@
+     sizeof(x) == sizeof(long double) ? irintl(x) : (int)(x))
+ #else
+ #define	irint(x)	((int)(x))
++#endif
++
++#define	i64rint(x)	((int64_t)(x))	/* only needed for ld128 so not opt. */
++
++#if defined(__i386__) && defined(__GNUCLIKE_ASM)
++static __inline int
++irintf(float x)
++{
++	int n;
++
++	__asm("fistl %0" : "=m" (n) : "t" (x));
++	return (n);
++}
++
++static __inline int
++irintd(double x)
++{
++	int n;
++
++	__asm("fistl %0" : "=m" (n) : "t" (x));
++	return (n);
++}
++#endif
++
++#if (defined(__amd64__) || defined(__i386__)) && defined(__GNUCLIKE_ASM)
++static __inline int
++irintl(long double x)
++{
++	int n;
++
++	__asm("fistl %0" : "=m" (n) : "t" (x));
++	return (n);
++}
+ #endif
+ 
+ #ifdef DEBUG

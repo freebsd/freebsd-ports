@@ -81,6 +81,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/translations/translation.nl.txt
 %%WWWDIR%%/translations/translation.pl.txt
 %%WWWDIR%%/translations/translation.ru.txt
+%%WWWDIR%%/translations/translation.sk.txt
 %%WWWDIR%%/translations/translations-body.xml
 %%WWWDIR%%/translations/translations-head.xml
 %%WWWDIR%%/translations/translations-tail.xml
@@ -958,6 +959,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/%%WWWDIR%%/router.html.nl
 %%WWWDIR%%/%%WWWDIR%%/router.html.pl
 %%WWWDIR%%/%%WWWDIR%%/router.html.ru
+%%WWWDIR%%/%%WWWDIR%%/router.html.sk
 %%WWWDIR%%/%%WWWDIR%%/router.leaflet.js
 %%WWWDIR%%/%%WWWDIR%%/router.openlayers.js
 %%WWWDIR%%/%%WWWDIR%%/router.openlayers2.js
@@ -980,6 +982,7 @@ lib/libroutino.so.0.0.0
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.nl
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.pl
 %%WWWDIR%%/%%WWWDIR%%/visualiser.html.ru
+%%WWWDIR%%/%%WWWDIR%%/visualiser.html.sk
 %%WWWDIR%%/%%WWWDIR%%/visualiser.leaflet.js
 %%WWWDIR%%/%%WWWDIR%%/visualiser.openlayers.js
 %%WWWDIR%%/%%WWWDIR%%/visualiser.openlayers2.js

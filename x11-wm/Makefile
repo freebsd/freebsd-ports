@@ -12,6 +12,7 @@
     SUBDIR += berry
     SUBDIR += blackbox
     SUBDIR += bspwm
+    SUBDIR += bspwm-devel
     SUBDIR += cage
     SUBDIR += cagebreak
     SUBDIR += chamfer
@@ -31,6 +32,8 @@
     SUBDIR += e16-docs
     SUBDIR += echinus
     SUBDIR += emerald
+    SUBDIR += emwm
+    SUBDIR += emwm-utils
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += euclid-wm
@@ -45,8 +48,8 @@
     SUBDIR += herbstluftwm
     SUBDIR += hikari
     SUBDIR += hs-xmonad
+    SUBDIR += hyprland
     SUBDIR += i3
-    SUBDIR += i3-gaps
     SUBDIR += icewm
     SUBDIR += ittywm
     SUBDIR += jewel
@@ -76,7 +79,6 @@
     SUBDIR += obpager
     SUBDIR += openbox
     SUBDIR += oroborus
-    SUBDIR += pager
     SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid
@@ -93,6 +95,7 @@
     SUBDIR += rubygem-uh-layout
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
+    SUBDIR += sawfish-pager
     SUBDIR += sdorfehs
     SUBDIR += selectwm
     SUBDIR += skippy-xd
@@ -101,6 +104,7 @@
     SUBDIR += subtle
     SUBDIR += sway
     SUBDIR += sway-devel
+    SUBDIR += swayfx
     SUBDIR += tinywm
     SUBDIR += transset
     SUBDIR += treewm
@@ -121,6 +125,7 @@
     SUBDIR += wmname
     SUBDIR += wmx
     SUBDIR += xcompmgr
+    SUBDIR += xdgmenumaker
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop
     SUBDIR += xfce4-panel

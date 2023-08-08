@@ -1,0 +1,8 @@
+RTFDE is a python3 library for extracting encapsulated HTML & plain
+text content from the RTF bodies of .msg files.
+
+De-encapsulation enables previously encapsulated HTML and plain
+text content to be extracted and rendered as HTML and plain text
+instead of the encapsulating RTF content. After de-encapsulation,
+the HTML and plain text should differ only minimally from the
+original HTML or plain text content.

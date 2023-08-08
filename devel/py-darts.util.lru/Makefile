@@ -1,7 +1,7 @@
 PORTNAME=	darts.util.lru
 PORTVERSION=	0.5
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/darts.util.lru/
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

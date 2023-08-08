@@ -1,5 +1,6 @@
 PORTNAME=	minidnn
 DISTVERSION=	g20200330
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

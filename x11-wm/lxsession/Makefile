@@ -1,6 +1,6 @@
 PORTNAME=	lxsession
 PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%200.5.x/
 

@@ -1,11 +1,11 @@
 PORTNAME=		krb5
-PORTVERSION=		1.20.${MIT_COMMIT_DATE}
+PORTVERSION=		1.22.${MIT_COMMIT_DATE}
 CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-devel
 .endif
-HASH=			70f61d417
-MIT_COMMIT_DATE=	2022.08.18
+HASH=			0ceab6c36
+MIT_COMMIT_DATE=	2023.07.27
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -45,7 +45,7 @@ CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb

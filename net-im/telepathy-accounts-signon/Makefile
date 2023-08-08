@@ -24,7 +24,7 @@ USE_LDCONFIG=	YES
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	0af244284e6b04c4abe5373d43bbc88a235d84aa
+GL_TAGNAME=	0af244284e6b04c4abe5373d43bbc88a235d84aa
 
 PLIST_FILES=	lib/mission-control-plugins.0/mcp-account-manager-accounts-sso.so
 

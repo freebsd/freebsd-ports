@@ -1,15 +1,15 @@
---- setup.py.orig	2021-05-03 13:00:29 UTC
+--- setup.py.orig	2022-09-19 15:51:09 UTC
 +++ setup.py
-@@ -43,8 +43,6 @@ class jq_build_ext(build_ext):
+@@ -36,8 +36,6 @@ class jq_build_ext(build_ext):
      def run(self):
-         if not os.path.exists(dependency_path(".")):
-             os.makedirs(dependency_path("."))
+         if not os.path.exists(_dep_build_path(".")):
+             os.makedirs(_dep_build_path("."))
 -        self._build_oniguruma()
 -        self._build_libjq()
          build_ext.run(self)
  
      def _build_oniguruma(self):
-@@ -103,11 +101,7 @@ jq_extension = Extension(
+@@ -87,11 +85,7 @@ jq_extension = Extension(
      "jq",
      sources=["jq.c"],
      include_dirs=[os.path.join(jq_lib_dir, "src")],

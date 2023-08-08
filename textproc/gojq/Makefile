@@ -1,10 +1,10 @@
 PORTNAME=	gojq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.8
-PORTREVISION=	2
+DISTVERSION=	0.12.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Pure Go implementation of jq
 WWW=		https://github.com/itchyny/gojq
 

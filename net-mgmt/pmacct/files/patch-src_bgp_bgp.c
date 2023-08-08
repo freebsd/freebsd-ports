@@ -1,6 +1,6 @@
---- src/bgp/bgp.c.orig	2022-05-28 08:30:21 UTC
+--- src/bgp/bgp.c.orig	2022-12-31 19:17:17 UTC
 +++ src/bgp/bgp.c
-@@ -830,9 +830,9 @@ void skinny_bgp_daemon_online()
+@@ -898,9 +898,9 @@ void skinny_bgp_daemon_online()
  		bgp_peer_close(&peers[peers_check_idx], FUNC_TYPE_BGP, FALSE, FALSE, FALSE, FALSE, NULL);
  	      }
  	      else {

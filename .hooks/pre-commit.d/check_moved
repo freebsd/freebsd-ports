@@ -3,6 +3,10 @@
 # Check that newly added MOVED lines are valid
 #
 
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
 
 moved_changed=$(git diff --name-only --cached --diff-filter=M | grep -E '^MOVED$')
 if [ $? -eq 0 ] ; then
@@ -13,9 +17,9 @@ if [ $? -eq 0 ] ; then
 
 	errors=$(PORTSDIR=${tree} Tools/scripts/MOVEDlint.awk -v lastdate="${lastdate}")
 	if [ $? -ne 0 ] ; then
-		echo -e "[pre-commit] ERROR: MOVED contains errors.\n" \
-			"                   Please apply the suggested changes:\n"
-		echo "${errors}"
+		pre_commit_error "MOVED contains errors.\n" \
+			"                  Please apply the suggested changes:\n"
+		error "${errors}"
 		exit 1
 	fi
 fi

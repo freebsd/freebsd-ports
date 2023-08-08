@@ -10,7 +10,7 @@ WWW=		https://github.com/machu/mod_amazon_proxy
 
 LIB_DEPENDS=	libapreq2.so:www/libapreq2
 
-USES=		apache:2.2+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_LIB=	${LOCALBASE}/lib -lcrypto
 

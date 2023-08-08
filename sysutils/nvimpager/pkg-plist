@@ -1,4 +1,9 @@
 bin/nvimpager
 share/man/man1/nvimpager.1.gz
-%%DATADIR%%/runtime/lua/nvimpager.lua
+%%DATADIR%%/runtime/lua/nvimpager/ansi2highlight.lua
+%%DATADIR%%/runtime/lua/nvimpager/cat.lua
+%%DATADIR%%/runtime/lua/nvimpager/init.lua
+%%DATADIR%%/runtime/lua/nvimpager/options.lua
+%%DATADIR%%/runtime/lua/nvimpager/pager.lua
+%%DATADIR%%/runtime/lua/nvimpager/util.lua
 share/zsh/site-functions/_nvimpager

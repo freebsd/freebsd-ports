@@ -2,5 +2,3 @@ MySQL is a very fast, multi-threaded, multi-user and robust SQL
 (Structured Query Language) database server.
 
 Modified to support replication using the Galera library.
-
-See also: https://www.mysql.com/

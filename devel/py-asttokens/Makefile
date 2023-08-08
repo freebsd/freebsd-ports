@@ -1,7 +1,7 @@
 PORTNAME=	asttokens
-PORTVERSION=	2.0.8
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,9 +16,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid253>=0:devel/py-astroid253@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
-USE_PYTHON=	autoplist distutils
-PYTEST_ARGS=	--ignore=tests/testdata
+USES=		python
+USE_PYTHON=	autoplist distutils pytest
+TEST_ARGS=	--ignore=tests/testdata
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

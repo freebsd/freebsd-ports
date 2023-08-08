@@ -8,17 +8,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embeddable Scheme interpreter
 WWW=		http://sam.zoy.org/projects/elk/
 
+		#libelf.so:devel/libelf
 LIB_DEPENDS=	libgdbm.so:databases/gdbm \
-		libelf.so:devel/libelf
+		libXaw.so:x11-toolkits/libXaw
 
-USES=		libtool motif tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		libtool localbase:ldflags motif tar:bzip2 xorg
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+USE_XORG=	ice sm x11 xext xmu xt
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
+
 MAKE_JOBS_UNSAFE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include/libelf
 
 OPTIONS_DEFINE=	EXAMPLES
 
@@ -26,6 +31,10 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .if ${ARCH} == "amd64"
 CFLAGS=		-O0
+.endif
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:

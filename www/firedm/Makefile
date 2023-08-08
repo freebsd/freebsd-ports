@@ -1,5 +1,6 @@
 PORTNAME=	firedm
 PORTVERSION=	2022.2.5
+PORTREVISION=	1
 CATEGORIES=	www net python
 
 MAINTAINER=	danfe@FreeBSD.org

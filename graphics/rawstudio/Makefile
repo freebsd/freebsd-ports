@@ -1,10 +1,10 @@
 PORTNAME=	rawstudio
 PORTVERSION=	2.0
-PORTREVISION=	22
+PORTREVISION=	25
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawstudio.org/files/release/
 
-MAINTAINER=	samm@os2.kiev.ua
+MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Open-source program to read and manipulate RAW photo images
 WWW=		https://rawstudio.org/
 

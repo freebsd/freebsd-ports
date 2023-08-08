@@ -1,6 +1,6 @@
 PORTNAME=	lapack++
 PORTVERSION=	2.5.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 MASTER_SITES=	SF/lapackpp \
 		http://math.nist.gov/lapack++/:doc

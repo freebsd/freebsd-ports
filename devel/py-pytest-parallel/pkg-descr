@@ -1,0 +1,2 @@
+The pytest-parallel plugin makes it possible to run tests quickly using
+multiprocessing (parallelism) and multithreading (concurrency).

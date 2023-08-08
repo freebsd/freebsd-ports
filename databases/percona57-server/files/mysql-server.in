@@ -14,7 +14,7 @@
 #			Base configuration directory.
 # mysql_optfile (str):	Server-specific option file.
 #			Default to "${mysql_confdir}/my.cnf".
-# mysql_pidfile (str):	Custum PID file path and name.
+# mysql_pidfile (str):	Custom PID file path and name.
 #			Default to "${mysql_dbdir}/${hostname}.pid".
 # mysql_args (str):	Custom additional arguments to be passed
 #			to mysqld_safe (default empty).

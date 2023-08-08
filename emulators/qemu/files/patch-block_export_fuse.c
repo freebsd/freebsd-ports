@@ -1,6 +1,6 @@
---- block/export/fuse.c.orig	2022-04-22 18:57:58 UTC
+--- block/export/fuse.c.orig	2023-04-19 16:31:47 UTC
 +++ block/export/fuse.c
-@@ -637,12 +637,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+@@ -638,12 +638,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
          return;
      }
  
@@ -13,7 +13,7 @@
      if (!mode) {
          /* We can only fallocate at the EOF with a truncate */
          if (offset < blk_len) {
-@@ -662,44 +656,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
+@@ -663,53 +657,6 @@ static void fuse_fallocate(fuse_req_t req, fuse_ino_t 
          ret = fuse_do_truncate(exp, offset + length, true,
                                 PREALLOC_MODE_FALLOC);
      }
@@ -27,7 +27,16 @@
 -        do {
 -            int size = MIN(length, BDRV_REQUEST_MAX_BYTES);
 -
--            ret = blk_pdiscard(exp->common.blk, offset, size);
+-            ret = blk_pwrite_zeroes(exp->common.blk, offset, size,
+-                                    BDRV_REQ_MAY_UNMAP | BDRV_REQ_NO_FALLBACK);
+-            if (ret == -ENOTSUP) {
+-                /*
+-                 * fallocate() specifies to return EOPNOTSUPP for unsupported
+-                 * operations
+-                 */
+-                ret = -EOPNOTSUPP;
+-            }
+-
 -            offset += size;
 -            length -= size;
 -        } while (ret == 0 && length > 0);

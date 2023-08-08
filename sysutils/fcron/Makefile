@@ -1,5 +1,6 @@
 PORTNAME=	fcron
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fcron.free.fr/archives/ \
 		ftp://ftp.seul.org/pub/fcron/
@@ -11,25 +12,23 @@ WWW=		http://fcron.free.fr/
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-GNU_CONFIGURE=	yes
 USES=		perl5 gmake
 USE_PERL5=	build
+USE_RC_SUBR=	fcron
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
 		--with-docdir=${DOCSDIR} \
 		--with-dsssl-dir=no
 
+SUB_FILES=	pkg-message
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USERS=		fcron
 GROUPS=		fcron
-
-USE_RC_SUBR=	fcron
-
-SUB_FILES=	pkg-message
 
 PAMDIR?=	etc/pam.d
 PLIST_SUB+=	PAMDIR=etc/pam.d
@@ -37,6 +36,8 @@ PLIST_SUB+=	PAMDIR=etc/pam.d
 PORTDOCS=	*
 
 DOCSRC=		${WRKSRC}/doc/en
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcron ${STAGEDIR}${PREFIX}/sbin
@@ -53,14 +54,14 @@ do-install:
 .endfor
 	${MKDIR} -m 770 ${STAGEDIR}/var/spool/fcron
 
-do-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${STAGEDIR}${EXAMPLESDIR}
-
 do-install-DOCS-on:
 .for d in txt HTML
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	${INSTALL_DATA} ${DOCSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
 .endfor
+
+do-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/fcrontab-* ${WRKSRC}/files/*.pam ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

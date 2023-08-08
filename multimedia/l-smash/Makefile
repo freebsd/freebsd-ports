@@ -3,7 +3,7 @@ PORTVERSION=	2.14.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP4 muxer and other tools
 WWW=		https://l-smash.github.io/l-smash/
 

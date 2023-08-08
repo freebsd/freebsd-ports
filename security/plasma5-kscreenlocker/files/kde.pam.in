@@ -1,0 +1,3 @@
+auth	sufficient	pam_exec.so	return_prog_exit_status expose_authtok %%LOCALBASE%%/libexec/unix-selfauth-helper
+auth	include		system
+account	include		system

@@ -22,7 +22,6 @@ share/pixmaps/solarus-quest-editor.png
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_cyan.lua
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_egg.lua
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_green.lua
-%%DATADIR%%/assets/initial_quest/data/enemies/slime_green_small.lua
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_purple.lua
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_red.lua
 %%DATADIR%%/assets/initial_quest/data/enemies/slime_yellow.lua
@@ -310,7 +309,9 @@ share/pixmaps/solarus-quest-editor.png
 %%DATADIR%%/assets/initial_quest/data/sprites/enemies/wings_evil.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/arrow.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/arrow.png
+%%DATADIR%%/assets/initial_quest/data/sprites/entities/block.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/bomb.dat
+%%DATADIR%%/assets/initial_quest/data/sprites/entities/chest.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/crystal.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/crystal_block.dat
 %%DATADIR%%/assets/initial_quest/data/sprites/entities/crystal_block.png

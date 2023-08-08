@@ -11,8 +11,9 @@ WWW=		https://www.Courier-MTA.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: sqwebmail_content_charset
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: sqwebmail_content_charset
+BROKEN=	ld: error: duplicate symbol: sqwebmail_content_charset
+DEPRECATED=	Broken for more than a year and fails to build on supported RELEASE
+EXPIRATION_DATE=	2023-06-01
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
 LIB_DEPENDS=	libidn.so:dns/libidn \
@@ -138,7 +139,7 @@ PERIODIC_DESC=	modify/create periodic.conf
 .include "${.CURDIR}/Makefile.own"
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
+USES+=	ldap
 WITH_AUTH_LDAP=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
 CONFIGURE_ARGS+=--with-ldapaliasd

@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+This version of ccache has large nubmer of dependencies and will cause
+warnings and errors due to dependency loops when used with ports and poudriere.
+The easiest way to workaround them is to temporary disable ccache builds until
+all ccache dependencies are built.
+EOM
+}
+]

@@ -3,7 +3,7 @@ PORTVERSION=	r28
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Format conversion tools for Vapoursynth and Avisynth+
 WWW=		https://github.com/EleonoreMizo/fmtconv
 

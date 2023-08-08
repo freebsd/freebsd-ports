@@ -1,5 +1,6 @@
 PORTNAME=	rpi-firmware
 PORTVERSION=	1.20210303.g20210303
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	uboot@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	aarch64-none-elf-gcc:devel/aarch64-none-elf-gcc
 
 USE_GITHUB=	yes
 
-GH_ACCOUNT=	raspberrypi gonzoua:pscimon
+GH_ACCOUNT=	raspberrypi freebsd:pscimon
 GH_PROJECT=	firmware rpi3-psci-monitor:pscimon
 FW_TAG=		fcf8d2f
 PSCI_TAG=	558620c

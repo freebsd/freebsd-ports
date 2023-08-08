@@ -1,5 +1,5 @@
 PORTNAME=	curb
-PORTVERSION=	0.9.11
+PORTVERSION=	1.0.5
 CATEGORIES=	ftp rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -9,5 +9,3 @@ C-Blosc2 is the new major version of C-Blosc, and tries hard to be backward
 compatible with both the C-Blosc1 API and its in-memory format. However, the
 reverse thing is generally not true; buffers generated with C-Blosc2 are not
 format-compatible with C-Blosc1 (i.e. forward compatibility is not supported).
-
-See also: https://github.com/Blosc/c-blosc2

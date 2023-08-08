@@ -1,8 +1,8 @@
 PORTNAME=	moviepy
 PORTVERSION=	1.0.3
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	multimedia python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,7 +21,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.8.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.11.2<5.0:misc/py-tqdm@${PY_FLAVOR} \
 
-USES=		magick:run python:3.8+
+USES=		magick:run python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

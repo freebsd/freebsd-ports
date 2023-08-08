@@ -15,6 +15,9 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/44bsd-rdist \
 		man/man1/44bsd-rdist.1.gz
 
+CFLAGS=		-Wno-deprecated-non-prototype \
+		-Wno-incompatible-library-redeclaration
+
 post-extract:
 	cd ${WRKSRC} ; co RCS/*,v
 

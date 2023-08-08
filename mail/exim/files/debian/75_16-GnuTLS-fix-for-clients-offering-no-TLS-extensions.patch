@@ -1,0 +1,114 @@
+From ece23f05d6a430a461a75639197271c23f6858ec Mon Sep 17 00:00:00 2001
+From: Jasen Betts <jasen@xnet.co.nz>
+Date: Fri, 30 Sep 2022 13:49:41 +0100
+Subject: [PATCH] GnuTLS: fix for clients offering no TLS extensions
+
+---
+ doc/ChangeLog              |  3 +++
+ src/tls-gnu.c                  |  3 ++-
+ src/tls-openssl.c              | 39 +++++++++++++++---------------
+ test/confs/2091                    |  1 +
+ test/log/2091                      |  3 +++
+ test/scripts/2090-GnuTLS-ALPN/2091 | 19 +++++++++++++++
+ test/stdout/2091                   | 21 ++++++++++++++++
+ 7 files changed, 68 insertions(+), 21 deletions(-)
+ create mode 120000 test/confs/2091
+ create mode 100644 test/log/2091
+ create mode 100644 test/scripts/2090-GnuTLS-ALPN/2091
+ create mode 100644 test/stdout/2091
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -10,10 +10,14 @@
+       more than one message arrived in a single connection a reference from
+       the earlier message could be re-used.  Often a sigsegv resulted.
+       These variables were introduced in Exim 4.87.
+       Debug help from Graeme Fowler.
+ 
++JH/10 GnuTLS: fix for (IOT?) clients offering no TLS extensions at all.
++      Find and fix by Jasen Betts.
++
++
+ 
+ Exim version 4.96
+ -----------------
+ 
+ JH/01 Move the wait-for-next-tick (needed for unique message IDs) from
+--- a/src/tls-gnu.c
++++ b/src/tls-gnu.c
+@@ -1130,12 +1130,13 @@
+ static int
+ tls_server_clienthello_cb(gnutls_session_t session, unsigned int htype,
+   unsigned when, unsigned int incoming, const gnutls_datum_t * msg)
+ {
+ /* Call fn for each extension seen.  3.6.3 onwards */
+-return gnutls_ext_raw_parse(NULL, tls_server_clienthello_ext, msg,
++int rc = gnutls_ext_raw_parse(NULL, tls_server_clienthello_ext, msg,
+ 			   GNUTLS_EXT_RAW_FLAG_TLS_CLIENT_HELLO);
++return rc == GNUTLS_E_REQUESTED_DATA_NOT_AVAILABLE ? 0 : rc;
+ }
+ 
+ 
+ # ifdef notdef_crashes
+ /* Make a note that we saw a status-response */
+--- a/src/tls-openssl.c
++++ b/src/tls-openssl.c
+@@ -940,40 +940,39 @@
+ 
+ Returns:    nothing
+ */
+ 
+ static void
+-info_callback(SSL *s, int where, int ret)
++info_callback(SSL * s, int where, int ret)
+ {
+ DEBUG(D_tls)
+   {
+-  const uschar * str;
++  gstring * g = NULL;
+ 
+-  if (where & SSL_ST_CONNECT)
+-     str = US"SSL_connect";
+-  else if (where & SSL_ST_ACCEPT)
+-     str = US"SSL_accept";
+-  else
+-     str = US"SSL info (undefined)";
++  if (where & SSL_ST_CONNECT) g = string_append_listele(g, ',', US"SSL_connect");
++  if (where & SSL_ST_ACCEPT)  g = string_append_listele(g, ',', US"SSL_accept");
++  if (where & SSL_CB_LOOP)    g = string_append_listele(g, ',', US"state_chg");
++  if (where & SSL_CB_EXIT)    g = string_append_listele(g, ',', US"hshake_exit");
++  if (where & SSL_CB_READ)    g = string_append_listele(g, ',', US"read");
++  if (where & SSL_CB_WRITE)   g = string_append_listele(g, ',', US"write");
++  if (where & SSL_CB_ALERT)   g = string_append_listele(g, ',', US"alert");
++  if (where & SSL_CB_HANDSHAKE_START) g = string_append_listele(g, ',', US"hshake_start");
++  if (where & SSL_CB_HANDSHAKE_DONE)  g = string_append_listele(g, ',', US"hshake_done");
+ 
+   if (where & SSL_CB_LOOP)
+-     debug_printf("%s: %s\n", str, SSL_state_string_long(s));
++     debug_printf("SSL %s: %s\n", g->s, SSL_state_string_long(s));
+   else if (where & SSL_CB_ALERT)
+-    debug_printf("SSL3 alert %s:%s:%s\n",
+-	  str = where & SSL_CB_READ ? US"read" : US"write",
++    debug_printf("SSL %s %s:%s\n", g->s,
+ 	  SSL_alert_type_string_long(ret), SSL_alert_desc_string_long(ret));
+   else if (where & SSL_CB_EXIT)
+     {
+-    if (ret == 0)
+-      debug_printf("%s: failed in %s\n", str, SSL_state_string_long(s));
+-    else if (ret < 0)
+-      debug_printf("%s: error in %s\n", str, SSL_state_string_long(s));
++    if (ret <= 0)
++      debug_printf("SSL %s: %s in %s\n", g->s,
++	ret == 0 ? "failed" : "error", SSL_state_string_long(s));
+     }
+-  else if (where & SSL_CB_HANDSHAKE_START)
+-     debug_printf("%s: hshake start: %s\n", str, SSL_state_string_long(s));
+-  else if (where & SSL_CB_HANDSHAKE_DONE)
+-     debug_printf("%s: hshake done: %s\n", str, SSL_state_string_long(s));
++  else if (where & (SSL_CB_HANDSHAKE_START | SSL_CB_HANDSHAKE_DONE))
++     debug_printf("SSL %s: %s\n", g->s, SSL_state_string_long(s));
+   }
+ }
+ 
+ #ifdef OPENSSL_HAVE_KEYLOG_CB
+ static void

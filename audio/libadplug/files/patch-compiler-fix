@@ -1,0 +1,408 @@
+From 4237f96cd2324df9427efe8c08ff3fe0adf2fe44 Mon Sep 17 00:00:00 2001
+From: Stian Skjelstad <stian.skjelstad@gmail.com>
+Date: Sat, 30 Apr 2022 22:29:30 +0200
+Subject: [PATCH] Fix compiler warnings (compiler used is g++ v11.2.0)
+
+---
+ adplugdb/adplugdb.cpp |  4 ++--
+ src/ksm.cpp           | 10 +++++-----
+ src/lds.cpp           | 17 ++++++++++-------
+ src/mkj.cpp           |  2 +-
+ src/protrack.cpp      | 19 +++++++++++--------
+ src/rad2.cpp          | 12 ++++++------
+ src/rix.cpp           | 10 +++++-----
+ src/sng.cpp           |  4 +++-
+ src/sop.cpp           | 30 +++++++++++++++---------------
+ src/u6m.cpp           |  2 +-
+ src/vgm.cpp           |  4 ++--
+ 15 files changed, 67 insertions(+), 59 deletions(-)
+
+diff --git a/adplugdb/adplugdb.cpp b/adplugdb/adplugdb.cpp
+index 71b235b3..266a9931 100644
+--- adplugdb/adplugdb.cpp
++++ adplugdb/adplugdb.cpp
+@@ -182,13 +182,13 @@ static const std::string file2type(const char *filename)
+   CPlayer			*p;
+ 
+   for(i = CAdPlug::players.begin(); i != CAdPlug::players.end(); i++)
+-    if((p = (*i)->factory(&opl)))
++    if((p = (*i)->factory(&opl))) {
+       if(p->load(filename)) {
+ 	delete p;
+ 	return (*i)->filetype;
+       } else
+ 	delete p;
+-
++    }
+   message(MSG_WARN, "unknown filetype -- %s", filename);
+   return UNKNOWN_FILETYPE;
+ }
+diff --git a/src/ksm.cpp b/src/ksm.cpp
+index 89943a63..a8d09a0c 100644
+--- src/ksm.cpp
++++ src/ksm.cpp
+@@ -240,21 +240,21 @@ void CksmPlayer::rewind(int subsong)
+   if (trchan[11] == 1) {
+     for(i=0;i<11;i++)
+       instbuf[i] = inst[trinst[11]][i];
+-    instbuf[1] = ((instbuf[1]&192)|(trvol[11])^63);
++    instbuf[1] = ((instbuf[1]&192)|(trvol[11]^63));
+     setinst(6,instbuf[0],instbuf[1],instbuf[2],instbuf[3],instbuf[4],instbuf[5],instbuf[6],instbuf[7],instbuf[8],instbuf[9],instbuf[10]);
+     for(i=0;i<5;i++)
+       instbuf[i] = inst[trinst[12]][i];
+     for(i=5;i<11;i++)
+       instbuf[i] = inst[trinst[15]][i];
+-    instbuf[1] = ((instbuf[1]&192)|(trvol[12])^63);
+-    instbuf[6] = ((instbuf[6]&192)|(trvol[15])^63);
++    instbuf[1] = ((instbuf[1]&192)|(trvol[12]^63));
++    instbuf[6] = ((instbuf[6]&192)|(trvol[15]^63));
+     setinst(7,instbuf[0],instbuf[1],instbuf[2],instbuf[3],instbuf[4],instbuf[5],instbuf[6],instbuf[7],instbuf[8],instbuf[9],instbuf[10]);
+     for(i=0;i<5;i++)
+       instbuf[i] = inst[trinst[14]][i];
+     for(i=5;i<11;i++)
+       instbuf[i] = inst[trinst[13]][i];
+-    instbuf[1] = ((instbuf[1]&192)|(trvol[14])^63);
+-    instbuf[6] = ((instbuf[6]&192)|(trvol[13])^63);
++    instbuf[1] = ((instbuf[1]&192)|(trvol[14]^63));
++    instbuf[6] = ((instbuf[6]&192)|(trvol[13]^63));
+     setinst(8,instbuf[0],instbuf[1],instbuf[2],instbuf[3],instbuf[4],instbuf[5],instbuf[6],instbuf[7],instbuf[8],instbuf[9],instbuf[10]);
+   }
+ 
+diff --git a/src/lds.cpp b/src/lds.cpp
+index 78870ccb..26d1d844 100644
+--- src/lds.cpp
++++ src/lds.cpp
+@@ -166,11 +166,11 @@ bool CldsPlayer::update()
+   if(!playing) return false;
+ 
+   // handle fading
+-  if(fadeonoff)
++  if(fadeonoff) {
+     if(fadeonoff <= 128) {
+-      if(allvolume > fadeonoff || allvolume == 0)
++      if(allvolume > fadeonoff || allvolume == 0) {
+ 	allvolume -= fadeonoff;
+-      else {
++      } else {
+ 	allvolume = 1;
+ 	fadeonoff = 0;
+ 	if(hardfade != 0) {
+@@ -180,13 +180,15 @@ bool CldsPlayer::update()
+ 	    channel[i].keycount = 1;
+ 	}
+       }
+-    } else
+-      if(((allvolume + (0x100 - fadeonoff)) & 0xff) <= mainvolume)
++    } else {
++      if(((allvolume + (0x100 - fadeonoff)) & 0xff) <= mainvolume) {
+ 	allvolume += 0x100 - fadeonoff;
+-      else {
++      } else {
+ 	allvolume = mainvolume;
+ 	fadeonoff = 0;
+       }
++    }
++  }
+ 
+   // handle channel delay
+   for(chan = 0; chan < 9; chan++) {
+@@ -207,7 +209,7 @@ bool CldsPlayer::update()
+ 
+ 	comword = patterns[patnum + c->packpos];
+ 	comhi = comword >> 8; comlo = comword & 0xff;
+-	if(comword)
++	if(comword) {
+ 	  if(comhi == 0x80)
+ 	    c->packwait = comlo;
+ 	  else
+@@ -320,6 +322,7 @@ bool CldsPlayer::update()
+ 		c->chancheat.high = high;
+ 	      }
+ 	    }
++        }
+ 
+ 	c->packpos++;
+       } else
+diff --git a/src/mkj.cpp b/src/mkj.cpp
+index 88a882b9..05e9f367 100644
+--- src/mkj.cpp
++++ src/mkj.cpp
+@@ -137,7 +137,7 @@ bool CmkjPlayer::update()
+ 	break;
+       case 252:	// set waveform
+ 	channel[c].songptr += maxchannel;
+-        if ((songbuf[channel[c].songptr] - 300 | 0xff) != 0xff)
++        if (((songbuf[channel[c].songptr] - 300) | 0xff) != 0xff)
+           goto bad_data; // value out of range
+ 	channel[c].waveform = songbuf[channel[c].songptr] - 300;
+ 	if(c > 2)
+diff --git a/src/protrack.cpp b/src/protrack.cpp
+index 9121bf68..d1ca3f70 100644
+--- src/protrack.cpp
++++ src/protrack.cpp
+@@ -138,20 +138,23 @@ bool CmodPlayer::update()
+       tone_portamento(chan,channel[chan].portainfo);
+     else
+       vibrato(chan,channel[chan].vibinfo1,channel[chan].vibinfo2);
+-    case 10: if(del % 4)	// SA2 volume slide
+-      break;
++    case 10:
++      if(del % 4)	// SA2 volume slide
++        break;
+       if(info1)
+ 	vol_up(chan,info1);
+       else
+ 	vol_down(chan,info2);
+       setvolume(chan);
+       break;
+-    case 14: if(info1 == 3)	// retrig note
+-      if(!(del % (info2+1)))
+-	playnote(chan);
+-      break;
+-    case 16: if(del % 4)	// AMD volume slide
++    case 14:
++      if(info1 == 3)	// retrig note
++        if(!(del % (info2+1)))
++          playnote(chan);
+       break;
++    case 16:
++      if(del % 4)	// AMD volume slide
++        break;
+       if(info1)
+ 	vol_up_alt(chan,info1);
+       else
+@@ -651,7 +654,7 @@ void CmodPlayer::setfreq(unsigned char chan)
+ 
+   opl->write(0xa0 + oplchan, channel[chan].freq & 255);
+   if(channel[chan].key)
+-    opl->write(0xb0 + oplchan, ((channel[chan].freq & 768) >> 8) + (channel[chan].oct << 2) | 32);
++    opl->write(0xb0 + oplchan, (((channel[chan].freq & 768) >> 8) + (channel[chan].oct << 2)) | 32);
+   else
+     opl->write(0xb0 + oplchan, ((channel[chan].freq & 768) >> 8) + (channel[chan].oct << 2));
+ }
+diff --git a/src/rad2.cpp b/src/rad2.cpp
+index dc864b73..15e3023a 100644
+--- src/rad2.cpp
++++ src/rad2.cpp
+@@ -66,7 +66,7 @@ static const char *g_RADPattBadNoteNum = "Pattern contains a bad note number.";
+ static const char *g_RADPattBadInstNum = "Pattern contains a bad instrument number.";
+ static const char *g_RADPattBadEffect = "Pattern contains a bad effect and/or parameter.";
+ static const char *g_RADBadRiffNum = "Tune file contains a bad riff index.";
+-static const char *g_RADExtraBytes = "Tune file contains extra bytes.";
++//static const char *g_RADExtraBytes = "Tune file contains extra bytes.";
+ 
+ 
+ 
+@@ -113,7 +113,7 @@ static const char *RADCheckPattern(const uint8_t *&s, const uint8_t *e, bool rif
+ 					return g_RADPattTruncated;
+ 				uint8_t note = *s++;
+ 				uint8_t notenum = note & 15;
+-				uint8_t octave = (note >> 4) & 7;
++				//uint8_t octave = (note >> 4) & 7;
+ 				if (notenum == 0 || notenum == 13 || notenum == 14)
+ 					return g_RADPattBadNoteNum;
+ 			}
+@@ -178,9 +178,9 @@ static const char *RADCheckPatternOld(const uint8_t *&s, const uint8_t *e) {
+ 			// Check note
+ 			if (s >= e)
+ 				return g_RADPattTruncated;
+-			uint8_t note = *s++;
+-			uint8_t notenum = note & 15;
+-			uint8_t octave = (note >> 4) & 7;
++			/*uint8_t note = *s++; */ s++;
++			//uint8_t notenum = note & 15;
++			//uint8_t octave = (note >> 4) & 7;
+ 			/* the replayer handles bad params already and some old tunes do contain them
+ 			if (notenum == 13 || notenum == 14)
+ 				return g_RADPattBadNoteNum;
+@@ -195,7 +195,7 @@ static const char *RADCheckPatternOld(const uint8_t *&s, const uint8_t *e) {
+ 			if (inst & 0xf) {
+ 				if (s > e)
+ 					return g_RADPattTruncated;
+-				uint8_t param = *s++;
++				/* uint8_t param = *s++; */ s++;
+ 				/* the replayer handles bad params already and some old tunes do contain them
+ 				if (param > 99)
+ 					return g_RADPattBadEffect;
+diff --git a/src/rix.cpp b/src/rix.cpp
+index 9a95805d..4b5ca4c6 100644
+--- src/rix.cpp
++++ src/rix.cpp
+@@ -182,7 +182,7 @@ inline void CrixPlayer::set_new_int()
+ /*----------------------------------------------------------*/
+ inline void CrixPlayer::Pause()
+ {
+-  register uint16_t i;
++  uint16_t i;
+   pause_flag = 1;
+   for(i=0;i<11;i++)
+     switch_ad_bd(i);
+@@ -394,7 +394,7 @@ inline void CrixPlayer::ad_a0b0l_reg(uint16_t index,uint16_t p2,uint16_t p3)
+ inline void CrixPlayer::rix_B0_pro(uint16_t ctrl_l,uint16_t index)
+ {
+   if (ctrl_l >= 11) return;
+-  register int temp = 0;
++  int temp = 0;
+   if(rhythm == 0 || ctrl_l < 6) temp = modify[ctrl_l*2+1];
+   else
+     {
+@@ -407,7 +407,7 @@ inline void CrixPlayer::rix_B0_pro(uint16_t ctrl_l,uint16_t index)
+ /*--------------------------------------------------------------*/
+ inline void CrixPlayer::rix_C0_pro(uint16_t ctrl_l,uint16_t index)
+ {
+-  register uint16_t i = index>=12?index-12:0;
++  uint16_t i = index>=12?index-12:0;
+   if(ctrl_l < 6 || rhythm == 0)
+     {
+       ad_a0b0l_reg(ctrl_l,i,1);
+@@ -443,7 +443,7 @@ inline void CrixPlayer::switch_ad_bd(uint16_t index)
+ /*--------------------------------------------------------------*/
+ inline void CrixPlayer::ins_to_reg(uint16_t index,uint16_t* insb,uint16_t value)
+ {
+-  register uint16_t i;
++  uint16_t i;
+   for(i=0;i<13;i++) reg_bufs[index].v[i] = insb[i];
+   reg_bufs[index].v[13] = value&3;
+   ad_bd_reg(),ad_08_reg(),
+@@ -521,7 +521,7 @@ inline void CrixPlayer::ad_a0b0_reg(uint16_t index)
+ /*--------------------------------------------------------------*/
+ inline void CrixPlayer::music_ctrl()
+ {
+-  register int i;
++  int i;
+   for(i=0;i<11;i++)
+     switch_ad_bd(i);
+ }
+diff --git a/src/sng.cpp b/src/sng.cpp
+index 0a428056..62358bd8 100644
+--- src/sng.cpp
++++ src/sng.cpp
+@@ -73,7 +73,9 @@ bool CsngPlayer::update()
+   if(!header.compressed)
+     opl->write(data[pos].reg, data[pos].val);
+ 
+-  if(data[pos].val) del = data[pos].val - 1; pos++;
++  if(data[pos].val) del = data[pos].val - 1;
++  pos++;
++
+   if(pos >= header.length) { songend = true; pos = header.loop; }
+   return !songend;
+ }
+diff --git a/src/sop.cpp b/src/sop.cpp
+index 87c10165..e7c7d0a7 100644
+--- src/sop.cpp
++++ src/sop.cpp
+@@ -598,35 +598,35 @@ void Cad262Driver::SetVoiceVolume_SOP(unsigned chan, unsigned vol)
+ 		volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl2[chan]) & 0x3F)) << 7) + vol];
+ 
+ 		if (chan >= 11)
+-			SndOutput3(VolReg[chan - 11] - 3, KSL_value & 0xC0 | volume);
++			SndOutput3(VolReg[chan - 11] - 3, (KSL_value & 0xC0) | volume);
+ 		else
+-			SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]) - 3, KSL_value & 0xC0 | volume);
++			SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]) - 3, (KSL_value & 0xC0) | volume);
+ 
+ 		if (OP4[chan]) {
+ 			chan += 3;
+ 			volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl[chan]) & 0x3F)) << 7) + vol];
+ 
+ 			if (chan >= 11)
+-				SndOutput3(VolReg[chan - 11], KSL_value & 0xC0 | volume);
++				SndOutput3(VolReg[chan - 11], (KSL_value & 0xC0) | volume);
+ 			else
+-				SndOutput1(VolReg[chan], KSL_value & 0xC0 | volume);
++				SndOutput1(VolReg[chan], (KSL_value & 0xC0) | volume);
+ 
+ 			if (Ksl2V[chan]) {
+ 				volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl2[chan]) & 0x3F)) << 7) + vol];
+ 
+ 				if (chan >= 11)
+-					SndOutput3(VolReg[chan - 11] - 3, KSL_value & 0xC0 | volume);
++					SndOutput3(VolReg[chan - 11] - 3, (KSL_value & 0xC0) | volume);
+ 				else
+-					SndOutput1(VolReg[chan] - 3, KSL_value & 0xC0 | volume);
++					SndOutput1(VolReg[chan] - 3, (KSL_value & 0xC0) | volume);
+ 			}
+ 		}
+ 		else {
+ 			volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl[chan]) & 0x3F)) << 7) + vol];
+ 
+ 			if (chan >= 11)
+-				SndOutput3(VolReg[chan - 11], KSL_value & 0xC0 | volume);
++				SndOutput3(VolReg[chan - 11], (KSL_value & 0xC0) | volume);
+ 			else
+-				SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]), KSL_value & 0xC0 | volume);
++				SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]), (KSL_value & 0xC0) | volume);
+ 		}
+ 	}
+ 	else {
+@@ -634,26 +634,26 @@ void Cad262Driver::SetVoiceVolume_SOP(unsigned chan, unsigned vol)
+ 			volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl[chan + 3]) & 0x3F)) << 7) + vol];
+ 
+ 			if (chan >= 11)
+-				SndOutput3(VolReg[chan + 3 - 11], KSL_value & 0xC0 | volume);
++				SndOutput3(VolReg[chan + 3 - 11], (KSL_value & 0xC0) | volume);
+ 			else
+-				SndOutput1(VolReg[chan + 3], KSL_value & 0xC0 | volume);
++				SndOutput1(VolReg[chan + 3], (KSL_value & 0xC0) | volume);
+ 
+ 			if (Ksl2V[chan + 3]) {
+ 				volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl[chan]) & 0x3F)) << 7) + vol];
+ 
+ 				if (chan >= 11)
+-					SndOutput3(VolReg[chan - 11], KSL_value & 0xC0 | volume);
++					SndOutput3(VolReg[chan - 11], (KSL_value & 0xC0) | volume);
+ 				else
+-					SndOutput1(VolReg[chan], KSL_value & 0xC0 | volume);
++					SndOutput1(VolReg[chan], (KSL_value & 0xC0) | volume);
+ 			}
+ 		}
+ 		else {
+ 			volume = 63 - VolumeTable[((63 - ((KSL_value = Ksl[chan]) & 0x3F)) << 7) + vol];
+ 
+ 			if (chan >= 11)
+-				SndOutput3(VolReg[chan - 11], KSL_value & 0xC0 | volume);
++				SndOutput3(VolReg[chan - 11], (KSL_value & 0xC0) | volume);
+ 			else
+-				SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]), KSL_value & 0xC0 | volume);
++				SndOutput1((percussion ? VolReg[chan + 11] : VolReg[chan]), (KSL_value & 0xC0) | volume);
+ 		}
+ 	}
+ }
+@@ -733,7 +733,7 @@ void Cad262Driver::SetVoiceTimbre_SOP(unsigned chan, unsigned char* array)
+ 			Ksl2[chan + 3] = *(array + 12);
+ 			Ksl2V[chan + 3] = *(array + 16) & 1;
+ 
+-			SndOutput1(i + 3, *(array + 16) & 0x0F | Stereo[chan]);
++			SndOutput1(i + 3, (*(array + 16) & 0x0F) | Stereo[chan]);
+ 		}
+ 
+ 		SetVoiceVolume_SOP(chan, VoiceVolume[chan]);
+diff --git a/src/u6m.cpp b/src/u6m.cpp
+index a905baad..037952e3 100644
+--- src/u6m.cpp
++++ src/u6m.cpp
+@@ -210,7 +210,7 @@ bool Cu6mPlayer::lzw_decompress(Cu6mPlayer::data_block source, Cu6mPlayer::data_
+   size_t bytes_written = 0;
+ 
+   int cW;
+-  int pW;
++  int pW=0;
+   unsigned char C;
+ 
+   while (!end_marker_reached)
+diff --git a/src/vgm.cpp b/src/vgm.cpp
+index 2fc8a971..aafc3214 100644
+--- src/vgm.cpp
++++ src/vgm.cpp
+@@ -162,8 +162,8 @@ bool CvgmPlayer::load(const std::string &filename, const CFileProvider &fp)
+ 		f->readString(id, 4);
+ 		if (!strncmp(id, GD3_HEADER_ID, 4))
+ 		{
+-			int gd3_ver = f->readInt(4);
+-			int gd3_size = f->readInt(4);
++			/* int gd3_ver = */ f->readInt(4);
++			/* int gd3_size = */ f->readInt(4);
+ 			fillGD3Tag(f, GD3.title_en);
+ 			fillGD3Tag(f, GD3.title_jp);
+ 			fillGD3Tag(f, GD3.game_en);

@@ -1,5 +1,6 @@
 PORTNAME=	gnuastro
-PORTVERSION=	0.18
+PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	GNU
 
@@ -31,6 +32,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e 's,cflags_add="-O3",:,' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,gcc,$(CC),' \
+		${WRKSRC}/bin/buildprog/ui.c
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/etc -name \*.conf \

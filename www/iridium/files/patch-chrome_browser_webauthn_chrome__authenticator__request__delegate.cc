@@ -1,11 +1,11 @@
---- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -749,7 +749,7 @@ bool ChromeAuthenticatorRequestDelegate::ShouldPermitC
-   // TODO(crbug.com/1052397): Revisit the macro expression once build flag
-   // switch of lacros-chrome is complete. If updating this, also update
-   // kWebAuthCableServerLink.
--#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+@@ -561,7 +561,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureCabl
+     g_observer->ConfiguringCable(request_type);
+   }
  
-   // caBLEv1 is disabled on these platforms. It never launched on them because
-   // it causes problems in bluez. Rather than disabling caBLE completely, which
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // No caBLEv1 on Linux. It tends to crash bluez.
+   if (base::Contains(pairings_from_extension,
+                      device::CableDiscoveryData::Version::V1,

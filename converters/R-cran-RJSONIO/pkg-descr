@@ -1,12 +1,12 @@
 This is a package that allows conversion to and from data in
-Javascript object notation (JSON) format. This allows R objects to
-be inserted into Javascript/ECMAScript/ActionScript code and allows
+JavaScript object notation (JSON) format. This allows R objects to
+be inserted into JavaScript/ECMAScript/ActionScript code and allows
 R programmers to read and convert JSON content to R objects. This
 is an alternative to rjson package. That version was too slow for
 converting large R objects to JSON and is not extensible, but a
 very useful prototype. It is fast for parsing. This package uses
 methods, vectorized operations and C code and callbacks to R functions
-for deserializing JSON objects to R. Verison 0.4 of this package
+for deserializing JSON objects to R. Version 0.4 of this package
 uses a new native parser, implements the transformation code in C
 and allocates memory efficiently (rather than concatenating because
 of event driven parsing). The result is a significantly faster

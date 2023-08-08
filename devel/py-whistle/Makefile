@@ -1,7 +1,7 @@
 PORTNAME=	whistle
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://python-whistle.github.io/
 
 LICENSE=	APACHE20
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

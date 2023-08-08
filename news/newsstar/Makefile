@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
-WWW=		http://newsstar.sourceforge.net/
+WWW=		https://newsstar.sourceforge.net/
 
 LICENSE=	GPLv3
 

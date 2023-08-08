@@ -14,7 +14,7 @@
 plugin_paths = { "%%LOCALBASE%%/lib/jitsi-prosody-plugins/" }
 
 log = {
-  -- Log files (change ‘info’ to ‘debug’ for debug logs):
+  -- Log files (change `info' to `debug' for debug logs):
   info = "/var/log/prosody.log";
   error = "/var/log/prosody.err";
   -- Syslog:
@@ -140,7 +140,7 @@ VirtualHost "auth.jitsi.example.com"
         "limits_exception";
         "saslauth";
     }
-    -- authentication = "internal_plain" 
+    -- authentication = "internal_plain"
     c2s_require_encryption = false
     authentication = "internal_hashed"
 

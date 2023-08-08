@@ -1,7 +1,7 @@
 PORTNAME=	pyqtree
 PORTVERSION=	0.24
 CATEGORIES=	devel python geography
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyqtree-${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

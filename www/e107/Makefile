@@ -1,5 +1,5 @@
 PORTNAME=	e107
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_full
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe dos2unix php shebangfix
 
-USE_PHP=	dom exif hash pdo_mysql session xml
+USE_PHP=	dom exif pdo_mysql session xml
 WRKSRC=		${WRKDIR}/e107
 
 NO_BUILD=	yes
@@ -27,6 +27,9 @@ SHEBANG_FILES=	cron.php e107_handlers/bounce_handler.php
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${TAR} -yxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKSRC}
+
+post-extract:
+	@${RM} ${WRKSRC}/e107_handlers/vendor/bin/minify*
 
 pre-install:
 	@${ECHO_CMD} -e '@owner ${WWWOWN}\n@group ${WWWGRP}' > ${PLIST}

@@ -1,8 +1,8 @@
 PORTNAME=	cligen
-PORTVERSION=	5.8.0
+PORTVERSION=	6.2.0
 CATEGORIES=	devel
 
-MAINTAINER=	dcornejo@netgate.com
+MAINTAINER=	dave@dogwood.com
 COMMENT=	Command-line interface generator
 WWW=		https://cligen.se/
 

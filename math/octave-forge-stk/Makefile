@@ -1,25 +1,18 @@
 PORTNAME=	octave-forge-stk
-PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/stk-kriging/stk/releases/download/${PORTVERSION}/
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}-octpkg
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+USES=		octave
 
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+OCTAVE_SRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.mk>

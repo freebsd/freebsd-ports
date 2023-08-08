@@ -1,0 +1,54 @@
+Index: control.c
+===================================================================
+--- control.c.orig	2022-04-25 08:25:13 UTC
++++ control.c
+@@ -775,6 +775,9 @@ control_start(struct client *c)
+ 
+ 	cs->read_event = bufferevent_new(c->fd, control_read_callback,
+ 	    control_write_callback, control_error_callback, c);
++	if (cs->read_event == NULL)
++		fatalx("out of memory");
++
+ 	bufferevent_enable(cs->read_event, EV_READ);
+ 
+ 	if (c->flags & CLIENT_CONTROLCONTROL)
+@@ -782,6 +785,8 @@ control_start(struct client *c)
+ 	else {
+ 		cs->write_event = bufferevent_new(c->out_fd, NULL,
+ 		    control_write_callback, control_error_callback, c);
++		if (cs->write_event == NULL)
++			fatalx("out of memory");
+ 	}
+ 	bufferevent_setwatermark(cs->write_event, EV_WRITE, CONTROL_BUFFER_LOW,
+ 	    0);
+--- file.c.orig	2022-04-25 08:25:13 UTC
++++ file.c
+@@ -585,6 +585,8 @@ file_write_open(struct client_files *files, struct tmu
+ 
+ 	cf->event = bufferevent_new(cf->fd, NULL, file_write_callback,
+ 	    file_write_error_callback, cf);
++	if (cf->event == NULL)
++		fatalx("out of memory");
+ 	bufferevent_enable(cf->event, EV_WRITE);
+ 	goto reply;
+ 
+@@ -744,6 +746,8 @@ file_read_open(struct client_files *files, struct tmux
+ 
+ 	cf->event = bufferevent_new(cf->fd, file_read_callback, NULL,
+ 	    file_read_error_callback, cf);
++	if (cf->event == NULL)
++		fatalx("out of memory");
+ 	bufferevent_enable(cf->event, EV_READ);
+ 	return;
+ 
+--- window.c.orig	2022-04-25 08:25:14 UTC
++++ window.c
+@@ -1042,6 +1042,8 @@ window_pane_set_event(struct window_pane *wp)
+ 
+ 	wp->event = bufferevent_new(wp->fd, window_pane_read_callback,
+ 	    NULL, window_pane_error_callback, wp);
++	if (wp->event == NULL)
++		fatalx("out of memory");
+ 	wp->ictx = input_init(wp, wp->event, &wp->palette);
+ 
+ 	bufferevent_enable(wp->event, EV_READ|EV_WRITE);

@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Podman startup script - start all containers with restart policy set to always.
+
+# PROVIDE: podman
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# podman_enable:	Set to NO by default.
+#			Set it to YES to restart containers after restart
+# podman_flags:		Extra flags for podman command (e.g. to set logging level)
+#
+
+. /etc/rc.subr
+
+name=podman
+rcvar=${name}_enable
+
+: ${podman_enable:=NO}
+: ${podman_flags:="--noout"}
+
+podman=%%PREFIX%%/bin/${name}
+start_cmd="podman_start"
+stop_cmd="podman_stop"
+restart_cmd="podman_stop && podman_start"
+
+# Turn newlines into spaces to avoid line breaks in log messages
+container_list=$(
+    ${podman} container ls --all --filter restart-policy=always -q \
+        | tr '\n' ' ')
+
+podman_start()
+{
+    if [ -n "${container_list}" ]; then
+	startmsg "Starting podman containers: ${container_list}"
+	${podman} ${podman_flags} start ${container_list}
+    fi
+}
+
+podman_stop()
+{
+    if [ -n "${container_list}" ]; then
+	echo "Stopping podman containers: ${container_list}"
+        ${podman} ${podman_flags} stop ${container_list}
+    fi
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

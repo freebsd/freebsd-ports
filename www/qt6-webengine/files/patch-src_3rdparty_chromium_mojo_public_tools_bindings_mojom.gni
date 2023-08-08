@@ -1,0 +1,19 @@
+--- src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni.orig	2023-07-07 17:40:32 UTC
++++ src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni
+@@ -693,6 +693,16 @@ template("mojom") {
+       enabled_features += [ "is_win" ]
+     }
+ 
++    if (is_openbsd) {
++      enabled_features += [ "is_openbsd" ]
++      enabled_features += [ "is_bsd" ]
++    }
++
++    if (is_freebsd) {
++      enabled_features += [ "is_freebsd" ]
++      enabled_features += [ "is_bsd" ]
++    }
++
+     action(parser_target_name) {
+       script = mojom_parser_script
+       inputs = mojom_parser_sources + [ build_metadata_filename ]

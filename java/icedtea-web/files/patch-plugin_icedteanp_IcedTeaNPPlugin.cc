@@ -1,6 +1,6 @@
---- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2019-08-02 14:08:17.000000000 +0200
-+++ plugin/icedteanp/IcedTeaNPPlugin.cc	2020-03-22 00:41:29.958009000 +0100
-@@ -1627,9 +1627,9 @@
+--- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	2021-05-17 09:24:37 UTC
++++ plugin/icedteanp/IcedTeaNPPlugin.cc
+@@ -1627,9 +1627,9 @@ plugin_start_appletviewer (ITNPPluginData* data)
      command_line.push_back("-classpath");
      command_line.push_back(get_plugin_jfx_jar());
      command_line.push_back("--patch-module");

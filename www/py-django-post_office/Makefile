@@ -1,6 +1,6 @@
 PORTNAME=	django-post_office
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.1
+DISTVERSION=	3.6.3
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonfield>=3.0:www/py-jsonfield@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}bleach>=0:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 USE_LOCALE=	en_US.UTF-8
 

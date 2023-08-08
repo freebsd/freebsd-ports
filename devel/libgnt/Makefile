@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/pidgin/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Toolkit based on glib and ncurses for text-mode user interfaces
 WWW=		https://keep.imfreedom.org/libgnt/libgnt/
 

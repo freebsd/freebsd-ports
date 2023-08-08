@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Reverse-proxy load balancer and webserver
+COMMENT=	Reverse-proxy load balancer and web server
 WWW=		https://metacpan.org/release/Perlbal
 
 LICENSE=	ART10 GPLv1+

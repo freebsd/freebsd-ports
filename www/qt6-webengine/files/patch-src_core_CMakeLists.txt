@@ -1,0 +1,40 @@
+--- src/core/CMakeLists.txt.orig	2023-07-07 17:40:32 UTC
++++ src/core/CMakeLists.txt
+@@ -20,7 +20,7 @@ add_subdirectory(tools)
+ #   TOOLCHAIN SETUP
+ ##
+ 
+-if(LINUX)
++if(LINUX OR FREEBSD)
+     setup_toolchains()
+ endif()
+ 
+@@ -399,7 +399,7 @@ foreach(arch ${archs})
+             CONDITION QT_FEATURE_webengine_embedded_build
+         )
+ 
+-        if(LINUX)
++        if(LINUX OR FREEBSD)
+             list(APPEND gnArgArg
+                 use_gtk=false # GTK toolkit bindings
+                 use_qt=false # Qt5 toolkit bindings
+@@ -410,7 +410,7 @@ foreach(arch ${archs})
+                 use_glib=false
+                 use_bluez=false
+                 use_vaapi=false
+-                use_udev=true
++                use_udev=false
+                 is_cfi=false
+                 use_ozone=true
+                 ozone_auto_platforms=false
+@@ -465,6 +465,10 @@ foreach(arch ${archs})
+             extend_gn_list(gnArgArg
+                 ARGS use_pulseaudio
+                 CONDITION QT_FEATURE_webengine_system_pulseaudio
++            )
++            extend_gn_list(gnArgArg
++                ARGS use_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
+             )
+             extend_gn_list(gnArgArg
+                 ARGS ozone_platform_x11 use_xkbcommon

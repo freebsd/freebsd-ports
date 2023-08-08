@@ -1,0 +1,27 @@
+--- meson.build.orig	2020-12-03 11:37:30 UTC
++++ meson.build
+@@ -175,7 +175,7 @@ foreach type : [
+   endif
+ endforeach
+ 
+-if conf.has('HAVE_STRUCT_STATVFS_F_FLAG')
++if conf.has('HAVE_STRUCT_STATVFS_F_FLAG') and not host_machine.system().contains('freebsd')
+   conf.set('FSSTATSTYPE', 'struct statvfs')
+ elif conf.has('HAVE_STRUCT_STATFS_F_FLAGS')
+   conf.set('FSSTATSTYPE', 'struct statfs')
+@@ -386,13 +386,13 @@ endforeach
+ 
+ configure_file(
+   input : 'etc/makepkg.conf.in',
+-  output : 'makepkg.conf',
++  output : 'makepkg.conf.sample',
+   configuration : substs,
+   install_dir : SYSCONFDIR)
+ 
+ configure_file(
+   input : 'etc/pacman.conf.in',
+-  output : 'pacman.conf',
++  output : 'pacman.conf.sample',
+   configuration : substs,
+   install_dir : SYSCONFDIR)
+ 

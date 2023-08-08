@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/BUILD.gn.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -59,7 +59,7 @@ declare_args() {
+@@ -54,7 +54,7 @@ declare_args() {
    # replacement base::Location::Current(). On by default in non-official builds
    # for testing purposes.
    # TODO(https://crbug.com/974061): remove this eventually.
@@ -9,20 +9,19 @@
  
    # Unsafe developer build. Has developer-friendly features that may weaken or
    # disable security measures like sandboxing or ASLR.
-@@ -929,7 +929,7 @@ jumbo_component("base") {
+@@ -886,7 +886,7 @@ jumbo_component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
-         "profiler/stack_copier_signal.cc",
-         "profiler/stack_copier_signal.h",
-@@ -938,6 +938,12 @@ jumbo_component("base") {
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -897,6 +897,11 @@ jumbo_component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
-+
 +    if (is_bsd) {
 +      sources += [
 +        "profiler/stack_sampler_posix.cc",
@@ -30,41 +29,34 @@
 +    }
    }
  
-   jumbo_excluded_sources = []
-@@ -1239,7 +1245,13 @@ jumbo_component("base") {
+   jumbo_excluded_sources = [
+@@ -1213,7 +1218,6 @@ jumbo_component("base") {
        "process/process_metrics_linux.cc",
        "threading/platform_thread_linux.cc",
      ]
 -    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-+    # Omit this because it will be excluded via "is_bsd" further down in
-+    # this file
-+    # jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-+    # ...but remove the following files from jumbo merge otherwise it will
-+    # emit errors of redefined variables
-+    jumbo_excluded_sources += [ "metrics/histogram.cc" ]
-+    jumbo_excluded_sources += [ "metrics/sparse_histogram.cc" ]
    }
  
    if (!is_nacl) {
-@@ -1324,7 +1336,7 @@ jumbo_component("base") {
-   # Needed for <atomic> if using newer C++ library than sysroot, except if
-   # building inside the cros_sdk environment - use host_toolchain as a
-   # more robust check for this.
--  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt)) &&
-+  if (!use_sysroot && (is_android || (is_linux && !is_chromecast && !use_qt) && !is_clang) &&
-       host_toolchain != "//build/toolchain/cros:host") {
-     libs += [ "atomic" ]
-   }
-@@ -1350,7 +1362,7 @@ jumbo_component("base") {
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-       ]
-       deps += [ "//base/allocator:tcmalloc" ]
--    } else if (is_linux && use_allocator == "none") {
-+    } else if ((is_linux && !is_bsd) && use_allocator == "none") {
-       sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
-     } else if (is_android && use_allocator == "none") {
-       sources += [
-@@ -1947,6 +1959,33 @@ jumbo_component("base") {
+@@ -1355,7 +1359,7 @@ jumbo_component("base") {
+           "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
+         ]
+       }
+-      if (is_chromeos || is_linux) {
++      if ((is_chromeos || is_linux) && !is_bsd) {
+         sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+       }
+       if (is_win) {
+@@ -1826,7 +1830,7 @@ jumbo_component("base") {
+         ]
+       }
+ 
+-      if (is_linux || is_chromeos || is_android) {
++      if ((is_linux || is_chromeos || is_android) && !is_bsd) {
+         sources += [
+           "allocator/partition_allocator/spinning_futex_linux.cc",
+           "allocator/partition_allocator/spinning_futex_linux.h",
+@@ -1982,6 +1986,34 @@ jumbo_component("base") {
      }
    }
  
@@ -95,28 +87,25 @@
 +    ]
 +  }
 +
++
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2903,7 +2942,7 @@ test("base_unittests") {
+@@ -3095,7 +3127,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "debug/proc_maps_linux_unittest.cc" ]
+   }
+ 
+@@ -3136,7 +3168,7 @@ test("base_unittests") {
        "posix/unix_domain_socket_unittest.cc",
        "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
--    if (!is_nacl && !is_mac && !is_ios) {
-+    if (!is_nacl && !is_mac && !is_ios && !is_bsd) {
-       sources += [ "profiler/stack_copier_signal_unittest.cc" ]
-     }
-   }
-@@ -3092,6 +3131,12 @@ test("base_unittests") {
- 
-     manifest = "//build/config/fuchsia/tests.cmx"
-   }
-+
-+  if (is_bsd) {
-+    sources -= [
-+      "debug/proc_maps_linux_unittest.cc",
-+    ]
-+  } 
- 
-   if (!is_fuchsia && !is_ios) {
-     sources += [ "files/file_locking_unittest.cc" ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",

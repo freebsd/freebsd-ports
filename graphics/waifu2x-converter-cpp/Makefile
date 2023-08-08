@@ -1,10 +1,10 @@
 PORTNAME=	waifu2x-converter-cpp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scale and denoise images using convolutional neural networks
 WWW=		https://github.com/DeadSix27/waifu2x-converter-cpp
 

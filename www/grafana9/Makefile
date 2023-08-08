@@ -1,6 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.6
+DISTVERSION=	9.5.7
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -15,7 +15,7 @@ WWW=		https://github.com/grafana/grafana
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 
 BUILD_DEPENDS=	wire:devel/go-wire
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
@@ -25,10 +25,11 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		92461d8
+TAG=		d2bfe3c
 
 GO_MODULE=	github.com/grafana/grafana
-GO_TARGET=	./pkg/cmd/grafana-server \
+GO_TARGET=	./pkg/cmd/grafana \
+		./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
 GO_BUILDFLAGS=	-ldflags="-w -X main.version=${PORTVERSION} -X main.commit=${TAG}"
 
@@ -86,7 +87,7 @@ post-patch:
 pre-build:
 	@(cd ${GO_WRKSRC}; \
 	${ECHO_MSG} "===>  Generating wire_gen.go"; \
-	${SETENV} ${MAKE_ENV} ${GO_ENV} wire gen -tags "oss" ./pkg/server ./pkg/cmd/grafana-cli/runner )
+	${SETENV} ${MAKE_ENV} ${GO_ENV} wire gen -tags "oss" ./pkg/server )
 
 post-install:
 	${MKDIR} ${STAGEDIR}${GRAFANA_HOMEDIR}

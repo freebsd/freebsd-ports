@@ -1,6 +1,7 @@
 PORTNAME=	dpf-plugins
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5
+DISTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -13,20 +14,27 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		bash:shells/bash
-LIB_DEPENDS=	liblo.so:audio/liblo \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		liblo.so:audio/liblo \
 		libprojectM.so:graphics/libprojectm \
 		libpulse-simple.so:audio/pulseaudio
 
-USES=		compiler:c++11-lang gl gmake localbase pkgconfig shebangfix xorg
+USES=		compiler:c++11-lang gl gmake localbase pkgconfig sdl shebangfix xorg
+USE_XORG=	x11 xcursor xext xrandr
+USE_GL=		gl
+USE_SDL=	sdl2
+
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	DISTRHO
 GH_PROJECT=	DPF-Plugins
-USE_XORG=	x11 xcursor xext xrandr
-USE_GL=		gl
 
 CXXFLAGS+=	-I${FILESDIR}
 LDFLAGS+=	-pthread
+MAKE_ARGS=	LINUX=true
+
+PLIST_SUB+=	VST_ARCH=${ARCH:S/amd64/x86_64/}
 
 CONFLICTS_INSTALL=	nekobi-lv2 # bin/Nekobi
 
@@ -44,8 +52,5 @@ JACK_MAKE_ARGS_OFF=	HAVE_JACK=false
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
 SIMD_MAKE_ENV=		SIMD_FLAGS="-mtune=generic -msse -msse2 -mfpmath=sse"
-
-post-patch: # disable all plugins except for LV2
-	@${FIND} ${WRKSRC} -name "*.mk" | ${XARGS} ${REINPLACE_CMD} -i '' -E 's/BUILD_(LADSPA|DSSI|VST2) *= *true/BUILD_\1 = false/'
 
 .include <bsd.port.mk>

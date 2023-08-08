@@ -1,0 +1,6 @@
+itertree allows to:
+* store data in a tree like structure
+* has good performance
+* has a reach feature set especially
+* supportys serialization
+* supports links to sub-trees

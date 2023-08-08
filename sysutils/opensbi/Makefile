@@ -1,23 +1,24 @@
 PORTNAME=	opensbi
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.1
+DISTVERSION=	1.3.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mhorne@FreeBSD.org
 COMMENT=	RISC-V SBI bootloader and firmware
-WWW=		https://github.com/riscv/opensbi
+WWW=		https://github.com/riscv-software-src/opensbi
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		dtc:sysutils/dtc
 
-USES=		gmake shebangfix
-SHEBANG_FILES=	scripts/*.sh
+USES=		gmake python:build shebangfix
+SHEBANG_FILES=	scripts/Kconfiglib/*.py
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	riscv
+GH_ACCOUNT=	riscv-software-src
 
-MAKE_ARGS=	CC="clang" I="${STAGEDIR}${PREFIX}" V="1" FW_PAYLOAD="n"
+MAKE_ARGS=	LLVM=1 I=${STAGEDIR}${PREFIX} V=1 FW_PAYLOAD=n
 
 OPTIONS_GROUP=		PLATFORMS
 OPTIONS_GROUP_PLATFORMS=GENERIC
@@ -34,6 +35,8 @@ PLIST_SUB+=		RISCV_ABI=${PLATFORM_RISCV_ABI}
 
 PLATFORM_RISCV_ABI=	lp64
 
+do-install: # only need install_firmwares target
+
 .for platform in ${OPTIONS_GROUP_PLATFORMS}
 
 post-build-${platform}-on:
@@ -43,8 +46,6 @@ do-install-${platform}-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}
 	${MAKE_CMD} -C ${WRKSRC} PLATFORM=${${platform}_PLATFORM} ${MAKE_ARGS} \
 		I=${STAGEDIR}${PREFIX} V=1 install_firmwares
-	${MAKE_CMD} -C ${WRKSRC} PLATFORM=${${platform}_PLATFORM} ${MAKE_ARGS} \
-		I=${STAGEDIR}${PREFIX} V=1 install_libplatsbi
 
 post-install-${platform}-on:
 	${STRIP_CMD} ${${platform}_STRIP_ARGS} \

@@ -1,5 +1,6 @@
 PORTNAME=	type_conv
 PORTVERSION=	113.00.02
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://ocaml.janestreet.com/ocaml-core/${PORTVERSION:R}/files/
 PKGNAMEPREFIX=	ocaml-

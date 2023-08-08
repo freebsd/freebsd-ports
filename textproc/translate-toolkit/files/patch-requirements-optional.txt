@@ -4,24 +4,24 @@
  -r required.txt
  
  # Format support
--aeidon==1.11        # Subtitles
-+aeidon>=1.11        # Subtitles
+-aeidon==1.12        # Subtitles
++aeidon>=1.12        # Subtitles
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--charset-normalizer==2.1.1   # chardet
-+charset-normalizer>=2.1.1   # chardet
+-charset-normalizer==3.1.0   # chardet
++charset-normalizer>=3.1.0   # chardet
  # Tmserver backend
--cheroot==8.6.0       # tmserver
-+cheroot>=8.6.0       # tmserver
+-cheroot==10.0.0       # tmserver
++cheroot>=10.0.0       # tmserver
  # Format support
--fluent.syntax==0.18.1 # Fluent
-+fluent.syntax>=0.18.1 # Fluent
+-fluent.syntax==0.19.0 # Fluent
++fluent.syntax>=0.19.0 # Fluent
  # Format support
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI
  # Format support
--phply==1.2.5         # PHP
+-phply==1.2.6         # PHP
 +phply>=1.2.5         # PHP
  # To provide translations for language names without need for OS package.
 -pycountry==22.3.5          # Languages
@@ -29,13 +29,13 @@
 +pycountry>=22.3.5          # Languages
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.0.9     # RC
-+pyparsing>=3.0.9     # RC
+-pyparsing==3.1.0     # RC
++pyparsing>=3.1.0     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.17.21 # YAML
-+ruamel.yaml>=0.17.21 # YAML
+-ruamel.yaml==0.17.32 # YAML
++ruamel.yaml>=0.17.32 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
 +vobject>=0.9.6.1     # iCal

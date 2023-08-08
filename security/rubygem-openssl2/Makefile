@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -16,10 +16,17 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ipaddr>=0:net/rubygem-ipaddr
 
 USES=		cpe gem ssl
-USE_RUBY=	yes
 
 CPE_VENDOR=	ruby-lang
 
 PORTSCOUT=	limit:^2\.
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+#IGNORE_SSL=	base openssl30 openssl31
+#IGNORE_SSL_REASON=	Missing upstream support for OpenSSL 3.0.0 and later in this version
+.endif
 
 .include <bsd.port.mk>

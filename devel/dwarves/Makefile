@@ -1,5 +1,6 @@
 PORTNAME=	dwarves
 DISTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorapeople.org/~acme/dwarves/
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 LIB_DEPENDS=	libargp.so:devel/argp-standalone \
 		libdw.so:devel/elfutils
 
-USES=		cmake gettext python:3.7+,env shebangfix tar:xz
+USES=		cmake gettext python:env shebangfix tar:xz
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 

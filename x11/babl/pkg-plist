@@ -73,7 +73,7 @@ lib/girepository-1.0/Babl-%%BABL_VER%%.typelib
 lib/libbabl-%%BABL_VER%%.so
 lib/libbabl-%%BABL_VER%%.so.0
 lib/libbabl-%%BABL_VER%%.so.%%BABL_SHLIB%%
-libdata/pkgconfig/babl.pc
+libdata/pkgconfig/babl-%%BABL_VER%%.pc
 share/gir-1.0/Babl-%%BABL_VER%%.gir
 share/vala/vapi/babl-%%BABL_VER%%.deps
 share/vala/vapi/babl-%%BABL_VER%%.vapi

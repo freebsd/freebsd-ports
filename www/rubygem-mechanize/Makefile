@@ -1,5 +1,5 @@
 PORTNAME=	mechanize
-PORTVERSION=	2.8.5
+PORTVERSION=	2.9.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

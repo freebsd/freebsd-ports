@@ -5,7 +5,7 @@ include/sfizz.hpp
 include/sfizz_message.h
 lib/libsfizz.so
 lib/libsfizz.so.1
-lib/libsfizz.so.1.2.0
+lib/libsfizz.so.1.2.1
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Binary/sfizz.so
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Binary/sfizz_ui.so
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/DefaultInstrument.sfz
@@ -18,6 +18,8 @@ lib/libsfizz.so.1.2.0
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/Themes/Default/theme.xml
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/background.png
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/background@2x.png
+%%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/background_button_about.png
+%%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/background_button_about@2x.png
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/icon_white.png
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/icon_white@2x.png
 %%LV2%%lib/lv2/sfizz.lv2/Contents/Resources/knob48.png
@@ -43,6 +45,8 @@ lib/libsfizz.so.1.2.0
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/Themes/Default/theme.xml
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/background.png
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/background@2x.png
+%%VST%%lib/vst3/sfizz.vst3/Contents/Resources/background_button_about.png
+%%VST%%lib/vst3/sfizz.vst3/Contents/Resources/background_button_about@2x.png
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/icon_white.png
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/icon_white@2x.png
 %%VST%%lib/vst3/sfizz.vst3/Contents/Resources/knob48.png
@@ -58,5 +62,5 @@ lib/libsfizz.so.1.2.0
 %%VST%%lib/vst3/sfizz.vst3/Contents/x86_64-linux/sfizz.so
 %%VST%%lib/vst3/sfizz.vst3/gpl-3.0.txt
 libdata/pkgconfig/sfizz.pc
-%%JACK%%share/man/man1/sfizz_jack.gz
-share/man/man1/sfizz_render.gz
+%%JACK%%share/man/man1/sfizz_jack.1.gz
+share/man/man1/sfizz_render.1.gz

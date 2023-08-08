@@ -1,11 +1,20 @@
---- dpf/Makefile.base.mk.orig	2021-01-15 11:38:19 UTC
+--- dpf/Makefile.base.mk.orig	2022-10-31 20:10:17 UTC
 +++ dpf/Makefile.base.mk
-@@ -136,7 +136,7 @@ BASE_FLAGS = -Wall -Wextra -pipe -MD -MP
- BASE_OPTS  = -O3 -ffast-math -fdata-sections -ffunction-sections
+@@ -218,7 +218,7 @@ BASE_OPTS  = -O3 -ffast-math -fdata-sections -ffunctio
+ LINK_OPTS  = -fdata-sections -ffunction-sections
  
- ifeq ($(CPU_I386_OR_X86_64),true)
+ ifeq ($(GCC),true)
+-BASE_FLAGS += -fno-gnu-unique
++#BASE_FLAGS += -fno-gnu-unique
+ endif
+ 
+ ifeq ($(SKIP_STRIPPING),true)
+@@ -244,7 +244,7 @@ BASE_OPTS += -msse -msse2 -msse3 -msimd128
+ else ifeq ($(CPU_ARM32),true)
+ BASE_OPTS += -mfpu=neon-vfpv4 -mfloat-abi=hard
+ else ifeq ($(CPU_I386_OR_X86_64),true)
 -BASE_OPTS += -mtune=generic -msse -msse2 -mfpmath=sse
 +BASE_OPTS += $(SIMD_FLAGS)
  endif
  
- ifeq ($(CPU_ARM),true)
+ ifeq ($(MACOS),true)

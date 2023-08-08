@@ -11,11 +11,13 @@ include/libwebsockets/lws-async-dns.h
 include/libwebsockets/lws-bb-i2c.h
 include/libwebsockets/lws-bb-spi.h
 include/libwebsockets/lws-button.h
+include/libwebsockets/lws-cache-ttl.h
 include/libwebsockets/lws-callbacks.h
 include/libwebsockets/lws-cgi.h
 include/libwebsockets/lws-client.h
 include/libwebsockets/lws-conmon.h
 include/libwebsockets/lws-context-vhost.h
+include/libwebsockets/lws-cose.h
 include/libwebsockets/lws-dbus.h
 include/libwebsockets/lws-diskcache.h
 include/libwebsockets/lws-display.h
@@ -38,10 +40,12 @@ include/libwebsockets/lws-jose.h
 include/libwebsockets/lws-jwe.h
 include/libwebsockets/lws-jwk.h
 include/libwebsockets/lws-jws.h
+include/libwebsockets/lws-lecp.h
 include/libwebsockets/lws-led.h
 include/libwebsockets/lws-lejp.h
 include/libwebsockets/lws-logs.h
 include/libwebsockets/lws-lwsac.h
+include/libwebsockets/lws-map.h
 include/libwebsockets/lws-metrics.h
 include/libwebsockets/lws-misc.h
 include/libwebsockets/lws-mqtt.h
@@ -91,7 +95,7 @@ lib/cmake/libwebsockets/libwebsockets-config.cmake
 %%LIBUV%%lib/libwebsockets-evlib_uv.so
 lib/libwebsockets.a
 lib/libwebsockets.so
-lib/libwebsockets.so.18
+lib/libwebsockets.so.19
 libdata/pkgconfig/libwebsockets.pc
 libdata/pkgconfig/libwebsockets_static.pc
 %%PLUGINS%%%%DATADIR%%-test-server/deaddrop/deaddrop.css

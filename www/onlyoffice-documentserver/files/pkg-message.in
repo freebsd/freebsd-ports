@@ -62,7 +62,10 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
 6. Follow the following doc If you want to use Onlyoffice with Nextcloud:
   - https://api.onlyoffice.com/editors/nextcloud
 
-7. Enjoy.
+7. Install OnlyOffice plugins (you'll need internet):
+  # /usr/local/bin/documentserver-pluginsmanager.sh --update=/usr/local/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+
+8. Enjoy.
 EOM
 }
 { type: upgrade
@@ -74,6 +77,18 @@ you need to update the database schema:
     psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev710.sql
   For MySQL:
     mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev710.sql
+EOM
+}
+{ type: upgrade
+  minimum_version: 7.1.0.215
+  maximum_version: 7.2.1.34
+  message: <<EOM
+If you are upgrading onlyoffice-documentserver from a version prior to 7.2.1.34,
+you need to update the database schema:
+  For PostgreSQL:
+    psql -U postgres -d onlyoffice -f %%WWWDIR%%/documentserver/server/schema/postgresql/upgrade/upgradev720.sql
+  For MySQL:
+    mysql -u onlyoffice -D onlyoffice -p < %%WWWDIR%%/documentserver/server/schema/mysql/upgrade/upgradev720.sql
 EOM
 }
 ]

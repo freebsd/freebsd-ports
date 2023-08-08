@@ -1,9 +1,0 @@
---- a/Makefile
-+++ b/Makefile
-@@ -110,3 +110,6 @@ dist: clean
- clean:
- 	@-rm -f $(PODIR)/*.mo $(PODIR)/*.pot
- 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
-+
-+install:
-+	${INSTALL_PROGRAM} $(LIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION) ${DESTDIR}$(PREFIX)/lib/vdr/libvdr-$(PLUGIN).so.$(APIVERSION)

@@ -1,31 +1,19 @@
 PORTNAME=	wayout
-DISTVERSION=	0.1.2
+DISTVERSION=	1.1.3
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
-MASTER_SITES=	https://git.sr.ht/~proycon/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://git.sr.ht/~shinyzenith/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+# XXX Teach USES=cargo to not override default DISTFILES
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Output simple text to a Wayland desktop widget
-WWW=		https://git.sr.ht/~proycon/wayout
+COMMENT=	Simple tool to manage output modes
+WWW=		https://git.sr.ht/~shinyzenith/wayout
 
-LICENSE=	GPLv3
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-
-USES=		compiler:c11 gnome meson pkgconfig
-USE_GNOME=	cairo pango
+USES=		cargo
 PLIST_FILES=	bin/${PORTNAME}
-
-OPTIONS_DEFINE=	EPOLL MANPAGES
-OPTIONS_DEFAULT=EPOLL MANPAGES
-
-EPOLL_DESC=		Handle signals via epoll-shim
-EPOLL_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
-EPOLL_MESON_ENABLED=	handle-signals
-
-MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
-MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.mk>

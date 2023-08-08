@@ -1,4 +1,5 @@
 PORTNAME=	clearlooks
+PORTREVISION=	1
 PKGNAMESUFFIX+=	-themes
 
 COMMENT=	Clearlooks themes with the engine coming from gtk-engines2

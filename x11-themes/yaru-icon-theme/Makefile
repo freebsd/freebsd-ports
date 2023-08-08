@@ -1,5 +1,5 @@
 PORTNAME=	yaru-icon-theme
-DISTVERSION=	22.04.4
+DISTVERSION=	22.10.3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com

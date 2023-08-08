@@ -79,7 +79,7 @@ _Static_assert(offsetof(struct trapframe, tf_out) == OFF_TF_OUT,
 #endif
 
 static struct sparc_frame_cache *
-sparc64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+sparc64fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct sparc_frame_cache *cache;
   CORE_ADDR fp, sp, trapframe_addr;
@@ -115,7 +115,7 @@ sparc64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-sparc64fbsd_trapframe_this_id (struct frame_info *this_frame,
+sparc64fbsd_trapframe_this_id (frame_info_ptr this_frame,
 			       void **this_cache, struct frame_id *this_id)
 {
   struct sparc_frame_cache *cache =
@@ -125,7 +125,7 @@ sparc64fbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-sparc64fbsd_trapframe_prev_register (struct frame_info *this_frame,
+sparc64fbsd_trapframe_prev_register (frame_info_ptr this_frame,
 				     void **this_cache, int regnum)
 {
   struct sparc_frame_cache *cache =
@@ -136,7 +136,7 @@ sparc64fbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 sparc64fbsd_trapframe_sniffer (const struct frame_unwind *self,
-			       struct frame_info *this_frame,
+			       frame_info_ptr this_frame,
 			       void **this_cache)
 {
   CORE_ADDR pc;
@@ -294,7 +294,7 @@ sparc64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 
 	frame_unwind_prepend_unwinder(gdbarch, &sparc64fbsd_trapframe_unwind);
 
-	set_solib_ops(gdbarch, &kld_so_ops);
+	set_gdbarch_so_ops(gdbarch, &kld_so_ops);
 
 #ifdef __sparc64__
 	fbsd_vmcore_set_supply_pcb(gdbarch, sparc64fbsd_supply_pcb);

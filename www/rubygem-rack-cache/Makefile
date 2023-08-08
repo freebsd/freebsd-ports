@@ -10,10 +10,9 @@ WWW=		https://github.com/rtomayko/rack-cache
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=0.4:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0.4,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

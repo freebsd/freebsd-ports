@@ -1,18 +1,18 @@
 PORTNAME=	libcouchbase
-PORTVERSION=	2.10.7
+PORTVERSION=	3.3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://packages.couchbase.com/clients/c/
+MASTER_SITES=	https://github.com/couchbase/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sergey@couchbase.com
 COMMENT=	Multithreaded noSQL database (client and library)
-WWW=		https://developer.couchbase.com/documentation/server/current/sdk/c/start-using-sdk.html
+WWW=		https://docs.couchbase.com/c-sdk/current/hello-world/start-using-sdk.html
 
 LICENSE=	APACHE20
 
-BROKEN_mips64=		fails to link: ld: failed to merge target specific data
+BROKEN_mips64=	fails to link: ld: failed to merge target specific data
 
-LIB_DEPENDS=	libevent.so:devel/libevent \
-		libev.so:devel/libev \
+LIB_DEPENDS=	libev.so:devel/libev \
+		libevent.so:devel/libevent \
 		libuv.so:devel/libuv
 
 USES=		cmake perl5 ssl
@@ -21,7 +21,7 @@ USE_PERL5=	build run
 
 CMAKE_ARGS=	-DLCB_NO_TESTS=1
 
-CONFLICTS_INSTALL=      coin-or-cbc
+CONFLICTS_INSTALL=	coin-or-cbc
 
 .include <bsd.port.pre.mk>
 

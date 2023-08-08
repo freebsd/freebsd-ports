@@ -1,10 +1,7 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.5
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	d4e23adc49e1.patch:-p1 # https://gitlab.gnome.org/GNOME/libshumate/-/merge_requests/136
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK4 widget to display maps
@@ -19,8 +16,6 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 USES=		gettext gnome meson pkgconfig sqlite tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 USE_LDCONFIG=	yes
-
-CONFLICTS=	libshumate-shortwave
 
 OPTIONS_DEFINE=	DOCS
 

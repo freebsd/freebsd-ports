@@ -1,0 +1,15 @@
+--- Makefile.orig	2011-05-25 18:53:42 UTC
++++ Makefile
+@@ -4,10 +4,10 @@ build:
+ 	$(MAKE) build -C src/plugins/scratch/
+ 	$(MAKE) build -C src/plugins/unicode/
+ 	$(MAKE) build -C src/plugins/camera/
+-	$(MAKE) build -C src/plugins/wedo/
++#	$(MAKE) build -C src/plugins/wedo/
+ 	
+ clean:
+ 	$(MAKE) clean -C src/plugins/scratch/
+ 	$(MAKE) clean -C src/plugins/unicode/
+ 	$(MAKE) clean -C src/plugins/camera/
+-	$(MAKE) clean -C src/plugins/wedo/	
++#	$(MAKE) clean -C src/plugins/wedo/	

@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# $FreeBSD$
+# PROVIDE: mastodon_web
+# REQUIRE: DAEMON postgresql
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mastodon_web"
+desc="Mastodon Web Service"
+rcvar="mastodon_web_enable"
+
+load_rc_config ${name}
+
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+
+mastodon_web_user="mastodon"
+mastodon_web_chdir="%%WWWDIR%%"
+mastodon_web_env="RAILS_ENV=production \
+PORT=3000 \
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin:~/bin"
+pidfile="/var/run/mastodon/${name##mastodon_}.pid"
+ppidfile="/var/run/mastodon/${name##mastodon_}_supervisor.pid"
+command="/usr/sbin/daemon"
+procname="%%PREFIX%%/bin/bundle"
+procname_args="exec puma -C config/puma.rb"
+command_args="-f -T ${name} -P ${ppidfile} -p ${pidfile} -S -r ${procname} ${procname_args}"
+
+mastodon_web_prestart()
+{
+	if [ ! -d "/var/run/mastodon" ]; then
+		install -d -o "${mastodon_web_user}" -g "${mastodon_web_user}" -m 750 "/var/run/mastodon"
+	fi
+}
+
+mastodon_web_stop()
+{
+	/bin/kill -9 `cat ${ppidfile}`
+	/bin/kill -15 `cat ${pidfile}`
+}
+
+run_rc_command "$1"

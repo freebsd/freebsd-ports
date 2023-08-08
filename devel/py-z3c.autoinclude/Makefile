@@ -1,7 +1,7 @@
 PORTNAME=	z3c.autoinclude
 PORTVERSION=	0.3.6
 CATEGORIES=	devel python zope
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.dottedname>=0:devel/py-zope.dottedname@
 		${PYTHON_PKGNAMEPREFIX}zc.buildout>=0:devel/py-zc.buildout@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -11,11 +11,13 @@ WWW=		http://www.kusa.ac.jp/~yukio-m/dbs/
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	gnuplot:math/gnuplot
-
+DEPRECATED=	Broken on all supported releases for more than an year
+EXPIRATION_DATE=	2023-08-16
 BROKEN_FreeBSD_12=	tcp_debug.h: field has incomplete type 'struct tcpcb'
 BROKEN_FreeBSD_13=	tcp_debug.h: field has incomplete type 'struct tcpcb'
 BROKEN_FreeBSD_14=	tcp_debug.h: field has incomplete type 'struct tcpcb'
+
+RUN_DEPENDS=	gnuplot:math/gnuplot
 
 BUILD_WRKSRC=	${WRKSRC}/obj/${OPSYS}
 INSTALL_WRKSRC=	${WRKSRC}/obj/${OPSYS}

@@ -1,6 +1,6 @@
 PORTNAME=	xorg
-PORTVERSION=	21.1.4
-PORTREVISION=	1
+PORTVERSION=	21.1.8
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -58,7 +58,6 @@ MESON_ARGS+=	-Dxwin=false \
 		-Dxselinux=false \
 		-Dfallback_input_driver=libinput \
 		-Ddocs=false \
-		-Dudev_kms=false \
 		-Dxcsecurity=true \
 		-Dxkb_dir=${LOCALBASE}/share/X11/xkb \
 		-Dxkb_output_dir=/var/lib/xkb \
@@ -72,10 +71,12 @@ MESON_ARGS+=	-D${f}=false
 LIB_DEPENDS+=		libudev.so:devel/libudev-devd \
 			libxcvt.so:x11/libxcvt
 MESON_ARGS+=	-Dudev=true \
+		-Dudev_kms=true \
 		-Dlog_dir=/var/log \
 		-Dsuid_wrapper=true
 .else
-MESON_ARGS+=	-Dudev=false
+MESON_ARGS+=	-Dudev=false \
+		-Dudev_kms=false
 .endif
 
 .if ${FLAVOR} == xorg || ${FLAVOR} == xephyr
@@ -120,7 +121,7 @@ USE_XORG+=	pciaccess
 MESON_ARGS+=	-Dsha1=libmd
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 

@@ -33,6 +33,9 @@ LICENSE_NAME=		OpenLDAP Public License
 LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=		No longer supported by upstream.  Please use a newer version of OpenLDAP instead
+EXPIRATION_DATE=	2023-09-30
+
 .if defined(CLIENT_ONLY)
 CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-client ${PORTNAME}2[0-35-9]-client ${PORTNAME}-client
 .else
@@ -43,13 +46,8 @@ GNU_CONFIGURE=		yes
 # :keepla because port uses lt_dlopen
 USES=			cpe libtool:keepla ssl tar:tgz
 
-WANT_OPENLDAP_VER?=	24
-.if ${WANT_OPENLDAP_VER} != 24
-BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
-.endif
-
 PORTREVISION_CLIENT=	4
-PORTREVISION_SERVER=	9
+PORTREVISION_SERVER=	11
 OPENLDAP_SHLIB_MAJOR=	2
 OPENLDAP_SHLIB_MINOR=	11.7
 OPENLDAP_MAJOR=		${DISTVERSION:R}
@@ -367,15 +365,11 @@ OPENLDAP_PKGFILESUFX=	.client
 
 PORTDOCS=		CHANGES drafts rfc
 
-.if defined(USE_OPENLDAP)
-BROKEN=			you have USE_OPENLDAP variable defined either in environment or in make(1) arguments; please undefine and try again
-.endif
 .else
 OPENLDAP_PORTREVISION=	${PORTREVISION_SERVER}
 OPENLDAP_PKGFILESUFX=
 
-USE_OPENLDAP=		yes
-WANT_OPENLDAP_VER=	24
+USES+=	ldap:24
 
 LIB_DEPENDS+=		libicudata.so:devel/icu
 

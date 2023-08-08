@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-dotenv>=${PORTVERSION}:misc/rubygem-dotenv \
 		rubygem-railties50>=3.2:www/rubygem-railties50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

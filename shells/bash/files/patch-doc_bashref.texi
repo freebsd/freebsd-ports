@@ -1,4 +1,4 @@
---- doc/bashref.texi.orig	2016-09-29 22:30:30 UTC
+--- doc/bashref.texi.orig	2022-09-19 15:41:39 UTC
 +++ doc/bashref.texi
 @@ -1,6 +1,6 @@
  \input texinfo.tex @c -*- texinfo -*-
@@ -17,7 +17,7 @@
  
  This is Edition @value{EDITION}, last updated @value{UPDATED},
  of @cite{The GNU Bash Reference Manual},
-@@ -5443,7 +5443,7 @@ A null directory name may appear as two 
+@@ -6004,7 +6004,7 @@ A null directory name may appear as two adjacent colon
  or trailing colon.
  
  @item PS1

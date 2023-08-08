@@ -1,5 +1,5 @@
 PORTNAME=	cld3
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,6 @@ WWW=		https://github.com/akihikodaki/cld3-ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libprotobuf.so:devel/protobuf
-RUN_DEPENDS=	rubygem-ffi>=1.1.0<1.16.0:devel/rubygem-ffi
-
 USES=		gem pkgconfig
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

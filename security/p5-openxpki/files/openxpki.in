@@ -10,7 +10,7 @@
 # openxpki_enable="YES"
 # to ensure that openxpki starts at boot time.
 # Define and edit this variable in file /etc/rc.conf:
-# openxpki_conf="%%PREFIX%%/etc/openxpki/config.git"
+# openxpki_conf="%%PREFIX%%/etc/openxpki/config.d"
 # if your configuration is in different place.
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE

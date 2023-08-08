@@ -10,7 +10,7 @@ WWW=		https://github.com/jarun/googler
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	jarun

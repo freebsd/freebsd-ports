@@ -16,6 +16,6 @@ PEAR_CHANNEL=	twig
 NO_ARCH=	yes
 CPE_VENDOR=	symfony
 
-USE_PHP=	ctype hash
+USE_PHP=	ctype
 
 .include <bsd.port.mk>

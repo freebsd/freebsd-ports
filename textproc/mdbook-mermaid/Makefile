@@ -1,10 +1,10 @@
 PORTNAME=	mdbook-mermaid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.2
-PORTREVISION=	1
+DISTVERSION=	0.12.6
+PORTREVISION=	7
 CATEGORIES=	textproc
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor for mdBook to add mermaid.js support
 WWW=		https://github.com/badboy/mdbook-mermaid
 
@@ -15,102 +15,5 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	badboy
 PLIST_FILES=	bin/${PORTNAME}
-
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
-		assert_cmd-2.0.4 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
-		bitflags-1.3.2 \
-		block-buffer-0.7.3 \
-		block-padding-0.1.5 \
-		bstr-0.2.17 \
-		byte-tools-0.3.1 \
-		byteorder-1.4.3 \
-		bytes-1.1.0 \
-		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.1.18 \
-		clap_complete-3.1.4 \
-		clap_lex-0.2.0 \
-		combine-4.6.4 \
-		ctor-0.1.22 \
-		diff-0.1.12 \
-		difflib-0.4.0 \
-		digest-0.8.1 \
-		doc-comment-0.3.3 \
-		either-1.6.1 \
-		env_logger-0.7.1 \
-		env_logger-0.9.0 \
-		fake-simd-0.1.2 \
-		fastrand-1.7.0 \
-		generic-array-0.12.4 \
-		handlebars-4.3.0 \
-		hashbrown-0.11.2 \
-		hermit-abi-0.1.19 \
-		humantime-1.3.0 \
-		humantime-2.1.0 \
-		indexmap-1.8.1 \
-		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-1.0.2 \
-		lazy_static-1.4.0 \
-		libc-0.2.126 \
-		log-0.4.17 \
-		maplit-1.0.2 \
-		mdbook-0.4.18 \
-		memchr-2.5.0 \
-		num-integer-0.1.45 \
-		num-traits-0.2.15 \
-		opaque-debug-0.2.3 \
-		opener-0.5.0 \
-		os_str_bytes-6.1.0 \
-		output_vt100-0.1.3 \
-		pest-2.1.3 \
-		pest_derive-2.1.0 \
-		pest_generator-2.1.3 \
-		pest_meta-2.1.3 \
-		predicates-2.1.1 \
-		predicates-core-1.0.3 \
-		predicates-tree-1.0.5 \
-		pretty_assertions-1.2.1 \
-		proc-macro2-1.0.39 \
-		pulldown-cmark-0.9.1 \
-		quick-error-1.2.3 \
-		quote-1.0.18 \
-		redox_syscall-0.2.13 \
-		regex-1.5.6 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.26 \
-		remove_dir_all-0.5.3 \
-		ryu-1.0.10 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.81 \
-		sha-1-0.8.2 \
-		shlex-1.1.0 \
-		strsim-0.10.0 \
-		syn-1.0.95 \
-		tempfile-3.3.0 \
-		termcolor-1.1.3 \
-		termtree-0.2.4 \
-		textwrap-0.15.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		time-0.1.43 \
-		toml-0.5.9 \
-		toml_edit-0.14.4 \
-		topological-sort-0.1.0 \
-		typenum-1.15.0 \
-		ucd-trie-0.1.3 \
-		unicase-2.6.0 \
-		unicode-ident-1.0.0 \
-		version_check-0.9.4 \
-		wait-timeout-0.2.0 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
 
 .include <bsd.port.mk>

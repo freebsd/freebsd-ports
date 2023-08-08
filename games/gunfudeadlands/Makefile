@@ -7,7 +7,7 @@ DISTNAME=	GunFuDeadlands_${PORTVERSION:C/\.//}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Far West themed 2D shooter featuring bullet time
-WWW=		http://gunfudeadlands.sourceforge.net/
+WWW=		https://gunfudeadlands.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/gpl.txt
@@ -25,11 +25,11 @@ PORTDOCS=	*
 PORTDATA=	*
 
 DESKTOP_ENTRIES="GunFu Deadlands" \
-                "" \
-                "${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-                "${PORTNAME}" \
-                "Game;ArcadeGame;" \
-                ""
+		"" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		""
 
 OPTIONS_DEFINE=	DOCS
 

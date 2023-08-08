@@ -1,5 +1,5 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.1.56
+DISTVERSION=	5.2.94
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -25,11 +25,10 @@ LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libsoci_core.so:databases/soci \
 		libxerces-c.so:textproc/xerces-c3
 
-USES=		cmake gnome iconv pkgconfig python:build sqlite
+USES=		cmake compiler:c++17-lang gnome iconv pkgconfig python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	c5d52f725840bceca36874f480d86bdbb91f5b7e
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
@@ -37,6 +36,7 @@ CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 		-DCMAKE_SKIP_INSTALL_RPATH=ON \
 		-DENABLE_FLEXIAPI=NO \
 		-DENABLE_NLS=NO \
+		-DENABLE_QRCODE=NO \
 		-DENABLE_STATIC=NO \
 		-DENABLE_STRICT=NO \
 		-DENABLE_UNIT_TESTS=NO
@@ -46,7 +46,7 @@ OPTIONS_DEFAULT=	LDAP VIDEO
 OPTIONS_SUB=		yes
 
 LDAP_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CMAKE_BOOL=	ENABLE_LDAP
 VIDEO_CMAKE_BOOL=	ENABLE_VIDEO
 

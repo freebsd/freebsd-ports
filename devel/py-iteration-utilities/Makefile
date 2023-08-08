@@ -1,7 +1,7 @@
 PORTNAME=	iteration-utilities
 PORTVERSION=	0.11.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	iteration_utilities-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/MSeifert04/iteration_utilities
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

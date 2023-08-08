@@ -1,5 +1,5 @@
 PORTNAME=	MojoX-Log-Dispatch-Simple
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -8,7 +8,7 @@ MAINTAINER=	bokutin@bokut.in
 COMMENT=	Simple Log::Dispatch replacement of Mojo::Log
 WWW=		https://metacpan.org/release/MojoX-Log-Dispatch-Simple
 
-LICENSE=	ART10 GPLv1+
+LICENSE=	ARTPERL10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

@@ -12,12 +12,17 @@ WWW=		https://www.speech.kth.se/snack/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-USES=		tk:tea
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		tk:tea xorg
 USE_LDCONFIG=	${PREFIX}/lib/snack${PORTVERSION:R}
+USE_XORG=	x11 xscrnsaver xext xft xrender
+
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
-WRKSRC_SUBDIR=	unix
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC_SUBDIR=	unix
 
 PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 PORTDOCS=	*
@@ -29,6 +34,12 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 VORBIS_CONFIGURE_ON=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 VORBIS_ALL_TARGET=	all libsnackogg.so
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/snack${PORTVERSION:R}/*.so

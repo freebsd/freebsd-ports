@@ -28,6 +28,12 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's,-Werror,,' ${WRKSRC}/compiler/cpp/Makefile.am \
 		${WRKSRC}/lib/rb/ext/extconf.rb

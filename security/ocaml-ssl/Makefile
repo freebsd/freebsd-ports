@@ -1,5 +1,5 @@
 PORTNAME=	ssl
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.13
 CATEGORIES=	security devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -28,7 +28,7 @@ do-build:
 
 do-install:
 	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
-		--libdir=${OCAML_SITELIBDIR}
+		--libdir=${PREFIX}/${OCAML_SITELIBDIR}
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

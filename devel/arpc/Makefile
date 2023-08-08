@@ -17,7 +17,7 @@ LIB_DEPENDS=	libargdata.so:devel/argdata
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyPEG2>=2.15.2:textproc/py-pyPEG2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toposort>=1.5:devel/py-toposort@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang cmake:insource localbase:ldflags python:3.4+ \
+USES=		compiler:c++17-lang cmake:insource localbase:ldflags python \
 		shebangfix
 SHEBANG_FILES=	scripts/aprotoc.py
 USE_LDCONFIG=	yes

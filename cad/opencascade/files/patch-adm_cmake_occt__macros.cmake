@@ -1,4 +1,4 @@
---- adm/cmake/occt_macros.cmake.orig	2021-10-30 11:13:37 UTC
+--- adm/cmake/occt_macros.cmake.orig	2022-09-30 11:53:39 UTC
 +++ adm/cmake/occt_macros.cmake
 @@ -47,7 +47,7 @@ macro (OCCT_MAKE_OS_WITH_BITNESS)
    elseif(APPLE)
@@ -18,12 +18,12 @@
    
    string(TIMESTAMP CURRENT_TIME "%H:%M:%S")
    message (STATUS "Info: \(${CURRENT_TIME}\) Checking headers in inc folder...")
-@@ -592,12 +592,12 @@ macro (OCCT_UPDATE_TARGET_FILE)
-   "cmake_policy(PUSH)
-   cmake_policy(SET CMP0007 NEW)
-   string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWERCASE)
+@@ -590,12 +590,12 @@ macro (OCCT_UPDATE_TARGET_FILE)
+ 
+   install (CODE
+   "string (TOLOWER \"\${CMAKE_INSTALL_CONFIG_NAME}\" CMAKE_INSTALL_CONFIG_NAME_LOWERCASE)
 -  file (GLOB ALL_OCCT_TARGET_FILES \"${INSTALL_DIR}/${INSTALL_DIR_CMAKE}/OpenCASCADE*Targets-\${CMAKE_INSTALL_CONFIG_NAME_LOWERCASE}.cmake\")
-+  file (GLOB ALL_OCCT_TARGET_FILES \"$ENV{DESTDIR}${INSTALL_DIR_CMAKE}/OpenCASCADE*Targets-\${CMAKE_INSTALL_CONFIG_NAME_LOWERCASE}.cmake\")
++  file (GLOB ALL_OCCT_TARGET_FILES \"$ENV{DESTDIR}/${INSTALL_DIR_CMAKE}/OpenCASCADE*Targets-\${CMAKE_INSTALL_CONFIG_NAME_LOWERCASE}.cmake\")
    foreach(TARGET_FILENAME \${ALL_OCCT_TARGET_FILES})
      file (STRINGS \"\${TARGET_FILENAME}\" TARGET_FILE_CONTENT)
      file (REMOVE \"\${TARGET_FILENAME}\")
@@ -32,4 +32,4 @@
 +      string (REGEX REPLACE \"[\\\\]?[\\\$]{OCCT_INSTALL_BIN_LETTER}\" \"${OCCT_INSTALL_BIN_LETTER}\" line \"\${line}\")
        file (APPEND \"\${TARGET_FILENAME}\" \"\${line}\\n\")
      endforeach()
-   endforeach()
+   endforeach()")

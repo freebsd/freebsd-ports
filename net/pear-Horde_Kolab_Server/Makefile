@@ -8,7 +8,6 @@ COMMENT=	Horde library for manipulating the Kolab user database
 WWW=		https://pear.horde.org
 
 USES=		horde php cpe
-USE_PHP=	hash
 USE_HORDE_RUN=	Horde_Auth \
 		Horde_Exception
 

@@ -1,11 +1,10 @@
 PORTNAME=	julia
-DISTVERSION=	1.7.3
+DISTVERSION=	1.9.2
 DISTVERSIONSUFFIX=	-full
-PORTREVISION=	1
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	rizor.reardon@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Julia, a language for technical computing
 WWW=		https://julialang.org/
 
@@ -32,26 +31,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopenlibm.so:math/openlibm
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		gmake compiler:c++14-lang cpe fortran python perl5 \
-		shebangfix blaslapack:openblas
+USES=		gmake cpe fortran python perl5 blaslapack:openblas
 
 CPE_VENDOR=	julialang
 
-BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
 USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-CFLAGS+=	-fpic
-
-SHEBANG_GLOB=	*.sh
-
-WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
-
-ALL_TARGET=	default
-INSTALL_TARGET=	install
-TEST_TARGET=	test
-
-PORTDOCS=	html
-PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 MAKE_ARGS+=	NO_GIT=1 \
 		USE_BINARYBUILDER=0 \
@@ -77,25 +62,31 @@ MAKE_ARGS+=	NO_GIT=1 \
 		USE_SYSTEM_CSL=1 \
 		USE_SYSTEM_ZLIB=1 \
 		USE_SYSTEM_LIBUNWIND=1
+ALL_TARGET=	default
+INSTALL_TARGET=	install
+TEST_TARGET=	test
 
-OPTIONS_DEFINE=		DEBUG DOCS NATIVE GPL_LIBS
-OPTIONS_DEFAULT=	DOCS GPL_LIBS
+CFLAGS+=	-fpic
+
+BINARY_ALIAS=	python3=${PYTHON_CMD} gfortran=gfortran${_GCC_VER}
+
+WRKSRC=		${WRKDIR}/julia-${DISTVERSION}
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+PORTDOCS=	html
+
+OPTIONS_DEFINE=		DEBUG DOCS NATIVE
+OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
+
+NATIVE_DESC=		Build with native CPU JIT tuning
+NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
 DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 			ALL_TARGET=all \
 			BUNDLE_DEBUG_LIBS=1
 
 DOCS_VARS=		INSTALL_TARGET+=install-docs
-
-GPL_LIBS_DESC=		Build with GPL library suitesparse
-GPL_LIBS_LIB_DEPENDS=	libspqr.so:math/suitesparse-spqr \
-			libumfpack.so:math/suitesparse-umfpack
-GPL_LIBS_MAKE_ARGS=	USE_SYSTEM_LIBSUITESPARSE=1 \
-			USE_GPL_LIBS=1
-
-NATIVE_DESC=		Build with native CPU JIT tuning
-NATIVE_MAKE_ARGS=	JULIA_CPU_TARGET=native
 
 post-patch:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
@@ -117,25 +108,30 @@ post-configure:
 	)
 
 pre-install:
-	${CP} ${WRKSRC}/deps/srccache/cacert-2020-10-14.pem ${WRKSRC}/usr/share/julia/cert.pem
+	${CP} ${WRKSRC}/deps/srccache/cacert-2022-10-11.pem ${WRKSRC}/usr/share/julia/cert.pem
 
 post-install:
 	# clean up for Pkg3.jl
-.for file in .codecov.yml .travis.yml appveyor.yml bors.toml .gitignore source-extracted
-	${FIND} ${STAGEDIR}${PREFIX}/share/julia/ -name ${file} -delete
+.for file in .codecov.yml .travis.yml appveyor.yml bors.toml .gitignore source-extracted *.orig
+	${FIND} ${STAGEDIR}${PREFIX}/share/julia/ -name "${file}" -delete
 .endfor
 .for dir in Statistics SuiteSparse ArgTools Pkg Downloads LibCURL NetworkOptions Tar
 	${RM} -fr ${STAGEDIR}${PREFIX}/share/julia/stdlib/v${PORTVERSION:R}/${dir}/.github/
 .endfor
-
-post-install-DOCS-off:
-	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/julia/compiled
 
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so
+.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
+.for bin in lld dsymutil
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
+.endfor
+	${FIND} ${STAGEDIR}${PREFIX}/share/julia/compiled -name "*.so" | ${XARGS} ${STRIP_CMD}
+
+post-install-DOCS-off:
+	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
 .include <bsd.port.mk>

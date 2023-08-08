@@ -1,7 +1,7 @@
 PORTNAME=	proby
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.2
-PORTREVISION=	19
+PORTREVISION=	28
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -52,6 +52,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		bytestring-0.1.5 \
 		cc-1.0.58 \
 		cfg-if-0.1.10 \
+		cfg-if-1.0.0 \
 		chrono-0.4.13 \
 		clap-2.33.2 \
 		cloudabi-0.1.0 \
@@ -181,7 +182,7 @@ CARGO_CRATES=	actix-codec-0.2.0 \
 		slab-0.4.2 \
 		sluice-0.4.2 \
 		smallvec-1.4.1 \
-		socket2-0.3.12 \
+		socket2-0.3.19 \
 		strsim-0.8.0 \
 		structopt-0.3.16 \
 		structopt-derive-0.4.9 \

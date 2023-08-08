@@ -1,5 +1,5 @@
 PORTNAME=	rack-proxy
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,9 @@ WWW=		https://github.com/ncr/rack-proxy
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -5,7 +5,7 @@
 
 # Folder where your music library is stored. Can be read-only
 MusicFolder = "%%DATADIR%%/music"
-# Folder to store application data (DB, cache…).
+# Folder to store application data (database, cache, etc.)
 #DataFolder 	= "/var/db/navidrome"
 # How frequently to scan for changes in your music library. Set it to 0 to disable scans
 #ScanInterval = "1m"
@@ -61,7 +61,7 @@ Address	= "127.0.0.1"
 #LastFM.ApiKey		= ""
 # Last.FM Shared Secret
 #LastFM.Secret		= ""
-# Two letter-code for language to be used to retrieve biographies from Last.FM 
+# Two letter-code for language to be used to retrieve biographies from Last.FM
 #LastFM.Language	= "en"
 
 # Spotify Client ID
@@ -69,5 +69,5 @@ Address	= "127.0.0.1"
 # Spotify Client Secret
 #Spotify.Secret	= ""
 
-# Use Gravatar images as the user profile image. Needs the user’s email to be filled.  Defaule: false
+# Use Gravatar images as the user profile image. Needs the user's email to be filled.  Default: false
 EnableGravatar	= true

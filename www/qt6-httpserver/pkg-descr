@@ -1,0 +1,3 @@
+Qt HTTP Server provides building blocks for embedding a lightweight HTTP
+server based on RFC 2616 in an application. There are classes for the messages
+sent and received, and for the various parts of an HTTP server.

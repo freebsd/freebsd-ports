@@ -15,7 +15,8 @@ COMMENT=	Japanese enhancement of GNU groff
 
 LICENSE=	GPLv2
 
-USES=		iconv:wchar_t cpe gmake makeinfo shebangfix
+USES=		iconv:wchar_t cpe gmake localbase makeinfo shebangfix
+USE_CXXSTD=	c++14
 
 SHEBANG_FILES=	src/utils/afmtodit/afmtodit.pl \
 		contrib/mm/mmroff.pl
@@ -23,8 +24,7 @@ CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-multibyte
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib ${ICONV_LIB}
+LIBS+=		${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install install_doc
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
@@ -65,11 +65,13 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/mdoc.local ${STAGEDIR}${DATADIR}/site-tmac
 	${INSTALL_DATA} ${WRKSRC}/doc/groff.info \
 	    ${STAGEDIR}${PREFIX}/${INFO_PATH}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} \
-	    ChangeLog.jp NEWS PROBLEMS README README.jp ${STAGEDIR}${DOCSDIR}
 	for F in eqn neqn pic tbl; do \
 		${LN} -sf $$F ${STAGEDIR}${PREFIX}/bin/g$$F; \
 	done
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${INSTALL_WRKSRC} && ${INSTALL_DATA} \
+	    ChangeLog.jp NEWS PROBLEMS README README.jp ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

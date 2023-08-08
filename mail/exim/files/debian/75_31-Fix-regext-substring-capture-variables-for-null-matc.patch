@@ -1,0 +1,79 @@
+From e63825824cc406c160ccbf2b154c5d81b168604a Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Fri, 11 Nov 2022 00:05:59 +0000
+Subject: [PATCH 1/2] Fix regext substring capture variables for null matches. 
+ Bug 2933
+
+broken-by: 59d66fdc13f0
+---
+ doc/ChangeLog | 5 +++++
+ src/exim.c        | 2 ++
+ src/malware.c     | 3 +++
+ src/regex.c       | 2 +-
+ 4 files changed, 11 insertions(+), 1 deletion(-)
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -22,10 +22,15 @@
+       pid 1, in the normal "background daemon" mode, having to drop process-
+       group leadership also lost track of needing to create listener sockets.
+ 
+ JH/13 Bug 2929: Fix using $recipients after ${run...}.  A change made for 4.96
+       resulted in the variable appearing empty.  Find and fix by Ruben Jenster.
++ 
++JH/14 Bug 2933: Fix regex substring match variables for null matches. Since 4.96
++      a capture group which obtained no text (eg. "(abc)*" matching zero
++      occurrences) could cause a segfault if the corresponding $<n> was
++      expanded.
+ 
+ 
+ 
+ Exim version 4.96
+ -----------------
+--- a/src/exim.c
++++ b/src/exim.c
+@@ -167,10 +167,12 @@
+   for (int matchnum = setup < 0 ? 0 : 1; matchnum < res; matchnum++)
+     {
+     PCRE2_SIZE len;
+     pcre2_substring_get_bynumber(md, matchnum,
+       (PCRE2_UCHAR **)&expand_nstring[expand_nmax], &len);
++    if (!expand_nstring[expand_nmax])
++      { expand_nstring[expand_nmax] = US""; len = 0; }
+     expand_nlength[expand_nmax++] = (int)len;
+     }
+   expand_nmax--;
+   }
+ else if (res != PCRE2_ERROR_NOMATCH) DEBUG(D_any)
+--- a/src/malware.c
++++ b/src/malware.c
+@@ -323,11 +323,14 @@
+ int i = pcre2_match(cre, text, PCRE2_ZERO_TERMINATED, 0, 0, md, pcre_mtc_ctx);
+ PCRE2_UCHAR * substr = NULL;
+ PCRE2_SIZE slen;
+ 
+ if (i >= 2)				/* Got it */
++  {
+   pcre2_substring_get_bynumber(md, 1, &substr, &slen);
++  if (!substr) substr = US"";
++  }
+ return US substr;
+ }
+ 
+ static const pcre2_code *
+ m_pcre_nextinlist(const uschar ** list, int * sep,
+--- a/src/regex.c
++++ b/src/regex.c
+@@ -84,11 +84,11 @@
+     for (int nn = 1; nn < n; nn++)
+       {
+       PCRE2_UCHAR * cstr;
+       PCRE2_SIZE cslen;
+       pcre2_substring_get_bynumber(md, nn, &cstr, &cslen);
+-      regex_vars[nn-1] = CUS cstr;
++      regex_vars[nn-1] = cstr ? CUS cstr : CUS"";
+       }
+ 
+     return OK;
+     }
+   }

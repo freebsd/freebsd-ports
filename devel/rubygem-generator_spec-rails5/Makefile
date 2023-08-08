@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport5>=3.0.0:devel/rubygem-activesupport5 \
 		rubygem-railties5>=3.0.0:www/rubygem-railties5
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

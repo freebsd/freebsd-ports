@@ -1,0 +1,2 @@
+cli is a cross-platform header only C++14 library for interactive command line
+interfaces (Cisco style).

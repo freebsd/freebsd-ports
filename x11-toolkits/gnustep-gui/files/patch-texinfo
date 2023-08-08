@@ -1,0 +1,11 @@
+--- Documentation/manual/GNUmakefile.orig	2020-04-05 20:04:40 UTC
++++ Documentation/manual/GNUmakefile
+@@ -3,6 +3,8 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ 
+ DOCUMENT_NAME = AppKit
+ 
++GNUSTEP_TEXI2HTML_FLAGS = --output=AppKit
++
+ AppKit_TEXI_FILES = \
+ AppKit.texi \
+ applicationmakefiles.texi \

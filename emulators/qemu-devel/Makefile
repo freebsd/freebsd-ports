@@ -1,16 +1,17 @@
 PORTNAME=	qemu
-DISTVERSION=	7.1.0.20220805
+DISTVERSION=	8.0.0.20230505
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
-WWW=		https://wiki.qemu.org/Main_Page
+WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 powerpc powerpc64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
@@ -30,15 +31,13 @@ USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
-GL_COMMIT=	09ed077d7fae5f825e18ff9a2004dcdd1b165edb
-GL_TUPLE=	qemu-project:keycodemapdb:e15649b83a78f89f57205927022115536d2c1698:keycodemapdb/ui/keycodemapdb \
-		qemu-project:dtc:e37c25677dc946a025002a394172788b3169b3ce:dtc/dtc \
-		qemu-project:meson:3fbcff1c2722988d05c5248f7ab54c53001b1ee1:meson/meson \
+GL_ACCOUNT=	qemu-project
+GL_TAGNAME=	a9fe9e191b4305b88c356a1ed9ac3baf89eb18aa
+GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:keycodemapdb/ui/keycodemapdb \
+		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/dtc \
+		qemu-project:meson:3a9b285a55b91b53b2acda987192274352ecb5be:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
-		qemu-project:berkeley-testfloat-3:5a59dcec19327396a011a17fd924aed4fec416b3:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
-
-#.if !defined(PKGNAMESUFFIX) || (${PKGNAMESUFFIX} != "-utils" && ${PKGNAMESUFFIX} != "-guest-agent")
-#.endif
+		qemu-project:berkeley-testfloat-3:40619cbb3bf32872df8c53cc457039229428a263:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 
 HAS_CONFIGURE=	yes
 
@@ -112,7 +111,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --mandir=man --extra-ldflags=-L\"/usr/lib\"
 		--extra-ldflags=-L\"${LOCALBASE}/lib\" --enable-debug \
 		--prefix=${PREFIX} --cc=${CC} --enable-netmap --disable-kvm \
 		--disable-linux-user --disable-linux-aio --disable-xen \
-		--enable-debug-info --python=${PYTHON_CMD} \
+		--enable-debug-info --python=${PYTHON_CMD} --disable-guest-agent \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
 
 .include <bsd.port.options.mk>

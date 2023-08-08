@@ -1,6 +1,16 @@
---- components/crash/core/browser/crash_upload_list_crashpad.cc.orig	2022-02-07 13:39:41 UTC
+--- components/crash/core/browser/crash_upload_list_crashpad.cc.orig	2023-04-28 17:01:32 UTC
 +++ components/crash/core/browser/crash_upload_list_crashpad.cc
-@@ -51,9 +51,13 @@ std::vector<UploadList::UploadInfo> CrashUploadListCra
+@@ -38,7 +38,9 @@ CrashUploadListCrashpad::~CrashUploadListCrashpad() = 
+ std::vector<std::unique_ptr<UploadList::UploadInfo>>
+ CrashUploadListCrashpad::LoadUploadList() {
+   std::vector<crash_reporter::Report> reports;
++#if !defined(OS_BSD)
+   crash_reporter::GetReports(&reports);
++#endif
+ 
+   std::vector<std::unique_ptr<UploadInfo>> uploads;
+   for (const crash_reporter::Report& report : reports) {
+@@ -52,9 +54,13 @@ CrashUploadListCrashpad::LoadUploadList() {
  
  void CrashUploadListCrashpad::ClearUploadList(const base::Time& begin,
                                                const base::Time& end) {

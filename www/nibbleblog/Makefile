@@ -15,7 +15,7 @@ USES=		cpe php zip
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_PHP=	session filter xml simplexml gd
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 PKGMESSAGE=	${MASTERDIR}/pkg-message
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	APACHE LIGHTTPD
 OPTIONS_DEFAULT=	APACHE
 
-APACHE_USE=		APACHE_RUN=22+
+APACHE_USES=		apache:run
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 
 do-install:

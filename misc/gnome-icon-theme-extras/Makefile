@@ -1,5 +1,6 @@
 PORTNAME=	gnome-icon-theme-extras
 PORTVERSION=	3.12.0
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3

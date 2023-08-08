@@ -1,7 +1,7 @@
 PORTNAME=	diffoscope
-PORTVERSION=	221
+PORTVERSION=	245
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ygy@FreeBSD.org
@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		isoinfo:sysutils/cdrkit \
 		rpm2cpio:archivers/rpm2cpio
 
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	reproducible_builds
 USE_PYTHON=	autoplist concurrent distutils
 

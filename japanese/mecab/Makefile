@@ -14,15 +14,15 @@ LICENSE_COMB=	multi
 BROKEN_mips=		fails to link: Nonrepresentable section on output
 BROKEN_mips64=		fails to link: Nonrepresentable section on output
 
+USES=		gettext-tools iconv libtool localbase perl5
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
-INSTALL_TARGET=	install-strip
-USES=		gettext-tools iconv libtool perl5
-USE_PERL5=	build
-USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS README *.html
 
@@ -37,10 +37,12 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/mecabrc \
+		${STAGEDIR}${PREFIX}/etc/mecabrc.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:N*.html:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/mecabrc \
-		${STAGEDIR}${PREFIX}/etc/mecabrc.sample
 
 .include <bsd.port.mk>

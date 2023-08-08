@@ -1,6 +1,6 @@
---- memory/arena_test.cc.orig	2018-01-31 01:15:39 UTC
+--- memory/arena_test.cc.orig	2023-02-19 21:44:55 UTC
 +++ memory/arena_test.cc
-@@ -91,7 +91,7 @@ static void ApproximateMemoryUsageTest(s
+@@ -96,7 +96,7 @@ static void ApproximateMemoryUsageTest(size_t huge_pag
    ASSERT_EQ(kZero, arena.ApproximateMemoryUsage());
  
    // allocate inline bytes

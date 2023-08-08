@@ -1,5 +1,6 @@
 PORTNAME=	gnome-calculator
-PORTVERSION=	42.2
+PORTVERSION=	43.0.1
+PORTREVISION=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,12 +18,12 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-3.0.so:devel/libsoup3
 
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.6+,build tar:xz vala:build
+		python:build tar:xz vala:build
 USE_GNOME=	gtk40 gtksourceview5 introspection libxml2
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

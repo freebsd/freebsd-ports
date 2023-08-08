@@ -1,11 +1,7 @@
---- Source/WebDriver/PlatformGTK.cmake.orig	2021-09-16 12:43:07 UTC
+Index: Source/WebDriver/PlatformGTK.cmake
+--- Source/WebDriver/PlatformGTK.cmake.orig
 +++ Source/WebDriver/PlatformGTK.cmake
-@@ -1,10 +1,11 @@
--set(WebDriver_OUTPUT_NAME WebKitWebDriver)
-+set(WebDriver_OUTPUT_NAME WebKitWebDriver-5)
- 
- add_definitions(-DLIBEXECDIR="${CMAKE_INSTALL_FULL_LIBEXECDIR}")
- 
+@@ -5,6 +5,7 @@ add_definitions(-DLIBEXECDIR="${CMAKE_INSTALL_FULL_LIB
  list(APPEND WebDriver_SYSTEM_INCLUDE_DIRECTORIES
      "${GLIB_INCLUDE_DIRS}"
      "${LIBSOUP_INCLUDE_DIRS}"
@@ -13,7 +9,7 @@
  )
  
  list(APPEND WebDriver_SOURCES
-@@ -18,4 +19,5 @@ list(APPEND WebDriver_LIBRARIES
+@@ -18,4 +19,5 @@ list(APPEND WebDriver_SOURCES
  
  list(APPEND WebDriver_LIBRARIES
      ${LIBSOUP_LIBRARIES}

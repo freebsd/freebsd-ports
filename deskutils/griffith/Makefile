@@ -11,14 +11,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy12>=1.1:databases/py-sqlalchemy12@${PY_FLAVOR} \
-		${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.4:print/py-reportlab@${PY_FLAVOR}
 
-USES=		gettext-runtime gmake gnome python:3.4+ shebangfix
+USES=		gettext-runtime gmake gnome python shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	Strit
-GL_COMMIT=	a593201179695efe93829d9c9a70962ef29dd109
+GL_TAGNAME=	a593201179695efe93829d9c9a70962ef29dd109
 
 SHEBANG_FILES=	griffith
 USE_GNOME=	pygobject3

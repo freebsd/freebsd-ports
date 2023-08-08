@@ -20,14 +20,11 @@ BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
-USES=		autoreconf cpe ssl tar:xz
+USES=		autoreconf cpe ruby:none ssl tar:xz
 CPE_VENDOR=	ruby-lang
 CPE_VERSION=	${RUBY_RELVERSION}
 CPE_UPDATE=	p${RUBY_PATCHLEVEL}
 USE_LDCONFIG=	yes
-USE_RUBY=	yes
-RUBY_NO_BUILD_DEPENDS=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
@@ -47,7 +44,7 @@ WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=	3.2
 
-OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC
+OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
 OPTIONS_DEFAULT=	LIBEDIT RDOC
 OPTIONS_SINGLE=		EDIT
 OPTIONS_SINGLE_EDIT=	LIBEDIT READLINE
@@ -59,6 +56,7 @@ GMP_DESC=	Use GMP to accelerate Bignum operations
 LIBEDIT_DESC=	Use libedit
 RDOC_DESC=	Build and install Rdoc indexes
 READLINE_DESC=	Use libreadline
+YJIT_DESC=	Enable YJIT (Yet Another Ruby JIT)
 
 CAPIDOCS_BUILD_DEPENDS=		dot:graphics/graphviz \
 				doxygen>=1.8.13,2:devel/doxygen
@@ -72,6 +70,8 @@ RDOC_CONFIGURE_ENABLE=		install-rdoc
 READLINE_USES=			readline
 READLINE_CONFIGURE_ON=		--disable-libedit \
 				--with-readline-dir=${LOCALBASE}
+YJIT_BUILD_DEPENDS=		${RUST_DEFAULT}>=1.58.0:lang/${RUST_DEFAULT}
+YJIT_CONFIGURE_ENABLE=		yjit
 
 .include <bsd.port.pre.mk>
 
@@ -95,7 +95,7 @@ _SUF2=		,${PORTEPOCH}
 
 # keep in sync with all platforms where libunwind is available
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == \
-	i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+	i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
@@ -179,6 +179,10 @@ post-install:
 . endfor
 .endif
 
+post-install-CAPIDOCS-on:
+	${RM} ${WRKSRC}/doc/capi/.timestamp ${STAGEDIR}${PREFIX}/share/doc/ruby${RUBY_SUFFIX}/capi/.timestamp
+	cd ${STAGEDIR}${PREFIX} && ${FIND} share/doc/ruby${RUBY_SUFFIX}/capi/ -type f >> ${TMPPLIST}
+
 post-install-DEBUG-off:
 #
 # XXX: hack to strip ruby binary. Ruby uses its own install script that seems
@@ -191,7 +195,7 @@ post-install-DEBUG-off:
 .endif
 
 post-install-DOCS-on:
-# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
+# Create all dirs required (":u" isn't available in STABLE yet :-()
 	${MKDIR} ${EXTDOCS:C|^([^/]+)/.*|\1|:S|^|${STAGEDIR}${RUBY_DOCDIR}/|}
 .for FILE in ${EXTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
@@ -205,7 +209,7 @@ post-install-DOCS-on:
 			${STAGEDIR}${RUBY_DOCDIR}/
 
 post-install-EXAMPLES-on:
-# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
+# Create all dirs required (":u" isn't available in STABLE yet :-()
 	${MKDIR} ${EXTSAMPLES:C|^([^/]+)/.*|\1|:S|^|${STAGEDIR}${RUBY_EXAMPLESDIR}/|}
 .for FILE in ${EXTSAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \

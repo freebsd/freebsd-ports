@@ -1,6 +1,6 @@
 PORTNAME=	inifiled
-PORTVERSION=	1.3.1
-PORTREVISION=	2
+PORTVERSION=	2.0.0
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -19,9 +19,10 @@ GH_ACCOUNT=	burner
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}

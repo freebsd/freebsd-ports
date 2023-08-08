@@ -1,0 +1,14 @@
+versioningit replaces the need for (and will overwrite) the version keyword
+to the setup() function, so you should remove any such keyword from your
+setup.py/setup.cfg to reduce confusion.
+
+[tool.versioningit.format]
+
+# Format used when there have been commits since the most recent tag:
+distance = "{base_version}.post{distance}+{vcs}{rev}"
+
+# Format used when there are uncommitted changes:
+dirty = "{base_version}+d{build_date:%Y%m%d}"
+
+# Format used when there are both commits and uncommitted changes:
+distance-dirty = "{base_version}.post{distance}+{vcs}{rev}.d{build_date:%Y%m%d}"

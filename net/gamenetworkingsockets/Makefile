@@ -1,7 +1,7 @@
 PORTNAME=	gamenetworkingsockets
 PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	kpedersen@disroot.org

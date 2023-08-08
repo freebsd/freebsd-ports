@@ -31,6 +31,8 @@ PLIST_FILES=	bin/vanillamix bin/vanillara bin/vanillatd \
 		share/icons/hicolor/scalable/apps/vanillara_icon.svg \
 		share/icons/hicolor/scalable/apps/vanillatd_icon.svg
 
+PORTSCOUT=	skipv:latest
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386

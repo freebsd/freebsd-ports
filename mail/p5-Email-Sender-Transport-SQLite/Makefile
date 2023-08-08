@@ -1,6 +1,5 @@
 PORTNAME=	Email-Sender-Transport-SQLite
-PORTVERSION=	0.092002
-PORTREVISION=	1
+DISTVERSION=	1.500
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -8,6 +7,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Deliver mail to an SQLite db for testing
 WWW=		https://metacpan.org/release/Email-Sender-Transport-SQLite
+
+LICENSE=	ART10 GPLv1+
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite \

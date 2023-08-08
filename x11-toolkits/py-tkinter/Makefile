@@ -1,6 +1,6 @@
 PORTNAME=	tkinter
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,5 +30,8 @@ post-extract:
 .else
 	@${SED} -e "s|%%TK_VER%%|${TK_VER}|" ${FILESDIR}/setup3.py > ${WRKSRC}/setup.py
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.post.mk>

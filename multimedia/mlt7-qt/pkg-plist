@@ -1,0 +1,16 @@
+lib/mlt-7/libmltqt%%QT_VERSION_SUFFIX%%.so
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiolevelgraph.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiospectrum.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_audiowaveform.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_gpsgraphic.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_gpstext.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_lightshow.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtblend.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtcrop.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtext.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_typewriter.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/producer_kdenlivetitle.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/producer_qimage.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/producer_qtext.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/transition_qtblend.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/transition_vqm.yml

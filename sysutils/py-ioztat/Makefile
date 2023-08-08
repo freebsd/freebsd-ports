@@ -1,4 +1,5 @@
 PORTNAME=	ioztat
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}
 
-USES=		python:3.7+,run shebangfix
+USES=		python:run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs
-GH_TAGNAME=	v${DISTVERSION}
 
 USE_PYTHON=	concurrent flavors
 

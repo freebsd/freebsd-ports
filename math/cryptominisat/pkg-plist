@@ -6,7 +6,8 @@ include/cryptominisat5/dimacsparser.h
 include/cryptominisat5/solvertypesmini.h
 include/cryptominisat5/streambuffer.h
 lib/cmake/cryptominisat5/cryptominisat5Config.cmake
+lib/cmake/cryptominisat5/cryptominisat5ConfigVersion.cmake
 lib/cmake/cryptominisat5/cryptominisat5Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cryptominisat5/cryptominisat5Targets.cmake
 lib/libcryptominisat5.so
-lib/libcryptominisat5.so.5.8
+lib/libcryptominisat5.so.5.11

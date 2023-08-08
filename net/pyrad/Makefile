@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0.10.0b1:devel/py-nose@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyradius
 USE_PYTHON=	autoplist concurrent distutils

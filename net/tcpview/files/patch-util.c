@@ -1,6 +1,6 @@
---- util.c.orig	Fri Apr 23 04:40:36 1993
-+++ util.c	Tue Oct 28 01:59:11 2003
-@@ -64,7 +64,7 @@
+--- util.c.orig	1993-04-22 20:40:36 UTC
++++ util.c
+@@ -64,7 +64,7 @@ static char rcsid[] =
  #include <sys/types.h>
  #include <sys/time.h>
  #include <ctype.h>
@@ -9,7 +9,7 @@
  #include <sys/file.h>
  #include <sys/stat.h>
  
-@@ -277,16 +277,13 @@
+@@ -277,16 +277,13 @@ void
  }
  
  void
@@ -28,7 +28,7 @@
  	(void)vfprintf(stderr, cp, ap);
  	va_end(ap);
  	if (*cp) {
-@@ -301,16 +298,13 @@
+@@ -301,16 +298,13 @@ void
  
  /* VARARGS */
  void

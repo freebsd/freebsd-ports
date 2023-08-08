@@ -1,6 +1,5 @@
 PORTNAME=	texstudio
-DISTVERSION=	4.3.1
-PORTREVISION=	1
+DISTVERSION=	4.6.0
 CATEGORIES=	editors
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -14,20 +13,22 @@ BROKEN_armv6=	fails to compile: error: no member named mc_eip in __mcontext
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
-		libquazip1-qt5.so:archivers/quazip
+		libquazip1-qt5.so:archivers/quazip@qt5
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix \
-		ghostscript:run gl pkgconfig qmake qt:5 xorg
-USE_QT	=	core declarative gui network script svg widgets \
-		xml printsupport concurrent uitools \
+		ghostscript:run gl pkgconfig qmake qt:5 tex xorg
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	${PORTNAME}-org
+
+USE_QT	=	concurrent core declarative gui linguisttools network \
+		printsupport script svg uitools widgets xml \
 		buildtools:build
 QTVER_SUFFIX=	5
 
 USE_XORG=	x11
 USE_GL=		gl
 USE_TEX=	latex dvipsk
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}-org
 
 DOS2UNIX_FILES=	${PORTNAME}.pro \
 		src/manhattanstyle.cpp \

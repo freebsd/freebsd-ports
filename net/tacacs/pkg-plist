@@ -1,21 +1,12 @@
-@dir etc/mavis
-@dir etc/mavis/sample
-@dir lib/mavis
-@dir lib/mavis/extra
-@dir share/mavis
-@dir share/mavis/railroad
-@dir share/mavis/railroad/mavis
-@dir share/mavis/railroad/tac_plus
-@dir share/mavis/railroad/spawnd
-@dir share/mavis/railroad/mavisd
 bin/mavistest
 etc/mavis/sample/tac_plus.cfg
 lib/libmavis.so
 lib/libmavis.so.0
 lib/libmavis.so.0.1
-lib/mavis/extra/tacacs_schema.ldif
+lib/mavis/Mavis.pm
 lib/mavis/extra/tacacs.schema
 lib/mavis/extra/tacacs.schema-fedora-ds
+lib/mavis/extra/tacacs_schema.ldif
 lib/mavis/libmavis_anonftp.so
 lib/mavis/libmavis_asciiftp.so
 lib/mavis/libmavis_auth.so
@@ -34,14 +25,13 @@ lib/mavis/libmavis_userdb.so
 lib/mavis/mavis_ftp_passwd.pl
 lib/mavis/mavis_ldap_authonly.pl
 lib/mavis/mavis_tacplus_ads.pl
-lib/mavis/mavis_tacplus_ldap_authonly.pl
 lib/mavis/mavis_tacplus_ldap.pl
+lib/mavis/mavis_tacplus_ldap_authonly.pl
 lib/mavis/mavis_tacplus_opie.pl
 lib/mavis/mavis_tacplus_passwd.pl
 lib/mavis/mavis_tacplus_radius.pl
 lib/mavis/mavis_tacplus_shadow.pl
 lib/mavis/mavis_tacplus_sms.pl
-lib/mavis/Mavis.pm
 sbin/mavisd
 sbin/pammavis
 sbin/spawnd
@@ -55,11 +45,11 @@ share/mavis/mavis.txt
 share/mavis/mavisd.html
 share/mavis/mavisd.pdf
 share/mavis/mavisd.txt
-share/mavis/railroad/mavis/AnonftpConf.svg
 share/mavis/railroad/mavis/ASCIIftpConf.svg
+share/mavis/railroad/mavis/AnonftpConf.svg
 share/mavis/railroad/mavis/AuthConf.svg
-share/mavis/railroad/mavis/CacheConf.svg
 share/mavis/railroad/mavis/CIDR.svg
+share/mavis/railroad/mavis/CacheConf.svg
 share/mavis/railroad/mavis/ExternalConf.svg
 share/mavis/railroad/mavis/LimitConf.svg
 share/mavis/railroad/mavis/MavisAction.svg
@@ -76,19 +66,19 @@ share/mavis/railroad/mavisd/CIDR.svg
 share/mavis/railroad/mavisd/Config.svg
 share/mavis/railroad/mavisd/SyslogDecl.svg
 share/mavis/railroad/spawnd/AclDecl.svg
-share/mavis/railroad/spawnd/ChildDecl.svg
 share/mavis/railroad/spawnd/CIDR.svg
+share/mavis/railroad/spawnd/ChildDecl.svg
 share/mavis/railroad/spawnd/Config.svg
 share/mavis/railroad/spawnd/Debug.svg
 share/mavis/railroad/spawnd/ListenDecl.svg
 share/mavis/railroad/spawnd/MiscDecl.svg
 share/mavis/railroad/spawnd/SpawndConfig.svg
 share/mavis/railroad/spawnd/SyslogDecl.svg
-share/mavis/railroad/tac_plus/Acl.svg
 share/mavis/railroad/tac_plus/ACLDecl.svg
 share/mavis/railroad/tac_plus/ACLExpr.svg
-share/mavis/railroad/tac_plus/AttrDefault.svg
 share/mavis/railroad/tac_plus/AVPair.svg
+share/mavis/railroad/tac_plus/Acl.svg
+share/mavis/railroad/tac_plus/AttrDefault.svg
 share/mavis/railroad/tac_plus/CIDR.svg
 share/mavis/railroad/tac_plus/CmdDefault.svg
 share/mavis/railroad/tac_plus/Debug.svg
@@ -113,8 +103,8 @@ share/mavis/railroad/tac_plus/ShellCommandDecl.svg
 share/mavis/railroad/tac_plus/ShellDecl.svg
 share/mavis/railroad/tac_plus/TacAction.svg
 share/mavis/railroad/tac_plus/TacCond.svg
-share/mavis/railroad/tac_plus/TacplusConfig.svg
 share/mavis/railroad/tac_plus/TacScript.svg
+share/mavis/railroad/tac_plus/TacplusConfig.svg
 share/mavis/railroad/tac_plus/TimespecDecl.svg
 share/mavis/railroad/tac_plus/UserAttr.svg
 share/mavis/railroad/tac_plus/UserDecl.svg
@@ -122,6 +112,9 @@ share/mavis/railroad/tac_plus/UserMessage.svg
 share/mavis/spawnd.html
 share/mavis/spawnd.pdf
 share/mavis/spawnd.txt
+share/mavis/tac_plus-ng.html
+share/mavis/tac_plus-ng.pdf
+share/mavis/tac_plus-ng.txt
 share/mavis/tac_plus.html
 share/mavis/tac_plus.pdf
 share/mavis/tac_plus.txt

@@ -1,5 +1,6 @@
 PORTNAME=	cde
-DISTVERSION=	2.5.0
+DISTVERSION=	2.5.1
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 .if !defined(MASTERDIR)
@@ -23,7 +24,7 @@ DT_ID=
 .endif
 PLIST_SUB=	DT_ID=${DT_ID}
 
-BUILD_DEPENDS=	ksh93:shells/ksh93			\
+BUILD_DEPENDS=	ksh93:shells/ksh			\
 		bdftopcf:x11-fonts/bdftopcf		\
 		mkfontscale>=0:x11-fonts/mkfontscale	\
 		biconv:converters/iconv			\
@@ -31,7 +32,7 @@ BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		onsgmls:textproc/opensp \
 		xrdb:x11/xrdb
-RUN_DEPENDS=	ksh93:shells/ksh93			\
+RUN_DEPENDS=	ksh93:shells/ksh			\
 		${LOCALBASE}/bin/fc-cache:x11-fonts/fontconfig \
 		${LOCALBASE}/libdata/pkgconfig/freetype2.pc:print/freetype2 \
 		xrdb:x11/xrdb \
@@ -40,7 +41,8 @@ RUN_DEPENDS=	ksh93:shells/ksh93			\
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
-SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate
+SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
+		programs/dtdocbook/tcl/docbook.tcl
 DT_PREFIX=	${PREFIX}/dt${DT_ID}
 USE_LDCONFIG=	${DT_PREFIX}/lib
 USE_RC_SUBR=	dtcms${DT_ID} dtlogin${DT_ID}
@@ -55,6 +57,7 @@ MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	MALLOC_CONF=junk:false
 SUB_FILES=	pkg-message
+CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 pre-configure:
@@ -110,6 +113,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/etc/pam.d/cde${DT_ID}.conf
 	@${ECHO_CMD} MANPATH /usr/local/dt/share/man >  ${STAGEDIR}/${PREFIX}/etc/man.d/cde${DT_ID}.conf
 	@${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -exec ${SH} -c '${STRIP_CMD} {} > /dev/null 2>&1' \;
+	@${FIND} ${STAGEDIR}/${DT_PREFIX} -type f -name '*.bak' -delete
 	@cd ${WRKSRC}/examples && @${FIND} . | ${CPIO} -pd ${STAGEDIR}/${DT_PREFIX}/share
 	@cd ${STAGEDIR}/${DT_PREFIX}; ${LN} -s share/examples
 	# Only a problem on armv7 so far

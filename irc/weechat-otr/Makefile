@@ -1,10 +1,11 @@
 PORTNAME=	weechat-otr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	irc security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WeeChat script for Off-the-Record (OTR) messaging
 WWW=		https://github.com/mmb/weechat-otr
 

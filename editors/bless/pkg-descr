@@ -1,0 +1,16 @@
+Bless is a binary (hexadecimal aka "hex") editor, a program that allows
+to edit files as a sequence of bytes.  It is written in C# and uses the
+Gtk# bindings for the GTK+ toolkit.  Its main features are:
+
+  - Efficient editing of large data files
+  - Raw disk editing
+  - Multilevel undo/redo operations
+  - Customizable data views
+  - Fast data rendering on screen
+  - Multiple tabs
+  - Fast find and replace operations
+  - Conversion table
+  - Advanced copy/paste capabilities
+  - Multi-threaded search and save operations
+  - Export to text and HTML (others with plugins)
+  - Extensibility with plugins

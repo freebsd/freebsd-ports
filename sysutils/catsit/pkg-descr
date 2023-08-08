@@ -1,0 +1,8 @@
+The catsitd daemon is a process supervisor for FreeBSD and OpenBSD.
+It is designed to supervise processes with the following behavior:
+
+* The process runs in the foreground, not as a daemon.
+* The process logs to standard output or standard error.
+* The process handles errors by exiting and expects to be
+  restarted.
+* The process indicates its reason for exiting with sysexits(3).

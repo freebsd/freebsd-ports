@@ -1,0 +1,4 @@
+This package intends to offer a method of parsing crontab schedule entries and
+determining when an item should next be run. More specifically, it calculates a
+delay in seconds from when the .next() method is called to when the item should
+next be executed.

@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-ref>=2.0:devel/rubygem-ref \
 		rubygem-ddmetrics>=1.0:devel/rubygem-ddmetrics
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

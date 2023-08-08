@@ -1,0 +1,5 @@
+Color picker dialog for Tkinter.
+
+This module contains a ColorPicker class which implements the color picker and
+an askcolor function that displays the color picker and returns the chosen
+color in RGB and HTML formats.

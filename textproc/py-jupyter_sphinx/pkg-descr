@@ -1,0 +1,5 @@
+jupyter-sphinx enables running code embedded in Sphinx documentation and
+embedding output of that code into the resulting document. It has support for
+rich output such as images and even Jupyter interactive widgets.
+
+See also: https://github.com/jupyter/jupyter-sphinx/

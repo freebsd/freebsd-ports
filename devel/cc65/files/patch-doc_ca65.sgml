@@ -1,4 +1,4 @@
---- doc/ca65.sgml.orig	2020-05-20 11:15:00 UTC
+--- doc/ca65.sgml.orig	2020-05-30 19:03:15 UTC
 +++ doc/ca65.sgml
 @@ -621,10 +621,10 @@ problem in most cases.
  <table>
@@ -24,7 +24,7 @@
  *| Multiplication| 2@
  /| Division| 2@
  .MOD| Modulo operator| 2@
-@@ -647,26 +647,26 @@ problem in most cases.
+@@ -647,28 +647,28 @@ problem in most cases.
  .SHL| Shift-left operator| 2@
  &gt;&gt;<newline>
  .SHR| Shift-right operator| 2@
@@ -54,5 +54,8 @@
 -||~@
 +&nbsp; | &nbsp; |~@
  !<newline>
- .NOT| Boolean not| 7@<hline>
+-.NOT| Boolean not| 7@<hline>
++.NOT| Boolean not| 7
  </tabular>
+ <caption>Available operators, sorted by precedence
+ </table>

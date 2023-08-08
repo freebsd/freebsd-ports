@@ -1,6 +1,6 @@
 PORTNAME=	libesedb
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20210424
+DISTVERSION=	experimental-20220806
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libesedb/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfwnt.so:devel/libfwnt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		cpe libtool pathfix python:3.5+
+USES=		cpe libtool pathfix python
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

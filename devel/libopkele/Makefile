@@ -24,7 +24,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		gmake libtool localbase:ldflags pathfix \
 		pkgconfig ssl
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"

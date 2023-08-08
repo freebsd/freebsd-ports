@@ -1,0 +1,11 @@
+--- dev/generated/CMakeLists.txt.orig	2022-10-21 06:12:43 UTC
++++ dev/generated/CMakeLists.txt
+@@ -221,7 +221,7 @@ endif(WITH_SWIG)
+ # Locate libsbml
+ #
+ find_library(LIBSBML_LIBRARY
+-    NAMES libsbml-static.lib sbml-static libsbml.lib sbml
++    NAMES libsbml.lib sbml
+     PATHS ${LIBCOMBINE_DEPENDENCY_DIR}/lib
+     /usr/local/lib          
+           /usr/lib 

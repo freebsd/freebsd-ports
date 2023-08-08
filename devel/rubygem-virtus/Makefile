@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-axiom-types>=0.1<1:devel/rubygem-axiom-types \
 		rubygem-descendants_tracker>=0.0.3<1:devel/rubygem-descendants_tracker
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

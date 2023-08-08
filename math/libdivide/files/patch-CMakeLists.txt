@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2021-07-17 18:22:14 UTC
++++ CMakeLists.txt
+@@ -16,9 +16,9 @@ include(CMakeSanitize)
+ # Maximum warnings level & warnings as error
+ add_compile_options(
+     "$<$<CXX_COMPILER_ID:MSVC>:/W4;/WX>"
+-    "$<$<CXX_COMPILER_ID:GNU>:-Wall;-Wextra;-pedantic;-Werror>"
+-    "$<$<CXX_COMPILER_ID:Clang>:-Wall;-Wextra;-pedantic;-Werror>"
+-    "$<$<CXX_COMPILER_ID:AppleClang>:-Wall;-Wextra;-pedantic;-Werror>"
++    "$<$<CXX_COMPILER_ID:GNU>:-Wall;-Wextra;-pedanticr>"
++    "$<$<CXX_COMPILER_ID:Clang>:-Wall;-Wextra;-pedantic>"
++    "$<$<CXX_COMPILER_ID:AppleClang>:-Wall;-Wextra;-pedantic>"
+ )
+ 
+ # Build options ################################################
+@@ -93,11 +93,10 @@ if (BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING)
+         CPU_ARM_NEON)
+     if (CPU_X86 OR CPU_ARM_NEON)
+         cmake_push_check_state()
+-        set(CMAKE_REQUIRED_FLAGS -Werror)
+         check_cxx_compiler_flag(-march=native MARCH_NATIVE)
+         cmake_pop_check_state()
+ 
+-        if (MARCH_NATIVE)
++        if (MARCH_NATIVE AND FREEBSD_NATIVE)
+             list(APPEND LIBDIVIDE_FLAGS "-march=native")
+         endif()
+     endif()

@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	11
+PORTREVISION?=	15
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-legacy
@@ -14,23 +14,23 @@ WWW=		https://www.virtualbox.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
-BUILD_DEPENDS=	yasm:devel/yasm \
-		xsltproc:textproc/libxslt \
+BUILD_DEPENDS=	gtar:archivers/gtar \
 		kmk:devel/kBuild \
-		gtar:archivers/gtar
+		libIDL-config-2:devel/libIDL \
+		yasm:devel/yasm \
+		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libxslt.so:textproc/libxslt \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-legacy
 
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
+USE_GNOME=	libxml2
+
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
-
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
-USE_GNOME=	libidl libxml2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --passive-mesa
@@ -41,9 +41,9 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
 			virtualbox-ose \
 			virtualbox-ose-lite
 
-PORTSCOUT=	limit:^5\.
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 
-LDFLAGS=	-lpthread
+PORTSCOUT=	limit:^5\.
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -52,27 +52,27 @@ USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
 VBOX_DIR=	${PREFIX}/${VBOX_DIR_REL}
 VBOX_DIR_REL=	lib/virtualbox
+VBOX_ETC=	${PREFIX}/etc/vbox
 VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
-OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
-		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+OPTIONS_DEFINE=		ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS PULSEAUDIO \
+			PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-DEBUG_DESC=	Debug symbols, additional logs and assertions
+DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
-MANUAL_DESC=	Build with user manual
-NLS_DESC=	Native language support (requires QT5)
-QT5_DESC=	Build with QT5 frontend (requires X11)
-R0LOGGING_DESC=	Enable R0 logging (requires DEBUG)
-UDPTUNNEL_DESC=	Build with UDP tunnel support
-VDE_DESC=	Build with VDE support
-VNC_DESC=	Build with VNC support
-VPX_DESC=	Use libvpx for video recording
+NLS_DESC=		Native language support (requires QT5)
+QT5_DESC=		Build with QT5 frontend (requires X11)
+R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
+UDPTUNNEL_DESC=		Build with UDP tunnel support
+VDE_DESC=		Build with VDE support
+VNC_DESC=		Build with VNC support
+VPX_DESC=		Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
 ALSA_CONFIGURE_OFF=	--disable-alsa
@@ -80,12 +80,25 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
-MANUAL_CONFIGURE_OFF=	--disable-docs
+DOCS_USES=		tex
+DOCS_USE=		TEX=dvipsk:build,formats:build
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
+DOCS_CONFIGURE_OFF=	--disable-docs
+DOCS_VARS=		dbkxmldir=${LOCALBASE}/share/xml/docbook/4.4 \
+			dbkxsldir=${LOCALBASE}/share/xsl/docbook
 NLS_IMPLIES=		QT5
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
+PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
+PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
+QT5_USES=		gl qmake:no_env qt:5 xorg
+QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
+			QT=printsupport,widgets,x11extras XORG=xcb GL=gl
+QT5_CONFIGURE_ON=	--enable-qt5
+QT5_CONFIGURE_OFF=	--disable-qt
 QT5_IMPLIES=		X11
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
@@ -95,6 +108,9 @@ VNC_CONFIGURE_ON=	--enable-vnc
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
+WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
+X11_USES=		sdl xorg
+X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
 ENV=
@@ -119,7 +135,7 @@ CONFLICTS_INSTALL+=	virtualbox-ose
 .endif
 
 .if ${ARCH} == "amd64"
-_ELF32!=	kldstat -q -m elf32 && echo yes || echo no
+_ELF32!=	kldstat -q -m elf32 && ${ECHO_CMD} yes || ${ECHO_CMD} no
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -138,48 +154,22 @@ LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
-DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
-DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
-USE_TEX=	dvipsk:build formats:build
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-USE_PYTHON=	distutils noegginfo noflavors
-PYDISTUTILS_PKGNAME=	vboxapi
-PYDISTUTILS_PKGVERSION=	1.0
-.else
-USES+=		python:build
-.endif
-
 .if ${PORT_OPTIONS:MQT5}
-CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
-USES+=		gl qmake:no_env qt:5 xorg
-USE_GL=		gl glu
-USE_QT=		buildtools:build core dbus gui linguisttools:build opengl
-USE_QT+=	printsupport widgets x11extras
-USE_XORG=	xcb
 VBOX_PROGS+=	VirtualBox
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .else
-CONFIGURE_ARGS+=	--disable-qt
 PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-BUILD_DEPENDS+=	soapcpp2:devel/gsoap
 USE_RC_SUBR+=	vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USES+=		sdl
-USE_SDL=	sdl
-USE_XORG+=	xorgproto x11 xcursor xext xinerama xmu xt
 VBOX_PROGS+=	VBoxSDL
 .endif
 
@@ -205,22 +195,17 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} >= 1400059
-BROKEN=		Fails to compile with libc++ 14.0.3
-.elif ${OSVERSION} >= 1301000 && ${OSVERSION} < 1400000
-BROKEN=		Fails to compile: error: ran out of registers during register allocation
-.endif
-.endif
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} > 1400022
-# clang > 11 included in FreeBSD 14 fails to compile this legacy version
-# of virtualbox-ose, force clang 11 on FreeBSD 14 where a newer clang is
-# included.
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && \
+    (${OSVERSION} < 1302505 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079) || \
+    ${OSVERSION} >= 1400091)
+# llvm 13, 14 and 16 included in FreeBSD fails to compile this legacy version of
+# virtualbox-ose, force llvm 15 on all versions of the FreeBSD except lastest 13
+# and several versions of 14 where the llvm 15 is included: PR#265539.
+# Keep possibility to define different llvm via VBOX_LLVM_VER in make.conf.
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
 CXX=		clang++${VBOX_LLVM_VER}
-VBOX_LLVM_VER?=	11
+VBOX_LLVM_VER?=	15
 .endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
@@ -322,8 +307,9 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
-	    -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|%%VBOX_DIR%%|${VBOX_DIR}|g' \
+	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
@@ -375,7 +361,7 @@ do-install:
 	    ${STAGEDIR}${VBOX_DIR}/additions/VBoxGuestAdditions.iso
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${KMK_BUILDDIR}/bin/UserManual*.pdf \
 	    ${STAGEDIR}${DOCSDIR}

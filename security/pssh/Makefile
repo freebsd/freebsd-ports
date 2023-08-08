@@ -1,5 +1,5 @@
 PORTNAME=	pssh
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net sysutils
@@ -11,12 +11,14 @@ WWW=		https://github.com/lilydjwg/pssh
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	rsync:net/rsync
 
-USES=		python:3.5+
+USES=		python
+USE_PYTHON=	autoplist pep517
 USE_GITHUB=	yes
 GH_ACCOUNT=	lilydjwg
-USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 .include <bsd.port.mk>

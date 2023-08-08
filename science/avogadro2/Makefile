@@ -1,13 +1,11 @@
 PORTNAME=	avogadro2
-DISTVERSION=	1.95.1
+DISTVERSION=	1.97.0
 PORTREVISION=	1
 CATEGORIES=	science
 
-# REGRESSION: https://github.com/OpenChemistry/avogadroapp/issues/191
-
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical editor and visualization application
-WWW=		https://www.openchemistry.org/projects/avogadro2/
+WWW=		https://two.avogadro.cc/ # also https://www.openchemistry.org/projects/avogadro2/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,13 +17,12 @@ LIB_DEPENDS=	libAvogadroCore.so:science/avogadrolibs \
 USES=		cmake compiler:c++11-lang desktop-file-utils gl libarchive qt:5
 USE_QT=		core concurrent gui network widgets buildtools:build qmake:build
 USE_GL=		gl glew glu
-USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenChemistry
 GH_PROJECT=	avogadroapp
-GH_TUPLE=	flathub:shared-modules:a79072c:flathub_shared_modules/flatpak/shared-modules \
-		openchemistry:avogadro-i18n:3b8a86c:i18n/../avogadro-i18n
+GH_TUPLE=	flathub:shared-modules:1bb5393:flathub_shared_modules/flatpak/shared-modules \
+		openchemistry:avogadro-i18n:16142cf:i18n/../avogadro-i18n
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc

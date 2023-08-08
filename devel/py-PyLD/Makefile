@@ -1,7 +1,7 @@
 PORTNAME=	PyLD
 PORTVERSION=	0.7.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mi@aldan.algebra.com
@@ -10,7 +10,7 @@ WWW=		https://github.com/digitalbazaar/pyld
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 NO_ARCH=	yes
 

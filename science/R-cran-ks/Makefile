@@ -1,5 +1,6 @@
 PORTNAME=	ks
-PORTVERSION=	1.13.5
+PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	science
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -16,6 +17,7 @@ RUN_DEPENDS=	R-cran-FNN>0:math/R-cran-FNN	\
 		R-cran-mvtnorm>0:math/R-cran-mvtnorm	\
 		R-cran-kernlab>0:science/R-cran-kernlab	\
 		R-cran-multicool>0:devel/R-cran-multicool
+#TEST_DEPENDS=	R-cran-oz>0:graphics/R-cran-oz
 
 USES=		cran:compiles
 

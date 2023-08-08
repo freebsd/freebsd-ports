@@ -1,14 +1,17 @@
 PORTNAME=	orpie
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	math
-MASTER_SITES=	GENTOO http://pessimization.com/software/orpie/
+MASTER_SITES=	https://github.com/pelzlpj/orpie/releases/download/release-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mt-bugs@markoturk.info
 COMMENT=	Fullscreen RPN calculator for the console
 WWW=		https://pessimization.com/software/orpie/
 
 LICENSE=	GPLv2
+
+NOT_FOR_ARCHS=		armv6 armv7
+NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
 
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libgsl.so:math/gsl
@@ -18,9 +21,6 @@ USE_OCAML=	yes
 USE_OCAML_CAMLP4=yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-
-NOT_FOR_ARCHS=		armv6
-NOT_FOR_ARCHS_REASON=	architectures with double-word alignment for doubles are not supported
 
 PLIST_FILES=	bin/orpie bin/orpie-curses-keys etc/orpierc \
 		man/man1/orpie.1.gz man/man1/orpie-curses-keys.1.gz \

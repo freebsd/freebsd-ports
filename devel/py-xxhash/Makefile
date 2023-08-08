@@ -1,8 +1,7 @@
 PORTNAME=	xxhash
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	xxhash>=0.8.1:devel/xxhash
 LIB_DEPENDS=	libxxhash.so:devel/xxhash
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFIGURE_ENV=	XXHASH_LINK_SO=yes

@@ -1,16 +1,16 @@
---- setup.py.orig	2022-07-31 12:39:52 UTC
+--- setup.py.orig	2023-03-13 09:18:30 UTC
 +++ setup.py
-@@ -39,12 +39,9 @@ extension = Extension(
+@@ -39,12 +39,8 @@ if platform.system() == 'Darwin':
  extension = Extension(
      'uharfbuzz._harfbuzz',
      define_macros=define_macros,
 -    include_dirs=['harfbuzz/src'],
 +    include_dirs=['%%LOCALBASE%%/include/harfbuzz'],
      sources=[
+-        'harfbuzz/src/harfbuzz-subset.cc',
+-        'harfbuzz/src/hb-coretext.cc',
+-        'harfbuzz/src/hb-directwrite.cc',
+-        'harfbuzz/src/hb-uniscribe.cc',
          'src/uharfbuzz/_harfbuzz.pyx',
--        'harfbuzz/src/harfbuzz.cc',
--        'harfbuzz/src/hb-subset-repacker.cc',
--        'harfbuzz/src/graph/gsubgpos-context.cc',
-         'src/uharfbuzz/_draw_test_funcs.cc',
      ],
      language='c++',

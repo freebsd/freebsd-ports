@@ -1,6 +1,6 @@
---- pluginterfaces/base/fplatform.h.orig	2021-12-16 12:29:35 UTC
+--- pluginterfaces/base/fplatform.h.orig	2022-12-12 13:48:24 UTC
 +++ pluginterfaces/base/fplatform.h
-@@ -114,7 +114,7 @@
+@@ -117,7 +117,7 @@
  //-----------------------------------------------------------------------------
  // LINUX
  //-----------------------------------------------------------------------------
@@ -9,8 +9,8 @@
  	#define SMTG_OS_LINUX	1
  	#define SMTG_OS_MACOS	0
  	#define SMTG_OS_WINDOWS	0
-@@ -127,7 +127,7 @@
- 	#define SMTG_CPU_ARM_64	__aarch64__
+@@ -138,7 +138,7 @@
+ 	#endif
  	#define SMTG_CPU_ARM_64EC 0
  
 -	#include <endian.h>

@@ -6,6 +6,7 @@ include/obake/detail/abseil.hpp
 include/obake/detail/atomic_flag_array.hpp
 include/obake/detail/atomic_lock_guard.hpp
 include/obake/detail/fcast.hpp
+include/obake/detail/fmt_compat.hpp
 include/obake/detail/fw_utils.hpp
 include/obake/detail/hc.hpp
 include/obake/detail/ignore.hpp
@@ -80,5 +81,5 @@ lib/cmake/obake/obake-config.cmake
 lib/cmake/obake/obake_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/obake/obake_export.cmake
 lib/libobake.so
-lib/libobake.so.7
-lib/libobake.so.7.0
+lib/libobake.so.8
+lib/libobake.so.8.0

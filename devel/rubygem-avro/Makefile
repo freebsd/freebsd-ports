@@ -1,5 +1,5 @@
 PORTNAME=	avro
-PORTVERSION=	1.11.1
+PORTVERSION=	1.11.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-multi_json>=1.0<2:devel/rubygem-multi_json
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

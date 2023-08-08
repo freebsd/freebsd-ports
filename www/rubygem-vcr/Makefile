@@ -1,5 +1,5 @@
 PORTNAME=	vcr
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ LICENSE_PERMS_HIPPOCRATIC-2.1=	auto-accept dist-mirror pkg-mirror
 # https://github.com/vcr/vcr/blob/master/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -2,5 +2,4 @@
 %%SITE_PERL%%/Net/APNs/Extended/Base.pm
 %%SITE_PERL%%/Net/APNs/Extended/Feedback.pm
 %%PERL5_MAN3%%/Net::APNs::Extended.3.gz
-%%PERL5_MAN3%%/Net::APNs::Extended::Base.3.gz
 %%PERL5_MAN3%%/Net::APNs::Extended::Feedback.3.gz

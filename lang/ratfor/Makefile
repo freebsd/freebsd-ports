@@ -1,6 +1,6 @@
 PORTNAME=	ratfor
 PORTVERSION=	1985.06
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/obrien \
 		http://sepwww.stanford.edu/sep/prof/

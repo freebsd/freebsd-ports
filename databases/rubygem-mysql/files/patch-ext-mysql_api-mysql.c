@@ -1,4 +1,4 @@
---- ext/mysql_api/mysql.c.orig	2022-03-10 04:04:50 UTC
+--- ext/mysql_api/mysql.c.orig	2023-03-11 18:29:50 UTC
 +++ ext/mysql_api/mysql.c
 @@ -273,7 +273,10 @@ static VALUE real_connect(int argc, VALUE* argv, VALUE
      rb_thread_start_timer();
@@ -68,3 +68,19 @@
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_LONGLONG;
  	else if (argv[i] == rb_cFloat)
  	    s->result.bind[i].buffer_type = MYSQL_TYPE_DOUBLE;
+@@ -1884,6 +1898,7 @@ static VALUE error_sqlstate(VALUE obj)
+ 
+ void Init_mysql_api(void)
+ {
++#if 0
+     int i;
+     int dots = 0;
+     const char *lib = mysql_get_client_info();
+@@ -1898,6 +1913,7 @@ void Init_mysql_api(void)
+             return;
+         }
+     }
++#endif
+ 
+     cMysql = rb_define_class("Mysql", rb_cObject);
+     cMysqlRes = rb_define_class_under(cMysql, "Result", rb_cObject);

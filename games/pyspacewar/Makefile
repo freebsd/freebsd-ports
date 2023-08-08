@@ -1,6 +1,6 @@
 PORTNAME=	pyspacewar
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	games python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mgedmin
 #GH_TAGNAME=	f872564
 
-USES=		gnome python:3.6+
+USES=		gnome python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2021-04-06 22:45:16 UTC
+--- CMakeLists.txt.orig	2020-05-21 16:39:19 UTC
 +++ CMakeLists.txt
+@@ -75,7 +75,7 @@ endif()
+ # Common flags:
+ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR
+    CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -Wno-error=deprecated-declarations")
++	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wno-error=deprecated-declarations")
+ endif()
+ 
+ # Clang-specific flags:
 @@ -92,7 +92,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")	### Windows
  	list(APPEND EXTRA_LIBS wsock32 ws2_32)
  endif()

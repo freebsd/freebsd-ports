@@ -22,8 +22,8 @@ include/webrtc-audio-processing-1/system_wrappers/include/cpu_features_wrapper.h
 include/webrtc-audio-processing-1/system_wrappers/include/metrics.h
 include/webrtc-audio-processing-1/system_wrappers/include/sleep.h
 lib/libwebrtc-audio-coding-1.so
-lib/libwebrtc-audio-coding-1.so.0
+lib/libwebrtc-audio-coding-1.so.1
 lib/libwebrtc-audio-processing-1.so
-lib/libwebrtc-audio-processing-1.so.0
+lib/libwebrtc-audio-processing-1.so.1
 libdata/pkgconfig/webrtc-audio-coding-1.pc
 libdata/pkgconfig/webrtc-audio-processing-1.pc

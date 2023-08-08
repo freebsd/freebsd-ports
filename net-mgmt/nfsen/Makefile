@@ -20,7 +20,7 @@ RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 USES=		cpe iconv shebangfix perl5 php
 CPE_VENDOR=	nfsen
 CPE_PRODUCT=	nfsen
-USE_PHP=	session pcre sockets
+USE_PHP=	session sockets
 NO_BUILD=	yes
 NO_ARCH=	yes
 NFSENOWN?=	www

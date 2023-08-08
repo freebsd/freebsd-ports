@@ -1,0 +1,16 @@
+bin/Hyprland
+bin/hyprctl
+man/man1/Hyprland.1.gz
+man/man1/hyprctl.1.gz
+%%DATADIR%%/hyprland.conf
+%%DATADIR%%/wall_2K.png
+%%DATADIR%%/wall_4K.png
+%%DATADIR%%/wall_8K.png
+%%DATADIR%%/wall_anime2_2K.png
+%%DATADIR%%/wall_anime2_4K.png
+%%DATADIR%%/wall_anime2_8K.png
+%%DATADIR%%/wall_anime_2K.png
+%%DATADIR%%/wall_anime_4K.png
+%%DATADIR%%/wall_anime_8K.png
+share/pkgconfig/hyprland.pc
+share/wayland-sessions/hyprland.desktop

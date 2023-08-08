@@ -1,5 +1,5 @@
 PORTNAME=	orangehrm
-PORTVERSION=	5.1
+PORTVERSION=	5.5
 CATEGORIES=	www misc
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php zip
-USE_PHP=	ctype curl filter iconv json \
+USE_PHP=	ctype curl filter iconv \
 		mbstring pdo_mysql xml session \
 		simplexml tokenizer zip
 NO_BUILD=	yes

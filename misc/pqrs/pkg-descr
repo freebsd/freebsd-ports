@@ -1,0 +1,2 @@
+pqrs is a command line tool for inspecting Parquet files.
+It is a replacement for the parquet-tools utility written in Rust.

@@ -1,5 +1,5 @@
 PORTNAME=	htslib
-DISTVERSION=	1.15
+DISTVERSION=	1.17
 CATEGORIES=	biology devel
 # Github generated distfiles are incomplete, so use custom tarball
 MASTER_SITES=	https://github.com/samtools/htslib/releases/download/${DISTVERSION}/
@@ -20,6 +20,9 @@ USE_PERL5=	test
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=		yes
+MAKE_ARGS_armv6=	HTS_HAVE_NEON=
+MAKE_ARGS_armv7=	HTS_HAVE_NEON=
+MAKE_ARGS=		$(MAKE_ARGS_$(ARCH))
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=		test/*.pl
 

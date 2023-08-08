@@ -1,5 +1,5 @@
 PORTNAME=	neomutt
-PORTVERSION=	20220429
+PORTVERSION=	20230517
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		urlview:textproc/urlview
 LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
 
-USES=		cpe iconv:translit localbase ncurses perl5 shebangfix ssl
+USES=		cpe iconv:translit localbase ncurses perl5 pkgconfig python:env shebangfix ssl
 
 USE_GITHUB=	yes
 USE_PERL5=	build
@@ -22,7 +22,9 @@ MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
-SHEBANG_FILES=	contrib/smime_keys
+SHEBANG_FILES=	contrib/smime_keys \
+		contrib/oauth2/mutt_oauth2.py \
+		data/account-command/macos-keychain/keychain.py
 
 OPTIONS_DEFINE=	NLS DOCS SASL IDN FLOCK GPGME NOTMUCH
 OPTIONS_DEFAULT=SASL TOKYOCABINET NOTMUCH GPGME LMDB NCURSES GSSAPI_BASE
@@ -45,6 +47,8 @@ CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
 		--locales-fix \
 		--fmemopen \
 		--pcre2 \
+		--disable-idn \
+		--prefix=${PREFIX} \
 		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
@@ -66,8 +70,8 @@ TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
-IDN_CONFIGURE_ENABLE=	idn
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_CONFIGURE_ON=	--idn2
 
 FLOCK_CONFIGURE_ON=	--with-lock=flock
 
@@ -89,6 +93,7 @@ GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-gss=${LOCALBASE}
 GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-gss=${LOCALBASE}
+GSSAPI_NONE_CONFIGURE_ON=	--disable-gss
 
 DOCS_CONFIGURE_OFF=	--disable-doc
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \

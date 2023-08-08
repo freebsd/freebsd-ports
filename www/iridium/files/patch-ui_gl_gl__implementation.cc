@@ -1,11 +1,11 @@
---- ui/gl/gl_implementation.cc.orig	2022-04-01 07:48:30 UTC
+--- ui/gl/gl_implementation.cc.orig	2023-07-24 14:27:53 UTC
 +++ ui/gl/gl_implementation.cc
-@@ -271,7 +271,7 @@ GLImplementationParts GetSoftwareGLImplementation() {
- 
- GLImplementationParts GetSoftwareGLImplementationForPlatform() {
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
--    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA)
-+    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-   return GetSoftwareGLImplementation();
- #else
-   return GetLegacySoftwareGLImplementation();
+@@ -281,7 +281,7 @@ GetRequestedGLImplementationFromCommandLine(
+   *fallback_to_software_gl = false;
+   bool overrideUseSoftwareGL =
+       command_line->HasSwitch(switches::kOverrideUseSoftwareGLForTests);
+-#if BUILDFLAG(IS_LINUX) || \
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+     (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
+   if (std::getenv("RUNNING_UNDER_RR")) {
+     // https://rr-project.org/ is a Linux-only record-and-replay debugger that

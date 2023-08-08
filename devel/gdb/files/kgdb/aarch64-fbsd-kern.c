@@ -67,7 +67,7 @@ aarch64_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 }
 
 static struct trad_frame_cache *
-aarch64_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+aarch64_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -119,8 +119,8 @@ aarch64_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-aarch64_fbsd_trapframe_this_id (struct frame_info *this_frame,
-			     void **this_cache, struct frame_id *this_id)
+aarch64_fbsd_trapframe_this_id (frame_info_ptr this_frame,
+				void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
     aarch64_fbsd_trapframe_cache (this_frame, this_cache);
@@ -129,8 +129,8 @@ aarch64_fbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-aarch64_fbsd_trapframe_prev_register (struct frame_info *this_frame,
-				   void **this_cache, int regnum)
+aarch64_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+				      void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
     aarch64_fbsd_trapframe_cache (this_frame, this_cache);
@@ -140,7 +140,7 @@ aarch64_fbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 aarch64_fbsd_trapframe_sniffer (const struct frame_unwind *self,
-				struct frame_info *this_frame,
+				frame_info_ptr this_frame,
 				void **this_prologue_cache)
 {
   const char *name;
@@ -169,22 +169,17 @@ static const struct frame_unwind aarch64_fbsd_trapframe_unwind = {
 static void
 aarch64_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 {
-  aarch64_gdbarch_tdep *tdep = (aarch64_gdbarch_tdep *) gdbarch_tdep (gdbarch);
+  aarch64_gdbarch_tdep *tdep = gdbarch_tdep<aarch64_gdbarch_tdep> (gdbarch);
 
   frame_unwind_prepend_unwinder (gdbarch, &aarch64_fbsd_trapframe_unwind);
 
-  set_solib_ops (gdbarch, &kld_so_ops);
+  set_gdbarch_so_ops (gdbarch, &kld_so_ops);
 
   /* Enable longjmp.  */
   tdep->jb_pc = 13;
 
   fbsd_vmcore_set_supply_pcb (gdbarch, aarch64_fbsd_supply_pcb);
   fbsd_vmcore_set_cpu_pcb_addr (gdbarch, kgdb_trgt_stop_pcb);
-
-  /* The kernel is linked at a virtual address with the upper 4 bits
-     set, so all 64 bits of virtual addresses need to be treated as
-     significant.  */
-  set_gdbarch_significant_addr_bit (gdbarch, 64);
 }
 
 void _initialize_aarch64_kgdb_tdep ();

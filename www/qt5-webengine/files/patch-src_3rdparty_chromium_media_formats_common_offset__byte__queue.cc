@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/formats/common/offset_byte_queue.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/media/formats/common/offset_byte_queue.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/media/formats/common/offset_byte_queue.cc
-@@ -46,13 +46,13 @@ void OffsetByteQueue::PeekAt(int64_t offset, const uin
+@@ -47,13 +47,13 @@ void OffsetByteQueue::PeekAt(int64_t offset, const uin
    *size = tail() - offset;
  }
  

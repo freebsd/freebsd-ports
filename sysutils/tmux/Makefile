@@ -1,5 +1,6 @@
 PORTNAME=	tmux
 PORTVERSION=	3.3a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -39,6 +40,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT_STATIC UTF8PROC
 
 LIBEVENT_STATIC_DESC=	Build with static libevent
 UTF8PROC_DESC=		Build with utf8proc support
+UTF8PROC_USES=		localbase
 
 LIBEVENT_STATIC_BUILD_DEPENDS=		${LOCALBASE}/lib/libevent.a:devel/libevent
 LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:devel/libevent

@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-dm-core>=1.2.0<1.3:databases/rubygem-dm-core \
 		rubygem-multi_json>=1.0<2:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,6 +12,7 @@ include/pagmo/algorithms/ipopt.hpp
 include/pagmo/algorithms/maco.hpp
 include/pagmo/algorithms/mbh.hpp
 include/pagmo/algorithms/moead.hpp
+include/pagmo/algorithms/moead_gen.hpp
 include/pagmo/algorithms/nlopt.hpp
 include/pagmo/algorithms/not_population_based.hpp
 include/pagmo/algorithms/nsga2.hpp
@@ -64,7 +65,7 @@ include/pagmo/problems/decompose.hpp
 include/pagmo/problems/dtlz.hpp
 include/pagmo/problems/golomb_ruler.hpp
 include/pagmo/problems/griewank.hpp
-include/pagmo/problems/hock_schittkowsky_71.hpp
+include/pagmo/problems/hock_schittkowski_71.hpp
 include/pagmo/problems/inventory.hpp
 include/pagmo/problems/lennard_jones.hpp
 include/pagmo/problems/luksan_vlcek1.hpp
@@ -112,5 +113,5 @@ lib/cmake/pagmo/pagmo-config.cmake
 lib/cmake/pagmo/pagmo_export-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/pagmo/pagmo_export.cmake
 lib/libpagmo.so
-lib/libpagmo.so.8
-lib/libpagmo.so.8.0
+lib/libpagmo.so.9
+lib/libpagmo.so.9.0

@@ -1,5 +1,5 @@
 PORTNAME=	libvshadow
-PORTVERSION=	20210425
+PORTVERSION=	20221030
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libvshadow/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -12,7 +12,7 @@ WWW=		https://github.com/libyal/libvshadow
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fuse libtool pathfix pkgconfig python:3.5+
+USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

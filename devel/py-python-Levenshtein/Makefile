@@ -1,7 +1,7 @@
 PORTNAME=	python-Levenshtein
 PORTVERSION=	0.12.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/ztane/python-Levenshtein
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:

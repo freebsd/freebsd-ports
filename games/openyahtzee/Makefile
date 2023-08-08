@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/scoped_ptr.hpp:devel/boost-libs
 
 USES=		compiler:c++11-lib localbase:ldflags tar:xz
 USE_CXXSTD=	c++11
-USE_WX=		2.8
+USE_WX=		3.2
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 

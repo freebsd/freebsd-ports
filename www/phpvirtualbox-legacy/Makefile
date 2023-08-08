@@ -1,6 +1,6 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	5.2-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	-legacy
 
@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox/
 LICENSE=	GPLv3
 
 USES=		dos2unix php
-USE_PHP=	json session simplexml soap xml
+USE_PHP=	session simplexml soap xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -21,6 +21,8 @@ USE_GITHUB=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 ETCDIR=		${WWWDIR}
+
+EXTRA_PATCHES+=	${.CURDIR}/../phpvirtualbox/files/patch-php8
 
 post-patch:
 	@${MV} ${WRKSRC}/phpvirtualbox.conf ${WRKSRC}/phpvirtualbox-legacy.conf

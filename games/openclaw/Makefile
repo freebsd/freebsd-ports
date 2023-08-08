@@ -1,10 +1,13 @@
 PORTNAME=	OpenClaw
-DISTVERSION=	0.0-51
-PORTREVISION=	4
-DISTVERSIONSUFFIX=	-gbac7730
+DISTVERSION=	0.3-98
+DISTVERSIONSUFFIX=	-g3586dfa
+PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+PATCH_SITES=	https://github.com/valpackett/${GH_PROJECT}/commit/
+PATCHFILES+=	005aa1d36cae.patch:-p1 # fix running without launcher
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of Captain Claw (1997) platformer
 WWW=		https://github.com/pjasicek/OpenClaw
 
@@ -17,6 +20,8 @@ USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	pjasicek
 USE_SDL=	gfx2 image2 mixer2 ttf2
+
+CMAKE_ARGS+=	-DDEFAULT_ASSETS_FOLDER=${DATADIR}/
 
 PLIST_FILES=	bin/openclaw
 PORTDATA=	ASSETS.ZIP SAVES.XML clacon.ttf config.xml console02.tga

@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2022-02-09 14:58:23 UTC
++++ CMakeLists.txt
+@@ -45,6 +45,9 @@ if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.10)
+ cmake_policy(SET CMP0071 NEW)
+ endif()
+ 
++# Fix with FMT >= 9 - see https://github.com/The-OpenROAD-Project/OpenROAD/issues/2386
++add_compile_definitions(FMT_DEPRECATED_OSTREAM)
++
+ # Interfers with Qt so off by default.
+ option(LINK_TIME_OPTIMIZATION "Flag to control link time optimization: off by default" OFF)
+ 

@@ -1,5 +1,5 @@
 PORTNAME=	octicons
-PORTVERSION=	17.5.0
+PORTVERSION=	19.4.0
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-nokogiri>=1.6.3.1:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

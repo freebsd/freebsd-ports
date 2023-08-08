@@ -1,7 +1,7 @@
 PORTNAME=	argon2-cffi-bindings
 PORTVERSION=	21.2.0
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.1:devel/py-cffi@${PY_FLAVOR} \
 LIB_DEPENDS=	libargon2.so:security/libargon2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.1:devel/py-cffi@${PY_FLAVOR}
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 MAKE_ENV=	ARGON2_CFFI_USE_SYSTEM=1

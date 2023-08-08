@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher.cc.orig	2022-12-06 08:09:13 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher.cc
 @@ -10,7 +10,7 @@
  #include "chrome/browser/enterprise/signals/device_info_fetcher_mac.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/signals/device_info_fetcher_linux.h"
  #endif
  
-@@ -70,7 +70,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
+@@ -71,7 +71,7 @@ std::unique_ptr<DeviceInfoFetcher> DeviceInfoFetcher::
    return std::make_unique<DeviceInfoFetcherMac>();
  #elif BUILDFLAG(IS_WIN)
    return std::make_unique<DeviceInfoFetcherWin>();

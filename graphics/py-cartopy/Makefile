@@ -1,9 +1,10 @@
 PORTNAME=	cartopy
-PORTVERSION=	0.21.0
+PORTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	Cartopy-${DISTVERSIONFULL}
+DISTNAME=	Cartopy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cartographic library with Matplotlib support for visualisation
@@ -20,10 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.1:math/py-matplotlib@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.19,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=3.0.0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyshp>=2.1:devel/py-pyshp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Shapely>=1.6.4<2:devel/py-shapely@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}shapely>=1.6.4:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	OWS PLOTTING

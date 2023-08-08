@@ -13,6 +13,9 @@ LICENSE=	MPL10
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake dos2unix tar:tgz
+
+CFLAGS=	--std=c++14
+
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/nqc man/man1/nqc.1.gz

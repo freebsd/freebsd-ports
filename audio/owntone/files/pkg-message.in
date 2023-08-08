@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+owntone uses FFmpeg for transcoding audio playback.
+The default ports/pkg build of FFmpeg on FreeBSD has a number
+of options which could be SET/UNSET to provide support for
+additional audio codecs.
+
+If you find owntone does not support the audio codecs you
+require, it is recommended to recompile the multimedia/ffmpeg
+package from ports with the necessary options ENABLED (SET).
+
+You should review and edit the owntone configuration
+file %%PREFIX%%/etc/owntone.conf before first use.
+
+To automatically start owntone at boot time:
+# sysrc 'dbus_enable=YES'
+# sysrc 'avahi_daemon_enable=YES'
+# sysrc 'owntone_enable=YES'
+
+To then manually start owntone without rebooting:
+# service dbus start
+# service avahi-daemon start
+# service owntone start
+EOM
+}
+]

@@ -19,7 +19,7 @@
 %%OCAML_SITELIBDIR%%/ssl/ssl_threads.ml
 %%OCAML_SITELIBDIR%%/ssl/ssl_threads.mli
 %%OCAML_SITELIBDIR%%/stublibs/dllssl_stubs.so
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/alpn.ml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dune

@@ -1,11 +1,11 @@
---- ogonkify/Makefile.in.orig	2000-01-07 13:00:49 UTC
+--- ogonkify/Makefile.in.orig	2023-03-07 18:11:32 UTC
 +++ ogonkify/Makefile.in
-@@ -33,7 +33,7 @@ mandir = @mandir@
- 
- DESTDIR =
- 
+@@ -89,7 +89,7 @@ am__make_running_with_option = \
+   test $$has_opt = yes
+ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+ am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
 -pkgdatadir = $(datadir)/@PACKAGE@
 +pkgdatadir = $(datadir)/a2ps/@PACKAGE@
- pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
- 
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkglibexecdir = $(libexecdir)/@PACKAGE@

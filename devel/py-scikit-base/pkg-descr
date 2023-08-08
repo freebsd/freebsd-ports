@@ -1,0 +1,3 @@
+skbase provides base classes for creating scikit-learn-like parametric objects,
+along with tools to make it easier to build your own packages that follow these
+design patterns.

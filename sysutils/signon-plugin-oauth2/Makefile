@@ -20,7 +20,7 @@ QMAKE_ENV=	PREFIX=${PREFIX}
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	091887d09bb635fa31f69ed16d384563cddc8009
+GL_TAGNAME=	091887d09bb635fa31f69ed16d384563cddc8009
 
 # Fix for  Qt5-5.13:
 # oauth2plugin.cpp:133:9: error: 'addQueryItem' is deprecated [-Werror,-Wdeprecated-declarations]

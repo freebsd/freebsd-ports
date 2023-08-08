@@ -15,6 +15,5 @@ RUN_DEPENDS+=	rubygem-rack>1.0.0:www/rubygem-rack
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

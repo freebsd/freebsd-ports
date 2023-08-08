@@ -20,13 +20,13 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libppl.so:devel/ppl
 
 USES=		gmake localbase:ldflags
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	antoinemine
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-prefix ${STAGEDIR}${PREFIX} -no-ocaml -no-java
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	antoinemine
 
 post-stage:
 	  @${STRIP_CMD} \

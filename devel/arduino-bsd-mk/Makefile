@@ -10,7 +10,7 @@ WWW=		https://xse.com/leres/arduino/arduino-bsd-mk/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+,run shebangfix
+USES=		python:run shebangfix
 
 SHEBANG_FILES=	arduino-boards.py
 

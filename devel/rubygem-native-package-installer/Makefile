@@ -1,5 +1,5 @@
 PORTNAME=	native-package-installer
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/doc/text/lgpl-3.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

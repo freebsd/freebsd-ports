@@ -1,6 +1,6 @@
-TIMESTAMP = 1624849200
-SHA256 (GeographicLib/GeographicLib-1.52.tar.gz) = 5d4145cd16ebf51a2ff97c9244330a340787d131165cfd150e4b2840c0e8ac2b
-SIZE (GeographicLib/GeographicLib-1.52.tar.gz) = 2432658
+TIMESTAMP = 1685761200
+SHA256 (GeographicLib/GeographicLib-2.2.tar.gz) = 96bd68ae77288fbbffd854c1c8f2c2981dbdbc7670753013fe5ce9ce86d8a125
+SIZE (GeographicLib/GeographicLib-2.2.tar.gz) = 1682259
 SHA256 (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = bdb382d0be7ece9142450eacc24b7b7f0889ee3e0ba4f535b04ec383f94c0fb5
 SIZE (GeographicLib/geoids-distrib/egm2008-1.tar.bz2) = 162388303
 SHA256 (GeographicLib/geoids-distrib/egm2008-2_5.tar.bz2) = d602e13446a4a4a23f39aecfe6a2a0760a1bc6c1b497482c2ebc9f7d513be699

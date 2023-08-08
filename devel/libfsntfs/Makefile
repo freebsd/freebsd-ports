@@ -1,6 +1,6 @@
 PORTNAME=	libfsntfs
 # If/When moving from experimental to alpha, switch to DISTVERSIONPREFIX to prevent PORTEPOCH
-DISTVERSION=	experimental-20210503
+DISTVERSION=	experimental-20221023
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libfsntfs/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-openssl=no \
 		--with-libfwnt=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		cpe libtool fuse pathfix pkgconfig python:3.5+
+USES=		cpe libtool fuse pathfix pkgconfig python
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

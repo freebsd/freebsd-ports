@@ -1,11 +1,11 @@
---- mojo/core/embedder/features.h.orig	2022-02-28 16:54:41 UTC
+--- mojo/core/embedder/features.h.orig	2023-04-28 17:01:32 UTC
 +++ mojo/core/embedder/features.h
-@@ -14,7 +14,7 @@ namespace mojo {
- namespace core {
+@@ -16,7 +16,7 @@ namespace core {
  
- #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_MAC)
+ #if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_NACL) && \
+     !BUILDFLAG(MOJO_USE_APPLE_CHANNEL)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(MOJO_CORE_EMBEDDER_FEATURES)
- extern const base::Feature kMojoLinuxChannelSharedMem;
+ BASE_DECLARE_FEATURE(kMojoLinuxChannelSharedMem);
  

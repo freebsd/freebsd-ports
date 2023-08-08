@@ -1,7 +1,7 @@
 PORTNAME=	pyVTK
 PORTVERSION=	0.5.18
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyVTK-${PORTVERSION}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/pearu/pyvtk
 
 LICENSE=	GPLv2
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

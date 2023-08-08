@@ -1,9 +1,0 @@
---- resources/gnome-pie.desktop.orig	2015-01-23 11:49:05 UTC
-+++ resources/gnome-pie.desktop
-@@ -4,5 +4,5 @@ Name=Gnome-Pie
- Comment=Cakes don't lie.
- Exec=gnome-pie
- Icon=gnome-pie
--Categories=GNOME;Utility;
-+Categories=GTK;GNOME;Utility;
- Keywords=Utility;Menu;

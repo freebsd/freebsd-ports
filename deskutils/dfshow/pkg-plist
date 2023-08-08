@@ -12,3 +12,4 @@ man/man1/show.1.gz
 %%DATADIR%%/neutral
 %%DATADIR%%/nt
 %%DATADIR%%/ti
+share/locale/en_GB/LC_MESSAGES/dfshow.mo

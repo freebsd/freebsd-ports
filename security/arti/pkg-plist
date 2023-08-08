@@ -1,5 +1,7 @@
 bin/arti
 @sample %%ETCDIR%%/arti.toml.sample
+@owner %%USERS%%
+@group %%GROUPS%%
 @dir /var/db/arti
 @dir /var/log/arti
 @dir /var/run/arti

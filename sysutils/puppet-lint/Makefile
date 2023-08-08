@@ -1,5 +1,5 @@
 PORTNAME=	puppet-lint
-PORTVERSION=	2.5.2
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 PLIST_FILES=	bin/puppet-lint
 NO_ARCH=	yes
 

@@ -4,7 +4,7 @@ DISTVERSION=	2.1.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~leon_plickat/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple launcher panel for Wayland desktops
 WWW=		https://git.sr.ht/~leon_plickat/lavalauncher
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo
+CFLAGS+=	-Wno-error=strict-prototypes # Clang 15, similar to wlclock
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	EPOLL INOTIFY LIBRSVG2 MANPAGES

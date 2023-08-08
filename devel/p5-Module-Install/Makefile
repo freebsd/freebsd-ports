@@ -1,10 +1,10 @@
 PORTNAME=	Module-Install
-PORTVERSION=	1.19
+PORTVERSION=	1.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Standalone, extensible Perl module installer
 WWW=		https://metacpan.org/release/Module-Install
 

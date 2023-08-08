@@ -1,2 +1,12 @@
-Perforce is a commercial revision control system that can be used
-gratis for developing free software. (see the WWW page for details).
+Perforce is a commercial revision control system. This is the command
+line client which works with servers remotely or locally.
+The clients and the api for Perforce is freely available.
+
+This build does not support the "Extensions" feature.
+
+The server is no longer available for FreeBSD but the Linux version
+should work. There is a limited free use level and non-profit
+organizations might qualify for free licencing.
+
+See "p4 -V" for more licensing and version information.
+See https://ftp.perforce.com/perforce/r22.2/doc/user/ for release notes.

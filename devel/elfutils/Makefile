@@ -22,7 +22,8 @@ BUILD_DEPENDS=	gnulib>=0:devel/gnulib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-CFLAGS+=	-I${LOCALBASE}/share/gnulib/lib
+CFLAGS+=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/share/gnulib/lib
 LDFLAGS+=	${LOCALBASE}/lib/libargp.so \
 		${LOCALBASE}/lib/libintl.so
 

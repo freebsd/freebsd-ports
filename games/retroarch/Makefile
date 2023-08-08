@@ -1,9 +1,10 @@
 PORTNAME=	RetroArch
 PORTVERSION=	1.10.3
 DISTVERSIONPREFIX=	v
-CATEGORIES=	games emulators wayland
+PORTREVISION=	2
+CATEGORIES=	games emulators
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform entertainment system based on libretro API
 WWW=		https://github.com/libretro/RetroArch
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
-USES=		compiler:c++11-lib cpe gmake pkgconfig python:3.6+ shebangfix ssl
+USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
 CPE_VENDOR=	libretro
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
@@ -67,6 +68,7 @@ V4L_BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 V4L_CONFIGURE_ENABLE=	v4l2
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
 FREETYPE_CONFIGURE_ENABLE=	freetype
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 			${LOCALBASE}/include/linux/kd.h:graphics/svgalib
 WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland

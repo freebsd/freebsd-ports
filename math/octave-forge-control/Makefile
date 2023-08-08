@@ -1,27 +1,22 @@
 PORTNAME=	octave-forge-control
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	control-
+DISTVERSION=	3.6.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
+
+USES=		octave autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	pkg-control
+
+OCTAVE_SRC=	${GH_PROJECT}-control-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
-
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
-
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
 
 .include <bsd.port.mk>

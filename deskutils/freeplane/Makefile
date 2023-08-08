@@ -1,10 +1,10 @@
 PORTNAME=	freeplane
-DISTVERSION=	1.10.3
+DISTVERSION=	1.11.5
 CATEGORIES=	deskutils editors java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20stable
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Free mind mapping and knowledge management software
 WWW=		https://www.freeplane.org/
 
@@ -13,21 +13,26 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe zip shebangfix
-SHEBANG_FILES=	${WRKSRC}/freeplane.sh
+USES=		cpe desktop-file-utils shebangfix zip
 USE_JAVA=	yes
+
+SHEBANG_FILES=	${WRKSRC}/freeplane.sh
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+SUB_FILES=	freeplane freeplane.desktop
+SUB_LIST=	DATADIR=${DATADIR} \
+		PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
+
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
-		"! ( -name license\.txt -or -name *\.bat -or -name *\.exe )"
-# Install freeplane.sh with the right permission
-	${SED} -e 's|%%DATADIR%%|${DATADIR}|' < ${FILESDIR}/freeplane.in > \
-		${WRKSRC}/freeplane
-	${INSTALL_SCRIPT} ${WRKSRC}/freeplane ${STAGEDIR}${PREFIX}/bin/
+		"! ( -name license\.txt -or -name *\.bat -or -name *\.exe -or -name *\.orig -or -name *\.bak -or -name freeplane.sh )"
+	${INSTALL_DATA} ${WRKDIR}/freeplane.desktop ${STAGEDIR}${DESKTOPDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/freeplane.sh ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/freeplane ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

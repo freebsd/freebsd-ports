@@ -1,5 +1,5 @@
 bin/epic5
-bin/epic5-%%PORTVERSION%%
+bin/epic5-%%COMMITID%%
 libexec/epic5-wserv4
 man/man1/epic5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/256color
@@ -58,6 +58,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/cycle
 %%DATADIR%%/script/data_array
 %%DATADIR%%/script/data_struct
+%%DATADIR%%/script/dbmdump
 %%DATADIR%%/script/dcc_ports
 %%DATADIR%%/script/debug.irc
 %%DATADIR%%/script/dump
@@ -105,7 +106,7 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/pipe
 %%DATADIR%%/script/python
 %%DATADIR%%/script/reconnect
-%%DATADIR%%/script/reconnect.orig
+%%DATADIR%%/script/reconnect.old
 %%DATADIR%%/script/rejoin
 %%DATADIR%%/script/renumber
 %%DATADIR%%/script/revdcc
@@ -134,4 +135,3 @@ man/man1/epic5.1.gz
 %%DATADIR%%/script/userlist
 %%DATADIR%%/script/utime
 %%DATADIR%%/script/xmsglog
-@dir %%DATADIR%%/help

@@ -1,6 +1,6 @@
 PORTNAME=	caribou
 PORTVERSION=	0.4.21
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:graphics/clutter \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}atspi>=2.1.91:accessibility/py-atspi@${PY_FLAVOR}
 
 USES=		gettext gl gmake gnome libtool localbase pathfix \
-		pkgconfig python:3.3+ shebangfix tar:xz xorg
+		pkgconfig python shebangfix tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intlhack introspection:build libxml2 \
 		libxslt:build pygobject3
 USE_PYTHON=	py3kplist
@@ -35,5 +35,11 @@ INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS=	--enable-gtk2-module=no
 GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>

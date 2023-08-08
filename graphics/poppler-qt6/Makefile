@@ -1,4 +1,3 @@
-PORTREVISION=	0
 
 COMMENT=	Qt 6 bindings to poppler
 

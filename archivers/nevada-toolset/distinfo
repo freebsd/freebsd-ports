@@ -1,0 +1,7 @@
+TIMESTAMP = 1597529192
+SHA256 (TheAssemblyArmada-NevadaToolset-g20200815-d1ef341_GH0.tar.gz) = 21f202f96526c7b759d64353ad492985371778cba0b74add6bd66d68681c6279
+SIZE (TheAssemblyArmada-NevadaToolset-g20200815-d1ef341_GH0.tar.gz) = 469550
+SHA256 (TheAssemblyArmada-BaseConfig-a98fc2c_GH0.tar.gz) = a71cd1c4778234d8037ac564d6a3dafa0be89cd3a055e25b903678eb9a38c81b
+SIZE (TheAssemblyArmada-BaseConfig-a98fc2c_GH0.tar.gz) = 30058
+SHA256 (TheAssemblyArmada-CaptainsLog-6a52d80_GH0.tar.gz) = 8fe47d2802cb597cf21fb5e3ffb57bdbd62369bb565a669edf8b294511d4ff51
+SIZE (TheAssemblyArmada-CaptainsLog-6a52d80_GH0.tar.gz) = 17689

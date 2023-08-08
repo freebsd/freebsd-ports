@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq-unique-jobs
-PORTVERSION=	7.1.27
+PORTVERSION=	8.0.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-brpoplpush-redis_script>=0.1.1<2.0.0:databases/rubygem-brpoplpush-redis_script \
 		rubygem-concurrent-ruby>=1.0.5<2:devel/rubygem-concurrent-ruby \
-		rubygem-sidekiq>=5.0<8.0:devel/rubygem-sidekiq \
-		rubygem-thor>=0.20<3.0:devel/rubygem-thor
+		rubygem-sidekiq>=7.0.0<8.0.0:devel/rubygem-sidekiq \
+		rubygem-thor>=1.0<3.0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

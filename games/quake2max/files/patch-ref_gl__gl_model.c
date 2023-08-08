@@ -27,3 +27,12 @@
  		if (mod->script[i])
  			RS_ReadyScript((rscript_t *)mod->script[i]);
  	}
+@@ -1465,7 +1465,7 @@
+ }
+ 
+ 
+-signed int *Mod_GetTris(short p1, short p2, dtriangle_t *side1, dmdl_t *hdr)
++static signed int Mod_GetTris(short p1, short p2, dtriangle_t *side1, dmdl_t *hdr)
+ {
+ 	dtriangle_t *tris = (dtriangle_t *)((unsigned char*)hdr + hdr->ofs_tris);
+ 	int i;

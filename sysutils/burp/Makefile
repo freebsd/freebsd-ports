@@ -29,7 +29,7 @@ CONFLICTS_INSTALL=	burp-devel
 
 CPE_VENDOR=	burp_project
 
-PORTSCOUT=	limit:^2\.2\.
+PORTSCOUT=	limit:^2\.4\.
 
 OPTIONS_DEFINE=	IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6

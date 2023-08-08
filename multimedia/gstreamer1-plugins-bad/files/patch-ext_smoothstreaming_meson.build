@@ -1,0 +1,17 @@
+--- ext/smoothstreaming/meson.build.orig	2022-09-16 20:01:19 UTC
++++ ext/smoothstreaming/meson.build
+@@ -13,8 +13,12 @@ if xml28_dep.found()
+     c_args : gst_plugins_bad_args + ['-DGST_USE_UNSTABLE_API'],
+     link_args : noseh_link_args,
+     include_directories : [configinc, libsinc],
+-    dependencies : [gst_dep, gstadaptivedemux_dep, gstcodecparsers_dep,
+-		    gsturidownloader_dep, gstisoff_dep, xml28_dep, gio_dep],
++    dependencies : [gst_dep,
++      cc.find_library('gstadaptivedemux-1.0', required : true),
++      dependency('gstreamer-codecparsers-1.0', required : true),
++      cc.find_library('gsturidownloader-1.0', required : true),
++      cc.find_library('gstisoff-1.0', required : true),
++      xml28_dep, gio_dep],
+     install : true,
+     install_dir : plugins_install_dir,
+   )

@@ -1,47 +1,35 @@
 PORTNAME=	git-cinnabar
-DISTVERSION=	0.5.10
-PORTREVISION=	2
+DISTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Git remote helper to interact with Mercurial repositories
 WWW=		https://github.com/glandium/git-cinnabar
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 MPL20
+LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libcurl.so:ftp/curl
 RUN_DEPENDS=	git:devel/git
 
+USES=		cargo gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
-
-USES=		gmake python:3.6+,run shebangfix
-TARGET_ORDER_OVERRIDE=	510:fix-shebang # after do-patch
-SHEBANG_FILES=	${PORTNAME} git-remote-hg
-ALL_TARGET=	${PORTNAME}-helper
-MAKE_ENV=	${:!${MAKE} -V MAKE_ENV -C ${.CURDIR:H}/git!}
-MAKE_ARGS=	SUBMODULE_STATUS=dummy ${:!${MAKE} -V MAKE_ARGS -C ${.CURDIR:H}/git!}
-CFLAGS+=	-ffunction-sections -fdata-sections
-LDFLAGS+=	-Wl,--gc-sections
-.export		CPPFLAGS CFLAGS CXXFLAGS LDFLAGS # :configure
+GH_TUPLE=	git-for-windows:git:v2.41.0.windows.1:git/git-core
 DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-post-configure:
-	@${TAR} cf - -C$$(${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
-		${TAR} xof - -C${WRKSRC}/git-core
-
-do-install:
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${WRKSRC}/git-remote-hg \
-		${STAGEDIR}${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/git-core/${PORTNAME}-helper \
-		${STAGEDIR}${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTNAME:S/git-//}" \
-		${STAGEDIR}${DATADIR}/pythonlib)
+	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ${STAGEDIR}${DATADIR}
+	${RLN} ${STAGEDIR}${DATADIR}/${PORTNAME} \
+		${STAGEDIR}${DATADIR}/git-remote-hg
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
 

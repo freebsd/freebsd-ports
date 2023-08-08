@@ -14,13 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USE_ASDF=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.common-lisp.net
-GL_COMMIT=	f35e232ceb2ada8d10e7fdf27ccac07f781eea0e
+GL_TAGNAME=	f35e232ceb2ada8d10e7fdf27ccac07f781eea0e
 
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	sbcl:lang/sbcl \
 			texi2pdf:print/texinfo
-
+DOCS_USES=	tex
 DOCS_USE=	TEX=latex:build
 DOCS_INFO=	doc/${PORTNAME}
 

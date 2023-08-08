@@ -1,6 +1,6 @@
---- Libnet-0.99b/configure.orig	Mon Jul 26 08:08:51 1999
-+++ Libnet-0.99b/configure	Sat Jan  8 01:00:45 2000
-@@ -884,10 +884,6 @@
+--- Libnet-0.99b/configure.orig	1999-07-26 15:08:51 UTC
++++ Libnet-0.99b/configure
+@@ -884,10 +884,6 @@ fi
  
  
  
@@ -11,3 +11,12 @@
  
  # Check whether --with-pf_packet or --without-pf_packet was given.
  if test "${with_pf_packet+set}" = set; then
+@@ -1192,7 +1188,7 @@ fi
+ echo $ac_n "checking low-level packet interface type""... $ac_c" 1>&6
+ echo "configure:1194: checking low-level packet interface type" >&5
+ 
+-if test -r /dev/bpf0 ; then
++if test -r /usr/include/net/bpf.h ; then
+     LL_INT_TYPE=bpf
+     echo "$ac_t""found bpf" 1>&6
+ elif test -r /usr/include/net/pfilt.h ; then

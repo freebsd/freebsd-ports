@@ -5,7 +5,7 @@
  }
  
 +core_freebsd {
-+    LIBS += -lz -pthread -liconv
++    LIBS += -lz -pthread -liconv -lharfbuzz
 +
 +    QMAKE_LFLAGS += -Wl,--rpath=./
 +}

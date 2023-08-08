@@ -1,7 +1,6 @@
 PORTNAME=	givaro
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	pi@FreeBSD.org
@@ -15,20 +14,24 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pathfix pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
-USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
+USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	linbox-team
+USE_LDCONFIG=	yes
 
-#OPTIONS_DEFINE=	DOCS
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gmp="${LOCALBASE}"
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
+DOCS_USE=		TEX=base:build,dvipsk:build,latex:build,pdftex:build
 DOCS_CONFIGURE_ON=	--enable-doc --with-docdir=${DOCSDIR}
 
 post-install-DOCS-on:

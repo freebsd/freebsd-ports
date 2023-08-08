@@ -1,6 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	16.7.5
-PORTREVISION=	0
+PORTVERSION=	20.24.2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,39 +9,67 @@ WWW=		https://virtualenv.pypa.io
 
 LICENSE=	MIT
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.6:devel/py-distlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.6:devel/py-distlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filelock>=3.4.1:sysutils/py-filelock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.4:devel/py-platformdirs@${PY_FLAVOR}
+# tests: 296 passed, 26 skipped
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.2.2:devel/py-covdefaults@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-env>=0.6.2:devel/py-pytest-env@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.10.3:devel/py-pytest-randomly@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}time-machine>=2.10.0:devel/py-time-machine@${PY_FLAVOR}
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.0,1:textproc/py-sphinx@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}towncrier>0:textproc/py-towncrier@${PY_FLAVOR}
-DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
-DOCS_PORTDOCS=	*
-DOCS_VARS=	PYDISTUTILS_BUILD_TARGET="build build_sphinx"
-
-# Required by towncrier/click when Python < 3.7
-# see https://click.palletsprojects.com/en/7.x/python3/
-# Documentation is in English, so...
-MAKE_ENV=	LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
-
+USES=		cpe python
+USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+# Fix the LookupError: setuptools-scm was unable to detect version (build target)
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION="${PORTVERSION}"
+
+.if make(test)
+TEST_ENV=	PYTHONIOENCODING=utf-8 \
+		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
+.endif
 
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-PYDISTUTILS_BUILDARGS=	-c ${WRKSRC}/docs
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click-default-group>0:devel/py-click-default-group@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}furo>=2022.12.7:textproc/py-furo@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}platformdirs>0:devel/py-platformdirs@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}proselint>0:devel/py-proselint@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx-argparse>0:textproc/py-sphinx-argparse@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.0,1:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}towncrier>=22.8.0:textproc/py-towncrier@${PY_FLAVOR}
+DOCS_BINARY_ALIAS=	towncrier=towncrier-${PYTHON_VER}
+DOCS_PLIST_FILES=	man/man1/virtualenv.1.gz
+DOCS_PORTDOCS=		* .buildinfo
 
-USES=		cpe python:3.6+
-USE_GITHUB=	yes
-USE_PYTHON=	autoplist concurrent distutils
+# Fix the Exception:
+#
+# File "/build/lib/virtualenv/run/plugin/discovery.py", line 20, in get_discover
+#    default=next(iter(choices)),
+# StopIteration
+#
+# Apparently it doesn't work setting PYTHONPATH environment variable...
+VIRTUALENV_WHEEL=	${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-py${PYTHON_MAJOR_VER}-none-any.whl
+
+post-patch:
+	@${SED} -i.bak -e 's,%%VIRTUALENV_WHEEL%%,${VIRTUALENV_WHEEL},1' \
+	-e 's,%%PYTHON_VER%%,${PYTHON_VER},1' \
+	${WRKSRC}/docs/conf.py
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/build/sphinx/html && \
-	${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name .buildinfo -or -name objects.inv")
-
-regression-test: build
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
+	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

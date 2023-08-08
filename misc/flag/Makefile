@@ -1,20 +1,24 @@
 PORTNAME=	flag
-PORTVERSION=	1.0.5
+DISTVERSION=	1.0.6
 CATEGORIES=	misc
-MASTER_SITES=	http://git.cyberleo.net/releases/${PORTNAME}/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	https://git.cyberleo.net/releases/${PORTNAME}/
 
 MAINTAINER=	cyberleo@cyberleo.net
 COMMENT=	Turn the hostname into a colourful and visually distinctive ansi flag
 WWW=		https://git.cyberleo.net/CDN/flag.git
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/README.md
+
+USES=	tar:tgz
+
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	BASH
-BASH_DESC=	Install include for Bash prompt
-OPTIONS_DEFAULT=BASH
-
 PLIST_FILES=	bin/flag
+
+OPTIONS_DEFINE=	BASH
+OPTIONS_DEFAULT=BASH
+BASH_DESC=	Install include for Bash prompt
 
 .include <bsd.port.options.mk>
 
@@ -27,9 +31,9 @@ post-extract:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/flag ${STAGEDIR}${PREFIX}/bin/flag
-.if ${PORT_OPTIONS:MBASH}
+
+do-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/bash_prompt.sh ${STAGEDIR}${DATADIR}
-.endif
 
 .include <bsd.port.mk>

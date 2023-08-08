@@ -1,5 +1,7 @@
-TIMESTAMP = 1620355103
+TIMESTAMP = 1679331476
 SHA256 (go/security_gitjacker/gitjacker-v0.1.0/v0.1.0.mod) = b3db6be3fc30d6f4246b98b62a9a1aaeeb4baf56813250be44bc31d1346faebf
 SIZE (go/security_gitjacker/gitjacker-v0.1.0/v0.1.0.mod) = 341
 SHA256 (go/security_gitjacker/gitjacker-v0.1.0/v0.1.0.zip) = 850de0ee593d0292c248275b1bd3aec2ec98f6336329aab516087544a1f345dc
 SIZE (go/security_gitjacker/gitjacker-v0.1.0/v0.1.0.zip) = 239095
+SHA256 (go/security_gitjacker/gitjacker-v0.1.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/security_gitjacker/gitjacker-v0.1.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

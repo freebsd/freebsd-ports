@@ -38,7 +38,6 @@
     SUBDIR += nn
     SUBDIR += nnap
     SUBDIR += nntp
-    SUBDIR += nntpcache
     SUBDIR += noffle
     SUBDIR += nzbget
     SUBDIR += nzbhydra2
@@ -52,10 +51,10 @@
     SUBDIR += pan
     SUBDIR += pgpmoose
     SUBDIR += py-pynzb
-    SUBDIR += py-sabyenc3
+    SUBDIR += py-sabctools
     SUBDIR += rntrack
     SUBDIR += s-news
-    SUBDIR += sabnzbdplus
+    SUBDIR += sabnzbd
     SUBDIR += slrn
     SUBDIR += slrnface
     SUBDIR += suck

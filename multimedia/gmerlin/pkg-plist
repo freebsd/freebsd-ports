@@ -91,7 +91,6 @@ include/gmerlin/utils.h
 include/gmerlin/visualize.h
 include/gmerlin/x11/x11.h
 include/gmerlin/xmlutils.h
-%%QUICKTIME%%lib/gmerlin/plugins/e_lqt.so
 lib/gmerlin/plugins/e_pp_cdrdao.so
 lib/gmerlin/plugins/e_pp_vcdimager.so
 %%PNG%%lib/gmerlin/plugins/e_spumux.so
@@ -125,7 +124,6 @@ lib/gmerlin/plugins/fv_zoom.so
 %%CDIO%%lib/gmerlin/plugins/i_cdaudio.so
 lib/gmerlin/plugins/i_edl.so
 %%JACK%%lib/gmerlin/plugins/i_jack.so
-%%QUICKTIME%%lib/gmerlin/plugins/i_lqt.so
 lib/gmerlin/plugins/i_mikmod.so
 lib/gmerlin/plugins/i_oss.so
 %%PULSEAUDIO%%lib/gmerlin/plugins/i_pulse.so

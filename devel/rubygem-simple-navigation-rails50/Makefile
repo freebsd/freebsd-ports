@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-activesupport50>=2.3.2:devel/rubygem-activesupport50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

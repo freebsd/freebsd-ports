@@ -1,6 +1,6 @@
 PORTNAME=	wayland
-DISTVERSION=	1.21.0
-CATEGORIES=	graphics wayland
+DISTVERSION=	1.22.0
+CATEGORIES=	graphics
 MASTER_SITES=	https://gitlab.freedesktop.org/${PORTNAME}/${PORTNAME}/-/releases/${DISTVERSION}/downloads/
 
 MAINTAINER=	x11@FreeBSD.org

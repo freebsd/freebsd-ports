@@ -1,6 +1,5 @@
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.4.632.b.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES=	www elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -16,13 +15,13 @@ RUN_DEPENDS=	w3m:www/w3m
 
 USES=		autoreconf emacs tar:xz
 USE_GITHUB=	yes
-GH_TAGNAME=	343f4f8
+GH_TAGNAME=	ea60411
 
 ALL_TARGET=	default
 INSTALL_TARGET=	install install-icons
 
 NO_ARCH=	yes
-SNAPDATE=	20220916
+SNAPDATE=	20230630
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
@@ -60,6 +59,10 @@ PLIST_SUB+=	EMACS28="@comment "
 
 post-patch:
 	@${MV} ${WRKSRC}/aclocal.m4 ${WRKSRC}/acinclude.m4
+
+post-install:
+	${RM} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-shimbun.elc \
+	      ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/w3m/mew-w3m.elc
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

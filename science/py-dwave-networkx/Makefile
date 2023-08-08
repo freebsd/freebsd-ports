@@ -1,5 +1,5 @@
 PORTNAME=	dwave-networkx
-DISTVERSION=	0.8.12
+DISTVERSION=	0.8.14
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
@@ -11,14 +11,14 @@ WWW=		https://github.com/dwavesystems/dwave-networkx
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.10.8:science/py-dimod@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.0:science/py-dimod@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.4:math/py-networkx@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes

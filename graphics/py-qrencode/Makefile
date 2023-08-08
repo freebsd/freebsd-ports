@@ -1,7 +1,7 @@
 PORTNAME=	qrencode
 PORTVERSION=	1.2
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	libqrencode>0:graphics/libqrencode
 RUN_DEPENDS=	libqrencode>0:graphics/libqrencode
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 CFLAGS+=	-I${PREFIX}/include

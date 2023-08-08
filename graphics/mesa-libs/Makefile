@@ -1,9 +1,13 @@
 PORTNAME=	mesa-libs
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL libraries that support GLX and EGL clients
 WWW=		https://www.mesa3d.org/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
 
@@ -26,35 +30,36 @@ ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	zstd
 
+USE_LDCONFIG=		yes
+
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
 .if ${ABI:Mpurecap}
-DRI_DRIVERS=
 GALLIUM_DRIVERS=	PANFROST SWRAST
 .else
-# Building EGL and GBM requires a dri driver so add r100
-DRI_DRIVERS=		R100
-GALLIUM_DRIVERS=
+# Building EGL and GBM requires a driver so add r300
+GALLIUM_DRIVERS=	R300
 .endif
 
-MESON_ARGS+=	-Dgallium-drivers="" \
-		-Dgallium-vdpau=disabled \
-		-Dgallium-xvmc=disabled \
+MESON_ARGS+=	-Dgallium-vdpau=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
+		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \
 		-Dtools="" \
 		-Degl=enabled \
 		-Dgbm=enabled \
 		-Dvulkan-drivers="" \
-		-Dglvnd=true \
-		-Dprefer-iris=true
+		-Dglvnd=true
+MESON_ARGS+=	-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}"
 
 .if ${ABI:Mpurecap}
-MESON_ARGS+= -Dgles1=enabled -Dgles2=enabled -Dllvm=disabled
+MESON_ARGS+=	-Dgles1=enabled \
+		-Dgles2=enabled \
+		-Dllvm=disabled
 .endif
 
 .if ${PORT_OPTIONS:MPLATFORM_X11}
@@ -71,9 +76,7 @@ PLIST_SUB+=	GLX="@comment "
 MESA_PLATFORMS+=	wayland
 .endif
 
-MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}" \
-		-Ddri-drivers="${DRI_DRIVERS:ts,:tl}" \
-		-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}"
+MESON_ARGS+=	-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 .if ${ARCH} == "i386"
 # PR230239 Fix the build for i386 when WITH_LLD_IS_LD is set

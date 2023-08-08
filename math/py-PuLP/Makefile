@@ -1,7 +1,8 @@
 PORTNAME=	PuLP
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amply>=0.1.2:math/py-amply@${PY_FLAVOR} \
 		cbc:math/cbc \
 		glpsol:math/glpk
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	${PORTNAME:tl}project
 USE_PYTHON=	distutils concurrent autoplist
 

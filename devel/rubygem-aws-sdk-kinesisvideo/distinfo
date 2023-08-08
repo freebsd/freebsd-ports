@@ -1,3 +1,3 @@
-TIMESTAMP = 1652122731
-SHA256 (rubygem/aws-sdk-kinesisvideo-1.42.0.gem) = f2402df6702e2819eb4fb6a8b7216b4d5c25998ade75553b570853ce0de619d6
-SIZE (rubygem/aws-sdk-kinesisvideo-1.42.0.gem) = 35840
+TIMESTAMP = 1689399283
+SHA256 (rubygem/aws-sdk-kinesisvideo-1.52.0.gem) = cdbc9b0064fc29eab41a84b3d04f4d6f4b1e5e7d6f69d9ddd0895b7ce11936b1
+SIZE (rubygem/aws-sdk-kinesisvideo-1.52.0.gem) = 45568

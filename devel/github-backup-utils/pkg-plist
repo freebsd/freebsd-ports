@@ -23,7 +23,7 @@ bin/ghe-restore
 %%DATADIR%%/ghe-backup-store-version
 %%DATADIR%%/ghe-backup-strategy
 %%DATADIR%%/ghe-backup-userdata
-%%DATADIR%%/ghe-cluster-nodes
+%%DATADIR%%/ghe-cluster-find-nodes
 %%DATADIR%%/ghe-detect-leaked-ssh-keys
 %%DATADIR%%/ghe-docker-init
 %%DATADIR%%/ghe-gc-disable

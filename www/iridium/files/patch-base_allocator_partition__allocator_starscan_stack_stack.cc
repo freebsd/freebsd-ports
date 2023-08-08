@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2022-03-28 18:11:04 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-04-22 17:45:15 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
-@@ -17,6 +17,10 @@
+@@ -18,6 +18,10 @@
  #include <pthread.h>
  #endif
  

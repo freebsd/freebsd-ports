@@ -2,6 +2,7 @@ bin/bssl
 include/openssl/aead.h
 include/openssl/aes.h
 include/openssl/arm_arch.h
+include/openssl/asm_base.h
 include/openssl/asn1.h
 include/openssl/asn1_mac.h
 include/openssl/asn1t.h
@@ -44,6 +45,7 @@ include/openssl/hpke.h
 include/openssl/hrss.h
 include/openssl/is_boringssl.h
 include/openssl/kdf.h
+include/openssl/kyber.h
 include/openssl/lhash.h
 include/openssl/md4.h
 include/openssl/md5.h
@@ -74,7 +76,9 @@ include/openssl/srtp.h
 include/openssl/ssl.h
 include/openssl/ssl3.h
 include/openssl/stack.h
+include/openssl/target.h
 include/openssl/thread.h
+include/openssl/time.h
 include/openssl/tls1.h
 include/openssl/trust_token.h
 include/openssl/type_check.h

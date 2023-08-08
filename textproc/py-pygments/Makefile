@@ -1,7 +1,7 @@
 PORTNAME=	pygments
-DISTVERSION=	2.9.0
+DISTVERSION=	2.15.1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pygments-${PORTVERSION}
 
@@ -12,16 +12,22 @@ WWW=		https://pygments.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0.40.0:devel/py-wheel@${PY_FLAVOR}
+# test: 4035 passed, 3 skipped, 8076 warnings
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wcag-contrast-ratio>=0.9:www/py-wcag-contrast-ratio@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 CONFLICTS_INSTALL=	py??-pygments-25
 
 NO_ARCH=	yes
 
-do-test:
-	(cd ${TEST_WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=)
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.7.0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

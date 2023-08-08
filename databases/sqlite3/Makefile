@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.39.3
+DISTVERSION=	3.42.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -82,6 +82,7 @@ OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADA
 # FTS5 used by sysutils/tracker
 # JSON1 used by net-im/py-matrix-synapse
 # DBPAGE used by audio/audacity (since 3.0.0)
+# DQS used by multimedia/emby-server, multimedia/tautulli, net/vnstat, www/qutebrowser
 #
 .if !defined(TEA)
 OPTIONS_GROUP=		OPT_EXT OPT_FUNC RTREEG UNICODE
@@ -215,7 +216,7 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2022
+_YEAR=	2023
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]

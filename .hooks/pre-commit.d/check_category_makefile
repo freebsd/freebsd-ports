@@ -3,6 +3,11 @@
 # Check that ports are hooked into the build
 #
 
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
+
 newish_makefiles=$(git diff --name-only --cached --diff-filter=ACR | grep -E '^[^/]+/[^/]+/Makefile$')
 if [ $? -eq 0 ] ; then
 	for newish_makefile in ${newish_makefiles} ; do
@@ -10,7 +15,7 @@ if [ $? -eq 0 ] ; then
 		port=$(echo "${newish_makefile}" | awk -F '/' '{print $2}')
 		grep -q -E "^[[:space:]]+SUBDIR[[:space:]]\+=[[:space:]]*${port}\$" ${category}/Makefile
 		if [ $? -ne 0 ] ; then
-			echo "[pre-commit] ERROR: Missing 'SUBDIR += ${port}' in ${category}/Makefile"
+			pre_commit_error "Missing 'SUBDIR += ${port}' in ${category}/Makefile"
 			exit 1
 		fi
 	done

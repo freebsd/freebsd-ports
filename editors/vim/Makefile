@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.0.0379
+PORTVERSION=	9.0.1671
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -43,6 +43,10 @@ CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
 
 .for f in ${FLAVORS:Nconsole}
 ${f}_PKGNAMESUFFIX=	-${f}
+.endfor
+
+.for f in ${FLAVORS:Ntiny}
+${f}_CONFLICTS_INSTALL=	xxd
 .endfor
 
 # GUI flavors
@@ -133,13 +137,13 @@ LUA_USES=		lua
 PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
 
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_USES_OFF=	python:env
 PYTHON_CONFIGURE_ENABLE=	python3interp
 PYTHON_CONFIGURE_WITH=	python3-command=${PYTHON_CMD}
 
 RUBY_CONFIGURE_ENABLE=	rubyinterp
-RUBY_USE=		RUBY=yes
+RUBY_USES=		ruby
 
 SCHEME_DESC=		MzScheme (Racket) bindings
 SCHEME_CONFIGURE_ENABLE=mzschemeinterp
@@ -168,6 +172,9 @@ post-patch:
 post-configure:
 # Needed when devel/libsysinfo is installed:
 	${REINPLACE_CMD} -e '/^#define HAVE_SYSINFO/ d' ${WRKSRC}/src/auto/config.h
+
+do-test:
+	${DO_MAKE_BUILD} -C ${WRKSRC} test
 
 .if ${FLAVOR:U} == tiny
 do-install:

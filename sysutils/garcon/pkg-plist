@@ -38,6 +38,7 @@ share/desktop-directories/xfce-network.directory
 share/desktop-directories/xfce-office.directory
 share/desktop-directories/xfce-other.directory
 share/desktop-directories/xfce-personal.directory
+share/desktop-directories/xfce-science.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory

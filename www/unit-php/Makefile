@@ -9,7 +9,6 @@ PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so
 RUN_DEPENDS=	unitd:www/unit
 
 USES=		php:build,embed,flavors
-IGNORE_WITH_PHP=	82
 
 USE_RC_SUBR=	# reset to empty
 
@@ -28,7 +27,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
-	${INSTALL_LIB} ${WRKSRC}/build/${UNIT_MODNAME}.unit.so \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/unit/modules/${UNIT_MODNAME}.unit.so \
 		${STAGEDIR}${PREFIX}/libexec/unit/modules/
 
 # Overwrite the target in the ${MASTERDIR}/Makefile

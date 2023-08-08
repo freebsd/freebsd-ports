@@ -3,6 +3,16 @@
   message: <<EOM
 * You must be in the sudoers file in order to use lxqt-sudo 
 * You must be in the the wheel group in order to use lxsu
+* You might find the keepenv option in doas.conf useful for lxdoas
+EOM
+},
+{
+ type: upgrade
+ message: <<EOM
+* lxqt-sudo now supports doas if installed. You can use the keepenv
+  setting in doas.conf for your user(s) if needed.
 EOM
 }
+
+
 ]

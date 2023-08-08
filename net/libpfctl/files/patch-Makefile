@@ -1,11 +1,12 @@
 --- Makefile.orig	2021-04-19 10:09:35 UTC
 +++ Makefile
-@@ -2,7 +2,7 @@
+@@ -2,7 +2,8 @@
  
  PACKAGE=	lib${LIB}
  LIB=		pfctl
 -INTERNALLIB=	true
 +SHLIB_MAJOR=	0
++LIBADD+=	nv
  
  SRCS=	libpfctl.c
  INCS=	libpfctl.h

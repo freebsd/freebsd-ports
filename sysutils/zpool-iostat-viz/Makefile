@@ -10,7 +10,7 @@ WWW=		https://github.com/chadmiller/zpool-iostat-viz
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.4+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	chadmiller
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}

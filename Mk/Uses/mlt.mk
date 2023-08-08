@@ -4,8 +4,7 @@
 # Usage:	USES=mlt:ARGS
 # Valid ARGS:	<version>,nodepend
 #
-# version	The chooseable versions are 6 and 7.
-#		USES=mlt:6 # Use mlt 6.x
+# version	The only currently supported version is 7.
 #		USES=mlt:7 # Use mlt 7.x
 # nodepend	If nodepend is set, no LIB_DEPENDS line
 #		will be generated (useful for the mlt-ports)
@@ -16,7 +15,7 @@
 .if ! defined(_INCLUDE_USES_MLT_MK)
 _INCLUDE_USES_MLT_MK=	YES
 
-_MLT_SUPPORTED=	6 7
+_MLT_SUPPORTED=	7
 
 _mlt_version=	#
 .  for _ver in ${_MLT_SUPPORTED:O:u}
@@ -38,12 +37,8 @@ _MLT_NODEPEND=	yes
 .  endif
 
 # Library dependencies
-_MLT6_VERSION=	6.26.1
-_MLT7_VERSION=	7.8.0
-_MLT6_PORTNAME=	mlt6
+_MLT7_VERSION=	7.18.0
 _MLT7_PORTNAME=	mlt7
-_MLT6_LIB=	libmlt.so
-_MLT6_MELT=	${LOCALBASE}/bin/melt
 _MLT7_LIB=	libmlt-7.so
 _MLT7_MELT=	${LOCALBASE}/bin/melt-7
 

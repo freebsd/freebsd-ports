@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

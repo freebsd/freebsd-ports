@@ -1,5 +1,5 @@
 PORTNAME=	memory_profiler
-PORTVERSION=	0.9.14
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/ruby-memory-profiler
 
 .include <bsd.port.mk>

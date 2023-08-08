@@ -1,5 +1,5 @@
 PORTNAME=	json
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

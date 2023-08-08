@@ -1,5 +1,6 @@
 PORTNAME=	lattice-ice40-tools
 PORTVERSION=	g20181021
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org

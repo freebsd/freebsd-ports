@@ -1,7 +1,6 @@
 PORTNAME=	zhparser
-PORTVERSION=	0.2.0
-PORTREVISION=	2
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2
+DISTVERSIONPREFIX=	V
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
 
@@ -13,7 +12,7 @@ LICENSE=	PostgreSQL
 
 LIB_DEPENDS=	libscws.so:textproc/scws
 
-USES=		gmake pgsql:9.2+
+USES=		gmake pgsql:11+
 LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	amutu
@@ -21,13 +20,6 @@ GH_ACCOUNT=	amutu
 WANT_PGSQL=	server
 
 MAKE_ENV=	SCWS_HOME=${PREFIX}
-
-PLIST_FILES=	lib/postgresql/zhparser.so \
-		share/postgresql/extension/zhparser--1.0.sql \
-		share/postgresql/extension/zhparser--unpackaged--1.0.sql \
-		share/postgresql/extension/zhparser.control \
-		share/postgresql/tsearch_data/dict.utf8.xdb \
-		share/postgresql/tsearch_data/rules.utf8.ini
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/postgresql/zhparser.so

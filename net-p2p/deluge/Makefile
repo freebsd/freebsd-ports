@@ -1,6 +1,6 @@
 PORTNAME=	deluge
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.1.1
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	net-p2p python
 
@@ -12,10 +12,11 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83:devel/py-dbus@${PY_FLAVOR} \
 		${PYGAME} \
+		${PY_PILLOW} \
 		xdg-utils>=1.0.2:devel/xdg-utils \
 		deluge:net-p2p/deluge-cli
 
-USES=		gnome metaport python:3.5+
+USES=		gnome metaport python
 USE_GNOME=	gtk30 librsvg2 pygobject3
 
 .include <bsd.port.mk>

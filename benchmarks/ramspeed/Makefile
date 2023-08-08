@@ -14,6 +14,8 @@ LICENSE_NAME=	Alasir Licence
 LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell
 
+USE_BINUTILS=	yes
+
 PLIST_FILES=	bin/ramspeed
 PORTDOCS=	HISTORY README
 
@@ -24,6 +26,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ramsmp ${STAGEDIR}${PREFIX}/bin/ramspeed
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
 

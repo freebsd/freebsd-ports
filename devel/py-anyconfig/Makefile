@@ -1,7 +1,7 @@
 PORTNAME=	anyconfig
 PORTVERSION=	0.9.11
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/anyconfig/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

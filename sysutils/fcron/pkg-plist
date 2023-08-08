@@ -4,10 +4,10 @@
 @group fcron
 @(,,6111) bin/fcrondyn
 @(,,6111) bin/fcrontab
-@(,,4110) bin/fcronsighup
 @sample etc/fcron.allow.sample
 @sample etc/fcron.deny.sample
 @owner root
+@(,,4110) bin/fcronsighup
 @sample etc/fcron.conf.sample
 @owner
 @group

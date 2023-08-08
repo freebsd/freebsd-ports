@@ -1,0 +1,31 @@
+--- Cargo.lock.orig	2023-06-21 07:20:01 UTC
++++ Cargo.lock
+@@ -1377,6 +1377,7 @@ dependencies = [
+  "ring",
+  "serde",
+  "signal-hook-registry",
++ "sysinfo",
+  "termcolor",
+  "test_util",
+  "tokio",
+@@ -5096,6 +5097,20 @@ dependencies = [
+  "quote 1.0.26",
+  "syn 1.0.109",
+  "unicode-xid 0.2.4",
++]
++
++[[package]]
++name = "sysinfo"
++version = "0.27.8"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "a902e9050fca0a5d6877550b769abd2bd1ce8c04634b941dbe2809735e1a1e33"
++dependencies = [
++ "cfg-if",
++ "core-foundation-sys",
++ "libc",
++ "ntapi",
++ "once_cell",
++ "winapi",
+ ]
+ 
+ [[package]]

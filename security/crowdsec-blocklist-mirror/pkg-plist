@@ -1,0 +1,4 @@
+@mode 0755
+bin/crowdsec-blocklist-mirror
+@mode 0600
+@sample %%ETCDIR%%/crowdsec-blocklist-mirror.yaml.sample

@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# Check that only standard files are added to a port
+#
+#    .*\.mk
+#    Makefile.*
+#    distinfo.*
+#    pkg-.*
+#
+
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
+
+category_regex="($(make -VSUBDIR | sed 's# #\|#g'))"
+newish_files=$(git diff --name-only --cached --diff-filter=ACR | grep -E "^${category_regex}/[^/]+/[^/]+$")
+
+status=0
+if [ $? -eq 0 ] ; then
+	for newish_file in ${newish_files} ; do
+		category=$(echo "${newish_file}" | awk -F '/' '{print $1}')
+		port=$(echo "${newish_file}" | awk -F '/' '{print $2}')
+		file=$(echo "${newish_file}" | awk -F '/' '{print $3}')
+		valid=$(echo "${file}" | grep -Eq '^((Makefile|distinfo|pkg-)(.*))|(.*\.mk)$')
+		if [ $? -ne 0 ] ; then
+			pre_commit_error "ERROR: invalid file '${file}' in '${category}/${port}'"
+			status=1
+		fi
+	done
+fi
+if [ ${status} -eq 1 ] ; then
+	error "             Consider moving non-standard files to files/ or force-ignore this hook."
+	exit 1
+fi

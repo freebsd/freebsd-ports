@@ -1,5 +1,6 @@
 PORTNAME=	gnome-sound-recorder
 DISTVERSION=	42.0
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,7 +18,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome gstreamer localbase meson pkgconfig python:3.4+ tar:xz
+USES=		gettext gnome gstreamer localbase meson pkgconfig python tar:xz
 USE_GNOME=	gtk40 intlhack introspection
 USE_GSTREAMER=	bad flac ogg pulse
 USE_LDCONFIG=	yes

@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libdns_sd.so.1:net/mDNSResponder
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	depl0y

@@ -1,7 +1,7 @@
 PORTNAME=	libfo
 PORTVERSION=	0.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 CONFLICTS_INSTALL=	xmlroff-0.6.[12] xmlroff-0.6.2_[12345]
 
 USES=		autoreconf gettext gmake gnome localbase libtool pathfix pkgconfig
-USE_GNOME=	libxslt libxml2 gtk20 glib20 pango \
+USE_GNOME=	libxslt libxml2 glib20 pango \
 		librsvg2 gdkpixbuf2
 USE_GITHUB=	yes
 GH_PROJECT=	xmlroff

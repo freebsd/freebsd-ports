@@ -108,7 +108,6 @@ man/man6/makeweights.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/images/m7cee1bfc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/m93f2ca3.png
 %%PORTDOCS%%%%DOCSDIR%%/images/mb4b1284.png
-%%PORTDOCS%%%%DOCSDIR%%/images/md9b1995.png
 %%PORTDOCS%%%%DOCSDIR%%/images/mgcd.png
 %%PORTDOCS%%%%DOCSDIR%%/images/mgtp.png
 %%PORTDOCS%%%%DOCSDIR%%/images/movefilter1.png
@@ -127,10 +126,15 @@ man/man6/makeweights.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/images/setturn.png
 %%PORTDOCS%%%%DOCSDIR%%/images/tutor.png
 %%PORTDOCS%%%%DOCSDIR%%/images/tutorwarning.png
+%%DATADIR%%/Shaders/basic-fragment.glsl
+%%DATADIR%%/Shaders/basic-vertex.glsl
+%%DATADIR%%/Shaders/main-fragment.glsl
+%%DATADIR%%/Shaders/main-vertex.glsl
 %%DATADIR%%/boards.xml
 %%DATADIR%%/flags/czech.png
 %%DATADIR%%/flags/denmark.png
 %%DATADIR%%/flags/england.png
+%%DATADIR%%/flags/finland.png
 %%DATADIR%%/flags/france.png
 %%DATADIR%%/flags/germany.png
 %%DATADIR%%/flags/greece.png
@@ -221,8 +225,10 @@ share/locale/cs/LC_MESSAGES/gnubg.mo
 share/locale/da/LC_MESSAGES/gnubg.mo
 share/locale/de/LC_MESSAGES/gnubg.mo
 share/locale/el/LC_MESSAGES/gnubg.mo
+share/locale/en_GB/LC_MESSAGES/gnubg.mo
 share/locale/en_US/LC_MESSAGES/gnubg.mo
 share/locale/es/LC_MESSAGES/gnubg.mo
+share/locale/fi/LC_MESSAGES/gnubg.mo
 share/locale/fr/LC_MESSAGES/gnubg.mo
 share/locale/is/LC_MESSAGES/gnubg.mo
 share/locale/it/LC_MESSAGES/gnubg.mo

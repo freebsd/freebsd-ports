@@ -14,7 +14,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3
 USES=		autoreconf gmake libtool localbase
 GNU_CONFIGURE=	yes
 USE_GITLAB=	yes
-GL_COMMIT=	b1e0dd854310410012d05daf4c6661b49f31b2ab
+GL_TAGNAME=	b1e0dd854310410012d05daf4c6661b49f31b2ab
 CONFIGURE_ARGS=	--disable-static
 USE_LDCONFIG=	yes
 

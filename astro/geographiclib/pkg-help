@@ -1,7 +1,7 @@
-Geoid datasets used by the GeographicLib::Geoid class and the GeoidEval
+geoid datasets used by the GeographicLib::Geoid class and the GeoidEval
 tool to compute geoid heights.
 
-  Available geoid data files
+  Available geoid
                                   size (MB)
   name         geoid    grid    tar.bz2  disk
   egm84-30     EGM84    30'      0.5      0.6
@@ -12,10 +12,10 @@ tool to compute geoid heights.
   egm2008-2_5  EGM2008   2.5'     35       75
   egm2008-1    EGM2008   1'      170      470
 
-Gravity models used by the GeographicLib::GravityModel class and the
-Gravity tool to compute gravity fields.
+gravitymodel datasets used by the GeographicLib::GravityModel class and
+the Gravity tool to compute gravity fields.
 
-  Available gravity models
+  Available gravitymodel
                        size (kB)
   name     degree    tar.bz2  disk
   egm84      18       27      26
@@ -24,10 +24,10 @@ Gravity tool to compute gravity fields.
   wgs84      20        1       1
   grs80      20        1       1
 
-Magnetic models used by the GeographicLib::MagneticModel class and the
-MagneticField tool to compute magnetic fields.
+magneticmodel datasets used by the GeographicLib::MagneticModel class
+and the MagneticField tool to compute magnetic fields.
 
-  Available magnetic models
+  Available magneticmodel
                                   size (kB)
   name     degree    years      tar.bz2  disk
   wmm2010    12    2010-2015      2       3

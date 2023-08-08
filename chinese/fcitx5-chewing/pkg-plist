@@ -1,6 +1,12 @@
-lib/fcitx5/chewing.so
+lib/fcitx5/libchewing.so
 share/fcitx5/addon/chewing.conf
 share/fcitx5/inputmethod/chewing.conf
+share/icons/hicolor/16x16/apps/fcitx-chewing.png
+share/icons/hicolor/16x16/apps/org.fcitx.Fcitx5.fcitx-chewing.png
+share/icons/hicolor/22x22/apps/fcitx-chewing.png
+share/icons/hicolor/22x22/apps/org.fcitx.Fcitx5.fcitx-chewing.png
+share/icons/hicolor/24x24/apps/fcitx-chewing.png
+share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx-chewing.png
 share/icons/hicolor/48x48/apps/fcitx-chewing.png
 share/icons/hicolor/48x48/apps/org.fcitx.Fcitx5.fcitx-chewing.png
 share/locale/ca/LC_MESSAGES/fcitx5-chewing.mo

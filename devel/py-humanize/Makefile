@@ -1,7 +1,7 @@
 PORTNAME=	humanize
 PORTVERSION=	4.2.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/python-humanize/humanize
 
 LICENSE=	MIT
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

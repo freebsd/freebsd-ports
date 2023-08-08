@@ -1,9 +1,10 @@
 PORTNAME=	cawbird
 PORTVERSION=	1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-im
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fork of Corebird GTK Twitter client
 WWW=		https://github.com/IBBoard/cawbird
 
@@ -36,4 +37,3 @@ VIDEO_USES=		gstreamer
 VIDEO_MESON_OFF=	-Dvideo=false
 
 .include <bsd.port.mk>
-

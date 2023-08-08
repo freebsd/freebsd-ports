@@ -1,14 +1,9 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	lang
-MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://planetmirror.com/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://freepascal.stack.nl/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.no.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		ftp://ftp.us.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
-		SF/freepascal/Source/${PORTVERSION}:source \
+MASTER_SITES=	SF/freepascal/Source/${PORTVERSION}:source \
+		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/:source \
 		http://leaf.dragonflybsd.org/~marino/dports-src/:DragonFlybootstrap \
 		LOCAL/acm/freepascal/:bootstrap \
 		LOCAL/acm/freepascal/:man

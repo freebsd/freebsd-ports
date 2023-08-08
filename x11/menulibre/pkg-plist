@@ -4,6 +4,7 @@ bin/menulibre-menu-validate
 %%PYTHON_SITELIBDIR%%/__pycache__/uninstall%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/Dialogs.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenuEditor.py
+%%PYTHON_SITELIBDIR%%/menulibre/MenulibreExecEditor.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenulibreApplication.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenulibreHistory.py
 %%PYTHON_SITELIBDIR%%/menulibre/MenulibreIconSelection.py
@@ -19,6 +20,8 @@ bin/menulibre-menu-validate
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenuEditor.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreApplication.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreApplication.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreExecEditor%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreExecEditor%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreHistory.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreHistory.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/menulibre/__pycache__/MenulibreIconSelection.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -103,6 +106,7 @@ share/locale/uk/LC_MESSAGES/menulibre.mo
 share/locale/zh_CN/LC_MESSAGES/menulibre.mo
 share/locale/zh_HK/LC_MESSAGES/menulibre.mo
 share/locale/zh_TW/LC_MESSAGES/menulibre.mo
+%%DATADIR%%/ui/ExecEditor.ui
 %%DATADIR%%/ui/MenulibreWindow.ui
 share/metainfo/menulibre.appdata.xml
 share/pixmaps/menulibre.png

@@ -34,6 +34,7 @@ anope/data/modules/webcpanel/templates/default/memoserv/memos.html
 anope/data/modules/webcpanel/templates/default/nickserv/access.html
 anope/data/modules/webcpanel/templates/default/nickserv/alist.html
 anope/data/modules/webcpanel/templates/default/nickserv/cert.html
+anope/data/modules/webcpanel/templates/default/nickserv/confirm.html
 anope/data/modules/webcpanel/templates/default/nickserv/info.html
 anope/data/modules/webcpanel/templates/default/operserv/akill.html
 anope/data/modules/webcpanel/templates/default/register.html

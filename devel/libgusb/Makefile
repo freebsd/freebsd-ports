@@ -1,5 +1,6 @@
 PORTNAME=	libgusb
 PORTVERSION=	0.3.10
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -9,26 +10,23 @@ WWW=		https://github.com/hughsie/libgusb
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
-USES=		gnome meson pkgconfig vala:build
+USES=		gnome meson pkgconfig python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hughsie
 
 USE_GNOME=	glib20 introspection:build
 
-OPTIONS_DEFINE=		DOCS VALA
-OPTIONS_DEFAULT=	DOCS VALA
+OPTIONS_DEFINE=		DOCS VAPI
+OPTIONS_DEFAULT=	DOCS VAPI
 OPTIONS_SUB=		yes
 
-.include <bsd.port.options.mk>
+DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+DOCS_MESON_TRUE=	docs
 
-.if !${PORT_OPTIONS:MDOCS}
-MESON_ARGS+=	-Ddocs=false
-.endif
-.if !${PORT_OPTIONS:MVALA}
-MESON_ARGS+=	-Dvala=false
-.endif
+VAPI_MESON_TRUE=	vapi
+VAPI_USES=		vala:build
 
 .include <bsd.port.mk>

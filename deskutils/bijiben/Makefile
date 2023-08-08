@@ -1,6 +1,6 @@
 PORTNAME=	bijiben
 PORTVERSION=	40.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libtracker-sparql-3.0.so:sysutils/tracker3 \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib desktop-file-utils gettext gnome \
-		localbase meson pkgconfig python:build,3.4+ \
+		localbase meson pkgconfig python:build \
 		shared-mime-info shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo evolutiondataserver3 intltool

@@ -1,0 +1,13 @@
+--- docs/Makefile.am.orig	2023-03-13 14:33:50 UTC
++++ docs/Makefile.am
+@@ -1,8 +1,8 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-if PANDOC
++#if PANDOC
+ SUBDIRS = man
+-endif
++#endif
+ 
+ EXTRA_DIST =
+ 

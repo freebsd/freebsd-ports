@@ -1,5 +1,6 @@
 PORTNAME=	wcslib
-PORTVERSION=	7.11
+PORTVERSION=	7.12
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
 

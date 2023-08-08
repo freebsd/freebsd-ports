@@ -1,9 +1,10 @@
 PORTNAME=	mjpg-streamer
 PORTVERSION=	g2021081601
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia net
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HTTP video streaming daemon
 WWW=		https://github.com/jacksonliam/mjpg-streamer
 

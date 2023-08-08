@@ -1,6 +1,7 @@
 PORTNAME=	vcftools
 PORTVERSION=	0.1.16
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -13,6 +14,8 @@ USES=		autoreconf cpe gmake perl5 pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
+
+CXXFLAGS+=	-std=c++14
 
 CPE_VENDOR=	vcftools_project
 

@@ -69,6 +69,7 @@
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepluginparameter_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativeposition_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepositionsource_p.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativesatellitesource_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickglobal_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickmodule_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h
@@ -89,6 +90,7 @@ lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake
+lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningVersionlessTargets.cmake

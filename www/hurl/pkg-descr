@@ -1,0 +1,5 @@
+Hurl is a command line tool that runs HTTP requests defined in a simple
+plain text format. It can chain requests, capture values and evaluate
+queries on headers and body response.
+Hurl is very versatile: it can be used for fetching data, testing HTTP
+sessions and testing XML / JSON APIs.

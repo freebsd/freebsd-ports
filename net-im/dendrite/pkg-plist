@@ -1,26 +1,14 @@
 %%PORTNAME%%/bin/create-account
+%%PORTNAME%%/bin/dendrite
 %%PORTNAME%%/bin/dendrite-demo-pinecone
 %%PORTNAME%%/bin/dendrite-demo-yggdrasil
-%%PORTNAME%%/bin/dendrite-monolith-server
-%%PORTNAME%%/bin/dendrite-polylith-multi
 %%PORTNAME%%/bin/dendrite-upgrade-tests
-%%PORTNAME%%/bin/dendritejs-pinecone
 %%PORTNAME%%/bin/furl
 %%PORTNAME%%/bin/generate-config
 %%PORTNAME%%/bin/generate-keys
 %%PORTNAME%%/bin/resolve-state
 @sample %%ETCDIR%%/%%PORTNAME%%.yaml.sample
-%%DOCSDIR%%/CONTRIBUTING.md
 %%DOCSDIR%%/FAQ.md
 %%DOCSDIR%%/INSTALL.md
-%%DOCSDIR%%/PROFILING.md
 %%DOCSDIR%%/README.md
-%%DOCSDIR%%/hiawatha/monolith-sample.conf
-%%DOCSDIR%%/hiawatha/polylith-sample.conf
 %%DOCSDIR%%/images/details-button-location.jpg
-%%DOCSDIR%%/nginx/monolith-sample.conf
-%%DOCSDIR%%/nginx/polylith-sample.conf
-%%DOCSDIR%%/systemd/monolith-example.service
-%%DOCSDIR%%/sytest.md
-%%DOCSDIR%%/tracing/opentracing.md
-%%DOCSDIR%%/tracing/setup.md

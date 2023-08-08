@@ -1,5 +1,5 @@
 PORTNAME=	regexp_parser
-PORTVERSION=	2.1.1
+PORTVERSION=	2.7.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

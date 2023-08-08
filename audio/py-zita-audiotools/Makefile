@@ -1,5 +1,6 @@
 PORTNAME=	zita-audiotools
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libzita-resampler.so:audio/zita-resampler
 
-USES=		localbase python:3.6+ tar:bz2
+USES=		localbase python tar:bz2
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fmoo-audiotools

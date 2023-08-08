@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc
-DISTVERSION=	2.16.0
+DISTVERSION=	2.21.0
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/PySolFC/${PYSOLFCDIR} \
 		SF/${PORTNAME}/PySolFC-Cardsets/minimal/:cardsets \
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix tar:xz
+USES=		python shebangfix tar:xz
 USE_PYTHON=	distutils noflavors autoplist
 SHEBANG_FILES=	data/themes/clearlooks/convert_imgs.sh
 NO_ARCH=	yes
@@ -50,7 +50,7 @@ SOUND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
 
 PYSOLFCDIR=	PySolFC-${DISTVERSION}
 PYSOLFCDIST=	${PYSOLFCDIR}${EXTRACT_SUFX}
-CARDSETDIR=	PySolFC-Cardsets--Minimal-2.1.0
+CARDSETDIR=	PySolFC-Cardsets--Minimal-2.2.0
 CARDSETDIST=	${CARDSETDIR}.tar.xz
 MUSICDIR=	PySol-Music-4.50
 MUSICDIST=	${MUSICDIR:tl}.tar.xz

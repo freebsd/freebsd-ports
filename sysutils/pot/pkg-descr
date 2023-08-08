@@ -1,1 +1,4 @@
-This port contains scripts to manage FreeBSD containers called pot.
+pot is a container framework to run FreeBSD containers on FreeBSD.
+Every running instance is called pot, like the one that the author
+uses to cook all different types of pasta.  It is heavily based on
+FreeBSD, in particular on jails, ZFS, pf and rctl.

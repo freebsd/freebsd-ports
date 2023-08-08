@@ -16,6 +16,7 @@ BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
 CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-Wno-deprecated-declarations
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
 MAKE_ENV=	V=1
 

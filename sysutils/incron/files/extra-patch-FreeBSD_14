@@ -1,0 +1,20 @@
+--- usertable.cpp.orig	2023-06-10 14:06:49 UTC
++++ usertable.cpp
+@@ -571,17 +571,6 @@ bool UserTable::MayAccess(const std::string& rPath, bo
+   return false; // no access right found
+ }
+
+-#ifndef __linux__
+-static int
+-clearenv(void)
+-{
+-  extern char **environ;
+-
+-  environ[0] = NULL;
+-  return 0;
+-}
+-#endif
+-
+ void UserTable::RunAsUser(std::string cmd) const
+ {
+   struct passwd* pwd = getpwnam(m_user.c_str());

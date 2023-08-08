@@ -1,7 +1,6 @@
 PORTNAME=		fastp
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.23.2
-PORTREVISION=		1
+DISTVERSION=		0.23.4
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -16,7 +15,6 @@ LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
 
 USES=		gmake localbase:ldflags
 USE_GITHUB=	yes
-USE_GCC=	yes
 
 GH_ACCOUNT=	OpenGene
 

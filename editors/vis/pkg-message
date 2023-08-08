@@ -1,0 +1,7 @@
+[
+{ type: install
+  message: <<EOM
+vis is installed as vise(1) to avoid conflicts with vis(1).
+EOM
+}
+]

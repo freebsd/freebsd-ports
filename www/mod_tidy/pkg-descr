@@ -1,4 +1,4 @@
-mod_tidy validates the HTML output of your apache2 webserver. So you don't need
+mod_tidy validates the HTML output of your apache2 web server. So you don't need
 a separate application to check your HTML.
 It works as a filter that hooks up to HTML output. mod_tidy feeds the HTML
 output to TidyLib which validates the HTML output. If TidyLib finds

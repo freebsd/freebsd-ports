@@ -1,0 +1,3 @@
+QMediaManager is a GUI application for managing removable media.  It is
+meant to be launched by an automount service such as sysutils/automount
+to provide the user options when removable media are inserted.

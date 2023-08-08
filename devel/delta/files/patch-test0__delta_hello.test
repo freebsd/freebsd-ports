@@ -1,0 +1,10 @@
+--- test0_delta/hello.test.orig	2023-06-30 11:16:27 UTC
++++ test0_delta/hello.test
+@@ -1,6 +1,6 @@
+ #!/usr/local/bin/bash
+ # -*-sh-*-
+-if gcc -o a.out $1 &> cmp_out; then
++if cc -o a.out $1 &> cmp_out; then
+     if ! ./a.out &> run_out; then
+         exit 0;                 # Success.
+     fi

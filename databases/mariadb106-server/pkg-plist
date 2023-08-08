@@ -62,7 +62,7 @@ bin/test-connect-t
 @comment %%ETCDIR%%/server.cnf
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
 %%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
-%%WSREP%%@sample %%ETCDIR%%/conf.d/wsrep.cnf.sample
+%%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
 @comment %%ETCDIR%%/my.cnf
 @sample %%ETCDIR%%/user_map.conf.sample
 include/mysql/server/big_endian.h
@@ -79,7 +79,9 @@ include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
+include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
@@ -147,7 +149,7 @@ include/mysql/server/mysql/service_thd_rnd.h
 include/mysql/server/mysql/service_thd_specifics.h
 include/mysql/server/mysql/service_thd_timezone.h
 include/mysql/server/mysql/service_thd_wait.h
-include/mysql/server/mysql/service_wsrep.h
+%%WSREP%%include/mysql/server/mysql/service_wsrep.h
 include/mysql/server/mysql/services.h
 include/mysql/server/mysql_com.h
 include/mysql/server/mysql_com_server.h
@@ -212,7 +214,6 @@ lib/mysql/plugin/type_test.so
 lib/mysql/plugin/zstd.so
 libexec/mariadbd
 libexec/mysqld
-libexec/rcmysql
 @comment share/man/man1/aria_chk.1.gz
 @comment share/man/man1/aria_dump_log.1.gz
 @comment share/man/man1/aria_ftdump.1.gz

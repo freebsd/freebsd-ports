@@ -1,15 +1,15 @@
---- configure.ac.orig	2019-05-27 12:57:40 UTC
+--- configure.ac.orig	2022-11-21 13:58:11 UTC
 +++ configure.ac
-@@ -23,7 +23,7 @@ AC_CHECK_SIZEOF([void *])
+@@ -24,7 +24,7 @@ AC_CHECK_SIZEOF([void *])
  AC_MSG_CHECKING([for GNU ld])
- LD=`$CC -print-prog-name=ld 2>&5`
+ LD=$($CC -print-prog-name=ld 2>&5)
  
--if test `$LD -v 2>&1 | $ac_cv_path_GREP -c "GNU ld"` = 0; then
+-if test $($LD -v 2>&1 | $ac_cv_path_GREP -c "GNU ld") = 0; then
 +if test `$LD -v 2>&1 | $ac_cv_path_GREP -c -E "GNU ld|compatible with GNU linkers"` = 0; then
    # Not
    GNU_LD=""
    AC_MSG_RESULT([no])
-@@ -107,7 +107,7 @@ else
+@@ -108,7 +108,7 @@ else
      AC_SUBST([TCL_LIB_FLAG])
      WHIPTCLLIB=whiptcl
      # needed with tcl8.6

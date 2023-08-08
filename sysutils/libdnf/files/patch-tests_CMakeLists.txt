@@ -4,9 +4,9 @@
  add_subdirectory(libdnf/repo)
  add_subdirectory(libdnf/transaction)
  add_subdirectory(libdnf/sack)
-++if (BUILD_TESTING)
++if (BUILD_TESTING)
  add_subdirectory(hawkey)
-++endif()
++endif()
  add_subdirectory(libdnf)
  
  

@@ -1,5 +1,6 @@
 PORTNAME=	qmidictl
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -10,11 +11,12 @@ WWW=		https://qmidictl.sourceforge.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang gl localbase pkgconfig qt:5
+USES=		cmake compiler:c++17-lang gl localbase pkgconfig qt:6
 GNU_CONFIGURE=	yes
-USE_QT=		core gui network widgets qmake:build buildtools:build linguisttools:build
+USE_QT=		base svg tools:build
 USE_GL=		gl
 
-BINARY_ALIAS=	qmake=${QMAKE}
+BINARY_ALIAS=	qmake=${QMAKE} \
+		git=false
 
 .include <bsd.port.mk>

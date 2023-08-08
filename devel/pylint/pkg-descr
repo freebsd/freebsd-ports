@@ -6,5 +6,3 @@ Pylint has many rules enabled by default, way too much to silence them all on a
 minimally sized program. It's highly configurable and handle pragmas to control
 it from within your code. Additionally, it is possible to write plugins to add
 your own checks.
-
-See also: https://github.com/PyCQA/pylint

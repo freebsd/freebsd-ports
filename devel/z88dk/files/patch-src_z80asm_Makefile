@@ -1,15 +1,17 @@
---- src/z80asm/Makefile.orig	2020-09-24 03:00:09 UTC
+--- src/z80asm/Makefile.orig	2022-07-10 03:00:02 UTC
 +++ src/z80asm/Makefile
-@@ -122,9 +122,9 @@ clean::
+@@ -155,10 +155,10 @@ install: $(PROJ)$(EXESUFFIX) z80asm_lib
  # install
  #------------------------------------------------------------------------------
- install: $(TARGET) z80asm_lib
--	$(INSTALL) $(TARGET)     $(PREFIX)/bin/$(TARGET)
--	$(INSTALL) $(TARGET)     $(PREFIX)/bin/z88dk-$(TARGET)
--	$(INSTALL) asmpp.pl      $(PREFIX)/bin/asmpp.pl
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/$(TARGET)
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin/z88dk-$(TARGET)
-+	$(BSD_INSTALL_SCRIPT) asmpp.pl $(PREFIX)/bin/asmpp.pl
+ install: $(PROJ)$(EXESUFFIX) z80asm_lib
+-	$(INSTALL) $(PROJ)$(EXESUFFIX)     $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
+-	$(INSTALL) $(PROJ)$(EXESUFFIX)     $(PREFIX)/bin/$(BARE_PROJ)$(EXESUFFIX)
+-	$(INSTALL) asmpp.pl      $(PREFIX)/bin/z88dk-asmpp
+-	$(INSTALL) asmstyle.pl   $(PREFIX)/bin/z88dk-asmstyle
++	$(BSD_INSTALL_PROGRAM) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(PROJ)$(EXESUFFIX)
++	$(BSD_INSTALL_PROGRAM) $(PROJ)$(EXESUFFIX) $(PREFIX)/bin/$(BARE_PROJ)$(EXESUFFIX)
++	$(BSD_INSTALL_SCRIPT) asmpp.pl $(PREFIX)/bin/z88dk-asmpp
++	$(BSD_INSTALL_SCRIPT) asmstyle.pl $(PREFIX)/bin/z88dk-asmstyle
+ ifeq ($(CROSS),0)
  	$(MAKE) -C dev/z80asm_lib install PREFIX=$(PREFIX_SHARE)
- 
- #------------------------------------------------------------------------------
+ endif

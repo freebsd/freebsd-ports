@@ -256,23 +256,23 @@ jicofo:*:307:307::0:0:Jitsi Conference Focus Owner:/nonexistent:/usr/sbin/nologi
 jvb:*:308:308::0:0:Jitsi VideoBridge Owner:/nonexistent:/usr/sbin/nologin
 wazuh:*:309:309::0:0:Wazuh Owner:/var/ossec:/usr/sbin/nologin
 cardano:*:310:310::0:0:Cardano Node Daemon:/nonexistent:/usr/sbin/nologin
-# free: 311
+_arti:*:311:311::0:0:Arti Daemon:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 _fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
-# free: 314
-# free: 315
-# free: 316
-# free: 317
-# free: 318
-# free: 319
-# free: 320
-# free: 321
-# free: 322
-# free: 323
+promscale:*:314:314::0:0:Promscale:/nonexistent:/usr/sbin/nologin
+lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
+nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
+hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
+icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
+rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
+teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
+caldera:*:321:321::0:0:Caldera Mitre user:/nonexistent:/usr/sbin/nologin
+tlsc:*:322:322::0:0:TLS connect daemon:/nonexistent:/usr/sbin/nologin
+soju:*:323:323::0:0:soju:/nonexistent:/usr/sbin/nologin
 # free: 324
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
-# free: 327
+_reticulum:*:327:327::0:0:Reticulum Daemon:/nonexistent:/usr/sbin/nologin
 # free: 328
 # free: 329
 orthanc:*:330:330::0:0:Orthanc Daemon:/nonexistent:/usr/sbin/nologin
@@ -443,7 +443,7 @@ datadog:*:480:480::0:0:DataDog Agent:/var/db/datadog:/usr/sbin/nologin
 # free: 495
 # free: 496
 # free: 497
-# free: 498
+rustypaste:*:498:498::0:0:Minimal file upload/pastebin service:/nonexistent:/usr/sbin/nologin
 # free: 499
 # free: 500
 # free: 501
@@ -571,7 +571,7 @@ taskd:*:616:616::0:0:taskd user:/nonexistent:/usr/sbin/nologin
 # free: 622
 # free: 623
 # free: 624
-# free: 625
+xapsd:*:625:625::0:0:xapsd:/var/lib/xapsd:/usr/sbin/nologin
 # free: 626
 # free: 627
 # free: 628
@@ -634,7 +634,7 @@ stanchion:*:669:667::0:0:Stanchion user:/usr/local/lib/stanchion:/bin/sh
 # free: 685
 # free: 686
 # free: 687
-# free: 688
+darkhttpd:*:688:688::0:0:Simple, static web server:/nonexistent:/usr/sbin/nologin
 # free: 689
 # free: 690
 # free: 691
@@ -703,7 +703,7 @@ c-lightning:*:735:735::0:0:c-lightning Daemon:/var/db/c-lightning:/usr/sbin/nolo
 # free: 754
 # free: 755
 # free: 756
-# free: 757
+sopel:*:757:757::0:0:Sopel IRC Bot:/var/db/sopel:/usr/sbin/nologin
 # free: 758
 # free: 759
 # free: 760
@@ -722,7 +722,7 @@ postgrest:*:772:772::0:0:PostgREST Daemon:/nonexistent:/usr/sbin/nologin
 # free: 773
 # free: 774
 # free: 775
-# free: 776
+namecoin:*:776:776::0:0:namecoin Daemon:/var/db/namecoin:/usr/sbin/nologin
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 litecoin:*:778:778::0:0:litecoin Daemon:/var/db/litecoin:/usr/sbin/nologin
 bitcoin:*:779:779::0:0:bitcoin Daemon:/var/db/bitcoin:/usr/sbin/nologin
@@ -773,7 +773,7 @@ titus-keys:*:823:65533::0:0:Titus Keyserver User:/nonexistent:/usr/sbin/nologin
 selenium:*:824:824::0:0:Selenium Daemon User:/usr/local/selenium:/bin/sh
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
-# free: 827
+_tuptime:*:827:827::0:0:Tuptime:/var/lib/tuptime:/usr/sbin/nologin
 # free: 828
 # free: 829
 # free: 830
@@ -786,7 +786,7 @@ beehive:*:832:832::0:0:beehive user:/nonexistent:/usr/sbin/nologin
 # free: 837
 # free: 838
 # free: 839
-netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
+netdisco:*:840:840::0:0:netdisco daemon:/usr/local/etc/netdisco:/bin/sh
 tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 # free: 843
@@ -814,7 +814,7 @@ opensearch:*:855:855::0:0:opensearch user:/nonexistent:/usr/sbin/nologin
 # free: 865
 # free: 866
 # free: 867
-# free: 868
+jellyfin:*:868:868::0:0:Jellyfin:/nonexistent:/usr/sbin/nologin
 keyd:*:869:869::0:0:Key remapping daemon for evdev:/nonexistent:/usr/sbin/nologin
 buildbot:*:870:870::0:0:Buildbot user:/var/db/buildbot:/usr/sbin/nologin
 archiva:*:871:871::0:0:Apache Archiva Daemon:/nonexistent:/usr/sbin/nologin

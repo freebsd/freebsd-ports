@@ -49,7 +49,7 @@ PGSQL_USES=		pgsql
 PGSQL_CONFIGURE_ON=	--enable-auth-pgsql \
 			--with-pgsql-lib-dir=${LOCALBASE}/lib \
 			--with-pgsql-include-dir=${LOCALBASE}/include
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 PERLAUTH_USES=		perl5
 FIX_PERLAUTH_EXTRA_PATCHES=${PATCHDIR}/extra-patch-auth_perl.c

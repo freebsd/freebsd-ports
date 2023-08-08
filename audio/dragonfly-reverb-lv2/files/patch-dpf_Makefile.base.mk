@@ -1,11 +1,11 @@
---- dpf/Makefile.base.mk.orig	2022-04-20 03:51:46 UTC
+--- dpf/Makefile.base.mk.orig	2023-01-24 05:46:15 UTC
 +++ dpf/Makefile.base.mk
-@@ -173,7 +173,7 @@ BASE_OPTS  = -O2 -ffast-math -fdata-sections -ffunctio
- endif
+@@ -218,7 +218,7 @@ BASE_OPTS  = -O3 -ffast-math -fdata-sections -ffunctio
+ LINK_OPTS  = -fdata-sections -ffunction-sections
  
- ifneq ($(MACOS_OR_WINDOWS),true)
+ ifeq ($(GCC),true)
 -BASE_FLAGS += -fno-gnu-unique
 +#BASE_FLAGS += -fno-gnu-unique
  endif
  
- ifeq ($(WINDOWS),true)
+ ifeq ($(SKIP_STRIPPING),true)

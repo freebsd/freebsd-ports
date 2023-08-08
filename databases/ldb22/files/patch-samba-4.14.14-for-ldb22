@@ -1,0 +1,825 @@
+diff --git ./modules/rdn_name.c ./modules/rdn_name.c
+index e69ad9315ae..25cffe07591 100644
+--- ./modules/rdn_name.c
++++ ./modules/rdn_name.c
+@@ -545,7 +545,7 @@ static int rdn_name_modify(struct ldb_module *module, struct ldb_request *req)
+ 	if (e != NULL) {
+ 		ldb_asprintf_errstring(ldb, "Modify of 'distinguishedName' on %s not permitted, must use 'rename' operation instead",
+ 				       ldb_dn_get_linearized(req->op.mod.message->dn));
+-		if (e->flags == LDB_FLAG_MOD_REPLACE) {
++		if (LDB_FLAG_MOD_TYPE(e->flags) == LDB_FLAG_MOD_REPLACE) {
+ 			return LDB_ERR_CONSTRAINT_VIOLATION;
+ 		} else {
+ 			return LDB_ERR_UNWILLING_TO_PERFORM;
+diff --git ./common/ldb_msg.c ./common/ldb_msg.c
+index 57dfc5a04c2..2a9ce384bb9 100644
+--- ./common/ldb_msg.c
++++ ./common/ldb_msg.c
+@@ -833,11 +833,7 @@ void ldb_msg_sort_elements(struct ldb_message *msg)
+ 		       ldb_msg_element_compare_name);
+ }
+ 
+-/*
+-  shallow copy a message - copying only the elements array so that the caller
+-  can safely add new elements without changing the message
+-*/
+-struct ldb_message *ldb_msg_copy_shallow(TALLOC_CTX *mem_ctx,
++static struct ldb_message *ldb_msg_copy_shallow_impl(TALLOC_CTX *mem_ctx,
+ 					 const struct ldb_message *msg)
+ {
+ 	struct ldb_message *msg2;
+@@ -863,6 +859,35 @@ failed:
+ 	return NULL;
+ }
+ 
++/*
++  shallow copy a message - copying only the elements array so that the caller
++  can safely add new elements without changing the message
++*/
++struct ldb_message *ldb_msg_copy_shallow(TALLOC_CTX *mem_ctx,
++					 const struct ldb_message *msg)
++{
++	struct ldb_message *msg2;
++	unsigned int i;
++
++	msg2 = ldb_msg_copy_shallow_impl(mem_ctx, msg);
++	if (msg2 == NULL) {
++		return NULL;
++	}
++
++	for (i = 0; i < msg2->num_elements; ++i) {
++		/*
++		 * Mark this message's elements as sharing their values with the
++		 * original message, so that we don't inadvertently modify or
++		 * free them. We don't mark the original message element as
++		 * shared, so the original message element should not be
++		 * modified or freed while the shallow copy lives.
++		 */
++		struct ldb_message_element *el = &msg2->elements[i];
++		el->flags |= LDB_FLAG_INTERNAL_SHARED_VALUES;
++	}
++
++        return msg2;
++}
+ 
+ /*
+   copy a message, allocating new memory for all parts
+@@ -873,7 +898,7 @@ struct ldb_message *ldb_msg_copy(TALLOC_CTX *mem_ctx,
+ 	struct ldb_message *msg2;
+ 	unsigned int i, j;
+ 
+-	msg2 = ldb_msg_copy_shallow(mem_ctx, msg);
++	msg2 = ldb_msg_copy_shallow_impl(mem_ctx, msg);
+ 	if (msg2 == NULL) return NULL;
+ 
+ 	if (msg2->dn != NULL) {
+@@ -894,6 +919,12 @@ struct ldb_message *ldb_msg_copy(TALLOC_CTX *mem_ctx,
+ 				goto failed;
+ 			}
+ 		}
++
++                /*
++                 * Since we copied this element's values, we can mark them as
++                 * not shared.
++		 */
++		el->flags &= ~LDB_FLAG_INTERNAL_SHARED_VALUES;
+ 	}
+ 
+ 	return msg2;
+diff --git ./include/ldb_module.h ./include/ldb_module.h
+index 8c1e5ee7936..4c7c85a17f0 100644
+--- ./include/ldb_module.h
++++ ./include/ldb_module.h
+@@ -96,6 +96,12 @@ struct ldb_module;
+  */
+ #define LDB_FLAG_INTERNAL_FORCE_UNIQUE_INDEX 0x100
+ 
++/*
++ * indicates that this element's values are shared with another element (for
++ * example, in a shallow copy of an ldb_message) and should not be freed
++ */
++#define LDB_FLAG_INTERNAL_SHARED_VALUES 0x200
++
+ /* an extended match rule that always fails to match */
+ #define SAMBA_LDAP_MATCH_ALWAYS_FALSE "1.3.6.1.4.1.7165.4.5.1"
+ 
+diff --git ./common/ldb_msg.c ./common/ldb_msg.c
+index 2a9ce384bb9..44d3b29e9a7 100644
+--- ./common/ldb_msg.c
++++ ./common/ldb_msg.c
+@@ -417,6 +417,47 @@ int ldb_msg_add(struct ldb_message *msg,
+ 	return LDB_SUCCESS;
+ }
+ 
++/*
++ * add a value to a message element
++ */
++int ldb_msg_element_add_value(TALLOC_CTX *mem_ctx,
++			      struct ldb_message_element *el,
++			      const struct ldb_val *val)
++{
++	struct ldb_val *vals;
++
++	if (el->flags & LDB_FLAG_INTERNAL_SHARED_VALUES) {
++		/*
++		 * Another message is using this message element's values array,
++		 * so we don't want to make any modifications to the original
++		 * message, or potentially invalidate its own values by calling
++		 * talloc_realloc(). Make a copy instead.
++		 */
++		el->flags &= ~LDB_FLAG_INTERNAL_SHARED_VALUES;
++
++		vals = talloc_array(mem_ctx, struct ldb_val,
++				    el->num_values + 1);
++		if (vals == NULL) {
++			return LDB_ERR_OPERATIONS_ERROR;
++		}
++
++		if (el->values != NULL) {
++			memcpy(vals, el->values, el->num_values * sizeof(struct ldb_val));
++		}
++	} else {
++		vals = talloc_realloc(mem_ctx, el->values, struct ldb_val,
++				      el->num_values + 1);
++		if (vals == NULL) {
++			return LDB_ERR_OPERATIONS_ERROR;
++		}
++	}
++	el->values = vals;
++	el->values[el->num_values] = *val;
++	el->num_values++;
++
++	return LDB_SUCCESS;
++}
++
+ /*
+   add a value to a message
+ */
+@@ -426,7 +467,6 @@ int ldb_msg_add_value(struct ldb_message *msg,
+ 		      struct ldb_message_element **return_el)
+ {
+ 	struct ldb_message_element *el;
+-	struct ldb_val *vals;
+ 	int ret;
+ 
+ 	el = ldb_msg_find_element(msg, attr_name);
+@@ -437,14 +477,10 @@ int ldb_msg_add_value(struct ldb_message *msg,
+ 		}
+ 	}
+ 
+-	vals = talloc_realloc(msg->elements, el->values, struct ldb_val,
+-			      el->num_values+1);
+-	if (!vals) {
+-		return LDB_ERR_OPERATIONS_ERROR;
++	ret = ldb_msg_element_add_value(msg->elements, el, val);
++	if (ret != LDB_SUCCESS) {
++		return ret;
+ 	}
+-	el->values = vals;
+-	el->values[el->num_values] = *val;
+-	el->num_values++;
+ 
+ 	if (return_el) {
+ 		*return_el = el;
+diff --git ./include/ldb.h ./include/ldb.h
+index bc44157eaf4..129beefeaf5 100644
+--- ./include/ldb.h
++++ ./include/ldb.h
+@@ -1981,6 +1981,12 @@ int ldb_msg_add_empty(struct ldb_message *msg,
+ 		int flags,
+ 		struct ldb_message_element **return_el);
+ 
++/**
++   add a value to a message element
++*/
++int ldb_msg_element_add_value(TALLOC_CTX *mem_ctx,
++			      struct ldb_message_element *el,
++			      const struct ldb_val *val);
+ /**
+    add a element to a ldb_message
+ */
+diff --git ./common/ldb_msg.c ./common/ldb_msg.c
+index 44d3b29e9a7..9cd7998e21c 100644
+--- ./common/ldb_msg.c
++++ ./common/ldb_msg.c
+@@ -509,12 +509,15 @@ int ldb_msg_add_steal_value(struct ldb_message *msg,
+ 
+ 
+ /*
+-  add a string element to a message
++  add a string element to a message, specifying flags
+ */
+-int ldb_msg_add_string(struct ldb_message *msg,
+-		       const char *attr_name, const char *str)
++int ldb_msg_add_string_flags(struct ldb_message *msg,
++			     const char *attr_name, const char *str,
++			     int flags)
+ {
+ 	struct ldb_val val;
++	int ret;
++	struct ldb_message_element *el = NULL;
+ 
+ 	val.data = discard_const_p(uint8_t, str);
+ 	val.length = strlen(str);
+@@ -524,7 +527,25 @@ int ldb_msg_add_string(struct ldb_message *msg,
+ 		return LDB_SUCCESS;
+ 	}
+ 
+-	return ldb_msg_add_value(msg, attr_name, &val, NULL);
++	ret = ldb_msg_add_value(msg, attr_name, &val, &el);
++	if (ret != LDB_SUCCESS) {
++		return ret;
++	}
++
++	if (flags != 0) {
++		el->flags = flags;
++	}
++
++	return LDB_SUCCESS;
++}
++
++/*
++  add a string element to a message
++*/
++int ldb_msg_add_string(struct ldb_message *msg,
++		       const char *attr_name, const char *str)
++{
++	return ldb_msg_add_string_flags(msg, attr_name, str, 0);
+ }
+ 
+ /*
+@@ -586,6 +607,142 @@ int ldb_msg_add_fmt(struct ldb_message *msg,
+ 	return ldb_msg_add_steal_value(msg, attr_name, &val);
+ }
+ 
++static int ldb_msg_append_value_impl(struct ldb_message *msg,
++				     const char *attr_name,
++				     const struct ldb_val *val,
++				     int flags,
++				     struct ldb_message_element **return_el)
++{
++	struct ldb_message_element *el = NULL;
++	int ret;
++
++	ret = ldb_msg_add_empty(msg, attr_name, flags, &el);
++	if (ret != LDB_SUCCESS) {
++		return ret;
++	}
++
++	ret = ldb_msg_element_add_value(msg->elements, el, val);
++	if (ret != LDB_SUCCESS) {
++		return ret;
++	}
++
++	if (return_el != NULL) {
++		*return_el = el;
++	}
++
++	return LDB_SUCCESS;
++}
++
++/*
++  append a value to a message
++*/
++int ldb_msg_append_value(struct ldb_message *msg,
++			 const char *attr_name,
++			 const struct ldb_val *val,
++			 int flags)
++{
++	return ldb_msg_append_value_impl(msg, attr_name, val, flags, NULL);
++}
++
++/*
++  append a value to a message, stealing it into the 'right' place
++*/
++int ldb_msg_append_steal_value(struct ldb_message *msg,
++			       const char *attr_name,
++			       struct ldb_val *val,
++			       int flags)
++{
++	int ret;
++	struct ldb_message_element *el = NULL;
++
++	ret = ldb_msg_append_value_impl(msg, attr_name, val, flags, &el);
++	if (ret == LDB_SUCCESS) {
++		talloc_steal(el->values, val->data);
++	}
++	return ret;
++}
++
++/*
++  append a string element to a message, stealing it into the 'right' place
++*/
++int ldb_msg_append_steal_string(struct ldb_message *msg,
++				const char *attr_name, char *str,
++				int flags)
++{
++	struct ldb_val val;
++
++	val.data = (uint8_t *)str;
++	val.length = strlen(str);
++
++	if (val.length == 0) {
++		/* allow empty strings as non-existent attributes */
++		return LDB_SUCCESS;
++	}
++
++	return ldb_msg_append_steal_value(msg, attr_name, &val, flags);
++}
++
++/*
++  append a string element to a message
++*/
++int ldb_msg_append_string(struct ldb_message *msg,
++			  const char *attr_name, const char *str, int flags)
++{
++	struct ldb_val val;
++
++	val.data = discard_const_p(uint8_t, str);
++	val.length = strlen(str);
++
++	if (val.length == 0) {
++		/* allow empty strings as non-existent attributes */
++		return LDB_SUCCESS;
++	}
++
++	return ldb_msg_append_value(msg, attr_name, &val, flags);
++}
++
++/*
++  append a DN element to a message
++  WARNING: this uses the linearized string from the dn, and does not
++  copy the string.
++*/
++int ldb_msg_append_linearized_dn(struct ldb_message *msg, const char *attr_name,
++				 struct ldb_dn *dn, int flags)
++{
++	char *str = ldb_dn_alloc_linearized(msg, dn);
++
++	if (str == NULL) {
++		/* we don't want to have unknown DNs added */
++		return LDB_ERR_OPERATIONS_ERROR;
++	}
++
++	return ldb_msg_append_steal_string(msg, attr_name, str, flags);
++}
++
++/*
++  append a printf formatted element to a message
++*/
++int ldb_msg_append_fmt(struct ldb_message *msg, int flags,
++		       const char *attr_name, const char *fmt, ...)
++{
++	struct ldb_val val;
++	va_list ap;
++	char *str = NULL;
++
++	va_start(ap, fmt);
++	str = talloc_vasprintf(msg, fmt, ap);
++	va_end(ap);
++
++	if (str == NULL) {
++		return LDB_ERR_OPERATIONS_ERROR;
++	}
++
++	val.data   = (uint8_t *)str;
++	val.length = strlen(str);
++
++	return ldb_msg_append_steal_value(msg, attr_name, &val, flags);
++}
++
+ /*
+   compare two ldb_message_element structures
+   assumes case sensitive comparison
+diff --git ./include/ldb.h ./include/ldb.h
+index 129beefeaf5..63d8aedd672 100644
+--- ./include/ldb.h
++++ ./include/ldb.h
+@@ -2002,12 +2002,36 @@ int ldb_msg_add_steal_value(struct ldb_message *msg,
+ 		      struct ldb_val *val);
+ int ldb_msg_add_steal_string(struct ldb_message *msg,
+ 			     const char *attr_name, char *str);
++int ldb_msg_add_string_flags(struct ldb_message *msg,
++			     const char *attr_name, const char *str,
++			     int flags);
+ int ldb_msg_add_string(struct ldb_message *msg,
+ 		       const char *attr_name, const char *str);
+ int ldb_msg_add_linearized_dn(struct ldb_message *msg, const char *attr_name,
+ 			      struct ldb_dn *dn);
+ int ldb_msg_add_fmt(struct ldb_message *msg,
+ 		    const char *attr_name, const char *fmt, ...) PRINTF_ATTRIBUTE(3,4);
++/**
++   append a element to a ldb_message
++*/
++int ldb_msg_append_value(struct ldb_message *msg,
++			 const char *attr_name,
++			 const struct ldb_val *val,
++			 int flags);
++int ldb_msg_append_steal_value(struct ldb_message *msg,
++			       const char *attr_name,
++			       struct ldb_val *val,
++			       int flags);
++int ldb_msg_append_steal_string(struct ldb_message *msg,
++				const char *attr_name, char *str,
++				int flags);
++int ldb_msg_append_string(struct ldb_message *msg,
++			  const char *attr_name, const char *str,
++			  int flags);
++int ldb_msg_append_linearized_dn(struct ldb_message *msg, const char *attr_name,
++				 struct ldb_dn *dn, int flags);
++int ldb_msg_append_fmt(struct ldb_message *msg, int flags,
++		       const char *attr_name, const char *fmt, ...) PRINTF_ATTRIBUTE(4,5);
+ 
+ /**
+    compare two message elements - return 0 on match
+diff --git ./ldb_map/ldb_map.c ./ldb_map/ldb_map.c
+index b453dff80d2..c7b0c228631 100644
+--- ./ldb_map/ldb_map.c
++++ ./ldb_map/ldb_map.c
+@@ -946,10 +946,7 @@ struct ldb_request *map_build_fixup_req(struct map_context *ac,
+ 	if ( ! dn || ! ldb_dn_validate(msg->dn)) {
+ 		goto failed;
+ 	}
+-	if (ldb_msg_add_empty(msg, IS_MAPPED, LDB_FLAG_MOD_REPLACE, NULL) != 0) {
+-		goto failed;
+-	}
+-	if (ldb_msg_add_string(msg, IS_MAPPED, dn) != 0) {
++	if (ldb_msg_append_string(msg, IS_MAPPED, dn, LDB_FLAG_MOD_REPLACE) != 0) {
+ 		goto failed;
+ 	}
+ 
+diff --git ./ldb_map/ldb_map_inbound.c ./ldb_map/ldb_map_inbound.c
+index 324295737da..50b9427c26c 100644
+--- ./ldb_map/ldb_map_inbound.c
++++ ./ldb_map/ldb_map_inbound.c
+@@ -569,12 +569,9 @@ static int map_modify_do_local(struct map_context *ac)
+ 		/* No local record present, add it instead */
+ 		/* Add local 'IS_MAPPED' */
+ 		/* TODO: use GUIDs here instead */
+-		if (ldb_msg_add_empty(ac->local_msg, IS_MAPPED,
+-					LDB_FLAG_MOD_ADD, NULL) != 0) {
+-			return LDB_ERR_OPERATIONS_ERROR;
+-		}
+-		ret = ldb_msg_add_linearized_dn(ac->local_msg, IS_MAPPED,
+-						ac->remote_req->op.mod.message->dn);
++		ret = ldb_msg_append_linearized_dn(ac->local_msg, IS_MAPPED,
++						   ac->remote_req->op.mod.message->dn,
++						   LDB_FLAG_MOD_ADD);
+ 		if (ret != 0) {
+ 			return LDB_ERR_OPERATIONS_ERROR;
+ 		}
+diff --git ./modules/rdn_name.c ./modules/rdn_name.c
+index 25cffe07591..3cb62bf567b 100644
+--- ./modules/rdn_name.c
++++ ./modules/rdn_name.c
+@@ -308,16 +308,10 @@ static int rdn_rename_callback(struct ldb_request *req, struct ldb_reply *ares)
+ 	}
+ 	rdn_val = ldb_val_dup(msg, rdn_val_p);
+ 
+-	if (ldb_msg_add_empty(msg, rdn_name, LDB_FLAG_MOD_REPLACE, NULL) != 0) {
++	if (ldb_msg_append_value(msg, rdn_name, &rdn_val, LDB_FLAG_MOD_REPLACE) != 0) {
+ 		goto error;
+ 	}
+-	if (ldb_msg_add_value(msg, rdn_name, &rdn_val, NULL) != 0) {
+-		goto error;
+-	}
+-	if (ldb_msg_add_empty(msg, "name", LDB_FLAG_MOD_REPLACE, NULL) != 0) {
+-		goto error;
+-	}
+-	if (ldb_msg_add_value(msg, "name", &rdn_val, NULL) != 0) {
++	if (ldb_msg_append_value(msg, "name", &rdn_val, LDB_FLAG_MOD_REPLACE) != 0) {
+ 		goto error;
+ 	}
+ 
+@@ -466,11 +460,7 @@ static int rdn_name_modify(struct ldb_module *module, struct ldb_request *req)
+ 		if (ret != 0) {
+ 			return ldb_module_oom(module);
+ 		}
+-		ret = ldb_msg_add_empty(msg, rdn_name, LDB_FLAG_MOD_ADD, NULL);
+-		if (ret != 0) {
+-			return ldb_module_oom(module);
+-		}
+-		ret = ldb_msg_add_value(msg, rdn_name, &rdn_val, NULL);
++		ret = ldb_msg_append_value(msg, rdn_name, &rdn_val, LDB_FLAG_MOD_ADD);
+ 		if (ret != 0) {
+ 			return ldb_module_oom(module);
+ 		}
+@@ -479,11 +469,7 @@ static int rdn_name_modify(struct ldb_module *module, struct ldb_request *req)
+ 		if (ret != 0) {
+ 			return ldb_module_oom(module);
+ 		}
+-		ret = ldb_msg_add_empty(msg, "name", LDB_FLAG_MOD_ADD, NULL);
+-		if (ret != 0) {
+-			return ldb_module_oom(module);
+-		}
+-		ret = ldb_msg_add_value(msg, "name", &rdn_val, NULL);
++		ret = ldb_msg_append_value(msg, "name", &rdn_val, LDB_FLAG_MOD_ADD);
+ 		if (ret != 0) {
+ 			return ldb_module_oom(module);
+ 		}
+diff --git ./ABI/ldb-2.3.4.sigs ./ABI/ldb-2.3.4.sigs
+new file mode 100644
+index 00000000000..40388d9e330
+--- /dev/null
++++ ./ABI/ldb-2.3.4.sigs
+@@ -0,0 +1,291 @@
++ldb_add: int (struct ldb_context *, const struct ldb_message *)
++ldb_any_comparison: int (struct ldb_context *, void *, ldb_attr_handler_t, const struct ldb_val *, const struct ldb_val *)
++ldb_asprintf_errstring: void (struct ldb_context *, const char *, ...)
++ldb_attr_casefold: char *(TALLOC_CTX *, const char *)
++ldb_attr_dn: int (const char *)
++ldb_attr_in_list: int (const char * const *, const char *)
++ldb_attr_list_copy: const char **(TALLOC_CTX *, const char * const *)
++ldb_attr_list_copy_add: const char **(TALLOC_CTX *, const char * const *, const char *)
++ldb_base64_decode: int (char *)
++ldb_base64_encode: char *(TALLOC_CTX *, const char *, int)
++ldb_binary_decode: struct ldb_val (TALLOC_CTX *, const char *)
++ldb_binary_encode: char *(TALLOC_CTX *, struct ldb_val)
++ldb_binary_encode_string: char *(TALLOC_CTX *, const char *)
++ldb_build_add_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, const struct ldb_message *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_del_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, struct ldb_dn *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_extended_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, const char *, void *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_mod_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, const struct ldb_message *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_rename_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, struct ldb_dn *, struct ldb_dn *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_search_req: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, struct ldb_dn *, enum ldb_scope, const char *, const char * const *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_build_search_req_ex: int (struct ldb_request **, struct ldb_context *, TALLOC_CTX *, struct ldb_dn *, enum ldb_scope, struct ldb_parse_tree *, const char * const *, struct ldb_control **, void *, ldb_request_callback_t, struct ldb_request *)
++ldb_casefold: char *(struct ldb_context *, TALLOC_CTX *, const char *, size_t)
++ldb_casefold_default: char *(void *, TALLOC_CTX *, const char *, size_t)
++ldb_check_critical_controls: int (struct ldb_control **)
++ldb_comparison_binary: int (struct ldb_context *, void *, const struct ldb_val *, const struct ldb_val *)
++ldb_comparison_fold: int (struct ldb_context *, void *, const struct ldb_val *, const struct ldb_val *)
++ldb_connect: int (struct ldb_context *, const char *, unsigned int, const char **)
++ldb_control_to_string: char *(TALLOC_CTX *, const struct ldb_control *)
++ldb_controls_except_specified: struct ldb_control **(struct ldb_control **, TALLOC_CTX *, struct ldb_control *)
++ldb_debug: void (struct ldb_context *, enum ldb_debug_level, const char *, ...)
++ldb_debug_add: void (struct ldb_context *, const char *, ...)
++ldb_debug_end: void (struct ldb_context *, enum ldb_debug_level)
++ldb_debug_set: void (struct ldb_context *, enum ldb_debug_level, const char *, ...)
++ldb_delete: int (struct ldb_context *, struct ldb_dn *)
++ldb_dn_add_base: bool (struct ldb_dn *, struct ldb_dn *)
++ldb_dn_add_base_fmt: bool (struct ldb_dn *, const char *, ...)
++ldb_dn_add_child: bool (struct ldb_dn *, struct ldb_dn *)
++ldb_dn_add_child_fmt: bool (struct ldb_dn *, const char *, ...)
++ldb_dn_add_child_val: bool (struct ldb_dn *, const char *, struct ldb_val)
++ldb_dn_alloc_casefold: char *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_alloc_linearized: char *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_canonical_ex_string: char *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_canonical_string: char *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_check_local: bool (struct ldb_module *, struct ldb_dn *)
++ldb_dn_check_special: bool (struct ldb_dn *, const char *)
++ldb_dn_compare: int (struct ldb_dn *, struct ldb_dn *)
++ldb_dn_compare_base: int (struct ldb_dn *, struct ldb_dn *)
++ldb_dn_copy: struct ldb_dn *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_escape_value: char *(TALLOC_CTX *, struct ldb_val)
++ldb_dn_extended_add_syntax: int (struct ldb_context *, unsigned int, const struct ldb_dn_extended_syntax *)
++ldb_dn_extended_filter: void (struct ldb_dn *, const char * const *)
++ldb_dn_extended_syntax_by_name: const struct ldb_dn_extended_syntax *(struct ldb_context *, const char *)
++ldb_dn_from_ldb_val: struct ldb_dn *(TALLOC_CTX *, struct ldb_context *, const struct ldb_val *)
++ldb_dn_get_casefold: const char *(struct ldb_dn *)
++ldb_dn_get_comp_num: int (struct ldb_dn *)
++ldb_dn_get_component_name: const char *(struct ldb_dn *, unsigned int)
++ldb_dn_get_component_val: const struct ldb_val *(struct ldb_dn *, unsigned int)
++ldb_dn_get_extended_comp_num: int (struct ldb_dn *)
++ldb_dn_get_extended_component: const struct ldb_val *(struct ldb_dn *, const char *)
++ldb_dn_get_extended_linearized: char *(TALLOC_CTX *, struct ldb_dn *, int)
++ldb_dn_get_ldb_context: struct ldb_context *(struct ldb_dn *)
++ldb_dn_get_linearized: const char *(struct ldb_dn *)
++ldb_dn_get_parent: struct ldb_dn *(TALLOC_CTX *, struct ldb_dn *)
++ldb_dn_get_rdn_name: const char *(struct ldb_dn *)
++ldb_dn_get_rdn_val: const struct ldb_val *(struct ldb_dn *)
++ldb_dn_has_extended: bool (struct ldb_dn *)
++ldb_dn_is_null: bool (struct ldb_dn *)
++ldb_dn_is_special: bool (struct ldb_dn *)
++ldb_dn_is_valid: bool (struct ldb_dn *)
++ldb_dn_map_local: struct ldb_dn *(struct ldb_module *, void *, struct ldb_dn *)
++ldb_dn_map_rebase_remote: struct ldb_dn *(struct ldb_module *, void *, struct ldb_dn *)
++ldb_dn_map_remote: struct ldb_dn *(struct ldb_module *, void *, struct ldb_dn *)
++ldb_dn_minimise: bool (struct ldb_dn *)
++ldb_dn_new: struct ldb_dn *(TALLOC_CTX *, struct ldb_context *, const char *)
++ldb_dn_new_fmt: struct ldb_dn *(TALLOC_CTX *, struct ldb_context *, const char *, ...)
++ldb_dn_remove_base_components: bool (struct ldb_dn *, unsigned int)
++ldb_dn_remove_child_components: bool (struct ldb_dn *, unsigned int)
++ldb_dn_remove_extended_components: void (struct ldb_dn *)
++ldb_dn_replace_components: bool (struct ldb_dn *, struct ldb_dn *)
++ldb_dn_set_component: int (struct ldb_dn *, int, const char *, const struct ldb_val)
++ldb_dn_set_extended_component: int (struct ldb_dn *, const char *, const struct ldb_val *)
++ldb_dn_update_components: int (struct ldb_dn *, const struct ldb_dn *)
++ldb_dn_validate: bool (struct ldb_dn *)
++ldb_dump_results: void (struct ldb_context *, struct ldb_result *, FILE *)
++ldb_error_at: int (struct ldb_context *, int, const char *, const char *, int)
++ldb_errstring: const char *(struct ldb_context *)
++ldb_extended: int (struct ldb_context *, const char *, void *, struct ldb_result **)
++ldb_extended_default_callback: int (struct ldb_request *, struct ldb_reply *)
++ldb_filter_attrs: int (struct ldb_context *, const struct ldb_message *, const char * const *, struct ldb_message *)
++ldb_filter_from_tree: char *(TALLOC_CTX *, const struct ldb_parse_tree *)
++ldb_get_config_basedn: struct ldb_dn *(struct ldb_context *)
++ldb_get_create_perms: unsigned int (struct ldb_context *)
++ldb_get_default_basedn: struct ldb_dn *(struct ldb_context *)
++ldb_get_event_context: struct tevent_context *(struct ldb_context *)
++ldb_get_flags: unsigned int (struct ldb_context *)
++ldb_get_opaque: void *(struct ldb_context *, const char *)
++ldb_get_root_basedn: struct ldb_dn *(struct ldb_context *)
++ldb_get_schema_basedn: struct ldb_dn *(struct ldb_context *)
++ldb_global_init: int (void)
++ldb_handle_get_event_context: struct tevent_context *(struct ldb_handle *)
++ldb_handle_new: struct ldb_handle *(TALLOC_CTX *, struct ldb_context *)
++ldb_handle_use_global_event_context: void (struct ldb_handle *)
++ldb_handler_copy: int (struct ldb_context *, void *, const struct ldb_val *, struct ldb_val *)
++ldb_handler_fold: int (struct ldb_context *, void *, const struct ldb_val *, struct ldb_val *)
++ldb_init: struct ldb_context *(TALLOC_CTX *, struct tevent_context *)
++ldb_ldif_message_redacted_string: char *(struct ldb_context *, TALLOC_CTX *, enum ldb_changetype, const struct ldb_message *)
++ldb_ldif_message_string: char *(struct ldb_context *, TALLOC_CTX *, enum ldb_changetype, const struct ldb_message *)
++ldb_ldif_parse_modrdn: int (struct ldb_context *, const struct ldb_ldif *, TALLOC_CTX *, struct ldb_dn **, struct ldb_dn **, bool *, struct ldb_dn **, struct ldb_dn **)
++ldb_ldif_read: struct ldb_ldif *(struct ldb_context *, int (*)(void *), void *)
++ldb_ldif_read_file: struct ldb_ldif *(struct ldb_context *, FILE *)
++ldb_ldif_read_file_state: struct ldb_ldif *(struct ldb_context *, struct ldif_read_file_state *)
++ldb_ldif_read_free: void (struct ldb_context *, struct ldb_ldif *)
++ldb_ldif_read_string: struct ldb_ldif *(struct ldb_context *, const char **)
++ldb_ldif_write: int (struct ldb_context *, int (*)(void *, const char *, ...), void *, const struct ldb_ldif *)
++ldb_ldif_write_file: int (struct ldb_context *, FILE *, const struct ldb_ldif *)
++ldb_ldif_write_redacted_trace_string: char *(struct ldb_context *, TALLOC_CTX *, const struct ldb_ldif *)
++ldb_ldif_write_string: char *(struct ldb_context *, TALLOC_CTX *, const struct ldb_ldif *)
++ldb_load_modules: int (struct ldb_context *, const char **)
++ldb_map_add: int (struct ldb_module *, struct ldb_request *)
++ldb_map_delete: int (struct ldb_module *, struct ldb_request *)
++ldb_map_init: int (struct ldb_module *, const struct ldb_map_attribute *, const struct ldb_map_objectclass *, const char * const *, const char *, const char *)
++ldb_map_modify: int (struct ldb_module *, struct ldb_request *)
++ldb_map_rename: int (struct ldb_module *, struct ldb_request *)
++ldb_map_search: int (struct ldb_module *, struct ldb_request *)
++ldb_match_message: int (struct ldb_context *, const struct ldb_message *, const struct ldb_parse_tree *, enum ldb_scope, bool *)
++ldb_match_msg: int (struct ldb_context *, const struct ldb_message *, const struct ldb_parse_tree *, struct ldb_dn *, enum ldb_scope)
++ldb_match_msg_error: int (struct ldb_context *, const struct ldb_message *, const struct ldb_parse_tree *, struct ldb_dn *, enum ldb_scope, bool *)
++ldb_match_msg_objectclass: int (const struct ldb_message *, const char *)
++ldb_mod_register_control: int (struct ldb_module *, const char *)
++ldb_modify: int (struct ldb_context *, const struct ldb_message *)
++ldb_modify_default_callback: int (struct ldb_request *, struct ldb_reply *)
++ldb_module_call_chain: char *(struct ldb_request *, TALLOC_CTX *)
++ldb_module_connect_backend: int (struct ldb_context *, const char *, const char **, struct ldb_module **)
++ldb_module_done: int (struct ldb_request *, struct ldb_control **, struct ldb_extended *, int)
++ldb_module_flags: uint32_t (struct ldb_context *)
++ldb_module_get_ctx: struct ldb_context *(struct ldb_module *)
++ldb_module_get_name: const char *(struct ldb_module *)
++ldb_module_get_ops: const struct ldb_module_ops *(struct ldb_module *)
++ldb_module_get_private: void *(struct ldb_module *)
++ldb_module_init_chain: int (struct ldb_context *, struct ldb_module *)
++ldb_module_load_list: int (struct ldb_context *, const char **, struct ldb_module *, struct ldb_module **)
++ldb_module_new: struct ldb_module *(TALLOC_CTX *, struct ldb_context *, const char *, const struct ldb_module_ops *)
++ldb_module_next: struct ldb_module *(struct ldb_module *)
++ldb_module_popt_options: struct poptOption **(struct ldb_context *)
++ldb_module_send_entry: int (struct ldb_request *, struct ldb_message *, struct ldb_control **)
++ldb_module_send_referral: int (struct ldb_request *, char *)
++ldb_module_set_next: void (struct ldb_module *, struct ldb_module *)
++ldb_module_set_private: void (struct ldb_module *, void *)
++ldb_modules_hook: int (struct ldb_context *, enum ldb_module_hook_type)
++ldb_modules_list_from_string: const char **(struct ldb_context *, TALLOC_CTX *, const char *)
++ldb_modules_load: int (const char *, const char *)
++ldb_msg_add: int (struct ldb_message *, const struct ldb_message_element *, int)
++ldb_msg_add_empty: int (struct ldb_message *, const char *, int, struct ldb_message_element **)
++ldb_msg_add_fmt: int (struct ldb_message *, const char *, const char *, ...)
++ldb_msg_add_linearized_dn: int (struct ldb_message *, const char *, struct ldb_dn *)
++ldb_msg_add_steal_string: int (struct ldb_message *, const char *, char *)
++ldb_msg_add_steal_value: int (struct ldb_message *, const char *, struct ldb_val *)
++ldb_msg_add_string: int (struct ldb_message *, const char *, const char *)
++ldb_msg_add_string_flags: int (struct ldb_message *, const char *, const char *, int)
++ldb_msg_add_value: int (struct ldb_message *, const char *, const struct ldb_val *, struct ldb_message_element **)
++ldb_msg_append_fmt: int (struct ldb_message *, int, const char *, const char *, ...)
++ldb_msg_append_linearized_dn: int (struct ldb_message *, const char *, struct ldb_dn *, int)
++ldb_msg_append_steal_string: int (struct ldb_message *, const char *, char *, int)
++ldb_msg_append_steal_value: int (struct ldb_message *, const char *, struct ldb_val *, int)
++ldb_msg_append_string: int (struct ldb_message *, const char *, const char *, int)
++ldb_msg_append_value: int (struct ldb_message *, const char *, const struct ldb_val *, int)
++ldb_msg_canonicalize: struct ldb_message *(struct ldb_context *, const struct ldb_message *)
++ldb_msg_check_string_attribute: int (const struct ldb_message *, const char *, const char *)
++ldb_msg_copy: struct ldb_message *(TALLOC_CTX *, const struct ldb_message *)
++ldb_msg_copy_attr: int (struct ldb_message *, const char *, const char *)
++ldb_msg_copy_shallow: struct ldb_message *(TALLOC_CTX *, const struct ldb_message *)
++ldb_msg_diff: struct ldb_message *(struct ldb_context *, struct ldb_message *, struct ldb_message *)
++ldb_msg_difference: int (struct ldb_context *, TALLOC_CTX *, struct ldb_message *, struct ldb_message *, struct ldb_message **)
++ldb_msg_element_add_value: int (TALLOC_CTX *, struct ldb_message_element *, const struct ldb_val *)
++ldb_msg_element_compare: int (struct ldb_message_element *, struct ldb_message_element *)
++ldb_msg_element_compare_name: int (struct ldb_message_element *, struct ldb_message_element *)
++ldb_msg_element_equal_ordered: bool (const struct ldb_message_element *, const struct ldb_message_element *)
++ldb_msg_find_attr_as_bool: int (const struct ldb_message *, const char *, int)
++ldb_msg_find_attr_as_dn: struct ldb_dn *(struct ldb_context *, TALLOC_CTX *, const struct ldb_message *, const char *)
++ldb_msg_find_attr_as_double: double (const struct ldb_message *, const char *, double)
++ldb_msg_find_attr_as_int: int (const struct ldb_message *, const char *, int)
++ldb_msg_find_attr_as_int64: int64_t (const struct ldb_message *, const char *, int64_t)
++ldb_msg_find_attr_as_string: const char *(const struct ldb_message *, const char *, const char *)
++ldb_msg_find_attr_as_uint: unsigned int (const struct ldb_message *, const char *, unsigned int)
++ldb_msg_find_attr_as_uint64: uint64_t (const struct ldb_message *, const char *, uint64_t)
++ldb_msg_find_common_values: int (struct ldb_context *, TALLOC_CTX *, struct ldb_message_element *, struct ldb_message_element *, uint32_t)
++ldb_msg_find_duplicate_val: int (struct ldb_context *, TALLOC_CTX *, const struct ldb_message_element *, struct ldb_val **, uint32_t)
++ldb_msg_find_element: struct ldb_message_element *(const struct ldb_message *, const char *)
++ldb_msg_find_ldb_val: const struct ldb_val *(const struct ldb_message *, const char *)
++ldb_msg_find_val: struct ldb_val *(const struct ldb_message_element *, struct ldb_val *)
++ldb_msg_new: struct ldb_message *(TALLOC_CTX *)
++ldb_msg_normalize: int (struct ldb_context *, TALLOC_CTX *, const struct ldb_message *, struct ldb_message **)
++ldb_msg_remove_attr: void (struct ldb_message *, const char *)
++ldb_msg_remove_element: void (struct ldb_message *, struct ldb_message_element *)
++ldb_msg_rename_attr: int (struct ldb_message *, const char *, const char *)
++ldb_msg_sanity_check: int (struct ldb_context *, const struct ldb_message *)
++ldb_msg_sort_elements: void (struct ldb_message *)
++ldb_next_del_trans: int (struct ldb_module *)
++ldb_next_end_trans: int (struct ldb_module *)
++ldb_next_init: int (struct ldb_module *)
++ldb_next_prepare_commit: int (struct ldb_module *)
++ldb_next_read_lock: int (struct ldb_module *)
++ldb_next_read_unlock: int (struct ldb_module *)
++ldb_next_remote_request: int (struct ldb_module *, struct ldb_request *)
++ldb_next_request: int (struct ldb_module *, struct ldb_request *)
++ldb_next_start_trans: int (struct ldb_module *)
++ldb_op_default_callback: int (struct ldb_request *, struct ldb_reply *)
++ldb_options_copy: const char **(TALLOC_CTX *, const char **)
++ldb_options_find: const char *(struct ldb_context *, const char **, const char *)
++ldb_options_get: const char **(struct ldb_context *)
++ldb_pack_data: int (struct ldb_context *, const struct ldb_message *, struct ldb_val *, uint32_t)
++ldb_parse_control_from_string: struct ldb_control *(struct ldb_context *, TALLOC_CTX *, const char *)
++ldb_parse_control_strings: struct ldb_control **(struct ldb_context *, TALLOC_CTX *, const char **)
++ldb_parse_tree: struct ldb_parse_tree *(TALLOC_CTX *, const char *)
++ldb_parse_tree_attr_replace: void (struct ldb_parse_tree *, const char *, const char *)
++ldb_parse_tree_copy_shallow: struct ldb_parse_tree *(TALLOC_CTX *, const struct ldb_parse_tree *)
++ldb_parse_tree_walk: int (struct ldb_parse_tree *, int (*)(struct ldb_parse_tree *, void *), void *)
++ldb_qsort: void (void * const, size_t, size_t, void *, ldb_qsort_cmp_fn_t)
++ldb_register_backend: int (const char *, ldb_connect_fn, bool)
++ldb_register_extended_match_rule: int (struct ldb_context *, const struct ldb_extended_match_rule *)
++ldb_register_hook: int (ldb_hook_fn)
++ldb_register_module: int (const struct ldb_module_ops *)
++ldb_rename: int (struct ldb_context *, struct ldb_dn *, struct ldb_dn *)
++ldb_reply_add_control: int (struct ldb_reply *, const char *, bool, void *)
++ldb_reply_get_control: struct ldb_control *(struct ldb_reply *, const char *)
++ldb_req_get_custom_flags: uint32_t (struct ldb_request *)
++ldb_req_is_untrusted: bool (struct ldb_request *)
++ldb_req_location: const char *(struct ldb_request *)
++ldb_req_mark_trusted: void (struct ldb_request *)
++ldb_req_mark_untrusted: void (struct ldb_request *)
++ldb_req_set_custom_flags: void (struct ldb_request *, uint32_t)
++ldb_req_set_location: void (struct ldb_request *, const char *)
++ldb_request: int (struct ldb_context *, struct ldb_request *)
++ldb_request_add_control: int (struct ldb_request *, const char *, bool, void *)
++ldb_request_done: int (struct ldb_request *, int)
++ldb_request_get_control: struct ldb_control *(struct ldb_request *, const char *)
++ldb_request_get_status: int (struct ldb_request *)
++ldb_request_replace_control: int (struct ldb_request *, const char *, bool, void *)
++ldb_request_set_state: void (struct ldb_request *, int)
++ldb_reset_err_string: void (struct ldb_context *)
++ldb_save_controls: int (struct ldb_control *, struct ldb_request *, struct ldb_control ***)
++ldb_schema_attribute_add: int (struct ldb_context *, const char *, unsigned int, const char *)
++ldb_schema_attribute_add_with_syntax: int (struct ldb_context *, const char *, unsigned int, const struct ldb_schema_syntax *)
++ldb_schema_attribute_by_name: const struct ldb_schema_attribute *(struct ldb_context *, const char *)
++ldb_schema_attribute_fill_with_syntax: int (struct ldb_context *, TALLOC_CTX *, const char *, unsigned int, const struct ldb_schema_syntax *, struct ldb_schema_attribute *)
++ldb_schema_attribute_remove: void (struct ldb_context *, const char *)
++ldb_schema_attribute_remove_flagged: void (struct ldb_context *, unsigned int)
++ldb_schema_attribute_set_override_handler: void (struct ldb_context *, ldb_attribute_handler_override_fn_t, void *)
++ldb_schema_set_override_GUID_index: void (struct ldb_context *, const char *, const char *)
++ldb_schema_set_override_indexlist: void (struct ldb_context *, bool)
++ldb_search: int (struct ldb_context *, TALLOC_CTX *, struct ldb_result **, struct ldb_dn *, enum ldb_scope, const char * const *, const char *, ...)
++ldb_search_default_callback: int (struct ldb_request *, struct ldb_reply *)
++ldb_sequence_number: int (struct ldb_context *, enum ldb_sequence_type, uint64_t *)
++ldb_set_create_perms: void (struct ldb_context *, unsigned int)
++ldb_set_debug: int (struct ldb_context *, void (*)(void *, enum ldb_debug_level, const char *, va_list), void *)
++ldb_set_debug_stderr: int (struct ldb_context *)
++ldb_set_default_dns: void (struct ldb_context *)
++ldb_set_errstring: void (struct ldb_context *, const char *)
++ldb_set_event_context: void (struct ldb_context *, struct tevent_context *)
++ldb_set_flags: void (struct ldb_context *, unsigned int)
++ldb_set_modules_dir: void (struct ldb_context *, const char *)
++ldb_set_opaque: int (struct ldb_context *, const char *, void *)
++ldb_set_require_private_event_context: void (struct ldb_context *)
++ldb_set_timeout: int (struct ldb_context *, struct ldb_request *, int)
++ldb_set_timeout_from_prev_req: int (struct ldb_context *, struct ldb_request *, struct ldb_request *)
++ldb_set_utf8_default: void (struct ldb_context *)
++ldb_set_utf8_fns: void (struct ldb_context *, void *, char *(*)(void *, void *, const char *, size_t))
++ldb_setup_wellknown_attributes: int (struct ldb_context *)
++ldb_should_b64_encode: int (struct ldb_context *, const struct ldb_val *)
++ldb_standard_syntax_by_name: const struct ldb_schema_syntax *(struct ldb_context *, const char *)
++ldb_strerror: const char *(int)
++ldb_string_to_time: time_t (const char *)
++ldb_string_utc_to_time: time_t (const char *)
++ldb_timestring: char *(TALLOC_CTX *, time_t)
++ldb_timestring_utc: char *(TALLOC_CTX *, time_t)
++ldb_transaction_cancel: int (struct ldb_context *)
++ldb_transaction_cancel_noerr: int (struct ldb_context *)
++ldb_transaction_commit: int (struct ldb_context *)
++ldb_transaction_prepare_commit: int (struct ldb_context *)
++ldb_transaction_start: int (struct ldb_context *)
++ldb_unpack_data: int (struct ldb_context *, const struct ldb_val *, struct ldb_message *)
++ldb_unpack_data_flags: int (struct ldb_context *, const struct ldb_val *, struct ldb_message *, unsigned int)
++ldb_unpack_get_format: int (const struct ldb_val *, uint32_t *)
++ldb_val_dup: struct ldb_val (TALLOC_CTX *, const struct ldb_val *)
++ldb_val_equal_exact: int (const struct ldb_val *, const struct ldb_val *)
++ldb_val_map_local: struct ldb_val (struct ldb_module *, void *, const struct ldb_map_attribute *, const struct ldb_val *)
++ldb_val_map_remote: struct ldb_val (struct ldb_module *, void *, const struct ldb_map_attribute *, const struct ldb_val *)
++ldb_val_string_cmp: int (const struct ldb_val *, const char *)
++ldb_val_to_time: int (const struct ldb_val *, time_t *)
++ldb_valid_attr_name: int (const char *)
++ldb_vdebug: void (struct ldb_context *, enum ldb_debug_level, const char *, va_list)
++ldb_wait: int (struct ldb_handle *, enum ldb_wait_type)
+diff --git ./ABI/pyldb-util-2.3.4.sigs ./ABI/pyldb-util-2.3.4.sigs
+new file mode 100644
+index 00000000000..164a806b2ff
+--- /dev/null
++++ ./ABI/pyldb-util-2.3.4.sigs
+@@ -0,0 +1,3 @@
++pyldb_Dn_FromDn: PyObject *(struct ldb_dn *)
++pyldb_Object_AsDn: bool (TALLOC_CTX *, PyObject *, struct ldb_context *, struct ldb_dn **)
++pyldb_check_type: bool (PyObject *, const char *)

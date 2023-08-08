@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2022-10-27 23:35:20 UTC
++++ CMakeLists.txt
+@@ -12,6 +12,9 @@ project(OpenVDBPython LANGUAGES CXX)
+ 
+ include(GNUInstallDirs)
+ 
++set(CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/lib/cmake/OpenVDB" ${CMAKE_MODULE_PATH})
++find_package(OpenVDB REQUIRED)
++
+ ###### OpenVDB Python Options
+ 
+ option(USE_NUMPY "Build the python library with numpy support." OFF)

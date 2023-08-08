@@ -47,7 +47,6 @@ include/osmium/handler/disk_store.hpp
 include/osmium/handler/dump.hpp
 include/osmium/handler/node_locations_for_ways.hpp
 include/osmium/handler/object_relations.hpp
-include/osmium/index/bool_vector.hpp
 include/osmium/index/detail/create_map_with_fd.hpp
 include/osmium/index/detail/mmap_vector_anon.hpp
 include/osmium/index/detail/mmap_vector_base.hpp

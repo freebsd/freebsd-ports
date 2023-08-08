@@ -1,6 +1,5 @@
 PORTNAME=	networkmgr
-DISTVERSION=	6.1
-PORTREVISION=	1
+DISTVERSION=	6.2
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ericbsd@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
 		sudo:security/sudo
 
-USES=		gnome python:3.7+ shebangfix
+USES=		gettext-tools gnome python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	GhostBSD
 USE_GNOME=	pygobject3

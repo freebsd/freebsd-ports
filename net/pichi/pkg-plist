@@ -20,11 +20,13 @@ bin/pichi
 %%DEVEL%%include/pichi/common/constants.hpp
 %%DEVEL%%include/pichi/common/endpoint.hpp
 %%DEVEL%%include/pichi/common/enumerations.hpp
-%%DEVEL%%include/pichi/common/exception.hpp
+%%DEVEL%%include/pichi/common/error.hpp
 %%DEVEL%%include/pichi/common/literals.hpp
 %%DEVEL%%include/pichi/common/uri.hpp
 %%DEVEL%%include/pichi/crypto/aead.hpp
 %%DEVEL%%include/pichi/crypto/base64.hpp
+%%DEVEL%%include/pichi/crypto/brotli.hpp
+%%DEVEL%%include/pichi/crypto/fingerprint.hpp
 %%DEVEL%%include/pichi/crypto/hash.hpp
 %%DEVEL%%include/pichi/crypto/key.hpp
 %%DEVEL%%include/pichi/crypto/method.hpp
@@ -38,6 +40,7 @@ bin/pichi
 %%DEVEL%%include/pichi/net/spawn.hpp
 %%DEVEL%%include/pichi/net/ssaead.hpp
 %%DEVEL%%include/pichi/net/ssstream.hpp
+%%DEVEL%%include/pichi/net/transparent.hpp
 %%DEVEL%%include/pichi/net/trojan.hpp
 %%DEVEL%%include/pichi/net/tunnel.hpp
 %%DEVEL%%include/pichi/stream/test.hpp

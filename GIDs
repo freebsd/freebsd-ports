@@ -251,23 +251,23 @@ jicofo:*:307:jitsi
 jvb:*:308:jitsi
 wazuh:*:309:
 cardano:*:310:
-# free: 311
+_arti:*:311:
 _sphinx:*:312:
 _fastdfs:*:313:
-# free: 314
-# free: 315
-# free: 316
-# free: 317
-# free: 318
-# free: 319
-# free: 320
-# free: 321
-# free: 322
-# free: 323
+promscale:*:314:
+lavinmq:*:315:
+nut:*:316:
+hedgedoc:*:317:
+# free: 318, UID used by icingadirector
+rustdesk:*:319:
+teleirc:*:320:
+caldera:*:321:
+tlsc:*:322:
+soju:*:323:
 # free: 324
 dkfilter:*:325:
 smfs:*:326:
-# free: 327
+_reticulum:*:327:
 # free: 328
 # free: 329
 orthanc:*:330:
@@ -438,7 +438,7 @@ datadog:*:480:
 # free: 495
 # free: 496
 # free: 497
-# free: 498
+rustypaste:*:498:
 # free: 499
 # free: 500
 # free: 501
@@ -566,7 +566,7 @@ taskd:*:616:
 # free: 622
 # free: 623
 # free: 624
-# free: 625
+xapsd:*:625:
 # free: 626
 # free: 627
 # free: 628
@@ -629,7 +629,7 @@ riak:*:667:
 # free: 685
 # free: 686
 # free: 687
-# free: 688
+darkhttpd:*:688:
 # free: 689
 # free: 690
 # free: 691
@@ -698,7 +698,7 @@ c-lightning:*:735:
 # free: 754
 # free: 755
 # free: 756
-# free: 757
+sopel:*:757:
 # free: 758
 # free: 759
 # free: 760
@@ -717,7 +717,7 @@ postgrest:*:772:
 # free: 773
 # free: 774
 # free: 775
-# free: 776
+namecoin:*:776:
 openxpki:*:777:
 litecoin:*:778:
 bitcoin:*:779:
@@ -768,7 +768,7 @@ dotlrn:*:821:
 selenium:*:824:
 polw:*:825:
 statsd:*:826:
-# free: 827
+_tuptime:*:827:
 # free: 828
 # free: 829
 # free: 830
@@ -801,7 +801,7 @@ opensearch:*:855:
 # free: 857
 # free: 858
 # free: 859
-# free: 860
+plocate:*:860:
 # free: 861
 # free: 862
 # free: 863
@@ -809,7 +809,7 @@ opensearch:*:855:
 # free: 865
 # free: 866
 # free: 867
-# free: 868
+jellyfin:*:868:
 keyd:*:869:
 buildbot:*:870:
 # free: 871
@@ -929,7 +929,7 @@ tvheadend:*:984:
 puppetdb:*:985:
 kamailio:*:986:
 spark:*:987:
-# free: 988
+pot:*:988:
 emby:*:989:
 oozie:*:990:
 sguil:*:991:

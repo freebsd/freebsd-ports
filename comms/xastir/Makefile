@@ -1,7 +1,7 @@
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
 DISTVERSION=	2.1.8
-PORTREVISION=	3
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
@@ -89,4 +89,3 @@ post-extract:
 	@${REINPLACE_CMD} -e 's|2>&1||g' ${WRKSRC}/acinclude.m4
 
 .include <bsd.port.mk>
-

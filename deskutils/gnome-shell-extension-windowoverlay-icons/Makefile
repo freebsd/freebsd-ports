@@ -1,6 +1,7 @@
 PORTNAME=	gnome-shell-extension-windowoverlay-icons
 PORTVERSION=	36
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

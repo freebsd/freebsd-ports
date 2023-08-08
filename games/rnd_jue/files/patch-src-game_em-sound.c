@@ -1,5 +1,5 @@
---- src/game_em/sound.c.orig	2007-04-25 23:37:09.000000000 +0200
-+++ src/game_em/sound.c	2012-12-12 02:10:57.000000000 +0100
+--- src/game_em/sound.c.orig	2007-04-25 21:37:09 UTC
++++ src/game_em/sound.c
 @@ -10,15 +10,8 @@
  
  #if defined(PLATFORM_LINUX) || defined(PLATFORM_BSD)

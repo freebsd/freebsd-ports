@@ -1,14 +1,14 @@
 PORTNAME=	lpeg
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/ \
+MASTER_SITES=	https://www.inf.puc-rio.br/~roberto/lpeg/ \
 		LOCAL/sunpoet
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEG-based pattern-matching library for Lua
-WWW=		http://www.inf.puc-rio.br/~roberto/lpeg/
+WWW=		https://www.inf.puc-rio.br/~roberto/lpeg/ \
+		https://github.com/roberto-ieru/LPeg
 
 LICENSE=	MIT
 

@@ -1,8 +1,8 @@
 PORTNAME=	please
-PORTVERSION=	2.8
+PORTVERSION=	3.0
 CATEGORIES=	security
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Execute a command as root
 WWW=		https://github.com/MagikBSD/please
 

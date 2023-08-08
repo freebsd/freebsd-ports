@@ -1,5 +1,5 @@
-TIMESTAMP = 1620926942
-SHA256 (go/sysutils_glow/glow-v1.4.1/v1.4.1.mod) = 0d3560f68b6c5f010335eedc6fa86ac8fdd734dbea25fe12fd80315d79e785a5
-SIZE (go/sysutils_glow/glow-v1.4.1/v1.4.1.mod) = 1097
-SHA256 (go/sysutils_glow/glow-v1.4.1/v1.4.1.zip) = 4886ca2f2f29f312e080b1cf89d94a5e94bdf160d7032937c469ec4142f78fce
-SIZE (go/sysutils_glow/glow-v1.4.1/v1.4.1.zip) = 539085
+TIMESTAMP = 1686418526
+SHA256 (go/sysutils_glow/glow-v1.5.1/v1.5.1.mod) = 030147de61efed7519b76cdc0dc8582316c22d22fddfec78301d7ab6c8fba8b8
+SIZE (go/sysutils_glow/glow-v1.5.1/v1.5.1.mod) = 836
+SHA256 (go/sysutils_glow/glow-v1.5.1/v1.5.1.zip) = 7e02931949edcdb4524f386c531e9d363d6252a20d48d42766141bc835a6b50a
+SIZE (go/sysutils_glow/glow-v1.5.1/v1.5.1.zip) = 566958

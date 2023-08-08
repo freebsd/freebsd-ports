@@ -1,0 +1,63 @@
+#
+# Sample Configuration File
+#
+# JAVA
+#   Command to invoke Java. If not set, java (from the PATH) will be used.
+#
+
+# JAVA_OPTIONS
+#   Extra options to pass to the JVM
+#
+
+# JETTY_HOME
+#   Where Jetty is installed. If not set, the script will try go
+#   guess it by looking at the invocation path for the script
+#   The java system property "jetty.home" will be
+#   set to this value for use by configure.xml files, f.e.:
+#
+#    <Arg><Property name="jetty.home" default="."/>/webapps/jetty.war</Arg>
+#
+JETTY_HOME=%%PREFIX%%/%%APP_NAME%%
+
+#
+# JETTY_BASE
+#   Where your Jetty base directory is.  If not set, the value from
+#   $JETTY_HOME will be used.
+#
+#   IT IS STRONGLY RECOMMENDED THAT YOU MODIFY THIS VARIABLE TO POINT
+#   TO THE INSTALLATION OF YOUR WEB APPLICATION, KEEPING YOUR WEB
+#   APPLICATION SEPARATE FROM THE JETTY HOME LOCATION.
+#
+#   MORE INFORMATION HERE:
+#
+#   http://www.eclipse.org/jetty/documentation/current/startup-base-and-home.html
+#
+JETTY_BASE=%%WWWDIR%%/demo-base
+
+# JETTY_RUN
+#   Where the $NAME.pid file should be stored. It defaults to the
+#   first available of /var/run, /usr/var/run, JETTY_BASE and /tmp
+#   if not set.
+#
+
+# JETTY_PID
+#   The Jetty PID file, defaults to $JETTY_RUN/$NAME.pid
+#
+JETTY_PID=%%WWWDIR%%/demo-base/%%APP_NAME%%.pid
+
+# JETTY_ARGS
+#   The default arguments to pass to jetty.
+#   For example
+#      JETTY_ARGS=jetty.http.port=8080 jetty.ssl.port=8443
+#
+JETTY_ARGS=jetty.logging.dir=%%WWWDIR%%/demo-base/logs
+
+# JETTY_USER
+#   if set, then used as a username to run the server as
+#
+
+# JETTY_SHELL
+#   If set, then used as the shell by su when starting the server.  Will have
+#   no effect if start-stop-daemon exists.  Useful when JETTY_USER does not
+#   have shell access, e.g. /bin/false
+#

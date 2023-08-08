@@ -1,6 +1,6 @@
 PORTNAME=	xls2txt
 DISTVERSION=	1.0.1
-PORTREVISION=	16
+PORTREVISION=	25
 CATEGORIES=	databases textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,6 +60,8 @@ CARGO_CRATES=	adler32-1.2.0 \
 EXECUTABLES=	${PORTNAME} xls2csv
 
 PLIST_FILES=	${EXECUTABLES:S/^/bin\//}
+
+CONFLICTS_INSTALL=	catdoc libxls p5-Spreadsheet-Read
 
 post-install:
 	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} ${EXECUTABLES}

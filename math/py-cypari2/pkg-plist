@@ -1,6 +1,7 @@
 %%PYTHON_SITELIBDIR%%/cypari2/__init__.py
 %%PYTHON_SITELIBDIR%%/cypari2/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/cypari2/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/cypari2/Py_SET_SIZE.h
 %%PYTHON_SITELIBDIR%%/cypari2/auto_paridecl.pxd
 %%PYTHON_SITELIBDIR%%/cypari2/closure.pxd
 %%PYTHON_SITELIBDIR%%/cypari2/closure%%PYTHON_EXT_SUFFIX%%.so

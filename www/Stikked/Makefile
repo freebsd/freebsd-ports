@@ -2,7 +2,7 @@ PORTNAME=	Stikked
 DISTVERSION=	0.14.0
 CATEGORIES=	www
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based Pastebin, with a simple and easy to use user interface
 WWW=		https://github.com/claudehohl/Stikked
 

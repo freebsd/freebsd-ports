@@ -1,10 +1,9 @@
 PORTNAME=	unuran
-PORTVERSION=	1.9.0
+PORTVERSION=	1.11.0
 CATEGORIES=	math
-MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/ \
-		LOCAL/bf
+MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Universal Non-Uniform RANdom number generators
 WWW=		http://statmath.wu-wien.ac.at/unuran/
 

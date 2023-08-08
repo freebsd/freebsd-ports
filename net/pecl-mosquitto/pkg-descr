@@ -1,2 +1,0 @@
-Mosquitto provides support for the MQTT protocol, including publishing,
-subscribing, and an event loop.

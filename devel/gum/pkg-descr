@@ -1,0 +1,4 @@
+Gum provides highly configurable, ready-to-use utilities to help you write
+useful shell scripts and dotfiles aliases with just a few lines of code. Gum
+is designed to be embedded in scripts and supports all sorts of use cases.
+Components are configurable and customizable to fit your theme and use case.

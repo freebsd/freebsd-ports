@@ -1,0 +1,16 @@
+klepto extends Python's lru_cache to utilize different keymaps and alternate
+caching algorithms, such as lfu_cache and mru_cache. While caching is meant for
+fast access to saved results, klepto also has archiving capabilities, for
+longer-term storage. klepto uses a simple dictionary-sytle interface for all
+caches and archives, and all caches can be applied to any Python function as a
+decorator. Keymaps are algorithms for converting a function's input signature to
+a unique dictionary, where the function's results are the dictionary value. Thus
+for y = f(x), y will be stored in cache[x] (e.g. {x:y}).
+
+klepto provides both standard and "safe" caching, where "safe" caches are slower
+but can recover from hashing errors. klepto is intended to be used for
+distributed and parallel computing, where several of the keymaps serialize the
+stored objects. Caches and archives are intended to be read/write accessible
+from different threads and processes. klepto enables a user to decorate a
+function, save the results to a file or database archive, close the interpreter,
+start a new session, and reload the function and it's cache.

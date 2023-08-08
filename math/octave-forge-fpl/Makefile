@@ -1,29 +1,24 @@
 PORTNAME=	octave-forge-fpl
 PORTVERSION=	1.3.5
-PORTREVISION=	16
+PORTREVISION=	18
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${OCTAVE_PKGNAME}
+RUN_DEPENDS=	dx:graphics/opendx
 
-RUN_DEPENDS+=	dx:graphics/opendx
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
+USES=		octave
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+OCTAVE_SRC=		${OCTAVE_PKGNAME}
 
 .include <bsd.port.mk>

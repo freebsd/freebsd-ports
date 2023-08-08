@@ -1,8 +1,12 @@
 PORTNAME=	gthumb
 PORTVERSION=	3.12.2
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gthumb/-/commit/
+PATCHFILES=	2133520496afd179702953a5d07aa99b5209f9cf.patch:-p1 #Fix build with libraw >= 0.21.0
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME environment
@@ -26,7 +30,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
 USES=		bison compiler:c++11-lib cpe desktop-file-utils gettext gl \
 		gnome jpeg localbase:ldflags meson pkgconfig \
-		python:3.5+,build shebangfix tar:xz xorg
+		python:build shebangfix tar:xz xorg
 USE_GL=		egl
 USE_GNOME=	cairo gtk30 intltool librsvg2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrandr xi
@@ -66,9 +70,9 @@ GLIB_SCHEMAS=	org.gnome.gthumb.change-date.gschema.xml \
 		org.gnome.gthumb.catalogs.gschema.xml \
 		org.gnome.gthumb.terminal.gschema.xml
 
-OPTIONS_DEFINE=		BRASERO CLUTTER EXIV2 GSTREAMER RAW SECRET \
+OPTIONS_DEFINE=		BRASERO CLUTTER EXIV2 GSTREAMER JXL RAW SECRET \
 			WEBP WEBSERVICES YELP
-OPTIONS_DEFAULT=	BRASERO CLUTTER EXIV2 GSTREAMER RAW SECRET \
+OPTIONS_DEFAULT=	BRASERO CLUTTER EXIV2 GSTREAMER JXL RAW SECRET \
 			WEBP WEBSERVICES YELP
 OPTIONS_SUB=		yes
 
@@ -82,6 +86,8 @@ EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_MESON_TRUE=	exiv2
 GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_TRUE=	gstreamer
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_MESON_TRUE=		libjxl
 RAW_DESC=		Raw image support via libraw
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
 RAW_MESON_TRUE=		libraw

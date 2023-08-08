@@ -3,21 +3,29 @@ PORTVERSION=	0.5
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Packet sniffer program. For educational use
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf cpe
+CPE_VENDOR=	sniffit_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
-
-CPE_VENDOR=	sniffit_project
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sniffit ${STAGEDIR}${PREFIX}/sbin

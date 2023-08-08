@@ -1,6 +1,7 @@
 include/cpr/accept_encoding.h
 include/cpr/api.h
 include/cpr/async.h
+include/cpr/async_wrapper.h
 include/cpr/auth.h
 include/cpr/bearer.h
 include/cpr/body.h
@@ -14,8 +15,10 @@ include/cpr/cprtypes.h
 include/cpr/cprver.h
 include/cpr/curl_container.h
 include/cpr/curlholder.h
+include/cpr/curlmultiholder.h
 include/cpr/error.h
 include/cpr/file.h
+include/cpr/filesystem.h
 include/cpr/http_version.h
 include/cpr/interceptor.h
 include/cpr/interface.h
@@ -24,6 +27,7 @@ include/cpr/local_port.h
 include/cpr/local_port_range.h
 include/cpr/low_speed.h
 include/cpr/multipart.h
+include/cpr/multiperform.h
 include/cpr/parameters.h
 include/cpr/payload.h
 include/cpr/proxies.h
@@ -31,6 +35,7 @@ include/cpr/proxyauth.h
 include/cpr/range.h
 include/cpr/redirect.h
 include/cpr/reserve_size.h
+include/cpr/resolve.h
 include/cpr/response.h
 include/cpr/session.h
 include/cpr/singleton.h

@@ -30,11 +30,11 @@ include/KF5/Solid/solid/portablemediaplayer.h
 include/KF5/Solid/solid/predicate.h
 include/KF5/Solid/solid/processor.h
 include/KF5/Solid/solid/solid_export.h
-include/KF5/Solid/solid_version.h
 include/KF5/Solid/solid/solidnamespace.h
 include/KF5/Solid/solid/storageaccess.h
 include/KF5/Solid/solid/storagedrive.h
 include/KF5/Solid/solid/storagevolume.h
+include/KF5/Solid/solid_version.h
 lib/cmake/KF5Solid/KF5SolidConfig.cmake
 lib/cmake/KF5Solid/KF5SolidConfigVersion.cmake
 lib/cmake/KF5Solid/KF5SolidTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -42,11 +42,10 @@ lib/cmake/KF5Solid/KF5SolidTargets.cmake
 lib/libKF5Solid.so
 lib/libKF5Solid.so.5
 lib/libKF5Solid.so.%%KDE_FRAMEWORKS_VERSION%%
+%%QT_MKSPECDIR%%/modules/qt_Solid.pri
 %%QT_QMLDIR%%/org/kde/solid/libsolidextensionplugin.so
 %%QT_QMLDIR%%/org/kde/solid/qmldir
-%%QT_MKSPECDIR%%/modules/qt_Solid.pri
 share/locale/ar/LC_MESSAGES/solid5_qt.qm
-share/locale/ast/LC_MESSAGES/solid5_qt.qm
 share/locale/az/LC_MESSAGES/solid5_qt.qm
 share/locale/bg/LC_MESSAGES/solid5_qt.qm
 share/locale/bs/LC_MESSAGES/solid5_qt.qm
@@ -74,6 +73,7 @@ share/locale/id/LC_MESSAGES/solid5_qt.qm
 share/locale/is/LC_MESSAGES/solid5_qt.qm
 share/locale/it/LC_MESSAGES/solid5_qt.qm
 share/locale/ja/LC_MESSAGES/solid5_qt.qm
+share/locale/ka/LC_MESSAGES/solid5_qt.qm
 share/locale/kk/LC_MESSAGES/solid5_qt.qm
 share/locale/km/LC_MESSAGES/solid5_qt.qm
 share/locale/ko/LC_MESSAGES/solid5_qt.qm

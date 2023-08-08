@@ -1,7 +1,7 @@
 PORTNAME=	jsonrpclib-pelix
 PORTVERSION=	0.4.3.2
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/jsonrpclib-pelix/
 
 LICENSE=	APACHE20
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

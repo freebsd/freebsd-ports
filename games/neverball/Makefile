@@ -1,9 +1,9 @@
 PORTNAME=	neverball
 PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://icculus.org/neverball/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://icculus.org/neverball/ \
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course

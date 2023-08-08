@@ -1,0 +1,18 @@
+CGIF is a fast and lightweight GIF encoder that can create GIF animations and
+images. Summary of the main features:
+- user-defined global or local color-palette with up to 256 colors (limit of the
+  GIF format)
+- size-optimizations for GIF animations:
+  - option to set a pixel to transparent if it has identical color in the
+    previous frame (transparency optimization)
+  - do encoding just for the rectangular area that differs from the previous
+    frame (width/height optimization)
+- fast: a GIF with 256 colors and 1024x1024 pixels can be created in below 50 ms
+  even on a minimalistic system
+- MIT license (permissive)
+- different options for GIF animations: static image, N repetitions, infinite
+  repetitions
+- additional source-code for verifying the encoder after making changes
+- user-defined delay time from one frame to the next (can be set independently
+  for each frame)
+- source-code conforms to the C99 standard

@@ -1,11 +1,11 @@
 PORTNAME=	retro12
-DISTVERSION=	2021.4
+DISTVERSION=	2023.3
 CATEGORIES=	lang
 MASTER_SITES=	http://forthworks.com/retro/r/ \
 		https://forthworks.com/retro/r/
 DISTNAME=	${PORTNAME:tu}-${DISTVERSION}
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	crc@forthworks.com
 COMMENT=	Clean, elegant, and pragmatic dialect of Forth
 WWW=		https://forthworks.com/retro
 
@@ -19,7 +19,6 @@ SHEBANG_FILES=	example/Atua*
 SHEBANG_LANG=	retro
 
 MAKE_ENV=	DATADIR=${DATADIR} \
-		DESTDIR=${DESTDIR} \
 		DOCSDIR=${DOCSDIR} \
 		EXAMPLESDIR=${EXAMPLESDIR} \
 		PREFIX=${PREFIX}
@@ -41,7 +40,7 @@ PLIST_FILES=	bin/retro \
 
 PORTDATA=	glossary.retro ngaImage tests words.tsv
 
-PORTDOCS=	README RELEASE-NOTES RETRO-Book.md words.tsv
+PORTDOCS=	README.md RELEASE-NOTES RETRO-Book.md words.tsv
 
 PORTEXAMPLES=	example
 

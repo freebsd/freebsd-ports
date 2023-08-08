@@ -1,11 +1,11 @@
 PORTNAME=	dunelegacy
 PORTVERSION=	0.96.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open source clone of Dune II
 WWW=		http://dunelegacy.sourceforge.net/website/
 

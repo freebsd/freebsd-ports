@@ -66,10 +66,10 @@
 -	cp unsquashfs $(INSTALL_DIR)
 -	ln -fs unsquashfs $(INSTALL_DIR)/sqfscat
 -	ln -fs mksquashfs $(INSTALL_DIR)/sqfstar
--	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(INSTALL_MANPAGES_DIR)"
+-	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(INSTALL_MANPAGES_DIR)" "$(USE_PREBUILT_MANPAGES)"
 +	mkdir -p $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_PROGRAM} mksquashfs $(DESTDIR)$(PREFIX)/bin
-+	${BSD_INSTALL_PROGRAM} unsquashfs $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) mksquashfs $(DESTDIR)$(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) unsquashfs $(DESTDIR)$(PREFIX)/bin
 +	ln -fs unsquashfs $(DESTDIR)$(INSTALL_DIR)/sqfscat
 +	ln -fs mksquashfs $(DESTDIR)$(INSTALL_DIR)/sqfstar
-+	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(DESTDIR)$(INSTALL_MANPAGES_DIR)"
++	../generate-manpages/install-manpages.sh $(shell pwd)/.. "$(DESTDIR)$(INSTALL_MANPAGES_DIR)" "$(USE_PREBUILT_MANPAGES)"

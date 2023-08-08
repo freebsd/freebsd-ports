@@ -13,7 +13,7 @@
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	3.0.8
+PORTVERSION=	3.1.5
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
@@ -25,7 +25,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcourier-unicode.so:devel/courier-unicode \
-		libidn.so:dns/libidn \
+		libidn2.so:dns/libidn2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++11-lang cpe iconv localbase:ldflags perl5 pkgconfig \
@@ -42,15 +42,9 @@ CONFLICTS=	courier-0.65* libunicode
 
 MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 
-FIXDOCPATH=	libs/liblock/lockmail.1 libs/maildir/deliverquota.8.in \
-		libs/maildir/maildir.5 libs/maildir/maildiracl.1.in \
-		libs/maildir/maildirkw.1 libs/maildir/maildirmake.1.in \
-		libs/maildir/maildirquota.7 libs/maildrop/mailbot.1 \
-		libs/maildrop/maildrop.1.in libs/maildrop/maildropex.7 \
-		libs/maildrop/maildropfilter.7.in libs/maildrop/maildropgdbm.7 \
-		libs/maildrop/reformail.1 \
-		libs/rfc2045/makemime.1 libs/rfc2045/reformime.1 \
-		libs/rfc2045/rfc2045.3 libs/rfc822/rfc822.3
+FIXDOCPATH=	libs/maildir/deliverquota.8.in libs/maildir/maildir.5 \
+		libs/maildir/maildiracl.1.in libs/maildir/maildirkw.1 \
+		libs/maildir/maildirmake.1.in libs/maildir/maildirquota.7 \
 
 DOCS=	AUTHORS INSTALL INSTALL.html README README.html README.postfix \
 	UPGRADE UPGRADE.html maildroptips.txt maildir/README.*

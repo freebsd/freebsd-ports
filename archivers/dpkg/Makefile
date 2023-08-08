@@ -1,5 +1,5 @@
 PORTNAME=	dpkg
-PORTVERSION=	1.19.7
+PORTVERSION=	1.19.8
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	dpkg_${PORTVERSION}
@@ -17,10 +17,11 @@ BUILD_DEPENDS=	po4a:textproc/po4a \
 RUN_DEPENDS=	gtar:archivers/gtar \
 		gpatch:devel/patch
 
-USES=		compiler:c11 cpe gmake iconv libtool localbase ncurses perl5 \
-		pkgconfig tar:xz
-
+USES=		compiler:c11 cpe gmake iconv libtool ncurses perl5 pkgconfig \
+		tar:xz
+USES+=		localbase
 CPE_VENDOR=	debian
+USE_CXXSTD=	c++14
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 DPKGDIR?=	/var/db/dpkg
 PLIST_SUB=	DPKGDIR=${DPKGDIR}

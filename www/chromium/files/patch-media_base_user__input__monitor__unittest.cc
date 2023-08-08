@@ -1,4 +1,4 @@
---- media/base/user_input_monitor_unittest.cc.orig	2022-02-28 16:54:41 UTC
+--- media/base/user_input_monitor_unittest.cc.orig	2023-02-08 09:03:45 UTC
 +++ media/base/user_input_monitor_unittest.cc
 @@ -13,7 +13,7 @@
  #include "build/build_config.h"
@@ -18,7 +18,7 @@
    base::test::TaskEnvironment task_environment(
        base::test::TaskEnvironment::MainThreadType::IO);
  #else
-@@ -71,7 +71,7 @@ TEST_F(UserInputMonitorTest, CreatePlatformSpecific) {
+@@ -72,7 +72,7 @@ TEST_F(UserInputMonitorTest, CreatePlatformSpecific) {
  }
  
  TEST_F(UserInputMonitorTest, CreatePlatformSpecificWithMapping) {

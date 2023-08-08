@@ -1,0 +1,10 @@
+"system-auth" doesn't exist on non-Linux.
+
+pam_unix(8) requires root priveleges to access master.passwd(5),
+so try authenticating via setuid helper first.
+
+--- pam.d/waylock.orig	2023-01-08 18:59:32 UTC
++++ pam.d/waylock
+@@ -1 +1 @@
+-auth include system-auth
++auth include unix-selfauth

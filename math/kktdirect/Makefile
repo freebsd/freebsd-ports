@@ -1,6 +1,6 @@
 PORTNAME=	kktdirect
 PORTVERSION=	0.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.ubc.ca/~rbridson/download/ LOCAL/bf
 DISTNAME=	KKTDirect${PORTVERSION}

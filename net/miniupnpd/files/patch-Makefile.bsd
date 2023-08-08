@@ -1,35 +1,13 @@
---- Makefile.bsd.orig	2020-05-10 16:58:42 UTC
+--- Makefile.bsd.orig	2023-02-17 03:09:33 UTC
 +++ Makefile.bsd
-@@ -121,8 +121,7 @@ LIBS += -lssl -lcrypto
- 
- INSTALLBINDIR = $(PREFIX)/sbin
- INSTALLETCDIR = $(PREFIX)/etc
--# INSTALLMANDIR = $(PREFIX)/man
--INSTALLMANDIR = /usr/share/man
-+INSTALLMANDIR = $(MANPREFIX)/man
- 
- all:	$(EXECUTABLES)
- 
-@@ -140,10 +139,10 @@ install:	miniupnpd genuuid
+@@ -150,8 +150,8 @@ install:	miniupnpd genuuid
  	$(INSTALL) -d $(DESTDIR)$(INSTALLBINDIR)
  	$(INSTALL) -m 755 miniupnpd $(DESTDIR)$(INSTALLBINDIR)
  	$(INSTALL) -d $(DESTDIR)$(INSTALLETCDIR)
 -	$(INSTALL) -b miniupnpd.conf $(DESTDIR)$(INSTALLETCDIR)
+-	$(INSTALL) -d $(DESTDIR)$(INSTALLMANDIR)
 +	$(INSTALL) -b miniupnpd.conf $(DESTDIR)$(INSTALLETCDIR)/miniupnpd.conf.sample
- 	# TODO : install man page correctly
--#	$(INSTALL) -d $(INSTALLMANDIR)
--#	$(INSTALL) miniupnpd.8 $(INSTALLMANDIR)/cat8/miniupnpd.0
 +	$(INSTALL) -d $(DESTDIR)$(INSTALLMANDIR)/man8
-+	$(INSTALL) miniupnpd.8 $(DESTDIR)$(INSTALLMANDIR)/man8/miniupnpd.8
+ 	$(INSTALL) -m 644 miniupnpd.8 $(DESTDIR)$(INSTALLMANDIR)/man8/miniupnpd.8
  
  # genuuid is using the uuid cli tool available under OpenBSD 4.0 in
- # the uuid-1.5.0 package
-@@ -187,7 +186,7 @@ dox:	miniupnpd.doxyconf
- 	$(DOXYGEN) $>
- 
- miniupnpd: config.h $(ALLOBJS)
--	$(CC) $(LDFLAGS) -o $@ $(ALLOBJS) $(LIBS)
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(ALLOBJS) $(LIBS)
- 
- # BSDmake :
- #	$(CC) $(LDFLAGS) -o $@ $> $(LIBS)

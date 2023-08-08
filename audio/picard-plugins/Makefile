@@ -1,5 +1,5 @@
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20220607
+PORTVERSION=	2.0.20230725
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -9,11 +9,11 @@ WWW=		https://picard.musicbrainz.org/plugins/
 LICENSE=	GPLv2+ GPLv3+ MIT WTFPL
 LICENSE_COMB=	multi
 
-USES=		python:3.7+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	ed8d64c
+GH_TAGNAME=	c5708b2
 
 PORTSCOUT=	limit:^2\.
 
@@ -22,9 +22,7 @@ NO_ARCH=	yes
 BUILD_WRKSRC=	${WRKSRC}/build
 PLUGINSDIR=	${PYTHON_SITELIBDIR}/picard/plugins
 
-OPTIONS_DEFINE=		BPM DOCS MOODBAR
-OPTIONS_GROUP=		REPLAYGAIN
-OPTIONS_GROUP_REPLAYGAIN=	FLAC MP3 VORBIS WAVPACK
+OPTIONS_DEFINE=		BPM DOCS MOODBAR REPLAYGAIN2
 OPTIONS_SUB=		yes
 
 BPM_DESC=		Beats per minute
@@ -36,11 +34,11 @@ BPM_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.bmp
 MOODBAR_DESC=		Generate moodbar files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
 
-REPLAYGAIN_DESC=	ReplayGain audio normalization
-FLAC_RUN_DEPENDS=	metaflac:audio/flac
-MP3_RUN_DEPENDS=	mp3gain:audio/mp3gain
-VORBIS_RUN_DEPENDS=	vorbisgain:audio/vorbisgain
-WAVPACK_RUN_DEPENDS=	wvgain:audio/wavpack
+REPLAYGAIN2_DESC=		ReplayGain 2.0 audio normalization
+REPLAYGAIN2_RUN_DEPENDS=	rsgain:audio/rsgain
+
+post-patch:
+	${RM} -rf ${WRKSRC}/plugins/haikuattrs
 
 do-build:
 # Plugins that include a separate UI (those with an __init__.py) must

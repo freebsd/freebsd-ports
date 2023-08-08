@@ -1,6 +1,7 @@
 PORTNAME=	ezdxf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.3
+DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.1:devel/py-pyparsing@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}geomdl>0:graphics/py-geomdl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geomdl>0:graphics/py-geomdl@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
+USES=		python pytest
 USE_PYTHON=	concurrent distutils autoplist
 
 USE_GITHUB=	yes

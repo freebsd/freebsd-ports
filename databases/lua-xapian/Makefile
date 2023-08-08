@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.23
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -44,8 +44,5 @@ CONFLICTS_INSTALL=	xapian-bindings12
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

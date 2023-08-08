@@ -2,8 +2,9 @@
 
 PORTNAME=	levmar
 DISTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +20,18 @@ LIB_DEPENDS=	libblas.so:math/blas \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|ö|o|' ${WRKSRC}/AUTHORS # breaks because of non-ascii chars
@@ -31,4 +42,4 @@ post-install:
 do-test:
 	@cd ${WRKSRC}/levmar/tests && ${PYTHON_CMD} -m pytest --pyargs levmar
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

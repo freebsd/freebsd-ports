@@ -1,0 +1,3 @@
+authoscope is a scriptable network authentication cracker. While the space for
+common service bruteforce is already very well saturated, you may still end up
+writing your own python scripts when testing credentials for web applications.

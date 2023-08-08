@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig	2022-08-31 12:19:35 UTC
+--- third_party/blink/renderer/platform/graphics/begin_frame_provider.cc.orig	2023-04-05 11:05:06 UTC
 +++ third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
-@@ -76,8 +76,12 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
+@@ -77,8 +77,12 @@ void BeginFrameProvider::CreateCompositorFrameSinkIfNe
  
    // Once we are using RAF, this thread is driving user interactive display
    // updates. Update priority accordingly.

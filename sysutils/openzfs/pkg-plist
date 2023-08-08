@@ -1,6 +1,7 @@
 %%PYTHON%%bin/arc_summary
 %%PYTHON%%bin/arcstat
 %%PYTHON%%bin/dbufstat
+%%PYTHON%%bin/zilstat
 %%TESTS%%bin/raidz_test
 etc/bash_completion.d/zfs
 etc/sudoers.d/zfs
@@ -63,6 +64,7 @@ include/libspl/stdlib.h
 include/libspl/string.h
 include/libspl/sys/acl.h
 include/libspl/sys/acl_impl.h
+include/libspl/sys/asm_linkage.h
 include/libspl/sys/byteorder.h
 include/libspl/sys/callb.h
 include/libspl/sys/cmn_err.h
@@ -74,6 +76,7 @@ include/libspl/sys/dktp/fdisk.h
 include/libspl/sys/fcntl.h
 include/libspl/sys/feature_tests.h
 include/libspl/sys/file.h
+include/libspl/sys/ia32/asm_linkage.h
 include/libspl/sys/inttypes.h
 include/libspl/sys/isa_defs.h
 include/libspl/sys/kmem.h
@@ -126,6 +129,7 @@ include/libzfs/sys/abd_impl.h
 include/libzfs/sys/aggsum.h
 include/libzfs/sys/arc.h
 include/libzfs/sys/arc_impl.h
+include/libzfs/sys/asm_linkage.h
 include/libzfs/sys/avl.h
 include/libzfs/sys/avl_impl.h
 include/libzfs/sys/bitops.h
@@ -193,7 +197,6 @@ include/libzfs/sys/sa.h
 include/libzfs/sys/sa_impl.h
 include/libzfs/sys/skein.h
 include/libzfs/sys/spa.h
-include/libzfs/sys/spa_boot.h
 include/libzfs/sys/spa_checkpoint.h
 include/libzfs/sys/spa_checksum.h
 include/libzfs/sys/spa_impl.h
@@ -787,6 +790,8 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_neg.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_recursive.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_recursive.zcp
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_rename.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_rename.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_simple.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.snapshot_simple.zcp
 %%TESTS%%share/zfs/zfs-tests/tests/functional/channel_program/synctask_core/tst.terminate_by_signal.ksh
@@ -1624,6 +1629,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zfs_unmount_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zfs_unshare_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zfs_upgrade_001_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zilstat_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zpool_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zpool_add_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_user/misc/zpool_attach_001_neg.ksh
@@ -1743,12 +1749,18 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/events/events_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/events/events_common.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/events/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/events/zed_cksum_config.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/events/zed_cksum_reported.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/events/zed_fd_spill.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/events/zed_io_config.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/events/zed_rc_filter.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/exec_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/exec_002_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/exec/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/fadvise_sequential.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/fadvise/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_prealloc.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/fallocate/fallocate_punch-hole.ksh
@@ -1807,6 +1819,15 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/history/sparc.orig_history.txt
 %%TESTS%%share/zfs/zfs-tests/tests/functional/history/zfs-pool-v4.dat.Z
 %%TESTS%%share/zfs/zfs-tests/tests/functional/hkdf/hkdf_test
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount.cfg
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_001.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_002.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_003.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_004.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_005.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/idmap_mount_common.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/idmap_mount/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/inheritance/README.config
 %%TESTS%%share/zfs/zfs-tests/tests/functional/inheritance/README.state
 %%TESTS%%share/zfs/zfs-tests/tests/functional/inheritance/cleanup.ksh
@@ -2172,6 +2193,11 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rename_dirs/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rename_dirs/rename_dirs_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rename_dirs/setup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/renameat2/cleanup.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/renameat2/renameat2_exchange.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/renameat2/renameat2_noreplace.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/renameat2/renameat2_whiteout.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/renameat2/setup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/replacement/attach_import.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/replacement/attach_multiple.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/replacement/attach_rebuild.ksh
@@ -2254,6 +2280,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_027_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_028_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_029_neg.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/rsend_030_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-L_toggle.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_embedded_blocks.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_incremental.ksh
@@ -2267,12 +2294,15 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_verify_contents.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_verify_ratio.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_volume.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_zstream_recompress.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-c_zstreamdump.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-cpL_varied_recsize.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send-wR_encrypted_zvol.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_doall.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_files.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_freeobjects.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_hierarchy.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_incremental.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_props.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_encrypted_truncated_files.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_freeobjects.ksh
@@ -2282,6 +2312,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_mixed_raw.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_partial_dataset.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_raw_ashift.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_raw_large_blocks.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_raw_spill_block.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_dnode_size.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/rsend/send_realloc_encrypted_files.ksh
@@ -2396,6 +2427,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_003.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_004.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/user_namespace/user_namespace_common.kshlib
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/13709_reproducer.bz2
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/groupspace_002_pos.ksh
@@ -2420,6 +2452,7 @@ share/pam-configs/zfs_key
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_003_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_encrypted_13709.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/userquota/userspace_send_encrypted.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/vdev_zaps/setup.ksh

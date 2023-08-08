@@ -1,5 +1,5 @@
 PORTNAME=	pdf-reader
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-afm>=0.2.1<0.3:print/rubygem-afm \
 		rubygem-ttfunk>=0:print/rubygem-ttfunk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

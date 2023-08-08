@@ -1,0 +1,23 @@
+--- usr/bin/r7-office-desktopeditors.orig	2022-12-11 00:52:25 UTC
++++ usr/bin/r7-office-desktopeditors
+@@ -73,7 +73,7 @@ check_templates() {
+     return 0
+   fi
+ 
+-  SOURCE_DOC_DIR="/opt/r7-office/desktopeditors/converter/empty"
++  SOURCE_DOC_DIR="%%LOCALBASE%%/share/r7-office/desktopeditors/converter/empty"
+ 
+   set_names_ru
+ 
+@@ -107,8 +107,9 @@ check_templates "$@"
+ 
+ check_templates "$@"
+ 
+-DIR=/opt/r7-office/desktopeditors
+-DIR_MV=/opt/r7-office/mediaviewer
++DIR=%%LOCALBASE%%/share/r7-office/desktopeditors
++DIR_MV=%%LOCALBASE%%/share/r7-office/mediaviewer
+ export LD_LIBRARY_PATH=$DIR:$DIR/converter:$DIR_MV:$LD_LIBRARY_PATH
+ export VLC_PLUGIN_PATH=$DIR_MV/plugins
++export LC_CTYPE=ru_RU.UTF-8
+ exec $DIR/DesktopEditors "$@"

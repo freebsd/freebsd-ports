@@ -23,6 +23,7 @@ libexec/unixbench/pgms/short
 libexec/unixbench/pgms/spawn
 libexec/unixbench/pgms/syscall
 libexec/unixbench/pgms/tst.sh
+libexec/unixbench/pgms/ubgears
 libexec/unixbench/pgms/unixbench.logo
 libexec/unixbench/pgms/whetstone-double
 libexec/unixbench/testdir/cctest.c

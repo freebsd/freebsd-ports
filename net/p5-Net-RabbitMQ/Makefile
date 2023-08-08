@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:JESUS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Net--RabbitMQ-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to interact with RabbitMQ over AMQP using librabbitmq
 WWW=		https://metacpan.org/release/Net--RabbitMQ
 

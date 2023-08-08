@@ -130,6 +130,7 @@ eval ": \${${name}_dir:=\"%%PREFIX%%/etc/openvpn\"}"
 configfile="$(eval echo \${${name}_configfile})"
 dir="$(eval echo \${${name}_dir})"
 interfaces="$(eval echo \${${name}_if})"
+flags="$(eval echo \${${name}_flags})"
 
 required_modules=
 for i in $interfaces ; do
@@ -138,6 +139,6 @@ done
 
 required_files=${configfile}
 
-command_args="--cd ${dir} --daemon ${name} --config ${configfile} --writepid ${pidfile}"
+command_args="--cd ${dir} --daemon ${name} --config ${configfile} --writepid ${pidfile} ${flags}"
 
 run_rc_command "$1"

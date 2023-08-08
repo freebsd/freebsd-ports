@@ -18,5 +18,6 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	canna
 INSTALL_TARGET=	instsgs
 MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS+=	CCOPTIONS="-Wno-error=int-conversion"
 
 .include <bsd.port.mk>

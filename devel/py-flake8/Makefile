@@ -1,13 +1,12 @@
 PORTNAME=	flake8
-PORTVERSION=	5.0.4
+PORTVERSION=	6.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Code checking using pep8 and pyflakes
 WWW=		https://pypi.org/project/flake8/ \
-		https://gitlab.com/pycqa/flake8
+		https://github.com/PyCQA/flake8
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,9 +16,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.8+ pytest
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	PyCQA
+USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
-PYTEST_BROKEN_TESTS=	test_up_to_date test_all_pyflakes_messages_have_flake8_codes_assigned
+PYTEST_BROKEN_TESTS=	test_all_pyflakes_messages_have_flake8_codes_assigned
+
+post-patch:
+	@${REINPLACE_CMD} -Ee '/(mccabe|pycodestyle|pyflakes)/s|>.*||' ${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>

@@ -12,10 +12,12 @@ LICENSE=	BSD2CLAUSE
 USES=		tar:bzip2 uidfix
 USE_LDCONFIG=	yes
 
-.if defined(NO_PROFILE)
+.include <bsd.port.pre.mk>
+
+.if defined(NO_PROFILE) || ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079 )
 PLIST_SUB+=	HURRRR="@comment "
 .else
 PLIST_SUB+=	HURRRR=""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

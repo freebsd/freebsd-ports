@@ -1,6 +1,7 @@
 PORTNAME=	openage
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	freebsd@sysctl.cz
@@ -9,6 +10,8 @@ WWW=		https://openage.sft.mx/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3
+
+BROKEN=		fails to build
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -28,7 +31,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python:3.7-3.9 qt:5 sdl shebangfix
+USES=		cmake compiler:c++17-lang eigen:3 gl ncurses:base python:3.8-3.9 qt:5 sdl shebangfix
 SHEBANG_FILES=	configure run.py.in buildsystem/cythonize.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	SFTtech

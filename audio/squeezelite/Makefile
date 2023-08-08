@@ -1,5 +1,6 @@
 PORTNAME=	squeezelite
-PORTVERSION=	1.9.7.1253
+DISTVERSION=	1.9.9.1422
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	jockl@pianojockl.org
@@ -16,10 +17,13 @@ LIB_DEPENDS=	libfaad.so:audio/faad \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg
 
-USES=		gmake ssl
+USES=		gmake localbase:ldflags ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ralph-irving
-GH_TAGNAME=	7b13fd9
+GH_TAGNAME=	6394b3f
+
+CPPFLAGS+=	-I${PREFIX}/include/portaudio2
+LDFLAGS+=	-lportaudio -lm
 
 OPTIONS_DEFINE=	SSL FFMPEG RESAMPLE DSD SELFPIPE OPUS LINKALL
 OPTIONS_DEFAULT=SSL RESAMPLE FFMPEG DSD LINKALL
@@ -37,7 +41,7 @@ LINKALL_VARS=	MENV+=" -DLINKALL"
 SELFPIPE_VARS=	MENV+=" -DSELFPIPE"
 OPUS_VARS=	MENV+=" -DOPUS"
 
-MAKE_ENV=	OPTS="-DGPIO ${MENV}"
+MAKE_ENV=	OPTS="-DGPIO -DNO_MAD ${MENV}"
 
 OPUS_LIB_DEPENDS=	libopusfile.so:audio/opusfile \
 			libopus.so:audio/opus

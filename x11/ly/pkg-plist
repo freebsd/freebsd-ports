@@ -1,11 +1,20 @@
 bin/ly
-@dir %%ETCDIR%%/lang
+%%ETCDIR%%/lang/cat.ini
+%%ETCDIR%%/lang/cs.ini
+%%ETCDIR%%/lang/de.ini
 %%ETCDIR%%/lang/en.ini
 %%ETCDIR%%/lang/es.ini
 %%ETCDIR%%/lang/fr.ini
+%%ETCDIR%%/lang/it.ini
+%%ETCDIR%%/lang/pl.ini
 %%ETCDIR%%/lang/pt.ini
+%%ETCDIR%%/lang/pt_BR.ini
 %%ETCDIR%%/lang/ro.ini
 %%ETCDIR%%/lang/ru.ini
+%%ETCDIR%%/lang/sr.ini
+%%ETCDIR%%/lang/sv.ini
+%%ETCDIR%%/lang/tr.ini
+%%ETCDIR%%/lang/uk.ini
 @sample %%ETCDIR%%/config.ini.sample
 @sample %%ETCDIR%%/wsetup.sh.sample
 @sample %%ETCDIR%%/xsetup.sh.sample

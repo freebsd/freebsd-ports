@@ -1,0 +1,4 @@
+Programmatically send startup/shutdown lifespan events into ASGI applications.
+When used in combination with an ASGI-capable HTTP client such as HTTPX, this
+allows mocking or testing ASGI applications without having to spin up an ASGI
+server.

@@ -1,5 +1,5 @@
 PORTNAME=	dwave-samplers
-DISTVERSION=	1.0.0.dev1
+DISTVERSION=	1.1.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,14 +10,15 @@ WWW=		https://github.com/dwavesystems/dwave-samplers
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>0:science/py-dimod@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.1:science/py-dimod@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=2.6.3:math/py-networkx@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}reno>0:textproc/py-reno@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils cython unittest
 
 USE_GITHUB=	yes
@@ -36,6 +37,10 @@ post-install:
 	)
 	# strip binaries
 	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/samplers -name "*${PYTHON_EXT_SUFFIX}.so" | ${XARGS} ${STRIP_CMD}
+	# remove conflicting __init__.py, see https://github.com/dwavesystems/dwave-system/issues/462
+	@${RM} -r \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__init__.py \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/dwave/__pycache__
 
 post-test:
 	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/example.py

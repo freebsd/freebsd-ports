@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-amqp>=0.7.1:net/rubygem-amqp \
 		rubygem-trollop1>=1.16.2:devel/rubygem-trollop1
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/amqp-deleteq bin/amqp-dequeue bin/amqp-enqueue \

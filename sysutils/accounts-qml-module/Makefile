@@ -21,6 +21,6 @@ USE_QT=		core declarative gui network testlib xml \
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	cfadea7ba8ba4011ae20d771696eb74deb87201e
+GL_TAGNAME=	cfadea7ba8ba4011ae20d771696eb74deb87201e
 
 .include <bsd.port.mk>

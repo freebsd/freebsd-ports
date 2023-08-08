@@ -1,5 +1,5 @@
 PORTNAME=	Text-ANSITable
-PORTVERSION=	0.608
+PORTVERSION=	0.609
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-BorderStyles-Standard>=0:devel/p5-BorderStyles-Standard \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Log-ger>=0.038:devel/p5-Log-ger \
 		p5-Module-List>=0:devel/p5-Module-List \
-		p5-Module-Load-Util>=0.004:devel/p5-Module-Load-Util \
+		p5-Module-Load-Util>=0.009:devel/p5-Module-Load-Util \
 		p5-Moo>=0:devel/p5-Moo \
 		p5-Package-MoreUtil>=0.590:devel/p5-Package-MoreUtil \
 		p5-Parse-VarName>=0:devel/p5-Parse-VarName \

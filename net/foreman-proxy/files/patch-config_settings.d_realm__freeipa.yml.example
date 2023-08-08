@@ -1,0 +1,14 @@
+--- config/settings.d/realm_freeipa.yml.example.orig	2022-09-08 13:50:11 UTC
++++ config/settings.d/realm_freeipa.yml.example
+@@ -1,9 +1,9 @@
+ ---
+ # Authentication for Kerberos-based Realms
+-:keytab_path: /etc/foreman-proxy/freeipa.keytab
++:keytab_path: %%LOCALBASE%%/etc/foreman-proxy/freeipa.keytab
+ :principal: realm-proxy@EXAMPLE.COM
+ 
+-:ipa_config: /etc/ipa/default.conf
++:ipa_config: %%LOCALBASE%%/etc/ipa/default.conf
+ # Remove from DNS when deleting the FreeIPA entry
+ :remove_dns: true
+ 

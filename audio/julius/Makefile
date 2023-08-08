@@ -6,7 +6,7 @@ MASTER_SITES=	OSDN/julius
 
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Large Vocabulary Continuous Speech Recognition Engine
-WWW=		http://julius.sourceforge.jp/en_index.php
+WWW=		https://github.com/julius-speech/julius
 
 BUILD_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode
 RUN_DEPENDS=	ja-p5-Jcode>=0:japanese/p5-Jcode

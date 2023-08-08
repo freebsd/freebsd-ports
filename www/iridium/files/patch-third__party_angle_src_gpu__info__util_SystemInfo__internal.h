@@ -1,6 +1,6 @@
---- third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig	2022-03-28 18:11:04 UTC
+--- third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig	2023-07-24 14:27:53 UTC
 +++ third_party/angle/src/gpu_info_util/SystemInfo_internal.h
-@@ -14,6 +14,13 @@
+@@ -15,6 +15,13 @@
  namespace angle
  {
  

@@ -12,7 +12,7 @@ WWW=		https://www.w3.org/2003/06/mod_fileiri/
 
 #LICENSE=	AL11
 
-USES=		apache:2.2+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

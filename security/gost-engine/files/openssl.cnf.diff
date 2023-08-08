@@ -1,0 +1,18 @@
+--- openssl.cnf.orig	2023-06-26 14:18:41.158316000 +0700
++++ openssl.cnf	2023-06-30 02:41:55.649698000 +0700
+@@ -53,6 +53,15 @@ providers = provider_sect
+ 
+ [openssl_init]
+ providers = provider_sect
++engines = engine_section
++
++[engine_section]
++gost = gost_section
++
++[gost_section]
++engine_id = gost
++dynamic_path = /usr/local/lib/engines-3/gost.so
++default_algorithms = ALL
+ 
+ # List of providers to load
+ [provider_sect]

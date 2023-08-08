@@ -1,4 +1,0 @@
-bin/golangci-lint
-%%COMPLETIONS%%etc/bash_completion.d/golangci-lint
-%%COMPLETIONS%%share/fish/vendor_completions.d/golangci-lint.fish
-%%COMPLETIONS%%share/zsh/site-functions/_golangci-lint

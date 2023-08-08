@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:flavors,web
 
-USE_PHP=	ctype json openssl pdo session
+USE_PHP=	ctype pdo session
 
 USE_GITHUB=	YES
 GH_PROJECT=	speedtest

@@ -165,10 +165,10 @@ include/ikos/frontend/llvm/pass.hpp
 lib/libikos-ar.so
 lib/libikos-llvm-to-ar.so
 lib/libikos-pp.so
-%%PYTHON_SITELIBDIR%%/ikos-3.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/ikos-3.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/ikos-3.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/ikos-3.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/ikos-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/ikos-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/ikos-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/ikos-%%PORTVERSION%%-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/ikos/__init__.py
 %%PYTHON_SITELIBDIR%%/ikos/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ikos/__pycache__/abs_int.cpython-%%PYTHON_SUFFIX%%.pyc

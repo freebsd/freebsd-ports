@@ -1,5 +1,6 @@
 PORTNAME=	wipeclean
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/ehaupt
@@ -11,6 +12,8 @@ WWW=		https://github.com/JeanJouliaCode/wipeClean
 LICENSE=	ISCL
 
 USES=		dos2unix nodejs:run tar:xz
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:

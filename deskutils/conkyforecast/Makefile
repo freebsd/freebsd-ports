@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	conky:sysutils/conky \
 		pidof:sysutils/pidof
 
-USES=		gettext python:3.6+ fonts
+USES=		gettext python fonts
 USE_PYTHON=	distutils concurrent optsuffix
 
 NO_ARCH=	yes

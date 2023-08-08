@@ -39,12 +39,4 @@ share/applications/mined.desktop
 %%DATADIR%%/setup_install/mined.ico
 %%DATADIR%%/setup_install/mined.png
 %%DATADIR%%/setup_install/mined.xpm
-%%DATADIR%%/setup_install/win/MinEd Web Manual.url
-%%DATADIR%%/setup_install/win/MinEd-AD.lnk
-%%DATADIR%%/setup_install/win/MinEd-PF.lnk
-%%DATADIR%%/setup_install/win/Uninst-AD.lnk
-%%DATADIR%%/setup_install/win/Uninst-PF.lnk
-%%DATADIR%%/setup_install/win/deleteall.bat
-%%DATADIR%%/setup_install/win/install.sh
-%%DATADIR%%/setup_install/win/uninstall.sh
 share/pixmaps/mined.xpm

@@ -1,20 +1,15 @@
 PORTNAME=	blobby
-PORTVERSION=	1.0
-PORTREVISION=	16
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Blobby%20Volley%202%20%28Linux%29/${PORTVERSION}
-DISTNAME=	blobby2-linux-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Official continuation of the famous Blobby Volley 1.x game
-WWW=		http://blobby.sourceforge.net
+WWW=		http://blobbyvolley.de
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-NOT_FOR_ARCHS=		aarch64
-NOT_FOR_ARCHS_REASON=	fails to compile: I can't tell what endian-ness to use for your architecture
 
 LIB_DEPENDS=	libphysfs.so:devel/physfs
 BUILD_DEPENDS=	zip:archivers/zip \
@@ -25,23 +20,16 @@ USES=		cmake compiler:c++11-lang dos2unix gl localbase:ldflags \
 USE_SDL=	sdl2
 USE_GL=		gl
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	danielknobe
+GH_PROJECT=	blobbyvolley2
+
 DOS2UNIX_REGEX=	.*\.(c|h|cpp)
 CMAKE_ARGS=	-DDATADIR:PATH="${DATADIR}"
-WRKSRC=		${WRKDIR}/blobby-${PORTVERSION}
 
-PORTDOCS=	AUTHORS ChangeLog README TODO
-
-DESKTOP_ENTRIES="Blobby Volley" \
-		"" \
-		"${DATADIR}/Icon.bmp" \
-		"${PORTNAME}" \
-		"Game;ArcadeGame;" \
-		""
+PORTDOCS=	AUTHORS ChangeLog README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/data/Icon.bmp ${STAGEDIR}${DATADIR}/
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

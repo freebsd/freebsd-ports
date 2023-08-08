@@ -1,0 +1,11 @@
+pytest-cpp uses pytest runner to discover and execute C++ tests. It supports
+Google Test, Boost.Test, and Catch2.
+
+This brings several benefits:
+- Allows you to run all your tests in multi-language projects with a single
+  command;
+- Execute C++ tests in parallel using pytest-xdist plugin;
+- Use --junitxml option to produce a single and uniform xml file with all your
+  test suite results;
+- Filter which tests to run using standard test filtering capabilities, such as
+  by file names, directories, keywords by using the -k option, etc.;

@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	7.19.0
+PORTVERSION=	7.25.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
-		rubygem-fast_gettext1>=1.1:devel/rubygem-fast_gettext1 \
+		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
@@ -22,15 +22,14 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-scanf>=1:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
-USES=		cpe
+USES=		cpe ruby
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
-CONFLICTS_INSTALL=	puppet6
+CONFLICTS_INSTALL=	puppet[0-9]
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
 USE_RC_SUBR=	puppet
 PORTDOCS=	LICENSE README.md
 PORTEXAMPLES=	*
@@ -54,17 +53,17 @@ CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 # Get versions from
-# https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
-FORGE_MODULES=	augeas_core=1.2.0 \
-		cron_core=1.0.5 \
-		host_core=1.0.3 \
-		mount_core=1.0.4 \
-		scheduled_task=1.0.0 \
-		selinux_core=1.1.0 \
-		sshkeys_core=2.2.0 \
-		yumrepo_core=1.0.7 \
-		zfs_core=1.2.0 \
-		zone_core=1.0.3
+# https://github.com/puppetlabs/puppet-agent/tree/7.x/configs/components
+FORGE_MODULES=	augeas_core=1.3.0 \
+		cron_core=1.2.0 \
+		host_core=1.2.0 \
+		mount_core=1.2.0 \
+		scheduled_task=3.1.1 \
+		selinux_core=1.3.0 \
+		sshkeys_core=2.4.0 \
+		yumrepo_core=1.2.0 \
+		zfs_core=1.4.0 \
+		zone_core=1.1.0
 
 .for module in ${FORGE_MODULES}
 DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge

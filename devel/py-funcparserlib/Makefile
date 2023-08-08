@@ -1,7 +1,7 @@
 PORTNAME=	funcparserlib
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tota@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://funcparserlib.pirx.ru/
 
 LICENSE=	MIT
 
-USES=		python:3.7+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

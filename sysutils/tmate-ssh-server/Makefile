@@ -1,14 +1,15 @@
 PORTNAME=	tmate-ssh-server
 PORTVERSION=	g2020071601
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Instant terminal sharing server
 WWW=		https://tmate.io/
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libmsgpackc.so:devel/msgpack \
+		libmsgpackc.so:devel/msgpack-c \
 		libssh.so:security/libssh
 
 USES=		autoreconf compiler:c11 ncurses pkgconfig

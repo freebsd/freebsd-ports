@@ -1,0 +1,34 @@
+--- Makefile.orig	2023-05-18 14:19:05.665542600 +0200
++++ Makefile	2023-05-19 11:21:17.325551500 +0200
+@@ -25,10 +25,11 @@
+ 
+ PREFIX?=/usr/local
+ DESTDIR?=/usr/local
+-MYPREFIX=$(DESTDIR)
++MYPREFIX=$(DESTDIR)$(PREFIX)
+ INSTALLBIN=$(MYPREFIX)/bin
+-INSTALLSHARE=$(MYPREFIX)/share/games
+-INSTALLMAN=$(MYPREFIX)/share/man
++INSTALLSHARE=$(MYPREFIX)/share
++INSTALLDOC=$(MYPREFIX)/share/doc
++INSTALLMAN=$(MYPREFIX)/man
+ 
+ CC?=gcc
+ AR?=ar
+@@ -97,13 +98,14 @@
+ 	install -m 755 -d $(INSTALLBIN)
+ 	install -m 755 -d $(INSTALLMAN)/man5/
+ 	install -m 755 -d $(INSTALLMAN)/man6/
++	install -m 755 -d $(INSTALLDOC)/dMagnetic/
+ 	install -m 755 -d $(INSTALLSHARE)/dMagnetic/
+ 
+ 	install -m 755 -s dMagnetic $(INSTALLBIN)/dMagnetic
+ 	install -m 644 dMagneticini.5 $(INSTALLMAN)/man5/dMagneticini.5
+ 	install -m 644 dMagnetic.6 $(INSTALLMAN)/man6/dMagnetic.6
+-	install -m 644 README.txt $(INSTALLSHARE)/dMagnetic/README.txt
+-	install -m 644 LICENSE.txt $(INSTALLSHARE)/dMagnetic/LICENSE.txt
++	install -m 644 README.txt $(INSTALLDOC)/dMagnetic/README.txt
++	install -m 644 LICENSE.txt $(INSTALLDOC)/dMagnetic/LICENSE.txt
+ 	cp dMagnetic.ini $(INSTALLSHARE)/dMagnetic/
+ 
+ 

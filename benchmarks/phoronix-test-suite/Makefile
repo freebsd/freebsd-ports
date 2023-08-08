@@ -1,6 +1,7 @@
 PORTNAME=	phoronix-test-suite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	10.8.4
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -12,29 +13,19 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	sudo:security/sudo \
-	bash:shells/bash
+		bash:shells/bash
 
 USES=		php:cli,build,flavors python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	curl dom gd openssl pcntl posix simplexml zip zlib
+USE_PHP=	curl dom gd pcntl posix simplexml zip zlib
 NO_BUILD=	yes
 
 PORTDATA=	*
 PORTDOCS=	*
 
 NO_ARCH=	yes
-SHEBANG_FILES=	ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/install.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/interim.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/pre.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.0/post.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/install.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/interim.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/pre.sh \
-				ob-cache/test-profiles/pts/shadowofthetombraider-1.0.1/post.sh \
-				ob-cache/test-profiles/pts/csgo-1.5.1/pre_linux.sh \
-				ob-cache/test-profiles/pts/dota2-1.2.2/pre_linux.sh \
-				ob-cache/test-profiles/pts/portal-1.1.1/pre_linux.sh \
-				deploy/docker/ubuntu-pts-docker-build.sh
+
+SHEBANG_GLOB=	*.sh
 
 CONFLICTS_INSTALL=	phoronix-test-suite-php[0-9][0-9] # bin/phoronix-test-suite
 
@@ -47,12 +38,6 @@ BASH_COMPLETIONS_CONFIGURE_ON=	WITH_BASH_COMPLETIONS=yes
 X11_DESC=	Install X11 icons and mimetypes
 X11_USES=	desktop-file-utils shared-mime-info
 X11_CONFIGURE_OFF=	WITHOUT_X11=yes
-
-.include <bsd.port.pre.mk>
-
-.if ${FLAVOR} != php80
-USE_PHP+=	json
-.endif
 
 post-patch:
 	@${SED} -i '' -e "s|/usr/local|${LOCALBASE}|g" \
@@ -72,4 +57,4 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} && ${CONFIGURE_ARGS} DESTDIR="${STAGEDIR}" ./install-sh ${PREFIX})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

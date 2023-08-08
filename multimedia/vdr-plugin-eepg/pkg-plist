@@ -1,4 +1,0 @@
-lib/vdr/libvdr-eepg.so.%%APIVERSION%%
-etc/vdr/plugins/eepg/eepg.equiv.IT
-@sample etc/vdr/plugins/eepg/eepg.equiv.sample
-@dir(%%VDR_USER%%,%%VDR_GROUP%%) etc/vdr/plugins/eepg

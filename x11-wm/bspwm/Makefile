@@ -20,6 +20,8 @@ USE_XORG=	xcb
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
 
+CONFLICTS_INSTALL=  bspwm-devel
+
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES CONTRIB

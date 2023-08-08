@@ -1,6 +1,6 @@
 PORTNAME=	modsecurity
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.6
+DISTVERSION=	3.0.8
 CATEGORIES=	security www
 MASTER_SITES=	https://github.com/SpiderLabs/ModSecurity/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	3
@@ -18,22 +18,23 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmaxminddb.so:net/libmaxminddb
 
 USES=		cpe gmake gnome libtool pkgconfig:build
+
+CPE_VENDOR=	trustwave
+
 USE_GNOME=	libxml2
 # GCC because of https://github.com/SpiderLabs/ModSecurity/issues/1411
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	trustwave
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lmdb --without-ssdeep --without-lua
 
-PLIST_SUB=	SHLIBVER=${DISTVERSION}
-
-ETCDIR=		${PREFIX}/etc/modsecurity
+INSTALL_TARGET=		install-strip
 
 CONFLICTS_INSTALL=	ap??-mod_security mod_security3
 
-INSTALL_TARGET=		install-strip
+ETCDIR=		${PREFIX}/etc/modsecurity
+
+PLIST_SUB=	SHLIBVER=${DISTVERSION}
 
 post-install:
 	@${MKDIR}	${STAGEDIR}${ETCDIR}

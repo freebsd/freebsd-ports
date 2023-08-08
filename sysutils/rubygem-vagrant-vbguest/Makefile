@@ -1,5 +1,5 @@
 PORTNAME=	vagrant-vbguest
-PORTVERSION=	0.30.0
+PORTVERSION=	0.31.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-i18n>=0:devel/rubygem-i18n \
 		rubygem-micromachine>=2<4:devel/rubygem-micromachine
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

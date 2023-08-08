@@ -1,4 +1,2 @@
 Official AWS Ruby gem for Amazon DocumentDB with MongoDB compatibility (Amazon
 DocDB).
-
-See also: https://github.com/aws/aws-sdk-ruby

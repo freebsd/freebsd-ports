@@ -1,6 +1,5 @@
 PORTNAME=	belle-sip
-DISTVERSION=	5.1.32
-PORTREVISION=	1
+DISTVERSION=	5.2.94
 CATEGORIES=	net java
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,7 +18,6 @@ CPE_VENDOR=	linphone
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	6cfa9cf048905756bb9e729ccc029ad19b36ca76
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 USE_LDCONFIG=	yes

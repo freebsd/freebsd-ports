@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/gnu-arch \
 		http://www.atai.org/gnuarch/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Original arch source control management CLI written in C
 WWW=		https://www.gnu.org/software/gnu-arch/
 
@@ -17,10 +17,8 @@ BUILD_DEPENDS=	gpatch:devel/patch \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig ssl
-HAS_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-TEST_TARGET=	test
 
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gnu-patch gpatch \
@@ -29,11 +27,24 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gnu-tar gtar
 CONFIGURE_ENV=	ne_cv_libsfor_SSL_library_init=yes
 
-ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
+MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	test
+
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
 
 OPTIONS_DEFINE=	DOCS
+
+ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=       -Wno-error=int-conversion
+.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+.endif
 
 pre-install:
 	${RM} -r ${ORIGWRKSRC}/docs-tla/PLUGIN \
@@ -44,6 +55,8 @@ do-install:
 	${SED} 's,^#!.*$$,#!${AWK} -f,' ${ORIGWRKSRC}/tla/=gpg-check.awk \
 		> ${WRKDIR}/tla-gpg-check
 	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}

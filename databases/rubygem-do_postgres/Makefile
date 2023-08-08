@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/do_postgres
 
 RUN_DEPENDS=	rubygem-data_objects>=0.10.17:databases/rubygem-data_objects
 
-USE_RUBY=	yes
 USES=		gem pgsql
 
 .include <bsd.port.mk>

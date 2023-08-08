@@ -1,0 +1,3 @@
+hupper is monitor for your Python process. When files change, the process will
+be restarted. It can be extended to watch arbitrary files. Reloads can also be
+triggered manually from code.

@@ -143,6 +143,7 @@ share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/org.synfig.SynfigStudio.svg
 share/locale/aa_DJ/LC_MESSAGES/synfigstudio.mo
 share/locale/ar/LC_MESSAGES/synfigstudio.mo
+share/locale/ar_EG/LC_MESSAGES/synfigstudio.mo
 share/locale/bs/LC_MESSAGES/synfigstudio.mo
 share/locale/ca/LC_MESSAGES/synfigstudio.mo
 share/locale/ca@valencia/LC_MESSAGES/synfigstudio.mo

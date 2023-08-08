@@ -1,18 +1,15 @@
 PORTNAME=	libfprint
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://people.freedesktop.org/~anarsoul/
 
-MAINTAINER=	lichray@gmail.com
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Library for fingerprint reader devices
 WWW=		http://www.reactivated.net/fprint/wiki/Libfprint
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-DEPRECATED=	Very outdated, unsupported upstream which now have systemd as a non optional requirement
-EXPIRATION_DATE=2022-12-31
 
 LIB_DEPENDS=	libnss3.so:security/nss \
 		libnspr4.so:devel/nspr

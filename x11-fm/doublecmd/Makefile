@@ -1,5 +1,6 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.11
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -21,7 +22,7 @@ USE_FPC=	cairo chm fcl-base fcl-db fcl-image fcl-json fcl-registry \
 		fcl-xml iconvenc pasjpeg rtl-extra x11 regexpr fcl-extra
 USE_GITHUB=	yes
 GH_PROJECT=	doublecmd.github.io:help
-GH_TAGNAME=	1.0.0:help
+GH_TAGNAME=	1.0.10:help
 USE_GNOME=	cairo glib20
 USE_XORG=	x11
 
@@ -80,7 +81,7 @@ WFX_SAMBA_DESC=	SMB protocol support
 WLX_DESC=		Internal viewer plugins
 WLX_MPLAYER_DESC=	Use MPlayer for multimedia files
 
-WCX_UNRAR_LIB_DEPENDS=		libunrar.so.6:archivers/libunrar6
+WCX_UNRAR_LIB_DEPENDS=		libunrar.so:archivers/libunrar
 WFX_SAMBA_USES=			samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 

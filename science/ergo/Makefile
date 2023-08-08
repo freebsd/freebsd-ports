@@ -1,5 +1,5 @@
 PORTNAME=	ergo
-DISTVERSION=	3.8
+DISTVERSION=	3.8.2
 CATEGORIES=	science
 MASTER_SITES=	http://www.ergoscf.org/source/tarfiles/
 
@@ -20,15 +20,15 @@ SHEBANG_FILES=	test/check_eigenvectors.sh test/compare_homo_lumo.sh
 
 GNU_CONFIGURE=	yes
 
-CONFLICTS_INSTALL=	ergo-irc-server # bin/ergo
-
 TEST_TARGET=	check
+
+CONFLICTS_INSTALL=	ergo-irc-server # bin/ergo
 
 OPTIONS_DEFINE_amd64=	SSE
 OPTIONS_DEFINE_i386=	SSE
-OPTIONS_DEFAULT_amd64=	SSE
-OPTIONS_DEFAULT_i386=	SSE
 
 SSE_CONFIGURE_ENABLE=	sse-intrinsics
+
+# the lapack_test test fails, reported to the upstream's e-mail
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+Verdict is a collection of subroutines for evaluating the geometric qualities
+of triangles, quadrilaterals, tetrahedra, and hexahedra using a variety of
+metrics. A metric is a real number assigned to one of these shapes depending
+on its particular vertex coordinates. These metrics are used to evaluate the
+input to finite element, finite volume, boundary element, and other types
+of solvers that approximate the solution to partial differential equations
+defined over regions of space. The geometric qualities of these regions is
+usually strongly tied to the accuracy these solvers are able to obtain in their
+approximations.
+
+See also <https://gitlab.kitware.com/verdict/verdict/>.

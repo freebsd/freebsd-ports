@@ -36,11 +36,9 @@ include/libhandy-0.0/hdy-version.h
 include/libhandy-0.0/hdy-view-switcher-bar.h
 include/libhandy-0.0/hdy-view-switcher.h
 lib/girepository-1.0/Handy-0.0.typelib
-lib/glade/modules/libglade-handy.so
 lib/libhandy-0.0.so
 lib/libhandy-0.0.so.0
 libdata/pkgconfig/libhandy-0.0.pc
 share/gir-1.0/Handy-0.0.gir
-share/glade/catalogs/libhandy.xml
 share/vala/vapi/libhandy-0.0.deps
 share/vala/vapi/libhandy-0.0.vapi

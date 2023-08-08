@@ -88,6 +88,7 @@
 @sample %%ETCDIR%%/res_corosync.conf.sample
 @sample %%ETCDIR%%/res_curl.conf.sample
 @sample %%ETCDIR%%/res_fax.conf.sample
+@sample %%ETCDIR%%/res_http_media_cache.conf.sample
 @sample %%ETCDIR%%/res_ldap.conf.sample
 @sample %%ETCDIR%%/res_odbc.conf.sample
 @sample %%ETCDIR%%/res_parking.conf.sample

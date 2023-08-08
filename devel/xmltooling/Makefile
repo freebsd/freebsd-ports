@@ -1,8 +1,7 @@
 PORTNAME=	xmltooling
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	3.2.4
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
+MASTER_SITES=	http://shibboleth.net/downloads/c++-opensaml/latest/
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Low level XML support for SAML
@@ -21,6 +20,7 @@ USES=		cpe gmake libtool pkgconfig tar:bzip2 ssl autoreconf
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto"  openssl_CFLAGS=-I${OPENSSLBASE}
+USE_CXXSTD=	c++14
 
 PORTDOCS=	*
 

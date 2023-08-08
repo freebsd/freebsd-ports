@@ -110,7 +110,7 @@ PLIST_SUB+=		PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=		yes
+USES+=	ldap
 CONFIGURE_ARGS+=	--enable-ldap \
 			--with-ldap-schema-directory=${LOCALBASE}/etc/openldap/schema/ \
 			--disable-ldap-doc

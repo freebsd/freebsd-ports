@@ -1,6 +1,6 @@
 PORTNAME=	orthanc-mysql
 DISTVERSION=	4.3
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/plugin-mysql/:main \
 		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/:framework \
@@ -27,6 +27,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 RUN_DEPENDS=	Orthanc:science/orthanc
 
 USES=		cmake localbase mysql:client python:build ssl
+USE_CXXSTD=	c++14 # googletest 1.13
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/OrthancMySQL-${PORTVERSION}

@@ -1,6 +1,6 @@
---- services/device/hid/hid_service.cc.orig	2022-03-28 18:11:04 UTC
+--- services/device/hid/hid_service.cc.orig	2022-12-06 08:09:13 UTC
 +++ services/device/hid/hid_service.cc
-@@ -18,6 +18,10 @@
+@@ -20,6 +20,10 @@
  
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_UDEV)
  #include "services/device/hid/hid_service_linux.h"
@@ -11,14 +11,14 @@
  #elif BUILDFLAG(IS_MAC)
  #include "services/device/hid/hid_service_mac.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -61,6 +65,10 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
+@@ -68,6 +72,10 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
  std::unique_ptr<HidService> HidService::Create() {
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_UDEV)
-   return base::WrapUnique(new HidServiceLinux());
+   return std::make_unique<HidServiceLinux>();
 +#elif BUILDFLAG(IS_OPENBSD)
-+  return base::WrapUnique(new HidServiceFido());
++  return std::make_unique<HidServiceFido>();
 +#elif BUILDFLAG(IS_FREEBSD)
-+  return base::WrapUnique(new HidServiceFreeBSD());
++  return std::make_unique<HidServiceFreeBSD>();
  #elif BUILDFLAG(IS_MAC)
-   return base::WrapUnique(new HidServiceMac());
+   return std::make_unique<HidServiceMac>();
  #elif BUILDFLAG(IS_WIN)

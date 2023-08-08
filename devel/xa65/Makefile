@@ -1,5 +1,5 @@
 PORTNAME=	xa65
-PORTVERSION=	2.3.13
+PORTVERSION=	2.3.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 DISTNAME=	xa-${PORTVERSION}

@@ -523,9 +523,6 @@ sbin/saned
 %%PORTDOCS%%%%DOCSDIR%%/mustek_usb2/mustek_usb2.TODO
 %%PORTDOCS%%%%DOCSDIR%%/niash/niash.TODO
 %%PORTDOCS%%%%DOCSDIR%%/plustek/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/plustek/MakeModule.sh
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel24
-%%PORTDOCS%%%%DOCSDIR%%/plustek/Makefile.kernel26
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT-TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.changes
 %%PORTDOCS%%%%DOCSDIR%%/plustek/Plustek-PARPORT.txt

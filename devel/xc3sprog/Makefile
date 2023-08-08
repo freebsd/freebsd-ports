@@ -1,22 +1,25 @@
 PORTNAME=	xc3sprog
-PORTVERSION=	r769
-PORTREVISION=	1
+PORTVERSION=	g20221005
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://opsec.eu/src/xc3sprog/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Free programmer for Xilinx Spartan S3E Starter Kit
-WWW=		https://sourceforge.net/projects/xc3sprog/
+MAINTAINER=	darius@dons.net.au
+COMMENT=	Free programmer for Xilinx FPGA and flash chips
+WWW=		https://github.com/DanielO/xc3sprog
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libftdi.so:devel/libftdi
 RUN_DEPENDS=	${LOCALBASE}/sbin/fxload:misc/fxload
 
-USES=		tar:xz cmake:insource
-ALL_TARGET=	xc3sprog
+USES=		cmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	DanielO
+GH_TAGNAME=	426b763
 
-PLIST_FILES=	bin/xc3sprog
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xc3sprog ${STAGEDIR}${PREFIX}/bin
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/xc3sprog.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+bin/fsnotifier
+bin/fsnotifier-static
+include/fsnotifier.h
+lib/fsnotifier/cmake/fsnotifierConfig.cmake
+lib/fsnotifier/cmake/fsnotifierConfigVersion.cmake
+lib/fsnotifier/cmake/fsnotifierTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/fsnotifier/cmake/fsnotifierTargets.cmake
+lib/libfsnotifier.a
+lib/libfsnotifier.so
+lib/libfsnotifier.so.%%PORTVERSION%%

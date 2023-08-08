@@ -1,5 +1,5 @@
 PORTNAME=	unifi7
-PORTVERSION=	7.2.92
+PORTVERSION=	7.4.162
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -21,7 +21,7 @@ USES=		cpe
 CPE_VENDOR=	ui
 CPE_PRODUCT=	unifi_controller
 USE_JAVA=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	11
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk bsdjava
 JAVA_RUN=	yes
@@ -35,6 +35,8 @@ EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 SUB_LIST+=	GROUPS=${GROUPS} \
 		JAVA=${JAVA} \
 		JAVA_HOME=${JAVA_HOME} \
@@ -49,9 +51,9 @@ GROUPS=		unifi
 OPTIONS_DEFINE=	EXTERNALDB
 
 EXTERNALDB_DESC=	Use external MongoDB server
-EXTERNALDB_VARS=	PKGMESSAGE=${WRKSRC}/pkg-message.extdb \
+EXTERNALDB_VARS=	PKGMESSAGE+=${WRKSRC}/pkg-message.extdb \
 			SUB_FILES+=pkg-message.extdb
-EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb36>0:databases/mongodb36
+EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb44>0:databases/mongodb44
 
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api

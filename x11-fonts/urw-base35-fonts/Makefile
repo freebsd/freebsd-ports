@@ -11,7 +11,6 @@ LICENSE=	AGPLv3
 USES=		fonts
 USE_GITHUB=	yes
 GH_ACCOUNT=	ArtifexSoftware
-GH_PROJECT=	urw-base35-fonts
 
 NO_ARCH=	yes
 NO_BUILD=	yes

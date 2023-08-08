@@ -1,0 +1,5 @@
+Initool lets you manipulate the contents of INI files from the
+command line. It is a rewrite of an earlier program by the same
+developer called "iniparse". Rather than modify INI files in place
+like iniparse, however, it prints the modified contents to standard
+output.

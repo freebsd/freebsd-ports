@@ -1,5 +1,6 @@
 PORTNAME=	libmpdclient
 PORTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/libmpdclient/2/
 
@@ -12,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		meson tar:xz
 
+MESON_ARGS=	--default-library=both
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS DOXYGEN

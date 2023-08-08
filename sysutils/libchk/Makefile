@@ -10,8 +10,7 @@ WWW=		http://svn.idaemons.org/cgi-bin/viewvc.cgi/trunk/?root=libchk
 
 LICENSE=	BSD2CLAUSE
 
-USES=			tar:bzip2 uidfix
-USE_RUBY=		yes
+USES=		ruby tar:bzip2 uidfix
 
 MAKE_ARGS=	PREFIX="${PREFIX}"
 

@@ -14,16 +14,16 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vcglib/img/img.h:devel/vcglib
 LIB_DEPENDS=	libmpirxx.so:math/mpir
 
 USES=		dos2unix gl qmake:outsource qt:5
-USE_GL=		gl glu glew
-USE_QT=		buildtools:build core gui network \
-		opengl script xml xmlpatterns widgets
+DOS2UNIX_GLOB=	*.c *.cpp *.h
+USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	cnr-isti-vclab
+USE_GL=		gl glu glew
 USE_LDCONFIG=	yes
+USE_QT=		buildtools:build core gui network \
+		opengl script xml xmlpatterns widgets
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/src/meshlab.pro
-
-DOS2UNIX_GLOB=	*.c *.cpp *.h
 
 .if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib

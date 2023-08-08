@@ -1,7 +1,7 @@
 PORTNAME=	texlab
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	9
 CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	latex-lsp
+
+# Fixes: error: the linked panic runtime `panic_unwind` is not compiled with
+# this crate's panic strategy `abort`
+LTO_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

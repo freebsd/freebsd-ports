@@ -1,6 +1,6 @@
 PORTNAME=	glbinding
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
+DISTVERSION=	3.3.0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,17 +10,20 @@ WWW=		https://glbinding.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang qt:5
+LIB_DEPENDS=	libglfw.so:graphics/glfw
+
+USES=		cmake:testing compiler:c++11-lang gl qt:5
 USE_QT=		core gui widgets buildtools:build qmake:build
+USE_GL=		gl glew glu opengl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cginternals
 
+CMAKE_TESTING_ON=	OPTION_BUILD_TESTS
+
 LDFLAGS+=	-lpthread # workaround for https://github.com/cginternals/glbinding/issues/327
 
-post-install: # workaround for https://github.com/cginternals/glbinding/issues/328
-	@${RM} ${STAGEDIR}${PREFIX}/include/KHR/khrplatform.h
-	@${RMDIR} ${STAGEDIR}${PREFIX}/include/KHR
+CONFLICTS_INSTALL=	mesa-demos # both install bin/glinfo, see https://github.com/cginternals/glbinding/issues/341
 
 .include <bsd.port.mk>

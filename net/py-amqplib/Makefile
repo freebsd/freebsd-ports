@@ -2,7 +2,7 @@ PORTNAME=	amqplib
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		python:3.6+ tar:tgz
+USES=		python tar:tgz
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

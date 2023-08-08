@@ -1,4 +1,4 @@
---- Makefile.in.orig	2007-09-20 17:01:52 UTC
+--- Makefile.in.orig	2012-05-09 16:03:17 UTC
 +++ Makefile.in
 @@ -77,16 +77,14 @@ install: build
  	for i in $(DAEMONDIR) $(BINDIR) $(MANDIR)/man5 $(MANDIR)/man8 ; do \

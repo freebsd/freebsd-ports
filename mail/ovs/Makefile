@@ -2,8 +2,7 @@ PORTNAME=	ovs
 PORTVERSION=	1.05
 PORTREVISION=	5
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	ftp://ftp.oav.net/openvisp/stats/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RRDtool frontend for mail statistics

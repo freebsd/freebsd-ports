@@ -2,7 +2,7 @@ PORTNAME=	ta2as
 PORTVERSION=	0.8.2
 CATEGORIES=	converters devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
 WWW=		https://github.com/mefistotelis/ta2as
 
@@ -11,15 +11,21 @@ LICENSE_NAME=	TA2AS license
 LICENSE_FILE=	${WRKSRC}/legal.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-WRKSRC_SUBDIR=	ta2as
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mefistotelis
 
-PORTDOCS=	*
+WRKSRC_SUBDIR=	ta2as
+
 PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-extract:
 	@${CP} -f ${FILESDIR}/strtolower.c ${WRKSRC}
@@ -39,4 +45,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

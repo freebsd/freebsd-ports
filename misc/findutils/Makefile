@@ -1,9 +1,9 @@
 PORTNAME=	findutils
-PORTVERSION=	4.9.0
+DISTVERSION=	4.9.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	GNU find utilities
 WWW=		https://www.gnu.org/software/findutils/
 
@@ -14,7 +14,7 @@ USES=		charsetfix cpe gmake localbase tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
+CONFIGURE_ARGS=	--program-prefix=g --localstatedir=${LOCALSTATEDIR}
 
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 INFO=		find find-maint

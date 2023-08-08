@@ -1,7 +1,7 @@
 PORTNAME=	hhsuite
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/soedinglab/hh-suite
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_armv7=	compilation fails: no member named 'neon_f64' in 'simde__m128d_private', see https://github.com/soedinglab/hh-suite/issues/322
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe # not for 32-bit architectures, see https://github.com/soedinglab/hh-suite/issues/322#issuecomment-1264416293
 
 LIB_DEPENDS=	libmpi.so:net/openmpi
 

@@ -1,0 +1,3 @@
+extract_msg extracts emails and attachments saved in Microsoft
+Outlook's .msg files. It automates the extraction of key email data
+(from, to, cc, date, subject, body) and the email's attachments.

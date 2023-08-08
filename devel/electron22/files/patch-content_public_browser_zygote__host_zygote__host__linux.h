@@ -1,0 +1,16 @@
+--- content/public/browser/zygote_host/zygote_host_linux.h.orig	2022-11-30 08:12:58 UTC
++++ content/public/browser/zygote_host/zygote_host_linux.h
+@@ -35,11 +35,13 @@ class ZygoteHost {
+   // after the first render has been forked.
+   virtual int GetRendererSandboxStatus() = 0;
+ 
++#if !BUILDFLAG(IS_BSD)
+   // Adjust the OOM score of the given renderer's PID.  The allowed
+   // range for the score is [0, 1000], where higher values are more
+   // likely to be killed by the OOM killer.
+   virtual void AdjustRendererOOMScore(base::ProcessHandle process_handle,
+                                       int score) = 0;
++#endif
+ 
+ #if BUILDFLAG(IS_CHROMEOS_ASH)
+   // Reinitialize logging for the Zygote processes. Needed on ChromeOS, which

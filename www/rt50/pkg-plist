@@ -28,6 +28,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Action/AutoOpen.pm
 %%SITE_PERL%%/RT/Action/AutoOpenInactive.pm
 %%SITE_PERL%%/RT/Action/Autoreply.pm
+%%SITE_PERL%%/RT/Action/ClearCustomFieldValues.pm
 %%SITE_PERL%%/RT/Action/CreateTickets.pm
 %%SITE_PERL%%/RT/Action/EscalatePriority.pm
 %%SITE_PERL%%/RT/Action/ExtractSubjectTag.pm
@@ -165,6 +166,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder/Tree.pm
 %%SITE_PERL%%/RT/Interface/Web/Request.pm
 %%SITE_PERL%%/RT/Interface/Web/Scrubber.pm
+%%SITE_PERL%%/RT/Interface/Web/Scrubber/Permissive.pm
 %%SITE_PERL%%/RT/Interface/Web/Session.pm
 %%SITE_PERL%%/RT/LDAPImport.pm
 %%SITE_PERL%%/RT/Lifecycle.pm
@@ -262,6 +264,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Record/Role.pm
 %%SITE_PERL%%/RT/Record/Role/Lifecycle.pm
 %%SITE_PERL%%/RT/Record/Role/Links.pm
+%%SITE_PERL%%/RT/Record/Role/LookupType.pm
 %%SITE_PERL%%/RT/Record/Role/Rights.pm
 %%SITE_PERL%%/RT/Record/Role/Roles.pm
 %%SITE_PERL%%/RT/Record/Role/Status.pm
@@ -291,6 +294,8 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/SearchBuilder/Role/Roles.pm
 %%SITE_PERL%%/RT/SharedSetting.pm
 %%SITE_PERL%%/RT/SharedSettings.pm
+%%SITE_PERL%%/RT/Shortener.pm
+%%SITE_PERL%%/RT/Shorteners.pm
 %%SITE_PERL%%/RT/Shredder.pm
 %%SITE_PERL%%/RT/Shredder/Constants.pm
 %%SITE_PERL%%/RT/Shredder/Dependencies.pm
@@ -310,6 +315,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Squish.pm
 %%SITE_PERL%%/RT/Squish/CSS.pm
 %%SITE_PERL%%/RT/Squish/JS.pm
+%%SITE_PERL%%/RT/StaticUtil.pm
 %%SITE_PERL%%/RT/StyleGuide.pod
 %%SITE_PERL%%/RT/System.pm
 %%SITE_PERL%%/RT/Template.pm
@@ -346,6 +352,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Util.pm
 @group rt
 sbin/rt-attributes-viewer
+sbin/rt-clean-attributes
 sbin/rt-clean-sessions
 sbin/rt-dump-initialdata
 sbin/rt-dump-metadata
@@ -403,6 +410,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/customizing/timezones_in_charts.pod
 %%PORTDOCS%%%%DOCSDIR%%/dashboards.pod
 %%PORTDOCS%%%%DOCSDIR%%/dashboards_reporting.pod
+%%PORTDOCS%%%%DOCSDIR%%/email_management.pod
 %%PORTDOCS%%%%DOCSDIR%%/extending/clickable_links.pod
 %%PORTDOCS%%%%DOCSDIR%%/extending/external_custom_fields.pod
 %%PORTDOCS%%%%DOCSDIR%%/extending/mail_plugins.pod
@@ -449,6 +457,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-modify.png
 %%PORTDOCS%%%%DOCSDIR%%/images/lifecycle-ui-rights.png
 %%PORTDOCS%%%%DOCSDIR%%/images/order-history-example.png
+%%PORTDOCS%%%%DOCSDIR%%/images/query-builder-dynamic-filter-priority.png
+%%PORTDOCS%%%%DOCSDIR%%/images/query-builder-dynamic-sort.png
 %%PORTDOCS%%%%DOCSDIR%%/images/queue-created-started-chart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/quote-selection-highlighted.png
 %%PORTDOCS%%%%DOCSDIR%%/images/quote-selection-ticket-update.png
@@ -721,6 +731,12 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.0.2/content
 %%DOCSDIR%%/upgrade/5.0.3/indexes
 %%DOCSDIR%%/upgrade/5.0.3/schema.Pg
+%%DOCSDIR%%/upgrade/5.0.4/acl.Pg
+%%DOCSDIR%%/upgrade/5.0.4/content
+%%DOCSDIR%%/upgrade/5.0.4/schema.Oracle
+%%DOCSDIR%%/upgrade/5.0.4/schema.Pg
+%%DOCSDIR%%/upgrade/5.0.4/schema.SQLite
+%%DOCSDIR%%/upgrade/5.0.4/schema.mysql
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -812,6 +828,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Elements/SelectCustomFieldRenderType
 %%DATADIR%%/html/Admin/Elements/SelectCustomFieldType
 %%DATADIR%%/html/Admin/Elements/SelectGroups
+%%DATADIR%%/html/Admin/Elements/SelectLookupType
 %%DATADIR%%/html/Admin/Elements/SelectNewGroupMembers
 %%DATADIR%%/html/Admin/Elements/SelectScripAction
 %%DATADIR%%/html/Admin/Elements/SelectScripCondition
@@ -889,6 +906,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Tools/GnuPG.html
 %%DATADIR%%/html/Admin/Tools/Queries.html
 %%DATADIR%%/html/Admin/Tools/RightsInspector.html
+%%DATADIR%%/html/Admin/Tools/Shortener.html
 %%DATADIR%%/html/Admin/Tools/Shredder/Dumps/dhandler
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/DumpFileLink
 %%DATADIR%%/html/Admin/Tools/Shredder/Elements/Error/NoRights
@@ -1078,6 +1096,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/Header
 %%DATADIR%%/html/Elements/HeaderJavascript
 %%DATADIR%%/html/Elements/JavascriptConfig
+%%DATADIR%%/html/Elements/LabeledValue
 %%DATADIR%%/html/Elements/Lifecycle/Graph
 %%DATADIR%%/html/Elements/ListActions
 %%DATADIR%%/html/Elements/ListMenu
@@ -1124,7 +1143,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/RefreshHomepage
 %%DATADIR%%/html/Elements/SavedSearches
 %%DATADIR%%/html/Elements/ScrubHTML
-%%DATADIR%%/html/Elements/ShowCustomFieldHTML
+%%DATADIR%%/html/Elements/SearchFilter
 %%DATADIR%%/html/Elements/Section
 %%DATADIR%%/html/Elements/SelectArticle
 %%DATADIR%%/html/Elements/SelectArticleAutocomplete
@@ -1164,12 +1183,15 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/SelfServiceTopArticles
 %%DATADIR%%/html/Elements/SetupSessionCookie
 %%DATADIR%%/html/Elements/ShortcutHelp
+%%DATADIR%%/html/Elements/ShowArticle
 %%DATADIR%%/html/Elements/ShowArticleCustomFields
+%%DATADIR%%/html/Elements/ShowCalendarInvitation
 %%DATADIR%%/html/Elements/ShowCustomDateRanges
 %%DATADIR%%/html/Elements/ShowCustomFieldBinary
 %%DATADIR%%/html/Elements/ShowCustomFieldCustomGroupings
 %%DATADIR%%/html/Elements/ShowCustomFieldDate
 %%DATADIR%%/html/Elements/ShowCustomFieldDateTime
+%%DATADIR%%/html/Elements/ShowCustomFieldHTML
 %%DATADIR%%/html/Elements/ShowCustomFieldImage
 %%DATADIR%%/html/Elements/ShowCustomFieldText
 %%DATADIR%%/html/Elements/ShowCustomFieldWikitext
@@ -1229,6 +1251,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Helpers/Autocomplete/autohandler
 %%DATADIR%%/html/Helpers/BuildFormatString
 %%DATADIR%%/html/Helpers/CollectionListRow
+%%DATADIR%%/html/Helpers/Permalink
 %%DATADIR%%/html/Helpers/PreviewScrips
 %%DATADIR%%/html/Helpers/RightsInspector/Revoke
 %%DATADIR%%/html/Helpers/RightsInspector/Search
@@ -1440,7 +1463,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Graphs/Elements/EditGraphProperties
 %%DATADIR%%/html/Ticket/Graphs/Elements/ShowGraph
 %%DATADIR%%/html/Ticket/Graphs/Elements/ShowLegends
-%%DATADIR%%/html/Ticket/Graphs/dhandler
 %%DATADIR%%/html/Ticket/Graphs/index.html
 %%DATADIR%%/html/Ticket/History.html
 %%DATADIR%%/html/Ticket/Modify.html
@@ -1494,8 +1516,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/index.html
 %%DATADIR%%/html/l
 %%DATADIR%%/html/l_unsafe
-
-
 %%DATADIR%%/html/m/_elements/footer
 %%DATADIR%%/html/m/_elements/full_site_link
 %%DATADIR%%/html/m/_elements/header
@@ -1699,14 +1719,11 @@ sbin/standalone_httpd
 %%DATADIR%%/static/RichText/plugins/about/dialogs/hidpi/logo_ckeditor.png
 %%DATADIR%%/static/RichText/plugins/about/dialogs/logo_ckeditor.png
 %%DATADIR%%/static/RichText/plugins/autocomplete/skins/default.css
-%%DATADIR%%/static/RichText/plugins/ccmsconfighelper/docs/install.html
 %%DATADIR%%/static/RichText/plugins/clipboard/dialogs/paste.js
 %%DATADIR%%/static/RichText/plugins/colordialog/dialogs/colordialog.css
 %%DATADIR%%/static/RichText/plugins/colordialog/dialogs/colordialog.js
 %%DATADIR%%/static/RichText/plugins/confighelper/LICENSE
 %%DATADIR%%/static/RichText/plugins/confighelper/README.md
-%%DATADIR%%/static/RichText/plugins/confighelper/docs/install.html
-%%DATADIR%%/static/RichText/plugins/confighelper/docs/styles.css
 %%DATADIR%%/static/RichText/plugins/dialog/dialogDefinition.js
 %%DATADIR%%/static/RichText/plugins/dialog/styles/dialog.css
 %%DATADIR%%/static/RichText/plugins/docprops/dialogs/docprops.js
@@ -1729,12 +1746,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/RichText/plugins/pastefromgdocs/filter/default.js
 %%DATADIR%%/static/RichText/plugins/pastefromword/filter/default.js
 %%DATADIR%%/static/RichText/plugins/pastetools/filter/common.js
-%%DATADIR%%/static/RichText/plugins/pbckcode/CHANGELOG.md
-%%DATADIR%%/static/RichText/plugins/pbckcode/LICENSE
-%%DATADIR%%/static/RichText/plugins/pbckcode/README.md
-%%DATADIR%%/static/RichText/plugins/pbckcode/dialogs/PBSyntaxHighlighter.js
-%%DATADIR%%/static/RichText/plugins/pbckcode/dialogs/pbckcode.js
-%%DATADIR%%/static/RichText/plugins/pbckcode/dialogs/style.css
+%%DATADIR%%/static/RichText/plugins/pastetools/filter/image.js
 %%DATADIR%%/static/RichText/plugins/specialchar/dialogs/lang/_translationstatus.txt
 %%DATADIR%%/static/RichText/plugins/specialchar/dialogs/lang/af.js
 %%DATADIR%%/static/RichText/plugins/specialchar/dialogs/lang/ar.js
@@ -1835,10 +1847,6 @@ sbin/standalone_httpd
 %%DATADIR%%/static/RichText/skins/bootstrapck/images/lock.png
 %%DATADIR%%/static/RichText/skins/bootstrapck/images/refresh.png
 %%DATADIR%%/static/RichText/skins/bootstrapck/readme.md
-%%DATADIR%%/static/RichText/skins/bootstrapck/sample/bootstrapck-sample.html
-%%DATADIR%%/static/RichText/skins/bootstrapck/sample/css/bootstrapck-sample.css
-%%DATADIR%%/static/RichText/skins/bootstrapck/sample/js/analytics.js
-%%DATADIR%%/static/RichText/skins/bootstrapck/sample/js/jquery-1.11.0.min.js
 %%DATADIR%%/static/RichText/skins/bootstrapck/scss/browser-specific/gecko/editor_gecko.scss
 %%DATADIR%%/static/RichText/skins/bootstrapck/scss/browser-specific/ie/dialog_ie.scss
 %%DATADIR%%/static/RichText/skins/bootstrapck/scss/browser-specific/ie/editor_ie.scss
@@ -1896,6 +1904,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/css/elevator-light/layout.css
 %%DATADIR%%/static/css/elevator-light/lifecycleui.css
 %%DATADIR%%/static/css/elevator-light/login.css
+%%DATADIR%%/static/css/elevator-light/mail.css
 %%DATADIR%%/static/css/elevator-light/main.css
 %%DATADIR%%/static/css/elevator-light/misc.css
 %%DATADIR%%/static/css/elevator-light/nav.css
@@ -1969,6 +1978,8 @@ sbin/standalone_httpd
 %%DATADIR%%/static/images/farbtastic/mask.png
 %%DATADIR%%/static/images/farbtastic/wheel.png
 %%DATADIR%%/static/images/favicon.png
+%%DATADIR%%/static/images/funnel-fill.svg
+%%DATADIR%%/static/images/funnel.svg
 %%DATADIR%%/static/images/jquery_ui/ui-bg_glass_55_fbf9ee_1x400.png
 %%DATADIR%%/static/images/jquery_ui/ui-bg_glass_65_ffffff_1x400.png
 %%DATADIR%%/static/images/jquery_ui/ui-bg_glass_75_dadada_1x400.png
@@ -1988,12 +1999,13 @@ sbin/standalone_httpd
 %%DATADIR%%/static/js/Chart.min.js
 %%DATADIR%%/static/js/assets.js
 %%DATADIR%%/static/js/autocomplete.js
-%%DATADIR%%/static/js/bootstrap.bundle.min.js
 %%DATADIR%%/static/js/bootstrap-combobox.js
 %%DATADIR%%/static/js/bootstrap-select.min.js
+%%DATADIR%%/static/js/bootstrap.bundle.min.js
 %%DATADIR%%/static/js/cascaded.js
 %%DATADIR%%/static/js/chartjs-plugin-colorschemes.min.js
 %%DATADIR%%/static/js/chosen.jquery.min.js
+%%DATADIR%%/static/js/clipboard.min.js
 %%DATADIR%%/static/js/d3.min.js
 %%DATADIR%%/static/js/dropzone.min.js
 %%DATADIR%%/static/js/event-registration.js

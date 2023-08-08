@@ -1,6 +1,6 @@
 PORTNAME=	mesos
 PORTVERSION=	1.11.0
-PORTREVISION=	13
+PORTREVISION=	15
 CATEGORIES=	sysutils
 MASTER_SITES=	APACHE/mesos/${PORTVERSION}:mesos
 PKGNAMEPREFIX=	apache-
@@ -13,6 +13,8 @@ WWW=		https://mesos.apache.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build, configure: error: Cannot find the ELFIO headers
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		elfio>0:devel/elfio \

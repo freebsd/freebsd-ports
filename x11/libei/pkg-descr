@@ -1,0 +1,6 @@
+libei is a library for Emulated Input, primarily aimed at the Wayland
+stack. It provides three parts:
+- EI (Emulated Input) for the client side (libei)
+- EIS (Emulated Input Server) for the server side (libeis)
+- oeffis is an optional helper library for DBus communication with the
+  XDG RemoteDesktop portal (liboeffis)

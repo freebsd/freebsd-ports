@@ -5,7 +5,8 @@
 
 PORTNAME=	libgit2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
+DISTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -17,12 +18,15 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libhttp_parser.so:www/http-parser
 
-USES=		cmake cpe pkgconfig ssl
+USES=		cmake:testing cpe pkgconfig python:build ssl
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DREGEX_BACKEND=pcre2 -DUSE_HTTP_PARSER=system
-CMAKE_OFF=	BUILD_CLAR
+CMAKE_TESTING_ON=	BUILD_TESTS
+
+CMAKE_ARGS=	-DREGEX_BACKEND=pcre2 -DUSE_HTTP_PARSER=system \
+		-DCMAKE_CTEST_ARGUMENTS="-E;'invasive|online'"
+CMAKE_OFF=	BUILD_TESTS
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION} \
 		SHLIB_VER=${DISTVERSION:R}
@@ -42,12 +46,5 @@ post-patch:
 	@${REINPLACE_CMD} -e "/LIBGIT2_PC_REQUIRES.*openssl/ d" \
 		${WRKSRC}/cmake/SelectHTTPSBackend.cmake
 .endif
-
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
-		-DBUILD_CLAR=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} CTEST_OUTPUT_ON_FAILURE=1 ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	gjs
-PORTVERSION=	1.72.2
+PORTVERSION=	1.74.1
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,16 +15,14 @@ LICENSE_FILE_MPL11=	${WRKSRC}/LICENSES/MPL-1.1.txt
 LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
 BUILD_DEPENDS=	dbus-run-session:devel/dbus
-LIB_DEPENDS=	libmozjs-91.so:lang/spidermonkey91 \
+LIB_DEPENDS=	libmozjs-102.so:lang/spidermonkey102 \
 		libffi.so:devel/libffi
 
 USES=		compiler:c++11-lib gettext gnome \
 		localbase meson pkgconfig python:build readline tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
 USE_XORG=	x11 xext
-MESON_ARGS=	-Dcairo=enabled \
-		-Dreadline=enabled \
-		-Dprofiler=disabled \
+MESON_ARGS=	-Dprofiler=disabled \
 		-Dinstalled_tests=false
 USE_LDCONFIG=	yes
 

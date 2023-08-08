@@ -1,20 +1,21 @@
 PORTNAME=	netcdf
-PORTVERSION=	4.9.0
+PORTVERSION=	4.9.2
 DISTVERSIONPREFIX=	c-
-PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C library for machine-independent, array-oriented data access
-WWW=		https://www.unidata.ucar.edu/software/netcdf/
+WWW=		https://www.unidata.ucar.edu/software/netcdf/ \
+		https://github.com/Unidata/netcdf-c
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
-		libhdf5.so:science/hdf5
+		libhdf5.so:science/hdf5 \
+		libzstd.so:archivers/zstd
 
 USES=		gmake libtool localbase ncurses pathfix pkgconfig:run
 
@@ -39,10 +40,6 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_CONFIGURE_ENABLE=	doxygen
 SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 SZIP_LIBS=		-lsz
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl ||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/ int fileno(FILE\*);/d' ${WRKSRC}/libdispatch/d*.c ${WRKSRC}/ncgen/ncgen* ${WRKSRC}/ncgen3/ncgen* ${WRKSRC}/oc2/ocdump.c
 
 post-build-DOXYGEN-on:
 	cd ${WRKSRC}/docs/ && ${LOCALBASE}/bin/doxygen .

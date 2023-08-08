@@ -1,5 +1,5 @@
 PKGNAMESUFFIX=	-utils
-PORTREVISION=	3
+PORTREVISION=	4
 
 NLS_USES=	gettext-tools:build
 

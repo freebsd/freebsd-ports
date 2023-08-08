@@ -1,11 +1,11 @@
 PORTNAME=	plexmediaserver
-PORTVERSION?=	1.28.2.6151
-DISTVERSIONSUFFIX?=914ddd2b3
+DISTVERSION?=	1.32.5.7328
+DISTVERSIONSUFFIX?=2632c9d3a
 CATEGORIES=	multimedia
 MASTER_SITES?=	https://downloads.plex.tv/plex-media-server-new/${DISTVERSION}-${DISTVERSIONSUFFIX}/freebsd/
 DISTNAME?=	PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}-FreeBSD-${ARCH}
 
-MAINTAINER?=	b.shertenlieb@yahoo.com
+MAINTAINER=	b.shertenlieb@yahoo.com
 COMMENT=	Plex Media Server component
 WWW=		https://plex.tv
 
@@ -14,11 +14,11 @@ ONLY_FOR_ARCHS_REASON=	binary-only program, source code not available
 
 USES=		cpe tar:bzip2
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/PlexMediaServer-${PORTVERSION}-${DISTVERSIONSUFFIX}
+WRKSRC=		${WRKDIR}/PlexMediaServer-${DISTVERSION}-${DISTVERSIONSUFFIX}
 
 CPE_VENDOR=	plex
 CPE_PRODUCT=	media_server
-CPE_VERSION=	${PORTVERSION:R}
+CPE_VERSION=	${DISTVERSION:R}
 
 USE_RC_SUBR?=	${PORTNAME}
 

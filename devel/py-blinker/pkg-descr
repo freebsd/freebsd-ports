@@ -10,5 +10,3 @@ The core of Blinker is quite small but provides powerful features:
 - sending arbitrary data payloads
 - collecting return values from signal receivers
 - thread safety
-
-See also: https://github.com/pallets-eco/blinker

@@ -20,7 +20,7 @@ OPTIONS_DEFAULT=	BDB1
 HTTPFORM_DESC=		Enable HTTP form authentication
 HTTPFORM_CONFIGURE_ENABLE=httpform
 OPENLDAP_DESC=		Use OpenLDAP
-OPENLDAP_USE=		OPENLDAP=yes
+OPENLDAP_USES=		ldap
 OPENLDAP_CONFIGURE_ON=	--with-ldap=${LOCALBASE}
 
 SASLDB_DESC=		Experimental SASLdb authentication module

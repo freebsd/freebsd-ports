@@ -1,0 +1,5 @@
+include/nanodbc/nanodbc.h
+lib/cmake/nanodbc/nanodbc-config-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/nanodbc/nanodbc-config.cmake
+lib/libnanodbc.so
+lib/libnanodbc.so.2.14.0

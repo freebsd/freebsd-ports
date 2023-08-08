@@ -4,5 +4,3 @@ Storage APIs together in a single shell with a uniform command structure.
 
 The primary goal is to provide a unified shell command structure and a common
 language to describe operations in OpenStack.
-
-See also: https://github.com/openstack/python-openstackclient

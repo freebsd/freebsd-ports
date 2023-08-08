@@ -21,7 +21,7 @@ LIB_DEPENDS=		libespeak-ng.so:audio/espeak-ng \
 			libvorbisfile.so:audio/libvorbis \
 			libpng.so:graphics/png
 
-USES=			gl gnustep openal:al minizip perl5 python:3.5+,build sdl \
+USES=			gl gnustep openal:al minizip perl5 python:build sdl \
 			tar:bzip2 xorg
 USE_CXXSTD=		gnu++98
 USE_GL=			gl glu

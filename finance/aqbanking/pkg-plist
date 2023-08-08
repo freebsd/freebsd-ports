@@ -2,6 +2,7 @@ bin/aqbanking-cli
 bin/aqbanking-config
 %%EBICS%%bin/aqebics-tool
 bin/aqhbci-tool4
+bin/aqofxconnect-tool
 bin/aqpaypal-tool
 include/aqbanking6/aqbanking/account_type.h
 include/aqbanking6/aqbanking/banking.h
@@ -121,6 +122,7 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/csv/profiles/lbbberlin.conf
 %%DATADIR%%/imexporters/csv/profiles/mijnpostbank.conf
 %%DATADIR%%/imexporters/csv/profiles/oko.conf
+%%DATADIR%%/imexporters/csv/profiles/onvista-account.conf
 %%DATADIR%%/imexporters/csv/profiles/onvista-prices.conf
 %%DATADIR%%/imexporters/csv/profiles/onvista-trans.conf
 %%DATADIR%%/imexporters/csv/profiles/postbankffm.conf
@@ -150,6 +152,8 @@ share/aclocal/aqbanking.m4
 %%DATADIR%%/imexporters/sepa/profiles/default.conf
 %%DATADIR%%/imexporters/swift/profiles/amro940.conf
 %%DATADIR%%/imexporters/swift/profiles/amro942.conf
+%%DATADIR%%/imexporters/swift/profiles/fints940.conf
+%%DATADIR%%/imexporters/swift/profiles/fints942.conf
 %%DATADIR%%/imexporters/swift/profiles/swiftmt535.conf
 %%DATADIR%%/imexporters/swift/profiles/swiftmt940.conf
 %%DATADIR%%/imexporters/swift/profiles/swiftmt942.conf

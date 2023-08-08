@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-05-04 06:58:21 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@
+ # This software is licensed under the BSD 3-Clause License.
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["setuptools>=64.0.0"]
++requires = ["setuptools>0"]
+ 
+ [project]
+ name = "signac"

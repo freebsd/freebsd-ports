@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rubypants>=0.2<1:textproc/rubygem-rubypants
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

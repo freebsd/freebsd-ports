@@ -1,3 +1,5 @@
-TIMESTAMP = 1603834744
-SHA256 (codesenberg-bombardier-v1.2.5_GH0.tar.gz) = 4efeac699d0c794ed22fe05b4de5c43fa41f98816682521421d538e076290ed6
-SIZE (codesenberg-bombardier-v1.2.5_GH0.tar.gz) = 601162
+TIMESTAMP = 1688304134
+SHA256 (go/benchmarks_bombardier/bombardier-v1.2.6/v1.2.6.mod) = 2a6a1547b5fd92388ff298b589ae8c5fa66a874f7b9972288c58e78bf3ee84fc
+SIZE (go/benchmarks_bombardier/bombardier-v1.2.6/v1.2.6.mod) = 952
+SHA256 (go/benchmarks_bombardier/bombardier-v1.2.6/v1.2.6.zip) = fc27ce809ccc1b12949bf3db52d5fb2943eb610cc2cdf984ba392b8c8ce246aa
+SIZE (go/benchmarks_bombardier/bombardier-v1.2.6/v1.2.6.zip) = 167546

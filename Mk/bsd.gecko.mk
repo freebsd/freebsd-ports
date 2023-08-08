@@ -60,12 +60,17 @@ MOZILLA?=	${PORTNAME}
 MOZILLA_VER?=	${PORTVERSION}
 MOZILLA_BIN?=	${PORTNAME}-bin
 MOZILLA_EXEC_NAME?=${MOZILLA}
-USES+=		compiler:c++17-lang cpe gl gmake gnome iconv localbase perl5 pkgconfig \
-			python:3.6+,build desktop-file-utils
+USES+=		compiler:c++17-lang cpe gl gmake gnome iconv localbase pkgconfig \
+			python:build desktop-file-utils
+.if ${MOZILLA_VER:R:R} < 115
+USES+=		perl5
+.endif
 CPE_VENDOR?=mozilla
 USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
+.if ${MOZILLA_VER:R:R} < 115
 USE_PERL5=	build
+.endif
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xt xtst
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
@@ -76,15 +81,17 @@ BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 				rust-cbindgen>=0.24.3:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.65.0:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.71.0:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 MOZ_EXPORT+=	${CONFIGURE_ENV} \
-				PERL="${PERL}" \
 				PYTHON3="${PYTHON_CMD}" \
 				RUSTFLAGS="${RUSTFLAGS}"
+.if ${MOZILLA_VER:R:R} < 115
+MOZ_EXPORT+=	 PERL="${PERL}"
+.endif
 MOZ_OPTIONS+=	--prefix="${PREFIX}"
 MOZ_MK_OPTIONS+=MOZ_OBJDIR="${BUILD_WRKSRC}"
 

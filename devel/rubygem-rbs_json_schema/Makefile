@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=5.0.0:devel/rubygem-activesupport61 \
 		rubygem-rbs>=1.5.0:devel/rubygem-rbs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

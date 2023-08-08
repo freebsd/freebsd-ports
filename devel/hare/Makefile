@@ -1,9 +1,9 @@
 PORTNAME=	hare
-PORTVERSION=	g20220709
+PORTVERSION=	g20230719
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 PKGNAMESUFFIX=	-lang
-DISTNAME=	bd1c1c4a
+DISTNAME=	0919412b
 DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	harec:lang/harec \
 		scdoc:textproc/scdoc
 RUN_DEPENDS=	harec:lang/harec
 
-MAKE_ARGS=	DESTDIR=${STAGEDIR}
+MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 
@@ -29,12 +29,13 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64
-MAKE_ARGS+=	ARCH=x86_64
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+BROKEN=		pre-FreeBSD-13 assembler is not compatible with generated files
 .endif
 
-pre-build:
-		${CP} ${FILESDIR}/config.mk ${WRKSRC}
+do-build:
+		${CP} ${WRKSRC}/config.example.mk ${WRKSRC}/config.mk
+		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS}
 
 post-stage:
 		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
@@ -42,5 +43,8 @@ post-stage:
 		${MKDIR} ${STAGEDIR}${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 		${INSTALL_DATA} ${WRKSRC}/docs/*.md ${STAGEDIR}${DOCSDIR}/
+
+do-test:
+		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} check
 
 .include <bsd.port.post.mk>

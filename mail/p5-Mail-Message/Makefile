@@ -1,5 +1,5 @@
 PORTNAME=	Mail-Message
-PORTVERSION=	3.012
+PORTVERSION=	3.013
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ RUN_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-Mail-Tools>=2.17:mail/p5-Mail-Tools \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-URI>=1.23:net/p5-URI \
-		p5-User-Identity>=1.01:devel/p5-User-Identity
+		p5-User-Identity>=1.02:devel/p5-User-Identity
 
 USES=		perl5
 USE_PERL5=	configure

@@ -1,0 +1,13 @@
+The Pandas package is widely used in finance and specifically for time series
+analysis. It includes excellent functionality for generating sequences of dates
+and capabilities for custom holiday calendars, but as an explicit design choice
+it does not include the actual holiday calendars for specific exchanges or OTC
+markets.
+
+The pandas_market_calendars package looks to fill that role with the holiday,
+late open and early close calendars for specific exchanges and OTC conventions.
+pandas_market_calendars also adds several functions to manipulate the market
+calendars and includes a date_range function to create a pandas DatetimeIndex
+including only the datetimes when the markets are open. Additionally the package
+contains product specific calendars for future exchanges which have different
+market open, closes, breaks and holidays based on product type.

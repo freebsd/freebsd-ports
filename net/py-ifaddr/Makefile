@@ -1,5 +1,5 @@
 PORTNAME=	ifaddr
-PORTVERSION=	0.1.7
+PORTVERSION=	0.2.0
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/pydron/ifaddr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 
 USE_PYTHON=	autoplist distutils
 

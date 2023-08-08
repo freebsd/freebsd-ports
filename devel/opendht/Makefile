@@ -1,6 +1,7 @@
 PORTNAME=	opendht
-DISTVERSION=	1.10.1
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,18 +11,29 @@ WWW=		https://github.com/savoirfairelinux/opendht/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	${LOCALBASE}/include/asio.hpp:net/asio \
+		boost-libs>0:devel/boost-libs \
+		msgpack-cxx>0:devel/msgpack-cxx \
+		restinio>0:www/restinio
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
+		libfmt.so:devel/libfmt \
+		libhttp_parser.so:www/http-parser \
 		libjsoncpp.so:devel/jsoncpp \
-		libmsgpackc.so:devel/msgpack \
 		libnettle.so:security/nettle \
 		libgnutls.so:security/gnutls
+RUN_DEPENDS=	msgpack-cxx>0:devel/msgpack-cxx
+TEST_DEPENDS=	cppunit>0:devel/cppunit
 
-USES=		cmake compiler:c++11-lib pathfix pkgconfig readline
+USES=		cmake:testing compiler:c++17-lang localbase pathfix pkgconfig readline ssl
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	savoirfairelinux
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	OPENDHT_STATIC
+LDFLAGS+=	-lcrypto
+
+CMAKE_OFF=	OPENDHT_STATIC BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING # tests fail w/out explanation, see https://github.com/savoirfairelinux/opendht/issues/640, https://github.com/savoirfairelinux/opendht/issues/658
 
 PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 

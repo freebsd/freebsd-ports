@@ -1,12 +1,12 @@
 bin/killbots
 share/applications/org.kde.killbots.desktop
 share/config.kcfg/killbots.kcfg
+share/icons/hicolor/128x128/apps/killbots.png
 share/icons/hicolor/16x16/apps/killbots.png
 share/icons/hicolor/22x22/apps/killbots.png
 share/icons/hicolor/32x32/apps/killbots.png
 share/icons/hicolor/48x48/apps/killbots.png
 share/icons/hicolor/64x64/apps/killbots.png
-share/icons/hicolor/128x128/apps/killbots.png
 %%DATADIR%%/rulesets/classic.desktop
 %%DATADIR%%/rulesets/daleks.desktop
 %%DATADIR%%/rulesets/default.desktop
@@ -48,11 +48,13 @@ share/locale/id/LC_MESSAGES/killbots.mo
 share/locale/is/LC_MESSAGES/killbots.mo
 share/locale/it/LC_MESSAGES/killbots.mo
 share/locale/ja/LC_MESSAGES/killbots.mo
+share/locale/ka/LC_MESSAGES/killbots.mo
 share/locale/kk/LC_MESSAGES/killbots.mo
 share/locale/km/LC_MESSAGES/killbots.mo
 share/locale/ko/LC_MESSAGES/killbots.mo
 share/locale/lt/LC_MESSAGES/killbots.mo
 share/locale/lv/LC_MESSAGES/killbots.mo
+share/locale/mai/LC_MESSAGES/killbots.mo
 share/locale/ml/LC_MESSAGES/killbots.mo
 share/locale/mr/LC_MESSAGES/killbots.mo
 share/locale/nb/LC_MESSAGES/killbots.mo
@@ -67,6 +69,9 @@ share/locale/ru/LC_MESSAGES/killbots.mo
 share/locale/sk/LC_MESSAGES/killbots.mo
 share/locale/sl/LC_MESSAGES/killbots.mo
 share/locale/sr/LC_MESSAGES/killbots.mo
+share/locale/sr@ijekavian/LC_MESSAGES/killbots.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/killbots.mo
+share/locale/sr@latin/LC_MESSAGES/killbots.mo
 share/locale/sv/LC_MESSAGES/killbots.mo
 share/locale/tr/LC_MESSAGES/killbots.mo
 share/locale/ug/LC_MESSAGES/killbots.mo

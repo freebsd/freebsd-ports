@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+PowerChute Network Shutdown is installed in %%PREFIX%%/pcns.
+
+PCNS requires one-time initialization, which should be done after enabling the
+service:
+
+    # sysrc pcns_enable="YES"
+    # service pcns init
+
+Once initialized, PCNS can be started by issuing:
+
+    # service pcns start
+
+The configuration wizard can be accessed using a browser at:
+    https://<your_server_ip_address>:6547
+EOM
+}
+]

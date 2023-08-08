@@ -104,7 +104,7 @@ LAZARUS_DEVELSUFFIX=	-devel
 BUILD_DEPENDS+=	${MKINSTDIR}/gtk2.fpm:x11-toolkits/fpc-gtk2
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgtk-x11-2.0.so:x11-toolkits/gtk20 \
-		libatk-1.0.so:accessibility/atk \
+		libatk-1.0.so:accessibility/at-spi2-core \
 		libpango-1.0.so:x11-toolkits/pango \
 		libgdk_pixbuf-2.0.so:graphics/gdk-pixbuf2
 LCL_PLATFORM=	gtk2

@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Odoo 15 ERP was installed
+Odoo 16 ERP was installed
 
 1) The configuration file can be located at:
 
@@ -9,7 +9,7 @@ Odoo 15 ERP was installed
 
    Look at the following url for more config options
 
-   https://www.odoo.com/documentation/15.0/administration/install/deploy.html
+   https://www.odoo.com/documentation/16.0/administration/install/deploy.html
 
 2) Odoo use PostgreSQL like database. You must create a database and user 
    before of use Odoo by first time

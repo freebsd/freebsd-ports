@@ -1,0 +1,7 @@
+#
+# PAM configuration for the "i3lock" service. i3lock(1) only uses
+# auth facilities.
+#
+
+auth sufficient pam_exec.so return_prog_exit_status expose_authtok %%LOCALBASE%%/libexec/unix-selfauth-helper
+auth include system

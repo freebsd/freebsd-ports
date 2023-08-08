@@ -1,0 +1,9 @@
+The Budgie Desktop is a feature-rich, modern desktop designed
+to keep out the way of the user.
+It consists of a number of components to provide a more complete
+desktop experience:
+
+* budgie menu
+* raven
+* notifications
+* several popup windows (find applications, session, polkit agent)

@@ -1,0 +1,9 @@
+bin/upx
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/upx-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/upx-doc.txt
+share/man/man1/upx.1.gz

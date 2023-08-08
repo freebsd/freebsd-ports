@@ -1,0 +1,88 @@
+--- Libraries/MiKTeX/App/app.cpp.orig	2021-08-06 15:45:04 UTC
++++ Libraries/MiKTeX/App/app.cpp
+@@ -35,7 +35,7 @@
+ 
+ #include <log4cxx/basicconfigurator.h>
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ #if defined(LOG4CXX_INFO_FMT)
+ #  define MIKTEX_LOG4CXX_12 1
+--- Programs/Editors/TeXworks/miktex/miktex-texworks.cpp.orig	2021-08-06 15:45:04 UTC
++++ Programs/Editors/TeXworks/miktex/miktex-texworks.cpp
+@@ -35,7 +35,7 @@
+ 
+ #include <log4cxx/logger.h>
+ #include <log4cxx/xml/domconfigurator.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #if defined(LOG4CXX_INFO_FMT)
+ #  define MIKTEX_LOG4CXX_12 1
+ #endif
+--- Programs/MiKTeX/Console/Qt/main.cpp.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/Console/Qt/main.cpp
+@@ -33,7 +33,7 @@
+ #include <QTranslator>
+ 
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ 
+ #include "console-version.h"
+--- Programs/MiKTeX/PackageManager/mpm/mpm.cpp.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/PackageManager/mpm/mpm.cpp
+@@ -44,7 +44,7 @@
+ #include <fmt/ostream.h>
+ 
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ #if defined(LOG4CXX_INFO_FMT)
+ #  define MIKTEX_LOG4CXX_12 1
+--- Programs/MiKTeX/Yap/MFC/StdAfx.h.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/Yap/MFC/StdAfx.h
+@@ -62,7 +62,7 @@
+ #include <string>
+ 
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ 
+ #include <fmt/format.h>
+--- Programs/MiKTeX/initexmf/initexmf.cpp.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/initexmf/initexmf.cpp
+@@ -67,7 +67,7 @@
+ 
+ #include <log4cxx/basicconfigurator.h>
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ #if defined(LOG4CXX_INFO_FMT)
+ #  define MIKTEX_LOG4CXX_12 1
+--- Programs/MiKTeX/miktex/miktex.cpp.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/miktex/miktex.cpp
+@@ -34,7 +34,7 @@
+ 
+ #include <log4cxx/basicconfigurator.h>
+ #include <log4cxx/logger.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ #include <log4cxx/xml/domconfigurator.h>
+ #if defined(LOG4CXX_INFO_FMT)
+ #  define MIKTEX_LOG4CXX_12 1
+--- Programs/MiKTeX/mkfntmap/internal.h.orig	2021-08-06 15:45:04 UTC
++++ Programs/MiKTeX/mkfntmap/internal.h
+@@ -57,7 +57,7 @@
+ 
+ #include <log4cxx/logger.h>
+ #include <log4cxx/xml/domconfigurator.h>
+-#include <log4cxx/rollingfileappender.h>
++#include <log4cxx/rolling/rollingfileappender.h>
+ 
+ #define UNUSED_ALWAYS(x)
+ 

@@ -1,26 +1,31 @@
-PORTNAME=		crystal
-DISTVERSION=		1.5.0
-CATEGORIES=		lang
-MASTER_SITES=		https://dl.unrelenting.technology/crystal/:bootstrap
-DISTFILES=		${BOOTSTRAP_PATH}:bootstrap
-DIST_SUBDIR=		${PORTNAME}
-EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+PORTNAME=	crystal
+DISTVERSION=	1.7.3
+CATEGORIES=	lang
+MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${BOOTSTRAP_VERSION}/:bootstrap \
+		LOCAL/dmgk/crystal:bootstrap
+DISTFILES=	${BOOTSTRAP_NAME}.tar.xz:bootstrap
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	dmgk@FreeBSD.org
 COMMENT=	Language with Ruby-like syntax and static type checking
 WWW=		https://crystal-lang.org
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=			aarch64 amd64
-ONLY_FOR_ARCHS_REASON=		requires prebuilt bootstrap compiler
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/llvm-config${LLVM_VERSION}:devel/llvm${BOOTSTRAP_LLVM_VERSION} \
 		git:devel/git
-LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded \
+LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libevent.so:devel/libevent \
+		libffi.so:devel/libffi \
+		libgc-threaded.so:devel/boehm-gc-threaded \
+		libgmp.so:math/gmp \
 		libpcre.so:devel/pcre \
-		libLLVM-${LLVM_VERSION:C/^([6-9])0/\1/:S/-devel/15/}.so:devel/llvm${LLVM_VERSION}
+		libxml2.so:textproc/libxml2 \
+		libyaml.so:textproc/libyaml
 RUN_DEPENDS=	pkg-config:devel/pkgconf
 
 USES=		compiler gmake pkgconfig ssl
@@ -28,26 +33,33 @@ USES=		compiler gmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	crystal-lang
 
-LLVM_VERSION?=	10
-BOOTSTRAP_LLVM_VERSION=	10
-BOOTSTRAP_PATH=	crystal-${BOOTSTRAP_VER}-freebsd12-${ARCH}-llvm${BOOTSTRAP_LLVM_VERSION}
-BOOTSTRAP_VER?=	1.1.1
+COMMIT_ID=		879691b2e326
+LLVM_VERSION?=		14
+BOOTSTRAP_LLVM_VERSION=	14
+BOOTSTRAP_VERSION=	1.5.1
+BOOTSTRAP_NAME=		crystal-${BOOTSTRAP_VERSION}-${ARCH}-llvm${BOOTSTRAP_LLVM_VERSION}
 
-MAKE_ARGS=	SHELL=sh \
-		LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
-		FLAGS="--release --no-debug --progress --threads=${MAKE_JOBS_NUMBER}" \
-		EXPORTS='CRYSTAL_CONFIG_PATH="lib:${PREFIX}/lib/${PORTNAME}"' \
+MAKE_ARGS=	LLVM_CONFIG="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
+		CRYSTAL_CONFIG_PATH="lib:${PREFIX}/lib/${PORTNAME}" \
+		CRYSTAL_CONFIG_BUILD_COMMIT="${COMMIT_ID}" \
 		CRYSTAL_CACHE_DIR="${WRKDIR}/cache" \
-		CRYSTAL_CONFIG_VERSION="${DISTVERSION}"
+		FLAGS="--progress --stats --threads ${MAKE_JOBS_NUMBER} ${OPT_FLAGS}"
 
+TEST_ARGS=	${MAKE_ARGS:S/release=1//}
 TEST_TARGET=	spec
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DOCS EXAMPLES BASH ZSH
-OPTIONS_DEFAULT=	BASH ZSH
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES INTERPRETER STATIC
+OPTIONS_DEFAULT=	INTERPRETER
+
+INTERPRETER_DESC=	Enable interpreter (experimental)
+
+DEBUG_VARS=		opt_flags+="--debug" strip=
+DEBUG_VARS_OFF=		opt_flags+="--release --no-debug"
+INTERPRETER_MAKE_ARGS=	interpreter=1
+STATIC_MAKE_ARGS=	static=1
 
 .include <bsd.port.options.mk>
 
@@ -65,11 +77,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_openssl_lib__crypto.cr \
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}/.build
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${BOOTSTRAP_PATH} ${WRKSRC}/.build/crystal
-	${CHMOD} +x ${WRKSRC}/.build/crystal
-	${LN} -s x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-portbld-freebsd
-	${LN} -s x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-freebsd
+	@${RLN} ${WRKDIR}/.build ${WRKSRC}
+	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-freebsd
+	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-portbld-freebsd
+	@${RLN} x86_64-freebsd ${WRKSRC}/src/lib_c/aarch64-unknown-freebsd
 
 post-patch:
 .if ${SSL_DEFAULT} == "base" && ${OSREL:R} < 15
@@ -80,30 +91,28 @@ post-patch:
 		${WRKSRC}/src/openssl/lib_crypto.cr
 .endif
 
-do-build-DOCS-on:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} docs \
-			CRYSTAL_CACHE_DIR="${WRKDIR}/cache"
+pre-test:
+	@${CHMOD} +x ${WRKSRC}/src/llvm/ext/find-llvm-config
+
+post-build-DOCS-on:
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} docs)
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/.build/crystal ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/man/crystal.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 	(cd ${INSTALL_WRKSRC}/src && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME})
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/bash_completion.d
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/zsh/site-functions
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.bash \
+		${STAGEDIR}${LOCALBASE}/etc/bash_completion.d/_crystal.bash
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.zsh \
+		${STAGEDIR}${LOCALBASE}/share/zsh/site-functions/_crystal
 
 do-install-DOCS-on:
 	(cd ${INSTALL_WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 do-install-EXAMPLES-on:
 	(cd ${INSTALL_WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-
-do-install-BASH-on:
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/bash_completion.d
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.bash \
-			${STAGEDIR}${LOCALBASE}/etc/bash_completion.d/_crystal.bash
-
-do-install-ZSH-on:
-	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/zsh/site-functions
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/etc/completion.zsh \
-			${STAGEDIR}${LOCALBASE}/share/zsh/site-functions/_crystal
 
 .if !defined(_CRYSTAL_MAKESUM_GUARD)
 makesum:

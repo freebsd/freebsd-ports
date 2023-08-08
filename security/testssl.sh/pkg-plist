@@ -1,6 +1,7 @@
 bin/testssl.sh
 man/man1/testssl.1.gz
 %%DATADIR%%/etc/Apple.pem
+%%DATADIR%%/etc/DST Root CA X3.txt
 %%DATADIR%%/etc/Java.pem
 %%DATADIR%%/etc/Linux.pem
 %%DATADIR%%/etc/Microsoft.pem
@@ -13,6 +14,7 @@ man/man1/testssl.1.gz
 %%DATADIR%%/etc/client-simulation.wiresharked.txt
 %%DATADIR%%/etc/common-primes.txt
 %%DATADIR%%/etc/curves.txt
+%%DATADIR%%/etc/curves-mapping.txt
 %%DATADIR%%/etc/openssl.cnf
 %%DATADIR%%/etc/tls_data.txt
 %%DATADIR%%/utils/00_unittest_baseline.sh

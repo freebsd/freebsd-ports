@@ -1,7 +1,7 @@
 # PORTNAME block
 PORTNAME=	motion
 PORTVERSION=	4.3.2
-PORTREVISION=	3
+PORTREVISION=	7
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	multimedia
 
@@ -27,6 +27,11 @@ GH_ACCOUNT=	Motion-Project
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
+
+CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+MAKE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
 
 # Standard bsd.port.mk variables
 SUB_FILES=	pkg-message
@@ -55,8 +60,9 @@ VIDEO_DESC=		Video capture driver (Netcam support only if none selected)
 WEBCAMD_DESC=		Webcams using webcamd
 
 BKTR_CONFIGURE_WITH=	bktr
-FFMPEG_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
-FFMPEG_CONFIGURE_ON=	--with-ffmpeg=${LOCALBASE}
+
+FFMPEG_LIB_DEPENDS=	libavformat.so.58:multimedia/ffmpeg4
+FFMPEG_CONFIGURE_ON=	--with-ffmpeg=${LOCALBASE}/ffmpeg4
 FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 MYSQL_USES=		mysql

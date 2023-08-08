@@ -170,7 +170,7 @@
 +const char *FmtSynset(SynsetPtr, int);	
  
  /* Find string for 'searchstr' as it is in index file */
-@@ -381,37 +384,34 @@
+@@ -381,37 +384,33 @@
  
  /* Pass in string for POS, return corresponding integer value */
 -extern int StrToPos(char *);
@@ -217,7 +217,6 @@
 +unsigned int GetKeyForOffset(const char *);
  
 -char *SetSearchdir();
-+const char *SetSearchdir(void);
  
  /* Return number of times sense is tagged */
 @@ -435,17 +435,6 @@

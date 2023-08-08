@@ -1,0 +1,3 @@
+An interface module for Evtx2Splunk and Iris in order to ingest Microsoft EVTX
+log files. The module is installed on IRIS by default. In case you needed a
+procedure to install it by yourself, you can follow the one below.

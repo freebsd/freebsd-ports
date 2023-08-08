@@ -1,4 +1,3 @@
-PORTVERSION=	3.19.0
 CATEGORIES?=	mail
 MASTER_SITES=	http://www.claws-mail.org/download.php?file=releases/
 
@@ -11,7 +10,12 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} --disable-dbus --disable-static
 
-.include "../claws-mail/Makefile.claws.plugins"
+.include "${.CURDIR}/../claws-mail/Makefile.ver"
+.include "${.CURDIR}/../claws-mail/Makefile.claws.plugins"
+
+.if ${MASTER_OPTIONS:MGTK2}
+EXTRA_PATCHES+=	${.CURDIR}/../claws-mail/files/extra-patch-configure.ac
+.endif
 
 .for p in ${CLAWS_PLUGINS}
 CONFIGURE_ARGS+=	--disable-${p}-plugin
@@ -24,7 +28,7 @@ PKGNAMEPREFIX=	claws-mail-
 BUILD_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
 RUN_DEPENDS+=	claws-mail>=${PORTVERSION}:mail/claws-mail
 
-MASTERDIR=	${.CURDIR}/../../mail/claws-mail
+MASTERDIR=	${.CURDIR}/../claws-mail
 DESCR=		${.CURDIR}/pkg-descr
 FILESDIR=	${.CURDIR}/files
 PLIST=		${NONEXISTENT}

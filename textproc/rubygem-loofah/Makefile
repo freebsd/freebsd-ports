@@ -1,5 +1,5 @@
 PORTNAME=	loofah
-PORTVERSION=	2.18.0
+PORTVERSION=	2.21.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,10 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
 RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
-		rubygem-nokogiri>=1.5.9:textproc/rubygem-nokogiri
+		rubygem-nokogiri>=1.12.0:textproc/rubygem-nokogiri
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

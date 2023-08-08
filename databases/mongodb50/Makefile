@@ -1,13 +1,13 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.12
+DISTVERSION=	5.0.19
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Distributed document-oriented "NoSQL" database (5.0.x Branch)
 WWW=		https://docs.mongodb.com/v5.0/
 
@@ -20,12 +20,10 @@ LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD; upstream supports arm64, ppc64le, s390x, and x86-64
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
-		${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libboost_log.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy \
 		libstemmer.so:textproc/snowballstemmer \
@@ -33,8 +31,10 @@ LIB_DEPENDS=	libboost_log.so:devel/boost-libs \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++17-lang cpe python:3.5+,build scons shebangfix
+USES=		compiler:c++17-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
+
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
 
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
@@ -43,16 +43,15 @@ MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
 		--runtime-hardening=on \
-		--use-system-boost \
+		--use-system-libunwind \
 		--use-system-pcre \
 		--use-system-snappy \
 		--use-system-stemmer \
-		--use-system-libunwind \
 		--use-system-yaml \
 		--use-system-zlib \
 		--use-system-zstd \
 		-j ${MAKE_JOBS_NUMBER} \
-		AR=${PREFIX}/bin/ar \
+		AR=llvm-ar \
 		VERBOSE=on
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
@@ -60,10 +59,14 @@ CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 USERS=		mongodb
 GROUPS=		mongodb
 
-OPTIONS_DEFINE=			LTO SASL SSL
-OPTIONS_DEFAULT=		LTO SASL SSL
+OPTIONS_DEFINE=		LTO SASL SSL NOAVX
+OPTIONS_DEFAULT=	LTO SASL SSL
+
+NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
 
 LTO_MAKE_ARGS=	--lto=on
+
+NOAVX_MAKE_ARGS=	--experimental-optimization="-sandybridge"
 
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_MAKE_ARGS=		--use-sasl-client
@@ -89,7 +92,6 @@ pre-patch:
 	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
 
 post-patch:
-	${RM} -rf ${WRKSRC}/src/third_party/boost
 	${RM} -rf ${WRKSRC}/src/third_party/pcre-*
 	${RM} -rf ${WRKSRC}/src/third_party/snappy-*
 	${RM} -rf ${WRKSRC}/src/third_party/unwind

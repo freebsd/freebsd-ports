@@ -1,0 +1,2 @@
+pyttsx3 is a text-to-speech conversion library in Python.
+Unlike alternative libraries, it works offline.

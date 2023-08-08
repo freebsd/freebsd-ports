@@ -5,6 +5,7 @@ include/charls/charls_jpegls_decoder.h
 include/charls/charls_jpegls_encoder.h
 include/charls/jpegls_error.h
 include/charls/public_types.h
+include/charls/validate_spiff_header.h
 include/charls/version.h
 lib/cmake/charls/charlsConfig-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/charls/charlsConfig.cmake

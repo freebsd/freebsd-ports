@@ -1,7 +1,7 @@
 PORTNAME=	codespell
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.5
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code spelling checker
@@ -10,8 +10,12 @@ WWW=		https://github.com/codespell-project/codespell
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.5+
-USE_PYTHON=	autoplist concurrent distutils noflavors
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
 

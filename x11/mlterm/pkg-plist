@@ -28,8 +28,8 @@ lib/libpobl.so.2
 lib/libpobl.so.2.0.1
 lib/libvte-mlterm.a
 lib/libvte-mlterm.so
-lib/libvte-mlterm.so.9
-lib/libvte-mlterm.so.9.0.0
+lib/libvte-mlterm.so.0
+lib/libvte-mlterm.so.0.0.0
 lib/mef/libmef_8bits.a
 lib/mef/libmef_8bits.so
 lib/mef/libmef_jajp.a
@@ -109,6 +109,7 @@ man/man1/mlclient.1.gz
 man/man1/mlterm.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ja
+share/applications/mlterm.desktop
 share/locale/ar/LC_MESSAGES/mlconfig.mo
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo

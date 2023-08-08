@@ -28,7 +28,7 @@ TEST_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb \
 		gwc:sysutils/coreutils
 
 USES=		compiler:c++11-lang gmake gnome pkgconfig \
-		python:3.5+,build,test
+		python:build,test
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 .endif

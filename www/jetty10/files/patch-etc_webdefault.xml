@@ -1,0 +1,11 @@
+--- etc/webdefault.xml.orig	2022-10-24 21:26:27 UTC
++++ etc/webdefault.xml
+@@ -149,7 +149,7 @@
+     </init-param>
+     <init-param>
+       <param-name>dirAllowed</param-name>
+-      <param-value>true</param-value>
++      <param-value>false</param-value>
+     </init-param>
+     <init-param>
+       <param-name>welcomeServlets</param-name>

@@ -1,7 +1,7 @@
 PORTNAME=	hsaudiotag3k
 DISTVERSION=	1.1.3.post1
 CATEGORIES=	audio python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		http://hg.hardcoded.net/hsaudiotag
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

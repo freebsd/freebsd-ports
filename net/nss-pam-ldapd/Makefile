@@ -1,5 +1,6 @@
 PORTNAME=		nss-pam-ldapd
 PORTVERSION=		0.9.12
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		http://arthurdejong.org/nss-pam-ldapd/ \
 			ZI
@@ -11,10 +12,9 @@ WWW=		https://arthurdejong.org/nss-pam-ldapd/
 LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
-USES=			cpe
+USES=			cpe ldap
 CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
-USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
 PAM_LDAP_SHMAJOR=	1
 NSS_LDAP_SHMAJOR=	1

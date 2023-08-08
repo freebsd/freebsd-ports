@@ -1,0 +1,13 @@
+TIMESTAMP = 1666983297
+SHA256 (cabal/convertible-1.1.1.1/convertible-1.1.1.1.tar.gz) = 991ebd70e413dc7314d3d34fddaa1ad34a837aea48cb8117e1b323f403348cef
+SIZE (cabal/convertible-1.1.1.1/convertible-1.1.1.1.tar.gz) = 14071
+SHA256 (cabal/old-locale-1.0.0.7/old-locale-1.0.0.7.tar.gz) = dbaf8bf6b888fb98845705079296a23c3f40ee2f449df7312f7f7f1de18d7b50
+SIZE (cabal/old-locale-1.0.0.7/old-locale-1.0.0.7.tar.gz) = 3384
+SHA256 (cabal/old-locale-1.0.0.7/revision/2.cabal) = fa998be2c7e00cd26a6e9075bea790caaf3932caa3e9497ad69bc20380dd6911
+SIZE (cabal/old-locale-1.0.0.7/revision/2.cabal) = 1071
+SHA256 (cabal/old-time-1.1.0.3/old-time-1.1.0.3.tar.gz) = 1ccb158b0f7851715d36b757c523b026ca1541e2030d02239802ba39b4112bc1
+SIZE (cabal/old-time-1.1.0.3/old-time-1.1.0.3.tar.gz) = 74219
+SHA256 (cabal/old-time-1.1.0.3/revision/2.cabal) = c91fbb3ee73d20ccd015842b30f1f29a304893ebe0ae3128b7bbc13d5bb0d4c8
+SIZE (cabal/old-time-1.1.0.3/revision/2.cabal) = 1328
+SHA256 (cabal/reactive-systems-syfco-v1.1-34-g0f0f6a6_GH0.tar.gz) = 24786fa3d792187ecfefe5674b675f64faa1172f9dfec348d595507706872a06
+SIZE (cabal/reactive-systems-syfco-v1.1-34-g0f0f6a6_GH0.tar.gz) = 105621

@@ -1,7 +1,7 @@
 PORTNAME=	sqlalchemy-utils
-PORTVERSION=	0.38.3
+PORTVERSION=	0.41.1
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLAlchemy-Utils-${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3:databases/py-sqlalchemy14@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -34,7 +34,7 @@ URL_DESC=	URL type support
 ARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0.3.4:devel/py-arrow@${PY_FLAVOR}
 BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR}
 COLOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colour>=0.0.4:graphics/py-colour@${PY_FLAVOR}
-ENCRYPTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.6:security/py-cryptography@${PY_FLAVOR}
+ENCRYPTED_USES=		pycryptography:run
 INTERVALS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervals>=0.7.1:net/py-intervals@${PY_FLAVOR}
 PASSWORD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.6<2.0:security/py-passlib@${PY_FLAVOR}
 PENDULUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pendulum>=2.0.5:devel/py-pendulum@${PY_FLAVOR}
@@ -42,10 +42,4 @@ PHONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phonenumbers>=5.9.2:devel/py-phonenumb
 TIMEZONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:devel/py-dateutil@${PY_FLAVOR}
 URL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furl>=0.4.1:devel/py-furl@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

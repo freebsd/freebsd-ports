@@ -1,5 +1,5 @@
 PORTNAME=	netgen
-DISTVERSION=	1.5.228
+DISTVERSION=	1.5.255
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-lvs
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/Copying
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake python:3.6+ shebangfix tar:tgz tcl tk xorg
+USES=		gmake python shebangfix tar:tgz tcl tk xorg
 USE_XORG=	x11
 
 USE_GITHUB=	yes

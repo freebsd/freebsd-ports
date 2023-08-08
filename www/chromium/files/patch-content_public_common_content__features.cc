@@ -1,50 +1,50 @@
---- content/public/common/content_features.cc.orig	2022-08-31 12:19:35 UTC
+--- content/public/common/content_features.cc.orig	2023-07-16 15:47:57 UTC
 +++ content/public/common/content_features.cc
-@@ -43,7 +43,7 @@ const base::Feature kAudioServiceOutOfProcess {
-   "AudioServiceOutOfProcess",
+@@ -52,7 +52,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
+              "AudioServiceOutOfProcess",
  // TODO(crbug.com/1052397): Remove !IS_CHROMEOS_LACROS once lacros starts being
  // built with OS_CHROMEOS instead of OS_LINUX.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-       base::FEATURE_ENABLED_BY_DEFAULT
+              base::FEATURE_ENABLED_BY_DEFAULT
  #else
-@@ -55,7 +55,7 @@ const base::Feature kAudioServiceOutOfProcess {
+@@ -64,7 +64,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
  // kAudioServiceOutOfProcess feature is enabled.
- const base::Feature kAudioServiceSandbox {
-   "AudioServiceSandbox",
+ BASE_FEATURE(kAudioServiceSandbox,
+              "AudioServiceSandbox",
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
+              base::FEATURE_ENABLED_BY_DEFAULT
  #else
-       base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1057,7 +1057,7 @@ const base::Feature kWebAssemblyBaseline{"WebAssemblyB
- const base::Feature kWebAssemblyCodeProtection{
-     "WebAssemblyCodeProtection", base::FEATURE_ENABLED_BY_DEFAULT};
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -539,7 +539,7 @@ BASE_FEATURE(kNetworkQualityEstimatorWebHoldback,
+ // (activated by kUserAgentClientHint)
+ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
  
--#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)
- // Use memory protection keys in userspace (PKU) (if available) to protect code
- // JITed for WebAssembly. Fall back to traditional memory protection if
- // WebAssemblyCodeProtection is also enabled.
-@@ -1093,7 +1093,7 @@ const base::Feature kWebAssemblyTiering{"WebAssemblyTi
- const base::Feature kWebAssemblyTrapHandler {
-   "WebAssemblyTrapHandler",
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ // Supports proxying thread type changes of renderer processes to browser
+ // process and having browser process handle adjusting thread properties (nice
+ // value, c-group, latency sensitivity...) for renderers which have sandbox
+@@ -1420,7 +1420,7 @@ BASE_FEATURE(kWebAssemblyTiering,
+ BASE_FEATURE(kWebAssemblyTrapHandler,
+              "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -      BUILDFLAG(IS_MAC)) &&                                                 \
 +      BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)) &&                            \
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
-       base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1163,7 +1163,11 @@ const base::Feature kWebUIReportOnlyTrustedTypes{
+              base::FEATURE_ENABLED_BY_DEFAULT
+@@ -1483,7 +1483,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb
 +#if BUILDFLAG(IS_BSD)
-+const base::Feature kWebUsb{"WebUSB", base::FEATURE_DISABLED_BY_DEFAULT};
++BASE_FEATURE(kWebUsb, "WebUSB", base::FEATURE_DISABLED_BY_DEFAULT);
 +#else
- const base::Feature kWebUsb{"WebUSB", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kWebUsb, "WebUSB", base::FEATURE_ENABLED_BY_DEFAULT);
 +#endif
  
  // Controls whether the WebXR Device API is enabled.
- const base::Feature kWebXr{"WebXR", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kWebXr, "WebXR", base::FEATURE_ENABLED_BY_DEFAULT);

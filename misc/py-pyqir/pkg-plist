@@ -1,0 +1,6 @@
+%%PYTHON_SITELIBDIR%%/pyqir/__init__.py
+%%PYTHON_SITELIBDIR%%/pyqir/_basicqis.py
+%%PYTHON_SITELIBDIR%%/pyqir/_native.abi3.so
+%%PYTHON_SITELIBDIR%%/pyqir/_simple.py
+%%PYTHON_SITELIBDIR%%/pyqir/qis.py
+%%PYTHON_SITELIBDIR%%/pyqir/rt.py

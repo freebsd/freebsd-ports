@@ -1,8 +1,8 @@
 PORTNAME=	pyicu
 PORTVERSION=	2.4.3
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyICU-${PORTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libicudata.so:devel/icu
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_CXXSTD=	c++11
 USE_PYTHON=	distutils autoplist
 

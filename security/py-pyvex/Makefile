@@ -1,7 +1,7 @@
 PORTNAME=	pyvex
 DISTVERSION=	${ANGR_VERSION}
 CATEGORIES=	security devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -28,7 +28,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}angr>=${DISTVERSION}:security/py-angr@${PY_FLAVOR} \
 		z3>=0:math/z3
 
-USES=		angr:binaries gmake localbase python:3.5+
+USES=		angr:binaries gmake localbase python
 USE_CSTD=	c99
 USE_GITHUB=	nodefault
 GH_TUPLE=	angr:${PORTNAME}:v${DISTVERSION}:tests

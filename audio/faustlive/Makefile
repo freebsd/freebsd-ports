@@ -1,5 +1,7 @@
 PORTNAME=	faustlive
-DISTVERSION=	2.5.11
+DISTVERSION=	2.5.15-20230512
+#MASTER_SITES=	https://github.com/grame-cncm/faustlive/releases/download/${DISTVERSION}/
+#DISTFILES=	FaustLive-${DISTVERSION}${EXTRACT_SUFX} 
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
-		libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
 		libfaust.so:audio/faust \
 		libjack.so:audio/jack \
@@ -19,17 +20,18 @@ LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION} \
 		libqrencode.so:graphics/libqrencode \
 		libsndfile.so:audio/libsndfile # audio/alsa-lib isn't really needed: https://github.com/grame-cncm/faustlive/issues/3
 
-USES=		compiler:c++11-lang gl pkgconfig qmake qt:5 shebangfix
+USES=		compiler:c++11-lang gl llvm:min=13,lib pkgconfig qmake qt:5 shebangfix # llvm version should be the same as in audio/faust
 USE_QT=		core gui network widgets buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	grame-cncm:faustlibraries:1b09fde:grame_cncm_faustlibraries/Resources/Libs
+GH_TUPLE=	grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/Resources/Libs
+GH_TAGNAME=	15ddcbc
+
+#WRKSRC=		${WRKDIR}/FaustLive-${DISTVERSION}
 
 SHEBANG_GLOB=	build install makelibs
-
-LLVM_VERSION=	11 # llvm version should be the same as in audio/faust
 
 QMAKE_ARGS=	Build/FaustLive.pro
 

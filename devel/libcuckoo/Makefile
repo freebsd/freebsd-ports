@@ -1,5 +1,6 @@
 PORTNAME=	libcuckoo
 PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -13,7 +14,6 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	efficient
-GH_TAGNAME=	v${PORTVERSION}
 
 NO_ARCH=	yes
 

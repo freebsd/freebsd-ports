@@ -1,7 +1,8 @@
 PORTNAME=	PyFR
-DISTVERSION=	1.14.0
+DISTVERSION=	1.15.0
+PORTREVISION=	1
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyfr-${DISTVERSION}
 
@@ -20,8 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pytools>=2016.2.1:devel/py-pytools@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		python:3.7+ shebangfix
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python shebangfix
+USE_PYTHON=	distutils concurrent autoplist pytest
 
 SHEBANG_FILES=	setup.py pyfr/__main__.py
 

@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-windowck-plugin
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -13,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 BUILD_DEPENDS=	xdt-csource:devel/xfce4-dev-tools
 
-USES=		gettext-tools gmake gnome libtool python:3.7+,build pkgconfig \
+USES=		gettext-tools gmake gnome libtool python:build pkgconfig \
 		shebangfix tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3 intltool
 USE_XFCE=	panel

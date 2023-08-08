@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2023-05-25 11:18:07 UTC
++++ Makefile.in
+@@ -14,10 +14,10 @@ clean \
+ distclean \
+ install \
+ uninstall ::
+-	cd doc && $(MAKE) $@
+-	cd lib && $(MAKE) $@
+-	cd src && $(MAKE) $@
+-	cd tests && $(MAKE) $@
++	$(MAKE) -C doc $@
++	$(MAKE) -C lib $@
++	$(MAKE) -C src $@
++	$(MAKE) -C tests $@
+ 
+ distclean ::
+ 	-rm -f blame.spec

@@ -1,8 +1,7 @@
 PORTNAME=	Term-RawInput
-PORTVERSION=	1.23
+PORTVERSION=	1.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:REEDFISH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -16,5 +15,7 @@ RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

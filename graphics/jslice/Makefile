@@ -1,6 +1,6 @@
 PORTNAME=	jslice
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pldaniels.com/jslice/
 

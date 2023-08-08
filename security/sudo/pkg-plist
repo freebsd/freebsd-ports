@@ -13,7 +13,6 @@ libexec/sudo/libsudo_util.so
 libexec/sudo/libsudo_util.so.0
 libexec/sudo/libsudo_util.so.0.0.0
 %%PYTHON%%libexec/sudo/python_plugin.so
-libexec/sudo/sample_approval.so
 libexec/sudo/sudo_intercept.so
 libexec/sudo/sudo_noexec.so
 libexec/sudo/sudoers.so
@@ -98,6 +97,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/sudoers.mo
@@ -120,6 +120,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/sk/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sudo.mo

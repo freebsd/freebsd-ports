@@ -1,5 +1,6 @@
 PORTNAME=	linux-c7
 PORTVERSION=	${LINUX_DIST_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -23,7 +24,6 @@ RUN_DEPENDS=	linux-c7-libasyncns>0:dns/linux-c7-libasyncns \
 		linux-c7-devtools>0:devel/linux-c7-devtools \
 		linux-c7-dbus-libs>0:devel/linux-c7-dbus-libs \
 		linux-c7-qt>0:devel/linux-c7-qt \
-		linux-c7-dbus-glib>0:devel/linux-c7-dbus-glib \
 		linux-c7-xorg-libs>0:x11/linux-c7-xorg-libs \
 		linux-c7-fontconfig>0:x11-fonts/linux-c7-fontconfig \
 		linux-c7-cups-libs>0:print/linux-c7-cups-libs \

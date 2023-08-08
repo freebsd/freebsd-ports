@@ -1,0 +1,11 @@
+--- libffabi/src/ffabi.c.orig	2023-05-13 05:57:55 UTC
++++ libffabi/src/ffabi.c
+@@ -478,7 +478,7 @@ FFM_AudioEncodeContext* __cdecl ffm_audio_encode_init(
+ #else
+     ctx->frame = av_frame_alloc();
+     if (av_sample_fmt_is_planar(ctx->avctx->sample_fmt)) {
+-        ctx->frame_extended_data = av_mallocz_array(ctx->avctx->channels,
++        ctx->frame_extended_data = av_calloc(ctx->avctx->channels,
+             sizeof(*ctx->frame_extended_data));
+         if (!ctx->frame_extended_data) {
+             ffm_audio_encode_close(ctx);

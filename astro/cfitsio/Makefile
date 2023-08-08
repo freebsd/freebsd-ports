@@ -1,6 +1,5 @@
 PORTNAME=	cfitsio
-PORTVERSION=	4.1.0
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	astro
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -34,10 +33,10 @@ post-patch:
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libcfitsio.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/libcfitsio.so.10.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/cfitsio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	${LN} -fs libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.9
-	${LN} -fs libcfitsio.so.9.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
+	${LN} -fs libcfitsio.so.10.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.10
+	${LN} -fs libcfitsio.so.10.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

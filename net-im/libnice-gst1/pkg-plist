@@ -5,6 +5,7 @@
 @comment include/nice/candidate.h
 @comment include/nice/debug.h
 @comment include/nice/interfaces.h
+@comment include/nice/nice-version.h
 @comment include/nice/nice.h
 @comment include/nice/pseudotcp.h
 @comment include/stun/constants.h
@@ -20,6 +21,6 @@
 lib/gstreamer-1.0/libgstnice.so
 @comment lib/libnice.so
 @comment lib/libnice.so.10
-@comment lib/libnice.so.10.12.0
+@comment lib/libnice.so.10.13.1
 @comment libdata/pkgconfig/nice.pc
 @comment share/gir-1.0/Nice-0.1.gir

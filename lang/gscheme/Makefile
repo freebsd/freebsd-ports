@@ -1,6 +1,6 @@
 PORTNAME=	gscheme
 PORTVERSION=	0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GScheme/ \
 		LOCAL/dinoex

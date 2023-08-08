@@ -1,6 +1,6 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.20.1
-PORTREVISION=	1
+DISTVERSION=	0.20.2
+PORTREVISION=	5
 # use these for bugfixes/snapshots
 # DISTVERSION=	0.18-16093 # git rev-list --count
 # DISTVERSIONSUFFIX=	-g690774c0e
@@ -29,27 +29,29 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libboost_thread.so:devel/boost-libs \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
-		libmpi.so:net/mpich \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5-110.so:science/hdf5-110
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
-		localbase:ldflags pkgconfig python:3.7+ localbase qt:5 xorg
+		localbase:ldflags mpi:openmpi pkgconfig python localbase qt:5 xorg \
+		desktop-file-utils shared-mime-info shebangfix
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
 USE_QT=		buildtools concurrent core declarative gui location network \
-		opengl printsupport qmake:build svg webchannel webengine \
-		widgets xml xmlpatterns
+		opengl printsupport qmake:build svg webchannel widgets xml \
+		xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
 
-VTK_VER=	9.1
+VTK_VER=	9.2
 
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
+SHEBANG_FILES=	src/Tools/freecad-thumbnailer
 
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
@@ -69,21 +71,34 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DBUILD_ENABLE_CXX_STD=C++17
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
+# Install XDG icons and files to the standard path
+CMAKE_ARGS+=	-DXDG_DATADIR="${PREFIX}/share"
 
 OPTIONS_DEFINE=	COLLADA
 
 COLLADA_DESC=		Install pycollada for Collada files import
 COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${PY_FLAVOR}
 
-DESKTOP_ENTRIES=${PORTNAME} "" "${PREFIX}/FreeCAD/data/freecad.svg" \
-		${PORTNAME} "Graphics;Engineering;" false
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+USE_QT+=	webengine
+.else
+USE_QT+=	webkit
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/self\.rev/s/Unknown/${DISTVERSION:C/.*-//}/' \
 		${WRKSRC}/src/Tools/SubWCRev.py
+# Install XDG icons and files to the standard path
+	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_DATAROOTDIR/XDG_DATADIR/g' \
+		${WRKSRC}/src/XDGData/CMakeLists.txt \
+		${WRKSRC}/src/Gui/CMakeLists.txt
 
 post-install:
 	${LN} -s ../${PORTNAME}/bin/FreeCAD ${STAGEDIR}${LOCALBASE}/bin/FreeCAD
 	${LN} -s ../${PORTNAME}/bin/FreeCADCmd ${STAGEDIR}${LOCALBASE}/bin/FreeCADCmd
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Tools/freecad-thumbnailer \
+		${STAGEDIR}${PREFIX}/bin/freecad-thumbnailer
 
 .include <bsd.port.mk>

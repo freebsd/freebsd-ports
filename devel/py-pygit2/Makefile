@@ -1,10 +1,9 @@
 # Also update devel/libgit2, devel/libgit2-glib, devel/rubygem-rugged
 
 PORTNAME=	pygit2
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.11.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	LIBGIT2=${LOCALBASE}
 PYDISTUTILS_TEST_TARGET?=	test

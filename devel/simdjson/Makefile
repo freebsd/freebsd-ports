@@ -1,6 +1,6 @@
 PORTNAME=	simdjson
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
+DISTVERSION=	3.1.5
 CATEGORIES=	devel
 
 MAINTAINER=	olevole@olevole.ru
@@ -10,16 +10,21 @@ WWW=		https://simdjson.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	does not build (error: unknown type name '__uint128_t')
-CXXFLAGS_powerpc64=	-mpower8-vector
-
-USES=		cmake compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang python:test
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_TESTING_TARGET=	all_tests
+# Found in dependencies/CMakeLists.txt
+GH_TUPLE=	simdjson:simdjson-data:a5b13ba:simdjson_data/dependencies/.cache/simdjson-data
 
-CMAKE_ON=	SIMDJSON_JUST_LIBRARY \
-		BUILD_SHARED_LIBS
+CMAKE_TESTING_ON=	SIMDJSON_DEVELOPER_MODE
+CMAKE_TESTING_OFF=	SIMDJSON_ALLOW_DOWNLOADS \
+			SIMDJSON_COMPETITION \
+			SIMDJSON_GOOGLE_BENCHMARKS
+
+CMAKE_ON=		BUILD_SHARED_LIBS
+
+CXXFLAGS_i386=		-DSIMDJSON_NO_PORTABILITY_WARNING
+CXXFLAGS_powerpc64=	-mpower8-vector
 
 .include <bsd.port.mk>

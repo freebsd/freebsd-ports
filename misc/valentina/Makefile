@@ -1,5 +1,5 @@
 PORTNAME=	valentina
-DISTVERSION=	0.7.51
+DISTVERSION=	0.7.52
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,6 @@ WWW=		https://smart-pattern.com.ua/en/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-BROKEN_i386=	ld: error: failed to open bin/valentina: Cannot allocate memory
-
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qmake qt:5
 USE_QT=		buildtools:build concurrent core gui linguisttools:build network \
 		opengl printsupport svg testlib:build widgets xml xmlpatterns
@@ -19,7 +17,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_COMMIT=	679e68a15bb1fa247140171825aa50e0f6aaea06
+GL_TAGNAME=	9429be3e0d467a75eab1f2fd3791ba29d9d1bb9d
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 
@@ -29,5 +27,11 @@ QMAKE_ARGS+=	CONFIG+="no_ccache"
 .endif
 
 BINARY_ALIAS=	hg=/usr/bin/true git=/usr/bin/false
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
 
 .include <bsd.port.mk>

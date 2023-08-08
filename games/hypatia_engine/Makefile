@@ -1,8 +1,8 @@
 PORTNAME=	hypatia_engine
 PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	games python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lillian.lynn.lemmer@gmail.com
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYGAME} \
 		${PYTHON_PKGNAMEPREFIX}pyganim>0:graphics/py-pyganim@${PY_FLAVOR} \
 		${PY_PILLOW}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

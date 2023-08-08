@@ -1,0 +1,91 @@
+--- CMakeLists.txt.orig	2022-05-03 12:18:23 UTC
++++ CMakeLists.txt
+@@ -348,6 +348,7 @@ ENDIF(LIBIDN_FOUND)
+ 	MESSAGE("Libidn not found. AES-256 Encryption support will be disabled")
+ ENDIF(LIBIDN_FOUND)
+ 
++IF(WANT_LIBJPEG)
+ FIND_PACKAGE(LIBJPEG)
+ 
+ IF(LIBJPEG_FOUND)
+@@ -357,7 +358,9 @@ ENDIF(LIBJPEG_FOUND)
+ ELSE(LIBJPEG_FOUND)
+   MESSAGE("Libjpeg not found. JPEG support will be disabled")
+ ENDIF(LIBJPEG_FOUND)
++ENDIF(WANT_LIBJPEG)
+ 
++IF(WANT_TIFF)
+ FIND_PACKAGE(TIFF)
+ 
+ IF(TIFF_FOUND)
+@@ -367,7 +370,9 @@ ENDIF(TIFF_FOUND)
+ ELSE(TIFF_FOUND)
+   MESSAGE("Libtiff not found. TIFF support will be disabled")
+ ENDIF(TIFF_FOUND)
++ENDIF(WANT_TIFF)
+ 
++IF(WANT_PNG)
+ FIND_PACKAGE(PNG)
+ 
+ IF(PNG_FOUND)
+@@ -378,7 +383,9 @@ ENDIF(PNG_FOUND)
+   MESSAGE("LibPng not found. PNG support will be disabled")
+   SET(PNG_LIBRARIES "")
+ ENDIF(PNG_FOUND)
++ENDIF(WANT_PNG)
+ 
++IF(WANT_UNISTRING)
+ FIND_PACKAGE(UNISTRING)
+ 
+ IF(UNISTRING_FOUND)
+@@ -389,10 +396,12 @@ ENDIF(UNISTRING_FOUND)
+   MESSAGE("LibUnistring not found. Unistring support will be disabled")
+   SET(UNISTRING_LIBRARY "")
+ ENDIF(UNISTRING_FOUND)
++ENDIF(WANT_UNISTRING)
+ 
+ 
+ IF(NOT PODOFO_BUILD_LIB_ONLY)
+ 
++IF(WANT_CppUnit)
+ FIND_PACKAGE(CppUnit)
+ 
+ IF(CppUnit_FOUND)
+@@ -402,6 +411,7 @@ ENDIF(CppUnit_FOUND)
+ ELSE(CppUnit_FOUND)
+   MESSAGE("Cppunit not found. No unit tests will be built.")
+ ENDIF(CppUnit_FOUND)
++ENDIF(WANT_CppUnit)
+ 
+ ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
+ 
+@@ -442,6 +452,7 @@ IF(NOT PODOFO_BUILD_LIB_ONLY)
+ ENDIF(WANT_FONTCONFIG)
+ 
+ IF(NOT PODOFO_BUILD_LIB_ONLY)
++IF(WANT_LUA)
+ FIND_PACKAGE(LUA)
+ IF(LUA_FOUND)
+ 	# If we have lua, we can build podofoimpose.
+@@ -453,6 +464,7 @@ ENDIF(LUA_FOUND)
+ ELSE(LUA_FOUND)
+ 	MESSAGE("Lua not found - PoDoFoImpose and PoDoFoColor will be built without Lua support")
+ ENDIF(LUA_FOUND)
++ENDIF(WANT_LUA)
+ ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
+ 
+ 
+@@ -527,11 +539,11 @@ IF(WIN32 OR PODOFO_BUILD_STATIC)
+ 
+ IF(WIN32 OR PODOFO_BUILD_STATIC)
+   SET(PODOFO_LIB
+-      podofo
++      podofo09
+       ${PODOFO_LIB_DEPENDS}
+       )
+ ELSE(WIN32 OR PODOFO_BUILD_STATIC)
+-  SET(PODOFO_LIB podofo
++  SET(PODOFO_LIB podofo09
+       ${stlport_libraries_if_use_stlport}
+       )
+ ENDIF(WIN32 OR PODOFO_BUILD_STATIC)

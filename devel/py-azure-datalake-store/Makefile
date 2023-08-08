@@ -1,7 +1,7 @@
 PORTNAME=	azure-datalake-store
-PORTVERSION=	0.0.49
+PORTVERSION=	0.0.53
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -10,11 +10,11 @@ WWW=		https://pypi.org/project/azure-datalake-store/
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}adal>=0.4.2:net-mgmt/py-adal@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}msal>=1.16.0:devel/py-msal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
 
-USES=		azurepy python:3.6+
+USES=		azurepy python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

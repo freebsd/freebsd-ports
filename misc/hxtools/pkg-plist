@@ -38,7 +38,6 @@ bin/ssa2srt
 bin/su1
 bin/sysinfo
 bin/tailhex
-bin/vfontas
 bin/wktimer
 bin/xcp
 etc/hxloginpref.conf
@@ -102,7 +101,6 @@ man/man1/spec-beautifier.1.gz
 man/man1/ssa2srt.1.gz
 man/man1/sysinfo.1.gz
 man/man1/tailhex.1.gz
-man/man1/vfontas.1.gz
 man/man1/wktimer.1.gz
 man/man1/xcp.1.gz
 man/man7/hxtools.7.gz
@@ -112,15 +110,8 @@ man/man8/utmp_register.8.gz
 man/man8/vcsaview.8.gz
 man/man8/xfs_irecover.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/changelog.rst
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/colortable
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cp437
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/git-deconstruct
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/neon
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prime.S
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prime.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rc4
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sym_word.S
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unitable
 %%DATADIR%%/gitconfig
 %%DATADIR%%/hxloginpref.conf
 %%DATADIR%%/hxtools_bashrc.bash

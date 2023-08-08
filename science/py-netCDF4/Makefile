@@ -1,5 +1,5 @@
 PORTNAME=	netCDF4
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.4
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	rel
 CATEGORIES=	science python
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cftime>=0:devel/py-cftime@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	Unidata
 GH_PROJECT=	netcdf4-python

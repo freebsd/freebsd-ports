@@ -1,11 +1,14 @@
 PORTNAME=	webkit
 DISTVERSION=	2.34.6
-PORTREVISION=	3
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
 DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://github.com/WebKit/WebKit/commit/
+PATCHFILES=	06f9978e52a8408ed6c2c8296afb1e7449c2f1ee.patch:-p1 # https://bugs.webkit.org/show_bug.cgi?id=247770
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
@@ -37,13 +40,11 @@ PORTSCOUT=	limitw:1,even
 
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
-		sqlite tar:xz xorg
+		ruby:build sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl glesv2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_RUBY=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
 
 CPE_VENDOR=	webkitgtk

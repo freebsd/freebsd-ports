@@ -1,9 +1,10 @@
 PORTNAME=	hatari
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
 WWW=		https://hatari.tuxfamily.org/
 
@@ -15,7 +16,7 @@ BROKEN_armv6=		fails to configure: CMake Error: Generator: execution of make fai
 LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libpng.so:graphics/png
 
-USES=		cmake desktop-file-utils gnome python:3.6+ readline \
+USES=		cmake desktop-file-utils gnome python readline \
 		sdl shared-mime-info shebangfix tar:bzip2 xorg
 USE_GNOME=	gtk30
 USE_XORG=	sm ice x11 xext

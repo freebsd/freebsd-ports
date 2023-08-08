@@ -1,0 +1,7 @@
+bin/nvim-gtk
+share/applications/org.daa.NeovimGtk.desktop
+share/icons/hicolor/128x128/apps/org.daa.NeovimGtk.png
+share/icons/hicolor/48x48/apps/org.daa.NeovimGtk.png
+share/icons/hicolor/scalable/apps/org.daa.NeovimGtk.svg
+share/icons/hicolor/symbolic/apps/org.daa.NeovimGtk-symbolic.svg
+share/nvim-gtk/runtime/plugin/nvim_gui_shim.vim

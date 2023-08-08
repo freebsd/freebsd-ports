@@ -1,6 +1,6 @@
---- cmake/config.h.cmake.orig	2018-02-23 10:25:17 UTC
+--- cmake/config.h.cmake.orig	2022-09-14 12:12:21 UTC
 +++ cmake/config.h.cmake
-@@ -181,6 +181,9 @@
+@@ -198,6 +198,9 @@
  /* Define to 1 if you have clearenv */
  #cmakedefine   HAVE_CLEARENV 1
  

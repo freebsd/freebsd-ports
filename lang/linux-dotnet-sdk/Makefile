@@ -5,7 +5,7 @@ CATEGORIES=	lang
 MASTER_SITES?=	https://download.microsoft.com/download/C/7/D/C7DCA2DE-7163-45D1-A05A-5112DAF51445/
 PKGNAMEPREFIX=	linux-
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform .NET implementation (Software Development Kit)
 WWW=		https://www.microsoft.com/net/
 

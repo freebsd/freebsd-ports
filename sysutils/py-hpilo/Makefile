@@ -11,7 +11,7 @@ WWW=		https://github.com/seveas/python-hpilo
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	python:3.6+
+USES=	python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	seveas

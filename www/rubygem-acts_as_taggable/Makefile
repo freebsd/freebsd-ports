@@ -9,7 +9,6 @@ WWW=		https://github.com/twoism/taggable
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

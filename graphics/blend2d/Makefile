@@ -9,6 +9,8 @@ WWW=		https://blend2d.com/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libasmjit.so:devel/asmjit
 
 USES=		cmake localbase

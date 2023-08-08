@@ -1,7 +1,7 @@
 diff --git apr-util-1.6.1/build/dbm.m4 apr-util-1.6.1/build/dbm.m4
 index 57bd131f..5cbee4b3 100644
---- apr-util-1.6.1/build/dbm.m4
-+++ apr-util-1.6.1/build/dbm.m4
+--- apr-util-1.6.3/build/dbm.m4
++++ apr-util-1.6.3/build/dbm.m4
 @@ -112,7 +112,7 @@ AC_DEFUN([APU_CHECK_BERKELEY_DB], [
          changequote([,])
          unset $cache_id

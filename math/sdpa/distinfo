@@ -1,6 +1,7 @@
-SHA256 (sdpa/sdpa_7.3.8.tar.gz) = c7541333da2f0bb2d18e90dbf758ac7cc099f3f7da3f256b284b0725f96d4117
-SIZE (sdpa/sdpa_7.3.8.tar.gz) = 229465
-SHA256 (sdpa/mumps_4.10.0.dfsg.orig.tar.gz) = c76339bba516b96a3021af93d9a31b0fbf5a68cfcd02c9578d665ba8018e4b11
-SIZE (sdpa/mumps_4.10.0.dfsg.orig.tar.gz) = 1785786
+TIMESTAMP = 1687368124
+SHA256 (sdpa/sdpa_7.3.17.tar.gz) = 3983489392c9ac7ae30d699ed708da346700d387560a79a1f704034a377281a8
+SIZE (sdpa/sdpa_7.3.17.tar.gz) = 309676
+SHA256 (sdpa/mumps_5.5.1.orig.tar.gz) = 1abff294fa47ee4cfd50dfd5c595942b72ebfcedce08142a75a99ab35014fa15
+SIZE (sdpa/mumps_5.5.1.orig.tar.gz) = 4229448
 SHA256 (sdpa/sdpa.7.1.1.manual.20080618.pdf) = 906cf1f7a9bdb4c0eccb402baf7799be14ece6553e1dbd3cd81354c6e1362e35
 SIZE (sdpa/sdpa.7.1.1.manual.20080618.pdf) = 324130

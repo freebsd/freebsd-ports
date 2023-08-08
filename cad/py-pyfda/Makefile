@@ -1,9 +1,9 @@
 PORTNAME=	pyfda
 PORTVERSION=	0.1
-PORTREVISION=	10
+PORTREVISION=	13
 DISTVERSIONSUFFIX=	rc6
 CATEGORIES=	cad python devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR}
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.7+ pyqt:5
+USES=		python pyqt:5
 USE_PYTHON=	distutils autoplist
 USE_PYQT=	pyqt5:run
 NO_ARCH=	yes

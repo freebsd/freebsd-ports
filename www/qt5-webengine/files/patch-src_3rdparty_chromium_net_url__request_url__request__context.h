@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/url_request/url_request_context.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/net/url_request/url_request_context.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/net/url_request/url_request_context.h
-@@ -90,7 +90,7 @@ class NET_EXPORT URLRequestContext
+@@ -83,7 +83,7 @@ class NET_EXPORT URLRequestContext
    // session.
    const HttpNetworkSession::Context* GetNetworkSessionContext() const;
  

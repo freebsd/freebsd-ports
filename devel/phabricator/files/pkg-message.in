@@ -1,6 +1,12 @@
 [
 { type: install
   message: <<EOM
+Make sure to run phabricator using a production PHP configuration,
+e.g., %%PREFIX/etc/php.ini-production, particularly
+using the recommended error_reporting setting for production:
+
+  error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+
 To run the phabricator daemons from startup, add phd_enable="YES"
 to /etc/rc.conf. You can control the daemons using
 

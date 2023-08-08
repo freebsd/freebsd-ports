@@ -1,0 +1,7 @@
+cxxplot is a C++ plotting library meant to be used in science, engineering and
+data analysis. The main objectives of the project are:
+* Provide syntax that is familiar to scientists and engineers.
+* Enable low setup times.
+* Be more performant than typical plotting libraries.
+* Operate in asynchronous mode. Therefore plot calls and user code can be
+  combined and still retain GUI interactivity.

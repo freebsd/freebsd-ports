@@ -1,11 +1,11 @@
---- chrome/browser/themes/theme_helper.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/themes/theme_helper.cc.orig	2022-12-01 10:35:46 UTC
 +++ chrome/browser/themes/theme_helper.cc
-@@ -297,7 +297,7 @@ bool ThemeHelper::ShouldUseIncreasedContrastThemeSuppl
-     ui::NativeTheme* native_theme) const {
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
-   // On Linux the GTK system theme provides the high contrast colors,
-   // so don't use the IncreasedContrastThemeSupplier.
-   return false;
+@@ -18,7 +18,7 @@
+ #include "ui/gfx/image/image.h"
+ #include "ui/native_theme/native_theme.h"
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/linux/linux_ui.h"
+ #endif
+ 

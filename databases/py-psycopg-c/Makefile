@@ -1,18 +1,23 @@
 PORTNAME=	psycopg-c
-PORTVERSION=	3.0.18
+PORTVERSION=	3.1.9
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PostgreSQL database adapter for Python - C optimization distribution
-WWW=		https://www.psycopg.org/
+WWW=		https://www.psycopg.org/ \
+		https://github.com/psycopg/psycopg/tree/master/psycopg_c
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		pgsql python:3.6+
-USE_PYTHON=	autoplist concurrent cython distutils
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}tomli>=2.0.1:textproc/py-tomli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.37:devel/py-wheel@${PY_FLAVOR}
+
+USES=		pgsql python
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

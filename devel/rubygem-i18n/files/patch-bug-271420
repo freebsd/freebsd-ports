@@ -1,0 +1,11 @@
+--- lib/i18n/interpolate/ruby.rb.orig	2023-06-02 05:26:32 UTC
++++ lib/i18n/interpolate/ruby.rb
+@@ -47,7 +47,7 @@ module I18n
+         end
+       end
+ 
+-      interpolated ? interpolated_string : string
++      interpolated ? interpolated_string : string.dup
+     end
+   end
+ end

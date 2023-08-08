@@ -1,6 +1,6 @@
 PORTNAME=	btest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.71
+DISTVERSION=	1.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/zeek/btest/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist concurrent
 

@@ -1,0 +1,4 @@
+Jupyter Events enables Jupyter Python Applications (e.g. Jupyter Server,
+JupyterLab Server, JupyterHub, etc.) to emit events -- structured data
+describing things happening inside the application. Other software (e.g. client
+applications like JupyterLab) can listen and respond to these events.

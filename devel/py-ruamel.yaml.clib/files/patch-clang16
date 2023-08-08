@@ -1,0 +1,31 @@
+--- _ruamel_yaml.c.orig	2022-10-20 06:59:47 UTC
++++ _ruamel_yaml.c
+@@ -1553,8 +1553,8 @@ static PyTypeObject *__pyx_ptype_12_ruamel_yaml_CEmitt
+ static PyTypeObject *__pyx_ptype_12_ruamel_yaml_Mark = 0;
+ static PyTypeObject *__pyx_ptype_12_ruamel_yaml_CParser = 0;
+ static PyTypeObject *__pyx_ptype_12_ruamel_yaml_CEmitter = 0;
+-static int __pyx_f_12_ruamel_yaml_input_handler(void *, char *, int, int *); /*proto*/
+-static int __pyx_f_12_ruamel_yaml_output_handler(void *, char *, int); /*proto*/
++static int __pyx_f_12_ruamel_yaml_input_handler(void *, unsigned char *, size_t, size_t *); /*proto*/
++static int __pyx_f_12_ruamel_yaml_output_handler(void *, unsigned char *, size_t); /*proto*/
+ static PyObject *__pyx_f_12_ruamel_yaml___pyx_unpickle_Mark__set_state(struct __pyx_obj_12_ruamel_yaml_Mark *, PyObject *); /*proto*/
+ #define __Pyx_MODULE_NAME "_ruamel_yaml"
+ extern int __pyx_module_is_main__ruamel_yaml;
+@@ -14551,7 +14551,7 @@ static PyObject *__pyx_pf_12_ruamel_yaml_7CParser_30__
+  *     parser = <CParser>data
+  */
+ 
+-static int __pyx_f_12_ruamel_yaml_input_handler(void *__pyx_v_data, char *__pyx_v_buffer, int __pyx_v_size, int *__pyx_v_read) {
++static int __pyx_f_12_ruamel_yaml_input_handler(void *__pyx_v_data, unsigned char *__pyx_v_buffer, size_t __pyx_v_size, size_t *__pyx_v_read) {
+   struct __pyx_obj_12_ruamel_yaml_CParser *__pyx_v_parser = 0;
+   PyObject *__pyx_v_value = NULL;
+   int __pyx_r;
+@@ -23430,7 +23430,7 @@ static PyObject *__pyx_pf_12_ruamel_yaml_8CEmitter_16_
+  *     emitter = <CEmitter>data
+  */
+ 
+-static int __pyx_f_12_ruamel_yaml_output_handler(void *__pyx_v_data, char *__pyx_v_buffer, int __pyx_v_size) {
++static int __pyx_f_12_ruamel_yaml_output_handler(void *__pyx_v_data, unsigned char *__pyx_v_buffer, size_t __pyx_v_size) {
+   struct __pyx_obj_12_ruamel_yaml_CEmitter *__pyx_v_emitter = 0;
+   PyObject *__pyx_v_value = NULL;
+   int __pyx_r;

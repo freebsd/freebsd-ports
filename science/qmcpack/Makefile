@@ -1,7 +1,7 @@
 PORTNAME=	qmcpack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.14.0
-PORTREVISION=	5
+DISTVERSION=	3.15.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ SHEBANG_GLOB=	check.sh
 
 CMAKE_OFF=	BUILD_UNIT_TESTS
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VER=${PYTHON_VER}
-CMAKE_TESTING_ON=	BUILD_UNIT_TESTS # at least 3 testcases are known to fail
+CMAKE_TESTING_ON=	BUILD_UNIT_TESTS # many tests fail, see https://github.com/QMCPACK/qmcpack/issues/4274
 
 PROGS=		convert4qmc convertpw4qmc gpaw4qmcpack.py ppconvert qmc-check-affinity qmc-extract-eshdf-kvectors qmc-get-supercell qmcfinitesize qmcpack qmcpack.settings
 PLIST_FILES=	${PROGS:C/^/bin\//}

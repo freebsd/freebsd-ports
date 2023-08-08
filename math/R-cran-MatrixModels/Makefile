@@ -1,5 +1,5 @@
 PORTNAME=	MatrixModels
-DISTVERSION=	0.5-0
+DISTVERSION=	0.5-1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/MatrixModels/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

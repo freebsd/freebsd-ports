@@ -1,8 +1,7 @@
 PORTNAME=	platformdirs
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	3.8.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,15 +9,17 @@ COMMENT=	Python module for determining appropriate platform-specific dirs
 WWW=		https://github.com/platformdirs/platformdirs
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.17:devel/py-hatchling@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
 post-patch:
-	@${RM} ${WRKSRC}/pyproject.toml
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
+	@${RM} ${WRKSRC}/src/platformdirs/__init__.py.orig
 
 .include <bsd.port.mk>

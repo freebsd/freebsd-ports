@@ -1,5 +1,6 @@
 PORTNAME=	cdf3
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf38_0/
 DISTNAME=	cdf${VER}-dist-cdf

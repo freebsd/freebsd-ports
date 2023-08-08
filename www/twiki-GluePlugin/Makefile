@@ -1,7 +1,6 @@
 PORTNAME=	GluePlugin
 SVNREV=		15708
-MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
-		LOCAL/skv
+MASTER_SITES=	LOCAL/skv
 
 COMMENT=	Allow to format tags and arguments on multiple lines
 WWW=		https://twiki.org/cgi-bin/view/Plugins/GluePlugin

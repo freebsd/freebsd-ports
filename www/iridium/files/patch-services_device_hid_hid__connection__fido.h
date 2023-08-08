@@ -1,35 +1,41 @@
---- services/device/hid/hid_connection_fido.h.orig	2022-03-28 18:11:04 UTC
+--- services/device/hid/hid_connection_fido.h.orig	2022-12-01 10:35:46 UTC
 +++ services/device/hid/hid_connection_fido.h
-@@ -0,0 +1,57 @@
-+// Copyright (c) 2020 The Chromium Authors. All rights reserved.
+@@ -0,0 +1,60 @@
++// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+#ifndef SERVICE_DEVICE_HID_HID_CONNECTION_FIDO_H_
-+#define SERVICE_DEVICE_HID_HID_CONNECTION_FIDO_H_
++#ifndef SERVICES_DEVICE_HID_HID_CONNECTION_LINUX_H_
++#define SERVICES_DEVICE_HID_HID_CONNECTION_LINUX_H_
++
++#include <stddef.h>
++#include <stdint.h>
 +
 +#include "base/files/scoped_file.h"
-+#include "base/memory/ptr_util.h"
-+#include "base/memory/ref_counted_memory.h"
 +#include "base/memory/weak_ptr.h"
-+#include "base/sequence_checker.h"
++#include "base/task/sequenced_task_runner.h"
 +#include "services/device/hid/hid_connection.h"
++
++namespace base {
++class SequencedTaskRunner;
++}
 +
 +namespace device {
 +
 +class HidConnectionFido : public HidConnection {
-+public:
++ public:
 +  HidConnectionFido(
-+      scoped_refptr<HidDeviceInfo> device_info, base::ScopedFD fd,
++      scoped_refptr<HidDeviceInfo> device_info,
++      base::ScopedFD fd,
 +      scoped_refptr<base::SequencedTaskRunner> blocking_task_runner,
-+      bool allow_protected_reports, bool allow_fido_reports);
++      bool allow_protected_reports,
++      bool allow_fido_reports);
++  HidConnectionFido(HidConnectionFido&) = delete;
++  HidConnectionFido& operator=(HidConnectionFido&) = delete;
 +
-+private:
++ private:
 +  friend class base::RefCountedThreadSafe<HidConnectionFido>;
-+  class BlockingTaskHelper;
-+
-+  HidConnectionFido(const HidConnectionFido&) = delete;
-+  HidConnectionFido& operator=(const HidConnectionFido&) = delete;
++  class BlockingTaskRunnerHelper;
 +
 +  ~HidConnectionFido() override;
 +
@@ -42,19 +48,16 @@
 +  void PlatformSendFeatureReport(scoped_refptr<base::RefCountedBytes> buffer,
 +                                 WriteCallback callback) override;
 +
-+  const scoped_refptr<base::SequencedTaskRunner> blocking_task_runner_;
-+  const scoped_refptr<base::SequencedTaskRunner> task_runner_;
-+
-+  SEQUENCE_CHECKER(sequence_checker_);
-+
-+  base::WeakPtrFactory<HidConnectionFido> weak_factory_;
-+
 +  // |helper_| lives on the sequence to which |blocking_task_runner_| posts
 +  // tasks so all calls must be posted there including this object's
 +  // destruction.
-+  std::unique_ptr<BlockingTaskHelper> helper_;
++  std::unique_ptr<BlockingTaskRunnerHelper, base::OnTaskRunnerDeleter> helper_;
++
++  const scoped_refptr<base::SequencedTaskRunner> blocking_task_runner_;
++
++  base::WeakPtrFactory<HidConnectionFido> weak_factory_{this};
 +};
 +
-+} // namespace device
++}  // namespace device
 +
-+#endif // SERVICE_DEVICE_HID_HID_CONNECTION_FIDO_H_
++#endif  // SERVICES_DEVICE_HID_HID_CONNECTION_LINUX_H_

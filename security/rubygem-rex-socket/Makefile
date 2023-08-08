@@ -1,5 +1,5 @@
 PORTNAME=	rex-socket
-PORTVERSION=	0.1.41
+PORTVERSION=	0.1.47
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,5 @@ RUN_DEPENDS=	rubygem-rex-core>=0:security/rubygem-rex-core
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

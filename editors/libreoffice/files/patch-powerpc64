@@ -1,0 +1,955 @@
+commit b9ff00f339e65e174d6c2993ca9d5234daef73c4
+Author: Daniel Kolesa <daniel@octaforge.org>
+Date:   Thu Jun 8 23:21:16 2023 +0200
+
+    replace clang-incompatible bits with asm
+
+diff --git a/bridges/Library_cpp_uno.mk b/bridges/Library_cpp_uno.mk
+index 5dc92c23c..bdd4f1b27 100644
+--- bridges/Library_cpp_uno.mk
++++ bridges/Library_cpp_uno.mk
+@@ -150,6 +150,7 @@ ifneq ($(filter DRAGONFLY FREEBSD LINUX NETBSD OPENBSD,$(OS)),)
+ bridges_SELECTED_BRIDGE := gcc3_linux_powerpc64
+ bridge_noopt_objects := cpp2uno uno2cpp
+ bridge_exception_objects := except
++bridge_asm_objects := call
+ endif
+ 
+ else ifeq ($(CPUNAME),S390)
+diff --git a/bridges/source/cpp_uno/gcc3_linux_powerpc64/call.s b/bridges/source/cpp_uno/gcc3_linux_powerpc64/call.s
+new file mode 100644
+index 000000000..f20c598e6
+--- /dev/null
++++ bridges/source/cpp_uno/gcc3_linux_powerpc64/call.s
+@@ -0,0 +1,478 @@
++	.file	"uno_ppc64_asm.cc"
++	.machine power4
++	.abiversion 2
++	.section	".text"
++	.align 2
++	.globl callVirtualMethod
++	.type	callVirtualMethod, @function
++callVirtualMethod:
++.LFB0:
++	.cfi_startproc
++.LCF0:
++0:	addis 2,12,.TOC.-.LCF0@ha
++	addi 2,2,.TOC.-.LCF0@l
++	.localentry	callVirtualMethod,.-callVirtualMethod
++	mflr 0
++	std 0,16(1)
++	std 31,-8(1)
++	stdu 1,-208(1)
++	.cfi_def_cfa_offset 208
++	.cfi_offset 65, 16
++	.cfi_offset 31, -8
++	mr 31,1
++	.cfi_def_cfa_register 31
++	std 3,136(31)
++	std 5,128(31)
++	std 6,120(31)
++	std 7,112(31)
++	std 9,104(31)
++	mr 9,4
++	stw 9,248(31)
++	mr 9,8
++	stw 9,280(31)
++	mr 9,10
++	stw 9,296(31)
++	ld 9,304(31)
++	std 9,96(31)
++	ld 9,-28688(13)
++	std 9,184(31)
++	li 9,0
++	lwz 9,280(31)
++	cmpwi 0,9,0
++	beq 0,.L2
++	lwz 9,280(31)
++	addi 9,9,1
++	rldicl 9,9,0,32
++	rlwinm 9,9,0,0,30
++	stw 9,280(31)
++.L2:
++#ifdef __LITTLE_ENDIAN__
++	lwz 9,312(31)
++#else
++	lwz 9,316(31)
++#endif
++	cmplwi 0,9,13
++	ble 0,.L3
++	li 9,13
++#ifdef __LITTLE_ENDIAN__
++	stw 9,312(31)
++#else
++	stw 9,316(31)
++#endif
++.L3:
++	lwz 9,296(31)
++	cmplwi 0,9,8
++	ble 0,.L4
++	li 9,8
++	stw 9,296(31)
++.L4:
++	lwz 9,280(31)
++	slwi 9,9,3
++	rldicl 9,9,0,32
++	addi 9,9,15
++	srdi 9,9,4
++	sldi 9,9,4
++	ld 10,0(1)
++	neg 9,9
++	stdux 10,1,9
++	addi 9,1,96
++	addi 9,9,15
++	srdi 9,9,4
++	sldi 9,9,4
++	std 9,160(31)
++	lwz 9,280(31)
++	slwi 9,9,3
++	rldicl 9,9,0,32
++	mr 8,9
++	ld 10,160(31)
++	ld 9,112(31)
++	mr 5,8
++	mr 4,9
++	mr 3,10
++	bl memcpy
++	nop
++	ld 9,136(31)
++	ld 9,0(9)
++	std 9,168(31)
++	lwz 9,248(31)
++	slwi 9,9,3
++	rldicl 9,9,0,32
++	mr 10,9
++	ld 9,168(31)
++	add 9,9,10
++	std 9,168(31)
++	ld 9,168(31)
++	ld 9,0(9)
++	std 9,168(31)
++	ld 9,168(31)
++	std 9,176(31)
++	ld 9,96(31)
++#APP
++ # 123 "uno_ppc64_asm.cc" 1
++	lfd  1,  0(9)
++	lfd  2,  8(9)
++	lfd  3, 16(9)
++	lfd  4, 24(9)
++	lfd  5, 32(9)
++	lfd  6, 40(9)
++	lfd  7, 48(9)
++	lfd  8, 56(9)
++	lfd  9, 64(9)
++	lfd 10, 72(9)
++	lfd 11, 80(9)
++	lfd 12, 88(9)
++	lfd 13, 96(9)
++	
++ # 0 "" 2
++#NO_APP
++	ld 9,104(31)
++	ld 3,0(9)
++	ld 9,104(31)
++	addi 9,9,8
++	ld 4,0(9)
++	ld 9,104(31)
++	addi 9,9,16
++	ld 5,0(9)
++	ld 9,104(31)
++	addi 9,9,24
++	ld 6,0(9)
++	ld 9,104(31)
++	addi 9,9,32
++	ld 7,0(9)
++	ld 9,104(31)
++	addi 9,9,40
++	ld 8,0(9)
++	ld 9,104(31)
++	addi 9,9,48
++	ld 0,0(9)
++	ld 9,104(31)
++	addi 9,9,56
++	ld 9,0(9)
++	ld 11,176(31)
++	mr 10,9
++	mr 9,0
++	std 2,24(1)
++	mr 12,11
++	mtctr 12
++	bctrl
++	ld 2,24(1)
++#APP
++ # 149 "uno_ppc64_asm.cc" 1
++	mr     3,     3
++	mr     4,     4
++	fmr    0,     1
++	
++ # 0 "" 2
++#NO_APP
++	stfd 0,152(31)
++	mr 9,3
++	mr 10,4
++	lfd 0,152(31)
++	ld 7,128(31)
++	ld 6,120(31)
++	fmr 1,0
++	mr 4,10
++	mr 3,9
++	bl MapReturn
++	nop
++	nop
++	ld 9,184(31)
++	ld 10,-28688(13)
++	xor. 9,9,10
++	li 10,0
++	beq 0,.L5
++	bl __stack_chk_fail
++	nop
++.L5:
++	addi 1,31,208
++	.cfi_def_cfa 1, 0
++	ld 0,16(1)
++	mtlr 0
++	ld 31,-8(1)
++	blr
++	.long 0
++	.byte 0,9,0,1,128,1,0,1
++	.cfi_endproc
++.LFE0:
++	.size	callVirtualMethod,.-callVirtualMethod
++	.section	".toc","aw"
++	.align 3
++.LC0:
++	.quad	.L9
++	.section	".text"
++	.align 2
++	.globl privateSnippetExecutor
++	.type	privateSnippetExecutor, @function
++privateSnippetExecutor:
++.LFB1:
++	.cfi_startproc
++.LCF1:
++0:	addis 2,12,.TOC.-.LCF1@ha
++	addi 2,2,.TOC.-.LCF1@l
++	.localentry	privateSnippetExecutor,.-privateSnippetExecutor
++	mflr 0
++	std 0,16(1)
++	std 31,-8(1)
++	stdu 1,-272(1)
++	.cfi_def_cfa_offset 272
++	.cfi_offset 65, 16
++	.cfi_offset 31, -8
++	mr 31,1
++	.cfi_def_cfa_register 31
++	ld 0,-28688(13)
++	std 0,248(31)
++	li 0,0
++	std 3,80(31)
++	std 4,88(31)
++	std 5,96(31)
++	std 6,104(31)
++	std 7,112(31)
++	std 8,120(31)
++	std 9,128(31)
++	mr 9,10
++	std 9,136(31)
++	addi 9,31,144
++#APP
++ # 173 "uno_ppc64_asm.cc" 1
++	stfd 1,   0(9)	
++stfd 2,   8(9)	
++stfd 3,  16(9)	
++stfd 4,  24(9)	
++stfd 5,  32(9)	
++stfd 6,  40(9)	
++stfd 7,  48(9)	
++stfd 8,  56(9)	
++stfd 9,  64(9)	
++stfd 10, 72(9)	
++stfd 11, 80(9)	
++stfd 12, 88(9)	
++stfd 13, 96(9)	
++
++ # 0 "" 2
++#NO_APP
++	std 11,48(31)
++	std 1,56(31)
++	ld 9,48(31)
++	addi 7,31,64
++	addi 8,31,144
++	addi 10,31,80
++	ld 6,56(31)
++	mr 5,8
++	mr 4,10
++	mr 3,9
++	bl cpp_mediate
++	nop
++	mr 9,3
++	stw 9,44(31)
++	lwa 9,44(31)
++	cmplwi 0,9,15
++	bgt 0,.L7
++	sldi 10,9,2
++	addis 8,2,.LC0@toc@ha
++	ld 9,.LC0@toc@l(8)
++	add 9,10,9
++	lwz 10,0(9)
++	ld 9,.LC0@toc@l(8)
++	extsw 10,10
++	add 9,10,9
++	mtctr 9
++	bctr
++	.p2align 2
++	.align 2
++.L9:
++	.long .L19-.L9
++	.long .L13-.L9
++	.long .L15-.L9
++	.long .L15-.L9
++	.long .L14-.L9
++	.long .L13-.L9
++	.long .L12-.L9
++	.long .L8-.L9
++	.long .L7-.L9
++	.long .L7-.L9
++	.long .L11-.L9
++	.long .L10-.L9
++	.long .L7-.L9
++	.long .L7-.L9
++	.long .L7-.L9
++	.long .L8-.L9
++.L15:
++#APP
++ # 209 "uno_ppc64_asm.cc" 1
++	lbz 3,64(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L13:
++#APP
++ # 214 "uno_ppc64_asm.cc" 1
++	lhz 3,64(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L14:
++#APP
++ # 218 "uno_ppc64_asm.cc" 1
++	lha 3,64(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L8:
++#APP
++ # 223 "uno_ppc64_asm.cc" 1
++	lwz 3,64(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L12:
++#APP
++ # 227 "uno_ppc64_asm.cc" 1
++	lwa 3,64(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L11:
++	addi 9,31,64
++#APP
++ # 231 "uno_ppc64_asm.cc" 1
++	lfs 1,0(9)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L10:
++	addi 9,31,64
++#APP
++ # 235 "uno_ppc64_asm.cc" 1
++	lfd 1,0(9)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L7:
++#APP
++ # 239 "uno_ppc64_asm.cc" 1
++	ld 3,64(31)
++	
++ # 0 "" 2
++ # 241 "uno_ppc64_asm.cc" 1
++	ld 4,72(31)
++	
++ # 0 "" 2
++#NO_APP
++	b .L17
++.L19:
++	nop
++.L17:
++	nop
++	ld 9,248(31)
++	ld 10,-28688(13)
++	xor. 9,9,10
++	li 10,0
++	beq 0,.L18
++	bl __stack_chk_fail
++	nop
++.L18:
++	addi 1,31,272
++	.cfi_def_cfa 1, 0
++	ld 0,16(1)
++	mtlr 0
++	ld 31,-8(1)
++	blr
++	.long 0
++	.byte 0,9,0,1,128,1,0,1
++	.cfi_endproc
++.LFE1:
++	.size	privateSnippetExecutor,.-privateSnippetExecutor
++	.section	.rodata
++	.align 2
++	.type	_ZL15codeSnippetSize, @object
++	.size	_ZL15codeSnippetSize, 4
++_ZL15codeSnippetSize:
++	.long	32
++	.section	".text"
++	.align 2
++	.globl codeSnippet
++	.type	codeSnippet, @function
++codeSnippet:
++.LFB2:
++	.cfi_startproc
++.LCF2:
++0:	addis 2,12,.TOC.-.LCF2@ha
++	addi 2,2,.TOC.-.LCF2@l
++	.localentry	codeSnippet,.-codeSnippet
++	std 31,-8(1)
++	stdu 1,-96(1)
++	.cfi_def_cfa_offset 96
++	.cfi_offset 31, -8
++	mr 31,1
++	.cfi_def_cfa_register 31
++	std 3,56(31)
++	mr 9,4
++	mr 8,5
++	mr 10,6
++	stw 9,52(31)
++	mr 9,8
++	stw 9,48(31)
++	mr 9,10
++	stb 9,47(31)
++	lwa 9,48(31)
++	sldi 10,9,32
++	lwa 9,52(31)
++	or 9,10,9
++	std 9,64(31)
++	lbz 9,47(31)
++	cmpwi 0,9,0
++	beq 0,.L21
++	ld 9,64(31)
++	oris 9,9,0x8000
++	std 9,64(31)
++.L21:
++	ld 9,56(31)
++	std 9,72(31)
++	ld 9,72(31)
++	lis 10,0xe96c
++	ori 10,10,0x18
++	stw 10,0(9)
++	ld 9,72(31)
++	addi 9,9,4
++	lis 10,0xe98c
++	ori 10,10,0x10
++	stw 10,0(9)
++	ld 9,72(31)
++	addi 9,9,8
++	lis 10,0x7d89
++	ori 10,10,0x3a6
++	stw 10,0(9)
++	ld 9,72(31)
++	addi 9,9,12
++	lis 10,0x4e80
++	ori 10,10,0x420
++	stw 10,0(9)
++	ld 9,72(31)
++	addi 9,9,16
++	addis 10,2,privateSnippetExecutor@toc@ha
++	addi 10,10,privateSnippetExecutor@toc@l
++	std 10,0(9)
++	ld 9,72(31)
++	addi 9,9,24
++	ld 10,64(31)
++	std 10,0(9)
++	ld 9,56(31)
++	addi 9,9,32
++	mr 3,9
++	addi 1,31,96
++	.cfi_def_cfa 1, 0
++	ld 31,-8(1)
++	blr
++	.long 0
++	.byte 0,9,0,0,128,1,0,1
++	.cfi_endproc
++.LFE2:
++	.size	codeSnippet,.-codeSnippet
++	.section	.note.GNU-stack,"",@progbits
+diff --git a/bridges/source/cpp_uno/gcc3_linux_powerpc64/cpp2uno.cxx b/bridges/source/cpp_uno/gcc3_linux_powerpc64/cpp2uno.cxx
+index ab3fbd4c7..c0a207b71 100644
+--- bridges/source/cpp_uno/gcc3_linux_powerpc64/cpp2uno.cxx
++++ bridges/source/cpp_uno/gcc3_linux_powerpc64/cpp2uno.cxx
+@@ -339,7 +339,7 @@ static typelib_TypeClass cpp2uno_call(
+ #  define PARAMSAVE 48
+ #endif
+ 
+-static typelib_TypeClass cpp_mediate(
++extern "C" typelib_TypeClass cpp_mediate(
+     sal_uInt64 nOffsetAndIndex,
+         void ** gpreg, void ** fpreg, long sp,
+     sal_Int64 * pRegisterReturn /* space for register return */ )
+@@ -513,7 +513,8 @@ static typelib_TypeClass cpp_mediate(
+     return eRet;
+ }
+ 
+-extern "C" void privateSnippetExecutor( ... )
++extern "C" void privateSnippetExecutor( ... );
++#if 0
+ {
+     sal_uInt64 gpreg[ppc64::MAX_GPR_REGS];
+ 
+@@ -607,6 +608,7 @@ extern "C" void privateSnippetExecutor( ... )
+             break;
+     }
+ }
++#endif
+ 
+ #if defined(_CALL_ELF) && _CALL_ELF == 2
+ const int codeSnippetSize = 32;
+@@ -614,8 +616,9 @@ const int codeSnippetSize = 32;
+ const int codeSnippetSize = 24;
+ #endif
+ 
+-unsigned char *  codeSnippet( unsigned char * code, sal_Int32 nFunctionIndex, sal_Int32 nVtableOffset,
+-                              bool bHasHiddenParam)
++extern "C" unsigned char *codeSnippet( unsigned char * code, sal_Int32 nFunctionIndex, sal_Int32 nVtableOffset,
++                              bool bHasHiddenParam);
++#if 0
+ {
+ #if OSL_DEBUG_LEVEL > 2
+     fprintf(stderr,"in codeSnippet functionIndex is %x\n", nFunctionIndex);
+@@ -648,6 +651,7 @@ unsigned char *  codeSnippet( unsigned char * code, sal_Int32 nFunctionIndex, sa
+ #endif
+     return (code + codeSnippetSize);
+ }
++#endif
+ 
+ }
+ 
+diff --git a/bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx b/bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx
+index 612495d83..e3d60c556 100644
+--- bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx
++++ bridges/source/cpp_uno/gcc3_linux_powerpc64/uno2cpp.cxx
+@@ -92,7 +92,7 @@ namespace ppc64
+     }
+ }
+ 
+-void MapReturn(long r3, long r4, double dret, typelib_TypeDescriptionReference* pReturnType, void *pRegisterReturn)
++extern "C" void MapReturn(long r3, long r4, double dret, typelib_TypeDescriptionReference* pReturnType, void *pRegisterReturn)
+ {
+     switch (pReturnType->eTypeClass)
+     {
+@@ -141,11 +141,12 @@ void MapReturn(long r3, long r4, double dret, typelib_TypeDescriptionReference*
+ namespace
+ {
+ 
+-static void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
++extern "C" void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
+     void * pRegisterReturn, typelib_TypeDescription * pReturnTypeDescr,
+         sal_uInt64 *pStack, sal_uInt32 nStack,
+         sal_uInt64 *pGPR, sal_uInt32 nGPR,
+-        double *pFPR, sal_uInt32 nFPR)
++        double *pFPR, sal_uInt32 nFPR);
++#if 0
+ {
+     // Stack, if used, must be 16-bytes aligned
+     if ( nStack )
+@@ -226,6 +227,7 @@ static void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
+ 
+     MapReturn(r3, r4, dret, reinterpret_cast<typelib_TypeDescriptionReference *>(pReturnTypeDescr), pRegisterReturn);
+ }
++#endif
+ 
+ // Macros for easier insertion of values to registers or stack
+ // pSV - pointer to the source
+commit 3dcfb65dc646853ef154ebb05f70c85a0b21d461
+Author: Daniel Kolesa <daniel@octaforge.org>
+Date:   Fri Jun 9 02:41:41 2023 +0200
+
+    sync ppc64 exception code with x86_64
+
+diff --git a/bridges/source/cpp_uno/gcc3_linux_powerpc64/except.cxx b/bridges/source/cpp_uno/gcc3_linux_powerpc64/except.cxx
+index 1241aa02e..9e16534a9 100644
+--- bridges/source/cpp_uno/gcc3_linux_powerpc64/except.cxx
++++ bridges/source/cpp_uno/gcc3_linux_powerpc64/except.cxx
+@@ -25,6 +25,7 @@
+ #include <rtl/strbuf.hxx>
+ #include <rtl/ustrbuf.hxx>
+ #include <osl/mutex.hxx>
++#include <sal/log.hxx>
+ 
+ #include <com/sun/star/uno/genfunc.hxx>
+ #include <typelib/typedescription.hxx>
+@@ -192,8 +193,61 @@ type_info * RTTI::getRTTI( typelib_CompoundTypeDescription *pTypeDescr )
+ 
+ static void deleteException( void * pExc )
+ {
+-    __cxa_exception const * header = ((__cxa_exception const *)pExc - 1);
+-    typelib_TypeDescription * pTD = 0;
++    __cxxabiv1::__cxa_exception const * header = static_cast<__cxxabiv1::__cxa_exception const *>(pExc) - 1;
++#if defined _LIBCPPABI_VERSION // detect libc++abi
++    // First, the libcxxabi commit
++    // <http://llvm.org/viewvc/llvm-project?view=revision&revision=303175>
++    // "[libcxxabi] Align unwindHeader on a double-word boundary" towards
++    // LLVM 5.0 changed the size of __cxa_exception by adding
++    //
++    //   __attribute__((aligned))
++    //
++    // to the final member unwindHeader, on x86-64 effectively adding a hole of
++    // size 8 in front of that member (changing its offset from 88 to 96,
++    // sizeof(__cxa_exception) from 120 to 128, and alignof(__cxa_exception)
++    // from 8 to 16); the "header1" hack below to dynamically determine whether we run against a
++    // LLVM 5 libcxxabi is to look at the exceptionDestructor member, which must
++    // point to this function (the use of __cxa_exception in fillUnoException is
++    // unaffected, as it only accesses members towards the start of the struct,
++    // through a pointer known to actually point at the start).  The libcxxabi commit
++    // <https://github.com/llvm/llvm-project/commit/9ef1daa46edb80c47d0486148c0afc4e0d83ddcf>
++    // "Insert padding before the __cxa_exception header to ensure the thrown" in LLVM 6
++    // removes the need for this hack, so the "header1" hack can be removed again once we can be
++    // sure that we only run against libcxxabi from LLVM >= 6.
++    //
++    // Second, the libcxxabi commit
++    // <https://github.com/llvm/llvm-project/commit/674ec1eb16678b8addc02a4b0534ab383d22fa77>
++    // "[libcxxabi] Insert padding in __cxa_exception struct for compatibility" in LLVM 10 changed
++    // the layout of the start of __cxa_exception to
++    //
++    //  [8 byte  void *reserve]
++    //   8 byte  size_t referenceCount
++    //
++    // so the "header2" hack below to dynamically determine whether we run against a LLVM >= 10
++    // libcxxabi is to look whether the exceptionDestructor (with its known value) has increased its
++    // offset by 8.  As described in the definition of __cxa_exception
++    // (bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx), the "header2" hack (together with the
++    // "#if 0" in the definition of __cxa_exception and the corresponding hack in fillUnoException)
++    // can be dropped once we can be sure that we only run against new libcxxabi that has the
++    // reserve member.
++    if (header->exceptionDestructor != &deleteException) {
++        auto const header1 = reinterpret_cast<__cxa_exception const *>(
++            reinterpret_cast<char const *>(header) - 8);
++        if (header1->exceptionDestructor == &deleteException) {
++            header = header1;
++        } else {
++            auto const header2 = reinterpret_cast<__cxa_exception const *>(
++                reinterpret_cast<char const *>(header) + 8);
++            if (header2->exceptionDestructor == &deleteException) {
++                header = header2;
++            } else {
++                assert(false);
++            }
++        }
++    }
++#endif
++    assert(header->exceptionDestructor == &deleteException);
++    typelib_TypeDescription * pTD = nullptr;
+     OUString unoName( toUNOname( header->exceptionType->name() ) );
+     ::typelib_typedescription_getByName( &pTD, unoName.pData );
+     assert(pTD && "### unknown exception type! leaving out destruction => leaking!!!");
+@@ -211,44 +265,99 @@ void raiseException( uno_Any * pUnoExc, uno_Mapping * pUno2Cpp )
+ 
+     {
+     // construct cpp exception object
+-    typelib_TypeDescription * pTypeDescr = 0;
++    typelib_TypeDescription * pTypeDescr = nullptr;
+     TYPELIB_DANGER_GET( &pTypeDescr, pUnoExc->pType );
++    assert(pTypeDescr);
+     if (! pTypeDescr)
+-        terminate();
++    {
++        throw RuntimeException(
++            "cannot get typedescription for type " +
++            OUString::unacquired( &pUnoExc->pType->pTypeName ) );
++    }
+ 
+-    pCppExc = __cxa_allocate_exception( pTypeDescr->nSize );
++    pCppExc = __cxxabiv1::__cxa_allocate_exception( pTypeDescr->nSize );
+     ::uno_copyAndConvertData( pCppExc, pUnoExc->pData, pTypeDescr, pUno2Cpp );
+ 
+     // destruct uno exception
+-    ::uno_any_destruct( pUnoExc, 0 );
++    ::uno_any_destruct( pUnoExc, nullptr );
+     // avoiding locked counts
+     static RTTI rtti_data;
+     rtti = (type_info*)rtti_data.getRTTI((typelib_CompoundTypeDescription*)pTypeDescr);
+     TYPELIB_DANGER_RELEASE( pTypeDescr );
++    assert(rtti && "### no rtti for throwing exception!");
+     if (! rtti)
+-        terminate();
++    {
++        throw RuntimeException(
++            "no rtti for type " +
++            OUString::unacquired( &pUnoExc->pType->pTypeName ) );
++    }
+     }
+ 
+-    __cxa_throw( pCppExc, rtti, deleteException );
++    __cxxabiv1::__cxa_throw( pCppExc, rtti, deleteException );
+ }
+ 
+-void fillUnoException(uno_Any * pExc, uno_Mapping * pCpp2Uno)
++void fillUnoException(uno_Any * pUnoExc, uno_Mapping * pCpp2Uno)
+ {
+-    __cxa_exception * header = __cxa_get_globals()->caughtExceptions;
++    __cxxabiv1::__cxa_exception * header = __cxxabiv1::__cxa_get_globals()->caughtExceptions;
+     if (! header)
+-        terminate();
++    {
++        RuntimeException aRE( "no exception header!" );
++        Type const & rType = cppu::UnoType<decltype(aRE)>::get();
++        uno_type_any_constructAndConvert( pUnoExc, &aRE, rType.getTypeLibType(), pCpp2Uno );
++        SAL_WARN("bridges", aRE.Message);
++        return;
++    }
+ 
+-    std::type_info *exceptionType = __cxa_current_exception_type();
++#if defined _LIBCPPABI_VERSION // detect libc++abi
++    // Very bad HACK to find out whether we run against a libcxxabi that has a new
++    // __cxa_exception::reserved member at the start, introduced with LLVM 10
++    // <https://github.com/llvm/llvm-project/commit/674ec1eb16678b8addc02a4b0534ab383d22fa77>
++    // "[libcxxabi] Insert padding in __cxa_exception struct for compatibility".  The layout of the
++    // start of __cxa_exception is
++    //
++    //  [8 byte  void *reserve]
++    //   8 byte  size_t referenceCount
++    //
++    // where the (bad, hacky) assumption is that reserve (if present) is null
++    // (__cxa_allocate_exception in at least LLVM 11 zero-fills the object, and nothing actively
++    // sets reserve) while referenceCount is non-null (__cxa_throw sets it to 1, and
++    // __cxa_decrement_exception_refcount destroys the exception as soon as it drops to 0; for a
++    // __cxa_dependent_exception, the referenceCount member is rather
++    //
++    //   8 byte  void* primaryException
++    //
++    // but which also will always be set to a non-null value in __cxa_rethrow_primary_exception).
++    // As described in the definition of __cxa_exception
++    // (bridges/source/cpp_uno/gcc3_linux_x86-64/share.hxx), this hack (together with the "#if 0"
++    // there) can be dropped once we can be sure that we only run against new libcxxabi that has the
++    // reserve member:
++    if (*reinterpret_cast<void **>(header) == nullptr) {
++        header = reinterpret_cast<__cxa_exception*>(reinterpret_cast<void **>(header) + 1);
++    }
++#endif
+ 
+-    typelib_TypeDescription * pExcTypeDescr = 0;
+-    OUString unoName( toUNOname( exceptionType->name() ) );
+-    ::typelib_typedescription_getByName( &pExcTypeDescr, unoName.pData );
+-    if (! pExcTypeDescr)
+-        terminate();
++    std::type_info *exceptionType = __cxxabiv1::__cxa_current_exception_type();
+ 
+-    // construct uno exception any
+-    ::uno_any_constructAndConvert( pExc, header->adjustedPtr, pExcTypeDescr, pCpp2Uno );
+-    ::typelib_typedescription_release( pExcTypeDescr );
++    typelib_TypeDescription * pExcTypeDescr = nullptr;
++    OUString unoName( toUNOname( exceptionType->name() ) );
++#if OSL_DEBUG_LEVEL > 1
++    OString cstr_unoName( OUStringToOString( unoName, RTL_TEXTENCODING_ASCII_US ) );
++    fprintf( stderr, "> c++ exception occurred: %s\n", cstr_unoName.getStr() );
++#endif
++    typelib_typedescription_getByName( &pExcTypeDescr, unoName.pData );
++    if (pExcTypeDescr == nullptr)
++    {
++        RuntimeException aRE( "exception type not found: " + unoName );
++        Type const & rType = cppu::UnoType<decltype(aRE)>::get();
++        uno_type_any_constructAndConvert( pUnoExc, &aRE, rType.getTypeLibType(), pCpp2Uno );
++        SAL_WARN("bridges", aRE.Message);
++    }
++    else
++    {
++        // construct uno exception any
++        uno_any_constructAndConvert( pUnoExc, header->adjustedPtr, pExcTypeDescr, pCpp2Uno );
++        typelib_typedescription_release( pExcTypeDescr );
++    }
+ }
+ 
+ }
+diff --git a/bridges/source/cpp_uno/gcc3_linux_powerpc64/share.hxx b/bridges/source/cpp_uno/gcc3_linux_powerpc64/share.hxx
+index 8286a878a..67c2f3a96 100644
+--- bridges/source/cpp_uno/gcc3_linux_powerpc64/share.hxx
++++ bridges/source/cpp_uno/gcc3_linux_powerpc64/share.hxx
+@@ -24,56 +24,121 @@
+ #include <exception>
+ #include <cstddef>
+ 
+-namespace CPPU_CURRENT_NAMESPACE
+-{
+-
+-  void dummy_can_throw_anything( char const * );
+-
+-
+-// ----- following decl from libstdc++-v3/libsupc++/unwind-cxx.h and unwind.h
+-
+-struct _Unwind_Exception
+-{
+-    unsigned exception_class __attribute__((__mode__(__DI__)));
+-    void * exception_cleanup;
+-    unsigned private_1 __attribute__((__mode__(__word__)));
+-    unsigned private_2 __attribute__((__mode__(__word__)));
+-} __attribute__((__aligned__));
+-
+-struct __cxa_exception
+-{
+-    std::type_info *exceptionType;
+-    void (*exceptionDestructor)(void *);
+-
++#include <cxxabi.h>
++#ifndef _GLIBCXX_CDTOR_CALLABI // new in GCC 4.7 cxxabi.h
++#define _GLIBCXX_CDTOR_CALLABI
++#endif
++#include <unwind.h>
++
++#include <config_cxxabi.h>
++
++#if !HAVE_CXXABI_H_CLASS_TYPE_INFO
++// <https://mentorembedded.github.io/cxx-abi/abi.html>,
++// libstdc++-v3/libsupc++/cxxabi.h:
++namespace __cxxabiv1 {
++class __class_type_info: public std::type_info {
++public:
++    explicit __class_type_info(char const * n): type_info(n) {}
++    ~__class_type_info() override;
++};
++}
++#endif
++
++#if !HAVE_CXXABI_H_SI_CLASS_TYPE_INFO
++// <https://mentorembedded.github.io/cxx-abi/abi.html>,
++// libstdc++-v3/libsupc++/cxxabi.h:
++namespace __cxxabiv1 {
++class __si_class_type_info: public __class_type_info {
++public:
++    __class_type_info const * __base_type;
++    explicit __si_class_type_info(
++        char const * n, __class_type_info const *base):
++        __class_type_info(n), __base_type(base) {}
++    ~__si_class_type_info() override;
++};
++}
++#endif
++
++#if !HAVE_CXXABI_H_CXA_EXCEPTION
++// <https://mentorembedded.github.io/cxx-abi/abi-eh.html>,
++// libcxxabi/src/cxa_exception.hpp:
++namespace __cxxabiv1 {
++struct __cxa_exception {
++#if defined _LIBCPPABI_VERSION // detect libc++abi
++#if defined __LP64__ || LIBCXXABI_ARM_EHABI
++#if 0
++    // This is a new field added with LLVM 10
++    // <https://github.com/llvm/llvm-project/commit/674ec1eb16678b8addc02a4b0534ab383d22fa77>
++    // "[libcxxabi] Insert padding in __cxa_exception struct for compatibility".  The HACK in
++    // fillUnoException (bridges/source/cpp_uno/gcc3_linux_x86-64/except.cxx) tries to find out at
++    // runtime whether a __cxa_exception has this member.  Once we can be sure that we only run
++    // against new libcxxabi that has this member, we can drop the "#if 0" here and drop the hack
++    // in fillUnoException.
++
++    // Now _Unwind_Exception is marked with __attribute__((aligned)),
++    // which implies __cxa_exception is also aligned. Insert padding
++    // in the beginning of the struct, rather than before unwindHeader.
++    void *reserve;
++#endif
++    std::size_t referenceCount;
++#endif
++#endif
++    std::type_info * exceptionType;
++    void (* exceptionDestructor)(void *);
+     void (*unexpectedHandler)(); // std::unexpected_handler dropped from C++17
+     std::terminate_handler terminateHandler;
+-
+-    __cxa_exception *nextException;
+-
++    __cxa_exception * nextException;
+     int handlerCount;
+-
+     int handlerSwitchValue;
+-    const unsigned char *actionRecord;
+-    const unsigned char *languageSpecificData;
+-    void *catchTemp;
+-    void *adjustedPtr;
+-
++    char const * actionRecord;
++    char const * languageSpecificData;
++    void * catchTemp;
++    void * adjustedPtr;
+     _Unwind_Exception unwindHeader;
+ };
++}
++#endif
+ 
+-extern "C" void *__cxa_allocate_exception(
+-    std::size_t thrown_size ) throw();
+-extern "C" void __cxa_throw (
+-    void *thrown_exception, std::type_info *tinfo, void (*dest) (void *) ) __attribute__((noreturn));
+-
+-struct __cxa_eh_globals
+-{
+-    __cxa_exception *caughtExceptions;
++#if !HAVE_CXXABI_H_CXA_EH_GLOBALS
++// <https://mentorembedded.github.io/cxx-abi/abi-eh.html>:
++namespace __cxxabiv1 {
++struct __cxa_eh_globals {
++    __cxa_exception * caughtExceptions;
+     unsigned int uncaughtExceptions;
+ };
++}
++#endif
++
++#if !HAVE_CXXABI_H_CXA_GET_GLOBALS
++namespace __cxxabiv1 {
++extern "C" __cxa_eh_globals * __cxa_get_globals() noexcept;
++}
++#endif
++
++#if !HAVE_CXXABI_H_CXA_CURRENT_EXCEPTION_TYPE
++namespace __cxxabiv1 {
++extern "C" std::type_info *__cxa_current_exception_type() noexcept;
++}
++#endif
+ 
+-extern "C" __cxa_eh_globals *__cxa_get_globals () throw();
+-extern "C" std::type_info *__cxa_current_exception_type() throw();
++#if !HAVE_CXXABI_H_CXA_ALLOCATE_EXCEPTION
++namespace __cxxabiv1 {
++extern "C" void * __cxa_allocate_exception(std::size_t thrown_size) noexcept;
++}
++#endif
++
++#if !HAVE_CXXABI_H_CXA_THROW
++namespace __cxxabiv1 {
++extern "C" void __cxa_throw(
++    void * thrown_exception, void * tinfo, void (* dest)(void *))
++    __attribute__((noreturn));
++}
++#endif
++
++namespace CPPU_CURRENT_NAMESPACE
++{
++
++  void dummy_can_throw_anything( char const * );
+ 
+ void raiseException(
+     uno_Any * pUnoExc, uno_Mapping * pUno2Cpp );

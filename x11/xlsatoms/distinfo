@@ -1,3 +1,3 @@
-TIMESTAMP = 1551296406
-SHA256 (xorg/app/xlsatoms-1.1.3.tar.bz2) = 57868f958c263976727881f3078e55b86b4a109dc578d2b92f5c6d690850a382
-SIZE (xorg/app/xlsatoms-1.1.3.tar.bz2) = 126327
+TIMESTAMP = 1668441759
+SHA256 (xorg/app/xlsatoms-1.1.4.tar.xz) = f4bfa15f56c066d326a5d5b292646708f25b9247506840b9047cd2687dcc71b7
+SIZE (xorg/app/xlsatoms-1.1.4.tar.xz) = 120480

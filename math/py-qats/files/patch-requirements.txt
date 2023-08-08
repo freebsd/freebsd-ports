@@ -1,0 +1,20 @@
+--- requirements.txt.orig	2023-07-21 05:35:07 UTC
++++ requirements.txt
+@@ -1,12 +1,12 @@
+-h5py>=3.5.0, <=3.7.0
++h5py>=3.5.0
+ pymatreader==0.0.24
+-matplotlib>=3.3.3, <=3.6
++matplotlib>=3.3.3
+ npTDMS==1.1.0
+-numpy>=1.21.6, <=1.24.*
++numpy>=1.21.6
+ openpyxl==3.0.5
+-pandas>=1.1.4, <=1.5
++pandas>=1.1.4
+ QtPy==1.9.0
+-pyside2>=5.15.2, <5.16
++pyside2>=5.15.2
+ PyQt5>=5.15.2, <=5.15.7
+ scipy>=1.7.2, <=1.9.2   # in accordance with https://docs.scipy.org/doc/scipy/dev/toolchain.html#numpy
+ setuptools-scm>=7.1.0, <=8

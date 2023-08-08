@@ -1,10 +1,3 @@
-# TODO: fix build with CPUTYPE set -- see qt5-3d for the same issue:
-# /wrkdirs/usr/ports/graphics/qt6-3d/work/qt3d-everywhere-src-6.2.1/src/render/jobs/abstractpickingjob.cpp:110:33: error: no viable conversion from 'const Matrix4x4' (aka 'const Qt3DCore::Matrix4x4_SSE') to incomplete type 'const Qt3DCore::Matrix4x4_AVX2'
-#     nearPos = nearPos.unproject(viewMatrix, projectionMatrix, viewport);
-#                                 ^~~~~~~~~~
-# /wrkdirs/usr/ports/graphics/qt6-3d/work/.build/include/Qt3DCore/6.2.1/Qt3DCore/private/../../../../../../qt3d-everywhere-src-6.2.1/src/core/transforms/vector3d_sse_p.h:68:7: note: forward declaration of 'Qt3DCore::Matrix4x4_AVX2'
-# class Matrix4x4_AVX2;
-
 PORTNAME=	3d
 DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	graphics
@@ -35,7 +28,29 @@ USES=		cmake compiler:c++17-lang gettext-runtime gl gnome python:build \
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT=		base declarative shadertools
-USE_XORG=	x11 xau xcb xdmcp
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+
+OPTIONS_DEFINE_i386=	SIMD
+OPTIONS_DEFINE_amd64=	SIMD
+OPTIONS_DEFAULT_i386=	SIMD
+OPTIONS_DEFAULT_amd64=	SIMD
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSIMD}
+.  if !empty(MACHINE_CPU:Mavx2)
+CMAKE_ARGS+=	-DINPUT_qt3d_simd=avx2
+PLIST_SUB+=	AVX2="" SIMD=""
+.  elif !empty(MACHINE_CPU:Msse2)
+CMAKE_ARGS+=	-DINPUT_qt3d_simd=sse2
+PLIST_SUB+=	AVX2="@comment " SIMD=""
+.  else
+CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
+PLIST_SUB+=	SIMD="@comment "
+.  endif
+.else
+CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
+PLIST_SUB+=	SIMD="@comment "
+.endif
 
 .include <bsd.port.mk>

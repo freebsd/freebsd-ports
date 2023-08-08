@@ -1,0 +1,9 @@
+--- CMakeLists.txt.orig	2022-10-04 02:20:12 UTC
++++ CMakeLists.txt
+@@ -98,4 +98,4 @@ else()
+ 	install(FILES mrc.1 DESTINATION share/man/man1)
+ endif()
+ 
+-install(DIRECTORY example DESTINATION share/doc/mrc/)
+\ No newline at end of file
++install(DIRECTORY example DESTINATION share/examples/mrc)

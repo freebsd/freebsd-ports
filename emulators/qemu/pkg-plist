@@ -147,7 +147,6 @@ include/qemu-plugin.h
 %%DATADIR%%/vgabios-stdvga.bin
 %%DATADIR%%/vgabios-virtio.bin
 %%DATADIR%%/vgabios-vmware.bin
-%%DATADIR%%/sgabios.bin
 %%DATADIR%%/skiboot.lid
 %%DATADIR%%/trace-events-all
 %%DATADIR%%/petalogix-s3adsp1800.dtb

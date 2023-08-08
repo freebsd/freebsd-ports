@@ -1060,6 +1060,7 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/jquery_update_v2.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_cleanup.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/profilefield_youtube_update.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_orphaned_roles.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/remove_profilefield_aol.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v331.php
@@ -1075,6 +1076,10 @@
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v336.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v336rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/data/v33x/v337.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v338.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v338rc1.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v339.php
+%%PHPBBDIR%%/phpbb/db/migration/data/v33x/v339rc1.php
 %%PHPBBDIR%%/phpbb/db/migration/exception.php
 %%PHPBBDIR%%/phpbb/db/migration/helper.php
 %%PHPBBDIR%%/phpbb/db/migration/migration.php
@@ -1479,6 +1484,7 @@
 %%PHPBBDIR%%/store/.htaccess
 %%PHPBBDIR%%/store/index.htm
 %%PHPBBDIR%%/styles/all/imgs/svg/phpbb_logo_large_cosmic.svg
+%%PHPBBDIR%%/styles/all/template/cron.html
 %%PHPBBDIR%%/styles/all/template/feed.xml.twig
 %%PHPBBDIR%%/styles/prosilver/style.cfg
 %%PHPBBDIR%%/styles/prosilver/template/ajax.js
@@ -1756,7 +1762,6 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/LICENSE
-%%PHPBBDIR%%/vendor/guzzlehttp/promises/Makefile
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/README.md
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/composer.json
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
@@ -1778,10 +1783,10 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/functions.php
 %%PHPBBDIR%%/vendor/guzzlehttp/promises/src/functions_include.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/FUNDING.yml
+%%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/stale.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/ci.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/integration.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/workflows/static.yml
-%%PHPBBDIR%%/vendor/guzzlehttp/psr7/.github/stale.yml
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/.php_cs.dist
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/CHANGELOG.md
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/LICENSE
@@ -1812,6 +1817,7 @@
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/StreamWrapper.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UploadedFile.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/Uri.php
+%%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UriComparator.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/UriResolver.php
 %%PHPBBDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
@@ -2161,6 +2167,7 @@
 %%PHPBBDIR%%/vendor/s9e/sweetdom/src/Element.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/LICENSE
 %%PHPBBDIR%%/vendor/s9e/text-formatter/composer.json
+%%PHPBBDIR%%/vendor/s9e/text-formatter/readthedocs.yml
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Bundle.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Bundles/Fatdown.php
 %%PHPBBDIR%%/vendor/s9e/text-formatter/src/Bundles/Fatdown/Renderer.php
@@ -3340,9 +3347,9 @@
 %%PHPBBDIR%%/vendor/symfony/yaml/Unescaper.php
 %%PHPBBDIR%%/vendor/symfony/yaml/Yaml.php
 %%PHPBBDIR%%/vendor/symfony/yaml/composer.json
+%%PHPBBDIR%%/vendor/twig/twig/.gitattributes
 %%PHPBBDIR%%/vendor/twig/twig/.github/workflows/ci.yml
 %%PHPBBDIR%%/vendor/twig/twig/.github/workflows/documentation.yml
-%%PHPBBDIR%%/vendor/twig/twig/.gitattributes
 %%PHPBBDIR%%/vendor/twig/twig/.php-cs-fixer.dist.php
 %%PHPBBDIR%%/vendor/twig/twig/LICENSE
 %%PHPBBDIR%%/vendor/twig/twig/composer.json
@@ -3830,7 +3837,3 @@
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
 %%PHPBBDIR%%/web.config
-@dir(www,www,) %%PHPBBDIR%%/store
-@dir(www,www,) %%PHPBBDIR%%/cache
-@dir(www,www,) %%PHPBBDIR%%/files
-@dir(www,www,) %%PHPBBDIR%%/images/avatars/upload

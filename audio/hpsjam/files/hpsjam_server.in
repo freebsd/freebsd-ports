@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# PROVIDE: hpsjam_server
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable hpsjam_server:
+# hpsjam_server_enable   : set to "YES" to enable the daemon, default is "NO"
+# hpsjam_server_uname    : user to run hpsjam_server as, default is "%%USER%%"
+# hpsjam_server_flags    : extra flags to pass to daemon(8), default is ""
+# hpsjam_server_args     : any arguments to pass to hpsjam_server, default is ""
+#
+# See output from HpsJam --help for more options
+#
+
+. /etc/rc.subr
+
+name=hpsjam_server
+rcvar=hpsjam_server_enable
+
+load_rc_config $name
+
+hpsjam_server_enable=${hpsjam_server_enable:-"NO"}
+hpsjam_server_uname=${hpsjam_server_uname:-"%%USER%%"}
+hpsjam_server_flags=${hpsjam_server_flags:-""}
+hpsjam_server_args=${hpsjam_server_args:-""}
+
+logfile="/var/log/${name}.log"
+
+procname=%%PREFIX%%/bin/HpsJam
+command="/usr/sbin/daemon"
+command_args="-u ${hpsjam_server_uname} -o ${logfile} -t ${name} ${procname} --server ${hpsjam_server_args}"
+
+run_rc_command "$1"

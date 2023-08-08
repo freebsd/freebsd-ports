@@ -1,6 +1,6 @@
---- src/laybasic/unit_tests/unit_tests.pro.orig	2021-08-28 16:14:42 UTC
+--- src/laybasic/unit_tests/unit_tests.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/laybasic/unit_tests/unit_tests.pro
-@@ -21,5 +21,5 @@ SOURCES = \
+@@ -19,5 +19,5 @@ SOURCES = \
  INCLUDEPATH += $$TL_INC $$LAYBASIC_INC $$DB_INC $$GSI_INC $$OUT_PWD/../laybasic
  DEPENDPATH += $$TL_INC $$LAYBASIC_INC $$DB_INC $$GSI_INC $$OUT_PWD/../laybasic
  

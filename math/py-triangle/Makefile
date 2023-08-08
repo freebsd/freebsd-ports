@@ -1,7 +1,7 @@
 PORTNAME=	triangle
 PORTVERSION=	20200424
 CATEGORIES=	math
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	db@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://rufat.be/triangle
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang python:3.6-3.9
+USES=		compiler:c++11-lang python:3.8-3.9
 
 USE_PYTHON=	distutils autoplist
 

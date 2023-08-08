@@ -12,6 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf libtool tar:bz2
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

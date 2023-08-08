@@ -1,4 +1,3 @@
 %%SITE_ARCH%%/Term/Size.pm
 %%SITE_ARCH%%/auto/Term/Size/Size.so
-%%SITE_ARCH%%/auto/Term/Size/autosplit.ix
 %%PERL5_MAN3%%/Term::Size.3.gz

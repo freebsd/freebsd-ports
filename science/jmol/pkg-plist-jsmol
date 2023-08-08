@@ -237,6 +237,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/molxyz/XyzReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/more/AFLOWReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/more/BinaryDcdReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/more/CDXReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/more/ForceFieldReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/more/GromacsReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/more/JcampdxReader.js
@@ -299,6 +300,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/spartan/SpartanSmolReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/spartan/SpartanUtil.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlArgusReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/xml/XmlCdxReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlChem3dReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlChemDrawReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xml/XmlCmlReader.js
@@ -316,6 +318,7 @@
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/BilbaoReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/CastepReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/CgdReader.js
+%%WWWDIR%%/j2s/J/adapter/readers/xtal/CmdfReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/CrystalReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/DmolReader.js
 %%WWWDIR%%/j2s/J/adapter/readers/xtal/EspressoReader.js
@@ -344,6 +347,7 @@
 %%WWWDIR%%/j2s/J/adapter/smarter/Structure.js
 %%WWWDIR%%/j2s/J/adapter/smarter/StructureIterator.js
 %%WWWDIR%%/j2s/J/adapter/smarter/XtalSymmetry.js
+%%WWWDIR%%/j2s/J/adapter/writers/CDXMLWriter.js
 %%WWWDIR%%/j2s/J/adapter/writers/CIFWriter.js
 %%WWWDIR%%/j2s/J/adapter/writers/CMLWriter.js
 %%WWWDIR%%/j2s/J/adapter/writers/MOLWriter.js
@@ -1896,13 +1900,13 @@
 %%WWWDIR%%/sync2.htm
 %%WWWDIR%%/sync4.htm
 %%WWWDIR%%/sync4b.htm
+%%WWWDIR%%/testepfl13c.htm
 %%WWWDIR%%/tabtest.htm
 %%WWWDIR%%/test2.htm
 %%WWWDIR%%/testEPFL.htm
 %%WWWDIR%%/testPC.htm
 %%WWWDIR%%/testa.htm
 %%WWWDIR%%/testjsv.htm
-%%WWWDIR%%/testjsv_mol.htm
 %%WWWDIR%%/testjsv_predict.htm
 %%WWWDIR%%/testsave.htm
 %%WWWDIR%%/validation.htm

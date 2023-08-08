@@ -17,6 +17,6 @@ USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 
 GL_ACCOUNT=	mike01
-GL_COMMIT=	268e27c813545bf7995dd0a80abdb4da24d64722
+GL_TAGNAME=	268e27c813545bf7995dd0a80abdb4da24d64722
 
 .include <bsd.port.mk>

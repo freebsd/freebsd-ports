@@ -7,7 +7,7 @@ PATCH_SITES=	https://github.com/silum/dvdread/commit/
 PATCHFILES=	3bd3e448668b95da784159bf5733b5169831b026.patch:-p1 \
 		584758674f6e9230a3c30046097db269fb0905e1.patch:-p1
 
-MAINTAINER=	daniel.engberg.lists@pyret.net
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Utility to create ISO images of encrypted DVDs
 WWW=		https://github.com/xrgtn/dvdread
 

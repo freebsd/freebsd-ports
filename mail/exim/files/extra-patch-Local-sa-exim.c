@@ -193,7 +193,7 @@
 -		str=string_sprintf(string_sprintf("451- %s\r\n",SAmsgteergrubewait), spamstatus);
 -		fprintf(smtp_out, str);
 -		ret=fflush(smtp_out);
-+		smtp_printf("451-%s\r\n", teergrubewaitstr);
++		smtp_printf("451-%s\r\n", FALSE, teergrubewaitstr);
 +		ret=smtp_fflush();
  		if (ret != 0)
  		{

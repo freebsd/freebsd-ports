@@ -1,18 +1,17 @@
 PORTNAME=	mtools
-PORTVERSION=	4.0.26
-PORTREVISION=	1
+PORTVERSION=	4.0.43
 CATEGORIES=	emulators
 MASTER_SITES=	GNU
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	Collection of tools for manipulating MS-DOS files
+COMMENT=	Tools for manipulating MS-DOS disks and images
 WWW=		https://www.gnu.org/software/mtools/intro.html
 
 LICENSE=	GPLv3
 
 CONFLICTS_INSTALL=	multimarkdown
 
-USES=		gmake makeinfo tar:bzip2
+USES=		gmake makeinfo tar:lz
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_malloc_h=no
 CONFIGURE_ARGS=	--enable-xdf
@@ -46,17 +45,10 @@ MAKE_ENV+=	WITHOUT_X11=yes
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|^#define MT_SIZE_T size_t|#define MT_SIZE_T off_t|g' \
-		${WRKSRC}/llong.h
-	@${REINPLACE_CMD} -e 's|/etc/mtools.conf|${PREFIX}/etc/mtools.conf|g' \
-		${WRKSRC}/mformat.c
+	@${REINPLACE_CMD} -e '/LOCAL_CONF_FILE/s,/etc/default,${LOCALBASE}/etc,' \
+		${WRKSRC}/mtoolsPaths.h
 	@${REINPLACE_CMD} -e 's|^\(SAMPLE FILE\)$$|#\1|' \
 		${WRKSRC}/mtools.conf
-.for f in mtools.5 mtools.texi
-	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${PREFIX}/etc/|g' \
-		${WRKSRC}/${f}
-.endfor
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${STAGEDIR}${PREFIX}/etc/mtools.conf.sample

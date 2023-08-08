@@ -1,0 +1,14 @@
+--- src/controller.cpp	2023-07-18 09:44:46.451178000 +0200
++++ src/controller.cpp.orig	2023-07-18 09:44:18.501074000 +0200
+@@ -307,10 +307,7 @@
+ {
+     Q_ASSERT_X(c, __FUNCTION__, "Attempt to add a null connection");
+ 
++    Accounts.add(c);
+-#ifndef QUOTIENT_07
+-    AccountRegistry::instance().add(c);
+-#endif
+-
+     c->setLazyLoading(true);
+ 
+     connect(c, &Connection::syncDone, this, [this, c] {

@@ -1,6 +1,6 @@
 PORTNAME=		canu
 DISTVERSION=		2.2
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
@@ -19,15 +19,15 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
-USE_JAVA=	yes
-
+USE_CXXSTD=	c++14
+USE_JAVA=	8+
 JAVA_RUN=	yes
-JAVA_VERSION=	1.8+
 
-WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+
+WRKSRC_SUBDIR=	src
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +38,8 @@ post-extract:
 	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
 	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} != "amd64"
+	${CP} ${FILESDIR}/cpuid_any.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .endif
 
 pre-configure:

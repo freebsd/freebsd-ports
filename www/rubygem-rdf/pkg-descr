@@ -19,5 +19,3 @@ Features:
 - Performs auto-detection of input to select appropriate Reader class if one
   cannot be determined from file characteristics.
 - Provisional support for RDF*.
-
-See also: https://github.com/ruby-rdf/rdf

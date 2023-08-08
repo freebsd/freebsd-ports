@@ -1,9 +1,9 @@
 PORTNAME=	radarr
-PORTVERSION=	4.1.0.6175
-PORTREVISION=	2
+DISTVERSION=	4.6.4.7568
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Radarr.master.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Radarr.master.${DISTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users
@@ -16,12 +16,12 @@ ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
+		krb5>0:security/krb5 \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind \
-		sqlite3>0:databases/sqlite3
+		libunwind>0:devel/libunwind
 
-USES=	ssl:run
+USES=	ssl:run sqlite:3
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -35,10 +35,10 @@ SUB_LIST=	DATADIR=${DATADIR} \
 		PORTNAME=${PORTNAME} \
 		USERS=${USERS}
 
+WRKSRC=		${WRKDIR}/Radarr
+
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
-
-WRKSRC=		${WRKDIR}/Radarr
 
 .include <bsd.port.options.mk>
 

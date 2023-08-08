@@ -14,5 +14,3 @@ TinyMCE Features:
 - PHP/.NET/JSP/Coldfusion GZip compressor, Makes TinyMCE 75% smaller and a lot
   faster to load.
 - You can easily use AJAX to save and load content!
-
-See also: https://github.com/tinymce/tinymce

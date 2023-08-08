@@ -1,0 +1,11 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is csg-toolkit.
+
+ The present set of GNU Octave functions provides a novel and robust algorithm
+for analyzing the diaphyseal cross-sectional geometric properties of long bones,
+which can be applied to any 3D digital model of a humerus, ulna, femur or tibia
+bone represented as a triangular mesh in a Wavefront OBJ file format.

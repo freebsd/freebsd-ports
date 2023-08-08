@@ -45,6 +45,7 @@ include/helib/permutations.h
 include/helib/polyEval.h
 include/helib/powerful.h
 include/helib/primeChain.h
+include/helib/query.h
 include/helib/randomMatrices.h
 include/helib/range.h
 include/helib/recryption.h

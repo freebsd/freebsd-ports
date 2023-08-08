@@ -1,5 +1,5 @@
 PORTNAME=	styleguide
-PORTVERSION=	20220807
+PORTVERSION=	20230626
 CATEGORIES=	devel
 PKGNAMEPREFIX=	google-
 
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	099770e
+GH_TAGNAME=	7751268
 
 SHEBANG_FILES=	cpplint/cpplint.py cpplint/cpplint_unittest.py
 

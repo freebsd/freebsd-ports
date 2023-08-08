@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	roundcube${PHP_PKGNAMESUFFIX}>=1.3:mail/roundcube@${PHP_FLAVOR}
 
 USES=		php:flavors
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 WWWDIR=		${PREFIX}/www/roundcube
 REINPLACE_ARGS=	-i ''

@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC
@@ -82,6 +82,11 @@ INFO=		cpp cppinternals gcc gccinstall gccint gfortran
 INFO+=		libquadmath
 .endif
 INSTALL_TARGET=	install-strip
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Wno-error=increment-bool \
+			-Dregister=
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,# include <sys/sysctl.h>,," \

@@ -1,5 +1,6 @@
 PORTNAME=	MailScanner
 DISTVERSION=	5.3.4-3
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	.nix
 CATEGORIES=	mail
 MASTER_SITES=	https://github.com/MailScanner/v5/releases/download/${DISTVERSION}/
@@ -91,8 +92,7 @@ RUN_DEPENDS+=	clamscan:security/clamav
 RUN_DEPENDS+=	unrar:archivers/unrar \
 		zoo:archivers/zoo \
 		unarj:archivers/unarj \
-		unace:archivers/unace \
-		lha:archivers/lha
+		unace:archivers/unace
 .endif
 
 # backwards compatibility

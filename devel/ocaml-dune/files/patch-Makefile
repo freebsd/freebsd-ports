@@ -1,0 +1,29 @@
+--- Makefile.orig	2023-04-04 11:30:10 UTC
++++ Makefile
+@@ -44,7 +44,7 @@ release: $(BIN)
+ 
+ .PHONY: release
+ release: $(BIN)
+-	@$(BIN) build @install -p dune --profile dune-bootstrap
++	@$(BIN) build @install -p dune,dune-action-plugin,dune-build-info,dune-configurator,dune-glob,dune-private-libs,dune-site,dune-rpc,dyn,stdune,ordering,xdg --profile dune-bootstrap
+ 
+ $(BIN):
+ 	@ocaml boot/bootstrap.ml
+@@ -58,6 +58,17 @@ install:
+ .PHONY: install
+ install:
+ 	$(BIN) install $(INSTALL_ARGS) dune
++	$(BIN) install $(INSTALL_ARGS) dune-action-plugin
++	$(BIN) install $(INSTALL_ARGS) dune-build-info
++	$(BIN) install $(INSTALL_ARGS) dune-configurator
++	$(BIN) install $(INSTALL_ARGS) dune-glob
++	$(BIN) install $(INSTALL_ARGS) dune-private-libs
++	$(BIN) install $(INSTALL_ARGS) dune-site
++	$(BIN) install $(INSTALL_ARGS) dune-rpc
++	$(BIN) install $(INSTALL_ARGS) dyn
++	$(BIN) install $(INSTALL_ARGS) stdune
++	$(BIN) install $(INSTALL_ARGS) ordering
++	$(BIN) install $(INSTALL_ARGS) xdg
+ 
+ .PHONY: uninstall
+ uninstall:

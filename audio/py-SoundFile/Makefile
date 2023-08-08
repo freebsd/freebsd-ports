@@ -1,9 +1,10 @@
 PORTNAME=	SoundFile
-DISTVERSION=	0.10.3.post1
-PORTREVISION=	1
+DISTVERSION=	0.12.1
+PORTREVISION=	2
 CATEGORIES=	audio python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio library based on libsndfile, CFFI and NumPy
@@ -17,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PREFIX}/lib/libsndfile.so:audio/libsndfile
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	distutils autoplist pytest # pkg-plist has files that are missing in autoplist
 
 NO_ARCH=	yes
 

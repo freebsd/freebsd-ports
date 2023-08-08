@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/periodic_task.cc.orig	2022-03-28 18:11:04 UTC
+--- third_party/perfetto/src/base/periodic_task.cc.orig	2023-04-22 17:45:15 UTC
 +++ third_party/perfetto/src/base/periodic_task.cc
 @@ -24,7 +24,7 @@
  #include "perfetto/base/time.h"
@@ -9,12 +9,12 @@
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
  #include <sys/timerfd.h>
  #endif
-@@ -34,7 +34,7 @@ namespace base {
+@@ -44,7 +44,7 @@ uint32_t GetNextDelayMs(const TimeMillis& now_ms,
+ }
  
- namespace {
- base::ScopedPlatformHandle CreateTimerFd(uint32_t period_ms) {
+ ScopedPlatformHandle CreateTimerFd(const PeriodicTask::Args& args) {
 -#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
 +#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
-   base::ScopedPlatformHandle tfd(
+   ScopedPlatformHandle tfd(
        timerfd_create(CLOCK_BOOTTIME, TFD_CLOEXEC | TFD_NONBLOCK));

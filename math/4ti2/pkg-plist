@@ -169,4 +169,4 @@ lib/lib4ti2util.so.0.0.0
 lib/libzsolve.so
 lib/libzsolve.so.0
 lib/libzsolve.so.0.0.0
-%%DATADIR%%/doc/4ti2_manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/4ti2_manual.pdf

@@ -1,5 +1,5 @@
 PORTNAME=	jira-ruby
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-oauth>=0.5.0<1:net/rubygem-oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

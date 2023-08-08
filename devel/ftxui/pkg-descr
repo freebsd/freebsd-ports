@@ -1,0 +1,15 @@
+FTXUI is a simple C++ library for terminal based user interfaces.
+
+Feature:
+* Functional style. Inspired by [1] and React
+* Simple and elegant syntax (in my opinion)
+* Keyboard & mouse navigation.
+* Support for UTF8 and fullwidth chars
+* Support for animations. Demo 1, Demo 2
+* Support for drawing. Demo
+* No dependencies
+* Cross platform: Linux/MacOS (main target), WebAssembly, Windows
+* Learn by examples, and tutorials
+* Multiple packages: CMake FetchContent (preferred), vcpkg, pkgbuild, conan.
+* Good practises: documentation, tests, fuzzers, performance tests, automated
+  CI, automated packaging, etc

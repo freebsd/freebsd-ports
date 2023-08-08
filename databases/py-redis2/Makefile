@@ -2,13 +2,13 @@ PORTNAME=	redis
 PORTVERSION=	2.10.6
 PORTREVISION=	2
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
-WWW=		https://github.com/andymccurdy/redis-py
+WWW=		https://github.com/redis/redis-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -17,12 +17,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=2.5.0,1:devel/py-pytest@${PY_FLAVOR} \
 		redis-server:databases/redis
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis \
+			${PYTHON_PKGNAMEPREFIX}redis[0-9]
 
 PORTSCOUT=	limit:^2\.
 

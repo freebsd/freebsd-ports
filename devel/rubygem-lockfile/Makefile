@@ -10,7 +10,6 @@ WWW=		https://github.com/ahoward/lockfile
 LICENSE=	RUBY
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

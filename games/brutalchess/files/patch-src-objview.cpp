@@ -1,6 +1,6 @@
---- src/objview.cpp.orig	2007-09-02 16:01:24.000000000 +0200
-+++ src/objview.cpp	2007-09-02 16:02:00.000000000 +0200
-@@ -73,7 +73,7 @@
+--- src/objview.cpp.orig	2006-04-18 20:34:25 UTC
++++ src/objview.cpp
+@@ -73,7 +73,7 @@ void quit( int returnCode )
  	exit( returnCode );
  }
  
@@ -9,7 +9,7 @@
  // function to reset our viewport after a window resize
  int resizeWindow( int width, int height )
  {
-@@ -109,7 +109,7 @@
+@@ -109,7 +109,7 @@ int resizeWindow( int width, int height )
  
  
  // general OpenGL initialization function
@@ -18,7 +18,7 @@
  {
  	cout << "Initializing OpenGL" << endl;
  	// Enable smooth shading
-@@ -158,7 +158,7 @@
+@@ -158,7 +158,7 @@ int initGL( GLvoid )
  }
  
  // Here goes our drawing code

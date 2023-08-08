@@ -1,0 +1,10 @@
+--- meson.build.orig	2023-01-29 02:37:22 UTC
++++ meson.build
+@@ -47,7 +47,6 @@ endif
+ 
+ subdir('geocode-glib')
+ subdir('po')
+-subdir('icons')
+ 
+ if get_option('enable-gtk-doc')
+   subdir('docs')

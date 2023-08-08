@@ -1,6 +1,6 @@
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,12 @@ CMAKE_TESTING_ARGS=	-DGOOGLETEST_PATH=${WRKSRC_googletest}
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_gcc=	-Wno-stringop-truncation
+PIE_UNSAFE=	yes
 
 BINARY_ALIAS=	git=false
+
+PLIST_SUB=	VERSION=${DISTVERSION}
+
+# tests fail to compile, see https://github.com/google/benchmark/issues/1593
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
---- driver/linker-gcc.cpp.orig	2020-06-16 16:15:55 UTC
+--- driver/linker-gcc.cpp.orig	2022-07-20 17:05:27 UTC
 +++ driver/linker-gcc.cpp
-@@ -647,6 +647,8 @@ void ArgsBuilder::addDefaultPlatformLibs() {
-     args.push_back("-ldl");
-   // fallthrough
+@@ -659,6 +659,8 @@ void ArgsBuilder::addDefaultPlatformLibs() {
+   case llvm::Triple::Darwin:
+   case llvm::Triple::MacOSX:
    case llvm::Triple::FreeBSD:
 +    args.push_back("-lexecinfo"); // for static druntime
 +  // fallthrough

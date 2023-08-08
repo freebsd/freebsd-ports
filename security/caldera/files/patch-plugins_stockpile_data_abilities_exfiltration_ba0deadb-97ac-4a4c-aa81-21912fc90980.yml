@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/ba0deadb-97ac-4a4c-aa81-21912fc90980.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/ba0deadb-97ac-4a4c-aa81-21912fc90980.yml
+@@ -9,7 +9,7 @@
+     attack_id: T1537
+     name: 'Transfer Data to Cloud Account'
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           LocalFile='#{host.dir.compress}';

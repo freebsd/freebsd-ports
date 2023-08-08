@@ -1,5 +1,5 @@
 PORTNAME=	zita-jacktools
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	audio python
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		libzita-resampler.so:audio/zita-resampler
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zita-audiotools>0:audio/py-zita-audiotools@${PY_FLAVOR}
 
-USES=		localbase python:3.6+ tar:bz2
+USES=		localbase python tar:bz2
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -1,6 +1,6 @@
---- Makefile.orig	2015-02-10 12:39:25 UTC
+--- Makefile.orig	2022-10-29 19:34:27 UTC
 +++ Makefile
-@@ -33,11 +33,10 @@ TARGET=httping
+@@ -32,11 +32,10 @@ TARGET=httping
  
  LOCALEDIR=/usr/share/locale
  
@@ -14,3 +14,12 @@
  
  PACKAGE=$(TARGET)-$(VERSION)
  PREFIX?=/usr
+@@ -81,7 +80,7 @@ endif
+ ifeq ($(NC),yes)
+ CFLAGS+=-DNC
+ OBJS+=nc.o
+-LDFLAGS+=-lncursesw
++LDFLAGS+=-lncursesw -ltinfow
+ endif
+ 
+ ifeq ($(FW),yes)

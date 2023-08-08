@@ -1,0 +1,13 @@
+--- cmake/external/glib/cppgir/CMakeLists.txt.orig	2023-05-17 06:10:31 UTC
++++ cmake/external/glib/cppgir/CMakeLists.txt
+@@ -65,8 +65,8 @@ target_compile_definitions(cppgir PRIVATE
+     -DDEFAULT_GIRPATH=${GI_DEFAULT_GIRPATH})
+ target_compile_definitions(cppgir PRIVATE
+     -DDEFAULT_IGNORE_FILE=${GI_IGNORE_FILE_INSTALL_DIR}/${GI_IGNORE_FILE}:${GI_IGNORE_FILE_INSTALL_DIR}/${GI_IGNORE_FILE_PLATFORM})
+-target_link_libraries(cppgir Boost::program_options stdc++fs ${FORMAT_LIBRARIES})
+-set_property(TARGET cppgir PROPERTY CXX_STANDARD 14)
++target_link_libraries(cppgir Boost::program_options ${FORMAT_LIBRARIES})
++set_property(TARGET cppgir PROPERTY CXX_STANDARD 17)
+ 
+ add_library(gi INTERFACE)
+ target_include_directories(gi INTERFACE

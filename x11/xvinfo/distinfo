@@ -1,3 +1,3 @@
-TIMESTAMP = 1550828795
-SHA256 (xorg/app/xvinfo-1.1.4.tar.bz2) = 0353220d6606077ba42363db65f50410759f9815352f77adc799e2adfa76e73f
-SIZE (xorg/app/xvinfo-1.1.4.tar.bz2) = 126503
+TIMESTAMP = 1670267140
+SHA256 (xorg/app/xvinfo-1.1.5.tar.xz) = 3ede71ecb26d9614ccbc6916720285e95a2c7e0c5e19b8570eaaf72ad7c5c404
+SIZE (xorg/app/xvinfo-1.1.5.tar.xz) = 120700

@@ -1,1 +1,2 @@
-Xfce 4 library providing basic utilities.
+libxfce4util is used to share commonly used non-GTK utilities among
+the Xfce applications.

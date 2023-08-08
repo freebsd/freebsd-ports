@@ -1,0 +1,12 @@
+--- gst-libs/gst/transcoder/meson.build.orig	2022-09-05 21:18:30 UTC
++++ gst-libs/gst/transcoder/meson.build
+@@ -1,3 +1,4 @@
++if get_option('transcoder').enabled()
+ sources = files(['gsttranscoder.c', 'gsttranscoder-signal-adapter.c'])
+ headers = files(['gsttranscoder.h', 'transcoder-prelude.h', 'gsttranscoder-signal-adapter.h'])
+ 
+@@ -64,3 +65,4 @@ gst_transcoder_dep = declare_dependency(link_with: gst
+   include_directories : [libsinc]
+ )
+ meson.override_dependency(pkg_name, gst_transcoder_dep)
++endif

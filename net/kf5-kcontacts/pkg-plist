@@ -73,7 +73,6 @@ lib/libKF5Contacts.so.5
 lib/libKF5Contacts.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_MKSPECDIR%%/modules/qt_KContacts.pri
 share/locale/ar/LC_MESSAGES/kcontacts5.mo
-share/locale/ast/LC_MESSAGES/kcontacts5.mo
 share/locale/az/LC_MESSAGES/kcontacts5.mo
 share/locale/be/LC_MESSAGES/kcontacts5.mo
 share/locale/bg/LC_MESSAGES/kcontacts5.mo
@@ -100,6 +99,7 @@ share/locale/ia/LC_MESSAGES/kcontacts5.mo
 share/locale/id/LC_MESSAGES/kcontacts5.mo
 share/locale/it/LC_MESSAGES/kcontacts5.mo
 share/locale/ja/LC_MESSAGES/kcontacts5.mo
+share/locale/ka/LC_MESSAGES/kcontacts5.mo
 share/locale/kk/LC_MESSAGES/kcontacts5.mo
 share/locale/km/LC_MESSAGES/kcontacts5.mo
 share/locale/ko/LC_MESSAGES/kcontacts5.mo

@@ -1,13 +1,13 @@
 PORTNAME=	doh-proxy
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.8
 PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	DNS-over-HTTP server proxy
-WWW=		https://github.com/jedisct1/rust-doh
+WWW=		https://github.com/DNSCrypt/doh-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

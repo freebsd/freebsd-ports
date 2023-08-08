@@ -1,0 +1,8 @@
+A backwards/forwards-compatible fork of distutils.version.LooseVersion, for
+times when PEP-440 isn't what you need.
+
+The goal of this package is to be a drop-in replacement for the original
+LooseVersion. It implements an identical interface and comparison logic to
+LooseVersion. The only major change is that a looseversion.LooseVersion is
+comparable to a distutils.version.LooseVersion, which means tools should not
+need to worry whether all dependencies that use LooseVersion have migrated.

@@ -1,6 +1,6 @@
---- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2022-07-22 17:30:31 UTC
+--- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2023-04-05 11:05:06 UTC
 +++ components/network_session_configurator/browser/network_session_configurator_unittest.cc
-@@ -833,7 +833,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
+@@ -794,7 +794,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
  }
  
  TEST_F(NetworkSessionConfiguratorTest, DefaultCacheBackend) {

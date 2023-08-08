@@ -10,18 +10,12 @@ lib/io.elementary.code/plugins/highlight-word-selection/highlight-word-selection
 lib/io.elementary.code/plugins/highlight-word-selection/libhighlight-word-selection.so
 lib/io.elementary.code/plugins/markdown-actions/libmarkdown-actions.so
 lib/io.elementary.code/plugins/markdown-actions/markdown-actions.plugin
-lib/io.elementary.code/plugins/outline/liboutline.so
-lib/io.elementary.code/plugins/outline/outline.plugin
 lib/io.elementary.code/plugins/pastebin/libpastebin.so
 lib/io.elementary.code/plugins/pastebin/pastebin.plugin
 lib/io.elementary.code/plugins/preserve-indent/libpreserve-indent.so
 lib/io.elementary.code/plugins/preserve-indent/preserve-indent.plugin
 lib/io.elementary.code/plugins/spell/libspell.so
 lib/io.elementary.code/plugins/spell/spell.plugin
-lib/io.elementary.code/plugins/strip-trailing-save/libstrip-trailing-save.so
-lib/io.elementary.code/plugins/strip-trailing-save/strip-trailing-save.plugin
-lib/io.elementary.code/plugins/terminal/libterminal.so
-lib/io.elementary.code/plugins/terminal/terminal.plugin
 lib/io.elementary.code/plugins/vim-emulation/libvim-emulation.so
 lib/io.elementary.code/plugins/vim-emulation/vim-emulation.plugin
 lib/io.elementary.code/plugins/word-completion/libword-completion.so
@@ -31,6 +25,8 @@ lib/libcodecore.so.0
 lib/libcodecore.so.0.0
 libdata/pkgconfig/codecore.pc
 share/applications/io.elementary.code.desktop
+share/gtksourceview-4/styles/elementary-dark.xml
+share/gtksourceview-4/styles/elementary-light.xml
 share/icons/hicolor/128x128/apps/io.elementary.code.svg
 share/icons/hicolor/128x128@2/apps/io.elementary.code.svg
 share/icons/hicolor/16x16/apps/io.elementary.code.svg
@@ -242,7 +238,7 @@ share/locale/zh_CN/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_HK/LC_MESSAGES/io.elementary.code.mo
 share/locale/zh_TW/LC_MESSAGES/io.elementary.code.mo
 share/locale/zu/LC_MESSAGES/io.elementary.code.mo
-share/metainfo/io.elementary.code.appdata.xml
+share/metainfo/io.elementary.code.metainfo.xml
 share/polkit-1/actions/io.elementary.code.policy
 share/vala/vapi/codecore.deps
 share/vala/vapi/codecore.vapi

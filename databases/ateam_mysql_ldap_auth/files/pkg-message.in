@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Please see %%DOCSDIR%%/INSTALL
-for install notes.
-EOM
-}
-]

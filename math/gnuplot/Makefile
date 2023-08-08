@@ -1,6 +1,6 @@
 PORTNAME=	gnuplot
 PORTVERSION=	5.4.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 
@@ -43,7 +43,7 @@ CONFIGURE_ARGS+=--disable-x11-mbfonts \
 		--without-kpsexpand
 PLIST_SUB+=	X11="@comment "
 .else
-USES+=		gnome jpeg lua:53 ncurses xorg
+USES+=		gnome jpeg lua:53 ncurses tex xorg
 USE_TEX=	kpathsea
 USE_GNOME+=	atk cairo gtk30 gdkpixbuf2
 USE_WX=		3.0+

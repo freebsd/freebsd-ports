@@ -1,0 +1,88 @@
+From 1561c5d88b3a23a4348d8e3c1ce28554fcbcfe46 Mon Sep 17 00:00:00 2001
+From: "Heiko Schlittermann (HS12-RIPE)" <hs@schlittermann.de>
+Date: Sat, 15 Oct 2022 19:30:58 +0200
+Subject: [PATCH 1/2] Fix: Build with libopendmarc 1.4.x (fixes 2728)
+
+---
+ doc/ChangeLog     | 3 +++
+ src/EDITME            | 7 +++++--
+ src/config.h.defaults | 1 +
+ src/dmarc.c           | 7 ++++++-
+ 4 files changed, 15 insertions(+), 3 deletions(-)
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -13,10 +13,13 @@
+       Debug help from Graeme Fowler.
+ 
+ JH/10 GnuTLS: fix for (IOT?) clients offering no TLS extensions at all.
+       Find and fix by Jasen Betts.
+ 
++HS/01 Bug 2728: Introduce EDITME option "DMARC_API" to work around incompatible
++      API changes in libopendmarc.
++
+ 
+ 
+ Exim version 4.96
+ -----------------
+ 
+--- a/src/EDITME
++++ b/src/EDITME
+@@ -600,18 +600,21 @@
+ 
+ # EXPERIMENTAL_DCC=yes
+ 
+ # Uncomment the following line to add DMARC checking capability, implemented
+ # using libopendmarc libraries. You must have SPF and DKIM support enabled also.
+-# Library version libopendmarc-1.4.1-1.fc33.x86_64  (on Fedora 33) is known broken;
+-# 1.3.2-3 works.  I seems that the OpenDMARC project broke their API.
+ # SUPPORT_DMARC=yes
+ # CFLAGS += -I/usr/local/include
+ # LDFLAGS += -lopendmarc
+ # Uncomment the following if you need to change the default. You can
+ # override it at runtime (main config option dmarc_tld_file)
+ # DMARC_TLD_FILE=/etc/exim/opendmarc.tlds
++#
++# Library version libopendmarc-1.4.1-1.fc33.x86_64  (on Fedora 33) is known broken;
++# 1.3.2-3 works.  It seems that the OpenDMARC project broke their API.
++# Use this option if you need to build with an old library (1.3.x)
++# DMARC_API=100300
+ 
+ # Uncomment the following line to add ARC (Authenticated Received Chain)
+ # support.  You must have SPF and DKIM support enabled also.
+ # EXPERIMENTAL_ARC=yes
+ 
+--- a/src/config.h.defaults
++++ b/src/config.h.defaults
+@@ -148,10 +148,11 @@
+ #define STRING_SPRINTF_BUFFER_SIZE (8192 * 4)
+ 
+ #define SUPPORT_CRYPTEQ
+ #define SUPPORT_DANE
+ #define SUPPORT_DMARC
++#define DMARC_API 100400
+ #define DMARC_TLD_FILE "/etc/exim/opendmarc.tlds"
+ #define SUPPORT_I18N
+ #define SUPPORT_I18N_2008
+ #define SUPPORT_MAILDIR
+ #define SUPPORT_MAILSTORE
+--- a/src/dmarc.c
++++ b/src/dmarc.c
+@@ -457,11 +457,16 @@
+     dkim_result = vs == PDKIM_VERIFY_PASS ? DMARC_POLICY_DKIM_OUTCOME_PASS :
+ 		  vs == PDKIM_VERIFY_FAIL ? DMARC_POLICY_DKIM_OUTCOME_FAIL :
+ 		  vs == PDKIM_VERIFY_INVALID ? DMARC_POLICY_DKIM_OUTCOME_TMPFAIL :
+ 		  DMARC_POLICY_DKIM_OUTCOME_NONE;
+     libdm_status = opendmarc_policy_store_dkim(dmarc_pctx, US sig->domain,
+-					       dkim_result, US"");
++/* The opendmarc project broke its API in a way we can't detect * easily.
++ * The EDITME provides a DMARC_API variable */
++#if DMARC_API >= 100400
++                                               sig->selector,
++#endif
++                                               dkim_result, US"");
+     DEBUG(D_receive)
+       debug_printf("DMARC adding DKIM sender domain = %s\n", sig->domain);
+     if (libdm_status != DMARC_PARSE_OKAY)
+       log_write(0, LOG_MAIN|LOG_PANIC,
+ 		"failure to store dkim (%s) for DMARC: %s",

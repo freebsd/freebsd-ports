@@ -1,3 +1,3 @@
-TIMESTAMP = 1651085236
-SHA256 (murmurhash-1.0.7.tar.gz) = 630a396ebd31ca44d89b4eca36fa74ea8aae724adf0afaa2de7680c350b2936f
-SIZE (murmurhash-1.0.7.tar.gz) = 12922
+TIMESTAMP = 1665897000
+SHA256 (murmurhash-1.0.9.tar.gz) = fe7a38cb0d3d87c14ec9dddc4932ffe2dbc77d75469ab80fd5014689b0e07b58
+SIZE (murmurhash-1.0.9.tar.gz) = 12737

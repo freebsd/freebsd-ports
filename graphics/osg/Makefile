@@ -1,7 +1,7 @@
 PORTNAME=	osg
 PORTVERSION=	3.6.5
 DISTVERSIONPREFIX=	OpenSceneGraph-
-PORTREVISION=	44
+PORTREVISION=	61
 CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -26,6 +26,7 @@ USES=		alias cmake compiler:c11 jpeg gl pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++11
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath -DInt64=uint64_t
 
@@ -54,7 +55,7 @@ COLLADA_DESC=		COLLADA (dae) format support
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_VARS=		FORCE_REQUIRE+=CURL
 CURL_VARS_OFF=		FORCE_IGNORE+=CURL
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 FFMPEG_VARS=		FORCE_REQUIRE+=FFmpeg
 FFMPEG_VARS_OFF=	FORCE_IGNORE+=FFmpeg
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
@@ -148,6 +149,8 @@ post-patch:
 		${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g'
 	@${REINPLACE_CMD} -e '/FIND_LIBRARY.*DL_LIBRARY/ d; \
 		s|-pedantic||' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/CMakeModules/FindFFmpeg.cmake
 .for p in ${FORCE_REQUIRE}
 	@${REINPLACE_CMD} -e '/FIND_PACKAGE.*${p}/ s|)$$| REQUIRED&|' \
 		${WRKSRC}/CMakeLists.txt

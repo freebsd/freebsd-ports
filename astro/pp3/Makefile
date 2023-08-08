@@ -11,7 +11,7 @@ WWW=		http://pp3.sourceforge.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		tar:bzip2
+USES=		tar:bzip2 tex
 USE_TEX=	latex
 
 OPTIONS_DEFINE=	DOCS EXAMPLES

@@ -1,6 +1,6 @@
 @owner news
 @group news
-@preexec mkdir -p %%NEWSBASE%%
+@dir %%NEWSBASE%%
 %%CWDNEWSBASE%%
 bin/actmerge
 bin/actsync
@@ -76,6 +76,7 @@ bin/ovdb_server
 bin/ovdb_stat
 bin/overchan
 %%SQLITE%%bin/ovsqlite-server
+%%SQLITE%%bin/ovsqlite-util
 bin/perl-nocem
 bin/pgpverify
 bin/procbatch
@@ -291,6 +292,7 @@ man/man8/ovdb_monitor.8.gz
 man/man8/ovdb_server.8.gz
 man/man8/ovdb_stat.8.gz
 %%SQLITE%%man/man8/ovsqlite-server.8.gz
+%%SQLITE%%man/man8/ovsqlite-util.8.gz
 man/man8/overchan.8.gz
 man/man8/perl-nocem.8.gz
 man/man8/procbatch.8.gz
@@ -402,4 +404,3 @@ man/man8/writelog.8.gz
 @dir %%DBDIR%%
 @dir %%LOGDIR%%/OLD
 @dir %%LOGDIR%%
-@postunexec rmdir %%NEWSBASE%% 2>/dev/null ||( echo "===>  If you don't plan to use inn later, you can safely remove %%NEWSBASE%%. Deinstall process kept these files intact:" | fmt && for i in $(find %D/news -type f); do echo "    - $i"; done)

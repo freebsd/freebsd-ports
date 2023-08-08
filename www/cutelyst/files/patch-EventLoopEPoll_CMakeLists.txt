@@ -1,0 +1,13 @@
+--- EventLoopEPoll/CMakeLists.txt.orig	2022-11-27 13:04:21 UTC
++++ EventLoopEPoll/CMakeLists.txt
+@@ -25,6 +25,10 @@ set_target_properties(Cutelyst${PROJECT_VERSION_MAJOR}
+ target_link_libraries(Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}EventLoopEpoll
+     Qt${QT_VERSION_MAJOR}::Core
+ )
++if(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++    find_package(epoll-shim REQUIRED)
++    target_link_libraries(Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}EventLoopEpoll epoll-shim::epoll-shim)
++endif()
+ 
+ install(TARGETS Cutelyst${PROJECT_VERSION_MAJOR}Qt${QT_VERSION_MAJOR}EventLoopEpoll EXPORT CutelystTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 

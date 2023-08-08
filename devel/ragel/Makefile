@@ -18,6 +18,7 @@ OPTIONS_DEFINE=	TEXDOCS EXAMPLES
 OPTIONS_SUB=	yes
 TEXDOCS_CONFIGURE_ENABLE=	manual
 TEXDOCS_DESC=	Build pdf documentation (requires LaTeX)
+TEXDOCS_USES=		tex
 TEXDOCS_USE=		TEX=latex:build
 TEXDOCS_BUILD_DEPENDS=	fig2dev:print/transfig
 

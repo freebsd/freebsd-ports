@@ -1,7 +1,7 @@
 PORTNAME=	python-socketio
-PORTVERSION=	5.7.1
+PORTVERSION=	5.8.0
 CATEGORIES=	devel net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bidict>=0.21.0:devel/py-bidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-engineio>=4.3.0:devel/py-python-engineio@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

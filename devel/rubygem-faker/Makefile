@@ -1,5 +1,5 @@
 PORTNAME=	faker
-PORTVERSION=	2.23.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 RUN_DEPENDS=	rubygem-i18n>=1.8.11,2<2,2:devel/rubygem-i18n
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

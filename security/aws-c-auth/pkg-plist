@@ -7,6 +7,8 @@ include/aws/auth/private/aws_signing.h
 include/aws/auth/private/credentials_utils.h
 include/aws/auth/private/key_derivation.h
 include/aws/auth/private/sigv4_http_request.h
+include/aws/auth/private/sso_token_providers.h
+include/aws/auth/private/sso_token_utils.h
 include/aws/auth/signable.h
 include/aws/auth/signing.h
 include/aws/auth/signing_config.h

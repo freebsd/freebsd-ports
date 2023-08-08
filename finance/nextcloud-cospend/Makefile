@@ -1,32 +1,16 @@
 PORTNAME=	cospend
-PORTVERSION=	1.4.10
+PORTVERSION=	1.5.10
 CATEGORIES=	finance www editors
-MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
-PKGNAMEPREFIX=	nextcloud-
-PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
-DIST_SUBDIR=	nextcloud
+MASTER_SITES=	https://github.com/julien-nc/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Cospend app for Nextcloud
 WWW=		https://apps.nextcloud.com/apps/cospend
 
-LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=22:www/nextcloud@${PHP_FLAVOR}
+NEXTCLOUD_RUN_DEPENDS=	26
 
-USES=		php:flavors
-IGNORE_WITH_PHP=	82
-NO_BUILD=	yes
-NO_ARCH=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	@(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
-		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
+USES=		nextcloud php:flavors
 
 .include <bsd.port.mk>

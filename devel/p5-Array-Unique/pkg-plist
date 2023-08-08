@@ -1,2 +1,12 @@
 %%SITE_PERL%%/Array/Unique.pm
+%%SITE_PERL%%/Array/Unique/Hash.pm
+%%SITE_PERL%%/Array/Unique/IxHash.pm
+%%SITE_PERL%%/Array/Unique/Quick.pm
+%%SITE_PERL%%/Array/Unique/Std.pm
+%%SITE_PERL%%/Array/benchmark.pl
+%%SITE_PERL%%/Array/dev.pl
 %%PERL5_MAN3%%/Array::Unique.3.gz
+%%PERL5_MAN3%%/Array::Unique::Hash.3.gz
+%%PERL5_MAN3%%/Array::Unique::IxHash.3.gz
+%%PERL5_MAN3%%/Array::Unique::Quick.3.gz
+%%PERL5_MAN3%%/Array::Unique::Std.3.gz

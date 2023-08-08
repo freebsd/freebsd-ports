@@ -1,30 +1,24 @@
 PORTNAME=	octave-forge-secs1d
 PORTVERSION=	0.0.9
-PORTREVISION=	21
+PORTREVISION=	24
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/bim.tar.gz:math/octave-forge-bim
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/bim.tar.gz:math/octave-forge-bim
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-do-build:
-	@${DO_NADA}
+USES=		octave
 
 NO_ARCH=	yes
+NO_BUILD=	yes
 
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+WRKSRC=	${WRKDIR}/${OCTAVE_SRC}
 
 .include <bsd.port.mk>

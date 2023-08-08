@@ -1,12 +1,12 @@
 PORTNAME=	Config-INI-Reader-Ordered
-PORTVERSION=	0.021
+PORTVERSION=	0.022
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	INI-file parser that returns sections in order
-WWW=		https://metacpan.org/pod/Config::INI::Reader::Ordered
+WWW=		https://metacpan.org/dist/Config-INI-Reader-Ordered
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

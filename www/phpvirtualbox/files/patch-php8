@@ -1,0 +1,187 @@
+diff -ur endpoints/api.php.orig endpoints/api.php
+--- endpoints/api.php.orig
++++ endpoints/api.php
+@@ -334,6 +334,9 @@
+ 
+ 	// Just append to $vbox->errors and let it get
+ 	// taken care of below
++	if(!isset($vbox)) {
++		$vbox = new stdClass();
++	}
+ 	if(!$vbox || !$vbox->errors) {
+ 		$vbox->errors = array();
+ 	}
+@@ -342,7 +345,7 @@
+ 
+ 
+ // Add any messages
+-if($vbox && count($vbox->messages)) {
++if($vbox && isset($vbox->messages)?count($vbox->messages):false) {
+ 	foreach($vbox->messages as $m)
+ 		$response['messages'][] = 'vboxconnector('.$request['fn'] .'): ' . $m;
+ }
+@@ -360,7 +363,7 @@
+ 		if($e->getCode() == vboxconnector::PHPVB_ERRNO_CONNECT && isset($vbox->settings))
+ 			$d .= "\n\nLocation:" . $vbox->settings->location;
+ 
+-		$response['messages'][] = htmlentities($e->getMessage()).' ' . htmlentities($details);
++		$response['messages'][] = htmlentities($e->getMessage()). htmlentities(' '. $details);
+ 
+ 		$response['errors'][] = array(
+ 			'error'=> ($e->getCode() & vboxconnector::PHPVB_ERRNO_HTML ? $e->getMessage() : htmlentities($e->getMessage())),
+diff -ur endpoints/jqueryFileTree.php.orig endpoints/jqueryFileTree.php
+--- endpoints/jqueryFileTree.php.orig
++++ endpoints/jqueryFileTree.php
+@@ -223,6 +223,8 @@
+  */
+ function getdir($dir, $dirsOnly=false, $recurse=array()) {
+ 
++	global $allowed_exts;
++
+ 	if(!$dir) $dir = DSEP;
+ 
+ 	$entries = getDirEntries($dir, $dirsOnly);
+@@ -251,9 +253,9 @@
+         	// Push file on to stack
+         	} else {
+ 
+-        		$ext = strtolower(preg_replace('/^.*\./', '', $file));
++        		$ext = strtolower(preg_replace('/^.*\./', '', $path));
+ 
+-                if(count($allowed) && !$allowed['.'.$ext]) continue;
++                if(count($allowed_exts) && !$allowed_exts['.'.$ext]) continue;
+ 
+                 array_push($dirents, file_entry($path));
+         	}
+diff -ur endpoints/lib/language.php.orig endpoints/lib/language.php
+--- endpoints/lib/language.php.orig
++++ endpoints/lib/language.php
+@@ -73,6 +73,8 @@
+ 		$xmlObj = simplexml_load_string(@file_get_contents(VBOX_BASE_LANG_DIR.'/'.$lang.'.xml'));
+ 		$arrXml = $this->objectsIntoArray($xmlObj);
+ 
++		if(!array_key_exists('context',$arrXml)) return;
++
+ 		$lang = array();
+ 		if(!@$arrXml['context'][0]) $arrXml['context'] = array($arrXml['context']);
+ 		foreach($arrXml['context'] as $c) {
+diff -ur endpoints/lib/vboxServiceWrappers.php.orig endpoints/lib/vboxServiceWrappers.php
+--- endpoints/lib/vboxServiceWrappers.php.orig
++++ endpoints/lib/vboxServiceWrappers.php
+@@ -108,7 +108,7 @@
+     }
+ 
+     /** ArrayAccess Functions **/
+-    public function offsetSet($offset, $value)
++    public function offsetSet($offset, $value): void
+     {
+         if ($value instanceof $this->_interfaceName)
+         {
+@@ -127,49 +127,50 @@
+         }
+     }
+ 
+-    public function offsetExists($offset)
++    public function offsetExists($offset): bool
+     {
+         return isset($this->_objects[$offset]);
+     }
+ 
+-    public function offsetUnset($offset)
++    public function offsetUnset($offset): void
+     {
+         unset($this->_objects[$offset]);
+     }
+ 
+-    public function offsetGet($offset)
++    public function offsetGet($offset): mixed
+     {
+         return isset($this->_objects[$offset]) ? $this->_objects[$offset] : null;
+     }
+ 
+     /** Iterator Functions **/
+-    public function rewind()
++    public function rewind(): void
+     {
+         reset($this->_objects);
+     }
+ 
+-    public function current()
++    public function current(): mixed
+     {
+         return current($this->_objects);
+     }
+ 
+-    public function key()
++    public function key(): mixed
+     {
+         return key($this->_objects);
+     }
+ 
++    #[\ReturnTypeWillChange]
+     public function next()
+     {
+         return next($this->_objects);
+     }
+ 
+-    public function valid()
++    public function valid(): bool
+     {
+         return ($this->current() !== false);
+     }
+ 
+     /** Countable Functions **/
+-    public function count()
++    public function count(): int
+     {
+         return count($this->_objects);
+     }
+diff -ur endpoints/screen.php.orig endpoints/screen.php
+--- endpoints/screen.php.orig
++++ endpoints/screen.php
+@@ -87,13 +87,13 @@
+ 
+ 		// Let the browser cache images for 3 seconds
+ 		$ctime = 0;
+-		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'],'_')) {
++		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'] ?? '','_')) {
+ 			$ctime = preg_replace("/.*_/",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
+-		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'],'_')) {
++		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'] ?? '','_')) {
+ 			$ctime = preg_replace("/.*_/",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
+-		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
++		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
+ 			$ctime = strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
+-		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
++		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
+ 			$ctime = strtotime($_ENV['HTTP_IF_MODIFIED_SINCE']);
+ 		}
+ 
+diff -ur panes/settingsDisplay.html.orig panes/settingsDisplay.html
+--- panes/settingsDisplay.html.orig
++++ panes/settingsDisplay.html
+@@ -77,9 +77,9 @@
+ 		<th><span class='translate'>Authentication Method:</span></th>
+ 		<td>
+              <select name='vboxSettingsDisplayVRDEAuth' id='vboxSettingsDisplayVRDEAuthID' style='width: 100%'>
+-              <option value='' >None</option>
+-				<option value='External'>External</option>
+-				<option value='Guest'>Guest</option>
++              <option value='Null'>None</option>
++              <option value='External'>External</option>
++              <option value='Guest'>Guest</option>
+              </select>
+           </td>
+ 	</tr>
+diff -ur panes/settingsNetwork.html.orig panes/settingsNetwork.html
+--- panes/settingsNetwork.html.orig
++++ panes/settingsNetwork.html
+@@ -320,7 +320,7 @@
+ 	}
+ 
+ 	// Special case for Internal, Generic, and VDE network selects
+-	if(sel.value == 'Internal' || sel.value == 'VDE' || sel.value == 'Generic' || sel.value == 'Bridged') {
++	if(sel.value == 'Internal' || sel.value == 'VDE' || sel.value == 'Generic') {
+ 		$(nsel).jec();
+ 	}
+ 	

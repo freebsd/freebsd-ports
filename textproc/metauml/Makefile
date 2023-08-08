@@ -18,10 +18,11 @@ WWW=		http://metauml.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/thrunk/License
 
+USES=		tex
 USE_TEX=	latex
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} MPDIR=${MPDIR}
 
-TEXMFDIR=	share/texmf
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} MPDIR=${MPDIR}
+
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 MPDIR=		${TEXMFDIR}/metapost/${PORTNAME}
 

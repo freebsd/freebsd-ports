@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2020-12-21 14:08:57 UTC
+--- CMakeLists.txt.orig	2022-12-20 18:30:03 UTC
 +++ CMakeLists.txt
-@@ -169,7 +169,6 @@ endif()
+@@ -197,7 +197,6 @@ include(cmake/Coverage.cmake)
  include(cmake/CompilerWarnings.cmake)
  include(cmake/Coverage.cmake)
  

@@ -2,7 +2,7 @@ PORTNAME=	adns
 DISTVERSION=	1.4
 DISTVERSIONSUFFIX=	-py1
 CATEGORIES=	dns python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 LIB_DEPENDS=	libadns.so:dns/adns
 
-USES=		localbase python:3.4+
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

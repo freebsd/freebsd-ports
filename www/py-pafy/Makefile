@@ -1,8 +1,8 @@
 PORTNAME=	pafy
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	yt-dlp:www/yt-dlp
 RUN_DEPENDS=	yt-dlp:www/yt-dlp
 
-USES=	python:3.6+
+USES=	python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

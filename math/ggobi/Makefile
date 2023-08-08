@@ -1,6 +1,6 @@
 PORTNAME=	ggobi
 PORTVERSION=	2.1.11
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 

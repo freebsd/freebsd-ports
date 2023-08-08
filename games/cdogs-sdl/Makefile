@@ -1,17 +1,20 @@
 PORTNAME=	cdogs-sdl
-PORTVERSION=	1.0.1
+PORTVERSION=	1.5.0
 CATEGORIES=	games
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Classic overhead run-and-gun game
 WWW=		https://github.com/cxong/cdogs-sdl
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3,1:devel/py-protobuf@${PY_FLAVOR} \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		cmake compiler:c++11-lang gl gnome localbase:ldflags pkgconfig \
-		python:3.6+ sdl
+USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome localbase:ldflags pkgconfig \
+		python sdl
 
 USE_SDL=	image2 mixer2 sdl2
 USE_GNOME=	cairo gdkpixbuf2 gtk30

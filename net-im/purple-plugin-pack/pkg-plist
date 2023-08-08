@@ -13,6 +13,7 @@ lib/pidgin/nicksaid.so
 lib/pidgin/plonkers.so
 lib/pidgin/schedule.so
 lib/pidgin/sepandtab.so
+lib/pidgin/switchspell.so
 lib/pidgin/timelog.so
 lib/purple-2/autoreply.so
 lib/purple-2/bash.so

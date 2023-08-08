@@ -1,9 +1,9 @@
 include/blis/blis.h
-include/blis/cblas.h
+%%CBLAS%%include/blis/cblas.h
 lib/libblis.a
 lib/libblis.so
-lib/libblis.so.3
-lib/libblis.so.3.0.0
+lib/libblis.so.4
+lib/libblis.so.4.0.0
 share/pkgconfig/blis.pc
 %%DATADIR%%/common.mk
 %%DATADIR%%/config.mk

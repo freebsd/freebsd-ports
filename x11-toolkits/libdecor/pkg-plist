@@ -1,6 +1,6 @@
 include/libdecor-0/libdecor.h
 lib/libdecor-0.so
 lib/libdecor-0.so.0
-lib/libdecor-0.so.0.100.0
+lib/libdecor-0.so.0.100.1
 lib/libdecor/plugins-1/libdecor-cairo.so
 libdata/pkgconfig/libdecor-0.pc

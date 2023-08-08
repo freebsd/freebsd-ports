@@ -1,7 +1,7 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.14.05
-PORTREVISION=	0
+DISTVERSION=	0.16.02
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -11,7 +11,9 @@ WWW=		http://kernel.ubuntu.com/~cking/stress-ng/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gmake localbase:ldflags
+LIB_DEPENDS+=libmpfr.so:math/mpfr
+
+USES=		compiler:c11 gmake jpeg localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	ColinIanKing
 
@@ -19,26 +21,71 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
-OPTIONS_DEFINE=		JUDY LIBINOTIFY
+OPTIONS_DEFINE=		GPU JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFINE_amd64=	INTELIPSEC
-OPTIONS_DEFAULT=	JUDY LIBINOTIFY
+OPTIONS_DEFAULT=	JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFAULT_amd64=	INTELIPSEC
 
+GPU_DESC=	Enable support for GPU stressor (add GL)
 INTELIPSEC_DESC=	Enable support for Intel's IPsec library
 JUDY_DESC=		Enable support for (lib)Judy
 LIBINOTIFY_DESC=	Enable support for libinotify
+XXHASH_DESC=	Enable support for libxxhash
 
 INTELIPSEC_LIB_DEPENDS=		libIPSec_MB.so:security/intel-ipsec-mb
-INTELIPSEC_MAKE_ARGS_OFF=	HAVE_LIB_IPSEC_MB=0
 
 JUDY_LIB_DEPENDS=		libJudy.so:devel/judy
-JUDY_MAKE_ARGS_OFF=		HAVE_LIB_JUDY=0
 
 LIBINOTIFY_LIB_DEPENDS=		libinotify.so:devel/libinotify
 LIBINOTIFY_LDFLAGS=		-linotify
-LIBINOTIFY_MAKE_ARGS_OFF=	HAVE_SYS_INOTIFY_H=0
+
+XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
+XXHASH_LDFLAGS=	-lxxhash
+
+GPU_USES=	gl
 
 MAKE_ARGS=	VERBOSE=1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGPU}
+USE_GL=	egl glesv2 gbm
+.endif
+
+pre-patch:
+	${MKDIR} ${WRKSRC}/configs
+.if ${ARCH} == i386
+	${TOUCH} ${WRKSRC}/configs/HAVE_VECMATH
+.endif
+
+#to dsiable Intel IPSEC detection
+post-patch-INTELIPSEC-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_IPSEC_MB
+	${TOUCH} ${WRKSRC}/configs/HAVE_INTEL_IPSEC_MB_H
+
+#to dsiable judy detection
+post-patch-JUDY-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_JUDY_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_JUDY
+
+#to dsiable libinotify detection
+post-patch-LIBINOTIFY-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_INOTIFY
+	${TOUCH} ${WRKSRC}/configs/HAVE_SYS_INOTIFY
+
+# To disable libxxhash
+post-patch-XXHASH-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_XXHASH
+	${TOUCH} ${WRKSRC}/configs/HAVE_XXHASH_H
+
+post-patch-GPU-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_EGL
+	${TOUCH} ${WRKSRC}/configs/HAVE_EGL_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_EGL_EXT_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_GLES2
+	${TOUCH} ${WRKSRC}/configs/HAVE_GLES2_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_GBM
+	${TOUCH} ${WRKSRC}/configs/HAVE_GBM_H
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin

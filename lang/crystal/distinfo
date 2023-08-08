@@ -1,7 +1,7 @@
-TIMESTAMP = 1658681291
-SHA256 (crystal/crystal-1.1.1-freebsd12-aarch64-llvm10) = 51433c9cff796da1423e2a6d77c87891cd7ba4cee37ef25322b2e801aba2b53b
-SIZE (crystal/crystal-1.1.1-freebsd12-aarch64-llvm10) = 11093864
-SHA256 (crystal/crystal-lang-crystal-1.5.0_GH0.tar.gz) = f53e459ef6c7227df922a76fb62e350c90d52d30bfaa84b90feda9731bb98655
-SIZE (crystal/crystal-lang-crystal-1.5.0_GH0.tar.gz) = 2909586
-SHA256 (crystal/crystal-1.1.1-freebsd12-amd64-llvm10) = bceb45f9d886cfbfac866761dcb954788156908d3a54e35f58c9e3f716cf91ed
-SIZE (crystal/crystal-1.1.1-freebsd12-amd64-llvm10) = 11997032
+TIMESTAMP = 1678454903
+SHA256 (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 62617bf7a6d38d5a980672559b680818bf35803252f69bb6ecfb33377c3b2a88
+SIZE (crystal/crystal-1.5.1-aarch64-llvm14.tar.xz) = 2085460
+SHA256 (crystal/crystal-lang-crystal-1.7.3_GH0.tar.gz) = 3ad94dd2835a58af8dabf18d6cdf3791eb49cdfc6fdc6fd6a4e59abf0e860a6f
+SIZE (crystal/crystal-lang-crystal-1.7.3_GH0.tar.gz) = 3122395
+SHA256 (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = abd7cd2a798b9184d6cbb600fde29a55e196a03974c164ceac1713be264fb7ac
+SIZE (crystal/crystal-1.5.1-amd64-llvm14.tar.xz) = 2608988

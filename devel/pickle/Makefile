@@ -35,6 +35,15 @@ BIN_SYMLINKS=	bin/n14 \
 		bin/p24 \
 		bin/p32
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USES+=		llvm:max=14
+CPP=            clang-cpp${LLVM_VERSION}
+CC=             clang${LLVM_VERSION}
+CXX=            clang++${LLVM_VERSION}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC=|CC?=| ; \

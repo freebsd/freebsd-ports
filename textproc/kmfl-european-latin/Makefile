@@ -11,26 +11,35 @@ MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Paneuropean Latin KMFL keyboard covering 120 languages
 WWW=		http://eurolatin.keymankeyboards.com/
 
-BUILD_DEPENDS=	base64:converters/base64
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 
-WRKSRC=		${WRKDIR}/EuroLatin\ Source\ Files
 USES=		dos2unix zip
 DOS2UNIX_FILES=	european.kmn
 
-OPTIONS_DEFINE=	DOCS
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/EuroLatin\ Source\ Files
+
+OPTIONS_DEFINE=	DOCS
+
 DOCSLIST=	EuroLatin\ Keyman\ Desktop\ Keyboard\ Files/eurolatin1.6.pdf \
 		EuroLatin\ KeymanWeb\ Keyboard\ Files/european.html \
 		licence.txt
-
 KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons
 
-SUB_FILES=	pkg-message
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+BASE64=	/usr/bin/base64
+.else
+BUILD_DEPENDS=	base64:converters/base64
+BASE64=	${LOCALBASE}/bin/base64
+.endif
 
 do-build:
-	${LOCALBASE}/bin/base64 -d ${FILESDIR}/latin.png.base64.txt > ${WRKSRC}/latin.png
+	${BASE64} -d ${FILESDIR}/latin.png.base64.txt > ${WRKSRC}/latin.png
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${KMFL_DIR} ${STAGEDIR}${PREFIX}/${KMFL_ICONS_DIR}
@@ -41,4 +50,4 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/"$$doc" ${STAGEDIR}${DOCSDIR} ; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

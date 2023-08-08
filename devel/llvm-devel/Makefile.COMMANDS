@@ -14,6 +14,7 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfo-analyzer \
 		llvm-debuginfod \
 		llvm-debuginfod-find \
 		llvm-diff \
@@ -68,6 +69,7 @@ LLVM_COMMANDS=	\
 		sancov
 
 CLANG_COMMANDS=	\
+		amdgpu-arch \
 		analyze-build \
 		c-index-test \
 		clang \
@@ -85,6 +87,7 @@ CLANG_COMMANDS=	\
 		diagtool \
 		hmaptool \
 		intercept-build \
+		nvptx-arch \
 		scan-build \
 		scan-build-py \
 		scan-view
@@ -94,6 +97,7 @@ EXTRAS_COMMANDS= \
 		clang-apply-replacements \
 		clang-change-namespace \
 		clang-doc \
+		clang-include-cleaner \
 		clang-include-fixer \
 		clang-move \
 		clang-pseudo \
@@ -109,7 +113,6 @@ FLANG_COMMANDS=	\
 		bbc \
 		f18-parse-demo \
 		fir-opt \
-		flang \
 		flang-new \
 		flang-to-external-fc \
 		tco
@@ -145,4 +148,5 @@ MLIR_COMMANDS=	\
 		tblgen-lsp-server
 
 OPENMP_COMMANDS=	\
-		llvm-omp-device-info
+		llvm-omp-device-info \
+		llvm-omp-kernel-replay

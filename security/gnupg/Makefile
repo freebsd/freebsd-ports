@@ -1,8 +1,11 @@
 PORTNAME=	gnupg
-PORTVERSION=	2.3.3
-PORTREVISION=	3
+DISTVERSION=	2.4.3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
+
+PATCH_SITES=	https://github.com/gpg/${PORTNAME}/commit/
+PATCHFILES+=	9ae3cfcabec9252c22d67b7a15c36f0a8cf22f0f.patch:-p1 #Fix linking without LDAP
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Complete and free PGP implementation
@@ -25,7 +28,7 @@ USES=		compiler:c11 cpe gmake iconv makeinfo pkgconfig readline sqlite tar:bzip2
 CONFLICTS=	dirmngr
 CPE_VENDOR=	gnupg
 
-CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2 --enable-symcryptrun
+CONFIGURE_ARGS=	--disable-ntbtls --enable-gpg-is-gpg2
 GNU_CONFIGURE=	yes
 INFO=		gnupg
 TEST_TARGET=	check
@@ -48,7 +51,7 @@ LARGE_RSA_CONFIGURE_ENABLE=	large-secmem
 
 LDAP_CONFIGURE_WITH=	ldap=${LOCALBASE}
 LDAP_LIBS=		-L${LOCALBASE}/lib
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext

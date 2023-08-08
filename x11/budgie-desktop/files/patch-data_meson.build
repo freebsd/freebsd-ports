@@ -1,0 +1,11 @@
+--- data/meson.build.orig	2023-02-19 16:48:41 UTC
++++ data/meson.build
+@@ -15,3 +15,8 @@ install_data(
+     version_file,
+     install_dir: join_paths(datadir, 'budgie')
+ )
++
++# Our own settings
++install_data('25_org.buddiesofbudgie-default-settings.gschema.override',
++    install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
++)

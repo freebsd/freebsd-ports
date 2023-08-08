@@ -1,6 +1,7 @@
 PORTNAME=	flare
-PORTVERSION=	1.13.04
+PORTVERSION=	1.14
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 PKGNAMESUFFIX=	-engine
 
@@ -11,11 +12,10 @@ WWW=		https://flarerpg.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cmake compiler:env sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	flareteam
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
-
-USES=		cmake compiler:env sdl
 USE_SDL=	sdl2 mixer2 image2 ttf2
 CMAKE_BUILD_TYPE=	#empty
 

@@ -1,6 +1,6 @@
 PORTNAME=	growl-for-linux
 PORTVERSION=	0.8.5
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	deskutils
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -40,12 +40,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}/display \
 		${PREFIX}/lib/${PORTNAME}/subscribe
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-fnested-functions
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/^gol_LDADD =/s/$$/ -lgmodule-2.0/' \
 		${WRKSRC}/Makefile.am
@@ -53,4 +47,4 @@ post-patch:
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libgolplug.a
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

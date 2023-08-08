@@ -9,7 +9,7 @@ WWW=		https://www.gnu.org/software/libredwg/
 
 LICENSE=	GPLv3+
 
-USES=		compiler cpe libtool tar:xz
+USES=		cpe libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-trace --with-perl-install=no
 USE_LDCONFIG=	yes
@@ -36,19 +36,10 @@ PSLIB_USES=		localbase
 PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
-PYTHON_USES=		gettext-runtime python:3.6+ shebangfix
+PYTHON_USES=		gettext-runtime python shebangfix
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_PORTEXAMPLES=	load_dwg.py
 PYTHON_VARS=		SHEBANG_FILES+=examples/load_dwg.py
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_VERSION} < 150 && ${ARCH:Mpowerpc64*}
-LLVM_VER=       15
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
-.endif
 
 post-patch:
 # XXX: switch the order of #include's to unbreak on powerpc/sparc64
@@ -73,4 +64,4 @@ post-stage:
 	${MV} ${PORTEXAMPLES:S|^|${STAGEDIR}${PREFIX}/share/|} \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

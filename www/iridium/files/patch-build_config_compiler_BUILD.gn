@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2022-04-01 07:48:30 UTC
+--- build/config/compiler/BUILD.gn.orig	2023-07-24 14:27:53 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -236,13 +236,16 @@ config("default_include_dirs") {
+@@ -249,13 +249,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -291,7 +294,9 @@ config("compiler") {
+@@ -302,7 +305,9 @@ config("compiler") {
  
    configs += [
      # See the definitions below.
@@ -28,7 +28,7 @@
      ":compiler_codegen",
      ":compiler_deterministic",
    ]
-@@ -450,6 +455,10 @@ config("compiler") {
+@@ -495,6 +500,10 @@ config("compiler") {
      }
    }
  
@@ -38,35 +38,72 @@
 +
    # Linux-specific compiler flags setup.
    # ------------------------------------
-   if ((is_posix || is_fuchsia) && !is_apple && use_lld) {
-@@ -879,7 +888,7 @@ config("compiler_cpu_abi") {
+   if (use_gold) {
+@@ -818,7 +827,7 @@ config("compiler") {
+   # * Apple platforms (e.g. MacOS, iPhone, iPad) aren't supported because xcode
+   #   lldb doesn't have the needed changes yet.
+   # TODO(crbug.com/1379070): Remove if the upstream default ever changes.
+-  if (is_clang && !is_nacl && !is_win && !is_apple) {
++  if (is_clang && !is_nacl && !is_win && !is_apple && !is_bsd) {
+     cflags_cc += [ "-gsimple-template-names" ]
+   }
+ 
+@@ -1053,7 +1062,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
--      if (is_clang && !is_android && !is_nacl) {
-+      if (is_clang && !is_android && !is_nacl && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl &&
++      if (is_clang && !is_android && !is_nacl && !is_bsd &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-       }
-@@ -893,7 +902,7 @@ config("compiler_cpu_abi") {
+@@ -1068,7 +1077,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
--      if (is_clang && !is_android && !is_nacl && !is_fuchsia) {
-+      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd) {
+-      if (is_clang && !is_android && !is_nacl && !is_fuchsia &&
++      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd &&
+           !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-       }
-@@ -1465,7 +1474,7 @@ config("default_warnings") {
+@@ -1414,6 +1423,27 @@ config("compiler_deterministic") {
+   }
+ }
+ 
++config("clang_revision") {
++  if (is_clang && !is_bsd && clang_base_path == default_clang_base_path) {
++    update_args = [
++      "--print-revision",
++      "--verify-version=$clang_version",
++    ]
++    if (llvm_force_head_revision) {
++      update_args += [ "--llvm-force-head-revision" ]
++    }
++    clang_revision = exec_script("//tools/clang/scripts/update.py",
++                                 update_args,
++                                 "trim string")
++
++    # This is here so that all files get recompiled after a clang roll and
++    # when turning clang on or off. (defines are passed via the command line,
++    # and build system rebuild things when their commandline changes). Nothing
++    # should ever read this define.
++    defines = [ "CR_CLANG_REVISION=\"$clang_revision\"" ]
++  }
++}
++
+ config("rustc_revision") {
+   if (rustc_revision != "") {
+     # Similar to the above config, this is here so that all files get recompiled
+@@ -1632,7 +1662,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
--      if (is_chromeos || default_toolchain == "//build/toolchain/cros:target") {
-+      if (is_chromeos || default_toolchain == "//build/toolchain/cros:target" || is_bsd) {
-         # TODO(https://crbug.com/1016945): Re-enable once ChromeOS toolchain is up to date
-         cflags += [ "-Wno-builtin-assume-aligned-alignment" ]
-       }
-@@ -1644,7 +1653,7 @@ config("no_chromium_code") {
+-      if (!is_nacl) {
++      if (!is_nacl && !is_bsd) {
+         cflags += [
+           # TODO(crbug.com/1343975) Evaluate and possibly enable.
+           "-Wno-deprecated-builtins",
+@@ -1809,7 +1839,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -75,7 +112,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -1956,8 +1965,7 @@ config("default_stack_frames") {
+@@ -2093,8 +2123,7 @@ config("default_stack_frames") {
  }
  
  # Default "optimization on" config.
@@ -85,7 +122,7 @@
    if (is_win) {
      if (chrome_pgo_phase != 2) {
        # Favor size over speed, /O1 must be before the common flags.
-@@ -1995,8 +2003,7 @@ config("xoptimize") {
+@@ -2153,8 +2182,7 @@ config("xoptimize") {
  }
  
  # Turn off optimizations.
@@ -95,7 +132,7 @@
    if (is_win) {
      cflags = [
        "/Od",  # Disable optimization.
-@@ -2036,8 +2043,7 @@ config("xno_optimize") {
+@@ -2194,8 +2222,7 @@ config("xno_optimize") {
  # Turns up the optimization level. On Windows, this implies whole program
  # optimization and link-time code generation which is very expensive and should
  # be used sparingly.
@@ -105,7 +142,7 @@
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2070,8 +2076,7 @@ config("xoptimize_max") {
+@@ -2228,8 +2255,7 @@ config("xoptimize_max") {
  #
  # TODO(crbug.com/621335) - rework how all of these configs are related
  # so that we don't need this disclaimer.
@@ -115,7 +152,7 @@
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2097,8 +2102,7 @@ config("xoptimize_speed") {
+@@ -2255,8 +2281,7 @@ config("xoptimize_speed") {
    }
  }
  
@@ -125,7 +162,7 @@
    cflags = [ "-O1" ] + common_optimize_on_cflags
    rustflags = [ "-Copt-level=1" ]
    ldflags = common_optimize_on_ldflags
-@@ -2163,7 +2167,7 @@ config("afdo_optimize_size") {
+@@ -2324,7 +2349,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -134,8 +171,8 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2179,7 +2183,7 @@ config("afdo") {
-       cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
+@@ -2343,7 +2368,7 @@ config("afdo") {
+       }
        inputs = [ _clang_sample_profile ]
      }
 -  } else if (auto_profile_path != "" && is_a_target_toolchain) {
@@ -143,18 +180,18 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2217,8 +2221,7 @@ config("win_pdbaltpath") {
+@@ -2381,8 +2406,7 @@ config("win_pdbaltpath") {
  }
  
  # Full symbols.
 -config("symbols") { }
 -config("xsymbols") {
 +config("symbols") {
+   rustflags = []
    if (is_win) {
      if (is_clang) {
-       cflags = [ "/Z7" ]  # Debug information in the .obj files.
-@@ -2323,7 +2326,8 @@ config("xsymbols") {
-     }
+@@ -2502,7 +2526,8 @@ config("xsymbols") {
+     configs += [ "//build/config:compress_debug_sections" ]
    }
  
 -  if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {
@@ -163,17 +200,17 @@
      if (is_apple) {
        # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
        # Make sure we don't use constructor homing on mac.
-@@ -2346,8 +2350,7 @@ config("xsymbols") {
+@@ -2525,8 +2550,7 @@ config("xsymbols") {
  # Minimal symbols.
  # This config guarantees to hold symbol for stack trace which are shown to user
  # when crash happens in unittests running on buildbot.
 -config("minimal_symbols") { }
 -config("xminimal_symbols") {
 +config("minimal_symbols") {
+   rustflags = []
    if (is_win) {
      # Functions, files, and line tables only.
-     cflags = []
-@@ -2420,8 +2423,7 @@ config("xminimal_symbols") {
+@@ -2611,8 +2635,7 @@ config("xminimal_symbols") {
  # This configuration contains function names only. That is, the compiler is
  # told to not generate debug information and the linker then just puts function
  # names in the final debug information.

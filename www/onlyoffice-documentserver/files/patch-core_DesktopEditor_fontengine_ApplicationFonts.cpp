@@ -4,7 +4,7 @@
  
  #if defined(_LINUX) && !defined(_MAC) && !defined(__ANDROID__)
      m_oList.LoadFromFolder(L"/usr/share/fonts");
-+#else if defined(__FreeBSD__)
++#elif defined(__FreeBSD__)
 +    m_oList.LoadFromFolder(L"%%LOCALBASE%%/share/fonts");
  #endif
  
@@ -14,7 +14,7 @@
       if (!custom_fonts_path.empty())
          NSDirectory::GetFiles2(custom_fonts_path, _array, true);
 +
-+#else if defined(__FreeBSD__)
++#elif defined(__FreeBSD__)
 +     std::vector<std::wstring> _array = NSDirectory::GetFiles(L"/usr/share/fonts", true);
 +     NSDirectory::GetFiles2(L"%%LOCALBASE%%/share/fonts", _array, true);
  #endif

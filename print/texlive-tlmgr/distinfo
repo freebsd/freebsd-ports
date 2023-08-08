@@ -1,7 +1,7 @@
-TIMESTAMP = 1643547649
-SHA256 (TeX/texlive-20210325-extra.tar.xz) = 46a3f385d0b30893eec6b39352135d2929ee19a0a81df2441bfcaa9f6c78339c
-SIZE (TeX/texlive-20210325-extra.tar.xz) = 1751632
-SHA256 (TeX/texlive-20210325-source.tar.xz) = 7aefd96608d72061970f2d73f275be5648ea8ae815af073016d3106acc0d584b
-SIZE (TeX/texlive-20210325-source.tar.xz) = 54837368
-SHA256 (TeX/texlive-20210325-tlpdb-full.tar.gz) = 21d218dcf56160081e8c376ec9d6b4cfc750e2a0fea14ee24884b1d5039f2566
-SIZE (TeX/texlive-20210325-tlpdb-full.tar.gz) = 3093230
+TIMESTAMP = 1680098317
+SHA256 (TeX/texlive-20230313-extra.tar.xz) = 80a676facc174e6853550c87898a982c96dfc63ac30de19e6fcaa7635edb38c2
+SIZE (TeX/texlive-20230313-extra.tar.xz) = 1893692
+SHA256 (TeX/texlive-20230313-source.tar.xz) = 3878aa0e1ed0301c053b0e2ee4e9ad999c441345f4882e79bdd1c8f4ce9e79b9
+SIZE (TeX/texlive-20230313-source.tar.xz) = 68630148
+SHA256 (TeX/texlive-20230311-tlpdb-full.tar.gz) = bf3360ebe897dac8424425ba3a87dbd41433aa92924c04be1e47285f264f6c8a
+SIZE (TeX/texlive-20230311-tlpdb-full.tar.gz) = 3295736

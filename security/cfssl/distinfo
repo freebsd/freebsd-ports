@@ -1,5 +1,7 @@
-TIMESTAMP = 1661706656
-SHA256 (go/security_cfssl/cfssl-v1.6.2/v1.6.2.mod) = 7fbf3189b2d138edebdbd230701db789c004976071e7d1e3bb98244c8c522bc8
-SIZE (go/security_cfssl/cfssl-v1.6.2/v1.6.2.mod) = 2678
-SHA256 (go/security_cfssl/cfssl-v1.6.2/v1.6.2.zip) = 2976a8e2c92ebfdc9bdebc54190fcfc57e54c276dad99919d29f45ea865700cd
-SIZE (go/security_cfssl/cfssl-v1.6.2/v1.6.2.zip) = 2111618
+TIMESTAMP = 1681238775
+SHA256 (go/security_cfssl/cfssl-v1.6.4/v1.6.4.mod) = 9edeee259b76d6d0e4ea60594ec1645e39c044bffff95bd167a822f7ae2186cd
+SIZE (go/security_cfssl/cfssl-v1.6.4/v1.6.4.mod) = 1772
+SHA256 (go/security_cfssl/cfssl-v1.6.4/v1.6.4.zip) = c44b442cc9f1d217f704c9c646b8dae9c19ab9cd5f01656cc562fd0ea15d4ae3
+SIZE (go/security_cfssl/cfssl-v1.6.4/v1.6.4.zip) = 2089038
+SHA256 (go/security_cfssl/cfssl-v1.6.4/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/security_cfssl/cfssl-v1.6.4/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

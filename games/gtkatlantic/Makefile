@@ -1,6 +1,6 @@
 PORTNAME=	gtkatlantic
 DISTVERSION=	0.6.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/gtkatlantic/downloads/v${PORTVERSION:R}/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons

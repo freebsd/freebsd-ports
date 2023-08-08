@@ -6,7 +6,7 @@ CATEGORIES=	www
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	joneum@FreeBSD.org
-COMMENT=	Authentication module for the Apache 2 webserver with OpenID
+COMMENT=	Authentication module for the Apache 2 web server with OpenID
 WWW=		https://findingscience.com/mod_auth_openid/
 
 LICENSE=	MIT
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libopkele.so:devel/libopkele \
 		libsqlite3.so:databases/sqlite3
 
-USES=		apache:2.2+ autoreconf cpe gmake libtool pkgconfig
+USES=		apache autoreconf cpe gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	bmuller
 

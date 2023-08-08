@@ -1,5 +1,6 @@
 PORTNAME=	funnyboat
 PORTVERSION=	1.6
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +18,7 @@ RUN_DEPENDS=	${PYGAME}
 USE_GITHUB=	yes
 GH_ACCOUNT=	AMDmi3
 
-USES=		python:3.7-3.9,run  # version range inherited from numpy
+USES=		python:3.8-3.9,run  # version range inherited from numpy
 NO_BUILD=	yes
 NO_ARCH=	yes
 

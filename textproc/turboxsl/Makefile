@@ -10,9 +10,7 @@ WWW=		https://github.com/Litres/turboxsl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: xsl_a_NaN
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: xsl_a_NaN
-ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le sparc64
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libmemcached.so:databases/libmemcached
@@ -21,7 +19,9 @@ USES=		autoreconf libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Litres
+
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fcommon
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip

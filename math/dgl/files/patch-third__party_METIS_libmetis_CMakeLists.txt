@@ -1,0 +1,19 @@
+--- third_party/METIS/libmetis/CMakeLists.txt.orig	2023-05-09 05:04:07 UTC
++++ third_party/METIS/libmetis/CMakeLists.txt
+@@ -3,13 +3,13 @@ include_directories(.)
+ # Find sources.
+ file(GLOB metis_sources *.c)
+ # Build libmetis.
+-add_library(metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
++add_library(dgl_metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
+ if(UNIX)
+-  target_link_libraries(metis m)
++  target_link_libraries(dgl_metis m)
+ endif()
+ 
+ if(METIS_INSTALL)
+-  install(TARGETS metis
++  install(TARGETS dgl_metis
+     LIBRARY DESTINATION lib
+     RUNTIME DESTINATION lib
+     ARCHIVE DESTINATION lib)

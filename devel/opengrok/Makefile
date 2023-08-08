@@ -1,5 +1,5 @@
 PORTNAME=	opengrok
-PORTVERSION=	1.7.31
+PORTVERSION=	1.7.42
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/oracle/opengrok/releases/download/${PORTVERSION}/
 
@@ -39,18 +39,18 @@ PLIST_SUB=	T=${WEBAPP_HOME:S|^${LOCALBASE}/||} \
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		AS
-OPTIONS_SINGLE_AS=	GLASSFISH TOMCAT10
-OPTIONS_DEFAULT=	TOMCAT10
+OPTIONS_SINGLE_AS=	GLASSFISH TOMCAT101
+OPTIONS_DEFAULT=	TOMCAT101
 
 GLASSFISH_DESC?=	Glassfish support
 
 GLASSFISH_VARS=	WEBAPP_HOME=${LOCALBASE}/glassfish-5.1.0/glassfish
-TOMCAT10_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-10.0
+TOMCAT101_VARS=	WEBAPP_HOME=${LOCALBASE}/apache-tomcat-10.1
 
 GLASSFISH_BUILD_DEPENDS=${WEBAPP_HOME}/modules/glassfish.jar:www/glassfish
 GLASSFISH_RUN_DEPENDS=	${WEBAPP_HOME}/modules/glassfish.jar:www/glassfish
-TOMCAT10_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat10
-TOMCAT10_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat10
+TOMCAT101_BUILD_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat101
+TOMCAT101_RUN_DEPENDS=	${WEBAPP_HOME}/bin/bootstrap.jar:www/tomcat101
 
 WEBAPPS_DIR=	${WEBAPP_HOME:S|^${LOCALBASE}/||}/webapps
 JARFILE=	${LOCALBASE}/${WEBAPPS_DIR}/opengrok/WEB-INF/lib/opengrok-${PORTVERSION}.jar
@@ -58,6 +58,7 @@ JARFILE=	${LOCALBASE}/${WEBAPPS_DIR}/opengrok/WEB-INF/lib/opengrok-${PORTVERSION
 post-extract:
 	@${MKDIR} ${WRKSRC}/lib/opengrok
 	@${TAR} -xf ${WRKSRC}/lib/source.war -C ${WRKSRC}/lib/opengrok
+	@${RM} ${WRKSRC}/lib/opengrok/WEB-INF/classes/sample.c # clean cruft
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/etc \

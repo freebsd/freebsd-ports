@@ -1,6 +1,5 @@
 PORTNAME=	trac
-DISTVERSION=	1.5.3
-PORTREVISION=	2
+DISTVERSION=	1.5.4
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -20,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR}
 
 # some tests are failing with 3.8
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	edgewall
 
 CONFLICTS_INSTALL=	trac

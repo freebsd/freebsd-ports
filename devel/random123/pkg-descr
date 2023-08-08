@@ -1,0 +1,9 @@
+The Random123 library is a collection of counter-based random number generators
+( "CBRNGs") for CPUs (C and C++) and GPUs (CUDA and OpenCL), as described in
+Parallel Random Numbers: As Easy as 1, 2, 3, Salmon, Moraes, Dror & Shaw, SC11,
+Seattle, Washington, USA, 2011, ACM . They are intended for use in statistical
+applications and Monte Carlo simulation and have passed all of the rigorous
+SmallCrush, Crush and BigCrush tests in the extensive TestU01 suite of
+statistical tests for random number generators. They are not suitable for use in
+cryptography or security even though they are constructed using principles drawn
+from cryptography.

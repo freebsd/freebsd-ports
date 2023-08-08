@@ -1,9 +1,9 @@
 PORTNAME=	commonmark
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Performance CommonMark and Github Markdown Rendering in R
 WWW=		https://cran.r-project.org/web/packages/commonmark/
 

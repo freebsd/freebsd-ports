@@ -1,6 +1,6 @@
 PORTNAME=	seabios
-PORTVERSION=	1.14.0
-PORTREVISION=	0
+PORTVERSION=	1.16.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://www.seabios.org/downloads/
 
@@ -15,7 +15,8 @@ ONLY_FOR_ARCHS_REASON=	specific to x86
 
 USES=	gmake python:build
 
-MAKE_ARGS=	HOSTCC="${CC}" LD="${LD}" PYTHON="${PYTHON_CMD}"
+MAKE_ARGS=	AS="${AS}" HOSTCC="${CC}" LD="${LD}" OBJCPY="${OBJCPY}" \
+		OBJDUMP="${OBJDUMP}" PYTHON="${PYTHON_CMD}"
 NO_ARCH=	yes
 USE_GCC=	yes:build
 USE_BINUTILS=	yes

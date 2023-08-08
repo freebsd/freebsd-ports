@@ -1,26 +1,43 @@
---- Makefile.orig	2013-06-16 06:03:32 UTC
+--- Makefile.orig	2022-10-04 17:34:08 UTC
 +++ Makefile
-@@ -38,17 +38,18 @@ dist: clean
+@@ -4,13 +4,13 @@ NAME = sic
+ VERSION = 1.3
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+ # use system flags.
+-SIC_CFLAGS = ${CFLAGS}
+-SIC_LDFLAGS = ${LDFLAGS}
+-SIC_CPPFLAGS = ${LDFLAGS} -DVERSION=\"${VERSION}\" -D_GNU_SOURCE
++SIC_CFLAGS += ${CFLAGS}
++SIC_LDFLAGS += ${LDFLAGS}
++SIC_CPPFLAGS += ${LDFLAGS} -DVERSION=\"${VERSION}\" -D_GNU_SOURCE
+ 
+ BIN = sic
+ SRC = ${BIN:=.c}
+@@ -45,15 +45,15 @@ dist:
+ 
  install: all
- 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
- 	@mkdir -p ${DESTDIR}${PREFIX}/bin
--	@cp -f sic ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/sic
-+	@cp -f sic ${DESTDIR}${PREFIX}/bin/simpleirc
-+	@chmod 755 ${DESTDIR}${PREFIX}/bin/simpleirc
- 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
- 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
- 	@sed "s/VERSION/${VERSION}/g" < sic.1 > ${DESTDIR}${MANPREFIX}/man1/sic.1
--	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/sic.1
-+	@mv ${DESTDIR}${MANPREFIX}/man1/sic.1 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
-+	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
+ 	mkdir -p ${DESTDIR}${PREFIX}/bin
+-	cp -f ${BIN} "${DESTDIR}${PREFIX}/bin"
+-	chmod 755 "${DESTDIR}${PREFIX}/bin/${BIN}"
++	cp -f sic ${DESTDIR}${PREFIX}/bin/simpleirc
++	chmod 755 ${DESTDIR}${PREFIX}/bin/simpleirc
+ 	mkdir -p "${DESTDIR}${MANPREFIX}/man1"
+ 	sed "s/VERSION/${VERSION}/g" < ${MAN1} > "${DESTDIR}${MANPREFIX}/man1/${MAN1}"
+-	chmod 644 "${DESTDIR}${MANPREFIX}/man1/${MAN1}"
++	mv ${DESTDIR}${MANPREFIX}/man1/sic.1 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
++	chmod 644 ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
  
  uninstall:
- 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
--	@rm -f ${DESTDIR}${PREFIX}/bin/sic
-+	@rm -f ${DESTDIR}${PREFIX}/bin/simpleirc
- 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
--	@rm -f ${DESTDIR}${MANPREFIX}/man1/sic.1
-+	@rm -f ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
+-	rm -f \
+-		"${DESTDIR}${PREFIX}/bin/${BIN}"\
+-		"${DESTDIR}${MANPREFIX}/man1/${MAN1}"
++	rm -f ${DESTDIR}${PREFIX}/bin/simpleirc
++	rm -f ${DESTDIR}${MANPREFIX}/man1/simpleirc.1
  
- .PHONY: all options clean dist install uninstall
+ .PHONY: all clean dist install uninstall

@@ -1,5 +1,5 @@
 PORTNAME=		openldap
-DISTVERSION=		2.5.13
+DISTVERSION=		2.5.15
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		https://www.openldap.org/software/download/OpenLDAP/%SUBDIR%/ \
@@ -47,17 +47,21 @@ GNU_CONFIGURE=		yes
 PORTREVISION_CLIENT=	0
 PORTREVISION_SERVER=	0
 OPENLDAP_SHLIB_MAJOR=	0
-OPENLDAP_SHLIB_MINOR=	1.8
+OPENLDAP_SHLIB_MINOR=	1.10
 OPENLDAP_MAJOR=		${DISTVERSION:R}
 
-OPTIONS_DEFINE=		DEBUG
+OPTIONS_DEFINE=		DEBUG FETCH GSSAPI
 OPTIONS_DEFAULT+=	DEBUG
 
-.if defined(CLIENT_ONLY)
-OPTIONS_DEFINE+=	DOCS FETCH
-
+FETCH_DESC=		Enable fetch(3) support
 FETCH_BUILD_DEPENDS=	autoconf>0:devel/autoconf
 FETCH_CONFIGURE_WITH=	fetch
+
+GSSAPI_DESC=		With GSSAPI support
+GSSAPI_RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
+
+.if defined(CLIENT_ONLY)
+OPTIONS_DEFINE+=	DOCS
 .else
 OPTIONS_GROUP=		BKNDS OVLYS
 BKNDS_DESC=		OpenLDAP backends
@@ -103,7 +107,6 @@ OPTIONS_GROUP_OVLYS+=	TRANSLUCENT
 OPTIONS_GROUP_OVLYS+=	UNIQUE
 OPTIONS_GROUP_OVLYS+=	VALSORT
 
-OPTIONS_DEFINE+=	GSSAPI
 OPTIONS_DEFINE+=	DYNACL ACI
 OPTIONS_DEFINE+=	RLOOKUPS SLP SLAPI
 OPTIONS_DEFINE+=	PBKDF2
@@ -120,8 +123,6 @@ OPTIONS_SUB=		yes
 ACI_DESC=		Per-object ACI (experimental)
 ARGON2_DESC=		Argon2 password hashing module
 DYNACL_DESC=		Run-time loadable ACL (experimental)
-FETCH_DESC=		Enable fetch(3) support
-GSSAPI_DESC=		With GSSAPI support
 LLOADD_DESC=		Enable load balancer
 OUTLOOK_DESC=		Force caseIgnoreOrderingMatch on name attribute (experimental)
 RLOOKUPS_DESC=		With reverse lookups of client hostnames
@@ -194,7 +195,6 @@ DNSSRV_CONFIGURE_ENABLE=	dnssrv=mod
 DYNACL_CONFIGURE_ENABLE=	dynacl
 DYNGROUP_CONFIGURE_ENABLE=	dyngroup=mod
 DYNLIST_CONFIGURE_ENABLE=	dynlist=mod
-GSSAPI_RUN_DEPENDS=		cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 HOMEDIR_CONFIGURE_ENABLE=	homedir=mod
 LLOADD_CONFIGURE_ENABLE=	balancer=mod
 LLOADD_LIB_DEPENDS=		libevent.so:devel/libevent

@@ -1,5 +1,5 @@
 PORTNAME=	libfido2
-PORTVERSION=	1.11.0
+PORTVERSION=	1.13.0
 CATEGORIES=	security
 MASTER_SITES=	https://developers.yubico.com/libfido2/Releases/
 
@@ -23,8 +23,8 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-# we do not ship libcrypto.pc in base system
-.if ${SSL_DEFAULT} == base
+# Skip libcrypto.pc while using OpenSSL from base system on older FreeBSD versions which does not skip this file
+.if ${SSL_DEFAULT} == base && !exists(/usr/libdata/pkgconfig/libcrypto.pc)
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-openssl
 .endif
 

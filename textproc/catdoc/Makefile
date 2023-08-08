@@ -2,7 +2,7 @@ PORTNAME=	catdoc
 PORTVERSION=	0.95
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/ \
-		http://mirror.amdmi3.ru/distfiles/
+		https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	MS Word/Excel converter to plain ASCII or TeX. TK viewer included
@@ -11,10 +11,12 @@ WWW=		https://www.wagner.pp.ru/~vitus/software/catdoc/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-install-root="${STAGEDIR}"
-USES=		cpe gmake
 CPE_VENDOR=	fossies
+
+CONFLICTS_INSTALL=	libxls p5-Spreadsheet-Read xls2txt
 
 PORTDATA=	*
 

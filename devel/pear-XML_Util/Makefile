@@ -9,7 +9,6 @@ WWW=		https://pear.php.net/package/XML_Util
 LICENSE=	BSD2CLAUSE
 
 USES=		pear
-USE_PHP=	pcre
 
 NO_ARCH=	yes
 

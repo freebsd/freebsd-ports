@@ -1,31 +1,26 @@
 PORTNAME=	octave-forge-parallel
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+BROKEN=		does not build with octave>=8
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-GNU_CONFIGURE=	yes
-USES+=		compiler:gcc-c++11-lib perl5 shebangfix
+USES=		compiler:gcc-c++11-lib octave perl5 shebangfix
 USE_PERL5=	build
+
 SHEBANG_FILES=	*.pl
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

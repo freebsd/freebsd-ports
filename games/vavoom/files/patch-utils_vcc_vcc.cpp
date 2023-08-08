@@ -1,6 +1,6 @@
---- utils/vcc/vcc.cpp.orig	2018-03-17 07:31:45.795910000 +0100
-+++ utils/vcc/vcc.cpp	2018-03-17 07:37:38.864263000 +0100
-@@ -122,7 +122,7 @@
+--- utils/vcc/vcc.cpp.orig	2022-12-31 03:37:54 UTC
++++ utils/vcc/vcc.cpp
+@@ -122,7 +122,7 @@ int main(int argc, char **argv)
  	}
  	catch (VException& e)
  	{
@@ -9,7 +9,7 @@
  	}
  	return 0;
  }
-@@ -171,7 +171,7 @@
+@@ -171,7 +171,7 @@ static void DisplayUsage()
  {
  	//	Print usage.
  	printf("\n");

@@ -1,0 +1,11 @@
+--- configure.orig	2023-05-25 19:00:18 UTC
++++ configure
+@@ -5773,7 +5773,7 @@ _ACEOF
+ fi
+ 
+ 
+-CFLAGS="-pedantic-errors -Werror -Wall -g"
++
+ 
+ ac_config_files="$ac_config_files Makefile contrib/Makefile doc/Makefile include/Makefile xpm/Makefile maps/Makefile scheme/Makefile src/Makefile"
+ 

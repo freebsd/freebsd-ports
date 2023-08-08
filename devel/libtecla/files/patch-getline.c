@@ -1,6 +1,6 @@
---- getline.c.orig	Sun Jul 18 13:44:44 2004
-+++ getline.c	Sun Jul 18 13:44:49 2004
-@@ -9045,8 +9045,8 @@
+--- getline.c.orig	2013-09-12 07:04:00 UTC
++++ getline.c
+@@ -9062,8 +9062,8 @@ static int gl_event_handler(GetLine *gl, int fd)
        return 1;
    };
    return 0;

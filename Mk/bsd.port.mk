@@ -40,9 +40,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  makefile is being used on.  Automatically set to
 #				  "FreeBSD," "NetBSD," or "OpenBSD" as appropriate.
 # OSREL			- The release version of the operating system as a text
-#				  string (e.g., "12.3").
+#				  string (e.g., "12.4").
 # OSVERSION		- The operating system version as a comparable integer;
-#				  the value of __FreeBSD_version (e.g., 1203000).
+#				  the value of __FreeBSD_version (e.g., 1204000).
 #
 # This is the beginning of the list of all variables that need to be
 # defined in a port, listed in order that they should be included
@@ -345,6 +345,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  can be used in Makefiles by port maintainers
 #				  if a port breaks with it (it should be
 #				  extremely rare).
+# PIE_CFLAGS	- Defaults to -fPIE -fPIC. This value
+#				  is added to CFLAGS and the necessary flags
+#				  are added to LDFLAGS. Note that PIE_UNSAFE
+#				  can be used in Makefiles by port maintainers
+#				  if a port breaks with it.
 ##
 # USE_LOCALE	- LANG and LC_ALL are set to the value of this variable in
 #				  CONFIGURE_ENV and MAKE_ENV.  Example: USE_LOCALE=en_US.UTF-8
@@ -372,9 +377,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_OCAML		- If set, this port relies on the OCaml language.
 #				  Implies inclusion of bsd.ocaml.mk.  (Also see
 #				  that file for more information on USE_OCAML*).
-# USE_RUBY		- If set, this port relies on the Ruby language.
-#				  Implies inclusion of bsd.ruby.mk.  (Also see
-#				  that file for more information on USE_RUBY_*).
 ##
 # USE_GECKO		- If set, this port uses the Gecko/Mozilla product.
 #				  See bsd.gecko.mk for more details.
@@ -573,9 +575,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # fetch-url-list
 #				- Show list of URLS to retrieve missing ${DISTFILES} and
 #				  ${PATCHFILES} for this port.
+# fetch-url-recursive-list
+#				- Show list of URLS to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
 # fetch-urlall-list
 #				- Show list of URLS to retrieve ${DISTFILES} and
 #				  ${PATCHFILES} for this port.
+# fetch-urlall-recursive-list
+#				- Show list of URLS to retrieve ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
 #
 # all-depends-list
 #				- Show all directories which are dependencies
@@ -1034,7 +1042,7 @@ LC_ALL=		C
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-_LIST_OF_WITH_FEATURES=	debug lto ssp
+_LIST_OF_WITH_FEATURES=	debug lto ssp pie relro bind_now
 _DEFAULT_WITH_FEATURES=	ssp
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
@@ -1075,6 +1083,11 @@ _PORTS_DIRECTORIES+=	${PKG_DBDIR} ${PREFIX} ${WRKDIR} ${EXTRACT_WRKDIR} \
 # builds can occur when PORTSDIR is a symbolic link, or with something like
 # make -C /usr/ports/category/port/.
 .CURDIR:=		${.CURDIR:tA}
+
+# Ensure .CURDIR doesn't contain a colon, which breaks makefile targets
+.if ${.CURDIR:S/:/\:/g} != ${.CURDIR}
+.error The current directory path contains ':', this is not supported
+.endif
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1213,7 +1226,7 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .    endif
 _EXPORTED_VARS+=	OSVERSION
 
-.    if ${OPSYS} == FreeBSD && (${OSVERSION} < 1203000 || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1301000))
+.    if ${OPSYS} == FreeBSD && (${OSVERSION} < 1204000 || (${OSVERSION} >= 1300000 && ${OSVERSION} < 1302000))
 _UNSUPPORTED_SYSTEM_MESSAGE=	Ports Collection support for your ${OPSYS} version has ended, and no ports\
 								are guaranteed to build on this system. Please upgrade to a supported release.
 .      if defined(ALLOW_UNSUPPORTED_SYSTEM)
@@ -1315,6 +1328,23 @@ PKGCATEGORY?=	${_CATEGORY}
 _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
+
+# Now that PKGORIGIN is set, look for origin-specific variables.
+# These are typically set in a make.conf, in the form:
+#
+# category_portname_VARS= varname=value othervar+=value novar@
+#
+# e.g.  devel_llvm10_VARS= MAKE_JOBS_NUMBER=2
+
+.    for var in ${${PKGORIGIN:S/\//_/}_VARS:C/=.*//:O:u}
+.      if ${var:M*@}
+.  undef ${var:C/.$//}
+.      elif ${var:M*+}
+${var:C/.$//}+=	${${PKGORIGIN:S/\//_/}_VARS:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+.      else
+${var}=			${${PKGORIGIN:S/\//_/}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
+.      endif
+.    endfor
 
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
@@ -1422,10 +1452,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 .    endif
 
-.    if defined(USE_RUBY)
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.    endif
-
 .    if defined(USE_OCAML)
 .include "${PORTSDIR}/Mk/bsd.ocaml.mk"
 .    endif
@@ -1437,10 +1463,6 @@ USES+=	apache:run,${USE_APACHE_RUN:C/2([0-9])/2.\1/g}
 .    elif defined(USE_APACHE)
 USE_APACHE:=	${USE_APACHE:S/common/server,/}
 USES+=	apache:${USE_APACHE:C/2([0-9])/2.\1/g}
-.    endif
-
-.    if defined(USE_TEX)
-.include "${PORTSDIR}/Mk/bsd.tex.mk"
 .    endif
 
 .    if defined(USE_GECKO)
@@ -1464,7 +1486,11 @@ USES+=mysql:${USE_MYSQL}
 .    endif
 
 .    if !defined(UID)
+.      if defined(.MAKE.UID)
+UID=	${.MAKE.UID}
+.      else
 UID!=	${ID} -u
+.      endif
 .    endif
 
 DESTDIRNAME?=	DESTDIR
@@ -1671,8 +1697,7 @@ QA_ENV+=		STAGEDIR=${STAGEDIR} \
 				DISABLE_LICENSES="${DISABLE_LICENSES:Dyes}" \
 				PORTNAME=${PORTNAME} \
 				NO_ARCH=${NO_ARCH} \
-				"NO_ARCH_IGNORE=${NO_ARCH_IGNORE}" \
-				USE_RUBY=${USE_RUBY}
+				"NO_ARCH_IGNORE=${NO_ARCH_IGNORE}"
 .    if !empty(USES:Mssl)
 QA_ENV+=		USESSSL=yes
 .    endif
@@ -1743,7 +1768,7 @@ WRKSRC?=		${WRKDIR}/${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}
 .      if defined(WRKSRC)
 DEV_WARNING+=	"You are using USE_GITLAB and WRKSRC is set which is wrong.  Set GL_PROJECT, GL_ACCOUNT correctly, and/or set WRKSRC_SUBDIR and remove WRKSRC entirely."
 .      endif
-WRKSRC?=		${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}
+WRKSRC?=		${WRKDIR}/${GL_PROJECT}-${GL_TAGNAME}
 .    endif
 
 # If the distname is not extracting into a specific subdirectory, have the
@@ -1815,8 +1840,6 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 .      endif
 .    endfor
 
-# XXX PIE support to be added here
-MAKE_ENV+=	NO_PIE=yes
 # We will control debug files.  Don't let builds that use /usr/share/mk
 # split out debug symbols since the plist won't know to expect it.
 MAKE_ENV+=	MK_DEBUG_FILES=no
@@ -1904,10 +1927,6 @@ CONFIGURE_ENV+=	${b}="${${b}}"
 MAKE_ENV+=	${b}="${${b}}"
 .        endif
 .      endfor
-.    endif
-
-.    if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
-.include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .    endif
 
 .    if defined(USE_RC_SUBR)
@@ -2001,7 +2020,10 @@ ERROR+=	"Unknown USES=${f:C/\:.*//}"
 .    endfor
 
 .    if defined(PORTNAME)
+.      if !defined(PACKAGE_BUILDING) || empty(.TARGETS) || make(all) || \
+	      make(check-sanity) || make(show*-errors) || make(show*-warnings)
 .include "${PORTSDIR}/Mk/bsd.sanity.mk"
+.      endif
 .    endif
 
 .    if defined(USE_LOCALE)
@@ -2085,7 +2107,7 @@ MAKE_JOBS_NUMBER=	1
 _MAKE_JOBS_NUMBER:=	${MAKE_JOBS_NUMBER}
 .      else
 .        if !defined(_SMP_CPUS)
-_SMP_CPUS!=		${SYSCTL} -n kern.smp.cpus
+_SMP_CPUS!=		${NPROC} 2>/dev/null || ${SYSCTL} -n kern.smp.cpus
 .        endif
 _EXPORTED_VARS+=	_SMP_CPUS
 _MAKE_JOBS_NUMBER=	${_SMP_CPUS}
@@ -2603,7 +2625,7 @@ check-categories:
 .    else
 
 VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
-	benchmarks biology cad chinese comms converters \
+	benchmarks biology budgie cad chinese comms converters \
 	databases deskutils devel dns docs \
 	editors education elisp emulators enlightenment finance french ftp \
 	games geography german gnome gnustep graphics \
@@ -3000,12 +3022,6 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 .      endif
 .    endif
 
-.    if defined(USE_GITLAB) && !${USE_GITLAB:Mnodefault} && empty(GL_COMMIT_DEFAULT)
-check-makevars::
-	@${ECHO_MSG} "GL_COMMIT is a required 40 character hash for use USE_GITLAB"
-	@${FALSE}
-.    endif
-
 ################################################################
 #
 # Do preliminary work to detect if we need to run the config
@@ -3186,11 +3202,25 @@ fetch-url-list-int:
 .      endif
 .    endif
 
+.    if !target(fetch-url-recursive-list-int)
+fetch-url-recursive-list-int: fetch-url-list-int
+	@recursive_cmd="fetch-url-list-int"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
+.    endif
+
 # Prints out all the URL for all the DISTFILES and PATCHFILES.
 
 .    if !target(fetch-urlall-list)
 fetch-urlall-list:
 	@cd ${.CURDIR} && ${SETENV} FORCE_FETCH_ALL=yes ${MAKE} fetch-url-list-int
+.    endif
+
+.    if !target(fetch-urlall-recursive-list)
+fetch-urlall-recursive-list: fetch-urlall-list
+	@recursive_cmd="fetch-urlall-list"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
 .    endif
 
 # Prints the URL for all the DISTFILES and PATCHFILES that are not here
@@ -3199,6 +3229,12 @@ fetch-urlall-list:
 fetch-url-list: fetch-url-list-int
 .    endif
 
+.    if !target(fetch-url-recursive-list)
+fetch-url-recursive-list: fetch-url-list
+	@recursive_cmd="fetch-url-list"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
+.    endif
 
 # Extract
 
@@ -3612,6 +3648,10 @@ install-ldconfig-file:
 fixup-lib-pkgconfig:
 	@if [ -d ${STAGEDIR}${PREFIX}/lib/pkgconfig ]; then \
 		if [ -z "$$(${FIND} ${STAGEDIR}${PREFIX}/lib/pkgconfig -maxdepth 0 -empty)" ]; then \
+			if [ -n "${DEVELOPER:Dyes}" ]; then \
+				${ECHO_MSG} "===>   File(s) found in lib/pkgconfig while correct path is libdata/pkgconfig"; \
+				${ECHO_MSG} "       Applying fix but consider using USES= pathfix or adjust install path"; \
+			fi; \
 			${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
 			${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig/* ${STAGEDIR}${PREFIX}/libdata/pkgconfig; \
 		fi; \
@@ -3941,19 +3981,6 @@ delete-distfiles-list:
 .      endif
 .    endif
 
-# Generates patches.
-
-update-patches:
-	@toedit=`PATCH_WRKSRC=${PATCH_WRKSRC} \
-		PATCHDIR=${PATCHDIR} \
-		PATCH_LIST=${PATCHDIR}/patch-* \
-		DIFF_ARGS=${DIFF_ARGS} \
-		DISTORIG=${DISTORIG} \
-		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
-	case $$toedit in "");; \
-	*) ${ECHO_CMD} -n 'edit patches: '; read i; \
-	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
-
 # Checksumming utilities
 
 # List all algorithms here, all the variables name must begin with dp_
@@ -3971,6 +3998,7 @@ makesum: check-sanity
 	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
 			DISABLE_SIZE=yes DISTFILES="${DISTFILES}" \
 			MASTER_SITES="${MASTER_SITES}" \
+			MASTER_SITE_SUBDIR="${MASTER_SITE_SUBDIR}" \
 			PATCH_SITES="${PATCH_SITES}"
 	@${SETENV} \
 			${_CHECKSUM_INIT_ENV} \

@@ -1,2 +1,5 @@
-SHA256 (hashtypes-0.1.1.zip) = 183cb81bc4973df18906f0ab07f1d6891b9879b312f6de2772a54ff94696ab5e
-SIZE (hashtypes-0.1.1.zip) = 12989
+TIMESTAMP = 1686262968
+SHA256 (hashtypes-0.1.4.zip) = 2262b5ad8389362aea7bec0a9af566bc61ddc8ad81258e9fcf54573a4fc6ca4d
+SIZE (hashtypes-0.1.4.zip) = 35118
+SHA256 (1c08e29edab2541ab06bd1c990ae68beb417e542.patch) = f6204c3cfd7bbc37f7076979a96c8ea4e9a87fc4f1207bc4e7e470c49933dbad
+SIZE (1c08e29edab2541ab06bd1c990ae68beb417e542.patch) = 3835

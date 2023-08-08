@@ -1,9 +1,9 @@
---- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -36,7 +36,7 @@ namespace {
- // Fetches the Omnibox drop-down widget, or returns null if the drop-down is
- // not visible.
- void FixWidgetStackOrder(views::Widget* widget, const Browser* browser) {
+@@ -78,7 +78,7 @@ void FixWidgetStackOrder(views::Widget* widget, const 
+     return;
+   }
+ 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Ensure the hover card Widget assumes the highest z-order to avoid occlusion

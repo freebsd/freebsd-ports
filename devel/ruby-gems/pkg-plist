@@ -12,6 +12,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/commands/contents_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/dependency_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/environment_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/exec_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/fetch_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/generate_index_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/help_command.rb
@@ -170,6 +171,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/security/signer.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/trust_dir.rb
 %%RUBY_SITELIBDIR%%/rubygems/security_option.rb
+%%RUBY_SITELIBDIR%%/rubygems/shellwords.rb
 %%RUBY_SITELIBDIR%%/rubygems/source.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/git.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/installed.rb
@@ -181,6 +183,8 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/spec_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/specification_policy.rb
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA.pem
+%%RUBY_SITELIBDIR%%/rubygems/ssl_certs/rubygems.org/GlobalSignRootCA_R3.pem
 %%RUBY_SITELIBDIR%%/rubygems/stub_specification.rb
 %%RUBY_SITELIBDIR%%/rubygems/text.rb
 %%RUBY_SITELIBDIR%%/rubygems/tsort.rb
@@ -188,6 +192,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/tsort/lib/tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/unknown_command_spell_checker.rb
+%%RUBY_SITELIBDIR%%/rubygems/update_suggestion.rb
 %%RUBY_SITELIBDIR%%/rubygems/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/uri_formatter.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb
@@ -197,6 +202,8 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/validator.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
+%%RUBY_SITELIBDIR%%/rubygems/webauthn_listener.rb
+%%RUBY_SITELIBDIR%%/rubygems/webauthn_listener/response.rb
 @dir lib/ruby/gems/%%RUBY_VER%%/build_info
 @dir %%CACHE_DIR%%
 @dir %%DOC_DIR%%

@@ -1,5 +1,6 @@
 PORTNAME=	ladspa
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ladspa.org/download/
 DISTNAME=	ladspa_sdk_${PORTVERSION}

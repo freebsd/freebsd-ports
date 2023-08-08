@@ -1,0 +1,30 @@
+--- CMakeLists.txt.orig	2023-07-06 19:59:29 UTC
++++ CMakeLists.txt
+@@ -91,7 +91,7 @@ ADD_SUBDIRECTORY(source)
+ # target the source files
+ TARGET_LINK_LIBRARIES(hyperdeal obj_base obj_grid)
+ 
+-ADD_SUBDIRECTORY(examples)
++#ADD_SUBDIRECTORY(examples)
+ 
+ 
+ IF(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
+@@ -99,13 +99,13 @@ IF(EXISTS ${CMAKE_SOURCE_DIR}/tests/CMakeLists.txt)
+ ENDIF()
+ 
+ # documentation
+-ADD_SUBDIRECTORY(doc/doxygen)
++#ADD_SUBDIRECTORY(doc/doxygen)
+ 
+ # performance tests
+-ADD_SUBDIRECTORY(performance)
++#ADD_SUBDIRECTORY(performance)
+ 
+ # tests
+ enable_testing()
+ ADD_SUBDIRECTORY(tests)
+-ADD_SUBDIRECTORY(examples/advection/tests)
+-ADD_SUBDIRECTORY(examples/vlasov_poisson/tests)
+\ No newline at end of file
++#ADD_SUBDIRECTORY(examples/advection/tests)
++#ADD_SUBDIRECTORY(examples/vlasov_poisson/tests)

@@ -1,0 +1,11 @@
+--- config/kibana.yml.orig	2023-01-04 12:19:12 UTC
++++ config/kibana.yml
+@@ -125,7 +125,7 @@
+ #path.data: data
+ 
+ # Specifies the path where Kibana creates the process ID file.
+-#pid.file: /run/kibana/kibana.pid
++pid.file: /var/run/kibana.pid
+ 
+ # Set the interval in milliseconds to sample system and process performance
+ # metrics. Minimum is 100ms. Defaults to 5000ms.

@@ -9,7 +9,7 @@ WWW=		https://github.com/open-source-parsers/jsoncpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang cpe meson pkgconfig python:3.6+,build,test
+USES=		compiler:c++11-lang cpe meson pkgconfig python:build,test
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-source-parsers
 MESON_ARGS=	--default-library=both

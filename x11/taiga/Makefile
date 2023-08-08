@@ -1,11 +1,12 @@
 PORTNAME=	taiga
 PORTVERSION=	s20200907
 DISTVERSIONSUFFIX=	-34c64aa7c3d7
+PORTREVISION=	2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://hg.sr.ht/~scoopta/${PORTNAME}/archive/${DISTVERSIONSUFFIX:S/^-//}${EXTRACT_SUFX}?dummy=/
 DISTNAME=	${PORTNAME}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Take animated screenshots on wlroots compositors
 WWW=		https://hg.sr.ht/~scoopta/taiga
 

@@ -1,5 +1,6 @@
 PORTNAME=	rcs
-PORTVERSION=	5.10.0
+PORTVERSION=	5.10.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -9,7 +10,7 @@ WWW=		https://www.gnu.org/software/rcs/
 
 LICENSE=	GPLv3
 
-USES=		groff makeinfo tar:xz
+USES=		tar:lz
 GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	rcs57

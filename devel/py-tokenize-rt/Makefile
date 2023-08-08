@@ -1,18 +1,20 @@
 PORTNAME=	tokenize-rt
-PORTVERSION=	4.0.0
+PORTVERSION=	5.2.0
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	tokenize_rt-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Wrapper around the stdlib `tokenize` which roundtrips
 WWW=		https://github.com/asottile/tokenize-rt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

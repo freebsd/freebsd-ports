@@ -1,8 +1,9 @@
 PORTNAME=	flac
-PORTVERSION=	1.3.4
+DISTVERSION=	1.4.3
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/ \
-		https://ftp.osuosl.org/pub/xiph/releases/flac/
+		https://github.com/xiph/flac/releases/download/${DISTVERSION}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
@@ -19,32 +20,28 @@ USES=		compiler:c11 cpe iconv libtool pathfix pkgconfig tar:xz
 
 CPE_VENDOR=	flac_project
 
+# Preserve UTF-8 filenames in test/flac-to-flac-metadata-test-files/.
+# They are referenced by the test suite.
+EXTRACT_CMD=	${SETENV} LC_ALL=C.UTF-8 ${TAR}
+
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \
-		--disable-sse \
 		--with-ogg="${LOCALBASE}" \
 		--disable-doxygen-docs \
-		--disable-thorough-tests \
-		--disable-xmms-plugin
+		--disable-thorough-tests
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
-BUILD_DEPENDS+=	nasm:devel/nasm
+# test_libFLAC:
+# "iterator claims file is writable when tester thinks it should not be"
+.if ${UID} == 0
+do-test:
+	@${ECHO_MSG} "The tests cannot be run as root, skipping."
 .endif
 
-.if ${ARCH} != powerpc64le
-CONFIGURE_ARGS+=--disable-vsx
-.endif
-
-post-install:
-	${REINPLACE_CMD} 's:%%PREFIX%%:${PREFIX}:' \
-	    ${STAGEDIR}${PREFIX}/man/man1/flac.1
-	${RM} ${STAGEDIR}${PREFIX}/man/man1/flac.1.bak
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@ PORTNAME=	RestrictedPython
 PORTVERSION=	3.6.0
 PORTREVISION=	2
 CATEGORIES=	security python zope
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/RestrictedPython/
 
 LICENSE=	ZPL21
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

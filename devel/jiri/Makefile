@@ -1,12 +1,12 @@
 PORTNAME=	jiri
 PORTVERSION=	g${TIMESTAMP:S/-/./g:C/T.*//g}
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/swills
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	jiri
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool for multi-repo development
 WWW=		https://fuchsia.googlesource.com/jiri
 

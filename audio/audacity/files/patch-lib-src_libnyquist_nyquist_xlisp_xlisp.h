@@ -1,6 +1,6 @@
---- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig	2021-02-04 18:52:51 UTC
+--- lib-src/libnyquist/nyquist/xlisp/xlisp.h.orig	2022-09-22 16:16:06 UTC
 +++ lib-src/libnyquist/nyquist/xlisp/xlisp.h
-@@ -172,6 +172,15 @@ extern long ptrtoabs();
+@@ -181,6 +181,15 @@ extern long ptrtoabs();
  #endif
  #endif
  

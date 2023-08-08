@@ -6,7 +6,7 @@ MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	6.8
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
 WWW=		https://www.mono-project.com/
 
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR} \
 CONFLICTS_INSTALL=	certmgr coin-or-disco disco mono mono[0-9]*
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool localbase \
-	pathfix perl5 python:3.6+ shebangfix tar:xz
+	pathfix perl5 python shebangfix tar:xz
 USE_PERL5=	build
 
 CONFIGURE_SCRIPT=	autogen.sh

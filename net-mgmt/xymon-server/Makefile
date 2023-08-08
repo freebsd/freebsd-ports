@@ -52,17 +52,10 @@ FIXME2=		analysis.cfg combo.cfg holidays.cfg rrddefinitions.cfg \
 OPTIONS_DEFINE=DEBUG LDAP NETSNMP
 NETSNMP_DESC=Enable Net-SNMP support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-MAKE_ENV+=	WITH_LDAP=1
-USE_OPENLDAP=	yes
-.endif
-
-.if ${PORT_OPTIONS:MNETSNMP}
-MAKE_ENV+=	WITH_NETSNMP=1
-LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
-.endif
+LDAP_USES=	ldap
+LDAP_MAKE_ENV=	WITH_LDAP=1
+NETSNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+NETSNMP_MAKE_ENV=	WITH_NETSNMP=1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|web-build client|web-build|' ${WRKSRC}/build/Makefile.rules

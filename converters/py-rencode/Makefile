@@ -2,7 +2,7 @@ PORTNAME=	rencode
 PORTVERSION=	1.0.6
 PORTREVISION=	1
 CATEGORIES=	converters devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		https://github.com/aresch/rencode
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils
 

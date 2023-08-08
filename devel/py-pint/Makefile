@@ -1,25 +1,27 @@
 PORTNAME=	pint
-PORTVERSION=	0.19.2
+PORTVERSION=	0.22
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pint-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Physical quantities module
-WWW=		https://github.com/hgrecco/pint
+WWW=		https://pint.readthedocs.io/en/stable/ \
+		https://github.com/hgrecco/pint
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.3:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.8+ shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python:3.9+
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-SHEBANG_FILES=	pint/pint-convert
 
 OPTIONS_DEFINE=	NUMPY UNCERTAINTIES
 NUMPY_DESC=	Automatic conversion of units

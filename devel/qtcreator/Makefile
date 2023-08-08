@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	8.0.1
+DISTVERSION=	11.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -15,59 +15,45 @@ LICENSE_NAME=	GPLv3 with Qt Company GPL Exception 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL3-EXCEPT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
-LIB_DEPENDS=	libKF5SyntaxHighlighting.so:textproc/kf5-syntax-highlighting \
-		libzstd.so:archivers/zstd
-RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		compiler:c++17-lang pkgconfig cmake gl python qt:5 shebangfix tar:xz \
-		desktop-file-utils
+LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
+		libxkbcommon.so:x11/libxkbcommon \
+		libzstd.so:archivers/zstd
+
+USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run,min=15 \
+		pkgconfig python qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USE_QT=		buildtools concurrent core declarative designer gui help \
-		linguist location network printsupport qdoc qmake \
-		quick3d quickcontrols quicktimeline script serialport sql svg testlib \
-		webchannel widgets xml xmlpatterns
+USE_LOCALE=	C.UTF-8
+USE_QT=		5compat base declarative positioning quick3d quicktimeline \
+		serialport shadertools sqldriver-sqlite svg tools translations webchannel
 
-# Workaround, KF5-5.94 moved header files to subfolder. Instead of using the bundled
-# syntax-highligher, just help it find the proper files.
-CFLAGS+=	-I${LOCALBASE}/include/KF5/KSyntaxHighlighting/KSyntaxHighlighting
-
-SHEBANG_FILES=		bin/qtcreator.sh \
-			doc/fixnavi.pl \
-			doc/qtcreatordev/examples/aggregation/test.sh \
-			scripts/*.pl \
-			scripts/*.py \
-			scripts/*.sh \
-			share/qtcreator/scripts/openTerminal.py \
-			share/qtcreator/translations/check-ts.pl \
-			share/qtcreator/translations/*.py \
-			src/app/winicons/createicons.sh \
-			src/libs/glsl/make-parser.sh \
-			src/libs/qmljs/parser/changeLicense.py \
-			src/libs/qmljs/parser/gen-parser.sh \
-			src/libs/qt-breakpad/qtbreakpadsymbols \
-			src/plugins/perfprofiler/tracepoints.sh \
-			src/tools/icons/*.sh \
-			src/tools/icons/*.py \
-			tests/system/tools/findUnusedObjects.py \
-			tests/system/tools/objectsToTable.py
+SHEBANG_GLOB=	*.pl *.py *.sh
+SHEBANG_FILES=	src/libs/qt-breakpad/qtbreakpadsymbols \
+		src/plugins/terminal/tests/* \
+		src/plugins/terminal/tests/cursor/* \
+		tests/manual/distribution/elflint
+python_OLD_CMD+="/usr/bin/env python3.10"
 
 # Provide library paths, default llvm first as a hint to the clang code model.
-CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${PREFIX}/llvm${LLVM_DEFAULT};${PREFIX}"
-# Prevent accidental pickup of devel/elfutils libraries.
-CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils
-# Disable precompiled headers for now, they are missing compile flags.
-CMAKE_OFF=	BUILD_WITH_PCH
-# Disable Qt6 suport for now
-CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6
+CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${LLVM_PREFIX};${PREFIX}"
+# - Prevent accidental pickup of devel/elfutils libraries.
+# - Prevent accidental use of devel/googletest headers, use bundled.
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils \
+		CMAKE_DISABLE_FIND_PACKAGE_Googletest
+# - Disable precompiled headers for now, they are missing compile flags.
+# - Suppress installed yaml-cpp, use bundled.
+CMAKE_OFF=	BUILD_WITH_PCH \
+		yaml-cpp_FOUND
 
 LDFLAGS+=	-lexecinfo
 
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
 
-PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
+PLIST_SUB=		SHLIB_VER="${PORTVERSION}" \
+			SHLIB_SHVER="${PORTVERSION:C/\..*//}"
 PORTDOCS=		*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE
@@ -76,9 +62,9 @@ OPTIONS_DEFAULT_amd64=	QTWEBENGINE
 OPTIONS_DEFAULT_i386=	QTWEBENGINE
 OPTIONS_SUB=		yes
 
-DOCS_DESC=		Install the Qt5 api documentation
-EXAMPLES_DESC=		Install the Qt5 example projects
-QTWEBENGINE_DESC=	Add dependency on qt5-webengine
+DOCS_DESC=		Install the Qt6 api documentation
+EXAMPLES_DESC=		Install the Qt6 example projects
+QTWEBENGINE_DESC=	Add dependency on qt6-webengine
 
 DOCS_USE=		QT=doc:run
 DOCS_CMAKE_BOOL=	WITH_DOCS
@@ -86,14 +72,7 @@ DOCS_CMAKE_BOOL=	WITH_DOCS
 EXAMPLES_USE=		QT=examples:run
 
 QTWEBENGINE_USE=	qt=webengine
-QTWEBENGINE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebEngine
-
-.include <bsd.port.pre.mk>
-
-# Force a modern LLVM >= 13
-.if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
-LLVM_DEFAULT=	13
-.endif
+QTWEBENGINE_CMAKE_BOOL=	BUILD_HELPVIEWERBACKEND_QTWEBENGINE
 
 # Documentation is excluded from the default build targets.
 do-build-DOCS-on:
@@ -106,8 +85,4 @@ do-install-DOCS-on:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX} \
 	    --component html_docs
 
-# QmlDesigner needs Qt 6.2, remove its data for now.
-post-install:
-	${RM} -r ${STAGEDIR}${DATADIR}/qmldesigner
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

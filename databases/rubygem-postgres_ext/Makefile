@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activerecord4>=4.0:databases/rubygem-activerecord4 \
 		rubygem-pg_array_parser>=0.0.9:databases/rubygem-pg_array_parser
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

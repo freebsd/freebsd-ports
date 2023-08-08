@@ -1,5 +1,6 @@
 PORTNAME=	filebot
 DISTVERSION=	4.9.6
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://get.filebot.net/filebot/FileBot_${DISTVERSION}/
 DISTNAME=	FileBot_${DISTVERSION}-portable

@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-ibm-provider
-PORTVERSION=	g20220804
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.18.0:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.20.0:science/py-qiskit-terra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.19:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests_ntlm>=1.1.0:www/py-requests_ntlm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1:net/py-urllib3@${PY_FLAVOR} \
@@ -25,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=5.3.1:devel/py-nbconvert@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=4.4.0:devel/py-nbformat@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # one test fails, see https://github.com/Qiskit/qiskit-ibm-provider/issues/378
 
 USE_GITHUB=	yes

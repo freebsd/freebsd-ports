@@ -1,11 +1,15 @@
---- Makefile.orig	2020-12-17 01:31:33 UTC
+--- Makefile.orig	2023-07-08 14:22:22 UTC
 +++ Makefile
-@@ -3,7 +3,7 @@
- PREFIX=/usr/local
+@@ -1,10 +1,10 @@
+ .POSIX:
+ .PHONY: all install clean
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
--ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic -Wno-unused-parameter
-+ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wno-unused-parameter
+-ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wpedantic -Wno-unused-parameter
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wno-unused-parameter
  OBJ=\
  	build.o\
  	deps.o\

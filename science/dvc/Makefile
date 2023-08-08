@@ -1,8 +1,8 @@
 PORTNAME=	dvc
 DISTVERSION=	0.30.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Git for data scientists: manage code and data together
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.3:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}schema>=0.6.7:devel/py-schema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zclockfile>0:devel/py-zclockfile@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist noflavors
 
 NO_ARCH=	yes

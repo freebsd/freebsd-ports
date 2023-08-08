@@ -1,6 +1,6 @@
 PORTNAME=	ini_file_manager
 PORTVERSION=	03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	ini-files-${PORTVERSION}
@@ -10,8 +10,6 @@ COMMENT=	Ini configuration file reader and manipulator package for Ada
 WWW=		https://sourceforge.net/projects/ini-files/
 
 LICENSE=	MIT
-
-EXPIRATION_DATE=2022-09-30
 
 USES=		ada zip dos2unix
 

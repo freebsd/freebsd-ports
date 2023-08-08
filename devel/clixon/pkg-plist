@@ -5,8 +5,8 @@ include/clixon/cli_autocli.h
 include/clixon/cli_generate.h
 include/clixon/clixon.h
 include/clixon/clixon_backend.h
+include/clixon/clixon_backend_client.h
 include/clixon/clixon_backend_commit.h
-include/clixon/clixon_backend_handle.h
 include/clixon/clixon_backend_plugin.h
 include/clixon/clixon_backend_transaction.h
 include/clixon/clixon_cli.h
@@ -25,7 +25,9 @@ include/clixon/clixon_json.h
 include/clixon/clixon_log.h
 include/clixon/clixon_nacm.h
 include/clixon/clixon_netconf.h
+include/clixon/clixon_netconf_input.h
 include/clixon/clixon_netconf_lib.h
+include/clixon/clixon_netconf_monitoring.h
 include/clixon/clixon_netns.h
 include/clixon/clixon_options.h
 include/clixon/clixon_path.h
@@ -42,9 +44,11 @@ include/clixon/clixon_string.h
 include/clixon/clixon_text_syntax.h
 include/clixon/clixon_uid.h
 include/clixon/clixon_validate.h
+include/clixon/clixon_validate_minmax.h
 include/clixon/clixon_xml.h
 include/clixon/clixon_xml_bind.h
 include/clixon/clixon_xml_changelog.h
+include/clixon/clixon_xml_default.h
 include/clixon/clixon_xml_io.h
 include/clixon/clixon_xml_map.h
 include/clixon/clixon_xml_nsctx.h
@@ -57,6 +61,7 @@ include/clixon/clixon_xpath_yang.h
 include/clixon/clixon_yang.h
 include/clixon/clixon_yang_module.h
 include/clixon/clixon_yang_parse_lib.h
+include/clixon/clixon_yang_schema_mount.h
 include/clixon/clixon_yang_type.h
 lib/libclixon.so
 lib/libclixon.so.%%LIBMAJORVERSION%%
@@ -73,16 +78,17 @@ lib/libclixon_cli.so.%%LIBVERSION%%
 sbin/clixon_backend
 %%NO_OFF%%sbin/clixon_restconf
 %%DATADIR%%/clixon-autocli@2022-02-11.yang
-%%DATADIR%%/clixon-config@2022-03-21.yang
-%%DATADIR%%/clixon-lib@2021-12-05.yang
-%%DATADIR%%/clixon-restconf@2022-03-21.yang
+%%DATADIR%%/clixon-config@2023-03-01.yang
+%%DATADIR%%/clixon-lib@2023-03-01.yang
+%%DATADIR%%/clixon-restconf@2022-08-01.yang
 %%DATADIR%%/clixon-rfc5277@2008-07-01.yang
 %%DATADIR%%/clixon-xml-changelog@2019-03-21.yang
 %%DATADIR%%/ietf-datastores@2018-02-14.yang
 %%DATADIR%%/ietf-inet-types@2021-02-22.yang
-%%DATADIR%%/ietf-list-pagination-nc@2021-10-25.yang
-%%DATADIR%%/ietf-list-pagination@2021-10-25.yang
+%%DATADIR%%/ietf-list-pagination-nc@2022-07-24.yang
+%%DATADIR%%/ietf-list-pagination@2022-07-24.yang
 %%DATADIR%%/ietf-netconf-acm@2018-02-14.yang
+%%DATADIR%%/ietf-netconf-monitoring@2010-10-04.yang
 %%DATADIR%%/ietf-netconf-nmda@2019-01-07.yang
 %%DATADIR%%/ietf-netconf-with-defaults@2011-06-01.yang
 %%DATADIR%%/ietf-netconf@2011-06-01.yang
@@ -92,6 +98,7 @@ sbin/clixon_backend
 %%DATADIR%%/ietf-yang-library@2019-01-04.yang
 %%DATADIR%%/ietf-yang-metadata@2016-08-05.yang
 %%DATADIR%%/ietf-yang-patch@2017-02-22.yang
+%%DATADIR%%/ietf-yang-schema-mount@2019-01-14.yang
 %%DATADIR%%/ietf-yang-types@2013-07-15.yang
 @dir lib/clixon/plugins/backend
 @dir lib/clixon/plugins/cli

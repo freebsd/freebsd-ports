@@ -1,6 +1,6 @@
 PORTNAME=	mxnet
 DISTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	mxnet>0:misc/mxnet \
 		${PYTHON_PKGNAMEPREFIX}graphviz>0:graphics/py-graphviz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.6+ localbase
+USES=		python localbase
 USE_GITHUB=	yes
 USE_PYTHON=	distutils cython autoplist
 

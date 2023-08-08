@@ -6,8 +6,4 @@ and letters in the Basic Multilingual Plane of Unicode. It also provides limited
 coverage of CJK Ideographs in Plane 2 of Unicode as necessary to support
 standards from China and Japan.
 
-This port is the set of Traditional Chinese fonts which supports BIG5.
-Traditional Chinese glyphs comply with the glyph standard of the Taiwan Ministry
-of Education.
-
-See also: https://github.com/googlefonts/noto-cjk
+This port is the meta port for Traditional Chinese fonts.

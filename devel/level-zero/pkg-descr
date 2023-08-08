@@ -1,5 +1,4 @@
-Contains the following components of oneAPI:
-
+oneAPI Level Zero contains the following components of oneAPI:
 - Copies of the Level Zero Specification API C/C++ header files
 - Level Zero Loader
 - Level Zero Validation Layer

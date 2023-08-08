@@ -1,5 +1,5 @@
 PORTNAME=	barvinok
-DISTVERSION=	0.41.6
+DISTVERSION=	0.41.7
 CATEGORIES=	math
 MASTER_SITES=	https://barvinok.sourceforge.io/
 

@@ -1,15 +1,18 @@
 PORTNAME=	l-smash-works
 DISTVERSION=	0.0-940 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g198cc78
+PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
 WWW=		https://github.com/VFR-maniac/L-SMASH-Works/tree/master/VapourSynth
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		fails to build with FFmpeg 6 (PR 270303)
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
 BUILD_DEPENDS+=	ffmpeg>=3.2,1:multimedia/ffmpeg

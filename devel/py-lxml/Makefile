@@ -1,7 +1,7 @@
 PORTNAME=	lxml
-PORTVERSION=	4.9.1
+PORTVERSION=	4.9.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		https://lxml.de/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/licenses/BSD.txt
 
-USES=		compiler cpe gnome python:3.6+ uniquefiles:dirs
+USES=		compiler cpe gnome python uniquefiles:dirs
 USE_GNOME=	libxml2 libxslt
 USE_PYTHON=	autoplist concurrent cython distutils
 

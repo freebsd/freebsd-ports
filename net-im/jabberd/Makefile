@@ -80,7 +80,7 @@ BDB_USES=		bdb
 BDB_CONFIGURE_ENABLE=	db
 BDB_CONFIGURE_ON=	--oldincludedir=/nonexistant
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 
 FS_CONFIGURE_ENABLE=	fs
@@ -128,11 +128,17 @@ SUB_LIST+=	REQUIRE="LOGIN"
 .endif
 REQUIRES_DESC=	Add backend requires to startup script
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .for FILE in c2s.xml jabberd.cfg router-filter.xml router-users.xml \
 	router.xml s2s.xml sm.xml templates/roster.xml
 	@${MV} ${WRKSRC}/etc/${FILE}.dist.in ${WRKSRC}/etc/${FILE}.sample.in
 .endfor
+.if ${PORT_OPTIONS:MMYSQL} && ${MYSQL_VER:U} == 80
+	cd ${WRKSRC}/storage && \
+	${REINPLACE_CMD} 's/my_bool/_Bool/g' authreg_mysql.c storage_mysql.c
+.endif
 
 post-install:
 .for DIR in db logs pid

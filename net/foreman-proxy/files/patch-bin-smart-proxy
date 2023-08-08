@@ -1,4 +1,4 @@
---- bin/smart-proxy.orig	2017-05-08 15:18:42 UTC
+--- bin/smart-proxy.orig       2017-05-08 15:18:42 UTC
 +++ bin/smart-proxy
 @@ -1,6 +1,7 @@
  #!/usr/bin/env ruby

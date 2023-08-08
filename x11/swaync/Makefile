@@ -1,6 +1,6 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.7.2
+PORTVERSION=	0.9.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/ErikReider/SwayNotificationCenter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+		libjson-glib-1.0.so:devel/json-glib \
+		libgee-0.8.so:devel/libgee \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libhandy-1.so:x11-toolkits/libhandy
 

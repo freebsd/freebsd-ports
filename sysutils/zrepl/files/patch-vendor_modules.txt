@@ -1,0 +1,277 @@
+--- vendor/modules.txt.orig	2023-03-24 22:50:20 UTC
++++ vendor/modules.txt
+@@ -1,21 +1,30 @@
+ # github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
++## explicit
+ github.com/alecthomas/template
+ github.com/alecthomas/template/parse
+ # github.com/alecthomas/units v0.0.0-20190717042225-c3de453c63f4
++## explicit
+ github.com/alecthomas/units
+ # github.com/beorn7/perks v1.0.1
++## explicit; go 1.11
+ github.com/beorn7/perks/quantile
+ # github.com/cespare/xxhash/v2 v2.1.0
++## explicit; go 1.13
+ github.com/cespare/xxhash/v2
+ # github.com/davecgh/go-spew v1.1.1
++## explicit
+ github.com/davecgh/go-spew/spew
+ # github.com/fatih/color v1.7.0
++## explicit
+ github.com/fatih/color
+ # github.com/ftrvxmtrx/fd v0.0.0-20150925145434-c6d800382fff
++## explicit
+ github.com/ftrvxmtrx/fd
+ # github.com/gdamore/encoding v1.0.0
++## explicit; go 1.9
+ github.com/gdamore/encoding
+ # github.com/gdamore/tcell v1.2.0
++## explicit; go 1.12
+ github.com/gdamore/tcell
+ github.com/gdamore/tcell/terminfo
+ github.com/gdamore/tcell/terminfo/a/ansi
+@@ -26,6 +35,7 @@ github.com/gdamore/tcell/terminfo/v/vt102
+ github.com/gdamore/tcell/terminfo/v/vt220
+ github.com/gdamore/tcell/terminfo/x/xterm
+ # github.com/gdamore/tcell/v2 v2.2.0
++## explicit; go 1.12
+ github.com/gdamore/tcell/v2
+ github.com/gdamore/tcell/v2/terminfo
+ github.com/gdamore/tcell/v2/terminfo/a/aixterm
+@@ -65,117 +75,171 @@ github.com/gdamore/tcell/v2/terminfo/x/xterm
+ github.com/gdamore/tcell/v2/terminfo/x/xterm_kitty
+ github.com/gdamore/tcell/v2/terminfo/x/xterm_termite
+ # github.com/gitchander/permutation v0.0.0-20181107151852-9e56b92e9909
++## explicit
+ github.com/gitchander/permutation
+ # github.com/go-logfmt/logfmt v0.4.0
++## explicit
+ github.com/go-logfmt/logfmt
+ # github.com/go-playground/locales v0.13.0
++## explicit; go 1.13
+ github.com/go-playground/locales
+ github.com/go-playground/locales/currency
+ # github.com/go-playground/universal-translator v0.17.0
++## explicit; go 1.13
+ github.com/go-playground/universal-translator
+ # github.com/go-playground/validator v9.31.0+incompatible
++## explicit
+ github.com/go-playground/validator
+ # github.com/go-playground/validator/v10 v10.4.1
++## explicit; go 1.13
+ github.com/go-playground/validator/v10
+ # github.com/go-sql-driver/mysql v1.4.1-0.20190907122137-b2c03bcae3d4
++## explicit
+ github.com/go-sql-driver/mysql
+ # github.com/golang/protobuf v1.4.3
++## explicit; go 1.9
+ github.com/golang/protobuf/proto
+ github.com/golang/protobuf/ptypes
+ github.com/golang/protobuf/ptypes/any
+ github.com/golang/protobuf/ptypes/duration
+ github.com/golang/protobuf/ptypes/timestamp
+ # github.com/google/uuid v1.1.2
++## explicit
+ github.com/google/uuid
+ # github.com/inconshreveable/mousetrap v1.0.0
++## explicit
+ github.com/inconshreveable/mousetrap
+ # github.com/jinzhu/copier v0.0.0-20170922082739-db4671f3a9b8
++## explicit
+ github.com/jinzhu/copier
+ # github.com/juju/ratelimit v1.0.1
++## explicit
+ github.com/juju/ratelimit
+ # github.com/konsorten/go-windows-terminal-sequences v1.0.1
++## explicit
+ github.com/konsorten/go-windows-terminal-sequences
+ # github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515
++## explicit
+ github.com/kr/logfmt
+ # github.com/kr/pretty v0.1.0
++## explicit
+ github.com/kr/pretty
+ # github.com/kr/text v0.1.0
++## explicit
+ github.com/kr/text
+ # github.com/leodido/go-urn v1.2.1
++## explicit; go 1.13
+ github.com/leodido/go-urn
+ # github.com/lib/pq v1.2.0
++## explicit
+ github.com/lib/pq
+ github.com/lib/pq/oid
+ github.com/lib/pq/scram
+ # github.com/lucasb-eyer/go-colorful v1.0.3
++## explicit; go 1.12
+ github.com/lucasb-eyer/go-colorful
+ # github.com/mattn/go-colorable v0.1.4
++## explicit
+ github.com/mattn/go-colorable
+ # github.com/mattn/go-isatty v0.0.8
++## explicit
+ github.com/mattn/go-isatty
+ # github.com/mattn/go-runewidth v0.0.10
++## explicit; go 1.9
+ github.com/mattn/go-runewidth
+ # github.com/matttproud/golang_protobuf_extensions v1.0.1
++## explicit
+ github.com/matttproud/golang_protobuf_extensions/pbutil
+ # github.com/montanaflynn/stats v0.5.0
++## explicit
+ github.com/montanaflynn/stats
++# github.com/onsi/ginkgo v1.10.2
++## explicit
++# github.com/onsi/gomega v1.7.0
++## explicit
+ # github.com/pkg/errors v0.8.1
++## explicit
+ github.com/pkg/errors
+ # github.com/pkg/profile v1.2.1
++## explicit
+ github.com/pkg/profile
+ # github.com/pmezard/go-difflib v1.0.0
++## explicit
+ github.com/pmezard/go-difflib/difflib
+ # github.com/problame/go-netssh v0.0.0-20200601114649-26439f9f0dc5
++## explicit; go 1.11
+ github.com/problame/go-netssh
+ github.com/problame/go-netssh/internal/circlog
+ # github.com/prometheus/client_golang v1.2.1
++## explicit; go 1.11
+ github.com/prometheus/client_golang/prometheus
+ github.com/prometheus/client_golang/prometheus/internal
+ github.com/prometheus/client_golang/prometheus/promhttp
+ # github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4
++## explicit; go 1.9
+ github.com/prometheus/client_model/go
+ # github.com/prometheus/common v0.7.0
++## explicit; go 1.11
+ github.com/prometheus/common/expfmt
+ github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+ github.com/prometheus/common/log
+ github.com/prometheus/common/model
+ # github.com/prometheus/procfs v0.0.5
++## explicit
+ github.com/prometheus/procfs
+ github.com/prometheus/procfs/internal/fs
+ github.com/prometheus/procfs/internal/util
+ # github.com/rivo/uniseg v0.2.0
++## explicit; go 1.12
+ github.com/rivo/uniseg
+ # github.com/robfig/cron/v3 v3.0.1
++## explicit; go 1.12
+ github.com/robfig/cron/v3
+ # github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44
++## explicit
+ github.com/sergi/go-diff/diffmatchpatch
+ # github.com/sirupsen/logrus v1.4.2
++## explicit
+ github.com/sirupsen/logrus
+ # github.com/spf13/cobra v0.0.2
++## explicit
+ github.com/spf13/cobra
+ # github.com/spf13/pflag v1.0.5
++## explicit; go 1.12
+ github.com/spf13/pflag
+ # github.com/stretchr/testify v1.6.1
++## explicit; go 1.13
+ github.com/stretchr/testify/assert
+ github.com/stretchr/testify/require
+ # github.com/theckman/goconstraint v1.11.0
++## explicit
+ github.com/theckman/goconstraint/go1.11/gte
+ # github.com/willf/bitset v1.1.10
++## explicit
+ github.com/willf/bitset
+ # github.com/yudai/gojsondiff v0.0.0-20170107030110-7b1b7adf999d
++## explicit
+ github.com/yudai/gojsondiff
+ github.com/yudai/gojsondiff/formatter
+ # github.com/yudai/golcs v0.0.0-20170316035057-ecda9a501e82
++## explicit
+ github.com/yudai/golcs
++# github.com/yudai/pp v2.0.1+incompatible
++## explicit
+ # github.com/zrepl/yaml-config v0.0.0-20191220194647-cbb6b0cf4bdd
++## explicit
+ github.com/zrepl/yaml-config
+ # gitlab.com/tslocum/cbind v0.1.4
++## explicit; go 1.15
+ gitlab.com/tslocum/cbind
+ # gitlab.com/tslocum/cview v1.5.3
++## explicit; go 1.12
+ gitlab.com/tslocum/cview
+ # golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
++## explicit; go 1.11
+ golang.org/x/crypto/sha3
+ # golang.org/x/net v0.0.0-20210119194325-5f4716e94777
++## explicit; go 1.11
+ golang.org/x/net/http/httpguts
+ golang.org/x/net/http2
+ golang.org/x/net/http2/hpack
+@@ -184,8 +248,10 @@ golang.org/x/net/internal/timeseries
+ golang.org/x/net/trace
+ golang.org/x/net/websocket
+ # golang.org/x/sync v0.0.0-20190423024810-112230192c58
++## explicit
+ golang.org/x/sync/semaphore
+-# golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c
++# golang.org/x/sys v0.6.0
++## explicit; go 1.17
+ golang.org/x/sys/cpu
+ golang.org/x/sys/internal/unsafeheader
+ golang.org/x/sys/plan9
+@@ -194,8 +260,10 @@ golang.org/x/sys/windows
+ golang.org/x/sys/windows/registry
+ golang.org/x/sys/windows/svc/eventlog
+ # golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf
++## explicit; go 1.11
+ golang.org/x/term
+ # golang.org/x/text v0.3.5
++## explicit; go 1.11
+ golang.org/x/text/encoding
+ golang.org/x/text/encoding/internal/identifier
+ golang.org/x/text/secure/bidirule
+@@ -203,6 +271,7 @@ golang.org/x/text/transform
+ golang.org/x/text/unicode/bidi
+ golang.org/x/text/unicode/norm
+ # golang.org/x/tools v0.0.0-20190524140312-2c0ae7006135
++## explicit
+ golang.org/x/tools/go/gcexportdata
+ golang.org/x/tools/go/internal/gcimporter
+ golang.org/x/tools/go/internal/packagesdriver
+@@ -211,10 +280,13 @@ golang.org/x/tools/internal/fastwalk
+ golang.org/x/tools/internal/gopathwalk
+ golang.org/x/tools/internal/semver
+ # google.golang.org/appengine v1.4.0
++## explicit
+ google.golang.org/appengine/cloudsql
+ # google.golang.org/genproto v0.0.0-20210122163508-8081c04a3579
++## explicit; go 1.11
+ google.golang.org/genproto/googleapis/rpc/status
+ # google.golang.org/grpc v1.35.0
++## explicit; go 1.11
+ google.golang.org/grpc
+ google.golang.org/grpc/attributes
+ google.golang.org/grpc/backoff
+@@ -260,6 +332,7 @@ google.golang.org/grpc/stats
+ google.golang.org/grpc/status
+ google.golang.org/grpc/tap
+ # google.golang.org/protobuf v1.25.0
++## explicit; go 1.9
+ google.golang.org/protobuf/encoding/prototext
+ google.golang.org/protobuf/encoding/protowire
+ google.golang.org/protobuf/internal/descfmt
+@@ -290,6 +363,10 @@ google.golang.org/protobuf/types/known/anypb
+ google.golang.org/protobuf/types/known/durationpb
+ google.golang.org/protobuf/types/known/timestamppb
+ # gopkg.in/alecthomas/kingpin.v2 v2.2.6
++## explicit
+ gopkg.in/alecthomas/kingpin.v2
++# gopkg.in/go-playground/assert.v1 v1.2.1
++## explicit
+ # gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
++## explicit
+ gopkg.in/yaml.v3

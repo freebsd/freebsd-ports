@@ -1,8 +1,9 @@
 PORTNAME=	keyring
-PORTVERSION=	18.0.1
+PORTVERSION=	23.9.3
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	douglas@douglasthrift.net
@@ -12,21 +13,26 @@ WWW=		https://github.com/jaraco/keyring
 LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.15.0:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}entrypoints>=0:devel/py-entrypoints@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.classes>=0:devel/py-jaraco.classes@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		DBUS KEYRINGS_ALT SECRET_SERVICE
-OPTIONS_DEFAULT=	KEYRINGS_ALT SECRET_SERVICE
+OPTIONS_DEFINE=		DBUS SECRET_SERVICE
+OPTIONS_DEFAULT=	SECRET_SERVICE
 DBUS_DESC=		Install Python DBUS to support the kwallet backend
-KEYRINGS_ALT_DESC=	Install Alternate Python keyring implementations backend
 SECRET_SERVICE_DESC=	Install SecretStorage to support the SecretService backend
 
 DBUS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
-KEYRINGS_ALT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyrings.alt>0:security/py-keyrings.alt@${PY_FLAVOR}
-SECRET_SERVICE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>0:security/py-SecretStorage@${PY_FLAVOR}
+SECRET_SERVICE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SecretStorage>=3.2:security/py-SecretStorage@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

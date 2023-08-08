@@ -18,6 +18,5 @@ RUN_DEPENDS+=	rubygem-mono_logger>=1.0:devel/rubygem-mono_logger \
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes:2.3+
 
 .include <bsd.port.mk>

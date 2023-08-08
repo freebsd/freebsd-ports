@@ -1,4 +1,4 @@
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	graphics
 
 COMMENT=	GStreamer jpeg2000 decoder plugin
@@ -8,6 +8,8 @@ DIST=		bad
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
-EXTRA_PATCHES=	${.CURDIR}/files/patch-inc
+PLIST=  ${.CURDIR}/pkg-plist
+
+LIB_DEPENDS= libopenjp2.so:graphics/openjpeg
 
 .include "${MASTERDIR}/Makefile"

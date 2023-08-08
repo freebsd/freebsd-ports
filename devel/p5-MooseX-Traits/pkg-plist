@@ -1,4 +1,3 @@
 %%SITE_PERL%%/MooseX/Traits.pm
 %%SITE_PERL%%/MooseX/Traits/Util.pm
 %%PERL5_MAN3%%/MooseX::Traits.3.gz
-%%PERL5_MAN3%%/MooseX::Traits::Util.3.gz

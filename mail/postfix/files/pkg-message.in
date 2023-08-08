@@ -28,30 +28,6 @@ be the default for new installs).
 EOM
 }
 {
-  type: upgrade
-  message: <<EOM
-If you are upgrading from prior postfix version, please see the README
-files for recommended changes to your configuration and additional
-http://www.postfix.org/COMPATIBILITY_README.html
-
-Incompatible change with postfix 3.5.x
-==========================================
-Internal protocols have changed. You need to "postfix stop" before
-updating, or before backing out to an earlier release, otherwise
-long-running daemons (pickup, qmgr, verify, tlsproxy, postscreen)
-may fail to communicate with the rest of Postfix (warnings, timeouts).
-
-The purpose of this change is to produce better error messages, for
-example, when someone configures the discard daemon as a bounce
-service in master.cf, or vice versa.
-
-This change will break third-party code that implements a
-Postfix-internal protocol such as qpsmtpd. Programs that depend on
-Postfix internal details are not supported.
-
-EOM
-}
-{
   type: remove
   message: <<EOM
 If you remove postfix permanent, adjust / remove the the following file:

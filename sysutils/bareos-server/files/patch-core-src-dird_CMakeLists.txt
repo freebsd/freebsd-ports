@@ -1,20 +1,28 @@
---- core/src/dird/CMakeLists.txt	2022-01-16 10:44:41.285876000 -0500
-+++ core/src/dird/CMakeLists.txt	2022-01-16 10:46:30.370557000 -0500
-@@ -158,7 +158,7 @@
- add_executable(bareos-dir)
+--- core/src/dird/CMakeLists.txt	2023-03-24 08:05:20.000000000 -0500
++++ core/src/dird/CMakeLists.txt	2023-04-07 16:16:48.539301000 -0500
+@@ -160,7 +160,7 @@
  target_sources(bareos-dir PRIVATE dird.cc)
  
--target_link_libraries(bareos-dir PRIVATE dird_objects bareossql bareosfind)
-+target_link_libraries(bareos-dir PRIVATE dird_objects bareossql bareosfind ${JANSSON_LIBRARIES})
+ target_link_libraries(
+-  bareos-dir PRIVATE dird_objects bareossql bareosfind CLI11::CLI11
++  bareos-dir PRIVATE ${JANSSON_LIBRARIES} dird_objects bareossql bareosfind CLI11::CLI11
+ )
  
  if(HAVE_WIN32)
-   target_sources(
-@@ -184,7 +184,7 @@
+@@ -187,14 +187,14 @@
  add_executable(bareos-dbcheck ${DBCHKSRCS})
  
  target_link_libraries(
 -  bareos-dbcheck PRIVATE bareossql bareos bareosfind ${OPENSSL_LIBRARIES}
-+  bareos-dbcheck PRIVATE bareossql bareos bareosfind ${OPENSSL_LIBRARIES} ${JANSSON_LIBRARIES}
++  bareos-dbcheck PRIVATE ${JANSSON_LIBRARIES} bareossql bareos bareosfind ${OPENSSL_LIBRARIES}
+                          CLI11::CLI11
  )
  
  # is not built by default
+ if(NOT client-only)
+   add_executable(testfind ${TSTFNDSRCS})
+-  target_link_libraries(testfind dird_objects bareosfind)
++  target_link_libraries(testfind ${JANSSON_LIBRARIES} dird_objects bareosfind)
+ endif()
+ install(TARGETS bareos-dir bareos-dbcheck testfind DESTINATION "${sbindir}")
+ 

@@ -1,8 +1,4 @@
 %%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_local_backend_p.h
-%%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_qnx_backend_p.h
-%%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_qnx_global_p.h
-%%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_qnx_qiodevices_p.h
-%%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_qnx_server_p.h
 %%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnection_tcpip_backend_p.h
 %%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qconnectionfactories_p.h
 %%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qremoteobjectabstractitemmodeladapter_p.h
@@ -19,10 +15,7 @@
 %%QT_INCDIR%%/QtRemoteObjects/%%FULLVER%%/QtRemoteObjects/private/qtremoteobjects-config_p.h
 %%QT_INCDIR%%/QtRemoteObjects/QAbstractItemModelReplica
 %%QT_INCDIR%%/QtRemoteObjects/QConnectionAbstractServer
-%%QT_INCDIR%%/QtRemoteObjects/QIOQnxSource
 %%QT_INCDIR%%/QtRemoteObjects/QIntHash
-%%QT_INCDIR%%/QtRemoteObjects/QQnxNativeIo
-%%QT_INCDIR%%/QtRemoteObjects/QQnxNativeServer
 %%QT_INCDIR%%/QtRemoteObjects/QRemoteObjectAbstractPersistedStore
 %%QT_INCDIR%%/QtRemoteObjects/QRemoteObjectDynamicReplica
 %%QT_INCDIR%%/QtRemoteObjects/QRemoteObjectHost
@@ -46,8 +39,6 @@
 %%QT_INCDIR%%/QtRemoteObjects/QtRemoteObjects
 %%QT_INCDIR%%/QtRemoteObjects/QtRemoteObjectsDepends
 %%QT_INCDIR%%/QtRemoteObjects/QtRemoteObjectsVersion
-%%QT_INCDIR%%/QtRemoteObjects/qconnection_qnx_qiodevices.h
-%%QT_INCDIR%%/QtRemoteObjects/qconnection_qnx_server.h
 %%QT_INCDIR%%/QtRemoteObjects/qconnectionfactories.h
 %%QT_INCDIR%%/QtRemoteObjects/qremoteobjectabstractitemmodelreplica.h
 %%QT_INCDIR%%/QtRemoteObjects/qremoteobjectdynamicreplica.h
@@ -66,12 +57,10 @@
 %%QT_INCDIR%%/QtRemoteObjectsQml/QtRemoteObjectsQmlDepends
 %%QT_INCDIR%%/QtRemoteObjectsQml/QtRemoteObjectsQmlVersion
 %%QT_INCDIR%%/QtRemoteObjectsQml/qtremoteobjectsqmlversion.h
-%%QT_INCDIR%%/QtRepParser/QRegexParser
 %%QT_INCDIR%%/QtRepParser/QtRepParser
 %%QT_INCDIR%%/QtRepParser/QtRepParserDepends
 %%QT_INCDIR%%/QtRepParser/QtRepParserVersion
 %%QT_INCDIR%%/QtRepParser/parser.g
-%%QT_INCDIR%%/QtRepParser/qregexparser.h
 %%QT_INCDIR%%/QtRepParser/qtrepparserversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtRemoteObjectsTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_remoteobjectsAdditionalTargetInfo.cmake

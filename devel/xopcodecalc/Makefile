@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:[1]:tl}
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -15,9 +15,9 @@ USE_QT=		buildtools:build qmake:build core gui widgets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	horsicq
-GH_PROJECT=	XOpcodeCalc XOptions:xo
-GH_TAGNAME=	05201c2:xo
-GH_SUBDIR=	XOptions:xo
+GH_PROJECT=	XOpcodeCalc ${GH_SUBDIR}
+GH_TAGNAME=	b3b2a0e:xaw 5c058a4:xo
+GH_SUBDIR=	XAboutWidget:xaw XOptions:xo
 
 post-extract:
 	@${CHMOD} +x ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}

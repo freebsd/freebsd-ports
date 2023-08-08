@@ -61,7 +61,6 @@ include/general/autoptr.hpp
 include/general/dynamicmem.hpp
 include/general/gzstream.h
 include/general/hashtabl.hpp
-include/general/mpi_interface.hpp
 include/general/myadt.hpp
 include/general/mystring.hpp
 include/general/netgenout.hpp

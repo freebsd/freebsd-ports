@@ -1,6 +1,6 @@
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	36
+PORTREVISION=	38
 CATEGORIES=	textproc java
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -72,7 +72,7 @@ BROKEN=		Does not stage
 .endif
 
 .if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
+USES+=	ruby
 WITH_SWIG=	yes
 .endif
 

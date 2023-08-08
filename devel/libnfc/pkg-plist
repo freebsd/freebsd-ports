@@ -1,4 +1,5 @@
 bin/nfc-anticol
+bin/nfc-barcode
 bin/nfc-dep-initiator
 bin/nfc-dep-target
 bin/nfc-emulate-forum-tag2
@@ -23,10 +24,11 @@ include/nfc/nfc-types.h
 include/nfc/nfc.h
 lib/libnfc.a
 lib/libnfc.so
-lib/libnfc.so.5
-lib/libnfc.so.5.0.1
+lib/libnfc.so.6
+lib/libnfc.so.6.0.0
 libdata/pkgconfig/libnfc.pc
 man/man1/nfc-anticol.1.gz
+man/man1/nfc-barcode.1.gz
 man/man1/nfc-dep-initiator.1.gz
 man/man1/nfc-dep-target.1.gz
 man/man1/nfc-emulate-forum-tag2.1.gz

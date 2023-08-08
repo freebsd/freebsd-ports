@@ -1,6 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
+DISTVERSION=	0.21.8
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,8 +15,11 @@ BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
 		${PYNUMPY}
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
+		libgmp.so:math/gmp \
 		libheyoka.so:math/heyoka \
 		libmp++.so:math/mppp \
+		libmpc.so:math/mpc \
+		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb \
 		libspdlog.so:devel/spdlog
 RUN_DEPENDS=	${PYNUMPY} \
@@ -25,7 +28,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang python:3.7+
+USES=		cmake compiler:c++17-lang python
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes
@@ -33,7 +36,8 @@ GH_ACCOUNT=	bluescarni
 GH_PROJECT=	${PORTNAME}.py
 
 CMAKE_ON=	HEYOKA_PY_ENABLE_IPO
-CMAKE_ARGS=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION:R}
+CMAKE_ARGS=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION:R} \
+		-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

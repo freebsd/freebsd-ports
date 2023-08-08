@@ -1,0 +1,60 @@
+error[E0512]: cannot transmute between types of different sizes, or dependently-sized types
+   --> socket2-0.3.XX/src/sockaddr.rs:176:9
+    |
+176 |         mem::transmute::<SocketAddrV4, sockaddr_in>(v4);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: source type: `SocketAddrV4` (48 bits)
+    = note: target type: `sockaddr_in` (128 bits)
+
+For more information about this error, try `rustc --explain E0512`.
+error: could not compile `socket2` due to previous error
+
+--- Cargo.lock.orig	2022-10-14 14:56:53 UTC
++++ Cargo.lock
+@@ -104,6 +104,11 @@ source = "registry+https://github.com/rust-lang/crates
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+ 
+ [[package]]
++name = "cfg-if"
++version = "1.0.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++
++[[package]]
+ name = "chacha20"
+ version = "0.3.3"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -773,7 +778,7 @@ dependencies = [
+  "piper 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+  "scoped-tls-hkt 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+  "slab 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
+- "socket2 0.3.12 (registry+https://github.com/rust-lang/crates.io-index)",
++ "socket2 0.3.19 (registry+https://github.com/rust-lang/crates.io-index)",
+  "wepoll-binding 2.0.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ ]
+ 
+@@ -784,7 +789,6 @@ dependencies = [
+ dependencies = [
+  "cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)",
+  "libc 0.2.69 (registry+https://github.com/rust-lang/crates.io-index)",
+- "redox_syscall 0.1.56 (registry+https://github.com/rust-lang/crates.io-index)",
+  "winapi 0.3.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ ]
+ 
+@@ -1090,6 +1094,7 @@ source = "registry+https://github.com/rust-lang/crates
+ "checksum bumpalo 3.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "12ae9db68ad7fac5fe51304d20f016c911539251075a214f8e663babefa35187"
+ "checksum cc 1.0.52 (registry+https://github.com/rust-lang/crates.io-index)" = "c3d87b23d6a92cd03af510a5ade527033f6aa6fa92161e2d5863a907d4c5e31d"
+ "checksum cfg-if 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
++"checksum cfg-if 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)" = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+ "checksum chacha20 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "bea8b86bdf2f2b18a0f28fbfed740ee395e6ba1785b4b7123c021172eaab8ef9"
+ "checksum chacha20poly1305 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)" = "48901293601228db2131606f741db33561f7576b5d19c99cd66222380a7dc863"
+ "checksum clap 2.33.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9"
+@@ -1166,7 +1171,7 @@ source = "registry+https://github.com/rust-lang/crates
+ "checksum slab 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)" = "c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8"
+ "checksum smallvec 1.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "44e59e0c9fa00817912ae6e4e6e3c4fe04455e75699d06eedc7d85917ed8e8f4"
+ "checksum smol 0.1.10 (registry+https://github.com/rust-lang/crates.io-index)" = "686c634ad1873fffef6aed20f180eede424fbf3bb31802394c90fd7335a661b7"
+-"checksum socket2 0.3.12 (registry+https://github.com/rust-lang/crates.io-index)" = "03088793f677dce356f3ccc2edb1b314ad191ab702a5de3faf49304f7e104918"
++"checksum socket2 0.3.19 (registry+https://github.com/rust-lang/crates.io-index)" = "122e570113d28d773067fab24266b66753f6ea915758651696b6e35e49f88d6e"
+ "checksum spin 0.5.2 (registry+https://github.com/rust-lang/crates.io-index)" = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
+ "checksum stream-cipher 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)" = "8131256a5896cabcf5eb04f4d6dacbe1aefda854b0d9896e09cb58829ec5638c"
+ "checksum strsim 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"

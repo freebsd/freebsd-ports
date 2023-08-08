@@ -1,0 +1,10 @@
+bin/fasda
+libexec/fasda/abundance
+libexec/fasda/fold-change
+libexec/fasda/normalize
+libexec/fasda/pval-sim
+man/man1/fasda-abundance.1.gz
+man/man1/fasda-fold-change.1.gz
+man/man1/fasda-normalize.1.gz
+man/man1/fasda-pval-sim.1.gz
+man/man1/fasda.1.gz

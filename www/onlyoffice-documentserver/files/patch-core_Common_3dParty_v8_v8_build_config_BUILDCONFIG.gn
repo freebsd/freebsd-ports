@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/config/BUILDCONFIG.gn.orig	2021-11-15 18:52:18 UTC
-+++ core/Common/3dParty/v8/v8/build/config/BUILDCONFIG.gn
+--- core/Common/3dParty/v8_89/v8/build/config/BUILDCONFIG.gn.orig	2021-11-15 18:52:18 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/BUILDCONFIG.gn
 @@ -130,8 +130,11 @@ declare_args() {
    # separate flags.
    is_official_build = false

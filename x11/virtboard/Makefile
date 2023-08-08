@@ -30,7 +30,6 @@ USE_GNOME=	cairo glib20
 USE_XORG=	pixman
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_COMMIT=	1d30b07870bf6138395d6529ab496e321b8b3938
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/sm.puri.Virtboard.desktop \
 		share/dbus-1/interfaces/sm.puri.OSK0.xml

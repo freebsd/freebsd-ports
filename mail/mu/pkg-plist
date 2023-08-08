@@ -7,6 +7,7 @@ man/man1/mu-add.1.gz
 man/man1/mu-cfind.1.gz
 man/man1/mu-easy.1.gz
 man/man1/mu-extract.1.gz
+man/man1/mu-fields.1.gz
 man/man1/mu-find.1.gz
 man/man1/mu-help.1.gz
 man/man1/mu-index.1.gz
@@ -22,10 +23,10 @@ man/man1/mu.1.gz
 man/man5/mu-bookmarks.5.gz
 man/man7/mu-query.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/NEWS.org
-%%GUILE%%share/guile/site/2.2/mu.scm
-%%GUILE%%share/guile/site/2.2/mu/plot.scm
-%%GUILE%%share/guile/site/2.2/mu/script.scm
-%%GUILE%%share/guile/site/2.2/mu/stats.scm
+%%GUILE%%share/guile/site/3.0/mu.scm
+%%GUILE%%share/guile/site/3.0/mu/plot.scm
+%%GUILE%%share/guile/site/3.0/mu/script.scm
+%%GUILE%%share/guile/site/3.0/mu/stats.scm
 %%GUILE%%%%DATADIR%%/scripts/find-dups.scm
 %%GUILE%%%%DATADIR%%/scripts/msgs-count.scm
 %%GUILE%%%%DATADIR%%/scripts/msgs-per-day.scm

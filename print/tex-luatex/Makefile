@@ -1,7 +1,8 @@
 PORTNAME=	luatex
-PORTVERSION=	1.12.0
+PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -12,62 +13,65 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libgmp.so:math/gmp \
+		libgraphite2.so:graphics/graphite2 \
+		libharfbuzz.so:print/harfbuzz \
 		libmpfr.so:math/mpfr \
+		libpng.so:graphics/png \
+		libTECkit.so:textproc/teckit \
 		libzzip.so:devel/zziplib
 
-USES=		gnome libtool pkgconfig shebangfix tar:xz xorg
-USE_TEX=	kpathsea web2c texmf formats texlua texluajit fmtutil
-USE_XORG=	pixman
+USES=		gnome libtool localbase pkgconfig tar:xz tex xorg
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
-TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
-EXTRACT_FILES=	build-aux \
-		libs/xpdf \
-		libs/lua53 \
-		libs/luajit \
-		libs/pplib \
-		texk/web2c
-EXTRACT_AFTER_ARGS_TEXMF=| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
-		--strip-components 1 --no-same-permission --no-same-owner \
-		${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTNAME_TEXMF=	texlive-${TEXLIVE_VERSION}-texmf
-EXTRACT_FILES_TEXMF=	\
-	texmf-dist/doc/lualatex \
-	texmf-dist/doc/luatex \
-	texmf-dist/scripts/context/lua \
-	texmf-dist/source/luatex \
-	texmf-dist/source/lualatex \
-	texmf-dist/fonts/map/luatex \
-	texmf-dist/tex/luatex \
-	texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
-	texmf-dist/tex/generic/config/luatexiniconfig.tex \
-	texmf-dist/tex/generic/context/luatex \
-	texmf-dist/tex/latex/latexconfig/lualatexquotejobname.tex \
-	texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
-	texmf-dist/tex/lualatex
-WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
-GNU_CONFIGURE=	yes
-EXCLUDE_ENGINES=aleph etex pdftex mf mf-nowin \
-		ptex eptex uptex euptex \
-		otangle mp pmp upmp web2c web-progs xetex tex synctex \
-		mflua mfluajit luahbtex luajithbtex
-CONFIGURE_ARGS=	${EXCLUDE_ENGINES:S/^/--disable-/} \
-		--enable-luatex \
-		--enable-luajittex \
-		--with-system-zlib \
-		--with-system-zziplib
-.for L in cairo gmp kpathsea libpng mpfr pixman ptexenc
-CONFIGURE_ARGS+=--with-system-$L \
-		--with-$L-include=${LOCALBASE}/include \
-		--with-$L-libdir=${LOCALBASE}/lib
+USE_TEX=	fmtutil formats kpathsea texlua texluajit web2c
+USE_XORG=	pixman
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	${EXCLUDE_ENGINES:S/^/--disable-/} \
+			--enable-luajittex \
+			--enable-luatex \
+			--enable-luahbtex \
+			--enable-luajithbtex \
+			--with-system-zlib \
+			--with-system-zziplib \
+			CC="${CC}" \
+			CXX="${CXX}"
+.for L in cairo freetype2 gmp graphite2 harfbuzz kpathsea libpng mpfr pixman ptexenc teckit
+CONFIGURE_ARGS+=	--with-$L-include=${LOCALBASE}/include \
+			--with-$L-libdir=${LOCALBASE}/lib \
+			--with-system-$L
 .endfor
-CONFIGURE_ARGS+=CC="${CC}" \
-		CXX="${CXX}"
-CPPFLAGS+=	-I${LOCALBASE}/include
+
 MAKE_JOBS_UNSAFE=	yes
-TEX_FORMATS=	luatex
+
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
+EXTRACT_FILES=			build-aux libs/xpdf libs/lua53 libs/luajit \
+				libs/pplib texk/web2c
+EXTRACT_AFTER_ARGS_TEXMF=	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
+				--strip-components 1 --no-same-permission \
+				--no-same-owner \
+				${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
+EXTRACT_FILES_TEXMF=		texmf-dist/doc/lualatex texmf-dist/doc/luatex \
+				texmf-dist/scripts/context/lua \
+				texmf-dist/source/luatex \
+				texmf-dist/source/lualatex \
+				texmf-dist/fonts/map/luatex \
+				texmf-dist/tex/luatex \
+				texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
+				texmf-dist/tex/generic/config/luatexiniconfig.tex \
+				texmf-dist/tex/generic/context/luatex \
+				texmf-dist/tex/latex/latexconfig/lualatexquotejobname.tex \
+				texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
+				texmf-dist/tex/lualatex
+WRKSRC=				${WRKDIR}/${DISTNAME}/texk/web2c
+EXCLUDE_ENGINES=		aleph etex pdftex mf mf-nowin ptex eptex uptex \
+				euptex otangle mp pmp upmp web2c web-progs \
+				xetex tex synctex mflua mfluajit
+TEX_FORMATS=			luatex
+
+TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}
 
 # buildenv and dumpenv in Makefile uses hard-coded TEXMFCNF.
 post-extract:

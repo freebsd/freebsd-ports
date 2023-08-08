@@ -1,5 +1,5 @@
 PORTNAME=	pugixml
-DISTVERSION=	1.12.1
+DISTVERSION=	1.13
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/zeux/pugixml/releases/download/v${DISTVERSION}/
 
@@ -16,7 +16,5 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	PUGIXML_BUILD_TESTS PUGIXML_USE_VERSIONED_LIBDIR
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.12
 
 .include <bsd.port.mk>

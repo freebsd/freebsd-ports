@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Sample of configuration file placed at
-%%PREFIX%%/etc/esmtprc.sample
-EOM
-}
-]

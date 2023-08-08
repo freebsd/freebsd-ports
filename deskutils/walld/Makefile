@@ -1,5 +1,6 @@
 PORTNAME=	walld
 DISTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	Dotz0cat@gmail.com

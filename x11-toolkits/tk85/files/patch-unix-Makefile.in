@@ -32,8 +32,12 @@
  
  # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
  TK_PKG_DIR		= @TK_PKG_DIR@
-@@ -220,8 +222,8 @@
- INSTALL_STRIP_LIBRARY   = -S -x
+@@ -217,11 +219,11 @@ TKTEST_EXE		= tktest${EXE_SUFFIX}
+ # with the distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM   = -s
+-INSTALL_STRIP_LIBRARY   = -S -x
++INSTALL_STRIP_LIBRARY   = -S --strip-unneeded
  
  INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
 -INSTALL_PROGRAM		= ${INSTALL}

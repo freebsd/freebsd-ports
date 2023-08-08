@@ -1,20 +1,20 @@
---- CMakeLists.txt.orig	2020-07-07 18:29:03 UTC
+--- CMakeLists.txt.orig	2023-06-24 20:00:30 UTC
 +++ CMakeLists.txt
-@@ -93,11 +97,13 @@ option(ENABLE_HEADLESS      "Compile the headless bina
- option(ENABLE_NLS           "Enable Native Language Support"              ON)
- option(ENABLE_LARGEFILE     "Enable Large File Support"                   ON)
- option(ENABLE_ALIAS         "Enable Alias plugin"                         ON)
-+option(ENABLE_BACKTRACE     "Enable backtraces (via libexecinfo)"         ON)
- option(ENABLE_BUFLIST       "Enable Buflist plugin"                       ON)
- option(ENABLE_CHARSET       "Enable Charset plugin"                       ON)
- option(ENABLE_EXEC          "Enable Exec plugin"                          ON)
- option(ENABLE_FIFO          "Enable FIFO plugin"                          ON)
- option(ENABLE_FSET          "Enable Fast Set plugin"                      ON)
-+option(ENABLE_ICONV         "Enable character conversion support"         ON)
- option(ENABLE_IRC           "Enable IRC plugin"                           ON)
- option(ENABLE_LOGGER        "Enable Logger plugin"                        ON)
- option(ENABLE_RELAY         "Enable Relay plugin"                         ON)
-@@ -195,6 +201,7 @@ endif()
+@@ -100,11 +100,13 @@ option(ENABLE_HEADLESS       "Compile the headless bin
+ option(ENABLE_NLS            "Enable Native Language Support"           ON)
+ option(ENABLE_LARGEFILE      "Enable Large File Support"                ON)
+ option(ENABLE_ALIAS          "Enable Alias plugin"                      ON)
++option(ENABLE_BACKTRACE      "Enable backtraces (via libexecinfo)"      ON)
+ option(ENABLE_BUFLIST        "Enable Buflist plugin"                    ON)
+ option(ENABLE_CHARSET        "Enable Charset plugin"                    ON)
+ option(ENABLE_EXEC           "Enable Exec plugin"                       ON)
+ option(ENABLE_FIFO           "Enable FIFO plugin"                       ON)
+ option(ENABLE_FSET           "Enable Fast Set plugin"                   ON)
++option(ENABLE_ICONV          "Enable character conversion support"      ON)
+ option(ENABLE_IRC            "Enable IRC plugin"                        ON)
+ option(ENABLE_LOGGER         "Enable Logger plugin"                     ON)
+ option(ENABLE_RELAY          "Enable Relay plugin"                      ON)
+@@ -217,6 +219,7 @@ endif()
  # Check for libgcrypt
  find_package(GCRYPT REQUIRED)
  add_definitions(-DHAVE_GCRYPT)
@@ -22,9 +22,9 @@
  list(APPEND EXTRA_LIBS ${GCRYPT_LDFLAGS})
  
  # Check for GnuTLS
-@@ -208,10 +215,12 @@ list(APPEND EXTRA_LIBS gnutls)
- find_package(ZLIB REQUIRED)
- add_definitions(-DHAVE_ZLIB)
+@@ -232,10 +235,12 @@ find_package(ZLIB REQUIRED)
+ # Check for zstd
+ pkg_check_modules(LIBZSTD REQUIRED libzstd)
  
 -# Check for iconv
 -find_package(Iconv)
@@ -39,12 +39,16 @@
  endif()
  
  # Check for CURL
-@@ -280,7 +289,7 @@ set(exec_prefix "\${prefix}")
- string(REPLACE "${CMAKE_INSTALL_PREFIX}" "\${prefix}" libdir "${LIBDIR}")
+@@ -304,10 +309,10 @@ add_custom_target(dist
+ set(PACKAGE "${PROJECT_NAME}")
+ set(prefix "${CMAKE_INSTALL_PREFIX}")
+ set(exec_prefix "\${prefix}")
+-string(REPLACE "${CMAKE_INSTALL_PREFIX}" "\${prefix}" libdir "${LIBDIR}")
++string(REPLACE "${CMAKE_INSTALL_PREFIX}" "\${prefix}" libdir "${LIBDATADIR}")
  set(includedir "\${prefix}/include")
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/weechat.pc.in ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc @ONLY)
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc DESTINATION ${LIBDIR}/pkgconfig)
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/weechat.pc DESTINATION ${LIBDATADIR}/pkgconfig)
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/weechat.pc.in" "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" @ONLY)
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" DESTINATION "${LIBDIR}/pkgconfig")
++install(FILES "${CMAKE_CURRENT_BINARY_DIR}/weechat.pc" DESTINATION "${LIBDATADIR}/pkgconfig")
  
  # cygport file (used to build Cygwin packages)
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/weechat.cygport.in ${CMAKE_CURRENT_BINARY_DIR}/weechat-${VERSION}-1.cygport @ONLY)
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/weechat.cygport.in" "${CMAKE_CURRENT_BINARY_DIR}/weechat-${VERSION}-1.cygport" @ONLY)

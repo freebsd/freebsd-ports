@@ -1,5 +1,6 @@
 PORTNAME=	libretro-bsnes
 PORTVERSION=	20211218
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu

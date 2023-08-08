@@ -1,6 +1,5 @@
 PORTNAME=	texinfo
-PORTVERSION=	6.8
-PORTREVISION=	3
+PORTVERSION=	7.0.3
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
@@ -28,7 +27,7 @@ RUN_DEPENDS=	p5-Locale-libintl>=0:devel/p5-Locale-libintl \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz
+USES=		charsetfix cpe gmake iconv:wchar_t libtool ncurses perl5 tar:xz tex
 
 CONFIGURE_ARGS=	--with-external-libintl-perl \
 		--with-external-Text-Unidecode \
@@ -38,14 +37,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip install-tex
 MAKE_ARGS=	PERL=${PERL} TEXMF=${LOCALBASE}/${TEXMFDIR}
 PKGDEINSTALL=	${PKGINSTALL}
-USE_TEX=	yes
 
-INFO=		info-stnd texinfo
+INFO=		info-stnd texi2any_api texi2any_internals texinfo
 
 # Use the date on https://ftp.gnu.org/gnu/texinfo/
-HTMLXREF_CNF_RELDATE=	20220110
-TEXI2DVI_RELDATE=	20220408
-TEXINFO_TEX_RELDATE=	20220409
+HTMLXREF_CNF_RELDATE=	20230402
+TEXI2DVI_RELDATE=	20221130
+TEXINFO_TEX_RELDATE=	20230327
 
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
@@ -57,9 +55,6 @@ post-patch:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex-${TEXINFO_TEX_RELDATE} ${WRKSRC}/doc/texinfo.tex
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf-${HTMLXREF_CNF_RELDATE} ${WRKSRC}/util/htmlxref.cnf
 	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi-${TEXI2DVI_RELDATE} ${WRKSRC}/util/texi2dvi
-	@${REINPLACE_CMD} -e '/rm -f $$(DESTDIR)/ s|$$| $$(DESTDIR)$$(xsdir)/XSParagraph.*|' ${WRKSRC}/tp/Texinfo/XS/Makefile.in
-	@${REINPLACE_CMD} -e 's|free (.*)|Safe&|' ${WRKSRC}/tp/Texinfo/XS/misc.c
-	@${REINPLACE_CMD} -e 's/tinfo/tinfow/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/util/htmlxref.cnf ${STAGEDIR}${DATADIR}

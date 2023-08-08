@@ -14,6 +14,5 @@ RUN_DEPENDS=	rubygem-unf>=0.1.4:textproc/rubygem-unf
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

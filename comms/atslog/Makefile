@@ -47,7 +47,6 @@ LIBWRAP_CONFIGURE_OFF=	--disable-libwrap
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWWW}
-USE_PHP=	pcre
 USES+=		php:web
 .if ${PORT_OPTIONS:MWWWGD}
 USE_PHP+=	gd

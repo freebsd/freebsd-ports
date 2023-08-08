@@ -1,0 +1,4 @@
+Hydrogen is a fork of Elemental used by LBANN. Hydrogen is a redux of the
+Elemental functionality that has been ported to make use of GPGPU accelerators.
+The supported functionality is essentially the core infrastructure plus
+BLAS-1 and BLAS-3.

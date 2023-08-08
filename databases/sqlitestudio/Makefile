@@ -1,6 +1,5 @@
 PORTNAME=	sqlitestudio
-DISTVERSION=	3.3.3
-PORTREVISION=	1
+DISTVERSION=	3.4.4
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +8,15 @@ WWW=		https://sqlitestudio.pl/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+USES=		compiler:c++17-lang gl gmake ncurses qmake qt:5 readline sqlite
+USE_LDCONFIG=	yes
+USE_QT=		core concurrent declarative gui network script sql sql-sqlite3:run svg widgets xml \
+		uitools buildtools:build linguisttools:build
+USE_GL=		gl
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pawelsalawa
 
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_DEFAULT=	${OPTIONS_GROUP_PLUGINS}
@@ -26,13 +34,6 @@ PLUGIN${p:C/([A-Z])/_\1/g:tu}_VARS=	PLUGIN_DIRS+=${p}
 PLUGIN_DB_SQLITE_CIPHER_USES=		ssl
 PLUGIN_PRINTING_USE=			QT=printsupport
 
-USES=		compiler:c++17-lang gl gmake ncurses qmake qt:5 readline sqlite
-USE_GITHUB=	yes
-GH_ACCOUNT=	pawelsalawa
-USE_QT=		core concurrent gui network script sql sql-sqlite3:run svg widgets xml \
-		uitools buildtools:build linguisttools:build
-USE_GL=		gl
-
 WRKSRC_SUBDIR=	SQLiteStudio3
 
 CXXFLAGS+=	-I${WRKSRC}/coreSQLiteStudio
@@ -41,12 +42,10 @@ DESKTOP_ENTRIES=	"SQLite database manager" \
 			"Advanced SQLite database manager" \
 			"SQLiteStudio" \
 			"SQLiteStudio" \
-			"Database;Viewer;DataVisualization;Development;Qt;" \
+			"Viewer;DataVisualization;Development;Qt;" \
 			""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/|${LOCALBASE}/|' \
-		${WRKSRC}/dirs.pri
 	@${REINPLACE_CMD} -e 's|pluginDirs += QDir(CFG->getConfigDir()).absoluteFilePath("plugins");|pluginDirs += "${LOCALBASE}/lib/sqlitestudio";|' \
 		${WRKSRC}/coreSQLiteStudio/services/impl/pluginmanagerimpl.cpp
 

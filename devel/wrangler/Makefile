@@ -1,7 +1,7 @@
 PORTNAME=	wrangler
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.19.12
-PORTREVISION=	2
+PORTREVISION=	12
 CATEGORIES=	devel
 
 MAINTAINER=	antranigv@freebsd.am
@@ -12,8 +12,6 @@ LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
-
-BROKEN_i386=	fails to build: error occurred: Command "cc" ... with args "cc" did not execute successfully (status code exit status: 1)
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
@@ -28,6 +26,13 @@ PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
+
+# sys-info-0.9.1 crate fix: https://github.com/FillZpp/sys-info-rs/issues/80
+post-patch:
+	@${REINPLACE_CMD} \
+	-e '/get_cpu/s|unsigned long|uint64_t|' \
+	-e '/get_proc_total/s|unsigned long|uint64_t|' \
+	${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

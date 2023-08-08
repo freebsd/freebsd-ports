@@ -15,9 +15,10 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gl gmake sdl tk xorg
+USE_GL=		gl glu
 USE_SDL=	mixer sdl
-USE_GL=		gl
-USE_XORG=	x11 xt xmu xi
+USE_XORG=	ice sm x11 xext xi xmu xt
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-tcl-libs="${LOCALBASE}/lib" \
@@ -25,7 +26,14 @@ CONFIGURE_ARGS=	--with-tcl-inc="${TCL_INCLUDEDIR}" \
 		--with-gl-libs="${LOCALBASE}/lib" \
 		--with-gl-inc="${LOCALBASE}/include" \
 		--with-data-dir=${DATADIR}
+
 CPPFLAGS+=	-DGLX_GLXEXT_LEGACY
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -1,7 +1,7 @@
-Chameleon is an HTML/XML template engine for Python. It uses the page templates
-language.
+Chameleon is an HTML/XML template engine for Python.  It uses the page
+templates language.
 
-It’s designed to generate the document output of a web application, typicay
-HTML markup or XML. The language used is page templates, originally a Zope
-invention, but available here as a standalone library that you can use in any
-script or application running Python.
+It is designed to generate the document output of a web application,
+typical HTML markup, or XML. The language used is page templates,
+originally a Zope invention, but available here as a standalone library
+that you can use in any script or application running Python.

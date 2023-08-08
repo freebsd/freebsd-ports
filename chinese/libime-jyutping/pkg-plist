@@ -20,5 +20,8 @@ lib/libime/zh_HK.lm.predict
 share/fcitx5/addon/jyutping.conf
 share/fcitx5/inputmethod/jyutping.conf
 share/libime/jyutping.dict
+share/locale/de/LC_MESSAGES/fcitx5-jyutping.mo
+share/locale/ru/LC_MESSAGES/fcitx5-jyutping.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-jyutping.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx5-jyutping.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.Jyutping.metainfo.xml

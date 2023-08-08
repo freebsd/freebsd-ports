@@ -1,6 +1,5 @@
 PORTNAME=	elasticsearch-transport
-PORTVERSION=	7.17.1
-PORTREVISION=	1
+PORTVERSION=	7.17.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +14,6 @@ RUN_DEPENDS=	rubygem-faraday1>=1<2:www/rubygem-faraday1 \
 		rubygem-multi_json>=0:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

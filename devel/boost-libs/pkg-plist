@@ -153,6 +153,10 @@ lib/cmake/boost_unit_test_framework-%%BOOST_SHARED_LIB_VER%%/boost_unit_test_fra
 lib/cmake/boost_unit_test_framework-%%BOOST_SHARED_LIB_VER%%/boost_unit_test_framework-config.cmake
 lib/cmake/boost_unit_test_framework-%%BOOST_SHARED_LIB_VER%%/libboost_unit_test_framework-variant-shared.cmake
 lib/cmake/boost_unit_test_framework-%%BOOST_SHARED_LIB_VER%%/libboost_unit_test_framework-variant-static.cmake
+lib/cmake/boost_url-%%BOOST_SHARED_LIB_VER%%/boost_url-config-version.cmake
+lib/cmake/boost_url-%%BOOST_SHARED_LIB_VER%%/boost_url-config.cmake
+lib/cmake/boost_url-%%BOOST_SHARED_LIB_VER%%/libboost_url-variant-shared.cmake
+lib/cmake/boost_url-%%BOOST_SHARED_LIB_VER%%/libboost_url-variant-static.cmake
 lib/cmake/boost_wave-%%BOOST_SHARED_LIB_VER%%/boost_wave-config-version.cmake
 lib/cmake/boost_wave-%%BOOST_SHARED_LIB_VER%%/boost_wave-config.cmake
 lib/cmake/boost_wave-%%BOOST_SHARED_LIB_VER%%/libboost_wave-variant-shared.cmake
@@ -338,6 +342,11 @@ lib/libboost_unit_test_framework.so
 lib/libboost_unit_test_framework.so.%%BOOST_MAJOR_VER%%
 lib/libboost_unit_test_framework.so.%%BOOST_MAJOR_VER%%.%%BOOST_MINOR_VER%%
 lib/libboost_unit_test_framework.so.%%BOOST_SHARED_LIB_VER%%
+lib/libboost_url.a
+lib/libboost_url.so
+lib/libboost_url.so.%%BOOST_MAJOR_VER%%
+lib/libboost_url.so.%%BOOST_MAJOR_VER%%.%%BOOST_MINOR_VER%%
+lib/libboost_url.so.%%BOOST_SHARED_LIB_VER%%
 lib/libboost_wave.a
 lib/libboost_wave.so
 lib/libboost_wave.so.%%BOOST_MAJOR_VER%%

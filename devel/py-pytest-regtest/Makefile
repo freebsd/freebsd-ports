@@ -1,7 +1,7 @@
 PORTNAME=	pytest-regtest
 PORTVERSION=	1.5.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python pytest
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

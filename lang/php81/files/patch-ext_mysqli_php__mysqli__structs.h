@@ -1,7 +1,7 @@
---- ext/mysqli/php_mysqli_structs.h.orig	2019-12-17 10:29:23 UTC
+--- ext/mysqli/php_mysqli_structs.h.orig	2023-03-14 19:50:20 UTC
 +++ ext/mysqli/php_mysqli_structs.h
-@@ -36,7 +36,7 @@
- #define FALSE 0
+@@ -26,7 +26,7 @@
+ #undef LIST
  #endif
  
 -#ifdef MYSQLI_USE_MYSQLND

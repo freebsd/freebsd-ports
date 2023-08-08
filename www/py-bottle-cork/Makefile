@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bottle>0:www/py-bottle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beaker>0:www/py-beaker@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	FedericoCeratto
@@ -26,7 +26,7 @@ OPTIONS_DEFINE=		SQLITE MONGODB SQLALCHEMY EXAMPLES
 MONGODB_DESC=		Add MongoDB support
 SQLALCHEMY_DESC=	Add SQLAlchemy support
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
-MONGODB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/pymongo@${PY_FLAVOR}
+MONGODB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymongo>0:databases/py-pymongo@${PY_FLAVOR}
 SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy10>0:databases/py-sqlalchemy10@${PY_FLAVOR}
 
 post-install-EXAMPLES-on:

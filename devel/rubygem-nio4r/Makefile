@@ -1,5 +1,5 @@
 PORTNAME=	nio4r
-PORTVERSION=	2.5.8
+PORTVERSION=	2.5.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,6 +10,5 @@ WWW=		https://github.com/socketry/nio4r
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

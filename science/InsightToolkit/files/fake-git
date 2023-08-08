@@ -1,0 +1,59 @@
+#!/bin/sh
+
+##
+## fake git to assist in downloads of remote modules
+##
+
+#echo "fake-git called with args: $@" >> /tmp/fake-git.log
+
+case "$1" in
+--version)
+	echo "git version 2.40.0"
+	exit 0
+	;;
+clone)
+	# we don't run git clone
+	#/usr/local/bin/git clone $2 $3 >> /tmp/fake-git.log 2>&1
+
+	# args
+	url=$2
+	dir=$3
+
+	# extract module name
+	module=$(echo $url | sed -e "s|.*/||; s|\.git\$||")
+
+	# copy the tree
+	cp -r ../$module-* $dir
+
+	exit 0
+	;;
+checkout)
+	# assume git checkout {hash}
+
+	# memorize the hash
+	echo $2 > .hash
+
+	exit 0
+	;;
+config)
+	# ignore
+	exit 0
+	;;
+remote)
+	# ignore
+	exit 0
+	;;
+rev-parse)
+	# assume: git rev-parse --verify {HASH}
+	echo "@rev-parse pwd=$(pwd)" >> /tmp/fake-git.log
+	cat .hash
+
+	exit 0
+	;;
+submodule)
+	# ignore: hope that there are no submodules
+	exit 0
+	;;
+esac
+
+exit 1

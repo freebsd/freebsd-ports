@@ -1,5 +1,5 @@
 PORTNAME=	mysql
-PORTREVISION=	0
+PORTREVISION=	3
 PKGNAMESUFFIX=	80-client
 
 COMMENT=	Multithreaded SQL database (client)
@@ -33,13 +33,16 @@ OPTIONS_GROUP_PLUGINS=	SASLCLIENT
 SASLCLIENT_DESC=	SASL client plugin module
 SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
 SASLCLIENT_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SASLCLIENT_USE=		OPENLDAP=yes
+SASLCLIENT_USES=		ldap
 
 OPTIONS_DEFAULT+=	SASLCLIENT
 OPTIONS_SUB=	yes
 
 # issue 166367: adding symlinks for back-compatibility with ${lib}_r
 post-install:
+#	@${RM} ${STAGEDIR}${PREFIX}/lib/mysql/private/libprotobuf-lite.so.3.19.4
+#	@${RM} ${STAGEDIR}${PREFIX}/lib/mysql/private/libprotobuf.so.3.19.4
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/private
 	@${LN} -s libmysqlclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
 	@${LN} -s libmysqlclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
 	@${LN} -s libmysqlclient.so.21 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.21

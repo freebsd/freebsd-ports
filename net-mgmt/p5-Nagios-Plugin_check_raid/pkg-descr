@@ -1,0 +1,17 @@
+Nagios/Icinga/Sensu plugin to check current server's RAID status
+
+This plugin checks all RAID volumes (hardware and software) that can be
+identified.
+
+While written originally for Nagios, it's known to work also with:
+
+* Icinga
+* Sensu
+
+This is supposed to be a general plugin to run via NRPE. It checks for the
+various RAID systems, and verifies they are working correctly.
+
+Some checks require root permission, that is acomplished using sudo.
+Neccessary sudo rules (detected for your system), can be installed when
+check_raid is invoked with -S argument. You need to be root user and it will add
+required lines to the sudo config file. Run with -d to preview the sudo rules

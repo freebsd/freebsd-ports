@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/debug/stack_trace_posix.cc
 @@ -35,7 +35,7 @@
  #include <AvailabilityMacros.h>
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include "base/debug/proc_maps_linux.h"
  #endif
  

@@ -1,6 +1,6 @@
---- doc/sly.texi.orig	2021-01-14 09:12:56 UTC
+--- doc/sly.texi.orig	2023-05-23 12:54:52 UTC
 +++ doc/sly.texi
-@@ -3157,17 +3157,13 @@ buffer you can enter Lisp expressions and evaluate the
+@@ -3202,17 +3202,13 @@ buffer you can enter Lisp expressions and evaluate the
  @unnumberedsec Hackers of the good hack
  
  @SLY{} is a fork of SLIME which is itself an Extension

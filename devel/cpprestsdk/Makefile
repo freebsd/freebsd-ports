@@ -1,10 +1,9 @@
 PORTNAME=	cpprestsdk
-PORTVERSION=	2.10.16
-PORTREVISION=	1
+PORTVERSION=	2.10.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	projects@phess.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft C++ REST SDK
 WWW=		https://github.com/Microsoft/cpprestsdk
 
@@ -14,16 +13,12 @@ LICENSE_FILE=	${WRKSRC}/../license.txt
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-BROKEN=		error: performing pointer subtraction with a null pointer may have undefined behavior
-
 USES=		cmake compiler:c++11-lang pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Microsoft
 WRKSRC_SUBDIR=	Release
-CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS
-
-CXXFLAGS+=	-Wno-c11-extensions
+CMAKE_OFF=	BUILD_SAMPLES BUILD_TESTS WERROR
 
 OPTIONS_DEFINE=	BROTLI
 

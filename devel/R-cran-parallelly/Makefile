@@ -1,9 +1,9 @@
 PORTNAME=	parallelly
-PORTVERSION=	1.32.1
+DISTVERSION=	1.36.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Enhancing the 'parallel' Package
 WWW=		https://cran.r-project.org/web/packages/parallelly/
 

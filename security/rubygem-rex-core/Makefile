@@ -1,5 +1,5 @@
 PORTNAME=	rex-core
-PORTVERSION=	0.1.28
+PORTVERSION=	0.1.30
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

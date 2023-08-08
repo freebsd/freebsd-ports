@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		gmake pkgconfig xorg
-
+USE_CXXSTD=	c++11
 USE_XORG=	x11 xext xorgproto xft xpm xrandr
 GNU_CONFIGURE=	yes
 

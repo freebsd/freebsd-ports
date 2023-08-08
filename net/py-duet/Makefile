@@ -1,7 +1,7 @@
 PORTNAME=	duet
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.8+ # 3.7 requires extra-dependencies
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

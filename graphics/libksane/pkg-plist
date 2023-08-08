@@ -32,13 +32,16 @@ share/locale/fr/LC_MESSAGES/libksane.mo
 share/locale/ga/LC_MESSAGES/libksane.mo
 share/locale/gl/LC_MESSAGES/libksane.mo
 share/locale/hi/LC_MESSAGES/libksane.mo
+share/locale/hne/LC_MESSAGES/libksane.mo
 share/locale/hr/LC_MESSAGES/libksane.mo
 share/locale/hu/LC_MESSAGES/libksane.mo
 share/locale/ia/LC_MESSAGES/libksane.mo
 share/locale/id/LC_MESSAGES/libksane.mo
+share/locale/ie/LC_MESSAGES/libksane.mo
 share/locale/is/LC_MESSAGES/libksane.mo
 share/locale/it/LC_MESSAGES/libksane.mo
 share/locale/ja/LC_MESSAGES/libksane.mo
+share/locale/ka/LC_MESSAGES/libksane.mo
 share/locale/kk/LC_MESSAGES/libksane.mo
 share/locale/km/LC_MESSAGES/libksane.mo
 share/locale/ko/LC_MESSAGES/libksane.mo
@@ -50,6 +53,7 @@ share/locale/nb/LC_MESSAGES/libksane.mo
 share/locale/nds/LC_MESSAGES/libksane.mo
 share/locale/nl/LC_MESSAGES/libksane.mo
 share/locale/nn/LC_MESSAGES/libksane.mo
+share/locale/oc/LC_MESSAGES/libksane.mo
 share/locale/pa/LC_MESSAGES/libksane.mo
 share/locale/pl/LC_MESSAGES/libksane.mo
 share/locale/pt/LC_MESSAGES/libksane.mo
@@ -60,6 +64,7 @@ share/locale/sk/LC_MESSAGES/libksane.mo
 share/locale/sl/LC_MESSAGES/libksane.mo
 share/locale/sq/LC_MESSAGES/libksane.mo
 share/locale/sv/LC_MESSAGES/libksane.mo
+share/locale/th/LC_MESSAGES/libksane.mo
 share/locale/tr/LC_MESSAGES/libksane.mo
 share/locale/ug/LC_MESSAGES/libksane.mo
 share/locale/uk/LC_MESSAGES/libksane.mo

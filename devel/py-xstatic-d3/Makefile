@@ -1,20 +1,19 @@
 PORTNAME=	xstatic-d3
 PORTVERSION=	3.5.17.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	XStatic-D3-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	D3 (Data-Driven Documents) (XStatic packaging standard)
-WWW=		https://d3js.org/
+WWW=		https://d3js.org/ \
+		https://github.com/openstack/xstatic-d3
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
-
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

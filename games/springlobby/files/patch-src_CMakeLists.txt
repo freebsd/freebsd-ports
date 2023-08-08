@@ -1,14 +1,14 @@
---- src/CMakeLists.txt.orig	2021-08-21 18:23:23 UTC
+--- src/CMakeLists.txt.orig	2023-01-10 09:38:42 UTC
 +++ src/CMakeLists.txt
-@@ -503,11 +503,6 @@ target_include_directories(springlobby
- 		PRIVATE ${generated_gui_include}
- 	)
+@@ -505,11 +505,6 @@ target_include_directories(springlobby
+ 		${generated_gui_include}
+ )
  
--IF(UNIX)
--	FIND_PACKAGE(X11 REQUIRED)
--	TARGET_LINK_LIBRARIES(springlobby ${X11_X11_LIB})
--ENDIF(UNIX)
+-if(UNIX)
+-	find_package(X11 REQUIRED)
+-	target_link_libraries(springlobby ${X11_X11_LIB})
+-endif()
 -
- ENABLE_TESTING()
+ enable_testing()
  add_subdirectory(tests)
  

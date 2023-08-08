@@ -1,0 +1,12 @@
+--- gst-libs/gst/app/meson.build.orig	2022-09-06 20:56:57 UTC
++++ gst-libs/gst/app/meson.build
+@@ -1,3 +1,4 @@
++if get_option('app').enabled()
+ app_sources = files(['gstappsrc.c', 'gstappsink.c'])
+ 
+ app_mkenum_headers = files([
+@@ -68,3 +69,4 @@ app_dep = declare_dependency(link_with: gstapp,
+   sources : app_gen_sources)
+ 
+ meson.override_dependency(pkg_name, app_dep)
++endif

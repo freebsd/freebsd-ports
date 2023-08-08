@@ -23,6 +23,7 @@ load_rc_config "${name}"
 : ${ttrssd_local_db:="YES"}
 
 initdb_php="%%WWWDIR%%/update.php"
+dbcheck_php="%%WWWDIR%%/ttrss_db_check.php"
 required_files="%%WWWDIR%%/config.php"
 pidfile="/var/run/${name}.pid"
 ppidfile="/var/run/${name}_parent.pid"
@@ -37,10 +38,10 @@ start_precmd=${name}_prestart
 start_cmd=${name}_start
 stop_cmd=${name}_stop
 
-%%MYSQL%%CHECK_CMD="%%LOCALBASE%%/bin/mysqladmin -u mysqld ping"
-%%MYSQL%%CHECK_MSG="${name}: mysqladmin command failed; mysql not ready?"
-%%PGSQL%%CHECK_CMD="%%LOCALBASE%%/bin/pg_isready"
-%%PGSQL%%CHECK_MSG="${name}: postgresql status failed; postgresql not ready?"
+MYSQL_CHECK_CMD="%%LOCALBASE%%/bin/mysqladmin -u mysqld ping"
+MYSQL_CHECK_MSG="${name}: mysqladmin command failed; mysql not ready?"
+PGSQL_CHECK_CMD="%%LOCALBASE%%/bin/pg_isready"
+PGSQL_CHECK_MSG="${name}: postgresql status failed; postgresql not ready?"
 
 ttrssd_start() {
 	if ! [ -x $phpcli ]; then
@@ -74,6 +75,22 @@ ttrssd_stop() {
 ttrssd_prestart() {
 	if checkyesno ttrssd_local_db; then
 		# Wait for the local database to be started
+
+		database="$("$phpcli" -f "$dbcheck_php")"
+
+		case  "$database" in
+		    "mysql")
+			CHECK_CMD="$MYSQL_CHECK_CMD"
+			CHECK_MSG="$MYSQL_CHECK_MSG"
+			;;
+		    "pgsql")
+			CHECK_CMD="$PGSQL_CHECK_CMD"
+			CHECK_MSG="$PGSQL_CHECK_MSG"
+			;;
+		    *)
+			err 1 "Unknown database configured: $database"
+			;;
+		esac
 
 		for n in $(seq 1 10); do
 			if $CHECK_CMD > /dev/null 2>&1; then

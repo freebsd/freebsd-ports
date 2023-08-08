@@ -33,6 +33,7 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-fetch-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-mailmap.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-main.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-merge-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-message.h
@@ -67,11 +68,12 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-tree-builder.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-types.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-version.h
 include/libgit2-glib-1.0/libgit2-glib/ggit.h
 lib/girepository-1.0/Ggit-1.0.typelib
 lib/libgit2-glib-1.0.so
 lib/libgit2-glib-1.0.so.0
-lib/libgit2-glib-1.0.so.0.9900.0
+lib/libgit2-glib-1.0.so.0.100.0
 libdata/pkgconfig/libgit2-glib-1.0.pc
 share/gir-1.0/Ggit-1.0.gir
 share/vala/vapi/ggit-1.0.deps

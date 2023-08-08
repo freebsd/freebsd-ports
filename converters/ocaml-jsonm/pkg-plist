@@ -14,3 +14,4 @@ bin/jsontrip
 %%PORTDOCS%%share/doc/ocaml/jsonm/README.md
 %%PORTDOCS%%share/doc/ocaml/jsonm/examples.ml
 %%PORTDOCS%%share/doc/ocaml/jsonm/jtree.ml
+%%PORTDOCS%%share/doc/ocaml/jsonm/odoc-pages/index.mld

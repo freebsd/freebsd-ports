@@ -1,5 +1,6 @@
 PORTNAME=	terminology
-DISTVERSION=	1.12.1
+DISTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libefl.so:devel/efl
 
-USES=		compiler:c11 cpe meson pkgconfig tar:xz python:3.4+
+USES=		compiler:c11 cpe meson pkgconfig tar:xz python
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 CPE_VENDOR=	enlightenment
 

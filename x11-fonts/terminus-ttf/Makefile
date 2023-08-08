@@ -1,5 +1,5 @@
 PORTNAME=	terminus-ttf
-PORTVERSION=	4.49.2
+PORTVERSION=	4.49.3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://files.ax86.net/terminus-ttf/files/${PORTVERSION}/
 

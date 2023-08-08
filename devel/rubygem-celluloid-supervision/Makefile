@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-timers>=4.1.1:devel/rubygem-timers
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

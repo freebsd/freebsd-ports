@@ -8,5 +8,15 @@ lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfig-%%CMAKE_BUILD_TYPE%%.c
 lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfig.cmake
 lib/cmake/OpenImageDenoise-%%VER%%/OpenImageDenoiseConfigVersion.cmake
 lib/libOpenImageDenoise.so
-lib/libOpenImageDenoise.so.1
+lib/libOpenImageDenoise.so.2
 lib/libOpenImageDenoise.so.%%VER%%
+lib/libOpenImageDenoise_core.so.%%VER%%
+lib/libOpenImageDenoise_device_cpu.so.%%VER%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
+%%PORTDOCS%%%%DOCSDIR%%/third-party-programs-DPCPP.txt
+%%PORTDOCS%%%%DOCSDIR%%/third-party-programs-oneDNN.txt
+%%PORTDOCS%%%%DOCSDIR%%/third-party-programs-oneTBB.txt
+%%PORTDOCS%%%%DOCSDIR%%/third-party-programs.txt

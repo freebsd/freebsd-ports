@@ -1,8 +1,8 @@
 PORTNAME=	spek
-PORTVERSION=	0.8.2
-PORTREVISION=	17
+DISTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/alexkay/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	alexander@kojevnikov.com
 COMMENT=	Acoustic spectrum analyser
@@ -12,10 +12,10 @@ LICENSE=	GPLv3+
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-USES=		compiler:c++11-lib desktop-file-utils gmake gnome pkgconfig \
-		tar:xz
+USES=		compiler:c++11-lib desktop-file-utils gmake gnome \
+		localbase:ldflags pkgconfig tar:xz
 USE_GNOME=	intltool
-USE_WX=		3.0
+USE_WX=		3.2+
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
 
@@ -23,9 +23,5 @@ OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^itlocaledir =.*$$,itlocaledir = ${PREFIX}/share/locale,g" \
-		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.mk>

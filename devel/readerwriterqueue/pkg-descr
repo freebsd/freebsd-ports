@@ -1,0 +1,5 @@
+readerwriterqueue is a lock-free queue for C++.
+
+It only supports a two-thread use case (one consuming, and one producing). The
+threads can't switch roles, though you could use this queue completely from a
+single thread if you wish.

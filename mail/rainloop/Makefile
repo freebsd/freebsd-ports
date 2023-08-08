@@ -5,14 +5,14 @@ CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/RainLoop/rainloop-webmail/releases/download/v${PORTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern and interactive webmail
 WWW=		https://rainloop.net/
 
 LICENSE=	MIT
 
 USES=		php:web,flavors zip
-USE_PHP=	curl dom iconv json openssl pcre simplexml spl xml zlib
+USE_PHP=	curl dom iconv simplexml xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

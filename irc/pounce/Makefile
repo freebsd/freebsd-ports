@@ -1,6 +1,5 @@
 PORTNAME=	pounce
-DISTVERSION=	3.0
-PORTREVISION=	2
+DISTVERSION=	3.1
 CATEGORIES=	irc
 MASTER_SITES=	https://git.causal.agency/pounce/snapshot/
 
@@ -19,7 +18,7 @@ CFLAGS+=	-D'OPENSSL_BIN=\"${OPENSSL_BIN}\"'
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl
+.if ${SSL_DEFAULT} != libressl
 LIB_DEPENDS+=	libtls.so:security/libretls
 .endif
 

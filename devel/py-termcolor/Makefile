@@ -1,8 +1,7 @@
 PORTNAME=	termcolor
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	c.kworr@gmail.com
@@ -11,8 +10,11 @@ WWW=		https://pypi.org/project/termcolor/
 
 LICENSE=	MIT
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR}
+
+USES=		python pytest
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 

@@ -5,5 +5,3 @@ spatial data. Originating from the network module in PySAL (Python Spatial
 Analysis Library), it is under active development for the inclusion of newly
 proposed methods for building graph-theoretic networks and the analysis of
 network events.
-
-See also: https://github.com/pysal/spaghetti

@@ -1,13 +1,13 @@
 PORTNAME=			${SAMBA4_BASENAME}413
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			1
+PORTREVISION=			5
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
 
 MAINTAINER=			timur@FreeBSD.org
 COMMENT=			Free SMB/CIFS and AD/DC server and client for Unix
-WWW=		https://www.samba.org/
+WWW=				https://www.samba.org/
 
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
@@ -17,7 +17,9 @@ CONFLICTS_INSTALL?=		samba4* # bin/cifsdd bin/dbwrap_tool bin/dumpmscat bin/find
 
 USES=				cpe
 
-EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1
+EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1 \
+				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
+				${PATCHDIR}/CVE-2022-3437-des3-overflow-v4a-4.12.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
@@ -96,7 +98,7 @@ OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
 OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
 
 OPTIONS_RADIO=			DNS
-OPTIONS_RADIO_DNS=		NSUPDATE BIND911 BIND916
+OPTIONS_RADIO_DNS=		NSUPDATE BIND916 BIND918
 # Make those default options
 OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP \
 				PROFILE PYTHON3 QUOTAS SYSLOG UTMP \
@@ -129,8 +131,8 @@ ZEROCONF_DESC=			Zero configuration networking
 ZEROCONF_NONE_DESC=		Zeroconf support is absent
 
 DNS_DESC=			DNS frontend
-BIND911_DESC=			Use Bind 9.11 as AD DC DNS server frontend
 BIND916_DESC=			Use Bind 9.16 as AD DC DNS server frontend
+BIND918_DESC=			Use Bind 9.18 as AD DC DNS server frontend
 NSUPDATE_DESC=			Use samba NSUPDATE utility for AD DC
 ##############################################################################
 # XXX: Unconditional dependencies which can't be switched off(if present in
@@ -257,7 +259,7 @@ TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				PYTHONDONTWRITEBYTECODE=1
 
 TEST_DEPENDS+=			bash:shells/bash \
-				tshark:net/tshark
+				tshark:net/wireshark@nox11
 # External Python modules
 TEST_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 TEST_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
@@ -299,8 +301,8 @@ MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
 ##############################################################################
-BIND911_RUN_DEPENDS=		bind911>=9.11.0.0:dns/bind911
 BIND916_RUN_DEPENDS=		bind916>=9.16.0.0:dns/bind916
+BIND918_RUN_DEPENDS=		bind918>=9.18.0.0:dns/bind918
 NSUPDATE_RUN_DEPENDS=		samba-nsupdate:dns/samba-nsupdate
 ##############################################################################
 MEMORY_DEBUG_IMPLIES=		DEBUG
@@ -360,7 +362,7 @@ GSSAPI_HEIMDAL_PREVENTS_MSG=	GSSAPI_HEIMDAL and AD_DC enable conflicting options
 
 LDAP_CONFIGURE_WITH=		ldap
 LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
 LIBZFS_CONFIGURE_WITH=		libzfs
@@ -435,7 +437,7 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 USES+=				python:build,test
 CONFIGURE_ARGS+=		--disable-python
 .else
-USES+=				python:3.6+
+USES+=				python
 PLIST+=				${PKGDIR}/pkg-plist.python
 # Don't cache Python modules
 CONFIGURE_ARGS+=		--nopycache

@@ -23,6 +23,10 @@ LIB_DEPENDS=	libcutl.so:devel/libcutl \
 		libxerces-c.so:textproc/xerces-c3
 
 USES=		compiler:c++11-lang ghostscript:build gmake localbase:ldflags tar:bzip2
+# devel/libcutl 1.10.0 does not work with C++17 which is the default since
+# clang 16. This can be removed once that port starts working with C++17 and
+# has its own USE_CXXSTD removed.
+USE_CXXSTD=	c++11
 
 MAKEFILE=	makefile
 MAKE_ARGS=	EXTERNAL_LIBCUTL=y \

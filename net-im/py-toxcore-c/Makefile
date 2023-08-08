@@ -1,7 +1,7 @@
 PORTNAME=	toxcore-c
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	3
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-im net-p2p python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libtoxcore.so:net-im/tox \
 		libvpx.so:multimedia/libvpx \
 		libopus.so:audio/opus
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	TokTok
 GH_PROJECT=	py-toxcore-c

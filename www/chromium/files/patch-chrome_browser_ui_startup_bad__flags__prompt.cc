@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/ui/startup/bad_flags_prompt.cc.orig	2023-05-31 08:12:17 UTC
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
-@@ -91,7 +91,7 @@ static const char* kBadFlags[] = {
+@@ -95,7 +95,7 @@ static const char* kBadFlags[] = {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

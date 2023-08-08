@@ -1,5 +1,5 @@
 PORTNAME=	libdrm
-PORTVERSION=	2.4.113
+PORTVERSION=	2.4.115
 PORTEPOCH=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	https://dri.freedesktop.org/libdrm/
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 USES=		gnome meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Dvalgrind=disabled
 
 OPTIONS_DEFINE=	MANPAGES TESTS
 OPTIONS_SUB=	yes

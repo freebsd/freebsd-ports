@@ -12,7 +12,6 @@ MASTER_SITES?=	https://pear.horde.org/get/
 HORDE_DIR?=	www/horde
 
 CPE_VENDOR?=	horde
-IGNORE_WITH_PHP=80 81 82
 
 DIST_SUBDIR=	Horde
 PEAR_CHANNEL=	horde
@@ -118,17 +117,6 @@ horde-Horde_Vfs-DEPEND=		${PEARDIR}/Horde/Vfs.php:sysutils/pear-Horde_Vfs
 horde-Horde_View-DEPEND=	${PEARDIR}/Horde/View.php:devel/pear-Horde_View
 horde-Horde_Xml_Element-DEPEND=	${PEARDIR}/Horde/Xml/Element.php:textproc/pear-Horde_Xml_Element
 horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:textproc/pear-Horde_Xml_Wbxml
-horde-content-DEPEND=		${LOCALBASE}/${HORDE_DIR}/content/lib/Tagger.php:devel/horde-content
-horde-gollem-DEPEND=		${LOCALBASE}/${HORDE_DIR}/gollem/index.php:ftp/horde-gollem
-horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
-horde-imp-DEPEND=		${LOCALBASE}/${HORDE_DIR}/imp/index.php:mail/horde-imp
-horde-ingo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/ingo/index.php:mail/horde-ingo
-horde-kronolith-DEPEND=		${LOCALBASE}/${HORDE_DIR}/kronolith/index.php:deskutils/horde-kronolith
-horde-mnemo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/mnemo/index.php:deskutils/horde-mnemo
-horde-nag-DEPEND=		${LOCALBASE}/${HORDE_DIR}/nag/index.php:deskutils/horde-nag
-horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
-horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:www/horde-trean
-horde-turba-DEPEND=		${LOCALBASE}/${HORDE_DIR}/turba/index.php:mail/horde-turba
 
 .  if defined(USE_HORDE_RUN)
 .    for DEP in ${USE_HORDE_RUN}

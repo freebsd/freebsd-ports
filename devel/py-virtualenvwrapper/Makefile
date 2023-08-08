@@ -2,7 +2,7 @@ PORTNAME=	virtualenvwrapper
 PORTVERSION=	4.8.4
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}stevedore>0:devel/py-stevedore@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}virtualenv-clone>0:devel/py-virtualenv-clone@${PY_FLAVOR}
 
 # Actually 2.6-2.7,3.3-3.6
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	DOCS

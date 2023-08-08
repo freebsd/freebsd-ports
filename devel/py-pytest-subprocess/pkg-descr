@@ -1,0 +1,7 @@
+pytest-subprocess is a pytest plugin to fake subprocess.
+
+The plugin adds the fake_process fixture (and fp as an alias). It can be used
+it to register subprocess results so you won't need to rely on the real
+processes. The plugin hooks on the subprocess.Popen(), which is the base for
+other subprocess functions. That makes the subprocess.run(), subprocess.call(),
+subprocess.check_call() and subprocess.check_output() methods also functional.

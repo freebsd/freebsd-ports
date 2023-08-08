@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-drydock>=0:devel/rubygem-drydock \
 		rubygem-storable>=0:devel/rubygem-storable
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

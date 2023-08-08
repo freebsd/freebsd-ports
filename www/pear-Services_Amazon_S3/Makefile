@@ -11,7 +11,6 @@ BUILD_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2@${PHP_FLAVOR}
 RUN_DEPENDS=	${PEARDIR}/HTTP/Request2.php:www/pear-HTTP_Request2@${PHP_FLAVOR} \
 		${PEARDIR}/Crypt/HMAC2.php:security/pear-Crypt_HMAC2@${PHP_FLAVOR}
 
-USE_PHP=	spl
-USES=		pear php
+USES=		pear
 
 .include <bsd.port.mk>

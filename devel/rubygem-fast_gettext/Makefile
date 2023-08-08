@@ -1,5 +1,5 @@
 PORTNAME=	fast_gettext
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/grosser/fast_gettext
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

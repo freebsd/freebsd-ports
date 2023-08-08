@@ -1,0 +1,7 @@
+--- pueue/Cargo.toml.orig	2023-03-31 21:51:38 UTC
++++ pueue/Cargo.toml
+@@ -62,4 +62,3 @@ test-log = "0.2"
+ # Test specific dev-dependencies
+ [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+ whoami = "1"
+-procfs = { version = "0.14", default-features = false }

@@ -1,6 +1,7 @@
 bin/kde-geo-uri-handler
 include/KF5/KGuiAddons/KColorCollection
 include/KF5/KGuiAddons/KColorMimeData
+include/KF5/KGuiAddons/KColorSchemeWatcher
 include/KF5/KGuiAddons/KColorUtils
 include/KF5/KGuiAddons/KCursorSaver
 include/KF5/KGuiAddons/KDateValidator
@@ -13,6 +14,7 @@ include/KF5/KGuiAddons/KWordWrap
 include/KF5/KGuiAddons/KeySequenceRecorder
 include/KF5/KGuiAddons/kcolorcollection.h
 include/KF5/KGuiAddons/kcolormimedata.h
+include/KF5/KGuiAddons/kcolorschemewatcher.h
 include/KF5/KGuiAddons/kcolorutils.h
 include/KF5/KGuiAddons/kcursorsaver.h
 include/KF5/KGuiAddons/kdatevalidator.h

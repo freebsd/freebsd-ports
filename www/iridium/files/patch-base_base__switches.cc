@@ -1,11 +1,11 @@
---- base/base_switches.cc.orig	2022-03-28 18:11:04 UTC
+--- base/base_switches.cc.orig	2023-07-24 14:27:53 UTC
 +++ base/base_switches.cc
-@@ -170,7 +170,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
+@@ -167,7 +167,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
  
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- // Controls whether or not retired instruction counts are surfaced for threads
- // in trace events on Linux.
- //
+ // TODO(crbug.com/1176772): Remove kEnableCrashpad and IsCrashpadEnabled() when
+ // Crashpad is fully enabled on Linux. Indicates that Crashpad should be
+ // enabled.

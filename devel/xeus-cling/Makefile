@@ -1,6 +1,6 @@
 PORTNAME=	xeus-cling
 DISTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/jupyter-xeus/xeus-cling
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		Doesn't build: xmanager.hpp:125:35: error: no type named 'OptionException' in namespace 'cxxopts'
 
 BUILD_DEPENDS=	cppzmq>0:net/cppzmq \
 		cxxopts>0:devel/cxxopts \

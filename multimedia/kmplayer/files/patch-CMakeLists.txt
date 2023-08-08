@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-11-22 05:48:52 UTC
++++ CMakeLists.txt
+@@ -1,8 +1,6 @@ project(kmplayer)
+ cmake_minimum_required(VERSION 2.8.12)
+ project(kmplayer)
+ 
+-cmake_policy(VERSION 2.6)
+-
+ SET(KMPLAYER_MAJOR_VERSION "0")
+ SET(KMPLAYER_MINOR_VERSION "12")
+ SET(KMPLAYER_PATCH_VERSION "0b")

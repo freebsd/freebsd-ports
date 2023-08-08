@@ -1,2 +1,3 @@
-SHA256 (xorg/app/rgb-1.0.6.tar.bz2) = bbca7c6aa59939b9f6a0fb9fff15dfd62176420ffd4ae30c8d92a6a125fbe6b0
-SIZE (xorg/app/rgb-1.0.6.tar.bz2) = 139225
+TIMESTAMP = 1687305153
+SHA256 (xorg/app/rgb-1.1.0.tar.xz) = fc03d7f56e5b2a617668167f8927948cce54f93097e7ccd9f056077f479ed37b
+SIZE (xorg/app/rgb-1.1.0.tar.xz) = 132824

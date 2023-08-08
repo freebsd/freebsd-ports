@@ -1,20 +1,20 @@
 PORTNAME=	upower
-PORTVERSION=	1.90.0
-DISTVERSIONPREFIX=	v
+DISTVERSION=	1.90.2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://gitlab.freedesktop.org/upower/upower/-/archive/${DISTVERSIONFULL}/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	D-Bus daemon for simplifying power management tasks
 WWW=		https://upower.freedesktop.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 
-USES=		compiler:c11 gettext gnome localbase meson \
-		pkgconfig tar:bz2
+USES=		compiler:c11 gettext gnome localbase meson pkgconfig
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.freedesktop.org/
+GL_TAGNAME=	8dcf54440d7eb58b75d7982bc1c29ee35dccf0c2
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk-doc=false \

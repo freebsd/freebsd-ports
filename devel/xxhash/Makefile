@@ -1,20 +1,20 @@
 PORTNAME=	xxhash
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely fast non-cryptographic hash algorithm
-WWW=		https://cyan4973.github.io/xxHash/
+WWW=		https://xxhash.com/ \
+		https://github.com/Cyan4973/xxHash
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 
-USE_LDCONFIG=	yes
 TEST_TARGET=	check
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -25,7 +25,6 @@ GH_PROJECT=	xxHash
 PORTSCOUT=	limit:^v[0-9\.]*
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xxhsum
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxxhash.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xxhsum ${STAGEDIR}${PREFIX}/lib/libxxhash.so
 
 .include <bsd.port.mk>

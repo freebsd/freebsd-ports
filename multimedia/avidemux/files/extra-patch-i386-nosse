@@ -1,0 +1,14 @@
+--- avidemux/common/ADM_audioFilter/src/ADM_soundtouch/STTypes.h.orig	2022-09-17 13:59:16 UTC
++++ avidemux/common/ADM_audioFilter/src/ADM_soundtouch/STTypes.h
+@@ -153,11 +153,6 @@ namespace soundtouch
+         // efficient autovectorization
+         typedef float LONG_SAMPLETYPE;
+ 
+-        #ifdef SOUNDTOUCH_ALLOW_X86_OPTIMIZATIONS
+-            // Allow SSE optimizations
+-            #define SOUNDTOUCH_ALLOW_SSE       1
+-        #endif
+-
+     #endif  // SOUNDTOUCH_INTEGER_SAMPLES
+ 
+     #if ((SOUNDTOUCH_ALLOW_SSE) || (__SSE__) || (SOUNDTOUCH_USE_NEON))

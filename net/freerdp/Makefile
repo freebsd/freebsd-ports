@@ -1,12 +1,18 @@
 PORTNAME=	freerdp
-DISTVERSION=	2.8.0
-CATEGORIES=	net comms wayland
+DISTVERSION=	2.10.0
+PORTREVISION=	4
+CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
-#PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+PATCHFILES+=	498ddbf23e520fbff6c96a3c4bd4c6b2534529c4.patch:-p1 # Disable sha3 and shake hashes for libressl
+PATCHFILES+=	7f55c97d60453738323e0ecafe6d357019528227.patch:-p1 # ffmpeg6 support: AV_CODEC_CAP_TRUNCATED
+								   # https://github.com/FreeRDP/FreeRDP/issues/8686
+PATCHFILES+=	61983cd6dcb86097d91b7ef405abc1266444a368.patch:-p1 # ffmpeg6 support: AVPicture
+								   # https://github.com/FreeRDP/FreeRDP/pull/8941
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
 WWW=		https://www.freerdp.com/
 
@@ -125,6 +131,7 @@ SWSCALE_LIB_DEPENDS=	libswscale.so:multimedia/ffmpeg
 SWSCALE_CMAKE_BOOL=	WITH_SWSCALE
 
 WAYLAND_DESC=		Build FreeRDP Wayland client
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 			libwayland-cursor.so:graphics/wayland \

@@ -1,5 +1,6 @@
 PORTNAME=	orange3-educational
 DISTVERSION=	0.4.0
+PORTREVISION=	2
 CATEGORIES=	misc education python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +15,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

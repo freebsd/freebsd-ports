@@ -1,6 +1,6 @@
 --- man/Makefile.in.orig	2021-02-03 13:57:43 UTC
 +++ man/Makefile.in
-@@ -20,7 +20,7 @@ SRCS = \
+@@ -25,1 +25,1 @@ SRCS = \
  
  @HAVEPROCMAIL_TRUE@SRCS += jk_procmailwrapper.8
  

@@ -1,7 +1,7 @@
 PORTNAME=	python-poppler-qt5
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.75.0
-PORTREVISION=	25
+PORTREVISION=	27
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	qmake-qt5:devel/qt5-qmake
 LIB_DEPENDS=	libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		compiler:c++11-lang gl pkgconfig pyqt:5 python:3.7-3.9 qt:5
+USES=		compiler:c++11-lang gl pkgconfig pyqt:5 python:3.8-3.9 qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
 USE_GL=		gl

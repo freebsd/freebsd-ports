@@ -1,11 +1,11 @@
 PORTNAME=	onednn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	3.2.1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Intel(R) Math Kernel Library for Deep Neural Networks
-WWW=		https://01.org/onednn
+WWW=		https://github.com/oneapi-src/oneDNN
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -71,7 +71,7 @@ CXXFLAGS:=	${CXXFLAGS:S/-O2/-O3/} # clang writes wrong binary code when -O2 opti
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc
 
-do-test:
+do-test: # tests never finish, see https://github.com/oneapi-src/oneDNN/issues/1619
 	@${REINPLACE_CMD} 's| /bin/bash | ${LOCALBASE}/bin/bash |' ${WRKSRC}/tests/CMakeLists.txt
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DDNNL_BUILD_TESTS=ON ${CMAKE_SOURCE_PATH} && \

@@ -1,7 +1,7 @@
 PORTNAME=	xonsh
 PORTVERSION=	0.11.0
 CATEGORIES=	shells python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	roberfern@gmail.com
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amalgamate>=0:devel/py-amalgamate@${PY_FLA
 
 NO_ARCH=	yes
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent
 
 .include <bsd.port.mk>

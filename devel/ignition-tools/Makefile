@@ -11,9 +11,8 @@ WWW=		https://ignitionrobotics.org/home
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang pkgconfig shebangfix
+USES=		cmake compiler:c++11-lang pkgconfig ruby shebangfix
 SHEBANG_FILES=	src/ign.in
-USE_RUBY=	yes
 
 BB_ACCOUNT=	ignitionrobotics
 BB_PROJECT=	ign-tools

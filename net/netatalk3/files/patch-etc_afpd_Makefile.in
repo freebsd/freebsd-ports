@@ -1,15 +1,15 @@
---- etc/afpd/Makefile.in.orig	2022-03-22 04:51:08 UTC
-+++ etc/afpd/Makefile.in
-@@ -186,7 +186,7 @@ AM_V_at = $(am__v_at_@AM_V@)
+--- etc/afpd/Makefile.in.orig	2023-02-26 19:09:30.000000000 -0500
++++ etc/afpd/Makefile.in	2023-02-27 11:43:02.278126000 -0500
+@@ -185,7 +185,7 @@ AM_V_at = $(am__v_at_@AM_V@)
  am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
  am__v_at_0 = @
  am__v_at_1 = 
 -DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 +DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/include
- depcomp = $(SHELL) $(top_srcdir)/depcomp
+ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
  am__maybe_remake_depfiles = depfiles
  am__depfiles_remade = ./$(DEPDIR)/afpd-acls.Po \
-@@ -489,7 +489,7 @@ afpd_SOURCES = afp_config.c afp_dsi.c afp_options.c af
+@@ -485,7 +485,7 @@ afpd_SOURCES = afp_config.c afp_dsi.c afp_options.c af
  	$(am__append_7)
  afpd_LDADD = $(top_builddir)/libatalk/libatalk.la @LIBGCRYPT_LIBS@ \
  	@QUOTA_LIBS@ @WRAP_LIBS@ @LIBADD_DL@ @ACL_LIBS@ @PTHREAD_LIBS@ \

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-little-plugger>=1.1<2:devel/rubygem-little-plugger \
 		rubygem-rdoc>=6.0<7:devel/rubygem-rdoc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

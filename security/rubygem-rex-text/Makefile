@@ -1,5 +1,5 @@
 PORTNAME=	rex-text
-PORTVERSION=	0.2.39
+PORTVERSION=	0.2.49
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

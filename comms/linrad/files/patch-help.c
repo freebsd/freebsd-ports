@@ -9,7 +9,7 @@
  line=3;
  write_from_msg_file(&line, lir_errcod, screen_mode, ERROR_VERNR);
  }  
-@@ -730,7 +730,7 @@ void help_message(int msg_no)
+@@ -730,7 +730,7 @@ if(msg_no < 0)return;
  {
  int i, line;
  if(msg_no < 0)return;

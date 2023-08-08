@@ -1,0 +1,22 @@
+--- compiler-rt/lib/builtins/CMakeLists.txt.orig	2021-06-28 16:23:38 UTC
++++ compiler-rt/lib/builtins/CMakeLists.txt
+@@ -664,8 +664,6 @@ else ()
+ else ()
+   set(BUILTIN_CFLAGS "")
+ 
+-  append_list_if(COMPILER_RT_HAS_FLOAT16 -DCOMPILER_RT_HAS_FLOAT16 BUILTIN_CFLAGS)
+-
+   append_list_if(COMPILER_RT_HAS_STD_C11_FLAG -std=c11 BUILTIN_CFLAGS)
+ 
+   # These flags would normally be added to CMAKE_C_FLAGS by the llvm
+@@ -724,6 +722,10 @@ else ()
+       # double routines.
+       if("${arch}" STREQUAL "riscv32")
+         list(APPEND BUILTIN_CFLAGS -fforce-enable-int128)
++      endif()
++
++      if(NOT (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" AND ${arch} STREQUAL "i386"))
++        append_list_if(COMPILER_RT_HAS_FLOAT16 -DCOMPILER_RT_HAS_FLOAT16 BUILTIN_CFLAGS_${arch})
+       endif()
+ 
+       add_compiler_rt_runtime(clang_rt.builtins

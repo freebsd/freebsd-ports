@@ -1,8 +1,9 @@
 PORTNAME=	deal.II
-DISTVERSIONPREFIX=	v
-DISTVERSION=	9.4.0
-PORTREVISION=	2
+DISTVERSION=	9.5.0
+PORTREVISION=	1
 CATEGORIES=	math
+MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
+DISTNAME=	dealii-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Finite element Differential Equations Analysis Library (DEAL)
@@ -13,28 +14,30 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_FreeBSD_14=	clang crashes: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=257876
 BROKEN_aarch64=		error: use of undeclared identifier '__TBB_machine_fetchadd4'
+BROKEN_armv7=		clang runs out of memory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis
+#		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
 
-USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags
+USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags xorg
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME:tl:S/.//}
-GH_PROJECT=	${PORTNAME:tl:S/.//}
 
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_P4EST DEAL_II_WITH_TRILINOS DEAL_II_WITH_UMFPACK \
 		DEAL_II_WITH_NANOFLANN DEAL_II_WITH_MUPARSER DEAL_II_WITH_ASSIMP \
 		DEAL_II_WITH_HDF5
 CMAKE_ON=	DEAL_II_FORCE_BUNDLED_TBB # instead of LIB_DEPENDS+=libtbb.so:devel/onetbb, pending https://github.com/dealii/dealii/issues/11561
+CMAKE_ON+=	FORCE_BUNDLED_KOKKOS # TMP turn on bundled kokkos
 CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 
-OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI NETCDF OPENCASCADE PETSC SCALAPACK SUNDIALS
-OPTIONS_DEFAULT=	GSL LAPACK # SUNDIALS
+LDFLAGS+=	-lomp
+LDFLAGS+=	-lexecinfo # TMP for bundled kokkos
+
+OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS # for all options see contrib/docker/Dockerfile, TODO some of them need to be enabled here
+OPTIONS_DEFAULT=	GSL LAPACK MPI OPENCASCADE PETSC SCALAPACK SLEPC SUNDIALS
 
 ADOLC_DESC=		Compile with ADOL-C
 ADOLC_CMAKE_BOOL=	DEAL_II_WITH_ADOLC
@@ -65,30 +68,33 @@ MPI_CMAKE_ON=		-DMPI_LINKER_FLAGS:STRING="${LDFLAGS}"
 MPI_LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
 			libmpich.so:net/mpich
 
-NETCDF_DESC=		Compile with Netcdf (only with MPI)
-NETCDF_CMAKE_BOOL=	DEAL_II_WITH_NETCDF
-NETCDF_CMAKE_ON=	-DNETCDF_INCLUDE_DIR:STRING=${LOCALBASE}/include -DNETCDF_CPLUSPLUS_LIBRARY:STRING=${LOCALBASE}/lib/libnetcdf_c++4.so
-NETCDF_BROKEN=		see https://github.com/dealii/dealii/issues/7263
-
 OPENCASCADE_DESC=	Compile with OpenCascade
 OPENCASCADE_CMAKE_BOOL=	DEAL_II_WITH_OPENCASCADE
 OPENCASCADE_CMAKE_ON=	-DOPENCASCADE_INCLUDE_DIR:STRING=${LOCALBASE}/include/OpenCASCADE
 OPENCASCADE_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 
 PETSC_DESC=		Compile with Petsc (only with MPI)
-PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC
+PETSC_USES=		xorg
+PETSC_USE=		XORG=x11 # PETSc adds x11 through interface libraries
+PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC DEAL_II_WITH_64BIT_INDICES
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
-PETSC_BROKEN=		see https://github.com/dealii/dealii/issues/7260
+PETSC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
 
 SCALAPACK_DESC=		Compile with ScaLAPACK (only with MPI)
 SCALAPACK_CMAKE_BOOL=	DEAL_II_WITH_SCALAPACK
 SCALAPACK_IMPLIES=	MPI LAPACK
 SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 
+SLEPC_DESC=		Compile with Slepc (only with MPI)
+SLEPC_USES=		xorg
+SLEPC_USE=		XORG=x11 # SLEPc adds x11 through interface libraries
+SLEPC_CMAKE_BOOL=	DEAL_II_WITH_SLEPC
+SLEPC_LIB_DEPENDS=	libslepc.so:math/slepc
+SLEPC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
+
 SUNDIALS_DESC=		Compile with SUNDIALS
 SUNDIALS_CMAKE_BOOL=	DEAL_II_WITH_SUNDIALS
 SUNDIALS_LIB_DEPENDS=	libsundials_arkode.so:math/sundials
-SUNDIALS_BROKEN=	Build fails with: Required variable "SUNDIALS_LIB_PAR" set to NOTFOUND
 
 post-patch: # unbundle boost
 	@${RM} -r ${WRKSRC}/dealii/bundled/boost-*

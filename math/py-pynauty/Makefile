@@ -1,7 +1,7 @@
 PORTNAME=	pynauty
-DISTVERSION=	1.1.2
+DISTVERSION=	2.8.6
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +11,9 @@ WWW=		https://github.com/pdobsan/pynauty
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gmake:devel/gmake
-TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
-USE_PYTHON=	distutils autoplist
+USES=		python shebangfix
+USE_PYTHON=	distutils autoplist pytest
 
 SHEBANG_FILES=	src/pynauty/tests/test_minimal.py
 

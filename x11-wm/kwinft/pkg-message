@@ -36,6 +36,13 @@ Replace KWin in Plasma Desktop:
   $ pkg set -o x11-wm/plasma5-kwin:x11-wm/kwinft
   $ pkg upgrade -f kwinft
   $ pkg lock kwinft
+
+Improve Wayland responsiveness under high load:
+
+  $ sysrc kld_list+=mac_priority
+  $ service kld restart
+  $ pw groupmod realtime -m <user>
+  $ exit # log out to refresh group permissions
 EOM
 }
 ]

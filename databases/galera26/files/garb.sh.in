@@ -19,7 +19,7 @@
 #                              see http://www.codership.com/wiki/doku.php?id=galera_parameters
 #                              (default empty).
 #  garb_log_file (str):        Log file for garbd (default empty). Optional, by default logs to syslog
-#  garb_pid_file (str):        Custum PID file path and name.
+#  garb_pid_file (str):        Custom PID file path and name.
 #                              Default to "/var/run/garb.pid".
 #
 

@@ -1,5 +1,6 @@
 PORTNAME=	RSQLite
-PORTVERSION=	2.2.14
+PORTVERSION=	2.2.19
+PORTREVISION=	1
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -20,5 +21,13 @@ BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
+
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|PKG_CPPFLAGS=|PKG_CPPFLAGS=-Wno-error=enum-constexpr-conversion |g' \
+		${WRKSRC}/src/Makevars
+.endif
 
 .include <bsd.port.mk>

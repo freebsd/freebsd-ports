@@ -1,4 +1,0 @@
-This is the PHP extension of the pHash library, which is an open source software
-library released under the GPLv3 license that implements several perceptual
-hashing algorithms, and provides a C-like API to use those functions in your own
-programs. pHash itself is written in C++.

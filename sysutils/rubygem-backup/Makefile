@@ -75,7 +75,6 @@ RUN_DEPENDS=	rubygem-CFPropertyList>=2.3.1:devel/rubygem-CFPropertyList \
 		rubygem-xml-simple>=1.1.4:textproc/rubygem-xml-simple
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

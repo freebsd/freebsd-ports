@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	21.1.3
+DISTVERSION=	22.0.3
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	-webui
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 USE_GITHUB=	yes
 
 USES=		cpe php:build cmake gettext
-USE_PHP=	openssl gettext ctype hash json session iconv
+USE_PHP=	gettext ctype session iconv
 NO_BUILD=	yes
 NO_ARCH=	yes
 
@@ -50,7 +50,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/console
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile
 	@${MKDIR} ${STAGEDIR}${BAREOSWEB_HOME}
-	cd ${WRKSRC}/webui && ${COPYTREE_SHARE} "config data module public vendor" \
+	cd ${WRKSRC}/webui && ${COPYTREE_SHARE} "config module public vendor" \
 		${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/*.php ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKSRC}/webui/composer* ${STAGEDIR}${WWWDIR}

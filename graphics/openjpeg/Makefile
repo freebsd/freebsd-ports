@@ -1,6 +1,7 @@
 PORTNAME=	openjpeg
 PORTVERSION=	2.5.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +11,6 @@ WWW=		https://www.openjpeg.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake>=3:devel/cmake
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff

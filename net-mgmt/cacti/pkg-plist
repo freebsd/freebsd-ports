@@ -42,6 +42,7 @@
 %%CACTIDIR%%/cli/change_device.php
 %%CACTIDIR%%/cli/convert_tables.php
 %%CACTIDIR%%/cli/copy_user.php
+%%CACTIDIR%%/cli/float_rrdfiles.php
 %%CACTIDIR%%/cli/fix_mediumint.php
 %%CACTIDIR%%/cli/host_update_template.php
 %%CACTIDIR%%/cli/import_package.php
@@ -499,6 +500,7 @@
 %%CACTIDIR%%/docs/images/reports-other-options-device-page.png
 %%CACTIDIR%%/docs/images/reports-preview.png
 %%CACTIDIR%%/docs/images/router-ping-graph.png
+%%CACTIDIR%%/docs/images/rrd_check.PNG
 %%CACTIDIR%%/docs/images/rrd-autoclean.png
 %%CACTIDIR%%/docs/images/settings-auth-basic.png
 %%CACTIDIR%%/docs/images/settings-auth-common.png
@@ -715,6 +717,7 @@
 %%CACTIDIR%%/images/tab_tree.gif
 %%CACTIDIR%%/images/table.png
 %%CACTIDIR%%/images/table_go.png
+%%CACTIDIR%%/images/template_edit.png
 %%CACTIDIR%%/images/timeview.png
 %%CACTIDIR%%/images/transparent_line.gif
 %%CACTIDIR%%/images/tree.png
@@ -2625,6 +2628,7 @@
 %%CACTIDIR%%/include/plugins.php
 %%CACTIDIR%%/include/realtime.js
 %%CACTIDIR%%/include/session.php
+%%CACTIDIR%%/include/themes/classic/Diff.css
 %%CACTIDIR%%/include/themes/classic/billboard.css
 %%CACTIDIR%%/include/themes/classic/default/32px.png
 %%CACTIDIR%%/include/themes/classic/default/40px.png
@@ -2676,6 +2680,7 @@
 %%CACTIDIR%%/include/themes/classic/main.js
 %%CACTIDIR%%/include/themes/classic/pace.css
 %%CACTIDIR%%/include/themes/classic/rrdtheme.php
+%%CACTIDIR%%/include/themes/dark/Diff.css
 %%CACTIDIR%%/include/themes/dark/billboard.css
 %%CACTIDIR%%/include/themes/dark/default/32px.png
 %%CACTIDIR%%/include/themes/dark/default/40px.png
@@ -2730,6 +2735,7 @@
 %%CACTIDIR%%/include/themes/dark/pace.css
 %%CACTIDIR%%/include/themes/dark/rrdtheme.php
 %%CACTIDIR%%/include/themes/index.php
+%%CACTIDIR%%/include/themes/midwinter/Diff.css
 %%CACTIDIR%%/include/themes/midwinter/billboard.css
 %%CACTIDIR%%/include/themes/midwinter/billboard.midwinter.css
 %%CACTIDIR%%/include/themes/midwinter/css/media/compact-landscape.css
@@ -2802,6 +2808,7 @@
 %%CACTIDIR%%/include/themes/midwinter/vendor/mark/jquery.mark.js
 %%CACTIDIR%%/include/themes/midwinter/vendor/ua-parser/license.md
 %%CACTIDIR%%/include/themes/midwinter/vendor/ua-parser/ua-parser.js
+%%CACTIDIR%%/include/themes/modern/Diff.css
 %%CACTIDIR%%/include/themes/modern/billboard.css
 %%CACTIDIR%%/include/themes/modern/default/32px.png
 %%CACTIDIR%%/include/themes/modern/default/40px.png
@@ -2853,6 +2860,7 @@
 %%CACTIDIR%%/include/themes/modern/main.js
 %%CACTIDIR%%/include/themes/modern/pace.css
 %%CACTIDIR%%/include/themes/modern/rrdtheme.php
+%%CACTIDIR%%/include/themes/paper-plane/Diff.css
 %%CACTIDIR%%/include/themes/paper-plane/billboard.css
 %%CACTIDIR%%/include/themes/paper-plane/default/32px.png
 %%CACTIDIR%%/include/themes/paper-plane/default/40px.png
@@ -2904,6 +2912,7 @@
 %%CACTIDIR%%/include/themes/paper-plane/main.js
 %%CACTIDIR%%/include/themes/paper-plane/pace.css
 %%CACTIDIR%%/include/themes/paper-plane/rrdtheme.php
+%%CACTIDIR%%/include/themes/paw/Diff.css
 %%CACTIDIR%%/include/themes/paw/billboard.css
 %%CACTIDIR%%/include/themes/paw/default/32px.png
 %%CACTIDIR%%/include/themes/paw/default/40px.png
@@ -2955,6 +2964,7 @@
 %%CACTIDIR%%/include/themes/paw/main.js
 %%CACTIDIR%%/include/themes/paw/pace.css
 %%CACTIDIR%%/include/themes/paw/rrdtheme.php
+%%CACTIDIR%%/include/themes/sunrise/Diff.css
 %%CACTIDIR%%/include/themes/sunrise/billboard.css
 %%CACTIDIR%%/include/themes/sunrise/default/32px.png
 %%CACTIDIR%%/include/themes/sunrise/default/40px.png
@@ -3813,6 +3823,19 @@
 %%CACTIDIR%%/include/vendor/gettext/tests/assets/vuejs/input.vue
 %%CACTIDIR%%/include/vendor/gettext/tests/bootstrap.php
 %%CACTIDIR%%/include/vendor/index.php
+%%CACTIDIR%%/include/vendor/phpdiff/Diff.php
+%%CACTIDIR%%/include/vendor/phpdiff/README.md
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Abstract.php
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Html/Array.php
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Html/Inline.php
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Html/SideBySide.php
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Text/Context.php
+%%CACTIDIR%%/include/vendor/phpdiff/Renderer/Text/Unified.php
+%%CACTIDIR%%/include/vendor/phpdiff/SequenceMatcher.php
+%%CACTIDIR%%/include/vendor/phpdiff/example/a.txt
+%%CACTIDIR%%/include/vendor/phpdiff/example/b.txt
+%%CACTIDIR%%/include/vendor/phpdiff/example/example.php
+%%CACTIDIR%%/include/vendor/phpdiff/example/styles.css
 %%CACTIDIR%%/include/vendor/phpgettext/gettext.php
 %%CACTIDIR%%/include/vendor/phpgettext/index.php
 %%CACTIDIR%%/include/vendor/phpgettext/streams.php
@@ -3939,8 +3962,11 @@
 %%CACTIDIR%%/install/templates/Cacti_Stats.xml.gz
 %%CACTIDIR%%/install/templates/Cisco_Router.xml.gz
 %%CACTIDIR%%/install/templates/Citrix_NetScaler_VPX.xml.gz
+%%CACTIDIR%%/install/templates/ESXi_Device.xml.gz
 %%CACTIDIR%%/install/templates/Generic_SNMP_Device.xml.gz
 %%CACTIDIR%%/install/templates/Local_Linux_Machine.xml.gz
+%%CACTIDIR%%/install/templates/MikroTik_Device.xml.gz
+%%CACTIDIR%%/install/templates/MikroTik_Switch_SWOS.xml.gz
 %%CACTIDIR%%/install/templates/NetSNMP_Device.xml.gz
 %%CACTIDIR%%/install/templates/PING_Advanced_Ping.xml.gz
 %%CACTIDIR%%/install/templates/Synology_NAS.xml.gz
@@ -3993,6 +4019,7 @@
 %%CACTIDIR%%/install/upgrades/1_2_20.php
 %%CACTIDIR%%/install/upgrades/1_2_21.php
 %%CACTIDIR%%/install/upgrades/1_2_22.php
+%%CACTIDIR%%/install/upgrades/1_2_23.php
 %%CACTIDIR%%/install/upgrades/1_2_2.php
 %%CACTIDIR%%/install/upgrades/1_2_3.php
 %%CACTIDIR%%/install/upgrades/1_2_5.php
@@ -4039,6 +4066,7 @@
 %%CACTIDIR%%/lib/poller.php
 %%CACTIDIR%%/lib/reports.php
 %%CACTIDIR%%/lib/rrd.php
+%%CACTIDIR%%/lib/rrdcheck.php
 %%CACTIDIR%%/lib/snmp.php
 %%CACTIDIR%%/lib/snmpagent.php
 %%CACTIDIR%%/lib/sort.php
@@ -4072,6 +4100,7 @@
 %%CACTIDIR%%/locales/LC_MESSAGES/ru-RU.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/sv-SE.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/tr-TR.mo
+%%CACTIDIR%%/locales/LC_MESSAGES/uk-UA.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/vi-VN.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/zh-CN.mo
 %%CACTIDIR%%/locales/LC_MESSAGES/zh-TW.mo
@@ -4098,16 +4127,19 @@
 %%CACTIDIR%%/locales/po/ru-RU.po
 %%CACTIDIR%%/locales/po/sv-SE.po
 %%CACTIDIR%%/locales/po/tr-TR.po
+%%CACTIDIR%%/locales/po/uk-UA.po
 %%CACTIDIR%%/locales/po/vi-VN.po
 %%CACTIDIR%%/locales/po/zh-CN.po
 %%CACTIDIR%%/locales/po/zh-TW.po
 %%CACTIDIR%%/locales/update-pot.sh
 %%CACTIDIR%%/logout.php
 %%CACTIDIR%%/managers.php
+%%CACTIDIR%%/mibs/.htaccess
 %%CACTIDIR%%/mibs/CACTI-BOOST-MIB
 %%CACTIDIR%%/mibs/CACTI-MIB
 %%CACTIDIR%%/mibs/CACTI-SNMPAGENT-MIB
 %%CACTIDIR%%/mibs/index.php
+%%CACTIDIR%%/package_import.php
 %%CACTIDIR%%/permission_denied.php
 %%CACTIDIR%%/plugins.php
 %%CACTIDIR%%/plugins/index.php
@@ -4120,6 +4152,7 @@
 %%CACTIDIR%%/poller_realtime.php
 %%CACTIDIR%%/poller_recovery.php
 %%CACTIDIR%%/poller_reports.php
+%%CACTIDIR%%/poller_rrdcheck.php
 %%CACTIDIR%%/poller_spikekill.php
 %%CACTIDIR%%/pollers.php
 %%CACTIDIR%%/remote_agent.php
@@ -4141,8 +4174,11 @@
 %%CACTIDIR%%/resource/snmp_queries/interface.xml
 %%CACTIDIR%%/resource/snmp_queries/net-snmp_devio.xml
 %%CACTIDIR%%/resource/snmp_queries/net-snmp_disk.xml
+%%CACTIDIR%%/rrdcheck.php
 %%CACTIDIR%%/rrdcleaner.php
+%%CACTIDIR%%/run
 %%CACTIDIR%%/script_server.php
+%%CACTIDIR%%/scripts/.htaccess
 %%CACTIDIR%%/scripts/3com_cable_modem.pl
 %%CACTIDIR%%/scripts/cacti_user_stats.php
 %%CACTIDIR%%/scripts/diskfree.pl
@@ -4163,6 +4199,7 @@
 %%CACTIDIR%%/scripts/ss_host_cpu.php
 %%CACTIDIR%%/scripts/ss_host_disk.php
 %%CACTIDIR%%/scripts/ss_hstats.php
+%%CACTIDIR%%/scripts/ss_multicpu_avg.php
 %%CACTIDIR%%/scripts/ss_net_snmp_disk_bytes.php
 %%CACTIDIR%%/scripts/ss_net_snmp_disk_io.php
 %%CACTIDIR%%/scripts/ss_poller.php

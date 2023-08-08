@@ -23,7 +23,6 @@ man/zh/man1/nmap.1.gz
 %%SSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
-%%DATADIR%%/nmap-payloads
 %%DATADIR%%/nmap-protocols
 %%DATADIR%%/nmap-rpc
 %%DATADIR%%/nmap-service-probes
@@ -90,6 +89,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/data/snmpcommunities.lst
 %%DATADIR%%/nselib/data/ssl-fingerprints
 %%DATADIR%%/nselib/data/targets-ipv6-wordlist
+%%DATADIR%%/nselib/data/tftp-fingerprints.lua
 %%DATADIR%%/nselib/data/tftplist.txt
 %%DATADIR%%/nselib/data/usernames.lst
 %%DATADIR%%/nselib/data/vhosts-default.lst
@@ -600,6 +600,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/nat-pmp-info.nse
 %%DATADIR%%/scripts/nat-pmp-mapport.nse
 %%DATADIR%%/scripts/nbd-info.nse
+%%DATADIR%%/scripts/nbns-interfaces.nse
 %%DATADIR%%/scripts/nbstat.nse
 %%DATADIR%%/scripts/ncp-enum-users.nse
 %%DATADIR%%/scripts/ncp-serverinfo.nse
@@ -625,6 +626,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/omp2-brute.nse
 %%DATADIR%%/scripts/omp2-enum-targets.nse
 %%DATADIR%%/scripts/omron-info.nse
+%%DATADIR%%/scripts/openflow-info.nse
 %%DATADIR%%/scripts/openlookup-info.nse
 %%DATADIR%%/scripts/openvas-otp-brute.nse
 %%DATADIR%%/scripts/openwebnet-discovery.nse
@@ -643,6 +645,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/pop3-brute.nse
 %%DATADIR%%/scripts/pop3-capabilities.nse
 %%DATADIR%%/scripts/pop3-ntlm-info.nse
+%%DATADIR%%/scripts/port-states.nse
 %%DATADIR%%/scripts/pptp-version.nse
 %%DATADIR%%/scripts/puppet-naivesigning.nse
 %%DATADIR%%/scripts/qconn-exec.nse
@@ -783,6 +786,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-encryption.nse
 %%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
+%%DATADIR%%/scripts/tftp-version.nse
 %%DATADIR%%/scripts/tls-alpn.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
 %%DATADIR%%/scripts/tls-ticketbleed.nse

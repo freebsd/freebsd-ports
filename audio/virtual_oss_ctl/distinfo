@@ -1,5 +1,5 @@
-TIMESTAMP = 1646059517
-SHA256 (hselasky-virtual_oss_ctl-v1.2.10_GH0.tar.gz) = 40053a134fdb668ad67489b7bfee81c622e06f2f84802da263927ab6da247a4c
-SIZE (hselasky-virtual_oss_ctl-v1.2.10_GH0.tar.gz) = 83096
-SHA256 (hselasky-virtual_oss-v1.2.19_GH0.tar.gz) = 0c023a1fa0fae83bcaa97746ad2662e94f6160001968fd8359d82510f7c85e16
-SIZE (hselasky-virtual_oss-v1.2.19_GH0.tar.gz) = 71450
+TIMESTAMP = 1669557393
+SHA256 (hselasky-virtual_oss_ctl-v1.3.0_GH0.tar.gz) = f5829b9f3af4be045fa65ddf40985bf501ef6a5e2a113cbdd53704d4b14c0704
+SIZE (hselasky-virtual_oss_ctl-v1.3.0_GH0.tar.gz) = 83100
+SHA256 (hselasky-virtual_oss-v1.3.0_GH0.tar.gz) = 6faf812059c2831c10c7bfbf145147133acc58f022f31e561e3c70b4c27e626a
+SIZE (hselasky-virtual_oss-v1.3.0_GH0.tar.gz) = 72081

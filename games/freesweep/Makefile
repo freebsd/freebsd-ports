@@ -3,7 +3,7 @@ PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Minesweeper-style game for text-mode terminals
 WWW=		https://github.com/rwestlund/freesweep
 

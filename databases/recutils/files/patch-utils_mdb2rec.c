@@ -1,6 +1,6 @@
---- utils/mdb2rec.c.orig	2019-01-03 08:47:43 UTC
+--- utils/mdb2rec.c.orig	2022-04-16 15:56:37 UTC
 +++ utils/mdb2rec.c
-@@ -33,7 +33,7 @@
+@@ -26,7 +26,7 @@
  #include <gettext.h>
  #define _(str) gettext (str)
  
@@ -9,7 +9,7 @@
  #include <mdbtools.h>
  
  #include <rec.h>
-@@ -472,16 +472,14 @@ process_mdb (void)
+@@ -427,14 +427,12 @@ process_mdb (void)
    if (!db)
      recutl_out_of_memory ();
  
@@ -19,10 +19,8 @@
 -
    mdb = mdb_open (mdb2rec_mdb_file, MDB_NOFLAGS);
    if (!mdb)
-     {
-       recutl_fatal (_("could not open file %s\n"),
-                     mdb2rec_mdb_file);
-     }
+     recutl_fatal (_("could not open file %s\n"),
+                   mdb2rec_mdb_file);
 +
 +  mdb_set_date_fmt (mdb, "%Y-%m-%dT%H:%M:%S%z"); /* ISO 8601 */
  

@@ -1,6 +1,6 @@
---- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2022-01-13 18:49:34 UTC
+--- src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c.orig	2022-07-19 20:51:58 UTC
 +++ src/VBox/Additions/freebsd/vboxvfs/vboxvfs_vnops.c
-@@ -14,228 +14,1362 @@
+@@ -14,228 +14,1364 @@
   * VirtualBox OSE distribution. VirtualBox OSE is distributed in the
   * hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
   */
@@ -1413,9 +1413,11 @@
 +				if (error != 0)
 +					goto out;
 +
++#if __FreeBSD_version < 1400068
 +				/* Keep the component name in the buffer for
 +				 * future uses. */
 +				cnp->cn_flags |= SAVENAME;
++#endif
 +
 +				error = EJUSTRETURN;
 +			} else

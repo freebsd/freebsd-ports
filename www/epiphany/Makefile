@@ -1,6 +1,6 @@
 PORTNAME=	epiphany
 PORTVERSION=	42.4
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -37,7 +37,7 @@ RUN_DEPENDS=	gnome-icon-theme-symbolic>=0:x11-themes/gnome-icon-theme-symbolic \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome \
-		libarchive localbase:ldflags meson pkgconfig python:3.4+ \
+		libarchive localbase:ldflags meson pkgconfig python \
 		shebangfix sqlite tar:xz xorg
 
 CPE_VENDOR=	gnome

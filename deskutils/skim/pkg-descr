@@ -1,0 +1,4 @@
+skim is is a general fuzzy finder that saves time.
+
+skim provides a single executable: `sk`. Anywhere who would want to use
+`grep` should try `sk` instead.

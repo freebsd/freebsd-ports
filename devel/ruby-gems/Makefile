@@ -1,5 +1,5 @@
 PORTNAME=	gems
-PORTVERSION=	3.3.22
+PORTVERSION=	3.4.17
 CATEGORIES=	devel ruby
 MASTER_SITES=	https://rubygems.org/rubygems/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,10 +15,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/MIT.txt
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
-
-USES=		cpe tar:tgz
-USE_RUBY=	yes
+USES=		cpe ruby tar:tgz
 
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_ENV=	GEM_HOME=${STAGEDIR}${PREFIX}/${GEMS_BASE_DIR}
@@ -53,7 +50,6 @@ DOCS_VARS_OFF=	RUBY_SETUP_OPTIONS+="--no-ri --no-rdoc"
 
 post-extract:
 	@${RM} -r ${WRKSRC}/bundler
-	@${RM} -r ${WRKSRC}/lib/rubygems/ssl_certs
 	@${FIND} ${WRKSRC} -name .document -delete
 
 post-patch:

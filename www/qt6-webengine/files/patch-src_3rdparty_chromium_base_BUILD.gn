@@ -1,0 +1,149 @@
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2023-03-28 19:45:02 UTC
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -164,7 +164,7 @@ buildflag_header("ios_cronet_buildflags") {
+   flags = [ "CRONET_BUILD=$is_cronet_build" ]
+ }
+ 
+-enable_message_pump_epoll = is_linux || is_chromeos || is_android
++enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
+ buildflag_header("message_pump_buildflags") {
+   header = "message_pump_buildflags.h"
+   header_dir = "base/message_loop"
+@@ -1050,7 +1050,7 @@ jumbo_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "profiler/stack_base_address_posix.cc",
+         "profiler/stack_base_address_posix.h",
+@@ -1061,6 +1061,14 @@ jumbo_component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_bsd) {
++      sources += [
++        "profiler/stack_base_address_posix.cc",
++        "profiler/stack_base_address_posix.h",
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   jumbo_excluded_sources = [
+@@ -1428,7 +1436,6 @@ jumbo_component("base") {
+       "process/process_metrics_linux.cc",
+       "threading/platform_thread_linux.cc",
+     ]
+-    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
+   }
+ 
+   if (is_linux || is_chromeos || is_android || is_fuchsia) {
+@@ -1604,7 +1611,7 @@ jumbo_component("base") {
+       ]
+       configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
+     }
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_bsd)) {
+       sources += [
+         "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
+         "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1658,7 +1665,7 @@ jumbo_component("base") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -2236,6 +2243,42 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_inotify.cc",
++      "files/file_util_linux.cc",
++      "files/scoped_file_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++    ]
++  }
++
++  if (is_openbsd) {
++    sources += [
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -2333,7 +2376,7 @@ jumbo_component("base") {
+   }
+ 
+   if (dep_libevent) {
+-    deps += [ "//third_party/libevent" ]
++    public_deps += [ "//third_party/libevent" ]
+   }
+ 
+   if (use_libevent) {
+@@ -3601,7 +3644,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3647,7 +3690,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
+       "posix/unix_domain_socket_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "profiler/stack_base_address_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3658,7 +3701,7 @@ test("base_unittests") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -3850,7 +3893,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",

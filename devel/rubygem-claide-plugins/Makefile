@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-cork>=0:devel/rubygem-cork \
 		rubygem-open4>=1.3<2:devel/rubygem-open4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

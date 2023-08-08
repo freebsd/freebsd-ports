@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/gn_run_binary.py.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/build/gn_run_binary.py.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/build/gn_run_binary.py
-@@ -19,7 +19,7 @@ path = './' + sys.argv[1]
+@@ -24,7 +24,7 @@ args = [path] + sys.argv[2:]
  # The rest of the arguments are passed directly to the executable.
  args = [path] + sys.argv[2:]
  

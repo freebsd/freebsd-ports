@@ -1,5 +1,0 @@
-bin/gen-data
-bin/super-smack
-%%DATADIR%%/select-key.smack
-%%DATADIR%%/update-select.smack
-@dir /var/smack-data

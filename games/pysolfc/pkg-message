@@ -34,7 +34,7 @@ currently selected options for existing users.  If you want to use the new
 settings, you can delete or rename your options.cfg file.
 
 Also note that because of these changes, upgrading your version of PySolFC
-Cardsets is required even if you’re using the minimal package.  If you are
+Cardsets is required even if you're using the minimal package.  If you are
 installing from pkg/ports, this will be handled automatically.
 
 If you're using the larger collection of cardsets, please use the following

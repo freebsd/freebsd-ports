@@ -1,3 +1,5 @@
-TIMESTAMP = 1624189697
+TIMESTAMP = 1678535597
 SHA256 (GoogleContainerTools-container-diff-v0.17.0_GH0.tar.gz) = b1d909c4eff0e3355ba45516daddef0adfa4cdcd0c8b41863060c66f524353f9
 SIZE (GoogleContainerTools-container-diff-v0.17.0_GH0.tar.gz) = 2565245
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234

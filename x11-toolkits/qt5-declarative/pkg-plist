@@ -733,6 +733,8 @@
 %%QT_INCDIR%%/QtQuickShapes/QtQuickShapesVersion
 %%QT_INCDIR%%/QtQuickShapes/qquickshapesglobal.h
 %%QT_INCDIR%%/QtQuickShapes/qtquickshapesversion.h
+%%QT_INCDIR%%/QtQuickWidgets/%%FULLVER%%/QtQuickWidgets/private/qaccessiblequickwidget_p.h
+%%QT_INCDIR%%/QtQuickWidgets/%%FULLVER%%/QtQuickWidgets/private/qaccessiblequickwidgetfactory_p.h
 %%QT_INCDIR%%/QtQuickWidgets/%%FULLVER%%/QtQuickWidgets/private/qquickwidget_p.h
 %%QT_INCDIR%%/QtQuickWidgets/QQuickWidget
 %%QT_INCDIR%%/QtQuickWidgets/QtQuickWidgets

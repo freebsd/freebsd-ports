@@ -1,6 +1,6 @@
 PORTNAME=	concurrencpp
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	0.1.4
+DISTVERSION=	0.1.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +10,7 @@ WWW=		https://github.com/David-Haim/concurrencpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN_FreeBSD_12=	fatal error: 'semaphore' file not found (missing C++ include <semaphore>)
-
-USES=		cmake compiler:c++17-lang # should be compiler:c++20-lang
+USES=		cmake compiler:c++20-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	David-Haim
@@ -21,11 +19,9 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>
 
-.if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1300523
-BUILD_DEPENDS=	llvm13>0:devel/llvm13
-CPP=		${LOCALBASE}/bin/clang-cpp13
-CC=		${LOCALBASE}/bin/clang13
-CXX=		${LOCALBASE}/bin/clang++13
+.if ${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc
+CXX=		clang++${LLVM_VERSION}
+USES+=		llvm:min=16
 .endif
 
 do-test: # same as recommended in https://github.com/David-Haim/concurrencpp#building-installing-and-testing

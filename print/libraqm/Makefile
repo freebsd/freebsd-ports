@@ -1,5 +1,5 @@
 PORTNAME=	libraqm
-DISTVERSION=	0.9.0
+DISTVERSION=	0.10.1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/HOST-Oman/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	raqm-${DISTVERSION}
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2
 
-USES=		meson pkgconfig python:3.7+,test tar:xz
+USES=		meson pkgconfig python:test tar:xz
 
 USE_LDCONFIG=	yes
 

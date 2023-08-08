@@ -1,2 +1,12 @@
-Squeekboard is a virtual keyboard supporting Wayland, built primarily
-for the Librem 5 phone.
+Squeekboard is a keyboard-shaped input method supporting Wayland,
+built primarily for the Librem 5 phone.
+
+It squeaks because some Rust got inside.
+
+Features:
+- GTK3
+- Custom keyboard layouts defined in yaml
+- Input purpose dependent keyboard layouts
+- DBus interface to show and hide
+- Use Wayland input method protocol to submit text
+- Use Wayland virtual keyboard protocol

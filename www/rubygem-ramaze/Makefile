@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-innate>=2012.12:www/rubygem-innate \
 		rubygem-rake>=0:devel/rubygem-rake
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/ramaze

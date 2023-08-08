@@ -1,9 +1,9 @@
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.4.2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/ \
-		https://ftp.osuosl.org/pub/xiph/releases/vorbis/
+MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Play, encode, and manage Ogg Vorbis files
@@ -15,18 +15,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libao.so:audio/libao \
 		libcurl.so:ftp/curl \
 		libFLAC.so:audio/flac \
-		libkate.so:multimedia/libkate \
 		libogg.so:audio/libogg \
 		libopusfile.so:audio/opusfile \
 		libspeex.so:audio/speex \
 		libvorbis.so:audio/libvorbis
 
-USES=		cpe iconv pkgconfig
+USES=		cpe iconv localbase:ldflags pkgconfig
 CPE_VENDOR=	xiph
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--without-kate
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

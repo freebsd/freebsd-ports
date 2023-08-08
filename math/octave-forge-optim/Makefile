@@ -1,34 +1,26 @@
 PORTNAME=	octave-forge-optim
 PORTVERSION=	1.6.2
+PORTREVISION=	2
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	Parts
 LICENSE_NAME=	See individual files for licenses
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
+RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics \
+		${OCTAVE_TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
+USES=		octave shebangfix
 
-RUN_DEPENDS+=	${TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics
-RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
-
-GNU_CONFIGURE=	yes
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-USES+=		shebangfix
 SHEBANG_FILES=	*.pl
 
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

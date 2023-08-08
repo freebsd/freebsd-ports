@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-hashie>=0:devel/rubygem-hashie \
 		rubygem-json>=0:devel/rubygem-json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

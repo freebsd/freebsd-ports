@@ -1,6 +1,10 @@
 PORTNAME=	arcan
-DISTVERSION=	0.6.2
+DISTVERSION=	0.6.2.1
+PORTREVISION=	2
 CATEGORIES=	multimedia
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9b807ac75c6f.patch:-p2 # https://github.com/letoram/arcan/issues/258
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
@@ -37,11 +41,10 @@ OPTIONS_SUB=	yes
 ESPEAK_LIB_DEPENDS=	libespeak-ng.so:audio/espeak-ng
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-MANPAGES_USE=		RUBY=yes
-MANPAGES_VARS=		RUBY_NO_RUN_DEPENDS=yes
+MANPAGES_USES=		ruby:build
 
 LUAJIT_DESC=		Use LuaJIT instead of standard Lua
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51
 LUAJIT_CMAKE_BOOL_OFF=	DISABLE_JIT
 
@@ -66,6 +69,7 @@ UVC_CMAKE_BOOL=		FSRV_DECODE_UVC
 VNC_DESC=		VNC client/server support
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 			libxcb-icccm.so:x11/xcb-util-wm \

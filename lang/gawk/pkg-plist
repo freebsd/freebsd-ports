@@ -60,6 +60,13 @@ share/awk/shellquote.awk
 share/awk/strtonum.awk
 share/awk/walkarray.awk
 share/awk/zerofile.awk
+share/info/gawk_api-figure1.png
+share/info/gawk_api-figure2.png
+share/info/gawk_api-figure3.png
+share/info/gawk_array-elements.png
+share/info/gawk_general-program.png
+share/info/gawk_process-flow.png
+share/info/gawk_statist.jpg
 %%NLS%%share/locale/bg/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gawk.mo

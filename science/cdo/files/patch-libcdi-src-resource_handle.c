@@ -1,6 +1,6 @@
---- libcdi/src/resource_handle.c.orig	2022-01-21 08:38:53 UTC
+--- libcdi/src/resource_handle.c.orig	2023-04-16 12:23:50 UTC
 +++ libcdi/src/resource_handle.c
-@@ -209,12 +209,14 @@ static void
+@@ -288,12 +288,14 @@ static void
  listInitialize(void)
  {
  #if defined(HAVE_LIBPTHREAD)

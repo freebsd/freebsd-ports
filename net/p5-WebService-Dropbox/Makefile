@@ -1,5 +1,6 @@
 PORTNAME=	WebService-Dropbox
 PORTVERSION=	2.09
+PORTREVISION=	2
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,9 +30,9 @@ OPTIONS_DEFINE=	RECOMMENDED
 OPTIONS_DEFAULT=RECOMMENDED
 RECOMMENDED_DESC=	Recommended dependencies by upstream
 
-RECOMMENDED_BUILD_DEPENDS=	p5-IO-Socket-SSL>=2.048:security/p5-IO-Socket-SSL \
+RECOMMENDED_BUILD_DEPENDS=	p5-Furl>=3.11:www/p5-Furl \
+				p5-IO-Socket-SSL>=2.048:security/p5-IO-Socket-SSL \
 				p5-JSON-XS>=3.03:converters/p5-JSON-XS \
 				p5-Software-License>=0:misc/p5-Software-License
-#				p5-Furl>=3.11:www/p5-Furl
 
 .include <bsd.port.mk>

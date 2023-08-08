@@ -1,0 +1,15 @@
+Black plugin for the Python LSP Server.
+
+* This plugin will disable the yapf and autopep8 plugins if installed.
+* python-lsp-black can either format an entire file or just the selected text.
+* The code will only be formatted if it is syntactically valid Python.
+* Text selections are treated as if they were a separate Python file.
+  Unfortunately this means you can't format an indented block of code.
+* python-lsp-black will use your project's pyproject.toml if it has one.
+* python-lsp-black only officially supports the latest stable version of
+  black. An effort is made to keep backwards-compatibility but older black
+  versions will not be actively tested.
+* The plugin can cache the black configuration that applies to each Python file,
+  this improves performance of the plugin. When configuration caching is
+  enabled any changes to black's configuration will need the LSP server to be
+  restarted. Configuration caching can be disabled with the cache_config option.

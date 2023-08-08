@@ -2,7 +2,7 @@ PORTNAME=	powerline-fonts
 PORTVERSION=	0.0.0.2020.08.28
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fixed width sans fonts for use with powerline
 WWW=		https://github.com/powerline/fonts
 

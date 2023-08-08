@@ -1,6 +1,6 @@
 PORTNAME=	photofilmstrip
 PORTVERSION=	3.7.0
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,10 +17,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR
 RUN_DEPENDS=	mencoder:multimedia/mencoder \
 		mplayer:multimedia/mplayer
 
-USES=		python:3.6+ gettext gstreamer
+USES=		python gettext gstreamer
 USE_GSTREAMER=	jpeg
 USE_PYTHON=	distutils
-USE_WX=		3.1
+USE_WX=		3.2
 WX_COMPS=	python:lib
 ALL_TARGET=	compile
 NO_ARCH=	yes

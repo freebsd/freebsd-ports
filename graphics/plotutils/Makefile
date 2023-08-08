@@ -13,15 +13,15 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake libtool xorg	# parallel builds are broken with bmake(1)
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
+USES=		gmake libtool localbase:ldflags xorg	# parallel builds are broken with bmake(1)
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
-TEST_TARGET=	check
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
+
+TEST_TARGET=	check
 
 INFO=		libxmi plotutils
 

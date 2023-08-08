@@ -12,10 +12,11 @@ WWW=		https://icculus.org/smpeg/
 LICENSE=	MIT LGPL20+
 LICENSE_COMB=	multi
 
+USES=		compiler:features libtool sdl
+
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CFLAGS+=	${COMPILER_FEATURES:Mc++11:C/.+/-Wno-error=narrowing/}
-USES=		compiler:features libtool sdl
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes
 
@@ -28,6 +29,12 @@ CONFIGURE_ARGS=	--enable-mmx
 
 PLAYMPEG_CONFLICTS_INSTALL=	smpeg
 PLAYMPEG_VARS=	LICENSE+=GPLv2+
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Dregister=
+.endif
 
 post-patch-PLAYMPEG-off:
 	@${REINPLACE_CMD} -e '/^bin_PROGRAMS =/s/plaympeg$$(EXEEXT)// ; \

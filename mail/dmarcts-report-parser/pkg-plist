@@ -1,0 +1,5 @@
+bin/dmarcts-report-parser.pl
+@sample etc/dmarcts-report-parser.conf.sample
+etc/periodic/daily/667.dmarcts-report-parser
+%%DATADIR%%/dbx_Pg.pl
+%%DATADIR%%/dbx_mysql.pl

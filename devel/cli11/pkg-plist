@@ -13,6 +13,13 @@ include/CLI/Timer.hpp
 include/CLI/TypeTools.hpp
 include/CLI/Validators.hpp
 include/CLI/Version.hpp
+include/CLI/impl/App_inl.hpp
+include/CLI/impl/Config_inl.hpp
+include/CLI/impl/Formatter_inl.hpp
+include/CLI/impl/Option_inl.hpp
+include/CLI/impl/Split_inl.hpp
+include/CLI/impl/StringTools_inl.hpp
+include/CLI/impl/Validators_inl.hpp
 share/cmake/CLI11/CLI11Config.cmake
 share/cmake/CLI11/CLI11ConfigVersion.cmake
 share/pkgconfig/CLI11.pc

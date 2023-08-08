@@ -1,3 +1,5 @@
 TIMESTAMP = 1634083456
 SHA256 (alsa-project-alsa-plugins-v1.2.2_GH0.tar.gz) = 1872622227c474db9db57bf5b6ec91bbef391f9750e9d64d00d05af29f579e1a
 SIZE (alsa-project-alsa-plugins-v1.2.2_GH0.tar.gz) = 121998
+SHA256 (8a3c0d795fbe.patch) = 5772b954c166cf3c148872a405b21476039193b06fb2e834c4cc5a855325d8bf
+SIZE (8a3c0d795fbe.patch) = 6946

@@ -1,0 +1,13 @@
+vectorised math:
+ - A collection of fast and inline implementations of mathematical functions.
+ - The functions can be used in autovectorised loops.
+ - Double and single precision implementations are available.
+ - No overhead present, no intrinsics used.
+ - A scalar (T(T)) and array signature (void(const unsigned int,T*,T*))
+   are provided.
+
+Born and developed at CERN, it is used, among the others, by LHC
+experiments and the Geant4 simulation toolkit.
+
+Much of the VDT code is inspired by the well known Cephes mathematical
+library.

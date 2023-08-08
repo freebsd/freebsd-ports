@@ -1,9 +1,9 @@
---- CMakeLists.txt.orig	2021-07-02 16:36:49 UTC
+--- CMakeLists.txt.orig	2023-04-07 16:52:01 UTC
 +++ CMakeLists.txt
-@@ -517,9 +517,9 @@ endforeach()
+@@ -163,9 +163,9 @@ foreach(CFGNAME ${CMAKE_CONFIGURATION_TYPES})
+   set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${CFGNAME} ${CMAKE_BINARY_DIR}/lib)
+ endforeach()
  
- # Find Lua interpreter
- include(LuaHelpers)
 -set(LUA_DEPENDENCIES lpeg mpack bit)
 +set(LUA_DEPENDENCIES lpeg bit)
  if(NOT LUA_PRG)

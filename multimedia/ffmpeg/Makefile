@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
-PORTVERSION=	4.4.2
-PORTREVISION=	9
+PORTVERSION=	6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -28,28 +28,30 @@ USE_PERL5=	build
 SHEBANG_FILES=	doc/texi2pod.pl
 NOPRECIOUSMAKEVARS=	yes # ARCH
 
-PORTSCOUT=	limit:^4\.
+PORTSCOUT=	limit:^6\.
 
 # Option CHROMAPRINT disabled, it cannot work and people are baffled.
 OPTIONS_DEFINE=	ALSA AMR_NB AMR_WB AOM ARIBB24 ASM ASS BS2B CACA CDIO \
 		CODEC2 DAV1D DAVS2 DC1394 DEBUG DOCS DRM FDK_AAC FLITE \
 		FONTCONFIG FREETYPE FREI0R FRIBIDI GLSLANG GME GSM ICONV ILBC \
-		JACK KLVANC KVAZAAR LADSPA LAME LENSFUN LIBBLURAY LIBRSVG2 \
-		LIBXML2 LTO LV2 MODPLUG MYSOFA OPENAL OPENCL OPENGL \
+		JACK JXL KLVANC KVAZAAR LADSPA LAME LCMS2 LENSFUN LIBBLURAY LIBPLACEBO LIBRSVG2 \
+		LIBXML2 LTO LV2 MODPLUG MYSOFA NETWORK NVENC OPENAL OPENCL OPENGL \
 		OPENH264 OPENJPEG OPENMPT OPENVINO OPTIMIZED_CFLAGS OPUS POCKETSPHINX \
-		PULSEAUDIO RAV1E RABBITMQ RIST RTCPU RUBBERBAND SDL SMB SNAPPY \
+		PULSEAUDIO RAV1E RABBITMQ RIST RTCPU RUBBERBAND SDL SHADERC SMB SNAPPY \
 		SNDIO SOXR SPEEX SRT SSH SVTAV1 SVTHEVC SVTVP9 TENSORFLOW \
 		TESSERACT THEORA TWOLAME UAVS3D V4L VAAPI VAPOURSYNTH VDPAU VIDSTAB \
 		VMAF VO_AMRWBENC VORBIS VPX VULKAN WEBP X264 X265 \
 		XAVS2 XCB XVID XVIDEO ZIMG ZMQ ZVBI
 # intel-media-sdk only for i386/amd64
-OPTIONS_DEFINE_amd64=	MFX
+OPTIONS_DEFINE_amd64=	MFX VPL
 OPTIONS_DEFINE_i386=	MFX
 
 OPTIONS_DEFAULT=	AOM ASM ASS DAV1D DRM FONTCONFIG FREETYPE FREI0R GMP \
-			GNUTLS ICONV LAME LIBXML2 OPTIMIZED_CFLAGS OPUS RTCPU \
-			V4L VAAPI VDPAU VMAF VORBIS VPX WEBP X264 X265 XCB
-OPTIONS_DEFAULT_amd64=	SVTAV1
+			GNUTLS ICONV JXL LAME LCMS2 LIBPLACEBO LIBXML2 NETWORK \
+			OPTIMIZED_CFLAGS OPUS RTCPU SVTAV1 V4L VAAPI VDPAU VMAF \
+			VORBIS VPX VULKAN WEBP X264 X265 XCB
+OPTIONS_DEFAULT_amd64=	NVENC
+OPTIONS_DEFAULT_i386=	NVENC
 
 # i386 is too register-starved for LTO (PR257124)
 OPTIONS_EXCLUDE_i386=	LTO
@@ -77,11 +79,6 @@ OPTIONS_EXCLUDE+=	KLVANC
 .if !exists(${.CURDIR:H:H}/science/openvino)
 # https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/ff37ebaf30e6
 OPTIONS_EXCLUDE+=	OPENVINO
-.endif
-
-.if !exists(${.CURDIR:H:H}/science/tensorflow)
-# https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/d8c0bbb0aa4
-OPTIONS_EXCLUDE+=	TENSORFLOW
 .endif
 
 OPTIONS_RADIO=	RTMP SSL
@@ -112,7 +109,9 @@ LICENSE_DESC=	Licensing options
 LV2_DESC=	LV2 audio filtering
 MFX_DESC=	Intel MediaSDK (aka Quick Sync Video)
 MYSOFA_DESC=	SOFAlizer binaural filter
+NETWORK_DESC=	Networking support
 NONFREE_DESC=	Allow use of nonfree code
+NVENC_DESC=	NVIDIA decoder/encoder with CUDA support
 OPENMPT_DESC=	Decoding tracked files via libopenmpt
 OPENH264_DESC=	H.264 video codec support via OpenH264
 OPENVINO_DESC=	OpenVINO as a DNN module backend for DNN based filters like dnn_processing
@@ -123,10 +122,12 @@ RIST_DESC=	Reliable Internet Stream Transport protocol via librist
 RUBBERBAND_DESC=Time-stretching and pitch-shifting with librubberband
 RTCPU_DESC=	Detect CPU capabilities at runtime
 RTMP_DESC=	RTMP(T)E protocol support
+SHADERC_DESC=	GLSL->SPIRV compilation via libshaderc
 SRT_DESC=	Haivision SRT protocol via libsrt
 SVTAV1_DESC=	AV1 encoding via SVT-AV1
 SVTHEVC_DESC=	HEVC encoding via SVT-HEVC
 SVTVP9_DESC=	VP9 encoding via SVT-VP9
+LIBPLACEBO_DESC=GPU filters from libplacebo
 LIBRTMP_DESC=	${RTMP_DESC} via librtmp
 TENSORFLOW_DESC=TensorFlow as a DNN module backend for DNN based filters like sr
 TESSERACT_DESC=	Optical Character Recognition via Tesseract
@@ -135,6 +136,7 @@ UAVS3D_DESC=	AVS3 decoding via libuavs3d
 VAPOURSYNTH_DESC=	VapourSynth demuxer
 VIDSTAB_DESC=	Video stabilization filter
 VMAF_DESC=	VMAF filter via libvmaf
+VPL_DESC=	Intel oneVPL (aka Quick Sync Video)
 VULKAN_DESC=	Vulkan filters
 XAVS2_DESC=	AVS2 encoding via libxavs2
 XCB_DESC=	X11 grabbing using XCB
@@ -283,6 +285,10 @@ ILBC_CONFIGURE_ENABLE=	libilbc
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	libjack
 
+# jxl
+JXL_LIB_DEPENDS=	libjxl.so:graphics/libjxl
+JXL_CONFIGURE_ENABLE=	libjxl
+
 # klvanc
 KLVANC_LIB_DEPENDS=	libklvanc.so:multimedia/libklvanc
 KLVANC_CONFIGURE_ENABLE=	libklvanc
@@ -300,6 +306,10 @@ LADSPA_CONFIGURE_ENABLE=	ladspa
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
+# lcms2
+LCMS2_LIB_DEPENDS=	liblcms2.so:graphics/lcms2
+LCMS2_CONFIGURE_ENABLE=	lcms2
+
 # lensfun
 LENSFUN_LIB_DEPENDS=	liblensfun.so:graphics/lensfun
 LENSFUN_CONFIGURE_ENABLE=	liblensfun
@@ -307,6 +317,11 @@ LENSFUN_CONFIGURE_ENABLE=	liblensfun
 # libbluray
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CONFIGURE_ENABLE=	libbluray
+
+# libplacebo
+LIBPLACEBO_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo
+LIBPLACEBO_CONFIGURE_ENABLE=	libplacebo
+LIBPLACEBO_IMPLIES=	VULKAN
 
 # librsvg
 LIBRSVG2_USES=			gnome
@@ -347,6 +362,13 @@ MODPLUG_CONFIGURE_ENABLE=	libmodplug
 # mysofa
 MYSOFA_LIB_DEPENDS=	libmysofa.so:audio/libmysofa
 MYSOFA_CONFIGURE_ENABLE=	libmysofa
+
+# network
+NETWORK_CONFIGURE_ENABLE=	network
+
+# nvenc
+NVENC_BUILD_DEPENDS=	ffnvcodec-headers>=11.1.5.2:multimedia/ffnvcodec-headers
+NVENC_CONFIGURE_ENABLE=	nvenc
 
 # OpenAL
 OPENAL_LIB_DEPENDS=	libopenal.so:audio/openal-soft
@@ -427,6 +449,11 @@ SDL_USES=		sdl
 SDL_USE=		SDL=sdl2
 SDL_CONFIGURE_ENABLE=	sdl2
 
+# shaderc
+SHADERC_LIB_DEPENDS=	libshaderc_shared.so:graphics/shaderc
+SHADERC_CONFIGURE_ENABLE=	libshaderc
+SHADERC_PREVENTS=	GLSLANG
+
 # smbclient
 SMB_USES=		samba:lib
 SMB_CONFIGURE_ENABLE=	libsmbclient
@@ -463,8 +490,8 @@ SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
-SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.0-3-g86b58f77/ffmpeg_plugin/:svthevc
-SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
+SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.1-12-g6cca5b93/ffmpeg_plugin/:svthevc
+SVTHEVC_PATCHFILES=	master-0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTHEVC
@@ -473,14 +500,14 @@ SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
-SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-4-gabd5c59/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-17-g15bd454/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTVP9
 .endif
 
 # tensorflow
-TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/tensorflow
+TENSORFLOW_LIB_DEPENDS=	libtensorflow.so:science/py-tensorflow
 TENSORFLOW_CONFIGURE_ENABLE=	libtensorflow
 
 # tesseract
@@ -530,6 +557,10 @@ VIDSTAB_CONFIGURE_ENABLE=	libvidstab
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	libvorbis
 
+# vpl
+VPL_LIB_DEPENDS=	libvpl.so:multimedia/onevpl
+VPL_CONFIGURE_ENABLE=	libvpl
+
 # vp8
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
 VPX_CONFIGURE_ENABLE=	libvpx
@@ -538,7 +569,7 @@ VPX_CONFIGURE_ENABLE=	libvpx
 VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CONFIGURE_ENABLE=	vulkan
-VULKAN_IMPLIES=		GLSLANG
+VULKAN_IMPLIES=		${"${PORT_OPTIONS:MGLSLANG}":?GLSLANG:SHADERC}
 
 # webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
@@ -597,6 +628,10 @@ INSTALL_TARGET=	install-progs install-doc install-data \
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAKE_ENV+=	V=1
+CFLAGS_armv6=	-Wno-error=int-conversion
+CFLAGS_armv7=	-Wno-error=int-conversion
+CFLAGS_i386=	-Wno-error=int-conversion
+CFLAGS_powerpc=	-Wno-error=int-conversion
 LDFLAGS_aarch64=-Wl,-z,notext
 LDFLAGS_armv6=	-Wl,-z,notext
 LDFLAGS_armv7=	-Wl,-z,notext
@@ -605,13 +640,13 @@ LDFLAGS_i386=	-Wl,-z,notext
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
 		--datadir="${DATADIR}" \
+		--docdir="${DOCSDIR}" \
 		--pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		--disable-static \
 		--disable-libcelt \
 		--enable-shared \
 		--enable-pic \
 		--enable-gpl \
-		--enable-avresample \
 		--cc="${CC}" \
 		--cxx="${CXX}"
 

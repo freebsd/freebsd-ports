@@ -1403,6 +1403,7 @@ share/icons/hicolor/32x32/apps/orca.png
 share/icons/hicolor/48x48/apps/orca.png
 share/icons/hicolor/scalable/apps/orca.svg
 share/icons/hicolor/symbolic/apps/orca-symbolic.svg
+share/locale/ab/LC_MESSAGES/orca.mo
 share/locale/an/LC_MESSAGES/orca.mo
 share/locale/ar/LC_MESSAGES/orca.mo
 share/locale/ast/LC_MESSAGES/orca.mo
@@ -1441,6 +1442,7 @@ share/locale/id/LC_MESSAGES/orca.mo
 share/locale/is/LC_MESSAGES/orca.mo
 share/locale/it/LC_MESSAGES/orca.mo
 share/locale/ja/LC_MESSAGES/orca.mo
+share/locale/ka/LC_MESSAGES/orca.mo
 share/locale/kab/LC_MESSAGES/orca.mo
 share/locale/kk/LC_MESSAGES/orca.mo
 share/locale/kn/LC_MESSAGES/orca.mo

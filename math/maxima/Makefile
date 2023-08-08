@@ -1,6 +1,6 @@
 PORTNAME=	maxima
-PORTVERSION=	5.46.0
-PORTREVISION=	5
+PORTVERSION=	5.47.0
+PORTREVISION=	2
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -27,7 +27,7 @@ GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 
 INFO=		imaxima maxima xmaxima abs_integrate drawutils kovacicODE logic \
-		symplectic_ode
+		nelder_mead symplectic_ode
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*

@@ -17,8 +17,7 @@ RUN_DEPENDS=	rubygem-gtk2>0:x11-toolkits/rubygem-gtk2 \
 		rubygem-gio2>=3.1.0:devel/rubygem-gio2 \
 		${RUBY_SITEARCHLIBDIR}/pasori.so:devel/libpafe-ruby
 
-USE_RUBY=		yes
-USES=		shebangfix
+USES=		ruby shebangfix
 SHEBANG_FILES=	${PORTNAME}
 ruby_OLD_CMD=	/usr/bin/ruby1.9.3
 

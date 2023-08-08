@@ -1,20 +1,21 @@
---- components/feature_engagement/public/feature_constants.h.orig	2022-08-31 12:19:35 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2023-07-16 15:47:57 UTC
 +++ components/feature_engagement/public/feature_constants.h
-@@ -32,7 +32,7 @@ extern const base::Feature kIPHDummyFeature;
- extern const base::Feature kEnableIPH;
+@@ -22,7 +22,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
+ BASE_DECLARE_FEATURE(kIPHDummyFeature);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- extern const base::Feature kIPHDesktopSharedHighlightingFeature;
- extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
- extern const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature;
-@@ -181,7 +181,7 @@ extern const base::Feature kIPHPasswordSuggestionsFeat
- extern const base::Feature kIPHFollowWhileBrowsingFeature;
+ BASE_DECLARE_FEATURE(kIPHAutofillFeedbackNewBadgeFeature);
+ BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
+ BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
+@@ -202,7 +202,8 @@ BASE_DECLARE_FEATURE(kIPHiOSDefaultBrowserVideoPromoTr
  #endif  // BUILDFLAG(IS_IOS)
  
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
-     BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
- extern const base::Feature kIPHAutofillVirtualCardSuggestionFeature;
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || \
++    BUILDFLAG(IS_BSD)
+ BASE_DECLARE_FEATURE(kIPHAutofillExternalAccountProfileSuggestionFeature);
+ BASE_DECLARE_FEATURE(kIPHAutofillVirtualCardSuggestionFeature);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||

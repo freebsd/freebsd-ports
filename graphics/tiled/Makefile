@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=PYTHON DBUS
 OPTIONS_SUB=	yes
 
 PYTHON_DESC=	Enable python plugin
-PYTHON_USES=	pkgconfig python:3.6+
+PYTHON_USES=	pkgconfig python
 PYTHON_QMAKE_OFF=	DISABLE_PYTHON_PLUGIN=yes
 
 DBUS_USE=	QT=dbus

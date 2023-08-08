@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 
 USES=		cpe
-USE_PHP+=	mysqli openssl session hash ctype zlib
+USE_PHP+=	mysqli session ctype zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	APACHE MYSQL_SERVER
 MYSQL_SERVER_DESC=	MySQL server support
 NGINX_DESC=		NGINX web server
 
-APACHE_USES=		apache:run,2.2+ php:web
+APACHE_USES=		apache:run php:web
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 LIGHTTPD_USES=		php:web
 NGINX_RUN_DEPENDS=	nginx:www/nginx

@@ -1,3 +1,3 @@
-mod_auth_openid is an authentication module for the Apache 2 webserver.
+mod_auth_openid is an authentication module for the Apache 2 web server.
 It handles the functions of an OpenID consumer as specified in the OpenID
 2.0 specification.

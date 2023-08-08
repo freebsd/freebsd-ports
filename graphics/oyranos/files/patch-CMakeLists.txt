@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2016-12-09 13:36:53.000000000 +0300
-+++ CMakeLists.txt	2016-12-26 17:57:38.831330000 +0300
-@@ -66,6 +66,10 @@
+--- CMakeLists.txt.orig	2016-12-09 10:36:53 UTC
++++ CMakeLists.txt
+@@ -66,6 +66,10 @@ ENDIF(UNIX)
    ENDIF(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_CLANG)
  ENDIF(UNIX)
  

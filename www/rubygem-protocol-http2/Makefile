@@ -1,5 +1,5 @@
 PORTNAME=	protocol-http2
-PORTVERSION=	0.14.2
+PORTVERSION=	0.15.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-protocol-hpack>=1.4<2:www/rubygem-protocol-hpack \
 		rubygem-protocol-http>=0.18<1:www/rubygem-protocol-http
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

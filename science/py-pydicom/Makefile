@@ -1,5 +1,5 @@
 PORTNAME=	pydicom
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.2
 DISTVERSIONPREFIX=v
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ WWW=		https://github.com/pydicom/pydicom
 
 LICENSE=	MIT
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

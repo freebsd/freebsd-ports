@@ -1,0 +1,20 @@
+--- src/pdf/CMakeLists.txt.orig	2023-07-07 17:40:32 UTC
++++ src/pdf/CMakeLists.txt
+@@ -70,7 +70,7 @@ add_dependencies(docs generate_pdf_attributions)
+ #   TOOLCHAIN SETUP
+ ##
+ 
+-if(LINUX)
++if(LINUX OR FREEBSD)
+     setup_toolchains()
+ endif()
+ 
+@@ -128,7 +128,7 @@ foreach(arch ${archs})
+           strip_absolute_paths_from_debug_symbols=false
+         )
+ 
+-        if(LINUX OR ANDROID)
++        if(LINUX OR ANDROID OR FREEBSD)
+             list(APPEND gnArgArg
+                 is_cfi=false
+                 ozone_auto_platforms=false

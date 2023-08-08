@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
 USES=		compiler:c++11-lang desktop-file-utils ghostscript:x11,run \
-		gl pkgconfig qmake qt:5 tar:bzip2
+		gl pkgconfig qmake qt:5 tar:bzip2 tex
 USE_GL=		gl
 USE_QT=		concurrent core gui network printsupport script widgets \
 		xml buildtools:build

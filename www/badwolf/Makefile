@@ -1,5 +1,6 @@
 PORTNAME=	badwolf
 DISTVERSION=	1.2.2
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://hacktivis.me/releases/
 

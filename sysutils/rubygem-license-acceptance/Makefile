@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-pastel>=0.7<1:devel/rubygem-pastel \
 		rubygem-tty-prompt>=0.20<1:devel/rubygem-tty-prompt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

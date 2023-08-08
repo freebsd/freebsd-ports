@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/xcb-util-keysyms-0.4.0.tar.bz2) = 0ef8490ff1dede52b7de533158547f8b454b241aa3e4dcca369507f66f216dd9
-SIZE (xorg/lib/xcb-util-keysyms-0.4.0.tar.bz2) = 289880
+TIMESTAMP = 1687265311
+SHA256 (xorg/lib/xcb-util-keysyms-0.4.1.tar.xz) = 7c260a5294412aed429df1da2f8afd3bd07b7cba3fec772fba15a613a6d5c638
+SIZE (xorg/lib/xcb-util-keysyms-0.4.1.tar.xz) = 259860

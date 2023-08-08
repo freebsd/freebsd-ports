@@ -12,17 +12,15 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pear php
-USE_PHP=	ctype hash
+USE_PHP=	ctype
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	GETTEXT JSON SIMPLEXML
+OPTIONS_DEFINE=	GETTEXT SIMPLEXML
 GETTEXT_DESC=	Enable GetText support
-JSON_DESC=	Enable JSON support
 SIMPLEXML_DESC=	Enable SimpleXML support
 
 GETTEXT_USE=	PHP=gettext
-JSON_USE=	PHP=json
 SIMPLEXML_USE=	PHP=simplexml
 
 .include <bsd.port.mk>

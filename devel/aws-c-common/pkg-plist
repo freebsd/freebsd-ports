@@ -8,7 +8,6 @@ include/aws/common/atomics_fallback.inl
 include/aws/common/atomics_gnu.inl
 include/aws/common/atomics_gnu_old.inl
 include/aws/common/atomics_msvc.inl
-include/aws/common/bus.h
 include/aws/common/byte_buf.h
 include/aws/common/byte_order.h
 include/aws/common/byte_order.inl
@@ -73,6 +72,7 @@ include/aws/common/task_scheduler.h
 include/aws/common/thread.h
 include/aws/common/thread_scheduler.h
 include/aws/common/time.h
+include/aws/common/uri.h
 include/aws/common/uuid.h
 include/aws/common/xml_parser.h
 include/aws/common/zero.h
@@ -82,6 +82,7 @@ lib/aws-c-common/cmake/aws-c-common-config.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-common/cmake/shared/aws-c-common-targets.cmake
 lib/cmake/AwsCFlags.cmake
+lib/cmake/AwsCRuntime.cmake
 lib/cmake/AwsCheckHeaders.cmake
 lib/cmake/AwsFeatureTests.cmake
 lib/cmake/AwsFindPackage.cmake

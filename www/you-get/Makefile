@@ -1,7 +1,8 @@
 PORTNAME=	you-get
-PORTVERSION=	0.4.1620
+PORTVERSION=	0.4.1650
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dumb downloader that scrapes the web
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

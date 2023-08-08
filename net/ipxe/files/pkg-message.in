@@ -1,6 +1,14 @@
 [
 { type: install
   message: <<EOD
+Should you require overwriting some settings, this port offers you the
+_IPXE_BUILDCFG variable that can be set for you to manage extra build
+configurations - e.g.: add a custom (self-signed) CA certificate to it.
+
+In the default configuration, iPXE will automatically trust the same
+set of certificates as the Firefox web browser. More information about
+iPXE's cryptography support: https://ipxe.org/crypto
+
 The following files have been installed in %%DATADIR%%:
 - ipxe.dsk for creating a bootable floppy disk
 - ipxe.efi-* for loading from EFI
@@ -15,7 +23,7 @@ The following files have been installed in %%DATADIR%%:
   only find and boot the specific NIC device it was chained from
 - snp.efi-* same as snponly but tries to boot all devices
 - {8086100f,808610d3,10222000,15ad07b0}.rom for replacing the
-  VMware PXE ROM.  See http://ipxe.org/howto/vmware for more
+  VMware PXE ROM. See https://ipxe.org/howto/vmware for more
   information.
 EOD
 }

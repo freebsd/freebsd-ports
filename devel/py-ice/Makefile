@@ -10,6 +10,7 @@ BUILD_DEPENDS=	mcpp:devel/mcpp
 LIB_DEPENDS=	libIce.so.${LIB_VRS}:devel/ice
 
 USES=		compiler:c++11-lang python shebangfix
+USE_CXXSTD=	c++14
 USE_PYTHON=	py3kplist
 SLAVE_PORT=	yes
 MASTERDIR=	${.CURDIR}/../ice

@@ -1,10 +1,9 @@
 PORTNAME=	exercism
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.13
-PORTREVISION=	5
+DISTVERSION=	3.2.0
 CATEGORIES=	misc
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	CLI client for exercism.io
 WWW=		https://exercism.io/
 
@@ -13,13 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 USE_GITHUB=	yes
-GH_TUPLE=	exercism:cli:v${PORTVERSION}:DEFAULT \
+# golang:sys was bumped to 0.9.0 to fix the build on riscv64
+GH_TUPLE=	exercism:cli:v${DISTVERSION}:DEFAULT \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
 		davecgh:go-spew:v1.1.0:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		fsnotify:fsnotify:v1.4.2:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:25c4ec802a7d:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:f5079bd7f6f7:golang_net/vendor/golang.org/x/net \
-		golang:sys:fead7900131:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.9.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:3bd178b88a81:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:392dba7d905e:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
@@ -39,10 +39,6 @@ GH_TUPLE=	exercism:cli:v${PORTVERSION}:DEFAULT \
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_TARGET=	./exercism
-GO_BUILDFLAGS=	-ldflags="\
-		-s -w \
-		-X github.com/exercism/cli/cmd.BuildOS=freebsd \
-		-X github.com/exercism/cli/cmd.BuildARCH=${ARCH}"
 
 PLIST_FILES=	bin/exercism
 

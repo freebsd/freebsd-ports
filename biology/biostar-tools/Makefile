@@ -1,5 +1,6 @@
 PORTNAME=	biostar-tools
 PORTVERSION=	1.10.1
+PORTREVISION=	2
 CATEGORIES=	biology python
 
 MAINTAINER=	jwb@FreeBSD.org

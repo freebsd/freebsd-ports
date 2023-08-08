@@ -1,4 +1,4 @@
---- driver/XScreenSaver.ad.in.orig	2021-06-09 15:47:14 UTC
+--- driver/XScreenSaver.ad.in.orig	2022-12-11 20:32:55 UTC
 +++ driver/XScreenSaver.ad.in
 @@ -55,7 +55,7 @@
  *splashDuration:	0:00:05
@@ -8,7 +8,7 @@
 +*ignoreUninstalledPrograms: True
  *authWarningSlack:	20
  
- *textMode:		file
+ *textMode:		url
 @@ -103,7 +103,7 @@
  
  
@@ -34,10 +34,10 @@
 +                                  -label -origin moon			    \n\
 +-				xsnow -bg SkyBlue3 -solidbg		    \n\
 +@GL_KLUDGE@ GL:					fireflies -root                             \n\
- 				maze -root				    \n\
- @GL_KLUDGE@ GL: 				superquadrics -root			    \n\
- 				attraction -root			    \n\
-@@ -602,7 +614,6 @@ XScreenSaver.bourneShell:		/bin/sh
+ 				maze --root				    \n\
+ @GL_KLUDGE@ GL: 				superquadrics --root			    \n\
+ 				attraction --root			    \n\
+@@ -610,7 +622,6 @@ XScreenSaver.bourneShell:		/bin/sh
  *hacks.dangerball.name:     Danger Ball
  *hacks.decayscreen.name:    Decay Screen
  *hacks.deepstars.name:      Deep Stars

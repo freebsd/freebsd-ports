@@ -4,7 +4,7 @@ DISTVERSION=	0.9.64
 PORTREVISION=	1
 CATEGORIES=	accessibility
 
-MAINTAINER=	me@igalic.co
+MAINTAINER=	freebsd@igalic.co
 COMMENT=	Adaptive screen brightness and temperature for Windows and Unix
 WWW=		https://getgammy.com/
 

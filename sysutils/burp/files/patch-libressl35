@@ -1,0 +1,11 @@
+--- src/server/ca.c.orig	2021-05-02 03:15:43 UTC
++++ src/server/ca.c
+@@ -573,7 +573,7 @@ int ca_x509_verify_crl(struct conf **confs,
+ 		revoked=(X509_REVOKED *)
+ 			sk_X509_REVOKED_value(X509_CRL_get_REVOKED(crl), i);
+ 		if(!ASN1_INTEGER_cmp(
+-#if OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L || (defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x30500000L)
+ 			revoked->serialNumber,
+ #else
+ 			X509_REVOKED_get0_serialNumber(revoked),

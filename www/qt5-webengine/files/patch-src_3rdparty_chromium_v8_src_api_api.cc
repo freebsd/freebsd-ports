@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/src/api/api.cc.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/v8/src/api/api.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/v8/src/api/api.cc
-@@ -5653,7 +5653,7 @@ bool v8::V8::Initialize() {
+@@ -5760,7 +5760,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

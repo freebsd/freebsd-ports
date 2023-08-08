@@ -1,9 +1,9 @@
 PORTNAME=	virtual_oss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.21
+DISTVERSION=	1.3.1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual OSS multi device mixer application
 WWW=		https://github.com/hselasky/virtual_oss
 
@@ -11,7 +11,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 
-USES=		tar:bzip2 uidfix
+USES=		uidfix
 USE_RC_SUBR=	virtual_oss
 
 USE_GITHUB=	yes

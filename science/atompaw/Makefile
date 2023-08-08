@@ -1,5 +1,5 @@
 PORTNAME=	atompaw
-DISTVERSION=	4.2.0.1
+DISTVERSION=	4.2.0.3
 CATEGORIES=	science
 MASTER_SITES=	http://users.wfu.edu/natalie/papers/pwpaw/
 
@@ -7,16 +7,21 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for projector augmented wave functions for molecular simulations
 WWW=		https://users.wfu.edu/natalie/papers/pwpaw/
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblapack.so:math/lapack \
 		libblas.so:math/blas
 
 USES=		fortran gmake libtool
 GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS LIBXC
+OPTIONS_DEFAULT=	LIBXC
+
+LIBXC_DESC=		Build with libxc
+LIBXC_CONFIGURE_ENABLE=	libxc
+LIBXC_LIB_DEPENDS=	libxc.so:science/libxc
 
 PORTDOCS=	*
 

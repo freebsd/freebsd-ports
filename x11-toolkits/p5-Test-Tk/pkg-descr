@@ -1,0 +1,18 @@
+Test::Tk aims to assist in the testing of Perl/Tk widgets.
+
+createapp creates a MainWindow widget and places it in the variable $app. It
+sets a timer with delay $delay to start the internal test routine.
+
+starttesting launches the main loop and sets a timer with delay $delay to start
+the internal test routine.
+
+When testing is done the MainWindow is destroyed and the test script continues.
+
+You can set a command line parameter show to test command on the command line.
+eg perl -Mblib t/My-Test.t show. The application will not terminate so you can
+visually inspect it.
+
+It will perform two tests. You need to account for these when you set your
+number of tests.
+
+If you are not on Windows and no XServer is running, all tests will be skipped.

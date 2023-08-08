@@ -1,20 +1,21 @@
 PORTNAME=	gtkglext
 PORTVERSION=	1.2.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL extension to GTK+
-WWW=		http://gtkglext.sourceforge.net/
+WWW=		https://sourceforge.net/projects/gtkglext/ \
+		https://gitlab.gnome.org/Archive/gtkglext
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-GNU_CONFIGURE=	yes
 USES=		gettext gl gmake gnome iconv libtool pathfix pkgconfig \
 		tar:bzip2 xorg
+GNU_CONFIGURE=	yes
 USE_GL=		glu
 USE_GNOME=	gtk20 pangox-compat
 USE_LDCONFIG=	yes

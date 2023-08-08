@@ -1,5 +1,6 @@
 PORTNAME=	libgdiplus
-PORTVERSION=	6.0.4
+PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
@@ -18,8 +19,8 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libfontconfig.so:x11-fonts/fontconfig
 
 GNU_CONFIGURE=	yes
-USES=		cpe gettext-runtime gmake gnome jpeg libtool:keepla pathfix \
-		pkgconfig
+USES=		autoreconf cpe gettext-runtime gmake gnome jpeg libtool:keepla \
+		pathfix pkgconfig
 USE_GNOME=	cairo glib20 pango
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

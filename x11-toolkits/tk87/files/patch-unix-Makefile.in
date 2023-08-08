@@ -9,6 +9,15 @@
  
  # Directory in which to install the demo files:
  DEMO_INSTALL_DIR	= $(INSTALL_ROOT)@DEMO_DIR@
+@@ -220,7 +220,7 @@ TKTEST_EXE		= tktest${EXE_SUFFIX}
+ # with the distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM   = -s
+-INSTALL_STRIP_LIBRARY   = -S -x
++INSTALL_STRIP_LIBRARY   = -S --strip-unneeded
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -772,8 +772,7 @@ INSTALL_DOC_TARGETS = install-doc
  INSTALL_DEV_TARGETS = install-headers
  INSTALL_DEMO_TARGETS = install-demos

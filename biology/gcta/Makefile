@@ -1,6 +1,6 @@
 PORTNAME=	gcta
 DISTVERSION=	1.26.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/:main \
 		https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_VERSION}/:eigen

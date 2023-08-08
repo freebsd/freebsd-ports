@@ -1,5 +1,5 @@
 PORTNAME=	logstash
-PORTVERSION=	7.17.3
+PORTVERSION=	7.17.11
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
@@ -28,6 +28,9 @@ SHEBANG_FILES=	bin/*
 CONFLICTS=	logstash6
 
 NO_BUILD=	yes
+
+PORTSCOUT=	limit:^7
+
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
@@ -42,6 +45,9 @@ LOGSTASH_HOME?=			${PREFIX}/${PORTNAME}
 LOGSTASH_JRUBY_BIN_FILES=	ast gem irb jgem jirb jirb_swing jruby \
 				jruby.bash jruby.sh jrubyc rake rdoc ri testrb
 LOGSTASH_JRUBY_SUBDIR=		vendor/jruby/bin
+
+post-extract:
+	${RM} -rf ${WRKSRC}/jdk.app
 
 post-patch:
 	${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|g' ${WRKSRC}/config/logstash.yml

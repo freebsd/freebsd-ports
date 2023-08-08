@@ -1,7 +1,7 @@
 PORTNAME=	elementpath
-DISTVERSION=	3.0.2
+DISTVERSION=	4.1.5
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xmlschema>=2.0.0:textproc/py-xmlschema@${PY_FLAVOR}
 
-USES=		python:3.7+ pytest
+USES=		python pytest
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

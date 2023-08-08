@@ -1,7 +1,7 @@
 PORTNAME=	requests-ftp
 DISTVERSION=	0.3.1
 CATEGORIES=	ftp python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -11,7 +11,7 @@ WWW=		https://github.com/Lukasa/requests-ftp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

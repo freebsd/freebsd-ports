@@ -1,10 +1,10 @@
 PORTNAME=	password-store
 PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.zx2c4.com/${PORTNAME}/snapshot/
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Stores, retrieves, generates, and synchronizes passwords securely
 WWW=		https://www.passwordstore.org/
 

@@ -1,0 +1,8 @@
+--- Makefile.orig	2022-08-30 10:17:30 UTC
++++ Makefile
+@@ -3,5 +3,3 @@ all:
+ 
+ clean:
+ 	make -C src clean
+-	rm habak
+-

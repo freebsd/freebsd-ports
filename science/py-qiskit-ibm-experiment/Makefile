@@ -1,8 +1,7 @@
 PORTNAME=	qiskit-ibm-experiment
-DISTVERSION=	0.2.5
-PORTREVISION=	1
+DISTVERSION=	0.3.3
 CATEGORIES=	science python # quantum-computing
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # Many tests are skipped: Only runs on staging, see https://github.com/Qiskit/qiskit-ibm-experiment/issues/49
 
 USE_GITHUB=	yes

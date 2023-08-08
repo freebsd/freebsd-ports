@@ -1,5 +1,6 @@
 PORTNAME=	fpylll
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,6 +12,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cython:lang/cython	\
+		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 LIB_DEPENDS=	libfplll.so:math/fplll	\
 		libgmp.so:math/gmp	\
@@ -18,29 +21,32 @@ LIB_DEPENDS=	libfplll.so:math/fplll	\
 		libpari.so:math/pari	\
 		libqd.so:math/qd
 RUN_DEPENDS=	${PYNUMPY}	\
+		${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR}	\
+		${PYTHON_PKGNAMEPREFIX}pythran>0:devel/py-pythran@${PY_FLAVOR}	\
 		${PYTHON_PKGNAMEPREFIX}cysignals>0:devel/py-cysignals@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fplll
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
 
-OPTIONS_DEFINE=		DOCS
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_USES=		gmake
-PORTDOCS=		*
+OPTIONS_DEFINE=		TUTO
+TUTO_DESC=		Build the tutorial
+OPTIONS_SUB=		Yes
+TUTO_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.6,1:textproc/py-sphinx@${PY_FLAVOR}
+TUTO_USES=		gmake
 
 PLIST_SUB=	VER=${PORTVERSION:R}
 
-do-build-DOCS-on:
+do-build-TUTO-on:
 	(cd ${WRKSRC}/docs && ${GMAKE} html)
 
-post-build-DOCS-on:
+post-build-TUTO-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/_build/html/* ${STAGEDIR}${DOCSDIR}
 

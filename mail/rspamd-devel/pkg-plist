@@ -345,7 +345,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/d3pie.min.js
 %%DATADIR%%/www/js/lib/fontawesome.min.js
 %%DATADIR%%/www/js/lib/footable.min.js
-%%DATADIR%%/www/js/lib/jquery-3.6.0.min.js
+%%DATADIR%%/www/js/lib/jquery-3.6.1.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/linenumbers.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js

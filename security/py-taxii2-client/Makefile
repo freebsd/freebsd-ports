@@ -23,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	oasis-open
 GH_PROJECT=	cti-taxii-client
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} pytest-${PYTHON_VER} --cov=taxii2client taxii2client/test/ --cov-report term-missing

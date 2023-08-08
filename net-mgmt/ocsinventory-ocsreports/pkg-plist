@@ -1,5 +1,6 @@
 @sample %%ETCDIR%%/ocsreports.inc.sample
-%%WWWDIR%%/.travis.yml
+%%WWWDIR%%/.jscpd.json
+%%WWWDIR%%/.mega-linter.yml
 %%WWWDIR%%/Changes
 %%WWWDIR%%/Contributors
 %%WWWDIR%%/LICENSE
@@ -76,6 +77,7 @@
 %%WWWDIR%%/crontab/cron_cve_computer.php
 %%WWWDIR%%/crontab/cron_ipdiscover.php
 %%WWWDIR%%/crontab/cron_purge_history.php
+%%WWWDIR%%/crontab/cron_report_notification.php
 %%WWWDIR%%/crontab/cron_wol.php
 %%WWWDIR%%/css/bootstrap-datetimepicker.css
 %%WWWDIR%%/css/bootstrap-formhelpers.css
@@ -88,7 +90,7 @@
 %%WWWDIR%%/css/ocsreports.css
 %%WWWDIR%%/css/onglets.css
 %%WWWDIR%%/css/winclassic.css
-@sample %%WWWDIR%%/dbconfig.inc.php.sample
+%%WWWDIR%%/dbconfig.inc.php.sample
 %%WWWDIR%%/extensions/Readme.md
 %%WWWDIR%%/favicon.ico
 %%WWWDIR%%/files/cve/csv_example.csv
@@ -152,6 +154,12 @@
 %%WWWDIR%%/files/update/7061.sql
 %%WWWDIR%%/files/update/7062.sql
 %%WWWDIR%%/files/update/7063.sql
+%%WWWDIR%%/files/update/7064.sql
+%%WWWDIR%%/files/update/7065.sql
+%%WWWDIR%%/files/update/7066.sql
+%%WWWDIR%%/files/update/7067.sql
+%%WWWDIR%%/files/update/7068.sql
+%%WWWDIR%%/files/update/7069.sql
 %%WWWDIR%%/image/adjustment.png
 %%WWWDIR%%/image/apple-logo.png
 %%WWWDIR%%/image/binary.png
@@ -752,6 +760,7 @@
 %%WWWDIR%%/plugins/computer_detail/cd_sounds/cd_sounds.php
 %%WWWDIR%%/plugins/computer_detail/cd_storages/cd_storages.php
 %%WWWDIR%%/plugins/computer_detail/cd_teledeploy/cd_teledeploy.php
+%%WWWDIR%%/plugins/computer_detail/cd_teledeploymanage/cd_teledeploymanage.php
 %%WWWDIR%%/plugins/computer_detail/cd_unixlocalgroups/cd_unixlocalgroups.php
 %%WWWDIR%%/plugins/computer_detail/cd_unixlocalusers/cd_unixlocalusers.php
 %%WWWDIR%%/plugins/computer_detail/cd_videos/cd_videos.php
@@ -867,7 +876,9 @@
 %%WWWDIR%%/plugins/main_sections/ms_dict/ms_dict.php
 %%WWWDIR%%/plugins/main_sections/ms_doubles/ms_doubles.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_csv.php
+%%WWWDIR%%/plugins/main_sections/ms_export/ms_csv_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_export_ocs.php
+%%WWWDIR%%/plugins/main_sections/ms_export/ms_export_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_soft_csv.php
 %%WWWDIR%%/plugins/main_sections/ms_extensionmanager/ms_extensionmanager.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_custom_groups.php
@@ -886,6 +897,7 @@
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_lock.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_sup.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_tag.php
+%%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_custom_tag_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_multi_search/ms_multi_search.php
 %%WWWDIR%%/plugins/main_sections/ms_regconfig/ms_regconfig.php
 %%WWWDIR%%/plugins/main_sections/ms_regconfig/require/function_regconfig.php
@@ -900,8 +912,8 @@
 %%WWWDIR%%/plugins/main_sections/ms_search_soft/require/fonction.inc.php
 %%WWWDIR%%/plugins/main_sections/ms_server_infos/ms_server_infos.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp/ms_snmp.php
-%%WWWDIR%%/plugins/main_sections/ms_snmp/ms_snmp_detail.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp/require/function_snmp.php
+%%WWWDIR%%/plugins/main_sections/ms_snmp_inventory/ms_snmp_detail.php
 %%WWWDIR%%/plugins/main_sections/ms_snmp_inventory/ms_snmp_inventory.php
 %%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_options_soft_cat.php
 %%WWWDIR%%/plugins/main_sections/ms_soft_cat/ms_soft_cat.php
@@ -924,7 +936,6 @@
 %%WWWDIR%%/plugins/main_sections/ms_teledeploy/views/package_form_view.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_local_import.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_upload_file.php
-%%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_upload_file_popup.php
 %%WWWDIR%%/plugins/main_sections/ms_upload_file/ms_view_file.php
 %%WWWDIR%%/plugins/main_sections/ms_users/js/profile-create-form.js
 %%WWWDIR%%/plugins/main_sections/ms_users/js/profile-edit-form.js
@@ -941,28 +952,8 @@
 %%WWWDIR%%/plugins/main_sections/ms_users/views/profile_create_form.php
 %%WWWDIR%%/plugins/main_sections/ms_users/views/profile_edit_form.php
 %%WWWDIR%%/plugins/main_sections/ms_users/views/users_views.php
-%%WWWDIR%%/plugins/snmp_detail/sd_admininfo/sd_admininfo.php
-%%WWWDIR%%/plugins/snmp_detail/sd_cards/sd_cards.php
-%%WWWDIR%%/plugins/snmp_detail/sd_cartridges/sd_cartridges.php
-%%WWWDIR%%/plugins/snmp_detail/sd_cpus/sd_cpus.php
-%%WWWDIR%%/plugins/snmp_detail/sd_drives/sd_drives.php
-%%WWWDIR%%/plugins/snmp_detail/sd_fans/sd_fans.php
-%%WWWDIR%%/plugins/snmp_detail/sd_inputs/sd_inputs.php
-%%WWWDIR%%/plugins/snmp_detail/sd_localprinters/sd_localprinters.php
-%%WWWDIR%%/plugins/snmp_detail/sd_memories/sd_memories.php
-%%WWWDIR%%/plugins/snmp_detail/sd_modems/sd_modems.php
-%%WWWDIR%%/plugins/snmp_detail/sd_networks/sd_networks.php
-%%WWWDIR%%/plugins/snmp_detail/sd_ports/sd_ports.php
-%%WWWDIR%%/plugins/snmp_detail/sd_powersupplies/sd_powersupplies.php
-%%WWWDIR%%/plugins/snmp_detail/sd_softwares/sd_softwares.php
-%%WWWDIR%%/plugins/snmp_detail/sd_sounds/sd_sounds.php
-%%WWWDIR%%/plugins/snmp_detail/sd_storages/sd_storages.php
-%%WWWDIR%%/plugins/snmp_detail/sd_switch/sd_switch.php
-%%WWWDIR%%/plugins/snmp_detail/sd_trays/sd_trays.php
-%%WWWDIR%%/plugins/snmp_detail/sd_videos/sd_videos.php
-%%WWWDIR%%/plugins/snmp_detail/sd_virtualmachines/sd_virtualmachines.php
-%%WWWDIR%%/plugins/snmp_detail/snmp_config.txt
 %%WWWDIR%%/require/CSV.class.php
+%%WWWDIR%%/require/admininfo/Admininfo.php
 %%WWWDIR%%/require/aide_developpement.php
 %%WWWDIR%%/require/archive/ArchiveComputer.php
 %%WWWDIR%%/require/assets/AssetsCategory.php
@@ -985,11 +976,9 @@
 %%WWWDIR%%/require/extensions/include.php
 %%WWWDIR%%/require/fichierConf.class.php
 %%WWWDIR%%/require/footer.php
-%%WWWDIR%%/require/function_admininfo.php
 %%WWWDIR%%/require/function_commun.php
 %%WWWDIR%%/require/function_computers.php
 %%WWWDIR%%/require/function_config_generale.php
-%%WWWDIR%%/require/function_console.php
 %%WWWDIR%%/require/function_cookies.php
 %%WWWDIR%%/require/function_dico.php
 %%WWWDIR%%/require/function_files.php
@@ -1007,6 +996,7 @@
 %%WWWDIR%%/require/function_telediff.php
 %%WWWDIR%%/require/function_users.php
 %%WWWDIR%%/require/function_wol.php
+%%WWWDIR%%/require/groupReports/GroupReport.php
 %%WWWDIR%%/require/header.php
 %%WWWDIR%%/require/history/History.php
 %%WWWDIR%%/require/html_header.php
@@ -1033,6 +1023,7 @@
 %%WWWDIR%%/require/search/LegacySearch.php
 %%WWWDIR%%/require/search/SQLCache.php
 %%WWWDIR%%/require/search/Search.php
+%%WWWDIR%%/require/search/SnmpSearch.php
 %%WWWDIR%%/require/search/SoftwareSearch.php
 %%WWWDIR%%/require/search/TranslationSearch.php
 %%WWWDIR%%/require/snmp/Snmp.php
@@ -1060,6 +1051,7 @@
 %%WWWDIR%%/require/views/forms.php
 %%WWWDIR%%/require/wol/WakeOnLan.php
 %%WWWDIR%%/templates/.htaccess
+%%WWWDIR%%/templates/OCS_group_notif.html
 %%WWWDIR%%/templates/OCS_template.html
 %%WWWDIR%%/themes/OCS/banniere.png
 %%WWWDIR%%/themes/OCS/logo.png

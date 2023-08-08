@@ -1,7 +1,8 @@
 PORTNAME=	cysignals
 PORTVERSION=	1.11.2
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libpari.so:math/pari
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		autoreconf:build compiler:c++11-lang gettext localbase python:3.6+
+USES=		autoreconf:build compiler:c++11-lang gettext localbase python
 USE_PYTHON=	cython distutils
 
 TEST_TARGET=	check

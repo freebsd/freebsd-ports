@@ -157,7 +157,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/src/functions_include.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/LICENSE
-%%WWWDIR%%/vendor/guzzlehttp/promises/Makefile
 %%WWWDIR%%/vendor/guzzlehttp/promises/README.md
 %%WWWDIR%%/vendor/guzzlehttp/promises/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/AggregateException.php
@@ -219,6 +218,13 @@
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/Utils.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions.php
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/functions_include.php
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/actions/setup/action.yml
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/baikal/initdb.sql
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/config
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/rights
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/configs/radicale/config/users
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/scripts/createabook.sh
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/scripts/deployBaikal.sh
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.github/workflows/ci.yml
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/.gitignore
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/CHANGELOG.md
@@ -227,6 +233,7 @@
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/NOTES.md
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/README.md
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/composer.json
+%%WWWDIR%%/vendor/mstilkerich/carddavclient/doc/CardDAV_Discovery.drawio
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/doc/Classes.drawio
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/doc/Classes.svg
 %%WWWDIR%%/vendor/mstilkerich/carddavclient/doc/QUIRKS.md
@@ -321,17 +328,11 @@
 %%WWWDIR%%/vendor/roundcube/plugin-installer/src/Roundcube/Composer/PluginInstaller.php
 %%WWWDIR%%/vendor/roundcube/plugin-installer/src/Roundcube/Composer/RoundcubeInstaller.php
 %%WWWDIR%%/vendor/roundcube/plugin-installer/src/Roundcube/Composer/SkinInstaller.php
-%%WWWDIR%%/vendor/sabre/uri/.gitattributes
-%%WWWDIR%%/vendor/sabre/uri/.github/workflows/ci.yml
-%%WWWDIR%%/vendor/sabre/uri/.gitignore
-%%WWWDIR%%/vendor/sabre/uri/.php_cs.dist
 %%WWWDIR%%/vendor/sabre/uri/LICENSE
 %%WWWDIR%%/vendor/sabre/uri/composer.json
 %%WWWDIR%%/vendor/sabre/uri/lib/InvalidUriException.php
 %%WWWDIR%%/vendor/sabre/uri/lib/Version.php
 %%WWWDIR%%/vendor/sabre/uri/lib/functions.php
-%%WWWDIR%%/vendor/sabre/uri/phpstan.neon
-%%WWWDIR%%/vendor/sabre/vobject/.github/workflows/ci.yml
 %%WWWDIR%%/vendor/sabre/vobject/LICENSE
 %%WWWDIR%%/vendor/sabre/vobject/README.md
 %%WWWDIR%%/vendor/sabre/vobject/bin/bench.php

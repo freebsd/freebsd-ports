@@ -1,0 +1,16 @@
+AlizaMS is a DICOM image viewer.
+
+Feature highlights
+* Very fast directory scanner, DICOMDIR
+* 2D and 3D views with many tools
+* View uniform and non-uniform series in physical space
+* DICOM Study multi-view with intersection lines
+* Structured report
+* RTSTRUCT contours
+* 2D+t and 3D+t animations
+* Consistently de-identify DICOM
+* View DICOM metadata
+* Ultrasound incl. proper measurement in regions, cine
+* Grayscale softcopy presentation
+* Siemens mosaic format
+* United Imaging Healthcare (UIH) Grid / VFrame format

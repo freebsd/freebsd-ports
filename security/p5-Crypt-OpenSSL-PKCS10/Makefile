@@ -17,4 +17,10 @@ USES=		perl5 ssl
 USE_PERL5=	configure
 MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

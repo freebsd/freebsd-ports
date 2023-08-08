@@ -13,7 +13,6 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
 USES+=		php
-PHP_VER=	74
 
 BCL_VARDIR?=	/var
 BCL_CACHEDIR?=	${BCL_VARDIR}/cache/${PORTNAME}
@@ -22,7 +21,7 @@ BCL_LOGDIR?=	${BCL_VARDIR}/log/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USE_PHP+=	ctype dom json session xml
+USE_PHP+=	ctype dom session xml
 
 OPTIONS_DEFINE?=EXAMPLES
 

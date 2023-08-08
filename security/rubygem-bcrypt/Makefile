@@ -1,5 +1,5 @@
 PORTNAME=	bcrypt
-PORTVERSION=	3.1.18
+PORTVERSION=	3.1.19
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- libcdi/src/namespace.c.orig	2022-01-21 08:38:53 UTC
+--- libcdi/src/namespace.c.orig	2023-04-16 12:23:50 UTC
 +++ libcdi/src/namespace.c
-@@ -88,11 +88,13 @@ static pthread_mutex_t namespaceMutex;
+@@ -99,11 +99,13 @@ static pthread_mutex_t namespaceMutex;
  static void
  namespaceInitialize(void)
  {

@@ -1,5 +1,6 @@
 PORTNAME=	gnome-nettool
 PORTVERSION=	42.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
@@ -12,7 +13,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop
 RUN_DEPENDS=	${LOCALBASE}/bin/dig:dns/bind-tools
 
-USES=		gettext gmake gnome meson pathfix pkgconfig python:3.8+ tar:xz
+USES=		gettext gmake gnome meson pathfix pkgconfig python tar:xz
 USE_GNOME=	gtk30 intlhack libxml2:build
 GLIB_SCHEMAS=	org.gnome.gnome-nettool.gschema.xml
 

@@ -1,6 +1,6 @@
 PORTNAME=	osdlyrics
 PORTVERSION=	0.4.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio deskutils
 MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/osd-lyrics/
 

@@ -1,0 +1,11 @@
+--- src/wazuh_modules/syscollector/CMakeLists.txt.orig	2023-05-12 12:30:40 UTC
++++ src/wazuh_modules/syscollector/CMakeLists.txt
+@@ -91,7 +91,7 @@ elseif(UNIX AND NOT APPLE)
+ endif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ 
+ if(NOT CMAKE_SYSTEM_NAME STREQUAL "AIX")
+-  target_link_libraries(syscollector dbsync rsync sysinfo wazuhext)
++  target_link_libraries(syscollector dbsync rsync ${SRC_FOLDER}/data_provider/build/lib/libsysinfo.so nghttp2 wazuhext)
+ else()
+   string(REPLACE ";" ":" CXX_IMPLICIT_LINK_DIRECTORIES_STR "${CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES}")
+   string(REPLACE ";" ":" PLATFORM_REQUIRED_RUNTIME_PATH_STR "${CMAKE_PLATFORM_REQUIRED_RUNTIME_PATH}")

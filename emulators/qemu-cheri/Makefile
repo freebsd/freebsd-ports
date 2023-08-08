@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	0.d${SNAPDATE}
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	emulators devel
 PKGNAMESUFFIX=	-cheri
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/CTSRD-CHERI/qemu
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 BUILD_DEPENDS=	bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
-LIB_DEPENDS=	libcapstone.so:devel/capstone3 \
+LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libgnutls.so:security/gnutls \
@@ -62,6 +62,12 @@ EXTRA_CFLAGS=	-DCHERI_UNALIGNED
 
 PLIST_FILES=	bin/qemu-system-morello \
 		bin/qemu-system-riscv64cheri
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/qemu-system-morello \

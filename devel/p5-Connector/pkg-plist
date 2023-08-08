@@ -1,6 +1,5 @@
 %%PERL5_MAN3%%/Connector.3.gz
 %%PERL5_MAN3%%/Connector::Builtin.3.gz
-%%PERL5_MAN3%%/Connector::Types.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Memory.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Static.3.gz
 %%PERL5_MAN3%%/Connector::Builtin::Authentication::LDAP.3.gz

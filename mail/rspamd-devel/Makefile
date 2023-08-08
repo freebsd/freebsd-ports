@@ -1,6 +1,6 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.3.a1.20220326
-PORTREVISION=	1
+PORTVERSION=	3.4.a1.20221001
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
 
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libsodium.so:security/libsodium
 RUN_DEPENDS=	ca_root_nss>=3.*:security/ca_root_nss
 
-USES=		cmake compiler:c++17-lang cpe gnome perl5 pkgconfig sqlite ssl
+USES=		cmake compiler:c++20-lang cpe gnome perl5 pkgconfig sqlite ssl
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
-GH_TAGNAME=	466de60
+GH_TAGNAME=	572e0b0
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build run
@@ -81,7 +81,7 @@ GPERF_CMAKE_ON=		-DENABLE_GPERF_TOOLS=ON
 HYPERSCAN_LIB_DEPENDS=	libhs.so:devel/hyperscan
 HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51+
 LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
@@ -89,9 +89,6 @@ LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
 
 .if ${ARCH} == powerpc64
 CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-.elif ${ARCH} == powerpc64le
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
 post-install:

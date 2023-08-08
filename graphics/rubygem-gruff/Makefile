@@ -1,5 +1,5 @@
 PORTNAME=	gruff
-PORTVERSION=	0.19.0
+PORTVERSION=	0.22.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-histogram>=0:graphics/rubygem-histogram \
 		rubygem-rmagick>=4.2:graphics/rubygem-rmagick
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

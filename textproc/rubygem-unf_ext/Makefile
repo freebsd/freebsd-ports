@@ -1,5 +1,5 @@
 PORTNAME=	unf_ext
-PORTVERSION=	0.0.7.7
+PORTVERSION=	0.0.8.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

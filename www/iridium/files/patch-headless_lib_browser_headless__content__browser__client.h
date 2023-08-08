@@ -1,7 +1,7 @@
---- headless/lib/browser/headless_content_browser_client.h.orig	2022-03-28 18:11:04 UTC
+--- headless/lib/browser/headless_content_browser_client.h.orig	2023-01-17 19:19:00 UTC
 +++ headless/lib/browser/headless_content_browser_client.h
-@@ -47,7 +47,7 @@ class HeadlessContentBrowserClient : public content::C
-       override;
+@@ -45,7 +45,7 @@ class HeadlessContentBrowserClient : public content::C
+   CreateDevToolsManagerDelegate() override;
    content::GeneratedCodeCacheSettings GetGeneratedCodeCacheSettings(
        content::BrowserContext* context) override;
 -#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC)

@@ -14,6 +14,5 @@ RUN_DEPENDS=	rubygem-peek>=0:devel/rubygem-peek
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

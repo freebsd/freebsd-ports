@@ -3,5 +3,3 @@ Dashboard along with an extensible framework for building new dashboards from
 reusable components. The openstack_dashboard module is a reference
 implementation of a Django site that uses the horizon app to provide web-based
 interactions with the various OpenStack projects.
-
-See also: https://github.com/openstack/horizon

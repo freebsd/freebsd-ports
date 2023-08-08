@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/ui/gfx/font_fallback_linux.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gfx/font_fallback_linux.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gfx/font_fallback_linux.cc
-@@ -15,6 +15,10 @@
- #include "base/memory/ptr_util.h"
- #include "ui/gfx/font.h"
+@@ -24,6 +24,10 @@
+ #include "ui/gfx/linux/fontconfig_util.h"
+ #include "ui/gfx/platform_font.h"
  
 +#if defined(OS_BSD)
-+#  include <unistd.h>
++#include <unistd.h>
 +#endif
 +
  namespace gfx {

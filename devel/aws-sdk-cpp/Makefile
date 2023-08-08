@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.9.351
+DISTVERSION=	1.11.114
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -8,11 +8,6 @@ WWW=		https://github.com/aws/aws-sdk-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_armv6=	fails to build: runaway process
-BROKEN_armv7=	fails to build: runaway process
-BROKEN_i386=	fails to build: compiler runs out of memory
-BROKEN_powerpc=	fails to build: compiler runs out of memory
 
 LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-cal.so:security/aws-c-cal \
@@ -58,7 +53,7 @@ BUILD_ONLY?=
 OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
-TEST_CMAKE_BOOL_OFF=	ENABLE_TESTING
+TEST_CMAKE_BOOL=	ENABLE_TESTING
 
 pre-everything::
 	@${ECHO_MSG}
@@ -74,7 +69,7 @@ pre-everything::
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/pkgconfig,/../libdata/pkgconfig,g" \
-		${WRKSRC}/aws-cpp-sdk-core/CMakeLists.txt \
+		${WRKSRC}/src/aws-cpp-sdk-core/CMakeLists.txt \
 		${WRKSRC}/cmake/utilities.cmake
 	${REINPLACE_CMD} -e 's,"-Werror",,g' \
 		${WRKSRC}/cmake/compiler_settings.cmake

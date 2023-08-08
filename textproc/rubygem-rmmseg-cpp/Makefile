@@ -10,7 +10,6 @@ WWW=		http://rmmseg-cpp.rubyforge.org
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	misc/convert.rb
 

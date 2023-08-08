@@ -1,4 +1,4 @@
---- Makefile.orig	2021-09-28 21:11:31 UTC
+--- Makefile.orig	2022-10-19 22:49:03 UTC
 +++ Makefile
 @@ -147,7 +147,6 @@ TESTIGDDESCPARSE += $(BUILD)/minissdpc.o
  LIBOBJS += $(BUILD)/minissdpc.o
@@ -8,7 +8,7 @@
  # install directories
  ifeq ($(strip $(PREFIX)),)
  INSTALLPREFIX ?= /usr
-@@ -155,14 +154,14 @@ else
+@@ -155,9 +154,9 @@ else
  INSTALLPREFIX ?= $(PREFIX)
  endif
  INSTALLDIRINC = $(INSTALLPREFIX)/include/miniupnpc
@@ -20,12 +20,6 @@
  PKGCONFIGDIR = $(INSTALLDIRLIB)/pkgconfig
  
  FILESTOINSTALL = $(LIBRARY) $(EXECUTABLES)
- ifeq (, $(findstring amiga, $(OS)))
--FILESTOINSTALL += $(SHAREDLIBRARY) miniupnpc.pc
-+FILESTOINSTALL += $(SHAREDLIBRARY) $(BUILD)/miniupnpc.pc
- endif
- 
- 
 @@ -242,7 +241,7 @@ distclean: clean
  
  updateversion:	include/miniupnpc.h
@@ -35,23 +29,3 @@
  
  install:	updateversion $(FILESTOINSTALL)
  	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRINC)
-@@ -251,15 +250,15 @@ install:	updateversion $(FILESTOINSTALL)
- 	$(INSTALL) -m 644 $(LIBRARY) $(DESTDIR)$(INSTALLDIRLIB)
- ifeq (, $(findstring amiga, $(OS)))
- 	$(INSTALL) -m 644 $(SHAREDLIBRARY) $(DESTDIR)$(INSTALLDIRLIB)/$(SONAME)
--	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/$(SHAREDLIBRARY)
-+	ln -fs $(SONAME) $(DESTDIR)$(INSTALLDIRLIB)/libminiupnpc.so
- 	$(INSTALL) -d $(DESTDIR)$(PKGCONFIGDIR)
--	$(INSTALL) -m 644 miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
-+	$(INSTALL) -m 644 $(BUILD)/miniupnpc.pc $(DESTDIR)$(PKGCONFIGDIR)
- endif
- 	$(INSTALL) -d $(DESTDIR)$(INSTALLDIRBIN)
- ifneq (, $(findstring amiga, $(OS)))
--	$(INSTALL) -m 755 upnpc-static $(DESTDIR)$(INSTALLDIRBIN)/upnpc
-+	$(INSTALL) -m 755 $(BUILD)/upnpc-static $(DESTDIR)$(INSTALLDIRBIN)/upnpc
- else
--	$(INSTALL) -m 755 upnpc-shared $(DESTDIR)$(INSTALLDIRBIN)/upnpc
-+	$(INSTALL) -m 755 $(BUILD)/upnpc-shared $(DESTDIR)$(INSTALLDIRBIN)/upnpc
- endif
- 	$(INSTALL) -m 755 external-ip.sh $(DESTDIR)$(INSTALLDIRBIN)/external-ip
- ifeq (, $(findstring amiga, $(OS)))

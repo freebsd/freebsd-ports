@@ -1,7 +1,7 @@
 PORTNAME=	facedetect
 PORTVERSION=	0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	opencv>0:graphics/opencv
 
-USES=		python:3.6+,run shebangfix
+USES=		python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	wavexx
 

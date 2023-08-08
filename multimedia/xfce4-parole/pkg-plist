@@ -75,6 +75,6 @@ share/metainfo/parole.appdata.xml
 %%DATADIR%%/parole-plugins-0/mpris2.desktop
 %%DATADIR%%/parole-plugins-0/notify.desktop
 %%DATADIR%%/parole-plugins-0/system-tray.desktop
-share/pixmaps/no-cover.png
-share/pixmaps/play.png
-share/pixmaps/replay.png
+%%DATADIR%%/pixmaps/no-cover.png
+%%DATADIR%%/pixmaps/play.png
+%%DATADIR%%/pixmaps/replay.png

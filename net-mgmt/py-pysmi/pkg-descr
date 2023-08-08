@@ -1,1 +1,3 @@
-Pure-Python implementation of SNMP/SMI MIB parsing and conversion library
+PySMI is a pure-Python implementation of SNMP SMI MIB parser. This tool
+is designed to turn ASN.1 MIBs into various formats. As of this moment,
+JSON and pysnmp modules can be generated from ASN.1 MIBs.

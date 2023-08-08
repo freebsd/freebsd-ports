@@ -1,0 +1,13 @@
+--- OMCompiler/Compiler/boot/CMakeLists.txt.orig	2022-12-12 07:29:42 UTC
++++ OMCompiler/Compiler/boot/CMakeLists.txt
+@@ -9,9 +9,9 @@ else()
+ file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bomc/)
+ file(DOWNLOAD https://build.openmodelica.org/omc/bootstrap/sources.tar.gz
+      ${CMAKE_CURRENT_SOURCE_DIR}/bomc/sources.tar.gz SHOW_PROGRESS)
++endif()
+ execute_process(COMMAND tar xzf sources.tar.gz
+                  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bomc/)
+-endif()
+ 
+ # OpenModelicaBootstrappingHeader.h should probably be added to source control and
+ # updated just like the bootstrap-source c files.

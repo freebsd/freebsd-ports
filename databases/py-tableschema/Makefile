@@ -1,7 +1,7 @@
 PORTNAME=	tableschema
 PORTVERSION=	1.20.2
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cached-property>=1.5:devel/py-cached-propert
 		${PYTHON_PKGNAMEPREFIX}tabulator>=1.51.3:devel/py-tabulator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicodecsv>=0.14:devel/py-unicodecsv@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

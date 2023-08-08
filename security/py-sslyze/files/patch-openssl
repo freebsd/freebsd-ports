@@ -1,4 +1,4 @@
---- sslyze/connection_helpers/tls_connection.py.orig	2022-05-14 11:12:33 UTC
+--- sslyze/connection_helpers/tls_connection.py.orig	2023-01-16 21:45:34 UTC
 +++ sslyze/connection_helpers/tls_connection.py
 @@ -2,8 +2,6 @@ import socket
  from pathlib import Path
@@ -9,7 +9,7 @@
  from sslyze.server_setting import (
      ServerNetworkLocation,
      ServerNetworkConfiguration,
-@@ -170,7 +168,7 @@ class SslConnection:
+@@ -172,7 +170,7 @@ class SslConnection:
          ):
              raise ValueError("Cannot use modern OpenSSL with SSL 2.0 or 3.0")
  
@@ -18,7 +18,7 @@
  
          if network_configuration.tls_client_auth_credentials:
              # A client certificate and private key were provided
---- sslyze/mozilla_tls_profile/mozilla_config_checker.py.orig	2022-05-14 10:32:13 UTC
+--- sslyze/mozilla_tls_profile/mozilla_config_checker.py.orig	2023-01-16 21:45:34 UTC
 +++ sslyze/mozilla_tls_profile/mozilla_config_checker.py
 @@ -79,10 +79,6 @@ class ServerScanResultIncomplete(Exception):
  
@@ -42,17 +42,16 @@
          ("tls_1_2_cipher_suites", "TLSv1.2"),
          ("tls_1_3_cipher_suites", "TLSv1.3"),
      ]:
---- sslyze/plugins/compression_plugin.py.orig	2022-05-14 09:12:21 UTC
+--- sslyze/plugins/compression_plugin.py.orig	2023-01-18 18:58:11 UTC
 +++ sslyze/plugins/compression_plugin.py
-@@ -1,7 +1,7 @@
+@@ -1,6 +1,6 @@
  from dataclasses import dataclass
  
- import pydantic
 -from nassl.legacy_ssl_client import LegacySslClient
 +from nassl.ssl_client import SslClient
  from nassl.ssl_client import ClientCertificateRequested
  
- from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
+ from sslyze.json.pydantic_utils import BaseModelWithOrmModeAndForbid
 @@ -89,9 +89,9 @@ def _test_compression_support(server_info: ServerConne
  
      ssl_connection = server_info.get_preconfigured_tls_connection(
@@ -65,16 +64,16 @@
          raise RuntimeError("Should never happen")
  
      # Make sure OpenSSL was built with support for compression to avoid false negatives
---- sslyze/plugins/fallback_scsv_plugin.py.orig	2022-05-14 09:12:21 UTC
+--- sslyze/plugins/fallback_scsv_plugin.py.orig	2023-01-18 18:58:11 UTC
 +++ sslyze/plugins/fallback_scsv_plugin.py
-@@ -3,7 +3,6 @@ from typing import List, Optional
+@@ -2,7 +2,6 @@ from dataclasses import dataclass
+ from typing import List, Optional
  
- import pydantic
  from nassl import _nassl
 -from nassl.legacy_ssl_client import LegacySslClient
  
+ from sslyze.json.pydantic_utils import BaseModelWithOrmModeAndForbid
  from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
- from sslyze.plugins.plugin_base import (
 --- sslyze/plugins/openssl_cipher_suites/_test_cipher_suite.py.orig	2022-05-14 09:12:21 UTC
 +++ sslyze/plugins/openssl_cipher_suites/_test_cipher_suite.py
 @@ -2,7 +2,6 @@ from dataclasses import dataclass
@@ -111,7 +110,7 @@
      )
      _set_cipher_suite_string(tls_version, cipher_suite.openssl_name, ssl_connection.ssl_client)
  
---- sslyze/plugins/openssl_cipher_suites/cipher_suites.py.orig	2022-06-25 23:42:22 UTC
+--- sslyze/plugins/openssl_cipher_suites/cipher_suites.py.orig	2022-05-14 09:12:21 UTC
 +++ sslyze/plugins/openssl_cipher_suites/cipher_suites.py
 @@ -3,7 +3,6 @@ from typing import Dict, Set
  
@@ -193,18 +192,18 @@
      ScanCommand.TLS_1_2_CIPHER_SUITES: Tlsv12ScanImplementation,
      ScanCommand.TLS_1_3_CIPHER_SUITES: Tlsv13ScanImplementation,
      ScanCommand.TLS_COMPRESSION: CompressionImplementation,
---- sslyze/plugins/session_renegotiation_plugin.py.orig	2022-05-14 09:12:21 UTC
+--- sslyze/plugins/session_renegotiation_plugin.py.orig	2023-01-18 18:58:11 UTC
 +++ sslyze/plugins/session_renegotiation_plugin.py
-@@ -5,7 +5,7 @@ from typing import List, Optional, Tuple
+@@ -4,7 +4,7 @@ from enum import Enum
+ from typing import List, Optional, Tuple
  
- import pydantic
  from nassl._nassl import OpenSSLError
 -from nassl.legacy_ssl_client import LegacySslClient
 +from nassl.ssl_client import SslClient
  
+ from sslyze.json.pydantic_utils import BaseModelWithOrmModeAndForbid
  from sslyze.json.scan_attempt_json import ScanCommandAttemptAsJson
- from sslyze.errors import ServerRejectedTlsHandshake
-@@ -124,9 +124,9 @@ def _test_secure_renegotiation(server_info: ServerConn
+@@ -125,9 +125,9 @@ def _test_secure_renegotiation(server_info: ServerConn
  
      ssl_connection = server_info.get_preconfigured_tls_connection(
          override_tls_version=tls_version_to_use,
@@ -216,7 +215,7 @@
          raise RuntimeError("Should never happen")
  
      try:
-@@ -159,9 +159,9 @@ def _test_client_renegotiation(server_info: ServerConn
+@@ -160,9 +160,9 @@ def _test_client_renegotiation(server_info: ServerConn
  
      ssl_connection = server_info.get_preconfigured_tls_connection(
          override_tls_version=tls_version_to_use,

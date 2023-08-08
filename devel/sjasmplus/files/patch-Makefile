@@ -1,0 +1,20 @@
+--- Makefile.orig	2023-06-27 23:25:44 UTC
++++ Makefile
+@@ -67,7 +67,7 @@ LUA_VER?=5.4
+ BUILD_DIR=build
+ 
+ LUA_VER?=5.4
+-LUA_LIBNAME?=lua$(LUA_VER)
++LUA_LIBNAME?=lua-$(LUA_VER)
+ 
+ SUBDIR_BASE=sjasm
+ SUBDIR_LUA=lua$(LUA_VER)
+@@ -259,7 +259,7 @@ $(SUBDIR_DOCS)/documentation.html: Makefile $(wildcard
+ 		--stringparam html.stylesheet docbook.css \
+ 		--stringparam generate.toc "book toc" \
+ 		-o $(SUBDIR_DOCS)/documentation.html \
+-		$(SUBDIR_DOCS)/docbook-xsl-ns-html-customization-linux.xsl \
++		$(SUBDIR_DOCS)/docbook-xsl-ns-html-customization-freebsd.xsl \
+ 		$(SUBDIR_DOCS)/documentation.xml
+ 
+ clean:

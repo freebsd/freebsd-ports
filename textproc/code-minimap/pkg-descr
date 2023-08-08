@@ -1,0 +1,3 @@
+A high performance code minimap render.  This tool is for generating text
+minimaps at speed. You can use it to implement IDE-like minimap plugin for a
+terminal text editor, minimap.vim for example.

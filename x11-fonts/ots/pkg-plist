@@ -6,7 +6,7 @@ bin/ots-side-by-side
 bin/ots-validator-checker
 lib/libots.a
 lib/libots.so
-lib/libots.so.8
+lib/libots.so.9
 lib/libots.so.%%PORTVERSION%%
 man/man1/ots-idempotent.1.gz
 man/man1/ots-perf.1.gz

@@ -1,10 +1,10 @@
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	331.0.0
+PORTVERSION=	441.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Google Cloud SDK for Google Cloud Platform
 WWW=		https://developers.google.com/cloud/sdk/
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 
 WRKSRC=		${WRKDIR}/google-cloud-sdk
 NO_ARCH=	yes
@@ -35,7 +35,9 @@ post-extract:
 	@${RM} -r \
 		${WRKSRC}/bin/anthoscli \
 		${WRKSRC}/bin/kuberun \
+		${WRKSRC}/bin/gcloud-crc32c \
 		${WRKSRC}/install.bat \
+		${WRKSRC}/platform/bundledpythonunix \
 		${WRKSRC}/platform/gsutil/third_party/crcmod/docs/source/make.bat \
 		${WRKSRC}/platform/gsutil/third_party/rsa/doc/make.bat \
 		${WRKSRC}/rpm \
@@ -43,7 +45,7 @@ post-extract:
 		${WRKSRC}/lib/third_party/grpc/_cython/cygrpc.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' ${WRKSRC}/bin/bq ${WRKSRC}/bin/gsutil ${WRKSRC}/bin/docker-credential-gcloud ${WRKSRC}/bin/java_dev_appserver.sh ${WRKSRC}/bin/git-credential-gcloud.sh ${WRKSRC}/bin/gcloud
+	@${REINPLACE_CMD} -e 's|python2.7|PYTHON_CMD}|g' ${WRKSRC}/bin/bq ${WRKSRC}/bin/gsutil ${WRKSRC}/bin/docker-credential-gcloud ${WRKSRC}/bin/java_dev_appserver.sh ${WRKSRC}/bin/git-credential-gcloud.sh ${WRKSRC}/bin/gcloud
 	@${RM} ${WRKSRC}/bin/*.bak ${WRKSRC}/bin/*.orig
 
 do-install:

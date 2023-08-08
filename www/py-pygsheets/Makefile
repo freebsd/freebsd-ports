@@ -1,7 +1,7 @@
 PORTNAME=	pygsheets
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,10 +10,10 @@ WWW=		https://github.com/nithinmurali/pygsheets
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.5.5:www/py-google-api-python-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>=0:security/py-google-auth-oauthlib@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=2.50.0:www/py-google-api-python-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>=0.7.1:security/py-google-auth-oauthlib@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -1,5 +1,2 @@
-%%SENSU_AGENT%%bin/sensu-agent
-%%SENSU_AGENT%%@sample etc/sensu-agent.yml.sample
-%%SENSU_CLI%%bin/sensuctl
-%%SENSU_BE%%bin/sensu-backend
-%%SENSU_BE%%@sample etc/sensu-backend.yml.sample
+bin/sensu-agent
+@sample etc/sensu-agent.yml.sample

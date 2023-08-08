@@ -1,5 +1,5 @@
 PORTNAME=	xtrabackup
-DISTVERSION=	2.4.21
+DISTVERSION=	2.4.28
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/:xtrabackup \
 		https://ftp.osuosl.org/pub/blfs/conglomeration/boost/:boost SF/boost/boost/1.59.0/:boost
@@ -42,19 +42,13 @@ PLIST_FILES=	bin/xtrabackup bin/xbstream bin/innobackupex bin/xbcrypt \
 		bin/xbcloud bin/xbcloud_osenv
 
 .include <bsd.port.pre.mk>
-# xtrabackup/mysql57 fails to compile with llvm11, which was imported to current in r364284
-# without a version increase (1300109 = r364274).
-# Until a proper fix is provided, simply use llvm from ports, which probably could be
-# a backport of amongst other tings:
-# https://github.com/mysql/mysql-server/commit/08f46b3c00ee70e7ed7825daeb91df2289f80f50
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300109
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-.endif
 
 # Not sure why it's trying to install mysql client libraries now
 post-install:
 	${RM} -rf ${STAGEDIR}${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|__clang__|__undefined__|g' \
+	    ${WRKDIR}/boost_1_59_0/boost/atomic/detail/ops_gcc_x86_dcas.hpp
 
 .include <bsd.port.post.mk>

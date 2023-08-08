@@ -1,6 +1,6 @@
 PORTNAME=	naarad
 PORTVERSION=	1.0.15
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	benchmarks python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=2013.8,1:devel/py-pytz@${PY_FLAVOR} \
 	bash:shells/bash \
 	gawk:lang/gawk
 
-USES=		shebangfix python:3.6+
+USES=		shebangfix python
 
 SHEBANG_LANG=	gawk
 SHEBANG_FILES=	bin/naarad_metric_collector.sh bin/PrintGCStats

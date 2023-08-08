@@ -16,7 +16,7 @@ CPE_VENDOR=	${PORTNAME}cms
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	ctype curl dom gd json mbstring openssl simplexml tokenizer
+USE_PHP=	ctype curl dom gd mbstring simplexml tokenizer
 
 PLIST_SUB+=	WWWGRP=${WWWGRP}
 

@@ -1,5 +1,5 @@
 PORTNAME=	fluentd
-PORTVERSION=	1.15.2
+PORTVERSION=	1.16.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	\
 	rubygem-strptime>=0.2.2<1.0.0:devel/rubygem-strptime \
 	rubygem-tzinfo1>=1.0<3.0:devel/rubygem-tzinfo1 \
 	rubygem-tzinfo-data>=1.0<2:devel/rubygem-tzinfo-data \
-	rubygem-webrick>=1.4.2<1.8.0:www/rubygem-webrick \
+	rubygem-webrick>=1.4.2<1.9.0:www/rubygem-webrick \
 	rubygem-yajl-ruby>=1.0<2:devel/rubygem-yajl-ruby
 
 PLIST_FILES=	bin/fluent-cap-ctl bin/fluent-cat bin/fluent-ctl \
@@ -29,7 +29,6 @@ PLIST_FILES=	bin/fluent-cap-ctl bin/fluent-cat bin/fluent-ctl \
 		"@sample etc/fluentd/fluent.conf.sample"
 PLIST_DIRS=	etc/fluentd/plugin
 USES=		cpe gem
-USE_RUBY=	yes
 USE_RC_SUBR=	fluentd
 USERS=		fluentd
 GROUPS=		fluentd

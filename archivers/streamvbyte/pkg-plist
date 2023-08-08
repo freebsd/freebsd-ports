@@ -1,7 +1,0 @@
-include/streamvbyte.h
-include/streamvbyte_zigzag.h
-include/streamvbytedelta.h
-lib/libstreamvbyte.so
-lib/libstreamvbyte.so.1
-lib/libstreamvbyte.so.1.0.0
-lib/libstreamvbyte_static.a

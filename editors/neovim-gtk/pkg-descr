@@ -1,0 +1,4 @@
+GTK ui for neovim
+
+GTK ui for neovim written in rust using gtk-rs bindings. With ligatures
+support. This project began as a fork of @daa84's neovim-gtk.

@@ -11,4 +11,6 @@
 %%DATADIR%%/guacamole-auth-quickconnect.tar.gz
 %%DATADIR%%/guacamole-auth-sso.tar.gz
 %%DATADIR%%/guacamole-auth-totp.tar.gz
+%%DATADIR%%/guacamole-history-recording-storage.tar.gz
+%%DATADIR%%/guacamole-vault.tar.gz
 %%DATADIR%%/guacamole.war

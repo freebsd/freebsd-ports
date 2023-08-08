@@ -1,4 +1,4 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2022-10-05 07:34:01 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
 @@ -32,7 +32,7 @@
  #endif
@@ -15,10 +15,10 @@
      user_prefs::PrefRegistrySyncable* registry) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   registry->RegisterBooleanPref(prefs::kAllowNativeNotifications, true);
    registry->RegisterBooleanPref(prefs::kAllowSystemNotifications, true);
  #endif
-@@ -82,7 +82,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+ }
+@@ -81,7 +81,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
                             std::make_unique<PersistentNotificationHandler>());
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -27,7 +27,7 @@
      AddNotificationHandler(
          NotificationHandler::Type::SEND_TAB_TO_SELF,
          std::make_unique<send_tab_to_self::DesktopNotificationHandler>(
-@@ -90,7 +90,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
+@@ -89,7 +89,7 @@ NotificationDisplayServiceImpl::NotificationDisplaySer
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

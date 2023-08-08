@@ -2,7 +2,7 @@ PORTNAME=	pynzb
 PORTVERSION=	0.1.0
 PORTREVISION=	2
 CATEGORIES=	news python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,8 +11,10 @@ WWW=		https://pypi.org/project/pynzb/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 OPTIONS_DEFINE=	LXML
 LXML_DESC=	Add support for py-lxml

@@ -1,0 +1,11 @@
+--- gcc/configure.orig	2014-12-08 11:29:43 UTC
++++ gcc/configure
+@@ -6408,7 +6408,7 @@ fi
+ 
+ loose_warn=
+ save_CFLAGS="$CFLAGS"
+-for real_option in -W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual; do
++for real_option in -W -Wall -Wno-increment-bool -Wno-narrowing -Wno-register -Wwrite-strings -Wcast-qual; do
+   # Do the check with the no- prefix removed since gcc silently
+   # accepts any -Wno-* option on purpose
+   case $real_option in

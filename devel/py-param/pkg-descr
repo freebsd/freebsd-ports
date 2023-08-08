@@ -1,0 +1,5 @@
+Param is a library for handling all the user-modifiable parameters, arguments,
+and attributes that control your code. It provides automatic, robust
+error-checking while dramatically reducing boilerplate code, letting you focus
+on what you want your code to do rather than on checking for all the possible
+ways users could supply inappropriate values to a function or class.

@@ -1,10 +1,9 @@
 PORTNAME=	fail2ban
-DISTVERSION=	0.11.2
-PORTREVISION=	3
+DISTVERSION=	1.0.2
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	theis@gmx.at
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Scans log files and bans IP that makes too many password failures
 WWW=		https://www.fail2ban.org/wiki/index.php/Main_Page
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cpe python:3.6+,patch shebangfix
+USES=		cpe python:patch,run shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_BUILDARGS+=	--without-tests
@@ -48,6 +47,7 @@ MAN_FILES=	${WRKSRC}/man/fail2ban-client.1 \
 		${WRKSRC}/man/fail2ban.1
 
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
+PLIST_SUB=	FAIL2BAN_DBDIR=${FAIL2BAN_DBDIR}
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARG=	--no-diffs --write --nobackups --fix=all
@@ -63,6 +63,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's, sed , ${SED} ,g' \
 		${WRKSRC}/config/action.d/hostsdeny.conf
 
+	# XXX Ideally this should be in do-build but it only works in
+	# XXX post-patch
 	(cd ${WRKSRC}/ && ${PY2TO3_CMD} ${PY2TO3_ARG} bin/* fail2ban)
 
 post-install:

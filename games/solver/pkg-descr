@@ -1,0 +1,6 @@
+Solver is a math training game. The goal of the game is to improve the
+user's confidence in using four basic math operations: addition,
+subtraction, multiplication and division. The user can set various
+options to create a custom game experience. These options include
+setting the time limit and the goal for correct/incorrect answers.
+This program uses C and SDL2.

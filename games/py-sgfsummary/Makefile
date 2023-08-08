@@ -12,7 +12,7 @@ WWW=		http://gotools.sourceforge.net/sgfsummary/
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sgflib.py:games/py-sgflib@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix tar:tgz
+USES=		python shebangfix tar:tgz
 USE_PYTHON=	flavors
 SHEBANG_FILES=	sgfsummary.py
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

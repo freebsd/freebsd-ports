@@ -1,4 +1,4 @@
---- setup.py.orig	2020-06-15 23:50:00 UTC
+--- setup.py.orig	2023-04-01 07:04:04 UTC
 +++ setup.py
 @@ -68,7 +68,7 @@ os_files = [
      # AppStream metadata
@@ -18,30 +18,38 @@
  ]
  
  # Find files matching patterns
-@@ -120,26 +120,6 @@ if os.path.exists(os.path.join(PATH, "src")):
- FAILED = 'Failed to update.\n'
- 
+@@ -122,22 +122,28 @@ FAILED = 'Failed to update.\n'
  if ROOT and dist != None:
--    # update the XDG Shared MIME-Info database cache
--    try:
+     # update the XDG Shared MIME-Info database cache
+     try:
 -        sys.stdout.write('Updating the Shared MIME-Info database cache.\n')
 -        subprocess.call(["update-mime-database", os.path.join(sys.prefix, "share/mime/")])
--    except:
--        sys.stderr.write(FAILED)
--
--    # update the mime.types database
--    try:
++        # It would be executed with a pkg trigger of USES=shared-mime-info
++        #sys.stdout.write('Updating the Shared MIME-Info database cache.\n')
++        #subprocess.call(["update-mime-database", os.path.join(sys.prefix, "share/mime/")])
++        pass
+     except:
+         sys.stderr.write(FAILED)
+ 
+     # update the mime.types database
+     try:
 -        sys.stdout.write('Updating the mime.types database\n')
 -        subprocess.call("update-mime")
--    except:
--        sys.stderr.write(FAILED)
--
--    # update the XDG .desktop file database
--    try:
++        # It is provided by mime-support:misc/mime-support but not installed
++        #sys.stdout.write('Updating the mime.types database\n')
++        #subprocess.call("update-mime")
++        pass
+     except:
+         sys.stderr.write(FAILED)
+ 
+     # update the XDG .desktop file database
+     try:
 -        sys.stdout.write('Updating the .desktop file database.\n')
 -        subprocess.call(["update-desktop-database"])
--    except:
--        sys.stderr.write(FAILED)
++        # It would be executed with a pkg trigger of USES=desktop-file-utils
++        #sys.stdout.write('Updating the .desktop file database.\n')
++        #subprocess.call(["update-desktop-database"])
++        pass
+     except:
+         sys.stderr.write(FAILED)
      sys.stdout.write("\n-----------------------------------------------")
-     sys.stdout.write("\nInstallation Finished!")
-     sys.stdout.write("\nRun OpenShot by typing 'openshot-qt' or through the Applications menu.")

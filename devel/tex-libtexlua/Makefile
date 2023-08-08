@@ -1,5 +1,6 @@
 PORTNAME=	libtexlua
 PORTVERSION=	5.3.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -12,9 +13,8 @@ COMMENT=	Lua library for TeXLive
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/LICENSE.MIT
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pathfix pkgconfig tar:xz tex
 USE_LDCONFIG=	yes
-USE_TEX=	yes
 
 GNU_CONFIGURE=	yes
 

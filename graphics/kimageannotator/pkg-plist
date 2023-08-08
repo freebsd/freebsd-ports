@@ -8,6 +8,7 @@ lib/libkImageAnnotator.so
 lib/libkImageAnnotator.so.0
 lib/libkImageAnnotator.so.%%SHLIB_VER%%
 %%DATADIR%%/translations/kImageAnnotator_ar.qm
+%%DATADIR%%/translations/kImageAnnotator_bg.qm
 %%DATADIR%%/translations/kImageAnnotator_ca.qm
 %%DATADIR%%/translations/kImageAnnotator_cs.qm
 %%DATADIR%%/translations/kImageAnnotator_da.qm

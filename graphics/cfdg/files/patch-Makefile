@@ -1,15 +1,24 @@
---- Makefile.orig	2020-04-10 19:38:18 UTC
+--- Makefile.orig	2023-02-04 00:34:00 UTC
 +++ Makefile
+@@ -19,7 +19,7 @@ vpath %.cpp $(SRC_DIRS)
+ vpath %.cfdg input
+ 
+ INC_DIRS = $(COMMON_DIR) $(UNIX_DIR) $(DERIVED_DIR) $(COMMON_DIR)/agg-extras
+-INC_DIRS += /usr/local/include
++INC_DIRS += %%LOCALBASE%%/include
+ 
+ #
+ # Installation directories
 @@ -34,7 +34,7 @@ MAN_DIR = $(DESTDIR)$(prefix)/share/man
  # Library directories for FFmpeg and libpng
  #
  
 -LIB_DIRS = /usr/local/lib
-+LIB_DIRS = /usr/local/lib $(shell libpng-config --libdir)
++LIB_DIRS := %%LOCALBASE%%/lib $(shell libpng-config --libdir)
  
  #
  # Sources and Objects
-@@ -69,30 +69,20 @@ INPUT_SRCS = ciliasun_v2.cfdg demo1_v2.cfdg demo2_v2.c
+@@ -69,43 +69,35 @@ INPUT_SRCS = ciliasun_v2.cfdg demo1_v2.cfdg demo2_v2.c
      welcome.cfdg ziggy.cfdg
  
  
@@ -27,8 +36,8 @@
  #
  # FFmpeg support
  #
--# Uncomment these lines to enable FFmpeg support
--#
+ # Uncomment these lines to enable FFmpeg support
+ #
 +ifeq ($(WANT_FFMPEG), yes)
 + COMMON_SRCS += ffCanvas.cpp
 + LIBS += avformat avcodec swscale swresample avutil z m x264 pthread dl
@@ -48,7 +57,20 @@
  SRCS = $(DERIVED_SRCS) $(COMMON_SRCS) $(UNIX_SRCS)
  
  #
-@@ -113,6 +103,7 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
+ # Configuration for local AGG
+ #
+ SRCS += $(AGG_SRCS)
+ INC_DIRS += $(AGG_DIR) $(AGG_DIR)/agg2
+ 
+ 
+ #
+ # Configuration for system AGG
+ #
+ #LIBS += agg
+ 
+ 
+ OBJS = $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
+@@ -113,6 +105,7 @@ DEPS = $(patsubst %.o,%.d,$(OBJS))
  
  LINKFLAGS += $(patsubst %,-L%,$(LIB_DIRS))
  LINKFLAGS += $(patsubst %,-l%,$(LIBS))
@@ -56,7 +78,7 @@
  LINKFLAGS += -fexceptions
  
  deps: $(OBJ_DIR) $(DEPS)
-@@ -133,7 +124,7 @@ $(OBJS): $(OBJ_DIR)/Sentry
+@@ -133,7 +126,7 @@ $(OBJS): $(OBJ_DIR)/Sentry
  # Under Cygwin replace strip $@ with strip $@.exe
  
  cfdg: $(OBJS)
@@ -65,12 +87,12 @@
  	strip $@
  
  
-@@ -196,7 +187,7 @@ check: cfdg
+@@ -196,7 +189,7 @@ check: cfdg
  #
  
  CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))
--CXXFLAGS += -O2 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
-+CXXFLAGS += -Wall -Wextra -Wno-parentheses -std=c++14
+-CXXFLAGS += -O2 -Wall -Wextra -Wno-parentheses -std=c++17
++CXXFLAGS += -Wall -Wextra -Wno-parentheses -std=c++17
  CXXFLAGS += -g -D_GLIBCXX_USE_C99_MATH=1
  CPPFLAGS += -DNDEBUG
  

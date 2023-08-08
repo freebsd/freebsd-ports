@@ -15,5 +15,6 @@ PLIST_FILES=	bin/unquote man/man1/unquote.1.gz
 .if		!defined(NO_RELEASE)
 MAKE_ENV+=	RELEASE=yes
 .endif
+MAKE_ENV+=	NO_WDATE_TIME=yes
 
 .include <bsd.port.mk>

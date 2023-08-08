@@ -1,6 +1,5 @@
 PORTNAME=	kea
 PORTVERSION=	${ISCVERSION:S/-P/P/:S/-beta/b/:S/a/.a/:S/rc/.rc/}
-PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ISC/kea/${ISCVERSION}
 DISTNAME=	${PORTNAME}-${ISCVERSION}
@@ -18,7 +17,7 @@ LIB_DEPENDS=	liblog4cplus.so:devel/log4cplus \
 USES=		autoreconf compiler:c++11-lang iconv libtool pathfix ssl cpe
 
 # ISC releases things like 1.4.0-P1, which our versioning doesn't like
-ISCVERSION=	2.2.0
+ISCVERSION=	2.4.0
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -55,7 +54,7 @@ PGSQL_CONFIGURE_OFF=	--without-pgsql
 PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 SHELL_DESC=	Install kea-shell(8) (Python)
-SHELL_USES=	python:3.5+
+SHELL_USES=	python
 SHELL_CONFIGURE_ON=	--enable-shell
 
 .include <bsd.port.mk>

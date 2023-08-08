@@ -14,6 +14,5 @@ RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
 
 NO_ARCH=	yes
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -1,0 +1,98 @@
+--- Makefile.in.orig	2023-02-26 13:49:58 UTC
++++ Makefile.in
+@@ -579,7 +579,7 @@ am__v_lt_0 = --silent
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+-am__v_lt_1 = 
++am__v_lt_1 =
+ bindings_cxx_libsigrokcxx_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(AM_CXXFLAGS) $(CXXFLAGS) \
+@@ -1095,12 +1095,12 @@ am__v_GEN_0 = @echo "  GEN     " $@;
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
+-DEFAULT_INCLUDES = 
++am__v_at_1 =
++DEFAULT_INCLUDES =
+ depcomp = $(SHELL) $(top_srcdir)/autostuff/depcomp
+ am__maybe_remake_depfiles = depfiles
+ am__depfiles_remade = bindings/cxx/$(DEPDIR)/classes.Plo \
+@@ -1327,7 +1327,7 @@ am__v_CC_0 = @echo "  CC      " $@;
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -1335,7 +1335,7 @@ am__v_CCLD_0 = @echo "  CCLD    " $@;
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+ 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+@@ -1345,7 +1345,7 @@ am__v_CXX_0 = @echo "  CXX     " $@;
+ AM_V_CXX = $(am__v_CXX_@AM_V@)
+ am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+ am__v_CXX_0 = @echo "  CXX     " $@;
+-am__v_CXX_1 = 
++am__v_CXX_1 =
+ CXXLD = $(CXX)
+ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+@@ -1353,7 +1353,7 @@ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+ am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+ am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+-am__v_CXXLD_1 = 
++am__v_CXXLD_1 =
+ SOURCES = $(bindings_cxx_libsigrokcxx_la_SOURCES) \
+ 	$(libsigrok_la_SOURCES) $(src_libdrivers_la_SOURCES) \
+ 	$(src_libdrivers_head_la_SOURCES) \
+@@ -1780,7 +1780,7 @@ local_includes = -Iinclude -I$(srcdir)/include -I$(src
+ 	$(am__append_1)
+ @WIN32_FALSE@global_defs = -DFIRMWARE_DIR='"$(FIRMWARE_DIR)"'
+ # Do not hard-code the firmware location on Windows.
+-@WIN32_TRUE@global_defs = 
++@WIN32_TRUE@global_defs =
+ # Ensure that local include directories are always searched first.
+ AM_CPPFLAGS = $(local_includes) $(global_defs)
+ 
+@@ -2020,7 +2020,7 @@ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config
+ stamp-h1: $(srcdir)/config.h.in $(top_builddir)/config.status
+ 	@rm -f stamp-h1
+ 	cd $(top_builddir) && $(SHELL) ./config.status config.h
+-$(srcdir)/config.h.in:  $(am__configure_deps) 
++$(srcdir)/config.h.in:  $(am__configure_deps)
+ 	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+ 	rm -f stamp-h1
+ 	touch $@
+@@ -2319,7 +2319,7 @@ src/scale/kern.lo: src/scale/$(am__dirstamp) \
+ src/scale/kern.lo: src/scale/$(am__dirstamp) \
+ 	src/scale/$(DEPDIR)/$(am__dirstamp)
+ 
+-libsigrok.la: $(libsigrok_la_OBJECTS) $(libsigrok_la_DEPENDENCIES) $(EXTRA_libsigrok_la_DEPENDENCIES) 
++libsigrok.la: $(libsigrok_la_OBJECTS) $(libsigrok_la_DEPENDENCIES) $(EXTRA_libsigrok_la_DEPENDENCIES)
+ 	$(AM_V_CCLD)$(libsigrok_la_LINK) -rpath $(libdir) $(libsigrok_la_OBJECTS) $(libsigrok_la_LIBADD) $(LIBS)
+ src/drivers.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+ src/hardware/agilent-dmm/$(am__dirstamp):
+@@ -5262,6 +5262,7 @@ $(CPPXMLDOC): bindings/cxx/include/libsigrokcxx/libsig
+ @BINDINGS_RUBY_TRUE@$(RDOC): $(srcdir)/bindings/swig/doc.py $(CPPXMLDOC)
+ @BINDINGS_RUBY_TRUE@	$(AM_V_at)test -d $(RDIR) || $(MKDIR_P) $(RDIR)
+ @BINDINGS_RUBY_TRUE@	$(AM_V_GEN)$(PYTHON) $(srcdir)/bindings/swig/doc.py ruby $(CPPXMLDOC) > $@
++@BINDINGS_RUBY_TRUE@	/bin/cp /dev/null  $@
+ 
+ @BINDINGS_RUBY_TRUE@$(RWRAP): $(srcdir)/$(RDIR)/classes.i $(RDOC) \
+ @BINDINGS_RUBY_TRUE@		bindings/swig/classes.i bindings/swig/templates.i \

@@ -1,8 +1,8 @@
 PORTNAME=	soapy_power
 DISTVERSION=	1.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc hamradio python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}SimpleSoapy>=1.5.0:misc/py-SimpleSoapy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}SimpleSpectral>0:science/py-SimpleSpectral@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 
 .include <bsd.port.mk>

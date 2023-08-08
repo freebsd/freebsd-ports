@@ -1,0 +1,4 @@
+py-dftd4 is a python binding for dftd4 (D4).
+
+D4 is a generally applicable atomic-charge dependent london dispersion
+correction calculator.

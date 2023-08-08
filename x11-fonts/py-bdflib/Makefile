@@ -1,7 +1,7 @@
 PORTNAME=	bdflib
 PORTVERSION=	2.0.0
 CATEGORIES=	x11-fonts python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/Screwtapello/bdflib
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

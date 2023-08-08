@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-mixlib-log>=0:devel/rubygem-mixlib-log
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,0 +1,35 @@
+Add "av_stream_get_first_dts" symbol for www/qt5-webengine
+
+Obtained from:
+
+https://github.com/archlinux/svntogit-packages/blob/packages/ffmpeg/trunk/add-av_stream_get_first_dts-for-chromium.patch
+
+--- libavformat/avformat.h.orig	2023-02-27 20:43:45 UTC
++++ libavformat/avformat.h
+@@ -1019,6 +1019,10 @@ int64_t    av_stream_get_end_pts(const AVStream *st);
+ int64_t    av_stream_get_end_pts(const AVStream *st);
+ #endif
+ 
++// Chromium: We use the internal field first_dts vvv
++int64_t    av_stream_get_first_dts(const AVStream *st);
++// Chromium: We use the internal field first_dts ^^^
++
+ #define AV_PROGRAM_RUNNING 1
+ 
+ /**
+--- libavformat/mux_utils.c.orig	2023-02-27 20:43:45 UTC
++++ libavformat/mux_utils.c
+@@ -40,6 +40,13 @@ int64_t av_stream_get_end_pts(const AVStream *st)
+ }
+ #endif
+ 
++// Chromium: We use the internal field first_dts vvv
++int64_t av_stream_get_first_dts(const AVStream *st)
++{
++  return cffstream(st)->first_dts;
++}
++// Chromium: We use the internal field first_dts ^^^
++
+ int avformat_query_codec(const AVOutputFormat *ofmt, enum AVCodecID codec_id,
+                          int std_compliance)
+ {

@@ -1,7 +1,5 @@
-TIMESTAMP = 1615486005
-SHA256 (SymbiFlow-prjtrellis-g20190422-5eb0ad87_GH0.tar.gz) = e9611f0d3516048acd49e8f2228d13775a7fff14e41a8cb92c0e01918b3c10ff
-SIZE (SymbiFlow-prjtrellis-g20190422-5eb0ad87_GH0.tar.gz) = 359933
-SHA256 (SymbiFlow-prjtrellis-db-d0b219af_GH0.tar.gz) = 88c94d6bf74f4156f07bf09f8c207f6e237e2583cca655ffd1e0ce3afd89dc16
-SIZE (SymbiFlow-prjtrellis-db-d0b219af_GH0.tar.gz) = 2361070
-SHA256 (2784291454a0307cf131acb5f0f68acc1eb4ffc3.patch) = 39ec4912e76076c8b010f17288bf37587398de24c7ba34b8c009af61645181f2
-SIZE (2784291454a0307cf131acb5f0f68acc1eb4ffc3.patch) = 1718
+TIMESTAMP = 1671546592
+SHA256 (YosysHQ-prjtrellis-g2022100712-35f5affe10_GH0.tar.gz) = 051610533a83e1236c02e563c4590e66b118e7843b7a0a5210e1edc6f32e06f7
+SIZE (YosysHQ-prjtrellis-g2022100712-35f5affe10_GH0.tar.gz) = 1157407
+SHA256 (YosysHQ-prjtrellis-db-35d900a94ff_GH0.tar.gz) = e4654ccf33cde0d9f386483688351e6318d4a7db2691a1eea4ccae7813f551b1
+SIZE (YosysHQ-prjtrellis-db-35d900a94ff_GH0.tar.gz) = 2909007

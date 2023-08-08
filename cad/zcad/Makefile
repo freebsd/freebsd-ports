@@ -1,6 +1,6 @@
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.5
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	cad
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -75,13 +75,15 @@ post-patch:
 post-configure:
 # OpenGL component must be fixed and rebuilt locally (to avoid touching
 # filesystem outside working directory)
-	${SED} -e 's,Linux,${OPSYS},' \
-		${LAZARUS_DIR}/components/opengl/openglcontext.pas \
-		> ${BUILD_WRKSRC}/openglcontext.pas
+	${SED} -e 's,@paintGL,paintGL,' \
+		${LAZARUS_DIR}/components/opengl/qlclopenglwidget.pas \
+		> ${BUILD_WRKSRC}/qlclopenglwidget.pas
 	${CP} ${LAZARUS_DIR}/components/opengl/glgtkglxcontext.pas \
 		${LAZARUS_DIR}/components/opengl/glqtcontext.pas \
-		${LAZARUS_DIR}/components/opengl/openglcontext.res \
+		${LAZARUS_DIR}/components/opengl/openglcontext.* \
 		${BUILD_WRKSRC}
+# Build components that do not come with precompiled *.ppu files (also
+# copy them locally first for the same reason as above)
 	${CP} -a ${LAZARUS_DIR}/components/fpvectorial \
 		${LAZARUS_DIR}/components/anchordocking \
 		${LAZARUS_DIR}/components/lclextensions ${BUILD_WRKSRC}

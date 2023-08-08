@@ -1,8 +1,8 @@
 PORTNAME=	django
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.20
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
-		https://www.djangoproject.com/m/releases/${PORTVERSION}/
+MASTER_SITES=	PYPI \
+		https://media.djangoproject.com/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	32
 DISTNAME=	Django-${PORTVERSION}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
-USES=		cpe python:3.7+ shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
@@ -32,8 +32,7 @@ PORTDOCS=	*
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django40 \
-			${PYTHON_PKGNAMEPREFIX}django41
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django[0-9][0-9]
 
 CPE_VENDOR=	djangoproject
 

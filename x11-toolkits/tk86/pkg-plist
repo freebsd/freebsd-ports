@@ -34,6 +34,7 @@ include/tk%%TK_VER%%/tkIntXlibDecls.h
 include/tk%%TK_VER%%/unix/tkUnixDefault.h
 include/tk%%TK_VER%%/unix/tkUnixInt.h
 include/tk%%TK_VER%%/unix/tkUnixPort.h
+include/tk%%TK_VER%%/unix/tkUuid.h
 lib/libtk%%SHORT_TK_VER%%.a
 lib/libtk%%SHORT_TK_VER%%.so
 lib/libtk%%SHORT_TK_VER%%.so.1
@@ -161,6 +162,7 @@ lib/tk%%TK_VER%%/msgs/en.msg
 lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/es.msg
+lib/tk%%TK_VER%%/msgs/fi.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/hu.msg
 lib/tk%%TK_VER%%/msgs/it.msg
@@ -169,6 +171,7 @@ lib/tk%%TK_VER%%/msgs/pl.msg
 lib/tk%%TK_VER%%/msgs/pt.msg
 lib/tk%%TK_VER%%/msgs/ru.msg
 lib/tk%%TK_VER%%/msgs/sv.msg
+lib/tk%%TK_VER%%/msgs/zh_cn.msg
 lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl

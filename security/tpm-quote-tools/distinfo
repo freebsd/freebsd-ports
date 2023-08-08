@@ -1,0 +1,5 @@
+TIMESTAMP = 1667481591
+SHA256 (tpm-quote-tools-1.0.4.tar.gz) = 10dc4eade02635557a9496b388360844cd18e7864e2eb882f5e45ab2fa405ae2
+SIZE (tpm-quote-tools-1.0.4.tar.gz) = 188806
+SHA256 (0001-Differentiate-between-owner-and-srk-well-known-passs.patch?h=tpm-quote-tools) = 32f814b8d22c409d3543c34e4199f21152a30f3410162ef6c91f6a713641f19d
+SIZE (0001-Differentiate-between-owner-and-srk-well-known-passs.patch?h=tpm-quote-tools) = 2803

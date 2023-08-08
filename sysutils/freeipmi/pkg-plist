@@ -69,6 +69,7 @@ include/freeipmi/record-format/ipmi-sdr-record-format.h
 include/freeipmi/record-format/ipmi-sel-oem-record-format.h
 include/freeipmi/record-format/ipmi-sel-record-format.h
 include/freeipmi/record-format/oem/ipmi-fru-wistron-oem-record-format.h
+include/freeipmi/record-format/oem/ipmi-fru-xilinx-oem-record-format.h
 include/freeipmi/record-format/oem/ipmi-sdr-oem-intel-node-manager-record-format.h
 include/freeipmi/record-format/oem/ipmi-sdr-oem-intel-record-format.h
 include/freeipmi/record-format/oem/ipmi-sel-oem-intel-record-format.h
@@ -254,7 +255,7 @@ include/ipmidetect.h
 lib/libfreeipmi.a
 lib/libfreeipmi.so
 lib/libfreeipmi.so.17
-lib/libfreeipmi.so.17.2.9
+lib/libfreeipmi.so.17.2.10
 lib/libipmiconsole.a
 lib/libipmiconsole.so
 lib/libipmiconsole.so.2
@@ -266,7 +267,7 @@ lib/libipmidetect.so.0.0.1
 lib/libipmimonitoring.a
 lib/libipmimonitoring.so
 lib/libipmimonitoring.so.6
-lib/libipmimonitoring.so.6.0.8
+lib/libipmimonitoring.so.6.0.9
 libdata/pkgconfig/libfreeipmi.pc
 libdata/pkgconfig/libipmiconsole.pc
 libdata/pkgconfig/libipmidetect.pc
@@ -353,11 +354,68 @@ sbin/ipmiseld
 sbin/pef-config
 sbin/rmcp-ping
 sbin/rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ZRESEARCH
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.bmc-watchdog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-dcmi
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmi-fru
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiconsole
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmidetect
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmimonitoring
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiping
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmipower
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.ipmiseld
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.pstdout
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.sunbmc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.0
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.bmc-watchdog.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-dcmi
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmi-fru.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiconsole.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmidetect.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmimonitoring.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiping.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmipower.UC
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.ipmiseld
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout
+%%PORTDOCS%%%%DOCSDIR%%/DISCLAIMER.pstdout.UC
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.argp
+%%PORTDOCS%%%%DOCSDIR%%/README.build
+%%PORTDOCS%%%%DOCSDIR%%/README.openipmi
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/ganglia/ganglia_ipmi_sensors.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sel.c
+%%PORTDOCS%%%%DOCSDIR%%/contrib/libipmimonitoring/ipmimonitoring-sensors.c
+%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/nagios/nagios_ipmi_sensors.pl
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/README
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/check_rmcpping
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/ipminodes.cfg
+%%PORTDOCS%%%%DOCSDIR%%/contrib/pet/petalert.pl
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-bugs-issues-and-workarounds.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-coding.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-design.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-hostrange.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-libraries.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-oem-documentation-requirements.txt
+%%PORTDOCS%%%%DOCSDIR%%/freeipmi-testing.txt
+@dir %%CACHE_DIR%%
+@dir %%CACHE_DIR%%/ipmimonitoringsdrcache
+@dir %%CACHE_DIR%%/ipmiseld
+@dir /var/lib
+@dir /var/lib/freeipmi
 /var/lib/freeipmi/ipckey
 @dir /var/run/freeipmi
-@dir /var/run
-@dir /var/lib/freeipmi
-@dir /var/lib
-@dir %%CACHE_DIR%%/ipmiseld
-@dir %%CACHE_DIR%%/ipmimonitoringsdrcache
-@dir %%CACHE_DIR%%

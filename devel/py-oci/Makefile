@@ -1,7 +1,7 @@
 PORTNAME=	oci
-PORTVERSION=	2.82.0
+PORTVERSION=	2.108.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ale_sagra@hotmail.com
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.5.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.6-3.9
+USES=		python:3.8-3.11 pycryptography:run
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

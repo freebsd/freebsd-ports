@@ -1,0 +1,9 @@
+habak is a background changing app.
+
+habak uses layered model. Lowermost layer is just black screen. You
+can put other objects on it and these objects are called habaks.
+There are three kinds of habaks: graphic files (images), texts and
+"internal objects". Final background image consists of one or more
+habaks positioned on the black screen. The order of habaks in the
+command line is also the order of displaying them on screen. So
+last habak would be drawn on the top of previous.

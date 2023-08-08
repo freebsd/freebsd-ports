@@ -1,5 +1,5 @@
 PORTNAME=	Rose-HTML-Objects
-PORTVERSION=	0.623
+PORTVERSION=	0.624
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -25,9 +25,11 @@ RUN_DEPENDS=	p5-Clone-PP>=0:devel/p5-Clone-PP \
 		p5-URI>=0:net/p5-URI
 TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle
 
-PORTSCOUT=	skipv:0.6061
-
 USES=		perl5
 USE_PERL5=	configure
+
+PORTSCOUT=	skipv:0.6061
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

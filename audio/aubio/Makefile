@@ -1,8 +1,13 @@
 PORTNAME=	aubio
 PORTVERSION=	0.4.9
-PORTREVISION?=	1
+PORTREVISION?=	4
 CATEGORIES?=	audio
 MASTER_SITES=	https://aubio.org/pub/
+
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES+=	cdfe9cef2dcc3edf7d05ca2e9c2dbbf8dea21f1c.patch:-p1 #FFmpeg 6.x compat
+PATCHFILES+=	8a05420e5dd8c7b8b2447f82dc919765876511b3.patch:-p1 #FFmpeg 6.x compat
+PATCHFILES+=	95ff046c698156f21e2ca0d1d8a02c23ab76969f.patch:-p1 #Add const qualifiers for NumPy >= 1.19.0
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library for audio labelling
@@ -16,7 +21,7 @@ USES+=		cpe pkgconfig tar:bzip2
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 .if !defined(SLAVEPORT)
-USES+=		python:build,3.6+ waf
+USES+=		python:build waf
 USE_LDCONFIG=	yes
 
 OPTIONS_GROUP=		DOCS
@@ -64,6 +69,8 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/pkgconfig/s|$${LIBDIR}|&data|' ${WRKSRC}/waflib/TaskGen.py
+	@${REINPLACE_CMD} -e \
+		'/read/s|rU|r|' ${WRKSRC}/waflib/ConfigSet.py ${WRKSRC}/waflib/Context.py
 
 post-install:
 .for b in mfcc notes onset pitch quiet track

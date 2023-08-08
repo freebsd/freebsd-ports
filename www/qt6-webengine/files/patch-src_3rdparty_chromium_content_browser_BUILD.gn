@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2023-07-07 17:40:32 UTC
++++ src/3rdparty/chromium/content/browser/BUILD.gn
+@@ -2501,6 +2501,13 @@ jumbo_source_set("browser") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     deps += [ "//components/value_store:value_store" ]
+     sources += [

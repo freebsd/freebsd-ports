@@ -1,0 +1,2 @@
+User tools for libqtxdg. qtxdg-tools contains a CLI MIME tool, qtxdg-mat, for
+handling file associations and opening files with their default applications.

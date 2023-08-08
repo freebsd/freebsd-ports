@@ -1,6 +1,6 @@
---- ui/platform_window/platform_window_init_properties.h.orig	2022-04-01 07:48:30 UTC
+--- ui/platform_window/platform_window_init_properties.h.orig	2022-10-05 07:34:01 UTC
 +++ ui/platform_window/platform_window_init_properties.h
-@@ -54,7 +54,7 @@ class WorkspaceExtensionDelegate;
+@@ -56,7 +56,7 @@ class WorkspaceExtensionDelegate;
  class ScenicWindowDelegate;
  #endif
  
@@ -9,12 +9,12 @@
  class X11ExtensionDelegate;
  #endif
  
-@@ -116,7 +116,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
+@@ -118,7 +118,7 @@ struct COMPONENT_EXPORT(PLATFORM_WINDOW) PlatformWindo
  
    PlatformWindowShadowType shadow_type = PlatformWindowShadowType::kDefault;
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    bool prefer_dark_theme = false;
-   gfx::ImageSkia* icon = nullptr;
-   absl::optional<int> background_color;
+   raw_ptr<gfx::ImageSkia> icon = nullptr;
+   absl::optional<SkColor> background_color;

@@ -1,5 +1,5 @@
 PORTNAME=	leafpad
-PORTVERSION=	0.8.18.1
+PORTVERSION=	0.8.19
 PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
@@ -10,8 +10,12 @@ WWW=		http://tarot.freeshell.org/leafpad/
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gtk20 intlhack
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
+
 USES=		desktop-file-utils gettext gmake gnome pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -21,10 +25,12 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 

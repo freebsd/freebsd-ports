@@ -1,0 +1,8 @@
+include/Definitions.hpp
+include/Expression.hpp
+include/Rational.hpp
+include/Rules.hpp
+include/Simplify.hpp
+include/Utils.hpp
+include/ZXDiagram.hpp
+lib/libzx.so

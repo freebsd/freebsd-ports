@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.10.0
-PORTREVISION=	1
+PORTVERSION=	14.23.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -9,12 +8,17 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-shell
 
 LICENSE=	MIT
 
-USES=		gmake go:modules,no_targets
+# GSSAPI support can maybe be removed by disable CGO:
+# https://gitlab.com/gitlab-org/gitlab-shell/-/merge_requests/720
+#BUILD_DEPENDS=	heimdal>=0:security/heimdal
+
+USES=		gmake go:modules,no_targets pkgconfig
+CGO_ENABLED=	0
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	28188013f53673b0870e44b082b93d855082be49
+# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/-/tags
+GL_TAGNAME=	fa92c356b543dcf1f40cc890e52d7b13c2c0f78a
 
 USERS=		git
 GROUPS=		git
@@ -78,4 +82,3 @@ post-install:
 		s#${DATADIR_REL}/bin#@(,,555) ${DATADIR_REL}/bin#; ' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
-

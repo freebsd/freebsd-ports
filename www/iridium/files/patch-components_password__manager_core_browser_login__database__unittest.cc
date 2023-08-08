@@ -1,24 +1,24 @@
---- components/password_manager/core/browser/login_database_unittest.cc.orig	2022-03-28 18:11:04 UTC
+--- components/password_manager/core/browser/login_database_unittest.cc.orig	2023-07-24 14:27:53 UTC
 +++ components/password_manager/core/browser/login_database_unittest.cc
-@@ -2090,7 +2090,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
+@@ -2170,7 +2170,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
    base::HistogramTester histogram_tester;
    ASSERT_TRUE(db.Init());
  
--#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST))
-+#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST)) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS))
++#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)
    // Make sure that we can't get any logins when database is corrupted.
    // Disabling the checks in chromecast because encryption is unavailable.
    std::vector<std::unique_ptr<PasswordForm>> result;
-@@ -2116,7 +2116,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
+@@ -2197,7 +2197,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, DeleteUnd
  #endif
  
  // Check histograms.
--#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST))
-+#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMECAST)) || BUILDFLAG(IS_BSD)
-   histogram_tester.ExpectUniqueSample("PasswordManager.CleanedUpPasswords", 2,
-                                       1);
+-#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS))
++#if BUILDFLAG(IS_MAC) || (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)
    histogram_tester.ExpectUniqueSample(
-@@ -2168,7 +2168,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, KeychainL
+       "PasswordManager.DeleteUndecryptableLoginsReturnValue",
+       metrics_util::DeleteCorruptedPasswordsResult::kSuccessPasswordsDeleted,
+@@ -2240,7 +2240,7 @@ TEST_F(LoginDatabaseUndecryptableLoginsTest, KeychainL
  }
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -26,4 +26,4 @@
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Test getting auto sign in logins when there are undecryptable ones
  TEST_F(LoginDatabaseUndecryptableLoginsTest, GetAutoSignInLogins) {
-   PrimaryKeyToFormMap key_to_form_map;
+   std::vector<std::unique_ptr<PasswordForm>> forms;

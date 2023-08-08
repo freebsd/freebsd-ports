@@ -1,0 +1,7 @@
+bin/ancient
+include/ancient/ancient.hpp
+lib/libancient.a
+lib/libancient.so
+lib/libancient.so.2
+lib/libancient.so.2.0.1
+libdata/pkgconfig/libancient.pc

@@ -1,1 +1,2 @@
-Multidicts are useful for working with HTTP headers, URL query args etc.
+Multidict is dict-like collection of key-value pairs where key might
+occur more than once in the container.

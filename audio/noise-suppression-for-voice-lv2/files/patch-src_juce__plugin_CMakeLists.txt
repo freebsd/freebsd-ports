@@ -1,0 +1,28 @@
+--- src/juce_plugin/CMakeLists.txt.orig	2022-07-28 08:24:44 UTC
++++ src/juce_plugin/CMakeLists.txt
+@@ -87,14 +89,14 @@ function(compile_plugins formats suffix default_channe
+     # JUCE has a terrible idea of installing plugin during the BUILD process instead of during the INSTALL,
+     # also JUCE wants to install its headers which we don't want at all.
+     # So it's easier to handle it ourselves.
+-    if (UNIX AND NOT APPLE)
++    if (FALSE AND UNIX AND NOT APPLE)
+         foreach (format IN LISTS formats)
+             if (format STREQUAL "LV2")
+-                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rnnoise${suffix}.lv2 DESTINATION ${CMAKE_INSTALL_LIBDIR}/lv2)
++                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../src/juce_plugin/rnnoise_juce_plugin${suffix}_artefacts/Release/LV2/rnnoise${suffix}.lv2 DESTINATION lib/lv2)
+             elseif (format STREQUAL "VST")
+-                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vst/ DESTINATION ${CMAKE_INSTALL_LIBDIR}/lxvst)
++                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/vst/ DESTINATION lib/lxvst)
+             elseif (format STREQUAL "VST3")
+-                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/rnnoise.vst3 DESTINATION ${CMAKE_INSTALL_LIBDIR}/vst3)
++                install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/../src/juce_plugin/rnnoise_juce_plugin_artefacts/Release/VST3/rnnoise.vst3 DESTINATION lib/vst3)
+             endif ()
+         endforeach ()
+     endif ()
+@@ -135,4 +137,4 @@ endif ()
+ 
+ if (FORMATS)
+     compile_plugins("${FORMATS}" "" 1)
+-endif ()
+\ No newline at end of file
++endif ()

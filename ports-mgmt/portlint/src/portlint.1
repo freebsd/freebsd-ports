@@ -1,3 +1,4 @@
+.\"  $MCom$
 .\"
 .\" Copyright (c) 1997 by Jun-ichiro Hagino <itojun@itojun.org>.
 .\" All Rights Reserved.  Absolutely no warranty.
@@ -100,10 +101,10 @@ If omitted, check will be performed over the current directory.
 .Sh ENVIRONMENT
 The following environment variables affect the execution of
 .Nm :
-.Bl -tag -width ".Ev PL_SVN_IGNORE"
-.It Ev PL_SVN_IGNORE
+.Bl -tag -width ".Ev PL_GIT_IGNORE"
+.It Ev PL_GIT_IGNORE
 Set to a Perl-compatible regular expression, of patterns
-to ignore when checking to see if files are in the SVN
+to ignore when checking to see if files are in the git 
 repository.  For example,
 .Li '^\ed+$|^pr-patch$' .
 .It Ev PORTSDIR

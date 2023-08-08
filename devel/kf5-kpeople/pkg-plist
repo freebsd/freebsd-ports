@@ -26,6 +26,7 @@ include/KF5/KPeople/kpeople/widgets/kpeoplewidgets_export.h
 include/KF5/KPeople/kpeople/widgets/mergedialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsdialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsview.h
+include/KF5/KPeople/kpeople_version.h
 include/KF5/KPeople/kpeoplebackend/abstractcontact.h
 include/KF5/KPeople/kpeoplebackend/abstracteditablecontact.h
 include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
@@ -53,6 +54,7 @@ lib/libKF5PeopleWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/people/qmldir
 share/locale/ar/LC_MESSAGES/kpeople5.mo
 share/locale/az/LC_MESSAGES/kpeople5.mo
+share/locale/bg/LC_MESSAGES/kpeople5.mo
 share/locale/bs/LC_MESSAGES/kpeople5.mo
 share/locale/ca/LC_MESSAGES/kpeople5.mo
 share/locale/ca@valencia/LC_MESSAGES/kpeople5.mo

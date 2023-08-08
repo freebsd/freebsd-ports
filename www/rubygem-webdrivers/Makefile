@@ -1,5 +1,5 @@
 PORTNAME=	webdrivers
-PORTVERSION=	5.0.0
+PORTVERSION=	5.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-selenium-webdriver>=4.0<5:www/rubygem-selenium-webdriver
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

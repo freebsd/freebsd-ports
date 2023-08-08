@@ -1,0 +1,15 @@
+With pycomplete, one can generate a completion script for CLI application that
+is compatible with a given shell. The script outputs the result onto stdout,
+allowing one to re-direct the output to the file of their choosing.
+
+pycomplete accepts different types of objects depending on which CLI framework
+you are using. For argparse, argparse.ArgumentParser is expected while for
+click, either click.Command or click.Context is OK. pycomplete knows what to do
+smartly.
+
+Where you place the file will depend on which shell, and which operating system
+you are using. Your particular configuration may also determine where these
+scripts need to be placed.
+
+Note that pycomplete needs to be installed in the same environment as the target
+CLI app to work properly.

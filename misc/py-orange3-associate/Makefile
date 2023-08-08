@@ -1,5 +1,6 @@
 PORTNAME=	orange3-associate
 DISTVERSION=	1.1.8
+PORTREVISION=	2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +14,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

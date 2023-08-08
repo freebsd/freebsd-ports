@@ -12,7 +12,7 @@ WWW=		https://tug.org/texlive/
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		libtool localbase pkgconfig tar:xz
+USES=		libtool localbase pkgconfig tar:xz tex
 USE_TEX=	kpathsea web2c
 
 GNU_CONFIGURE=		yes
@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 
 EXCLUDE_ENGINES=	aleph luatex luajittex mf mf-nowin ptex eptex uptex \
 			euptex xetex otangle mp pmp upmp web2c web-progs \
-			synctex \
+			synctex hitex \
 			luahbtex \
 			luajithbtex \
 			mflua \

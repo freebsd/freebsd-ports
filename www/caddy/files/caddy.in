@@ -8,6 +8,7 @@
 # /etc/rc.conf.local
 
 # Optional settings:
+# caddy_command (string):     Full path to the caddy binary
 # caddy_config (string):      Full path to caddy config file
 #                             (%%ETCDIR%%/Caddyfile)
 # caddy_adapter (string):     Config adapter type (caddyfile)
@@ -38,7 +39,8 @@ load_rc_config $name
 # Defaults
 : ${caddy_enable:=NO}
 : ${caddy_adapter:=caddyfile}
-: ${caddy_config:=%%ETCDIR%%/Caddyfile}
+: ${caddy_config:="%%ETCDIR%%/Caddyfile"}
+: ${caddy_command:="%%PREFIX%%/bin/${name}"}
 : ${caddy_directory:=/var/db/caddy}
 : ${caddy_extra_flags:=""}
 : ${caddy_logdir:="/var/log/${name}"}
@@ -51,24 +53,30 @@ load_rc_config $name
 : ${XDG_DATA_HOME:="${caddy_directory}/data"}
 export XDG_CONFIG_HOME XDG_DATA_HOME
 
-command="%%PREFIX%%/bin/${name}"
-caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
+command="${caddy_command}"
 pidfile="/var/run/${name}/${name}.pid"
 
-required_files="${caddy_config} ${command}"
+required_files="${caddy_config} ${caddy_command}"
 
 start_precmd="caddy_precmd"
 start_cmd="caddy_start"
 stop_precmd="caddy_prestop"
 
+# JSON is the native format, so there is no "adapter" for it
+if [ "${caddy_adapter}" = "json" ]; then
+    caddy_flags="--config ${caddy_config}"
+else
+    caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
+fi
+
 # Extra Commands
 extra_commands="configtest reload"
-configtest_cmd="caddy_command validate ${caddy_flags}"
-reload_cmd="caddy_command reload ${caddy_flags}"
+configtest_cmd="caddy_execute validate ${caddy_flags}"
+reload_cmd="caddy_execute reload ${caddy_flags}"
 
-caddy_command()
+caddy_execute()
 {
-    /usr/bin/su -m "${caddy_user}" -c "${command} $*"
+    /usr/bin/su -m "${caddy_user}" -c "${caddy_command} $*"
 }
 
 caddy_precmd()
@@ -90,7 +98,7 @@ caddy_precmd()
 caddy_start()
 {
     echo -n "Starting caddy... "
-    /usr/bin/su -m ${caddy_user} -c "${command} start ${caddy_flags} \
+    /usr/bin/su -m ${caddy_user} -c "${caddy_command} start ${caddy_flags} \
         ${caddy_extra_flags} --pidfile ${pidfile}" >> ${caddy_logfile} 2>&1
     if [ $? -eq 0 ] && ps -ax -o pid | grep -q "$(cat ${pidfile})"; then
         echo "done"
@@ -107,7 +115,7 @@ caddy_prestop()
 
     echo -n "Stopping caddy... "
 
-    result="$(caddy_command stop 2>&1)"
+    result="$(caddy_execute stop 2>&1)"
     if [ ${?} -eq 0 ]; then
         echo "done"
         exit 0

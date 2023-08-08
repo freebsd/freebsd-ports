@@ -1,12 +1,11 @@
 bin/jbs
 include/ejdb2/ejdb2.h
-include/ejdb2/jbl.h
 include/ejdb2/jbr.h
 include/ejdb2/jql.h
 lib/libejdb2-2.a
 lib/libejdb2.so
 lib/libejdb2.so.2
-lib/libejdb2.so.2.72
+lib/libejdb2.so.2.73
 libdata/pkgconfig/libejdb2.pc
 share/man/man1/jbs.1.gz
 share/man/man3/ejdb2.3.gz

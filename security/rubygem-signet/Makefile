@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-multi_json>=1.10<2:devel/rubygem-multi_json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

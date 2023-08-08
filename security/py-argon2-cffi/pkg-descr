@@ -1,4 +1,2 @@
 Argon2 won the Password Hashing Competition and argon2-cffi is the simplest way
 to use it in Python and PyPy.
-
-See also: https://github.com/hynek/argon2-cffi

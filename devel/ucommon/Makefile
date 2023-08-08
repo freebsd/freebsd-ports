@@ -17,7 +17,17 @@ CMAKE_ARGS=	-DBUILD_TESTING:BOOL=ON \
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+USE_CXXSTD=	c++11
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=      -DOPENSSL_API_COMPAT=0x30000000L
+.endif
+
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/ucommon-config.h ${STAGEDIR}${PREFIX}/include/ucommon
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

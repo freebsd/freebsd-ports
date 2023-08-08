@@ -1,7 +1,6 @@
 PORTNAME=	lean
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.48.0
-PORTREVISION=	1
+DISTVERSION=	3.51.1
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -13,6 +12,8 @@ WWW=		https://leanprover-community.github.io/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
+
+BROKEN_aarch64=	c++ crashes during link on arm64 on math/lean, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=266777
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
@@ -28,8 +29,8 @@ CMAKE_TESTING_ON=	BUILD_TESTING
 
 OPTIONS_DEFINE=		TCMALLOC THREADS
 OPTIONS_DEFAULT=	TCMALLOC THREADS
+OPTIONS_EXCLUDE_powerpc=	TCMALLOC
 
-TCMALLOC_DESC=		Use tcmalloc from google-perftools as memory allocator
 TCMALLOC_CMAKE_BOOL=	TCMALLOC
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 

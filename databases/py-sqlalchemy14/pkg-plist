@@ -75,7 +75,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/dragons_original.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/init.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
@@ -83,9 +82,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sphinx_highlight.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/sphinx_paramlinks.css
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore-1.13.1.js
-%%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/build/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/build/changelog/changelog_01.rst
@@ -250,6 +248,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_events.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_state_management.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/session_transaction.rst
+%%PORTDOCS%%%%DOCSDIR%%/build/orm/space_invaders.jpg
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/tutorial.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/orm/versioning.rst
 %%PORTDOCS%%%%DOCSDIR%%/build/requirements.txt

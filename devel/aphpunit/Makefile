@@ -1,5 +1,5 @@
 PORTNAME=	aphpunit
-DISTVERSION=	2.0
+DISTVERSION=	2.1
 CATEGORIES=	devel www
 MASTER_SITES=	http://phar.toco-domains.de/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}

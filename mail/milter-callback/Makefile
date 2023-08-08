@@ -1,6 +1,6 @@
 PORTNAME=	milter-callback
 PORTVERSION=	1.6.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -27,10 +27,6 @@ CFLAGS+=	-DFREEBSD -DHAVE_NS_TYPE -DWITH_SPF -I${LOCALBASE}/include \
 LDFLAGS+=	-lmilter -lthr -L${LOCALBASE}/lib -lspf2
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-fnested-functions
-.endif
 
 do-build:
 .for f in ${SRC_FILES}

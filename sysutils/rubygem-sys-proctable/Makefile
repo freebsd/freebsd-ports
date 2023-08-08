@@ -1,5 +1,5 @@
 PORTNAME=	sys-proctable
-PORTVERSION=	1.2.6
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,9 +10,8 @@ WWW=		https://github.com/djberg96/sys-proctable
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-ffi>=0:devel/rubygem-ffi
+RUN_DEPENDS=	rubygem-ffi>=1.1<2:devel/rubygem-ffi
 
-USE_RUBY=	yes
 USES=		gem
 
 NO_ARCH=	yes

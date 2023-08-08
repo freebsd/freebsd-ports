@@ -17,6 +17,8 @@ LIB_DEPENDS=	libmecab.so:japanese/mecab
 USES=		perl5
 USE_PERL5=	configure
 
+CFLAGS+=	--std=c++14
+
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>

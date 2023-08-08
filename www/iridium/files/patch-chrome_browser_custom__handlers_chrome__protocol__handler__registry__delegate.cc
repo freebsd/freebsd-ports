@@ -1,6 +1,6 @@
---- chrome/browser/custom_handlers/chrome_protocol_handler_registry_delegate.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/custom_handlers/chrome_protocol_handler_registry_delegate.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/custom_handlers/chrome_protocol_handler_registry_delegate.cc
-@@ -69,7 +69,7 @@ void ChromeProtocolHandlerRegistryDelegate::CheckDefau
+@@ -68,7 +68,7 @@ void ChromeProtocolHandlerRegistryDelegate::CheckDefau
  // If true default protocol handlers will be removed if the OS level
  // registration for a protocol is no longer Chrome.
  bool ChromeProtocolHandlerRegistryDelegate::ShouldRemoveHandlersNotInOS() {

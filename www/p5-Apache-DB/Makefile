@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
-USES=		apache:run,2.2+ perl5
+USES=		apache:run perl5
 USE_PERL5=	configure
 
 post-install:

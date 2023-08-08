@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=4.0:devel/rubygem-activesupport4 \
 		rubygem-rugged>=0.24.0:devel/rubygem-rugged
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

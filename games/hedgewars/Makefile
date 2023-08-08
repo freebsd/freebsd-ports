@@ -1,5 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.2
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://www.hedgewars.org/download/releases/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}
@@ -40,7 +41,7 @@ OPTIONS_EXCLUDE_i386=	VIDEOREC  # some pascal issues preventing to use it
 
 VIDEOREC_DESC=	Enable video recording (requires ffmpeg)
 
-VIDEOREC_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+VIDEOREC_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 VIDEOREC_PLIST_FILES=	lib/libavwrapper.so \
 			lib/libavwrapper.so.1.0
 VIDEOREC_CMAKE_OFF=	-DNOVIDEOREC=1
@@ -59,6 +60,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/cmake_modules/*.cmake
 	@${REINPLACE_CMD} -e "s|'liblua'|'liblua-${LUA_VER}'|" ${WRKSRC}/hedgewars/LuaPas.pas
 	@${REINPLACE_CMD} -e "/linklib/ s|lua|&-${LUA_VER}|" ${WRKSRC}/hedgewars/LuaPas.pas
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake_modules/FindLIBAV.cmake
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*

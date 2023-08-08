@@ -1,5 +1,6 @@
 PORTNAME=	openexr
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.9
+PORTREVISION=	0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -22,11 +23,11 @@ CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-PATCH_STRIP=	-p0
+PATCH_STRIP=	-p1
 
 _MAJORVER=	3_1
 _VER=		30
-_MINVER=	5
+_MINVER=	9
 _PLVER=		1
 
 PLIST_SUB+=	MAJORVER=${_MAJORVER} \
@@ -39,8 +40,11 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
-DOCS_BUILD_DEPENDS=breathe-apidoc:devel/py-breathe
-DOCS_CMAKE_BOOL=DOCS
+DOCS_BUILD_DEPENDS=breathe-apidoc:devel/py-breathe \
+		${PYTHON_PKGNAMEPREFIX}sphinx_press_theme>=0:textproc/py-sphinx_press_theme
+DOCS_USES=	python:build
+DOCS_CMAKE_BOOL=BUILD_DOCS
+DOCS_CMAKE_ON=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 
 _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \

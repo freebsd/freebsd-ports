@@ -37,6 +37,9 @@ post-patch:
 		${WRKSRC}/common/src/IO/SystemPaths.cpp
 	@${REINPLACE_CMD} -e '/return m_.*Margin/s,(),,' \
 		${WRKSRC}/common/src/View/CellLayout.h
+	@${REINPLACE_CMD} -e '/typedef std::/s,auto_ptr,unique_ptr,' \
+		${WRKSRC}/common/src/IO/NodeSerializer.h \
+		${WRKSRC}/common/src/Renderer/FontTexture.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/TrenchBroom ${STAGEDIR}${PREFIX}/bin

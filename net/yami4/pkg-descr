@@ -1,3 +1,4 @@
 YAMI4 is a messaging solution for distributed systems.
-It is a set of libraries for several platforms and programming languages.
-This port installs the core and C++ libraries with documentation.
+It is a set of libraries and run-time services
+for several operating systems and programming languages.
+This port installs core, C++ and Python libraries with documentation.

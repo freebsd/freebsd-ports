@@ -1,0 +1,4 @@
+SpaceFM is a multi-panel tabbed file and desktop manager for Linux with built-in
+VFS, udev- or HAL-based device manager, customisable menu system, and bash-GTK
+integration. SpaceFM aims to provide a stable, capable file manager with
+significant customisation capabilities.

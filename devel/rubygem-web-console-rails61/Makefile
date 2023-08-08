@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=6.0.0:databases/rubygem-activemodel61 \
 		rubygem-railties61>=6.0.0:www/rubygem-railties61
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

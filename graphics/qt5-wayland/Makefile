@@ -1,6 +1,5 @@
 PORTNAME=	wayland
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	1
 CATEGORIES=	graphics wayland
 PKGNAMEPREFIX=	qt5-
 
@@ -13,10 +12,11 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libwayland-egl.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c++11-lang gl pkgconfig qmake:norecursive \
+USES=		compiler:c++11-lang gl perl5 pkgconfig qmake:norecursive \
 		qt-dist:5,wayland xorg
 USE_GL=		egl gl
 USE_GNOME=	glib20
+USE_PERL5=	build
 USE_QT=		core dbus gui declarative \
 		buildtools:build qmake:build
 USE_XORG=	x11 xcomposite

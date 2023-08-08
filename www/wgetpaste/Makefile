@@ -1,19 +1,22 @@
 PORTNAME=	wgetpaste
-PORTVERSION=	2.30
+PORTVERSION=	2.33
 CATEGORIES=	www
-MASTER_SITES=	http://wgetpaste.zlin.dk/ \
-		LOCAL/sunpoet
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} wgetpaste.example zlin.conf
+MASTER_SITES=	https://github.com/zlin/wgetpaste/releases/download/${PORTVERSION}/ \
+		https://wgetpaste.zlin.dk/:misc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		wgetpaste.example:misc \
+	       	zlin.conf:misc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Paste to several pastebin services via bash script
-WWW=		http://wgetpaste.zlin.dk/
+WWW=		http://wgetpaste.zlin.dk/ \
+		https://github.com/zlin/wgetpaste
 
 RUN_DEPENDS=	bash:shells/bash \
 		wget:ftp/wget
 
-USES=		tar:bzip2
+USES=		tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

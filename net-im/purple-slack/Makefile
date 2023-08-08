@@ -1,5 +1,6 @@
 PORTNAME=	purple-slack
 PORTVERSION=	20210301
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	aou@eecs.berkeley.edu

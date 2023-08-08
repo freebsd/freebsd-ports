@@ -1,7 +1,8 @@
 PORTNAME=	setuptools
 PORTVERSION=	63.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
@@ -15,7 +16,7 @@ WWW=		https://pypi.org/project/setuptools/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:3.7+
+USES=		cpe python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 
 CPE_VENDOR=	python

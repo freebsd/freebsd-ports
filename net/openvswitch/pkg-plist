@@ -9,8 +9,8 @@ bin/ovs-pcap
 bin/ovs-pki
 bin/ovs-tcpdump
 bin/ovs-tcpundump
-bin/ovs-testcontroller
 bin/ovs-test
+bin/ovs-testcontroller
 bin/ovs-vlan-test
 bin/ovs-vsctl
 bin/ovsdb-client
@@ -57,8 +57,8 @@ include/openvswitch/ofp-packet.h
 include/openvswitch/ofp-parse.h
 include/openvswitch/ofp-port.h
 include/openvswitch/ofp-print.h
-include/openvswitch/ofp-protocol.h
 include/openvswitch/ofp-prop.h
+include/openvswitch/ofp-protocol.h
 include/openvswitch/ofp-queue.h
 include/openvswitch/ofp-switch.h
 include/openvswitch/ofp-table.h
@@ -80,19 +80,19 @@ include/openvswitch/vconn.h
 include/openvswitch/version.h
 include/openvswitch/vlog.h
 lib/libofproto-%%SHLIB_VER%%.so.0
-lib/libofproto-%%SHLIB_VER%%.so.0.0.2
+lib/libofproto-%%SHLIB_VER%%.so.0.0.3
 lib/libofproto.so
 lib/libopenvswitch-%%SHLIB_VER%%.so.0
-lib/libopenvswitch-%%SHLIB_VER%%.so.0.0.2
+lib/libopenvswitch-%%SHLIB_VER%%.so.0.0.3
 lib/libopenvswitch.so
 lib/libovsdb-%%SHLIB_VER%%.so.0
-lib/libovsdb-%%SHLIB_VER%%.so.0.0.2
+lib/libovsdb-%%SHLIB_VER%%.so.0.0.3
 lib/libovsdb.so
 lib/libsflow-%%SHLIB_VER%%.so.0
-lib/libsflow-%%SHLIB_VER%%.so.0.0.2
+lib/libsflow-%%SHLIB_VER%%.so.0.0.3
 lib/libsflow.so
 lib/libvtep-%%SHLIB_VER%%.so.0
-lib/libvtep-%%SHLIB_VER%%.so.0.0.2
+lib/libvtep-%%SHLIB_VER%%.so.0.0.3
 lib/libvtep.so
 libdata/pkgconfig/libofproto.pc
 libdata/pkgconfig/libopenvswitch.pc
@@ -104,6 +104,7 @@ man/man1/ovsdb-server.1.gz
 man/man1/ovsdb-tool.1.gz
 man/man5/ovs-vswitchd.conf.db.5.gz
 man/man5/ovsdb-server.5.gz
+man/man5/ovsdb.local-config.5.gz
 man/man5/vtep.5.gz
 man/man7/ovs-fields.7.gz
 man/man8/ovs-bugtool.8.gz
@@ -123,6 +124,7 @@ sbin/ovsdb-server
 %%DATADIR%%/bugtool-plugins/system-configuration.xml
 %%DATADIR%%/bugtool-plugins/system-configuration/openvswitch.xml
 %%DATADIR%%/bugtool-plugins/system-logs/openvswitch.xml
+%%DATADIR%%/local-config.ovsschema
 %%DATADIR%%/python/ovs/__init__.py
 %%DATADIR%%/python/ovs/compat/__init__.py
 %%DATADIR%%/python/ovs/compat/sortedcontainers/__init__.py
@@ -169,11 +171,11 @@ sbin/ovsdb-server
 %%DATADIR%%/scripts/ovs-bugtool-fdb-show
 %%DATADIR%%/scripts/ovs-bugtool-get-dpdk-nic-numa
 %%DATADIR%%/scripts/ovs-bugtool-get-port-stats
-%%DATADIR%%/scripts/ovs-bugtool-qos-configs
 %%DATADIR%%/scripts/ovs-bugtool-ovs-appctl-dpif
 %%DATADIR%%/scripts/ovs-bugtool-ovs-bridge-datapath-type
 %%DATADIR%%/scripts/ovs-bugtool-ovs-ofctl-loop-over-bridges
 %%DATADIR%%/scripts/ovs-bugtool-ovs-vswitchd-threads-affinity
+%%DATADIR%%/scripts/ovs-bugtool-qos-configs
 %%DATADIR%%/scripts/ovs-bugtool-tc-class-show
 %%DATADIR%%/scripts/ovs-check-dead-ifs
 %%DATADIR%%/scripts/ovs-ctl
@@ -184,9 +186,9 @@ sbin/ovsdb-server
 %%DATADIR%%/scripts/ovs-vtep
 %%DATADIR%%/vswitch.ovsschema
 %%DATADIR%%/vtep.ovsschema
+@dir %%ETCDIR%%
 @dir /var/lib/openvswitch/pki
 @dir /var/lib/openvswitch
 @dir /var/lib
 @dir /var/log/openvswitch
 @dir /var/run/openvswitch
-@dir %%ETCDIR%%

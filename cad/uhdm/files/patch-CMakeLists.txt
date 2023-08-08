@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-07-22 04:56:00 UTC
++++ CMakeLists.txt
+@@ -203,7 +203,7 @@ configure_file(${PROJECT_SOURCE_DIR}/include/config.h.
+ target_compile_options(uhdm PUBLIC
+   "SHELL:$<IF:$<CXX_COMPILER_ID:MSVC>,/FI uhdm/config.h,-include uhdm/config.h>")
+ 
+-if(BUILD_SHARED_LIBS)
++if(FALSE AND BUILD_SHARED_LIBS)
+   set_property(TARGET uhdm PROPERTY POSITION_INDEPENDENT_CODE 1)
+ endif()
+ 

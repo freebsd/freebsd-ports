@@ -16,12 +16,7 @@
 %%SITE_PERL%%/HTTP/Session/Store/OnMemory.pm
 %%SITE_PERL%%/HTTP/Session/Store/Test.pm
 %%PERL5_MAN3%%/HTTP::Session.3.gz
-%%PERL5_MAN3%%/HTTP::Session::ID::MD5.3.gz
-%%PERL5_MAN3%%/HTTP::Session::ID::SHA1.3.gz
-%%PERL5_MAN3%%/HTTP::Session::ID::Urandom.3.gz
-%%PERL5_MAN3%%/HTTP::Session::State::Base.3.gz
 %%PERL5_MAN3%%/HTTP::Session::State::Cookie.3.gz
-%%PERL5_MAN3%%/HTTP::Session::State::Mixin::ResponseFilter.3.gz
 %%PERL5_MAN3%%/HTTP::Session::State::Null.3.gz
 %%PERL5_MAN3%%/HTTP::Session::State::Test.3.gz
 %%PERL5_MAN3%%/HTTP::Session::State::URI.3.gz

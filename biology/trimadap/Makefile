@@ -1,6 +1,7 @@
 PORTNAME=	trimadap
 DISTVERSION=	0.1-3
 DISTVERSIONSUFFIX=	-gddfef21
+PORTREVISION=	1
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -18,13 +19,7 @@ GH_ACCOUNT=	lh3
 PLIST_FILES=	bin/trimadap-mt
 
 CFLAGS_i386=	-msse2
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64le
-CFLAGS+=	-DNO_WARN_X86_INTRINSICS
-USES=		compiler:gcc-c++11-lib
-.endif
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trimadap-mt ${STAGEDIR}${PREFIX}/bin

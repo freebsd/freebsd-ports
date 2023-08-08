@@ -1,0 +1,13 @@
+Red Arrow Dataset is the Ruby bindings of Apache Arrow Dataset. Red Arrow
+Dataset is based on GObject Introspection.
+
+Apache Arrow Dataset is one of Apache Arrow components to read and write
+semantic datasets stored in different locations and formats.
+
+GObject Introspection is a middleware for language bindings of C library.
+GObject Introspection can generate language bindings automatically at runtime.
+
+Red Arrow Dataset uses Apache Arrow Dataset GLib and gobject-introspection gem
+to generate Ruby bindings of Apache Arrow Dataset.
+
+See also: https://github.com/apache/arrow/tree/master/ruby/red-arrow-dataset

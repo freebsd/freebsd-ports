@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.4.20220831
+DISTVERSION=	7.0.12.20230730
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,41 +13,31 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TUPLE=	redis:redis:c66eaf4
+GH_TAGNAME=	6abb3c403
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis6 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis6 redis62 # etc/rc.d/redis
 
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
 OPTIONS_DEFAULT=	TLS
 OPTIONS_RADIO=		EXTLUA
-OPTIONS_RADIO_EXTLUA=	LUA LUAJIT LUAJITOR
+OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
 OPTIONS_SUB=		yes
 
 JEMALLOC_DESC=	Use jemalloc
-LUAJITOR_DESC=	Use lang/luajit-openresty instead of builtin lua
-LUAJIT_DESC=	Use lang/luajit instead of builtin lua
+LUAJIT_DESC=	Use luajit instead of builtin lua
 LUA_DESC=	Use lang/lua instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
 TLS_DESC=	Use TLS (openssl req.)
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
 JEMALLOC_MAKE_ENV=	USE_JEMALLOC=yes
-LUAJITOR_BROKEN=	Fails to link
-LUAJITOR_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.1/lua.h:lang/luajit-openresty
-LUAJITOR_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-LUAJITOR_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
-			${PATCHDIR}/extra-patch-src-function_lua.c \
-			${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
-LUAJITOR_VARS=		_ADDFLAGS=true
 LUAJIT_BROKEN=		Fails to link
-LUAJIT_BUILD_DEPENDS=	${LOCALBASE}/include/luajit-2.0/lua.h:lang/luajit
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUAJIT_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+LUAJIT_USES=		luajit
 LUAJIT_VARS=		_ADDFLAGS=true
 LUA_BROKEN=		Fails to link
 LUA_USES=		lua:51
@@ -58,7 +48,7 @@ TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 TRIB_CATEGORIES=	ruby
 TRIB_RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
-TRIB_USE=		RUBY=yes
+TRIB_USES=		ruby
 
 .include <bsd.port.pre.mk>
 
@@ -71,6 +61,16 @@ CFLAGS+=	-march=i586
 .if defined(_ADDFLAGS)
 CFLAGS+=	-fPIC
 LDFLAGS+=	-Wl,-E
+.endif
+
+.if ${PORT_OPTIONS:MLUAJIT}
+.  if ${LUAJIT_VER} == luajit
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit
+.  else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
+		${PATCHDIR}/extra-patch-src-function_lua.c \
+		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
+.  endif
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo

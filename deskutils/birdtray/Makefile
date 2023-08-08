@@ -3,7 +3,7 @@ PORTVERSION=	1.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils mail
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	System tray new mail notification for Thunderbird
 WWW=		https://github.com/gyunaev/birdtray
 

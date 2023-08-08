@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-PORTVERSION=	8.5.0
+PORTVERSION=	9.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/python/ \
 		ftp://libvirt.org/libvirt/python/
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=		cpe pkgconfig python:3.6+ shebangfix
+USES=		cpe pkgconfig python shebangfix
 CPE_VENDOR=	redhat
 SHEBANG_FILES=	generator.py setup.py
 USE_PYTHON=	distutils autoplist

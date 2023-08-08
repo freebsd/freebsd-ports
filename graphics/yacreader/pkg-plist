@@ -10,6 +10,7 @@ share/icons/hicolor/scalable/apps/YACReaderLibrary.svg
 share/man/man1/YACReader.1.gz
 share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/languages/yacreader_de.qm
+%%DATADIR%%/languages/yacreader_en.qm
 %%DATADIR%%/languages/yacreader_es.qm
 %%DATADIR%%/languages/yacreader_fr.qm
 %%DATADIR%%/languages/yacreader_it.qm
@@ -21,6 +22,7 @@ share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/languages/yacreader_zh_HK.qm
 %%DATADIR%%/languages/yacreader_zh_TW.qm
 %%DATADIR%%/languages/yacreaderlibrary_de.qm
+%%DATADIR%%/languages/yacreaderlibrary_en.qm
 %%DATADIR%%/languages/yacreaderlibrary_es.qm
 %%DATADIR%%/languages/yacreaderlibrary_fr.qm
 %%DATADIR%%/languages/yacreaderlibrary_it.qm
@@ -60,6 +62,7 @@ share/man/man1/YACReaderLibrary.1.gz
 %%DATADIR%%/server/docroot/images/readingMark@2x.png
 %%DATADIR%%/server/docroot/images/up.png
 %%DATADIR%%/server/docroot/images/up@2x.png
+%%DATADIR%%/server/docroot/images/webui/YACLibraryServer.svg
 %%DATADIR%%/server/docroot/login.html
 %%DATADIR%%/server/templates/folder.tpl
 %%DATADIR%%/server/templates/libraries.tpl

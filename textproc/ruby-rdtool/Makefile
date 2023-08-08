@@ -11,11 +11,9 @@ WWW=		https://github.com/uwabami/rdtool
 
 BUILD_DEPENDS=	racc:devel/rubygem-racc
 
+USES=	ruby:setup
 USE_GITHUB=	yes
 GH_ACCOUNT=	uwabami
-
-USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
 
 RUBY_MODNAME=	rd
 

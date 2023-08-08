@@ -1,12 +1,13 @@
 PORTNAME=	taisei
 PORTVERSION=	1.3.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source Touhou clone
-WWW=		https://taisei-project.org/
+WWW=		https://taisei-project.org/ \
+		https://github.com/taisei-project/taisei
 
 LICENSE=	MIT CC0-1.0 PD
 LICENSE_COMB=	multi
@@ -25,7 +26,7 @@ GH_ACCOUNT=	taisei-project
 GH_TUPLE=	taisei-project:SDL_GameControllerDB:74e31d7:gamecontrollerdb/external/gamecontrollerdb
 
 USES=		compiler:c11 desktop-file-utils meson pkgconfig \
-		python:3.6+,build sdl ssl shebangfix shared-mime-info
+		python:build sdl ssl shebangfix shared-mime-info
 SHEBANG_FILES=	scripts/*.py
 MESON_ARGS=	-Dversion_fallback=${PORTVERSION} -Db_lto=false
 MESON_ARGS+=	--wrap-mode=nofallback

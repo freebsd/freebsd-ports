@@ -1,9 +1,10 @@
---- binding.gyp.orig	2021-05-10 04:34:55.000000000 +0200
-+++ binding.gyp	2021-07-05 19:22:23.670716000 +0200
-@@ -14,29 +14,6 @@
+--- binding.gyp.orig	2023-06-15 22:48:53.000000000 +0200
++++ binding.gyp	2023-07-09 21:24:09.709429000 +0200
+@@ -14,30 +14,6 @@
          "lib/to_string.cc",
          "lib/accessors.cc",
          "lib/util.cc",
+-        "vendor/re2/bitmap256.cc",
 -        "vendor/re2/bitstate.cc",
 -        "vendor/re2/compile.cc",
 -        "vendor/re2/dfa.cc",
@@ -29,8 +30,8 @@
 -        "vendor/util/strutil.cc"
        ],
        "cflags": [
-         "-std=c++14",
-@@ -45,7 +22,7 @@
+         "-std=c++2a",
+@@ -46,7 +22,7 @@
          "-Wno-sign-compare",
          "-Wno-unused-parameter",
          "-Wno-missing-field-initializers",
@@ -39,7 +40,7 @@
          "-O3",
          "-g"
        ],
-@@ -54,7 +31,8 @@
+@@ -55,7 +31,8 @@
          "NOMINMAX"
        ],
        "include_dirs": [

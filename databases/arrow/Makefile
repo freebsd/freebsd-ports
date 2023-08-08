@@ -1,6 +1,6 @@
 PORTNAME=	arrow
 DISTVERSION=	8.0.0
-PORTREVISION=	6
+PORTREVISION=	12
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -17,12 +17,12 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang localbase pkgconfig python:build
+USES=		cmake compiler:c++14-lang localbase pkgconfig python:build
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	cpp
 
-CMAKE_ARGS=	-DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=14 -DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE
 CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD_BENCHMARKS
 
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
@@ -142,7 +142,7 @@ BUILD_UTILITIES_CMAKE_BOOL=	ARROW_BUILD_UTILITIES
 
 PYTHON_DESC=			Build python extension support
 PYTHON_CMAKE_BOOL=		ARROW_PYTHON
-PYTHON_USES=			python:3.7+
+PYTHON_USES=			python
 PYTHON_BUILD_DEPENDS=		${PYNUMPY} # see https://issues.apache.org/jira/browse/ARROW-16820
 PYTHON_CMAKE_ON=		-DPython3_EXECUTABLE=${PYTHON_CMD}
 PYTHON_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc

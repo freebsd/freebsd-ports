@@ -1,6 +1,6 @@
---- src/hardware/lascar-el-usb/protocol.c.orig	2017-06-12 01:07:28 UTC
+--- src/hardware/lascar-el-usb/protocol.c.orig	2019-12-25 20:29:19 UTC
 +++ src/hardware/lascar-el-usb/protocol.c
-@@ -508,8 +508,7 @@ SR_PRIV int lascar_el_usb_handle_events(int fd, int re
+@@ -513,8 +513,7 @@ SR_PRIV int lascar_el_usb_handle_events(int fd, int re
  	}
  
  	memset(&tv, 0, sizeof(struct timeval));

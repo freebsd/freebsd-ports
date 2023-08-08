@@ -1,5 +1,5 @@
 PORTNAME=	fdm
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	mail
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -10,7 +10,7 @@ LICENSE=	ISCL
 
 LIB_DEPENDS=	libtdb.so:databases/tdb
 
-USES=		autoreconf:build ssl
+USES=		autoreconf ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nicm
 
@@ -24,16 +24,16 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE
 
-PCRE_CFLAGS=	-DPCRE
-PCRE_LIBS=	-lpcre
-PCRE_LIB_DEPENDS=libpcre.so:devel/pcre
+PCRE_LIBS=	-lpcre2-8
+PCRE_LIB_DEPENDS=libpcre2-8.so:devel/pcre2
+PCRE_CONFIGURE_ENABLE=	pcre2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[15] ${WRKSRC}/MANUAL
-	@${ECHO_CMD} 'lex.c: parse.h' >> ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[15] ${WRKSRC}/MANUAL
+	${ECHO_CMD} 'lex.c: parse.h' >> ${WRKSRC}/Makefile.am
 
 pre-configure:
-	@cd ${WRKSRC} && sh autogen.sh
+	cd ${WRKSRC} && autoupdate
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

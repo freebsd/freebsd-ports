@@ -6,13 +6,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	aehlig@linta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful middlewares and filters for wsgi as well as scgi servers
 WWW=		https://subdivi.de/~helmut/wsgitools/
 
 LICENSE=	GPLv2+
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

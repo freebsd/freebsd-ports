@@ -1,5 +1,5 @@
---- Makefile.orig	2006-05-30 00:19:28.000000000 -0700
-+++ Makefile	2014-06-03 18:33:50.171999588 -0700
+--- Makefile.orig	2006-06-02 12:15:31.000000000 -0700
++++ Makefile	2023-02-10 06:37:55.103169000 -0800
 @@ -2,8 +2,8 @@
  #
  
@@ -60,7 +60,7 @@
  
  ######################################################################
  ######################################################################
-@@ -450,7 +451,7 @@
+@@ -450,13 +451,13 @@
  PMAN    = doinkd.8
  
  # Names of config and log files
@@ -69,6 +69,13 @@
  LOGFILE = ${LOGDEST}/doinkd.log
  
  # HERE are the big CFLAGS
+ # Add -g if you want debugging
+ # Add -O or whatever variant for optimization
+-CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
++CFLAGS = ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE} -Wno-deprecated-non-prototype -Wno-parentheses -Wno-implicit-function-declaration -Wno-format -Wno-int-conversion
+ 
+ # For HP's ANSI C compiler (use -g instead of +O3 for debugging)
+ # CFLAGS = +O3 -Aa -D_HPUX_SOURCE ${DEFS} ${DEBUG} -DCONFIG=\"${CONFIG}\" -DLOGFILE=\"${LOGFILE}\" ${INCLUDE}
 @@ -509,11 +510,11 @@
  # BSD like, but with some enhancements like: install -s -> strip binary
  #                                            gzip manual pages

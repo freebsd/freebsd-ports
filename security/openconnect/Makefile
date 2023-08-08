@@ -1,6 +1,5 @@
 PORTNAME=	openconnect
-PORTVERSION=	9.01
-PORTREVISION=	1
+PORTVERSION=	9.12
 CATEGORIES=	security net-vpn
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		ZI

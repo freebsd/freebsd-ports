@@ -1,6 +1,6 @@
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -14,13 +14,9 @@ WWW=		https://github.com/knu/ruby-bdb
 
 LICENSE=	RUBY
 
-BROKEN_RUBY32=	yes
-
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 
-USES=		bdb shebangfix tar:bzip2
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USES=		bdb ruby:extconf shebangfix tar:bzip2
 
 SHEBANG_FILES=	examples/basic.rb examples/cats.rb examples/cursor.rb \
 		examples/func.rb examples/join.rb examples/lock.rb \
@@ -44,6 +40,12 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/docs/*.orig

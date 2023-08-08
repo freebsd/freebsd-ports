@@ -1,7 +1,7 @@
 PORTNAME=	pyahocorasick
-DISTVERSION=	1.4.1
+DISTVERSION=	2.0.0
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -11,8 +11,10 @@ WWW=		https://github.com/WojciechMula/pyahocorasick
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 PORTDOCS=	README.rst
 
@@ -24,8 +26,5 @@ post-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} unittests.py
 
 .include <bsd.port.mk>

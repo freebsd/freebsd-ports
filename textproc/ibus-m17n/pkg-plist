@@ -2,7 +2,8 @@ libexec/ibus-engine-m17n
 libexec/ibus-setup-m17n
 share/applications/ibus-setup-m17n.desktop
 %%DATADIR%%/default.xml
-%%DATADIR%%/icons/ibus-m17n.png
+%%DATADIR%%/icons/ibus-m17n.svg
+%%DATADIR%%/icons/m17n-upstream-logo.png
 %%DATADIR%%/setup/ibus-m17n-preferences.ui
 share/ibus/component/m17n.xml
 share/icons/hicolor/128x128/apps/ibus-m17n.png
@@ -13,6 +14,7 @@ share/icons/hicolor/256x256/apps/ibus-m17n.png
 share/icons/hicolor/32x32/apps/ibus-m17n.png
 share/icons/hicolor/48x48/apps/ibus-m17n.png
 share/icons/hicolor/64x64/apps/ibus-m17n.png
+%%NLS%%share/icons/hicolor/scalable/apps/ibus-m17n.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/ibus-m17n.mo
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-m17n.mo

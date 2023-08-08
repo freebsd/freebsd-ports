@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch-xpack
-PORTVERSION=	7.17.1
+PORTVERSION=	7.17.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-elasticsearch-api>=6:textproc/rubygem-elasticsearch-api
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

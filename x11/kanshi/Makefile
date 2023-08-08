@@ -1,6 +1,6 @@
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 meson pkgconfig
+MESON_ARGS=	-Dipc=disabled # https://github.com/varlink/libvarlink/issues/53
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
@@ -26,6 +27,6 @@ MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		${WRKSRC}/${PORTNAME}.5.scd
+		${WRKSRC}/doc/${PORTNAME}.5.scd
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	fizz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.09.19.00
+DISTVERSION=	2023.07.24.00
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfmt.so:devel/libfmt \
@@ -24,16 +25,19 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++14-lang ssl cpe
-CPE_VENDOR=	facebook
+USES=		cmake:testing compiler:c++14-lang ssl cpe
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-USE_LDCONFIG=	yes
+
+CPE_VENDOR=	facebook
 
 WRKSRC_SUBDIR=	${PORTNAME}
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTS BUILD_EXAMPLES
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 post-install: # https://github.com/facebookincubator/fizz/issues/55
 	cd ${STAGEDIR}${PREFIX} && ${RMDIR} include/fizz/tool/test include/fizz/util/test

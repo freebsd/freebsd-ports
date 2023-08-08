@@ -1,10 +1,10 @@
---- setup.py.orig	2021-11-30 19:53:02 UTC
+--- setup.py.orig	2023-04-17 17:36:38 UTC
 +++ setup.py
-@@ -72,7 +72,6 @@ setup(name='planet',
-       url='https://github.com/planetlabs/planet-client-python',
-       license='Apache 2.0',
-       packages=find_packages(exclude=['examples', 'tests']),
--      data_files=[('', ['LICENSE'])],
-       include_package_data=True,
-       zip_safe=False,
-       install_requires=[
+@@ -69,7 +69,6 @@ setup(
+     license='Apache 2.0',
+     packages=find_packages(exclude=['examples', 'tests']),
+     package_data={
+-        "": ["LICENSE", "CONTRIBUTING.md"],
+         "planet": ["data/*"],
+     },
+     include_package_data=True,

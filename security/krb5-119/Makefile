@@ -1,10 +1,13 @@
 PORTNAME=		krb5
-PORTVERSION=		1.19.3
+PORTVERSION=		1.19.4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-119
 .endif
+
+DEPRECATED=		Desupported by MIT following 1.21
+EXPIRATION_DATE=	2024-06-06
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -15,13 +18,16 @@ WWW=			https://web.mit.edu/kerberos/
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal krb5 krb5-118 krb5-120
+CONFLICTS=		heimdal krb5 krb5-118 krb5-12*
 CONFLICTS_BUILD=	boringssl
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			compiler:c++11-lang cpe gmake gettext-runtime \
 			gssapi:bootstrap,mit libtool:build localbase \
 			perl5 pkgconfig ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
+BROKEN_FreeBSD_14=	Incompatible with OpenSSL 3.0 in 14-CURRENT
 USE_CSTD=		gnu99
 USE_LDCONFIG=		yes
 USE_PERL5=		build
@@ -46,7 +52,7 @@ KRB5_HTML_DESC=		Install krb5 HTML documentation
 DNS_FOR_REALM_DESC=	Enable DNS lookups for Kerberos realm names
 DNS_FOR_REALM_CONFIGURE_ENABLE=	dns-for-realm
 LDAP=			Enable LDAP support
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 LMDB_DESC=		OpenLDAP Lightning Memory-Mapped Database support
 LMDB_CONFIGURE_WITH=	lmdb

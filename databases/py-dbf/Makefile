@@ -1,7 +1,7 @@
 PORTNAME=	dbf
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/dbf/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

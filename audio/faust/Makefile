@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.41.1
+DISTVERSION=	2.60.3
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,19 +12,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 LIB_DEPENDS=	libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c++14-lang cmake ncurses python pkgconfig shebangfix
+USES=		compiler:c++14-lang cmake llvm:min=15,lib ncurses python pkgconfig shebangfix # llvm: versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:9b05121:grame_cncm_faustlibraries/libraries \
-		google:oboe:7146098:google_oboe/architecture/android/app/oboe \
-		google:oboe:7146098:google_oboe/architecture/smartKeyboard/android/app/oboe
+		grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/libraries \
+		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
-
-LLVM_VERSION=	13 # versions <11 lacked dump() function(s) that cause unresolved symbols in libfaust.so
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 CMAKE_ON=	INCLUDE_DYNAMIC # only installs headers and not libs without INCLUDE_DYNAMIC or INCLUDE_STATIC: https://github.com/grame-cncm/faust/issues/553
@@ -49,6 +46,12 @@ HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
 
+post-patch:
+	# change qmake (5) -> qmake6
+	@cd ${WRKSRC} && \
+		${REINPLACE_CMD} -i '' -e 's|echo qmake)|echo qmake6)|; s|echo qmake-qt5)|echo qmake6)|' \
+			tools/faust2appls/faust2*
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/faust
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/faust # https://github.com/grame-cncm/faust/issues/135
@@ -69,5 +72,11 @@ post-install-HIGHLIGHT-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax
 	${INSTALL_DATA} ${WRKSRC}/syntax-highlighting/faust.vim ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax/
 	# 6) EMACS TODO
+
+do-test: install
+	@${CP} ${FILESDIR}/example-freeverb_demo.dsp ${TEST_WRKSRC}
+	@cd ${TEST_WRKSRC} && \
+		faust2jaqt example-freeverb_demo.dsp && \
+		./example-freeverb_demo
 
 .include <bsd.port.mk>

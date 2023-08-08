@@ -6,7 +6,7 @@ DISTFILES=	nedit-${PORTVERSION}-src.tar.gz \
 		nedit.app-defaults
 EXTRACT_ONLY=	nedit-${PORTVERSION}-src.tar.gz
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	X11/Motif GUI text editor for programs and plain text files
 WWW=		http://www.nedit.org/
 

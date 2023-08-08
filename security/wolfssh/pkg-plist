@@ -1,5 +1,6 @@
 bin/wolfssh-config
 include/wolfssh/agent.h
+include/wolfssh/certman.h
 include/wolfssh/certs_test.h
 include/wolfssh/error.h
 include/wolfssh/keygen.h
@@ -16,4 +17,4 @@ include/wolfssh/wolfsftp.h
 lib/libwolfssh.a
 lib/libwolfssh.so
 lib/libwolfssh.so.8
-lib/libwolfssh.so.8.4.4
+lib/libwolfssh.so.8.7.0

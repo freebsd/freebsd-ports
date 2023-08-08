@@ -1,6 +1,6 @@
 PORTNAME=	libnegf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.2
+DISTVERSION=	1.1.3
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org

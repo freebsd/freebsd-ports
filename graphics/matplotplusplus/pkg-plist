@@ -42,7 +42,8 @@ include/matplot/util/handle_types.h
 include/matplot/util/keywords.h
 include/matplot/util/popen.h
 include/matplot/util/type_traits.h
+lib/cmake/Matplot++/Matplot++Config.cmake
+lib/cmake/Matplot++/Matplot++ConfigVersion.cmake
 lib/cmake/Matplot++/Matplot++Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Matplot++/Matplot++Targets.cmake
-lib/cmake/Matplot++/matplot++-config.cmake
 lib/libmatplot.so

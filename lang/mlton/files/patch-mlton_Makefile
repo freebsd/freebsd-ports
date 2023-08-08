@@ -1,0 +1,11 @@
+--- mlton/Makefile.orig	2022-01-17 22:42:43 UTC
++++ mlton/Makefile
+@@ -39,6 +39,8 @@ ifeq ($(RUN_MLTON_VERSION), $(firstword $(sort $(RUN_M
+ RUN_MLTON_COMPILE_XARGS += -drop-pass zone
+ else ifeq ($(RUN_MLTON_VERSION), $(firstword $(sort $(RUN_MLTON_VERSION) 20191003)))
+ RUN_MLTON_COMPILE_XARGS += -disable-pass zone
++else
++RUN_MLTON_COMPILE_XARGS += -disable-pass zone
+ endif
+ 
+ FRONT_END_SOURCES :=		\

@@ -1,5 +1,5 @@
 PORTNAME=	platform-api
-PORTVERSION=	3.3.0
+PORTVERSION=	3.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-heroics>=0.1.1<0.2:www/rubygem-heroics \
 		rubygem-rate_throttle_client>=0.1.0<0.2:www/rubygem-rate_throttle_client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

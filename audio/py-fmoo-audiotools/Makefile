@@ -1,6 +1,6 @@
 PORTNAME=	fmoo-audiotools
 PORTVERSION=	3.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio python
 MASTER_SITES=	SF/audiotools/audiotools
 DISTNAME=	audiotools-${PORTVERSION}
@@ -13,7 +13,7 @@ WWW=		http://audiotools.sourceforge.net
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig python:3.6+
+USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}zita-audiotools

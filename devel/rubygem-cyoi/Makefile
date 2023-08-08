@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-fog>=0:devel/rubygem-fog \
 		rubygem-readwritesettings>=3.0:devel/rubygem-readwritesettings
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://landley.net/toybox/downloads/
 
@@ -13,17 +13,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
-LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		gmake shebangfix
 
-SHEBANG_FILES=	scripts/bloatcheck scripts/mcm-buildall.sh \
-		scripts/change.sh scripts/findglobals.sh \
-		scripts/genconfig.sh scripts/install.sh \
-		scripts/make.sh scripts/mkroot.sh \
-		scripts/portability.sh scripts/record-commands \
-		scripts/runtest.sh scripts/single.sh \
-		scripts/test.sh configure \
+SHEBANG_FILES=	mkroot/record-commands scripts/bloatcheck \
+		scripts/mcm-buildall.sh scripts/change.sh \
+		scripts/findglobals.sh 	scripts/genconfig.sh \
+		scripts/install.sh scripts/make.sh scripts/mkroot.sh \
+		scripts/portability.sh 	scripts/runtest.sh \
+		scripts/single.sh scripts/test.sh configure \
 		tests/*
 
 BIN_LINKS=	[ cat chgrp chmod chown cksum cpio crc32 date dos2unix echo \
@@ -36,15 +34,10 @@ USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal chrt chvt \
 		file find flock fmt groups head hexedit iconv id killall link \
 		logger logname lspci lsusb makedevs mkfifo mkpasswd nl nohup \
 		od paste patch pmap printf pwdx readlink realpath renice \
-		reset rev seq setsid shred sort split strings tac tee test \
-		time timeout truncate tty uniq unlink uudecode uuencode \
+		reset rev seq setsid shred shuf sort split strings tac tee \
+		test time timeout truncate tty uniq unlink uudecode uuencode \
 		uuidgen w watch wc which who whoami xargs xxd yes
 USRSBIN_LINKS=	chroot
-
-post-patch:
-	${REINPLACE_CMD} -e 's|<sys/inotify.h>|"${LOCALBASE}/include/sys/inotify.h"|' \
-		${WRKSRC}/lib/portability.c
-	${REINPLACE_CMD} -e 's|sed|gsed|' ${WRKSRC}/scripts/single.sh
 
 do-configure:
 	cd ${WRKSRC} && HOSTCC=${CC} ${GMAKE} bsd_defconfig

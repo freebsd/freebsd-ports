@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor-diagram
-PORTVERSION=	1.5.19
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-asciidoctor>=1.5.7<3:textproc/rubygem-asciidoctor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

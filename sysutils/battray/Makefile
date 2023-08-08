@@ -11,7 +11,7 @@ WWW=		https://github.com/arp242/battray
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gnome python:3.3+
+USES=		gnome python
 USE_GNOME=	pygobject3
 USE_PYTHON=	autoplist distutils optsuffix
 

@@ -1,5 +1,6 @@
 PORTNAME=	libndi
 PORTVERSION=	g20200630
+PORTREVISION=	2
 CATEGORIES=	multimedia net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +20,7 @@ USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	jbk
-GL_COMMIT=	c14b40caafb26a02249f062e7f907ceaa53c1b74
+GL_TAGNAME=	c14b40caafb26a02249f062e7f907ceaa53c1b74
 
 PLIST_FILES=	bin/ndi \
 		include/libndi.h \

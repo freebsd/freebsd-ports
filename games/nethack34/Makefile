@@ -17,6 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 WRKSRC=		${WRKDIR}/${TRUEPORTNAME}-${PORTVERSION}
 
 USES=		alias gmake ncurses tar:tgz
+
 MAKE_ENV=	GRAPHICS="${GRAPHICS}"
 PLIST_SUB=	HACKNAME="${HACKNAME}" \
 		HACKEXT="${HACKEXT}"
@@ -78,6 +79,10 @@ OPTIONS_DEFINE=	DOCS
 PLIST_SUB+=	HACKLINK=""
 .else
 PLIST_SUB+=	HACKLINK="@comment "
+.endif
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 pre-everything::

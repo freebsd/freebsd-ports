@@ -1,0 +1,50 @@
+commit db492316399a0edc26788265c7fce78c63a0f838
+Author: Dimitry Andric <dimitry@andric.com>
+Date:   Wed May 3 17:53:59 2023 +0200
+
+    [clang][BFloat] Avoid redefining bfloat16_t in arm_neon.h
+    
+    As of https://reviews.llvm.org/D79708, clang-tblgen generates `arm_neon.h`,
+    `arm_sve.h` and `arm_bf16.h`, and all those generated files will contain a
+    typedef of `bfloat16_t`. However, `arm_neon.h` and `arm_sve.h` include
+    `arm_bf16.h` immediately before their own typedef:
+    
+        #include <arm_bf16.h>
+        typedef __bf16 bfloat16_t;
+    
+    With a recent version of clang (I used 16.0.1) this results in warnings:
+    
+        /usr/lib/clang/16/include/arm_neon.h:38:16: error: redefinition of typedef 'bfloat16_t' is a C11 feature [-Werror,-Wtypedef-redefinition]
+    
+    Since `arm_bf16.h` is very likely supposed to be the one true place where
+    `bfloat16_t` is defined, I propose to delete the duplicate typedefs from the
+    generated `arm_neon.h` and `arm_sve.h`.
+    
+    Reviewed By: sdesmalen, simonbutcher
+    
+    Differential Revision: https://reviews.llvm.org/D148822
+
+diff --git clang/utils/TableGen/NeonEmitter.cpp clang/utils/TableGen/NeonEmitter.cpp
+index 51bb774c6da9..6ef5790731a6 100644
+--- clang/utils/TableGen/NeonEmitter.cpp
++++ clang/utils/TableGen/NeonEmitter.cpp
+@@ -2353,7 +2353,6 @@ void NeonEmitter::run(raw_ostream &OS) {
+   OS << "#include <stdint.h>\n\n";
+ 
+   OS << "#include <arm_bf16.h>\n";
+-  OS << "typedef __bf16 bfloat16_t;\n";
+ 
+   // Emit NEON-specific scalar typedefs.
+   OS << "typedef float float32_t;\n";
+diff --git clang/utils/TableGen/SveEmitter.cpp clang/utils/TableGen/SveEmitter.cpp
+index bc50cbad4b54..d5d3f5fe558a 100644
+--- clang/utils/TableGen/SveEmitter.cpp
++++ clang/utils/TableGen/SveEmitter.cpp
+@@ -1103,7 +1103,6 @@ void SVEEmitter::createHeader(raw_ostream &OS) {
+   OS << "typedef __SVBFloat16_t svbfloat16_t;\n";
+ 
+   OS << "#include <arm_bf16.h>\n";
+-  OS << "typedef __bf16 bfloat16_t;\n";
+ 
+   OS << "typedef __SVFloat32_t svfloat32_t;\n";
+   OS << "typedef __SVFloat64_t svfloat64_t;\n";

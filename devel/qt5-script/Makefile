@@ -13,7 +13,8 @@ USE_QT=		core buildtools:build
 # doesn't work).
 MAKE_ENV=	MAKEOBJDIR=.
 
-QT5_VERSION=	5.15.10
+# Source version from qt-dist.mk
+QT5_VERSION=	${_KDE_script_VERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/scripttools/ d' \

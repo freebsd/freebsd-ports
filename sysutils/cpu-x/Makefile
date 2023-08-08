@@ -1,44 +1,58 @@
 PORTNAME=	cpu-x
-PORTVERSION=	4.0.1
+PORTVERSION=	4.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
-WWW=		https://x0rg.github.io/CPU-X/
+WWW=		https://thetumultuousunicornofdarkness.github.io/CPU-X/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 		libpci.so:devel/libpci \
 		libstatgrab.so:devel/libstatgrab
 
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	X0rg
+GH_ACCOUNT=	TheTumultuousUnicornOfDarkness
 GH_PROJECT=	${PORTNAME:tu}
-
-USES=		cmake gettext ncurses pkgconfig
+CMAKE_OFF=	WITH_LIBGLFW WITH_VULKAN WITH_OPENCL
 
 PORTDOCS=	ChangeLog.md README.md
 
-OPTIONS_DEFINE=	DOCS X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-X11_DESC=	Build GTK+3 frontend in addition to ncurses one
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DWITH_GETTEXT:BOOL=OFF
 
-X11_USES=	gnome
-X11_USE=	GNOME=gtk30
-X11_CMAKE_OFF=	-DWITH_GTK:BOOL=OFF
-X11_VARS=	GLIB_SCHEMAS=org.cpu-x.gschema.xml
+FLAVORS=	gtk3 ncurses
 
-post-patch:
-	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '23s,^,#include <sys/wait.h>,' ${WRKSRC}/src/gui_gtk.c
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
+
+.if ${FLAVOR:U} == ncurses
+PKGNAMESUFFIX=	-tuionly
+USES+=		ncurses
+CMAKE_ARGS+=	-DWITH_GTK:BOOL=OFF
+PLIST_SUB+=	X11="@comment "
+.else
+USES+=		gnome
+USE_GNOME=	gtk30
+GLIB_SCHEMAS=	org.cpu-x.gschema.xml
+PLIST_SUB+=	X11=""
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == amd64
+BUILD_DEPENDS+=	nasm:devel/nasm
+.else
+CMAKE_OFF+=	WITH_BANDWIDTH
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

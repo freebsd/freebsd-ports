@@ -1,7 +1,25 @@
---- phototonic.pro.orig	2015-11-08 18:03:52 UTC
+--- phototonic.pro.orig	2023-05-14 06:33:51 UTC
 +++ phototonic.pro
-@@ -17,19 +17,19 @@ SOURCES += dialogs.cpp main.cpp mainwind
- 			mdcache.cpp
+@@ -19,7 +19,7 @@
+ TEMPLATE = app
+ TARGET = phototonic
+ INCLUDEPATH += .
+-INCLUDEPATH += /usr/local/include
++INCLUDEPATH += %%PREFIX%%/include
+ win32-g++ {
+ MINGWEXIVPATH = $$PWD/mingw
+ 
+@@ -30,7 +30,7 @@ DEPENDPATH += $$MINGWEXIVPATH/include
+ 
+ PRE_TARGETDEPS += $$MINGWEXIVPATH/lib/libexiv2.a $$MINGWEXIVPATH/lib/libexpat.a $$MINGWEXIVPATH/lib/libz.a
+ }
+-else: LIBS += -L/usr/local/lib -lexiv2
++else: LIBS += -L%%PREFIX%%/lib -lexiv2
+ QT += widgets
+ QMAKE_CXXFLAGS += $$(CXXFLAGS)
+ QMAKE_CFLAGS += $$(CFLAGS)
+@@ -57,22 +57,22 @@ FORMS += RangeInputDialog.ui
+ 
  RESOURCES += phototonic.qrc
  
 -target.path = /usr/bin/
@@ -23,5 +41,9 @@
 -desktop.path = /usr/share/applications
 +desktop.path = %%PREFIX%%/share/applications
  
- INSTALLS += target icon icon16 iconPixmaps desktop
+ metainfo.files = phototonic.appdata.xml
+-metainfo.path = /usr/share/metainfo
++metainfo.path = %%PREFIX%%/share/metainfo
+ 
+ INSTALLS += target icon icon16 iconPixmaps desktop metainfo
  

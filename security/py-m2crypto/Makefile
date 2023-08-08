@@ -1,7 +1,7 @@
 PORTNAME=	m2crypto
-PORTVERSION=	0.38.0
+PORTVERSION=	0.39.0
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	M2Crypto-${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 
 BUILD_DEPENDS=	swig>=2.0.4:devel/swig
 
-USES=		cpe python:3.6+ ssl
+USES=		cpe python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext --openssl=${OPENSSLBASE} --swig=${LOCALBASE}/bin/swig

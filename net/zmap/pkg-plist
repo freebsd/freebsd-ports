@@ -1,8 +1,10 @@
-%%ETCDIR%%/blacklist.conf
+%%ETCDIR%%/blocklist.conf
 %%ETCDIR%%/zmap.conf
-man/man1/zblacklist.1.gz
+man/man1/zblocklist.1.gz
+man/man1/ziterate.1.gz
 man/man1/zmap.1.gz
 man/man1/ztee.1.gz
-sbin/zblacklist
+sbin/zblocklist
+sbin/ziterate
 sbin/zmap
 sbin/ztee

@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.7.6.0
-PORTREVISION=	1
+DISTVERSION?=	4.7.13.0
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR?=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
@@ -51,9 +51,16 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
+
 RUN_DEPENDS=	icu>0:devel/icu \
+		libexif>0:graphics/libexif \
+		libheif>0:graphics/libheif \
+		libimagequant>0:graphics/libimagequant \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind
+		libjxl>0:graphics/libjxl \
+		libunwind>0:devel/libunwind \
+		openjpeg>0:graphics/openjpeg \
+		orc>0:devel/orc
 
 USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
 USE_RC_SUBR=	${PORTNAME}
@@ -100,7 +107,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV=	V=1
 
-CONFLICTS_INSTALL=	emby-server-devel
+CONFLICTS_INSTALL?=	emby-server-devel
 
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	SQLitePCLRaw.provider.sqlite3.dll.config
@@ -133,5 +140,8 @@ do-install:
 	(${INSTALL_DATA} ${WRKDIR}/SQLitePCLRaw.provider.sqlite3.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system "! -name EmbyServer")
 	(${INSTALL_PROGRAM} ${WRKDIR}/system/EmbyServer ${STAGEDIR}${PREFIX}/lib/emby-server/system)
+
+post-install:
+	@${FIND} -s ${STAGEDIR}${PREFIX}/lib -not -type d | ${SORT} | ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
 .include <bsd.port.mk>

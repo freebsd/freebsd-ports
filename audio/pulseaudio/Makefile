@@ -4,7 +4,7 @@
 
 PORTNAME=	pulseaudio
 DISTVERSION=	14.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/releases/
 
@@ -112,6 +112,7 @@ post-patch:
 		-e 's|--directory|-d|g' \
 		${WRKSRC}/src/utils/pa-info
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
+		-e 's|main ()|main (void)|g' \
 		${WRKSRC}/configure
 
 pre-install-TEST-on: do-test

@@ -6,6 +6,13 @@ You installed LMS: Lightweight Music Server.
 In order to use it please start the service 'lms' and
 then access the URL http://0.0.0.0:5082 in your favorite browser.
 
+To clear the previously saved data:
+$ sudo rm -rf /var/db/lms/*
+
+To reset the admin password: execute the SQL UPDATE statement from
+https://github.com/epoupon/lms/blob/master/INSTALL.md
+on /var/db/lms/lms.db
+
 EOM
 }
 ]

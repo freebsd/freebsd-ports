@@ -10,12 +10,12 @@ WWW=		https://www.freedesktop.org/wiki/Software/libevdev/
 LICENSE=	MIT # without linux/*.h
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		meson pkgconfig python:3.5+,build shebangfix
+USES=		meson pkgconfig python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	6ea230bc72353c54fac628987b87cc1d3b6fd842
+GL_TAGNAME=	6ea230bc72353c54fac628987b87cc1d3b6fd842
 
 MESON_ARGS=	-Ddocumentation=disabled -Dtests=disabled
 

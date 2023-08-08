@@ -1,0 +1,27 @@
+From 025b367a7e5b4927a823a754e677ba573f3cac60 Mon Sep 17 00:00:00 2001
+From: Tobias Fella <fella@posteo.de>
+Date: Sun, 21 May 2023 22:21:32 +0200
+Subject: [PATCH 1/4] Always enable E2EE in libQuotient
+
+It's off-by-default in libQuotient 0.8
+---
+ src/main.cpp | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/main.cpp b/src/main.cpp
+index a626d9ef..634f4af2 100644
+--- src/main.cpp
++++ src/main.cpp
+@@ -195,6 +195,10 @@ int main(int argc, char *argv[])
+ 
+     initLogging();
+ 
++#if Quotient_VERSION_MINOR == 8
++    Connection::setEncryptionDefault(true);
++#endif
++
+ #ifdef NEOCHAT_FLATPAK
+     // Copy over the included FontConfig configuration to the
+     // app's config dir:
+-- 
+2.41.0

@@ -1,5 +1,6 @@
 PORTNAME=	gnome-screenshot
 PORTVERSION=	41.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 CONFLICTS=	gnome-utils-2.[0-9]*
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gnome meson pkgconfig python:3.4+,build \
+USES=		compiler:c11 gettext gnome meson pkgconfig python:build \
 		shebangfix tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xext

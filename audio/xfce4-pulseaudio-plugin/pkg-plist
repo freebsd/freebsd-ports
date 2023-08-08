@@ -19,6 +19,7 @@ share/icons/hicolor/scalable/status/microphone-sensitivity-muted-symbolic.svg
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfce4-pulseaudio-plugin.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfce4-pulseaudio-plugin.mo

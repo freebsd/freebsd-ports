@@ -1,9 +1,9 @@
 PORTNAME=	libjitterentropy
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Hardware RNG based on CPU timing jitter
 WWW=		https://www.chronox.de/jent.html
 

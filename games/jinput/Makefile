@@ -16,7 +16,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/jutils/jutils.jar:games/jutils
 # Using a fork because of maven dependencies
 USE_GITLAB=	yes
 GL_ACCOUNT=	voidanix
-GL_COMMIT=	bf22dd975bbba31f01895332255b63df376894e6
+GL_TAGNAME=	bf22dd975bbba31f01895332255b63df376894e6
 
 USE_JAVA=	8+
 

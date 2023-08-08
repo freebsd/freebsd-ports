@@ -55,7 +55,7 @@ include/kpathsea/win32lib.h
 lib/libkpathsea.a
 lib/libkpathsea.so
 lib/libkpathsea.so.6
-lib/libkpathsea.so.6.3.3
+lib/libkpathsea.so.%%VERSION%%
 libdata/pkgconfig/kpathsea.pc
 man/man1/kpseaccess.1.gz
 man/man1/kpsepath.1.gz

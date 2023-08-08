@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Dec  6 04:20:58 2003
-+++ Makefile	Wed Feb  2 21:30:13 2005
-@@ -86,10 +86,13 @@
+--- Makefile.orig	2022-04-27 06:21:11 UTC
++++ Makefile
+@@ -95,10 +95,13 @@ android.armv7a.text:
  ## FreeBSD builds
  ##
  freebsd.mesa:
@@ -15,4 +15,4 @@
 +	./configure FREEBSDAMD64 OPENGL FLTK TK IMD TCL PTHREADS LIBTACHYON NETCDF
  
  
- 
+ ##

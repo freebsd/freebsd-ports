@@ -13,20 +13,28 @@ LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-OPTIONS_DEFINE=	DOCS
+USES=		tcl:tea ssl
 
-USES+=		tcl:tea ssl
 CONFIGURE_ARGS+=--with-ssl-dir=${OPENSSLBASE}	\
 		--enable-ssl-fastpath	\
 		--disable-rpath
+CONFIGURE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
+
+MAKE_ARGS+=	"PACKAGE_INSTALL_DIR=${PREFIX}/lib/${TCL_PKG}"
+MAKE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
+TEST_TARGET=	test
 
 PLIST_FILES=	lib/${TCL_PKG}/tcltls.so \
 		lib/${TCL_PKG}/pkgIndex.tcl
 PORTDOCS=	*
-MAKE_ARGS+=	"PACKAGE_INSTALL_DIR=${PREFIX}/lib/${TCL_PKG}"
-TEST_TARGET=	test
-MAKE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
-CONFIGURE_ENV+=	PATH=${OPENSSLBASE}/bin:${PATH}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=       -Wno-error=int-conversion
+.endif
 
 post-patch:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
@@ -35,4 +43,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

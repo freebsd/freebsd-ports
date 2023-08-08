@@ -1,0 +1,5 @@
+Twiggy is a code size profiler for Wasm. It analyzes a binary's call graph to
+answer questions like:
+* Why was this function included in the binary in the first place? Who calls it?
+* What is the retained size of this function? I.e. how much space would be saved
+  if I removed it and all the functions that become dead code after its removal.

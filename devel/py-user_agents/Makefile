@@ -1,7 +1,7 @@
 PORTNAME=	user_agents
 PORTVERSION=	1.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/selwin/python-user-agents
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ua_parser/__init__.py:devel/py-ua_parser@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

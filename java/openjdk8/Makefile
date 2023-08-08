@@ -1,6 +1,5 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -53,8 +52,8 @@ INSTALLDIR=	${PREFIX}/${PKGBASE}
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	342
-JDK_BUILD_NUMBER=	07
+JDK_UPDATE_VERSION=	382
+JDK_BUILD_NUMBER=	05
 BSD_JDK_VERSION=	1
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -76,7 +75,6 @@ CONFIGURE_ARGS+=	--disable-ccache
 .endif
 CONFIGURE_ARGS+=	--disable-freetype-bundling \
 			--disable-zip-debug-info \
-			--with-cacerts-file=${FILESDIR}/cacerts \
 			--with-cups=${LOCALBASE} \
 			--with-debug-level=${JDK_BUILD_TYPE} \
 			--with-freetype=${LOCALBASE} \
@@ -214,6 +212,13 @@ LLVM_VER=	12
 BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
 CC=		${LOCALBASE}/bin/clang${LLVM_VER}
 CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
+.endif
+.if ${COMPILER_VERSION} >= 160
+# clang 16 defaults to C++17, which no longer allows the 'register' keyword.
+# There is an upstream commit that removes all the individual 'register'
+# keywords, but it has not yet been backported to OpenJDK 8.
+# NOTE: passing this option via --with-extra-cflags does not work.
+CFLAGS+=		-Dregister=
 .endif
 .endif
 

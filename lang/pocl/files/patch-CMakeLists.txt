@@ -1,12 +1,12 @@
---- CMakeLists.txt.orig	2020-12-16 13:02:13 UTC
+--- CMakeLists.txt.orig	2022-06-10 10:09:05 UTC
 +++ CMakeLists.txt
-@@ -398,6 +398,9 @@ endif()
- 
- 
+@@ -394,6 +394,9 @@ find_package(Hwloc)
+       set(ENABLE_HWLOC ON CACHE BOOL "Hwloc" FORCE)
+   endif()
  
 +include(CheckIncludeFiles)
 +check_include_files("sys/types.h;sys/sysctl.h" HAVE_SYSCTL_H)
 +
  
- ######################################################################################
+ include(sanitizers)
  

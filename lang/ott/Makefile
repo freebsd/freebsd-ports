@@ -1,5 +1,6 @@
 PORTNAME=	ott
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	domagoj.stolfa@cl.cam.ac.uk

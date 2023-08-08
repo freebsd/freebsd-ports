@@ -2,7 +2,6 @@
 
     SUBDIR += bsdadminscripts2
     SUBDIR += caronade
-    SUBDIR += chucky
     SUBDIR += create-rb-port
     SUBDIR += dialog4ports
     SUBDIR += dialog4ports-static
@@ -19,10 +18,10 @@
     SUBDIR += mkreadmes
     SUBDIR += modules2tuple
     SUBDIR += octopkg
-    SUBDIR += p5-FreeBSD-Portindex
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
+    SUBDIR += packagekit-qt
     SUBDIR += parfetch-overlay
     SUBDIR += pchecker
     SUBDIR += pkg
@@ -57,9 +56,11 @@
     SUBDIR += portrac
     SUBDIR += ports-tools
     SUBDIR += portscout
+    SUBDIR += portsdb
     SUBDIR += portsearch
     SUBDIR += portshaker
     SUBDIR += portshaker-config
+    SUBDIR += portsnap
     SUBDIR += portsreinstall
     SUBDIR += porttools
     SUBDIR += porttree
@@ -72,8 +73,10 @@
     SUBDIR += py-FreeBSD-ports
     SUBDIR += py-pytoport
     SUBDIR += py-skog
+    SUBDIR += rc-subr-jail
     SUBDIR += reprise
     SUBDIR += sccache-overlay
+    SUBDIR += submodules2tuple
     SUBDIR += synth
     SUBDIR += wanted-ports
 

@@ -1,15 +1,15 @@
---- configure.ac.orig	2021-01-18 13:01:11 UTC
+--- configure.ac.orig	2022-09-20 22:03:33 UTC
 +++ configure.ac
-@@ -30,7 +30,7 @@ AC_CONFIG_SRCDIR([src/eventsource/execve_wrapper.c])  
+@@ -27,7 +27,7 @@ AC_CONFIG_SRCDIR([src/entrypoint/execve-wrapper.c])   
  AC_CONFIG_AUX_DIR([build/aux])
- AC_CONFIG_MACRO_DIR([build/m4])
+ AC_CONFIG_MACRO_DIRS([build/m4])
  m4_include([build/snoopy.m4])
 -AM_INIT_AUTOMAKE([1.11 gnu silent-rules subdir-objects -Wall -Werror])
 +AM_INIT_AUTOMAKE([1.11 gnu silent-rules subdir-objects])
  
  
  ### Silent make output
-@@ -81,7 +81,6 @@ AC_PROG_SED
+@@ -82,7 +82,6 @@ LT_PATH_NM
  ### Check for programs required for TEST suite
  #
  SNOOPY_PROG_REQUIRE([dirname],  [DIRNAME],  [Needed for "make check" test suite.])
@@ -17,19 +17,19 @@
  SNOOPY_PROG_REQUIRE([readlink], [READLINK], [Needed for "make check" test suite.])
  SNOOPY_PROG_SUGGEST([socat],    [SOCAT],    [Needed for "make check" test suite.])
  SNOOPY_PROG_SUGGEST([ps],       [PS],       [Needed for "make check" test suite.])
-@@ -89,19 +88,12 @@ SNOOPY_PROG_REQUIRE([wc],       [WC],       [Needed fo
+@@ -90,11 +89,6 @@ SNOOPY_PROG_REQUIRE([wc],       [WC],       [Needed fo
  
  
  
 -dnl Checks for libraries.
--dnl FIXME: Replace `main' with a function in `-ldl':
 -AC_CHECK_LIB([dl], [dlsym], [], [
 -    AC_MSG_ERROR([A library is missing. Unable to continue.])
 -])
 -
  dnl Checks for header files.
  AC_CHECK_HEADERS([ \
-     ctype.h \
+     arpa/inet.h \
+@@ -102,7 +96,6 @@ AC_CHECK_HEADERS([ \
      dlfcn.h \
      errno.h \
      fcntl.h \
@@ -37,7 +37,15 @@
      grp.h \
      limits.h \
      pwd.h \
-@@ -784,7 +776,6 @@ AS_IF([test "x$code_coverage_enabled" = "xyes"], [
+@@ -119,7 +112,6 @@ AC_CHECK_HEADERS([ \
+     sys/un.h \
+     time.h \
+     unistd.h \
+-    utmp.h \
+ ], [], [
+     AC_MSG_ERROR([A header file is missing. Unable to continue.])
+ ])
+@@ -818,7 +810,6 @@ AS_IF([test "x$code_coverage_enabled" = "xyes"], [
      CXXFLAGS=`echo $CXXFLAGS | sed 's/-O[1-9s]/-O0/g'`
      CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
      CXXFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"

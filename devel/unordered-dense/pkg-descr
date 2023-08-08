@@ -1,0 +1,2 @@
+unordered-dense implements a fast & densely stored hashmap and hashset based on
+robin-hood backward shift deletion for C++17 and later.

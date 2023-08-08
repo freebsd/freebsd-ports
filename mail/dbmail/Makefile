@@ -1,5 +1,5 @@
 PORTNAME=	dbmail
-PORTVERSION=	3.2.6
+PORTVERSION=	3.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		docbook-sgml>0:textproc/docbook-sgml \
 		xmlto:textproc/xmlto
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libgmime-2.6.so:mail/gmime26 \
+		libgmime-3.0.so:mail/gmime30 \
 		libmhash.so:security/mhash \
 		libzdb.so:databases/libzdb
 
@@ -47,8 +47,7 @@ SIEVE_DESC=		Sieve mail sorting language support
 
 DOCS=		AUTHORS CHANGELOG.md INSTALL README THANKS UPGRADING
 
-LDAP_USES=		gettext-runtime
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		gettext-runtime ldap
 LDAP_CONFIGURE_WITH=	ldap
 SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
 SIEVE_CONFIGURE_WITH=	sieve

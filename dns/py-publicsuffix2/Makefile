@@ -1,8 +1,8 @@
 PORTNAME=	publicsuffix2
 PORTVERSION=	2.20191221
-PORTREVISION=	30
+PORTREVISION=	40
 CATEGORIES=	dns python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ml@netfence.it
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/publicsuffix2.LICENSE
 
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

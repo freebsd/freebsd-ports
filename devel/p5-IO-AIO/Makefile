@@ -1,8 +1,9 @@
 PORTNAME=	IO-AIO
-PORTVERSION=	4.78
+PORTVERSION=	4.80
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	IO-AIO-${PORTVERSION:C|0$||}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Asynchronous/Advanced Input/Output
@@ -12,7 +13,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-xRUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
+RUN_DEPENDS=	p5-common-sense>=0:devel/p5-common-sense
 
 USES=		perl5
 USE_PERL5=	configure

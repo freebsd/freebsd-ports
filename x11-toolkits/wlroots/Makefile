@@ -1,13 +1,13 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.15.1
-DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+DISTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
-PATCHFILES+=	7c0e2a271a4c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	55a8d225cf8c.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	fc0854d5f256.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	29cb694655db.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	347b32642fb6.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
+PATCHFILES+=	f3ba14e49133.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3850
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -16,7 +16,7 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.24:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
@@ -29,24 +29,16 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	29938b74251e826f3778f6bf9c54974a30488cc1
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
-OPTIONS_DEFINE=	DRM NVIDIA OPENGL VULKAN X11
+OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
 OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
+DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libinput.so:x11/libinput
 DRM_VARS=		BACKENDS+="drm libinput"
-
-NVIDIA_DESC=		EGLStreams support for DRM backend (experimental)
-NVIDIA_PATCH_SITES=	https://github.com/danvd/${GL_PROJECT}-eglstreams/commit/:nvidia
-NVIDIA_PATCHFILES=	c0fc017207f0.patch:-p1:nvidia # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2769
-NVIDIA_IMPLIES=		DRM OPENGL X11
-.if make(makesum)
-.MAKEFLAGS:		WITH+=NVIDIA
-.endif
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
 OPENGL_USE=		GL=egl,glesv2

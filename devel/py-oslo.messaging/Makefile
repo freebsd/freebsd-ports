@@ -1,12 +1,13 @@
 PORTNAME=	oslo.messaging
-PORTVERSION=	14.0.0
+PORTVERSION=	14.3.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Messaging API
-WWW=		https://docs.openstack.org/oslo.messaging/latest/
+WWW=		https://docs.openstack.org/oslo.messaging/latest/ \
+		https://github.com/openstack/oslo.messaging
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=2.5.2:net/py-amqp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=1.20.0:devel/py-stevedore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -32,11 +32,3 @@
  
          'configure': configure,
  
-@@ -547,4 +544,7 @@ setuptools.setup(
-     },
- 
-     distclass=VMMDistribution,
-+
-+    # Declare packages explicitly so that setuptools does not attempt auto discovery
-+    packages=[],
- )

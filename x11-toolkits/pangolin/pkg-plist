@@ -51,6 +51,8 @@ include/pangolin/gl/glpangoglu.h
 include/pangolin/gl/glpixformat.h
 include/pangolin/gl/glplatform.h
 include/pangolin/gl/glsl.h
+include/pangolin/gl/glsl.hpp
+include/pangolin/gl/glsl_utilities.h
 include/pangolin/gl/glstate.h
 include/pangolin/gl/gltext.h
 include/pangolin/gl/gltexturecache.h

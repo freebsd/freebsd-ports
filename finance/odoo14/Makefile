@@ -1,5 +1,6 @@
 PORTNAME=	odoo
 PORTVERSION=	14.0
+PORTREVISION=	2
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	14
@@ -35,7 +36,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vatnumber>=0:finance/py-vatnumber@${PY_FLAVOR} \
-		${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>=0:net/py-ldap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR} \
@@ -65,9 +66,8 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ pgsql shebangfix
+USES=		cpe ldap python pgsql shebangfix
 USE_PYTHON=	distutils
-USE_OPENLDAP=	yes
 
 SHEBANG_LANG=	python
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin
@@ -94,6 +94,10 @@ post-patch:
 		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
 		${WRKSRC}/odoo/addons/mail/controllers/main.py \
 		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
+	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
+		${WRKSRC}/odoo/addons/web/static/src/js/libs/content-disposition.js
+	@${REINPLACE_CMD} -i "" -e 's|BaseResponse|Response|g' \
+		${WRKSRC}/odoo/http.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/

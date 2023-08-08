@@ -1,0 +1,7 @@
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfigVersion.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake
+%%QT_PLUGINDIR%%/sqldrivers/libqsqlpsql.so

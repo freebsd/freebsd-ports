@@ -15,5 +15,3 @@ XLIFF. It also provides scripts to convert between these formats.
 
 Also part of the Toolkit are Python programs to create word counts, merge
 translations and perform various checks on translation files.
-
-See also: https://github.com/translate/translate

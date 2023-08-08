@@ -1,6 +1,6 @@
---- lib/services/server.go.orig	2020-07-08 18:08:40 UTC
+--- lib/services/server.go.orig	2022-02-23 04:58:43 UTC
 +++ lib/services/server.go
-@@ -546,7 +546,7 @@ type CommandLabelV1 struct {
+@@ -578,7 +578,7 @@ type CommandLabelV1 struct {
  	// Period is a time between command runs
  	Period time.Duration `json:"period"`
  	// Command is a command to run

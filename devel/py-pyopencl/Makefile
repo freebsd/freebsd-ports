@@ -1,8 +1,8 @@
 PORTNAME=	pyopencl
 PORTVERSION=	2018.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pytools>=2017.6:devel/py-pytools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang localbase python:3.6+
+USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	autoplist distutils
 
 CONFIGURE_ARGS=	BOOST_INC_DIR="${LOCALBASE}/include" \

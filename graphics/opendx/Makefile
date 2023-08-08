@@ -1,6 +1,6 @@
 PORTNAME=	opendx
 PORTVERSION=	4.4.4
-PORTREVISION=	35
+PORTREVISION=	37
 CATEGORIES=	graphics math java
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}

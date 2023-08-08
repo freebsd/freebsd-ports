@@ -1,5 +1,5 @@
---- core/src/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
-+++ core/src/CMakeLists.txt	2022-01-15 09:38:46.009798000 -0500
+--- core/src/CMakeLists.txt	2023-03-24 08:05:20.000000000 -0500
++++ core/src/CMakeLists.txt	2023-04-07 16:15:16.297335000 -0500
 @@ -18,7 +18,9 @@
  #   02110-1301, USA.
  message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
@@ -11,7 +11,15 @@
  
  if(NOT client-only)
    add_subdirectory(tools)
-@@ -47,17 +49,21 @@
+@@ -40,24 +42,28 @@
+ elseif(NOT GTest_FOUND)
+   message(STATUS "Skipping unit tests as gtest was not found")
+ else()
+-  add_subdirectory(tests)
++#  add_subdirectory(tests)
+ endif()
+ 
+ if(BUILD_BENCHMARKS)
    add_subdirectory(benchmarks)
  endif()
  

@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.49.0
+PORTVERSION=	1.56.0
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org

@@ -6,12 +6,7 @@ Subject: [PATCH] Check bytecode file actually exists and tests
 Should solve issue 20397, where using the --record argument results
 in files that failed to generate bytecode files are added to the
 record file nonetheless.
----
- Lib/distutils/command/install_lib.py    | 17 +++++++++++++----
- Lib/distutils/tests/test_install_lib.py |  8 ++++++--
- 2 files changed, 19 insertions(+), 6 deletions(-)
-
---- Lib/distutils/command/install_lib.py.orig	2015-12-05 19:46:56 UTC
+--- Lib/distutils/command/install_lib.py.orig	2023-02-04 10:09:53 UTC
 +++ Lib/distutils/command/install_lib.py
 @@ -168,10 +168,14 @@ class install_lib(Command):
              ext = os.path.splitext(os.path.normcase(py_file))[1]

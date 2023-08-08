@@ -31,7 +31,7 @@ PLIST_SUB=	USER=${USER} GROUP=${GROUP}
 
 # ZeroNet hasn't been ported to Python 3 yet
 # https://github.com/HelloZeroNet/ZeroNet/issues/149
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	zeronet.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	HelloZeroNet

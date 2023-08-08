@@ -1,0 +1,65 @@
+--- src/3rdparty/chromium/BUILD.gn.orig	2023-03-28 19:45:02 UTC
++++ src/3rdparty/chromium/BUILD.gn
+@@ -60,7 +60,7 @@ declare_args() {
+   qtwebengine_target = "//tools/gn"
+ }
+ 
+-if (is_official_build) {
++if (is_official_build && !is_bsd) {
+   # An official (maximally optimized!) component (optimized for build times)
+   # build doesn't make sense and usually doesn't work.
+   assert(!is_component_build)
+@@ -435,7 +435,7 @@ if (!is_qtwebengine){
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux && !is_bsd) || is_chromeos || is_android) {
+     deps += [
+       "//third_party/breakpad:breakpad_unittests",
+       "//third_party/breakpad:core-2-minidump",
+@@ -697,7 +697,7 @@ if (!is_qtwebengine){
+         host_os == "win" && !is_qtwebengine) {
+       deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
+     }
+-  } else if (!is_android && !is_ios && !is_fuchsia && !is_win) {
++  } else if (!is_android && !is_ios && !is_fuchsia && !is_win && !is_bsd) {
+     deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
+   }
+ 
+@@ -1124,7 +1124,7 @@ if (!is_ios && !is_qtwebengine) {
+     ]
+   }
+ 
+-  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos) {
++  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
+     # WPT Webdriver tests runner
+     # chrome/test/chromedriver/test/run_webdriver_tests.py
+     script_test("webdriver_wpt_tests") {
+@@ -1219,7 +1219,7 @@ if (!is_ios && !is_qtwebengine) {
+       data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
+     }
+ 
+-    if (!is_win && !is_android) {
++    if (!is_win && !is_android && !is_bsd) {
+       data_deps +=
+           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
+     }
+@@ -1228,7 +1228,7 @@ if (!is_ios && !is_qtwebengine) {
+       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+-    if (is_linux || is_chromeos) {
++    if ((is_linux && !is_bsd) || is_chromeos) {
+       data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
+     }
+ 
+@@ -1672,7 +1672,7 @@ group("chromium_builder_perf") {
+       data_deps += [ "//chrome/test:performance_browser_tests" ]
+     }
+ 
+-    if (!is_win) {
++    if (!is_win && !is_bsd) {
+       data_deps +=
+           [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
+     }

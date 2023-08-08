@@ -1,5 +1,5 @@
 PORTNAME=	doxygen
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
@@ -29,15 +29,15 @@ OPTIONS_DEFAULT=	GRAPHVIZ
 QT5_DESC=	Install Doxywizard GUI with Qt5
 SEARCH_DESC=	Build external search tools (doxysearch and doxyindexer)
 
-DOCS_USES=		ghostscript:build
+DOCS_USES=		ghostscript:build tex
 DOCS_USE=		TEX=base:build,dvipsk:build,pdftex:build
 DOCS_ALL_TARGET=	docs
 DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
 DOCS_CMAKE_BOOL=	build_doc
-DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
-			man/man1/doxyindexer.1.gz \
-			man/man1/doxysearch.1.gz \
-			man/man1/doxywizard.1.gz
+DOCS_PLIST_FILES=	share/man/man1/doxygen.1.gz \
+			share/man/man1/doxyindexer.1.gz \
+			share/man/man1/doxysearch.1.gz \
+			share/man/man1/doxywizard.1.gz
 # Parallel jobs break when the DOCS option is on
 DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
 
@@ -45,6 +45,7 @@ PORTDOCS=		*
 
 GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz
 
+LATEX_USES=	tex
 LATEX_USE=	TEX=base,dvipsk,pdftex
 
 QT5_USES=	qt:5

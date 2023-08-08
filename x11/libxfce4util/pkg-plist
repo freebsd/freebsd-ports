@@ -3,6 +3,7 @@ include/xfce4/libxfce4util/libxfce4util.h
 include/xfce4/libxfce4util/xfce-debug.h
 include/xfce4/libxfce4util/xfce-fileutils.h
 include/xfce4/libxfce4util/xfce-generics.h
+include/xfce4/libxfce4util/xfce-gio-extensions.h
 include/xfce4/libxfce4util/xfce-i18n.h
 include/xfce4/libxfce4util/xfce-kiosk.h
 include/xfce4/libxfce4util/xfce-license.h
@@ -10,6 +11,7 @@ include/xfce4/libxfce4util/xfce-miscutils.h
 include/xfce4/libxfce4util/xfce-posix-signal-handler.h
 include/xfce4/libxfce4util/xfce-rc.h
 include/xfce4/libxfce4util/xfce-resource.h
+include/xfce4/libxfce4util/xfce-string.h
 include/xfce4/libxfce4util/xfce-utf8.h
 %%GIR%%lib/girepository-1.0/Libxfce4util-1.0.typelib
 lib/libxfce4util.so
@@ -21,6 +23,7 @@ sbin/xfce4-kiosk-query
 %%NLS%%share/locale/am/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/libxfce4util.mo
+%%NLS%%share/locale/az/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/be/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/libxfce4util.mo
@@ -50,6 +53,7 @@ sbin/xfce4-kiosk-query
 %%NLS%%share/locale/is/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/it/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/libxfce4util.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/libxfce4util.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/libxfce4util.mo

@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	20.0.6
+DISTVERSION=	20.0.8
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	20-webui
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 USE_GITHUB=	yes
 
 USES=		cpe php:build cmake gettext
-USE_PHP=	openssl gettext ctype hash json session iconv
+USE_PHP=	gettext ctype session iconv
 NO_BUILD=	yes
 NO_ARCH=	yes
 

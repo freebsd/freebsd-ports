@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:tgz
 
-PLIST_FILES=	bin/crunch man/man1/crunch.1.gz %%DATADIR%%/charset.lst
+PLIST_FILES=	bin/crunch man/man1/crunch.1.gz ${DATADIR}/charset.lst
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

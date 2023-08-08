@@ -1,10 +1,11 @@
---- Source/WebCore/platform/network/DNS.h.orig	2021-09-22 23:05:58 UTC
+Index: Source/WebCore/platform/network/DNS.h
+--- Source/WebCore/platform/network/DNS.h.orig
 +++ Source/WebCore/platform/network/DNS.h
-@@ -33,6 +33,7 @@
- #include <winsock2.h>
+@@ -34,6 +34,7 @@
  #include <ws2tcpip.h>
  #else
-+#include <sys/socket.h>
  #include <netinet/in.h>
++#include <sys/socket.h> /* AF_INET, AF_INET6 */
  #endif
  
+ namespace WebCore {

@@ -1,10 +1,10 @@
 PORTNAME=	gammaray
 PORTVERSION=	2.11.3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 

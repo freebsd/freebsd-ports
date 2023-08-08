@@ -1,5 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.0.9
+DISTVERSION=	1.0.18
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -26,9 +26,9 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime \
 		gnome pkgconfig qt:${FLAVOR:S/qt//} sqlite tar:xz xorg
 
 USE_GNOME=	glib20
-_USE_QT5=	concurrent core dbus gui network sql sql-sqlite3 widgets \
+_USE_QT5=	concurrent core dbus gui network sql sql-sqlite3:run widgets \
 		x11extras buildtools:build linguisttools:build qmake:build
-_USE_QT6=	base tools:build
+_USE_QT6=	base sqldriver-sqlite:run tools:build
 USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 USE_XORG=	ice sm x11 xcb xext
 

@@ -1,3 +1,4 @@
+etc/rc.d/vspheredb
 %%WWWDIR%%/.github/ISSUE_TEMPLATE.md
 %%WWWDIR%%/.github/workflows/L10n-update.yml
 %%WWWDIR%%/LICENSE

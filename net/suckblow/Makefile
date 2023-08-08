@@ -9,4 +9,10 @@ COMMENT=	Two companion utilities for transferring data over a TCP socket
 USES=		uidfix
 CONFLICTS=	suck-4.* suck-cnews-4.*
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=       -Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

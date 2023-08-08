@@ -1,8 +1,11 @@
 PORTNAME=	gegl
-PORTVERSION=	0.4.38
-PORTREVISION=	2
+PORTVERSION=	0.4.46
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gegl/-/commit/
+PATCHFILES+=	a99a93e5c9013bd4101f5058cdee7d0cf30234fe.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
@@ -30,11 +33,15 @@ MESON_ARGS=	-Ddocs=false \
 		-Dlensfun=disabled \
 		-Dlibjpeg=enabled \
 		-Dlibpng=enabled \
+		-Dmaxflow=disabled \
 		-Dmrg=disabled \
 		-Dpygobject=disabled \
-		-Dlua=disabled
+		-Dlua=disabled \
+		${MESON_ARGS_${ARCH}}
+MESON_ARGS_armv6=	-Dopenmp=disabled
+MESON_ARGS_armv7=	-Dopenmp=disabled
 
-GEGL_SHLIB=	0.437.1
+GEGL_SHLIB=	0.445.1
 GEGL_VER=	0.4
 PLIST_SUB+=	GEGL_SHLIB=${GEGL_SHLIB} GEGL_VER=${GEGL_VER}
 
@@ -94,7 +101,7 @@ SPIRO_MESON_ENABLED=	libspiro
 
 V4L_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-V4L_MESON_ENABLED=	libv4l2
+V4L_MESON_ENABLED=	libv4l libv4l2
 V4L_VARS=		LICENSE+=LGPL20+
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp

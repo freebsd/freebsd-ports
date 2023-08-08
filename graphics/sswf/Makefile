@@ -1,6 +1,6 @@
 PORTNAME=	sswf
 PORTVERSION=	1.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USES=		bison iconv jpeg libtool localbase pkgconfig
+USE_CXXSTD=	c++14
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip

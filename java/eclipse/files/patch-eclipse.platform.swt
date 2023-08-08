@@ -53,15 +53,18 @@ diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/common/org/
 diff -ru eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh
 --- eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
 +++ eclipse.platform.swt/bundles/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	0000-00-00 00:00:00.000000000 +0000
-@@ -72,7 +72,7 @@
+@@ -72,9 +72,9 @@
  
  cd `dirname $0`
  
 -MAKE_TYPE=make
 +MAKE_TYPE=gmake
  
- export CFLAGS='-O -Wall -fPIC'
+-export CFLAGS='-O -Wall -fPIC'
++export CFLAGS="${CFLAGS--O -Wall} -fPIC"
  
+ # Determine which OS we are on
+ if [ "${OS}" = "" ]; then
 @@ -86,27 +86,30 @@
  		MAKEFILE=make_win32.mak
  		;;

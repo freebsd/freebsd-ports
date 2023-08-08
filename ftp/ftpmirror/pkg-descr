@@ -1,5 +1,0 @@
-Ftpmirror is an utility to copy directory hierarchy
-(this is called ``mirror'') with FTP.
-
-A similar perl script exists, whose name is `mirror',
-but ftpmirror requires less memory than mirror.

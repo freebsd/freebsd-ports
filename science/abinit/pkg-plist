@@ -11,6 +11,7 @@ bin/fftprof
 bin/fold2Bloch
 bin/ioprof
 bin/lapackprof
+bin/lruj
 bin/macroave
 bin/mrgddb
 bin/mrgdv
@@ -19,6 +20,5 @@ bin/mrgscr
 bin/multibinit
 bin/optic
 bin/testtransposer
-bin/ujdet
 bin/vdw_kernelgen
 libdata/pkgconfig/abinit.pc

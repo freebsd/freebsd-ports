@@ -1066,6 +1066,7 @@ usr/include/linux/cec.h
 usr/include/linux/cgroupstats.h
 usr/include/linux/chio.h
 usr/include/linux/cifs/cifs_mount.h
+usr/include/linux/close_range.h
 usr/include/linux/cm4000_cs.h
 usr/include/linux/cn_proc.h
 usr/include/linux/coda.h
@@ -1110,6 +1111,7 @@ usr/include/linux/errno.h
 usr/include/linux/errqueue.h
 usr/include/linux/erspan.h
 usr/include/linux/ethtool.h
+usr/include/linux/ethtool_netlink.h
 usr/include/linux/eventpoll.h
 usr/include/linux/fadvise.h
 usr/include/linux/falloc.h
@@ -1125,6 +1127,7 @@ usr/include/linux/firewire-cdev.h
 usr/include/linux/firewire-constants.h
 usr/include/linux/flat.h
 usr/include/linux/fou.h
+usr/include/linux/fpga-dfl.h
 usr/include/linux/fs.h
 usr/include/linux/fsl_hypervisor.h
 usr/include/linux/fsmap.h
@@ -1160,6 +1163,7 @@ usr/include/linux/i2o-dev.h
 usr/include/linux/i8k.h
 usr/include/linux/icmp.h
 usr/include/linux/icmpv6.h
+usr/include/linux/idxd.h
 usr/include/linux/if.h
 usr/include/linux/if_addr.h
 usr/include/linux/if_addrlabel.h
@@ -1206,6 +1210,7 @@ usr/include/linux/input-event-codes.h
 usr/include/linux/input.h
 usr/include/linux/io_uring.h
 usr/include/linux/ioctl.h
+usr/include/linux/iommu.h
 usr/include/linux/ip.h
 usr/include/linux/ip6_tunnel.h
 usr/include/linux/ip_vs.h
@@ -1272,8 +1277,10 @@ usr/include/linux/mman.h
 usr/include/linux/mmc/ioctl.h
 usr/include/linux/mmtimer.h
 usr/include/linux/module.h
+usr/include/linux/mount.h
 usr/include/linux/mpls.h
 usr/include/linux/mpls_iptunnel.h
+usr/include/linux/mptcp.h
 usr/include/linux/mqueue.h
 usr/include/linux/mroute.h
 usr/include/linux/mroute6.h
@@ -1452,6 +1459,7 @@ usr/include/linux/nfsd/nfsfh.h
 usr/include/linux/nfsd/stats.h
 usr/include/linux/nilfs2_api.h
 usr/include/linux/nilfs2_ondisk.h
+usr/include/linux/nitro_enclaves.h
 usr/include/linux/nl80211.h
 usr/include/linux/nsfs.h
 usr/include/linux/nubus.h
@@ -1577,6 +1585,7 @@ usr/include/linux/tc_act/tc_ct.h
 usr/include/linux/tc_act/tc_ctinfo.h
 usr/include/linux/tc_act/tc_defact.h
 usr/include/linux/tc_act/tc_gact.h
+usr/include/linux/tc_act/tc_gate.h
 usr/include/linux/tc_act/tc_ife.h
 usr/include/linux/tc_act/tc_ipt.h
 usr/include/linux/tc_act/tc_mirred.h
@@ -1599,6 +1608,7 @@ usr/include/linux/tee.h
 usr/include/linux/termios.h
 usr/include/linux/thermal.h
 usr/include/linux/time.h
+usr/include/linux/time_types.h
 usr/include/linux/timerfd.h
 usr/include/linux/times.h
 usr/include/linux/timex.h
@@ -1630,6 +1640,7 @@ usr/include/linux/usb/ch9.h
 usr/include/linux/usb/charger.h
 usr/include/linux/usb/functionfs.h
 usr/include/linux/usb/g_printer.h
+usr/include/linux/usb/g_uvc.h
 usr/include/linux/usb/gadgetfs.h
 usr/include/linux/usb/midi.h
 usr/include/linux/usb/tmc.h
@@ -1650,11 +1661,14 @@ usr/include/linux/v4l2-subdev.h
 usr/include/linux/vbox_err.h
 usr/include/linux/vbox_vmmdev_types.h
 usr/include/linux/vboxguest.h
+usr/include/linux/vdpa.h
 usr/include/linux/version.h
 usr/include/linux/veth.h
 usr/include/linux/vfio.h
 usr/include/linux/vfio_ccw.h
+usr/include/linux/vfio_zdev.h
 usr/include/linux/vhost.h
+usr/include/linux/vhost_types.h
 usr/include/linux/videodev2.h
 usr/include/linux/virtio_9p.h
 usr/include/linux/virtio_balloon.h
@@ -1666,6 +1680,7 @@ usr/include/linux/virtio_fs.h
 usr/include/linux/virtio_gpu.h
 usr/include/linux/virtio_ids.h
 usr/include/linux/virtio_input.h
+usr/include/linux/virtio_iommu.h
 usr/include/linux/virtio_mmio.h
 usr/include/linux/virtio_net.h
 usr/include/linux/virtio_pci.h
@@ -1758,7 +1773,6 @@ usr/include/pthread.h
 usr/include/pty.h
 usr/include/pwd.h
 usr/include/rdma/bnxt_re-abi.h
-usr/include/rdma/cxgb3-abi.h
 usr/include/rdma/cxgb4-abi.h
 usr/include/rdma/efa-abi.h
 usr/include/rdma/hfi/hfi1_ioctl.h
@@ -1775,7 +1789,6 @@ usr/include/rdma/mlx5-abi.h
 usr/include/rdma/mlx5_user_ioctl_cmds.h
 usr/include/rdma/mlx5_user_ioctl_verbs.h
 usr/include/rdma/mthca-abi.h
-usr/include/rdma/nes-abi.h
 usr/include/rdma/ocrdma-abi.h
 usr/include/rdma/qedr-abi.h
 usr/include/rdma/rdma_netlink.h
@@ -1877,13 +1890,9 @@ usr/include/sound/sfnt_info.h
 usr/include/sound/skl-tplg-interface.h
 usr/include/sound/snd_sst_tokens.h
 usr/include/sound/sof/abi.h
-usr/include/sound/sof/eq.h
 usr/include/sound/sof/fw.h
 usr/include/sound/sof/header.h
-usr/include/sound/sof/manifest.h
 usr/include/sound/sof/tokens.h
-usr/include/sound/sof/tone.h
-usr/include/sound/sof/trace.h
 usr/include/sound/tlv.h
 usr/include/sound/usb_stream.h
 usr/include/spawn.h

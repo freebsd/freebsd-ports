@@ -240,6 +240,9 @@
 %%WWWDIR%%/htdocs/protected/Web/Portlets/UpdateSlots.php
 %%WWWDIR%%/htdocs/protected/Web/Portlets/UpdateSlots.tpl
 %%WWWDIR%%/htdocs/protected/Web/endpoints.xml
+@dir %%WWWDIR%%/htdocs/protected/Common
+@dir %%WWWDIR%%/htdocs/protected/vendor
+@dir %%WWWDIR%%/htdocs/themes
 @dir %%ETCDIR%%/Config/WEB
 @dir /var/cache/baculum
 @dir /var/log/baculum

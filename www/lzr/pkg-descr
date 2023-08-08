@@ -1,0 +1,4 @@
+LZR quickly detects and fingerprints unexpected services running on unexpected
+ports by working with ZMap. LZR can detect up to 18 unique protocols
+simultaneously with just two extra packets and can fingerprint over 35 different
+protocols.

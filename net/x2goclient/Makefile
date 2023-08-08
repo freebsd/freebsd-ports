@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt client for the X2Go system
 WWW=		https://www.x2go.org/
 
@@ -28,7 +28,7 @@ QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 OPTIONS_DEFINE=		DOCS LDAP
 OPTIONS_DEFAULT=	LDAP
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CFLAGS=		-DUSELDAP
 LDAP_QMAKE_ON=		LIBS+="-lX11 -lXpm -lcups -lldap"
 LDAP_QMAKE_OFF=		LIBS+="-lX11 -lXpm -lcups"

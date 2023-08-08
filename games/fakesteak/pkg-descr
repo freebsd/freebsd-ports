@@ -1,0 +1,9 @@
+Implementation of the digital character rain as seen in "The Matrix".
+
+Some things you might like about fakesteak:
+
+  * Small footprint (low on RAM and disk usage)
+  * Good performance (low on CPU usage)
+  * Looks pretty close to the original (fading, glitches)
+  * Basic customization via command line options
+  * No dependencies (not even ncurses)

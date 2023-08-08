@@ -1,6 +1,6 @@
 PORTNAME=	crashtest
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games education
 MASTER_SITES=	http://www.stolk.org/crashtest/
 

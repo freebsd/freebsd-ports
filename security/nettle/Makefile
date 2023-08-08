@@ -1,5 +1,5 @@
 PORTNAME=	nettle
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9.1
 CATEGORIES=	security
 MASTER_SITES=	GNU \
 		https://www.lysator.liu.se/~nisse/archive/
@@ -32,6 +32,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 EXAMPLES_CFLAGS=	-I${OPENSSLINC}
 EXAMPLES_USES=		ssl
+EXAMPLES_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile.in
 
 .include <bsd.port.options.mk>
 
@@ -39,14 +40,10 @@ EXAMPLES_USES=		ssl
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '/libdir=/ s|lib32|lib|' ${WRKSRC}/configure
 .if ${ARCH} == "mips64"
+post-patch:
 	@${REINPLACE_CMD} -e 's|__sgi|__unix__|' ${WRKSRC}/configure
 .endif
-
-post-patch-EXAMPLES-off:
-	@${REINPLACE_CMD} -e '/SUBDIRS = / s| examples||' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so

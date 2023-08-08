@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-daemons>=1.0.2:devel/rubygem-daemons \
 		rubygem-hoe>=1.3.0:devel/rubygem-hoe
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

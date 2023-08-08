@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2022-08-31 12:19:35 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2023-05-31 08:12:17 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
-@@ -109,7 +109,7 @@
+@@ -114,7 +114,7 @@
  
  #if BUILDFLAG(IS_MAC)
  #include "content/child/child_process_sandbox_support_impl_mac.h"
@@ -9,8 +9,15 @@
  #include "content/child/child_process_sandbox_support_impl_linux.h"
  #endif
  
-@@ -178,7 +178,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -178,13 +178,13 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+       sudden_termination_disables_(0),
+       is_locked_to_site_(false),
        main_thread_scheduler_(main_thread_scheduler) {
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   sk_sp<font_service::FontLoader> font_loader;
+ #endif
+ 
    // RenderThread may not exist in some tests.
    if (RenderThreadImpl::current()) {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -18,7 +25,7 @@
      mojo::PendingRemote<font_service::mojom::FontService> font_service;
      RenderThreadImpl::current()->BindHostReceiver(
          font_service.InitWithNewPipeAndPassReceiver());
-@@ -188,7 +188,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
+@@ -193,7 +193,7 @@ RendererBlinkPlatformImpl::RendererBlinkPlatformImpl(
  #endif
    }
  
@@ -27,17 +34,8 @@
    if (sandboxEnabled()) {
  #if BUILDFLAG(IS_MAC)
      sandbox_support_ = std::make_unique<WebSandboxSupportMac>();
-@@ -261,7 +261,7 @@ RendererBlinkPlatformImpl::WrapURLLoaderFactory(
-       /*terminate_sync_load_event=*/nullptr);
- }
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RendererBlinkPlatformImpl::SetThreadType(base::PlatformThreadId thread_id,
-                                               base::ThreadType thread_type) {
-   if (RenderThreadImpl* render_thread = RenderThreadImpl::current()) {
-@@ -276,7 +276,7 @@ blink::BlameContext* RendererBlinkPlatformImpl::GetTop
- }
+@@ -251,7 +251,7 @@ void RendererBlinkPlatformImpl::SetThreadType(base::Pl
+ #endif
  
  blink::WebSandboxSupport* RendererBlinkPlatformImpl::GetSandboxSupport() {
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)

@@ -1,6 +1,5 @@
 PORTNAME=		ldb
-PORTVERSION=		2.2.1
-PORTREVISION=		1
+PORTVERSION=		2.2.3
 PORTEPOCH=		0
 CATEGORIES=		databases
 MASTER_SITES=		SAMBA
@@ -25,7 +24,7 @@ TEST_DEPENDS=		${LDB_DEPENDS} \
 			cmocka>=1.1.3:sysutils/cmocka
 RUN_DEPENDS=		${LDB_DEPENDS}
 
-USES=			compiler pkgconfig waf
+USES=			compiler ldap pkgconfig waf
 
 CONFLICTS_INSTALL=	ldb[0-9][0-9] # include/ldb.h
 
@@ -33,7 +32,6 @@ USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
 CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
 
-USE_OPENLDAP=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
@@ -107,7 +105,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/do
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			gettext-runtime python:3.6+
+USES+=			gettext-runtime python
 
 PLIST_FILES+=		include/pyldb.h \
 			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \

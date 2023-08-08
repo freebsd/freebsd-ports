@@ -1,17 +1,17 @@
 PORTNAME=	u-msgpack-python
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Portable, lightweight MessagePack (de)serializer
-WWW=		https://pypi.org/project/u-msgpack-python/
+WWW=		https://github.com/vsergeev/u-msgpack-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -1,3 +1,7 @@
-TIMESTAMP = 1502356940
-SHA256 (yudai-gotty-v1.0.1_GH0.tar.gz) = 32695d70a79f55efdf4fba6f06f830515a2055abc58fc15e2124dff5be75695b
-SIZE (yudai-gotty-v1.0.1_GH0.tar.gz) = 2370696
+TIMESTAMP = 1665237982
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/v1.5.0.mod) = e6c7a03dd76727b1b7d0d7c0281acc5ca00a9051247be7e6be14bc9b7372fc35
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/v1.5.0.mod) = 439
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/v1.5.0.zip) = 8e8b397c240a3c54765cadee5299a137b2a63dc9372fe2e22323cd4944325488
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/v1.5.0.zip) = 3421266
+SHA256 (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/sorenisanerd-gotty-v1.5.0_GH0.tar.gz) = 98a5fb9eddefc4bc4d402ad159d274a3876ee2b23cb8940ebeea328b705454a7
+SIZE (go/www_gotty/sorenisanerd-gotty-v1.5.0_GH0/sorenisanerd-gotty-v1.5.0_GH0.tar.gz) = 3397024

@@ -1,0 +1,51 @@
+--- src/Makefile.orig	2022-10-06 07:55:37 UTC
++++ src/Makefile
+@@ -51,11 +51,8 @@ CUSTOM = -custom
+ #MLLINK += -cclib -lcamlrund
+ MLBYTEFLAGS = -g -dtypes
+ else
+-CFLAGS = -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS $(GTKCFLAGS)
+-ifneq ($(TOOLCHAIN),msvc)
+-CFLAGS += -O
++CFLAGS += -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS $(GTKCFLAGS)
+ endif
+-endif
+ 
+ ifeq ($(THREADS_LIB),system)
+ THFLAGS = -thread
+@@ -165,7 +162,7 @@ GTKSOURCEVIEW2MLOBJS = gtkSourceView2.cmo gSourceView2
+ GTKSOURCEVIEW2COBJS = ml_gtksourceview2$(XO)
+ GTKSOURCEVIEW2MLOBJSENUM = sourceView2Enums.cmo
+ GTKSOURCEVIEW2PROPS = gtkSourceView2.props
+-BEFORE_DEPEND += $(GTKSOURCEVIEW2PROPS:%.props=%Props.ml) $(GTKSOURCEVIEW2PROPS:%.props= o%Props.ml) $(GTKSOURCEVIEWMLOBJSENUM:%.cmo=%.ml)
++BEFORE_DEPEND += $(GTKSOURCEVIEW2PROPS:%.props=%Props.ml) $(GTKSOURCEVIEW2PROPS:%.props= o%Props.ml) $(GTKSOURCEVIEW2MLOBJSENUM:%.cmo=%.ml)
+ EXTRA_OBJS += $(GTKSOURCEVIEW2MLOBJSENUM)
+ GTKSOURCEVIEW2ALLMLOBJS = $(GTKSOURCEVIEW2MLOBJSENUM) \
+ 	$(GTKSOURCEVIEW2PROPS:%.props=%Props.cmo) \
+@@ -406,9 +403,9 @@ findlib-install:
+ 	mkdir -p "$(DESTDIR)$(FINDLIBDIR)"
+ 	@if test -f "$(DESTDIR)$(OCAMLLDCONF)"; then :; else \
+ 	  mkdir -p "`dirname $(DESTDIR)$(OCAMLLDCONF)`"; \
+-	  touch "$(DESTDIR)$(OCAMLLDCONF)"; fi
++	  true "$(DESTDIR)$(OCAMLLDCONF)"; fi
+ 	$(OCAMLFIND) install -destdir "$(DESTDIR)$(FINDLIBDIR)" \
+-	  -ldconf "$(DESTDIR)$(OCAMLLDCONF)" \
++	  -ldconf ignore \
+     lablgtk2 ../META \
+     build.ml \
+     $(CLIBS) \
+@@ -447,11 +444,11 @@ findlib-install:
+     fi`
+ 	rm -f lablgtk2
+ 	$(MAKE) lablgtk2 LABLGTKDIR="$(FINDLIBDIR)/lablgtk2"
+-	cp lablgtk2$(XB) "$(BINDIR)"
++	$(BSD_INSTALL_SCRIPT) lablgtk2$(XB) "$(BINDIR)"
+ 	if test -f lablgladecc$(XE); then \
+-	  cp lablgladecc$(XE) "$(BINDIR)/lablgladecc2$(XE)"; \
++	  $(BSD_INSTALL_SCRIPT) lablgladecc$(XE) "$(BINDIR)/lablgladecc2$(XE)"; \
+ 	fi
+-	cp gdk_pixbuf_mlsource$(XE) "$(BINDIR)"
++	$(BSD_INSTALL_SCRIPT) gdk_pixbuf_mlsource$(XE) "$(BINDIR)"
+ 	$(RANLIB) $(CLIBS:%="$(FLINSTALLDIR)"/%)
+ 	@if test -f lablgtk.cmxa; then \
+ 	  echo "Execute $(RANLIB) in $(FLINSTALLDIR)"; \

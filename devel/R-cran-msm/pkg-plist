@@ -38,3 +38,4 @@
 %%R_MOD_DIR%%/tests/testthat/test_models_hmmmulti.r
 %%R_MOD_DIR%%/tests/testthat/test_models_misc.r
 %%R_MOD_DIR%%/tests/testthat/test_utils.r
+%%R_MOD_DIR%%/tests/testthat/test_viterbi.R

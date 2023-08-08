@@ -1,36 +1,32 @@
 PORTNAME=	xfce4-generic-slider
-PORTVERSION=	0.0.20171223
-PORTREVISION=	1
-CATEGORIES=	deskutils
+PORTVERSION=	1.0.0
+PORTEPOCH=	1
+CATEGORIES=	deskutils xfce
+MASTER_SITES=	XFCE/panel-plugins
+DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Slider plugin to adjust and/or monitor any numeric variable
 WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Depends on removed XFCE GTK2 support
-
-BUILD_DEPENDS=	xdt-autogen:devel/xfce4-dev-tools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c11 gettext gmake gnome libtool pkgconfig xfce:gtk2
-USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk20 intltool pango
+USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:bzip2 xfce
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	libmenu panel
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xfce-mirror
-GH_TAGNAME=	d1fc31f
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS=	CC="${CC}"
-PLIST_FILES=	lib/xfce4/panel/plugins/libgeneric-slider.so \
-		share/xfce4/panel/plugins/generic-slider.desktop
+OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
-pre-configure:
-	(cd ${WRKSRC} && ./autogen.sh ${CONFIGURE_ARGS})
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xfce4/panel/plugins/libgeneric-slider.so
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext-runtime
 
 .include <bsd.port.mk>

@@ -1,118 +1,76 @@
-/*
- *  mem_freebsd.c - get memory status
- *
- *  Copyright (C) 2003 Alexey Dokuchaev <danfe@regency.nsu.ru>
- *	Parts are Copyright (C) 1993-2003 FreeBSD Project
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
- */
-
 #include <sys/types.h>
-#include <sys/vmmeter.h>
-#include <fcntl.h>
-#include <kvm.h>
-#include <nlist.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include <sys/sysctl.h>
+#include <vm/vm_param.h>
 #include <unistd.h>
 
-#include "mem_freebsd.h"
+long long int mem_total, mem_used, mem_buffers, mem_cached;
+long long int swp_total, swp_used;
 
-long long int mem_total, mem_used, mem_free, mem_buffers, mem_cached;
-long long int swp_total, swp_used, swp_free;
-
-static kvm_t *kd;
-struct nlist nlst[] = { {"_cnt"}, {"_bufspace"}, {0} };
+enum { total, active, laundry, wired, buffers, swap };
+int mib[swap - total + 1][4];
+/*
+ * Values below are in kilobytes: we don't need higher granulation,
+ * and it allows to keep numbers relatively small.
+ */
+unsigned int mem[swap - total];
+int pagesize;
 
 void
-mem_init(void)
+mem_init()
 {
-	int pagesize;
+	size_t len = 4;
 
-	if (!(kd = kvm_open(NULL, NULL, NULL, O_RDONLY, "kvm_open")))
-	{
-		perror("kvm_open");
-		exit(1);
-	}
+	/* Precache MIB name vectors for faster lookups later */
+	sysctlnametomib("vm.stats.vm.v_page_count", mib[total], &len);
+	sysctlnametomib("vm.stats.vm.v_active_count", mib[active], &len);
+	sysctlnametomib("vm.stats.vm.v_laundry_count", mib[laundry], &len);
+	sysctlnametomib("vm.stats.vm.v_wire_count", mib[wired], &len);
 
-	kvm_nlist(kd, nlst);
+	len = 2;
+	sysctlnametomib("vfs.bufspace", mib[buffers], &len);
+	sysctlnametomib("vm.swap_info", mib[swap], &len);
 
-	if (!nlst[0].n_type)
-	{
-		perror("kvm_nlist");
-		exit(1);
-	}
+	pagesize = getpagesize() / 1024;
+}
 
-	seteuid(getuid());
-	setegid(getgid());
+static void
+get_swap_info()
+{
+	struct xswdev xsw;
+	size_t len = sizeof(xsw);
+	int n;
 
-	if (geteuid() != getuid() || getegid() != getgid())
-	{
-		perror("sete?id");
-		exit(1);
+	for (swp_total = swp_used = n = 0; ; ++n) {
+		mib[swap][2] = n;
+		if (sysctl(mib[swap], 3, &xsw, &len, NULL, 0) == -1)
+			break;
+		swp_total += pagesize * xsw.xsw_nblks;
+		swp_used += pagesize * xsw.xsw_used;
 	}
 }
 
 void
 mem_getfree()
 {
-	struct vmmeter vm;
-	struct kvm_swap sw;
-	int bufspace = 0;
-	unsigned long cnt_offset;
-	unsigned long bufspace_offset;
+	size_t len = 4;
+	int n;
 
-	static int firsttime = 1;
-	static time_t lasttime = 0;
-	time_t curtime;
-
-	if ((kvm_read(kd, nlst[0].n_value, &vm, sizeof(vm))
-		!= sizeof(vm)) ||
-	    (kvm_read(kd, nlst[1].n_value, &bufspace, sizeof(bufspace))
-		!= sizeof(bufspace)))
-	{
-		perror("kvm_read");
-		exit(1);
-	}
-
-	mem_total = vm.v_page_count;
-	mem_free = vm.v_free_count;
-	mem_used = mem_total - mem_free;
-	mem_cached = vm.v_cache_count;
-	mem_buffers = bufspace / vm.v_page_size;
+	for (n = 0; n < buffers - total; ++n)
+		sysctl(mib[n], 4, &mem[n], &len, NULL, 0);
+	sysctl(mib[buffers], 2, &mem[buffers], &len, NULL, 0);
 
 	/*
-	 * Only calculate when first time or when changes took place.
-	 * Do not call it more than 1 time per 2 seconds; otherwise
-	 * it can eat up to 50% of CPU time on heavy swap activity.
+	 * See the following links for explanation which pages we consider
+	 * free and used (cf. Linux vs. FreeBSD):
+	 * https://unix.stackexchange.com/questions/14102/real-memory-usage
+	 * https://unix.stackexchange.com/questions/134862/what-do-the-different-memory-counters-in-freebsd-mean
 	 */
+	mem_total = pagesize * mem[total];
+	/* On FreeBSD, "Laundry" had replaced "Cache" in November 2016 */
+	mem_cached = pagesize * mem[laundry];
+	mem_buffers = mem[buffers] / 1024;
+	mem_used = pagesize * (mem[active] + mem[wired]);
+	mem_used += mem_cached + mem_buffers;
 
-	curtime = time(NULL);
-
-	if (firsttime || curtime > lasttime + 5)
-	{
-		if (kvm_getswapinfo(kd, &sw, 1, 0) >= 0 &&
-			sw.ksw_total)
-		{
-			swp_total = sw.ksw_total;
-			swp_used = sw.ksw_used;
-			swp_free = swp_total - swp_used;
-		}
-		firsttime = 0;
-		lasttime = curtime;
-	}
+	get_swap_info();
 }

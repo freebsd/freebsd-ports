@@ -1,0 +1,11 @@
+--- util/et/Makefile.in.orig	2023-07-27 14:09:54.000000000 -0700
++++ util/et/Makefile.in	2023-07-31 09:19:14.036059000 -0700
+@@ -43,7 +43,7 @@
+ WFLAGS=		-ansi -D_POSIX_SOURCE -pedantic \
+ 			-Wall -Wwrite-strings -Wpointer-arith \
+ 			-Wcast-qual -Wcast-align -Wtraditional \
+-			-Wstrict-prototypes -Wmissing-prototypes \
++			-Wmissing-prototypes \
+ 			-Wnested-externs -Winline -DNO_INLINE_FUNCS -Wshadow 
+ 
+ DEPLIBS=

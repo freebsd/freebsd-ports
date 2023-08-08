@@ -1,6 +1,6 @@
 PORTNAME=	apricots
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.7
+DISTVERSION=	0.2.8
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/moggers87/apricots
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++17-lang gmake openal:al,alut sdl
+LIB_DEPENDS=	libalure.so:audio/alure
+
+USES=		autoreconf compiler:c++17-lang gmake openal:al sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	moggers87
 GNU_CONFIGURE=	yes
@@ -22,10 +24,6 @@ PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(pkgdatadir)|$${DESTDIR}&|' \
-		${WRKSRC}/apricots/Makefile.am
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/apricots.desktop \

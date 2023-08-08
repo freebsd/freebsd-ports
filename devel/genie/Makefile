@@ -2,7 +2,7 @@ PORTNAME=	genie
 PORTVERSION=	g2020082801
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GENie Project generator tool
 WWW=		https://github.com/bkaradzic/GENie
 

@@ -1,6 +1,6 @@
 PORTNAME=	cmlib
 PORTVERSION=	3.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	NL/blas:blas ftp://ftp.nist.gov/pub/cmlib/
 # Get d1mach.f, i1mach.f, r1mach.f from BLAS, rather than from CMLIB.

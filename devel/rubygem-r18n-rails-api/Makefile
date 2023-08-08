@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-i18n>=1.0,2<2,2:devel/rubygem-i18n \
 		rubygem-r18n-core>=5.0<6:devel/rubygem-r18n-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

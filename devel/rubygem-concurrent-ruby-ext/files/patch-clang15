@@ -1,0 +1,11 @@
+--- ext/concurrent-ruby-ext/atomic_reference.c.orig	2023-06-13 15:43:55 UTC
++++ ext/concurrent-ruby-ext/atomic_reference.c
+@@ -105,7 +105,7 @@ VALUE ir_compare_and_set(volatile VALUE self, VALUE ex
+     return Qtrue;
+   }
+ #else
+-  if (__sync_bool_compare_and_swap(&DATA_PTR(self), expect_value, new_value)) {
++  if (__sync_bool_compare_and_swap(&DATA_PTR(self), (void *) expect_value, (void *) new_value)) {
+     return Qtrue;
+   }
+ #endif

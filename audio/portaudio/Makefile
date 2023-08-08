@@ -1,6 +1,6 @@
 PORTNAME=	portaudio
 PORTVERSION=	19.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.portaudio.com/archives/
@@ -33,6 +33,8 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS DOXYGEN EXAMPLES JACK PATEST SNDIO
 OPTIONS_SUB=	yes
+
+SUB_FILES=	pkg-message
 
 PATEST_DESC=	PortAudio Test Programs
 
@@ -69,6 +71,8 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bindings/cpp/example/*.cxx \
 		${WRKSRC}/examples/*.c ${WRKSRC}/examples/*.cpp \
+		${WRKSRC}/src/os/unix/*.[ch] \
+		${WRKSRC}/src/common/*.[ch] \
 		${STAGEDIR}${EXAMPLESDIR}
 
 post-install-PATEST-on:

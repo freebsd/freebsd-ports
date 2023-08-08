@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	pstoedit:graphics/pstoedit \
 		getopt>=0:misc/getopt
 
-USES=		bison gettext iconv gmake readline tar:bzip2
+USES=		bison gettext iconv gmake readline tar:bzip2 tex
 USE_TEX=	latex
 INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
 

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc
-@@ -222,7 +222,12 @@ AdapterType GetAdapterTypeFromName(const char* network
+@@ -244,7 +244,12 @@ AdapterType GetAdapterTypeFromName(const char* network
    }
  #endif
  

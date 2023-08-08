@@ -1,0 +1,14 @@
+[
+{
+  type: install
+  message: <<EOM
+There's a regression after enabling ASLR (ex., enabled on stable/13 by default).
+Kamailio causes SIGSEGV while loading KEMI Interpreters probably.
+It's need to disable ASLR:
+# sysctl kern.elf64.aslr.enable=0
+# sysctl kern.elf64.aslr.pie_enable=0
+or load KEMI Interpreters with RTLD_GLOBAL flag, ex.:
+loadmodule("app_lua.so", "g")
+EOM
+}
+]

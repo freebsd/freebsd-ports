@@ -1,5 +1,5 @@
 PORTNAME=	draco
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.6
 CATEGORIES=	archivers
 PKGNAMESUFFIX=	-3d-compression
 

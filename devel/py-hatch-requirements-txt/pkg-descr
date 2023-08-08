@@ -1,0 +1,3 @@
+Hatchling plugin to read project dependencies from "requirements.txt" and there
+is support for defining groups of optional dependencies (also known as
+"features") as well.

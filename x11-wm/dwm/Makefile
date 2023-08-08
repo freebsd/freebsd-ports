@@ -1,9 +1,9 @@
 PORTNAME=	dwm
-DISTVERSION=	6.3
+DISTVERSION=	6.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Dynamic, small, fast and simple window manager
 WWW=		https://dwm.suckless.org/
 

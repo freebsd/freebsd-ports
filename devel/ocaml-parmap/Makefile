@@ -1,5 +1,5 @@
 PORTNAME=	parmap
-DISTVERSION=	1.0-rc9
+DISTVERSION=	1.2.4
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -10,19 +10,23 @@ WWW=		https://github.com/rdicosmo/parmap
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
+BUILD_DEPENDS=	dune:devel/ocaml-dune
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdicosmo
 
 USES=			gmake
-GNU_CONFIGURE=		yes
 USE_OCAML=		yes
 USE_OCAML_FINDLIB=	yes
 USE_OCAML_LDCONFIG=	yes
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/parmap/*.cmxs
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/stublibs/*.so
+TARGETS=	${PORTNAME}
+
+do-build:
+	cd ${BUILD_WRKSRC} && dune build --verbose -p ${TARGETS:ts,} -j ${MAKE_JOBS_NUMBER}
+
+do-install:
+	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
+		--libdir=${PREFIX}/${OCAML_SITELIBDIR} ${TARGETS}
 
 .include <bsd.port.mk>

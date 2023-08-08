@@ -1,6 +1,6 @@
 PORTNAME=		libgeodecomp
 PORTVERSION=		0.4.0
-PORTREVISION=		23
+PORTREVISION=		24
 CATEGORIES=		science devel
 MASTER_SITES=		http://www.libgeodecomp.org/archive/
 

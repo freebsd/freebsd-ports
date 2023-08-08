@@ -1,12 +1,11 @@
---- builds/install/misc/firebird.conf.in.orig	2020-10-12 00:02:22 UTC
+--- builds/install/misc/firebird.conf.in.orig	2022-06-07 08:18:52 UTC
 +++ builds/install/misc/firebird.conf.in
 @@ -189,7 +189,7 @@
  #
  # Type: string (special format)
  #
 -#UdfAccess = Restrict UDF
-+UdfAccess = Restrict %%PREFIX%%/libexec/firebird/udf
++UdfAccess = Restrict /usr/local/libexec/firebird/udf
  
  
  # ----------------------------
-

@@ -1,7 +1,7 @@
 PORTNAME=	i3-quickterm
 DISTVERSION=	1.1
 CATEGORIES=	x11 python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dch@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/lbonn/i3-quickterm
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}i3ipc>2.0:x11/py-i3ipc@${PY_FLAVOR}
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

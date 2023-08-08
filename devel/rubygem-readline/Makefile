@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-reline>=0:devel/rubygem-reline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,7 +1,7 @@
 PORTNAME=	libversion
 PORTVERSION=	1.2.4
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libversion.so:devel/libversion
 
-USES=		python:3.6+ pkgconfig
+USES=		python pkgconfig
 USE_PYTHON=	autoplist distutils
 
 do-test:

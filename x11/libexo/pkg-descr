@@ -1,4 +1,4 @@
-Exo is an Xfce library targeted at application development. It contains
-various custom widgets and APIs extending the functionality of GLib and
-GTK+. It also ships utilities for defining preferred applications,
-mounting storage devices and more.
+Exo is an Xfce library targeted at application development. It
+contains various custom widgets and APIs extending the functionality
+of GLib and GTK. It also ships utilities for defining preferred
+applications, mounting storage devices and more.

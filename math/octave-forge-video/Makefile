@@ -1,33 +1,26 @@
 PORTNAME=	octave-forge-video
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKDIR}/${OCTSRC}/COPYING
+LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-USES=		pkgconfig
+LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
+
+USES=		octave pkgconfig autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	Andy1978
+GH_PROJECT=	octave-video
+
+OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	HOME=${WRKSRC}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-# OCTSRC is the name of the directory of the package.
-# It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
-OCTSRC=		${DISTNAME}
-
-WRKSRC=		${WRKDIR}/${OCTSRC}/src
-
-LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
-
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
-
-post-build:
-	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTSRC}
+CPPFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+CONFIGURE_ENV+=	HOME=${WRKSRC} PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
 
 .include <bsd.port.mk>

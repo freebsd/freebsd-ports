@@ -1,6 +1,5 @@
 PORTNAME=	kdepim-runtime
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -40,4 +39,10 @@ DESCR=		${.CURDIR:H:H}/deskutils/kdepim/pkg-descr
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
+
+.include <bsd.port.post.mk>

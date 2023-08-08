@@ -1,6 +1,7 @@
 PORTNAME=		sonata
 DISTVERSION=		1.7b1-22
 DISTVERSIONSUFFIX=	-gcee3555
+PORTREVISION=	1
 CATEGORIES=		audio python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-mpd2>=0.4.6:audio/py-python-mpd2@${PY_FLAVOR}
 
-USES=		gettext gnome pkgconfig python:3.6+
+USES=		gettext gnome pkgconfig python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	multani

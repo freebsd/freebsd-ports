@@ -1,0 +1,5 @@
+TIMESTAMP = 1661430489
+SHA256 (go/sysutils_ipmi_exporter/ipmi_exporter-v1.6.1/v1.6.1.mod) = fb908a34735a343073c6dfd6b58660577da1d42b6dc662a23dfa133e22c6a349
+SIZE (go/sysutils_ipmi_exporter/ipmi_exporter-v1.6.1/v1.6.1.mod) = 1398
+SHA256 (go/sysutils_ipmi_exporter/ipmi_exporter-v1.6.1/v1.6.1.zip) = 79cc9c0a435d3f2aa124ee85b6bfa0aa95a1fd2843dfc8a995880773b8529016
+SIZE (go/sysutils_ipmi_exporter/ipmi_exporter-v1.6.1/v1.6.1.zip) = 57539

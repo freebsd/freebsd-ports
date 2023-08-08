@@ -1,5 +1,6 @@
 PORTNAME=	mkclean
 PORTVERSION=	0.9.0
+DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,7 +24,6 @@ CPE_VENDOR=	matroska
 USE_GITHUB=	yes
 GH_ACCOUNT=	Matroska-Org
 GH_PROJECT=	foundation-source
-GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
 
 NO_INSTALL=	yes
 

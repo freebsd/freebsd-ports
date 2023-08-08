@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-Rose-Object>=0.854:devel/p5-Rose-Object \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

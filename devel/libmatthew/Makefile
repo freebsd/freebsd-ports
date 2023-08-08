@@ -5,7 +5,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	http://www.matthew.ath.cx/projects/java/
 DISTNAME=	${PORTNAME}-java-${DISTVERSION}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Selection of Java libraries by Matthew Johnson
 WWW=		http://www.matthew.ath.cx/projects/java/
 

@@ -1,24 +1,22 @@
 PORTNAME=	qpress
-PORTVERSION=	1.1
+PORTVERSION=	20230507
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.quicklz.com/
-DISTNAME=	qpress-11-source
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Portable file archiver using QuickLZ
-WWW=		http://www.quicklz.com/
+WWW=		https://github.com/PierreLvx/qpress
 
 LICENSE=	GPLv2
 
-USES=		dos2unix zip
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+USES=		dos2unix
+USE_GITHUB=	yes
+GH_ACCOUNT=	PierreLvx
 
 PLIST_FILES=	bin/qpress
 
 do-build:
 	cd ${WRKSRC} && \
-	${CXX} ${CXXFLAGS} -o qpress qpress.cpp aio.cpp quicklz.c utilities.cpp -lpthread
-
+	${CXX} ${CXXFLAGS} -o qpress -x c quicklz.c -x c++ qpress.cpp aio.cpp utilities.cpp -lpthread
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qpress ${STAGEDIR}${PREFIX}/bin
 

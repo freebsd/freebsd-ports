@@ -28,6 +28,7 @@ bin/RNApvmin
 bin/RNAsnoop
 bin/RNAsubopt
 bin/RNAup
+bin/RNAxplorer
 bin/b2ct
 bin/ct2db
 bin/kinwalker
@@ -58,18 +59,21 @@ include/ViennaRNA/constraints/basic.h
 include/ViennaRNA/constraints/hard.h
 include/ViennaRNA/constraints/ligand.h
 include/ViennaRNA/constraints/soft.h
+include/ViennaRNA/constraints/soft_special.h
 include/ViennaRNA/constraints_SHAPE.h
 include/ViennaRNA/constraints_hard.h
 include/ViennaRNA/constraints_ligand.h
 include/ViennaRNA/constraints_soft.h
 include/ViennaRNA/convert_epars.h
 include/ViennaRNA/data_structures.h
+include/ViennaRNA/datastructures/array.h
 include/ViennaRNA/datastructures/basic.h
 include/ViennaRNA/datastructures/char_stream.h
 include/ViennaRNA/datastructures/hash_tables.h
 include/ViennaRNA/datastructures/heap.h
 include/ViennaRNA/datastructures/lists.h
 include/ViennaRNA/datastructures/stream_output.h
+include/ViennaRNA/datastructures/string.h
 include/ViennaRNA/dist_vars.h
 include/ViennaRNA/dp_matrices.h
 include/ViennaRNA/duplex.h
@@ -107,6 +111,7 @@ include/ViennaRNA/loops/external.h
 include/ViennaRNA/loops/hairpin.h
 include/ViennaRNA/loops/internal.h
 include/ViennaRNA/loops/multibranch.h
+include/ViennaRNA/mconf.h
 include/ViennaRNA/mfe.h
 include/ViennaRNA/mfe_window.h
 include/ViennaRNA/mm.h
@@ -122,6 +127,7 @@ include/ViennaRNA/params/constants.h
 include/ViennaRNA/params/convert.h
 include/ViennaRNA/params/default.h
 include/ViennaRNA/params/io.h
+include/ViennaRNA/params/salt.h
 include/ViennaRNA/part_func.h
 include/ViennaRNA/part_func_co.h
 include/ViennaRNA/part_func_up.h
@@ -212,6 +218,7 @@ man/man1/RNApvmin.1.gz
 man/man1/RNAsnoop.1.gz
 man/man1/RNAsubopt.1.gz
 man/man1/RNAup.1.gz
+man/man1/RNAxplorer.1.gz
 man/man1/ct2db.1.gz
 man/man1/kinwalker.1.gz
 share/ViennaRNA/2Dlandscape.R
@@ -233,6 +240,13 @@ share/ViennaRNA/dna_mathews2004.par
 share/ViennaRNA/rna_andronescu2007.par
 share/ViennaRNA/rna_langdon2018.par
 share/ViennaRNA/rna_misc_special_hairpins.par
+share/ViennaRNA/rna_mod_7DA_parameters.json
+share/ViennaRNA/rna_mod_dihydrouridine_parameters.json
+share/ViennaRNA/rna_mod_inosine_parameters.json
+share/ViennaRNA/rna_mod_m6A_parameters.json
+share/ViennaRNA/rna_mod_pseudouridine_parameters.json
+share/ViennaRNA/rna_mod_purine_parameters.json
+share/ViennaRNA/rna_mod_template_parameters.json
 share/ViennaRNA/rna_turner1999.par
 share/ViennaRNA/rna_turner2004.par
 share/ViennaRNA/viennarna.bib

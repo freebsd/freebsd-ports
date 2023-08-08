@@ -1,6 +1,6 @@
 PORTNAME=	znc
 PORTVERSION=	1.8.2
-PORTREVISION=	6
+PORTREVISION=	10
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
@@ -16,7 +16,7 @@ WWW=		https://wiki.znc.in/ZNC
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib cpe cmake:run iconv pathfix pkgconfig python:3.5+
+USES=		compiler:c++11-lib cpe cmake:run iconv pathfix pkgconfig python
 
 USE_RC_SUBR=	znc
 

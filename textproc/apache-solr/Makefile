@@ -1,8 +1,8 @@
 PORTNAME=	apache-solr
-PORTVERSION=	8.11.2
-PORTREVISION=	0
+PORTVERSION=	9.3.0
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	https://archive.apache.org/dist/lucene/solr/${PORTVERSION}/
+MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
 DISTNAME=	solr-${PORTVERSION}
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,19 +14,25 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe tar:tgz
+CPE_VENDOR=	apache
+CPE_PRODUCT=	solr
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 JAVA_RUN=	yes
-NO_BUILD=	yes
-NO_ARCH=	yes
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
-SUB_FILES=	pkg-message
 USE_RC_SUBR=	solr
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
+
 USERS=		solr
 GROUPS=		${USERS}
 
 CPE_PRODUCT=	solr
 CPE_VENDOR=	apache
+
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	JTS
 OPTIONS_SUB=	yes
@@ -37,11 +43,11 @@ JTS_RUN_DEPENDS=	jts>0:math/jts
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/oom_solr.sh ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_DATA} ${WRKSRC}/bin/solr.in.sh ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
+	${ECHO} '' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} 'SOLR_HOME="/var/db/solr"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} '# LOG4J_PROPS="/var/db/solr/log4j2.xml"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} 'SOLR_LOGS_DIR="/var/log/solr"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample

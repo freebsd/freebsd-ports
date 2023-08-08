@@ -1,12 +1,12 @@
 PORTNAME=	testscenarios
 PORTVERSION=	0.5.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PyUnit extension for dependency injection
-WWW=		https://pypi.org/project/testscenarios/
+WWW=		https://github.com/testing-cabal/testscenarios
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.11:devel/py-pbr@${PY_FLAVOR} \
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python:3.6+
+
+USES=		python
 
 .include <bsd.port.mk>

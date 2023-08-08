@@ -1,8 +1,8 @@
 PORTNAME=	onionshare-cli
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 DISTNAME=	onionshare_cli-${PORTVERSION}
 CATEGORIES=	www security python
-MASTER_SITES=   CHEESESHOP
+MASTER_SITES=   PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -30,7 +30,7 @@ RUN_DEPENDS=	meek-client:security/meek \
 		${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

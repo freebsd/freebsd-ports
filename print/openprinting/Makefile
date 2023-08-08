@@ -10,17 +10,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
 WWW=		http://openprinting.sourceforge.net/
 
+USES=		gettext gmake iconv libtool localbase tar:bzip2
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
+
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
-USES=		gettext gmake iconv libtool tar:bzip2
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=	yes
+LIBS+=		-lintl
 LLD_UNSAFE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib -lintl
 
 # TODO: Get mod_ipp to actually work; Sun's example seems to be broken
 # under both Apache 1.3/2.0, this could be a papi issue; does not build
@@ -33,6 +34,10 @@ LIBS+=		-L${LOCALBASE}/lib -lintl
 #	PSM_CUPS	"Build psm_cups.so for printing to CUPS" Off
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 # NOTE: This has only been tested with www/apache20, with integrated APR.
 .if defined(WITH_MOD_IPP)

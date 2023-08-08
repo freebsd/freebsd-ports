@@ -1,0 +1,4 @@
+Due to reasons explained in hyprland-protocols, we have a separate
+desktop portal impl for Hyprland.
+
+Although -wlr *does* work with Hyprland, -hyprland offers more features.

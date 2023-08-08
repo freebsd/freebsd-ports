@@ -1,5 +1,6 @@
 PORTNAME=	tortoisehg
-DISTVERSION=	6.2.2
+DISTVERSION=	6.4.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.mercurial-scm.org/release/tortoisehg/targz/
 
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${PY_MERCURIAL} \
 		${PYTHON_PKGNAMEPREFIX}iniparse>=0.4:devel/py-iniparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		pyqt:5 python:3.5+
+USES=		pyqt:5 python
 USE_PYQT=	qscintilla2 pyqt5
 USE_PYTHON=	autoplist distutils
 

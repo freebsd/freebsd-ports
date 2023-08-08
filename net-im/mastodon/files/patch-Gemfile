@@ -1,0 +1,20 @@
+--- Gemfile.orig	2023-04-13 16:23:34 UTC
++++ Gemfile
+@@ -1,7 +1,7 @@
+ # frozen_string_literal: true
+ 
+ source 'https://rubygems.org'
+-ruby '>= 2.7.0', '< 3.1.0'
++ruby '>= 2.7.0', '< 3.2.0'
+ 
+ gem 'pkg-config', '~> 1.5'
+ gem 'rexml', '~> 3.2'
+@@ -122,7 +122,7 @@ group :test do
+   gem 'climate_control', '~> 0.2'
+   gem 'faker', '~> 3.1'
+   gem 'json-schema', '~> 3.0'
+-  gem 'rack-test', '~> 2.0'  
++  gem 'rack-test', '~> 2.0'
+   gem 'rails-controller-testing', '~> 1.0'
+   gem 'rspec_junit_formatter', '~> 0.6'
+   gem 'rspec-sidekiq', '~> 3.1'

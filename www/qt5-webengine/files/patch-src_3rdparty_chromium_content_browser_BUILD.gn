@@ -1,12 +1,18 @@
---- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2003,6 +2003,9 @@ jumbo_static_library("browser") {
-     # resources on other platforms.
-     deps += [ "//content/browser/devtools:devtools_resources" ]
+@@ -2090,6 +2090,15 @@ jumbo_static_library("browser") {
+     deps += [ "//third_party/speech-dispatcher" ]
    }
-+  if (is_bsd) {
-+    deps -= [ "//services/service_manager/zygote" ]
-+  }
  
-   if (enable_basic_printing) {
-     deps += [ "//printing" ]
++  if (is_bsd) {
++    sources -= [
++      "sandbox_host_linux.cc",
++      "sandbox_host_linux.h",
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   # ChromeOS also defines linux but their memory-monitors conflict.
+   if (is_chromeos) {
+     sources += [

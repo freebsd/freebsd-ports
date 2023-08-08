@@ -1,6 +1,7 @@
 PORTNAME=	py-OpenFermion-PySCF
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	science python # chemistry, quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

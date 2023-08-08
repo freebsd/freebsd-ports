@@ -1,7 +1,7 @@
 PORTNAME=	oletools
 PORTVERSION=	0.60.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorclass>=0:textproc/py-colorclass@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}olefile>=0.46:devel/py-olefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing2>=2.1.0<3:devel/py-pyparsing2@${PY_FLAVOR}
 
-USES=		dos2unix python:3.6+ zip
+USES=		dos2unix python zip
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

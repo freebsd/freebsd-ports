@@ -3,7 +3,6 @@ bin/rec
 bin/sox
 bin/soxi
 include/sox.h
-lib/libsox.a
 lib/libsox.so
 lib/libsox.so.3
 lib/libsox.so.3.0.0

@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell-extension-dashtodock
 PORTVERSION=	65
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	extensions.gnome.org-v
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome

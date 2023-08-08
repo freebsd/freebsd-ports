@@ -1,8 +1,7 @@
 PORTNAME=	mythweb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	32.0-40
-DISTVERSIONSUFFIX=	-gb05906a6
-
+DISTVERSION=	33.1-0
+DISTVERSIONSUFFIX=	-g92f0f9b
 CATEGORIES=	www
 PKGNAMEPREFIX=	mythplugin-
 
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php shebangfix perl5
 USE_PERL5=	run
-USE_PHP=	json pcre posix mysqli session spl sockets
+USE_PHP=	posix mysqli session sockets
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 SHEBANG_FILES=	mythweb.pl modules/_shared/lang/build_translation.pl \
@@ -30,7 +29,7 @@ REINPLACE_ARGS=	-i ""
 OPTIONS_DEFINE=	APACHE LIGHTTPD NGINX
 OPTIONS_DEFAULT=	APACHE
 
-APACHE_USES=		apache:2.2+
+APACHE_USES=		apache
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 NGINX_DESC=		Nginx server support
 NGINX_RUN_DEPENDS=	nginx:www/nginx

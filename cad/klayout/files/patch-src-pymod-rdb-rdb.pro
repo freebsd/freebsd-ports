@@ -1,6 +1,6 @@
---- src/pymod/rdb/rdb.pro.orig	2021-08-28 20:05:07 UTC
+--- src/pymod/rdb/rdb.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/pymod/rdb/rdb.pro
-@@ -9,4 +9,4 @@ SOURCES = \
+@@ -10,4 +10,4 @@ SOURCES = \
  
  HEADERS += \
  

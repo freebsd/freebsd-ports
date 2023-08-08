@@ -1,5 +1,6 @@
 PORTNAME=	devhelp
 PORTVERSION=	41.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib gettext gnome localbase meson pkgconfig \
-		python:3.3+,build tar:xz
+		python:build tar:xz
 USE_GNOME=	cairo gtk30 introspection
 
 USE_LDCONFIG=	yes

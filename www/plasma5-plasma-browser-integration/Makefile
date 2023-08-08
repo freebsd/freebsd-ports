@@ -1,6 +1,5 @@
 PORTNAME=	plasma-browser-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
 CATEGORIES=	www kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,10 +8,10 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
 USE_KDE=	activities completion config coreaddons crash dbusaddons \
-		filemetadata i18n itemmodels jobwidgets kio notifications package \
-		plasma-framework plasma-workspace purpose runner service \
-		widgetsaddons windowsystem
-USE_QT=		concurrent core declarative dbus gui network widgets \
+		filemetadata i18n itemmodels jobwidgets kio notifications \
+		package plasma-framework plasma-workspace purpose runner \
+		service widgetsaddons windowsystem
+USE_QT=		concurrent core dbus declarative gui network widgets \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

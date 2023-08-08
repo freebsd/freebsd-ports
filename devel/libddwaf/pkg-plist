@@ -1,0 +1,5 @@
+include/ddwaf.h
+lib/libddwaf.a
+lib/libddwaf.so
+share/cmake/libddwaf/libddwaf-config-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/libddwaf/libddwaf-config.cmake

@@ -15,6 +15,11 @@ LICENSE_COMB=	dual
 USES=		libedit perl5 pkgconfig
 USE_PERL5=	configure
 
+post-configure:
+	@${REINPLACE_CMD} \
+		-e 's|\(iv_return.*\)\(EL_BUILTIN_GETCFN\)|\1(IV)\2|' \
+		${WRKSRC}/const-c.inc
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Term/EditLine/EditLine.so
 

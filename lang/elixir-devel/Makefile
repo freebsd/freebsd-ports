@@ -1,9 +1,8 @@
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
-PORTREVISION=	0
+DISTVERSION=	1.15.4
 CATEGORIES=	lang
-MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
+MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/:doc
 PKGNAMESUFFIX=	-devel
 DISTFILES=	Docs.zip:doc
 DIST_SUBDIR=	elixir/${PORTVERSION}
@@ -34,12 +33,12 @@ MAKE_ENV+=	MAN_PREFIX=${PREFIX}/man \
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
 
-ERLANG_VER=	24
+ERLANG_VER?=	25
 
 .include <bsd.port.options.mk>
 
 post-extract:
-	@${FIND} ${WRKDIR}/doc -name .build -delete
+	${FIND} ${WRKDIR}/doc -name .build -delete -or -name .ex_doc -delete
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

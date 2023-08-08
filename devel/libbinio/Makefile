@@ -10,6 +10,7 @@ WWW=		https://adplug.github.io/libbinio/
 LICENSE=	LGPL21
 
 USES=		autoreconf compiler:c11 libtool pathfix
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 

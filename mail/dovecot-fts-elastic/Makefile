@@ -1,6 +1,6 @@
 PORTNAME=	fts-elastic
 PORTVERSION=	1.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 PKGNAMEPREFIX=	dovecot-
 
@@ -18,7 +18,6 @@ USES=		autoreconf libtool
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	filiphanes
-GH_TAGNAME=     ${PORTVERSION}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

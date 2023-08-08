@@ -7,10 +7,13 @@ bin/dekyra
 bin/deprince
 bin/descumm
 bin/desword2
+bin/detwine
 bin/extract_gob_cdi
 bin/extract_hadesch
+bin/extract_hadesch_img
 bin/extract_lokalizator
 bin/extract_mohawk
+bin/extract_mps
 bin/extract_ngi
 bin/gob_loadcalc
 bin/grim_animb2txt
@@ -32,6 +35,8 @@ bin/grim_til2bmp
 bin/grim_unlab
 bin/grim_vima
 bin/msn_convert_mod
+bin/saga_unpack
+bin/saga_unpack_amiga
 %%WXGTK%%bin/scummvm-tools
 bin/scummvm-tools-cli
 %%DATADIR%%/detaillogo.jpg

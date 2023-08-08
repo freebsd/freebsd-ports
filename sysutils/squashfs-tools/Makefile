@@ -1,17 +1,17 @@
 PORTNAME=	squashfs-tools
-PORTVERSION=	4.5.1
+PORTVERSION=	4.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/squashfs/squashfs/squashfs${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	squashfs${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Set of tools to manipulate squashfs images
-WWW=		http://squashfs.sourceforge.net/
+WWW=		https://squashfs.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-BUILD_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed help2man:misc/help2man
 
 USES=		alias cpe gmake
 BINARY_ALIAS=	sed=gsed
@@ -30,8 +30,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/squashfs-tools
 CPE_PRODUCT=	squashfs
 CPE_VENDOR=	squashfs_project
 
-PORTDOCS=	ACKNOWLEDGEMENTS ACTIONS-README CHANGES DONATIONS \
-		README-${PORTVERSION} USAGE pseudo-file.example
+PORTDOCS=	ACKNOWLEDGEMENTS ACTIONS-README CHANGES \
+		README-${PORTVERSION} TECHNICAL-INFO USAGE-* \
+		pseudo-file.example
 
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
 LZ4_MAKE_ARGS=	LZ4_SUPPORT=1
@@ -49,14 +50,12 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MAKE_ARGS=	ZSTD_SUPPORT=1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^#include <unistd\.h>/ { x; \
-		s,^,#include <signal.h>,; G; }' ${WRKSRC}/reader.c
 	@${REINPLACE_CMD} -e '/^#include "squashfs_fs\.h"/ { x; \
 		s,^,typedef struct __sFILE FILE;,; G; }' \
 			${WRKSRC}/lzma_wrapper.c
 
 post-install:
-	@${MV} ${WRKSRC:H}/RELEASE-READMEs/[Dp]* ${WRKSRC:H}
+	@${LN} -f ${WRKSRC:H}/examples/pseudo-file.example ${WRKSRC:H}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC:H}/|} ${STAGEDIR}${DOCSDIR}
 

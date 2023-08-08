@@ -1,6 +1,6 @@
 PORTNAME=	mupen64plus-qt
 DISTVERSION=	1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 
 MAINTAINER=	maintainer@hasting.email
@@ -10,7 +10,7 @@ WWW=		https://github.com/dh4/mupen64plus-qt
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip
+LIB_DEPENDS=	libquazip1-qt5.so:archivers/quazip@qt5
 RUN_DEPENDS=	${LOCALBASE}/lib/libmupen64plus.so.2:emulators/mupen64plus-core \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-audio-sdl.so:emulators/mupen64plus-audio-sdl \
 		${LOCALBASE}/lib/mupen64plus/mupen64plus-input-sdl.so:emulators/mupen64plus-input-sdl \

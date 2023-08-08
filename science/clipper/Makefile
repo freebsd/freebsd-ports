@@ -1,6 +1,6 @@
 PORTNAME=	clipper
 DISTVERSION=	2.1.20180802
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/
 

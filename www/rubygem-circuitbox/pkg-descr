@@ -1,0 +1,6 @@
+Circuitbox is a Ruby circuit breaker gem. It protects your application from
+failures of its service dependencies. It wraps calls to external services and
+monitors for failures in one minute intervals. Using a circuit's defaults once
+more than 5 requests have been made with a 50% failure rate, Circuitbox stops
+sending requests to that failing service for 90 seconds. This helps your
+application gracefully degrade.

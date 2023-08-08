@@ -1,33 +1,42 @@
 PORTNAME=	libportal
 PORTVERSION=	0.6
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
-COMMENT=	GIO-styled async APIs for Flatpak
+COMMENT?=	GIO-styled async APIs for Flatpak
 WWW=		https://github.com/flatpak/libportal
 
-LICENSE=	GPLv2+
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 
-USES=		gnome meson pkgconfig qt:5
+USES+=		gnome meson pkgconfig
 
-USE_GNOME=	glib20 gtk30 introspection:build
-USE_QT=		buildtools core gui qmake:build testlib widgets x11extras
+USE_GNOME+=	glib20 introspection:build
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 
-OPTIONS_DEFINE=		VALA
-OPTIONS_DEFAULT=	VALA
+OPTIONS_DEFINE=		VAPI
+OPTIONS_DEFAULT=	VAPI
 
-VALA_MESON_TRUE=	vapi
-VALA_USES=		vala:build
-VALA_DESC=		Install Vala language bindings
+VAPI_MESON_TRUE=	vapi
+VAPI_USES=		vala:build
 
-# docs require a port for gi-docgen
-MESON_ARGS=	-Ddocs=false '-Dbackends=["qt5", "gtk3"]'
+MESON_ARGS=	-Ddocs=false -Dbackends=${BACKEND}
 OPTIONS_SUB=	yes
+
+.if defined(BACKEND)
+LIB_DEPENDS=	libportal.so:deskutils/libportal
+PLIST=		${PKGDIR}/pkg-plist.${BACKEND}
+
+post-install:
+	@cd ${STAGEDIR}${PREFIX} && \
+		${CAT} ${PKGDIR}/pkg-plist | ${SED} -e 's/^%%VAPI%%//' | ${XARGS} ${RM}
+	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
+.endif
 
 .include <bsd.port.mk>

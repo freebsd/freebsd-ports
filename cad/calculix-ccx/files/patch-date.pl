@@ -7,5 +7,5 @@
 +use POSIX qw(strftime);
 +chomp(my $date = strftime("%Y-%m-%d", gmtime($ENV{SOURCE_DATE_EPOCH} || time)));
  
- # inserting the date into ccx_2.20.c
+ # inserting the date into ccx_2.21.c
  

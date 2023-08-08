@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-treetop>=1.4.2:devel/rubygem-treetop \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/lessc

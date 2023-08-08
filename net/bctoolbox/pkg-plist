@@ -1,3 +1,4 @@
+bin/bctoolbox_tester
 include/bctoolbox/charconv.h
 include/bctoolbox/compiler.h
 include/bctoolbox/crypto.h
@@ -7,6 +8,7 @@ include/bctoolbox/exception.hh
 include/bctoolbox/list.h
 include/bctoolbox/logging.h
 include/bctoolbox/map.h
+include/bctoolbox/ownership.hh
 include/bctoolbox/param_string.h
 include/bctoolbox/parser.h
 include/bctoolbox/port.h

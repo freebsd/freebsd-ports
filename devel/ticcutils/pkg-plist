@@ -8,7 +8,6 @@ include/ticcutils/PrettyPrint.h
 include/ticcutils/ServerBase.h
 include/ticcutils/SocketBasics.h
 include/ticcutils/StringOps.h
-include/ticcutils/Tar.h
 include/ticcutils/Timer.h
 include/ticcutils/UniHash.h
 include/ticcutils/UniTrie.h
@@ -17,8 +16,10 @@ include/ticcutils/UnitTest.h
 include/ticcutils/Version.h
 include/ticcutils/XMLtools.h
 include/ticcutils/bz2stream.h
+include/ticcutils/enum_flags.h
 include/ticcutils/gzstream.h
 include/ticcutils/json.hpp
+include/ticcutils/json_fwd.hpp
 include/ticcutils/zipper.h
 lib/libticcutils.so
 lib/libticcutils.so.9

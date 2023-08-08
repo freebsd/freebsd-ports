@@ -1,20 +1,29 @@
---- ui/views/style/platform_style.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/views/style/platform_style.cc.orig	2023-03-13 07:33:08 UTC
 +++ ui/views/style/platform_style.cc
-@@ -52,7 +52,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+@@ -17,7 +17,7 @@
+ #include "ui/views/controls/focusable_border.h"
+ #include "ui/views/controls/scrollbar/scroll_bar_views.h"
+ 
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"
+ #endif
+ 
+@@ -50,7 +50,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+ // Linux clips bubble windows that extend outside their parent window
+ // bounds.
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      false;
  #else
      true;
-@@ -82,7 +82,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
- #endif  // !BUILDFLAG(IS_MAC)
+@@ -58,7 +58,7 @@ const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  
- #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \
--    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS))
-+    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD))
  // static
- std::unique_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
-     LabelButton* button) {
+ std::unique_ptr<ScrollBar> PlatformStyle::CreateScrollBar(bool is_horizontal) {
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   return std::make_unique<OverlayScrollBar>(is_horizontal);
+ #else
+   return std::make_unique<ScrollBarViews>(is_horizontal);

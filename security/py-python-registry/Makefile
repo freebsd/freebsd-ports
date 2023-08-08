@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
 
 NO_ARCH=	yes
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist concurrent
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*

@@ -11,6 +11,9 @@ WWW=		https://codeberg.org/tobik/parfetch-overlay
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained
+EXPIRATION_DATE=	2023-08-31
+
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		compiler:c11 ninja pkgconfig ssl tar:lz

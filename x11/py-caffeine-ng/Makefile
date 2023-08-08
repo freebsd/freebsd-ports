@@ -1,7 +1,8 @@
 PORTNAME=	caffeine-ng
 DISTVERSION=	4.0.2
+PORTREVISION=	2
 CATEGORIES=	x11 python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -28,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-bugbear>0:devel/py-flake8-bugbear@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-import-order>0:devel/py-flake8-import-order@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext-tools gnome python:3.6-3.9
+USES=		desktop-file-utils gettext-tools gnome python:3.8-3.9
 USE_GNOME=	gdkpixbuf2 gtk30 pygobject3
 USE_PYTHON=	autoplist distutils
 

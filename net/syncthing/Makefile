@@ -1,20 +1,18 @@
 PORTNAME=	syncthing
-PORTVERSION=	1.20.1
-PORTREVISION=	4
+DISTVERSION=	1.23.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
-MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-source-${DISTVERSIONPREFIX}${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-source-${DISTVERSIONFULL}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Encrypted file sync tool
 WWW=		https://syncthing.net/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/${PORTNAME}/LICENSE
 
-USES=		cpe go:1.18,modules
+USES=		cpe go:1.19,modules
 
 USE_RC_SUBR=	syncthing syncthing-discosrv syncthing-relaysrv syncthing-relaypoolsrv
 
@@ -38,10 +36,15 @@ NO_WRKSUBDIR=	yes
 
 do-build:
 	@( cd ${WRKSRC}/${PORTNAME} ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build ; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build stdiscosrv; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build strelaysrv; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${PORTVERSION} -no-upgrade build strelaypoolsrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build stdiscosrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build strelaysrv; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade build strelaypoolsrv; \
+		)
+
+do-test:
+	@( cd ${WRKSRC}/${PORTNAME} ; \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} run build.go -version v${DISTVERSION} -no-upgrade test ; \
 		)
 
 do-install:

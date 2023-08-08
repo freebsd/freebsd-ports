@@ -1,5 +1,6 @@
 PORTNAME=	devilspie
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.burtonini.com/computing/
 
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwnck-3.so:x11-toolkits/libwnck3
 
 USES=		gettext gmake gnome pkgconfig tar:xz
-USE_GNOME=	libwnck intltool
+USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib -lX11

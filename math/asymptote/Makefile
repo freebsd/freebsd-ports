@@ -1,6 +1,6 @@
 PORTNAME=	asymptote
 PORTVERSION=	2.81
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -24,8 +24,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cson>=0.8:devel/py-cson@${PY_FLAVOR} \
 		${PY_PILLOW}
 
-USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python:3.6+ \
-		pyqt:5 shebangfix tar:tgz
+USES=		compiler:c++14-lang gettext-runtime ghostscript gl gmake gnome ncurses perl5 python \
+		pyqt:5 shebangfix tar:tgz tex
 SHEBANG_FILES=	GUI/*.py
 USE_GL=		gl glu glut
 USE_GNOME=	librsvg2:run

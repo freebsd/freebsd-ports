@@ -1,0 +1,11 @@
+--- configure.orig	2023-07-07 02:00:23 UTC
++++ configure
+@@ -21048,7 +21048,7 @@ SWIG_CXXFLAGS=
+ if test yes = "$GXX" ; then
+                     SWIG_CXXFLAGS="-fno-strict-aliasing"
+ 
+-              XAPIAN_LIBS="$XAPIAN_LIBS -lstdc++"
++              XAPIAN_LIBS="$XAPIAN_LIBS"
+ 
+ 
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext

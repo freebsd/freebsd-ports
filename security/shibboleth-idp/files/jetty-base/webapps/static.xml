@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
+<!-- =============================================================== -->
+<!-- Configure static content delivery                               -->
+<!-- =============================================================== -->
+<Configure class="org.eclipse.jetty.server.handler.ContextHandler">
+  <Set name="contextPath">/</Set>
+  <Set name="handler">
+    <New class="org.eclipse.jetty.server.handler.ResourceHandler">
+      <Set name="resourceBase">
+        <Property name="jetty.base"/>/<Property name="jetty.static.data.path" default="../static"/>
+      </Set>
+      <Set name="directoriesListed">false</Set>
+    </New>
+  </Set>
+</Configure>

@@ -12,7 +12,7 @@ WWW=		https://theory.stanford.edu/~amitp/yapps/
 
 PORTSCOUT=	skipv:2-2.1.1-17.1
 WRKSRC=		${WRKDIR}/Yapps-${PORTVERSION}
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

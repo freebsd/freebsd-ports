@@ -1,5 +1,7 @@
 TIMESTAMP = 1655095760
 SHA256 (Nlzy-vapoursynth-waifu2x-ncnn-vulkan-r5_GH0.tar.gz) = cc7bf044b79c7ef7f65a2749f28df5865ed81d69aaa55bb1ebc1bd1a61bb9743
 SIZE (Nlzy-vapoursynth-waifu2x-ncnn-vulkan-r5_GH0.tar.gz) = 10501
+SHA256 (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = f7a19b57af200feeba77a5cc010fc031ba47c32287cb1438440ad32628fb798a
+SIZE (KhronosGroup-glslang-11.9.0-19-g86ff4bca_GH0.tar.gz) = 3535721
 SHA256 (Tencent-ncnn-20210525_GH0.tar.gz) = a385eb5505f09e59ae486fa89584e5a15d4c45e7463927bbdddf9060d81b9a18
 SIZE (Tencent-ncnn-20210525_GH0.tar.gz) = 11578821

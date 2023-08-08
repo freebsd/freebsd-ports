@@ -146,8 +146,8 @@ lib/rhythmbox/plugins/power-manager/power-manager.plugin
 %%PYTHON%%lib/rhythmbox/plugins/rb/rb.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/rbconfig.py
 %%PYTHON%%lib/rhythmbox/plugins/rb/stringmatch.py
-@comment %%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.so
-@comment %%LIRC%%lib/rhythmbox/plugins/rblirc/rblirc.plugin
+%%LIRC%%lib/rhythmbox/plugins/rblirc/librblirc.so
+%%LIRC%%lib/rhythmbox/plugins/rblirc/rblirc.plugin
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/config.py
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/player.py
 %%PYTHON%%lib/rhythmbox/plugins/replaygain/replaygain.plugin
@@ -488,4 +488,4 @@ share/metainfo/org.gnome.Rhythmbox3.appdata.xml
 %%DATADIR%%/rhythmbox.gep
 share/vala/vapi/rb.vapi
 share/vala/vapi/rhythmdb.vapi
-@comment %%LIRC%%%%DATADIR%%/plugins/rblirc/rhythmbox_lirc_default
+%%LIRC%%%%DATADIR%%/plugins/rblirc/rhythmbox_lirc_default

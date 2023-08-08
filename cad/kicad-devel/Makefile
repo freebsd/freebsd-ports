@@ -1,6 +1,7 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_SRC_DATE}
-PORTREVISION=	2
+PORTREVISION=	4
+#PORTREVISION=	1
 CATEGORIES=	cad
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=		${PORTNAME}
@@ -15,13 +16,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/git:devel/git \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/bin/swig:devel/swig
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libngspice.so:cad/ngspice_rework@shlib \
 		libTKernel.so:cad/opencascade \
 		libpixman-1.so:x11/pixman \
 		libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
-		libGLEW-wayland.so:graphics/glew-wayland
+		libGLEW-wayland.so:graphics/glew-wayland \
+		libodbc.so:databases/unixODBC
 
 CONFLICTS_INSTALL=	kicad # bin/_cvpcb.kiface
 
@@ -32,22 +36,24 @@ OPTIONS_DEFINE=	DOCS
 PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
-USES=		desktop-file-utils shared-mime-info compiler:c++14-lang tar:bzip2 cmake:insource,noninja \
-		gettext pkgconfig python:3.5+ shebangfix ssl gl xorg gnome
+USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
+		gettext gnome pkgconfig python shared-mime-info shebangfix ssl \
+		tar:bzip2 xorg 
 USE_GITLAB=	yes
 GL_ACCOUNT=	kicad/code
 GL_PROJECT=	kicad
-GL_COMMIT=	${GIT_SRC_HASH}
-USE_GL=		gl glew glu glut
-USE_WX=		3.1
+GL_TAGNAME=	${GIT_SRC_HASH}
+USE_GL=		gl glu glut
+USE_WX=		3.2
 WX_COMPS=	wx python:lib
-USE_GNOME=	atk cairo	# Required by libwx_gtk2_aui-2.8.so
+USE_GNOME=	atk cairo gtk30 gdkpixbuf2 pango
 USE_XORG+=	ice pixman x11 xext
 BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py
-CXXFLAGS+=	-I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
+CXXFLAGS+=	--std=c++11 -I${WRKSRC} -I${WRKSRC}/include -I${LOCALBASE}/include
+CXXFLAGS_powerpc=	-O0
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
 		-DCMAKE_BUILD_TYPE="Debug" \
 		-DKICAD_TESTING_VERSION=ON \
@@ -105,8 +111,8 @@ pre-configure:
 		${WRKSRC}/common/pgm_base.cpp
 
 post-configure:
-	${REINPLACE_CMD} -e 's|#define HAVE_ISO646_H|//#define HAVE_ISO646_H|'     \
-		${WRKSRC}/config.h
+#	${REINPLACE_CMD} -e 's|#define HAVE_ISO646_H|//#define HAVE_ISO646_H|'     \
+#		${WRKSRC}/config.h
 	for f in `${FIND} ${WRKSRC} -name \*.make -o -name link.txt` ; do				\
 		${REINPLACE_CMD}						\
 		-e 's|CC = gcc|#CC = gcc|'					\
@@ -120,6 +126,9 @@ post-configure:
 		-e 's/-pthread;-D_THREAD_SAFE/-pthread -D_THREAD_SAFE/g'	\
 		$$f ;								\
 	done
+	${REINPLACE_CMD} -e 's|/usr/local/bin/xdg-open|${LOCALBASE}/bin/xdg-open|' \
+		${WRKSRC}/common/pgm_base.cpp
+
 
 pre-install:
 	@echo "${DATADIR}, ${DOCSDIR}"

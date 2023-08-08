@@ -1,7 +1,8 @@
 PORTNAME=	salt
-PORTVERSION=	3005
+PORTVERSION=	3006.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	krion@FreeBSD.org
@@ -20,9 +21,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0.3.0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jmespath>0:devel/py-jmespath@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}looseversion>0:devel/py-looseversion@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
-USES=		cpe python:3.6-3.9
+USES=		cpe python:3.8-3.10
 
 CPE_VENDOR=	saltstack
 CPE_PRODUCT=	salt
@@ -102,17 +106,17 @@ post-patch:
 
 do-install-BASH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions/
-	${INSTALL_DATA} ${WRKSRC}/pkg/salt.bash \
+	${INSTALL_DATA} ${WRKSRC}/pkg/common/salt.bash \
 		${STAGEDIR}${PREFIX}/share/bash-completion/completions/salt
 
 do-install-FISH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions/
-	${INSTALL_DATA} ${WRKSRC}/pkg/fish-completions/*.fish \
+	${INSTALL_DATA} ${WRKSRC}/pkg/common/fish-completions/*.fish \
 		${STAGEDIR}${PREFIX}/share/fish/completions
 
 do-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/pkg/salt.zsh \
+	${INSTALL_DATA} ${WRKSRC}/pkg/common/salt.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_salt
 
 post-install:

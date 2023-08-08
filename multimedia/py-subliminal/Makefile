@@ -1,7 +1,7 @@
 PORTNAME=	subliminal
 PORTVERSION=	2.1.0
 CATEGORIES=	multimedia python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.0:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}rarfile>=2.7:archivers/py-rarfile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2012c:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

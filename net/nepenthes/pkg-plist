@@ -163,4 +163,13 @@ man/man8/nepenthes.8.gz
 %%DATADIR%%/README
 %%DATADIR%%/README.VFS
 %%DATADIR%%/logo-shaded.svg
-%%DATADIR%%/signatures/shellcode-signatures.sc
+@sample %%DATADIR%%/signatures/shellcode-signatures.sc /var/cache/nepenthes/signatures/shellcode-signatures.sc
+@dir /var/binaries
+@dir /var/cache/nepenthes/
+@dir /var/cache/nepenthes/pcap
+@dir /var/cache/nepenthes/signatures
+@dir /var/hexdumps
+@dir /var/log/pcap
+@dir /var/spool/nepenthes/
+@dir /var/spool/nepenthes/gotek
+@dir /var/spool/nepenthes/submitpostgres

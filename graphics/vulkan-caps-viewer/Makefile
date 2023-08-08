@@ -1,7 +1,10 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	3.25
-DISTVERSIONSUFFIX=	_fixed
-CATEGORIES=	graphics wayland
+DISTVERSION=	3.31
+CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	de463e2fce3f.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
+PATCHFILES+=	265922e7ddc9.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
@@ -16,7 +19,7 @@ USE_GITHUB=	yes
 USE_QT=		qmake:build buildtools:build core gui network widgets
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
-GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.3.226:vkheaders/Vulkan-Headers
+GH_TUPLE=	KhronosGroup:Vulkan-Headers:v1.3.250:vkheaders/Vulkan-Headers
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (GL, wayland)
 PLIST_FILES=	bin/vulkanCapsViewer \
 		share/applications/vulkanCapsViewer.desktop \
@@ -25,6 +28,7 @@ PLIST_FILES=	bin/vulkanCapsViewer \
 OPTIONS_DEFINE=	WAYLAND X11
 OPTIONS_DEFAULT=WAYLAND X11
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_USE=		QT=wayland:build
 WAYLAND_QMAKE_ON=	DEFINES+=WAYLAND
@@ -41,7 +45,6 @@ post-patch:
 		-e '/bin|share/s,/usr,$$$$PREFIX,' \
 		${WRKSRC}/vulkanCapsViewer.pro
 	@${REINPLACE_CMD} -e 's/__linux/__unix/' \
-		${WRKSRC}/vulkancapsviewer.cpp \
-		${WRKSRC}/Vulkan-Headers/include/vulkan/vulkan.hpp
+		${WRKSRC}/vulkancapsviewer.cpp
 
 .include <bsd.port.mk>

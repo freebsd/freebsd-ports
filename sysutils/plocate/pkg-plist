@@ -1,0 +1,9 @@
+@(,plocate,2755) bin/plocate
+sbin/updatedb
+man/man1/plocate.1.gz
+man/man8/updatedb.8.gz
+man/man5/updatedb.conf.5.gz
+etc/periodic/daily/315.plocate
+@sample etc/updatedb.conf.sample
+@dir /var/db/plocate
+/var/db/plocate/CACHEDIR.TAG

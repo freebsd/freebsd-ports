@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Note: dvipdf script requires dvips program installed by print/tex-dvipsk.
-EOM
-}
-]

@@ -133,7 +133,7 @@ And adjust the login (adjusting localhost as required):
 
 alter user 'librenms'@'localhost' identified with mysql_native_password by 'passwordhere';
 
-NOTE: Starting with the 22.2.1 port the %%%WWWDIR%%/storage directory has
+NOTE: Starting with the 22.2.1 port the %%WWWDIR%%/storage directory has
 been replaced with a symlink to /var/db/librenms/storage
 
 EOM

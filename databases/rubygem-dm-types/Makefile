@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-bcrypt-ruby>=3.0<4:security/rubygem-bcrypt-ruby \
 		rubygem-uuidtools>=2.1<3:devel/rubygem-uuidtools
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

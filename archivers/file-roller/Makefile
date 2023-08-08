@@ -1,5 +1,6 @@
 PORTNAME=	file-roller
 PORTVERSION=	3.42.0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	GNOME
@@ -21,7 +22,7 @@ RUN_DEPENDS=	gtar:archivers/gtar
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe desktop-file-utils gettext gnome libarchive localbase \
-		meson pkgconfig python:3.5+,build tar:xz
+		meson pkgconfig python:build tar:xz
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpackagekit=false

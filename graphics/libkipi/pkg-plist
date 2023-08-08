@@ -20,7 +20,7 @@ include/KF5/KIPI/kipi/libkipi_export.h
 include/KF5/KIPI/kipi/plugin.h
 include/KF5/KIPI/kipi/pluginloader.h
 include/KF5/KIPI/kipi/uploadwidget.h
-include/KF5/libkipi_version.h
+include/KF5/KIPI/libkipi_version.h
 lib/cmake/KF5Kipi/KF5KipiConfig.cmake
 lib/cmake/KF5Kipi/KF5KipiConfigVersion.cmake
 lib/cmake/KF5Kipi/KF5KipiTargets-%%CMAKE_BUILD_TYPE%%.cmake

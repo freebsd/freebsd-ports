@@ -1,7 +1,7 @@
 PORTNAME=	tinyaes
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/naufraghi/tinyaes-py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-hybrid-graphics
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none

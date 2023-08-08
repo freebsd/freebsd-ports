@@ -1,8 +1,8 @@
 PORTNAME=	packetdrill
-PORTVERSION=	0.0.2022032401
+PORTVERSION=	0.0.2023062500
 CATEGORIES=	net
 
-MAINTAINER=	kbowling@FreeBSD.org
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Network stack testing tool
 WWW=		https://github.com/freebsd-net/packetdrill
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 USES=		bison python:run uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
-GH_TAGNAME=	9152ae0
+GH_TAGNAME=	aebdc35
 WRKSRC_SUBDIR=	gtests/net/packetdrill
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	packetdrill.el packetdrill.vim
@@ -23,12 +23,14 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 # XXX Static libraries with PIE are currently unsupported.
 MAKE_ARGS+=	WITHOUT_PIE=true
 
+# 'MD5_Init' is deprecated on OpenSSL 3
+CFLAGS+=	-Wno-deprecated
+
 pre-build:
-	${INSTALL_DATA} ${FILESDIR}/Makefile ${FILESDIR}/Makefile.inc ${WRKSRC}
-.for F in libpd packetdrill
-	${MKDIR} ${WRKSRC}/${F}
-	${INSTALL_DATA} ${FILESDIR}/Makefile.${F} ${WRKSRC}/${F}/Makefile
-.endfor
+	cd ${WRKSRC} && ${LN} Makefile.FreeBSD Makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -297,6 +297,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/platformlogos/discord.svg
 %%WWWDIR%%/webroot/img/platformlogos/donate.svg
 %%WWWDIR%%/webroot/img/platformlogos/facebook.svg
+%%WWWDIR%%/webroot/img/platformlogos/fediverse.svg
 %%WWWDIR%%/webroot/img/platformlogos/follow.svg
 %%WWWDIR%%/webroot/img/platformlogos/github.svg
 %%WWWDIR%%/webroot/img/platformlogos/gitlab.svg
@@ -309,6 +310,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/platformlogos/link.svg
 %%WWWDIR%%/webroot/img/platformlogos/linkedin.svg
 %%WWWDIR%%/webroot/img/platformlogos/mastodon.svg
+%%WWWDIR%%/webroot/img/platformlogos/matrix.svg
 %%WWWDIR%%/webroot/img/platformlogos/odysee.svg
 %%WWWDIR%%/webroot/img/platformlogos/patreon.svg
 %%WWWDIR%%/webroot/img/platformlogos/paypal.svg
@@ -319,6 +321,7 @@ sbin/owncast
 %%WWWDIR%%/webroot/img/platformlogos/tiktok.svg
 %%WWWDIR%%/webroot/img/platformlogos/twitch.svg
 %%WWWDIR%%/webroot/img/platformlogos/twitter.svg
+%%WWWDIR%%/webroot/img/platformlogos/xmpp.svg
 %%WWWDIR%%/webroot/img/platformlogos/youtube.svg
 %%WWWDIR%%/webroot/img/repost.svg
 %%WWWDIR%%/webroot/img/smiley.png

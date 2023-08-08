@@ -38,7 +38,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/asm-tree-9.2.jar
 %%DATADIR%%/lib/asm-util-9.2.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-PY-222.3345.131
+%%DATADIR%%/lib/build-marker-PY-222.4167.33
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/dbus-java-3.2.1.jar
@@ -384,8 +384,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin_variables.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-aa66a1de6a60-20ae17c0ad73.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-aa66a1de6a60-20ae17c0ad73.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-01a76a212fcb-20ae17c0ad73.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-01a76a212fcb-20ae17c0ad73.txt
 %%DATADIR%%/plugins/python-pyscript/lib/python-pyscript.jar
 %%DATADIR%%/plugins/python-sharedIndexes-downloadable/lib/python-sharedIndexes-downloadable.jar
 %%DATADIR%%/plugins/python-sharedIndexes/lib/python-sharedIndexes.jar
@@ -5186,6 +5186,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/bin/xkbcomp
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/fontconfig/fonts.conf
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/fontconfig/fonts/DejaVuLGCSans.ttf
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libEGL.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGL.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGLX.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libGLdispatch.so.0
@@ -5213,6 +5214,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libavahi-client.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libavahi-common.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libbz2.so.1
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcairo.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcap.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcom_err.so.2
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libcrypto.so.10
@@ -5229,6 +5231,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreebl3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreeblpriv3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfreetype.so.6
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libfribidi.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgbm.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgcrypt.so.11
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libgio-2.0.so.0
@@ -5249,6 +5252,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssckbi.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssdbm3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libnssutil3.so
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpango-1.0.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpci.so.3
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpcre.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libpixman-1.so.0
@@ -5263,8 +5267,11 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libssl3.so
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libstdc++.so.6
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libsystemd.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libthai.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libuuid.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libwayland-server.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb-render.so.0
+%%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb-shm.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxcb.so.1
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxkbcommon.so.0
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/lib/libxkbfile.so.1

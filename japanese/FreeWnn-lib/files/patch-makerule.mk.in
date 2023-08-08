@@ -1,11 +1,5 @@
-Index: makerule.mk.in
-===================================================================
-RCS file: /home/cvs/private/hrs/freewnn/makerule.mk.in,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -u -p -r1.1.1.1 -r1.2
---- makerule.mk.in	20 Dec 2008 07:13:30 -0000	1.1.1.1
-+++ makerule.mk.in	20 Dec 2008 07:17:14 -0000	1.2
+--- makerule.mk.in.orig	2003-05-11 18:22:57 UTC
++++ makerule.mk.in
 @@ -42,8 +42,8 @@ all::
  # for libtool (AM_PROG_LIBTOOL)
  #     top_builddir = @abs_top_srcdir@
@@ -17,3 +11,15 @@ diff -u -p -r1.1.1.1 -r1.2
  
          MANSUFFIX = 1
       LIBMANSUFFIX = 3
+@@ -82,9 +82,9 @@ CCLINK = $(CC)
+ 
+ 
+      INSTPGMFLAGS = @INSTPGMFLAGS@
+-     INSTBINFLAGS = -m 0755
++     INSTBINFLAGS = -m 0755 -s
+      INSTUIDFLAGS = -m 4711
+-     INSTLIBFLAGS = -m 0644
++     INSTLIBFLAGS = -m 0644 -s
+      INSTINCFLAGS = -m 0444
+      INSTMANFLAGS = -m 0444
+      INSTDATFLAGS = -m 0444

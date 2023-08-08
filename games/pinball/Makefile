@@ -1,5 +1,5 @@
 PORTNAME=	pinball
-PORTVERSION=	0.3.20201218
+PORTVERSION=	0.3.20230219
 PORTREVISION=	1
 CATEGORIES=	games
 
@@ -18,8 +18,8 @@ GH_ACCOUNT=	adoptware
 USES=		autoreconf compiler:c++11-lang gl gmake localbase:ldflags \
 		libtool:keepla pkgconfig sdl xorg # .la needed for plugin loading
 USE_XORG=	ice sm
-USE_GL=		gl glu
-USE_SDL=	image mixer sdl
+USE_GL=		gl
+USE_SDL=	image2 mixer2 sdl2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

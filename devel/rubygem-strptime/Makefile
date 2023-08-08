@@ -10,7 +10,6 @@ WWW=		https://github.com/nurse/strptime
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

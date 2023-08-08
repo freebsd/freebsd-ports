@@ -33,8 +33,7 @@ IGNORE=		need to specify xorg modules with USE_XORG
 .  endif
 
 # List of xorg modules
-XORG_MODULES=	dmx \
-		fontenc \
+XORG_MODULES=	fontenc \
 		fontutil \
 		ice \
 		libfs \
@@ -82,7 +81,6 @@ XORG_MODULES=	dmx \
 
 # Register all xorg .pc files here.
 # foo_LIB_PC_DEPENDS means it should go to BUILD_DEPENDS *and* RUN_DEPENDS.
-dmx_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/dmx.pc:x11/libdmx
 fontenc_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/fontenc.pc:x11-fonts/libfontenc
 fontutil_BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util
 ice_LIB_PC_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/ice.pc:x11/libICE

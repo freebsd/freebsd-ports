@@ -1,15 +1,14 @@
 # Also update devel/libgit2, devel/rubygem-rugged, devel/py-pygit2
 
 PORTNAME=	libgit2-glib
-PORTVERSION=	0.99.0.1
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Glib wrapper library around the libgit2 git access library
-WWW=		https://git.gnome.org/browse/libgit2-glib
+WWW=		https://gitlab.gnome.org/GNOME/libgit2-glib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -17,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		compiler:c11 gnome localbase \
-		meson pkgconfig python:3.4+,build tar:xz vala:build
+		meson pkgconfig python:build tar:xz vala:build
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpython=false

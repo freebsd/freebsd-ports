@@ -1,5 +1,5 @@
 PORTNAME=	topkg
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/topkg/releases/

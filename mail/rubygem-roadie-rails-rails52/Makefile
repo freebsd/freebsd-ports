@@ -11,11 +11,10 @@ WWW=		https://github.com/Mange/roadie-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-railties52>=3.0:www/rubygem-railties52 \
-		rubygem-roadie3>=3.1:mail/rubygem-roadie3
+RUN_DEPENDS=	rubygem-railties52>=5.1<6.2:www/rubygem-railties52 \
+		rubygem-roadie3>=3.1<5.0:mail/rubygem-roadie3
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

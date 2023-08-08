@@ -1,5 +1,3 @@
-TIMESTAMP = 1661887822
-SHA256 (libshumate-1.0.0.beta.tar.xz) = aae940b0294a81796a13ce2870018076da3628986829bcfe3b2681ea0e60b98f
-SIZE (libshumate-1.0.0.beta.tar.xz) = 108420
-SHA256 (d4e23adc49e1.patch) = f28d49a919acb37bb2030dea2c3b8e38dafa03e36f923d73b9824443c086369d
-SIZE (d4e23adc49e1.patch) = 3164
+TIMESTAMP = 1689756439
+SHA256 (libshumate-1.0.5.tar.xz) = a8cfd8df9177ee44b04733b017af13c9e93f98765cdc89b750a48edaf701956c
+SIZE (libshumate-1.0.5.tar.xz) = 112008

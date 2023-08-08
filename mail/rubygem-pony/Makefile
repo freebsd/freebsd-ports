@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-mail>=2.0:mail/rubygem-mail
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

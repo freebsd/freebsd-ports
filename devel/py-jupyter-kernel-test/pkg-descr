@@ -1,0 +1,3 @@
+jupyter_kernel_test is a tool for testing Jupyter kernels. It tests kernels
+for successful code execution and conformance with the Jupyter Messaging
+Protocol (currently 5.0).

@@ -1,0 +1,22 @@
+--- lektor/markdown.py.orig	2022-09-21 19:15:42 UTC
++++ lektor/markdown.py
+@@ -1,7 +1,7 @@
+ import threading
+ from weakref import ref as weakref
+ 
+-import mistune
++import mistune0 as mistune
+ from markupsafe import Markup
+ from werkzeug.urls import url_parse
+ 
+--- setup.cfg.orig	2022-09-21 19:16:28 UTC
++++ setup.cfg
+@@ -42,7 +42,7 @@ install_requires = 
+ 	Flask
+ 	inifile>=0.4.1
+ 	Jinja2>=3.0
+-	mistune>=0.7.0,<2
++	mistune0>=0.7.0,<2
+ 	pip
+ 	python-slugify
+ 	requests[security]

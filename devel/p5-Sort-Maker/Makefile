@@ -12,4 +12,6 @@ WWW=		https://metacpan.org/release/Sort-Maker
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

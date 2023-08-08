@@ -1,0 +1,13 @@
+--- Makefile.orig	2022-10-30 02:03:01 UTC
++++ Makefile
+@@ -36,8 +36,8 @@ clean:
+ 
+ install:
+ 	mkdir -p $(INSTDIR)
+-	cp $(SCRIPTS) $(AUX) $(INSTDIR)
+-	cp $(AUX_EXE) $(INSTDIR)
++	#cp $(SCRIPTS) $(AUX) $(INSTDIR)
++	#cp $(AUX_EXE) $(INSTDIR)
+ 	cd Common;       make install
+ 	cd DFT;          make install
+ 	cd PREP;         make install

@@ -4,6 +4,7 @@ include/thrift/TBase.h
 include/thrift/TConfiguration.h
 include/thrift/TDispatchProcessor.h
 include/thrift/TLogging.h
+include/thrift/TNonCopyable.h
 include/thrift/TOutput.h
 include/thrift/TProcessor.h
 include/thrift/TToString.h

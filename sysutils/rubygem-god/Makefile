@@ -10,7 +10,6 @@ WWW=		http://godrb.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USE_RUBY=	yes
 USES=		gem
 
 CONFLICTS_INSTALL=	coreutils # bin/god

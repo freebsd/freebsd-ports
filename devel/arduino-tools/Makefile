@@ -1,6 +1,6 @@
 PORTNAME=	arduino-tools
 PORTVERSION=	1.8.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	# Mostly metaport - installs files, no build
 DISTFILES=	#

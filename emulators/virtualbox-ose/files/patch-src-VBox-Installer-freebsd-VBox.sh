@@ -16,15 +16,15 @@
 +# hope that it will be useful, but WITHOUT ANY WARRANTY of any kind.
 +#
 +
-+PATH="/usr/bin:/bin:/usr/sbin:/sbin"
-+CONFIG="/usr/local/etc/vbox/vbox.cfg"
++PATH="/sbin:/bin:/usr/sbin:/usr/bin:%%LOCALBASE%%/sbin:%%LOCALBASE%%/bin"
++CONFIG="%%VBOX_ETC%%/vbox.cfg"
 +
 +test -r "${CONFIG}" &&
 +    . "${CONFIG}"
 +test -z "${INSTALL_DIR}" &&
-+    if test -d /usr/local/lib/virtualbox &&
-+        test -f /usr/local/lib/virtualbox/VBoxRT.so; then
-+        INSTALL_DIR=/usr/local/lib/virtualbox
++    if test -d %%VBOX_DIR%% &&
++        test -f %%VBOX_DIR%%/VBoxRT.so; then
++        INSTALL_DIR=%%VBOX_DIR%%
 +    else
 +        >&2 echo "Could not find VirtualBox installation. Please reinstall."
 +        exit 1
@@ -33,7 +33,7 @@
 +if [ -d /etc/vbox ]; then
 +    >&2 cat <<-EOH
 +	WARNING: Directory /etc/vbox found, but ignored. VirtualBox
-+	         configuration files are stored in /usr/local/etc/vbox/.
++	         configuration files are stored in %%VBOX_ETC%%/.
 +	EOH
 +fi
 +

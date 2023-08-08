@@ -1,5 +1,5 @@
 PORTNAME=	capistrano
-PORTVERSION=	3.17.1
+PORTVERSION=	3.17.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-airbrussh>=1.0.0:security/rubygem-airbrussh \
 		rubygem-sshkit>=1.9.0:security/rubygem-sshkit
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-av>=0.9.0:multimedia/rubygem-av \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

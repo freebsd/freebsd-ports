@@ -1,9 +1,12 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
-PORTREVISION=	8
+PORTREVISION=	11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 MASTER_SITES=	GH
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8a3c0d795fbe.patch:-p1 # rate-lav: Convert to libswresample
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alsa-project

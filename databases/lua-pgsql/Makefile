@@ -9,7 +9,7 @@ WWW=		https://github.com/arcapos/luapgsql
 
 LICENSE=	BSD3CLAUSE
 
-USES=		lua pgsql:9.5+
+USES=		lua pgsql:11+
 WANT_PGSQL=	client
 
 USE_GITHUB=	yes

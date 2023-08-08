@@ -1,7 +1,7 @@
 PORTNAME=	pysocks
 PORTVERSION=	1.7.1
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PySocks-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/Anorov/PySocks
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

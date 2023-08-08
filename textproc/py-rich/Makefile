@@ -1,23 +1,37 @@
 PORTNAME=	rich
-PORTVERSION=	12.5.1
+PORTVERSION=	13.5.2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Rich text and beautiful formatting in the terminal
-WWW=		https://github.com/willmcgugan/rich
+WWW=		https://github.com/Textualize/rich
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.0:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.0:textproc/py-CommonMark@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.6.0:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.2.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.13.0<3.0.0:textproc/py-pygments@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist pep517 pytest
+USE_GITHUB=	yes
 
-.include <bsd.port.mk>
+GH_ACCOUNT=	Textualize
+
+# poetry-core will process .gitignore when git is present, and fail to
+# create a wheel because the 'work' directory is listed there.
+
+BINARY_ALIAS=	git=false
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0<5.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>

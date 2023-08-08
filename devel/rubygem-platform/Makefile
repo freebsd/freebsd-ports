@@ -9,7 +9,6 @@ COMMENT=	Hopefully robust platform sensing
 WWW=		https://github.com/berk/platform
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

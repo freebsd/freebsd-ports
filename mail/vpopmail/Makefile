@@ -252,7 +252,7 @@ VPOPMAIL_DIR?=			${PREFIX}/vpopmail
 # End of user-configurable variables
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
+USES+=	ldap
 LDAP_FILES=		${WRKSRC}/doc/README.ldap \
 			${WRKSRC}/ldap/nsswitch.conf \
 			${WRKSRC}/ldap/pam_ldap.conf \

@@ -1,5 +1,5 @@
 PORTNAME=	mime-types-data
-PORTVERSION=	3.2022.0105
+PORTVERSION=	3.2023.0218.1
 CATEGORIES=	misc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Licence.md
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

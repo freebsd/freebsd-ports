@@ -1,6 +1,6 @@
 PORTNAME=	List-Objects-WithUtils
 PORTVERSION=	2.028003
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:devel/p5-Class-Method-Modifiers \
 		p5-List-UtilsBy-XS>=0.03:devel/p5-List-UtilsBy-XS \
 		p5-Module-Runtime>=0.013:devel/p5-Module-Runtime \
 		p5-Role-Tiny>=1.003:devel/p5-Role-Tiny \
-		p5-Type-Tie>=0.004:devel/p5-Type-Tie \
+		p5-Type-Tiny>=2.000000:devel/p5-Type-Tiny \
 		p5-autobox>=0:devel/p5-autobox \
 		p5-strictures>=2:devel/p5-strictures
 

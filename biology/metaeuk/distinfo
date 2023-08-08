@@ -1,0 +1,7 @@
+TIMESTAMP = 1669423980
+SHA256 (soedinglab-metaeuk-6-a5d39d9_GH0.tar.gz) = be19c26f5bdb7dcdd7bc48172105afecf19e5a2e5555edb3ba0c4aa0e4aac126
+SIZE (soedinglab-metaeuk-6-a5d39d9_GH0.tar.gz) = 13145257
+SHA256 (soedinglab-metaeuk-regression-6404519_GH0.tar.gz) = 5ac6c7438dc23374de5304564020e13ee7a6af99e60495083d74a5a272719b4d
+SIZE (soedinglab-metaeuk-regression-6404519_GH0.tar.gz) = 6719192
+SHA256 (soedinglab-MMseqs2-Regression-f69b185_GH0.tar.gz) = 3774e16182cf8ce33d83c8c5170a57ebcec1ba137318d4762a89fd25c2890e78
+SIZE (soedinglab-MMseqs2-Regression-f69b185_GH0.tar.gz) = 27714150

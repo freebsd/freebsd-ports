@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-prawn>=0.11.1:print/rubygem-prawn \
 		rubygem-prawn_shapes>=1.2:print/rubygem-prawn_shapes
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

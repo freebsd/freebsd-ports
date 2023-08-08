@@ -1,5 +1,5 @@
 PORTNAME=	tcpreplay
-DISTVERSION=	4.4.2
+DISTVERSION=	4.4.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/appneta/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -18,12 +18,15 @@ CPE_VENDOR=	broadcom
 
 GNU_CONFIGURE=	yes
 # libopts options are required when using autogen
-CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
-		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config \
-		--disable-libopts-install \
-		--disable-local-libopts
+CONFIGURE_ARGS=	--disable-libopts-install \
+		--disable-local-libopts \
+		--program-transform-name='s|.*\(tcp.*\)|\1|' \
+		--with-pcapnav-config=${LOCALBASE}/bin/pcapnav-config
 
 TEST_TARGET=	test
+
+# https://github.com/appneta/tcpreplay/issues/809
+PORTSCOUT=	skipv:4.4.4
 
 OPTIONS_DEFAULT=	LIBPCAP_BASE
 OPTIONS_SINGLE=		LIBPCAP

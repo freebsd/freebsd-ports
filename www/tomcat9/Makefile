@@ -1,11 +1,11 @@
 PORTNAME=	tomcat
-PORTVERSION=	9.0.65
+PORTVERSION=	9.0.78
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v${PORTVERSION}/bin
 PKGNAMESUFFIX=	9
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 9.0.x branch
 WWW=		https://tomcat.apache.org/
 
@@ -16,7 +16,7 @@ RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
 
 NO_ARCH=	yes

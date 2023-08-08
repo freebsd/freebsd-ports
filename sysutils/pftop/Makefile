@@ -1,5 +1,6 @@
 PORTNAME=	pftop
 PORTVERSION=	0.8
+PORTREVISION=	4
 CATEGORIES=	sysutils net
 
 MAINTAINER=	grembo@FreeBSD.org
@@ -21,7 +22,13 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bpf_dump.c \
 		${FILESDIR}/extra-patch-sf-gencode.h
 
 MAKE_ARGS=	LOCALBASE="${PREFIX}" \
-		OSLEVEL=45
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400090
+MAKE_ARGS+=	OSLEVEL=46
+.else
+MAKE_ARGS+=	OSLEVEL=45
+.endif
+
 CFLAGS+=	-DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1 \
 		-DHAVE_FINE_GRAINED_LOCKING=1
 

@@ -36,5 +36,5 @@ lib/cmake/SPLA/modules/FindSCALAPACK.cmake
 lib/cmake/SPLA/modules/FindSCI.cmake
 lib/libspla.so
 lib/libspla.so.1
-lib/libspla.so.1.5.4
+lib/libspla.so.1.5.5
 libdata/pkgconfig/SPLA.pc

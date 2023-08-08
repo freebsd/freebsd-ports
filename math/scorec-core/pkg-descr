@@ -1,0 +1,20 @@
+The SCOREC Core is a set of C/C++ libraries for unstructured mesh simulations
+on supercomputers.
+
+This project contains:
+* PUMI: parallel unstructured mesh infrastructure API User's Guide
+* PCU: Communication and file IO built on MPI
+* APF: Abstract definition of meshes, fields, and related operations
+* GMI: Common interface for geometric modeling kernels
+* MDS: Compact but flexible array-based mesh data structure
+* PARMA: Scalable partitioning and load balancing procedures
+* SPR: Superconvergent Patch Recovery error estimator
+* MA: Anisotropic mixed mesh adaptation and solution transfer
+* SAM: Sizing anisotropic meshes
+* STK: Conversion from APF meshes to Sandia's STK meshes
+* ZOLTAN: Interface to run Sandia's Zoltan code on APF meshes
+* PHASTA: Tools and file formats related to the PHASTA fluid solver
+* MTH: Math containers and routines
+* CRV: Support for curved meshes with Bezier Shapes
+* PYCORE: Python Wrappers
+* REE: Residual based implicit error estimator

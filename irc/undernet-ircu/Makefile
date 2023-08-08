@@ -1,5 +1,6 @@
 PORTNAME=	undernet-ircu
 PORTVERSION=	2.10.12.19
+PORTREVISION=	1
 CATEGORIES=	irc net
 MASTER_SITES=	https://github.com/UndernetIRC/ircu2/releases/download/u${PORTVERSION}/ \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/
@@ -60,7 +61,9 @@ PEDANTIC_CONFIGURE_ENABLE=	pedantic
 POLL_CONFIGURE_ENABLE=		poll
 WARNINGS_CONFIGURE_ENABLE=	warnings
 
-.if !defined(NO_PROFILE)
+.include <bsd.port.options.mk>
+
+.if !defined(NO_PROFILE) && ( ${OPSYS} == FreeBSD && ${OSVERSION} < 1400079 )
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 

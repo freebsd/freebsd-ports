@@ -11,10 +11,11 @@ EOM
 { type: upgrade
   message: <<EOM
 Elixir requires a compatible Erlang/OTP runtime. Ensure that you have
-one of the following installed:
+one of the following installed, as you prefer:
 
 - lang/erlang
-- lang/erlang-runtime24 or newer
+- lang/erlang-runtime25 or newer
+
 EOM
 }
 ]

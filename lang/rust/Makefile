@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.65.0
+PORTVERSION?=	1.71.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -8,9 +8,9 @@ MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
-		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
-		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
-		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap
+		${_RUSTC_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
+		${_RUST_STD_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
+		${_CARGO_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap
 DIST_SUBDIR?=	rust
 
 MAINTAINER=	rust@FreeBSD.org
@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cpe ninja:build pkgconfig python:3.7+,build shebangfix ssl tar:xz
+USES=		cpe ninja:build pkgconfig python:build ssl tar:xz
 
 CPE_VENDOR=	rust-lang
 
@@ -47,17 +47,16 @@ CONFLICTS_INSTALL?=	rust-nightly
 # ?= to allow users to still overwrite it in make.conf.
 TMPDIR?=	${WRKDIR}
 
-OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
+OPTIONS_DEFINE=		DOCS GDB LTO SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
-.if !defined(NIGHTLY_DATE)
-OPTIONS_EXCLUDE=	DOCS # https://github.com/rust-lang/rust/issues/76526
-.endif
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
 WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 
-DOCS_VARS=		_RUST_BUILD_DOCS=true
+DOCS_VARS=		_RUST_BUILD_DOCS=true \
+			_COMPONENTS+="rust-docs-${_PACKAGE_VERS}-${_RUST_TARGET} rust-docs-json-${_PACKAGE_VERS}-${_RUST_TARGET}" \
+			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
@@ -68,11 +67,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2022-12-01
-RUST_BOOTSTRAP_VERSION?=	1.65.0
-
-BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
-BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
+BOOTSTRAPS_DATE?=		2023-06-01
+RUST_BOOTSTRAP_VERSION?=	1.70.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -83,7 +79,7 @@ _RUST_ARCH_i386=	i686
 _RUST_ARCH_riscv64=	riscv64gc
 _RUST_TARGET=		${_RUST_ARCH_${ARCH}:U${ARCH}}-unknown-${OPSYS:tl}
 _RUST_TARGETS=		${_RUST_TARGET}
-_RUST_TOOLS=		analysis cargo clippy rustfmt
+_RUST_TOOLS=		analysis cargo clippy rust-analyzer rustdoc rustfmt
 .if !defined(_RUST_DEFAULT_LINKER)
 # By default for rustc in run time, use a linker installed with LLVM.
 #
@@ -91,7 +87,7 @@ _RUST_TOOLS=		analysis cargo clippy rustfmt
 # the case for Poudriere-based builds.
 .  if ${ARCH} == aarch64
 _RUST_DEFAULT_LINKER=	clang-morello
-RUN_DEPENDS+=		${LOCALBASE}/bin/clang-morello:devel/llvm-morello
+RUN_DEPENDS+=		${LOCALBASE64}/bin/clang-morello:devel/llvm-morello
 .  endif
 .endif
 
@@ -107,11 +103,6 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
 
-# https://github.com/bjorn3/rustc_codegen_cranelift/commit/83d470d91c15d0cb5890705291e6ee9e5be8a842
-# https://github.com/rust-lang/rustc_codegen_gcc/pull/160
-SHEBANG_FILES=		compiler/rustc_codegen_cranelift/scripts/* \
-			compiler/rustc_codegen_gcc/*.sh compiler/rustc_codegen_gcc/build_sysroot/*.sh
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
@@ -119,10 +110,8 @@ IGNORE=		is only for FreeBSD
 .endif
 
 .if ${ARCH} == powerpc
-# bfd to link rustc_driver; lld currently can't
-BUILD_DEPENDS+=	ld.bfd:devel/binutils
-LIB_DEPENDS+=	libatomic.so:lang/gcc12
-MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc12"
+LIB_DEPENDS+=	libatomic.so:lang/gcc${GCC_DEFAULT}
+MAKE_ENV+=	RUSTFLAGS="-L/usr/local/lib/gcc${GCC_DEFAULT}"
 .else
 .  if ${ARCH} != aarch64
 # XXX: RUST_BACKTRACE=1 results in a segmentation fault when constructing
@@ -144,8 +133,8 @@ _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
-.if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
-EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
+.if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
+_COMPONENTS+=	rust-docs-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-docs-json-${_PACKAGE_VERS}-wasm32-unknown-unknown
 .endif
 
 # If the kernel does not return sane kern.proc.pathname values
@@ -158,19 +147,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
 # anyway...
 .if exists(${PATCHDIR}/no-hardlinks)
 _KERN_OSRELDATE!=	${SYSCTL} -n kern.osreldate 2>/dev/null || echo 0
-.  if ${_KERN_OSRELDATE} >= 1400040
-.  elif ${_KERN_OSRELDATE} >= 1300521
-.  else
+.  if ${_KERN_OSRELDATE} < 1300521
 EXTRA_PATCHES+=		${PATCHDIR}/no-hardlinks
 .  endif
-.endif
-
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-# The bootstrap is hardcoded to use gcc9
-# but we can build with a newer or older compiler as provided by USE_GCC=yes
-BUILD_DEPENDS+=	gcc9:lang/gcc9
-USE_GCC=	yes
-STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
 .endif
 
 .ifdef QEMU_EMULATING
@@ -179,8 +158,7 @@ IGNORE=	fails to build with qemu-user-static
 
 .if make(makesum)
 DISTFILES:=	${DISTFILES:M*\:src} \
-		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv1 -V'DISTFILES:N*\:src'!}@} \
-		${ONLY_FOR_ARCHS:Mpowerpc64:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv2 -V'DISTFILES:N*\:src'!}@}
+		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} -V'DISTFILES:N*\:src'!}@}
 .endif
 
 post-patch:
@@ -191,16 +169,6 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs \
-		${WRKSRC}/src/bootstrap/native.rs
-.if ${LOCALBASE} != /usr/local
-	@${REINPLACE_CMD} 's,/usr/local/,${LOCALBASE}/,g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs \
-		${WRKSRC}/src/bootstrap/native.rs
-.endif
-.endif
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
@@ -237,7 +205,13 @@ do-configure:
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'lld=${_RUST_BUILD_WASM}' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MLTO}
+	@${ECHO_CMD} 'lto="thin"' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MLTO}
+	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
+.endif
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
 .else

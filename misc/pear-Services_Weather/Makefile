@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}HTTP_Request>=1.2.0:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		pear
-USE_PHP=	ctype pcre
+USE_PHP=	ctype
 
 NO_ARCH=	yes
 

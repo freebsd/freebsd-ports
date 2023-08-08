@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	gdb>7.7:devel/gdb
 
-USES=		python:run,3.6+
+USES=		python:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hugsy

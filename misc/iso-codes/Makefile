@@ -8,7 +8,7 @@ WWW=		https://salsa.debian.org/iso-codes-team/iso-codes
 
 LICENSE=	LGPL21
 
-USES=		gettext-tools gmake pathfix python:3.4+,build tar:xz
+USES=		gettext-tools gmake pathfix python:build tar:xz
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
@@ -16,7 +16,7 @@ NO_ARCH=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://salsa.debian.org
 GL_ACCOUNT=	iso-codes-team
-GL_COMMIT=	59767ed869f3952575f7d0f639a290a4c4b315e5
+GL_TAGNAME=	59767ed869f3952575f7d0f639a290a4c4b315e5
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 

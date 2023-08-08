@@ -1,0 +1,23 @@
+--- DOC/INSTALL.binaries.orig	1993-04-22 21:58:49 UTC
++++ DOC/INSTALL.binaries
+@@ -2,9 +2,9 @@ Installing Tcpview
+ Installing Tcpview
+ 
+ 1. Create a directory for the tcpview support files.  I use 
+-/usr/local/tcpview.  Create /usr/local/tcpview/filters for the filters.
++/usr/local/lib/tcpview.  Create /usr/local/lib/tcpview/filters for the filters.
+ Copy BGP, generic, and telnet from bin to the filters directory. Copy
+-manuf and hosts to /usr/local/tcpview.  Edit the last two files as 
++manuf and hosts to /usr/local/lib/tcpview.  Edit the last two files as 
+ needed.
+ 
+ 2. Edit a copy of the tcpview resource file, which is DOC/Tcpview.  Change
+@@ -21,7 +21,7 @@ using the first one found: the environmental variable 
+ a copy of MOSY, download the UW-CMU SNMP package on ftp.cac.washington.edu.
+ Tcpdump and tcpview will search for the mib file in the following locations,
+ using the first one found: the environmental variable "MIBFILE", ./mib.txt,
+-and /usr/local/mib/mib.txt.
++and /usr/local/lib/tcpview/mib/mib.txt.
+ 
+ 5. If you are running on an Ultrix system, you will have to run pfconfig
+ before you can capture any data.  On a Sun system, you should make

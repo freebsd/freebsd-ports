@@ -1,10 +1,8 @@
 PORTNAME=	mimedefang
-PORTVERSION=	2.84
-PORTREVISION=	1
+PORTVERSION=	2.86
 
 CATEGORIES=	mail
-MASTER_SITES=	http://www.mimedefang.org/static/ \
-		http://fossies.org/linux/misc/
+MASTER_SITES=	https://mimedefang.org/releases/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Milter based anti-spam and anti-virus filtering program

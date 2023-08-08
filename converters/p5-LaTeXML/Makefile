@@ -1,5 +1,5 @@
 PORTNAME=	LaTeXML
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN \
 		http://dlmf.nist.gov/LaTeXML/releases/
@@ -28,7 +28,7 @@ RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-XML-LibXSLT>=1.58:textproc/p5-XML-LibXSLT \
 		p5-libwww>=0:www/p5-libwww
 
-USES=		perl5
+USES=		perl5 tex
 USE_PERL5=	configure
 USE_TEX=	kpathsea
 NO_ARCH=	yes

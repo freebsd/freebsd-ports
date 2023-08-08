@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libargon2.so:security/libargon2 \
 		libcppunit.so:devel/cppunit
 
-USES=		compiler:c++14-lang gmake localbase ncurses ssl pkgconfig
+USES=		compiler:c++14-lang gmake ncurses ssl pkgconfig
+USES+=		localbase
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 

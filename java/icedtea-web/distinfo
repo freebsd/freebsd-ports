@@ -1,5 +1,5 @@
-TIMESTAMP = 1529752635
-SHA256 (AdoptOpenJDK-IcedTea-Web-icedtea-web-1.8.4_GH0.tar.gz) = a0c12cd2d7793f05428a02e49159c7f3f70694f48e23787ffdb6588b0db7c862
-SIZE (AdoptOpenJDK-IcedTea-Web-icedtea-web-1.8.4_GH0.tar.gz) = 2358591
+TIMESTAMP = 1639151286
+SHA256 (AdoptOpenJDK-IcedTea-Web-icedtea-web-1.8.8_GH0.tar.gz) = f4203a605a3c9c50acdcc6eef4a366b9fdd36d95edcd76bcbfede01107cb5fe6
+SIZE (AdoptOpenJDK-IcedTea-Web-icedtea-web-1.8.8_GH0.tar.gz) = 2365638
 SHA256 (libxul-npapi-headers-45.9.0.tar.gz) = 625d86955aef95c7a0a4c192bb51a1e7833d30c2d53e390d07f97abd835744f8
 SIZE (libxul-npapi-headers-45.9.0.tar.gz) = 15637

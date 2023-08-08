@@ -30,3 +30,12 @@
  	    flags = NUM2INT(g);
  	}
  	argc--;
+@@ -948,7 +950,7 @@ void bdb_init_recnum()
+     rb_define_method(bdb_cRecnum, "collect", bdb_sary_collect, -1);
+     rb_define_method(bdb_cRecnum, "collect!", bdb_sary_collect_bang, -1);
+ #if HAVE_RB_ARY_VALUES_AT
+-    rb_define_method(bdb_cRecnum, "map", bdb_sary_collect, 0);
++    rb_define_method(bdb_cRecnum, "map", bdb_sary_collect, -1);
+     rb_define_method(bdb_cRecnum, "select", bdb_sary_select, -1);
+     rb_define_method(bdb_cRecnum, "values_at", bdb_sary_values_at, -1);
+ #endif

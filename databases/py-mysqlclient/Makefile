@@ -1,7 +1,7 @@
 PORTNAME=	mysqlclient
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -11,8 +11,11 @@ WWW=		https://pypi.org/project/mysqlclient
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 iconv mysql python:3.7+ ssl
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.37:devel/py-wheel@${PY_FLAVOR}
+
+USES=		compiler:c11 iconv mysql pkgconfig python ssl
+USE_PYTHON=	autoplist concurrent pep517
 
 PORTDOCS=	*
 

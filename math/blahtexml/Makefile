@@ -1,5 +1,6 @@
 PORTNAME=	blahtexml
-DISTVERSION=	0.9 # not tagged, version is stated in the README
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +16,6 @@ USES=		gmake localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gvanas
-GH_TAGNAME=	92f2c5f
 
 MAKEFILE=	makefile
 MAKE_ARGS=	CFLAGS="${CFLAGS}"

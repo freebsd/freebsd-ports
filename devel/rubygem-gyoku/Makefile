@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

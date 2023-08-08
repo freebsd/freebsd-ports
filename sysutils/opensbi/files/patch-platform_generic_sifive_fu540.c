@@ -8,7 +8,7 @@
 +
 +static int sifive_fu540_early_init(bool cold_boot, const struct fdt_match *match)
 +{
-+	need_pmp_war = TRUE;
++	need_pmp_war = true;
 +
 +	return 0;
 +}

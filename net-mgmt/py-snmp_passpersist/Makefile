@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	net-snmp>=0:net-mgmt/net-snmp
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nagius

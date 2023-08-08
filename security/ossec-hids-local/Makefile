@@ -1,3 +1,4 @@
+PORTREVISION?=	1
 PKGNAMESUFFIX?=	-${OSSEC_TYPE}
 COMMENT?=	Security tool to monitor and check logs and intrusions - local (standalone) installation
 WWW=		https://ossec.github.io
@@ -138,6 +139,10 @@ SAMPLE_FILES=		${OSSEC_HOME}/etc/local_internal_options.conf \
 			${OSSEC_HOME}/active-response/bin/ossec-pagerduty.sh \
 			${OSSEC_HOME}/active-response/bin/ossec-slack.sh \
 			${OSSEC_HOME}/active-response/bin/ossec-tweeter.sh
+
+.if ${OSSEC_TYPE} != agent
+SAMPLE_FILES+=		${OSSEC_HOME}/rules/local_rules.xml
+.endif
 
 .if empty(USER)
 USER=$$(${ID} -un)

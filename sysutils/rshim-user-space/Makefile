@@ -1,9 +1,9 @@
 PORTNAME=	rshim-user-space
 DISTVERSIONPREFIX=	rshim-
-DISTVERSION=		2.0.6-12
+DISTVERSION=		2.0.9
 PORTEPOCH=		1
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userspace daemon for the Mellanox BlueField SoC
 WWW=		https://github.com/Mellanox/rshim-user-space/
 

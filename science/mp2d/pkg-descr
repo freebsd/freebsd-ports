@@ -1,0 +1,11 @@
+MP2D is an open-source code (MIT license, see below) for calculating
+van der Waals dispersion for second-order Moller-Plesset pertubation
+theory. The calculation of the MP2D dispersion correction is analogous
+to MP2C:
+    E_MP2D = E_MP2 - E_UCHF + E_CKS
+
+The UCHF and CKS dispersion energies are calculated according to Grimme's D3
+method. The CKS coefficients identical to those used in D3. The UCHF
+coefficients were calculated specifically for this work. Dispersion
+coefficients are currently available for the following elements:
+    H, B, C, N, O, F, Ne, P, S, Cl, Ar, Br

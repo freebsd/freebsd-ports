@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/selection_controller.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/views/selection_controller.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/views/selection_controller.cc
-@@ -20,7 +20,7 @@ SelectionController::SelectionController(SelectionCont
+@@ -23,7 +23,7 @@ SelectionController::SelectionController(SelectionCont
        delegate_(delegate),
        handles_selection_clipboard_(false) {
  // On Linux, update the selection clipboard on a text selection.

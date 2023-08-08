@@ -1,14 +1,15 @@
---- etc/Makefile.in.orig	2017-04-09 17:50:03 UTC
+--- etc/Makefile.in.orig	2022-12-11 08:36:14 UTC
 +++ etc/Makefile.in
-@@ -681,9 +681,8 @@ check-am: mailfromd.lint
+@@ -716,10 +716,8 @@ check-am: mailfromd.lint
  
  install-data-local:
  	@test -z "$(DESTDIR)$(sysconfdir)" || $(mkdir_p) "$(DESTDIR)$(sysconfdir)"
--	@if [ -r $(DESTDIR)$(sysconfdir)/mailfromd.mf ]; then :; \
--	else ${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mf \
--               $(DESTDIR)$(sysconfdir)/mailfromd.mf; fi
-+	${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mf \
-+               $(DESTDIR)$(sysconfdir)/mailfromd.mf.sample
+-	@if [ -r $(DESTDIR)$(sysconfdir)/mailfromd.mfl ] || \
+-            [ -r $(DESTDIR)$(sysconfdir)/mailfromd.mf ]; then :; \
+-	else ${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mfl \
+-               $(DESTDIR)$(sysconfdir)/mailfromd.mfl; fi
++	${INSTALL} -m 644 $(top_srcdir)/etc/mailfromd.mfl \
++               $(DESTDIR)$(sysconfdir)/mailfromd.mfl.sample
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,8 +1,10 @@
 %%JAVAJARDIR%%/log4j-1.2-api.jar
 %%JAVAJARDIR%%/log4j-api.jar
+%%JAVAJARDIR%%/log4j-api-test.jar
 %%JAVAJARDIR%%/log4j-appserver.jar
 %%JAVAJARDIR%%/log4j-cassandra.jar
 %%JAVAJARDIR%%/log4j-core.jar
+%%JAVAJARDIR%%/log4j-core-test.jar
 %%JAVAJARDIR%%/log4j-couchdb.jar
 %%JAVAJARDIR%%/log4j-docker.jar
 %%JAVAJARDIR%%/log4j-flume-ng.jar
@@ -17,7 +19,6 @@
 %%JAVAJARDIR%%/log4j-jul.jar
 %%JAVAJARDIR%%/log4j-kubernetes.jar
 %%JAVAJARDIR%%/log4j-layout-template-json.jar
-%%JAVAJARDIR%%/log4j-liquibase.jar
 %%JAVAJARDIR%%/log4j-mongodb3.jar
 %%JAVAJARDIR%%/log4j-mongodb4.jar
 %%JAVAJARDIR%%/log4j-osgi.jar

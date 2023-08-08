@@ -1,7 +1,7 @@
 PORTNAME=	hpack
 PORTVERSION=	4.0.0
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	shaun@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://hyper.rtfd.org/
 
 LICENSE=	MIT
 
-USES?=		cpe python:3.6+
+USES?=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

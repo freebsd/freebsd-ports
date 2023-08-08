@@ -2,5 +2,3 @@ oslo.service provides a framework for defining new long-running services using
 the patterns established by other OpenStack applications. It also includes
 utilities long-running applications might need for working with SSL or WSGI,
 performing periodic operations, interacting with systemd, etc.
-
-See also: https://github.com/openstack/oslo.service

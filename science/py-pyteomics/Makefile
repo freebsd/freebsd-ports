@@ -1,7 +1,7 @@
 PORTNAME=	pyteomics
-PORTVERSION=	4.5.5
+PORTVERSION=	4.6
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pyteomics.readthedocs.io/
 
 LICENSE=	APACHE20
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

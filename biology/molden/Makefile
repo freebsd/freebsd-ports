@@ -1,5 +1,6 @@
 PORTNAME=	molden
 DISTVERSION=	7.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://ftp.science.ru.nl/Molden/

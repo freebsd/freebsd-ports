@@ -12,5 +12,3 @@ Features:
   headers
 - Execute arbitrary python scripts to verify response from endpoint is valid
 - Tests your APIs using your own APIs
-
-See also: https://github.com/jimmyislive/tapi

@@ -1,7 +1,7 @@
 PORTNAME=	fraction
 PORTVERSION=	2.2.0
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/bradley101/fraction/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Fraction-${PORTVERSION}
@@ -13,7 +13,7 @@ WWW=		https://github.com/bradley101/fraction
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

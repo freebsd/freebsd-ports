@@ -1,7 +1,7 @@
 PORTNAME=	get-reader
 PORTVERSION=	1.0.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	get_reader-${PORTVERSION}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/shawnbrown/get_reader
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

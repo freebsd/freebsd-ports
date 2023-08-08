@@ -1,5 +1,5 @@
 PORTNAME=	holidays
-PORTVERSION=	8.5.0
+PORTVERSION=	8.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

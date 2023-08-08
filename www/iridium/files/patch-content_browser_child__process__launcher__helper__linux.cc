@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-03-13 07:33:08 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
-@@ -19,7 +19,9 @@
+@@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
@@ -10,15 +10,46 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  
  namespace content {
-@@ -68,6 +70,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -45,14 +47,20 @@ ChildProcessLauncherHelper::GetFilesToMap() {
+ }
+ 
+ bool ChildProcessLauncherHelper::IsUsingLaunchOptions() {
++#if !BUILDFLAG(IS_BSD)
+   return !GetZygoteForLaunch();
++#else
++  return true;
++#endif
+ }
+ 
+ bool ChildProcessLauncherHelper::BeforeLaunchOnLauncherThread(
+     PosixFileDescriptorInfo& files_to_register,
+     base::LaunchOptions* options) {
+   if (options) {
++#if !BUILDFLAG(IS_BSD)
+     DCHECK(!GetZygoteForLaunch());
++#endif
+     // Convert FD mapping to FileHandleMappingVector
+     options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
+         base::GlobalDescriptors::kBaseDescriptor);
+@@ -64,7 +72,9 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+ 
+     options->environment = delegate_->GetEnvironment();
+   } else {
++#if !BUILDFLAG(IS_BSD)
+     DCHECK(GetZygoteForLaunch());
++#endif
+     // Environment variables could be supported in the future, but are not
+     // currently supported when launching with the zygote.
+     DCHECK(delegate_->GetEnvironment().empty());
+@@ -81,6 +91,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
- 
+   Process process;
 +#if !BUILDFLAG(IS_BSD)
-   ZygoteHandle zygote_handle =
-       base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
-           ? nullptr
-@@ -81,7 +84,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+   ZygoteCommunication* zygote_handle = GetZygoteForLaunch();
+   if (zygote_handle) {
+     // TODO(crbug.com/569191): If chrome supported multiple zygotes they could
+@@ -91,7 +102,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
@@ -26,22 +57,26 @@
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
-@@ -90,13 +92,13 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -100,15 +110,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          oom_score = content::kLowestRendererOomScore;
        ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(handle, oom_score);
      }
 -#endif
  
-     Process process;
      process.process = base::Process(handle);
      process.zygote = zygote_handle;
-     return process;
+   } else {
++#endif
+     process.process = base::LaunchProcess(*command_line(), *options);
+     *launch_result = process.process.IsValid() ? LAUNCH_RESULT_SUCCESS
+                                                : LAUNCH_RESULT_FAILURE;
++#if !BUILDFLAG(IS_BSD)
    }
 +#endif
  
-   Process process;
-   process.process = base::LaunchProcess(*command_line(), options);
-@@ -114,10 +116,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+ #if BUILDFLAG(IS_CHROMEOS)
+   if (GetProcessType() == switches::kRendererProcess) {
+@@ -130,10 +142,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -56,7 +91,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -141,13 +147,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -157,13 +173,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -73,4 +108,18 @@
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+ void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(
+@@ -174,11 +194,13 @@ void ChildProcessLauncherHelper::SetProcessBackgrounde
+     process.SetProcessBackgrounded(is_background);
+ }
+ 
++#if !BUILDFLAG(IS_BSD)
+ ZygoteCommunication* ChildProcessLauncherHelper::GetZygoteForLaunch() {
+   return base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
+              ? nullptr
+              : delegate_->GetZygote();
+ }
++#endif
+ 
+ base::File OpenFileToShare(const base::FilePath& path,
+                            base::MemoryMappedFile::Region* region) {

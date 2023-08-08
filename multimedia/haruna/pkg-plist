@@ -27,7 +27,10 @@ share/locale/fr/LC_MESSAGES/haruna.mo
 share/locale/hi/LC_MESSAGES/haruna.mo
 share/locale/id/LC_MESSAGES/haruna.mo
 share/locale/it/LC_MESSAGES/haruna.mo
+share/locale/ja/LC_MESSAGES/haruna.mo
+share/locale/ka/LC_MESSAGES/haruna.mo
 share/locale/ko/LC_MESSAGES/haruna.mo
+share/locale/lt/LC_MESSAGES/haruna.mo
 share/locale/nl/LC_MESSAGES/haruna.mo
 share/locale/pl/LC_MESSAGES/haruna.mo
 share/locale/pt/LC_MESSAGES/haruna.mo
@@ -40,4 +43,5 @@ share/locale/ta/LC_MESSAGES/haruna.mo
 share/locale/tr/LC_MESSAGES/haruna.mo
 share/locale/uk/LC_MESSAGES/haruna.mo
 share/locale/zh_CN/LC_MESSAGES/haruna.mo
+share/locale/zh_TW/LC_MESSAGES/haruna.mo
 share/metainfo/org.kde.haruna.metainfo.xml

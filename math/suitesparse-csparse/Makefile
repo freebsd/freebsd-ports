@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.4
 CATEGORIES=	math
 
 COMMENT=	Concise Sparse Matrix package

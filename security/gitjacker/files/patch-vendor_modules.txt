@@ -1,0 +1,41 @@
+--- vendor/modules.txt.orig	2023-03-20 17:03:44 UTC
++++ vendor/modules.txt
+@@ -1,9 +1,11 @@
+ # github.com/inconshreveable/mousetrap v1.0.0
++## explicit
+ github.com/inconshreveable/mousetrap
+ # github.com/konsorten/go-windows-terminal-sequences v1.0.1
++## explicit
+ github.com/konsorten/go-windows-terminal-sequences
+ # github.com/liamg/tml v0.3.0
+-## explicit
++## explicit; go 1.12
+ github.com/liamg/tml
+ # github.com/magiconair/properties v1.8.0
+ ## explicit
+@@ -12,20 +14,20 @@ github.com/magiconair/properties/assert
+ ## explicit
+ github.com/sirupsen/logrus
+ # github.com/spf13/cobra v1.0.0
+-## explicit
++## explicit; go 1.12
+ github.com/spf13/cobra
+ # github.com/spf13/pflag v1.0.3
++## explicit
+ github.com/spf13/pflag
+ # github.com/stretchr/testify v1.4.0
+ ## explicit
+ # golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4
+ ## explicit
+ golang.org/x/crypto/ssh/terminal
+-# golang.org/x/sys v0.0.0-20190726091711-fc99dfbffb4e
+-## explicit
++# golang.org/x/sys v0.6.0
++## explicit; go 1.17
++golang.org/x/sys/internal/unsafeheader
+ golang.org/x/sys/unix
+ golang.org/x/sys/windows
+-# gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+-## explicit
+ # gopkg.in/yaml.v2 v2.2.4
+ ## explicit

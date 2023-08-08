@@ -1,6 +1,6 @@
 PORTNAME=	heimdal
-PORTVERSION=	7.7.0
-PORTREVISION=	1
+PORTVERSION=	7.8.0
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/heimdal/heimdal/releases/download/${DISTNAME}/
 
@@ -25,7 +25,8 @@ CONFIGURE_ENV=	ac_cv_header_fnmatch_h=yes \
 		ac_cv_header_db4_db_h=no \
 		ac_cv_header_db5_db_h=no \
 		ac_cv_header_db6_db_h=no \
-		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et
+		ac_cv_prog_COMPILE_ET=${WRKSRC}/lib/com_err/compile_et \
+		PYTHON="${TRUE}"
 CONFIGURE_ARGS=	--with-berkeley-db \
 		--with-libintl \
 		--with-libintl-include="${LOCALBASE}/include" \
@@ -79,7 +80,7 @@ SQLITE_CONFIGURE_ON=	--with-sqlite3-include="${LOCALBASE}/include" \
 SQLITE_CONFIGURE_WITH=	sqlite3
 
 LDAP_DESC=		Enable OpenLDAP KDC backend support
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-openldap-include="${LOCALBASE}/include" \
 			--with-openldap-lib="${LOCALBASE}/lib"
 LDAP_CONFIGURE_WITH=	openldap

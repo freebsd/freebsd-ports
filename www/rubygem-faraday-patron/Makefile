@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-patron>=0.4.2:www/rubygem-patron
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PATCH_SITES=	https://github.com/ranger/ranger/commit/
 PATCHFILES=	081e73152a9391211770fab56676d7d974413ae6.patch:-p1
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager with VI key bindings
 WWW=		https://ranger.github.io/
 
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		desktop-file-utils python:3.6+ shebangfix
+USES=		desktop-file-utils python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	doc/tools/*.py

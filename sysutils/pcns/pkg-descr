@@ -1,0 +1,7 @@
+PowerChute Network Shutdown (PowerChute) works in conjunction with the UPS
+Network Management Card (NMC) to provide network-based shutdown of multiple
+computer systems.
+
+In the case of a UPS critical event, the software performs a graceful,
+unattended system shutdown before the UPS battery is exhausted. The number of
+protected systems is limited only by the capacity of the UPS.

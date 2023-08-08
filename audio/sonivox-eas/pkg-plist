@@ -5,8 +5,9 @@ include/synthcontroller.h
 include/synthrenderer.h
 lib/libsvoxeas.so
 lib/libsvoxeas.so.1
-lib/libsvoxeas.so.1.4.1
+lib/libsvoxeas.so.1.5.0
 share/applications/sonivoxeas.desktop
 share/icons/hicolor/128x128/apps/sonivoxeas.png
 share/icons/hicolor/256x256/apps/sonivoxeas.png
 share/icons/hicolor/512x512/apps/sonivoxeas.png
+share/icons/hicolor/scalable/apps/sonivoxeas.svg

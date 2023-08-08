@@ -1,12 +1,10 @@
 PORTNAME=	qtractor
-DISTVERSIONPREFIX=	qtractor_
-DISTVERSION=	0_9_28
+DISTVERSIONPREFIX=	${PORTNAME}_
+DISTVERSION=	0_9_34
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/ \
-		https://download.steinberg.net/sdk_downloads/:vst3sdk
-DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
-		${VST3_SDK_ARCHIVE}:vst3sdk
-EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
+DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
+EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio/MIDI multi-track sequencer
@@ -38,13 +36,15 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbis.so:audio/libvorbis \
 		libvorbisenc.so:audio/libvorbis \
 		libvorbisfile.so:audio/libvorbis
+RUN_DEPENDS=	alsa-seq-server>0:audio/alsa-seq-server
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
 USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
 #USE_QT=		base svg tools:build # for Qt6
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	rncbc
 
 CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
 CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported

@@ -1,12 +1,12 @@
 PORTNAME=	gallery2
 PORTVERSION=	2.3.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 MASTER_SITES=	SF/gallery/gallery2/${PORTVERSION}
 DISTNAME=	gallery-${PORTVERSION}-full
 DIST_SUBDIR=	gallery2
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based photo album organizer written in PHP
 WWW=		http://gallery.sourceforge.net/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:web
-USE_PHP=	pcre session
+USE_PHP=	session
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -11,12 +11,12 @@ WWW=		https://karlsruhemis.github.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
-
 USES=		cmake
 USE_LDCONFIG=	yes
+
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	KarlsruheMIS

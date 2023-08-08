@@ -1,3 +1,3 @@
-TIMESTAMP = 1649311614
-SHA256 (pari-2.13.4.tar.gz) = bcde9eceae1592814381c1697cdb7063567b6504201b1be47bb58920f3bce185
-SIZE (pari-2.13.4.tar.gz) = 4772735
+TIMESTAMP = 1689135782
+SHA256 (pari-2.15.4.tar.gz) = c3545bfee0c6dfb40b77fb4bbabaf999d82e60069b9f6d28bcb6cf004c8c5c0f
+SIZE (pari-2.15.4.tar.gz) = 5183685

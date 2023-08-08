@@ -1,5 +1,5 @@
-@(,,0755) sbin/debootstrap
 man/man8/debootstrap.8.gz
+sbin/debootstrap
 %%DATADIR%%/functions
 %%DATADIR%%/scripts/aequorea
 %%DATADIR%%/scripts/amber
@@ -12,9 +12,11 @@ man/man8/debootstrap.8.gz
 %%DATADIR%%/scripts/breezy
 %%DATADIR%%/scripts/bullseye
 %%DATADIR%%/scripts/buster
+%%DATADIR%%/scripts/byzantium
 %%DATADIR%%/scripts/ceres
 %%DATADIR%%/scripts/chromodoris
 %%DATADIR%%/scripts/cosmic
+%%DATADIR%%/scripts/crimson
 %%DATADIR%%/scripts/dapper
 %%DATADIR%%/scripts/dasyatis
 %%DATADIR%%/scripts/debian-common

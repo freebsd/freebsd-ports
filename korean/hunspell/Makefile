@@ -21,7 +21,7 @@ GH_PROJECT=	${PORTNAME}-dict-ko
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
-USES=		python:3.3+,build,test shebangfix
+USES=		python:build,test shebangfix
 SHEBANG_FILES=	tests/runtest.py
 
 PLIST_FILES=	${DATADIR}/ko_KR.aff \

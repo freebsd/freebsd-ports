@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=FVWM3
+Comment=The fvwm3 window manager
+Type=Application
+Exec=%%PREFIX%%/bin/fvwm3

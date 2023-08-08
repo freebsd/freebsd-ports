@@ -1,0 +1,14 @@
+Avoid installing LICENSE and README.md in the top-level directory of Python's
+site-lib directory.
+
+--- pyproject.toml.orig	2023-08-02 07:38:19 UTC
++++ pyproject.toml
+@@ -19,8 +19,6 @@ include = [
+     "Programming Language :: Python :: 3.11",
+ ]
+ include = [
+-    "LICENSE",
+-    "README.md",
+     "netutils/protocols.json"
+ ]
+ 

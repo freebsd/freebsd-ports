@@ -30,7 +30,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/sync.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/ebpf.d/vfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/exporting.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/anomalies.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
@@ -42,15 +41,16 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ceph.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cgroups.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cockroachdb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/consul.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dbengine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dns_query.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dnsmasq_dhcp.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dockerd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/docker.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/exporting.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/fping.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/gearman.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/geth.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/go.d.plugin.conf.sample
@@ -74,8 +74,12 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/net.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/netfilter.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nut.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nvme.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pihole.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/python.d.plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/qos.conf.sample
@@ -101,7 +105,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/whoisquery.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/wmi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/windows.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
@@ -117,7 +121,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/boinc.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ceph.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/changefinder.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dockerd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/dovecot.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/exim.conf.sample
@@ -130,22 +133,16 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/icecast.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ipfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/litespeed.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/logind.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/megacli.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/memcached.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/mongodb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/monit.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nginx_plus.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nsd.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ntpd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nvidia_smi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/openldap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/oracledb.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/pandas.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/postfix.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/postgres.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/proxysql.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/puppet.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rabbitmq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rethinkdbs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/retroshare.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/riakkv.conf.sample
@@ -153,7 +150,6 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/sensors.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/smartd_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/spigotmc.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/springboot.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/squid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/tomcat.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/tor.conf.sample
@@ -166,6 +162,21 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/k6.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/vnodes/vnodes.conf.sample
+lib/netdata/system/cron/netdata-updater-daily
+lib/netdata/system/freebsd/rc.d/netdata
+lib/netdata/system/initd/init.d/netdata
+lib/netdata/system/launchd/netdata.plist
+lib/netdata/system/logrotate/netdata
+lib/netdata/system/lsb/init.d/netdata
+lib/netdata/system/openrc/conf.d/netdata
+lib/netdata/system/openrc/init.d/netdata
+lib/netdata/system/runit/run
+lib/netdata/system/systemd/50-netdata.preset
+lib/netdata/system/systemd/netdata-updater.service
+lib/netdata/system/systemd/netdata-updater.timer
+lib/netdata/system/systemd/netdata.service
+lib/netdata/system/systemd/netdata.service.v235
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apcupsd.chart.sh
 libexec/netdata/charts.d/example.chart.sh
@@ -173,18 +184,19 @@ libexec/netdata/charts.d/libreswan.chart.sh
 libexec/netdata/charts.d/nut.chart.sh
 libexec/netdata/charts.d/opensips.chart.sh
 libexec/netdata/charts.d/sensors.chart.sh
+libexec/netdata/install-service.sh
 libexec/netdata/plugins.d/acl.sh
 libexec/netdata/plugins.d/alarm-email.sh
 libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
 libexec/netdata/plugins.d/alarm.sh
 libexec/netdata/plugins.d/anonymous-statistics.sh
-libexec/netdata/plugins.d/apps.plugin
+@(,netdata,4750) libexec/netdata/plugins.d/apps.plugin
 libexec/netdata/plugins.d/cgroup-name.sh
 libexec/netdata/plugins.d/cgroup-network-helper.sh
 libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
 libexec/netdata/plugins.d/charts.d.plugin
-libexec/netdata/plugins.d/fping.plugin
+%%CUPS%%libexec/netdata/plugins.d/cups.plugin
 %%FREEIPMI%%libexec/netdata/plugins.d/freeipmi.plugin
 libexec/netdata/plugins.d/get-kubernetes-labels.sh
 libexec/netdata/plugins.d/health-cmdapi-test.sh
@@ -204,7 +216,6 @@ libexec/netdata/python.d/bind_rndc.chart.py
 libexec/netdata/python.d/boinc.chart.py
 libexec/netdata/python.d/ceph.chart.py
 libexec/netdata/python.d/changefinder.chart.py
-libexec/netdata/python.d/dockerd.chart.py
 libexec/netdata/python.d/dovecot.chart.py
 libexec/netdata/python.d/example.chart.py
 libexec/netdata/python.d/exim.chart.py
@@ -217,20 +228,15 @@ libexec/netdata/python.d/hpssa.chart.py
 libexec/netdata/python.d/icecast.chart.py
 libexec/netdata/python.d/ipfs.chart.py
 libexec/netdata/python.d/litespeed.chart.py
-libexec/netdata/python.d/logind.chart.py
 libexec/netdata/python.d/megacli.chart.py
 libexec/netdata/python.d/memcached.chart.py
-libexec/netdata/python.d/mongodb.chart.py
 libexec/netdata/python.d/monit.chart.py
-libexec/netdata/python.d/nginx_plus.chart.py
 libexec/netdata/python.d/nsd.chart.py
-libexec/netdata/python.d/ntpd.chart.py
 libexec/netdata/python.d/nvidia_smi.chart.py
 libexec/netdata/python.d/openldap.chart.py
 libexec/netdata/python.d/oracledb.chart.py
+libexec/netdata/python.d/pandas.chart.py
 libexec/netdata/python.d/postfix.chart.py
-libexec/netdata/python.d/postgres.chart.py
-libexec/netdata/python.d/proxysql.chart.py
 libexec/netdata/python.d/puppet.chart.py
 libexec/netdata/python.d/python_modules/__init__.py
 libexec/netdata/python.d/python_modules/bases/FrameworkServices/ExecutableService.py
@@ -252,7 +258,6 @@ libexec/netdata/python.d/python_modules/third_party/lm_sensors.py
 libexec/netdata/python.d/python_modules/third_party/mcrcon.py
 libexec/netdata/python.d/python_modules/third_party/monotonic.py
 libexec/netdata/python.d/python_modules/third_party/ordereddict.py
-libexec/netdata/python.d/rabbitmq.chart.py
 libexec/netdata/python.d/rethinkdbs.chart.py
 libexec/netdata/python.d/retroshare.chart.py
 libexec/netdata/python.d/riakkv.chart.py
@@ -260,7 +265,6 @@ libexec/netdata/python.d/samba.chart.py
 libexec/netdata/python.d/sensors.chart.py
 libexec/netdata/python.d/smartd_log.chart.py
 libexec/netdata/python.d/spigotmc.chart.py
-libexec/netdata/python.d/springboot.chart.py
 libexec/netdata/python.d/squid.chart.py
 libexec/netdata/python.d/tomcat.chart.py
 libexec/netdata/python.d/tor.chart.py
@@ -382,69 +386,43 @@ sbin/netdatacli
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
 %%DATADIR%%/web/old/index.html
-%%NO_CLOUD%%%%DATADIR%%/web/precache-manifest.989526397432a7b7438463678f892bb2.js
-%%CLOUD%%%%DATADIR%%/web/precache-manifest.e95d658eed560f9e0189217cc6919238.js
+%%DATADIR%%/web/precache-manifest.21dcd7c609bff6504512face054c360f.js
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/service-worker.js
 %%DATADIR%%/web/sitemap.xml
-%%DATADIR%%/web/static/css/2.20fd0a40.chunk.css
-%%DATADIR%%/web/static/css/2.20fd0a40.chunk.css.map
+%%DATADIR%%/web/static/css/2.c454aab8.chunk.css
+%%DATADIR%%/web/static/css/2.c454aab8.chunk.css.map
 %%DATADIR%%/web/static/css/4.a36e3b73.chunk.css
 %%DATADIR%%/web/static/css/4.a36e3b73.chunk.css.map
 %%DATADIR%%/web/static/css/main.53ba10f1.chunk.css
 %%DATADIR%%/web/static/css/main.53ba10f1.chunk.css.map
 %%DATADIR%%/web/static/img/netdata-logomark.svg
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.891b1f66.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/10.891b1f66.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.88cc90ee.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.88cc90ee.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/2.88cc90ee.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.5ba29950.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/3.5ba29950.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.eb022d3f.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/4.eb022d3f.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/5.3d1bc2ff.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.6cb16d11.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/6.6cb16d11.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.c9d300fc.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/7.c9d300fc.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.fa6b99b9.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/8.fa6b99b9.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.da02b76a.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/9.da02b76a.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.5f5cb327.chunk.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.5f5cb327.chunk.js.LICENSE
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/main.5f5cb327.chunk.js.map
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.a2f5edbb.js
-%%NO_CLOUD%%%%DATADIR%%/web/static/js/runtime-main.a2f5edbb.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/10.44d9d40b.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/10.44d9d40b.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/2.3123f37d.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/2.3123f37d.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/2.3123f37d.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/3.d49f0857.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/3.d49f0857.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/4.8b70c754.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/4.8b70c754.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/5.29dab1cd.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/6.7b15cdf3.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/6.7b15cdf3.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/7.cf6bc66f.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/7.cf6bc66f.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/8.b1a4b595.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/8.b1a4b595.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/9.50358509.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/9.50358509.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/main.cc0e57d1.chunk.js
-%%CLOUD%%%%DATADIR%%/web/static/js/main.cc0e57d1.chunk.js.LICENSE
-%%CLOUD%%%%DATADIR%%/web/static/js/main.cc0e57d1.chunk.js.map
-%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.b352aa47.js
-%%CLOUD%%%%DATADIR%%/web/static/js/runtime-main.b352aa47.js.map
+%%DATADIR%%/web/static/js/10.a5cd7d0e.chunk.js
+%%DATADIR%%/web/static/js/10.a5cd7d0e.chunk.js.map
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js.LICENSE
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js.map
+%%DATADIR%%/web/static/js/3.f137faca.chunk.js
+%%DATADIR%%/web/static/js/3.f137faca.chunk.js.map
+%%DATADIR%%/web/static/js/4.2dbcd906.chunk.js
+%%DATADIR%%/web/static/js/4.2dbcd906.chunk.js.map
+%%DATADIR%%/web/static/js/5.2f783a54.chunk.js
+%%DATADIR%%/web/static/js/5.2f783a54.chunk.js.LICENSE
+%%DATADIR%%/web/static/js/5.2f783a54.chunk.js.map
+%%DATADIR%%/web/static/js/6.e1951239.chunk.js
+%%DATADIR%%/web/static/js/6.e1951239.chunk.js.map
+%%DATADIR%%/web/static/js/7.c2417fb0.chunk.js
+%%DATADIR%%/web/static/js/7.c2417fb0.chunk.js.map
+%%DATADIR%%/web/static/js/8.b4161ea2.chunk.js
+%%DATADIR%%/web/static/js/8.b4161ea2.chunk.js.map
+%%DATADIR%%/web/static/js/9.a4363968.chunk.js
+%%DATADIR%%/web/static/js/9.a4363968.chunk.js.map
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js.LICENSE
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js.map
+%%DATADIR%%/web/static/js/runtime-main.08abed8f.js
+%%DATADIR%%/web/static/js/runtime-main.08abed8f.js.map
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.245539db.woff2
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.9a582f3a.woff
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100italic.1ea7c5d2.woff

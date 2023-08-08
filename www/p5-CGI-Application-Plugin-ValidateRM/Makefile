@@ -1,9 +1,9 @@
 PORTNAME=	CGI-Application-Plugin-ValidateRM
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.5.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Help validate forms with the CGI::Application framework
@@ -16,5 +16,7 @@ RUN_DEPENDS=	p5-HTML-FillInForm>=0:www/p5-HTML-FillInForm \
 
 USES=		perl5
 USE_PERL5=	modbuild
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

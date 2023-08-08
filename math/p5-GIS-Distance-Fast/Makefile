@@ -1,5 +1,5 @@
 PORTNAME=	GIS-Distance-Fast
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BLUEFEET
@@ -21,5 +21,8 @@ TEST_DEPENDS=	p5-GIS-Distance>=0.17:math/p5-GIS-Distance \
 
 USES=		perl5
 USE_PERL5=	modbuildtiny
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/GIS/Distance/Fast/Fast.so
 
 .include <bsd.port.mk>

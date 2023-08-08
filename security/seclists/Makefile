@@ -1,5 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2022.3
+DISTVERSION=	2023.2
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -19,11 +19,14 @@ GH_PROJECT=	SecLists
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-FILES_TO_BE_REMOVED=	CONTRIBUTING.md \
+FILES_TO_BE_REMOVED=	.gitattributes \
+			.gitignore \
+			CONTRIBUTING.md \
 			CONTRIBUTORS.md \
 			Discovery/Web-Content/Domino-Hunter/LICENCE \
 			LICENSE \
 			README.md \
+			SecLists.png \
 			Web-Shells/laudanum-0.8/GPL
 
 DIRS_TO_BE_REMOVED=	.bin .github

@@ -21,6 +21,7 @@ bin/writefreely
 %%PORTDOCS%%%%DOCSDIR%%/writer/static.md
 %%PORTDOCS%%%%DOCSDIR%%/writer/writing.md
 @dir(writefreely,writefreely,) %%WWWDIR%%
+@sample(writefreely,writefreely,) %%WWWDIR%%/config.ini.sample
 %%WWWDIR%%/pages/404-general.tmpl
 %%WWWDIR%%/pages/404.tmpl
 %%WWWDIR%%/pages/410.tmpl

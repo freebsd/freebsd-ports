@@ -1,0 +1,75 @@
+From 805332c599308b927a1fdc676f95c96878b28d58 Mon Sep 17 00:00:00 2001
+From: Tobias Fella <fella@posteo.de>
+Date: Wed, 17 May 2023 23:49:56 +0200
+Subject: [PATCH] Don't use implicit lambda captures
+
+---
+ src/controller.cpp           | 6 +++---
+ src/models/roomlistmodel.cpp | 2 +-
+ src/notificationsmanager.cpp | 4 ++--
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/controller.cpp b/src/controller.cpp
+index 1fc017a4e..3d1c3ffd4 100644
+--- src/controller.cpp
++++ src/controller.cpp
+@@ -113,10 +113,10 @@ Controller::Controller(QObject *parent)
+ 
+ #ifdef QUOTIENT_07
+     static int oldAccountCount = 0;
+-    connect(&AccountRegistry::instance(), &AccountRegistry::accountCountChanged, this, [=]() {
++    connect(&AccountRegistry::instance(), &AccountRegistry::accountCountChanged, this, [this]() {
+         if (AccountRegistry::instance().size() > oldAccountCount) {
+             auto connection = AccountRegistry::instance().accounts()[AccountRegistry::instance().size() - 1];
+-            connect(connection, &Connection::syncDone, this, [=]() {
++            connect(connection, &Connection::syncDone, this, [this]() {
+                 handleNotifications(connection);
+             });
+         }
+@@ -552,7 +552,7 @@ void Controller::setActiveConnection(Connection *connection)
+             m_isOnline = true;
+             Q_EMIT isOnlineChanged(true);
+         });
+-        connect(connection, &Connection::requestFailed, this, [=](BaseJob *job) {
++        connect(connection, &Connection::requestFailed, this, [](BaseJob *job) {
+             if (dynamic_cast<DownloadFileJob *>(job) && job->jsonData()["errcode"].toString() == "M_TOO_LARGE"_ls) {
+                 RoomManager::instance().warning(i18n("File too large to download."), i18n("Contact your matrix server administrator for support."));
+             }
+diff --git a/src/models/roomlistmodel.cpp b/src/models/roomlistmodel.cpp
+index 3129b90de..c4c9a3d9c 100644
+--- src/models/roomlistmodel.cpp
++++ src/models/roomlistmodel.cpp
+@@ -281,7 +281,7 @@ void RoomListModel::updateRoom(Room *room, Room *prev)
+     }
+     // Ok, we're through with pre-checks, now for the real thing.
+     auto newRoom = static_cast<NeoChatRoom *>(room);
+-    const auto it = std::find_if(m_rooms.begin(), m_rooms.end(), [=](const NeoChatRoom *r) {
++    const auto it = std::find_if(m_rooms.begin(), m_rooms.end(), [prev, newRoom](const NeoChatRoom *r) {
+         return r == prev || r == newRoom;
+     });
+     if (it != m_rooms.end()) {
+diff --git a/src/notificationsmanager.cpp b/src/notificationsmanager.cpp
+index a79296529..baf6d50a5 100644
+--- src/notificationsmanager.cpp
++++ src/notificationsmanager.cpp
+@@ -78,7 +78,7 @@ void NotificationsManager::postNotification(NeoChatRoom *room,
+     notification->setPixmap(QPixmap::fromImage(icon));
+ 
+     notification->setDefaultAction(i18n("Open NeoChat in this room"));
+-    connect(notification, &KNotification::defaultActivated, this, [=]() {
++    connect(notification, &KNotification::defaultActivated, this, [notification, room]() {
+         WindowController::instance().showAndRaiseWindow(notification->xdgActivationToken());
+         if (!room) {
+             return;
+@@ -118,7 +118,7 @@ void NotificationsManager::postInviteNotification(NeoChatRoom *room, const QStri
+     notification->setPixmap(img);
+     notification->setFlags(KNotification::Persistent);
+     notification->setDefaultAction(i18n("Open this invitation in NeoChat"));
+-    connect(notification, &KNotification::defaultActivated, this, [=]() {
++    connect(notification, &KNotification::defaultActivated, this, [notification, room]() {
+         WindowController::instance().showAndRaiseWindow(notification->xdgActivationToken());
+         notification->close();
+         RoomManager::instance().enterRoom(room);
+-- 
+GitLab
+

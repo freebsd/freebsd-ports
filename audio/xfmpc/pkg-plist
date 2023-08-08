@@ -14,7 +14,9 @@ share/applications/xfmpc.desktop
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfmpc.mo
+%%NLS%%share/locale/et/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/xfmpc.mo
+%%NLS%%share/locale/fa_IR/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xfmpc.mo
@@ -22,6 +24,7 @@ share/applications/xfmpc.desktop
 %%NLS%%share/locale/hr/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/hy_AM/LC_MESSAGES/xfmpc.mo
+%%NLS%%share/locale/hye/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/ie/LC_MESSAGES/xfmpc.mo
 %%NLS%%share/locale/is/LC_MESSAGES/xfmpc.mo

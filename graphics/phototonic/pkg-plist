@@ -2,4 +2,5 @@ bin/phototonic
 share/applications/phototonic.desktop
 share/icons/hicolor/16x16/apps/phototonic.png
 share/icons/hicolor/48x48/apps/phototonic.png
+share/metainfo/phototonic.appdata.xml
 share/pixmaps/phototonic.png

@@ -38,6 +38,7 @@ share/metainfo/rpcs3.metainfo.xml
 %%DATADIR%%/Icons/ui/right_stick.png
 %%DATADIR%%/Icons/ui/save.png
 %%DATADIR%%/Icons/ui/select.png
+%%DATADIR%%/Icons/ui/spinner-24.png
 %%DATADIR%%/Icons/ui/square.png
 %%DATADIR%%/Icons/ui/start.png
 %%DATADIR%%/Icons/ui/triangle.png

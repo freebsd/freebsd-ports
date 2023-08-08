@@ -1,22 +1,26 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.7.3
+PORTVERSION=	3.9.2
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and API for translation and localization engineering
-WWW=		https://toolkit.translatehouse.org/
+WWW=		https://toolkit.translatehouse.org/ \
+		https://github.com/translate/translate
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}lxml>=4.6.3:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		gettext python:3.7+ shebangfix
+USES=		gettext python shebangfix
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes
@@ -47,8 +51,8 @@ TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
-ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=2.1.1:textproc/py-charset-normalizer@${PY_FLAVOR}
-FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.18.1:textproc/py-fluent.syntax@${PY_FLAVOR}
+ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.0.1:textproc/py-charset-normalizer@${PY_FLAVOR}
+FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.19.0:textproc/py-fluent.syntax@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
@@ -60,10 +64,10 @@ PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.7:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.2.2:textproc/py-enchant@${PY_FLAVOR}
-SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.10.1:textproc/py-aeidon@${PY_FLAVOR}
-TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=8.6.0:www/py-cheroot@${PY_FLAVOR}
+SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.12:textproc/py-aeidon@${PY_FLAVOR}
+TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=10.0.0:www/py-cheroot@${PY_FLAVOR}
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3:www/py-beautifulsoup@${PY_FLAVOR}
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.21:devel/py-ruamel.yaml@${PY_FLAVOR}
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.31:devel/py-ruamel.yaml@${PY_FLAVOR}
 YAML_VARS=		MANPAGES+="po2yaml yaml2po"
 
 .include <bsd.port.options.mk>

@@ -1,12 +1,13 @@
 PORTNAME=	openzfs
-PORTVERSION=	2022082900
+PORTVERSION=	2023012600
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
-WWW=		https://github.com/zfsonfreebsd/ZoF
+WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
@@ -15,7 +16,7 @@ BROKEN_i386=	build fails
 USES=		cpe kmod
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	2d5622f5b
+GH_TAGNAME=	dc5c8006f
 KMODTARGET?=	openzfs.ko
 
 PLIST_FILES=	${KMODDIR}/${KMODTARGET}

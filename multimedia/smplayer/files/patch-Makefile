@@ -1,6 +1,11 @@
---- Makefile.orig	2018-01-12 15:20:18 UTC
+--- Makefile.orig	2021-08-01 06:29:39 UTC
 +++ Makefile
-@@ -5,7 +5,6 @@ PREFIX=/usr/local
+@@ -1,11 +1,10 @@
+ 
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ #PREFIX=/tmp/smplayer
+ 
  CONF_PREFIX=$(PREFIX)
  
  DATA_PATH=$(PREFIX)/share/smplayer
@@ -8,7 +13,14 @@
  TRANSLATION_PATH=$(PREFIX)/share/smplayer/translations
  THEMES_PATH=$(PREFIX)/share/smplayer/themes
  SHORTCUTS_PATH=$(PREFIX)/share/smplayer/shortcuts
-@@ -19,7 +18,7 @@ LRELEASE=lrelease
+@@ -14,26 +13,26 @@ ICONS_DIR=$(PREFIX)/share/icons/hicolor/
+ APPLNK_DIR=$(PREFIX)/share/applications/
+ METAINFO_DIR=$(PREFIX)/share/metainfo/
+ 
+-QMAKE=qmake
+-LRELEASE=lrelease
++QMAKE?=qmake
++LRELEASE?=lrelease
  
  DEFS=DATA_PATH=\\\"$(DATA_PATH)\\\" \
       TRANSLATION_PATH=\\\"$(TRANSLATION_PATH)\\\" \
@@ -17,6 +29,23 @@
       SHORTCUTS_PATH=\\\"$(SHORTCUTS_PATH)\\\"
  
  all: src/smplayer webserver/simple_web_server
+ 
+ src/smplayer:
+ 	./get_svn_revision.sh
+-	+cd src && $(QMAKE) $(QMAKE_OPTS) && $(DEFS) make
++	$(MAKE) -C src $(DEFS)
+ 	cd src && $(LRELEASE) smplayer.pro
+ 
+ webserver/simple_web_server:
+-	cd webserver && make
++	$(MAKE) -C webserver
+ 
+ clean:
+-	if [ -f src/Makefile ]; then cd src && make distclean; fi
++	if [ -f src/Makefile ]; then $(MAKE) -C src distclean; fi
+ 	-rm src/translations/smplayer_*.qm
+ 	-rm webserver/simple_web_server
+ 
 @@ -44,13 +43,8 @@ install: all
  	install -m 644 src/input.conf $(DESTDIR)$(DATA_PATH)
  	-install -d $(DESTDIR)$(TRANSLATION_PATH)

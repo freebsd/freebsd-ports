@@ -1,13 +1,14 @@
 PORTNAME=	protobuf
-PORTVERSION=	3.20.1
+PORTVERSION=	3.21.12
 DISTVERSIONPREFIX=	cpp-
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${PORTVERSION:R:E}.${PORTVERSION:E}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data interchange format library
-WWW=		https://github.com/protocolbuffers/protobuf
+WWW=		https://github.com/protocolbuffers/protobuf \
+		https://protobuf.dev/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -32,6 +33,7 @@ TEST_TARGET=	check
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
+PLIST_SUB=	PATCH_VERSION=${PORTVERSION:E}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CPE_VENDOR=	google

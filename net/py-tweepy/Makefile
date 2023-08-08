@@ -1,5 +1,5 @@
 PORTNAME=	tweepy
-PORTVERSION=	4.10.0
+PORTVERSION=	4.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.3:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.27.0:www/py-requests@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcrpy>=1.10.3:devel/py-vcrpy@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	josh_roesslein
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils

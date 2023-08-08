@@ -1,5 +1,5 @@
 PORTNAME=	libquotient
-DISTVERSION=	0.6.11
+DISTVERSION=	0.8.0
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -9,16 +9,30 @@ WWW=		https://github.com/quotient-im/libQuotient
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	libqmatrixclient\*
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
+		libolm.so:security/olm
 
-USES=	cmake compiler:c++14-lang qt:5 tar:xz
-USE_QT=	core gui multimedia network \
-	buildtools:build qmake:build testlib:build
+USES=		cmake compiler:c++20-lang qt:5 tar:xz
+USE_QT=		concurrent core gui multimedia network \
+		buildtools:build qmake:build testlib:build
+
+CONFLICTS=	libqmatrixclient\*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im
 GH_PROJECT=	libQuotient
 
-CMAKE_ARGS=	-DQuotient_INSTALL_TESTS=OFF
+CMAKE_OFF=	Quotient_INSTALL_TESTS
+CMAKE_ON=	Quotient_ENABLE_E2EE
+
+.include <bsd.port.options.mk>
+
+# Work around compiler bug, see pr: 272285
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+USES+=		llvm
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
+.endif
 
 .include <bsd.port.mk>

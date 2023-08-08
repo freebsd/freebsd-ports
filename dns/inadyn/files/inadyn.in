@@ -40,6 +40,11 @@ inadyn_checkconfig()
 {
 	echo "Performing sanity check on ${name} configuration:"
 	eval ${command} ${command_args} --check-config
+	piddir="$(dirname ${pidfile})"
+	if [ ! -d "${piddir}" ] && id inadyn >/dev/null 2>&1 ; then
+		mkdir -p "${piddir}"
+		chown inadyn:inadyn "${piddir}"
+	fi
 }
 
 run_rc_command "$1"

@@ -1,0 +1,704 @@
+From 05e3cc236406680a55e19b204202b63cdaf48ea1 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Mon, 1 Aug 2022 04:15:43 +0200
+Subject: [PATCH 01/28] Compact and simplify modules build and config
+ generation for Bind 9.x AD DLZ.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ python/samba/provision/sambadns.py | 68 ++++++++++++------------------
+ source4/dns_server/dlz_minimal.h   | 44 +++++++++----------
+ source4/dns_server/wscript_build   | 62 +++------------------------
+ source4/setup/named.conf.dlz       | 25 +----------
+ source4/torture/dns/wscript_build  |  2 +-
+ 5 files changed, 55 insertions(+), 146 deletions(-)
+
+diff --git a/python/samba/provision/sambadns.py b/python/samba/provision/sambadns.py
+index 404b346a885..8e5a8ba5f25 100644
+--- a/python/samba/provision/sambadns.py
++++ b/python/samba/provision/sambadns.py
+@@ -21,6 +21,7 @@
+ """DNS-related provisioning"""
+ 
+ import os
++import re
+ import uuid
+ import shutil
+ import time
+@@ -957,48 +958,37 @@ def create_named_conf(paths, realm, dnsdomain, dns_bac
+                                      stderr=subprocess.STDOUT,
+                                      cwd='.').communicate()[0]
+         bind_info = get_string(bind_info)
+-        bind9_8 = '#'
+-        bind9_9 = '#'
+-        bind9_10 = '#'
+-        bind9_11 = '#'
+-        bind9_12 = '#'
+-        bind9_14 = '#'
+-        bind9_16 = '#'
+-        if bind_info.upper().find('BIND 9.8') != -1:
+-            bind9_8 = ''
+-        elif bind_info.upper().find('BIND 9.9') != -1:
+-            bind9_9 = ''
+-        elif bind_info.upper().find('BIND 9.10') != -1:
+-            bind9_10 = ''
+-        elif bind_info.upper().find('BIND 9.11') != -1:
+-            bind9_11 = ''
+-        elif bind_info.upper().find('BIND 9.12') != -1:
+-            bind9_12 = ''
+-        elif bind_info.upper().find('BIND 9.14') != -1:
+-            bind9_14 = ''
+-        elif bind_info.upper().find('BIND 9.16') != -1:
+-            bind9_16 = ''
+-        elif bind_info.upper().find('BIND 9.7') != -1:
+-            raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
+-        elif bind_info.upper().find('BIND_9.13') != -1:
+-            raise ProvisioningError("Only stable/esv releases of BIND are supported.")
+-        elif bind_info.upper().find('BIND_9.15') != -1:
+-            raise ProvisioningError("Only stable/esv releases of BIND are supported.")
+-        elif bind_info.upper().find('BIND_9.17') != -1:
+-            raise ProvisioningError("Only stable/esv releases of BIND are supported.")
++        bind9_release = re.search('BIND (9)\.(\d+)\.', bind_info, re.I)
++        if bind9_release:
++            bind9_disabled = ''
++            bind9_version = bind9_release.group(0) + "x"
++            bind9_version_major = int(bind9_release.group(1))
++            bind9_version_minor = int(bind9_release.group(2))
++            if bind9_version_minor == 7:
++                raise ProvisioningError("DLZ option incompatible with BIND 9.7.")
++            elif bind9_version_minor == 8:
++                bind9_dlz_version = "9"
++            elif bind9_version_minor in [13, 15, 17]:
++                raise ProvisioningError("Only stable/esv releases of BIND are supported.")
++            else:
++                bind9_dlz_version = "%d_%d" % (bind9_version_major, bind9_version_minor)
+         else:
++            bind9_disabled = '# '
++            bind9_version = "BIND z.y.x"
++            bind9_dlz_version = "z_y"
+             logger.warning("BIND version unknown, please modify %s manually." % paths.namedconf)
++
++        bind9_dlz = (
++            '    # For %s\n'
++            '    %sdatabase "dlopen %s/bind9/dlz_bind%s.so";'
++        ) % (
++            bind9_version, bind9_disabled, samba.param.modules_dir(), bind9_dlz_version
++        )
+         setup_file(setup_path("named.conf.dlz"), paths.namedconf, {
+                     "NAMED_CONF": paths.namedconf,
+                     "MODULESDIR": samba.param.modules_dir(),
+-                    "BIND9_8": bind9_8,
+-                    "BIND9_9": bind9_9,
+-                    "BIND9_10": bind9_10,
+-                    "BIND9_11": bind9_11,
+-                    "BIND9_12": bind9_12,
+-                    "BIND9_14": bind9_14,
+-                    "BIND9_16": bind9_16
+-                    })
++                    "BIND9_DLZ": bind9_dlz
++                 })
+ 
+ 
+ def create_named_txt(path, realm, dnsdomain, dnsname, binddns_dir,
+diff --git a/source4/dns_server/dlz_minimal.h b/source4/dns_server/dlz_minimal.h
+index b7e36e7f8e6..bbdb616deb2 100644
+--- a/source4/dns_server/dlz_minimal.h
++++ b/source4/dns_server/dlz_minimal.h
+@@ -26,32 +26,31 @@
+ #include <stdint.h>
+ #include <stdbool.h>
+ 
+-#if defined (BIND_VERSION_9_8)
+-# define DLZ_DLOPEN_VERSION 1
+-#elif defined (BIND_VERSION_9_9)
+-# define DLZ_DLOPEN_VERSION 2
+-# define DNS_CLIENTINFO_VERSION 1
+-# define ISC_BOOLEAN_AS_BOOL 0
+-#elif defined (BIND_VERSION_9_10)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 1
+-# define ISC_BOOLEAN_AS_BOOL 0
+-#elif defined (BIND_VERSION_9_11)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
+-# define ISC_BOOLEAN_AS_BOOL 0
+-#elif defined (BIND_VERSION_9_12)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
+-# define ISC_BOOLEAN_AS_BOOL 0
+-#elif defined (BIND_VERSION_9_14)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
+-#elif defined (BIND_VERSION_9_16)
+-# define DLZ_DLOPEN_VERSION 3
+-# define DNS_CLIENTINFO_VERSION 2
++#if defined (BIND_VERSION)
++# if BIND_VERSION == 908
++#  define DLZ_DLOPEN_VERSION 1
++# elif BIND_VERSION == 909
++#  define DLZ_DLOPEN_VERSION 2
++#  define DNS_CLIENTINFO_VERSION 1
++#  define ISC_BOOLEAN_AS_BOOL 0
++# elif BIND_VERSION == 910
++#  define DLZ_DLOPEN_VERSION 3
++#  define DNS_CLIENTINFO_VERSION 1
++#  define ISC_BOOLEAN_AS_BOOL 0
++# elif BIND_VERSION == 911 || BIND_VERSION == 912
++#  define DLZ_DLOPEN_VERSION 3
++#  define DNS_CLIENTINFO_VERSION 2
++#  define ISC_BOOLEAN_AS_BOOL 0
++# elif BIND_VERSION >= 914
++#  define DLZ_DLOPEN_VERSION 3
++#  define DNS_CLIENTINFO_VERSION 2
++#  define ISC_BOOLEAN_AS_BOOL 1
++# else
++#  error Unsupported BIND version
++# endif
+ #else
+ # error Unsupported BIND version
++# error BIND_VERSION undefined
+ #endif
+ 
+ #ifndef ISC_BOOLEAN_AS_BOOL
+diff --git a/source4/dns_server/wscript_build b/source4/dns_server/wscript_build
+index ab0a241b937..3743753504c 100644
+--- a/source4/dns_server/wscript_build
++++ b/source4/dns_server/wscript_build
+@@ -18,79 +18,21 @@ bld.SAMBA_MODULE('service_dns',
+         )
+ 
+ # a bind9 dlz module giving access to the Samba DNS SAM
+-bld.SAMBA_LIBRARY('dlz_bind9',
++for bind_version in (910, 911, 912, 914, 916, 918):
++    string_version='%d_%d' % (bind_version // 100, bind_version % 100)
++    bld.SAMBA_LIBRARY('dlz_bind%s' % (string_version),
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_8',
++                  cflags='-DBIND_VERSION=%d' % bind_version,
+                   private_library=True,
+-                  link_name='modules/bind9/dlz_bind9.so',
+-                  realname='dlz_bind9.so',
++                  link_name='modules/bind9/dlz_bind%s.so' % (string_version),
++                  realname='dlz_bind%s.so' % (string_version),
+                   install_path='${MODULESDIR}/bind9',
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+ 
+-bld.SAMBA_LIBRARY('dlz_bind9_9',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_9',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_9.so',
+-                  realname='dlz_bind9_9.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_10',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_10',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_10.so',
+-                  realname='dlz_bind9_10.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_11',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_11',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_11.so',
+-                  realname='dlz_bind9_11.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_12',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_12',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_12.so',
+-                  realname='dlz_bind9_12.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_14',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_14',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_14.so',
+-                  realname='dlz_bind9_14.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+-bld.SAMBA_LIBRARY('dlz_bind9_16',
+-                  source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_16',
+-                  private_library=True,
+-                  link_name='modules/bind9/dlz_bind9_16.so',
+-                  realname='dlz_bind9_16.so',
+-                  install_path='${MODULESDIR}/bind9',
+-                  deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+-                  enabled=bld.AD_DC_BUILD_IS_ENABLED())
+-
+ bld.SAMBA_LIBRARY('dlz_bind9_for_torture',
+                   source='dlz_bind9.c',
+-                  cflags='-DBIND_VERSION_9_8',
++                  cflags='-DBIND_VERSION=918',
+                   private_library=True,
+                   deps='samba-hostconfig samdb-common gensec popt dnsserver_common',
+                   enabled=bld.AD_DC_BUILD_IS_ENABLED())
+diff --git a/source4/setup/named.conf.dlz b/source4/setup/named.conf.dlz
+index cbe7d805f58..32672768af4 100644
+--- a/source4/setup/named.conf.dlz
++++ b/source4/setup/named.conf.dlz
+@@ -10,25 +10,6 @@
+ # Uncomment only single database line, depending on your BIND version
+ #
+ dlz "AD DNS Zone" {
+-    # For BIND 9.8.x
+-    ${BIND9_8} database "dlopen ${MODULESDIR}/bind9/dlz_bind9.so";
+-
+-    # For BIND 9.9.x
+-    ${BIND9_9} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_9.so";
+-
+-    # For BIND 9.10.x
+-    ${BIND9_10} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_10.so";
+-
+-    # For BIND 9.11.x
+-    ${BIND9_11} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_11.so";
+-
+-    # For BIND 9.12.x
+-    ${BIND9_12} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_12.so";
+-
+-    # For BIND 9.14.x
+-    ${BIND9_14} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_14.so";
+-
+-    # For BIND 9.16.x
+-    ${BIND9_16} database "dlopen ${MODULESDIR}/bind9/dlz_bind9_16.so";
++${BIND9_DLZ}
+ };
+ 
+diff --git a/source4/torture/dns/wscript_build b/source4/torture/dns/wscript_build
+index 0b40e03e370..bf7415ff88a 100644
+--- a/source4/torture/dns/wscript_build
++++ b/source4/torture/dns/wscript_build
+@@ -5,7 +5,7 @@ if bld.AD_DC_BUILD_IS_ENABLED():
+ 		source='dlz_bind9.c',
+ 		subsystem='smbtorture',
+ 		init_function='torture_bind_dns_init',
+-		cflags='-DBIND_VERSION_9_8',
++		cflags='-DBIND_VERSION=918',
+ 		deps='torture talloc torturemain dlz_bind9_for_torture',
+ 		internal_module=True
+ 		)
+--- a/source4/torture/dns/dlz_bind9.c
++++ b/source4/torture/dns/dlz_bind9.c
+@@ -19,6 +19,7 @@
+ 
+ #include "includes.h"
+ #include "torture/smbtorture.h"
++#include "system/network.h"
+ #include "dns_server/dlz_minimal.h"
+ #include <talloc.h>
+ #include <ldb.h>
+@@ -88,7 +89,8 @@ static bool test_dlz_bind9_create(struct torture_conte
+ static bool calls_zone_hook = false;
+ 
+ static isc_result_t dlz_bind9_writeable_zone_hook(dns_view_t *view,
+-					   const char *zone_name)
++						  dns_dlzdb_t *dlzdb,
++						  const char *zone_name)
+ {
+ 	struct torture_context *tctx = talloc_get_type((void *)view, struct torture_context);
+ 	struct ldb_context *samdb = NULL;
+@@ -128,7 +130,8 @@ static isc_result_t dlz_bind9_writeable_zone_hook(dns_
+ 
+ static bool test_dlz_bind9_configure(struct torture_context *tctx)
+ {
+-	void *dbdata;
++	void *dbdata = NULL;
++	dns_dlzdb_t *dlzdb = NULL;
+ 	const char *argv[] = {
+ 		"samba_dlz",
+ 		"-H",
+@@ -143,7 +146,9 @@ static bool test_dlz_bind9_configure(struct torture_co
+ 				 "Failed to create samba_dlz");
+ 
+ 	calls_zone_hook = false;
+-	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dbdata),
++	torture_assert_int_equal(tctx, dlz_configure((void*)tctx,
++						     dlzdb,
++						     dbdata),
+ 						     ISC_R_SUCCESS,
+ 				 "Failed to configure samba_dlz");
+ 
+@@ -167,6 +172,7 @@ static bool configure_multiple_dlzs(struct torture_con
+ 				    void **dbdata, int count)
+ {
+ 	int i, res;
++	dns_dlzdb_t *dlzdb = NULL;
+ 	const char *argv[] = {
+ 		"samba_dlz",
+ 		"-H",
+@@ -183,7 +189,7 @@ static bool configure_multiple_dlzs(struct torture_con
+ 		torture_assert_int_equal(tctx, res, ISC_R_SUCCESS,
+ 					 "Failed to create samba_dlz");
+ 
+-		res = dlz_configure((void*)tctx, dbdata[i]);
++		res = dlz_configure((void*)tctx, dlzdb, dbdata[i]);
+ 		torture_assert_int_equal(tctx, res, ISC_R_SUCCESS,
+ 					 "Failed to configure samba_dlz");
+ 	}
+@@ -195,9 +201,14 @@ static bool test_dlz_bind9_destroy_oldest_first(struct
+ {
+ 	void *dbdata[NUM_DLZS_TO_CONFIGURE];
+ 	int i;
++	bool ret = configure_multiple_dlzs(tctx,
++					   dbdata,
++					   NUM_DLZS_TO_CONFIGURE);
++	if (ret == false) {
++		/* failure: has already been printed */
++		return false;
++	}
+ 
+-	configure_multiple_dlzs(tctx, dbdata, NUM_DLZS_TO_CONFIGURE);
+-
+ 	/* Reload faults are reported to happen on the first destroy */
+ 	dlz_destroy(dbdata[0]);
+ 
+@@ -212,9 +223,14 @@ static bool test_dlz_bind9_destroy_newest_first(struct
+ {
+ 	void *dbdata[NUM_DLZS_TO_CONFIGURE];
+ 	int i;
++	bool ret = configure_multiple_dlzs(tctx,
++					   dbdata,
++					   NUM_DLZS_TO_CONFIGURE);
++	if (ret == false) {
++		/* failure: has already been printed */
++		return false;
++	}
+ 
+-	configure_multiple_dlzs(tctx, dbdata, NUM_DLZS_TO_CONFIGURE);
+-
+ 	for(i = NUM_DLZS_TO_CONFIGURE - 1; i >= 0; i--) {
+ 		dlz_destroy(dbdata[i]);
+ 	}
+@@ -229,6 +245,7 @@ static bool test_dlz_bind9_destroy_newest_first(struct
+ static bool test_dlz_bind9_gensec(struct torture_context *tctx, const char *mech)
+ {
+ 	NTSTATUS status;
++	dns_dlzdb_t *dlzdb = NULL;
+ 
+ 	struct gensec_security *gensec_client_context;
+ 
+@@ -248,7 +265,8 @@ static bool test_dlz_bind9_gensec(struct torture_conte
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to create samba_dlz");
+ 
+-	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dbdata),
++	torture_assert_int_equal(tctx, dlz_configure((void*)tctx,
++						     dlzdb, dbdata),
+ 						     ISC_R_SUCCESS,
+ 				 "Failed to configure samba_dlz");
+ 
+@@ -273,6 +291,7 @@ static bool test_dlz_bind9_gensec(struct torture_conte
+ 			popt_get_cmdline_credentials());
+ 	torture_assert_ntstatus_ok(tctx, status, "gensec_set_credentials (client) failed");
+ 
++
+ 	status = gensec_start_mech_by_sasl_name(gensec_client_context, mech);
+ 	torture_assert_ntstatus_ok(tctx, status, "gensec_start_mech_by_sasl_name (client) failed");
+ 
+@@ -414,7 +433,10 @@ static isc_result_t dlz_bind9_putnamedrr_hook(dns_sdlz
+ static bool test_dlz_bind9_lookup(struct torture_context *tctx)
+ {
+ 	size_t i;
+-	void *dbdata;
++	void *dbdata = NULL;
++	dns_clientinfomethods_t *methods = NULL;
++	dns_clientinfo_t *clientinfo = NULL;
++	dns_dlzdb_t *dlzdb = NULL;
+ 	const char *argv[] = {
+ 		"samba_dlz",
+ 		"-H",
+@@ -434,8 +456,9 @@ static bool test_dlz_bind9_lookup(struct torture_conte
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to create samba_dlz");
+ 
+-	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dbdata),
+-						     ISC_R_SUCCESS,
++	torture_assert_int_equal(tctx,
++				 dlz_configure((void*)tctx, dlzdb, dbdata),
++				 ISC_R_SUCCESS,
+ 				 "Failed to configure samba_dlz");
+ 
+ 	expected1 = talloc_zero(tctx, struct test_expected_rr);
+@@ -478,7 +501,8 @@ static bool test_dlz_bind9_lookup(struct torture_conte
+ 
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to lookup @");
+ 	for (i = 0; i < expected1->num_records; i++) {
+@@ -514,7 +538,8 @@ static bool test_dlz_bind9_lookup(struct torture_conte
+ 
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected2->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected2),
++						  (dns_sdlzlookup_t *)expected2,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to lookup hostname");
+ 	for (i = 0; i < expected2->num_records; i++) {
+@@ -539,7 +564,8 @@ static bool test_dlz_bind9_lookup(struct torture_conte
+ static bool test_dlz_bind9_zonedump(struct torture_context *tctx)
+ {
+ 	size_t i;
+-	void *dbdata;
++	void *dbdata = NULL;
++	dns_dlzdb_t *dlzdb = NULL;
+ 	const char *argv[] = {
+ 		"samba_dlz",
+ 		"-H",
+@@ -558,7 +584,7 @@ static bool test_dlz_bind9_zonedump(struct torture_con
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to create samba_dlz");
+ 
+-	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dbdata),
++	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dlzdb, dbdata),
+ 						     ISC_R_SUCCESS,
+ 				 "Failed to configure samba_dlz");
+ 
+@@ -650,7 +676,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	NTSTATUS status;
+ 	struct gensec_security *gensec_client_context;
+ 	DATA_BLOB client_to_server, server_to_client;
+-	void *dbdata;
++	void *dbdata = NULL;
++	dns_dlzdb_t *dlzdb = NULL;
+ 	void *version = NULL;
+ 	const char *argv[] = {
+ 		"samba_dlz",
+@@ -664,6 +691,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	char *data1 = NULL;
+ 	char *data2 = NULL;
+ 	bool ret = false;
++	dns_clientinfomethods_t *methods = NULL;
++	dns_clientinfo_t *clientinfo = NULL;
+ 
+ 	tctx_static = tctx;
+ 	torture_assert_int_equal(tctx, dlz_create("samba_dlz", 3, argv, &dbdata,
+@@ -675,7 +704,7 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 				 ISC_R_SUCCESS,
+ 				 "Failed to create samba_dlz");
+ 
+-	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dbdata),
++	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dlzdb, dbdata),
+ 						     ISC_R_SUCCESS,
+ 				 "Failed to configure samba_dlz");
+ 
+@@ -813,7 +842,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_NOTFOUND,
+ 				 "Found hostname");
+ 	torture_assert_int_equal(tctx, expected1->num_rr, 0,
+@@ -863,7 +893,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -892,7 +923,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -926,7 +958,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -960,7 +993,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[1].printed,
+@@ -989,7 +1023,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_NOTFOUND,
+ 				 "Found hostname");
+ 	torture_assert_int_equal(tctx, expected1->num_rr, 0,
+@@ -1013,7 +1048,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -1042,7 +1078,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -1076,7 +1113,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -1110,7 +1148,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_SUCCESS,
+ 				 "Not found hostname");
+ 	torture_assert(tctx, expected1->records[0].printed,
+@@ -1146,7 +1185,8 @@ static bool test_dlz_bind9_update01(struct torture_con
+ 	expected1->records[1].printed = false;
+ 	torture_assert_int_equal(tctx, dlz_lookup(lpcfg_dnsdomain(tctx->lp_ctx),
+ 						  expected1->query_name, dbdata,
+-						  (dns_sdlzlookup_t *)expected1),
++						  (dns_sdlzlookup_t *)expected1,
++						  methods, clientinfo),
+ 				 ISC_R_NOTFOUND,
+ 				 "Found hostname");
+ 	torture_assert_int_equal(tctx, expected1->num_rr, 0,
+@@ -1161,6 +1201,76 @@ cancel_version:
+ 	return ret;
+ }
+ 
++/*
++ * Test zone transfer requests restrictions
++ *
++ * 1: test that zone transfer is denied by default
++ * 2: with an authorized list of IPs set in smb.conf, test that zone transfer
++ *    is accepted only for selected IPs.
++ */
++static bool test_dlz_bind9_allowzonexfr(struct torture_context *tctx)
++{
++	void *dbdata;
++	const char *argv[] = {
++		"samba_dlz",
++		"-H",
++		test_dlz_bind9_binddns_dir(tctx, "dns/sam.ldb"),
++		NULL
++	};
++	isc_result_t ret;
++	dns_dlzdb_t *dlzdb = NULL;
++	bool ok;
++
++	tctx_static = tctx;
++	torture_assert_int_equal(tctx, dlz_create("samba_dlz", 3, argv, &dbdata,
++						  "log", dlz_bind9_log_wrapper,
++						  "writeable_zone", dlz_bind9_writeable_zone_hook,
++						  "putrr", dlz_bind9_putrr_hook,
++						  "putnamedrr", dlz_bind9_putnamedrr_hook,
++						  NULL),
++				 ISC_R_SUCCESS,
++				 "Failed to create samba_dlz");
++
++	torture_assert_int_equal(tctx, dlz_configure((void*)tctx, dlzdb, dbdata),
++						     ISC_R_SUCCESS,
++				             "Failed to configure samba_dlz");
++
++    /* Ask for zone transfer with no specific config => expect denied */
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "127.0.0.1");
++    torture_assert_int_equal(tctx, ret, ISC_R_NOPERM,
++                            "Zone transfer accepted with default settings");
++
++    /* Ask for zone transfer with authorizations set */
++    ok = lpcfg_set_option(tctx->lp_ctx, "dns zone transfer clients allow=127.0.0.1,1234:5678::1,192.168.0.");
++    torture_assert(tctx, ok, "Failed to set dns zone transfer clients allow option.");
++
++    ok = lpcfg_set_option(tctx->lp_ctx, "dns zone transfer clients deny=192.168.0.2");
++    torture_assert(tctx, ok, "Failed to set dns zone transfer clients deny option.");
++
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "127.0.0.1");
++    torture_assert_int_equal(tctx, ret, ISC_R_SUCCESS,
++                            "Zone transfer refused for authorized IPv4 address");
++
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "1234:5678::1");
++    torture_assert_int_equal(tctx, ret, ISC_R_SUCCESS,
++                             "Zone transfer refused for authorized IPv6 address.");
++
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "10.0.0.1");
++    torture_assert_int_equal(tctx, ret, ISC_R_NOPERM,
++                            "Zone transfer accepted for unauthorized IP");
++
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "192.168.0.1");
++    torture_assert_int_equal(tctx, ret, ISC_R_SUCCESS,
++                             "Zone transfer refused for address in authorized IPv4 subnet.");
++
++    ret = dlz_allowzonexfr(dbdata, lpcfg_dnsdomain(tctx->lp_ctx), "192.168.0.2");
++    torture_assert_int_equal(tctx, ret, ISC_R_NOPERM,
++                            "Zone transfer allowed for denied client.");
++
++    dlz_destroy(dbdata);
++    return true;
++}
++
+ static struct torture_suite *dlz_bind9_suite(TALLOC_CTX *ctx)
+ {
+ 	struct torture_suite *suite = torture_suite_create(ctx, "dlz_bind9");
+@@ -1182,6 +1292,7 @@ static struct torture_suite *dlz_bind9_suite(TALLOC_CT
+ 	torture_suite_add_simple_test(suite, "lookup", test_dlz_bind9_lookup);
+ 	torture_suite_add_simple_test(suite, "zonedump", test_dlz_bind9_zonedump);
+ 	torture_suite_add_simple_test(suite, "update01", test_dlz_bind9_update01);
++	torture_suite_add_simple_test(suite, "allowzonexfr", test_dlz_bind9_allowzonexfr);
+ 	return suite;
+ }
+ 
+-- 
+2.37.1
+

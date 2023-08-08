@@ -1,51 +1,61 @@
 PORTNAME=	qemu
-PORTVERSION=	7.1.0
+PORTVERSION=	8.0.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT}
-WWW=		https://wiki.qemu.org/Main_Page
+WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-.if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
-# For i386 we have unknown type name 'vm_page_t'
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libslirp.so:net/libslirp
 .endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 .endif
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != default)
+PKGMESSAGE=	${.CURDIR}/pkg-message.guest-agent
+.endif
 
-FLAVORS=			default nox11 tools
+FLAVORS=			default nox11 tools guestagent
 FLAVOR?=			${FLAVORS:[1]}
 default_CONFLICTS_INSTALL=	qemu-devel qemu-nox11 qemu-tools qemu-utils \
-				qemu6* qemu70*
+				qemu6* qemu7*
 nox11_PKGNAMESUFFIX=		-nox11
-nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6* qemu70*
+nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6* qemu7* qemu-guest-agent
 nox11_COMMENT=			(without X11)
 tools_PKGNAMESUFFIX=		-tools
 tools_COMMENT=			(tools only)
 tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6* \
-				qemu70*
+				qemu70* qemu-guest-agent
 tools_DESCR=			${.CURDIR}/pkg-descr-tools
 tools_PLIST=			${.CURDIR}/pkg-plist-tools
+guestagent_PKGNAMESUFFIX=		-guest-agent
+guestagent_COMMENT=			(guest agent)
+guestagent_DESCR=		${.CURDIR}/pkg-descr-ga
+guestagent_PLIST=		${.CURDIR}/pkg-plist-ga
+guestagent_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-tools qemu-utils qemu6* \
+				qemu7* qemu-guest-agent
 
 USES=		cpe gmake gnome ninja perl5 pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 USE_PERL5=	build
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 USES+=		iconv:wchar_t
 .endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 USE_GNOME+=	cairo
 .endif
 
@@ -62,13 +72,19 @@ CONFIGURE_ARGS+=	--cc=${CC} \
 			--mandir=${PREFIX}/man \
 			--prefix=${PREFIX} \
 			--python=${PYTHON_CMD}
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} == guestagent
+USE_RC_SUBR=		qemu-guest-agent
+CONFIGURE_ARGS+=	--enable-guest-agent --disable-tools --disable-xkbcommon
+.else
+CONFIGURE_ARGS+=	--disable-guest-agent
+.endif
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 CONFIGURE_ARGS+=	--enable-fdt=system \
 			--enable-netmap
 .endif
-.if ${FLAVOR:U} == tools
+.if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
 CONFIGURE_ARGS+=	--disable-attr \
-			--disable-blobs \
+			--disable-install-blobs \
 			--disable-brlapi \
 			--disable-bzip2 \
 			--disable-cap-ng \
@@ -77,7 +93,6 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-fdt \
 			--disable-gcrypt \
 			--disable-glusterfs \
-			--disable-guest-agent \
 			--disable-libnfs \
 			--disable-libusb \
 			--disable-lzo \
@@ -95,8 +110,10 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-user \
 			--disable-vhost-net \
 			--disable-virtfs \
-			--disable-vnc \
-			--enable-tools
+			--disable-vnc
+.endif
+.if ${FLAVOR:U} == tools
+CONFIGURE_ARGS+=	--enable-tools
 .endif
 
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
@@ -114,9 +131,9 @@ OPTIONS_DEFAULT=		CDROM_DMA CURL GNUTLS GTK3 JPEG NCURSES_DEFAULT \
 OPTIONS_SINGLE=			NCURSES
 OPTIONS_SINGLE_NCURSES=		NCURSES_BASE NCURSES_DEFAULT NCURSES_PORT
 .if ${FLAVOR:U} == nox11
-OPTIONS_EXCLUDE:=		GTK3 X11
+OPTIONS_EXCLUDE:=		GTK3 OPENGL X11
 .endif
-.if ${FLAVOR:U} == tools
+.if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
 OPTIONS_EXCLUDE:=		CAPSTONE CDROM_DMA CURL DEBUG GNUTLS GTK3 ISCSI \
 				JPEG NCURSES NCURSES_BASE NCURSES_DEFAULT \
 				NCURSES_PORT OPENGL PNG SAMBA SASL STATIC_LINK \
@@ -188,6 +205,7 @@ X11_USE=			GNOME=gdkpixbuf2 \
 X11_CONFIGURE_ENABLE=		sdl
 .if (empty(FLAVOR) || ${FLAVOR:U} == default || ${FLAVOR:U} == nox11) && \
 	(${FLAVOR:U} != tools || ${PKGNAMESUFFIX} != "-guest-agent")
+X86_TARGETS_LIB_DEPENDS_OFF=	libdw.so:devel/elfutils
 X86_TARGETS_USES_OFF=		xorg
 X86_TARGETS_USE_OFF=		XORG=pixman,x11
 X86_TARGETS_CONFIGURE_ON=	--target-list='i386-softmmu i386-bsd-user x86_64-softmmu x86_64-bsd-user'
@@ -207,9 +225,9 @@ MAKE_ARGS+=	ARCH=ppc
 USE_GCC=	yes
 .endif
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc64*} || ${ARCH:Maarch64}
 CONFIGURE_ARGS+=	--disable-bsd-user
-MAKE_ARGS+=	ARCH=ppc64
+MAKE_ARGS+=	ARCH=${ARCH:C/powerpc64.*/ppc64/}
 PLIST_SUB+=	BSDUSER="@comment "
 .else
 PLIST_SUB+=	BSDUSER=""
@@ -226,14 +244,14 @@ post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
 
 do-build:
-	cd ${WRKSRC} && ${GMAKE}
+	cd ${WRKSRC} && ${GMAKE} -j${MAKE_JOBS_NUMBER}
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${GMAKE} install
 
 .if !target(post-install)
 post-install:
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 .endif

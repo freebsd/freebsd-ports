@@ -3,7 +3,7 @@ PORTVERSION=	4.6.11
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	4
 
@@ -41,16 +41,10 @@ TEST_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unittest2>=0:devel/py-unittest2@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' ${WRKSRC}/testing/test_parseopt.py
@@ -60,4 +54,4 @@ post-patch:
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -k 'not test_cache_failure_warns'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

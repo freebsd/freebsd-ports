@@ -4,7 +4,7 @@ DISTVERSION=	4.4-0.7
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tests for RDMA micro-benchmark
 WWW=		https://github.com/linux-rdma/perftest/
 

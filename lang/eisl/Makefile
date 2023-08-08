@@ -1,6 +1,6 @@
 PORTNAME=	eisl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.63
+DISTVERSION=	3.30
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,7 +8,7 @@ COMMENT=	Interpreter and compiler compatible with ISLisp standard
 WWW=		https://github.com/sasagawa888/eisl
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/documents/license.txt
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_i386=	stage breaks: data segment of more than 500GB is required, see https://github.com/sasagawa888/eisl/issues/218
 
@@ -24,6 +24,7 @@ TEST_TARGET=	check # tests print some errors and warnings, see https://github.co
 
 MAKEFILE=	makefile
 
+CFLAGS+=	-D__BSD_VISIBLE # w/out this there's error: use of undeclared identifier '_SC_NPROCESSORS_CONF'
 LDFLAGS+=	-lncursesw
 
 .include <bsd.port.options.mk>
@@ -32,4 +33,10 @@ LDFLAGS+=	-lncursesw
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-makefile
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

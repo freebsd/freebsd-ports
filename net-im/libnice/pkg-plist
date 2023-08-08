@@ -5,6 +5,7 @@ include/nice/agent.h
 include/nice/candidate.h
 include/nice/debug.h
 include/nice/interfaces.h
+include/nice/nice-version.h
 include/nice/nice.h
 include/nice/pseudotcp.h
 include/stun/constants.h
@@ -19,6 +20,6 @@ include/stun/win32_common.h
 lib/girepository-1.0/Nice-0.1.typelib
 lib/libnice.so
 lib/libnice.so.10
-lib/libnice.so.10.12.0
+lib/libnice.so.10.13.1
 libdata/pkgconfig/nice.pc
 share/gir-1.0/Nice-0.1.gir

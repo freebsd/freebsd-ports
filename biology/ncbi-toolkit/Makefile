@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-toolkit
 DISTVERSION=	2017.01.06	# containing BLAST v2.2.27 (? is this true)
-PORTREVISION=	6
+PORTREVISION=	8
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -30,6 +30,15 @@ CONFLICTS_INSTALL=	fhist # bin/test_regexp man/man1/fmerge.1.gz
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

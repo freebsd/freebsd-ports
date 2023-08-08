@@ -46,8 +46,6 @@ lib/libextractor/libextractor_pdf.a
 lib/libextractor/libextractor_pdf.so
 lib/libextractor/libextractor_png.a
 lib/libextractor/libextractor_png.so
-%%FFMPEG%%lib/libextractor/libextractor_previewopus.a
-%%FFMPEG%%lib/libextractor/libextractor_previewopus.so
 lib/libextractor/libextractor_ps.a
 lib/libextractor/libextractor_ps.so
 lib/libextractor/libextractor_riff.a
@@ -58,8 +56,6 @@ lib/libextractor/libextractor_s3m.a
 lib/libextractor/libextractor_s3m.so
 lib/libextractor/libextractor_sid.a
 lib/libextractor/libextractor_sid.so
-%%FFMPEG%%lib/libextractor/libextractor_thumbnailffmpeg.a
-%%FFMPEG%%lib/libextractor/libextractor_thumbnailffmpeg.so
 lib/libextractor/libextractor_thumbnailgtk.a
 lib/libextractor/libextractor_thumbnailgtk.so
 lib/libextractor/libextractor_tiff.a

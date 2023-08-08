@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fog-core1>=1.42<2:devel/rubygem-fog-core1 \
 		rubygem-fog-json>=1.0<2:devel/rubygem-fog-json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,0 +1,5 @@
+buildah, podman and skopeo, comprise a modern container-based workflow
+toolkit, now available on FreeBSD.
+
+This meta-package doesn't preclude users from combining these
+separately, nor from installing a functional subset of components.

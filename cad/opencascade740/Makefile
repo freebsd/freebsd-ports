@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0 # resurrected because science/chrono only builds with opencascade-7.4.0, see https://github.com/projectchrono/chrono/issues/359#issuecomment-1023478083
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	cad science
 PKGNAMESUFFIX=	740
 
@@ -63,9 +63,11 @@ OCCROOT=	${PREFIX}/${LOCCROOT}
 PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
 		VE=${PORTVERSION:R:R} VER=${PORTVERSION}
 
-FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
+FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON \
+			-D3RDPARTY_FFMPEG_INCLUDE_DIR=${LOCALBASE}/ffmpeg4/include \
+			-D3RDPARTY_FFMPEG_DIR=${LOCALBASE}/ffmpeg4
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 
 VIS_CMAKE_ON=		-DUSE_FREEIMAGE:BOOL=ON -DUSE_GL2PS:BOOL=ON	\
 			-DUSE_FREETYPE:BOOL=ON -D3RDPARTY_FREETYPE_DIR=${LOCALBASE}
@@ -76,6 +78,7 @@ VIS_LIB_DEPENDS=	libftgl.so:graphics/ftgl		\
 			libfreeimageplus.so:graphics/freeimage
 
 DOXYGEN_IMPLIES=	DOCS
+DOXYGEN_USES=	tex
 DOXYGEN_USE=	TEX=latex:build
 DOXYGEN_BUILD_DEPENDS=	bash:shells/bash		\
 			doxygen:devel/doxygen		\

@@ -1,0 +1,12 @@
+--- maiad.orig	2022-12-01 19:36:50 UTC
++++ maiad
+@@ -3833,9 +3833,6 @@ sub maia_store_mail($$$$$@) {
+     $subject = substr($subject, 0, 255) if length($subject) > 255;
+     $subject = untaint($subject);
+     $sender = substr($sender, 0, 255) if length($sender) > 255;
+-    if ($document_charset ne "") {
+-	from_to($contents, $document_charset, 'UTF-8');
+-    }
+ 
+     if (!$oversized) {
+         if ($dbtype =~ /^mysql$/si) { # MySQL

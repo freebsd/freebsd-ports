@@ -1,9 +1,7 @@
 PORTNAME=	juce
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	27d6e8388c620bf32be0c86c66ff8c403f4c1d71.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
@@ -28,7 +26,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake compiler:c++11-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
 DOS2UNIX_FILES=	modules/juce_core/juce_core.h
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
 
@@ -67,6 +65,7 @@ DEMO_FILES=	\
 	PropertiesDemo SIMDRegisterDemo SimpleFFTDemo StateVariableFilterDemo SystemInfoDemo TimersAndEventsDemo UnitTestsDemo ValueTreesDemo WaveShaperTanhDemo WebBrowserDemo \
 	WidgetsDemo WindowsDemo XMLandJSONDemo
 DEMOS_PLIST_FILES=	${DEMO_FILES:S/^/bin\/${PORTNAME}-/}
+DEMOS_BROKEN=		pending merge of patches from https://github.com/juce-framework/JUCE/pull/881
 
 post-patch:
 	# fix fonts.conf path

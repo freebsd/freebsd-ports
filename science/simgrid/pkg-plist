@@ -1,5 +1,4 @@
 bin/graphicator
-bin/simgrid-colorizer
 bin/simgrid_convert_TI_traces
 bin/simgrid_update_xml
 bin/smpicc
@@ -23,7 +22,6 @@ include/simgrid/kernel/ProfileBuilder.hpp
 include/simgrid/kernel/Timer.hpp
 include/simgrid/kernel/resource/Action.hpp
 include/simgrid/kernel/resource/Model.hpp
-include/simgrid/kernel/resource/NetworkModelIntf.hpp
 include/simgrid/kernel/routing/ClusterZone.hpp
 include/simgrid/kernel/routing/DijkstraZone.hpp
 include/simgrid/kernel/routing/DragonflyZone.hpp
@@ -80,11 +78,11 @@ include/smpi/smpi_extended_traces.h
 include/smpi/smpi_extended_traces_fortran.h
 include/smpi/smpi_helpers.h
 include/smpi/smpi_helpers_internal.h
-include/smpi/smpi_main.h
 include/xbt.h
 include/xbt/Extendable.hpp
 include/xbt/PropertyHolder.hpp
 include/xbt/asserts.h
+include/xbt/asserts.hpp
 include/xbt/automaton.h
 include/xbt/automaton.hpp
 include/xbt/backtrace.hpp
@@ -118,7 +116,7 @@ include/xbt/utility.hpp
 include/xbt/virtu.h
 include/xbt/xbt_os_time.h
 lib/libsimgrid.so
-lib/libsimgrid.so.3.31
+lib/libsimgrid.so.3.32.1
 lib/simgrid/smpimain
 lib/simgrid/smpireplaymain
 libdata/pkgconfig/simgrid.pc

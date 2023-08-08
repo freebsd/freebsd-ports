@@ -1,5 +1,5 @@
 PORTNAME=	jicofo
-DISTVERSION=	1.0-877
+DISTVERSION=	1.0-996
 CATEGORIES=	net-im java
 
 MAINTAINER=	acm@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/java/maven/bin/mvn:devel/maven
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jitsi
-GH_TAGNAME=	d8cca3d
+GH_TAGNAME=	aafb61b
 USE_JAVA=	yes
 JAVA_VERSION=	11
 
@@ -54,7 +54,7 @@ do-install:
 
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.conf.sample \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/target/${PORTNAME}-1.1-SNAPSHOT-jar-with-dependencies.jar \
+	${INSTALL_DATA} ${WRKSRC}/jicofo/target/${PORTNAME}-1.1-SNAPSHOT-jar-with-dependencies.jar \
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 .include <bsd.port.mk>

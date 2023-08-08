@@ -1,6 +1,6 @@
---- configure.orig	2019-12-12 02:59:10 UTC
+--- configure.orig	2018-12-25 04:28:30 UTC
 +++ configure
-@@ -3261,10 +3261,10 @@ fi
+@@ -3387,10 +3387,10 @@ fi
  # curses probe
  if test "$curses" != "no" ; then
    if test "$mingw32" = "yes" ; then
@@ -13,7 +13,7 @@
      curses_lib_list="$($pkg_config --libs ncursesw 2>/dev/null):-lncursesw:-lcursesw"
    fi
    curses_found=no
-@@ -3381,7 +3381,7 @@ for i in $glib_modules; do
+@@ -3501,7 +3501,7 @@ for i in $glib_modules; do
          glib_libs=$($pkg_config --libs $i)
          QEMU_CFLAGS="$glib_cflags $QEMU_CFLAGS"
          LIBS="$glib_libs $LIBS"
@@ -22,7 +22,7 @@
      else
          error_exit "glib-$glib_req_ver $i is required to compile QEMU"
      fi
-@@ -5517,27 +5517,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
+@@ -5846,27 +5846,30 @@ if ( [ "$linux_user" = yes ] || [ "$bsd_user" = yes ] 
      cat > $TMPC <<EOF
      int main(void) { return 0; }
  EOF
@@ -71,4 +71,13 @@
 +      fi
      fi
    fi
+ fi
+@@ -6840,6 +6843,8 @@ elif test "$ARCH" = "x86_64" -o "$ARCH" = "x32" ; then
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/i386 $QEMU_INCLUDES"
+ elif test "$ARCH" = "ppc64" ; then
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/ppc $QEMU_INCLUDES"
++elif test "${ARCH%v?}" = "arm" ; then
++  QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/arm $QEMU_INCLUDES"
+ else
+   QEMU_INCLUDES="-iquote \$(SRC_PATH)/tcg/\$(ARCH) $QEMU_INCLUDES"
  fi

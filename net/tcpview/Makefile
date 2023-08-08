@@ -9,10 +9,10 @@ MASTER_SITES=	http://ftp.vim.org/ibiblio/system/network/management/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif-based TCP/IP protocol analyzer
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		bison motif tar:Z
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
+CFLAGS+=	-Wno-incompatible-function-pointer-types
 
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c

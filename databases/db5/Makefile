@@ -1,6 +1,6 @@
 PORTNAME=	db5
 PORTVERSION=	5.3.28
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases java
 MASTER_SITES=	https://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -56,7 +56,7 @@ L10N_CONFIGURE_ENABLE=	localization
 JAVA_USE=		java
 # db5 is incompatible with openjdk8 and causes IllegalArgument
 # exceptions during build
-JAVA_VARS=		DBLIBS+=libdb_java JAVA_VERSION="1.7"
+JAVA_VARS=		DBLIBS+=libdb_java JAVA_VERSION="8"
 JAVA_CONFIGURE_ENABLE=	java
 JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
 JAVA_CONFIGURE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}" JAVA="${JAVA}" JAVACFLAGS="-Xlint:unchecked"

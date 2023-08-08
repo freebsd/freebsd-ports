@@ -1,7 +1,5 @@
-TIMESTAMP = 1565014702
-SHA256 (t6-bugzilla2atom-g20190711-02fec79c229d67abfdde4b310b05f41c079ce5ec_GH0.tar.gz) = f97da9e1a4723f8a1f62aaac64bd3e1d24bea9d1158760813cc61c219c78631b
-SIZE (t6-bugzilla2atom-g20190711-02fec79c229d67abfdde4b310b05f41c079ce5ec_GH0.tar.gz) = 4484
-SHA256 (golang-sys-d0b11bdaac8a_GH0.tar.gz) = e7e3f36dd307e908e59dbda3864ff74f9a5d7f0fdd4d88af630e092beb7d270c
-SIZE (golang-sys-d0b11bdaac8a_GH0.tar.gz) = 1243049
-SHA256 (golang-tools-7b25e351ac0e_GH0.tar.gz) = 9ddc57affaec237ee0a031ce71e09b84795813b3a906532cc039199bd327768e
-SIZE (golang-tools-7b25e351ac0e_GH0.tar.gz) = 2178836
+TIMESTAMP = 1679146348
+SHA256 (go/www_bugzilla2atom/bugzilla2atom-v0.0.0.20230318132821/v0.0.0-20230318132821-2ccd379511f3.mod) = cb83f27572a2c6194a97432f4b65acfa8e6197e292d82aa748b35c36b7809a85
+SIZE (go/www_bugzilla2atom/bugzilla2atom-v0.0.0.20230318132821/v0.0.0-20230318132821-2ccd379511f3.mod) = 114
+SHA256 (go/www_bugzilla2atom/bugzilla2atom-v0.0.0.20230318132821/v0.0.0-20230318132821-2ccd379511f3.zip) = 0f4f90e8e3157a58999fe238923127cf34eecf7c80991470feabeb46d59ab9e1
+SIZE (go/www_bugzilla2atom/bugzilla2atom-v0.0.0.20230318132821/v0.0.0-20230318132821-2ccd379511f3.zip) = 6593

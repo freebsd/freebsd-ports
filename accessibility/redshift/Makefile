@@ -2,7 +2,7 @@ PORTNAME=	redshift
 PORTVERSION=	1.12
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
-CATEGORIES=	accessibility wayland
+CATEGORIES=	accessibility
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	60f45972a543.patch:-p1 # avoid patch conflict
@@ -51,10 +51,11 @@ VIDMODE_USES=		xorg
 VIDMODE_USE=		XORG=x11,xxf86vm
 VIDMODE_CONFIGURE_ENABLE=	vidmode
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_CONFIGURE_ENABLE=	wayland
 
-GUI_USES=		python:3.6+
+GUI_USES=		python
 GUI_CONFIGURE_ENABLE=	gui
 GUI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR}

@@ -1,6 +1,6 @@
---- services/vmtoolsd/Makefile.am.orig	2017-04-25 03:59:07 UTC
+--- services/vmtoolsd/Makefile.am.orig	2023-03-07 22:57:07 UTC
 +++ services/vmtoolsd/Makefile.am
-@@ -76,7 +76,7 @@ install-data-hook:
+@@ -79,7 +79,7 @@ install-exec-hook:
  	@INSTVMSG@ vmtoolsd $(srcdir)/l10n $(DESTDIR)$(datadir)
  
  install-exec-hook:

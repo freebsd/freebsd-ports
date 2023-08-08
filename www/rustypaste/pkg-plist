@@ -1,0 +1,5 @@
+@dir(%%USER%%,%%GROUP%%,) %%ETCDIR%%
+@dir(%%USER%%,%%GROUP%%,) /var/db/rustypaste
+@sample(%%USER%%,%%GROUP%%,0640) %%ETCDIR%%/rustypaste.env.sample %%ETCDIR%%/rustypaste.env
+@sample(%%USER%%,%%GROUP%%,0640) %%ETCDIR%%/rustypaste.toml.sample %%ETCDIR%%/rustypaste.toml
+bin/rustypaste

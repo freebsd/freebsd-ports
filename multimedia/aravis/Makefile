@@ -1,5 +1,6 @@
 PORTNAME=		aravis
 DISTVERSION=		0.8.20
+PORTREVISION=	1
 CATEGORIES=		multimedia
 
 MAINTAINER=		rozhuk.im@gmail.com

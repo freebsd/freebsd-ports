@@ -1,5 +1,5 @@
-TIMESTAMP = 1657786078
-SHA256 (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.0_GH0/go.mod) = 6bae8443b4cf3cfff123661b0d1fdabdad086f427ed52efc12d8bfca46524775
-SIZE (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.0_GH0/go.mod) = 1034
-SHA256 (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.0_GH0/czerwonk-ping_exporter-1.0.0_GH0.tar.gz) = 30587533f09e38db73873b77de5f476066cb87102c951a699bd418cdcfac94bb
-SIZE (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.0_GH0/czerwonk-ping_exporter-1.0.0_GH0.tar.gz) = 31406
+TIMESTAMP = 1669193030
+SHA256 (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.1_GH0/go.mod) = b824d4e9c3b5f990ceca986be7f61f2e106ab1bda8b313938da0201b804e554d
+SIZE (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.1_GH0/go.mod) = 973
+SHA256 (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.1_GH0/czerwonk-ping_exporter-1.0.1_GH0.tar.gz) = bbd1db514e2f93859d82f40821524b374d3f105f3bcdf4e5290b0404d699f4f7
+SIZE (go/net-mgmt_ping_exporter/czerwonk-ping_exporter-1.0.1_GH0/czerwonk-ping_exporter-1.0.1_GH0.tar.gz) = 42870

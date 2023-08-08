@@ -1,0 +1,14 @@
+--- CMakeLists.txt.orig	2023-04-19 15:25:32 UTC
++++ CMakeLists.txt
+@@ -256,9 +256,9 @@ target_link_libraries(seqwish
+   "${sdsl-lite_LIB}/libsdsl.a"
+   "${sdsl-lite-divsufsort_LIB}/libdivsufsort.a"
+   "${sdsl-lite-divsufsort_LIB}/libdivsufsort64.a"
+-  "-latomic"
++  #"-latomic"
+   Threads::Threads
+-  jemalloc
++  #jemalloc
+   z)
+ if (BUILD_STATIC)
+   #set(CMAKE_EXE_LINKER_FLAGS "-static")

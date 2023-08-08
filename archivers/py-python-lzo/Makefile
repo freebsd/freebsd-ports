@@ -1,7 +1,7 @@
 PORTNAME=	python-lzo
-DISTVERSION=	1.14
+DISTVERSION=	1.15
 CATEGORIES=	archivers python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-USES=		localbase python:3.6+
-USE_PYTHON=	autoplist distutils
+USES=		localbase python
+USE_PYTHON=	autoplist distutils pytest
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>

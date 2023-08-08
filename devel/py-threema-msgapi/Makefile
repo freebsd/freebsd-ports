@@ -11,7 +11,7 @@ WWW=		https://github.com/lgrahl/threema-msgapi-sdk-python/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.2+
+USES=		python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	yes
 GH_ACCOUNT=	lgrahl

@@ -1,0 +1,11 @@
+--- tumblerd/Makefile.in.orig	2022-06-19 06:51:39 UTC
++++ tumblerd/Makefile.in
+@@ -1123,7 +1123,7 @@ install-data-am: install-confDATA install-serviceDATA 
+ info-am:
+ 
+ install-data-am: install-confDATA install-serviceDATA \
+-	install-systemd_userDATA install-tumblerdPROGRAMS
++	install-tumblerdPROGRAMS
+ 
+ install-dvi: install-dvi-am
+ 

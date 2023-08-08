@@ -1,5 +1,6 @@
 PORTNAME=	gnome-calendar
 PORTVERSION=	42.2
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libical.so:devel/libical \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libgweather-4.so:net/libgweather4 \
 		libgeoclue-2.so:net/geoclue \
 		libgeocode-glib.so:net/geocode-glib \
@@ -25,7 +26,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome \
-		localbase:ldflags meson pkgconfig python:3.4+,build tar:xz
+		localbase:ldflags meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo evolutiondataserver3 gtksourceview3 libadwaita
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

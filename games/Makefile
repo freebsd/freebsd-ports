@@ -28,7 +28,6 @@
     SUBDIR += abstreet
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
-    SUBDIR += acm
     SUBDIR += adonthell
     SUBDIR += adonthell-wastesedge
     SUBDIR += aestats
@@ -130,6 +129,7 @@
     SUBDIR += bsp
     SUBDIR += bstone
     SUBDIR += bubble-chains
+    SUBDIR += bucklespring
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
@@ -138,6 +138,7 @@
     SUBDIR += bzflag
     SUBDIR += bzflag-server
     SUBDIR += cake
+    SUBDIR += candycrisis
     SUBDIR += caph
     SUBDIR += cardpics
     SUBDIR += cataclysm-dda
@@ -152,9 +153,9 @@
     SUBDIR += chocolate-doom
     SUBDIR += chroma
     SUBDIR += chromium-bsu
+    SUBDIR += chromono
     SUBDIR += circuslinux
     SUBDIR += cmatrix
-    SUBDIR += cockatrice
     SUBDIR += coffeebreak
     SUBDIR += colobot
     SUBDIR += colorcode
@@ -256,6 +257,7 @@
     SUBDIR += ezquake
     SUBDIR += f1spirit-remake
     SUBDIR += fairymax
+    SUBDIR += fakesteak
     SUBDIR += falconseye
     SUBDIR += fargoal
     SUBDIR += fbg2
@@ -272,7 +274,6 @@
     SUBDIR += flightgear-aircraft
     SUBDIR += flightgear-data
     SUBDIR += flightgear-mb339-pan
-    SUBDIR += flightgear-terragear
     SUBDIR += flobopuyo
     SUBDIR += flyhard
     SUBDIR += flying
@@ -424,6 +425,7 @@
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kanagram
+    SUBDIR += kanatest
     SUBDIR += kapman
     SUBDIR += kartofel
     SUBDIR += katomic
@@ -478,6 +480,7 @@
     SUBDIR += lapispuzzle
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
+    SUBDIR += lbreakouthd
     SUBDIR += ldmud
     SUBDIR += leela-zero
     SUBDIR += legend-of-edgar
@@ -644,7 +647,6 @@
     SUBDIR += mvdsv
     SUBDIR += nInvaders
     SUBDIR += naev
-    SUBDIR += naev-data
     SUBDIR += narcissu2
     SUBDIR += nazghul
     SUBDIR += nbsdgames
@@ -681,6 +683,7 @@
     SUBDIR += numptyphysics-npcomplete
     SUBDIR += nwndata
     SUBDIR += nxengine
+    SUBDIR += oblige
     SUBDIR += odamex
     SUBDIR += oldrunner
     SUBDIR += omega
@@ -705,7 +708,7 @@
     SUBDIR += opencity
     SUBDIR += openclaw
     SUBDIR += openclonk
-    SUBDIR += opendungeons
+    SUBDIR += openenroth
     SUBDIR += openfodder
     SUBDIR += opengfx
     SUBDIR += openglad
@@ -770,7 +773,6 @@
     SUBDIR += pipewalker
     SUBDIR += pmars
     SUBDIR += pmars-sdl
-    SUBDIR += poker-eval
     SUBDIR += pokerth
     SUBDIR += polyglot
     SUBDIR += pongix
@@ -778,6 +780,7 @@
     SUBDIR += popstar
     SUBDIR += powder
     SUBDIR += powder-toy
+    SUBDIR += powder-toy-devel
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += prboom
@@ -796,6 +799,7 @@
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
     SUBDIR += pysolfc
+    SUBDIR += pysolfc-cardsets
     SUBDIR += pyspacewar
     SUBDIR += q2p
     SUBDIR += q2pro
@@ -876,7 +880,6 @@
     SUBDIR += sauerbraten
     SUBDIR += scare
     SUBDIR += scid
-    SUBDIR += scorched3d
     SUBDIR += scourge
     SUBDIR += scourge-data
     SUBDIR += scramble
@@ -920,8 +923,8 @@
     SUBDIR += solarconquest
     SUBDIR += solarus
     SUBDIR += solarus-quest-editor
+    SUBDIR += solver
     SUBDIR += spacejunk
-    SUBDIR += spacezero
     SUBDIR += speak
     SUBDIR += species
     SUBDIR += spellcast
@@ -990,7 +993,6 @@
     SUBDIR += tty-solitaire
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
-    SUBDIR += tuxmath
     SUBDIR += tuxpaint
     SUBDIR += tuxpaint-config
     SUBDIR += tuxpaint-fonts
@@ -1020,7 +1022,7 @@
     SUBDIR += vavoom-extras
     SUBDIR += vcmi
     SUBDIR += vectoroids
-    SUBDIR += veloren
+    SUBDIR += veloren-weekly
     SUBDIR += violetland
     SUBDIR += viruskiller
     SUBDIR += vitetris
@@ -1042,6 +1044,7 @@
     SUBDIR += widelands
     SUBDIR += wipeclean
     SUBDIR += wizznic
+    SUBDIR += wmeyes
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
     SUBDIR += wmtictactoe

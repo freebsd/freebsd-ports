@@ -1,0 +1,16 @@
+include/vdt/asin.h
+include/vdt/atan.h
+include/vdt/tanh.h
+include/vdt/atan2.h
+include/vdt/cos.h
+include/vdt/exp.h
+include/vdt/identity.h
+include/vdt/inv.h
+include/vdt/log.h
+include/vdt/sincos.h
+include/vdt/sin.h
+include/vdt/sqrt.h
+include/vdt/tan.h
+include/vdt/vdtcore_common.h
+include/vdt/vdtMath.h
+lib/libvdt.so

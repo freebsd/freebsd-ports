@@ -1,0 +1,5 @@
+Shuriken is an open source beat slicer for Linux which harnesses the power of
+aubio's onset detection algorithms and Rubber Band's time stretching
+capabilities. A simple Qt interface makes it easy to slice up drum loops, assign
+individual drum hits to MIDI keys, and change the tempo of loops in real-time.
+The JUCE library takes care of handling audio and MIDI behind the scenes.

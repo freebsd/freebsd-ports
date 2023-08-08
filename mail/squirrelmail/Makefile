@@ -1,5 +1,5 @@
 PORTNAME=	squirrelmail
-DISTVERSION=	20211024
+DISTVERSION=	20230207
 CATEGORIES=	mail www
 MASTER_SITES=	http://snapshots.squirrelmail.org/ \
 		http://freebsd.uzsolt.hu/src/
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		cpe gettext perl5 php:web,flavors tar:bzip2
 USE_PERL5=	run
-USE_PHP=	gettext hash mbstring openssl pcre session xml
+USE_PHP=	gettext mbstring session xml
 
 CONFLICTS=	squirreloutlook
 

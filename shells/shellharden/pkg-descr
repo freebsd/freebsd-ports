@@ -1,0 +1,5 @@
+Shellharden is a syntax highlighter and a tool to semi-automate the rewriting
+of scripts to ShellCheck conformance, mainly focused on quoting.
+
+The default mode of operation is like cat, but with syntax highlighting in
+foreground colors and suggestive changes in background colors.

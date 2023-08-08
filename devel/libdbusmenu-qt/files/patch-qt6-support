@@ -140,6 +140,35 @@
          )
  endif()
  
+--- src/dbusmenuexporter.cpp.orig	2016-02-18 10:13:53 UTC
++++ src/dbusmenuexporter.cpp
+@@ -29,6 +29,7 @@
+ #include <QTimer>
+ #include <QToolButton>
+ #include <QWidgetAction>
++#include <QActionGroup>
+ 
+ // Local
+ #include "dbusmenu_config.h"
+@@ -484,7 +485,7 @@ void DBusMenuExporter::activateAction(QAction *action)
+ {
+     int id = d->idForAction(action);
+     DMRETURN_IF_FAIL(id >= 0);
+-    uint timeStamp = QDateTime::currentDateTime().toTime_t();
++    uint timeStamp = QDateTime::currentDateTime().toSecsSinceEpoch();
+     d->m_dbusObject->ItemActivationRequested(id, timeStamp);
+ }
+ 
+--- src/dbusmenuimporter.cpp.orig	2016-02-18 10:13:53 UTC
++++ src/dbusmenuimporter.cpp
+@@ -34,6 +34,7 @@
+ #include <QTimer>
+ #include <QToolButton>
+ #include <QWidgetAction>
++#include <QActionGroup>
+ 
+ // Local
+ #include "dbusmenutypes_p.h"
 --- tests/CMakeLists.txt.orig	2016-02-18 10:13:58 UTC
 +++ tests/CMakeLists.txt
 @@ -1,9 +1,9 @@
@@ -222,32 +251,63 @@
      qt4_automoc(${dbusmenushortcuttest_SRCS})
  endif()
  
---- src/dbusmenuexporter.cpp.orig	2022-08-23 07:04:07 UTC
-+++ src/dbusmenuexporter.cpp
-@@ -29,6 +29,7 @@
- #include <QTimer>
- #include <QToolButton>
- #include <QWidgetAction>
-+#include <QActionGroup>
+--- src/dbusmenushortcut_p.cpp.orig	2023-02-18 11:49:10 UTC
++++ src/dbusmenushortcut_p.cpp
+@@ -22,6 +22,7 @@
+ 
+ // Qt
+ #include <QtGui/QKeySequence>
++#include <QtDBus/QDBusArgument>
  
  // Local
- #include "dbusmenu_config.h"
-@@ -484,7 +485,7 @@ void DBusMenuExporter::activateAction(QAction *action)
- {
-     int id = d->idForAction(action);
-     DMRETURN_IF_FAIL(id >= 0);
--    uint timeStamp = QDateTime::currentDateTime().toTime_t();
-+    uint timeStamp = QDateTime::currentDateTime().toSecsSinceEpoch();
-     d->m_dbusObject->ItemActivationRequested(id, timeStamp);
+ #include "debug_p.h"
+@@ -82,4 +83,30 @@ QKeySequence DBusMenuShortcut::toKeySequence() const
+     }
+     QString string = tmp.join(QLatin1String(", "));
+     return QKeySequence::fromString(string);
++}
++
++QDBusArgument &operator<<(QDBusArgument &argument, const DBusMenuShortcut &obj)
++{
++    int id = qMetaTypeId<QStringList>();
++    argument.beginArray(id);
++    typename DBusMenuShortcut::ConstIterator it = obj.constBegin();
++    typename DBusMenuShortcut::ConstIterator end = obj.constEnd();
++    for ( ; it != end; ++it)
++        argument << *it;
++    argument.endArray();
++    return argument;
++}
++
++const QDBusArgument &operator>>(const QDBusArgument &argument, DBusMenuShortcut &obj)
++{
++    argument.beginArray();
++    obj.clear();
++    while (!argument.atEnd()) {
++        QStringList item;
++        argument >> item;
++        obj.push_back(item);
++    }
++    argument.endArray();
++
++    return argument;
  }
+--- src/dbusmenushortcut_p.h.orig	2023-02-18 11:49:59 UTC
++++ src/dbusmenushortcut_p.h
+@@ -30,6 +30,7 @@ class QKeySequence;
  
---- src/dbusmenuimporter.cpp.orig	2022-08-23 07:00:03 UTC
-+++ src/dbusmenuimporter.cpp
-@@ -34,6 +34,7 @@
- #include <QTimer>
- #include <QToolButton>
- #include <QWidgetAction>
-+#include <QActionGroup>
  
- // Local
- #include "dbusmenutypes_p.h"
+ class QKeySequence;
++class QDBusArgument;
+ 
+ class DBUSMENU_EXPORT DBusMenuShortcut : public QList<QStringList>
+ {
+@@ -39,5 +40,8 @@ Q_DECLARE_METATYPE(DBusMenuShortcut)
+ };
+ 
+ Q_DECLARE_METATYPE(DBusMenuShortcut)
++
++DBUSMENU_EXPORT QDBusArgument &operator<<(QDBusArgument &argument, const DBusMenuShortcut &);
++DBUSMENU_EXPORT const QDBusArgument &operator>>(const QDBusArgument &argument, DBusMenuShortcut &);
+ 
+ #endif /* DBUSMENUSHORTCUT_H */

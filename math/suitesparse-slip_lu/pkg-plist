@@ -1,6 +1,0 @@
-include/suitesparse/SLIP_LU.h
-lib/libsliplu.so
-lib/libsliplu.so.1
-lib/libsliplu.so.1.0.2
-%%PORTDOCS%%%%DOCSDIR%%/SLIP_LU_README.md
-%%PORTDOCS%%%%DOCSDIR%%/SLIP_LU_UserGuide.pdf

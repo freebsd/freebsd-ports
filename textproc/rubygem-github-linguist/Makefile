@@ -1,11 +1,11 @@
 PORTNAME=	github-linguist
-PORTVERSION=	7.23.0
+PORTVERSION=	7.26.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitHub Language detection
-WWW=		https://github.com/github/linguist
+WWW=		https://github.com/github-linguist/linguist
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-rugged>=1.0<2:devel/rubygem-rugged
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/git-linguist bin/github-linguist
 

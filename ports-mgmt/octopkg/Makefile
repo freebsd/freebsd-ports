@@ -1,21 +1,20 @@
 PORTNAME=	octopkg
-PORTVERSION=	0.3.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.2
 CATEGORIES=	ports-mgmt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Graphical front-end to the FreeBSD pkg-ng package manager
 WWW=		https://tintaescura.com/projects/octopkg/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		qmake compiler:c++11-lib qt:5
-
+USES=		compiler:c++17-lang desktop-file-utils gl qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	aarnt
-
-USE_QT=		core concurrent declarative gui linguist network xml widgets \
+USE_GL=		gl
+USE_QT=		concurrent core declarative gui linguist network widgets xml \
 		buildtools:build
 
 PLIST_FILES=	bin/${PORTNAME} \

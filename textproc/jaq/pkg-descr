@@ -1,0 +1,7 @@
+jaq is a clone of the JSON data processing tool jq. jaq aims to support
+a large subset of jq's syntax and operations.
+
+jaq focusses on three goals:
+* Correctness
+* Performance
+* Simplicity

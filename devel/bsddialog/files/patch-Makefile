@@ -1,11 +1,11 @@
---- Makefile.orig	2022-08-31 07:44:56 UTC
+--- Makefile.orig	2023-01-04 13:09:10 UTC
 +++ Makefile
 @@ -15,7 +15,7 @@ LIBDEBUG= -DDEBUG
  CFLAGS= -g -Wall -I${LIBPATH}
  LIBDEBUG= -DDEBUG
  .endif
--LDFLAGS+= -Wl,-rpath=${LIBPATH} -L${LIBPATH} -lbsddialog
-+LDFLAGS+= -L${LIBPATH} -lbsddialog
+-LDFLAGS+= -ltinfow -Wl,-rpath=${LIBPATH} -L${LIBPATH} -lbsddialog
++LDFLAGS+= -ltinfow -L${LIBPATH} -lbsddialog
  
  BINDIR= /usr/local/bin
  MAN= ${OUTPUT}.1

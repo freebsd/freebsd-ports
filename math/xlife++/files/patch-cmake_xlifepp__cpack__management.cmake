@@ -1,6 +1,6 @@
---- cmake/xlifepp_cpack_management.cmake.orig	2018-05-09 16:11:45 UTC
+--- cmake/xlifepp_cpack_management.cmake.orig	2022-04-22 18:54:13 UTC
 +++ cmake/xlifepp_cpack_management.cmake
-@@ -11,7 +11,7 @@ install(FILES "${CMAKE_SOURCE_DIR}/VERSI
+@@ -10,7 +10,7 @@ install(FILES "${CMAKE_SOURCE_DIR}/VERSION.txt"
          DESTINATION .
          COMPONENT configuration)
  install(DIRECTORY "${CMAKE_SOURCE_DIR}/cmake/"
@@ -9,7 +9,7 @@
          COMPONENT configuration
          PATTERN lock.cmake EXCLUDE
          PATTERN guessOS.cmake EXCLUDE
-@@ -43,7 +43,7 @@ endif()
+@@ -46,7 +46,7 @@ endif()
  configure_file(${CMAKE_SOURCE_DIR}/etc/templates/getBinaryConfig.cmake.cmake ${CMAKE_BINARY_DIR}/getBinaryConfig.cmake @ONLY)
  
  install(FILES ${CMAKE_BINARY_DIR}/getBinaryConfig.cmake
@@ -18,7 +18,7 @@
          COMPONENT configuration)
  
  file(GLOB headers "${CMAKE_SOURCE_DIR}/include/*.h")
-@@ -107,7 +107,7 @@ install(FILES "${CMAKE_SOURCE_DIR}/etc/g
+@@ -117,7 +117,7 @@ install(FILES "${CMAKE_SOURCE_DIR}/etc/gmsh/xlifepp_ma
          COMPONENT others)
  
  install(DIRECTORY "${CMAKE_SOURCE_DIR}/etc/messages/"
@@ -27,7 +27,7 @@
          USE_SOURCE_PERMISSIONS
          COMPONENT others)
  
-@@ -115,15 +115,15 @@ install(FILES "${CMAKE_SOURCE_DIR}/doc/t
+@@ -125,15 +125,15 @@ install(FILES "${CMAKE_SOURCE_DIR}/doc/tex/user_docume
                "${CMAKE_SOURCE_DIR}/doc/tex/dev_documentation.pdf"
                "${CMAKE_SOURCE_DIR}/doc/tex/examples.pdf"
                "${CMAKE_SOURCE_DIR}/doc/tex/tutorial.pdf"
@@ -45,4 +45,4 @@
 +        DESTINATION share/examples/xlife++
          COMPONENT others)
  
- install(FILES "${CMAKE_SOURCE_DIR}/tools/visuTermVec.m"
+ install(FILES "${CMAKE_SOURCE_DIR}/etc/visuTermVec.m"

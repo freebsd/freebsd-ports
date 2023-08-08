@@ -1,16 +1,16 @@
 PORTNAME=	DendroPy
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.1
 CATEGORIES=	science python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Phylogenetic computing library
 WWW=		http://packages.python.org/DendroPy/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -1,18 +1,21 @@
---- cmake/WlFunctions.cmake.orig	2021-06-14 09:22:20 UTC
+--- cmake/WlFunctions.cmake.orig	2022-10-22 11:51:16 UTC
 +++ cmake/WlFunctions.cmake
-@@ -132,7 +132,7 @@ macro(_common_compile_tasks)
-     if (OPTION_BUILD_WINSTATIC)
-       target_link_libraries(${NAME} ${TARGET_LINK_FLAGS} CURL::libcurl ${CURL_EXTRA_LIBS} gdi32 crypt32 wldap32 nghttp2)
-     else()
--      target_link_libraries(${NAME} curl)
-+      target_link_libraries(${NAME} CURL::libcurl)
-     endif()
+@@ -93,8 +93,8 @@ macro(_common_compile_tasks)
+ 
+   if(ARG_USES_MINIZIP)
+       if(MINIZIP_STATIC_LIBRARIES)
+-          target_link_libraries(${NAME} minizip)
+-          message(STATUS "Link ${NAME} with minizip")
++          target_link_libraries(${NAME} ${MINIZIP_STATIC_LIBRARIES})
++          message(STATUS "Link ${NAME} with ${MINIZIP_STATIC_LIBRARIES}")
+       else()
+           target_link_libraries(${NAME} third_party_minizip)
+           message(STATUS "Link ${NAME} with third_party_minizip")
+@@ -103,7 +103,6 @@ macro(_common_compile_tasks)
+ 
+   if(ARG_USES_ATOMIC AND NOT APPLE AND ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang"))
+     # clang on linux needs explicit linkage against standard library atomic
+-    target_link_libraries(${NAME} atomic)
    endif()
  
-@@ -325,5 +325,5 @@ function(wl_binary NAME)
- 
-   #Quoting the CMake documentation on DESTINATION:
-   #"If a relative path is given it is interpreted relative to the value of CMAKE_INSTALL_PREFIX"
--  install(TARGETS ${NAME} DESTINATION "." COMPONENT ExecutableFiles)
-+  install(TARGETS ${NAME} DESTINATION "bin" COMPONENT ExecutableFiles)
- endfunction()
+   if(ARG_USES_ZLIB)

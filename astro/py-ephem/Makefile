@@ -1,7 +1,7 @@
 PORTNAME=	ephem
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 CATEGORIES=	astro math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/ephem/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+ # Because of UnicodeDecodeError in ascii.py
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:

@@ -18,6 +18,13 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 USES=		ncurses
 
 NO_WRKSUBDIR=	yes
+
 PLIST_FILES=	bin/uzap man/man1/uzap.1.gz
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>

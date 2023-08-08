@@ -1,7 +1,6 @@
 PORTNAME=	geoipupdate
-PORTVERSION=	4.9.0
+PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	6
 CATEGORIES=	net geography
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		gmake go:modules,no_targets
-GO_MODULE=	github.com/maxmind/geoipupdate/v4
+GO_MODULE=	github.com/maxmind/geoipupdate/v6
 
 MAKE_ENV+=	${GO_ENV} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
@@ -55,5 +54,8 @@ do-install-DOCS-on:
 do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/build/geoipupdate.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/build/GeoIP.conf.5  ${STAGEDIR}${MANPREFIX}/man/man5
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} ./...
 
 .include <bsd.port.mk>

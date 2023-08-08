@@ -1,20 +1,20 @@
---- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2022-08-31 12:19:35 UTC
+--- components/password_manager/core/browser/sync/password_sync_bridge.cc.orig	2023-04-28 17:01:32 UTC
 +++ components/password_manager/core/browser/sync/password_sync_bridge.cc
-@@ -162,7 +162,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
-   // Delete the local undecryptable copy when this is MacOS only.
- #if BUILDFLAG(IS_MAC)
+@@ -186,7 +186,7 @@ bool IsCredentialPhished(const sync_pb::PasswordSpecif
+ // merge.
+ bool ShouldRecoverPasswordsDuringMerge() {
+   // Delete the local undecryptable copy when this is MacOS or Linux only.
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return true;
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return base::FeatureList::IsEnabled(
-       features::kSyncUndecryptablePasswordsLinux);
  #else
-@@ -171,7 +171,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
+   return false;
+@@ -194,7 +194,7 @@ bool ShouldRecoverPasswordsDuringMerge() {
  }
  
  bool ShouldCleanSyncMetadataDuringStartupWhenDecryptionFails() {
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return ShouldRecoverPasswordsDuringMerge() &&
           base::FeatureList::IsEnabled(
               features::kForceInitialSyncWhenDecryptionFails);

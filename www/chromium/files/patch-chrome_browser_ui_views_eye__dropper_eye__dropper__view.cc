@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc.orig	2023-01-11 09:17:16 UTC
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view.cc
-@@ -157,7 +157,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
+@@ -159,7 +159,7 @@ EyeDropperView::EyeDropperView(content::RenderFrameHos
    // EyeDropper/WidgetDelegate.
    set_owned_by_client();
    SetPreferredSize(GetSize());

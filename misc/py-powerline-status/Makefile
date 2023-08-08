@@ -1,36 +1,38 @@
 PORTNAME=	powerline-status
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
 WWW=		https://github.com/powerline/powerline
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	50d73bfbc8903d526e9de2bf98521e00206c018a.patch:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=3.2.0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
-
-OPTIONS_DEFINE=	DOCS
-
+USES=		python shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	powerline
+GH_PROJECT=	powerline
 USE_PYTHON=	autoplist distutils
-
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 SHEBANG_FILES=	powerline/bindings/awesome/powerline-awesome.py \
 		powerline/bindings/bar/powerline-bar.py \
 		powerline/bindings/i3/powerline-i3.py \
 		powerline/bindings/lemonbar/powerline-lemonbar.py
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	powerline
-GH_PROJECT=	powerline
-
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>=0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 
 SPHINX_BUILD_CMD=	sphinx-build-${PYTHON_VER}
 

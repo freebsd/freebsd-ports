@@ -1,6 +1,6 @@
 PORTNAME=	krill
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	0.13.1
 PORTREVISION=	2
 CATEGORIES=	net
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/NLnetLabs/krill
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 USES=		cargo ssl
@@ -24,255 +24,22 @@ USE_RC_SUBR=	${PORTNAME}
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.17.0 \
-		adler-1.0.2 \
-		adler32-1.2.0 \
-		aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		ascii-1.0.0 \
-		ascii-canvas-3.0.0 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
-		backtrace-0.3.64 \
-		base64-0.13.0 \
-		basic-cookies-0.1.4 \
-		bcder-0.6.1 \
-		bit-set-0.5.2 \
-		bit-vec-0.6.3 \
-		bitflags-1.3.2 \
-		block-buffer-0.9.0 \
-		bumpalo-3.9.1 \
-		bytes-1.1.0 \
-		cc-1.0.73 \
-		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		chunked_transfer-1.4.0 \
-		cipher-0.2.5 \
-		clap-2.34.0 \
-		core-foundation-0.9.3 \
-		core-foundation-sys-0.8.3 \
-		cpufeatures-0.2.1 \
-		crc32fast-1.3.2 \
-		crunchy-0.2.2 \
-		crypto-mac-0.10.1 \
-		ctrlc-3.2.1 \
-		deunicode-0.4.3 \
-		diff-0.1.12 \
-		digest-0.9.0 \
-		dirs-next-2.0.0 \
-		dirs-sys-next-0.1.2 \
-		either-1.6.1 \
-		ena-0.14.0 \
-		encoding_rs-0.8.30 \
-		error-chain-0.11.0 \
-		fastrand-1.7.0 \
-		fern-0.5.9 \
-		fixedbitset-0.2.0 \
-		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.0.1 \
-		fslock-0.2.1 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
-		futures-util-0.3.21 \
-		generic-array-0.14.5 \
-		getrandom-0.2.4 \
-		gimli-0.26.1 \
-		h2-0.3.11 \
-		hashbrown-0.11.2 \
-		hermit-abi-0.1.19 \
-		hex-0.4.3 \
-		hmac-0.10.1 \
-		http-0.2.6 \
-		http-body-0.4.4 \
-		httparse-1.6.0 \
-		httpdate-1.0.2 \
-		hyper-0.14.17 \
-		hyper-tls-0.5.0 \
-		idna-0.2.3 \
-		impl-trait-for-tuples-0.2.2 \
-		indexmap-1.8.0 \
-		instant-0.1.12 \
-		intervaltree-0.2.7 \
-		ipnet-2.3.1 \
-		itertools-0.9.0 \
-		itertools-0.10.3 \
-		itoa-1.0.1 \
-		jmespatch-0.3.0 \
-		js-sys-0.3.56 \
-		lalrpop-0.19.7 \
-		lalrpop-util-0.19.7 \
-		lazy_static-1.4.0 \
-		libc-0.2.119 \
-		libflate-1.1.2 \
-		libflate_lz77-1.1.0 \
-		lock_api-0.4.6 \
-		log-0.4.14 \
-		maplit-1.0.2 \
-		matchers-0.0.1 \
-		matches-0.1.9 \
-		memchr-2.4.1 \
-		memoffset-0.6.5 \
-		mime-0.3.16 \
-		miniz_oxide-0.4.4 \
-		mio-0.8.0 \
-		miow-0.3.7 \
-		native-tls-0.2.8 \
-		new_debug_unreachable-1.0.4 \
-		nix-0.23.1 \
-		ntapi-0.3.7 \
-		num-bigint-0.4.3 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.1 \
-		oauth2-4.1.0 \
-		object-0.27.1 \
-		once_cell-1.9.0 \
-		opaque-debug-0.3.0 \
-		openidconnect-2.2.0 \
-		openssl-0.10.38 \
-		openssl-probe-0.1.5 \
-		openssl-src-111.17.0+1.1.1m \
-		openssl-sys-0.9.72 \
-		ordered-float-1.1.1 \
-		oso-0.12.4 \
-		parking_lot-0.11.2 \
-		parking_lot_core-0.8.5 \
-		pbkdf2-0.7.5 \
-		percent-encoding-2.1.0 \
-		petgraph-0.5.1 \
-		phf_shared-0.10.0 \
-		pico-args-0.4.2 \
-		pin-project-lite-0.2.8 \
-		pin-utils-0.1.0 \
-		pkg-config-0.3.24 \
-		polar-core-0.12.4 \
-		ppv-lite86-0.2.16 \
-		precomputed-hash-0.1.1 \
-		priority-queue-1.2.1 \
-		proc-macro2-1.0.36 \
-		quick-xml-0.22.0 \
-		quote-1.0.15 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.3 \
-		redox_syscall-0.2.10 \
-		redox_users-0.4.0 \
-		regex-1.5.5 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		remove_dir_all-0.5.3 \
-		reqwest-0.11.9 \
-		ring-0.16.20 \
-		rle-decode-fast-1.0.3 \
-		rpassword-5.0.1 \
-		rpki-0.13.2 \
-		rustc-demangle-0.1.21 \
-		rustc_version-0.2.3 \
-		rustls-0.19.1 \
-		rustversion-1.0.6 \
-		ryu-1.0.9 \
-		salsa20-0.7.2 \
-		schannel-0.1.19 \
-		scopeguard-1.1.0 \
-		scrypt-0.6.5 \
-		sct-0.6.1 \
-		security-framework-2.6.1 \
-		security-framework-sys-2.6.1 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.136 \
-		serde-value-0.6.0 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.79 \
-		serde_path_to_error-0.1.7 \
-		serde_urlencoded-0.7.1 \
-		sha2-0.9.9 \
-		sharded-slab-0.1.4 \
-		siphasher-0.3.9 \
-		slab-0.4.5 \
-		slug-0.1.4 \
-		smallvec-1.8.0 \
-		socket2-0.4.4 \
-		spin-0.5.2 \
-		string_cache-0.8.3 \
-		strsim-0.8.0 \
-		subtle-2.4.1 \
-		syn-1.0.86 \
-		syslog-4.0.1 \
-		tempfile-3.3.0 \
-		term-0.7.0 \
-		textwrap-0.11.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
-		thread_local-1.1.4 \
-		time-0.1.43 \
-		tiny-keccak-2.0.2 \
-		tiny_http-0.8.2 \
-		tinyvec-1.5.1 \
-		tinyvec_macros-0.1.0 \
-		tokio-1.17.0 \
-		tokio-macros-1.7.0 \
-		tokio-native-tls-0.3.0 \
-		tokio-rustls-0.22.0 \
-		tokio-util-0.6.9 \
-		toml-0.5.8 \
-		tower-service-0.3.1 \
-		tracing-0.1.31 \
-		tracing-attributes-0.1.19 \
-		tracing-core-0.1.22 \
-		tracing-log-0.1.2 \
-		tracing-serde-0.1.3 \
-		tracing-subscriber-0.2.25 \
-		try-lock-0.2.3 \
-		typenum-1.15.0 \
-		unicode-bidi-0.3.7 \
-		unicode-normalization-0.1.19 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.2 \
-		untrusted-0.7.1 \
-		url-2.2.2 \
-		urlparse-0.7.3 \
-		uuid-0.8.2 \
-		valuable-0.1.0 \
-		vcpkg-0.2.15 \
-		vec_map-0.8.2 \
-		version_check-0.9.4 \
-		want-0.3.0 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.79 \
-		wasm-bindgen-backend-0.2.79 \
-		wasm-bindgen-futures-0.4.29 \
-		wasm-bindgen-macro-0.2.79 \
-		wasm-bindgen-macro-support-0.2.79 \
-		wasm-bindgen-shared-0.2.79 \
-		web-sys-0.3.56 \
-		webpki-0.21.4 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.7.0 \
-		xml-rs-0.8.4
-
 post-install:
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krill
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillc
-		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillup
-		@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/krill
-		${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
-			${STAGEDIR}${PREFIX}/etc/krill/krill.conf.sample
-		${INSTALL_MAN} ${WRKSRC}/doc/krill.1 ${STAGEDIR}${PREFIX}/man/man1/
-		${INSTALL_MAN} ${WRKSRC}/doc/krillc.1 ${STAGEDIR}${PREFIX}/man/man1/
-		${INSTALL_MAN} ${WRKSRC}/doc/krillup.1 ${STAGEDIR}${PREFIX}/man/man1/
-		${MKDIR} ${STAGEDIR}${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf ${STAGEDIR}${DOCSDIR}
-		${MKDIR} ${STAGEDIR}/var/krill
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krill
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillc
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/krillup
+	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/krill
+	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
+		${STAGEDIR}${PREFIX}/etc/krill/krill.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/doc/krill.1 \
+		${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillc.1 \
+		${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/krillup.1 \
+		${STAGEDIR}${PREFIX}/man/man1/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/defaults/krill.conf \
+		${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/var/krill
 
 .include <bsd.port.mk>

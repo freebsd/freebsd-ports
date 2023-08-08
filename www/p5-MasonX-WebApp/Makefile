@@ -20,7 +20,7 @@ RUN_DEPENDS=	mp2bug:www/mod_perl2 \
 TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Output>=0:devel/p5-Test-Output
 
-USES=		apache:run,2.2+ perl5
+USES=		apache:run perl5
 USE_PERL5=	modbuild
 
 .include <bsd.port.mk>

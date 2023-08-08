@@ -19,7 +19,7 @@ PGSQL_DESC=	Install PostgreSQL (report data storing)
 USES=		tar:bzip2
 
 PHP_USES=	php
-PHP_VARS=	IGNORE_WITH_PHP=81 82
+PHP_VARS=	IGNORE_WITH_PHP=81 82 83
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -29,7 +29,7 @@ PLIST_SUB=	OWNER=${WWWOWN} GROUP=${WWWGRP}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USES+=		apache:run,2.2+
+USES+=		apache:run
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -38,7 +38,7 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-USE_PHP+=	curl pcre bcmath pdo mcrypt hash session pgsql spl dom xmlrpc ctype openssl simplexml soap json
+USE_PHP+=	curl bcmath pdo mcrypt session pgsql spl dom xmlrpc ctype simplexml soap
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif

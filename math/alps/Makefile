@@ -1,7 +1,6 @@
 PORTNAME=	alps
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.0.1
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libCoinUtils.so:math/coinutils \
 		libopenblas.so:math/openblas
 
 USES=		blaslapack gmake libtool pkgconfig
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

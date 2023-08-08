@@ -1,0 +1,11 @@
+bin/catsit-timer
+bin/catsit-watch
+etc/catsit.conf
+etc/rc.d/catsitd
+man/man1/catsit-timer.1.gz
+man/man1/catsit-watch.1.gz
+man/man5/catsit.conf.5.gz
+man/man8/catsit.8.gz
+man/man8/catsitd.8.gz
+sbin/catsit
+sbin/catsitd

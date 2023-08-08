@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	BRiAl
 GH_PROJECT=	${GH_ACCOUNT}
 
-USES=		python:3.6+
+USES=		python
 
 WRKSRC_SUBDIR=	sage-brial
 USE_PYTHON=	distutils

@@ -1,7 +1,7 @@
 PORTNAME=	dspdfviewer
 PORTVERSION=	1.15.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	58
+PORTREVISION=	64
 CATEGORIES=	graphics
 
 MAINTAINER=	fox@FreeBSD.org
@@ -51,7 +51,7 @@ CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
 # Fixes build failure for Clang 11.0.0
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300111 && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300111 || ${OSVERSION} >= 1204000) && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=suggest-destructor-override
 CFLAGS+=	-Wno-error=suggest-override
 .endif
@@ -59,6 +59,11 @@ CFLAGS+=	-Wno-error=suggest-override
 # Fixes build failure for Clang 14.0.3
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059 && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=       -Wno-error=bitwise-instead-of-logical
+.endif
+
+# Fixes build failure for Clang 16.0.6
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400059 && ${CHOSEN_COMPILER_TYPE} == clang
+CFLAGS+=       -Wno-error=unsafe-buffer-usage
 .endif
 
 # Prepare for Qt5-5.15

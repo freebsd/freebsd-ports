@@ -2,7 +2,7 @@ PORTNAME=	zope.contentprovider
 PORTVERSION=	3.7.2
 PORTREVISION=	1
 CATEGORIES=	devel python zope
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	zope
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=3.8.0:devel/py-zope.componen
 		${PYTHON_PKGNAMEPREFIX}zope.schema>=3.5.1dev:devel/py-zope.schema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:devel/py-zope.tales@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

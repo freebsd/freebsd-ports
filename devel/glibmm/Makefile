@@ -1,5 +1,5 @@
 PORTNAME=	glibmm
-PORTVERSION=	2.66.4
+PORTVERSION=	2.66.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -12,7 +12,7 @@ WWW=		https://www.gtkmm.org/
 LICENSE=	LGPL21
 
 USES=		compiler:c++11-lang gettext gnome meson pathfix perl5 \
-		pkgconfig python:3.7+,build shebangfix tar:xz
+		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 libsigc++20
 USE_LDCONFIG=	yes
 

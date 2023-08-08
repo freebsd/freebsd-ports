@@ -1,0 +1,16 @@
+Lambda Builders is a Python library to compile, build and package AWS Lambda
+functions for several runtimes & frameworks.
+Lambda Builders currently contains the following workflows
+
+  Java with Gradle
+  Java with Maven
+  Dotnet with amazon.lambda.tools
+  Python with Pip
+  Javascript with Npm
+  Typescript with esbuild
+  Ruby with Bundler
+  Go with Mod
+  Rust with Cargo
+
+In Addition to above workflows, AWS Lambda Builders also supports Custom
+Workflows through a Makefile.

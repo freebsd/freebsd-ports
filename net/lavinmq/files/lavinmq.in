@@ -1,0 +1,94 @@
+#!/bin/sh
+
+# PROVIDE: lavinmq
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# lavinmq_enable (bool):	Set it to YES to enable lavinmq.
+#			Default is "NO".
+# lavinmq_user (user):	Set user to run lavinmq.
+#			Default is "lavinmq".
+# lavinmq_group (group):	Set group to run lavinmq.
+#			Default is "lavinmq".
+# lavinmq_config (file):	Set lavinmq config file.
+#			Default is "%%ETCDIR%%/lavinmq.conf".
+# lavinmq_syslog_output_enable (bool):	Set to enable syslog output.
+#					Default is "NO". See daemon(8).
+# lavinmq_syslog_output_priority (str):	Set syslog priority if syslog enabled.
+#					Default is "info". See daemon(8).
+# lavinmq_syslog_output_facility (str):	Set syslog facility if syslog enabled.
+#					Default is "daemon". See daemon(8).
+
+. /etc/rc.subr
+
+name=lavinmq
+rcvar=lavinmq_enable
+
+load_rc_config $name
+
+: ${lavinmq_enable:="NO"}
+: ${lavinmq_dir:="/var/db/lavinmq"}
+: ${lavinmq_run:="/var/run/lavinmq"}
+: ${lavinmq_user:="lavinmq"}
+: ${lavinmq_group:="lavinmq"}
+: ${lavinmq_config:="%%ETCDIR%%/config.ini"}
+
+DAEMON=$(/usr/sbin/daemon 2>&1 | grep -q syslog ; echo $?)
+if [ ${DAEMON} -eq 0 ]; then
+        : ${lavinmq_syslog_output_enable:="NO"}
+        : ${lavinmq_syslog_output_priority:="info"}
+        : ${lavinmq_syslog_output_facility:="daemon"}
+        if checkyesno lavinmq_syslog_output_enable; then
+                lavinmq_syslog_output_flags="-T ${name}"
+
+                if [ -n "${lavinmq_syslog_output_priority}" ]; then
+                        lavinmq_syslog_output_flags="${lavinmq_syslog_output_flags} -s ${lavinmq_syslog_output_priority}"
+                fi
+
+                if [ -n "${lavinmq_syslog_output_facility}" ]; then
+                        lavinmq_syslog_output_flags="${lavinmq_syslog_output_flags} -l ${lavinmq_syslog_output_facility}"
+                fi
+        fi
+else
+        lavinmq_syslog_output_enable="NO"
+        lavinmq_syslog_output_flags=""
+fi
+
+pidfile=/var/run/lavinmq/daemon.pid
+procname="%%PREFIX%%/bin/lavinmq"
+command="/usr/sbin/daemon"
+command_args="-f -t ${name} ${lavinmq_syslog_output_flags} -p ${pidfile} /usr/bin/env ${lavinmq_env} ${procname} --config=${lavinmq_config}"
+
+extra_commands="reload monitor"
+monitor_cmd=lavinmq_monitor
+start_precmd=lavinmq_startprecmd
+required_files="$lavinmq_config"
+
+lavinmq_monitor()
+{
+	sig_reload=USR1
+	run_rc_command "reload"
+}
+
+lavinmq_startprecmd()
+{
+        if [ ! -d ${lavinmq_run} ]; then
+                install -d -o ${lavinmq_user} -g ${lavinmq_group} ${lavinmq_run}
+        fi
+
+        if [ ! -d ${lavinmq_dir} ]; then
+                install -d -o ${lavinmq_user} -g ${lavinmq_group} ${lavinmq_dir}
+        fi
+
+        if [ ! -e ${pidfile} ]; then
+                install -o ${lavinmq_user} -g ${lavinmq_group} /dev/null ${pidfile};
+        fi
+
+        # remove stray sockets that can block startup
+        rm -rf ${lavinmq_run}/*.sock /tmp/lavinmq
+}
+
+run_rc_command "$1"

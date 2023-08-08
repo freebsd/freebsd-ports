@@ -10,9 +10,11 @@ share/icons/hicolor/scalable/apps/trackballs.svg
 %%NLS%%share/locale/de/LC_MESSAGES/trackballs.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/trackballs.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/trackballs.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/trackballs.mo
 %%NLS%%share/locale/it/LC_MESSAGES/trackballs.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/trackballs.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/trackballs.mo
+share/metainfo/trackballs.appdata.xml
 %%DATADIR%%/fonts/FreeSerifBoldItalic.ttf
 %%DATADIR%%/fonts/menuFont.ttf
 %%DATADIR%%/highScores

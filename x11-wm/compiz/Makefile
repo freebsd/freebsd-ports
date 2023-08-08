@@ -62,12 +62,17 @@ FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_USES=		fuse
 
 GTK2_CONFIGURE_ENABLE=	gtk
-GTK2_USE=	GNOME=glib20,libwnck
+GTK2_USE=	GNOME=glib20
+GTK2_LIB_DEPENDS=	libwnck-1.so:x11-toolkits/libwnck
 
 SVG_CONFIGURE_ENABLE=	librsvg
 SVG_USE=	GNOME=librsvg2
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .if ${PORT_OPTIONS:MDBUS} && ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-dbus-glib

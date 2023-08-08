@@ -1,6 +1,19 @@
---- CMakeLists.txt.orig	2017-11-21 17:47:16 UTC
+--- CMakeLists.txt.orig	2023-03-31 14:32:25 UTC
 +++ CMakeLists.txt
-@@ -206,6 +206,11 @@ ENDIF()
+@@ -206,9 +206,9 @@ CHECK_INCLUDE_FILES(sys/stat.h HAVE_SYS_STAT_H)
+ CHECK_INCLUDE_FILES(libtar.h HAVE_LIBTAR_H)
+ CHECK_INCLUDE_FILES(execinfo.h HAVE_EXECINFO_H)
+ FIND_PACKAGE(Backtrace)
+-CHECK_LIBRARY_EXISTS(tar tar_open "" HAVE_LIBTAR_OPEN)
+-CHECK_LIBRARY_EXISTS(tar tar_close "" HAVE_LIBTAR_CLOSE)
+-CHECK_LIBRARY_EXISTS(tar tar_extract_all "" HAVE_LIBTAR_EXTRACT_ALL)
++CHECK_LIBRARY_EXISTS(/usr/local/lib/libtar.so tar_open "" HAVE_LIBTAR_OPEN)
++CHECK_LIBRARY_EXISTS(/usr/local/lib/libtar.so tar_close "" HAVE_LIBTAR_CLOSE)
++CHECK_LIBRARY_EXISTS(/usr/local/lib/libtar.so tar_extract_all "" HAVE_LIBTAR_EXTRACT_ALL)
+ IF(HAVE_LIBTAR_H AND HAVE_LIBTAR_OPEN AND HAVE_LIBTAR_CLOSE AND HAVE_LIBTAR_EXTRACT_ALL)
+     SET(LIBTAR_OK TRUE)
+ ELSE()
+@@ -222,6 +222,11 @@ ENDIF()
  FIND_HELPER(LIBARCHIVE libarchive archive.h archive)
  IF( WANT_LIBARCHIVE AND LIBARCHIVE_FOUND)
      SET(WANT_LIBTAR FALSE)
@@ -12,7 +25,7 @@
  ENDIF()
  FIND_HELPER(LIBSNDFILE sndfile sndfile.h sndfile)
  FIND_HELPER(ALSA alsa alsa/asoundlib.h asound )
-@@ -215,6 +220,8 @@ FIND_HELPER(OSC liblo lo/lo.h lo)
+@@ -231,6 +236,8 @@ FIND_HELPER(OSC liblo lo/lo.h lo)
  
  IF("${CMAKE_SYSTEM_NAME}" MATCHES "NetBSD")
  	FIND_HELPER(OSS oss sys/soundcard.h ossaudio )

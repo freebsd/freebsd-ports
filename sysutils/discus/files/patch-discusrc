@@ -1,6 +1,6 @@
---- discusrc.orig	2021-04-27 15:52:50 UTC
+--- discusrc.orig	2023-01-15 08:07:06 UTC
 +++ discusrc
-@@ -17,11 +17,6 @@ opts["graph"] = 1
+@@ -19,11 +19,6 @@ opts["graph"] = 1
  opts["graph_char"] = "*"
  opts["graph_fill"] = "-"
  
@@ -12,7 +12,7 @@
  ##  Number of decimal places to display, same as -p
  opts["places"] = 1
  
-@@ -30,10 +25,6 @@ opts["skip_list"] = ["/dev/pts", "/proc", "/dev", "/pr
+@@ -32,10 +27,6 @@ opts["skip_list"] = ["/dev/pts", "/proc", "/dev", "/pr
  
  ##  Use smart formatting of numbers.
  opts["smart"] = 1

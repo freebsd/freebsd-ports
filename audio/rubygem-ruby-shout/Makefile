@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libshout.so:audio/libshout
 
 CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include"
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

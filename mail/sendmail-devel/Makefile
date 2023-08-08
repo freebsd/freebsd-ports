@@ -1,5 +1,5 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.17.1.20
+PORTVERSION=	8.17.1.27
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
@@ -72,7 +72,7 @@ TLS_USES=	ssl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASLAUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 DANE_IMPLIES=	TLS
-LDAP_USE=	OPENLDAP=yes
+LDAP_USES=	ldap
 LDAP_IMPLIES=	DANE
 BDB_USES=	bdb
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm

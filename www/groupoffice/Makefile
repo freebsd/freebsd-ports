@@ -19,8 +19,8 @@ USES=		mysql shebangfix php:web python
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_PHP=	ctype curl dom fileinfo filter hash intl json mbstring \
-		mysqli openssl pcre pdo pdo_mysql phar posix session \
+USE_PHP=	ctype curl dom fileinfo filter intl mbstring \
+		mysqli pdo pdo_mysql phar posix session \
 		simplexml soap sysvshm sysvsem tokenizer xml xmlreader \
 		xmlwriter zip zlib
 SHEBANG_FILES=	groupoffice \

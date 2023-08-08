@@ -1,5 +1,6 @@
 PORTNAME=	tflearn
 DISTVERSION=	0.3.2-53
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g5c23566
 CATEGORIES=	misc python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tensorflow>0:science/py-tensorflow@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 

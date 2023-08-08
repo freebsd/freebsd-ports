@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-inifile>=3.0.0:textproc/rubygem-inifile \
 		rubygem-jwt>2.1:www/rubygem-jwt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -22,6 +22,8 @@ TEST_DEPENDS=	p5-Test-Memory-Cycle>=1.02:devel/p5-Test-Memory-Cycle \
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	CHANGES README

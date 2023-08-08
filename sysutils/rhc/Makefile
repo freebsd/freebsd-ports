@@ -21,7 +21,6 @@ RUN_DEPENDS=	minitar:archivers/rubygem-minitar-cli \
 		rubygem-open4>0:devel/rubygem-open4
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/rhc

@@ -1,0 +1,5 @@
+This is a lightweight framework to easily implement a typical (networking)
+service in C, using an event-driven API.
+
+It only uses standard POSIX APIs, therefore it is not suitable for services
+that must scale to thousands of concurrent clients.

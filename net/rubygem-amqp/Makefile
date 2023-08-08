@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-amq-protocol>=2.2.0:net/rubygem-amq-protocol \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

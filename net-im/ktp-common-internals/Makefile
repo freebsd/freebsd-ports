@@ -1,5 +1,6 @@
 PORTNAME=	ktp-common-internals
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,6 +19,9 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mission-control-plugins.0/mcp-account-manager-acco
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Will not be part of KDE Gear 23.08 in August
+EXPIRATION_DATE=	2023-09-30
 
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 		qt:5 tar:xz xorg

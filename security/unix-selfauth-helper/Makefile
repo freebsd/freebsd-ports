@@ -1,20 +1,18 @@
 PORTNAME=	unix-selfauth-helper
-DISTVERSION=	1.0.1
-DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1
 CATEGORIES=	security
+MASTER_SITES=	${WWW}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Local self-authentication for pam_exec
-WWW=		https://github.com/Zirias/unix-selfauth-helper
+WWW=		https://github.com/Zirias/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
 
-USES=		uidfix
+USES=		tar:xz
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Zirias
-
-PLIST_FILES=	libexec/unix-selfauth-helper \
+PLIST_FILES=	etc/pam.d/unix-selfauth \
+		libexec/unix-selfauth-helper \
 		man/man8/unix-selfauth-helper.8.gz
 
 .include <bsd.port.mk>

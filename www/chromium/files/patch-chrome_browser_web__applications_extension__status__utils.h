@@ -1,7 +1,7 @@
---- chrome/browser/web_applications/extension_status_utils.h.orig	2022-04-21 18:48:31 UTC
+--- chrome/browser/web_applications/extension_status_utils.h.orig	2023-05-31 08:12:17 UTC
 +++ chrome/browser/web_applications/extension_status_utils.h
-@@ -43,7 +43,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
-                                     const std::string& extension_id);
+@@ -56,7 +56,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
+                                        const std::string& extension_id);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)

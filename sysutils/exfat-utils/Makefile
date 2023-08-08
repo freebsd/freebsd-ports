@@ -1,6 +1,6 @@
 PORTNAME=	exfat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-utils
 
@@ -20,12 +20,8 @@ GH_ACCOUNT=	relan
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/exfatlabel sbin/dumpexfat sbin/exfatfsck sbin/mkexfatfs \
-		sbin/fsck.exfat sbin/mkfs.exfat \
+		sbin/fsck.exfat sbin/mkfs.exfat sbin/exfatattrib \
 		man/man8/exfatlabel.8.gz man/man8/mkexfatfs.8.gz man/man8/exfatfsck.8.gz \
-		man/man8/dumpexfat.8.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e '/fuse/d' ${WRKSRC}/configure.ac
-	@${REINPLACE_CMD} -e 's/ fuse//' ${WRKSRC}/Makefile.am
+		man/man8/dumpexfat.8.gz man/man8/exfatattrib.8.gz
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-httparty>=0:www/rubygem-httparty \
 		rubygem-mimemagic>=0:misc/rubygem-mimemagic
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

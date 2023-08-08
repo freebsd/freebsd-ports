@@ -1,6 +1,5 @@
 PORTNAME=	uv
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -13,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	81 82
 
 .include <bsd.port.mk>

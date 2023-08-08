@@ -1,9 +1,13 @@
---- src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -2326,6 +2326,7 @@ void TracingServiceImpl::SnapshotClocks(std::vector<Tr
+@@ -2569,8 +2569,9 @@ bool TracingServiceImpl::SnapshotClocks(
  
- #if !PERFETTO_BUILDFLAG(PERFETTO_OS_MACOSX) && \
-     !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&    \
+   TracingSession::ClockSnapshotData new_snapshot_data;
+ 
+-#if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
+-    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \
++#if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) &&   \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&     \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_FREEBSD) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_NACL)
    struct {

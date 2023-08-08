@@ -1,5 +1,5 @@
 PORTNAME=	mkvtoolnix
-PORTVERSION=	70.0.0
+PORTVERSION=	78.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -25,14 +25,19 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 		libcmark.so:textproc/cmark \
 		libgmp.so:math/gmp
 
-USES=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env qt:5 tar:xz
-USE_QT=		buildtools:build concurrent core linguisttools:build multimedia svg
+FLAVORS=	qt5 nogui
+FLAVOR?=	${FLAVORS:[1]}
+nogui_PKGNAMESUFFIX=	-nogui
+nogui_CONFLICTS_INSTALL=mkvtoolnix
+qt5_CONFLICTS_INSTALL=	mkvtoolnix-nogui
+
+USES=		${_USES_${FLAVOR}}
+USE_QT=		${_USE_QT_${FLAVOR}}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
 		--with-docbook-xsl-root=${PREFIX}/share/xsl/docbook \
-		--disable-qt6
+		--disable-qt6 ${_CONFIGURE_ARGS_${FLAVOR}}
 MAKE_ENV=	V=1
 MAKE_CMD=	rake -v
 MAKEFILE=	Rakefile
@@ -44,8 +49,24 @@ BINARY_ALIAS=	qmake=${QMAKE} \
 		rcc=${RCC} \
 		uic=${UIC}
 
-OPTIONS_DEFINE=	DVDREAD FLAC GUI NLS MANTRANS
-OPTIONS_DEFAULT=	FLAC GUI
+# Flavor handling
+_USES_qt5=		compiler:c++17-lang desktop-file-utils iconv localbase \
+			pkgconfig qmake:no_env qt:5 shared-mime-info tar:xz
+_USE_QT_qt5=		buildtools:build concurrent core dbus declarative gui \
+			linguisttools:build multimedia network svg widgets
+_PLIST_SUB_qt5=		GUI=
+_CONFIGURE_ARGS_nogui=	--disable-gui
+_USES_nogui=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env \
+			qt:5 tar:xz
+_USE_QT_nogui=		buildtools:build core linguisttools:build \
+			multimedia:build
+_PLIST_SUB_nogui=	GUI="@comment "
+
+PLIST_SUB+=		${_PLIST_SUB_${FLAVOR}}
+
+# Options handling
+OPTIONS_DEFINE=	DVDREAD FLAC NLS MANTRANS
+OPTIONS_DEFAULT=	FLAC
 OPTIONS_SUB=	yes
 
 DVDREAD_DESC=		Support reading DVD chapters via libdvdread
@@ -57,10 +78,6 @@ FLAC_CONFIGURE_WITH=	flac
 
 NLS_USES=	gettext
 NLS_CONFIGURE_WITH=	gettext
-
-GUI_DESC=	Build and install GUI application (Qt 5)
-GUI_USES=	desktop-file-utils shared-mime-info
-GUI_USE=	QT=dbus,declarative,gui,network,widgets
 
 MANTRANS_DESC=		Build and install manpage translations
 MANTRANS_BUILD_DEPENDS=	po4a:textproc/po4a

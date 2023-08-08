@@ -1,5 +1,6 @@
 PORTNAME=	dlib
-PORTVERSION=	0.19.0
+PORTVERSION=	1.1.0
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -18,9 +19,10 @@ GH_ACCOUNT=	gecko0307
 DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${D_INCLUDE_DIR}/${PORTNAME}

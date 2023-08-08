@@ -23,7 +23,7 @@ USE_SDL=	sdl2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-multiplayer
 
-CXXFLAGS+=	-fPIC
+CXXFLAGS+=	-fPIC -Dregister=
 
 PORTDOCS=	*
 PORTDATA=	*

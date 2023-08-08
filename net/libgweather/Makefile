@@ -1,6 +1,6 @@
 PORTNAME=	libgweather
 PORTVERSION=	40.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.6+,build \
+USES=		gettext gnome localbase meson pkgconfig python:build \
 		shebangfix tar:xz vala:build
 USE_GNOME=	gtk30 libxml2 pygobject3 introspection:build
 USE_LDCONFIG=	yes

@@ -15,6 +15,7 @@ LIB_DEPENDS=	libcddb.so:audio/libcddb \
 		libtag.so:audio/taglib
 
 USES=		compiler:c++11-lang pkgconfig tar:tgz
+USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/taglookup \
 		man/man1/taglookup.1.gz

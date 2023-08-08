@@ -1,0 +1,7 @@
+Glitter is a tool for generating and structuring commit messages via arguments
+passed to the tool. It allows you to configure it extensively and easily.
+
+Features:
+- Config files
+- Simple errors
+- Glitter Hooks (Git hooks natively built into Glitter)

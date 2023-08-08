@@ -13,13 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	as:devel/binutils
 
 USES=		cmake compiler:c++11-lang
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	melanhit
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-
-USE_LDCONFIG=	yes
 
 # Fix build with clang11
 CFLAGS+=	-fcommon
@@ -38,4 +36,10 @@ BENCH_DESC=	Install benchmark
 TEST_CMAKE_ON=	-DAKMOS_ENABLE_TEST:BOOL=TRUE
 TEST_CMAKE_OFF=	-DAKMOS_ENABLE_TEST:BOOL=FALSE
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
+.include <bsd.port.post.mk>

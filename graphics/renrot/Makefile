@@ -1,6 +1,6 @@
 PORTNAME=	renrot
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/${PORTNAME}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	sqlplaylist
 PORTVERSION=	2.5.3859
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.isaksson.info/download/do/downloadapplication?name=slimserver-sqlplaylist&filename=/
 PKGNAMEPREFIX=	logitechmediaserver-

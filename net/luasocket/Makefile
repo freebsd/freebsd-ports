@@ -1,6 +1,7 @@
 PORTNAME=	luasocket
 PORTVERSION=	3.1.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ USES=		gmake lua:module pkgconfig
 CFLAGS+=	-DLUA_COMPAT_APIINTCASTS `pkgconf --cflags lua-${LUA_VER}`
 INSTALL_TARGET=	install-unix
 LDFLAGS+=	-shared `pkgconf --libs lua-${LUA_VER}`
-MAKE_ARGS=	LUAV=${LUA_VER}
+MAKE_ARGS=	LUAV=${LUA_VER} PLAT=freebsd
 MAKEFILE=	makefile
 
 USE_GITHUB=	yes

@@ -1,7 +1,7 @@
 PORTNAME=	minecraft-server
-PORTVERSION=	1.19.2
+PORTVERSION=	1.20.1
 CATEGORIES=	games java
-MASTER_SITES=	https://launcher.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/
+MASTER_SITES=	https://launcher.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}

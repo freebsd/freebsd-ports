@@ -1,6 +1,6 @@
 PORTNAME=	fox
 PORTVERSION=	1.6.57
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
@@ -16,15 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:features gl jpeg libtool pathfix xorg
+USES=		compiler:features gl jpeg libtool localbase:ldflags pathfix xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xext xfixes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-fPIC -Dregister=
 
 PLIST_SUB=	MAJORVER="${MAJORVER}"
 

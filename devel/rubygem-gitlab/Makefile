@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-httparty>=0.18<1:www/rubygem-httparty \
 		rubygem-terminal-table>=1.5.1:textproc/rubygem-terminal-table
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

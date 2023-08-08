@@ -1,0 +1,5 @@
+Tartube is a GUI front-end for youtube-dl, yt-dlp and other compatible video
+downloaders.
+
+It is written in Python 3 / Gtk 3 and runs on MS Windows, Linux, BSD and
+MacOS.

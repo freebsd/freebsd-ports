@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		apache php
 
-USE_PHP=	json pdo_pgsql
+USE_PHP=	pdo_pgsql
 
 NO_ARCH=	yes
 NO_BUILD=	yes

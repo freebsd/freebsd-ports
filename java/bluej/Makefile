@@ -1,5 +1,6 @@
 PORTNAME=	bluej
 PORTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	java editors
 MASTER_SITES=	http://www.bluej.org/download/files/
 DISTNAME=	BlueJ-generic-${PORTVERSION:S/.//g}

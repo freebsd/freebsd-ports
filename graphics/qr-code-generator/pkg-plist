@@ -1,7 +1,5 @@
-include/qrcodegen/BitBuffer.hpp
-include/qrcodegen/QrCode.hpp
-include/qrcodegen/QrSegment.hpp
 include/qrcodegen/qrcodegen.h
+include/qrcodegen/qrcodegen.hpp
 lib/libqrcodegen.a
 lib/libqrcodegen.so
 lib/libqrcodegen.so.1

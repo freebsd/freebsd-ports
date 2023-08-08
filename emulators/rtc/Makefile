@@ -1,13 +1,17 @@
 PORTNAME=	rtc
 PORTVERSION=	2020.07.07.1
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	jamie@catflap.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module which provides /dev/rtc device support
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Driver doesn't actually work with current FreeBSD versions
+EXPIRATION_DATE=	2023-12-31
 
 USES=		kmod uidfix
 

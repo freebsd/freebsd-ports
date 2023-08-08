@@ -1,13 +1,22 @@
---- source/acngtool.cc.orig	2018-09-07 13:02:18 UTC
+--- source/acngtool.cc.orig	2020-02-03 18:54:57 UTC
 +++ source/acngtool.cc
-@@ -562,8 +562,10 @@ int maint_job()
- 						if (!ids.send(m_conFd))
- 							return;
- 
+@@ -579,8 +579,10 @@ struct TUdsFactory : public ::acng::IDlConFactory
+ 			udsconnection() : tcpconnect(nullptr)
+ 			{
+ 				// some static and dummy parameters, and invalidate SSL for sure
 +#ifdef HAVE_SSL
- 						m_ssl = nullptr;
- 						m_bio = nullptr;
+ 				m_ssl = nullptr;
+ 				m_bio = nullptr;
 +#endif
- 						// better match the TCP socket parameters
- 						m_sHostName = "localhost";
- 						m_sPort = sDefPortHTTP;
+ 				m_sHostName = FAKE_UDS_HOSTNAME;
+ 				m_sPort = cfg::port;
+ 
+@@ -1006,7 +1008,7 @@ std::unordered_map<string, parm> parms = {
+ 				}
+ 			}
+ 		},
+-		{ 
++		{
+ 			"patch",
+ 			{
+ 				3, 3, [](LPCSTR p)

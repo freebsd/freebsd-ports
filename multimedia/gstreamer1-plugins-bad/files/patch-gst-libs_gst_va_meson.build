@@ -1,0 +1,11 @@
+--- gst-libs/gst/va/meson.build.orig	2023-01-23 19:29:34 UTC
++++ gst-libs/gst/va/meson.build
+@@ -27,7 +27,7 @@ gstva_dep = dependency('', required : false)
+ 
+ gstva_dep = dependency('', required : false)
+ 
+-if host_system != 'linux'
++if get_option('skip_gstva')
+   subdir_done()
+ endif
+ 

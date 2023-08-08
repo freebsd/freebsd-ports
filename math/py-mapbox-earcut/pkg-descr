@@ -1,0 +1,2 @@
+mapbox-earcut is python bindings for the C++ implementation of the Mapbox Earcut
+library, which provides very fast and quite robust triangulation of 2D polygons.

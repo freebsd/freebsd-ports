@@ -1,5 +1,5 @@
 PORTNAME=	async-pool
-PORTVERSION=	0.3.12
+PORTVERSION=	0.4.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-async>=1.25:devel/rubygem-async
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

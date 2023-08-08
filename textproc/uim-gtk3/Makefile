@@ -1,4 +1,5 @@
 PKGNAMESUFFIX=	-gtk3
+PORTREVISION=	1
 
 COMMENT=	GTK+ 3.x modules of uim input method
 

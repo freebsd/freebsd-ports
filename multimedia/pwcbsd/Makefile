@@ -1,6 +1,6 @@
 PORTNAME=	pwcbsd
 PORTVERSION=	1.4.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia sysutils
 MASTER_SITES=	http://raaf.atspace.org/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/ \

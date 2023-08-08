@@ -5,15 +5,19 @@ CATEGORIES=	lang
 COMMENT=	Mesa OpenCL implementation for AMD GPUs
 WWW=		https://dri.freedesktop.org/wiki/GalliumCompute/
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/docs/license.rst
+
+ONLY_FOR_ARCHS=		amd64 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	needs a GPU supported by the Radeon KMS driver
+
 BUILD_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
+		libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT} \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
-
-ONLY_FOR_ARCHS=		i386 amd64 powerpc64le powerpc64
-ONLY_FOR_ARCHS_REASON=	needs a GPU supported by the Radeon KMS driver
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
@@ -27,9 +31,9 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgallium-va=disabled \
 		-Dgallium-vdpau=disabled \
 		-Dgallium-xa=disabled \
-		-Dgallium-xvmc=disabled \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
+		-Dmicrosoft-clc=disabled \
 		-Dopengl=false \
 		-Dglx=disabled \
 		-Degl=disabled \

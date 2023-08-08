@@ -1,5 +1,5 @@
 PORTNAME=	slack-sdk
-PORTVERSION=	3.18.2
+PORTVERSION=	3.21.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.3:www/py-aiohttp@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 # PyPi sdist do not have tests
 USE_GITHUB=	yes
 GH_ACCOUNT=	slackapi

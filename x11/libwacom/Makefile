@@ -17,5 +17,6 @@ TEST_DEPENDS=	bash:shells/bash
 USES=		compiler:c++11-lang gnome meson pkgconfig tar:bz2
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Ddocumentation=disabled
 
 .include <bsd.port.mk>

@@ -1,0 +1,8 @@
+--- CMakeLists.txt.orig	2022-08-01 21:04:02 UTC
++++ CMakeLists.txt
+@@ -1,3 +1,5 @@
++cmake_minimum_required(VERSION 3.9)
++
+ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/scikit-build-cmake)
+ include(UseCython)
+ include(FindPythonExtensions)

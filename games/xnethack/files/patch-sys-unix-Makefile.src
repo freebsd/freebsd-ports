@@ -1,6 +1,6 @@
---- sys/unix/Makefile.src.orig	2022-05-26 12:31:08 UTC
+--- sys/unix/Makefile.src.orig	2023-05-29 12:17:06 UTC
 +++ sys/unix/Makefile.src
-@@ -169,14 +169,22 @@ SYSOBJ = $(TARGETPFX)ioctl.o $(TARGETPFX)unixmain.o $(
+@@ -179,14 +179,22 @@ SYSOBJ = $(TARGETPFX)ioctl.o $(TARGETPFX)unixmain.o $(
  
  # flags for debugging:
  # CFLAGS = -g -I../include
@@ -25,7 +25,25 @@
  CXX ?= g++
  MOC ?= moc
  MOCPATH ?= $(QTDIR)/bin/$(MOC)
-@@ -305,6 +313,29 @@ WINBEOBJ =
+@@ -257,7 +265,7 @@ WINX11SRC = ../win/X11/Window.c ../win/X11/dialogs.c .
+ WINX11OBJ = $(TARGETPFX)Window.o $(TARGETPFX)dialogs.o $(TARGETPFX)winX.o \
+ 	$(TARGETPFX)winmap.o $(TARGETPFX)winmenu.o $(TARGETPFX)winmesg.o \
+ 	$(TARGETPFX)winmisc.o $(TARGETPFX)winstat.o $(TARGETPFX)wintext.o \
+-	$(TARGETPFX)winval.o #$(TARGETPFX)tile.o
++	$(TARGETPFX)winval.o $(TARGETPFX)tile.o
+ #
+ # Files for a Qt 3 interface (renamed since nethack 3.6.x)
+ #
+@@ -293,7 +301,7 @@ WINQTOBJ = $(TARGETPFX)qt_bind.o $(TARGETPFX)qt_click.
+ 	$(TARGETPFX)qt_msg.o $(TARGETPFX)qt_plsel.o $(TARGETPFX)qt_rip.o \
+ 	$(TARGETPFX)qt_set.o $(TARGETPFX)qt_stat.o $(TARGETPFX)qt_str.o \
+ 	$(TARGETPFX)qt_streq.o $(TARGETPFX)qt_svsel.o $(TARGETPFX)qt_win.o \
+-	$(TARGETPFX)qt_xcmd.o $(TARGETPFX)qt_yndlg.o #$(TARGETPFX)tile.o
++	$(TARGETPFX)qt_xcmd.o $(TARGETPFX)qt_yndlg.o $(TARGETPFX)tile.o
+ 
+ # Files for Shim windowing interface for libnh -- doesn't do anything,
+ # just passes along the API calls to the library
+@@ -318,6 +326,29 @@ WINBEOBJ =
  # Curses - Karl Garrison, Tangles
  #WINSRC = $(WINCURSESSRC)
  #WINOBJ = $(WINCURSESOBJ)
@@ -55,7 +73,7 @@
  #
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -321,6 +352,7 @@ WINBEOBJ =
+@@ -334,6 +365,7 @@ WINBEOBJ =
  # WINTTYLIB = -lcurses16
  # WINTTYLIB = -lncurses
  #WINTTYLIB = -ltermlib
@@ -63,7 +81,7 @@
  #
  # libraries for X11
  # If USE_XPM is defined in config.h, you will also need -lXpm here.
-@@ -328,16 +360,19 @@ WINBEOBJ =
+@@ -341,16 +373,19 @@ WINBEOBJ =
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
@@ -85,7 +103,7 @@
  #
  # libraries for KDE (with Qt)
  WINKDELIB = -lkdecore -lkdeui -lXext
-@@ -347,7 +382,7 @@ WINBELIB = -lbe
+@@ -360,7 +395,7 @@ WINBELIB = -lbe
  #
  # libraries for curses port
  # link with ncurses
@@ -94,7 +112,7 @@
  # link with pdcurses for SDL, installed in a separate directory
  #WINCURSESLIB = -L/usr/local/lib/pdcurses -lpdcurses -lSDL
  # same as above, for XCurses
-@@ -357,6 +392,18 @@ WINCURSESLIB = -lncurses
+@@ -370,6 +405,18 @@ WINCURSESLIB = -lncurses
  #
  # For Curses
  #WINLIB = $(WINCURSESLIB)
@@ -113,7 +131,7 @@
  #
  # some platforms need to build the support libraries
  # BUILDMORE = $(TARGETPFX)pdcurses.a
-@@ -412,7 +459,7 @@ AWK	= awk
+@@ -425,7 +472,7 @@ AWK	= awk
  # skip it--if nethack's sources don't reside in a git repository than
  # the script which creates that file will fail benignly and 'makedefs -v'
  # will proceed without it
@@ -122,7 +140,7 @@
  
  # if you change this to 1, feedback while building will omit -Dthis -Wthat
  # -Isomewhere so that each file being compiled is listed on one short line;
-@@ -420,7 +467,7 @@ GITINFO=1
+@@ -433,7 +480,7 @@ GITINFO=1
  # (rather than just in suffix default rule), such as is implemented by
  # gnu make and others which have picked up its extensions;
  # allowed values are 0, 1, and empty (which behaves like 0)
@@ -131,7 +149,7 @@
  
  # ----------------------------------------
  #
-@@ -476,7 +523,7 @@ MAKEDEFS = ../util/makedefs
+@@ -487,7 +534,7 @@ MAKEDEFS = ../util/makedefs
  LUA_VERSION ?=5.4.4
  LUABASE = liblua-$(LUA_VERSION).a
  LUALIB = ../lib/lua/$(LUABASE)
@@ -140,16 +158,16 @@
  
  # timestamp files to reduce `make' overhead and shorten .o dependency lists
  CONFIG_H = ../src/config.h-t
-@@ -610,7 +657,7 @@ all:	$(GAME)
+@@ -621,7 +668,7 @@ all:	$(GAME)
  pregame:
  	$(PREGAME)
  
--$(GAME):	pregame $(MAKEDEFS) $(LUALIB) $(SYSTEM)
-+$(GAME):	pregame $(MAKEDEFS) $(SYSTEM)
+-$(GAME):	pregame $(MAKEDEFS) $(LUALIB) $(WAVS) $(SYSTEM)
++$(GAME):	pregame $(MAKEDEFS) $(WAVS) $(SYSTEM)
  	@echo "$(GAME) is up to date."
  
  Sysunix:	$(HOSTOBJ) $(HOBJ) $(DATE_O) $(BUILDMORE) Makefile
-@@ -690,11 +737,11 @@ objects.o:
+@@ -701,11 +748,11 @@ objects.o:
  
  # outdated Qt 3 windowport meta-object-compiler output
  qt3_kde0.moc: ../win/Qt3/qt3_kde0.h

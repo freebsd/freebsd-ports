@@ -1,0 +1,11 @@
+TIMESTAMP = 1669925855
+SHA256 (LLNL-lbann-v0.102-254-g2e3012a9a_GH0.tar.gz) = e2a956216207fd745ed4eed0bfe763c5807ad4ab1d27417d6678738d07c2db35
+SIZE (LLNL-lbann-v0.102-254-g2e3012a9a_GH0.tar.gz) = 7973922
+SHA256 (KIwabuchi-havoqgt-100f63b_GH0.tar.gz) = 5f1c1bc00606ae9b7bd17e06ba89f6201e4d60b68860473b2453f190e45a4bd2
+SIZE (KIwabuchi-havoqgt-100f63b_GH0.tar.gz) = 12691923
+SHA256 (samadejacobs-moses-28932ce_GH0.tar.gz) = 2ffa21181289f9eb186909afa329bcbbc5ca72a6e7312f0d66c588d0d394b395
+SIZE (samadejacobs-moses-28932ce_GH0.tar.gz) = 86729395
+SHA256 (snap-stanford-snap-58a1e6a_GH0.tar.gz) = 71f7f034a0fbec44aa266263f67fcc0dbdd35a1e5c4ed5b19215521d71d0184b
+SIZE (snap-stanford-snap-58a1e6a_GH0.tar.gz) = 8051667
+SHA256 (catchorg-Clara-2bfd8b2_GH0.tar.gz) = 679332a04a59d13517a6f56a14b70125a157e6cc7c49bb530b52521c38eef41d
+SIZE (catchorg-Clara-2bfd8b2_GH0.tar.gz) = 128573

@@ -1,0 +1,7 @@
+%%SITE_ARCH%%/HTML/T5.pm
+%%SITE_ARCH%%/HTML/T5/Message.pm
+%%SITE_ARCH%%/Test/HTML/T5.pm
+%%SITE_ARCH%%/auto/HTML-T5/T5.so
+%%PERL5_MAN3%%/HTML::T5.3.gz
+%%PERL5_MAN3%%/HTML::T5::Message.3.gz
+%%PERL5_MAN3%%/Test::HTML::T5.3.gz

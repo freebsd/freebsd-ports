@@ -1,0 +1,4 @@
+HyperHOTP is an open re-implementation of the programming software for
+the HOTP feature of the hyperFIDO security keys. It's based on reverse-
+engineering the Windows-based programmer available on Hypersecu's
+website.

@@ -1,15 +1,17 @@
---- src/plugins/lay_plugin.pri.orig	2021-07-23 08:00:26 UTC
+--- src/plugins/lay_plugin.pri.orig	2022-12-22 22:17:08 UTC
 +++ src/plugins/lay_plugin.pri
-@@ -5,7 +5,7 @@ TEMPLATE = lib
+@@ -5,8 +5,9 @@ TEMPLATE = lib
  
- INCLUDEPATH += $$DB_INC $$TL_INC $$GSI_INC $$LAYBASIC_INC $$LAY_INC $$PWD/common
- DEPENDPATH += $$DB_INC $$TL_INC $$GSI_INC $$LAYBASIC_INC $$LAY_INC $$PWD/common
--LIBS += -L$$DESTDIR/.. -lklayout_db -lklayout_tl -lklayout_gsi -lklayout_laybasic -lklayout_lay
-+LIBS += $$DESTDIR/../libklayout_db.so $$DESTDIR/../libklayout_tl.so $$DESTDIR/../libklayout_gsi.so $$DESTDIR/../libklayout_laybasic.so $$DESTDIR/../libklayout_lay.so
+ INCLUDEPATH += $$DB_INC $$TL_INC $$GSI_INC $$LAYBASIC_INC $$LAYUI_INC $$LAYVIEW_INC $$LAYUI_INC $$LAY_INC $$PWD/common
+ DEPENDPATH += $$DB_INC $$TL_INC $$GSI_INC $$LAYBASIC_INC $$LAYUI_INC $$LAYVIEW_INC $$LAYUI_INC $$LAY_INC $$PWD/common
+-LIBS += -L$$DESTDIR/.. -lklayout_db -lklayout_tl -lklayout_gsi -lklayout_laybasic -lklayout_layui -lklayout_layview -lklayout_lay -lklayout_lay
  
++LIBS += $$DESTDIR/../libklayout_db.so $$DESTDIR/../libklayout_tl.so $$DESTDIR/../libklayout_gsi.so $$DESTDIR/../libklayout_laybasic.so $$DESTDIR/../libklayout_layui.so $$DESTDIR/../libklayout_layview.so $$DESTDIR/../libklayout_lay.so
++ 
  DEFINES += MAKE_LAY_PLUGIN_LIBRARY
  
-@@ -14,13 +14,13 @@ win32 {
+ win32 {
+@@ -14,13 +15,13 @@ win32 {
    dlltarget.path = $$PREFIX/lay_plugins
    INSTALLS += dlltarget
  

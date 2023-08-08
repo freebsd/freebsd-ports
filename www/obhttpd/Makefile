@@ -1,5 +1,6 @@
 PORTNAME=	obhttpd
-PORTVERSION=	7.0.20211221
+PORTVERSION=	7.1.20220923
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -38,9 +39,9 @@ LDFLAGS+=	-L${WRKSRC_libimsg}/src/lib/libutil \
 USERS=		www
 GROUPS=		www
 
-SSL=		3.4.1
+SSL=		3.5.3
 LIBEVENT=	6.6.20191030
-LIBIMSG=	6.9.20210510
+LIBIMSG=	7.1.20220916
 
 post-patch:
 	${REINPLACE_CMD} -e 's|libimsg/src||g' \
@@ -59,7 +60,7 @@ post-patch:
 pre-configure:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libressl-${SSL}.tar.gz ${EXTRACT_AFTER_ARGS})
 	@(${PATCH} -d ${WRKDIR}/libressl-${SSL} < ${PATCHDIR}/extra-patch-libressl_tls_tls.c)
-	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
+	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ac_cv_header_endian_h=no ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libimsg} && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libevent} && ${SETENV} ${MAKE_ENV} ${MAKE})
 

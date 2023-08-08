@@ -3,9 +3,9 @@ DATABASE_URL environment variable to configure your Django application.
 
 The dj_database_url.config method returns a Django database connection
 dictionary, populated with all the data specified in your URL.  There is
-also a conn_max_age argument to easily enable Django’s connection pool.
+also a conn_max_age argument to easily enable Django's connection pool.
 
-If you’d rather not use an environment variable, you can pass a URL in
+If you'd rather not use an environment variable, you can pass a URL in
 directly instead to dj_database_url.parse.
 
 Supported Databases:

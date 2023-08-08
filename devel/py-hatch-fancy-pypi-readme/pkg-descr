@@ -1,0 +1,9 @@
+hatch-fancy-pypi-readme is a Hatch metadata plugin for everyone who cares about
+the first impression of their project's PyPI landing page. It allows you to
+define your PyPI project description in terms of concatenated fragments that are
+based on static strings, files, and most importantly: parts of files defined
+using cut-off points or regular expressions.
+
+Once you've assembled your readme, you can additionally run regular
+expression-based substitutions over it. For instance to make relative links
+absolute or to linkify users and issue numbers in your changelog.

@@ -1,16 +1,21 @@
 PORTNAME=	octave-forge-multicore
 PORTVERSION=	0.2.15
-PORTREVISION=	27
+PORTREVISION=	29
 CATEGORIES=	math
+MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Old%20Monolithic%20Releases/R2009-06-07
+DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-WWW=		http://octave.sourceforge.net/
+WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		octave
+
 GNU_CONFIGURE=	yes
 
-.include "${.CURDIR}/../../Mk/bsd.octave.mk"
+WRKSRC=        ${WRKDIR}/${OCTAVE_SRC}
+
 .include <bsd.port.mk>

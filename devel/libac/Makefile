@@ -1,5 +1,6 @@
 PORTNAME=	libac
 PORTVERSION=	g20190308
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 
-PLIST_FILES=	lib/libac.a \
+PLIST_FILES=	include/ac.h \
+		lib/libac.a \
 		lib/libac.so
 
 USE_GITHUB=	yes
@@ -20,6 +22,7 @@ GH_PROJECT=	lua-aho-corasick
 GH_TAGNAME=	ca6043c
 
 do-install:
+	${INSTALL_DATA} ${WRKSRC}/ac.h ${STAGEDIR}${PREFIX}/include/ac.h
 	${INSTALL_DATA} ${WRKSRC}/libac.a ${STAGEDIR}${PREFIX}/lib/libac.a
 	${INSTALL_LIB} ${WRKSRC}/libac.so ${STAGEDIR}${PREFIX}/lib/libac.so
 

@@ -1,0 +1,3 @@
+Keysmith is an application to generate two-factor authentication (2FA) tokens
+when logging in to your (online) accounts. Currently it supports both HOTP and
+TOTP tokens.

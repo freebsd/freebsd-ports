@@ -1,18 +1,18 @@
 PORTNAME=	mod_qos
-DISTVERSION=	11.72
+DISTVERSION=	11.74
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	QoS for Apache
-WWW=		http://opensource.adnovum.ch/mod_qos/
+WWW=		https://mod-qos.sourceforge.net/
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
-USES=		apache:2.2+
+USES=		apache
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

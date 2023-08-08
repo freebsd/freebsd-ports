@@ -1,0 +1,5 @@
+A Python implementation of 3-way merge of texts.
+
+Given BASE, OTHER, THIS, tries to produce a combined text incorporating
+the changes from both BASE->OTHER and BASE->THIS. All three will
+typically be sequences of lines.

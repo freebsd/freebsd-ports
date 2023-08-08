@@ -12,6 +12,9 @@ LICENSE=	GPLv3+ CC-BY-SA-4.0
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on expired devel/godot2 (use devel/godot instead)
+EXPIRATION_DATE=2023-10-08
+
 RUN_DEPENDS=	godot2:devel/godot2
 
 USE_GITHUB=	yes

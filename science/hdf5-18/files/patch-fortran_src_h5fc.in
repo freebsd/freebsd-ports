@@ -1,6 +1,6 @@
---- fortran/src/h5fc.in.orig	2017-06-15 15:46:52 UTC
+--- fortran/src/h5fc.in.orig	2023-01-30 14:52:50 UTC
 +++ fortran/src/h5fc.in
-@@ -151,10 +151,10 @@ usage() {
+@@ -152,10 +152,10 @@ usage() {
  }
  
  # Show the configuration summary of the library recorded in the
@@ -13,9 +13,9 @@
    status=$?
  }
  
-@@ -300,9 +300,9 @@ if test "x$do_link" = "xyes"; then
+@@ -301,9 +301,9 @@ if test "x$do_link" = "xyes"; then
    shared_link=""
- # conditionnaly link with the hl library
+ # conditionally link with the hl library
    if test "X$HL" = "Xhl"; then
 -   libraries=" $libraries -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 "
 +   libraries=" $libraries -lhdf5%%SUFF%%hl_fortran -lhdf5%%SUFF%%_hl -lhdf5%%SUFF%%_fortran -lhdf5%%SUFF%% "
@@ -25,7 +25,7 @@
    fi
    link_args="$link_args -L${libdir}"
  
-@@ -320,22 +320,22 @@ if test "x$do_link" = "xyes"; then
+@@ -321,22 +321,22 @@ if test "x$do_link" = "xyes"; then
    fi
  
    if test "x$USE_SHARED_LIB" != "xyes"; then

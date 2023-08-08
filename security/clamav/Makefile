@@ -1,6 +1,6 @@
 PORTNAME=	clamav
-DISTVERSION=	0.105.1
-PORTREVISION=	1
+DISTVERSION=	1.1.0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -12,8 +12,7 @@ WWW=		https://www.clamav.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-BUILD_DEPENDS=	${RUST_DEFAULT}>=1.56.0:lang/${RUST_DEFAULT} \
-		tomsfastmath>0:math/tomsfastmath
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.56.0:lang/${RUST_DEFAULT}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c \
 		libmspack.so:archivers/libmspack \
@@ -25,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 CMAKE_ARGS=	-DDATABASE_DIRECTORY:STRING=${_DBDIR}
-CMAKE_ON=	ENABLE_EXTERNAL_MSPACK ENABLE_EXTERNAL_TOMSFASTMATH
+CMAKE_ON=	ENABLE_EXTERNAL_MSPACK
 
 TEST_TARGET=	check
 

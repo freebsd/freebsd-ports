@@ -24,6 +24,6 @@ set(CPACK_ENABLE_FREEBSD_PKG @@CPACK_OPTION_VALUE@@ CACHE BOOL "Enable pkg(8) ge
 @@CPACK_OPTION_COMMENT@@    "Directory where LibArchive headers are located.")
 # Hack to (a) prevent using either ports libarchive or the bundled version 
 #     and (b) libpkg links to base libarchive.
-@@CPACK_OPTION_COMMENT@@set(LibArchive_LIBRARY "/usr/lib/libthr.so;/usr/lib/libarchive.so" CACHE PATH
+@@CPACK_OPTION_COMMENT@@set(LibArchive_LIBRARY "/usr/lib/libarchive.so" CACHE PATH
 @@CPACK_OPTION_COMMENT@@    "LibArchive library to link against.")
 

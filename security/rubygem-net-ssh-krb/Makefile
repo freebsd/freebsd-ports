@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-gssapi>=1.3:security/rubygem-gssapi \
 		rubygem-net-ssh>=2.0:security/rubygem-net-ssh
 
 USES=		gem
-USE_RUBY=	yes
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

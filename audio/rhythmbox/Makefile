@@ -1,5 +1,6 @@
 PORTNAME=	rhythmbox
 PORTVERSION=	3.4.6
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -28,16 +29,14 @@ USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis
-MESON_ARGS=	-Dplugins_vala=enabled \
-		-Dlibsecret=enabled \
-		-Dgtk_doc=false \
+MESON_ARGS=	-Dgtk_doc=false \
 		-Dtests=disabled
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	BRASERO DAAP DOCS GRILO IPOD MTP NLS NOTIFY PYTHON
+OPTIONS_DEFINE=	BRASERO DAAP DOCS GRILO IPOD LIRC MTP NLS NOTIFY PYTHON
 OPTIONS_DEFAULT=BRASERO NOTIFY PYTHON
 BRASERO_DESC=	Brasero disc burning support
 BRASERO_MESON_ENABLED=	brasero
@@ -55,8 +54,8 @@ IPOD_MESON_ENABLED=	ipod
 IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 			libplist-2.0.so:devel/libplist \
 			libimobiledevice-1.0.so:comms/libimobiledevice
-#LIRC_MESON_ENABLED=	lirc
-#LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
+LIRC_MESON_ENABLED=	lirc
+LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 MTP_MESON_ENABLED=	mtp
 MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
 NOTIFY_MESON_ENABLED=	libnotify

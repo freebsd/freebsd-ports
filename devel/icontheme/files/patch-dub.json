@@ -5,8 +5,8 @@
      "copyright": "Copyright © 2015-2016, Roman Chistokhodov",
      "authors": ["Roman Chistokhodov"],
 -    "dependencies": {
--        "inilike": "~>1.1.0",
--        "xdgpaths": "~>0.2.4"
+-        "inilike": "~>1.2.0",
+-        "xdgpaths": "~>0.2.5"
 -    },
      "targetName" : "icontheme",
      "targetPath" : "lib",

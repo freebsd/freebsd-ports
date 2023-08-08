@@ -1,5 +1,7 @@
 bin/smbtorture
+sbin/samba-gpupdate
 man/man1/smbtorture.1.gz
+man/man8/samba-gpupdate.8.gz
 include/samba4/policy.h
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so
 lib/samba4/libsamba-policy%%PYTHON_EXT_SUFFIX%%.so.0
@@ -258,6 +260,7 @@ lib/samba4/private/libsamba-python%%PYTHON_EXT_SUFFIX%%-samba4.so
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_base_test.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/kdc_tgs_tests.py
+%%PYTHON_SITELIBDIR%%/samba/tests/krb5/kpasswd_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/ms_kile_client_principal_lookup_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/raw_testcase.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/rfc4120_constants.py

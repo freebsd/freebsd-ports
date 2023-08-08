@@ -14,6 +14,9 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 RUN_DEPENDS=	${PREFIX}/include/boost/property_tree/ptree.hpp:devel/boost-libs
 
 USES=		cmake
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ddemidov

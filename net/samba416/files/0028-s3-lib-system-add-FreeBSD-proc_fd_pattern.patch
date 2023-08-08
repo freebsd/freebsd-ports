@@ -1,0 +1,149 @@
+From 584c69e77abb537a7345222648a397a9963c01b7 Mon Sep 17 00:00:00 2001
+From: "Timur I. Bakeyev" <timur@FreeBSD.org>
+Date: Sat, 15 Oct 2022 04:02:43 +0200
+Subject: [PATCH 28/28] s3:lib:system - add FreeBSD proc_fd_pattern
+
+Add support for FreeBSD equivalent of /proc/self/fd through a special
+fdescfs mount with option "nodup". This filesystem should be mounted
+either to the private $PIDDIR/fd/ directory or to /dev/fd in order to
+provide security and performance characteristics similar to Linux.
+
+Signed-off-by: Timur I. Bakeyev <timur@FreeBSD.org>
+---
+ source3/lib/system.c | 108 ++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 87 insertions(+), 21 deletions(-)
+
+diff --git a/source3/lib/system.c b/source3/lib/system.c
+index 00d31692e00..d22ec08361c 100644
+--- a/source3/lib/system.c
++++ b/source3/lib/system.c
+@@ -1094,39 +1094,105 @@ int sys_get_number_of_cores(void)
+ }
+ #endif
+ 
+-static struct proc_fd_pattern {
+-	const char *pattern;
+-	const char *test_path;
+-} proc_fd_patterns[] = {
+-	/* Linux */
+-	{ "/proc/self/fd/%d", "/proc/self/fd/0" },
+-	{ NULL, NULL },
++static bool freebsd_fdesc_check(const char *pattern)
++{
++	char fdesc_path[PATH_MAX];
++	int fd, fd2;
++
++	fd = open(lp_pid_directory(), O_DIRECTORY);
++	if (fd == -1) {
++		DBG_ERR("%s: failed to open pid directory: %s\n",
++			lp_pid_directory(), strerror(errno));
++		return false;
++	}
++
++	snprintf(fdesc_path, sizeof(fdesc_path), pattern, fd);
++
++	fd2 = open(fdesc_path, O_DIRECTORY);
++	if (fd2 == -1) {
++		/*
++		 * Setting O_DIRECTORY on open of fdescfs mount
++		 * without `nodup` option will fail with ENOTDIR.
++		 */
++		if (errno == ENOTDIR) {
++			DBG_ERR("%s: fdescfs filesystem is not mounted with "
++				"'nodup' option. This specific mount option is "
++				"required in order to enable race-free handling "
++				"of paths.\n"
++				"See documentation for Samba's New VFS' "
++				"for more details. The `nodup` mount option was "
++				"introduced in FreeBSD 13.\n", fdesc_path);
++			close(fd);
++			return false;
++		}
++		DBG_ERR("%s: failed to open fdescfs path: %s\n",
++			fdesc_path, strerror(errno));
++		close(fd);
++		return false;
++	}
++	close(fd);
++	close(fd2);
++
++	return true;
++}
++
++static char* linux_pattern(char *buf, size_t bufsize)
++{
++	char proc_fd_path[PATH_MAX];
++	const char *pattern = "/proc/self/fd/%lu";
++	struct stat sb;
++
++	snprintf(proc_fd_path, sizeof(proc_fd_path), pattern, 0);
++	if(stat(proc_fd_path, &sb) == 0) {
++		snprintf(buf, bufsize, "%s", pattern);
++		return buf;
++	}
++	return NULL;
++}
++
++static char* freebsd_pattern(char *buf, size_t bufsize) {
++	const char** base;
++	const char* base_dir[] = {
++		lp_pid_directory(), /* This is a preffered location */
++		"/dev",
++		NULL
++	};
++
++	for(base = &base_dir[0]; *base != NULL; base++) {
++		snprintf(buf, bufsize, "%s/fd/%%lu", *base);
++		if(freebsd_fdesc_check(buf)) {
++			return buf;
++		}
++	}
++	return NULL;
++}
++
++static char* (*proc_fd_patterns[])(char *, size_t) = {
++	linux_pattern,
++	freebsd_pattern,
++	NULL
+ };
+ 
+-static const char *proc_fd_pattern;
++static char proc_fd_pattern_buf[PATH_MAX];
++static const char *proc_fd_pattern = NULL;
+ 
+ bool sys_have_proc_fds(void)
+ {
+-	static bool checked;
+-	static bool have_proc_fds;
+-	struct proc_fd_pattern *p = NULL;
+-	struct stat sb;
+-	int ret;
++	static bool checked = false;
++	static bool have_proc_fds = false;
++	char* (**pattern_func)(char *, size_t) = NULL;
+ 
+ 	if (checked) {
+ 		return have_proc_fds;
+ 	}
+ 
+-	for (p = &proc_fd_patterns[0]; p->test_path != NULL; p++) {
+-		ret = stat(p->test_path, &sb);
+-		if (ret != 0) {
+-			continue;
++	for (pattern_func = &proc_fd_patterns[0]; *pattern_func != NULL; pattern_func++) {
++		if((*pattern_func)(proc_fd_pattern_buf, sizeof(proc_fd_pattern_buf)) != NULL) {
++			have_proc_fds = true;
++			proc_fd_pattern = proc_fd_pattern_buf;
++			break;
+ 		}
+-		have_proc_fds = true;
+-		proc_fd_pattern = p->pattern;
+-		break;
+ 	}
+-
+ 	checked = true;
+ 	return have_proc_fds;
+ }
+-- 
+2.37.1
+

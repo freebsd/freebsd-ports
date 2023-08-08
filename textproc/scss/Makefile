@@ -1,6 +1,6 @@
 PORTNAME=	scss
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/
@@ -12,7 +12,7 @@ WWW=		https://www.nongnu.org/scss/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	guile:lang/guile
+USES=		guile:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes

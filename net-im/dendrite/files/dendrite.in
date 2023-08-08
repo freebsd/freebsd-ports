@@ -16,7 +16,7 @@
 
 name=dendrite
 rcvar=dendrite_enable
-desc="Dendrite (Monolith Server)"
+desc="Dendrite"
 
 load_rc_config $name
 
@@ -24,7 +24,7 @@ load_rc_config $name
 : ${dendrite_config:="%%PREFIX%%/etc/dendrite/dendrite.yaml"}
 
 command=/usr/sbin/daemon
-procname=%%PREFIX%%/dendrite/bin/dendrite-monolith-server
+procname=%%PREFIX%%/dendrite/bin/dendrite
 pidfile=/var/run/${name}.pid
 
 command_args="-p $pidfile -u dendrite -f $procname -config $dendrite_config"

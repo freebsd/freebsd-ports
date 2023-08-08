@@ -1,0 +1,10 @@
+include/testdrive.mod
+include/testdrive_version.mod
+lib/cmake/test-drive/test-drive-config-version.cmake
+lib/cmake/test-drive/test-drive-config.cmake
+lib/cmake/test-drive/test-drive-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/test-drive/test-drive-targets.cmake
+lib/libtest-drive.so
+lib/libtest-drive.so.0
+lib/libtest-drive.so.0.4.0
+libdata/pkgconfig/test-drive.pc

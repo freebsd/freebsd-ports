@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/xcb-util-0.4.0.tar.bz2) = 46e49469cb3b594af1d33176cd7565def2be3fa8be4371d62271fabb5eae50e9
-SIZE (xorg/lib/xcb-util-0.4.0.tar.bz2) = 297412
+TIMESTAMP = 1687265211
+SHA256 (xorg/lib/xcb-util-0.4.1.tar.xz) = 5abe3bbbd8e54f0fa3ec945291b7e8fa8cfd3cccc43718f8758430f94126e512
+SIZE (xorg/lib/xcb-util-0.4.1.tar.xz) = 267396

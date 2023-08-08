@@ -2,14 +2,24 @@ PORTNAME=	wmnet
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	net windowmaker
-MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/ \
-		LOCAL/novel
+MASTER_SITES=	http://vault.101011010.xyz/distfiles/ \
+		http://freebsd.nsu.ru/distfiles/ \
+		LOCAL/danfe LOCAL/novel
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Network bandwidth monitor intended for the WindowMaker dock
-WWW=		http://www.enteract.com/~rneswold/
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Network bandwidth monitor for Window Maker dock
+
+LICENSE=	GPLv2+
 
 USES=		xorg
-USE_XORG=	xpm
+USE_XORG=	x11 xext xpm
+
+PORTDOCS=	CHANGELOG README
+
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

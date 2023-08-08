@@ -1,10 +1,9 @@
 PORTNAME=	ticker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.4
-PORTREVISION=	1
+DISTVERSION=	4.5.14
 CATEGORIES=	finance
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Terminal stock ticker with live updates and position tracking
 WWW=		https://github.com/achannarasappa/ticker
 
@@ -26,7 +25,7 @@ GH_TUPLE=	acarl005:stripansi:5a71ef0e047d:acarl005_stripansi/vendor/github.com/a
 		go-resty:resty:v2.7.0:go_resty_resty_v2/vendor/github.com/go-resty/resty/v2 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
-		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \

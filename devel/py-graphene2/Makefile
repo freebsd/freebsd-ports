@@ -1,7 +1,7 @@
 PORTNAME=	graphene
 PORTVERSION=	2.1.9
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
@@ -17,13 +17,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aniso86016>=3<7:devel/py-aniso86016@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}graphql-relay2>=2<3:devel/py-graphql-relay2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.10.0<2:devel/py-six@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}graphene
 
-PORTSCOUT=	limmit:^2\.
+PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.mk>

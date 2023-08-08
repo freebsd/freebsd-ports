@@ -15,7 +15,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.mpcdf.mpg.de
 GL_ACCOUNT=	mtr
 GL_PROJECT=	libsharp
-GL_COMMIT=	54856313a5fcfb6a33817b7dfa28c4b1965ffbd1
+GL_TAGNAME=	54856313a5fcfb6a33817b7dfa28c4b1965ffbd1
 
 GNU_CONFIGURE=	yes
 

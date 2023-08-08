@@ -1,5 +1,5 @@
 PORTNAME=	gettext_i18n_rails_js
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-gettext>=3.0.2:devel/rubygem-gettext \
 		rubygem-rails50>=5.0.7:www/rubygem-rails50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

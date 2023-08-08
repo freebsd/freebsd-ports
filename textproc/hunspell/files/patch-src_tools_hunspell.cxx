@@ -1,8 +1,8 @@
---- src/tools/hunspell.cxx.orig	2017-03-25 21:20:45 UTC
+--- src/tools/hunspell.cxx.orig	2022-12-25 23:48:44 UTC
 +++ src/tools/hunspell.cxx
 @@ -115,29 +115,23 @@
- #include "xmlparser.hxx"
- #include "odfparser.hxx"
+ #include "../parsers/xmlparser.hxx"
+ #include "../parsers/odfparser.hxx"
  
 -#define LIBDIR                \
 -  "/usr/share/hunspell:"      \

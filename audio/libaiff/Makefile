@@ -1,17 +1,21 @@
 PORTNAME=	libaiff
-PORTVERSION=	5.0
-DISTVERSIONSUFFIX=	-release
+DISTVERSIONPREFIX=	v
+DISTVERSION=	6.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/aifftools/${PORTNAME}/LibAiff%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write AIFF files
 WWW=		http://aifftools.sourceforge.net/libaiff/
 
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/endian.h \
-		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h
+USES=		autoreconf gmake libtool
+USE_LDCONFIG=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	mtszb
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

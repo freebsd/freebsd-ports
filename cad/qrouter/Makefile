@@ -1,5 +1,5 @@
 PORTNAME=	qrouter
-DISTVERSION=	1.4.85
+DISTVERSION=	1.4.86
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/${PORTNAME}/archive/
 

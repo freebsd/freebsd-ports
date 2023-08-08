@@ -1,5 +1,5 @@
 PORTNAME=	zlib
-PORTVERSION=	2.1.1
+PORTVERSION=	3.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,5 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -22,6 +22,12 @@ GROUPS=		istat
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/istatserver ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/istatserver
@@ -35,4 +41,4 @@ do-install:
 			${STAGEDIR}${MANPREFIX}/man/man5
 	@${ECHO_CMD} '@postexec ${CHOWN} -R ${USERS}:${GROUPS} %D/etc/istatserver' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

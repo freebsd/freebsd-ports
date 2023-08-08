@@ -1,5 +1,5 @@
 PORTNAME=	exifr
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/remvee/exifr
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

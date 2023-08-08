@@ -10,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		cpe php:web
-USE_PHP=	mcrypt pcre session
+USE_PHP=	mcrypt session
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcit-ci
@@ -39,11 +39,10 @@ CI_CONF_FILES=	application/config/autoload.php \
 		application/config/user_agents.php \
 		index.php
 
-OPTIONS_DEFINE=	APACHE MSSQL MYSQLI ODBC PGSQL SQLITE
+OPTIONS_DEFINE=	APACHE MYSQLI ODBC PGSQL SQLITE
 OPTIONS_SUB=	yes
 
 APACHE_DESC=	Configure for Apache-2.x
-MSSQL_DESC=	Install MSSQL support for PHP
 MYSQLI_DESC=	Install MySQLi support for PHP
 ODBC_DESC=	Install ODBC support for PHP
 PGSQL_DESC=	Install PostgreSQL support for PHP
@@ -51,7 +50,6 @@ SQLITE_DESC=	Install SQLite support for PHP
 
 APACHE_SUB_FILES=	codeigniter.conf
 APACHE_USES=	apache:run
-MSSQL_USE=	PHP=mssql
 MYSQLI_USE=	PHP=mysqli
 ODBC_USE=	PHP=odbc
 PGSQL_USE=	PHP=pgsql

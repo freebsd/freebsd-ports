@@ -4,22 +4,27 @@ PORTREVISION=	2
 CATEGORIES=	science math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	General Hidden Markov Model Library in C
 WWW=		http://ghmm.sourceforge.net/
 
 LICENSE=	GPLv3
 
-#BUILD_DEPENDS=	swig:devel/swig13
+USES=		autoreconf gnome libtool pkgconfig
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_GNOME=	libxml2
-USES=		autoreconf gnome libtool pkgconfig
 CONFIGURE_ARGS+=	--without-python
 
-USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	graphviz # bin/cluster
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,9 @@
+If your company has a large number of repositories and your work involves
+jumping between a lot of them then `git-workspace` can save you some time by:
+* Easily synchronizing your projects directory with Github, Gitlab.com or
+  Gitlab self-hosted.
+* Keep projects consistently named and under the correct path.
+* Automatically set upstreams for forks.
+* Move deleted repositories to an archive directory.
+* Allowing you to access any repository instantly.
+* Execute `git fetch` on all projects in parallel.

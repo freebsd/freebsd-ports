@@ -1,6 +1,6 @@
 PORTNAME=	xosview
 DISTVERSION=	1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	otaciliodearaujo@gmail.com

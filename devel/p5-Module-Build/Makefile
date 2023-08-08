@@ -1,10 +1,9 @@
-#
 # If you have compelling evidence that some ports need at least this version of
 # p5-Module-Build to build, be sure to update the BUILD_DEPENDS version in
 # Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4231
+PORTVERSION=	0.4234
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +28,5 @@ PORTSCOUT=	skipv:0.31011,0.31012
 
 post-patch:
 	@${RM} ${WRKSRC}/bin/config_data
-	@${REINPLACE_CMD} -e '/script_files/d' ${WRKSRC}/Build.PL
-	@${REINPLACE_CMD} -e '/^bin\/config_data/d' ${WRKSRC}/MANIFEST
 
 .include <bsd.port.mk>

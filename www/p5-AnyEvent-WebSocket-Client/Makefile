@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PLICEASE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebSocket client for AnyEvent
 WWW=		https://github.com/plicease/AnyEvent-WebSocket-Client
 

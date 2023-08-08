@@ -1,0 +1,11 @@
+--- components/power_metrics/BUILD.gn.orig	2023-07-16 15:47:57 UTC
++++ components/power_metrics/BUILD.gn
+@@ -42,7 +42,7 @@ static_library("power_metrics") {
+     ldflags = [ "/DELAYLOAD:setupapi.dll" ]
+   }
+ 
+-  if (is_linux) {
++  if (is_linux && !is_bsd) {
+     sources += [
+       "energy_metrics_provider_linux.cc",
+       "energy_metrics_provider_linux.h",

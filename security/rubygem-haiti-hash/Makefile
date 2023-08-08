@@ -1,5 +1,5 @@
 PORTNAME=	haiti-hash
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-docopt>=0.6<1:devel/rubygem-docopt \
 		rubygem-paint>=2.2<3:devel/rubygem-paint
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

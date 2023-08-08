@@ -1,11 +1,12 @@
 PORTNAME=	taskjuggler
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	deskutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Project management tool for UNIX based operating systems
-WWW=		https://taskjuggler.org/
+WWW=		https://taskjuggler.org/ \
+		https://github.com/taskjuggler/TaskJuggler
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,7 +15,6 @@ RUN_DEPENDS=	rubygem-mail>=2.7.1,2<3,2:mail/rubygem-mail \
 		rubygem-term-ansicolor>=1.7.1<2:devel/rubygem-term-ansicolor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

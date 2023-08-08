@@ -6,7 +6,7 @@ MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.10
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
 WWW=		https://www.mono-project.com/
 
@@ -39,7 +39,7 @@ NLS_USES=	gettext
 X11_USES=	display:test
 
 USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
-	pathfix perl5 python:3.6+ shebangfix tar:bzip2
+	pathfix perl5 python shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

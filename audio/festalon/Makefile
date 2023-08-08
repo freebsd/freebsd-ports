@@ -1,6 +1,6 @@
 PORTNAME=	festalon
 PORTVERSION=	0.5.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/festalon/ \
 		LOCAL/ehaupt

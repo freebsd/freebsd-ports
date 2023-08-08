@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.10
+DISTVERSION=	0.18.5
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,17 +18,24 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	SergiusTheBest:plog:d8461e9d473e59fbcc1f79eee021550dcf81e618:SergiusTheBest_plog/deps/plog \
 		sctplab:usrsctp:7c31bd35c79ba67084ce029511193a19ceb97447:sctplab_usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:4c3c85f536fb480e328e5de5e8f27fccc1a9690d:paullouisageneau_libjuice/deps/libjuice \
+		paullouisageneau:libjuice:0dabc046cd23da6908749e4c6add834ec29a7c49:paullouisageneau_libjuice/deps/libjuice \
 		nlohmann:json:4f8fba14066156b73f1189a2b8bd568bde5284c5:nlohmann_json/deps/json \
-		cisco:libsrtp:90d05bf8980d16e4ac3f16c19b77e296c4bc207b:cisco_libsrtp/deps/libsrtp
+		cisco:libsrtp:a566a9cfcd619e8327784aa7cff4a1276dc1e895:cisco_libsrtp/deps/libsrtp
 
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=       -Wno-error=unused-but-set-variable \
+			   -Wno-error=strict-prototypes
+.endif
+
 do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6only=0', at least one test is known to fail
-	# tests fail: https://github.com/paullouisageneau/libdatachannel/issues/682
+	# tests fail (intermittently?): https://github.com/paullouisageneau/libdatachannel/issues/682
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DNO_TESTS:BOOL=OFF ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		./tests-${DISTVERSION:C/-.*//}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

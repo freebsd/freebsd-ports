@@ -1,4 +1,4 @@
-cargo applet to build and install C-ABI compatibile dynamic and static
+cargo applet to build and install C-ABI compatible dynamic and static
 libraries.
 
 It produces and installs a correct pkg-config file, a static library

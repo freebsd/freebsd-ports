@@ -93,6 +93,7 @@ libdata/pkgconfig/accounts-qt5.pc
 %%DOCS%%share/doc/accounts-qt/html/graph_legend.md5
 %%DOCS%%share/doc/accounts-qt/html/graph_legend.png
 %%DOCS%%share/doc/accounts-qt/html/index.html
+%%DOCS%%share/doc/accounts-qt/html/index.js
 %%DOCS%%share/doc/accounts-qt/html/index.qhp
 %%DOCS%%share/doc/accounts-qt/html/jquery.js
 %%DOCS%%share/doc/accounts-qt/html/manager_8cpp_source.html

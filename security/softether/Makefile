@@ -1,8 +1,8 @@
 PORTNAME=	softether
-DISTVERSION=	4.38-9760
-PORTREVISION=	0
+DISTVERSION=	4.42-9798
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
-MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2021.08.17-tree/Source_Code/
+MASTER_SITES=	https://www.softether-download.com/files/softether/v${DISTVERSION}-rtm-2023.06.30-tree/Source_Code/
 DISTNAME=	${PORTNAME}-src-v${DISTVERSION}-rtm
 
 MAINTAINER=	meta@FreeBSD.org
@@ -41,6 +41,10 @@ WRKSRC=		${WRKDIR}/v${DISTVERSION}
 ALL_TARGET=	build
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	# SoftEther scatters logs, config files and PID files in PREFIX/libexec

@@ -1,8 +1,7 @@
 PORTNAME=	v_sim
-PORTVERSION=	3.8.0
-PORTREVISION=	4
+DISTVERSION=	3.8.0
+PORTREVISION=	8
 CATEGORIES=	science
-MASTER_SITES=	https://gitlab.com/l_sim/${PORTNAME}/-/archive/${PORTVERSION}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Visualization of atomic structures
@@ -20,6 +19,7 @@ BUILD_DEPENDS=	p5-XML-LibXML>0:textproc/p5-XML-LibXML	\
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 		libopenbabel.so:science/openbabel	\
 		libfreetype.so:print/freetype2	\
+		libharfbuzz.so:print/harfbuzz	\
 		libyaml.so:textproc/libyaml	\
 		libnetcdf.so:science/netcdf	\
 		libmsym.so:science/libmsym	\
@@ -32,12 +32,16 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}
 
 USES=		autoreconf blaslapack compiler:c11 fortran gl gmake gnome	\
-		libtool:keepla localbase:ldflags pkgconfig python:3.7+		\
+		libtool:keepla localbase:ldflags pkgconfig python		\
 		shebangfix tar:bzip2 xorg
 SHEBANG_GLOB=	*.py
 USE_XORG=	x11
-USE_GNOME=	cairo gtk30 intltool introspection
+USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection
 USE_GL=		gl glu
+USE_GITLAB=	yes
+GL_ACCOUNT=	l_sim
+GL_TAGNAME=	9dc8e5a0b2f4e7237ac50a922b87d234ff56a6e5
+
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash
 CONFIGURE_ARGS=	--htmldir=${PREFIX}/share/doc --with-openbabel		\
@@ -49,6 +53,7 @@ CPPFLAGS+=	${CFLAGS}
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
+OPTIONS_SUB=	yes
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug-messages
@@ -67,10 +72,8 @@ PLIST_SUB+=	AB="@comment "
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-PLIST_SUB+=	NLS=""
 .else
 USES+=		gettext-tools
-PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-configure:
@@ -91,5 +94,9 @@ pre-configure-EXAMPLES-off:
 		${WRKSRC}/Makefile.am
 	${REINPLACE_CMD} -e 's|: install-v_simexamplesDATA|:|'	\
 		${WRKSRC}/lib/python/Makefile.am
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib -type f -name "lib*.so.8.0.0" | \
+		${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>

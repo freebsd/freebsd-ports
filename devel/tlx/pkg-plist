@@ -34,6 +34,7 @@ include/tlx/define/attribute_fallthrough.hpp
 include/tlx/define/attribute_format_printf.hpp
 include/tlx/define/attribute_packed.hpp
 include/tlx/define/attribute_warn_unused_result.hpp
+include/tlx/define/constexpr.hpp
 include/tlx/define/deprecated.hpp
 include/tlx/define/endian.hpp
 include/tlx/define/likely.hpp
@@ -186,6 +187,6 @@ lib/cmake/tlx/tlx-targets.cmake
 lib/cmake/tlx/tlx-version.cmake
 lib/libtlx.a
 lib/libtlx.so
-lib/libtlx.so.0
-lib/libtlx.so.0.5.20200817
+lib/libtlx.so.0.6
+lib/libtlx.so.0.6.1
 libdata/pkgconfig/tlx.pc

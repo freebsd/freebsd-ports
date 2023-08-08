@@ -1,0 +1,40 @@
+--- ext/bifrost/CMakeLists.txt.orig	2023-06-27 10:45:00 UTC
++++ ext/bifrost/CMakeLists.txt
+@@ -7,18 +7,12 @@ find_package(Threads REQUIRED)
+ # To enable a larger default k-mer size, replace MAX_KMER_SIZE with a larger multiple of 32: actual maximum k-mer size will be MAX_KMER_SIZE-1.
+ SET(MAX_KMER_SIZE "32" CACHE STRING "MAX_KMER_SIZE")
+ SET(MAX_GMER_SIZE "${MAX_KMER_SIZE}" CACHE STRING "MAX_GMER_SIZE")
+-# Enable architecture optimizations
+-SET(COMPILATION_ARCH "native" CACHE STRING "COMPILATION_ARCH")
+-# Enable AVX2 instructions
+-SET(ENABLE_AVX2 "ON" CACHE STRING "ENABLE_AVX2")
++SET(CMAKE_VERBOSE_MAKEFILE "ON")
+ 
+ # Set some default compile flags
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+ 
+-set_property(SOURCE BlockedBloomFilter.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -funroll-loops")
+-
+-
+ #check if we are on arm64 and apple, if so, disable AVX2
+ if(APPLE AND CMAKE_SYSTEM_PROCESSOR MATCHES "arm")
+ 	message("Disabling AVX2 instructions on arm64")
+@@ -30,8 +24,6 @@ if(COMPILATION_ARCH MATCHES "OFF")
+ 	message("Disabling native architecture compilation (including AVX2)")
+ else(COMPILATION_ARCH MATCHES "OFF")
+ 	message("Compilation architecture: ${COMPILATION_ARCH}")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=${COMPILATION_ARCH}")
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=${COMPILATION_ARCH}")
+ endif(COMPILATION_ARCH MATCHES "OFF")
+ 
+ if(ENABLE_AVX2 MATCHES "OFF")
+@@ -56,7 +48,7 @@ else(CMAKE_BUILD_TYPE MATCHES Debug)
+ 		set(CMAKE_EXE_LINKER_FLAGS "-pg")
+ 	else(CMAKE_BUILD_TYPE MATCHES Profile)
+ 		message("Build type: Release")
+-		add_compile_options(-O3)
++		add_compile_options(-O2)
+ 	endif(CMAKE_BUILD_TYPE MATCHES Profile) 
+ endif(CMAKE_BUILD_TYPE MATCHES Debug)
+ 

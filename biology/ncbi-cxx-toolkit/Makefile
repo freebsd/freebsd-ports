@@ -1,6 +1,7 @@
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	26.0.1
+DISTVERSION=	27.0.0
+PORTREVISION=	1
 CATEGORIES=	biology science devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,9 @@ BROKEN_armv6=	platform not defined for FreeBSD arm, see https://github.com/ncbi/
 
 LIB_DEPENDS=	libcdd.so:math/cddlib \
 		liblmdb.so:databases/lmdb \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libunwind.so:devel/libunwind \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++17-lang gmake mysql perl5 python shebangfix ssl xorg

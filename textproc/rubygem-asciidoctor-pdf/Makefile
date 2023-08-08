@@ -1,6 +1,5 @@
 PORTNAME=	asciidoctor-pdf
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.3.9
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +21,6 @@ RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor \
 		rubygem-treetop>=1.6.0<1.7:devel/rubygem-treetop
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

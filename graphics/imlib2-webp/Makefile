@@ -2,7 +2,7 @@ PORTNAME=	imlib2-webp
 PORTVERSION=	20160601
 CATEGORIES=	graphics
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WebP image loader plugin for Imlib 2
 WWW=		https://www.hauweele.net/~gawen/imlib2-webp.html
 

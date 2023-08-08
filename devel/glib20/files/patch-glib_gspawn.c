@@ -1,6 +1,6 @@
---- glib/gspawn.c.orig	2020-12-17 03:47:11.474608400 -0800
-+++ glib/gspawn.c	2021-02-17 13:58:15.271434000 -0800
-@@ -51,6 +51,12 @@
+--- glib/gspawn.c.orig	2023-03-10 14:33:15 UTC
++++ glib/gspawn.c
+@@ -54,6 +54,12 @@
  #include <sys/syscall.h>  /* for syscall and SYS_getdents64 */
  #endif
  
@@ -13,9 +13,9 @@
  #include "gspawn.h"
  #include "gspawn-private.h"
  #include "gthread.h"
-@@ -1204,6 +1210,33 @@ filename_to_fd (const char *p)
+@@ -1231,6 +1237,33 @@ g_spawn_check_exit_status (gint      wait_status,
+   return g_spawn_check_wait_status (wait_status, error);
  }
- #endif
  
 +#ifdef __FreeBSD__
 +static int
@@ -46,17 +46,18 @@
 +
  /* This function is called between fork() and exec() and hence must be
   * async-signal-safe (see signal-safety(7)). */
- static int
-@@ -1228,6 +1261,12 @@ safe_fdwalk (int (*cb)(void *data, int fd), void *data
-   
- #if 0 && defined(HAVE_SYS_RESOURCE_H)
-   struct rlimit rl;
-+#endif
+ static gssize
+@@ -1432,6 +1465,13 @@ safe_fdwalk (int (*cb)(void *data, int fd), void *data
+    * may fail on non-Linux operating systems. See safe_fdwalk_with_invalid_fds
+    * for a slower alternative.
+    */
 +
 +#ifdef __FreeBSD__
++  gint res = 0;
 +  if (fdwalk2(cb, data, &res) == 0)
 +      return res;
 +  /* If any sysctl/malloc call fails continue with the fall back method */
- #endif
++#endif
  
  #ifdef __linux__
+   gint fd;

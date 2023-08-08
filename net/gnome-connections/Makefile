@@ -1,5 +1,6 @@
 PORTNAME=	gnome-connections
 PORTVERSION=	42.1.2
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -24,4 +25,3 @@ USE_GNOME=	glib20 gtk30
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 .include <bsd.port.mk>
-

@@ -82,6 +82,7 @@ bin/pyuic5
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtBluetooth/qpybluetooth_quint128.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/QtCore.toml
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/QtCoremod.sip
+%%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/pyqt-gpl.sip5
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/qabstractanimation.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/qabstracteventdispatcher.sip
 %%PYTHON_SITELIBDIR%%/PyQt5/bindings/QtCore/qabstractitemmodel.sip

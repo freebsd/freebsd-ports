@@ -1,6 +1,6 @@
---- chrome/browser/policy/device_management_service_configuration.cc.orig	2022-02-28 16:54:41 UTC
+--- chrome/browser/policy/device_management_service_configuration.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/policy/device_management_service_configuration.cc
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) ||           \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \

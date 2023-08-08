@@ -13,3 +13,11 @@
  MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
  
  
+@@ -19144,6 +19144,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+               test -z "$ax_tls_defn_keyword" && continue
+           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++#include <stddef.h>
+ template <typename T>class TLSClass {
+               public: static  $ax_tls_decl_keyword  T *tlsvar;
+               };

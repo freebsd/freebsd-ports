@@ -30,6 +30,8 @@ include/linphone++/conference.hh
 include/linphone++/conference_info.hh
 include/linphone++/conference_listener.hh
 include/linphone++/conference_params.hh
+include/linphone++/conference_scheduler.hh
+include/linphone++/conference_scheduler_listener.hh
 include/linphone++/config.hh
 include/linphone++/content.hh
 include/linphone++/core.hh
@@ -45,6 +47,7 @@ include/linphone++/factory.hh
 include/linphone++/friend.hh
 include/linphone++/friend_list.hh
 include/linphone++/friend_list_listener.hh
+include/linphone++/friend_listener.hh
 include/linphone++/friend_phone_number.hh
 include/linphone++/headers.hh
 include/linphone++/im_notif_policy.hh
@@ -84,9 +87,11 @@ include/linphone++/tunnel_config.hh
 include/linphone++/vcard.hh
 include/linphone++/video_activation_policy.hh
 include/linphone++/video_definition.hh
+include/linphone++/video_source_descriptor.hh
 include/linphone++/xml_rpc_request.hh
 include/linphone++/xml_rpc_request_listener.hh
 include/linphone++/xml_rpc_session.hh
+include/linphone/FlexiAPIClient.hh
 include/linphone/account_creator.h
 include/linphone/account_creator_service.h
 include/linphone/api/c-account-cbs.h
@@ -97,6 +102,7 @@ include/linphone/api/c-api.h
 include/linphone/api/c-audio-device.h
 include/linphone/api/c-auth-info.h
 include/linphone/api/c-call-cbs.h
+include/linphone/api/c-call-log.h
 include/linphone/api/c-call-stats.h
 include/linphone/api/c-call.h
 include/linphone/api/c-callbacks.h
@@ -107,6 +113,7 @@ include/linphone/api/c-chat-room-params.h
 include/linphone/api/c-chat-room.h
 include/linphone/api/c-conference-cbs.h
 include/linphone/api/c-conference-info.h
+include/linphone/api/c-conference-scheduler.h
 include/linphone/api/c-conference.h
 include/linphone/api/c-content.h
 include/linphone/api/c-dial-plan.h
@@ -118,6 +125,7 @@ include/linphone/api/c-ldap-params.h
 include/linphone/api/c-ldap.h
 include/linphone/api/c-magic-search-cbs.h
 include/linphone/api/c-magic-search.h
+include/linphone/api/c-nat-policy.h
 include/linphone/api/c-participant-device-cbs.h
 include/linphone/api/c-participant-device-identity.h
 include/linphone/api/c-participant-device.h
@@ -129,9 +137,9 @@ include/linphone/api/c-recorder-params.h
 include/linphone/api/c-recorder.h
 include/linphone/api/c-search-result.h
 include/linphone/api/c-types.h
+include/linphone/api/c-video-source-descriptor.h
 include/linphone/buffer.h
 include/linphone/call.h
-include/linphone/call_log.h
 include/linphone/call_params.h
 include/linphone/call_stats.h
 include/linphone/callbacks.h
@@ -148,6 +156,7 @@ include/linphone/enums/chat-room-enums.h
 include/linphone/enums/conference-enums.h
 include/linphone/enums/encryption-engine-enums.h
 include/linphone/enums/event-log-enums.h
+include/linphone/enums/participant-device-enums.h
 include/linphone/enums/security-event-enums.h
 include/linphone/error_info.h
 include/linphone/event.h
@@ -167,7 +176,6 @@ include/linphone/linphonepresence.h
 include/linphone/logging.h
 include/linphone/lpconfig.h
 include/linphone/misc.h
-include/linphone/nat_policy.h
 include/linphone/payload_type.h
 include/linphone/player.h
 include/linphone/presence.h

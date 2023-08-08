@@ -24,6 +24,7 @@ share/locale/hu/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ia/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/it/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ja/LC_MESSAGES/kded_ktp_approver.mo
+share/locale/ka/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/kk/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/km/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ko/LC_MESSAGES/kded_ktp_approver.mo
@@ -42,6 +43,9 @@ share/locale/ru/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/sk/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/sl/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/sr/LC_MESSAGES/kded_ktp_approver.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kded_ktp_approver.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kded_ktp_approver.mo
+share/locale/sr@latin/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/sv/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/tr/LC_MESSAGES/kded_ktp_approver.mo
 share/locale/ug/LC_MESSAGES/kded_ktp_approver.mo

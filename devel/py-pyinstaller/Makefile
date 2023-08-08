@@ -2,7 +2,7 @@ PORTNAME=	pyinstaller
 PORTVERSION=	3.5
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyInstaller-${PORTVERSION}
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}altgraph>0:math/py-altgraph@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 EXTRACT_AFTER_ARGS=	--exclude doc/source --no-same-owner --no-same-permissions

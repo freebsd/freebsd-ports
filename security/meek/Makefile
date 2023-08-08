@@ -1,7 +1,7 @@
 PORTNAME=	meek
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.37.0
-PORTREVISION=	1
+PORTREVISION=	8
 CATEGORIES=	security net
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -35,6 +35,8 @@ PLIST_FILES=	bin/meek-client \
 		man/man1/meek-server.1.gz
 
 SUB_FILES=	pkg-message
+
+PORTSCOUT=	skipv:rm
 
 do-test:
 .for t in ${GO_TARGET}

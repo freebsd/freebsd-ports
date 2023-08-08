@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lexical Analysis Module for Python
 WWW=		http://www.cosc.canterbury.ac.nz/~greg/python/Plex/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

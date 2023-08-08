@@ -11,7 +11,7 @@ lib/libasprintf.so.0.0.0
 lib/libintl.a
 lib/libintl.so
 lib/libintl.so.8
-lib/libintl.so.8.2.0
+lib/libintl.so.8.3.0
 man/man1/envsubst.1.gz
 man/man1/gettext.1.gz
 man/man1/ngettext.1.gz
@@ -76,6 +76,7 @@ share/locale/hu/LC_MESSAGES/gettext-runtime.mo
 share/locale/id/LC_MESSAGES/gettext-runtime.mo
 share/locale/it/LC_MESSAGES/gettext-runtime.mo
 share/locale/ja/LC_MESSAGES/gettext-runtime.mo
+share/locale/ka/LC_MESSAGES/gettext-runtime.mo
 share/locale/ko/LC_MESSAGES/gettext-runtime.mo
 share/locale/locale.alias
 share/locale/nb/LC_MESSAGES/gettext-runtime.mo

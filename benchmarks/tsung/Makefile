@@ -1,9 +1,9 @@
 PORTNAME=	tsung
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	benchmarks sysutils
 MASTER_SITES=	http://tsung.erlang-projects.org/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Multi-protocol distributed load testing tool
 WWW=		http://tsung.erlang-projects.org/
 
@@ -15,16 +15,16 @@ RUN_DEPENDS=	erl:lang/erlang
 USES=		gmake perl5 python:run shebangfix
 USE_PERL5=	run
 
-SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py \
-		src/tsung-plotter/tsplot.py.in
+SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsplot.py.in \
+		src/tsung-plotter/tsung/tsung.py
 
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	EXAMPLES
-
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/| ; \

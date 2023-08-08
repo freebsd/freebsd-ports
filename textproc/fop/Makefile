@@ -1,5 +1,5 @@
 PORTNAME=	fop
-DISTVERSION=	2.6
+DISTVERSION=	2.8
 CATEGORIES=	textproc java
 MASTER_SITES=	APACHE/xmlgraphics/fop/source/:fop \
 		SF/offo/offo-hyphenation/2.2:hyph \

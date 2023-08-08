@@ -4,8 +4,8 @@ include/qschematic/commands/commanditemmove.h
 include/qschematic/commands/commanditemremove.h
 include/qschematic/commands/commanditemvisibility.h
 include/qschematic/commands/commandlabelrename.h
-include/qschematic/commands/commandnoderesize.h
-include/qschematic/commands/commandnoderotate.h
+include/qschematic/commands/commandrectitemresize.h
+include/qschematic/commands/commandrectitemrotate.h
 include/qschematic/commands/commands.h
 include/qschematic/commands/commandwirenetrename.h
 include/qschematic/commands/commandwirepointmove.h
@@ -16,7 +16,9 @@ include/qschematic/items/itemfunctions.h
 include/qschematic/items/itemmimedata.h
 include/qschematic/items/label.h
 include/qschematic/items/node.h
+include/qschematic/items/rectitem.h
 include/qschematic/items/splinewire.h
+include/qschematic/items/widget.h
 include/qschematic/items/wire.h
 include/qschematic/items/wirenet.h
 include/qschematic/items/wireroundedcorners.h

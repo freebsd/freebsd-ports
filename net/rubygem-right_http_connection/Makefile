@@ -10,7 +10,6 @@ WWW=		https://github.com/rightscale/right_http_connection
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

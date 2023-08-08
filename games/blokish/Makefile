@@ -1,21 +1,21 @@
 PORTNAME=	blokish
 PORTVERSION=	0.9.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}_v${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Clone of the strategy board game 'Blokus'
-WWW=		http://blokish.sourceforge.net/
+WWW=		https://sourceforge.net/projects/blokish/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
 USES=		compiler:c++11-lang gl gmake localbase tar:tgz
+GNU_CONFIGURE=	yes
 USE_GL=		gl
-USE_WX=		2.8
+USE_WX=		3.0
 
 MAKEFILE=	makefile
 

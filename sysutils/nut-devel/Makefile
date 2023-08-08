@@ -1,6 +1,5 @@
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	3
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -19,17 +18,18 @@ CONFLICTS=	nut-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	networkupstools
-GH_TAGNAME=	34c8ce640
-NUT_COMMIT_DATE=	2022.09.09
+GH_TAGNAME=	2ced48d1b
+NUT_COMMIT_DATE=	2023.07.30
 
 MAKE_JOBS_UNSAFE=	yes
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python
 USE_LDCONFIG=	yes
 
-NUT_USER?=	uucp
-NUT_GROUP?=	uucp
+NUT_USER?=	nut
+NUT_GROUP?=	nut
+USERS=		${NUT_USER} 
+GROUPS=		${NUT_GROUP} dialer
 STATEDIR?=	/var/db/nut
 PLIST_SUB+=	NUT_USER=${NUT_USER}
 PLIST_SUB+=	NUT_GROUP=${NUT_GROUP}
@@ -39,6 +39,9 @@ PLIST_SUB+=	CGIDIR="${CGIDIR_REL}"
 PLIST_SUB+=	CGIETCDIR="etc/nut/"
 
 OPTIONS_DEFAULT=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI FREEIPMI DOCS MANPAGES OPENSSL
+OPTIONS_DEFAULT_armv6=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI DOCS MANPAGES OPENSSL
+OPTIONS_DEFAULT_armv7=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI DOCS MANPAGES OPENSSL
+OPTIONS_DEFAULT_armv64=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI DOCS MANPAGES OPENSSL
 OPTIONS_DEFINE=	SERIAL USB SNMP NEON PDU MODBUS CGI BASH AVAHI IPMIPSU FREEIPMI DOCS MANPAGES
 OPTIONS_SINGLE=	SSL
 OPTIONS_SINGLE_SSL=	SSL_OFF OPENSSL NSS
@@ -55,7 +58,7 @@ IPMIPSU_DESC=	Use nut-ipmipsu support (experimental)
 SSL_OFF_DESC=	No SSL support
 
 USE_RC_SUBR=	nut nut_upsmon nut_upslog
-SUB_LIST+=	STATEDIR=${STATEDIR}
+SUB_LIST+=	STATEDIR=${STATEDIR} NUT_USER=${NUT_USER} NUT_GROUP=${NUT_GROUP}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 PORTDOCS=	*
@@ -80,7 +83,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-dev \
 		--with-ltdl --with-nut-scanner
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lpthread
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 # XXX Remove this when copying this port to sysutils/nut. The GA version
@@ -114,9 +117,6 @@ PDU_CONFIGURE_WITH=	powerman
 MODBUS_LIB_DEPENDS=	libmodbus.so:comms/libmodbus
 MODBUS_CONFIGURE_WITH=	modbus
 
-BASH_BUILD_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
-BASH_RUN_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash-completion
-
 AVAHI_BUILD_DEPENDS=	${LOCALBASE}/include/avahi-ui/avahi-ui.h:net/avahi-header
 AVAHI_BUILD_DEPENDS=	avahi-daemon:net/avahi-app
 AVAHI_RUN_DEPENDS=	avahi-daemon:net/avahi-app
@@ -146,7 +146,9 @@ pre-configure:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
+.if ${PORT_OPTIONS:MUSB}
 	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${STATEDIR}

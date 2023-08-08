@@ -1,5 +1,6 @@
 PORTNAME=	tools
-PORTVERSION=	2.085.0
+PORTVERSION=	2.101.0
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 PKGNAMEPREFIX=	dlang-
@@ -25,7 +26,7 @@ do-build:
 	${LDC2_CMD} ${WRKSRC}/${f}.d -of=${WRKSRC}/${f}
 .endfor
 	cd ${WRKSRC}/DustMite && \
-		${LDC2_CMD} dustmite.d splitter.d -of=${WRKSRC}/dustmite
+		${LDC2_CMD} dustmite.d polyhash.d splitter.d -of=${WRKSRC}/dustmite
 
 do-install:
 .for f in ${TOOLS_LIST} dustmite

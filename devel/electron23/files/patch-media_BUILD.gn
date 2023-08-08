@@ -1,0 +1,12 @@
+--- media/BUILD.gn.orig	2023-02-01 18:43:22 UTC
++++ media/BUILD.gn
+@@ -87,6 +87,9 @@ config("media_config") {
+       defines += [ "DLOPEN_PULSEAUDIO" ]
+     }
+   }
++  if (use_sndio) {
++    defines += [ "USE_SNDIO" ]
++  }
+   if (use_cras) {
+     defines += [ "USE_CRAS" ]
+   }

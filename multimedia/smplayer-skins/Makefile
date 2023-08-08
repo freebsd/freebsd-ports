@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/smplayer/SMPlayer-skins/${PORTVERSION}
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Skins for SMPlayer (Skinnable GUI)
 WWW=		http://smplayer.sourceforge.net/
 

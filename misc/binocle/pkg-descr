@@ -1,0 +1,5 @@
+binocle is a graphical tool to visualize binary data.
+It colorizes bytes according to different rules and renders them as pixels in
+a rectangular grid.
+This allows users to identify interesting parts in large files and to reveal
+image-like regions.

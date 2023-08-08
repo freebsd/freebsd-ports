@@ -1,4 +1,14 @@
-bin/stringify
+include/opensubdiv/bfr/irregularPatchType.h
+include/opensubdiv/bfr/limits.h
+include/opensubdiv/bfr/parameterization.h
+include/opensubdiv/bfr/refinerSurfaceFactory.h
+include/opensubdiv/bfr/surface.h
+include/opensubdiv/bfr/surfaceData.h
+include/opensubdiv/bfr/surfaceFactory.h
+include/opensubdiv/bfr/surfaceFactoryCache.h
+include/opensubdiv/bfr/surfaceFactoryMeshAdapter.h
+include/opensubdiv/bfr/tessellation.h
+include/opensubdiv/bfr/vertexDescriptor.h
 include/opensubdiv/far/error.h
 include/opensubdiv/far/patchDescriptor.h
 include/opensubdiv/far/patchMap.h
@@ -73,6 +83,10 @@ include/opensubdiv/vtr/refinement.h
 include/opensubdiv/vtr/sparseSelector.h
 include/opensubdiv/vtr/stackBuffer.h
 include/opensubdiv/vtr/types.h
+lib/cmake/OpenSubdiv/OpenSubdivConfig.cmake
+lib/cmake/OpenSubdiv/OpenSubdivConfigVersion.cmake
+lib/cmake/OpenSubdiv/OpenSubdivTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenSubdiv/OpenSubdivTargets.cmake
 lib/libosdCPU.a
 lib/libosdCPU.so
 lib/libosdCPU.so.%%LIBVERS%%

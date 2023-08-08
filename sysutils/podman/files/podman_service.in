@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Podman API Service
+
+# PROVIDE: podman_service
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# podman_service_enable:	Set to NO by default.
+#				Set it to YES to start podman API service daemon
+# podman_service_flags:		Extra flags for podman command (e.g. to set logging level)
+# podman_service_log:		Path to log file for podman stderr output
+#
+
+. /etc/rc.subr
+
+name=podman_service
+rcvar=${name}_enable
+
+: ${podman_service_enable:=NO}
+: ${podman_service_flags:="--time=0"}
+: ${podman_service_log:="/var/log/podman.log"}
+
+command="%%PREFIX%%/bin/podman"
+pidfile="/var/run/$name.pid"
+start_cmd="podman_start"
+
+podman_start()
+{
+    startmsg "Starting ${name}."
+    /usr/sbin/daemon -o ${podman_service_log} -f -p ${pidfile} ${command} system service ${podman_service_flags}
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

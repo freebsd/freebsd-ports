@@ -1,7 +1,7 @@
 PORTNAME=	markdown-include
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.8.1
 CATEGORIES=	textproc python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -10,12 +10,13 @@ WWW=		https://github.com/cmacmackin/markdown-include
 
 LICENSE=	GPLv3+
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>0:textproc/py-markdown@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown>=3.0.0:textproc/py-markdown@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_GITHUB=	yes
-GH_ACCOUNT=	cmacmackin
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 

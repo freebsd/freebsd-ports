@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2023-06-11 17:26:52 UTC
++++ src/CMakeLists.txt
+@@ -97,7 +97,7 @@ if (OPENGL_FOUND)
+ endif (OPENGL_FOUND)
+ 
+ if (UNIX AND (NOT ANDROID))
+-	add_definitions("-DBLOBBY_DATA_DIR=\"${CMAKE_INSTALL_PREFIX}/share/blobby\"")
++	add_definitions("-DBLOBBY_DATA_DIR=\"${DATADIR}\"")
+ endif()
+ 
+ set(BLOBBY_COMMON_LIBS lua::lua blobnet::blobnet tinyxml2::tinyxml2 PhysFS::PhysFS SDL2::SDL2main SDL2::SDL2 Boost::boost)

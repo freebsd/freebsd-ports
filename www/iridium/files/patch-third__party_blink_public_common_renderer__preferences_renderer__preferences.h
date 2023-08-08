@@ -1,6 +1,6 @@
---- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2022-04-01 07:48:30 UTC
+--- third_party/blink/public/common/renderer_preferences/renderer_preferences.h.orig	2023-07-24 14:27:53 UTC
 +++ third_party/blink/public/common/renderer_preferences/renderer_preferences.h
-@@ -50,7 +50,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
+@@ -63,7 +63,7 @@ struct BLINK_COMMON_EXPORT RendererPreferences {
    bool webrtc_allow_legacy_tls_protocols{false};
    UserAgentOverride user_agent_override;
    std::string accept_languages;

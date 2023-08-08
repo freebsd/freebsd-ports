@@ -1,5 +1,5 @@
 PORTNAME=	javaservicewrapper
-PORTVERSION=	3.5.49
+PORTVERSION=	3.5.53
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://wrapper.tanukisoftware.com/download/${PORTVERSION}/
 DISTNAME=	wrapper_${PORTVERSION}_src
@@ -30,7 +30,6 @@ OPTIONS_DEFINE=	DOCS
 MAKE_ARGS+=	-Dbits=64
 .else
 MAKE_ARGS+=	-Dbits=32
-CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.pre.mk>

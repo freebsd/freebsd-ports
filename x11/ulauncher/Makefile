@@ -1,5 +1,5 @@
 PORTNAME=	ulauncher
-PORTVERSION=	5.15.0
+PORTVERSION=	5.15.2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Ulauncher/Ulauncher/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		${LOCALBASE}/share/gir-1.0/WebKit2-4.0.gir:www/webkit2-gtk3 \
 		wmctrl:x11/wmctrl
 
-USES=		gettext-tools gnome python:3.6+
+USES=		gettext-tools gnome python
 USE_GNOME=	gtk30 intltool pygobject3
 USE_PYTHON=	autoplist distutils noflavors
 WRKSRC=		${WRKDIR}/${PORTNAME}

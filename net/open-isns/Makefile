@@ -9,7 +9,7 @@ WWW=		https://github.com/open-iscsi/open-isns/
 
 LICENSE=	LGPL21
 
-USES=	autoreconf gmake pathfix python:3.6+,test shebangfix
+USES=	autoreconf gmake pathfix python:test shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	open-iscsi

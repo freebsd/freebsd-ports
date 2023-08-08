@@ -11,22 +11,22 @@ WWW=		https://lucene.apache.org/core/
 
 LICENSE=	APACHE20
 
-CONFLICTS=	lucene4-[0-9].*
-
-PORTSCOUT=	limit:^3\.
-
 USES=		cpe tar:tgz
 USE_JAVA=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+CONFLICTS=	lucene4-[0-9].*
+
+PORTSCOUT=	limit:^3\.
+
 CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	CONTRIB DOCS EXAMPLES
-CONTRIB_DESC=	Install contributed jars
+CONTRIB_DESC=	Install contributed jars (required by openoffice)
 OPTIONS_DEFAULT=	CONTRIB
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
+PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}-core-${PORTVERSION}.jar
 
 CONTRIBS=	benchmark \
 		demo \
@@ -54,7 +54,7 @@ EXTRA_CONTRIBS_DIRS=	kuromoji \
 		stempel
 
 .for f in ${EXTRA_CONTRIBS_BASE} ${CONTRIBS} ${EXTRA_CONTRIBS_DIRS}
-CONTRIB_PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}-${f}-${PORTVERSION}.jar
+CONTRIB_PLIST_FILES+=	${JAVAJARDIR}/${PORTNAME}-${f}-${PORTVERSION}.jar
 .endfor
 
 PORTDOCS=	*

@@ -1,8 +1,9 @@
 # Based on the graphics/ilmbase port that was done by: nork@FreeBSD.org
 
 PORTNAME=	Imath
-PORTVERSION=	3.1.5
-PORTREVISION=	1
+PORTVERSION=	3.1.9
+DISTVERSIONPREFIX=	v
+PORTREVISION=	0
 CATEGORIES=	math devel graphics
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -11,10 +12,10 @@ WWW=		https://github.com/AcademySoftwareFoundation/Imath/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cmake compiler:c++14-lang pkgconfig
+USES=		cmake compiler:c++14-lang pathfix pkgconfig
 
 USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:Imath:v${PORTVERSION}
+GH_ACCOUNT=	AcademySoftwareFoundation
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX= \
@@ -43,7 +44,7 @@ PYTHON_CMAKE_BOOL=	PYTHON
 
 _MAJORVER=	3_1
 _VER=		29
-_MINVER=	4
+_MINVER=	8
 _PLVER=		0
 
 post-patch:

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}css-parser>0:www/py-css-parser@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		cpe gettext gnome python:3.7+ xorg
+USES=		cpe gettext gnome python xorg
 USE_PYTHON=	autoplist distutils noflavors
 USE_GNOME=	pygobject3
 USE_XORG=	x11 xext xscrnsaver

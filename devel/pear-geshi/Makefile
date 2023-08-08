@@ -1,7 +1,8 @@
 PORTNAME=	geshi
-PORTVERSION=	1.0.9.0
+PORTVERSION=	1.0.9.1
 CATEGORIES=	devel pear www
 MASTER_SITES=	http://pear.geshi.org/get/
+DISTNAME=	${PORTNAME}-1.0.9.0
 
 MAINTAINER=	michael.osipov@siemens.com
 COMMENT=	Generic syntax highlighter written in PHP

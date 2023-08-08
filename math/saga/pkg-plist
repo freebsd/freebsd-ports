@@ -30,14 +30,14 @@ include/saga/saga_gdi/sgdi_dialog.h
 include/saga/saga_gdi/sgdi_helper.h
 include/saga/saga_gdi/sgdi_layout_items.h
 lib/libsaga_api.so
-lib/libsaga_api.so.8
+lib/libsaga_api.so.9
 lib/libsaga_api.so.%%PORTVERSION%%
 lib/libsaga_gdi.so
-lib/libsaga_gdi.so.8
+lib/libsaga_gdi.so.9
 lib/libsaga_gdi.so.%%PORTVERSION%%
-%%PYTHON_SITELIBDIR%%/_saga_api.so
-%%PYTHON_SITELIBDIR%%/saga_api.py
-%%PYTHON_SITELIBDIR%%/saga_helper.py
+%%PYTHON_SITELIBDIR%%/PySAGA/__init__.py
+%%PYTHON_SITELIBDIR%%/PySAGA/_saga_api.so
+%%PYTHON_SITELIBDIR%%/PySAGA/saga_api.py
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
@@ -46,7 +46,6 @@ lib/saga/libdev_exercises.so
 lib/saga/libdev_tools.so
 lib/saga/libdocs_html.so
 lib/saga/libdocs_pdf.so
-lib/saga/libgarden_3d_viewer.so
 lib/saga/libgarden_fractals.so
 lib/saga/libgarden_games.so
 lib/saga/libgarden_webservices.so
@@ -82,7 +81,6 @@ lib/saga/libpj_georeference.so
 lib/saga/libpj_geotrans.so
 lib/saga/libpj_proj4.so
 lib/saga/libpointcloud_tools.so
-lib/saga/libpointcloud_viewer.so
 lib/saga/libshapes_grid.so
 lib/saga/libshapes_lines.so
 lib/saga/libshapes_points.so
@@ -116,7 +114,7 @@ lib/saga/libta_slope_stability.so
 lib/saga/libtable_calculus.so
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.so
-lib/saga/libtin_viewer.so
+lib/saga/libvis_3d_viewer.so
 share/applications/saga.desktop
 share/icons/hicolor/128x128/apps/saga.png
 share/icons/hicolor/16x16/apps/saga.png
@@ -135,15 +133,16 @@ share/man/man1/saga_cmd.1.gz
 share/man/man1/saga_gui.1.gz
 share/metainfo/org.saga-gis.saga-gui.appdata.xml
 share/pixmaps/saga.png
-%%DATADIR%%/docs/saga_on_mac.odt
+%%DATADIR%%/docs/saga_on_mac.md
+%%DATADIR%%/docs/saga_on_mac_build.sh
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
-@mode 0777
-@dir %%DATADIR%%
-@mode 0666
+%%DATADIR%%/helper/convert2utf-8.bat
+%%DATADIR%%/helper/convert2utf-8.py
 %%DATADIR%%/helper/doxygen_saga_api_chm
 %%DATADIR%%/helper/doxygen_saga_api_html
 %%DATADIR%%/helper/make_arcsaga_toolboxes.bat
+%%DATADIR%%/helper/make_macos_bundle.sh
 %%DATADIR%%/helper/make_python_api.bat
 %%DATADIR%%/helper/make_python_api_all.bat
 %%DATADIR%%/helper/make_saga4qgis_toolboxes.bat
@@ -152,23 +151,16 @@ share/pixmaps/saga.png
 %%DATADIR%%/helper/make_saga_snapshot.bat
 %%DATADIR%%/helper/make_tools_interface.bat
 %%DATADIR%%/helper/make_translation_files.bat
-@mode 0755
-%%DATADIR%%/python/examples/00_grid_create_dummy.py
-%%DATADIR%%/python/examples/01_grid_asc_to_saga.py
-%%DATADIR%%/python/examples/02_grid_morphometry.py
-%%DATADIR%%/python/examples/03_grid_difference.py
-%%DATADIR%%/python/examples/04_grid_contour.py
-%%DATADIR%%/python/examples/05_shp2xyz.py
-%%DATADIR%%/python/examples/06_xyz2shp.py
-%%DATADIR%%/python/examples/07_grid_tpi.py
-%%DATADIR%%/python/examples/saga_helper.py
-%%DATADIR%%/python/examples/test_all.bat
+%%DATADIR%%/helper/saga_python_version_tester.bat
+%%DATADIR%%/helper/saga_python_version_tester.py
+%%DATADIR%%/python/__init__.py
 %%DATADIR%%/python/helpers/print_version.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/environment.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/param_interface.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/tools.py
-@mode 0666
-%%DATADIR%%/python/saga_python_api.txt
+%%DATADIR%%/python/saga_python_example.bat
+%%DATADIR%%/python/saga_python_example.py
+%%DATADIR%%/python/saga_python_readme.txt
 %%DATADIR%%/python/test_data/test.mgrd
 %%DATADIR%%/python/test_data/test.sdat
 %%DATADIR%%/python/test_data/test.sgrd
@@ -209,7 +201,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/gridding.xml
 %%DATADIR%%/toolchains/group_files.xml
 %%DATADIR%%/toolchains/imagery.xml
-%%DATADIR%%/toolchains/imagery_fmask_clouds.xml
+%%DATADIR%%/toolchains/imagery_classify_majority.xml
 %%DATADIR%%/toolchains/imagery_lczc.xml
 %%DATADIR%%/toolchains/import_text_tables.xml
 %%DATADIR%%/toolchains/obia.xml
@@ -229,4 +221,3 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/tta_tools.xml
 %%DATADIR%%/toolchains/twi.xml
 %%DATADIR%%/toolchains/upslope_height.xml
-@mode

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,0 +1,4 @@
+This project offers a lightweight, procedural unit testing framework based on
+nothing but standard Fortran. Integration with meson, cmake and Fortran package
+manager (fpm) is available. Alternatively, the testdrive.F90 source file can be
+redistributed in the project's testsuite as well.

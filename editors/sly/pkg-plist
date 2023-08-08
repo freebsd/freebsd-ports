@@ -87,5 +87,6 @@
 %%THIS_LISPDIR%%/test/sly-fontifying-fu-tests.el
 %%THIS_LISPDIR%%/test/sly-indentation-tests.el
 %%THIS_LISPDIR%%/test/sly-mrepl-tests.el
+%%THIS_LISPDIR%%/test/sly-package-fu-tests.el
 %%THIS_LISPDIR%%/test/sly-parse-tests.el
 %%THIS_LISPDIR%%/test/sly-stickers-tests.el

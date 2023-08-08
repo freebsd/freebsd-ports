@@ -108,6 +108,7 @@ lib/gegl-%%GEGL_VER%%/gegl-generated.so
 %%ARM%%lib/gegl-%%GEGL_VER%%/gegl-transformops-arm-neon.so
 %%AMD64%%lib/gegl-%%GEGL_VER%%/gegl-transformops-x86_64-v2.so
 %%AMD64%%lib/gegl-%%GEGL_VER%%/gegl-transformops-x86_64-v3.so
+lib/gegl-%%GEGL_VER%%/vector-fill.so
 lib/gegl-%%GEGL_VER%%/gif-load.so
 lib/gegl-%%GEGL_VER%%/grey2.json
 %%JASPER%%lib/gegl-%%GEGL_VER%%/jp2-load.so

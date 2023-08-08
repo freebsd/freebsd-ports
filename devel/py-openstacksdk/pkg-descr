@@ -10,5 +10,3 @@ portions of the SDK are for you. However, if what you want is to be able to
 write an application that talks to clouds no matter what crazy choices the
 deployer has made in an attempt to be more hipster than their self-entitled
 narcissist peers, then the Cloud Abstraction layer is for you.
-
-See also: https://github.com/openstack/openstacksdk

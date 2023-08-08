@@ -10,7 +10,6 @@ share/obs/obs-plugins/StreamFX/effects/color-grade.effect
 share/obs/obs-plugins/StreamFX/effects/color_conversion_rgb_hsl.effect
 share/obs/obs-plugins/StreamFX/effects/color_conversion_rgb_hsv.effect
 share/obs/obs-plugins/StreamFX/effects/color_conversion_rgb_yuv.effect
-share/obs/obs-plugins/StreamFX/effects/displace.effect
 share/obs/obs-plugins/StreamFX/effects/lut-consumer.effect
 share/obs/obs-plugins/StreamFX/effects/lut-producer.effect
 share/obs/obs-plugins/StreamFX/effects/lut.effect
@@ -50,14 +49,6 @@ share/obs/obs-plugins/StreamFX/examples/shaders/filter/vignette.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/filter/wave.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/filter/zigzag.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/source/flip-ab-texture.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-3l23Rh.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-3tlXWS.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MslGRn.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MslfRn.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-MtcGD7.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-XljBW3.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-Xsl3RX.effect
-share/obs/obs-plugins/StreamFX/examples/shaders/source/shadertoy-template.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/color-shift.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/luma-burn.effect
 share/obs/obs-plugins/StreamFX/examples/shaders/transition/pixelator.effect

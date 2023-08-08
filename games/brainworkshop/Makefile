@@ -1,6 +1,7 @@
 PORTNAME=	brainworkshop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	games python
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://github.com/samcv/brainworkshop
 
 LICENSE=	GPLv1+ # version not specified
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyglet/__init__.py:graphics/py-pyglet@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyglet1>=0:graphics/py-pyglet1@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	brain-workshop

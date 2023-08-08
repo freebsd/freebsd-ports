@@ -1,5 +1,5 @@
 PORTNAME=	gnome-backgrounds
-PORTVERSION=	42.0
+PORTVERSION=	43
 CATEGORIES=	x11-themes graphics gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

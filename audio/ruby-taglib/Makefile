@@ -17,8 +17,7 @@ LIB_DEPENDS=	libtag.so:audio/taglib
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
-USES=		tar:bzip2
+USES=		ruby tar:bzip2
 
 OPTIONS_DEFINE=	DOCS
 

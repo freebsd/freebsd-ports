@@ -1,5 +1,6 @@
 PORTNAME=	openmsx
 DISTVERSION=	18.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org

@@ -10,7 +10,6 @@ WWW=		https://github.com/ngmoco/syslog_logger
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

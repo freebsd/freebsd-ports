@@ -1,5 +1,5 @@
 PORTNAME=	marginalia
-PORTVERSION=	1.10.1
+PORTVERSION=	1.11.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=2.3:www/rubygem-actionpack61 \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

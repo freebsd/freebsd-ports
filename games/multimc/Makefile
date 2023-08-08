@@ -18,7 +18,7 @@ GH_PROJECT=	MultiMC5
 GH_TUPLE=	MultiMC:libnbtplusplus:508eda8:libnbtplusplus/libraries/libnbtplusplus \
 		MultiMC:quazip:3691d57:quazip/libraries/quazip
 USE_LDCONFIG=	yes
-USE_JAVA=	1.8+
+USE_JAVA=	8+
 USE_QT=		core concurrent gui network testlib:build widgets xml \
 		buildtools:build qmake:build
 

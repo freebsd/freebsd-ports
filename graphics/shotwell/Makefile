@@ -1,8 +1,11 @@
 PORTNAME=	shotwell
-PORTVERSION=	0.30.16
+PORTVERSION=	0.30.18
 PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/shotwell/-/commit/
+PATCHFILES=	cd82759231e5ece2fa0dea40397c9051d15fd5c2.diff:-p1
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Open source photo manager for GNOME
@@ -12,7 +15,9 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
-LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
+LIB_DEPENDS=	libportal.so:deskutils/libportal \
+		libportal-gtk3.so:deskutils/libportal-gtk3 \
+		libgio-2.0.so:devel/glib20 \
 		libjson-glib-1.0.so:devel/json-glib \
 		libgdata.so:devel/libgdata \
 		libgee-0.8.so:devel/libgee \
@@ -28,7 +33,7 @@ LIB_DEPENDS=	libgio-2.0.so:devel/glib20 \
 		libxml2.so:textproc/libxml2
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer meson \
-		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz vala:build xorg
+		ninja pkgconfig python:build shebangfix sqlite tar:xz vala:build xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo dconf gtk30
 USE_LDCONFIG=	yes

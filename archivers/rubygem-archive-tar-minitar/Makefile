@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-minitar>=${PORTVERSION}<1:archivers/rubygem-minitar \
 		rubygem-minitar-cli>=${PORTVERSION}<1:archivers/rubygem-minitar-cli
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

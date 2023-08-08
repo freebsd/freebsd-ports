@@ -1,9 +1,9 @@
 PORTNAME=	dobutsu
-DISTVERSION=	3
+DISTVERSION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://fuz.su/~fuz/dobutsu/
+MASTER_SITES=	http://fuz.su/pub/dobutsu/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Tablebase and Engine for Dobutsu Shogi
 WWW=		https://github.com/clausecker/dobutsu
 
@@ -18,9 +18,12 @@ MAKE_ARGS=	CC="${CC}" \
 		PREFIX="${PREFIX}" \
 		RLCFLAGS= \
 		STAGING=${STAGEDIR}
-CFLAGS=		-DNDEBUG
+CFLAGS+=	${WITH_DEBUG:D:U-DNDEBUG}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/dobutsu
+
+do-test:
+	${WRKSRC}/validatetb ${WRKSRC}/dobutsu.tb.xz
 
 .include <bsd.port.mk>

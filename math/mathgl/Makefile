@@ -1,6 +1,6 @@
 PORTNAME=	mathgl
 DISTVERSION=	2.5
-PORTREVISION=	3
+PORTREVISION=	6
 CATEGORIES=	math graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
 
@@ -11,6 +11,8 @@ WWW=		http://mathgl.sourceforge.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_armv7=	error: unknown FP unit 'sse', see https://sourceforge.net/p/mathgl/bugs/49/
+
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libgsl.so:math/gsl \
 		libhdf5.so:science/hdf5 \
@@ -19,10 +21,11 @@ LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png \
 		libsz.so:science/libaec
 
-USES=		cmake compiler:c++11-lang gettext-runtime gl jpeg xorg
+USES=		cmake compiler:c++11-lang dos2unix gettext-runtime gl jpeg xorg
+DOS2UNIX_GLOB=	*.cpp *.h
 USE_GL=		gl glu glut
-USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
+USE_XORG=	xi xmu
 
 .for v in double gif glut gsl hdf5 jpeg ltdl mgl2 opengl pdf png zlib
 CMAKE_ARGS+=	-Denable-${v}=ON
@@ -32,18 +35,22 @@ CMAKE_ARGS+=	-Denable-${v}=ON
 CMAKE_ARGS+=	-Denable-${v}=OFF
 .endfor
 
+CXXFLAGS+=	--std=c++14
+
+PLIST_SUB=		SHLIB_VER=7.6.0
+
 OPTIONS_DEFINE=		PYTHON MPI
+OPTIONS_DEFAULT=	QT5
 OPTIONS_GROUP=		GRAPHICS
 OPTIONS_GROUP_GRAPHICS=	QT5 FLTK WXGTK
 OPTIONS_RADIO=		THREADS
 OPTIONS_RADIO_THREADS=	PTHREADS OPENMP
-OPTIONS_DEFAULT=	QT5
 OPTIONS_SUB=		yes
-GRAPHICS_DESC=		Graphics support
-PTHREADS_DESC=		Enable POSIX threads support (broken, fix pending release)
-OPENMP_DESC=		Parallel processing support via OpenMP (broken, cmake bug)
+
 FLTK_DESC=		Enable fltk widget
-PLIST_SUB=		SHLIB_VER=7.6.0
+GRAPHICS_DESC=		Graphics support
+OPENMP_DESC=		Parallel processing support via OpenMP (broken, cmake bug)
+PTHREADS_DESC=		Enable POSIX threads support (broken, fix pending release)
 
 PYTHON_CMAKE_BOOL=	enable-python
 PYTHON_BUILD_DEPENDS=	swig:devel/swig \

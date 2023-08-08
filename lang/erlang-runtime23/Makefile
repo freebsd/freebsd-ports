@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.3.4.16
+DISTVERSION=	23.3.4.19
 PORTREVISION=	0
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
@@ -83,12 +83,14 @@ ODBC_CFLAGS=			-I/usr/local/include
 ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
+OPENSSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
+			BROKEN_SSL_REASON="Requires OpenSSL 3.0.0 deprecated FIPS_mode routines"
 SCTP_CONFIGURE_ENABLE=		sctp
 THREADS_CONFIGURE_ENABLE=	threads
 WX_USES=			gl
 WX_CONFIGURE_WITH=		wx-config=${WX_CONFIG}
 WX_VARS=			USE_GL="gl glu" \
-				USE_WX=3.1+ \
+				USE_WX=3.2+ \
 				WX_COMPS="wx"
 
 .include <bsd.port.pre.mk>
@@ -122,17 +124,21 @@ pre-configure-WX-off:
 post-configure-ODBC-on:
 	${RM} ${WRKSRC}/lib/odbc/SKIP
 
+post-configure-ODBC-off:
+	echo "disabled by port options" > ${WRKSRC}/lib/odbc/SKIP
+
 pre-build-NATIVE-on:
 	@cd ${WRKSRC} && ${MAKE_CMD} clean
 
 post-build-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD}
 
 post-install-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
-			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 post-install-DTRACE-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/dtrace
@@ -159,8 +165,11 @@ post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
 post-stage:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o -type l \
-		| ${SORT} >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty \
+		-delete
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
+		-type l | \
+		${SORT} >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

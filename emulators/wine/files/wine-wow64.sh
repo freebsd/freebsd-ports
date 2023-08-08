@@ -32,7 +32,7 @@ then
   exit 1
 fi
 
-export LIBGL_DRIVERS_PATH="${LIBGL_DRIVERS_PATH:+$LIBGL_DRIVERS_PATH:}$LOCALBASE/lib/dri:$LOCALBASE/lib32/dri:$I386_ROOT/$LOCALBASE/lib/dri"
+export LIBGL_DRIVERS_PATH="${LIBGL_DRIVERS_PATH:+$LIBGL_DRIVERS_PATH:}$LOCALBASE/lib/dri-devel:$LOCALBASE/lib32/dri-devel:$I386_ROOT/$LOCALBASE/lib/dri-devel:$LOCALBASE/lib/dri:$LOCALBASE/lib32/dri:$I386_ROOT/$LOCALBASE/lib/dri"
 export LD_32_LIBRARY_PATH="${LD_32_LIBRARY_PATH:+$LD_32_LIBRARY_PATH:}$I386_ROOT/$PREFIX/lib/wine:$LOCALBASE/lib32:$I386_ROOT/$LOCALBASE/lib"
 for d in "$I386_ROOT/$LOCALBASE"/llvm*/lib
 do
@@ -42,10 +42,12 @@ do
   fi
 done
 export LD_32_LIBRARY_PATH_RPATH=y
+LD_32_LIBMAP_CONF=$(sed "s,$LOCALBASE,$I386_ROOT&,2" "$I386_ROOT/$LOCALBASE"/etc/libmap.d/*.conf 2>/dev/null || true)
 export LD_32_LIBMAP="
 libgcc_s.so.1 /usr/lib32/libgcc_s.so.1
 $LOCALBASE/lib/libvulkan_intel.so  $I386_ROOT/$LOCALBASE/lib/libvulkan_intel.so
 $LOCALBASE/lib/libvulkan_radeon.so $I386_ROOT/$LOCALBASE/lib/libvulkan_radeon.so
+$LD_32_LIBMAP_CONF
 $LD_32_LIBMAP"
 
 if [ -z "$WINE_NO_WOW64" ]

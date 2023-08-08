@@ -1,5 +1,5 @@
 PORTNAME=	Horde_Mime
-DISTVERSION=	2.11.1
+DISTVERSION=	2.11.2
 CATEGORIES=	mail www pear
 
 MAINTAINER=	horde@FreeBSD.org
@@ -14,5 +14,7 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Text_Flowed \
 		Horde_Translation \
 		Horde_Util
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

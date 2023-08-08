@@ -10,7 +10,6 @@ WWW=		https://github.com/tenderlove/hana
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

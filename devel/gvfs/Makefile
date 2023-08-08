@@ -1,5 +1,6 @@
 PORTNAME=	gvfs
 PORTVERSION=	1.50.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -19,12 +20,12 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgudev-1.0.so:devel/libgudev \
 		libudisks2.so:sysutils/libudisks \
 		libsecret-1.so:security/libsecret
-
-RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks
+RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks \
+		lsof:sysutils/lsof
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome libarchive localbase meson \
-		pkgconfig python:3.5+,build shebangfix tar:xz
+		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 libxml2 libxslt:build
 SHEBANG_FILES=	meson_post_install.py
 MESON_ARGS=	-Dsystemduserunitdir=no \

@@ -2,7 +2,7 @@ PORTNAME=	webpy
 PORTVERSION=	0.62
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/ \
-		CHEESESHOP
+		PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	web.py-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://webpy.org/
 
 LICENSE=	PD
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

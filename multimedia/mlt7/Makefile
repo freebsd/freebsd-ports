@@ -1,6 +1,6 @@
 PORTNAME=		${_MLT_PORTNAME}
 DISTVERSION=		${_MLT_VERSION}
-PORTREVISION=	2
+PORTREVISION?=		0
 CATEGORIES?=		multimedia
 # Don't use GitHub "fake" downloads that are auto-generated from a
 # tag; the project uploads tarballs for each release.
@@ -16,7 +16,8 @@ WWW=		https://www.mltframework.org/
 LICENSE?=		GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=		multi
 
-USES+=			alias cmake compiler:c++11-lang eigen:3 localbase pkgconfig
+USES+=			alias cmake compiler:c++11-lang eigen:3 localbase \
+			pathfix pkgconfig
 USE_LDCONFIG=		yes
 
 DATADIR=		${PREFIX}/share/mlt-7
@@ -31,8 +32,8 @@ CMAKE_ON=		MOD_XML
 
 # Explicitly disabled modules that are ouddated, unnecessary, or have
 # their own port.
-CMAKE_OFF=		MOD_GLAXNIMATE MOD_SDL1 MOD_QT \
-			MOD_NDI \
+CMAKE_OFF=		MOD_GLAXNIMATE MOD_GLAXNIMATE_QT6 MOD_SDL1 MOD_QT \
+			MOD_QT6 MOD_NDI \
 			SWIG_CSHARP SWIG_JAVA SWIG_LUA SWIG_NODEJS SWIG_PERL \
 			SWIG_PHP SWIG_PYTHON SWIG_RUBY SWIG_TCL
 
@@ -105,7 +106,8 @@ PLUSGPL_DESC=		Enable plus GPL module
 PLUSGPL_CMAKE_BOOL=	MOD_PLUSGPL
 
 PLUS_DESC=		Enable plus module
-PLUS_LIB_DEPENDS=	libfftw3.so:math/fftw3
+PLUS_LIB_DEPENDS=	libebur128.so:audio/ebur128 \
+			libfftw3.so:math/fftw3
 PLUS_CMAKE_BOOL=	MOD_PLUS
 
 RESAMPLE_DESC=		Enable resample module
@@ -113,6 +115,7 @@ RESAMPLE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 RESAMPLE_CMAKE_BOOL=	MOD_RESAMPLE
 
 RTAUDIO_DESC=		Enable RtAudio module
+RTAUDIO_BROKEN=		fails to build with RtAudio 6.0.0, see https://github.com/mltframework/mlt/issues/930
 RTAUDIO_LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
 			libpulse-simple.so:audio/pulseaudio
 RTAUDIO_CMAKE_BOOL=	MOD_RTAUDIO

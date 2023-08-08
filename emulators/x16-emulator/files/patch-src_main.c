@@ -1,6 +1,6 @@
---- src/main.c.orig	2022-04-16 06:55:20 UTC
+--- src/main.c.orig	2023-05-17 05:45:51 UTC
 +++ src/main.c
-@@ -475,7 +475,7 @@ main(int argc, char **argv)
+@@ -575,7 +575,7 @@ main(int argc, char **argv)
  
  	run_after_load = false;
  

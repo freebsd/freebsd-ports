@@ -1,0 +1,5 @@
+FASDA aims to provide a fast and simple differential analysis tool
+that just works and does not require any knowledge beyond basic Unix
+command-line skills. The code is written entirely in C to maximize
+efficiency and portability, and to provide a simple command-line user
+interface.

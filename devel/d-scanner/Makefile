@@ -1,5 +1,6 @@
 PORTNAME=	d-scanner
 PORTVERSION=	0.7.0
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -8,6 +9,8 @@ COMMENT=	Swiss-army knife for D source code
 WWW=		https://github.com/dlang-community/D-Scanner
 
 LICENSE=	BSL
+
+BROKEN=		fails to build
 
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \

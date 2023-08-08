@@ -10,7 +10,6 @@ WWW=		https://github.com/xlab-steampunk/redfish-client-ruby
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

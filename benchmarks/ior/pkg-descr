@@ -1,0 +1,6 @@
+IOR is a parallel IO benchmark that can be used to test the performance of
+parallel storage systems using various interfaces and access patterns. The IOR
+repository also includes the mdtest benchmark which specifically tests the peak
+metadata rates of storage systems under different directory structures. Both
+benchmarks use a common parallel I/O abstraction backend and rely on MPI for
+synchronization.

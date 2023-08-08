@@ -14,10 +14,10 @@ include/mosquittopp.h
 include/mqtt_protocol.h
 lib/libmosquitto.so
 lib/libmosquitto.so.1
-lib/libmosquitto.so.%%PORTVERSION%%
+lib/libmosquitto.so.%%DISTVERSION%%
 lib/libmosquittopp.so
 lib/libmosquittopp.so.1
-lib/libmosquittopp.so.%%PORTVERSION%%
+lib/libmosquittopp.so.%%DISTVERSION%%
 lib/mosquitto_dynamic_security.so
 libdata/pkgconfig/libmosquitto.pc
 libdata/pkgconfig/libmosquittopp.pc

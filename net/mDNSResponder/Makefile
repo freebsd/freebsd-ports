@@ -1,11 +1,13 @@
 PORTNAME=	mDNSResponder
-PORTVERSION=	1310.140.1
-CATEGORIES=	net dns
+PORTVERSION=	1790.80.10	# Reset PORTREVISION on slave port (dns/mDNSResponder_nss) after update
+PORTREVISION?=	1
+CATEGORIES?=	net dns
 MASTER_SITES=	https://opensource.apple.com/tarballs/mDNSResponder/
 
-MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Bonjour (zero-configuration networking) by Apple
-WWW=		https://opensource.apple.com/tarballs/mDNSResponder/
+MAINTAINER?=	sunpoet@FreeBSD.org
+COMMENT?=	Bonjour (zero-configuration networking) by Apple
+WWW?=		https://developer.apple.com/bonjour/ \
+		https://github.com/apple-oss-distributions/mDNSResponder
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
@@ -19,6 +21,7 @@ MAKE_ARGS=	LDCONFIG=${TRUE} LOCALBASE=${PREFIX} MAN_PATH=${PREFIX}/share/man STR
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponderposix
+WRKSRC=		${WRKDIR}/mDNSResponder-mDNSResponder-${PORTVERSION}
 
 CPE_VENDOR=	apple
 
@@ -28,7 +31,7 @@ EXTRA_MAN8=	dnsextd.8 mDNSResponderPosix.8
 EXTRA_SBIN=	dnsextd
 
 # lib/libdns_sd.so.1 sbin/mdnsd
-CONFLICTS_INSTALL=	avahi-libdns openmdns
+CONFLICTS_INSTALL?=	avahi-libdns openmdns
 
 OPTIONS_DEFINE=	IPV6
 

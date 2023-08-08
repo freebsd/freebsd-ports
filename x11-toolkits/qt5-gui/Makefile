@@ -1,5 +1,6 @@
 PORTNAME=	gui
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits graphics
 PKGNAMEPREFIX=	qt5-
 
@@ -25,8 +26,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb.so:x11/libxcb \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
-		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
+RUN_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 
 USES=			compiler:c++11-lang gl jpeg localbase \
 			perl5 qmake:no_env qt-dist:5,base

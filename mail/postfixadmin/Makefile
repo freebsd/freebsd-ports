@@ -20,7 +20,7 @@ CPE_VENDOR=	postfix_admin_project
 CPE_PRODUCT=	postfix_admin
 USE_GITHUB=	yes
 GH_TAGNAME=	d3bc1551
-USE_PHP=	mbstring openssl pcre session spl
+USE_PHP=	mbstring session
 
 NO_ARCH=	yes
 NO_BUILD=	yes

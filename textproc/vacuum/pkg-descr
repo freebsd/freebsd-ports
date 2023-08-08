@@ -1,0 +1,5 @@
+Vacuum is an OpenAPI & Swagger linter.
+
+vacuum will tell you what is wrong with your spec, why, where and how to fix it.
+It will work at scale and is designed as a CLI (with a UI) and a library to be
+consumed in other applications.

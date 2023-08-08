@@ -7,9 +7,15 @@
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
 # blocky_enable (bool):	Set to NO by default.
-#				Set it to YES to enable blocky.
-# blocky_config (str): Set to /usr/local/etc/blocky/config.yml by default.
-#
+#			Set it to YES to enable blocky.
+# blocky_config (str):	Set to /usr/local/etc/blocky-config.yml by default.
+#			Set it to a path to use that config file.
+# blocky_user (str):	Services run as root by default. Set to a user name
+#			to run blocky as that user. Note: non-root users
+#			might need permission to bind to ports.
+# blocky_group (str):	Set to the user's primary group by default.
+#			Set it to a group name for daemon file ownership.
+# blocky_flags (str):	Enter extra flags to append to the blocky command.
 
 . /etc/rc.subr
 
@@ -20,17 +26,29 @@ load_rc_config ${name}
 
 : ${blocky_enable:=NO}
 : ${blocky_config:="%%PREFIX%%/etc/blocky-config.yml"}
+: ${blocky_group:=}
 : ${blocky_flags:=}
 
-pidfile=/var/run/blocky.pid
-command="%%PREFIX%%/sbin/blocky"
+if [ -n "${blocky_user}" ] && [ -z "${blocky_group}" ]; then
+	# Detect the daemon user's primary group
+	blocky_group=$(id -gn "${blocky_user}")
+fi
 
-start_cmd="${name}_start"
+pidfile="/var/run/${name}.pid"
+blocky_path="%%PREFIX%%/sbin/blocky"
 
-blocky_start()
+command="/usr/sbin/daemon"
+procname="/usr/local/sbin/blocky"
+command_args="-c -f -p ${pidfile} ${blocky_path} \
+	-c ${blocky_config} ${blocky_flags}"
+
+start_precmd="blocky_precmd"
+
+# Sets up a pidfile the daemon user can access
+blocky_precmd()
 {
-	echo -n "Starting ${name}."
-	/usr/sbin/daemon -p ${pidfile} -f ${command} -c ${blocky_config} ${blocky_flags}
+	install -o "${blocky_user:-root}" -g "${blocky_group:-wheel}" \
+		-m 0600 /dev/null "${pidfile}"
 }
 
 run_rc_command "$1"

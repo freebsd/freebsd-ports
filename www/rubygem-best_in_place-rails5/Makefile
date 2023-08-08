@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionpack5>0:www/rubygem-actionpack5 \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

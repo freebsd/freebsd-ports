@@ -47,6 +47,10 @@ PLIST_SUB+=	HACKLINK=""
 PLIST_SUB+=	HACKLINK="@comment "
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 pre-everything::
 .if defined(WITH_TTY_GRAPHICS) || defined(WITHOUT_X11)
 	@${ECHO_MSG} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"

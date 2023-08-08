@@ -1,5 +1,11 @@
-TIMESTAMP = 1653799419
-SHA256 (go/net_frp/frp-v0.43.0/v0.43.0.mod) = 6ce9a8d55e44d41067c11a515db3c6128b17332a630f34f1cd557fcb0c919bf9
-SIZE (go/net_frp/frp-v0.43.0/v0.43.0.mod) = 1306
-SHA256 (go/net_frp/frp-v0.43.0/v0.43.0.zip) = 7ed70f122e7a653ace4520d8dad882443bdbfeb49dbbb8abadce1ea97915082b
-SIZE (go/net_frp/frp-v0.43.0/v0.43.0.zip) = 1413759
+TIMESTAMP = 1690335004
+SHA256 (go/net_frp/frp-v0.51.2/v0.51.2.mod) = 43e4c93c56b85ec0de0d50cd450a2697e36089cc791dc203227837fc06f2fb96
+SIZE (go/net_frp/frp-v0.51.2/v0.51.2.mod) = 3675
+SHA256 (go/net_frp/frp-v0.51.2/v0.51.2.zip) = 0dc418c6d56ee3088a2ba8a028c3e2db2a9a66f58525f42947a859d5bf21c65b
+SIZE (go/net_frp/frp-v0.51.2/v0.51.2.zip) = 1195258
+SHA256 (go/net_frp/frp-v0.51.2/golang-net-v0.8.0_GH0.tar.gz) = f9e2128a2d6861db0595428c7cce62fe5a131348a6c7651b6efa8b03d0b10831
+SIZE (go/net_frp/frp-v0.51.2/golang-net-v0.8.0_GH0.tar.gz) = 1244302
+SHA256 (go/net_frp/frp-v0.51.2/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/net_frp/frp-v0.51.2/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+SHA256 (go/net_frp/frp-v0.51.2/golang-text-v0.8.0_GH0.tar.gz) = aeaec799a8e0b02523c80fed03383da04bf1b9c9ef431ed4d34b70488fbeaa64
+SIZE (go/net_frp/frp-v0.51.2/golang-text-v0.8.0_GH0.tar.gz) = 8359526

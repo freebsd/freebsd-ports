@@ -4,7 +4,7 @@ include/avro/AvroSerialize.hh
 include/avro/AvroTraits.hh
 include/avro/Compiler.hh
 include/avro/Config.hh
-include/avro/CustomFields.hh
+include/avro/CustomAttributes.hh
 include/avro/DataFile.hh
 include/avro/Decoder.hh
 include/avro/Encoder.hh

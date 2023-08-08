@@ -1,22 +1,14 @@
---- src/lay/lay/lay.pro.orig	2022-04-24 08:12:38 UTC
+--- src/lay/lay/lay.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/lay/lay/lay.pro
-@@ -181,13 +181,13 @@ RESOURCES = layBuildInMacros.qrc \
+@@ -182,18 +182,18 @@ RESOURCES = layBuildInMacros.qrc \
  
- INCLUDEPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LAYBASIC_INC $$ANT_INC $$IMG_INC $$EDT_INC $$LYM_INC
- DEPENDPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LAYBASIC_INC $$ANT_INC $$IMG_INC $$EDT_INC $$LYM_INC
--LIBS += -L$$DESTDIR -lklayout_tl -lklayout_gsi -lklayout_db -lklayout_rdb -lklayout_lym -lklayout_laybasic -lklayout_ant -lklayout_img -lklayout_edt
-+LIBS += $$DESTDIR/libklayout_tl.so $$DESTDIR/libklayout_gsi.so $$DESTDIR/libklayout_db.so $$DESTDIR/libklayout_rdb.so $$DESTDIR/libklayout_lym.so $$DESTDIR/libklayout_laybasic.so $$DESTDIR/libklayout_ant.so $$DESTDIR/libklayout_img.so $$DESTDIR/libklayout_edt.so
- 
- win32 {
-   # for stack trace support:
-   # lpsapi for GetModuleFileName and others
-   # dbghelp for SymFromAddr and other
--  LIBS += -lpsapi -ldbghelp
-+  LIBS += $$DESTDIR/libpsapi.so $$DESTDIR/libdbghelp.so
- }
- 
- *bsd* {
-@@ -203,12 +203,12 @@ INCLUDEPATH += $$QTBASIC_INC
+ INCLUDEPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LAYBASIC_INC $$LAYUI_INC $$LAYVIEW_INC $$ANT_INC $$IMG_INC $$EDT_INC $$LYM_INC
+ DEPENDPATH += $$TL_INC $$GSI_INC $$DB_INC $$RDB_INC $$LAYBASIC_INC $$LAYUI_INC $$LAYVIEW_INC $$ANT_INC $$IMG_INC $$EDT_INC $$LYM_INC
+-LIBS += -L$$DESTDIR -lklayout_tl -lklayout_gsi -lklayout_db -lklayout_rdb -lklayout_lym -lklayout_laybasic -lklayout_layview -lklayout_layui -lklayout_ant -lklayout_img -lklayout_edt
+-
++LIBS += $$DESTDIR/libklayout_tl.so $$DESTDIR/libklayout_gsi.so $$DESTDIR/libklayout_db.so $$DESTDIR/libklayout_rdb.so $$DESTDIR/libklayout_lym.so $$DESTDIR/libklayout_laybasic.so $$DESTDIR/libklayout_layview.so $$DESTDIR/libklayout_layui.so $$DESTDIR/libklayout_ant.so $$DESTDIR/libklayout_img.so $$DESTDIR/libklayout_edt.so
++ 
+ INCLUDEPATH += $$QTBASIC_INC
  DEPENDPATH += $$QTBASIC_INC
  
  equals(HAVE_QTBINDINGS, "1") {
@@ -32,7 +24,7 @@
    }
  }
  
-@@ -216,16 +216,16 @@ INCLUDEPATH += $$RBA_INC
+@@ -201,16 +201,16 @@ INCLUDEPATH += $$RBA_INC
  DEPENDPATH += $$RBA_INC
  
  equals(HAVE_RUBY, "1") {

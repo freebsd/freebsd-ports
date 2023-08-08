@@ -1,1 +1,5 @@
-Kubernetes controller manager daemon
+The Kubernetes controller manager is a daemon that embeds the core
+control loops shipped with Kubernetes. Examples of controllers that
+ship with Kubernetes today are the replication controller,
+endpoints controller, namespace controller, and serviceaccounts
+controller.

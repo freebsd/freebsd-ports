@@ -1,7 +1,6 @@
 PORTNAME=	zmap
-PORTVERSION=	2.1.1
+DISTVERSION=	3.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,11 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gengetopt>0:devel/gengetopt
 LIB_DEPENDS=	libdnet.so:net/libdnet \
-		libgmp.so:math/gmp
+		libgmp.so:math/gmp \
+		libunistring.so:devel/libunistring
 
 USE_GITHUB=	yes
 
 USES=		cmake:insource pkgconfig
+
+CFLAGS+=	-D_SYSTYPE_BSD
 
 MANPAGE=	zblacklist.1 zmap.1 ztee.1
 
@@ -45,10 +47,5 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/etc/zmap/blacklist.conf|${LOCALBASE}/etc/zmap/blacklist.conf|g' \
 		${WRKSRC}/conf/zmap.conf \
 		${WRKSRC}/src/zmap.c
-
-post-install:
-.for m in ${MANPAGE}
-	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man1/$m
-.endfor
 
 .include <bsd.port.mk>

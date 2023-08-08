@@ -1,0 +1,15 @@
+rtx is a polyglot runtime manager (asdf rust clone).
+
+Features:
+* asdf-compatible - rtx is compatible with asdf plugins and .tool-versions
+  files. It can be used as a drop-in replacement.
+* Polyglot - compatible with any language, so no more figuring out how nvm,
+  nodenv, pyenv, etc work individually-just use 1 tool.
+* Fast - rtx is written in Rust and is very fast. 20x-200x faster than asdf.
+* No shims - shims cause problems, they break which, and add overhead. By
+  default, rtx does not use them-however you can if you want to.
+* Fuzzy matching and aliases - It's enough to just say you want "v18" of node,
+  or the "lts" version. rtx will figure out the right version without you
+  needing to specify an exact version.
+* Arbitrary env vars - Set custom env vars when in a project directory like
+  NODE_ENV=production or AWS_PROFILE=staging.

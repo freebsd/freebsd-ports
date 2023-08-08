@@ -1,7 +1,7 @@
 PORTNAME=	pypcap
-DISTVERSION=	1.2.3
+PORTVERSION=	1.3.0
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/pynetwork/pypcap
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 # PR 239725: workaround to avoid using /usr/lib32 over /usr/lib

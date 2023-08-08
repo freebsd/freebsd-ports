@@ -1,0 +1,45 @@
+[
+{
+  type: install
+  message: <<EOM
+Sopel was installed and there are some notes:
+
+1. The default profile or configuration file is installed in
+%%ETCDIR%%/sopel-default.cfg.
+
+2. The default profile uses logdir (/var/log/sopel), pid_dir
+(/var/run/sopel) and homedir (/var/db/sopel) directories, which are
+already created. You can change them in %%ETCDIR%%/sopel-default.cfg.
+
+3. Enable sopel with:
+sysrc sopel_enable="YES"
+
+4. Sopel can configure the common options with:
+service sopel configure
+
+5. Before starting sopel, it must be configured using service sopel configure
+or directly in the configuration file. After it is configured, the
+not_configured parameter in the configuration file must be removed
+or change its value to False.
+
+6. The service can run multiple instances of sopel, the default
+profile is "default". You can change or add more profiles by making
+a copy or creating other files with the prefix sopel- and the name
+of the profile:
+
+cp %%ETCDIR%%/sopel-default.cfg.sample %%ETCDIR%%/sopel-profile1.cfg
+cp %%ETCDIR%%/sopel-default.cfg.sample %%ETCDIR%%/sopel-profile2.cfg
+cp %%ETCDIR%%/sopel-default.cfg.sample %%ETCDIR%%/sopel-profile3.cfg
+
+Edit and add them in /etc/rc.conf:
+
+sysrc sopel_profiles+="profile1 profile2 profile3"
+
+7. Each plugin has its own configuration. If you observe strange behavior, please
+make sure you have configured the module correctly before reporting it as a bug.
+
+8. Start the service:
+service sopel start
+EOM
+}
+]

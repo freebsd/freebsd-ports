@@ -12,13 +12,15 @@ WWW=		https://www.fourmilab.ch/webtools/textogif/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
-NO_BUILD=	yes
-USE_TEX=	latex dvipsk
-USES=		perl5 shebangfix
+USES=		perl5 shebangfix tex
 USE_PERL5=	run
-NO_WRKSUBDIR=	yes
+USE_TEX=	latex dvipsk
 
 SHEBANG_FILES=	textogif
+
+NO_BUILD=	yes
+
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

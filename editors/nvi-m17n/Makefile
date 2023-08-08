@@ -56,6 +56,10 @@ CANNA_DESC=		Enable canna support
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .if ${PORT_OPTIONS:MEUC_JP}
 CONFIGURE_ARGS+=	--enable-multibyte=euc-jp
 .elif ${PORT_OPTIONS:MEUC_CN}

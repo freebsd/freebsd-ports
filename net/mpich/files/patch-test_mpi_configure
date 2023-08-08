@@ -1,6 +1,28 @@
---- test/mpi/configure.orig	2021-01-05 15:32:00 UTC
+--- test/mpi/configure.orig	2021-12-16 17:25:47 UTC
 +++ test/mpi/configure
-@@ -10907,17 +10907,7 @@ the same routine with arguments of different types." "
+@@ -4486,21 +4486,9 @@ fi
+     fi
+ fi
+ 
+-# First, determine whether we are/can support the language bindings
+-#
+-# Since F90/F90FLAGS are replaced by FC/FCFLAGS, rather than silently
+-# substituting them, i.e. FC=$F90 and FCFLAGS=$F90FLAGS, we choose to emit
+-# an error message and abort to avoid any ambiguous/hidden bug in choosing
+-# Fortran90 compilers.
+-if test -n "$F90" -o -n "$F90FLAGS" ; then
+-    as_fn_error $? "F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again." "$LINENO" 5
+-fi
+ 
+ # ------------------------------------------------------------------------
+ 
+-
+-# ------------------------------------------------------------------------
+-
+ if test "$enable_threads" = "yes" ; then
+     enable_threads=multiple
+ elif test "$enable_threads" = "no" ; then
+@@ -11038,17 +11026,7 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm

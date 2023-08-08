@@ -6,9 +6,7 @@
 %%SITE_PERL%%/Furl/Response.pm
 %%SITE_PERL%%/Furl/ZlibStream.pm
 %%PERL5_MAN3%%/Furl.3.gz
-%%PERL5_MAN3%%/Furl::ConnectionCache.3.gz
 %%PERL5_MAN3%%/Furl::HTTP.3.gz
 %%PERL5_MAN3%%/Furl::Headers.3.gz
 %%PERL5_MAN3%%/Furl::Request.3.gz
 %%PERL5_MAN3%%/Furl::Response.3.gz
-%%PERL5_MAN3%%/Furl::ZlibStream.3.gz

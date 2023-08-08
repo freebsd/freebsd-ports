@@ -1,6 +1,0 @@
-post-install-dmprt:
-	cd ${FILESDIR} && \
-	    ${INSTALL_DATA} lqx70ch.upp lqx70cl.upp lqx70cm.upp \
-	    ${STAGEDIR}${DATADIR}/lib
-
-post-install: post-install-dmprt

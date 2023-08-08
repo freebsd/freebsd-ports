@@ -1,5 +1,5 @@
 PORTNAME=	yaml
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	textproc pear
 
 MAINTAINER=	dbaio@FreeBSD.org

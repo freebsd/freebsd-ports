@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-color>=1.4.0:print/rubygem-color \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/techbook

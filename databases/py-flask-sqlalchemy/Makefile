@@ -1,24 +1,26 @@
 PORTNAME=	flask-sqlalchemy
-PORTVERSION=	2.5.1
+PORTVERSION=	3.0.3
 PORTREVISION=	1
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Flask-SQLAlchemy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Add SQLAlchemy support to your Flask application
-WWW=		https://github.com/pallets/flask-sqlalchemy
+WWW=		https://github.com/pallets-eco/flask-sqlalchemy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:www/py-flask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0.8:databases/py-sqlalchemy14@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-pep517>=1.0.0:devel/py-pdm-pep517@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=2.2:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.18:databases/py-sqlalchemy14@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

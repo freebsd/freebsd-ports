@@ -208,9 +208,9 @@ share/locale/pt_BR/LC_MESSAGES/libvirt-glib.mo
 share/locale/ru/LC_MESSAGES/libvirt-glib.mo
 share/locale/tr/LC_MESSAGES/libvirt-glib.mo
 share/locale/uk/LC_MESSAGES/libvirt-glib.mo
-%%VALA%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.deps
-%%VALA%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.vapi
-%%VALA%%share/vala/vapi/libvirt-glib-%%VERSION%%.deps
-%%VALA%%share/vala/vapi/libvirt-glib-%%VERSION%%.vapi
-%%VALA%%share/vala/vapi/libvirt-gobject-%%VERSION%%.deps
-%%VALA%%share/vala/vapi/libvirt-gobject-%%VERSION%%.vapi
+%%VAPI%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.deps
+%%VAPI%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.vapi
+%%VAPI%%share/vala/vapi/libvirt-glib-%%VERSION%%.deps
+%%VAPI%%share/vala/vapi/libvirt-glib-%%VERSION%%.vapi
+%%VAPI%%share/vala/vapi/libvirt-gobject-%%VERSION%%.deps
+%%VAPI%%share/vala/vapi/libvirt-gobject-%%VERSION%%.vapi

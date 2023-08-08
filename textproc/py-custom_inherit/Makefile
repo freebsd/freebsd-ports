@@ -1,7 +1,7 @@
 PORTNAME=	custom_inherit
 PORTVERSION=	2.3.1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	skreuzer@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/meowklaski/custom_inherit
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

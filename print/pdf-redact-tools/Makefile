@@ -1,7 +1,7 @@
 PORTNAME=	pdf-redact-tools
 PORTVERSION=	0.1.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
-USES=		magick:6,run python:3.6+
+USES=		magick:6,run python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

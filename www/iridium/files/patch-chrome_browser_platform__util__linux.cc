@@ -1,4 +1,4 @@
---- chrome/browser/platform_util_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/platform_util_linux.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/platform_util_linux.cc
 @@ -298,7 +298,9 @@ void RunCommand(const std::string& command,
  

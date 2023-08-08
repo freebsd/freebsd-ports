@@ -8,7 +8,7 @@ WWW=		https://github.com/etsy/mod_realdoc
 
 LICENSE=	MIT
 
-USES=		apache:2.2+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 USE_GITHUB=	yes

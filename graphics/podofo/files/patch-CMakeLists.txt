@@ -1,70 +1,48 @@
---- CMakeLists.txt.orig	2021-01-05 16:56:54 UTC
+--- CMakeLists.txt.orig	2023-06-29 08:54:06 UTC
 +++ CMakeLists.txt
-@@ -348,6 +348,7 @@ ELSE(LIBIDN_FOUND)
- 	MESSAGE("Libidn not found. AES-256 Encryption support will be disabled")
- ENDIF(LIBIDN_FOUND)
+@@ -21,8 +21,8 @@ endif()
+ set(PODOFO_VERSION_MAJOR "0" CACHE STRING "Major part of podofo version number")
+ set(PODOFO_VERSION_MINOR "10" CACHE STRING "Minor part of podofo version number")
+ set(PODOFO_VERSION_PATCH "1" CACHE STRING "Patchlevel part of podofo version number")
+-set(PODOFO_VERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
+ set(PODOFO_SOVERSION "2")
++set(PODOFO_VERSION "${PODOFO_SOVERSION}.${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  
-+IF(WANT_LIBJPEG)
- FIND_PACKAGE(LIBJPEG)
+ #
+ # Main includes
+@@ -149,6 +149,7 @@ else()
+     message("Libidn not found. AES-256 Encryption support will be disabled")
+ endif()
  
- IF(LIBJPEG_FOUND)
-@@ -357,7 +358,9 @@ IF(LIBJPEG_FOUND)
- ELSE(LIBJPEG_FOUND)
-   MESSAGE("Libjpeg not found. JPEG support will be disabled")
- ENDIF(LIBJPEG_FOUND)
-+ENDIF(WANT_LIBJPEG)
++if(WANT_LIBJPEG)
+ find_package(JPEG)
  
-+IF(WANT_TIFF)
- FIND_PACKAGE(TIFF)
+ if(JPEG_FOUND)
+@@ -157,7 +158,9 @@ if(JPEG_FOUND)
+ else()
+     message("Libjpeg not found. JPEG support will be disabled")
+ endif()
++endif()
  
- IF(TIFF_FOUND)
-@@ -367,7 +370,9 @@ IF(TIFF_FOUND)
- ELSE(TIFF_FOUND)
-   MESSAGE("Libtiff not found. TIFF support will be disabled")
- ENDIF(TIFF_FOUND)
-+ENDIF(WANT_TIFF)
++if(WANT_TIFF)
+ find_package(TIFF)
  
-+IF(WANT_PNG)
- FIND_PACKAGE(PNG)
+ if(TIFF_FOUND)
+@@ -166,7 +169,9 @@ if(TIFF_FOUND)
+ else()
+     message("Libtiff not found. TIFF support will be disabled")
+ endif()
++endif()
  
- IF(PNG_FOUND)
-@@ -378,6 +383,7 @@ ELSE(PNG_FOUND)
-   MESSAGE("LibPng not found. PNG support will be disabled")
-   SET(PNG_LIBRARIES "")
- ENDIF(PNG_FOUND)
-+ENDIF(WANT_PNG)
++if(WANT_PNG)
+ find_package(PNG)
  
- FIND_PACKAGE(UNISTRING)
+ if(PNG_FOUND)
+@@ -175,6 +180,7 @@ if(PNG_FOUND)
+ else()
+     message("LibPng not found. PNG support will be disabled")
+     set(PNG_LIBRARIES "")
++endif()
+ endif()
  
-@@ -393,6 +399,7 @@ ENDIF(UNISTRING_FOUND)
- 
- IF(NOT PODOFO_BUILD_LIB_ONLY)
- 
-+IF(WANT_CppUnit)
- FIND_PACKAGE(CppUnit)
- 
- IF(CppUnit_FOUND)
-@@ -402,6 +409,7 @@ IF(CppUnit_FOUND)
- ELSE(CppUnit_FOUND)
-   MESSAGE("Cppunit not found. No unit tests will be built.")
- ENDIF(CppUnit_FOUND)
-+ENDIF(WANT_CppUnit)
- 
- ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
- 
-@@ -442,6 +450,7 @@ ELSE(WANT_FONTCONFIG)
- ENDIF(WANT_FONTCONFIG)
- 
- IF(NOT PODOFO_BUILD_LIB_ONLY)
-+IF(WANT_LUA)
- FIND_PACKAGE(LUA)
- IF(LUA_FOUND)
- 	# If we have lua, we can build podofoimpose.
-@@ -453,6 +462,7 @@ IF(LUA_FOUND)
- ELSE(LUA_FOUND)
- 	MESSAGE("Lua not found - PoDoFoImpose and PoDoFoColor will be built without Lua support")
- ENDIF(LUA_FOUND)
-+ENDIF(WANT_LUA)
- ENDIF(NOT PODOFO_BUILD_LIB_ONLY)
- 
- 
+ find_package(Freetype REQUIRED)

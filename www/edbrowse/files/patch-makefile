@@ -1,0 +1,11 @@
+--- makefile.orig	2022-10-04 00:20:51 UTC
++++ makefile
+@@ -2,7 +2,7 @@ all :
+ #  This only works if you are making the default target.
+ 
+ all :
+-	cd src ; make
++	cd src && $(MAKE)
+ 
+ clean :
+ 	cd src ; make clean

@@ -1,12 +1,12 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.3.1
+DISTVERSION=	2.4.2
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Library to play Commodore 64 music derived from libsidplay2
-WWW=		https://sourceforge.net/p/sidplay-residfp/wiki/Home/
+WWW=		https://github.com/libsidplayfp/libsidplayfp
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	libgcrypt-config:security/libgcrypt
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		compiler:c++11-lang libtool pathfix pkgconfig
+USES=		compiler:c++14-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--with-simd=neon
 CONFIGURE_ARGS+=	--with-simd=sse2
 .endif
 
-SIDPLAYFP_SHLIB_VERSION=	6.3.23
+SIDPLAYFP_SHLIB_VERSION=	6.3.26
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:

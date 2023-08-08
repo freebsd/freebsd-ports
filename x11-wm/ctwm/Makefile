@@ -1,5 +1,6 @@
 PORTNAME=	ctwm
-DISTVERSION=	4.0.3
+DISTVERSION=	4.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.ctwm.org/dist/ \
@@ -12,7 +13,7 @@ WWW=		https://www.ctwm.org/
 LICENSE=	MIT
 
 USES=		cmake jpeg tar:xz xorg
-USE_XORG=	x11 xext xt ice sm xpm xmu
+USE_XORG=	x11 xext xt ice sm xpm xmu xrandr
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

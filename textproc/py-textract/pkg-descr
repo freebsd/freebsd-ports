@@ -1,0 +1,3 @@
+textract provides a single interface for extracting content embedded
+from Word documents, PowerPoint presentations, PDFs and much more,
+which can be used for further textual analysis and visualization.

@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-concern
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activemodel60>=6.0:databases/rubygem-activemodel60 \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

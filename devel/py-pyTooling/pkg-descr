@@ -1,0 +1,6 @@
+pyTooling is a powerful collection of arbitrary useful abstract data models,
+classes, decorators, meta-classes and exceptions. It also provides lots of
+helper functions e.g. to ease the handling of package descriptions.
+
+It's useful for any Python-base project independent if it's a library,
+framework or CLI tool.

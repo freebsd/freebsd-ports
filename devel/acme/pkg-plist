@@ -18,6 +18,7 @@ bin/acme
 %%DATADIR%%/cbm/c128/basic.a
 %%DATADIR%%/cbm/c128/kernal.a
 %%DATADIR%%/cbm/c128/kernel.a
+%%DATADIR%%/cbm/c128/keys.a
 %%DATADIR%%/cbm/c128/mmu.a
 %%DATADIR%%/cbm/c128/petscii.a
 %%DATADIR%%/cbm/c128/vdc.a
@@ -30,6 +31,7 @@ bin/acme
 %%DATADIR%%/cbm/c64/georam.a
 %%DATADIR%%/cbm/c64/kernal.a
 %%DATADIR%%/cbm/c64/kernel.a
+%%DATADIR%%/cbm/c64/keys.a
 %%DATADIR%%/cbm/c64/memcopy.a
 %%DATADIR%%/cbm/c64/petscii.a
 %%DATADIR%%/cbm/c64/reu.a

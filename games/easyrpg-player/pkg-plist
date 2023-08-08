@@ -1,3 +1,8 @@
 bin/easyrpg-player
-share/man/man6/easyrpg-player.6.gz
+share/applications/easyrpg-player.desktop
 share/bash-completion/completions/easyrpg-player
+share/icons/hicolor/48x48/apps/easyrpg-player.png
+share/icons/hicolor/scalable/apps/easyrpg-player.svg
+%%MANPAGES%%share/man/man6/easyrpg-player.6.gz
+share/metainfo/easyrpg-player.metainfo.xml
+share/pixmaps/easyrpg-player.png

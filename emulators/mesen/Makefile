@@ -4,7 +4,7 @@ PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g4c701ad6
 CATEGORIES=	emulators
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform Nintendo Entertainment System (NES/Famicom) emulator
 WWW=		https://www.mesen.ca/
 

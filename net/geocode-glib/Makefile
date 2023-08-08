@@ -1,5 +1,5 @@
 PORTNAME=	geocode-glib
-PORTVERSION=	3.26.2
+PORTVERSION=	3.26.4
 CATEGORIES=	net devel gnome
 MASTER_SITES=	GNOME
 
@@ -18,7 +18,7 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-MESON_ARGS=	-Denable-installed-tests=false
+MESON_ARGS=	-Denable-installed-tests=false -Dsoup2=true
 
 OPTIONS_DEFINE=	DOCS
 

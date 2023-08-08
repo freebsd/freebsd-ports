@@ -1,0 +1,18 @@
+--- src/wrapper/common.hxx.orig	2023-05-26 07:56:45 UTC
++++ src/wrapper/common.hxx
+@@ -31,12 +31,12 @@ ZEND_BEGIN_MODULE_GLOBALS(couchbase)
+ /* INI settings */
+ char* log_level{ nullptr };
+ char* log_path{ nullptr };
+-zend_bool log_php_log_err{ 1 };
+-zend_bool log_stderr{ 0 };
++bool log_php_log_err{ 1 };
++bool log_stderr{ 0 };
+ zend_long max_persistent{ -1 };     /* maximum number of persistent connections per process */
+ zend_long persistent_timeout{ -1 }; /* time period after which idle persistent connection is considered expired */
+ /* module variables */
+-zend_bool initialized{ 0 };
++bool initialized{ 0 };
+ zend_long num_persistent{ 0 }; /* number of existing persistent connections */
+ ZEND_END_MODULE_GLOBALS(couchbase)
+ 

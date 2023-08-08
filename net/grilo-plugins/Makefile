@@ -1,6 +1,6 @@
 PORTNAME=	grilo-plugins
-PORTVERSION=	0.3.14
-PORTREVISION=	2
+PORTVERSION=	0.3.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -36,6 +36,7 @@ OPTIONS_DEFAULT=		TRACKER
 
 TRACKER_DESC=			Tracker support for grilo (used by gnome-music and possibly others)
 TRACKER_MESON_YES=		enable-tracker
+TRACKER_MESON_NO=		enable-tracker3
 TRACKER_LIB_DEPENDS=		libtracker-sparql-2.0.so:sysutils/tracker
 
 DMAP_DESC=			DMAP (DAAP, DPAP & DACP) support with libdmapsharing

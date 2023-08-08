@@ -3,5 +3,5 @@ bin/mapcache_seed
 bin/mapcache_detail
 lib/libmapcache.so
 lib/libmapcache.so.1
-lib/libmapcache.so.1.12.1
+lib/libmapcache.so.1.14.0
 %%APACHE%%%%APACHEMODDIR%%/mod_%%AP_MODULE%%

@@ -1,7 +1,10 @@
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-postgresql11
 
-CONFLICTS=	pgtcl pgtcl-postgresql9[0123456] pgtcl-postgresql10
+DEPRECATED=	PostgreSQL-11 will reach end-of-life on 2023-11-09
+EXPIRATION_DATE=2023-12-31
+
+CONFLICTS=	pgtcl pgtcl-postgresql1[012345]
 
 PGTCL_SLAVE=	11
 MASTERDIR=	${.CURDIR}/../pgtcl

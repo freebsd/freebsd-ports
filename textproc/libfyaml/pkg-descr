@@ -1,0 +1,5 @@
+libfyaml is a fully feature complete YAML parser and emitter, supporting the
+latest YAML spec and passing the full YAML testsuite.
+
+It is designed to be very efficient, avoiding copies of data, and has no
+artificial limits like the 1024 character limit for implicit keys.

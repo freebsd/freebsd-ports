@@ -17,6 +17,7 @@ lib/ocf/lib/heartbeat/ocf-rarun
 lib/ocf/lib/heartbeat/ocf-returncodes
 lib/ocf/lib/heartbeat/ocf-shellfuncs
 lib/ocf/lib/heartbeat/ocf.py
+lib/ocf/lib/heartbeat/openstack-common.sh
 lib/ocf/lib/heartbeat/ora-common.sh
 lib/ocf/lib/heartbeat/sapdb-nosha.sh
 lib/ocf/lib/heartbeat/sapdb.sh
@@ -72,9 +73,11 @@ lib/ocf/resource.d/heartbeat/aws-vpc-route53
 lib/ocf/resource.d/heartbeat/awseip
 lib/ocf/resource.d/heartbeat/awsvip
 lib/ocf/resource.d/heartbeat/azure-events
+lib/ocf/resource.d/heartbeat/azure-events-az
 lib/ocf/resource.d/heartbeat/azure-lb
 lib/ocf/resource.d/heartbeat/clvm
 lib/ocf/resource.d/heartbeat/conntrackd
+lib/ocf/resource.d/heartbeat/corosync-qnetd
 lib/ocf/resource.d/heartbeat/crypt
 lib/ocf/resource.d/heartbeat/db2
 lib/ocf/resource.d/heartbeat/dhcpd
@@ -90,11 +93,14 @@ lib/ocf/resource.d/heartbeat/fio
 lib/ocf/resource.d/heartbeat/galera
 lib/ocf/resource.d/heartbeat/garbd
 lib/ocf/resource.d/heartbeat/gcp-ilb
+lib/ocf/resource.d/heartbeat/gcp-pd-move
 lib/ocf/resource.d/heartbeat/gcp-vpc-move-ip
+lib/ocf/resource.d/heartbeat/gcp-vpc-move-vip
 lib/ocf/resource.d/heartbeat/iSCSILogicalUnit
 lib/ocf/resource.d/heartbeat/iSCSITarget
 lib/ocf/resource.d/heartbeat/ids
 lib/ocf/resource.d/heartbeat/iface-bridge
+lib/ocf/resource.d/heartbeat/iface-macvlan
 lib/ocf/resource.d/heartbeat/iface-vlan
 lib/ocf/resource.d/heartbeat/ipsec
 lib/ocf/resource.d/heartbeat/iscsi
@@ -120,6 +126,7 @@ lib/ocf/resource.d/heartbeat/nginx
 lib/ocf/resource.d/heartbeat/nvmet-namespace
 lib/ocf/resource.d/heartbeat/nvmet-port
 lib/ocf/resource.d/heartbeat/nvmet-subsystem
+lib/ocf/resource.d/heartbeat/ocivip
 lib/ocf/resource.d/heartbeat/openstack-cinder-volume
 lib/ocf/resource.d/heartbeat/openstack-floating-ip
 lib/ocf/resource.d/heartbeat/openstack-info
@@ -137,6 +144,7 @@ lib/ocf/resource.d/heartbeat/postfix
 lib/ocf/resource.d/heartbeat/pound
 lib/ocf/resource.d/heartbeat/proftpd
 lib/ocf/resource.d/heartbeat/rabbitmq-cluster
+lib/ocf/resource.d/heartbeat/rabbitmq-server-ha
 lib/ocf/resource.d/heartbeat/redis
 lib/ocf/resource.d/heartbeat/rkt
 lib/ocf/resource.d/heartbeat/rsyncd
@@ -206,9 +214,11 @@ libexec/heartbeat/storage_mon
 %%MANPAGES%%man/man7/ocf_heartbeat_awseip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_awsvip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_azure-events.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_azure-events-az.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_azure-lb.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_clvm.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_conntrackd.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_corosync-qnetd.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_crypt.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_db2.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_dhcpd.7.gz
@@ -224,11 +234,14 @@ libexec/heartbeat/storage_mon
 %%MANPAGES%%man/man7/ocf_heartbeat_galera.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_garbd.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_gcp-ilb.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_gcp-pd-move.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_gcp-vpc-move-ip.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_gcp-vpc-move-vip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_iSCSILogicalUnit.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_iSCSITarget.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_ids.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_iface-bridge.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_iface-macvlan.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_iface-vlan.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_ipsec.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_iscsi.7.gz
@@ -253,6 +266,7 @@ libexec/heartbeat/storage_mon
 %%MANPAGES%%man/man7/ocf_heartbeat_nvmet-namespace.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_nvmet-port.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_nvmet-subsystem.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_ocivip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_openstack-cinder-volume.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_openstack-floating-ip.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_openstack-info.7.gz
@@ -270,6 +284,7 @@ libexec/heartbeat/storage_mon
 %%MANPAGES%%man/man7/ocf_heartbeat_pound.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_proftpd.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_rabbitmq-cluster.7.gz
+%%MANPAGES%%man/man7/ocf_heartbeat_rabbitmq-server-ha.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_redis.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_rkt.7.gz
 %%MANPAGES%%man/man7/ocf_heartbeat_rsyncd.7.gz

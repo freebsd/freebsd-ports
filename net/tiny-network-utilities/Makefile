@@ -11,7 +11,7 @@ LICENSE=	BSD4CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hexdump>0:textproc/py-hexdump@${PY_FLAVOR}
 
-USES=		python:3.4+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	yurivict
 SHEBANG_FILES=	*.py

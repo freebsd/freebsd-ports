@@ -1,0 +1,14 @@
+bin/megahit
+bin/megahit_core
+bin/megahit_core_no_hw_accel
+bin/megahit_core_popcnt
+bin/megahit_toolkit
+%%DATADIR%%/test_data/empty.fa
+%%DATADIR%%/test_data/generate_random_fasta.py
+%%DATADIR%%/test_data/loop.fa
+%%DATADIR%%/test_data/r1.il.fa.gz
+%%DATADIR%%/test_data/r2.il.fa.bz2
+%%DATADIR%%/test_data/r3_1.fa
+%%DATADIR%%/test_data/r3_2.fa
+%%DATADIR%%/test_data/r4.fa
+%%DATADIR%%/test_data/ref.fa

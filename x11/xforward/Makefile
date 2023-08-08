@@ -23,10 +23,4 @@ MAKE_ARGS=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/xforward man/man1/xforward.1.gz
 
-OPTIONS_DEFINE=		STATIC
-
-STATIC_ALL_TARGET=	all-static
-STATIC_INSTALL_TARGET=	install-static
-STATIC_PLIST_FILES=	bin/xforward-static
-
 .include <bsd.port.mk>

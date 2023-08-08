@@ -121,20 +121,23 @@
  p = pickle.Pickler(site_file)
  p.dump(site_dict)
  site_file.close()
-@@ -172,8 +166,8 @@ LINK = CXX
+@@ -170,7 +164,7 @@ SetOption('num_jobs', JOBS)
+ 
+ LINK = CXX
  # common flags
- warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
+-warningFlags = '-W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter '
++warningFlags = '-Wall -Wextra -Wcast-align -Wcast-qual -Wno-implicit-function-declaration -Wno-unused-parameter '
  warningFlagsCXX = '-Wno-non-virtual-dtor -Wreorder ' # -Wold-style-cast
--CCFLAGS = '' + warningFlags
--CXXFLAGS = '-pipe -DQ_NO_STLPORT ' + warningFlags + warningFlagsCXX
-+CCFLAGS += ' '
-+CXXFLAGS += ' -pipe -DQ_NO_STLPORT '
- CPPPATH = []
- if (BUILD == 'debug'):
+ CCFLAGS = '' + warningFlags
+ CXXFLAGS = '-pipe -DQ_NO_STLPORT ' + warningFlags + warningFlagsCXX
+@@ -179,18 +173,17 @@ if (BUILD == 'debug'):
  	CXXFLAGS += '-g -D_DEBUG '
-@@ -182,15 +176,14 @@ elif (BUILD == 'release'):
- 	CXXFLAGS += '-O2 '
- 	CCFLAGS += '-O2 '
+ 	CCFLAGS += '-g -D_DEBUG '
+ elif (BUILD == 'release'):
+-	CXXFLAGS += '-O2 '
+-	CCFLAGS += '-O2 '
++	# uphold system-provided compilation flags
++	pass
  elif ( BUILD == 'info' ):
 -	print 'Preparing OSX release'
 +	print('Preparing OSX release')

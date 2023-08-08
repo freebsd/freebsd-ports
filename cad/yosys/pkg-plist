@@ -44,6 +44,14 @@ bin/yosys-witness
 %%DATADIR%%/efinix/cells_map.v
 %%DATADIR%%/efinix/cells_sim.v
 %%DATADIR%%/efinix/gbuf_map.v
+%%DATADIR%%/fabulous/arith_map.v
+%%DATADIR%%/fabulous/cells_map.v
+%%DATADIR%%/fabulous/ff_map.v
+%%DATADIR%%/fabulous/io_map.v
+%%DATADIR%%/fabulous/latches_map.v
+%%DATADIR%%/fabulous/prims.v
+%%DATADIR%%/fabulous/ram_regfile.txt
+%%DATADIR%%/fabulous/regfile_map.v
 %%DATADIR%%/gate2lut.v
 %%DATADIR%%/gatemate/arith_map.v
 %%DATADIR%%/gatemate/brams.txt
@@ -64,6 +72,7 @@ bin/yosys-witness
 %%DATADIR%%/gowin/brams_map.v
 %%DATADIR%%/gowin/cells_map.v
 %%DATADIR%%/gowin/cells_sim.v
+%%DATADIR%%/gowin/cells_xtra.v
 %%DATADIR%%/gowin/lutrams.txt
 %%DATADIR%%/gowin/lutrams_map.v
 %%DATADIR%%/greenpak4/cells_blackbox.v
@@ -154,8 +163,11 @@ bin/yosys-witness
 %%DATADIR%%/intel_alm/common/misc_sim.v
 %%DATADIR%%/intel_alm/common/quartus_rename.v
 %%DATADIR%%/intel_alm/cyclonev/cells_sim.v
+%%DATADIR%%/machxo2/arith_map.v
 %%DATADIR%%/machxo2/brams.txt
 %%DATADIR%%/machxo2/brams_map.v
+%%DATADIR%%/machxo2/cells_bb.v
+%%DATADIR%%/machxo2/cells_io.vh
 %%DATADIR%%/machxo2/cells_map.v
 %%DATADIR%%/machxo2/cells_sim.v
 %%DATADIR%%/machxo2/lutrams.txt
@@ -192,6 +204,7 @@ bin/yosys-witness
 %%DATADIR%%/sf2/cells_sim.v
 %%DATADIR%%/simcells.v
 %%DATADIR%%/simlib.v
+%%DATADIR%%/smtmap.v
 %%DATADIR%%/techmap.v
 %%DATADIR%%/xilinx/abc9_model.v
 %%DATADIR%%/xilinx/arith_map.v

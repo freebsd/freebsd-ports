@@ -1,6 +1,0 @@
-http://www.linuxtv.org/vdrwiki/index.php/Osdpip-plugin
-
-OSD Picture-in-Picture is a VDR PlugIn that displays the current channel
-in a small box on the screen (default upper right corner). You can switch
-up and down now, watching the progress of the previous channel in the box.
-Quality is not too good yet, and only I-Frames are displayed.

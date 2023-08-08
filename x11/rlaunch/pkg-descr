@@ -1,0 +1,5 @@
+rlaunch is a fast, light-weight and modern application launcher for X11 written
+in Rust.
+
+This should work on all linux distributions and DEs that use X11, but if it
+doesn't - feel free to file an issue.

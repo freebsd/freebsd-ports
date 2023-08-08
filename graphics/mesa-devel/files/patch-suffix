@@ -40,18 +40,9 @@ Library selection is handled by libglvnd and/or libmap.conf.
  endif
  
  _xa = get_option('gallium-xa')
---- src/amd/vulkan/meson.build.orig	2022-08-08 22:10:24 UTC
+--- src/amd/vulkan/meson.build.orig	2022-12-03 14:41:29 UTC
 +++ src/amd/vulkan/meson.build
-@@ -97,7 +97,7 @@ libradv_files = files(
-   'vk_format.h',
- )
- 
--files_drirc = files('00-radv-defaults.conf')
-+files_drirc = files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
- 
- install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
- 
-@@ -163,7 +163,7 @@ libvulkan_radeon = shared_library(
+@@ -162,7 +162,7 @@ libvulkan_radeon = shared_library(
  endif
  
  libvulkan_radeon = shared_library(
@@ -71,6 +62,48 @@ Library selection is handled by libglvnd and/or libmap.conf.
    egl_lib_version = '0.0.0'
    deps_for_egl += dep_glvnd
    files_egl += [g_egldispatchstubs_h, g_egldispatchstubs_c]
+--- src/gallium/auxiliary/pipe-loader/meson.build.orig	2023-02-01 23:53:26 UTC
++++ src/gallium/auxiliary/pipe-loader/meson.build
+@@ -58,7 +58,7 @@ libpipe_loader_dynamic = static_library(
+   c_args : [
+     libpipe_loader_defines,
+     '-DPIPE_SEARCH_DIR="@0@"'.format(
+-      join_paths(get_option('prefix'), get_option('libdir'), 'gallium-pipe')
++      join_paths(get_option('prefix'), get_option('libdir'), 'gallium-pipe' + get_option('egl-lib-suffix'))
+     )
+   ],
+   gnu_symbol_visibility : 'hidden',
+--- src/gallium/targets/opencl/meson.build.orig	2023-02-01 23:53:26 UTC
++++ src/gallium/targets/opencl/meson.build
+@@ -30,7 +30,7 @@ llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBR
+ endif
+ 
+ llvm_libdir = dep_llvm.get_variable(cmake : 'LLVM_LIBRARY_DIR', configtool: 'libdir')
+-opencl_libname = with_opencl_icd ? 'MesaOpenCL' : 'OpenCL'
++opencl_libname = with_opencl_icd ? 'MesaOpenCL' + get_option('egl-lib-suffix') : 'OpenCL'
+ 
+ polly_dep = null_dep
+ polly_isl_dep = null_dep
+@@ -117,7 +117,7 @@ if with_opencl_icd
+ 
+ if with_opencl_icd
+   _config = configuration_data()
+-  _config.set('OPENCL_LIBNAME', 'MesaOpenCL')
++  _config.set('OPENCL_LIBNAME', 'MesaOpenCL' + get_option('egl-lib-suffix'))
+   _config.set('OPENCL_VERSION', opencl_version)
+   configure_file(
+     configuration : _config,
+--- src/gallium/targets/pipe-loader/meson.build.orig	2023-02-01 23:53:26 UTC
++++ src/gallium/targets/pipe-loader/meson.build
+@@ -44,7 +44,7 @@ endif
+   pipe_loader_link_deps += files('pipe.sym')
+ endif
+ 
+-pipe_loader_install_dir = join_paths(get_option('libdir'), 'gallium-pipe')
++pipe_loader_install_dir = join_paths(get_option('libdir'), 'gallium-pipe' + get_option('egl-lib-suffix'))
+ 
+ _kmsro_targets = [
+    driver_kmsro, driver_v3d, driver_vc4, driver_freedreno, driver_etnaviv,
 --- src/gbm/backends/dri/gbm_dri.c.orig	2020-05-30 21:28:01 UTC
 +++ src/gbm/backends/dri/gbm_dri.c
 @@ -307,14 +307,6 @@ dri_bind_extensions(struct gbm_dri_device *dri,
@@ -158,34 +191,29 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['../entry.c', es2_glapi_mapi_tmp_h],
    c_args : [
      c_msvc_compat_args,
---- src/mapi/shared-glapi/meson.build.orig	2020-05-30 21:28:01 UTC
+--- src/mapi/shared-glapi/meson.build.orig	2023-03-13 18:59:50 UTC
 +++ src/mapi/shared-glapi/meson.build
-@@ -42,7 +42,7 @@ if with_platform_windows
+@@ -46,7 +46,7 @@ libglapi = shared_library(
  endif
  
  libglapi = shared_library(
 -  'glapi',
 +  'glapi' + get_option('egl-lib-suffix'),
-   [files_mapi_glapi, files_mapi_util, shared_glapi_mapi_tmp_h],
+   [files_shared_glapi, shared_glapi_mapi_tmp_h],
    c_args : [
      _glapi_c_args,
---- src/util/meson.build.orig	2021-02-24 18:55:02 UTC
+--- src/util/meson.build.orig	2022-12-03 14:41:29 UTC
 +++ src/util/meson.build
-@@ -135,7 +135,7 @@ files_mesa_util = files(
-   'xxhash.h',
+@@ -170,10 +170,10 @@ files_mesa_util = files(
+   'mesa_cache_db.h',
  )
  
 -files_drirc = files('00-mesa-defaults.conf')
 +files_drirc = files('00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
  
- install_data(files_drirc, install_dir : join_paths(get_option('datadir'), 'drirc.d'))
+ if with_amd_vk
+-  files_drirc += files('00-radv-defaults.conf')
++  files_drirc += files('00-radv@0@-defaults.conf'.format(get_option('egl-lib-suffix')))
+ endif
  
-@@ -158,7 +158,7 @@ files_xmlconfig = files(
- 
- files_xmlconfig += custom_target(
-   'driconf_static.h',
--  input: ['driconf_static.py', '00-mesa-defaults.conf'],
-+  input: ['driconf_static.py', '00-mesa@0@-defaults.conf'.format(get_option('egl-lib-suffix'))],
-   output: 'driconf_static.h',
-   command: [
-     prog_python, '@INPUT0@', '@INPUT1@', '@OUTPUT@'
+ if with_tests

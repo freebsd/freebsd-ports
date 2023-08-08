@@ -1,5 +1,6 @@
 PORTNAME=	c-icap
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.x/
@@ -52,7 +53,7 @@ LARGE_FILES_CONFIGURE_ENABLE=	large-files
 MEMCACHE_CONFIGURE_WITH=	memcached
 MEMCACHE_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-ldap=yes
 LDAP_CONFIGURE_OFF=	--with-ldap=no
 
@@ -65,6 +66,8 @@ BDB_CFLAGS=		-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=		-L${BDB_LIB_DIR}
 BDB_CONFIGURE_ON=	--with-bdb=yes
 BDB_CONFIGURE_OFF=	--with-bdb=no
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -83,4 +86,4 @@ post-patch-POSIXSEM-on:
 post-install:
 	@${MKDIR} ${STAGEDIR}/${LOG_DIR} ${STAGEDIR}/${RUN_DIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

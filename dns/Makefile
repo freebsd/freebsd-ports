@@ -4,7 +4,6 @@
     SUBDIR += adns
     SUBDIR += adsuck
     SUBDIR += amass
-    SUBDIR += ares
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind9-devel
@@ -21,8 +20,6 @@
     SUBDIR += ddns
     SUBDIR += denominator
     SUBDIR += dhisd
-    SUBDIR += djbdns
-    SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
     SUBDIR += dns-ui
@@ -60,6 +57,7 @@
     SUBDIR += dnsviz
     SUBDIR += dnswalk
     SUBDIR += dnswall
+    SUBDIR += dnsx
     SUBDIR += doc
     SUBDIR += dog
     SUBDIR += doggo
@@ -93,10 +91,10 @@
     SUBDIR += knot3-lib
     SUBDIR += ldapdns
     SUBDIR += ldns
+    SUBDIR += letsdns
     SUBDIR += libasr
     SUBDIR += libasr-devel
     SUBDIR += libbind
-    SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += libidn2
     SUBDIR += libmicrodns
@@ -108,8 +106,6 @@
     SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += mdnsd
-    SUBDIR += mydns
-    SUBDIR += mydns-ng
     SUBDIR += namesilo_ddns
     SUBDIR += nextdns
     SUBDIR += noip
@@ -144,6 +140,7 @@
     SUBDIR += p5-Net-DNS-Codes
     SUBDIR += p5-Net-DNS-Lite
     SUBDIR += p5-Net-DNS-Match
+    SUBDIR += p5-Net-DNS-Paranoid
     SUBDIR += p5-Net-DNS-RR-SRV-Helper
     SUBDIR += p5-Net-DNS-Resolver-Mock
     SUBDIR += p5-Net-DNS-Resolver-Programmable
@@ -192,7 +189,6 @@
     SUBDIR += py-idna_ssl
     SUBDIR += py-ldns
     SUBDIR += py-localzone
-    SUBDIR += py-namebench
     SUBDIR += py-ns1-python
     SUBDIR += py-publicsuffix
     SUBDIR += py-publicsuffix2
@@ -236,7 +232,6 @@
     SUBDIR += unbound
     SUBDIR += updatedd
     SUBDIR += utdns
-    SUBDIR += validns
     SUBDIR += vhostcname
     SUBDIR += vizone
     SUBDIR += void-zones-tools

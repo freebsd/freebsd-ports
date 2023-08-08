@@ -1,11 +1,11 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
+U_BOOT_SLAVE_PORTREVISION_2023.01=	1
+
 MODEL=		sifive-fu540
 BOARD_CONFIG=	sifive_unleashed_defconfig
 FAMILY=		sifive
 UBOOT_ARCH=	riscv64
-
-U_BOOT_SLAVE_PORTREVISION_2022.04=	2
 
 # The FIT image will embed an OpenSBI firmware binary
 OPENSBI_FIRM=	${LOCALBASE}/share/opensbi/lp64/generic/firmware/fw_dynamic.bin

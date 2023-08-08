@@ -1,24 +1,15 @@
---- CMakeLists.txt.orig	2021-07-15 08:12:45 UTC
+--- CMakeLists.txt.orig	2022-12-31 21:52:21 UTC
 +++ CMakeLists.txt
-@@ -72,7 +72,7 @@ string(REGEX REPLACE "^<version>([0-9]+)\\.([0-9]+)\\.
- set(DART_VERSION "${DART_MAJOR_VERSION}.${DART_MINOR_VERSION}.${DART_PATCH_VERSION}")
- 
- set(DART_PKG_DESC "Dynamic Animation and Robotics Toolkit.")
--set(DART_PKG_EXTERNAL_DEPS "eigen, ccd, fcl, assimp, boost")
-+set(DART_PKG_EXTERNAL_DEPS "eigen3, ccd, fcl, assimp")
- 
- #===============================================================================
- # Build options
-@@ -213,7 +213,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
-   if(GCC_VERSION VERSION_LESS 5.3.1)
-     message(FATAL_ERROR "The installed g++ version is ${GCC_VERSION}. ${PROJECT_NAME} requires g++ 5.3.1 or greater.")
+@@ -242,7 +242,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
+   if(GCC_VERSION VERSION_LESS 7.3.0)
+     message(FATAL_ERROR "The installed g++ version is ${GCC_VERSION}. ${PROJECT_NAME} requires g++ 7.3.0 or greater.")
    endif()
 -  set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 +  set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG")
    set(CMAKE_CXX_FLAGS_DEBUG "-g -fno-omit-frame-pointer -fno-inline-functions -fno-inline-functions-called-once -fno-optimize-sibling-calls")
    if(DART_FAST_DEBUG)
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O1")
-@@ -243,7 +243,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
+@@ -270,7 +270,7 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
    if("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
      set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
    endif()
@@ -27,9 +18,9 @@
    set(CMAKE_CXX_FLAGS_DEBUG "-g -fno-omit-frame-pointer -fno-inline-functions -fno-optimize-sibling-calls")
    if(DART_FAST_DEBUG)
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O1")
-@@ -312,20 +312,20 @@ if(TARGET dart)
+@@ -338,20 +338,20 @@ if(TARGET dart)
    if(MSVC)
-     # add_subdirectory(examples)
+     add_subdirectory(examples)
    else()
 -    add_subdirectory(examples EXCLUDE_FROM_ALL)
 -    get_property(examples GLOBAL PROPERTY DART_EXAMPLES)

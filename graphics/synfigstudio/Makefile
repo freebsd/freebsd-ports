@@ -1,7 +1,7 @@
 PORTNAME=	synfigstudio
-PORTVERSION=	1.4.2
-PORTREVISION=	1
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.4.4
+PORTREVISION=	9
 CATEGORIES=	graphics multimedia
 
 MAINTAINER=	portmaster@BSDforge.com
@@ -24,22 +24,25 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libsynfig.so:graphics/synfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
-PORTSCOUT=	limitw:1,even
-
-USES=		autoreconf compiler:c++11-lang desktop-file-utils \
-		gmake gnome libtool localbase magick:6 mlt:6 pathfix pkgconfig \
+USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake \
+		gnome libtool localbase magick:7 mlt:7 pathfix pkgconfig \
 		shared-mime-info
+USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	synfig
 GH_PROJECT=	synfig
-WRKSRC_SUBDIR=	synfig-studio
-USE_CXXSTD=	c++11
 USE_GNOME=	gdkpixbuf2 gtkmm30 intltool
-GNU_CONFIGURE=	yes
-BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
-CONFIGURE_ARGS=	--disable-update-mimedb
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limitw:1,even
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+WRKSRC_SUBDIR=	synfig-studio
+
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
+
+CONFIGURE_ARGS=	--disable-update-mimedb
 
 OPTIONS_DEFINE=	DOCS JACK NLS
 OPTIONS_SUB=	yes

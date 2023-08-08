@@ -14,7 +14,7 @@ WWW=		https://dominia.org/djao/limitipconn2.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		apache:2.2+ tar:bzip2
+USES=		apache tar:bzip2
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

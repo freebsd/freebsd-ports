@@ -102,6 +102,7 @@ bin/postrm-systemd-user-reload-only
 bin/postrm-ucf
 bin/postrm-xfonts
 bin/preinst-emacsen
+bin/preinst-init-chmod
 bin/preinst-init-stop
 bin/preinst-systemd-stop
 bin/prerm-alternatives
@@ -135,6 +136,7 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/dwz.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/elf_tools.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/installinitramfs.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/installsysusers.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/root_sequence.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/single_binary.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm

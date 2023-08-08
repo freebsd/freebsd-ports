@@ -1,4 +1,2 @@
 The Oslo configuration API supports parsing command
 line arguments and .ini style configuration files.
-
-See also: https://github.com/openstack/oslo.config

@@ -1,5 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	15.0
+PORTVERSION=	16.0
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://www.odoo.com
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	02b4e98ebb2c45d9a4af10fe1bc732f048708f85
+GH_TAGNAME=	0a766557bcf95e0b9fc3363103fce8277b0fa835
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt \
@@ -34,7 +34,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}vatnumber>=0:finance/py-vatnumber@${PY_FLAVOR} \
-		${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=0:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ldap>=0:net/py-ldap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zeep>=0:net/py-zeep@${PY_FLAVOR} \
@@ -64,12 +64,17 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ pgsql shebangfix
+USES=		cpe ldap python pgsql shebangfix
 USE_PYTHON=	distutils
-USE_OPENLDAP=	yes
 
 SHEBANG_LANG=	python
-SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/timesyncd \
+		${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo \
+		${WRKSRC}/${PORTNAME}/addons/web/static/lib/select2/release.sh \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
+		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
+		${WRKSRC}/${PORTNAME}-bin
 
 USERS=		odoo
 GROUPS=		${USERS}
@@ -77,20 +82,23 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 
-CONFLICTS=	odoo14
+CONFLICTS=	odoo14 odoo15
 
 ETCDIR=		${PREFIX}/etc/odoo
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e '25d' ${WRKSRC}/odoo/service/wsgi_server.py
 	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_quote_plus|werkzeug.urls.url_quote_plus|g' \
 		${WRKSRC}/odoo/addons/base/models/ir_ui_view.py
 	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_unquote_plus|werkzeug.urls.url_quote_plus|g' \
+		-e 's|.NumberConverter|.converters.NumberConverter|g' \
 		${WRKSRC}/odoo/addons/base/models/ir_http.py \
 		${WRKSRC}/odoo/addons/http_routing/models/ir_http.py
 	@${REINPLACE_CMD} -i "" -e 's|from werkzeug import url_encode|from werkzeug.urls import url_encode|g' \
 		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
 		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
+	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
+		${WRKSRC}/odoo/addons/web/static/src/legacy/js/libs/content-disposition.js \
+		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/

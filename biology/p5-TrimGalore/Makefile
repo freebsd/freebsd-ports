@@ -7,14 +7,14 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 WWW=		https://github.com/FelixKrueger/TrimGalore
 
-LICENSE=	GPLv3
+LICENSE=	GPLv8
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>=2.5:biology/py-cutadapt@${PY_FLAVOR} \
 		fastqc>0:biology/fastqc
 
 # Future: Can 3.4+ be determined from cutadapt dep?
-USES=		perl5 python:env,3.4+ shebangfix
+USES=		perl5 python:env shebangfix
 USE_PERL5=	run
 USE_GITHUB=	yes
 

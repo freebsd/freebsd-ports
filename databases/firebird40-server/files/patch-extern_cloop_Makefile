@@ -1,6 +1,6 @@
---- extern/cloop/Makefile.orig	2020-10-12 00:02:22 UTC
-+++ extern/cloop/Makefile
-@@ -6,7 +6,7 @@ TARGET	:= release
+--- extern/cloop/Makefile.orig	2022-08-10 04:04:28.000000000 -0500
++++ extern/cloop/Makefile	2022-11-21 20:57:09.474150000 -0500
+@@ -6,7 +6,7 @@
  
  CC	:= $(CC)
  CXX	:= $(CXX)
@@ -9,16 +9,15 @@
  
  SRC_DIR		:= src
  BUILD_DIR	:= build
-@@ -27,8 +27,9 @@ SRCS_CPP := $(foreach sdir,$(SRC_DIRS),$
+@@ -27,8 +27,9 @@
  OBJS_C := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS_C))
  OBJS_CPP := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS_CPP))
  
 -C_FLAGS := -ggdb -fPIC -MMD -MP -W -Wall -Wno-unused-parameter
--CXX_FLAGS := $(C_FLAGS)
+-CXX_FLAGS := $(C_FLAGS) -std=c++11
 +COMMON_C_FLAGS := -ggdb -fPIC -MMD -MP -W -Wall -Wno-unused-parameter
 +C_FLAGS := $(COMMON_C_FLAGS) $(CFLAGS) $(CPPFLAGS)
-+CXX_FLAGS := $(COMMON_C_FLAGS) $(CXXFLAGS) $(CPPFLAGS)
- FPC_FLAGS := -Mdelphi
++CXX_FLAGS := $(COMMON_C_FLAGS) $(CXXFLAGS) $(CPPFLAGS) -std=c++11
+ FPC_FLAGS := -Mdelphi -Cg
  
- ifeq ($(TARGET),release)
-
+ ifeq ($(shell uname),FreeBSD)

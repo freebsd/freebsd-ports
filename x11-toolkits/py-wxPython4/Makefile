@@ -1,10 +1,13 @@
 PORTNAME=	wxPython
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.0
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	41
+PKGNAMESUFFIX=	42
 DIST_SUBDIR=	python
+
+PATCH_SITES=	https://github.com/wxWidgets/Phoenix/commit/
+PATCHFILES=	2e9169effa9abf14f34f8436a791b8829eea7774.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit for the Python programming language
@@ -18,9 +21,9 @@ LICENSE_PERMS_WXWINDOWS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gl localbase pkgconfig python:3.6+
+USES=		compiler:c++11-lib gl localbase pkgconfig python
 USE_GL=		glu
-USE_WX=		3.1
+USE_WX=		3.2
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=		NLS

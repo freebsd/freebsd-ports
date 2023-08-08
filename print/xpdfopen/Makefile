@@ -1,6 +1,6 @@
 PORTNAME=	xpdfopen
 PORTVERSION=	0.86
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
@@ -9,8 +9,7 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Command line utility for PDF viewers
 
-USES=		localbase:ldflags tar:xz xorg
-USE_TEX=	yes
+USES=		localbase:ldflags tar:xz tex xorg
 USE_XORG=	x11 xmu
 
 EXTRACT_FILES=	build-aux utils/xpdfopen

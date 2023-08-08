@@ -1,5 +1,5 @@
 PORTNAME=	fuzzel
-DISTVERSION=	1.7.0
+DISTVERSION=	1.9.2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -23,7 +23,10 @@ USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
+		"@sample etc/xdg/${PORTNAME}/${PORTNAME}.ini.sample" \
 		man/man1/${PORTNAME}.1.gz \
+		man/man5/${PORTNAME}.ini.5.gz \
+		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
 OPTIONS_DEFINE=	CAIRO LIBRSVG2 PNG
@@ -46,7 +49,15 @@ PNG_MESON_OFF=		-Dpng-backend=none
 post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/completions/fish/${PORTNAME}.fish \
 		${WRKSRC}/completions/zsh/_${PORTNAME} \
 		${WRKSRC}/xdg.c
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/config.c \
+		${WRKSRC}/doc/*.scd
+# Let @sample handle default files under etc/
+	@${REINPLACE_CMD} -e "/ini/s/'[^']*/&', rename: &.sample/" \
+		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>

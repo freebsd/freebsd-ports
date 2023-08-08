@@ -20,6 +20,7 @@ share/aclocal/fth.m4
 %%DATADIR%%/fth-lib/ifbrack.fr
 %%DATADIR%%/fth-lib/jhlocal.fr
 %%DATADIR%%/fth-lib/marker.fr
+%%DATADIR%%/fth-lib/net.fs
 %%DATADIR%%/fth-lib/prefix.fr
 %%DATADIR%%/fth-lib/softcore.fr
 %%DATADIR%%/site-fth/bird.fsm

@@ -1,5 +1,5 @@
 PORTNAME=	apipie-bindings
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-gssapi>=0:security/rubygem-gssapi \
 		rubygem-rest-client>=1.6.5<3.0.0:www/rubygem-rest-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

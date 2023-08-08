@@ -1,7 +1,7 @@
 PORTNAME=	dstask
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25
-PORTREVISION=	2
+DISTVERSION=	0.26
+PORTREVISION=	6
 CATEGORIES=	deskutils
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -18,6 +18,11 @@ GO_TARGET=	./cmd/dstask ./cmd/dstask-import
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	naggie
+GH_TUPLE=	golang:sys:v0.6.0:sys
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

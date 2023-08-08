@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
+USE_CXXSTD=	c++14
+
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CPPFLAGS} ${CXXFLAGS}" \
 		LIBS="${LDFLAGS}"
 

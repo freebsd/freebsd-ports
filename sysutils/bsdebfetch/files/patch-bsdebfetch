@@ -1,0 +1,11 @@
+--- bsdebfetch.orig	2022-09-29 15:50:00 UTC
++++ bsdebfetch
+@@ -82,7 +82,7 @@ ${nologo:-"$red ⢻⢗⣴⣶⣾⣿⡶⣴⣾⡟"}$reset
+ 
+ echo "
+ ${nologo:-"$red ⢻⢗⣴⣶⣾⣿⡶⣴⣾⡟"}$reset ${bold}$PRETTY_NAME${reset}
+-${nologo:-"$red ⢰⣿⣿⣿⣿⣿⣿⣮⣭⣦"}$reset ${bold}Kernel:${reset} $(uname -rm)
++${nologo:-"$red ⢰⣿⣿⣿⣿⣿⣿⣮⣭⣦"}$reset ${bold}Kernel:${reset} $(uname -rp)
+ ${nologo:-"$red ⠸⣿⣿⣿⣿⣿⣿⣿⣿⡟"}$reset ${bold}Uptime:${reset} $(echo $uptime)
+ ${nologo:-"$red  ⠙⠻⢿⣿⣿⣿⠿⠋ "}$reset ${bold}$USER@$HOSTNAME${reset}"
+ 

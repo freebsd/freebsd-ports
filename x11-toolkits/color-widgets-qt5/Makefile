@@ -19,6 +19,6 @@ SUFFIX=		-qt5
 USE_GITLAB=	yes
 GL_ACCOUNT=	mattia.basaglia
 GL_PROJECT=	Qt-Color-Widgets
-GL_COMMIT=	f2eca13bbc836cec09daae02579f10d5e85e71e8
+GL_TAGNAME=	f2eca13bbc836cec09daae02579f10d5e85e71e8
 
 .include <bsd.port.mk>

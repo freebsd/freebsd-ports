@@ -1,9 +1,12 @@
 viewvc/bin/cgi/viewvc.cgi
-viewvc/bin/cvsdbadmin
-viewvc/bin/loginfo-handler
-viewvc/bin/make-database
+viewvc/bin/db/cvsdbadmin
+viewvc/bin/db/loginfo-handler
+viewvc/bin/db/make-database
+viewvc/bin/db/schema_0.sql
+viewvc/bin/db/schema_1.sql
+viewvc/bin/db/schema_2.sql
+viewvc/bin/db/svndbadmin
 viewvc/bin/standalone.py
-viewvc/bin/svndbadmin
 viewvc/bin/wsgi/viewvc.fcgi
 viewvc/bin/wsgi/viewvc.wsgi
 @sample viewvc/cvsgraph.conf.sample

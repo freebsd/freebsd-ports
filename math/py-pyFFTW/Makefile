@@ -1,7 +1,7 @@
 PORTNAME=	pyFFTW
-DISTVERSION=	0.13.0
+DISTVERSION=	0.13.1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+ localbase:ldflags
+USES=		python localbase:ldflags
 USE_PYTHON=	distutils cython autoplist
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyfftw/pyfftw${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>

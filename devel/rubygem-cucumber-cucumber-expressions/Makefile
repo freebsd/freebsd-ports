@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-cucumber-expressions
-PORTVERSION=	16.0.0
+PORTVERSION=	16.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,10 +8,8 @@ COMMENT=	Cucumber Expressions for Ruby
 WWW=		https://github.com/cucumber/cucumber-expressions/tree/main/ruby
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -6,7 +6,7 @@ DISTNAME=	libXaw3dXft-${DISTVERSION}
 
 MAINTAINER=	pyrus@bsdmail.com
 COMMENT=	3D Xaw (Athena Widget Set) replacement with extended fonts
-WWW=		http://sf-xpaint.sourceforge.net/
+WWW=		https://sourceforge.net/projects/sf-xpaint/files/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

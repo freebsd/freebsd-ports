@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+The session manager may be run from XDM by setting the DisplayManager*session
+X resource in xdm-config to xmsession, or by execing xmsm from ~/.Xprofile.
+Just make sure to test whether it works by running 'xinit xmsession' before
+doing any of the above. Note that 'xmsession' is just a shell script that sets
+up the environment for xmsm, and is not needed when this has been done already.
+
+-
+
+xmsm is installed suid root, this is required for screen locking and running
+sbin commands. Privileges are dropped at startup and are reacquired only when
+necessary.
+EOM
+}
+]

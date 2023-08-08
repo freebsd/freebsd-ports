@@ -1,7 +1,7 @@
 PORTNAME=	itsdangerous
 PORTVERSION=	2.1.2
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/mitsuhiko/itsdangerous/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

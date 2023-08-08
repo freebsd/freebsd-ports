@@ -1,0 +1,84 @@
+diff -ru Maaate-0.3.1.orig/src/mpeg/MPEGfile.cc Maaate-0.3.1/src/mpeg/MPEGfile.cc
+--- src/mpeg/MPEGfile.cc	2023-06-26 14:31:17.838303000 +0200
++++ src/mpeg/MPEGfile.cc	2023-06-26 14:32:19.227754000 +0200
+@@ -495,7 +495,7 @@
+ 
+ #define MAXSEARCH 2048
+   // read 4 bytes into header bitfield
+-  register unsigned short buf=0;
++  unsigned short buf=0;
+ 
+   // read over initial junk to find header; give up after 2048 bytes
+   int i=-2;
+@@ -503,7 +503,7 @@
+   while (((buf & 0xfff0) != 0xfff0) && (i<MAXSEARCH)) {
+     if ((buf & 0x00ff) == 0x00ff) {
+       // only need to read next byte to try and get sync word
+-      register unsigned char buf2=0;
++      unsigned char buf2=0;
+       if (fread(&buf2, sizeof (unsigned char), 1, fd) != 1) {
+ 	return false;
+       }
+diff -ru Maaate-0.3.1.orig/src/mpeg/allLayers.cc Maaate-0.3.1/src/mpeg/allLayers.cc
+--- src/mpeg/allLayers.cc	2023-06-26 14:31:17.836537000 +0200
++++ src/mpeg/allLayers.cc	2023-06-26 14:31:40.156675000 +0200
+@@ -246,7 +246,7 @@
+ 			int     ch,
+ 			short  samples[SBLIMIT])
+ {
+-    register double         *bufOffsetPtr, sum;
++    double         *bufOffsetPtr, sum;
+     static int      init = 1;
+     typedef double  NN[64][SBLIMIT];
+     static NN      *filter;
+@@ -254,14 +254,14 @@
+     static BB      *buf;
+     static int      bufOffset[2] = {64,64};
+    // count # samples clipped
+-    //    register int             clip = 0;
+-//    register int             offset;
+-    register long            foo;
+-//    register double         *filterp;
+-//    register double         *bandp;
++    //    int             clip = 0;
++//    int             offset;
++    long            foo;
++//    double         *filterp;
++//    double         *bandp;
+ 
+     int i;
+-    register double tmp;
++    double tmp;
+     double p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15;
+     double pp0,pp1,pp2,pp3,pp4,pp5,pp6,pp7,pp8,pp9,pp10,pp11,pp12,pp13,pp14,pp15;
+ 
+diff -ru Maaate-0.3.1.orig/src/mpeg/layer2.cc Maaate-0.3.1/src/mpeg/layer2.cc
+--- src/mpeg/layer2.cc	2023-06-26 14:31:17.837389000 +0200
++++ src/mpeg/layer2.cc	2023-06-26 14:32:02.476148000 +0200
+@@ -1381,7 +1381,7 @@
+ 	for (ss=0; ss<3; ss++) {
+ 	  if (allocation[ch][sub]) {
+ 	    int  x = 0;
+-	    register double r;
++	    double r;
+ 
+ 	    // Locate MSB in the sample
+ 	    // u is set outside loop to hopefully speed up the loop
+@@ -1391,7 +1391,7 @@
+  
+ 	    // MSB inversion
+ 	    // read sample
+-	    register unsigned int samp 
++	    unsigned int samp 
+ 	      = samples[no][ch][ss][sub];  
+ 	    x = 1L << (x - 1);          // for MSB test
+ 	    if ((samp & x)) {
+@@ -1404,7 +1404,7 @@
+ 	    r += (double)(samp & (x - 1)) / (double)x;
+ 			
+ 	    // calculate index
+-	    register unsigned int indx 
++	    unsigned int indx 
+ 	      = alloctable[sub][allocation[ch][sub]].quant;
+  
+ 	    // Dequantize the sample

@@ -1,33 +1,20 @@
---- base/BUILD.gn.orig	2022-04-01 07:48:30 UTC
+--- base/BUILD.gn.orig	2023-07-24 14:27:53 UTC
 +++ base/BUILD.gn
-@@ -999,7 +999,7 @@ mixed_component("base") {
-       "timer/hi_res_timer_manager_posix.cc",
-     ]
+@@ -198,7 +198,7 @@ buildflag_header("ios_cronet_buildflags") {
+   flags = [ "CRONET_BUILD=$is_cronet_build" ]
+ }
  
--    if (!is_nacl && !is_apple) {
-+    if (!is_nacl && !is_apple && !is_bsd) {
-       sources += [
-         "cpu_affinity_posix.cc",
-         "cpu_affinity_posix.h",
-@@ -1010,6 +1010,12 @@ mixed_component("base") {
-         "profiler/thread_delegate_posix.h",
-       ]
-     }
-+
-+    if (is_bsd) {
-+      sources += [
-+        "profiler/stack_sampler_posix.cc",
-+      ]
-+    }
-   }
- 
-   if (is_win) {
-@@ -1478,11 +1484,23 @@ mixed_component("base") {
+-enable_message_pump_epoll = is_linux || is_chromeos || is_android
++enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
+ buildflag_header("message_pump_buildflags") {
+   header = "message_pump_buildflags.h"
+   header_dir = "base/message_loop"
+@@ -1099,11 +1099,23 @@ component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
-   if (!use_sysroot &&
--      (is_android || ((is_linux || is_chromeos) && !is_chromecast)) &&
-+      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_bsd)) &&
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
++  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
@@ -46,43 +33,44 @@
 +
    if (use_allocator_shim) {
      sources += [
-       "allocator/allocator_shim.cc",
-@@ -1506,7 +1524,7 @@ mixed_component("base") {
+       "allocator/partition_allocator/shim/allocator_shim.cc",
+@@ -1131,7 +1143,7 @@ component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
 -    if (is_chromeos || is_linux) {
 +    if (is_chromeos || (is_linux && !is_bsd)) {
        sources += [
-         "allocator/allocator_shim_override_cpp_symbols.h",
-         "allocator/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1563,7 +1581,7 @@ mixed_component("base") {
+         "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
+         "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
+@@ -1172,7 +1184,7 @@ component("base") {
+ 
    # Allow more direct string conversions on platforms with native utf8
    # strings
-   # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
--  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia) {
-+  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia || is_bsd) {
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2243,6 +2261,42 @@ mixed_component("base") {
+@@ -2130,6 +2142,43 @@ component("base") {
      }
    }
  
 +  if (is_bsd) {
 +    sources -= [
-+      "files/file_path_watcher_linux.cc",
-+      "files/file_util_linux.cc",
++      "files/file_path_watcher_inotify.cc",
 +      "files/scoped_file_linux.cc",
-+      "process/memory_linux.cc",
 +      "process/process_linux.cc",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
 +      "process/process_metrics_linux.cc",
-+      "process/process_handle_linux.cc"
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
 +    ]
 +    sources += [
-+      "process/memory_stubs.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_bsd.cc",
@@ -107,9 +95,18 @@
 +
    # iOS
    if (is_ios) {
-     sources -= [
-@@ -3495,7 +3549,7 @@ test("base_unittests") {
-     }
+     sources += [
+@@ -2238,7 +2287,7 @@ component("base") {
+   }
+ 
+   if (dep_libevent) {
+-    deps += [ "//third_party/libevent" ]
++    public_deps += [ "//third_party/libevent" ]
+   }
+ 
+   if (use_libevent) {
+@@ -3552,7 +3601,7 @@ test("base_unittests") {
+     ]
    }
  
 -  if (is_linux || is_chromeos) {
@@ -117,25 +114,25 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3543,7 +3597,7 @@ test("base_unittests") {
+@@ -3601,7 +3650,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
-       "task/thread_pool/task_tracker_posix_unittest.cc",
      ]
 -    if (!is_nacl && !is_apple) {
 +    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
-         "cpu_affinity_posix_unittest.cc",
+         "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3555,7 +3609,7 @@ test("base_unittests") {
+@@ -3612,7 +3661,7 @@ test("base_unittests") {
+ 
    # Allow more direct string conversions on platforms with native utf8
    # strings
-   # TODO(crbug/1052397): Consider replacing is_ash with is_chromeos once lacros switches to target_os=chromeos
--  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia) {
-+  if (is_apple || is_chromeos_ash || is_chromecast || is_fuchsia || is_bsd) {
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3724,7 +3778,7 @@ test("base_unittests") {
+@@ -3837,7 +3886,7 @@ test("base_unittests") {
      }
    }
  

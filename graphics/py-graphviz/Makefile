@@ -1,7 +1,7 @@
 PORTNAME=	graphviz
 PORTVERSION=	0.10.1
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	dot:graphics/graphviz
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
-USES=		cpe python:3.6+ zip
+USES=		cpe python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

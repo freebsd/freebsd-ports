@@ -1,5 +1,5 @@
 PORTNAME=	protocol-websocket
-PORTVERSION=	0.9.1
+PORTVERSION=	0.12.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-protocol-http>=0.2<1:www/rubygem-protocol-http \
 		rubygem-protocol-http1>=0.2<1:www/rubygem-protocol-http1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

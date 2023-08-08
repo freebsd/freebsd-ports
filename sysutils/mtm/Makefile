@@ -16,8 +16,6 @@ USE_CSTD=	gnu99
 USE_GITHUB=	yes
 GH_ACCOUNT=	deadpixi
 
-MAKE_ENV=	DESTDIR="${DESTDIR}${PREFIX}"
-
 CFLAGS+=	-I${NCURSESINC} ${CPPFLAGS}
 LIBS+=		-L${NCURSESLIB} -lncurses -lutil
 

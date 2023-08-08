@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-activesupport52>=5.0<6:devel/rubygem-activesupport52 \
 		rubygem-net-http-pipeline>=0:www/rubygem-net-http-pipeline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

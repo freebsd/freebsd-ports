@@ -1,6 +1,6 @@
 PORTNAME=	grass
-DISTVERSION=	8.2.0
-PORTREVISION=	1
+DISTVERSION=	8.2.1
+PORTREVISION=	5
 CATEGORIES=	databases geography
 MASTER_SITES=	https://grass.osgeo.org/%SUBDIR%/ \
 		http://grass.cict.fr/%SUBDIR%/ \
@@ -40,7 +40,7 @@ RUN_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		blaslapack compiler:c11 gl gmake gnome iconv \
-		jpeg perl5 pkgconfig python:3.6+ readline shebangfix sqlite xorg
+		jpeg perl5 pkgconfig python readline shebangfix sqlite xorg
 SHEBANG_GLOB=	*.py
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz
@@ -48,7 +48,7 @@ nviz_CMD=	${PREFIX}/${GRASS_INST_DIR}/bin/nviz
 USE_XORG=	sm ice x11 xext xi xmu xrender xt
 USE_GL=		gl glu
 USE_GNOME=	cairo
-USE_WX=		3.1
+USE_WX=		3.2
 WX_COMPS=	wx python:run
 GNU_CONFIGURE=	yes
 

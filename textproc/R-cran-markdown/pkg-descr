@@ -1,3 +1,6 @@
-Provides R bindings to the 'Sundown' 'Markdown' rendering library
-(https://github.com/vmg/sundown). 'Markdown' is a plain-text
-formatting syntax that can be converted to 'XHTML' or other formats.
+Render Markdown to full and lightweight HTML/'LaTeX' documents with
+the 'commonmark' package. It also supports features that are missing
+in 'commonmark', such as raw HTML/'LaTeX' blocks, 'LaTeX' math,
+superscripts, subscripts, footnotes, element attributes, appendices,
+and fenced 'Divs'. With additional JavaScript and CSS, it can also
+create HTML slides and articles.

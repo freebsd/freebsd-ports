@@ -1,3 +1,3 @@
-TIMESTAMP = 1542046118
-SHA256 (statsd-3.3.0.tar.gz) = e3e6db4c246f7c59003e51c9720a51a7f39a396541cb9b147ff4b14d15b5dd1f
-SIZE (statsd-3.3.0.tar.gz) = 259045
+TIMESTAMP = 1669058339
+SHA256 (statsd-4.0.1.tar.gz) = 99763da81bfea8daf6b3d22d11aaccb01a8d0f52ea521daab37e758a4ca7d128
+SIZE (statsd-4.0.1.tar.gz) = 27814

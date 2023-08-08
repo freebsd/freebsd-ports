@@ -1,5 +1,6 @@
 PORTNAME=	breathe
-PORTVERSION=	4.34.0
+PORTVERSION=	4.35.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,10 +12,13 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>=0:textproc/py-furo@${PY_FLAVOR} \
+		graphviz>=0:graphics/graphviz \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>=0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		doxygen:devel/doxygen
 
-USES=		gmake python:3.7+
+USES=		gmake python
 USE_GITHUB=	yes
 GH_TUPLE=	michaeljones:breathe:v${PORTVERSION}
 USE_PYTHON=	autoplist distutils

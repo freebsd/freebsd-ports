@@ -1,7 +1,7 @@
 PORTNAME=	cweb
 PORTVERSION=	3.64a.a
 CATEGORIES=	devel
-MASTER_SITES=	TEX_CTAN/web/c_cpp/cweb
+MASTER_SITES=	TEX/web/c_cpp/cweb
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.([a-z])$/\1/}
 
 MAINTAINER=	gerald@FreeBSD.org

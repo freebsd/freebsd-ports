@@ -1,5 +1,5 @@
-TIMESTAMP = 1662475103
-SHA256 (django-hijack-3.2.1.tar.gz) = 8df524fd085a43205a6bb497c53fd94483824b4f3179762fc1c31c1dea58d1ca
-SIZE (django-hijack-3.2.1.tar.gz) = 267537
-SHA256 (django-hijack-npm-cache-3.2.1.tar.gz) = d4ddca269de2823ec2abd06e614bd48111d7297b644ecc64e976017b840cd53a
-SIZE (django-hijack-npm-cache-3.2.1.tar.gz) = 9937612
+TIMESTAMP = 1685006866
+SHA256 (django-hijack-3.4.1.tar.gz) = 2bdd7ffa42198637f49c195468b8330ea51dc36b7c2bee0f3c220c9d7de78764
+SIZE (django-hijack-3.4.1.tar.gz) = 268223
+SHA256 (django-hijack-npm-cache-3.4.1.tar.gz) = 7042d3db3cefd7acd82ad1163826eb25da805c568cd40418db5d078376e33828
+SIZE (django-hijack-npm-cache-3.4.1.tar.gz) = 10792160

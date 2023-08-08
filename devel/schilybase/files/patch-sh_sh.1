@@ -1,8 +1,8 @@
---- sh/sh.1.orig	2022-09-18 01:03:28 UTC
+--- sh/sh.1.orig	2022-10-16 15:57:08 UTC
 +++ sh/sh.1
 @@ -61,32 +61,25 @@
  .if n .ds s sz
- .TH sh 1 "2022/09/11" "Schily Bourne Shell" "User Commands"
+ .TH sh 1 "2022/10/06" "Schily Bourne Shell" "User Commands"
  .SH NAME
 -sh, bosh, jsh \- standard and job control shell and command interpreter
 +sh, bosh, jbosh \- standard and job control shell and command interpreter
@@ -134,10 +134,29 @@
  .sp
 @@ -8476,7 +8469,7 @@ The location of the restricted Bourne Shell binary.
  See
- .BR attributes (5)
+ .BR attributes (7)
  for descriptions of the following attributes:
 -.SS "/usr/bin/sh, /usr/bin/jsh"
-+.SS "sh, jbosh"
++.SS "bosh, jbosh"
  .sp
  
+ .sp
+@@ -8509,9 +8502,6 @@ CSIEnabled
+ .BR ksh93 (1),
+ .BR login (1),
+ .BR newgrp (1),
+-.BR pfsh (1),
+-.BR pfexec (1),
+-.BR privileges (7),
+ .BR ps (1),
+ .BR pwd (1),
+ .BR set (1),
+@@ -8541,8 +8531,6 @@ CSIEnabled
+ .BR profile (5),
+ .BR attributes (7),
+ .BR environ (7),
+-.BR largefile (7),
+-.BR XPG4 (7)
+ .hy 1
+ .SH WARNINGS
  .sp

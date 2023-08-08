@@ -1,0 +1,16 @@
+# This scripts run every minute
+#
+# Until it runs, validate.php will show: 
+#
+# [FAIL]  Scheduler is not running
+# [FIX]: 
+#	cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
+# systemctl enable librenms-scheduler.timer
+# systemctl start librenms-scheduler.timer
+#
+# If you still see the above issue after this cron job is in place,
+# remove the redirecdtion below and get the email produced by this cron job.
+# It should contain information for debugging the problem.
+#
+
+* * * * * www	cd %%PREFIX%%/www/librenms/ && php ./artisan schedule:run >> /dev/null 2>&1

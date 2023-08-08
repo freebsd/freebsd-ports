@@ -32,6 +32,7 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/nbrun
 %%PORTDOCS%%%%DOCSDIR%%/contrib/image-preview/vifmimg
 %%PORTDOCS%%%%DOCSDIR%%/contrib/kitty-img-pager.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/newsboat_reorganize.py
 %%PORTDOCS%%%%DOCSDIR%%/contrib/pinboard.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/slashdot.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/urls-maintenance.sh

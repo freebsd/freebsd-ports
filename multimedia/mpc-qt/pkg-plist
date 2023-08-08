@@ -1,7 +1,8 @@
 bin/mpc-qt
-share/applications/mpc-qt.desktop
+share/applications/io.github.mpc_qt.Mpc-Qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ipc.md
 share/icons/hicolor/scalable/apps/mpc-qt.svg
+share/metainfo/io.github.mpc_qt.Mpc-Qt.appdata.xml
 %%DATADIR%%/translations/mpc-qt_en.qm
 %%DATADIR%%/translations/mpc-qt_es.qm
 %%DATADIR%%/translations/mpc-qt_fi.qm

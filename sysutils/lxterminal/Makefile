@@ -1,5 +1,6 @@
 PORTNAME=	lxterminal
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%200.4.x/
 

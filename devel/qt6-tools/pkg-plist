@@ -30,7 +30,6 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/invisible_widget_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/layout_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/layoutinfo_p.h
-%%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/lib_pch.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/metadatabase_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/morphmenu_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/newactiondialog_p.h
@@ -60,7 +59,6 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_objectinspector_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_promotion_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_promotiondialog_p.h
-%%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_propertycommand_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_propertyeditor_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_propertysheet_p.h
 %%QT_INCDIR%%/QtDesigner/%%FULLVER%%/QtDesigner/private/qdesigner_qsettings_p.h
@@ -101,11 +99,8 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/QDesignerActionEditorInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerComponents
 %%QT_INCDIR%%/QtDesigner/QDesignerContainerExtension
-%%QT_INCDIR%%/QtDesigner/QDesignerCustomWidgetCollectionInterface
-%%QT_INCDIR%%/QtDesigner/QDesignerCustomWidgetInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerDnDItemInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerDynamicPropertySheetExtension
-%%QT_INCDIR%%/QtDesigner/QDesignerExportWidget
 %%QT_INCDIR%%/QtDesigner/QDesignerExtraInfoExtension
 %%QT_INCDIR%%/QtDesigner/QDesignerFormEditorInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerFormEditorPluginInterface
@@ -162,7 +157,6 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/abstractwidgetdatabase.h
 %%QT_INCDIR%%/QtDesigner/abstractwidgetfactory.h
 %%QT_INCDIR%%/QtDesigner/container.h
-%%QT_INCDIR%%/QtDesigner/customwidget.h
 %%QT_INCDIR%%/QtDesigner/default_extensionfactory.h
 %%QT_INCDIR%%/QtDesigner/dynamicpropertysheet.h
 %%QT_INCDIR%%/QtDesigner/extension.h
@@ -174,7 +168,6 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/propertysheet.h
 %%QT_INCDIR%%/QtDesigner/qdesigner_components.h
 %%QT_INCDIR%%/QtDesigner/qdesigner_components_global.h
-%%QT_INCDIR%%/QtDesigner/qdesignerexportwidget.h
 %%QT_INCDIR%%/QtDesigner/qextensionmanager.h
 %%QT_INCDIR%%/QtDesigner/qtdesignerversion.h
 %%QT_INCDIR%%/QtDesigner/sdk_global.h
@@ -259,6 +252,7 @@ lib/cmake/Qt6Designer/Qt6DesignerConfig.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersion.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersionImpl.cmake
 lib/cmake/Qt6Designer/Qt6DesignerDependencies.cmake
+lib/cmake/Qt6Designer/Qt6DesignerPlugins.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets.cmake
 lib/cmake/Qt6Designer/Qt6DesignerVersionlessTargets.cmake
@@ -382,8 +376,8 @@ libdata/pkgconfig/Qt6Help.pc
 libdata/pkgconfig/Qt6Linguist.pc
 libdata/pkgconfig/Qt6UiPlugin.pc
 libdata/pkgconfig/Qt6UiTools.pc
-%%QT_LIBEXECDIR%%/lrelease-pro
 %%QT_LIBEXECDIR%%/lprodump
+%%QT_LIBEXECDIR%%/lrelease-pro
 %%QT_LIBEXECDIR%%/lupdate-pro
 %%QT_LIBEXECDIR%%/qhelpgenerator
 %%QT_LIBEXECDIR%%/qtattributionsscanner

@@ -40,7 +40,7 @@ man/man7/xdcc.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/info.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/iroffer-state.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/json.txt.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/list.json.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/md5.txt.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/robots.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/sfv.txt.rb

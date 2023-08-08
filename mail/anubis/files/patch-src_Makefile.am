@@ -21,3 +21,12 @@
  
  if TLS_COND
   TLS_C=tls.c
+@@ -99,7 +99,7 @@ BUILT_SOURCES = env.c
+ 
+ localedir = $(datadir)/locale
+ DEFS = @DEFS@ -DLOCALEDIR=\"$(localedir)\"
+-AM_CPPFLAGS = @ADD_INCLUDES@ @LIBGNUTLS_INCLUDES@ -I$(top_srcdir)/lib
++AM_CPPFLAGS = @ADD_INCLUDES@ @LIBGNUTLS_INCLUDES@ @GUILE_INCLUDES@ -I$(top_srcdir)/lib
+ SUFFIXES=.opt .c
+ 
+ .opt.c:

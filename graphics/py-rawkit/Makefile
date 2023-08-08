@@ -1,7 +1,7 @@
 PORTNAME=	rawkit
 PORTVERSION=	0.6.0
 CATEGORIES=	graphics devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	m.ne@gmx.net
@@ -11,7 +11,7 @@ WWW=		https://rawkit.readthedocs.org
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

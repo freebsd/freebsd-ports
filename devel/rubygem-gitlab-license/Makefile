@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-license
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	bash>0:shells/bash
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 SHEBANG_FILES=	bin/setup
 
 NO_ARCH=	yes

@@ -1,0 +1,5 @@
+Paranoid DNS resolver is a wraper around
+Net::DNS who perform paranoid checks to
+ensure the address you are trying to resolve
+isn't a local one or part of the blacklisted
+block.

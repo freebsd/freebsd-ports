@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
-		libqgpgme.so:security/gpgme-qt5 \
+		libqgpgme.so:security/gpgme-qt@qt5 \
 		libgpgmepp.so:security/gpgme-cpp
 RUN_DEPENDS=	${LOCALBASE}/bin/gmd5sum:sysutils/coreutils
 

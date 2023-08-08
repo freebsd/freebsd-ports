@@ -1,7 +1,7 @@
 PORTNAME=	qdldl
-PORTVERSION=	0.1.5.post2
+PORTVERSION=	0.1.5.post3
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.13.2:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
 post-install:

@@ -1,6 +1,6 @@
 PORTNAME=	libliftoff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.4.1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,6 +17,5 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
-GL_COMMIT=	c4488eeff94f511aa4d93ef93a042e471c1b2705
 
 .include <bsd.port.mk>

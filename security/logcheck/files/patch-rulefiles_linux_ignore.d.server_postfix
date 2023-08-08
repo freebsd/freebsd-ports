@@ -1,20 +1,20 @@
---- rulefiles/linux/ignore.d.server/postfix.orig	2019-03-01 15:22:43 UTC
+--- rulefiles/linux/ignore.d.server/postfix.orig	2022-12-22 23:03:11 UTC
 +++ rulefiles/linux/ignore.d.server/postfix
 @@ -8,7 +8,7 @@
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max (message|recipient|connection) (count|rate) [/[:digit:]s]+ for \(([.:[:xdigit:]]+)?(smtp(s)?|25|submission|587):([.:[:xdigit:]]+|unknown)\) at \w{3} [ :[:digit:]]{11}$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max cache size [[:digit:]]+ at \w{3} [ :[:digit:]]{11}$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/bounce\[[[:digit:]]+\]: [[:xdigit:]]+: sender (delay|non-delivery|delivery status) notification: [[:xdigit:]]+$
--^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: (resent-|)message-id=<?[^>]+>?( \(added by [^[:space:]]+\))?$
-+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: (resent-)?message-id=<?[^>]+>?( \(added by [^[:space:]]+\))?$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: milter-discard: END-OF-MESSAGE from [-._[:alnum:]]+\[([.[:digit:]]+|[:[:xdigit:]]+)\]: milter triggers DISCARD action; from=<[^[:space:]]*> to=<[^[:space:]]*> proto=E?SMTP helo=<[^[:space:]]+>$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:upper:][:digit:]]+: reject: header [^[:space:]]+:.+ from=<[^[:space:]]*>( to=<[^[:space:]]+>)? proto=E?SMTP helo=<[^[:space:]]+>: .+$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:xdigit:]]+: milter-reject: END-OF-MESSAGE from [-._[:alnum:]]+\[[.[:digit:]]+\]: [45]\.7\.1 (virus [-._/[:alnum:]]+ detected by ClamAV - http://www\.clamav\.net|Command rejected); from=<[^[:space:]]*> to=<[^[:space:]]+> proto=E?SMTP helo=<[^[:space:]]+>$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max (message|recipient|connection) (count|rate) [/[:digit:]s]+ for \(([.:[:xdigit:]]+)?(smtp(s)?|25|submission|587):([.:[:xdigit:]]+|unknown)\) at \w{3} [ :[:digit:]]{11}$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/anvil\[[[:digit:]]+\]: statistics: max cache size [[:digit:]]+ at \w{3} [ :[:digit:]]{11}$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/bounce\[[[:digit:]]+\]: [[:xdigit:]]+: sender (delay|non-delivery|delivery status) notification: [[:xdigit:]]+$
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: (resent-|)message-id=<?[^>]+>?( \(added by [^[:space:]]+\))?$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: (resent-)?message-id=<?[^>]+>?( \(added by [^[:space:]]+\))?$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:alnum:]]+: milter-discard: END-OF-MESSAGE from [-._[:alnum:]]+\[([.[:digit:]]+|[:[:xdigit:]]+)\]: milter triggers DISCARD action; from=<[^[:space:]]*> to=<[^[:space:]]*> proto=E?SMTP helo=<[^[:space:]]+>$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:upper:][:digit:]]+: reject: header [^[:space:]]+:.+ from=<[^[:space:]]*>( to=<[^[:space:]]+>)? proto=E?SMTP helo=<[^[:space:]]+>: .+$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/cleanup\[[[:digit:]]+\]: [[:xdigit:]]+: milter-reject: END-OF-MESSAGE from [-._[:alnum:]]+\[[.[:digit:]]+\]: [45]\.7\.1 (virus [-._/[:alnum:]]+ detected by ClamAV - http://www\.clamav\.net|Command rejected); from=<[^[:space:]]*> to=<[^[:space:]]+> proto=E?SMTP helo=<[^[:space:]]+>$
 @@ -60,7 +60,7 @@
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: [^[:space:]]+ offered null AUTH mechanism list$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: mailer loop: best MX for [^[:space:]]+ is local$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: no MX host for [^[:space:]]+ has a valid (A|address) record$
--^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)$
-+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)( key-exchange [^[:space:]]+ server-signature [^[:space:]]+ \([/[:digit:]]+ bits\) server-digest [^[:space:]]+)?$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: (Peer|Server) certificate could not be verified$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: Unverified: subject_CN=.*$
- ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: Verified: subject_CN=.*, issuer=.*$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: [^[:space:]]+ offered null AUTH mechanism list$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: mailer loop: best MX for [^[:space:]]+ is local$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtp\[[[:digit:]]+\]: warning: no MX host for [^[:space:]]+ has a valid (A|address) record$
+-^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)$
++^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: ((Anonymous|Trusted|Verified) )?TLS connection established (to|from) [^[:space:]]+: (TLSv1(\.[[:digit:]])?|SSLv[23]) with cipher [^[:space:]]+ \([/[:digit:]]+ bits\)( key-exchange [^[:space:]]+ server-signature [^[:space:]]+ \([/[:digit:]]+ bits\) server-digest [^[:space:]]+)?$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: (Peer|Server) certificate could not be verified$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: Unverified: subject_CN=.*$
+ ^(\w{3} [ :[:digit:]]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ postfix/smtpd?\[[[:digit:]]+\]: Verified: subject_CN=.*, issuer=.*$

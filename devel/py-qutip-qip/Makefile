@@ -1,7 +1,8 @@
 PORTNAME=	qutip-qip
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,9 +17,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qutip>=4.6:devel/py-qutip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} # optional dependency required for tests
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qiskit>0:science/py-qiskit@${PY_FLAVOR} # optional
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyqir>0:misc/py-pyqir@${PY_FLAVOR} # optional
 
-USES=		python:3.7+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/qutip/qutip-qip/issues/214
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
@@ -26,8 +30,5 @@ NO_ARCH=	yes
 
 post-patch:
 	@cd ${WRKSRC} && ${ECHO} ${DISTVERSION} > VERSION
-
-do-test:
-	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest
 
 .include <bsd.port.mk>

@@ -1,18 +1,6 @@
---- setup.py.orig	2018-11-06 07:20:18 UTC
+--- setup.py.orig	2022-06-08 08:27:36 UTC
 +++ setup.py
-@@ -288,11 +288,6 @@ reportlab_files= [
- 
- def url2data(url,returnRaw=False):
-     import io
--    if isPy3:
--        import urllib.request as ureq
--    else:
--        import urllib2 as ureq
--    remotehandle = ureq.urlopen(url)
-     try:
-         raw = remotehandle.read()
-         return raw if returnRaw else io.BytesIO(raw)
-@@ -308,9 +303,7 @@ def get_fonts(PACKAGE_DIR, reportlab_files):
+@@ -443,9 +443,7 @@ def get_fonts(PACKAGE_DIR, reportlab_files):
          xitmsg = "not downloading T1 font curve files"
      else:
          try:

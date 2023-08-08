@@ -1,6 +1,6 @@
 PORTNAME=	paperless
 PORTVERSION=	2.7.0
-PORTREVISION=	11
+PORTREVISION=	14
 CATEGORIES=	deskutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -36,7 +36,7 @@ RUN_DEPENDS+=	gpg2:security/gnupg \
 		tesseract:graphics/tesseract \
 		unpaper:graphics/unpaper
 
-USES=		python:3.5+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	the-paperless-project
 USE_RC_SUBR=	paperless-consumer

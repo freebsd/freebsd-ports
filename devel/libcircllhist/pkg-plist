@@ -41,6 +41,7 @@ lib/libcircllhist.so.0.0.1
 %%PORTDOCS%%%%DOCSDIR%%/html/splitbard.png
 %%PORTDOCS%%%%DOCSDIR%%/html/structhist__allocator.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structhist__bucket.html
+%%PORTDOCS%%%%DOCSDIR%%/html/structhistogram__adhoc__bin__t.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sync_off.png
 %%PORTDOCS%%%%DOCSDIR%%/html/sync_on.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_a.png
@@ -52,4 +53,5 @@ lib/libcircllhist.so.0.0.1
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_sd.png
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
-share/lua/5.1/ffi_libcircllhist.lua
+%%LUA_MODSHAREDIR%%/ffi_libcircllhist.lua
+%%LUA_MODSHAREDIR%%/circllhist.lua

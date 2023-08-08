@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 @@ -8,6 +8,8 @@
  
@@ -9,8 +9,8 @@
  #include <X11/Xlib.h>
  
  #include "common/debug.h"
-@@ -18,8 +20,44 @@
- #error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
+@@ -18,8 +20,43 @@
+ #    error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
 +#define GLX_RENDERER_VENDOR_ID_MESA	0x8183
@@ -50,7 +50,6 @@
 +
 +    return true;
 +}
-+
  
  bool GetNvidiaDriverVersionWithXNVCtrl(std::string *version)
  {

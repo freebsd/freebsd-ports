@@ -1,9 +1,9 @@
 PORTNAME=	globals
-PORTVERSION=	0.16.1
+PORTVERSION=	0.16.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Identify Global Objects in R Expressions
 WWW=		https://cran.r-project.org/web/packages/globals/
 

@@ -1,20 +1,11 @@
-diff -c Imakefile.orig Imakefile
-*** Imakefile.orig	Tue Feb  1 02:11:24 2000
---- Imakefile	Tue Aug  3 10:02:12 2004
-***************
-*** 15,21 ****
-  
-  ComplexProgramTarget(pload)
-  
-! distclean: clean	
-  	$(RM) Makefile osdefs.mk core \
-  	pload-$(VER).tar.gz \
-  	pload-$(VER)-1.i386.rpm \
---- 15,21 ----
-  
-  ComplexProgramTarget(pload)
-  
-! distclean:: clean	
-  	$(RM) Makefile osdefs.mk core \
-  	pload-$(VER).tar.gz \
-  	pload-$(VER)-1.i386.rpm \
+--- Imakefile.orig	2000-02-01 07:11:24 UTC
++++ Imakefile
+@@ -15,7 +15,7 @@ DEFINES = -DVERSION="\"Pload version $(VER)\"" $(OSDEF
+ 
+ ComplexProgramTarget(pload)
+ 
+-distclean: clean	
++distclean:: clean	
+ 	$(RM) Makefile osdefs.mk core \
+ 	pload-$(VER).tar.gz \
+ 	pload-$(VER)-1.i386.rpm \

@@ -1,7 +1,7 @@
 PORTNAME=	uefi-edk2-bhyve-csm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 
@@ -10,6 +10,9 @@ COMMENT=	UEFI EDK2 firmware for bhyve with CSM (16-bit BIOS)
 WWW=		https://github.com/freebsd/uefi-edk2/tree/bhyve/UDK2014.SP1
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=     Requires old edk2 version and gcc 4.8.
+EXPIRATION_DATE=2024-04-01
 
 ONLY_FOR_ARCHS=	amd64
 

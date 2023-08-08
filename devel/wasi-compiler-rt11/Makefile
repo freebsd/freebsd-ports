@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${PORTNAME}-${DISTVERSION}.src
 DISTFILES=	${PORTNAME}-${DISTVERSION}.src${EXTRACT_SUFX}
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	Clang builtins library for WebAssembly System Interface
 WWW=		https://llvm.org/
 

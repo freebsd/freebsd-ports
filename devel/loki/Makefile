@@ -8,6 +8,7 @@ COMMENT=	C++ library of common design patterns
 WWW=		https://sourceforge.net/projects/loki-lib/
 
 USES=		gmake dos2unix
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 CXXFLAGS+=	-Wno-return-type

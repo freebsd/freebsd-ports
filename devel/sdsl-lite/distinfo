@@ -1,0 +1,7 @@
+TIMESTAMP = 1689969070
+SHA256 (simongog-sdsl-lite-v2.1.1-137-gc32874c_GH0.tar.gz) = 3554d08faf7375833ec05b8e44b6837550acace9a995734aacca3f4cb0b3732e
+SIZE (simongog-sdsl-lite-v2.1.1-137-gc32874c_GH0.tar.gz) = 646011
+SHA256 (simongog-libdivsufsort-0f24acd_GH0.tar.gz) = 10f76dba7a59111404511ff313b23098950f5b2eef69e3f249e63c59cca09d3e
+SIZE (simongog-libdivsufsort-0f24acd_GH0.tar.gz) = 25952
+SHA256 (google-googletest-c2d90bd_GH0.tar.gz) = 014bf6c1c899344efb5bfe458326a459e04e3e2347f20eb9156af36bbade0829
+SIZE (google-googletest-c2d90bd_GH0.tar.gz) = 1284614

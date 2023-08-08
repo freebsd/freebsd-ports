@@ -1,6 +1,5 @@
 PORTNAME=	html-pipeline
-PORTVERSION=	2.13.2
-PORTREVISION=	1
+PORTVERSION=	2.14.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +14,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=2:devel/rubygem-activesupport61 \
 		rubygem-nokogiri>=1.4:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

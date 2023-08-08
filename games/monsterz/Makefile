@@ -1,6 +1,6 @@
 PORTNAME=	monsterz
 PORTVERSION=	0.7.1
-PORTREVISION=	15
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	http://sam.zoy.org/monsterz/ \
 		SF/nemysisfreebsdp/:icons
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYGAME}
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	monsterz.py
 MAKE_ENV=	prefix=${PREFIX}
 

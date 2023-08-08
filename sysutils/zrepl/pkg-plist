@@ -1,4 +1,5 @@
 bin/zrepl
+etc/periodic/weekly/500.zrepl
 @sample %%ETCDIR%%/zrepl.yml.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bandwidth_limit.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/grafana-prometheus-zrepl.json
@@ -15,6 +16,7 @@ bin/zrepl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quickstart_fan_out_replication_target.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sink.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/snap.yml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/snap_cron.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/source.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/source_ssh.yml
 @sample %%EXAMPLESDIR%%/syslog.conf etc/syslog.d/zrepl.conf

@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2023-02-02 20:42:42 UTC
++++ pyproject.toml
+@@ -3,9 +3,6 @@ requires = [
+ 	"setuptools",
+ 	"wheel",
+ 	"setuptools_scm",
+-	"scikit-build",
+-	"cmake",
+-	"ninja"
+ ]
+ build-backend = "setuptools.build_meta"
+ 

@@ -1,4 +1,4 @@
---- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2022-07-22 17:30:31 UTC
+--- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2023-05-31 08:12:17 UTC
 +++ extensions/browser/api/networking_private/networking_private_delegate_factory.cc
 @@ -14,7 +14,7 @@
  #include "extensions/browser/api/networking_private/networking_private_chromeos.h"

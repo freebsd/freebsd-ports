@@ -1,0 +1,4 @@
+bin/mp2d
+%%DATADIR%%/CKS_C6coeffs.dat
+%%DATADIR%%/UCHF_C6coeffs.dat
+%%DATADIR%%/mp2d_parameters.dat

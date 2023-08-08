@@ -2,7 +2,7 @@ PORTNAME=	vt100
 DISTVERSION=	0.2
 CATEGORIES=	emulators
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Simulation of VT100 terminal hardware
 WWW=		https://github.com/larsbrinkhoff/terminal-simulator
 

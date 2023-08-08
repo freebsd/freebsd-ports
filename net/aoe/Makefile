@@ -9,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
 WWW=		http://www.coraid.com/support/freebsd/
 
+DEPRECATED=	Broken in all supported releases for more than an year
+EXPIRATION_DATE=	2023-08-15
 BROKEN_aarch64=		fails to compile: redefinition of frame
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 BROKEN_armv7=		fails to compile: redefinition of frame

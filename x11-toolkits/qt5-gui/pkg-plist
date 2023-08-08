@@ -948,8 +948,8 @@
 %%X11%%%%DEBUG%%%%QT_PLUGINDIR%%/platforminputcontexts/libibusplatforminputcontextplugin.so.debug
 %%X11%%%%QT_PLUGINDIR%%/platforms/libqbsdfb.so
 %%X11%%%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqbsdfb.so.debug
-%%X11%%%%QT_PLUGINDIR%%/platforms/libqminimal.so
-%%X11%%%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqminimal.so.debug
+%%QT_PLUGINDIR%%/platforms/libqminimal.so
+%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqminimal.so.debug
 %%X11%%%%QT_PLUGINDIR%%/platforms/libqoffscreen.so
 %%X11%%%%DEBUG%%%%QT_PLUGINDIR%%/platforms/libqoffscreen.so.debug
 %%X11%%%%QT_PLUGINDIR%%/platforms/libqvnc.so

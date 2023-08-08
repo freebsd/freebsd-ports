@@ -11,16 +11,16 @@ WWW=		http://web.engr.illinois.edu/~wgropp/projects/software/sowing/
 BUILD_DEPENDS=	ppmtogif:graphics/netpbm
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 
-USES=		ghostscript gmake perl5
+USES=		ghostscript gmake perl5 tex
 USE_TEX=	latex dvipsk
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-CONFLICTS_INSTALL=	bib2html # bin/bib2html
-
+MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	all-redirect
 
-MAKE_JOBS_UNSAFE=	yes
+CONFLICTS_INSTALL=	bib2html # bin/bib2html
 
 post-patch:
 	@${REINPLACE_CMD} -e \

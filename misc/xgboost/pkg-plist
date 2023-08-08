@@ -1,6 +1,7 @@
 bin/xgboost
 include/xgboost/base.h
 include/xgboost/c_api.h
+include/xgboost/collective/socket.h
 include/xgboost/data.h
 include/xgboost/feature_map.h
 include/xgboost/gbm.h

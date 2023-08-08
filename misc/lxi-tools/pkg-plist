@@ -1,6 +1,5 @@
 bin/lxi
-%%BASH%%etc/bash_completion.d/lxi
-%%BASH%%etc/bash_completion.d/lxi.snap
+etc/bash_completion.d/lxi
 man/man1/lxi.1.gz
 %%GUI%%share/applications/io.github.lxi-tools.lxi-gui.desktop
 %%GUI%%share/glib-2.0/schemas/io.github.lxi-tools.lxi-gui.gschema.xml

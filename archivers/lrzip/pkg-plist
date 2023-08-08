@@ -24,12 +24,6 @@ bin/lrz
 bin/lrzip
 bin/lrztar
 bin/lrzuntar
-include/Lrzip.h
-lib/liblrzip.a
-lib/liblrzip.so
-lib/liblrzip.so.0
-lib/liblrzip.so.0.0.0
-libdata/pkgconfig/lrzip.pc
 man/man1/lrunzip.1.gz
 man/man1/lrz.1.gz
 man/man1/lrzcat.1.gz

@@ -1,0 +1,9 @@
+--- guile-cairo.pc.in.orig	2023-05-21 10:31:12 UTC
++++ guile-cairo.pc.in
+@@ -7,5 +7,5 @@ Name: guile-cairo
+ Description: Cairo binding for Guile Scheme
+ Version: @VERSION@
+ Requires: cairo guile-@GUILE_EFFECTIVE_VERSION@
+-Libs: -L${libdir} -lguile-cairo
++Libs: -L${libdir} -Wl,-rpath=${libdir} -lguile-cairo
+ Cflags: -I${includedir}

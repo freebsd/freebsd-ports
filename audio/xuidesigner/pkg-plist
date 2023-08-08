@@ -26,6 +26,7 @@ include/xputty/xfile-dialog.h
 include/xputty/xfilepicker.h
 include/xputty/xframe.h
 include/xputty/xframe_private.h
+include/xputty/xkeyboard.h
 include/xputty/xknob.h
 include/xputty/xknob_private.h
 include/xputty/xlabel.h

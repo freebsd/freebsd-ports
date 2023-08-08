@@ -1,5 +1,5 @@
 PORTNAME=	icu
-DISTVERSION=	71_1
+DISTVERSION=	73_2
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
@@ -9,7 +9,7 @@ DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT?=	International Components for Unicode (from IBM)
-WWW=		http://site.icu-project.org/
+WWW=		https://icu.unicode.org/
 
 LICENSE=	ICU
 LICENSE_NAME=	ICU license

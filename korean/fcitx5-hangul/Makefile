@@ -1,21 +1,19 @@
 PORTNAME=	fcitx5-hangul
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.11
 CATEGORIES=	korean textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Hangul support for Fcitx5
-WWW=		https://github.com/fcitx/fcitx5-anthy
+WWW=		https://github.com/fcitx/fcitx5-hangul
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
-LIB_DEPENDS=	libhangul.so:korean/libhangul \
-		libFcitx5Core.so:textproc/fcitx5
+LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
+		libhangul.so:korean/libhangul
 
-USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
+USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig tar:xz
 
 USE_KDE=	ecm
 

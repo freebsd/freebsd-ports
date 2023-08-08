@@ -19,7 +19,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cpe php:flavors
 CPE_VENDOR=	getcomposer
-USE_PHP=	ctype filter intl json mbstring openssl phar
+USE_PHP=	ctype filter intl mbstring phar
 
 CONFLICTS_INSTALL=	php*-composer php*-composer2
 

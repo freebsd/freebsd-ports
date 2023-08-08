@@ -1,5 +1,5 @@
 PORTNAME=	io-event
-PORTVERSION=	1.0.9
+PORTVERSION=	1.2.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,9 +9,6 @@ WWW=		https://github.com/socketry/io-event
 
 LICENSE=	MIT
 
-BROKEN_RUBY27=	yes
-
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

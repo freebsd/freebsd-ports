@@ -1,6 +1,6 @@
 PORTNAME=	cado-nfs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0.20220722
+DISTVERSION=	2.3.0-20220722
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ USES=		cmake:noninja compiler:c++11-lang perl5 python shebangfix # noninja becau
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.inria.fr
-GL_COMMIT=	3ab6a4781fa5d218ed332834809ba6c6fd1a591f
+GL_TAGNAME=	3ab6a4781fa5d218ed332834809ba6c6fd1a591f
 
 SHEBANG_GLOB=	*.py
 

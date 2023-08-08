@@ -1,6 +1,6 @@
 PORTNAME=	diskcache
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.0
+DISTVERSION=	5.6.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	distutils autoplist unittest # 1 test fails, see https://github.com/grantjenks/python-diskcache/issues/262
 
 USE_GITHUB=	yes

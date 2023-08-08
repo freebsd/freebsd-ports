@@ -48,11 +48,13 @@ share/bash-completion/completions/dosbox-x
 %%DATADIR%%/glshaders/yee64.glsl
 %%DATADIR%%/glshaders/yeetron.glsl
 %%DATADIR%%/glshaders/zfast_crt.glsl
+%%DATADIR%%/languages/de_DE.lng
 %%DATADIR%%/languages/en_US.lng
 %%DATADIR%%/languages/es_ES.lng
 %%DATADIR%%/languages/fr_FR.lng
 %%DATADIR%%/languages/ja_JP.lng
 %%DATADIR%%/languages/ko_KR.lng
+%%DATADIR%%/languages/nl_NL.lng
 %%DATADIR%%/languages/pt_BR.lng
 %%DATADIR%%/languages/tr_TR.lng
 %%DATADIR%%/languages/zh_CN.lng

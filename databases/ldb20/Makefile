@@ -26,12 +26,11 @@ LDB_DEPENDS=		talloc>=2.2.0:devel/talloc \
 
 CONFLICTS_INSTALL=	ldb[0-9][0-9] # include/ldb.h
 
-USES=			compiler pkgconfig waf
+USES=			compiler ldap pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
 CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
 
-USE_OPENLDAP=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
@@ -104,7 +103,7 @@ BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/do
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			gettext-runtime python:3.6+
+USES+=			gettext-runtime python
 
 PLIST_FILES+=		include/pyldb.h \
 			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \

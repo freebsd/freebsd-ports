@@ -1,5 +1,5 @@
 PORTNAME=	bootsnap
-PORTVERSION=	1.13.0
+PORTVERSION=	1.16.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-msgpack>=1.2<2:devel/rubygem-msgpack
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/bootsnap
 

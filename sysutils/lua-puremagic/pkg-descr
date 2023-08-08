@@ -1,0 +1,2 @@
+A pure Lua module that detects the mime type of file based on their contents.
+Falls back to detecting based on extension for plain text files.

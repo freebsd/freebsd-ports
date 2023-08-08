@@ -1,6 +1,5 @@
 PORTNAME=	ppx-tools
-PORTVERSION=	5.1
-DISTVERSIONSUFFIX=+4.06.0
+PORTVERSION=	6.6
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -10,15 +9,20 @@ WWW=		https://github.com/ocaml-ppx/ppx_tools
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	dune:devel/ocaml-dune \
+		cppo:devel/ocaml-cppo
+
 USES=		gmake
+ALL_TARGET=	release
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=yes
-MAKE_JOBS_UNSAFE=yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ocaml-ppx
 GH_PROJECT=	${PORTNAME:C/-/_/}
+DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME:C/-/_/}
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib/ppx_tools/ppx_tools.cmxs
+PORTDOCS=	CHANGES LICENSE README.md
+
+OPTIONS_DEFINE= DOCS
 
 .include <bsd.port.mk>

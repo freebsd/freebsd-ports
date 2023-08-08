@@ -10,6 +10,9 @@ WWW=		http://www.kore.io/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_* routines
+
 USES=		compiler:c11 gmake ssl
 
 MAKE_ARGS=	OPENSSL_PATH=${OPENSSLBASE}
@@ -40,7 +43,7 @@ JSONRPC_MAKE_ARGS=	JSONRPC=1
 PGSQL_IMPLIES=		HTTP
 PGSQL_USES=		pgsql
 PGSQL_MAKE_ARGS=	PGSQL=1
-PYTHON_USES=		gettext-runtime python:3.6+
+PYTHON_USES=		gettext-runtime python
 PYTHON_MAKE_ARGS=	PYTHON=1
 PYTHON_BINARY_ALIAS=	python3-config=${PYTHON_CMD}-config
 TASKS_MAKE_ARGS=	TASKS=1

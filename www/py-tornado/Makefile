@@ -1,17 +1,21 @@
 PORTNAME=	tornado
-PORTVERSION=	6.2
+PORTVERSION=	6.3.2
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Web Server from FriendFeed
-WWW=		https://www.tornadoweb.org/
+WWW=		https://www.tornadoweb.org/ \
+		https://github.com/tornadoweb/tornado
 
 LICENSE=	APACHE20
 
-USES=		cpe python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent pep517
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado4 \
 			${PYTHON_PKGNAMEPREFIX}tornado5 \

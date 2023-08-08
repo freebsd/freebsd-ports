@@ -1,5 +1,6 @@
 PORTNAME=	opensips31
 DISTVERSION=	3.1.11
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://opensips.org/pub/opensips/${DISTVERSION}/
 DISTNAME=	opensips-${DISTVERSION}
@@ -55,7 +56,7 @@ TESTS_DESC=		Install smoke tests
 HTTP_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 HTTP_VARS=		EXTRA_MODULES+=httpd
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_VARS=		EXTRA_MODULES+="ldap h350"
 
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
@@ -73,7 +74,7 @@ PYTHON_USES=		python
 PYTHON_MAKE_ENV=	PYTHON=${PYTHON_CMD}
 PYTHON_VARS=		EXTRA_MODULES+=python
 
-RABBITMQ_LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c-devel
+RABBITMQ_LIB_DEPENDS=	librabbitmq.so:net/rabbitmq-c
 RABBITMQ_VARS=		EXTRA_MODULES+="event_rabbitmq rabbitmq rabbitmq_consumer"
 
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient

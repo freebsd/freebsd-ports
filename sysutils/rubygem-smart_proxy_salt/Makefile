@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		rubygem-smart_proxy_dynflow>=0.5.0:sysutils/rubygem-smart_proxy_dynflow
 
 USES=		cpe gem python shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

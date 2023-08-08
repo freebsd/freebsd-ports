@@ -1,6 +1,6 @@
 @shell bin/bash
-@shell bin/rbash
 bin/bashbug
+@shell bin/rbash
 %%NO_STATIC%%include/bash/alias.h
 %%NO_STATIC%%include/bash/array.h
 %%NO_STATIC%%include/bash/arrayfunc.h
@@ -21,6 +21,7 @@ bin/bashbug
 %%NO_STATIC%%include/bash/conftypes.h
 %%NO_STATIC%%include/bash/dispose_cmd.h
 %%NO_STATIC%%include/bash/error.h
+%%NO_STATIC%%include/bash/execute_cmd.h
 %%NO_STATIC%%include/bash/externs.h
 %%NO_STATIC%%include/bash/general.h
 %%NO_STATIC%%include/bash/hashlib.h
@@ -60,13 +61,16 @@ bin/bashbug
 %%NO_STATIC%%include/bash/xmalloc.h
 %%NO_STATIC%%include/bash/y.tab.h
 %%NO_STATIC%%lib/bash/Makefile.inc
+%%NO_STATIC%%lib/bash/Makefile.sample
 %%NO_STATIC%%lib/bash/accept
 %%NO_STATIC%%lib/bash/basename
 %%NO_STATIC%%lib/bash/csv
 %%NO_STATIC%%lib/bash/cut
 %%NO_STATIC%%lib/bash/dirname
+%%NO_STATIC%%lib/bash/dsv
 %%NO_STATIC%%lib/bash/fdflags
 %%NO_STATIC%%lib/bash/finfo
+%%NO_STATIC%%lib/bash/getconf
 %%NO_STATIC%%lib/bash/head
 %%NO_STATIC%%lib/bash/id
 %%NO_STATIC%%lib/bash/ln
@@ -86,6 +90,7 @@ bin/bashbug
 %%NO_STATIC%%lib/bash/seq
 %%NO_STATIC%%lib/bash/setpgid
 %%NO_STATIC%%lib/bash/sleep
+%%NO_STATIC%%lib/bash/stat
 %%NO_STATIC%%lib/bash/strftime
 %%NO_STATIC%%lib/bash/sync
 %%NO_STATIC%%lib/bash/tee

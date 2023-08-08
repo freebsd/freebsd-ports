@@ -10,7 +10,7 @@ WWW=		https://src.fedoraproject.org/rpms/gettext/blob/master/f/msghack.py
 
 LICENSE=	GPLv3+
 
-USES=		python:3.5+ shebangfix tar:xz
+USES=		python shebangfix tar:xz
 
 NO_ARCH=	yes
 NO_BUILD=	yes

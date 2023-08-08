@@ -1,7 +1,7 @@
 PORTNAME=	asyncpg
-PORTVERSION=	0.26.0
+PORTVERSION=	0.27.0
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/MagicStack/asyncpg/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe pgsql:9.2+ python:3.6+
+USES=		cpe pgsql:11+ python
 CPE_VENDOR=	magic
 USE_PYTHON=	autoplist concurrent cython distutils
 

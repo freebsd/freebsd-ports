@@ -1,10 +1,10 @@
 PORTNAME=	jack_umidi
 DISTVERSIONPREFIX=	v
 PORTVERSION=		1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon that converts a raw MIDI device into a JACK MIDI device
 WWW=		https://github.com/hselasky/jack_umidi
 

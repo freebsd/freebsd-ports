@@ -1,32 +1,33 @@
---- src/3rdparty/chromium/chrome/common/webui_url_constants.h.orig	2020-03-16 14:04:24 UTC
+--- src/3rdparty/chromium/chrome/common/webui_url_constants.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/chrome/common/webui_url_constants.h
-@@ -268,7 +268,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
- extern const char kChromeUICastHost[];
- #endif
+@@ -291,7 +291,7 @@ bool IsSystemWebUIHost(base::StringPiece host);
  
--#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_BSD)
+ #endif  // defined(OS_CHROMEOS)
+ 
+-#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
++#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD) || \
+     defined(OS_CHROMEOS)
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
- extern const char kChromeUIHatsHost[];
-@@ -280,17 +280,17 @@ extern const char kChromeUIHatsURL[];
+@@ -311,18 +311,18 @@ extern const char kChromeUILinuxProxyConfigHost[];
  extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD) || \
+     defined(OS_ANDROID)
  extern const char kChromeUISandboxHost[];
  #endif
  
- #if defined(OS_WIN) || defined(OS_MACOSX) || \
+ #if defined(OS_WIN) || defined(OS_MAC) || \
 -    (defined(OS_LINUX) && !defined(OS_CHROMEOS))
 +    (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  #endif
  
--#if (defined(OS_LINUX) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
-+#if ((defined(OS_LINUX) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || defined(USE_AURA)
+-#if ((defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(TOOLKIT_VIEWS)) || \
++#if ((defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(TOOLKIT_VIEWS)) || \
+     defined(USE_AURA)
  extern const char kChromeUITabModalConfirmDialogHost[];
  #endif
- 

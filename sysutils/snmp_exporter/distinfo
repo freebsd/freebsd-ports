@@ -1,4 +1,4 @@
-TIMESTAMP = 1614204978
+TIMESTAMP = 1678922304
 SHA256 (prometheus-snmp_exporter-v0.20.0_GH0.tar.gz) = 4326749fb36b829ca43e9d60fc09f43b62788f353c491aa3367705d52b96fae9
 SIZE (prometheus-snmp_exporter-v0.20.0_GH0.tar.gz) = 290899
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
@@ -23,8 +23,8 @@ SHA256 (golang-net-4c5254603344_GH0.tar.gz) = 5957e628f2676d9e6c9517890bdcec334e
 SIZE (golang-net-4c5254603344_GH0.tar.gz) = 1177478
 SHA256 (golang-protobuf-v1.4.3_GH0.tar.gz) = 5736f943f8647362f5559689df6154f3c85d261fb088867c8a68494e2a767610
 SIZE (golang-protobuf-v1.4.3_GH0.tar.gz) = 171969
-SHA256 (golang-sys-f9fddec55a1e_GH0.tar.gz) = 1ab3f80841babed9c5cd8e93f69bfcb7847c406e767b5d86d5da7dc3c0f24931
-SIZE (golang-sys-f9fddec55a1e_GH0.tar.gz) = 1090464
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (gosnmp-gosnmp-v1.29.0_GH0.tar.gz) = 72cce697871395c3ba14775c13f30a58862fab102234a82274079f29ef7f7671

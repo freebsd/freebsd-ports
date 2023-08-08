@@ -1,5 +1,6 @@
 PORTNAME=	gvolwheel
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org

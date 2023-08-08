@@ -1,19 +1,19 @@
 PORTNAME=	lualdap
-PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.1
 PORTREVISION=	0
 CATEGORIES=	net
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	p.mousavizadeh@protonmail.com
 COMMENT=	LDAP support for the Lua language
 WWW=		https://github.com/lualdap/lualdap
 
 LICENSE=	MIT
 
-USES=		gmake lua:module
-USE_OPENLDAP=	yes
+USES=		gmake ldap lua:module
 USE_GITHUB=	yes
+USE_CSTD=	c99
 
 MAKE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -21,9 +21,8 @@ MAKE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include -I${LUA_INCDIR}" \
 
 ALL_TARGET=
 
-OPTIONS_DEFINE=	DOCS
-
 DOCSDIR=	${LUA_DOCSDIR}
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}

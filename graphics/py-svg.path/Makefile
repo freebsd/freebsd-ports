@@ -1,7 +1,7 @@
 PORTNAME=	svg_path
 PORTVERSION=	4.0.2
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	svg.path-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/svg.path/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

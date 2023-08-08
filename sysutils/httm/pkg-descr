@@ -1,0 +1,8 @@
+The dream of a CLI Time Machine is still alive with httm.
+
+httm prints the size, date and corresponding locations of available unique
+versions (deduplicated by modify time and size) of files residing on snapshots,
+but can also be used interactively to select and restore such files. httm might
+change the way you use snapshots (because ZFS/btrfs aren't designed for finding
+for unique file versions) or the Time Machine concept (because httm is very
+fast!).

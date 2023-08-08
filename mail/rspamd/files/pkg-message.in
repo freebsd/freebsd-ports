@@ -13,5 +13,15 @@
    You can edit %%ETCDIR%%/rspamd.newsyslog.conf
    to change log file rotation configuration.
 EOM
+},
+{ type: upgrade
+  maximum_version: 3.4
+  minimum_version: 3.3
+  message: <<EOM
+Due to the issues with Hyperscan alignment, it is recommended to remove the
+existing cached files that might cause troubles from /var/db/rspamd by using the
+following command: "find /var/db/rspamd/ -type f -name '*.unser' -delete"
+This action is needed merely for this particular upgrade.
+EOM
 }
 ]

@@ -3,7 +3,7 @@
 %%WWWDIR%%/browse.php
 %%WWWDIR%%/cache/tmp
 %%WWWDIR%%/comp.php
-@comment %%WWWDIR%%/composer.json
+%%WWWDIR%%/composer.json
 %%WWWDIR%%/diff.php
 %%WWWDIR%%/dl.php
 %%WWWDIR%%/filedetails.php

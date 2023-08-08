@@ -1,5 +1,5 @@
 PORTNAME=	uutf
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/uutf/releases/
@@ -21,7 +21,6 @@ BUILD_DEPENDS+=	opam-installer:devel/ocaml-opam \
 USES=		tar:tbz
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
-USE_OCAML_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 

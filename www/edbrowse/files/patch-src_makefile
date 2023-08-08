@@ -1,0 +1,20 @@
+--- src/makefile.orig	2022-10-03 21:56:00 UTC
++++ src/makefile
+@@ -1,7 +1,7 @@ PERL ?= perl
+ #  compiler and flags
+ CC ?=		cc
+ PERL ?= perl
+-QUICKJS_DIR ?= ../../quickjs
++QUICKJS_DIR ?= /usr/local/include/quickjs
+ CFLAGS +=	-Wall -Wno-unused -D_FILE_OFFSET_BITS=64
+ ifeq ($(shell uname),Linux)
+ 	PLATFORM_CFLAGS = -DEDBROWSE_ON_LINUX
+@@ -34,7 +34,7 @@ LDFLAGS = $(STRIP) $(LINKER_LIBS) -lpthread -lm
+ LDFLAGS = $(STRIP) $(LINKER_LIBS) -lpthread -lm
+ 
+ # LDFLAGS for quickjs loading.
+-QUICKJS_LDFLAGS = $(QUICKJS_DIR)/libquickjs.a -ldl
++QUICKJS_LDFLAGS = /usr/local/lib/quickjs/libquickjs.a -ldl
+ ifeq ($(shell uname),Linux)
+ 	QUICKJS_LDFLAGS += -latomic
+ endif

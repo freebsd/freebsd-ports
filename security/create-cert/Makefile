@@ -1,5 +1,5 @@
 PORTNAME=	create-cert
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	security
 MASTER_SITES=	https://ee.lbl.gov/downloads/create-cert/ \
 		LOCAL/leres/create-cert

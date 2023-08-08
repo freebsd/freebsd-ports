@@ -1,43 +1,24 @@
-diff --git GNUmakefile GNUmakefile
-index 3f3193d..43b1b55 100644
---- GNUmakefile
+--- GNUmakefile.orig	2021-04-24 10:47:51 UTC
 +++ GNUmakefile
 @@ -4,10 +4,10 @@
  # in /opt/diet, where they are in the default search path for my diet libc
  # work but don't conflict with anything there.  YMMV.
  
 -prefix=/opt/diet
-+prefix=STAGEDIR${PREFIX}
++prefix=${PREFIX}
  LIBDIR=${prefix}/lib
--INCLUDEDIR=${prefix}/include
+ INCLUDEDIR=${prefix}/include
 -MAN3DIR=${prefix}/man/man3
-+INCLUDEDIR=${prefix}/include/libowfat
-+MAN3DIR=STAGEDIR${MANPREFIX}/man/man3
++MAN3DIR=${prefix}/share/man/man3
  
  LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.a unix.a socket.a \
  buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a \
-@@ -18,26 +18,14 @@ all: headers ent $(LIBS) libowfat.a libsocket t
- pic pie:
- 	$(MAKE) CC="gcc -fPIC" LDFLAGS="-fpie"
+@@ -39,10 +39,10 @@ NATIVE=
+ OPT_REG=-O2
+ OPT_PLUS=-O3 $(NATIVE)
  
--CROSS=
--#CROSS=i686-mingw-
--CC?=gcc
--CCC=$(CROSS)$(CC)
-+CCC=${CC}
- WERROR=
- WARN=-W -Wall -Wextra $(WERROR)
- 
--# Use the second version if you are building for a binary that is only
--# supposed to run on this machine. It tells gcc to use CPU instructions
--# that are specific to the CPU the code is compiled on.
--NATIVE=
--#NATIVE=-march=native -mtune=native
--
--OPT_REG=-O2
--OPT_PLUS=-O3 $(NATIVE)
--
- DEFINE=-D_REENTRANT
+-DEFINE=-D_REENTRANT
++DEFINE=-D_REENTRANT -fPIC
  
 -CFLAGS=-pipe $(WARN) $(DEFINE) $(OPT_REG)
 -CFLAGS_OPT=-pipe $(WARN) $(DEFINE) $(OPT_PLUS)
@@ -45,27 +26,4 @@ index 3f3193d..43b1b55 100644
 +CFLAGS_OPT=$(CFLAGS)
  
  #CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
- 
-@@ -217,16 +205,16 @@ libowfat/%.h: %.h
- 	ln -f $< $@
- 
- install-inc:
--	install -d $(DESTDIR)$(INCLUDEDIR)/libowfat
--	install -m 644 $(INCLUDES) $(DESTDIR)$(INCLUDEDIR)/libowfat
-+	${INSTALL} -d $(INCLUDEDIR)
-+	${BSD_INSTALL_DATA} -m 644 $(INCLUDES) $(INCLUDEDIR)
- 
- install-lib: libowfat.a
--	install -d $(DESTDIR)$(LIBDIR)
--	install -m 644 libowfat.a $(DESTDIR)$(LIBDIR)
-+	${INSTALL} -d $(LIBDIR)
-+	${BSD_INSTALL_DATA} -m 644 libowfat.a $(LIBDIR)
- 
- install-man:
--	install -d $(DESTDIR)$(MAN3DIR)
--	install -m 644 $(wildcard */*.3) $(DESTDIR)$(MAN3DIR)
-+	${INSTALL} -d $(MAN3DIR)
-+	${BSD_INSTALL_MAN} -m 644 $(wildcard */*.3) $(MAN3DIR)
- 
- install: headers install-inc install-man install-lib
  

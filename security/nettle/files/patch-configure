@@ -1,0 +1,11 @@
+--- configure.orig	2023-06-01 18:40:35 UTC
++++ configure
+@@ -6638,7 +6638,7 @@ $as_echo "$as_me: WARNING: Cross compiling for linux. 
+       # and 64-bit in lib. Don't know about "kfreebsd", does
+       # it follow the Linux fhs conventions?
+       *:freebsd*:32)
+-	libdir='${exec_prefix}/lib32'
++	libdir='${exec_prefix}/lib'
+ 	;;
+       *:freebsd*:64)
+ 	libdir='${exec_prefix}/lib'

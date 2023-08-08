@@ -1,9 +1,9 @@
 PORTNAME=	libdvbcsa
-PORTVERSION=	1.1.0
+DISTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/ \
-		http://ftp.heikorichter.name/pub/videolan/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
+		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 PATCH_SITES=	https://raw.githubusercontent.com/buildroot/buildroot/master/package/libdvbcsa/
 PATCHFILES=	0001-altivec-powerpc64.patch:-p1

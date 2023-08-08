@@ -1,5 +1,5 @@
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.5.19
+PORTVERSION=	0.5.20
 CATEGORIES=	mail
 MASTER_SITES=	http://pigeonhole.dovecot.org/releases/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -49,7 +49,7 @@ MANAGESIEVE_CONFIGURE_WITH=	managesieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_CPPFLAGS=		-I${LOCALBASE}/include
 LDAP_LDFLAGS=		-L${LOCALBASE}/lib
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 PORTDOCS=	sieve/extensions/* sieve/plugins/* sieve/locations/*
 

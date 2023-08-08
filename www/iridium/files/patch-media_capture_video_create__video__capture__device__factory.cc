@@ -1,6 +1,6 @@
---- media/capture/video/create_video_capture_device_factory.cc.orig	2022-03-28 18:11:04 UTC
+--- media/capture/video/create_video_capture_device_factory.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/capture/video/create_video_capture_device_factory.cc
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  #include "media/capture/video/fake_video_capture_device_factory.h"
  #include "media/capture/video/file_video_capture_device_factory.h"
  
@@ -9,7 +9,7 @@
  #include "media/capture/video/linux/video_capture_device_factory_linux.h"
  #elif BUILDFLAG(IS_CHROMEOS_ASH)
  #include "media/capture/video/chromeos/public/cros_features.h"
-@@ -55,7 +55,7 @@ CreateFakeVideoCaptureDeviceFactory() {
+@@ -56,7 +56,7 @@ CreateFakeVideoCaptureDeviceFactory() {
  std::unique_ptr<VideoCaptureDeviceFactory>
  CreatePlatformSpecificVideoCaptureDeviceFactory(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {

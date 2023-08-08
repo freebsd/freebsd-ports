@@ -1,7 +1,6 @@
 PORTNAME=	hexyl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	3
+DISTVERSION=	0.13.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -17,55 +16,79 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
-		assert_cmd-2.0.4 \
-		atty-0.2.14 \
+CARGO_CRATES=	aho-corasick-1.0.2 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		anyhow-1.0.72 \
+		assert_cmd-2.0.12 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bstr-0.2.17 \
-		clap-3.1.18 \
-		clap_lex-0.2.0 \
-		const_format-0.2.23 \
-		const_format_proc_macros-0.2.22 \
+		bitflags-2.3.3 \
+		bstr-1.6.0 \
+		cc-1.0.79 \
+		clap-4.3.19 \
+		clap_builder-4.3.19 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
+		const_format-0.2.31 \
+		const_format_proc_macros-0.2.31 \
+		diff-0.1.13 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
-		either-1.6.1 \
+		either-1.9.0 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
 		float-cmp-0.9.0 \
-		hashbrown-0.11.2 \
-		hermit-abi-0.1.19 \
-		indexmap-1.8.1 \
-		itertools-0.10.3 \
-		lazy_static-1.4.0 \
-		libc-0.2.126 \
+		hermit-abi-0.3.2 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.9 \
+		is_ci-1.1.1 \
+		itertools-0.10.5 \
+		libc-0.2.147 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
 		memchr-2.5.0 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.15 \
-		os_str_bytes-6.0.1 \
-		predicates-2.1.1 \
-		predicates-core-1.0.3 \
-		predicates-tree-1.0.5 \
-		proc-macro2-1.0.39 \
-		quote-1.0.18 \
-		regex-1.5.6 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.26 \
+		num-traits-0.2.16 \
+		once_cell-1.18.0 \
+		owo-colors-3.5.0 \
+		predicates-2.1.5 \
+		predicates-3.0.3 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		pretty_assertions-1.4.0 \
+		proc-macro2-1.0.66 \
+		quote-1.0.32 \
+		regex-1.9.1 \
+		regex-automata-0.3.3 \
+		regex-syntax-0.7.4 \
+		rustix-0.37.23 \
+		rustix-0.38.4 \
+		serde-1.0.175 \
 		strsim-0.10.0 \
-		syn-1.0.95 \
-		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
-		termtree-0.2.4 \
-		textwrap-0.15.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		unicode-ident-1.0.0 \
-		unicode-xid-0.2.3 \
+		supports-color-2.0.0 \
+		syn-2.0.27 \
+		terminal_size-0.2.6 \
+		termtree-0.4.1 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
+		unicode-ident-1.0.11 \
+		unicode-xid-0.2.4 \
+		utf8parse-0.2.1 \
 		wait-timeout-0.2.0 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		windows-sys-0.48.0 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0 \
+		yansi-0.5.1
 
 PLIST_FILES=	bin/hexyl
 

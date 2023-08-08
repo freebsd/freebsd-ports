@@ -1,7 +1,7 @@
 PORTNAME=	frozenlist
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/aio-libs/frozenlist
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime python:3.7+
+USES=		gettext-runtime python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:

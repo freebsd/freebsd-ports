@@ -4,7 +4,8 @@ lib/systemd/user/plasma-polkit-agent.service
 share/applications/org.kde.polkit-kde-authentication-agent-1.desktop
 share/knotifications5/policykit1-kde.notifyrc
 share/locale/ar/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
-share/locale/ast/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/be/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/bg/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/bs/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ca/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ca@valencia/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
@@ -27,9 +28,11 @@ share/locale/hsb/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/hu/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ia/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/id/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/ie/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/is/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/it/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ja/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
+share/locale/ka/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/kk/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/km/LC_MESSAGES/polkit-kde-authentication-agent-1.mo
 share/locale/ko/LC_MESSAGES/polkit-kde-authentication-agent-1.mo

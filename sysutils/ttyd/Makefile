@@ -1,5 +1,5 @@
 PORTNAME=	ttyd
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	nc@FreeBSD.org
@@ -17,6 +17,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 USES=		cmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
+
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/ttyd.1.gz

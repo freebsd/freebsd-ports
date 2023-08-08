@@ -1,7 +1,6 @@
 PORTNAME=	buildkite-agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.35.2
-PORTREVISION=	4
+DISTVERSION=	3.47.0
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,8 +18,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	buildkite
 GH_PROJECT=	agent
-
-.include "${.CURDIR}/Makefile.deps"
+GO_MODULE=	github.com/buildkite/agent/v3
 
 USE_RC_SUBR=	buildkite
 

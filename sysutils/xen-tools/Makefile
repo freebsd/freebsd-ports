@@ -1,6 +1,6 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.16.0
+PORTVERSION=	4.17.0
 PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
@@ -36,7 +36,7 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than amd64
 
 USES=		cpe gettext gmake gnome libtool localbase:ldflags perl5 \
-		pkgconfig python:3.6+ shebangfix iconv bison ninja:build
+		pkgconfig python shebangfix iconv bison ninja:build
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PYTHON=	py3kplist
@@ -60,6 +60,11 @@ ALL_TARGET=		tools
 DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
+
+# clang build fixes
+EXTRA_PATCHES+=	${PATCHDIR}/0001-xen-x86-Remove-the-use-of-K-R-functions.patch:-p1 \
+		${PATCHDIR}/0001-tools-Remove-the-use-of-K-R-functions.patch:-p1 \
+		${PATCHDIR}/0001-tools-convert-bitfields-to-unsigned-type.patch:-p1
 
 .include <bsd.port.options.mk>
 

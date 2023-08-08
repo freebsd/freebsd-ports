@@ -1,6 +1,6 @@
 PORTNAME=	quassel
 DISTVERSION=	0.14.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSION}/
 
@@ -13,11 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/optional.hpp:devel/boost-libs
 
-USES=		cmake compiler:c++11-lib cpe pkgconfig qca qt:5 tar:xz
+USES=		cmake compiler:c++11-lib cpe ldap pkgconfig qca qt:5 tar:xz
 USE_GITHUB=	nodefault
 #GH_ACCOUNT=	${PORTNAME}
 #GH_PROJECT=	${PORTNAME}
-USE_OPENLDAP=	yes
 USE_QT=		buildtools:build core network qmake:build
 
 CPE_VENDOR=	quassel-irc

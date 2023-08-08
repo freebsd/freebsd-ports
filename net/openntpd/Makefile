@@ -1,6 +1,6 @@
 PORTNAME=	openntpd
 PORTVERSION=	6.8p1
-PORTREVISION=	5
+PORTREVISION=	7
 PORTEPOCH=	2
 CATEGORIES=	net
 MASTER_SITES=	OPENBSD/OpenNTPD
@@ -22,7 +22,6 @@ USERS=		_ntp
 GROUPS=		_ntp
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cacert=${LOCALBASE}/etc/ssl/cert.pem
 
 SUB_FILES=	480.status-openntpd pkg-message
 SUB_LIST=	MANPREFIX="${MANPREFIX}"

@@ -1,3 +1,8 @@
+usr/bin/dbus-binding-tool
 usr/lib/libdbus-1.so.3
 usr/lib/libdbus-1.so.3.14.14
+usr/lib/libdbus-glib-1.so.2
+usr/lib/libdbus-glib-1.so.2.2.2
+%%PORTDOCS%%usr/share/doc/dbus-glib-0.100/COPYING
+%%PORTDOCS%%usr/share/doc/dbus-glib-0.100/NEWS
 usr/share/licenses/dbus-libs-1.10.24/COPYING

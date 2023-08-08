@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_10_0.dtd">
+
+<!-- =============================================================== -->
+<!-- Configure the Jetty Request Log                                 -->
+<!-- =============================================================== -->
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+
+  <!-- =========================================================== -->
+  <!-- Configure Request Log for Server                            -->
+  <!-- Use RequestLogHandler for a context specific RequestLog     -->
+  <!-- =========================================================== -->
+  <Set name="RequestLog">
+    <New id="RequestLog" class="org.eclipse.jetty.server.CustomRequestLog">
+      <!-- Writer -->
+      <Arg>
+        <New class="org.eclipse.jetty.server.Slf4jRequestLogWriter" />
+      </Arg>
+
+      <!-- Format String -->
+      <Arg>
+        <Property name="jetty.requestlog.formatString" deprecated="jetty.customrequestlog.formatString">
+          <Default>
+            <Get class="org.eclipse.jetty.server.CustomRequestLog" name="EXTENDED_NCSA_FORMAT"/>
+          </Default>
+        </Property>
+      </Arg>
+    </New>
+  </Set>
+</Configure>

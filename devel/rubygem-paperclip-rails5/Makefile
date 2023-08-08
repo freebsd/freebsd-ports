@@ -1,6 +1,6 @@
 PORTNAME=	paperclip
 DISTVERSION=	6.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails5
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-activemodel5>=4.2.0:databases/rubygem-activemodel5 \
 
 USES=		cpe gem
 CPE_VENDOR=	thoughtbot
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

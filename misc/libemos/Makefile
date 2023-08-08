@@ -1,6 +1,6 @@
 PORTNAME=	libemos
 DISTVERSION=	4.5.9
-PORTREVISION=	3
+PORTREVISION=	4
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	misc
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/3473472/

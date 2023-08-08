@@ -1,6 +1,6 @@
 PORTNAME=	exult
 DISTVERSION?=	1.8
-PORTREVISION?=	1
+PORTREVISION?=	3
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -11,7 +11,7 @@ WWW=		http://exult.info
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS?=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
@@ -39,7 +39,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-version.cc \
 		${PATCHDIR}/extra-patch-configure.ac
 .else
 USE_GITHUB=	yes
-GH_TAGNAME=	snapshot-${DISTVERSIONPREFIX}${DISTVERSION}
 .endif
 
 OPTIONS_DEFINE=		ALSA DEBUG DOCS FLUIDSYNTH GIMP STUDIO
@@ -71,7 +70,7 @@ GIMP_USE=		GNOME=gtk20 \
 			pango
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
 
-STUDIO_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
+STUDIO_LIB_DEPENDS?=		libharfbuzz.so:print/harfbuzz
 STUDIO_USES=			gnome
 STUDIO_USE=			GNOME=libglade2
 STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support

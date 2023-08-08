@@ -1,6 +1,6 @@
 PORTNAME=	check_mk_agent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0p20
+DISTVERSION=	2.1.0p22
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/agents/:agent \
 		https://raw.githubusercontent.com/tribe29/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
@@ -10,8 +10,8 @@ DISTFILES=	${_CHECKMK_AGENT}:agent \
 		COPYING:license
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	0mp@FreeBSD.org
-COMMENT=	Nagios-compatible agent for the Checkmk monitoring
+MAINTAINER=	ivalentine@arizona.edu
+COMMENT=	Checkmk agent to monitor *nix style systems
 WWW=		https://checkmk.com/
 
 LICENSE=	GPLv2
@@ -46,15 +46,12 @@ OPTIONS_DEFINE=	DOCS
 _CHECKMK_AGENT=		${PORTNAME}.freebsd
 _CHECKMK_CONFDIR=	${LOCALBASE}/etc/check_mk
 _CHECKMK_LIBDIR=	${LOCALBASE}/lib/check_mk_agent
-_CHECKMK_TMPDIR=	/var/run/check_mk
 
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%CHECKMK_LIBDIR%%|${_CHECKMK_LIBDIR}|' \
 		-e 's|%%CHECKMK_CONFDIR%%|${_CHECKMK_CONFDIR}|' \
-		-e 's|%%CHECKMK_TMPDIR%%|${_CHECKMK_TMPDIR}|' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%BASH%%|${LOCALBASE}/bin/bash|' \
 		${WRKSRC}/${_CHECKMK_AGENT}
 
 do-install:

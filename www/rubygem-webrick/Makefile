@@ -1,5 +1,5 @@
 PORTNAME=	webrick
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

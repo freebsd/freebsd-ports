@@ -1,5 +1,5 @@
 PORTNAME=	fontforge
-DISTVERSION=	20201107
+DISTVERSION=	20220308
 PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -46,6 +46,7 @@ FREETYPE_CMAKE_ON=	-DENABLE_FREETYPE_DEBUGGER:PATH=${WRKSRC}/freetype
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
 GIF_CMAKE_BOOL=	ENABLE_LIBGIF
 
+GTK3_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 GTK3_USE=	gnome=gdkpixbuf2,gtk30
 
 JPEG_USES=	jpeg
@@ -54,8 +55,8 @@ JPEG_CMAKE_BOOL=ENABLE_LIBJPEG
 PNG_LIB_DEPENDS=libpng.so:graphics/png
 PNG_CMAKE_BOOL=	ENABLE_LIBPNG
 
-PYTHON_USES=	python:3.5+
-PYTHON_USES_OFF=python:3.5+,build
+PYTHON_USES=	python
+PYTHON_USES_OFF=python:build
 PYTHON_CMAKE_BOOL=	ENABLE_PYTHON_SCRIPTING ENABLE_PYTHON_EXTENSION
 
 READLINE_USES=	readline
@@ -91,17 +92,10 @@ WRITEPFM_CMAKE_BOOL=	ENABLE_WRITE_PFM
 
 X11_USES=	xorg
 X11_USE=	gnome=pango xorg=ice,sm,x11,xext,xft,xi
-X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+			libharfbuzz.so:print/harfbuzz
 X11_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:x11-fonts/gnu-unifont
 X11_CMAKE_BOOL=	ENABLE_X11
-
-post-patch-FREETYPE-on:
-	@${LN} -s $$(${MAKE} -C ${PORTSDIR}/print/freetype2 -V WRKSRC) \
-		${WRKSRC}/freetype
-
-post-stage-DOCS-on:
-	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo \
-		${STAGEDIR}${DOCSDIR}/.nojekyll
 
 .include <bsd.port.options.mk>
 
@@ -110,5 +104,22 @@ CMAKE_ARGS+=	-DENABLE_GUI:BOOL=true
 .else
 CMAKE_ARGS+=	-DENABLE_GUI:BOOL=false
 .endif
+
+post-patch:
+# https://github.com/fontforge/fontforge/issues/5251
+	@${REINPLACE_CMD} 's/\(%[^%[:space:]]*\)hs/\1s/g' \
+		${WRKSRC}/fontforgeexe/searchview.c \
+		${WRKSRC}/po/de.po ${WRKSRC}/po/ca.po ${WRKSRC}/po/hr.po \
+		${WRKSRC}/po/it.po ${WRKSRC}/po/pl.po ${WRKSRC}/po/uk.po \
+		${WRKSRC}/po/en_GB.po ${WRKSRC}/po/fr.po ${WRKSRC}/po/vi.po \
+		${WRKSRC}/po/ko.po ${WRKSRC}/po/ja.po
+
+post-patch-FREETYPE-on:
+	@${LN} -s $$(${MAKE} -C ${PORTSDIR}/print/freetype2 -V WRKSRC) \
+		${WRKSRC}/freetype
+
+post-stage-DOCS-on:
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo \
+		${STAGEDIR}${DOCSDIR}/.nojekyll
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/BUILD.gn
-@@ -45,8 +45,8 @@ config("inside_blink") {
+@@ -55,8 +55,8 @@ config("inside_blink") {
        "-Wconversion",
        "-Wno-float-conversion",
        "-Wno-sign-conversion",
@@ -9,5 +9,5 @@
 +#      "-Wno-implicit-float-conversion",
 +#      "-Wno-implicit-int-conversion",
      ]
-   }
- }
+ 
+     if (!is_chromeos || default_toolchain != "//build/toolchain/cros:target") {

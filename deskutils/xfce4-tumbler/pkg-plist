@@ -6,7 +6,6 @@ include/tumbler-1/tumbler/tumbler-config.h
 include/tumbler-1/tumbler/tumbler-enum-types.h
 include/tumbler-1/tumbler/tumbler-error.h
 include/tumbler-1/tumbler/tumbler-file-info.h
-include/tumbler-1/tumbler/tumbler-glib-extensions.h
 include/tumbler-1/tumbler/tumbler-marshal.h
 include/tumbler-1/tumbler/tumbler-provider-factory.h
 include/tumbler-1/tumbler/tumbler-provider-plugin.h
@@ -48,6 +47,7 @@ share/icons/hicolor/32x32/apps/org.xfce.tumbler.png
 %%NLS%%share/locale/de/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/el/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/es/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tumbler.mo
@@ -65,6 +65,7 @@ share/icons/hicolor/32x32/apps/org.xfce.tumbler.png
 %%NLS%%share/locale/is/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/it/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/kab/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/tumbler.mo

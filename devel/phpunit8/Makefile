@@ -1,5 +1,5 @@
 PORTNAME=	phpunit
-DISTVERSION=	8.5.29
+DISTVERSION=	8.5.33
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/
 PKGNAMESUFFIX=	8${PHP_PKGNAMESUFFIX}
@@ -15,7 +15,7 @@ CONFLICTS_INSTALL=	phpunit7
 
 USES=		cpe php:flavors
 CPE_VENDOR=	phpunit_project
-USE_PHP=	dom json spl pcre phar
+USE_PHP=	dom phar
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -1,4 +1,4 @@
---- doc/mpdconf.example.orig	2021-11-11 09:16:36 UTC
+--- doc/mpdconf.example.orig	2023-05-22 17:46:38 UTC
 +++ doc/mpdconf.example
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
@@ -80,13 +80,13 @@
  #
  #database {
  #       plugin "simple"
--#       path "~/.local/share/mpd/db
+-#       path "~/.local/share/mpd/db"
 -#       cache_directory "~/.local/share/mpd/cache"
-+#       path "/var/mpd/.local/share/mpd/db
++#       path "/var/mpd/.local/share/mpd/db"
 +#       cache_directory "/var/mpd/.local/share/mpd/cache"
  #}
  #
- # An example of database config for a sattelite setup
+ # An example of database config for a satellite setup
 @@ -227,14 +227,14 @@ input {
  #
  # An example of an OSS output:

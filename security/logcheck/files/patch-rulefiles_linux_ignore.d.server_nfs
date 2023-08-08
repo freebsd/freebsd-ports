@@ -1,7 +1,7 @@
---- rulefiles/linux/ignore.d.server/nfs.orig	2015-12-10 18:14:10 UTC
+--- rulefiles/linux/ignore.d.server/nfs.orig	2022-12-22 23:03:11 UTC
 +++ rulefiles/linux/ignore.d.server/nfs
 @@ -1,2 +1,2 @@
--^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rpc\.mountd: authenticated (un|)mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
--^\w{3} [ :0-9]{11} [._[:alnum:]-]+ mountd\[[0-9]+\]: authenticated (un|)mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
-+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ rpc\.mountd: authenticated (un)?mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
-+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ mountd\[[0-9]+\]: authenticated (un)?mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
+-^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ rpc\.mountd: authenticated (un|)mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
+-^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ mountd\[[0-9]+\]: authenticated (un|)mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
++^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ rpc\.mountd: authenticated (un)?mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$
++^(\w{3} [ :0-9]{11}|[0-9T:.+-]{32}) [._[:alnum:]-]+ mountd\[[0-9]+\]: authenticated (un)?mount request from [._[:alnum:]-]+:[0-9]+ for (/[._[:alnum:]-]*)+ \((/[._[:alnum:]-]*)+\)$

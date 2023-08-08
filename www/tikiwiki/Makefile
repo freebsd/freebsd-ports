@@ -1,7 +1,7 @@
 PORTNAME=	tikiwiki
-DISTVERSION=	23.1
+DISTVERSION=	24.2
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Tiki_23.x_Wasat/${DISTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/Tiki_24.x_Wolf_359/${DISTVERSION}/
 DISTNAME=	tiki-${DISTVERSION}
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		php:web
-USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt pcre \
+USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt \
 		posix session xml zip zlib
 
 NO_BUILD=	yes

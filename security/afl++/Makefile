@@ -1,9 +1,9 @@
 PORTNAME=	afl
-PORTVERSION=	4.00c
+PORTVERSION=	4.07c
 CATEGORIES=	security
 PKGNAMESUFFIX=	++-${FLAVOR}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Fast instrumented fuzzer
 WWW=		https://aflplus.plus/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	ginstall:sysutils/coreutils
 FLAVORS=	llvm gcc
 FLAVOR?=	${FLAVORS:[1]}
 
-_LLVM_VER=		13
+_LLVM_VER=		16
 llvm_BUILD_DEPENDS=	clang${_LLVM_VER}:devel/llvm${_LLVM_VER}
 llvm_RUN_DEPENDS=	clang${_LLVM_VER}:devel/llvm${_LLVM_VER}
 

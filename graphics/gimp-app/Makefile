@@ -1,6 +1,6 @@
 PORTNAME?=	gimp
-PORTVERSION=	2.10.32
-PORTREVISION=	6
+PORTVERSION=	2.10.34
+PORTREVISION=	7
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	GIMP/gimp/v${PORTVERSION:R}
@@ -103,8 +103,6 @@ GIMP_UI_LIBS=		`${PKG_CONFIG} --libs gimpui-2.0`
 LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 
 .else
-
-DEBUG_CONFIGURE_ON=	--enable-debug
 
 AALIB_DESC=	Ascii-art Plug-in
 OPENJPEG_DESC=	Enhanced JPEG (jpeg2000) graphics support

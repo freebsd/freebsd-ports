@@ -1,8 +1,8 @@
 PORTNAME=	xdot
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	x11 python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE=	LGPL3+
 RUN_DEPENDS=	dot:graphics/graphviz \
 		${PYNUMPY}
 
-USES=		gnome python:3.4+
+USES=		gnome python
 USE_PYTHON=	autoplist distutils
 USE_GNOME=	cairo gtk30 pygobject3
 

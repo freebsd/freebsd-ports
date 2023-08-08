@@ -1,6 +1,6 @@
---- udisks/Makefile.am.orig	2020-05-26 15:07:07 UTC
+--- udisks/Makefile.am.orig	2023-06-28 15:13:57 UTC
 +++ udisks/Makefile.am
-@@ -154,10 +154,10 @@ if HAVE_INTROSPECTION
+@@ -142,10 +142,10 @@ if HAVE_INTROSPECTION
  
  INTROSPECTION_GIRS = UDisks-2.0.gir
  

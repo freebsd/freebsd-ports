@@ -1,0 +1,12 @@
+pdoc auto-generates API documentation that follows your project's Python module
+hierarchy.
+
+pdoc's main feature is a focus on simplicity: pdoc aims to do one thing and do
+it well.
+
+- Easy setup, no configuration necessary.
+- Documentation is plain Markdown.
+- First-class support for type annotations.
+- Builtin web server with live reloading.
+- Customizable HTML templates.
+- Understands numpydoc and Google-style docstrings.

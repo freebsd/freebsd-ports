@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 USES=		cpe zip
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 JAVA_RUN=	yes
 USE_RC_SUBR=	openhab2
 SUB_FILES=	pkg-message update.freebsd

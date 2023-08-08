@@ -1,30 +1,25 @@
 PORTNAME=	intellij-fsnotifier
-PORTVERSION=	20160221
-PORTREVISION=	6
+PORTVERSION=	20230112
 CATEGORIES=	java devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@tenku.dk
 COMMENT=	Replacement for IntelliJ's fsnotifier
-WWW=		https://github.com/t6/fsnotifier
+WWW=		https://gitlab.com/worthwhileit/bsd/fsnotifier
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	t6
-GH_PROJECT=	fsnotifier
-GH_TAGNAME=	a04fbff6e21d58fea7a3ed2a6a21e53cbef4b7af
+USES=	cmake compiler:c11 pkgconfig
 
-USES=	compiler:c11
+USE_GITLAB=	yes
+GL_ACCOUNT=	worthwhileit/bsd
+GL_PROJECT=	fsnotifier
+GL_COMMIT=	b96f269f637058461df482f4cf55037a5968d7a8
 
-.include "${.CURDIR}/../intellij/common.mk"
+CMAKE_ARGS+=	-DVERSION=${PORTVERSION}
 
-PLIST_FILES=	${IDEA_HOME}/bin/fsnotifier
-
-do-install:
-	${MKDIR} ${STAGEDIR}${IDEA_HOME}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/fsnotifier ${STAGEDIR}${IDEA_HOME}/bin
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>

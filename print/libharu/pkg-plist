@@ -30,6 +30,5 @@ include/hpdf_types.h
 include/hpdf_u3d.h
 include/hpdf_utils.h
 include/hpdf_version.h
-lib/libhpdfs.a
 lib/libhpdf.so
 lib/libhpdf.so.%%SOVERSION%%

@@ -1,14 +1,25 @@
---- CMakeLists.txt.orig	2019-03-29 21:37:39 UTC
+--- CMakeLists.txt.orig	2021-02-23 20:54:37 UTC
 +++ CMakeLists.txt
-@@ -228,6 +228,11 @@ if (NOT HAVE_CXX17_HAS_INCLUDE)
- endif(NOT HAVE_CXX17_HAS_INCLUDE)
+@@ -295,22 +295,6 @@ if(LEVELDB_BUILD_TESTS)
+   set(install_gmock OFF)
+   set(build_gmock ON)
  
- if(BUILD_SHARED_LIBS)
-+  set_target_properties(leveldb
-+    PROPERTIES
-+      VERSION %%SHLIB_MAJOR%%.%%SHLIB_MINOR%%
-+      SOVERSION %%SHLIB_MAJOR%%
-+  )
-   target_compile_definitions(leveldb
-     PUBLIC
-       # Used by include/export.h.
+-  # This project is tested using GoogleTest.
+-  add_subdirectory("third_party/googletest")
+-
+-  # This project uses Google benchmark for benchmarking.
+-  set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "" FORCE)
+-  set(BENCHMARK_ENABLE_EXCEPTIONS OFF CACHE BOOL "" FORCE)
+-  add_subdirectory("third_party/benchmark")
+-
+-  # GoogleTest triggers a missing field initializers warning.
+-  if(LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+-    set_property(TARGET gtest
+-        APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+-    set_property(TARGET gmock
+-        APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
+-  endif(LEVELDB_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+-
+   function(leveldb_test test_file)
+     get_filename_component(test_target_name "${test_file}" NAME_WE)
+ 

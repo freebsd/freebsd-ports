@@ -1,6 +1,5 @@
 PORTNAME=	heirloom-doctools
-PORTVERSION=	160308
-PORTREVISION=	1
+PORTVERSION=	191015
 CATEGORIES=	textproc
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -12,8 +11,6 @@ LICENSE=	CDDL
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	n-t-roff
-
-CONFLICTS_INSTALL=	grap groff ja-groff util-linux # bin/col bin/eqn bin/grap bin/indxbib
 
 ALL_TARGET=	#empty
 MAKE_ARGS+=	INSTALL="${INSTALL}" \
@@ -30,18 +27,22 @@ MAKE_ARGS+=	INSTALL="${INSTALL}" \
 		ROOT=${STAGEDIR}
 MAKEFILE=	makefile
 CFLAGS+=	-fcommon
-PLIST_SUB=	LIBEXECDIR=libexec/${PORTNAME}
+SUB_FILES=	${PORTNAME}.conf
+PLIST_SUB=	LIBEXECDIR=heirloom/libexec
+
+MANPREFIX=	${PREFIX}/heirloom/share
+DATADIR=	${PREFIX}/heirloom/share
 
 MACDIR?=	${DATADIR}/tmac
 FNTDIR?=	${DATADIR}/font
 TABDIR?=	${DATADIR}/nterm
 HYPDIR?=	${DATADIR}/hyphen
-REFDIR?=	${PREFIX}/libexec/${PORTNAME}/reftools
+REFDIR?=	${PREFIX}/heirloom/libexec/reftools
 PUBDIR?=	${DATADIR}/pub
-BINDIR?=	${PREFIX}/bin
-LIBDIR?=	${PREFIX}/libexec/${PORTNAME}
+BINDIR?=	${PREFIX}/heirloom/bin
+LIBDIR?=	${PREFIX}/heirloom/libexec
 PSTDIR?=	${DATADIR}/font/devpost/postscript
-MANDIR?=	${PREFIX}/man
+MANDIR?=	${MANPREFIX}/man
 
 PORTDOCS=	 *
 
@@ -49,8 +50,14 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-post-install-DOCS-on:
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.conf \
+	    ${STAGEDIR}${PREFIX}/etc/man.d
+
+pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
+post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} CHANGES README ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} LICENSE ${STAGEDIR}${DOCSDIR}
 

@@ -1,0 +1,17 @@
+C-Blosc2 is the new major version of C-Blosc, and is backward compatible with
+both the C-Blosc1 API and its in-memory format. Python-Blosc2 is a Python
+package that wraps C-Blosc2, the newest version of the Blosc compressor.
+
+Currently Python-Blosc2 already reproduces the API of Python-Blosc, so it can be
+used as a drop-in replacement. However, there are a few exceptions for a full
+compatibility.
+
+In addition, Python-Blosc2 aims to leverage the new C-Blosc2 API so as to
+support super-chunks, multi-dimensional arrays (NDArray), serialization and
+other bells and whistles introduced in C-Blosc2. Although this is always and
+endless process, we have already catch up with most of the C-Blosc2 API
+capabilities.
+
+Note: Python-Blosc2 is meant to be backward compatible with Python-Blosc data.
+That means that it can read data generated with Python-Blosc, but the opposite
+is not true (i.e. there is no forward compatibility).

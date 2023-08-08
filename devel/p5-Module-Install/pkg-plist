@@ -17,7 +17,6 @@
 %%PERL5_MAN3%%/Module::Install::Share.3.gz
 %%PERL5_MAN3%%/Module::Install::With.3.gz
 %%PERL5_MAN3%%/inc::Module::Install.3.gz
-%%PERL5_MAN3%%/inc::Module::Install::DSL.3.gz
 %%SITE_PERL%%/Module/AutoInstall.pm
 %%SITE_PERL%%/Module/Install.pm
 %%SITE_PERL%%/Module/Install.pod
@@ -37,7 +36,6 @@
 %%SITE_PERL%%/Module/Install/Bundle.pm
 %%SITE_PERL%%/Module/Install/Can.pm
 %%SITE_PERL%%/Module/Install/Compiler.pm
-%%SITE_PERL%%/Module/Install/DSL.pm
 %%SITE_PERL%%/Module/Install/Deprecated.pm
 %%SITE_PERL%%/Module/Install/External.pm
 %%SITE_PERL%%/Module/Install/FAQ.pod
@@ -56,4 +54,3 @@
 %%SITE_PERL%%/Module/Install/With.pm
 %%SITE_PERL%%/Module/Install/WriteAll.pm
 %%SITE_PERL%%/inc/Module/Install.pm
-%%SITE_PERL%%/inc/Module/Install/DSL.pm

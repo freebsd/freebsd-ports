@@ -10,29 +10,28 @@ WWW=		http://www.vmailmgr.org
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Last upstream release was in 2005 and upstream points to different site
+EXPIRATION_DATE=	2023-08-22
+
 # get python paths (PYTHON_SITELIBDIR) in case we install the python API
 USES=			autoreconf gmake perl5 python
-GNU_CONFIGURE=		yes
+USE_CXXSTD=		c++14
 USE_PERL5=		build
+
+GNU_CONFIGURE=		yes
+
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=		DOCS GDBM PYTHONLIBS
-PYTHONLIBS_DESC=	Install the Python API
+OPTIONS_DEFINE=		DOCS GDBM PYTHON
+OPTIONS_SUB=	yes
 
 GDBM_LIB_DEPENDS=	libgdbm.so:databases/gdbm
 GDBM_USES=		localbase
 GDBM_CONFIGURE_ON=	--with-vpwtable=gdbm
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHONLIB}
-CONFIGURE_ARGS+=	--with-pythonapi=${PYTHON_SITELIBDIR}
-PLIST_SUB+=		PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
-PLIST_SUB+=		PYTHON=""
-.else
-PLIST_SUB+=		PYTHON="@comment "
-.endif
+PYTHON_BROKEN=	Do not support recent python versions
+PYTHON_CONFIGURE_ON=	--with-pythonapi=${PYTHON_SITELIBDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

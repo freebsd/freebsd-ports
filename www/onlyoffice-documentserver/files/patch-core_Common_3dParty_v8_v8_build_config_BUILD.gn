@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/config/BUILD.gn.orig	2022-04-04 20:12:26 UTC
-+++ core/Common/3dParty/v8/v8/build/config/BUILD.gn
+--- core/Common/3dParty/v8_89/v8/build/config/BUILD.gn.orig	2022-04-04 20:12:26 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/BUILD.gn
 @@ -121,7 +121,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]

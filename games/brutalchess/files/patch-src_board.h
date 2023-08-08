@@ -1,4 +1,4 @@
---- src/board.h.orig	2013-10-01 21:08:24.000000000 +0000
+--- src/board.h.orig	2023-05-08 11:15:17 UTC
 +++ src/board.h
 @@ -12,6 +12,7 @@
  #include <cstdio>

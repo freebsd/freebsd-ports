@@ -24,4 +24,4 @@ share/applications/xmoto.desktop
 %%NLS%%share/locale/tr/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 share/man/man6/xmoto.6.gz
-share/pixmaps/xmoto.xpm
+share/pixmaps/xmoto.png

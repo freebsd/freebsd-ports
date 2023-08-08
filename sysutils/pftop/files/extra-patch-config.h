@@ -1,7 +1,7 @@
 $OpenBSD: patch-config_h,v 1.4 2008/12/20 04:36:11 canacar Exp $
 --- config.h.orig	Tue Nov  6 22:34:18 2007
 +++ config.h	Fri Dec 19 20:28:01 2008
-@@ -74,11 +74,20 @@
+@@ -74,11 +74,24 @@
  #define HAVE_PFSYNC_STATE
  #endif
  
@@ -11,7 +11,11 @@ $OpenBSD: patch-config_h,v 1.4 2008/12/20 04:36:11 canacar Exp $
 +#endif
 +
  #ifdef HAVE_PFSYNC_STATE
++#if OS_LEVEL > 45
++typedef struct pfsync_state_1301 pf_state_t;
++#else
  typedef struct pfsync_state pf_state_t;
++#endif
  typedef struct pfsync_state_host pf_state_host_t;
  typedef struct pfsync_state_peer pf_state_peer_t;
 +#ifdef HAVE_NETWORK_ORDER

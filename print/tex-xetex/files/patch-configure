@@ -1,6 +1,6 @@
---- configure.orig	2021-02-17 03:03:54 UTC
+--- configure.orig	2023-03-08 17:05:16 UTC
 +++ configure
-@@ -1055,6 +1055,8 @@ with_mpfr_includes
+@@ -1105,6 +1105,8 @@ with_system_teckit
  with_mpfr_libdir
  with_system_zziplib
  with_system_teckit
@@ -9,7 +9,7 @@
  with_system_graphite2
  with_system_harfbuzz
  with_system_icu
-@@ -24940,11 +24942,6 @@ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pplib, libn
+@@ -26977,11 +26979,6 @@ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=pplib, libn
    PPLIB_INCLUDES="-I$kpse_BLD/libs/pplib/include"
    PPLIB_LIBS="$kpse_BLD/libs/pplib/libpplib.a"
    PPLIB_DEPEND='${top_builddir}/../../libs/pplib/libpplib.a'
@@ -21,7 +21,7 @@
  
  ##tldbg _KPSE_LIB_FLAGS: Setup zlib (-lz) flags.
  echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=zlib, libname=z, options=, tlincl=-IBLD/libs/zlib/include, tllib=BLD/libs/zlib/libz.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/zlib/include/zconf.h.' >&5
-@@ -25025,113 +25022,6 @@ $as_echo "#define z_const /**/" >>confdefs.h
+@@ -27067,115 +27064,6 @@ esac
   ;;
  esac
  
@@ -67,15 +67,15 @@
 -# other system needs it.
 -case $build_os in
 -openbsd*)
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking on openbsd if additional jit libraries are needed" >&5
--$as_echo_n "checking on openbsd if additional jit libraries are needed... " >&6; }
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking on openbsd if additional jit libraries are needed" >&5
+-printf %s "checking on openbsd if additional jit libraries are needed... " >&6; }
 -cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -#include "stdint.h"
 -      typedef struct _Unwind_Context _Unwind_Context;
 -      extern uintptr_t _Unwind_GetCFA(_Unwind_Context *);
 -int
--main ()
+-main (void)
 -{
 -_Unwind_Context *ctx;
 -      _Unwind_GetCFA(ctx);
@@ -84,10 +84,11 @@
 -  return 0;
 -}
 -_ACEOF
--if ac_fn_c_try_link "$LINENO"; then :
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
--else
+-if ac_fn_c_try_link "$LINENO"
+-then :
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-else $as_nop
 -
 -    jitlibs="-lc++abi -lpthread"
 -    save_LIBS=$LIBS
@@ -98,7 +99,7 @@
 -          typedef struct _Unwind_Context _Unwind_Context;
 -          extern uintptr_t _Unwind_GetCFA(_Unwind_Context *);
 -int
--main ()
+-main (void)
 -{
 -_Unwind_Context *ctx;
 -          _Unwind_GetCFA(ctx);
@@ -107,26 +108,27 @@
 -  return 0;
 -}
 -_ACEOF
--if ac_fn_c_try_link "$LINENO"; then :
+-if ac_fn_c_try_link "$LINENO"
+-then :
 -
--        { $as_echo "$as_me:${as_lineno-$LINENO}: result: \"$jitlibs\"" >&5
--$as_echo "\"$jitlibs\"" >&6; }
+-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: \"$jitlibs\"" >&5
+-printf "%s\n" "\"$jitlibs\"" >&6; }
 -        LIBLUAJIT_LDEXTRA="$LIBLUAJIT_LDEXTRA $jitlibs"
 -
--else
--  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
--$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-else $as_nop
+-  { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
 -as_fn_error $? "luajit could not be linked
 -See \`config.log' for more details" "$LINENO" 5; }
 -
 -fi
--rm -f core conftest.err conftest.$ac_objext \
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
 -    LIBS=$save_LIBS
 -
 -
 -fi
--rm -f core conftest.err conftest.$ac_objext \
+-rm -f core conftest.err conftest.$ac_objext conftest.beam \
 -    conftest$ac_exeext conftest.$ac_ext
 -  ;;
 -esac
@@ -135,7 +137,7 @@
  ##tldbg _KPSE_LIB_FLAGS: Setup libpng (-lpng) flags.
  echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=libpng, libname=png, options=, tlincl=-IBLD/libs/libpng/include, tllib=BLD/libs/libpng/libpng.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/libpng/include/png.h.' >&5
  ##tldbg _KPSE_LIB_FLAGS_TL: libpng (png) .
-@@ -25515,47 +25405,37 @@ ${top_builddir}/../../libs/xpdf/xpdf/Stream.h:
+@@ -27630,49 +27518,38 @@ test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_
  fi
  test "x$kpse_cv_have_win32" = xno || XPDF_LIBS="$XPDF_LIBS -lgdi32"
  
@@ -144,7 +146,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: zziplib (zzip) .
 -
 -# Check whether --with-system-zziplib was given.
--if test "${with_system_zziplib+set}" = set; then :
+-if test ${with_system_zziplib+y}
+-then :
 -  withval=$with_system_zziplib;
 -fi
 -if test "x$with_system_zziplib" = xyes; then
@@ -179,7 +182,8 @@
 +if test "${with_teckit_libdir+set}" = set; then :
 +  withval=$with_teckit_libdir;
 +fi
- if test "${with_system_teckit+set}" = set; then :
+ if test ${with_system_teckit+y}
+ then :
    withval=$with_system_teckit;
  fi
  if test "x$with_system_teckit" = xyes; then
@@ -206,3 +210,9 @@
  else
    TECKIT_INCLUDES="-I$kpse_BLD/libs/teckit/include"
    TECKIT_LIBS="$kpse_BLD/libs/teckit/libTECkit.a"
+@@ -31534,5 +31411,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

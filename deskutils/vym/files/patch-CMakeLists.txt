@@ -1,0 +1,26 @@
+--- CMakeLists.txt.orig	2023-03-22 15:26:14 UTC
++++ CMakeLists.txt
+@@ -123,7 +123,8 @@ message(STATUS "CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}"
+ message(STATUS "ts_files: ${ts_files}")
+ message(STATUS "qm_files: ${qm_files}")
+ 
+-ADD_COMPILE_DEFINITIONS(VYMBASEDIR="${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}")
++ADD_COMPILE_DEFINITIONS(VYMBASEDIR="${DATADIR}")
++ADD_COMPILE_DEFINITIONS(VYM_DOCDIR="${DOCSDIR}")
+ 
+ add_executable(vym ${VymSources} vym.qrc ${qm_files})
+ target_link_libraries(vym ${QtLibraries})
+@@ -156,9 +157,11 @@ add_custom_target(make-translations-directory ALL
+ add_dependencies(vym make-translations-directory)
+ 
+ install(DIRECTORY demos DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+-install(DIRECTORY doc DESTINATION ${CMAKE_INSTALL_DOCDIR})
++if(VYM_DOCS)
++install(DIRECTORY doc/ DESTINATION ${CMAKE_INSTALL_DOCDIR} FILES_MATCHING PATTERN "*.pdf")
++install(FILES README.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
++endif()
+ install(FILES doc/vym.1.gz DESTINATION ${CMAKE_INSTALL_MANDIR})
+-install(FILES README.md LICENSE.txt DESTINATION ${CMAKE_INSTALL_DOCDIR})
+ install(DIRECTORY exports flags icons macros ${CMAKE_BINARY_DIR}/translations scripts styles DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+ 
+ if(UNIX)

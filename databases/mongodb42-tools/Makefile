@@ -1,17 +1,19 @@
 PORTNAME=	mongodb42-tools
 DISTVERSIONPREFIX=	r
-DISTVERSION=	4.2.19
-PORTREVISION=	5
+DISTVERSION=	4.2.24
+PORTREVISION=	2
 CATEGORIES=	databases
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Tools for MongoDB 4.2.x
 WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+DEPRECATED=	Upstream EOL reached on 2023-04-30
+EXPIRATION_DATE=	2023-09-30
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
 
 USES=		compiler:c++14-lang go localbase

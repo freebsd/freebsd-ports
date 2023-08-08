@@ -1,0 +1,9 @@
+TIMESTAMP = 1650789992
+SHA256 (Real-ESRGAN-v0.2.5.0-models.tar.xz) = 1c858d2d0a0500735852c0559bf29e868aae5dbd1aff7f5900688701bee1264a
+SIZE (Real-ESRGAN-v0.2.5.0-models.tar.xz) = 39195532
+SHA256 (xinntao-Real-ESRGAN-ncnn-vulkan-v0.2.0_GH0.tar.gz) = 346663b1924b2a1bfa655d656bfbba6b09f76ff75e4eee9d1fff4bfdef8b5712
+SIZE (xinntao-Real-ESRGAN-ncnn-vulkan-v0.2.0_GH0.tar.gz) = 138744
+SHA256 (KhronosGroup-glslang-11.1.0-44-g4afd6917_GH0.tar.gz) = 5ec414384bafcac14d096ca20205f811b61caf287ea1f7c30745735e7f483ae6
+SIZE (KhronosGroup-glslang-11.1.0-44-g4afd6917_GH0.tar.gz) = 3296291
+SHA256 (Tencent-ncnn-20220420-5-g6125c9f4_GH0.tar.gz) = 418e27336f405b35748ddc7e4588f4b449369e727dae119a45b332eca0fc6dcc
+SIZE (Tencent-ncnn-20220420-5-g6125c9f4_GH0.tar.gz) = 12160283

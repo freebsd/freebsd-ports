@@ -1,7 +1,7 @@
 PORTNAME=	gqrx
-PORTVERSION=	2.15.9
-PORTREVISION=	2
+PORTVERSION=	2.16
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -32,7 +32,9 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libjack.so:audio/jack \
 		libportaudio.so:audio/portaudio
 
-USES=		cmake compiler:c++11-lang gl pkgconfig qt:5
+USES=		cmake compiler:c++11-lang elfctl gl pkgconfig qt:5
+
+ELF_FEATURES=	+noaslr:src/gqrx
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gqrx-sdr

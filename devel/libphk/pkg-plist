@@ -8,7 +8,7 @@ include/phk_event.h
 include/phk_modbus.h
 include/phk_lineup.h
 lib/libphk.a
-lib/libphk_p.a
+%%PROFILE%%lib/libphk_p.a
 man/man3/libphk.3.gz
 man/man3/phk_argv.3.gz
 man/man3/phk_binheap.3.gz

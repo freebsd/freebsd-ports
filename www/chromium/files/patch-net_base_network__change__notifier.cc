@@ -1,4 +1,4 @@
---- net/base/network_change_notifier.cc.orig	2022-08-31 12:19:35 UTC
+--- net/base/network_change_notifier.cc.orig	2023-05-31 08:12:17 UTC
 +++ net/base/network_change_notifier.cc
 @@ -37,7 +37,7 @@
  #include "net/base/network_change_notifier_linux.h"
@@ -6,7 +6,7 @@
  #include "net/base/network_change_notifier_mac.h"
 -#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
- #include "net/base/network_change_notifier_posix.h"
+ #include "net/base/network_change_notifier_passive.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include "net/base/network_change_notifier_fuchsia.h"
 @@ -329,6 +329,9 @@ std::unique_ptr<NetworkChangeNotifier> NetworkChangeNo

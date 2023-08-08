@@ -14,7 +14,7 @@ share/icons/hicolor/scalable/apps/rawtherapee.svg
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%PORTDOCS%%%%DOCSDIR%%/AboutThisBuild.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES.txt
 %%DATADIR%%/camconst.json
 %%DATADIR%%/dcpprofiles/camera_model_aliases.json
@@ -26,7 +26,9 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 450D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 50D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 550D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 5D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D Mark III.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 5D Mark IV.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 5D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 600D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 60D.dcp
@@ -35,25 +37,39 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Canon EOS 6D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 7D.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS 90D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS D60.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS M6 Mark II.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS R.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS R5.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS R6.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS RP.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS-1D Mark III.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS-1D X Mark III.dcp
+%%DATADIR%%/dcpprofiles/Canon EOS-1Ds Mark II.dcp
+%%DATADIR%%/dcpprofiles/Canon PowerShot G1 X Mark II.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G7 X.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot S110.dcp
+%%DATADIR%%/dcpprofiles/Canon PowerShot S120.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM GFX 50R.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-A5.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E1.dcp
 %%DATADIR%%/dcpprofiles/Fujifilm X-E2.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-H1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-Pro2.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-Pro3.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-S1.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T1.dcp
-%%DATADIR%%/dcpprofiles/FUJIFILM X-T2.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T10.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T2.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T20.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T3.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X-T30.dcp
+%%DATADIR%%/dcpprofiles/FUJIFILM X-T4.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100S.dcp
 %%DATADIR%%/dcpprofiles/FUJIFILM X100T.dcp
 %%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
@@ -66,29 +82,41 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Nikon D3100.dcp
 %%DATADIR%%/dcpprofiles/Nikon D3S.dcp
 %%DATADIR%%/dcpprofiles/NIKON D50.dcp
+%%DATADIR%%/dcpprofiles/NIKON D500.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5000.dcp
 %%DATADIR%%/dcpprofiles/Nikon D5100.dcp
+%%DATADIR%%/dcpprofiles/NIKON D5300.dcp
 %%DATADIR%%/dcpprofiles/NIKON D5600.dcp
 %%DATADIR%%/dcpprofiles/NIKON D600.dcp
+%%DATADIR%%/dcpprofiles/NIKON D610.dcp
 %%DATADIR%%/dcpprofiles/NIKON D700.dcp
 %%DATADIR%%/dcpprofiles/Nikon D7000.dcp
 %%DATADIR%%/dcpprofiles/NIKON D70s.dcp
+%%DATADIR%%/dcpprofiles/NIKON D7100.dcp
 %%DATADIR%%/dcpprofiles/NIKON D7200.dcp
 %%DATADIR%%/dcpprofiles/NIKON D750.dcp
+%%DATADIR%%/dcpprofiles/NIKON D7500.dcp
 %%DATADIR%%/dcpprofiles/NIKON D80.dcp
+%%DATADIR%%/dcpprofiles/NIKON D800.dcp
 %%DATADIR%%/dcpprofiles/NIKON D800E.dcp
 %%DATADIR%%/dcpprofiles/NIKON D810.dcp
+%%DATADIR%%/dcpprofiles/NIKON D850.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 50.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 6.dcp
+%%DATADIR%%/dcpprofiles/NIKON Z 7.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-1.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-510.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-520.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M10.dcp
 %%DATADIR%%/dcpprofiles/OLYMPUS E-M1MarkII.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-M5.dcp
+%%DATADIR%%/dcpprofiles/OLYMPUS E-M5MarkII.dcp
 %%DATADIR%%/dcpprofiles/Olympus E-P2.dcp
 %%DATADIR%%/dcpprofiles/Olympus XZ-1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-G9.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-GX9.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-S1.dcp
+%%DATADIR%%/dcpprofiles/Panasonic DC-S5.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DC-TZ91.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ1000.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-FZ150.dcp
@@ -103,21 +131,28 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GX85.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5 II.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K-5.dcp
+%%DATADIR%%/dcpprofiles/PENTAX K-50.dcp
 %%DATADIR%%/dcpprofiles/Pentax K-r.dcp
 %%DATADIR%%/dcpprofiles/PENTAX K10D.dcp
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
 %%DATADIR%%/dcpprofiles/RICOH GR III.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-1.dcp
 %%DATADIR%%/dcpprofiles/RICOH PENTAX K-3.dcp
+%%DATADIR%%/dcpprofiles/samsung SM-G930V.dcp
 %%DATADIR%%/dcpprofiles/SONY DSLR-A580.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A900.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6000.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6300.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-6400.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-6500.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-6600.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M2.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7M3.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7M4.dcp
 %%DATADIR%%/dcpprofiles/SONY ILCE-7RM3.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-7RM4.dcp
+%%DATADIR%%/dcpprofiles/SONY ILCE-9.dcp
 %%DATADIR%%/dcpprofiles/Sony NEX-5N.dcp
 %%DATADIR%%/dcpprofiles/Sony SLT-A55V.dcp
 %%DATADIR%%/dcpprofiles/SONY SLT-A99V.dcp
@@ -192,6 +227,10 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/atom.svg
 %%DATADIR%%/images/bayer.svg
 %%DATADIR%%/images/beforeafter.svg
+%%DATADIR%%/images/bidirectional-arrow-horizontal-hicontrast.svg
+%%DATADIR%%/images/bidirectional-arrow-horizontal-prelight.svg
+%%DATADIR%%/images/bidirectional-arrow-vertical-hicontrast.svg
+%%DATADIR%%/images/bidirectional-arrow-vertical-prelight.svg
 %%DATADIR%%/images/cancel-small.svg
 %%DATADIR%%/images/cancel.svg
 %%DATADIR%%/images/circle-black-small.svg
@@ -274,6 +313,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/distortion-barrel.svg
 %%DATADIR%%/images/distortion-pincushion-small.svg
 %%DATADIR%%/images/distortion-pincushion.svg
+%%DATADIR%%/images/draw.svg
 %%DATADIR%%/images/edit-point.svg
 %%DATADIR%%/images/empty.png
 %%DATADIR%%/images/equilizer-narrow.svg
@@ -319,10 +359,9 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/hand-open.svg
 %%DATADIR%%/images/histogram-bar-off-small.svg
 %%DATADIR%%/images/histogram-bar-on-small.svg
-%%DATADIR%%/images/histogram-bayer-off-small.svg
-%%DATADIR%%/images/histogram-bayer-on-small.svg
 %%DATADIR%%/images/histogram-blue-off-small.svg
 %%DATADIR%%/images/histogram-blue-on-small.svg
+%%DATADIR%%/images/histogram-ellipsis-small.svg
 %%DATADIR%%/images/histogram-gold-off-small.svg
 %%DATADIR%%/images/histogram-gold-on-small.svg
 %%DATADIR%%/images/histogram-green-off-small.svg
@@ -334,6 +373,12 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/histogram-red-on-small.svg
 %%DATADIR%%/images/histogram-silver-off-small.svg
 %%DATADIR%%/images/histogram-silver-on-small.svg
+%%DATADIR%%/images/histogram-type-histogram-raw-small.svg
+%%DATADIR%%/images/histogram-type-histogram-small.svg
+%%DATADIR%%/images/histogram-type-parade-small.svg
+%%DATADIR%%/images/histogram-type-vectorscope-hc-small.svg
+%%DATADIR%%/images/histogram-type-vectorscope-hs-small.svg
+%%DATADIR%%/images/histogram-type-waveform-small.svg
 %%DATADIR%%/images/info.svg
 %%DATADIR%%/images/intent-absolute.svg
 %%DATADIR%%/images/intent-perceptual.svg
@@ -368,6 +413,7 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/perspective-horizontal-left.svg
 %%DATADIR%%/images/perspective-horizontal-right-small.svg
 %%DATADIR%%/images/perspective-horizontal-right.svg
+%%DATADIR%%/images/perspective-horizontal-vertical.svg
 %%DATADIR%%/images/perspective-vertical-bottom-small.svg
 %%DATADIR%%/images/perspective-vertical-bottom.svg
 %%DATADIR%%/images/perspective-vertical-top-small.svg
@@ -387,7 +433,6 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/rawtherapee-logo-48.png
 %%DATADIR%%/images/rawtherapee-logo-64.png
 %%DATADIR%%/images/rawtherapee.ico
-%%DATADIR%%/images/rawtherapee_ico.xcf
 %%DATADIR%%/images/redo-all.svg
 %%DATADIR%%/images/redo-small.svg
 %%DATADIR%%/images/redo.svg
@@ -406,6 +451,8 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/rotate-right.svg
 %%DATADIR%%/images/rotate-straighten-small.svg
 %%DATADIR%%/images/rotate-straighten.svg
+%%DATADIR%%/images/rt-logo-text-black.svg
+%%DATADIR%%/images/rt-logo-text-white.svg
 %%DATADIR%%/images/rt-logo.svg
 %%DATADIR%%/images/save-small.svg
 %%DATADIR%%/images/save.svg
@@ -413,6 +460,9 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/images/saved-yes-small.svg
 %%DATADIR%%/images/splash.svg
 %%DATADIR%%/images/splash_template.svg
+%%DATADIR%%/images/spot-active.svg
+%%DATADIR%%/images/spot-normal.svg
+%%DATADIR%%/images/spot-prelight.svg
 %%DATADIR%%/images/square-toggle-black-off-narrow.svg
 %%DATADIR%%/images/square-toggle-black-on-narrow.svg
 %%DATADIR%%/images/square-toggle-blue-off-narrow.svg
@@ -493,11 +543,13 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/languages/Catala
 %%DATADIR%%/languages/Chinese (Simplified)
 %%DATADIR%%/languages/Czech
+%%DATADIR%%/languages/Dansk
 %%DATADIR%%/languages/default
 %%DATADIR%%/languages/Deutsch
 %%DATADIR%%/languages/English (UK)
 %%DATADIR%%/languages/English (US)
-%%DATADIR%%/languages/Espanol
+%%DATADIR%%/languages/Espanol (Castellano)
+%%DATADIR%%/languages/Espanol (Latin America)
 %%DATADIR%%/languages/Francais
 %%DATADIR%%/languages/Italiano
 %%DATADIR%%/languages/Japanese
@@ -516,6 +568,8 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO High.pp3
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO Low.pp3
 %%DATADIR%%/profiles/Auto-Matched Curve - ISO Medium.pp3
+%%DATADIR%%/profiles/Film Negative - Black and White.pp3
+%%DATADIR%%/profiles/Film Negative.pp3
 %%DATADIR%%/profiles/Non-raw/Brighten.pp3
 %%DATADIR%%/profiles/Pixel Shift/PS ISO High.pp3
 %%DATADIR%%/profiles/Pixel Shift/PS ISO Low.pp3
@@ -556,8 +610,10 @@ share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 %%DATADIR%%/themes/images/twb/radio-inconsistent.png
 %%DATADIR%%/themes/images/twb/radio-unchecked-disabled.png
 %%DATADIR%%/themes/images/twb/radio-unchecked.png
+%%DATADIR%%/themes/RawTherapee - Legacy-GTK3-20_.css
 %%DATADIR%%/themes/RawTherapee-GTK3-20_.css
 %%DATADIR%%/themes/RawTherapee-GTK3-_19.css
+%%DATADIR%%/themes/size - Legacy.css
 %%DATADIR%%/themes/size.css
 %%DATADIR%%/themes/system.iconset
 %%DATADIR%%/themes/TooWaBlue - Bright-GTK3-20_.css

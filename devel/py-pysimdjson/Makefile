@@ -1,7 +1,7 @@
 PORTNAME=	pysimdjson
 PORTVERSION=	4.0.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pysimdjson.tkte.ch/
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	cython distutils
 
 CFLAGS_powerpc64=	-mpower8-vector

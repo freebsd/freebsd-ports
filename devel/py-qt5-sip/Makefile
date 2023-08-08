@@ -1,9 +1,10 @@
 PORTNAME=	sip
-PORTVERSION=	${PYQTSIP_VERSION}
+PORTVERSION=	${PYQT5SIP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITES_PYQTSIP}
+MASTER_SITES=	${MASTER_SITES_PYQT5SIP}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt5-
-DISTNAME=	${PYQTSIP_DISTNAME}
+DISTNAME=	${PYQT5SIP_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
@@ -16,7 +17,7 @@ LICENSE_NAME_SIP=	SIP License
 LICENSE_FILE_SIP=	${FILESDIR}/LICENSE
 LICENSE_PERMS_SIP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		python:3.5+ pyqt:sip
+USES=		python pyqt:sip
 USE_PYTHON=	autoplist concurrent distutils flavors py3kplist
 USE_PYQT=	#
 

@@ -8,11 +8,3 @@
 %%SITE_PERL%%/DBD/Mock/Pool.pm
 %%SITE_PERL%%/DBD/Mock.pm
 %%PERL5_MAN3%%/DBD::Mock.3.gz
-%%PERL5_MAN3%%/DBD::Mock::Pool.3.gz
-%%PERL5_MAN3%%/DBD::Mock::Pool::db.3.gz
-%%PERL5_MAN3%%/DBD::Mock::Session.3.gz
-%%PERL5_MAN3%%/DBD::Mock::StatementTrack.3.gz
-%%PERL5_MAN3%%/DBD::Mock::StatementTrack::Iterator.3.gz
-%%PERL5_MAN3%%/DBD::Mock::db.3.gz
-%%PERL5_MAN3%%/DBD::Mock::dr.3.gz
-%%PERL5_MAN3%%/DBD::Mock::st.3.gz

@@ -16,4 +16,3 @@ set 'strongswan_interface="stroke"' in your rc.conf file.
 EOM
 }
 ]
-

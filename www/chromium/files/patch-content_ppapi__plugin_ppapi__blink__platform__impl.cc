@@ -1,4 +1,4 @@
---- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2022-02-28 16:54:41 UTC
+--- content/ppapi_plugin/ppapi_blink_platform_impl.cc.orig	2023-05-31 08:12:17 UTC
 +++ content/ppapi_plugin/ppapi_blink_platform_impl.cc
 @@ -20,7 +20,7 @@
  
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    ChildThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -53,7 +53,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
+@@ -54,7 +54,7 @@ PpapiBlinkPlatformImpl::~PpapiBlinkPlatformImpl() {
  void PpapiBlinkPlatformImpl::Shutdown() {}
  
  blink::WebSandboxSupport* PpapiBlinkPlatformImpl::GetSandboxSupport() {

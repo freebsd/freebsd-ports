@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-faraday1>=0.8.0:www/rubygem-faraday1 \
 		rubygem-http-cookie>=1.0.0<1.1:www/rubygem-http-cookie
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -21,4 +21,6 @@ RUN_DEPENDS=	p5-Graph-Writer-GraphViz>=0:graphics/p5-Graph-Writer-GraphViz \
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

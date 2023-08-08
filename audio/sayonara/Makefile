@@ -1,5 +1,6 @@
 PORTNAME=	sayonara
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -22,7 +23,7 @@ USE_QT=		dbus core gui network sql sql-sqlite3:run svg widgets xml \
 USE_GITLAB=	yes
 GL_ACCOUNT=	luciocarreras
 GL_PROJECT=	${PORTNAME}-player
-GL_COMMIT=	5bbf1399332d5d59362ad03bf625f9132be72206 # 1.7.0-stable1
+GL_TAGNAME=	5bbf1399332d5d59362ad03bf625f9132be72206 # 1.7.0-stable1
 
 SHEBANG_FILES=	src/DBus/sayonara-ctl src/DBus/sayonara-query
 

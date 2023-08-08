@@ -1,54 +1,55 @@
 PORTNAME=	libmemcached
-PORTVERSION=	1.0.18
-PORTREVISION=	7
+PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	https://launchpad.net/libmemcached/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	C and C++ client library to the memcached server
-WWW=		https://libmemcached.org/
+COMMENT=	C/C++ client library and tools for the memcached server
+WWW=		https://awesomized.github.io/libmemcached/ \
+		https://github.com/awesomized/libmemcached
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
-TEST_DEPENDS=	memcached:databases/memcached
+TEST_DEPENDS=	memcached:databases/memcached \
+		onetbb>=0:devel/onetbb
 
-USES=		autoreconf gmake libtool localbase pathfix pkgconfig
+USES=		bison compiler:c++11-lang pathfix pkgconfig ssl
 
-CONFIGURE_ARGS=	--enable-libmemcachedprotocol \
-		--without-memcached \
-		--without-sphinx-build
-CXXFLAGS+=	-D__STDC_CONSTANT_MACROS -pthread
-GNU_CONFIGURE=	yes
-LIBS+=		-lexecinfo
-PATHFIX_MAKEFILEIN=	include.am
-TEST_TARGET=	check
+CMAKE_OFF=	BUILD_DOCSONLY BUILD_DOCS_MANGZ BUILD_DOCS_HTML BUILD_TESTING ENABLE_DTRACE
+CMAKE_ON=	BUILD_SHARED_LIBS ENABLE_MEMASLAP ENABLE_OPENSSL_CRYPTO
+CMAKE_TESTING_ON=	BUILD_TESTING
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	memdump # man/man1/memdump.1.gz
+USE_GITHUB=	yes
+GH_ACCOUNT=	awesomized
 
-OPTIONS_DEFINE=	DEBUG MEMASLAP SASL
+OPTIONS_DEFINE=	DOCS MANPAGES SASL
 OPTIONS_GROUP=	HASH
 OPTIONS_GROUP_HASH=	FNV64 HSIEH MURMUR
-OPTIONS_DEFAULT=MEMASLAP SASL MURMUR FNV64
+OPTIONS_DEFAULT=FNV64 HSIEH MURMUR SASL
+OPTIONS_SUB=	yes
 FNV64_DESC=	Enable fnv64 hashing
 HSIEH_DESC=	Enable hsieh hashing
 MEMASLAP_DESC=	Load generation and benchmark tool
 MURMUR_DESC=	Enable murmur hashing
 
-DEBUG_CONFIGURE_ENABLE=	debug
-FNV64_CONFIGURE_ENABLE=	fnv64_hash
-HSIEH_CONFIGURE_ENABLE=	hsieh_hash
-MEMASLAP_CONFIGURE_ENABLE=	memaslap
-MURMUR_CONFIGURE_ENABLE=murmur_hash
-SASL_CONFIGURE_ENABLE=	sasl
+FNV64_CMAKE_BOOL=	ENABLE_HASH_FNV64
+HSIEH_CMAKE_BOOL=	ENABLE_HASH_HSIEH
+MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_CMAKE_BOOL=	BUILD_DOCS BUILD_DOCS_MAN
+MANPAGES_USES=		cmake:noninja,testing python:env
+MANPAGES_USES_OFF=	cmake:testing
+MURMUR_CMAKE_BOOL=	ENABLE_HASH_MURMUR
+SASL_CMAKE_BOOL=	ENABLE_SASL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LTLIBSASL2%%|${LTLIBSASL2}|' ${WRKSRC}/Makefile.in
+.include <bsd.port.pre.mk>
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+# Skip libcrypto.pc while using OpenSSL from base system on older FreeBSD versions which does not skip this file
+.if ${SSL_DEFAULT} == base && !exists(/usr/libdata/pkgconfig/libcrypto.pc)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openssl
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

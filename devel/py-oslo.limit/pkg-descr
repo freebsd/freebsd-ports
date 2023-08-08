@@ -1,4 +1,2 @@
 Oslo.limit is the limit enforcement library to assist with quota calculation. It
 aims to provide support for quota enforcement across all OpenStack services.
-
-See also: https://github.com/openstack/oslo.limit

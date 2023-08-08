@@ -1,9 +1,8 @@
 PORTNAME=	ode
-PORTVERSION=	0.13
-PORTREVISION=	4
+DISTVERSION=	0.16.2
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	SF/opende/ODE/${PORTVERSION}
+MASTER_SITES=	https://bitbucket.org/odedevs/${PORTNAME}/downloads/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Articulated rigid body dynamics library
@@ -12,41 +11,34 @@ WWW=		https://www.ode.org/
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
-USES=		tar:bzip2 libtool pathfix
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
-TEST_TARGET=	check
-USE_CXXSTD=	c++03
+USES=		cmake:testing
 
-OPTIONS_DEFINE=		GIMPACT DOUBLE OU DEMOS
+CMAKE_OFF=	ODE_WITH_TESTS
+CMAKE_TESTING_ON=	ODE_WITH_TESTS
 
-GIMPACT_DESC=		Enable gimpact instead of opcode support
-DOUBLE_DESC=		Enable double precision (BROKEN with GIMPACT)
-OU_DESC=		Enable Thread-local storage (Experimental)
+CXXFLAGS+=	-Wno-c++11-narrowing
+
+OPTIONS_DEFINE=		DEMOS GIMPACT LIBCCD OU TRIMESH # it looks like TRIMESH isn't defined but is needed because ODE_NO_TRIMESH is never defined otherwise
+OPTIONS_DEFAULT=	TRIMESH
+
 DEMOS_DESC=		Build demos (not installed)
-
-GIMPACT_PREVENTS=	DOUBLE
-GIMPACT_CONFIGURE_ON=	--with-trimesh=gimpact
-GIMPACT_CONFIGURE_OFF=	--with-trimesh=opcode
-DOUBLE_CONFIGURE_ENABLE=double-precision
-OU_CONFIGURE_ENABLE=	ou
-DEMOS_CONFIGURE_ENABLE=	demos
+DEMOS_CMAKE_BOOL=	ODE_WITH_DEMOS
 DEMOS_USES=		gl localbase pkgconfig
 DEMOS_USE=		GL=gl,glu
 
-post-patch:
-	@${REINPLACE_CMD} -e '/if test/ s|==|=|' -e 's|^\( *CFLAGS=\)|#\1|;' \
-		-e 's|^\( *CPPFLAGS=\)|#\1|' -e 's|^\( *CXXFLAGS=\)|#\1|' \
-		-e 's|CPPFLAGS+=" |CPPFLAGS="$$CPPFLAGS |' \
-		${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
-		-e '/^DEFAULT_INCLUDES/ s|$$| -I$$(top_builddir)/include|' \
-		-e '/CFLAGS/ s|-O[12]||'
-	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' \
-		${WRKSRC}/build/config-default.h ${WRKSRC}/ou/src/ou/malloc.cpp
+GIMPACT_DESC=		Enable gimpact instead of opcode support
+GIMPACT_CMAKE_BOOL=	ODE_WITH_GIMPACT
+GIMPACT_PREVENTS=	TRIMESH
 
-post-install:
-	${SED} -e '/PACKAGE/ s|^|//|; /VERSION/ s|^|//|' ${WRKSRC}/ode/src/config.h \
-		> ${STAGEDIR}${PREFIX}/include/ode/config.h
+LIBCCD_DESC=		Use libccd for handling some collision tests absent in ODE
+LIBCCD_CMAKE_BOOL=	ODE_WITH_LIBCCD ODE_WITH_LIBCCD_SYSTEM
+LIBCCD_CXXFLAGS=	-I${WRKSRC}/libccd/src/custom
+LIBCCD_LIB_DEPENDS=	libccd.so:math/libccd
+
+OU_DESC=		Enable Thread-local storage (Experimental)
+OU_CMAKE_BOOL=		ODE_WITH_OU
+
+TRIMESH_DESC=		Build with trimesh
+TRIMESH_CMAKE_OFF=	-DODE_NO_TRIMESH=ON
 
 .include <bsd.port.mk>

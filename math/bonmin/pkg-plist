@@ -64,10 +64,10 @@ include/coin/BonTypes.hpp
 include/coin/BonminConfig.h
 lib/libbonmin.so
 lib/libbonmin.so.4
-lib/libbonmin.so.4.8.8
+lib/libbonmin.so.4.8.9
 lib/libbonminampl.so
 lib/libbonminampl.so.4
-lib/libbonminampl.so.4.8.8
+lib/libbonminampl.so.4.8.9
 libdata/pkgconfig/bonmin.pc
 libdata/pkgconfig/bonminamplinterface.pc
 share/coin/doc/Bonmin/AUTHORS

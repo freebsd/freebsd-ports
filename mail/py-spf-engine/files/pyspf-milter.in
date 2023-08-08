@@ -10,7 +10,7 @@
 # pyspf_milter_enable (bool)    Set to 'YES' to enable.
 #                               Default: NO
 # pyspf_milter_conffile (path)  Location of configuration file.
-#                               Default: %%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf
+#                               Default: %%PREFIX%%/pyspf-milter/pyspf-milter.conf
 
 . /etc/rc.subr
 
@@ -20,7 +20,7 @@ rcvar=pyspf_milter_enable
 load_rc_config $name
 
 : ${pyspf_milter_enable:=NO}
-: ${pyspf_milter_conffile:=%%PREFIX%%/etc/python-policyd-spf/policyd-spf.conf}
+: ${pyspf_milter_conffile:=%%PREFIX%%/etc/pyspf-milter/pyspf-milter.conf}
 
 command=/usr/sbin/daemon
 command_interpreter=%%PYTHON_CMD%%

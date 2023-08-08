@@ -1,6 +1,6 @@
-TIMESTAMP = 1638350915
-SHA256 (yory8-clipman-v1.6.1_GH0.tar.gz) = 9bfd69ed299f7641188e05668442f074fca3b01858ea8e680499ace7a36dd108
-SIZE (yory8-clipman-v1.6.1_GH0.tar.gz) = 21089
+TIMESTAMP = 1682088740
+SHA256 (yory8-clipman-v1.6.2_GH0.tar.gz) = 6a94df2317e798a086dcb2b7f3cc4a6fa84189f648bac875d1789ce544cf6bc2
+SIZE (yory8-clipman-v1.6.2_GH0.tar.gz) = 21313
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
 SIZE (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 44383
 SHA256 (alecthomas-template-fb15b899a751_GH0.tar.gz) = 2e2a44375eca48ce941182504b5d13aa98182b9a3f64ace33bfda52208bd0f5e

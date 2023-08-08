@@ -14,13 +14,13 @@
 
 PORTNAME=	ksh93
 DISTVERSION=	93u
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	shells
 DIST_SUBDIR=	ksh93
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	AT&T KornShell 93
+COMMENT=	AT&T KornShell ksh93u+ 2012-08-01 (stable) version
 WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
@@ -32,7 +32,7 @@ GH_ACCOUNT=	att
 GH_PROJECT=	ast
 
 KSH_CONFLICTS=		pdksh
-KSH93_CONFLICTS=	ksh2020 ksh93-devel ast-ksh
+KSH93_CONFLICTS=	ksh93-devel ast-ksh
 
 OPTIONS_DEFAULT=	KSH93 EXAMPLES
 OPTIONS_DEFINE=		EXAMPLES STATIC
@@ -44,7 +44,7 @@ KSH93L_DESC=		Install to ${PREFIX}/bin/ksh93l (legacy)
 
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
-MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses" CFLAGS="${CFLAGS}"
+MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses -Wno-int-conversion" CFLAGS="${CFLAGS}"
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 

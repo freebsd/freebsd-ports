@@ -1,6 +1,6 @@
---- ui/ozone/common/egl_util.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/ozone/common/egl_util.cc.orig	2022-10-05 07:34:01 UTC
 +++ ui/ozone/common/egl_util.cc
-@@ -36,9 +36,9 @@ const base::FilePath::CharType kDefaultGlesSoname[] =
+@@ -26,9 +26,9 @@ const base::FilePath::CharType kDefaultGlesSoname[] =
      FILE_PATH_LITERAL("libGLESv2.so");
  #else  // BUILDFLAG(IS_FUCHSIA)
  const base::FilePath::CharType kDefaultEglSoname[] =

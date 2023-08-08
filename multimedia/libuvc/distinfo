@@ -1,5 +1,3 @@
-TIMESTAMP = 1605975516
-SHA256 (libuvc-libuvc-v0.0.6-32-gc612d45_GH0.tar.gz) = 629c3021bd38596b8be33fa678e1dceca9a085ebd56933424d1a544f53a2ca42
-SIZE (libuvc-libuvc-v0.0.6-32-gc612d45_GH0.tar.gz) = 103317
-SHA256 (c765bb30b5f5.patch) = 4f6c3423adba1ea8be54f40418a3f8deb54942725a76ce1cfd8ba45856d4c3f4
-SIZE (c765bb30b5f5.patch) = 1232
+TIMESTAMP = 1680414479
+SHA256 (libuvc-libuvc-v0.0.7_GH0.tar.gz) = 7c6ba79723ad5d0ccdfbe6cadcfbd03f9f75b701d7ba96631eb1fd929a86ee72
+SIZE (libuvc-libuvc-v0.0.7_GH0.tar.gz) = 104376

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=v
 DISTVERSION=	0.6.2
 CATEGORIES=	x11-themes
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Icon pack designed to integrate with most desktop environments
 WWW=		https://krourke.org/projects/art/la-capitaine-icon-theme
 

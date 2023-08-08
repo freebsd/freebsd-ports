@@ -2,7 +2,7 @@ PORTNAME=	flask-security
 PORTVERSION=	3.0.0
 PORTREVISION=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Flask-Security-${DISTVERSION}
 
@@ -43,7 +43,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask-sqlalchemy>=0:databases/py-flask-sqla
 		${PYTHON_PKGNAMEPREFIX}flask-mongoengine>=0:www/py-flask-mongoengine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>=0:devel/py-pyflakes@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src

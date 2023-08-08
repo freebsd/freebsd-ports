@@ -1,6 +1,6 @@
 PKGNAMESUFFIX=	-cgiserv
 
-COMMENT=	MooseFS CGI webserver
+COMMENT=	MooseFS CGI web server
 
 MFS_COMPONENT=	cgiserv
 

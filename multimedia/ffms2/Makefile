@@ -1,8 +1,14 @@
 PORTNAME=	ffms2
 DISTVERSION=	2.40
+PORTREVISION=	3
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	96cbf38ea938.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
+PATCHFILES+=	586d87de3f89.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
+PATCHFILES+=	45673149e9a2.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FFmpeg-based source library and VapourSynth plugin
 WWW=		https://github.com/FFMS/ffms2
 

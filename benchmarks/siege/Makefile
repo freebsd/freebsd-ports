@@ -1,5 +1,5 @@
 PORTNAME=	siege
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.6
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://download.joedog.org/siege/ \
 		http://fossies.org/linux/www/
@@ -17,6 +17,12 @@ CONFIGURE_ARGS=	--disable-shared \
 		--sysconfdir=${ETCDIR} \
 		--with-ssl=${OPENSSLBASE}
 CONFIGURE_ENV=	PERL="${PERL}"
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 pre-configure:
 	@${RM} ${WRKSRC}/acinclude.m4

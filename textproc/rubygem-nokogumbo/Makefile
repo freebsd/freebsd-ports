@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.8.4<2:textproc/rubygem-nokogiri
 
 USES=		gem gnome pkgconfig
 USE_GNOME=	libxml2
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

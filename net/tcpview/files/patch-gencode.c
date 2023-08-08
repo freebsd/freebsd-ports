@@ -1,6 +1,6 @@
---- gencode.c.orig	Fri Apr 23 04:40:01 1993
-+++ gencode.c	Tue Oct 28 02:03:44 2003
-@@ -36,7 +36,7 @@
+--- gencode.c.orig	1993-04-22 20:40:01 UTC
++++ gencode.c
+@@ -36,7 +36,7 @@ static char rcsid[] =
  #include <net/bpf.h>
  
  #ifdef TCPVIEW
@@ -9,7 +9,7 @@
  #include <setjmp.h>
  static jmp_buf env;
  #define error parse_error
-@@ -97,10 +97,15 @@
+@@ -97,10 +97,15 @@ static int cur_chunk;
  static int cur_chunk;
  
  #ifdef TCPVIEW

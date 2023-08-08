@@ -1,9 +1,9 @@
 PORTNAME=	libwww
-PORTVERSION=	6.67
+PORTVERSION=	6.70
 DISTVERSIONPREFIX=	perl-
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:OALDERS
+MASTER_SITE_SUBDIR=	CPAN:SIMBABQUE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,10 +18,11 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Authen-NTLM>=1.02:security/p5-Authen-NTLM \
 		p5-Encode-Locale>=0:converters/p5-Encode-Locale \
 		p5-File-Listing>=6:sysutils/p5-File-Listing \
-		p5-HTML-Parser>=0:www/p5-HTML-Parser \
+		p5-HTML-Parser>=3.71:www/p5-HTML-Parser \
+		p5-HTTP-CookieJar>=0:www/p5-HTTP-CookieJar \
 		p5-HTTP-Cookies>=6:www/p5-HTTP-Cookies \
 		p5-HTTP-Date>=6:www/p5-HTTP-Date \
-		p5-HTTP-Message>=6.07:www/p5-HTTP-Message \
+		p5-HTTP-Message>=6.18:www/p5-HTTP-Message \
 		p5-HTTP-Negotiate>=6:www/p5-HTTP-Negotiate \
 		p5-LWP-MediaTypes>=6:www/p5-LWP-MediaTypes \
 		p5-Net-HTTP>=6.18:net/p5-Net-HTTP \

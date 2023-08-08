@@ -2,7 +2,7 @@ PORTNAME=	tofu
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	net python
-MASTER_SITES=	http://download.gna.org/soya/
+MASTER_SITES=	LOCAL/bofh/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Tofu-${PORTVERSION}
 DIST_SUBDIR=	python
@@ -16,7 +16,7 @@ LICENSE=	GPLv2+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+ tar:bzip2
+USES=		python tar:bzip2
 USE_PYTHON=	autoplist distutils
 EXAMPLESDIR=	${PREFIX}/share/examples/py-tofu
 PORTEXAMPLES=	*

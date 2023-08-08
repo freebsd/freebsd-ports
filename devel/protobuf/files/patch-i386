@@ -1,14 +1,13 @@
-Reference:	https://github.com/protocolbuffers/protobuf/issues/9792
-		http://pb2.nyi.freebsd.org/data/123i386-default-foo/2022-04-16_08h34m58s/logs/errors/protobuf-3.20.0,1.log
+Obtained from:	https://cgit.freebsd.org/ports/commit/?id=c212fb9fcceacf49ac4f236c7944aaec5d3cfa57
 
---- src/google/protobuf/arenastring.cc.orig	2022-03-25 21:52:12 UTC
-+++ src/google/protobuf/arenastring.cc
-@@ -64,7 +64,7 @@ constexpr size_t kNewAlign = alignof(std::max_align_t)
+--- src/google/protobuf/arena_impl.h.orig	2022-09-29 19:05:00 UTC
++++ src/google/protobuf/arena_impl.h
+@@ -640,7 +640,7 @@ class PROTOBUF_EXPORT ThreadSafeArena {
+ #ifdef _MSC_VER
+ #pragma warning(disable : 4324)
  #endif
- constexpr size_t kStringAlign = alignof(std::string);
- 
--static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
-+//static_assert((kStringAlign > kNewAlign ? kStringAlign : kNewAlign) >= 8, "");
- static_assert(alignof(ExplicitlyConstructedArenaString) >= 8, "");
- 
- }  // namespace
+-  struct alignas(kCacheAlignment) CacheAlignedLifecycleIdGenerator {
++  struct alignas(alignof(std::atomic<LifecycleIdAtomic>)) CacheAlignedLifecycleIdGenerator {
+     std::atomic<LifecycleIdAtomic> id;
+   };
+   static CacheAlignedLifecycleIdGenerator lifecycle_id_generator_;

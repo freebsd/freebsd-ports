@@ -4,7 +4,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.w6rz.net/
 DISTNAME=	xport
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	The xport Transport Stream Demuxer
 WWW=		https://www.w6rz.net/
 

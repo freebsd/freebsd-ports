@@ -1,7 +1,7 @@
 PORTNAME=	bpython
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://bpython-interpreter.org/releases/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}curtsies>=0.4.0:devel/py-curtsies@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}xdg>=0:devel/py-xdg@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
@@ -29,13 +29,6 @@ OPTIONS_DEFINE=	EXAMPLES NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}backports.cached-property>=0:devel/py-backports.cached-property@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
@@ -49,4 +42,4 @@ post-install-NLS-on:
 	${INSTALL_DATA} ${WRKSRC}/bpython/translations/${lang}/LC_MESSAGES/bpython.mo ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

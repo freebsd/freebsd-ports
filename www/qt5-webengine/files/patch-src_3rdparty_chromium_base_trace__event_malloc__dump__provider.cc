@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/trace_event/malloc_dump_provider.cc
 @@ -17,6 +17,8 @@
  
- #if defined(OS_MACOSX)
+ #if defined(OS_APPLE)
  #include <malloc/malloc.h>
 +#elif defined(OS_BSD)
 +#include <stdlib.h>

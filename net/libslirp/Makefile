@@ -18,6 +18,6 @@ CPE_VENDOR=	libslirp_project
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	slirp
-GL_COMMIT=	3ad1710a96678fe79066b1469cead4058713a1d9
+GL_TAGNAME=	3ad1710a96678fe79066b1469cead4058713a1d9
 
 .include <bsd.port.mk>

@@ -1,10 +1,8 @@
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.34
+PORTVERSION=	1.2.37
 CATEGORIES=	security
-MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
-		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
-		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
-		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
+MASTER_SITES=	https://www.aleksey.com/xmlsec/download/ \
+		https://github.com/lsh123/xmlsec/releases/download/xmlsec-${PORTVERSION:S,.,_,g}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML Security Library

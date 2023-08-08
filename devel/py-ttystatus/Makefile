@@ -11,7 +11,7 @@ WWW=		https://liw.fi/ttystatus/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.5+
+USES=		python
 NO_ARCH=	yes
 
 USE_PYTHON=	distutils autoplist

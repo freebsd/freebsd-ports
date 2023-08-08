@@ -22,7 +22,7 @@ USES=		bison gnome meson pkgconfig python shebangfix xorg
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	drm
-GL_COMMIT=	9338ab3ec085292817ab1e74d1f2fb90b6a98332
+GL_TAGNAME=	9338ab3ec085292817ab1e74d1f2fb90b6a98332
 
 USE_GNOME=	cairo glib20
 
@@ -31,6 +31,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 
 SHEBANG_FILES=	scripts/code_cov_gather_on_test scripts/code_cov_parse_info
+MESON_ARGS=	-Dvalgrind=disabled
 
 OPTIONS_DEFINE=		CHAMELIUM DOCS RUNNER TEST
 OPTIONS_DEFAULT=	DOCS RUNNER TEST
@@ -67,4 +68,10 @@ PLIST_SUB+=	AMD64=""
 PLIST_SUB+=	AMD64="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,16 +1,22 @@
 PORTNAME=	evilwm
-PORTVERSION=	1.1.1
+DISTVERSION=	1.4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
-MAINTAINER=	lasg@lasg.dk
+MAINTAINER=	cmangin@arobas.net
 COMMENT=	Minimalist window manager based on 9wm
 WWW=		https://www.6809.org.uk/evilwm/
+
+LICENSE=	AEWM
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME=	AEWM License
 
 USES=		gmake localbase:ldflags xorg
 USE_XORG=	x11 xpm xext xrandr xrender
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" prefix="${PREFIX}" \
 		mandir="${MANPREFIX}/man"
+INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	bin/evilwm \
 		man/man1/evilwm.1.gz \
@@ -21,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ChangeLog README TODO doc/standards.html
+.for f in ChangeLog README TODO doc/build.html doc/evilwm.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 

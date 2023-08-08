@@ -1,5 +1,5 @@
 PORTNAME=	tor
-DISTVERSION=	0.4.7.10
+DISTVERSION=	0.4.7.13
 CATEGORIES=	security net
 MASTER_SITES=	TOR
 
@@ -28,7 +28,6 @@ OPTIONS_DEFAULT=MANPAGES ZSTD LZMA
 OPTIONS_EXCLUDE_FreeBSD_12=DOCS MANPAGES # XXX(rene) a2x somehow broken there
 OPTIONS_SUB=	yes
 STATIC_TOR_DESC=	Build a static tor
-TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 COMPRESSION_DESC=	Supported compression libraries
 TRACING_DESC=		Tracing
 

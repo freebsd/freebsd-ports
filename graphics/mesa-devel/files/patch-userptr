@@ -1,9 +1,10 @@
 Try unsynchronized userptr if regular one fails.
 https://github.com/FreeBSDDesktop/kms-drm/issues/197
+https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
 
---- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2021-06-30 22:34:42 UTC
+--- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2023-07-19 23:28:31 UTC
 +++ src/gallium/drivers/crocus/crocus_bufmgr.c
-@@ -493,8 +493,20 @@ crocus_bo_create_userptr(struct crocus_bufmgr *bufmgr,
+@@ -487,8 +487,20 @@ crocus_bo_create_userptr(struct crocus_bufmgr *bufmgr,
        .user_ptr = (uintptr_t)ptr,
        .user_size = size,
     };
@@ -25,17 +26,17 @@ https://github.com/FreeBSDDesktop/kms-drm/issues/197
     bo->gem_handle = arg.handle;
  
     /* Check the buffer for validity before we try and use it in a batch */
---- src/gallium/drivers/iris/iris_bufmgr.c.orig	2021-03-10 22:23:51 UTC
-+++ src/gallium/drivers/iris/iris_bufmgr.c
-@@ -624,8 +624,20 @@ iris_bo_create_userptr(struct iris_bufmgr *bufmgr, con
-       .user_ptr = (uintptr_t)ptr,
+--- src/gallium/drivers/iris/i915/iris_kmd_backend.c.orig	2023-07-31 18:56:34 UTC
++++ src/gallium/drivers/iris/i915/iris_kmd_backend.c
+@@ -430,8 +430,20 @@ i915_gem_create_userptr(struct iris_bufmgr *bufmgr, vo
        .user_size = size,
+       .flags = devinfo->has_userptr_probe ? I915_USERPTR_PROBE : 0,
     };
--   if (intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg))
+-   if (intel_ioctl(iris_bufmgr_get_fd(bufmgr), DRM_IOCTL_I915_GEM_USERPTR, &arg))
 +
 +   int ret;
 +retry:
-+   ret = intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg);
++   ret = intel_ioctl(iris_bufmgr_get_fd(bufmgr), DRM_IOCTL_I915_GEM_USERPTR, &arg);
 +   if (ret) {
 +      if (errno == ENODEV && arg.flags == 0) {
 +         arg.flags = I915_USERPTR_UNSYNCHRONIZED;
@@ -44,16 +45,16 @@ https://github.com/FreeBSDDesktop/kms-drm/issues/197
 +      if (geteuid() != 0) {
 +         fprintf(stderr, "%s", "ioctl(I915_GEM_USERPTR) failed. Try running as root but expect poor stability.\n");
 +      }
-       goto err_free;
+       return 0;
 +   }
-    bo->gem_handle = arg.handle;
  
-    /* Check the buffer for validity before we try and use it in a batch */
---- src/intel/vulkan/anv_gem.c.orig	2021-03-10 22:23:51 UTC
-+++ src/intel/vulkan/anv_gem.c
-@@ -146,9 +146,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
-       .flags = 0,
-    };
+    if (!devinfo->has_userptr_probe) {
+       /* Check the buffer for validity before we try and use it in a batch */
+--- src/intel/vulkan_hasvk/anv_gem.c.orig	2023-07-19 23:28:31 UTC
++++ src/intel/vulkan_hasvk/anv_gem.c
+@@ -150,9 +150,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
+    if (device->physical->info.has_userptr_probe)
+       userptr.flags |= I915_USERPTR_PROBE;
  
 -   int ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
 -   if (ret == -1)
@@ -73,10 +74,10 @@ https://github.com/FreeBSDDesktop/kms-drm/issues/197
  
     return userptr.handle;
  }
---- src/intel/vulkan_hasvk/anv_gem.c.orig	2022-09-03 20:27:51 UTC
-+++ src/intel/vulkan_hasvk/anv_gem.c
-@@ -179,9 +179,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
-    if (device->physical->has_userptr_probe)
+--- src/intel/vulkan/i915/anv_kmd_backend.c.orig	2023-07-19 23:28:31 UTC
++++ src/intel/vulkan/i915/anv_kmd_backend.c
+@@ -191,9 +191,19 @@ i915_gem_create_userptr(struct anv_device *device, voi
+    if (device->physical->info.has_userptr_probe)
        userptr.flags |= I915_USERPTR_PROBE;
  
 -   int ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);

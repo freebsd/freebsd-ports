@@ -1,5 +1,6 @@
 PORTNAME=	lxtask
 PORTVERSION=	0.1.10
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	SF/lxde/LXTask%20%28task%20manager%29/LXTask%200.1.x/
 

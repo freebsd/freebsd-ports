@@ -1,7 +1,7 @@
 PORTNAME=	kafka-python
 DISTVERSION=	1.4.5
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -11,7 +11,7 @@ WWW=		https://github.com/dpkp/kafka-python
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

@@ -1,5 +1,3 @@
 The Oslo context library has helpers to maintain useful information about a
 request context. The request context is usually populated in the WSGI pipeline
 and used by various modules such as logging.
-
-See also: https://github.com/openstack/oslo.context

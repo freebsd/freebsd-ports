@@ -17,6 +17,11 @@ load_rc_config $name
 
 export workdir="${cbsd_workdir}"
 export NO_CBSD_HISTORY=yes
+# disable interactive question
+export NOINTER=1
+# always answer 'no'
+export ALWAYS_NO=1
+
 globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
 
 if [ ! -f ${globalconf} ]; then
@@ -41,7 +46,7 @@ fi
 
 . ${globalconf}
 . ${mdtools}
-. ${subr}
+. ${subrdir}/nc.subr
 
 . ${localcbsdconf}
 
@@ -92,7 +97,7 @@ cbsdd_stop()
 cbsdd_restart()
 {
 	if [ -f "${pidfile}" ]; then
-		pkill -9 -f ${pidfile} > /dev/null 2>&1
+		pkill -9 -F ${pidfile} > /dev/null 2>&1
 		/bin/rm -f ${pidfile}
 	fi
 	run_rc_command "start"

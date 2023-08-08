@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+To activate qt6ct settings add QT_QPA_PLATFORMTHEME=qt6ct to your
+environment.
+EOM
+}
+]

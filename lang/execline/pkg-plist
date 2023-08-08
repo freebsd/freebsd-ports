@@ -7,11 +7,14 @@ bin/dollarat
 bin/elgetopt
 bin/elgetpositionals
 bin/elglob
+bin/eltest
 bin/emptyenv
 bin/envfile
 bin/exec
+@mode 755
 bin/execline-cd
 bin/execline-umask
+@mode
 bin/execlineb
 bin/exit
 bin/export
@@ -54,7 +57,7 @@ include/execline/execline.h
 lib/execline/libexecline.a
 lib/libexecline.so
 lib/libexecline.so.2.9
-lib/libexecline.so.2.9.0.0
+lib/libexecline.so.2.9.3.0
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/background.html
@@ -70,6 +73,7 @@ lib/libexecline.so.2.9.0.0
 %%PORTDOCS%%%%DOCSDIR%%/elgetopt.html
 %%PORTDOCS%%%%DOCSDIR%%/elgetpositionals.html
 %%PORTDOCS%%%%DOCSDIR%%/elglob.html
+%%PORTDOCS%%%%DOCSDIR%%/eltest.html
 %%PORTDOCS%%%%DOCSDIR%%/emptyenv.html
 %%PORTDOCS%%%%DOCSDIR%%/envfile.html
 %%PORTDOCS%%%%DOCSDIR%%/exec.html
@@ -77,6 +81,7 @@ lib/libexecline.so.2.9.0.0
 %%PORTDOCS%%%%DOCSDIR%%/execline-shell.html
 %%PORTDOCS%%%%DOCSDIR%%/execline-startup.html
 %%PORTDOCS%%%%DOCSDIR%%/execline-umask.html
+%%PORTDOCS%%%%DOCSDIR%%/execline.html
 %%PORTDOCS%%%%DOCSDIR%%/execlineb.html
 %%PORTDOCS%%%%DOCSDIR%%/exit.html
 %%PORTDOCS%%%%DOCSDIR%%/exitcodes.html

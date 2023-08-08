@@ -1,7 +1,7 @@
 PORTNAME=	random2
 DISTVERSION=	1.0.1
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/random2/
 
 LICENSE=	PSFL
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

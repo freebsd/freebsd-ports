@@ -1,0 +1,65 @@
+--- portsnap.conf.5.orig	2006-05-26 23:20:32 UTC
++++ portsnap.conf.5
+@@ -23,7 +23,7 @@
+ .\" IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ .\" POSSIBILITY OF SUCH DAMAGE.
+ .\"
+-.\" $FreeBSD: src/share/man/man5/portsnap.conf.5,v 1.2 2005/09/06 19:28:37 cperciva Exp $
++.\" $FreeBSD$
+ .\"
+ .Dd January 30, 2005
+ .Dt PORTSNAP.CONF 5
+@@ -68,7 +68,8 @@ snapshot of the ports tree.
+ This is equivalent to the
+ .Fl d Ar workdir
+ option to
+-.Xr portsnap 8 , and will be ignored if the command-line option
++.Xr portsnap 8 ,
++and will be ignored if the command-line option
+ is used.
+ .Pp
+ A line of the form
+@@ -82,13 +83,21 @@ commands.
+ This is equivalent to the
+ .Fl p Ar portsdir
+ option to
+-.Xr portsnap 8 , and will be ignored if the command-line option
++.Xr portsnap 8 ,
++and will be ignored if the command-line option
+ is used.
+ .Pp
+ If more than one line of any of the above forms is included in
+ .Nm
+ then only the last one will take effect.
+ .Pp
++A line of the form
++.Dl INDEX INDEXFILE DESCRIBEFILE
++will instruct
++.Xr portsnap 8
++that the specified INDEX file is generated from the specified
++describe file distributed by the portsnap server.
++.Pp
+ Finally, a line of the form
+ .Dl REFUSE foo bar
+ will instruct
+@@ -123,14 +132,14 @@ supported and may cause unexpected results.
+ .Pp
+ Any lines not of the above forms will be ignored.
+ .Sh FILES
+-.Bl -tag -width "$PREFIX/portsnap.conf"
+-.It $PREFIX/portsnap.conf
++.Bl -tag -width "%%PREFIX%%/etc/portsnap.conf"
++.It Pa %%PREFIX%/etc/portsnap.conf
+ Default location of the portsnap configuration file.
+ .El
+ .Sh SEE ALSO
+-.Xr egrep 1
+-.Xr fetch 1
++.Xr egrep 1 ,
++.Xr fetch 1 ,
++.Xr sha256 1 ,
+ .Xr portsnap 8
+-.Xr sha256 8
+ .Sh AUTHORS
+-.An Colin Percival Aq cperciva@FreeBSD.org
++.An Colin Percival Aq Mt cperciva@FreeBSD.org

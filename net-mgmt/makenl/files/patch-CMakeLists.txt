@@ -1,0 +1,18 @@
+--- CMakeLists.txt.orig	2023-02-05 22:03:01 UTC
++++ CMakeLists.txt
+@@ -1,6 +1,13 @@
+ PROJECT(makenl NONE)
+ CMAKE_MINIMUM_REQUIRED(VERSION 2.8...3.19)
+ 
++option(DOCS "Install documentation" OFF)
++option(EXAMPLES "Install examples" OFF)
++
+ ADD_SUBDIRECTORY(src)
+-ADD_SUBDIRECTORY(docs)
+-ADD_SUBDIRECTORY(examples)
++if(DOCS)
++  ADD_SUBDIRECTORY(docs)
++endif()
++if(EXAMPLES)
++  ADD_SUBDIRECTORY(examples)
++endif()

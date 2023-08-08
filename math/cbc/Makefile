@@ -1,6 +1,7 @@
 PORTNAME=	cbc
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.10.8
+DISTVERSION=	2.10.10
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -23,7 +24,8 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas \
 		libOsi.so:math/osi
 
-USES=		compiler:c++11-lang fortran gmake libtool pkgconfig
+USES=		compiler:c++11-lang fortran gmake libtool localbase pkgconfig
+USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -32,6 +34,8 @@ GH_PROJECT=	Cbc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-nauty-lib="-L${LOCALBASE}/lib -lnauty" --with-nauty-incdir=${LOCALBASE}/include/nauty
+
+TEST_TARGET=	test
 
 OPTIONS_DEFINE=			DEBUG PARALLEL
 OPTIONS_DEFAULT=		PARALLEL

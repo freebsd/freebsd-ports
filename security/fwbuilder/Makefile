@@ -4,10 +4,14 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
-MAINTAINER=	cy@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firewall Builder GUI and policy compilers
 WWW=		https://github.com/fwbuilder/fwbuilder
 
+DEPRECATED=	Abandonware since Jan 2021
+EXPIRATION_DATE=	2023-09-30
+
+BROKEN_FreeBSD_14=	Fails to build under LLVM16 with C++17 standard
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: libz library not found
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \

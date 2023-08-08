@@ -1,7 +1,8 @@
 PORTNAME=	potr
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
@@ -12,12 +13,9 @@ WWW=		https://github.com/afflux/pure-python-otr/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired security/py-pycrypto
-EXPIRATION_DATE=2022-09-30
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome>0:security/py-pycryptodome@${PY_FLAVOR}
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:security/py-pycrypto@${PY_FLAVOR}
-
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

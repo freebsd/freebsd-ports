@@ -1,0 +1,11 @@
+--- configure.ac.orig	2022-10-31 21:17:54 UTC
++++ configure.ac
+@@ -2116,7 +2116,7 @@ AM_CONDITIONAL(BUILD_DILLO_PLUGIN,		test x"$enable_dil
+ AM_CONDITIONAL(BUILD_FANCY_PLUGIN,		test x"$enable_fancy_plugin" != xno)
+ AM_CONDITIONAL(BUILD_FETCHINFO_PLUGIN,		test x"$enable_fetchinfo_plugin" != xno)
+ AM_CONDITIONAL(BUILD_GDATA_PLUGIN,		test x"$enable_gdata_plugin" != xno)
+-AM_CONDITIONAL(BUILD_KEYWORD_WARNER_PLUGIN,	test x"$enable_keywordwarner_plugin" != xno)
++AM_CONDITIONAL(BUILD_KEYWORD_WARNER_PLUGIN,	test x"$enable_keyword_warner_plugin" != xno)
+ AM_CONDITIONAL(BUILD_LIBRAVATAR_PLUGIN,		test x"$enable_libravatar_plugin" != xno)
+ AM_CONDITIONAL(BUILD_LITEHTML_VIEWER_PLUGIN,	test x"$enable_litehtml_viewer_plugin" != xno)
+ AM_CONDITIONAL(BUILD_MAILMBOX_PLUGIN,		test x"$enable_mailmbox_plugin" != xno)

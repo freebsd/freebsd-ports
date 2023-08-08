@@ -1,7 +1,7 @@
 PORTNAME=	pyro
 DISTVERSION=	4.77
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyro4-${PORTVERSION}
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}serpent>=1.27:devel/py-serpent@${PY_FLAVOR}
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	pyro_project

@@ -1,6 +1,6 @@
---- util/Makefile.orig	2019-04-22 16:25:30 UTC
+--- util/Makefile.orig	2022-12-19 21:41:15 UTC
 +++ util/Makefile
-@@ -198,7 +198,9 @@ LINK_DIR := $(PY_BASE_LINK_DIR)/util
+@@ -203,7 +203,9 @@ install: install-core
  install: install-core
  	$(MAKE) install-core
  	@echo "The following copy commands may fail; they are optional."
@@ -11,7 +11,7 @@
  	@echo ok
  
  .PHONY: install
-@@ -209,7 +211,9 @@ pyinstall:
+@@ -214,7 +216,9 @@ pyinstall:
  		echo $(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
  		$(CP) $$x '$(PY_INSTALL_DIR)/'$$x; \
  	done
@@ -22,7 +22,7 @@
  
  .PHONY: pyinstall
  
-@@ -233,8 +237,8 @@ install-core: $(PYTHON_EXECS) $(PROGS) $(MAIN_PROGS) $
+@@ -238,8 +242,8 @@ install-core: $(PYTHON_EXECS) $(PROGS) $(MAIN_PROGS) $
  	done
  	@echo Installing executables into '$(BIN_INSTALL_DIR)'...
  	@for x in $(PROGS) $(MAIN_PROGS); do \

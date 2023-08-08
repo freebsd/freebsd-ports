@@ -1,5 +1,5 @@
 PORTNAME=	wine-mono
-DISTVERSION=	7.3.0
+DISTVERSION=	7.4.0
 DISTVERSIONSUFFIX=-x86
 CATEGORIES=	emulators
 MASTER_SITES=	http://dl.winehq.org/wine/wine-mono/${DISTVERSION}/
@@ -13,6 +13,8 @@ WWW=		https://wiki.winehq.org/Mono
 
 LICENSE=	MIT GPLv2 LGPL20
 LICENSE_COMB=	multi
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 CONFLICTS_INSTALL=	wine-mono
 

@@ -1,1 +1,2 @@
-Platform support library used by libCEC and binary add-ons for Kodi
+This library provides platform specific support for other libraries, and
+is used by libCEC and binary add-ons for Kodi.

@@ -1,10 +1,10 @@
 PORTNAME=	lumina-core
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.2
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	x11
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lumina Desktop Environment
 WWW=		https://lumina-desktop.org/
 
@@ -24,7 +24,7 @@ LIB_DEPENDS+=	libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-util.so:x11/xcb-util \
 		libXcursor.so:x11/libXcursor
 
-USES=		compiler:c++11-lang gl qmake qt:5 xorg
+USES=		compiler:c++11-lang desktop-file-utils gl qmake qt:5 xorg
 USE_GL=		gl
 USE_XORG=	x11 xdamage xcb
 USE_LDCONFIG=	yes
@@ -55,6 +55,11 @@ CONFIGURE_ENV+=	DESTDIR=${STAGEDIR}
 
 CONFLICTS_INSTALL=	lumina-1.2.*
 
+post-extract:
+	@${RM} ${WRKSRC}/lumina-desktop*/extrafiles/screensavers/Warp*
+	@${RM} ${WRKSRC}/lumina-desktop*/extrafiles/screensavers/*/Warp*
+
 post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/share -name "ecp.*" -delete
+
 .include <bsd.port.mk>

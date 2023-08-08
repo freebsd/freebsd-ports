@@ -1,12 +1,13 @@
 PORTNAME=	CoinUtils
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.11.6
+DISTVERSION=	2.11.9
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Utilities for COIN-OR project
-WWW=		https://projects.coin-or.org/CoinUtils
+WWW=		https://github.com/coin-or/CoinUtils
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/CoinUtils/LICENSE
@@ -24,6 +25,8 @@ CONFIGURE_ARGS=	--with-blas-lib="-lopenblas" --with-lapack-lib="-lopenblas" \
 		--with-netlib-datadir="${LOCALBASE}/share/coin/Data/Netlib"
 		# doesn't link with the optional dependency glpk: https://github.com/coin-or/CoinUtils/issues/7
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-Dregister=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or

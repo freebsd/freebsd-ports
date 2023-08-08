@@ -1,5 +1,5 @@
 PORTNAME=	xcb-util-errors
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xcb-proto>=1.6:x11/xcb-proto
 
-USES=		xorg xorg-cat:lib
+USES=		python:build tar:xz xorg xorg-cat:lib
 USE_XORG=	xcb
 INSTALL_TARGET=	install-strip
 

@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
-@@ -19,7 +19,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/gfx/image/image_family.h"
  #include "url/gurl.h"
  
@@ -9,16 +9,7 @@
  #include "chrome/browser/web_applications/os_integration/web_app_shortcut_linux.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -47,7 +47,7 @@ struct ScopedShortcutOverrideForTesting {
-   base::ScopedTempDir startup;
- #elif BUILDFLAG(IS_MAC)
-   base::ScopedTempDir chrome_apps_folder;
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   base::ScopedTempDir desktop;
- #endif
- };
-@@ -89,7 +89,7 @@ struct ShortcutInfo {
+@@ -69,7 +69,7 @@ struct ShortcutInfo {
    std::set<std::string> file_handler_extensions;
    std::set<std::string> file_handler_mime_types;
    std::set<std::string> protocol_handlers;

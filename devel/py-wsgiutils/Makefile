@@ -1,7 +1,7 @@
 PORTNAME=	wsgiutils
 PORTVERSION=	0.7.2
 CATEGORIES=	devel textproc www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	WSGIUtils-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/davidfraser/WSGIUtils
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

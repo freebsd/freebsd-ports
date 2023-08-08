@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell-extension-weather
 PORTVERSION=	0.0.0.20180411
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

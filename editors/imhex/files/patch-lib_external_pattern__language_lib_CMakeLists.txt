@@ -1,11 +1,11 @@
---- lib/external/pattern_language/lib/CMakeLists.txt.orig	2022-08-18 14:28:54 UTC
+--- lib/external/pattern_language/lib/CMakeLists.txt.orig	2023-06-20 14:11:25 UTC
 +++ lib/external/pattern_language/lib/CMakeLists.txt
-@@ -1,7 +1,7 @@
- cmake_minimum_required(VERSION 3.16)
- project(libpl)
+@@ -69,7 +69,7 @@ add_library(libpl ${LIBRARY_TYPE}
+ )
  
--set(CMAKE_CXX_STANDARD 20)
-+set(CMAKE_CXX_STANDARD 23)
- 
- if (LIBPL_SHARED_LIBRARY)
-     set(LIBRARY_TYPE SHARED)
+ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+-    target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas -Wno-array-bounds)
++    target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas -Wno-array-bounds -Wno-error=deprecated-declarations)
+     if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+         target_compile_options(libpl PRIVATE -Wno-stringop-overflow)
+     endif()

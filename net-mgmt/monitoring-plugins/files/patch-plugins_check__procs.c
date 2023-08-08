@@ -1,4 +1,4 @@
---- plugins/check_procs.c.orig	2020-12-09 21:38:01 UTC
+--- plugins/check_procs.c.orig	2022-10-19 12:50:27 UTC
 +++ plugins/check_procs.c
 @@ -70,6 +70,7 @@ int options = 0; /* bitmask of filter criteria to test
  #define PCPU 256
@@ -8,7 +8,7 @@
  
  #define KTHREAD_PARENT "kthreadd" /* the parent process of kernel threads:
  							ppid of procs are compared to pid of this proc*/
-@@ -101,6 +102,7 @@ char *fails;
+@@ -101,6 +102,7 @@ int usepid = 0; /* whether to test for pid or /proc/pi
  char tmp[MAX_INPUT_BUFFER];
  int kthread_filter = 0;
  int usepid = 0; /* whether to test for pid or /proc/pid/exe */
@@ -28,11 +28,11 @@
  			procseconds = convert_to_seconds(procetime);
  
  			if (verbose >= 3)
--				printf ("proc#=%d uid=%d vsz=%d rss=%d pid=%d ppid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n", 
-+				printf ("proc#=%d uid=%d vsz=%d rss=%d pid=%d ppid=%d jid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n", 
+-				printf ("proc#=%d uid=%d vsz=%d rss=%d pid=%d ppid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n",
++				printf ("proc#=%d uid=%d vsz=%d rss=%d pid=%d ppid=%d jid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n",
  					procs, procuid, procvsz, procrss,
--					procpid, procppid, procpcpu, procstat, 
-+					procpid, procppid, procjid, procpcpu, procstat, 
+-					procpid, procppid, procpcpu, procstat,
++					procpid, procppid, procjid, procpcpu, procstat,
  					procetime, procprog, procargs);
  
  			/* Ignore self */
@@ -49,11 +49,11 @@
  
  			procs++;
  			if (verbose >= 2) {
--				printf ("Matched: uid=%d vsz=%d rss=%d pid=%d ppid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n", 
-+				printf ("Matched: uid=%d vsz=%d rss=%d pid=%d ppid=%d jid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n", 
+-				printf ("Matched: uid=%d vsz=%d rss=%d pid=%d ppid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n",
++				printf ("Matched: uid=%d vsz=%d rss=%d pid=%d ppid=%d jid=%d pcpu=%.2f stat=%s etime=%s prog=%s args=%s\n",
  					procuid, procvsz, procrss,
--					procpid, procppid, procpcpu, procstat, 
-+					procpid, procppid, procjid, procpcpu, procstat, 
+-					procpid, procppid, procpcpu, procstat,
++					procpid, procppid, procjid, procpcpu, procstat,
  					procetime, procprog, procargs);
  			}
  
@@ -96,7 +96,7 @@
    printf (" %s\n", "-z, --vsz=VSZ");
    printf ("   %s\n", _("Only scan for processes with VSZ higher than indicated."));
    printf (" %s\n", "-r, --rss=RSS");
-@@ -784,7 +798,7 @@ void
+@@ -784,7 +798,7 @@ print_usage (void)
  print_usage (void)
  {
    printf ("%s\n", _("Usage:"));

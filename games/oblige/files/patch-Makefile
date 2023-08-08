@@ -1,0 +1,41 @@
+--- Makefile.orig	2018-01-09 05:01:02 UTC
++++ Makefile
+@@ -17,7 +17,7 @@ SCRIPT_DIR=$(PREFIX)/share/oblige
+ 
+ SCRIPT_DIR=$(PREFIX)/share/oblige
+ 
+-CXX=g++
++CXX?=c++
+ 
+ OBJ_DIR=obj_linux
+ 
+@@ -34,9 +34,9 @@ FLTK_LIBS=$(shell $(FLTK_CONFIG) --use-images --ldflag
+ FLTK_FLAGS=$(shell $(FLTK_CONFIG) --cflags)
+ FLTK_LIBS=$(shell $(FLTK_CONFIG) --use-images --ldflags)
+ 
+-CXXFLAGS=$(OPTIMISE) -Wall -D$(OS) -Ilua_src -Iglbsp_src -Iajpoly_src -Iphysfs_src $(FLTK_FLAGS)
++CXXFLAGS=$(OPTIMISE) -Wall -D$(OS) -Ilua_src -Iajpoly_src $(FLTK_FLAGS)
+ LDFLAGS=-L/usr/X11R6/lib
+-LIBS=-lm -lz $(FLTK_LIBS)
++LIBS=-lm -lz -lglbsp -lphysfs $(FLTK_LIBS)
+ 
+ 
+ #----- OBLIGE Objects ----------------------------------------------
+@@ -174,7 +174,7 @@ AJPOLY_OBJS= \
+ 	$(OBJ_DIR)/ajpoly/pl_util.o  \
+ 	$(OBJ_DIR)/ajpoly/pl_wad.o
+ 
+-AJPOLY_CXXFLAGS=$(OPTIMISE) -Wall -Iphysfs_src
++AJPOLY_CXXFLAGS=$(OPTIMISE) -Wall -I$(LOCALBASE)/include
+ 
+ $(OBJ_DIR)/ajpoly/%.o: ajpoly_src/%.cc
+ 	$(CXX) $(AJPOLY_CXXFLAGS) -o $@ -c $<
+@@ -212,7 +212,7 @@ all: $(PROGRAM)
+ 
+ all: $(PROGRAM)
+ 
+-$(PROGRAM): $(OBJS) $(LUA_OBJS) $(GLBSP_OBJS) $(AJPOLY_OBJS) $(PHYSFS_OBJS)
++$(PROGRAM): $(OBJS) $(LUA_OBJS) $(AJPOLY_OBJS)
+ 	$(CXX) -Wl,--warn-common $^ -o $@ $(LDFLAGS) $(LIBS)
+ 
+ clean:

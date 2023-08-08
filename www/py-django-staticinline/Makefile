@@ -1,7 +1,7 @@
 PORTNAME=	django-staticinline
 PORTVERSION=	1.3.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/bartTC/django-staticinline
 LICENSE=	MIT
 #LICENSE_FILE=  Not yet packaged in sdist
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

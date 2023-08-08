@@ -1,5 +1,5 @@
 PORTNAME=	gssapi
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-ffi>=1.0.1:devel/rubygem-ffi
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

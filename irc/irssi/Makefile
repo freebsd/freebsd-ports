@@ -1,11 +1,9 @@
 PORTNAME=	irssi
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.4
 PORTEPOCH=	2
 CATEGORIES?=	irc
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	7baefc3315e9dc11c8a3a787a3b6c6888c2b590a.patch:-p1
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
+		https://codeberg.org/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	dor.bsd@xm0.uk
 COMMENT=	Modular IRC client with many features
@@ -22,14 +20,13 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Dinstall-glib=no -Ddisable-gregex=no -Dstatic-dependency=no \
 		-Dwith-fuzzer=no -Dwithout-textui=no
 
-OPTIONS_DEFINE=		BOT CAPSICUM DOCS OTR PERL PROXY TRUECOLOR UTF8PROC
-OPTIONS_DEFAULT=	BOT CAPSICUM PERL PROXY TRUECOLOR
+OPTIONS_DEFINE=		BOT CAPSICUM DOCS OTR PERL PROXY UTF8PROC
+OPTIONS_DEFAULT=	BOT CAPSICUM PERL PROXY
 OPTIONS_SUB=		yes
 
 BOT_DESC=		Bot support
 CAPSICUM_DESC=		Capsicum support
 OTR_DESC=		OTR (off-the-record) support
-TRUECOLOR_DESC=		True color support
 UTF8PROC_DESC=		utf8proc support
 
 BOT_MESON_YES=		with-bot
@@ -39,7 +36,6 @@ OTR_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 OTR_MESON_YES=		with-otr
 PERL_MESON_YES=		with-perl
 PROXY_MESON_YES=	with-proxy
-TRUECOLOR_MESON_YES=	enable-true-color
 UTF8PROC_LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc
 UTF8PROC_MESON_NO=	disable-utf8proc
 

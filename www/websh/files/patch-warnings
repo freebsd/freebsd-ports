@@ -121,3 +121,92 @@ Submitted to vendor:
 +    registerLogPlugIn(interp, "syslog", logtosyslog);
  #endif
      /* --------------------------------------------------------------------------
+Versions 15+ of clang reject K&R-style function-definitions...
+--- ../generic/tclAppInit.c	2009-07-14 15:11:04.000000000 -0400
++++ ../generic/tclAppInit.c	2023-02-12 18:07:45.705753000 -0500
+@@ -54,7 +54,5 @@
+  */
+ 
+-int main(argc, argv)
+-     int argc;			/* Number of command-line arguments. */
+-     char **argv;		/* Values of command-line arguments. */
++int main(int argc, char **argv)
+ {
+     /*
+--- ../generic/htmlify.c	2009-09-14 11:11:40.000000000 -0400
++++ ../generic/htmlify.c	2023-02-12 18:14:07.883307000 -0500
+@@ -128,5 +128,5 @@
+ /* <!> */
+ /* <-- */
+-#define HANDLE_TAG(unic,length,out,pos,err) { \
++#define HANDLE_TAG(unic,length,out,pos) { \
+   int open = 1;  /* number of open '<' */ \
+   int begin = pos; \
+@@ -162,5 +162,5 @@
+ }
+ 
+-#define HANDLE_ENTITY(convData, unic, length, out, pos, err) { \
++#define HANDLE_ENTITY(convData, unic, length, out, pos) { \
+   int begin = pos; \
+   int end = ++pos; \
+@@ -202,12 +202,12 @@
+     if (unic[first] == '#') { \
+       /* a number */ \
+-      HANDLE_UNICODE_ENTITY(unic, length, out, begin, first, end, err); \
++      HANDLE_UNICODE_ENTITY(unic, length, out, begin, first, end); \
+     } else { \
+-      HANDLE_KEY_ENTITY(convData, unic, length, out, begin, first, end, err); \
++      HANDLE_KEY_ENTITY(convData, unic, length, out, begin, first, end); \
+     } \
+   } \
+ }
+ 
+-#define HANDLE_UNICODE_ENTITY(unic, length, out, begin, first, end, err) { \
++#define HANDLE_UNICODE_ENTITY(unic, length, out, begin, first, end) { \
+   int tInt = 0; \
+   Tcl_UniChar tmp = 0; \
+@@ -220,5 +220,4 @@
+     /* no valid number, we write the string instead */ \
+     Tcl_AppendUnicodeToObj(out,&(unic[begin]),end-begin); \
+-    err++; \
+   } else { \
+     /* check if within range of Tcl_UniChar */ \
+@@ -228,5 +227,4 @@
+       if (end < length && unic[end] == ';') /* don't forget this one! */ \
+ 	Tcl_AppendUnicodeToObj(out,&(unic[end]),1); \
+-      err++; \
+     } else { \
+       tmp = (Tcl_UniChar)tInt; \
+@@ -237,5 +235,5 @@
+ }
+ 
+-#define HANDLE_KEY_ENTITY(convData, unic, length, out, begin, first, end, err) { \
++#define HANDLE_KEY_ENTITY(convData, unic, length, out, begin, first, end) { \
+   /* use lookup table */ \
+   Tcl_Obj* iObj = NULL; \
+@@ -261,5 +259,4 @@
+     if (end < length && unic[end] == ';') /* don't forget this one! */ \
+       Tcl_AppendUnicodeToObj(out,&(unic[end]),1); \
+-    err++; \
+   }	 \
+ }
+@@ -276,5 +273,4 @@
+     int plainfirst = 0;
+     int plainend = 0;
+-    int err = 0;		/* temporary use, may be removed */
+ 
+     if (in == NULL || out == NULL) {
+@@ -308,5 +304,5 @@
+ 	     * we're in a tag, thus we skip everything 
+ 	     * --------------------------------------------------------------------*/
+-	    HANDLE_TAG(unic, length, out, pos, err);
++	    HANDLE_TAG(unic, length, out, pos);
+ 	    plainfirst = pos + 1;
+ 
+@@ -331,5 +327,5 @@
+ 	     * it's an entity
+ 	     */
+-	    HANDLE_ENTITY(convData, unic, length, out, pos, err);
++	    HANDLE_ENTITY(convData, unic, length, out, pos);
+ 	    plainfirst = pos + 1;
+ 	}

@@ -2,7 +2,7 @@ PORTNAME=	pathtools
 PORTVERSION=	0.1.2
 PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/gorakhargosh/pathtools
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 OPTIONS_DEFINE=	DOCS

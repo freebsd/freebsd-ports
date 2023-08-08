@@ -1,29 +1,29 @@
---- src/3rdparty/chromium/media/audio/audio_manager.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/media/audio/audio_manager.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/media/audio/audio_manager.cc
-@@ -94,7 +94,7 @@ class AudioManagerHelper : public base::PowerObserver 
+@@ -48,7 +48,7 @@ class AudioManagerHelper {
    }
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    void set_app_name(const std::string& app_name) { app_name_ = app_name; }
    const std::string& app_name() const { return app_name_; }
  #endif
-@@ -229,7 +229,7 @@ class AudioManagerHelper : public base::PowerObserver 
+@@ -59,7 +59,7 @@ class AudioManagerHelper {
    std::unique_ptr<base::win::ScopedCOMInitializer> com_initializer_for_testing_;
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    std::string app_name_;
  #endif
  
-@@ -313,7 +313,7 @@ void AudioManager::StartHangMonitorIfNeeded(
-   GetHelper()->StartHangTimer(std::move(task_runner));
+@@ -130,7 +130,7 @@ std::unique_ptr<AudioManager> AudioManager::CreateForT
+   return Create(std::move(audio_thread), GetHelper()->fake_log_factory());
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  // static
  void AudioManager::SetGlobalAppName(const std::string& app_name) {
    GetHelper()->set_app_name(app_name);

@@ -11,8 +11,10 @@ WWW=		http://viewklass.sourceforge.net/
 
 LICENSE=	LGPL20+
 
-GNU_CONFIGURE=	yes
 USES=		imake:env motif
+USE_CXXSTD=	c++14
+
+GNU_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \

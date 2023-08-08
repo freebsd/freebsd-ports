@@ -1,0 +1,6 @@
+nqptp is a daemon that monitors timing data from any PTP clocks - up to
+64 - it sees on ports 319 and 320. It maintains records for each clock,
+identified by Clock ID and IP.
+
+It is a companion application to Shairport Sync and provides timing
+information for AirPlay 2 operation.

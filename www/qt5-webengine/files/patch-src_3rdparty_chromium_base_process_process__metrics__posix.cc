@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/base/process/process_metrics_posix.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/base/process/process_metrics_posix.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics_posix.cc
-@@ -19,6 +19,8 @@
+@@ -20,6 +20,8 @@
  
- #if defined(OS_MACOSX)
+ #if defined(OS_APPLE)
  #include <malloc/malloc.h>
 +#elif defined(OS_FREEBSD)
 +#include <stdlib.h>
  #else
  #include <malloc.h>
  #endif
-@@ -107,7 +109,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -126,7 +128,7 @@ size_t ProcessMetrics::GetMallocUsage() {
  #else
    return minfo.hblkhd + minfo.arena;
  #endif

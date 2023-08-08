@@ -7,7 +7,7 @@ include/libgcab-1.0/libgcab/gcab-folder.h
 lib/girepository-1.0/GCab-1.0.typelib
 lib/libgcab-1.0.so
 lib/libgcab-1.0.so.0
-lib/libgcab-1.0.so.0.1.0
+lib/libgcab-1.0.so.0.2.0
 libdata/pkgconfig/libgcab-1.0.pc
 man/man1/gcab.1.gz
 share/gir-1.0/GCab-1.0.gir
@@ -23,8 +23,11 @@ share/locale/fi/LC_MESSAGES/gcab.mo
 share/locale/fr/LC_MESSAGES/gcab.mo
 share/locale/fur/LC_MESSAGES/gcab.mo
 share/locale/gl/LC_MESSAGES/gcab.mo
+share/locale/hr/LC_MESSAGES/gcab.mo
 share/locale/hu/LC_MESSAGES/gcab.mo
 share/locale/id/LC_MESSAGES/gcab.mo
+share/locale/ja/LC_MESSAGES/gcab.mo
+share/locale/ka/LC_MESSAGES/gcab.mo
 share/locale/lt/LC_MESSAGES/gcab.mo
 share/locale/lv/LC_MESSAGES/gcab.mo
 share/locale/nb/LC_MESSAGES/gcab.mo
@@ -41,6 +44,7 @@ share/locale/sr@latin/LC_MESSAGES/gcab.mo
 share/locale/sv/LC_MESSAGES/gcab.mo
 share/locale/tg/LC_MESSAGES/gcab.mo
 share/locale/tr/LC_MESSAGES/gcab.mo
+share/locale/uk/LC_MESSAGES/gcab.mo
 share/locale/zh_CN/LC_MESSAGES/gcab.mo
 share/vala/vapi/libgcab-1.0.deps
 share/vala/vapi/libgcab-1.0.vapi

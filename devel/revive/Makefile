@@ -1,6 +1,6 @@
 PORTNAME=	revive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.3.2
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -13,15 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	556d485
-_BUILD_DATE=	$$(date +%Y-%m-%d)
+_BUILD_COMMIT=	81d85b5
 
 GO_MODULE=	github.com/mgechev/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
 		-X ${GO_MODULE}/cli.version=${_BUILD_VERSION} \
-		-X ${GO_MODULE}/cli.commit=${_BUILD_COMMIT} \
-		-X ${GO_MODULE}/cli.date=${_BUILD_DATE}"
+		-X ${GO_MODULE}/cli.commit=${_BUILD_COMMIT}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CODE_OF_CONDUCT.md CONTRIBUTING.md DEVELOPING.md \

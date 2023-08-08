@@ -1,7 +1,7 @@
 PORTNAME=	csv23
 PORTVERSION=	0.3.4
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/xflr6/csv23
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		dos2unix python:3.7+ zip
+USES=		dos2unix python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

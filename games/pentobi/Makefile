@@ -1,43 +1,40 @@
 PORTNAME=	pentobi
-PORTVERSION=	20.0
+PORTVERSION=	23.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Computer opponent for the board game Blokus
-WWW=		https://pentobi.sourceforge.io/
+WWW=		https://pentobi.sourceforge.io/ \
+		https://github.com/enz/pentobi
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+BROKEN_FreeBSD_12=	does not build: no member named 'test' in 'std::__1::atomic_flag'
 
 BUILD_DEPENDS=	itstool:textproc/itstool \
 		xsltproc:textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
 
-USES=		compiler:c++14-lang cmake desktop-file-utils gettext-tools gnome qt:5 \
+USES=		compiler:c++20-lang cmake desktop-file-utils gettext-tools gnome qt:6 \
 		shared-mime-info tar:xz
 USE_GNOME=	librsvg2:build
-USE_QT=		core gui concurrent quickcontrols2 declarative network \
-		qmake:build buildtools:build linguisttools:build
-CMAKE_ARGS=	-DDOCBOOK_XSL=${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl
+USE_QT=		base declarative tools:build
 
 PORTDATA=	*
+PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS TEST GNOME KDE
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFAULT=TEST
 
-TEST_CMAKE_BOOL=	PENTOBI_BUILD_TESTS
+TEST_CMAKE_BOOL=	BUILD_TESTING
 TEST_TEST_TARGET=	test
-GNOME_DESC=		Build Gnome thumbnailer
-GNOME_CMAKE_BOOL=	PENTOBI_BUILD_THUMBNAILER
-KDE_CMAKE_BOOL=		PENTOBI_BUILD_KDE_THUMBNAILER
-KDE_USES=		kde:5
-KDE_USE=		KDE=kio
-KDE_DESC=		Build KDE thumbnailer
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS.md HACKING.md NEWS.md \
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS.md CONTRIBUTING.md NEWS.md \
 		README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

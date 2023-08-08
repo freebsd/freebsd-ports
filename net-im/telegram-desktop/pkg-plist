@@ -1,5 +1,5 @@
 bin/telegram-desktop
-share/applications/telegramdesktop.desktop
+share/applications/org.telegram.desktop.desktop
 share/icons/hicolor/128x128/apps/telegram.png
 share/icons/hicolor/16x16/apps/telegram.png
 share/icons/hicolor/256x256/apps/telegram.png
@@ -7,4 +7,4 @@ share/icons/hicolor/32x32/apps/telegram.png
 share/icons/hicolor/48x48/apps/telegram.png
 share/icons/hicolor/512x512/apps/telegram.png
 share/icons/hicolor/64x64/apps/telegram.png
-share/metainfo/telegramdesktop.metainfo.xml
+share/metainfo/org.telegram.desktop.metainfo.xml

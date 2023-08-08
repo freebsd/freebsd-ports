@@ -1,7 +1,7 @@
 PORTNAME=	phonebox-plugin
-DISTVERSION=	0.0.4b1
+DISTVERSION=	0.0.6b1
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	phonebox_plugin-${DISTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/iDebugAll/phonebox_plugin
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

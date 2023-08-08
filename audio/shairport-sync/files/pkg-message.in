@@ -1,0 +1,11 @@
+[   
+{ type: install
+  message: <<EOM
+
+Shairport sync is using AirPlay 2. Please make sure you enable and start nqptp.
+
+    # sysrc nqptp_enable=YES
+    # service nqptp start
+EOM
+}
+]

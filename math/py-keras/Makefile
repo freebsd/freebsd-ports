@@ -1,5 +1,6 @@
 PORTNAME=	keras
 DISTVERSION=	2.9.0
+PORTREVISION=	1
 CATEGORIES=	math # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,10 +25,10 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tensorflow>=2.9.0:science/py-tensorflow@${PY_FLAVOR} \
-		bazel:devel/bazel \
+		bazel:devel/bazel5 \
 		bash:shells/bash
 
-USES=		python:3.7+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keras-team

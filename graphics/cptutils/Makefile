@@ -1,6 +1,5 @@
 PORTNAME=	cptutils
-PORTVERSION=	1.74
-PORTREVISION=	2
+PORTVERSION=	1.76
 CATEGORIES=	graphics
 MASTER_SITES=	http://soliton.vm.bytemark.co.uk/pub/jjg/src/
 
@@ -17,13 +16,13 @@ BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png
 
-USES=		autoreconf bison gmake gnome iconv localbase python:3.7+ shebangfix
+USES=		autoreconf bison gmake gnome iconv localbase python shebangfix
 SHEBANG_FILES=	src/gradient-convert/gradient-convert.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 USE_GNOME=	libxml2 libxslt
 
-PORTDOCS=	CHANGELOG CREDITS README.md
+PORTDOCS=	CHANGELOG.md CREDITS.md README.md
 
 OPTIONS_DEFINE=		DOCS TEST
 
@@ -31,7 +30,7 @@ TEST_CONFIGURE_ENABLE=	tests
 TEST_BUILD_DEPENDS=	bash:shells/bash \
 			xml:textproc/xmlstarlet
 TEST_LIB_DEPENDS=	libcunit.so:devel/cunit
-TEST_TEST_TARGET=	test unit
+TEST_TEST_TARGET=	test
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -19,4 +19,3 @@ HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
-

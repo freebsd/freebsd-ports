@@ -1,10 +1,9 @@
 PORTNAME=	ntp
-PORTVERSION=	4.2.8p15
-PORTREVISION=	5
+PORTVERSION=	4.2.8p17
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
-		http://archive.ntp.org/ntp4/ntp-4.2/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
+		http://archive.ntp.org/ntp4/ntp-4.2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -13,7 +12,7 @@ WWW=		https://www.ntp.org/
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-CONFLICTS=	ntp-devel ntpsec openntpd
+CONFLICTS=	ntpsec openntpd
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig

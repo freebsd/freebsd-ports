@@ -6,7 +6,7 @@ so try authenticating via setuid helper first.
 
 --- pam/swaylock.orig	2019-01-29 19:48:00 UTC
 +++ pam/swaylock
-@@ -1,6 +1,7 @@
+@@ -1,6 +1,6 @@
  #
 -# PAM configuration file for the swaylock screen locker. By default, it includes
 -# the 'login' configuration file (see /etc/pam.d/login)
@@ -15,5 +15,4 @@ so try authenticating via setuid helper first.
  #
  
 -auth include login
-+auth sufficient pam_exec.so return_prog_exit_status expose_authtok /usr/local/libexec/unix-selfauth-helper
-+auth include system
++auth include unix-selfauth

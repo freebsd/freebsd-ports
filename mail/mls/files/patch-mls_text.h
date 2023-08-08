@@ -1,6 +1,6 @@
---- mls_text.h.orig	2007-08-26 03:29:23.000000000 +0800
-+++ mls_text.h	2007-08-26 03:30:12.000000000 +0800
-@@ -30,7 +30,7 @@
+--- mls_text.h.orig	2003-02-15 10:16:07 UTC
++++ mls_text.h
+@@ -30,7 +30,7 @@ void PrintTop(nTptr, int);
  void PrintTopQ(nTptr, int);
  void PrintTopHtml(nTptr, int);
  void PrintGraph(long[], int, int);

@@ -1,7 +1,7 @@
 PORTNAME=	ffsend
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.74
-PORTREVISION=	9
+PORTREVISION=	18
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,10 +22,10 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		xclip:x11/xclip \
 		xsel:x11/xsel-conrad
 
-USES=		cargo localbase:ldflags python:build,3.5+ ssl xorg
+USES=		cargo localbase:ldflags python:build ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
-GL_COMMIT=	ccd489ce2e75b91c0f17fbf13dbd91fe84f5ad98
+GL_TAGNAME=	ccd489ce2e75b91c0f17fbf13dbd91fe84f5ad98
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.16.0 \

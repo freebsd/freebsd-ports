@@ -1,10 +1,10 @@
-PORTREVISION=	0
-
+PORTREVISION=	1
 DB=		IBase
 DB_DESC=	InterBase/Firebird
 
 USES=		firebird
 
-ONLY_FOR_ARCHS=	i386 amd64
+BROKEN=		does not build with Firebird 3 or later
+ONLY_FOR_ARCHS=	amd64 i386
 
 .include "${.CURDIR:H:H}/devel/qt5/Makefile.sqldrivers"

@@ -1,6 +1,6 @@
---- spf_engine/milter_spf.py.orig	2022-09-05 15:47:42 UTC
+--- spf_engine/milter_spf.py.orig	2023-01-11 14:35:12 UTC
 +++ spf_engine/milter_spf.py
-@@ -207,7 +207,7 @@ class spfMilter(Milter.Base):
+@@ -211,7 +211,7 @@ class spfMilter(Milter.Base):
  def main():
      # Ugh, but there's no easy way around this.
      global milterconfig

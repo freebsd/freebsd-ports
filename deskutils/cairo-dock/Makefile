@@ -1,6 +1,6 @@
 PORTNAME=	cairo-dock
 PORTVERSION=	3.4.1
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	deskutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -44,6 +44,7 @@ EGL_USE=		GL=egl
 GLX_USE=		GL=gl
 GLX_IMPLIES=		X11
 
+WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_USE=		GL=egl
 WAYLAND_CMAKE_BOOL=	enable-wayland-support

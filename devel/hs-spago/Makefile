@@ -17,6 +17,7 @@ WWW=		https://github.com/spacchetti/spago
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
 USES=		cabal

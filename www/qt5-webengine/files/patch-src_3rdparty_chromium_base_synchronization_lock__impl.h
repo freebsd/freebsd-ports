@@ -1,12 +1,15 @@
---- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/synchronization/lock_impl.h
-@@ -67,10 +67,13 @@ void LockImpl::Unlock() {
-   ::ReleaseSRWLockExclusive(reinterpret_cast<PSRWLOCK>(&native_handle_));
+@@ -105,6 +105,8 @@ void LockImpl::Unlock() {
  }
+ 
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
 +#pragma GCC diagnostic push
 +#pragma GCC diagnostic ignored "-Wthread-safety-analysis"
- void LockImpl::Unlock() {
+ 
+ bool LockImpl::Try() {
+   int rv = pthread_mutex_trylock(&native_handle_);
+@@ -116,6 +118,7 @@ void LockImpl::Unlock() {
    int rv = pthread_mutex_unlock(&native_handle_);
    DCHECK_EQ(rv, 0) << ". " << strerror(rv);
  }

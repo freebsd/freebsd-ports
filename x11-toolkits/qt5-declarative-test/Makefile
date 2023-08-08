@@ -1,6 +1,5 @@
 PORTNAME=	declarative-test
 PORTVERSION=	${QT5_VERSION}${QT5_KDE_PATCH}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt5-
 
@@ -8,9 +7,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interface (testing)
 WWW=		https://qt-project.org
 
-USES=		compiler:c++11-lang gl python:build qmake:norecursive \
+USES=		compiler:c++11-lang gl perl5 python:build qmake:norecursive \
 		qt-dist:5,declarative
 USE_GL=		gl
+USE_PERL5=	build
 USE_QT=		core declarative gui network sql testlib widgets \
 		buildtools:build
 

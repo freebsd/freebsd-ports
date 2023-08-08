@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-strings>=0.2.0<0.3:devel/rubygem-strings \
 		rubygem-tty-screen>=0.8<1:devel/rubygem-tty-screen
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

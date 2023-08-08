@@ -1,5 +1,5 @@
 PORTNAME=	pg_repack
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 DISTVERSIONPREFIX=	ver_
 CATEGORIES=	databases
 PKGNAMEPREFIX=	postgresql${PGSQL_VER:S/.//}-
@@ -10,7 +10,7 @@ WWW=		https://github.com/reorg/pg_repack
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gettext-runtime gmake pgsql:9.4+
+USES=		gettext-runtime gmake pgsql:11+
 LLD_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	reorg

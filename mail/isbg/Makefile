@@ -11,11 +11,11 @@ LICENSE=	BSD2CLAUSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.1:devel/py-docopt@${PY_FLAVOR} \
 		spamassassin:mail/spamassassin
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	isbg
-GL_COMMIT=	e626d8d0628f691c041032c53f20d764b11d0079
+GL_TAGNAME=	e626d8d0628f691c041032c53f20d764b11d0079
 
 NO_ARCH=	yes
 NO_BUILD=	yes

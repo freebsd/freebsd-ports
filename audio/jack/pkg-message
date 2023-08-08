@@ -24,3 +24,6 @@ jackd_args="-R -doss -r48000 -p1024 -n1 -w16 \
             --capture /dev/dsp0 --playback /dev/dsp0"
 
 Official JACK example clients and tools are available as jack-example-tools.
+
+JACK 1.9.22 introduces a latency correction fix.
+Latency correction parameters have to be measured again after an update.

@@ -1,10 +1,9 @@
 PORTNAME=	git-codereview
-PORTVERSION=	1.0.3
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line tool for working with Gerrit
 WWW=		https://godoc.org/golang.org/x/review/git-codereview
 

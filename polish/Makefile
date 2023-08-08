@@ -5,7 +5,6 @@
     SUBDIR += gnugadu2
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += kadu
     SUBDIR += libgadu
     SUBDIR += libreoffice
     SUBDIR += libtlen

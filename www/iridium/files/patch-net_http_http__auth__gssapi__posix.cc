@@ -1,4 +1,4 @@
---- net/http/http_auth_gssapi_posix.cc.orig	2022-03-28 18:11:04 UTC
+--- net/http/http_auth_gssapi_posix.cc.orig	2023-07-24 14:27:53 UTC
 +++ net/http/http_auth_gssapi_posix.cc
 @@ -370,8 +370,9 @@ base::NativeLibrary GSSAPISharedLibrary::LoadSharedLib
      static const char* const kDefaultLibraryNames[] = {

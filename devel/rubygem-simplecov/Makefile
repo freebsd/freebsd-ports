@@ -1,5 +1,5 @@
 PORTNAME=	simplecov
-PORTVERSION=	0.21.2
+PORTVERSION=	0.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-docile>=1.1<2:devel/rubygem-docile \
 		rubygem-simplecov_json_formatter>=0.1<1:devel/rubygem-simplecov_json_formatter
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	rubygem-dbi>=0:databases/rubygem-dbi \
 		rubygem-mysql>=0:databases/rubygem-mysql
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

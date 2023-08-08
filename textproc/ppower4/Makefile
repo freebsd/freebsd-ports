@@ -2,7 +2,7 @@ PORTNAME=	ppower4
 PORTVERSION=	0.9.4
 PORTREVISION=	8
 CATEGORIES=	textproc java
-MASTER_SITES=	TEX_CTAN/support/${PORTNAME}
+MASTER_SITES=	TEX/support/${PORTNAME}
 DISTFILES=	pp4sty.zip pp4p.jar manual.pdf leveldemo.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	pp4sty.zip leveldemo.zip
@@ -13,12 +13,16 @@ WWW=		https://ctan.org/tex-archive/support/ppower4/
 
 LICENSE=	GPLv2 # version not really specified
 
-USES=		zip
-USE_TEX=	latex
+USES=		tex zip
 USE_JAVA=	yes
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+USE_TEX=	latex
+
 NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	ppower4.sh
+SUB_LIST=	JARFILE=${JAR_DIR}/pp4p.jar
+
+NO_WRKSUBDIR=	yes
 
 JAR_DIR=	${JAVASHAREDIR}/${PORTNAME}
 STY_DIR=	${PREFIX}/share/texmf/tex/latex/${PORTNAME}
@@ -30,9 +34,6 @@ EXAMPLE_FILES+=	${WRKSRC}/example.${i}
 .endfor
 PLIST_SUB=	STY_DIR="${STY_DIR:S,^${PREFIX}/,,}" \
 		JAR_DIR="${JAR_DIR:S,^${PREFIX}/,,}"
-
-SUB_FILES=	ppower4.sh
-SUB_LIST=	JARFILE=${JAR_DIR}/pp4p.jar
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes

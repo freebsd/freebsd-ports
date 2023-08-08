@@ -1,6 +1,6 @@
 PORTNAME=	hexchat
 DISTVERSION=	2.16.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc gnome
 MASTER_SITES=	https://dl.hexchat.net/hexchat/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libproxy.so:net/libproxy \
 RUN_DEPENDS=	${LOCALBASE}/share/xml/iso-codes/iso_639.xml:misc/iso-codes
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gettext-tools gnome \
-		libtool localbase meson ninja pkgconfig python:3.5+ shebangfix \
+		libtool localbase meson ninja pkgconfig python shebangfix \
 		ssl tar:xz xorg
 CPE_VENDOR=	${PORTNAME}_project
 SHEBANG_FILES=	meson_post_install.py \
@@ -29,8 +29,6 @@ SHEBANG_FILES=	meson_post_install.py \
 		src/common/make-te.py
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
 USE_XORG=	x11
-
-INSTALLS_ICONS=yes
 
 MESON_ARGS=	-Dtls=enabled -Dgtk-frontend=true -Dwith-python=python-${PYTHON_VER}
 

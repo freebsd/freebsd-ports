@@ -7,7 +7,8 @@ MASTER_SITES=	https://downloads.xiph.org/releases/libshout/ \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connect and transmit data to an Icecast media streaming server
-WWW=		https://gitlab.xiph.org/xiph/icecast-libshout
+WWW=		https://icecast.org/ \
+		https://gitlab.xiph.org/xiph/icecast-libshout
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

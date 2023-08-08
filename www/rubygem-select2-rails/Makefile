@@ -10,7 +10,6 @@ WWW=		https://github.com/argerim/select2-rails
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

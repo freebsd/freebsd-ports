@@ -23,10 +23,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tokyocabinet.so:databases/ruby-tokyocabinet 
 		rubygem-oauth21>=0:net/rubygem-oauth21
 LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 
-USES=		cpe
+USES=		cpe ruby:setup
 
-USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 NO_ARCH=	yes
 

@@ -1,13 +1,14 @@
 PORTNAME=	pandana
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for network analysis
-WWW=		https://udst.github.io/pandana/
+WWW=		https://udst.github.io/pandana/ \
+		https://github.com/UDST/pandana
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -24,10 +25,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.8,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.18:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.1<3.8:devel/py-tables@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent cython distutils
-
-CFLAGS+=	-DNO_TR1_MEMORY
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

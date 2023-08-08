@@ -1,5 +1,6 @@
 PORTNAME=	gnome-pomodoro
-PORTVERSION=	0.21.1
+PORTVERSION=	0.22.1
+PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,8 +15,8 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libgom-1.0.so:databases/gom \
 		libpeas-1.0.so:devel/libpeas
 
-USES=		desktop-file-utils gettext-tools gmake gnome gstreamer libtool meson \
-		pkgconfig sqlite vala:build
+USES=		gettext-tools gmake gnome gstreamer libtool meson pkgconfig \
+		sqlite vala:build
 
 USE_GITHUB=	yes
 

@@ -1,7 +1,7 @@
 PORTNAME=	ptyprocess
 PORTVERSION=	0.7.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	robak@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/pexpect/ptyprocess
 
 LICENSE=	ISCL
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

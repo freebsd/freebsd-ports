@@ -14,3 +14,8 @@ efficient implementations of the following lattice cryptography capabilities:
 * Digital Signature
 * Identity-Based Encryption
 * Ciphertext-Policy Attribute-Based Encryption
+
+PALISADE is in the maintenance-only mode, and no new features will be added.
+Please use security/openfhe for new development.
+Existing projects should consider switching to security/openfhe.
+PALISADE will be deprecated in the future in favor of security/openfhe.

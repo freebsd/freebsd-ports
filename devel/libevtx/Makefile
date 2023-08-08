@@ -1,5 +1,5 @@
 PORTNAME=	libevtx
-DISTVERSION=	alpha-20210525
+DISTVERSION=	alpha-20221101
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libevtx/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--with-libfwnt=${LOCALBASE} --with-libregf=${LOCALBASE}
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		libtool pathfix python:3.5+
+USES=		libtool pathfix python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}

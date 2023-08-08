@@ -1,0 +1,5 @@
+This is a "meta-port" to install the extensions for PHP 8.0
+
+Defaults to:
+ctype, dom, filter, iconv, json, opcache, pdo, pdo_sqlite, phar, posix,
+session, simplexml, sqlite3, tokenizer, xml, xmlreader and xmlwriter.

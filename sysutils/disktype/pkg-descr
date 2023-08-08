@@ -1,2 +1,0 @@
-Disktype detects the content format of a disk, device, or disk image.
-It knows about common file systems, partition tables, and boot codes.

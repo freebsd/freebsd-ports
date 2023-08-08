@@ -1,6 +1,6 @@
 PORTNAME=	libnatpmp
 PORTVERSION=	20220122
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -27,7 +27,8 @@ PLIST_FILES=	bin/natpmpc \
 		include/natpmp_declspec.h \
 		lib/libnatpmp.a \
 		lib/libnatpmp.so \
-		lib/libnatpmp.so.1
+		lib/libnatpmp.so.1 \
+		libdata/pkgconfig/natpmp.pc
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/natpmpc \

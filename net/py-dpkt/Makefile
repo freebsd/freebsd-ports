@@ -1,7 +1,7 @@
 PORTNAME=	dpkt
 PORTVERSION=	1.9.6
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sbz@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/kbandla/dpkt
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 
 OPTIONS_DEFINE=	DOCS

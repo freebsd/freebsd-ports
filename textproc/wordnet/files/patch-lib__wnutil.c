@@ -8,11 +8,12 @@
 +#include <stdint.h>
  #endif
  #endif
-@@ -25,5 +25,5 @@
+@@ -25,5 +25,6 @@
  #include "wn.h"
  
 -static int do_init();
 +static int do_init(void);
++static const char *SetSearchdir(void);
  
  static char msgbuf[256];	/* buffer for constructing error messages */
 @@ -37,5 +37,5 @@
@@ -265,7 +266,7 @@
  
 -char *SetSearchdir()
 +const char *
-+SetSearchdir()
++SetSearchdir(void)
  {
 -    static char searchdir[256];
 -    char *env;

@@ -1,8 +1,0 @@
-bin/axel
-etc/axelrc
-man/man1/axel.1.gz
-man/zh_CN/man1/axel.1.gz
-%%NLS%%share/locale/de/LC_MESSAGES/axel.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/axel.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/axel.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/axel.mo

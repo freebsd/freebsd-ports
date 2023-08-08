@@ -1,6 +1,6 @@
 PORTNAME=	libva-intel-driver
 DISTVERSION=	2.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GH_PROJECT=	intel-vaapi-driver
-PLIST_FILES=	lib/dri/i915_drv_video.so lib/dri/i965_drv_video.so
+PLIST_FILES=	lib/dri/i965_drv_video.so
 
 OPTIONS_DEFINE=	HYBRID WAYLAND X11
 OPTIONS_DEFAULT=HYBRID WAYLAND X11
@@ -35,8 +35,5 @@ WAYLAND_MESON_YES=	with_wayland
 
 X11_LIB_DEPENDS=	libva-x11.so:multimedia/libva
 X11_MESON_YES=		with_x11
-
-post-install:
-	${LN} -sf i965_drv_video.so ${STAGEDIR}${PREFIX}/lib/dri/i915_drv_video.so
 
 .include <bsd.port.mk>

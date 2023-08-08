@@ -1,8 +1,8 @@
---- setup/build.py.orig	2020-12-12 08:56:45 UTC
+--- setup/build.py.orig	2023-02-03 02:11:49 UTC
 +++ setup/build.py
-@@ -495,6 +495,7 @@ exceptions = {needs_exceptions}
+@@ -682,6 +682,7 @@ sip-file = "{os.path.basename(sipf)}"
  include-dirs = {ext.inc_dirs}
- qmake-QT = ["widgets"]
+ qmake-QT = {ext.qt_modules}
  sip-file = "{os.path.basename(sipf)}"
 +tags = ["WS_X11"]
  ''')

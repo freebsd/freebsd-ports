@@ -1,7 +1,7 @@
 PORTNAME=	country
 DISTVERSION=	22.3.5
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pycountry-${DISTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/pycountry/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

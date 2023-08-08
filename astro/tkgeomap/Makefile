@@ -9,8 +9,9 @@ WWW=		https://web.archive.org/web/20130807000308/http://www.tkgeomap.org/
 
 LICENSE=	GPLv2
 
-BROKEN_armv6=	fails to configure: shared build specified but could not find shared tclgeomap library
-BROKEN_armv7=	fails to configure: shared build specified but could not find shared tclgeomap library
+BROKEN=		does not build
+DEPRECATED=	abandoned
+EXPIRATION_DATE=2023-08-31
 
 LIB_DEPENDS=	libtclgeomap.so:astro/tclgeomap
 

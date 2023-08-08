@@ -1,14 +1,14 @@
---- mlxfwupdate/cmd_line_params.cpp.orig	2019-11-16 07:49:07 UTC
+--- mlxfwupdate/cmd_line_params.cpp.orig	2022-12-16 14:59:44 UTC
 +++ mlxfwupdate/cmd_line_params.cpp
-@@ -97,9 +97,9 @@ CmdLineParams::CmdLineParams()
+@@ -92,9 +92,9 @@ CmdLineParams::CmdLineParams()
  
  #else
-     #ifdef MSTFLINT
+ #ifdef MSTFLINT
 -    certificate = (string)ROOT_PATH + "etc/mstflint/ca-bundle.crt";
 +    certificate = (string)ROOT_PATH + "/etc/ssl/cert.pem";
-     #else
+ #else
 -    certificate = (string)ROOT_PATH + "etc/mft/ca-bundle.crt";
 +    certificate = (string)ROOT_PATH + "/etc/ssl/cert.pem";
-     #endif
+ #endif
  #endif
  }

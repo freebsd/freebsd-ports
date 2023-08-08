@@ -1,3 +1,3 @@
-TIMESTAMP = 1649423836
-SHA256 (python3-saml-1.14.0.tar.gz) = e8d04f06549b30e29f9f1d6787faf67558c19f7ed2f3cc0656abb169c8240bc9
-SIZE (python3-saml-1.14.0.tar.gz) = 81842
+TIMESTAMP = 1674590002
+SHA256 (python3-saml-1.15.0.tar.gz) = 8c68b31739471faffb93dcdfe3bcab375b9d6a0459cab7fa9cb0d7d874ecf0b0
+SIZE (python3-saml-1.15.0.tar.gz) = 83271

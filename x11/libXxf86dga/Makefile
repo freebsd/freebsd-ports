@@ -1,5 +1,5 @@
 PORTNAME=	libXxf86dga
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,6 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xorg
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+EXTRACT_SUFX=	.tar.xz
 USES=		cpe xorg xorg-cat:lib
 USE_XORG=	x11 xext xorgproto
 CPE_VENDOR=	x

@@ -1,10 +1,10 @@
 PORTNAME=	pytest-virtualenv
 PORTVERSION=	1.7.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Virtualenv fixture for py.test
 WWW=		https://github.com/manahl/pytest-plugins/tree/master/pytest-virtualenv
 
@@ -17,9 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-fixture-config>0:devel/py-pytest-fixt
 		${PYTHON_PKGNAMEPREFIX}pytest>=4.4.0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR}
 
-USES=		python:3.6+
-
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs)

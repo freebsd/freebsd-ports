@@ -1,6 +1,6 @@
 PORTNAME=	bandwhich
 DISTVERSION=	0.20.0
-PORTREVISION=	18
+PORTREVISION=	27
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -40,6 +40,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		cassowary-0.3.0 \
 		cc-1.0.47 \
 		cfg-if-0.1.9 \
+		cfg-if-1.0.0 \
 		chrono-0.4.9 \
 		clap-2.33.0 \
 		clicolors-control-1.0.1 \
@@ -203,7 +204,7 @@ CARGO_CRATES=	adler-0.2.3 \
 		slab-0.4.2 \
 		smallvec-0.6.13 \
 		smallvec-1.0.0 \
-		socket2-0.3.11 \
+		socket2-0.3.19 \
 		strsim-0.8.0 \
 		structopt-0.2.18 \
 		structopt-0.3.4 \

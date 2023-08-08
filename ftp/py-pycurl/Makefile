@@ -1,12 +1,13 @@
 PORTNAME=	pycurl
-PORTVERSION=	7.45.1
+PORTVERSION=	7.45.2
 CATEGORIES=	ftp python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to libcurl
-WWW=		http://pycurl.io/
+WWW=		http://pycurl.io/ \
+		https://github.com/pycurl/pycurl
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
@@ -15,7 +16,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/COPYING-MIT
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		python:3.6+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTDOCS=	AUTHORS INSTALL.rst README.rst RELEASE-NOTES.rst

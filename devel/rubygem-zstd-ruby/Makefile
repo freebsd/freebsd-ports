@@ -10,6 +10,5 @@ WWW=		https://github.com/SpringMT/zstd-ruby
 LICENSE=	BSD3CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

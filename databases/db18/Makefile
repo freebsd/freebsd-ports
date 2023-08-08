@@ -38,7 +38,8 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/bin/${PORTNAME} \
 MAKE_ARGS+=	docdir=${DOCSDIR}
 INSTALL_TARGET=	install_include install_lib install_utilities
 
-CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC} -Wno-deprecated-non-prototype \
+		-Wno-incompatible-library-redeclaration -Wno-int-conversion
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
@@ -66,7 +67,7 @@ JAVA_CONFIGURE_ENV=	JAR="${JAR}" \
 			JAVAC="${JAVAC}"
 JAVA_CPPFLAGS=		-I"${JAVA_HOME}/include"
 JAVA_VARS=		DBLIBS+=libdb_java \
-			JAVA_VERSION="7+"
+			JAVA_VERSION="8+"
 L10N_CONFIGURE_ENABLE=	localization
 TCL_USES=		tcl
 TCL_CONFIGURE_ENABLE=	tcl

@@ -17,7 +17,7 @@ LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE
 
 PORTSCOUT=	limit:^5.4
 
-USES=		apache:2.2+
+USES=		apache
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-with-krb5=${GSSAPIBASEDIR} --without-krb4
 

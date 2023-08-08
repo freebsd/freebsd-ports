@@ -1,31 +1,22 @@
---- src/Makefile.orig	2018-04-10 19:44:08 UTC
+--- src/Makefile.orig	2022-12-18 11:15:37 UTC
 +++ src/Makefile
-@@ -101,7 +101,7 @@ endif
- 
- CONFIG = $(CONFIG_RO_GAME_DIR) $(CONFIG_RW_GAME_DIR) $(JOYSTICK)
- 
--DEBUG = -DDEBUG -g
-+DEBUG = 
- 
- # PROFILING = $(PROFILING_FLAGS)
- 
-@@ -119,8 +119,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
- OPTIONS = -O3 -Wall
+@@ -136,7 +136,7 @@ DEBUG = -DDEBUG -g
+ # OPTIONS = $(DEBUG) -Wall			# only for debugging purposes
+ # OPTIONS = $(DEBUG) -O2 -Wall			# only for debugging purposes
+ # OPTIONS = $(DEBUG) -Wall			# only for debugging purposes
+-OPTIONS = $(DEBUG) -Wall -Wstrict-prototypes -Wmissing-prototypes
++OPTIONS = -Wall -Wstrict-prototypes -Wmissing-prototypes
+ # OPTIONS = $(DEBUG) -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes
+ # OPTIONS = $(DEBUG) -Wall -ansi -pedantic	# only for debugging purposes
+ # OPTIONS = -O2 -Wall -ansi -pedantic
+@@ -153,8 +153,8 @@ SYS_LDFLAGS := $(shell echo $(SYS_LDFLAGS) |	\
+ OPTIONS = -O2 -Wall
  endif
  
--CFLAGS = $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
--LDFLAGS =           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
-+CFLAGS += $(OPTIONS) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
-+LDFLAGS +=           $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
+-CFLAGS = $(OPTIONS) $(ANALYZE) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
+-LDFLAGS =           $(ANALYZE) $(SYS_LDFLAGS) $(EXTRA_LDFLAGS)
++CFLAGS += $(OPTIONS) $(ANALYZE) $(SYS_CFLAGS)  $(EXTRA_CFLAGS) $(CONFIG)
++LDFLAGS +=           $(ANALYZE) $(SYS_LDFLAGS) $(EXTRA_LDFLAGS)
  
  
  SRCS =	main.c		\
-@@ -221,7 +221,7 @@ GRAPHICS_DIR = ../graphics
- all: $(AUTOCONF) libgame_dir game_em_dir game_sp_dir game_mm_dir $(PROGNAME) graphics_dir
- 
- $(PROGNAME): $(RNDLIBS) $(TIMESTAMP_FILE) $(OBJS) $(ICON)
--	$(CC) $(PROFILING) $(OBJS) $(ICON) $(RNDLIBS) $(LDFLAGS) -o $(PROGNAME)
-+	$(CC) $(PROFILING) $(RNDLIBS) $(OBJS) $(ICON) $(LDFLAGS) -o $(PROGNAME)
- ifdef BUILD_DIST
- 	strip $(PROGNAME)
- endif

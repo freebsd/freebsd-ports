@@ -1,0 +1,5 @@
+bencode-tools is a collection of tools for manipulating bencoded data.
+
+Bencode (pronounced like Bee-encode) is the encoding used by the
+peer-to-peer file sharing system BitTorrent for storing and transmitting
+loosely structured data.

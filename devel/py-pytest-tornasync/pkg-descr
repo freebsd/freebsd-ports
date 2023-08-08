@@ -1,0 +1,3 @@
+pytest-tornasync is a simple pytest plugin that provides some helpful fixtures
+for testing Tornado (version 5.0 or newer) apps and easy handling of plain
+(undecoratored) native coroutine tests (Python 3.5+).

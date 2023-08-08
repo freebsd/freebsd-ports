@@ -1,3 +1,5 @@
-TIMESTAMP = 1656816698
-SHA256 (Tencent-ncnn-20220701_GH0.tar.gz) = e222f2ac54cc52ed7b1f6edc83ce4bf8ea1dc729c81f6a1560e4196032ec88ca
-SIZE (Tencent-ncnn-20220701_GH0.tar.gz) = 12220010
+TIMESTAMP = 1684712023
+SHA256 (Tencent-ncnn-20230517_GH0.tar.gz) = 71c1960e5fbbe68d2c3cf572cbf4dd08bb387ef20d2c560c074c5969c6b44bde
+SIZE (Tencent-ncnn-20230517_GH0.tar.gz) = 12569535
+SHA256 (KhronosGroup-glslang-88fd417_GH0.tar.gz) = 7349344acf4ce49e0c0b7f2555e0165a6bd538cc927adece7c81571ce350e487
+SIZE (KhronosGroup-glslang-88fd417_GH0.tar.gz) = 3656236

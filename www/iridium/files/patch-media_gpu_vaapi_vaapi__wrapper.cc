@@ -1,11 +1,11 @@
---- media/gpu/vaapi/vaapi_wrapper.cc.orig	2022-04-01 07:48:30 UTC
+--- media/gpu/vaapi/vaapi_wrapper.cc.orig	2023-07-24 14:27:53 UTC
 +++ media/gpu/vaapi/vaapi_wrapper.cc
-@@ -587,7 +587,7 @@ VADisplayState::VADisplayState()
- bool VADisplayState::Initialize() {
-   base::AutoLock auto_lock(va_lock_);
+@@ -1609,7 +1609,7 @@ VADisplayStateHandle VADisplayStateSingleton::GetHandl
+     return {};
+   }
  
--#if defined(USE_OZONE) && BUILDFLAG(IS_LINUX)
-+#if defined(USE_OZONE) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+-#if BUILDFLAG(IS_OZONE) && BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_OZONE) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
    // TODO(crbug.com/1116701): add vaapi support for other Ozone platforms on
    // Linux. See comment in OzonePlatform::PlatformProperties::supports_vaapi
    // for more details. This will also require revisiting everything that's

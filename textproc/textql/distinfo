@@ -1,6 +1,6 @@
-TIMESTAMP = 1583674383
-SHA256 (dinedal-textql-g20200203-1d6fef5_GH0.tar.gz) = 0fc48f0a1d9e28513dab105527816e42eaf9c24c7610711446b13109d7364c74
-SIZE (dinedal-textql-g20200203-1d6fef5_GH0.tar.gz) = 508460
+TIMESTAMP = 1671631889
+SHA256 (dinedal-textql-g20210706-fca00ec_GH0.tar.gz) = 0aaf12dc8e43ce95ee70b19a6dddb0208514f3375914a2dcef1b55d2decff4c1
+SIZE (dinedal-textql-g20210706-fca00ec_GH0.tar.gz) = 509552
 SHA256 (mattn-go-runewidth-v0.0.2_GH0.tar.gz) = 6c7734401fdf829af4f35a5af21a54548f7d3a68336940fb550178ddfe95b076
 SIZE (mattn-go-runewidth-v0.0.2_GH0.tar.gz) = 22367
 SHA256 (mattn-go-sqlite3-v2.0.3_GH0.tar.gz) = ed015860c9b3e701d8cce7dcb0bcb2e2f53071718334465b10abb696f7de0e58

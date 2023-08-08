@@ -350,6 +350,7 @@
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/CopperMaterialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/CustomMaterialSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/CustomMaterialSpecifics.qml
+%%QT_QMLDIR%%/QtQuick3D/Materials/designer/EnvironmentMapSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/FrostedGlassMaterialSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/FrostedGlassMaterialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/FrostedGlassSinglePassMaterialSection.qml
@@ -367,6 +368,7 @@
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/PlasticStructuredRedEmissiveMaterialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/PlasticStructuredRedMaterialSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/PlasticStructuredRedMaterialSpecifics.qml
+%%QT_QMLDIR%%/QtQuick3D/Materials/designer/ShadowMapSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/SteelMilledConcentricMaterialSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/SteelMilledConcentricMaterialSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Materials/designer/images/custommaterial.png

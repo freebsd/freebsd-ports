@@ -1,0 +1,8 @@
+include/imgui-for-imtui/imgui/imconfig.h
+include/imgui-for-imtui/imgui/imgui.h
+include/imtui/imtui-impl-ncurses.h
+include/imtui/imtui-impl-text.h
+include/imtui/imtui.h
+lib/libimgui-for-imtui.a
+lib/libimtui-ncurses.so
+lib/libimtui.so

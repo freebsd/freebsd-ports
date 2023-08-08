@@ -1,5 +1,6 @@
 PORTNAME=	adept
 DISTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.met.reading.ac.uk/clouds/adept/
 
@@ -20,6 +21,7 @@ OPTIONS_DEFINE=		PDFTEXDOCS
 OPTIONS_SUB=		yes
 
 PDFTEXDOCS_DESC=	Build and install PDF documentation from LaTeX sources
+PDFTEXDOCS_USES=	tex
 PDFTEXDOCS_USE=		TEX=pdftex:build,dvipsk:build
 
 post-build-PDFTEXDOCS-on:

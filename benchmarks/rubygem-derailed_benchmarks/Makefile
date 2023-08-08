@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
 		rubygem-unicode_plot>=0.0.4<1.0.0:textproc/rubygem-unicode_plot
 
 USES=		gem
-USE_RUBY=	yes
 
 CONFLICTS_INSTALL=	rubygem-gitlab-derailed_benchmarks
 

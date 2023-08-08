@@ -1,6 +1,6 @@
 PORTNAME=	helpviewer
 PORTVERSION=	0.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.roard.com/helpviewer/download/
 DISTNAME=	HelpViewer-${PORTVERSION}

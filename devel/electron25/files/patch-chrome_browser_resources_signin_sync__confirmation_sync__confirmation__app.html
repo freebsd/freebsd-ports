@@ -1,0 +1,38 @@
+--- chrome/browser/resources/signin/sync_confirmation/sync_confirmation_app.html.orig	2023-05-25 00:41:44 UTC
++++ chrome/browser/resources/signin/sync_confirmation/sync_confirmation_app.html
+@@ -492,7 +492,7 @@
+             consent-confirmation autofocus>
+           $i18n{syncConfirmationConfirmLabel}
+         </cr-button>
+-        <if expr="is_macosx or is_linux or chromeos_ash or chromeos_lacros">
++        <if expr="is_macosx or is_posix or chromeos_ash or chromeos_lacros">
+           <cr-button id="settingsButton" on-click="onGoToSettings_"
+               disabled="[[anyButtonClicked_]]" consent-confirmation>
+             $i18n{syncConfirmationSettingsLabel}
+@@ -502,7 +502,7 @@
+             disabled="[[anyButtonClicked_]]">
+           $i18n{syncConfirmationUndoLabel}
+         </cr-button>
+-        <if expr="not (is_macosx or is_linux or chromeos_ash or chromeos_lacros)">
++        <if expr="not (is_macosx or is_posix or chromeos_ash or chromeos_lacros)">
+           <cr-button id="settingsButton" on-click="onGoToSettings_"
+               disabled="[[anyButtonClicked_]]" consent-confirmation>
+             $i18n{syncConfirmationSettingsLabel}
+@@ -546,7 +546,7 @@
+             consent-confirmation>
+           $i18n{syncConfirmationConfirmLabel}
+         </cr-button>
+-        <if expr="is_macosx or is_linux or chromeos_ash or chromeos_lacros">
++        <if expr="is_macosx or is_posix or chromeos_ash or chromeos_lacros">
+           <cr-button id="settingsButton" on-click="onGoToSettings_"
+               disabled="[[anyButtonClicked_]]" consent-confirmation>
+             $i18n{syncConfirmationSettingsLabel}
+@@ -556,7 +556,7 @@
+             disabled="[[anyButtonClicked_]]">
+           $i18n{syncConfirmationUndoLabel}
+         </cr-button>
+-        <if expr="not (is_macosx or is_linux or chromeos_ash or chromeos_lacros)">
++        <if expr="not (is_macosx or is_posix or chromeos_ash or chromeos_lacros)">
+           <cr-button id="settingsButton" on-click="onGoToSettings_"
+               disabled="[[anyButtonClicked_]]" consent-confirmation>
+             $i18n{syncConfirmationSettingsLabel}

@@ -277,6 +277,8 @@ libexec/valgrind/s390x-linux64-valgrind-s2.xml
 libexec/valgrind/s390x-linux64.xml
 libexec/valgrind/s390x-vx-linux-valgrind.xml
 libexec/valgrind/s390x-vx-linux.xml
+libexec/valgrind/valgrind-monitor-def.py
+libexec/valgrind/valgrind-monitor.py
 %%AMD64%%libexec/valgrind/vgpreload_core-amd64-freebsd.so
 %%X86%%libexec/valgrind/vgpreload_core-x86-freebsd.so
 %%AMD64%%libexec/valgrind/vgpreload_dhat-amd64-freebsd.so

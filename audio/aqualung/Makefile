@@ -1,6 +1,6 @@
 PORTNAME=	aqualung
 PORTVERSION=	1.0
-PORTREVISION=	20
+PORTREVISION=	24
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -24,13 +24,18 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libmpcdec.so:audio/musepack \
 		libspeex.so:audio/speex \
 		libwavpack.so:audio/wavpack \
-		libavcodec.so:multimedia/ffmpeg \
+		libavcodec.so.58:multimedia/ffmpeg4 \
 		libcdio_paranoia.so:sysutils/libcdio-paranoia \
 		liblrdf.so:textproc/liblrdf
 
 USES=		compiler:c++11-lang cpe gettext gnome localbase lua:52 pkgconfig
 USE_GNOME=	gtk20 libxml2 libxslt
 GNU_CONFIGURE=	yes
+
+LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+MAKE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+
 CONFIGURE_ARGS=	--with-ifp=no
 
 DESKTOP_ENTRIES="Aqualung" "" "${DATADIR}/general.png" "aqualung" \

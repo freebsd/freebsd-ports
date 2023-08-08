@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-nanoc-cli>=4.12:www/rubygem-nanoc-cli \
 		rubygem-nanoc-core>=4.12:www/rubygem-nanoc-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

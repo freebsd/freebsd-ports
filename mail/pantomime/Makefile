@@ -1,6 +1,6 @@
 PORTNAME=	pantomime
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnustep
 MASTER_SITES=	SAVANNAH/gnustep-nonfsf/
 DISTNAME=	Pantomime-${PORTVERSION}
@@ -15,10 +15,17 @@ USES=		gnustep iconv ssl
 
 # The use of libiconv shouldn't be necessary, but a build dependency installs
 # it and we end up picking up the header.
-MAKE_ARGS+=	LIBRARIES_DEPEND_UPON='${ICONV_LIB} -lssl'
 USE_GNUSTEP=	back build
 USE_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
+MAKE_ARGS+=	LIBRARIES_DEPEND_UPON='${ICONV_LIB} -lssl'
+
 DEFAULT_LIBVERSION=	1.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=       -Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

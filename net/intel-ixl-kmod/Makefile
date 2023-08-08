@@ -1,10 +1,10 @@
 PORTNAME?=	ixl
-PORTVERSION?=	1.12.2
+PORTVERSION?=	1.12.40
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES?=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
-MASTER_SITE_SUBDIR?=	25160/eng
+MASTER_SITE_SUBDIR?=	762476
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-kmod
 
@@ -27,7 +27,7 @@ NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
 NETMAP_ON_CFLAGS=	-DDEV_NETMAP
 NETMAP_OFF_CFLAGS=	-UDEV_NETMAP
 
-WRKSRC_SUBDIR=	src
+WRKSRC_SUBDIR?=	src
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
@@ -47,10 +47,8 @@ MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support wor
 
 # Fixup for slave ports that use this as a master port. sbruno
 .if ${PORTNAME} == ixl
-PATCH_SITES=	https://svnweb.freebsd.org/base/head/sys/dev/ixl/
-PATCHFILES=	ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698:-p4
 ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	only supported on amd64 and powerpc64
+ONLY_FOR_ARCHS_REASON=	only supported on amd64 and powerpc64*
 .endif
 
 .if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}

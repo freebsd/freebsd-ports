@@ -1,6 +1,6 @@
 PORTNAME=	lemon
 DISTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://lemon.cs.elte.hu/pub/sources/
 PKGNAMEPREFIX=	coin-or-
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libCbc.so:math/cbc \
 		libOsi.so:math/osi
 
 USES=		cmake
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS

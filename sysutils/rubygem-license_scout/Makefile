@@ -1,5 +1,5 @@
 PORTNAME=	license_scout
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.10
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-toml-rb>=1.0:www/rubygem-toml-rb
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

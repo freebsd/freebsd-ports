@@ -41,5 +41,5 @@ share/gir-1.0/GUsb-1.0.gir
 %%DOCS%%share/gtk-doc/html/gusb/style.css
 %%DOCS%%share/gtk-doc/html/gusb/up-insensitive.png
 %%DOCS%%share/gtk-doc/html/gusb/up.png
-%%VALA%%share/vala/vapi/gusb.deps
-%%VALA%%share/vala/vapi/gusb.vapi
+%%VAPI%%share/vala/vapi/gusb.deps
+%%VAPI%%share/vala/vapi/gusb.vapi

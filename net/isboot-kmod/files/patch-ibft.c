@@ -1,4 +1,4 @@
---- ibft.c.orig	2022-05-11 20:18:36 UTC
+--- ibft.c.orig	2021-05-18 18:37:58 UTC
 +++ ibft.c
 @@ -146,13 +146,12 @@ ibft_print_address(uint8_t *addr)
  void
@@ -72,3 +72,15 @@
  		length = le16toh(t1h->length);
  		index = t1h->index;
  		flags = t1h->flags;
+@@ -556,7 +549,11 @@ ibft_init(void)
+ 			if (ibft_verbose) {
+ 				printf("iBFT error\n");
+ 			}
++#if __FreeBSD_version >= 1400070
++			pmap_unmapdev(vaddr,
++#else
+ 			pmap_unmapdev((vm_offset_t)vaddr,
++#endif
+ 			    (vm_size_t)IBFT_HIGH_ADDR);
+ 			return (error);
+ 		}

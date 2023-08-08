@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-mime-types>=3.1<4:misc/rubygem-mime-types \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,5 +16,3 @@ library to attach cloud and local files to Rails applications; Action Text, a
 library to handle rich text content; and Active Support, a collection of utility
 classes and standard library extensions that are useful for Rails, and may also
 be used independently outside Rails.
-
-See also: https://rubyonrails.org/

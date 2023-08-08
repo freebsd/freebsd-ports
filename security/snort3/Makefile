@@ -1,5 +1,5 @@
 PORTNAME=	snort
-DISTVERSION=	3.1.41.0
+DISTVERSION=	3.1.67.0
 PORTEPOCH=	1
 CATEGORIES=	security
 PKGNAMESUFFIX=	3
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libdaq.so:net/libdaq \
 		libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake compiler:c++14-lang cpe iconv localbase pathfix pkgconfig \
+USES=		cmake compiler:c++14-lang cpe iconv localbase luajit pathfix pkgconfig \
 		shebangfix ssl
 USE_GITHUB=	yes
 
@@ -32,7 +32,7 @@ CMAKE_ARGS+=	-DFLEX_INCLUDE_DIR_HINT:PATH=${PREFIX}/include/flex
 CONFLICTS=	snort-2*
 
 OPTIONS_DEFINE=		ADDRESSSANITIZER DEBUG DOCS FLATBUFFERS HYPERSCAN \
-			LARGEPCAP PIE STATICDAQ THREADSANITIZER TSC
+			LARGEPCAP LIBUNWIND PIE STATICDAQ THREADSANITIZER TSC
 OPTIONS_DEFAULT=	STATICDAQ
 OPTIONS_DEFAULT_amd64=	HYPERSCAN
 OPTIONS_SUB=		yes
@@ -41,6 +41,7 @@ ADDRESSSANITIZER_DESC=	Enable address sanitizer
 FLATBUFFERS_DESC=	Enable flatbuffers support
 HYPERSCAN_DESC=		Enable high-performance regular expression lib
 LARGEPCAP_DESC=		Enable support for pcaps larger than 2 GB
+LIBUNWIND_DESC=		Print stack trace in case of crash
 PIE_DESC=		Enable PIE (Broken)
 STATICDAQ_DESC=		Link static DAQ modules
 THREADSANITIZER_DESC=	Enable thread sanitizer
@@ -54,18 +55,14 @@ HYPERSCAN_LIB_DEPENDS=		libhs.so:devel/hyperscan
 HYPERSCAN_PLIST_SUB=		HYPERSCAN=""
 HYPERSCAN_PLIST_SUB_OFF=	HYPERSCAN="@comment "
 LARGEPCAP_CMAKE_BOOL=		ENABLE_LARGE_PCAP
+LIBUNWIND_LIB_DEPENDS=		libunwind.so:devel/libunwind
+LIBUNWIND_CMAKE_BOOL=		ENABLE_LIBUNWIND
 PIE_CMAKE_BOOL=			ENABLE_PIE
 STATICDAQ_CMAKE_BOOL=		ENABLE_STATIC_DAQ
 THREADSANITIZER_CMAKE_BOOL=	ENABLE_THREAD_SANITIZER
 TSC_CMAKE_BOOL=			ENABLE_TSC_CLOCK
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit-openresty
-.else
-LIB_DEPENDS+=	libluajit-5.1.so:lang/luajit
-.endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
 BUILD_DEPENDS=	flex>0:textproc/flex

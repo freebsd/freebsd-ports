@@ -1,5 +1,6 @@
 PORTNAME=	seaview
 PORTVERSION=	5.0.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/seaview/archive/

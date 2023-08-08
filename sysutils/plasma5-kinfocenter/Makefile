@@ -37,12 +37,9 @@ DOCS_EXTRA_PATCHES_OFF= ${PATCHDIR}/cheribsd-docs.patch
 RUN_DEPENDS=	lscpu:sysutils/lscpu \
 		glxinfo:graphics/mesa-demos \
 		vulkaninfo:graphics/vulkan-tools \
-		xdpyinfo:x11/xdpyinfo
+		xdpyinfo:x11/xdpyinfo \
+		clinfo:devel/clinfo
 .endif
-
-post-extract:
-	# File move not handled by patch
-	${MV} ${WRKSRC}/Modules/pci/kcm_pci.json ${WRKSRC}/Modules/pci/kcm_pci.json.cmake
 
 # install freebsd-logo and distrorc
 post-install:

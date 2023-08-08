@@ -15,7 +15,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig \
-		python:3.7+,build varnish:7
+		python:build varnish:7
 USE_GITHUB=	yes
 GH_ACCOUNT=	scaleengine
 GH_PROJECT=	libvmod_maxminddb

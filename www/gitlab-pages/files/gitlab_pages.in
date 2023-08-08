@@ -31,6 +31,7 @@ load_rc_config $name
 : ${gitlab_pages_user:="gitlab-pages"}
 : ${gitlab_pages_group:="gitlab-pages"}
 : ${gitlab_pages_logfile:="/var/log/gitlab_pages.log"}
+: ${gitlab_pages_args:="-config=%%PREFIX%%/share/gitlab-pages/gitlab-pages.conf"}
 
 export HOME=${gitlab_pages_dir}
 export PATH=${PATH}:%%PREFIX%%/bin
@@ -38,24 +39,10 @@ export PATH=${PATH}:%%PREFIX%%/bin
 pidfile="/var/run/${name}.pid"
 gitlab_pages_chdir="${gitlab_pages_dir}"
 
-procname=%%PREFIX%%/bin/gitlab-pages
+procname=%%PREFIX%%/share/gitlab-pages/bin/gitlab-pages
 
 start_precmd="gitlab_pages_startprecmd"
 start_cmd="gitlab_pages_startcmd"
-list_cmd="listfunc"
-register_cmd="registerfunc"
-
-listfunc()
-{
-        cd ${gitlab_pages_chdir} ; \
-        su -m ${gitlab_pages_user} -c "env HOME=${gitlab_pages_dir} %%PREFIX%%/bin/gitlab-pages list"
-}
-
-registerfunc()
-{
-        cd ${gitlab_pages_chdir} ; \
-        su -m ${gitlab_pages_user} -c "env HOME=${gitlab_pages_dir} %%PREFIX%%/bin/gitlab-pages register"
-}
 
 gitlab_pages_startprecmd()
 {
@@ -70,8 +57,7 @@ gitlab_pages_startprecmd()
 gitlab_pages_startcmd()
 {
         cd ${gitlab_pages_chdir} ; \
-        daemon -u ${gitlab_pages_user} -p ${pidfile} /usr/local/bin/gitlab-pages ${gitlab_pages_args} run < /dev/null >> ${gitlab_pages_logfile} 2>> ${gitlab_pages_logfile}
+        daemon -u ${gitlab_pages_user} -p ${pidfile} ${procname} ${gitlab_pages_args} run < /dev/null >> ${gitlab_pages_logfile} 2>> ${gitlab_pages_logfile}
 }
 
-extra_commands="list register"
 run_rc_command $1

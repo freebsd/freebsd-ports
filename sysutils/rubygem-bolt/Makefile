@@ -1,5 +1,5 @@
 PORTNAME=	bolt
-PORTVERSION=	3.26.1
+PORTVERSION=	3.27.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,7 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-aws-sdk-ec2>1:devel/rubygem-aws-sdk-ec2 \
 		rubygem-CFPropertyList>=2.2:devel/rubygem-CFPropertyList \
-		rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
+		rubygem-concurrent-ruby11>=1.0:devel/rubygem-concurrent-ruby11 \
 		rubygem-ffi>=1.13:devel/rubygem-ffi \
 		rubygem-hiera-eyaml>=3:sysutils/rubygem-hiera-eyaml \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
@@ -31,7 +31,6 @@ RUN_DEPENDS=	r10k:sysutils/rubygem-r10k \
 		rubygem-winrm>=2.0:sysutils/rubygem-winrm
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 ruby_OLD_CMD+=	/opt/puppetlabs/puppet/bin/ruby
 SHEBANG_FILES=	libexec/*
@@ -42,14 +41,16 @@ PLIST_FILES=	bin/bolt \
 		etc/bash_completion.d/bolt
 
 OPTIONS_SINGLE=	PUPPET
-OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7
+OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7 PUPPET8
 OPTIONS_DEFAULT=PUPPET7
 
 PUPPET6_DESC=	Depend on sysutils/puppet6
 PUPPET7_DESC=	Depend on sysutils/puppet7
+PUPPET8_DESC=	Depend on sysutils/puppet8
 
 PUPPET6_RUN_DEPENDS=puppet:sysutils/puppet6
 PUPPET7_RUN_DEPENDS=puppet:sysutils/puppet7
+PUPPET8_RUN_DEPENDS=puppet:sysutils/puppet8
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

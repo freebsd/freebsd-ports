@@ -1,5 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.13.1
+DISTVERSION=	1.15.2
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -76,6 +76,7 @@ post-patch:
 .if !defined(DEFAULT_POST_BUILD)
 post-build-PGO-on:
 	(cd ${BUILD_WRKSRC} && ./tests/test-config) # -Wbackend-plugin/-Wmissing-profile
+	(cd ${BUILD_WRKSRC} && ./utils/xtgettcap) # -Wbackend-plugin/-Wmissing-profile
 	(cd ${BUILD_WRKSRC} && ./${PORTNAME}client --version) # -Wbackend-plugin/-Wmissing-profile
 .if defined(WAYLAND_DISPLAY)
 # Likely a local build, so optimize for the current config

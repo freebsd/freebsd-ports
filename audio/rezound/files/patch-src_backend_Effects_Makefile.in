@@ -1,0 +1,20 @@
+--- src/backend/Effects/Makefile.in.orig	2013-12-29 20:48:20 UTC
++++ src/backend/Effects/Makefile.in
+@@ -293,7 +293,7 @@ INCLUDES = \
+ 
+ 
+ # doc directory
+-pkgdocdir = $(prefix)/doc/@PACKAGE@
++pkgdocdir = $(datadir)/doc/@PACKAGE@
+ noinst_LTLIBRARIES = libEffects.la
+ libEffects_la_SOURCES = \
+ 		CChangeAmplitudeEffect.cpp \
+@@ -317,6 +317,8 @@ noinst_HEADERS = \
+ 		CDistortionEffect.h \
+ 		CTestEffect.h \
+ 		EffectActions.h
++
++AM_CXXFLAGS = @fftw3_CFLAGS@
+ 
+ all: all-am
+ 

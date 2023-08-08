@@ -3,7 +3,7 @@ PORTVERSION=	5.2
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.pygresql.org/files/ \
-		CHEESESHOP
+		PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -12,7 +12,7 @@ WWW=		http://www.pygresql.org/
 
 LICENSE=	PSFL
 
-USES=		pgsql python:3.6+
+USES=		pgsql python
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*

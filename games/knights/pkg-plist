@@ -50,6 +50,7 @@ share/locale/hu/LC_MESSAGES/knights.mo
 share/locale/id/LC_MESSAGES/knights.mo
 share/locale/it/LC_MESSAGES/knights.mo
 share/locale/ja/LC_MESSAGES/knights.mo
+share/locale/ka/LC_MESSAGES/knights.mo
 share/locale/km/LC_MESSAGES/knights.mo
 share/locale/ko/LC_MESSAGES/knights.mo
 share/locale/lt/LC_MESSAGES/knights.mo
@@ -67,6 +68,9 @@ share/locale/ru/LC_MESSAGES/knights.mo
 share/locale/sk/LC_MESSAGES/knights.mo
 share/locale/sl/LC_MESSAGES/knights.mo
 share/locale/sr/LC_MESSAGES/knights.mo
+share/locale/sr@ijekavian/LC_MESSAGES/knights.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/knights.mo
+share/locale/sr@latin/LC_MESSAGES/knights.mo
 share/locale/sv/LC_MESSAGES/knights.mo
 share/locale/tr/LC_MESSAGES/knights.mo
 share/locale/ug/LC_MESSAGES/knights.mo

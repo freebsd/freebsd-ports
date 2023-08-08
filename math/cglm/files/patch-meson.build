@@ -1,0 +1,13 @@
+- workaround for the i386 faulure, see https://github.com/recp/cglm/issues/327
+
+--- meson.build.orig	2023-07-08 03:45:00 UTC
++++ meson.build
+@@ -3,7 +3,7 @@ project('cglm', 'c',
+     license : 'mit',
+     default_options : [
+         'c_std=c11',
+-        'werror=true',
++        'werror=false',
+         'warning_level=2',
+         'buildtype=release'
+     ]

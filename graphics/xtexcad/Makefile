@@ -2,7 +2,7 @@ PORTNAME=	xtexcad
 PORTVERSION=	2.4.1
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	TEX_CTAN/graphics/xtexcad
+MASTER_SITES=	TEX/graphics/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing program enforcing limited slopes and diameters

@@ -1,28 +1,38 @@
 PORTNAME=	ois
-PORTVERSION=	1.2.0
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/wgois/Source%20Release/1.2
-DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
-WWW=		https://sourceforge.net/projects/wgois/
+WWW=		https://wgois.github.io/OIS/ \
+		https://github.com/wgois/OIS
 
 LICENSE=	ZLIB
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		autoreconf libtool pathfix xorg
-USE_XORG=	x11 xaw
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+
+USES=		cmake xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	wgois
+GH_PROJECT=	OIS
+USE_XORG=	x11
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-Wno-unused-value \
+		-D__s16=int16_t \
+		-D__s32=int32_t \
+		-D__u16=uint16_t
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+OPTIONS_DEFINE=	DEMOS
+OPTIONS_SUB=	yes
 
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOIS.so
+DEMOS_DESC=		Build demo applications
+DEMOS_CMAKE_BOOL=	OIS_BUILD_DEMOS
+
+post-install-DEMOS-on:
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ConsoleApp ${STAGEDIR}${PREFIX}/bin/OIS-ConsoleDemo
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/FFConsoleApp ${STAGEDIR}${PREFIX}/bin/OIS-FFConsoleDemo
 
 .include <bsd.port.mk>

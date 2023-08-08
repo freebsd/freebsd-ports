@@ -1,12 +1,12 @@
 PORTNAME=	fetion
 PORTVERSION=	0.98.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.logvinov.ru/files/dist/fetion/ \
 		LOCAL/avl
 PKGNAMEPREFIX=	pidgin-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fetion protocol plugin for libpurple
 WWW=		https://sourceforge.net/projects/fetion/
 
@@ -15,12 +15,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple
 
+USES=		libtool localbase:ldflags pkgconfig tar:bzip2
+
 GNU_CONFIGURE=	yes
-USES=		libtool pkgconfig tar:bzip2
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
 INSTALL_TARGET=	install-strip
 
 PLIST_FILES=	lib/purple-2/libfetion.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion -Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>

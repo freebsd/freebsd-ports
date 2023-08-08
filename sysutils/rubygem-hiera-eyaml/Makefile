@@ -1,6 +1,5 @@
 PORTNAME=	hiera-eyaml
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +14,6 @@ RUN_DEPENDS=	rubygem-highline>=0:devel/rubygem-highline \
 		rubygem-optimist>=0:devel/rubygem-optimist
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

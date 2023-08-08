@@ -8,6 +8,10 @@ bin/zstdmt
 include/zdict.h
 include/zstd.h
 include/zstd_errors.h
+lib/cmake/zstd/zstdConfig.cmake
+lib/cmake/zstd/zstdConfigVersion.cmake
+lib/cmake/zstd/zstdTargets-%%BUILD_TYPE%%.cmake
+lib/cmake/zstd/zstdTargets.cmake
 lib/libzstd.a
 lib/libzstd.so
 lib/libzstd.so.1

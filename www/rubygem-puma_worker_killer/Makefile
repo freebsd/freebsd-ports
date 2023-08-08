@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-get_process_mem>=0.2:devel/rubygem-get_process_mem \
 		rubygem-puma>=2.7:www/rubygem-puma
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

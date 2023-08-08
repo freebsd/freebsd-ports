@@ -1,3 +1,4 @@
+PORTREVISION=	7
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-proj4
 

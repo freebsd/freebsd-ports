@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-community-latest
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 WWW=		https://observium.org
 
@@ -20,14 +20,14 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		cpe php:cli,flavors python:3.5+ shebangfix
-IGNORE_WITH_PHP=	82
+USES=		cpe php:cli,flavors python shebangfix
+IGNORE_WITH_PHP=	82 83
 SHEBANG_FILES=	\
 		poller-wrapper.py \
 		poller.php \
 		scripts/
 
-USE_PHP=	ctype filter gd iconv json mcrypt mysqli openssl posix session snmp tokenizer xml zlib
+USE_PHP=	ctype filter gd iconv mcrypt mysqli posix session snmp tokenizer xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -43,7 +43,7 @@ LIB_DEPENDS+=	libpng.so:graphics/png
 
 OPTIONS_DEFINE=	APACHEMOD DOCS EXAMPLES FPING IPMITOOL LIBVIRT MYSQLD NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
 OPTIONS_DEFAULT=	APACHEMOD FPING IPMITOOL LIBVIRT NAGPLUGINS NMAP PYPOLLER SUBVERSION WMIC
-APACHEMOD_DESC=	Use PHP with Apache 2.2+ module
+APACHEMOD_DESC=	Use PHP with Apache 2.4+ module
 FPING_DESC=	Enable fping support ping monitoring
 IPMITOOL_DESC=	Enable support for monitoring hardware IPMI
 MYSQLD_DESC=	Use local MySQL server
@@ -76,7 +76,7 @@ PORTDOCS=	INSTALL README VERSION
 PORTEXAMPLES=	snmp.conf.example snmpd.conf.example
 
 .if ${PORT_OPTIONS:MAPACHEMOD}
-USES+=	apache:run,2.2+
+USES+=	apache:run
 .endif
 .if !defined(PACKAGE_BUILDING)
 USES+=	php:mod

@@ -1,5 +1,5 @@
-TIMESTAMP = 1656349446
-SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.mod) = 045266fd0fd2d5ea2721acbb8157aac6f59fb08a82beec96eac5d6bc254f2b30
-SIZE (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.mod) = 82
-SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.zip) = 8642a39d1f9d1f213ac638edd7c13a1549c8e46c030610ce407510861d4d103a
-SIZE (go/sysutils_stressdisk/stressdisk-v1.0.12/v1.0.12.zip) = 13495
+TIMESTAMP = 1687781048
+SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.13/v1.0.13.mod) = 8a4203f65fbe55ebd523b553ce4683de54f0a2a1ffb2bafa64f945eca6683379
+SIZE (go/sysutils_stressdisk/stressdisk-v1.0.13/v1.0.13.mod) = 82
+SHA256 (go/sysutils_stressdisk/stressdisk-v1.0.13/v1.0.13.zip) = a5cb329326961c31bde17dcde0f264f7deb322b1772a091134aa0d16d6f2bf34
+SIZE (go/sysutils_stressdisk/stressdisk-v1.0.13/v1.0.13.zip) = 13960

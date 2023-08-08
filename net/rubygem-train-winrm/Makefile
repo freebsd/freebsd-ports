@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-winrm>=2.0<3:sysutils/rubygem-winrm \
 		rubygem-winrm-fs>=1.0<2:sysutils/rubygem-winrm-fs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

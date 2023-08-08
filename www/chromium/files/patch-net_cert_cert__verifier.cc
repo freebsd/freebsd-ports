@@ -1,11 +1,11 @@
---- net/cert/cert_verifier.cc.orig	2022-02-28 16:54:41 UTC
+--- net/cert/cert_verifier.cc.orig	2023-05-31 08:12:17 UTC
 +++ net/cert/cert_verifier.cc
-@@ -78,7 +78,7 @@ bool CertVerifier::RequestParams::operator<(
- std::unique_ptr<CertVerifier> CertVerifier::CreateDefaultWithoutCaching(
-     scoped_refptr<CertNetFetcher> cert_net_fetcher) {
-   scoped_refptr<CertVerifyProc> verify_proc;
--#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   verify_proc =
-       CertVerifyProc::CreateBuiltinVerifyProc(std::move(cert_net_fetcher));
- #elif BUILDFLAG(BUILTIN_CERT_VERIFIER_FEATURE_SUPPORTED)
+@@ -40,7 +40,7 @@ class DefaultCertVerifyProcFactory : public net::CertV
+     return CertVerifyProc::CreateBuiltinWithChromeRootStore(
+         std::move(cert_net_fetcher), impl_params.crl_set,
+         base::OptionalToPtr(impl_params.root_store_data));
+-#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+     return CertVerifyProc::CreateBuiltinVerifyProc(std::move(cert_net_fetcher),
+                                                    impl_params.crl_set);
+ #else

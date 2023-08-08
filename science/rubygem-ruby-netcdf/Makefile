@@ -1,5 +1,6 @@
 PORTNAME=	ruby-netcdf
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +16,5 @@ RUN_DEPENDS=	rubygem-narray>=0:math/rubygem-narray \
 		rubygem-narray_miss>=0:math/rubygem-narray_miss
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	dry-container
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

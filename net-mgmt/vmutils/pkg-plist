@@ -13,6 +13,9 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_multicluster.png
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_multiple_rw.png
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_single.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_state.png
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_data_delay.gif
+%%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_normal.gif
 %%PORTDOCS%%%%DOCSDIR%%/vmanomaly-holtwinters-example.png
 %%PORTDOCS%%%%DOCSDIR%%/vmanomaly-prophet-example.png
 %%PORTDOCS%%%%DOCSDIR%%/vmanomaly.md

@@ -1,5 +1,5 @@
 PORTNAME=	websocket-client-simple
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-event_emitter>=0:devel/rubygem-event_emitter \
 		rubygem-websocket>=0:www/rubygem-websocket
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

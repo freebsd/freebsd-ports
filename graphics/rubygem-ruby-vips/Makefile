@@ -1,5 +1,6 @@
 PORTNAME=	ruby-vips
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +16,6 @@ RUN_DEPENDS=	rubygem-ffi>=1.12<2:devel/rubygem-ffi
 
 USES=		gem gnome shebangfix
 USE_GNOME=	glib20
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	showmethekey
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
+DISTVERSION=	1.10.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PKEXEC}
 
 USES=		compiler:c11 gettext-tools gnome meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	cairo gtk40
+USE_GNOME=	cairo gtk40 libadwaita
 GH_ACCOUNT=	AlynxZhou
 PKEXEC?=	pkexec:sysutils/polkit
 MESON_ARGS=	-Dpkexec_path="${PKEXEC:C/\:.*//}"

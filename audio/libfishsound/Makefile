@@ -1,6 +1,6 @@
 PORTNAME=	libfishsound
 PORTVERSION=	1.0.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/libfishsound/ \
 		https://ftp.osuosl.org/pub/xiph/releases/libfishsound/ \
@@ -28,6 +28,12 @@ OPTIONS_SUB=	yes
 DOXYGEN_IMPLIES=DOCS
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| doc||' ${WRKSRC}/Makefile.in

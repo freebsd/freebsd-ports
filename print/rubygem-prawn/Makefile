@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast, tiny, and nimble PDF generator for Ruby
-WWW=		https://prawnpdf.org/
+WWW=		https://prawnpdf.org/ \
+		https://github.com/prawnpdf/prawn
 
 LICENSE=	RUBY GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -17,7 +18,6 @@ RUN_DEPENDS=	rubygem-pdf-core>=0.9.0<0.10:print/rubygem-pdf-core \
 		rubygem-ttfunk>=1.7<2:print/rubygem-ttfunk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

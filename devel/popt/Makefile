@@ -1,27 +1,26 @@
 PORTNAME=	popt
-PORTVERSION=	1.18
-PORTREVISION=	1
+PORTVERSION=	1.19
 CATEGORIES=	devel
-MASTER_SITES=	http://ftp.rpm.org/popt/releases/popt-1.x/
+MASTER_SITES=	https://ftp.osuosl.org/pub/rpm/popt/releases/popt-1.x/ \
+		http://ftp.rpm.org/popt/releases/popt-1.x/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Getopt(3) like library with a number of enhancements, from Redhat
-WWW=		http://freshmeat.net/projects/popt/
+WWW=		https://github.com/rpm-software-management/popt
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe iconv libtool pathfix
 
-CPE_VENDOR=	popt_project
-
-TEST_TARGET=	check
-
-OPTIONS_DEFINE=	NLS
-
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
+
+CPE_VENDOR=	popt_project
+
+OPTIONS_DEFINE=	NLS
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext-runtime localbase

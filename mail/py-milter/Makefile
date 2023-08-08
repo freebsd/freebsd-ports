@@ -1,5 +1,5 @@
 PORTNAME=	milter
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 DISTVERSIONPREFIX=	${GH_PROJECT}-
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmilter.so:mail/libmilter
 CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-USES=	python:3.6+
+USES=	python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	sdgathman

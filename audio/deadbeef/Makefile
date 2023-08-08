@@ -1,6 +1,6 @@
 PORTNAME=	deadbeef
 PORTVERSION=	0.7.2
-PORTREVISION=	21
+PORTREVISION=	25
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -207,6 +207,9 @@ PLIST_SUB+=		MP3=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,register ,,' \
+		${WRKSRC}/plugins/adplug/adplug/rix.cpp \
+		${WRKSRC}/plugins/adplug/libbinio/binio.cpp
 # Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
 	@${REINPLACE_CMD} -e 's, -lsupc++,,' \
 		${WRKSRC}/plugins/adplug/Makefile.in \

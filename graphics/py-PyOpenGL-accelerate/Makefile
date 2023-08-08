@@ -1,21 +1,27 @@
-PORTNAME=	PyOpenGL
-PORTVERSION=	3.1.5
+PORTNAME=	PyOpenGL-accelerate
+PORTVERSION=	3.1.7
 CATEGORIES=	graphics python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	-accelerate
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	OpenGL acceleration code for PyOpenGL
-WWW=		http://pyopengl.sourceforge.net/
+WWW=		https://pyopengl.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	${PYNUMPY}
-RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USE_PYTHON=	autoplist distutils cython
-USES=		python:3.6+
+USES=		python
+USE_PYTHON=	autoplist cython pep517
+
+CFLAGS=		-Wno-int-conversion
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

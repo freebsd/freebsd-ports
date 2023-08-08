@@ -1,6 +1,17 @@
---- callMail.c.orig	Thu Jan 26 21:52:01 1995
-+++ callMail.c	Wed Feb  4 23:30:07 1998
-@@ -38,11 +38,10 @@
+--- callMail.c.orig	1995-01-26 21:52:01.000000000 -0800
++++ callMail.c	2023-07-18 07:01:24.570712000 -0700
+@@ -34,15 +34,21 @@
+ #include	<sys/stat.h>
+ #include	<signal.h>
+ 
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
++#include <libutil.h>
++#endif
++
+ #if	defined(AIXV3) || defined(_IBMR2)
  #include	<sys/select.h>
  #endif
  
@@ -14,7 +25,7 @@
  #include	<fcntl.h>
  #if	defined(att)
  #include	<sys/stropts.h>
-@@ -81,7 +80,7 @@
+@@ -81,7 +87,7 @@
  #ifdef		hpux
  #define	PTYCHAR2	"fedcba9876543210"
  #else	/* !hpux */
@@ -23,7 +34,23 @@
  #endif	/* !hpux */
  #endif	/* !PTYCHAR2 */
  
-@@ -207,8 +206,8 @@
+@@ -91,6 +97,7 @@
+ char		pseudo_tty[20];
+ 
+ 
++#ifndef __FreeBSD__
+ /*
+ ** @(#) openMaster - searches for and opens a pty master.  If it finds one,
+ **		     it returns the value of the file descriptor.  If not,
+@@ -197,6 +204,7 @@
+ #endif
+  return(-1);				/* look for more master/slave pairs */
+ } /* openSlave */
++#endif /* __FreeBSD__ */
+ 
+ 
+ /*
+@@ -207,30 +215,34 @@
  callMail(argv)
  char *argv[];
  {
@@ -34,7 +61,18 @@
  #else	
   struct sgttyb	Sgtty;
  #endif
-@@ -223,14 +222,14 @@
+  int		slave;			/* file descriptor to slave pty */
+ 
+ 
++#ifdef __FreeBSD__
++ openpty(&mail_fd, &slave, NULL, NULL, NULL);
++#else
+  for (;;) {				/* find a pair, or master fails */
+      mail_fd = openMaster();
+      if ((slave = openSlave(mail_fd)) != -1)
+         break;
+     }
++#endif
  /*
  ** Set minimal requirements for slave connection (no echo, no NL->CR, keep TABS)
  */

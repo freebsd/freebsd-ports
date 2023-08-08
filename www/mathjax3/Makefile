@@ -1,5 +1,5 @@
 PORTNAME=	MathJax3
-DISTVERSION=	3.1.2
+DISTVERSION=	3.2.2
 CATEGORIES=	www math
 
 MAINTAINER=	marko.cupac@mimar.rs
@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_ACCOUNT=	mathjax
 GH_PROJECT=	MathJax
-GH_TAGNAME=	c829235
 
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 # Changing permissions of 30k files with find -exec (COPYTREE) is way
 # too slow.

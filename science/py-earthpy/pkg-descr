@@ -1,0 +1,24 @@
+Python is a generic programming language designed to support many different
+applications. Because of this, many commonly performed spatial tasks for science
+including plotting and working with spatial data take many steps of code.
+EarthPy builds upon the functionality developed for raster data (rasterio) and
+vector data (geopandas) in Python and simplifies the code needed to:
+
+- Stack and crop raster bands from data such as Landsat into an easy to use
+  numpy array;
+- Work with masks to set bad pixels such a those covered by clouds and
+  cloud-shadows to NA (mask_pixels());
+- Plot rgb (color), color infrared and other 3 band combination images
+  (plot_rgb());
+- Plot bands of a raster quickly using plot_bands();
+- Plot histograms for a set of raster files;
+- Create discrete (categorical) legends;
+- Calculate vegetation indices such as Normalized Difference Vegetation Index
+  (normalized_diff());
+- Create hillshade from a DEM.
+
+EarthPy also has an io module that allows users to
+
+- Quickly access pre-created data subsets used in the earth-analytics courses
+  hosted on www.earthdatascience.org;
+- Download other datasets that they may want to use in their workflows.

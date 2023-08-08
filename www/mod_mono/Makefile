@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for serving ASP.NET applications
 WWW=		https://www.mono-project.com/
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xsp:www/xsp
 RUN_DEPENDS=	xsp:www/xsp
 
-USES=		apache:2.2+ libtool mono pkgconfig
+USES=		apache libtool mono pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --man=${PREFIX}/man

@@ -1,7 +1,7 @@
 PORTNAME=	cec
 PORTVERSION=	0.2.8
 CATEGORIES=	multimedia python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcec.so:multimedia/libcec
 
-USES=		compiler:c++11-lang localbase python:3.6+
+USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

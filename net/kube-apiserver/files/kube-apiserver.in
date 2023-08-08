@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# PROVIDE: kube-apiserver
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable kube-apiserver:
+#
+# kube-apiserver_enable="YES"
+
+. /etc/rc.subr
+
+name="kube_apiserver"
+rcvar="kube_apiserver_enable"
+
+load_rc_config $name
+: ${kube_apiserver_enable:=no}
+: ${kube_apiserver_args:="--bind-address=0.0.0.0 --v=2"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -S -t ${name} -T ${name} /usr/local/bin/kube-apiserver ${kube_apiserver_args}"
+
+run_rc_command "$1"

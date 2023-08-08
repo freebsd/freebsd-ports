@@ -34,7 +34,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9:www/py-beautifulsoup@${P
 		git>0:devel/git \
 		hs-pandoc>:textproc/hs-pandoc
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	getpelican
 USE_PYTHON=	autoplist concurrent distutils pytest

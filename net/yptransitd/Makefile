@@ -4,22 +4,29 @@ PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Replacement for nss_ldap
 WWW=		http://yptransitd.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison
-USE_OPENLDAP=	yes
+USES=		ldap bison
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
-USE_LDCONFIG=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	%%ETCDIR%%/ldap.conf %%ETCDIR%%/modules/ldap.so \
 		%%ETCDIR%%/yptransitd.conf sbin/yptransitd
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's, \($$([A-Z]*DIR)\), $${DESTDIR}\1,g' \

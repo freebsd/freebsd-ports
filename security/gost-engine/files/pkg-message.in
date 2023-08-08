@@ -5,6 +5,9 @@ You should edit openssl.cnf configuration file as specified below
 to start using GOST Engine through OpenSSL.
 For details, refer to the section `How to Configure' in
 %%DOCSDIR%%/INSTALL.md
+
+Also, you may find useful an example patch for your openssl.cnf in
+%%DOCSDIR%%/openssl.cnf.diff
 EOM
 }
 ]

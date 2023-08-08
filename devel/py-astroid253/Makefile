@@ -1,7 +1,7 @@
 PORTNAME=	astroid
 PORTVERSION=	2.5.3
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	253
 
@@ -19,8 +19,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		python:3.8+ pytest
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 CONFLICTS=	${PYTHON_PKGNAMEPREFIX}astroid
 

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-rack>=0:www/rubygem-rack \
 		rubygem-socksify>=0:www/rubygem-socksify
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 PORTNAME=	jigzo
 PORTVERSION=	0.6.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
@@ -14,13 +14,11 @@ LICENSE_FILE=	${WRKSRC}/GPL.txt
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		gl gmake jpeg sdl tar:tgz
-USE_SDL=	sdl mixer
+USE_CXXSTD=	c++14
 USE_GL=		gl
-MAKE_ARGS=	CXX=${CXX}
+USE_SDL=	sdl mixer
 
-PLIST_FILES=	bin/${PORTNAME}
-PORTDATA=	*
-PORTDOCS=	*
+MAKE_ARGS=	CXX=${CXX}
 
 DESKTOP_ENTRIES="Jigzo" \
 		"An OpenGL jigsaw puzzle game" \
@@ -28,6 +26,10 @@ DESKTOP_ENTRIES="Jigzo" \
 		"jigzo" \
 		"Game;LogicGame;KidsGame;" \
 		false
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
@@ -44,6 +46,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "font image puzzles sound" \
 		${STAGEDIR}${DATADIR}/
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 

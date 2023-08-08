@@ -1,5 +1,0 @@
-lib/vdr/libvdr-infosatepg.so.%%APIVERSION%%
-%%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-infosatepg.mo
-%%NLS%%share/locale/it_IT/LC_MESSAGES/vdr-infosatepg.mo
-@dir(%%VDR_USER%%,%%VDR_GROUP%%,) /var/cache/vdr/infosatepg
-@dir /var/cache/vdr

@@ -1,5 +1,5 @@
 PORTNAME=	node-semver # PyPI name
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/podhmo/python-node-semver
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USES=		python
+USE_PYTHON=	distutils autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	podhmo

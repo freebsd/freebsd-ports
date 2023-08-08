@@ -1,6 +1,6 @@
 PORTNAME=	picom
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1
+DISTVERSION=	10.2
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,6 +26,7 @@ MESON_ARGS=	-Dcompton=false -Dunittest=true
 TEST_TARGET=	test
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-trans \
+		etc/xdg/autostart/${PORTNAME}.desktop \
 		"@sample etc/xdg/${PORTNAME}.conf.sample" \
 		share/applications/${PORTNAME}.desktop
 
@@ -44,7 +45,7 @@ DRM_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 DRM_MESON_TRUE=		vsync_drm
 
 OPENGL_USES=		gl
-OPENGL_USE=		GL=gl
+OPENGL_USE=		GL=egl,gl
 OPENGL_MESON_TRUE=	opengl
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
@@ -57,7 +58,8 @@ DOCS_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		${WRKSRC}/src/config_libconfig.c
+		${WRKSRC}/man/${PORTNAME}.1.asciidoc \
+		${WRKSRC}/src/config.c
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e "/project_version/s/=.*/= '${DISTVERSIONFULL}'/" \

@@ -56,7 +56,7 @@ GEOIP_CONFIGURE_ON=		--with-libmaxminddb=${LOCALBASE}
 CURL_CONFIGURE_ON=		--with-libcurl=${LOCALBASE}
 LDAP_CONFIGURE_ON=		--with-openldap=${LOCALBASE}
 LDAP_LDFLAGS=			-L${LOCALBASE}/lib
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 
 .include <bsd.port.options.mk>
 

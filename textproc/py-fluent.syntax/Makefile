@@ -1,7 +1,7 @@
 PORTNAME=	fluent.syntax
-PORTVERSION=	0.18.1
+PORTVERSION=	0.19.0
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +10,9 @@ WWW=		https://github.com/projectfluent/python-fluent/tree/master/fluent.syntax
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7<5:devel/py-typing-extensions@${PY_FLAVOR}
+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

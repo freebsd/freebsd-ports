@@ -1,4 +1,4 @@
---- mkspecs/features/functions.prf.orig	2020-11-07 01:22:36 UTC
+--- mkspecs/features/functions.prf.orig	2021-12-15 16:12:54 UTC
 +++ mkspecs/features/functions.prf
 @@ -84,6 +84,10 @@ defineReplace(gnWebEngineArgs) {
          include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
@@ -19,15 +19,15 @@
      include($$QTWEBENGINE_ROOT/src/pdf/config/common.pri)
      isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
      return($$gn_args)
-@@ -106,6 +111,7 @@ defineReplace(gnArch) {
-     contains(qtArch, "arm64"): return(arm64)
+@@ -107,6 +112,7 @@ defineReplace(gnArch) {
      contains(qtArch, "mips"): return(mipsel)
      contains(qtArch, "mips64"): return(mips64el)
+     contains(qtArch, "mips64el"): return(mips64el)
 +    contains(qtArch, "power64"): return(ppc64)
      return(unknown)
  }
  
-@@ -113,6 +119,7 @@ defineReplace(gnOS) {
+@@ -114,6 +120,7 @@ defineReplace(gnOS) {
      macos: return(mac)
      win32: return(win)
      linux: return(linux)

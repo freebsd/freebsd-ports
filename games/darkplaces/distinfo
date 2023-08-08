@@ -1,3 +1,5 @@
 TIMESTAMP = 1523571096
 SHA256 (darkplacesengine20180412beta1.zip) = 651b3ea5daf07331340b51192f538939a59d44b7d7e3dee8227b7a7546ffd0c8
 SIZE (darkplacesengine20180412beta1.zip) = 29175480
+SHA256 (darkplaces-20140513-gcc-11.patch) = 0a6abc8d5c6752a143015b75d7d1b942c0e0cc7c17ddbc2ee846baa82a6350ab
+SIZE (darkplaces-20140513-gcc-11.patch) = 1432

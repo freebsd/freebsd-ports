@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=4.1.0:devel/rubygem-activesupport61 \
 		rubygem-kaminari-core>=${PORTVERSION}:www/rubygem-kaminari-core
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

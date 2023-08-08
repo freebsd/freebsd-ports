@@ -1,0 +1,16 @@
+--- thirdparty/CMakeLists.txt.orig	2023-04-02 07:04:28 UTC
++++ thirdparty/CMakeLists.txt
+@@ -35,7 +35,7 @@ endif()
+ 	# Nuked OPN2 is very accurate emulator, but it eats too much CPU for the workflow
+ 	set(GME_YM2612_EMU "Nuked" CACHE STRING "Which YM2612 emulator to use: \"Nuked\" (LGPLv2.1+), \"MAME\" (GPLv2+), or \"GENS\" (LGPLv2.1+)")
+ 	mark_as_advanced(GME_YM2612_EMU)
+-	add_subdirectory(game-music-emu)
++#	add_subdirectory(game-music-emu)
+ #endif()
+ 
+ add_subdirectory(dumb)
+@@ -45,4 +45,3 @@ add_subdirectory(timidity)
+ add_subdirectory(timidityplus)
+ add_subdirectory(wildmidi)
+ add_subdirectory(oplsynth)
+-add_subdirectory(fluidsynth/src)

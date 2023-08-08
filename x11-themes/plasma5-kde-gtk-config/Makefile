@@ -1,6 +1,5 @@
 PORTNAME=	kde-gtk-config
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -19,7 +18,8 @@ USES=		cmake compiler:c++11-lib gettext gnome kde:5 pkgconfig qt:5 \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 gtk30
 USE_KDE=	archive attica auth codecs completion config configwidgets \
 		coreaddons dbusaddons decoration guiaddons i18n iconthemes \
-		jobwidgets kcmutils kio newstuff service widgetsaddons xmlgui \
+		jobwidgets kcmutils kio newstuff service widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus gui network svg widgets xml \
 		buildtools:build qmake:build testlib:build

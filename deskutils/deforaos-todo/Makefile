@@ -1,5 +1,6 @@
 PORTNAME=	todo
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.defora.org/os/download/download/4429/
 PKGNAMEPREFIX=	deforaos-

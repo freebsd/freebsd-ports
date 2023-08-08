@@ -1,0 +1,12 @@
+--- gst-libs/gst/audio/meson.build.orig	2022-09-05 20:33:42 UTC
++++ gst-libs/gst/audio/meson.build
+@@ -1,3 +1,4 @@
++if get_option('audio').enabled()
+ badaudio_sources = files('gstnonstreamaudiodecoder.c', 'gstplanaraudioadapter.c')
+ badaudio_headers = files('gstnonstreamaudiodecoder.h', 'audio-bad-prelude.h', 'gstplanaraudioadapter.h')
+ install_headers(badaudio_headers, subdir : 'gstreamer-1.0/gst/audio')
+@@ -52,3 +53,4 @@ gstbadaudio_dep = declare_dependency(link_with : gstba
+   dependencies : [gstaudio_dep, gstbase_dep])
+ 
+ meson.override_dependency(pkg_name, gstbadaudio_dep)
++endif

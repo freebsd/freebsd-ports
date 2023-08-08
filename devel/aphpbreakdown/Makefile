@@ -12,7 +12,7 @@ WWW=		https://gitlab.code-mesa.com/code-mesa/aphpbreakdown/
 LICENSE=	BSD2CLAUSE
 
 USES=		php:flavors
-USE_PHP=	tokenizer phar hash
+USE_PHP=	tokenizer phar
 
 NO_ARCH=	yes
 NO_BUILD=	yes

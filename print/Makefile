@@ -36,6 +36,7 @@
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
+    SUBDIR += epson-inkjet-printer-201207w
     SUBDIR += epson-inkjet-printer-201401w
     SUBDIR += epson-inkjet-printer-201601w
     SUBDIR += epson-inkjet-printer-escpr
@@ -55,17 +56,9 @@
     SUBDIR += fpdf
     SUBDIR += freetype2
     SUBDIR += ft2demos
-    SUBDIR += ghostscript7-base
-    SUBDIR += ghostscript7-commfont
-    SUBDIR += ghostscript7-jpnfont
-    SUBDIR += ghostscript7-korfont
-    SUBDIR += ghostscript7-x11
-    SUBDIR += ghostscript8-base
-    SUBDIR += ghostscript8-x11
+    SUBDIR += ghostscript10
     SUBDIR += ghostscript9-agpl-base
     SUBDIR += ghostscript9-agpl-x11
-    SUBDIR += ghostscript9-base
-    SUBDIR += ghostscript9-x11
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gsfonts
@@ -74,7 +67,7 @@
     SUBDIR += gutenprint
     SUBDIR += gv
     SUBDIR += harfbuzz
-    SUBDIR += harfbuzz-hb-view
+    SUBDIR += harfbuzz-cairo
     SUBDIR += harfbuzz-icu
     SUBDIR += hp2xx
     SUBDIR += hplip
@@ -84,6 +77,7 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
+    SUBDIR += ipp-usb
     SUBDIR += kde_poster
     SUBDIR += latex-beamer
     SUBDIR += latex-biber
@@ -147,10 +141,10 @@
     SUBDIR += pdfchain
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
+    SUBDIR += pdfmixtool
     SUBDIR += pdfstitch
     SUBDIR += pdftk
     SUBDIR += pear-File_PDF
-    SUBDIR += pecl-pdflib
     SUBDIR += pfbtopfa
     SUBDIR += photoprint
     SUBDIR += pic2fig
@@ -169,6 +163,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += py-PyMuPDF
     SUBDIR += py-collidoscope
     SUBDIR += py-dehinter
     SUBDIR += py-font-v
@@ -178,6 +173,7 @@
     SUBDIR += py-fontpens
     SUBDIR += py-fonttools
     SUBDIR += py-fpdf
+    SUBDIR += py-freetype-py
     SUBDIR += py-frescobaldi
     SUBDIR += py-glyphsets
     SUBDIR += py-glyphtools
@@ -185,6 +181,7 @@
     SUBDIR += py-preppy
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
+    SUBDIR += py-pydyf
     SUBDIR += py-pypdf
     SUBDIR += py-pypdf2
     SUBDIR += py-pypdf3
@@ -205,6 +202,7 @@
     SUBDIR += rubygem-afm
     SUBDIR += rubygem-color
     SUBDIR += rubygem-color-tools
+    SUBDIR += rubygem-color_diff
     SUBDIR += rubygem-pdf-core
     SUBDIR += rubygem-pdf-reader
     SUBDIR += rubygem-pdf-writer
@@ -228,6 +226,7 @@
     SUBDIR += sgf2tex
     SUBDIR += shrinkpdf
     SUBDIR += simple-fb2-reader
+    SUBDIR += sioyek
     SUBDIR += splix
     SUBDIR += system-config-printer
     SUBDIR += t1utils

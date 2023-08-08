@@ -1,19 +1,27 @@
 PORTNAME=	libs11n
 PORTVERSION=	1.2.10
+DISTVERSIONSUFFIX=	-nobuildfiles
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/s11n/s11n/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-nobuildfiles
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C++ library for easily serializing a wide variety of objects
-WWW=		http://s11n.net
+WWW=		http://s11n.net/
+
+LICENSE=	PD
 
 USES=		uidfix zip
-WRKSRC_SUBDIR=	src
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
-.if defined(NO_PROFILE)
+PORTSCOUT=	limitw:1,even
+
+WRKSRC_SUBDIR=	src
+
+.include <bsd.port.pre.mk>
+
+.if defined(NO_PROFILE) || ( ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 )))
 PLIST_SUB+=	PROFILE="@comment "
 .else
 PLIST_SUB+=	PROFILE=""
@@ -32,4 +40,4 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/s11n.net/s11n/proxy/pod
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/s11n.net/s11n/proxy/std
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

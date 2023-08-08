@@ -1,5 +1,5 @@
 PORTNAME=	libiscsi
-DISTVERSION=	1.19.0
+DISTVERSION=	1.19.0.230208
 CATEGORIES=	net
 
 MAINTAINER=	d8zNeCFG@aon.at
@@ -11,11 +11,12 @@ LICENSE_COMB=		multi
 LICENSE_FILE_LGPL21+  =	${WRKSRC}/LICENCE-LGPL-2.1.txt
 LICENSE_FILE_GPLv2+   =	${WRKSRC}/LICENCE-GPL-2.txt
 
-USES=		autoreconf compiler:c11 libtool pathfix
+USES=		autoreconf compiler:c11 gmake libtool pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 GH_ACCOUNT=	sahlberg
+GH_TAGNAME=	22f7b2656776
 
 GNU_CONFIGURE=	yes
 

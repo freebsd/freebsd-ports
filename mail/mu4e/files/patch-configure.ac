@@ -1,36 +1,32 @@
---- configure.ac.orig	2021-08-21 13:27:15 UTC
+--- configure.ac.orig	2022-12-06 08:23:41 UTC
 +++ configure.ac
-@@ -34,13 +34,13 @@ AC_SUBST(prefix)
+@@ -34,11 +34,11 @@ AC_SUBST(prefix)
  
  # AC_PROG_CXX *before* AC_PROG_CC, otherwise configure won't error out
  # when a c++ compiler is not found. Weird, huh?
 -AC_PROG_CXX
 -AC_PROG_CC
 -AC_PROG_CPP
--AC_PROG_CC_STDC
--AC_PROG_CC_C99
 +#AC_PROG_CXX
 +#AC_PROG_CC
 +#AC_PROG_CPP
-+#AC_PROG_CC_STDC
-+#AC_PROG_CC_C99
  AC_PROG_INSTALL
--AC_HEADER_STDC
-+#AC_HEADER_STDC
+-AC_CHECK_INCLUDES_DEFAULT
++#AC_CHECK_INCLUDES_DEFAULT
+ AC_PROG_EGREP
  
- extra_flags="-Wformat-security                                        \
-          -Wstack-protector                                        \
-@@ -48,22 +48,22 @@ extra_flags="-Wformat-security                        
-          -Wno-cast-function-type                                  \
-          -Wno-bad-function-cast"
  
--AX_CXX_COMPILE_STDCXX_14
+@@ -49,22 +49,22 @@ extra_flags="-Wformat-security		\
+          -Wno-bad-function-cast		\
+ 	 -Wno-switch-enum"
+ 
+-AX_CXX_COMPILE_STDCXX_17
 -AX_COMPILER_FLAGS_CXXFLAGS([],[],[${extra_cflags}])
--AX_APPEND_COMPILE_FLAGS([-Wno-inline ],[CXXFLAGS])
+-AX_APPEND_COMPILE_FLAGS([-Wno-inline],[CXXFLAGS])
 -AX_VALGRIND_CHECK
-+#AX_CXX_COMPILE_STDCXX_14
++#AX_CXX_COMPILE_STDCXX_17
 +#AX_COMPILER_FLAGS_CXXFLAGS([],[],[${extra_cflags}])
-+#AX_APPEND_COMPILE_FLAGS([-Wno-inline ],[CXXFLAGS])
++#AX_APPEND_COMPILE_FLAGS([-Wno-inline],[CXXFLAGS])
 +#AX_VALGRIND_CHECK
  
 -LT_INIT
@@ -50,13 +46,13 @@
  
  # asan is somewhat similar to valgrind, but has low enough overhead so it
  # can be used during normal operation.
-@@ -144,43 +144,13 @@ AS_IF([test -z "$PKG_CONFIG"],
+@@ -143,43 +143,13 @@ AS_IF([test -z "$PKG_CONFIG"],
  )
  
  # glib2?
--PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.50 gobject-2.0 gio-2.0)
+-PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.58 gobject-2.0 gio-2.0)
 -glib_version="$($PKG_CONFIG --modversion glib-2.0)"
-+# PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.50 gobject-2.0 gio-2.0)
++# PKG_CHECK_MODULES(GLIB,glib-2.0 >= 2.58 gobject-2.0 gio-2.0)
 +# glib_version="$($PKG_CONFIG --modversion glib-2.0)"
  
  # gmime, version 3.0 or higher
@@ -98,27 +94,29 @@
  ###############################################################################
  # we set the set the version of the MuStore (Xapian database) layout
  # here; it will become part of the db name, so we can automatically
-@@ -272,23 +242,8 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/doc/mu")
+@@ -247,24 +217,10 @@ AC_SUBST(MU_DOC_DIR, "${prefix}/share/doc/mu")
  
  AC_CONFIG_FILES([
  Makefile
 -mu/Makefile
 -lib/Makefile
 -lib/doxyfile
+-lib/thirdparty/Makefile
 -lib/utils/Makefile
+-lib/message/Makefile
 -lib/index/Makefile
  mu4e/Makefile
- mu4e/mu4e-meta.el
+ mu4e/mu4e-config.el
 -guile/Makefile
 -guile/mu/Makefile
 -guile/examples/Makefile
--guile/tests/Makefile
 -guile/scripts/Makefile
--toys/Makefile
--toys/mug/Makefile
 -man/Makefile
 -m4/Makefile
 -contrib/Makefile
  ])
- AC_CONFIG_FILES([mu/mu-memcheck], [chmod +x mu/mu-memcheck])
+-AC_CONFIG_FILES([mu/mu-memcheck], [chmod +x mu/mu-memcheck])
++# AC_CONFIG_FILES([mu/mu-memcheck], [chmod +x mu/mu-memcheck])
+ 
+ AC_OUTPUT
  

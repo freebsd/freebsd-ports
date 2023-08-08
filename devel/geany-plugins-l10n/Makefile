@@ -1,5 +1,6 @@
 PORTNAME=	geany-plugins-l10n
 PORTVERSION=	${GEANY_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

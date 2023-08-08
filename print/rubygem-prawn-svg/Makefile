@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-css_parser>=1.6<2:textproc/rubygem-css_parser \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

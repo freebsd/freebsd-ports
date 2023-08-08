@@ -1,0 +1,60 @@
+--- Cargo.lock.orig	2023-03-31 21:34:05 UTC
++++ Cargo.lock
+@@ -855,17 +855,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "libproc"
+-version = "0.13.0"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "8b18cbf29f8ff3542ba22bdce9ac610fcb75d74bb4e2b306b2a2762242025b4f"
+-dependencies = [
+- "bindgen",
+- "errno",
+- "libc",
+-]
+-
+-[[package]]
+ name = "link-cplusplus"
+ version = "1.0.8"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1204,19 +1193,6 @@ dependencies = [
+ ]
+ 
+ [[package]]
+-name = "procfs"
+-version = "0.14.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "b1de8dacb0873f77e6aefc6d71e044761fcc68060290f5b1089fcdf84626bb69"
+-dependencies = [
+- "bitflags",
+- "byteorder",
+- "hex",
+- "lazy_static",
+- "rustix",
+-]
+-
+-[[package]]
+ name = "pueue"
+ version = "3.1.2"
+ dependencies = [
+@@ -1237,7 +1213,6 @@ dependencies = [
+  "pest",
+  "pest_derive",
+  "pretty_assertions",
+- "procfs",
+  "pueue-lib",
+  "rstest",
+  "serde",
+@@ -1267,11 +1242,9 @@ dependencies = [
+  "chrono",
+  "command-group",
+  "dirs",
+- "libproc",
+  "log",
+  "portpicker",
+  "pretty_assertions",
+- "procfs",
+  "rand 0.8.5",
+  "rcgen",
+  "rev_buf_reader",

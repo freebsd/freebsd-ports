@@ -1,0 +1,14 @@
+*** meson.build.orig	Fri Sep  2 18:21:32 2022
+--- meson.build	Fri Sep  2 18:24:38 2022
+***************
+*** 117,122 ****
+--- 117,125 ----
+  cdata.set_quoted('GETTEXT_PACKAGE', 'gst-plugins-ugly-1.0')
+  cdata.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+  
++ cdata.set_quoted('DEFAULT_AUDIOSINK', get_option('defaultaudiosink'))
++ cdata.set_quoted('DEFAULT_AUDIOSRC', get_option('defaultaudiosrc'))
++ 
+  # GStreamer package name and origin url
+  gst_package_name = get_option('package-name')
+  if gst_package_name == ''

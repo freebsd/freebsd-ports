@@ -1,6 +1,6 @@
 PORTNAME=	libretro-flycast
 PORTVERSION=	0.20210608
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu

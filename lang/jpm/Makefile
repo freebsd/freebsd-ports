@@ -1,8 +1,9 @@
 PORTNAME=	jpm
-DISTVERSION=	0.0.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.0
 CATEGORIES=	lang
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hsw@bitmark.com
 COMMENT=	Janet Project Manager tool
 WWW=		https://github.com/janet-lang/jpm
 

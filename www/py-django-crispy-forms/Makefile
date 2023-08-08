@@ -1,8 +1,7 @@
 PORTNAME=	django-crispy-forms
-PORTVERSION=	1.14.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -12,10 +11,12 @@ WWW=		https://github.com/django-crispy-forms/django-crispy-forms
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR}
 
-USES=		dos2unix python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		dos2unix python
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 

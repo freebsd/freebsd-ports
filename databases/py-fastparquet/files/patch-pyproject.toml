@@ -1,0 +1,6 @@
+--- pyproject.toml.orig	2023-04-20 20:00:36 UTC
++++ pyproject.toml
+@@ -1,2 +1,2 @@
+ [build-system]
+-requires = ["setuptools", "wheel", "Cython >= 0.29.23", "oldest-supported-numpy", "pytest-runner"]
++requires = ["setuptools", "wheel", "Cython >= 0.29.23", "numpy"]

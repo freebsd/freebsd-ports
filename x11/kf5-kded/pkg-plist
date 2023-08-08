@@ -6,6 +6,7 @@ lib/systemd/user/plasma-kded.service
 %%DOCS%%man/ca@valencia/man8/kded5.8.gz
 %%DOCS%%man/de/man8/kded5.8.gz
 %%DOCS%%man/es/man8/kded5.8.gz
+%%DOCS%%man/fr/man8/kded5.8.gz
 %%DOCS%%man/it/man8/kded5.8.gz
 %%DOCS%%man/man8/kded5.8.gz
 %%DOCS%%man/nl/man8/kded5.8.gz

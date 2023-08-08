@@ -1,6 +1,6 @@
---- src/STEPConstruct/STEPConstruct_AP203Context.cxx.orig	2017-08-30 13:28:30 UTC
+--- src/STEPConstruct/STEPConstruct_AP203Context.cxx.orig	2022-09-30 11:53:57 UTC
 +++ src/STEPConstruct/STEPConstruct_AP203Context.cxx
-@@ -123,7 +123,15 @@ Handle(StepBasic_DateAndTime) STEPConstr
+@@ -121,7 +121,15 @@ Handle(StepBasic_DateAndTime) STEPConstruct_AP203Conte
      long shift = 0;
      _get_timezone (&shift);
    #else

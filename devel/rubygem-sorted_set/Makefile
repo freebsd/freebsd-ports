@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-rbtree>=0:devel/rubygem-rbtree \
 		rubygem-set>=1.0<2:devel/rubygem-set
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

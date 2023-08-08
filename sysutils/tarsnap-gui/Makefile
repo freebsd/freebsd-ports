@@ -4,7 +4,7 @@ PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Cross platform GUI for the Tarsnap command line client
 WWW=		https://github.com/Tarsnap/tarsnap-gui/wiki
 

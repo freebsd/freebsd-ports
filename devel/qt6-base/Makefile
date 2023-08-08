@@ -1,7 +1,11 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
+
+PATCH_SITES=	https://github.com/qt/qtbase/commit/
+PATCHFILES=	3f45905953d57e0174059d7d9d6bc75c3c1c406c.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
@@ -11,12 +15,11 @@ BUILD_DEPENDS=	xml:textproc/xmlstarlet \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	\
-		libatk-1.0.so:accessibility/atk \
-		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libatk-1.0.so:accessibility/at-spi2-core \
+		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libavahi-client.so:net/avahi-app \
 		libbrotlidec.so:archivers/brotli \
-		libcups.so:print/cups \
 		libdbus-1.so:devel/dbus \
 		libdouble-conversion.so:devel/double-conversion \
 		libdrm.so:graphics/libdrm \
@@ -50,67 +53,57 @@ LIB_DEPENDS=	\
 		libvulkan.so:graphics/vulkan-loader \
 		libwacom.so:x11/libwacom \
 		libwayland-client.so:graphics/wayland \
-		libxcb-cursor.so:x11/xcb-util-cursor \
-		libxcb-ewmh.so:x11/xcb-util-wm \
-		libxcb-image.so:x11/xcb-util-image \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxcb-render-util.so:x11/xcb-util-renderutil \
-		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang gl gnome jpeg perl5 pkgconfig python \
-		qt-dist:6 shebangfix xorg
-USE_GL=		egl gl
+		qt-dist:6 shebangfix
+USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
-USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
-		xext xfixes xi xinerama xrandr xrender
 CMAKE_ON=	QT_AVOID_CMAKE_ARCHIVING_API \
 		QT_FIND_ALL_PACKAGES_ALWAYS
 CMAKE_OFF=	QT_FEATURE_eglfs \
 		QT_FEATURE_gssapi
+# sql drivers are handled in the qt6-base-sqldriver port
+CMAKE_OFF+=	FEATURE_sql_mysql \
+		FEATURE_sql_odbc \
+		FEATURE_sql_psql \
+		FEATURE_sql_sqlite
+
 SHEBANG_FILES=	${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \
 		${WRKSRC}/mkspecs/features/uikit/devices.py \
 		${WRKSRC}/mkspecs/features/data/mac/objc_namespace.sh \
 		${WRKSRC}/util/android/android_emulator_launcher.sh \
-		${WRKSRC}/util/testrunner/qt-testrunner.py
+		${WRKSRC}/util/testrunner/qt-testrunner.py \
+		${WRKSRC}/util/testrunner/sanitizer-testrunner.py
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 # zstd from base fails to compress files during the build (error 11: unsupported argument)
 BINARY_ALIAS=	zstd=${LOCALBASE}/bin/zstd
 
-#== Option handling
-OPTIONS_GROUP=		SQL
-OPTIONS_GROUP_SQL=	IBASE MYSQL ODBC PSQL SQLITE
-OPTIONS_DEFAULT=	SQLITE
+OPTIONS_DEFINE=		CUPS X11
+OPTIONS_DEFAULT=	CUPS X11
 OPTIONS_SUB=		yes
 
-IBASE_DESC=		InterBase database support
-IBASE_CMAKE_ON=		-DFEATURE_sql_ibase=ON
-IBASE_CMAKE_OFF=	-DFEATURE_sql_ibase=OFF
-IBASE_USES=		firebird:4.0
-IBASE_BROKEN=		IBASE: fatal error: 'gen/iberror.h' file not found
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CMAKE_OFF=		-DFEATURE_cups=OFF
 
-MYSQL_DESC=		MySQL database support
-MYSQL_CMAKE_ON=		-DFEATURE_sql_mysql=ON
-MYSQL_CMAKE_OFF=	-DFEATURE_sql_mysql=OFF
-MYSQL_USES=		mysql
+X11_USES=		xorg
+X11_USE=		XORG=ice,pixman,sm,x11,xau,xcb,xcomposite,xcursor,xdamage,xdmcp,xext,xfixes,xi,xinerama,xrandr,xrender
+X11_CMAKE_BOOL=		FEATURE_xcb FEATURE_xlib
+X11_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
+			libxcb-icccm.so:x11/xcb-util-wm \
+			libxcb-image.so:x11/xcb-util-image \
+			libxcb-keysyms.so:x11/xcb-util-keysyms \
+			libxcb-render-util.so:x11/xcb-util-renderutil \
+			libxcb-util.so:x11/xcb-util
 
-ODBC_DESC=		ODBC database support
-ODBC_CMAKE_ON=		-DFEATURE_sql_odbc=ON
-ODBC_CMAKE_OFF=		-DFEATURE_sql_odbc=OFF
-ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+.include <bsd.port.pre.mk>
 
-PSQL_DESC=		PostgreSQL database support
-PSQL_CMAKE_ON=		-DFEATURE_sql_psql=ON
-PSQL_CMAKE_OFF=		-DFEATURE_sql_psql=OFF
-PSQL_USES=		pgsql
-
-SQLITE_DESC=		Sqlite database support
-SQLITE_CMAKE_ON=	-DFEATURE_sql_sqlite=ON \
-			-DQT_FEATURE_system_sqlite=ON
-SQLITE_CMAKE_OFF=	-DFEATURE_sql_sqlite=OFF
-SQLITE_USES=		sqlite:3
+.if ${ARCH} == "armv6" || ${ARCH} == "armv7"
+BUILD_DEPENDS+=	as:devel/binutils
+CMAKE_ARGS+=	-DCMAKE_ASM_FLAGS=-no-integrated-as
+.endif
 
 # TODO: do this cleaner -- somewhere cmake/qmake still creates empty directories
 # for the cmake files in INSTALL_PREFIX/lib/cmake
@@ -123,4 +116,4 @@ post-install:
 		${RLN} $$t; \
 	done <${WRKDIR}/.build/user_facing_tool_links.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

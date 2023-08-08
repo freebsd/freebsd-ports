@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-subversion>=0:devel/p5-subversion \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck \
 		svk>=2.0.0:devel/svk
 
-USES=		apache:2.2+ perl5
+USES=		apache perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

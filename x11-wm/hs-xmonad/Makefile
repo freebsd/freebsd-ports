@@ -1,6 +1,5 @@
 PORTNAME=	xmonad
-PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTVERSION=	0.17.1
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,10 +15,11 @@ USES=		cabal xorg
 
 USE_XORG=	x11 xext xinerama xrandr xscrnsaver
 
-USE_CABAL=	X11-1.10.2 \
+USE_CABAL=	X11-1.10.3 \
 		data-default-class-0.1.2.0 \
-		hsc2hs-0.68.8 \
-		setlocale-1.0.0.10_1
+		hsc2hs-0.68.9 \
+		setlocale-1.0.0.10_2
+CABAL_REVISION=	2
 
 OPTIONS_DEFINE=	EXAMPLES
 

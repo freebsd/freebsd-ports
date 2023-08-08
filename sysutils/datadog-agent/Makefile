@@ -1,6 +1,6 @@
 PORTNAME=	datadog-agent
 DISTVERSION=	7.24.1
-PORTREVISION=	5
+PORTREVISION=	12
 CATEGORIES=	sysutils net www
 
 MAINTAINER=	uros@gruber.si
@@ -15,7 +15,7 @@ BROKEN_i386=	fails to build: vendor/github.com/DataDog/gopsutil/process/process_
 BUILD_DEPENDS=	cmake-core>=3.12:devel/cmake-core \
 		go-bindata>0:devel/go-bindata
 
-USES=		go:modules python:3.7+
+USES=		go:modules python
 
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes

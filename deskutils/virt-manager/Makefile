@@ -1,5 +1,5 @@
 PORTNAME=	virt-manager
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 PORTREVISION=	2
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	https://virt-manager.org/download/sources/${PORTNAME}/
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:devel/py-dbus@${PY_FLAVOR} \
 PYDISTUTILS_INSTALLNOSINGLE=	yes
 PYDISTUTILS_CONFIGURE_TARGET=	configure
 PYDISTUTILS_CONFIGUREARGS=	--prefix=${PREFIX}
-USES=		python:3.3+ gettext gnome shebangfix
+USES=		python gettext gnome shebangfix
 USE_PYTHON=	noegginfo autoplist distutils noflavors
 
 NO_ARCH=	yes

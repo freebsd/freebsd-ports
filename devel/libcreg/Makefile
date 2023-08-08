@@ -1,5 +1,5 @@
 PORTNAME=	libcreg
-DISTVERSION=	experimental-20210625
+DISTVERSION=	experimental-20221022
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libcreg/releases/download/${PORTVERSION:E}/ \
 		LOCAL/antoine
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python
 CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
-USES=		fuse libtool pathfix pkgconfig python:3.5+
+USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:E}

@@ -1,5 +1,6 @@
 PORTNAME=	poppler
-DISTVERSION=	22.09.0
+DISTVERSION=	23.05.0
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	https://poppler.freedesktop.org/
 
@@ -53,7 +54,7 @@ CMAKE_OFF+=	${_POPPLER_SLAVES:N${_SLAVE_PORT}:tu:S/^/ENABLE_/}
 PORTSCOUT=	limitw:1,even
 USES+=		iconv
 CMAKE_ON+=	ENABLE_CPP
-PLIST_SUB+=	SHLIB_VER=124
+PLIST_SUB+=	SHLIB_VER=128
 
 OPTIONS_DEFINE=		CAIRO CURL OPENJPEG
 OPTIONS_DEFAULT=	OPENJPEG
@@ -114,6 +115,9 @@ post-install:
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .elif ${_SLAVE_PORT} == qt5
 	${INSTALL_DATA} ${WRKSRC}/poppler-qt5.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+.elif ${_SLAVE_PORT} == qt6
+	${INSTALL_DATA} ${WRKSRC}/poppler-qt6.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .endif
 

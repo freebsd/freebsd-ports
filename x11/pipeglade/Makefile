@@ -1,6 +1,6 @@
 PORTNAME=	pipeglade
 PORTVERSION=	4.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 devel
 
 MAINTAINER=	trebbu@googlemail.com

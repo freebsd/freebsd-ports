@@ -1,6 +1,6 @@
 PORTNAME=	picpuz
 PORTVERSION=	2.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics games
 MASTER_SITES=	http://kornelix.squarespace.com/storage/downloads/ \
 		http://www.stasyan.com/devel/distfiles/

@@ -1,5 +1,3 @@
 PostgreSQL database adapter for Python - optimization package
 
 Psycopg 3 is a modern implementation of a PostgreSQL adapter for Python.
-
-See also: https://github.com/psycopg/psycopg/tree/master/psycopg_c

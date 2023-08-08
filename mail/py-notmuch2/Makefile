@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libnotmuch.so:mail/notmuch
 
-USES=		python:3.5+ pkgconfig uniquefiles:dirs
+USES=		python pkgconfig uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 
 HAS_CONFIGURE=		yes

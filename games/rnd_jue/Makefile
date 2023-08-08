@@ -1,6 +1,6 @@
 PORTNAME=	rnd_jue
-PORTVERSION=	3.3.0.0
-PORTREVISION=	6
+DISTVERSION=	3.3.0.0
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/:game \
 		SF/nemysisfreebsdp/${CATEGORIES}/rocksndiamonds/
@@ -19,9 +19,6 @@ COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff jue
 WWW=		https://www.jb-line.de/rnd/rnd_start_e.html
 
 LICENSE=	GPLv2
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: setup
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: setup
 
 LIB_DEPENDS+=	libsmpeg.so:multimedia/smpeg
 EXTRACT_DEPENDS+=${UNZIP_CMD}:archivers/unzip
@@ -83,7 +80,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
 .endfor
-	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
+	${RLN} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "CREDITS ChangeLog docs/elements" \
 		${STAGEDIR}${DOCSDIR}/

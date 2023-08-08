@@ -47,6 +47,8 @@
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/package_info%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/schedules%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/schedules%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/temperatures%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/temperatures%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/testing%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/testing%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/dwave/system/__pycache__/utilities%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -100,6 +102,7 @@
 %%PYTHON_SITELIBDIR%%/dwave/system/samplers/dwave_sampler.py
 %%PYTHON_SITELIBDIR%%/dwave/system/samplers/leap_hybrid_sampler.py
 %%PYTHON_SITELIBDIR%%/dwave/system/schedules.py
+%%PYTHON_SITELIBDIR%%/dwave/system/temperatures.py
 %%PYTHON_SITELIBDIR%%/dwave/system/testing.py
 %%PYTHON_SITELIBDIR%%/dwave/system/utilities.py
 %%PYTHON_SITELIBDIR%%/dwave/system/warnings.py

@@ -1,8 +1,8 @@
 PORTNAME=	stonesoup
-DISTVERSION=	0.29.1
+DISTVERSION=	0.30.1
 CATEGORIES=	games
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Dungeon Crawl Stone Soup - a fun, free rogue-like game
 WWW=		https://crawl.develz.org/
 

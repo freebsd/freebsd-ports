@@ -235,7 +235,7 @@
          g_object_freeze_notify (G_OBJECT (user));
  
 -        argv[0] = "/usr/sbin/usermod";
-+        argv[0] = "/usr/sbin/chpass";
++        argv[0] = "/usr/bin/chpass";
          argv[1] = "-p";
          argv[2] = strings[0];
 -        argv[3] = "--";

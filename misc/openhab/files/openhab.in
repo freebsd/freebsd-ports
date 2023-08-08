@@ -60,7 +60,7 @@ export OPENHAB_USERDATA="${openhab_userdata_dir}"
 export OPENHAB_LOGDIR="${openhab_log_dir}"
 # for UTF-8 encoding, language can be set inside openhab:
 export LC_ALL=en_US.UTF-8
-export JAVA_VERSION=11
+export JAVA_VERSION=17
 
 pidfile=/var/run/${name}/${name}.pid
 

@@ -1,27 +1,27 @@
 PORTNAME=	lms
-DISTVERSION=	3.28.0
-PORTREVISION=	2
-MASTER_SITES=	https://github.com/epoupon/lms/archive/refs/tags/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.40.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Lightweight Music Server
+COMMENT=	Lightweight Music Server to access music using a web interface
 WWW=		https://github.com/epoupon/lms
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	googletest>0:devel/googletest \
-		${LOCALBASE}/include/stb/stb_image.h:devel/stb
+BUILD_DEPENDS=	googletest>0:devel/googletest
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libconfig++.so:devel/libconfig \
-		libGraphicsMagick.so:graphics/GraphicsMagick \
 		libtag.so:audio/taglib \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++17-lang cpe pkgconfig
+USES=		cmake compiler:c++17-lang cpe libarchive pkgconfig
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	epoupon
 
 USER=		nobody
 GROUP=		nobody
@@ -29,6 +29,18 @@ SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME}
 
 PLIST_SUB=	USER="${USER}" GROUP="${GROUP}"
+
+OPTIONS_RADIO=			IMAGE_LIB
+OPTIONS_RADIO_IMAGE_LIB=	STB MAGICK
+OPTIONS_DEFAULT=		STB # STB is prefered by the upstream
+
+STB_DESC=			Use STB as image library (uses less memory)
+STB_BUILD_DEPENDS=		${LOCALBASE}/include/stb/stb_image.h:devel/stb
+STB_CMAKE_BOOL=			FREEBSD_USE_STB
+
+MAGICK_DESC=			Use GraphicsMagick++ as image library
+MAGICK_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
+MAGICK_CMAKE_BOOL=		FREEBSD_USE_MAGICK
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/etc/lms.conf"|"${PREFIX}/etc/lms.conf"|' \

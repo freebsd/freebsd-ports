@@ -1,6 +1,5 @@
 PORTNAME=	qscintilla2-qt5
 PORTVERSION=	${QSCI2_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITES_QSCI2}
 DISTNAME=	${QSCI2_DISTNAME}
@@ -25,13 +24,9 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES NLS
 OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MNLS)
+post-patch-NLS-off:
 	cd ${BUILD_WRKSRC} && ${REINPLACE_CMD} -e \
 		's|trans qsci|qsci|' qscintilla.pro
-.endif
 
 post-install:
 	cd ${WRKSRC} &&\

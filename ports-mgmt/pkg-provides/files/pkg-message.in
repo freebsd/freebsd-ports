@@ -13,18 +13,8 @@ After that run `pkg plugins' to see the plugins handled by pkg.
 EOM
 }
 { type: upgrade
-  maximum_version: "0.6.0"
   message: <<EOM
 To update the provides database run `pkg provides -u`.
-EOM
-}
-{ 
-  type: upgrade
-  maximum_version: "0.6.0"
-  message: <<EOM
-Pkg-provides from v0.6.0 introduces a new database file format.
-
-To update the provides database run `pkg provides -uf`.
 EOM
 }
 ]

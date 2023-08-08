@@ -1,6 +1,6 @@
 PORTNAME=	aylet
 PORTVERSION=	0.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.worldofspectrum.org/pub/sinclair/music/players-unix/ \
 		LOCAL/ehaupt

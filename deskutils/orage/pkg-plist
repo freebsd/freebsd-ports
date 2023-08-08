@@ -1,22 +1,13 @@
-bin/globaltime
 bin/orage
-lib/xfce4/panel/plugins/liborageclock.so
 share/applications/org.xfce.orage-settings.desktop
 share/applications/org.xfce.orage.desktop
-share/applications/org.xfce.orage.globaltime.desktop
 share/dbus-1/services/org.xfce.orage.service
 share/icons/hicolor/128x128/apps/org.xfce.orage.png
-share/icons/hicolor/160x160/apps/org.xfce.orage.xpm
-share/icons/hicolor/160x160/apps/org.xfce.orage_ice.xpm
-share/icons/hicolor/160x160/apps/org.xfce.orage_round.xpm
-share/icons/hicolor/160x160/apps/org.xfce.orage_sun.xpm
 share/icons/hicolor/16x16/apps/org.xfce.orage.png
 share/icons/hicolor/24x24/apps/org.xfce.orage.png
 share/icons/hicolor/32x32/apps/org.xfce.orage.png
-share/icons/hicolor/48x48/apps/org.xfce.orage.globaltime.png
 share/icons/hicolor/48x48/apps/org.xfce.orage.png
 share/icons/hicolor/64x64/apps/org.xfce.orage.png
-share/icons/hicolor/scalable/apps/org.xfce.orage.globaltime.svg
 share/icons/hicolor/scalable/apps/org.xfce.orage.svg
 %%NLS%%share/locale/am/LC_MESSAGES/orage.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/orage.mo
@@ -83,4 +74,3 @@ share/metainfo/org.xfce.orage.appdata.xml
 %%DATADIR%%/sounds/Spo.wav
 %%DATADIR%%/sounds/Tear.wav
 %%DATADIR%%/sounds/Wall_c.wav
-share/xfce4/panel/plugins/org.xfce.orage.clock-plugin.desktop

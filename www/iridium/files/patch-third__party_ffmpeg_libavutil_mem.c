@@ -1,4 +1,4 @@
---- third_party/ffmpeg/libavutil/mem.c.orig	2022-03-28 18:11:04 UTC
+--- third_party/ffmpeg/libavutil/mem.c.orig	2022-10-05 07:34:01 UTC
 +++ third_party/ffmpeg/libavutil/mem.c
 @@ -33,9 +33,6 @@
  #include <stdlib.h>
@@ -8,5 +8,5 @@
 -#include <malloc.h>
 -#endif
  
- #include "avutil.h"
- #include "common.h"
+ #include "attributes.h"
+ #include "avassert.h"

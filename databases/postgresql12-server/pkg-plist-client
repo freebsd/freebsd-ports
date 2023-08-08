@@ -305,7 +305,7 @@ include/postgresql/server/common/fe_memutils.h
 include/postgresql/server/common/file_perm.h
 include/postgresql/server/common/file_utils.h
 include/postgresql/server/common/int.h
-include/postgresql/server/common/int%%PG_VERSION%%8.h
+include/postgresql/server/common/int128.h
 include/postgresql/server/common/ip.h
 include/postgresql/server/common/keywords.h
 include/postgresql/server/common/kwlookup.h

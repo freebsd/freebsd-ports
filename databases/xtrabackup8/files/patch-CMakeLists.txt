@@ -1,13 +1,21 @@
---- CMakeLists.txt.orig	2020-08-28 21:02:32 UTC
+--- CMakeLists.txt.orig	2023-01-30 13:34:34 UTC
 +++ CMakeLists.txt
-@@ -1575,10 +1575,6 @@ IF(ENABLE_GCOV)
-   INCLUDE(fastcov)
+@@ -2081,7 +2081,6 @@ ENDIF()
+   ENDIF()
  ENDIF()
  
--IF(UNIX)
--  ADD_SUBDIRECTORY(man)
+-ADD_SUBDIRECTORY(extra/libkmip)
+ 
+ #
+ # Setup maintainer mode options by the end. Platform checks are
+@@ -2292,10 +2291,6 @@ IF(ENABLE_GCOV)
+ 
+ IF(ENABLE_GCOV)
+   INCLUDE(fastcov)
 -ENDIF()
 -
+-IF(UNIX)
+-  ADD_SUBDIRECTORY(man)
+ ENDIF()
+ 
  IF(NOT WITHOUT_SERVER)
-   ADD_SUBDIRECTORY(packaging/rpm-common)
-   ADD_SUBDIRECTORY(packaging/rpm-oel)

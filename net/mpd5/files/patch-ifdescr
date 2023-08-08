@@ -1,0 +1,35 @@
+Index: src/iface.c
+===================================================================
+--- src/iface.c	(revision 2538)
++++ src/iface.c	(revision 2539)
+@@ -61,6 +61,10 @@
+ #include <pcap.h>
+ #endif
+ 
++#ifdef SIOCSIFDESCR
++#include <time.h>
++#endif
++
+ /*
+  * DEFINITIONS
+  */
+@@ -3872,6 +3876,7 @@ IfaceSetName(Bund b, const char * ifname)
+  * %o for local outer ("physical") address of bundle's first link
+  * %O for peer outer ("physical") address of bundle's first link
+  * %P for peer outer ("physical") port of bundle's first link
++ * %s for last interface description change time, in unixtime (seconds)
+  * %S for interface status (DoD/UP/DOWN)
+  * %t for type of bundle's first link (pppoe, pptp, l2tp etc.)
+  * %u for self auth name (or dash if self auth name not used)
+@@ -4031,6 +4036,11 @@ IfaceSetDescr(Bund b, const char * template)
+ 	    } else {
+ 		DST_COPY("-");
+ 	    }
++	    break;
++	  /* timestamp of interface description change */
++	  case 's':
++	    snprintf(buf, sizeof(buf), "%jd", (intmax_t)time(NULL));
++	    DST_COPY(buf);
+ 	    break;
+ 	  /* interface status */
+ 	  case 'S':

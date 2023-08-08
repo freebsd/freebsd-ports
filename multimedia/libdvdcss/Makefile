@@ -1,7 +1,8 @@
 PORTNAME=	libdvdcss
 DISTVERSION=	1.4.3
 CATEGORIES=	multimedia
-MASTER_SITES=	https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
+		https://download.videolan.org/pub/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable abstraction library for DVD decryption

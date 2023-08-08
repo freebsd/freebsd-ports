@@ -9,8 +9,7 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Mail filter written in Ruby
 WWW=		http://www.pitecan.com/Lens/
 
-USES=		shebangfix
-USE_RUBY=	yes
+USES=		ruby shebangfix
 
 NO_ARCH=	yes
 NO_BUILD=	yes

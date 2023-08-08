@@ -7,16 +7,13 @@ MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Framework for performing tensor operations
 WWW=		https://github.com/devinamatthews/tblis
 
+BROKEN_FreeBSD_14=	error: static_assert failed due to requirement
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=		fails to compile: include_configs.hpp:2:10: fatal error: 'configs/armv7a/config.hpp' file not found
-BROKEN_armv6=		fails to compile: include_configs.hpp:2:10: fatal error: 'configs/armv7a/config.hpp' file not found
-BROKEN_powerpc64=	fails to compile: include_configs.hpp:2:10: fatal error: 'configs/power7/config.hpp' file not found
-BROKEN_powerpc64le=	fails to compile: include_configs.hpp:2:10: fatal error: 'configs/power7/config.hpp' file not found
-BROKEN_riscv64=		fails to configure: ./tci/tci_config.h:37:2: Unknown architecture
-NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON=	i386 requires SSE
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	requires SSE
 
 OPTIONS_DEFINE=	PARA
 PARA_DESC=	use pthread parallelization

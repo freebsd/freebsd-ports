@@ -1,7 +1,9 @@
 PORTNAME=	cryptography
 PORTVERSION=	3.4.8
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -25,7 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography-vectors>=${PORTVERSION}:securi
 		${PYTHON_PKGNAMEPREFIX}pytz>=0,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		compiler:env cpe python:3.6+ ssl
+USES=		compiler:env cpe python ssl
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 CFLAGS+=	-I${OPENSSLINC}

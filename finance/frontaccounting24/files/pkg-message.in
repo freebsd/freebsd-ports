@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+ FrontAccounting has been installed into the following directory:
+ %%WWWDIR%%
+
+ Be sure to adjust your web server's configuration to allow you to
+ access that directory.
+
+ For example create a conf file (FA.conf) in the Apache Includes 
+ directory (/usr/local/etc/apache24/Includes) containing the 
+ following:
+
+        Alias /frontaccounting /usr/local/www/frontaccounting24/
+        <Directory /usr/local/www/frontaccounting24/>
+                Require all granted
+                DirectoryIndex index.php
+        </Directory>
+
+        Adjust the "Require all granted" statement to suit your 
+        security needs in your environment.
+
+ Session Data will be stored by default for this port within:
+   %%WWWDIR%%/tmp
+ 
+ Adjust the session settings as you require beginning on line 434 
+ in:
+     %%WWWDIR%%/tmp/session.inc
+
+EOM
+}
+]

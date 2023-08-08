@@ -1,16 +1,17 @@
 PORTNAME=	traff
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	daniel@freebsd.ro
 COMMENT=	Libpcab based fast traffic accounting program
+WWW=		https://sourceforge.net/projects/traff
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: conf_file
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: conf_file
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:devel/argp-standalone
+LIB_DEPENDS=	libargp.so:devel/argp-standalone
 
 USES=		gmake
 USE_RC_SUBR=	traff

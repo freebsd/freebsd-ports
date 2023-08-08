@@ -1,5 +1,5 @@
 PORTNAME=	fcntl
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

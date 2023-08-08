@@ -2,35 +2,33 @@ Patch contains 2 changes:
 - enable readline on FreeBSD (upstream never accepted this PR)
 - use -O3 on FreeBSD
 
---- Makefile.orig	2021-04-13 02:22:04 UTC
+--- Makefile.orig	2023-01-10 11:11:11 UTC
 +++ Makefile
-@@ -17,7 +17,8 @@ endif
+@@ -4,7 +4,8 @@
  
- # Compiler flags for various configurations:
+ default: build/debug/mujs build/debug/mujs-pp
  
--CFLAGS := -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter
+-CFLAGS = -std=c99 -pedantic -Wall -Wextra -Wno-unused-parameter
 +# change to c11 on FreeBSD because FreeBSD headers induce c11 through isnan(3), etc.
-+CFLAGS := -std=c11 -pedantic -Wall -Wextra -Wno-unused-parameter
++CFLAGS = -std=c11 -pedantic -Wall -Wextra -Wno-unused-parameter
  
- ifeq "$(CC)" "clang"
-   CFLAGS += -Wunreachable-code
-@@ -27,13 +28,18 @@ ifeq "$(shell uname)" "Linux"
-   HAVE_READLINE := yes
- endif
+ OPTIM = -O3
  
-+ifeq "$(shell uname)" "FreeBSD"
-+  HAVE_READLINE := yes
-+  CFLAGS += -I$(prefix)/include
-+endif
-+
- ifeq "$(build)" "debug"
-   CFLAGS += -g
- else ifeq "$(build)" "sanitize"
-   CFLAGS += -pipe -g -fsanitize=address -fno-omit-frame-pointer
-   LDFLAGS += -fsanitize=address
- else ifeq "$(build)" "release"
--  CFLAGS += -O2
-+  CFLAGS += -O3
-   LDFLAGS += -Wl,-s
- endif
+@@ -79,7 +80,7 @@ build/sanitize/mujs: main.c one.c $(SRCS) $(HDRS)
  
+ build/debug/libmujs.$(SO): one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+-	$(CC) $(CFLAGS) -g -fPIC -shared -o $@ one.c -lm
++	$(CC) $(CFLAGS) -g -fPIC -shared $(LDFLAGS) -o $@ one.c -lm
+ build/debug/libmujs.o: one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) -g -c -o $@ one.c
+@@ -92,7 +93,7 @@ build/debug/mujs-pp: pp.c build/debug/libmujs.o
+ 
+ build/release/libmujs.$(SO): one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+-	$(CC) $(CFLAGS) $(OPTIM) -fPIC -shared -o $@ one.c -lm
++	$(CC) $(CFLAGS) $(OPTIM) -fPIC -shared $(LDFLAGS) -o $@ one.c -lm
+ build/release/libmujs.o: one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) $(OPTIM) -c -o $@ one.c

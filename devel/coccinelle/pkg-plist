@@ -54,15 +54,6 @@ lib/coccinelle/ocaml/visitor_c.cmx
 lib/coccinelle/ocaml/yes_prepare_ocamlcocci.cmi
 lib/coccinelle/ocaml/yes_prepare_ocamlcocci.cmx
 lib/coccinelle/python/coccilib/__init__.py
-lib/coccinelle/python/coccilib/coccigui/__init__.py
-lib/coccinelle/python/coccilib/coccigui/coccigui.py
-lib/coccinelle/python/coccilib/coccigui/pycoccimodel.py
-lib/coccinelle/python/coccilib/coccigui/pygui.glade
-lib/coccinelle/python/coccilib/coccigui/pygui.gladep
-lib/coccinelle/python/coccilib/coccigui/vim.py
-lib/coccinelle/python/coccilib/coccigui/vimcom.py
-lib/coccinelle/python/coccilib/coccigui/vimeditor.py
-lib/coccinelle/python/coccilib/coccigui/vimembed.py
 lib/coccinelle/python/coccilib/elems.py
 lib/coccinelle/python/coccilib/iteration.py
 lib/coccinelle/python/coccilib/org.py

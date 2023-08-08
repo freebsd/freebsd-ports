@@ -5,4 +5,12 @@
 Minio console now requires extra configuration via minio_console_address
 EOM
 }
+{ type: upgrade
+  maximum_version: 2022.10.29.06.21.33
+  message: <<EOM
+Migrate from Gateway or Filesystem Mode
+
+See for more details:
+https://min.io/docs/minio/linux/operations/install-deploy-manage/migrate-fs-gateway.html
+EOM
 ]

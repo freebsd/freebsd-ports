@@ -1,5 +1,0 @@
-TIMESTAMP = 1625738376
-SHA256 (google-cloud-cpp/GoogleCloudPlatform-google-cloud-cpp-v1.17.0_GH0.tar.gz) = 4663c9dd11839ac41972ec4332df3a159672035cc7d05d1106b24bf8a4a30db9
-SIZE (google-cloud-cpp/GoogleCloudPlatform-google-cloud-cpp-v1.17.0_GH0.tar.gz) = 3368007
-SHA256 (google-cloud-cpp/googleapis-googleapis-59f97e6044a1275f83427ab7962a154c00d915b5_GH0.tar.gz) = 5e785c25b1d57973e7481b4da226d7c73056ea22c7545bf6d14dbebf6e99b073
-SIZE (google-cloud-cpp/googleapis-googleapis-59f97e6044a1275f83427ab7962a154c00d915b5_GH0.tar.gz) = 3075729

@@ -1,5 +1,6 @@
 PORTNAME=	thefish
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://BSDforge.com/projects/source/sysutils/thefish/
 

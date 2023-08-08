@@ -9,7 +9,7 @@ COMMENT=	Shared namespace shim for py-backports.* ports
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	flavors py3kplist
 
 NO_ARCH=	yes

@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-12-03 08:13:57 UTC
++++ CMakeLists.txt
+@@ -10,7 +10,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modul
+ project(Polytope)
+ 
+ # We require at least C++11
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 14)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+ 

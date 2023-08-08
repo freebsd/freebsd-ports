@@ -7,9 +7,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
 WWW=		https://qt-project.org
 
-USES=		compiler:c++11-lang gl python:build qmake:norecursive \
+USES=		compiler:c++11-lang gl perl5 python:build qmake:norecursive \
 		qt-dist:5
 USE_GL=		gl
+USE_PERL5=	build
 USE_QT=		core gui network sql widgets \
 		buildtools:build
 

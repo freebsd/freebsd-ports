@@ -1,7 +1,7 @@
 PORTNAME=	pykep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6
-PORTREVISION=	2
+DISTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	astro
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	PYKEP_BUILD_TESTS
+CMAKE_TESTING_ON=	PYKEP_BUILD_TESTS
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	esa

@@ -2,11 +2,11 @@ PORTNAME=	greylite
 PORTVERSION=	2.3
 PORTREVISION=	5
 CATEGORIES=	mail
-MASTER_SITES=	LOCAL/oliver
+MASTER_SITES=	https://github.com/OlliL/greylite/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Modified greylisting for qmail and for any other MDA
-WWW=		http://mij.oltrelinux.com/net/greylite/
+WWW=		https://github.com/OlliL/greylite/
 
 LICENSE=	BSD3CLAUSE
 

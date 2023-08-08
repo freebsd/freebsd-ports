@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=0:devel/rubygem-activesupport60 \
 		rubygem-oauth>=0.5.0<1:net/rubygem-oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

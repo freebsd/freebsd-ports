@@ -1,17 +1,17 @@
-%%NO_HEADLESS%%bin/freeorion
+%%CLIENT_GG%%bin/freeorion
 bin/freeorionca
 bin/freeoriond
-%%NO_HEADLESS%%lib/freeorion/libGiGi.so
+%%CLIENT_GG%%lib/freeorion/libGiGi.so
 lib/freeorion/libfreeorioncommon.so
 lib/freeorion/libfreeorionparse.so
-%%NO_HEADLESS%%share/applications/org.freeorion.FreeOrion.desktop
-%%NO_HEADLESS%%share/icons/hicolor/128x128/apps/freeorion.png
-%%NO_HEADLESS%%share/icons/hicolor/16x16/apps/freeorion.png
-%%NO_HEADLESS%%share/icons/hicolor/24x24/apps/freeorion.png
-%%NO_HEADLESS%%share/icons/hicolor/256x256/apps/freeorion.png
-%%NO_HEADLESS%%share/icons/hicolor/32x32/apps/freeorion.png
-%%NO_HEADLESS%%share/icons/hicolor/64x64/apps/freeorion.png
-%%NO_HEADLESS%%share/metainfo/org.freeorion.FreeOrion.metainfo.xml
+%%CLIENT_GG%%share/applications/org.freeorion.FreeOrion.desktop
+%%CLIENT_GG%%share/icons/hicolor/128x128/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/16x16/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/24x24/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/256x256/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/32x32/apps/freeorion.png
+%%CLIENT_GG%%share/icons/hicolor/64x64/apps/freeorion.png
+%%CLIENT_GG%%share/metainfo/org.freeorion.FreeOrion.metainfo.xml
 @dir %%DATADIR%%/default/data/sound/combat
 @dir %%DATADIR%%/default/data/art/stars_sidepanel
 @dir %%DATADIR%%/default/data/art/stars/old_stars
@@ -36,6 +36,7 @@ lib/freeorion/libfreeorionparse.so
 @dir %%DATADIR%%/default/data/art/icons/sitrep
 @dir %%DATADIR%%/default/data/art/icons/ship_parts
 @dir %%DATADIR%%/default/data/art/icons/ship_hulls
+@dir %%DATADIR%%/default/data/art/icons/policies
 @dir %%DATADIR%%/default/data/art/icons/planet
 @dir %%DATADIR%%/default/data/art/icons/monsters
 @dir %%DATADIR%%/default/data/art/icons/meter

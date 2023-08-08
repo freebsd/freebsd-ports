@@ -1,7 +1,7 @@
-LOCALBASE?=	/usr/local
-PROTOC_FLAGS=	-I. -I$(LOCALBASE)/include
+PROTOC_FLAGS=	$(addprefix -I,$(VPATH))
+VPATH=	api ../quiche-37de4f7
 
-PB_HEADERS=	\
+API_V2_PB_HEADERS=\
 	envoy/admin/v2alpha/certs.pb.h \
 	envoy/admin/v2alpha/clusters.pb.h \
 	envoy/admin/v2alpha/config_dump.pb.h \
@@ -9,26 +9,44 @@ PB_HEADERS=	\
 	envoy/admin/v2alpha/metrics.pb.h \
 	envoy/admin/v2alpha/mutex_stats.pb.h \
 	envoy/admin/v2alpha/server_info.pb.h \
+	envoy/annotations/deprecation.pb.h \
+	envoy/annotations/resource.pb.h \
 	envoy/api/v2/auth/cert.pb.h \
+	envoy/api/v2/auth/common.pb.h \
+	envoy/api/v2/auth/secret.pb.h \
+	envoy/api/v2/auth/tls.pb.h \
 	envoy/api/v2/cds.pb.h \
+	envoy/api/v2/cluster.pb.h \
 	envoy/api/v2/cluster/circuit_breaker.pb.h \
+	envoy/api/v2/cluster/filter.pb.h \
 	envoy/api/v2/cluster/outlier_detection.pb.h \
 	envoy/api/v2/core/address.pb.h \
+	envoy/api/v2/core/backoff.pb.h \
 	envoy/api/v2/core/base.pb.h \
 	envoy/api/v2/core/config_source.pb.h \
+	envoy/api/v2/core/event_service_config.pb.h \
 	envoy/api/v2/core/grpc_service.pb.h \
 	envoy/api/v2/core/health_check.pb.h \
 	envoy/api/v2/core/http_uri.pb.h \
 	envoy/api/v2/core/protocol.pb.h \
+	envoy/api/v2/core/socket_option.pb.h \
 	envoy/api/v2/discovery.pb.h \
 	envoy/api/v2/eds.pb.h \
+	envoy/api/v2/endpoint.pb.h \
 	envoy/api/v2/endpoint/endpoint.pb.h \
+	envoy/api/v2/endpoint/endpoint_components.pb.h \
 	envoy/api/v2/endpoint/load_report.pb.h \
 	envoy/api/v2/lds.pb.h \
+	envoy/api/v2/listener.pb.h \
 	envoy/api/v2/listener/listener.pb.h \
+	envoy/api/v2/listener/listener_components.pb.h \
+	envoy/api/v2/listener/udp_listener_config.pb.h \
 	envoy/api/v2/ratelimit/ratelimit.pb.h \
 	envoy/api/v2/rds.pb.h \
+	envoy/api/v2/route.pb.h \
 	envoy/api/v2/route/route.pb.h \
+	envoy/api/v2/route/route_components.pb.h \
+	envoy/api/v2/scoped_route.pb.h \
 	envoy/config/accesslog/v2/als.pb.h \
 	envoy/config/accesslog/v2/file.pb.h \
 	envoy/config/bootstrap/v2/bootstrap.pb.h \
@@ -48,12 +66,19 @@ PB_HEADERS=	\
 	envoy/config/filter/network/rate_limit/v2/rate_limit.pb.h \
 	envoy/config/filter/network/redis_proxy/v2/redis_proxy.pb.h \
 	envoy/config/filter/network/tcp_proxy/v2/tcp_proxy.pb.h \
+	envoy/config/listener/v2/api_listener.pb.h \
 	envoy/config/metrics/v2/metrics_service.pb.h \
 	envoy/config/metrics/v2/stats.pb.h \
 	envoy/config/overload/v2alpha/overload.pb.h \
 	envoy/config/ratelimit/v2/rls.pb.h \
-	envoy/config/rbac/v2alpha/rbac.pb.h \
+	envoy/config/trace/v2/datadog.pb.h \
+	envoy/config/trace/v2/dynamic_ot.pb.h \
+	envoy/config/trace/v2/http_tracer.pb.h \
+	envoy/config/trace/v2/lightstep.pb.h \
+	envoy/config/trace/v2/opencensus.pb.h \
+	envoy/config/trace/v2/service.pb.h \
 	envoy/config/trace/v2/trace.pb.h \
+	envoy/config/trace/v2/zipkin.pb.h \
 	envoy/data/accesslog/v2/accesslog.pb.h \
 	envoy/data/cluster/v2alpha/outlier_detection_event.pb.h \
 	envoy/data/core/v2alpha/health_check_event.pb.h \
@@ -64,25 +89,291 @@ PB_HEADERS=	\
 	envoy/service/load_stats/v2/lrs.pb.h \
 	envoy/service/metrics/v2/metrics_service.pb.h \
 	envoy/service/ratelimit/v2/rls.pb.h \
+	envoy/type/hash_policy.pb.h \
+	envoy/type/http.pb.h \
 	envoy/type/matcher/metadata.pb.h \
 	envoy/type/matcher/number.pb.h \
+	envoy/type/matcher/regex.pb.h \
 	envoy/type/matcher/string.pb.h \
 	envoy/type/matcher/value.pb.h \
+	envoy/type/metadata/v2/metadata.pb.h \
 	envoy/type/percent.pb.h \
 	envoy/type/range.pb.h \
-	gogoproto/gogo.pb.h \
+	envoy/type/semantic_version.pb.h \
+	envoy/type/tracing/v2/custom_tag.pb.h
+
+API_V3_PB_HEADERS=\
+	envoy/admin/v3/certs.pb.h \
+	envoy/admin/v3/clusters.pb.h \
+	envoy/admin/v3/config_dump.pb.h \
+	envoy/admin/v3/config_dump_shared.pb.h \
+	envoy/admin/v3/init_dump.pb.h \
+	envoy/admin/v3/listeners.pb.h \
+	envoy/admin/v3/memory.pb.h \
+	envoy/admin/v3/metrics.pb.h \
+	envoy/admin/v3/mutex_stats.pb.h \
+	envoy/admin/v3/server_info.pb.h \
+	envoy/admin/v3/tap.pb.h \
+	envoy/config/accesslog/v3/accesslog.pb.h \
+	envoy/config/bootstrap/v3/bootstrap.pb.h \
+	envoy/config/cluster/v3/circuit_breaker.pb.h \
+	envoy/config/cluster/v3/cluster.pb.h \
+	envoy/config/cluster/v3/filter.pb.h \
+	envoy/config/cluster/v3/outlier_detection.pb.h \
+	envoy/config/common/key_value/v3/config.pb.h \
+	envoy/config/common/matcher/v3/matcher.pb.h \
+	envoy/config/common/mutation_rules/v3/mutation_rules.pb.h \
+	envoy/config/core/v3/address.pb.h \
+	envoy/config/core/v3/backoff.pb.h \
+	envoy/config/core/v3/base.pb.h \
+	envoy/config/core/v3/config_source.pb.h \
+	envoy/config/core/v3/event_service_config.pb.h \
+	envoy/config/core/v3/extension.pb.h \
+	envoy/config/core/v3/grpc_service.pb.h \
+	envoy/config/core/v3/health_check.pb.h \
+	envoy/config/core/v3/http_uri.pb.h \
+	envoy/config/core/v3/protocol.pb.h \
+	envoy/config/core/v3/proxy_protocol.pb.h \
+	envoy/config/core/v3/resolver.pb.h \
+	envoy/config/core/v3/socket_option.pb.h \
+	envoy/config/core/v3/substitution_format_string.pb.h \
+	envoy/config/core/v3/udp_socket_config.pb.h \
+	envoy/config/endpoint/v3/endpoint.pb.h \
+	envoy/config/endpoint/v3/endpoint_components.pb.h \
+	envoy/config/endpoint/v3/load_report.pb.h \
+	envoy/config/grpc_credential/v3/aws_iam.pb.h \
+	envoy/config/grpc_credential/v3/file_based_metadata.pb.h \
+	envoy/config/listener/v3/api_listener.pb.h \
+	envoy/config/listener/v3/listener.pb.h \
+	envoy/config/listener/v3/listener_components.pb.h \
+	envoy/config/listener/v3/quic_config.pb.h \
+	envoy/config/listener/v3/udp_listener_config.pb.h \
+	envoy/config/metrics/v3/metrics_service.pb.h \
+	envoy/config/metrics/v3/stats.pb.h \
+	envoy/config/overload/v3/overload.pb.h \
+	envoy/config/ratelimit/v3/rls.pb.h \
+	envoy/config/rbac/v3/rbac.pb.h \
+	envoy/config/route/v3/route.pb.h \
+	envoy/config/route/v3/route_components.pb.h \
+	envoy/config/route/v3/scoped_route.pb.h \
+	envoy/config/tap/v3/common.pb.h \
+	envoy/config/trace/v3/dynamic_ot.pb.h \
+	envoy/config/trace/v3/http_tracer.pb.h \
+	envoy/config/trace/v3/opentelemetry.pb.h \
+	envoy/data/accesslog/v3/accesslog.pb.h \
+	envoy/data/cluster/v3/outlier_detection_event.pb.h \
+	envoy/data/core/v3/health_check_event.pb.h \
+	envoy/data/dns/v3/dns_table.pb.h \
+	envoy/data/tap/v3/common.pb.h \
+	envoy/data/tap/v3/http.pb.h \
+	envoy/data/tap/v3/transport.pb.h \
+	envoy/data/tap/v3/wrapper.pb.h \
+	envoy/extensions/access_loggers/file/v3/file.pb.h \
+	envoy/extensions/access_loggers/filters/cel/v3/cel.pb.h \
+	envoy/extensions/access_loggers/grpc/v3/als.pb.h \
+	envoy/extensions/access_loggers/open_telemetry/v3/logs_service.pb.h \
+	envoy/extensions/access_loggers/stream/v3/stream.pb.h \
+	envoy/extensions/access_loggers/wasm/v3/wasm.pb.h \
+	envoy/extensions/bootstrap/internal_listener/v3/internal_listener.pb.h \
+	envoy/extensions/clusters/aggregate/v3/cluster.pb.h \
+	envoy/extensions/clusters/dynamic_forward_proxy/v3/cluster.pb.h \
+	envoy/extensions/clusters/redis/v3/redis_cluster.pb.h \
+	envoy/extensions/common/async_files/v3/async_file_manager.pb.h \
+	envoy/extensions/common/dynamic_forward_proxy/v3/dns_cache.pb.h \
+	envoy/extensions/common/ratelimit/v3/ratelimit.pb.h \
+	envoy/extensions/common/tap/v3/common.pb.h \
+	envoy/extensions/compression/brotli/compressor/v3/brotli.pb.h \
+	envoy/extensions/compression/brotli/decompressor/v3/brotli.pb.h \
+	envoy/extensions/compression/gzip/compressor/v3/gzip.pb.h \
+	envoy/extensions/compression/gzip/decompressor/v3/gzip.pb.h \
+	envoy/extensions/compression/zstd/compressor/v3/zstd.pb.h \
+	envoy/extensions/compression/zstd/decompressor/v3/zstd.pb.h \
+	envoy/extensions/config/validators/minimum_clusters/v3/minimum_clusters.pb.h \
+	envoy/extensions/early_data/v3/default_early_data_policy.pb.h \
+	envoy/extensions/filters/common/dependency/v3/dependency.pb.h \
+	envoy/extensions/filters/common/fault/v3/fault.pb.h \
+	envoy/extensions/filters/http/custom_response/v3/custom_response.pb.h \
+	envoy/extensions/filters/http/ext_authz/v3/ext_authz.pb.h \
+	envoy/extensions/filters/http/fault/v3/fault.pb.h \
+	envoy/extensions/filters/http/router/v3/router.pb.h \
+	envoy/extensions/filters/http/upstream_codec/v3/upstream_codec.pb.h \
+	envoy/extensions/filters/listener/http_inspector/v3/http_inspector.pb.h \
+	envoy/extensions/filters/listener/local_ratelimit/v3/local_ratelimit.pb.h \
+	envoy/extensions/filters/listener/original_dst/v3/original_dst.pb.h \
+	envoy/extensions/filters/listener/original_src/v3/original_src.pb.h \
+	envoy/extensions/filters/listener/proxy_protocol/v3/proxy_protocol.pb.h \
+	envoy/extensions/filters/listener/tls_inspector/v3/tls_inspector.pb.h \
+	envoy/extensions/filters/network/connection_limit/v3/connection_limit.pb.h \
+	envoy/extensions/filters/network/direct_response/v3/config.pb.h \
+	envoy/extensions/filters/network/echo/v3/echo.pb.h \
+	envoy/extensions/filters/network/ext_authz/v3/ext_authz.pb.h \
+	envoy/extensions/filters/network/http_connection_manager/v3/http_connection_manager.pb.h \
+	envoy/extensions/filters/network/local_ratelimit/v3/local_rate_limit.pb.h \
+	envoy/extensions/filters/network/mongo_proxy/v3/mongo_proxy.pb.h \
+	envoy/extensions/filters/network/ratelimit/v3/rate_limit.pb.h \
+	envoy/extensions/filters/network/rbac/v3/rbac.pb.h \
+	envoy/extensions/filters/network/redis_proxy/v3/redis_proxy.pb.h \
+	envoy/extensions/filters/network/sni_cluster/v3/sni_cluster.pb.h \
+	envoy/extensions/filters/network/sni_dynamic_forward_proxy/v3/sni_dynamic_forward_proxy.pb.h \
+	envoy/extensions/filters/network/tcp_proxy/v3/tcp_proxy.pb.h \
+	envoy/extensions/filters/network/thrift_proxy/v3/route.pb.h \
+	envoy/extensions/filters/network/thrift_proxy/v3/thrift_proxy.pb.h \
+	envoy/extensions/filters/network/zookeeper_proxy/v3/zookeeper_proxy.pb.h \
+	envoy/extensions/filters/udp/dns_filter/v3/dns_filter.pb.h \
+	envoy/extensions/filters/udp/udp_proxy/v3/route.pb.h \
+	envoy/extensions/filters/udp/udp_proxy/v3/udp_proxy.pb.h \
+	envoy/extensions/formatter/metadata/v3/metadata.pb.h \
+	envoy/extensions/formatter/req_without_query/v3/req_without_query.pb.h \
+	envoy/extensions/health_checkers/redis/v3/redis.pb.h \
+	envoy/extensions/health_checkers/thrift/v3/thrift.pb.h \
+	envoy/extensions/http/custom_response/local_response_policy/v3/local_response_policy.pb.h \
+	envoy/extensions/http/custom_response/redirect_policy/v3/redirect_policy.pb.h \
+	envoy/extensions/http/early_header_mutation/header_mutation/v3/header_mutation.pb.h \
+	envoy/extensions/http/header_formatters/preserve_case/v3/preserve_case.pb.h \
+	envoy/extensions/http/header_validators/envoy_default/v3/header_validator.pb.h \
+	envoy/extensions/http/original_ip_detection/custom_header/v3/custom_header.pb.h \
+	envoy/extensions/http/original_ip_detection/xff/v3/xff.pb.h \
+	envoy/extensions/http/stateful_session/cookie/v3/cookie.pb.h \
+	envoy/extensions/http/stateful_session/header/v3/header.pb.h \
+	envoy/extensions/internal_redirect/allow_listed_routes/v3/allow_listed_routes_config.pb.h \
+	envoy/extensions/internal_redirect/previous_routes/v3/previous_routes_config.pb.h \
+	envoy/extensions/internal_redirect/safe_cross_scheme/v3/safe_cross_scheme_config.pb.h \
+	envoy/extensions/key_value/file_based/v3/config.pb.h \
+	envoy/extensions/load_balancing_policies/common/v3/common.pb.h \
+	envoy/extensions/load_balancing_policies/least_request/v3/least_request.pb.h \
+	envoy/extensions/load_balancing_policies/maglev/v3/maglev.pb.h \
+	envoy/extensions/load_balancing_policies/random/v3/random.pb.h \
+	envoy/extensions/load_balancing_policies/ring_hash/v3/ring_hash.pb.h \
+	envoy/extensions/load_balancing_policies/round_robin/v3/round_robin.pb.h \
+	envoy/extensions/matching/common_inputs/environment_variable/v3/input.pb.h \
+	envoy/extensions/matching/common_inputs/network/v3/network_inputs.pb.h \
+	envoy/extensions/matching/common_inputs/ssl/v3/ssl_inputs.pb.h \
+	envoy/extensions/matching/input_matchers/consistent_hashing/v3/consistent_hashing.pb.h \
+	envoy/extensions/matching/input_matchers/ip/v3/ip.pb.h \
+	envoy/extensions/network/dns_resolver/apple/v3/apple_dns_resolver.pb.h \
+	envoy/extensions/network/dns_resolver/cares/v3/cares_dns_resolver.pb.h \
+	envoy/extensions/network/dns_resolver/getaddrinfo/v3/getaddrinfo_dns_resolver.pb.h \
+	envoy/extensions/network/socket_interface/v3/default_socket_interface.pb.h \
+	envoy/extensions/path/match/uri_template/v3/uri_template_match.pb.h \
+	envoy/extensions/path/rewrite/uri_template/v3/uri_template_rewrite.pb.h \
+	envoy/extensions/quic/connection_id_generator/v3/envoy_deterministic_connection_id_generator.pb.h \
+	envoy/extensions/quic/crypto_stream/v3/crypto_stream.pb.h \
+	envoy/extensions/quic/proof_source/v3/proof_source.pb.h \
+	envoy/extensions/quic/server_preferred_address/v3/fixed_server_preferred_address_config.pb.h \
+	envoy/extensions/rate_limit_descriptors/expr/v3/expr.pb.h \
+	envoy/extensions/regex_engines/v3/google_re2.pb.h \
+	envoy/extensions/request_id/uuid/v3/uuid.pb.h \
+	envoy/extensions/resource_monitors/downstream_connections/v3/downstream_connections.pb.h \
+	envoy/extensions/resource_monitors/fixed_heap/v3/fixed_heap.pb.h \
+	envoy/extensions/resource_monitors/injected_resource/v3/injected_resource.pb.h \
+	envoy/extensions/retry/host/omit_host_metadata/v3/omit_host_metadata_config.pb.h \
+	envoy/extensions/retry/priority/previous_priorities/v3/previous_priorities_config.pb.h \
+	envoy/extensions/stat_sinks/graphite_statsd/v3/graphite_statsd.pb.h \
+	envoy/extensions/transport_sockets/http_11_proxy/v3/upstream_http_11_connect.pb.h \
+	envoy/extensions/transport_sockets/internal_upstream/v3/internal_upstream.pb.h \
+	envoy/extensions/transport_sockets/proxy_protocol/v3/upstream_proxy_protocol.pb.h \
+	envoy/extensions/transport_sockets/quic/v3/quic_transport.pb.h \
+	envoy/extensions/transport_sockets/raw_buffer/v3/raw_buffer.pb.h \
+	envoy/extensions/transport_sockets/starttls/v3/starttls.pb.h \
+	envoy/extensions/transport_sockets/tap/v3/tap.pb.h \
+	envoy/extensions/transport_sockets/tcp_stats/v3/tcp_stats.pb.h \
+	envoy/extensions/transport_sockets/tls/v3/cert.pb.h \
+	envoy/extensions/transport_sockets/tls/v3/common.pb.h \
+	envoy/extensions/transport_sockets/tls/v3/secret.pb.h \
+	envoy/extensions/transport_sockets/tls/v3/tls.pb.h \
+	envoy/extensions/udp_packet_writer/v3/udp_default_writer_factory.pb.h \
+	envoy/extensions/udp_packet_writer/v3/udp_gso_batch_writer_factory.pb.h \
+	envoy/extensions/upstreams/http/generic/v3/generic_connection_pool.pb.h \
+	envoy/extensions/upstreams/http/http/v3/http_connection_pool.pb.h \
+	envoy/extensions/upstreams/http/tcp/v3/tcp_connection_pool.pb.h \
+	envoy/extensions/upstreams/http/v3/http_protocol_options.pb.h \
+	envoy/extensions/upstreams/tcp/generic/v3/generic_connection_pool.pb.h \
+	envoy/extensions/upstreams/tcp/v3/tcp_protocol_options.pb.h \
+	envoy/extensions/watchdog/profile_action/v3/profile_action.pb.h \
+	envoy/service/accesslog/v3/als.pb.h \
+	envoy/service/auth/v3/attribute_context.pb.h \
+	envoy/service/auth/v3/external_auth.pb.h \
+	envoy/service/cluster/v3/cds.pb.h \
+	envoy/service/discovery/v3/ads.pb.h \
+	envoy/service/discovery/v3/discovery.pb.h \
+	envoy/service/endpoint/v3/eds.pb.h \
+	envoy/service/endpoint/v3/leds.pb.h \
+	envoy/service/extension/v3/config_discovery.pb.h \
+	envoy/service/health/v3/hds.pb.h \
+	envoy/service/listener/v3/lds.pb.h \
+	envoy/service/load_stats/v3/lrs.pb.h \
+	envoy/service/metrics/v3/metrics_service.pb.h \
+	envoy/service/ratelimit/v3/rls.pb.h \
+	envoy/service/route/v3/rds.pb.h \
+	envoy/service/route/v3/srds.pb.h \
+	envoy/service/runtime/v3/rtds.pb.h \
+	envoy/service/secret/v3/sds.pb.h \
+	envoy/type/http/v3/cookie.pb.h \
+	envoy/type/http/v3/path_transformation.pb.h \
+	envoy/type/matcher/v3/filter_state.pb.h \
+	envoy/type/matcher/v3/http_inputs.pb.h \
+	envoy/type/matcher/v3/metadata.pb.h \
+	envoy/type/matcher/v3/number.pb.h \
+	envoy/type/matcher/v3/path.pb.h \
+	envoy/type/matcher/v3/regex.pb.h \
+	envoy/type/matcher/v3/string.pb.h \
+	envoy/type/matcher/v3/value.pb.h \
+	envoy/type/metadata/v3/metadata.pb.h \
+	envoy/type/tracing/v3/custom_tag.pb.h \
+	envoy/type/v3/hash_policy.pb.h \
+	envoy/type/v3/http.pb.h \
+	envoy/type/v3/http_status.pb.h \
+	envoy/type/v3/percent.pb.h \
+	envoy/type/v3/range.pb.h \
+	envoy/type/v3/ratelimit_unit.pb.h \
+	envoy/type/v3/semantic_version.pb.h \
+	envoy/type/v3/token_bucket.pb.h \
+	envoy/watchdog/v3/abort_action.pb.h
+
+MISC_PB_HEADERS=\
 	google/api/annotations.pb.h \
+	google/api/expr/v1alpha1/checked.pb.h \
+	google/api/expr/v1alpha1/syntax.pb.h \
 	google/api/http.pb.h \
 	google/rpc/status.pb.h \
-	metrics.pb.h \
+	io/prometheus/client/metrics.pb.h \
+	opencensus/proto/trace/v1/trace_config.pb.h \
+	opentelemetry/proto/collector/logs/v1/logs_service.pb.h \
+	opentelemetry/proto/collector/trace/v1/trace_service.pb.h \
+	opentelemetry/proto/common/v1/common.pb.h \
+	opentelemetry/proto/logs/v1/logs.pb.h \
+	opentelemetry/proto/resource/v1/resource.pb.h \
+	opentelemetry/proto/trace/v1/trace.pb.h \
+	quiche/quic/core/proto/cached_network_parameters.pb.h \
+	quiche/quic/core/proto/crypto_server_config.pb.h \
+	quiche/quic/core/proto/source_address_token.pb.h \
 	src/proto/grpc/health/v1/health.pb.h \
-	validate/validate.pb.h
+	udpa/annotations/migrate.pb.h \
+	udpa/annotations/security.pb.h \
+	udpa/annotations/sensitive.pb.h \
+	udpa/annotations/status.pb.h \
+	udpa/annotations/versioning.pb.h \
+	udpa/type/v1/typed_struct.pb.h \
+	validate/validate.pb.h \
+	xds/annotations/v3/status.pb.h \
+	xds/core/v3/authority.pb.h \
+	xds/core/v3/cidr.pb.h \
+	xds/core/v3/collection_entry.pb.h \
+	xds/core/v3/context_params.pb.h \
+	xds/core/v3/extension.pb.h \
+	xds/core/v3/resource_locator.pb.h \
+	xds/core/v3/resource_name.pb.h \
+	xds/type/matcher/v3/ip.pb.h \
+	xds/type/matcher/v3/matcher.pb.h \
+	xds/type/matcher/v3/regex.pb.h \
+	xds/type/matcher/v3/string.pb.h \
+	xds/type/v3/typed_struct.pb.h
 
 %.pb.h: %.proto
-	protoc -I. -I$(LOCALBASE)/include --cpp_out=. $<
+	protoc $(PROTOC_FLAGS) --cpp_out=$(subst /$*,,$(basename $<)) $<
 # XXX: we're not ready for semantic validation just yet :(
-	echo >> $(basename $@).validate.h
+	echo >> $(basename $<).pb.validate.h
 
-all: $(PB_HEADERS)
+all: $(API_V2_PB_HEADERS) $(API_V3_PB_HEADERS) $(MISC_PB_HEADERS)
 
-.phony: all
+.PHONY: all

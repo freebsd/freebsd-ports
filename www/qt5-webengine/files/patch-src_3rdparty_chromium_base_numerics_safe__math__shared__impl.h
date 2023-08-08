@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/numerics/safe_math_shared_impl.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/base/numerics/safe_math_shared_impl.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/numerics/safe_math_shared_impl.h
-@@ -23,8 +23,7 @@
+@@ -24,8 +24,7 @@
  // Where available use builtin math overflow support on Clang and GCC.
  #elif !defined(__native_client__) &&                         \
        ((defined(__clang__) &&                                \

@@ -1,6 +1,6 @@
---- configure.orig	2021-05-26 20:57:14 UTC
+--- configure.orig	2021-12-16 17:26:22 UTC
 +++ configure
-@@ -1217,8 +1217,6 @@ HWLOC_top_builddir
+@@ -1217,8 +1217,6 @@ hwlocsrcdir
  hwloclib
  hwloclibdir
  hwlocsrcdir
@@ -9,7 +9,7 @@
  VISIBILITY_CFLAGS
  BUILD_PROFILING_LIB_FALSE
  BUILD_PROFILING_LIB_TRUE
-@@ -31276,337 +31274,7 @@ if test "$NEEDSPLIB" = "yes" ; then
+@@ -31276,337 +31274,7 @@ fi
      VISIBILITY_CFLAGS=""
  fi
  
@@ -347,7 +347,24 @@
  # ----------------------------------------------------------------------------
  # HWLOC
  # ----------------------------------------------------------------------------
-@@ -46449,18 +46117,8 @@ the same routine with arguments of different types." "
+@@ -43674,16 +43342,6 @@ _ACEOF
+ # must come first.
+ # ----------------------------------------------------------------------------
+ 
+-#
+-# First, determine whether we are/can support the language bindings
+-#
+-# Since F90/F90FLAGS are replaced by FC/FCFLAGS, rather than silently
+-# substituting them, i.e. FC=$F90 and FCFLAGS=$F90FLAGS, we choose to emit
+-# an error message and abort to avoid any ambiguous/hidden bug in choosing
+-# Fortran90 compilers.
+-if test -n "$F90" -o -n "$F90FLAGS" ; then
+-    as_fn_error $? "F90 and F90FLAGS are replaced by FC and FCFLAGS respectively in this configure, please unset F90/F90FLAGS and set FC/FCFLAGS instead and rerun configure again." "$LINENO" 5
+-fi
+ # ----------------------------------------------------------------------------
+ # Handle default choices for the Fortran compilers
+ # Note that these have already been set above
+@@ -46449,18 +46107,8 @@ addarg=$pac_cv_prog_f77_mismatched_args_parm
  fi
  
  addarg=$pac_cv_prog_f77_mismatched_args_parm
@@ -367,7 +384,7 @@
      bindings="$bindings f77"
  
  $as_echo "#define HAVE_FORTRAN_BINDING 1" >>confdefs.h
-@@ -52094,6 +51752,9 @@ if ${ac_cv_alignof_wchar_t+:} false; then :
+@@ -52094,6 +51742,9 @@ else
    $as_echo_n "(cached) " >&6
  else
    if ac_fn_c_compute_int "$LINENO" "(long int) offsetof (ac__type_alignof_, y)" "ac_cv_alignof_wchar_t"        "$ac_includes_default

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-pastel>=0.8<1:devel/rubygem-pastel
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

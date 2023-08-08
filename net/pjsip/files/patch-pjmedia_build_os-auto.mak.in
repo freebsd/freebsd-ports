@@ -1,17 +1,16 @@
---- pjmedia/build/os-auto.mak.in.orig	2017-09-22 02:42:22 UTC
+--- pjmedia/build/os-auto.mak.in.orig	2022-11-24 05:24:24 UTC
 +++ pjmedia/build/os-auto.mak.in
-@@ -220,50 +220,7 @@ export CFLAGS += -I$(THIRD_PARTY)/webrtc/src
- endif
+@@ -242,49 +242,7 @@ endif
  endif
  
--
+ 
 -#
 -# MacOSX specific
 -#
 -ifneq ($(findstring coreaudio,$(AC_PJMEDIA_SND)),)
 -export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_COREAUDIO=1 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
+-                 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
+-                 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
 -endif
 -
 -#
@@ -19,8 +18,8 @@
 -#
 -ifneq ($(findstring alsa,$(AC_PJMEDIA_SND)),)
 -export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_ALSA=1 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
+-                 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
+-                 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
 -endif
 -
 -#
@@ -28,7 +27,7 @@
 -#
 -ifneq ($(findstring win32,$(AC_PJMEDIA_SND)),)
 -export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_WMME=1 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0
+-                 -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0
 -else
  export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
 -endif
@@ -38,7 +37,7 @@
 -#
 -ifeq ($(AC_PJMEDIA_SND),null)
 -export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
+-                 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
 -endif
 -
 -#
@@ -46,7 +45,7 @@
 -#
 -ifeq ($(AC_PJMEDIA_SND),external)
 -export CFLAGS += -DPJMEDIA_AUDIO_DEV_HAS_PORTAUDIO=0 \
--		 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
+-                 -DPJMEDIA_AUDIO_DEV_HAS_WMME=0
 -endif
  
  #

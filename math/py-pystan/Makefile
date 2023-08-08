@@ -1,8 +1,8 @@
 PORTNAME=	pystan
 PORTVERSION=	2.19.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gmm@tutanota.com
@@ -12,7 +12,7 @@ WWW=		https://github.com/stan-dev/pystan
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++14-lang python:3.6+ shebangfix
+USES=		compiler:c++14-lang python shebangfix
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>

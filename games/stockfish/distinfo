@@ -1,5 +1,5 @@
-TIMESTAMP = 1629298350
-SHA256 (nn-3475407dc199.nnue) = 3475407dc19973ea44467678634cce023d620e419770c111cc8937fe6689ec87
-SIZE (nn-3475407dc199.nnue) = 47721371
-SHA256 (official-stockfish-Stockfish-sf_14_GH0.tar.gz) = 6f35e3e684da87d27d3f29ec7281ac81468a5a86b4d99ac5c599addc984a766c
-SIZE (official-stockfish-Stockfish-sf_14_GH0.tar.gz) = 183879
+TIMESTAMP = 1688564646
+SHA256 (nn-5af11540bbfe.nnue) = 5af11540bbfefcb54e38c5dd000cab4b469dfa7599a1d55be5d2722c20a8929b
+SIZE (nn-5af11540bbfe.nnue) = 40119326
+SHA256 (official-stockfish-Stockfish-sf_16_GH0.tar.gz) = a1600ebdaf4e324ba3e10cec2e0c9a810dc64c6f0db5cc955b2fd5e1eefa1cc6
+SIZE (official-stockfish-Stockfish-sf_16_GH0.tar.gz) = 195462

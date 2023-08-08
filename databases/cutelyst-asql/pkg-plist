@@ -17,6 +17,9 @@ lib/cmake/ASqlQt5/ASqlQt5ConfigVersion.cmake
 lib/libASqlQt5.so
 lib/libASqlQt5.so.0
 lib/libASqlQt5.so.%%SOVER%%
+lib/libASqlQt5Migrations.so
+lib/libASqlQt5Migrations.so.0
+lib/libASqlQt5Migrations.so.%%SOVER%%
 lib/libASqlQt5Pg.so
 lib/libASqlQt5Pg.so.0
 lib/libASqlQt5Pg.so.%%SOVER%%

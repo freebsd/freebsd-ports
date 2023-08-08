@@ -1,7 +1,8 @@
 PORTNAME=	idna
-PORTVERSION=	3.3
+PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	dns python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,8 +12,10 @@ WWW=		https://github.com/kjd/idna
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python:3.5+
-USE_PYTHON=	autoplist concurrent distutils unittest
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 

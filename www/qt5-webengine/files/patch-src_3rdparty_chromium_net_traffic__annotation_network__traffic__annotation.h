@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/traffic_annotation/network_traffic_annotation.h.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/net/traffic_annotation/network_traffic_annotation.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/net/traffic_annotation/network_traffic_annotation.h
-@@ -356,7 +356,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -359,7 +359,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  }  // namespace net
  
  // Placeholder for unannotated usages.
@@ -9,7 +9,7 @@
  #define TRAFFIC_ANNOTATION_WITHOUT_PROTO(ANNOTATION_ID) \
    net::DefineNetworkTrafficAnnotation(ANNOTATION_ID, "No proto yet.")
  #endif
-@@ -367,7 +367,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
+@@ -370,7 +370,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  //
  // On Linux and Windows, use MISSING_TRAFFIC_ANNOTATION or
  // TRAFFIC_ANNOTATION_FOR_TESTS.

@@ -1,7 +1,6 @@
 PORTNAME=	libad9361-iio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2-8
-DISTVERSIONSUFFIX=	-ge7bb5cd
+DISTVERSION=	0.3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +19,7 @@ USE_LDCONFIG=	yes
 
 LDFLAGS+=	-lm
 
-PLIST_FILES=	include/ad9361-wrapper.h \
-		include/ad9361.h \
+PLIST_FILES=	include/ad9361.h \
 		lib/libad9361.so \
 		lib/libad9361.so.0 \
 		lib/libad9361.so.0.2 \

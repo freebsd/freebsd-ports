@@ -1,0 +1,13 @@
+--- subprojects/cpptoml/CMakeLists.txt.orig	2023-05-06 14:38:35 UTC
++++ subprojects/cpptoml/CMakeLists.txt
+@@ -11,8 +11,8 @@ include(CMakePushCheckState)
+ 
+ cmake_push_check_state()
+ 
+-option(ENABLE_LIBCXX "Use libc++ for the C++ standard library" ON)
+-option(CPPTOML_BUILD_EXAMPLES "Build examples" ON)
++option(ENABLE_LIBCXX "Use libc++ for the C++ standard library" OFF)
++option(CPPTOML_BUILD_EXAMPLES "Build examples" OFF)
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+ 

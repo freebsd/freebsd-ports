@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-tins>=1.0<2:devel/rubygem-tins
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

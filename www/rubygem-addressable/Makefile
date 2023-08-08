@@ -1,5 +1,5 @@
 PORTNAME=	addressable
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.4
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-public_suffix>=2.0.2<6.0:dns/rubygem-public_suffix
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

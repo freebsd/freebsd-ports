@@ -1,11 +1,10 @@
 PORTNAME=	webtrees
-PORTVERSION=	2.0.19
+PORTVERSION=	2.0.25
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/ \
-		https://freebsd.ark-ict.nl/ports/
+MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	20
 
-MAINTAINER=	freebsd-ports@misc.ark-ict.nl
+MAINTAINER=	ports@bsdserwis.com
 COMMENT=	Online genealogy viewer (for PHP 7.1-7.4)
 WWW=		https://webtrees.net/
 
@@ -13,7 +12,7 @@ LICENSE=	GPLv3+
 
 USES=		cpe php shebangfix zip
 
-USE_PHP=	calendar dom filter gd json pcre pdo_mysql session simplexml xml
+USE_PHP=	calendar dom filter gd pdo_mysql session simplexml xml
 
 SHEBANG_FILES=	webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php

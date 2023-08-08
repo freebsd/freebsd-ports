@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2023-03-06 08:47:30 UTC
++++ CMakeLists.txt
+@@ -6,7 +6,7 @@ endif()
+ 
+ include(CMakeVersions.txt)
+ 
+-project(libmemcached-awesome
++project(libmemcached
+         VERSION "${LIBMEMCACHED_VERSION}"
+         DESCRIPTION "libmemcached-awesome, a C/C++ memcached client library"
+         )
+@@ -70,7 +70,6 @@ install(FILES
+             ChangeLog-1.0.md
+             ChangeLog-1.1.md
+             CONTRIBUTING.md
+-            LICENSE
+             NEWS
+             README.md
+             TODO

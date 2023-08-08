@@ -1,11 +1,11 @@
 PORTNAME=	google-cloud-logging
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Stackdriver Logging
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-logging
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-logging
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-stackdriver-core>=1.3<2:net/rubygem-stackdriver-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

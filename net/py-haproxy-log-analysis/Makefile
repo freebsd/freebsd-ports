@@ -1,7 +1,7 @@
 PORTNAME=	haproxy-log-analysis
 PORTVERSION=	2.0
 CATEGORIES=	net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/g}-${PORTVERSION}
 
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/haproxy_log_analysis/
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

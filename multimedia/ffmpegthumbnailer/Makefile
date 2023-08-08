@@ -1,7 +1,8 @@
 PORTNAME=	ffmpegthumbnailer
-PORTVERSION=	2.2.2
+DISTVERSION=	2.2.2.20221021
+PORTREVISION=	2
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVERSION}/
+#MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
@@ -13,24 +14,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libavformat.so:multimedia/ffmpeg
 
-USES=		cmake compiler:c++11-lib gnome jpeg localbase pkgconfig tar:bz2
+USES=		cmake:testing compiler:c++11-lib gnome jpeg localbase pkgconfig tar:bz2
+USE_GITHUB=	yes
+GH_ACCOUNT=	dirkvdb
+GH_TAGNAME=	e0bf01d
+
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
+CMAKE_TESTING_ON=	ENABLE_TESTS
 
+CMAKE_OFF=	ENABLE_TESTS
 CMAKE_ON=	ENABLE_GIO
 
-OPTIONS_DEFINE=	TEST THUMBNAILER
-THUMBNAILER_DESC=Register as a system thumbnailer
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=	THUMBNAILER
 OPTIONS_DEFAULT=THUMBNAILER
+OPTIONS_SUB=	yes
 
-TEST_CMAKE_BOOL=	ENABLE_TESTS
+THUMBNAILER_DESC=	Register as a system thumbnailer
 
 THUMBNAILER_CMAKE_ON=	-DENABLE_THUMBNAILER:BOOL=ON
-
-do-test:
-	(cd ${TEST_WRKSRC} && CTEST_OUTPUT_ON_FAILURE=1 ctest)
 
 .include <bsd.port.mk>

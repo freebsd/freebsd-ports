@@ -1,7 +1,7 @@
 PORTNAME=	Mathics_Scanner
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -23,7 +23,7 @@ TEST_DEPENDS=	gmake:devel/gmake	\
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	Mathics3
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes
@@ -31,9 +31,6 @@ MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 PLIST_SUB+=	VER=${PORTVERSION}
 TEST_TARGET=	check
 TEST_ENV=	${MAKE_ENV}
-
-pre-configure:
-	${CP} ${FILESDIR}/named-characters.yml ${WRKSRC}/mathics_scanner/data/
 
 do-test: install
 	(cd ${TEST_WRKSRC} &&	\

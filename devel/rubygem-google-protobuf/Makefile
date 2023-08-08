@@ -1,16 +1,17 @@
 PORTNAME=	google-protobuf
-PORTVERSION=	3.21.5
+PORTVERSION=	3.23.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby extension to Google Protocol Buffers
-WWW=		https://developers.google.com/protocol-buffers/
+WWW=		https://protobuf.dev/ \
+		https://github.com/protocolbuffers/protobuf \
+		https://github.com/protocolbuffers/protobuf/tree/main/ruby
 
 LICENSE=	BSD3CLAUSE
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 SHEBANG_GLOB=	*.rb
 

@@ -16,7 +16,6 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Stream_Filter \
 		Horde_Translation \
 		Horde_Util
-USE_PHP=	hash openssl
 
 BCMATH_USE=	PHP=bcmath
 

@@ -1,0 +1,4 @@
+The pre-translated error pages displayed by Squid.
+
+As squid does not contain pre-translated error pages,
+provide it as a separate package.

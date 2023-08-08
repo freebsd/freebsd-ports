@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/4a1120a5-971c-457f-bb07-60641b4723fd.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/4a1120a5-971c-457f-bb07-60641b4723fd.yml
+@@ -6,7 +6,7 @@
+     attack_id: T1567.001
+     name: Exfiltration to Code Repository
+   platforms:
+-    linux: # https://docs.github.com/en/rest/reference/repos#contents
++    freebsd,linux: # https://docs.github.com/en/rest/reference/repos#contents
+       sh:
+         command: |
+           GHUser="#{github.user.name}";

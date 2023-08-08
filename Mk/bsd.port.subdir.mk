@@ -51,6 +51,11 @@ MOVEDFILE?=		MOVED
 # make -C /usr/ports/category/port/.
 .CURDIR:=		${.CURDIR:tA}
 
+# Ensure .CURDIR doesn't contain a colon, which breaks makefile targets
+.if ${.CURDIR:S/:/\:/g} != ${.CURDIR}
+.error The current directory path contains ':', this is not supported
+.endif
+
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .MAIN: all
@@ -505,7 +510,7 @@ _PORTSEARCH=	\
 	        } \
 	    }' ${MOVEDDIR}/${MOVEDFILE}; \
 	  fi \
-	fi 
+	fi
 
 search:
 	@${_PORTSEARCH}

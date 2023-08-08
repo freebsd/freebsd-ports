@@ -1,9 +1,10 @@
 PORTNAME=	quilt
 PORTVERSION=	0.67
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Collection of bash scripts to ease working with patch files
 WWW=		https://savannah.nongnu.org/projects/quilt
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gdiff:textproc/diffutils \
 		diffstat:textproc/diffstat \
 		gawk:lang/gawk \
-		${LOCALBASE}/bin/grep:textproc/gnugrep
+		${LOCALBASE}/bin/ggrep:textproc/gnugrep
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		formail:mail/procmail
 
@@ -29,7 +30,7 @@ CONFIGURE_ARGS=	--with-sed=${LOCALBASE}/bin/gsed \
 		--without-getopt \
 		--with-patch=${LOCALBASE}/bin/gpatch \
 		--with-diff=${LOCALBASE}/bin/gdiff \
-		--with-grep=${LOCALBASE}/bin/grep
+		--with-grep=${LOCALBASE}/bin/ggrep
 
 PORTDOCS=	README README.MAIL quilt.pdf
 

@@ -1,9 +1,10 @@
---- meson.build.orig	2019-02-03 12:56:37 UTC
+--- meson.build.orig	2020-08-07 08:29:06 UTC
 +++ meson.build
 @@ -4,7 +4,6 @@ project(
    license: 'GPLv3',
  )
-
+ 
 -dependency('openssl', version: '>= 1.0')
  dependency('dbus-1')
- dependency('libsecret-1')
+ 
+ dependency('glib-2.0', version: '>= 2.56')

@@ -9,7 +9,6 @@ WWW=		https://pecl.php.net/package/json_post
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:pecl
-USE_PHP=	json:build
+USES=		php:build,pecl
 
 .include <bsd.port.mk>

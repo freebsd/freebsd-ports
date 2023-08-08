@@ -11,7 +11,7 @@ WWW=		https://github.com/gnif/mod_rpaf/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4+ cpe
+USES=		apache cpe
 
 CPE_VENDOR=	thomas_eibner
 

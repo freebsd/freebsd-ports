@@ -1,11 +1,11 @@
 PORTNAME=	openimageio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.19.0
+DISTVERSION=	2.4.13.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -18,10 +18,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/tsl/robin_map.h:devel/robin-map
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
-		libheif.so:graphics/libheif \
 		libImath.so:math/Imath \
 		libOpenColorIO.so:graphics/opencolorio \
 		libOpenEXR.so:graphics/openexr \
+		libheif.so:graphics/libheif \
+		libturbojpeg.so:graphics/libjpeg-turbo \
 		libpng.so:graphics/png \
 		libsquish.so:graphics/squish \
 		libtiff.so:graphics/tiff \
@@ -36,7 +37,8 @@ GH_ACCOUNT=	OpenImageIO
 GH_PROJECT=	oiio
 
 CMAKE_OFF=	BUILDSTATIC INSTALL_FONTS LINKSTATIC NOTHREADS \
-		STOP_ON_WARNING USE_OPENSSL OIIO_DOWNLOAD_MISSING_TESTDATA
+		STOP_ON_WARNING USE_OPENSSL OIIO_DOWNLOAD_MISSING_TESTDATA \
+		USE_Package
 
 OPTIONS_DEFINE=		DICOM DOCS FFMPEG FREETYPE GIF IMAGEVIEWER \
 			OPENCV OPENJPEG PTEX RAW TBB TEST TOOLS VDB
@@ -96,11 +98,14 @@ VDB_CMAKE_BOOL=		USE_OPENVDB
 VDB_LIB_DEPENDS=	libopenvdb.so:misc/openvdb
 
 PLIST_SUB=	SHL3=${PORTVERSION:R} SHL2=${PORTVERSION:R:R} SHL1=${PORTVERSION:R:R:R}
+SHL3=		${PORTVERSION:R}
 SHL2=		${PORTVERSION:R:R}
 SHL1=		${PORTVERSION:R:R:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/src/cmake/modules/FindPtex.cmake
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," \
+	${WRKSRC}/src/cmake/modules/FindPtex.cmake \
+	${WRKSRC}/src/cmake/modules/FindJPEGTurbo.cmake
 
 .include <bsd.port.options.mk>
 
@@ -124,9 +129,13 @@ USE_LDCONFIG=	yes
 CMAKE_OFF+=	USE_PYTHON
 
 post-install:
-	${LN} -sf libOpenImageIO.so.${SHL2} \
+	${LN} -sf libOpenImageIO.so.${SHL3} \
+		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.${SHL2}
+	${LN} -sf libOpenImageIO.so.${SHL3} \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO.so.${SHL1}
-	${LN} -sf libOpenImageIO_Util.so.${SHL2} \
+	${LN} -sf libOpenImageIO_Util.so.${SHL3} \
+		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.${SHL2}
+	${LN} -sf libOpenImageIO_Util.so.${SHL3} \
 		${STAGEDIR}${PREFIX}/lib/libOpenImageIO_Util.so.${SHL1}
 
 do-test-TEST-on:

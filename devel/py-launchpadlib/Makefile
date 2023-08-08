@@ -1,7 +1,7 @@
 PORTNAME=	launchpadlib
-DISTVERSION=	1.10.16
+DISTVERSION=	1.10.18
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fullermd@over-yonder.net
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keyring>=0:security/py-keyring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lazr.restfulclient>=0.9.19:devel/py-lazr.restfulclient@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lazr.restfulclient>=0.14.2:devel/py-lazr.restfulclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lazr.uri>=0:devel/py-lazr.uri@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testresources>=0:devel/py-testresources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wadllib>=0:devel/py-wadllib@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		pytest python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

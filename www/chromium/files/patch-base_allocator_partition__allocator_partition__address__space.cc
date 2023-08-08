@@ -1,8 +1,8 @@
---- base/allocator/partition_allocator/partition_address_space.cc.orig	2022-08-31 12:19:35 UTC
+--- base/allocator/partition_allocator/partition_address_space.cc.orig	2023-07-16 15:47:57 UTC
 +++ base/allocator/partition_allocator/partition_address_space.cc
-@@ -233,7 +233,7 @@ void PartitionAddressSpace::UninitConfigurablePoolForT
-   setup_.configurable_pool_ = 0;
+@@ -420,7 +420,7 @@ void PartitionAddressSpace::UninitThreadIsolatedPoolFo
  }
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_ARM64)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_ARM64)

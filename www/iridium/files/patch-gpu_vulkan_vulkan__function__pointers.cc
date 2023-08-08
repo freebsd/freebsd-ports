@@ -1,24 +1,6 @@
---- gpu/vulkan/vulkan_function_pointers.cc.orig	2022-04-01 07:48:30 UTC
+--- gpu/vulkan/vulkan_function_pointers.cc.orig	2023-07-24 14:27:53 UTC
 +++ gpu/vulkan/vulkan_function_pointers.cc
-@@ -926,7 +926,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
-   }
- #endif  // BUILDFLAG(IS_ANDROID)
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-   if (gfx::HasExtension(enabled_extensions,
-                         VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME)) {
-     vkGetSemaphoreFdKHR = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
-@@ -971,7 +971,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
-   }
- #endif  // BUILDFLAG(IS_WIN)
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-   if (gfx::HasExtension(enabled_extensions,
-                         VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
-     vkGetMemoryFdKHR = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
-@@ -1141,7 +1141,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1151,7 +1151,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }
    }
  
@@ -27,3 +9,12 @@
    if (gfx::HasExtension(enabled_extensions,
                          VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME)) {
      vkGetImageDrmFormatModifierPropertiesEXT =
+@@ -1339,7 +1339,7 @@ void VulkanFunctionPointers::ResetForTesting() {
+   vkGetSwapchainImagesKHR = nullptr;
+   vkQueuePresentKHR = nullptr;
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   vkGetImageDrmFormatModifierPropertiesEXT = nullptr;
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ }

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-nokogiri>=1<2:textproc/rubygem-nokogiri \
 		shared-mime-info>=0:misc/shared-mime-info
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -11,7 +11,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_CommandLine>=0:devel/pear-Console_CommandLine@${PHP_FLAVOR}
 
 USES=		pear
-USE_PHP=	spl xsl
+USE_PHP=	xsl
 
 NO_ARCH=	yes
 

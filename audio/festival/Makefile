@@ -1,6 +1,6 @@
 PORTNAME=	festival
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio accessibility
 MASTER_SITES=	FESTIVAL
 DISTFILES=	${DISTNAME}-release.tar.gz	\
@@ -24,16 +24,18 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 WWW=		https://www.cstr.ed.ac.uk/projects/festival/
 
+USES=		gmake
+USE_CXXSTD=	gnu++11
+
 OPTIONS_DEFINE=	NAS
 OPTIONS_DEFAULT=NAS
 
-CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib
+CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib -fno-delete-null-pointer-checks
 CONFIGURE_WRKSRC=${WRKDIR}/festival
-USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
-MAKE_ARGS+=	CC="${CC}" GCC="${CC}" \
-		CXX="${CXX}" GXX="${CXX}" \
+MAKE_ARGS+=	CC="${CCACHE_BIN} ${CC}" GCC="${CCACHE_BIN} ${CC}" \
+		CXX="${CCACHE_BIN} ${CXX}" GXX="${CCACHE_BIN} ${CXX}" \
 		EST_HOME=${SPEECHTOOLS}
 WRKSRC=		${WRKDIR}
 

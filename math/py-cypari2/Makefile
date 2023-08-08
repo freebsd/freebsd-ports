@@ -1,7 +1,7 @@
 PORTNAME=	cypari2
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +19,7 @@ TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		compiler:c11 python:3.6+
+USES=		compiler:c11 python
 USE_PYTHON=	cython distutils
 
 .if !defined(WITH_DEBUG)

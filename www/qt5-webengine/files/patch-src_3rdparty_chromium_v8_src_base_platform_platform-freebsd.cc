@@ -1,14 +1,6 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc
-@@ -6,6 +6,7 @@
- // parts, the implementation is in platform-posix.cc.
- 
- #include <pthread.h>
-+#include <pthread_np.h>
- #include <semaphore.h>
- #include <signal.h>
- #include <stdlib.h>
-@@ -81,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
+@@ -82,8 +82,8 @@ std::vector<OS::SharedLibraryAddress> OS::GetSharedLib
              lib_name = std::string(path);
            }
            result.push_back(SharedLibraryAddress(

@@ -1,6 +1,6 @@
 PORTNAME=	ParMetis
 PORTVERSION=	4.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 DISTNAME=	${PORTNAME:tl}-${PORTVERSION}
@@ -14,8 +14,6 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-BROKEN=		does not fetch
-
 USES=		cmake:insource,noninja gmake
 USE_LDCONFIG=	${PREFIX}/lib/parmetis
 
@@ -23,14 +21,8 @@ OPTIONS_DEFINE=	OPENMPI DOCS STATIC
 OPENMPI_DESC=	Use openmpi instead of mpich
 OPTIONS_SUB=	yes
 
-OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
-OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
-OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
-				MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpicxx
-OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
-OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
-OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc \
-				MPICXX=${LOCALBASE}/bin/mpicxx
+OPENMPI_USES=			mpi:openmpi
+OPENMPI_USES_OFF=		mpi
 
 STATIC_DESC=			Do not build and install shared library
 STATIC_VARS_OFF=		SH_FLAG="shared=1"
@@ -46,7 +38,7 @@ pre-configure:
 		 s|$$(MAKEFLAGS)||' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"-O3"|""|' ${WRKSRC}/metis/GKlib/GKlibSystem.cmake
-.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="sparc64") || (${ARCH}=="ppc64") || (${ARCH}=="ia64"))
+.if ((${ARCH}=="amd64") || (${ARCH}=="aarch64") || (${ARCH}=="sparc64") || (${ARCH}=="ppc64"))
 	@${REINPLACE_CMD} -e \
 		's|IDXTYPEWIDTH 32|IDXTYPEWIDTH 64|' \
 		${WRKSRC}/metis/include/metis.h

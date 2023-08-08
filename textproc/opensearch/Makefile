@@ -1,8 +1,8 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.2.1
+DISTVERSION=	2.8.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
-MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT=	Full-text search engine for Java
@@ -13,6 +13,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
+
+CONFLICTS=	opensearch13
 
 USES=		cpe shebangfix
 USE_JAVA=	yes
@@ -38,7 +40,7 @@ OPTIONS_DEFAULT=PLUGINS
 
 CONFIG_FILES=	opensearch.yml jvm.options log4j2.properties
 
-PLUGINS_CONFIG_FILES= \
+PLUGINS_CONFIG_FILES?= \
 		opensearch-notifications-core/notifications-core.yml \
 		opensearch-notifications/notifications.yml \
 		opensearch-observability/observability.yml \
@@ -48,8 +50,8 @@ PLUGINS_CONFIG_FILES= \
 		opensearch-performance-analyzer/performance-analyzer.properties \
 		opensearch-performance-analyzer/plugin-stats-metadata \
 		opensearch-performance-analyzer/rca.conf \
-		opensearch-performance-analyzer/rca_idle_master.conf \
-		opensearch-performance-analyzer/rca_master.conf \
+		opensearch-performance-analyzer/rca_idle_cluster_manager.conf \
+		opensearch-performance-analyzer/rca_cluster_manager.conf \
 		opensearch-performance-analyzer/supervisord.conf \
 		opensearch-reports-scheduler/reports-scheduler.yml \
 		opensearch-security/action_groups.yml \
@@ -95,6 +97,7 @@ do-install:
 .for f in ${BINS}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/lib/opensearch/bin
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/extensions
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/lib
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "lib modules" ${STAGEDIR}${PREFIX}/lib/opensearch/)
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/opensearch
@@ -125,7 +128,10 @@ post-install:
 .endfor
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${ECHO} "@dir lib/opensearch/extensions" >> ${TMPPLIST}
+.if ${PORT_OPTIONS:MPLUGINS}
 	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
+.endif
 	${ECHO} "@dir libexec/opensearch" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0755) ${ETCDIR}" >> ${TMPPLIST}
 

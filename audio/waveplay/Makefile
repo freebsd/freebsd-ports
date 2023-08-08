@@ -8,6 +8,10 @@ DISTNAME=	waveplay-20010924
 MAINTAINER=	yshd@na.rim.or.jp
 COMMENT=	Simple wav file player
 
+BROKEN=		Unfetchable
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2023-09-30
+
 ONLY_FOR_ARCHS=	i386 amd64 armv7 powerpc powerpc64 powerpc64le
 PLIST_FILES=	bin/waveplay \
 		man/ja/man1/waveplay.1.gz \

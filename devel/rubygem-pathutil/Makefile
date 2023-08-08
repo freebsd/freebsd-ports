@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-forwardable-extended>=2.6<3:devel/rubygem-forwardable-extended
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

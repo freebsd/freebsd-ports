@@ -1,5 +1,5 @@
 PORTNAME=	pyenv
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.22
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -22,11 +22,13 @@ REINPLACE_ARGS=	-i ''
 
 CPE_VENDOR=	pyenv_project
 
-SHEBANG_FILES=	plugins/python-build/scripts/add_miniconda.py
+SHEBANG_FILES=	plugins/python-build/scripts/add_miniconda.py \
+		plugins/python-build/scripts/add_miniforge.py
 
 post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_ARGS} -e "s|\$${root}/completions|${DATADIR}/completions|g" \
 		${WRKSRC}/libexec/pyenv-init
+	@${RM} ${WRKSRC}/libexec/pyenv.orig
 
 do-install:
 	CC="${CC}" ${WRKSRC}/src/${CONFIGURE_CMD}

@@ -123,23 +123,24 @@ for _file in "${@}"; do
 	for site in ${sites}; do
 		sites_remaining=$((sites_remaining - 1))
 		CKSIZE=$(distinfo_data SIZE "${full_file}")
-		# There is a lot of escaping, but the " needs to survive echo/eval.
+		early_args=""
 		case ${file} in
 			*/*)
 				case ${dp_TARGET} in
-				fetch-list|fetch-url-list-int)
-					echo "mkdir -p \"${file%/*}\" && "
-					;;
-				*)
-					mkdir -p "${file%/*}"
-					;;
+					fetch-list)
+						echo "mkdir -p \"${file%/*}\" && "
+						early_args="-o ${file}"
+						;;
+					fetch-url-list-int)
+						;;
+					*)
+						mkdir -p "${file%/*}"
+						early_args="-o ${file}"
+						;;
 				esac
-				args="-o ${file} ${site}${file}"
-				;;
-			*)
-				args="${site}${file}"
-				;;
+			;;
 		esac
+		args="${early_args:+${early_args} }${site}${file}"
 		_fetch_cmd="${dp_FETCH_CMD} ${dp_FETCH_BEFORE_ARGS}"
 		if [ -z "${dp_DISABLE_SIZE}" -a -n "${CKSIZE}" ]; then
 			_fetch_cmd="${_fetch_cmd} -S ${CKSIZE}"

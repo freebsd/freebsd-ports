@@ -1,4 +1,4 @@
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	# empty
@@ -22,7 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	python
 
 USE_GNOME=	pygobject3 gtk30
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	flavors py3kplist
 MANPAGES=	avahi-bookmarks.1
 

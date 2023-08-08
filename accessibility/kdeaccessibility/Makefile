@@ -1,5 +1,6 @@
 PORTNAME=	kdeaccessibility
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	accessibility kde
 
 MAINTAINER=	kde@FreeBSD.org

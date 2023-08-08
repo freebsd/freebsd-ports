@@ -10,8 +10,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/exifgrep \
 		bin/exifprobe \
-		man/man1/exifgrep.1.gz \
-		man/man1/exifprobe.1.gz
+		share/man/man1/exifgrep.1.gz \
+		share/man/man1/exifprobe.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|cc|${CC}|; s|-DC|${CFLAGS} -DC|' \
@@ -20,7 +20,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/exifgrep ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/exifprobe ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/exifgrep.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/exifprobe.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/exifgrep.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/exifprobe.1 ${STAGEDIR}${MAN1PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

@@ -1,6 +1,5 @@
 PORTNAME=	feh
-PORTVERSION=	3.9.1
-PORTREVISION=	1
+PORTVERSION=	3.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://feh.finalrewind.org/
 
@@ -13,32 +12,32 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libpng.so:graphics/png
+TEST_DEPENDS=	p5-Test-Command>=0:devel/p5-Test-Command
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gmake localbase:ldflags \
-		tar:bzip2 xorg
-USE_XORG=	x11 xt xinerama
+USES=		cpe desktop-file-utils gmake localbase:ldflags tar:bzip2 xorg
 CPE_VENDOR=	feh_project
+USE_XORG=	x11 xinerama xt
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}" verscmp=0
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
+		verscmp=0
+TEST_TARGET=	test
 
-OPTIONS_DEFINE=	CURL DCRAW DOCS EXAMPLES EXIF XINERAMA
-EXIF_DESC=	Support EXIF tags
+OPTIONS_DEFINE=		CURL DCRAW DOCS EXAMPLES EXIF XINERAMA
+OPTIONS_DEFAULT=	CURL EXIF XINERAMA
+OPTIONS_SUB=		yes
+
 DCRAW_DESC=	Use dcraw to display raw file previews
-OPTIONS_DEFAULT=CURL EXIF XINERAMA
-OPTIONS_SUB=	yes
-
-EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
-EXIF_MAKE_ENV=		exif=1
-EXIF_MAKE_ENV_OFF=	exif=0
-
-XINERAMA_MAKE_ENV=	xinerama=1
-XINERAMA_MAKE_ENV_OFF=	xinerama=0
+EXIF_DESC=	Support EXIF tags
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_MAKE_ENV=		curl=1
 CURL_MAKE_ENV_OFF=	curl=0
-
 DCRAW_RUN_DEPENDS=	dcraw:graphics/dcraw
+EXIF_LIB_DEPENDS=	libexif.so:graphics/libexif
+EXIF_MAKE_ENV=		exif=1
+EXIF_MAKE_ENV_OFF=	exif=0
+XINERAMA_MAKE_ENV=	xinerama=1
+XINERAMA_MAKE_ENV_OFF=	xinerama=0
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's|install-doc||' \

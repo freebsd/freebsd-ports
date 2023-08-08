@@ -12,7 +12,7 @@
  #include <sys/syscall.h>
  #endif
  
-@@ -37,6 +41,8 @@ PlatformThreadId CurrentThreadId() {
+@@ -44,6 +48,8 @@ PlatformThreadId CurrentThreadId() {
    return gettid();
  #elif defined(WEBRTC_FUCHSIA)
    return zx_thread_self();
@@ -21,7 +21,7 @@
  #elif defined(WEBRTC_LINUX)
    return syscall(__NR_gettid);
  #elif defined(__EMSCRIPTEN__)
-@@ -67,6 +73,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
+@@ -74,6 +80,7 @@ void SetCurrentThreadName(const char* name) {
  }
  
  void SetCurrentThreadName(const char* name) {
@@ -29,10 +29,10 @@
  #if defined(WEBRTC_WIN)
    // The SetThreadDescription API works even if no debugger is attached.
    // The names set with this API also show up in ETW traces. Very handy.
-@@ -109,6 +116,7 @@ void SetCurrentThreadName(const char* name) {
-   prctl(PR_SET_NAME, reinterpret_cast<unsigned long>(name));  // NOLINT
- #elif defined(WEBRTC_MAC) || defined(WEBRTC_IOS)
-   pthread_setname_np(name);
+@@ -120,6 +127,7 @@ void SetCurrentThreadName(const char* name) {
+   zx_status_t status = zx_object_set_property(zx_thread_self(), ZX_PROP_NAME,
+                                               name, strlen(name));
+   RTC_DCHECK_EQ(status, ZX_OK);
 +#endif
  #endif
  }

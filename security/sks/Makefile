@@ -1,5 +1,6 @@
 PORTNAME=	sks
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://bitbucket.org/skskeyserver/sks-keyserver/downloads/
 

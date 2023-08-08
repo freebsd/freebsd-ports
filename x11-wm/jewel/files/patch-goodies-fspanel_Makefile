@@ -4,10 +4,10 @@
 -CC = gcc
 -C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -m386 -malign-loops=2 -malign-jumps=2 -malign-functions=2
 +CC ?= gcc
-+C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -falign-functions=2
++C_FLAGS = -DNOSTDLIB -DHAVE_XPM -Wall -I$(XROOT)/include -falign-functions=2 --std=c++14
  L_FLAGS = -O1 -Xlinker -s -L$(XROOT)/lib -lX11 -lXpm
  PROGNAME = fspanel
- 
+
 +all: $(PROGNAME)
 +
  $(PROGNAME): Makefile fspanel.c fspanel.h icon.xpm
@@ -15,7 +15,7 @@
  	@ls -l $(PROGNAME)
 @@ -14,4 +16,4 @@
  	cp -r $(PROGNAME) $(DESTDIR)$(prefix)/bin
- 
+
  uninstall:
 -	rm $(DESTDIR)$(prefix)/bin/$(PROGNAME)
 \ No newline at end of file

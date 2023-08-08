@@ -6,7 +6,7 @@ COMMENT=	Python module for libdnet
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
-USES=		autoreconf libtool python:3.6+
+USES=		autoreconf libtool python
 
 MASTERDIR=	${.CURDIR}/../libdnet
 INSTALL_WRKSRC=	${WRKSRC}/python
@@ -26,6 +26,12 @@ CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}
 .if defined(MAINTAINER_MODE)
 regression-test: install
 	${PYTHON_CMD} ${INSTALL_WRKSRC}/test.py
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:

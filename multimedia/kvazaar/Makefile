@@ -1,23 +1,20 @@
 PORTNAME=	kvazaar
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	2.1.0
+DISTVERSION=	2.2.0
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
-WWW=		http://ultravideo.cs.tut.fi/ #encoder
+WWW=		https://ultravideo.fi/#encoder_x
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		autoreconf compiler:c11 libtool pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ultravideo
 GH_TUPLE=	silentbicycle:greatest:v1.0.0:greatest/greatest
-
-CONFLICTS_INSTALL?=	${PORTNAME}-devel
-
-USES=		autoreconf compiler:c11 libtool pathfix
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
 INSTALL_TARGET=	install-strip

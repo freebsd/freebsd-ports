@@ -1,6 +1,6 @@
---- source/timidity/readmidi.cpp.orig	2017-06-04 15:57:26.317968000 +0200
-+++ source/timidity/readmidi.cpp	2017-06-04 16:07:48.260735000 +0200
-@@ -569,7 +569,7 @@
+--- source/timidity/readmidi.cpp.orig	2022-12-31 03:37:53 UTC
++++ source/timidity/readmidi.cpp
+@@ -569,7 +569,7 @@ MidiEvent* read_midi_mem(MidiSong* song, void* mimage,
  	int32 len, divisions;
  	int16 format, tracks, divisions_tmp;
  	int i;

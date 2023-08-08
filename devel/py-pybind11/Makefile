@@ -1,7 +1,7 @@
 PORTNAME=	pybind11
-DISTVERSION=	2.10.0
+DISTVERSION=	2.11.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,8 +10,11 @@ WWW=		https://github.com/pybind/pybind11
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	pep517 concurrent autoplist
 
 NO_ARCH=	yes
 

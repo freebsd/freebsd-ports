@@ -1,7 +1,7 @@
 PORTNAME=	pyscard
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.3
 CATEGORIES=	security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mp39590@gmail.com
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	swig:devel/swig \
 RUN_DEPENDS=	pcsc-lite>0:devel/pcsc-lite
 
 ## Python3 is supported
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 PYDISTUTILS_BUILD_TARGET=	build_ext

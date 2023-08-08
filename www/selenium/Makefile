@@ -1,8 +1,7 @@
 PORTNAME=	selenium
-PORTVERSION=	4.1.3
-PORTREVISION=	1
+PORTVERSION=	4.8.3
 CATEGORIES=	www devel java
-MASTER_SITES=	https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.1.0/
+MASTER_SITES=	https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.8.0/
 DISTNAME=	selenium-server-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
@@ -17,7 +16,7 @@ USES=		cpe
 CPE_VENDOR=	jenkins
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_RUN=	yes
 
 USE_RC_SUBR=	selenium

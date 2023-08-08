@@ -1,7 +1,7 @@
 PORTNAME=	web2ldap
-PORTVERSION=	1.7.7
+PORTVERSION=	1.8.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP https://www.web2ldap.de/download/
+MASTER_SITES=	PYPI https://www.web2ldap.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -16,14 +16,14 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}dnspython>=2.0.0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlwt>0:textproc/py-xlwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ldap0>=1.2.8:net/py-ldap0@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ldap0>=1.4.7:net/py-ldap0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso3166>=1.0.1:textproc/py-iso3166@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}defusedxml>0:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0.7.1:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${LOCALBASE}/etc/mime.types:misc/mime-support
 
 OPTIONS_DEFINE=	DOCS
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	distutils autoplist
 
 SUB_FILES=	pkg-message ${PORTNAME}

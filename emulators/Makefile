@@ -69,13 +69,11 @@
     SUBDIR += linux-power10-functional-sim
     SUBDIR += linux-power9-functional-sim
     SUBDIR += linux_base-c7
-    SUBDIR += lisaem
     SUBDIR += magia
     SUBDIR += mame
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mesen
-    SUBDIR += mess
     SUBDIR += mgba
     SUBDIR += mtools
     SUBDIR += mupen64plus
@@ -104,7 +102,7 @@
     SUBDIR += pcem
     SUBDIR += pcemu
     SUBDIR += pcsx2
-    SUBDIR += pcsxr
+    SUBDIR += playonbsd
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5
     SUBDIR += py-gns3-converter
@@ -112,12 +110,10 @@
     SUBDIR += qemu
     SUBDIR += qemu-cheri
     SUBDIR += qemu-devel
-    SUBDIR += qemu-guest-agent
     SUBDIR += qemu-powernv
     SUBDIR += qemu-user-static
     SUBDIR += qemu-user-static-devel
-    SUBDIR += qemu6
-    SUBDIR += qemu70
+    SUBDIR += qemu7
     SUBDIR += qmc2
     SUBDIR += quasi88
     SUBDIR += reicast
@@ -131,12 +127,12 @@
     SUBDIR += simh-hp2100
     SUBDIR += simh-hp3000
     SUBDIR += simh-hpdoc
-    SUBDIR += skyeye
     SUBDIR += snes9x-gtk
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += teo
+    SUBDIR += tic-80
     SUBDIR += tiemu3
     SUBDIR += tilem
     SUBDIR += tme
@@ -145,6 +141,7 @@
     SUBDIR += tuxnes
     SUBDIR += uae
     SUBDIR += ucon64
+    SUBDIR += uconvert
     SUBDIR += ukncbtl
     SUBDIR += unicorn
     SUBDIR += vba
@@ -175,6 +172,7 @@
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
     SUBDIR += wine-proton
+    SUBDIR += wine7
     SUBDIR += winetricks
     SUBDIR += x16-emulator
     SUBDIR += x16-rom

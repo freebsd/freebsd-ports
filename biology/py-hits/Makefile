@@ -1,7 +1,7 @@
 PORTNAME=	hits
 PORTVERSION=	0.1
 CATEGORIES=	biology python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/jeffhussmann/hits
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils cython autoplist
 
 post-install:

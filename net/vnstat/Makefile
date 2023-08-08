@@ -1,12 +1,13 @@
 PORTNAME=	vnstat
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/vergoh/vnstat/releases/download/v${PORTVERSION}/ \
 		https://humdi.net/vnstat/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Console-based network traffic monitor
-WWW=		https://humdi.net/vnstat/
+WWW=		https://humdi.net/vnstat/ \
+		https://github.com/vergoh/vnstat
 
 LICENSE=	GPLv2
 

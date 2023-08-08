@@ -1,0 +1,12 @@
+bin/openslide-quickhash1sum
+bin/openslide-show-properties
+bin/openslide-write-png
+include/openslide/openslide-features.h
+include/openslide/openslide.h
+lib/libopenslide.so
+lib/libopenslide.so.0
+lib/libopenslide.so.0.4.1
+libdata/pkgconfig/openslide.pc
+man/man1/openslide-quickhash1sum.1.gz
+man/man1/openslide-show-properties.1.gz
+man/man1/openslide-write-png.1.gz

@@ -1,6 +1,7 @@
 PORTNAME=	pg_tileserv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.9
+PORTREVISION=	8
 CATEGORIES=	databases
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,8 +12,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
 GO_MODULE=	github.com/crunchydata/pg_tileserv
 
 PLIST_FILES=	bin/${PORTNAME}
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>

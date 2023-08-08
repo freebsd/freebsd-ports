@@ -1,11 +1,11 @@
---- Makefile.orig	2021-12-07 16:13:53 UTC
+--- Makefile.orig	2023-05-27 12:33:21 UTC
 +++ Makefile
-@@ -252,7 +252,7 @@ endif
+@@ -258,7 +258,7 @@
  
  .PHONY: compiler cold
  compiler:
--	env MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS= BOOTSTRAP_OPT_TARGET=opt.opt BOOTSTRAP_ROOT=.. BOOTSTRAP_DIR=bootstrap ./shell/bootstrap-ocaml.sh $(OCAML_PORT)
-+	env CC="$(CC)" MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS= BOOTSTRAP_OPT_TARGET=opt.opt BOOTSTRAP_ROOT=.. BOOTSTRAP_DIR=bootstrap ./shell/bootstrap-ocaml.sh $(OCAML_PORT)
+-	env MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS= BOOTSTRAP_TARGETS=world.opt BOOTSTRAP_ROOT=.. BOOTSTRAP_DIR=bootstrap ./shell/bootstrap-ocaml.sh $(OCAML_PORT)
++	env CC="$(CC)" MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS= BOOTSTRAP_TARGETS=world.opt BOOTSTRAP_ROOT=.. BOOTSTRAP_DIR=bootstrap ./shell/bootstrap-ocaml.sh $(OCAML_PORT)
  
  src_ext/secondary/ocaml/bin/ocaml:
- 	env MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS="--disable-ocamldoc --disable-debug-runtime --disable-debugger" BOOTSTRAP_OPT_TARGET=opt BOOTSTRAP_ROOT=../.. BOOTSTRAP_DIR=src_ext/secondary ./shell/bootstrap-ocaml.sh $(OCAML_PORT)
+ 	env MAKE=$(MAKE) BOOTSTRAP_EXTRA_OPTS="--disable-ocamldoc --disable-debug-runtime --disable-debugger" BOOTSTRAP_TARGETS="world opt" BOOTSTRAP_ROOT=../.. BOOTSTRAP_DIR=src_ext/secondary ./shell/bootstrap-ocaml.sh $(OCAML_PORT)

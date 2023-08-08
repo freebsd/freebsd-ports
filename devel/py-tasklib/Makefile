@@ -1,7 +1,7 @@
 PORTNAME=	tasklib
-DISTVERSION=	2.4.3
+DISTVERSION=	2.5.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry.dussuet@protonmail.com
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	task:deskutils/taskwarrior
 
-USES=		python:3.5+,run
+USES=		python:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

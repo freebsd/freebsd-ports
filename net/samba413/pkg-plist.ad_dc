@@ -5,7 +5,6 @@ sbin/samba_dnsupdate
 sbin/samba_kcc
 sbin/samba_spnupdate
 sbin/samba_upgradedns
-sbin/samba-gpupdate
 include/samba4/dcerpc_server.h
 lib/samba4/libdcerpc-server.so
 lib/samba4/libdcerpc-server.so.0
@@ -19,13 +18,12 @@ lib/samba4/private/libdnsserver-common-samba4.so
 lib/samba4/private/libdsdb-garbage-collect-tombstones-samba4.so
 lib/samba4/private/libpac-samba4.so
 lib/samba4/private/libscavenge-dns-records-samba4.so
-%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9.so
-%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_9.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_10.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_11.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_12.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_14.so
 %%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_16.so
+%%SAMBA4_MODULEDIR%%/bind9/dlz_bind9_18.so
 %%SAMBA4_MODULEDIR%%/gensec/krb5.so
 %%SAMBA4_MODULEDIR%%/ldb/acl.so
 %%SAMBA4_MODULEDIR%%/ldb/aclread.so
@@ -172,4 +170,3 @@ lib/samba4/private/libscavenge-dns-records-samba4.so
 @dir %%DATADIR%%/setup/ad-schema
 @dir %%DATADIR%%/setup
 @dir %%DATADIR%%
-man/man8/samba-gpupdate.8.gz

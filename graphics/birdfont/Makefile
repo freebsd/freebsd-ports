@@ -1,5 +1,6 @@
 PORTNAME=	birdfont
-DISTVERSION=	2.32.2
+DISTVERSION=	2.32.3
+PORTREVISION=	2
 CATEGORIES=	graphics x11-fonts
 MASTER_SITES=	https://birdfont.org/releases/
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxmlbird.so:textproc/libxmlbird
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		pkgconfig python:3.7+,build shared-mime-info shebangfix \
+		pkgconfig python:build shared-mime-info shebangfix \
 		sqlite:3 tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
@@ -34,6 +35,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--ldflags="${LDFLAGS}" \
 		--prefix="${PREFIX}"
 
+LDFLAGS_powerpc=	-lm
 _STRIPPABLE=	bin/birdfont bin/birdfont-autotrace bin/birdfont-export \
 		bin/birdfont-import lib/libbirdfont.so.36.0 \
 		lib/libbirdgems.so.0.0

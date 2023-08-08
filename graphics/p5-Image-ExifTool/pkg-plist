@@ -88,6 +88,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/HTML.pm
 %%SITE_PERL%%/Image/ExifTool/HtmlDump.pm
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
+%%SITE_PERL%%/Image/ExifTool/ICO.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
 %%SITE_PERL%%/Image/ExifTool/ISO.pm
@@ -126,6 +127,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/MIE.pm
 %%SITE_PERL%%/Image/ExifTool/MIEUnits.pod
 %%SITE_PERL%%/Image/ExifTool/MIFF.pm
+%%SITE_PERL%%/Image/ExifTool/MISB.pm
 %%SITE_PERL%%/Image/ExifTool/MNG.pm
 %%SITE_PERL%%/Image/ExifTool/MOI.pm
 %%SITE_PERL%%/Image/ExifTool/MPC.pm
@@ -214,6 +216,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/WritePhotoshop.pl
 %%SITE_PERL%%/Image/ExifTool/WritePostScript.pl
 %%SITE_PERL%%/Image/ExifTool/WriteQuickTime.pl
+%%SITE_PERL%%/Image/ExifTool/WriteRIFF.pl
 %%SITE_PERL%%/Image/ExifTool/WriteXMP.pl
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
@@ -277,6 +280,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::HTML.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::HtmlDump.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ICC_Profile.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::ICO.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ID3.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::IPTC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::ISO.3.gz
@@ -315,6 +319,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::MIE.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MIEUnits.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MIFF.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::MISB.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MNG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MOI.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::MPC.3.gz
@@ -402,6 +407,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::WritePhotoshop.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WritePostScript.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteQuickTime.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::WriteRIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteXMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Writer.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::XMP.3.gz

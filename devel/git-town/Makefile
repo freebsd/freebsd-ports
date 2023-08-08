@@ -1,7 +1,6 @@
 PORTNAME=	git-town
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.8.0
-PORTREVISION=	1
+DISTVERSION=	9.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +13,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
-GO_MODULE=	github.com/git-town/git-town/v7
+GO_MODULE=	github.com/git-town/git-town/v9
 
 PLIST_FILES=	bin/${PORTNAME}
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>

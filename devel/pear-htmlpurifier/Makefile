@@ -7,7 +7,7 @@ MASTER_SITES=	http://htmlpurifier.org/get/ \
 DISTNAME=	HTMLPurifier-${PORTVERSION}
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP HTML filter library
 WWW=		http://htmlpurifier.org/
 

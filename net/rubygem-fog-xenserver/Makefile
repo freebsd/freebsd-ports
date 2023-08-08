@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

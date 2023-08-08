@@ -1,5 +1,6 @@
 bin/blt
 libexec/biolibc-tools/chrom-lens
+libexec/biolibc-tools/deromanize
 libexec/biolibc-tools/ensemblid2gene
 libexec/biolibc-tools/extract-seq
 libexec/biolibc-tools/fasta2seq
@@ -13,6 +14,7 @@ libexec/biolibc-tools/uniq-seqs.awk
 libexec/biolibc-tools/vcf-downsample
 libexec/biolibc-tools/vcf-search
 man/man1/blt-chrom-lens.1.gz
+man/man1/blt-deromanize.1.gz
 man/man1/blt-ensemblid2gene.1.gz
 man/man1/blt-extract-seq.1.gz
 man/man1/blt-fasta2seq.1.gz

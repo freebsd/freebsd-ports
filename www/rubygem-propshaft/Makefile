@@ -1,5 +1,5 @@
 PORTNAME=	propshaft
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=7.0.0:www/rubygem-actionpack70 \
 		rubygem-railties70>=7.0.0:www/rubygem-railties70
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

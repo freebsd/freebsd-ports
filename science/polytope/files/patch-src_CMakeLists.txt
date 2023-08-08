@@ -1,0 +1,22 @@
+- uses std::integer_sequence C++14 feature
+
+--- src/CMakeLists.txt.orig	2022-12-03 08:18:04 UTC
++++ src/CMakeLists.txt
+@@ -17,7 +17,7 @@ endif()
+ # TriangleTessellator and triangle source
+ if (HAVE_TRIANGLE)
+   list(APPEND TESSELLATOR_SOURCES TriangleTessellator.cc)
+-  add_library(triangle STATIC  predicates.cc triangle.c)
++  add_library(triangle predicates.cc triangle.c)
+   #set(TRIANGLE_LIB triangle PARENT_SCOPE)
+   set(TRIANGLE_LIB triangle)
+   set_target_properties(triangle PROPERTIES
+@@ -49,7 +49,7 @@ endif()
+ file(GLOB HEADERS *.hh)
+ list(APPEND HEADERS "${PROJECT_BINARY_DIR}/polytope.hh")
+ 
+-add_library(polytope STATIC
++add_library(polytope
+             ${TESSELLATOR_SOURCES} ${IO_SOURCES} ErrorHandler.cc
+       	    polytope_internal_abort.cc)
+ 

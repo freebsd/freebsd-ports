@@ -1,4 +1,4 @@
-TIMESTAMP = 1613623317
+TIMESTAMP = 1678842588
 SHA256 (asciimoo-wuzz-v0.5.0_GH0.tar.gz) = 721ea7343698e9f3c69e09eab86b9b1fef828057655f7cebc1de728c2f75151e
 SIZE (asciimoo-wuzz-v0.5.0_GH0.tar.gz) = 125512
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
@@ -13,8 +13,8 @@ SHA256 (fatih-color-v1.9.0_GH0.tar.gz) = f5a6372ff7c87d22baaa2089e5cdd8a218fb3a9
 SIZE (fatih-color-v1.9.0_GH0.tar.gz) = 1230941
 SHA256 (golang-net-627f9648deb9_GH0.tar.gz) = a171ecd3ca1ca546c82806d7ddba1985b18da28530cb7479ea62d90ea1f81041
 SIZE (golang-net-627f9648deb9_GH0.tar.gz) = 1177189
-SHA256 (golang-sys-6fdc65e7d980_GH0.tar.gz) = 5c36375f2b9646fecf7a7f146be0780fe7ae1b030e10fb1a0ff75794569d07b7
-SIZE (golang-sys-6fdc65e7d980_GH0.tar.gz) = 1054144
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (jroimartin-gocui-v0.4.0_GH0.tar.gz) = 7dbb46356f9eee2d52c68cf664f9527cb7b84e746e61cc9000566a0b9eec8dec
 SIZE (jroimartin-gocui-v0.4.0_GH0.tar.gz) = 28376
 SHA256 (mattn-go-colorable-v0.1.6_GH0.tar.gz) = e313129503025c383b5e69082fb1144e83a864d12ec45bb7a224d3fc4a635fbc

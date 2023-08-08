@@ -1,0 +1,11 @@
+--- third_party/swiftshader/src/WSI/BUILD.gn.orig	2022-11-30 08:12:58 UTC
++++ third_party/swiftshader/src/WSI/BUILD.gn
+@@ -87,7 +87,7 @@ swiftshader_source_set("WSI") {
+     "../Vulkan:swiftshader_libvulkan_headers",
+   ]
+ 
+-  if (is_linux && ozone_platform_wayland && !use_system_libwayland) {
++  if (is_linux && ozone_platform_wayland && !use_system_libwayland && !is_openbsd) {
+     # Use third-party targets
+     deps += [ "$wayland_gn_dir:wayland_client" ]
+   }

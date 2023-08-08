@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/amavisd:security/amavisd-new \
 
 USES=		php:flavors,web
 USE_PHP=	sockets
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 NO_ARCH=	yes
 NO_BUILD=	yes

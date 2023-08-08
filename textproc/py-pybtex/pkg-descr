@@ -3,5 +3,3 @@ simply type pybtex instead of bibtex.
 
 Pybtex aims to be 100% compatible with BibTeX. It accepts the same command line
 options, fully supports BibTeX's .bst styles and produces byte-identical output.
-
-See also: https://pybtex.org/

@@ -1,9 +1,9 @@
 PORTNAME=	fansi
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	ANSI Control Sequence Aware String Functions
 WWW=		https://cran.r-project.org/web/packages/fansi/
 

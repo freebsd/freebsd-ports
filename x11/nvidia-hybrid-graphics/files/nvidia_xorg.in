@@ -20,7 +20,7 @@ load_rc_config $name
 
 command=/usr/sbin/daemon
 pidfile=/var/run/${name}.pid
-procname="%%LOCALBASE%%/bin/Xorg"
+procname="%%LOCALBASE%%/libexec/Xorg"
 command_args="-p ${pidfile} -f %%PREFIX%%/bin/Xorg-nvidia-headless"
 start_precmd="${name}_prestart"
 stop_postcmd="${name}_poststop"

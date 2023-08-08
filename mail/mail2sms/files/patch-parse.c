@@ -1,6 +1,6 @@
---- parse.c.orig	Wed Apr 16 05:06:23 2003
-+++ parse.c	Wed Apr 16 05:45:31 2003
-@@ -48,8 +48,9 @@
+--- parse.c.orig	2002-06-10 12:19:44 UTC
++++ parse.c
+@@ -48,8 +48,9 @@ int preferedcontent(char *type)
  /*
  ** strcasestr() - case insensitive strstr()
  */
@@ -12,12 +12,12 @@
  {
    int nlen = strlen(needle);
    int hlen = strlen(haystack);
-@@ -325,7 +326,7 @@ struct body * process(char *mbox,    /*
+@@ -325,7 +326,7 @@ struct body * process(char *mbox,    /* file name */
    if (use_stdin || !mbox || !strcasecmp(mbox, "NONE"))
      fp = stdin;
    else if ((fp = fopen(mbox, "r")) == NULL) {
 -    return; /* add error code */
 +    return -1; /* add error code */
    }
-
+   
    isinheader = 1;

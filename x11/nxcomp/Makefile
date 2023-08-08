@@ -1,6 +1,6 @@
 PORTNAME=	nxcomp
 PORTVERSION=	3.5.0.32
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	https://code.x2go.org/releases/source/nx-libs/
 CATEGORIES=	x11 devel
 DISTNAME=	nx-libs-${PORTVERSION}-lite

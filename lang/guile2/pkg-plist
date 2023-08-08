@@ -1,8 +1,13 @@
-bin/guild
-bin/guile
-bin/guile-config
-bin/guile-snarf
-bin/guile-tools
+bin/guild%%GUILE_SFX%%
+bin/guile%%GUILE_SFX%%
+bin/guile-config%%GUILE_SFX%%
+bin/guile-snarf%%GUILE_SFX%%
+bin/guile-tools%%GUILE_SFX%%
+bin/guild-%%GUILE_VER%%
+bin/guile-%%GUILE_VER%%
+bin/guile-config-%%GUILE_VER%%
+bin/guile-snarf-%%GUILE_VER%%
+bin/guile-tools-%%GUILE_VER%%
 include/guile/%%GUILE_VER%%/libguile.h
 include/guile/%%GUILE_VER%%/libguile/__scm.h
 include/guile/%%GUILE_VER%%/libguile/alist.h
@@ -442,8 +447,8 @@ lib/libguile-%%GUILE_VER%%.so.1
 lib/libguile-%%GUILE_VER%%.so.1.4.2
 lib/libguile-%%GUILE_VER%%.so.1.4.2-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
-man/man1/guile.1.gz
-share/aclocal/guile.m4
+man/man1/guile%%GUILE_SFX%%.1.gz
+@comment share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/arrays.scm

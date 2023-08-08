@@ -1,0 +1,82 @@
+From 1ed24e36e279c922d3366f6c3144570cc5f54d7a Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Mon, 19 Dec 2022 21:09:17 +0000
+Subject: [PATCH] Fix logging of max-size log line
+
+Broken-by: d12746bc15d8
+---
+ doc/ChangeLog        |  5 +++++
+ src/log.c                |  7 ++++---
+ test/confs/0633              | 21 ++++++++++++++++++++
+ test/scripts/0000-Basic/0633 |  9 +++++++++
+ test/stderr/0633             | 38 ++++++++++++++++++++++++++++++++++++
+ test/stdout/0633             | 15 ++++++++++++++
+ 6 files changed, 92 insertions(+), 3 deletions(-)
+ create mode 100644 test/confs/0633
+ create mode 100644 test/scripts/0000-Basic/0633
+ create mode 100644 test/stderr/0633
+ create mode 100644 test/stdout/0633
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -28,10 +28,15 @@ JH/13 Bug 2929: Fix using $recipients af
+ JH/14 Bug 2933: Fix regex substring match variables for null matches. Since 4.96
+       a capture group which obtained no text (eg. "(abc)*" matching zero
+       occurrences) could cause a segfault if the corresponding $<n> was
+       expanded.
+ 
++JH/18 Fix a fencepost error in logging.  Previously (since 4.92) when a log line
++      was exactly sized compared to the log buffer, a crash occurred with the
++      misleading message "bad memory reference; pool not found".
++      Found and traced by Jasen Betts.
++
+ 
+ 
+ Exim version 4.96
+ -----------------
+ 
+--- a/src/log.c
++++ b/src/log.c
+@@ -803,11 +803,11 @@ Returns:    nothing
+ void
+ log_write(unsigned int selector, int flags, const char *format, ...)
+ {
+ int paniclogfd;
+ ssize_t written_len;
+-gstring gs = { .size = LOG_BUFFER_SIZE-1, .ptr = 0, .s = log_buffer };
++gstring gs = { .size = LOG_BUFFER_SIZE-2, .ptr = 0, .s = log_buffer };
+ gstring * g;
+ va_list ap;
+ 
+ /* If panic_recurseflag is set, we have failed to open the panic log. This is
+ the ultimate disaster. First try to write the message to a debug file and/or
+@@ -949,15 +949,14 @@ DEBUG(D_any|D_v)
+     g->ptr = i;
+     g = string_cat(g, US"**** log string overflowed log buffer ****");
+     }
+   va_end(ap);
+ 
+-  g->size = LOG_BUFFER_SIZE;
+   g = string_catn(g, US"\n", 1);
+   debug_printf("%s", string_from_gstring(g));
+ 
+-  gs.size = LOG_BUFFER_SIZE-1;	/* Having used the buffer for debug output, */
++  gs.size = LOG_BUFFER_SIZE-2;	/* Having used the buffer for debug output, */
+   gs.ptr = 0;			/* reset it for the real use. */
+   gs.s = log_buffer;
+   }
+ /* If no log file is specified, we are in a mess. */
+ 
+@@ -1035,10 +1034,12 @@ if (  flags & LOG_RECIPIENTS
+     if (LOG_BUFFER_SIZE - g->ptr < Ustrlen(s) + 3) break;
+     g = string_fmt_append_f(g, SVFMT_TAINT_NOCHK, " %s", s);
+     }
+   }
+ 
++/* actual size, now we are placing the newline (and space for NUL) */
++gs.size = LOG_BUFFER_SIZE;
+ g = string_catn(g, US"\n", 1);
+ string_from_gstring(g);
+ 
+ /* Handle loggable errors when running a utility, or when address testing.
+ Write to log_stderr unless debugging (when it will already have been written),

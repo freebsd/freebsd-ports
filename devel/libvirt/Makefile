@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-PORTVERSION=	8.5.0
+PORTVERSION=	9.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -75,8 +75,44 @@ ZFS_MESON_ENABLED=	storage_zfs
 VARDIR=		/var
 
 MESON_ARGS+=	\
+		-Dapparmor=disabled \
+		-Dapparmor_profiles=disabled \
+		-Dattr=disabled \
+		-Daudit=disabled \
+		-Dblkid=disabled \
+		-Dcapng=disabled \
+		-Ddriver_hyperv=disabled \
+		-Ddriver_interface=disabled \
+		-Ddriver_libxl=disabled \
+		-Ddriver_lxc=disabled \
+		-Ddriver_openvz=disabled \
 		-Ddriver_remote=enabled \
+		-Ddriver_vz=disabled \
+		-Dfirewalld=disabled \
+		-Dfirewalld_zone=disabled \
+		-Dfuse=disabled \
+		-Dglusterfs=disabled \
+		-Dlibiscsi=disabled \
+		-Dlibnl=disabled \
+		-Dlibpcap=disabled \
+		-Dnumactl=disabled \
+		-Dnumad=disabled \
+		-Dopenwsman=disabled \
+		-Dpciaccess=disabled \
 		-Dpolkit=disabled \
+		-Dsanlock=disabled \
+		-Dsecdriver_apparmor=disabled \
+		-Dsecdriver_selinux=disabled \
+		-Dselinux=disabled \
+		-Dstorage_disk=disabled \
+		-Dstorage_fs=disabled \
+		-Dstorage_gluster=disabled \
+		-Dstorage_iscsi=disabled \
+		-Dstorage_iscsi_direct=disabled \
+		-Dstorage_lvm=disabled \
+		-Dstorage_mpath=disabled \
+		-Dstorage_rbd=disabled \
+		-Dstorage_vstorage=disabled \
 		-Dudev=disabled \
 		-Dnetcf=disabled \
 		-Dsysctl_config=disabled \
@@ -95,7 +131,7 @@ PORTSCOUT=	limit:\d+\.\d+\.\d+$$
 LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 
 USES=		gnome charsetfix compiler:c++0x cpe gettext-runtime gmake libtool \
-	        meson pathfix perl5 python:3.6+,build pkgconfig shebangfix tar:xz
+	        meson pathfix perl5 python:build pkgconfig shebangfix tar:xz
 USE_GNOME=	glib20
 USE_RC_SUBR=	libvirtd virtlogd
 CPE_VENDOR=	redhat
@@ -103,10 +139,10 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.8005.0
+SHLIB_VER=	0.9005.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
-SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
+#SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
 BINARY_ALIAS=	python3=${PYTHON_CMD} \
 		rst2man.py=rst2man.py-${PYTHON_VER} \
 		rst2html5.py=rst2html5.py-${PYTHON_VER}

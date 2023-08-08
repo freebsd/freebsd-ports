@@ -3,6 +3,7 @@ include/KF5/KConfigWidgets/KCModule
 include/KF5/KConfigWidgets/KCodecAction
 include/KF5/KConfigWidgets/KColorScheme
 include/KF5/KConfigWidgets/KColorSchemeManager
+include/KF5/KConfigWidgets/KColorSchemeMenu
 include/KF5/KConfigWidgets/KColorSchemeModel
 include/KF5/KConfigWidgets/KCommandBar
 include/KF5/KConfigWidgets/KConfigDialog
@@ -22,6 +23,7 @@ include/KF5/KConfigWidgets/kcmodule.h
 include/KF5/KConfigWidgets/kcodecaction.h
 include/KF5/KConfigWidgets/kcolorscheme.h
 include/KF5/KConfigWidgets/kcolorschememanager.h
+include/KF5/KConfigWidgets/kcolorschememenu.h
 include/KF5/KConfigWidgets/kcolorschememodel.h
 include/KF5/KConfigWidgets/kcommandbar.h
 include/KF5/KConfigWidgets/kconfigdialog.h
@@ -61,6 +63,7 @@ lib/libKF5ConfigWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%DOCS%%man/pt_BR/man1/preparetips5.1.gz
 %%DOCS%%man/ru/man1/preparetips5.1.gz
 %%DOCS%%man/sv/man1/preparetips5.1.gz
+%%DOCS%%man/tr/man1/preparetips5.1.gz
 %%DOCS%%man/uk/man1/preparetips5.1.gz
 share/locale/af/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/af/kf5_entry.desktop
@@ -68,7 +71,6 @@ share/locale/ar/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/ar/kf5_entry.desktop
 share/locale/as/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/as/kf5_entry.desktop
-share/locale/ast/kf5_entry.desktop
 share/locale/az/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/az/kf5_entry.desktop
 share/locale/be/LC_MESSAGES/kconfigwidgets5.mo
@@ -150,6 +152,7 @@ share/locale/ia/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/ia/kf5_entry.desktop
 share/locale/id/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/id/kf5_entry.desktop
+share/locale/ie/kf5_entry.desktop
 share/locale/is/LC_MESSAGES/kconfigwidgets5.mo
 share/locale/is/kf5_entry.desktop
 share/locale/it/LC_MESSAGES/kconfigwidgets5.mo

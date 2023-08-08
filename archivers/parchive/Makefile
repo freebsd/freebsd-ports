@@ -6,7 +6,7 @@ DISTNAME=	par-v${PORTVERSION}
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Parity Archiver - makes multiple parity volumes from a set of files
-WWW=		http://parchive.sourceforge.net/
+WWW=		https://parchive.sourceforge.net/
 
 LICENSE=	GPLv2
 

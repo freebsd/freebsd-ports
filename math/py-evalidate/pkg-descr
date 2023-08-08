@@ -1,0 +1,2 @@
+Evalidate is simple python module for safe eval()'uating user-supplied
+(possibly malicious) logical expressions in python syntax.

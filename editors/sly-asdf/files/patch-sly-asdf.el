@@ -1,6 +1,6 @@
---- sly-asdf.el.orig	2021-03-08 03:32:35 UTC
+--- sly-asdf.el.orig	2023-05-26 11:13:10 UTC
 +++ sly-asdf.el
-@@ -354,10 +354,5 @@ in the directory of the current buffer."
+@@ -355,10 +355,5 @@ in the directory of the current buffer."
  
  
  

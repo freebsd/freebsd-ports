@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2022-06-17 14:20:10 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig	2023-04-05 11:05:06 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
-@@ -44,7 +44,7 @@ namespace {
+@@ -65,7 +65,7 @@ namespace {
  
  #if BUILDFLAG(IS_MAC)
  const int kDesiredIconSizesForShortcut[] = {16, 32, 128, 256, 512};
@@ -9,30 +9,12 @@
  // Linux supports icons of any size. FreeDesktop Icon Theme Specification states
  // that "Minimally you should install a 48x48 icon in the hicolor theme."
  const int kDesiredIconSizesForShortcut[] = {16, 32, 48, 128, 256, 512};
-@@ -147,7 +147,7 @@ ScopedShortcutOverrideForTesting::~ScopedShortcutOverr
-       }
-     }
-   }
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   directories = {&desktop};
- #endif
-   for (base::ScopedTempDir* dir : directories) {
-@@ -191,7 +191,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
-         scoped_override->chrome_apps_folder.CreateUniqueTempDirUnderPath(
-             base_path);
-     DCHECK(success);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     bool success =
-         scoped_override->desktop.CreateUniqueTempDirUnderPath(base_path);
-     DCHECK(success);
-@@ -211,7 +211,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
- #elif BUILDFLAG(IS_MAC)
-     bool success = scoped_override->chrome_apps_folder.CreateUniqueTempDir();
-     DCHECK(success);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     bool success = scoped_override->desktop.CreateUniqueTempDir();
-     DCHECK(success);
-     success = scoped_override->startup.CreateUniqueTempDir();
+@@ -221,7 +221,7 @@ std::unique_ptr<ShortcutInfo> BuildShortcutInfoWithout
+ 
+ // TODO(crbug.com/1416965): Implement tests on Linux for using shortcuts_menu
+ // actions.
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   const std::vector<WebAppShortcutsMenuItemInfo>& shortcuts_menu_item_infos =
+       CreateShortcutsMenuItemInfos(state.shortcut_menus());
+   DCHECK_LE(shortcuts_menu_item_infos.size(), kMaxApplicationDockMenuItems);

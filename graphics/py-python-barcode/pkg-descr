@@ -1,0 +1,4 @@
+python-barcode provides a simple way to create barcodes in Python.
+
+There are no external dependencies when generating SVG files. Pillow is required
+for generating images (e.g.: PNGs).

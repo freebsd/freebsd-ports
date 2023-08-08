@@ -1,5 +1,4 @@
 Classify ChIP/ATAC-Seq peaks based on features provided in a GFF
-
 Peaks are provided in a BED file sorted by chromosome and position. The GFF
 must be sorted by chromosome and position, with gene-level features separated
 by ### tags and each gene organized into subfeatures such as transcripts and

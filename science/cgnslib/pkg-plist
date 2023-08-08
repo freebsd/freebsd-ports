@@ -54,7 +54,7 @@ lib/cmake/cgns/cgns-targets.cmake
 lib/libcgns.a
 lib/libcgns.so
 lib/libcgns.so.4
-lib/libcgns.so.4.3
+lib/libcgns.so.4.4
 %%TOOLS%%share/cgnstools/aflr3.tcl
 %%TOOLS%%share/cgnstools/balloon.tcl
 %%TOOLS%%share/cgnstools/cgns-icon.xbm

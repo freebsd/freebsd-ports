@@ -1,9 +1,11 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.6
-PORTREVISION=	2
+DISTVERSION=	5.9.11
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
+PATCH_SITES=	https://github.com/strongswan/strongswan/commit/
+PATCHFILES=	a619356b5f21bfe3c13f1576eb1d16c015532ceb.patch:-p1
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
@@ -43,10 +45,10 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=			CTR CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
-				PKCS11 PKI PYTHON SCEP SMP SQLITE SWANCTL \
+				PKCS11 PKI PYTHON SMP SQLITE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
-OPTIONS_DEFAULT=		BUILTIN CURL IKEV1 KDF PKI SWANCTL VICI
+OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF PKI SWANCTL VICI
 OPTIONS_SINGLE=			PRINTF_HOOKS
 OPTIONS_SINGLE_PRINTF_HOOKS=	BUILTIN LIBC VSTR
 OPTIONS_SUB=			yes
@@ -71,7 +73,6 @@ MEDIATION_DESC=		Enable IKEv2 Mediation Extension
 PKCS11_DESC=		Enable PKCS11 token support
 PKI_DESC=		Enable PKI tools
 PYTHON_DESC=		Python VICI protocol plugin
-SCEP_DESC=		Enable Simple Certificate Enrollment Protocol
 SMP_DESC=		Enable XML-based management protocol (DEPRECATED)
 SWANCTL_DESC=		Install swanctl (requires VICI)
 TESTVECTOR_DESC=	Enable crypto test vectors
@@ -102,7 +103,7 @@ IKEV1_CONFIGURE_OFF=		--disable-ikev1
 IPSECKEY_CONFIGURE_ON=		--enable-ipseckey
 KDF_CONFIGURE_ON=		--enable-kdf
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 LDAP_CONFIGURE_ON=		--enable-ldap
 LIBC_CONFIGURE_ON=		--with-printf-hooks=glibc
 LOADTESTER_CONFIGURE_ON=	--enable-load-tester
@@ -114,7 +115,6 @@ PKI_CONFIGURE_OFF=		--disable-pki
 PYTHON_IMPLIES=			VICI
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}vici>0:security/py-vici@${PY_FLAVOR}
 PYTHON_USES=			python
-SCEP_CONFIGURE_OFF=		--disable-scepclient
 SMP_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=		--enable-smp
 SQLITE_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3

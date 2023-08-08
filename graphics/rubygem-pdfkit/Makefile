@@ -1,5 +1,5 @@
 PORTNAME=	pdfkit
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.7
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	wkhtmltopdf:converters/wkhtmltopdf
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

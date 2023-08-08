@@ -1,7 +1,7 @@
 PORTNAME=	mozc
 PORTVERSION=	2.23.2815.102.01
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	8
+PORTREVISION?=	13
 CATEGORIES=	japanese
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -24,7 +24,7 @@ GH_ACCOUNT=	hrs-allbsd
 GH_TUPLE=	hiroyuki-komatsu:japanese-usage-dictionary:e5b3425:udic
 
 USES=		compiler:c++11-lang gmake ninja:build pkgconfig \
-		python:3.5+,build shebangfix tar:bzip2
+		python:build shebangfix tar:bzip2
 SHEBANG_FILES=	src/build_mozc.py
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -134,10 +134,10 @@ GYP_OPTIONS+=	--noqt
 GYP_DEFINES+=	use_libibus=0 \
 		enable_gtk_renderer=0
 
-MASTER_SITES+=	LOCAL/kuriyama:zipcode
+MASTER_SITES+=	LOCAL/hrs:zipcode
 DISTFILES+= \
-	ken_all-20200430.zip:zipcode \
-	jigyosyo-20200430.zip:zipcode
+	ken_all-20221228.zip:zipcode \
+	jigyosyo-20221228.zip:zipcode
 
 PLIST_FILES+=	bin/mozc \
 		bin/mozc_server \

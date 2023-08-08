@@ -2,13 +2,13 @@ PORTNAME=	uwsgitop
 PORTVERSION=	0.10
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	uWSGI top-like app
 WWW=		https://pypi.org/project/uwsgitop/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils concurrent optsuffix
 
 PLIST_FILES=	bin/uwsgitop %%DOCSDIR%%/README.rst

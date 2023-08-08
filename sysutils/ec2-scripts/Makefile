@@ -1,5 +1,5 @@
 PORTNAME=	ec2-scripts
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	sysutils
 
 MAINTAINER=	cperciva@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://www.daemonology.net/freebsd-on-ec2/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/ebsnvme-id:sysutils/ebsnvme-id
+RUN_DEPENDS=	${LOCALBASE}/sbin/ebsnvme-id:sysutils/ebsnvme-id \
+		${LOCALBASE}/bin/aws-ec2-imdsv2-get:net/aws-ec2-imdsv2-get
 
 USE_GITHUB=	YES
 GH_ACCOUNT=	cperciva

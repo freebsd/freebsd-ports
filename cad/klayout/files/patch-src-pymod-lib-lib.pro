@@ -1,6 +1,6 @@
---- src/pymod/lib/lib.pro.orig	2022-04-24 08:12:38 UTC
+--- src/pymod/lib/lib.pro.orig	2022-12-22 22:17:08 UTC
 +++ src/pymod/lib/lib.pro
-@@ -9,5 +9,5 @@ SOURCES = \
+@@ -10,5 +10,5 @@ SOURCES = \
  
  HEADERS += \
  

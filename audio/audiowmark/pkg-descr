@@ -1,0 +1,15 @@
+A sound file is read by the software, and a 128-bit message is stored in
+a watermark in the output sound file. For human listeners, the files
+typically sound the same.
+
+However, the 128-bit message can be retrieved from the output sound
+file. Our tests show, that even if the file is converted to mp3 or ogg
+(with bitrate 128 kbit/s or higher), the watermark usually can be
+retrieved without problems. The process of retrieving the message does
+not need the original audio file (blind decoding).
+
+Internally, audiowmark is using the patchwork algorithm to hide the data
+in the spectrum of the audio file. The signal is split into 1024 sample
+frames. For each frame, some pseoudo-randomly selected amplitudes of the
+frequency bands of a 1024-value FFTs are increased or decreased
+slightly, which can be detected later.

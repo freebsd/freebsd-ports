@@ -7,5 +7,6 @@
     SUBDIR += hspell
     SUBDIR += hunspell
     SUBDIR += libreoffice
+    SUBDIR += py-pyluach
 
 .include <bsd.port.subdir.mk>

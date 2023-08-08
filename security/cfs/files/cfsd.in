@@ -18,6 +18,7 @@
 
 name=cfsd
 rcvar=cfsd_enable
+desc="Cryptographic File System daemon"
 
 load_rc_config $name
 

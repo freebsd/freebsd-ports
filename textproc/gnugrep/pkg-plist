@@ -1,9 +1,9 @@
-bin/egrep
-bin/fgrep
+%%COMPAT%%bin/egrep
+%%COMPAT%%bin/fgrep
 bin/gegrep
 bin/gfgrep
 bin/ggrep
-bin/grep
+%%COMPAT%%bin/grep
 man/man1/ggrep.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/be/LC_MESSAGES/grep.mo

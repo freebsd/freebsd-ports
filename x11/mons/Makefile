@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
-RUN_DEPENDS=	xrandr>0:x11/xrandr
+RUN_DEPENDS=	xrandr:x11/xrandr
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ventto
@@ -21,10 +21,6 @@ GH_SUBDIR=	libshlist:libshlist
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-MAKE_ARGS=	DESTDIR=${STAGEDIR} \
-		PREFIX=${PREFIX} \
-		MANDIR=${STAGEDIR}${PREFIX}/man/man1 \
-		LIB=${WRKSRC_libshlist}/liblist.sh
 
 OPTIONS_DEFINE=	DOCS
 

@@ -185,6 +185,7 @@
 %%ETCDIR%%/ignore.d.workstation/wpasupplicant
 %%ETCDIR%%/ignore.d.workstation/xdm
 %%ETCDIR%%/ignore.d.workstation/xlockmore
+%%ETCDIR%%/logcheck.logfiles
 %%ETCDIR%%/violations.d/kernel
 %%ETCDIR%%/violations.d/logcheck
 %%ETCDIR%%/violations.d/smartd
@@ -193,7 +194,7 @@
 %%ETCDIR%%/violations.ignore.d/logcheck-su
 %%ETCDIR%%/violations.ignore.d/logcheck-sudo
 @sample %%ETCDIR%%/logcheck.conf.sample
-@sample %%ETCDIR%%/logcheck.logfiles.sample
+@sample %%ETCDIR%%/logcheck.logfiles.d/syslog.logfiles.sample
 @group
 bin/logcheck-test
 man/man1/logcheck-test.1.gz

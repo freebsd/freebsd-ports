@@ -54,6 +54,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/brentsolve.cal
 %%FULL%%%%DATADIR%%/chi.cal
 %%FULL%%%%DATADIR%%/chrem.cal
+%%FULL%%%%DATADIR%%/comma.cal
 %%FULL%%%%DATADIR%%/constants.cal
 %%HELP%%%%DATADIR%%/custhelp/argv
 %%HELP%%%%DATADIR%%/custhelp/devnull
@@ -73,6 +74,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/ellip.cal
 %%FULL%%%%DATADIR%%/factorial.cal
 %%FULL%%%%DATADIR%%/factorial2.cal
+%%FULL%%%%DATADIR%%/fnv_tool.cal
 %%FULL%%%%DATADIR%%/gvec.cal
 %%FULL%%%%DATADIR%%/hello.cal
 %%HELP%%%%DATADIR%%/help/COPYING
@@ -477,6 +479,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/smallfactors.cal
 %%FULL%%%%DATADIR%%/solve.cal
 %%FULL%%%%DATADIR%%/specialfunctions.cal
+%%FULL%%%%DATADIR%%/splitbits.cal
 %%FULL%%%%DATADIR%%/statistics.cal
 %%FULL%%%%DATADIR%%/strings.cal
 %%FULL%%%%DATADIR%%/sumsq.cal

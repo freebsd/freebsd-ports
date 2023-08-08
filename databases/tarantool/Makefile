@@ -1,5 +1,5 @@
 PORTNAME=	tarantool
-PORTVERSION=	2.10.2
+PORTVERSION=	2.11.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
@@ -49,10 +49,6 @@ SUB_FILES=	pkg-message
 TT_DATADIR?=	/var/db/tarantool
 TT_LOGDIR?=	/var/log/tarantool
 TT_RUNDIR?=	/var/run/tarantool
-
-OPTIONS_DEFINE=	DEBUG
-
-DEBUG_CMAKE_BOOL=	ENABLE_BACKTRACE
 
 post-patch:
 	@${ECHO_CMD} ${PORTVERSION}-0 > ${WRKSRC}/VERSION

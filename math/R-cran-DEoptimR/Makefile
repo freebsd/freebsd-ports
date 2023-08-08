@@ -1,9 +1,9 @@
 PORTNAME=	DEoptimR
-DISTVERSION=	1.0-11
+DISTVERSION=	1.1-0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Differential Evolution Optimization in Pure R
 WWW=		https://cran.r-project.org/web/packages/DEoptimR/
 

@@ -154,7 +154,7 @@ PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
 # codes 400 to 499 and to bounce mail when any MX server that qmail tries
 # greets with a code 500 to 599.
 # Created by Matthias Andree
-PATCH_SITES+=	http://www-dt.e-technik.uni-dortmund.de/~ma/qmail/:rfc2821
+PATCH_SITES+=	LOCAL/mandree/qmail/:rfc2821
 PATCHFILES+=	patch-qmail-1.03-rfc2821.diff:rfc2821
 .endif
 

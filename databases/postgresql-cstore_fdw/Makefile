@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf-c.so:devel/protobuf-c
 
-USES=		gmake pgsql:9.3+
+USES=		gmake pgsql:11+
 
 SUB_FILES=	pkg-message
 

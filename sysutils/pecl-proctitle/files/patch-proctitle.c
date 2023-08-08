@@ -1,30 +1,29 @@
---- proctitle.c.orig	2012-05-11 08:49:30 UTC
+--- proctitle.c.orig	2022-12-11 12:38:30 UTC
 +++ proctitle.c
-@@ -23,6 +23,7 @@
+@@ -69,7 +69,11 @@ PHP_MINIT_FUNCTION(proctitle)
+ }
  #endif
  
- #include <php.h>
-+#include "ext/standard/info.h"
- #include <SAPI.h>
- #include <dlfcn.h>
- #include <string.h>
-@@ -138,9 +139,7 @@ PHP_MINFO_FUNCTION(proctitle)
- /* {{{ proctitle_module_entry
+-/* {{{ proto void setproctitle(string title)
++ZEND_BEGIN_ARG_INFO_EX(arginfo_title, 0, 0, 1)
++    ZEND_ARG_INFO(0, title)
++ZEND_END_ARG_INFO()
++
++/*
+  * Changes the current process' title in system's list of processes
   */
- zend_module_entry proctitle_module_entry = {
--#if ZEND_MODULE_API_NO >= 20010901
- 	STANDARD_MODULE_HEADER,
--#endif
- 	"proctitle",
- 	proctitle_functions,
- #ifndef PHP_SYSTEM_PROVIDES_SETPROCTITLE
-@@ -152,9 +151,7 @@ zend_module_entry proctitle_module_entry = {
- 	NULL,
- 	NULL,
- 	PHP_MINFO(proctitle),
--#if ZEND_MODULE_API_NO >= 20010901
- 	PHP_PROCTITLE_VERSION,
--#endif
- 	STANDARD_MODULE_PROPERTIES
+ PHP_FUNCTION(setproctitle)
+@@ -117,10 +121,10 @@ PHP_FUNCTION(setthreadtitle)
+  *
+  * Every user visible function must have an entry in proctitle_functions[].
+  */
+-static zend_function_entry proctitle_functions[] = {
+-	PHP_FE(setproctitle,	NULL)
++static const zend_function_entry proctitle_functions[] = {
++	PHP_FE(setproctitle, arginfo_title)
+ #if HAVE_PRCTL
+-	PHP_FE(setthreadtitle,	NULL)
++	PHP_FE(setthreadtitle, arginfo_title)
+ #endif
+ 	{NULL, NULL, NULL}	/* Must be the last line in proctitle_functions[] */
  };
- /* }}} */

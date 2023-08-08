@@ -1,5 +1,5 @@
 PORTNAME=	dyncall
-DISTVERSION=	1.3
+DISTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://www.dyncall.org/r${DISTVERSION}/ \
 		http://www.potion-studios.com/

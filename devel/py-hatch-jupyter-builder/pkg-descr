@@ -1,0 +1,2 @@
+hatch-jupyter-builder provides a build hook plugin for Hatch that adds a build
+step for use with Jupyter packages.

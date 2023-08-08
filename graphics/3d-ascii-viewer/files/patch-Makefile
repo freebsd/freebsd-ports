@@ -1,0 +1,15 @@
+--- Makefile.orig	2023-05-04 04:46:08 UTC
++++ Makefile
+@@ -1,9 +1,9 @@
+ TARGET_EXEC := 3d-ascii-viewer
+ TEMPDIR := tmp
+ 
+-CC      := gcc
+-CFLAGS  := -Wall
+-LDFLAGS := -lm -lncurses
++CC      ?= gcc
++CFLAGS  += -Wall
++LDFLAGS += -lm -lncurses
+ SRC_DIR := src
+ 
+ SRCS := $(shell find $(SRC_DIR) -name '*.c')

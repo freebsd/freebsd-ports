@@ -13,14 +13,13 @@ MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
 WWW=		https://ctan.org/tex-archive/macros/latex/contrib/ltablex/
 
-USES=		zip
+USES=		tex zip
 USE_TEX=	latex texhash
 NO_BUILD=	yes
 PLIST_SUB=	CLASSDIR=${CLASSDIR}
 
 OPTIONS_DEFINE=	DOCS
 
-TEXMFDIR=	share/texmf
 CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
 CLASS_FILES=	ltablex.sty
 PORTDOCS=	ltablex.pdf ltablex.tex

@@ -1,0 +1,16 @@
+--- FWF/src/converters/StrToPmap.c.orig	1998-11-09 00:22:54.000000000 +0100
++++ FWF/src/converters/StrToPmap.c	2023-03-12 08:38:29.924468000 +0100
+@@ -140,9 +140,11 @@
+       XrmValue value;
+ 
+       xrm_name[0] = XrmStringToName ("pixmapFilePath");
+-      xrm_name[1] = NULL;
++      xrm_name[1] = 0;  // Replaced NULL by 0.
++                        // XrmName/XrmQuark is of type int. M. Kraft 2023-03-12
+       xrm_class[0] = XrmStringToClass ("PixmapFilePath");
+-      xrm_class[1] = NULL;
++      xrm_class[1] = 0; // Replaced NULL by 0.
++                        // XrmName/XrmQuark is of type int. M. Kraft 2023-03-12
+       if (!XrmGetDatabase(dpy)) {
+ 	(void) XGetDefault (dpy, "", "");
+       }

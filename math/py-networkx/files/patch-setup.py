@@ -1,6 +1,6 @@
---- setup.py.orig	2021-02-15 16:30:03 UTC
+--- setup.py.orig	2023-02-20 13:03:51 UTC
 +++ setup.py
-@@ -64,36 +64,6 @@ packages = [
+@@ -92,36 +92,6 @@ packages = [
      "networkx.utils",
  ]
  
@@ -34,12 +34,12 @@
 -pp = os.path.join("examples", "javascript/force")
 -data.append((dd, glob(os.path.join(pp, "*"))))
 -
- # add the tests
+ # add the tests subpackage(s)
  package_data = {
      "networkx": ["tests/*.py"],
-@@ -169,7 +139,6 @@ if __name__ == "__main__":
-         project_urls=release.project_urls,
-         classifiers=release.classifiers,
+@@ -185,7 +155,6 @@ if __name__ == "__main__":
+         project_urls=project_urls,
+         classifiers=classifiers,
          packages=packages,
 -        data_files=data,
          package_data=package_data,

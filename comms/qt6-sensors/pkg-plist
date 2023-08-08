@@ -13,9 +13,6 @@
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qproximitysensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qrotationsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensor_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorbackend_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorgesture_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorgesturemanagerprivate_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtapsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtiltsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtsensors-config_p.h
@@ -67,10 +64,6 @@
 %%QT_INCDIR%%/QtSensors/QSensorBackendFactory
 %%QT_INCDIR%%/QtSensors/QSensorChangesInterface
 %%QT_INCDIR%%/QtSensors/QSensorFilter
-%%QT_INCDIR%%/QtSensors/QSensorGesture
-%%QT_INCDIR%%/QtSensors/QSensorGestureManager
-%%QT_INCDIR%%/QtSensors/QSensorGesturePluginInterface
-%%QT_INCDIR%%/QtSensors/QSensorGestureRecognizer
 %%QT_INCDIR%%/QtSensors/QSensorManager
 %%QT_INCDIR%%/QtSensors/QSensorPluginInterface
 %%QT_INCDIR%%/QtSensors/QSensorReading
@@ -99,10 +92,6 @@
 %%QT_INCDIR%%/QtSensors/qrotationsensor.h
 %%QT_INCDIR%%/QtSensors/qsensor.h
 %%QT_INCDIR%%/QtSensors/qsensorbackend.h
-%%QT_INCDIR%%/QtSensors/qsensorgesture.h
-%%QT_INCDIR%%/QtSensors/qsensorgesturemanager.h
-%%QT_INCDIR%%/QtSensors/qsensorgestureplugininterface.h
-%%QT_INCDIR%%/QtSensors/qsensorgesturerecognizer.h
 %%QT_INCDIR%%/QtSensors/qsensormanager.h
 %%QT_INCDIR%%/QtSensors/qsensorplugin.h
 %%QT_INCDIR%%/QtSensors/qsensorsglobal.h
@@ -126,7 +115,6 @@
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlproximitysensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlrotationsensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensor_p.h
-%%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorgesture_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorglobal_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorrange_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmltapsensor_p.h
@@ -151,15 +139,10 @@ lib/cmake/Qt6Sensors/Qt6SensorsConfig.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsConfigVersion.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsConfigVersionImpl.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsDependencies.cmake
+lib/cmake/Qt6Sensors/Qt6SensorsPlugins.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessTargets.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginAdditionalTargetInfo.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginConfig.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginConfigVersion.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginConfigVersionImpl.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/Qt6Sensors/Qt6dummySensorPluginTargets.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfig.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfigVersion.cmake
@@ -188,7 +171,6 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_sensors_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sensorsquick.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sensorsquick_private.pri
-%%QT_PLUGINDIR%%/sensors/libqtsensors_dummy.so
 %%QT_PLUGINDIR%%/sensors/libqtsensors_generic.so
 %%QT_QMLDIR%%/QtSensors/libsensorsquickplugin.so
 %%QT_QMLDIR%%/QtSensors/plugins.qmltypes

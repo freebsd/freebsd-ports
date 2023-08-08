@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/dns_util.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/dns/dns_util.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/net/dns/dns_util.cc
-@@ -28,6 +28,8 @@ const int kMaxLabelLength = 63;
+@@ -39,6 +39,8 @@ const uint16_t kFlagNamePointer = 0xc000;
  
  }  // namespace
  

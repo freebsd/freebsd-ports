@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn
-@@ -75,8 +75,6 @@ rtc_static_library("system_wrappers") {
+@@ -62,8 +62,6 @@ rtc_library("system_wrappers") {
      if (!build_with_chromium) {
-       deps += [ ":cpu_features_linux" ]
+       sources += [ "source/cpu_features_linux.cc" ]
      }
 -
 -    libs += [ "rt" ]
    }
  
-   if (is_ios || is_mac) {
+   if (is_win) {

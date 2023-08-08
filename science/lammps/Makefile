@@ -1,6 +1,5 @@
 PORTNAME=	lammps
-PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./}
-PORTREVISION=	1
+PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./:C/\.([1-9])$/.0\1/}
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +19,13 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
 
-USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
+USES=		blaslapack:openblas cmake:noninja,testing compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	stable_23Jun2022_update1
+GH_TAGNAME=	stable_2Aug2023
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
@@ -36,6 +35,7 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}} \
 		-DPython_EXECUTABLE=${PYTHON_CMD}
 CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
+CMAKE_TESTING_ON=	ENABLE_TESTING # 3 tests fail, see https://github.com/lammps/lammps/issues/3875
 
 # enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
 CMAKE_ON+=	PKG_ASPHERE PKG_ATC PKG_AWPMD PKG_BOCS PKG_BODY PKG_BROWNIAN PKG_CG-DNA PKG_CG-SDK PKG_CLASS2
@@ -52,18 +52,18 @@ CMAKE_ON+=	PKG_VORONOI PKG_YAFF
 
 OPTIONS_DEFINE=		EXCEPTIONS JPEG PNG GZIP FFMPEG
 OPTIONS_GROUP=		PARALLEL PACKAGES
-OPTIONS_DEFAULT=	EXCEPTIONS MPI OPENMP JPEG PNG GZIP FFMPEG H5MD KIM KOKKOS LATTE PLUMED VORONOI ${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
+OPTIONS_DEFAULT=	EXCEPTIONS MPI OPENMP JPEG PNG GZIP FFMPEG H5MD KIM KOKKOS LATTE NETCDF PLUMED VORONOI ${OPTIONS_DEFAULT_${CHOSEN_COMPILER_TYPE}}
 OPTIONS_SUB=		yes
 PARALLEL_DESC=		Enable parallelizations:
 PACKAGES_DESC=		Enable packages:
 OPTIONS_GROUP_PARALLEL=	MPI OPENMP ${OPTIONS_DEFINE_${CHOSEN_COMPILER_TYPE}}
-OPTIONS_GROUP_PACKAGES=	H5MD KIM KOKKOS LATTE PLUMED VORONOI VTK
+OPTIONS_GROUP_PACKAGES=	H5MD KIM KOKKOS LATTE NETCDF PLUMED VORONOI VTK
 
 EXCEPTIONS_DESC=	Enable the use of C++ exceptions
 EXCEPTIONS_CMAKE_BOOL=	LAMMPS_EXCEPTIONS
 
-MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO PKG_USER-LB
-MPI_LIB_DEPENDS=	libmpi.so:net/mpich
+MPI_CMAKE_BOOL=		BUILD_MPI PKG_MPIIO
+MPI_LIB_DEPENDS=	libmpi.so:net/openmpi
 MPI_USES=		compiler:c11
 
 FFMPEG_CMAKE_BOOL=	WITH_FFMPEG
@@ -79,8 +79,8 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 GZIP_DESC=		Enable GZIP support
 GZIP_CMAKE_BOOL=	WITH_GZIP
 
-H5MD_DESC=		USER-H5MD package based on libhdf5
-H5MD_CMAKE_BOOL=	PKG_USER-H5MD
+H5MD_DESC=		H5MD package based on the libhdf5 library
+H5MD_CMAKE_BOOL=	PKG_H5MD
 H5MD_LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 			libsz.so:science/libaec
 
@@ -92,30 +92,34 @@ KIM_LIB_DEPENDS=	libkim-api.so:science/kim-api \
 			libcurl.so:ftp/curl
 KIM_RUN_DEPENDS=	openkim-models>0:science/openkim-models
 
-KOKKOS_DESC=		kokkos package based on the libkokkos library
+KOKKOS_DESC=		Kokkos package based on the libkokkos library
 KOKKOS_CMAKE_BOOL=	PKG_KOKKOS EXTERNAL_KOKKOS
 KOKKOS_LIB_DEPENDS=	libkokkoscore.so:devel/kokkos
 
-LATTE_DESC=		latte package based on the liblatte library
+LATTE_DESC=		Latte package based on the liblatte library
 LATTE_CMAKE_BOOL=	PKG_LATTE
 LATTE_LIB_DEPENDS=	liblatte.so:science/latte
 
-PLUMED_DESC=		plumed package based on the plumed library
+NETCDF_DESC=		NetCDF package based on the NetCDF library
+NETCDF_CMAKE_BOOL=	PKG_NETCDF
+NETCDF_LIB_DEPENDS=	libnetcdf.so:science/netcdf
+
+PLUMED_DESC=		Plumed package based on the plumed library
 PLUMED_USES=		pkgconfig
-PLUMED_CMAKE_BOOL=	PKG_USER-PLUMED
+PLUMED_CMAKE_BOOL=	PKG_PLUMED
 PLUMED_CMAKE_ON=	-DPLUMED_MODE=shared
 PLUMED_LIB_DEPENDS=	libplumed.so:science/plumed
 
-VORONOI_DESC=		voro++, Voronoi tessellation package
+VORONOI_DESC=		Voro++, Voronoi tessellation package
 VORONOI_CMAKE_BOOL=	PKG_VORONOI
 VORONOI_LIB_DEPENDS=	libvoro++.so:science/voro++
 
-VTK_DESC=		USER-VTK package based on the external vtk package
-VTK_CMAKE_BOOL=		PKG_USER-VTK
-VTK_CMAKE_ON=		-DVTK_DIR:PATH=${LOCALBASE}/lib/cmake/vtk-9.1
-VTK_USES=		qt:5 xorg
-VTK_USE=		qt=core,gui,sql,widgets xorg=ice,sm,x11,xext,xt
-VTK_LIB_DEPENDS=	libvtkImagingMath-8.2.so:math/vtk8 \
+VTK_DESC=		VTK package based on the external VTK-${VTK_VER:R} library
+VTK_CMAKE_BOOL=		PKG_VTK
+VTK_CMAKE_ON=		-DVTK_DIR:PATH=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
+VTK_USES=		gl qt:5 xorg
+VTK_USE=		GL=opengl qt=core,declarative,gui,network,opengl,sql,widgets xorg=ice,sm,x11,xext,xt
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
 			libexpat.so:textproc/expat2 \
 			libfreetype.so:print/freetype2 \
 			libtiff.so:graphics/tiff
@@ -149,4 +153,5 @@ post-patch-FFMPEG-off:
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/python*
 
+.include <../../math/vtk9/Makefile.version>
 .include <bsd.port.mk>

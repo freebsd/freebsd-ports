@@ -1,5 +1,5 @@
 PORTNAME=	mailutils
-PORTVERSION=	3.15
+PORTVERSION=	3.16
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
@@ -51,8 +51,7 @@ GSSAPI_RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 GSSAPI_USES=		ssl
 GSSAPI_CONFIGURE_WITH=	gssapi
 
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 libgmp.so:math/gmp
-GUILE_USES=		makeinfo pkgconfig
+GUILE_USES=		guile:2.2,alias makeinfo pkgconfig
 GUILE_CONFIGURE_WITH=	guile
 
 MH_CONFIGURE_ENV=	ac_cv_prog_EMACS=no
@@ -65,7 +64,7 @@ NLS_CONFIGURE_ENABLE=	nls
 
 PAM_CONFIGURE_ENABLE=	pam
 
-PYTHON_USES=		python:3.0+
+PYTHON_USES=		python
 PYTHON_CONFIGURE_ENABLE=python
 PYTHON_CONFIGURE_ENV=	PYTHON_CONFIG=${PYTHON_CMD}-config
 
@@ -80,7 +79,7 @@ GDBM_CONFIGURE_WITH=	gdbm
 KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 MYSQL_USES=		mysql
@@ -99,8 +98,6 @@ CONFIGURE_ARGS+=	--enable-debug
 post-patch:
 	@${REINPLACE_CMD} -e '/MU_AUTHLIBS=/s,-lldap,-llber &,' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/need_charset_alias=/s|true|false|' \
-		${WRKSRC}/lib/gnu/Makefile.in
 	@${REINPLACE_CMD} -e '/chown/,+1s|ch|#&|' \
 		${WRKSRC}/dotlock/Makefile.in ${WRKSRC}/mda/mda/Makefile.in
 	@${REINPLACE_CMD} -e 's,-E,& -P,' ${WRKSRC}/libmu_scm/Makefile.in

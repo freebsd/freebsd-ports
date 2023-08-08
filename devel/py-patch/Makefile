@@ -1,7 +1,7 @@
 PORTNAME=	patch
 DISTVERSION=	1.16
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/techtonik/python-patch
 
 LICENSE=	MIT
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

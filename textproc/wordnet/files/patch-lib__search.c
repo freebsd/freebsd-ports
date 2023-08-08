@@ -1,5 +1,5 @@
 --- lib/search.c	2006-11-29 16:02:21.000000000 -0500
-+++ lib/search.c	2014-04-01 14:50:06.000000000 -0400
++++ lib/search.c	2023-02-10 00:12:19.152538000 -0500
 @@ -17,5 +17,5 @@
  #include "wn.h"
  
@@ -625,32 +625,38 @@
 +static void partsall(SynsetPtr synptr, int ptyp)
  {
      int ptrbase;
-     int i, hasptr = 0;
+-    int i, hasptr = 0;
++    int i;
      
 -    ptrbase = (ptrtyp == HMERONYM) ? HASMEMBERPTR : ISMEMBERPTR;
 +    ptrbase = (ptyp == HMERONYM) ? HASMEMBERPTR : ISMEMBERPTR;
      
      /* First, print out the MEMBER, STUFF, PART info for this synset */
-@@ -912,8 +941,8 @@
+@@ -902,5 +931,4 @@
+ 	if (HasPtr(synptr, ptrbase + i)) {
+ 	    traceptrs(synptr, ptrbase + i, NOUN, 1);
+-	    hasptr++;
+ 	}
+ 	interface_doevents();
+@@ -912,8 +940,7 @@
         HMERONYM search only */
  	
 -/*    if (hasptr && ptrtyp == HMERONYM) { */
 -    if (ptrtyp == HMERONYM) {
-+/*    if (hasptr && ptyp == HMERONYM) { */
 +    if (ptyp == HMERONYM) {
  	lastholomero = strlen(searchbuffer);
 -	traceinherit(synptr, ptrbase, NOUN, 1);
 +	traceinherit(synptr, ptrbase, 1);
      }
  }
-@@ -971,5 +1000,5 @@
+@@ -971,5 +998,5 @@
  		    }
  		} else
 -		    printantsynset(antptr, "\n", anttype, DEFON);
 +		    printantsynset(antptr, "\n", DEFON);
  
  		free_synset(antptr);
-@@ -984,11 +1013,13 @@
+@@ -984,11 +1011,13 @@
  /* Fetch the given example sentence from the example file and print it out */
  
 -void getexample(char *offset, char *wd)
@@ -667,7 +673,7 @@
 +	if (line) {
  	    while(*line != ' ') 
  		line++;
-@@ -1005,5 +1036,6 @@
+@@ -1005,5 +1034,6 @@
  int findexample(SynsetPtr synptr)
  {
 -    char tbuf[256], *temp, *offset;
@@ -675,7 +681,7 @@
 +    const char *temp, *offset;
      int wdnum;
      int found = 0;
-@@ -1103,17 +1135,17 @@
+@@ -1103,17 +1133,17 @@
  }
  
 -static void freq_word(IndexPtr index)
@@ -698,7 +704,7 @@
 +	cnt = idx->sense_cnt;
  	if (cnt == 0) familiar = 0;
  	if (cnt == 1) familiar = 1;
-@@ -1127,10 +1159,11 @@
+@@ -1127,10 +1157,11 @@
  	sprintf(tmpbuf,
  		"\n%s used as %s is %s (polysemy count = %d)\n",
 -		index->wd, a_an[getpos(index->pos)], freqcats[familiar], cnt);
@@ -712,14 +718,14 @@
 +wngrep(const char *word_passed, int pos) {
     FILE *inputfile;
     char word[256];
-@@ -1243,5 +1276,5 @@
+@@ -1243,5 +1274,5 @@
  		   for (k = 0; k < idx->off_cnt; k++) {
  		       if (synset->ptroff[j] == idx->offset[k]) {
 -			   add_relatives(VERB, idx, i, k);
 +			   add_relatives(i, k);
  			   break;
  		       }
-@@ -1253,8 +1286,9 @@
+@@ -1253,8 +1284,9 @@
  }
  
 -static void add_relatives(int pos, IndexPtr idx, int rel1, int rel2)
@@ -731,7 +737,7 @@
 +    struct relgrp *rel, *last = NULL, *r;
  
      /* If either of the new relatives are already in a relative group,
-@@ -1356,5 +1390,6 @@
+@@ -1356,5 +1388,6 @@
  */
  
 -char *findtheinfo(char *searchstr, int dbase, int ptrtyp, int whichsense)
@@ -739,21 +745,21 @@
 +findtheinfo(const char *searchstr, int dbase, int ptyp, int whichsense)
  {
      SynsetPtr cursyn;
-@@ -1364,5 +1399,5 @@
+@@ -1364,5 +1397,5 @@
      char *bufstart;
      unsigned long offsets[MAXSENSE];
 -    int skipit;
 +    int skipit = 0;
  
      /* Initializations -
-@@ -1379,5 +1414,5 @@
+@@ -1379,5 +1412,5 @@
  	offsets[i] = 0;
  
 -    switch (ptrtyp) {
 +    switch (ptyp) {
      case OVERVIEW:
  	WNOverview(searchstr, dbase);
-@@ -1408,6 +1443,6 @@
+@@ -1408,6 +1441,6 @@
  
  	/* If negative search type, set flag for recursive search */
 -	if (ptrtyp < 0) {
@@ -762,35 +768,35 @@
 +	    ptyp = -ptyp;
  	    depth = 1;
  	}
-@@ -1445,5 +1480,5 @@
+@@ -1445,5 +1478,5 @@
  		    	offsets[offsetcnt++] = idx->offset[sense];
  		    	cursyn = read_synset(dbase, idx->offset[sense], idx->wd);
 -		    	switch(ptrtyp) {
 +		    	switch(ptyp) {
  		    	case ANTPTR:
  			    if(dbase == ADJ)
-@@ -1454,5 +1489,5 @@
+@@ -1454,5 +1487,5 @@
  		   	 
  		    	case COORDS:
 -			    tracecoords(cursyn, HYPOPTR, dbase, depth);
 +			    tracecoords(cursyn, HYPOPTR, depth);
  			    break;
  		   	 
-@@ -1487,5 +1522,5 @@
+@@ -1487,5 +1520,5 @@
  #ifdef FOOP
  			case PPLPTR:
 -			    traceptrs(cursyn, ptrtyp, dbase, depth);
 +			    traceptrs(cursyn, ptyp, dbase, depth);
  			    traceptrs(cursyn, PPLPTR, dbase, depth);
  			    break;
-@@ -1498,5 +1533,5 @@
+@@ -1498,5 +1531,5 @@
  			    prflag = 1;
  		    
 -			    traceptrs(cursyn, ptrtyp, dbase, depth);
 +			    traceptrs(cursyn, ptyp, dbase, depth);
  		    
  			    if (dbase == ADJ) {
-@@ -1522,14 +1557,14 @@
+@@ -1522,14 +1555,14 @@
  
  			case DERIVATION:
 -			    tracenomins(cursyn, dbase);
@@ -808,7 +814,7 @@
 +			    traceptrs(cursyn, ptyp, dbase, depth);
  			    break;
  
-@@ -1600,5 +1635,6 @@
+@@ -1600,5 +1633,6 @@
  }
  
 -SynsetPtr findtheinfo_ds(char *searchstr, int dbase, int ptrtyp, int whichsense)
@@ -816,7 +822,7 @@
 +findtheinfo_ds(char *searchstr, int dbase, int ptyp, int whichsense)
  {
      IndexPtr idx;
-@@ -1616,6 +1652,6 @@
+@@ -1616,6 +1650,6 @@
  	newsense = 1;
  	
 -	if(ptrtyp < 0) {
@@ -825,7 +831,7 @@
 +	    ptyp = -ptyp;
  	    depth = 1;
  	}
-@@ -1642,8 +1678,6 @@
+@@ -1642,8 +1676,6 @@
  		newsense = 0;
  	    
 -		cursyn->searchtype = ptrtyp;
@@ -836,14 +842,14 @@
 +		cursyn->ptrlist = traceptrs_ds(cursyn, ptyp, depth);
  	    
  		lastsyn = cursyn;
-@@ -1656,5 +1690,5 @@
+@@ -1656,5 +1688,5 @@
  	wnresults.numforms++;
  
 -	if (ptrtyp == COORDS) {	/* clean up by removing hypernym */
 +	if (ptyp == COORDS) {	/* clean up by removing hypernym */
  	    lastsyn = synlist->ptrlist;
  	    synlist->ptrlist = lastsyn->ptrlist;
-@@ -1669,5 +1703,6 @@
+@@ -1669,5 +1701,6 @@
    in linked list of data structures. */
  
 -SynsetPtr traceptrs_ds(SynsetPtr synptr, int ptrtyp, int dbase, int depth)
@@ -851,7 +857,7 @@
 +traceptrs_ds(SynsetPtr synptr, int ptyp, int depth)
  {
      int i;
-@@ -1693,9 +1728,9 @@
+@@ -1693,9 +1726,9 @@
      }
  
 -    if (ptrtyp == COORDS) {
@@ -863,14 +869,14 @@
 +	tstptrtyp = ptyp;
  	docoords = 0;
      }
-@@ -1707,5 +1742,5 @@
+@@ -1707,5 +1740,5 @@
  	    
  	    cursyn=read_synset(synptr->ppos[i], synptr->ptroff[i], "");
 -	    cursyn->searchtype = ptrtyp;
 +	    cursyn->searchtype = ptyp;
  
  	    if (lastsyn)
-@@ -1717,9 +1752,7 @@
+@@ -1717,9 +1750,7 @@
  	    if(depth) {
  		depth = depthcheck(depth, cursyn);
 -		cursyn->ptrlist = traceptrs_ds(cursyn, ptrtyp,
@@ -882,7 +888,7 @@
 +		cursyn->ptrlist = traceptrs_ds(cursyn, HYPOPTR, 0);
  	    }
  	}
-@@ -1728,10 +1761,12 @@
+@@ -1728,10 +1759,12 @@
  }
  
 -static void WNOverview(char *searchstr, int pos)
@@ -898,7 +904,7 @@
 +    int sense_, i, offsetcnt;
      int svdflag, skipit;
      unsigned long offsets[MAXSENSE];
-@@ -1755,19 +1790,19 @@
+@@ -1755,19 +1788,19 @@
  	   synset with synset offset and/or lexical file information.*/
  
 -	for (sense = 0; sense < idx->off_cnt; sense++) {
@@ -925,7 +931,7 @@
 +		  sprintf(tmpbuf, "%d. ", sense_ + 1);
  		}
  
-@@ -1814,8 +1849,9 @@
+@@ -1814,8 +1847,9 @@
  /* Do requested search on synset passed, returning output in buffer. */
  
 -char *do_trace(SynsetPtr synptr, int ptrtyp, int dbase, int depth)
@@ -937,7 +943,7 @@
 +    traceptrs(synptr, ptyp, dbase, depth);
      return(searchbuffer);
  }
-@@ -1824,7 +1860,8 @@
+@@ -1824,7 +1858,8 @@
     passed and return bit mask. */
    
 -unsigned int is_defined(char *searchstr, int dbase)
@@ -948,7 +954,7 @@
 +    IndexPtr idx;
      int i;
      unsigned long retval = 0;
-@@ -1834,8 +1871,8 @@
+@@ -1834,8 +1869,8 @@
      wnresults.searchds = NULL;
  
 -    while ((index = getindex(searchstr, dbase)) != NULL) {
@@ -959,7 +965,7 @@
 +	wnresults.SenseCount[wnresults.numforms] = idx->off_cnt;
  	
  	/* set bits that must be true for all words */
-@@ -1846,36 +1883,36 @@
+@@ -1846,36 +1881,36 @@
  	/* go through list of pointer characters and set appropriate bits */
  
 -	for(i = 0; i < index->ptruse_cnt; i++) {
@@ -1010,7 +1016,7 @@
 +		    idx->ptruse[i] <= HASPARTPTR)
  		retval |= bit(MERONYM);
  	 
-@@ -1886,7 +1923,7 @@
+@@ -1886,7 +1921,7 @@
  	    /* check for inherited holonyms and meronyms */
  
 -	    if (HasHoloMero(index, HMERONYM))
@@ -1020,14 +1026,14 @@
 +	    if (HasHoloMero(idx, HHOLONYM))
  		retval |= bit(HHOLONYM);
  
-@@ -1906,5 +1943,5 @@
+@@ -1906,5 +1941,5 @@
  	}
  
 -	free_index(index);
 +	free_index(idx);
  	wnresults.numforms++;
      }
-@@ -1915,5 +1952,6 @@
+@@ -1915,5 +1950,6 @@
     meronyms or holonyms. */
  
 -static int HasHoloMero(IndexPtr index, int ptrtyp)
@@ -1035,7 +1041,7 @@
 +HasHoloMero(IndexPtr idx, int ptyp)
  {
      int i, j;
-@@ -1922,8 +1960,8 @@
+@@ -1922,8 +1958,8 @@
      int ptrbase;
  
 -    ptrbase = (ptrtyp == HMERONYM) ? HASMEMBERPTR : ISMEMBERPTR;
@@ -1047,7 +1053,7 @@
 +	synset = read_synset(NOUN, idx->offset[i], "");
  	for (j = 0; j < synset->ptrcount; j++) {
  	    if (synset->ptrtyp[j] == HYPERPTR) {
-@@ -1941,10 +1979,10 @@
+@@ -1941,10 +1977,10 @@
  }
  
 -static int HasPtr(SynsetPtr synptr, int ptrtyp)
@@ -1060,7 +1066,7 @@
 +        if(synptr->ptrtyp[i] == ptyp) {
  	    return(1);
  	}
-@@ -1956,5 +1994,6 @@
+@@ -1956,5 +1992,6 @@
     word is not in WordNet. */
  
 -unsigned int in_wn(char *word, int pos)
@@ -1068,7 +1074,7 @@
 +in_wn(const char *word, int pos)
  {
      int i;
-@@ -1984,5 +2023,6 @@
+@@ -1984,5 +2021,6 @@
  /* Strip off () enclosed comments from a word */
  
 -static char *deadjify(char *word)
@@ -1076,7 +1082,7 @@
 +deadjify(char *word)
  {
      char *y;
-@@ -2014,5 +2054,6 @@
+@@ -2014,5 +2052,6 @@
      strtolower(wdbuf);
  		       
 -    if (idx = index_lookup(wdbuf, getpos(synptr->pos))) {
@@ -1084,7 +1090,7 @@
 +    if (idx) {
  	for (i = 0; i < idx->off_cnt; i++)
  	    if (idx->offset[i] == synptr->hereiam) {
-@@ -2025,5 +2066,7 @@
+@@ -2025,5 +2064,7 @@
  }
  
 -static void printsynset(char *head, SynsetPtr synptr, char *tail, int definition, int wdnum, int antflag, int markerflag)
@@ -1093,14 +1099,14 @@
 +    int definition, int wdnum, int antflag, int markerflag)
  {
      int i, wdcnt;
-@@ -2038,5 +2081,5 @@
+@@ -2038,5 +2079,5 @@
  
      if (offsetflag)		/* print synset offset */
 -	sprintf(tbuf + strlen(tbuf),"{%8.8d} ", synptr->hereiam);
 +	sprintf(tbuf + strlen(tbuf),"{%8.8ld} ", synptr->hereiam);
      if (fileinfoflag) {		/* print lexicographer file information */
  	sprintf(tbuf + strlen(tbuf), "<%s> ", lexfiles[synptr->fnum]);
-@@ -2063,9 +2106,10 @@
+@@ -2063,9 +2104,10 @@
  }
  
 -static void printantsynset(SynsetPtr synptr, char *tail, int anttype, int definition)
@@ -1113,14 +1119,14 @@
 +    const char *str;
      int first = 1;
  
-@@ -2073,5 +2117,5 @@
+@@ -2073,5 +2115,5 @@
  
      if (offsetflag)
 -	sprintf(tbuf,"{%8.8d} ", synptr->hereiam);
 +	sprintf(tbuf,"{%8.8ld} ", synptr->hereiam);
      if (fileinfoflag) {
  	sprintf(tbuf + strlen(tbuf),"<%s> ", lexfiles[synptr->fnum]);
-@@ -2113,6 +2157,6 @@
+@@ -2113,6 +2155,6 @@
  static void catword(char *buf, SynsetPtr synptr, int wdnum, int adjmarker, int antflag)
  {
 -    static char vs[] = " (vs. %s)";
@@ -1129,7 +1135,7 @@
 +    static const char *markers[] = {
  	"",			/* UNKNOWN_MARKER */
  	"(predicate)",		/* PREDICATIVE */
-@@ -2146,5 +2190,7 @@
+@@ -2146,5 +2188,7 @@
  }
  
 -static char *printant(int dbase, SynsetPtr synptr, int wdnum, char *template, char *tail)
@@ -1138,7 +1144,7 @@
 +    const char *template, const char *tail)
  {
      int i, j, wdoff;
-@@ -2200,5 +2246,6 @@
+@@ -2200,5 +2244,6 @@
  }
  
 -static void printbuffer(char *string)
@@ -1146,7 +1152,7 @@
 +printbuffer(const char *string)
  {
      if (overflag)
-@@ -2210,11 +2257,13 @@
+@@ -2210,11 +2255,13 @@
  }
  
 -static void printsns(SynsetPtr synptr, int sense)
@@ -1163,7 +1169,7 @@
 +printsense(SynsetPtr synptr, int sense_)
  {
      char tbuf[256];
-@@ -2224,7 +2273,7 @@
+@@ -2224,7 +2271,7 @@
      if (fnflag)
  	sprintf(tbuf,"\nSense %d in file \"%s\"\n",
 -		sense, lexfiles[synptr->fnum]);

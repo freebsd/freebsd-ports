@@ -1,3 +1,3 @@
-TIMESTAMP = 1646058360
-SHA256 (rubygem/aws-sdk-directconnect-1.54.0.gem) = 4fc1513359b96f82c0af4ed0ef0884362744a79b20c41f3e10fb95a3b244b429
-SIZE (rubygem/aws-sdk-directconnect-1.54.0.gem) = 62464
+TIMESTAMP = 1689399115
+SHA256 (rubygem/aws-sdk-directconnect-1.65.0.gem) = cb3640aca843bebd53765f640bac44e70312039c9cf7fed4bfe6c9ee48aa6aeb
+SIZE (rubygem/aws-sdk-directconnect-1.65.0.gem) = 64512

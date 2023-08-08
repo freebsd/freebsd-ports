@@ -1,6 +1,6 @@
 PORTNAME=	libscrc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8
+DISTVERSION=	1.8.1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +18,9 @@ GH_ACCOUNT=	hex-in
 USE_PYTHON=	autoplist distutils
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
 	@cd ${TEST_WRKSRC} && for test in \

@@ -1,7 +1,7 @@
 PORTNAME=	python-nexus
 PORTVERSION=	1.63
 CATEGORIES=	biology python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		http://simon.net.nz/articles/python-nexus
 LICENSE=	BSD3CLAUSE
 #LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	nexus/bin/*.py
 USE_PYTHON=	autoplist distutils
 

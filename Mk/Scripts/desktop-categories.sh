@@ -23,6 +23,7 @@ for native_category in ${dp_CATEGORIES}; do
 		audio)		c="AudioVideo Audio"			;;
 		benchmarks)	c="System"				;;
 		biology)	c="Education Science Biology"		;;
+		budgie)         c="Budgie GTK"                          ;;
 		cad)		c="Graphics Engineering"		;;
 		comms)		c="Utility"				;;
 		converters)	c="Utility"				;;

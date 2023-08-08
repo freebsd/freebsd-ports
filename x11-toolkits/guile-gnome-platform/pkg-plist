@@ -164,4 +164,4 @@ libdata/pkgconfig/guile-gnome-glib-2.pc
 %%PANGO%%%%DATADIR%%/gnome/overrides/pangocairo.defs
 %%PANGO%%%%DATADIR%%/gnome/pango.scm
 %%PANGO%%%%DATADIR%%/gnome/pangocairo.scm
-share/guile/site/gnome-2.scm
+%%GUILE_GLOBAL_SITE%%/gnome-2.scm

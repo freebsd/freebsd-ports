@@ -26,7 +26,7 @@
 # 		* meson (experimental)
 #
 #
-# By defining USE_GITLAB and GL_COMMIT, it is possible to pull code straight
+# By defining USE_GITLAB and GL_TAGNAME, it is possible to pull code straight
 # from the freedesktop.org gitlab, instead of official release tarballs.
 #
 #.MAINTAINER:	x11@FreeBSD.org
@@ -75,7 +75,6 @@ EXTRACT_SUFX?=		.tar.bz2
 DIST_SUBDIR=	xorg/${_XORG_CAT}
 
 .  if ${_XORG_BUILDSYS} == meson
-IGNORE=		meson build not supported yet
 .include "${USESDIR}/meson.mk"
 .  elif ${_XORG_BUILDSYS} == autotools
 GNU_CONFIGURE=		yes

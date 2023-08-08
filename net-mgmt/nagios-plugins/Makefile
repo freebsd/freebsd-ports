@@ -1,12 +1,11 @@
 PORTNAME=	nagios-plugins
-DISTVERSION=	2.4.0
-PORTREVISION=	1
+DISTVERSION=	2.4.3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		LOCAL/mat/${PORTNAME}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugins for Nagios
 WWW=		https://nagios-plugins.org/
 
@@ -86,7 +85,7 @@ FPING_CONFIGURE_OFF=	ac_cv_path_PATH_TO_FPING6= \
 
 IPV6_CONFIGURE_WITH=	ipv6
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 MYSQL_USES=		mysql

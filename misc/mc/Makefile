@@ -46,7 +46,7 @@ ASPELL_CONFIGURE_ENABLE=aspell
 
 EDITOR_CONFIGURE_WITH=	internal-edit
 
-EXTATTR_LIB_DEPENDS=	libe2p.so:sysutils/e2fsprogs
+EXTATTR_LIB_DEPENDS=	libe2p.so:sysutils/e2fsprogs-core
 
 ICONV_USES=		iconv
 ICONV_CONFIGURE_ENABLE=	charset

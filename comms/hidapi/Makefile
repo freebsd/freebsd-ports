@@ -1,9 +1,9 @@
 PORTNAME=	hidapi
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.12.0
+DISTVERSION=	0.14.0
 CATEGORIES=	comms
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	sstallion@gmail.com
 COMMENT=	Library to access USB HID-class devices
 WWW=		https://github.com/libusb/hidapi
 

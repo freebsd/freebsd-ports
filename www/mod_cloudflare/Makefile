@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	cloudflare
 GH_TAGNAME=	98ab38a
 
-USES=		apache:2.4+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	cloudflare

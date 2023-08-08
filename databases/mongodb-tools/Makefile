@@ -1,17 +1,13 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.5.4
-PORTREVISION=	1
+DISTVERSION=	100.7.4
 CATEGORIES=	databases
 
-MAINTAINER=	ronald-lists@klop.ws
+MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Tools for MongoDB 4.4.x and up
 WWW=		https://docs.mongodb.com/database-tools/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
-
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
-ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
 
 USES=		compiler:c++14-lang go localbase
 USE_GITHUB=	yes
@@ -21,7 +17,7 @@ GH_PROJECT=	mongo-tools
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 
-CONFLICTS_INSTALL=	mongodb36-tools mongodb4[02]-tools
+CONFLICTS_INSTALL=	mongodb42-tools
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
@@ -52,7 +48,6 @@ MONGOSTAT_VARS=		go_target+=./mongostat/main:mongostat
 MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
-SSL_USES=		ssl
 SSL_USE=		my_tags=ssl
 
 post-install-DOCS-on:

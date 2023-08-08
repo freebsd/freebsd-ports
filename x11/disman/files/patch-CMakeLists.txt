@@ -5,17 +5,17 @@ CMake Error at /usr/local/lib/cmake/Qt5/Qt5Config.cmake:28 (find_package):
 Call Stack (most recent call first):
   CMakeLists.txt:27 (find_package)
 
---- CMakeLists.txt.orig	2021-10-14 15:23:56 UTC
+--- CMakeLists.txt.orig	2022-06-14 20:05:24 UTC
 +++ CMakeLists.txt
-@@ -28,7 +28,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
-   Core
-   DBus
-   Gui
--  Test
+@@ -34,7 +34,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED
+     Core
+     DBus
+     Gui
+-    Test
+   OPTIONAL_COMPONENTS
+     X11Extras
  )
- 
- # Wayland backend plugin KWayland
-@@ -66,6 +65,7 @@ add_subdirectory(service)
+@@ -72,6 +71,7 @@ if(BUILD_TESTING)
  add_subdirectory(ctl)
  add_subdirectory(backends)
  if(BUILD_TESTING)

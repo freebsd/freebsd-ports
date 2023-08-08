@@ -18,7 +18,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/lwjgl/lwjgl.jar:games/lwjgl \
 
 USES=		openal
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 

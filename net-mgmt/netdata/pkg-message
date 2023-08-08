@@ -6,6 +6,8 @@ Quick start for local-only use:
 1. sysrc netdata_enable="YES"
 2. service netdata start
 3. Go to http://localhost:19999/
+4. <Optional> Connect to Netdata Cloud using the netdata-claim.sh script:
+   https://learn.netdata.cloud/docs/agent/claim#claiming-script
 EOM
 }
 ]

@@ -1,6 +1,6 @@
 PORTNAME=	nbsmtp
 PORTVERSION=	1.00
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	LOCAL/ehaupt
 
@@ -21,6 +21,8 @@ PLIST_FILES=	bin/nbsmtp man/man5/nbsmtprc.5.gz man/man8/nbsmtp.8.gz
 post-patch:
 	${REINPLACE_CMD} -e 's@\(-o nbsmtp\)@$$(LDFLAGS) \1@g'	\
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -E '/NULL/s,\(char\) ?,,' \
+		${WRKSRC}/main.c ${WRKSRC}/original.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

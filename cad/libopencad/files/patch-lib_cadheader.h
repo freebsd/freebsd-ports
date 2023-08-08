@@ -8,11 +8,12 @@
  
  class OCAD_EXTERN CADHandle final
  {
-@@ -64,12 +65,13 @@ public:
+@@ -64,12 +65,14 @@ class OCAD_EXTERN CADVariant final (public)
      CADVariant();
      CADVariant( const char * val );
      CADVariant( int val );
 +    CADVariant( long val );
++    CADVariant( long long val );
      CADVariant( short val );
      CADVariant( double val );
      CADVariant( double x, double y, double z = 0 );

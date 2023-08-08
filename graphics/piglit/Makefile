@@ -1,6 +1,6 @@
 PORTNAME=	piglit
 PORTVERSION=	20200910
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
@@ -30,7 +30,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	piglit
-GL_COMMIT=	136a7f5fa0703603be1ffb338abe4865e76a8058
+GL_TAGNAME=	136a7f5fa0703603be1ffb338abe4865e76a8058
 
 PATCH_SITES=		https://gitlab.freedesktop.org/mesa/piglit/-/commit/
 PATCH_DIST_STRIP=	-p1
@@ -42,7 +42,7 @@ PATCHFILES+=		d5f4cfd3b0da.patch # https://gitlab.freedesktop.org/mesa/piglit/-/
 PATCHFILES+=		64c468c6c7e3.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
 PATCHFILES+=		681e86f53c2e.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
 
-USES=		cmake compiler:c11 gl pkgconfig python:3.5+ shebangfix xorg
+USES=		cmake compiler:c11 gl pkgconfig python shebangfix xorg
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 SHEBANG_FILES=	piglit

@@ -1,5 +1,6 @@
 PORTNAME=	canta-gtk-themes
 DISTVERSION=	2021-09-08
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -10,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash>0:shells/bash \
+		coreutils>0:sysutils/coreutils \
 		gsed:textproc/gsed \
 		sassc>0:textproc/sassc
 RUN_DEPENDS=	gtk-engines2>0:x11-themes/gtk-engines2 \

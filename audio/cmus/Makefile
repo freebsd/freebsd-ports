@@ -1,8 +1,12 @@
 PORTNAME=	cmus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.10.0
-PORTREVISION=	1
+PORTREVISION=	5
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7d3116962bd8.patch:-p1 # https://github.com/cmus/cmus/pull/1221
+PATCHFILES+=	07ce2dc7082a.patch:-p1 # https://github.com/cmus/cmus/pull/1254
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
@@ -38,8 +42,12 @@ _CMUS_CONFIGURE_OPTS=	AAC ALSA AO ARTS CDDB CDIO COREAUDIO CUE DISCID	\
 CONFIGURE_ARGS+=	CONFIG_${opt}=n
 .endfor
 
+# AAC, FLAC, MP4, OPUS, VORBIS and WAV handled by FFMPEG
+# MPRIS (BASU) error:	https://github.com/cmus/cmus/issues/1124
+#			https://github.com/cmus/cmus/issues/609
+
 OPTIONS_DEFINE=		BASU EXAMPLES
-OPTIONS_DEFAULT=	AAC BASU FFMPEG FLAC MODPLUG MP4 OPUS OSS SNDIO VORBIS WAV
+OPTIONS_DEFAULT=	BASU FFMPEG MODPLUG OSS SNDIO
 OPTIONS_SUB=	yes
 
 OPTIONS_GROUP=	OUT IN

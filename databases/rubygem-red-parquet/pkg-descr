@@ -1,0 +1,12 @@
+Red Parquet is the Ruby bindings of Apache Parquet. Red Parquet is based on
+GObject Introspection.
+
+Apache Parquet is a columnar storage format.
+
+GObject Introspection is a middleware for language bindings of C library.
+GObject Introspection can generate language bindings automatically at runtime.
+
+Red Parquet uses Apache Parquet GLib and gobject-introspection gem to generate
+Ruby bindings of Apache Parquet.
+
+See also: https://github.com/apache/arrow/tree/master/ruby/red-parquet

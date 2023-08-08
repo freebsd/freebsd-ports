@@ -1,25 +1,13 @@
-Add CMake option to specify the version of Qt we want to build against.
+Fix detection of Qt5 if both Qt5 and Qt6 are installed.
 
---- CMakeLists.txt.orig	2022-09-12 03:46:59 UTC
+--- CMakeLists.txt.orig	2023-07-10 19:51:30 UTC
 +++ CMakeLists.txt
-@@ -27,6 +27,7 @@ set(BUILD_SHARED_LIBS ON CACHE BOOL "build shared libr
- cmake_minimum_required(VERSION 3.3)
- 
- set(BUILD_SHARED_LIBS ON CACHE BOOL "build shared libraries")
-+set(WITH_QT5    ON CACHE BOOL "build with Qt 5")
- set(WITH_QML    ON CACHE BOOL "build with QML")
- set(WITH_TAGLIB ON CACHE BOOL "build with TagLib")
- set(WITH_MP4V2 OFF CACHE BOOL "build with mp4v2")
-@@ -263,7 +264,11 @@ endif()
-     set(Qt${_qtVersionMajor}AndroidExtras_DIR "${_qtDir}/lib/cmake/Qt${_qtVersionMajor}AndroidExtras")
-   endif()
- endif()
--find_package(QT NAMES Qt5 Qt6 COMPONENTS Core REQUIRED)
-+if(WITH_QT5)
+@@ -273,7 +273,7 @@ else()
+ if(BUILD_WITH_QT6)
+   find_package(QT NAMES Qt6 COMPONENTS Core REQUIRED)
+ else()
+-  find_package(QT NAMES Qt5 Qt6 COMPONENTS Core REQUIRED)
 +  find_package(QT NAMES Qt5 COMPONENTS Core REQUIRED)
-+else()
-+  find_package(QT NAMES Qt6 COMPONENTS Core REQUIRED)
-+endif()
+ endif()
  if(QT_VERSION_MAJOR EQUAL 6 AND QT_VERSION_MINOR LESS 2)
    set(WITH_MULTIMEDIA OFF)
- endif()

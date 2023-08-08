@@ -1,6 +1,6 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.4.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}
 GH_ACCOUNT=	rvaiya
 SHEBANG_FILES=	scripts/*
-MAKE_ARGS=	DESTDIR="${DESTDIR}" PREFIX="${PREFIX}" \
+MAKE_ARGS=	PREFIX="${PREFIX}" \
 		VERSION="${DISTVERSIONFULL}" COMMIT=""
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-application-mapper
@@ -48,11 +48,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		-e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/docs/*.scdoc \
-		${WRKSRC}/examples/*.conf \
-		${WRKSRC}/src/config.c \
-		${WRKSRC}/src/${PORTNAME}.c
+		${WRKSRC}/examples/*.conf
 # https://lists.freebsd.org/pipermail/freebsd-x11/2019-March/023097.html
 	@${REINPLACE_CMD} -e 's,__FreeBSD,&_disabled,' \
+		${WRKSRC}/src/keyd.h \
 		${WRKSRC}/src/vkbd/uinput.c
 
 post-install:

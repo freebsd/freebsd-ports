@@ -1,9 +1,12 @@
-DISTVERSION?=	11.17
+DISTVERSION?=	11.20
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
+
+DEPRECATED=	PostgreSQL-11 will reach end-of-life on 2023-11-09
+EXPIRATION_DATE=2023-12-31
 
 INSTALL_DIRS?=	src/common src/timezone src/backend \
 		src/backend/utils/mb/conversion_procs \
@@ -20,4 +23,4 @@ PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
 
-.include "${.CURDIR}/../postgresql14-server/Makefile"
+.include "${.CURDIR}/../postgresql16-server/Makefile"

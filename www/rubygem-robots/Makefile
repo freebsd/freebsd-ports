@@ -11,7 +11,6 @@ WWW=		https://github.com/fizx/robots
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

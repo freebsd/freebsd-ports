@@ -1,14 +1,23 @@
 PORTNAME=	tnftp
-PORTVERSION=	20210827
+DISTVERSION=	20230507
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
+MASTER_SITES=	https://cdn.netbsd.org/pub/NetBSD/misc/tnftp/ \
+		https://ftp.uni-erlangen.de/netbsd/misc/tnftp/ \
+		https://ftp.jaist.ac.jp/pub/NetBSD/misc/tnftp/ \
+		https://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Enhanced FTP client from NetBSD
+WWW=		https://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
+
+LICENSE=	BSD2CLAUSE BSD3CLAUSE
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libedit ncurses ssl
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/tnftp man/man1/tnftp.1.gz
+PLIST_FILES=	bin/tnftp \
+		man/man1/tnftp.1.gz
 
 .include <bsd.port.mk>

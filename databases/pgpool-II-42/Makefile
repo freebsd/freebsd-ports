@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.12
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	42
@@ -11,9 +11,7 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^4.2.[0-9]*
-
-USES=		gmake libtool pgsql:9.6+
+USES=		gmake libtool pgsql:11+
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
 
@@ -21,22 +19,28 @@ GNU_CONFIGURE=	yes
 
 CONFLICTS_INSTALL=	pgpool-II-[0-9][0-9] pgpool-II[0-9][0-9] # etc/escalation.sh.sample etc/failover.sh.sample etc/pcp.conf.sample
 
-PORTDOCS=	*
+PORTSCOUT=	limit:^4.2.[0-9]*
 
-PAM_DESC=	Build with PAM support
-SSL_DESC=	Build with OpenSSL support
-MEMCACHED_DESC=	Use memcached for in memory query cache
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS SSL PAM MEMCACHED
 OPTIONS_DEFAULT=	SSL
 
-MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
+MEMCACHED_DESC=	Use memcached for in memory query cache
+PAM_DESC=	Build with PAM support
+SSL_DESC=	Build with OpenSSL support
+
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
-
+MEMCACHED_CONFIGURE_ON=	--with-memcached=${LOCALBASE}/include
 PAM_CONFIGURE_ON=	--with-pam
-
-SSL_CONFIGURE_WITH=	openssl
 SSL_USES=		ssl
+SSL_CONFIGURE_WITH=	openssl
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
@@ -49,4 +53,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

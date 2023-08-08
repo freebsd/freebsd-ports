@@ -1,5 +1,5 @@
 PORTNAME=	rgeo
-PORTVERSION=	2.4.0
+PORTVERSION=	3.0.0
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libgeos.so:graphics/geos
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

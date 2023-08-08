@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-cucumber-core>=10.1.0:devel/rubygem-cucumber-core \
 		rubygem-cucumber-cucumber-expressions>=14.0.0:devel/rubygem-cucumber-cucumber-expressions
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

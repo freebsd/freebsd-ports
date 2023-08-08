@@ -28,6 +28,7 @@ man/man1/sql.1.gz
 man/man7/parallel_alternatives.7.gz
 man/man7/parallel_book.7.gz
 man/man7/parallel_design.7.gz
+man/man7/parallel_examples.7.gz
 man/man7/parallel_tutorial.7.gz
 share/bash-completion/completions/parallel
 %%PORTDOCS%%%%DOCSDIR%%/env_parallel.html
@@ -55,6 +56,10 @@ share/bash-completion/completions/parallel
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.pdf
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.rst
 %%PORTDOCS%%%%DOCSDIR%%/parallel_design.texi
+%%PORTDOCS%%%%DOCSDIR%%/parallel_examples.html
+%%PORTDOCS%%%%DOCSDIR%%/parallel_examples.pdf
+%%PORTDOCS%%%%DOCSDIR%%/parallel_examples.rst
+%%PORTDOCS%%%%DOCSDIR%%/parallel_examples.texi
 %%PORTDOCS%%%%DOCSDIR%%/parallel_options_map.pdf
 %%PORTDOCS%%%%DOCSDIR%%/parallel_tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/parallel_tutorial.pdf

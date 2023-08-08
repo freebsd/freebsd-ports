@@ -1,6 +1,6 @@
 PORTNAME=	signon-ui
 PORTVERSION=	0.17
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	sysutils kde
 DIST_SUBDIR=	KDE/${GL_ACCOUNT}
 
@@ -25,6 +25,6 @@ USE_QT=		core dbus declarative gui network webkit widgets xml \
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	075830f31096947fcea70802b8d3c142bccfbefa
+GL_TAGNAME=	075830f31096947fcea70802b8d3c142bccfbefa
 
 .include <bsd.port.mk>

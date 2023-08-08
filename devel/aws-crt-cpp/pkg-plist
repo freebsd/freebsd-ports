@@ -17,6 +17,7 @@ include/aws/crt/auth/Signing.h
 include/aws/crt/auth/Sigv4Signing.h
 include/aws/crt/crypto/HMAC.h
 include/aws/crt/crypto/Hash.h
+include/aws/crt/endpoints/RuleEngine.h
 include/aws/crt/http/HttpConnection.h
 include/aws/crt/http/HttpConnectionManager.h
 include/aws/crt/http/HttpProxyStrategy.h
@@ -30,8 +31,14 @@ include/aws/crt/io/SocketOptions.h
 include/aws/crt/io/Stream.h
 include/aws/crt/io/TlsOptions.h
 include/aws/crt/io/Uri.h
+include/aws/crt/mqtt/Mqtt5Client.h
+include/aws/crt/mqtt/Mqtt5ClientCore.h
+include/aws/crt/mqtt/Mqtt5Packets.h
+include/aws/crt/mqtt/Mqtt5Types.h
 include/aws/crt/mqtt/MqttClient.h
+include/aws/iot/Mqtt5Client.h
 include/aws/iot/MqttClient.h
+include/aws/iot/MqttCommon.h
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config-version.cmake
 lib/aws-crt-cpp/cmake/aws-crt-cpp-config.cmake
 lib/aws-crt-cpp/cmake/shared/aws-crt-cpp-targets-%%CMAKE_BUILD_TYPE%%.cmake

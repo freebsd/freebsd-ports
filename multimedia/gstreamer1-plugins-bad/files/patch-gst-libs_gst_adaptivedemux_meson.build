@@ -1,0 +1,20 @@
+--- gst-libs/gst/adaptivedemux/meson.build.orig	2022-09-05 19:47:37 UTC
++++ gst-libs/gst/adaptivedemux/meson.build
+@@ -1,5 +1,8 @@
++if get_option('adaptivedemux').enabled()
+ adaptivedemux_sources = files('gstadaptivedemux.c')
+-adaptivedemux_headers = files('gstadaptivedemux.h')
++adaptivedemux_headers = files('gstadaptivedemux.h',
++  'adaptive-demux-prelude.h')
++install_headers(adaptivedemux_headers, subdir : 'gstreamer-1.0/gst/adaptivedemux')
+ 
+ pkg_name = 'gstreamer-adaptivedemux-1.0'
+ gstadaptivedemux = library('gstadaptivedemux-' + api_version,
+@@ -18,4 +21,5 @@ gstadaptivedemux_dep = declare_dependency(link_with : 
+   include_directories : [libsinc],
+   dependencies : [gstbase_dep, gsturidownloader_dep])
+ 
+-meson.override_dependency(pkg_name, gstadaptivedemux_dep)
+\ No newline at end of file
++meson.override_dependency(pkg_name, gstadaptivedemux_dep)
++endif

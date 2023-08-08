@@ -1,19 +1,20 @@
 PORTNAME=	oslo.rootwrap
-PORTVERSION=	6.3.1
+PORTVERSION=	7.0.1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo rootwrap
-WWW=		https://docs.openstack.org/oslo.rootwrap/latest/
+WWW=		https://docs.openstack.org/oslo.rootwrap/latest/ \
+		https://github.com/openstack/oslo.rootwrap
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

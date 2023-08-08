@@ -1,8 +1,8 @@
---- cmake/os/FreeBSD.cmake.orig	2020-05-26 05:35:19 UTC
+--- cmake/os/FreeBSD.cmake.orig	2023-03-14 11:58:56 UTC
 +++ cmake/os/FreeBSD.cmake
-@@ -36,6 +36,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
-     IF(GCC_VERSION VERSION_LESS 4.4)
-       MESSAGE(FATAL_ERROR "GCC 4.4 or newer is required!")
+@@ -45,6 +45,20 @@ IF(NOT FORCE_UNSUPPORTED_COMPILER)
+     IF(NOT HAVE_SUPPORTED_CLANG_VERSION)
+       MESSAGE(FATAL_ERROR "Clang 3.3 or newer is required!")
      ENDIF()
 +    CHECK_C_SOURCE_RUNS("
 +      int main()
@@ -21,7 +21,7 @@
    ELSE()
      MESSAGE(FATAL_ERROR "Unsupported compiler!")
    ENDIF()
-@@ -44,4 +58,6 @@ ENDIF()
+@@ -53,4 +67,6 @@ ENDIF()
  # Should not be needed any more, but kept for easy resurrection if needed
  #   #Legacy option, maybe not needed anymore , taken as is from autotools build
  #   ADD_DEFINITIONS(-DNET_RETRY_COUNT=1000000)

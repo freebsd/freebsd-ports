@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
 PORTVERSION=	2.3.0
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	0
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	6df7e8756882f7d7f28f662011ee72f21746c580
+GL_TAGNAME=	8d4b429879fc99ee4652c966015e19e2cb1131d8
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
@@ -69,6 +69,8 @@ post-extract:
 	@${MV} ${WRKSRC}/install/man/man1/startlazarus.1 ${WRKDIR}/man1/
 	@${MV} ${WRKSRC}/examples ${WRKDIR}/examples
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
+	@${RM} ${WRKSRC}/tools/.gitignore
+	@${RM} ${WRKSRC}/Dockerfile.buildenv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}

@@ -1,7 +1,7 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/
@@ -14,9 +14,9 @@ WWW=		https://www.openca.org/projects/libpki
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	arm64
-
 USES=		autoreconf gnome libtool ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0 or later
 USE_GITHUB=	yes
 GH_ACCOUNT=	openca
 USE_GNOME=	libxml2
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-iphone
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DNS LDAP MYSQL PGSQL
 
@@ -36,7 +37,7 @@ MYSQL_DESC=	"Enable MySQL support"
 PGSQL_DESC=	"Enable PostgreSQL support"
 
 DNS_CONFIGURE_ENABLE=	dns
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	mysql

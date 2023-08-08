@@ -1,5 +1,5 @@
 PORTNAME=	Data-Rx
-PORTVERSION=	0.200007
+PORTVERSION=	0.200008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,7 @@ WWW=		https://metacpan.org/release/Data-Rx
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-Find-Rule>=0:devel/p5-File-Find-Rule \
@@ -20,5 +21,7 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

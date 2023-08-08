@@ -20,8 +20,7 @@ NO_ARCH=	yes
 
 do-test: # Tests fail to configure, see https://github.com/drobilla/raul/issues/2
 	@cd ${WRKSRC} && \
-		${RM} -rf _build && \
-		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} -Dtests=enabled && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --reconfigure ${CONFIGURE_ARGS} -Dtests=enabled && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} test
 
 .include <bsd.port.mk>

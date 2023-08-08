@@ -1,5 +1,5 @@
 PORTNAME=	poppler-data
-DISTVERSION=	0.4.11
+DISTVERSION=	0.4.12
 CATEGORIES=	graphics
 MASTER_SITES=	http://poppler.freedesktop.org/
 

@@ -1,6 +1,6 @@
-TIMESTAMP = 1658986317
-SHA256 (arvidn-libtorrent-v2.0.7_GH0.tar.gz) = 1c8209fdf765be7bc989e9cbd1d9dc3d5a6a57cb979205e73e925c9c72ebe8ce
-SIZE (arvidn-libtorrent-v2.0.7_GH0.tar.gz) = 4158750
+TIMESTAMP = 1684989452
+SHA256 (arvidn-libtorrent-v2.0.9_GH0.tar.gz) = b1edfda1e91c5c93cbffbe26773e7ea0928b2074f9057d943fb519b22b33b5ed
+SIZE (arvidn-libtorrent-v2.0.9_GH0.tar.gz) = 4281008
 SHA256 (arvidn-try_signal-751a7e5_GH0.tar.gz) = dd374f151d2e69ec2f1ebd4ebeb59e4b2233de08934b1c61b676516bec012ecd
 SIZE (arvidn-try_signal-751a7e5_GH0.tar.gz) = 7282
 SHA256 (arvidn-libsimulator-64fb5b4_GH0.tar.gz) = e60e7aaf682395db32c55b006d2a194cd76c6c99f3dd967de890260bdc010b0a

@@ -2,8 +2,8 @@
 
 case $2 in
        "DEINSTALL")
-               service crowdsec status && touch /var/run/crowdsec.running
-               service crowdsec stop || :
+               service crowdsec status 2>/dev/null && touch /var/run/crowdsec.running
+               service crowdsec stop 2>/dev/null || :
                ;;
 esac
 

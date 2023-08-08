@@ -3,7 +3,7 @@
 @@ -138,7 +138,7 @@ then
  fi
  
- # allow the netperf binary to be used to be overridden 
+ # allow the netperf binary to be used to be overridden
 -NETPERF=${NETPERF:="netperf"}
 +NETPERF="%%PREFIX%%/bin/netperf"
  

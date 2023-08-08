@@ -1,0 +1,10 @@
+--- modules/lsp-plugin-fw/src/Makefile.orig	2023-03-24 08:23:58 UTC
++++ modules/lsp-plugin-fw/src/Makefile
+@@ -326,6 +326,7 @@ HOST_UTL_VALIDATOR_OBJS         = \
+   $(HOST_LSP_PLUGIN_FW_OBJ_META) \
+   $(HOST_LSP_PLUGIN_FW_OBJ_DSP) \
+   $(HOST_LSP_PLUGIN_FW_OBJ_UI) \
++  $(HOST_LSP_PLUGIN_FW_OBJ_CTL) \
+   $(HOST_LSP_PLUGIN_FW_OBJ_RES) \
+   $(HOST_OBJ_PLUG_META) \
+   $(HOST_OBJ_PLUG_DSP) \

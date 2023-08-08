@@ -39,15 +39,15 @@ include/tcl%%TCL_VER%%/tclOO.h
 include/tcl%%TCL_VER%%/tclOODecls.h
 include/tcl%%TCL_VER%%/tclTomMath.h
 include/tcl%%TCL_VER%%/tclTomMathDecls.h
-lib/tcl%%TCL_VER%%/http-2.9.5.tm
+lib/tcl%%TCL_VER%%/http-2.9.8.tm
 lib/tcl%%TCL_VER%%/http1.0/http.tcl
 lib/tcl%%TCL_VER%%/http1.0/pkgIndex.tcl
 lib/tcl%%TCL_VER%%/msgcat-1.6.1.tm
 lib/tcl%%TCL_VER%%/opt0.4/optparse.tcl
 lib/tcl%%TCL_VER%%/opt0.4/pkgIndex.tcl
-lib/tcl%%TCL_VER%%/platform-1.0.18.tm
+lib/tcl%%TCL_VER%%/platform-1.0.19.tm
 lib/tcl%%TCL_VER%%/platform/shell-1.1.4.tm
-lib/tcl%%TCL_VER%%/tcltest-2.5.3.tm
+lib/tcl%%TCL_VER%%/tcltest-2.5.5.tm
 lib/tcl%%TCL_VER%%/auto.tcl
 lib/tcl%%TCL_VER%%/clock.tcl
 lib/tcl%%TCL_VER%%/encoding/ascii.enc
@@ -1467,7 +1467,6 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Brazil/West
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/Atlantic
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/Central
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/East-Saskatchewan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/Eastern
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/Mountain
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Canada/Newfoundland
@@ -1542,6 +1541,7 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Jersey
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kaliningrad
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kiev
+%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kyiv
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Kirov
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Lisbon
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/Europe/Ljubljana
@@ -1696,7 +1696,6 @@ lib/tcl%%TCL_VER%%/word.tcl
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Michigan
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Mountain
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific
-%%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Pacific-New
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/US/Samoa
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/UTC
 %%TZDATA%%lib/tcl%%TCL_VER%%/tzdata/W-SU

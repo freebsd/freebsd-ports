@@ -1,5 +1,5 @@
-TIMESTAMP = 1653264341
-SHA256 (jicofo-1.0-877-deps.tar.gz) = 4d98c46192101c632f5c9ed7b82fae3e2b168b4f4a9569afeeaba37a4e387858
-SIZE (jicofo-1.0-877-deps.tar.gz) = 146671715
-SHA256 (jitsi-jicofo-1.0-877-d8cca3d_GH0.tar.gz) = 1749da8f3fbb93e7f297e7312838d7ffdec37d43a9462bdcd155dad367f1f640
-SIZE (jitsi-jicofo-1.0-877-d8cca3d_GH0.tar.gz) = 232999
+TIMESTAMP = 1680489796
+SHA256 (jicofo-1.0-996-deps.tar.gz) = 6e654b86cd7833e7861fa7556f4ababe1a510aed6534ea3136f9ba673f2c977f
+SIZE (jicofo-1.0-996-deps.tar.gz) = 162108321
+SHA256 (jitsi-jicofo-1.0-996-aafb61b_GH0.tar.gz) = afd225bcf2366edbe21951e1326c465aff3bd9b47a5e78276bc6669bd8be6c91
+SIZE (jitsi-jicofo-1.0-996-aafb61b_GH0.tar.gz) = 1883399

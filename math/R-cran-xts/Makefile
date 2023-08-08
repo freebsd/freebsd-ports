@@ -1,9 +1,9 @@
 PORTNAME=	xts
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Time Series
 WWW=		https://r-forge.r-project.org/projects/xts/
 

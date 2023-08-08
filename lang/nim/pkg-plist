@@ -9,6 +9,7 @@ bin/nim
 lib/libnimrtl.so
 lib/nim/arch/x86/amd64.S
 lib/nim/arch/x86/i386.S
+lib/nim/compilation.nim
 lib/nim/compiler/aliases.nim
 lib/nim/compiler/ast.nim
 lib/nim/compiler/astalgo.nim
@@ -104,6 +105,7 @@ lib/nim/compiler/nversion.nim
 lib/nim/compiler/optimizer.nim
 lib/nim/compiler/options.nim
 lib/nim/compiler/packagehandling.nim
+lib/nim/compiler/packages.nim
 lib/nim/compiler/parampatterns.nim
 lib/nim/compiler/parser.nim
 lib/nim/compiler/passaux.nim
@@ -494,6 +496,9 @@ lib/nim/wrappers/pcre.nim
 lib/nim/wrappers/postgres.nim
 lib/nim/wrappers/sqlite3.nim
 lib/nim/wrappers/tinyc.nim
+%%DOCS%%share/nim/dochack/dochack.nim
+%%DOCS%%share/nim/dochack/dochack.js
+%%DOCS%%share/nim/dochack/fuzzysearch.nim
 %%PORTDOCS%%%%DOCSDIR%%/advopt.txt
 %%PORTDOCS%%%%DOCSDIR%%/apis.rst
 %%PORTDOCS%%%%DOCSDIR%%/astspec.txt
@@ -536,6 +541,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/chains.html
 %%PORTDOCS%%%%DOCSDIR%%/html/channels_builtin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/colors.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compilation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/aliases.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/ast.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/astalgo.html
@@ -610,6 +616,7 @@ lib/nim/wrappers/tinyc.nim
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/nversion.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/optimizer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/options.html
+%%PORTDOCS%%%%DOCSDIR%%/html/compiler/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/parampatterns.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/parser.html
 %%PORTDOCS%%%%DOCSDIR%%/html/compiler/passaux.html

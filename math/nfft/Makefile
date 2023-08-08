@@ -1,6 +1,6 @@
 PORTNAME=	nfft
-DISTVERSION=	3.5.2
-PORTREVISION=	2
+DISTVERSION=	3.5.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/NFFT/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -9,6 +9,7 @@ COMMENT=	Nonequispaced fast Fourier transform
 WWW=		https://www-user.tu-chemnitz.de/~potts/nfft
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		cunit>0:devel/cunit
@@ -32,6 +33,8 @@ CONFIGURE_ARGS=		--disable-static \
 OPTIONS_DEFINE=			DOCS OPENMP
 OPTIONS_DEFAULT_aarch64=	OPENMP
 OPTIONS_DEFAULT_amd64=		OPENMP
+OPTIONS_DEFAULT_powerpc64=	OPENMP
+OPTIONS_DEFAULT_powerpc64le=	OPENMP
 OPTIONS_SUB=	yes
 
 OPENMP_CONFIGURE_ENABLE=	openmp

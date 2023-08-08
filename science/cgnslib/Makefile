@@ -1,7 +1,6 @@
 PORTNAME=	cgnslib
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science
 
@@ -52,6 +51,12 @@ TOOLS_USE=		GL=egl,gl,glu	\
 TOOLS_CMAKE_BOOL=	CGNS_BUILD_CGNSTOOLS
 TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
 			-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R} \

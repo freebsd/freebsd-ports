@@ -1,0 +1,28 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Beneath a Steel Sky
+GenericName=Adventure game
+GenericName[de]=Abenteuerspiel
+GenericName[es]=Videojuego de aventura
+GenericName[fr]=Jeu vidéo d'aventure
+GenericName[it]=Avventura grafica
+GenericName[pt]=Jogo de aventura
+GenericName[sv]=Äventyrsspel
+Comment=Be vigilant!
+Comment[de]=Sei wachsam!
+Comment[es]=¡Estar atentos!
+Comment[fr]=Soyez vigilants!
+Comment[it]=Siate vigilanti!
+Comment[pt]=Seja vigilante!
+Comment[sv]=Var vaksam!
+Icon=scummvm.png
+Exec=%%LOCALBASE%%/bin/scummvm -f -p %%DATADIR%% sky
+Exec[de]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=de sky
+Exec[es]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=es sky
+Exec[fr]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=fr sky
+Exec[it]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=it sky
+Exec[pt]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=br sky
+Exec[sv]=%%LOCALBASE%%/bin/scummvm -f -n -p %%DATADIR%% --language=se sky
+Categories=Game;AdventureGame;
+StartupNotify=false

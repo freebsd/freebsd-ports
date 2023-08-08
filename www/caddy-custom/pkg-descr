@@ -1,0 +1,32 @@
+This port will build a customized version of the caddy webserver
+using plugins of your choice. You will need to rebuild this port
+manually if one of your plugins gets updated.
+
+Caddy is a high-performance webserver with a simple config format,
+out-of-the-box HTTP/3 support, and automatica transparent ACME
+certificate provisioning.
+
+NOTE: THIS PORT BYPASSES EVERY SINGLE ONE OF FREEBSD'S CHECKSUM-
+BASED DISTFILE TAMPERING DETECTION MECHANISMS. USE THIS AT YOUR
+OWN PERIL (though the peril is exactly the same as using the
+xcaddy port).
+
+To make this work:
+
+1) In /usr/local/etc/poudriere.conf, add the following:
+
+     ALLOW_NETWORKING_PACKAGES="caddy-custom"
+
+   You can skip this step if you're not building in poudriere.
+
+2) Put your plugin list into make.conf (or
+   /usr/local/etc/poudriere.conf/make.conf):
+
+     .if ${.CURDIR:M*/www/caddy-custom*}
+       CADDY_CUSTOM_PLUGINS= github.com/caddy-dns/rfc2136 github.com/greenpau/caddy-security
+     .endif
+
+   If you have any other xcaddy build flags you want to set, put
+   them in XCADDY_ENV.
+
+3) Profit

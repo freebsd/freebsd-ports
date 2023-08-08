@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=3.2:devel/rubygem-activesupport60 \
 		rubygem-thread_safe>=0:devel/rubygem-thread_safe
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

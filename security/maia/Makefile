@@ -1,6 +1,6 @@
 PORTNAME=	maia
 DISTVERSION=	1.0.4
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	security
 
 MAINTAINER=	ek@purplehat.org
@@ -49,7 +49,6 @@ OPTIONS_DEFINE=	APACHE LIGHTTPD NGINX WEBHOST MYSQL LOCAL PGSQL \
 OPTIONS_DEFAULT=	MYSQL CLAMAV DOCS SPAMASSASSIN BDB IPCOUNTRY \
 			DOMAINKEYS SPF DKIM FILE UNRAR ARJ LHA ARC CAB RPM ZOO
 
-APACHE_DESC=		Use Apache web server
 LIGHTTPD_DESC=		Use LighTTPD web server
 NGINX_DESC=			Use Nginx web server
 WEBHOST_DESC=		PHP, PEAR, etc... for Maia web interface
@@ -98,12 +97,12 @@ USE_RC_SUBR+=	maiad
 # setting USE_ variables. C'est la vie.
 
 .if ${PORT_OPTIONS:MAPACHE}
-USES+=		apache:run,2.4+
+USES+=		apache:run
 .endif
 
 .if ${PORT_OPTIONS:MWEBHOST}
 USES+=	php
-USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
+USE_PHP=	bcmath ctype dom gettext iconv imap mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml xmlreader xmlwriter xmlrpc
 
@@ -317,7 +316,9 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${WWWDIR}/web
 	@cd ${WRKSRC}/php && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+.if ${PORT_OPTIONS:MWEBHOST}
 	${LN} -s ${PREFIX}/share/smarty3-${PHP_FLAVOR} ${STAGEDIR}${WWWDIR}/libs/Smarty
+.endif
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripts
 	${MKDIR} ${STAGEDIR}${ETCDIR}/templates

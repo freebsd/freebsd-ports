@@ -1,16 +1,16 @@
 PORTNAME=	itcl
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.4.4
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	lang tcl
-MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/3.4.1
+MASTER_SITES=	SF/incrtcl/%5BIncr%20Tcl_Tk%5D-source/itcl%203.4.4
 DISTNAME=	itcl${PORTVERSION}
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 WWW=		https://sourceforge.net/projects/incrtcl/
 
-USES+=		tcl:tea
+USES+=		tcl:85,86,tea
 
 USE_LDCONFIG=	${PREFIX}/lib/itcl${PORTVERSION:R}
 
@@ -30,12 +30,10 @@ post-patch:
 	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
-	${LN} -s libitcl.so.1 \
-	    ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION:R}/libitcl${PORTVERSION:R:S/.//}.so
-	${LN} -s ${PORTNAME}${PORTVERSION:R}/libitcl.so.1 \
-	    ${STAGEDIR}${PREFIX}/lib/libitcl.so.${PORTVERSION:R:R}
-	${LN} -s ${PORTNAME}${PORTVERSION:R}/libitcl.so.1 \
-	    ${STAGEDIR}${PREFIX}/lib/libitcl.so
+	${LN} -s itcl${PORTVERSION:R}/libitcl${PORTVERSION:R}.so \
+		${STAGEDIR}${PREFIX}/lib/libitcl.so.${PORTVERSION:R:R}
+	${LN} -s itcl${PORTVERSION:R}/libitcl${PORTVERSION:R}.so \
+		${STAGEDIR}${PREFIX}/lib/libitcl.so
 
 .for FILE in ${MAN_3}
 	${INSTALL_DATA} ${WRKSRC}/doc/${FILE:S/Itcl_//} ${STAGEDIR}${MAN3PREFIX}/man/man3/${FILE}

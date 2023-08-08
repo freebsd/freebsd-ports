@@ -5,5 +5,3 @@ the Rails framework.
 
 Active Model provides a default module that implements the basic API required to
 integrate with Action Pack out of the box: ActiveModel::Model.
-
-See also: https://rubyonrails.org/

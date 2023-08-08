@@ -1,0 +1,10 @@
+Real applications have real data, and real data nests. Objects inside of objects
+inside of lists of objects.
+
+glom is a new and powerful way to handle real-world data, featuring:
+- Path-based access for nested data structures
+- Readable, meaningful error messages
+- Declarative data transformation, using lightweight, Pythonic specifications
+- Built-in data exploration and debugging features
+
+All of that and more, available as a fully-documented, pure-Python package.

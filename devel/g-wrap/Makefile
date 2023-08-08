@@ -1,6 +1,6 @@
 PORTNAME=	g-wrap
 DISTVERSION=	1.9.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
@@ -10,22 +10,23 @@ WWW=		https://www.nongnu.org/g-wrap/
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libffi.so:devel/libffi					\
-		libguile-2.2.so:lang/guile2				\
-		libgc-threaded.so:devel/boehm-gc-threaded
-BUILD_DEPENDS=	guile2>=2.2:lang/guile2
+LIB_DEPENDS+=	libffi.so:devel/libffi
 
-USES=		gmake gnome libtool pkgconfig
+USES=		gmake gnome guile:2.2 libtool pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-Werror
 
-INFO=		g-wrap
-
+MAKE_JOBS_UNSAFE=yes
 INSTALL_TARGET=	install-strip
 
-MAKE_JOBS_UNSAFE=yes
+INFO=		g-wrap
+
+# DO NOT try and add rules here to strip .go files, no matter how loudly
+# testport / stage-qa shouts at you about it, because .go files (which are
+# compiled bytecode) are not intended to be stripped and doing so causes
+# breakage at run time.
 
 .include <bsd.port.mk>

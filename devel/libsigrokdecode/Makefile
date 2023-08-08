@@ -10,7 +10,7 @@ WWW=		https://sigrok.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gnome libtool pathfix pkgconfig python:3.4+
+USES=		gnome libtool pathfix pkgconfig python
 USE_GNOME=	glib20
 
 GNU_CONFIGURE=	yes

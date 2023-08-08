@@ -1,10 +1,11 @@
 PORTNAME=	ast
-PORTVERSION=	1.0.16
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extension exposing PHP 7 abstract syntax tree
-WWW=		https://pecl.php.net/package/ast
+WWW=		https://pecl.php.net/package/ast \
+		https://github.com/nikic/php-ast
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

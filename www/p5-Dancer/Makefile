@@ -1,6 +1,5 @@
 PORTNAME=	Dancer
-PORTVERSION=	1.3513
-PORTREVISION=	1
+PORTVERSION=	1.3520
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BIGPRESH
@@ -28,6 +27,7 @@ TEST_DEPENDS=	p5-Data-Dump>=0:devel/p5-Data-Dump \
 		p5-HTTP-CookieJar>=0.008:www/p5-HTTP-CookieJar \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Plack>=0:www/p5-Plack \
+		p5-Test-LongString>=0:devel/p5-Test-LongString \
 		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings
 
 USES=		perl5

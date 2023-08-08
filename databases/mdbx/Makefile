@@ -1,5 +1,5 @@
 PORTNAME=	mdbx
-PORTVERSION=	0.11.9
+PORTVERSION=	0.11.14
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 MASTER_SITES=	https://libmdbx.dqdkfa.ru/release/

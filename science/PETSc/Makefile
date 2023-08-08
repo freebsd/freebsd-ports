@@ -1,5 +1,5 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.16.3
+DISTVERSION=	3.19.4
 CATEGORIES=	science devel
 MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libmpich.so:net/mpich
 
-USES=		blaslapack fortran gmake python:3.7+ shebangfix xorg
+USES=		blaslapack fortran gmake python shebangfix xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \
@@ -25,13 +25,14 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		MAKEFLAGS="${MAKEFLAGS}" LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
+CONFIGURE_ARGS=	--with-64-bit-indices # as opposed to 32-bit indices that are default
 CONFIGURE_LOG=	configure.log
 USE_XORG=	x11
 MAKEFILE=	makefile
-SHEBANG_FILES=	lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
-		lib/petsc/bin/petscnagfor lib/petsc/bin/petsc-performance-view
+SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
+		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
 USE_LDCONFIG=	yes
-TEST_TARGET=	test
+TEST_TARGET=	test # 152 of 11396 tests (1.3%) fail due to missing files like /usr/local/share/petsc/datafiles/meshes/square_periodic.msh (tests expect the packe to be installed)
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 LDFLAGS+=	${LOCALBASE}/lib/libmpi.so
@@ -39,8 +40,12 @@ LDFLAGS+=	${LOCALBASE}/lib/libmpi.so
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 PLIST_SUB=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/${CONFIGURE_SCRIPT}
+OPTIONS_DEFINE=		METIS
+OPTIONS_DEFAULT=	METIS
+
+METIS_DESC=		Enable metis support for graph partitioning algorithms
+METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
+METIS_LIB_DEPENDS=	libmetis.so:math/metis
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpetsc.so.${DISTVERSION}
@@ -48,6 +53,8 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX} && ${RM} -r bin/win32fe lib/petsc/conf/uninstall.py
 	@${REINPLACE_CMD} -i '' -e 's|^PYTHON = .*|PYTHON = ${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/lib/petsc/conf/petscvariables
 	@${REINPLACE_CMD} -i '' -e 's|#!/.*|#!${PYTHON_CMD}|' ${STAGEDIR}${PREFIX}/lib/petsc/conf/reconfigure-arch-*-c-debug.py
-	@${RM} -r ${STAGEDIR}${DATADIR}/examples # examples are a mess as installed
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/petsc/bin/__pycache__ # stray directory
+
+# the file /usr/local/share/petsc/examples/config/gmakegen.py is expected by some dependencies, at least by math/slepc
 
 .include <bsd.port.mk>

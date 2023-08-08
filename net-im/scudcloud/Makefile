@@ -1,7 +1,7 @@
 PORTNAME=	scudcloud
 PORTVERSION=	1.65
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	net-im
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -21,7 +21,7 @@ HUNSPELL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hunspell>0:textproc/py-hunspell@${P
 
 OPTIONS_DEFINE=	HUNSPELL
 
-USES=		gnome python:3.5+ pyqt:5
+USES=		gnome python pyqt:5
 USE_PYQT=	sip:run pyqt5:run
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils optsuffix

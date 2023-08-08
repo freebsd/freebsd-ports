@@ -25,6 +25,7 @@ CONFIGURE_ENV=	GDB=/usr/libexec/gdb
 CONFIGURE_ENV=	GDB=/usr/bin/gdb
 .endif
 
+CFLAGS+=	-Wno-int-conversion
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		cpe iconv libtool shebangfix xorg

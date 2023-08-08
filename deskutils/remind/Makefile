@@ -1,20 +1,26 @@
 PORTNAME=	remind
-DISTVERSION=	04.00.03
+DISTVERSION=	04.02.05
 CATEGORIES=	deskutils
 # upstream moves distfiles to OLD once a new release appears
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
 		https://dianne.skoll.ca/projects/remind/download/OLD/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 WWW=		https://dianne.skoll.ca/projects/remind/
 
 LICENSE=	GPLv2
 
+USES=		autoreconf
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-perl-build-artifacts
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-INSTALL_TARGET=	${WITH_DEBUG:Dinstall-nostripped:Uinstall}
+INSTALL_TARGET=	${WITH_DEBUG:Dinstall:Uinstall-stripped}
+
+# disable LTO on riscv64
+EXTRA_PATCHES_riscv64=	${FILESDIR}/extra-patch-configure.in
+EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=	A4 TCLTK REM2HTML REM2PDF
 OPTIONS_DEFAULT=	LANG_US REM2HTML REM2PDF
@@ -59,16 +65,18 @@ DEFAULT_LATITUDE?=	45.42055555555555
 DEFAULT_LONGITUDE?=	-75.68972222222223
 LOCATION?=	Ottawa
 
-post-patch:
+.include <bsd.port.options.mk>
+
+pre-configure:
 	@${REINPLACE_CMD} \
 	    -e 's#DEFAULT_LATITUDE 39#DEFAULT_LATITUDE ${DEFAULT_LATITUDE}#' \
 	    -e 's#DEFAULT_LONGITUDE 39#DEFAULT_LONGITUDE ${DEFAULT_LONGITUDE}#' \
 	    -e 's#Ottawa#${LOCATION}#' ${WRKSRC}/src/custom.h
 
-post-patch-A4-on:
+pre-configure-A4-on:
 	@${REINPLACE_CMD} -e 's#"Letter", 612, 792#"A4", 595, 842#' ${WRKSRC}/src/custom.h
 
-post-patch-TCLTK-on:
+pre-configure-TCLTK-on:
 	@${REINPLACE_CMD} -e 's,wish,${WISH},' ${WRKSRC}/scripts/tkremind
 
 do-build:

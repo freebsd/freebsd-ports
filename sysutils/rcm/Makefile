@@ -1,7 +1,8 @@
 PORTNAME=	rcm
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	sysutils
-MASTER_SITES=	https://thoughtbot.github.io/rcm/dist/
+MASTER_SITES=	https://thoughtbot.github.io/rcm/dist/ \
+		https://github.com/thoughtbot/rcm/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RC file (dotfile) management

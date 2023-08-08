@@ -1,9 +1,3 @@
-# XXX: If updating this port, please check compatibality with at least the following ports,
-# XXX: preferably, the full rubygem-* tree.  rack version requirements are specified with ~>
-# XXX: which requires *EXACTLY* that version.
-#
-# 	www/rubygem-actionpack4
-
 PORTNAME=	rack
 PORTVERSION=	1.6.13
 CATEGORIES=	www rubygems
@@ -11,14 +5,13 @@ MASTER_SITES=	RG
 PKGNAMESUFFIX=	16
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Rack, a Ruby Webserver Interface
+COMMENT=	Rack, a modular Ruby web server interface
 WWW=		https://github.com/rack/rack
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

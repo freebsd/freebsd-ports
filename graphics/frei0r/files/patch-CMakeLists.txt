@@ -1,0 +1,59 @@
+- Fix VERSION.
+- Make plugins dependent upon cairo optional.
+- Add logic so slave ports can build without installing base files or plugins.
+
+--- CMakeLists.txt.orig	2023-05-17 21:20:20 UTC
++++ CMakeLists.txt
+@@ -3,16 +3,21 @@ project (frei0r)
+ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
+ 
+ project (frei0r)
+-set (VERSION 1.8)
++set (VERSION 2.3)
+ 
+ include(GNUInstallDirs)
+ 
++option (BUILD_EXTRA_PLUGINS "Build plugins with optional dependencies" ON)
++
+ option (WITHOUT_OPENCV "Disable plugins dependent upon OpenCV" OFF)
+ if (NOT WITHOUT_OPENCV)
+   find_package (OpenCV)
+ endif ()
+ 
+-find_package (Cairo)
++option (WITHOUT_CAIRO "Disable plugins dependent upon cairo" OFF)
++if (NOT WITHOUT_CAIRO)
++  find_package (Cairo)
++endif ()
+ 
+ include(FindPkgConfig)
+ option (WITHOUT_GAVL "Disable plugins dependent upon gavl" OFF)
+@@ -35,16 +40,22 @@ INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
+ # --- custom targets: ---
+ INCLUDE( cmake/modules/TargetDistclean.cmake OPTIONAL)
+ 
+-# See this thread for a ridiculous discussion about the simple question how to install a header file with CMake: http://www.cmake.org/pipermail/cmake/2009-October/032874.html
+-install (DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "frei0r.h" PATTERN "msvc" EXCLUDE)
++if (NOT BUILD_EXTRA_PLUGINS)
++  # See this thread for a ridiculous discussion about the simple question how to install a header file with CMake: http://www.cmake.org/pipermail/cmake/2009-October/032874.html
++  install (DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "frei0r.h" PATTERN "msvc" EXCLUDE)
+ 
+-add_subdirectory (doc)
+-add_subdirectory (src)
++  add_subdirectory (src)
++else ()
++  add_subdirectory (src/filter)
++  add_subdirectory (src/mixer2)
++endif ()
+ 
+ # Generate frei0r.pc and install it.
+ set (prefix "${CMAKE_INSTALL_PREFIX}")
+ set (exec_prefix "${CMAKE_INSTALL_PREFIX}")
+ set (libdir "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
+ set (includedir "${CMAKE_INSTALL_PREFIX}/include")
+-configure_file ("frei0r.pc.in" "frei0r.pc" @ONLY)
+-install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
++if (NOT BUILD_EXTRA_PLUGINS)
++  configure_file ("frei0r.pc.in" "frei0r.pc" @ONLY)
++  install (FILES "${CMAKE_CURRENT_BINARY_DIR}/frei0r.pc" DESTINATION "libdata/pkgconfig")
++endif ()

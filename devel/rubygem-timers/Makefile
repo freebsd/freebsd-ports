@@ -1,5 +1,5 @@
 PORTNAME=	timers
-PORTVERSION=	4.3.4
+PORTVERSION=	4.3.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/socketry/timers
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

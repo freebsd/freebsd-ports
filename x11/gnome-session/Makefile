@@ -1,5 +1,6 @@
 PORTNAME=	gnome-session
 PORTVERSION=	42.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2 \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gl gnome localbase:ldflags meson \
-		pkgconfig python:3.6+,build tar:xz xorg
+		pkgconfig python:build tar:xz xorg
 USE_GNOME=	gnomedesktop3 gtk30
 USE_XORG=	ice sm x11 xcomposite xtrans
 USE_GL=		egl gl glesv2

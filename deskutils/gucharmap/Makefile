@@ -1,5 +1,6 @@
 PORTNAME=	gucharmap
 PORTVERSION=	15.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 #MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -28,7 +29,7 @@ MESON_ARGS=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	GNOME
-GL_COMMIT=	36de4b20deb47bccd8434e36dcc48db8b9460e47
+GL_TAGNAME=	36de4b20deb47bccd8434e36dcc48db8b9460e47
 
 GLIB_SCHEMAS=	org.gnome.Charmap.gschema.xml
 

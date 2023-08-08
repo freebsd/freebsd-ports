@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json \
 		rubygem-websocket>=1.0<2:www/rubygem-websocket
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

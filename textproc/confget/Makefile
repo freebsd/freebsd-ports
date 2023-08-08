@@ -1,5 +1,5 @@
 PORTNAME=	confget
-PORTVERSION=	4.1.0
+PORTVERSION=	5.1.0
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/confget/confget/-/archive/release/${PORTVERSION}/
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/confget/confget
 
 LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		gmake tar:bz2
 
 MAKE_ENV=	CFLAGS_CONF=-DHAVE_FGETLN
 TEST_TARGET=	test
@@ -18,8 +18,6 @@ TEST_TARGET=	test
 PLIST_FILES=	bin/confget \
 		share/man/man1/confget.1.gz
 PORTEXAMPLES=	t1.ini t2.ini
-
-PORTSCOUT=	skipv:5.0.0
 
 OPTIONS_DEFINE=	EXAMPLES PCRE
 OPTIONS_DEFAULT=PCRE

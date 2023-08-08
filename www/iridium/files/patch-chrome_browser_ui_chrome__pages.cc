@@ -1,6 +1,15 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2022-04-01 07:48:30 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -550,7 +550,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
+@@ -69,7 +69,7 @@
+ #endif
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/web_applications/web_app_utils.h"
+ #endif
+ 
+@@ -662,7 +662,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

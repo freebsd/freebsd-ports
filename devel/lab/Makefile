@@ -1,10 +1,10 @@
 PORTNAME=	lab
-PORTVERSION=	0.23.0
+PORTVERSION=	${MODVERSION:S/-/./g:R}
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lab makes it simple to work with repositories on GitLab
 WWW=		https://zaquestion.github.io/lab
 
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
-
-GO_MODULE=	github.com/zaquestion/lab
+MODVERSION=	0.25.2-0.20230225220034-98c3f01c08e1
+GO_MODULE=	github.com/zaquestion/lab@v${MODVERSION}
 GO_BUILDFLAGS=	-ldflags="-X main.version=${PORTVERSION}"
 PLIST_FILES=	bin/lab
 

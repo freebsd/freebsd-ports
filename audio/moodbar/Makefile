@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 TEST_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++14-lang gnome gstreamer meson pkgconfig python:3.5+,test \
+USES=		compiler:c++14-lang gnome gstreamer meson pkgconfig python:test \
 		shebangfix tar:xz
 USE_GNOME=	glib20
 USE_GSTREAMER=	good ogg vorbis

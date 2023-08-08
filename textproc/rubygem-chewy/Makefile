@@ -1,5 +1,5 @@
 PORTNAME=	chewy
-PORTVERSION=	7.2.6
+PORTVERSION=	7.3.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=4.0:devel/rubygem-activesupport60 \
 		rubygem-elasticsearch-dsl>=0:textproc/rubygem-elasticsearch-dsl
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

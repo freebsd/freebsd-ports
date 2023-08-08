@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-coderay>=0:textproc/rubygem-coderay \
 		rubygem-haml>=0:www/rubygem-haml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

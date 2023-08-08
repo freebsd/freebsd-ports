@@ -351,15 +351,15 @@
  
  	if (use_privsep) {
  		if (privsep_preauth(ssh) == 1)
---- Makefile.in.orig	2020-11-16 16:27:13.408700000 -0800
-+++ Makefile.in	2020-11-16 16:28:28.083007000 -0800
-@@ -180,6 +180,8 @@ FIXPATHSCMD	= $(SED) $(PATHSUBS)
+--- Makefile.in.orig	2022-10-03 07:51:42.000000000 -0700
++++ Makefile.in	2022-10-09 10:50:06.401377000 -0700
+@@ -185,6 +185,8 @@ FIXALGORITHMSCMD= $(SHELL) $(srcdir)/fixalgorithms $(S
  FIXALGORITHMSCMD= $(SHELL) $(srcdir)/fixalgorithms $(SED) \
  		     @UNSUPPORTED_ALGORITHMS@
  
 +LIBSSH_OBJS+=	blacklist.o
 +
- all: configure-check $(CONFIGFILES) $(MANPAGES) $(TARGETS)
+ all: $(CONFIGFILES) $(MANPAGES) $(TARGETS)
  
  $(LIBSSH_OBJS): Makefile.in config.h
 --- sshd_config.orig	2020-11-16 16:57:14.276036000 -0800

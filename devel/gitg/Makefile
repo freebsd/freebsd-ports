@@ -1,6 +1,5 @@
 PORTNAME=	gitg
-PORTVERSION=	3.32.1
-PORTREVISION=	6
+PORTVERSION=	41
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -21,8 +20,9 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libgee-0.8.so:devel/libgee \
 		libgit2.so:devel/libgit2 \
 		libgit2-glib-1.0.so:devel/libgit2-glib \
+		libjson-glib-1.0.so:devel/json-glib \
 		libpeas-1.0.so:devel/libpeas \
-		libgtkspell3-3.so:textproc/gtkspell3 \
+		libgspell-1.so:textproc/gspell \
 		libdazzle-1.0.so:x11-toolkits/libdazzle \
 		libsecret-1.so:security/libsecret
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
@@ -31,8 +31,8 @@ CONFLICTS=	gitg0
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
-		meson pathfix pkgconfig python:3.4+,build tar:xz vala:build
-USE_GNOME=	cairo gtk30 gtksourceview3 intltool introspection
+		meson pathfix pkgconfig python:build tar:xz vala:build
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview4 intltool introspection
 
 USE_LDCONFIG=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
@@ -41,13 +41,9 @@ BINARY_ALIAS=	python3=${PYTHON_VERSION}
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_SUB=	yes
 
-PYTHON_USES=	python:3.2+
+PYTHON_USES=	python
 PYTHON_MESON_TRUE=	python
 PYTHON_USE=	GNOME=pygobject3
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|0.27.0|0.28.0|g' \
-		${WRKSRC}/meson.build
 
 post-install-PYTHON-on:
 	(cd ${STAGEDIR}${PREFIX} \

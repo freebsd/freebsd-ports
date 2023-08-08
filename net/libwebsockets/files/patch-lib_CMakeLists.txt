@@ -1,0 +1,38 @@
+--- lib/CMakeLists.txt.orig	2023-02-14 23:28:15 UTC
++++ lib/CMakeLists.txt
+@@ -316,7 +316,7 @@ includedir=\${prefix}/include
+ 
+ Name: libwebsockets
+ Description: Websockets server and client library
+-Version: ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}
++Version: ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH_NUMBER}
+ 
+ Libs: -L\${libdir} -lwebsockets
+ Cflags: -I\${includedir}
+@@ -328,7 +328,7 @@ endif()
+ 
+ 
+ 	install(FILES "${PROJECT_BINARY_DIR}/libwebsockets.pc"
+-		DESTINATION lib${LIB_SUFFIX}/pkgconfig)
++		DESTINATION libdata/pkgconfig)
+ 
+ file(WRITE "${PROJECT_BINARY_DIR}/libwebsockets_static.pc"
+ "prefix=\"${CMAKE_INSTALL_PREFIX}\"
+@@ -338,7 +338,7 @@ includedir=\${prefix}/include
+ 
+ Name: libwebsockets_static
+ Description: Websockets server and client static library
+-Version: ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}
++Version: ${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH_NUMBER}
+ 
+ Libs: -L\${libdir} -l:libwebsockets${CMAKE_STATIC_LIBRARY_SUFFIX}
+ Libs.private:
+@@ -352,7 +352,7 @@ endif()
+ 
+ 
+ 	install(FILES "${PROJECT_BINARY_DIR}/libwebsockets_static.pc"
+-		DESTINATION lib${LIB_SUFFIX}/pkgconfig)
++		DESTINATION libdata/pkgconfig)
+ 
+ endif(UNIX OR MINGW)
+ 

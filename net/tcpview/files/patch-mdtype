@@ -1,0 +1,22 @@
+--- mdtype.orig	1992-02-17 05:29:48 UTC
++++ mdtype
+@@ -5,12 +5,15 @@ if ( -f /bin/arch ) set mach=`/bin/arch`
+ #
+ set mach="UNKNOWN"
+ if ( -f /bin/arch ) set mach=`/bin/arch`
+-if ($mach == "UNKNOWN") then
+-	set temp=`machine`
+-	if ($temp != "") set mach=$temp
+-endif
+ # Hack, hack...
+ if ($mach == "sparc") set mach=sun4
++
++# Hack for FreeBSD
++if ($mach == "UNKNOWN") then
++	set temp=`uname|grep FreeBSD`
++	if ($temp != "") set mach=386
++endif
++
+ echo $mach
+ if ($mach == "UNKNOWN") exit 1
+ exit 0

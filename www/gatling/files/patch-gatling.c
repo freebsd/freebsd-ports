@@ -1,6 +1,6 @@
---- gatling.c.orig	2014-08-12 18:41:26.000000000 +0200
-+++ gatling.c	2014-08-12 18:42:24.000000000 +0200
-@@ -1736,7 +1736,7 @@
+--- gatling.c.orig	2020-04-07 13:25:34 UTC
++++ gatling.c
+@@ -1950,7 +1950,7 @@ usage:
      Y=sizeof(workgroup_utf16);
      x=workgroup;
      y=workgroup_utf16;

@@ -1,5 +1,6 @@
 PORTNAME=	dirac
 DISTVERSION=	22.0
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://zenodo.org/record/6010450/files/
 PKGNAMESUFFIX=	-quantum-chemistry-software
@@ -12,6 +13,7 @@ WWW=		http://diracprogram.org/doku.php
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_armv7=	compilation fails: Error: Old-style type declaration REAL*16 not supported at (1)
 BROKEN_i386=	error: Type mismatch in argument 'dsetid' at (1); passed INTEGER(8) to INTEGER(4), see https://gitlab.com/dirac/dirac/-/issues/36
 
 BUILD_DEPENDS=	gmake:devel/gmake
@@ -22,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 USES=		cmake:noninja,testing fortran python shebangfix
 
 #USE_GITLAB=	yes
-#GL_COMMIT=	37b755410d9fdcd9b5e7bba6e43ceb7d5c7b9dae
+#GL_TAGNAME=	37b755410d9fdcd9b5e7bba6e43ceb7d5c7b9dae
 
 SHEBANG_FILES=	pam.in \
 		utils/process_schema.py \

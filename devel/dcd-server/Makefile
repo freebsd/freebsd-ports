@@ -1,7 +1,7 @@
 PORTNAME=	dcd
-PORTVERSION=	0.11.0
+PORTVERSION=	0.13.6
 DISTVERSIONPREFIX=	v
-PORTREVISION?=	0
+PORTREVISION?=	3
 CATEGORIES?=	devel
 PKGNAMESUFFIX?=	-server
 
@@ -30,14 +30,16 @@ DUB_CMD=	${LOCALBASE}/bin/dub build --build=release
 DUB_CONFIG?=	server
 D_INCLUDE_DIR=	${PREFIX}/include/d
 D_LIB_DIR=	${PREFIX}/lib/d
+DC=		${PREFIX}/bin/ldmd2
 
 post-patch:
+	${REINPLACE_CMD} '7d' ${WRKSRC}/common/dub.sdl
 	${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dub.json
 
 do-build:
-	@cd ${WRKSRC} && ${DUB_CMD} --config=${DUB_CONFIG}
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD} --config=${DUB_CONFIG}
 .if ${PKGNAMESUFFIX} == "-server"
-	@cd ${WRKSRC} && ${DUB_CMD} --config=library
+	@cd ${WRKSRC} && DC=${DC} ${DUB_CMD} --config=library
 .endif
 
 do-install:
@@ -49,7 +51,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/${D_LIB_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/libdcd.a ${STAGEDIR}${D_LIB_DIR}
 	@${MKDIR} ${STAGEDIR}/${D_INCLUDE_DIR}/common
-	cd ${WRKSRC}/src/dcd/common && ${COPYTREE_SHARE} . ${STAGEDIR}${D_INCLUDE_DIR}/dcd/common "-name *\.d"
+	cd ${WRKSRC}/common/src/dcd/common && ${COPYTREE_SHARE} . ${STAGEDIR}${D_INCLUDE_DIR}/dcd/common "-name *\.d"
 .endif
 
 .include <bsd.port.mk>

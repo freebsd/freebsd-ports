@@ -5,7 +5,7 @@ CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl library to access Domain Name Registries/Registrars
 WWW=		https://metacpan.org/release/Net-DRI
 

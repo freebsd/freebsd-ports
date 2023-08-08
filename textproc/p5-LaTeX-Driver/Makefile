@@ -23,7 +23,7 @@ RUN_DEPENDS=	p5-Capture-Tiny>=0:devel/p5-Capture-Tiny \
 PORTSCOUT=	skipv:0.2002
 
 NO_ARCH=	yes
-USES=		perl5
+USES=		perl5 tex
 USE_PERL5=	configure
 USE_TEX=	latex
 

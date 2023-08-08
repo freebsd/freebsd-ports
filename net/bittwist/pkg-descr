@@ -1,3 +1,16 @@
-A libpcap-based ethernet packet generator, capable of replaying traffic
-from a pcap file, and an editor to allow you to change the contents of a
-trace file on the fly.
+Bit-Twist is a simple yet powerful libpcap-based Ethernet packet generator. It
+is designed to complement tcpdump, which by itself has done a great job at
+capturing network traffic.
+
+These are just a few significant features that makes Bit-Twist unique and stands
+out as one of the best Ethernet packet generator package made available to the
+open source community.
+- Runs on Linux, BSD, macOS, and Windows
+- Send multiple trace files at a time
+- Send packets at a specific speed or line rate in Mbps
+- Comprehensive trace file editor with control over most fields in Ethernet,
+  ARP, IP, ICMP, TCP, and UDP headers with automatic header checksum correction
+- Append user payload to existing packets after a specific header
+- Select a specific range of packets and save them in another trace file
+- Highly scriptable - with proper manipulation you can turn Bit-Twist into an
+  extremely flexible packet generator tool!

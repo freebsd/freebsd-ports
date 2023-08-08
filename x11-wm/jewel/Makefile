@@ -12,13 +12,16 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler gmake xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11 xext xpm
-ALL_TARGET=	all
-PORTDOCS=	Changelog Changelog.DLR Changelog.jewel INSTALL README
+
 MAKE_ARGS=	CFLAGS="${CXXFLAGS}"
+ALL_TARGET=	all
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
+
+PORTDOCS=	Changelog Changelog.DLR Changelog.jewel INSTALL README
 
 OPTIONS_DEFINE=	DOCS
 

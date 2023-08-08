@@ -21,6 +21,7 @@ include/toml/traits.hpp
 include/toml/types.hpp
 include/toml/utility.hpp
 include/toml/value.hpp
+include/toml/version.hpp
 lib/cmake/toml11/toml11Config.cmake
 lib/cmake/toml11/toml11ConfigVersion.cmake
 lib/cmake/toml11/toml11Targets.cmake

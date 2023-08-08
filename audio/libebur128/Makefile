@@ -10,9 +10,11 @@ WWW=		https://github.com/jiixyj/libebur128
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pkgconfig
+USES=		cmake pathfix pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	ebur128
 
 .include <bsd.port.mk>

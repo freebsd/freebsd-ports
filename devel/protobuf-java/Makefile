@@ -1,10 +1,10 @@
 PORTNAME=	protobuf-java
-DISTVERSION=	3.11.1
+DISTVERSION=	3.22.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://central.maven.org/maven2/com/google/protobuf/protobuf-java/${DISTVERSION}/
+MASTER_SITES=	https://repo1.maven.org/maven2/com/google/protobuf/protobuf-java/${DISTVERSION}/
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core Protocol Buffers library
 WWW=		https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
 

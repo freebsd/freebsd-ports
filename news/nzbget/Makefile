@@ -1,7 +1,7 @@
 PORTNAME=	nzbget
 PORTVERSION=	21.1
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	news
 
 MAINTAINER=	alexis.praga@free.fr
@@ -38,6 +38,10 @@ OPTIMIZED_FLAGS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-disable-optimized-flags.pat
 
 .if (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--disable-sigchld-handler
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 
 post-install:

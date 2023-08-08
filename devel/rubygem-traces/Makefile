@@ -1,5 +1,5 @@
 PORTNAME=	traces
-PORTVERSION=	0.7.0
+PORTVERSION=	0.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/socketry/traces
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 --- configure.orig	2022-03-14 14:29:38 UTC
 +++ configure
-@@ -22491,7 +22491,7 @@ else
+@@ -22491,7 +22491,7 @@ fi
  if test "${enable_ruby_site_install+set}" = set; then :
    enableval=$enable_ruby_site_install; RUBY_MAKE_OPTIONS=
  else
@@ -9,19 +9,7 @@
  fi
  
  
-@@ -23388,9 +23388,9 @@ else
- if test -x "$PYTHON_CONFIG"; then
-   PYTHON_INCLUDES=`$PYTHON_CONFIG --includes 2>/dev/null`
- else
--  PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION}"
-+  PYTHON_INCLUDES="-I${py_prefix}/include/python${PYTHON_VERSION} -I${py_prefix}/include/python${PYTHON_VERSION}m"
-   if test "$py_prefix" != "$py_exec_prefix"; then
--    PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION}"
-+    PYTHON_INCLUDES="$PYTHON_INCLUDES -I${py_exec_prefix}/include/python${PYTHON_VERSION} -I${py_exec_prefix}/include/python${PYTHON_VERSION}m"
-   fi
- fi
- 
-@@ -28807,19 +28807,6 @@ $as_echo "and out again" >&6; }
+@@ -28807,19 +28807,6 @@ $as_echo_n "checking in... " >&6; }
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: and out again" >&5
  $as_echo "and out again" >&6; }
  

@@ -1,0 +1,17 @@
+- workaround for https://github.com/libfann/fann/issues/142 and https://github.com/libfann/fann/issues/143
+
+--- CMakeLists.txt.orig	2023-03-16 17:26:18 UTC
++++ CMakeLists.txt
+@@ -156,10 +156,10 @@ install (FILES
+ 
+ ################# compile tests ################
+ 
+-ADD_SUBDIRECTORY( lib/googletest )
++#ADD_SUBDIRECTORY( lib/googletest )
+ 
+ if(COMPILER_SUPPORTS_CXX11)
+-  ADD_SUBDIRECTORY( tests )
++  #ADD_SUBDIRECTORY( tests )
+ endif()
+ 
+ ENDIF()

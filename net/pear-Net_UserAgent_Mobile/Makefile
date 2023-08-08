@@ -8,7 +8,6 @@ COMMENT=	PEAR class that parses HTTP mobile user agent string
 WWW=		https://pear.php.net/package/Net_UserAgent_Mobile
 
 NO_ARCH=	yes
-USE_PHP=	pcre
 USES=		pear php
 
 .include <bsd.port.mk>

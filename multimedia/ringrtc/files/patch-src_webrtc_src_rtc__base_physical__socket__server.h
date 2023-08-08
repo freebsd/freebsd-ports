@@ -1,9 +1,9 @@
 --- ../../src/webrtc/src/rtc_base/physical_socket_server.h.orig	2021-01-28 23:16:17 UTC
 +++ ../../src/webrtc/src/rtc_base/physical_socket_server.h
-@@ -11,7 +11,7 @@
- #ifndef RTC_BASE_PHYSICAL_SOCKET_SERVER_H_
+@@ -12,7 +12,7 @@
  #define RTC_BASE_PHYSICAL_SOCKET_SERVER_H_
  
+ #include "api/units/time_delta.h"
 -#if defined(WEBRTC_POSIX) && defined(WEBRTC_LINUX)
 +#if defined(WEBRTC_POSIX) && defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
  #include <sys/epoll.h>

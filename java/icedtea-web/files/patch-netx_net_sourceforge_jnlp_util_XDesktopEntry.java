@@ -1,6 +1,6 @@
---- netx/net/sourceforge/jnlp/util/XDesktopEntry.java.orig	2019-05-21 12:20:44.000000000 +0200
-+++ netx/net/sourceforge/jnlp/util/XDesktopEntry.java	2019-06-19 14:33:09.000000000 +0200
-@@ -86,7 +86,7 @@
+--- netx/net/sourceforge/jnlp/util/XDesktopEntry.java.orig	2021-05-17 09:24:37 UTC
++++ netx/net/sourceforge/jnlp/util/XDesktopEntry.java
+@@ -86,7 +86,7 @@ import net.sourceforge.jnlp.security.dialogresults.Acc
  
  public class XDesktopEntry implements GenericDesktopEntry {
   
@@ -9,7 +9,7 @@
  
      private JNLPFile file = null;
      private int iconSize = -1;
-@@ -219,12 +219,12 @@
+@@ -219,12 +219,12 @@ public class XDesktopEntry implements GenericDesktopEn
          if (exec != null) {
              return exec;
          }

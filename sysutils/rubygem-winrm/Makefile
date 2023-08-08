@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-rubyntlm>=0.6.1<0.7:net/rubygem-rubyntlm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

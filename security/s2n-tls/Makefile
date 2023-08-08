@@ -1,6 +1,6 @@
 PORTNAME=	s2n-tls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.22
+DISTVERSION=	1.3.48
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 
@@ -42,7 +41,5 @@ post-install:
 	${CP} -r ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/bin/*.c ${STAGEDIR}${EXAMPLESDIR}
-
-# testunit fails: https://github.com/aws/s2n-tls/issues/3489
 
 .include <bsd.port.mk>

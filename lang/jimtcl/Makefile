@@ -1,5 +1,5 @@
 PORTNAME=	jimtcl
-PORTVERSION=	0.81
+PORTVERSION=	0.82
 CATEGORIES=	lang tcl
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -16,7 +16,6 @@ GH_ACCOUNT=	msteveb
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--full \
 		--enable-utf8 \
 		--enable-shared
 

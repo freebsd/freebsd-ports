@@ -1,7 +1,7 @@
 PORTNAME=	stack-data
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	stack_data-${PORTVERSION}
 
@@ -13,15 +13,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.3:devel/py-setuptools_scm@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=0:devel/py-asttokens@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}executing>=0:devel/py-executing@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.1.0:devel/py-asttokens@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}executing>=1.2.0:devel/py-executing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pure-eval>=0:devel/py-pure-eval@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}littleutils>=0:devel/py-littleutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typeguard>=0:devel/py-typeguard@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

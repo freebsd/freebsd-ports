@@ -1,6 +1,6 @@
 PORTNAME=	gnome-todo
 PORTVERSION=	41.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -24,7 +24,7 @@ LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+,build shebangfix tar:xz
+		python:build shebangfix tar:xz
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 gtk40 introspection \
 		libadwaita
 USE_LDCONFIG=	yes

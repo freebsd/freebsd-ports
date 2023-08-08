@@ -1,5 +1,5 @@
 PORTNAME=	courier-authlib
-PORTVERSION=	0.71.5
+PORTVERSION=	0.72.0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
 MASTER_SITES=	SF/courier/authlib/${PORTVERSION}
@@ -109,7 +109,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 OPTIONS_DEFINE+=	DOCS
 
 DOCS=		README.ldap
-USE_OPENLDAP=	yes
+USES+=	ldap
 CONFIGURE_ARGS+=--with-authldap
 .else
 CONFIGURE_ARGS+=--without-authldap

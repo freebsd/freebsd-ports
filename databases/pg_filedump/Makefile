@@ -1,5 +1,6 @@
 PORTNAME=	pg_filedump
-PORTVERSION=	14.1
+DISTVERSIONPREFIX= REL_
+DISTVERSION=	14_1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +17,6 @@ WANT_PGSQL=	lib server
 PLIST_FILES=	bin/pg_filedump
 
 GH_ACCOUNT=	df7cb
-GH_TAGNAME=	REL_${PORTVERSION:R}_${PORTVERSION:E}
 USE_GITHUB=	yes
 
 .include <bsd.port.mk>

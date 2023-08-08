@@ -1,7 +1,7 @@
 PORTNAME=	markupsafe
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MarkupSafe-${PORTVERSION}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/pallets/markupsafe
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

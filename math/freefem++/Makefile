@@ -1,12 +1,12 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11
-PORTREVISION=	2
+DISTVERSION=	4.13
+PORTREVISION=	1
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partial differential equation solver
-WWW=		http://www.freefem.org/ff++/
+WWW=		https://freefem.org/index.html
 
 LICENSE=	LGPL3
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 RUN_DEPENDS=	bash:shells/bash		\
 		pipe:misc/pipe
 
-USES=		autoreconf bison blaslapack:openblas compiler:c++11-lib fortran	\
+USES=		autoreconf bison blaslapack:openblas compiler:c++14-lang fortran	\
 		gl gmake localbase perl5 pkgconfig shebangfix xorg
 
 USE_GITHUB=	yes
@@ -64,7 +64,7 @@ PORTEXAMPLES=	*
 PLIST_SUB=	VER=${PORTVERSION}
 DATADIR=	${PREFIX}/share/FreeFEM/${PORTVERSION}
 
-TEST_TARGET=	check
+TEST_TARGET=	check # 1 test fails, see https://github.com/FreeFem/FreeFem-sources/issues/281
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-llapack|${LAPACKLIB}|' ${WRKSRC}/configure.ac

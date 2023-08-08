@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	3
 CATEGORIES=	games
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	2048 game implemented in QT
 WWW=		https://github.com/xiaoyong/2048-Qt
 

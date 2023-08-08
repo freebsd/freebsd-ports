@@ -1,9 +1,0 @@
-DLV is a system for disjunctive datalog with constraints, true negation
-and queries.
-
-The DLV system also includes
-
-    * the K planning system,
-    * a frontend for abductive diagnosis and Reiter's diagnosis,
-    * support for inheritance, and
-    * an SQL frontend which prototypes some novel SQL3 features.

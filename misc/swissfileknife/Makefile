@@ -1,8 +1,8 @@
 PORTNAME=	swissfileknife
-PORTVERSION=	1.9.8
+PORTVERSION=	1.9.8.2
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/1-${PORTNAME}/${PORTVERSION}.0
-DISTNAME=	sfk-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/1-${PORTNAME}/${PORTVERSION}
+DISTNAME=	sfk-${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	One hundred command-line tools in one binary
@@ -26,6 +26,7 @@ post-patch:
 		|| defined(__FreeBSD__),' \
 			${WRKSRC}/sfk.cpp ${WRKSRC}/sfkext.cpp
 	@${REINPLACE_CMD} -e '/_STDINT_H/,+6d' ${WRKSRC}/sfkmatch.hpp
+	@${REINPLACE_CMD} -e 's,^ *register,   ,' ${WRKSRC}/sfkpack.cpp
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

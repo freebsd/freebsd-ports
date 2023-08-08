@@ -10,6 +10,5 @@ WWW=		http://www.yoshidam.net/Ruby.html #unicode
 LICENSE=	RUBY
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

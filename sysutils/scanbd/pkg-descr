@@ -1,0 +1,17 @@
+scanbd is daemon that listens for scanner button presses and can run scripts.
+
+From the project page:
+
+scanbd is a scanner button daemon. It polls the scanner buttons
+looking for buttons pressed or function knob changes or other scanner
+events as paper inserts / removals and at the same time allows also
+scan-applications to access the scanners. If buttons are pressed,
+etc., various actions can be submitted (scan, copy, email, ...) via
+action scripts. The function knob values are passed to the
+action-scripts as well. Scan actions are also signaled via dbus. This
+can be useful for foreign applications. Scans can also be triggered
+via dbus from foreign applications. On platforms which support
+signaling of dynamic device insertion / removal (libudev, dbus, hal)
+scanbd supports this as well. scanbd can use all sane-backends or some
+special backends from the (old) scanbuttond project. Supported
+platforms: Linux, FreeBSD, NetBSD, OpenBSD

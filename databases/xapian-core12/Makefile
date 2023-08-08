@@ -17,9 +17,8 @@ USES=		libtool pathfix tar:xz
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-
-PORTDOCS=	*
 
 CONFLICTS_INSTALL=	xapian-core # include/xapian.h
 

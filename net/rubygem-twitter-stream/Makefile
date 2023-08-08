@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:devel/rubygem-eventmachine \
 		rubygem-simple_oauth>=0.1.4:net/rubygem-simple_oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

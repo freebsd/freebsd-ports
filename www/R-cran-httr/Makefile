@@ -1,5 +1,5 @@
 PORTNAME=	httr
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.6
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,6 +17,6 @@ CRAN_DEPENDS=	R-cran-curl>=3.0.0:ftp/R-cran-curl \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>

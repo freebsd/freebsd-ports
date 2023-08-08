@@ -1,7 +1,8 @@
 PORTNAME=	ckcc-protocol
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -15,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=6.7:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hidapi>=0.7.99.post21:comms/py-hidapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyaes>=0:security/py-pyaes@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

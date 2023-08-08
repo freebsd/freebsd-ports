@@ -4,7 +4,7 @@ PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	games
 
-MAINTAINER=	greg@unrelenting.technology
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roguelike set in a post-apocalyptic world
 WWW=		https://cataclysmdda.org
 

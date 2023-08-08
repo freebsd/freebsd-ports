@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-google-protobuf>=3.9<4:devel/rubygem-google-protobuf \
 		rubygem-rly>=0.2.3<0.3:textproc/rubygem-rly
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

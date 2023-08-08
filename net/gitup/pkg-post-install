@@ -1,0 +1,8 @@
+osrel=$(${PKG_ROOTDIR}/bin/freebsd-version -u)
+releng=${osrel%%-*}
+stable=${osrel%%.*}
+
+sed -i '' -E \
+	-e "s,stable/[0-9]+,stable/${stable}," \
+	-e "s,releng/[0-9]+.[0-9]+,releng/${releng}," \
+		${PKG_PREFIX}/etc/gitup.conf.sample

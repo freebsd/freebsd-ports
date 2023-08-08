@@ -1,0 +1,7 @@
+TIMESTAMP = 1672279416
+SHA256 (lite-xl-lite-xl-v2.1.1_GH0.tar.gz) = 75c0cbda2d34a88e86d3aa48abe9f0366093df3019796c03067a7594cc55abe6
+SIZE (lite-xl-lite-xl-v2.1.1_GH0.tar.gz) = 522637
+SHA256 (lite-xl-lite-xl-colors-b3a9cdd_GH0.tar.gz) = 0f956631fe44f2bf458be7ab3515ef924ef8ade28a10df30c477a381f1b43ad0
+SIZE (lite-xl-lite-xl-colors-b3a9cdd_GH0.tar.gz) = 14190
+SHA256 (lite-xl-lite-xl-plugins-b1eb39c_GH0.tar.gz) = 4d3250c35e489bf4a897deaec0fda84be4829936e17e587b371cad61bb46a830
+SIZE (lite-xl-lite-xl-plugins-b1eb39c_GH0.tar.gz) = 166485

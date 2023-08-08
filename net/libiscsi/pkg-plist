@@ -1,6 +1,7 @@
 bin/iscsi-inq
 bin/iscsi-ls
 bin/iscsi-perf
+bin/iscsi-pr
 bin/iscsi-readcapacity16
 bin/iscsi-swp
 include/iscsi/iscsi.h

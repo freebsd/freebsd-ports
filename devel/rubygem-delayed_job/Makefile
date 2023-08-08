@@ -1,5 +1,5 @@
 PORTNAME=	delayed_job
-PORTVERSION=	4.1.10
+PORTVERSION=	4.1.11
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-activesupport4>=3.0<8.0:devel/rubygem-activesupport4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

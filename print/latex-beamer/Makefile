@@ -1,6 +1,7 @@
 PORTNAME=	latex-beamer
 PORTVERSION=	3.57
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	print
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -10,21 +11,23 @@ WWW=		https://github.com/josephwright/beamer
 LICENSE=	GPLv2 LPPL13c
 LICENSE_COMB=	dual
 
-USE_TEX=	texmf latex texhash texlua
+USES=	tex
 USE_GITHUB=	yes
 GH_ACCOUNT=	josephwright
 GH_PROJECT=	beamer
-TEXHASHDIRS=	${TEXMFDIR}
-NO_BUILD=	YES
+USE_TEX=	latex texhash texlua
+
 NO_ARCH=	YES
+NO_BUILD=	YES
+
 PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
 
 CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_SUBDIRS=	base examples
 DOC_SUBDIRS=	AUTHORS.md CHANGELOG.md README.md doc solutions
-
-.include <bsd.port.options.mk>
+TEXHASHDIRS=	${TEXMFDIR}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CLASSDIR}
@@ -33,11 +36,11 @@ do-install:
 	cd ${WRKSRC} && for d in ${CLASS_SUBDIRS}; do \
 		${PAX} -rw $$d ${STAGEDIR}${PREFIX}/${CLASSDIR}; \
 	done
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && for d in ${DOC_SUBDIRS}; do \
 		${PAX} -rw $$d ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
 .include <bsd.port.mk>

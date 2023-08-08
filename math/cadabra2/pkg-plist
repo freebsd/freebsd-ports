@@ -22,10 +22,12 @@ bin/cdb-nbtool
 %%PYTHON_SITELIBDIR%%/cdb/core/solve.cnb
 %%PYTHON_SITELIBDIR%%/cdb/core/trace.cnb
 %%PYTHON_SITELIBDIR%%/cdb/gauge_theory/instantons.cnb
+%%PYTHON_SITELIBDIR%%/cdb/graphics/plot.cnb
 %%PYTHON_SITELIBDIR%%/cdb/numeric/evaluate.cnb
 %%PYTHON_SITELIBDIR%%/cdb/numeric/integrate.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/abstract.cnb
 %%PYTHON_SITELIBDIR%%/cdb/relativity/schwarzschild.cnb
+%%PYTHON_SITELIBDIR%%/cdb/sympy/calculus.cnb
 %%PYTHON_SITELIBDIR%%/cdb/sympy/solvers.cnb
 %%PYTHON_SITELIBDIR%%/cdb/utils/_algorithm%%_PY_SONAME%%.so
 %%PYTHON_SITELIBDIR%%/cdb/utils/develop.cnb

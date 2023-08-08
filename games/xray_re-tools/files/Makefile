@@ -1,5 +1,6 @@
 CXXFLAGS+=	-Wall -Wextra
-CPPFLAGS+=	-Ixray_re -Iutils/converter/opcode -I3rd-party/nvtt -I$(LOCALBASE)/include
+CPPFLAGS+=	-Ixray_re -Iutils/converter/opcode -I3rd-party/nvtt \
+		-I3rd-party/nvtt/../extern/poshlib -I$(LOCALBASE)/include
 LDFLAGS+=	-L$(LOCALBASE)/lib
 
 xray_re_OBJS=	xray_re/xr_ai_cross_table.o \

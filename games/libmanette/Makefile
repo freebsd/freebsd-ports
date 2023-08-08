@@ -19,8 +19,6 @@ USES=		compiler:c11 gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 
-MESON_ARGS=	-Dgudev=enabled
-
 OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 OPTIONS_SUB=	yes
 

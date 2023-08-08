@@ -1,0 +1,9 @@
+--- data/shiboken6.pc.in.orig	2020-12-13 08:07:53 UTC
++++ data/shiboken6.pc.in
+@@ -9,5 +9,5 @@ python_include_dir=@PYTHON_INCLUDE_DIRS@
+ Name: shiboken6
+ Description: Support library for Python bindings created with the Shiboken6 generator.
+ Version: @shiboken6_VERSION@
+-Libs: @SHIBOKEN_PYTHON_LIBRARIES@ -L${libdir} -lshiboken6@shiboken6_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@
++Libs: @SHIBOKEN_PYTHON_LIBRARIES@ -L${libdir} -lshiboken6@shiboken6_SUFFIX@@PYTHON_SHARED_LIBRARY_SUFFIX@@LIBRARY_OUTPUT_SUFFIX@ -lexecinfo
+ Cflags: -I@PYTHON_INCLUDE_DIRS@ -I${includedir}/@shiboken6_SUFFIX@@SBK_PKG_CONFIG_PY_DEBUG_DEFINITION@

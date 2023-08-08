@@ -1,6 +1,7 @@
 PORTNAME=	nanovna-saver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
@@ -16,7 +17,7 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.3+ pyqt:5
+USES=		python pyqt:5
 USE_PYTHON=	distutils autoplist noflavors
 
 USE_GITHUB=	yes

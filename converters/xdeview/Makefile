@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libuu.so:converters/uulib
 
-USES=		desthack tk
+USES=		desthack localbase:ldflags tk
+
 GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
 # crud from the $PATH like /usr/opt/Simili/tcl/.
@@ -23,16 +24,20 @@ ALL_TARGET=	xdeview
 INSTALL_TARGET=	install-tcl
 
 CPPFLAGS+=	-I${TCL_INCLUDEDIR} -DHAVE_TCL \
-		-I${TK_INCLUDEDIR} -DHAVE_TK \
-		-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib \
-		-lX11 -ltcl${TCL_VER:S/.//} \
+		-I${TK_INCLUDEDIR} -DHAVE_TK
+LDFLAGS+=	-lX11 -ltcl${TCL_VER:S/.//} \
 		-ltk${TCL_VER:S/.//} -lm
 
-PORTDOCS=	*
 PLIST_FILES=	bin/uuwish bin/xdeview man/man1/xdeview.1.gz
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/uuwish

@@ -1,5 +1,5 @@
 PORTNAME=	protocol-http
-PORTVERSION=	0.23.12
+PORTVERSION=	0.24.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/socketry/protocol-http
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

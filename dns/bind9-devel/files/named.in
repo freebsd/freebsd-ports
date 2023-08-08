@@ -309,6 +309,24 @@ rndc()
 
 named_prestart()
 {
+	# Is the user using a sandbox?
+	#
+	if [ -n "${named_chrootdir}" ]; then
+		rc_flags="${rc_flags} -t ${named_chrootdir}"
+		checkyesno named_chroot_autoupdate && chroot_autoupdate
+
+		case "${altlog_proglist}" in
+		  *named*)
+		    ;;
+		  *)
+		    warn 'Using chroot without setting altlog_proglist, logging may not'
+		    warn 'work correctly.  Run sysrc altlog_proglist+=named'
+		    ;;
+		esac
+	else
+		named_symlink_enable=NO
+	fi
+
 	find_pidfile
 	find_sessionkeyfile
 
@@ -333,24 +351,6 @@ named_prestart()
 	command_args="-u ${named_uid:=root} -c ${named_conf} ${command_args}"
 
 	local line nsip firstns
-
-	# Is the user using a sandbox?
-	#
-	if [ -n "${named_chrootdir}" ]; then
-		rc_flags="${rc_flags} -t ${named_chrootdir}"
-		checkyesno named_chroot_autoupdate && chroot_autoupdate
-
-		case "${altlog_proglist}" in
-		  *named*)
-		    ;;
-		  *)
-		    warn 'Using chroot without setting altlog_proglist, logging may not'
-		    warn 'work correctly.  Run sysrc altlog_proglist+=named'
-		    ;;
-		esac
-	else
-		named_symlink_enable=NO
-	fi
 
 	# Create an rndc.key file for the user if none exists
 	#

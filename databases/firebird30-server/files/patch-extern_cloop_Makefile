@@ -1,4 +1,4 @@
---- extern/cloop/Makefile	2020-10-12 00:02:22 UTC
+--- extern/cloop/Makefile.orig	2022-06-07 08:18:52 UTC
 +++ extern/cloop/Makefile
 @@ -6,7 +6,7 @@ TARGET	:= release
  
@@ -9,7 +9,7 @@
  
  SRC_DIR		:= src
  BUILD_DIR	:= build
-@@ -27,8 +27,9 @@ SRCS_CPP := $(foreach sdir,$(SRC_DIRS),$
+@@ -27,8 +27,9 @@ SRCS_CPP := $(foreach sdir,$(SRC_DIRS),$(wildcard $(sd
  OBJS_C := $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS_C))
  OBJS_CPP := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS_CPP))
  
@@ -21,4 +21,3 @@
  FPC_FLAGS := -Mdelphi
  
  ifeq ($(TARGET),release)
-

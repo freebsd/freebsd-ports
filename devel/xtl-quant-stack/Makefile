@@ -1,5 +1,5 @@
 PORTNAME=	xtl
-DISTVERSION=	0.7.4
+DISTVERSION=	0.7.5
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-quant-stack
 
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
 RUN_DEPENDS=	nlohmann-json>0:devel/nlohmann-json
-TEST_DEPENDS=	nlohmann-json>0:devel/nlohmann-json \
+TEST_DEPENDS=	doctest>0:devel/doctest \
+		nlohmann-json>0:devel/nlohmann-json \
 		googletest>0:devel/googletest
 
 USES=		cmake

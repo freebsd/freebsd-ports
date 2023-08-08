@@ -1,10 +1,10 @@
 PORTNAME=	magia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	6
+PORTREVISION=	13
 CATEGORIES=	emulators
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GBA emulator written in golang
 WWW=		https://github.com/pokemium/magia
 

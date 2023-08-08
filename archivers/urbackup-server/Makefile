@@ -1,10 +1,10 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server component of the UrBackup backup system
 WWW=		https://www.urbackup.org
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		liblmdb.so:databases/lmdb
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse \
-		libtool lua:53+ pkgconfig sqlite:3
+		libtool lua:53 pkgconfig sqlite:3
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.am
 USE_RC_SUBR=	urbackup_server
 

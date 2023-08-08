@@ -12,6 +12,8 @@ WWW=		http://www.citi.umich.edu/u/provos/honeyd/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile
+
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libdnet.so:net/libdnet \
 		libpcre.so:devel/pcre
@@ -33,6 +35,10 @@ CONFIGURE_ARGS+=	--without-python
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=int-conversion
+.endif
 
 .if !defined(WITH_PYTHON)
 pre-everything::

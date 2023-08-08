@@ -1,6 +1,6 @@
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.7
+DISTVERSION=	1.15.6-3
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -8,9 +8,10 @@ COMMENT=	Rewrite of the pass password manager in Go
 WWW=		https://www.gopass.pw/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	upstream only supports amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7
+ONLY_FOR_ARCHS_REASON=	upstream only supports ${ONLY_FOR_ARCHS}
 
 RUN_DEPENDS=	git:devel/git \
 		gpg2:security/gnupg
@@ -21,7 +22,9 @@ USES=		go:modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	gopasspw:password-store-example:8db75ba3b69c:password_store_example
 
-GO_MODULE=	github.com/gopasspw/gopass
+# v1.15.6-3-g8c666a93, fix go module
+# See also: https://github.com/gopasspw/gopass/commit/8c666a93d844015cca992be0ab0c39992bb096ed
+GO_MODULE=	github.com/gopasspw/gopass@v0.0.0-20230801080807-8c666a93d844
 
 PORTDOCS=	README.md docs/*
 PORTEXAMPLES=	*

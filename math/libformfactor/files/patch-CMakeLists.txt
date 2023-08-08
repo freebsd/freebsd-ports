@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2023-01-24 07:39:32 UTC
++++ CMakeLists.txt
+@@ -42,7 +42,9 @@ message(STATUS "LibHeinz: found=${LibHeinz_FOUND}, inc
+ include(CTest)
+ 
+ add_subdirectory(ff)
++if (BUILD_TESTING)
+ add_subdirectory(test)
++endif()
+ 
+ ## CPack settings.
+ 

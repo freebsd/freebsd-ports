@@ -1,9 +1,0 @@
-http://www.vdr-wiki.de/wiki/index.php/Live-plugin
-
-Live, the "Live Interactive VDR Environment", is a plugin providing the
-possibility to interactively control the VDR and some of it's plugins by
-a web interface.
-
-Unlike external utility programs that communicate with VDR and it's plugins
-by SVDRP, Live has direct access to VDR's data structures and is thus very
-fast.

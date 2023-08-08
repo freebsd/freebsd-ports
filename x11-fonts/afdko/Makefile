@@ -1,5 +1,5 @@
 PORTNAME=	afdko
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.6
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/adobe-type-tools/afdko/releases/download/${PORTVERSION}/
 

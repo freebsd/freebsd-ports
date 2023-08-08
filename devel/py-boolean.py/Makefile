@@ -1,7 +1,7 @@
 PORTNAME=	boolean.py
-DISTVERSION=	3.8
+DISTVERSION=	4.0
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
@@ -11,8 +11,8 @@ WWW=		https://github.com/bastikr/boolean.py
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
 PORTDOCS=	*
@@ -26,8 +26,5 @@ post-install-DOCS-on:
 	(cd ${WRKSRC}/build/sphinx/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 			"! -name .buildinfo -and ! -name objects.inv")
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>

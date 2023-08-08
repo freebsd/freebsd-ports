@@ -1,7 +1,7 @@
 PORTNAME=	mulpyplexer
 DISTVERSION=	0.09
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	0mp@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/mulpyplexer/
 LICENSE=	BSD2CLAUSE
 # License file available here: https://github.com/zardus/mulpyplexer
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

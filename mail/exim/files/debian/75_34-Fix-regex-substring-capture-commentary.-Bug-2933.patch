@@ -1,0 +1,48 @@
+From 9ba47886c71d40edc99b026a99edee269d9c9c6f Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sat, 12 Nov 2022 12:38:22 +0000
+Subject: [PATCH] Fix regex substring capture - commentary.  Bug 2933
+
+Broken-by (corrected): 22ed7a5295f1
+---
+ src/exim.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/src/exim.c b/src/exim.c
+index 16c0184e0..625494ce4 100644
+--- a/src/exim.c
++++ b/src/exim.c
+@@ -102,11 +102,13 @@ pcre_gen_mtc_ctx = pcre2_match_context_create(pcre_gen_ctx);
+ *   Execute regular expression and set strings   *
+ *************************************************/
+ 
+ /* This function runs a regular expression match, and sets up the pointers to
+ the matched substrings.  The matched strings are copied so the lifetime of
+-the subject is not a problem.
++the subject is not a problem.  Matched strings will have the same taint status
++as the subject string (this is not a de-taint method, and must not be made so
++given the support for wildcards in REs).
+ 
+ Arguments:
+   re          the compiled expression
+   subject     the subject string
+   options     additional PCRE options
+@@ -130,10 +132,15 @@ if ((yield = (res >= 0)))
+   PCRE2_SIZE * ovec = pcre2_get_ovector_pointer(md);
+   res = pcre2_get_ovector_count(md);
+   expand_nmax = setup < 0 ? 0 : setup + 1;
+   for (int matchnum = setup < 0 ? 0 : 1; matchnum < res; matchnum++)
+     {
++    /* Although PCRE2 has a pcre2_substring_get_bynumber() conveneience, it
++    seems to return a bad pointer when a capture group had no data, eg. (.*)
++    matching zero letters.  So use the underlying ovec and hope (!) that the
++    offsets are sane (including that case).  Should we go further and range-
++    check each one vs. the subject string length? */
+     int off = matchnum * 2;
+     int len = ovec[off + 1] - ovec[off];
+     expand_nstring[expand_nmax] = string_copyn(subject + ovec[off], len);
+     expand_nlength[expand_nmax++] = len;
+     }
+-- 
+2.35.1
+

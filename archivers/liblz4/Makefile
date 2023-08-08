@@ -12,7 +12,7 @@ WWW=		https://lz4.github.io/lz4/
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-USES=		cpe meson pkgconfig python:3.5+,build shebangfix
+USES=		cpe meson pkgconfig python:build shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 CPE_VENDOR=	lz4_project

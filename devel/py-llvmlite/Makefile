@@ -1,7 +1,8 @@
 PORTNAME=	llvmlite
 DISTVERSION=	0.39.1
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dave@dal.ca
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
 
-USES=		compiler:c++11-lib python:3.6+ fortran
+USES=		compiler:c++11-lib python fortran
 USE_PYTHON=	distutils autoplist pytest
 
 CXXFLAGS=	-fPIC

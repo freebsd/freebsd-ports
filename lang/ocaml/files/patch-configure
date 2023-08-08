@@ -1,77 +1,100 @@
---- configure.orig	2017-07-13 08:56:44 UTC
+--- configure.orig	2019-08-05 17:32:44 UTC
 +++ configure
-@@ -838,6 +838,7 @@ if test $with_sharedlibs = "yes"; then
-     x86_64-*-darwin*)             natdynlink=true;;
-     s390x*-*-linux*)              natdynlink=true;;
-     powerpc*-*-linux*)            natdynlink=true;;
-+    powerpc*-*-freebsd*)          natdynlink=true;;
-     i686-*-kfreebsd*)             natdynlink=true;;
-     x86_64-*-kfreebsd*)           natdynlink=true;;
-     x86_64-*-dragonfly*)          natdynlink=true;;
-@@ -854,6 +855,7 @@ if test $with_sharedlibs = "yes"; then
-     arm*-*-freebsd*)              natdynlink=true;;
-     earm*-*-netbsd*)              natdynlink=true;;
-     aarch64-*-linux*)             natdynlink=true;;
-+    aarch64-*-freebsd*)           natdynlink=true;;
-   esac
- fi
+@@ -9857,7 +9857,7 @@ fi
  
-@@ -921,6 +923,10 @@ case "$target" in
-   powerpc*-*-linux*)            arch=power;
-                                 if $arch64; then model=ppc64; else model=ppc; fi
-                                 system=elf;;
-+  powerpc64le*-*-freebsd*)      arch=power; model=ppc64le; system=bsd_elf;;
-+  powerpc*-*-freebsd*)          arch=power;
-+                                if $arch64; then model=ppc64; else model=ppc; fi
-+                                system=bsd_elf;;
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=netbsd;;
-   powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd_elf;;
-   s390x*-*-linux*)              arch=s390x; model=z10; system=elf;;
-@@ -930,6 +936,7 @@ case "$target" in
-   armv6t2*-*-linux-gnueabi)     arch=arm; model=armv6t2; system=linux_eabi;;
-   armv6*-*-linux-gnueabi)       arch=arm; model=armv6; system=linux_eabi;;
-   armv6*-*-freebsd*)            arch=arm; model=armv6; system=freebsd;;
-+  armv7*-*-freebsd*)            arch=arm; model=armv7; system=freebsd;;
-   earmv6*-*-netbsd*)            arch=arm; model=armv6; system=netbsd;;
-   earmv7*-*-netbsd*)            arch=arm; model=armv7; system=netbsd;;
-   armv5te*-*-linux-gnueabi)     arch=arm; model=armv5te; system=linux_eabi;;
-@@ -946,6 +953,7 @@ case "$target" in
-   x86_64-*-darwin*)             arch=amd64; system=macosx;;
-   x86_64-*-mingw*)              arch=amd64; system=mingw;;
-   aarch64-*-linux*)             arch=arm64; system=linux;;
-+  aarch64-*-freebsd*)           arch=arm64; system=freebsd;;
-   x86_64-*-cygwin*)             arch=amd64; system=cygwin;;
+     # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
+     freebsd* | dragonfly*)
+-      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
++      archive_cmds='$CC -shared $pic_flag -o $lib $LDFLAGS $libobjs $deplibs $compiler_flags'
+       hardcode_libdir_flag_spec='-R$libdir'
+       hardcode_direct=yes
+       hardcode_shlibpath_var=no
+@@ -13342,7 +13342,7 @@ esac ;; #(
+   *-*-linux*|*-*-freebsd[3-9]*|*-*-freebsd[1-9][0-9]*\
+     |*-*-openbsd*|*-*-netbsd*|*-*-dragonfly*|*-*-gnu*|*-*-haiku*) :
+     sharedlib_cflags="-fPIC"
+-      mksharedlib="$CC -shared"
++      mksharedlib="$CC -shared $LDFLAGS"
+       oc_ldflags="$oc_ldflags -Wl,-E"
+       rpath="-Wl,-rpath,"
+       mksharedlibrpath="-Wl,-rpath,"
+@@ -13385,6 +13385,8 @@ fi ;; #(
+     natdynlink=true ;; #(
+   powerpc*-*-linux*) :
+     natdynlink=true ;; #(
++  powerpc*-*-freebsd*) :
++    natdynlink=true ;; #(
+   i686-*-kfreebsd*) :
+     natdynlink=true ;; #(
+   x86_64-*-kfreebsd*) :
+@@ -13395,6 +13397,8 @@ fi ;; #(
+     natdynlink=true ;; #(
+   x86_64-*-freebsd*) :
+     natdynlink=true ;; #(
++  amd64-*-freebsd*) :
++    natdynlink=true ;; #(
+   i[3456]86-*-openbsd*) :
+     natdynlink=true ;; #(
+   x86_64-*-openbsd*) :
+@@ -13415,6 +13419,8 @@ fi ;; #(
+     natdynlink=true ;; #(
+   aarch64-*-linux*) :
+     natdynlink=true ;; #(
++  aarch64-*-freebsd*) :
++    natdynlink=true ;; #(
+   *) :
+      ;;
  esac
- 
-@@ -1086,10 +1094,13 @@ case "$arch,$system" in
-   i386,macosx) profiling='true';;
-   amd64,linux) profiling='true';;
-   amd64,openbsd) profiling='true';;
-+  amd64,dragonfly) profiling='true';;
-   amd64,freebsd) profiling='true';;
-   amd64,netbsd) profiling='true';;
-   arm,netbsd) profiling='true';;
-   amd64,gnu) profiling='true';;
-+  arm64,freebsd) profiling='true';;
-+  arm,freebsd) profiling='true';;
-   arm,linux*) profiling='true';;
-   power,elf) profiling='true';;
-   power,bsd*) profiling='true';;
-@@ -2029,7 +2037,7 @@ MKLIB=${TOOLPREF}ar rc \$(1) \$(2); ${TOOLPREF}ranlib
- #ml   Printf.sprintf "${TOOLPREF}ar rc %s %s %s && ${TOOLPREF}ranlib %s"
- #ml                  out opts files out;;
- EOF
--config ARCH "$arch"
-+config SYSTEM_ARCH "$arch"
- config MODEL "$model"
- config SYSTEM "$system"
- config OCAMLOPT_CFLAGS "$common_cflags"
-@@ -2112,7 +2122,7 @@ config NATDYNLINK "$natdynlink"
- config CMXS "$cmxs"
- config MKEXE "$mkexe"
- config MKEXEDEBUGFLAG "$mkexedebugflag"
--config MKDLL "$mksharedlib"
-+config MKDLL "$mksharedlib \$(LDFLAGS)"
- config MKMAINDLL "$mkmaindll"
- config RUNTIMED "${debugruntime}"
- config RUNTIMEI "${with_instrumented_runtime}"
+@@ -13488,6 +13494,14 @@ fi; system=elf ;; #(
+ else
+   model=ppc
+ fi; system=elf ;; #(
++  powerpc64le*-*-freebsd*) :
++    arch=power; model=ppc64le; system=bsd_elf;; #(
++  powerpc*-*-freebsd*) :
++    arch=power; if $arch64; then :
++  model=ppc64
++else
++  model=ppc
++fi; system=bsd_elf ;; #(
+   powerpc-*-netbsd*) :
+     arch=power; model=ppc; system=netbsd ;; #(
+   powerpc-*-openbsd*) :
+@@ -13510,6 +13524,8 @@ fi; system=elf ;; #(
+     arch=arm; model=armv6; system=linux_eabi ;; #(
+   armv6*-*-freebsd*) :
+     arch=arm; model=armv6; system=freebsd ;; #(
++  armv7*-*-freebsd*) :
++    arch=arm; model=armv7; system=freebsd ;; #(
+   earmv6*-*-netbsd*) :
+     arch=arm; model=armv6; system=netbsd ;; #(
+   earmv7*-*-netbsd*) :
+@@ -13544,6 +13560,8 @@ fi; system=elf ;; #(
+     arch=amd64; system=mingw64 ;; #(
+   aarch64-*-linux*) :
+     arch=arm64; system=linux ;; #(
++  aarch64-*-freebsd*) :
++    arch=arm64; system=freebsd ;; #(
+   x86_64-*-cygwin*) :
+     arch=amd64; system=cygwin
+  ;; #(
+@@ -13714,6 +13732,8 @@ case "$arch,$system" in #(
+     profiling=true ;; #(
+   amd64,openbsd) :
+     profiling=true ;; #(
++  amd64,dragonfly) :
++    profiling=true ;; #(
+   amd64,freebsd) :
+     profiling=true ;; #(
+   amd64,netbsd) :
+@@ -13721,6 +13741,10 @@ case "$arch,$system" in #(
+   arm,netbsd) :
+     profiling=true ;; #(
+   amd64,gnu) :
++    profiling=true ;; #(
++  arm64,freebsd*) :
++    profiling=true ;; #(
++  arm,freebsd*) :
+     profiling=true ;; #(
+   arm,linux*) :
+     profiling=true ;; #(

@@ -1,5 +1,5 @@
 PORTNAME=	squid
-DISTVERSION=	5.6
+DISTVERSION=	5.9
 CATEGORIES=	www
 MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v5/ \
 		http://www1.il.squid-cache.org/Versions/v5/ \
@@ -58,7 +58,7 @@ OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS \
 		WCCPV2
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
-AUTH_LDAP_USE=			OPENLDAP=yes
+AUTH_LDAP_USES=			ldap
 AUTH_LDAP_VARS=			BASIC_AUTH+=LDAP DIGEST_AUTH+="eDirectory LDAP" EXTERNAL_ACL+="LDAP_group eDirectory_userip"
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 AUTH_SASL_VARS=			BASIC_AUTH+=SASL

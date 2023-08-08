@@ -7,12 +7,12 @@ share/applications/org.kde.ksirk.desktop
 share/applications/org.kde.ksirkskineditor.desktop
 share/config.kcfg/ksirksettings.kcfg
 share/config.kcfg/ksirkskineditorsettings.kcfg
+share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/16x16/apps/ksirk.png
 share/icons/hicolor/22x22/apps/ksirk.png
 share/icons/hicolor/32x32/apps/ksirk.png
 share/icons/hicolor/48x48/apps/ksirk.png
 share/icons/hicolor/64x64/apps/ksirk.png
-share/icons/hicolor/128x128/apps/ksirk.png
 share/icons/hicolor/scalable/apps/ksirk.svgz
 share/knsrcfiles/ksirk.knsrc
 %%DATADIR%%/jabber.png
@@ -91,6 +91,7 @@ share/locale/ga/LC_MESSAGES/ksirkskineditor.mo
 share/locale/gl/LC_MESSAGES/ksirk.mo
 share/locale/gl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/hi/LC_MESSAGES/ksirk.mo
+share/locale/hne/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirkskineditor.mo
 share/locale/hu/LC_MESSAGES/ksirk.mo
@@ -101,6 +102,8 @@ share/locale/it/LC_MESSAGES/ksirk.mo
 share/locale/it/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ja/LC_MESSAGES/ksirk.mo
 share/locale/ja/LC_MESSAGES/ksirkskineditor.mo
+share/locale/ka/LC_MESSAGES/ksirk.mo
+share/locale/ka/LC_MESSAGES/ksirkskineditor.mo
 share/locale/kk/LC_MESSAGES/ksirk.mo
 share/locale/kk/LC_MESSAGES/ksirkskineditor.mo
 share/locale/km/LC_MESSAGES/ksirk.mo
@@ -109,10 +112,13 @@ share/locale/lt/LC_MESSAGES/ksirk.mo
 share/locale/lt/LC_MESSAGES/ksirkskineditor.mo
 share/locale/lv/LC_MESSAGES/ksirk.mo
 share/locale/lv/LC_MESSAGES/ksirkskineditor.mo
+share/locale/mai/LC_MESSAGES/ksirk.mo
+share/locale/mai/LC_MESSAGES/ksirkskineditor.mo
 share/locale/ml/LC_MESSAGES/ksirk.mo
 share/locale/ml/LC_MESSAGES/ksirkskineditor.mo
 share/locale/mr/LC_MESSAGES/ksirk.mo
 share/locale/mr/LC_MESSAGES/ksirkskineditor.mo
+share/locale/ms/LC_MESSAGES/ksirk.mo
 share/locale/nb/LC_MESSAGES/ksirk.mo
 share/locale/nb/LC_MESSAGES/ksirkskineditor.mo
 share/locale/nds/LC_MESSAGES/ksirk.mo
@@ -121,6 +127,7 @@ share/locale/nl/LC_MESSAGES/ksirk.mo
 share/locale/nl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/nn/LC_MESSAGES/ksirk.mo
 share/locale/nn/LC_MESSAGES/ksirkskineditor.mo
+share/locale/oc/LC_MESSAGES/ksirk.mo
 share/locale/pl/LC_MESSAGES/ksirk.mo
 share/locale/pl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/pt/LC_MESSAGES/ksirk.mo
@@ -137,6 +144,12 @@ share/locale/sl/LC_MESSAGES/ksirk.mo
 share/locale/sl/LC_MESSAGES/ksirkskineditor.mo
 share/locale/sr/LC_MESSAGES/ksirk.mo
 share/locale/sr/LC_MESSAGES/ksirkskineditor.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ksirk.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ksirkskineditor.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ksirk.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ksirkskineditor.mo
+share/locale/sr@latin/LC_MESSAGES/ksirk.mo
+share/locale/sr@latin/LC_MESSAGES/ksirkskineditor.mo
 share/locale/sv/LC_MESSAGES/ksirk.mo
 share/locale/sv/LC_MESSAGES/ksirkskineditor.mo
 share/locale/tr/LC_MESSAGES/ksirk.mo

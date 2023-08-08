@@ -91,6 +91,7 @@ include/RMF/internal/use.h
 include/RMF/keys.h
 include/RMF/log.h
 include/RMF/names.h
+include/RMF/numpy_util.h
 include/RMF/show_hierarchy.h
 include/RMF/signature.h
 include/RMF/traits.h
@@ -98,4 +99,4 @@ include/RMF/types.h
 include/RMF/utility.h
 include/RMF/validate.h
 lib/libRMF.so
-lib/libRMF.so.1.4
+lib/libRMF.so.1.5

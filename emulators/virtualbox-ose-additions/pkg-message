@@ -14,7 +14,7 @@ In some situations, a panic will occur when the kernel module loads.
 Having no more than one virtual CPU might mitigate the issue.
 
 For features such as window scaling and clipboard sharing, membership of
-the wheel group is required. With username jerry as an example:
+the wheel group is required. With username "jerry" as an example:
 
 # pw groupmod wheel -m jerry
 
@@ -30,7 +30,7 @@ Where Guest Additions are installed:
 2. do not enable 3D acceleration (doing so will invisibly
    lose the preference for VBoxSVGA)
 
-– you may ignore the yellow alert that encourages use of VMSVGA.
+You may ignore the yellow alert that encourages use of VMSVGA.
 EOM
 }
 ]

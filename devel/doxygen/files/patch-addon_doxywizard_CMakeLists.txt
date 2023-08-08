@@ -1,6 +1,6 @@
---- addon/doxywizard/CMakeLists.txt
+--- addon/doxywizard/CMakeLists.txt.orig	2022-08-24 15:18:42 UTC
 +++ addon/doxywizard/CMakeLists.txt
-@@ -132,12 +132,12 @@ if(Qt5Core_FOUND)
+@@ -182,12 +182,12 @@ if(Qt5Core_FOUND)
  endif()
  
  if(Qt5Core_FOUND)

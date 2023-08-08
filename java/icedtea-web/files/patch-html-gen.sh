@@ -1,4 +1,4 @@
---- html-gen.sh.orig	2016-02-03 13:47:43 UTC
+--- html-gen.sh.orig	2021-05-17 09:24:37 UTC
 +++ html-gen.sh
 @@ -74,7 +74,7 @@ else
      unset REPO_URL
@@ -9,7 +9,7 @@
  
  if [ ! -e html-gen ]; then
  	echo "No html-gen directory, exiting. See Makefile.am for usage"
-@@ -168,7 +168,7 @@ done
+@@ -170,7 +170,7 @@ done
  
  sed -i -r 's|(\*\ .*):|<u>\1</u>:|' ChangeLog.html # Underline changed files in ChangeLog, eg "* Makefile.am:"
  

@@ -3,22 +3,28 @@ PORTVERSION=	1.20
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.physcip.uni-stuttgart.de/pages/~phy11733/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Three-dimensional fractal creator (command line only)
 WWW=		https://www.physcip.uni-stuttgart.de/pages/~phy11733/index_e.html
 
 LICENSE=	GPLv2+
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gui \
 		--datadir=${PREFIX}/share/doc
 
-PORTDOCS=	*
 PLIST_FILES=	bin/quat-txt
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS DOCS
 
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E -e \

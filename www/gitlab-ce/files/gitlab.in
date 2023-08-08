@@ -98,12 +98,7 @@ gitaly_enabled=true
 gitaly_dir="%%PREFIX%%/share/gitaly"
 gitaly_pid_path="$pid_path/gitaly.pid"
 gitaly_log="$app_root/log/gitaly.log"
-
-if [ -z "$SIDEKIQ_WORKERS" ]; then
-  sidekiq_pid_path="$pid_path/sidekiq.pid"
-else
-  sidekiq_pid_path="$pid_path/sidekiq-cluster.pid"
-fi
+sidekiq_pid_path="$pid_path/sidekiq-cluster.pid"
 
 ### Init Script functions
 ## Gets the pids from the files
@@ -204,12 +199,6 @@ gitlab_init(){
       exit 1
     fi
     chown git "${app_root}"/Gemfile.lock
-    # echo "Regenerate Gitaly Gemfile.lock"
-    rm -f "${gitaly_dir}"/ruby/Gemfile.lock
-    if ! su -l root -c "cd ${gitaly_dir}/ruby && %%LOCALBASE%%/bin/bundle install --local --quiet"; then
-      echo "Could not create Gemfile.lock for gitaly, please report this using FreeBSD Bugtracker, https://bugs.freebsd.org/"
-      exit 1
-    fi
 
     eval su - "$app_user" -c $(echo \")%%LOCALBASE%%/etc/rc.d/gitlab "${service_args}"$(echo \"); exit;
   fi

@@ -1,5 +1,5 @@
 PORTNAME=	emoji_regex
-PORTVERSION=	3.2.3
+PORTVERSION=	15.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

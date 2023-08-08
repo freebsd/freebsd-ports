@@ -1,12 +1,11 @@
---- src/openrct2/config/Config.cpp.orig	2018-08-26 20:20:13 UTC
+--- src/openrct2/config/Config.cpp.orig	2023-03-28 15:48:53 UTC
 +++ src/openrct2/config/Config.cpp
-@@ -650,6 +650,9 @@ namespace Config
-      */
-     static std::string FindRCT2Path()
+@@ -686,6 +686,8 @@ namespace Config
      {
-+
-+	return "%%DATADIR%%";
-+
-         log_verbose("config_find_rct2_path(...)");
+         LOG_VERBOSE("config_find_rct2_path(...)");
  
-         static constexpr const utf8* searchLocations[] = {
++        return "%%DATADIR%%";
++
+         static constexpr u8string_view searchLocations[] = {
+             R"(C:\Program Files\Steam\steamapps\common\Rollercoaster Tycoon 2)",
+             R"(C:\Program Files (x86)\Steam\steamapps\common\Rollercoaster Tycoon 2)",

@@ -1,5 +1,5 @@
 PORTNAME=	sg3_utils
-DISTVERSION=	1.47
+DISTVERSION=	1.48
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 
@@ -17,6 +17,8 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/*
 
 GNU_CONFIGURE=	yes
+
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 post-install:
 		@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsgutils2*.so.*

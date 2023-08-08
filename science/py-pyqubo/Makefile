@@ -1,5 +1,6 @@
 PORTNAME=	pyqubo
-DISTVERSION=	1.2.0
+DISTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,8 +17,6 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.10:devel/py-deprecated@${PY_F
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15.0:devel/py-six@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}codecov>=2.1.9:devel/py-codecov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.1:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbsphinx>=0.8.3:textproc/py-nbsphinx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0.11.1:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.36.2:devel/py-wheel@${PY_FLAVOR} \
@@ -28,8 +27,10 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 		pybind11>0:devel/pybind11 \
 		robin-hood-hashing>0:devel/robin-hood-hashing
 RUN_DEPENDS=	${PY_DEPENDS}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.1.9:devel/py-codecov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.1:devel/py-coverage@${PY_FLAVOR}
 
-USES=		eigen:3 python:3.8+
+USES=		eigen:3 python
 USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes

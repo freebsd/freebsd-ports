@@ -1,7 +1,8 @@
 PORTNAME=	pyramid-mako
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyramid_mako-${PORTVERSION}
 
@@ -14,14 +15,13 @@ LICENSE_NAME=	Repoze Public License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>=0.8:textproc/py-mako@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>=1.1.0:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyramid>=0:www/py-pyramid@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}WebTest>=1.3.1:www/py-WebTest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}webtest>=1.3.1:www/py-webtest@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

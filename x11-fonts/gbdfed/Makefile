@@ -1,6 +1,6 @@
 PORTNAME=	gbdfed
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://sofia.nmsu.edu/~mleisher/Software/gbdfed/
 

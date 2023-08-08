@@ -1,0 +1,4 @@
+Standalone xxd utility from the vim editor distribution.
+
+Xxd creates an hex dump of a given file or standard input.
+It can also convert a hex dump back to its original binary form.

@@ -1,0 +1,2 @@
+ml_dtypes is a stand-alone implementation of several NumPy dtype extensions used
+in machine learning libraries.

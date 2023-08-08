@@ -34,6 +34,16 @@ PORTDOCS=	README-stereo.txt README.txt DATA_AUTHORS.txt
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+# The following is actually meant for lld 15.0 and later, but the ports
+# framework does not support LINKER_TYPE and LINKER_VERSION yet.
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+# Turn off checking of dynamic relocations, to avoid lld diagnostics about
+# possibly incorrect addend values.
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Trigger/main.cpp
 
@@ -53,4 +63,4 @@ do-install:
 	${MV} ${STAGEDIR}${DATADIR}/icon/trigger-rally-icons.svg \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/trigger-rally-icons.svg
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

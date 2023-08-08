@@ -1,11 +1,12 @@
 PORTNAME=	opennebula
-PORTVERSION=	6.4.1
+PORTVERSION=	6.6.2
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libraries needed to talk to OpenNebula
-WWW=		https://opennebula.io/
+WWW=		https://opennebula.io/ \
+		https://github.com/OpenNebula/one
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,7 +20,6 @@ RUN_DEPENDS=	rubygem-ipaddress>=0:net/rubygem-ipaddress \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

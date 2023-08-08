@@ -1,0 +1,154 @@
+--- configure.ac.orig	2021-09-11 04:43:11 UTC
++++ configure.ac
+@@ -101,6 +101,8 @@ AC_CHECK_FUNC(sin,,[AC_CHECK_LIB(m,sin)])
+ AX_PTHREAD()
+ AX_OPENMP()
+ 
++AM_CONDITIONAL([HAVE_PTHREAD], [test "x$ax_pthread_ok" = "xyes"])
++
+ dnl We should default this to off in future releases.
+ AC_MSG_CHECKING([whether to support gd image formats])
+ AC_ARG_ENABLE([gd-formats],
+--- src/Makefile.am.orig	2021-09-11 04:43:11 UTC
++++ src/Makefile.am
+@@ -129,4 +129,9 @@ libgd_la_LDFLAGS = -version-info $(GDLIB_LT_CURRENT):$
+ 
+ libgd_la_LIBADD = $(LTLIBICONV)
+ 
++if HAVE_PTHREAD
++libgd_la_SOURCES += \
++	gdinitfini.c
++endif
++
+ LDADD = libgd.la $(LIBICONV)
+--- src/gdft.c.orig	2021-09-11 04:43:11 UTC
++++ src/gdft.c
+@@ -890,7 +890,17 @@ BGD_DECLARE(void) gdFreeFontCache ()
+  */
+ BGD_DECLARE(void) gdFontCacheShutdown ()
+ {
++#if defined(HAVE_PTHREAD)
++	/* referring to bundled with php */
++	gdMutexLock(gdFontCacheMutex);
+ 	if (fontCache) {
++		gdCacheDelete(fontCache);
++		fontCache = NULL;
++		FT_Done_FreeType(library);
++	}
++	gdMutexUnlock(gdFontCacheMutex);
++#else
++	if (fontCache) {
+ 		gdMutexLock(gdFontCacheMutex);
+ 		gdCacheDelete (fontCache);
+ 		/* 2.0.16: Gustavo Scotti: make sure we don't free this twice */
+@@ -899,6 +909,7 @@ BGD_DECLARE(void) gdFontCacheShutdown ()
+ 		gdMutexShutdown (gdFontCacheMutex);
+ 		FT_Done_FreeType (library);
+ 	}
++#endif
+ }
+ 
+ /**
+@@ -948,11 +959,18 @@ BGD_DECLARE(int) gdFontCacheSetup (void)
+ 		/* Already set up */
+ 		return 0;
+ 	}
++#if defined(HAVE_PTHREAD)
++	/* referring to bundled with php */
++	if (FT_Init_FreeType (&library)) {
++		return -1;
++	}
++#else
+ 	gdMutexSetup (gdFontCacheMutex);
+ 	if (FT_Init_FreeType (&library)) {
+ 		gdMutexShutdown (gdFontCacheMutex);
+ 		return -1;
+ 	}
++#endif
+ 	fontCache = gdCacheCreate (FONTCACHESIZE, fontTest, fontFetch, fontRelease);
+ 	if (!fontCache) {
+ 		return -2;
+@@ -1144,6 +1162,10 @@ BGD_DECLARE(char *) gdImageStringFTEx (gdImagePtr im, 
+ 	                          tweenColorRelease);
+ 
+ 	/***** initialize font library and font cache on first call ******/
++#if defined(HAVE_PTHREAD)
++	/* referring to bundled with php */
++	gdMutexLock(gdFontCacheMutex);
++#endif
+ 	if (!fontCache) {
+ 		if (gdFontCacheSetup () != 0) {
+ 			gdCacheDelete (tc_cache);
+@@ -1151,7 +1173,11 @@ BGD_DECLARE(char *) gdImageStringFTEx (gdImagePtr im, 
+ 		}
+ 	}
+ 	/*****/
++#if defined(HAVE_PTHREAD)
++	/* referring to bundled with php */
++#else
+ 	gdMutexLock (gdFontCacheMutex);
++#endif
+ 	/* get the font (via font cache) */
+ 	fontkey.fontlist = fontlist;
+ 	if (strex)
+--- src/gdhelpers.h.orig	2021-09-11 04:43:11 UTC
++++ src/gdhelpers.h
+@@ -51,11 +51,22 @@ extern "C" {
+ # define gdMutexUnlock(x) LeaveCriticalSection(&x)
+ #elif defined(HAVE_PTHREAD)
+ # include <pthread.h>
++# include "gd_errors.h"
+ # define gdMutexDeclare(x) pthread_mutex_t x
+ # define gdMutexSetup(x) pthread_mutex_init(&x, 0)
+ # define gdMutexShutdown(x) pthread_mutex_destroy(&x)
+-# define gdMutexLock(x) pthread_mutex_lock(&x)
+-# define gdMutexUnlock(x) pthread_mutex_unlock(&x)
++# define gdMutexLock(x) do {\
++		int pten = 0;\
++		if ((pten = pthread_mutex_lock(&x)) != 0) {\
++			gd_error_ex(GD_DEBUG, "gdMutexLock(%s<%p>) %s\n", #x, x, strerror(pten));\
++		}\
++	} while (0)
++# define gdMutexUnlock(x) do {\
++		int pten = 0;\
++		if ((pten = pthread_mutex_unlock(&x)) != 0) {\
++			gd_error_ex(GD_DEBUG, "gdMutexUnlock(%s<%p>) %s\n", #x, x, strerror(pten));\
++		}\
++	} while (0)
+ #else
+ # define gdMutexDeclare(x)
+ # define gdMutexSetup(x)
+--- src/gdinitfini.c.orig	1970-01-01 00:00:00 UTC
++++ src/gdinitfini.c
+@@ -0,0 +1,31 @@
++#include <string.h>
++#include "gd.h"
++#include "gd_errors.h"
++#include "gdhelpers.h"
++
++#if defined(CPP_SHARP)
++#elif defined(_WIN32)
++#elif defined(HAVE_PTHREAD)
++
++extern gdMutexDeclare(gdFontCacheMutex);
++
++void
++_init()
++{
++	int pten = 0;
++	if ((pten = gdMutexSetup(gdFontCacheMutex)) != 0) {
++		gd_error_ex(GD_ERROR, "%s gdMutexSetup %s\n", __func__, strerror(pten));
++	}
++}
++
++void
++_fini()
++{
++	int pten = 0;
++	if ((pten = gdMutexShutdown(gdFontCacheMutex)) != 0) {
++		gd_error_ex(GD_ERROR, "%s gdMutexShutdown %s\n", __func__, strerror(pten));
++	}
++}
++
++#else
++#endif

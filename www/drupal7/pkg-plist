@@ -331,6 +331,8 @@
 %%DRUPAL_BASE%%/modules/comment/comment.test
 %%DRUPAL_BASE%%/modules/comment/comment.tokens.inc
 %%DRUPAL_BASE%%/modules/comment/comment.tpl.php
+%%DRUPAL_BASE%%/modules/comment/tests/comment_hook_test.info
+%%DRUPAL_BASE%%/modules/comment/tests/comment_hook_test.module
 %%DRUPAL_BASE%%/modules/contact/contact.admin.inc
 %%DRUPAL_BASE%%/modules/contact/contact.info
 %%DRUPAL_BASE%%/modules/contact/contact.install
@@ -482,6 +484,8 @@
 %%DRUPAL_BASE%%/modules/image/image.module
 %%DRUPAL_BASE%%/modules/image/image.test
 %%DRUPAL_BASE%%/modules/image/sample.png
+%%DRUPAL_BASE%%/modules/image/tests/image_module_styles_test.info
+%%DRUPAL_BASE%%/modules/image/tests/image_module_styles_test.module
 %%DRUPAL_BASE%%/modules/image/tests/image_module_test.info
 %%DRUPAL_BASE%%/modules/image/tests/image_module_test.module
 %%DRUPAL_BASE%%/modules/locale/locale-rtl.css
@@ -778,6 +782,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/session_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/session_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system.base.css
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_admin_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/system_admin_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_dependencies_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_dependencies_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_incompatible_core_version_dependencies_test.info
@@ -798,6 +804,8 @@
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/system_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/tablesort.test
+%%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_nodes_test.info
+%%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_nodes_test.module
 %%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_test.info
 %%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_test.install
 %%DRUPAL_BASE%%/modules/simpletest/tests/taxonomy_test.module
@@ -943,6 +951,7 @@
 %%DRUPAL_BASE%%/modules/toolbar/toolbar.js
 %%DRUPAL_BASE%%/modules/toolbar/toolbar.module
 %%DRUPAL_BASE%%/modules/toolbar/toolbar.png
+%%DRUPAL_BASE%%/modules/toolbar/toolbar.test
 %%DRUPAL_BASE%%/modules/toolbar/toolbar.tpl.php
 %%DRUPAL_BASE%%/modules/tracker/tracker.css
 %%DRUPAL_BASE%%/modules/tracker/tracker.info
@@ -999,6 +1008,10 @@
 %%DRUPAL_BASE%%/modules/update/update.report.inc
 %%DRUPAL_BASE%%/modules/update/update.settings.inc
 %%DRUPAL_BASE%%/modules/update/update.test
+%%DRUPAL_BASE%%/modules/user/tests/anonymous_user_unblock_test.info
+%%DRUPAL_BASE%%/modules/user/tests/anonymous_user_unblock_test.module
+%%DRUPAL_BASE%%/modules/user/tests/user_email_validation_test.info
+%%DRUPAL_BASE%%/modules/user/tests/user_email_validation_test.module
 %%DRUPAL_BASE%%/modules/user/tests/user_flood_test.info
 %%DRUPAL_BASE%%/modules/user/tests/user_flood_test.module
 %%DRUPAL_BASE%%/modules/user/tests/user_form_test.info

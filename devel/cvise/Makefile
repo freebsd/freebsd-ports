@@ -1,9 +1,9 @@
 PORTNAME=	cvise
-PORTVERSION=	2.4.0
+PORTVERSION=	2.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C-Vise is a super-parallel Python port of the C-Reduce
 WWW=		https://github.com/marxin/cvise
 
@@ -13,15 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pebble>0:devel/py-pebble@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}pebble>0:devel/py-pebble@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}chardet>0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-flake8>=0:devel/py-pytest-flake8@${PY_FLAVOR}
 #		gcc:lang/gcc
 # gcc required for tests to pass. framework errors:
 # Error: lang/gcc should not be depended upon. Instead, use USE_GCC.
@@ -29,12 +26,23 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 # once this is installed, all tests pass for me:
 # 260 passed, 1 skipped in 64.82 seconds
 
-USES=		cmake python:3.6+ shebangfix
-CMAKE_ARGS+=	-DClang_DIR:PATH=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/clang
-LLVM_VER=	13
-SHEBANG_FILES=	cvise-delta.py cvise.py
+USES=		cmake compiler llvm:min=15,build,run python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	marxin
+USE_PYTHON=	pytest
+
+SHEBANG_FILES=	cvise-delta.py cvise.py
+
+CMAKE_ARGS+=	-DLLVM_DIR:PATH=${LLVM_PREFIX}/lib/cmake/llvm
+CMAKE_ARGS+=	-DClang_DIR:PATH=${LLVM_PREFIX}/lib/cmake/clang
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} < 150
+CPP=		clang-cpp${LLVM_VERSION}
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cvise.py
@@ -42,4 +50,4 @@ post-patch:
 do-test:
 	cd ${BUILD_WRKSRC} && pytest
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

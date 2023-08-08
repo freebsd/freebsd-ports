@@ -1,6 +1,15 @@
---- testscpp/Makefile.orig	2022-08-16 14:45:27 UTC
+--- testscpp/Makefile.orig	2022-10-05 22:19:20 UTC
 +++ testscpp/Makefile
-@@ -13,12 +13,12 @@ coverage:
+@@ -2,7 +2,7 @@ ROOT := ..
+ SRC := $(ROOT)/dimod/include/
+ CATCH2 := $(ROOT)/testscpp/Catch2/single_include/
+ 
+-all: catch2 test_main tests
++all: test_main tests
+ 
+ coverage:
+ 	$(CXX) -std=c++11 -Wall -c test_main.cpp -I $(CATCH2) --coverage -fno-inline -fno-inline-small-functions -fno-default-inline
+@@ -14,12 +14,12 @@ coverage:
  	rm baseline.info test.info
  	lcov --remove coverage.info '/usr/*' --output-file coverage.info
  
@@ -9,10 +18,10 @@
  	./test_main 
  
  test_main: test_main.cpp
--	g++ -std=c++11 -Wall -Werror -c test_main.cpp
--	g++ -std=c++11 -Wall -Werror test_main.o tests/*.cpp -o test_main -I $(SRC)
-+	g++ $(CXXFLAGS) `pkg-config --cflags catch2` -std=c++11 -Wall -c test_main.cpp
-+	g++ $(CXXFLAGS) `pkg-config --cflags --libs catch2` -std=c++11 -Wall test_main.o tests/*.cpp -o test_main -I $(SRC)
+-	$(CXX) -std=c++11 -Wall -Werror -c test_main.cpp -I $(CATCH2) 
+-	$(CXX) -std=c++11 -Wall -Werror test_main.o tests/*.cpp -o test_main -I $(SRC) -I $(CATCH2) 
++	$(CXX) -std=c++11 `pkg-config --cflags catch2` -Wall -Werror -c test_main.cpp -I $(CATCH2) 
++	$(CXX) -std=c++11 `pkg-config --cflags catch2` -Wall -Werror test_main.o tests/*.cpp -o test_main -I $(SRC) -I $(CATCH2) 
  
  catch2:
  	git submodule init

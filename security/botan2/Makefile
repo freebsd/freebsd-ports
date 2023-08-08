@@ -1,5 +1,5 @@
 PORTNAME=	botan
-DISTVERSION=	2.19.2
+DISTVERSION=	2.19.3
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
@@ -65,8 +65,8 @@ MANPAGES_CONFIGURE_WITH=	sphinx
 
 OPENMP_CONFIGURE_ON=	--with-openmp
 
-PYTHON_USES=		python:3.6+
-PYTHON_USES_OFF=	python:3.6+,build
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
 PYTHON_CONFIGURE_ON=	--with-python-versions=${PYTHON_VER}
 PYTHON_CONFIGURE_OFF=	--no-install-python-module
 

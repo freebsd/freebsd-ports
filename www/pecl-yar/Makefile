@@ -4,17 +4,16 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yar (Yet another RPC framework) is a light, concurrent RPC framework
-WWW=		https://pecl.php.net/package/yar
+WWW=		https://pecl.php.net/package/yar \
+		https://github.com/laruence/yar
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		localbase:ldflags php:pecl
-USE_PHP=	curl json:build
-
-IGNORE_WITH_PHP=82
+USES=		localbase:ldflags php:build,pecl
+USE_PHP=	curl
 
 OPTIONS_DEFINE=	MSGPACK
 OPTIONS_DEFAULT=MSGPACK

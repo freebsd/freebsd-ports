@@ -1,6 +1,5 @@
 PORTNAME=	qmapshack
-PORTVERSION=	1.16.1
-PORTREVISION=	1
+PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	V_
 CATEGORIES=	astro
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
-		libquazip1-qt5.so:archivers/quazip \
+		libquazip1-qt5.so:archivers/quazip@qt5 \
 		libroutino.so:astro/routino
 RUN_DEPENDS=	${LOCALBASE}/bin/bsdisks:sysutils/bsdisks
 

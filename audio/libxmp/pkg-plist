@@ -1,0 +1,12 @@
+include/xmp.h
+lib/libxmp.so
+lib/libxmp.so.%%PORTVERSION%%
+lib/libxmp.so.4
+libdata/pkgconfig/libxmp.pc
+lib/cmake/libxmp/libxmp-config-version.cmake
+lib/cmake/libxmp/libxmp-config.cmake
+lib/cmake/libxmp/libxmp-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libxmp/libxmp-shared-targets.cmake
+lib/cmake/libxmp/libxmp-static-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libxmp/libxmp-static-targets.cmake
+lib/libxmp.a

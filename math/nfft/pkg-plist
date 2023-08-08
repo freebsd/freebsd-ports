@@ -4,10 +4,10 @@ lib/libfastsumjulia.so
 lib/libnfctjulia.so
 lib/libnfft3.so
 lib/libnfft3.so.4
-lib/libnfft3.so.4.0.2
+lib/libnfft3.so.4.0.3
 %%OPENMP%%lib/libnfft3_threads.so
 %%OPENMP%%lib/libnfft3_threads.so.4
-%%OPENMP%%lib/libnfft3_threads.so.4.0.2
+%%OPENMP%%lib/libnfft3_threads.so.4.0.3
 lib/libnfftjulia.so
 lib/libnfstjulia.so
 libdata/pkgconfig/nfft3.pc

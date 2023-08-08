@@ -5,7 +5,6 @@
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Environment.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Memory.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::ModuleVersions.3.gz
-%%PERL5_MAN3%%/Plack::Middleware::Debug::Panel.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Parameters.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::PerlConfig.3.gz
 %%PERL5_MAN3%%/Plack::Middleware::Debug::Response.3.gz

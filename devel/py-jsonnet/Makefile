@@ -16,7 +16,7 @@ LIB_DEPENDS=	libjsonnet.so:devel/jsonnet
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.6+ localbase
+USES=		compiler:c++11-lang python localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

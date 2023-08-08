@@ -1,6 +1,6 @@
 --- src/extconf.rb.orig	2011-04-06 19:35:39 UTC
 +++ src/extconf.rb
-@@ -36,16 +36,16 @@ end
+@@ -36,16 +36,16 @@ if unknown = enable_config("unknown")
  
  if unknown = enable_config("unknown")
     libs = if CONFIG.key?("LIBRUBYARG_STATIC")
@@ -21,7 +21,15 @@
  when /solaris2/
     $DLDFLAGS ||= ""
     $DLDFLAGS += " -R#{lib_dir}"
-@@ -63,10 +63,12 @@ end
+@@ -53,6 +53,7 @@ $CFLAGS += " -DBDB_NO_THREAD_COMPILE" if enable_config
+ $bdb_libdir = lib_dir
+ 
+ $CFLAGS += " -DBDB_NO_THREAD_COMPILE" if enable_config("thread") == false
++$CFLAGS += " -Wno-int-conversion"
+ 
+ unique = with_config("db-uniquename") || ''
+ 
+@@ -63,10 +64,12 @@ if csv = with_config('db-version')
  if csv = with_config('db-version')
     version = csv.split(',', -1)
     version << '' if version.empty?
@@ -36,7 +44,7 @@
     else
        if m[2]
           major, minor = m[2], m[3]
-@@ -94,7 +96,7 @@ catch(:done) do
+@@ -94,7 +97,7 @@ catch(:done) do
           end
           next if with_ver.empty?
           if !unique.is_a?(String) || unique.empty?
