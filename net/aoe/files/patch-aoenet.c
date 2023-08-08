@@ -207,3 +207,54 @@
          	case IFT_ETHER:
          	case IFT_FASTETHER:
          	case IFT_GIGABITETHERNET:
+--- aoenet.c.orig	2019-08-14 20:53:51.415030000 -0700
++++ aoenet.c	2019-08-14 20:58:53.326160000 -0700
+@@ -85,6 +85,12 @@
+ #endif
+ #define IFLISTSZ 1024
+ 
++#if	__FreeBSD_version >= 1200000
++#define	IFNET_FOREACH(v, h, e)	CK_STAILQ_FOREACH(v, h, e)
++#else
++#define	IFNET_FOREACH(v, h, e)	TAILQ_FOREACH(v, h, e)
++#endif
++
+ static char aoe_iflist[IFLISTSZ];
+ 
+ static int sysctl_aoe_iflist(SYSCTL_HANDLER_ARGS);
+@@ -304,7 +310,7 @@
+ 	h->ah_cmd = AOECMD_CFG;
+ 
+ 	IFNET_RLOCK();
+-	TAILQ_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp, &ifnet, if_link) {
+ 		if (!is_aoe_netif(ifp))
+ 			continue;
+ 		memcpy(h->ah_src, IFPADDR(ifp), sizeof(h->ah_src));
+@@ -506,7 +512,7 @@
+ 
+ #ifdef FORCE_NETWORK_HOOK
+ 	IFNET_RLOCK();
+-	TAILQ_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp, &ifnet, if_link) {
+ 		if (!is_aoe_netif(ifp)) {
+ 			if (ifp->if_input == aoe_ether_input)
+ 				ifp->if_input = old_ether_input;
+@@ -531,7 +537,7 @@
+ 	struct ifnet *ifp;
+ 
+ 	IFNET_RLOCK();
+-	TAILQ_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp, &ifnet, if_link) {
+ #if __FreeBSD_version >= 1100030
+         	switch (ifp->if_type) {
+ #else
+@@ -564,7 +570,7 @@
+ 	struct ifnet *ifp;
+ 
+ 	IFNET_RLOCK();
+-	TAILQ_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp, &ifnet, if_link) {
+ #if __FreeBSD_version >= 1100030
+         	switch (ifp->if_type) {
+ #else
