@@ -25,7 +25,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libhiredis.so:databases/hiredis
 
 USES=	cmake compiler:c++11-lang pkgconfig localbase:ldflags ssl
-
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavel-odintsov
 
