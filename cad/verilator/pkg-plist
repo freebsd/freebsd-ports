@@ -77,7 +77,6 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_fst_sc.cpp
 %%DATADIR%%/include/verilated_fst_sc.h
 %%DATADIR%%/include/verilated_funcs.h
-%%DATADIR%%/include/verilated_heavy.h
 %%DATADIR%%/include/verilated_imp.h
 %%DATADIR%%/include/verilated_intrinsics.h
 %%DATADIR%%/include/verilated_probdist.cpp

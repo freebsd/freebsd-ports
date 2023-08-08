@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.012
+DISTVERSION=	5.014
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	AR=${LOCALBASE}/bin/ar \
 		PYTHON3=${PYTHON_CMD}
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # see https://github.com/verilator/verilator/issues/3132
 
-TEST_TARGET=	test # tests fail, see https://github.com/verilator/verilator/issues/4158
+TEST_TARGET=	test
 
 BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD} # aliasas are only for tests
 
