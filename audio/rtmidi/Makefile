@@ -1,6 +1,5 @@
 PORTNAME=	rtmidi
-DISTVERSION=	5.0.0
-PORTREVISION=	1
+DISTVERSION=	6.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,5 +20,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jack --disable-static
 
 INSTALL_TARGET=	install-strip
+
+PLIST_FILES=	include/rtmidi/RtMidi.h \
+		include/rtmidi/rtmidi_c.h \
+		lib/librtmidi.so \
+		lib/librtmidi.so.7 \
+		lib/librtmidi.so.7.0.0 \
+		libdata/pkgconfig/rtmidi.pc
 
 .include <bsd.port.mk>
