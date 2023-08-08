@@ -96,10 +96,6 @@ PLIST_SUB+=	32BIT_ONLY="@comment "
 PLIST_SUB+=	32BIT_ONLY=""
 .endif
 
-.if ${ARCH} == powerpc64
-MAKE_ENV+=	UNAME_m="powerpc64"
-.endif
-
 .if ${ARCH} == sparc64
 CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 .endif
