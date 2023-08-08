@@ -1,6 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.134
-PORTREVISION=	1
+DISTVERSION=	1.11.136
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,8 +8,6 @@ WWW=		https://github.com/aws/aws-sdk-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	fails to build (EC2Client): LLVM ERROR: out of memory, https://github.com/aws/aws-sdk-cpp/issues/2600
 
 LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-cal.so:security/aws-c-cal \
