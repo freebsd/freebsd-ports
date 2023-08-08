@@ -1,5 +1,5 @@
 PORTNAME=	grimshot
-DISTVERSION=	1.8
+DISTVERSION=	1.8.1
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,8 +19,10 @@ RUN_DEPENDS=	jq:textproc/jq \
 USE_GITHUB=	yes
 GH_ACCOUNT=	swaywm
 GH_PROJECT=	sway
-WRKSRC_SUBDIR=	contrib
+
 NO_ARCH=	yes
+
+WRKSRC_SUBDIR=	contrib
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	CLIPBOARD MANPAGES NOTIFY
