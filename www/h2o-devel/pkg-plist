@@ -89,6 +89,7 @@ share/man/man8/h2o.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/doc_root/index.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.crt
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/alternate.key
+%%PORTDOCS%%%%DOCSDIR%%/examples/h2o/ech.key
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/h2o.conf
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.crt
 %%PORTDOCS%%%%DOCSDIR%%/examples/h2o/server.key
