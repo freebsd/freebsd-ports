@@ -1,6 +1,6 @@
 PORTNAME=	ndesk-dbus
 PORTVERSION=	0.6.1a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ndesk.org/archive/ndesk-dbus/
 
