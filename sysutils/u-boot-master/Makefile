@@ -30,7 +30,7 @@ BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
 USES=		bison gmake python:build pkgconfig shebangfix tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
-SHEBANG_FILES=	tools/binman/binman arch/arm/mach-rockchip/make_fit_atf.py
+SHEBANG_FILES=	tools/binman/binman
 SSP_UNSAFE=	yes
 UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
@@ -118,7 +118,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2023.01
+UBOOT_VERSION?=	2023.07.02
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
