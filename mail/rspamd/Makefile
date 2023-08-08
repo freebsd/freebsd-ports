@@ -1,6 +1,6 @@
 PORTNAME=	rspamd
 PORTVERSION=	3.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -78,12 +78,6 @@ HYPERSCAN_CMAKE_ON=	-DENABLE_HYPERSCAN=ON
 LUAJIT_USES=		luajit
 LUAJIT_USES_OFF=	lua:51+
 LUAJIT_CMAKE_OFF=	-DENABLE_LUAJIT=OFF
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc64
-CMAKE_ARGS+=		-DENABLE_LTO:BOOL=OFF
-.endif
 
 post-install:
 	@${MKDIR} \
