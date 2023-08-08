@@ -15,6 +15,19 @@ include/thrift/annotation/gen-cpp2/cpp_types_fwd.h
 include/thrift/annotation/gen-cpp2/cpp_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/cpp_visit_union.h
 include/thrift/annotation/gen-cpp2/cpp_visitation.h
+include/thrift/annotation/gen-cpp2/go_clients.h
+include/thrift/annotation/gen-cpp2/go_constants.h
+include/thrift/annotation/gen-cpp2/go_data.h
+include/thrift/annotation/gen-cpp2/go_for_each_field.h
+include/thrift/annotation/gen-cpp2/go_handlers.h
+include/thrift/annotation/gen-cpp2/go_metadata.h
+include/thrift/annotation/gen-cpp2/go_types.h
+include/thrift/annotation/gen-cpp2/go_types.tcc
+include/thrift/annotation/gen-cpp2/go_types_custom_protocol.h
+include/thrift/annotation/gen-cpp2/go_types_fwd.h
+include/thrift/annotation/gen-cpp2/go_visit_by_thrift_field_metadata.h
+include/thrift/annotation/gen-cpp2/go_visit_union.h
+include/thrift/annotation/gen-cpp2/go_visitation.h
 include/thrift/annotation/gen-cpp2/hack_clients.h
 include/thrift/annotation/gen-cpp2/hack_constants.h
 include/thrift/annotation/gen-cpp2/hack_data.h
@@ -80,6 +93,7 @@ include/thrift/annotation/gen-cpp2/thrift_types_fwd.h
 include/thrift/annotation/gen-cpp2/thrift_visit_by_thrift_field_metadata.h
 include/thrift/annotation/gen-cpp2/thrift_visit_union.h
 include/thrift/annotation/gen-cpp2/thrift_visitation.h
+include/thrift/annotation/go.thrift
 include/thrift/annotation/hack.thrift
 include/thrift/annotation/internal.thrift
 include/thrift/annotation/java.thrift
@@ -442,6 +456,7 @@ include/thrift/lib/cpp2/server/StatusServerInterface.h
 include/thrift/lib/cpp2/server/TMConcurrencyController.h
 include/thrift/lib/cpp2/server/ThreadManagerLoggingWrapper.h
 include/thrift/lib/cpp2/server/ThriftProcessor.h
+include/thrift/lib/cpp2/server/ThriftQuicServer.h
 include/thrift/lib/cpp2/server/ThriftServer.h
 include/thrift/lib/cpp2/server/ThriftServerConfig.h
 include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
