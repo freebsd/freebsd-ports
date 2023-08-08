@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400089
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
 LIB_DEPENDS+=	libmbedtls.so:security/mbedtls
 CONFIGURE_ARGS=	--with-ssl=mbedtls
 .else
