@@ -229,14 +229,11 @@ TEST_CMAKE_BOOL=	ENABLE_TESTS
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1400000
-CC=			clang13
-CXX=		clang++13
-USES+=	llvm:max=13,build
-.else
-CC=			clang
-CXX=		clang++
-CFLAGS+=	-Wno-error=int-conversion
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CC=	clang${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+CFLAGS+=-Wno-error=int-conversion
 .endif
 
 .if ${OPSYS} == FreeBSD
