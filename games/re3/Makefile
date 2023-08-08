@@ -17,6 +17,7 @@ LIB_DEPENDS=	libglfw.so:graphics/glfw \
 
 USES=		gl gmake openal shebangfix xorg
 SHEBANG_FILES=	printHash.sh
+USE_CXXSTD=	c++14
 USE_GL=		gl
 USE_GITHUB=	nodefault
 GH_TUPLE=	aap:librw:8b2caf8f:librw \
