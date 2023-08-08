@@ -1,6 +1,5 @@
 PORTNAME=	obhttpd
-PORTVERSION=	7.1.20220923
-PORTREVISION=	1
+DISTVERSION=	7.3.20230714
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -33,15 +32,12 @@ CFLAGS+=	-Wall -fcommon \
 		-I${WRKSRC_libimsg}/src/lib/libutil \
 		-I${WRKSRC_libevent}/src/lib/libevent
 
-LDFLAGS+=	-L${WRKSRC_libimsg}/src/lib/libutil \
-		-L${WRKSRC_libevent}/src/lib/libevent
-
 USERS=		www
 GROUPS=		www
 
-SSL=		3.5.3
-LIBEVENT=	6.6.20191030
-LIBIMSG=	7.1.20220916
+SSL=		3.8.0
+LIBEVENT=	7.3.20230714
+LIBIMSG=	7.3.20230714
 
 post-patch:
 	${REINPLACE_CMD} -e 's|libimsg/src||g' \
@@ -65,13 +61,17 @@ pre-configure:
 	@(cd ${WRKSRC_libevent} && ${SETENV} ${MAKE_ENV} ${MAKE})
 
 post-configure:
-	${REINPLACE_CMD} 's|-ltls|${WRKDIR}/libressl-${SSL}/tls/.libs/libtls.a|g' \
+	${REINPLACE_CMD} 's|../../../libevent/src/lib/libevent/libevent.a|${WRKSRC_libevent}/src/lib/libevent/libevent.a|g' \
 		${WRKSRC}/src/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} 's|-lssl|${WRKDIR}/libressl-${SSL}/ssl/.libs/libssl.a|g' \
-		 ${WRKSRC}/src/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} 's|-lcrypto|${WRKDIR}/libressl-${SSL}/crypto/.libs/libcrypto.a|g' \
+	${REINPLACE_CMD} 's|../../../libimsg/src/lib/libutil/libimsg.a|${WRKSRC_libimsg}/src/lib/libutil/libimsg.a|g' \
 		${WRKSRC}/src/usr.sbin/httpd/Makefile
-	${REINPLACE_CMD} 's|-lcrypto|${WRKDIR}/libressl-${SSL}/crypto/.libs/libcrypto.a|g' \
+	${REINPLACE_CMD} 's|/usr/local/lib/libtls.a|${WRKDIR}/libressl-${SSL}/tls/.libs/libtls.a|g' \
+		${WRKSRC}/src/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|/usr/local/lib/libssl.a|${WRKDIR}/libressl-${SSL}/ssl/.libs/libssl.a|g' \
+		${WRKSRC}/src/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|/usr/local/lib/libcrypto.a|${WRKDIR}/libressl-${SSL}/crypto/.libs/libcrypto.a|g' \
+		${WRKSRC}/src/usr.sbin/httpd/Makefile
+	${REINPLACE_CMD} 's|/usr/local/lib/libcrypto.a|${WRKDIR}/libressl-${SSL}/crypto/.libs/libcrypto.a|g' \
 		${WRKSRC}/src/usr.bin/htpasswd/Makefile
 
 post-install:
