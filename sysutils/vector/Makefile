@@ -18,8 +18,6 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		librdkafka.so:net/librdkafka
 
 USES=		cargo lua:53 ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 USE_GITHUB=	yes
 GH_ACCOUNT=	timberio
 GH_TUPLE=	bytecodealliance:wasmtime:3de418630a263ca214931d69f796879be50d4f72:wasmtime \
@@ -563,6 +561,13 @@ CARGO_CRATES=	adler-0.2.3 \
 # Fixes: error: the linked panic runtime `panic_unwind` is not compiled with
 # this crate's panic strategy `abort`
 LTO_UNSAFE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+.endif
 
 post-extract:
 	${RMDIR} ${WRKSRC_wasmtime}/crates/wasi-common/WASI
