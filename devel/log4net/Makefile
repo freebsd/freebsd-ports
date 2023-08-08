@@ -1,6 +1,6 @@
 PORTNAME=	log4net
 PORTVERSION=	1.2.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	https://archive.apache.org/dist/incubator/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	incubating-${PORTNAME}-${PORTVERSION}

@@ -1,6 +1,7 @@
 PORTNAME=	msbuild
 DISTVERSIONPREFIX=	v
 DISTVERSION=	15.8-preview
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mono/msbuild/releases/download/0.06/:bootstrap
 DISTFILES=	mono_msbuild_xplat-master-3c930fa8.zip:bootstrap

@@ -1,7 +1,7 @@
 PORTNAME=	mesen
 DISTVERSION=	0.9.8-4
-PORTREVISION=	2
 DISTVERSIONSUFFIX=	-g4c701ad6
+PORTREVISION=	3
 CATEGORIES=	emulators
 
 MAINTAINER=	ports@FreeBSD.org
@@ -41,8 +41,8 @@ MONO_DESC=	Mono based GUI frontend
 LIBRETRO_DESC=	Libretro core
 
 MONO_ALL_TARGET=	ui
-MONO_BUILD_DEPENDS=	mono:lang/mono
-MONO_RUN_DEPENDS=	mono:lang/mono
+MONO_BUILD_DEPENDS=	mono:lang/mono${MONO_DEFAULT}
+MONO_RUN_DEPENDS=	mono:lang/mono${MONO_DEFAULT}
 MONO_DESKTOP_ENTRIES=	"Mesen" "NES/Famicom Emulator" \
 			"${PORTNAME}" "${PORTNAME}" "Game;Emulator;" false
 

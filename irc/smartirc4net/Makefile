@@ -1,6 +1,6 @@
 PORTNAME=	smartirc4net
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://smuxi.im/jaws/data/files/
 

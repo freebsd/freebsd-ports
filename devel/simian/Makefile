@@ -44,7 +44,7 @@ SUB_LIST+=	JAVA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=	mono:lang/mono
+RUN_DEPENDS+=	mono:lang/mono${MONO_DEFAULT}
 PLIST_SUB+=	MONO=""
 SUB_LIST+=	MONO=""
 .else

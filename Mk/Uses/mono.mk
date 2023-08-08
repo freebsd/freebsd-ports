@@ -80,9 +80,9 @@ IGNORE=	USES=mono only supports optional arguments nuget and build
 MONO_SHARED_DIR=	${WRKDIR}
 CONFIGURE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}"
 MAKE_ENV+=		MONO_SHARED_DIR="${MONO_SHARED_DIR}" TZ=UTC
-BUILD_DEPENDS+=		mono:lang/mono
+BUILD_DEPENDS+=		mono:lang/mono${MONO_DEFAULT}
 .  if empty(mono_ARGS:Mbuild)
-RUN_DEPENDS+=		mono:lang/mono
+RUN_DEPENDS+=		mono:lang/mono${MONO_DEFAULT}
 .  endif
 
 # Set the location that webaps served by XSP should use.
