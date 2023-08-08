@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	6.8.0.123
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	6.8
@@ -118,5 +118,9 @@ post-patch:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/mono
+# XXX Drop after devel/msbuild >= 16.0 per https://github.com/mono/msbuild/commit/48f3571f4036
+	${RLN} ${STAGEDIR}${PREFIX}/lib/mono/msbuild/Current \
+		${STAGEDIR}${PREFIX}/lib/mono/msbuild/15.0
+	${ECHO_CMD} lib/mono/msbuild/15.0 >>${TMPPLIST}
 
 .include <bsd.port.post.mk>
