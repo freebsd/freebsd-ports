@@ -1159,6 +1159,7 @@
     SUBDIR += vapoursynth-waifu2x-w2xc
     SUBDIR += variety
     SUBDIR += vcg
+    SUBDIR += vhs
     SUBDIR += viewnior
     SUBDIR += vigra
     SUBDIR += vips
