@@ -1,3 +1,3 @@
-TIMESTAMP = 1690531163
-SHA256 (pytensor-2.14.1.tar.gz) = 4d20c3a19caa6f67d8cc2b8d97e063af2cb74d36f94d5de96d976a5a0e8beeb2
-SIZE (pytensor-2.14.1.tar.gz) = 3529274
+TIMESTAMP = 1691457417
+SHA256 (pytensor-2.14.2.tar.gz) = dbafae9ce4264e0e5d1e02b2214da3187ca51e99f43a1a2245e5c0d839cf3dfa
+SIZE (pytensor-2.14.2.tar.gz) = 3529925
