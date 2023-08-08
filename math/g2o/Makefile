@@ -1,6 +1,5 @@
 PORTNAME=	g2o
-DISTVERSION=	20230223
-PORTREVISION=	2
+DISTVERSION=	20230806
 DISTVERSIONSUFFIX=	_git
 CATEGORIES=	math
 
@@ -69,6 +68,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/cmake_modules/*.cmake
 
-# tests fail to compile, see https://github.com/RainerKuemmerle/g2o/issues/641
+# tests fail to compile, see https://github.com/RainerKuemmerle/g2o/issues/711
 
 .include <bsd.port.mk>
