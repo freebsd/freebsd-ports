@@ -16,8 +16,6 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to find OpenSSL development headers
 
 CARGO_CRATES=	aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
@@ -64,6 +62,13 @@ CARGO_CRATES=	aho-corasick-0.7.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
 PLIST_FILES=	bin/gbump
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to find OpenSSL 3 development headers
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gbump
