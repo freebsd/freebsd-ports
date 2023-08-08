@@ -10,7 +10,7 @@ WWW=		https://github.com/freebsd/pkg-appstream
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pkg.h:ports-mgmt/pkg
+BUILD_DEPENDS=	${LOCALBASE}/include/pkg.h:${PKG_ORIGIN}
 
 USES=		localbase
 
