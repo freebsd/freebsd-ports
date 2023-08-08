@@ -1,4 +1,3 @@
-pyFLTK is Python wrapper for the Fast Light Tool Kit cross-platform graphical
-user-interface library.
-
-This package wraps FLTK version 1.1 and is quite stable.
+pyFLTK is Python wrapper for the Fast Light Tool Kit cross-platform
+graphical user-interface library.  It wraps FLTK version 1.3 and is
+quite stable.

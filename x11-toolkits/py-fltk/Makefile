@@ -1,24 +1,27 @@
 PORTNAME=	fltk
-PORTVERSION=	1.3.4.1
+PORTVERSION=	1.3.8
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/pyFltk-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyFltk-${PORTVERSION}_py3
+DISTNAME=	pyFltk-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FLTK window toolkit
-WWW=		http://pyfltk.sourceforge.net/
+WWW=		https://pyfltk.sourceforge.io/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 CFLAGS+=	-DFL_LIBRARY
-MAKE_ENV=	FLTK_HOME=${LOCALBASE}/bin
-USES=		python xorg
-USE_CXXSTD=	c++14
+USES=		python shebangfix xorg
 USE_PYTHON=	autoplist distutils
+PYDISTUTILS_CONFIGUREARGS=	swig
+SHEBANG_FILES=	fltk/test/tree.py \
+		fltk/test/tree_demo.py \
+		fltk/test/fltk_threads.py
 USE_XORG=	x11
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -29,16 +32,9 @@ WRKSRC=		${WRKDIR}/pyFltk-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNEXPECTED_FUNCTIONS
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e '/#pragma GCC diagnostic/d' \
-		${WRKSRC}/python/fltk_wrap.cpp
+	@${REINPLACE_CMD} -e '/^%include fl_types/,+1 \
+		s|Enumerations|Fl_Export|' ${WRKSRC}/swig/fltk.i
 
 post-build:
 	${REINPLACE_CMD} -e "s|\.\./docs|${DOCSDIR}/html|g" ${WRKSRC}/fltk/test/help.py
@@ -48,7 +44,7 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/html/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README TODO ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} CHANGES README.md ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/fltk/docs/ && ${INSTALL_DATA} *.html *.jpg ${STAGEDIR}${DOCSDIR}/html/
 
 post-install-EXAMPLES-on:
