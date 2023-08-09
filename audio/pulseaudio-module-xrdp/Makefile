@@ -37,6 +37,6 @@ PULSE_WRKSRC=	${MAKE} -C ${PORTSDIR}/audio/pulseaudio -VWRKSRC
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./bootstrap
-	@${CP} -r "`${PULSE_WRKSRC}`" ${WRKDIR}
+	@${CP} -R "`${PULSE_WRKSRC}`" ${WRKDIR}
 
 .include <bsd.port.mk>
