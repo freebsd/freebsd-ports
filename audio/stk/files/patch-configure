@@ -1,0 +1,101 @@
+--- configure.orig	2023-08-04 15:25:31 UTC
++++ configure
+@@ -6220,7 +6220,7 @@ then :
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: using OSS" >&5
+ printf "%s\n" "using OSS" >&6; }
+       api="$api -D__LINUX_OSS__"
+-      LIBS="$LIBS -lossaudio"
++      #LIBS="$LIBS -lossaudio"
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+ printf %s "checking for pthread_create in -lpthread... " >&6; }
+ if test ${ac_cv_lib_pthread_pthread_create+y}
+@@ -6228,7 +6228,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6260,7 +6260,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = xyes
+ then :
+   printf "%s\n" "#define HAVE_LIBPTHREAD 1" >>confdefs.h
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else $as_nop
+   as_fn_error $? "RtAudio requires the pthread library!" "$LINENO" 5
+@@ -6276,7 +6276,7 @@ then :
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: using OSS" >&5
+ printf "%s\n" "using OSS" >&6; }
+       api="$api -D__LINUX_OSS__"
+-      LIBS="$LIBS -lossaudio"
++      #LIBS="$LIBS -lossaudio"
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+ printf %s "checking for pthread_create in -lpthread... " >&6; }
+ if test ${ac_cv_lib_pthread_pthread_create+y}
+@@ -6284,7 +6284,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6316,7 +6316,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = xyes
+ then :
+   printf "%s\n" "#define HAVE_LIBPTHREAD 1" >>confdefs.h
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else $as_nop
+   as_fn_error $? "RtAudio requires the pthread library!" "$LINENO" 5
+@@ -6325,7 +6325,7 @@ fi
+ fi
+     ;;
+ 
+-    *-*-linux*)
++    *-*-linux* | *-*-freebsd*)
+     # Look for ALSA flag
+ 
+ # Check whether --with-alsa was given.
+@@ -6617,7 +6617,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6649,7 +6649,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = xyes
+ then :
+   printf "%s\n" "#define HAVE_LIBPTHREAD 1" >>confdefs.h
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else $as_nop
+   as_fn_error $? "RtAudio requires the pthread library!" "$LINENO" 5
+@@ -6711,7 +6711,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6743,7 +6743,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = xyes
+ then :
+   printf "%s\n" "#define HAVE_LIBPTHREAD 1" >>confdefs.h
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else $as_nop
+   as_fn_error $? "RtAudio requires the pthread library!" "$LINENO" 5
