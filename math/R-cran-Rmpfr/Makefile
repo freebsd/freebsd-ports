@@ -1,5 +1,5 @@
 PORTNAME=	Rmpfr
-DISTVERSION=	0.9-2
+DISTVERSION=	0.9-3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +10,9 @@ WWW=		https://cran.r-project.org/web/packages/Rmpfr/
 LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-gmp>=0.6.1:math/R-cran-gmp
+BUILD_DEPENDS=	${CRAN_DEPENDS}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
