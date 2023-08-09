@@ -190,6 +190,7 @@ bin/hyphy
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/SingleOmega.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/aBSREL.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-fel.bf
+%%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/contrast-meme.bf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/grid_compute.ibf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/io_functions.ibf
 %%DATADIR%%/TemplateBatchFiles/SelectionAnalyses/modules/selection_lib.ibf

@@ -1,5 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.51hf
+DISTVERSION=	2.5.52
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://www.hyphy.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 TEST_DEPENDS=	bash:shells/bash
@@ -23,7 +23,5 @@ OPTIONS_DEFINE=	AVX
 AVX_DESC=	Advanced vector extensions support
 
 AVX_CMAKE_OFF=	-DNOAVX:BOOL=ON
-
-# FEL test is failing. See https://github.com/veg/hyphy/issues/1585
 
 .include <bsd.port.mk>
