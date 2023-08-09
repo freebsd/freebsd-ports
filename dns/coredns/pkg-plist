@@ -46,6 +46,7 @@ man/man7/coredns-route53.7.gz
 man/man7/coredns-secondary.7.gz
 man/man7/coredns-sign.7.gz
 man/man7/coredns-template.7.gz
+man/man7/coredns-timeouts.7.gz
 man/man7/coredns-tls.7.gz
 man/man7/coredns-trace.7.gz
 man/man7/coredns-transfer.7.gz
