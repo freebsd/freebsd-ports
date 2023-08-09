@@ -36,7 +36,6 @@ LIB_DEPENDS= 	libcurl.so:ftp/curl \
 USES=		compiler:c++20-lang cpe python:build scons shebangfix
 # gmake is used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
 USES+=		gmake pkgconfig
-USE_CXXSTD=	c++14
 
 # mozjs tag comes from ${WRKSRC}/src/third_party/mozjs/get-sources.sh
 MOZJS_TAG=	82aac6af18abcd5bf188afbc821779ccb0ca0902
