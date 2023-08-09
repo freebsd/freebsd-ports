@@ -228,6 +228,7 @@
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte3
+    SUBDIR += wlinfo
     SUBDIR += wlroots
     SUBDIR += wlroots-devel
     SUBDIR += wlroots015
