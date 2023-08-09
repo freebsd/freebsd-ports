@@ -1,9 +1,9 @@
 PORTNAME=	openssl
-PORTVERSION=	2.0.6
+DISTVERSION=	2.1.0
 CATEGORIES=	security
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Toolkit for Encryption, Signatures and Certificates Based on OpenSSL
 WWW=		https://cran.r-project.org/web/packages/openssl/
 
@@ -13,6 +13,9 @@ CRAN_DEPENDS=	R-cran-askpass>0:security/R-cran-askpass
 BUILD_DEPENDS=	bash:shells/bash \
 		${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-sodium>0:security/R-cran-sodium \
+		R-cran-testthat>0:devel/R-cran-testthat
+# Test fails with OpenSSL3: https://github.com/jeroen/openssl/issues/119
 
 USES=		cran:auto-plist,compiles shebangfix ssl
 
