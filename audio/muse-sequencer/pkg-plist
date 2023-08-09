@@ -203,7 +203,9 @@ share/mime/packages/muse.xml
 %%DATADIR%%/scripts/RandomizeVelocityRelative
 %%DATADIR%%/scripts/RemoveAftertouch
 %%DATADIR%%/scripts/RemoveShortEvents
+%%DATADIR%%/scripts/Reverse
 %%DATADIR%%/scripts/Rhythm1
+%%DATADIR%%/scripts/SpeedChange
 %%DATADIR%%/scripts/SpeedDouble
 %%DATADIR%%/scripts/SpeedHalf
 %%DATADIR%%/scripts/SwingQuantize1

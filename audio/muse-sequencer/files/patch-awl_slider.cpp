@@ -1,8 +1,8 @@
---- awl/slider.cpp.orig	2020-05-18 18:33:16 UTC
+--- awl/slider.cpp.orig	2023-08-03 19:28:45 UTC
 +++ awl/slider.cpp
-@@ -24,6 +24,7 @@
+@@ -23,6 +23,7 @@
+ #include "awl/slider.h"
  
- #include <QMouseEvent>
  #include <QPainter>
 +#include <QPainterPath>
  

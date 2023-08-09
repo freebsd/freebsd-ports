@@ -4,14 +4,14 @@ muse/components/plugindialog.h:4:10: fatal error: 'ui_plugindialogbase.h' file n
          ^~~~~~~~~~~~~~~~~~~~~~~
 1 error generated.
 
---- muse/mixer/CMakeLists.txt.orig	2021-04-08 11:35:45 UTC
+--- muse/mixer/CMakeLists.txt.orig	2023-08-03 19:28:45 UTC
 +++ muse/mixer/CMakeLists.txt
-@@ -64,6 +64,8 @@ add_library ( mixer ${MODULES_BUILD}
-       ${mixer_uis}
+@@ -64,6 +64,8 @@ set (FILES_TO_TRANSLATE
+       CACHE INTERNAL ""
        )
  
 +add_dependencies(mixer components)
 +
  ##
- ## Append to the list of translations
+ ## Compilation flags and target name
  ##

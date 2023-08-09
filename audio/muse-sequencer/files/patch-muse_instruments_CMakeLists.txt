@@ -4,10 +4,10 @@ muse/components/editevent.h:26:10: fatal error: 'ui_editnotedialogbase.h' file n
          ^~~~~~~~~~~~~~~~~~~~~~~~~
 1 error generated.
 
---- muse/instruments/CMakeLists.txt.orig	2021-04-08 11:28:12 UTC
+--- muse/instruments/CMakeLists.txt.orig	2023-08-03 19:28:45 UTC
 +++ muse/instruments/CMakeLists.txt
-@@ -55,6 +55,8 @@ add_library ( instruments ${MODULES_BUILD}
-    ${instruments_uis}
+@@ -36,6 +36,8 @@ add_library ( instruments ${MODULES_BUILD}
+    ${instruments_mocs}
     )
  
 +add_dependencies(instruments components)

@@ -1,6 +1,6 @@
 PORTNAME=	muse-sequencer
-DISTVERSION=	4.1.0
-PORTREVISION=	2
+DISTVERSION=	4.1.0-20230803
+DISTVERSIONSUFFIX=	-g53bc9e4
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,8 @@ BROKEN_i386=	compilation breaks: unknown type name 'intptr_t'; did you mean '__i
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa \
 		lv2>0:audio/lv2
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libharfbuzz.so:print/harfbuzz \
 		libinstpatch-1.0.so:audio/libinstpatch \
 		libjack.so:audio/jack \
 		liblash.so:audio/lash \
@@ -22,15 +23,17 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
 		liblo.so:audio/liblo \
 		librtaudio.so:audio/rtaudio \
 		liblrdf.so:textproc/liblrdf \
+		librubberband.so:audio/rubberband \
 		libsamplerate.so:audio/libsamplerate \
 		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
 		libsord-0.so:devel/sord \
 		libsratom-0.so:audio/sratom
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
+USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome kde:5 localbase:ldflags qt:5 pkgconfig python shared-mime-info shebangfix
 USE_GL=		gl
 USE_QT=		core gui svg xml widgets buildtools:build linguisttools:build qmake:build uitools:build
+USE_KDE=	ecm:build
 USE_GNOME=	atk atkmm cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 libsigc++20 pango pangomm
 USE_LDCONFIG=	yes
 
@@ -45,6 +48,8 @@ WRKSRC_SUBDIR=	src
 
 DATADIR=	${PREFIX}/share/muse-${DISTVERSION:R}
 DOCSDIR=	${PREFIX}/share/doc/muse-${DISTVERSION:R}
+
+BINARY_ALIAS=	git=false
 
 OPTIONS_DEFINE=		FLUIDSYNTH DOCS
 OPTIONS_DEFAULT=	FLUIDSYNTH

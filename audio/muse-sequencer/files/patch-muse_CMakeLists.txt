@@ -1,0 +1,11 @@
+--- muse/CMakeLists.txt.orig	2023-08-09 00:00:30 UTC
++++ muse/CMakeLists.txt
+@@ -322,7 +322,7 @@ target_link_libraries(core
+ 
+ if(NOT HAVE_CXX_ATOMICS_WITHOUT_LIB OR NOT HAVE_CXX_ATOMICS64_WITHOUT_LIB)
+       message("Warning: HAVE_CXX_ATOMICS_WITHOUT_LIB or HAVE_CXX_ATOMICS64_WITHOUT_LIB are false. Linking core with required libatomic.")
+-      target_link_libraries(core atomic)
++      #target_link_libraries(core atomic)
+ endif(NOT HAVE_CXX_ATOMICS_WITHOUT_LIB OR NOT HAVE_CXX_ATOMICS64_WITHOUT_LIB)
+       
+ if(HAVE_LASH)
