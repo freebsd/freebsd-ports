@@ -227,6 +227,7 @@
     SUBDIR += mew
     SUBDIR += mew-devel
     SUBDIR += mfmod_ldap
+    SUBDIR += mfmod_openmetrics
     SUBDIR += mfmod_pcre
     SUBDIR += milter-bogom
     SUBDIR += milter-callback
