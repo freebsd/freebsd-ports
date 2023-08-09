@@ -171,6 +171,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += gcr
     SUBDIR += gef
+    SUBDIR += git-credential-azure
     SUBDIR += git-credential-gopass
     SUBDIR += git-credential-oauth
     SUBDIR += git-crypt
@@ -1281,11 +1282,11 @@
     SUBDIR += stoken
     SUBDIR += strongswan
     SUBDIR += stunnel
+    SUBDIR += su-exec
     SUBDIR += subversion-gnome-keyring
     SUBDIR += sudo
     SUBDIR += sudoscript
     SUBDIR += super
-    SUBDIR += su-exec
     SUBDIR += suricata
     SUBDIR += swatchdog
     SUBDIR += tailscale
