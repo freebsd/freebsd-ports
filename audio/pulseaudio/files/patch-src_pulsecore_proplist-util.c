@@ -11,12 +11,3 @@
  #ifdef ENABLE_NLS
  #include <libintl.h>
  #endif
-@@ -31,6 +35,8 @@
- #ifdef __APPLE__
- #include <crt_externs.h>
- #define environ (*_NSGetEnviron())
-+#elif defined(__FreeBSD__)
-+#define environ dlsym(RTLD_DEFAULT, "environ")
- #elif !HAVE_DECL_ENVIRON
- extern char **environ;
- #endif
