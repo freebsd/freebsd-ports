@@ -1,7 +1,8 @@
 PORTNAME=	hdfs
-DISTVERSION=	2.7.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.7.1
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>0:devel/py-docopt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.9.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist # tests require nose which is unmaintained and abandoned, see https://github.com/mtth/hdfs/issues/190
+USE_PYTHON=	distutils concurrent autoplist pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	mtth
 
 NO_ARCH=	yes
 
