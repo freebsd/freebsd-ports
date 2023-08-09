@@ -22,7 +22,7 @@ CONFLICTS=		heimdal krb5 krb5-118 krb5-12*
 CONFLICTS_BUILD=	boringssl
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
-USES=			compiler:c++11-lang cpe gmake gettext-runtime \
+USES=			autoreconf compiler:c++11-lang cpe gmake gettext-runtime \
 			gssapi:bootstrap,mit libtool:build localbase \
 			perl5 pkgconfig ssl
 BROKEN_SSL=	openssl30 openssl31
@@ -45,7 +45,7 @@ CPE_PRODUCT=		kerberos
 OPTIONS_DEFINE=		EXAMPLES NLS KRB5_PDF KRB5_HTML DNS_FOR_REALM LDAP LMDB
 OPTIONS_DEFAULT=	KRB5_PDF KRB5_HTML READLINE
 OPTIONS_RADIO=		CMD_LINE_EDITING
-OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT
+OPTIONS_RADIO_CMD_LINE_EDITING=	READLINE LIBEDIT LIBEDIT_BASE
 CMD_LINE_EDITING_DESC=	Command line editing for kadmin and ktutil
 KRB5_PDF_DESC=		Install krb5 PDF documentation
 KRB5_HTML_DESC=		Install krb5 HTML documentation
@@ -64,6 +64,8 @@ READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=readline
 LIBEDIT_USES=		libedit
 LIBEDIT_CONFIGURE_WITH=	libedit
+LIBEDIT_BASE_CONFIGURE_WITH=	libedit
+LIBEDIT_BASE_DESC=	Use libedit in FreeBSD base
 
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
