@@ -52,6 +52,7 @@ LMDB_CONFIGURE_WITH=	lmdb
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
 LMDB_IMPLIES=		LDAP
 NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 READLINE_USES=		readline
 READLINE_CONFIGURE_WITH=readline
 LIBEDIT_USES=		libedit
