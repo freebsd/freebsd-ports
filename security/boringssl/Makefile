@@ -1,5 +1,6 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.0.0.0.2023.08.05.01
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES+=	https://proxy.golang.org/:gomods
 DISTFILES+=	golang.org/x/crypto/@v/v0.10.0.zip:gomods \
@@ -30,21 +31,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	e28988e
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1 \
-		-DCMAKE_BUILD_TYPE=Release
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX}
 USE_LDCONFIG=	yes
 LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/lib
 TEST_TARGET=	run_tests
 MAKE_ENV+=	GOFLAGS=-mod=readonly \
 		GOPROXY=file://${DISTDIR}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tool/bssl ${STAGEDIR}${PREFIX}/bin/
-	(cd ${WRKSRC}/include && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include)
-	${INSTALL_LIB} ${WRKSRC}/crypto/libcrypto.so ${STAGEDIR}${PREFIX}/lib/libcrypto.so.1.0.0
-	${INSTALL_LIB} ${WRKSRC}/ssl/libssl.so ${STAGEDIR}${PREFIX}/lib/libssl.so.1.0.0
-	${LN} -sf libcrypto.so.1 ${STAGEDIR}${PREFIX}/lib/libcrypto.so
-	${LN} -sf libcrypto.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libcrypto.so.1
-	${LN} -sf libssl.so.1 ${STAGEDIR}${PREFIX}/lib/libssl.so
-	${LN} -sf libssl.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/libssl.so.1
+post-install:
+	${LN} -sf libcrypto.so.1 ${STAGEDIR}${PREFIX}/lib/libcrypto.so.1.0.0
+	${LN} -sf libssl.so.1 ${STAGEDIR}${PREFIX}/lib/libssl.so.1.0.0
 
 .include <bsd.port.mk>

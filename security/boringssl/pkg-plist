@@ -85,6 +85,9 @@ include/openssl/type_check.h
 include/openssl/x509.h
 include/openssl/x509_vfy.h
 include/openssl/x509v3.h
+lib/cmake/OpenSSL/OpenSSLConfig.cmake
+lib/cmake/OpenSSL/OpenSSLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/OpenSSL/OpenSSLTargets.cmake
 lib/libcrypto.so
 lib/libcrypto.so.1
 lib/libcrypto.so.1.0.0
