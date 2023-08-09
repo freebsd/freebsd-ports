@@ -1,6 +1,5 @@
 PORTNAME=	consolekit
-PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTVERSION=	1.2.6
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
@@ -39,7 +38,6 @@ X11_CONFIGURE_WITH=	x
 USE_GITHUB=	yes
 GH_ACCOUNT=	ConsoleKit2
 GH_PROJECT=	ConsoleKit2
-GH_TAGNAME=	789af84
 
 USES=		autoreconf gettext gmake gnome libtool localbase pathfix pkgconfig \
 		tar:bzip2
