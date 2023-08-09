@@ -13,6 +13,7 @@
     SUBDIR += R-cran-digest
     SUBDIR += R-cran-gitcreds
     SUBDIR += R-cran-openssl
+    SUBDIR += R-cran-sodium
     SUBDIR += acme.sh
     SUBDIR += acmed
     SUBDIR += acmetool

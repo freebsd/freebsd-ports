@@ -1,0 +1,6 @@
+Bindings to libsodium: a modern, easy-to-use software library for
+encryption, decryption, signatures, password hashing and more. Sodium
+uses curve25519, a state-of-the-art Diffie-Hellman function by Daniel
+Bernstein, which has become very popular after it was discovered that
+the NSA had backdoored Dual EC DRBG.
+
