@@ -16,15 +16,12 @@ sbin/desktop-installer
 %%DATADIR%%/MATE/xinitrc
 %%DATADIR%%/OTHER/xinitrc
 %%DATADIR%%/SDDM/sddm.conf
-%%DATADIR%%/Scripts/battery-shutdown.sh
-%%DATADIR%%/Scripts/desktop-admin
 %%DATADIR%%/WMAKER/xinitrc
 %%DATADIR%%/XDM/GiveConsole
 %%DATADIR%%/XDM/Xsetup_0
-%%DATADIR%%/XDM/Xstartup
 %%DATADIR%%/XDM/beastie.xpm
 %%DATADIR%%/XDM/bsd_background.jpg
 %%DATADIR%%/XDM/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
 %%DATADIR%%/Xdefaults-xterm
-%%DATADIR%%/splash.bmp
+%%DATADIR%%/battery-shutdown.cron
