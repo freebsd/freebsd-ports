@@ -4504,6 +4504,7 @@ lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/Timer.h
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/Types.h
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/Utils.h
+lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/ghc_ffi.h
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/prof/CCS.h
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/prof/Heap.h
 lib/ghc-%%GHC_VERSION%%/lib/x86_64-freebsd-ghc-%%GHC_VERSION%%/rts-1.0.2/include/rts/prof/LDV.h
