@@ -490,6 +490,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/IntegratorHPMCMonoGPUJIT.inc
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/IntegratorHPMCMonoGPUMoves.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/IntegratorHPMCMonoGPUTypes.cuh
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/IntegratorHPMCMonoNEC.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/MinkowskiMath.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/Moves.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/OBB.h
@@ -506,15 +507,19 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeSpheropolyhedron.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeSphinx.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeUnion.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/ShapeUtils.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/SphinxOverlap.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterBoxMC.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClusters.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPU.cuh
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterClustersGPUDepletants.cuh
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterMuVT.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterQuickCompress.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/UpdaterShape.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoCollide2D.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoCollide3D.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/XenoSweep3D.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/hpmc/modules.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/managed_allocator.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ActiveForceCompute.h
@@ -750,6 +755,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_flags.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_gsd.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_half_step_hook.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_hdf5.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_improper.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_kernel_parameters.py
@@ -833,6 +839,11 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_typeparam.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest/test_variant.py
 %%PYTHON_SITELIBDIR%%/hoomd/pytest_plugin_validate.py
+%%PYTHON_SITELIBDIR%%/hoomd/shape_plugin/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/shape_plugin/_shape_plugin%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/hoomd/shape_plugin/integrate.py
+%%PYTHON_SITELIBDIR%%/hoomd/shape_plugin/pytest/__init__.py
+%%PYTHON_SITELIBDIR%%/hoomd/shape_plugin/pytest/test_mysphere.py
 %%PYTHON_SITELIBDIR%%/hoomd/simulation.py
 %%PYTHON_SITELIBDIR%%/hoomd/snapshot.py
 %%PYTHON_SITELIBDIR%%/hoomd/state.py
@@ -863,4 +874,5 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/write/dcd.py
 %%PYTHON_SITELIBDIR%%/hoomd/write/gsd.py
 %%PYTHON_SITELIBDIR%%/hoomd/write/gsd_burst.py
+%%PYTHON_SITELIBDIR%%/hoomd/write/hdf5.py
 %%PYTHON_SITELIBDIR%%/hoomd/write/table.py
