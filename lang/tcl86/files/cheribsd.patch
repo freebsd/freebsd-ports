@@ -1,5 +1,5 @@
 diff --git generic/tcl.h generic/tcl.h
-index 41025e7571..b47643962c 100644
+index 3a4622e10..7db264f76 100644
 --- generic/tcl.h
 +++ generic/tcl.h
 @@ -1209,10 +1209,7 @@ struct Tcl_HashEntry {
@@ -23,25 +23,11 @@ index 41025e7571..b47643962c 100644
  
  /*
   * Macros to use for clients to use to invoke find and create functions for
-diff --git generic/tclCompCmdsSZ.c generic/tclCompCmdsSZ.c
-index ddfe0dc863..c88db0da72 100644
---- generic/tclCompCmdsSZ.c
-+++ generic/tclCompCmdsSZ.c
-@@ -2383,7 +2383,8 @@ IssueSwitchJumpTable(
- 		 * point to here.
- 		 */
- 
--		Tcl_SetHashValue(hPtr, CurrentOffset(envPtr) - jumpLocation);
-+		Tcl_SetHashValue(hPtr,
-+			INT2PTR(CurrentOffset(envPtr) - jumpLocation));
- 	    }
- 	    Tcl_DStringFree(&buffer);
- 	} else {
 diff --git generic/tclCompile.c generic/tclCompile.c
-index eb2e16b424..a39fd6aec6 100644
+index bffe7f8fe..763d452c4 100644
 --- generic/tclCompile.c
 +++ generic/tclCompile.c
-@@ -2778,9 +2778,13 @@ TclInitByteCodeObj(
+@@ -2779,9 +2779,13 @@ TclInitByteCodeObj(
  
      /*
       * Compute the total number of bytes needed for this bytecode.
@@ -56,7 +42,7 @@ index eb2e16b424..a39fd6aec6 100644
      structureSize += TCL_ALIGN(codeBytes);	  /* align object array */
      structureSize += TCL_ALIGN(objArrayBytes);	  /* align exc range arr */
      structureSize += TCL_ALIGN(exceptArrayBytes); /* align AuxData array */
-@@ -2818,7 +2822,7 @@ TclInitByteCodeObj(
+@@ -2819,7 +2823,7 @@ TclInitByteCodeObj(
      codePtr->maxExceptDepth = envPtr->maxExceptDepth;
      codePtr->maxStackDepth = envPtr->maxStackDepth;
  
@@ -66,7 +52,7 @@ index eb2e16b424..a39fd6aec6 100644
      memcpy(p, envPtr->codeStart, codeBytes);
  
 diff --git generic/tclExecute.c generic/tclExecute.c
-index 8963472e5f..1fb7e940be 100644
+index a16334a88..2d5f6709f 100644
 --- generic/tclExecute.c
 +++ generic/tclExecute.c
 @@ -169,11 +169,11 @@ static BuiltinFunc const tclBuiltinFuncTable[] = {
@@ -141,7 +127,7 @@ index 8963472e5f..1fb7e940be 100644
  	    }
  	}
  
-@@ -6895,7 +6898,7 @@ TEBCresume(
+@@ -6898,7 +6901,7 @@ TEBCresume(
  	iterVarPtr = LOCAL(infoPtr->loopCtTemp);
  	valuePtr = iterVarPtr->value.objPtr;
  	iterNum = valuePtr->internalRep.longValue + 1;
@@ -150,7 +136,7 @@ index 8963472e5f..1fb7e940be 100644
  
  	/*
  	 * Check whether all value lists are exhausted and we should stop the
-@@ -7200,7 +7203,7 @@ TEBCresume(
+@@ -7203,7 +7206,7 @@ TEBCresume(
  	 * stack.
  	 */
  
@@ -159,7 +145,7 @@ index 8963472e5f..1fb7e940be 100644
  	TRACE(("%u => catchTop=%d, stackTop=%d\n",
  		TclGetUInt4AtPtr(pc+1), (int) (catchTop - initCatchTop - 1),
  		(int) CURR_DEPTH));
-@@ -8064,8 +8067,8 @@ TEBCresume(
+@@ -8067,8 +8070,8 @@ TEBCresume(
  
  	while (auxObjList) {
  	    if ((catchTop != initCatchTop)
@@ -170,7 +156,7 @@ index 8963472e5f..1fb7e940be 100644
  		break;
  	    }
  	    POP_TAUX_OBJ();
-@@ -8140,7 +8143,7 @@ TEBCresume(
+@@ -8143,7 +8146,7 @@ TEBCresume(
  	 */
  
      processCatch:
@@ -179,7 +165,7 @@ index 8963472e5f..1fb7e940be 100644
  	    valuePtr = POP_OBJECT();
  	    TclDecrRefCount(valuePtr);
  	}
-@@ -8149,7 +8152,7 @@ TEBCresume(
+@@ -8152,7 +8155,7 @@ TEBCresume(
  	    fprintf(stdout, "  ... found catch at %d, catchTop=%d, "
  		    "unwound to %ld, new pc %u\n",
  		    rangePtr->codeOffset, (int) (catchTop - initCatchTop - 1),
@@ -189,7 +175,7 @@ index 8963472e5f..1fb7e940be 100644
  #endif
  	pc = (codePtr->codeStart + rangePtr->catchOffset);
 diff --git generic/tclHash.c generic/tclHash.c
-index bcf6eee006..535f006943 100644
+index 709831d83..d14dcc9fa 100644
 --- generic/tclHash.c
 +++ generic/tclHash.c
 @@ -714,24 +714,16 @@ AllocArrayEntry(
@@ -204,9 +190,9 @@ index bcf6eee006..535f006943 100644
 -
 -    count = tablePtr->keyType;
 +    int count = tablePtr->keyType * sizeof(int);
-+    unsigned int size = sizeof(Tcl_HashEntry) + count - sizeof(hPtr->key);
++    unsigned int size = TclOffset(Tcl_HashEntry, key) + count;
  
--    size = sizeof(Tcl_HashEntry) + (count*sizeof(int)) - sizeof(hPtr->key);
+-    size = TclOffset(Tcl_HashEntry, key) + count*sizeof(int);
      if (size < sizeof(Tcl_HashEntry)) {
  	size = sizeof(Tcl_HashEntry);
      }
@@ -246,7 +232,7 @@ index bcf6eee006..535f006943 100644
 @@ -840,7 +823,7 @@ AllocStringEntry(
      }
      hPtr = ckalloc(TclOffset(Tcl_HashEntry, key) + allocsize);
-     memset(hPtr, 0, sizeof(Tcl_HashEntry) + allocsize - sizeof(hPtr->key));
+     memset(hPtr, 0, TclOffset(Tcl_HashEntry, key) + allocsize);
 -    memcpy(hPtr->key.string, string, size);
 +    memcpy(hPtr->key.bytes, string, size);
      hPtr->clientData = 0;
@@ -265,7 +251,7 @@ index bcf6eee006..535f006943 100644
  
  /*
 diff --git generic/tclInt.h generic/tclInt.h
-index 949672b82d..c68b9e261d 100644
+index 8c3efb5a9..c0e467c2c 100644
 --- generic/tclInt.h
 +++ generic/tclInt.h
 @@ -38,6 +38,11 @@
@@ -298,7 +284,7 @@ index 949672b82d..c68b9e261d 100644
  #   else
  #	define UINT2PTR(p) ((void *)(p))
  #	define PTR2UINT(p) ((unsigned int)(p))
-@@ -2300,22 +2305,36 @@ typedef struct Interp {
+@@ -2302,22 +2307,36 @@ typedef struct Interp {
  #endif
  
  /*
@@ -343,7 +329,7 @@ index 949672b82d..c68b9e261d 100644
  /*
   * The following enum values are used to specify the runtime platform setting
 diff --git generic/tclPosixStr.c generic/tclPosixStr.c
-index c817faa43e..596417e232 100644
+index c817faa43..596417e23 100644
 --- generic/tclPosixStr.c
 +++ generic/tclPosixStr.c
 @@ -1069,6 +1069,9 @@ Tcl_SignalId(
@@ -367,7 +353,7 @@ index c817faa43e..596417e232 100644
      }
      return "unknown signal";
 diff --git generic/tclTest.c generic/tclTest.c
-index a759e749ea..5c0e740b26 100644
+index 0004c8e5f..eb082168a 100644
 --- generic/tclTest.c
 +++ generic/tclTest.c
 @@ -61,6 +61,21 @@ EXTERN int		Tcltest_SafeInit(Tcl_Interp *interp);
@@ -392,7 +378,7 @@ index a759e749ea..5c0e740b26 100644
  /*
   * One of the following structures exists for each asynchronous handler
   * created by the "testasync" command".
-@@ -1095,9 +1110,9 @@ TestcmdtokenCmd(
+@@ -1098,9 +1113,9 @@ TestcmdtokenCmd(
      int argc,			/* Number of arguments. */
      const char **argv)		/* Argument strings. */
  {
@@ -404,7 +390,7 @@ index a759e749ea..5c0e740b26 100644
  
      if (argc != 3) {
  	Tcl_AppendResult(interp, "wrong # args: should be \"", argv[0],
-@@ -1105,24 +1120,42 @@ TestcmdtokenCmd(
+@@ -1108,24 +1123,42 @@ TestcmdtokenCmd(
  	return TCL_ERROR;
      }
      if (strcmp(argv[1], "create") == 0) {
@@ -454,14 +440,14 @@ index a759e749ea..5c0e740b26 100644
  	Tcl_DecrRefCount(objPtr);
      } else {
 diff --git unix/tclUnixSock.c unix/tclUnixSock.c
-index 1a54914107..6bd06e48c0 100644
+index ffb70e1b7..aa1955bdf 100644
 --- unix/tclUnixSock.c
 +++ unix/tclUnixSock.c
 @@ -1428,7 +1428,7 @@ Tcl_OpenTcpClient(
          return NULL;
      }
  
--    sprintf(channelName, SOCK_TEMPLATE, (long) statePtr);
+-    sprintf(channelName, SOCK_TEMPLATE, (long)statePtr);
 +    sprintf(channelName, SOCK_TEMPLATE, (size_t)PTR2UINT(statePtr));
  
      statePtr->channel = Tcl_CreateChannel(&tcpChannelType, channelName,
@@ -488,7 +474,7 @@ index 1a54914107..6bd06e48c0 100644
      newSockState->flags = 0;
      newSockState->fds.fd = newsock;
  
--    sprintf(channelName, SOCK_TEMPLATE, (long) newSockState);
+-    sprintf(channelName, SOCK_TEMPLATE, (long)newSockState);
 +    sprintf(channelName, SOCK_TEMPLATE, (size_t)PTR2INT(newSockState));
      newSockState->channel = Tcl_CreateChannel(&tcpChannelType, channelName,
  	    newSockState, TCL_READABLE | TCL_WRITABLE);
