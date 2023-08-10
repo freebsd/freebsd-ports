@@ -1,5 +1,5 @@
 PORTNAME=	SoPlex
-DISTVERSION=	6.0.3
+DISTVERSION=	6.0.4
 CATEGORIES=	math science
 MASTER_SITES=	http://soplex.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
