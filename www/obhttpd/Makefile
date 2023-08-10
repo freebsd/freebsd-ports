@@ -1,5 +1,6 @@
 PORTNAME=	obhttpd
 DISTVERSION=	7.3.20230714
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	OPENBSD/LibreSSL:libressl
 DISTFILES=	libressl-${SSL}.tar.gz:libressl
@@ -35,7 +36,7 @@ CFLAGS+=	-Wall -fcommon \
 USERS=		www
 GROUPS=		www
 
-SSL=		3.8.0
+SSL=		3.5.4
 LIBEVENT=	7.3.20230714
 LIBIMSG=	7.3.20230714
 

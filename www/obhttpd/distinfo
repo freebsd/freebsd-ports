@@ -1,6 +1,6 @@
-TIMESTAMP = 1689353656
-SHA256 (libressl-3.8.0.tar.gz) = 12531c1ec808c5c6abeb311899664b0cfed04d4648f456dc959bb93c5f21acac
-SIZE (libressl-3.8.0.tar.gz) = 4419357
+TIMESTAMP = 1691792255
+SHA256 (libressl-3.5.4.tar.gz) = 0379da1344a2f71ad4a4e3be30ef9d82eecddce7f8dc2ae66631a1dfe14343ac
+SIZE (libressl-3.5.4.tar.gz) = 4039834
 SHA256 (koue-httpd-7.3.20230714_GH0.tar.gz) = 82e1147d7c1d184d6049a4ce64c110705848bb7b5461929404383a2c0cffbd8d
 SIZE (koue-httpd-7.3.20230714_GH0.tar.gz) = 175337
 SHA256 (koue-libevent-7.3.20230714_GH0.tar.gz) = 84fffbead795fd00ca758c460a2540bcb2f34bbc80b7837dbc94e18dc49ceebb
