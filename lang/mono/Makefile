@@ -2,7 +2,7 @@ PORTNAME=	mono
 PORTVERSION=	${MONO_DEFAULT}
 CATEGORIES=	lang
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta-port for the default version of the Mono framework
 WWW=		https://www.mono-project.com/
 
