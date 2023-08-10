@@ -1,7 +1,7 @@
 PORTNAME=	dxx-rebirth
 PORTVERSION=	20220929
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://www.dxx-rebirth.com/download/dxx/rebirth/
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
@@ -37,7 +37,7 @@ PLIST_FILES=	bin/d1x-rebirth \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != powerpc64 && ${ARCH} != riscv64
+.if ${ARCH} != riscv64
 MAKE_ARGS+=	lto=1
 .endif
 
