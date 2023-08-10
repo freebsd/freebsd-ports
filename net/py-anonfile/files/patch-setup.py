@@ -1,4 +1,4 @@
---- setup.py.orig	2023-06-16 04:37:29 UTC
+--- setup.py.orig	2023-08-10 06:12:11 UTC
 +++ setup.py
 @@ -9,14 +9,6 @@ with open("src/anonfile/anonfile.py", encoding='utf-8'
      python_major = int(re.search(r'python_major = "(.*?)"', lines).group(1))
@@ -15,16 +15,15 @@
  print("reading readme file")
  
  with open("README.md", "r") as fh:
-@@ -37,9 +29,13 @@ setup(
+@@ -37,9 +29,12 @@ setup(
          'Changelog': "https://github.com/nstrydom2/anonfile-api/blob/master/CHANGELOG.md"
-     },    
+     },
      python_requires=">=%d.%d" % (python_major, python_minor),
 -    install_requires=packages,
 +    install_requires=[
 +        "requests",
 +        "requests-toolbelt",
-+        "tqdm",
-+        "importlib-metadata"
++        "tqdm"
 +    ],
      extra_requires={
 -        'dev': dev_packages[1:],

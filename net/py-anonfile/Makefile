@@ -1,5 +1,5 @@
 PORTNAME=	anonfile
-DISTVERSION=	0.2.7
+DISTVERSION=	1.0.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-meta
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		dos2unix python:3.9+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
