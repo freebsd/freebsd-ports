@@ -1,3 +1,79 @@
+  <vuln vid="59a43a73-3786-11ee-94b4-6cc21735f730">
+    <topic>postgresql-server -- MERGE fails to enforce UPDATE or SELECT row security policies</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>15.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-39418/">
+	  <p>
+	    PostgreSQL 15 introduced the MERGE command, which fails to test
+	    new rows against row security policies defined for UPDATE and
+	    SELECT. If UPDATE and SELECT policies forbid some row that
+	    INSERT policies do not forbid, a user could store such rows.
+	    Subsequent consequences are application-dependent. This
+	    affects only databases that have used CREATE POLICY to define
+	    a row security policy.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39418</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-39418/</url>
+    </references>
+    <dates>
+      <discovery>2023-08-10</discovery>
+      <entry>2023-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cfd2a634-3785-11ee-94b4-6cc21735f730">
+    <topic>postgresql-server -- Extension script @substitutions@ within quoting allow SQL injection</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>11.21</lt></range>
+	<range><lt>12.16</lt></range>
+	<range><lt>13.12</lt></range>
+	<range><lt>14.9</lt></range>
+	<range><lt>15.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-39417/">
+	  <p>
+	    An extension script is vulnerable if it uses @extowner@,
+	    @extschema@, or @extschema:...@ inside a quoting construct
+	    (dollar quoting, '', or ""). No bundled extension is
+	    vulnerable. Vulnerable uses do appear in a documentation
+	    example and in non-bundled extensions. Hence, the attack
+	    prerequisite is an administrator having installed files of a
+	    vulnerable, trusted, non-bundled extension. Subject to that
+	    prerequisite, this enables an attacker having database-level
+	    CREATE privilege to execute arbitrary code as the bootstrap
+	    superuser. PostgreSQL will block this attack in the core
+	    server, so there's no need to modify individual extensions.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39417</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-39417/</url>
+    </references>
+    <dates>
+      <discovery>2023-08-10</discovery>
+      <entry>2023-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3a35fb8-2d70-47c9-a516-6aad7eb222b1">
     <topic>electron{23,24,25} -- multiple vulnerabilities</topic>
     <affects>
