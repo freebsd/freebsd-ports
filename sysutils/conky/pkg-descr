@@ -1,1 +1,3 @@
-Conky is an advanced, highly configurable system monitor for X
+Conky is a free, light-weight system monitor for X, that displays
+any kind of information on your desktop. It can also run on Wayland,
+macOS, output to your console, a file, or even HTTP (oh my!).

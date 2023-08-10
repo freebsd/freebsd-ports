@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.19.2
+PORTVERSION=	1.19.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -122,8 +122,6 @@ WAYLAND_LDFLAGS=	-Wl,--as-needed # pangoft2 deps: glib20, freetype2, harfbuzz
 X11_USES=	xorg
 X11_USE=	XORG=x11,xdamage,xext,xfixes
 X11_CMAKE_BOOL=	BUILD_X11 OWN_WINDOW
-X11_VARS=	EXAMPLE_CONF_FILE=${WRKSRC}/data/conky.conf
-X11_VARS_OFF=	EXAMPLE_CONF_FILE=${WRKSRC}/data/conky_no_x11.conf
 
 XFT_CMAKE_BOOL=	BUILD_XFT
 XFT_USE=	XORG=xft
