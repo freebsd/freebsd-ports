@@ -8,8 +8,8 @@ _LTO_MK_INCLUDED=	yes
 LTO_Include_MAINTAINER=	pkubaj@FreeBSD.org
 
 .  if !defined(LTO_UNSAFE) || defined(LTO_DISABLE_CHECK)
-.    if "${ARCH}" == "powerpc64" || "${ARCH}" == "riscv64" && !defined(LTO_DISABLE_CHECK)
-       DEV_WARNING+=	"LTO is currently broken on powerpc64 and riscv64, to override set LTO_DISABLE_CHECK=yes"
+.    if "${ARCH}" == "riscv64" && !defined(LTO_DISABLE_CHECK)
+       DEV_WARNING+=	"LTO is currently broken on riscv64, to override set LTO_DISABLE_CHECK=yes"
 .    elif defined(_INCLUDE_USES_CARGO_MK)
    CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO="true" \
 		CARGO_PROFILE_RELEASE_PANIC="abort" \
