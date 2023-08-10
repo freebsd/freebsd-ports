@@ -218,10 +218,10 @@ bin/qmlscene6
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4arraydata_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4arrayiterator_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4arrayobject_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4assemblercommon_p.h
+%%QML_JIT%%%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4assemblercommon_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4atomics_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4baselineassembler_p.h
-%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4baselinejit_p.h
+%%QML_JIT%%%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4baselineassembler_p.h
+%%QML_JIT%%%%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4baselinejit_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4booleanobject_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4bytecodegenerator_p.h
 %%QT_INCDIR%%/QtQml/%%FULLVER%%/QtQml/private/qv4bytecodehandler_p.h
