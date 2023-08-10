@@ -1,11 +1,11 @@
---- ncbi-vdb/test/kfg/kfgtest.cpp.orig	2019-08-20 18:27:10 UTC
+--- ncbi-vdb/test/kfg/kfgtest.cpp.orig	2023-07-10 16:13:36 UTC
 +++ ncbi-vdb/test/kfg/kfgtest.cpp
-@@ -280,6 +280,8 @@ FIXTURE_TEST_CASE(predef_OS, KfgFixture)
+@@ -282,6 +282,8 @@ FIXTURE_TEST_CASE(predef_ARCHBITS, KfgFixture)
+ FIXTURE_TEST_CASE(predef_OS, KfgFixture)
+ {
      CreateAndLoad(GetName(), "var=$(OS)\n");
++    #if BSD
++        #define OS "bsd"
      #if LINUX
          #define OS "linux"
-+    #elif BSD
-+        #define OS "bsd"    
      #elif SUN
-         #define OS "sun"
-     #elif MAC

@@ -1,0 +1,25 @@
+--- ncbi-vdb/libs/kfc/CMakeLists.txt.orig	2023-07-10 16:13:36 UTC
++++ ncbi-vdb/libs/kfc/CMakeLists.txt
+@@ -23,12 +23,15 @@
+ # ===========================================================================
+ 
+ set ( UNIX_SRC unix/sysctx.c unix/sysrsrc.c )
++set ( BSD_SRC ${UNIX_SRC} )
+ set ( LINUX_SRC ${UNIX_SRC} )
+ set ( MAC_SRC ${UNIX_SRC} )
+ set ( WIN_SRC win/sysctx.c win/sysrsrc.c )
+ 
+ if ( "windows" STREQUAL ${OS} )
+     set ( OS_SPECIFIC_SRC ${WIN_SRC} )
++elseif( "bsd" STREQUAL ${OS} )
++    set ( OS_SPECIFIC_SRC ${LINUX_SRC} )
+ elseif( "linux" STREQUAL ${OS} )
+     set ( OS_SPECIFIC_SRC ${LINUX_SRC} )
+ elseif( "mac" STREQUAL ${OS} )
+@@ -48,4 +51,4 @@ set( SRC
+ GenerateStaticLibs( kfc "${SRC}" )
+ 
+ add_compile_definitions (__mod__="libs/kfc")
+-include_directories( BEFORE ${CMAKE_CURRENT_SOURCE_DIR} )
+\ No newline at end of file
++include_directories( BEFORE ${CMAKE_CURRENT_SOURCE_DIR} )

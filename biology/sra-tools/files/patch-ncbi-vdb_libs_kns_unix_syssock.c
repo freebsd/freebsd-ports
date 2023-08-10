@@ -1,4 +1,4 @@
---- ncbi-vdb/libs/kns/unix/syssock.c.orig	2017-07-14 21:55:36 UTC
+--- ncbi-vdb/libs/kns/unix/syssock.c.orig	2023-08-07 20:34:54 UTC
 +++ ncbi-vdb/libs/kns/unix/syssock.c
 @@ -66,6 +66,7 @@
  #include <sys/types.h>
