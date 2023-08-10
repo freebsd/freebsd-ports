@@ -1,6 +1,6 @@
 PORTNAME=	hikari
 DISTVERSION=	2.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://hikari.acmelabs.space/releases/
 
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libinput.so:x11/libinput \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
 USES=		compiler:c11 gnome pkgconfig xorg
 USE_GNOME=	cairo pango
