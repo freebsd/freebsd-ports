@@ -4,6 +4,7 @@ CATEGORIES=	lang
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Meta-port for the default version of the Mono framework
+WWW=		https://www.mono-project.com/
 
 RUN_DEPENDS=	mono${MONO_DEFAULT}>0:lang/mono${MONO_DEFAULT}
 
