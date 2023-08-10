@@ -75,8 +75,12 @@
   </vuln>
 
   <vuln vid="f3a35fb8-2d70-47c9-a516-6aad7eb222b1">
-    <topic>electron{23,24,25} -- multiple vulnerabilities</topic>
+    <topic>electron{22,23,24,25} -- multiple vulnerabilities</topic>
     <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.20</lt></range>
+      </package>
       <package>
 	<name>electron23</name>
 	<range><lt>23.3.12</lt></range>
@@ -114,6 +118,7 @@
     <dates>
       <discovery>2023-08-02</discovery>
       <entry>2023-08-07</entry>
+      <modified>2023-08-11</modified>
     </dates>
   </vuln>
 
