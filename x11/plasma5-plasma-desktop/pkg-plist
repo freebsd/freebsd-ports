@@ -296,6 +296,8 @@ share/doc/HTML/es/kcontrol/kcmsmserver/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmsmserver/index.docbook
 share/doc/HTML/es/kcontrol/kded/index.cache.bz2
 share/doc/HTML/es/kcontrol/kded/index.docbook
+share/doc/HTML/es/kcontrol/keyboard/index.cache.bz2
+share/doc/HTML/es/kcontrol/keyboard/index.docbook
 share/doc/HTML/es/kcontrol/keys/index.cache.bz2
 share/doc/HTML/es/kcontrol/keys/index.docbook
 share/doc/HTML/es/kcontrol/mouse/index.cache.bz2
@@ -316,6 +318,8 @@ share/doc/HTML/es/kfontview/index.cache.bz2
 share/doc/HTML/es/kfontview/index.docbook
 share/doc/HTML/es/knetattach/index.cache.bz2
 share/doc/HTML/es/knetattach/index.docbook
+share/doc/HTML/es/plasma-desktop/index.cache.bz2
+share/doc/HTML/es/plasma-desktop/index.docbook
 share/doc/HTML/et/kcontrol/clock/index.cache.bz2
 share/doc/HTML/et/kcontrol/clock/index.docbook
 share/doc/HTML/et/kcontrol/solid-actions/index.cache.bz2
@@ -1707,6 +1711,7 @@ share/locale/gl/LC_MESSAGES/kcm_recentFiles.mo
 share/locale/gl/LC_MESSAGES/kcm_smserver.mo
 share/locale/gl/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/gl/LC_MESSAGES/kcm_splashscreen.mo
+share/locale/gl/LC_MESSAGES/kcm_tablet.mo
 share/locale/gl/LC_MESSAGES/kcm_touchpad.mo
 share/locale/gl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/gl/LC_MESSAGES/kcm_workspace.mo
@@ -1715,6 +1720,7 @@ share/locale/gl/LC_MESSAGES/kcmkeyboard.mo
 share/locale/gl/LC_MESSAGES/kcmmouse.mo
 share/locale/gl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/gl/LC_MESSAGES/knetattach5.mo
+share/locale/gl/LC_MESSAGES/org.kde.plasma.emojier.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -3254,6 +3260,7 @@ share/locale/sv/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/sv/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sv/LC_MESSAGES/kcm_tablet.mo
 share/locale/sv/LC_MESSAGES/kcm_touchpad.mo
+share/locale/sv/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/sv/LC_MESSAGES/kcm_workspace.mo
 share/locale/sv/LC_MESSAGES/kcmkclock.mo
 share/locale/sv/LC_MESSAGES/kcmkeyboard.mo
@@ -3722,6 +3729,7 @@ share/plasma/emoji/ast.dict
 share/plasma/emoji/az.dict
 share/plasma/emoji/be.dict
 share/plasma/emoji/bg.dict
+share/plasma/emoji/bgn.dict
 share/plasma/emoji/bn.dict
 share/plasma/emoji/br.dict
 share/plasma/emoji/bs.dict
@@ -3741,7 +3749,7 @@ share/plasma/emoji/en.dict
 share/plasma/emoji/en_001.dict
 share/plasma/emoji/en_AU.dict
 share/plasma/emoji/en_CA.dict
-share/plasma/emoji/en_GB.dict
+share/plasma/emoji/en_IN.dict
 share/plasma/emoji/es.dict
 share/plasma/emoji/es_419.dict
 share/plasma/emoji/es_MX.dict
@@ -3749,6 +3757,7 @@ share/plasma/emoji/es_US.dict
 share/plasma/emoji/et.dict
 share/plasma/emoji/eu.dict
 share/plasma/emoji/fa.dict
+share/plasma/emoji/ff_Adlm.dict
 share/plasma/emoji/fi.dict
 share/plasma/emoji/fil.dict
 share/plasma/emoji/fo.dict
@@ -3783,6 +3792,7 @@ share/plasma/emoji/ko.dict
 share/plasma/emoji/kok.dict
 share/plasma/emoji/ky.dict
 share/plasma/emoji/lb.dict
+share/plasma/emoji/lij.dict
 share/plasma/emoji/lo.dict
 share/plasma/emoji/lt.dict
 share/plasma/emoji/lv.dict
@@ -3799,6 +3809,8 @@ share/plasma/emoji/ne.dict
 share/plasma/emoji/nl.dict
 share/plasma/emoji/nn.dict
 share/plasma/emoji/no.dict
+share/plasma/emoji/nso.dict
+share/plasma/emoji/oc.dict
 share/plasma/emoji/or.dict
 share/plasma/emoji/pa.dict
 share/plasma/emoji/pa_Arab.dict
@@ -3808,10 +3820,12 @@ share/plasma/emoji/ps.dict
 share/plasma/emoji/pt.dict
 share/plasma/emoji/pt_PT.dict
 share/plasma/emoji/qu.dict
+share/plasma/emoji/quc.dict
 share/plasma/emoji/rm.dict
 share/plasma/emoji/ro.dict
 share/plasma/emoji/ru.dict
 share/plasma/emoji/rw.dict
+share/plasma/emoji/sat.dict
 share/plasma/emoji/sc.dict
 share/plasma/emoji/sd.dict
 share/plasma/emoji/si.dict
@@ -3832,6 +3846,7 @@ share/plasma/emoji/tg.dict
 share/plasma/emoji/th.dict
 share/plasma/emoji/ti.dict
 share/plasma/emoji/tk.dict
+share/plasma/emoji/tn.dict
 share/plasma/emoji/to.dict
 share/plasma/emoji/tr.dict
 share/plasma/emoji/ug.dict
