@@ -1,6 +1,6 @@
 PORTNAME=	osgearth
 PORTVERSION=	3.4
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics geography
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libprotoc.so:devel/protobuf \
 		libwebp.so:graphics/webp
 
-USES=		cmake gl pkgconfig sqlite
+USES=		cmake compiler:c++11-lang gl pkgconfig sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron ocornut:imgui Esri:lerc Tencent:rapidjson
@@ -32,6 +32,7 @@ USE_GL+=	gl glu
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \
 		-DCMAKE_LIBRARY_PATH:PATH=${LOCALBASE}/lib \
 		-DLIB_POSTFIX:STRING=""
+CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS -mvsx
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -42,14 +43,8 @@ post-extract:
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
-CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
-USES+=		compiler:gcc-c++11-lib
-.else
-.  if ${ARCH} != amd64
+.if ${ARCH} != amd64
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-ia32-sse
-.  endif
-USES+=		compiler:c++11-lang
 .endif
 
 .include <bsd.port.mk>
