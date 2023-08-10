@@ -1,6 +1,6 @@
 PORTNAME=	a2jmidid
 PORTVERSION=	9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -30,7 +30,7 @@ DEBUG_CFLAGS= "-DDEBUG"
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64 || ${ARCH} == riscv64
+.if ${ARCH} == riscv64
 MESON_ARGS+=	-Db_lto=false
 .endif
 
