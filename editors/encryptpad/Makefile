@@ -1,6 +1,7 @@
 PORTNAME=	encryptpad
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0.2
+PORTREVISION=	1
 CATEGORIES=	editors security
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -31,7 +32,9 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
-CONFIGURE_ARGS=	--cpu="${ARCH}"
+CONFIGURE_ARGS=	--cpu="ppc64"
+.elif ${ARCH} == powerpc64le
+CONFIGURE_ARGS=	--cpu="ppc64le"
 .endif
 
 .include <bsd.port.pre.mk>
