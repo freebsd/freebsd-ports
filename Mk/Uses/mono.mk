@@ -4,7 +4,7 @@
 # Usage:	USES=mono:ARGS
 # Valid ARGS:	nuget
 #
-# MAINTAINER=	mono@FreeBSD.org
+# MAINTAINER=	ports@FreeBSD.org
 #
 # Arguments:
 #
