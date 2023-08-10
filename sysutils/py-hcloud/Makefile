@@ -1,5 +1,5 @@
 PORTNAME=	hcloud
-DISTVERSION=	1.26.0
+DISTVERSION=	1.27.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pre-commit>=0:devel/py-pre-commit@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}isort>=5.12.0:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=3.23.1:devel/py-tox@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}black>=23.3.0:devel/py-black@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}black>=23.3.0:devel/py-black@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=1.4.1:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-python-dateutil>=0:devel/py-types-python-dateutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-request>=0:devel/py-types-requests@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python:3.8+
