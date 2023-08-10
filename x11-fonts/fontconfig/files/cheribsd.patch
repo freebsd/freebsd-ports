@@ -25,10 +25,10 @@ index cc1dea8..627d470 100755
      {}       langIndices[{}];
      {}       langIndicesInv[{}];
 diff --git src/fccache.c src/fccache.c
-index 4a6a752..0304360 100644
+index cebbb81..cb7460e 100644
 --- src/fccache.c
 +++ src/fccache.c
-@@ -901,13 +901,15 @@ FcCacheOffsetsValid (FcCache *cache)
+@@ -898,13 +898,15 @@ FcCacheOffsetsValid (FcCache *cache)
              FcPattern		*font = FcFontSetFont (fs, i);
              FcPatternElt	*e;
              FcValueListPtr	 l;
@@ -47,7 +47,7 @@ index 4a6a752..0304360 100644
  		!FcRefIsConst (&font->ref))
                  return FcFalse;
  
-@@ -918,7 +920,7 @@ FcCacheOffsetsValid (FcCache *cache)
+@@ -915,7 +917,7 @@ FcCacheOffsetsValid (FcCache *cache)
  
  	    for (j = 0; j < font->num; j++)
  	    {
@@ -57,10 +57,10 @@ index 4a6a752..0304360 100644
  		{
  		    if ((char *) l < last_offset || (char *) l > end - sizeof (*l) ||
 diff --git src/fccfg.c src/fccfg.c
-index eb174a4..8267136 100644
+index f62e228..c04203c 100644
 --- src/fccfg.c
 +++ src/fccfg.c
-@@ -427,6 +427,7 @@ FcConfigAddCache (FcConfig *config, FcCache *cache,
+@@ -430,6 +430,7 @@ FcConfigAddCache (FcConfig *config, FcCache *cache,
  	    FcPattern	*font = FcFontSetFont (fs, i);
  	    FcChar8	*font_file;
  	    FcChar8	*relocated_font_file = NULL;
@@ -69,7 +69,7 @@ index eb174a4..8267136 100644
  	    if (FcPatternObjectGetString (font, FC_FILE_OBJECT,
  					  0, &font_file) == FcResultMatch)
 diff --git src/fccharset.c src/fccharset.c
-index cd927d9..f0b87a7 100644
+index cd927d9..cde51ca 100644
 --- src/fccharset.c
 +++ src/fccharset.c
 @@ -37,8 +37,8 @@ FcCharSetCreate (void)
@@ -179,22 +179,7 @@ index cd927d9..f0b87a7 100644
  	return FcTrue;
      }
      pos = -pos - 1;
-@@ -555,8 +556,14 @@ FcCharSetMerge (FcCharSet *a, const FcCharSet *b, FcBool *changed)
- 	    }
- 	    else
- 	    {
-+/*
-+ * TODO: add cheri support.
-+ * foot(1) terminal crashes here.
-+ */
-+#if 0
- 		FcCharLeaf *al = FcCharSetLeaf(a, ai);
- 		FcCharSetUnionLeaf (al, al, bl);
-+#endif
- 	    }
- 
- 	    ai++;
-@@ -1177,24 +1184,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
+@@ -1177,24 +1178,20 @@ FcCharSetFreezeBase (FcCharSetFreezer *freezer, FcCharSet *fcs)
      ent->set.num = fcs->num;
      if (fcs->num)
      {
@@ -225,7 +210,7 @@ index cd927d9..f0b87a7 100644
      }
  
      ent->hash = hash;
-@@ -1303,7 +1306,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
+@@ -1303,7 +1300,7 @@ FcCharSetFreezerDestroy (FcCharSetFreezer *freezer)
  FcBool
  FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  {
@@ -234,7 +219,7 @@ index cd927d9..f0b87a7 100644
      FcChar16	    *numbers;
      int		    i;
  
-@@ -1326,9 +1329,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
+@@ -1326,9 +1323,9 @@ FcCharSetSerializeAlloc (FcSerialize *serialize, const FcCharSet *cs)
  
      if (!FcSerializeAlloc (serialize, cs, sizeof (FcCharSet)))
  	return FcFalse;
@@ -246,7 +231,7 @@ index cd927d9..f0b87a7 100644
  	return FcFalse;
      for (i = 0; i < cs->num; i++)
  	if (!FcSerializeAlloc (serialize, FcCharSetLeaf(cs, i),
-@@ -1341,7 +1344,7 @@ FcCharSet *
+@@ -1341,7 +1338,7 @@ FcCharSet *
  FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  {
      FcCharSet	*cs_serialized;
@@ -255,7 +240,7 @@ index cd927d9..f0b87a7 100644
      FcChar16	*numbers, *numbers_serialized;
      FcCharLeaf	*leaf, *leaf_serialized;
      int		i;
-@@ -1367,16 +1370,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1367,16 +1364,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	if (!leaves_serialized)
  	    return NULL;
  
@@ -274,7 +259,7 @@ index cd927d9..f0b87a7 100644
  
  	for (i = 0; i < cs->num; i++)
  	{
-@@ -1385,15 +1386,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
+@@ -1385,15 +1380,14 @@ FcCharSetSerialize(FcSerialize *serialize, const FcCharSet *cs)
  	    if (!leaf_serialized)
  		return NULL;
  	    *leaf_serialized = *leaf;
@@ -316,7 +301,7 @@ index e2c6b56..655ac73 100644
  	printf ("\t");
  	printf ("%04x:", numbers[i]);
 diff --git src/fcint.h src/fcint.h
-index c615b66..d46dafe 100644
+index 78cee54..b73c158 100644
 --- src/fcint.h
 +++ src/fcint.h
 @@ -225,11 +225,13 @@ typedef struct _FcPatternElt {
@@ -362,7 +347,7 @@ index c615b66..d46dafe 100644
 +    return leaves[i];
 +}
 +#define FcCharSetNumbers(c)	(FcIsEncodedOffset((c)->numbers) ? \
-+				 FcEncodedOffsetToPtr(c, (c)->leaves, FcChar16) : \
++				 FcEncodedOffsetToPtr(c, (c)->numbers, FcChar16) : \
 +				 (c)->numbers)
  
  #define FCSS_DEFAULT            0 /* default behavior */
@@ -377,7 +362,7 @@ index c615b66..d46dafe 100644
  } FcSerializeBucket;
  
 diff --git src/fcpat.c src/fcpat.c
-index 82c6bed..e1cd507 100644
+index cdbeec4..1809ace 100644
 --- src/fcpat.c
 +++ src/fcpat.c
 @@ -36,7 +36,7 @@ FcPatternCreate (void)
