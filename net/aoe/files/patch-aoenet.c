@@ -1,60 +1,93 @@
---- aoenet.c.orig	2006-05-25 16:10:11.000000000 +0000
-+++ aoenet.c	2017-10-17 20:01:42.698938000 +0000
-@@ -77,8 +77,11 @@
+--- aoenet.c.orig	2006-05-25 16:10:11 UTC
++++ aoenet.c
+@@ -75,13 +75,12 @@ static char *aoe_errlist[] =
+ };
+ 
  #define NECODES (sizeof(aoe_errlist) /  sizeof(char *) - 1)
- #if (__FreeBSD_version < 600000)
- #define IFPADDR(ifp) (((struct arpcom *) (ifp))->ac_enaddr)
+-#if (__FreeBSD_version < 600000)
+-#define IFPADDR(ifp) (((struct arpcom *) (ifp))->ac_enaddr)
 -#else
-+#elif (__FreeBSD_version < 700000)
- #define IFPADDR(ifp) IFP2ENADDR(ifp) 
-+#else
+-#define IFPADDR(ifp) IFP2ENADDR(ifp) 
+-#endif
 +#include <net/if_dl.h>
 +#define IFPADDR(ifp) IF_LLADDR(ifp)
- #endif
  #define IFLISTSZ 1024
  
-@@ -160,7 +163,11 @@
++#define	IFNET_FOREACH(v)	CK_STAILQ_FOREACH(v, &V_ifnet, if_link)
++
+ static char aoe_iflist[IFLISTSZ];
+ 
+ static int sysctl_aoe_iflist(SYSCTL_HANDLER_ARGS);
+@@ -91,50 +90,7 @@ SYSCTL_OID(_net_aoe, OID_AUTO, iflist, CTLTYPE_STRING|
+ 	aoe_iflist, IFLISTSZ - 1, sysctl_aoe_iflist, "A", 
+ 	"Space separated list of interfaces valid for AoE"); 
+ 
+-#if (__FreeBSD_version < 600000)
+-/* FreeBSD 5.X doesn't include strspn()... */
+-#include <sys/limits.h>
+-#define IDX(c)  ((u_char)(c) / LONG_BIT)
+-#define BIT(c)  ((u_long)1 << ((u_char)(c) % LONG_BIT))
+- 
+-static size_t
+-strspn(const char *s, const char *charset)
+-{
+-       /*
+-        * NB: idx and bit are temporaries whose use causes gcc 3.4.2 to
+-        * generate better code.  Without them, gcc gets a little confused.
+-        */
+-       const char *s1;
+-       u_long bit;
+-       u_long tbl[(UCHAR_MAX + 1) / LONG_BIT];
+-       int idx;
+- 
+-       if(*s == '\0')
+-               return (0);
+- 
+-#if LONG_BIT == 64      /* always better to unroll on 64-bit architectures */
+-       tbl[3] = tbl[2] = tbl[1] = tbl[0] = 0;
+-#else
+-       for (idx = 0; idx < sizeof(tbl) / sizeof(tbl[0]); idx++)
+-               tbl[idx] = 0;
+-#endif
+-       for (; *charset != '\0'; charset++) {
+-               idx = IDX(*charset);
+-               bit = BIT(*charset);
+-               tbl[idx] |= bit;
+-       }
+ 
+-       for(s1 = s; ; s1++) {
+-               idx = IDX(*s1);
+-               bit = BIT(*s1);
+-               if ((tbl[idx] & bit) == 0)
+-                       break;
+-       }
+-       return (s1 - s);
+-}
+-#endif /* __FreeBSD_version < 600000 */
+- 
+-
+ /* aoe_strcspn -- span the complement of a string */
+ static size_t
+ aoe_strcspn(const char *s, const char *reject)
+@@ -160,7 +116,7 @@ is_aoe_netif(struct ifnet *ifp)
          register char *p, *q;
          register int len;
  
-+#if __FreeBSD_version >= 1100030
+-        switch (ifp->if_data.ifi_type) {
 +        switch (ifp->if_type) {
-+#else
-         switch (ifp->if_data.ifi_type) {
-+#endif
          default:
                  return (FALSE);
          case IFT_ETHER:
-@@ -190,10 +197,28 @@
- /* 
+@@ -191,7 +147,7 @@ is_aoe_netif(struct ifnet *ifp)
   * a dummy "free" function for mbuf ext buffer 
   */
-+#if __FreeBSD_version >= 1200051
-+static void
-+nilfn(struct mbuf *m)
-+{
-+}
-+#elif __FreeBSD_version >= 1100028
-+static void
-+nilfn(struct mbuf *m, void *a, void *b)
-+{
-+}
-+#elif __FreeBSD_version >= 1000050
-+static int
-+nilfn(struct mbuf *m, void *a, void *b)
-+{
-+	return EXT_FREE_OK;
-+}
-+#else
  static void
- nilfn(void *a, void *b)
+-nilfn(void *a, void *b)
++nilfn(struct mbuf *m)
  {
  }
-+#endif
  
- /* Create a mbuf chain and point to our data section(s). */
- static struct mbuf *
-@@ -201,7 +226,7 @@
+@@ -201,7 +157,7 @@ frame_mbufinit(struct frame *f)
  {
          struct mbuf *m;
  
@@ -63,7 +96,7 @@
  		return (NULL);
  	m->m_len = AOEHDRSZ;
  	m->m_pkthdr.len = f->f_mlen;
-@@ -215,14 +240,21 @@
+@@ -215,14 +171,15 @@ frame_mbufinit(struct frame *f)
                  u_int len;
  
                  len = f->f_mlen - AOEHDRSZ;
@@ -74,19 +107,19 @@
  		}
  		m->m_next = m1;
  
-+#if __FreeBSD_version >= 1100028
+-		m1->m_ext.ref_cnt = NULL;
 +		m1->m_ext.ext_cnt = NULL;
-+#else
- 		m1->m_ext.ref_cnt = NULL;
-+#endif
  		MEXTADD(m1, f->f_data, len, nilfn, 
-+#if (__FreeBSD_version >= 800000)
 +			f->f_data,
-+#endif
  			NULL, 0, EXT_NET_DRV);
  		m1->m_len = len;
  		m1->m_next = NULL;
-@@ -276,7 +308,7 @@
+@@ -272,11 +229,11 @@ aoenet_xmitbcast(u_short aoemajor, u_char aoeminor)
+ 	h->ah_cmd = AOECMD_CFG;
+ 
+ 	IFNET_RLOCK();
+-	TAILQ_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp) {
  		if (!is_aoe_netif(ifp))
  			continue;
  		memcpy(h->ah_src, IFPADDR(ifp), sizeof(h->ah_src));
@@ -95,43 +128,34 @@
  		if (m == NULL) {
  			IPRINTK("m_copypacket failure\n");
  			continue;
-@@ -298,7 +330,11 @@
+@@ -298,7 +255,7 @@ u_int
  aoenet_maxsize(struct ifnet *ifp)
  {
  	/* max payload size of packet based on interface mtu setting */
-+#if __FreeBSD_version >= 1100030
+-	return ((ifp->if_data.ifi_mtu - AOEHDRSZ) & ~(DEV_BSIZE - 1));
 +	return ((ifp->if_mtu - AOEHDRSZ) & ~(DEV_BSIZE - 1));
-+#else
- 	return ((ifp->if_data.ifi_mtu - AOEHDRSZ) & ~(DEV_BSIZE - 1));
-+#endif
  }
  
  
-@@ -362,7 +398,11 @@
+@@ -362,7 +319,7 @@ aoe_ether_input(struct ifnet *ifp, struct mbuf *m)
           */
          if ((m->m_flags & M_PKTHDR) == 0) {
                  if_printf(ifp, "discard frame w/o packet header\n");
-+#if __FreeBSD_version >= 1100036
+-                ifp->if_ierrors++;
 +		if_inc_counter(ifp, IFCOUNTER_IERRORS, 1);
-+#else
-                 ifp->if_ierrors++;
-+#endif
                  m_freem(m);
                  return;
  	}
-@@ -371,7 +411,11 @@
+@@ -371,7 +328,7 @@ aoe_ether_input(struct ifnet *ifp, struct mbuf *m)
                  if_printf(ifp, "discard frame w/o leading ethernet "
                                  "header (len %u pkt len %u)\n",
                                  m->m_len, m->m_pkthdr.len);
-+#if __FreeBSD_version >= 1100036
+-                ifp->if_ierrors++;
 +		if_inc_counter(ifp, IFCOUNTER_IERRORS, 1);
-+#else
-                 ifp->if_ierrors++;
-+#endif
                  m_freem(m);
                  return;
          }
-@@ -384,17 +428,25 @@
+@@ -384,17 +341,17 @@ aoe_ether_input(struct ifnet *ifp, struct mbuf *m)
          if (m->m_pkthdr.len >
              ETHER_MAX_FRAME(ifp, etype, m->m_flags & M_HASFCS)) {
                  if_printf(ifp, "discard oversize frame "
@@ -141,120 +165,64 @@
 -                                ETHER_MAX_FRAME(ifp, etype,
 +                                (int) ETHER_MAX_FRAME(ifp, etype,
                                                  m->m_flags & M_HASFCS));
-+#if __FreeBSD_version >= 1100036
+-                ifp->if_ierrors++;
 +		if_inc_counter(ifp, IFCOUNTER_IERRORS, 1);
-+#else
-                 ifp->if_ierrors++;
-+#endif
                  m_freem(m);
                  return;
          }
          if (m->m_pkthdr.rcvif == NULL) {
                  if_printf(ifp, "discard frame w/o interface pointer\n");
-+#if __FreeBSD_version >= 1100036
+-                ifp->if_ierrors++;
 +		if_inc_counter(ifp, IFCOUNTER_IERRORS, 1);
-+#else
-                 ifp->if_ierrors++;
-+#endif
                  m_freem(m);
                  return;
  	}
-@@ -417,7 +469,11 @@
+@@ -417,7 +374,7 @@ aoe_ether_input(struct ifnet *ifp, struct mbuf *m)
                  m->m_flags &= ~M_HASFCS;
          }
  
-+#if __FreeBSD_version >= 1100036
+-        ifp->if_ibytes += m->m_pkthdr.len;
 +	if_inc_counter(ifp, IFCOUNTER_IBYTES, m->m_pkthdr.len);
-+#else
-         ifp->if_ibytes += m->m_pkthdr.len;
-+#endif
  
          if (ETHER_IS_MULTICAST(eh->ether_dhost)) {
                  if (bcmp(etherbroadcastaddr, eh->ether_dhost,
-@@ -427,7 +483,11 @@
+@@ -427,7 +384,7 @@ aoe_ether_input(struct ifnet *ifp, struct mbuf *m)
                          m->m_flags |= M_MCAST;
          }
          if (m->m_flags & (M_BCAST|M_MCAST))
-+#if __FreeBSD_version >= 1100036
+-                ifp->if_imcasts++;
 +		if_inc_counter(ifp, IFCOUNTER_IMCASTS, 1);
-+#else
-                 ifp->if_imcasts++;
-+#endif
  
  	aoeintr(m); 
  	/* netisr_dispatch(NETISR_AOE, m); */
-@@ -472,7 +532,11 @@
- 
- 	IFNET_RLOCK();
- 	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+#if __FreeBSD_version >= 1100030
-+        	switch (ifp->if_type) {
-+#else
-         	switch (ifp->if_data.ifi_type) {
-+#endif
-         	case IFT_ETHER:
-         	case IFT_FASTETHER:
-         	case IFT_GIGABITETHERNET:
-@@ -501,7 +565,11 @@
- 
- 	IFNET_RLOCK();
- 	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+#if __FreeBSD_version >= 1100030
-+        	switch (ifp->if_type) {
-+#else
-         	switch (ifp->if_data.ifi_type) {
-+#endif
-         	case IFT_ETHER:
-         	case IFT_FASTETHER:
-         	case IFT_GIGABITETHERNET:
---- aoenet.c.orig	2019-08-14 20:53:51.415030000 -0700
-+++ aoenet.c	2019-08-14 20:58:53.326160000 -0700
-@@ -85,6 +85,12 @@
- #endif
- #define IFLISTSZ 1024
- 
-+#if	__FreeBSD_version >= 1200000
-+#define	IFNET_FOREACH(v, h, e)	CK_STAILQ_FOREACH(v, h, e)
-+#else
-+#define	IFNET_FOREACH(v, h, e)	TAILQ_FOREACH(v, h, e)
-+#endif
-+
- static char aoe_iflist[IFLISTSZ];
- 
- static int sysctl_aoe_iflist(SYSCTL_HANDLER_ARGS);
-@@ -304,7 +310,7 @@
- 	h->ah_cmd = AOECMD_CFG;
- 
- 	IFNET_RLOCK();
--	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+	IFNET_FOREACH(ifp, &ifnet, if_link) {
- 		if (!is_aoe_netif(ifp))
- 			continue;
- 		memcpy(h->ah_src, IFPADDR(ifp), sizeof(h->ah_src));
-@@ -506,7 +512,7 @@
+@@ -446,7 +403,7 @@ sysctl_aoe_iflist(SYSCTL_HANDLER_ARGS)
  
  #ifdef FORCE_NETWORK_HOOK
  	IFNET_RLOCK();
 -	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+	IFNET_FOREACH(ifp, &ifnet, if_link) {
++	IFNET_FOREACH(ifp) {
  		if (!is_aoe_netif(ifp)) {
  			if (ifp->if_input == aoe_ether_input)
  				ifp->if_input = old_ether_input;
-@@ -531,7 +537,7 @@
+@@ -471,8 +428,8 @@ aoenet_init(void)
  	struct ifnet *ifp;
  
  	IFNET_RLOCK();
 -	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+	IFNET_FOREACH(ifp, &ifnet, if_link) {
- #if __FreeBSD_version >= 1100030
-         	switch (ifp->if_type) {
- #else
-@@ -564,7 +570,7 @@
+-        	switch (ifp->if_data.ifi_type) {
++	IFNET_FOREACH(ifp) {
++        	switch (ifp->if_type) {
+         	case IFT_ETHER:
+         	case IFT_FASTETHER:
+         	case IFT_GIGABITETHERNET:
+@@ -500,8 +457,8 @@ aoenet_exit(void)
  	struct ifnet *ifp;
  
  	IFNET_RLOCK();
 -	TAILQ_FOREACH(ifp, &ifnet, if_link) {
-+	IFNET_FOREACH(ifp, &ifnet, if_link) {
- #if __FreeBSD_version >= 1100030
-         	switch (ifp->if_type) {
- #else
+-        	switch (ifp->if_data.ifi_type) {
++	IFNET_FOREACH(ifp) {
++        	switch (ifp->if_type) {
+         	case IFT_ETHER:
+         	case IFT_FASTETHER:
+         	case IFT_GIGABITETHERNET:
