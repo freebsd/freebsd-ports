@@ -34,11 +34,6 @@ PLIST_SUB+=	VERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
-BUILD_DEPENDS+=	as:devel/binutils
-CFLAGS+=	-fno-integrated-as
-.endif
-
 .if ${PORT_OPTIONS:MPTHREAD}
 LDFLAGS+=	-lm -pthread
 .endif
