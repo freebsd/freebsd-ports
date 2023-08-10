@@ -1,6 +1,7 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
 DISTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,7 +57,7 @@ CONFIGURE_CMD=		${WRKSRC}/configure
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == powerpc64 # see the bug#268319 for the LTO failure on i386
+.if ${ARCH} == "i386" # see the bug#268319 for the LTO failure on i386
 CONFIGURE_ARGS+=	--disable-lto # workaround for https://github.com/nickg/nvc/issues/579 (undefined symbol: _GLOBAL_OFFSET_TABLE_, see error: undefined symbol: _GLOBAL_OFFSET_TABLE_)
 .endif
 
