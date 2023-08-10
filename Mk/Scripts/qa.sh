@@ -987,9 +987,6 @@ depends_blacklist()
 			devel/llvm)
 				instead="a dependency on devel/llvm\${LLVM_DEFAULT}"
 				;;
-			www/py-django)
-				instead="one of the www/py-djangoXYZ port"
-				;;
 		esac
 
 		if [ -n "${instead}" ]; then
