@@ -10,6 +10,7 @@
     SUBDIR += alttab
     SUBDIR += aminal
     SUBDIR += antimicro
+    SUBDIR += antimicrox
     SUBDIR += appmenu-registrar
     SUBDIR += appres
     SUBDIR += apwal
