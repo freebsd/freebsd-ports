@@ -1,0 +1,8 @@
+[
+{ type: install
+  message: <<EOM
+Refer to the cpu-microcode-rc installation notes to enable AMD microcode
+updates.
+EOM
+}
+]

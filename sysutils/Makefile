@@ -234,6 +234,10 @@
     SUBDIR += coreos-ct
     SUBDIR += coreutils
     SUBDIR += cpdup
+    SUBDIR += cpu-microcode
+    SUBDIR += cpu-microcode-amd
+    SUBDIR += cpu-microcode-intel
+    SUBDIR += cpu-microcode-rc
     SUBDIR += cpu-x
     SUBDIR += cpuburn
     SUBDIR += cpufetch
@@ -275,9 +279,6 @@
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detox
-    SUBDIR += devcpu-data
-    SUBDIR += devcpu-data-amd
-    SUBDIR += devcpu-data-intel
     SUBDIR += devctl-jail-kmod
     SUBDIR += devd-mount
     SUBDIR += devedeng

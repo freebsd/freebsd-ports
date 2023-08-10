@@ -1,8 +1,8 @@
-PORTNAME=	data
+PORTNAME=	microcode
 PORTVERSION=	20230724
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
-PKGNAMEPREFIX=	devcpu-
+PKGNAMEPREFIX=	cpu-
 PKGNAMESUFFIX=	-amd
 DISTFILES=	microcode_amd.bin?id=${_REV} \
 		microcode_amd_fam15h.bin?id=${_REV} \
@@ -12,7 +12,7 @@ DISTFILES=	microcode_amd.bin?id=${_REV} \
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	sbruno@FreeBSD.org
-COMMENT=	AMD CPUs microcode updates
+COMMENT=	AMD CPU microcode updates
 
 LICENSE=	EULA
 LICENSE_NAME=	Advanced Micro Devices License Agreement
@@ -21,13 +21,15 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/microcode_update:sysutils/cpu-microcode-rc
+
+DATADIR=	${PREFIX}/share/cpucontrol
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	.
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-DATADIR=	${PREFIX}/share/cpucontrol
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//}
 

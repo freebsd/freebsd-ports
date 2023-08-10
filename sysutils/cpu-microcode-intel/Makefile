@@ -1,8 +1,8 @@
-PORTNAME=	data
+PORTNAME=	microcode
 DISTVERSIONPREFIX=	microcode-
 DISTVERSION=	20230808
 CATEGORIES=	sysutils
-PKGNAMEPREFIX=	devcpu-
+PKGNAMEPREFIX=	cpu-
 PKGNAMESUFFIX=	-intel
 
 MAINTAINER=	sbruno@FreeBSD.org
@@ -15,6 +15,8 @@ LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386
+
+RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/microcode_update:sysutils/cpu-microcode-rc
 
 USES=		cpe
 CPE_PART=	o

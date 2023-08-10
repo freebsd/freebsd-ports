@@ -1,0 +1,4 @@
+The cpu-microcode meta-package depends on microcode update packages
+available for all CPU vendors.  Users who wish to install CPU microcode
+updates from a specific vendor can directly install cpu-microcode-amd or
+cpu-microcode-intel.
