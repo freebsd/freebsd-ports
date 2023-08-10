@@ -73,24 +73,23 @@ index b9e0f5f..27afdb7 100644
  	}
  
  #define ATF_TC_HEAD(tc, tcptr)               \
-diff --git include/sys/epoll.h include/sys/epoll.h
-index 89a8068..236cf2b 100644
---- include/sys/epoll.h
-+++ include/sys/epoll.h
-@@ -26,7 +26,11 @@ enum EPOLL_EVENTS { __EPOLL_DUMMY };
- #define EPOLLMSG 0x400
- #define EPOLLERR 0x008
- #define EPOLLHUP 0x010
-+#ifdef __FreeBSD__
-+#define EPOLLRDHUP 0x4000
-+#else
- #define EPOLLRDHUP 0x2000
-+#endif
- #define EPOLLEXCLUSIVE (1U << 28)
- #define EPOLLWAKEUP (1U << 29)
- #define EPOLLONESHOT (1U << 30)
+diff --git external/tree-macros/include/sys/tree.h external/tree-macros/include/sys/tree.h
+index eb5f244..6480540 100644
+--- external/tree-macros/include/sys/tree.h
++++ external/tree-macros/include/sys/tree.h
+@@ -348,8 +348,8 @@ struct {								\
+ #define RB_EMPTY(head)			(RB_ROOT(head) == NULL)
+ 
+ #define RB_SET_PARENT(dst, src, field) do {				\
+-	RB_BITS(dst, field) &= RB_RED_MASK;				\
+-	RB_BITS(dst, field) |= (__uintptr_t)src;			\
++	RB_BITS(dst, field) = (__uintptr_t)src |			\
++	    (ptraddr_t)(RB_BITS(dst, field) & RB_RED_MASK);		\
+ } while (/*CONSTCOND*/ 0)
+ 
+ #define RB_SET(elm, parent, field) do {					\
 diff --git src/compat_kqueue1.c src/compat_kqueue1.c
-index 6d44e47..fe75da0 100644
+index 40788f6..9ab44ce 100644
 --- src/compat_kqueue1.c
 +++ src/compat_kqueue1.c
 @@ -32,7 +32,7 @@ compat_kqueue1_impl(int *fd_out, int flags)
@@ -102,8 +101,8 @@ index 6d44e47..fe75da0 100644
  			    real_fcntl(fd, F_SETFD, r | FD_CLOEXEC) < 0) {
  				ec = errno;
  				goto out;
-@@ -40,7 +40,7 @@ compat_kqueue1_impl(int *fd_out, int flags)
- 		}
+@@ -49,7 +49,7 @@ compat_kqueue1_impl(int *fd_out, int flags)
+ #endif
  
  		if (flags & O_NONBLOCK) {
 -			if ((r = real_fcntl(fd, F_GETFL)) < 0) {
@@ -111,29 +110,6 @@ index 6d44e47..fe75da0 100644
  				ec = errno;
  				goto out;
  			}
-diff --git src/epoll.c src/epoll.c
-index 211251c..07fe317 100644
---- src/epoll.c
-+++ src/epoll.c
-@@ -18,6 +18,18 @@
- #include "timespec_util.h"
- #include "wrap.h"
- 
-+_Static_assert(POLLIN == EPOLLIN, "");
-+_Static_assert(POLLPRI == EPOLLPRI, "");
-+_Static_assert(POLLOUT == EPOLLOUT, "");
-+_Static_assert(POLLERR == EPOLLERR, "");
-+_Static_assert(POLLHUP == EPOLLHUP, "");
-+#ifdef EPOLLNVAL
-+_Static_assert(POLLNVAL == EPOLLNVAL, "");
-+#endif
-+#ifdef POLLRDHUP
-+_Static_assert(POLLRDHUP == EPOLLRDHUP, "");
-+#endif
-+
- void epollfd_lock(FileDescription *desc);
- void epollfd_unlock(FileDescription *desc);
- void epollfd_remove_fd(FileDescription *desc, int kq, int fd);
 diff --git src/epoll_shim_ctx.c src/epoll_shim_ctx.c
 index 04359af..d8bdec8 100644
 --- src/epoll_shim_ctx.c
@@ -253,7 +229,7 @@ index 67719dc..fb9cca1 100644
  
  #endif
 diff --git src/epoll_shim_interpose.c src/epoll_shim_interpose.c
-index 76bcac2..0048be3 100644
+index ba1a49e..1c37812 100644
 --- src/epoll_shim_interpose.c
 +++ src/epoll_shim_interpose.c
 @@ -6,14 +6,7 @@
@@ -272,7 +248,7 @@ index 76bcac2..0048be3 100644
  
  EPOLL_SHIM_INTERPOSE_EXPORT
  ssize_t
-@@ -61,11 +54,12 @@ int
+@@ -63,11 +56,12 @@ int
  fcntl(int fd, int cmd, ...)
  {
  	va_list ap;
@@ -288,10 +264,10 @@ index 76bcac2..0048be3 100644
  	return rv;
  }
 diff --git src/epollfd_ctx.c src/epollfd_ctx.c
-index b6528ae..7b9c23c 100644
+index 560a76a..d4f8b08 100644
 --- src/epollfd_ctx.c
 +++ src/epollfd_ctx.c
-@@ -1058,7 +1058,7 @@ epollfd_ctx_add_node(EpollFDCtx *epollfd, int kq, int fd2,
+@@ -1139,7 +1139,7 @@ epollfd_ctx_add_node(EpollFDCtx *epollfd, int kq, int fd2,
  		} else {
  			fd2_node->node_type = NODE_TYPE_FIFO;
  
@@ -314,10 +290,10 @@ index 725dc2d..31acb66 100644
  		struct kevent kevs[3];
  		int n = kevent(kq, NULL, 0, kevs, 3,
 diff --git src/wrap.c src/wrap.c
-index 760dea7..427ad7a 100644
+index f9c9d9a..fb130b3 100644
 --- src/wrap.c
 +++ src/wrap.c
-@@ -98,15 +98,9 @@ real_ppoll(struct pollfd fds[], nfds_t nfds,
+@@ -124,15 +124,9 @@ real_ppoll(struct pollfd fds[], nfds_t nfds,
  }
  
  int
@@ -347,46 +323,25 @@ index 5910d45..5528500 100644
  
  #endif
 diff --git test/epoll-test.c test/epoll-test.c
-index 598c992..f1b9740 100644
+index 712bb2d..c0406c9 100644
 --- test/epoll-test.c
 +++ test/epoll-test.c
-@@ -150,22 +150,6 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__simple, tc)
- 	ATF_REQUIRE_ERRNO(EINVAL, epoll_create1(42) < 0);
- }
- 
--ATF_TC_WITHOUT_HEAD(epoll__poll_flags);
--ATF_TC_BODY_FD_LEAKCHECK(epoll__poll_flags, tc)
--{
--	ATF_REQUIRE(POLLIN == EPOLLIN);
--	ATF_REQUIRE(POLLPRI == EPOLLPRI);
--	ATF_REQUIRE(POLLOUT == EPOLLOUT);
--	ATF_REQUIRE(POLLERR == EPOLLERR);
--	ATF_REQUIRE(POLLHUP == EPOLLHUP);
--#ifdef EPOLLNVAL
--	ATF_REQUIRE(POLLNVAL == EPOLLNVAL);
--#endif
--#ifdef POLLRDHUP
--	ATF_REQUIRE(POLLRDHUP == EPOLLRDHUP);
--#endif
--}
--
- ATF_TC_WITHOUT_HEAD(epoll__leakcheck);
- ATF_TC_BODY_FD_LEAKCHECK(epoll__leakcheck, tc)
- {
-@@ -333,7 +317,12 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__event_size, tc)
+@@ -377,7 +377,13 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__event_size, tc)
  	struct epoll_event event;
  	// this check works on 32bit _and_ 64bit, since
  	// sizeof(epoll_event) == sizeof(uint32_t) + sizeof(uint64_t)
-+#if __SIZEOF_POINTER__ <= 8
- 	ATF_REQUIRE(sizeof(event) == 12);
-+#else
-+	/* On systems with 128-bit pointers, it will be padded to 32 bytes */
-+	ATF_REQUIRE(sizeof(event) == 2 * sizeof(void*));
-+#endif
+-	ATF_REQUIRE(sizeof(event) == 12);
++	if (sizeof(void *) <= 8) {
++		ATF_REQUIRE(sizeof(event) == 12);
++	} else {
++		// On systems with 128-bit pointers, it will be padded to 32
++		// bytes.
++		ATF_REQUIRE(sizeof(event) == 2 * sizeof(void *));
++	}
  }
  
  ATF_TC_WITHOUT_HEAD(epoll__recursive_register);
-@@ -1185,7 +1174,9 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__epollpri, tcptr)
+@@ -1231,7 +1237,9 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__epollpri, tcptr)
  	fd_tcp_socket(fds);
  
  	ATF_REQUIRE(fcntl(fds[0], F_SETFL, O_NONBLOCK) == 0);
@@ -396,19 +351,11 @@ index 598c992..f1b9740 100644
  
  	int ep = epoll_create1(EPOLL_CLOEXEC);
  	ATF_REQUIRE(ep >= 0);
-@@ -2064,7 +2055,6 @@ ATF_TC_BODY_FD_LEAKCHECK(epoll__fcntl_fl, tcptr)
- ATF_TP_ADD_TCS(tp)
- {
- 	ATF_TP_ADD_TC(tp, epoll__simple);
--	ATF_TP_ADD_TC(tp, epoll__poll_flags);
- 	ATF_TP_ADD_TC(tp, epoll__leakcheck);
- 	ATF_TP_ADD_TC(tp, epoll__fd_exhaustion);
- 	ATF_TP_ADD_TC(tp, epoll__invalid_op);
 diff --git test/timerfd-test.c test/timerfd-test.c
-index 116f7c6..e29e9db 100644
+index dad90aa..6392136 100644
 --- test/timerfd-test.c
 +++ test/timerfd-test.c
-@@ -900,6 +900,7 @@ ATF_TC_BODY_FD_LEAKCHECK(timerfd__short_evfilt_timer_timeout, tc)
+@@ -943,6 +943,7 @@ check:
  ATF_TC_WITHOUT_HEAD(timerfd__unmodified_errno);
  ATF_TC_BODY_FD_LEAKCHECK(timerfd__unmodified_errno, tc)
  {
@@ -416,7 +363,7 @@ index 116f7c6..e29e9db 100644
  	int timerfd = timerfd_create(CLOCK_MONOTONIC, /**/
  	    TFD_CLOEXEC | TFD_NONBLOCK);
  	ATF_REQUIRE(timerfd >= 0);
-@@ -911,6 +912,7 @@ ATF_TC_BODY_FD_LEAKCHECK(timerfd__unmodified_errno, tc)
+@@ -954,6 +955,7 @@ ATF_TC_BODY_FD_LEAKCHECK(timerfd__unmodified_errno, tc)
  			    .it_value.tv_nsec = 100000000,
  			},
  			NULL) == 0);
@@ -424,7 +371,7 @@ index 116f7c6..e29e9db 100644
  	(void)wait_for_timerfd(timerfd);
  	ATF_REQUIRE(errno == 0);
  
-@@ -937,6 +939,7 @@ ATF_TC_BODY_FD_LEAKCHECK(timerfd__unmodified_errno, tc)
+@@ -980,6 +982,7 @@ ATF_TC_BODY_FD_LEAKCHECK(timerfd__unmodified_errno, tc)
  ATF_TC_WITHOUT_HEAD(timerfd__reset_to_very_long);
  ATF_TC_BODY_FD_LEAKCHECK(timerfd__reset_to_very_long, tc)
  {
@@ -432,18 +379,3 @@ index 116f7c6..e29e9db 100644
  	int timerfd = timerfd_create(CLOCK_MONOTONIC, /**/
  	    TFD_CLOEXEC | TFD_NONBLOCK);
  	ATF_REQUIRE(timerfd >= 0);
-diff --git a/external/tree-macros/include/sys/tree.h b/external/tree-macros/include/sys/tree.h
-index eb5f244..6480540 100644
---- external/tree-macros/include/sys/tree.h
-+++ external/tree-macros/include/sys/tree.h
-@@ -348,8 +348,8 @@ struct {								\
- #define RB_EMPTY(head)			(RB_ROOT(head) == NULL)
- 
- #define RB_SET_PARENT(dst, src, field) do {				\
--	RB_BITS(dst, field) &= RB_RED_MASK;				\
--	RB_BITS(dst, field) |= (__uintptr_t)src;			\
-+	RB_BITS(dst, field) = (__uintptr_t)src |			\
-+	    (ptraddr_t)(RB_BITS(dst, field) & RB_RED_MASK);		\
- } while (/*CONSTCOND*/ 0)
- 
- #define RB_SET(elm, parent, field) do {					\
