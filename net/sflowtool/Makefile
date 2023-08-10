@@ -1,7 +1,7 @@
 PORTNAME=	sflowtool
-DISTVERSIONPREFIX=	v
-DISTVERSION=	6.01
+DISTVERSION=	6.02
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/sflow/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	sFlow capture and sFlow-to-NetFlow conversion tool
@@ -12,11 +12,7 @@ LICENSE_NAME=	InMon Corp
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf
-USE_GITHUB=	yes
-GH_ACCOUNT=	sflow
 USE_RC_SUBR=	${PORTNAME}
-
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/sflowtool
