@@ -1,5 +1,6 @@
 PORTNAME=	onetbb
 PORTVERSION=	2021.9.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -42,9 +43,4 @@ DBGSUFX=	_debug
 .if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Marmv?}
 PCSUFX=	32
 .endif
-
-.if ${ARCH} == powerpc64
-CMAKE_ARGS+=	-DTBB_ENABLE_IPO:BOOL=OFF
-.endif
-
 .include <bsd.port.post.mk>
