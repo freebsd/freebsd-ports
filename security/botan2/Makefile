@@ -1,6 +1,6 @@
 PORTNAME=	botan
 DISTVERSION=	2.19.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -77,8 +77,10 @@ SQLITE3_CONFIGURE_WITH=	sqlite3
 
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--cc-abi="-march=armv8-a+crypto"
-.elif ${ARCH:Mpowerpc64*}
+.elif ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--cpu="ppc64"
+.elif ${ARCH} == powerpc64le
+CONFIGURE_ARGS+=	--cpu="ppc64le"
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
