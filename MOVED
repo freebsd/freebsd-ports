@@ -7779,3 +7779,4 @@ x11-fm/wcmcommander||2023-07-31|Has expired: Abandoned upstream
 x11/cde-24|x11/cde-25|2023-08-01|Has expired: Desupported by upstream
 lang/go118||2023-08-04|Upstream support ended
 devel/hhdate|devel/date|2023-08-05|Dedup library
+x11-toolkits/wlinfo||2023-08-10|Redundant with wayland-info from graphics/wayland-utils
