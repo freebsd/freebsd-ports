@@ -1,6 +1,5 @@
 PORTNAME=	eduke32
-PORTVERSION=	20221026
-PORTREVISION=	3
+PORTVERSION=	20230809
 CATEGORIES=	games
 MASTER_SITES=	http://dukeworld.com/eduke32/synthesis/${PORTVERSION}-${GITREVISION}/:eduke32 \
 		LOCAL/pkubaj/:erp \
@@ -35,11 +34,11 @@ USE_GL=		gl glu
 USE_GNOME=	gtk20
 USE_SDL=	sdl2 mixer2
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${GITREVISION}
-GITREVISION=	10165-a9c797dcb
+GITREVISION=	10343-847a51135
 DATADIR=	${PREFIX}/share/duke3d
 SUB_FILES=	pkg-message
 MAKEFILE=	GNUmakefile
-MAKE_ARGS=	CC=${CC} CXX=${CXX}
+MAKE_ARGS=	CC=${CC} CXX=${CXX} CLANG=1
 
 PLIST_FILES=	bin/eduke32 bin/mapster32
 PORTEXAMPLES=	*
@@ -71,7 +70,7 @@ FULL_PLIST_FILES=	${DATADIR}/duke3d.grp ${DATADIR}/duke.rts
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == riscv64
+.if ${ARCH} == i386 || ${ARCH} == riscv64
 MAKE_ARGS+=	LTO=0
 .endif
 
