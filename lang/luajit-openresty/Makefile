@@ -1,6 +1,7 @@
 PORTNAME=	luajit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1-20230410
+PORTREVISION=	1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-openresty
 
@@ -34,7 +35,7 @@ PLIST_SUB+=	VERSION=${LUAJIT_VERSION} SOVERSION=${LUAJIT_SOVERSION}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*}
+.if ${ARCH:Mmips*}
 USE_GCC=yes
 .endif
 
