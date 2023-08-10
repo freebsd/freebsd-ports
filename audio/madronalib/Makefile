@@ -2,7 +2,7 @@ PORTNAME=	madronalib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6-1016
 DISTVERSIONSUFFIX=	-g103895f
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,21 +19,19 @@ BROKEN_riscv64=	error: use of undeclared identifier '__builtin_ia32_emms'; did y
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		cmake localbase:ldflags perl5
+USES=		cmake compiler:c++11-lib localbase:ldflags perl5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	madronalabs
 
 CMAKE_ON=	LINUX_JACK
 CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+CXXFLAGS_powerpc64=	-DNO_WARN_X86_INTRINSICS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64
-CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lib
+.if ${ARCH} == powerpc64 && !defined(CPUTYPE)
+CXXFLAGS+=	-mcpu=power7
 .endif
 
 .include <bsd.port.mk>
