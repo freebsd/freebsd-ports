@@ -1,0 +1,6 @@
+excel2csv provides two scripts for converting Microsoft Excel spreadsheet
+formats XLS and XLSX to CSV.  Improvements compared to the CPAN version:
+
+  - Supports XLSX files
+  - Handles character encodings much better
+  - The options make more sense
