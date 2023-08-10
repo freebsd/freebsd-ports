@@ -981,9 +981,6 @@ depends_blacklist()
 			lang/go)
 				instead="USES=go"
 				;;
-			lang/julia)
-				instead="a dependency on lang/julia\${JULIA_DEFAULT:S/.//}"
-				;;
 			lang/mono)
 				instead="USES=mono"
 				;;
