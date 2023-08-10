@@ -28,16 +28,9 @@ LUAJIT_SOVERSION=	2.1.0
 
 PLIST_SUB+=	VERSION=${LUAJIT_VERSION} SOVERSION=${LUAJIT_SOVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
-BUILD_DEPENDS+=	as:devel/binutils
-CFLAGS+=	-fno-integrated-as
-.endif
-
 post-install:
 	${LN} -sf ${PORTNAME}-${LUAJIT_VERSION} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
