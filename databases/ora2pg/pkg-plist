@@ -3,6 +3,7 @@ bin/ora2pg_scanner
 %%ETCDIR%%/ora2pg.conf.dist
 %%SITE_PERL%%/Ora2Pg.pm
 %%SITE_PERL%%/Ora2Pg/GEOM.pm
+%%SITE_PERL%%/Ora2Pg/MSSQL.pm
 %%SITE_PERL%%/Ora2Pg/MySQL.pm
 %%SITE_PERL%%/Ora2Pg/Oracle.pm
 %%SITE_PERL%%/Ora2Pg/PLSQL.pm
