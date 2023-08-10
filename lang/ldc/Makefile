@@ -15,6 +15,7 @@ BROKEN_armv6=	fails to compile: Error: undefined identifier _jmp_buf, did you me
 BROKEN_armv7=	fails to compile: Error: undefined identifier _jmp_buf, did you mean alias jmp_buf?
 BROKEN_i386=	function core.bitop.bsf (uint v) is not callable using argument types (ulong)
 BROKEN_riscv64=	fails to compile: unable to get target for 'riscv64-portbld-freebsd13.0', see -version and -mtriple.
+BROKEN_FreeBSD_14=	fails to compile: cannot open stdin: No such file or directory
 
 BUILD_DEPENDS=	gdmd>0:devel/gdmd
 RUN_DEPENDS=	llvm${_LLVM_VER}>0:devel/llvm${_LLVM_VER}
