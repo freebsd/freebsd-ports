@@ -985,7 +985,7 @@ depends_blacklist()
 				instead="USES=mono"
 				;;
 			devel/llvm)
-				instead="a dependency on devel/llvm\${LLVM_DEFAULT}"
+				instead="USES=llvm"
 				;;
 		esac
 
