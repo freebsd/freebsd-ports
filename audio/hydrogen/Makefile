@@ -1,6 +1,5 @@
 PORTNAME=	hydrogen
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/hydrogen-music/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		SF/hydrogen/Hydrogen/${DISTVERSION}%20Sources/
@@ -22,6 +21,8 @@ USE_QT=		core gui network widgets xml xmlpatterns buildtools:build \
 		linguisttools:build qmake:build svg testlib:build
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/man
+
+PLIST_SUB=	HYDROGEN_VERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=		ALSA DEBUG JACK LADSPA LASH OSS PORTAUDIO \
 			PULSEAUDIO RDF TEST
