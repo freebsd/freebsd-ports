@@ -10,9 +10,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake gl localbase:ldflags
-.if !exists(/usr/include/omp.h)
-CMAKE_OFF=	USE_OPENMP
-.endif
 USE_GL=		gl glut
 
 USE_GITHUB=	yes
