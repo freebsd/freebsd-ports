@@ -1,5 +1,6 @@
 PORTNAME=	knock
 DISTVERSION=	0.8
+PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/jvinet/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		LOCAL/sbz
