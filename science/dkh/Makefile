@@ -11,9 +11,6 @@ WWW=		http://www.reiher.ethz.ch/software/dkh-x2c.html
 LICENSE=	GPLv3
 
 USES=		cmake fortran
-.if !exists(/usr/include/omp.h)
-CMAKE_OFF=	ENABLE_OPENMP
-.endif
 USE_GITHUB=	yes
 GH_ACCOUNT=	psi4
 USE_LDCONFIG=	yes
