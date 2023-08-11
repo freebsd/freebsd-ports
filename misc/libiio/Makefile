@@ -1,7 +1,6 @@
 PORTNAME=	libiio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23
-PORTREVISION=	2
+DISTVERSION=	0.25
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,15 +12,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	libavahi-client.so:net/avahi-app
 
-USES=		cmake gnome iconv localbase
+USES=		cmake:testing gnome iconv localbase
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	analogdevicesinc
 
+CMAKE_TESTING_ON=	WITH_TESTS
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
+
+# unclear how to run tests, see https://github.com/analogdevicesinc/libiio/issues/1028
 
 .include <bsd.port.mk>
