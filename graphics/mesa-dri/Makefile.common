@@ -79,8 +79,6 @@ PKGHELP=	${.CURDIR}/pkg-help
 PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
-EXTRA_PATCHES+=	${PATCHDIR}/panfrost-blend-zero-padding.patch:-p1
-
 .include <bsd.port.pre.mk>
 
 BINARY_ALIAS+=	python3=${PYTHON_CMD}
