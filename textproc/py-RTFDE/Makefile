@@ -1,5 +1,5 @@
 PORTNAME=	RTFDE
-PORTVERSION=	0.0.2
+DISTVERSION=	0.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,11 +17,5 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	LXML
-
-LXML_DESC=	Pythonic binding for the libxml2 and libxslt libraries
-
-LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.6:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
