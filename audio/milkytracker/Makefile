@@ -1,7 +1,7 @@
 PORTNAME=	milkytracker
 PORTVERSION=	1.04.00
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		liblhasa.so:archivers/lhasa \
 		libzzip.so:devel/zziplib
 
-USES=		cmake compiler:c11 cpe sdl
+USES=		cmake compiler:c11 cpe pkgconfig sdl
 CPE_VENDOR=	milkytracker_project
 USE_GITHUB=	yes
 GH_PROJECT=	MilkyTracker
