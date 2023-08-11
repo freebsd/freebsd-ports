@@ -1,4 +1,4 @@
-TIMESTAMP = 1682702803
+TIMESTAMP = 1691697466
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
@@ -441,5 +441,5 @@ SHA256 (rust/crates/xmlparser-0.13.5.crate) = 4d25c75bf9ea12c4040a97f829154768bb
 SIZE (rust/crates/xmlparser-0.13.5.crate) = 26225
 SHA256 (asciinema-avt-v0.6.0_GH0.tar.gz) = 946bf3134bb4315eaf4dd5bc50644cfa9d296272e6cf4c6c177201103b6f60c1
 SIZE (asciinema-avt-v0.6.0_GH0.tar.gz) = 471495
-SHA256 (asciinema-agg-v1.4.1_GH0.tar.gz) = ee997a9259b853d90aacdbae26ab64564022e1010d128b2713cc5ded16252e21
-SIZE (asciinema-agg-v1.4.1_GH0.tar.gz) = 2967983
+SHA256 (asciinema-agg-v1.4.2_GH0.tar.gz) = 8a4b81733085d81de1076e2964dedf729a8603941de11659d775478293d9efd0
+SIZE (asciinema-agg-v1.4.2_GH0.tar.gz) = 2969183
