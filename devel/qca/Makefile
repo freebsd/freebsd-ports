@@ -1,5 +1,5 @@
 PORTNAME=	qca
-DISTVERSION=	2.3.6
+DISTVERSION=	2.3.7
 CATEGORIES=	devel
 MASTER_SITES=	KDE/stable/qca/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -27,15 +27,15 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DQCA_SUFFIX=${FLAVOR} \
 		-D${FLAVOR:tu}:BOOL=TRUE
-_USE_QT5=	core buildtools:build qmake:build
-_USE_QT6=	5compat base
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+_USE_QT_qt5=	core buildtools:build qmake:build
+_USE_QT_qt6=	5compat base
+USE_QT=		${_USE_QT_${FLAVOR}}
 
-_PLIST_SUB_QT5=	QT5_ONLY=""
-_PLIST_SUB_QT6= QT5_ONLY="@comment "
+_PLIST_SUB_qt5=	QT5_ONLY=""
+_PLIST_SUB_qt6= QT5_ONLY="@comment "
 PLIST_SUB=	SHLIB_VER=${PORTVERSION} \
 		QCA_QT_VERSION=${FLAVOR} \
-		${_PLIST_SUB_QT${FLAVOR:S/qt//}}
+		${_PLIST_SUB_${FLAVOR}}
 
 OPTIONS_DEFINE=	BOTAN GNUPG OPENSSL SASL TEST
 OPTIONS_DEFAULT=GNUPG OPENSSL
@@ -57,6 +57,8 @@ SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
-TEST_USE=		QT=network,testlib
+_TEST_USE_qt5=		QT=network:build,testlib:build
+_TEST_USE_qt6=		# Network and Test included in base
+TEST_USE=		${_TEST_USE_${FLAVOR}}
 
 .include <bsd.port.mk>
