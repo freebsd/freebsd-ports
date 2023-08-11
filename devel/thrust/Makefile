@@ -1,5 +1,6 @@
 PORTNAME=	thrust
 DISTVERSION=	1.9.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,9 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.endif
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
