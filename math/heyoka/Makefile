@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
-PORTREVISION=	4
+DISTVERSION=	1.0.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +30,6 @@ GH_ACCOUNT=	bluescarni
 
 CMAKE_ON=		HEYOKA_WITH_MPPP HEYOKA_WITH_SLEEF
 CMAKE_ARGS=		-DFREEBSD_LLVM_VERSION=${LLVM_VERSION}
-CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS # 3 tests fail, see https://github.com/bluescarni/heyoka/issues/228, also #229 and #230
+CMAKE_TESTING_ON=	HEYOKA_BUILD_TESTS # 1 test fails, see https://github.com/bluescarni/heyoka/issues/338
 
 .include <bsd.port.mk>
