@@ -3,7 +3,7 @@ PORTVERSION=	1.25.1
 CATEGORIES=	finance
 MASTER_SITES=	PYPI
 
-MAINTAINER=	nivit@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Web interface for Beancount
 WWW=		https://beancount.github.io/fava/
 
