@@ -12,9 +12,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake fortran
-.if !exists(/usr/include/omp.h)
-CMAKE_OFF=	ENABLE_OPENMP
-.endif
 USE_GITHUB=	yes
 GH_ACCOUNT=	psi4
 USE_LDCONFIG=	yes
