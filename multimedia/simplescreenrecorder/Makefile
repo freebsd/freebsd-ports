@@ -5,7 +5,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Screen video recorder
+COMMENT=	Screen video/audio recorder
 WWW=		https://www.maartenbaert.be/simplescreenrecorder/
 
 LICENSE=	GPLv3
