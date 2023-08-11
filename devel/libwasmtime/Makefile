@@ -1,6 +1,7 @@
 PORTNAME=	lib${GH_PROJECT}
 PORTVERSION=	11.0.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -10,7 +11,11 @@ WWW=		https://wasmtime.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=	cargo
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	build currently failing
+
+USES=		cargo cpe
+CPE_VENDOR=	bytecodealliance
 
 USE_LDCONFIG=	yes
 
