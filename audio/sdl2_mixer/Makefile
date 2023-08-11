@@ -44,6 +44,9 @@ OPTIONS_DEFAULT+=	TREMOR
 OPTIONS_DEFAULT+=	VORBIS
 .endif
 
+# fluidsynth needs glib
+OPTIONS_EXCLUDE_purecap=	FLUIDSYNTH
+
 MOD_DESC=			Tracker music support
 
 MODPLUG_LIB_DEPENDS=		libmodplug.so:audio/libmodplug
