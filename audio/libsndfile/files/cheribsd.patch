@@ -1,0 +1,14 @@
+--- src/config.h.cmake.orig	2023-08-12 00:13:36.790043000 +0100
++++ src/config.h.cmake	2023-08-12 00:13:51.650163000 +0100
+@@ -143,9 +143,9 @@
+ #cmakedefine01 HAVE_SQLITE3
+ 
+ /* Define to 1 if the system has the type `ssize_t'. */
+-#cmakedefine01 HAVE_SSIZE_T
++#cmakedefine01 HAVE_SIZEOF_SSIZE_T
+ 
+-#if (HAVE_SSIZE_T == 0)
++#if (HAVE_SIZEOF_SSIZE_T == 0)
+ #define ssize_t intptr_t
+ #endif
+ 

@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	9a9b40b3ba6269a5b3726a7747c4a1aca23cb89d.patch:-p1
+
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 WWW=		http://www.mega-nerd.com/libsndfile/
