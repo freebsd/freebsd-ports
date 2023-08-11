@@ -9,7 +9,9 @@ include/gecode/flatzinc.hh
 include/gecode/flatzinc/ast.hh
 include/gecode/flatzinc/branch.hh
 include/gecode/flatzinc/branch.hpp
+include/gecode/flatzinc/complete.hh
 include/gecode/flatzinc/conexpr.hh
+include/gecode/flatzinc/lastval.hh
 include/gecode/flatzinc/option.hh
 include/gecode/flatzinc/parser.hh
 %%FLATZINC%%include/gecode/flatzinc/parser.tab.hpp
@@ -798,6 +800,7 @@ include/gecode/third-party/boost/type.hpp
 %%FLATZINC%%%%DATADIR%%/gecode.mzn
 %%FLATZINC%%%%DATADIR%%/redefinitions-2.0.2.mzn
 %%FLATZINC%%%%DATADIR%%/redefinitions-2.0.mzn
+%%FLATZINC%%%%DATADIR%%/redefinitions-2.2.1.mzn
 %%FLATZINC%%%%DATADIR%%/redefinitions-2.5.2.mzn
 %%FLATZINC%%%%DATADIR%%/redefinitions.mzn
 %%FLATZINC%%share/minizinc/solvers/gecode.msc
