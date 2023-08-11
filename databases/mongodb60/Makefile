@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	6.0.8
+DISTVERSION=	6.0.9
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -47,8 +47,6 @@ GH_PROJECT=	mongo spidermonkey:mozjs
 GH_TAGNAME=	${MOZJS_TAG}:mozjs
 USE_RC_SUBR=	mongod
 
-CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
-
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
@@ -68,6 +66,8 @@ MAKE_ARGS=	--cxx-std=17 \
 		AR=llvm-ar \
 		MONGO_VERSION=${DISTVERSION} \
 		VERBOSE=on
+
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9]
 
