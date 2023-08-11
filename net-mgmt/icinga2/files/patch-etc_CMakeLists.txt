@@ -1,6 +1,6 @@
---- etc/CMakeLists.txt.orig	2021-09-04 12:11:45.752360000 +0200
-+++ etc/CMakeLists.txt	2021-09-04 12:25:10.298643000 +0200
-@@ -9,41 +9,41 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+--- etc/CMakeLists.txt.orig	2023-08-11 09:37:32.071724000 +0200
++++ etc/CMakeLists.txt	2023-08-11 11:30:51.251785000 +0200
+@@ -9,44 +9,44 @@ if(NOT WIN32)
  endif()
  
  if(NOT WIN32)
@@ -51,6 +51,9 @@
  if(NOT WIN32)
 -  install_if_not_exists(icinga2/features-available/syslog.conf ${ICINGA2_CONFIGDIR}/features-available)
 +  install_if_not_exists(icinga2/features-available/syslog.conf.sample ${ICINGA2_CONFIGDIR}/features-available)
+   if(HAVE_SYSTEMD)
+     install_if_not_exists(icinga2/features-available/journald.conf ${ICINGA2_CONFIGDIR}/features-available)
+   endif()
  else()
 -  install_if_not_exists(icinga2/features-available/windowseventlog.conf ${ICINGA2_CONFIGDIR}/features-available)
 +  install_if_not_exists(icinga2/features-available/windowseventlog.conf.sample ${ICINGA2_CONFIGDIR}/features-available)
@@ -62,7 +65,7 @@
  install_if_not_exists(icinga2/zones.d/README ${ICINGA2_CONFIGDIR}/zones.d)
  
  if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-@@ -56,7 +56,7 @@ if(NOT WIN32)
+@@ -59,7 +59,7 @@ else()
  
    install(FILES bash_completion.d/icinga2 DESTINATION ${BASHCOMPLETION_DIR})
  else()

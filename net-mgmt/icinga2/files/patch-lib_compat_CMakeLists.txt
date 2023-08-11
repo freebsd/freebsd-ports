@@ -1,6 +1,6 @@
---- lib/compat/CMakeLists.txt.orig	2020-08-03 13:43:47 UTC
-+++ lib/compat/CMakeLists.txt
-@@ -26,17 +26,17 @@ set_target_properties (
+--- lib/compat/CMakeLists.txt.orig	2023-08-11 11:35:43.136114000 +0200
++++ lib/compat/CMakeLists.txt	2023-08-11 11:40:02.639410000 +0200
+@@ -22,12 +22,12 @@ install_if_not_exists(
  )
  
  install_if_not_exists(
@@ -12,12 +12,6 @@
  install_if_not_exists(
 -  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/compatlog.conf
 +  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/compatlog.conf.sample
-   ${ICINGA2_CONFIGDIR}/features-available
- )
- 
- install_if_not_exists(
--  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/statusdata.conf
-+  ${PROJECT_SOURCE_DIR}/etc/icinga2/features-available/statusdata.conf.sample
    ${ICINGA2_CONFIGDIR}/features-available
  )
  
