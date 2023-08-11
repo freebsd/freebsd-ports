@@ -30,8 +30,6 @@ PLIST_FILES=	bin/i3lock \
 		man/man1/i3lock.1.gz \
 		etc/pam.d/i3lock
 
-SUB_FILES=	i3lock.pam
-
 USES=		gmake iconv localbase pkgconfig tar:bzip2 xorg
 LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xorgproto xext
@@ -47,7 +45,8 @@ OPTIONS_DEFINE=	DOCS
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/i3lock
 	@${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
-	@${INSTALL_DATA} ${WRKDIR}/i3lock.pam ${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
+	@${LN} -s ${LOCALBASE}/etc/pam.d/unix-selfauth \
+		${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
