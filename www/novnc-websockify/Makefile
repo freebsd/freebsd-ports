@@ -1,7 +1,6 @@
 PORTNAME=	websockify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,19 +10,19 @@ WWW=		https://github.com/novnc/websockify
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	novnc>0:www/novnc \
-		${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		novnc>0:www/novnc
 
-USES=		python shebangfix python
-
-SHEBANG_FILES=	run
+USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	novnc
 GH_PROJECT=	websockify
 
-NO_BUILD=	yes
+SHEBANG_FILES=	run
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 TARGET_DIR=	${PREFIX}/libexec/novnc/utils/websockify
 
 do-install:
