@@ -10,10 +10,6 @@ WWW=		https://filmulator.org/
 
 LICENSE=	GPLv3+
 
-.if !exists(/usr/include/omp.h)
-BROKEN=		requires OpenMP support that is missing on this architecture
-.endif
-
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
 		liblensfun.so:graphics/lensfun \
@@ -22,6 +18,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtiff.so:graphics/tiff
 
 USES=		cmake jpeg libarchive pkgconfig qt:5
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
 USE_GITHUB=	yes
 USE_QT=		buildtools:build qmake:build core declarative gui \
 		network sql widgets
