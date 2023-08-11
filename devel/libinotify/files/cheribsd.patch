@@ -1,0 +1,37 @@
+--- compat/tree.h.orig	2023-08-11 23:26:38.420382000 +0100
++++ compat/tree.h	2023-08-11 23:26:45.327413000 +0100
+@@ -29,6 +29,9 @@
+  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
++#include <sys/tree.h>
++
++#if 0
+ #ifndef	_SYS_TREE_H_
+ #define	_SYS_TREE_H_
+ 
+@@ -831,3 +834,4 @@
+ 	     (x) = (y))
+ 
+ #endif	/* _SYS_TREE_H_ */
++#endif
+--- dep-list.c.orig	2024-01-12 20:16:43.319931000 +0000
++++ dep-list.c	2024-01-12 20:17:04.238831000 +0000
+@@ -41,6 +41,7 @@
+ 
+ RB_GENERATE_INSERT_COLOR(dep_list, dep_item, u.tree_link, static)
+ RB_GENERATE_REMOVE_COLOR(dep_list, dep_item, u.tree_link, static)
++RB_GENERATE_INSERT_FINISH(dep_list, dep_item, u.tree_link, static)
+ RB_GENERATE_INSERT(dep_list, dep_item, u.tree_link, dep_item_cmp, static)
+ RB_GENERATE_REMOVE(dep_list, dep_item, u.tree_link, static)
+ RB_GENERATE_FIND(dep_list, dep_item, u.tree_link, dep_item_cmp, static)
+--- watch-set.c.orig	2024-01-12 20:02:32.842096000 +0000
++++ watch-set.c	2024-01-12 20:02:56.836106000 +0000
+@@ -39,6 +39,7 @@
+ RB_GENERATE_MINMAX(watch_set, watch, link, static inline)
+ RB_GENERATE_INSERT_COLOR(watch_set, watch, link, static inline)
+ RB_GENERATE_REMOVE_COLOR(watch_set, watch, link, static inline)
++RB_GENERATE_INSERT_FINISH(watch_set, watch, link, static inline)
+ RB_GENERATE_INSERT(watch_set, watch, link, watch_set_cmp, static inline)
+ RB_GENERATE_REMOVE(watch_set, watch, link, static inline)
+ RB_GENERATE_FIND(watch_set, watch, link, watch_set_cmp, static inline)
