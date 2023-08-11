@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2
 
-USES=		compiler:c11 gnome libtool localbase meson pathfix pkgconfig tar:xz vala:build
+USES=		gnome libtool localbase meson pathfix pkgconfig tar:xz vala:build
 
 USE_LDCONFIG=	yes
 USE_GNOME=	introspection:build
@@ -28,6 +28,14 @@ SIMD_MESON_OFF=	-Denable-mmx=false -Denable-sse=false \
 BABL_SHLIB=	0.205.1
 BABL_VER=	0.1
 PLIST_SUB+=	BABL_SHLIB=${BABL_SHLIB} BABL_VER=${BABL_VER}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c11
+.endif
 
 .include <bsd.port.pre.mk>
 
