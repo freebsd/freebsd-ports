@@ -1,5 +1,5 @@
 SIMH based simulator for the Honeywell h6180/dps8m Multics processor.
-Capable of booting Multics MR12.5 and Multics MR12.6f.
+Capable of booting Multics MR12.5, MR12.6f, MR12.7 and MR12.8.
 
 The fastest way to your running Multics-system is the
 Quickstart Image, downloadable from:
