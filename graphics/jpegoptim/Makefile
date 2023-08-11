@@ -1,23 +1,20 @@
 PORTNAME=	jpegoptim
-PORTVERSION=	1.5.5
-DISTVERSIONPREFIX=	v
+DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	graphics
+MASTER_SITES=	https://www.kokkonen.net/tjko/src/
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to optimize jpeg files
-WWW=		http://www.kokkonen.net/tjko/projects.html #jpegoptim
+WWW=		http://www.kokkonen.net/tjko/projects.html
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cpe gmake jpeg
+USES=		cpe gmake jpeg localbase:ldflags
 CPE_VENDOR=	${PORTNAME}_project
-USE_GITHUB=	yes
-GH_ACCOUNT=	tjko
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
-MAKE_ENV+=	INSTALL_ROOT=${STAGEDIR}
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/jpegoptim \
 		man/man1/jpegoptim.1.gz
