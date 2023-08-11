@@ -12,9 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake:testing # 2 tests fail, see https://github.com/Tencent/ncnn/issues/4742
-.if !exists(/usr/include/omp.h)
-CMAKE_OFF=	NCNN_OPENMP
-.endif
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
