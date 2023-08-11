@@ -1,6 +1,6 @@
 PORTNAME=	libflatarray
 PORTVERSION=	0.3.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	devel science
 MASTER_SITES=	http://www.libgeodecomp.org/archive/
 
@@ -15,12 +15,7 @@ BROKEN_armv7=	test/estimate_optimum_short_vec_type_test.cpp:71:22: error: redefi
 
 BUILD_DEPENDS=	boost-libs>=1.48:devel/boost-libs
 
-USES=		cmake
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++14-lang
-.endif
+USES=		cmake compiler:c++14-lang
 
 CMAKE_ARGS=	-DWITH_CUDA:BOOL=FALSE
 
