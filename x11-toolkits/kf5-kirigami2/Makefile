@@ -1,16 +1,12 @@
 PORTNAME=	kirigami2
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QtQuick based components set
 
-USES=		cmake gettext kde:5 qt:5 tar:xz
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++11-lib
-.endif
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	kdeclarative \
 		ecm:build
 USE_QT=		core concurrent dbus declarative graphicaleffects gui \
