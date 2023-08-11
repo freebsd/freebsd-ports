@@ -93,10 +93,4 @@ install-run-scripts:
 
 do-install: annotate-install generate-install-scripts generate-tmpplist install-run-scripts
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc" && ${PORTNAME} == "crystal-project"
-BROKEN=		Does not install on powerpc: syntax error in files.sh
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
