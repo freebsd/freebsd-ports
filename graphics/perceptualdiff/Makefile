@@ -1,6 +1,6 @@
 PORTNAME=	perceptualdiff
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -17,11 +17,6 @@ PLIST_FILES=	bin/perceptualdiff
 USE_GITHUB=	yes
 GH_ACCOUNT=	myint
 
-USES=		cmake
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++0x
-.endif
+USES=		cmake compiler:c++0x
 
 .include <bsd.port.mk>
