@@ -1,5 +1,5 @@
 diff --git amdgpu/amdgpu_bo.c amdgpu/amdgpu_bo.c
-index 54b1fb90..0c4b98b0 100644
+index f4e04352..7627ee3d 100644
 --- amdgpu/amdgpu_bo.c
 +++ amdgpu/amdgpu_bo.c
 @@ -558,7 +558,7 @@ drm_public int amdgpu_find_bo_by_cpu_mapping(amdgpu_device_handle dev,
@@ -599,18 +599,18 @@ index 9b6722d4..637cbac5 100644
  
  /**
 diff --git include/drm/i915_drm.h include/drm/i915_drm.h
-index 72afd94e..97bc248c 100644
+index 1de0433f..95755457 100644
 --- include/drm/i915_drm.h
 +++ include/drm/i915_drm.h
-@@ -1636,7 +1636,7 @@ struct drm_i915_reset_stats {
- };
- 
- struct drm_i915_gem_userptr {
+@@ -2579,7 +2579,7 @@ struct drm_i915_gem_userptr {
+ 	 *
+ 	 * Needs to be aligned to PAGE_SIZE.
+ 	 */
 -	__u64 user_ptr;
 +	drm_uptr_t user_ptr;
- 	__u64 user_size;
- 	__u32 flags;
- #define I915_USERPTR_READ_ONLY 0x1
+ 
+ 	/**
+ 	 * @user_size:
 diff --git include/drm/msm_drm.h include/drm/msm_drm.h
 index c06d0a5b..4f6cd068 100644
 --- include/drm/msm_drm.h
@@ -720,28 +720,9 @@ index 2b8d47ea..1d47ad93 100644
  	__u32 flags;
  };
 diff --git intel/intel_bufmgr_gem.c intel/intel_bufmgr_gem.c
-index b28ea74d..0521debe 100644
+index 4f17667e..af60664d 100644
 --- intel/intel_bufmgr_gem.c
 +++ intel/intel_bufmgr_gem.c
-@@ -1,7 +1,7 @@
- /**************************************************************************
-  *
-- * Copyright © 2007 Red Hat Inc.
-- * Copyright © 2007-2012 Intel Corporation
-+ * Copyright ï¿½ 2007 Red Hat Inc.
-+ * Copyright ï¿½ 2007-2012 Intel Corporation
-  * Copyright 2006 Tungsten Graphics, Inc., Bismarck, ND., USA
-  * All Rights Reserved.
-  *
-@@ -28,7 +28,7 @@
-  *
-  **************************************************************************/
- /*
-- * Authors: Thomas Hellström <thomas-at-tungstengraphics-dot-com>
-+ * Authors: Thomas Hellstrï¿½m <thomas-at-tungstengraphics-dot-com>
-  *          Keith Whitwell <keithw-at-tungstengraphics-dot-com>
-  *	    Eric Anholt <eric@anholt.net>
-  *	    Dave Airlie <airlied@linux.ie>
 @@ -916,7 +916,7 @@ drm_intel_gem_bo_alloc_userptr(drm_intel_bufmgr *bufmgr,
  	bo_gem->bo.size = size;
  
@@ -1012,10 +993,10 @@ index 9bdca137..21a399fa 100644
  
  #define LIST_FOR_EACH_ENTRY(pos, head, member)				\
 diff --git xf86drm.c xf86drm.c
-index 76fdfaab..3dc4227f 100644
+index 3bb024ec..8fc7f135 100644
 --- xf86drm.c
 +++ xf86drm.c
-@@ -3575,7 +3575,7 @@ static int drmParseSubsystemType(int maj, int min)
+@@ -3649,7 +3649,7 @@ static int drmParseSubsystemType(int maj, int min)
       }
      return subsystem_type;
  #elif defined(__OpenBSD__) || defined(__DragonFly__) || defined(__FreeBSD__)
@@ -1024,7 +1005,7 @@ index 76fdfaab..3dc4227f 100644
  #else
  #warning "Missing implementation of drmParseSubsystemType"
      return -EINVAL;
-@@ -4257,6 +4257,10 @@ static int drmParseOFBusInfo(int maj, int min, char *fullname)
+@@ -4331,6 +4331,10 @@ static int drmParseOFBusInfo(int maj, int min, char *fullname)
      fullname[DRM_PLATFORM_DEVICE_NAME_LEN - 1] = '\0';
      free(name);
  
@@ -1035,7 +1016,7 @@ index 76fdfaab..3dc4227f 100644
      return 0;
  #else
  #warning "Missing implementation of drmParseOFBusInfo"
-@@ -4318,6 +4322,12 @@ free:
+@@ -4392,6 +4396,12 @@ free:
  
      free(*compatible);
      return err;
@@ -1048,7 +1029,7 @@ index 76fdfaab..3dc4227f 100644
  #else
  #warning "Missing implementation of drmParseOFDeviceInfo"
      return -EINVAL;
-@@ -4606,7 +4616,13 @@ drm_public int drmGetDeviceFromDevId(dev_t find_rdev, uint32_t flags, drmDeviceP
+@@ -4680,7 +4690,13 @@ drm_public int drmGetDeviceFromDevId(dev_t find_rdev, uint32_t flags, drmDeviceP
      }
      node_count = i;
  
@@ -1063,7 +1044,7 @@ index 76fdfaab..3dc4227f 100644
      *device = NULL;
  
 diff --git xf86drm.h xf86drm.h
-index 1631396a..3dc64d29 100644
+index 4badaae5..8ac385fa 100644
 --- xf86drm.h
 +++ xf86drm.h
 @@ -800,7 +800,7 @@ typedef struct _drmEventContext {
@@ -1076,7 +1057,7 @@ index 1631396a..3dc64d29 100644
  
  extern int drmHandleEvent(int fd, drmEventContextPtr evctx);
 diff --git xf86drmMode.c xf86drmMode.c
-index 9dc42451..83ac5c14 100644
+index 22a8a7c2..d30da254 100644
 --- xf86drmMode.c
 +++ xf86drmMode.c
 @@ -59,8 +59,13 @@
