@@ -1,6 +1,5 @@
 PORTNAME=	stk
-DISTVERSION=	5.0.0
-PORTREVISION=	1
+DISTVERSION=	5.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ccrma.stanford.edu/software/stk/release/
 
@@ -39,6 +38,6 @@ OSS_CONFIGURE_WITH=	oss
 post-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} rawwaves ${STAGEDIR}${DATADIR}
 	@${RM} ${STAGEDIR}${DATADIR}/rawwaves/._* ${STAGEDIR}${DATADIR}/rawwaves/*.c
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libstk-${PORTVERSION}.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libstk-5.0.0.so
 
 .include <bsd.port.mk>
