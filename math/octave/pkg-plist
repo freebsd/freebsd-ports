@@ -767,13 +767,13 @@ include/octave-%%OCTAVE_VERSION%%/octave/xnorm.h
 include/octave-%%OCTAVE_VERSION%%/octave/xpow.h
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so
 lib/octave/%%OCTAVE_VERSION%%/liboctave.so.10
-lib/octave/%%OCTAVE_VERSION%%/liboctave.so.10.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctave.so.10.0.1
 lib/octave/%%OCTAVE_VERSION%%/liboctgui.so
 lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.9
-lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.9.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctgui.so.9.0.1
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so
 lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.11
-lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.11.0.0
+lib/octave/%%OCTAVE_VERSION%%/liboctinterp.so.11.0.1
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/PKG_ADD
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__delaunayn__.oct
 lib/octave/%%OCTAVE_VERSION%%/oct/%%GNU_HOST%%/__fltk_uigetfile__.oct
