@@ -24,7 +24,12 @@ lib/libxmlb.so
 lib/libxmlb.so.2
 lib/libxmlb.so.2.0.0
 libdata/pkgconfig/xmlb.pc
+libexec/installed-tests/libxmlb/test.desktop
+libexec/installed-tests/libxmlb/test.quirk
+libexec/installed-tests/libxmlb/test.xml
 libexec/installed-tests/libxmlb/test.xml.gz.gz.gz
+libexec/installed-tests/libxmlb/test.xml.xz
+libexec/installed-tests/libxmlb/test.xml.zstd
 libexec/installed-tests/libxmlb/xb-self-test
 man/man1/xb-tool.1.gz
 share/gir-1.0/Xmlb-2.0.gir
