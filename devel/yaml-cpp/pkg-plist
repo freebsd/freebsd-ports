@@ -41,5 +41,5 @@ lib/cmake/yaml-cpp/yaml-cpp-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/yaml-cpp/yaml-cpp-targets.cmake
 lib/libyaml-cpp.so
 lib/libyaml-cpp.so.0
-lib/libyaml-cpp.so.0.7.0
+lib/libyaml-cpp.so.0.8.0
 libdata/pkgconfig/yaml-cpp.pc
