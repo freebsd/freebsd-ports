@@ -12,6 +12,7 @@ include/arbor/cable_cell.hpp
 include/arbor/cable_cell_param.hpp
 include/arbor/common_types.hpp
 include/arbor/communication/mpi_error.hpp
+include/arbor/communication/remote.hpp
 include/arbor/constants.hpp
 include/arbor/context.hpp
 include/arbor/cv_policy.hpp
@@ -58,6 +59,7 @@ include/arbor/recipe.hpp
 include/arbor/s_expr.hpp
 include/arbor/sampling.hpp
 include/arbor/schedule.hpp
+include/arbor/serdes.hpp
 include/arbor/simd/approx.hpp
 include/arbor/simd/avx.hpp
 include/arbor/simd/avx512.hpp
@@ -68,6 +70,9 @@ include/arbor/simd/neon.hpp
 include/arbor/simd/simd.hpp
 include/arbor/simd/simd_io.hpp
 include/arbor/simd/sve.hpp
+include/arbor/simd/sve_bits.hpp
+include/arbor/simd/vls_sve.hpp
+include/arbor/simd/vls_sve_bits.hpp
 include/arbor/simple_sampler.hpp
 include/arbor/simulation.hpp
 include/arbor/spike.hpp
@@ -99,6 +104,7 @@ include/arborenv/with_mpi.hpp
 include/arborio/cableio.hpp
 include/arborio/cv_policy_parse.hpp
 include/arborio/export.hpp
+include/arborio/json_serdes.hpp
 include/arborio/label_parse.hpp
 include/arborio/neurolucida.hpp
 include/arborio/neuroml.hpp

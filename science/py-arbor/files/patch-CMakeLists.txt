@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-11-15 15:19:19 UTC
+--- CMakeLists.txt.orig	2023-08-10 09:47:38 UTC
 +++ CMakeLists.txt
 @@ -1,3 +1,7 @@
 +cmake_minimum_required(VERSION 3.19)
@@ -8,7 +8,7 @@
  include(GNUInstallDirs)
  
  set(PYBIND11_CPP_STANDARD -std=c++17)
-@@ -79,14 +83,14 @@ if (ARB_WITH_MPI)
+@@ -80,14 +84,14 @@ if (ARB_WITH_MPI)
  endif()
  
  # For unit tests on C++ side of Python wrappers
@@ -26,3 +26,9 @@
  
  # Set the installation path
  
+@@ -117,4 +121,4 @@ endif()
+ 
+ install(TARGETS pyarb DESTINATION ${_python_module_install_path})
+ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/__init__.py DESTINATION ${_python_module_install_path})
+-install(FILES ${PROJECT_SOURCE_DIR}/VERSION ${PROJECT_SOURCE_DIR}/README.md ${PROJECT_SOURCE_DIR}/LICENSE DESTINATION ${_python_module_install_path})
++install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../VERSION DESTINATION ${_python_module_install_path})

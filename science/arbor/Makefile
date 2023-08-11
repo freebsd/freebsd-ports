@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,9 @@ BUILD_DEPENDS=	bash:shells/bash \
 		nlohmann-json>0:devel/nlohmann-json \
 		random123>0:devel/random123 \
 		${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
-LIB_DEPENDS=	libpugixml.so:textproc/pugixml
+BUILD_DEPENDS+=	${LOCALBASE}/lib/cmake/GTest/GTestConfig.cmake:devel/googletest # https://github.com/arbor-sim/arbor/issues/2205
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
+		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>0:graphics/py-svgwrite@${PY_FLAVOR}
 TEST_DEPENDS=	googletest>=0:devel/googletest
 

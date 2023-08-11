@@ -1,6 +1,6 @@
 PORTNAME=	arbor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +11,8 @@ WWW=		https://arbor-sim.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	pybind11>0:devel/pybind11
+BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
+		nlohmann-json>0:devel/nlohmann-json
 LIB_DEPENDS=	libarbor.so:science/arbor
 
 USES=		cmake compiler:c++17-lang localbase:ldflags python
