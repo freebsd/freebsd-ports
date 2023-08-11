@@ -1,5 +1,5 @@
 PORTNAME=	fasda
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.4
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,6 +10,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxtend.so:devel/libxtend libbiolibc.so:biology/biolibc
+RUN_DEPENDS=	stringtie>0:biology/stringtie
 
 USES=		localbase
 USE_GITHUB=	yes
