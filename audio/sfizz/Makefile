@@ -1,6 +1,6 @@
 PORTNAME=	sfizz
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +18,7 @@ BROKEN_i386=	fails to compile: unknown type name 'Elf64_Auxinfo', see https://gi
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	zenity:x11/zenity
 
-USES=		cmake localbase:ldflags pkgconfig
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c++17-lang
-.endif
+USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	sfztools
 GH_TUPLE=	\
