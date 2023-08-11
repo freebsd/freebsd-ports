@@ -1,6 +1,5 @@
 PORTNAME=	juce
-DISTVERSION=	7.0.5
-PORTREVISION=	1
+DISTVERSION=	7.0.6
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,7 +71,7 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e ' \
 		s|"/etc/fonts/fonts.conf"|"${PREFIX}/etc/fonts/fonts.conf"| ; \
 		s|"/usr/share/fonts/fonts.conf"|"${PREFIX}/share/fonts/fonts.conf"| \
-		' ${WRKSRC}/modules/juce_graphics/native/juce_linux_Fonts.cpp
+		' ${WRKSRC}/modules/juce_graphics/native/juce_Fonts_linux.cpp
 	# fix JUCE modules path (but it still complains about the path)
 	@${REINPLACE_CMD} -i '' -e ' \
 		s|"~/JUCE|"${PREFIX}/include/JUCE-${PORTVERSION}| \
