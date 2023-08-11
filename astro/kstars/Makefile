@@ -1,5 +1,5 @@
 PORTNAME=	kstars
-DISTVERSION=	3.6.5
+DISTVERSION=	3.6.6
 PORTEPOCH=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
@@ -10,8 +10,8 @@ WWW=		https://edu.kde.org/kstars
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
-		libindidriver.so:devel/indi \
+LIB_DEPENDS=	libXISF.so:graphics/libxisf \
+		libcfitsio.so:astro/cfitsio \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libraw.so:graphics/libraw \
 		libgsl.so:math/gsl \
@@ -36,5 +36,10 @@ USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 		xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
+
+# Requires devel/indi >= 2.0.0 which is not in the ports tree yet. KStars builds
+# fine with INDI 2.0.3, but support for the INDI 2.0 API in astro/phd2 and
+# astro/stellarium as of 2023-08-10 appear to be works in progress.
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_INDI
 
 .include <bsd.port.mk>
