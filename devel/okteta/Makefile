@@ -1,5 +1,5 @@
 PORTNAME=	okteta
-DISTVERSION=	0.26.12
+DISTVERSION=	0.26.13
 PORTEPOCH=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
@@ -7,6 +7,11 @@ MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE hex editor
 WWW=		https://www.kde.org/applications/utilities/okteta/
+
+LICENSE=		GPLv2 GPLv3
+LICENSE_COMB=		dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSES/GPL-2.0-only.txt
+LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
 		shared-mime-info tar:xz xorg
