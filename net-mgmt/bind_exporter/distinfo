@@ -1,5 +1,5 @@
-TIMESTAMP = 1690752902
-SHA256 (go/net-mgmt_bind_exporter/bind_exporter-v0.6.1/v0.6.1.mod) = d6c3084f0ea2d295bd45c8b6b7c8deab57d4d7812ef81bf0b3d6b828aa46b289
-SIZE (go/net-mgmt_bind_exporter/bind_exporter-v0.6.1/v0.6.1.mod) = 1417
-SHA256 (go/net-mgmt_bind_exporter/bind_exporter-v0.6.1/v0.6.1.zip) = 62153c3178cf662005696a4456ea4cda1f8e0ef1a74b267b1db0ba24154236f7
-SIZE (go/net-mgmt_bind_exporter/bind_exporter-v0.6.1/v0.6.1.zip) = 58831
+TIMESTAMP = 1691792844
+SHA256 (go/net-mgmt_bind_exporter/bind_exporter-v0.7.0/v0.7.0.mod) = a8570e3261a5f4b44953a997ecd9ab6260615be26c93a912ee2c89e6fc804aa1
+SIZE (go/net-mgmt_bind_exporter/bind_exporter-v0.7.0/v0.7.0.mod) = 1368
+SHA256 (go/net-mgmt_bind_exporter/bind_exporter-v0.7.0/v0.7.0.zip) = 062af346494d3ca8ef2abd089bd3386349cee2c96efb940cd1d505b248c1a1d1
+SIZE (go/net-mgmt_bind_exporter/bind_exporter-v0.7.0/v0.7.0.zip) = 62694
