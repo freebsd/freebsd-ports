@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230811:
+  AFFECTS: users of www/p5-AnyEvent-WebSocket-Client
+  AUTHOR: rodrigo@FreeBSD.org
+
+  The update to AnyEvent-WebSocket-Client 0.55 introduce a change in behavior:
+  close() default return code is now 1000 instead of 1005
+
 20230730:
   AFFECTS: users of lang/perl5*
   AUTHOR: delphij@FreeBSD.org
