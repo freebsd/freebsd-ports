@@ -1,5 +1,5 @@
 PORTNAME=	glyphsLib
-PORTVERSION=	6.1.0
+DISTVERSION=	6.3.0
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.33.0:print/py-fonttools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.38.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openstep-plist>=0.3.0:textproc/py-openstep-plist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.6.2:print/py-ufolib2@${PY_FLAVOR} \
 
