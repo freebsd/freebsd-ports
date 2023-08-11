@@ -26,16 +26,15 @@ man/man3/digits.3.gz
 man/man3/double_cmp.3.gz
 man/man3/dsv_line_copy.3.gz
 man/man3/dsv_line_free.3.gz
-man/man3/dsv_line_get_array_size.3.gz
 man/man3/dsv_line_get_delims.3.gz
 man/man3/dsv_line_get_delims_ae.3.gz
 man/man3/dsv_line_get_fields.3.gz
 man/man3/dsv_line_get_fields_ae.3.gz
 man/man3/dsv_line_get_num_fields.3.gz
+man/man3/dsv_line_get_num_fields_array_size.3.gz
 man/man3/dsv_line_init.3.gz
 man/man3/dsv_line_new.3.gz
 man/man3/dsv_line_read.3.gz
-man/man3/dsv_line_set_array_size.3.gz
 man/man3/dsv_line_set_delims.3.gz
 man/man3/dsv_line_set_delims_ae.3.gz
 man/man3/dsv_line_set_delims_cpy.3.gz
@@ -43,6 +42,7 @@ man/man3/dsv_line_set_fields.3.gz
 man/man3/dsv_line_set_fields_ae.3.gz
 man/man3/dsv_line_set_fields_cpy.3.gz
 man/man3/dsv_line_set_num_fields.3.gz
+man/man3/dsv_line_set_num_fields_array_size.3.gz
 man/man3/dsv_line_write.3.gz
 man/man3/dsv_read_field.3.gz
 man/man3/dsv_read_field_malloc.3.gz
