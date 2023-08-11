@@ -1,6 +1,6 @@
 PORTNAME=	amgcl
 DISTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +14,6 @@ BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 RUN_DEPENDS=	${PREFIX}/include/boost/property_tree/ptree.hpp:devel/boost-libs
 
 USES=		cmake
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.endif
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ddemidov
 
