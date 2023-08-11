@@ -11,9 +11,6 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
-.if !exists(/usr/include/omp.h)
-USES+=		compiler:gcc-c++11-lib
-.endif
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
