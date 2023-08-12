@@ -1,6 +1,7 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -15,7 +16,7 @@ BROKEN_mips64=		fails to build: conflicting types for 'restrict'
 USE_GITHUB=	yes
 GH_ACCOUNT=	fluent
 
-USES=		bison cmake:noninja gmake localbase:ldflags
+USES=		bison cmake:noninja compiler:c11 gmake localbase:ldflags
 
 OPTIONS_DEFINE=		SSL PGSQL
 OPTIONS_DEFAULT=	SSL
@@ -38,13 +39,6 @@ PGSQL_CMAKE_OFF=	-DFLB_OUT_PGSQL=Off
 USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-LDFLAGS+=	-latomic
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler:c11
-.endif
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
