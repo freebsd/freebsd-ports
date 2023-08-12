@@ -18,7 +18,7 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GL_SITE=	https://source.puri.sm
 GL_ACCOUNT=	Librem5
-GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:ff854988bff80f2d4c1181ccf3c94b032603b6f9:gmobile/subprojects/gmobile
+GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:v0.0.1-11-gff85498:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 GLIB_SCHEMAS=	org.sigxcpu.feedbackd.gschema.xml
 
