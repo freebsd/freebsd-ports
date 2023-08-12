@@ -26,11 +26,13 @@ desc="X.org X display manager"
 load_rc_config $name
 
 : ${xdm_enable:=NO}
-: ${xdm_tty:=ttyv8}
+: ${xdm_tty:=default}
 
 command=%%PREFIX%%/bin/$name
 pidfile=/var/run/$name.pid
-start_precmd=xdm_set_vty
+if [ "${xdm_tty%%[0-9]*}" = "ttyv" ]; then
+	start_precmd=xdm_set_vty
+fi
 
 xdm_set_vty()
 {
