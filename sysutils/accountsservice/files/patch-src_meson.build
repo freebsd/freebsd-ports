@@ -1,9 +1,9 @@
---- src/meson.build.orig	2018-09-29 12:54:53 UTC
+--- src/meson.build.orig	2022-01-28 20:47:34 UTC
 +++ src/meson.build
-@@ -26,8 +26,8 @@ deps = [
- cflags = [
+@@ -28,8 +28,8 @@ cflags = [
    '-DLOCALSTATEDIR="@0@"'.format(act_localstatedir),
    '-DDATADIR="@0@"'.format(act_datadir),
+   '-DSYSCONFDIR="@0@"'.format(act_sysconfdir),
 -  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'icons')),
 -  '-DUSERDIR="@0@"'.format(join_paths(act_localstatedir, 'lib', 'AccountsService', 'users')),
 +  '-DICONDIR="@0@"'.format(join_paths(act_localstatedir, 'db', 'AccountsService', 'icons')),

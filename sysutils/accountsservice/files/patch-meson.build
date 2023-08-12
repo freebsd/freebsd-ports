@@ -1,16 +1,10 @@
---- meson.build.orig	2018-09-29 12:54:53 UTC
+--- meson.build.orig	2023-08-12 19:01:30 UTC
 +++ meson.build
-@@ -82,8 +82,11 @@ if cc.has_header_symbol('utmpx.h', 'WTMPX_FILENAME', p
- elif cc.has_header_symbol('paths.h', '_PATH_WTMPX')
+@@ -105,7 +105,6 @@ else
    config_h.set('PATH_WTMP', '_PATH_WTMPX')
  else
--  assert(run_command('test', '-e', '/var/log/utx.log').returncode() == 0, 'Do not know which filename to watch for wtmp changes')
--  config_h.set_quoted('PATH_WTMP', '/var/log/utx.log')
-+  # Ugly hack for jails builders!
-+  _system = host_machine.system().to_lower()
-+  if _system.contains('freebsd')
-+    config_h.set_quoted('PATH_WTMP', '/var/log/utx.log')
-+  endif
+   path_wtmp = '/var/log/utx.log'
+-  assert(run_command('test', '-e', path_wtmp, check: false).returncode() == 0, 'Do not know which filename to watch for wtmp changes')
+   config_h.set_quoted('PATH_WTMP', path_wtmp)
  endif
  
- # compiler flags

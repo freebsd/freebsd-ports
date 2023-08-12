@@ -1,4 +1,3 @@
-etc/dbus-1/system.d/org.freedesktop.Accounts.conf
 include/accountsservice-1.0/act/act-user-enum-types.h
 include/accountsservice-1.0/act/act-user-manager.h
 include/accountsservice-1.0/act/act-user.h
@@ -9,9 +8,12 @@ lib/libaccountsservice.so.0
 lib/libaccountsservice.so.0.0.0
 libdata/pkgconfig/accountsservice.pc
 libexec/accounts-daemon
+%%DATADIR%%/user-templates/administrator
+%%DATADIR%%/user-templates/standard
 share/dbus-1/interfaces/org.freedesktop.Accounts.User.xml
 share/dbus-1/interfaces/org.freedesktop.Accounts.xml
 share/dbus-1/system-services/org.freedesktop.Accounts.service
+share/dbus-1/system.d/org.freedesktop.Accounts.conf
 share/gir-1.0/AccountsService-1.0.gir
 share/locale/af/LC_MESSAGES/accounts-service.mo
 share/locale/ar/LC_MESSAGES/accounts-service.mo
