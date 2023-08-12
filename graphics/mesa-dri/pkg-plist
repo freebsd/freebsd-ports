@@ -10,6 +10,7 @@ include/GL/internal/dri_interface.h
 @comment include/KHR/khrplatform.h
 @comment include/gbm.h
 %%CROCUS_GDRIVER%%lib/dri/crocus_dri.so
+%%I915_GDRIVER%%lib/dri/i915_dri.so
 %%IRIS_GDRIVER%%lib/dri/iris_dri.so
 %%PANFROST_GDRIVER%%lib/dri/panfrost_dri.so
 %%PANFROST_GDRIVER%%lib/dri/rockchip_dri.so
