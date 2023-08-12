@@ -1,5 +1,5 @@
-TIMESTAMP = 1690939693
-SHA256 (go/editors_orbiton/orbiton-v2.62.9/v2.62.9.mod) = 549fea207512a1a1ec534ed14697d4fde114aa62655cef0544188adfc7927d2e
-SIZE (go/editors_orbiton/orbiton-v2.62.9/v2.62.9.mod) = 2127
-SHA256 (go/editors_orbiton/orbiton-v2.62.9/v2.62.9.zip) = 6b44446bb4d360d48eeaddbddb82dd88173d4351b6adbcb6ad8ce9f6d080457d
-SIZE (go/editors_orbiton/orbiton-v2.62.9/v2.62.9.zip) = 941761
+TIMESTAMP = 1691814172
+SHA256 (go/editors_orbiton/orbiton-v2.63.0/v2.63.0.mod) = 80c677428f5587b8dc3800598046dd2f7cf23ce63cb5af6b645b50d8e73fb7e0
+SIZE (go/editors_orbiton/orbiton-v2.63.0/v2.63.0.mod) = 2130
+SHA256 (go/editors_orbiton/orbiton-v2.63.0/v2.63.0.zip) = f0d9a642e1a64971d16cf3ac7b4558df0331362eceb055263bbc50f7fd04c3a4
+SIZE (go/editors_orbiton/orbiton-v2.63.0/v2.63.0.zip) = 946355
