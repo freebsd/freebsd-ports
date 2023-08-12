@@ -1,0 +1,135 @@
+--- src/doom/r_plane.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/doom/r_plane.c	2023-08-12 00:58:37.304505000 +0100
+@@ -368,15 +368,15 @@
+ 				
+ #ifdef RANGECHECK
+     if (ds_p - drawsegs > MAXDRAWSEGS)
+-	I_Error ("R_DrawPlanes: drawsegs overflow (%i)",
++	I_Error ("R_DrawPlanes: drawsegs overflow (%td)",
+ 		 ds_p - drawsegs);
+     
+     if (lastvisplane - visplanes > MAXVISPLANES)
+-	I_Error ("R_DrawPlanes: visplane overflow (%i)",
++	I_Error ("R_DrawPlanes: visplane overflow (%td)",
+ 		 lastvisplane - visplanes);
+     
+     if (lastopening - openings > MAXOPENINGS)
+-	I_Error ("R_DrawPlanes: opening overflow (%i)",
++	I_Error ("R_DrawPlanes: opening overflow (%td)",
+ 		 lastopening - openings);
+ #endif
+ 
+--- src/heretic/r_plane.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/heretic/r_plane.c	2023-08-12 00:58:48.724930000 +0100
+@@ -386,12 +386,12 @@
+ 
+ #ifdef RANGECHECK
+     if (ds_p - drawsegs > MAXDRAWSEGS)
+-        I_Error("R_DrawPlanes: drawsegs overflow (%i)", ds_p - drawsegs);
++        I_Error("R_DrawPlanes: drawsegs overflow (%td)", ds_p - drawsegs);
+     if (lastvisplane - visplanes > MAXVISPLANES)
+-        I_Error("R_DrawPlanes: visplane overflow (%i)",
++        I_Error("R_DrawPlanes: visplane overflow (%td)",
+                 lastvisplane - visplanes);
+     if (lastopening - openings > MAXOPENINGS)
+-        I_Error("R_DrawPlanes: opening overflow (%i)",
++        I_Error("R_DrawPlanes: opening overflow (%td)",
+                 lastopening - openings);
+ #endif
+ 
+--- src/hexen/r_plane.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/hexen/r_plane.c	2023-08-12 00:59:22.081707000 +0100
+@@ -390,16 +390,16 @@
+ #ifdef RANGECHECK
+     if (ds_p - drawsegs > MAXDRAWSEGS)
+     {
+-        I_Error("R_DrawPlanes: drawsegs overflow (%i)", ds_p - drawsegs);
++        I_Error("R_DrawPlanes: drawsegs overflow (%td)", ds_p - drawsegs);
+     }
+     if (lastvisplane - visplanes > MAXVISPLANES)
+     {
+-        I_Error("R_DrawPlanes: visplane overflow (%i)",
++        I_Error("R_DrawPlanes: visplane overflow (%td)",
+                 lastvisplane - visplanes);
+     }
+     if (lastopening - openings > MAXOPENINGS)
+     {
+-        I_Error("R_DrawPlanes: opening overflow (%i)",
++        I_Error("R_DrawPlanes: opening overflow (%td)",
+                 lastopening - openings);
+     }
+ #endif
+--- src/i_system.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/i_system.c	2023-08-12 00:59:37.613100000 +0100
+@@ -335,7 +335,7 @@
+ 
+     if (size != 0 && new_ptr == NULL)
+     {
+-        I_Error ("I_Realloc: failed on reallocation of %i bytes", size);
++        I_Error ("I_Realloc: failed on reallocation of %zu bytes", size);
+     }
+ 
+     return new_ptr;
+--- src/m_misc.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/m_misc.c	2023-08-12 01:00:03.651036000 +0100
+@@ -384,7 +384,7 @@
+ 
+     if (result == NULL)
+     {
+-        I_Error("Failed to duplicate string (length %i)\n",
++        I_Error("Failed to duplicate string (length %zu)\n",
+                 strlen(orig));
+     }
+ 
+--- src/setup/multiplayer.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/setup/multiplayer.c	2023-08-12 00:57:48.812142000 +0100
+@@ -392,8 +392,8 @@
+     const iwad_t *iwad;
+     char buf[10];
+     int episodes;
+-    intptr_t x, y;
+-    intptr_t l;
++    int x, y;
++    int l;
+     int i;
+ 
+     window = TXT_NewWindow("Select level");
+@@ -424,7 +424,7 @@
+                 M_snprintf(buf, sizeof(buf), " E%iM%i ", x, y);
+                 button = TXT_NewButton(buf);
+                 TXT_SignalConnect(button, "pressed",
+-                                  SetExMyWarp, (void *) (x * 10 + y));
++                                  SetExMyWarp, (void *) (intptr_t) (x * 10 + y));
+                 TXT_SignalConnect(button, "pressed",
+                                   CloseLevelSelectDialog, window);
+                 TXT_AddWidget(window, button);
+@@ -456,7 +456,7 @@
+             M_snprintf(buf, sizeof(buf), " MAP%02i ", l);
+             button = TXT_NewButton(buf);
+             TXT_SignalConnect(button, "pressed", 
+-                              SetMAPxyWarp, (void *) l);
++                              SetMAPxyWarp, (void *) (intptr_t) l);
+             TXT_SignalConnect(button, "pressed",
+                               CloseLevelSelectDialog, window);
+             TXT_AddWidget(window, button);
+--- src/strife/r_plane.c.orig	2020-06-25 04:10:06.000000000 +0100
++++ src/strife/r_plane.c	2023-08-12 01:00:18.242001000 +0100
+@@ -369,15 +369,15 @@
+ 				
+ #ifdef RANGECHECK
+     if (ds_p - drawsegs > MAXDRAWSEGS)
+-	I_Error ("R_DrawPlanes: drawsegs overflow (%i)",
++	I_Error ("R_DrawPlanes: drawsegs overflow (%td)",
+ 		 ds_p - drawsegs);
+     
+     if (lastvisplane - visplanes > MAXVISPLANES)
+-	I_Error ("R_DrawPlanes: visplane overflow (%i)",
++	I_Error ("R_DrawPlanes: visplane overflow (%td)",
+ 		 lastvisplane - visplanes);
+     
+     if (lastopening - openings > MAXOPENINGS)
+-	I_Error ("R_DrawPlanes: opening overflow (%i)",
++	I_Error ("R_DrawPlanes: opening overflow (%td)",
+ 		 lastopening - openings);
+ #endif
+ 
