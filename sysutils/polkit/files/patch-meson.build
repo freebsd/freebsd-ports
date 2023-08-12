@@ -1,10 +1,6 @@
---- meson.build.orig	2022-10-26 12:12:24 UTC
+--- meson.build.orig	2023-07-28 12:34:38 UTC
 +++ meson.build
-@@ -154,10 +154,11 @@ if js_engine == 'duktape'
-   config_h.set('HAVE_' + func.to_upper(), cc.has_function(func, prefix : '#include <pthread.h>'))
- elif js_engine == 'mozjs'
-   js_dep = dependency('mozjs-102')
-+  config_h.set('__BSD_VISIBLE', 1)
+@@ -162,7 +161,7 @@ elif js_engine == 'mozjs'
  endif
  
  dbus_dep = dependency('dbus-1', required: false)
@@ -13,19 +9,3 @@
  if dbus_dep.found()
    dbus_system_bus_services_dir = dbus_dep.get_pkgconfig_variable('system_bus_services_dir', define_variable: ['datadir', pk_prefix / pk_datadir])
  else
-@@ -358,15 +359,6 @@ endif
- configure_file(
-   output: 'config.h',
-   configuration: config_h,
--)
--
--meson.add_install_script(
--  'meson_post_install.py',
--  get_option('bindir'),
--  pk_pkgdatadir,
--  pk_libprivdir,
--  pk_pkgsysconfdir,
--  polkitd_user,
- )
- 
- output = '\n        ' + meson.project_name() + ' ' + meson.project_version() + '\n'
