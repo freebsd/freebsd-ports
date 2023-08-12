@@ -1,5 +1,6 @@
 PORTNAME=	foot
 DISTVERSION=	1.15.3
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -26,7 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 OPTIONS_DEFINE=	DOCS LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_DEFAULT=LTO NOTIFY PGO UTF8PROC XDG
 OPTIONS_EXCLUDE+=	${CC:T:Mgcc*:C/.+/LTO/} # undefined reference to `xstrdup'
-OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE_FreeBSD_12=	${WAYLAND_DISPLAY:UPGO} # ./pgo hangs
 
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
