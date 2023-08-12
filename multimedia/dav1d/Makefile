@@ -31,7 +31,7 @@ SDL_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo \
 			libvulkan.so:graphics/vulkan-loader
 SDL_MESON_TRUE=	enable_examples
 
-TEST_GL_TUPLE=	videolan:dav1d-test-data:dc72df56c05be149cd888227c3226a201ea3d1cb:testdata/tests/dav1d-test-data
+TEST_GL_TUPLE=	videolan:dav1d-test-data:${DISTVERSION}:testdata/tests/dav1d-test-data
 TEST_MESON_TRUE=enable_tests testdata_tests
 
 XXHASH_DESC=	xxHash 3 muxer
