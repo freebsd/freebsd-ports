@@ -1,5 +1,6 @@
 PORTNAME=	haskell-language-server
 DISTVERSION=	2.0.0.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
