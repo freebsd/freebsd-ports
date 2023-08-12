@@ -1,6 +1,7 @@
 PORTNAME=	svt-av1
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -26,7 +27,6 @@ CMAKE_OFF=	NATIVE
 
 OPTIONS_DEFINE=	LTO
 OPTIONS_DEFAULT=LTO
-OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE_riscv64=	LTO # bug 262871
 
 LTO_CMAKE_BOOL=		CMAKE_INTERPROCEDURAL_OPTIMIZATION
