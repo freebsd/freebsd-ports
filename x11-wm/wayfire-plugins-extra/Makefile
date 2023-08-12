@@ -22,7 +22,7 @@ USE_GITLAB=	nodefault
 USE_GNOME=	cairo glibmm
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	damianatorrpm:wayfire-plugin_dbus_interface:c705bf1:dbus/subprojects/dbus
-GL_TUPLE=	wayfireplugins:windecor:6ad31bfc10c5d39c0da7c68fa435064effad6381:windecor/subprojects/windecor
+GL_TUPLE=	wayfireplugins:windecor:6ad31bf:windecor/subprojects/windecor
 SHEBANG_FILES=	subprojects/dbus/compile-schemas.sh
 bash_CMD=	${SH}
 
