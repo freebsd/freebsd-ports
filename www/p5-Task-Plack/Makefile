@@ -1,6 +1,5 @@
 PORTNAME=	Task-Plack
-PORTVERSION=	0.25
-PORTREVISION=	2
+PORTVERSION=	0.28
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -105,5 +104,7 @@ DEP+=	p5-CGI-Application-PSGI>=1.00:www/p5-CGI-Application-PSGI
 
 BUILD_DEPENDS=	${DEP}
 RUN_DEPENDS=	${DEP}
+
+USE_PERL5=	modbuildtiny
 
 .include <bsd.port.mk>
