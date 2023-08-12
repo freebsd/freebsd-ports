@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 WWW=		https://librdf.org/raptor/
 
+DEPRECATED=	No new release in 10+ years and superseded by 2.0-branch, consider using textproc/raptor2
+EXPIRATION_DATE=2023-09-30
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gnome libtool pathfix
