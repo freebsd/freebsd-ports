@@ -1,5 +1,6 @@
 PORTNAME=	terminus-font
 PORTVERSION=	4.49.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION:R}
 
@@ -31,7 +32,7 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-ALL_TARGET=	pcf pcf-8bit
+ALL_TARGET=	pcf pcf-8bit otb
 
 post-extract:
 .if ${PORT_OPTIONS:MAO2}
@@ -77,5 +78,6 @@ post-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.otb ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
