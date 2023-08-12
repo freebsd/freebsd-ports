@@ -11,3 +11,5 @@ lib/libgudev-1.0.so.0
 lib/libgudev-1.0.so.0.3.0
 libdata/pkgconfig/gudev-1.0.pc
 share/gir-1.0/GUdev-1.0.gir
+%%VALA%%share/vala/vapi/gudev-1.0.deps
+%%VALA%%share/vala/vapi/gudev-1.0.vapi

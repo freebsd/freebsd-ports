@@ -1,5 +1,5 @@
 PORTNAME=	libgudev
-PORTVERSION=	234
+PORTVERSION=	237
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -12,11 +12,28 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=		gettext-runtime gmake gnome libtool pathfix pkgconfig tar:xz
+USES=		gettext-runtime gnome libtool meson pathfix pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-CONFIGURE_ARGS=	--disable-umockdev
+
+MESON_ARGS=	-Dintrospection=enabled -Dtests=disabled
+
+DOCSDIR=	${PREFIX}/share/gtk-doc/html/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS VALA
+OPTIONS_SUB=	yes
+
+DOCS_MESON_TRUE=	gtk_doc
+DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
+
+VALA_DESC=		Build and install Vala bindings
+VALA_MESON_ENABLED=	vapi
+VALA_BUILD_DEPENDS=	vapigen:lang/vala
+VALA_VARS=		USE+=vala:build
+
+add-plist-docs: ${STAGE_COOKIE}
+	cd ${STAGEDIR}; ${FIND} ${DOCSDIR:C@^/@@} -type f | ${SED} -e 's@^@/@' >> ${TMPPLIST}
+	cd ${STAGEDIR}; ${FIND} ${LOCALBASE:C@^/@@}/share/gtk-doc/html -mindepth 2 -type f | ${SED} -e 's@^@/@' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
