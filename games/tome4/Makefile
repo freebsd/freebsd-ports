@@ -35,6 +35,8 @@ MAKE_ARGS+=	config=release verbose=yes ARCH="" CC=${CC} CXX=${CXX}
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 LDFLAGS_i386=	-Wl,-znotext
 
+.include <bsd.port.options.mk>
+
 pre-build:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/premake4.lua
 .if ${ARCH} == aarch64 || ${ARCH:Mpowerpc64*} || ${ARCH} == riscv64
