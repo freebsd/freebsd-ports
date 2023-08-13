@@ -1,3 +1,3 @@
-TIMESTAMP = 1689436931
-SHA256 (qemu/8.0.3/qemu-8.0.3.tar.xz) = ecf4d32cbef9d397bfc8cc50e4d1e92a1b30253bf32e8ee73c7a8dcf9a232b09
-SIZE (qemu/8.0.3/qemu-8.0.3.tar.xz) = 126710536
+TIMESTAMP = 1691878269
+SHA256 (qemu/8.0.4/qemu-8.0.4.tar.xz) = 81c817dda38af958be5bef1a6cf55b658bb2d3fb87c1e6a571de6b7b2c44516c
+SIZE (qemu/8.0.4/qemu-8.0.4.tar.xz) = 126179324
