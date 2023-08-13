@@ -1,0 +1,10 @@
+include/FutureSQL5/ThreadedDatabase
+include/FutureSQL5/futuresql_export.h
+include/FutureSQL5/threadeddatabase.h
+include/FutureSQL5/threadeddatabase_p.h
+lib/cmake/FutureSQL5/FutureSQL5Config.cmake
+lib/cmake/FutureSQL5/FutureSQL5ConfigVersion.cmake
+lib/cmake/FutureSQL5/FutureSQLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/FutureSQL5/FutureSQLTargets.cmake
+lib/libfuturesql5.so
+lib/libfuturesql5.so.0
