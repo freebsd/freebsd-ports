@@ -12,6 +12,9 @@ WWW=		https://www.cyrusimap.org/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=2023-09-15
+
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 		libpcre.so:devel/pcre
 
