@@ -13,9 +13,18 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/MobileDateInput.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/TumblerTimePicker.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/qmldir
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/DefaultContentItem.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/IndicatorItemDelegate.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/RoundedItemDelegate.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/SubtitleContentItem.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/libdelegatesplugin.so
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/delegates/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AbstractMaximizeComponent.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AlbumMaximizeComponent.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AlbumModelItem.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/Avatar.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/Banner.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/DownloadAction.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/ImageMaximizeDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/VideoMaximizeDelegate.qml
@@ -33,6 +42,7 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormDelegateBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormDelegateSeparator.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormGridContainer.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormHeader.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormRadioDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSectionText.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSpinBoxDelegate.qml
