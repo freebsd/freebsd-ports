@@ -1,7 +1,7 @@
 PORTNAME=	libjxl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,7 +23,6 @@ GH_TUPLE=	jbeich:skcms:b25b07b:skcms/third_party/skcms \
 		libjxl:testdata:d6168ff:testdata/testdata \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
-CFLAGS_powerpc64=	-DHWY_DISABLE_PPC8_CRYPTO
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_OFF=	${BENCHMARK FUZZERS TCMALLOC:L:S/^/JPEGXL_ENABLE_/}
 CMAKE_OFF+=	${OpenGL GLUT:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/} # sjpeg
@@ -33,7 +32,6 @@ LDFLAGS+=	-Wl,--as-needed # brotlicommon, OPENEXR/PNG deps
 OPTIONS_DEFINE=	GIF JPEG LTO MANPAGES OPENEXR PIXBUF PNG
 OPTIONS_DEFAULT=GIF JPEG LTO MANPAGES OPENEXR PIXBUF PNG
 OPTIONS_EXCLUDE_i386=	LTO # ConvolutionWithTranspose(): JXL_CHECK: out->xsize() == in.ysize()
-OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE_riscv64=	LTO # bug 262871
 OPTIONS_SUB=	yes
 
