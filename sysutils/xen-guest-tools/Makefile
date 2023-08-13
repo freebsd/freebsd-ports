@@ -1,12 +1,11 @@
 PORTNAME=	xen-guest-tools
-#PORTVERSION=	4.14.0
 PORTVERSION=	4.16.1
 PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://downloads.xenproject.org/release/xen/${PORTVERSION}/
 DISTNAME=	xen-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xen tools within FreeBSD domU
 WWW=		https://xenproject.org/
 

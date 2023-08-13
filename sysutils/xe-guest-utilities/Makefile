@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/feld
 DISTNAME=	${PORTNAME}-6.0.2
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD VM tools for Citrix XenServer and XCP
 
 ONLY_FOR_ARCHS=		amd64 i386
