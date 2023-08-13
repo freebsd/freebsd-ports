@@ -2255,6 +2255,7 @@
     SUBDIR += sfeed
     SUBDIR += sfnt2woff
     SUBDIR += shellinabox
+    SUBDIR += shiori
     SUBDIR += silicon
     SUBDIR += simple-web-server
     SUBDIR += sitecopy
