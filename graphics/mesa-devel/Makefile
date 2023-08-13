@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	23.2.0-branchpoint-2280
 DISTVERSIONSUFFIX=	-gce0c70fb0c6
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -55,7 +56,6 @@ OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
 OPTIONS_GROUP_VULKAN=	anv hasvk radv
 OPTIONS_EXCLUDE_DragonFly=	LIBUNWIND anv hasvk
 OPTIONS_EXCLUDE_i386=	LTO # anv: vkcube fails on vkCreateSwapchainKHR
-OPTIONS_EXCLUDE_powerpc64=	${"${/usr/bin/ld:L:tA}"==/usr/bin/ld.lld:?LTO:} # https://github.com/llvm/llvm-project/issues/46697
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:C/.+/panfrost/}
 OPTIONS_EXCLUDE+=	${ARCH:Namd64:Ni386:Nx86_64:C/.+/crocus hasvk/}
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Ni386:Nx86_64:C/.+/anv iris/}
