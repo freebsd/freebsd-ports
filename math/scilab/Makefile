@@ -27,7 +27,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 USES=		compiler:c++17-lang cpe desktop-file-utils eigen:3,build \
 		fortran gettext gmake gnome iconv:wchar_t libtool \
 		localbase ncurses pathfix pkgconfig shared-mime-info
-USE_CXXSTD=	c++14
 USE_LOCALE=	en_US.UTF-8
 
 GNU_CONFIGURE=	yes
@@ -153,6 +152,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|std::filesystem|std::__fs::filesystem|g' \
 		${WRKSRC}/modules/fileio/src/cpp/fullpath.cpp \
 		${WRKSRC}/modules/fileio/sci_gateway/cpp/sci_get_absolute_file_path.cpp
+	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
+		${WRKSRC}/modules/ast/includes/types/sparseOp.hxx
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/modules/ast/src/cpp/types/sparse.cpp
 .endif
 
 post-patch-GUI-on:
