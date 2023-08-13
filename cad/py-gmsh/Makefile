@@ -34,6 +34,8 @@ USE_LDCONFIG=	${PYTHON_SITELIBDIR}
 CMAKE_ON=	ENABLE_WRAP_PYTHON ENABLE_PRIVATE_API ENABLE_OCC
 CMAKE_ARGS=	-DOCC_INC=${LOCALBASE}/include/OpenCASCADE
 
+CXXFLAGS_powerpc64=	-mvsx
+
 post-install: # remove all except for the python binding
 	@cd ${STAGEDIR}${PREFIX} && \
 		${RM} -r \
