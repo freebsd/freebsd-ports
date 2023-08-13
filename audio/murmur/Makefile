@@ -5,7 +5,7 @@ CATEGORIES=	audio net
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server component of Mumble
-WWW=		http://mumble.sourceforge.net/
+WWW=		https://www.mumble.info/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
