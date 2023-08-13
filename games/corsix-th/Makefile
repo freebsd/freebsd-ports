@@ -1,7 +1,6 @@
 PORTNAME=	corsixth
-PORTVERSION=	0.66
+PORTVERSION=	0.67
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -16,40 +15,32 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR} \
 
 USES=		cmake:insource compiler:c++11-lib desktop-file-utils dos2unix \
 		iconv lua pkgconfig sdl
-USE_SDL=	mixer2
 DOS2UNIX_FILES=	CMake/FindFFmpeg.cmake \
 		CorsixTH/CMakeLists.txt \
 		CorsixTH/Src/iso_fs.cpp
+USE_GITHUB=	yes
+GH_ACCOUNT=	CorsixTH
+GH_PROJECT=	CorsixTH
+USE_SDL=	mixer2
 CMAKE_ARGS=	-DWITH_LUAJIT=OFF
 CFLAGS+=	-I${ICONV_PREFIX}/include
 DATADIR=	${PREFIX}/share/corsix-th
 
-DESKTOP_ENTRIES=	"CorsixTH" \
-			"${COMMENT}" \
-			"${PREFIX}/share/pixmaps/corsix-th.png" \
-			"${PREFIX}/bin/corsix-th" \
-			"Game;" \
-			""
+OPTIONS_DEFINE=	MOVIES TOOLS
+OPTIONS_DEFAULT=MOVIES TOOLS
+OPTIONS_SUB=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	CorsixTH
-GH_PROJECT=	CorsixTH
-
-OPTIONS_DEFINE=	MOVIES
-OPTIONS_DEFAULT=	MOVIES
 MOVIES_DESC=	Play in-game movies
+TOOLS_DESC=	Tools for decoding RNC files
 
+MOVIES_LIB_DEPENDS=	libswresample.so:multimedia/ffmpeg
 MOVIES_CMAKE_ON=	-DWITH_MOVIES=ON
 MOVIES_CMAKE_OFF=	-DWITH_MOVIES=OFF
-MOVIES_LIB_DEPENDS=	libswresample.so:multimedia/ffmpeg
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/CorsixTH/corsix-th ${STAGEDIR}${PREFIX}/bin
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/CorsixTH/CorsixTH.lua ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/CorsixTH && ${COPYTREE_SHARE} "Bitmap Levels Lua" \
-		${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/LDocGen/output/logo.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/corsix-th.png
+TOOLS_CMAKE_ON=		-DBUILD_TOOLS=ON
+TOOLS_CMAKE_OFF=	-DBUILD_TOOLS=OFF
+
+post-install-TOOLS-on:
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/rnc/rnc_decode ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
