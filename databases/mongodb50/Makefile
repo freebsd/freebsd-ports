@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	5.0.19
+DISTVERSION=	5.0.20
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -34,8 +34,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		compiler:c++17-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
 
-CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
-
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
@@ -53,6 +51,8 @@ MAKE_ARGS=	--cxx-std=17 \
 		-j ${MAKE_JOBS_NUMBER} \
 		AR=llvm-ar \
 		VERBOSE=on
+
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample
 
