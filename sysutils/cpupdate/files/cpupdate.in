@@ -64,8 +64,8 @@ cpupdate_download() {
     *:cpm|*:intel)
       cpupdate_distfile _file ${_url##*:}
       _url=${_url%:*}${_file}
-      echo Downloading $_url
-      $cpupdate_fetch -o - $_url | tar -C $_tmpdir -xf - || exit
+      echo Downloading "$_url"
+      $cpupdate_fetch -o - "$_url" | tar -C $_tmpdir -xf - || exit
       ;;
     esac
   done
