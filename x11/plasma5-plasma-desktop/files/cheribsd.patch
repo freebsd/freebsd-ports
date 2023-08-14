@@ -10,7 +10,7 @@
  add_subdirectory( launch )
 --- CMakeLists.txt	2022-10-05 19:44:55.065430000 +0100
 +++ CMakeLists.txt	2022-10-05 20:53:30.202917000 +0100
-@@ -46,7 +46,6 @@
+@@ -53,7 +53,6 @@
      Crash
      Plasma
      PlasmaQuick
@@ -18,15 +18,17 @@
      I18n
      KCMUtils
      NewStuff
-@@ -67,7 +66,6 @@
-     WidgetsAddons
-     Codecs
+@@ -76,9 +75,6 @@
      Sonnet
--    KDELibs4Support # kcms/dateandtime
+     Package
  )
+-if (QT_MAJOR_VERSION EQUAL "5")
+-    find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS KDELibs4Support) # kcms/dateandtime
+-endif()
  
- find_package(AccountsQt5 ${ACCOUNTSQT_DEP_VERSION} CONFIG)
-@@ -226,7 +224,6 @@
+ find_package(AccountsQt${QT_MAJOR_VERSION} ${ACCOUNTSQT_DEP_VERSION} CONFIG)
+ 
+@@ -244,7 +240,6 @@
  
  add_subdirectory(layout-templates)
  
@@ -34,3 +36,8 @@
  add_subdirectory(runners)
  add_subdirectory(containments)
  add_subdirectory(toolboxes)
+@@ -277,4 +272,3 @@
+ )
+ 
+ ki18n_install(po)
+-kdoctools_install(po)
