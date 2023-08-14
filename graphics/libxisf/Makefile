@@ -1,6 +1,6 @@
 PORTNAME=	libxisf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.8
+DISTVERSION=	0.2.9
 CATEGORIES=	graphics astro
 MASTER_SITES=	https://gitea.nouspiro.space/nou/libXISF/archive/
 DISTNAME=	${DISTVERSIONPREFIX}${DISTVERSION}
@@ -14,9 +14,10 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libzstd.so:archivers/zstd \
 		libpugixml.so:textproc/pugixml
 
-USES=		cmake compiler:c++17-lang pkgconfig
+USES=		cmake compiler:c++17-lang pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	USE_BUNDLED_LIBS
