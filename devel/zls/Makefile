@@ -1,6 +1,6 @@
 PORTNAME=	zls
 DISTVERSION=	0.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,8 +10,8 @@ WWW=		https://github.com/zigtools/zls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.10.0:lang/zig
-RUN_DEPENDS=	zig:lang/zig
+BUILD_DEPENDS=	zig010>=0.10.0:lang/zig010
+RUN_DEPENDS=	zig:lang/zig010
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zigtools
