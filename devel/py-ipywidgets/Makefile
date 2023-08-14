@@ -1,5 +1,5 @@
 PORTNAME=	ipywidgets
-PORTVERSION=	8.0.7
+PORTVERSION=	8.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://ipywidgets.readthedocs.io
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipykernel>=4.5.1:devel/py-ipykernel@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.3:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=6.1.0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=4.2.0:devel/py-nbformat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3.1:devel/py-traitlets@${PY_FLAVOR} \
