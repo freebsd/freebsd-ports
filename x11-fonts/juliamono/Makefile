@@ -1,5 +1,5 @@
 PORTNAME=	juliamono
-PORTVERSION=	0.048
+PORTVERSION=	0.050
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -13,7 +13,7 @@ USES=		fonts xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	cormullion
 GH_PROJECT=	juliamono
-GH_TAGNAME=	1ef7ff0
+GH_TAGNAME=	c3dfdf5
 USE_XORG=	x11
 NO_ARCH=	yes
 NO_BUILD=	yes
