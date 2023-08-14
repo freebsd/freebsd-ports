@@ -1,7 +1,6 @@
 PORTNAME=	mage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
-PORTREVISION=	8
+DISTVERSION=	1.15.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -18,10 +17,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	magefile
 
 PLIST_FILES=	bin/mage
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%GH_TAGNAME%%|${GH_TAGNAME}|g; s|%%GH_TAG_COMMIT%%|${GH_TAG_COMMIT}|g" \
-		${WRKSRC}/magefile.go
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} \
