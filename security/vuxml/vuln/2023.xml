@@ -1,3 +1,39 @@
+  <vuln vid="b1ac663f-3aa9-11ee-b887-b42e991fc52e">
+    <topic>typo3 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>typo3-11-php80</name>
+	<name>typo3-11-php81</name>
+	<range><lt>11.5.30</lt></range>
+      </package>
+      <package>
+	<name>typo3-12-php80</name>
+	<name>typo3-12-php81</name>
+	<range><lt>12.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TYPO3 reports:</p>
+	<blockquote cite="https://typo3.org/article/typo3-1211-11520-and-10433-security-releases-published">
+	  <p>TYPO3-CORE-SA-2023-002: By-passing Cross-Site Scripting Protection in HTML Sanitizer</p>
+	  <p>TYPO3-CORE-SA-2023-003: Information Disclosure due to Out-of-scope Site Resolution</p>
+	  <p>TYPO3-CORE-SA-2023-004: Cross-Site Scripting in CKEditor4 WordCount Plugin</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename></cvename>
+      <cvename></cvename>
+      <cvename></cvename>
+      <url>https://typo3.org/article/typo3-1244-and-11530-security-releases-published</url>
+    </references>
+    <dates>
+      <discovery>2023-07-25</discovery>
+      <entry>2023-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="59a43a73-3786-11ee-94b4-6cc21735f730">
     <topic>postgresql-server -- MERGE fails to enforce UPDATE or SELECT row security policies</topic>
     <affects>
