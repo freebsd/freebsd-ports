@@ -91,6 +91,7 @@ share/mime/packages/opencubicplayer.xml
 %%DATADIR%%/etc/ocp.ini
 %%DESKTOP%%share/applications/cubic.org-opencubicplayer.desktop
 %%FLAC%%lib/ocp/autoload/95-playflac.so
+%%GME%%lib/ocp/autoload/95-playgme.so
 %%OSS%%lib/ocp/autoload/35-devposs.so
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

@@ -1,5 +1,6 @@
 PORTNAME=	ocp
 PORTVERSION=	0.2.106
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -42,11 +43,12 @@ CONFLICTS_INSTALL=	alliance # man/man1/ocp.1.gz
 
 INFO=		ocp
 
-OPTIONS_DEFINE=		ADPLUG ALSA DOCS FLAC MIDI OSS SDL X11
-OPTIONS_DEFAULT=	ADPLUG ALSA FLAC MIDI OSS SDL X11
+OPTIONS_DEFINE=		ADPLUG ALSA DOCS FLAC GME MIDI OSS SDL X11
+OPTIONS_DEFAULT=	ADPLUG ALSA FLAC GME MIDI OSS SDL X11
 OPTIONS_SUB=		yes
 
 ADPLUG_DESC=	adplug support
+GME_DESC=	libgme support for additional video game music support
 MIDI_DESC=	timidity support
 
 ADPLUG_LIB_DEPENDS=	libadplug.so:audio/libadplug \
@@ -58,6 +60,9 @@ ALSA_CONFIGURE_WITH=	alsa
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_CONFIGURE_WITH=	flac
+
+GME_LIB_DEPENDS=	libgme.so:audio/libgme
+GME_CONFIGURE_WITH=	libgme
 
 MIDI_RUN_DEPENDS=	eawpats>0:audio/eawpats
 
