@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.20
-PORTREVISION=	1
+DISTVERSION=	0.9.21
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -23,7 +22,7 @@ TEST_DEPENDS=	catch>0:devel/catch
 FLAVORS=	default hyprland hyprland_nopulse nopulse
 CONFLICTS_INSTALL=	${PORTNAME}*
 
-USES=		compiler:c++17-lang gnome meson pkgconfig
+USES=		compiler:c++20-lang gnome meson pkgconfig
 USE_GITHUB=	yes
 USE_GNOME=	gtkmm30
 GH_ACCOUNT=	Alexays
@@ -79,6 +78,7 @@ MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-battery.5.gz \
 			man/man5/${PORTNAME}-bluetooth.5.gz \
+			man/man5/${PORTNAME}-cava.5.gz \
 			man/man5/${PORTNAME}-clock.5.gz \
 			man/man5/${PORTNAME}-cpu.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
