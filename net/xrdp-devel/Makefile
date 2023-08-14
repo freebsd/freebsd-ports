@@ -17,7 +17,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
-RUN_DEPENDS=	${LOCALBASE}/lib/pulse-14.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp \
+RUN_DEPENDS=	${LOCALBASE}/lib/pulseaudio/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp \
 		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp-devel \
 		xterm:x11/xterm
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
