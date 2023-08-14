@@ -1,3 +1,3 @@
-TIMESTAMP = 1691477749
-SHA256 (freebsd-pkg-appstream-v1.0.0_GH0.tar.gz) = b3e8b0dd9d8fd4deefa6a91d6e76d81c5483292ee05fabb4311eaca6a068e09e
-SIZE (freebsd-pkg-appstream-v1.0.0_GH0.tar.gz) = 2404
+TIMESTAMP = 1692003351
+SHA256 (freebsd-pkg-appstream-v1.0.1_GH0.tar.gz) = a1e618c03b58cf59cf6bf17ba29c3928c9a18c9170754168a103313feb85218e
+SIZE (freebsd-pkg-appstream-v1.0.1_GH0.tar.gz) = 2410
