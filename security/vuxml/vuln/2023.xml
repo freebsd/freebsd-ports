@@ -1,3 +1,42 @@
+  <vuln vid="a6986f0f-3ac0-11ee-9a88-206a8a720317">
+    <topic>krb5 -- Double-free in KDC TGS processing</topic>
+    <affects>
+      <package>
+	<name>krb5</name>
+	<range><lt>1.21.1_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-121</name>
+	<range><lt>1.21.1_1</lt></range>
+      </package>
+      <package>
+	<name>krb5-devel</name>
+	<range><lt>2023.08.07</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://github.com/krb5/krb5/commit/88a1701b423c13991a8064feeb26952d3641d840">
+	  <p>When issuing a ticket for a TGS renew or validate request, copy
+	     only the server field from the outer part of the header ticket
+	     to the new ticket.  Copying the whole structure causes the
+	     enc_part pointer to be aliased to the header ticket until
+	     krb5_encrypt_tkt_part() is called, resulting in a double-free
+	     if handle_authdata() fails..</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39975</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-39975</url>
+    </references>
+    <dates>
+      <discovery>2023-08-07</discovery>
+      <entry>2023-08-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b1ac663f-3aa9-11ee-b887-b42e991fc52e">
     <topic>typo3 -- multiple vulnerabilities</topic>
     <affects>
