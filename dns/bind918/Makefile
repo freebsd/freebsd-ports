@@ -177,6 +177,10 @@ USE_PERL5=		build
 BUILD_DEPENDS+=		cmocka>0:sysutils/cmocka
 .endif
 
+.if !${PORT_OPTIONS:MMANPAGES} && !${PORT_OPTIONS:MDOCS}
+CONFIGURE_ENV+=		ac_cv_path_SPHINX_BUILD=
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${SSL_DEFAULT} == base
