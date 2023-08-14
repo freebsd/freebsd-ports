@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.7.4.1
+PORTVERSION=	1.7.5
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -15,7 +15,7 @@ CRAN_DEPENDS=	R-cran-bslib>=0.3.0:www/R-cran-bslib \
 		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
 		R-cran-crayon>0:devel/R-cran-crayon \
 		R-cran-ellipsis>0:devel/R-cran-ellipsis \
-		R-cran-fastmap>=1.1.0:databases/R-cran-fastmap \
+		R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \
 		R-cran-fontawesome>=0.4.0:devel/R-cran-fontawesome \
 		R-cran-glue>=1.3.2:devel/R-cran-glue \
 		R-cran-htmltools>=0.5.4:textproc/R-cran-htmltools \
