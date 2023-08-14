@@ -23,9 +23,9 @@
       </body>
     </description>
     <references>
-      <cvename></cvename>
-      <cvename></cvename>
-      <cvename></cvename>
+      <cvename>CVE-2023-38500</cvename>
+      <cvename>CVE-2023-38499</cvename>
+      <cvename>CVE-2023-37905</cvename>
       <url>https://typo3.org/article/typo3-1244-and-11530-security-releases-published</url>
     </references>
     <dates>
