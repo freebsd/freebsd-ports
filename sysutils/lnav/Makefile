@@ -1,5 +1,5 @@
 PORTNAME=	lnav
-DISTVERSION=	0.11.1
+DISTVERSION=	0.11.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tstack/${PORTNAME}/releases/download/v${PORTVERSION}/
 
