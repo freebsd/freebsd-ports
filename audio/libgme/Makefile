@@ -2,10 +2,11 @@ PORTNAME=	libgme
 DISTVERSION=	0.6.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/
+MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/ \
+		LOCAL/ehaupt
 DISTNAME=	game-music-emu-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Collection of video game music emulators
 WWW=		https://bitbucket.org/mpyne/game-music-emu
 
@@ -16,9 +17,9 @@ USES=		cmake compiler:c++11-lang dos2unix tar:xz
 DOS2UNIX_FILES=	${PORTDOCS}
 USE_LDCONFIG=	yes
 
-PORTDOCS=	changes.txt design.txt gme.txt readme.txt
-
 CMAKE_OFF=	ENABLE_UBSAN
+
+PORTDOCS=	changes.txt design.txt gme.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
