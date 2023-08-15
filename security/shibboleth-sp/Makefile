@@ -21,6 +21,8 @@ LIB_DEPENDS=	libsaml.so:security/opensaml \
 		libexpat.so:textproc/expat2
 
 USES=		gmake tar:bzip2 cpe pkgconfig libtool bdb
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
 MAKE_ENV=	NOKEYGEN=YES
 USE_LDCONFIG=	yes
