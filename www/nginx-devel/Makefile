@@ -1,6 +1,5 @@
 PORTNAME?=	nginx
-PORTVERSION=	1.25.1
-PORTREVISION=	5
+PORTVERSION=	1.25.2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -274,9 +273,6 @@ post-patch:
 		s!%%NGINX_ERRORLOG%%!${NGINX_ERRORLOG}!' \
 		${WRKSRC}/conf/nginx.conf
 
-post-patch-BROTLI-on:
-	@${REINPLACE_CMD} -E 's!^brotli=.*!brotli="${LOCALBASE}"!' ${WRKSRC_brotli}/config
-
 post-patch-DRIZZLE-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_drizzle}/config
 
@@ -297,18 +293,12 @@ post-patch-HTTP_AUTH_KRB5-on:
 post-patch-HTTP_TARANTOOL-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_nginx_tarantool}/config
 
-# linker error acquire if --std=c99 defined, add "static" to inline function
-post-patch-HTTP_ZIP-on:
-	@${REINPLACE_CMD} \
-		's!^inline!static inline!' \
-		${WRKSRC_mod_zip}/ngx_http_zip_parsers.*
-
 post-patch-ICONV-on:
 	@${REINPLACE_CMD} 's!%%PREFIX%%!${LOCALBASE}!g' ${WRKSRC_iconv}/config
 
 post-patch-PASSENGER-on:
 	@${REINPLACE_CMD} \
-		'177,179s!true!false!' \
+		'168,170s!true!false!' \
 		${WRKSRC_PASSENGER}/build/basics.rb
 	@${REINPLACE_CMD} \
 		's!-I/usr/include/libev!!; \
@@ -326,11 +316,6 @@ post-patch-SFLOW-on:
 	@${REINPLACE_CMD} \
 		's!%%PREFIX%%!${LOCALBASE}!g' \
 		${WRKSRC_sflow}/ngx_http_sflow_config.h
-
-post-patch-VOD-on:
-	@${REINPLACE_CMD} \
-		's!%%PREFIX%%!${LOCALBASE}!g' \
-		${WRKSRC_vod}/config
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
