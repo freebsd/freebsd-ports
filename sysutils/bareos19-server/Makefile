@@ -13,6 +13,10 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_14=	fails to configure error: environment variable 'SOURCE_DATE_EPOCH' ('') must be a non-negative decimal integer <= 253402300799
+DEPRECATED=	Upstream EOL reached
+EXPIRATION_DATE=	2023-09-30
+
 CONFLICTS?=	bareos18-server bareos17-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
