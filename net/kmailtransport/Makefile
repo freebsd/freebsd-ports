@@ -1,5 +1,6 @@
 PORTNAME=	kmailtransport
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,8 @@ LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
 		itemmodels jobwidgets kcmutils kio service solid wallet \
-		widgetsaddons windowsystem
+		widgetsaddons windowsystem \
+		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadimime gapi ksmtp mime pimcommon
 USE_QT=		concurrent core dbus gui network widgets xml \

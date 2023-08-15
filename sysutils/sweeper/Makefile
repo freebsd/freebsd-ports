@@ -1,5 +1,6 @@
 PORTNAME=	sweeper
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,8 @@ WWW=		https://utils.kde.org/projects/sweeper/
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
 USE_KDE=	activities-stats auth bookmarks codecs config configwidgets \
 		coreaddons crash i18n kio service sonnet textwidgets \
-		widgetsaddons xmlgui
+		widgetsaddons xmlgui \
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 

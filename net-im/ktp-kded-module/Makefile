@@ -1,6 +1,6 @@
 PORTNAME=	ktp-kded-module
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,10 +16,11 @@ EXPIRATION_DATE=	2023-09-30
 LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libKTpCommonInternals.so:net-im/ktp-common-internals
 
-USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz xorg
-USE_KDE=	activities auth codecs completion config configwidgets coreaddons \
-		dbusaddons i18n idletime jobwidgets kcmutils kio notifications \
-		service solid wallet widgetsaddons windowsystem
+USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
+USE_KDE=	activities auth codecs completion config configwidgets \
+		coreaddons dbusaddons i18n idletime jobwidgets kcmutils kio \
+		notifications service solid wallet widgetsaddons windowsystem \
+		ecm:build
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
