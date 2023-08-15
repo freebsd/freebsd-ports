@@ -10,6 +10,10 @@ WWW=		https://bjango.com/linux/istatserver/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Upstream last activity was in 2018
+EXPIRATION_DATE=	2023-09-30
+BROKEN_FreeBSD_14=	fails to compile undefined symbol: RSA_generate_key
+
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libsqlite3.so:databases/sqlite3
 
@@ -21,12 +25,6 @@ USERS=		istat
 GROUPS=		istat
 
 SUB_FILES=	pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/istatserver ${STAGEDIR}${PREFIX}/bin
@@ -41,4 +39,4 @@ do-install:
 			${STAGEDIR}${MANPREFIX}/man/man5
 	@${ECHO_CMD} '@postexec ${CHOWN} -R ${USERS}:${GROUPS} %D/etc/istatserver' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
