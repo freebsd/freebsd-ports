@@ -35,7 +35,7 @@ index b6c9b462f2..071a1e47b7 100755
  # find out which awk we want to use, prefer gawk, then nawk, then regular awk
  AWK=
 diff --git configure.json configure.json
-index 4a7c50f684..54edb7c02f 100644
+index f0b5fed415..67a2f68c8b 100644
 --- configure.json
 +++ configure.json
 @@ -59,6 +59,7 @@
@@ -55,7 +55,7 @@ index 4a7c50f684..54edb7c02f 100644
              ]
          },
          "host_dbus": {
-@@ -751,7 +752,7 @@
+@@ -758,7 +759,7 @@
          "optimize_debug": {
              "label": "Optimize debug build",
              "autoDetect": "!features.developer-build",
@@ -64,7 +64,7 @@ index 4a7c50f684..54edb7c02f 100644
              "output": [ "privateConfig" ]
          },
          "optimize_size": {
-@@ -1531,7 +1532,7 @@ Configure with '-qreal float' to create a build that is binary-compatible with 5
+@@ -1538,7 +1539,7 @@ Configure with '-qreal float' to create a build that is binary-compatible with 5
                  {
                      "type": "feature",
                      "args": "optimize_debug",
@@ -74,10 +74,10 @@ index 4a7c50f684..54edb7c02f 100644
                  {
                      "type": "feature",
 diff --git configure.pri configure.pri
-index 49755f7abf..4496bab7ef 100644
+index 63d6b3f278..8ee29d302d 100644
 --- configure.pri
 +++ configure.pri
-@@ -788,6 +788,16 @@ defineTest(qtConfOutput_preparePaths) {
+@@ -795,6 +795,16 @@ defineTest(qtConfOutput_preparePaths) {
      else: \
          qmake_crossbuild = true
  
@@ -94,7 +94,7 @@ index 49755f7abf..4496bab7ef 100644
      PREFIX_COMPLAINTS =
      PREFIX_REMINDER = false
      win32: \
-@@ -1284,6 +1294,17 @@ output += \
+@@ -1307,6 +1317,17 @@ output += \
      return($$output)
  }
  
@@ -275,11 +275,11 @@ index c0ce0972ef..98a99e7524 100644
  
      # Then, inject the new tool into the current cache state
 diff --git src/3rdparty/freetype/src/raster/ftraster.c src/3rdparty/freetype/src/raster/ftraster.c
-index 023b6c1eff..3b903ebf27 100644
+index 68b0e1fdd9..ee4e9f8a4a 100644
 --- src/3rdparty/freetype/src/raster/ftraster.c
 +++ src/3rdparty/freetype/src/raster/ftraster.c
-@@ -386,8 +386,14 @@
-   } black_TBand;
+@@ -366,8 +366,14 @@
+   typedef PProfile*  PProfileList;
  
  
 +#ifdef __CHERI_PURE_CAPABILITY__
@@ -293,7 +293,7 @@ index 023b6c1eff..3b903ebf27 100644
  
  
  #undef RAS_ARG
-@@ -749,6 +755,12 @@
+@@ -720,6 +726,12 @@
        }
  
        oldProfile   = ras.cProfile;
@@ -306,7 +306,7 @@ index 023b6c1eff..3b903ebf27 100644
        ras.cProfile = (PProfile)ras.top;
  
        ras.top += AlignProfileSize;
-@@ -858,7 +870,12 @@
+@@ -829,7 +841,12 @@
  
  
          if ( n > 1 )
@@ -319,7 +319,7 @@ index 023b6c1eff..3b903ebf27 100644
          else
            p->link = NULL;
  
-@@ -872,7 +889,12 @@
+@@ -843,7 +860,12 @@
            bottom     = (Int)( p->start - p->height + 1 );
            top        = (Int)p->start;
            p->start   = bottom;
@@ -403,12 +403,12 @@ index 2ab9b70d73..3afed292bc 100644
  #  define png_constcast(type, value) ((type)(png_ptruint)(const void*)(value))
  #  define png_aligncast(type, value) ((void*)(value))
 diff --git src/3rdparty/pcre2/pcre2.pro src/3rdparty/pcre2/pcre2.pro
-index bfa42b88d3..b92c1904fe 100644
+index fd5f15623b..66669c71aa 100644
 --- src/3rdparty/pcre2/pcre2.pro
 +++ src/3rdparty/pcre2/pcre2.pro
 @@ -25,6 +25,9 @@ win32:contains(QT_ARCH, "arm"): DEFINES += PCRE2_DISABLE_JIT
  win32:contains(QT_ARCH, "arm64"): DEFINES += PCRE2_DISABLE_JIT
- macos:contains(QT_ARCH, "arm64"): DEFINES += PCRE2_DISABLE_JIT
+ macos:contains(QT_ARCHS, "arm64"): QMAKE_CFLAGS += -Xarch_arm64 -DPCRE2_DISABLE_JIT
  
 +# TODO: do this only for CHERI
 +DEFINES += PCRE2_DISABLE_JIT
@@ -439,7 +439,7 @@ index ea3b3ec698..f5189b00a5 100644
  doing traditional NFA matching (pcre2_match() and friends). */
  
 diff --git src/3rdparty/pcre2/src/pcre2_match.c src/3rdparty/pcre2/src/pcre2_match.c
-index ed60517131..a7e4a29889 100644
+index f28cdbb47a..b79d99aa40 100644
 --- src/3rdparty/pcre2/src/pcre2_match.c
 +++ src/3rdparty/pcre2/src/pcre2_match.c
 @@ -6601,10 +6601,16 @@ the pattern. It is not used at all if there are no capturing parentheses.
@@ -472,10 +472,10 @@ index ed60517131..a7e4a29889 100644
  /* Pointers to the individual character tables */
  
 diff --git src/3rdparty/sqlite/sqlite3.c src/3rdparty/sqlite/sqlite3.c
-index df53e437ba..0e4a0e8a87 100644
+index 89faea5b23..b888138a61 100644
 --- src/3rdparty/sqlite/sqlite3.c
 +++ src/3rdparty/sqlite/sqlite3.c
-@@ -13608,9 +13608,9 @@ struct fts5_api {
+@@ -13716,9 +13716,9 @@ struct fts5_api {
  #if defined(HAVE_STDINT_H)   /* Use this case if we have ANSI headers */
  # define SQLITE_INT_TO_PTR(X)  ((void*)(intptr_t)(X))
  # define SQLITE_PTR_TO_INT(X)  ((int)(intptr_t)(X))
@@ -510,7 +510,7 @@ index 1d00b7f5a5..6b77cb36b1 100644
  #elif defined(__LP64__) || QT_POINTER_SIZE - 0 == 8
  #  define ARCH_POINTER "lp64"
 diff --git src/corelib/global/qglobal.cpp src/corelib/global/qglobal.cpp
-index 0efcf6ba53..093a1b231c 100644
+index ac2e85c51e..440c10d73c 100644
 --- src/corelib/global/qglobal.cpp
 +++ src/corelib/global/qglobal.cpp
 @@ -177,9 +177,36 @@ Q_STATIC_ASSERT_X(std::numeric_limits<float>::radix == 2,
@@ -550,7 +550,7 @@ index 0efcf6ba53..093a1b231c 100644
  
  /*!
      \class QFlag
-@@ -855,7 +882,7 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
+@@ -863,7 +890,7 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
      on a system with 64-bit pointers, quintptr is a typedef for
      quint64.
  
@@ -559,7 +559,7 @@ index 0efcf6ba53..093a1b231c 100644
  
      \sa qptrdiff, quint32, quint64
  */
-@@ -867,13 +894,16 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
+@@ -875,13 +902,16 @@ Q_STATIC_ASSERT((std::is_same<qsizetype, qptrdiff>::value));
      Integral type for representing pointer differences.
  
      Typedef for either qint32 or qint64. This type is guaranteed to be
@@ -581,7 +581,7 @@ index 0efcf6ba53..093a1b231c 100644
  
  /*!
 diff --git src/corelib/global/qglobal.h src/corelib/global/qglobal.h
-index 12ac48f3cb..ee78837670 100644
+index 450c1e586a..edbc704313 100644
 --- src/corelib/global/qglobal.h
 +++ src/corelib/global/qglobal.h
 @@ -556,10 +556,10 @@ namespace QtPrivate {
@@ -694,7 +694,7 @@ index 12ac48f3cb..ee78837670 100644
  
  /*
     Avoid some particularly useless warnings from some stupid compilers.
-@@ -1274,6 +1342,31 @@ Q_CORE_EXPORT QT_DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") void
+@@ -1280,6 +1348,31 @@ Q_CORE_EXPORT QT_DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") void
  Q_CORE_EXPORT QT_DEPRECATED_VERSION_X_5_15("use QRandomGenerator instead") int qrand();
  #endif
  
@@ -726,7 +726,7 @@ index 12ac48f3cb..ee78837670 100644
  #define QT_MODULE(x)
  
  #if !defined(QT_BOOTSTRAPPED) && defined(QT_REDUCE_RELOCATIONS) && defined(__ELF__) && \
-@@ -1290,6 +1383,16 @@ template <typename T> struct QEnableIf<true, T> { typedef T Type; };
+@@ -1296,6 +1389,16 @@ template <typename T> struct QEnableIf<true, T> { typedef T Type; };
  
  QT_END_NAMESPACE
  
@@ -1094,10 +1094,19 @@ index 0165ce9075..0bc8b142e7 100644
  #ifndef QT_NO_DEBUG
      if (notifier->thread() != thread() || thread() != QThread::currentThread()) {
 diff --git src/corelib/kernel/qmetaobject.cpp src/corelib/kernel/qmetaobject.cpp
-index 47fcada302..c333a7ebd6 100644
+index 7761ab7886..d9fe2bef0b 100644
 --- src/corelib/kernel/qmetaobject.cpp
 +++ src/corelib/kernel/qmetaobject.cpp
-@@ -178,7 +178,7 @@ static inline QByteArray typeNameFromTypeInfo(const QMetaObject *mo, uint typeIn
+@@ -169,7 +169,7 @@ static inline const QByteArray stringData(const QMetaObject *mo, int index)
+ static inline QLatin1String stringDataView(const QMetaObject *mo, int index)
+ {
+     const QByteArrayData &d = mo->d.stringdata[index];
+-    const char *string = reinterpret_cast<const char *>(d.data());
++    const char *string = reinterpret_cast<const char *>(d.boundedData(d.size));
+     return QLatin1String(string, d.size);
+ }
+ 
+@@ -185,7 +185,7 @@ static inline QByteArray typeNameFromTypeInfo(const QMetaObject *mo, uint typeIn
      } else {
          // ### Use the QMetaType::typeName() that returns QByteArray
          const char *t = QMetaType::typeName(typeInfo);
@@ -1192,7 +1201,7 @@ index 7c22ff1693..5d9b247075 100644
          LastGuiType = QColorSpace,
          FirstWidgetsType = QSizePolicy,
 diff --git src/corelib/kernel/qobject_p.h src/corelib/kernel/qobject_p.h
-index 66c19d174e..594f56ae69 100644
+index 13ffb88999..d57d081ad4 100644
 --- src/corelib/kernel/qobject_p.h
 +++ src/corelib/kernel/qobject_p.h
 @@ -136,12 +136,12 @@ public:
@@ -1211,7 +1220,7 @@ index 66c19d174e..594f56ae69 100644
          }
      };
  
-@@ -297,7 +297,8 @@ public:
+@@ -307,7 +307,8 @@ public:
              SignalVector *newVector = reinterpret_cast<SignalVector *>(malloc(sizeof(SignalVector) + (size + 1) * sizeof(ConnectionList)));
              int start = -1;
              if (vector) {
@@ -2023,7 +2032,7 @@ index f4c335ca93..44f7fe36d7 100644
  { return !d->ref.isShared(); }
  inline QByteArray::QByteArray(const QByteArray &a) noexcept : d(a.d)
 diff --git src/corelib/text/qstring.cpp src/corelib/text/qstring.cpp
-index be472d7956..9e9f68691e 100644
+index 8deeae47bb..42e7d32a92 100644
 --- src/corelib/text/qstring.cpp
 +++ src/corelib/text/qstring.cpp
 @@ -100,7 +100,7 @@
@@ -2106,7 +2115,7 @@ index be472d7956..9e9f68691e 100644
      qt_to_latin1(dst, data, length);
      dst[length] = '\0';
  
-@@ -7196,7 +7212,7 @@ QString QString::vasprintf(const char *cformat, va_list ap)
+@@ -7200,7 +7216,7 @@ QString QString::vasprintf(const char *cformat, va_list ap)
              }
              case 'p': {
                  void *arg = va_arg(ap, void*);
@@ -2115,7 +2124,7 @@ index be472d7956..9e9f68691e 100644
                  flags |= QLocaleData::ShowBase;
                  subst = QLocaleData::c()->unsLongLongToString(i, precision, 16, width, flags);
                  ++c;
-@@ -7802,6 +7818,38 @@ QString QString::number(double n, char f, int prec)
+@@ -7806,6 +7822,38 @@ QString QString::number(double n, char f, int prec)
      return QLocaleData::c()->doubleToString(n, prec, form, -1, flags);
  }
  
@@ -2154,7 +2163,7 @@ index be472d7956..9e9f68691e 100644
  namespace {
  template<class ResultList, class StringSource>
  static ResultList splitString(const StringSource &source, const QChar *sep,
-@@ -7866,6 +7914,7 @@ QT_WARNING_POP
+@@ -7870,6 +7918,7 @@ QT_WARNING_POP
  */
  QStringList QString::split(const QString &sep, Qt::SplitBehavior behavior, Qt::CaseSensitivity cs) const
  {
@@ -2162,7 +2171,7 @@ index be472d7956..9e9f68691e 100644
      return splitString<QStringList>(*this, sep.constData(), behavior, cs, sep.size());
  }
  
-@@ -7898,6 +7947,7 @@ QStringList QString::split(const QString &sep, SplitBehavior behavior, Qt::CaseS
+@@ -7902,6 +7951,7 @@ QStringList QString::split(const QString &sep, SplitBehavior behavior, Qt::CaseS
  QVector<QStringRef> QString::splitRef(const QString &sep, Qt::SplitBehavior behavior,
                                        Qt::CaseSensitivity cs) const
  {
@@ -2170,7 +2179,7 @@ index be472d7956..9e9f68691e 100644
      return splitString<QVector<QStringRef>>(QStringRef(this), sep.constData(), behavior,
                                              cs, sep.size());
  }
-@@ -9471,9 +9521,13 @@ QString &QString::setRawData(const QChar *unicode, int size)
+@@ -9475,9 +9525,13 @@ QString &QString::setRawData(const QChar *unicode, int size)
      } else {
          if (unicode) {
              d->size = size;
@@ -2294,10 +2303,10 @@ index 9669554515..e68f902e59 100644
  {
      typedef std::atomic<X> Type;
 diff --git src/corelib/thread/qmutex.h src/corelib/thread/qmutex.h
-index b2e2640ba2..e0bf5294b7 100644
+index 1bae573a03..641130d568 100644
 --- src/corelib/thread/qmutex.h
 +++ src/corelib/thread/qmutex.h
-@@ -230,8 +230,7 @@ public:
+@@ -249,8 +249,7 @@ public:
  #ifndef Q_CLANG_QDOC
      inline explicit QMutexLocker(QBasicMutex *m) QT_MUTEX_LOCK_NOEXCEPT
      {
@@ -2307,7 +2316,7 @@ index b2e2640ba2..e0bf5294b7 100644
          val = quintptr(m);
          if (Q_LIKELY(m)) {
              // call QMutex::lock() instead of QBasicMutex::lock()
-@@ -249,8 +248,8 @@ public:
+@@ -268,8 +267,8 @@ public:
  
      inline void unlock() noexcept
      {
@@ -2318,7 +2327,7 @@ index b2e2640ba2..e0bf5294b7 100644
              mutex()->unlock();
          }
      }
-@@ -258,7 +257,7 @@ public:
+@@ -277,7 +276,7 @@ public:
      inline void relock() QT_MUTEX_LOCK_NOEXCEPT
      {
          if (val) {
@@ -2327,7 +2336,7 @@ index b2e2640ba2..e0bf5294b7 100644
                  mutex()->lock();
                  val |= quintptr(1u);
              }
-@@ -272,7 +271,7 @@ public:
+@@ -291,7 +290,7 @@ public:
  
      inline QMutex *mutex() const
      {
@@ -2976,7 +2985,7 @@ index 676d9a1fec..d7a787ef09 100644
      template <typename T>
      static typename std::enable_if<QTypeInfo<T>::isComplex>::type
 diff --git src/corelib/tools/qvarlengtharray.h src/corelib/tools/qvarlengtharray.h
-index 2b30da0d2c..8d156bbb22 100644
+index d8c229dea8..5b14578271 100644
 --- src/corelib/tools/qvarlengtharray.h
 +++ src/corelib/tools/qvarlengtharray.h
 @@ -244,6 +244,7 @@ private:
@@ -3065,7 +3074,7 @@ index 9257ab8cfe..7ad7c97c80 100644
          src_data += 3;
          ++dest_data;
 diff --git src/gui/painting/qdrawhelper.cpp src/gui/painting/qdrawhelper.cpp
-index a61793508a..61e6ac8359 100644
+index 5ba2d277b7..e52fdcca3b 100644
 --- src/gui/painting/qdrawhelper.cpp
 +++ src/gui/painting/qdrawhelper.cpp
 @@ -4642,7 +4642,7 @@ static void blend_color_rgb16(int count, const QSpan *spans, void *userData)
@@ -3117,10 +3126,10 @@ index b82adb5d35..5b3477e300 100644
      const int restY = (h - unaligned) % tileSize;
      const int unoptimizedY = restY % pack;
 diff --git src/gui/painting/qpaintengine_raster.cpp src/gui/painting/qpaintengine_raster.cpp
-index 1525a09af4..b4043d86d9 100644
+index f08eb9cbee..08354b3ce3 100644
 --- src/gui/painting/qpaintengine_raster.cpp
 +++ src/gui/painting/qpaintengine_raster.cpp
-@@ -3625,7 +3625,11 @@ extern "C" {
+@@ -3630,7 +3630,11 @@ extern "C" {
  
  static inline uchar *alignAddress(uchar *address, quintptr alignmentMask)
  {
@@ -3220,7 +3229,7 @@ index 30fa6864ac..e866da5fe6 100644
  }
  
 diff --git src/plugins/platforms/xcb/qxcbwindow.cpp src/plugins/platforms/xcb/qxcbwindow.cpp
-index 5c12d76069..52c52d0fa3 100644
+index 863e961f4c..0b086b8c36 100644
 --- src/plugins/platforms/xcb/qxcbwindow.cpp
 +++ src/plugins/platforms/xcb/qxcbwindow.cpp
 @@ -1332,7 +1332,7 @@ void QXcbWindow::setWindowIcon(const QIcon &icon)
@@ -3684,21 +3693,21 @@ index 0298ff96e3..3632e8f9a2 100644
  inline bool qCompare(QStringList const &t1, QStringList const &t2, const char *actual, const char *expected,
                              const char *file, int line)
 diff --git src/testlib/qtestcase.cpp src/testlib/qtestcase.cpp
-index 979fd6e1d2..fb69a794de 100644
+index c98bcbec40..5ecd37bb74 100644
 --- src/testlib/qtestcase.cpp
 +++ src/testlib/qtestcase.cpp
 @@ -212,28 +212,26 @@ static void stackTrace()
      if (debuggerPresent() || hasSystemCrashReporter())
          return;
  
--#if defined(Q_OS_LINUX) || defined(Q_OS_MACOS)
-+#if defined(Q_OS_LINUX) || defined(Q_OS_MACOS) || defined(Q_OS_FREEBSD)
+-#if defined(Q_OS_LINUX) || (defined(Q_OS_MACOS) && !defined(Q_PROCESSOR_ARM_64))
++#if defined(Q_OS_LINUX) || (defined(Q_OS_MACOS) && !defined(Q_PROCESSOR_ARM_64)) || defined(Q_OS_FREEBSD)
      const int msecsFunctionTime = qRound(QTestLog::msecsFunctionTime());
      const int msecsTotalTime = qRound(QTestLog::msecsTotalTime());
      fprintf(stderr, "\n=== Received signal at function time: %dms, total time: %dms, dumping stack ===\n",
              msecsFunctionTime, msecsTotalTime);
- #endif
--#ifdef Q_OS_LINUX
+ 
+-#  ifdef Q_OS_LINUX
 +#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
      char cmd[512];
 -    qsnprintf(cmd, 512, "gdb --pid %d 2>/dev/null <<EOF\n"
@@ -3717,14 +3726,14 @@ index 979fd6e1d2..fb69a794de 100644
      if (system(cmd) == -1)
          fprintf(stderr, "calling gdb failed\n");
      fprintf(stderr, "=== End of stack trace ===\n");
- #elif defined(Q_OS_MACOS)
+ #  elif defined(Q_OS_MACOS)
      char cmd[512];
 -    qsnprintf(cmd, 512, "lldb -p %d 2>/dev/null <<EOF\n"
 +    qsnprintf(cmd, 512, "lldb -p %d 1>&2 2>/dev/null <<EOF\n"
                           "bt all\n"
                           "quit\n"
                           "EOF\n",
-@@ -643,7 +641,7 @@ Q_TESTLIB_EXPORT void qtest_qParseArgs(int argc, const char *const argv[], bool
+@@ -645,7 +643,7 @@ Q_TESTLIB_EXPORT void qtest_qParseArgs(int argc, const char *const argv[], bool
          } else if (strcmp(argv[i], "-v2") == 0) {
              QTestLog::setVerboseLevel(2);
          } else if (strcmp(argv[i], "-vs") == 0) {
@@ -3733,7 +3742,7 @@ index 979fd6e1d2..fb69a794de 100644
          } else if (strcmp(argv[i], "-o") == 0) {
              if (i + 1 >= argc) {
                  fprintf(stderr, "-o needs an extra parameter specifying the filename and optional format\n");
-@@ -1030,6 +1028,7 @@ class WatchDog : public QThread
+@@ -1032,6 +1030,7 @@ class WatchDog : public QThread
  public:
      WatchDog()
      {
@@ -3741,7 +3750,7 @@ index 979fd6e1d2..fb69a794de 100644
          auto locker = qt_unique_lock(mutex);
          expecting = ThreadStart;
          start();
-@@ -1489,6 +1488,8 @@ void TestMethods::invokeTests(QObject *testObject) const
+@@ -1491,6 +1490,8 @@ void TestMethods::invokeTests(QObject *testObject) const
          watchDog.reset(new WatchDog);
      }
  
@@ -3750,7 +3759,7 @@ index 979fd6e1d2..fb69a794de 100644
      if (!QTestResult::skipCurrentTest() && !QTest::currentTestFailed()) {
          if (m_initTestCaseMethod.isValid())
              m_initTestCaseMethod.invoke(testObject, Qt::DirectConnection);
-@@ -1521,6 +1522,8 @@ void TestMethods::invokeTests(QObject *testObject) const
+@@ -1523,6 +1524,8 @@ void TestMethods::invokeTests(QObject *testObject) const
      }
      QTestResult::finishedCurrentTestFunction();
      QTestResult::setCurrentTestFunction(nullptr);
@@ -3759,7 +3768,7 @@ index 979fd6e1d2..fb69a794de 100644
  }
  
  #if defined(Q_OS_WIN) && !defined(Q_OS_WINRT)
-@@ -1971,8 +1974,6 @@ void QTest::qCleanup()
+@@ -1973,8 +1976,6 @@ void QTest::qCleanup()
      delete QBenchmarkGlobalData::current;
      QBenchmarkGlobalData::current = nullptr;
  
@@ -3768,7 +3777,7 @@ index 979fd6e1d2..fb69a794de 100644
  #if defined(Q_OS_MACOS)
      IOPMAssertionRelease(macPowerSavingDisabled);
  #endif
-@@ -2736,6 +2737,25 @@ TO_STRING_FLOAT(qfloat16, %.3g)
+@@ -2738,6 +2739,25 @@ TO_STRING_FLOAT(qfloat16, %.3g)
  TO_STRING_FLOAT(float, %g)
  TO_STRING_FLOAT(double, %.12g)
  
@@ -3795,10 +3804,10 @@ index 979fd6e1d2..fb69a794de 100644
  {
      unsigned char c = static_cast<unsigned char>(t);
 diff --git src/testlib/qtestcase.h src/testlib/qtestcase.h
-index b5aea46689..f44722c527 100644
+index 6c9d23f649..bf41e7f4d8 100644
 --- src/testlib/qtestcase.h
 +++ src/testlib/qtestcase.h
-@@ -441,6 +441,10 @@ namespace QTest
+@@ -442,6 +442,10 @@ namespace QTest
      QTEST_COMPARE_DECL(signed char)
      QTEST_COMPARE_DECL(unsigned char)
      QTEST_COMPARE_DECL(bool)
@@ -3809,7 +3818,7 @@ index b5aea46689..f44722c527 100644
  #endif
  
      template <typename T1, typename T2>
-@@ -463,6 +467,26 @@ namespace QTest
+@@ -464,6 +468,26 @@ namespace QTest
          return qCompare(qreal(t1), qreal(t2), actual, expected, file, line);
      }
  
@@ -3837,7 +3846,7 @@ index b5aea46689..f44722c527 100644
      inline bool qCompare(const T *t1, const T *t2, const char *actual, const char *expected,
                          const char *file, int line)
 diff --git src/testlib/qtestcase.qdoc src/testlib/qtestcase.qdoc
-index e39b47024f..c726add9fb 100644
+index dd5ec762a7..10778cc4cf 100644
 --- src/testlib/qtestcase.qdoc
 +++ src/testlib/qtestcase.qdoc
 @@ -116,19 +116,28 @@
