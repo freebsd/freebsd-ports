@@ -1,5 +1,6 @@
 PORTNAME=	kqtquickcharts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 USE_QT=		core declarative network gui \
 		buildtools:build qmake:build
 

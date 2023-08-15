@@ -1,5 +1,6 @@
 PORTNAME=	keysmith
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		cmake desktop-file-utils gettext kde:5 pkgconfig qt:5 tar:xz xorg
-USE_KDE=	dbusaddons ecm i18n kirigami2 windowsystem
+USE_KDE=	dbusaddons ecm:build i18n kirigami2 windowsystem
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 svg widgets \
 		buildtools:build qmake:build
 USE_XORG=	x11

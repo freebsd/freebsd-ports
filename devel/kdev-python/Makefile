@@ -1,5 +1,6 @@
 PORTNAME=	kdev-python
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libKDevPlatformInterfaces.so:devel/kdevelop
 
 USES=		cmake compiler:c++11-lib kde:5 python qt:5 tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
-		ecm i18n itemmodels jobwidgets kio newstuff parts service \
+		ecm:build i18n itemmodels jobwidgets kio newstuff parts service \
 		solid sonnet syntaxhighlighting texteditor textwidgets \
 		threadweaver widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus gui network widgets xml \

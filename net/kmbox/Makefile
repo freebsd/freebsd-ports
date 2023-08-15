@@ -1,5 +1,6 @@
 PORTNAME=	kmbox
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		https://www.kde.org/
 LICENSE=	LGPL21
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 # pim components
 USE_KDE+=	mime
 USE_QT=		core gui \

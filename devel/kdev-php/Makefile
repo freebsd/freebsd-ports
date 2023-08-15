@@ -1,5 +1,6 @@
 PORTNAME=	kdev-php
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ BUILD_DEPENDS=	kdev-pg-qt:devel/kdevelop-pg-qt
 LIB_DEPENDS=	libKDevPlatformInterfaces.so:devel/kdevelop
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz xorg
-USE_KDE=	auth codecs completion config configwidgets coreaddons ecm \
+USE_KDE=	auth codecs completion config configwidgets coreaddons ecm:build \
 		i18n itemmodels jobwidgets kcmutils kio parts service solid \
 		sonnet syntaxhighlighting texteditor textwidgets threadweaver \
 		widgetsaddons windowsystem xmlgui
