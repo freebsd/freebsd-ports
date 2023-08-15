@@ -15,7 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:txz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons dbusaddons guiaddons i18n iconthemes itemviews \
-		jobwidgets kio service solid widgetsaddons windowsystem xmlgui
+		jobwidgets kio service solid widgetsaddons windowsystem xmlgui \
+		ecm:build
 USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools:build qmake:build
 

@@ -20,7 +20,7 @@ USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons i18n itemviews kio solid dbusaddons jobwidgets \
 		service widgetsaddons windowsystem xmlgui \
-		doctools:build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network phonon4 sql svg x11extras xml \
 		widgets qmake:build buildtools:build
 USE_XORG=	x11 xscrnsaver

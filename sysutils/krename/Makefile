@@ -19,7 +19,8 @@ LIB_DEPENDS=	libtag.so:audio/taglib \
 USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash i18n iconthemes itemviews jobwidgets \
-		kio service solid widgetsaddons windowsystem xmlgui
+		kio service solid widgetsaddons windowsystem xmlgui \
+		ecm:build
 USE_QT=		concurrent core dbus declarative gui network xml widgets \
 		buildtools:build qmake:build
 USE_XORG=	x11

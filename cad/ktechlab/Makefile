@@ -23,7 +23,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons \
 		kdelibs4support khtml kio notifications parts service solid \
 		sonnet syntaxhighlighting texteditor textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
-		doctools:build
+		doctools:build ecm:build
 USE_GNOME=	glib20
 USE_XORG=	x11
 

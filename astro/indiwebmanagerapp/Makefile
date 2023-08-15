@@ -15,7 +15,8 @@ RUN_DEPENDS=	indiserver:devel/indi \
 USES=		cmake iconv gettext kde:5 ninja qt:5 pkgconfig python xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons doctools i18n kio itemviews jobwidgets service \
-		solid widgetsaddons windowsystem xmlgui
+		solid widgetsaddons windowsystem xmlgui \
+		ecm:build
 USE_QT=		buildtools concurrent core dbus gui qmake:build network widgets \
 		xml
 USE_XORG=	x11

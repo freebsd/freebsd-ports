@@ -7,7 +7,8 @@ LIB_DEPENDS=	libuim.so:textproc/uim
 
 USES=		compiler:c++11-lang gl iconv kde:5 libtool qt:5
 USE_GL=		gl
-USE_KDE=	plasma-framework
+USE_KDE=	plasma-framework \
+		ecm:build
 USE_QT=		buildtools:build core declarative gui network qmake:build widgets x11extras
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

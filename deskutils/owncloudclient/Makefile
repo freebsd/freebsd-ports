@@ -23,7 +23,8 @@ USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gmake \
 		iconv kde:5 localbase:ldflags pkgconfig qt:5 shared-mime-info \
 		sqlite tar:xz
 USE_KDE=	completion config coreaddons jobwidgets kio service \
-		widgetsaddons windowsystem
+		widgetsaddons windowsystem \
+		ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus gui network sql webkit widgets xml \
 		buildtools:build linguist:build qmake:build

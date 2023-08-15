@@ -19,7 +19,8 @@ LIB_DEPENDS=	libctemplate.so:textproc/google-ctemplate
 USES=		cmake compiler:c++11-lang grantlee:5 kde:5 qt:5 shebangfix
 USE_KDE=	akonadi akonadicontacts \
 		auth codecs config configwidgets contacts coreaddons \
-		grantleetheme i18n itemmodels widgetsaddons
+		grantleetheme i18n itemmodels widgetsaddons \
+		ecm:build
 USE_QT=		core dbus gui sql widgets xml \
 		buildtools:build qmake:build
 CFLAGS+=	-I${LOCALBASE}/include/KPim5

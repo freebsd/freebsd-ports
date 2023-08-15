@@ -24,7 +24,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash 
 		guiaddons i18n iconthemes init itemviews jobwidgets kdeclarative kdelibs4support \
 		kio notifications package parts service solid sonnet textwidgets \
 		unitconversion xmlgui widgetsaddons windowsystem \
-		doctools:build
+		doctools:build ecm:build
 USE_XORG=	x11
 
 OPTIONS_DEFINE=	NLS

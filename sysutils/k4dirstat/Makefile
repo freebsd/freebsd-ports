@@ -15,7 +15,8 @@ CPE_PRODUCT=	kdirstat
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeromerobert
 USE_KDE=	auth codecs completion config configwidgets coreaddons doctools \
-		i18n iconthemes jobwidgets kio service widgetsaddons xmlgui
+		i18n iconthemes jobwidgets kio service widgetsaddons xmlgui \
+		ecm:build
 USE_QT=		core dbus gui network widgets xml buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS NLS
