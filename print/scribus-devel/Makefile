@@ -50,6 +50,8 @@ CMAKE_ARGS+=	-DWANT_HUNSPELL=YES \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
 # Patch sources to force using include files installed by graphics/podofo09
 post-patch:
 	@${REINPLACE_CMD} -e '/^[\t ]*#include/s|podofo/podofo.h|podofo09/podofo.h|' \
@@ -58,9 +60,14 @@ post-patch:
 		${WRKSRC}/scribus/imagedataloaders/scimgdataloader_pdf.cpp \
 		${WRKSRC}/scribus/pdflib_core.h \
 		${WRKSRC}/scribus/pdf_analyzer.h
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/scribus/desaxe/digester.cpp
+.endif
+
 
 post-install:
 		${LN} -sf ../share/icons/1_5_1/scribus.png \
 			${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
