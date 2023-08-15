@@ -525,6 +525,7 @@ VO_AACENC_DESC?=	AAC audio encoding via vo-aacenc
 VO_AMRWBENC_DESC?=	AMR Wide Band encoding via vo-amrwbenc
 VORBIS_DESC?=		Ogg Vorbis audio codec support
 VPX_DESC?=		VP8/VP9 video codec support
+VST3_DESC?=		VST3 audio plugins support
 WAV_DESC?=		WAV audio format support
 WAVPACK_DESC?=		WavPack lossless audio format support
 WAYLAND_DESC?=		Wayland (graphics) support
