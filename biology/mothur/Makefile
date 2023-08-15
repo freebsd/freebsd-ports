@@ -14,6 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake localbase readline
 USE_GITHUB=	yes
+USE_CXXSTD=	c++11 # not all C++ files are compiled with -std=c++11 which causes failure in addtargets2.cpp due to a collision of the 'byte' symbol with std::byte
 
 MAKE_ARGS=	INSTALL_DIR=${STAGEDIR}${PREFIX}/bin
 
