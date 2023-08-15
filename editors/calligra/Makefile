@@ -1,6 +1,6 @@
 PORTNAME=	calligra
 DISTVERSION=	3.2.1
-PORTREVISION=	55
+PORTREVISION=	56
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -40,21 +40,23 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libwps-0.4.so:textproc/libwps
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
-USES=		cmake cpe compiler:c++17-lang desktop-file-utils eigen:3 \
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 \
 		pkgconfig qca qt:5 shared-mime-info sqlite tar:xz xorg
 USE_LDCONFIG=	yes
-USE_KDE=	akonadicontacts activities archive auth bookmarks codecs completion \
-		config configwidgets contacts coreaddons crash dbusaddons doctools ecm \
-		emoticons guiaddons holidays i18n iconthemes init itemmodels itemviews \
-		jobwidgets js kcmutils kdelibs4support khtml kio \
-		kross notifications notifyconfig parts service solid sonnet \
-		texteditor textwidgets threadweaver unitconversion wallet \
-		widgetsaddons windowsystem xmlgui \
-		calendarcore okular
-USE_QT=		buildtools:build concurrent core dbus declarative gui network opengl \
-		phonon4 printsupport qmake:build \
-		script sql svg testlib webkit widgets x11extras xml
+USE_KDE=	activities akonadicontacts archive auth bookmarks calendarcore \
+		codecs completion config configwidgets contacts coreaddons \
+		crash dbusaddons doctools emoticons guiaddons holidays i18n \
+		iconthemes init itemmodels itemviews jobwidgets js kcmutils \
+		kdelibs4support khtml kio kross notifications notifyconfig \
+		okular parts service solid sonnet texteditor textwidgets \
+		threadweaver unitconversion wallet widgetsaddons windowsystem \
+		xmlgui \
+		ecm:build
+USE_QT=		concurrent core dbus declarative gui network opengl phonon4 \
+		printsupport script sql svg testlib webkit widgets x11extras \
+		xml \
+		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
 OPTIONS_DEFINE=	OPENEXR

@@ -1,6 +1,6 @@
 PORTNAME=		kdb
 DISTVERSION=		3.2.0
-PORTREVISION=		13
+PORTREVISION=		14
 CATEGORIES=		databases kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -14,11 +14,11 @@ WWW=		https://community.kde.org/KDb
 
 LIB_DEPENDS=		libicuuc.so:devel/icu
 
-USES=			cmake compiler:c++11-lang kde:5 \
-			python qt:5 tar:xz
-USE_KDE=		coreaddons ecm i18n
-USE_QT=			core gui network widgets xml \
-			buildtools:build qmake:build
+USES=		cmake compiler:c++11-lang kde:5 python qt:5 tar:xz
+USE_KDE=	coreaddons i18n \
+		ecm:build
+USE_QT=		core gui network widgets xml \
+		buildtools:build qmake:build
 
 # In the future, these options will be moved into slave ports
 OPTIONS_DEFINE=		SQLITE MYSQL PGSQL

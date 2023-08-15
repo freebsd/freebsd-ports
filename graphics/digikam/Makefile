@@ -1,6 +1,6 @@
 PORTNAME=	digikam
 DISTVERSION=	8.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION} \
 		https://files.kde.org/digikam/%SUBDIR%/:aesthetic,face,shape \
@@ -44,13 +44,15 @@ USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 gl \
 USE_GL=		gl glu
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE=	archive auth bookmarks calendarcore codecs completion config \
-		configwidgets coreaddons crash doctools ecm filemetadata \
-		guiaddons i18n iconthemes itemmodels itemviews jobwidgets kdelibs4support \
-		kio marble libkipi notifications notifyconfig parts service \
-		solid sonnet textwidgets threadweaver unitconversion \
-		widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus declarative gui location network networkauth \
-		opengl printsupport sql webchannel widgets x11extras xml xmlpatterns \
+		configwidgets coreaddons crash doctools filemetadata guiaddons \
+		i18n iconthemes itemmodels itemviews jobwidgets \
+		kdelibs4support kio libkipi marble notifications notifyconfig \
+		parts service solid sonnet textwidgets threadweaver \
+		unitconversion widgetsaddons windowsystem xmlgui \
+		ecm:build
+USE_QT=		concurrent core dbus declarative gui location network \
+		networkauth opengl printsupport sql webchannel widgets \
+		x11extras xml xmlpatterns \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 

@@ -1,5 +1,6 @@
 PORTNAME=	kaidan
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}
 
@@ -14,9 +15,10 @@ RUN_DEPENDS=	kquickimageeditor>0:graphics/kquickimageeditor \
 LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp@qt5 \
 		libZXing.so:textproc/zxing-cpp
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 \
-		pkgconfig qt:5 tar:xz
-USE_KDE=	ecm kirigami2 notifications qqc2-desktop-style
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
+		qt:5 tar:xz
+USE_KDE=	kirigami2 notifications qqc2-desktop-style \
+		ecm:build
 USE_QT=		core dbus declarative gui location multimedia network \
 		quickcontrols2 sql svg widgets xml \
 		buildtools:build qmake:build

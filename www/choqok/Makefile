@@ -1,6 +1,6 @@
 PORTNAME=	choqok
 DISTVERSION=	1.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/src
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -19,12 +19,14 @@ LIB_DEPENDS=	libqjson-qt5.so:devel/qjson \
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qca qt:5 \
 		tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
-		coreaddons doctools ecm emoticons globalaccel guiaddons i18n \
+		coreaddons doctools emoticons globalaccel guiaddons i18n \
 		itemviews jobwidgets kcmutils kdewebkit kio notifications \
 		notifyconfig parts purpose service solid sonnet textwidgets \
 		wallet widgetsaddons windowsystem xmlgui \
+		ecm:build \
 		kded:run
-USE_QT=		concurrent core dbus gui network networkauth webkit widgets xml \
+USE_QT=		concurrent core dbus gui network networkauth webkit widgets \
+		xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes

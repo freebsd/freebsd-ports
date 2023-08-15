@@ -1,6 +1,6 @@
 PORTNAME=	calligraplan
 DISTVERSION=	3.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/calligra/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -11,16 +11,17 @@ WWW=		https://www.calligra.org/plan/
 
 LIB_DEPENDS=	libKChart.so:graphics/kdiagram
 
-USES=		cmake compiler:c++11-lib desktop-file-utils kde:5 \
-		qt:5 tar:xz xorg
-USE_KDE=	activities akonadi archive auth bookmarks codecs completion config \
-		configwidgets coreaddons dbusaddons ecm guiaddons holidays i18n \
-		iconthemes itemmodels itemviews jobwidgets js khtml kio \
-		notifications parts service solid sonnet textwidgets wallet \
-		widgetsaddons windowsystem xmlgui \
-		akonadicontacts calendarcore contacts \
-		doctools:build
-USE_QT=		concurrent core dbus gui network printsupport widgets x11extras xml \
+USES=		cmake compiler:c++11-lib desktop-file-utils kde:5 qt:5 tar:xz \
+		xorg
+USE_KDE=	activities akonadi akonadicontacts archive auth bookmarks \
+		calendarcore codecs completion config configwidgets contacts \
+		coreaddons dbusaddons guiaddons holidays i18n iconthemes \
+		itemmodels itemviews jobwidgets js khtml kio notifications \
+		parts service solid sonnet textwidgets wallet widgetsaddons \
+		windowsystem xmlgui \
+		doctools:build ecm:build
+USE_QT=		concurrent core dbus gui network printsupport widgets \
+		x11extras xml \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 

@@ -1,6 +1,6 @@
 PORTNAME=	phonon
 DISTVERSION=	0.11.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTNAME}-backend-${PHONON_PLUGIN}/${DISTVERSION}
 PKGNAMESUFFIX=	-${PHONON_PLUGIN}
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libvlc.so:multimedia/vlc
 USES=		cmake pkgconfig tar:xz
 
 USES+=		compiler:c++11-lang kde:5 qt:5
-USE_KDE=	ecm
-USE_QT=		core gui widgets phonon4 \
+USE_KDE=	ecm:build
+USE_QT=		core gui phonon4 widgets \
 		buildtools:build qmake:build
 CMAKE_ON=	PHONON_BUILD_PHONON4QT5
 

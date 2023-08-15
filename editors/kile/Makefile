@@ -1,7 +1,7 @@
 PORTNAME=	kile
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0b3
-PORTREVISION=	42
+PORTREVISION=	43
 CATEGORIES=	editors kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,14 +14,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils kde:5 \
-		qt:5 shared-mime-info shebangfix xorg
+USES=		cmake compiler:c++11-lang cpe desktop-file-utils kde:5 qt:5 \
+		shared-mime-info shebangfix xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash dbusaddons ecm guiaddons i18n iconthemes \
-		init itemviews jobwidgets js khtml kio okular parts service \
-		solid sonnet syntaxhighlighting texteditor textwidgets \
-		widgetsaddons windowsystem xmlgui \
-		doctools:build
+		coreaddons crash dbusaddons guiaddons i18n iconthemes init \
+		itemviews jobwidgets js khtml kio okular parts service solid \
+		sonnet syntaxhighlighting texteditor textwidgets widgetsaddons \
+		windowsystem xmlgui \
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network script widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

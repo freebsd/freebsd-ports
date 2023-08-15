@@ -1,6 +1,6 @@
 PORTNAME=	showimage
 PORTVERSION=	1.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics kde
 MASTER_SITES=	https://dl.opendesktop.org/api/files/download/id/1482097460/ \
 		LOCAL/tcberner/showimage-0.10/
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:bzip2 xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons ecm i18n itemviews jobwidgets kio service solid \
+		coreaddons i18n itemviews jobwidgets kio service solid \
 		widgetsaddons windowsystem xmlgui \
-		doctools:build
-USE_QT=		concurrent core dbus gui network xml widgets \
+		doctools:build ecm:build
+USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

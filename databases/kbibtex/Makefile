@@ -1,6 +1,6 @@
 PORTNAME=	kbibtex
 DISTVERSION=	0.10.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases kde
 MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
 
@@ -17,10 +17,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
 		iconv kde:5 pkgconfig qca qt:5 shared-mime-info tar:xz xorg
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm i18n iconthemes itemviews jobwidgets kio \
+		coreaddons crash i18n iconthemes itemviews jobwidgets kio \
 		parts service solid sonnet syntaxhighlighting texteditor \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools:build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui location network \
 		networkauth printsupport webchannel widgets xml xmlpatterns \
 		buildtools:build qmake:build

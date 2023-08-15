@@ -1,6 +1,6 @@
 PORTNAME=		kreport
 DISTVERSION=		3.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=		textproc kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -11,12 +11,12 @@ WWW=		https://www.kexi-project.org/
 
 LIB_DEPENDS=		libKPropertyCore3.so:x11-toolkits/kproperty
 
-USES=			cmake compiler:c++11-lang gettext kde:5 \
-			python qt:5 tar:xz
-USE_KDE=		config coreaddons ecm marble widgetsaddons
-USE_QT=			core declarative gui location network webchannel \
-			webengine webkit widgets xml \
-			buildtools:build printsupport qmake:build
+USES=		cmake compiler:c++11-lang gettext kde:5 python qt:5 tar:xz
+USE_KDE=	config coreaddons marble widgetsaddons \
+		ecm:build
+USE_QT=		core declarative gui location network printsupport webchannel \
+		webengine webkit widgets xml \
+		buildtools:build qmake:build
 
 CONFLICTS_INSTALL=	calligra-2*
 

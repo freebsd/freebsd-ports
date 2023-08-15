@@ -1,6 +1,6 @@
 PORTNAME=	kdesvn
 DISTVERSION=	2.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
 
@@ -20,10 +20,10 @@ CONFLICTS_INSTALL=	qsvn
 
 USES=		bdb cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons dbusaddons ecm i18n iconthemes itemviews jobwidgets \
-		kio notifications parts service sonnet solid texteditor \
+		coreaddons dbusaddons i18n iconthemes itemviews jobwidgets kio \
+		notifications parts service solid sonnet texteditor \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
-		doctools:build
+		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

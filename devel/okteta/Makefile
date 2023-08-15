@@ -1,5 +1,6 @@
 PORTNAME=	okteta
 DISTVERSION=	0.26.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/src
@@ -15,13 +16,13 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qca qt:5 \
 		shared-mime-info tar:xz xorg
-USE_KDE=	attica auth bookmarks codecs completion crash \
-		config configwidgets coreaddons dbusaddons doctools \
-		ecm i18n iconthemes itemviews jobwidgets kcmutils kio \
-		newstuff parts service solid sonnet textwidgets \
-		widgetsaddons windowsystem xmlgui
-USE_QT=		concurrent core dbus declarative designer gui network printsupport  \
-		script scripttools widgets xml \
+USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
+		coreaddons crash dbusaddons doctools i18n iconthemes itemviews \
+		jobwidgets kcmutils kio newstuff parts service solid sonnet \
+		textwidgets widgetsaddons windowsystem xmlgui \
+		ecm:build
+USE_QT=		concurrent core dbus declarative designer gui network \
+		printsupport script scripttools widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	heaptrack
 DISTVERSION=	1.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -16,12 +16,12 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libKChart.so:graphics/kdiagram \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 \
-		localbase  qt:5 tar:xz xorg
-USE_KDE=	auth auth codecs completion config config \
-		configwidgets coreaddons ecm i18n iconthemes itemmodels \
-		jobwidgets kio kio service solid threadweaver \
-		widgetsaddons windowsystem
+USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 localbase \
+		qt:5 tar:xz xorg
+USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
+		iconthemes itemmodels jobwidgets kio service solid \
+		threadweaver widgetsaddons windowsystem \
+		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

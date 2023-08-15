@@ -1,6 +1,6 @@
 PORTNAME=	ktextaddons
 DISTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -11,8 +11,9 @@ WWW=		https://invent.kde.org/libraries/ktextaddons
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain
 
 USES=		cmake kde:5 qt:5 tar:xz
-USE_KDE=	archive auth codecs config configwidgets coreaddons ecm i18n \
-		widgetsaddons xmlgui
+USE_KDE=	archive auth codecs config configwidgets coreaddons i18n \
+		widgetsaddons xmlgui \
+		ecm:build
 USE_QT=		core dbus gui network speech widgets xml \
 		buildtools:build qmake:build
 
