@@ -2,7 +2,8 @@
 { type: install
   message: <<EOM
 MongoDB on Raspberry Pi can work but is unsupported upstream.
-Please read https://jira.mongodb.org/browse/SERVER-71772 if you run this on a non-LSE ARM cpu.
+Please read https://jira.mongodb.org/browse/SERVER-71772 and enable option 
+ARMV80A if you run this on a non-LSE ARM cpu like Raspberry Pi 4.
 EOM
 }
 ]

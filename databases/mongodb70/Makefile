@@ -1,6 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	7.0.0-rc10
+DISTVERSION=	7.0.0
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} 
 # build depends used while running ${WRKSRC}/src/third_party/mozjs/gen-config.sh
 BUILD_DEPENDS+=	autoconf2.13:devel/autoconf2.13 \
 		gsed:textproc/gsed
-LIB_DEPENDS= 	libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre2-8.so:devel/pcre2 \
 		libsnappy.so:archivers/snappy \
 		libstemmer.so:textproc/snowballstemmer \
@@ -49,10 +49,10 @@ USE_RC_SUBR=	mongod
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
-MAKE_ARGS=	--cxx-std=20 \
+MAKE_ARGS=	--allocator=system \
+		--cxx-std=20 \
 		--disable-warnings-as-errors \
 		--libc++ \
-		--allocator=system \
 		--runtime-hardening=on \
 		--use-system-libunwind \
 		--use-system-pcre2 \
@@ -74,9 +74,16 @@ USERS=		mongodb
 GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
+OPTIONS_DEFINE_aarch64=	ARMV80A
 OPTIONS_DEFAULT=	LTO SASL SSL
 
+# MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
+# Can give corruption on high concurrency.
+# Please read https://jira.mongodb.org/browse/SERVER-71772.
+ARMV80A_DESC=	Enable non-LSE ARM64 CPUs like RPI4.
 NOAVX_DESC=	"Disable AVX instructions on amd64 (Sandybridge+)"
+
+ARMV80A_EXTRA_PATCHES=	${FILESDIR}/extrapatch-SConstruct
 
 LTO_MAKE_ARGS=	--lto=on
 
