@@ -10,6 +10,7 @@ WWW=		https://www.gap-system.org/
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS+=	automake:devel/automake # attempt to fix the intermittent failure: WARNING: 'automake-1.16' is missing on your system.
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake libtool localbase perl5 readline shebangfix
