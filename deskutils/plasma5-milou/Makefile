@@ -1,5 +1,6 @@
 PORTNAME=	milou
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,7 +9,8 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config coreaddons i18n itemmodels kdeclarative \
-		package plasma-framework runner service
+		package plasma-framework runner service \
+		ecm:build
 USE_QT=		core declarative gui network script widgets \
 		buildtools:build qmake:build testlib:build
 
