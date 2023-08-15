@@ -1,5 +1,5 @@
 PORTNAME=	touchegg
-DISTVERSION=	2.0.16
+DISTVERSION=	2.0.17
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
