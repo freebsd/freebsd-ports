@@ -1,6 +1,6 @@
 PORTNAME=	outcome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.7
+DISTVERSION=	2.2.7-20230815
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,17 +17,16 @@ USES=		cmake:testing compiler:c++14-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ned14
+GH_TAGNAME=	1407d02
 GH_TUPLE=	ned14:status-code:6bd2d56:status_code/include/outcome/experimental/status-code
 
 CMAKE_OFF=	BUILD_TESTING
-CMAKE_TESTING_ON=	OUTCOME_ENABLE_DEPENDENCY_SMOKE_TEST
+CMAKE_TESTING_ON=	BUILD_TESTING OUTCOME_ENABLE_DEPENDENCY_SMOKE_TEST
 CMAKE_ARGS=	-Dquickcpplib_DIR=${LOCALBASE}/lib/cmake/quickcpplib
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
-
-# tests fail to build, see https://github.com/ned14/outcome/issues/288
 
 .include <bsd.port.mk>
