@@ -11,6 +11,8 @@ WWW=		https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dftd4
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		build fails: meson-python: error ... after devel/meson-python update to 0.13.2, see https://github.com/dftd4/dftd4/issues/212
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}meson-python>0:devel/meson-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
