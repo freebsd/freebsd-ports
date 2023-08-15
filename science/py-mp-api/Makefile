@@ -1,5 +1,5 @@
 PORTNAME=	mp-api
-DISTVERSION=	0.33.3
+DISTVERSION=	0.34.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=0:www/py-boto3@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}custodian>0:devel/py-custodian@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}emmet-core>=0.39.8:science/py-emmet-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}monty>=2022.3.12:devel/py-monty@${PY_FLAVOR} \
