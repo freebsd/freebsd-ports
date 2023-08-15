@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace-wallpapers
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPL3
 
 USES=		cmake kde:5 qt:5 tar:xz
-USE_KDE=	ecm
+USE_KDE=	ecm:build
 USE_QT=		buildtools:build \
 		qmake:build
 

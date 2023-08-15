@@ -1,5 +1,6 @@
 PORTNAME=	kwayland-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,8 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 
 USES=		cmake compiler:c++11-lib gl kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GL=		gl
-USE_KDE=	ecm guiaddons idletime plasma-wayland-protocols wayland \
-		windowsystem
+USE_KDE=	guiaddons idletime plasma-wayland-protocols wayland \
+		windowsystem \
+		ecm:build
 USE_QT=		core gui wayland widgets \
 		buildtools:build qmake:build
 USE_XORG=	x11
