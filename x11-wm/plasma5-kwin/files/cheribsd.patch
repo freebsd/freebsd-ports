@@ -1,239 +1,51 @@
-diff -ru CMakeLists.txt CMakeLists.txt
---- CMakeLists.txt	2022-07-11 11:52:25.000000000 +0100
-+++ CMakeLists.txt	2022-08-18 14:38:06.611747000 +0100
-@@ -194,11 +194,14 @@
+diff --git CMakeLists.txt CMakeLists.txt
+index 47facacf9..3d2eb6598 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -195,6 +195,7 @@ set_package_properties(Wayland PROPERTIES
      TYPE REQUIRED
      PURPOSE "Required for building KWin with Wayland support"
  )
--add_feature_info("Wayland::EGL" Wayland_Egl_FOUND "Enable building of Wayland backend.")
 +option(KWIN_BUILD_DRM_BACKEND "Enable building of KWin DRM backend" ON)
-+option(KWIN_BUILD_WAYLAND_EGL "Enable building of KWin Wayland EGL output" ON)
-+
- set(HAVE_WAYLAND_EGL FALSE)
--if (Wayland_Egl_FOUND)
-+if (KWIN_BUILD_WAYLAND_EGL AND Wayland_Egl_FOUND)
-     set(HAVE_WAYLAND_EGL TRUE)
- endif()
-+add_feature_info("Wayland::EGL" HAVE_WAYLAND_EGL "Enable building of Wayland EGL backend.")
  
- find_package(XKB 0.7.0)
- set_package_properties(XKB PROPERTIES
-@@ -219,15 +222,17 @@
+ find_package(WaylandProtocols 1.31)
+ set_package_properties(WaylandProtocols PROPERTIES
+@@ -243,15 +244,22 @@ set_package_properties(UDev PROPERTIES
      PURPOSE "Required for input handling on Wayland."
  )
  
--find_package(Libdrm 2.4.62)
+-find_package(Libdrm 2.4.112)
 -set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
-+if (KWIN_BUILD_DRM_BACKEND OR HAVE_WAYLAND_EGL)
-+    find_package(Libdrm 2.4.62)
-+    set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
++find_package(Libseat)
++set_package_properties(Libseat PROPERTIES
++    TYPE OPTIONAL
++)
  
 -find_package(gbm)
 -set_package_properties(gbm PROPERTIES TYPE REQUIRED PURPOSE "Required for egl output of drm backend.")
--if (${gbm_VERSION} GREATER_EQUAL 21.1)
+-if (gbm_VERSION VERSION_GREATER_EQUAL 21.1)
 -    set(HAVE_GBM_BO_GET_FD_FOR_PLANE 1)
 -else()
 -    set(HAVE_GBM_BO_GET_FD_FOR_PLANE 0)
++if (KWIN_BUILD_DRM_BACKEND)
++    find_package(Libdrm 2.4.112)
++    set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
++
 +    find_package(gbm)
 +    set_package_properties(gbm PROPERTIES TYPE REQUIRED PURPOSE "Required for egl output of drm backend.")
-+    if ("${gbm_VERSION}" GREATER_EQUAL 21.1)
++    if (gbm_VERSION VERSION_GREATER_EQUAL 21.1)
 +        set(HAVE_GBM_BO_GET_FD_FOR_PLANE 1)
 +    else()
 +        set(HAVE_GBM_BO_GET_FD_FOR_PLANE 0)
 +    endif()
  endif()
- 
- find_package(X11)
-diff -ru src/appmenu.cpp src/appmenu.cpp
---- src/appmenu.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/appmenu.cpp	2022-08-18 14:38:06.612274000 +0100
-@@ -48,7 +48,8 @@
-                 Q_EMIT applicationMenuEnabledChanged(false);
-             });
- 
--    m_applicationMenuEnabled = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
-+    m_applicationMenuEnabled =
-+        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
- }
- 
- ApplicationMenu::~ApplicationMenu()
-@@ -63,6 +64,8 @@
- 
- void ApplicationMenu::setViewEnabled(bool enabled)
- {
-+    if (!QDBusConnection::sessionBus().interface())
-+        return;
-     if (enabled) {
-         QDBusConnection::sessionBus().interface()->registerService(s_viewService,
-                     QDBusConnectionInterface::QueueService,
-diff -ru src/backends/CMakeLists.txt src/backends/CMakeLists.txt
---- src/backends/CMakeLists.txt	2022-07-11 11:51:26.000000000 +0100
-+++ src/backends/CMakeLists.txt	2022-08-18 14:37:51.877968000 +0100
-@@ -1,4 +1,6 @@
--add_subdirectory(drm)
-+if (KWIN_BUILD_DRM_BACKEND)
-+    add_subdirectory(drm)
-+endif()
- add_subdirectory(fakeinput)
- if (HAVE_LINUX_FB_H)
-     add_subdirectory(fbdev)
-diff -ru src/effects/startupfeedback/startupfeedback.cpp src/effects/startupfeedback/startupfeedback.cpp
---- src/effects/startupfeedback/startupfeedback.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/effects/startupfeedback/startupfeedback.cpp	2022-08-18 14:38:06.612795000 +0100
-@@ -111,7 +111,8 @@
-     });
-     reconfigure(ReconfigureAll);
- 
--    m_splashVisible = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
-+    m_splashVisible =
-+        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
-     auto serviceWatcher = new QDBusServiceWatcher(QStringLiteral("org.kde.KSplash"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
-     connect(serviceWatcher, &QDBusServiceWatcher::serviceRegistered, this, [this] {
-         m_splashVisible = true;
-diff -ru src/plugins/colord-integration/colordintegration.cpp src/plugins/colord-integration/colordintegration.cpp
---- src/plugins/colord-integration/colordintegration.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/plugins/colord-integration/colordintegration.cpp	2022-08-18 14:38:06.613131000 +0100
-@@ -31,7 +31,7 @@
-     connect(watcher, &QDBusServiceWatcher::serviceUnregistered, this, &ColordIntegration::teardown);
- 
-     QDBusConnectionInterface *interface = QDBusConnection::systemBus().interface();
--    if (interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
-+    if (interface && interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
-         initialize();
-     }
- }
-diff -ru src/session_consolekit.cpp src/session_consolekit.cpp
---- src/session_consolekit.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/session_consolekit.cpp	2022-08-18 14:38:06.613763000 +0100
-@@ -110,7 +110,7 @@
- 
- ConsoleKitSession *ConsoleKitSession::create(QObject *parent)
- {
--    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
-+    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
-         return nullptr;
-     }
- 
-diff -ru src/session_logind.cpp src/session_logind.cpp
---- src/session_logind.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/session_logind.cpp	2022-08-18 14:38:06.614305000 +0100
-@@ -108,7 +108,7 @@
- 
- LogindSession *LogindSession::create(QObject *parent)
- {
--    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
-+    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
-         return nullptr;
-     }
- 
-diff -ru src/session_noop.cpp src/session_noop.cpp
---- src/session_noop.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/session_noop.cpp	2022-08-18 14:38:06.614685000 +0100
-@@ -6,6 +6,11 @@
- 
- #include "session_noop.h"
- 
-+#include "utils/common.h"
-+#include <QFile>
-+#include <fcntl.h>
-+#include <unistd.h>
-+
- namespace KWin
- {
- 
-@@ -45,12 +50,18 @@
- 
- int NoopSession::openRestricted(const QString &fileName)
- {
-+
-+	return open(QFile::encodeName(fileName).data(), O_RDWR | O_CLOEXEC);
-+
-     Q_UNUSED(fileName)
-     return -1;
- }
- 
- void NoopSession::closeRestricted(int fileDescriptor)
- {
-+
-+	close(fileDescriptor);
-+
-     Q_UNUSED(fileDescriptor)
- }
- 
-diff -ru src/tabletmodemanager.cpp src/tabletmodemanager.cpp
---- src/tabletmodemanager.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/tabletmodemanager.cpp	2022-08-18 14:38:06.615049000 +0100
-@@ -16,6 +16,11 @@
- 
- #include <QDBusConnection>
- 
-+#include "utils/common.h"
-+#include <QFile>
-+#include <fcntl.h>
-+#include <unistd.h>
-+
- namespace KWin
- {
- 
-diff -ru src/backends/drm/drm_buffer.cpp src/backends/drm/drm_buffer.cpp
---- src/backends/drm/drm_buffer.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/backends/drm/drm_buffer.cpp	2022-08-23 23:13:55.079283000 +0100
-@@ -121,7 +121,7 @@
-     if (drmIoctl(m_gpu->fd(), DRM_IOCTL_MODE_MAP_DUMB, &mapArgs) != 0) {
-         return false;
-     }
--    void *address = mmap(nullptr, m_bufferSize, PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
-+    void *address = mmap(nullptr, m_bufferSize, PROT_READ | PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
-     if (address == MAP_FAILED) {
-         return false;
-     }
-diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
---- src/backends/fbdev/fb_backend.cpp	2022-07-11 11:51:26.000000000 +0100
-+++ src/backends/fbdev/fb_backend.cpp	2022-08-23 23:13:43.727961000 +0100
-@@ -191,7 +191,7 @@
-         // not valid
-         return;
-     }
--    void *mem = mmap(nullptr, m_bufferLength, PROT_WRITE, MAP_SHARED, m_fd, 0);
-+    void *mem = mmap(nullptr, m_bufferLength, PROT_READ | PROT_WRITE, MAP_SHARED, m_fd, 0);
-     if (mem == MAP_FAILED) {
-         qCWarning(KWIN_FB) << "Failed to mmap frame buffer";
-         return;
---- src/wayland_server.cpp.orig	2022-11-21 03:59:13.728342000 +0000
-+++ src/wayland_server.cpp	2022-11-21 04:05:56.069510000 +0000
-@@ -78,6 +78,10 @@
- // system
- #include <sys/types.h>
- #include <sys/socket.h>
-+#ifdef __FreeBSD__
-+#include <sys/param.h>
-+#include <sys/sysctl.h>
-+#endif
- #include <unistd.h>
- 
- //screenlocker
-@@ -111,7 +115,18 @@
- 
-     bool isTrustedOrigin(KWaylandServer::ClientConnection *client) const {
-         const auto fullPathSha = sha256(client->executablePath());
--        const auto localSha = sha256(QLatin1String("/proc/") + QString::number(client->processId()) + QLatin1String("/exe"));
-+#ifdef __FreeBSD__
-+        const int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, static_cast<int>(client->processId())};
-+        char buf[MAXPATHLEN];
-+        size_t cb = sizeof(buf);
-+        if (sysctl(mib, 4, buf, &cb, nullptr, 0) != 0) {
-+            buf[0] = 0;
-+        }
-+        const auto localExe = QString::fromLocal8Bit(buf);
-+#else
-+        const auto localExe = QLatin1String("/proc/") + QString::number(client->processId()) + QLatin1String("/exe");
-+#endif
-+        const auto localSha = sha256(localExe);
-         const bool trusted = !localSha.isEmpty() && fullPathSha == localSha;
- 
-         if (!trusted) {
---- cmake/modules/FindLibseat.cmake.orig	2022-11-22 01:59:37.302917000 +0000
-+++ cmake/modules/FindLibseat.cmake	2022-11-22 01:53:11.475968000 +0000
+ if (gbm_VERSION VERSION_GREATER_EQUAL 21.3)
+     set(HAVE_GBM_BO_CREATE_WITH_MODIFIERS2 1)
+diff --git cmake/modules/FindLibseat.cmake cmake/modules/FindLibseat.cmake
+new file mode 100644
+index 000000000..8d2304d6c
+--- /dev/null
++++ cmake/modules/FindLibseat.cmake
 @@ -0,0 +1,37 @@
 +#.rst:
 +# FindLibseat
@@ -272,45 +84,139 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +mark_as_advanced(
 +    Libseat_VERSION
 +)
---- CMakeLists.txt.orig	2022-07-11 11:52:25.000000000 +0100
-+++ CMakeLists.txt	2022-11-22 04:07:08.361789000 +0000
-@@ -222,6 +222,11 @@
-     PURPOSE "Required for input handling on Wayland."
- )
- 
-+find_package(Libseat)
-+set_package_properties(Libseat PROPERTIES
-+    TYPE OPTIONAL
-+)
-+
- if (KWIN_BUILD_DRM_BACKEND OR HAVE_WAYLAND_EGL)
-     find_package(Libdrm 2.4.62)
-     set_package_properties(Libdrm PROPERTIES TYPE REQUIRED PURPOSE "Required for drm output on Wayland.")
---- src/config-kwin.h.cmake.orig	2022-11-22 01:57:35.534476000 +0000
-+++ src/config-kwin.h.cmake	2022-11-22 01:58:03.029351000 +0000
-@@ -46,3 +46,5 @@
- #cmakedefine PipeWire_FOUND 1
- 
- #cmakedefine HAVE_XWAYLAND_LISTENFD
-+
-+#cmakedefine Libseat_FOUND 1
---- src/CMakeLists.txt.orig	2022-11-22 01:36:09.794868000 +0000
-+++ src/CMakeLists.txt	2022-11-22 01:58:20.269641000 +0000
-@@ -258,6 +258,11 @@
+diff --git src/CMakeLists.txt src/CMakeLists.txt
+index 2fce33f3f..61e04a660 100644
+--- src/CMakeLists.txt
++++ src/CMakeLists.txt
+@@ -299,6 +299,11 @@ if (KWIN_BUILD_TABBOX)
      target_link_libraries(kwin Qt::GuiPrivate)
  endif()
  
 +if (Libseat_FOUND)
-+    target_sources(kwin PRIVATE session_libseat.cpp)
++    target_sources(kwin PRIVATE core/session_libseat.cpp)
 +    target_link_libraries(kwin ${Libseat_LIBRARY})
 +endif()
 +
- qt5_generate_dbus_interface(virtualkeyboard_dbus.h org.kde.kwin.VirtualKeyboard.xml OPTIONS -A)
- qt5_generate_dbus_interface(tabletmodemanager.h org.kde.KWin.TabletModeManager.xml OPTIONS -A)
+ qt_generate_dbus_interface(virtualkeyboard_dbus.h org.kde.kwin.VirtualKeyboard.xml OPTIONS -A)
+ qt_generate_dbus_interface(tabletmodemanager.h org.kde.KWin.TabletModeManager.xml OPTIONS -A)
  
---- src/session_libseat.cpp.orig	2022-11-22 04:53:36.562516000 +0000
-+++ src/session_libseat.cpp	2022-11-22 05:01:42.498993000 +0000
-@@ -0,0 +1,216 @@
+diff --git src/appmenu.cpp src/appmenu.cpp
+index 4b51c4cd7..21a7b364a 100644
+--- src/appmenu.cpp
++++ src/appmenu.cpp
+@@ -43,7 +43,8 @@ ApplicationMenu::ApplicationMenu()
+         Q_EMIT applicationMenuEnabledChanged(false);
+     });
+ 
+-    m_applicationMenuEnabled = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
++    m_applicationMenuEnabled =
++        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.kappmenu"));
+ }
+ 
+ bool ApplicationMenu::applicationMenuEnabled() const
+@@ -53,6 +54,8 @@ bool ApplicationMenu::applicationMenuEnabled() const
+ 
+ void ApplicationMenu::setViewEnabled(bool enabled)
+ {
++    if (!QDBusConnection::sessionBus().interface())
++        return;
+     if (enabled) {
+         QDBusConnection::sessionBus().interface()->registerService(s_viewService,
+                                                                    QDBusConnectionInterface::QueueService,
+diff --git src/backends/CMakeLists.txt src/backends/CMakeLists.txt
+index 93e19918d..7de94556f 100644
+--- src/backends/CMakeLists.txt
++++ src/backends/CMakeLists.txt
+@@ -1,4 +1,6 @@
+-add_subdirectory(drm)
++if (KWIN_BUILD_DRM_BACKEND)
++    add_subdirectory(drm)
++endif()
+ add_subdirectory(fakeinput)
+ add_subdirectory(libinput)
+ add_subdirectory(virtual)
+diff --git src/backends/drm/drm_dumb_buffer.cpp src/backends/drm/drm_dumb_buffer.cpp
+index b69184be5..3360f86e8 100644
+--- src/backends/drm/drm_dumb_buffer.cpp
++++ src/backends/drm/drm_dumb_buffer.cpp
+@@ -47,7 +47,7 @@ bool DrmDumbBuffer::map(QImage::Format format)
+ #ifdef KWIN_UNIT_TEST
+     m_memory = reinterpret_cast<void *>(mapArgs.offset);
+ #else
+-    void *address = mmap(nullptr, m_bufferSize, PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
++    void *address = mmap(nullptr, m_bufferSize, PROT_READ | PROT_WRITE, MAP_SHARED, m_gpu->fd(), mapArgs.offset);
+     if (address == MAP_FAILED) {
+         return false;
+     }
+diff --git src/config-kwin.h.cmake src/config-kwin.h.cmake
+index b5209c0e2..787cc955d 100644
+--- src/config-kwin.h.cmake
++++ src/config-kwin.h.cmake
+@@ -34,3 +34,5 @@
+ #cmakedefine01 PipeWire_FOUND
+ 
+ #cmakedefine01 HAVE_XWAYLAND_LISTENFD
++
++#cmakedefine Libseat_FOUND 1
+diff --git src/core/session.cpp src/core/session.cpp
+index 0e0b7f457..1593f7b68 100644
+--- src/core/session.cpp
++++ src/core/session.cpp
+@@ -5,7 +5,13 @@
+ */
+ 
+ #include "session.h"
++
++#include <config-kwin.h>
++
+ #include "session_consolekit.h"
++#ifdef Libseat_FOUND
++#include "session_libseat.h"
++#endif
+ #include "session_logind.h"
+ #include "session_noop.h"
+ 
+@@ -19,6 +25,9 @@ static const struct
+ } s_availableSessions[] = {
+     {Session::Type::Logind, &LogindSession::create},
+     {Session::Type::ConsoleKit, &ConsoleKitSession::create},
++#ifdef Libseat_FOUND
++    { Session::Type::Libseat, &LibseatSession::create },
++#endif
+     {Session::Type::Noop, &NoopSession::create},
+ };
+ 
+diff --git src/core/session.h src/core/session.h
+index 7bcf8f221..86b772c67 100644
+--- src/core/session.h
++++ src/core/session.h
+@@ -35,6 +35,7 @@ public:
+     enum class Type {
+         Noop,
+         ConsoleKit,
++        Libseat,
+         Logind,
+     };
+ 
+diff --git src/core/session_consolekit.cpp src/core/session_consolekit.cpp
+index 94c07642b..f07969d92 100644
+--- src/core/session_consolekit.cpp
++++ src/core/session_consolekit.cpp
+@@ -110,7 +110,7 @@ static bool activate(const QString &sessionPath)
+ 
+ std::unique_ptr<ConsoleKitSession> ConsoleKitSession::create()
+ {
+-    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
++    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
+         return nullptr;
+     }
+ 
+diff --git src/core/session_libseat.cpp src/core/session_libseat.cpp
+new file mode 100644
+index 000000000..13fa62ea8
+--- /dev/null
++++ src/core/session_libseat.cpp
+@@ -0,0 +1,214 @@
 +/*
 +    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
 +    SPDX-FileCopyrightText: 2022 Jessica Clarke <jrtc27@jrtc27.com>
@@ -323,7 +229,7 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +#include "utils/common.h"
 +#include "wayland_server.h"
 +
-+#include <KWaylandServer/display.h>
++#include "wayland/display.h"
 +
 +#include <fcntl.h>
 +#include <string.h>
@@ -371,7 +277,7 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +    return 1;
 +}
 +
-+LibseatSession *LibseatSession::create(QObject *parent)
++std::unique_ptr<LibseatSession> LibseatSession::create()
 +{
 +    // We're lazy and abuse Wayland event loop since we don't care about
 +    // X11, rather than dealing with creating our own thread as is used
@@ -380,10 +286,10 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +        return nullptr;
 +    }
 +
-+    LibseatSession *session = new LibseatSession(parent);
-+    struct libseat *seat = libseat_open_seat(&s_listener, (void *)session);
++    std::unique_ptr<LibseatSession> session{new LibseatSession()};
++    struct libseat *seat = libseat_open_seat(&s_listener,
++                                             (void *)session.get());
 +    if (!seat) {
-+        delete session;
 +        return nullptr;
 +    }
 +
@@ -395,7 +301,6 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +        qCDebug(KWIN_CORE, "Failed to add libseat event source (%s)",
 +                strerror(errno));
 +        libseat_close_seat(seat);
-+        delete session;
 +        return nullptr;
 +    }
 +
@@ -404,7 +309,6 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +                strerror(errno));
 +        libseat_close_seat(seat);
 +        wl_event_source_remove(eventSource);
-+        delete session;
 +        return nullptr;
 +    }
 +
@@ -412,8 +316,8 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +    return session;
 +}
 +
-+LibseatSession::LibseatSession(QObject *parent)
-+    : Session(parent)
++LibseatSession::LibseatSession()
++    : Session()
 +    , m_seat(nullptr)
 +    , m_eventSource(nullptr)
 +{
@@ -527,8 +431,11 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +}
 +
 +} // namespace KWin
---- src/session_libseat.h.orig	2022-11-22 04:53:36.563592000 +0000
-+++ src/session_libseat.h	2022-11-22 04:58:40.901318000 +0000
+diff --git src/core/session_libseat.h src/core/session_libseat.h
+new file mode 100644
+index 000000000..5b6c5d59b
+--- /dev/null
++++ src/core/session_libseat.h
 @@ -0,0 +1,65 @@
 +/*
 +    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
@@ -565,7 +472,7 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +    };
 +
 +public:
-+    static LibseatSession *create(QObject *parent = nullptr);
++    static std::unique_ptr<LibseatSession> create();
 +    ~LibseatSession() override;
 +
 +    bool isActive() const override;
@@ -581,7 +488,7 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +    void handleDisableSeat();
 +
 +private:
-+    explicit LibseatSession(QObject *parent = nullptr);
++    explicit LibseatSession();
 +
 +    void initialize(struct libseat *seat, struct wl_event_source *eventSource);
 +    void updateActive(bool active);
@@ -595,39 +502,124 @@ diff -ru src/backends/fbdev/fb_backend.cpp src/backends/fbdev/fb_backend.cpp
 +};
 +
 +} // namespace KWin
---- src/session.cpp.orig	2022-11-22 04:03:50.987686000 +0000
-+++ src/session.cpp	2022-11-22 04:05:38.058479000 +0000
-@@ -5,7 +5,13 @@
- */
+diff --git src/core/session_logind.cpp src/core/session_logind.cpp
+index 6087e09fe..15f5ec503 100644
+--- src/core/session_logind.cpp
++++ src/core/session_logind.cpp
+@@ -108,7 +108,7 @@ static bool activate(const QString &sessionPath)
  
- #include "session.h"
-+
-+#include <config-kwin.h>
-+
- #include "session_consolekit.h"
-+#ifdef Libseat_FOUND
-+#include "session_libseat.h"
-+#endif
- #include "session_logind.h"
+ std::unique_ptr<LogindSession> LogindSession::create()
+ {
+-    if (!QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
++    if (!QDBusConnection::systemBus().interface() || !QDBusConnection::systemBus().interface()->isServiceRegistered(s_serviceName)) {
+         return nullptr;
+     }
+ 
+diff --git src/core/session_noop.cpp src/core/session_noop.cpp
+index 82d250059..b660e9ade 100644
+--- src/core/session_noop.cpp
++++ src/core/session_noop.cpp
+@@ -6,6 +6,11 @@
+ 
  #include "session_noop.h"
  
-@@ -18,6 +20,9 @@
- } s_availableSessions[] = {
-     { Session::Type::Logind, &LogindSession::create },
-     { Session::Type::ConsoleKit, &ConsoleKitSession::create },
-+#ifdef Libseat_FOUND
-+    { Session::Type::Libseat, &LibseatSession::create },
++#include "utils/common.h"
++#include <QFile>
++#include <fcntl.h>
++#include <unistd.h>
++
+ namespace KWin
+ {
+ 
+@@ -40,11 +45,12 @@ uint NoopSession::terminal() const
+ 
+ int NoopSession::openRestricted(const QString &fileName)
+ {
+-    return -1;
++    return open(QFile::encodeName(fileName).data(), O_RDWR | O_CLOEXEC);
+ }
+ 
+ void NoopSession::closeRestricted(int fileDescriptor)
+ {
++    close(fileDescriptor);
+ }
+ 
+ void NoopSession::switchTo(uint terminal)
+diff --git src/effects/startupfeedback/startupfeedback.cpp src/effects/startupfeedback/startupfeedback.cpp
+index e2f1cbab8..e40f8cfc5 100644
+--- src/effects/startupfeedback/startupfeedback.cpp
++++ src/effects/startupfeedback/startupfeedback.cpp
+@@ -105,7 +105,8 @@ StartupFeedbackEffect::StartupFeedbackEffect()
+     });
+     reconfigure(ReconfigureAll);
+ 
+-    m_splashVisible = QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
++    m_splashVisible =
++        QDBusConnection::sessionBus().interface() && QDBusConnection::sessionBus().interface()->isServiceRegistered(QStringLiteral("org.kde.KSplash"));
+     auto serviceWatcher = new QDBusServiceWatcher(QStringLiteral("org.kde.KSplash"), QDBusConnection::sessionBus(), QDBusServiceWatcher::WatchForOwnerChange, this);
+     connect(serviceWatcher, &QDBusServiceWatcher::serviceRegistered, this, [this] {
+         m_splashVisible = true;
+diff --git src/plugins/colord-integration/colordintegration.cpp src/plugins/colord-integration/colordintegration.cpp
+index 2e1fe126a..835127276 100644
+--- src/plugins/colord-integration/colordintegration.cpp
++++ src/plugins/colord-integration/colordintegration.cpp
+@@ -28,7 +28,7 @@ ColordIntegration::ColordIntegration()
+     connect(watcher, &QDBusServiceWatcher::serviceUnregistered, this, &ColordIntegration::teardown);
+ 
+     QDBusConnectionInterface *interface = QDBusConnection::systemBus().interface();
+-    if (interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
++    if (interface && interface->isServiceRegistered(QStringLiteral("org.freedesktop.ColorManager"))) {
+         initialize();
+     }
+ }
+diff --git src/tabletmodemanager.cpp src/tabletmodemanager.cpp
+index 78c9afa0b..6fa9fb1dd 100644
+--- src/tabletmodemanager.cpp
++++ src/tabletmodemanager.cpp
+@@ -19,6 +19,11 @@
+ 
+ #include <QDBusConnection>
+ 
++#include "utils/common.h"
++#include <QFile>
++#include <fcntl.h>
++#include <unistd.h>
++
+ namespace KWin
+ {
+ 
+diff --git src/wayland_server.cpp src/wayland_server.cpp
+index 5e7921358..697ac59fa 100644
+--- src/wayland_server.cpp
++++ src/wayland_server.cpp
+@@ -85,6 +85,10 @@
+ // system
+ #include <sys/socket.h>
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#include <sys/sysctl.h>
 +#endif
-     { Session::Type::Noop, &NoopSession::create },
- };
+ #include <unistd.h>
  
---- src/session.h.orig	2022-11-22 04:05:52.236773000 +0000
-+++ src/session.h	2022-11-22 04:06:39.247407000 +0000
-@@ -34,6 +34,7 @@
-     enum class Type {
-         Noop,
-         ConsoleKit,
-+        Libseat,
-         Logind,
-     };
+ // screenlocker
+@@ -122,7 +126,18 @@ public:
+     bool isTrustedOrigin(KWaylandServer::ClientConnection *client) const
+     {
+         const auto fullPathSha = sha256(client->executablePath());
+-        const auto localSha = sha256(QLatin1String("/proc/") + QString::number(client->processId()) + QLatin1String("/exe"));
++#ifdef __FreeBSD__
++        const int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, static_cast<int>(client->processId())};
++        char buf[MAXPATHLEN];
++        size_t cb = sizeof(buf);
++        if (sysctl(mib, 4, buf, &cb, nullptr, 0) != 0) {
++            buf[0] = 0;
++        }
++        const auto localExe = QString::fromLocal8Bit(buf);
++#else
++        const auto localExe = QLatin1String("/proc/") + QString::number(client->processId()) + QLatin1String("/exe");
++#endif
++        const auto localSha = sha256(localExe);
+         const bool trusted = !localSha.isEmpty() && fullPathSha == localSha;
  
+         if (!trusted) {
