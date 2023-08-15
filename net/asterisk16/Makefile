@@ -195,7 +195,9 @@ CXX=            clang++${LLVM_VERSION}
 .endif
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+LIB_DEPENDS+=	libgnutls.so:security/gnutls
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
+LDFLAGS+=	-lgnutls
 .endif
 
 .include <bsd.port.pre.mk>
