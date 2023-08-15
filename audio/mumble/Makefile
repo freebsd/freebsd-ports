@@ -1,6 +1,6 @@
 PORTNAME=	mumble
 DISTVERSION=	1.5.517
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	vvd@FreeBSD.org
@@ -55,7 +55,7 @@ CMAKE_OFF=	bundled-json bundle-qt-translations bundled-speex crash-report \
 		g15 server tracy update
 
 OPTIONS_DEFINE=		ALSA AVAHI DBUS JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RNNOISE
-OPTIONS_DEFAULT=	DBUS LTO
+OPTIONS_DEFAULT=	DBUS
 OPTIONS_RADIO=		SPEECH
 OPTIONS_RADIO_SPEECH=	QTSPEECH SPEECHD
 
@@ -77,6 +77,8 @@ DBUS_CMAKE_BOOL=	dbus
 JACK_CMAKE_BOOL=	jackaudio
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
+LTO_BROKEN=		"QWidget: Cannot create a QWidget without QApplication": \
+			https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273078
 LTO_CMAKE_BOOL=		lto
 
 PIPEWIRE_CMAKE_BOOL=	pipewire
