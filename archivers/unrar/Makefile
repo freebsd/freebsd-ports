@@ -1,9 +1,9 @@
 PORTNAME=	unrar
-PORTVERSION=	6.22
+PORTVERSION=	6.23
 PORTEPOCH=	6
 CATEGORIES+=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/
-DISTNAME=	unrarsrc-6.2.8
+DISTNAME=	unrarsrc-6.2.10
 
 MAINTAINER?=	sunpoet@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
