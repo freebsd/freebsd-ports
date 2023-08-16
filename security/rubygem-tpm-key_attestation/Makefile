@@ -1,5 +1,6 @@
 PORTNAME=	tpm-key_attestation
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bindata>=2.4<3:devel/rubygem-bindata \
-		rubygem-openssl2>2.0:security/rubygem-openssl2 \
+		rubygem-openssl>2.0:security/rubygem-openssl \
 		rubygem-openssl-signature_algorithm>=1.0<2:security/rubygem-openssl-signature_algorithm
 
 USES=		gem
