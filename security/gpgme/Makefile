@@ -69,6 +69,7 @@ NO_TEST=	yes
 CONFIGURE_ARGS+=--enable-languages=""
 ALL_TARGET=	all-am
 INSTALL_TARGET=	install-data
+NO_ARCH=	yes
 NO_TEST=	yes
 .  endif
 
