@@ -1131,6 +1131,7 @@
     SUBDIR += lefthook
     SUBDIR += leiningen
     SUBDIR += lemon
+    SUBDIR += lets
     SUBDIR += level-zero
     SUBDIR += lfcbase
     SUBDIR += lfcxml
