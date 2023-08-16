@@ -1,6 +1,5 @@
 PORTNAME=	fontfeatures
-PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +12,8 @@ WWW=		https://github.com/simoncozens/fontFeatures
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beziers>=0.1.0:graphics/py-beziers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fonttools>=4.28.0:print/py-fonttools@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.28.0:print/py-fonttools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fs2>=0:devel/py-fs2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}glyphtools>=0.7.0:print/py-glyphtools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		python
