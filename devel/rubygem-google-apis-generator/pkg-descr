@@ -1,4 +1,2 @@
 This library includes common base classes and dependencies used by legacy REST
 clients for Google APIs.
-
-See also: https://github.com/googleapis/google-api-ruby-client
