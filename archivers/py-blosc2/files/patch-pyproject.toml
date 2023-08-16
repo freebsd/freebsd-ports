@@ -2,8 +2,8 @@
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools", "scikit-build", "cython", "cmake", "ninja", "oldest-supported-numpy"]
-+requires = ["setuptools", "scikit-build", "cython", "numpy"]
+-requires = ["setuptools", "scikit-build", "cython<3", "cmake", "ninja", "oldest-supported-numpy"]
++requires = ["setuptools", "scikit-build", "cython<3", "numpy"]
  
  [project]
  name = "blosc2"
