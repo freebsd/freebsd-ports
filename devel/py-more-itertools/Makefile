@@ -1,12 +1,13 @@
 PORTNAME=	more-itertools
-PORTVERSION=	9.1.0
+PORTVERSION=	10.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	More routines for operating on iterables, beyond itertools
-WWW=		https://github.com/more-itertools/more-itertools
+WWW=		https://more-itertools.readthedocs.io/en/stable/ \
+		https://github.com/more-itertools/more-itertools
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
