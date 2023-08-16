@@ -1,5 +1,5 @@
 PORTNAME=	gruff
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-histogram>=0:graphics/rubygem-histogram \
-		rubygem-rmagick>=4.2:graphics/rubygem-rmagick
+		rubygem-rmagick>=5.3:graphics/rubygem-rmagick
 
 USES=		gem
 
