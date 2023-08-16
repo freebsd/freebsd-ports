@@ -892,6 +892,7 @@
     SUBDIR += py-arviz
     SUBDIR += py-arybo
     SUBDIR += py-autograd
+    SUBDIR += py-awkward
     SUBDIR += py-baycomp
     SUBDIR += py-bayesian-optimization
     SUBDIR += py-benford_py
