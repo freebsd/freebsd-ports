@@ -77,13 +77,10 @@ KQUEUE_CONFIGURE_ENABLE=	kernel-poll
 NATIVE_IMPLIES=			HIPE
 NATIVE_CONFIGURE_ENABLE=	native-libs
 ODBC_LIB_DEPENDS=		libodbc.so:databases/unixODBC
+ODBC_USES=			localbase:ldflags
 ODBC_CONFIGURE_WITH=		odbc
-ODBC_CFLAGS=			-I/usr/local/include
-ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
-OPENSSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
-			BROKEN_SSL_REASON="Requires OpenSSL 3.0.0 deprecated FIPS_mode routines"
 SCTP_CONFIGURE_ENABLE=		sctp
 THREADS_CONFIGURE_ENABLE=	threads
 WX_USES=			gl
@@ -109,6 +106,11 @@ MAKE_ARGS+=	ARCH=x86
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 MAKE_ARGS+=	ARCH=arm
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CFLAGS+=	-Wno-error=implicit-function-declaration
+OPTIONS_EXCLUDE=	OPENSSL
 .endif
 
 pre-configure:
