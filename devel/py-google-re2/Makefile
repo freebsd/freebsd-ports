@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	RE2 Python bindings
-WWW=		https://github.com/google/re2/tree/abseil/python
+WWW=		https://github.com/google/re2/tree/main/python
 
 LICENSE=	BSD3CLAUSE
 
