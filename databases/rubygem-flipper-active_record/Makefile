@@ -1,11 +1,11 @@
 PORTNAME=	flipper-active_record
-PORTVERSION=	0.28.0
+PORTVERSION=	0.28.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ActiveRecord adapter for Flipper
-WWW=		https://github.com/jnunemaker/flipper
+WWW=		https://github.com/flippercloud/flipper
 
 LICENSE=	MIT
 
