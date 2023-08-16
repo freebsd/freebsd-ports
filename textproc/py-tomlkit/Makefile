@@ -1,12 +1,14 @@
 PORTNAME=	tomlkit
-PORTVERSION=	0.11.8
+PORTVERSION=	0.12.1
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/sdispater/tomlkit/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Style-preserving TOML library
-WWW=		https://github.com/sdispater/tomlkit
+WWW=		https://tomlkit.readthedocs.io/en/latest/ \
+		https://github.com/sdispater/tomlkit
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
