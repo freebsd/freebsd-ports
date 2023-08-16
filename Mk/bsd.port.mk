@@ -3292,17 +3292,21 @@ run-cheri-gnulib-fixup:
 # other things) redefines (u)intptr_t to (unsigned) long with a hard to
 # debug mix of typedefs and #defines.  As this is mostly pointless, replace
 # with an include of the system header until upstream finds a better solution.
-	-@for f in `${FIND} ${WRKDIR} -type f -name stdint.in.h` ; do \
+	@for f in `${FIND} ${WRKDIR} -type f -name stdint.in.h` ; do \
 		if grep -q "typedef long int gl_intptr_t" $${f} ; then \
 			echo "Replacing $${f}" ; \
 			echo "#include_next <stdint.h>" > $${f} ; \
 		fi \
 	done
 # Patch rawmemchr not to use uintptr_t to store arbitrary bytes.
-	-@for f in `${FIND} ${WRKDIR} -type f -name rawmemchr.c` ; do \
+	@for f in `${FIND} ${WRKDIR} -type f -name rawmemchr.c` ; do \
 		if grep -q "typedef uintptr_t longword" $${f} ; then \
 			echo "Replacing $${f}" ; \
-			${PATCH} -s $${f} ${PORTSDIR}/devel/gnulib/files/extrapatch-cheribsd-rawmemchr.patch ; \
+			if grep -q "verify (UINTPTR_WIDTH " $${f} ; then \
+				${PATCH} -s $${f} ${PORTSDIR}/devel/gnulib/files/extrapatch-cheribsd-rawmemchr-v1.patch ; \
+			else \
+				${PATCH} -s $${f} ${PORTSDIR}/devel/gnulib/files/extrapatch-cheribsd-rawmemchr-v2.patch ; \
+			fi ; \
 		fi \
 	done
 .    endif
