@@ -3,10 +3,6 @@ DISTVERSION=	1.8.6
 PORTEPOCH=	1
 CATEGORIES=	x11
 
-# CHERI support (merged upstream)
-PATCH_SITES=	https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/
-PATCHFILES=	77.patch:-p1
-
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 library
 WWW=		https://www.freedesktop.org/Software/xlibs
