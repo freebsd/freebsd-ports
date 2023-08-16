@@ -15,5 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chfast
 
 CMAKE_OFF=	INTX_TESTING
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
