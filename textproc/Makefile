@@ -1379,6 +1379,7 @@
     SUBDIR += py-humanfriendly
     SUBDIR += py-hunspell
     SUBDIR += py-ini2toml
+    SUBDIR += py-interegular
     SUBDIR += py-isbnlib
     SUBDIR += py-isbntools
     SUBDIR += py-iso-639
