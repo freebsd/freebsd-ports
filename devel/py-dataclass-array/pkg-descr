@@ -1,0 +1,5 @@
+DataclassArray are dataclasses which behave like numpy-like arrays (can be
+batched, reshaped, sliced,...), compatible with Jax, TensorFlow, and numpy (with
+torch support planned).
+
+This reduce boilerplate and improve readability.
