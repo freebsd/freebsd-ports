@@ -1,7 +1,7 @@
 PORTNAME=	irdma
-PORTVERSION=	1.1.11
+PORTVERSION=	1.2.17
 CATEGORIES=	net
-MASTER_SITES?=	https://downloadmirror.intel.com/772536/
+MASTER_SITES?=	https://downloadmirror.intel.com/786091/
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	RDMA FreeBSD* driver for Intel® Ethernet Controller E810
