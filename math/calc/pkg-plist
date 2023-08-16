@@ -32,8 +32,10 @@ bin/calc
 %%FULL%%include/calc/zrand.h
 %%FULL%%include/calc/zrandom.h
 lib/libcalc.so
+lib/libcalc.so.%%VERSION_R%%
 lib/libcalc.so.%%VERSION%%
 lib/libcustcalc.so
+lib/libcustcalc.so.%%VERSION_R%%
 lib/libcustcalc.so.%%VERSION%%
 %%FULL%%libexec/cscript/4dsphere
 %%FULL%%libexec/cscript/fproduct
