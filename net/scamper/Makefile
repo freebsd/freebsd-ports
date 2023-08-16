@@ -1,5 +1,5 @@
 PORTNAME=	scamper
-DISTVERSION=	20230605
+PORTVERSION=	20230614b
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
@@ -24,9 +24,10 @@ UPTIME_DESC=	Install sc_uptime
 
 HOIHO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 HOIHO_USES=		localbase:ldflags
-HOIHO_CONFIGURE_WITH=	pcre2 sc_hoiho
+HOIHO_CONFIGURE_ENABLE=	sc_hoiho
+HOIHO_CONFIGURE_WITH=	pcre2
 
 UPTIME_USES=		localbase:ldflags sqlite:3
-UPTIME_CONFIGURE_WITH=	sc_uptime
+UPTIME_CONFIGURE_ENABLE=	sc_uptime
 
 .include <bsd.port.mk>
