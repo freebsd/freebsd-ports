@@ -1,5 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -33,18 +34,18 @@ RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel \
 
 CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
-USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig \
-		python:run qt:5 shebangfix tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig qt:5 \
+		shebangfix tar:xz xorg \
+		python:run
 USE_GL=		egl gbm
 USE_GNOME=	glib20
 USE_KDE=	activities attica auth breeze codecs completion config \
 		configwidgets coreaddons crash dbusaddons decoration \
 		globalaccel i18n iconthemes idletime init itemviews jobwidgets \
 		kcmutils kdeclarative kio kscreenlocker kwayland-integration \
-		newstuff notifications package plasma-framework \
-		plasma-wayland-protocols runner service sonnet textwidgets \
-		wayland widgetsaddons windowsystem xmlgui \
-		doctools:build ecm:build
+		newstuff notifications package plasma-framework runner service \
+		sonnet textwidgets wayland widgetsaddons windowsystem xmlgui \
+		doctools:build ecm:build plasma-wayland-protocols:build
 USE_LDCONFIG=	yes
 USE_QT=		concurrent core dbus declarative gui multimedia network script \
 		sensors uiplugin uitools widgets x11extras xml \
