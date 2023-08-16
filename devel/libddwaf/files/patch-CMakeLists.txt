@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-05-25 10:34:56 UTC
+--- CMakeLists.txt.orig	2023-07-28 08:52:50 UTC
 +++ CMakeLists.txt
 @@ -8,23 +8,23 @@ set(CMAKE_PROJECT_VERSION ${version})
  configure_file(src/version.hpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/version.hpp)
@@ -14,7 +14,7 @@
 +#endif()
  
  set(CMAKE_C_STANDARD 99)
- set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD 20)
  set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
  
 -set(LIBDDWAF_SHARED_LINKER_FLAGS "-static-libstdc++" CACHE STRING "Shared library extra linker flags")
@@ -34,7 +34,7 @@
  
  option(LIBDDWAF_BUILD_SHARED "Build shared library" ON)
  option(LIBDDWAF_BUILD_STATIC "Build shared library" ON)
-@@ -59,7 +59,7 @@ endif()
+@@ -57,7 +57,7 @@ endif()
  
  include(GNUInstallDirs)
  
@@ -43,7 +43,7 @@
  
  set(LIBDDWAF_SOURCE
      ${libddwaf_SOURCE_DIR}/src/ruleset_builder.cpp
-@@ -123,7 +123,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
+@@ -137,7 +137,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
  
  # System dependencies
  set(LIBDDWAF_INTERFACE_LIBRARIES "")
@@ -53,7 +53,7 @@
  
  if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  # needed for glibc <2.17. We compile with --as-needed so the library won't
-@@ -151,6 +152,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+@@ -165,6 +166,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  elseif(WIN32)
      list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ws2_32)
  endif()
@@ -81,7 +81,7 @@
  
  target_link_libraries(libddwaf_objects
      PRIVATE ${LIBDDWAF_PRIVATE_LIBRARIES}
-@@ -175,66 +197,67 @@ if (LIBDDWAF_BUILD_STATIC)
+@@ -189,66 +211,67 @@ if (LIBDDWAF_BUILD_STATIC)
          INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
  
      # Post-processing on the static library
