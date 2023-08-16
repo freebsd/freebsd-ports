@@ -57,7 +57,6 @@
     SUBDIR += badwolf
     SUBDIR += baikal
     SUBDIR += bareos-webui
-    SUBDIR += bareos18-webui
     SUBDIR += bareos19-webui
     SUBDIR += bareos20-webui
     SUBDIR += bareos21-webui
