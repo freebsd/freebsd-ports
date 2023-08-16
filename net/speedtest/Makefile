@@ -21,6 +21,8 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/speedtest \
 		share/man/man5/speedtest.5.gz
 
+CONFLICTS_INSTALL=	py*-speedtest-cli # bin/speedtest
+
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/ ${STAGEDIR}${PREFIX}/share/man/man5/
 	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/bin/speedtest ${STAGEDIR}${PREFIX}/bin/speedtest

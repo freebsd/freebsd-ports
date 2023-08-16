@@ -16,6 +16,8 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
+CONFLICTS_INSTALL=	speedtest # bin/speedtest
+
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	README.rst
