@@ -1,12 +1,12 @@
 PORTNAME=	rmagick
-PORTVERSION=	5.2.0
-PORTREVISION=	1
+PORTVERSION=	5.3.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby binding for ImageMagick
-WWW=		https://github.com/rmagick/rmagick
+WWW=		https://rmagick.github.io/ \
+		https://github.com/rmagick/rmagick
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
