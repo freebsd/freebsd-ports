@@ -1,0 +1,2 @@
+AnyEvent::Connector object has tcp_connect method compatible with that from
+AnyEvent::Socket, and it handles proxy settings transparently.
