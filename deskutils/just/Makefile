@@ -1,6 +1,6 @@
 PORTNAME=	just
 DISTVERSION=	1.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -137,7 +137,21 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 
+OPTIONS_DEFINE=		COMPLETIONS
+OPTIONS_DEFAULT=	COMPLETIONS
+
+COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-COMPLETIONS-on:
+.for _shell in bash fish zsh
+	${STAGEDIR}${PREFIX}/bin/${PORTNAME} --completions ${_shell} \
+		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
 
 .include <bsd.port.mk>
