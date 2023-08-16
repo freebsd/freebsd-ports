@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2023-03-27 19:04:56 UTC
+--- pyproject.toml.orig	2023-06-06 14:42:20 UTC
 +++ pyproject.toml
 @@ -16,10 +16,7 @@ keywords = []
  
@@ -12,16 +12,17 @@
  ]
  
  [project.urls]
-@@ -45,11 +42,9 @@ pyink-use-majority-quotes = true
+@@ -47,11 +44,9 @@ pyink-use-majority-quotes = true
  
  [build-system]
  requires = [
 -    # Build with oldest supported numpy for each Python version.
 -    "numpy~=1.21.2; python_version<'3.11'",
 -    "numpy~=1.23.3; python_version>='3.11'",
-+    "numpy>=1.23.3",
-     "pybind11~=2.10.0",
+-    "pybind11~=2.10.0",
 -    "setuptools~=67.6.0",
++    "numpy>=1.23.3",
++    "pybind11>=2.10.0",
 +    "setuptools",
  ]
  build-backend = "setuptools.build_meta"
