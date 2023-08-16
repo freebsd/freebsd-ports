@@ -1,12 +1,13 @@
 PORTNAME=	pyparsing
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General parsing module for Python
-WWW=		https://github.com/pyparsing/pyparsing
+WWW=		https://pyparsing-docs.readthedocs.io/en/latest/ \
+		https://github.com/pyparsing/pyparsing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
