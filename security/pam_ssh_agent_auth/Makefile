@@ -35,7 +35,7 @@ post-install:
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base } | ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
 IGNORE_SSL=	base openssl30 openssl31
 IGNORE_SSL_REASON=	Compiles but does not generate a working module with OpenSSL 3.0.0 and later
 .endif
