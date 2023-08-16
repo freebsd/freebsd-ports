@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple REST client for Cloud Billing API V1
-WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/google-apis-cloudbilling_v1
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/google-apis-cloudbilling_v1 \
+		https://github.com/googleapis/google-api-ruby-client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

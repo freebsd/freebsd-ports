@@ -5,5 +5,3 @@ the discovery documents published by the service, and they handle most concerns
 such as authentication, pagination, retry, timeouts, and logging. You can use
 this client to access the Cloud Billing API, but note that some services may
 provide a separate modern client that is easier to use.
-
-See also: https://github.com/googleapis/google-api-ruby-client
