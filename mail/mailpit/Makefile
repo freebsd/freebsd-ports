@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -44,7 +44,7 @@ GH_TUPLE=	\
 		golang:net:v0.14.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.12.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.11.1:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.12.0:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:531d2d74bc12:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
@@ -82,13 +82,13 @@ GH_TUPLE=	\
 USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
-		cznic:ccgo:270db78f08da175d432624b3c54fc166da03357c:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
+		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
 		cznic:libc:8014ff305ac880ad7b60918a18992e59405eb7f3:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
-		cznic:memory:2014ace98d6392882e3d171baf4b76b21a0e7813:cznic_memory/vendor/modernc.org/memory \
+		cznic:memory:fc5eddbb190c5019fcae5afac6134503390f0bcb:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
 		cznic:sqlite:a16e15fbb42ad21e3665c92e257b4ec4600f2f15:cznic_sqlite/vendor/modernc.org/sqlite \
-		cznic:strutil:bba0c72b66bb9ced2dfd2ee521b7f16b2cbb39fa:cznic_strutil/vendor/modernc.org/strutil \
+		cznic:strutil:f4c290107e9e43b1bb4a8bc7dcd154eb9b565cd8:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
 pre-build:
