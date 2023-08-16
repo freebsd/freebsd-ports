@@ -1,7 +1,7 @@
 PORTNAME=	iavf
-PORTVERSION=	3.0.31
+PORTVERSION=	3.0.32
 PORTEPOCH=	0
-MASTER_SITES?=	https://downloadmirror.intel.com/772533/
+MASTER_SITES?=	https://downloadmirror.intel.com/786084/
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	40G and 100G FreeBSD Driver for Virtual Function for Intel NIC
