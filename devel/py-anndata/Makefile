@@ -1,13 +1,13 @@
 PORTNAME=	anndata
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Annotated data
-WWW=		https://github.com/scverse/anndata
+WWW=		https://anndata.readthedocs.io/en/latest/ \
+		https://github.com/scverse/anndata
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
