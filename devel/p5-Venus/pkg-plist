@@ -9,6 +9,7 @@ bin/vns
 %%SITE_PERL%%/Venus/Cli.pm
 %%SITE_PERL%%/Venus/Code.pm
 %%SITE_PERL%%/Venus/Config.pm
+%%SITE_PERL%%/Venus/Container.pm
 %%SITE_PERL%%/Venus/Core.pm
 %%SITE_PERL%%/Venus/Core/Class.pm
 %%SITE_PERL%%/Venus/Core/Mixin.pm
@@ -101,6 +102,7 @@ bin/vns
 %%PERL5_MAN3%%/Venus::Cli.3.gz
 %%PERL5_MAN3%%/Venus::Code.3.gz
 %%PERL5_MAN3%%/Venus::Config.3.gz
+%%PERL5_MAN3%%/Venus::Container.3.gz
 %%PERL5_MAN3%%/Venus::Core.3.gz
 %%PERL5_MAN3%%/Venus::Core::Class.3.gz
 %%PERL5_MAN3%%/Venus::Core::Mixin.3.gz
