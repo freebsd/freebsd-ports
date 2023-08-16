@@ -1,5 +1,5 @@
 PORTNAME=	furo
-PORTVERSION=	2023.5.20
+PORTVERSION=	2023.7.26
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
@@ -9,7 +9,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Clean customizable Sphinx documentation theme
-WWW=		https://github.com/pradyunsg/furo
+WWW=		https://pradyunsg.me/furo/ \
+		https://github.com/pradyunsg/furo
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
