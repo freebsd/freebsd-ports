@@ -1,5 +1,5 @@
 PORTNAME=	googletest
-PORTVERSION=	1.13.0
+PORTVERSION=	1.14.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -17,6 +17,8 @@ CMAKE_OFF=	gmock_build_tests gtest_build_samples gtest_build_tests gtest_disable
 CMAKE_ON=	BUILD_GMOCK BUILD_SHARED_LIBS INSTALL_GTEST
 CMAKE_TESTING_ON=	gmock_build_tests gtest_build_tests
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google

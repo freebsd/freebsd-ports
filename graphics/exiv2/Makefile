@@ -1,6 +1,7 @@
 PORTNAME=	exiv2
 DISTVERSION=	0.28.0
 DISTVERSIONSUFFIX=	-Source
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/Exiv2/exiv2/releases/download/v${DISTVERSION}/
