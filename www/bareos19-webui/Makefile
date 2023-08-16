@@ -11,6 +11,9 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3+
 LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 
+DEPRECATED=	Upstream EOL reached
+EXPIRATION_DATE=	2023-09-30
+
 USE_GITHUB=	yes
 
 USES=		cmake cpe gettext php:build
