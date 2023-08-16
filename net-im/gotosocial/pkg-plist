@@ -1,6 +1,7 @@
 @sample etc/gotosocial/config.yaml.sample
 %%WWWDIR%%/template/about.tmpl
 %%WWWDIR%%/template/header.tmpl
+%%WWWDIR%%/template/tag.tmpl
 %%WWWDIR%%/template/thread.tmpl
 %%WWWDIR%%/template/frontend.tmpl
 %%WWWDIR%%/template/oob.tmpl
@@ -51,6 +52,7 @@
 %%WWWDIR%%/assets/Fork-Awesome/css/fork-awesome.min.css
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/assets/logo.png
+%%WWWDIR%%/assets/feditext.svg
 %%WWWDIR%%/assets/dist/index.css
 %%WWWDIR%%/assets/dist/profile.css
 %%WWWDIR%%/assets/dist/_colors.css
@@ -59,6 +61,7 @@
 %%WWWDIR%%/assets/dist/settings-style.css
 %%WWWDIR%%/assets/dist/base.css
 %%WWWDIR%%/assets/dist/frontend.js
+%%WWWDIR%%/assets/dist/tag.css
 %%WWWDIR%%/assets/swagger.yaml
 bin/gotosocial
 share/doc/gotosocial/LICENSE
