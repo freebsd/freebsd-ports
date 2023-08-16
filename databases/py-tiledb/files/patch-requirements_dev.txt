@@ -1,15 +1,16 @@
---- requirements_dev.txt.orig	2023-01-04 19:23:00 UTC
+--- requirements_dev.txt.orig	2023-07-31 14:34:13 UTC
 +++ requirements_dev.txt
-@@ -3,11 +3,8 @@ numpy >= 1.16.5
+@@ -3,12 +3,10 @@ numpy >= 1.16.5
  # ------------------------------------------------
  # ** MUST sync with misc/requirements_wheel.txt **
  # ------------------------------------------------
 -cmake >= 3.23
--cython >= 0.27
- pybind11 >= 2.6.2
+ cython < 3.0
+ pybind11 < 2.11.0
 -setuptools>=42,<=58.3.0
 +setuptools>=42
  setuptools_scm >= 1.5.4
--wheel >= 0.30
+ wheel >= 0.30
  contextvars ;python_version<"3.7"
  dataclasses ;python_version<"3.7"
+-pytest
