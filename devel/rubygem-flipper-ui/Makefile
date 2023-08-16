@@ -1,11 +1,11 @@
 PORTNAME=	flipper-ui
-PORTVERSION=	0.28.0
+PORTVERSION=	0.28.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Rack middleware that provides a fully featured web interface
-WWW=		https://github.com/jnunemaker/flipper
+WWW=		https://github.com/flippercloud/flipper
 
 LICENSE=	MIT
 
