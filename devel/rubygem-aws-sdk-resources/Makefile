@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.167.0
+PORTVERSION=	3.169.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -134,6 +134,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-emr>=1<2:devel/rubygem-aws-sdk-emr \
 		rubygem-aws-sdk-emrcontainers>=1<2:devel/rubygem-aws-sdk-emrcontainers \
 		rubygem-aws-sdk-emrserverless>=1<2:devel/rubygem-aws-sdk-emrserverless \
+		rubygem-aws-sdk-entityresolution>=1<2:devel/rubygem-aws-sdk-entityresolution \
 		rubygem-aws-sdk-eventbridge>=1<2:devel/rubygem-aws-sdk-eventbridge \
 		rubygem-aws-sdk-finspace>=1<2:devel/rubygem-aws-sdk-finspace \
 		rubygem-aws-sdk-finspacedata>=1<2:devel/rubygem-aws-sdk-finspacedata \
@@ -218,6 +219,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-macie2>=1<2:devel/rubygem-aws-sdk-macie2 \
 		rubygem-aws-sdk-mainframemodernization>=1<2:devel/rubygem-aws-sdk-mainframemodernization \
 		rubygem-aws-sdk-managedblockchain>=1<2:devel/rubygem-aws-sdk-managedblockchain \
+		rubygem-aws-sdk-managedblockchainquery>=1<2:devel/rubygem-aws-sdk-managedblockchainquery \
 		rubygem-aws-sdk-managedgrafana>=1<2:devel/rubygem-aws-sdk-managedgrafana \
 		rubygem-aws-sdk-marketplacecatalog>=1<2:devel/rubygem-aws-sdk-marketplacecatalog \
 		rubygem-aws-sdk-marketplacecommerceanalytics>=1<2:devel/rubygem-aws-sdk-marketplacecommerceanalytics \
@@ -232,6 +234,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mediastore>=1<2:devel/rubygem-aws-sdk-mediastore \
 		rubygem-aws-sdk-mediastoredata>=1<2:devel/rubygem-aws-sdk-mediastoredata \
 		rubygem-aws-sdk-mediatailor>=1<2:devel/rubygem-aws-sdk-mediatailor \
+		rubygem-aws-sdk-medicalimaging>=1<2:devel/rubygem-aws-sdk-medicalimaging \
 		rubygem-aws-sdk-memorydb>=1<2:devel/rubygem-aws-sdk-memorydb \
 		rubygem-aws-sdk-mgn>=1<2:devel/rubygem-aws-sdk-mgn \
 		rubygem-aws-sdk-migrationhub>=1<2:devel/rubygem-aws-sdk-migrationhub \
