@@ -32,6 +32,7 @@ post-extract:
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter.cpython-${PYTHON_SUFFIX}.so
+#	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter.cpython-${PYTHON_SUFFIX}.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/lib-dynload/_tkinter*.so
 
 .include <bsd.port.post.mk>
