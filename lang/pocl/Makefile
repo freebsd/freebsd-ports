@@ -1,6 +1,6 @@
 PORTNAME=	pocl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
+DISTVERSION=	4.0
 CATEGORIES=	lang
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -22,7 +22,7 @@ USES=		cmake localbase:ldflags ncurses pkgconfig
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-LLVM_VERSION=	${MESA_LLVM_VER:U15}
+LLVM_VERSION=	${MESA_LLVM_VER:U16}
 CMAKE_ARGS=	-DWITH_LLVM_CONFIG="${LOCALBASE}/llvm${LLVM_VERSION}/bin/llvm-config" \
 		-DPOCL_INSTALL_PKGCONFIG_DIR="${PREFIX}/libdata/pkgconfig" \
 		-DSINGLE_LLVM_LIB=ON \
@@ -40,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Build documentation (needs textproc/py-sphinx)
 DOCS_CMAKE_ON=	-DENABLE_DOCS=ON
 DOCS_CMAKE_OFF=	-DENABLE_DOCS=OFF
-DOCS_USES=	python
+DOCS_USES=	python:3.6+
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>
