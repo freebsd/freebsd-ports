@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	bash:shells/bash
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 USES=		gmake perl5 shebangfix
 USE_PERL5=	run
