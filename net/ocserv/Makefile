@@ -1,5 +1,5 @@
 PORTNAME=	ocserv
-DISTVERSION=	1.1.7
+DISTVERSION=	1.2.0
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libtalloc.so:devel/talloc \
 		libtasn1.so:security/libtasn1
 
-USES=		autoreconf cpe gperf libtool localbase ncurses pathfix \
-		pkgconfig readline tar:xz
+USES=		autoreconf cpe gettext-tools gperf libtool localbase ncurses \
+		pathfix pkgconfig readline tar:xz
 
 CPE_VENDOR=	infradead
 USE_RC_SUBR=	ocserv

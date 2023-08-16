@@ -1,16 +1,16 @@
---- src/occtl/time.c.orig	2017-09-09 08:34:02 UTC
+--- src/occtl/time.c.orig	2023-06-09 13:21:24 UTC
 +++ src/occtl/time.c
 @@ -36,7 +36,7 @@ void print_time_ival7(char output[MAX_TMPSTR_SIZE], ti
  {
  	time_t t = t1 - t2;
  
--	if ((long)t < (long)0) {
+-	if ((long)t < 0) {
 +	if ((long long)t < (long long)0) {
  		/* system clock changed? */
  		snprintf(output, MAX_TMPSTR_SIZE, "   ?   ");
  		return;
 @@ -44,17 +44,17 @@ void print_time_ival7(char output[MAX_TMPSTR_SIZE], ti
- 	
+ 
  	if (t >= 48 * 60 * 60)
  		/* 2 days or more */
 -		snprintf(output, MAX_TMPSTR_SIZE, _("%2ludays"), (long)t / (24 * 60 * 60));
