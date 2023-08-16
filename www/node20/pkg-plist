@@ -1,3 +1,19 @@
+bin/corepack
+bin/node
+include/node/common.gypi
+include/node/config.gypi
+include/node/cppgc/common.h
+include/node/js_native_api.h
+include/node/js_native_api_types.h
+include/node/libplatform/libplatform-export.h
+include/node/libplatform/libplatform.h
+include/node/libplatform/v8-tracing.h
+include/node/node.h
+include/node/node_api.h
+include/node/node_api_types.h
+include/node/node_buffer.h
+include/node/node_object_wrap.h
+include/node/node_version.h
 %%BUNDLED_SSL%%include/node/openssl/aes.h
 %%BUNDLED_SSL%%include/node/openssl/archs/BSD-x86/asm/crypto/buildinf.h
 %%BUNDLED_SSL%%include/node/openssl/archs/BSD-x86/asm/include/crypto/bn_conf.h
@@ -2207,25 +2223,6 @@
 %%BUNDLED_SSL%%include/node/openssl/x509v3_asm.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3_no-asm.h
 %%BUNDLED_SSL%%include/node/openssl/x509v3err.h
-%%PORTDOCS%%%%DOCSDIR%%/gdbinit
-%%PORTDOCS%%%%DOCSDIR%%/lldb_commands.py
-@(,,444) man/man1/node.1.gz
-bin/corepack
-bin/node
-include/node/common.gypi
-include/node/config.gypi
-include/node/cppgc/common.h
-include/node/js_native_api.h
-include/node/js_native_api_types.h
-include/node/libplatform/libplatform-export.h
-include/node/libplatform/libplatform.h
-include/node/libplatform/v8-tracing.h
-include/node/node.h
-include/node/node_api.h
-include/node/node_api_types.h
-include/node/node_buffer.h
-include/node/node_object_wrap.h
-include/node/node_version.h
 include/node/v8-array-buffer.h
 include/node/v8-callbacks.h
 include/node/v8-container.h
@@ -2329,3 +2326,6 @@ lib/node_modules/corepack/shims/yarn.ps1
 lib/node_modules/corepack/shims/yarnpkg
 lib/node_modules/corepack/shims/yarnpkg.cmd
 lib/node_modules/corepack/shims/yarnpkg.ps1
+@(,,444) man/man1/node.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/gdbinit
+%%PORTDOCS%%%%DOCSDIR%%/lldb_commands.py
