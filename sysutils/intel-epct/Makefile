@@ -1,5 +1,5 @@
 PORTNAME=	epct
-PORTVERSION=	1.39.32.5
+PORTVERSION=	1.39.56.9
 CATEGORIES=	sysutils net
 MASTER_SITES=	https://downloadmirror.intel.com/772094/
 PKGNAMEPREFIX=	intel-
@@ -22,7 +22,6 @@ USES=		zip
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-NO_ARCH=	yes
 
 PLIST_FILES=	sbin/epct
 
