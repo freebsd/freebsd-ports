@@ -1,0 +1,24 @@
+--- randperm.c.orig	2023-08-16 14:19:19.078321000 +0100
++++ randperm.c	2023-08-16 14:29:52.026376000 +0100
+@@ -33,6 +33,10 @@
+ 
+ /* Return the floor of the log base 2 of N.  If N is zero, return -1.  */
+ 
++#ifndef SIZE_WIDTH
++#define __SIZE_WIDTH _GL_INTEGER_WIDTH (0, SIZE_T_MAX)
++#define SIZE_WIDTH __SIZE_WIDTH
++#endif
+ ATTRIBUTE_CONST static int
+ floor_lg (size_t n)
+ {
+@@ -44,6 +48,10 @@
+           ? ULONG_WIDTH - 1 - count_leading_zeros_l (n)
+           : ULLONG_WIDTH - 1 - count_leading_zeros_ll (n));
+ }
++#ifdef __SIZE_WIDTH
++#undef SIZE_WIDTH
++#undef __SIZE_WIDTH
++#endif
+ 
+ /* Return an upper bound on the number of random bytes needed to
+    generate the first H elements of a random permutation of N

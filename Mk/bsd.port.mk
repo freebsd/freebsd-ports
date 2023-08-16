@@ -3309,6 +3309,12 @@ run-cheri-gnulib-fixup:
 			fi ; \
 		fi \
 	done
+	@for f in `${FIND} ${WRKDIR} -type f -name randperm.c` ; do \
+		if grep -q "verify (SIZE_WIDTH " $${f} ; then \
+			echo "Replacing $${f}" ; \
+			${PATCH} -s $${f} ${PORTSDIR}/sysutils/coreutils/files/extrapatch-cheribsd-randperm.patch ; \
+		fi \
+	done
 .    endif
 
 .    if !target(run-autotools-fixup)
