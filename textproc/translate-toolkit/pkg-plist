@@ -7,6 +7,7 @@ share/man/man1/html2po.1.gz
 share/man/man1/idml2po.1.gz
 %%INI%%share/man/man1/ini2po.1.gz
 share/man/man1/json2po.1.gz
+%%MARKDOWN%%share/man/man1/md2po.1.gz
 share/man/man1/moz2po.1.gz
 @comment share/man/man1/mozfunny2prop.1.gz
 share/man/man1/mozlang2po.1.gz
@@ -22,6 +23,7 @@ share/man/man1/po2html.1.gz
 share/man/man1/po2idml.1.gz
 %%INI%%share/man/man1/po2ini.1.gz
 share/man/man1/po2json.1.gz
+%%MARKDOWN%%share/man/man1/po2md.1.gz
 share/man/man1/po2moz.1.gz
 share/man/man1/po2mozlang.1.gz
 share/man/man1/po2oo.1.gz

@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.9.2
+PORTVERSION=	3.10.0
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 
@@ -11,7 +11,7 @@ WWW=		https://toolkit.translatehouse.org/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
 		${RUN_DEPENDS}
@@ -34,15 +34,15 @@ SHEBANG_FILES=	tools/* \
 
 MANPAGES=	csv2po csv2tbx dtd2po flatxml2po html2po idml2po json2po moz2po mozlang2po odf2xliff oo2po oo2xliff po2csv po2dtd po2flatxml po2html po2idml po2json po2moz po2mozlang po2oo po2prop po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff pot2po prop2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo
 
-OPTIONS_DEFINE=	ENCODING FLUENT ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
-OPTIONS_DEFAULT=ENCODING FLUENT ICAL INI LANGUAGES LEVENSHTEIN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFINE=	ENCODING FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFAULT=ENCODING FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
 OPTIONS_SUB=	yes
 ENCODING_DESC=	Encoding detection
 FLUENT_DESC=	Fluent translation format support
 ICAL_DESC=	iCal format support
 INI_DESC=	INI format support
-LANGUAGES_DESC=	Languages names
 LEVENSHTEIN_DESC=	Faster matching using Levenshtein
+MARKDOWN_DESC=	Markdown format support
 PHP_DESC=	PHP format support
 RC_DESC=	Windows Resource (.rc) format support
 SPELLCHECK_DESC=Enchant spellchecking system
@@ -51,14 +51,15 @@ TMSERVER_DESC=	Tmserver backend support
 TRADOS_DESC=	Trados format support
 YAML_DESC=	YAML format support
 
-ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.0.1:textproc/py-charset-normalizer@${PY_FLAVOR}
+ENCODING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}charset-normalizer>=3.2.0:textproc/py-charset-normalizer@${PY_FLAVOR}
 FLUENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fluent.syntax>=0.19.0:textproc/py-fluent.syntax@${PY_FLAVOR}
 ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@${PY_FLAVOR}
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
 INI_VARS=		MANPAGES+="ini2po po2ini"
-LANGUAGES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycountry>=22.1.10:textproc/py-pycountry@${PY_FLAVOR}
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}python-Levenshtein>=0.12:devel/py-python-Levenshtein@${PY_FLAVOR}
+MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.1:textproc/py-mistletoe@${PY_FLAVOR}
+MARKDOWN_VARS=		MANPAGES+="md2po po2md"
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.5:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.7:devel/py-pyparsing@${PY_FLAVOR}

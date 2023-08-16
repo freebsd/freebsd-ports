@@ -1,4 +1,4 @@
---- requirements/optional.txt.orig	2022-04-20 09:24:34 UTC
+--- requirements/optional.txt.orig	2023-07-26 04:25:02 UTC
 +++ requirements/optional.txt
 @@ -1,27 +1,27 @@
  -r required.txt
@@ -9,8 +9,8 @@
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--charset-normalizer==3.1.0   # chardet
-+charset-normalizer>=3.1.0   # chardet
+-charset-normalizer==3.2.0   # chardet
++charset-normalizer>=3.2.0   # chardet
  # Tmserver backend
 -cheroot==10.0.0       # tmserver
 +cheroot>=10.0.0       # tmserver
@@ -21,12 +21,12 @@
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI
  # Format support
+-mistletoe==1.1       # Markdown
++mistletoe>=1.1       # Markdown
+ # Format support
 -phply==1.2.6         # PHP
-+phply>=1.2.5         # PHP
- # To provide translations for language names without need for OS package.
--pycountry==22.3.5          # Languages
 -pyenchant==3.2.2     # spellcheck
-+pycountry>=22.3.5          # Languages
++phply>=1.2.6         # PHP
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
 -pyparsing==3.1.0     # RC
