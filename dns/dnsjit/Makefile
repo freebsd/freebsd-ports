@@ -23,7 +23,7 @@ USES=		autoreconf libtool luajit pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	DNS-OARC
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
