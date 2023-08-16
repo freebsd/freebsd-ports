@@ -13,6 +13,7 @@
 %%SITE_PERL%%/Data/Printer/Filter/GLOB.pm
 %%SITE_PERL%%/Data/Printer/Filter/GenericClass.pm
 %%SITE_PERL%%/Data/Printer/Filter/HASH.pm
+%%SITE_PERL%%/Data/Printer/Filter/OBJECT.pm
 %%SITE_PERL%%/Data/Printer/Filter/REF.pm
 %%SITE_PERL%%/Data/Printer/Filter/Regexp.pm
 %%SITE_PERL%%/Data/Printer/Filter/SCALAR.pm
