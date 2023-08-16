@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2023-06-18 16:39:33 UTC
+--- pyproject.toml.orig	2023-07-28 20:37:33 UTC
 +++ pyproject.toml
 @@ -1,12 +1,12 @@
  [build-system]
@@ -16,12 +16,12 @@
  description = "Tools for stamping and signing PDF files"
  authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
  maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
-@@ -64,7 +64,7 @@ opentype = [
-     "fonttools>=4.33.3",
-     # uharfbuzz sometimes includes breaking changes, so
-     # we set an explicit range
--    "uharfbuzz>=0.25.0,<0.36.0",
-+    "uharfbuzz>=0.25.0",
- ]
- image-support = [
-     # Only tested systematically on 8.x,
+@@ -36,7 +36,7 @@ requires-python = ">=3.7"
+ dependencies = [
+     "asn1crypto>=1.5.1",
+     "qrcode>=6.1",
+-    "tzlocal>=4.3",
++    "tzlocal>=4.2",
+     "pyhanko-certvalidator==0.23.*",
+     "click>=7.1.2",
+     "requests>=2.24.0",
