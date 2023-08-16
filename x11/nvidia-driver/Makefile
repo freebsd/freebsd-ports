@@ -12,9 +12,9 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	535.98
+DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -25,6 +25,7 @@ COMMENT?=	NVidia graphics card binary drivers for hardware OpenGL rendering
 WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
+.include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
 # Pull GNU sed(1) for "binary" patching of obj/libglvnd/libEGL.so.1 and
@@ -97,6 +98,9 @@ SUB_LIST+=	KLDNAME=nvidia
 SUB_LIST+=	KLDNAME=nvidia-modeset
 .endif
 
+.if ${NVVERSION} >= 530.03002 && ${NVVERSION} < 545.00
+SUB_PATCHES += surplus-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c
+.endif
 .if ${NVVERSION} < 460.039
 .  if ${NVVERSION} >= 358.009
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_nvidia-modeset_nvidia-modeset-freebsd.c

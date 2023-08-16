@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-libs
-DISTVERSION?=	535.98
+DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux
@@ -13,6 +13,7 @@ COMMENT=	NVidia graphics libraries and programs (Linux version)
 WWW=		https://www.nvidia.com/object/unix.html
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
+.include "${.CURDIR}/../nvidia-driver/Makefile.version"
 .include "${.CURDIR}/../nvidia-driver/Makefile.common"
 
 .if ${DISTVERSION:R} > 390
