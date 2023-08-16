@@ -1,7 +1,7 @@
 PORTNAME=	ixv
-PORTVERSION=	1.5.33
+PORTVERSION=	1.5.34
 PORTEPOCH=	0
-MASTER_SITES?=	https://downloadmirror.intel.com/762491/ \
+MASTER_SITES?=	https://downloadmirror.intel.com/786096/ \
 		https://downloadmirror.intel.com/29626/eng/:man \
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
