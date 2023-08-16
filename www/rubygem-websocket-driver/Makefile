@@ -1,5 +1,5 @@
 PORTNAME=	websocket-driver
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
