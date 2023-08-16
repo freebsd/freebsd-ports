@@ -5,7 +5,7 @@
  
  ${SHAREDLIB}: ${OBJECTS}
 -	$(CC) $+ -shared -lc -o $@
-+	$(CC) ${OBJECTS} -shared -lc -o $@
++	$(CC) ${OBJECTS} -shared -Wl,-soname,libinjection.so.%%SHLIB_VER%% -lc -o $@
  
  ${STATICLIB}: ${OBJECTS}
  	rm -f ${STATICLIB}

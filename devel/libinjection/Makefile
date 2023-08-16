@@ -1,6 +1,6 @@
 PORTNAME=	libinjection
 PORTVERSION=	3.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -18,6 +18,9 @@ WRKSRC_SUBDIR=	src
 USE_GITHUB=	yes
 
 SHEBANG_GLOB=	*.py
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%SHLIB_VER%%|${PORTVERSION:R:R}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libinjection*.h ${STAGEDIR}${PREFIX}/include/
