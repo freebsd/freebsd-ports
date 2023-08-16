@@ -2236,8 +2236,8 @@ include/node/v8-exception.h
 include/node/v8-extension.h
 include/node/v8-external.h
 include/node/v8-forward.h
-include/node/v8-function.h
 include/node/v8-function-callback.h
+include/node/v8-function.h
 include/node/v8-initialization.h
 include/node/v8-internal.h
 include/node/v8-isolate.h
@@ -2277,6 +2277,7 @@ lib/node_modules/corepack/CHANGELOG.md
 lib/node_modules/corepack/LICENSE.md
 lib/node_modules/corepack/README.md
 lib/node_modules/corepack/dist/corepack.js
+lib/node_modules/corepack/dist/lib/corepack.cjs
 lib/node_modules/corepack/dist/npm.js
 lib/node_modules/corepack/dist/npx.js
 lib/node_modules/corepack/dist/pnpm.js

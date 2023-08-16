@@ -1,5 +1,5 @@
 PORTNAME=	node
-PORTVERSION=	18.16.1
+PORTVERSION=	18.17.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
@@ -73,7 +73,11 @@ NLS_BUILD_DEPENDS=	icu>=69.1:devel/icu
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && ${ARCH} == aarch64
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
 
 .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common.gypi
@@ -97,11 +101,5 @@ post-configure:
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && ${ARCH} == aarch64
-CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
-.endif
 
 .include <bsd.port.post.mk>
