@@ -1,7 +1,7 @@
 PORTNAME=	acmetool
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	samm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/hlandau/acme/
 
 LICENSE=	MIT
 
-USES=		go:1.20
+USES=		go
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlandau
