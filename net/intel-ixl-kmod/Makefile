@@ -1,10 +1,10 @@
 PORTNAME?=	ixl
-PORTVERSION?=	1.12.40
+PORTVERSION?=	1.13.4
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES?=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
-MASTER_SITE_SUBDIR?=	762476
+MASTER_SITE_SUBDIR?=	786087
 PKGNAMEPREFIX=	intel-
 PKGNAMESUFFIX=	-kmod
 
@@ -47,8 +47,8 @@ MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support wor
 
 # Fixup for slave ports that use this as a master port. sbruno
 .if ${PORTNAME} == ixl
-ONLY_FOR_ARCHS=		amd64 powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	only supported on amd64 and powerpc64*
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	only supported on 32-bit architectures
 .endif
 
 .if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}
