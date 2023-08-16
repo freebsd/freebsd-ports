@@ -1,11 +1,12 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common utility and base classes for legacy Google REST clients
-WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/google-apis-core
+WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/google-apis-core \
+		https://github.com/googleapis/google-api-ruby-client
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
