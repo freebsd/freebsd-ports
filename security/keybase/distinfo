@@ -1,5 +1,5 @@
-TIMESTAMP = 1675622993
-SHA256 (go/security_keybase/keybase-client-v6.0.4_GH0/go.mod) = c1d31be5d590ee197dffea7799c62ca1395fe340c3c8d1e68736e6c4b49446ad
-SIZE (go/security_keybase/keybase-client-v6.0.4_GH0/go.mod) = 18849
-SHA256 (go/security_keybase/keybase-client-v6.0.4_GH0/keybase-client-v6.0.4_GH0.tar.gz) = 10f1b0fbee30520091a2005886947e34ea8d0f3dc3197a80563e5eb12664cc59
-SIZE (go/security_keybase/keybase-client-v6.0.4_GH0/keybase-client-v6.0.4_GH0.tar.gz) = 57268878
+TIMESTAMP = 1691069930
+SHA256 (go/security_keybase/keybase-client-v6.2.2_GH0/go.mod) = 5f49a7aaa6c482e9ca9bd1b3bd6147a78f50edd8171b4bbf513cf2e3830e4183
+SIZE (go/security_keybase/keybase-client-v6.2.2_GH0/go.mod) = 18668
+SHA256 (go/security_keybase/keybase-client-v6.2.2_GH0/keybase-client-v6.2.2_GH0.tar.gz) = 27bec1e7819a56618fbb13ada02930c09569bafe725513c400899d6a8c9b41d3
+SIZE (go/security_keybase/keybase-client-v6.2.2_GH0/keybase-client-v6.2.2_GH0.tar.gz) = 53208109
