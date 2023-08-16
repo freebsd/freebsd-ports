@@ -1,6 +1,5 @@
 PORTNAME=	tailscale
-PORTVERSION=	1.46.1
-PORTREVISION=	1
+PORTVERSION=	1.48.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-vpn
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 GO_MODULE=	github.com/tailscale/tailscale
 
