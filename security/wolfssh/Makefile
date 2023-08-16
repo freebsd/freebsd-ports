@@ -1,11 +1,12 @@
 PORTNAME=	wolfssh
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.14
 CATEGORIES=	security
 MASTER_SITES=	https://www.wolfssl.com/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight SSH Library
-WWW=		https://www.wolfssl.com/products/wolfssh/
+WWW=		https://www.wolfssl.com/products/wolfssh/ \
+		https://github.com/wolfSSL/wolfssh
 
 LICENSE=	GPLv3
 
