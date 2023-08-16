@@ -1,6 +1,6 @@
---- setup.py.orig	2023-03-26 20:08:04 UTC
+--- setup.py.orig	2023-07-25 19:42:08 UTC
 +++ setup.py
-@@ -227,40 +227,7 @@ class fetch(Command):
+@@ -260,43 +260,7 @@ class fetch(Command):
          if self.sqlite:
              write("  Getting the SQLite amalgamation")
  
@@ -26,8 +26,11 @@
 -            import zlib
 -            tar = tarfile.open("nonexistentname to keep old python happy", 'r', data)
 -            configmember = None
+-            kwargs = {}
+-            if sys.version_info >= (3, 11, 4):
+-                kwargs["filter"] = "tar"
 -            for member in tar.getmembers():
--                tar.extract(member)
+-                tar.extract(member, **kwargs)
 -                # find first file named configure
 -                if not configmember and member.name.endswith("/configure"):
 -                    configmember = member
