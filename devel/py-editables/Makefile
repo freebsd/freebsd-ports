@@ -1,5 +1,5 @@
 PORTNAME=	editables
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.3:devel/py-flit-core@${PY_FLAVOR}
 
-USES=		python
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
