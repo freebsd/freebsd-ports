@@ -2849,6 +2849,7 @@
     SUBDIR += p5-Module-Build-Pluggable
     SUBDIR += p5-Module-Build-Pluggable-CPANfile
     SUBDIR += p5-Module-Build-Pluggable-ReadmeMarkdownFromPod
+    SUBDIR += p5-Module-Build-Prereqs-FromCPANfile
     SUBDIR += p5-Module-Build-Tiny
     SUBDIR += p5-Module-Build-Using-PkgConfig
     SUBDIR += p5-Module-Build-WithXSpp

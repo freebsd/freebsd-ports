@@ -1,0 +1,2 @@
+Module::Build::Prereqs::FromCPANfile reads cpanfile and converts its content
+into valid prereq parameters for new() method of Module::Build.
