@@ -1,5 +1,6 @@
 PORTNAME=	libmaxminddb
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/maxmind/libmaxminddb/releases/download/${PORTVERSION}/
 
