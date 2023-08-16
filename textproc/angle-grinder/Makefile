@@ -11,6 +11,8 @@ WWW=		https://github.com/rcoh/angle-grinder
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_14=	fails to compile: failed to run custom build command for tikv-jemalloc-sys v0.5.3+5.3.0-patched
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rcoh
