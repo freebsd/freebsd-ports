@@ -20,5 +20,6 @@ GH_PROJECT=	octave-cfitsio
 OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
