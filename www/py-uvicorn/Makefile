@@ -1,5 +1,5 @@
 PORTNAME=	uvicorn
-PORTVERSION=	0.22.0
+PORTVERSION=	0.23.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,4 +33,10 @@ STANDARD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httptools>=0.5.0:www/py-httptools@$
 			${PYTHON_PKGNAMEPREFIX}watchfiles>=0.13:devel/py-watchfiles@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}websockets>=10.4:devel/py-websockets@${PY_FLAVOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
