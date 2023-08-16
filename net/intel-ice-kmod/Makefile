@@ -1,7 +1,7 @@
 PORTNAME=	ice
-PORTVERSION=	1.37.11
+PORTVERSION=	1.38.16
 PORTEPOCH=	0
-MASTER_SITES?=	https://downloadmirror.intel.com/772531/
+MASTER_SITES?=	https://downloadmirror.intel.com/786082/
 
 MAINTAINER=	freebsd@intel.com
 COMMENT=	Intel® Network Adapter Driver for E810 Series Devices
