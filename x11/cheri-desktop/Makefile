@@ -26,7 +26,6 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL.so:graphics/libglvnd
 RUN_DEPENDS+=	${LOCALBASE}/lib/libEGL_mesa.so:graphics/mesa-libs
 RUN_DEPENDS+=	${LOCALBASE}/lib/libKF5Plasma.so:x11/kf5-plasma-framework
 RUN_DEPENDS+=	${LOCALBASE}/lib/libKF5WaylandServer.so:x11/kf5-kwayland
-RUN_DEPENDS+=	${LOCALBASE}/lib/libKWaylandServer.so:x11/plasma5-kwayland-server
 RUN_DEPENDS+=	${LOCALBASE}/lib/libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
 RUN_DEPENDS+=	${LOCALBASE}/lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so:x11/plasma5-kwayland-integration
