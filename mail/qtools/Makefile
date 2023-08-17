@@ -14,6 +14,10 @@ LICENSE_NAME=	djb
 LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Upstream last activity in 2003
+EXPIRATION_DATE=	2023-09-30
+BROKEN=	Unfetchable for more than 2 months
+
 RUN_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-weed:mail/ezmlm
 
 USES=		qmail:vars
