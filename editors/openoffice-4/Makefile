@@ -198,16 +198,17 @@ TARGET_ORDER_OVERRIDE=	710:gnome-post-icons
 WITH=	SDK
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN=	fails to compile undefined symbol ERR_GET_FUNC
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
 BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
-.endif
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
-BROKEN_SSL_REASON=	Undefined symbol ERR_GET_FUNC
 .endif
 
 .if defined(WITH_DEBUG)
