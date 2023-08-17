@@ -25,7 +25,7 @@
 #
 # Usage:
 #
-# USES+=	PORT[:(VERSION|wrapper),build,run,tea]
+# USES+=	PORT[:(VERSION|wrapper),build,run,tea,test]
 #
 # where PORT is one of:
 #
@@ -49,7 +49,8 @@
 # tk-wrapper is added. It is NOT possible to select a specific version of
 # Tcl/Tk when using the wrapper.
 #
-# Build-time / Run-time only dependencies can be specified with build or run.
+# Build-time / Run-time / Test-time only dependencies can be specified with
+# build, run or test.
 #
 # Tea can be used for Tcl/Tk extensions that use the Tcl Extension Architecture
 # [http://www.tcl.tk/doc/tea] and allows to set common autoconf parameters.
@@ -208,6 +209,9 @@ BUILD_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
 		${_TCLTK_EXE_LINE}
 .  elif ${tcl_ARGS:Mrun}
 RUN_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
+		${_TCLTK_EXE_LINE}
+.  elif ${tcl_ARGS:Mtest}
+TEST_DEPENDS+=	${_TCLTK_WRAPPER_PORT} \
 		${_TCLTK_EXE_LINE}
 .  else
 RUN_DEPENDS+=	${_TCLTK_WRAPPER_PORT}
