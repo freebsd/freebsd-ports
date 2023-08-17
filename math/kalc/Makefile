@@ -11,6 +11,8 @@ WWW=		https://github.com/bgkillas/kalc
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: Oops, mp_limb_t is 32 bits, but the assembler code in this configuration expects 64 bits
+
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cargo
