@@ -11,6 +11,8 @@ WWW=		https://github.com/akb825/Cuttlefish
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails: error: '__builtin_ia32_roundss' needs target feature sse4.1
+
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 TEST_DEPENDS=	ispc:devel/ispc
 
