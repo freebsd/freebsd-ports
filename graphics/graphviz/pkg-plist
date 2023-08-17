@@ -118,10 +118,10 @@ lib/graphviz/libgvplugin_neato_layout.so.6.0.0
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so.6
 %%POPPLER%%lib/graphviz/libgvplugin_poppler.so.6.0.0
-lib/graphviz/libgvplugin_visio.la
-lib/graphviz/libgvplugin_visio.so
-lib/graphviz/libgvplugin_visio.so.6
-lib/graphviz/libgvplugin_visio.so.6.0.0
+lib/graphviz/libgvplugin_vt100.la
+lib/graphviz/libgvplugin_vt100.so
+lib/graphviz/libgvplugin_vt100.so.6
+lib/graphviz/libgvplugin_vt100.so.6.0.0
 lib/graphviz/libgvplugin_webp.la
 lib/graphviz/libgvplugin_webp.so
 lib/graphviz/libgvplugin_webp.so.6

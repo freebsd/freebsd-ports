@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
-PORTVERSION=	7.1.0
-PORTREVISION=	8
+PORTVERSION=	8.1.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -107,7 +107,7 @@ GTS_LIB_DEPENDS=	libgts.so:graphics/gts
 SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 			libgtkglext-x11-1.0.so:x11-toolkits/gtkglext
 DEVIL_LIB_DEPENDS=	libIL.so:graphics/devil
-GUILE_USES=		guile:2.2
+GUILE_USES=		guile:3.0
 PHP_LIB_DEPENDS=	libpcre.so:devel/pcre \
 			libargon2.so:security/libargon2
 
