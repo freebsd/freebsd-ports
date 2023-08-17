@@ -24,9 +24,9 @@ qmake_ARGS?=	# empty
 _COMMON_DISTS=		3d base charts datavis3d declarative imageformats location multimedia \
 			networkauth quick3d quicktimeline remoteobjects scxml sensors \
 			serialbus serialport speech svg tools translations virtualkeyboard \
-			wayland webchannel webengine websockets
+			wayland webchannel webengine websockets webview
 _QT5_DISTS=		connectivity gamepad graphicaleffects quickcontrols \
-			quickcontrols2 script webglplugin webview \
+			quickcontrols2 script webglplugin \
 			x11extras xmlpatterns
 _QT6_DISTS=		5compat doc httpserver languageserver lottie positioning \
 			quickeffectmaker shadertools

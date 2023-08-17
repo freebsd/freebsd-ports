@@ -134,7 +134,7 @@ _QT_MK_POST_INCLUDED=	qt.mk
 _USE_QT_COMMON=		3d charts datavis3d declarative doc examples imageformats location \
 			multimedia networkauth quick3d quicktimeline remoteobjects scxml \
 			sensors serialbus serialport speech svg virtualkeyboard wayland \
-			webchannel webengine websockets
+			webchannel webengine websockets webview
 
 _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
 			declarative-test designer diag gamepad \
@@ -143,7 +143,7 @@ _USE_QT5_ONLY=		assistant buildtools concurrent connectivity core dbus \
 			qdbus qdbusviewer qdoc qdoc-data qev qmake quickcontrols \
 			quickcontrols2 script scripttools sql sql-mysql sql-odbc \
 			sql-pgsql sql-sqlite2 sql-sqlite3 sql-tds testlib uiplugin \
-			uitools webglplugin webkit websockets-qml webview \
+			uitools webglplugin webkit websockets-qml \
 			widgets x11extras xml xmlpatterns
 .  if ${ARCH} == amd64 || ${ARCH} == i386
 _USE_QT5_ONLY+=		sql-ibase

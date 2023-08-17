@@ -1855,6 +1855,7 @@
     SUBDIR += qt6-httpserver
     SUBDIR += qt6-webchannel
     SUBDIR += qt6-webengine
+    SUBDIR += qt6-webview
     SUBDIR += qt6-websockets
     SUBDIR += quark
     SUBDIR += qutebrowser
