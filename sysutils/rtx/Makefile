@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.8.0
+DISTVERSION=	2023.8.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -208,7 +208,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		semver-1.0.18 \
 		serde-1.0.183 \
 		serde_derive-1.0.183 \
-		serde_json-1.0.104 \
+		serde_json-1.0.105 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.7 \
@@ -239,7 +239,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		time-macros-0.2.11 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.31.0 \
+		tokio-1.32.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.8 \
@@ -308,7 +308,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_gnullvm-0.48.2 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.2 \
-		winnow-0.5.10 \
+		winnow-0.5.12 \
 		winreg-0.10.1 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
