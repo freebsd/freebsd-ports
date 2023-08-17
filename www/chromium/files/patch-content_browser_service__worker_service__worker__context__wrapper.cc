@@ -1,14 +1,15 @@
---- content/browser/service_worker/service_worker_context_wrapper.cc.orig	2023-07-16 15:47:57 UTC
+--- content/browser/service_worker/service_worker_context_wrapper.cc.orig	2023-08-17 07:33:31 UTC
 +++ content/browser/service_worker/service_worker_context_wrapper.cc
-@@ -1396,9 +1396,11 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
-   auto [document_url, key, callback] = std::move(*request);
+@@ -1393,7 +1393,12 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
+     return;
+   }
  
-   DCHECK(document_url.is_valid());
 +#if defined(__clang__) && (__clang_major__ >= 16)
-   TRACE_EVENT1("ServiceWorker",
-                "ServiceWorkerContextWrapper::MaybeProcessPendingWarmUpRequest",
-                "document_url", document_url.spec());
+   auto [document_url, key, callback] = std::move(*request);
++#else
++  auto [d_u, key, callback] = std::move(*request);
++  auto document_url = d_u;
 +#endif
  
-   context_core_->registry()->FindRegistrationForClientUrl(
-       ServiceWorkerRegistry::Purpose::kNotForNavigation,
+   DCHECK(document_url.is_valid());
+   TRACE_EVENT1("ServiceWorker",

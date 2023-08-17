@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2023-03-09 06:31:50 UTC
+--- chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc.orig	2023-08-17 07:33:31 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/key_rotation_command_factory.cc
 @@ -13,7 +13,7 @@
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/linux_key_rotation_command.h"
  #elif BUILDFLAG(IS_MAC)
  #include "chrome/browser/enterprise/connectors/device_trust/key_management/browser/commands/mac_key_rotation_command.h"
-@@ -45,7 +45,7 @@ std::unique_ptr<KeyRotationCommand> KeyRotationCommand
+@@ -46,7 +46,7 @@ std::unique_ptr<KeyRotationCommand> KeyRotationCommand
      scoped_refptr<network::SharedURLLoaderFactory> url_loader_factory) {
  #if BUILDFLAG(IS_WIN)
    return std::make_unique<WinKeyRotationCommand>();

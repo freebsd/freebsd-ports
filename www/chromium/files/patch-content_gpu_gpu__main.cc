@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2023-05-31 08:12:17 UTC
+--- content/gpu/gpu_main.cc.orig	2023-08-17 07:33:31 UTC
 +++ content/gpu/gpu_main.cc
 @@ -90,7 +90,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -175,7 +175,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -177,7 +177,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -285,7 +285,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -287,7 +287,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -420,7 +420,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -422,7 +422,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -45,3 +45,12 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdog_thread,
                         const gpu::GPUInfo* gpu_info,
                         const gpu::GpuPreferences& gpu_prefs) {
+@@ -462,7 +462,7 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+   sandbox_options.accelerated_video_encode_enabled =
+       !gpu_prefs.disable_accelerated_video_encode;
+ 
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Video decoding of many video streams can use thousands of FDs as well as
+   // Exo clients like Lacros.
+   // See https://crbug.com/1417237
