@@ -12,6 +12,8 @@ WWW=		https://github.com/evaleev/libint
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_aarch64=	compilation fails: runaway processes and out-of-memory conditions
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libgmpxx.so:math/gmp
 
