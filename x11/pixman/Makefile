@@ -23,15 +23,11 @@ MAKE_ARGS=	SUBDIRS=pixman
 
 .include <bsd.port.pre.mk>
 
-.if ${ABI:Mpurecap}
-CONFIGURE_ARGS+=	--disable-a64-neon
-.endif
-
 .if ${ARCH} == "armv6" || ${ARCH} == "armv7"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
 LLD_UNSAFE=	yes
-.elif ${ARCH} == "aarch64"
+.elif ${ARCH} == "aarch64" || ${ARCH} == "aarch64c"
 CONFIGURE_ARGS+=	--disable-arm-a64-neon
 .elif (defined(MACHINE_CPU) && !${MACHINE_CPU:Maltivec}) || (${ARCH} == powerpc && !defined(MACHINE_CPU))
 CONFIGURE_ARGS+=	--disable-vmx
