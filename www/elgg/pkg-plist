@@ -4944,7 +4944,6 @@
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/LICENSE
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/README.md
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/composer.json
-%%WWWDIR%%/vendor/dragonmantank/cron-expression/phpstan.neon
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/AbstractField.php
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/CronExpression.php
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php
@@ -16477,6 +16476,7 @@
 %%WWWDIR%%/vendor/league/mime-type-detection/LICENSE
 %%WWWDIR%%/vendor/league/mime-type-detection/composer.json
 %%WWWDIR%%/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionLookup.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionToMimeTypeMap.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php
