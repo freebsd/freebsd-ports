@@ -11,6 +11,9 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream EOL reaches on 2023-12-31
+EXPIRATION_DATE=	2023-12-31
+
 USES=		gmake libtool pgsql:11+
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	pgpool
@@ -36,7 +39,7 @@ PAM_CONFIGURE_ON=	--with-pam
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
@@ -53,4 +56,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
