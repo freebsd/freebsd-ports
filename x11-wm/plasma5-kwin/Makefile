@@ -34,7 +34,7 @@ RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel \
 CONFLICTS_INSTALL=	kwinft # bin/kwin_wayland
 
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig \
-		qt:5 shebangfix tar:xz xorg
+		python:build qt:5 shebangfix tar:xz xorg
 USE_GL=		egl gbm
 USE_GNOME=	glib20
 USE_KDE=	activities attica auth breeze codecs completion config \
