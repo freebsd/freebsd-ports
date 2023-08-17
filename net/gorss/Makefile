@@ -1,7 +1,8 @@
 PORTNAME=	gorss
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
+PORTREVISION=	1
+PORTREVISION=	14
 CATEGORIES=	net www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,6 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	Lallassu
+
+.include <bsd.port.options.mk>
+
+.if (${OPSYS} == FreeBSD && ( ${OSVERSION} < 1400000))
+USES+=		ncurses:port
+.endif
 
 .include "${.CURDIR}/Makefile.deps"
 
