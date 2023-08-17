@@ -11,6 +11,8 @@ WWW=		https://github.com/ekg/seqwish
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation fails: error: use of undeclared identifier '_pdep_u64'
+
 USES=		cmake:noninja
 
 PLIST_FILES=	bin/${PORTNAME}
