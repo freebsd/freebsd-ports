@@ -1,5 +1,5 @@
 PORTNAME=	STAR
-DISTVERSION=	2.7.10b
+DISTVERSION=	2.7.11a
 CATEGORIES=	biology
 PKGNAMEPREFIX=	rna-
 
@@ -16,9 +16,12 @@ NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
+BUILD_DEPENDS=	xxd:sysutils/xxd
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c++11-lang gmake localbase:ldflags
+# FIXME: When built with clang, number of input reads = 0
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
