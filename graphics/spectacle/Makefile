@@ -18,7 +18,7 @@ USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons globalaccel guiaddons i18n jobwidgets kdeclarative \
 		kio libkipi newstuff notifications package purpose \
 		service solid wayland widgetsaddons windowsystem xmlgui \
-		doctools:build ecm:build
+		doctools:build ecm:build plasma-wayland-protocols:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
 		quickcontrols svg widgets x11extras xml \
 		buildtools:build qmake:build testlib:build
