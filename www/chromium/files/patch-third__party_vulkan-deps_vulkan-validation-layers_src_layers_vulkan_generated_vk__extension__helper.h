@@ -1,6 +1,6 @@
---- third_party/vulkan-deps/vulkan-validation-layers/src/layers/vulkan/generated/vk_extension_helper.h.orig	2023-07-16 15:47:57 UTC
+--- third_party/vulkan-deps/vulkan-validation-layers/src/layers/vulkan/generated/vk_extension_helper.h.orig	2023-08-17 07:33:31 UTC
 +++ third_party/vulkan-deps/vulkan-validation-layers/src/layers/vulkan/generated/vk_extension_helper.h
-@@ -68,9 +68,9 @@ class APIVersion {
+@@ -88,9 +88,9 @@ class APIVersion {
  
      bool valid() const { return api_version_ != VVL_UNRECOGNIZED_API_VERSION; }
      uint32_t value() const { return api_version_; }

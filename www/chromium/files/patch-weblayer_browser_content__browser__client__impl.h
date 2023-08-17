@@ -1,6 +1,6 @@
---- weblayer/browser/content_browser_client_impl.h.orig	2023-01-11 09:17:16 UTC
+--- weblayer/browser/content_browser_client_impl.h.orig	2023-08-17 07:33:31 UTC
 +++ weblayer/browser/content_browser_client_impl.h
-@@ -177,7 +177,7 @@ class ContentBrowserClientImpl : public content::Conte
+@@ -183,7 +183,7 @@ class ContentBrowserClientImpl : public content::Conte
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

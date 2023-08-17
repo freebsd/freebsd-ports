@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/supervised_user_service.cc.orig	2023-07-16 15:47:57 UTC
+--- components/supervised_user/core/browser/supervised_user_service.cc.orig	2023-08-17 07:33:31 UTC
 +++ components/supervised_user/core/browser/supervised_user_service.cc
-@@ -69,7 +69,7 @@ void SupervisedUserService::Init() {
+@@ -70,7 +70,7 @@ void SupervisedUserService::Init() {
    supervised_user::FirstTimeInterstitialBannerState banner_state =
        static_cast<supervised_user::FirstTimeInterstitialBannerState>(
            user_prefs_->GetInteger(prefs::kFirstTimeInterstitialBannerState));

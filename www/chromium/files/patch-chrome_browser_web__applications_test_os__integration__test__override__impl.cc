@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.cc.orig	2023-08-17 07:33:31 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.cc
 @@ -127,7 +127,7 @@ std::vector<std::wstring> GetFileExtensionsForProgId(
  }
@@ -117,7 +117,7 @@
    auto callback = base::BindRepeating([](base::FilePath filename_in,
                                           std::string xdg_command,
                                           std::string file_contents) {
-@@ -767,7 +767,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
+@@ -769,7 +769,7 @@ OsIntegrationTestOverrideImpl::~OsIntegrationTestOverr
        }
      }
    }

@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	115.0.5790.170
-PORTREVISION=	1
+PORTVERSION=	116.0.5845.96
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
@@ -112,7 +111,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_allocator_shim=false \
 		use_aura=true \
 		use_custom_libcxx=false \
-		use_gnome_keyring=false \
 		use_lld=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \

@@ -1,4 +1,4 @@
---- chrome/browser/ui/test/test_browser_ui.cc.orig	2023-07-16 15:47:57 UTC
+--- chrome/browser/ui/test/test_browser_ui.cc.orig	2023-08-17 07:33:31 UTC
 +++ chrome/browser/ui/test/test_browser_ui.cc
 @@ -22,7 +22,7 @@
  
@@ -7,9 +7,9 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
+ #include "content/public/common/content_switches.h"
  #include "ui/base/test/skia_gold_matching_algorithm.h"
- #include "ui/compositor/compositor.h"
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  // TODO(https://crbug.com/958242) support Mac for pixel tests.
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
