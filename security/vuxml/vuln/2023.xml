@@ -1,3 +1,76 @@
+  <vuln vid="5666688f-803b-4cf0-9cb1-08c088f2225a">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>116.0.5845.96</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>116.0.5845.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop_15.html">
+	 <p>This update includes 26 security fixes:</p>
+	 <ul>
+	    <li>[1448548] High CVE-2023-2312: Use after free in Offline. Reported by avaue at S.S.L. on 2023-05-24</li>
+	    <li>[1458303] High CVE-2023-4349: Use after free in Device Trust Connectors. Reported by Weipeng Jiang (@Krace) of VRI on 2023-06-27</li>
+	    <li>[1454817] High CVE-2023-4350: Inappropriate implementation in Fullscreen. Reported by Khiem Tran (@duckhiem) on 2023-06-14</li>
+	    <li>[1465833] High CVE-2023-4351: Use after free in Network. Reported by Guang and Weipeng Jiang of VRI on 2023-07-18</li>
+	    <li>[1452076] High CVE-2023-4352: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-06-07</li>
+	    <li>[1458046] High CVE-2023-4353: Heap buffer overflow in ANGLE. Reported by Christoph Diehl / Microsoft Vulnerability Research on 2023-06-27</li>
+	    <li>[1464215] High CVE-2023-4354: Heap buffer overflow in Skia. Reported by Mark Brand of Google Project Zero on 2023-07-12</li>
+	    <li>[1468943] High CVE-2023-4355: Out of bounds memory access in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-07-31</li>
+	    <li>[1449929] Medium CVE-2023-4356: Use after free in Audio. Reported by Zhenghang Xiao (@Kipreyyy) on 2023-05-30</li>
+	    <li>[1458911] Medium CVE-2023-4357: Insufficient validation of untrusted input in XML. Reported by Igor Sak-Sakovskii on 2023-06-28</li>
+	    <li>[1466415] Medium CVE-2023-4358: Use after free in DNS. Reported by Weipeng Jiang (@Krace) of VRI on 2023-07-20</li>
+	    <li>[1443722] Medium CVE-2023-4359: Inappropriate implementation in App Launcher. Reported by @retsew0x01 on 2023-05-09</li>
+	    <li>[1462723] Medium CVE-2023-4360: Inappropriate implementation in Color. Reported by Axel Chong on 2023-07-07</li>
+	    <li>[1465230] Medium CVE-2023-4361: Inappropriate implementation in Autofill. Reported by Thomas Orlita on 2023-07-17</li>
+	    <li>[1316379] Medium CVE-2023-4362: Heap buffer overflow in Mojom IDL. Reported by Zhao Hai of NanJing Cyberpeace TianYu Lab on 2022-04-14</li>
+	    <li>[1367085] Medium CVE-2023-4363: Inappropriate implementation in WebShare. Reported by Alesandro Ortiz on 2022-09-23</li>
+	    <li>[1406922] Medium CVE-2023-4364: Inappropriate implementation in Permission Prompts. Reported by Jasper Rebane on 2023-01-13</li>
+	    <li>[1431043] Medium CVE-2023-4365: Inappropriate implementation in Fullscreen. Reported by Hafiizh on 2023-04-06</li>
+	    <li>[1450784] Medium CVE-2023-4366: Use after free in Extensions. Reported by asnine on 2023-06-02</li>
+	    <li>[1467743] Medium CVE-2023-4367: Insufficient policy enforcement in Extensions API. Reported by Axel Chong on 2023-07-26</li>
+	    <li>[1467751] Medium CVE-2023-4368: Insufficient policy enforcement in Extensions API. Reported by Axel Chong on 2023-07-26</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2312</cvename>
+      <cvename>CVE-2023-4349</cvename>
+      <cvename>CVE-2023-4350</cvename>
+      <cvename>CVE-2023-4351</cvename>
+      <cvename>CVE-2023-4352</cvename>
+      <cvename>CVE-2023-4353</cvename>
+      <cvename>CVE-2023-4354</cvename>
+      <cvename>CVE-2023-4355</cvename>
+      <cvename>CVE-2023-4356</cvename>
+      <cvename>CVE-2023-4357</cvename>
+      <cvename>CVE-2023-4358</cvename>
+      <cvename>CVE-2023-4359</cvename>
+      <cvename>CVE-2023-4360</cvename>
+      <cvename>CVE-2023-4361</cvename>
+      <cvename>CVE-2023-4362</cvename>
+      <cvename>CVE-2023-4363</cvename>
+      <cvename>CVE-2023-4364</cvename>
+      <cvename>CVE-2023-4365</cvename>
+      <cvename>CVE-2023-4366</cvename>
+      <cvename>CVE-2023-4367</cvename>
+      <cvename>CVE-2023-4368</cvename>
+      <url>https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop_15.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-15</discovery>
+      <entry>2023-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="759a5599-3ce8-11ee-a0d1-84a93843eb75">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
