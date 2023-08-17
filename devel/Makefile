@@ -7827,6 +7827,7 @@
     SUBDIR += yder
     SUBDIR += youcompleteme
     SUBDIR += yuck
+    SUBDIR += yyjson
     SUBDIR += z80-asm
     SUBDIR += z80asm
     SUBDIR += z80ex
