@@ -19,20 +19,24 @@ BROKEN_aarch64=	fails to link: undefined symbol: sbrk
 LIB_DEPENDS=	libtiff.so:graphics/tiff		\
 		libcdf.so:science/cdf
 
-MAKE_JOBS_UNSAFE=	yes
-USES=		bison compiler:c++17-lang gl gmake libtool magick:6 motif xorg
-USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
+USES=		bison compiler:c++17-lang gl gmake libtool localbase:ldflags magick:6 motif xorg
 USE_GL=		gl glu
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xt xinerama xext xpm xmu sm ice
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	ARCH=freebsd
-CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+MAKE_JOBS_UNSAFE=	yes
+
+CPPFLAGS+=	${CXXFLAGS}
+
 NO_MTREE=	yes
-PLIST_SUB=	ARCH=freebsd
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+PLIST_SUB=	ARCH=freebsd
 .if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)
 IGNORE=	HDF and NETCDF are conflicting
 .endif
@@ -65,6 +69,17 @@ PLIST_SUB+=	JAVA="@comment "
 .endif
 
 PLIST_SUB+=	UNAMEP=${ARCH}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CC=	clang${LLVM_VERSION}
+CPP=	clang-cpp${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+CONFIGURE_ENV+=	ac_cv_requires_lstdcxx=yes
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.pre.mk>
 
