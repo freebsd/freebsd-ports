@@ -7551,6 +7551,7 @@
     SUBDIR += sdsl-lite
     SUBDIR += sdts++
     SUBDIR += sedsed
+    SUBDIR += seer-gdb
     SUBDIR += selene
     SUBDIR += sentry-cli
     SUBDIR += serd
