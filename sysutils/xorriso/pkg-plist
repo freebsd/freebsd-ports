@@ -8,9 +8,10 @@ include/libisoburn/xorriso.h
 lib/libisoburn.a
 lib/libisoburn.so
 lib/libisoburn.so.1
-lib/libisoburn.so.1.111.0
+lib/libisoburn.so.1.113.0
 libdata/pkgconfig/libisoburn-1.pc
 man/man1/xorrecord.1.gz
 %%TK%%man/man1/xorriso-tcltk.1.gz
 man/man1/xorriso.1.gz
 man/man1/xorrisofs.1.gz
+share/info/xorriso-dd-target.info
