@@ -71,6 +71,7 @@ VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_RUN_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_MESON_ENABLED=	vulkan
+VULKAN_CFLAGS=		-Wno-error=int-conversion # https://gitlab.gnome.org/GNOME/gtk/-/issues/6033
 
 WAYLAND_DESC=		GDK Wayland backend
 WAYLAND_MESON_TRUE=	wayland-backend
