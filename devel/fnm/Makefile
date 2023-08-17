@@ -1,7 +1,6 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.0
-PORTREVISION=	1
+DISTVERSION=	1.35.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -70,7 +69,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crypto-common-0.1.6 \
 		csv-1.2.2 \
 		csv-core-0.1.10 \
-		ctor-0.1.26 \
 		diff-0.1.13 \
 		digest-0.10.7 \
 		dirs-5.0.1 \
@@ -147,14 +145,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		openssl-probe-0.1.5 \
 		option-ext-0.2.0 \
 		os_pipe-1.1.4 \
-		output_vt100-0.1.3 \
 		password-hash-0.4.2 \
 		pbkdf2-0.11.0 \
 		percent-encoding-2.3.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		pretty_assertions-1.3.0 \
+		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.63 \
 		quote-1.0.29 \
 		rand_core-0.6.4 \
@@ -194,14 +191,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.22 \
+		syn-2.0.27 \
 		sysinfo-0.29.3 \
 		tar-0.4.38 \
 		tempfile-3.6.0 \
 		termcolor-1.2.0 \
 		test-log-0.2.12 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
 		time-0.1.45 \
 		time-0.3.22 \
 		time-core-0.1.1 \
