@@ -1558,6 +1558,12 @@ _YARNRC=		${_YARN_HOME}/yarnrc
 _YARN_CMD=		${SETENV} ${_YARN_ENV} ${_YARN_BIN} ${_YARN_FLAGS}
 _YARN_CWD=		${WRKSRC}/ui
 
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN=	Fails to compile with OpenSSL 3 and later
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The limit imposed by poudriere(8) for the maximum number of files allowed to be"
