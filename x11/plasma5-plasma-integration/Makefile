@@ -16,7 +16,7 @@ USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 		coreaddons i18n iconthemes itemviews jobwidgets kio \
 		notifications service solid wayland widgetsaddons windowsystem \
 		xdg-desktop-portal-kde xmlgui \
-		ecm:build \
+		ecm:build plasma-wayland-protocols:build \
 		qqc2-desktop-style:run
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
 		wayland widgets x11extras xml \
