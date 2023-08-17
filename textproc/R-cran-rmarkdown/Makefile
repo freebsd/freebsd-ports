@@ -1,5 +1,5 @@
 PORTNAME=	rmarkdown
-DISTVERSION=	2.23
+DISTVERSION=	2.24
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -23,6 +23,7 @@ CRAN_DEPENDS=	R-cran-bslib>=0.2.5.1:www/R-cran-bslib \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS} \
 		hs-pandoc>=1.14:textproc/hs-pandoc
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 
 USES=		cran:auto-plist
 
