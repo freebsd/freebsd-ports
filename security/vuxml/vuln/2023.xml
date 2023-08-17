@@ -1,3 +1,64 @@
+  <vuln vid="759a5599-3ce8-11ee-a0d1-84a93843eb75">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-connector-c++</name>
+	<range><lt>8.0.33</lt></range>
+      </package>
+      <package>
+	<name>mysql-client57</name>
+	<range><lt>5.7.43</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.43</lt></range>
+      </package>
+      <package>
+	<name>mysql-client80</name>
+	<range><lt>8.0.34</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.34</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujul2023.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 24 new security patches for Oracle
+	    MySQL. 11 of these vulnerabilities may be remotely exploitable without
+	    authentication, i.e., may be exploited over a network without requiring
+	    user credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4899</cvename>
+      <cvename>CVE-2023-0361</cvename>
+      <cvename>CVE-2022-4899</cvename>
+      <cvename>CVE-2022-4899</cvename>
+      <cvename>CVE-2023-22053</cvename>
+      <cvename>CVE-2023-22008</cvename>
+      <cvename>CVE-2023-22046</cvename>
+      <cvename>CVE-2023-22054</cvename>
+      <cvename>CVE-2023-22056</cvename>
+      <cvename>CVE-2023-21950</cvename>
+      <cvename>CVE-2023-22007</cvename>
+      <cvename>CVE-2023-22057</cvename>
+      <cvename>CVE-2023-22033</cvename>
+      <cvename>CVE-2023-22058</cvename>
+      <cvename>CVE-2023-22005</cvename>
+      <cvename>CVE-2023-22048</cvename>
+      <cvename>CVE-2023-22038</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujul2023.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2023-07-18</discovery>
+      <entry>2023-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e561cfe-3c59-11ee-b32e-080027f5fec9">
     <topic>clamav -- Possible denial of service vulnerability in the AutoIt file parser</topic>
     <affects>
