@@ -5,6 +5,11 @@ PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
+.ifdef QEMU_EMULATING
+BROKEN_purecap=	concurrent tags implementation in the user mode is broken
+USE_PKG64=	1
+.endif
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
 WWW=		https://www.cmake.org/
