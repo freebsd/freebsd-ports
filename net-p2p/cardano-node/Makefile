@@ -480,12 +480,18 @@ USE_CABAL=	Diff-0.4.1 \
 		yaml-0.11.11.0_2 \
 		zlib-0.6.3.0_2 \
 		zlib-bindings-0.1.1.5_2
-		
+
 CABAL_PROJECT=		append
 CABAL_EXECUTABLES=	cardano-node cardano-cli cardano-submit-api cardano-tracer
 CABAL_REPOSITORIES=	chap
 
 WITH_LTO=	yes
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN=	fails to compile undefined symbol: DSA_generate_parameters
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's/$$(gitRevFromGit)/"${CARDANO_NODE_HASH}"/' \
