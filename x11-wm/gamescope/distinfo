@@ -1,11 +1,9 @@
-TIMESTAMP = 1692117945
-SHA256 (ValveSoftware-gamescope-3.12.1_GH0.tar.gz) = ef0d9d6c4712d6f5002a66f99d4c58c41feae9bc8c25a763ebb3a6bcb364a934
-SIZE (ValveSoftware-gamescope-3.12.1_GH0.tar.gz) = 439324
+TIMESTAMP = 1692315369
+SHA256 (ValveSoftware-gamescope-3.12.3_GH0.tar.gz) = ebd8f18ca3c2ae426b2523ba6e9e4a88f5fcddd6f7761fbcc94b582a430d07fe
+SIZE (ValveSoftware-gamescope-3.12.3_GH0.tar.gz) = 439564
 SHA256 (nothings-stb-5736b15_GH0.tar.gz) = 8e18fa73396a3206129c55a3bc409401353991470245941d6ba7d8ce57df864f
 SIZE (nothings-stb-5736b15_GH0.tar.gz) = 1392565
 SHA256 (Joshua-Ashton-vkroots-2675710_GH0.tar.gz) = 15b0338bc93fe3df8fbf28b5db76c406c81e2d0625f0ce88739a4975a7916a38
 SIZE (Joshua-Ashton-vkroots-2675710_GH0.tar.gz) = 306247
 SHA256 (a618ea074660.patch) = c79b4b7a231d9c6e34912b8f4a301c6c60b921b6be5fb9c132d999e9a6930424
 SIZE (a618ea074660.patch) = 2589
-SHA256 (eb2080a610be.patch) = eba7d4eae21ecf9fa965289b1c15056ee5801c038635dbf52129b84c450282ee
-SIZE (eb2080a610be.patch) = 768
