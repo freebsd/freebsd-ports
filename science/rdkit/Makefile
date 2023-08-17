@@ -14,6 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_i386=	non-constant-expression cannot be narrowed from type 'unsigned int' to 'npy_intp', see https://github.com/rdkit/rdkit/issues/4934
+BROKEN_FreeBSD_14=	fails to compile as clang crashes
 
 BUILD_DEPENDS=	catch>0:devel/catch \
 		flex:textproc/flex \
