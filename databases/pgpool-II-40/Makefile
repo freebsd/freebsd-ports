@@ -1,5 +1,5 @@
 PORTNAME=	pgpool-II
-PORTVERSION=	4.0.22
+PORTVERSION=	4.0.24
 CATEGORIES=	databases
 MASTER_SITES=	http://www.pgpool.net/mediawiki/images/
 PKGNAMESUFFIX=	40
@@ -10,6 +10,9 @@ WWW=		https://pgpool.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Upstream EOL reaches on 2023-12-31
+EXPIRATION_DATE=	2023-12-31
 
 USES=		gmake libtool pgsql:11+
 USE_LDCONFIG=	yes
