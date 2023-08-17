@@ -1,5 +1,6 @@
 PORTNAME=	accountsservice
 PORTVERSION=	23.13.9
+PORTREVISION=	1
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME}/
 
@@ -14,7 +15,7 @@ BUILD_DEPENDS=	dbus>0:devel/dbus
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libconsolekit.so:sysutils/consolekit2
 
-USES=		cpe gettext gnome localbase:ldflags meson pkgconfig tar:xz
+USES=		cpe gettext gnome meson pkgconfig tar:xz
 CPE_VENDOR=	freedesktop
 USE_GNOME=	glib20 intltool libxslt introspection:build
 USE_LDCONFIG=	yes
