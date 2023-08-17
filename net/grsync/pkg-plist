@@ -19,6 +19,7 @@ share/pixmaps/grsync.png
 %%NLS%%share/locale/hu_HU/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/id_ID/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/ja_JP/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/nl_NL/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/grsync.mo
