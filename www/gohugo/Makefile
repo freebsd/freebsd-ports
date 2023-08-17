@@ -1,15 +1,10 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.115.4
-PORTREVISION=	1
+DISTVERSION=	0.117.0
 PORTEPOCH=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
-
-# https://github.com/gohugoio/hugo/issues/11278
-PATCH_SITES=	https://github.com/gohugoio/hugo/commit/
-PATCHFILES+=	7f058b8bab947db98939ed27a7c2a08468323d08.patch:-p1
 
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	Fast and Flexible Static Site Generator built with love in GoLang
