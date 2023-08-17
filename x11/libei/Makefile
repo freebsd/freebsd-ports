@@ -33,6 +33,9 @@ OPTIONS_DEFINE=	BASU
 OPTIONS_DEFAULT=BASU
 OPTIONS_SUB=	yes
 
+# devel/basu is broken for CheriABI.
+OPTIONS_EXCLUDE_purecap=	BASU
+
 BASU_DESC=		XDG RemoteDesktop portal via basu
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	liboeffis
