@@ -23,7 +23,8 @@ USES=		dos2unix jpeg libtool localbase pkgconfig python \
 		shebangfix
 USE_LDCONFIG=	yes
 
-DOS2UNIX_FILES=	scan/sane/OrbliteScan/LinuxCommon.h scan/sane/orblite.c
+DOS2UNIX_FILES=	fax/filters/cdmfax/jetlib.cpp \
+		scan/sane/OrbliteScan/LinuxCommon.h scan/sane/orblite.c
 SHEBANG_GLOB=	*.py hpps pstotiff
 
 GNU_CONFIGURE=	yes
