@@ -16,6 +16,7 @@ USES=		gmake tar:xz
 USE_LDCONFIG=	yes
 
 MAKEFILE=	Makefile.sharedlibrary
+MAKE_ENV+=	INSTALL_PREFIX=${PREFIX}
 
 MAJOR=	207
 MINOR=	20700
