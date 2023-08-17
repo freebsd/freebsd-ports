@@ -134,6 +134,7 @@
 %%DATADIR%%/dcim/lookups.py
 %%DATADIR%%/dcim/management/__init__.py
 %%DATADIR%%/dcim/management/commands/__init__.py
+%%DATADIR%%/dcim/management/commands/buildschema.py
 %%DATADIR%%/dcim/management/commands/trace_paths.py
 %%DATADIR%%/dcim/migrations/0001_squashed.py
 %%DATADIR%%/dcim/migrations/0002_squashed.py
@@ -553,6 +554,7 @@
 %%DATADIR%%/extras/plugins/registration.py
 %%DATADIR%%/extras/plugins/templates.py
 %%DATADIR%%/extras/plugins/urls.py
+%%DATADIR%%/extras/plugins/utils.py
 %%DATADIR%%/extras/plugins/views.py
 %%DATADIR%%/extras/querysets.py
 %%DATADIR%%/extras/reports.py
@@ -904,6 +906,7 @@
 %%DATADIR%%/templates/dcim/consoleserverport_delete.html
 %%DATADIR%%/templates/dcim/device.html
 %%DATADIR%%/templates/dcim/device/base.html
+%%DATADIR%%/templates/dcim/device/components_base.html
 %%DATADIR%%/templates/dcim/device/consoleports.html
 %%DATADIR%%/templates/dcim/device/consoleserverports.html
 %%DATADIR%%/templates/dcim/device/devicebays.html
@@ -1003,6 +1006,7 @@
 %%DATADIR%%/templates/extras/exporttemplate_list.html
 %%DATADIR%%/templates/extras/htmx/report_result.html
 %%DATADIR%%/templates/extras/htmx/script_result.html
+%%DATADIR%%/templates/extras/imageattachment.html
 %%DATADIR%%/templates/extras/imageattachment_edit.html
 %%DATADIR%%/templates/extras/inc/configcontext_data.html
 %%DATADIR%%/templates/extras/inc/configcontext_format.html
@@ -1020,6 +1024,7 @@
 %%DATADIR%%/templates/extras/report_list.html
 %%DATADIR%%/templates/extras/report_result.html
 %%DATADIR%%/templates/extras/savedfilter.html
+%%DATADIR%%/templates/extras/schema/devicetype_schema.jinja2
 %%DATADIR%%/templates/extras/script.html
 %%DATADIR%%/templates/extras/script/base.html
 %%DATADIR%%/templates/extras/script/jobs.html
@@ -1037,6 +1042,7 @@
 %%DATADIR%%/templates/generic/bulk_rename.html
 %%DATADIR%%/templates/generic/confirmation_form.html
 %%DATADIR%%/templates/generic/object.html
+%%DATADIR%%/templates/generic/object_children.html
 %%DATADIR%%/templates/generic/object_delete.html
 %%DATADIR%%/templates/generic/object_edit.html
 %%DATADIR%%/templates/generic/object_list.html
@@ -1070,7 +1076,6 @@
 %%DATADIR%%/templates/ipam/aggregate/prefixes.html
 %%DATADIR%%/templates/ipam/asn.html
 %%DATADIR%%/templates/ipam/asnrange.html
-%%DATADIR%%/templates/ipam/asnrange/asns.html
 %%DATADIR%%/templates/ipam/asnrange/base.html
 %%DATADIR%%/templates/ipam/fhrpgroup.html
 %%DATADIR%%/templates/ipam/fhrpgroupassignment_edit.html
@@ -1079,7 +1084,6 @@
 %%DATADIR%%/templates/ipam/inc/toggle_available.html
 %%DATADIR%%/templates/ipam/ipaddress.html
 %%DATADIR%%/templates/ipam/ipaddress/base.html
-%%DATADIR%%/templates/ipam/ipaddress/ip_addresses.html
 %%DATADIR%%/templates/ipam/ipaddress_assign.html
 %%DATADIR%%/templates/ipam/ipaddress_bulk_add.html
 %%DATADIR%%/templates/ipam/ipaddress_edit.html
@@ -1104,8 +1108,6 @@
 %%DATADIR%%/templates/ipam/servicetemplate.html
 %%DATADIR%%/templates/ipam/vlan.html
 %%DATADIR%%/templates/ipam/vlan/base.html
-%%DATADIR%%/templates/ipam/vlan/interfaces.html
-%%DATADIR%%/templates/ipam/vlan/vminterfaces.html
 %%DATADIR%%/templates/ipam/vlan_edit.html
 %%DATADIR%%/templates/ipam/vlangroup.html
 %%DATADIR%%/templates/ipam/vrf.html
@@ -1129,7 +1131,6 @@
 %%DATADIR%%/templates/virtualization/cluster.html
 %%DATADIR%%/templates/virtualization/cluster/base.html
 %%DATADIR%%/templates/virtualization/cluster/devices.html
-%%DATADIR%%/templates/virtualization/cluster/virtual_machines.html
 %%DATADIR%%/templates/virtualization/cluster_add_devices.html
 %%DATADIR%%/templates/virtualization/clustergroup.html
 %%DATADIR%%/templates/virtualization/clustertype.html
