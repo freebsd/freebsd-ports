@@ -1,12 +1,9 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.6.2
+DISTVERSION=	3.7.1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libarchive.org/downloads/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	1f35c466aaa9444335a1b854b0b7223b0d2346c2.patch:-p1
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -17,6 +14,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
+USES=		autoreconf cpe iconv libtool localbase:ldflags pathfix \
+		pkgconfig tar:xz
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
+CONFIGURE_ARGS=	--disable-static --without-xml2
+
 OPTIONS_DEFINE=	LZ4 LZO ZSTD
 OPTIONS_DEFAULT=LZ4 ZSTD OPENSSL
 
@@ -25,70 +33,6 @@ OPTIONS_RADIO_CRYPTO=	OPENSSL MBEDTLS NETTLE
 
 CRYPTO_DESC=	Crypto and hashing support
 NETTLE_DESC=	Crypto support via Nettle
-
-USES=		autoreconf cpe iconv libtool localbase:ldflags pathfix \
-		pkgconfig tar:xz
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
-
-CONFIGURE_ARGS=	--disable-static --without-xml2
-
-PLIST_FILES=	bin/bsdcat \
-		bin/bsdcpio \
-		bin/bsdtar \
-		include/archive.h \
-		include/archive_entry.h \
-		lib/libarchive.so \
-		lib/libarchive.so.13 \
-		lib/libarchive.so.1${DISTVERSION} \
-		libdata/pkgconfig/libarchive.pc \
-		man/man1/bsdcat.1.gz \
-		man/man1/bsdcpio.1.gz \
-		man/man1/bsdtar.1.gz \
-		man/man3/archive_entry.3.gz \
-		man/man3/archive_entry_acl.3.gz \
-		man/man3/archive_entry_linkify.3.gz \
-		man/man3/archive_entry_misc.3.gz \
-		man/man3/archive_entry_paths.3.gz \
-		man/man3/archive_entry_perms.3.gz \
-		man/man3/archive_entry_stat.3.gz \
-		man/man3/archive_entry_time.3.gz \
-		man/man3/archive_read.3.gz \
-		man/man3/archive_read_add_passphrase.3.gz \
-		man/man3/archive_read_data.3.gz \
-		man/man3/archive_read_disk.3.gz \
-		man/man3/archive_read_extract.3.gz \
-		man/man3/archive_read_filter.3.gz \
-		man/man3/archive_read_format.3.gz \
-		man/man3/archive_read_free.3.gz \
-		man/man3/archive_read_header.3.gz \
-		man/man3/archive_read_new.3.gz \
-		man/man3/archive_read_open.3.gz \
-		man/man3/archive_read_set_options.3.gz \
-		man/man3/archive_util.3.gz \
-		man/man3/archive_write.3.gz \
-		man/man3/archive_write_blocksize.3.gz \
-		man/man3/archive_write_data.3.gz \
-		man/man3/archive_write_disk.3.gz \
-		man/man3/archive_write_filter.3.gz \
-		man/man3/archive_write_finish_entry.3.gz \
-		man/man3/archive_write_format.3.gz \
-		man/man3/archive_write_free.3.gz \
-		man/man3/archive_write_header.3.gz \
-		man/man3/archive_write_new.3.gz \
-		man/man3/archive_write_open.3.gz \
-		man/man3/archive_write_set_options.3.gz \
-		man/man3/archive_write_set_passphrase.3.gz \
-		man/man3/libarchive.3.gz \
-		man/man3/libarchive_changes.3.gz \
-		man/man3/libarchive_internals.3.gz \
-		man/man5/cpio.5.gz \
-		man/man5/libarchive-formats.5.gz \
-		man/man5/mtree.5.gz \
-		man/man5/tar.5.gz
 
 LZO_LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 LZO_CONFIGURE_WITH=	lzo2
@@ -117,7 +61,7 @@ CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_lib_charset_locale_charset=no
 .endif
 
-# Prior to 1301508 we didn't ship openssl.pc which libarchive now excepts
+# Prior to 1301508 we didn't ship openssl.pc which libarchive now expects
 # so we need to use the old approach on older versions of FreeBSD
 # which is not to define Requires.private in libarchive.pc
 
