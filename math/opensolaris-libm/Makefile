@@ -1,7 +1,7 @@
 PORTNAME=	opensolaris-libm
 PORTVERSION=	2006.01.31
-PORTREVISION=	5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +11,9 @@ WWW=		https://docs.oracle.com/cd/E19422-01/819-3693/ncg_lib.html
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/usr/src/OPENSOLARIS.LICENSE
 
+BROKEN_FreeBSD_14=	fails to compile: conflicting types for 'lround'
 ONLY_FOR_ARCHS=	amd64	# i386 possible with much work
+
 PORTSCOUT=	ignore:1
 
 USE_GITHUB=	yes
