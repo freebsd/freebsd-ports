@@ -1,5 +1,5 @@
 PORTNAME=	libcouchbase
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.8
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/couchbase/${PORTNAME}/releases/download/${PORTVERSION}/
 

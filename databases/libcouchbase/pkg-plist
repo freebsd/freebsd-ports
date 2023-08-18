@@ -3,6 +3,7 @@ bin/cbc-admin
 bin/cbc-bucket-create
 bin/cbc-bucket-delete
 bin/cbc-bucket-flush
+bin/cbc-bucket-list
 bin/cbc-cat
 bin/cbc-collection-id
 bin/cbc-collection-manifest
@@ -69,7 +70,7 @@ include/libcouchbase/vbucket.h
 include/libcouchbase/visibility.h
 lib/libcouchbase.so
 lib/libcouchbase.so.8
-lib/libcouchbase.so.8.0.10
+lib/libcouchbase.so.8.0.16
 lib/libcouchbase/libcouchbase_libev.so
 lib/libcouchbase/libcouchbase_libevent.so
 lib/libcouchbase/libcouchbase_libuv.so
