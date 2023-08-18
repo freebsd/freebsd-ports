@@ -1,8 +1,6 @@
 PORTNAME=	hydrogen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1-29
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-gebfbc6418
+DISTVERSION=	1.5.2
 CATEGORIES=	math
 PKGNAMESUFFIX=	-linear-algebra
 
@@ -23,7 +21,8 @@ GH_PROJECT=	Elemental
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	Hydrogen_ENABLE_TESTING
-CMAKE_TESTING_OFF=	Hydrogen_ENABLE_TESTING # tests fail to configure, see https://github.com/LLNL/Elemental/issues/140
+CMAKE_TESTING_ON=	Hydrogen_ENABLE_TESTING # not clear how to run tests, see https://github.com/LLNL/Elemental/issues/156
+CMAKE_TESTING_TARGET=
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
