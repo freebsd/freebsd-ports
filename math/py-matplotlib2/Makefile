@@ -12,6 +12,10 @@ WWW=		https://matplotlib.org/
 
 LICENSE=	PSFL
 
+BROKEN_FreeBSD_14=	fails to compile: ISO C++17 does not allow 'register' storage class specifier
+DEPRECATED=	Upstream support ended in 2020 and do not support python3 versions existing on the tree
+EXPIRATION_DATE=	2023-09-30
+
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
