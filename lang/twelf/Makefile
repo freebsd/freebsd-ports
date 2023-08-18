@@ -13,8 +13,7 @@ WWW=		http://www.cs.cmu.edu/~twelf
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	invalid target: self
-BROKEN_FreeBSD_13=	invalid target: self
+BROKEN=	invalid target: self
 
 RUN_DEPENDS=	mlton:lang/mlton
 BUILD_DEPENDS=	mlton:lang/mlton \
