@@ -26,8 +26,8 @@ MAKE_ENV+=	WITHOUT_PIE=true
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400088
-IGNORE=	builds only on FreeBSD head with minimum version 1400088
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400093
+IGNORE=	builds only on FreeBSD head with minimum version 1400093
 .endif
 
 do-install:
