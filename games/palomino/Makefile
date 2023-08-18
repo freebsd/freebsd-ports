@@ -15,6 +15,7 @@ WWW=		http://www.palomino3d.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE_GNU_GPL_2.txt
+BROKEN_FreeBSD_14=	fails to compile:  no matching function for call to 'make_pair'
 
 LIB_DEPENDS=	libosg.so:graphics/osg34
 
@@ -22,28 +23,29 @@ USES=		alias compiler:c++11-lang cmake:insource,noninja gl lua:51 tar:xz
 USE_CXXSTD=	gnu++98
 USE_GL=		gl glu
 
-MISC_VER=	20091027
-MODELS_VER=	20090615
-SOUNDS_VER=	20080704
-TERRAIN_VER=	20080206
+DESKTOP_ENTRIES=	"Palomino" "" "${PORTNAME}" \
+			"${PORTNAME}" "Game;ArcadeGame;" ""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PORTDOCS=	*
 
-DESKTOP_ENTRIES=	"Palomino" "" "${PORTNAME}" \
-			"${PORTNAME}" "Game;ArcadeGame;" ""
-
 OPTIONS_DEFINE=	DOCS GUI PLIB SDL
 OPTIONS_DEFAULT=GUI SDL
 OPTIONS_SUB=	yes
 
-PLIB_DESC=		Enable sound support through plib
-PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 GUI_DESC=		Enable FLTK GUI
+PLIB_DESC=		Enable sound support through plib
+
 GUI_LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
+PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 SDL_USES=		sdl
 SDL_USE=		SDL=sdl,mixer
+
+MISC_VER=	20091027
+MODELS_VER=	20090615
+SOUNDS_VER=	20080704
+TERRAIN_VER=	20080206
 
 post-patch:
 	@${FIND} ${WRKSRC}/CMakeModules -type f -print0 | ${XARGS} -0 \
