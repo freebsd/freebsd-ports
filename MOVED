@@ -7784,3 +7784,4 @@ www/bareos18-webui|www/bareos19-webui|2023-08-16|Has expired
 sysutils/devcpu-data-amd|sysutils/cpu-microcode-amd|2023-08-16|Reorganize CPU microcode ports
 sysutils/devcpu-data-intel|sysutils/cpu-microcode-intel|2023-08-16|Reorganize CPU microcode ports
 sysutils/devcpu-data|sysutils/cpu-microcode-rc|2023-08-16|Reorganize CPU microcode ports
+devel/py-python-Levenshtein|devel/py-Levenshtein|2023-08-17|Rename to match upstream

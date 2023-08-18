@@ -5397,7 +5397,7 @@
     SUBDIR += py-pytest4-cache
     SUBDIR += py-pytest4-cov
     SUBDIR += py-pytest4-flakes
-    SUBDIR += py-python-Levenshtein
+    SUBDIR += py-Levenshtein
     SUBDIR += py-python-application
     SUBDIR += py-python-bugzilla
     SUBDIR += py-python-dbusmock
