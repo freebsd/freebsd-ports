@@ -1,17 +1,11 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.2.2
-PORTREVISION=	12
+DISTVERSION=	1.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/commit/
-# https://gitlab.com/inkscape/inkscape/-/merge_requests/4463
-PATCHFILES+=	c5fc06a7c29d6be9e2fb18b841e973a193428332.patch:-p1 \
-		40c4147ec66319f42129ab253d0483f91329419c.patch:-p1 \
-		57c85eec491e07949497fa67edc7c76eafde7471.patch:-p1
-#		362f987096833dd1dfa223be82fc6a97c3795f6c.patch:-p1
-PATCHFILES+=	fdc7329ba5036ef5cde7bb5e61ed52a69850f5d8.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/4483
-PATCHFILES+=	781e29cd3538.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/5111
+PATCHFILES+=	3db96bfbac475022a32b70473b767b21a8d70c7f.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/issues/4427
+PATCHFILES+=	00851fede7f9162cbcacf81258d1dda823b88a5c.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/5650
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -28,10 +22,10 @@ LICENSE_FILE_LGPL3  =	${WRKSRC}/LICENSES/LGPL-3.0.txt
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 LICENSE_FILE_MPL11  =	${WRKSRC}/LICENSES/MPL-1.1.txt
 
+BUILD_DEPENDS=	ragel:devel/ragel
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libpopt.so:devel/popt \
 		libgc.so:devel/boehm-gc \
-		libgdl-3.so:x11-toolkits/gdl \
 		libgsl.so:math/gsl \
 		liblcms2.so:graphics/lcms2 \
 		libfribidi.so:converters/fribidi \
@@ -43,6 +37,8 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libsoup-2.4.so:devel/libsoup \
 		libyaml.so:textproc/libyaml \
 		libdouble-conversion.so:devel/double-conversion \
+		libenchant-2.so:textproc/enchant2 \
+		libepoxy.so:graphics/libepoxy \
 		lib2geom.so:math/lib2geom
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}appdirs>0:devel/py-appdirs@${PY_FLAVOR} \
@@ -53,22 +49,25 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		fig2dev:print/fig2dev
+TEST_DEPENDS=	googletest>0:devel/googletest \
+		bash:shells/bash
 
-USES=		compiler:c++17-lang cmake cpe desktop-file-utils ghostscript:run \
+USES=		compiler:c++17-lang cmake:testing cpe desktop-file-utils ghostscript:run \
 		gnome iconv:wchar_t jpeg pathfix pkgconfig python \
 		readline shebangfix tar:xz xorg
-USE_GNOME=	gdkpixbuf2 gtkmm30 libxml2 libxslt
+USE_GNOME=	cairo gdkpixbuf2 gtkmm30 gtksourceview4 libxml2 libxslt
+USE_PYTHON=	cython
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-DATETAG=	2022-12-01_b0a8486541
-
+DATETAG=	2023-07-21_0e150ed6c4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 SHEBANG_FILES=	share/extensions/*.py share/extensions/genpofiles.sh \
 		share/templates/*.py man/fix-roff-punct
 
-OPTIONS_DEFINE=		OPENMP POPPLER SCRIBUS VISIO CDR DBUS WPG GVFS NLS GSPELL
+OPTIONS_DEFINE=		OPENMP POPPLER SCRIBUS VISIO CDR WPG GVFS NLS GSPELL
 OPTIONS_DEFAULT=	POPPLER VISIO CDR WPG GM GSPELL
 OPTIONS_DEFAULT_amd64=	OPENMP
 OPTIONS_DEFAULT_powerpc64=	OPENMP
@@ -81,10 +80,6 @@ CDR_DESC=		Support for CorelDRAW graphics
 CDR_CMAKE_BOOL=		WITH_LIBCDR
 CDR_LIB_DEPENDS=	librevenge-stream-0.0.so:textproc/librevenge \
 			libcdr-0.1.so:graphics/libcdr01
-
-DBUS_CMAKE_BOOL=	WITH_DBUS
-DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
-			libdbus-1.so:devel/dbus
 
 GVFS_USE=		GNOME=gvfs
 
@@ -119,7 +114,7 @@ NLS_CMAKE_BOOL=		WITH_NLS
 NLS_USES=		gettext
 
 GSPELL_DESC=		Support for spell checking through gspell
-GSPELL_CMAKE_BOOL= 	WITH_GSPELL
+GSPELL_CMAKE_BOOL=	WITH_GSPELL
 GSPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 
 post-patch:

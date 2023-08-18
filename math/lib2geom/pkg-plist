@@ -93,5 +93,5 @@ lib/cmake/2Geom/2GeomConfigVersion.cmake
 lib/cmake/2Geom/2GeomTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/2Geom/2GeomTargets.cmake
 lib/lib2geom.so
-lib/lib2geom.so.1.2.0
+lib/lib2geom.so.%%VERSION%%
 libdata/pkgconfig/2geom.pc
