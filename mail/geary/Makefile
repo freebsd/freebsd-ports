@@ -16,6 +16,8 @@ WWW=		https://wiki.gnome.org/Apps/Geary
 LICENSE=	BSD2CLAUSE CC-BY-3.0 LGPL21+
 LICENSE_COMB=	multi
 
+BROKEN_FreeBSD_14=	Fails to compile with multiple errors related to Vala
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libappstream-glib.so:devel/appstream-glib \
 		libcanberra.so:audio/libcanberra \
