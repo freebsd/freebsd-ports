@@ -10,6 +10,9 @@ WWW=		http://www.morettoni.net/tinystats.en.html
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	djbdns got removed, port is no longer required
+EXPIRATION_DATE=	2023-09-18
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=
 
