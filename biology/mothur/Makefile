@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake localbase readline
 USE_GITHUB=	yes
-USE_CXXSTD=	c++11 # not all C++ files are compiled with -std=c++11 which causes failure in addtargets2.cpp due to a collision of the 'byte' symbol with std::byte
+#USE_CXXSTD=	c++11 # not all C++ files are compiled with -std=c++11 which causes failure in addtargets2.cpp due to a collision of the 'byte' symbol with std::byte
 
 MAKE_ARGS=	INSTALL_DIR=${STAGEDIR}${PREFIX}/bin
 
@@ -23,6 +23,15 @@ ALL_TARGET=	${PORTNAME}
 BINARY_ALIAS=	g++=${CXX}
 
 PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CC=	clang${LLVM_VERSION}
+CPP=	clang-cpp${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+.endif
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
