@@ -14,6 +14,8 @@ WWW=		https://motion-project.github.io/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+BROKEN=	fails to compile: undefined symbol: WebP*
+
 # Dependencies
 LIB_DEPENDS=	libwebp.so:graphics/webp \
 		libmicrohttpd.so:www/libmicrohttpd
