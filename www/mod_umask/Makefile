@@ -11,6 +11,8 @@ WWW=		http://www.outoforder.cc/projects/httpd/mod_umask/
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_14=	fails to build: incompatible function pointer types
+
 USES=		apache tar:bzip2
 GNU_CONFIGURE=	yes
 
