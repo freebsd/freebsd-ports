@@ -1,5 +1,5 @@
 PORTNAME=	qiskit-terra
-DISTVERSION=	0.25.0
+DISTVERSION=	0.25.1
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=3.0.0:devel/py-stevedore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}symengine>=0.9:math/py-symengine@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tweedledum>=1.1:science/py-tweedledum@${PY_FLAVOR}
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust@${PY_FLAVOR} \
 		${PY_DEPENDS}
@@ -71,11 +71,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		ppv-lite86-0.2.17 \
 		priority-queue-1.3.1 \
 		proc-macro2-1.0.59 \
-		pyo3-0.19.1 \
-		pyo3-build-config-0.19.1 \
-		pyo3-ffi-0.19.1 \
-		pyo3-macros-0.19.1 \
-		pyo3-macros-backend-0.19.1 \
+		pyo3-0.19.2 \
+		pyo3-build-config-0.19.2 \
+		pyo3-ffi-0.19.2 \
+		pyo3-macros-0.19.2 \
+		pyo3-macros-backend-0.19.2 \
 		quote-1.0.28 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		rustc-hash-1.1.0 \
-		rustworkx-core-0.13.0 \
+		rustworkx-core-0.13.1 \
 		scopeguard-1.1.0 \
 		smallvec-1.10.0 \
 		syn-1.0.109 \
