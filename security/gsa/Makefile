@@ -12,6 +12,8 @@ WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 
+BROKEN_FreeBSD_14=	fails to build: 0308010C:digital envelope routines::unsupported
+
 BUILD_DEPENDS=	yarn:www/yarn
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
 
