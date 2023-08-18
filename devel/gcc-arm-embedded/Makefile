@@ -101,6 +101,10 @@ VAR_TO_SUBMAKE_NOEXPAND=	CONFIGURE_ENV MAKE_ENV
 #IGNORE=	PURE option is not valid anymore, no libraries are bundled
 #.endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USE_GCC=	yes
+.endif
+
 post-extract:
 .if ${PORT_OPTIONS:MPURE}
 .for L in ${BUNDLED_LIBS}
