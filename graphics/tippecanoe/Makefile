@@ -9,6 +9,8 @@ WWW=		https://github.com/felt/tippecanoe
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_FreeBSD_14=	fails to compile: static_assert failed due to requirement
+
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 BUILD_DEPENDS=	bash:shells/bash
 
