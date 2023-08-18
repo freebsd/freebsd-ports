@@ -12,6 +12,7 @@ WWW=		https://ceph.com/
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	dual
 
+BROKEN_FreeBSD_14=	fails to build: static_assert failed due to requirement
 # even though i386 will build, it is not really advised.
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
