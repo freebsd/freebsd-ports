@@ -334,13 +334,15 @@ lib/cmake/hydrogen/modules/FindGMP.cmake
 lib/cmake/hydrogen/modules/FindHALF.cmake
 lib/cmake/hydrogen/modules/FindMPC.cmake
 lib/cmake/hydrogen/modules/FindMPFR.cmake
-lib/cmake/hydrogen/modules/FindNVML.cmake
 lib/cmake/hydrogen/modules/FindNVTX.cmake
 lib/cmake/hydrogen/modules/FindQD.cmake
 lib/cmake/hydrogen/modules/FindQuadmath.cmake
 lib/cmake/hydrogen/modules/FindROCBLAS.cmake
+lib/cmake/hydrogen/modules/FindRoctracer.cmake
 lib/cmake/hydrogen/modules/FindVTUNE.cmake
 lib/cmake/hydrogen/modules/FindValgrind.cmake
+lib/cmake/hydrogen/modules/HydrogenCleanupHIPTargets.cmake
 lib/cmake/hydrogen/modules/HydrogenETIGeneration.cmake
 lib/cmake/hydrogen/modules/PrintHydrogenSummary.cmake
 lib/libHydrogen_CXX.so
+lib/libHydrogen_CXX.so.1.5.2
