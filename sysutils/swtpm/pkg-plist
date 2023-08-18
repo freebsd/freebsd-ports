@@ -1,6 +1,7 @@
 bin/swtpm
 bin/swtpm_bios
 bin/swtpm_cert
+bin/swtpm_cuse
 bin/swtpm_ioctl
 bin/swtpm_localca
 bin/swtpm_setup
