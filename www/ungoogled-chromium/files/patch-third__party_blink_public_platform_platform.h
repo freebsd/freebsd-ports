@@ -1,6 +1,6 @@
---- third_party/blink/public/platform/platform.h.orig	2023-06-05 19:39:05 UTC
+--- third_party/blink/public/platform/platform.h.orig	2023-08-18 10:26:52 UTC
 +++ third_party/blink/public/platform/platform.h
-@@ -344,7 +344,7 @@ class BLINK_PLATFORM_EXPORT Platform {
+@@ -339,7 +339,7 @@ class BLINK_PLATFORM_EXPORT Platform {
      return nullptr;
    }
  

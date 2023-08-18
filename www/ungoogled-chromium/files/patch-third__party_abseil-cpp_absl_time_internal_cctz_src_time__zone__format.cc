@@ -1,6 +1,6 @@
---- third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_format.cc.orig	2022-10-01 07:40:07 UTC
+--- third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_format.cc.orig	2023-08-18 10:26:52 UTC
 +++ third_party/abseil-cpp/absl/time/internal/cctz/src/time_zone_format.cc
-@@ -19,7 +19,7 @@
+@@ -21,7 +21,7 @@
  #endif
  
  #if defined(HAS_STRPTIME) && HAS_STRPTIME

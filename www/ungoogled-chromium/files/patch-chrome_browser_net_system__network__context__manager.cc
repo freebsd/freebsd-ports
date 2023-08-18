@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-08-18 10:26:52 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -93,7 +93,7 @@
  
@@ -54,7 +54,7 @@
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -992,7 +992,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
+@@ -977,7 +977,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

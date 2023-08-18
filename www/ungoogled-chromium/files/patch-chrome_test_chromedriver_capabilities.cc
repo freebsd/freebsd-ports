@@ -1,4 +1,4 @@
---- chrome/test/chromedriver/capabilities.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/test/chromedriver/capabilities.cc.orig	2023-08-18 10:26:52 UTC
 +++ chrome/test/chromedriver/capabilities.cc
 @@ -355,7 +355,11 @@ Status ParseMobileEmulation(const base::Value& option,
                          "'version' field of type string");
@@ -7,7 +7,7 @@
 +#if defined(__clang__) && (__clang_major__ >= 15)
          brands.emplace_back(*brand, *version);
 +#else
-+        brands.emplace_back(BrandVersion{*brand, *version});
++        brands.emplace_back() = {*brand, *version};
 +#endif
        }
  
@@ -19,7 +19,7 @@
 +#if defined(__clang__) && (__clang_major__ >= 15)
          full_version_list.emplace_back(*brand, *version);
 +#else
-+        full_version_list.emplace_back(BrandVersion{*brand, *version});
++        full_version_list.emplace_back() = {*brand, *version};
 +#endif
        }
  

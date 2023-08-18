@@ -1,15 +1,15 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2023-07-21 09:49:17 UTC
-+++ third_party/blink/renderer/core/layout/layout_view.cc
-@@ -68,7 +68,7 @@
+--- third_party/blink/renderer/core/layout/ng/layout_ng_view.cc.orig	2023-08-18 10:26:52 UTC
++++ third_party/blink/renderer/core/layout/ng/layout_ng_view.cc
+@@ -15,7 +15,7 @@
+ #include "third_party/blink/renderer/core/svg/svg_document_extensions.h"
  #include "ui/display/screen_info.h"
- #include "ui/gfx/geometry/quad_f.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -323,7 +323,7 @@ void LayoutView::UpdateLayout() {
+@@ -57,7 +57,7 @@ void LayoutNGView::UpdateLayout() {
      fragmentation_context_.Clear();
    }
  

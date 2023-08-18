@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_forward.h.orig	2023-03-10 11:01:21 UTC
+--- base/allocator/partition_allocator/partition_alloc_forward.h.orig	2023-08-18 10:26:52 UTC
 +++ base/allocator/partition_allocator/partition_alloc_forward.h
-@@ -27,9 +27,13 @@ namespace internal {
+@@ -28,9 +28,13 @@ namespace internal {
  // the second one 16. We could technically return something different for
  // malloc() and operator new(), but this would complicate things, and most of
  // our allocations are presumably coming from operator new() anyway.

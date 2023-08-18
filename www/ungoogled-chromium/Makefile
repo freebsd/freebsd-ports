@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	115.0.5790.170
-PORTREVISION=	1
+PORTVERSION=	116.0.5845.96
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -109,7 +108,6 @@ GN_ARGS+=	fatal_linker_warnings=false \
 		use_allocator_shim=false \
 		use_aura=true \
 		use_custom_libcxx=false \
-		use_gnome_keyring=false \
 		use_lld=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \

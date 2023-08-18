@@ -1,6 +1,6 @@
---- third_party/boringssl/src/util/generate_build_files.py.orig	2023-05-05 12:12:41 UTC
+--- third_party/boringssl/src/util/generate_build_files.py.orig	2023-08-18 10:26:52 UTC
 +++ third_party/boringssl/src/util/generate_build_files.py
-@@ -787,10 +787,10 @@ def main(platforms):
+@@ -776,10 +776,10 @@ def main(platforms):
    ]
  
    # Generate err_data.c
@@ -15,7 +15,7 @@
    crypto_c_files.append('err_data.c')
    crypto_c_files.sort()
  
-@@ -803,11 +803,11 @@ def main(platforms):
+@@ -792,11 +792,11 @@ def main(platforms):
    crypto_test_files = []
    if EMBED_TEST_DATA:
      # Generate crypto_test_data.cc

@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-06-05 19:39:05 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-08-18 10:26:52 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
 @@ -71,7 +71,7 @@
  #include "ui/ozone/platform/wayland/host/wayland_cursor_factory.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/platform/wayland/host/linux_ui_delegate_wayland.h"
  #endif
  
-@@ -246,7 +246,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -255,7 +255,7 @@ class OzonePlatformWayland : public OzonePlatform,
  
      supported_buffer_formats_ =
          connection_->buffer_manager_host()->GetSupportedBufferFormats();
@@ -18,7 +18,7 @@
      linux_ui_delegate_ =
          std::make_unique<LinuxUiDelegateWayland>(connection_.get());
  #endif
-@@ -472,7 +472,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -480,7 +480,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  
