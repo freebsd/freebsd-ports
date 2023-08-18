@@ -1,0 +1,32 @@
+# Common rules for nvidia-drm-*-kmod ports
+
+MAINTAINER=	ashafer@badland.io
+COMMENT=	NVIDIA DRM Kernel Module
+WWW=		https://github.com/amshafer/nvidia-driver
+
+ONLY_FOR_ARCHS=	amd64
+USES=		kmod uidfix
+
+SUB_FILES=	20-nvidia-drm-outputclass.conf
+
+RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver
+
+.include "${.CURDIR}/../../x11/nvidia-driver/Makefile.version"
+
+LICENSE_FILE=	${WRKSRC}/nvidia/doc/license.txt
+
+NVIDIA_GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
+USE_GITHUB=	yes
+GH_ACCOUNT=	amshafer freebsd:drm
+GH_PROJECT=	nvidia-driver drm-kmod:drm
+GH_TAGNAME:=	${NVIDIA_GH_TAGNAME} ${DRM_KMOD_GH_TAGNAME}:drm
+
+PLIST_FILES=	${KMODDIR}/nvidia-drm.ko \
+		share/X11/xorg.conf.d/20-nvidia-drm-outputclass.conf
+
+MAKE_ENV+=	DRMKMODDIR=${WRKDIR}/drm-kmod-${DRM_KMOD_GH_TAGNAME}/
+WRKSRC_SUBDIR=	nvidia/src/nvidia-drm/
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/
+	${INSTALL_DATA} ${WRKDIR}/20-nvidia-drm-outputclass.conf ${STAGEDIR}${PREFIX}/share/X11/xorg.conf.d/

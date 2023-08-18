@@ -1,0 +1,8 @@
+Section "OutputClass"
+    Identifier "nvidia"
+    MatchDriver "nvidia-drm"
+    Driver "nvidia"
+    Option "PrimaryGPU" "yes"
+    ModulePath "%%LOCALBASE%%/lib/nvidia/xorg"
+    ModulePath "%%LOCALBASE%%/lib/xorg/modules"
+EndSection
