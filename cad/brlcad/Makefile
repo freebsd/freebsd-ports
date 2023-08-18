@@ -23,23 +23,32 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 USES=		bison:alias cmake:insource cpe gl pathfix pkgconfig python:env \
 		tar:bzip2 tk xorg
 USE_GL=		gl glu
+USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 		xorgproto xrender xscrnsaver xt xxf86vm
-USE_LDCONFIG=	yes
+
+CMAKE_OFF=	BRLCAD_ENABLE_STRICT
+CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
+
+TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	py[23][0-9]-epsilon
 
+MANPREFIX=	${PREFIX}/${PORTNAME}/share
 NO_MTREE=	yes
 
 WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-CMAKE_OFF=	BRLCAD_ENABLE_STRICT
-CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
-MANPREFIX=	${PREFIX}/${PORTNAME}/share
+.include <bsd.port.options.mk>
 
-TEST_TARGET=	check
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=14
+CC=	clang${LLVM_VERSION}
+CPP=	clang-cpp${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+-exact Tcl 8\.6\.10+Tcl 8.6+' \
