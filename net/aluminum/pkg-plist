@@ -22,6 +22,7 @@ include/aluminum/ht/bcast.hpp
 include/aluminum/ht/communicator.hpp
 include/aluminum/ht/gather.hpp
 include/aluminum/ht/gatherv.hpp
+include/aluminum/ht/multisendrecv.hpp
 include/aluminum/ht/pt2pt.hpp
 include/aluminum/ht/reduce.hpp
 include/aluminum/ht/reduce_scatter.hpp
@@ -42,6 +43,7 @@ include/aluminum/mpi/bcast.hpp
 include/aluminum/mpi/communicator.hpp
 include/aluminum/mpi/gather.hpp
 include/aluminum/mpi/gatherv.hpp
+include/aluminum/mpi/multisendrecv.hpp
 include/aluminum/mpi/pt2pt.hpp
 include/aluminum/mpi/reduce.hpp
 include/aluminum/mpi/reduce_scatter.hpp
@@ -63,6 +65,11 @@ include/aluminum/profiling.hpp
 include/aluminum/progress.hpp
 include/aluminum/state.hpp
 include/aluminum/trace.hpp
+include/aluminum/traits/ht_traits.hpp
+include/aluminum/traits/mpi_traits.hpp
+include/aluminum/traits/nccl_traits.hpp
+include/aluminum/traits/traits.hpp
+include/aluminum/traits/traits_base.hpp
 include/aluminum/tuning_params.hpp
 include/aluminum/utils/caching_allocator.hpp
 include/aluminum/utils/locked_resource_pool.hpp
@@ -78,4 +85,4 @@ lib/cmake/aluminum/FindHWLOC.cmake
 lib/cmake/aluminum/FindNCCL.cmake
 lib/cmake/aluminum/FindRoctracer.cmake
 lib/libAl.so
-lib/libAl.so.1.3.1
+lib/libAl.so.1.4.0
