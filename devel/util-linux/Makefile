@@ -1,5 +1,5 @@
 PORTNAME=	util-linux
-DISTVERSION=	2.39.1
+DISTVERSION=	2.39.2
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--disable-nls --disable-ipcrm --disable-ipcs \
 		--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check # tests fail due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273196
 
 CONFLICTS_INSTALL=	heirloom-doctools
 
