@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cargo ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 USE_GITHUB=	yes
 GH_ACCOUNT=	ogham
 
@@ -106,6 +104,12 @@ COMPLETIONS_DESC=		Install bash, fish and zsh shell completions
 COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 				share/fish/vendor_completions.d/${PORTNAME}.fish \
 				share/zsh/site-functions/_${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN=	Fails to detect OpenSSL 3.0.0 and later
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
