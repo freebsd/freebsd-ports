@@ -11,6 +11,8 @@ WWW=		https://bitbucket.org/Coin3D/coin/wiki/Home
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
 
+BROKEN_FreeBSD_14=	error: couldn't compile and link with Motif
+
 LIB_DEPENDS=	libCoin.so:graphics/Coin
 
 USES=		gl libtool motif pathfix perl5 shebangfix xorg
