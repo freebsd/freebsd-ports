@@ -12,6 +12,8 @@ WWW=		https://evolution.genetics.washington.edu/lamarc/
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_14=	fails to compile: no matching function for call to 'make_pair'
+
 USE_CXXSTD=	c++98
 
 GNU_CONFIGURE=	yes
