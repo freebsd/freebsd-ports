@@ -39,6 +39,15 @@ DIST_PDF=	cgx_${PORTVERSION}.pdf
 DIST_SOURCES=	cgx_${PORTVERSION}.all${EXTRACT_SUFX}
 PSVIEWER?=	gv
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CC=	clang${LLVM_VERSION}
+CPP=	clang-cpp${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
