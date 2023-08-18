@@ -13,6 +13,8 @@ LICENSE_NAME=	Vienna RNA License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
+BROKEN_FreeBSD_14=	fails to compile: no member named 'bind2nd' in namespace 'std'
+
 BUILD_DEPENDS=	bash:shells/bash \
 		libgd>0:graphics/gd # for the static lib
 LIB_DEPENDS=	libgmp.so:math/gmp \
