@@ -1,6 +1,6 @@
---- SConstruct.orig	2015-09-17 12:46:24 UTC
+--- SConstruct.orig	2023-08-18 19:57:03 UTC
 +++ SConstruct
-@@ -74,6 +74,9 @@ else:
+@@ -76,6 +76,9 @@ else:
  
  opts = Variables(files=[SAVED_CONFIG])
  opts.AddVariables(
@@ -10,7 +10,7 @@
    PathVariable('PREFIX',
                 'Directory to install under',
                 default_prefix,
-@@ -208,6 +211,7 @@ opts.Save(SAVED_CONFIG, env)
+@@ -210,6 +213,7 @@ opts.Save(SAVED_CONFIG, env)
  thisdir = os.getcwd()
  libdir = '$LIBDIR'
  incdir = '$PREFIX/include/serf-$MAJOR'
@@ -18,7 +18,7 @@
  
  # This version string is used in the dynamic library name, and for Mac OS X also
  # for the current_version and compatibility_version options in the .dylib
-@@ -364,8 +368,8 @@ else:
+@@ -366,8 +370,8 @@ else:
    ### there is probably a better way to run/capture output.
    ### env.ParseConfig() may be handy for getting this stuff into the build
    if CALLOUT_OKAY:
@@ -29,7 +29,7 @@
    else:
      apr_libs = ''
      apu_libs = ''
-@@ -406,6 +410,8 @@ pkgconfig = env.Textfile('serf-%d.pc' % 
+@@ -408,6 +412,8 @@ pkgconfig = env.Textfile('serf-%d.pc' % (MAJOR,),
  
  env.Default(lib_static, lib_shared, pkgconfig)
  
@@ -38,7 +38,7 @@
  if CALLOUT_OKAY:
    conf = Configure(env)
  
-@@ -437,7 +443,7 @@ if sys.platform == 'darwin':
+@@ -439,7 +445,7 @@ if sys.platform == 'darwin':
  env.Alias('install-lib', [install_static, install_shared,
                            ])
  env.Alias('install-inc', env.Install(incdir, HEADER_FILES))
