@@ -1,5 +1,6 @@
 PORTNAME=	artifactory
 DISTVERSION=	5.8.3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://bintray.com/artifact/download/jfrog/artifactory/
 DISTNAME=	jfrog-${PORTNAME}-oss-${PORTVERSION}
@@ -12,6 +13,8 @@ LICENSE=	GPLv3 APACHE20
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.AFFERO
 LICENSE_FILE_APACHE20=	${WRKSRC}/tomcat/LICENSE
+
+FORBIDDEN=	Ships a very vulnerable Tomcat 8.5.23
 
 RUN_DEPENDS=	bash:shells/bash
 
