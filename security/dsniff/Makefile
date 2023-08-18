@@ -12,6 +12,8 @@ WWW=		https://www.monkey.org/~dugsong/dsniff/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_14=	fails to compile : conflicting types for 'pcap_init'
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnids.a:net/libnids
 LIB_DEPENDS=	libnet.so:net/libnet
 
