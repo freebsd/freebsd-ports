@@ -10,6 +10,8 @@ WWW=		https://stuntrally.tuxfamily.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt
 
+BROKEN=	fails to compile: member access into incomplete type Ogre::
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USE_GITHUB=	yes
