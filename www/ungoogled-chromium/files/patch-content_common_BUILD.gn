@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2023-06-05 19:39:05 UTC
+--- content/common/BUILD.gn.orig	2023-08-18 10:26:52 UTC
 +++ content/common/BUILD.gn
-@@ -432,6 +432,9 @@ if (is_linux || is_chromeos) {
+@@ -434,6 +434,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
@@ -10,7 +10,7 @@
    }
  }
  
-@@ -477,7 +480,7 @@ mojom("mojo_bindings") {
+@@ -479,7 +482,7 @@ mojom("mojo_bindings") {
    if (enable_ipc_logging) {
      enabled_features += [ "ipc_logging" ]
    }

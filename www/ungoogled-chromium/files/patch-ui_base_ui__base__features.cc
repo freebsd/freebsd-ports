@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2023-07-21 09:49:17 UTC
+--- ui/base/ui_base_features.cc.orig	2023-08-18 10:26:52 UTC
 +++ ui/base/ui_base_features.cc
 @@ -206,7 +206,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -500,7 +500,7 @@ ChromeRefresh2023Level GetChromeRefresh2023Level() {
+@@ -478,7 +478,7 @@ ChromeRefresh2023Level GetChromeRefresh2023Level() {
    return level;
  }
  

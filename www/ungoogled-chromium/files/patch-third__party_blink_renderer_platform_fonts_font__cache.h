@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2023-05-05 12:12:41 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2023-08-18 10:26:52 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
-@@ -58,7 +58,7 @@
+@@ -57,7 +57,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
  #include "third_party/skia/include/core/SkRefCnt.h"
  
@@ -9,7 +9,7 @@
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -193,7 +193,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -187,7 +187,7 @@ class PLATFORM_EXPORT FontCache final {
    static void PrewarmFamily(const AtomicString& family_name) {}
  #endif
  
@@ -18,7 +18,7 @@
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -276,7 +276,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -263,7 +263,7 @@ class PLATFORM_EXPORT FontCache final {
        const char* locale_family_name);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -27,7 +27,7 @@
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -357,7 +357,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -344,7 +344,7 @@ class PLATFORM_EXPORT FontCache final {
                                     const FontFaceCreationParams&,
                                     std::string& name);
  
@@ -36,8 +36,8 @@
    static AtomicString GetFamilyNameForCharacter(SkFontMgr*,
                                                  UChar32,
                                                  const FontDescription&,
-@@ -398,7 +398,7 @@ class PLATFORM_EXPORT FontCache final {
-   std::unique_ptr<FallbackFamilyStyleCache> fallback_params_cache_;
+@@ -382,7 +382,7 @@ class PLATFORM_EXPORT FontCache final {
+   bool is_test_font_mgr_ = false;
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2023-08-18 10:26:52 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -364,18 +364,18 @@
+@@ -375,18 +375,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -22,7 +22,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/connectors/analysis/local_binary_upload_service_factory.h"
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
-@@ -545,7 +545,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -567,7 +567,7 @@ void ChromeBrowserMainExtraPartsProfiles::
      BreadcrumbManagerKeyedServiceFactory::GetInstance();
    }
    browser_sync::UserEventServiceFactory::GetInstance();
@@ -31,7 +31,7 @@
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    BrowsingDataHistoryObserverService::Factory::GetInstance();
-@@ -616,12 +616,12 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -644,12 +644,12 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_ANDROID)
    DriveServiceFactory::GetInstance();
  #endif
@@ -46,7 +46,7 @@
    enterprise_signals::UserPermissionServiceFactory::GetInstance();
    enterprise_connectors::DeviceTrustServiceFactory::GetInstance();
    enterprise_connectors::DeviceTrustConnectorServiceFactory::GetInstance();
-@@ -729,12 +729,12 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -762,12 +762,12 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -61,7 +61,7 @@
    enterprise_idle::IdleServiceFactory::GetInstance();
  #endif
    ModelTypeStoreServiceFactory::GetInstance();
-@@ -802,7 +802,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -841,7 +841,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    PredictionServiceFactory::GetInstance();
  
    PrimaryAccountPolicyManagerFactory::GetInstance();

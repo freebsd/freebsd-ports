@@ -1,6 +1,6 @@
---- chrome/renderer/chrome_render_frame_observer.cc.orig	2023-06-05 19:39:05 UTC
+--- chrome/renderer/chrome_render_frame_observer.cc.orig	2023-08-18 10:26:52 UTC
 +++ chrome/renderer/chrome_render_frame_observer.cc
-@@ -348,7 +348,7 @@ void ChromeRenderFrameObserver::OnDestruct() {
+@@ -353,7 +353,7 @@ void ChromeRenderFrameObserver::OnDestruct() {
  
  void ChromeRenderFrameObserver::DraggableRegionsChanged() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
