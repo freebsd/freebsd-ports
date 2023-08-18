@@ -49,16 +49,10 @@ PYTHON_BINARY_ALIAS=	python3-config=${PYTHON_CMD}-config
 TASKS_MAKE_ARGS=	TASKS=1
 TLS_MAKE_ARGS_OFF=	NOTLS=1
 
-.include <bsd.port.options.mk>
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
-CFLAGS+=	-Wno-error=incompatible-pointer-types-discards-qualifiers
+CFLAGS+=	-Wno-error=deprecated-declarations -Wno-error=incompatible-pointer-types-discards-qualifiers
 .endif
 
 post-patch:
