@@ -10,6 +10,8 @@ WWW=		https://github.com/hmatuschek/sdr-wspr
 
 LICENSE=	GPLv3
 
+BROKEN_FreeBSD_14=	fails to build: non-floating-point argument in call to function '__builtin_isfinite'
+
 LIB_DEPENDS=	libsdr-gui.so:comms/libsdr-gui
 
 USES=		cmake compiler:gcc-c++11-lib fortran pkgconfig qt:5
