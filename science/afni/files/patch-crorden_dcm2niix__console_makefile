@@ -1,4 +1,4 @@
---- crorden/dcm2niix_console/makefile.orig	2021-12-19 17:24:45 UTC
+--- crorden/dcm2niix_console/makefile.orig	2023-08-17 23:49:49 UTC
 +++ crorden/dcm2niix_console/makefile
 @@ -1,5 +1,5 @@
  # Regular use
@@ -7,18 +7,18 @@
  
  # Debugging
  #CFLAGS=-g
-@@ -22,7 +22,7 @@ ifneq ($(OS),Windows_NT)
- 		#CFLAGS=-dead_strip -O3
- 	   # ponder -sectcreate later [rickr]
+@@ -35,7 +35,7 @@ ifneq ($(OS),Windows_NT)
+ 		#CFLAGS= -O3
+ 		# ponder -sectcreate later [rickr]
  		# CFLAGS=-O3 -sectcreate __TEXT __info_plist Info.plist
--		CFLAGS= -O3
-+		CXXFLAGS= -O3
+-		CFLAGS=-O3
++		CXXFLAGS=-O3
  		#Apple notarization requires a Info.plist
  		# For .app bundles, the Info.plist is a separate file, for executables it is appended as a section
  		#you can check that the Info.plist section has been inserted with either of these commands
-@@ -32,4 +32,4 @@ ifneq ($(OS),Windows_NT)
+@@ -46,4 +46,4 @@ ifneq ($(OS),Windows_NT)
  	endif
  endif
  all:
--	g++ $(CFLAGS) -I. $(JFLAGS) main_console.cpp nii_foreign.cpp nii_dicom.cpp jpg_0XC3.cpp ujpeg.cpp nifti1_io_core.cpp nii_ortho.cpp nii_dicom_batch.cpp  -o dcm2niix -DmyDisableOpenJPEG
+-	g++ $(CFLAGS) -I. $(JSFLAGS) $(JFLAGS) $(LFLAGS) main_console.cpp nii_foreign.cpp nii_dicom.cpp jpg_0XC3.cpp ujpeg.cpp nifti1_io_core.cpp nii_ortho.cpp nii_dicom_batch.cpp -o dcm2niix -DmyDisableOpenJPEG
 +	$(CXX) $(CXXFLAGS) -I. $(JFLAGS) main_console.cpp nii_foreign.cpp nii_dicom.cpp jpg_0XC3.cpp ujpeg.cpp nifti1_io_core.cpp nii_ortho.cpp nii_dicom_batch.cpp  -o dcm2niix -DmyDisableOpenJPEG
