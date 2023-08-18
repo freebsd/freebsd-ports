@@ -1,5 +1,5 @@
 PORTNAME=	libxmlb
-DISTVERSION=	0.3.11
+DISTVERSION=	0.3.13
 CATEGORIES=	textproc
 
 MAINTAINER=	desktop@FreeBSD.org
