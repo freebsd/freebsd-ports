@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.29-15487 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g384c807d6a
+DISTVERSION=	0.0.29-15497 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g454cb69700
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -82,7 +82,7 @@ VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	USE_VULKAN
 
 # XXX Unbundle audio/rtmidi
-GH_TUPLE+=		thestk:rtmidi:5.0.0:rtmidi/3rdparty/rtmidi/rtmidi
+GH_TUPLE+=		thestk:rtmidi:6.0.0:rtmidi/3rdparty/rtmidi/rtmidi
 ALSA_LIB_DEPENDS+=	libasound.so:audio/alsa-lib
 ALSA_CMAKE_BOOL+= 	RTMIDI_API_ALSA
 JACK_LIB_DEPENDS+=	libjack.so:audio/jack
