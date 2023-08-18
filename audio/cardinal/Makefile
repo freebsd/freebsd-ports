@@ -45,4 +45,13 @@ PORTDOCS=	*
 LTO_MAKE_ARGS=	WITH_LTO=true
 LTO_BROKEN=	Fails to build with LTO because it is gcc-centered
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CC=	clang${LLVM_VERSION}
+CPP=	clang-cpp${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+.endif
+
 .include <bsd.port.mk>
