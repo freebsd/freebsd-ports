@@ -1,4 +1,4 @@
---- configure.ac.orig	2018-06-06 19:34:34 UTC
+--- configure.ac.orig	2023-08-18 02:50:39 UTC
 +++ configure.ac
 @@ -37,7 +37,7 @@ dnl Check for programs.
  dnl
@@ -9,7 +9,7 @@
  AC_PROG_INSTALL
  
  
-@@ -553,7 +553,7 @@ dnl
+@@ -554,7 +554,7 @@ dnl
  AC_MSG_CHECKING(whether to use SIMD-optimized routines)
  USE_SIMD=no
  case $host_cpu in

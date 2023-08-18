@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--disable-sigchld-handler
 .endif
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
 .endif
 
 post-install:
