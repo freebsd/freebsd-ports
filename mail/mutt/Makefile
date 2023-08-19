@@ -1,6 +1,5 @@
 PORTNAME=	mutt
-DISTVERSION=	2.2.10
-PORTREVISION=	3
+DISTVERSION=	2.2.11
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
