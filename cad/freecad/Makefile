@@ -98,9 +98,11 @@ COLLADA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycollada>0:graphics/py-pycollada@${
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB=	WEBENGINE=""
 USE_QT+=	webengine
 .else
-USE_QT+=	webkit
+CMAKE_ARGS+=	-DBUILD_WEB:BOOL=OFF
+PLIST_SUB=	WEBENGINE="@comment "
 .endif
 
 post-patch:
