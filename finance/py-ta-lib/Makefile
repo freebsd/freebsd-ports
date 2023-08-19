@@ -1,5 +1,5 @@
 PORTNAME=	ta-lib # provides Python namespace 'talib'
-DISTVERSION=	0.4.27
+DISTVERSION=	0.4.28
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
