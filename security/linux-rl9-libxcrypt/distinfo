@@ -1,0 +1,7 @@
+TIMESTAMP = 1707756437
+SHA256 (rocky/l/libxcrypt-4.4.18-3.el9.aarch64.rpm) = ec12e0266ce1f96af43495c95f95fbb6d972af576f19473ea231985f8cd4d2d6
+SIZE (rocky/l/libxcrypt-4.4.18-3.el9.aarch64.rpm) = 122619
+SHA256 (rocky/l/libxcrypt-4.4.18-3.el9.x86_64.rpm) = e3c178ed2e04ac25699d5af612fad51694a23f5d544b72cab2f65d35b8db5f28
+SIZE (rocky/l/libxcrypt-4.4.18-3.el9.x86_64.rpm) = 117617
+SHA256 (rocky/l/libxcrypt-4.4.18-3.el9.src.rpm) = dba21a9a96b6532e452b45190b9ba38b56c2a1fbaecae037505c5315de014b3d
+SIZE (rocky/l/libxcrypt-4.4.18-3.el9.src.rpm) = 542268

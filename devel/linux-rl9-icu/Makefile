@@ -1,0 +1,25 @@
+PORTNAME=	icu
+PORTVERSION=	67.1
+DISTVERSIONSUFFIX=	-9.el9
+CATEGORIES=	devel linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	International Components for Unicode (Rocky Linux ${LINUX_DIST_VER})
+WWW=		http://site.icu-project.org/
+
+USES=		cpe linux:rl9
+CPE_VENDOR=	${PORTNAME}-project
+CPE_PRODUCT=	international_components_for_unicode
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+BIN_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL}
+LIB_DISTNAMES=	lib${PORTNAME}-${DISTVERSIONFULL}
+SRC_DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/lib${PORTNAME}-${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

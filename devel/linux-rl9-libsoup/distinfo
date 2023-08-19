@@ -1,0 +1,7 @@
+TIMESTAMP = 1707760205
+SHA256 (rocky/l/libsoup-2.72.0-8.el9.aarch64.rpm) = 4d7861eecdfed54107faa0e3a55c774788e4d76fb6484e36124bc0bdb4bddb50
+SIZE (rocky/l/libsoup-2.72.0-8.el9.aarch64.rpm) = 391691
+SHA256 (rocky/l/libsoup-2.72.0-8.el9.x86_64.rpm) = 29de6bc5022554f6554629c453fd8f021248c5a134a2147310c8facb967caef1
+SIZE (rocky/l/libsoup-2.72.0-8.el9.x86_64.rpm) = 398649
+SHA256 (rocky/l/libsoup-2.72.0-8.el9.src.rpm) = 633469a52bdbadb25e83afd0997b1c1566aba0f69f68aecb4ba16a15178e449f
+SIZE (rocky/l/libsoup-2.72.0-8.el9.src.rpm) = 1495678

@@ -1,6 +1,6 @@
 PORTNAME=	llvm
-PORTVERSION=	15.0.7
-DISTVERSIONSUFFIX=	-1.el9
+PORTVERSION=	16.0.6
+DISTVERSIONSUFFIX=	-4.el9
 CATEGORIES=	devel linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libelf
+USE_LINUX=	elfutils-libelf python3
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL} \

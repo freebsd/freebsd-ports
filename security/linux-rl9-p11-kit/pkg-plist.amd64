@@ -7,7 +7,9 @@ usr/lib/.build-id/df/b37e76ad1fc2e88c505b8c45c62a7ae9c8092a
 usr/lib/.build-id/e4/cb5269d217f43b6035df6e629ebe5d9fbf53e5
 usr/lib64/libp11-kit.so.0
 usr/lib64/libp11-kit.so.0.3.0
+usr/lib64/libnssckbi.so
 usr/lib64/p11-kit-proxy.so
+@rmtry usr/lib64/p11-kit-trust.so
 usr/lib64/pkcs11/p11-kit-trust.so
 usr/libexec/p11-kit/p11-kit-remote
 usr/libexec/p11-kit/trust-extract-compat

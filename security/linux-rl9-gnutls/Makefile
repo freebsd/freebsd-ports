@@ -1,6 +1,7 @@
 PORTNAME=	gnutls
 PORTVERSION=	3.7.6
-DISTVERSIONSUFFIX=	-21.el9_2
+PORTREVISION=	2
+DISTVERSIONSUFFIX=	-23.el9_3.4
 CATEGORIES=	security linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://gnutls.org/
 USES=		cpe linux:rl9
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
-USE_LINUX=	libtasn1 nettle p11-kit
+USE_LINUX=	libidn2 libtasn1 nettle p11-kit
 USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}

@@ -444,6 +444,7 @@
     SUBDIR += linux-c7-libxslt
     SUBDIR += linux-rl9-expat
     SUBDIR += linux-rl9-libxml2
+    SUBDIR += linux-rl9-libxslt
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize

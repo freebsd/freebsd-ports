@@ -1,6 +1,6 @@
 PORTNAME=	gstreamer1
-PORTVERSION=	1.18.4
-DISTVERSIONSUFFIX=	-4.el9
+PORTVERSION=	1.22.1
+DISTVERSIONSUFFIX=	-2.el9
 CATEGORIES=	multimedia linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -11,14 +11,14 @@ LICENSE=	LGPL20+
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
+USE_LINUX=	libnghttp2 orc vulkan
 USE_LINUX_RPM=	yes
-#USE_LINUX=	
 
 LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL} \
-		${PORTNAME}-plugins-base-${DISTVERSION}-5.el9.0.1 \
-		${PORTNAME}-plugins-bad-free-${DISTVERSION}-6.el9 \
-		${PORTNAME}-plugins-good-${DISTVERSION}-6.el9 \
-		${PORTNAME}-plugins-ugly-free-${DISTVERSION}-3.el9
+		${PORTNAME}-plugins-base-${DISTVERSION}-1.el9 \
+		${PORTNAME}-plugins-bad-free-${DISTVERSION}-2.el9_3 \
+		${PORTNAME}-plugins-good-${DISTVERSION}-1.el9 \
+		${PORTNAME}-plugins-ugly-free-${DISTVERSION}-1.el9
 
 SRC_DISTFILES=	gstreamer1-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
 
@@ -26,6 +26,8 @@ CONFLICTS=	linux-c7-${PORTNAME}
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
 
 .include <bsd.port.mk>

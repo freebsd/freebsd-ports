@@ -1,0 +1,7 @@
+TIMESTAMP = 1707763378
+SHA256 (rocky/l/libwebp-1.2.0-8.el9.aarch64.rpm) = 32d165702f098820c836736634829360947747017e23413a1ac5e167df8070d2
+SIZE (rocky/l/libwebp-1.2.0-8.el9.aarch64.rpm) = 265825
+SHA256 (rocky/l/libwebp-1.2.0-8.el9.x86_64.rpm) = 2546a9c3b973cf0f33c23f9d0801d76eff889ff690338340bfd5f5c8fc11c6cd
+SIZE (rocky/l/libwebp-1.2.0-8.el9.x86_64.rpm) = 282664
+SHA256 (rocky/l/libwebp-1.2.0-8.el9.src.rpm) = a2452b44cd66053e3c713982b6695eb0a3f7e89d3319eb071d8e8340719821a2
+SIZE (rocky/l/libwebp-1.2.0-8.el9.src.rpm) = 4110329

@@ -1,0 +1,17 @@
+usr/lib/.build-id/0d/f5ce47131b85e47f3d194ad97ee3f8b06c191a
+usr/lib/.build-id/71/ce2b08c60666d0dee55640dc1bb80a7b2efa82
+usr/lib/.build-id/b7/a75cfdf5c1aea84cddce4a18341fc86df338bc
+usr/lib/.build-id/fd/b824c10e0134d3be9f3d788dc9bfcd9d2a2a6a
+usr/lib64/libwebp.so.7
+usr/lib64/libwebp.so.7.1.1
+usr/lib64/libwebpdecoder.so.3
+usr/lib64/libwebpdecoder.so.3.1.1
+usr/lib64/libwebpdemux.so.2
+usr/lib64/libwebpdemux.so.2.0.7
+usr/lib64/libwebpmux.so.3
+usr/lib64/libwebpmux.so.3.0.6
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/PATENTS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libwebp/COPYING

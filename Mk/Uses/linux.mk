@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.2
+LINUX_DIST_VER?=	9.3
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
@@ -102,16 +102,21 @@ _linux_c7_libaudiofile=			linux-c7-audiofile>0:audio/linux-c7-audiofile
 _linux_c7_libcroco=			linux-c7-libcroco>0:textproc/linux-c7-libcroco
 _linux_${linux_ARGS}_libdrm=		linux-${linux_ARGS}-libdrm>0:graphics/linux-${linux_ARGS}-libdrm
 _linux_${linux_ARGS}_libepoxy=		linux-${linux_ARGS}-libepoxy>0:graphics/linux-${linux_ARGS}-libepoxy
+_linux_rl9_libevent=			linux-rl9-libevent>0:devel/linux-rl9-libevent
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 _linux_${linux_ARGS}_libgfortran=	linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
 _linux_${linux_ARGS}_libglvnd=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
+_linux_rl9_libidn2=			linux-${linux_ARGS}-libidn2>0:dns/linux-rl9-libidn2
+_linux_rl9_libnghttp2=			linux-${linux_ARGS}-libnghttp2>0:www/linux-rl9-libnghttp2
 _linux_${linux_ARGS}_libogg=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
 _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
 _linux_rl9_libproxy=			linux-rl9-libproxy>0:net/linux-rl9-libproxy
+_linux_rl9_libpsl=			linux-rl9-libpsl>0:dns/linux-rl9-libpsl
 _linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
 _linux_${linux_ARGS}_libsigc++20=	linux-${linux_ARGS}-libsigc++20>0:devel/linux-${linux_ARGS}-libsigc++20
 _linux_rl9_libsigsegv=			linux-${linux_ARGS}-libsigsegv>0:devel/linux-${linux_ARGS}-libsigsegv
+_linux_rl9_libsoup=			linux-${linux_ARGS}-libsoup>0:devel/linux-${linux_ARGS}-libsoup
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
 _linux_c7_libssh2=			linux-c7-libssh2>0:security/linux-c7-libssh2
 _linux_${linux_ARGS}_libtasn1=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1
@@ -121,9 +126,14 @@ _linux_rl9_libtracker-sparql=		linux-rl9-libtracker-sparql>0:databases/linux-rl9
 _linux_rl9_libunistring=		linux-rl9-libunistring>0:devel/linux-rl9-libunistring
 _linux_${linux_ARGS}_libunwind=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
 _linux_${linux_ARGS}_libv4l=		linux-${linux_ARGS}-libv4l>0:multimedia/linux-${linux_ARGS}-libv4l
+_linux_rl9_libva=			linux-rl9-libva>0:multimedia/linux-rl9-libva
+_linux_rl9_libvdpau=			linux-rl9-libvdpau>0:multimedia/linux-rl9-libvdpau
 _linux_${linux_ARGS}_libvorbis=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-libvorbis
+_linux_rl9_libvpx=			linux-rl9-libvpx>0:multimedia/linux-rl9-libvpx
+_linux_${linux_ARGS}_libxcrypt=		linux-${linux_ARGS}-libxcrypt>0:security/linux-${linux_ARGS}-libxcrypt
 _linux_${linux_ARGS}_libxkbcommon=	linux-${linux_ARGS}-libxkbcommon>0:x11/linux-${linux_ARGS}-libxkbcommon
 _linux_${linux_ARGS}_libxml2=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
+_linux_${linux_ARGS}_libxlst=		linux-${linux_ARGS}-libxlst>0:textproc/linux-${linux_ARGS}-libxlst
 _linux_rl9_llvm=			linux-${linux_ARGS}-llvm>0:devel/linux-${linux_ARGS}-llvm
 _linux_${linux_ARGS}_lttng-ust=		linux-${linux_ARGS}-lttng-ust>0:sysutils/linux-${linux_ARGS}-lttng-ust
 _linux_${linux_ARGS}_lz4=		linux-${linux_ARGS}-lz4>0:archivers/linux-${linux_ARGS}-lz4
@@ -132,12 +142,15 @@ _linux_${linux_ARGS}_nettle=		linux-${linux_ARGS}-nettle>0:security/linux-${linu
 _linux_${linux_ARGS}_nspr=		linux-${linux_ARGS}-nspr>0:devel/linux-${linux_ARGS}-nspr
 _linux_${linux_ARGS}_nss=		linux-${linux_ARGS}-nss>0:security/linux-${linux_ARGS}-nss
 _linux_c7_numactl-libs=			linux-c7-numactl-libs>0:sysutils/linux-c7-numactl-libs
+_linux_rl9_ocl-icd=			linux-rl9-ocl-icd>0:devel/linux-rl9-ocl-icd
 _linux_${linux_ARGS}_openal-soft=	linux-${linux_ARGS}-openal-soft>0:audio/linux-${linux_ARGS}-openal-soft
+_linux_rl9_openjpeg=			linux-rl9-openjpeg2>0:graphics/linux-rl9-openjpeg
 _linux_${linux_ARGS}_openldap=		linux-${linux_ARGS}-openldap>0:net/linux-${linux_ARGS}-openldap
 _linux_c7_openmotif=			linux-c7-motif>0:x11-toolkits/linux-c7-openmotif
 _linux_c7_openssl-devel=		linux-c7-openssl-devel>0:security/linux-c7-openssl-devel
 _linux_c7_openssl=			${_linux_c7_base}
 _linux_rl9_opus=			linux-rl9-opus>0:audio/linux-rl9-opus
+_linux_rl9_orc=				linux-rl9-orc>0:devel/linux-rl9-orc
 _linux_${linux_ARGS}_p11-kit=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 _linux_${linux_ARGS}_pixman=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
@@ -160,10 +173,14 @@ _linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux
 _linux_${linux_ARGS}_tk85=		linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linux_ARGS}-tk85
 _linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
 _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
+_linux_rl9_vulkan=			linux-rl9-vulkan-loader>0:graphics/linux-rl9-vulkan
 _linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
+_linux_rl9_webp=			linux-rl9-libwebp>0:graphics/linux-rl9-webp
 _linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
 _linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
 _linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
+# special node for linux_libusb
+_linux_${linux_ARGS}_libusb=		linux_libusb-${linux_ARGS}>0:devel/linux_libusb@${linux_ARGS}
 
 USE_LINUX?=		base
 .  for i in ${USE_LINUX}

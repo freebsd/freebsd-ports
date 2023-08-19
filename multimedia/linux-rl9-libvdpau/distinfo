@@ -1,0 +1,11 @@
+TIMESTAMP = 1707765855
+SHA256 (rocky/l/libvdpau-1.5-1.el9.aarch64.rpm) = 6df3abbd70ed20b6d02cd554aba7b10a860b5027a2d02a504846f8ee057e18b6
+SIZE (rocky/l/libvdpau-1.5-1.el9.aarch64.rpm) = 16103
+SHA256 (rocky/l/libvdpau-1.5-1.el9.x86_64.rpm) = 9460bc4f8bcd28be0b8a076c509df6bd4e94e4501a3153c8b175d208fa67a779
+SIZE (rocky/l/libvdpau-1.5-1.el9.x86_64.rpm) = 16325
+SHA256 (rocky/l/libvdpau-trace-1.5-1.el9.aarch64.rpm) = f0f3d2b16390205ef208fb121c8fe0c51ed822c201f1375964be0f863b9bff85
+SIZE (rocky/l/libvdpau-trace-1.5-1.el9.aarch64.rpm) = 28740
+SHA256 (rocky/l/libvdpau-trace-1.5-1.el9.x86_64.rpm) = 2bf7857641441ddee672b3ea8fd170c4a47f9beb5392cbef37c218c368549531
+SIZE (rocky/l/libvdpau-trace-1.5-1.el9.x86_64.rpm) = 30739
+SHA256 (rocky/l/libvdpau-1.5-1.el9.src.rpm) = d65b6d5b81155107e0540ebb686885f74a16692f399b317538f4c4f034fd2864
+SIZE (rocky/l/libvdpau-1.5-1.el9.src.rpm) = 153688

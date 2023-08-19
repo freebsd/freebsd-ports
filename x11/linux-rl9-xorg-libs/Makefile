@@ -1,5 +1,6 @@
 PORTNAME=	xorg-libs
 PORTVERSION=	7.7
+PORTREVISION=	1
 CATEGORIES=	x11 linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -13,8 +14,8 @@ USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	libICE-1.0.10-8.el9 \
 		libSM-1.2.3-10.el9 \
-		libX11-1.7.0-7.el9 \
-		libX11-xcb-1.7.0-7.el9 \
+		libX11-1.7.0-8.el9 \
+		libX11-xcb-1.7.0-8.el9 \
 		libXScrnSaver-1.2.3-10.el9 \
 		libXau-1.0.9-8.el9 \
 		libXaw-1.0.13-19.el9 \
@@ -43,11 +44,11 @@ LIB_DISTNAMES=	libICE-1.0.10-8.el9 \
 		libxcb-1.13.1-9.el9 \
 		libxkbfile-1.1.0-8.el9 \
 		libxshmfence-1.3-10.el9
-SHARE_DISTNAMES=libX11-common-1.7.0-7.el9 \
+SHARE_DISTNAMES=libX11-common-1.7.0-8.el9 \
 		xkeyboard-config-2.33-2.el9
 SRC_DISTFILES=	libICE-1.0.10-8.el9${SRC_SUFX}:SOURCE \
 		libSM-1.2.3-10.el9${SRC_SUFX}:SOURCE \
-		libX11-1.7.0-7.el9${SRC_SUFX}:SOURCE \
+		libX11-1.7.0-8.el9${SRC_SUFX}:SOURCE \
 		libXScrnSaver-1.2.3-10.el9${SRC_SUFX}:SOURCE \
 		libXau-1.0.9-8.el9${SRC_SUFX}:SOURCE \
 		libXaw-1.0.13-19.el9${SRC_SUFX}:SOURCE \

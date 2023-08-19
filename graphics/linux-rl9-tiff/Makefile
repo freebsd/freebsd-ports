@@ -1,6 +1,7 @@
 PORTNAME=	libtiff
 PORTVERSION=	4.4.0
-DISTVERSIONSUFFIX=	-7.el9
+PORTREVISION=	2
+DISTVERSIONSUFFIX=	-10.el9
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -9,7 +10,7 @@ WWW=		http://www.simplesystems.org/libtiff/
 
 USES=		cpe linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	jbigkit jpeg
+USE_LINUX=	jbigkit jpeg webp
 USE_LINUX_RPM=	yes
 
 CONFLICTS=	linux-c7-${PORTNAME}

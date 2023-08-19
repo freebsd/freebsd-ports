@@ -553,9 +553,12 @@
     SUBDIR += linux-rl9-libepoxy
     SUBDIR += linux-rl9-libglvnd
     SUBDIR += linux-rl9-librsvg2
+    SUBDIR += linux-rl9-openjpeg
     SUBDIR += linux-rl9-png
     SUBDIR += linux-rl9-tiff
+    SUBDIR += linux-rl9-vulkan
     SUBDIR += linux-rl9-wayland
+    SUBDIR += linux-rl9-webp
     SUBDIR += lua-gd
     SUBDIR += luminance-qt5
     SUBDIR += lux

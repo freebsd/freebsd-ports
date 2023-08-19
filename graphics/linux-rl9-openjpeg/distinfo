@@ -1,0 +1,7 @@
+TIMESTAMP = 1707774249
+SHA256 (rocky/o/openjpeg2-2.4.0-7.el9.aarch64.rpm) = 2d962981adc0c3fcd81ebbce1dbd79d42accc50ebd67c4886dd4cec700006c30
+SIZE (rocky/o/openjpeg2-2.4.0-7.el9.aarch64.rpm) = 163197
+SHA256 (rocky/o/openjpeg2-2.4.0-7.el9.x86_64.rpm) = 380ef2db96766ecee5e15cce67f91b5d73c721672930add64bd35de5da12c6a7
+SIZE (rocky/o/openjpeg2-2.4.0-7.el9.x86_64.rpm) = 165941
+SHA256 (rocky/o/openjpeg2-2.4.0-7.el9.src.rpm) = a9a369c4fb94b0c59412c7ed8f8f4508e42dcd5866ba891aa2aae4ea3d97651c
+SIZE (rocky/o/openjpeg2-2.4.0-7.el9.src.rpm) = 2245043
