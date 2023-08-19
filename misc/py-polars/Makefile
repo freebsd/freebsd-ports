@@ -1,0 +1,285 @@
+PORTNAME=	polars
+DISTVERSIONPREFIX=	py-
+DISTVERSION=	0.18.15
+CATEGORIES=	misc
+#MASTER_SITES=	CHEESESHOP
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Blazingly fast DataFrame library
+WWW=		https://github.com/pola-rs/polars
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13:devel/py-maturin@${PY_FLAVOR} \
+		rust-nightly>0:lang/rust-nightly
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
+USES=		cargo python
+USE_PYTHON=	pep517 autoplist
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pola-rs
+
+CARGO_BUILDDEP=	no
+CARGO_CRATES=	addr2line-0.20.0 \
+		adler-1.0.2 \
+		adler32-1.2.0 \
+		ahash-0.8.3 \
+		aho-corasick-1.0.2 \
+		alloc-no-stdlib-2.0.4 \
+		alloc-stdlib-0.2.2 \
+		allocator-api2-0.2.16 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		argminmax-0.6.1 \
+		array-init-cursor-0.2.0 \
+		arrow-format-0.8.1 \
+		arrow2-0.17.4 \
+		async-stream-0.3.5 \
+		async-stream-impl-0.3.5 \
+		async-trait-0.1.72 \
+		atoi-2.0.0 \
+		autocfg-1.1.0 \
+		avro-schema-0.3.0 \
+		backtrace-0.3.68 \
+		base64-0.21.2 \
+		bitflags-1.3.2 \
+		bitflags-2.3.3 \
+		brotli-3.3.4 \
+		brotli-decompressor-2.3.4 \
+		built-0.6.1 \
+		bumpalo-3.13.0 \
+		bytemuck-1.13.1 \
+		bytemuck_derive-1.4.1 \
+		bytes-1.4.0 \
+		cargo-lock-9.0.0 \
+		cc-1.0.82 \
+		cfg-if-1.0.0 \
+		chrono-0.4.26 \
+		chrono-tz-0.8.3 \
+		chrono-tz-build-0.2.0 \
+		ciborium-0.2.1 \
+		ciborium-io-0.2.1 \
+		ciborium-ll-0.2.1 \
+		comfy-table-7.0.1 \
+		core-foundation-sys-0.8.4 \
+		crc-2.1.0 \
+		crc-catalog-1.1.1 \
+		crc32fast-1.3.2 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-queue-0.3.8 \
+		crossbeam-utils-0.8.16 \
+		crossterm-0.26.1 \
+		crossterm_winapi-0.9.1 \
+		dyn-clone-1.0.12 \
+		either-1.9.0 \
+		enum_dispatch-0.3.12 \
+		equivalent-1.0.1 \
+		ethnum-1.3.2 \
+		fallible-streaming-iterator-0.1.9 \
+		fast-float-0.2.0 \
+		flate2-1.0.26 \
+		float-cmp-0.9.0 \
+		foreign_vec-0.1.0 \
+		form_urlencoded-1.2.0 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
+		futures-util-0.3.28 \
+		getrandom-0.2.10 \
+		gimli-0.27.3 \
+		git2-0.17.2 \
+		glob-0.3.1 \
+		half-1.8.2 \
+		halfbrown-0.2.4 \
+		hash_hasher-2.0.3 \
+		hashbrown-0.13.2 \
+		hashbrown-0.14.0 \
+		heck-0.4.1 \
+		hermit-abi-0.3.2 \
+		hex-0.4.3 \
+		home-0.5.5 \
+		iana-time-zone-0.1.57 \
+		iana-time-zone-haiku-0.1.2 \
+		idna-0.4.0 \
+		indexmap-2.0.0 \
+		indoc-1.0.9 \
+		inventory-0.3.11 \
+		itoa-1.0.9 \
+		itoap-1.0.1 \
+		jemalloc-sys-0.5.4+5.3.0-patched \
+		jemallocator-0.5.4 \
+		jobserver-0.1.26 \
+		js-sys-0.3.64 \
+		lexical-6.1.1 \
+		lexical-core-0.8.5 \
+		lexical-parse-float-0.8.5 \
+		lexical-parse-integer-0.8.6 \
+		lexical-util-0.8.5 \
+		lexical-write-float-0.8.5 \
+		lexical-write-integer-0.8.5 \
+		libc-0.2.147 \
+		libflate-1.4.0 \
+		libflate_lz77-1.2.0 \
+		libgit2-sys-0.15.2+1.6.4 \
+		libm-0.2.7 \
+		libmimalloc-sys-0.1.33 \
+		libz-sys-1.1.12 \
+		lock_api-0.4.10 \
+		log-0.4.19 \
+		lz4-1.24.0 \
+		lz4-sys-1.9.4 \
+		matrixmultiply-0.3.7 \
+		memchr-2.5.0 \
+		memmap2-0.7.1 \
+		memoffset-0.9.0 \
+		mimalloc-0.1.37 \
+		miniz_oxide-0.7.1 \
+		mio-0.8.8 \
+		multiversion-0.7.3 \
+		multiversion-macros-0.7.3 \
+		ndarray-0.15.6 \
+		now-0.1.3 \
+		ntapi-0.4.1 \
+		num-complex-0.4.3 \
+		num-integer-0.1.45 \
+		num-traits-0.2.16 \
+		num_cpus-1.16.0 \
+		numpy-0.19.0 \
+		object-0.31.1 \
+		once_cell-1.18.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.8 \
+		parquet-format-safe-0.2.4 \
+		parquet2-0.17.2 \
+		parse-zoneinfo-0.3.0 \
+		percent-encoding-2.3.0 \
+		phf-0.11.2 \
+		phf_codegen-0.11.2 \
+		phf_generator-0.11.2 \
+		phf_shared-0.11.2 \
+		pin-project-lite-0.2.12 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.27 \
+		planus-0.3.1 \
+		ppv-lite86-0.2.17 \
+		proc-macro2-1.0.66 \
+		pyo3-0.19.2 \
+		pyo3-build-config-0.19.2 \
+		pyo3-built-0.4.7 \
+		pyo3-ffi-0.19.2 \
+		pyo3-macros-0.19.2 \
+		pyo3-macros-backend-0.19.2 \
+		quote-1.0.32 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
+		rand_distr-0.4.3 \
+		rawpointer-0.2.1 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.3.5 \
+		regex-1.9.3 \
+		regex-automata-0.3.6 \
+		regex-syntax-0.6.29 \
+		regex-syntax-0.7.4 \
+		rle-decode-fast-1.0.3 \
+		rustc-demangle-0.1.23 \
+		rustc-hash-1.1.0 \
+		rustc_version-0.4.0 \
+		rustversion-1.0.14 \
+		ryu-1.0.15 \
+		scopeguard-1.2.0 \
+		semver-1.0.18 \
+		seq-macro-0.3.5 \
+		serde-1.0.183 \
+		serde_derive-1.0.183 \
+		serde_json-1.0.104 \
+		serde_spanned-0.6.3 \
+		signal-hook-0.3.17 \
+		signal-hook-mio-0.2.3 \
+		signal-hook-registry-1.4.1 \
+		simdutf8-0.1.4 \
+		siphasher-0.3.10 \
+		slab-0.4.8 \
+		smallvec-1.11.0 \
+		smartstring-1.0.1 \
+		snap-1.1.0 \
+		socket2-0.5.3 \
+		sqlparser-0.36.1 \
+		static_assertions-1.1.0 \
+		streaming-decompression-0.1.2 \
+		streaming-iterator-0.1.9 \
+		strength_reduce-0.2.4 \
+		strum-0.24.1 \
+		strum_macros-0.24.3 \
+		strum_macros-0.25.2 \
+		syn-1.0.109 \
+		syn-2.0.28 \
+		sysinfo-0.29.7 \
+		target-features-0.1.4 \
+		target-lexicon-0.12.11 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.30.0 \
+		toml-0.7.6 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.14 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.11 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
+		unindent-0.1.11 \
+		url-2.4.0 \
+		value-trait-0.6.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.4 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.48.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0 \
+		winnow-0.5.4 \
+		xxhash-rust-0.8.6 \
+		zstd-0.12.4 \
+		zstd-safe-6.0.6 \
+		zstd-sys-2.0.8+zstd.1.5.5 \
+		simd-json@git+https://github.com/ritchie46/simd-json?branch=initialize\#946b316f686c6ad3050f694ea434248c38aa321d \
+		jsonpath_lib@git+https://github.com/ritchie46/jsonpath?branch=improve_compiled\#24eaf0b4416edff38a4d1b6b17bc4b9f3f047b4b
+
+CARGO_BUILD=	no
+CARGO_INSTALL=	no
+CARGO_TEST=	no
+CARGO_TARGET_DIR=	${WRKSRC}/target
+
+WRKSRC_SUBDIR=	py-polars
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/polars/polars.abi3.so
+
+.include <bsd.port.mk>

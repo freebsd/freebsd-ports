@@ -446,6 +446,7 @@
     SUBDIR += py-papermill
     SUBDIR += py-pexpect
     SUBDIR += py-placekey
+    SUBDIR += py-polars
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2

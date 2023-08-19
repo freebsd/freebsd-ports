@@ -1,0 +1,10 @@
+Polars is a DataFrame interface on top of an OLAP Query Engine implemented
+in Rust using Apache Arrow Columnar Format as the memory model.
+
+Features:
+* Lazy/eager execution
+* Multi-threaded
+* SIMD
+* Query optimization
+* Powerful expression API
+* Hybrid Streaming (larger than RAM datasets)
