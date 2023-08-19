@@ -9,14 +9,20 @@ MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Like make(1), but more powerful and clean
 WWW=		http://miller.emu.id.au/pmiller/software/cook/
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=	fails to build: a space character is not allowed in an escape sequence parameter
+DEPRECATED=	Upstream last release was in 2008
+EXPIRATION_DATE=	2023-12-31
+
+USES=		gettext groff localbase:ldflags perl5
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=yacc
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 
-USES=		gettext groff perl5
 DESTDIRNAME=	RPM_BUILD_ROOT
+MAKE_JOBS_UNSAFE=	yes
 
 # Make sure that the whole directory tree exists.
 pre-install:
