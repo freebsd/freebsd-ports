@@ -44,6 +44,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v4.0.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v4.1.md
 %%PORTDOCS%%%%DOCSDIR%%/changelog/v4.2.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog/v4.3.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog/v4.4.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/2darray.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/a.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/addheading.md
@@ -141,7 +143,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/commands/range.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/read.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/regexp.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/return.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/right.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/round.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/runmode.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/runtime.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/rx.md
@@ -166,6 +170,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/commands/trypipe.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/version.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/while.md
+%%PORTDOCS%%%%DOCSDIR%%/events/oncommandcompletion.md
+%%PORTDOCS%%%%DOCSDIR%%/events/onfilesystemchange.md
+%%PORTDOCS%%%%DOCSDIR%%/events/onprompt.md
+%%PORTDOCS%%%%DOCSDIR%%/events/onsecondselapsed.md
 %%PORTDOCS%%%%DOCSDIR%%/mkarray/character.md
 %%PORTDOCS%%%%DOCSDIR%%/mkarray/date.md
 %%PORTDOCS%%%%DOCSDIR%%/mkarray/decimal.md
@@ -180,6 +188,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/parser/array.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/brace-quote.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/create-array.md
+%%PORTDOCS%%%%DOCSDIR%%/parser/create-object.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/curly-brace.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/double-quote.md
 %%PORTDOCS%%%%DOCSDIR%%/parser/logical-and.md
