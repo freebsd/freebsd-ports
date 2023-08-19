@@ -11,6 +11,8 @@ WWW=		https://numpi.dm.unipi.it/software/mpsolve
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_14=	fails to compile: expected unqualified-id
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libtcmalloc_minimal.so:devel/google-perftools
 
