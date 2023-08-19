@@ -1,6 +1,7 @@
 PORTNAME=	golangci-lint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.54.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -38,7 +39,7 @@ COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
 
 post-install-COMPLETIONS-on:
 .for _shell in bash fish zsh
-	${GO_WRKDIR_BIN}/${PORTNAME} completion ${_shell} \
+	${SET_ENV} ${MAKE_ENV} ${GO_ENV} ${GO_WRKDIR_BIN}/${PORTNAME} completion ${_shell} \
 		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
 .endfor
 
