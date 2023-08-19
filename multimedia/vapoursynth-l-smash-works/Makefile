@@ -27,6 +27,8 @@ WRKSRC_SUBDIR=	VapourSynth
 
 PLIST_FILES=	lib/vapoursynth/libvslsmashsource.so
 
+CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
 		${PATCH_WRKSRC}/meson.build
