@@ -1,5 +1,6 @@
 PORTNAME=	wine
 DISTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/7.0/
 PKGNAMESUFFIX=	7
@@ -77,6 +78,7 @@ PORTSCOUT=	limit:^7\.0
 
 ALSA_CONFIGURE_ON=	--with-alsa --without-oss
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 
 CUPS_CONFIGURE_WITH=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
