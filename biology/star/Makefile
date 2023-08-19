@@ -44,6 +44,12 @@ post-patch:
 		${WRKSRC}/bam_cat.h \
 		${WRKSRC}/signalFromBAM.h
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+MAKE_FLAGS+=	CXXFLAGS_SIMD=""
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/STAR ${STAGEDIR}${PREFIX}/bin
 
