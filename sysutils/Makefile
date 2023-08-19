@@ -1083,6 +1083,7 @@
     SUBDIR += py-croniter
     SUBDIR += py-dict-toolbox
     SUBDIR += py-diffoscope
+    SUBDIR += py-director
     SUBDIR += py-dirsync
     SUBDIR += py-distro
     SUBDIR += py-dlipower

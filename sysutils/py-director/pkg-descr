@@ -1,0 +1,5 @@
+AppJail Director is a tool for running multi-jail environments on
+AppJail using a simple YAML specification. A Director file is used
+to define how one or more jails that make up your application are
+configured. Once you have a Director file, you can create and start
+your application with a single command: appjail-director up
