@@ -27,6 +27,8 @@ GO_BUILDFLAGS=	-ldflags "\
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
 
+PORTSCOUT=	skipv:v0.11.0
+
 OPTIONS_DEFINE=	DOCS
 
 pre-patch:
