@@ -1,6 +1,5 @@
 PORTNAME=	libsndfile
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -39,19 +38,10 @@ EXTERNAL_LIB_DEPENDS=	libFLAC.so:audio/flac \
 			libogg.so:audio/libogg \
 			libopus.so:audio/opus \
 			libvorbis.so:audio/libvorbis
-EXTERNAL_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_mp3lame:BOOL=True \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Mpg123:BOOL=True \
+EXTERNAL_CMAKE_BOOL=	ENABLE_EXTERNAL_LIBS ENABLE_MPEG
 MANPAGES_CMAKE_BOOL=	INSTALL_MANPAGES
 STATIC_CMAKE_OFF=	-DBUILD_SHARED_LIBS:BOOL=ON
 TEST_CMAKE_BOOL=	BUILD_TESTING
-
-.include <bsd.port.options.mk>
-
-# Disables external libs except mp3, as this is handled
-# differently in the cmake files
-.if ! ${PORT_OPTIONS:MEXTERNAL}
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-cmake_SndFileChecks.cmake-disableexternallibs
-.endif
 
 do-test:
 	(cd ${TEST_WRKSRC} && CTEST_OUTPUT_ON_FAILURE=1 ctest -V)
