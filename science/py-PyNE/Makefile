@@ -24,6 +24,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 BROKEN_armv7=	clang runs out of memory
+BROKEN_FreeBSD_14=	fails to build: no member named std in namespace std
 
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tables>0:devel/py-tables@${PY_FLAVOR} \
