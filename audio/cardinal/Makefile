@@ -30,6 +30,7 @@ USE_GL=		gl
 SHEBANG_GLOB=	*.sh
 
 CXXFLAGS+=	-I${LOCALBASE}/include/pffft
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 LDFLAGS+=	-lpffft
 
 MAKE_ENV=	LD_PRELOAD=/usr/lib/libpthread.so # workaround for https://github.com/DISTRHO/Cardinal/issues/128#issuecomment-1030817359
