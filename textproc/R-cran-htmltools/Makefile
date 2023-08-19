@@ -1,7 +1,7 @@
 PORTNAME=	htmltools
-PORTVERSION=	0.5.5
+DISTVERSION=	0.5.6
 CATEGORIES=	textproc
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Tools for HTML generation and output
