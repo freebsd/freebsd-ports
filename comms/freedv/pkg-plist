@@ -1,5 +1,15 @@
 bin/freedv
 share/applications/freedv.desktop
+%%DATADIR%%-gui/USER_MANUAL.html
+%%DATADIR%%-gui/USER_MANUAL.md
+%%DATADIR%%-gui/USER_MANUAL.pdf
+%%DATADIR%%-gui/wav/all_2020.wav
+%%DATADIR%%-gui/wav/ve9qrp_1600.wav
+%%DATADIR%%-gui/wav/ve9qrp_2400b.wav
+%%DATADIR%%-gui/wav/ve9qrp_700c.wav
+%%DATADIR%%-gui/wav/ve9qrp_700d.wav
+%%DATADIR%%-gui/wav/ve9qrp_700e.wav
+%%DATADIR%%-gui/wav/ve9qrp_800xa.wav
 share/icons/hicolor/128x128/apps/freedv.png
 share/icons/hicolor/256x256/apps/freedv.png
 share/icons/hicolor/48x48/apps/freedv.png
