@@ -2334,8 +2334,8 @@ lib/qgis/plugins/libprovider_arcgisfeatureserver.so
 lib/qgis/plugins/libprovider_arcgismapserver.so
 lib/qgis/plugins/libprovider_delimitedtext.so
 lib/qgis/plugins/libprovider_gpx.so
-lib/qgis/plugins/libprovider_grass7.so
-lib/qgis/plugins/libprovider_grassraster7.so
+%%GRASS%%lib/qgis/plugins/libprovider_grass7.so
+%%GRASS%%lib/qgis/plugins/libprovider_grassraster7.so
 lib/qgis/plugins/libprovider_mdal.so
 lib/qgis/plugins/libprovider_mssql.so
 lib/qgis/plugins/libprovider_pdal.so
