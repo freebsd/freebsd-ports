@@ -1,0 +1,7 @@
+TIMESTAMP = 1707751024
+SHA256 (rocky/l/libidn2-2.3.0-7.el9.aarch64.rpm) = 0832f2067447fb0485ba5220919a926694930006f19e098694e5274d56b6aadc
+SIZE (rocky/l/libidn2-2.3.0-7.el9.aarch64.rpm) = 98237
+SHA256 (rocky/l/libidn2-2.3.0-7.el9.x86_64.rpm) = be32d8ba7ff8cf790c15d89c5ea18747d7fcc0126782a0e80f15901bb9889b31
+SIZE (rocky/l/libidn2-2.3.0-7.el9.x86_64.rpm) = 97676
+SHA256 (rocky/l/libidn2-2.3.0-7.el9.src.rpm) = 21ef568f9cc36acde355d6d21eabd79f0a04c98251061d732e0985400e3c5d86
+SIZE (rocky/l/libidn2-2.3.0-7.el9.src.rpm) = 2212034

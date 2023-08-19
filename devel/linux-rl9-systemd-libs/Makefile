@@ -1,6 +1,7 @@
 PORTNAME=	systemd
 PORTVERSION=	252
-DISTVERSIONSUFFIX=	-13.el9_2
+PORTREVISION=	3
+DISTVERSIONSUFFIX=	-18.el9.0.1.rocky
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-libs
 
@@ -13,7 +14,7 @@ LICENSE=	LGPL21+
 USES=		cpe linux:rl9
 CPE_VENDOR=	systemd_project
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libs libgcrypt libgpg-error lz4
+USE_LINUX=	elfutils-libs libgcrypt libgpg-error lz4 nss
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}

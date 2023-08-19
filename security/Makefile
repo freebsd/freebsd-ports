@@ -351,6 +351,7 @@
     SUBDIR += linux-rl9-libgcrypt
     SUBDIR += linux-rl9-libgpg-error
     SUBDIR += linux-rl9-libtasn1
+    SUBDIR += linux-rl9-libxcrypt
     SUBDIR += linux-rl9-nettle
     SUBDIR += linux-rl9-nss
     SUBDIR += linux-rl9-p11-kit

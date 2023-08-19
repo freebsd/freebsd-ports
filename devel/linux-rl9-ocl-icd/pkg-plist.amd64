@@ -1,0 +1,6 @@
+usr/lib/.build-id/ee/66d05b18954424d7bb014b36b27fcfae810906
+usr/lib64/libOpenCL.so.1
+usr/lib64/libOpenCL.so.1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/ocl-icd/COPYING

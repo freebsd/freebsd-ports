@@ -1,0 +1,7 @@
+TIMESTAMP = 1707754379
+SHA256 (rocky/l/libnghttp2-1.43.0-5.el9_3.1.aarch64.rpm) = 7e1f1bab734a2d6f7e01e0d20ac7fddaaf64bb1b8c8beb78d7f78270cb5ccd3c
+SIZE (rocky/l/libnghttp2-1.43.0-5.el9_3.1.aarch64.rpm) = 72916
+SHA256 (rocky/l/libnghttp2-1.43.0-5.el9_3.1.x86_64.rpm) = fff8c687acf6662d48fd267ebad37750e2dd015a821a2c1f8d54a47282ff7462
+SIZE (rocky/l/libnghttp2-1.43.0-5.el9_3.1.x86_64.rpm) = 73737
+SHA256 (rocky/n/nghttp2-1.43.0-5.el9_3.1.src.rpm) = 45ae8fd2dad2adaf775eb8eaab1835b2b2099c2412ff3d01b916d08cf0930c78
+SIZE (rocky/n/nghttp2-1.43.0-5.el9_3.1.src.rpm) = 3993941

@@ -1,0 +1,15 @@
+etc/openal/alsoft.conf
+usr/bin/openal-info
+usr/lib/.build-id/0b/c2b4fcae34de3f623f0f994feed8e22de866ca
+usr/lib/.build-id/ba/632ab5a3a7ad86b9d79f30ed3b382757e1d712
+usr/lib64/libopenal.so.1
+usr/lib64/libopenal.so.1.19.1
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+usr/share/openal/hrtf/default-44100.mhr
+usr/share/openal/hrtf/default-48000.mhr
+usr/share/openal/presets/3D7.1.ambdec
+usr/share/openal/presets/hexagon.ambdec
+usr/share/openal/presets/itu5.1-nocenter.ambdec
+usr/share/openal/presets/itu5.1.ambdec
+usr/share/openal/presets/rectangle.ambdec
+usr/share/openal/presets/square.ambdec

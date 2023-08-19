@@ -1,0 +1,7 @@
+TIMESTAMP = 1707691716
+SHA256 (rocky/l/libxslt-1.1.34-9.el9.aarch64.rpm) = 0a67205d05c7bd5b69db0c406123e01e0589f064470f7b75accc9b23fc6e8788
+SIZE (rocky/l/libxslt-1.1.34-9.el9.aarch64.rpm) = 242983
+SHA256 (rocky/l/libxslt-1.1.34-9.el9.x86_64.rpm) = 0127ecfbfb6b1f3bafccb4057e882b9f5f39123fdb55d33e64a5f0fb943810d6
+SIZE (rocky/l/libxslt-1.1.34-9.el9.x86_64.rpm) = 246195
+SHA256 (rocky/l/libxslt-1.1.34-9.el9.src.rpm) = 51f71b25ca438df54897bd0c33f681b12c5d67d6f1351e967cb5344826b389c8
+SIZE (rocky/l/libxslt-1.1.34-9.el9.src.rpm) = 3550548

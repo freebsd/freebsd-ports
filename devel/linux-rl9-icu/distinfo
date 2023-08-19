@@ -1,0 +1,11 @@
+TIMESTAMP = 1707748760
+SHA256 (rocky/i/icu-67.1-9.el9.aarch64.rpm) = aa01fcb0f8a13c6ae3ea6d352ab371ae60a30b950361b9b31fc817e6a21a5256
+SIZE (rocky/i/icu-67.1-9.el9.aarch64.rpm) = 225157
+SHA256 (rocky/i/icu-67.1-9.el9.x86_64.rpm) = e3caf7726874774401126f4828b39f73d8067a9dcaa2d1568df08189604ab644
+SIZE (rocky/i/icu-67.1-9.el9.x86_64.rpm) = 230028
+SHA256 (rocky/l/libicu-67.1-9.el9.aarch64.rpm) = 360fc8ba49687c886b2c044681878becf96349b9f5442fd6f787a1f3fb9ff90a
+SIZE (rocky/l/libicu-67.1-9.el9.aarch64.rpm) = 9934126
+SHA256 (rocky/l/libicu-67.1-9.el9.x86_64.rpm) = 380c7e0d8f802c5cde277376773d295cbbb2f8ec045f18fcb4ab452bff794a26
+SIZE (rocky/l/libicu-67.1-9.el9.x86_64.rpm) = 10044344
+SHA256 (rocky/i/icu-67.1-9.el9.src.rpm) = abbf21f245ed6f3bb21509048c0dfd0bf5d69f731a01cb42e5cee46db59b15c4
+SIZE (rocky/i/icu-67.1-9.el9.src.rpm) = 23179814

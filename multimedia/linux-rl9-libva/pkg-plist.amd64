@@ -1,0 +1,17 @@
+usr/lib/.build-id/23/1467b04f2b347abc76a07df7f23f4e72a48b00
+usr/lib/.build-id/7d/c8518a64fc131bb6893e13e613b7d97c460fbb
+usr/lib/.build-id/8a/b74e66d5133d9c4bf38f4406f78e5fc72c116b
+usr/lib/.build-id/95/060bba63918bfc7f09007f95f94489678d7548
+usr/lib/.build-id/d2/41091c74e27983fe2326f6c5f2358d702fc470
+usr/lib64/libva-drm.so.2
+usr/lib64/libva-drm.so.2.1100.0
+usr/lib64/libva-glx.so.2
+usr/lib64/libva-glx.so.2.1100.0
+usr/lib64/libva-wayland.so.2
+usr/lib64/libva-wayland.so.2.1100.0
+usr/lib64/libva-x11.so.2
+usr/lib64/libva-x11.so.2.1100.0
+usr/lib64/libva.so.2
+usr/lib64/libva.so.2.1100.0
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+usr/share/licenses/libva/COPYING

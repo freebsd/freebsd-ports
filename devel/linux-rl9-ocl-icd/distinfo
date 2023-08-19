@@ -1,0 +1,7 @@
+TIMESTAMP = 1707764780
+SHA256 (rocky/o/ocl-icd-2.2.13-4.el9.aarch64.rpm) = 1dd895e79583b23e964fee7442812b9d8da03b33ca495d4f319c40025b4bbe7f
+SIZE (rocky/o/ocl-icd-2.2.13-4.el9.aarch64.rpm) = 47289
+SHA256 (rocky/o/ocl-icd-2.2.13-4.el9.x86_64.rpm) = 89c3df8be01178f6b06eca5c2025ef11e4983c50afdcf83c66454441aef9f6b0
+SIZE (rocky/o/ocl-icd-2.2.13-4.el9.x86_64.rpm) = 51828
+SHA256 (rocky/o/ocl-icd-2.2.13-4.el9.src.rpm) = a4c8a3eef7aa50573091b18d36486251980960b853f38c419808232672e7d95e
+SIZE (rocky/o/ocl-icd-2.2.13-4.el9.src.rpm) = 107987

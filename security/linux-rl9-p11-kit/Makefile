@@ -1,5 +1,6 @@
 PORTNAME=	p11-kit
 PORTVERSION=	0.24.1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-2.el9
 CATEGORIES=	security linux
 
@@ -19,5 +20,8 @@ DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
+
+post-install:
+	${RLN} ${STAGEDIR}${PREFIX}/usr/lib64/pkcs11/p11-kit-trust.so ${STAGEDIR}${PREFIX}/usr/lib64/libnssckbi.so
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+usr/bin/orc-bugreport
+usr/bin/orcc
+usr/lib/.build-id/1f/fdb445926cb265fecac81692b5d5631dbff08a
+usr/lib/.build-id/43/54aebb97c85228966745de934e2d7b24f5e3fd
+usr/lib/.build-id/8c/96b9a7b650707893420f63df21def3c9901e90
+usr/lib/.build-id/ed/481fcaae271a165e2db1acbbe3676e54c7f2de
+usr/lib64/liborc-0.4.so.0
+usr/lib64/liborc-0.4.so.0.31.0
+usr/lib64/liborc-test-0.4.so.0
+usr/lib64/liborc-test-0.4.so.0.31.0
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README

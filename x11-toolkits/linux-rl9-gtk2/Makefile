@@ -11,7 +11,7 @@ USES=		cpe linux:rl9
 CPE_VENDOR=	gnome
 CPE_PRODUCT=	gtk
 USE_LDCONFIG=	yes
-USE_LINUX=	atk gdkpixbuf2 pango xorglibs
+USE_LINUX=	atk gdkpixbuf2 icu pango xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${DISTNAME} \

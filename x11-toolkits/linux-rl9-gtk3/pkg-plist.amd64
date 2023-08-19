@@ -12,6 +12,7 @@ usr/lib/.build-id/fa/8b811bd227a52219b899869a5cc0c31d5552a4
 usr/lib64/girepository-1.0/Gdk-3.0.typelib
 usr/lib64/girepository-1.0/GdkX11-3.0.typelib
 usr/lib64/girepository-1.0/Gtk-3.0.typelib
+@rmtry usr/lib64/gtk-3.0/3.0.0/immodules.cache
 usr/lib64/gtk-3.0/3.0.0/printbackends/libprintbackend-cups.so
 usr/lib64/gtk-3.0/3.0.0/printbackends/libprintbackend-file.so
 usr/lib64/gtk-3.0/3.0.0/printbackends/libprintbackend-lpr.so
@@ -162,6 +163,8 @@ usr/share/themes/Default/gtk-3.0/gtk-keys.css
 usr/share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dir usr/lib64/gtk-3.0/3.0.0/immodules
 @dir usr/lib64/gtk-3.0/3.0.0/theming-engines
+@dir usr/lib64/gtk-3.0/3.0.0
 @dir usr/lib64/gtk-3.0/immodules
 @dir usr/lib64/gtk-3.0/modules
+@dir usr/lib64/gtk-3.0
 @postexec %D/usr/bin/gtk-query-immodules-3.0-64 --update-cache

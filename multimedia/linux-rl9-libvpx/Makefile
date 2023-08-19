@@ -1,0 +1,25 @@
+PORTNAME=	libvpx
+PORTVERSION=	1.9.0
+DISTVERSIONSUFFIX=	-7.el9_2
+CATEGORIES=	multimedia linux
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	VP8/VP9 reference encoder/decoder (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://www.webmproject.org/
+
+LICENSE=	BSD3CLAUSE
+
+USES=		linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+LIB_DISTNAMES=	${PORTNAME}-${DISTVERSIONFULL}
+SRC_DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+CONFLICTS=	linux-c7-${PORTNAME}
+DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

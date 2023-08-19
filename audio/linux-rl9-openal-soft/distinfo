@@ -1,0 +1,7 @@
+TIMESTAMP = 1705997106
+SHA256 (rocky/o/openal-soft-1.19.1-16.el9.aarch64.rpm) = 4b00b41dfffa797f9f6720431e635107962b24373aab99070f5abbabd36c945d
+SIZE (rocky/o/openal-soft-1.19.1-16.el9.aarch64.rpm) = 536820
+SHA256 (rocky/o/openal-soft-1.19.1-16.el9.x86_64.rpm) = a73661c62a75bc6aedbe47c67cfa5dabadd8f828732227b521e548ba9d2784e7
+SIZE (rocky/o/openal-soft-1.19.1-16.el9.x86_64.rpm) = 546106
+SHA256 (rocky/o/openal-soft-1.19.1-16.el9.src.rpm) = eff033e9d6e0a6156a6fc038f63d84a6bb6d96311a63b823a9e09dbca9c3bbc5
+SIZE (rocky/o/openal-soft-1.19.1-16.el9.src.rpm) = 583911
