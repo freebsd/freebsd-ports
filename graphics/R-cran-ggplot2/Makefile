@@ -1,9 +1,9 @@
 PORTNAME=	ggplot2
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.3
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Implementation of the Grammar of Graphics
 WWW=		https://ggplot2.tidyverse.org/
 
