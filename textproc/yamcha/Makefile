@@ -8,14 +8,21 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Multipurpose CHunk Annotator
 WWW=		http://chasen.org/~taku/software/yamcha/
 
+DEPRECATED=	Last upstream release was in 2005
+EXPIRATION_DATE=	2023-09-30
+BROKEN_FreeBSD_14=	fails to compile: no matching function for call to 'make_pair'
+
 BUILD_DEPENDS=	svm_learn:science/svmlight
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 USES=		libtool perl5
 USE_CXXSTD=	c++98
+USE_LDCONFIG=	yes
 USE_PERL5=	build
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
+
 PORTDOCS=	feature.png feature2.png feature3.png \
 		feature4.png feature5.png index.html \
 		yamcha.html yamcha.css
