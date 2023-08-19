@@ -1326,6 +1326,7 @@
     SUBDIR += p5-pQuery
     SUBDIR += p5-webservice-validator-css-w3c
     SUBDIR += p5-webservice-validator-html-w3c
+    SUBDIR += pacparser
     SUBDIR += payara
     SUBDIR += pear-HTML_AJAX
     SUBDIR += pear-HTML_TagCloud
@@ -1855,8 +1856,8 @@
     SUBDIR += qt6-httpserver
     SUBDIR += qt6-webchannel
     SUBDIR += qt6-webengine
-    SUBDIR += qt6-webview
     SUBDIR += qt6-websockets
+    SUBDIR += qt6-webview
     SUBDIR += quark
     SUBDIR += qutebrowser
     SUBDIR += radicale

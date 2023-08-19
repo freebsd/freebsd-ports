@@ -1,0 +1,7 @@
+Pacparser is a library to parse proxy auto-config (PAC) files. Proxy
+auto-config files are a vastly used proxy configuration method these
+days. Web browsers can use a PAC file to determine which proxy server to
+use or whether to go direct for a given URL. PAC files are written in
+JavaScript and can be programmed to return different proxy methods
+depending upon URL, source IP address, protocol, time of the day etc.
+PAC files introduce a lot of possibilities.
