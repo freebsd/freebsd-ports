@@ -1,6 +1,6 @@
 PORTNAME=	Aluminum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 
-CMAKE_TESTING_ON=	ALUMINUM_ENABLE_TESTS # tests fail to build, see https://github.com/LLNL/Aluminum/issues/209
+CMAKE_TESTING_ON=	ALUMINUM_ENABLE_TESTS # tests crash, see https://github.com/LLNL/Aluminum/issues/211
 
 LDFLAGS+=	-lexecinfo
 
