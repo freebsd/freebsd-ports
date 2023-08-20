@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	30.0.50.20230806
+DISTVERSION=	30.0.50.20230820
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	18e7bc8
+GH_TAGNAME=	fd1479a
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -269,8 +269,8 @@ post-patch:
 pre-configure:
 	@(cd ${WRKSRC} && ./autogen.sh all)
 	@${REINPLACE_CMD} \
-	  -e '/emacs-repository-version/s/^.*$$/(setq emacs-repository-version "${GH_TAGNAME}")/' \
-	  -e '/emacs-repository-branch/s/^.*$$/(setq emacs-repository-branch "master")/' \
+	  -e 's/(ignore-errors (emacs-repository-get-version))/"${GH_TAGNAME}"/' \
+	  -e 's/(ignore-errors (emacs-repository-get-branch))/"master"/' \
 	  ${WRKSRC}/lisp/loadup.el
 
 post-install:
