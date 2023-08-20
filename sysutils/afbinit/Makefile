@@ -15,6 +15,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Sun AFB aka Sun Elite 3D microcode firmware loader
 
+DEPRECATED=		sparc64 architecture is deprecated in FreeBSD
+EXPIRATION_DATE=	2023-12-31
+
 OPTIONS_DEFINE=		DOCS
 
 ONLY_FOR_ARCHS=		sparc64
