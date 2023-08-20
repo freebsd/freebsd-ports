@@ -11,7 +11,7 @@ WWW=		https://github.com/JetBrains/intellij-community/tree/master/platform/sqlit
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 powerpc64le
 
 BUILD_DEPENDS=	bash:shells/bash
 
