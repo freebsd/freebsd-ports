@@ -11,6 +11,9 @@ WWW=		https://redis.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Has reached its EoL. Please migrate to newer version.
+EXPIRATION_DATE=	2023-09-30
+
 USES+=		compiler:c11 gmake tcl:test
 
 MAKE_ENV=	OPTIMIZATION= \
