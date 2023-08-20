@@ -1,5 +1,5 @@
 PORTNAME=	picard
-PORTVERSION=	2.9
+PORTVERSION=	2.9.1
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -12,6 +12,8 @@ WWW=		https://picard.musicbrainz.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.37:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.7:devel/py-dateutil@${PY_FLAVOR} \
@@ -23,11 +25,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 USES=		gettext pyqt:5 python desktop-file-utils
 USE_LOCALE=	en_US.UTF-8
 USE_PYQT=	pyqt5:run sip
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist noflavors pep517 unittest
 
 CONFLICTS_INSTALL=	picard-tools py*-python-picard # bin/picard
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-release-${DISTVERSION}
 
 OPTIONS_DEFINE=		ACOUSTID PLUGINS
 OPTIONS_DEFAULT=	PLUGINS
