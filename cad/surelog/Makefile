@@ -39,8 +39,6 @@ CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS # 2 tests fail, see https://github.com/chipsalliance/Surelog/issues/3545
 CMAKE_TESTING_TARGET=	UnitTests
 
-CONFLICTS_INSTALL=	capnproto capnproto080
-
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 
 CONFLICTS_BUILD=	openjdk8 openjdk11 openjdk18 openjdk19
@@ -60,7 +58,7 @@ TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent tags like 'show'
 
-post-install: # workaound for https://github.com/chipsalliance/Surelog/issues/3596
+post-install: # workaround for https://github.com/chipsalliance/Surelog/issues/3596
 	@${RMDIR} \
 		${STAGEDIR}${DATADIR}/pkg/work \
 		${STAGEDIR}${DATADIR}/pkg \
