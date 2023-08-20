@@ -18,7 +18,7 @@ GH_ACCOUNT=	manugarg
 GH_TAGNAME=	e29c1a3
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	NO_INTERNET=\#
+MAKE_ENV+=	NO_INTERNET=1
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC_SUBDIR=	src
@@ -50,5 +50,8 @@ post-install:
 
 post-install-PYTHON-on:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pacparser/_pacparser.cpython-*.so
+
+do-test-PYTHON-on:
+	${PYTHON_CMD} ${WRKSRC}/../tests/runtests.py
 
 .include <bsd.port.mk>
