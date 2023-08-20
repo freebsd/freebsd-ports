@@ -2,7 +2,8 @@ PKGNAMESUFFIX=	-tiles
 
 MASTERDIR=	${.CURDIR}/../cataclysm-dda
 
-OPTIONS_SLAVE=	SDL SOUND
+FLAVORS=	tiles
+FLAVOR=		tiles
 
 RUN_DEPENDS+=	cataclysm-dda>0:games/cataclysm-dda
 
