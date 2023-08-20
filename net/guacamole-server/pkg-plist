@@ -13,6 +13,7 @@ include/guacamole/client-types.h
 include/guacamole/client.h
 include/guacamole/error-types.h
 include/guacamole/error.h
+include/guacamole/fips.h
 include/guacamole/hash.h
 include/guacamole/layer-types.h
 include/guacamole/layer.h
@@ -68,7 +69,7 @@ include/guacamole/wol.h
 lib/libguac.a
 lib/libguac.so
 lib/libguac.so.21
-lib/libguac.so.21.0.0
+lib/libguac.so.21.1.0
 lib/libguac-terminal.a
 lib/libguac-terminal.so
 lib/libguac-terminal.so.0

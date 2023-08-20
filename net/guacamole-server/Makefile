@@ -1,6 +1,5 @@
 PORTNAME=	guacamole-server
-DISTVERSION=	1.5.0
-PORTREVISION=	4
+DISTVERSION=	1.5.3
 CATEGORIES=	net
 MASTER_SITES=	APACHE/guacamole/${DISTVERSION}/source/
 
@@ -30,6 +29,7 @@ SHEBANG_FILES=	${WRKSRC}/src/protocols/rdp/keymaps/generate.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-guacd-conf=${ETCDIR}/guacd.conf
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-Wno-error=newline-eof
 
 GUACAMOLE_HOME?=	${PREFIX}/guacamole
 USERS=		guacamole
@@ -66,7 +66,8 @@ GUACENC_CFLAGS=		-Wno-error=deprecated
 GUACLOG_CONFIGURE_ENABLE=	guaclog
 KUBERNETES_CONFIGURE_ENABLE=	kubernetes
 KUBERNETES_CONFIGURE_WITH=	pango terminal
-KUBERNETES_LIB_DEPENDS=		libwebsockets.so:net/libwebsockets
+KUBERNETES_LIB_DEPENDS=		libwebsockets.so:net/libwebsockets \
+				libharfbuzz.so:print/harfbuzz
 KUBERNETES_USE=			GNOME=pango
 NLS_USES=		gettext-runtime
 PULSEAUDIO_CONFIGURE_WITH=	pulse
