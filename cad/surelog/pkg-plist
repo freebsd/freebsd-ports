@@ -59,8 +59,8 @@ include/Surelog/Expression/Value.h
 include/Surelog/Library/Library.h
 include/Surelog/Library/LibrarySet.h
 include/Surelog/Package/Package.h
-include/Surelog/SourceCompile/AstListener.h
-include/Surelog/SourceCompile/AstTraceListener.h
+include/Surelog/SourceCompile/ParseTreeListener.h
+include/Surelog/SourceCompile/ParseTreeTraceListener.h
 include/Surelog/SourceCompile/SymbolTable.h
 include/Surelog/SourceCompile/VObjectTypes.h
 include/Surelog/Testbench/ClassDefinition.h
