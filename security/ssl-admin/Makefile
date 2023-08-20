@@ -1,7 +1,6 @@
 PORTNAME=	ssl-admin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	security
 
 MAINTAINER=	ecrist@secure-computing.net
