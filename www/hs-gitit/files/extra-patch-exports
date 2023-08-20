@@ -1,0 +1,612 @@
+diff --git README.markdown README.markdown
+index d49e0cc..c5a4ada 100644
+--- README.markdown
++++ README.markdown
+@@ -7,9 +7,10 @@ files are stored in a [git], [darcs], or [mercurial] repository
+ and may be modified either by using the VCS's command-line tools or
+ through the wiki's web interface. By default, pandoc's extended version
+ of markdown is used as a markup language, but reStructuredText, LaTeX, HTML,
+-DocBook, or Emacs Org-mode markup can also be used.  Gitit can
+-be configured to display TeX math (using [texmath]) and
+-highlighted source code (using [highlighting-kate]).
++DocBook, or Emacs Org-mode markup can also be used. Pages can be exported in a
++number of different formats, including LaTeX, RTF, OpenOffice ODT, and
++MediaWiki markup.  Gitit can be configured to display TeX math (using
++[texmath]) and highlighted source code (using [highlighting-kate]).
+ 
+ Other features include
+ 
+@@ -410,7 +411,7 @@ Caching
+ By default, gitit does not cache content.  If your wiki receives a lot of
+ traffic or contains pages that are slow to render, you may want to activate
+ caching.  To do this, set the configuration option `use-cache` to `yes`.
+-By default, rendered pages, and highlighted source files
++By default, rendered pages, highlighted source files, and exported PDFs
+ will be cached in the `cache` directory. (Another directory can be
+ specified by setting the `cache-dir` configuration option.)
+ 
+diff --git data/default.conf data/default.conf
+index cd528f9..567bf8f 100644
+--- data/default.conf
++++ data/default.conf
+@@ -266,9 +266,16 @@ feed-days: 14
+ feed-refresh-time: 60
+ # number of minutes to cache feeds before refreshing
+ 
++pdf-export: no
++# if yes, PDF will appear in export options. PDF will be created using
++# pdflatex, which must be installed and in the path. Note that PDF
++# exports create significant additional server load.
++
+ pandoc-user-data:
+ # if a directory is specified, this will be searched for pandoc
+-# customizations.  If no directory is
++# customizations. These can include a templates/ directory for custom
++# templates for various export formats, an S5 directory for custom
++# S5 styles, and a reference.odt for ODT exports. If no directory is
+ # specified, $HOME/.pandoc will be searched. See pandoc's README for
+ # more information.
+ 
+diff --git data/templates/pagetools.st data/templates/pagetools.st
+index a5178f4..2d01dfa 100644
+--- data/templates/pagetools.st
++++ data/templates/pagetools.st
+@@ -9,5 +9,6 @@
+       <li><a href="$base$/_feed$pageUrl$" type="application/atom+xml" rel="alternate" title="This page's ATOM Feed">Atom feed</a> <img alt="feed icon" src="$base$/img/icons/feed.png"/></li>
+       $endif$
+     </ul>
++    $exportbox$
+   </fieldset>
+ </div>
+diff --git gitit.cabal gitit.cabal
+index 3d0d695..361415d 100644
+--- gitit.cabal
++++ gitit.cabal
+@@ -115,6 +115,7 @@ Library
+                      Network.Gitit.Authentication.Github,
+                      Network.Gitit.Util, Network.Gitit.Server
+                      Network.Gitit.Cache, Network.Gitit.State,
++                     Network.Gitit.Export,
+                      Network.Gitit.Handlers,
+                      Network.Gitit.Plugins, Network.Gitit.Rpxnow,
+                      Network.Gitit.Page, Network.Gitit.Feed,
+diff --git src/Network/Gitit.hs src/Network/Gitit.hs
+index 3ad25f8..032cc9d 100644
+--- src/Network/Gitit.hs
++++ src/Network/Gitit.hs
+@@ -199,6 +199,7 @@ wikiHandlers =
+           authenticate ForModify (unlessNoDelete deletePage showPage) ]
+   , dir "_preview" preview
+   , guardIndex >> indexPage
++  , guardCommand "export" >> exportPage
+   , method POST >> guardCommand "cancel" >> showPage
+   , method POST >> guardCommand "update" >>
+       authenticate ForModify (unlessNoEdit updatePage showPage)
+diff --git src/Network/Gitit/Cache.hs src/Network/Gitit/Cache.hs
+index 3334d07..91b6c0a 100644
+--- src/Network/Gitit/Cache.hs
++++ src/Network/Gitit/Cache.hs
+@@ -41,13 +41,23 @@ import Control.Monad.Trans (liftIO)
+ import Text.Pandoc.UTF8 (encodePath)
+ 
+ -- | Expire a cached file, identified by its filename in the filestore.
++-- If there is an associated exported PDF, expire it too.
+ -- Returns () after deleting a file from the cache, fails if no cached file.
+ expireCachedFile :: String -> GititServerPart ()
+ expireCachedFile file = do
+   cfg <- getConfig
+   let target = encodePath $ cacheDir cfg </> file
+   exists <- liftIO $ doesFileExist target
+-  when exists $ liftIO $ liftIO $ removeFile target
++  when exists $ liftIO $ do
++    liftIO $ removeFile target
++    expireCachedPDF target (defaultExtension cfg)
++
++expireCachedPDF :: String -> String -> IO ()
++expireCachedPDF file ext = 
++  when (takeExtension file == "." ++ ext) $ do
++    let pdfname = file ++ ".export.pdf"
++    exists <- doesFileExist pdfname
++    when exists $ removeFile pdfname
+ 
+ lookupCache :: String -> GititServerPart (Maybe (UTCTime, B.ByteString))
+ lookupCache file = do
+@@ -74,3 +84,4 @@ cacheContents file contents = do
+   liftIO $ do
+     createDirectoryIfMissing True targetDir
+     B.writeFile target contents
++    expireCachedPDF target (defaultExtension cfg)
+diff --git src/Network/Gitit/Config.hs src/Network/Gitit/Config.hs
+index d39d8cf..1bfbc47 100644
+--- src/Network/Gitit/Config.hs
++++ src/Network/Gitit/Config.hs
+@@ -130,6 +130,7 @@ extractConfig cp = do
+       cfWikiTitle <- get cp "DEFAULT" "wiki-title"
+       cfFeedDays <- get cp "DEFAULT" "feed-days"
+       cfFeedRefreshTime <- get cp "DEFAULT" "feed-refresh-time"
++      cfPDFExport <- get cp "DEFAULT" "pdf-export"
+       cfPandocUserData <- get cp "DEFAULT" "pandoc-user-data"
+       cfXssSanitize <- get cp "DEFAULT" "xss-sanitize"
+       cfRecentActivityDays <- get cp "DEFAULT" "recent-activity-days"
+@@ -231,6 +232,7 @@ extractConfig cp = do
+         , wikiTitle            = cfWikiTitle
+         , feedDays             = readNumber "feed-days" cfFeedDays
+         , feedRefreshTime      = readNumber "feed-refresh-time" cfFeedRefreshTime
++        , pdfExport            = cfPDFExport
+         , pandocUserData       = if null cfPandocUserData
+                                     then Nothing
+                                     else Just cfPandocUserData
+diff --git src/Network/Gitit/ContentTransformer.hs src/Network/Gitit/ContentTransformer.hs
+index 12e450a..fa82604 100644
+--- src/Network/Gitit/ContentTransformer.hs
++++ src/Network/Gitit/ContentTransformer.hs
+@@ -31,6 +31,7 @@ module Network.Gitit.ContentTransformer
+   , showRawPage
+   , showFileAsText
+   , showPage
++  , exportPage
+   , showHighlightedSource
+   , showFile
+   , preview
+@@ -44,6 +45,7 @@ module Network.Gitit.ContentTransformer
+   , textResponse
+   , mimeFileResponse
+   , mimeResponse
++  , exportPandoc
+   , applyWikiTemplate
+   -- * Content-type transformation combinators
+   , pageToWikiPandoc
+@@ -77,6 +79,7 @@ import Data.List (stripPrefix)
+ import Data.Maybe (isNothing, mapMaybe)
+ import Data.Semigroup ((<>))
+ import Network.Gitit.Cache (lookupCache, cacheContents)
++import Network.Gitit.Export (exportFormats)
+ import Network.Gitit.Framework hiding (uriPath)
+ import Network.Gitit.Layout
+ import Network.Gitit.Page (stringToPage)
+@@ -183,6 +186,10 @@ showFileAsText = runFileTransformer rawTextResponse
+ showPage :: Handler
+ showPage = runPageTransformer htmlViaPandoc
+ 
++-- | Responds with page exported into selected format.
++exportPage :: Handler
++exportPage = runPageTransformer exportViaPandoc
++
+ -- | Responds with highlighted source code.
+ showHighlightedSource :: Handler
+ showHighlightedSource = runFileTransformer highlightRawSource
+@@ -213,6 +220,15 @@ applyPreCommitPlugins = runPageTransformer . applyPreCommitTransforms
+ rawTextResponse :: ContentTransformer Response
+ rawTextResponse = rawContents >>= textResponse
+ 
++-- | Responds with a wiki page in the format specified
++-- by the @format@ parameter.
++exportViaPandoc :: ContentTransformer Response
++exportViaPandoc = rawContents >>=
++                  maybe mzero return >>=
++                  contentsToPage >>=
++                  pageToWikiPandoc >>=
++                  exportPandoc
++
+ -- | Responds with a wiki page. Uses the cache when
+ -- possible and caches the rendered page when appropriate.
+ htmlViaPandoc :: ContentTransformer Response
+@@ -306,6 +322,17 @@ mimeResponse :: Monad m
+ mimeResponse c mimeType =
+   return . setContentType mimeType . toResponse $ c
+ 
++-- | Converts Pandoc to response using format specified in parameters.
++exportPandoc :: Pandoc -> ContentTransformer Response
++exportPandoc doc = do
++  params <- getParams
++  page <- getPageName
++  cfg <- lift getConfig
++  let format = pFormat params
++  case lookup format (exportFormats cfg) of
++       Nothing     -> error $ "Unknown export format: " ++ format
++       Just writer -> lift (writer page doc)
++
+ -- | Adds the sidebar, page tabs, and other elements of the wiki page
+ -- layout to the raw content.
+ applyWikiTemplate :: Html -> ContentTransformer Response
+diff --git src/Network/Gitit/Export.hs src/Network/Gitit/Export.hs
+new file mode 100644
+index 0000000..0842a8c
+--- /dev/null
++++ src/Network/Gitit/Export.hs
+@@ -0,0 +1,307 @@
++{-# LANGUAGE OverloadedStrings #-}
++{-# LANGUAGE FlexibleContexts #-}
++{-
++Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
++
++This program is free software; you can redistribute it and/or modify
++it under the terms of the GNU General Public License as published by
++the Free Software Foundation; either version 2 of the License, or
++(at your option) any later version.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++-}
++
++{- Functions for exporting wiki pages in various formats.
++-}
++
++module Network.Gitit.Export ( exportFormats ) where
++import Control.Exception (throwIO)
++import Text.Pandoc hiding (HTMLMathMethod(..), getDataFileName)
++import qualified Text.Pandoc as Pandoc
++import Text.Pandoc.PDF (makePDF)
++import Text.Pandoc.SelfContained as SelfContained
++import qualified Text.Pandoc.UTF8 as UTF8
++import qualified Data.Map as M
++import Network.Gitit.Server
++import Network.Gitit.Framework (pathForPage)
++import Network.Gitit.State (getConfig)
++import Network.Gitit.Types
++import Network.Gitit.Cache (cacheContents, lookupCache)
++import Text.DocTemplates as DT
++import Control.Monad.Trans (liftIO)
++import Control.Monad (unless)
++import Text.XHtml (noHtml)
++import qualified Data.ByteString as B
++import qualified Data.ByteString.Lazy as L
++import System.FilePath ((</>), takeDirectory)
++import System.Environment (setEnv)
++import System.Directory (doesFileExist)
++import Text.HTML.SanitizeXSS
++import Data.ByteString.Lazy (fromStrict)
++import Data.Text (Text)
++import qualified Data.Text as T
++import Data.Text.Encoding (encodeUtf8)
++import Data.List (isPrefixOf)
++import Skylighting (styleToCss, pygments)
++import System.IO.Temp (withSystemTempDirectory)
++import Paths_gitit (getDataFileName)
++
++defaultRespOptions :: WriterOptions
++defaultRespOptions = def { writerHighlightStyle = Just pygments }
++
++respondX :: String -> String -> String
++          -> (WriterOptions -> Pandoc -> PandocIO L.ByteString)
++          -> WriterOptions -> String -> Pandoc -> Handler
++respondX templ mimetype ext fn opts page doc = do
++  cfg <- getConfig
++  doc' <- if ext `elem` ["odt","pdf","beamer","epub","docx","rtf"]
++             then fixURLs page doc
++             else return doc
++  doc'' <- liftIO $ runIO $ do
++        setUserDataDir $ pandocUserData cfg
++        compiledTemplate <- compileDefaultTemplate (T.pack templ)
++        fn opts{ writerTemplate = Just compiledTemplate } doc'
++  either (liftIO . throwIO)
++         (ok . setContentType mimetype .
++           (if null ext then id else setFilename (page ++ "." ++ ext)) .
++            toResponseBS B.empty)
++         doc''
++
++respondS :: String -> String -> String -> (WriterOptions -> Pandoc -> PandocIO Text)
++          -> WriterOptions -> String -> Pandoc -> Handler
++respondS templ mimetype ext fn =
++  respondX templ mimetype ext (\o d -> fromStrict . encodeUtf8 <$> fn o d)
++
++respondSlides :: String -> (WriterOptions -> Pandoc -> PandocIO Text) -> String -> Pandoc -> Handler
++respondSlides templ fn page doc = do
++    cfg <- getConfig
++    let math = case mathMethod cfg of
++                   MathML       -> Pandoc.MathML
++                   WebTeX u     -> Pandoc.WebTeX $ T.pack u
++                   _            -> Pandoc.PlainMath
++    let opts' = defaultRespOptions { writerIncremental = True
++                                   , writerHTMLMathMethod = math}
++    -- We sanitize the body only, to protect against XSS attacks.
++    -- (Sanitizing the whole HTML page would strip out javascript
++    -- needed for the slides.)  We then pass the body into the
++    -- slide template using the 'body' variable.
++    Pandoc meta blocks <- fixURLs page doc
++    docOrError <- liftIO $ runIO $ do
++          setUserDataDir $ pandocUserData cfg
++          body' <- writeHtml5String opts' (Pandoc meta blocks) -- just body
++          let body'' = T.unpack
++                       $ (if xssSanitize cfg then sanitizeBalance else id)
++                       $ body'
++          let setVariable key val (DT.Context ctx) =
++                DT.Context $ M.insert (T.pack key) (toVal (T.pack val)) ctx
++          variables' <- if mathMethod cfg == MathML
++                          then do
++                              s <- readDataFile "MathMLinHTML.js"
++                              return $ setVariable "mathml-script"
++                                         (UTF8.toString s) mempty
++                          else return mempty
++          compiledTemplate <- compileDefaultTemplate (T.pack templ)
++          dzcore <- if templ == "dzslides"
++                      then do
++                        dztempl <- readDataFile $ "dzslides" </> "template.html"
++                        return $ unlines
++                            $ dropWhile (not . isPrefixOf "<!-- {{{{ dzslides core")
++                            $ lines $ UTF8.toString dztempl
++                      else return ""
++          let opts'' = opts'{
++                             writerVariables =
++                               setVariable "body" body'' $
++                               setVariable "dzslides-core" dzcore $
++                               setVariable "highlighting-css" pygmentsCss
++                               $ variables'
++                            ,writerTemplate = Just compiledTemplate }
++          h <- fn opts'' (Pandoc meta [])
++          makeSelfContained h
++    either (liftIO . throwIO)
++           (ok . setContentType "text/html;charset=UTF-8" .
++             (setFilename (page ++ ".html")) .
++             toResponseBS B.empty . L.fromStrict . UTF8.fromText)
++           docOrError
++
++respondLaTeX :: String -> Pandoc -> Handler
++respondLaTeX = respondS "latex" "application/x-latex" "tex"
++  writeLaTeX defaultRespOptions
++
++respondConTeXt :: String -> Pandoc -> Handler
++respondConTeXt = respondS "context" "application/x-context" "tex"
++  writeConTeXt defaultRespOptions
++
++
++respondRTF :: String -> Pandoc -> Handler
++respondRTF = respondX "rtf" "application/rtf" "rtf"
++  (\o d -> L.fromStrict . UTF8.fromText <$> writeRTF o d) defaultRespOptions
++
++respondRST :: String -> Pandoc -> Handler
++respondRST = respondS "rst" "text/plain; charset=utf-8" ""
++  writeRST defaultRespOptions{writerReferenceLinks = True}
++
++respondMarkdown :: String -> Pandoc -> Handler
++respondMarkdown = respondS "markdown" "text/plain; charset=utf-8" ""
++  writeMarkdown defaultRespOptions{writerReferenceLinks = True}
++
++respondCommonMark :: String -> Pandoc -> Handler
++respondCommonMark = respondS "commonmark" "text/plain; charset=utf-8" ""
++  writeCommonMark defaultRespOptions{writerReferenceLinks = True}
++
++respondPlain :: String -> Pandoc -> Handler
++respondPlain = respondS "plain" "text/plain; charset=utf-8" ""
++  writePlain defaultRespOptions
++
++respondMan :: String -> Pandoc -> Handler
++respondMan = respondS "man" "text/plain; charset=utf-8" ""
++  writeMan defaultRespOptions
++
++respondTexinfo :: String -> Pandoc -> Handler
++respondTexinfo = respondS "texinfo" "application/x-texinfo" "texi"
++  writeTexinfo defaultRespOptions
++
++respondDocbook :: String -> Pandoc -> Handler
++respondDocbook = respondS "docbook" "application/docbook+xml" "xml"
++  writeDocbook5 defaultRespOptions
++
++respondOrg :: String -> Pandoc -> Handler
++respondOrg = respondS "org" "text/plain; charset=utf-8" ""
++  writeOrg defaultRespOptions
++
++respondICML :: String -> Pandoc -> Handler
++respondICML = respondX "icml" "application/xml; charset=utf-8" ""
++              (\o d -> L.fromStrict . UTF8.fromText <$> writeICML o d)
++                         defaultRespOptions
++
++respondTextile :: String -> Pandoc -> Handler
++respondTextile = respondS "textile" "text/plain; charset=utf-8" ""
++  writeTextile defaultRespOptions
++
++respondAsciiDoc :: String -> Pandoc -> Handler
++respondAsciiDoc = respondS "asciidoc" "text/plain; charset=utf-8" ""
++  writeAsciiDoc defaultRespOptions
++
++respondMediaWiki :: String -> Pandoc -> Handler
++respondMediaWiki = respondS "mediawiki" "text/plain; charset=utf-8" ""
++  writeMediaWiki defaultRespOptions
++
++respondODT :: String -> Pandoc -> Handler
++respondODT = respondX "opendocument" "application/vnd.oasis.opendocument.text"
++              "odt" writeODT defaultRespOptions
++
++respondEPUB :: String -> Pandoc -> Handler
++respondEPUB = respondX "html" "application/epub+zip" "epub" writeEPUB3
++               defaultRespOptions
++
++respondDocx :: String -> Pandoc -> Handler
++respondDocx = respondX "native"
++  "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
++  "docx" writeDocx defaultRespOptions
++
++respondPDF :: Bool -> String -> Pandoc -> Handler
++respondPDF useBeamer page old_pndc = fixURLs page old_pndc >>= \pndc -> do
++  cfg <- getConfig
++  unless (pdfExport cfg) $ error "PDF export disabled"
++  let cacheName = pathForPage page (defaultExtension cfg) ++ ".export.pdf"
++  cached <- if useCache cfg
++               then lookupCache cacheName
++               else return Nothing
++  pdf' <- case cached of
++            Just (_modtime, bs) -> return $ Right $ L.fromChunks [bs]
++            Nothing -> liftIO $
++                withSystemTempDirectory "gitit" $ \tmpdir -> do
++              let toc = tableOfContents cfg
++              -- ensure that LaTeX \include commands can't include
++              -- files outside the working directory, e.g. /etc/passwd:
++              writeFile (tmpdir </> "texmf.cnf")
++                "openout_any = p\nopenin_any = p\n"
++              setEnv "TEXMFCNF" (tmpdir ++ ":")
++              res <- runIO $ do
++                setUserDataDir $ pandocUserData cfg
++                setInputFiles [baseUrl cfg]
++                let templ = if useBeamer then "beamer" else "latex"
++                compiledTemplate <- compileDefaultTemplate templ
++                makePDF "pdflatex" [] (if useBeamer then writeBeamer else writeLaTeX)
++                  defaultRespOptions{ writerTemplate = Just compiledTemplate
++                                    , writerTableOfContents = toc } pndc
++              either (liftIO . throwIO) return res
++
++  case pdf' of
++       Left logOutput' -> simpleErrorHandler ("PDF creation failed:\n"
++                           ++ UTF8.toStringLazy logOutput')
++       Right pdfBS -> do
++              case cached of
++                Nothing ->
++                     cacheContents cacheName $ B.concat . L.toChunks $ pdfBS
++                _ -> return ()
++              ok $ setContentType "application/pdf" $ setFilename (page ++ ".pdf") $
++                        (toResponse noHtml) {rsBody = pdfBS}
++
++-- | When we create a PDF or ODT from a Gitit page, we need to fix the URLs of any
++-- images on the page. Those URLs will often be relative to the staticDir, but the
++-- PDF or ODT processor only understands paths relative to the working directory.
++--
++-- Because the working directory will not in general be the root of the gitit instance
++-- at the time the Pandoc is fed to e.g. pdflatex, this function replaces the URLs of
++-- images in the staticDir with their correct absolute file path.
++fixURLs :: String -> Pandoc -> GititServerPart Pandoc
++fixURLs page pndc = do
++    cfg <- getConfig
++    defaultStatic <- liftIO $ getDataFileName $ "data" </> "static"
++
++    let static = staticDir cfg
++    let repoPath = repositoryPath cfg
++
++    let go (Image attr ils (url, title)) = do
++           fixedURL <- fixURL $ T.unpack url
++           return $ Image attr ils (T.pack fixedURL, title)
++        go x                        = return x
++
++        fixURL ('/':url) = resolve url
++        fixURL url       = resolve $ takeDirectory page </> url
++
++        resolve p = do
++           sp <- doesFileExist $ static </> p
++           dsp <- doesFileExist $ defaultStatic </> p
++           return (if sp then static </> p
++                   else (if dsp then defaultStatic </> p
++                         else repoPath </> p))
++    liftIO $ bottomUpM go pndc
++
++exportFormats :: Config -> [(String, String -> Pandoc -> Handler)]
++exportFormats cfg = if pdfExport cfg
++                       then ("PDF", respondPDF False) :
++                            ("Beamer", respondPDF True) :
++                            rest
++                       else rest
++   where rest = [ ("LaTeX",     respondLaTeX)     -- (description, writer)
++                , ("ConTeXt",   respondConTeXt)
++                , ("Texinfo",   respondTexinfo)
++                , ("reST",      respondRST)
++                , ("Markdown",  respondMarkdown)
++                , ("CommonMark",respondCommonMark)
++                , ("Plain text",respondPlain)
++                , ("MediaWiki", respondMediaWiki)
++                , ("Org-mode",  respondOrg)
++                , ("ICML",      respondICML)
++                , ("Textile",   respondTextile)
++                , ("AsciiDoc",  respondAsciiDoc)
++                , ("Man page",  respondMan)
++                , ("DocBook",   respondDocbook)
++                , ("DZSlides",  respondSlides "dzslides" writeDZSlides)
++                , ("Slidy",     respondSlides "slidy" writeSlidy)
++                , ("S5",        respondSlides "s5" writeS5)
++                , ("EPUB",      respondEPUB)
++                , ("ODT",       respondODT)
++                , ("DOCX",      respondDocx)
++                , ("RTF",       respondRTF) ]
++
++pygmentsCss :: String
++pygmentsCss = styleToCss pygments
+diff --git src/Network/Gitit/Handlers.hs src/Network/Gitit/Handlers.hs
+index 44b19fe..d9f894f 100644
+--- src/Network/Gitit/Handlers.hs
++++ src/Network/Gitit/Handlers.hs
+@@ -42,6 +42,7 @@ module Network.Gitit.Handlers (
+                       , showPage
+                       , showPageDiff
+                       , showFileDiff
++                      , exportPage
+                       , updatePage
+                       , editPage
+                       , deletePage
+@@ -60,7 +61,7 @@ import Network.Gitit.Feed (filestoreToXmlFeed, FeedConfig(..))
+ import Network.Gitit.Util (orIfNull)
+ import Network.Gitit.Cache (expireCachedFile, lookupCache, cacheContents)
+ import Network.Gitit.ContentTransformer (showRawPage, showFileAsText, showPage,
+-        showHighlightedSource, preview, applyPreCommitPlugins)
++        exportPage, showHighlightedSource, preview, applyPreCommitPlugins)
+ import Network.Gitit.Page (readCategories)
+ import qualified Control.Exception as E
+ import System.FilePath
+diff --git src/Network/Gitit/Layout.hs src/Network/Gitit/Layout.hs
+index f835d42..fd307c7 100644
+--- src/Network/Gitit/Layout.hs
++++ src/Network/Gitit/Layout.hs
+@@ -31,11 +31,12 @@ import Network.Gitit.Server
+ import Network.Gitit.Framework
+ import Network.Gitit.State
+ import Network.Gitit.Types
++import Network.Gitit.Export (exportFormats)
+ import Network.HTTP (urlEncodeVars)
+ import qualified Text.StringTemplate as T
+ import Text.XHtml hiding ( (</>), dir, method, password, rev )
+ import Text.XHtml.Strict ( stringToHtmlString )
+-import Data.Maybe (isNothing)
++import Data.Maybe (isNothing, isJust, fromJust)
+ 
+ defaultPageLayout :: PageLayout
+ defaultPageLayout = PageLayout
+@@ -110,6 +111,8 @@ filledPageTemplate base' cfg layout htmlContents templ =
+                    maybe id (T.setAttribute "markuphelp") (pgMarkupHelp layout) .
+                    setBoolAttr "printable" (pgPrintable layout) .
+                    maybe id (T.setAttribute "revision") rev .
++                   T.setAttribute "exportbox"
++                       (renderHtmlFragment $  exportBox base' cfg page rev) .
+                    (if null (pgTabs layout) then id else T.setAttribute "tabs"
+                        (renderHtmlFragment tabs)) .
+                    (\f x xs -> if null xs then x else f xs) (T.setAttribute "messages") id (pgMessages layout) .
+@@ -119,6 +122,17 @@ filledPageTemplate base' cfg layout htmlContents templ =
+                    templ
+ 
+ 
++exportBox :: String -> Config -> String -> Maybe String -> Html
++exportBox base' cfg page rev | not (isSourceCode page) =
++  gui (base' ++ urlForPage page) ! [identifier "exportbox"] <<
++    ([ textfield "revision" ! [thestyle "display: none;",
++         value (fromJust rev)] | isJust rev ] ++
++     [ select ! [name "format"] <<
++         map ((\f -> option ! [value f] << f) . fst) (exportFormats cfg)
++     , primHtmlChar "nbsp"
++     , submit "export" "Export" ])
++exportBox _ _ _ _ = noHtml
++
+ -- auxiliary functions:
+ 
+ linkForTab :: (Tab -> Html -> Html) -> String -> String -> Maybe String -> Tab -> Html
+diff --git src/Network/Gitit/Types.hs src/Network/Gitit/Types.hs
+index aa23ec1..8f037b9 100644
+--- src/Network/Gitit/Types.hs
++++ src/Network/Gitit/Types.hs
+@@ -204,6 +204,8 @@ data Config = Config {
+   feedDays             :: Integer,
+   -- | Number of minutes to cache feeds before refreshing
+   feedRefreshTime      :: Integer,
++  -- | Allow PDF export?
++  pdfExport            :: Bool,
+   -- | Directory to search for pandoc customizations
+   pandocUserData       :: Maybe FilePath,
+   -- | Filter HTML through xss-sanitize
+@@ -465,7 +467,7 @@ instance FromData Command where
+        return $ case map fst pairs `intersect` commandList of
+                  []          -> Command Nothing
+                  (c:_)       -> Command $ Just c
+-               where commandList = ["update", "cancel"]
++               where commandList = ["update", "cancel", "export"]
+ 
+ -- | State for a single wiki.
+ data WikiState = WikiState {

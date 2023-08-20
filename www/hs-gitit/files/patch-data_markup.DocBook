@@ -1,0 +1,748 @@
+--- data/markup.DocBook.orig	2001-09-09 01:46:40 UTC
++++ data/markup.DocBook
+@@ -1,347 +1,411 @@
+-<sect1 id="markdown">
+-  <title>Markdown</title>
++# Markdown
++
++The usual way to write pages for this wiki is [pandoc]'s extended form
++of [markdown]. You can start using markdown and later switch to
++DocBook by using `pandoc` to convert your markdown page to DocBook for
++more sophisticated formatting. To do so use the wiki's export option
++(if enabled) or `pandoc -f markdown -t docbook -o page.xml page.md`.
++Further down on this page there is some information about the DocBook
++format. Here we continue with an introduction to markdown.
++If you're not familiar with markdown, you should start by looking
++at the [markdown "basics" page] and the [markdown syntax description].
++Consult the [pandoc User's Guide] for information about pandoc's syntax
++for footnotes, tables, description lists, and other elements not present
++in standard markdown.
++
++[pandoc]: http://pandoc.org
++[pandoc User's Guide]: http://pandoc.org/README.html
++[markdown]: http://daringfireball.net/projects/markdown
++[markdown "basics" page]: http://daringfireball.net/projects/markdown/basics
++[markdown syntax description]: http://daringfireball.net/projects/markdown/syntax 
++
++Markdown is pretty intuitive, since it is based on email conventions.
++Here are some examples to get you started:
++
+++--------------------------------------------------------+------------------------------------------------------------+
++| Markdown code                                          | Result                                                     |
+++========================================================+============================================================+
++| `*emphasized text*`                                    | *emphasized text*                                          |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `**strong emphasis**`                                  | **strong emphasis**                                        |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `` `literal text` ``                                   | `literal text`                                             |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `\*escaped special characters\*`                       | \*escaped special characters\*                             |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `[external link](http://google.com)`                   | [external link](http://google.com)                         |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `![folder](/img/icons/folder.png)`                     | ![folder](/img/icons/folder.png)                           |
+++--------------------------------------------------------+------------------------------------------------------------+
++| Wikilink: `[Front Page]()`                             | Wikilink: [Front Page]()                                   |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `H~2~O`                                                | H~2~O                                                      |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `10^100^`                                              | 10^100^                                                    |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `~~strikeout~~`                                        | ~~strikeout~~                                              |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `$x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$`     | $x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$[^1]       |
++|                                                        |                                                            |
++|                                                        | [^1]: If this looks like code, it\'s because MathJax is    |
++|                                                        | not installed on your system. Contact your administrator   |
++|                                                        | to request it.                                             |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `A simple footnote.^[Or is it so simple?]`             | A simple footnote.^[Or is it so simple?]                   |
+++--------------------------------------------------------+------------------------------------------------------------+
++| \> an indented paragraph\ \                            | > an indented paragraph, usually used for quotations       |
++| \> usually used for quotations                         |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++|         #!/bin/sh -e                                   |     #!/bin/sh -e                                           |
++|         # code, indented four spaces                   |     # code, indented four spaces                           |
++|         echo "Hello world"                             |     echo "Hello world"                                     |
+++--------------------------------------------------------+------------------------------------------------------------+
++|     * a bulleted list                                  | - a bulleted list                                          |
++|     * second item                                      | - second item                                              |
++|         - sublist                                      |     - sublist                                              |
++|         - and more                                     |     - and more                                             |
++|     * back to main list                                | - back to main list                                        |
++|         1. this item has an ordered                    |     1. this item has an ordered                            |
++|         2. sublist                                     |     2. sublist                                             |
++|                 a) you can also use letters            |         a. you can also use letters                        |
++|                 b) another item                        |         b. another item                                    |
+++--------------------------------------------------------+------------------------------------------------------------+
++|      Fruit    Quantity                                 | Fruit     Quantity                                         |
++|      ------- ---------                                 | ------- ----------                                         |
++|      apples     30,200                                 | apples      30,200                                         |
++|      oranges     1,998                                 | oranges      1,998                                         |
++|      pears          42                                 | pears           42                                         |
++|                                                        |                                                            |
++|      Table: Our fruit inventory                        | : Our fruit inventory                                      |
+++--------------------------------------------------------+------------------------------------------------------------+
++
++## Headings
++
++For headings, prefix a line with one or more `#` signs:  one for a major heading,
++two for a subheading, three for a subsubheading.  Be sure to leave space before
++and after the heading.
++
++    # Markdown
++
++    Text...
++ 
++    ## Some examples...
++   
++    Text...
++
++## Wiki links
++
++Links to other wiki pages are formed this way:  `[Page Name]()`.
++(Gitit converts markdown links with empty targets into wikilinks.)
++
++To link to a wiki page using something else as the link text:
++`[something else](Page Name)`.
++
++Note that page names may contain spaces and some special characters.
++They need not be CamelCase.  CamelCase words are *not* automatically
++converted to wiki links.
++
++Wiki pages may be organized into directories.  So, if you have
++several pages on wine, you may wish to organize them like so:
++
++    Wine/Pinot Noir
++    Wine/Burgundy
++    Wine/Cabernet Sauvignon
++
++Note that a wiki link `[Burgundy]()` that occurs inside the `Wine`
++directory will link to `Wine/Burgundy`, and not to `Burgundy`.
++To link to a top-level page called `Burgundy`, you'd have to use
++`[Burgundy](/Burgundy)`.
++
++To link to a directory listing for a subdirectory, use a trailing
++slash: `[Wine/]()` will link to a listing of the `Wine` subdirectory.
++
++# DocBook
++
++As DocBook is an XML format, opening and closing tags must match
++(`<tag>...</tag>`).
++
+++--------------------------------------------------------+------------------------------------------------------------+
++| DocBook code                                           | Result                                                     |
+++========================================================+============================================================+
++| `<emphasis>emphasized text</emphasis>`                 | *emphasized text*                                          |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `<emphasis role="strong">strong emphasis</emphasis>`   | **strong emphasis**                                        |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `<literal>literal text</literal>`                      | `literal text`                                             |
+++--------------------------------------------------------+------------------------------------------------------------+
++| XML character entities: `&lt; &gt; &quot;`             | `< > "`                                                    |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `<ulink url="https://en.wikipedia.org/wiki/DocBook">   | [external link](https://en.wikipedia.org/wikiDocBook)      |
++| external link</ulink>`                                 |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++| Inserting an image:                                    | ![folder](/img/icons/folder.png)                           |
++|                                                        |                                                            |
++|     <inlinemediaobject>                                |                                                            |
++|      <alt>folder</alt>                                 |                                                            |
++|      <imageobject>                                     |                                                            |
++|       <imagedata fileref="/img/icons/folder.png" />    |                                                            |
++|      </imageobject>                                    |                                                            |
++|     </inlinemediaobject>                               |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++| Wikilink: `<ulink url="Front Page">Front Page</ulink>` | Wikilink: [Front Page]()                                   |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `H<subscript>2</subscript>O`                           | H~2~O                                                      |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `10<superscript>100</superscript>`                     | 10^100^                                                    |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `<emphasis role="strikethrough">strikeout</emphasis>`  | ~~strikeout~~                                              |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `$x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$`     | $x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$[^1]       |
++|                                                        |                                                            |
++|                                                        | (Use pandoc's `--mathml` option to convert TeX math code.) |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `A simple footnote.<footnote>Or                        | A simple footnote.^[Or is it so simple?]                   |
++| is it so simple?</footnote>`                           |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++| `<blockquote>an indented paragraph, usually used       | > an indented paragraph, usually used for quotations       |
++| for quotations</blockquote>`                           |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++|     <programlisting>                                   |     #!/bin/sh -e                                           |
++|     #!/bin/sh -e`                                      |     echo "Hello world"                                     |
++|     echo "Hello world"                                 |                                                            |
++|     </programlisting>                                  |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++|     <itemizedlist spacing="compact">                   | - a bulleted list                                          |
++|      <listitem>                                        | - second item                                              |
++|       <simpara>a bulleted list</simpara>               |     - sublist                                              |
++|      </listitem>                                       |     - and more                                             |
++|      <listitem>                                        | - back to main list                                        |
++|       <simpara>second item</simpara>                   |     1. this item has an ordered                            |
++|       <itemizedlist spacing="compact">                 |     2. sublist                                             |
++|        <listitem>                                      |         a. you can also use letters                        |
++|         <simpara>sublist</simpara>                     |         b. another item                                    |
++|        </listitem>                                     |                                                            |
++|        <listitem>                                      |                                                            |
++|         <simpara>and more</simpara>                    |                                                            |
++|        </listitem>                                     |                                                            |
++|       </itemizedlist>                                  |                                                            |
++|      </listitem>                                       |                                                            |
++|      <listitem>                                        |                                                            |
++|       <simpara>back to main list</simpara>             |                                                            |
++|       <orderedlist spacing="compact">                  |                                                            |
++|        <listitem>                                      |                                                            |
++|         <simpara>this item has an ordered</simpara>    |                                                            |
++|        </listitem>                                     |                                                            |
++|        <listitem>                                      |                                                            |
++|         <simpara>sublist</simpara>                     |                                                            |
++|        <orderedlist spacing="compact"                  |                                                            |
++|                     numeration="loweralpha">           |                                                            |
++|          <listitem>                                    |                                                            |
++|           <simpara>you can also use letters</simpara>  |                                                            |
++|          </listitem>                                   |                                                            |
++|          <listitem>                                    |                                                            |
++|           <simpara>another item</simpara>              |                                                            |
++|          </listitem>                                   |                                                            |
++|         </orderedlist>                                 |                                                            |
++|        </listitem>                                     |                                                            |
++|       </orderedlist>                                   |                                                            |
++|      </listitem>                                       |                                                            |
++|     </itemizedlist>                                    |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++|     <table>                                            | Fruit     Quantity                                         |
++|      <title>Our fruit inventory</title>                | ------- ----------                                         |
++|      <tgroup cols="2">                                 | apples      30,200                                         |
++|       <colspec align="left" />                         | oranges      1,998                                         |
++|       <colspec align="right" />                        | pears           42                                         |
++|       <thead>                                          |                                                            |
++|        <row>                                           | : Our fruit inventory                                      |
++|         <entry>Fruit</entry>                           |                                                            |
++|         <entry>Quantity</entry>                        |                                                            |
++|        </row>                                          |                                                            |
++|       </thead>                                         |                                                            |
++|       <tbody>                                          |                                                            |
++|        <row>                                           |                                                            |
++|         <entry>apples</entry>                          |                                                            |
++|         <entry>30,200</entry>                          |                                                            |
++|       </row>                                           |                                                            |
++|        <row>                                           |                                                            |
++|         <entry>oranges</entry>                         |                                                            |
++|         <entry>1,998</entry>                           |                                                            |
++|        </row>                                          |                                                            |
++|        <row>                                           |                                                            |
++|         <entry>pears</entry>                           |                                                            |
++|         <entry>42</entry>                              |                                                            |
++|        </row>                                          |                                                            |
++|      </tbody>                                          |                                                            |
++|      </tgroup>                                         |                                                            |
++|     </table>                                           |                                                            |
+++--------------------------------------------------------+------------------------------------------------------------+
++
++## Headings
++
++A heading is given as the `<title>` element of a `<section>`:
++
++<pre>
++&lt;section&gt;
++ &lt;title&gt;Heading&lt;/title&gt;
++ &lt;simpara&gt;This is a top level section.&lt;/simpara&gt;
++ &lt;section&gt;
++  &lt;title&gt;Subheading&lt;/title&gt;
++  &lt;simpara&gt;This is a second level section.&lt;/simpara&gt;
++ &lt;/section&gt;
++&lt;/section&gt;
++</pre>
++
++## Wiki links
++
++Links to other wiki pages are formed this way:
++`<ulink url="Page Name">Page Name</ulink>`
++
++To link to a wiki page using something else as the link text:
++`<ulink url="Page Name">something else</ulink>`.
++
++Note that page names may contain spaces and some special characters.
++They need not be CamelCase.  CamelCase words are *not* automatically
++converted to wiki links.
++
++Wiki pages may be organized into directories.  So, if you have
++several pages on wine, you may wish to organize them like so:
++
++    Wine/Pinot Noir
++    Wine/Burgundy
++    Wine/Cabernet Sauvignon
++
++Note that a wiki link `<ulink url="Burgundy">Burgundy</ulink>`
++that occurs inside the `Wine` directory will link to `Wine/Burgundy`,
++and not to `Burgundy`. To link to a top-level page called `Burgundy`,
++you'd have to use `<ulink url="/Burgundy">Burgundy</ulink>`.
++
++To link to a directory listing for a subdirectory, use a trailing
++slash: `<ulink url="Wine/">Wine</ulink>` will link to a listing of
++the `Wine` subdirectory.
++
++## Reference material
++
++Further reading: [DocBook 5: The Definitive Guide], which includes the
++[List of DocBook elements].
++
++[DocBook 5: The Definitive Guide]: https://tdg.docbook.org/tdg/5.0/docbook.html
++[List of DocBook elements]: https://tdg.docbook.org/tdg/5.0/chunk-part-d64e8789.html
++
++## A sample document
++
++You might want to use the following document as a resource of DocBook
++snippets (copy/paste).
++
++~~~~~~~~
++
++<section id="docbook">
++ <title>Using DocBook</title>
++ <simpara>
++  As DocBook is an XML format, opening and closing tags
++  must match (&lt;tag&gt;...&lt;/tag&gt;).
++ </simpara>
++ <section id="inline">
++  <title>Text Formatting</title>
++  <simpara>
++   A simple paragraph.
++  </simpara>
+   <para>
+-    This wiki's pages are written in
+-    <ulink url="http://pandoc.org">pandoc</ulink>'s
+-    extended form of
+-    <ulink url="http://daringfireball.net/projects/markdown">markdown</ulink>.
+-    If you're not familiar with markdown, you should start by looking at
+-    the
+-    <ulink url="http://daringfireball.net/projects/markdown/basics">markdown
+-    &quot;basics&quot; page</ulink> and the
+-    <ulink url="http://daringfireball.net/projects/markdown/syntax">markdown
+-    syntax description</ulink>. Consult the
+-    <ulink url="http://pandoc.org/README.html">pandoc
+-    User's Guide</ulink> for information about pandoc's syntax for
+-    footnotes, tables, description lists, and other elements not present
+-    in standard markdown.
++   A complex paragraph may contain blocks.
+   </para>
+-  <para>
+-    Markdown is pretty intuitive, since it is based on email
+-    conventions. Here are some examples to get you started:
+-  </para>
+-  <table>
+-  <tr>
+-  <td>
+-  <literal>*emphasized text*</literal>
+-  </td>
+-  <td>
+-  <emphasis>emphasized text</emphasis>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>**strong emphasis**</literal>
+-  </td>
+-  <td>
+-  <emphasis role="strong">strong emphasis</emphasis>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>`literal text`</literal>
+-  </td>
+-  <td>
+-  <literal>literal text</literal>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>\*escaped special characters\*</literal>
+-  </td>
+-  <td>
+-  *escaped special characters*
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>[external link](http://google.com)</literal>
+-  </td>
+-  <td>
+-  <ulink url="http://google.com">external link</ulink>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>![folder](/img/icons/folder.png)</literal>
+-  </td>
+-  <td>
+-  <inlinemediaobject>
++  <simpara>
++   italics: <emphasis>italics</emphasis>,
++   bold: <emphasis role="strong">bold</emphasis>,
++   strikeout: <emphasis role="strikethrough">strikeout</emphasis>,
++   inline code snippets: <literal>inline code</literal>.
++  </simpara>
++  <simpara>
++   Links:
++   <ulink url="http://foo.bar/baz">external</ulink>,
++   <ulink url="Pagename">internal Wiki Link</ulink>.
++  </simpara>
++  <simpara>
++   Inserting an image:
++   <inlinemediaobject>
+     <imageobject>
+-      <imagedata fileref="/img/icons/folder.png" />
++     <imagedata fileref="/img/icons/folder.png" />
+     </imageobject>
+-  </inlinemediaobject>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  Wikilink: <literal>[Front Page]()</literal>
+-  </td>
+-  <td>
+-  Wikilink: <ulink url="">Front Page</ulink>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>H~2~O</literal>
+-  </td>
+-  <td>
+-  H<subscript>2</subscript>O
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>10^100^</literal>
+-  </td>
+-  <td>
+-  10<superscript>100</superscript>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>~~strikeout~~</literal>
+-  </td>
+-  <td>
+-  <emphasis role="strikethrough">strikeout</emphasis>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>$x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$</literal>
+-  </td>
+-  <td>
+-  $x = \frac{{ - b \pm \sqrt {b^2 - 4ac} }}{{2a}}$<footnote>
+-    <para>
+-      If this looks like code, it's because MathJax is not installed on
+-      your system. Contact your administrator to request it.
+-    </para>
+-  </footnote>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <literal>A simple footnote.^[Or is it so simple?]</literal>
+-  </td>
+-  <td>
+-  A simple footnote.<footnote>
+-    <para>
+-      Or is it so simple?
+-    </para>
+-  </footnote>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <pre>
+-  > an indented paragraph,
+-  > usually used for quotations
+-  </pre>
+-  </td>
+-  <td>
+-  <blockquote>
+-    <para>
+-      an indented paragraph, usually used for quotations
+-    </para>
+-  </blockquote>
+-  </td>
+-  <tr>
+-  <td>
+-  <pre>
+-      #!/bin/sh -e
+-      # code, indented four spaces
+-      echo "Hello world"
+-  </pre>
+-  </td>
+-  <td>
+-  <programlisting>
++   </inlinemediaobject>
++  </simpara>
++ </section>
++ <section id="blocks">
++  <title>Text Blocks</title>
++  <para>
++   Quotation:
++   <blockquote>
++    <simpara>
++     A quotation set off from the main text.
++    </simpara>
++   </blockquote>
++  </para>
++  <para>
++   Code listing:
++   <programlisting>
+ #!/bin/sh -e
+-# code, indented four spaces
+ echo &quot;Hello world&quot;
+-</programlisting>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <pre>
+-  * a bulleted list
+-  * second item
+-      - sublist
+-      - and more
+-  * back to main list
+-      1. this item has an ordered
+-      2. sublist
+-          a) you can also use letters
+-          b) another item
+-  </pre>
+-  </td>
+-  <td>
+-  <itemizedlist spacing="compact">
++   </programlisting>
++  </para>
++ </section>
++ <section id="lists">
++  <title>Lists</title>
++  <para>
++   Simple list:
++   <itemizedlist spacing="compact">
+     <listitem>
+-      <para>
+-        a bulleted list
+-      </para>
++     <simpara>
++      first
++     </simpara>
+     </listitem>
+     <listitem>
+-      <para>
+-        second item
+-      </para>
+-      <itemizedlist spacing="compact">
+-        <listitem>
+-          <para>
+-            sublist
+-          </para>
+-        </listitem>
+-        <listitem>
+-          <para>
+-            and more
+-          </para>
+-        </listitem>
+-      </itemizedlist>
+-    </listitem>
++     <simpara>
++      second
++     </simpara>
++    </listitem> 
++   </itemizedlist>
++   Numbered list:
++   <orderedlist spacing="compact">
+     <listitem>
+-      <para>
+-        back to main list
+-      </para>
+-      <orderedlist numeration="arabic" spacing="compact">
+-        <listitem>
+-          <para>
+-            this item has an ordered
+-          </para>
+-        </listitem>
+-        <listitem>
+-          <para>
+-            sublist
+-          </para>
+-          <orderedlist numeration="loweralpha" spacing="compact">
+-            <listitem>
+-              <para>
+-                you can also use letters
+-              </para>
+-            </listitem>
+-            <listitem>
+-              <para>
+-                another item
+-              </para>
+-            </listitem>
+-          </orderedlist>
+-        </listitem>
+-      </orderedlist>
++     <simpara>
++      first
++     </simpara>
+     </listitem>
+-  </itemizedlist>
+-  </td>
+-  </tr>
+-  <tr>
+-  <td>
+-  <pre>
+-  Fruit        Quantity
+-  --------  -----------
+-  apples         30,200
+-  oranges         1,998
+-  pears              42
+-
+-  Table:  Our fruit inventory
+-  </pre>
+-  </td>
+-  <td>
+-  <table>
+-    <title>
+-      Our fruit inventory
+-    </title>
+-    <tgroup cols="2">
+-      <colspec align="left" />
+-      <colspec align="right" />
+-      <thead>
+-        <row>
+-          <entry>
+-            Fruit
+-          </entry>
+-          <entry>
+-            Quantity
+-          </entry>
+-        </row>
+-      </thead>
+-      <tbody>
+-        <row>
+-          <entry>
+-            apples
+-          </entry>
+-          <entry>
+-            30,200
+-          </entry>
+-        </row>
+-        <row>
+-          <entry>
+-            oranges
+-          </entry>
+-          <entry>
+-            1,998
+-          </entry>
+-        </row>
+-        <row>
+-          <entry>
+-            pears
+-          </entry>
+-          <entry>
+-            42
+-          </entry>
+-        </row>
+-      </tbody>
+-    </tgroup>
+-  </table>
+-  </td>
+-  </tr>
+-  </table>
+-  <para>
+-    For headings, prefix a line with one or more <literal>#</literal>
+-    signs: one for a major heading, two for a subheading, three for a
+-    subsubheading. Be sure to leave space before and after the heading.
++    <listitem>
++     <simpara>
++      second
++     </simpara>
++    </listitem> 
++   </orderedlist>
++   Definition list:
++   <variablelist>
++    <varlistentry>
++     <term>
++      DocBook
++     </term>
++     <listitem>
++      <simpara>
++       A sophisticated XML format.
++      </simpara>
++     </listitem>
++    </varlistentry>
++    <varlistentry>
++     <term>
++      orange
++     </term>
++     <listitem>
++      <simpara>
++       A healthy fruit.
++      </simpara>
++     </listitem>
++     <listitem>
++      <simpara>
++       A warm colour.
++      </simpara>
++     </listitem>
++    </varlistentry>
++   </variablelist>
+   </para>
+-  <programlisting>
+-# Markdown
++ </section>
++</section>
+ 
+-Text...
+-
+-## Some examples...
+-
+-Text...
+-</programlisting>
+-  <sect2 id="wiki-links">
+-    <title>Wiki links</title>
+-    <para>
+-      Links to other wiki pages are formed this way:
+-      <literal>[Page Name]()</literal>. (Gitit converts markdown links
+-      with empty targets into wikilinks.)
+-    </para>
+-    <para>
+-      To link to a wiki page using something else as the link text:
+-      <literal>[something else](Page Name)</literal>.
+-    </para>
+-    <para>
+-      Note that page names may contain spaces and some special
+-      characters. They need not be CamelCase. CamelCase words are
+-      <emphasis>not</emphasis> automatically converted to wiki links.
+-    </para>
+-    <para>
+-      Wiki pages may be organized into directories. So, if you have
+-      several pages on wine, you may wish to organize them like so:
+-    </para>
+-    <programlisting>
+-Wine/Pinot Noir
+-Wine/Burgundy
+-Wine/Cabernet Sauvignon
+-</programlisting>
+-    <para>
+-      Note that a wiki link <literal>[Burgundy]()</literal> that occurs
+-      inside the <literal>Wine</literal> directory will link to
+-      <literal>Wine/Burgundy</literal>, and not to
+-      <literal>Burgundy</literal>. To link to a top-level page called
+-      <literal>Burgundy</literal>, you'd have to use
+-      <literal>[Burgundy](/Burgundy)</literal>.
+-    </para>
+-    <para>
+-      To link to a directory listing for a subdirectory, use a trailing
+-      slash: <literal>[Wine/]()</literal> will link to a listing of the
+-      <literal>Wine</literal> subdirectory.
+-    </para>
+-  </sect2>
+-</sect1>
++~~~~~~~~

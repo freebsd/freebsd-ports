@@ -1,0 +1,125 @@
+--- data/markupHelp/DocBook.orig	2023-07-10 15:44:20 UTC
++++ data/markupHelp/DocBook
+@@ -0,0 +1,122 @@
++~~~~~~~~
++
++<section id="docbook">
++ <title>Using DocBook</title>
++ <simpara>
++  As DocBook is an XML format, opening and closing tags
++  must match (&lt;tag&gt;...&lt;/tag&gt;).
++ </simpara>
++ <section id="inline">
++  <title>Text Formatting</title>
++  <simpara>
++   A simple paragraph.
++  </simpara>
++  <para>
++   A complex paragraph may contain blocks.
++  </para>
++  <simpara>
++   italics: <emphasis>italics</emphasis>,
++   bold: <emphasis role="strong">bold</emphasis>,
++   strikeout: <emphasis role="strikethrough">strikeout</emphasis>,
++   inline code snippets: <literal>inline code</literal>.
++  </simpara>
++  <simpara>
++   Links:
++   <ulink url="http://foo.bar/baz">external</ulink>,
++   <ulink url="Pagename">internal Wiki Link</ulink>.
++  </simpara>
++  <simpara>
++   Inserting an image:
++   <inlinemediaobject>
++    <alt>folder</alt>
++    <imageobject>
++     <imagedata fileref="/img/icons/folder.png" />
++    </imageobject>
++   </inlinemediaobject>
++  </simpara>
++ </section>
++ <section id="blocks">
++  <title>Text Blocks</title>
++  <para>
++   Quotation:
++   <blockquote>
++    <simpara>
++     A quotation set off from the main text.
++    </simpara>
++   </blockquote>
++  </para>
++  <para>
++   Code listing:
++   <programlisting>
++#!/bin/sh -e
++echo &quot;Hello world&quot;
++   </programlisting>
++  </para>
++ </section>
++ <section id="lists">
++  <title>Lists</title>
++  <para>
++   Simple list:
++   <itemizedlist spacing="compact">
++    <listitem>
++     <simpara>
++      first
++     </simpara>
++    </listitem>
++    <listitem>
++     <simpara>
++      second
++     </simpara>
++    </listitem> 
++   </itemizedlist>
++   Numbered list:
++   <orderedlist spacing="compact">
++    <listitem>
++     <simpara>
++      first
++     </simpara>
++    </listitem>
++    <listitem>
++     <simpara>
++      second
++     </simpara>
++    </listitem> 
++   </orderedlist>
++   Definition list:
++   <variablelist>
++    <varlistentry>
++     <term>
++      DocBook
++     </term>
++     <listitem>
++      <simpara>
++       A sophisticated XML format.
++      </simpara>
++     </listitem>
++    </varlistentry>
++    <varlistentry>
++     <term>
++      orange
++     </term>
++     <listitem>
++      <simpara>
++       A healthy fruit.
++      </simpara>
++     </listitem>
++     <listitem>
++      <simpara>
++       A warm colour.
++      </simpara>
++     </listitem>
++    </varlistentry>
++   </variablelist>
++  </para>
++ </section>
++</section>
++ 
++~~~~~~~~
++
++Further reading:
++[DocBook 5: The Definitive Guide](https://tdg.docbook.org/tdg/5.0/docbook.html),
++which includes the
++[List of DocBook elements](https://tdg.docbook.org/tdg/5.0/chunk-part-d64e8789.html).

@@ -252,6 +252,7 @@
     SUBDIR += hiawatha-monitor
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
+    SUBDIR += hs-gitit
     SUBDIR += hs-hjsmin
     SUBDIR += hs-postgrest
     SUBDIR += hs-wai-app-static
