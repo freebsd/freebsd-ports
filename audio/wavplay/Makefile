@@ -10,7 +10,7 @@ WWW=		https://sourceforge.net/projects/wavplay/
 LICENSE=	GPLv2 # only
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	does not play sound correctly
 
 USES=		autoreconf libtool:build
