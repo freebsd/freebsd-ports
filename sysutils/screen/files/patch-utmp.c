@@ -1,5 +1,5 @@
---- utmp.c.orig	2017-01-17 11:28:29.397404660 -0800
-+++ utmp.c	2017-02-10 16:48:34.902236000 -0800
+--- utmp.c.orig	2023-08-15 17:29:26.000000000 -0700
++++ utmp.c	2023-08-19 08:57:48.376313000 -0700
 @@ -26,6 +26,7 @@
   ****************************************************************
   */
@@ -8,6 +8,30 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <fcntl.h>
+@@ -89,11 +90,13 @@
+ static int  pututslot __P((slot_t, struct utmp *, char *, struct win *));
+ static struct utmp *getutslot __P((slot_t));
+ #ifndef GETUTENT
++#if 0
+ static struct utmp *getutent __P((void));
+ static void endutent __P((void));
+ static int  initutmp __P((void));
+ static void setutent __P((void));
+ #endif
++#endif
+ #if defined(linux) && defined(GETUTENT)
+ static struct utmp *xpututline __P((struct utmp *utmp));
+ # define pututline xpututline
+@@ -102,9 +105,7 @@
+ 
+ static int utmpok;
+ static char UtmpName[] = UTMPFILE;
+-#ifndef UTMP_HELPER
+ static int utmpfd = -1;
+-#endif
+ 
+ 
+ # if defined(GETUTENT) && (!defined(SVR4) || defined(__hpux)) && ! defined(__CYGWIN__)
 @@ -409,12 +410,6 @@
    register slot_t slot;
    struct utmp u;
@@ -76,7 +100,7 @@
      {
        Msg(errno,"Could not write %s", UtmpName);
        UT_CLOSE;
-@@ -598,7 +555,7 @@
+@@ -607,7 +564,7 @@
  struct utmp *u;
  {
    u->ut_type = DEAD_PROCESS;
@@ -85,7 +109,7 @@
    u->ut_exit.e_termination = 0;
    u->ut_exit.e_exit = 0;
  #endif
-@@ -631,7 +588,11 @@
+@@ -640,7 +597,11 @@
    /* must use temp variable because of NetBSD/sparc64, where
     * ut_xtime is long(64) but time_t is int(32) */
    (void)time(&now);
@@ -98,9 +122,28 @@
  }
  
  static slot_t
-@@ -743,7 +704,11 @@
+@@ -670,6 +631,7 @@
+   return (utmpfd = open(UtmpName, O_RDWR)) >= 0;
+ }
+ 
++#if 0
+ static void
+ setutent()
+ {
+@@ -694,6 +656,7 @@
+     return 0;
+   return &uent;
+ }
++#endif
+ 
+ static struct utmp *
+ getutslot(slot)
+@@ -750,9 +713,13 @@
+ {
+   time_t now;
    strncpy(u->ut_line, line, sizeof(u->ut_line));
-   strncpy(u->ut_name, user, sizeof(u->ut_name));
+-  strncpy(u->ut_name, user, sizeof(u->ut_name));
++  strncpy(u->ut_user, user, sizeof(u->ut_user));
    (void)time(&now);
 -  u->ut_time = now;
 +#if defined(__FreeBSD_version) && __FreeBSD_version < 900000
