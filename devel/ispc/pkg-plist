@@ -12,7 +12,9 @@ lib/cmake/ispcrt-%%VERSION%%/ispcrtConfigVersion.cmake
 lib/cmake/ispcrt-%%VERSION%%/ispcrt_Exports-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ispcrt-%%VERSION%%/ispcrt_Exports.cmake
 lib/libispcrt.so
+lib/libispcrt.so.1
+lib/libispcrt.so.%%VERSION%%
 lib/libispcrt_device_cpu.so
 lib/libispcrt_device_cpu.so.1
-lib/libispcrt_device_cpu.so.1.20.0
+lib/libispcrt_device_cpu.so.%%VERSION%%
 lib/libispcrt_static.a
