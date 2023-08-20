@@ -11,7 +11,7 @@ WWW=		https://redis.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		compiler:c11 cpe gmake
+USES+=		compiler:c11 cpe gmake tcl:test
 CPE_VENDOR=	redislabs
 CPE_PRODUCT=	redis
 
@@ -22,7 +22,7 @@ CONFLICTS_INSTALL=	redis redis-devel redis6 redis70 # etc/rc.d/redis
 
 PORTSCOUT=	limit:^6\.2
 
-OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
+OPTIONS_DEFINE=		JEMALLOC TLS TRIB
 OPTIONS_DEFAULT=	TLS
 OPTIONS_RADIO=		EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
@@ -31,7 +31,6 @@ OPTIONS_SUB=		yes
 JEMALLOC_DESC=	Use jemalloc
 LUAJIT_DESC=	Use luajit instead of builtin lua
 LUA_DESC=	Use lang/lua instead of builtin lua
-TESTS_DESC=	Install lang/tcl for redis unit tests
 TLS_DESC=	Use TLS (openssl req.)
 TRIB_DESC=	Install redis-trib.rb (lang/ruby req.)
 
@@ -43,7 +42,6 @@ LUA_BROKEN=		Fails to link
 LUA_USES=		lua:51
 LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.lua
 LUA_VARS=		_ADDFLAGS=true
-TESTS_USES=		tcl:build
 TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 TRIB_CATEGORIES=	ruby
