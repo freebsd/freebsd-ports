@@ -26,14 +26,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.4:math/py-matplotlib@${PY_FLAV
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
-OPTIONS_DEFINE=	OWS PLOTTING
+OPTIONS_DEFINE=	OWS PLOTTING SPEEDUPS
 OWS_DESC=	OGC Web Service support
 PLOTTING_DESC=	Plotting support
+SPEEDUPS_DESC=	Speed up
 
 OWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}OWSLib>=0.20.0:graphics/py-OWSLib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pillow>=6.1.0:graphics/py-pillow@${PY_FLAVOR}
 PLOTTING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=6.1.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>=1.3.1:science/py-scipy@${PY_FLAVOR}
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Fiona>=0:graphics/py-fiona@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pykdtree>=0:devel/py-pykdtree@${PY_FLAVOR}
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
