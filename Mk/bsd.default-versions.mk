@@ -40,9 +40,9 @@ BDB_DEFAULT?=		5
 COROSYNC_DEFAULT?=	2
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
-+EBUR128_DEFAULT?=	rust
+EBUR128_DEFAULT?=	rust
 .  else
-+EBUR128_DEFAULT?=	legacy
+EBUR128_DEFAULT?=	legacy
 .  endif
 # Possible_values: full canna nox devel_full devel_nox
 #EMACS_DEFAULT?=	let the flavor be the default if not explicitly set
