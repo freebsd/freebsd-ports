@@ -137,3 +137,9 @@ libexec/appjail/appjail-config/tok
 %%DATADIR%%/makejail/cmd/build/FROM
 %%DATADIR%%/makejail/write/build/FROM
 %%DATADIR%%/scripts/kill_child.sh
+etc/rc.d/appjail-dns
+%%DATADIR%%/files/dnsmasq.conf
+%%DATADIR%%/makejail/cmd/all/GLOBAL
+%%DATADIR%%/makejail/write/all/GLOBAL
+%%DATADIR%%/scripts/ajdns.sh
+%%DATADIR%%/scripts/dnsmasq-hook.sh
