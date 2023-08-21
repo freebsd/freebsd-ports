@@ -1,5 +1,5 @@
 PORTNAME=	libnacl
-PORTVERSION=	1.8.0
+PORTVERSION=	2.1.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,11 @@ WWW=		https://libnacl.readthedocs.io/en/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_FLAVOR}
 LIB_DEPENDS=	libsodium.so:security/libsodium
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils unittest
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 TEST_ARGS=	discover -s tests
