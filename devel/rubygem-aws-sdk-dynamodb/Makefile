@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-dynamodb
-PORTVERSION=	1.93.0
+PORTVERSION=	1.93.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
