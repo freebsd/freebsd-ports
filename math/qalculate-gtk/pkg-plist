@@ -8,7 +8,7 @@ share/dbus-1/services/io.github.Qalculate.SearchProvider.service
 %%DOCSDIR%%/html/figures/completion.png
 %%DOCSDIR%%/html/figures/convert-number-bases.png
 %%DOCSDIR%%/html/figures/convert-unit.png
-%%DOCSDIR%%/html/figures/edit-function-simplified.png
+%%DOCSDIR%%/html/figures/edit-function-details.png
 %%DOCSDIR%%/html/figures/edit-function.png
 %%DOCSDIR%%/html/figures/edit-matrix.png
 %%DOCSDIR%%/html/figures/edit-unit-relation.png
@@ -40,6 +40,7 @@ share/dbus-1/services/io.github.Qalculate.SearchProvider.service
 %%DOCSDIR%%/html/qalculate-introduction.html
 %%DOCSDIR%%/html/qalculate-mode.html
 %%DOCSDIR%%/html/qalculate-plotting.html
+%%DOCSDIR%%/html/qalculate-qt.html
 %%DOCSDIR%%/html/qalculate-units.html
 %%DOCSDIR%%/html/qalculate-user-interface.html
 %%DOCSDIR%%/html/qalculate-variables.html
