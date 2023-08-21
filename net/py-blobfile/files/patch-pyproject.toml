@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2023-04-21 05:36:25 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ requires = [
+-    "setuptools == 42.0.0",
+-    "wheel == 0.33.6",
+-    "astor == 0.8.0",
+-]
+\ No newline at end of file
++    "setuptools >= 42.0.0",
++    "wheel >= 0.33.6",
++    "astor >= 0.8.0",
++]

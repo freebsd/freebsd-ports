@@ -1,0 +1,14 @@
+blobfile is a library that provides a Python-like interface for reading local
+and remote files (only from blob storage), with an API similar to open() as well
+as some of the os.path and shutil functions. blobfile supports local paths,
+Google Cloud Storage paths (gs://<bucket>), and Azure Blob Storage paths
+(az://<account>/<container> or
+https://<account>.blob.core.windows.net/<container>/).
+
+The main function is BlobFile, which lets you open local and remote files that
+act more or less like local ones. There are also a few additional functions such
+as basename, dirname, and join, which mostly do the same thing as their os.path
+namesakes, only they also support GCS paths and ABS paths.
+
+This library is inspired by TensorFlow's gfile but does not have exactly the
+same interface.

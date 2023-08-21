@@ -1040,6 +1040,7 @@
     SUBDIR += py-amqplib
     SUBDIR += py-anonfile
     SUBDIR += py-avahi
+    SUBDIR += py-blobfile
     SUBDIR += py-bonsai
     SUBDIR += py-cepa
     SUBDIR += py-cjdns
