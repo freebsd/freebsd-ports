@@ -1,5 +1,5 @@
 PORTNAME=	qucs-s
-DISTVERSION=	1.0.0
+DISTVERSION=	2.0.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,8 +9,9 @@ WWW=		https://ra3xdh.github.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake qt:5
-USE_QT=		core gui printsupport svg widgets buildtools:build linguisttools:build qmake:build
+USES=		bison cmake gl localbase qt:6
+USE_QT=		base svg tools:build
+USE_GL=		gl opengl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ra3xdh
