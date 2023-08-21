@@ -14,8 +14,6 @@ LICENSE=		BSD3CLAUSE GPLv1+
 LICENSE_COMB=		dual
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
-IGNORE=			CVE-2023-3326, https://github.com/rra/pam-krb5/issues/27
-
 USES=			gmake libtool perl5
 USE_PERL5=		build
 
