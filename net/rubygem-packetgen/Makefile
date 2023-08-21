@@ -1,5 +1,5 @@
 PORTNAME=	packetgen
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-interfacez>=1.0<2:net/rubygem-interfacez \
-		rubygem-pcaprub>=0.12.0:net/rubygem-pcaprub \
-		rubygem-rasn1>=0.8.0<1:security/rubygem-rasn1
+		rubygem-pcaprub>=0.13.0<0.14:net/rubygem-pcaprub \
+		rubygem-rasn1>=0.12<1:security/rubygem-rasn1
 
 USES=		gem
 
