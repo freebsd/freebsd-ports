@@ -1,6 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.8.1
-PORTREVISION=	3
+PORTVERSION=	1.9.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,7 +15,8 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
-		${LOCALBASE}/include/protozero/version.hpp:devel/protozero
+		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
@@ -32,7 +32,7 @@ CMAKE_ARGS=	-DLUA_EXE="${LOCALBASE}/bin/${LUA_CMD}"
 PORTDOCS=	AUTHORS CONTRIBUTING.md README.md
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS LUAJIT TEST
+OPTIONS_DEFINE=	DOCS LUAJIT TEST # GEN (utility built with this option is not installed)
 
 LUAJIT_DESC=		Build with LuaJIT support
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
@@ -43,9 +43,15 @@ TEST_TEST_TARGET=	test
 TEST_CMAKE_ON=		-DCMAKE_CTEST_ARGUMENTS="--label-regex;NoDB;--output-on-failure"
 TEST_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>=0:devel/py-behave@${PY_FLAVOR}
 TEST_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>=0:devel/py-behave@${PY_FLAVOR}
+#GEN_DESC=		Build experimental osm2pgsql-gen data generalization utility
+#GEN_LIB_DEPENDS=	libpotrace.so:graphics/libpotrace
+#GEN_BUILD_DEPENDS=	${LOCALBASE}/include/CImg.h:graphics/cimg
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find_package(Lua |&${LUA_VER} EXACT |' \
+		${WRKSRC}/CMakeLists.txt
+# for post-patch-GEN-off: when GEN option is implemented
+	@${REINPLACE_CMD} -Ee '/find_(path|library)/ s,(potrace|CImg),no&,' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
