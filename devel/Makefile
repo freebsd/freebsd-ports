@@ -7351,6 +7351,7 @@
     SUBDIR += rubygem-snowplow-tracker
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-solve
+    SUBDIR += rubygem-sorbet-runtime
     SUBDIR += rubygem-sorted_set
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-spring-watcher-listen
