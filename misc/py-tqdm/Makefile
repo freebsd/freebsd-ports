@@ -24,9 +24,13 @@ NO_ARCH=	yes
 
 CPE_VENDOR=	tqdm_project
 
-OPTIONS_DEFINE=	TELEGRAM
+OPTIONS_DEFINE=	NOTEBOOK SLACK TELEGRAM
+NOTEBOOK_DESC=	Notebook support
+SLACK_DESC=	Slack support
 TELEGRAM_DESC=	Telegram support
 
+NOTEBOOK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipywidgets>=6:devel/py-ipywidgets@${PY_FLAVOR}
+SLACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}slack-sdk>=0:net-im/py-slack-sdk@${PY_FLAVOR}
 TELEGRAM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
 
 .include <bsd.port.mk>
