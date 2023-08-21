@@ -1,5 +1,6 @@
 PORTNAME=	STAR
 DISTVERSION=	2.7.11a
+PORTREVISION=	1
 CATEGORIES=	biology
 PKGNAMEPREFIX=	rna-
 
@@ -26,7 +27,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	alexdobin
 
 WRKSRC_SUBDIR=	source
-MAKE_FLAGS=	HTSLIB=''
+MAKE_FLAGS=	HTSLIB='' CXXFLAGS_SIMD=""
 
 PLIST_FILES=	bin/STAR
 
@@ -43,12 +44,6 @@ post-patch:
 		${WRKSRC}/bam_cat.c \
 		${WRKSRC}/bam_cat.h \
 		${WRKSRC}/signalFromBAM.h
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} != amd64
-MAKE_FLAGS+=	CXXFLAGS_SIMD=""
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/STAR ${STAGEDIR}${PREFIX}/bin
