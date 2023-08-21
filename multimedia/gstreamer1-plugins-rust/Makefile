@@ -28,7 +28,7 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 
 .if ${MACHINE_ARCH} == i386
-# Fixes error "Rust cannot catch foreign exceptions"
+# https://github.com/rust-lang/rust/issues/85598
 LTO_UNSAFE=	yes
 .endif
 
