@@ -86,15 +86,7 @@ if [ -n "${dp_PKG_NOTES}" ]; then
 fi
 
 # Copy the pkg-descr file
-{
-	cat ${dp_DESCR}
-	if [ -n "${dp_WWW}" ] && ! grep -q '^WWW: ' ${dp_DESCR}; then
-			echo
-			for www in ${dp_WWW}; do
-				echo "WWW: ${www}"
-			done
-	fi
-} > ${dp_METADIR}/+DESC
+cp ${dp_DESCR} ${dp_METADIR}/+DESC
 
 # Concatenate all the scripts
 output_files=
