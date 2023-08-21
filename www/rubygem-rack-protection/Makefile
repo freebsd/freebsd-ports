@@ -1,5 +1,5 @@
 PORTNAME=	rack-protection
-PORTVERSION=	3.0.6
+PORTVERSION=	3.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://sinatrarb.com/protection/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/License
 
-RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
+RUN_DEPENDS=	rubygem-rack22>=2.2.4,3<3,3:www/rubygem-rack22
 
 USES=		gem
 
