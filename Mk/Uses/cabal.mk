@@ -324,7 +324,7 @@ cabal-pre-configure:
 .  if !target(do-build)
 do-build:
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} build --verbose --offline --disable-benchmarks --disable-tests ${CABAL_WITH_ARGS} ${CABAL_LTO_ARGS} --flags "${CABAL_FLAGS}" ${BUILD_ARGS} ${BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)
