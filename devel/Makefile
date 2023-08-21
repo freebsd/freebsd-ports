@@ -7153,6 +7153,7 @@
     SUBDIR += rubygem-powerpack
     SUBDIR += rubygem-pp
     SUBDIR += rubygem-pqueue
+    SUBDIR += rubygem-prettier_print
     SUBDIR += rubygem-prettyprint
     SUBDIR += rubygem-profile
     SUBDIR += rubygem-progressbar
