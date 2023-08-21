@@ -1,24 +1,64 @@
---- django_bleach/tests/test_forms.py.orig	2022-10-12 00:33:48 UTC
+--- django_bleach/tests/test_forms.py.orig	2023-08-05 01:36:02 UTC
 +++ django_bleach/tests/test_forms.py
-@@ -147,7 +147,7 @@ class TestCustomWidget(TestCase):
+@@ -127,7 +127,7 @@ class TestCustomWidget(TestCase):
+             # Define form inside function with overridden settings so
+             # get_default_widget() sees the modified setting.
              no_tags = BleachField(
-                 max_length=100,
-                 strip_tags=True,
--                allowed_tags=[]
-+                allowed_tags={}
+-                max_length=100, strip_tags=True, allowed_tags=[]
++                max_length=100, strip_tags=True, allowed_tags={}
              )
              no_strip = BleachField(
-                 max_length=100,
---- testproject/models.py.orig	2022-10-12 00:33:48 UTC
+                 max_length=100, allowed_tags=None, allowed_attributes=None
+--- setup.py.orig	2023-08-05 01:36:02 UTC
++++ setup.py
+@@ -43,7 +43,7 @@ setup(
+     license="MIT",
+     packages=find_packages(exclude=("testproject*",)),
+     install_requires=[
+-        "bleach[css]>=5,<6",
++        "bleach[css]>=5",
+         "Django>=3.2",
+     ],
+     python_requires=">=3.8",
+--- testproject/constants.py.orig	2023-08-05 01:36:02 UTC
++++ testproject/constants.py
+@@ -2,11 +2,11 @@ ALLOWED_ATTRIBUTES = {"*": ["class", "style"], "a": ["
+ 
+ ALLOWED_CSS_PROPERTIES = ["color"]
+ 
+-ALLOWED_PROTOCOLS = [
++ALLOWED_PROTOCOLS = {
+     "https",
+     "data",
+-]
++}
+ 
+ ALLOWED_STYLES = ALLOWED_CSS_PROPERTIES
+ 
+-ALLOWED_TAGS = ["a", "li", "ul"]
++ALLOWED_TAGS = {"a", "li", "ul"}
+--- testproject/forms.py.orig	2023-08-05 01:36:02 UTC
++++ testproject/forms.py
+@@ -23,7 +23,7 @@ class CustomBleachWidget(forms.Textarea):
+ class BleachForm(forms.Form):
+     """Form for testing BleachField"""
+ 
+-    no_tags = BleachField(max_length=100, strip_tags=True, allowed_tags=[])
++    no_tags = BleachField(max_length=100, strip_tags=True, allowed_tags={})
+ 
+     no_strip = BleachField(
+         max_length=100, allowed_tags=None, allowed_attributes=None
+--- testproject/models.py.orig	2023-08-05 01:36:02 UTC
 +++ testproject/models.py
-@@ -10,8 +10,8 @@ class Person(models.Model):
+@@ -10,9 +10,9 @@ class Person(models.Model):
      biography = BleachField(
          max_length=100,
-         verbose_name='Person biography',
--        allowed_tags=['p', 'a', 'li', 'ul', 'strong'],
-+        allowed_tags={'p', 'a', 'li', 'ul', 'strong'},
-         allowed_attributes=['class', 'href', 'style'],
--        allowed_protocols=['http', 'https'],
-+        allowed_protocols={'http', 'https'},
-         css_sanitizer=CSSSanitizer(allowed_css_properties=['color', 'background-color'])
-     )
+         verbose_name="Person biography",
+-        allowed_tags=["p", "a", "li", "ul", "strong"],
++        allowed_tags={"p", "a", "li", "ul", "strong"},
+         allowed_attributes=["class", "href", "style"],
+-        allowed_protocols=["http", "https"],
++        allowed_protocols={"http", "https"},
+         css_sanitizer=CSSSanitizer(
+             allowed_css_properties=["color", "background-color"]
+         ),
