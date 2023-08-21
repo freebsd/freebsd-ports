@@ -207,6 +207,7 @@
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
+%%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
 %%DATADIR%%/Definitions/gainbound.yml
 %%DATADIR%%/Definitions/gamera.yml
@@ -360,6 +361,7 @@
 %%DATADIR%%/Definitions/okpt.yml
 %%DATADIR%%/Definitions/oldtoonsworld.yml
 %%DATADIR%%/Definitions/onejav.yml
+%%DATADIR%%/Definitions/onlyencodes-api.yml
 %%DATADIR%%/Definitions/opencd.yml
 %%DATADIR%%/Definitions/oshenpt.yml
 %%DATADIR%%/Definitions/ourbits.yml
@@ -443,7 +445,6 @@
 %%DATADIR%%/Definitions/soulvoice.yml
 %%DATADIR%%/Definitions/speedmasterhd.yml
 %%DATADIR%%/Definitions/speedtorrentreloaded.yml
-%%DATADIR%%/Definitions/spidertk.yml
 %%DATADIR%%/Definitions/spiritofrevolution.yml
 %%DATADIR%%/Definitions/sporthd.yml
 %%DATADIR%%/Definitions/sportscult.yml
