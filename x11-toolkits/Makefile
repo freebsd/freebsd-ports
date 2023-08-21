@@ -206,6 +206,7 @@
     SUBDIR += rubygem-tk
     SUBDIR += rubygem-uh
     SUBDIR += rubygem-vte3
+    SUBDIR += rubygem-vte4
     SUBDIR += scintilla
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
