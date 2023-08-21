@@ -20,7 +20,6 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libmodplug.so:audio/libmodplug \
 		libportaudio.so:audio/portaudio \
 		libSoundTouch.so:audio/soundtouch \
-		libebur128.so:audio/ebur128 \
 		librubberband.so:audio/rubberband \
 		libsndfile.so:audio/libsndfile \
 		libogg.so:audio/libogg \
@@ -33,8 +32,8 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libkeyfinder.so:audio/libkeyfinder \
 		libmp3lame.so:audio/lame
 
-USES=		cmake compiler:c++11-lang gl iconv ninja qt:5 pkgconfig sqlite \
-		ssl xorg
+USES=		cmake compiler:c++11-lang ebur128 gl iconv ninja qt:5 pkgconfig \
+		sqlite ssl xorg
 USE_XORG=	ice sm x11 xext
 USE_GL=		gl glu
 USE_GITHUB=	yes

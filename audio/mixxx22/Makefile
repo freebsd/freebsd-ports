@@ -24,7 +24,6 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libmodplug.so:audio/libmodplug \
 		libportaudio.so:audio/portaudio \
 		libSoundTouch.so:audio/soundtouch \
-		libebur128.so:audio/ebur128 \
 		librubberband.so:audio/rubberband \
 		libsndfile.so:audio/libsndfile \
 		libvamp-sdk.so:audio/vamp-plugin-sdk \
@@ -34,7 +33,7 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libprotobuf.so:devel/protobuf \
 		liblilv-0.so:audio/lilv
 
-USES=		compiler:c++11-lang gl iconv qt:5 pkgconfig scons xorg
+USES=		compiler:c++11-lang ebur128 gl iconv qt:5 pkgconfig scons xorg
 USE_XORG=	x11
 USE_GL=		gl glu
 USE_GITHUB=	yes
