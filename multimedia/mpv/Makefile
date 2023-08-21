@@ -1,13 +1,14 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.36.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	3bdf702b1de8.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
 PATCHFILES+=	48eb77207bff.patch:-p1 # https://github.com/mpv-player/mpv/pull/12012
+PATCHFILES+=	f2453b60ee27.patch:-p1 # https://github.com/mpv-player/mpv/pull/11304
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
