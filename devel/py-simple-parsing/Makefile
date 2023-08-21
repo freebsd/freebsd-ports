@@ -1,5 +1,5 @@
 PORTNAME=	simple-parsing
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	simple_parsing-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small utility for simplifying and cleaning up argument parsing scripts
-WWW=		https://pypi.org/project/simple-parsing/
+WWW=		https://github.com/lebrice/SimpleParsing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
