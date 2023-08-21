@@ -82,6 +82,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|pkg-config|false|g' ${WRKSRC}/GNUmakefile
 	@${REINPLACE_CMD} ${_DISABLE_TESTS:@.test.@-e '/${.test.}/d'@} \
 		${WRKSRC}/test/Test-Order
+.ifdef WITH_PIE
+.for dn in buildtools test
+	@${REINPLACE_CMD} -e '/^all:/s/^/CFLAGS_FOR_BUILD+=${PIE_CFLAGS}\n/' \
+	    ${WRKSRC}/${dn}/Makefile
+.endfor
+.endif
 
 post-patch-STATIC-on:
 	@${REINPLACE_CMD} -e 's|$$(LD)|$$(LD) -static|g' \
@@ -122,7 +128,7 @@ NETPBM_SERIES=	advanced
 
 netpbm-version-check:
 	@REV=`svnlite info ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk | ${SED} -n 's/Last Changed Rev: //p'`; \
-	VERSION=`(svnlite cat -r$$REV ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk; \
+	VERSION=`(svnlite ${CAT} -r$$REV ${NETPBM_REPO}/${NETPBM_SERIES}/version.mk; \
 			echo 'all:'; \
 			echo '	@printf "%02d.%02d.%02d" \'; \
 			echo '		$${NETPBM_MAJOR_RELEASE} \' ; \
