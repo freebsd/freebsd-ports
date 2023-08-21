@@ -7,6 +7,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and program to validate and fix HTML
 WWW=		https://github.com/petdance/tidyp
 
+LICENSE=	HTML_TIDY
+LICENSE_NAME=	HTML Tidy License
+LICENSE_FILE=	${WRKSRC}/htmldoc/license.html
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
 USES=		autoreconf libtool
 
 CONFIGURE_ARGS=	--enable-asian --enable-utf16
