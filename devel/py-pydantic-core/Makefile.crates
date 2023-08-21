@@ -29,29 +29,29 @@ CARGO_CRATES=	ahash-0.8.3 \
 		parking_lot_core-0.9.8 \
 		percent-encoding-2.3.0 \
 		proc-macro2-1.0.64 \
-		pyo3-0.19.1 \
-		pyo3-build-config-0.19.1 \
-		pyo3-ffi-0.19.1 \
-		pyo3-macros-0.19.1 \
-		pyo3-macros-backend-0.19.1 \
+		pyo3-0.19.2 \
+		pyo3-build-config-0.19.2 \
+		pyo3-ffi-0.19.2 \
+		pyo3-macros-0.19.2 \
+		pyo3-macros-backend-0.19.2 \
 		python3-dll-a-0.2.9 \
 		quote-1.0.29 \
 		redox_syscall-0.3.5 \
-		regex-1.9.1 \
-		regex-automata-0.3.2 \
+		regex-1.9.3 \
+		regex-automata-0.3.6 \
 		regex-syntax-0.7.4 \
 		rustversion-1.0.13 \
 		ryu-1.0.14 \
 		scopeguard-1.1.0 \
-		serde-1.0.175 \
-		serde_derive-1.0.175 \
-		serde_json-1.0.103 \
+		serde-1.0.183 \
+		serde_derive-1.0.183 \
+		serde_json-1.0.104 \
 		smallvec-1.11.0 \
-		speedate-0.11.0 \
+		speedate-0.12.0 \
 		strum-0.25.0 \
-		strum_macros-0.25.1 \
+		strum_macros-0.25.2 \
 		syn-1.0.109 \
-		syn-2.0.25 \
+		syn-2.0.28 \
 		target-lexicon-0.12.9 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
