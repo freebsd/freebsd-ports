@@ -1,13 +1,15 @@
---- CMakeLists.txt.orig	2023-07-28 08:52:50 UTC
+--- CMakeLists.txt.orig	2023-08-17 10:28:49 UTC
 +++ CMakeLists.txt
-@@ -8,23 +8,23 @@ set(CMAKE_PROJECT_VERSION ${version})
+@@ -7,24 +7,24 @@ set(CMAKE_PROJECT_VERSION ${version})
+ 
  configure_file(src/version.hpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/version.hpp)
  
- set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")
+-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")
 -if(CMAKE_OSX_ARCHITECTURES MATCHES "x86_64" OR
 -  CMAKE_OSX_ARCHITECTURES MATCHES "arm64")
 -  set(CPU_TYPE ${CMAKE_OSX_ARCHITECTURES})
 -endif()
++#set(CMAKE_OSX_DEPLOYMENT_TARGET "10.12" CACHE STRING "Minimum OS X deployment version")
 +#if(CMAKE_OSX_ARCHITECTURES MATCHES "x86_64" OR
 +#  CMAKE_OSX_ARCHITECTURES MATCHES "arm64")
 +#  set(CPU_TYPE ${CMAKE_OSX_ARCHITECTURES})
@@ -34,16 +36,16 @@
  
  option(LIBDDWAF_BUILD_SHARED "Build shared library" ON)
  option(LIBDDWAF_BUILD_STATIC "Build shared library" ON)
-@@ -57,7 +57,7 @@ endif()
+@@ -58,7 +58,7 @@ endif()
  
  include(GNUInstallDirs)
  
 -add_subdirectory(third_party)
 +#add_subdirectory(third_party)
  
- set(LIBDDWAF_SOURCE
-     ${libddwaf_SOURCE_DIR}/src/ruleset_builder.cpp
-@@ -137,7 +137,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
+ add_library(glibc_compat OBJECT ${libddwaf_SOURCE_DIR}/src/glibc-compat/time64.c)
+ set_target_properties(glibc_compat PROPERTIES POSITION_INDEPENDENT_CODE 1)
+@@ -143,7 +143,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
  
  # System dependencies
  set(LIBDDWAF_INTERFACE_LIBRARIES "")
@@ -51,9 +53,9 @@
 +#set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_ac lib_injection lib_radix lib_utf8proc)
 +set(LIBDDWAF_PRIVATE_LIBRARIES lib_radix)
  
- if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
- # needed for glibc <2.17. We compile with --as-needed so the library won't
-@@ -165,6 +166,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+ if(NOT MSVC AND LIBDDWAF_TEST_COVERAGE)
+     target_compile_options(libddwaf_objects PRIVATE -ggdb --coverage)
+@@ -176,6 +177,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  elseif(WIN32)
      list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ws2_32)
  endif()
@@ -81,7 +83,7 @@
  
  target_link_libraries(libddwaf_objects
      PRIVATE ${LIBDDWAF_PRIVATE_LIBRARIES}
-@@ -189,66 +211,67 @@ if (LIBDDWAF_BUILD_STATIC)
+@@ -200,71 +222,72 @@ if (LIBDDWAF_BUILD_STATIC)
          INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
  
      # Post-processing on the static library
@@ -118,6 +120,7 @@
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
+-              COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_OBJECTS:glibc_compat> ar_comb
 -              COMMAND ${CMAKE_AR} -qcs ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} ar_comb/*.o*
 -
 -              COMMAND ${CMAKE_COMMAND} -E copy ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
@@ -126,9 +129,13 @@
 -      endif()
 -      if(NOT (CMAKE_BUILD_TYPE MATCHES Debug))
 -          if (CMAKE_SYSTEM_NAME STREQUAL Darwin OR CMAKE_SYSTEM_NAME STREQUAL Linux)
--              find_program(STRIP strip)
--              if (STRIP STREQUAL "STRIP-NOTFOUND")
--                  message(FATAL_ERROR "strip not found")
+-              if (NOT CMAKE_STRIP)
+-                  find_program(STRIP strip)
+-                  if (STRIP STREQUAL "STRIP-NOTFOUND")
+-                      message(FATAL_ERROR "strip not found")
+-                  endif()
+-              else()
+-                  set(STRIP ${CMAKE_STRIP})
 -              endif()
 -              add_custom_command(TARGET libddwaf_static POST_BUILD
 -                  COMMAND ${STRIP} -x -S $<TARGET_FILE:libddwaf_static> -o $<TARGET_FILE:libddwaf_static>.stripped)
@@ -169,6 +176,7 @@
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
++#              COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_OBJECTS:glibc_compat> ar_comb
 +#              COMMAND ${CMAKE_AR} -qcs ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} ar_comb/*.o*
 +#
 +#              COMMAND ${CMAKE_COMMAND} -E copy ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
@@ -177,9 +185,13 @@
 +#      endif()
 +#      if(NOT (CMAKE_BUILD_TYPE MATCHES Debug))
 +#          if (CMAKE_SYSTEM_NAME STREQUAL Darwin OR CMAKE_SYSTEM_NAME STREQUAL Linux)
-+#              find_program(STRIP strip)
-+#              if (STRIP STREQUAL "STRIP-NOTFOUND")
-+#                  message(FATAL_ERROR "strip not found")
++#              if (NOT CMAKE_STRIP)
++#                  find_program(STRIP strip)
++#                  if (STRIP STREQUAL "STRIP-NOTFOUND")
++#                      message(FATAL_ERROR "strip not found")
++#                  endif()
++#              else()
++#                  set(STRIP ${CMAKE_STRIP})
 +#              endif()
 +#              add_custom_command(TARGET libddwaf_static POST_BUILD
 +#                  COMMAND ${STRIP} -x -S $<TARGET_FILE:libddwaf_static> -o $<TARGET_FILE:libddwaf_static>.stripped)
@@ -201,7 +213,7 @@
 +#        OUTPUT_VARIABLE BUILD_ID
 +#        OUTPUT_STRIP_TRAILING_WHITESPACE
 +#    )
-+    set(BUILD_ID "4be56b648aa8ce8b86255b0edad78862d102f65d")
++    set(BUILD_ID "25b0021f1d2ce1eea39a37ad41b6de9eec12ee84")
      message(STATUS "Build id is ${BUILD_ID}")
      string(SUBSTRING "${BUILD_ID}" 0 2 BUILD_ID_PREFIX)
      string(SUBSTRING "${BUILD_ID}" 2 39 BUILD_ID_SUFFIX)

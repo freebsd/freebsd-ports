@@ -1,5 +1,5 @@
 PORTNAME=	libddwaf
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -28,7 +28,7 @@ CMAKE_ON=	LIBDDWAF_BUILD_SHARED LIBDDWAF_BUILD_STATIC
 USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog
 GH_TUPLE=	DataDog:appsec-event-rules:1.7.1:DataDog_appsec_event_rules/third_party/proj_event_rules \
-		Tencent:rapidjson:a95e013:Tencent_rapidjson/third_party/rapidjson
+		Tencent:rapidjson:476ffa2:Tencent_rapidjson/third_party/rapidjson
 
 post-patch:
 # Clean up bundled libraries
