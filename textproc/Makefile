@@ -1593,6 +1593,7 @@
     SUBDIR += py-texttable
     SUBDIR += py-textual
     SUBDIR += py-three-merge
+    SUBDIR += py-tiktoken
     SUBDIR += py-tinycss
     SUBDIR += py-tinycss2
     SUBDIR += py-toml
