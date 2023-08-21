@@ -1,5 +1,5 @@
 diff --git configure configure
-index c5d122423d..54881245f3 100755
+index c5d122423..54881245f 100755
 --- configure
 +++ configure
 @@ -11569,7 +11569,7 @@ fi
@@ -13,7 +13,7 @@ index c5d122423d..54881245f3 100755
  else
 diff --git create-fossil-manifest create-fossil-manifest
 new file mode 100755
-index 0000000000..07fb567b98
+index 000000000..07fb567b9
 --- /dev/null
 +++ create-fossil-manifest
 @@ -0,0 +1,15 @@
@@ -33,7 +33,7 @@ index 0000000000..07fb567b98
 +rm -f manifest.tmp
 +
 diff --git src/btree.c src/btree.c
-index facb951d3c..81861a7457 100644
+index facb951d3..f925a90d9 100644
 --- src/btree.c
 +++ src/btree.c
 @@ -4561,6 +4561,7 @@ static int btreeCursor(
@@ -44,6 +44,24 @@ index facb951d3c..81861a7457 100644
    pCur->pgnoRoot = iTable;
    pCur->iPage = -1;
    pCur->pKeyInfo = pKeyInfo;
+@@ -8023,7 +8024,7 @@ static int balance_nonroot(
+   */
+   szScratch =
+        nMaxCells*sizeof(u8*)                       /* b.apCell */
+-     + nMaxCells*sizeof(u16)                       /* b.szCell */
++     + ROUND8(nMaxCells*sizeof(u16))               /* b.szCell */
+      + pBt->pageSize;                              /* aSpace1 */
+ 
+   assert( szScratch<=7*(int)pBt->pageSize );
+@@ -8033,7 +8034,7 @@ static int balance_nonroot(
+     goto balance_cleanup;
+   }
+   b.szCell = (u16*)&b.apCell[nMaxCells];
+-  aSpace1 = (u8*)&b.szCell[nMaxCells];
++  aSpace1 = (u8*)ROUND8(&b.szCell[nMaxCells]);
+   assert( EIGHT_BYTE_ALIGNMENT(aSpace1) );
+ 
+   /*
 @@ -9128,6 +9129,7 @@ int sqlite3BtreeInsert(
          UnpackedRecord r;
          r.pKeyInfo = pCur->pKeyInfo;
@@ -53,7 +71,7 @@ index facb951d3c..81861a7457 100644
          r.default_rc = 0;
          r.eqSeen = 0;
 diff --git src/build.c src/build.c
-index e243e795fe..679594e11f 100644
+index e243e795f..679594e11 100644
 --- src/build.c
 +++ src/build.c
 @@ -311,7 +311,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
@@ -84,7 +102,7 @@ index e243e795fe..679594e11f 100644
  }
  
 diff --git src/mem1.c src/mem1.c
-index 512ab3747f..2cdc30aa53 100644
+index 512ab3747..2cdc30aa5 100644
 --- src/mem1.c
 +++ src/mem1.c
 @@ -117,6 +117,8 @@ static malloc_zone_t* _sqliteZone_;
@@ -130,7 +148,7 @@ index 512ab3747f..2cdc30aa53 100644
      p++;
    }else{
 diff --git src/mem2.c src/mem2.c
-index 04d6298dba..2db30d7d59 100644
+index 04d6298db..2db30d7d5 100644
 --- src/mem2.c
 +++ src/mem2.c
 @@ -42,19 +42,24 @@
@@ -267,7 +285,7 @@ index 04d6298dba..2db30d7d59 100644
  }
  
 diff --git src/pcache1.c src/pcache1.c
-index a93b146894..aa77ffac93 100644
+index a93b14689..aa77ffac9 100644
 --- src/pcache1.c
 +++ src/pcache1.c
 @@ -771,7 +771,7 @@ static sqlite3_pcache *pcache1Create(int szPage, int szExtra, int bPurgeable){
@@ -280,7 +298,7 @@ index a93b146894..aa77ffac93 100644
    sz = sizeof(PCache1) + sizeof(PGroup)*pcache1.separateCache;
    pCache = (PCache1 *)sqlite3MallocZero(sz);
 diff --git src/sqliteInt.h src/sqliteInt.h
-index 45e3453464..0a47de6322 100644
+index 45e345346..0a47de632 100644
 --- src/sqliteInt.h
 +++ src/sqliteInt.h
 @@ -607,6 +607,9 @@
@@ -366,7 +384,7 @@ index 45e3453464..0a47de6322 100644
  
  /*
 diff --git src/vdbe.c src/vdbe.c
-index ef9a23f64e..20eea3cb3b 100644
+index ef9a23f64..20eea3cb3 100644
 --- src/vdbe.c
 +++ src/vdbe.c
 @@ -265,9 +265,10 @@ static VdbeCursor *allocateCursor(
@@ -478,7 +496,7 @@ index ef9a23f64e..20eea3cb3b 100644
    p->nCursor = (u16)pFrame->nChildCsr;
    p->apCsr = (VdbeCursor **)&aMem[p->nMem];
 diff --git src/vdbeInt.h src/vdbeInt.h
-index 0e17c7d91f..8dd1057ac6 100644
+index 0e17c7d91..8dd1057ac 100644
 --- src/vdbeInt.h
 +++ src/vdbeInt.h
 @@ -212,6 +212,7 @@ struct sqlite3_value {
@@ -490,7 +508,7 @@ index 0e17c7d91f..8dd1057ac6 100644
    char *z;            /* String or BLOB value */
    int n;              /* Number of characters in string value, excluding '\0' */
 diff --git src/vdbeapi.c src/vdbeapi.c
-index 4e719ede36..c661f19cb8 100644
+index 4e719ede3..c661f19cb 100644
 --- src/vdbeapi.c
 +++ src/vdbeapi.c
 @@ -1124,10 +1124,13 @@ static const Mem *columnNullValue(void){
@@ -510,7 +528,7 @@ index 4e719ede36..c661f19cb8 100644
      = {
          /* .u          = */ {0},
 diff --git src/vdbeaux.c src/vdbeaux.c
-index 7c3be404ef..3e327ff5b2 100644
+index 7c3be404e..3e327ff5b 100644
 --- src/vdbeaux.c
 +++ src/vdbeaux.c
 @@ -2170,6 +2170,7 @@ int sqlite3VdbeNextOpcode(
@@ -546,7 +564,7 @@ index 7c3be404ef..3e327ff5b2 100644
    p->pKeyInfo = pKeyInfo;
    p->nField = pKeyInfo->nKeyField + 1;
 diff --git src/vdbemem.c src/vdbemem.c
-index fd4ab0ccc6..5fdcacd73b 100644
+index fd4ab0ccc..5fdcacd73 100644
 --- src/vdbemem.c
 +++ src/vdbemem.c
 @@ -1399,6 +1399,7 @@ static sqlite3_value *valueNew(sqlite3 *db, struct ValueNewStat4Ctx *p){
@@ -566,7 +584,7 @@ index fd4ab0ccc6..5fdcacd73b 100644
      for(i=0; i<nCol; i++){
        sqlite3VdbeMemRelease(&aMem[i]);
 diff --git src/vdbesort.c src/vdbesort.c
-index 3958662cc6..1dd4f80d6a 100644
+index 3958662cc..1dd4f80d6 100644
 --- src/vdbesort.c
 +++ src/vdbesort.c
 @@ -1740,6 +1740,7 @@ static int vdbeSorterFlushPMA(VdbeSorter *pSorter){
