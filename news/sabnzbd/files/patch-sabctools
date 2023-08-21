@@ -1,4 +1,5 @@
 Obtained from:	https://github.com/sabnzbd/sabnzbd/commit/a179f2a895259e49f3679405ad59cac06e0bf2d9
+		https://github.com/sabnzbd/sabnzbd/commit/a951361fa639235e9252cd32c5c7264ff0f1a70a
 
 --- requirements.txt.orig	2023-06-07 19:24:42 UTC
 +++ requirements.txt
@@ -6,7 +7,7 @@ Obtained from:	https://github.com/sabnzbd/sabnzbd/commit/a179f2a895259e49f367940
  # Main requirements
  # Note that not all sub-dependencies are listed, but only ones we know could cause trouble
 -sabctools==7.0.2
-+sabctools==7.1.0
++sabctools==7.1.1
  cheetah3==3.2.6.post1
  cffi==1.15.1
  pycparser==2.21
