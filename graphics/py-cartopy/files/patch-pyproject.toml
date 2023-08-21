@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2023-08-05 00:47:19 UTC
++++ pyproject.toml
+@@ -3,13 +3,13 @@ requires = [
+     "wheel",
+     "setuptools >= 40.6.0",
+     "Cython >= 0.29.24",
+-    "oldest-supported-numpy",
+-    "setuptools_scm >= 7.0.0",
++    "numpy",
++    "setuptools_scm >= 6.0.0",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Cartopy"
++name = "cartopy"
+ authors = [
+     {name = "UK Met Office"},
+ ]
