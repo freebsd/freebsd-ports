@@ -204,6 +204,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Pkg/SunOS.pm
 %%SITE_PERL%%/Rex/Pkg/SunOS/OpenCSW.pm
 %%SITE_PERL%%/Rex/Pkg/SunOS/pkg.pm
+%%SITE_PERL%%/Rex/Pkg/Test.pm
 %%SITE_PERL%%/Rex/Pkg/Ubuntu.pm
 %%SITE_PERL%%/Rex/Pkg/VoidLinux.pm
 %%SITE_PERL%%/Rex/PkgConf.pm
