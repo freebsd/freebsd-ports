@@ -1,5 +1,5 @@
 PORTNAME=	addressable
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
