@@ -1,6 +1,5 @@
 PORTNAME=	gollum-lib
-PORTVERSION=	5.2
-PORTREVISION=	2
+PORTVERSION=	5.2.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-gemojione>=4.1<5:graphics/rubygem-gemojione \
 		rubygem-github-markup>=4.0<5:textproc/rubygem-github-markup \
-		rubygem-gollum-rugged_adapter>=1.0:www/rubygem-gollum-rugged_adapter \
+		rubygem-gollum-rugged_adapter>=2.0<3:www/rubygem-gollum-rugged_adapter \
 		rubygem-loofah>=2.3<3:textproc/rubygem-loofah \
 		rubygem-nokogiri>=1.8<2:textproc/rubygem-nokogiri \
 		rubygem-octicons>=12.0:misc/rubygem-octicons \
