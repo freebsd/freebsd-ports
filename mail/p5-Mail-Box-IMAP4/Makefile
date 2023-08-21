@@ -1,5 +1,5 @@
 PORTNAME=	Mail-Box-IMAP4
-PORTVERSION=	3.007
+PORTVERSION=	3.008
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Digest-HMAC>=0:security/p5-Digest-HMAC \
 		p5-Mail-Box>=3.007:mail/p5-Mail-Box \
 		p5-Mail-IMAPClient>=3.42:mail/p5-Mail-IMAPClient \
-		p5-Mail-Message>=3:mail/p5-Mail-Message \
+		p5-Mail-Message>=3.013:mail/p5-Mail-Message \
 		p5-Mail-Transport>=3.004:mail/p5-Mail-Transport
 
 USES=		perl5
