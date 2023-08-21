@@ -10,6 +10,25 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230821:
+AUTHOR: jhale@FreeBSD.org
+
+  A new uses 'ebur128' has been added to transparently depend on the
+  proper variant of 'rust' or 'legacy' depending on the default version
+  set by the user.
+
+  Usage:	USES=ebur128:ARGS
+  Valid ARGS:	<none>, build, lib, run, test
+    <none>:	(default) same as lib
+    build:	add BUILD_DEPENDS
+    lib:	add LIB_DEPENDS
+    run:	add RUN_DEPENDS
+    test:	add TEST_DEPENDS
+
+  If you prefer not to use rust, add the following to your make.conf:
+
+	DEFAULT_VERSIONS+=ebur128=legacy
+
 20230728:
 AUTHOR: andrew@tao11.riddles.org.uk, fuz@FreeBSD.org
 
