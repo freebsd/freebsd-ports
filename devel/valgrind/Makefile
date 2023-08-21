@@ -1,5 +1,6 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.21.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind
@@ -32,6 +33,14 @@ OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_DEFAULT_amd64=	32BIT
 .endif
 OPTIONS_SUB=		yes
+
+# Valgrind needs to read debuginfo from its own preload shared libraries
+# (quote from README_PACKAGERS
+#-- Don't strip the debug info off lib/valgrind/$platform/vgpreload*.so
+#   in the installation tree.  Either Valgrind won't work at all, or it
+#   will still work if you do, but will generate less helpful error
+#   messages.)
+STRIP=          # empty
 
 32BIT_DESC=	Enable debugging of 32-bit programs (requires lib32)
 MPI_DESC=	Enable build of MPI wrappers
