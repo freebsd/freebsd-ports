@@ -239,7 +239,11 @@ MOZ_OPTIONS+=	--disable-dbus
 
 .    if ${PORT_OPTIONS:MFFMPEG}
 # dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
-RUN_DEPENDS+=	ffmpeg>=0.8,1:multimedia/ffmpeg
+.      if ${MOZILLA_VER:R:R} < 112
+RUN_DEPENDS+=	ffmpeg4>=4.4:multimedia/ffmpeg4
+.      else
+RUN_DEPENDS+=	ffmpeg>=6.0,1:multimedia/ffmpeg
+.      endif
 .    endif
 
 .    if ${PORT_OPTIONS:MLIBPROXY}
