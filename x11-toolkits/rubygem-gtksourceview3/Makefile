@@ -1,10 +1,10 @@
 PORTNAME=	gtksourceview3
-PORTVERSION=	4.1.8
+PORTVERSION=	4.1.9
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding of gtksourceview 3.x
+COMMENT=	Ruby binding of GtkSourceView 3
 WWW=		https://ruby-gnome.github.io/ \
 		https://github.com/ruby-gnome/ruby-gnome
 
