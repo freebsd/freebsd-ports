@@ -1,3 +1,5 @@
-TIMESTAMP = 1683599979
-SHA256 (alex-courtis-way-displays-1.8.1_GH0.tar.gz) = 529d074e55f8d15abcf6fd934abe080509509d5578aa8d4fd303f5b882970047
-SIZE (alex-courtis-way-displays-1.8.1_GH0.tar.gz) = 96023
+TIMESTAMP = 1692582436
+SHA256 (alex-courtis-way-displays-1.8.2_GH0.tar.gz) = 45fb6609c26ab19eb7d07c714016db32cb738b7a3274b344d94928e8b552a58e
+SIZE (alex-courtis-way-displays-1.8.2_GH0.tar.gz) = 100804
+SHA256 (alex-courtis-alex-c-collections-v1.1.0_GH0.tar.gz) = 2046dfb4f0b367692fdf4a77eb86cfa5741f159bec6e0b190fc906c68d25e8bd
+SIZE (alex-courtis-alex-c-collections-v1.1.0_GH0.tar.gz) = 11607
