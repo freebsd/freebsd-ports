@@ -1,7 +1,7 @@
 PORTNAME=	pdf-tools
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -34,16 +34,8 @@ do-build:
 	cd ${WRKSRC}/server && ./autogen.sh && ./configure -q && make
 	${EMACS_CMD} -q --batch -L ${WRKSRC}/lisp -f batch-byte-compile \
 		${WRKSRC}/lisp/*.el
-.if ${FLAVOR:U} == devel_full
 	 ${EMACS_CMD} -q --batch -f loaddefs-generate-batch \
 		${WRKSRC}/lisp/${PORTNAME}-loaddefs.el ${WRKSRC}/lisp
-.else
-	${EMACS_CMD} -q --batch \
-	--eval "(setq generated-autoload-file \
-		\"${WRKSRC}/lisp/${PORTNAME}-loaddefs.el\" \
-		backup-inhibited t)" \
-	-f batch-update-autoloads ${WRKSRC}/lisp
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/${PORTNAME}
