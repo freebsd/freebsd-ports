@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Bundle/Image/Info/XBM.pm
 %%SITE_PERL%%/Bundle/Image/Info/XPM.pm
 %%SITE_PERL%%/Image/Info.pm
+%%SITE_PERL%%/Image/Info/AVIF.pm
 %%SITE_PERL%%/Image/Info/BMP.pm
 %%SITE_PERL%%/Image/Info/GIF.pm
 %%SITE_PERL%%/Image/Info/ICO.pm
@@ -25,6 +26,7 @@
 %%PERL5_MAN3%%/Bundle::Image::Info::XBM.3.gz
 %%PERL5_MAN3%%/Bundle::Image::Info::XPM.3.gz
 %%PERL5_MAN3%%/Image::Info.3.gz
+%%PERL5_MAN3%%/Image::Info::AVIF.3.gz
 %%PERL5_MAN3%%/Image::Info::BMP.3.gz
 %%PERL5_MAN3%%/Image::Info::GIF.3.gz
 %%PERL5_MAN3%%/Image::Info::ICO.3.gz
