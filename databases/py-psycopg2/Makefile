@@ -1,12 +1,12 @@
 PORTNAME=	psycopg2
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.7
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	High performance Python adapter for PostgreSQL
-WWW=		http://initd.org/psycopg/ \
+WWW=		https://www.psycopg.org/ \
 		https://github.com/psycopg/psycopg2
 
 LICENSE=	LGPL3
