@@ -1,0 +1,2 @@
+contextlib-chdir provides the backport of contextlib.chdir stdlib class added in
+Python 3.11.

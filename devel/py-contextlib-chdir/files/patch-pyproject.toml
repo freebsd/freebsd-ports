@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2022-06-08 17:54:37 UTC
++++ pyproject.toml
+@@ -9,3 +9,7 @@ packages = [{ include = "contextlib_chdir.*" }, { incl
+ 
+ [tool.poetry.dependencies]
+ python = "^3.6"
++
++[build-system]
++requires = ["poetry-core>=1.0.0"]
++build-backend = "poetry.core.masonry.api"
