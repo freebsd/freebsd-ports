@@ -1,18 +1,18 @@
 PORTNAME=	gupnp-tools
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of utilities and demos to work with UPnP
-WWW=		https://gitlab.gnome.org/GNOME/gupnp-tools
+WWW=		https://wiki.gnome.org/Projects/GUPnP \
+		https://gitlab.gnome.org/GNOME/gupnp-tools
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	glib>=2.68:devel/glib20 \
-		gssdp>=1.6.0:net/gssdp \
+		gssdp>=1.6.2:net/gssdp \
 		gtk3>=3.10:x11-toolkits/gtk30 \
 		gupnp>=1.6.0:net/gupnp \
 		libsoup3>=3.0:devel/libsoup3
