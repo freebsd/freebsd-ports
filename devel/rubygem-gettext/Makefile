@@ -1,11 +1,12 @@
 PORTNAME=	gettext
-PORTVERSION=	3.4.6
+PORTVERSION=	3.4.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby implementation of the gettext library
-WWW=		https://ruby-gettext.github.io/
+WWW=		https://ruby-gettext.github.io/ \
+		https://github.com/ruby-gettext/gettext
 
 LICENSE=	LGPL3 RUBY
 LICENSE_COMB=	dual
