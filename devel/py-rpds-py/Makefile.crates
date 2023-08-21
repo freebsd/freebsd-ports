@@ -25,11 +25,11 @@ CARGO_CRATES=	archery-0.5.0 \
 		target-lexicon-0.12.11 \
 		unicode-ident-1.0.11 \
 		unindent-0.1.11 \
-		windows-targets-0.48.4 \
-		windows_aarch64_gnullvm-0.48.4 \
-		windows_aarch64_msvc-0.48.4 \
-		windows_i686_gnu-0.48.4 \
-		windows_i686_msvc-0.48.4 \
-		windows_x86_64_gnu-0.48.4 \
-		windows_x86_64_gnullvm-0.48.4 \
-		windows_x86_64_msvc-0.48.4
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5
