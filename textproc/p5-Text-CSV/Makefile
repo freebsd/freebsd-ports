@@ -1,5 +1,5 @@
 PORTNAME=	Text-CSV
-PORTVERSION=	2.02
+PORTVERSION=	2.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,14 +11,12 @@ WWW=		https://metacpan.org/release/Text-CSV
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Text-CSV_XS>=1.51:textproc/p5-Text-CSV_XS
+
 USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-
-OPTIONS_DEFINE=	XS
-
-XS_BUILD_DEPENDS=	p5-Text-CSV_XS>=1.48:textproc/p5-Text-CSV_XS
-XS_RUN_DEPENDS=		p5-Text-CSV_XS>=1.48:textproc/p5-Text-CSV_XS
 
 .include <bsd.port.mk>
