@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,6 +19,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
+GH_TUPLE=	alex-courtis:alex-c-collections:v1.1.0:alex_c_collections/lib/alex-c-collections
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	VERSION="${DISTVERSIONFULL}"
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" OFLAGS=
@@ -28,7 +29,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 
 post-patch:
 # Respect PREFIX for system-wide config
-	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' ${WRKSRC}/src/cfg.c
+	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' \
+		${WRKSRC}/src/cfg.c \
+		${WRKSRC}/tst/tst-cfg.c
 
 post-install:
 # Let @sample handle default files under etc/
