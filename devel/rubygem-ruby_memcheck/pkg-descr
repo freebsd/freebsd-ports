@@ -1,0 +1,9 @@
+ruby_memcheck provides a sane way to use Valgrind's memcheck on your native
+extension gem.
+
+Valgrind's memcheck is a great tool to find and debug memory issues (e.g. memory
+leak, use-after-free, etc.). However, it doesn't work well on Ruby because Ruby
+does not free all of the memory it allocates during shutdown. This results in
+Valgrind reporting thousands (or more) false positives, making it very difficult
+for Valgrind to actually be useful. This gem solves the problem by using
+heuristics to filter out false positives.
