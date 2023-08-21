@@ -1,5 +1,5 @@
 PORTNAME=	gnome
-PORTVERSION=	4.1.8
+PORTVERSION=	4.1.9
 CATEGORIES=	x11 gnome rubygems
 PKGNAMEPREFIX=	rubygem-
 
@@ -28,7 +28,8 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}<${PORTVERSION}_99:accessibility/rubygem
 		rubygem-pango>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-pango \
 		rubygem-poppler>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-poppler \
 		rubygem-rsvg2>=${PORTVERSION}<${PORTVERSION}_99:graphics/rubygem-rsvg2 \
-		rubygem-vte3>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-vte3
+		rubygem-vte3>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-vte3 \
+		rubygem-vte4>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-vte4
 
 USES=		metaport
 
