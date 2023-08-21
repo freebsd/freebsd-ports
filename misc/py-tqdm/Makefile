@@ -1,18 +1,19 @@
 PORTNAME=	tqdm
-PORTVERSION=	4.65.0
+PORTVERSION=	4.66.1
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast, extensible progress bar for Python
-WWW=		https://github.com/tqdm/tqdm
+WWW=		https://tqdm.github.io/ \
+		https://github.com/tqdm/tqdm
 
 LICENSE=	MIT MPL20
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/LICENCE
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
