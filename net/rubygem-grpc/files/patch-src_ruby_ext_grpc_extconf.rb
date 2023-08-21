@@ -1,11 +1,11 @@
---- src/ruby/ext/grpc/extconf.rb.orig	2023-02-26 18:56:37 UTC
+--- src/ruby/ext/grpc/extconf.rb.orig	2023-08-19 01:12:29 UTC
 +++ src/ruby/ext/grpc/extconf.rb
-@@ -69,11 +69,11 @@ if apple_toolchain && !cross_compiling
+@@ -68,11 +68,11 @@ if apple_toolchain && !cross_compiling
  end
  
  # Don't embed on TruffleRuby (constant-time crypto is unsafe with Sulong, slow build times)
 -ENV['EMBED_OPENSSL'] = (RUBY_ENGINE != 'truffleruby').to_s
-+ENV['EMBED_OPENSSL'] =  'false'
++ENV['EMBED_OPENSSL'] = 'false'
  # Don't embed on TruffleRuby (the system zlib is already linked for the zlib C extension, slow build times)
 -ENV['EMBED_ZLIB'] = (RUBY_ENGINE != 'truffleruby').to_s
 +ENV['EMBED_ZLIB'] = 'false'
@@ -15,9 +15,9 @@
  
  ENV['ARCH_FLAGS'] = RbConfig::CONFIG['ARCH_FLAG']
  if apple_toolchain && !cross_compiling
-@@ -94,25 +94,6 @@ output_dir = File.expand_path(RbConfig::CONFIG['topdir
- grpc_lib_dir = File.join(output_dir, 'libs', grpc_config)
- ENV['BUILDDIR'] = output_dir
+@@ -97,36 +97,6 @@ ENV['BUILDDIR'] = output_dir
+ strip_tool = RbConfig::CONFIG['STRIP']
+ strip_tool += ' -x' if apple_toolchain
  
 -unless windows
 -  puts 'Building internal gRPC into ' + grpc_lib_dir
@@ -33,6 +33,17 @@
 -  puts "Building grpc native library: #{cmd}"
 -  system(cmd)
 -  exit 1 unless $? == 0
+-
+-  if grpc_config == 'opt'
+-    rm_obj_cmd = "rm -rf #{File.join(output_dir, 'objs')}"
+-    puts "Removing grpc object files: #{rm_obj_cmd}"
+-    system(rm_obj_cmd)
+-    exit 1 unless $? == 0
+-    strip_cmd = "#{strip_tool} #{grpc_lib_dir}/*.a"
+-    puts "Stripping grpc native library: #{strip_cmd}"
+-    system(strip_cmd)
+-    exit 1 unless $? == 0
+-  end
 -end
 -
 -$CFLAGS << ' -DGRPC_RUBY_WINDOWS_UCRT' if windows_ucrt
@@ -41,12 +52,15 @@
  def have_ruby_abi_version()
    return true if RUBY_ENGINE == 'truffleruby'
    # ruby_abi_version is only available in development versions: https://github.com/ruby/ruby/pull/6231
-@@ -141,10 +122,8 @@ def ext_export_filename()
+@@ -155,13 +125,12 @@ def ext_export_filename()
  end
  
  ext_export_file = File.join(grpc_root, 'src', 'ruby', 'ext', 'grpc', ext_export_filename())
 -$LDFLAGS << ' -Wl,--version-script="' + ext_export_file + '.gcc"' if linux
--$LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"' if apple_toolchain
+ if apple_toolchain
+   $LDFLAGS << ' -weak_framework CoreFoundation' if RUBY_PLATFORM =~ /arm64/
+   $LDFLAGS << ' -Wl,-exported_symbols_list,"' + ext_export_file + '.clang"'
+ end
  
 -$LDFLAGS << ' ' + File.join(grpc_lib_dir, 'libgrpc.a') unless windows
 +$LDFLAGS << ' -lgrpc' unless windows
