@@ -1,6 +1,6 @@
 PORTNAME=	gollum
 PORTVERSION=	5.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	git:devel/git \
 		rubygem-mustache-sinatra>=1.0<2:devel/rubygem-mustache-sinatra \
 		rubygem-octicons>=12.0:misc/rubygem-octicons \
 		rubygem-rdoc>=6:devel/rubygem-rdoc \
-		rubygem-rss>=0.2.9<0.3:www/rubygem-rss \
+		rubygem-rss>=0.2.9:www/rubygem-rss \
 		rubygem-sass>=3.5<4:textproc/rubygem-sass \
 		rubygem-sinatra2>=2.0<3:www/rubygem-sinatra2 \
 		rubygem-sinatra-contrib2>=2.0<3:www/rubygem-sinatra-contrib2 \
