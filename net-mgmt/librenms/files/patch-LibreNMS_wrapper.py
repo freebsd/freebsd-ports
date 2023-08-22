@@ -1,11 +1,11 @@
---- LibreNMS/wrapper.py.orig	2023-07-30 23:13:00 UTC
+--- LibreNMS/wrapper.py.orig	2023-08-21 15:25:48 UTC
 +++ LibreNMS/wrapper.py
-@@ -278,7 +278,7 @@ def poll_worker(
+@@ -280,7 +280,7 @@ def poll_worker(
                      os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
                      wrappers[wrapper_type]["executable"],
                  )
 -                command = "/usr/bin/env php {} -h {}".format(executable, device_id)
-+                command = "/usr/local/bin/php {} -h {}".format(executable, device_id)
-                 if debug:
-                     command = command + " -d"
-                 exit_code, output = command_runner(
++                command = "/usr/local/bin/php php {} -h {}".format(executable, device_id)
+                 if modules is not None and len(str(modules).strip()):
+                     module_str = re.sub("\s", "", str(modules).strip())
+                     command = command + " -m {}".format(module_str)

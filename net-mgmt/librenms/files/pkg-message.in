@@ -100,22 +100,13 @@ EOM
   message: <<EOM
 Depending on the version, you may have to run the upgrade script.
 
-cd %%WWWDIR%%
-./build-base.php
-
-Or the database upgrade script:
-
-./lnms migrate
+sudo %%PREFIX%%/bin/lnms migrate
 
 NOTE: that script is particular about who runs it and ownership.
-You might have to chown www first, then:
-
-chown www lnms
-su -fm www
-./lnms migrate
-exit
-chown root lnms
-
+Previously, it was suggested you avoid this via chown when using
+the script %%WWWDIR%%/lnms
+Now, a symlink is provided. Using %%PREFIX%%/bin/lnms avoids
+those issues. Use it instead.
 
 re: https://docs.librenms.org/General/Updating/
 

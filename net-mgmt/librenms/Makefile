@@ -1,6 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	23.7.0
-PORTREVISION=	2
+PORTVERSION=	23.8.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -45,7 +44,6 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf
 		../librenms-vendor-${PORTVERSION}/justinrainbow/json-schema/bin/validate-json \
 		../librenms-vendor-${PORTVERSION}/nesbot/carbon/bin/carbon \
 		../librenms-vendor-${PORTVERSION}/nikic/php-parser/bin/php-parse \
-		../librenms-vendor-${PORTVERSION}/predis/predis/bin/create-command-test \
 		../librenms-vendor-${PORTVERSION}/psy/psysh/bin/psysh \
 		../librenms-vendor-${PORTVERSION}/symfony/error-handler/Resources/bin/extract-tentative-return-types.php \
 		../librenms-vendor-${PORTVERSION}/symfony/error-handler/Resources/bin/patch-type-declarations \
@@ -127,10 +125,10 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1689568961
+_RELEASE_TIMESTAMP=	1692632893
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
-			scripts sql-schema tests
+			scripts tests
 _DOCS=			AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt \
 			README.md
 
@@ -150,9 +148,13 @@ post-patch:
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/System.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/includes/html/output/capture.inc.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/config.php.default
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/poller-wrapper.py
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/dist/librenms-scheduler.cron
+	${REINPLACE_CMD}    's|%%WWWDIR%%|${WWWDIR}|g'                        ${WRKSRC}/dist/librenms-scheduler.cron
+	${REINPLACE_CMD}    's|%%USER%%|${WWWOWN}|g'                          ${WRKSRC}/dist/librenms-scheduler.cron
 	${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php
 	${RM} -rf ${WRKSRC}/logs
 
@@ -181,10 +183,6 @@ do-install:
 	${MV} ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang/* ${STAGEDIR}/${WWWDIR}/html/js/lang/
 	${RM} -rf ${STAGEDIR}/${WWWDIR}/vendor/html-js-lang
 
-# Make daily.sh executable
-#	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/daily.sh
-# lnms does not fall into any other +x category
-#	${CHMOD} 0755 ${STAGEDIR}/${WWWDIR}/lnms
 # Files in scripts dir should be executable
 	${FIND} ${STAGEDIR}/${WWWDIR}/scripts -type f -exec ${CHMOD} +x {} \;
 # Ensure PHP and Python scripts are executable
@@ -237,5 +235,15 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf.sample ${STAGEDIR}/${PREFIX}/etc/newsyslog.conf.d/librenms.conf.sample
 	${ECHO_CMD} "@dir etc/newsyslog.conf.d" >> ${TMPPLIST}
 	${ECHO_CMD} "@sample etc/newsyslog.conf.d/librenms.conf.sample" >> ${TMPPLIST}
+
+	${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}${PREFIX}/etc/cron.d/
+	${INSTALL_DATA} ${WRKSRC}/dist/librenms-scheduler.cron ${STAGEDIR}${PREFIX}/etc/cron.d/librenms
+	${ECHO_CMD} "@dir etc/cron.d" >> ${TMPPLIST}
+	${ECHO_CMD} "etc/cron.d/librenms" >> ${TMPPLIST}
+
+	# avoid the "Global lnms shortcut not installed." validataion warning.
+	# this can also be run as root.
+	${RLN} ${STAGEDIR}${WWWDIR}/lnms ${STAGEDIR}${PREFIX}/bin/lnms
+	${ECHO_CMD} "bin/lnms" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
