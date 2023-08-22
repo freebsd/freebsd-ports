@@ -1,6 +1,5 @@
 PORTNAME=	autocutsel
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	john@jnielsen.net
@@ -11,9 +10,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf gmake libtool xorg
-USE_XORG=	ice sm x11 xaw xext xmu xt
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigmike
+USE_XORG=	ice sm x11 xaw xext xmu xt
 
 GNU_CONFIGURE=	yes
 
