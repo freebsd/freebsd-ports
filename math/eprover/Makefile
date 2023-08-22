@@ -34,7 +34,7 @@ ALL_TARGET=	all man
 BINARY_ALIAS=	make=${GMAKE} \
 		gcc=${CC}
 
-PORTSCOUT=	limit:^.*[0-9]\.[0-9].* # prevent versions like git-export-2012-06-29
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*$$ # prevent versions like git-export-2012-06-29
 
 post-install:
 	# strip binaries
