@@ -1,7 +1,7 @@
---- configure.ac.orig	2021-09-28 08:39:16 UTC
+--- configure.ac.orig	2023-08-21 19:51:56 UTC
 +++ configure.ac
-@@ -45,6 +45,7 @@ AM_CONDITIONAL([STATIC_BINARY_ENABLE], test "$STATIC_B
- 
+@@ -55,6 +55,7 @@ fi
+ AM_CONDITIONAL(IS_CLANG, test "$IS_CLANG" = "yes")
  
  # Checks for libraries.
 +AC_SEARCH_LIBS(inotify_init, inotify)

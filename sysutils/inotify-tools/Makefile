@@ -1,5 +1,5 @@
 PORTNAME=	inotify-tools
-DISTVERSION=	3.22.6.0
+DISTVERSION=	4.23.8.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libinotify.so:devel/libinotify
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf compiler:c11 gmake libtool localbase
+USES=		autoreconf compiler:c11 gmake libtool localbase shebangfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
+SHEBANG_GLOB=	*.t *.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-doxygen
@@ -24,9 +27,9 @@ OPTIONS_DEFINE=	STATIC
 OPTIONS_SUB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|stat64|stat|' \
-		${WRKSRC}/src/common.c \
-		${WRKSRC}/libinotifytools/src/inotifytools.c
+	@${REINPLACE_CMD} \
+		-e 's|SHELL_PATH ?= /bin/bash|SHELL_PATH ?= ${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/t/Makefile
 
 post-build-STATIC-on:
 	@cd ${WRKSRC}/src && \
