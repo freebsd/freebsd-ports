@@ -1,6 +1,6 @@
 PORTNAME=	cataclysm-dda
 DISTVERSION=	0.G
-PORTREVISION?=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -11,42 +11,38 @@ WWW=		https://cataclysmdda.org
 LICENSE=	CC-BY-SA-3.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-FLAVORS?=	curses
+FLAVORS=	curses tiles
 FLAVOR?=	curses
+FLAVORS_SUB=	yes
 
-USES=		alias cmake compiler:c++14-lang shebangfix
+tiles_PKGNAMESUFFIX=		-tiles
+curses_CONFLICTS_INSTALL=	cataclysm-dda-tiles
+tiles_CONFLICTS_INSTALL=	cataclysm-dda
+
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	CleverRaven
 GH_PROJECT=	Cataclysm-DDA
 
-SHEBANG_FILES=	lang/*.sh
-bash_CMD=	/bin/sh
-
 CMAKE_OFF=	BACKTRACE TESTS
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git
-
-.if ${FLAVOR} == tiles
-
-USES+=		pkgconfig sdl
-USE_SDL=	image2 mixer2 ttf2
-CMAKE_ARGS+=	-DLOCALIZE=OFF \
-		-DSOUND=1 \
-		-DTILES=1
-PLIST_SUB+=	CURSES="@comment " \
-		TILES=""
-
-.else
-
-USES+=		ncurses
-CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 NLS_USES=	gettext-tools
 NLS_CMAKE_OFF=	-DLOCALIZE=OFF
-PLIST_SUB+=	CURSES="" \
-		TILES="@comment "
 PORTDOCS=	*
+
+.if ${FLAVOR} == tiles
+
+USES+=		pkgconfig sdl
+USE_SDL=	image2 mixer2 ttf2
+CMAKE_ON+=	SOUND TILES
+
+.else
+
+USES+=		ncurses
+CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 .endif
 
@@ -59,7 +55,6 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${DOCSDIR})
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
