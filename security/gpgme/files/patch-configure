@@ -4,9 +4,9 @@ of a clean environment since the ports system can only build a package for one
 Python flavor at a time. The found versions of Python are overridden by
 environment variables set in the port Makefile.
 
---- configure.orig	2019-03-26 17:29:46 UTC
+--- configure.orig	2023-08-21 07:46:33 UTC
 +++ configure
-@@ -23851,6 +23851,10 @@ $as_echo "$as_me: WARNING:
+@@ -31342,6 +31342,10 @@ printf "%s\n" "$as_me: WARNING:
  
  	fi
  

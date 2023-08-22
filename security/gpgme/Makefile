@@ -1,6 +1,6 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.21.0
-PORTREVISION?=	1
+PORTVERSION=	1.22.0
+PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
 
@@ -82,6 +82,8 @@ FLAVOR?=		${FLAVORS:[1]}
 qt5_PKGNAMESUFFIX=	-qt5
 qt6_PKGNAMESUFFIX=	-qt6
 
+QT_STR=		Qt${FLAVOR:S/qt//}
+
 .    if ${FLAVOR:U} == "qt5"
 USES+=		compiler:c++11-lib pkgconfig qt:5
 USE_QT=		buildtools:build core
@@ -91,7 +93,7 @@ PLIST_SUB=	QT_SUFFIX="" qt_SUFFIX=""
 USES+=		compiler:c++17-lang pkgconfig qt:6
 USE_QT=		base
 USE_CXXSTD=	c++17
-PLIST_SUB=	QT_SUFFIX="Qt6" qt_SUFFIX="qt6"
+PLIST_SUB=	QT_SUFFIX="${QT_STR}" qt_SUFFIX="${FLAVOR}"
 .    endif
 
 CONFIGURE_ARGS+=--enable-languages="cpp ${FLAVOR}"

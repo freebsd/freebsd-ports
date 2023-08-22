@@ -6,9 +6,9 @@ unable to execute 'swig': No such file or directory
 Second hunk:
 Fix staging and build the *.pyc and *.pyo files 
 
---- lang/python/Makefile.in.orig	2017-12-12 11:56:08 UTC
+--- lang/python/Makefile.in.orig	2023-08-21 07:46:32 UTC
 +++ lang/python/Makefile.in
-@@ -740,7 +740,7 @@ all-local: copystamp
+@@ -768,7 +768,7 @@ all-local: copystamp
  	  CFLAGS="$(CFLAGS)" \
  	  srcdir="$(srcdir)" \
  	  top_builddir="$(top_builddir)" \
@@ -17,7 +17,7 @@ Fix staging and build the *.pyc and *.pyo files
  	done
  
  python$(PYTHON_VERSION)-gpg/dist/gpg-$(VERSION).tar.gz.asc: copystamp
-@@ -782,7 +782,8 @@ install-exec-local:
+@@ -811,7 +811,8 @@ install-exec-local:
  	  build \
  	  --build-base="$$(basename "$${PYTHON}")-gpg" \
  	  install \
