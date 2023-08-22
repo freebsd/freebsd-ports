@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-terminal
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -12,6 +11,8 @@ WWW=		https://www.xfce.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+
 USES=		compiler:c11 gettext-tools gmake gnome pkgconfig tar:bzip2 \
 		xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libxml2 vte3
@@ -21,8 +22,7 @@ USE_XORG=	ice sm x11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
-CONFIGURE_ARGS=	--without-gnome-default-appsdir \
-		--with-utempter
+CONFIGURE_ARGS=	--with-utempter
 
 OPTIONS_DEFINE=		NLS
 OPTIONS_SUB=		yes
