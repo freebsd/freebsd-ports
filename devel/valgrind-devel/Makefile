@@ -1,5 +1,6 @@
 PORTNAME=	valgrind
 PORTVERSION=	3.21.0.g20230218
+PORTREVISION=	1
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -28,6 +29,15 @@ SSP_UNSAFE=	yes
 LIB32_PATH?=	/usr/lib32/libc.so
 
 CONFLICTS=	valgrind
+
+# Valgrind needs to read debuginfo from its own preload shared libraries
+# (quote from README_PACKAGERS
+#-- Don't strip the debug info off lib/valgrind/$platform/vgpreload*.so
+#   in the installation tree.  Either Valgrind won't work at all, or it
+#   will still work if you do, but will generate less helpful error
+#   messages.)
+STRIP=          # empty
+
 PORTDOCS=	html
 
 OPTIONS_DEFINE=		DOCS MANPAGES MPI
