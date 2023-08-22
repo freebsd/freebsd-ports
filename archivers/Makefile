@@ -78,6 +78,7 @@
     SUBDIR += lua-lzlib
     SUBDIR += lua-zlib
     SUBDIR += lxqt-archiver
+    SUBDIR += lz4json
     SUBDIR += lzfse
     SUBDIR += lzip
     SUBDIR += lziprecover

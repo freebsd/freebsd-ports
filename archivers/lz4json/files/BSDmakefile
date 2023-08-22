@@ -1,0 +1,11 @@
+PROG=	lz4jsoncat
+
+BINDIR=	${LOCALBASE}/bin
+MANDIR=	${LOCALBASE}/man/man
+
+WARNS=	3
+
+CFLAGS+=-isystem ${PREFIX}/include
+LDADD=	-L${PREFIX}/lib -llz4
+
+.include <bsd.prog.mk>
