@@ -11,6 +11,9 @@ WWW=		https://www.drupal.org/
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	Upstream EOL reaches on 2023-11-01
+EXPIRATION_DATE=	2023-12-31
+
 USES=		php:web shebangfix
 USE_PHP=	dom filter gd mbstring opcache pdo session \
 		simplexml tokenizer xml
