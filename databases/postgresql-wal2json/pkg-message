@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+You need to set up at least two parameters in postgresql.conf:
+
+	wal_level = logical
+	#
+	# these parameters only need to set in versions 9.4, 9.5 and 9.6
+	# default values are ok in version 10 or later
+	#
+	max_replication_slots = 10
+	max_wal_senders = 10
+
+After changing these parameters, a restart is needed.
+EOM
+}
+]

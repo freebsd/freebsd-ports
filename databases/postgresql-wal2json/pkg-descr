@@ -1,0 +1,5 @@
+wal2json is an output plugin for logical decoding. It means that the plugin have
+access to tuples produced by INSERT and UPDATE. Also, UPDATE/DELETE old row
+versions can be accessed depending on the configured replica identity.
+Changes can be consumed using the streaming protocol (logical replication slots)
+or by a special SQL API.

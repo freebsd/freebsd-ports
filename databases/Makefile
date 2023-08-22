@@ -672,6 +672,7 @@
     SUBDIR += postgresql-rum
     SUBDIR += postgresql-semver
     SUBDIR += postgresql-tds_fdw
+    SUBDIR += postgresql-wal2json
     SUBDIR += postgresql-zhparser
     SUBDIR += postgresql11-client
     SUBDIR += postgresql11-contrib
