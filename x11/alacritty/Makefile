@@ -4,7 +4,7 @@ DISTVERSION=	0.12.2
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
 WWW=		https://github.com/jwilm/alacritty
 
