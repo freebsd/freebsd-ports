@@ -64,6 +64,7 @@ include/hpx/agas_base/server/primary_namespace.hpp
 include/hpx/agas_base/server/symbol_namespace.hpp
 include/hpx/agas_base/symbol_namespace.hpp
 include/hpx/algorithm.hpp
+include/hpx/algorithm.hpp.in
 include/hpx/algorithms.hpp
 include/hpx/algorithms/config/defines.hpp
 include/hpx/algorithms/traits/is_pair.hpp
@@ -189,6 +190,7 @@ include/hpx/async_local/post.hpp
 include/hpx/async_local/sync.hpp
 include/hpx/async_local/sync_fwd.hpp
 include/hpx/barrier.hpp
+include/hpx/barrier.hpp.in
 include/hpx/basic_execution.hpp
 include/hpx/basic_execution/agent_base.hpp
 include/hpx/basic_execution/agent_ref.hpp
@@ -203,6 +205,7 @@ include/hpx/batch_environments/config/defines.hpp
 include/hpx/batch_environments/pbs_environment.hpp
 include/hpx/batch_environments/pjm_environment.hpp
 include/hpx/batch_environments/slurm_environment.hpp
+include/hpx/bit.hpp
 include/hpx/cache/config/defines.hpp
 include/hpx/cache/entries/entry.hpp
 include/hpx/cache/entries/fifo_entry.hpp
@@ -216,6 +219,7 @@ include/hpx/cache/statistics/local_full_statistics.hpp
 include/hpx/cache/statistics/local_statistics.hpp
 include/hpx/cache/statistics/no_statistics.hpp
 include/hpx/channel.hpp
+include/hpx/channel.hpp.in
 include/hpx/checkpoint.hpp
 include/hpx/checkpoint/checkpoint.hpp
 include/hpx/checkpoint/config/defines.hpp
@@ -419,6 +423,7 @@ include/hpx/components_base/traits/is_component.hpp
 include/hpx/components_base/traits/managed_component_policies.hpp
 include/hpx/components_fwd.hpp
 include/hpx/compute.hpp
+include/hpx/compute.hpp.in
 include/hpx/compute/config/defines.hpp
 include/hpx/compute/detail/new.hpp
 include/hpx/compute/detail/target_distribution_policy.hpp
@@ -531,6 +536,7 @@ include/hpx/coroutines/thread_enums.hpp
 include/hpx/coroutines/thread_id_type.hpp
 include/hpx/custom_exception_info.hpp
 include/hpx/dataflow.hpp
+include/hpx/datapar.hpp
 include/hpx/datastructures.hpp
 include/hpx/datastructures/any.hpp
 include/hpx/datastructures/config/defines.hpp
@@ -742,6 +748,7 @@ include/hpx/executors/thread_pool_scheduler.hpp
 include/hpx/executors/thread_pool_scheduler_bulk.hpp
 include/hpx/executors_distributed/config/defines.hpp
 include/hpx/executors_distributed/distribution_policy_executor.hpp
+include/hpx/experimental/task_group.hpp
 include/hpx/filesystem.hpp
 include/hpx/filesystem/config/defines.hpp
 include/hpx/format.hpp
@@ -789,6 +796,7 @@ include/hpx/functional/traits/is_callable.hpp
 include/hpx/functional/traits/is_invocable.hpp
 include/hpx/functional/traits/is_placeholder.hpp
 include/hpx/future.hpp
+include/hpx/future.hpp.in
 include/hpx/futures/config/defines.hpp
 include/hpx/futures/detail/future_data.hpp
 include/hpx/futures/detail/future_transforms.hpp
@@ -829,12 +837,14 @@ include/hpx/hpx.hpp
 include/hpx/hpx_finalize.hpp
 include/hpx/hpx_init.hpp
 include/hpx/hpx_init_impl.hpp
+include/hpx/hpx_init_impl.hpp.orig
 include/hpx/hpx_init_params.hpp
 include/hpx/hpx_main.hpp
 include/hpx/hpx_main_impl.hpp
 include/hpx/hpx_main_winsocket.hpp
 include/hpx/hpx_start.hpp
 include/hpx/hpx_start_impl.hpp
+include/hpx/hpx_start_impl.hpp.orig
 include/hpx/hpx_suspend.hpp
 include/hpx/hpx_user_main_config.hpp
 include/hpx/include/actions.hpp
@@ -932,9 +942,11 @@ include/hpx/include_local/config/defines.hpp
 include/hpx/ini/config/defines.hpp
 include/hpx/ini/ini.hpp
 include/hpx/init.hpp
+include/hpx/init.hpp.in
 include/hpx/init_runtime/config/defines.hpp
 include/hpx/init_runtime/detail/init_logging.hpp
 include/hpx/init_runtime/detail/run_or_start.hpp
+include/hpx/init_runtime/detail/run_or_start.hpp.orig
 include/hpx/init_runtime/pre_main.hpp
 include/hpx/init_runtime_local/config/defines.hpp
 include/hpx/init_runtime_local/detail/init_logging.hpp
@@ -962,6 +974,7 @@ include/hpx/iterator_support/zip_iterator.hpp
 include/hpx/itt_notify/config/defines.hpp
 include/hpx/itt_notify/thread_name.hpp
 include/hpx/latch.hpp
+include/hpx/latch.hpp.in
 include/hpx/lcos/async.hpp
 include/hpx/lcos/async_callback.hpp
 include/hpx/lcos/async_callback_fwd.hpp
@@ -1644,6 +1657,7 @@ include/hpx/resource_partitioner/detail/partitioner.hpp
 include/hpx/resource_partitioner/partitioner.hpp
 include/hpx/resource_partitioner/partitioner_fwd.hpp
 include/hpx/runtime.hpp
+include/hpx/runtime.hpp.in
 include/hpx/runtime/actions/action_priority.hpp
 include/hpx/runtime/actions/action_support.hpp
 include/hpx/runtime/actions/base_action.hpp
@@ -1986,6 +2000,7 @@ include/hpx/serialization/config/defines.hpp
 include/hpx/serialization/container.hpp
 include/hpx/serialization/datapar.hpp
 include/hpx/serialization/deque.hpp
+include/hpx/serialization/detail/allow_zero_copy_receive.hpp
 include/hpx/serialization/detail/constructor_selector.hpp
 include/hpx/serialization/detail/non_default_constructible.hpp
 include/hpx/serialization/detail/pointer.hpp
@@ -2534,6 +2549,7 @@ lib/cmake/HPX/tests/cxx20_std_execution_policies.cpp
 lib/cmake/HPX/tests/cxx20_std_ranges_iter_swap.cpp
 lib/cmake/HPX/tests/cxx20_trivial_virtual_destructor.cpp
 lib/cmake/HPX/tests/cxx23_std_generator.cpp
+lib/cmake/HPX/tests/cxx_14_delete_operator_with_size.cpp
 lib/cmake/HPX/tests/cxx_lambda_capture_decltype.cpp
 lib/cmake/HPX/tests/mm_prefetch.cpp
 lib/cmake/HPX/tests/stable_inplace_merge.cpp
@@ -2548,10 +2564,10 @@ lib/cmake/HPX/toolchains/CrayStatic.cmake
 lib/cmake/HPX/toolchains/XeonPhi.cmake
 lib/hpx/libhpx_parcel_coalescing.so
 lib/hpx/libhpx_parcel_coalescing.so.1
-lib/hpx/libhpx_parcel_coalescing.so.1.9.0
+lib/hpx/libhpx_parcel_coalescing.so.1.9.1
 lib/libhpx.so
 lib/libhpx.so.1
-lib/libhpx.so.1.9.0
+lib/libhpx.so.1.9.1
 lib/libhpx_actions.a
 lib/libhpx_actions_base.a
 lib/libhpx_affinity.a
@@ -2575,7 +2591,7 @@ lib/libhpx_command_line_handling.a
 lib/libhpx_command_line_handling_local.a
 lib/libhpx_component_storage.so
 lib/libhpx_component_storage.so.1
-lib/libhpx_component_storage.so.1.9.0
+lib/libhpx_component_storage.so.1.9.1
 lib/libhpx_components.a
 lib/libhpx_components_base.a
 lib/libhpx_compute.a
@@ -2609,7 +2625,7 @@ lib/libhpx_init_runtime_local.a
 lib/libhpx_io_service.a
 lib/libhpx_iostreams.so
 lib/libhpx_iostreams.so.1
-lib/libhpx_iostreams.so.1.9.0
+lib/libhpx_iostreams.so.1.9.1
 lib/libhpx_iterator_support.a
 lib/libhpx_itt_notify.a
 lib/libhpx_lcos_distributed.a
@@ -2625,7 +2641,7 @@ lib/libhpx_parcelset.a
 lib/libhpx_parcelset_base.a
 lib/libhpx_partitioned_vector.so
 lib/libhpx_partitioned_vector.so.1
-lib/libhpx_partitioned_vector.so.1.9.0
+lib/libhpx_partitioned_vector.so.1.9.1
 lib/libhpx_performance_counters.a
 lib/libhpx_plugin.a
 lib/libhpx_plugin_factories.a
@@ -2633,7 +2649,7 @@ lib/libhpx_prefix.a
 lib/libhpx_preprocessor.a
 lib/libhpx_process.so
 lib/libhpx_process.so.1
-lib/libhpx_process.so.1.9.0
+lib/libhpx_process.so.1.9.1
 lib/libhpx_program_options.a
 lib/libhpx_properties.a
 lib/libhpx_resiliency.a
@@ -2664,7 +2680,7 @@ lib/libhpx_topology.a
 lib/libhpx_type_support.a
 lib/libhpx_unordered.so
 lib/libhpx_unordered.so.1
-lib/libhpx_unordered.so.1.9.0
+lib/libhpx_unordered.so.1.9.1
 lib/libhpx_util.a
 lib/libhpx_version.a
 lib/libhpx_wrap.a

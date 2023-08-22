@@ -1,7 +1,10 @@
 PORTNAME=	hpx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.9.1
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	4a61c0bb764616a103900f948ac9735b3b73e594.diff:-p1 # fix for https://github.com/STEllAR-GROUP/hpx/issues/6316
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ Standard Library for Parallelism and Concurrency
