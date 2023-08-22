@@ -803,7 +803,6 @@
     SUBDIR += munin-contrib
     SUBDIR += munin-master
     SUBDIR += munin-node
-    SUBDIR += muse
     SUBDIR += mxkill
     SUBDIR += mybashburn
     SUBDIR += myrescue
