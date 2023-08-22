@@ -7788,3 +7788,4 @@ devel/py-python-Levenshtein|devel/py-Levenshtein|2023-08-17|Rename to match upst
 devel/py-jaraco||2023-08-21|Remove obsoleted port
 security/rubygem-openssl2|security/rubygem-openssl|2023-08-21|Remove obsoleted port. Use security/rubygem-openssl instead
 games/cataclysm-dda-tiles|games/cataclysm-dda@tiles|2023-08-22|Moved to a flavored version
+devel/lua-language-server||2023-08-22|Has expired: Versions after 3.6.9 dump core (and do not compile)
