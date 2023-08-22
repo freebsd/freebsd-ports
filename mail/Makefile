@@ -724,7 +724,6 @@
     SUBDIR += vacation
     SUBDIR += vbsfilter
     SUBDIR += vexim
-    SUBDIR += vmailmgr
     SUBDIR += vpopmail
     SUBDIR += vqadmin
     SUBDIR += vrfy

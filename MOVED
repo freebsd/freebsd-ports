@@ -7795,3 +7795,4 @@ databases/virtuoso||2023-08-22|Has expired: Broken on all supported FreeBSD rele
 sysutils/muse||2023-08-22|Has expired: Broken on all supported FreeBSD releases for more than an year
 devel/py-pytest-freezegun|devel/py-pytest-freezer|2023-08-22|Has expired: Use devel/py-pytest-freezer as upstream is unmaintained
 multimedia/QtAV||2023-08-22|Has expired: Abandoned project and broken with FFmpeg 6
+mail/vmailmgr||2023-08-22|Has expired: Last upstream release was in 2005 and upstream points to different site
