@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.8.1
+DISTVERSION=	2023.8.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,8 +40,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cc-1.0.82 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.21 \
-		clap_builder-4.3.21 \
+		clap-4.3.22 \
+		clap_builder-4.3.22 \
 		clap_complete-4.3.2 \
 		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
@@ -176,7 +176,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.66 \
 		quick-xml-0.23.1 \
-		quote-1.0.32 \
+		quote-1.0.33 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
@@ -225,14 +225,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.28 \
+		syn-2.0.29 \
 		tar-0.4.40 \
 		tempfile-3.7.1 \
 		tera-1.19.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.2.6 \
-		thiserror-1.0.46 \
-		thiserror-impl-1.0.46 \
+		thiserror-1.0.47 \
+		thiserror-impl-1.0.47 \
 		thread_local-1.1.4 \
 		time-0.3.25 \
 		time-core-0.1.1 \
@@ -293,22 +293,22 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.2 \
+		windows-targets-0.48.4 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.2 \
+		windows_aarch64_gnullvm-0.48.4 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.2 \
+		windows_aarch64_msvc-0.48.4 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.2 \
+		windows_i686_gnu-0.48.4 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.2 \
+		windows_i686_msvc-0.48.4 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.2 \
+		windows_x86_64_gnu-0.48.4 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.2 \
+		windows_x86_64_gnullvm-0.48.4 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.2 \
-		winnow-0.5.12 \
+		windows_x86_64_msvc-0.48.4 \
+		winnow-0.5.14 \
 		winreg-0.10.1 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
