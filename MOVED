@@ -7787,3 +7787,4 @@ sysutils/devcpu-data|sysutils/cpu-microcode-rc|2023-08-16|Reorganize CPU microco
 devel/py-python-Levenshtein|devel/py-Levenshtein|2023-08-17|Rename to match upstream
 devel/py-jaraco||2023-08-21|Remove obsoleted port
 security/rubygem-openssl2|security/rubygem-openssl|2023-08-21|Remove obsoleted port. Use security/rubygem-openssl instead
+games/cataclysm-dda-tiles|games/cataclysm-dda@tiles|2023-08-22|Moved to a flavored version

@@ -142,7 +142,6 @@
     SUBDIR += caph
     SUBDIR += cardpics
     SUBDIR += cataclysm-dda
-    SUBDIR += cataclysm-dda-tiles
     SUBDIR += catesc
     SUBDIR += cave9
     SUBDIR += cavezofphear
