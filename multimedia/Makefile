@@ -1,7 +1,6 @@
     COMMENT = Multimedia software
 
     SUBDIR += Bento4
-    SUBDIR += QtAV
     SUBDIR += ab-av1
     SUBDIR += ab25
     SUBDIR += acidrip
