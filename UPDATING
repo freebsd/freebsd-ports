@@ -6,11 +6,12 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230822:
-AUTHOR: leres@FreeBSD.org
+  AUTHOR: leres@FreeBSD.org
+  AFFECTS: users of security/zeek
 
-  security/zeek has been upgraded to 6.0.0 and the NETMAP option
-  was removed; it was too difficult to build it without zeek being
-  installed in %%PREFIX%%.
+  Zeek has been upgraded to 6.0.0 and the NETMAP option was removed;
+  it was too difficult to build it without zeek being installed in
+  %%PREFIX%%.
 
   The consensus was that this was a rarely used feature, please
   reach out to me if need this (I've done some work on a new
