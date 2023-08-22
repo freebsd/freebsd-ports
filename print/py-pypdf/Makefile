@@ -1,12 +1,15 @@
 PORTNAME=	pypdf
-PORTVERSION=	3.15.1
+PORTVERSION=	3.15.2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Pure-Python PDF toolkit
-WWW=		https://pybrary.net/pyPdf/
+WWW=		https://github.com/py-pdf/pypdf
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>2:devel/py-flit-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
