@@ -1,6 +1,5 @@
 PORTNAME=	wf-recorder
-DISTVERSION=	0.3.0
-PORTREVISION=	3
+DISTVERSION=	0.4.0
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 
@@ -17,7 +16,8 @@ BUILD_DEPENDS=	scdoc:textproc/scdoc \
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libwayland-client.so:graphics/wayland
 
-USES=		compiler:c++11-lang meson pkgconfig tar:xz
+USES=		compiler:c++11-lang gl meson pkgconfig tar:xz
+USE_GL=		gbm
 
 PLIST_FILES=	bin/wf-recorder \
 		man/man1/wf-recorder.1.gz
