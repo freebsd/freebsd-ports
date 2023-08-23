@@ -1,4 +1,5 @@
 include/yyjson.h
 lib/cmake/yyjson/yyjson-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/yyjson/yyjson-config.cmake
-lib/libyyjson.a
+lib/libyyjson.so
+lib/libyyjson.so.0.7.0
