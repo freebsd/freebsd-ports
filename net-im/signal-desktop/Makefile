@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.28.0
+DISTVERSION=	6.29.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -210,6 +210,10 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/node_headers
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/completions
 	${RLN} ${STAGEDIR}${DATADIR}/signal-desktop ${STAGEDIR}${PREFIX}/bin
+
+# This seems to be only required for Windows:
+	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@nodert-win10-rs4
+	${RM} -r ${STAGEDIR}${DATADIR}/resources/app.asar.unpacked/node_modules/@signalapp/windows-dummy-keystroke
 
 create-caches-tarball:
 	# do some cleanup first

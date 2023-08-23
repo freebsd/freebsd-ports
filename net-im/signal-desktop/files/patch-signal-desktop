@@ -18,17 +18,6 @@
      if (shouldIncludeEmoji) {
        return window.i18n('message--getNotificationText--text-with-emoji', {
          text: modifiedText,
---- ts/services/notifications.ts	2022-02-12 02:48:01.000000000 +0100
-+++ ts/services/notifications.ts	2022-02-18 20:39:11.725928000 +0100
-@@ -143,7 +143,7 @@ class NotificationService extends EventEmitter {
-     const audioNotificationSupport = getAudioNotificationSupport();
- 
-     const notification = new window.Notification(title, {
--      body: OS.isLinux() ? filterNotificationText(message) : message,
-+      body: (OS.isFreeBSD() || OS.isLinux()) ? filterNotificationText(message) : message,
-       icon,
-       silent:
-         silent || audioNotificationSupport !== AudioNotificationSupport.Native,
 --- ts/util/getUserAgent.ts	2022-02-12 02:48:01.000000000 +0100
 +++ ts/util/getUserAgent.ts	2022-02-18 20:43:07.232944000 +0100
 @@ -7,6 +7,7 @@ const PLATFORM_STRINGS: { [platform: string]: string }
