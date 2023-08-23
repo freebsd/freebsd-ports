@@ -1,7 +1,6 @@
 PORTNAME=	pandas-market-calendars
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.4
-PORTREVISION=	1
+DISTVERSION=	4.2.1
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +17,13 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}exchange-calendars>=3.3:finance/py-exchange-calendars@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 4 tests fail, see https://github.com/rsheftel/pandas_market_calendars/issues/275
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsheftel
