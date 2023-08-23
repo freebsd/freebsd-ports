@@ -1611,6 +1611,7 @@
     SUBDIR += xbatt
     SUBDIR += xbattbar
     SUBDIR += xcdroast
+    SUBDIR += xcp
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xe
