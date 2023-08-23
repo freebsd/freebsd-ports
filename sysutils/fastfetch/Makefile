@@ -1,6 +1,5 @@
 PORTNAME=	fastfetch
-DISTVERSION=	1.12.2
-PORTREVISION=	1
+DISTVERSION=	2.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -10,11 +9,13 @@ WWW=		https://github.com/fastfetch-cli/fastfetch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libyyjson.so:devel/yyjson
+
 FLAVORS=	full lite
 FLAVOR?=	${FLAVORS:[1]}
 lite_PKGNAMESUFFIX=	-lite
 
-USES=		cmake pkgconfig
+USES=		cmake localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	fastfetch-cli
 
@@ -91,6 +92,7 @@ PULSEAUDIO_CMAKE_BOOL=	ENABLE_PULSE
 PULSEAUDIO_BUILD_DEPENDS=	${LOCALBASE}/lib/libpulse.so:audio/pulseaudio
 PULSEAUDIO_RUN_DEPENDS=	${LOCALBASE}/lib/libpulse.so:audio/pulseaudio
 
-CMAKE_ARGS=	-DTARGET_DIR_ETC:NHCITF="${LOCALBASE}/etc"
+CMAKE_ARGS=	-DTARGET_DIR_ETC:STRING="${LOCALBASE}/etc" \
+		-DENABLE_SYSTEM_YYJSON:BOOL=ON
 
 .include <bsd.port.mk>
