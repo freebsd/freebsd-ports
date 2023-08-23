@@ -1428,6 +1428,7 @@
     SUBDIR += testdisk
     SUBDIR += tflint
     SUBDIR += thefish
+    SUBDIR += tiempo
     SUBDIR += timelimit
     SUBDIR += timemon
     SUBDIR += tiramisu
