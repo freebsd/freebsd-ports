@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Set $XDG_SESSION_TYPE
-if test "x$XDG_SESSION_TYPE" = "x"; then
-    XDG_SESSION_TYPE="x11"
+# Use the Xorg backend
+if test "x$GDK_BACKEND" = "x"; then
+    GDK_BACKEND="x11"
 fi
 export XDG_SESSION_TYPE
 
@@ -23,6 +23,9 @@ if test "x$XDG_CURRENT_DESKTOP" = "x" ; then
     XDG_CURRENT_DESKTOP="Budgie:GNOME"
 fi
 export XDG_CURRENT_DESKTOP
+
+# Suppress warning about accessibility bus
+#export NO_AT_BRIDGE=1
 
 # Set $XDG_CONFIG_DIRS
 if test "x$XDG_CONFIG_DIRS" = "x" ; then

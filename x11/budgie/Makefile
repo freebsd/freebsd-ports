@@ -1,6 +1,5 @@
 PORTNAME=	budgie
-PORTVERSION=	10.7
-PORTREVISION=	1
+PORTVERSION=	10.8
 CATEGORIES=	x11 budgie
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -17,9 +16,6 @@ RUN_DEPENDS=	budgie-desktop>0:x11/budgie-desktop \
 
 # Additional wallpapers
 RUN_DEPENDS+=	budgie-backgrounds>0:x11-themes/budgie-backgrounds
-
-# Additional applets
-RUN_DEPENDS+=	budgie-trash-applet>0:deskutils/budgie-trash-applet
 
 RUN_DEPENDS+=	gnome-terminal>0:x11/gnome-terminal \
 		nautilus>0:x11-fm/nautilus \
