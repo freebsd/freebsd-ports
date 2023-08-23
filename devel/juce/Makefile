@@ -24,7 +24,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsysinfo.so:devel/libsysinfo
 
 USES=		cmake compiler:c++11-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
-DOS2UNIX_FILES=	modules/juce_core/juce_core.h
+DOS2UNIX_FILES=	modules/juce_core/juce_core.h \
+		modules/juce_dsp/containers/juce_AudioBlock_test.cpp
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
