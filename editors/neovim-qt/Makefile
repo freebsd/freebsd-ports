@@ -1,6 +1,7 @@
 PORTNAME=	neovim-qt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.17-66
+PORTREVISION=	1
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${FLAVOR:S/qt//}
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c \
 RUN_DEPENDS=	neovim>=0:editors/neovim
 
 FLAVORS=		qt5 qt6
-FLAVOR?=		${FLAVORS:[2]}
+FLAVOR?=		${FLAVORS:[1]}
 qt5_CONFLICTS_INSTALL=	neovim-qt6
 qt6_CONFLICTS_INSTALL=	neovim-qt5
 
