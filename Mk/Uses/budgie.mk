@@ -35,9 +35,11 @@ PLIST_SUB+=	BUDGIE_PLUGINSDIR="lib/budgie-desktop/plugins" \
 		RAVEN_PLUGINSDIR="lib/budgie-desktop/raven-plugins"
 
 # Available Budgie components are:
-_USE_BUDGIE_ALL= libbudgie raven screensaver
+_USE_BUDGIE_ALL= libbudgie libmagpie raven screensaver
 
 libbudgie_LIB_DEPENDS=		libbudgie-plugin.so:x11/budgie-desktop
+
+libmagpie_LIB_DEPENDS=		libmagpie-0.so:x11-wm/magpie
 
 raven_LIB_DEPENDS=		libraven.so:x11/budgie-desktop
 raven_RUN_DEPENDS=		budgie-desktop>0:x11/budgie-desktop

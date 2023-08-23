@@ -68,6 +68,7 @@
     SUBDIR += lxqt-panel
     SUBDIR += lxqt-session
     SUBDIR += lxsession
+    SUBDIR += magpie
     SUBDIR += marco
     SUBDIR += mcwm
     SUBDIR += metacity
