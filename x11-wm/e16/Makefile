@@ -1,6 +1,6 @@
 PORTNAME=	e16
-PORTVERSION=	1.0.27
-PORTREVISION=	2
+PORTVERSION=	1.0.28
+PORTREVISION=	0
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}/
 
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		autoreconf gettext-tools gmake iconv libtool gnome perl5 \
-		pkgconfig python shebangfix xorg
+USES=		autoreconf desktop-file-utils gettext-tools gmake iconv \
+		libtool gnome perl5 pkgconfig python:run shebangfix xorg
 
 INSTALL_TARGET=	install-strip
 
