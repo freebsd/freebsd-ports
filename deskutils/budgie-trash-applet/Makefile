@@ -10,6 +10,9 @@ WWW=		https://github.com/EbonJaeger/budgie-trash-applet
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Merged into newer x11/budgie-desktop >= 10.8
+EXPIRATION_DATE=	2023-09-29
+
 BUILD_DEPENDS=	sassc:textproc/sassc
 LIB_DEPENDS=	libnotify.so:devel/libnotify \
 		libpeas-1.0.so:devel/libpeas
