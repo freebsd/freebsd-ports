@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.29-15512 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g36dce454dd
+DISTVERSION=	0.0.29-15525 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g8772219492
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -93,5 +93,14 @@ post-patch:
 		 -e '/GIT_FULL_BRANCH/s/local_build/${GH_ACCOUNT}\/${GH_PROJECT}\/master/' \
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
+
+# XXX Drop after FreeBSD 13.2 EOL around 2024-05-01
+.if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h)
+PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
+CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
+.endif
 
 .include <bsd.port.mk>
