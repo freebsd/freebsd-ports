@@ -98,7 +98,7 @@ TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 || ${ARCH} == powerpc64le
 CMAKE_ARGS+=	-DUSE_OPENCL:BOOL=OFF
 CXXFLAGS+=	-DGDK_DISABLE_DEPRECATED
 PLIST_SUB+=	NO_OPENCL="@comment "
