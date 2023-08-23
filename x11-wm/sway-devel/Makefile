@@ -1,6 +1,6 @@
 PORTNAME=	sway
-DISTVERSION?=	1.8.1-183 # git rev-list --count 1.8.1..
-DISTVERSIONSUFFIX?=	-gbb91b7f5f
+DISTVERSION?=	1.8.1-188 # git rev-list --count 1.8.1..
+DISTVERSIONSUFFIX?=	-gbf44690ee
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX?=	-devel
 
@@ -15,11 +15,9 @@ WWW?=		https://swaywm.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build after https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/4316
-
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols \
-		wlroots>=0.16.0.668<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.16.0.702<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
