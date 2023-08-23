@@ -1,4 +1,4 @@
---- Makefile.orig	2022-08-04 09:52:36 UTC
+--- Makefile.orig	2023-07-05 09:17:27 UTC
 +++ Makefile
 @@ -1,7 +1,7 @@
  all: build
@@ -9,7 +9,7 @@
  GODIR := $(shell dirname "$(GO)")
  GOFMT := "$(GODIR)/gofmt"
  GOOS ?= linux
-@@ -56,15 +56,13 @@ hook:
+@@ -54,15 +54,13 @@ hook:
  	[ ! -d "$(CURDIR)/.git/hooks" ] || ln -sf "$(CURDIR)/scripts/pre-commit.hook" "$(CURDIR)/.git/hooks/pre-commit"
  
  $(GOPATHBIN)/easyjson:
@@ -28,7 +28,7 @@
  
  continentmap.go:
  	$(CURDIR)/scripts/get_continent_map.py $@
-@@ -104,10 +102,10 @@ coverhtml: vet common
+@@ -102,12 +100,12 @@ coverhtml: vet common
  	$(GO) tool cover -html=cover.out -o coverage.html
  
  %_easyjson.go: %.go $(GOPATHBIN)/easyjson | common_proto
@@ -37,11 +37,15 @@
  
  %.pb.go: %.proto $(GOPATHBIN)/protoc-gen-go $(GOPATHBIN)/protoc-gen-go-grpc
 -	PATH="$(GODIR)":"$(GOPATHBIN)":$(PATH) protoc --go_out=. --go_opt=paths=source_relative \
+-		--go-grpc_out=. --go-grpc_opt=paths=source_relative \
+-		$*.proto
 +	PATH="$(GODIR)":"$(GOPATHBIN)":"$(CURDIR)":$(PATH) protoc --go_out=. --go_opt=paths=source_relative \
- 		--go-grpc_out=. --go-grpc_opt=paths=source_relative \
- 		$*.proto
++              --go-grpc_out=. --go-grpc_opt=paths=source_relative --proto_path="$(CURDIR)" \
++              "$(CURDIR)/$*.proto"
  
-@@ -173,6 +171,13 @@ tarball: vendor
+ common: common_easyjson common_proto
+ 
+@@ -162,6 +160,13 @@ tarball: vendor
  	gzip --force nextcloud-spreed-signaling-$(TARVERSION).tar
  
  dist: tarball

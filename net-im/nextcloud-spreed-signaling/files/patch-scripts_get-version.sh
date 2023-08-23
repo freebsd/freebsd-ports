@@ -1,4 +1,4 @@
---- scripts/get-version.sh.orig	2022-07-25 12:17:08 UTC
+--- scripts/get-version.sh.orig	2023-07-05 09:17:27 UTC
 +++ scripts/get-version.sh
 @@ -1,7 +1,6 @@
 -#!/usr/bin/env bash
@@ -15,7 +15,7 @@
  
  if [ -z $VERSION ]; then
 -    VERSION=unknown
-+    VERSION=PORTVERSION
++    VERSION=%%PORTVERSION%%
  fi
  
  echo $VERSION
