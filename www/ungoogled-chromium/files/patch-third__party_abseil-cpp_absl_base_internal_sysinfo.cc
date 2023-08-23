@@ -1,4 +1,4 @@
---- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2023-08-18 10:26:52 UTC
+--- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2023-08-23 10:45:26 UTC
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,10 +30,14 @@
  #include <sys/syscall.h>
@@ -44,7 +44,20 @@
  
  #if defined(ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY)
    // On these platforms, the TSC frequency is the nominal CPU
-@@ -433,6 +441,18 @@ pid_t GetTID() {
+@@ -332,10 +340,12 @@ static double GetNominalCPUFrequency() {
+   // If CPU scaling is in effect, we want to use the *maximum*
+   // frequency, not whatever CPU speed some random processor happens
+   // to be using now.
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) // pledge violation
+   if (ReadLongFromFile("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq",
+                        &freq)) {
+     return freq * 1e3;  // Value is kHz.
+   }
++#endif
+ 
+   return 1.0;
+ #endif  // !ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY
+@@ -433,6 +443,18 @@ pid_t GetTID() {
    static_assert(sizeof(pid_t) == sizeof(thread),
                  "In NaCL int expected to be the same size as a pointer");
    return reinterpret_cast<pid_t>(thread);
