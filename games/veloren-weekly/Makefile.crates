@@ -140,7 +140,6 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		crypto-common-0.1.6 \
 		csv-1.2.1 \
 		csv-core-0.1.10 \
-		ct-logs-0.8.0 \
 		cty-0.2.2 \
 		cxx-1.0.94 \
 		cxx-build-1.0.94 \
@@ -272,7 +271,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.26 \
-		hyper-rustls-0.22.1 \
+		hyper-rustls-0.24.1 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
 		id-arena-2.2.1 \
@@ -379,6 +378,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		num-complex-0.2.4 \
 		num-complex-0.4.3 \
 		num-derive-0.3.3 \
+		num-derive-0.4.0 \
 		num-integer-0.1.45 \
 		num-iter-0.1.43 \
 		num-rational-0.2.4 \
@@ -453,9 +453,9 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.8.0 \
 		quick-xml-0.28.2 \
-		quinn-0.8.5 \
-		quinn-proto-0.8.4 \
-		quinn-udp-0.1.4 \
+		quinn-0.10.2 \
+		quinn-proto-0.10.3 \
+		quinn-udp-0.4.1 \
 		quote-0.6.13 \
 		quote-1.0.26 \
 		radium-0.7.0 \
@@ -509,12 +509,10 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		rustc_version-0.2.3 \
 		rustc_version-0.4.0 \
 		rustix-0.37.19 \
-		rustls-0.19.1 \
-		rustls-0.20.8 \
-		rustls-native-certs-0.5.0 \
+		rustls-0.21.6 \
 		rustls-native-certs-0.6.2 \
-		rustls-pemfile-0.2.1 \
 		rustls-pemfile-1.0.2 \
+		rustls-webpki-0.101.4 \
 		rusttype-0.7.9 \
 		rusttype-0.8.3 \
 		rusttype-0.9.3 \
@@ -527,7 +525,6 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
 		scratch-1.0.5 \
-		sct-0.6.1 \
 		sct-0.7.0 \
 		sdl2-0.35.2 \
 		sdl2-sys-0.35.2 \
@@ -623,9 +620,9 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.28.0 \
+		tokio-1.28.2 \
 		tokio-macros-2.1.0 \
-		tokio-rustls-0.22.0 \
+		tokio-rustls-0.24.1 \
 		tokio-stream-0.1.14 \
 		tokio-util-0.7.1 \
 		toml-0.5.11 \
@@ -715,8 +712,6 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		wayland-sys-0.28.6 \
 		wayland-sys-0.29.5 \
 		web-sys-0.3.50 \
-		webpki-0.21.4 \
-		webpki-0.22.0 \
 		wfd-0.1.7 \
 		which-4.4.0 \
 		winapi-0.3.9 \
@@ -779,9 +774,9 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		yasna-0.5.2 \
 		wgpu-profiler@git+https://github.com/Imberflur/wgpu-profiler?tag=wgpu-0.8\#b156eb145bc223386ef344860d9b33b3c181650c \
 		tui@git+https://github.com/fdehau/tui-rs.git?branch=paragraph-scroll\#54b841fab6cfdb38e8dc1382176e965787964b4c \
+		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=42dddd666f28e1a94cdf4b542fcd61f67658e261\#42dddd666f28e1a94cdf4b542fcd61f67658e261 \
 		ntapi@git+https://github.com/MSxDOS/ntapi.git?rev=9f56b149c9e25796739157c0fce3e0007a7de6eb\#9f56b149c9e25796739157c0fce3e0007a7de6eb \
 		fluent,fluent-bundle,fluent-syntax,intl-memoizer@git+https://github.com/juliancoffee/fluent-rs.git?branch=patched\#929cf9512de121cce9b4cbf1cb860cd3294a1cd9 \
-		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=fb3dcbc4962b367253f8f2f92760ef44d2679c9a\#fb3dcbc4962b367253f8f2f92760ef44d2679c9a \
 		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=winit-0.25\#18a48a5eeefd2aa6e50f5dd0751ac2e94c88a9eb \
 		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#59fddc617696e68d28a75c2137a08c2572efb986 \
 		naga@git+https://github.com/gfx-rs/naga?tag=gfx-25\#057d03ad86f18e3bb3866b20901d8d4e892dd3d6 \

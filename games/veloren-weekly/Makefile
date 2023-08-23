@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20230817
+PORTVERSION=	s20230823
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_TAGNAME=	c9da8fb6a426b19c70e4a34872ae0a7a79cd1293
+GL_TAGNAME=	5195f6aaca33dbc336d949ca25c3b07ad4029f16
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
