@@ -1,17 +1,18 @@
 - the first part is fixing the configure failure, see https://github.com/Cantera/cantera/issues/1536
 
---- SConstruct.orig	2022-05-01 15:31:54 UTC
+--- SConstruct.orig	2023-08-22 21:34:46 UTC
 +++ SConstruct
-@@ -191,7 +191,7 @@ config_options = [
-         {
-             "cl": "/EHsc",
-             "Cygwin": "-std=gnu++11", # See http://stackoverflow.com/questions/18784112
--            "default": "-std=c++11"
-+            "default": "-std=c++14"
-         }),
-     Option(
-         "CC",
-@@ -805,6 +805,9 @@ elif "icx" in env.subst("$CC"):
+@@ -846,6 +846,9 @@ if os.name == "nt":
+     for key,val in env["ENV"].items():
+         env["ENV"][key] = str(val)
+ 
++elif "cc" in env.subst("$CC"):
++    config.select("clang")
++
+ else:
+     env["INSTALL_MANPAGES"] = True
+ 
+@@ -880,6 +883,9 @@ elif "icx" in env.subst("$CC"):
  elif "clang" in env.subst("$CC"):
      config.select("clang")
  
@@ -19,36 +20,38 @@
 +    config.select("clang")
 +
  else:
-     print(f"WARNING: Unrecognized C compiler '{env['CC']}'")
- 
-@@ -869,10 +872,10 @@ if "sdist" in COMMAND_LINE_TARGETS:
+     logger.error(f"Unrecognized C compiler {env['CC']!r}")
+     sys.exit(1)
+@@ -945,10 +951,10 @@ if "sdist" in COMMAND_LINE_TARGETS:
      logger.info("'sdist' target was specified. Setting 'use_pch' to False.")
      env["use_pch"] = False
  
 -for arg in ARGUMENTS:
 -    if arg not in config:
--        logger.error(f"Encountered unexpected command line option: '{arg}'")
+-        logger.error(f"Encountered unexpected command line option: {arg!r}")
 -        sys.exit(1)
 +#for arg in ARGUMENTS:
 +#    if arg not in config:
-+#        logger.error(f"Encountered unexpected command line option: '{arg}'")
++#        logger.error(f"Encountered unexpected command line option: {arg!r}")
 +#        sys.exit(1)
  
- env["cantera_version"] = "2.6.0"
+ env["cantera_version"] = "3.0.0"
  # For use where pre-release tags are not permitted (MSI, sonames)
-@@ -1673,11 +1676,11 @@ if env["matlab_toolbox"] == "y":
+@@ -2002,12 +2008,12 @@ if env["matlab_toolbox"] == "y":
              "SUNDIALS libraries and skip building the Matlab toolbox.")
          sys.exit(1)
  
--    if not (os.path.isdir(matlab_path) and
--            os.path.isdir(pjoin(matlab_path, "extern"))):
+-    matlab_path = Path(matlab_path)
+-    env["matlab_path"] = matlab_path.as_posix()
+-    if not matlab_path.is_dir() and (matlab_path / "extern").is_dir():
 -        logger.error(
--            f"Path set for 'matlab_path' is not correct. Path was '{matlab_path}'")
+-            f"Path set for 'matlab_path' is not correct. Path was {matlab_path!r}")
 -        sys.exit(1)
-+    #if not (os.path.isdir(matlab_path) and
-+    #        os.path.isdir(pjoin(matlab_path, "extern"))):
++    #matlab_path = Path(matlab_path)
++    #env["matlab_path"] = matlab_path.as_posix()
++    #if not matlab_path.is_dir() and (matlab_path / "extern").is_dir():
 +    #    logger.error(
-+    #        f"Path set for 'matlab_path' is not correct. Path was '{matlab_path}'")
++    #        f"Path set for 'matlab_path' is not correct. Path was {matlab_path!r}")
 +    #    sys.exit(1)
  
  

@@ -1,7 +1,6 @@
 PORTNAME=	cantera
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
-PORTREVISION=	3
+DISTVERSION=	3.0.0
 CATEGORIES=	science # chemistry physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,11 +11,14 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
-		${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs
+		${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs \
+		highfive>0:science/highfive
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
+		libhdf5.so:science/hdf5 \
+		libopenblas.so:math/openblas \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++11-lang eigen:3 localbase scons
+USES=		compiler:c++17-lang eigen:3 localbase scons
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -34,12 +36,13 @@ MAKE_ARGS=	system_eigen='y' \
 		debug='no' \
 		cc_flags="${CXXFLAGS}" \
 		prefix="${PREFIX}"
+MAKE_ENV=	INSTALL_MANPAGES=y
 
 ALL_TARGET=	build
 TEST_TARGET=	test # some tests fail, see https://github.com/Cantera/cantera/issues/1095
 
 OPTIONS_DEFINE=		OCTAVE PYTHON
-OPTIONS_DEFAULT=	# PYTHON is broken; OCTAVE is off by default because Octave interface is not as frequently requested feature
+OPTIONS_DEFAULT=	# PYTHON is broken; OCTAVE is off by default because Octave interface is not a frequently requested feature
 OPTIONS_SUB=		yes
 
 OCTAVE_DESC=		Octave support
@@ -48,6 +51,7 @@ OCTAVE_CXXFLAGS=	-I${LOCALBASE}/include/octave-${OCTAVE_VERSION}/octave
 OCTAVE_LIB_DEPENDS=	liboctave.so:math/octave
 OCTAVE_SUB_FILES=	pkg-message-octave
 OCTAVE_USES=		octave:env
+OCTAVE_BROKEN=		Octave support needs to be updated
 
 PYTHON_USES=		python
 PYTHON_USE=		PYTHON=cython
@@ -60,15 +64,16 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>0:devel/py-ruamel.yaml@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-PYTHON_BROKEN=		https://github.com/Cantera/cantera/issues/1269
+PYTHON_BROKEN=		https://github.com/Cantera/cantera/issues/1601
 
 do-install:
 	cd ${WRKSRC} && \
 		${MAKE_CMD} install \
 			stage_dir="${STAGEDIR}"
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcantera_shared.so.2.6.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcantera_shared.so.${PORTVERSION}
 
 do-install-PYTHON-on:
+	# strip
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cantera/_cantera.cpython-${PYTHON_SUFFIX}.so
 
 post-patch-OCTAVE-on: # adjust Octave version in SConscript (python styled os.environ['OCTAVE_VERSION'] somehow doesn't work for this)
