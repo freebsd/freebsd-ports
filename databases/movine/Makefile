@@ -11,7 +11,7 @@ WWW=		https://github.com/byronwasti/movine
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	byronwasti
 
@@ -181,8 +181,7 @@ PLIST_FILES=	bin/${PORTNAME}
 .include <bsd.port.options.mk>
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3 and later
+BROKEN=	Fails to detect OpenSSL 3 and later
 .endif
 
 post-install:
