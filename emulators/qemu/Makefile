@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	8.0.4
+PORTVERSION=	8.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -48,7 +48,8 @@ guestagent_PLIST=		${.CURDIR}/pkg-plist-ga
 guestagent_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-tools qemu-utils qemu6* \
 				qemu7* qemu-guest-agent
 
-USES=		cpe gmake gnome ninja perl5 pkgconfig python:build tar:xz
+USES=		cpe gmake gnome ninja perl5 pkgconfig python:build shebangfix tar:xz
+SHEBANG_FILES=	scripts/xml-preprocess.py
 USE_GNOME=	glib20
 USE_PERL5=	build
 .if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent

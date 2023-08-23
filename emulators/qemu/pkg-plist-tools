@@ -43,8 +43,6 @@ include/qemu-plugin.h
 %%DATADIR%%/keymaps/pt
 %%DATADIR%%/keymaps/pt-br
 %%DATADIR%%/keymaps/ru
-%%DATADIR%%/keymaps/sl
-%%DATADIR%%/keymaps/sv
 %%DATADIR%%/keymaps/th
 %%DATADIR%%/keymaps/tr
 %%DATADIR%%/trace-events-all
