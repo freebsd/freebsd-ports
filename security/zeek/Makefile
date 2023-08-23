@@ -26,7 +26,7 @@ USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-PORTSCOUT=	limit:0,even
+PORTSCOUT=	limit:^[0-9]*\.0\.
 
 CXXFLAGS_powerpc64=	-mpower8-vector
 
