@@ -1,5 +1,5 @@
 PORTNAME=	capstone
-DISTVERSION=	5.0-post1
+DISTVERSION=	5.0.1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
