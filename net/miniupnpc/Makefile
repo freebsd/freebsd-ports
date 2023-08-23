@@ -1,7 +1,8 @@
 PORTNAME=	miniupnpc
 PORTVERSION=	2.2.5
 CATEGORIES?=	net
-MASTER_SITES=	http://miniupnp.free.fr/files/
+MASTER_SITES=	http://miniupnp.free.fr/files/ \
+		https://miniupnp.tuxfamily.org/files/
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	UPnP IGD client lightweight library
