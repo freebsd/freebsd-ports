@@ -1,1 +1,2 @@
-A neovim client library and GUI, in Qt5.
+Neovim Qt is a lightweight cross-platform Neovim library and GUI written
+in C++ with Qt.
