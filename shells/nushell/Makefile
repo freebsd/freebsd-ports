@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.83.1
+DISTVERSION=	0.84.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ USE_GITHUB=	yes
 CARGO_CRATES=	Inflector-0.11.4 \
 		addr2line-0.20.0 \
 		adler-1.0.2 \
-		ahash-0.7.6 \
+		adler32-1.2.0 \
 		ahash-0.8.3 \
 		aho-corasick-1.0.2 \
 		alloc-no-stdlib-2.0.4 \
@@ -43,6 +43,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		atoi-2.0.0 \
 		atomic-polyfill-0.1.11 \
 		autocfg-1.1.0 \
+		avro-schema-0.3.0 \
 		backtrace-0.3.68 \
 		base64-0.21.2 \
 		bincode-1.3.3 \
@@ -52,7 +53,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitflags-1.3.2 \
 		bitflags-2.3.3 \
 		block-buffer-0.10.4 \
-		bracoxide-0.1.1 \
+		bracoxide-0.1.2 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.4 \
 		brownstone-3.0.0 \
@@ -93,6 +94,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
 		cpufeatures-0.2.9 \
+		crc-2.1.0 \
+		crc-catalog-1.1.1 \
 		crc32fast-1.3.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
@@ -163,6 +166,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-macro-0.3.28 \
 		futures-sink-0.3.28 \
 		futures-task-0.3.28 \
+		futures-timer-3.0.2 \
 		futures-util-0.3.28 \
 		fuzzy-matcher-0.3.7 \
 		fxhash-0.2.1 \
@@ -230,6 +234,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
 		libc-0.2.147 \
+		libflate-1.4.0 \
+		libflate_lz77-1.2.0 \
 		libgit2-sys-0.15.2+1.6.4 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
@@ -306,7 +312,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ordered-multimap-0.6.0 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
-		papergrid-0.9.1 \
+		papergrid-0.10.0 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
@@ -366,7 +372,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pwd-1.4.0 \
 		quick-error-1.2.3 \
 		quick-xml-0.28.2 \
-		quick-xml-0.29.0 \
+		quick-xml-0.30.0 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
 		quote-1.0.29 \
@@ -380,17 +386,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		reedline-0.22.0 \
+		reedline-0.23.0 \
 		regex-1.9.0 \
 		regex-automata-0.1.10 \
 		regex-automata-0.3.0 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.7.3 \
+		relative-path-1.8.0 \
+		rle-decode-fast-1.0.3 \
 		rmp-0.8.11 \
 		rmp-serde-1.1.1 \
 		roxmltree-0.18.0 \
-		rstest-0.17.0 \
-		rstest_macros-0.17.0 \
+		rstest-0.18.1 \
+		rstest_macros-0.18.1 \
 		rusqlite-0.29.0 \
 		rust-embed-6.8.1 \
 		rust-embed-impl-6.8.1 \
@@ -450,7 +458,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		strength_reduce-0.2.4 \
 		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
-		strip-ansi-escapes-0.1.1 \
+		strip-ansi-escapes-0.2.0 \
 		strum-0.24.1 \
 		strum-0.25.0 \
 		strum_macros-0.24.3 \
@@ -464,7 +472,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn-2.0.23 \
 		sys-locale-0.3.0 \
 		sysinfo-0.29.4 \
-		tabled-0.12.2 \
+		tabled-0.14.0 \
 		target-features-0.1.4 \
 		tempfile-3.7.0 \
 		tendril-0.4.3 \
@@ -504,7 +512,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.10 \
-		unicode-linebreak-0.1.4 \
+		unicode-linebreak-0.1.5 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
@@ -520,6 +528,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vte-0.10.1 \
+		vte-0.11.1 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
