@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.8.2
+DISTVERSION=	2023.8.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdxcode
 
-CARGO_CRATES=	addr2line-0.20.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aho-corasick-1.0.4 \
 		android-tzdata-0.1.1 \
@@ -26,7 +26,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.2 \
 		autocfg-1.1.0 \
-		backtrace-0.3.68 \
+		backtrace-0.3.69 \
 		base64-0.21.2 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
@@ -37,11 +37,11 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		cargo-lock-9.0.0 \
-		cc-1.0.82 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.22 \
-		clap_builder-4.3.22 \
+		clap-4.3.23 \
+		clap_builder-4.3.23 \
 		clap_complete-4.3.2 \
 		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
@@ -63,7 +63,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crypto-common-0.1.6 \
 		ctor-0.2.4 \
 		ctrlc-3.4.0 \
-		deranged-0.3.7 \
+		deranged-0.3.8 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -97,11 +97,11 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		futures-util-0.3.28 \
 		generic-array-0.14.7 \
 		getrandom-0.2.10 \
-		gimli-0.27.3 \
+		gimli-0.28.0 \
 		git2-0.17.2 \
 		globset-0.4.13 \
 		globwalk-0.8.1 \
-		h2-0.3.20 \
+		h2-0.3.21 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.0 \
 		heck-0.4.1 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		object-0.31.1 \
+		object-0.32.0 \
 		once_cell-1.18.0 \
 		openssl-0.10.56 \
 		openssl-macros-0.1.1 \
@@ -173,10 +173,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
 		portable-atomic-1.4.2 \
+		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.66 \
 		quick-xml-0.23.1 \
 		quote-1.0.33 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
@@ -185,7 +189,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		regex-1.9.3 \
 		regex-automata-0.3.6 \
 		regex-syntax-0.7.4 \
-		reqwest-0.11.18 \
+		reqwest-0.11.19 \
 		ring-0.16.20 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
@@ -196,7 +200,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		rustls-0.21.6 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
-		rustls-webpki-0.101.3 \
+		rustls-webpki-0.101.4 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
@@ -206,8 +210,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		security-framework-sys-2.9.1 \
 		self_update-0.37.0 \
 		semver-1.0.18 \
-		serde-1.0.183 \
-		serde_derive-1.0.183 \
+		serde-1.0.185 \
+		serde_derive-1.0.185 \
 		serde_json-1.0.105 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
@@ -218,7 +222,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		shell-words-1.1.0 \
 		similar-2.2.1 \
 		simplelog-0.12.1 \
-		slab-0.4.8 \
+		slab-0.4.9 \
 		socket2-0.4.9 \
 		socket2-0.5.3 \
 		spin-0.5.2 \
@@ -227,16 +231,16 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		syn-1.0.109 \
 		syn-2.0.29 \
 		tar-0.4.40 \
-		tempfile-3.7.1 \
+		tempfile-3.8.0 \
 		tera-1.19.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.2.6 \
 		thiserror-1.0.47 \
 		thiserror-impl-1.0.47 \
 		thread_local-1.1.4 \
-		time-0.3.25 \
+		time-0.3.27 \
 		time-core-0.1.1 \
-		time-macros-0.2.11 \
+		time-macros-0.2.13 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.32.0 \
@@ -283,8 +287,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
 		web-sys-0.3.64 \
-		webpki-0.22.0 \
-		webpki-roots-0.22.6 \
+		webpki-roots-0.25.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -293,23 +296,23 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.4 \
+		windows-targets-0.48.5 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.4 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.4 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.4 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.4 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.4 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.4 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.4 \
+		windows_x86_64_msvc-0.48.5 \
 		winnow-0.5.14 \
-		winreg-0.10.1 \
+		winreg-0.50.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
