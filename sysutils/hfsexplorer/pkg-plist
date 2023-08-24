@@ -1,7 +1,7 @@
 bin/hfsexplorer
-bin/hfsx.sh
-bin/resview.sh
-bin/unhfs.sh
+bin/hfsx
+bin/resview
+bin/unhfs
 %%DATADIR%%/lib/apache-ant-1.7.0-bzip2.jar
 %%DATADIR%%/lib/csframework.jar
 %%DATADIR%%/lib/hfsx.jar
