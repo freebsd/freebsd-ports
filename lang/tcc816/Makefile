@@ -1,5 +1,3 @@
-# Created by: Corey Smith <corsmith@gmail.com>
-
 PORTNAME=	tcc
 PKGNAMESUFFIX=	816
 DISTVERSION=	0.9.25
