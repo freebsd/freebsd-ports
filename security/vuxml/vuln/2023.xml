@@ -66,6 +66,8 @@
       <package>
 	<name>electron22</name>
 	<range><lt>22.3.22</lt></range>
+      </package>
+      <package>
 	<name>electron24</name>
 	<range><lt>24.8.1</lt></range>
       </package>
