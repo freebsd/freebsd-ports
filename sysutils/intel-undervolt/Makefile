@@ -1,6 +1,5 @@
 PORTNAME=	intel-undervolt
-DISTVERSION=	1.5-7
-DISTVERSIONSUFFIX=	-g66cfb65
+DISTVERSION=	1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,16 +9,16 @@ WWW=		https://github.com/kitsunyan/intel-undervolt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	specifically for Haswell and newer Intel CPUs
-
-RUN_DEPENDS=	bash:shells/bash
 
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	kitsunyan
+GNU_CONFIGURE=	yes
 
-MAKE_ARGS=	CC="${CC}" SYSCONFDIR="${PREFIX}/etc"
+MAKE_ARGS=	CC="${CC}" \
+		SYSCONFDIR="${PREFIX}/etc"
 
 PLIST_FILES=	bin/${PORTNAME} \
 		"@sample etc/${PORTNAME}.conf.sample"

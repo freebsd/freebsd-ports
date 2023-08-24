@@ -1,0 +1,8 @@
+--- Makefile.in.orig	2019-07-06 19:21:58 UTC
++++ Makefile.in
+@@ -1,4 +1,4 @@
+-CC = gcc
++CC ?= gcc
+ CFLAGS =
+ EXTRA_CFLAGS = -Wall -Wextra
+ DESTDIR =

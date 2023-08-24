@@ -1,0 +1,20 @@
+--- configure.orig	2023-08-23 20:56:30 UTC
++++ configure
+@@ -65,7 +65,7 @@
+   printf '%s' "s,^\($1 =\).*$,\1 $2,"
+ }
+ 
+-sed Makefile.in \
++sed \
+ -e "`sedcond SYSTEMD "$enable_systemd"`" \
+ -e "`sedcond ELOGIND "$enable_elogind"`" \
+ -e "`sedcond OPENRC "$enable_openrc"`" \
+@@ -74,7 +74,7 @@
+ -e "`sedarg RUNSTATEDIR "$runstatedir"`" \
+ -e "`sedarg UNITDIR "$unitdir"`" \
+ -e "`sedarg ELOGINDDIR "$eloginddir"`" \
+-> Makefile || exit 1
++Makefile.in > Makefile || exit 1
+ 
+ echo "Enable systemd: $enable_systemd"
+ echo "Enable elogind: $enable_elogind"
