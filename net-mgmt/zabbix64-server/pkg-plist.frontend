@@ -1666,6 +1666,7 @@
 %%WWWDIR%%/widgets/trigover/Widget.php
 %%WWWDIR%%/widgets/trigover/actions/WidgetView.php
 %%WWWDIR%%/widgets/trigover/assets/js/class.widget.js
+%%WWWDIR%%/widgets/trigover/includes/ViewHelper.php
 %%WWWDIR%%/widgets/trigover/includes/WidgetForm.php
 %%WWWDIR%%/widgets/trigover/manifest.json
 %%WWWDIR%%/widgets/trigover/partials/table.left.php
