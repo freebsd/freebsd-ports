@@ -9,6 +9,7 @@ WWW=		https://rockylinux.org
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	linux-rl9-gnupg2>=0:security/linux-rl9-gnupg \
+		linux-rl9-pulseaudio-utils>0:audio/linux-rl9-pulseaudio-utils \
 		linux-rl9-wget>=0:ftp/linux-rl9-wget
 
 USES=		linux:rl9 metaport

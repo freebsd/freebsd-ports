@@ -430,6 +430,7 @@
     SUBDIR += linux-rl9-openal-soft
     SUBDIR += linux-rl9-opus
     SUBDIR += linux-rl9-pulseaudio-libs
+    SUBDIR += linux-rl9-pulseaudio-utils
     SUBDIR += linuxsampler
     SUBDIR += linuxwave
     SUBDIR += liquidsfz
