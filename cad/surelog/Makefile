@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.72
+DISTVERSION=	1.73
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,7 +30,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
 GH_TUPLE=	alainmarcel:antlr4:a27cf84:antlr4/third_party/antlr4 \
-		google:googletest:9fce548:googletest/third_party/googletest
+		google:googletest:460ae98:googletest/third_party/googletest
 
 CMAKE_ON=	BUILD_SHARED_LIBS SURELOG_USE_HOST_UHDM
 CMAKE_OFF=	SURELOG_BUILD_TESTS
