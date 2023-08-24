@@ -21,17 +21,7 @@ GH_ACCOUNT=	teejee2008
 USE_GNOME=	cairo gdkpixbuf2 gtk30 libxml2 vte3
 
 MAKEFILE=	makefile
-
 WRKSRC_SUBDIR=	src
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-USES+=	llvm:max=15
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
-.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/share/polo/files/gtk-theme/*.orig

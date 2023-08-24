@@ -2,14 +2,33 @@
 +++ makefile
 @@ -1,7 +1,7 @@
 -SHELL=/bin/bash
+-CFLAGS=--std=c99
 +SHELL=/bin/sh
- CFLAGS=--std=c99
++XCCFLAGS=$(foreach arg,$(CFLAGS),--Xcc=$(arg))
  
 -prefix=/usr
 +prefix=$(PREFIX)
  bindir=$(prefix)/bin
  sharedir=$(prefix)/share
  localedir=$(sharedir)/locale
+@@ -43,7 +43,7 @@ app-gtk:
+ 
+ 	#polo-gtk
+ 	valac -X -D'GETTEXT_PACKAGE="${app_name}"' \
+-		--Xcc="-lm" ${define_symbols} --Xcc="-O3" --thread \
++		--Xcc="-lm" ${define_symbols} ${XCCFLAGS} -v --thread \
+ 		Common/Main.vala \
+ 		Gtk/*.vala \
+ 		Utility/*.vala \
+@@ -60,7 +60,7 @@ app-util-gtk3:
+ 
+ app-util-disk:
+ 	valac --Xcc="-lm" -X -D'GETTEXT_PACKAGE="${app_name}"' \
+-		"polo-disk.vala" Console/*.vala --Xcc="-O3" -o polo-disk --pkg posix --pkg gio-unix-2.0 --pkg gee-0.8
++		"polo-disk.vala" Console/*.vala ${XCCFLAGS} -v -o polo-disk --pkg posix --pkg gio-unix-2.0 --pkg gee-0.8
+ 
+ app-translations:
+ 
 @@ -101,17 +101,15 @@ install:
  	mkdir -p "$(DESTDIR)$(sharedir)/${app_name}"
  	mkdir -p "$(DESTDIR)$(sharedir)/pixmaps"
