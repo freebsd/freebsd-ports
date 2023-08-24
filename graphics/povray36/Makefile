@@ -1,6 +1,6 @@
 PORTNAME=	povray
 PORTVERSION=	3.6.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/
@@ -11,6 +11,9 @@ DIST_SUBDIR=	povray36
 MAINTAINER=	bsd@philippost.de
 COMMENT=	Persistence of Vision Ray Tracer
 WWW=		https://www.povray.org/
+
+DEPRECATED=	No longer supported upstream; use POV-Ray 3.7 instead
+EXPIRATION_DATE=	2023-09-30
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
@@ -45,7 +48,8 @@ CONFIGURE_ARGS=	--disable-optimiz
 CONFIGURE_ARGS+=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
-		LDFLAGS="-L${LOCALBASE}/lib" COMPILED_BY=${MAINTAINER} \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		COMPILED_BY=${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R} \
 		--program-transform-name='s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/'
 
 .include <bsd.port.post.mk>
