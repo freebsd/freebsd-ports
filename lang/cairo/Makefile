@@ -1,6 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -60,7 +60,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		bytes-1.4.0 \
 		cairo-felt-0.8.2 \
 		cairo-vm-0.8.2 \
-		camino-1.1.4 \
+		camino-1.1.6 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		clap-4.3.11 \
@@ -225,7 +225,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		salsa-0.16.1 \
 		salsa-macros-0.16.0 \
 		same-file-1.0.6 \
-		scarb-metadata-1.4.2 \
+		scarb-metadata-1.5.0 \
 		schemars-0.8.12 \
 		schemars_derive-0.8.12 \
 		scopeguard-1.1.0 \
@@ -263,8 +263,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		test-case-core-3.1.0 \
 		test-case-macros-3.1.0 \
 		test-log-0.2.12 \
-		thiserror-1.0.43 \
-		thiserror-impl-1.0.43 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
 		thiserror-impl-no-std-2.0.2 \
 		thiserror-no-std-2.0.2 \
 		thread_local-1.1.7 \

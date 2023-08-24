@@ -2,6 +2,7 @@ lib/cairo-lang/corelib/Scarb.toml
 lib/cairo-lang/corelib/cairo_project.toml
 lib/cairo-lang/corelib/src/array.cairo
 lib/cairo-lang/corelib/src/box.cairo
+lib/cairo-lang/corelib/src/byte_array.cairo
 lib/cairo-lang/corelib/src/bytes_31.cairo
 lib/cairo-lang/corelib/src/clone.cairo
 lib/cairo-lang/corelib/src/cmp.cairo
@@ -19,6 +20,7 @@ lib/cairo-lang/corelib/src/math.cairo
 lib/cairo-lang/corelib/src/nullable.cairo
 lib/cairo-lang/corelib/src/option.cairo
 lib/cairo-lang/corelib/src/panics.cairo
+lib/cairo-lang/corelib/src/pedersen.cairo
 lib/cairo-lang/corelib/src/poseidon.cairo
 lib/cairo-lang/corelib/src/result.cairo
 lib/cairo-lang/corelib/src/serde.cairo
@@ -39,6 +41,7 @@ lib/cairo-lang/corelib/src/test.cairo
 lib/cairo-lang/corelib/src/test/array_test.cairo
 lib/cairo-lang/corelib/src/test/bool_test.cairo
 lib/cairo-lang/corelib/src/test/box_test.cairo
+lib/cairo-lang/corelib/src/test/byte_array_test.cairo
 lib/cairo-lang/corelib/src/test/bytes31_test.cairo
 lib/cairo-lang/corelib/src/test/cmp_test.cairo
 lib/cairo-lang/corelib/src/test/dict_test.cairo
