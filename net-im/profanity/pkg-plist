@@ -85,7 +85,6 @@ man/man1/profanity-nick.1.gz
 man/man1/profanity-notify.1.gz
 man/man1/profanity-occupants.1.gz
 man/man1/profanity-omemo.1.gz
-man/man1/profanity-os.1.gz
 man/man1/profanity-otr.1.gz
 man/man1/profanity-outtype.1.gz
 man/man1/profanity-ox.1.gz
@@ -97,6 +96,7 @@ man/man1/profanity-plugins.1.gz
 man/man1/profanity-prefs.1.gz
 man/man1/profanity-presence.1.gz
 man/man1/profanity-priority.1.gz
+man/man1/profanity-privacy.1.gz
 man/man1/profanity-privileges.1.gz
 man/man1/profanity-quit.1.gz
 man/man1/profanity-receipts.1.gz
@@ -120,6 +120,7 @@ man/man1/profanity-stamp.1.gz
 man/man1/profanity-states.1.gz
 man/man1/profanity-status.1.gz
 man/man1/profanity-statusbar.1.gz
+man/man1/profanity-strophe.1.gz
 man/man1/profanity-sub.1.gz
 man/man1/profanity-subject.1.gz
 man/man1/profanity-theme.1.gz
@@ -128,6 +129,7 @@ man/man1/profanity-titlebar.1.gz
 man/man1/profanity-tls.1.gz
 man/man1/profanity-tray.1.gz
 man/man1/profanity-url.1.gz
+man/man1/profanity-vcard.1.gz
 man/man1/profanity-vercheck.1.gz
 man/man1/profanity-who.1.gz
 man/man1/profanity-win.1.gz

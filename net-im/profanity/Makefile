@@ -1,7 +1,7 @@
 PORTNAME=	profanity
-DISTVERSION=	0.13.1
+DISTVERSION=	0.14.0
 CATEGORIES=	net-im
-MASTER_SITES=	https://github.com/${PORTNAME}-im/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://profanity-im.github.io/tarballs/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Console based XMPP client
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libqrencode.so:graphics/libqrencode
 
 USES=		cpe gnome libtool ncurses pkgconfig python \
-		readline sqlite:3 tar:xz
+		readline sqlite:3
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
