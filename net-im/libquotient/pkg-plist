@@ -22,6 +22,7 @@ include/Quotient/csapi/definitions/client_device.h
 include/Quotient/csapi/definitions/cross_signing_key.h
 include/Quotient/csapi/definitions/device_keys.h
 include/Quotient/csapi/definitions/event_filter.h
+include/Quotient/csapi/definitions/key_backup_data.h
 include/Quotient/csapi/definitions/openid_token.h
 include/Quotient/csapi/definitions/public_rooms_response.h
 include/Quotient/csapi/definitions/push_condition.h
@@ -31,6 +32,7 @@ include/Quotient/csapi/definitions/request_email_validation.h
 include/Quotient/csapi/definitions/request_msisdn_validation.h
 include/Quotient/csapi/definitions/request_token_response.h
 include/Quotient/csapi/definitions/room_event_filter.h
+include/Quotient/csapi/definitions/room_key_backup.h
 include/Quotient/csapi/definitions/sync_filter.h
 include/Quotient/csapi/definitions/third_party_signed.h
 include/Quotient/csapi/definitions/user_identifier.h
@@ -43,6 +45,7 @@ include/Quotient/csapi/event_context.h
 include/Quotient/csapi/filter.h
 include/Quotient/csapi/inviting.h
 include/Quotient/csapi/joining.h
+include/Quotient/csapi/key_backup.h
 include/Quotient/csapi/keys.h
 include/Quotient/csapi/kicking.h
 include/Quotient/csapi/knocking.h

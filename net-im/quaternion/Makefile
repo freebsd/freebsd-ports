@@ -1,6 +1,6 @@
 PORTNAME=	Quaternion
 DISTVERSION=	0.0.95.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
 		libsecret-1.so:security/libsecret \
 		libolm.so:security/olm
-BUILD_DEPENDS=	libquotient>=0.8:net-im/libquotient
+BUILD_DEPENDS=	libquotient>=0.8.1:net-im/libquotient
 # Quotient is a static lib, doesn't need to be in RUN_DEPENDS
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
