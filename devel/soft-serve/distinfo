@@ -1,7 +1,7 @@
-TIMESTAMP = 1687104983
-SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/v0.5.4.mod) = 4f88d2ffd3eefb6df2f5e48f6d37ae880811701fc42fcdc71f3563ddeec5c1b7
-SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/v0.5.4.mod) = 3922
-SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/v0.5.4.zip) = cf4439453eaa997928f35007377caa57e8e755f0ac776050458b1b0d307019d2
-SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/v0.5.4.zip) = 160514
-SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/charmbracelet-soft-serve-v0.5.4_GH0.tar.gz) = ac9365cfc171a09e68875503ad0518c7461f900d7267dbe92e3e686dcd985356
-SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.4_GH0/charmbracelet-soft-serve-v0.5.4_GH0.tar.gz) = 103793
+TIMESTAMP = 1692905909
+SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/v0.5.5.mod) = 4f88d2ffd3eefb6df2f5e48f6d37ae880811701fc42fcdc71f3563ddeec5c1b7
+SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/v0.5.5.mod) = 3922
+SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/v0.5.5.zip) = 4654cf4f86fd50da1da1bd4200cde682053687ce8f5a94ef2efc783318c8588c
+SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/v0.5.5.zip) = 160518
+SHA256 (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/charmbracelet-soft-serve-v0.5.5_GH0.tar.gz) = ce635cefcad63967ef47a60b6ab891471adec4e376c6bf358f2963c1760b589e
+SIZE (go/devel_soft-serve/charmbracelet-soft-serve-v0.5.5_GH0/charmbracelet-soft-serve-v0.5.5_GH0.tar.gz) = 103794
