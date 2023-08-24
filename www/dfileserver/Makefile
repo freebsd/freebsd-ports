@@ -8,6 +8,9 @@ MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Compact web server designed to make sharing files easy
 WWW=		https://osorio.me/projects/dev/dfileserver/
 
+DEPRECATED= Obsolete, consider using www/darkhttpd
+EXPIRATION_DATE= 2023-11-22
+
 LICENSE=	BSD3CLAUSE
 
 USES=	dos2unix
