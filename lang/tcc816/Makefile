@@ -10,8 +10,6 @@ WWW=		https://github.com/alekmaul/tcc
 LICENSE=		MIT
 LICENSE_FILE_MIT=	${WRKSRC}/RELICENSING
 
-# BUILD_DEPENDS=	as:devel/binutils
-
 USES=			gmake
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix="${PREFIX}" --cc="${CC}"
