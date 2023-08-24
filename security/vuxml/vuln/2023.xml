@@ -1,3 +1,44 @@
+  <vuln vid="5fa332b9-4269-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>116.0.5845.110</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>116.0.5845.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/08/chrome-desktop-stable-update.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[1469542] High CVE-2023-4430: Use after free in Vulkan. Reported by Cassidy Kim(@cassidy6564) on 2023-08-02</li>
+	    <li>[1469754] High CVE-2023-4429: Use after free in Loader. Reported by Anonymous on 2023-08-03</li>
+	    <li>[1470477] High CVE-2023-4428: Out of bounds memory access in CSS. Reported by Francisco Alonso (@revskills) on 2023-08-06</li>
+	    <li>[1470668] High CVE-2023-4427: Out of bounds memory access in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-08-07</li>
+	    <li>[1469348] Medium CVE-2023-4431: Out of bounds memory access in Fonts. Reported by Microsoft Security Researcher on 2023-08-01</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4430</cvename>
+      <cvename>CVE-2023-4429</cvename>
+      <cvename>CVE-2023-4428</cvename>
+      <cvename>CVE-2023-4427</cvename>
+      <cvename>CVE-2023-4431</cvename>
+      <url>https://chromereleases.googleblog.com/2023/08/chrome-desktop-stable-update.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-22</discovery>
+      <entry>2023-08-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5999fc39-72d0-4b99-851c-ade7ff7125c3">
     <topic>electron25 -- multiple vulnerabilities</topic>
     <affects>
