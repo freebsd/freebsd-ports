@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-femoctave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.1.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,7 +14,8 @@ USES=		octave
 USE_GITHUB=	yes
 GH_ACCOUNT=	AndreasStahel
 GH_PROJECT=	FEMoctave
+GH_TAGNAME=	fd17a3c
 
-OCTAVE_SRC=		${GH_PROJECT}-${DISTVERSION}
+OCTAVE_SRC=		${GH_PROJECT}-${GH_TAGNAME}
 
 .include <bsd.port.mk>
