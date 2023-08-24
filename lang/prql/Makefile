@@ -1,5 +1,5 @@
 PORTNAME=	prql
-DISTVERSION=	0.9.3
+DISTVERSION=	0.9.4
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -55,7 +55,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bigdecimal-0.3.1 \
 		bindgen-0.65.1 \
 		bitflags-1.3.2 \
-		bitflags-2.3.1 \
+		bitflags-2.3.3 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		borsh-0.10.3 \
@@ -90,7 +90,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		clap_complete_nushell-0.1.11 \
 		clap_derive-4.3.0 \
 		clap_lex-0.5.0 \
-		clio-0.3.3 \
+		clio-0.3.4 \
 		cmake-0.1.50 \
 		color-eyre-0.6.2 \
 		color-spantrace-0.2.0 \
@@ -145,7 +145,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fastrand-1.9.0 \
-		filetime-0.2.21 \
+		filetime-0.2.22 \
 		flate2-1.0.26 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -199,7 +199,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		instant-0.1.12 \
 		io-enum-1.1.0 \
 		io-lifetimes-1.0.11 \
-		is-terminal-0.4.7 \
+		is-terminal-0.4.9 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
 		itoa-1.0.6 \
@@ -226,6 +226,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		libz-sys-1.1.9 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.5 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		lru-0.10.0 \
@@ -247,7 +248,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		named_pipe-0.4.1 \
 		native-tls-0.2.11 \
 		nom-7.1.3 \
-		notify-6.0.0 \
+		notify-6.1.0 \
 		num-0.4.0 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.3 \
@@ -277,7 +278,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pg_bigdecimal-0.1.5 \
 		phf-0.11.1 \
 		phf_shared-0.11.1 \
-		pin-project-lite-0.2.9 \
+		pin-project-lite-0.2.12 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
 		plotters-0.3.4 \
@@ -299,7 +300,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.9.3 \
-		pulldown-cmark-to-cmark-10.0.4 \
+		pulldown-cmark-to-cmark-11.0.0 \
 		pyo3-0.19.0 \
 		pyo3-build-config-0.19.0 \
 		pyo3-ffi-0.19.0 \
@@ -330,6 +331,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.19 \
+		rustix-0.38.6 \
 		rustler-0.29.0 \
 		rustler_codegen-0.29.0 \
 		rustler_sys-2.3.0 \
@@ -355,11 +357,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		signal-hook-registry-1.4.1 \
 		simdutf8-0.1.4 \
 		similar-2.2.1 \
-		similar-asserts-1.4.2 \
+		similar-asserts-1.5.0 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
 		smallvec-1.10.0 \
-		socket2-0.4.9 \
 		socket2-0.5.3 \
 		sqlformat-0.2.1 \
 		sqlparser-0.36.0 \
@@ -394,7 +395,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.29.0 \
+		tokio-1.32.0 \
 		tokio-macros-2.1.0 \
 		tokio-postgres-0.7.8 \
 		tokio-util-0.7.8 \
