@@ -1,4 +1,4 @@
---- meilisearch/build.rs.orig	2023-05-30 18:20:28 UTC
+--- meilisearch/build.rs.orig	2023-08-23 15:30:56 UTC
 +++ meilisearch/build.rs
 @@ -1,17 +1,6 @@
 -use vergen::{vergen, Config, SemverKind};
@@ -30,7 +30,7 @@
  
      pub fn setup_mini_dashboard() -> anyhow::Result<()> {
          let cargo_manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
-@@ -59,11 +61,10 @@ mod mini_dashboard {
+@@ -59,11 +48,10 @@ mod mini_dashboard {
          }
  
          let url = meta["assets-url"].as_str().unwrap();
