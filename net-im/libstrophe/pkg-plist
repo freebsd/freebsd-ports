@@ -1,5 +1,5 @@
 include/strophe.h
-lib/libstrophe.so.0.12.2
+lib/libstrophe.so.%%PORTVERSION%%
 lib/libstrophe.so.0
 lib/libstrophe.so
 lib/libstrophe.a

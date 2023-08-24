@@ -1,5 +1,5 @@
 PORTNAME=	libstrophe
-DISTVERSION=	0.12.2
+DISTVERSION=	0.12.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/strophe/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -17,6 +17,7 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFAULT=	EXPAT
 OPTIONS_SINGLE=	XML
