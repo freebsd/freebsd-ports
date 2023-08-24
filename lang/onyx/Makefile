@@ -6,10 +6,12 @@ MASTER_SITES=	LOCAL/bofh/${PORTNAME}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
-WWW=		http://www.canonware.com/onyx/
+WWW=		https://github.com/canonware/onyx
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Requires deprecated cook port
+EXPIRATION_DATE=	2023-09-30
 BROKEN_armv6=		fails to compile: building for onyx-5.1.2_6: error code 1
 BROKEN_armv7=		fails to compile: building for onyx-5.1.2_6: error code 1
 BROKEN_mips=		fails to compile: building for onyx-5.1.2_6: error code 1
@@ -19,14 +21,17 @@ BUILD_DEPENDS=	cook:devel/cook
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		libedit shebangfix tar:bzip2
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
 		--with-pcre-prefix=${LOCALBASE}
-USE_LDCONFIG=	yes
+
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
