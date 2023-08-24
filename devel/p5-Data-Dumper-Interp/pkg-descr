@@ -1,0 +1,5 @@
+This Data::Dumper wrapper optimizes output for human consumption and
+avoids side-effects which interfere with debugging.
+
+The namesake feature is interpolating Data::Dumper output into strings,
+but simple functions are also provided to format a scalar, array, or hash.
