@@ -1,5 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2023.2
+DISTVERSION=	2023.3
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/danielmiessler/SecLists
 LICENSE=	GPLv2 GPLv2+ MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/Discovery/Web-Content/Domino-Hunter/LICENCE
-LICENSE_FILE_GPLv2+ =	${WRKSRC}/Web-Shells/laudanum-0.8/GPL
+LICENSE_FILE_GPLv2+ =	${WRKSRC}/Web-Shells/laudanum-1.0/GPL
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
@@ -27,7 +27,7 @@ FILES_TO_BE_REMOVED=	.gitattributes \
 			LICENSE \
 			README.md \
 			SecLists.png \
-			Web-Shells/laudanum-0.8/GPL
+			Web-Shells/laudanum-1.0/GPL
 
 DIRS_TO_BE_REMOVED=	.bin .github
 
