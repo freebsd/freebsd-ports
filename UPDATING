@@ -289,7 +289,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of sysutils/py-mqttwarn
   AUTHOR: dvl@FreeBSD.org
 
-  The redis optoin REISPUB has been renamed to REDISPUB
+  The redis option REISPUB has been renamed to REDISPUB
   You should update any make.conf setting etc which refer to this.
   e.g. change sysutils_py-mqttwarn_REISPUB to sysutils_py-mqttwarn_REDISPUB
 
@@ -443,7 +443,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: tcberner@FreeBSD.org
 
   The packages accessibility/atk and accessibility/at-spi2-atk have been
-  integegrated upstream into at-spi2-core.
+  integrated upstream into at-spi2-core.
 
   Users of these packages can manually remove them prior to updating
   accessibility/at-spi2-core using
