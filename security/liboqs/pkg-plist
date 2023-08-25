@@ -6,10 +6,7 @@ include/oqs/kem_classic_mceliece.h
 include/oqs/kem_frodokem.h
 include/oqs/kem_hqc.h
 include/oqs/kem_kyber.h
-include/oqs/kem_ntru.h
 include/oqs/kem_ntruprime.h
-include/oqs/kem_saber.h
-%%KEM_BIKE%%include/oqs/kem_sike.h
 include/oqs/oqs.h
 include/oqs/oqsconfig.h
 include/oqs/rand.h
@@ -19,13 +16,12 @@ include/oqs/sha3x4.h
 include/oqs/sig.h
 include/oqs/sig_dilithium.h
 include/oqs/sig_falcon.h
-include/oqs/sig_picnic.h
-include/oqs/sig_rainbow.h
 include/oqs/sig_sphincs.h
 lib/cmake/liboqs/liboqsConfig.cmake
 lib/cmake/liboqs/liboqsConfigVersion.cmake
 lib/cmake/liboqs/liboqsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/liboqs/liboqsTargets.cmake
 lib/liboqs.so
-lib/liboqs.so.0
-lib/liboqs.so.0.7.2-dev
+lib/liboqs.so.0.9.0-dev
+lib/liboqs.so.4
+libdata/pkgconfig/liboqs.pc
