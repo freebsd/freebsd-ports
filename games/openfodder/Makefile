@@ -1,10 +1,6 @@
 PORTNAME=	OpenFodder
-DISTVERSION=	1.7.0
-PORTREVISION=	2
+DISTVERSION=	1.8.0
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	129d50b3ba09.patch:-p1 # https://github.com/OpenFodder/openfodder/pull/51
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Open source port of Cannon Fodder
