@@ -1,5 +1,6 @@
 PORTNAME=	xmlsec
-PORTVERSION=	1.3.13
+DISTVERSION=	1.3.13
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=3.8.0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0:devel/py-pkgconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
-		libxmlsec1-nss.so:security/xmlsec1
+		libxmlsec1-openssl.so:security/xmlsec1
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		gnome pkgconfig pytest python
