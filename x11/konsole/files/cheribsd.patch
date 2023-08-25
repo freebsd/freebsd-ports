@@ -1,0 +1,164 @@
+diff --git CMakeLists.txt CMakeLists.txt
+index 6b5006e39..a838ec4bd 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -67,11 +67,18 @@ ecm_setup_version(${RELEASE_SERVICE_VERSION} VARIABLE_PREFIX KONSOLEPRIVATE
+ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
+     Core
+     DBus
+-    Multimedia
+     PrintSupport
+     Widgets
+ )
+ 
++option(WITHOUT_MULTIMEDIA "Build without multimedia support (audio files)" OFF)
++if (NOT WITHOUT_MULTIMEDIA)
++	find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED
++	    Multimedia
++	)
++	set(HAVE_MULTIMEDIA 1)
++endif()
++
+ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+     Bookmarks
+     Config
+diff --git src/CMakeLists.txt src/CMakeLists.txt
+index fbf53242c..24d7ac7fc 100644
+--- src/CMakeLists.txt
++++ src/CMakeLists.txt
+@@ -62,7 +62,6 @@ qt_add_dbus_adaptor(
+ 
+ set(konsole_LIBS
+     KF5::XmlGui
+-    Qt::Multimedia
+     Qt::PrintSupport
+     Qt::Xml
+     KF5::Notifications
+@@ -77,6 +76,12 @@ set(konsole_LIBS
+     KF5::NewStuff
+ )
+ 
++if (NOT WITHOUT_MULTIMEDIA)
++    list(APPEND konsole_LIBS
++        Qt::Multimedia
++    )
++endif()
++
+ if (NOT WIN32)
+     list(APPEND konsole_LIBS
+         KF5::Pty
+diff --git src/Vt102Emulation.cpp src/Vt102Emulation.cpp
+index eb9433721..9ce57be2c 100644
+--- src/Vt102Emulation.cpp
++++ src/Vt102Emulation.cpp
+@@ -69,7 +69,9 @@ Vt102Emulation::Vt102Emulation()
+     , _pendingSessionAttributesUpdates(QHash<int, QString>())
+     , _sessionAttributesUpdateTimer(new QTimer(this))
+     , _reportFocusEvents(false)
++#if HAVE_MULTIMEDIA
+     , player(nullptr)
++#endif
+ {
+     _sessionAttributesUpdateTimer->setSingleShot(true);
+     QObject::connect(_sessionAttributesUpdateTimer, &QTimer::timeout, this, &Konsole::Vt102Emulation::updateSessionAttributes);
+@@ -1221,7 +1223,9 @@ void Vt102Emulation::processSessionAttributeRequest(const int tokenSize, const u
+ 
+     if (attribute == Image) {
+         bool inlineImage = false;
++#if HAVE_MULTIMEDIA
+         bool inlineMedia = false;
++#endif
+         if (value.startsWith(QLatin1String("ReportCellSize"))) {
+             iTermReportCellSize();
+             return;
+@@ -1243,9 +1247,11 @@ void Vt102Emulation::processSessionAttributeRequest(const int tokenSize, const u
+                 if (var == QLatin1String("inline")) {
+                     inlineImage = val == QLatin1String("1");
+                 }
++#if HAVE_MULTIMEDIA
+                 if (var == QLatin1String("inlineMedia")) {
+                     inlineMedia = val == QLatin1String("1");
+                 }
++#endif
+                 if (var == QLatin1String("preserveAspectRatio")) {
+                     keepAspect = val == QLatin1String("0");
+                 }
+@@ -1276,6 +1282,7 @@ void Vt102Emulation::processSessionAttributeRequest(const int tokenSize, const u
+                 }
+             }
+         }
++#if HAVE_MULTIMEDIA
+         if (inlineMedia) {
+             if (player == nullptr) {
+                 player = new QMediaPlayer(this);
+@@ -1295,6 +1302,7 @@ void Vt102Emulation::processSessionAttributeRequest(const int tokenSize, const u
+             player->play();
+             return;
+         }
++#endif
+         if (!inlineImage) {
+             return;
+         }
+@@ -1320,6 +1328,7 @@ void Vt102Emulation::processSessionAttributeRequest(const int tokenSize, const u
+     _sessionAttributesUpdateTimer->start(20);
+ }
+ 
++#if HAVE_MULTIMEDIA
+ void Vt102Emulation::deletePlayer(QMediaPlayer::MediaStatus mediaStatus)
+ {
+     if (mediaStatus == QMediaPlayer::EndOfMedia || mediaStatus == QMediaPlayer::InvalidMedia) {
+@@ -1333,6 +1342,7 @@ void Vt102Emulation::deletePlayer(QMediaPlayer::MediaStatus mediaStatus)
+         player = nullptr;
+     }
+ }
++#endif
+ 
+ void Vt102Emulation::updateSessionAttributes()
+ {
+diff --git src/Vt102Emulation.h src/Vt102Emulation.h
+index 3e067549a..2ede43766 100644
+--- src/Vt102Emulation.h
++++ src/Vt102Emulation.h
+@@ -11,7 +11,9 @@
+ // Qt
+ #include <QHash>
+ #include <QMap>
++#if HAVE_MULTIMEDIA
+ #include <QMediaPlayer>
++#endif
+ #include <QPair>
+ #include <QVector>
+ 
+@@ -98,7 +100,9 @@ private Q_SLOTS:
+     // pair in _pendingSessionAttributesUpdates.
+     // Used to buffer multiple attribute updates in the current session
+     void updateSessionAttributes();
++#if HAVE_MULTIMEDIA
+     void deletePlayer(QMediaPlayer::MediaStatus);
++#endif
+ 
+ private:
+     unsigned int applyCharset(uint c);
+@@ -313,7 +317,9 @@ private:
+     // For kitty graphics protocol - image cache
+     int getFreeGraphicsImageId();
+ 
++#if HAVE_MULTIMEDIA
+     QMediaPlayer *player;
++#endif
+ };
+ 
+ }
+diff --git src/config-konsole.h.cmake src/config-konsole.h.cmake
+index 5b7cdf810..f86be40d9 100644
+--- src/config-konsole.h.cmake
++++ src/config-konsole.h.cmake
+@@ -3,6 +3,8 @@
+ /* Defined if on DragonFly BSD */
+ #cmakedefine01 HAVE_OS_DRAGONFLYBSD
+ 
++#cmakedefine01 HAVE_MULTIMEDIA
++
+ #cmakedefine01 HAVE_X11
+ 
+ /* If defined, remove public access to dbus sendInput/runCommand */
