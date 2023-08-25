@@ -1,5 +1,5 @@
 PORTNAME=	puppetdb
-PORTVERSION=	7.13.1
+PORTVERSION=	7.14.0
 CATEGORIES=	databases java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	7
