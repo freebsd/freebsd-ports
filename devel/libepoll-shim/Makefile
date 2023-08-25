@@ -15,7 +15,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim
-PLIST_SUB=	SHIM_EVENTFD="${exists(/usr/include/sys/eventfd.h):?@comment :}"
+PLIST_SUB=	SHIM_EVENTFD="${exists(/usr/include/sys/eventfd.h):?@comment :}" \
+	SHIM_TIMERFD="${exists(/usr/include/sys/timerfd.h):?@comment :}"
 
 do-test:
 	# Exclude certain tests in resource restricted environments

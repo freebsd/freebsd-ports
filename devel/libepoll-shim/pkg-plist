@@ -5,7 +5,7 @@ include/libepoll-shim/epoll-shim/detail/write.h
 include/libepoll-shim/sys/epoll.h
 %%SHIM_EVENTFD%%include/libepoll-shim/sys/eventfd.h
 include/libepoll-shim/sys/signalfd.h
-include/libepoll-shim/sys/timerfd.h
+%%SHIM_TIMERFD%%include/libepoll-shim/sys/timerfd.h
 lib/cmake/epoll-shim/epoll-shim-config.cmake
 lib/cmake/epoll-shim/epoll-shim-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/epoll-shim/epoll-shim-targets.cmake
