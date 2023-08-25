@@ -56,8 +56,8 @@ lib/qt5/mkspecs/modules/qt_KUserFeedbackCore.pri
 lib/qt5/mkspecs/modules/qt_KUserFeedbackWidgets.pri
 lib/qt5/qml/org/kde/userfeedback/libKUserFeedbackQml.so
 lib/qt5/qml/org/kde/userfeedback/qmldir
-share/KDE/UserFeedbackConsole/user-feedback-manual.qch
-share/KDE/UserFeedbackConsole/user-feedback.qhc
+%%DOCS%%share/KDE/UserFeedbackConsole/user-feedback-manual.qch
+%%DOCS%%share/KDE/UserFeedbackConsole/user-feedback.qhc
 share/applications/org.kde.kuserfeedback-console.desktop
 share/locale/ar/LC_MESSAGES/userfeedbackconsole5_qt.qm
 share/locale/ar/LC_MESSAGES/userfeedbackprovider5_qt.qm
