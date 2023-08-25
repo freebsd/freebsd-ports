@@ -3,7 +3,6 @@
     SUBDIR += anope
     SUBDIR += atheme-services
     SUBDIR += bip
-    SUBDIR += birch
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += bitlbee-discord
