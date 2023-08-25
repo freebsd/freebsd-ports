@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.0.2
+DISTVERSION=	7.0.3
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		anyhow-1.0.72 \
+		anyhow-1.0.75 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
 		bitflags-2.3.3 \
@@ -35,8 +35,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.3.16 \
-		clap_builder-4.3.16 \
+		clap-4.3.24 \
+		clap_builder-4.3.24 \
 		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
@@ -74,7 +74,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		object-0.31.1 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
-		pin-project-lite-0.2.9 \
+		pin-project-lite-0.2.12 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
@@ -90,17 +90,17 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.171 \
-		serde_derive-1.0.171 \
-		serde_json-1.0.102 \
+		serde-1.0.186 \
+		serde_derive-1.0.186 \
+		serde_json-1.0.105 \
 		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
-		syn-2.0.25 \
-		thiserror-1.0.43 \
-		thiserror-impl-1.0.43 \
+		syn-2.0.29 \
+		thiserror-1.0.47 \
+		thiserror-impl-1.0.47 \
 		tinytemplate-1.2.1 \
-		tokio-1.29.1 \
+		tokio-1.32.0 \
 		tokio-macros-2.1.0 \
 		unicode-ident-1.0.9 \
 		utf8parse-0.2.1 \
