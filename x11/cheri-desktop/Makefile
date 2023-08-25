@@ -31,7 +31,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libwayland-server.so:graphics/wayland
 RUN_DEPENDS+=	${LOCALBASE}/lib/qt5/plugins/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so:x11/plasma5-kwayland-integration
 RUN_DEPENDS+=	${LOCALBASE}/share/fonts/terminus-font/ter-112b.pcf.gz:x11-fonts/terminus-font
 RUN_DEPENDS+=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:misc/shared-mime-info
-RUN_DEPENDS+=	${LOCALBASE}/share/wallpapers/Elarun/metadata.desktop:x11-themes/plasma5-plasma-workspace-wallpapers
+RUN_DEPENDS+=	${LOCALBASE}/share/wallpapers/Elarun/metadata.json:x11-themes/plasma5-plasma-workspace-wallpapers
 
 .include <bsd.port.options.mk>
 
