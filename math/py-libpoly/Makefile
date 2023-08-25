@@ -11,6 +11,8 @@ WWW=		https://github.com/SRI-CSL/libpoly
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+BROKEN_i386=	compilation fails with error: incompatible function pointer types, see https://github.com/SRI-CSL/libpoly/issues/70
+
 LIB_DEPENDS=	libpoly.so:math/libpoly
 
 USES=		cmake localbase:ldflags python
@@ -26,7 +28,7 @@ BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
 TEST_WRKSRC=	${WRKSRC}/test/python
 
-TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/polypy*.so
