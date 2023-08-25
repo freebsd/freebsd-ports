@@ -10,8 +10,8 @@ include/aom/aom_image.h
 include/aom/aom_integer.h
 include/aom/aomcx.h
 include/aom/aomdx.h
+lib/libaom.a
 lib/libaom.so
 lib/libaom.so.3
 lib/libaom.so.3.7.0
-lib/libaom_static.a
 libdata/pkgconfig/aom.pc
