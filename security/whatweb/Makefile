@@ -1,6 +1,5 @@
 PORTNAME=	whatweb
-DISTVERSION=	0.4.8-${GH_TAGNAME}
-PORTREVISION=	2
+DISTVERSION=	0.5.5-${GH_TAGNAME}
 CATEGORIES=	security www
 
 MAINTAINER=	rm@FreeBSD.org
@@ -11,13 +10,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-GH_TUPLE=	urbanadventurer:WhatWeb:f467aa2
+GH_TUPLE=	urbanadventurer:WhatWeb:1b35169
 
-USES=			cpe ruby:run
-CPE_VENDOR=		morningstarsecurity
-NO_BUILD=		yes
-NO_ARCH=		yes
-PORTDOCS=		CHANGELOG INSTALL README whatweb.xsl
+RUN_DEPENDS=	rubygem-public_suffix>0:dns/rubygem-public_suffix \
+		rubygem-ipaddr>0:net/rubygem-ipaddr \
+		rubygem-addressable>0:www/rubygem-addressable
+
+USES=		cpe ruby:run
+CPE_VENDOR=	morningstarsecurity
+NO_BUILD=	yes
+NO_ARCH=	yes
+PORTDOCS=	CHANGELOG.md INSTALL.md README.md whatweb.xsl
 
 OPTIONS_DEFINE=	DOCS
 

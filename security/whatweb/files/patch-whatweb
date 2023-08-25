@@ -1,0 +1,11 @@
+--- whatweb.orig	2021-01-15 14:48:22.000000000 +0000
++++ whatweb	2023-06-11 06:37:18.455400000 +0100
+@@ -34,7 +34,7 @@
+ 
+ $LOAD_PATH.unshift(File.join(File.expand_path(__dir__)), '.')
+ 
+-require 'lib/whatweb'
++require 'whatweb/lib/whatweb'
+ 
+ #
+ # Command-line usage information (full)
