@@ -25,8 +25,9 @@ USE_XORG=	ice sm x11 xext
 # TODO	-- this should be handled correctly...
 LDFLAGS+=-ldevinfo
 
-OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
+OPTIONS_DEFINE=		DOCS POLKIT
+OPTIONS_DEFAULT=	DOCS POLKIT
+OPTIONS_EXCLUDE_purecap=	POLKIT
 OPTIONS_SUB=		yes
 
 DOCS_EXTRA_PATCHES_OFF= ${PATCHDIR}/cheribsd-docs.patch

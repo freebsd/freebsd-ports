@@ -923,4 +923,4 @@ share/locale/zh_TW/LC_MESSAGES/kcmdevinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcmsamba.mo
 share/locale/zh_TW/LC_MESSAGES/kcmusb.mo
 share/metainfo/org.kde.kinfocenter.appdata.xml
-share/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
+%%POLKIT%%share/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
