@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 system settings
 WWW=		https://www.kde.org/plasma-desktop
 
-USES=		cmake compiler:c++11-lib gettext gstreamer kde:5 qt:5 tar:xz \
+USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz \
 		xorg
 USE_GSTREAMER=	curl openh264 vpx
 USE_KDE=	activities activities-stats auth codecs completion config \
@@ -27,6 +27,7 @@ OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>
 
 .if !${ABI:Mpurecap}
+USES+=		gstreamer
 USE_KDE+=	js khtml
 .endif
 
