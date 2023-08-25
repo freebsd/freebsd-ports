@@ -1,14 +1,14 @@
---- CMakeLists.txt	2022-09-30 20:58:27.369210000 +0100
-+++ CMakeLists.txt	2022-09-30 20:58:42.275259000 +0100
+--- CMakeLists.txt	2023-06-20 14:32:15.000000000 +0100
++++ CMakeLists.txt	2023-08-25 16:15:38.899041000 +0100
 @@ -37,7 +37,6 @@
      KIO
      ItemViews
      Sonnet
 -    DocTools
      GlobalAccel
+     WindowSystem
  )
- 
-@@ -49,7 +48,6 @@
+@@ -50,7 +49,6 @@
  add_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
  
  add_subdirectory( pixmaps ) 
@@ -16,3 +16,8 @@
  add_subdirectory(kconf_update)
  
  set(kmenueditcommon_STAT_SRCS basictab.cpp
+@@ -120,4 +118,3 @@
+         )
+ 
+ ki18n_install(po)
+-kdoctools_install(po)
