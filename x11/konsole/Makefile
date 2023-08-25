@@ -20,7 +20,7 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		newstuff notifications notifyconfig parts pty service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui multimedia network printsupport sql \
+USE_QT=		concurrent core dbus gui network printsupport sql \
 		widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
@@ -30,9 +30,11 @@ OPTIONS_EXCLUDE_purecap=	DOCS
 
 .include <bsd.port.options.mk>
 
-.if !${ABI:Mpurecap}
+.if ${ABI:Mpurecap}
+CMAKE_ARGS+=	-DWITHOUT_MULTIMEDIA:BOOL=ON
+.else
 RUN_DEPENDS=	keditbookmarks:deskutils/keditbookmarks
-USE_QT+=	script scripttools
+USE_QT+=	multimedia script scripttools
 .endif
 
 .include <bsd.port.mk>
