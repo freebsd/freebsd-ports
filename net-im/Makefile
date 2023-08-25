@@ -1,6 +1,5 @@
     COMMENT = Instant messaging
 
-    SUBDIR += 6cord
     SUBDIR += beebeep
     SUBDIR += biboumi
     SUBDIR += cawbird
