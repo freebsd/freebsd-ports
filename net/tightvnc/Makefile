@@ -1,12 +1,12 @@
 PORTNAME=	tightvnc
 PORTVERSION=	1.3.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net java
 MASTER_SITES=	SF/vnc-tight/TightVNC-unix/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/tightvnc/
-PATCHFILES=	tightvnc-patch-ansi
+PATCHFILES=	tightvnc-patch-ansi2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Enhanced version of VNC
