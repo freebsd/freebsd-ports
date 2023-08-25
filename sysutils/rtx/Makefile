@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.8.6
+DISTVERSION=	2023.8.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
-		anstyle-1.0.1 \
+		anstyle-1.0.2 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.2 \
@@ -40,8 +40,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.23 \
-		clap_builder-4.3.23 \
+		clap-4.3.24 \
+		clap_builder-4.3.24 \
 		clap_complete-4.3.2 \
 		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
@@ -73,7 +73,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		duct-0.13.6 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.32 \
+		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
 		errno-0.3.2 \
@@ -189,7 +189,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-1.9.3 \
 		regex-automata-0.3.6 \
 		regex-syntax-0.7.4 \
-		reqwest-0.11.19 \
+		reqwest-0.11.20 \
 		ring-0.16.20 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
@@ -210,8 +210,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.9.1 \
 		self_update-0.37.0 \
 		semver-1.0.18 \
-		serde-1.0.185 \
-		serde_derive-1.0.185 \
+		serde-1.0.186 \
+		serde_derive-1.0.186 \
 		serde_json-1.0.105 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
@@ -311,7 +311,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.14 \
+		winnow-0.5.15 \
 		winreg-0.50.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
