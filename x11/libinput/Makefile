@@ -16,7 +16,7 @@ LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libmtdev.so:devel/libmtdev
 
-USES=		cpe localbase meson pkgconfig python:run shebangfix tar:bz2
+USES=		cpe localbase meson pkgconfig python:run shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
