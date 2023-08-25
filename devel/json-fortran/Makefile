@@ -10,6 +10,8 @@ WWW=		https://github.com/jacobwilliams/json-fortran/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	compilation fails: Cannot find an intrinsic module named 'ieee_arithmetic'
+
 USES=		cmake:testing fortran
 
 USE_GITHUB=	yes
