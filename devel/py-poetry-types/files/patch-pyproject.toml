@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2023-05-26 23:37:18 UTC
+--- pyproject.toml.orig	2023-08-23 09:23:20 UTC
 +++ pyproject.toml
 @@ -15,7 +15,7 @@ classifiers = [
  [tool.poetry.dependencies]
- python = "^3.7"
- poetry = "^1.5"
+ python = "^3.8"
+ poetry = "^1.6"
 -tomlkit = "^0.11.4"
 +tomlkit = ">=0.11.4,<0.13.0"
  packaging = ">=21.3,<24.0"
