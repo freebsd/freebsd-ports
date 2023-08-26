@@ -1,5 +1,5 @@
 PORTNAME=	ncbi-blast+
-DISTVERSION=	2.14.0
+DISTVERSION=	2.14.1
 CATEGORIES=	biology perl5 python
 MASTER_SITES=	https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ \
 		https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/${PORTVERSION}/

@@ -295,6 +295,11 @@ include/ncbi-tools++/common/test_data_path.h
 include/ncbi-tools++/connect/connect_export.h
 include/ncbi-tools++/connect/email_diag_handler.hpp
 include/ncbi-tools++/connect/error_codes.hpp
+include/ncbi-tools++/connect/ext/ncbi_crypt.h
+include/ncbi-tools++/connect/ext/ncbi_dblb.h
+include/ncbi-tools++/connect/ext/ncbi_dblb_svcmapper.hpp
+include/ncbi-tools++/connect/ext/ncbi_ifconf.h
+include/ncbi-tools++/connect/ext/ncbi_localnet.h
 include/ncbi-tools++/connect/impl/connect_misc.hpp
 include/ncbi-tools++/connect/impl/ncbi_uv_nghttp2.hpp
 include/ncbi-tools++/connect/impl/server_connection.hpp
@@ -321,7 +326,6 @@ include/ncbi-tools++/connect/ncbi_http_connector.h
 include/ncbi-tools++/connect/ncbi_http_session.hpp
 include/ncbi-tools++/connect/ncbi_iprange.h
 include/ncbi-tools++/connect/ncbi_ipv6.h
-include/ncbi-tools++/connect/ncbi_lbos.hpp
 include/ncbi-tools++/connect/ncbi_localip.h
 include/ncbi-tools++/connect/ncbi_localip.hpp
 include/ncbi-tools++/connect/ncbi_mbedtls.h
@@ -391,6 +395,7 @@ include/ncbi-tools++/connect/services/srv_connections.hpp
 include/ncbi-tools++/connect/services/srv_connections_expt.hpp
 include/ncbi-tools++/connect/services/util.hpp
 include/ncbi-tools++/connect/threaded_server.hpp
+include/ncbi-tools++/corelib/atomic_util.hpp
 include/ncbi-tools++/corelib/blob_storage.hpp
 include/ncbi-tools++/corelib/ddumpable.hpp
 include/ncbi-tools++/corelib/env_reg.hpp
@@ -424,6 +429,7 @@ include/ncbi-tools++/corelib/mswin_export.h
 include/ncbi-tools++/corelib/mswin_no_popup.h
 include/ncbi-tools++/corelib/ncbi_autoinit.hpp
 include/ncbi-tools++/corelib/ncbi_base64.h
+include/ncbi-tools++/corelib/ncbi_base_build_ver.h
 include/ncbi-tools++/corelib/ncbi_bswap.hpp
 include/ncbi-tools++/corelib/ncbi_config.hpp
 include/ncbi-tools++/corelib/ncbi_cookies.hpp
@@ -583,6 +589,7 @@ include/ncbi-tools++/misc/jsonwrapp/rapidjson11/internal/stack.h
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/internal/strfunc.h
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/internal/strtod.h
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/internal/swap.h
+include/ncbi-tools++/misc/jsonwrapp/rapidjson11/istreamasync.h
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/istreamwrapper.h
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/license.txt
 include/ncbi-tools++/misc/jsonwrapp/rapidjson11/memorybuffer.h
@@ -3588,7 +3595,6 @@ include/ncbi-tools++/objtools/edit/huge_file_process.hpp
 include/ncbi-tools++/objtools/edit/link_cds_mrna.hpp
 include/ncbi-tools++/objtools/edit/loc_edit.hpp
 include/ncbi-tools++/objtools/edit/mail_report.hpp
-include/ncbi-tools++/objtools/edit/mla_updater.hpp
 include/ncbi-tools++/objtools/edit/parse_text_options.hpp
 include/ncbi-tools++/objtools/edit/promote.hpp
 include/ncbi-tools++/objtools/edit/pub_fix.hpp
@@ -4829,6 +4835,9 @@ include/ncbi-tools++/util/rangemap.hpp
 include/ncbi-tools++/util/rangemap.inl
 include/ncbi-tools++/util/reader_writer.hpp
 include/ncbi-tools++/util/regexp.hpp
+include/ncbi-tools++/util/regexp/ctre/LICENSE
+include/ncbi-tools++/util/regexp/ctre/ctre-unicode.hpp
+include/ncbi-tools++/util/regexp/ctre/ctre.hpp
 include/ncbi-tools++/util/regexp/pcre.h
 include/ncbi-tools++/util/regexp/pcrecpp.h
 include/ncbi-tools++/util/regexp/pcrecpparg.h
@@ -4917,6 +4926,8 @@ lib/ncbi-tools++/libcomposition_adjustment-static.a
 lib/ncbi-tools++/libcomposition_adjustment.a
 lib/ncbi-tools++/libconnect-static.a
 lib/ncbi-tools++/libconnect.a
+lib/ncbi-tools++/libconnext-static.a
+lib/ncbi-tools++/libconnext.a
 lib/ncbi-tools++/libconnssl-static.a
 lib/ncbi-tools++/libconnssl.a
 lib/ncbi-tools++/libdbapi-static.a
@@ -5139,6 +5150,8 @@ lib/ncbi-tools++/libxcompress-static.a
 lib/ncbi-tools++/libxcompress.a
 lib/ncbi-tools++/libxconnect-static.a
 lib/ncbi-tools++/libxconnect.a
+lib/ncbi-tools++/libxconnext-static.a
+lib/ncbi-tools++/libxconnext.a
 lib/ncbi-tools++/libxconnserv-static.a
 lib/ncbi-tools++/libxconnserv.a
 lib/ncbi-tools++/libxcser-static.a
