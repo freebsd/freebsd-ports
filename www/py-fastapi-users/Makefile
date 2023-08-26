@@ -48,10 +48,4 @@ OAUTH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0.3,<0.4:www/py-httpx-oau
 SQLALCHEMY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}databases>=0.3.0:databases/py-databases@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.0:databases/py-sqlalchemy14@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.3:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
