@@ -1,4 +1,3 @@
 bin/vaultwarden
-etc/rc.conf.d/vaultwarden.sample
-@dir %%ETCDIR%%/rc.conf.d
-@dir %%WWWDIR%%/data
+@dir(%%WWWOWN%%,%%WWWGRP%%,0755) %%WWWDIR%%/data
+@sample %%WWWDIR%%/data/config.json.sample

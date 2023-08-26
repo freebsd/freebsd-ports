@@ -22,6 +22,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dani-garcia
 USE_RC_SUBR=	${PORTNAME}
 
+USERS=		${WWWOWN}
+GROUPS=		${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
 OPTIONS_DEFINE=	WEBVAULT
 OPTIONS_DEFAULT=WEBVAULT
 
@@ -36,7 +40,6 @@ CARGO_FEATURES=	mysql postgresql sqlite #vendored_openssl
 
 INSTALL_TARGET=	install-strip
 
-SUB_FILES=	pkg-message
 SUB_LIST=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
 
@@ -45,11 +48,7 @@ SUB_LIST=	WWWGRP=${WWWGRP} \
 #		${WRKSRC}/Cargo.toml
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${ETCDIR}/rc.conf.d
-	${INSTALL} -m0600 ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${LOCALBASE}/etc/rc.conf.d/${PORTNAME}.sample
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
-	${ECHO_CMD} \
-		'@postexec chown -R ${WWWOWN}:${WWWGRP} %D/${WWWDIR_REL}/data' \
-		>> ${TMPPLIST}
+	${INSTALL} -m0600 ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${WWWDIR}/data/config.json.sample
 
 .include <bsd.port.mk>
