@@ -17,6 +17,7 @@ RUN_DEPENDS=	tesseract:graphics/tesseract \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 		# if py-tox cannot detect py-filelock, be sure to have version 3.4.2_1 of the latter
 
@@ -40,10 +41,4 @@ do-test:
 		fi
 		cd ${WRKSRC} && ${SETENV} ${TEST_ENV} tox-${PYTHON_VER} -e ${PY_FLAVOR} --sitepackages
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 30800
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
