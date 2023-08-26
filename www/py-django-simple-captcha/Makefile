@@ -25,7 +25,8 @@ NO_ARCH=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS MIGRATIONS
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET+="build_sphinx -a -E"
 MIGRATIONS_DESC=	Schema and data migration support (via south)
 MIGRATIONS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}south>0:databases/py-south@${PY_FLAVOR}
