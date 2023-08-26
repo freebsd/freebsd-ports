@@ -6,5 +6,3 @@ understanding small changes within existing lines.
 Instead of trying to be a diff replacement for all circumstances, the goal of
 icdiff is to be a tool you can reach for to get a better picture of what changed
 when it's not immediately obvious from diff.
-
-See also: https://github.com/jeffkaufman/icdiff
