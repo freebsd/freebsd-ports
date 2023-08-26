@@ -5479,6 +5479,7 @@
     SUBDIR += py-rednose
     SUBDIR += py-reedsolo
     SUBDIR += py-referencing
+    SUBDIR += py-regress
     SUBDIR += py-remote-pdb
     SUBDIR += py-repoze.lru
     SUBDIR += py-repoze.sphinx.autointerface
