@@ -6,6 +6,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Unpack Mozilla lz4json files, such as bookmarks and session restore
 WWW=		https://github.com/andikleen/lz4json
 
+LIB_DEPENDS=	liblz4.so:archivers/liblz4
+
 USES=		uidfix
 
 USE_GITHUB=	yes
