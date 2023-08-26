@@ -13,7 +13,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>19.2.0:devel/py-attrs@${PY_FLAVOR}
-
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=18.9.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=2.3.1:devel/py-tox@${PY_FLAVOR}
 
@@ -21,17 +20,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-# Dependency required by Python < 3.8
-.if (${PYTHON_REL} < 30800)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.4:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
 
 do-test:
 	cd ${WRKSRC} && PYTHONPATH="." trial-${PYTHON_VER} tests
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
