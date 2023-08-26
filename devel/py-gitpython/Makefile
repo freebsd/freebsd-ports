@@ -22,13 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.3:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m nose
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
