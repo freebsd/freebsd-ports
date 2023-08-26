@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for installing Python wheels
-WWW=		https://github.com/pypa/installer
+WWW=		https://installer.pypa.io/en/stable/ \
+		https://github.com/pypa/installer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
