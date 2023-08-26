@@ -1,6 +1,6 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.4
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -23,15 +23,16 @@ GH_ACCOUNT=	bgkillas
 CARGO_CRATES=	autocfg-1.1.0 \
 		az-1.2.1 \
 		bitflags-1.3.2 \
+		bitflags-2.4.0 \
 		byteorder-1.4.3 \
 		cfg-if-1.0.0 \
-		crossterm-0.26.1 \
+		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
-		gmp-mpfr-sys-1.6.0 \
+		gmp-mpfr-sys-1.6.1 \
 		gnuplot-0.0.39 \
 		libc-0.2.147 \
 		lock_api-0.4.10 \
-		log-0.4.19 \
+		log-0.4.20 \
 		mio-0.8.8 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.8 \
@@ -49,21 +50,21 @@ CARGO_CRATES=	autocfg-1.1.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.48.1 \
+		windows-targets-0.48.5 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.0 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.0 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.0 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.0
+		windows_x86_64_msvc-0.48.5
 
 PLIST_FILES=	bin/${PORTNAME}
 
