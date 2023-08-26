@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Code documentation system, originally for GTK+
+COMMENT=	Code documentation system, originally for GTK
 WWW=		https://www.gtk.org/
 
 LICENSE=	GPLv2

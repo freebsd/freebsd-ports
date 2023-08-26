@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	romain@FreeBSD.org
-COMMENT=	Tiling terminal emulator using GTK+ 3
+COMMENT=	Tiling terminal emulator using GTK 3
 WWW=		https://gnunn1.github.io/tilix-web/
 
 LICENSE=	MPL20

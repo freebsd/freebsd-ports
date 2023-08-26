@@ -1,7 +1,7 @@
 PORTNAME=	claws-mail
 CATEGORIES=	mail news
 
-COMMENT=	Lightweight and featureful GTK+ based e-mail and news client
+COMMENT=	Lightweight and featureful GTK based e-mail and news client
 WWW=		https://www.claws-mail.org/
 
 LICENSE=	GPLv3

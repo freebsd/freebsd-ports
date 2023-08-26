@@ -55,7 +55,7 @@ ATK_BRIDGE_DESC=AT-SPI ATK bridge support
 ATK_BRIDGE_CONFIGURE_WITH=	atk-bridge
 ATK_BRIDGE_LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core
 
-BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.
+BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK in the webbrowser using HTML5 and web sockets.
 BROADWAY_CONFIGURE_ENABLE=	broadway-backend
 
 COLORD_DESC=	Color profile support

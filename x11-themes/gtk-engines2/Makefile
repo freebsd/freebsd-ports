@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Theme engine for the GTK+-2.0 toolkit
+COMMENT=	Theme engine for the GTK-2.0 toolkit
 WWW=		https://www.gtk.org/
 
 CONFLICTS=	gtk-smooth-engine clearlooks

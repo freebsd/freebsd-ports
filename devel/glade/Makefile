@@ -6,7 +6,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	User interface builder for GTK+ 3
+COMMENT=	User interface builder for GTK 3
 WWW=		https://glade.gnome.org/
 
 LICENSE=	GPLv2+ LGPL21+

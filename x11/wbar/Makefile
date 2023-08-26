@@ -25,7 +25,7 @@ OPTIONS_DEFINE=		NLS WBARCONFIG
 OPTIONS_DEFAULT=	WBARCONFIG
 OPTIONS_SUB=		yes
 
-WBARCONFIG_DESC=	Build the GTK+ configuration interface
+WBARCONFIG_DESC=	Build the GTK configuration interface
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-lintl

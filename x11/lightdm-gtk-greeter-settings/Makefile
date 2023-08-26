@@ -5,7 +5,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Settings editor for LightDM GTK+ Greeter
+COMMENT=	Settings editor for LightDM GTK Greeter
 WWW=		https://launchpad.net/lightdm-gtk-greeter-settings
 
 LICENSE=	GPLv3

@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://releases.navi.cx/fyre/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Chaos map rendering system with GTK+-2 interface
+COMMENT=	Chaos map rendering system with GTK-2 interface
 WWW=		https://fyre.navi.cx/
 
 LICENSE=	GPLv2 GPLv3

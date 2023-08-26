@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Monitor apcupsd with GTK+2 GUI
+COMMENT=	Monitor apcupsd with GTK 2 GUI
 WWW=		http://gapcmon.sourceforge.net/
 
 LICENSE=	GPLv2

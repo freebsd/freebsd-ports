@@ -6,7 +6,7 @@ MASTER_SITES=	https://gtkd.org/Downloads/sources/
 DISTNAME=	GtkD-${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
-COMMENT=	D binding and OO wrapper of GTK+
+COMMENT=	D binding and OO wrapper of GTK
 WWW=		https://gtkd.org/index.html
 
 LICENSE=	LGPL3

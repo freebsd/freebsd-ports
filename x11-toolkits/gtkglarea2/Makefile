@@ -7,7 +7,7 @@ DISTNAME=	gtkglarea-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OpenGL widget for the GTK+2 GUI toolkit
+COMMENT=	OpenGL widget for the GTK 2 GUI toolkit
 WWW=		https://www.mono-project.com/archived/gtkglarea/
 
 LICENSE=	LGPL20+

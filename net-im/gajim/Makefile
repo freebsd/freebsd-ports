@@ -4,7 +4,7 @@ CATEGORIES=	net-im
 MASTER_SITES=	https://gajim.org/downloads/${DISTVERSION:R}/
 
 MAINTAINER=	rm@FreeBSD.org
-COMMENT=	GTK+ Jabber client
+COMMENT=	GTK Jabber client
 WWW=		https://gajim.org/
 
 LICENSE=	GPLv3

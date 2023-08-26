@@ -6,7 +6,7 @@ MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Threaded GTK+ newsreader based on Agent for Windows
+COMMENT=	Threaded GTK newsreader based on Agent for Windows
 WWW=		https://pan.rebelbase.com/
 
 LICENSE=	GPLv2

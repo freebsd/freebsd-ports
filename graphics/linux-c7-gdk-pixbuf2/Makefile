@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-3.el7
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Graphic library for GTK+ (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	Graphic library for GTK (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://developer.gnome.org/gdk-pixbuf/
 
 USES=		cpe linux:c7

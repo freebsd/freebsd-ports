@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+-based reverse polish notation (RPN) calculator
+COMMENT=	GTK-based reverse polish notation (RPN) calculator
 WWW=		https://github.com/utopiabound/grpn
 
 LICENSE=	GPLv2

@@ -5,7 +5,7 @@ CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	jgh@FreeBSD.org
-COMMENT=	GTK+ based simple text editor
+COMMENT=	GTK based simple text editor
 WWW=		http://tarot.freeshell.org/leafpad/
 
 LICENSE=	GPLv2

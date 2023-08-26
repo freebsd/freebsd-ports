@@ -24,7 +24,7 @@ QT_CONFIG=	accessibility accessibility-atspi-bridge xlib
 OPTIONS_DEFINE=	GTK3
 OPTIONS_SUB=	YES
 
-GTK3_DESC=	GTK+-based Qt theme
+GTK3_DESC=	GTK-based Qt theme
 GTK3_USES=	gnome
 GTK3_USE=	GNOME=gtk30 QT=dbus
 GTK3_CONFIGURE_ON=	-gtk

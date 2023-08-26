@@ -46,7 +46,7 @@ OPTIONS_SUB=		yes
 
 DB_DESC=	Database support
 UI_DESC=	GUI clients
-GTK4_DESC=	GTK+ 4 GUI toolkit support (modpack only)
+GTK4_DESC=	GTK 4 GUI toolkit support (modpack only)
 
 GTK2_USES=	gnome sdl
 GTK2_USE=	GNOME=gdkpixbuf2,glib20,gtk20,pango \

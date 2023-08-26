@@ -4,7 +4,7 @@ DISTVERSION=	0.4.3
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	Modern XMPP Chat Client using GTK+/Vala
+COMMENT=	Modern XMPP Chat Client using GTK/Vala
 WWW=		https://dino.im
 
 LICENSE=	GPLv3

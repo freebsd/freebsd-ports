@@ -90,7 +90,7 @@ OPTIONS_SUB=	yes
 
 FDK_AAC_DESC=	Enable non-free Fraunhofer FDK AAC codec
 VPL_DESC=	Intel oneVPL (aka Quick Sync Video)
-X11_DESC=	Build GTK+3 based GUI program
+X11_DESC=	Build GTK 3 based GUI program
 
 FDK_AAC_CONFIGURE_ENABLE=	fdk-aac
 FDK_AAC_VARS=			LICENSE+=FDK_AAC LICENSE_COMB=multi

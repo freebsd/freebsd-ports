@@ -37,7 +37,7 @@ OPTIONS_SINGLE=		TOOLKIT
 OPTIONS_SINGLE_TOOLKIT=	GTK2 GTK3
 OPTIONS_SUB=		yes
 
-TOOLKIT_DESC=	GTK+ toolkit
+TOOLKIT_DESC=	GTK toolkit
 
 DEBUG_CONFIGURE_ENABLE=	debugging-output
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

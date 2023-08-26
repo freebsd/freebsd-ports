@@ -7,7 +7,7 @@ MASTER_SITES=	https://www.stellingwerff.com/TheWidgetFactory/ \
 		http://freebsd.nsu.ru/distfiles/
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Tool for previewing GTK+ widgets and testing new themes
+COMMENT=	Tool for previewing GTK widgets and testing new themes
 
 LICENSE=	GPLv2
 

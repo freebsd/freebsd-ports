@@ -5,7 +5,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	LOCAL/marcus
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GTK+ 2 spell checking component
+COMMENT=	GTK 2 spell checking component
 WWW=		http://gtkspell.sourceforge.net/
 
 LIB_DEPENDS=	libenchant.so:textproc/enchant

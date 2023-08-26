@@ -4,7 +4,7 @@ CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Multi-purpose desktop calculator (GTK+3 frontend)
+COMMENT=	Multi-purpose desktop calculator (GTK 3 frontend)
 WWW=		https://qalculate.github.io/
 
 LICENSE=	GPLv2+

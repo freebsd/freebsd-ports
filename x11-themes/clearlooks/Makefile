@@ -5,7 +5,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT?=	GTK+ 2.x engine based on Bluecurve
+COMMENT?=	GTK 2.x engine based on Bluecurve
 WWW=		http://clearlooks.sourceforge.net/
 
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	gtk-
 PKGNAMESUFFIX=	-engine
 
 MAINTAINER=	pneumann@gmail.com
-COMMENT=	Murrine GTK+ 2.x cairo based engine
+COMMENT=	Murrine GTK 2.x cairo based engine
 WWW=		http://www.cimitan.com/murrine
 
 USES=		gettext gmake gnome libtool pkgconfig tar:xz xorg

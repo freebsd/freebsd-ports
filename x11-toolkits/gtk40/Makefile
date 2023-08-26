@@ -50,7 +50,7 @@ OPTIONS_DEFINE=	CUPS COLORD DEBUG BROADWAY GSTREAMER VULKAN WAYLAND X11
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY GSTREAMER VULKAN WAYLAND X11
 OPTIONS_SUB=	yes
 
-BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.
+BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK in the webbrowser using HTML5 and web sockets.
 BROADWAY_MESON_TRUE=	broadway-backend
 
 COLORD_DESC=	Color profile support

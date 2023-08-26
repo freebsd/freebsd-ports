@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/GTorrentViewer/${PORTVERSION}
 DISTNAME=	GTorrentViewer-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	GTK+2 viewer and editor for BitTorrent meta files
+COMMENT=	GTK 2 viewer and editor for BitTorrent meta files
 WWW=		http://gtorrentviewer.sourceforge.net/
 
 LICENSE=	GPLv2

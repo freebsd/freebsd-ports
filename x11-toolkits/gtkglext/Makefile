@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	OpenGL extension to GTK+
+COMMENT=	OpenGL extension to GTK
 WWW=		https://sourceforge.net/projects/gtkglext/ \
 		https://gitlab.gnome.org/Archive/gtkglext
 

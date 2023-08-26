@@ -3,7 +3,7 @@ DISTVERSION=	1.4.31
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
-COMMENT=	GTK+ Remote Desktop Client
+COMMENT=	GTK Remote Desktop Client
 WWW=		https://www.remmina.org/
 
 LICENSE=	GPLv2+

@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	GTK+-based quake-like terminal emulator
+COMMENT=	GTK-based quake-like terminal emulator
 WWW=		https://github.com/stjerm/stjerm
 
 LICENSE=	GPLv2

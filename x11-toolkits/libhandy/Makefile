@@ -6,7 +6,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Library with GTK+ widgets for mobile phones
+COMMENT=	Library with GTK widgets for mobile phones
 WWW=		https://gitlab.gnome.org/GNOME/libhandy/
 
 LICENSE=	LGPL21

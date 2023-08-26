@@ -6,7 +6,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	portmaster@BSDforge.com
-COMMENT=	Sound editor for the GNOME/GTK+2 desktop
+COMMENT=	Sound editor for the GNOME/GTK 2 desktop
 WWW=		http://www.metadecks.org/software/sweep/
 
 LICENSE=	GPLv2

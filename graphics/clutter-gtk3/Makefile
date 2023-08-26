@@ -6,7 +6,7 @@ MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GTK+ Integration library for Clutter
+COMMENT=	GTK Integration library for Clutter
 WWW=		https://blogs.gnome.org/clutter/
 
 LICENSE=	LGPL21

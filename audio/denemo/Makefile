@@ -54,7 +54,7 @@ GTK3_USE=		gnome=gtk30,gtksourceview3
 LILYPOND_DESC=		Install LilyPond (Printing)
 LILYPOND_RUN_DEPENDS=	lilypond:print/lilypond
 PDF_CONFIGURE_OFF=	--disable-evince
-TOOLKIT_DESC=		GTK+ toolkit
+TOOLKIT_DESC=		GTK toolkit
 
 .include <bsd.port.options.mk>
 

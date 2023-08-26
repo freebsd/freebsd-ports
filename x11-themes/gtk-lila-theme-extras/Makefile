@@ -6,7 +6,7 @@ MASTER_SITES=	SF/lila-theme/lila-gtk-extras/${PORTVERSION}
 DISTNAME=	lila-gtk-extras-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ 2.0 Lila additional themes
+COMMENT=	GTK 2.0 Lila additional themes
 WWW=		https://lila-center.info/
 
 WRKSRC=		${WRKDIR}/lila-gtk-extras

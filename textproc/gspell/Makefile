@@ -6,7 +6,7 @@ MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Spell checking for GTK+
+COMMENT=	Spell checking for GTK
 WWW=		https://wiki.gnome.org/Projects/gspell
 
 LICENSE=	LGPL21

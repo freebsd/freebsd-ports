@@ -7,7 +7,7 @@ MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/
 DISTNAME=	rep-gtk_${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	GTK+-2 bindings for rep Lisp interpreter
+COMMENT=	GTK-2 bindings for rep Lisp interpreter
 WWW=		https://sawfish.tuxfamily.org/
 
 LICENSE=	GPLv2

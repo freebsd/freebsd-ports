@@ -55,7 +55,7 @@
 #		  overridden by the user variable WITH_WX_VER if set. It can
 #		  contain multiple versions in order of preference (last ones
 #		  are tried first).
-# WANT_WXGTK_VER - Set to the preferred GTK+ version, "2" or "3", "3" being
+# WANT_WXGTK_VER - Set to the preferred GTK version, "2" or "3", "3" being
 #		  the default (only applicable to wxWidgets 3.0 for now).
 #
 # The following variables are intended for the user and can be defined in

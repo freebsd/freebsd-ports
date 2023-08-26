@@ -1,4 +1,4 @@
-COMMENT=	Fcitx support for GTK+ (common files)
+COMMENT=	Fcitx support for GTK (common files)
 
 PKGNAMESUFFIX=	-common
 

@@ -326,7 +326,7 @@ IGNORE=	cannot install: Unknown component ${component}
 _USE_GNOME+=	${${component}_USE_GNOME_IMPL} ${component}
 .    endfor
 
-# Setup the GTK+ API version for pixbuf loaders, input method modules,
+# Setup the GTK API version for pixbuf loaders, input method modules,
 # and theme engines.
 PLIST_SUB+=			GTK2_VERSION="${GTK2_VERSION}" \
 				GTK3_VERSION="${GTK3_VERSION}" \

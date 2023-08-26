@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/pcman-bbs/${PORTNAME}/releases/download/${PORTV
 DISTNAME=	${PORTNAME}-gtk2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	BBS client using GTK+ 2.x
+COMMENT=	BBS client using GTK 2.x
 WWW=		https://github.com/pcman-bbs/pcmanx
 
 LICENSE=	GPLv2+

@@ -1,7 +1,7 @@
 #
 # !!!NOTE!!! Update of x11-toolkits/gtk30 (specially >= 3.20.x) must be
 # accompanied by PORTREVISION bumps of this port.
-# Support of GTK+ is checked at compile time and themes directories too.
+# Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.8.2

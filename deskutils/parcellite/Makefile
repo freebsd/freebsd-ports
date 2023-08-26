@@ -6,7 +6,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	meta@FreeBSD.org
-COMMENT=	Lightweight GTK+ clipboard manager
+COMMENT=	Lightweight GTK clipboard manager
 WWW=		http://parcellite.sourceforge.net
 
 LICENSE=	GPLv3

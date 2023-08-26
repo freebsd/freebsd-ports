@@ -5,7 +5,7 @@ CATEGORIES=	korean
 PKGNAMESUFFIX=	-gtk3
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	Hangul input module for GTK+ 3.0
+COMMENT=	Hangul input module for GTK 3.0
 WWW=		http://code.google.com/p/imhangul/
 
 LICENSE=	LGPL21+

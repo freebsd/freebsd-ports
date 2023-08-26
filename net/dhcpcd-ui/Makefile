@@ -4,7 +4,7 @@ DISTVERSION=		0.7.9
 CATEGORIES=		net
 
 MAINTAINER=	driesm@FreeBSD.org
-COMMENT=	GTK+ / Curses interface to dhcpcd
+COMMENT=	GTK / Curses interface to dhcpcd
 WWW=		https://roy.marples.name/projects/dhcpcd-ui
 
 LICENSE=	BSD2CLAUSE

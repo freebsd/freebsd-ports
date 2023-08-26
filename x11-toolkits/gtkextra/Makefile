@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Useful widget set complementary to GTK+ 2.0
+COMMENT=	Useful widget set complementary to GTK 2.0
 WWW=		http://gtkextra.sourceforge.net/
 
 LICENSE=	GPLv2+

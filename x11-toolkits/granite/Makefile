@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Extensions of GTK+3 toolkit
+COMMENT=	Extensions of GTK 3 toolkit
 WWW=		https://github.com/elementary/granite
 
 LICENSE=	LGPL3

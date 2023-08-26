@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jrm@FreeBSD.org
-COMMENT=	Lightweight GTK+ clipboard manager forked from parcellite
+COMMENT=	Lightweight GTK clipboard manager forked from parcellite
 WWW=		https://github.com/CristianHenzel/ClipIt
 
 LICENSE=	GPLv3

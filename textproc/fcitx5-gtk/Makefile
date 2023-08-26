@@ -4,7 +4,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
-COMMENT?=	Fcitx support for GTK+ ${FLAVOR}
+COMMENT?=	Fcitx support for GTK ${FLAVOR}
 WWW=		https://github.com/fcitx/fcitx5-gtk
 
 LICENSE=	LGPL21+

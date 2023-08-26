@@ -5,7 +5,7 @@ CATEGORIES=	shells
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ add-on to bash and zsh
+COMMENT=	GTK add-on to bash and zsh
 WWW=		http://viewglob.sourceforge.net/
 
 BUILD_DEPENDS=	bash:shells/bash

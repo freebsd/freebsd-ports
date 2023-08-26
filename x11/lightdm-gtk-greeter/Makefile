@@ -5,7 +5,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Xubuntu/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	GTK+ greeter for LightDM
+COMMENT=	GTK greeter for LightDM
 WWW=		https://github.com/Xubuntu/lightdm-gtk-greeter
 
 LICENSE=	GPLv3

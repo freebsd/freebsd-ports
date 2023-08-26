@@ -7,7 +7,7 @@ MASTER_SITES=	GENTOO \
 		http://www.oocities.org/harpin_floh/mysoft/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Guitar (and other instruments) tuner for GTK+2
+COMMENT=	Guitar (and other instruments) tuner for GTK 2
 WWW=		http://www.oocities.com/harpin_floh/kguitune_page.html
 
 LICENSE=	GPLv2+

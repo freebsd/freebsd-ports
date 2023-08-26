@@ -4,7 +4,7 @@ DISTVERSIONSUFFIX=	-1.el7
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	GTK+ library, version 2.X (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	GTK library, version 2.X (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://www.gtk.org/
 
 USES=		cpe linux:c7

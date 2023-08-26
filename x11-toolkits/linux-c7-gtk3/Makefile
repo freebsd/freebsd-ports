@@ -5,7 +5,7 @@ PORTREVISION=	4
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	GTK+ library, version 3.X (Linux CentOS ${LINUX_DIST_VER})
+COMMENT=	GTK library, version 3.X (Linux CentOS ${LINUX_DIST_VER})
 WWW=		https://www.gtk.org/
 
 RUN_DEPENDS=	hicolor-icon-theme>0:misc/hicolor-icon-theme \

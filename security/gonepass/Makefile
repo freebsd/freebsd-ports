@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ 1Password reader
+COMMENT=	GTK 1Password reader
 WWW=		https://github.com/jbreams/gonepass
 
 LICENSE=	APACHE20

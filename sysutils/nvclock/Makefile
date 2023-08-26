@@ -21,7 +21,7 @@ OPTIONS_DEFINE=	NVCONTROL X11 DOCS
 OPTIONS_DEFAULT=	NVCONTROL X11
 
 NVCONTROL_DESC=	NV-CONTROL support (for OpenGL settings)
-X11_DESC=	Build GUI program (requires GTK+ 2.x)
+X11_DESC=	Build GUI program (requires GTK 2.x)
 
 NVCONTROL_USE=		XORG=xext
 NVCONTROL_USES=		pkgconfig xorg

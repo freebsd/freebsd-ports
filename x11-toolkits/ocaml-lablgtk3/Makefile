@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	Objective Caml interface to GTK+ 3.x
+COMMENT=	Objective Caml interface to GTK 3.x
 WWW=		https://garrigue.github.io/lablgtk/
 
 LICENSE=	LGPL21

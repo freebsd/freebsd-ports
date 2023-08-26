@@ -7,7 +7,7 @@ MASTER_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/archive/${DISTVERSION
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vishwin@FreeBSD.org
-COMMENT=	GTK+ Matrix IM client
+COMMENT=	GTK Matrix IM client
 WWW=		https://wiki.gnome.org/Apps/Fractal
 
 LICENSE=	GPLv3+

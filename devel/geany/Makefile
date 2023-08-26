@@ -5,7 +5,7 @@ CATEGORIES=	devel editors
 MASTER_SITES=	https://download.geany.org/ SF
 
 MAINTAINER=	madpilot@FreeBSD.org
-COMMENT=	Fast and lightweight GTK+ IDE
+COMMENT=	Fast and lightweight GTK IDE
 WWW=		https://www.geany.org/
 
 LICENSE=	GPLv2+

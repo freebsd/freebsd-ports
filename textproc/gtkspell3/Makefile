@@ -5,7 +5,7 @@ CATEGORIES=	textproc gnome
 MASTER_SITES=	SF/gtkspell/${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GTK+ 3 spell checking component
+COMMENT=	GTK 3 spell checking component
 WWW=		http://gtkspell.sourceforge.net/
 
 LICENSE=	GPLv2

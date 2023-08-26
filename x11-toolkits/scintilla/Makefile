@@ -6,7 +6,7 @@ MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	Full-featured free source code editing component for GTK+
+COMMENT=	Full-featured free source code editing component for GTK
 WWW=		https://www.scintilla.org/
 
 LICENSE=	SCINTILLA

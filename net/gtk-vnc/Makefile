@@ -5,7 +5,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	VNC viewer widget for GTK+
+COMMENT=	VNC viewer widget for GTK
 WWW=		http://live.gnome.org/gtk-vnc
 
 LICENSE=	LGPL21

@@ -5,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://hacktivis.me/releases/
 
 MAINTAINER=	DtxdF@disroot.org
-COMMENT=	Minimalist and privacy-oriented WebKitGTK+ browser
+COMMENT=	Minimalist and privacy-oriented WebKitGTK browser
 WWW=		https://hacktivis.me/projects/badwolf
 
 LICENSE=	BSD3CLAUSE
