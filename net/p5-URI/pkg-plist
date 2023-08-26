@@ -29,6 +29,8 @@
 %%SITE_PERL%%/URI/gopher.pm
 %%SITE_PERL%%/URI/http.pm
 %%SITE_PERL%%/URI/https.pm
+%%SITE_PERL%%/URI/icap.pm
+%%SITE_PERL%%/URI/icaps.pm
 %%SITE_PERL%%/URI/ldap.pm
 %%SITE_PERL%%/URI/ldapi.pm
 %%SITE_PERL%%/URI/ldaps.pm
@@ -62,4 +64,6 @@
 %%PERL5_MAN3%%/URI::_punycode.3.gz
 %%PERL5_MAN3%%/URI::data.3.gz
 %%PERL5_MAN3%%/URI::file.3.gz
+%%PERL5_MAN3%%/URI::icap.3.gz
+%%PERL5_MAN3%%/URI::icaps.3.gz
 %%PERL5_MAN3%%/URI::ldap.3.gz
