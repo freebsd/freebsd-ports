@@ -1,5 +1,5 @@
 PORTNAME=	sanitize
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,9 @@ RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
 		rubygem-nokogiri>=1.12.0:textproc/rubygem-nokogiri
 
 USES=		cpe gem
-CPE_VENDOR=	${PORTNAME}_project
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	sanitize_project
 
 .include <bsd.port.mk>
