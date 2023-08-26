@@ -30,12 +30,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.3.0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 # Skip some tests as they either require the environment variable
 # B2_TEST_APPLICATION_KEY_ID set or a relative path regarding the filenames in
 # the file headers.
@@ -45,4 +39,4 @@ do-test:
 		not test_large_file and \
 		not test_raw_api'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
