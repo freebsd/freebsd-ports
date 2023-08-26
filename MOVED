@@ -7799,3 +7799,4 @@ mail/vmailmgr||2023-08-22|Has expired: Last upstream release was in 2005 and ups
 irc/komanda-cli||2023-08-25|Has expired: Upstream no longer maintained
 irc/birch||2023-08-25|Has expired: Upstream no longer maintained
 net-im/6cord||2023-08-25|Has expired: Upstream no longer maintained
+devel/py-gpep517||2023-08-26|Remove obsoleted port. It is no longer needed after Python 3.7 removal

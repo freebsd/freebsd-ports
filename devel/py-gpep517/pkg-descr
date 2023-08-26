@@ -1,7 +1,0 @@
-gpep517 is a minimal tool to aid building wheels for Python packages
-through PEP 517-compliant build systems and installing them. The
-tool originated from Gentoo with its primary goals being absolutely
-minimal dependency footprint to ease clean bootstrap without bundling
-dependencies, and clean separation of functions to aid external
-package managers. It is the tool of choice for a world that does
-not revolve around pip and venvs.
