@@ -7800,3 +7800,4 @@ irc/komanda-cli||2023-08-25|Has expired: Upstream no longer maintained
 irc/birch||2023-08-25|Has expired: Upstream no longer maintained
 net-im/6cord||2023-08-25|Has expired: Upstream no longer maintained
 devel/py-gpep517||2023-08-26|Remove obsoleted port. It is no longer needed after Python 3.7 removal
+devel/py-rapidfuzz2|devel/py-rapidfuzz|2023-08-26|Remove obsoleted port. Use devel/py-rapidfuzz instead
