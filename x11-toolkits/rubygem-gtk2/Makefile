@@ -5,8 +5,9 @@ CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Ruby binding of GTK+ 2.x
-WWW=		https://ruby-gnome2.osdn.jp/
+COMMENT=	Ruby binding of GTK 2
+WWW=		https://ruby-gnome.github.io/ \
+		https://github.com/ruby-gnome/ruby-gnome
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
@@ -20,8 +21,8 @@ USE_GNOME=	gtk20
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000) || ${OSVERSION} >= 1400091)
+CONFIGURE_ARGS+=--with-cflags="-Wno-error=incompatible-function-pointer-types"
 .endif
 
 .include <bsd.port.mk>
