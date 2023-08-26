@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PEP517 package builder
-WWW=		https://github.com/pypa/build
+WWW=		https://pypa-build.readthedocs.io/en/stable/ \
+		https://github.com/pypa/build
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
