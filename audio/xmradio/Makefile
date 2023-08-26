@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/audio/xmradio/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=     Requires defunct bktr
+EXPIRATION_DATE=2023-12-31
 .if !exists(/usr/include/dev/bktr/ioctl_bt848.h)
 IGNORE=		needs bktr(4) which is no longer available on your FreeBSD version
 .endif
