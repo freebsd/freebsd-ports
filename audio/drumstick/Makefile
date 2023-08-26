@@ -1,6 +1,5 @@
 PORTNAME=	drumstick
-DISTVERSION=	2.8.0
-PORTREVISION=	2
+DISTVERSION=	2.8.1
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -11,7 +10,7 @@ WWW=		https://sourceforge.net/projects/drumstick
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang cmake desktop-file-utils gl pkgconfig qt:6 shared-mime-info tar:bz2
+USES=		compiler:c++17-lang cmake desktop-file-utils gl pkgconfig qt:6 shared-mime-info tar:bz2
 USE_QT=		base svg 5compat tools:build
 USE_GL=		gl opengl
 USE_LDCONFIG=	yes
