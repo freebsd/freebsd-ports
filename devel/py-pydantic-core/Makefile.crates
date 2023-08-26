@@ -16,11 +16,9 @@ CARGO_CRATES=	ahash-0.8.3 \
 		indoc-1.0.9 \
 		itoa-1.0.8 \
 		libc-0.2.147 \
-		libmimalloc-sys-0.1.33 \
 		lock_api-0.4.10 \
 		memchr-2.5.0 \
 		memoffset-0.9.0 \
-		mimalloc-0.1.37 \
 		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
