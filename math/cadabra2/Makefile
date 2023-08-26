@@ -44,15 +44,9 @@ GUI_USES=		desktop-file-utils
 GUI_USE=		GNOME=gtkmm30,gdkpixbuf2
 GUI_CMAKE_BOOL=		ENABLE_FRONTEND
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
-.else
 _PY_SONAME=	${PYTHON_EXT_SUFFIX}
-.endif
 
 post-extract: # unbundle
 	@${RM} -r ${WRKSRC}/libs/jsoncpp ${WRKSRC}/libs/websocketpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
