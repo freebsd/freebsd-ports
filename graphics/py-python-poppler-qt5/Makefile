@@ -25,13 +25,7 @@ USE_QT=		core gui xml
 
 PLIST_SUB=	_PY_SONAME=${_PY_SONAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-_PY_SONAME=	.cpython-${PYTHON_SUFFIX}m
-.else
 _PY_SONAME=	${PYTHON_EXT_SUFFIX}
-.endif
 
 do-build:
 	(cd ${WRKSRC} ; sip-build-${PYTHON_VER} --qmake ${QMAKE} --verbose --no-make --build-dir build ; ${MAKE} -C ./build )
@@ -43,4 +37,4 @@ post-install:
 	${RLN} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${_PY_SONAME}.so ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5.so
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/popplerqt5${_PY_SONAME}.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
