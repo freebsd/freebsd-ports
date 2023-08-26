@@ -36,7 +36,7 @@ USE_PYTHON=	autoplist concurrent cython pep517
 USE_GITHUB=	nodefault
 GH_TUPLE=	abseil:abseil-cpp:20211102.0:abseil_abseil_cpp/ddtrace/appsec/iast/_taint_tracking/
 
-PORTSCOUT=	skipv:20230802.0
+PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*
 
 OPTIONS_DEFINE=	OPENTRACING
 OPTIONS_DEFAULT=OPENTRACING
