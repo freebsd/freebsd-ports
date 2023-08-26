@@ -1,5 +1,5 @@
 PORTNAME=	onnx
-DISTVERSION=	1.14.0
+DISTVERSION=	1.14.1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c11 python shebangfix
 USE_PYTHON=	distutils concurrent autoplist
+
+CXXFLAGS+=	-Dstat64=stat
 
 SHEBANG_FILES=	tools/protoc-gen-mypy.sh.in
 
