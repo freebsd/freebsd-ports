@@ -41,9 +41,9 @@ CARGO_CRATES=	ahash-0.8.3 \
 		rustversion-1.0.13 \
 		ryu-1.0.14 \
 		scopeguard-1.1.0 \
-		serde-1.0.183 \
-		serde_derive-1.0.183 \
-		serde_json-1.0.104 \
+		serde-1.0.185 \
+		serde_derive-1.0.185 \
+		serde_json-1.0.105 \
 		smallvec-1.11.0 \
 		speedate-0.12.0 \
 		strum-0.25.0 \
