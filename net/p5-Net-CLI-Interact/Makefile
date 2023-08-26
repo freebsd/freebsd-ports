@@ -1,5 +1,5 @@
 PORTNAME=	Net-CLI-Interact
-PORTVERSION=	2.300005
+PORTVERSION=	2.400000
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,6 +24,7 @@ RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-MooX-Types-MooseLike>=0:devel/p5-MooX-Types-MooseLike \
 		p5-Net-Telnet>=0:net/p5-Net-Telnet \
 		p5-Path-Class>=0:devel/p5-Path-Class
+TEST_DEPENDS=	p5-Test-File-ShareDir>=1.001002:devel/p5-Test-File-ShareDir
 
 USES=		perl5
 USE_PERL5=	modbuild
