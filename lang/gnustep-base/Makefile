@@ -1,8 +1,10 @@
 PORTNAME=	gnustep-base
-DISTVERSIONPREFIX=	base-
-DISTVERSION=	1_27_0
-PORTREVISION=	8
+DISTVERSION=	1.29.0
 CATEGORIES=	lang devel gnustep
+MASTER_SITES=	https://github.com/gnustep/libs-base/releases/download/base-${DISTVERSION:S,.,_,g}/
+
+PATCH_SITES=	https://github.com/gnustep/libs-base/commit/
+PATCHFILES=	37913d006d96a6bdcb963f4ca4889888dcce6094.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep Foundation library
@@ -13,32 +15,30 @@ LICENSE_COMB=	multi
 
 BROKEN_FreeBSD_12_powerpc64=	fails to link: ld.lld: error: /usr/src/lib/csu/common/crtend.c:55: relocation R_PPC64_ADDR16_DS out of range: -32776 is not in [-32768, 32767]
 
-LIB_DEPENDS+=	libffi.so:devel/libffi
-LIB_DEPENDS+=	libxml2.so:textproc/libxml2
-LIB_DEPENDS+=	libxslt.so:textproc/libxslt
-LIB_DEPENDS+=	libgmp.so:math/gmp
-LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libcurl.so:ftp/curl \
+		libgcrypt.so:security/libgcrypt \
+		libgmp.so:math/gmp
 
-RUN_DEPENDS+=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnustep-make
+RUN_DEPENDS=	${LOCALBASE}/GNUstep/System/Library/Makefiles/GNUstep.sh:devel/gnustep-make
 
-USES=		pkgconfig iconv gnustep
+USES=		pkgconfig iconv gnome gnustep
+USE_GNOME=	libxml2 libxslt
 USE_GNUSTEP=	build
 USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	gnustep
-GH_PROJECT=	libs-base
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-procfs --disable-mixedabi --with-installation-domain=SYSTEM
-CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-2.0 -fblocks'
-
-MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 
 ETCDIR=		${LOCALBASE}/etc
+
 STAGEHEADER=	${STAGEDIR}${PREFIX}/GNUstep/System/Library/Headers
 
-PLIST_SUB+=	BASEVERSION=${PORTVERSION:R}
+CONFIGURE_ARGS=	--disable-procfs \
+		--with-installation-domain=SYSTEM
+CONFIGURE_ENV=	OBJCFLAGS='-fobjc-runtime=gnustep-2.0 -fblocks' \
+		ac_cv_header_bfd_h=no ac_cv_lib_bfd_bfd_openr=no
+
+PLIST_SUB=	BASEVERSION=${DISTVERSION:R}
 
 OPTIONS_DEFINE=		ICU GNUTLS
 OPTIONS_RADIO=		ZEROCONF
@@ -58,12 +58,16 @@ GNUTLS_CONFIGURE_OFF=	--disable-tls
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS}_${OSREL:R} == FreeBSD_12
+LIB_DEPENDS+=		libunwind.so:devel/libunwind
+.endif
+
 .if ${PORT_OPTIONS:MAVAHI}
-CONFIGURE_ARGS+=	--with-zeroconf-api=avahi
 LIB_DEPENDS+=		libavahi-client.so:net/avahi-app
+CONFIGURE_ARGS+=	--with-zeroconf-api=avahi
 .elif ${PORT_OPTIONS:MMDNS}
-CONFIGURE_ARGS+=	--with-zeroconf-api=mdns
 LIB_DEPENDS+=		libdns_sd.so:net/mDNSResponder
+CONFIGURE_ARGS+=	--with-zeroconf-api=mdns
 .else
 CONFIGURE_ARGS+=	--disable-zeroconf
 .endif
