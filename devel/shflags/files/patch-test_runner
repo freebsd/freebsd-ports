@@ -1,0 +1,11 @@
+--- test_runner.orig	2023-08-22 09:34:14 UTC
++++ test_runner
+@@ -39,7 +39,7 @@
+ RUNNER_LOADED=0
+ 
+ RUNNER_ARGV0=`basename "$0"`
+-RUNNER_SHELLS='/bin/sh ash /bin/bash /bin/dash /bin/ksh /bin/mksh /bin/zsh'
++RUNNER_SHELLS='/bin/sh %%LOCALBASE%%/bin/bash %%LOCALBASE%%/bin/dash %%LOCALBASE%%/bin/ksh93 %%LOCALBASE%%/bin/mksh %%LOCALBASE%%/bin/zsh'
+ RUNNER_TEST_SUFFIX='_test.sh'
+ true; RUNNER_TRUE=$?
+ false; RUNNER_FALSE=$?
