@@ -1,5 +1,5 @@
 PORTNAME=	wk
-DISTVERSION=	0.7.3
+DISTVERSION=	0.8.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -8,6 +8,9 @@ COMMENT=	Lightweight Well-Known Geometry Parsing
 WWW=		https://cran.r-project.org/web/packages/wk/
 
 LICENSE=	MIT
+
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-vctrs>0:devel/R-cran-vctrs
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles
 
