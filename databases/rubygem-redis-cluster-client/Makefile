@@ -1,5 +1,5 @@
 PORTNAME=	redis-cluster-client
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.16
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
