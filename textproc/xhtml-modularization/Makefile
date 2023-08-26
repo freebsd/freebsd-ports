@@ -9,6 +9,11 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	W3C's Modularization of XHTML DTDs and docs
 WWW=		https://www.w3.org/TR/xhtml-modularization/
 
+LICENSE=	W3C_DOCUMENT_LICENSE
+LICENSE_NAME=	W3C Document License
+LICENSE_TEXT=	See https://www.w3.org/copyright/document-license/ for detail
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 USES=		tar:tgz
