@@ -1,5 +1,14 @@
---- docs/conf.py.orig	2023-05-12 12:26:28 UTC
+--- docs/conf.py.orig	2023-08-26 07:33:11 UTC
 +++ docs/conf.py
+@@ -177,7 +177,7 @@ manpages_url = 'https://man7.org/linux/man-pages/man{s
+ # (source start file, name, description, authors, manual section).
+ man_pages = [
+     ('invocation', 'kitty', 'kitty Documentation', [author], 1),
+-    ('conf', 'kitty.conf', 'kitty.conf Documentation', [author], 5)
++    ('conf', 'kitty.conf', 'kitty terminal emulator configuration file', [author], 5)
+ ]
+ 
+ 
 @@ -207,18 +207,10 @@ def commit_role(
      name: str, rawtext: str, text: str, lineno: int, inliner: Any, options: Any = {}, content: Any = []
  ) -> Tuple[List[nodes.reference], List[nodes.problematic]]:
