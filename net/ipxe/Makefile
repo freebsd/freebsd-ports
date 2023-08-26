@@ -1,5 +1,5 @@
 PORTNAME=	ipxe
-DISTVERSION=	g20230719
+DISTVERSION=	g20230822
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	c1834f323f4f6b9b
+GH_TAGNAME=	9e99a55b317f5da6
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
@@ -82,8 +82,6 @@ ISO_BUILD_DEPENDS=	mkisofs:sysutils/cdrtools
 ISO_MAKE_ARGS=		ISOLINUX_BIN="${WRKSRC}/isolinux.bin" \
 			LDLINUX_C32="${LOCALBASE}/share/syslinux/bios/com32/elflink/ldlinux/ldlinux.c32"
 ISO_ALL_TARGET=		bin/ipxe.iso
-
-PORTSCOUT=	skipv:1.21.1,v1.21.1
 
 .include <bsd.port.pre.mk>
 
