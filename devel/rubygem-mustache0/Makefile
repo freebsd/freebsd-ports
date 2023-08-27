@@ -10,6 +10,9 @@ WWW=		https://github.com/mustache/mustache
 
 LICENSE=	MIT
 
+DEPRECATED=	Use devel/mustache
+EXPIRATION_DATE=2023-09-27
+
 NO_ARCH=	yes
 USES=		gem
 
