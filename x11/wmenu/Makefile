@@ -12,15 +12,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	scdoc:textproc/scdoc \
 		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-		libwayland-client.so:graphics/wayland \
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo pango
 
+# XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
+# https://cgit.freebsd.org/src/commit/?id=af93fea71038
+.if !exists(/usr/include/sys/timerfd.h)
+LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 CPPFLAGS+=	`pkg-config --cflags epoll-shim`
 LDFLAGS+=	`pkg-config --libs epoll-shim`
+.endif
 
 PLIST_FILES=	bin/wmenu \
 		man/man1/wmenu.1.gz
