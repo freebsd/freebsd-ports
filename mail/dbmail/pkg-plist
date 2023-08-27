@@ -32,6 +32,7 @@ sbin/dbmail-pop3d
 sbin/dbmail-users
 sbin/dbmail-util
 %%SIEVE%%sbin/dbmail-sievecmd
+%%SIEVE%%sbin/dbmail-sieved
 %%SIEVE%%sbin/dbmail-timsieved
 %%DATADIR%%/dbmail.schema
 %%DATADIR%%/mysql/2_1_7-2_2_0.mysql

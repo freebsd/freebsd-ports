@@ -1,5 +1,5 @@
 PORTNAME=	dbmail
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -55,6 +55,11 @@ SIEVE_CONFIGURE_WITH=	sieve
 DBMAIL_USER?=	mailnull
 DBMAIL_GROUP?=	mail
 PIDDIR?=	/var/run/dbmail
+
+post-patch:
+	@${REINPLACE_CMD} -e '/dbmail-sieved\.8 /d' \
+		${WRKSRC}/man/Makefile.am \
+		${WRKSRC}/man/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf.sample
