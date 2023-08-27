@@ -5460,6 +5460,7 @@
     SUBDIR += py-qt6-sip
     SUBDIR += py-qtbuilder
     SUBDIR += py-qtconsole
+    SUBDIR += py-querystring-parser
     SUBDIR += py-questionary
     SUBDIR += py-qutip
     SUBDIR += py-qutip-qip

@@ -1,0 +1,2 @@
+querystring-parser is QueryString parser for Python/Django that correctly
+creates nested dictionaries from sent form/querystring data.
