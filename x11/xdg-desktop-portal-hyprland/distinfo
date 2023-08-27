@@ -3,3 +3,5 @@ SHA256 (hyprwm-xdg-desktop-portal-hyprland-v0.5.0_GH0.tar.gz) = d346cbe170e7042d
 SIZE (hyprwm-xdg-desktop-portal-hyprland-v0.5.0_GH0.tar.gz) = 50608
 SHA256 (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 1384ccdbb0149cdc40d74fbe21fba97d706db08b718c7df9481076381d852c74
 SIZE (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 6340
+SHA256 (8453779cf394.patch) = 45d3dc817e34ef6126f2326917d17258ea67e3e4cfd8fa3dff2c748616e2b9ed
+SIZE (8453779cf394.patch) = 881

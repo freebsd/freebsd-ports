@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
 CATEGORIES=	x11 wayland
 
+PATCH_SITES+=	https://github.com/emersion/xdg-desktop-portal-wlr/commit/:wlr
+PATCHFILES+=	8453779cf394.patch:-p1:wlr # https://github.com/emersion/xdg-desktop-portal-wlr/pull/279
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for hyprland
 WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
@@ -13,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libbasu.so:devel/basu \
 		libinih.so:devel/inih \
-		libepoll-shim.so:devel/libepoll-shim \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -35,6 +37,12 @@ MESON_ARGS=	-Dsd-bus-provider=basu -Dsystemd=disabled
 PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
+
+# XXX Drop after FreeBSD 13.* EOL around 2026-01-31
+# https://cgit.freebsd.org/src/commit/?id=af93fea71038
+.if !exists(/usr/include/sys/timerfd.h)
+LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
+.endif
 
 OPTIONS_DEFINE=	SLURP
 OPTIONS_DEFAULT=SLURP
