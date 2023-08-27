@@ -42,6 +42,7 @@
     SUBDIR += fluxbox
     SUBDIR += fluxter
     SUBDIR += flwm
+    SUBDIR += fswm
     SUBDIR += fvwm2
     SUBDIR += fvwm3
     SUBDIR += gamescope
