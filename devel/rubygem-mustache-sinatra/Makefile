@@ -1,6 +1,5 @@
 PORTNAME=	mustache-sinatra
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://github.com/mustache/mustache-sinatra
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-mustache0>0:devel/rubygem-mustache0
+RUN_DEPENDS=	rubygem-mustache>=1.0:devel/rubygem-mustache
 
 USES=		gem
 NO_ARCH=	yes
