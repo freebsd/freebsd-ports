@@ -9,6 +9,9 @@ WWW=		http://druidbsd.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Migrated into src
+EXPIRATION_DATE=	2023-09-27
+
 NO_BUILD=	yes
 
 do-install:
