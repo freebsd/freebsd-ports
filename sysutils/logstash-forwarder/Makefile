@@ -9,7 +9,8 @@ WWW=		https://github.com/elasticsearch/logstash-forwarder
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Migrate to sysutils/beats
+DEPRECATED=	Migrate to sysutils/beats8
+EXPIRATION_DATE=	2023-09-30
 
 USES=		go
 USE_GITHUB=	yes
