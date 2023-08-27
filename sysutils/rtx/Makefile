@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.8.7
+DISTVERSION=	2023.8.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +20,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.0.4 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.3.2 \
+		anstream-0.5.0 \
 		anstyle-1.0.2 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.2 \
+		anstyle-wincon-2.1.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.2 \
@@ -40,12 +40,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.24 \
-		clap_builder-4.3.24 \
-		clap_complete-4.3.2 \
-		clap_derive-4.3.12 \
-		clap_lex-0.5.0 \
-		clap_mangen-0.2.12 \
+		clap-4.4.0 \
+		clap_builder-4.4.0 \
+		clap_complete-4.4.0 \
+		clap_derive-4.4.0 \
+		clap_lex-0.5.1 \
+		clap_mangen-0.2.13 \
 		color-eyre-0.6.2 \
 		color-print-0.3.4 \
 		color-print-proc-macro-0.3.4 \
@@ -127,7 +127,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		ipnet-2.8.0 \
-		is-terminal-0.4.9 \
 		itertools-0.11.0 \
 		itoa-1.0.9 \
 		jobserver-0.1.26 \
@@ -169,10 +168,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pest_derive-2.7.2 \
 		pest_generator-2.7.2 \
 		pest_meta-2.7.2 \
-		pin-project-lite-0.2.12 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		portable-atomic-1.4.2 \
+		portable-atomic-1.4.3 \
 		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.66 \
@@ -196,7 +195,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustix-0.37.23 \
-		rustix-0.38.8 \
+		rustix-0.38.9 \
 		rustls-0.21.6 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
@@ -210,8 +209,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		security-framework-sys-2.9.1 \
 		self_update-0.37.0 \
 		semver-1.0.18 \
-		serde-1.0.186 \
-		serde_derive-1.0.186 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
 		serde_json-1.0.105 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
