@@ -1,3 +1,0 @@
-The zope.dottedname module provides one function, resolve that
-resolves strings containing dotted names into the appropriate
-python object.
