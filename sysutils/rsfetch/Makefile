@@ -10,6 +10,9 @@ WWW=		https://github.com/rsfetch/rsfetch
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream unmaintained
+EXPIRATION_DATE=	2023-09-27
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
