@@ -199,7 +199,7 @@
     SUBDIR += mydumper
     SUBDIR += mysql++
     SUBDIR += mysql-connector-c++
-    SUBDIR += mysql-connector-java
+    SUBDIR += mysql-connector-j
     SUBDIR += mysql-connector-java51
     SUBDIR += mysql-connector-odbc-80
     SUBDIR += mysql-udf
