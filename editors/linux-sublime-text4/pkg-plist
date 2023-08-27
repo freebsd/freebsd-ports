@@ -19,6 +19,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Lib/python3/certifi/__pycache__/core.cpython-38.opt-1.pyc
 %%DATADIR%%/Lib/python3/certifi/cacert.pem
 %%DATADIR%%/Lib/python3/certifi/core.py
+%%DATADIR%%/Lib/python3/certifi/py.typed
 %%DATADIR%%/Lib/python33/sublime.py
 %%DATADIR%%/Lib/python33/sublime_plugin.py
 %%DATADIR%%/Lib/python38/sublime.py
@@ -78,7 +79,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Packages/XML.sublime-package
 %%DATADIR%%/Packages/YAML.sublime-package
 %%DATADIR%%/changelog.txt
-@(,,555) %%DATADIR%%/crash_reporter
+@(,,555) %%DATADIR%%/crash_handler
 %%DATADIR%%/libcrypto.so.1.1
 %%DATADIR%%/libsqlite3.so
 %%DATADIR%%/libssl.so.1.1
