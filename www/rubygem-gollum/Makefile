@@ -1,6 +1,5 @@
 PORTNAME=	gollum
-PORTVERSION=	5.3.0
-PORTREVISION=	2
+DISTVERSION=	5.3.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,11 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git \
 		rubygem-gemojione>=4.1<5:graphics/rubygem-gemojione \
-		rubygem-gollum-lib>=5.1<6:www/rubygem-gollum-lib \
+		rubygem-gollum-lib>=5.2.3<6:www/rubygem-gollum-lib \
 		rubygem-i18n>=1.8:devel/rubygem-i18n \
 		rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
 		rubygem-kramdown-parser-gfm>=1.1.0<1.2:textproc/rubygem-kramdown-parser-gfm \
-		rubygem-mustache-sinatra>=1.0<2:devel/rubygem-mustache-sinatra \
+		rubygem-mustache-sinatra>=2.0<3:devel/rubygem-mustache-sinatra \
 		rubygem-octicons>=12.0:misc/rubygem-octicons \
 		rubygem-rdoc>=6:devel/rubygem-rdoc \
 		rubygem-rss>=0.2.9:www/rubygem-rss \
