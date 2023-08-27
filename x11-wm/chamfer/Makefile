@@ -37,9 +37,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		${WRKSRC}/src/config.cpp ${WRKSRC}/src/main.cpp
 # XXX import('python').find_installation().dependency()
-# XXX https://github.com/mesonbuild/meson/issues/4788
 	@${REINPLACE_CMD} -e '/boost/!s/python3/python-${PYTHON_VER}/' \
-		-e '/boost/s/python3/python${PYTHON_SUFFIX}/' \
 		-e '/boost/s/,/,static:true,/' \
 		${WRKSRC}/meson.build
 
