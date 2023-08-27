@@ -13,6 +13,7 @@ LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
 USES=			cpe ldap
+
 CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
 USE_RC_SUBR=		nslcd
@@ -24,8 +25,11 @@ NSLCD_PIDFILE?=		/var/run/nslcd.pid
 NSLCD_VARDIR?=		/var/run/nslcd
 NSLCD_SOCKET?=		${NSLCD_VARDIR}/nslcd.ctl
 
-OPTIONS_DEFINE=		KERBEROS
+OPTIONS_DEFINE=		KERBEROS LCLASS
 OPTIONS_DEFAULT=	KERBEROS
+
+LCLASS_EXTRA_PATCHES=	${PATCHDIR}/lclass-patches
+LCLASS_DESC=		Build with loginClass support
 
 .if defined(SLAVE_PORT)
 OPTIONS_DEFINE+=	SASL
