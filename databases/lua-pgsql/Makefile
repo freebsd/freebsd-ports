@@ -1,5 +1,6 @@
 PORTNAME=	pgsql
 PORTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	databases
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
@@ -9,13 +10,13 @@ WWW=		https://github.com/arcapos/luapgsql
 
 LICENSE=	BSD3CLAUSE
 
-USES=		lua pgsql:11+
+USES=		lua:flavors,53+ pgsql:11+
 WANT_PGSQL=	client
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arcapos
 GH_PROJECT=	luapgsql
-GH_TAGNAME=	023992e
+GH_TAGNAME=	0f80ff5
 
 MAKE_ARGS=	LUA_VERSION=${LUA_VER}
 
