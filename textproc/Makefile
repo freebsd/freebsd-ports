@@ -1634,6 +1634,7 @@
     SUBDIR += py-xmlschema
     SUBDIR += py-yapf
     SUBDIR += py-youseedee
+    SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zpt
     SUBDIR += qprint
     SUBDIR += qr
