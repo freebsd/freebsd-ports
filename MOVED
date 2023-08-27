@@ -7823,3 +7823,13 @@ devel/py-zope.processlifetime||2023-08-27|Remove leaf zope ports that have no se
 devel/py-zope.sequencesort||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
 devel/py-zope.size||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
 devel/py-zope.tales||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-five.globalrequest||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.globalrequest||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.traversing||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.publisher||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.browser||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.contenttype||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.testing||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.exceptions||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
+devel/py-zope.i18n||2023-08-27|Remove leaf zope ports that have no sencse in absence of zope itself
+devel/py-zope.location||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
