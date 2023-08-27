@@ -1,6 +1,6 @@
---- configure.orig	2022-10-09 19:04:43 UTC
+--- configure.orig	2023-02-27 20:43:45 UTC
 +++ configure
-@@ -3784,13 +3784,7 @@ host_os=$target_os_default
+@@ -3888,13 +3888,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -15,7 +15,15 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6758,7 +6752,7 @@ if enabled x86; then
+@@ -5537,6 +5531,7 @@ case $target_os in
+         disable symver
+         ;;
+     freebsd)
++        enable section_data_rel_ro
+         ;;
+     bsd/os)
+         add_extralibs -lpoll -lgnugetopt
+@@ -7018,7 +7013,7 @@ fi
  
  if enabled x86; then
      case $target_os in

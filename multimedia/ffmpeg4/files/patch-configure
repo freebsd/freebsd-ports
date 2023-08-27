@@ -1,6 +1,6 @@
---- configure.orig	2022-10-09 19:04:43 UTC
+--- configure.orig	2023-04-12 18:52:51 UTC
 +++ configure
-@@ -3784,13 +3784,7 @@ host_os=$target_os_default
+@@ -3784,13 +3784,7 @@ target_os_default=$(tolower $(uname -s))
  host_os=$target_os_default
  
  # machine
@@ -15,7 +15,15 @@
  cpu="generic"
  intrinsics="none"
  
-@@ -6758,7 +6752,7 @@ if enabled x86; then
+@@ -5387,6 +5381,7 @@ case $target_os in
+         disable symver
+         ;;
+     freebsd)
++        enable section_data_rel_ro
+         ;;
+     bsd/os)
+         add_extralibs -lpoll -lgnugetopt
+@@ -6758,7 +6753,7 @@ enabled vulkan &&
  
  if enabled x86; then
      case $target_os in
