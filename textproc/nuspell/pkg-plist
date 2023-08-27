@@ -1,6 +1,7 @@
 bin/nuspell
 include/nuspell/aff_data.hxx
 include/nuspell/checker.hxx
+include/nuspell/defines.hxx
 include/nuspell/dictionary.hxx
 include/nuspell/finder.hxx
 include/nuspell/nuspell_export.h
@@ -13,5 +14,5 @@ lib/cmake/nuspell/NuspellTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/nuspell/NuspellTargets.cmake
 lib/libnuspell.so
 lib/libnuspell.so.5
-lib/libnuspell.so.5.1.2
+lib/libnuspell.so.5.1.3
 libdata/pkgconfig/nuspell.pc
