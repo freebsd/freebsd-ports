@@ -14,7 +14,7 @@ WWW=		https://www.isqlviewer.com/
 
 RUN_DEPENDS=	${JYTHON_PREFIX}/${JYTHON_JAR}:lang/jython \
 		${JAVALIBDIR}/postgresql.jar:databases/postgresql-jdbc \
-		${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-java
+		${JAVALIBDIR}/mysql-connector-java.jar:databases/mysql-connector-j
 
 USE_JAVA=	yes
 NO_BUILD=	yes
