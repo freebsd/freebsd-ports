@@ -16,15 +16,4 @@ GH_ACCOUNT=	soreau
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 
-.include <bsd.port.options.mk>
-
-# Cannot use C implementation without cr_pid
-.if make(makesum)
-DISTFILES=	${DISTNAME:S/${DISTVERSION}/1.3/}${EXTRACT_SUFX}
-.elif ${OPSYS} != FreeBSD
-DISTVERSION=	1.3
-NO_ARCH=	yes
-MESON_ARGS+=	-Dimplementation=shell
-.endif
-
 .include <bsd.port.mk>
