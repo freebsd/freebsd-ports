@@ -2,7 +2,7 @@ PORTNAME=	whatweb
 DISTVERSION=	0.5.5-${GH_TAGNAME}
 CATEGORIES=	security www
 
-MAINTAINER=	rm@FreeBSD.org
+MAINTAINER=	jamie@catflap.org
 COMMENT=	Tool to fingerprint web site components
 WWW=		https://www.morningstarsecurity.com/research/whatweb
 
