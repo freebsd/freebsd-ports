@@ -15,7 +15,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -41,7 +41,6 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
-		libre2.so:devel/re2 \
 		libsnappy.so:archivers/snappy \
 		libvpx.so:multimedia/libvpx \
 		libwebp.so:graphics/webp \
@@ -56,6 +55,10 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xshmfence xtst
 
 CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg QT_FEATURE_webengine_proprietary_codecs
+# See https://reviews.freebsd.org/D41571 for further details.  From time to
+# time, e.g. with new qt6-webengine releases, it should be checked whether
+# re2 can be unbundled again.
+CMAKE_OFF=	QT_FEATURE_webengine_system_re2
 
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
