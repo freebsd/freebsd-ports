@@ -337,6 +337,7 @@
     SUBDIR += capstone4
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
+    SUBDIR += cargo-depgraph
     SUBDIR += cargo-generate
     SUBDIR += cask
     SUBDIR += catch

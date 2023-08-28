@@ -1,0 +1,2 @@
+cargo-depgraph creates dependency graphs for cargo projects using
+`cargo metadata` and graphviz.
