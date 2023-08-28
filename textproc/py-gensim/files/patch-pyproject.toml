@@ -1,0 +1,13 @@
+--- pyproject.toml.orig	2023-08-28 06:12:49 UTC
++++ pyproject.toml
+@@ -7,8 +7,8 @@ requires = [
+     "Cython>=0.29.32,<3.0.0",
+     # oldest supported Numpy for this platform is 1.17 but the oldest supported by Gensim
+     # is 1.18.5, remove the line when they increase oldest supported Numpy for this platform
+-    "numpy==1.18.5; python_version=='3.8' and platform_machine not in 'arm64|aarch64'",
+-    "oldest-supported-numpy; python_version>'3.8' or platform_machine in 'arm64|aarch64'",
++    #"numpy==1.18.5; python_version=='3.8' and platform_machine not in 'arm64|aarch64'",
++    "numpy>0; python_version>'3.8' or platform_machine in 'arm64|aarch64'",
+     "scipy",
+     "setuptools",
+     "wheel",
