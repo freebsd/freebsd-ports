@@ -3,21 +3,21 @@
 * Make cargo build for components of the build framework (= runner) more verbose
 * Check for OFFLINE_BUILD environment variable to prevent repo sync
 
---- build/runner/src/build.rs.orig	2023-05-01 01:47:30 UTC
+--- build/runner/src/build.rs.orig	2023-08-19 22:41:35 UTC
 +++ build/runner/src/build.rs
-@@ -58,10 +58,10 @@ pub fn run_build(args: BuildArgs) {
+@@ -57,10 +57,10 @@ pub fn run_build(args: BuildArgs) {
      let start_time = Instant::now();
-     let mut command = Command::new("ninja");
+     let mut command = Command::new(get_ninja_command());
      command
 +        .arg("-v")
          .arg("-f")
          .arg(&build_file)
          .args(ninja_args)
 -        .env("NINJA_STATUS", "[%f/%t; %r active; %es] ")
-         .env("PATH", path)
+         .env("PATH", &path)
          .env(
              "MYPY_CACHE_DIR",
-@@ -76,6 +76,10 @@ pub fn run_build(args: BuildArgs) {
+@@ -75,6 +75,10 @@ pub fn run_build(args: BuildArgs) {
          // Updating svelte-check or its deps will likely remove the need for it.
          .env("NODE_OPTIONS", "--no-experimental-fetch");
  

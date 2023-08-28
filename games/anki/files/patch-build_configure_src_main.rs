@@ -1,26 +1,26 @@
 Check for NO_BUNDLE and NO_VENV environment variables.
 
---- build/configure/src/main.rs.orig	2023-03-31 02:32:25 UTC
+--- build/configure/src/main.rs.orig	2023-08-19 22:41:35 UTC
 +++ build/configure/src/main.rs
-@@ -10,6 +10,8 @@ mod web;
+@@ -9,6 +9,8 @@ mod web;
  mod rust;
  mod web;
  
 +use std::env;
 +
+ use anyhow::Result;
  use aqt::build_and_check_aqt;
  use bundle::build_bundle;
- use ninja_gen::python::setup_python;
-@@ -20,6 +22,7 @@ use python::setup_venv;
- use python::check_copyright;
+@@ -22,6 +24,7 @@ use python::setup_venv;
+ use pylib::check_pylib;
  use python::check_python;
  use python::setup_venv;
 +use python::setup_venv_stub;
  use rust::build_rust;
+ use rust::check_minilints;
  use rust::check_rust;
- use web::build_and_check_web;
-@@ -39,13 +42,24 @@ fn main() -> Result<()> {
-     let build = &mut build;
+@@ -43,13 +46,24 @@ fn main() -> Result<()> {
+     check_proto(build, inputs![glob!["proto/**/*.proto"]])?;
  
      setup_python(build)?;
 -    setup_venv(build)?;
