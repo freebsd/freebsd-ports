@@ -1,6 +1,5 @@
 PORTNAME=	pam-modules
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://download.gnu.org.ua/pub/release/pam-modules/
 
@@ -10,36 +9,35 @@ WWW=		https://puszcza.gnu.org.ua/software/pam-modules/pam-modules.html
 
 LICENSE=	GPLv3
 
-GNU_CONFIGURE=	yes
 USES=		libtool
-
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fshadow
 
-OPTIONS_DEFINE=	GROUPMEMBER MYSQL REGEX PGSQL SYSLOG
+INFO=		pam-modules
+
+OPTIONS_DEFINE=		GROUPMEMBER MYSQL NIS PGSQL REGEX SYSLOG
 OPTIONS_DEFAULT=	GROUPMEMBER REGEX SYSLOG
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
+
+GROUPMEMBER_DESC=	Build pam_groupmember
+MYSQL_DESC=		Build pam_mysql
+NIS_DESC=		Build pam_innetgr
+PGSQL_DESC=		Build pam_pgsql
+REGEX_DESC=		Build pam_regex
+SYSLOG_DESC=		Build pam_log
 
 GROUPMEMBER_CONFIGURE_ENABLE=	groupmember
-GROUPMEMBER_DESC=	Build pam_groupmember
-
-MYSQL_CONFIGURE_ENABLE=	mysql
-MYSQL_DESC=	Build pam_mysql
-MYSQL_USES=	mysql
-
-PGSQL_CONFIGURE_ENABLE=	pgsql
-PGSQL_DESC=	Build pam_pgsql
-PGSQL_USES=	pgsql
-PGSQL_VARS=	WANT_PGSQL=client
-
+MYSQL_USES=			mysql
+MYSQL_CONFIGURE_ENABLE=		mysql
+MYSQL_CFLAGS+=			-I${LOCALBASE}/include
+NIS_CONFIGURE_ENABLE=		NIS
+PGSQL_USES=			pgsql
+PGSQL_CONFIGURE_ENABLE=		pgsql
+PGSQL_VARS=			WANT_PGSQL=client
+REGEX_CONFIGURE_ENABLE=		regex
 SYSLOG_CONFIGURE_ENABLE=	log
-SYSLOG_DESC=	Build pam_log
-
-REGEX_CONFIGURE_ENABLE=	regex
-REGEX_DESC=	Build pam_regex
-
-INFO=	pam-modules
 
 .include <bsd.port.options.mk>
 
