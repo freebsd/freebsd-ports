@@ -1,0 +1,32 @@
+Remove bashism that doesn't seem to serve a purpose.
+${var/old_str/new_str} in bash replaces the first match of "old_str"
+with "new_str" within ${var} [1]. There doesn't seem to be a point in
+removing the first match of the escape character within ${var} only to
+compare it with itself, unless it was a workaround for some ancient
+bash bug, as this test was committed 15 years ago [2]. According to [3],
+the escaping backslash is discarded in pattern matching. Works in bash
+with and without this test, but sh(1) has no concept of this syntax.
+
+[1] https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+[2] https://github.com/mumble-voip/mumble/commit/048343f81e4f6b8e0514380e88fef55a3781563f
+[3] https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html
+
+--- auxiliary_files/run_scripts/mumble-overlay.in.orig	2023-08-15 16:48:56 UTC
++++ auxiliary_files/run_scripts/mumble-overlay.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Copyright 2005-@MUMBLE_BUILD_YEAR@ The Mumble Developers. All rights reserved.
+ # Use of this source code is governed by a BSD-style license
+@@ -27,9 +27,7 @@
+ fi
+ 
+ binary="$1"
+-if [ "${binary/\/}" = "$binary" ]; then
+-  binary=$(which "$binary")
+-fi
++binary=$(which "$binary")
+ if [ ! -x "$binary" ]; then
+   echo "$1 not found" >&2
+   exit 1
