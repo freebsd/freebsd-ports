@@ -1,0 +1,10 @@
+--- gui/tcltk/Makefile.orig	2023-08-28 07:06:54.841207000 -0700
++++ gui/tcltk/Makefile	2023-08-28 07:10:54.236984000 -0700
+@@ -117,6 +117,7 @@
+ 	if [ -n "$$TCLVER" -a -f "$$TCLVER" -a -z "$$FORCE_REBUILD" ]; \
+ 	then	gunzip < "$$TCLVER" | tar -xf -; true; \
+ 	else	unset CC LD CCXTRA CFLAGS; \
++		export CFLAGS=-Wno-incompatible-function-pointer-types; \
+ 		MAKEFLAGS=`echo "$$MAKEFLAGS" | sed 's/ -- .*//'`; \
+ 		$(MAKE) Q=$(Q) populate ; \
+ 		$(MAKE) Q=$(Q) bin/tclsh$(EXE) || exit 1; \
