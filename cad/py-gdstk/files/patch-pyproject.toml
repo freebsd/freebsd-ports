@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2023-08-28 16:28:32 UTC
++++ pyproject.toml
+@@ -38,5 +38,5 @@ requires = [
+     "setuptools>=42",
+     "wheel",
+     "numpy; platform_system=='Darwin'",
+-    "oldest-supported-numpy; platform_system!='Darwin'",
++    "numpy; platform_system!='Darwin'",
+ ]

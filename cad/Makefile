@@ -111,6 +111,7 @@
     SUBDIR += py-edalize
     SUBDIR += py-ezdxf
     SUBDIR += py-gdspy
+    SUBDIR += py-gdstk
     SUBDIR += py-gmsh
     SUBDIR += py-lcapy
     SUBDIR += py-ocp
