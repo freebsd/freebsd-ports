@@ -1,6 +1,5 @@
 PORTNAME=	tokodon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,10 +9,11 @@ WWW=		https://apps.kde.org/tokodon/
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
+LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
+		libmpv.so:multimedia/mpv
 RUN_DEPENDS=	kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 
-USES=		cmake desktop-file-utils gettext kde:5 qt:5 tar:xz xorg
+USES=		cmake desktop-file-utils gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		dbusaddons i18n jobwidgets kio kirigami2 notifications \
 		qqc2-desktop-style service solid widgetsaddons windowsystem \

@@ -9,15 +9,11 @@ include/KPim5/KSMTP/ksmtp/loginjob.h
 include/KPim5/KSMTP/ksmtp/sendjob.h
 include/KPim5/KSMTP/ksmtp/session.h
 include/KPim5/KSMTP/ksmtp/sessionuiproxy.h
-include/KPim5/ksmtp_version.h
+include/KPim5/KSMTP/ksmtp_version.h
 lib/cmake/KPim5SMTP/KPim5SMTPConfig.cmake
 lib/cmake/KPim5SMTP/KPim5SMTPConfigVersion.cmake
 lib/cmake/KPim5SMTP/KPim5SMTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KPim5SMTP/KPim5SMTPTargets.cmake
-lib/cmake/KPimSMTP/KPim5SMTPTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KPimSMTP/KPim5SMTPTargets.cmake
-lib/cmake/KPimSMTP/KPimSMTPConfig.cmake
-lib/cmake/KPimSMTP/KPimSMTPConfigVersion.cmake
 lib/libKPim5SMTP.so
 lib/libKPim5SMTP.so.5
 lib/libKPim5SMTP.so.%%KDE_APPLICATIONS_SHLIB_VER%%

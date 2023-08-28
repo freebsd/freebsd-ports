@@ -12,10 +12,6 @@ include/KPim5/KontactInterface/kontactinterface/processes.h
 include/KPim5/KontactInterface/kontactinterface/summary.h
 include/KPim5/KontactInterface/kontactinterface/uniqueapphandler.h
 include/KPim5/KontactInterface/kontactinterface_version.h
-lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfig.cmake
-lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfigVersion.cmake
-lib/cmake/KF5KontactInterface/KPim5KontactInterfaceTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5KontactInterface/KPim5KontactInterfaceTargets.cmake
 lib/cmake/KPim5KontactInterface/KPim5KontactInterfaceConfig.cmake
 lib/cmake/KPim5KontactInterface/KPim5KontactInterfaceConfigVersion.cmake
 lib/cmake/KPim5KontactInterface/KPim5KontactInterfaceTargets-%%CMAKE_BUILD_TYPE%%.cmake

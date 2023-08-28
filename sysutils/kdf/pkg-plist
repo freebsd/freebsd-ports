@@ -2,7 +2,8 @@ bin/kdf
 bin/kwikdisk
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkdfprivate.so.%%KDE_APPLICATIONS_VERSION%%
-%%QT_PLUGINDIR%%/libkcm_kdf.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_kdf.so
+share/applications/kcm_kdf.desktop
 share/applications/org.kde.kdf.desktop
 share/applications/org.kde.kwikdisk.desktop
 share/icons/hicolor/128x128/apps/kdf.png

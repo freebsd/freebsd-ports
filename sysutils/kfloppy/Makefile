@@ -15,5 +15,8 @@ USE_QT=		core dbus gui widgets xml \
 		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS
+KDE_APPLICATIONS_VERSION=	23.04.3
+DEPRECATED=	No longer part of KDE Gear since 23.08
+EXPIRATION_DATE=	2023-12-31
 
 .include <bsd.port.mk>

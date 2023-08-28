@@ -1,3 +1,3 @@
-TIMESTAMP = 1688809951
-SHA256 (KDE/release-service/23.04.3/kmousetool-23.04.3.tar.xz) = 4140b25dd9b6e146e46462e70d418a8cf10e4bf172b1f446ea1574fe5b4f30df
-SIZE (KDE/release-service/23.04.3/kmousetool-23.04.3.tar.xz) = 129436
+TIMESTAMP = 1693203635
+SHA256 (KDE/release-service/23.08.0/kmousetool-23.08.0.tar.xz) = c16b08c64edc352b4d32227a3a63a1ddec5282bca95f7b8ea17143265ac232da
+SIZE (KDE/release-service/23.08.0/kmousetool-23.08.0.tar.xz) = 129808

@@ -1310,10 +1310,6 @@ share/locale/zh_TW/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 %%DATADIR%%/data/maps/earth/schagen1689/schagen1689-preview.png
 %%DATADIR%%/data/maps/earth/schagen1689/schagen1689.dgml
 %%DATADIR%%/data/maps/earth/schagen1689/schagen1689.jpg
-%%DATADIR%%/data/maps/earth/sentinel2/0/0/0.jpg
-%%DATADIR%%/data/maps/earth/sentinel2/legend.html
-%%DATADIR%%/data/maps/earth/sentinel2/sentinel2-preview.png
-%%DATADIR%%/data/maps/earth/sentinel2/sentinel2.dgml
 %%DATADIR%%/data/maps/earth/srtm/0/000000/000000_000000.jpg
 %%DATADIR%%/data/maps/earth/srtm/0/000000/000000_000001.jpg
 %%DATADIR%%/data/maps/earth/srtm/1/000000/000000_000000.jpg

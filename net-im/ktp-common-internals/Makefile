@@ -22,6 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Will not be part of KDE Gear 23.08 in August
 EXPIRATION_DATE=	2023-09-30
+KDE_APPLICATIONS_VERSION=	23.04.3
 
 USES=		cmake compiler:c++11-lang gettext pkgconfig kde:5 \
 		qt:5 tar:xz xorg

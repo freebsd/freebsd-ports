@@ -1,17 +1,17 @@
-include/KF5/kio_archivebase.h
-include/KF5/libkioarchive_export.h
+include/KioArchive/kio_archivebase.h
+include/KioArchive/kioarchive_version.h
+include/KioArchive/libkioarchive_export.h
 lib/cmake/KioArchive/KioArchiveConfig.cmake
 lib/cmake/KioArchive/KioArchiveConfigVersion.cmake
 lib/cmake/KioArchive/KioArchiveTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KioArchive/KioArchiveTargets.cmake
 %%SAMBA%%lib/libexec/kf5/smbnotifier
 lib/libkioarchive.so.5
-lib/libkioarchive.so.5.97.0
+lib/libkioarchive.so.5.98.0
 %%QT_PLUGINDIR%%/kf5/kded/filenamesearchmodule.so
 %%QT_PLUGINDIR%%/kf5/kded/recentdocumentsnotifier.so
 %%SAMBA%%%%QT_PLUGINDIR%%/kf5/kded/smbwatcher.so
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
-%%QT_PLUGINDIR%%/kf5/kio/about.so
 %%QT_PLUGINDIR%%/kf5/kio/activities.so
 %%AFC%%%%QT_PLUGINDIR%%/kf5/kio/afc.so
 %%QT_PLUGINDIR%%/kf5/kio/archive.so
@@ -35,7 +35,7 @@ lib/libkioarchive.so.5.97.0
 %%EXR%%%%QT_PLUGINDIR%%/kf5/thumbcreator/exrthumbnail.so
 %%QT_PLUGINDIR%%/kf5/thumbcreator/imagethumbnail.so
 %%QT_PLUGINDIR%%/kf5/thumbcreator/jpegthumbnail.so
-%%QT_PLUGINDIR%%/kf5/thumbcreator/kritathumbnail.so
+%%QT_PLUGINDIR%%/kf5/thumbcreator/kraorathumbnail.so
 %%QT_PLUGINDIR%%/kf5/thumbcreator/opendocumentthumbnail.so
 %%QT_PLUGINDIR%%/kf5/thumbcreator/svgthumbnail.so
 %%QT_PLUGINDIR%%/kf5/thumbcreator/textthumbnail.so
@@ -257,7 +257,9 @@ share/locale/eo/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/eo/LC_MESSAGES/kio5_fish.mo
 share/locale/eo/LC_MESSAGES/kio5_info.mo
 share/locale/eo/LC_MESSAGES/kio5_man.mo
+share/locale/eo/LC_MESSAGES/kio5_mtp.mo
 share/locale/eo/LC_MESSAGES/kio5_nfs.mo
+share/locale/eo/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/eo/LC_MESSAGES/kio5_sftp.mo
 share/locale/eo/LC_MESSAGES/kio5_smb.mo
 share/locale/eo/LC_MESSAGES/kio5_thumbnail.mo
@@ -726,6 +728,7 @@ share/locale/nl/LC_MESSAGES/kio5_smb.mo
 share/locale/nl/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/nn/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/nn/LC_MESSAGES/kio5_activities.mo
+share/locale/nn/LC_MESSAGES/kio5_afc.mo
 share/locale/nn/LC_MESSAGES/kio5_archive.mo
 share/locale/nn/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/nn/LC_MESSAGES/kio5_fish.mo
@@ -943,6 +946,7 @@ share/locale/sr@latin/LC_MESSAGES/kio5_smb.mo
 share/locale/sr@latin/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/sv/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/sv/LC_MESSAGES/kio5_activities.mo
+share/locale/sv/LC_MESSAGES/kio5_afc.mo
 share/locale/sv/LC_MESSAGES/kio5_archive.mo
 share/locale/sv/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/sv/LC_MESSAGES/kio5_fish.mo

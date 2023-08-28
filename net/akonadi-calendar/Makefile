@@ -17,7 +17,8 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		ecm:build
 # pim components
 USE_KDE+=	akonadi akonadicontacts akonadimime calendarcore calendarutils \
-		contacts grantleetheme identitymanagement mailtransport mime pimtextedit
+		contacts grantleetheme identitymanagement mailtransport messagelib \
+		mime pimtextedit
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

@@ -12,14 +12,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Will not be part of KDE Gear 23.08 in August
 EXPIRATION_DATE=	2023-09-30
+KDE_APPLICATIONS_VERSION=	23.04.3
 
 LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libKTpCommonInternals.so:net-im/ktp-common-internals
 
-USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
-USE_KDE=	activities auth codecs completion config configwidgets \
-		coreaddons dbusaddons i18n idletime jobwidgets kcmutils kio \
-		notifications service solid wallet widgetsaddons windowsystem \
+USES=		compiler:c++11-lang cmake gettext kde:5 qt:5 tar:xz xorg
+USE_KDE=	activities auth codecs completion config configwidgets coreaddons \
+		dbusaddons i18n idletime jobwidgets kcmutils kio notifications \
+		service solid wallet widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools:build qmake:build

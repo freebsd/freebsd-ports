@@ -6,7 +6,6 @@ share/applications/org.kde.kalgebramobile.desktop
 share/icons/hicolor/64x64/apps/kalgebra.png
 share/icons/hicolor/scalable/apps/kalgebra.svgz
 %%WEBENGINE%%share/katepart5/syntax/kalgebra.xml
-%%WEBENGINE%%share/kservices5/graphsplasmoid.desktop
 share/locale/ar/LC_MESSAGES/kalgebra.mo
 share/locale/ar/LC_MESSAGES/kalgebramobile.mo
 share/locale/be/LC_MESSAGES/kalgebra.mo
@@ -99,8 +98,9 @@ share/locale/zh_CN/LC_MESSAGES/kalgebra.mo
 share/locale/zh_CN/LC_MESSAGES/kalgebramobile.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebra.mo
 share/locale/zh_TW/LC_MESSAGES/kalgebramobile.mo
+%%WEBENGINE%%share/metainfo/org.kde.graphsplasmoid.appdata.xml
 %%WEBENGINE%%share/metainfo/org.kde.kalgebra.appdata.xml
 share/metainfo/org.kde.kalgebramobile.appdata.xml
 %%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
 %%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
-%%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
+%%WEBENGINE%%share/plasma/plasmoids/org.kde.graphsplasmoid/metadata.json

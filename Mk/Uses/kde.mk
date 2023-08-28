@@ -83,10 +83,10 @@ KDE_FRAMEWORKS_VERSION?=	5.109.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	23.04.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.23.3
+KDE_APPLICATIONS_VERSION?=	23.08.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.24.0
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS_SHLIB_G_VER?=	23.4.3
+KDE_APPLICATIONS_SHLIB_G_VER?=	23.8.0
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.
@@ -763,7 +763,7 @@ kde-mime_PORT=			net/kmime
 kde-mime_LIB=			libKPim5Mime.so
 
 kde-pimcommon_PORT=		net/pimcommon
-kde-pimcommon_LIB=		libKF5PimCommon.so
+kde-pimcommon_LIB=		libKPim5PimCommon.so
 
 kde-pimtextedit_PORT=		net/kpimtextedit
 kde-pimtextedit_LIB=		libKPim5TextEdit.so

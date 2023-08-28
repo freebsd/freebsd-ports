@@ -12,6 +12,7 @@ share/icons/hicolor/32x32/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/48x48/apps/kwordquiz.png
 share/icons/hicolor/48x48/mimetypes/application-x-kwordquiz.png
 share/icons/hicolor/64x64/apps/kwordquiz.png
+share/icons/hicolor/scalable/apps/org.kde.kwordquiz.svg
 share/knotifications5/kwordquiz.notifyrc
 share/knsrcfiles/kwordquiz.knsrc
 %%DATADIR%%/examples/example.kvtml
@@ -166,7 +167,6 @@ share/knsrcfiles/kwordquiz.knsrc
 %%DATADIR%%/icons/hicolor/scalable/actions/qa.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/question.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/unmarkasblank.svgz
-share/kxmlgui5/kwordquiz/kwordquizui.rc
 share/locale/ar/LC_MESSAGES/kwordquiz.mo
 share/locale/be/LC_MESSAGES/kwordquiz.mo
 share/locale/bg/LC_MESSAGES/kwordquiz.mo

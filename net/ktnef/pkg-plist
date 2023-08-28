@@ -16,10 +16,6 @@ include/KPim5/KTNEF/ktnef/ktnefproperty.h
 include/KPim5/KTNEF/ktnef/ktnefpropertyset.h
 include/KPim5/KTNEF/ktnef/ktnefwriter.h
 include/KPim5/KTNEF/ktnef_version.h
-lib/cmake/KF5Tnef/KF5TnefConfig.cmake
-lib/cmake/KF5Tnef/KF5TnefConfigVersion.cmake
-lib/cmake/KF5Tnef/KPim5TnefTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5Tnef/KPim5TnefTargets.cmake
 lib/cmake/KPim5Tnef/KPim5TnefConfig.cmake
 lib/cmake/KPim5Tnef/KPim5TnefConfigVersion.cmake
 lib/cmake/KPim5Tnef/KPim5TnefTargets-%%CMAKE_BUILD_TYPE%%.cmake

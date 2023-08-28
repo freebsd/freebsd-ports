@@ -73,7 +73,6 @@ share/applications/org.kde.cantor.desktop
 %%DATADIR%%/octavebackend/cantor_plot2d.m
 %%DATADIR%%/octavebackend/cantor_plot3d.m
 %%DATADIR%%/python/graphic_packages.xml
-%%DATADIR%%/sagebackend/cantor-execsage
 %%DATADIR%%/xslt/latex.xsl
 share/config.kcfg/cantor.kcfg
 share/config.kcfg/cantor_libs.kcfg

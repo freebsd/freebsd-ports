@@ -4,10 +4,6 @@ include/KPim5/KMbox/kmbox/kmbox_export.h
 include/KPim5/KMbox/kmbox/mbox.h
 include/KPim5/KMbox/kmbox/mboxentry.h
 include/KPim5/KMbox/kmbox_version.h
-lib/cmake/KF5Mbox/KF5MboxConfig.cmake
-lib/cmake/KF5Mbox/KF5MboxConfigVersion.cmake
-lib/cmake/KF5Mbox/KPim5MboxTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5Mbox/KPim5MboxTargets.cmake
 lib/cmake/KPim5Mbox/KPim5MboxConfig.cmake
 lib/cmake/KPim5Mbox/KPim5MboxConfigVersion.cmake
 lib/cmake/KPim5Mbox/KPim5MboxTargets-%%CMAKE_BUILD_TYPE%%.cmake

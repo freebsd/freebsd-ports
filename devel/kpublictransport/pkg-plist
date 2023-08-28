@@ -23,6 +23,7 @@ include/KPublicTransport/KPublicTransport/OnboardStatus
 include/KPublicTransport/KPublicTransport/Path
 include/KPublicTransport/KPublicTransport/PathModel
 include/KPublicTransport/KPublicTransport/Platform
+include/KPublicTransport/KPublicTransport/PlatformLayout
 include/KPublicTransport/KPublicTransport/RentalVehicle
 include/KPublicTransport/KPublicTransport/Reply
 include/KPublicTransport/KPublicTransport/Stopover
@@ -59,6 +60,7 @@ include/KPublicTransport/kpublictransport/manager.h
 include/KPublicTransport/kpublictransport/path.h
 include/KPublicTransport/kpublictransport/pathmodel.h
 include/KPublicTransport/kpublictransport/platform.h
+include/KPublicTransport/kpublictransport/platformlayout.h
 include/KPublicTransport/kpublictransport/rentalvehicle.h
 include/KPublicTransport/kpublictransport/reply.h
 include/KPublicTransport/kpublictransport/stopover.h

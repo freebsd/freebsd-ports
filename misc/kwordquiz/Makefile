@@ -6,6 +6,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Flash card trainer for KDE Applications
 WWW=		https://www.kde.org/applications/education/kwordquiz
 
+BUILD_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+RUN_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz xorg
 USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
@@ -15,7 +18,7 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		notifyconfig parts service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus gui network phonon4 printsupport widgets xml \
+USE_QT=		core dbus gui network multimedia phonon4 printsupport widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

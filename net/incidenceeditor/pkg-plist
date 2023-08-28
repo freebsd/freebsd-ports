@@ -17,10 +17,6 @@ include/KPim5/IncidenceEditor/incidenceeditor/incidenceeditor_export.h
 include/KPim5/IncidenceEditor/incidenceeditor/incidenceeditorsettings.h
 include/KPim5/IncidenceEditor/incidenceeditor/individualmailcomponentfactory.h
 include/KPim5/IncidenceEditor/incidenceeditor_version.h
-lib/cmake/KF5IncidenceEditor/KF5IncidenceEditorConfig.cmake
-lib/cmake/KF5IncidenceEditor/KF5IncidenceEditorConfigVersion.cmake
-lib/cmake/KF5IncidenceEditor/KPim5IncidenceEditorTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5IncidenceEditor/KPim5IncidenceEditorTargets.cmake
 lib/cmake/KPim5IncidenceEditor/KPim5IncidenceEditorConfig.cmake
 lib/cmake/KPim5IncidenceEditor/KPim5IncidenceEditorConfigVersion.cmake
 lib/cmake/KPim5IncidenceEditor/KPim5IncidenceEditorTargets-%%CMAKE_BUILD_TYPE%%.cmake

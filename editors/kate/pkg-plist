@@ -28,6 +28,7 @@ lib/libkateprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/ktexteditor/ktexteditorpreviewplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/latexcompletionplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/lspclientplugin.so
+%%QT_PLUGINDIR%%/ktexteditor/openlinkplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/rainbowparens.so
 %%QT_PLUGINDIR%%/ktexteditor/tabswitcherplugin.so
 %%QT_PLUGINDIR%%/ktexteditor/textfilterplugin.so
@@ -119,6 +120,7 @@ share/locale/az/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/az/LC_MESSAGES/katefiletree.mo
 share/locale/az/LC_MESSAGES/kategdbplugin.mo
 share/locale/az/LC_MESSAGES/kategitblameplugin.mo
+share/locale/az/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/az/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/az/LC_MESSAGES/kateproject.mo
 share/locale/az/LC_MESSAGES/katesearch.mo
@@ -791,6 +793,7 @@ share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
 share/locale/ko/LC_MESSAGES/kategdbplugin.mo
 share/locale/ko/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ko/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ko/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ko/LC_MESSAGES/kateproject.mo
 share/locale/ko/LC_MESSAGES/katesearch.mo

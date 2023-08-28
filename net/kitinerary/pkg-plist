@@ -26,6 +26,7 @@ include/KPim5/KItinerary/ExtractorValidator
 include/KPim5/KItinerary/File
 include/KPim5/KItinerary/Flight
 include/KPim5/KItinerary/HtmlDocument
+include/KPim5/KItinerary/HttpResponse
 include/KPim5/KItinerary/IataBcbp
 include/KPim5/KItinerary/IataBcbpSections
 include/KPim5/KItinerary/JsonLdDocument
@@ -93,6 +94,7 @@ include/KPim5/kitinerary/extractorvalidator.h
 include/KPim5/kitinerary/file.h
 include/KPim5/kitinerary/flight.h
 include/KPim5/kitinerary/htmldocument.h
+include/KPim5/kitinerary/httpresponse.h
 include/KPim5/kitinerary/iatabcbp.h
 include/KPim5/kitinerary/iatabcbpsections.h
 include/KPim5/kitinerary/internal/parameter_type.h

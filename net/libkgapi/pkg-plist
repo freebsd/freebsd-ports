@@ -358,7 +358,7 @@ include/KPim5/KGAPI/kgapi/tasks/taskmodifyjob.h
 include/KPim5/KGAPI/kgapi/tasks/taskmovejob.h
 include/KPim5/KGAPI/kgapi/types.h
 include/KPim5/KGAPI/kgapi/utils.h
-include/KPim5/kgapi_version.h
+include/KPim5/KGAPI/kgapi_version.h
 lib/cmake/KPim5GAPI/KPim5GAPIConfig.cmake
 lib/cmake/KPim5GAPI/KPim5GAPIConfigVersion.cmake
 lib/cmake/KPim5GAPI/KPim5GAPITargets-%%CMAKE_BUILD_TYPE%%.cmake

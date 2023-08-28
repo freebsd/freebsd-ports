@@ -103,7 +103,6 @@ include/KPim5/MailCommon/mailcommon/snippettreeview.h
 include/KPim5/MailCommon/mailcommon/snippetwidget.h
 include/KPim5/MailCommon/mailcommon/tag.h
 include/KPim5/MailCommon/mailcommon/tagwidget.h
-include/KPim5/MailCommon/mailcommon_export.h
 include/KPim5/MailCommon/mailcommon_version.h
 lib/cmake/KF5MailCommon/KF5MailCommonConfig.cmake
 lib/cmake/KF5MailCommon/KF5MailCommonConfigVersion.cmake

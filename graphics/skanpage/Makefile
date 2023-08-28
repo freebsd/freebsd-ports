@@ -10,6 +10,9 @@ WWW=		https://invent.kde.org/utilities/skanpage
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
+BUILD_DEPENDS=	kquickimageeditor>=0:graphics/kquickimageeditor
+RUN_DEPENDS=	kquickimageeditor>=0:graphics/kquickimageeditor
+
 LIB_DEPENDS=	libKSaneCore.so:graphics/ksanecore \
 		libpng.so:graphics/png
 

@@ -7836,3 +7836,4 @@ devel/py-zope.location||2023-08-27|Remove leaf zope ports that have no sense in 
 textproc/py-zope.structuredtext||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
 textproc/py-zope.tal||2023-08-27|Remove leaf zope ports that have no sense in absence of zope itself
 databases/mysql-connector-java|databases/mysql-connector-j|2023-08-27|Following rename with upstream
+deskutils/kalendar|deskutils/merkuro|2023-08-28|Renamed upstream

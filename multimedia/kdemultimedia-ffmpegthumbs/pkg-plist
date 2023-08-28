@@ -1,5 +1,4 @@
-%%QT_PLUGINDIR%%/ffmpegthumbs.so
+%%QT_PLUGINDIR%%/kf5/thumbcreator/ffmpegthumbs.so
 share/config.kcfg/ffmpegthumbnailersettings5.kcfg
-share/kservices5/ffmpegthumbs.desktop
 share/metainfo/org.kde.ffmpegthumbs.metainfo.xml
 share/qlogging-categories5/ffmpegthumbs.categories

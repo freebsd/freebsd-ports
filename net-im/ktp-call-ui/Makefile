@@ -14,6 +14,7 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/COPYING.LIB
 
 DEPRECATED=	Will not be part of KDE Gear 23.08 in August
 EXPIRATION_DATE=	2023-09-30
+KDE_APPLICATIONS_VERSION=	23.04.3
 
 LIB_DEPENDS=	libKTpCommonInternals.so:net-im/ktp-common-internals \
 		libQt5GStreamer-1.0.so:multimedia/gstreamer1-qt \

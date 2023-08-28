@@ -21,6 +21,7 @@ lib/libdolphinvcs.so.%%SHLIB_VER%%
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
 share/config.kcfg/dolphin_compactmodesettings.kcfg
+share/config.kcfg/dolphin_contentdisplaysettings.kcfg
 share/config.kcfg/dolphin_contextmenusettings.kcfg
 share/config.kcfg/dolphin_detailsmodesettings.kcfg
 share/config.kcfg/dolphin_directoryviewpropertysettings.kcfg

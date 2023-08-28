@@ -4,6 +4,7 @@ man/es/man1/neochat.1.gz
 man/it/man1/neochat.1.gz
 man/man1/neochat.1.gz
 man/nl/man1/neochat.1.gz
+man/sv/man1/neochat.1.gz
 man/tr/man1/neochat.1.gz
 man/uk/man1/neochat.1.gz
 share/applications/org.kde.neochat.desktop
@@ -50,3 +51,4 @@ share/locale/uk/LC_MESSAGES/neochat.mo
 share/locale/zh_CN/LC_MESSAGES/neochat.mo
 share/locale/zh_TW/LC_MESSAGES/neochat.mo
 share/metainfo/org.kde.neochat.appdata.xml
+share/qlogging-categories5/neochat.categories

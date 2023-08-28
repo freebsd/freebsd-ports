@@ -1,7 +1,7 @@
 include/KF5/KSane/KSaneWidget
 include/KF5/KSane/ksane_export.h
+include/KF5/KSane/ksane_version.h
 include/KF5/KSane/ksanewidget.h
-include/KF5/ksane_version.h
 lib/cmake/KF5Sane/KF5SaneConfig.cmake
 lib/cmake/KF5Sane/KF5SaneConfigVersion.cmake
 lib/cmake/KF5Sane/KF5SaneTargets-%%CMAKE_BUILD_TYPE%%.cmake

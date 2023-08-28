@@ -9,7 +9,6 @@ include/KPim5/EventViews/EventViews/MonthView
 include/KPim5/EventViews/EventViews/MultiAgendaView
 include/KPim5/EventViews/EventViews/Prefs
 include/KPim5/EventViews/EventViews/TimeLineView
-include/KPim5/EventViews/EventViews/TodoModel
 include/KPim5/EventViews/EventViews/TodoView
 include/KPim5/EventViews/EventViews/ViewCalendar
 include/KPim5/EventViews/EventViews/WhatsNextView
@@ -31,15 +30,10 @@ include/KPim5/EventViews/eventviews/monthview.h
 include/KPim5/EventViews/eventviews/multiagendaview.h
 include/KPim5/EventViews/eventviews/prefs.h
 include/KPim5/EventViews/eventviews/timelineview.h
-include/KPim5/EventViews/eventviews/todomodel.h
 include/KPim5/EventViews/eventviews/todoview.h
 include/KPim5/EventViews/eventviews/viewcalendar.h
 include/KPim5/EventViews/eventviews/whatsnextview.h
 include/KPim5/EventViews/eventviews_version.h
-lib/cmake/KF5EventViews/KF5EventViewsConfig.cmake
-lib/cmake/KF5EventViews/KF5EventViewsConfigVersion.cmake
-lib/cmake/KF5EventViews/KPim5EventViewsTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5EventViews/KPim5EventViewsTargets.cmake
 lib/cmake/KPim5EventViews/KPim5EventViewsConfig.cmake
 lib/cmake/KPim5EventViews/KPim5EventViewsConfigVersion.cmake
 lib/cmake/KPim5EventViews/KPim5EventViewsTargets-%%CMAKE_BUILD_TYPE%%.cmake

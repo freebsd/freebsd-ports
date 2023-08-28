@@ -9,6 +9,7 @@ WWW=		https://community.kde.org/KTp
 
 DEPRECATED=	Will not be part of KDE Gear 23.08 in August
 EXPIRATION_DATE=	2023-09-30
+KDE_APPLICATIONS_VERSION=	23.04.3
 
 RUN_DEPENDS=	ktp-accounts-kcm>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-accounts-kcm \
 		ktp-approver>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-approver \

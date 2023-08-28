@@ -6,6 +6,7 @@ lib/libSolidExtras.so
 share/applications/org.kde.itinerary.desktop
 share/icons/hicolor/scalable/apps/org.kde.itinerary.svg
 share/knotifications5/itinerary.notifyrc
+share/locale/ar/LC_MESSAGES/kde-itinerary.mo
 share/locale/ca/LC_MESSAGES/kde-itinerary.mo
 share/locale/ca@valencia/LC_MESSAGES/kde-itinerary.mo
 share/locale/cs/LC_MESSAGES/kde-itinerary.mo

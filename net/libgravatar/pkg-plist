@@ -1,5 +1,4 @@
 include/KPim5/Gravatar/Gravatar/GravatarCache
-include/KPim5/Gravatar/Gravatar/GravatarConfigWidget
 include/KPim5/Gravatar/Gravatar/GravatarConfigureSettingsDialog
 include/KPim5/Gravatar/Gravatar/GravatarConfigureSettingsWidget
 include/KPim5/Gravatar/Gravatar/GravatarDownloadPixmapWidget
@@ -8,15 +7,10 @@ include/KPim5/Gravatar/gravatar/gravatar_export.h
 include/KPim5/Gravatar/gravatar/gravatarcache.h
 include/KPim5/Gravatar/gravatar/gravatarconfiguresettingsdialog.h
 include/KPim5/Gravatar/gravatar/gravatarconfiguresettingswidget.h
-include/KPim5/Gravatar/gravatar/gravatarconfigwidget.h
 include/KPim5/Gravatar/gravatar/gravatardownloadpixmapwidget.h
 include/KPim5/Gravatar/gravatar/gravatarresolvurljob.h
 include/KPim5/Gravatar/gravatar/gravatarsettings.h
 include/KPim5/Gravatar/gravatar_version.h
-lib/cmake/KF5Gravatar/KF5GravatarConfig.cmake
-lib/cmake/KF5Gravatar/KF5GravatarConfigVersion.cmake
-lib/cmake/KF5Gravatar/KPim5GravatarTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5Gravatar/KPim5GravatarTargets.cmake
 lib/cmake/KPim5Gravatar/KPim5GravatarConfig.cmake
 lib/cmake/KPim5Gravatar/KPim5GravatarConfigVersion.cmake
 lib/cmake/KPim5Gravatar/KPim5GravatarTargets-%%CMAKE_BUILD_TYPE%%.cmake

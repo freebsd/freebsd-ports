@@ -5,6 +5,8 @@ bin/konqueror
 etc/xdg/autostart/konqy_preload.desktop
 etc/xdg/konqsidebartngrc
 etc/xdg/translaterc
+etc/xdg/useragenttemplatesrc
+include/KF5/asyncselectorinterface.h
 include/KF5/konq_events.h
 include/KF5/konq_historyentry.h
 include/KF5/konq_historyprovider.h
@@ -63,6 +65,7 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_filter.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_general.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_java_js.so
+%%QT_PLUGINDIR%%/konqueror_kcms/khtml_useragent.so
 %%QT_PLUGINDIR%%/konqueror_kget_browser_integration.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
 %%QT_PLUGINDIR%%/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
@@ -84,6 +87,7 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/uachangerpluginwebenginepart_kpartplugins.so
 %%QT_PLUGINDIR%%/webenginepart/kpartplugins/webarchiverpluginwebenginepart_kpartplugins.so
 share/akregator/pics/feed.png
+share/applications/bookmarks.desktop
 share/applications/kfmclient.desktop
 share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
@@ -131,7 +135,19 @@ share/konqsidebartng/plugins/konqsidebar_bookmarks.desktop
 share/konqsidebartng/plugins/konqsidebar_history.desktop
 share/konqsidebartng/plugins/konqsidebar_places.desktop
 share/konqsidebartng/plugins/konqsidebar_tree.desktop
+%%DATADIR%%/about/body-background.png
+%%DATADIR%%/about/box-bottom-left.png
+%%DATADIR%%/about/box-bottom-middle.png
+%%DATADIR%%/about/box-bottom-right.png
+%%DATADIR%%/about/box-center.png
+%%DATADIR%%/about/box-middle-left.png
+%%DATADIR%%/about/box-middle-right.png
+%%DATADIR%%/about/box-top-left.png
+%%DATADIR%%/about/box-top-middle.png
+%%DATADIR%%/about/box-top-right.png
 %%DATADIR%%/about/intro.html
+%%DATADIR%%/about/kde_infopage.css
+%%DATADIR%%/about/kde_infopage_rtl.css
 %%DATADIR%%/about/konq.css
 %%DATADIR%%/about/launch.html
 %%DATADIR%%/about/plugins.html
@@ -139,6 +155,7 @@ share/konqsidebartng/plugins/konqsidebar_tree.desktop
 %%DATADIR%%/about/specs.html
 %%DATADIR%%/about/tips.html
 %%DATADIR%%/about/top-left-konqueror.png
+%%DATADIR%%/about/top-middle.png
 %%DATADIR%%/icons/hicolor/16x16/actions/google.png
 %%DATADIR%%/icons/hicolor/22x22/actions/google.png
 %%DATADIR%%/icons/hicolor/32x32/actions/google.png

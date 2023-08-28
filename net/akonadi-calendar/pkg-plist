@@ -14,7 +14,9 @@ include/KPim5/AkonadiCalendar/Akonadi/ITIPHandler
 include/KPim5/AkonadiCalendar/Akonadi/IncidenceChanger
 include/KPim5/AkonadiCalendar/Akonadi/IncidenceTreeModel
 include/KPim5/AkonadiCalendar/Akonadi/PublishDialog
+include/KPim5/AkonadiCalendar/Akonadi/SearchCollectionHelper
 include/KPim5/AkonadiCalendar/Akonadi/StandardCalendarActionManager
+include/KPim5/AkonadiCalendar/Akonadi/TodoModel
 include/KPim5/AkonadiCalendar/Akonadi/TodoPurger
 include/KPim5/AkonadiCalendar/akonadi-calendar_version.h
 include/KPim5/AkonadiCalendar/akonadi/akonadi-calendar_export.h
@@ -33,7 +35,9 @@ include/KPim5/AkonadiCalendar/akonadi/incidencechanger.h
 include/KPim5/AkonadiCalendar/akonadi/incidencetreemodel.h
 include/KPim5/AkonadiCalendar/akonadi/itiphandler.h
 include/KPim5/AkonadiCalendar/akonadi/publishdialog.h
+include/KPim5/AkonadiCalendar/akonadi/searchcollectionhelper.h
 include/KPim5/AkonadiCalendar/akonadi/standardcalendaractionmanager.h
+include/KPim5/AkonadiCalendar/akonadi/todomodel.h
 include/KPim5/AkonadiCalendar/akonadi/todopurger.h
 lib/cmake/KF5AkonadiCalendar/KF5AkonadiCalendarConfig.cmake
 lib/cmake/KF5AkonadiCalendar/KF5AkonadiCalendarConfigVersion.cmake

@@ -46,10 +46,6 @@ include/KPim5/KSieveUi/ksieveui/sievetreewidgetitem.h
 include/KPim5/KSieveUi/ksieveui/util.h
 include/KPim5/KSieveUi/ksieveui/util_p.h
 include/KPim5/KSieveUi/ksieveui/vacationmanager.h
-lib/cmake/KF5LibKSieve/KF5LibKSieveConfig.cmake
-lib/cmake/KF5LibKSieve/KF5LibKSieveConfigVersion.cmake
-lib/cmake/KF5LibKSieve/KPim5LibKSieveTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/KF5LibKSieve/KPim5LibKSieveTargets.cmake
 lib/cmake/KPim5LibKSieve/KPim5LibKSieveConfig.cmake
 lib/cmake/KPim5LibKSieve/KPim5LibKSieveConfigVersion.cmake
 lib/cmake/KPim5LibKSieve/KPim5LibKSieveTargets-%%CMAKE_BUILD_TYPE%%.cmake

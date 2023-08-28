@@ -34,7 +34,7 @@ KDF_DESC=			Shows free space of devices
 KDF_RUN_DEPENDS=		kdf>=${KDE_APPLICATIONS_VERSION}:sysutils/kdf
 
 KFLOPPY_DESC=			Floppy disk formatter
-KFLOPPY_RUN_DEPENDS=		kfloppy>=${KDE_APPLICATIONS_VERSION}:sysutils/kfloppy
+KFLOPPY_RUN_DEPENDS=		kfloppy>=23.04.3:sysutils/kfloppy
 
 KGPG_DESC=			Encryption tool for KDE
 KGPG_RUN_DEPENDS=		kgpg>=${KDE_APPLICATIONS_VERSION}:security/kgpg
