@@ -31,7 +31,7 @@ PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service \
 		share/xdg-desktop-portal/portals/wlr.portal
 
-# XXX Drop after FreeBSD 13.* EOL around 2026-01-31
+# XXX Drop after FreeBSD 13.4 EOL around 2026-01-31
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
 .if !exists(/usr/include/sys/timerfd.h)
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
