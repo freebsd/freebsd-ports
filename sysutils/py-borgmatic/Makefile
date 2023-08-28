@@ -1,6 +1,5 @@
 PORTNAME=	borgmatic
-PORTVERSION=	1.5.24
-PORTREVISION=	2
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +13,6 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borgbackup>=0:archivers/py-borgbackup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pykwalify>=0:textproc/py-pykwalify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 USES=		python
@@ -31,12 +29,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pkgutil-resolve-name>=1.3.10:devel/py-pkgut
 post-patch:
 	@cd ${WRKSRC} && \
 	  ${REINPLACE_CMD} -e 's|/etc/borgmatic|${PREFIX}/etc/borgmatic|g' \
-		borgmatic/commands/borgmatic.py \
-		borgmatic/commands/convert_config.py \
-		borgmatic/commands/generate_config.py \
 		borgmatic/config/collect.py \
-		borgmatic/config/convert.py \
 		borgmatic/config/schema.yaml \
-		tests/unit/config/test_collect.py
+		tests/unit/config/test_collect.py \
+		tests/unit/borg/test_create.py
 
 .include <bsd.port.post.mk>
