@@ -14,3 +14,4 @@ man/man1/hyprctl.1.gz
 %%DATADIR%%/wall_anime_8K.png
 share/pkgconfig/hyprland.pc
 share/wayland-sessions/hyprland.desktop
+share/xdg-desktop-portal/hyprland-portals.conf
