@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/libpfctl
 
-_LIBPFCTL_HASH=	134ced89c4ca
+_LIBPFCTL_HASH=	b3a714652ff0
 
 PLIST_FILES=	\
 		lib/libpfctl.so \
@@ -24,7 +24,7 @@ PLIST_FILES=	\
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} == "14.0"
+.if ${OSREL} == "15.0"
 DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
 .else
 DISTFILES=	libpfctl-${OSREL}.tar.gz
@@ -39,7 +39,7 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 upload:
-	for version in 12.4 13.2; \
+	for version in 12.4 13.2 14.0; \
 	do \
 		cd /usr/src/lib && \
 		git archive --format=tar.gz \
