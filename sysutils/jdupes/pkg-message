@@ -6,4 +6,11 @@ WARNING: jdupes -X/--extfilter size filtering is now INCLUSIVE instead
 of EXCLUSIVE.  Please see "jdupes -X help" for details.
 EOM
 }
+{ type: upgrade
+  maximum_version: "1.25.3"
+  message: <<EOM
+WARNING: jdupes -C/--chunk-size now uses KiB instead of bytes.
+Please update any scripts using this flag.
+EOM
+}
 ]
