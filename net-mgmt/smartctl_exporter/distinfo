@@ -1,6 +1,6 @@
-TIMESTAMP = 1691907450
-SHA256 (prometheus-community-smartctl_exporter-v0.10.0_GH0.tar.gz) = 84768cf368a10d0f4540d8b31af47a3c2e201824091b759e0cb337498addad98
-SIZE (prometheus-community-smartctl_exporter-v0.10.0_GH0.tar.gz) = 28553
+TIMESTAMP = 1693199537
+SHA256 (prometheus-community-smartctl_exporter-v0.11.0_GH0.tar.gz) = 9c171a9eaeaf7f25fa884f3a0d6b3db6ae85102c43ce6bb748e4dfbda4d84875
+SIZE (prometheus-community-smartctl_exporter-v0.11.0_GH0.tar.gz) = 29097
 SHA256 (alecthomas-kingpin-v2.3.2_GH0.tar.gz) = c728098f6d9c9bf2c0eb0f47c3e07babeb6613b2429c43284e8b779e186a92ab
 SIZE (alecthomas-kingpin-v2.3.2_GH0.tar.gz) = 51066
 SHA256 (alecthomas-units-b94a6e3cc137_GH0.tar.gz) = 85363142a53436bea696d297e5b5fcda6bc6a8104b1d7ba0db88ffee455b72e2
