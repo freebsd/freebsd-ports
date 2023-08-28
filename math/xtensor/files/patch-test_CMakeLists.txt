@@ -1,6 +1,6 @@
---- test/CMakeLists.txt.orig	2021-10-18 16:59:30 UTC
+--- test/CMakeLists.txt.orig	2023-03-20 09:44:36 UTC
 +++ test/CMakeLists.txt
-@@ -17,8 +17,8 @@ if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR
+@@ -14,12 +14,13 @@ if (CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR
  
      enable_testing()
  
@@ -10,8 +10,13 @@
 +    #set(XTENSOR_INCLUDE_DIR ${xtensor_INCLUDE_DIRS})
  endif ()
  
+ find_package(doctest            REQUIRED)
+ find_package(Threads)
++find_package(GTest)
+ 
  if(NOT CMAKE_BUILD_TYPE)
-@@ -272,7 +272,7 @@ foreach(filename IN LISTS COMMON_BASE XTENSOR_TESTS)
+     message(STATUS "Setting tests build type to Release")
+@@ -273,7 +274,7 @@ foreach(filename IN LISTS COMMON_BASE XTENSOR_TESTS)
          target_compile_definitions(${targetname} PRIVATE XTENSOR_USE_OPENMP)
      endif()
      target_include_directories(${targetname} PRIVATE ${XTENSOR_INCLUDE_DIR})
@@ -20,7 +25,7 @@
      add_custom_target(
          x${targetname}
          COMMAND ${targetname}
-@@ -298,7 +298,7 @@ if(XTENSOR_USE_OPENMP)
+@@ -299,7 +300,7 @@ if(XTENSOR_USE_OPENMP)
  endif()
  
  target_include_directories(test_xtensor_lib PRIVATE ${XTENSOR_INCLUDE_DIR})
@@ -29,8 +34,8 @@
  
  add_custom_target(xtest COMMAND test_xtensor_lib DEPENDS test_xtensor_lib)
  add_test(NAME xtest COMMAND test_xtensor_lib)
-@@ -309,5 +309,5 @@ add_test(NAME xtest COMMAND test_xtensor_lib)
- add_library(test_xtensor_core_lib ${COMMON_BASE} ${TEST_HEADERS} ${XTENSOR_HEADERS})
+@@ -310,5 +311,5 @@ add_test(NAME xtest COMMAND test_xtensor_lib)
+ add_library(test_xtensor_core_lib STATIC ${COMMON_BASE} ${TEST_HEADERS} ${XTENSOR_HEADERS})
  target_include_directories(test_xtensor_core_lib PRIVATE ${XTENSOR_INCLUDE_DIR})
  
 -target_link_libraries(test_xtensor_core_lib PRIVATE xtensor doctest::doctest ${CMAKE_THREAD_LIBS_INIT})

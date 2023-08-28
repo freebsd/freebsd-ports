@@ -71,7 +71,7 @@ include/xtensor/xutils.hpp
 include/xtensor/xvectorize.hpp
 include/xtensor/xview.hpp
 include/xtensor/xview_utils.hpp
-lib/cmake/xtensor/xtensorConfig.cmake
-lib/cmake/xtensor/xtensorConfigVersion.cmake
-lib/cmake/xtensor/xtensorTargets.cmake
-libdata/pkgconfig/xtensor.pc
+share/cmake/xtensor/xtensorConfig.cmake
+share/cmake/xtensor/xtensorConfigVersion.cmake
+share/cmake/xtensor/xtensorTargets.cmake
+share/pkgconfig/xtensor.pc
