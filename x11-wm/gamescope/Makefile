@@ -19,8 +19,7 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		glm>0:math/glm \
 		hwdata>0:misc/hwdata \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libliftoff.so:graphics/libliftoff \
 		libvulkan.so:graphics/vulkan-loader \
 		libwayland-server.so:graphics/wayland \
