@@ -38,6 +38,7 @@
     SUBDIR += gds3d
     SUBDIR += gdscpp
     SUBDIR += gdsreader
+    SUBDIR += gdstk
     SUBDIR += gdt
     SUBDIR += geda
     SUBDIR += gerbv
