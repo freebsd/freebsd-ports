@@ -1,6 +1,5 @@
 PORTNAME=	faketty
-DISTVERSION=	1.0.12
-PORTREVISION=	6
+DISTVERSION=	1.0.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,46 +15,37 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtolnay
 
-CARGO_CRATES=	bitflags-1.3.2 \
-		cc-1.0.78 \
+CARGO_CRATES=	anstream-0.5.0 \
+		anstyle-1.0.2 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-2.1.0 \
+		bitflags-2.4.0 \
 		cfg-if-1.0.0 \
-		clap-4.0.32 \
-		clap_derive-4.0.21 \
-		clap_lex-0.3.0 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
-		heck-0.4.0 \
-		hermit-abi-0.2.6 \
-		io-lifetimes-1.0.3 \
-		is-terminal-0.4.2 \
-		libc-0.2.139 \
-		linux-raw-sys-0.1.4 \
-		nix-0.26.1 \
-		os_str_bytes-6.4.1 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
-		quote-1.0.23 \
-		rustix-0.36.6 \
-		scratch-1.0.3 \
-		static_assertions-1.1.0 \
+		clap-4.4.0 \
+		clap_builder-4.4.0 \
+		clap_derive-4.4.0 \
+		clap_lex-0.5.1 \
+		colorchoice-1.0.0 \
+		heck-0.4.1 \
+		libc-0.2.147 \
+		nix-0.27.0 \
+		proc-macro2-1.0.66 \
+		quote-1.0.33 \
+		scratch-1.0.7 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
-		termcolor-1.1.3 \
-		unicode-ident-1.0.6 \
-		version_check-0.9.4 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0
+		syn-2.0.29 \
+		unicode-ident-1.0.11 \
+		utf8parse-0.2.1 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5
 
 PLIST_FILES=	bin/${PORTNAME}
 
