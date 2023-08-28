@@ -1,9 +1,9 @@
 Add "PythonEnvironmentStub" stub function that is used if the NO_VENV
 environment variable is set.
 
---- build/ninja_gen/src/python.rs.orig	2023-03-31 02:32:25 UTC
+--- build/ninja_gen/src/python.rs.orig	2023-08-19 22:41:35 UTC
 +++ build/ninja_gen/src/python.rs
-@@ -87,6 +87,11 @@ pub struct PythonEnvironment {
+@@ -86,6 +86,11 @@ pub struct PythonEnvironment {
      pub extra_binary_exports: &'static [&'static str],
  }
  
@@ -15,7 +15,7 @@ environment variable is set.
  impl BuildAction for PythonEnvironment {
      fn command(&self) -> &str {
          "$runner pyenv $python_binary $builddir/$pyenv_folder $system_pkgs $base_requirements $requirements"
-@@ -109,6 +114,35 @@ impl BuildAction for PythonEnvironment {
+@@ -108,6 +113,35 @@ impl BuildAction for PythonEnvironment {
          build.add_variable("pyenv_folder", self.folder);
          build.add_outputs_ext("bin", bin_path("python"), true);
          build.add_outputs_ext("pip", bin_path("pip"), true);
@@ -45,7 +45,7 @@ environment variable is set.
 +            vec![path]
 +        };
 +
-+        build.add_inputs("python_binary", inputs!["$python_binary"]);
++        build.add_inputs("python_binary", inputs![":python_binary"]);
 +        build.add_variable("pyenv_folder", self.folder);
 +        build.add_outputs_ext("bin", bin_path("python"), true);
          for binary in self.extra_binary_exports {
