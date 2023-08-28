@@ -1,6 +1,6 @@
-TIMESTAMP = 1678876771
-SHA256 (MobSF-yara-python-dex-1.0.4_GH0.tar.gz) = e8db87dbc8e5bb381bfeb9c28f5a639f315ed0c523cf25c8b43a19d89fb8911c
-SIZE (MobSF-yara-python-dex-1.0.4_GH0.tar.gz) = 4446
+TIMESTAMP = 1693241266
+SHA256 (MobSF-yara-python-dex-1.0.6_GH0.tar.gz) = 2f15d0e748b3180828a071eb10e2211a4b05131149d15bb97db184e285178b2f
+SIZE (MobSF-yara-python-dex-1.0.6_GH0.tar.gz) = 4491
 SHA256 (VirusTotal-yara-python-188cb6e85137f715fef563f61c6b4f21ad026562_GH0.tar.gz) = f685495d280ba2105fa4ca31e0ac8173f16c93c28514c2e66b25a57c7d2d45b8
 SIZE (VirusTotal-yara-python-188cb6e85137f715fef563f61c6b4f21ad026562_GH0.tar.gz) = 31860
 SHA256 (VirusTotal-yara-ed1a1a430c64cf908b61a5fadc3958866a840bc6_GH0.tar.gz) = 282b97f106076f389e8f74e8e957bdcefbe87cc34887a8be6b5efd64cc96f920
