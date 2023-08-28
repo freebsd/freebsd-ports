@@ -1,11 +1,8 @@
 PORTNAME=	edk2
-PORTVERSION=	g202202
-PORTREVISION=	10
+PORTVERSION=	g202308
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	22130dcd98b4d4b76ac8d922adb4a2dbc86fa52c.patch:-p1 \
-		85021f8cf22d1bd4114803c6c610dea5ef0059f1.patch:-p1
 
 MAINTAINER=	uboot@FreeBSD.org
 COMMENT=	EDK2 Firmware for ${FLAVOR}
@@ -27,19 +24,19 @@ BUILD_DEPENDS+=	dtc>=1.4.1:sysutils/dtc \
 		bash:shells/bash
 
 # Both platform and non-osi repository don't have release, use latest known to work tag
-PLATFORM_TAG=	38855c56
-NONOSI_TAG=	6996a45d
+PLATFORM_TAG=	e509ac5a72
+NONOSI_TAG=	8c09bd0955
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tianocore
-GH_TAGNAME=	edk2-stable202202
+GH_TAGNAME=	edk2-stable202308
 GH_TUPLE=	tianocore:edk2-platforms:${PLATFORM_TAG}:platforms \
 		tianocore:edk2-non-osi:${NONOSI_TAG}:nonosi \
-		openssl:openssl:OpenSSL_1_1_1j:openssl/CryptoPkg/Library/OpensslLib/openssl \
-		ucb-bar:berkeley-softfloat-3:master:softfloat/ArmPkg/Library/ArmSoftFloatLib/berkeley-softfloat-3 \
-		kkos:oniguruma:v6.9.4_mark1:oniguruma/MdeModulePkg/Universal/RegularExpressionDxe/oniguruma \
 		google:brotli:v1.0.9-35-gf4153a0:brotli/MdeModulePkg/Library/BrotliCustomDecompressLib/brotli \
-		akheron:jansson:v2.13.1:jansson/RedfishPkg/Library/JsonLib/jansson
+		google:googletest:release-1.8.0-2983-g86add134:googletest/UnitTestFrameworkPkg/Library/GoogleTestLib/googletest \
+		MIPI-Alliance:public-mipi-sys-t:v1.1+edk2:mipisyst/MdePkg/Library/MipiSysTLib/mipisyst \
+		openssl:openssl:openssl-3.0.9:openssl/CryptoPkg/Library/OpensslLib/openssl \
+		tianocore:edk2-cmocka:cmocka-1.1.5-23-g1cc9cde:cmocka/UnitTestFrameworkPkg/Library/CmockaLib/cmocka
 
 .include <bsd.port.pre.mk>
 
