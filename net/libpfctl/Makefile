@@ -1,7 +1,7 @@
 .include <bsd.port.pre.mk>
 
 PORTNAME=	libpfctl
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
 
