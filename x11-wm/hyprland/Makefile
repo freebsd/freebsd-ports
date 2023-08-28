@@ -1,13 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.0
-PORTREVISION=	1
+DISTVERSION=	0.29.0
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	7a2027d1fd5d.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/2828
-PATCHFILES+=	7d98181ade0a.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2884
-PATCHFILES+=	2e6693fbb650.patch:-p1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -42,14 +36,6 @@ OPTIONS_DEFAULT=X11
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland
 
-post-extract:
-.if defined(PATCHFILES) && ${PATCHFILES:M7d98181ade0a*}
-# Pretend to be a regular file for vendor patch to apply as is
-	@${RMDIR} ${WRKSRC}/subprojects/wlroots
-	@${ECHO_CMD} "Subproject commit e8d545a9770a2473db32e0a0bfa757b05d2af4f3" \
-		>${WRKSRC}/subprojects/wlroots
-.endif
-
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit -e "/GIT_BRANCH/s/run_command.*/'main'/" \
@@ -61,9 +47,6 @@ post-patch:
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/render/OpenGL.cpp
-# Respect LOCALBASE for xdg-desktop-portal-hyprland installation
-	@${REINPLACE_CMD} 's,/usr/share,${LOCALBASE}/share,g' \
-		${WRKSRC}/src/Compositor.cpp
 
 .ifdef GH_TUPLE
 post-configure:
