@@ -1292,6 +1292,7 @@
     SUBDIR += libisofs
     SUBDIR += libixp
     SUBDIR += libjitterentropy
+    SUBDIR += libjodycode
     SUBDIR += libk8055
     SUBDIR += libkiwix
     SUBDIR += libklel
