@@ -1,3 +1,33 @@
+  <vuln vid="36a37c92-44b1-11ee-b091-6162c1274384">
+    <topic>gitea -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.20.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/25097">
+	  <p>Fix API leaking Usermail if not logged in</p>
+	  <p>The API should only return the real Mail of a User, if the
+	    caller is logged in. The check do to this don't work. This PR
+	    fixes this. This not really a security issue, but can lead to
+	    Spam.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.20.3</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.20.3</url>
+    </references>
+    <dates>
+      <discovery>2023-06-06</discovery>
+      <entry>2023-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5fa332b9-4269-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
