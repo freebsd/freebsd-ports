@@ -264,6 +264,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/xpp.lang
 %%DATADIR%%/langDefs/yaiff.lang
 %%DATADIR%%/langDefs/yaml.lang
+%%DATADIR%%/langDefs/yaml_ansible.lang
 %%DATADIR%%/langDefs/yang.lang
 %%DATADIR%%/langDefs/zig.lang
 %%DATADIR%%/langDefs/znn.lang
