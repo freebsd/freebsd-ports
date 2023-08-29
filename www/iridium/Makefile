@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.07.115.1
-PORTREVISION=	3
+PORTVERSION=	2023.08.116
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -115,7 +114,6 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_allocator_shim=false \
 		use_aura=true \
 		use_custom_libcxx=false \
-		use_gnome_keyring=false \
 		use_lld=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \

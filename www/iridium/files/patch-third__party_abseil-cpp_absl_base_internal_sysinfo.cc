@@ -1,6 +1,6 @@
---- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2022-12-06 08:09:13 UTC
+--- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig	2023-08-28 20:17:35 UTC
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
-@@ -30,7 +30,7 @@
+@@ -30,10 +30,14 @@
  #include <sys/syscall.h>
  #endif
  
@@ -9,7 +9,30 @@
  #include <sys/sysctl.h>
  #endif
  
-@@ -310,9 +310,11 @@ static double GetNominalCPUFrequency() {
++#if defined(__FreeBSD__)
++#include <pthread_np.h>
++#endif
++
+ #if defined(__myriad2__)
+ #include <rtems.h>
+ #endif
+@@ -186,6 +190,7 @@ static double GetNominalCPUFrequency() {
+ 
+ #else
+ 
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
+ // Helper function for reading a long from a file. Returns true if successful
+ // and the memory location pointed to by value is set to the value read.
+ static bool ReadLongFromFile(const char *file, long *value) {
+@@ -212,6 +217,7 @@ static bool ReadLongFromFile(const char *file, long *v
+   }
+   return ret;
+ }
++#endif
+ 
+ #if defined(ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY)
+ 
+@@ -311,9 +317,11 @@ static double GetNominalCPUFrequency() {
    // a new mode (turbo mode). Essentially, those frequencies cannot
    // always be relied upon. The same reasons apply to /proc/cpuinfo as
    // well.
@@ -21,3 +44,35 @@
  
  #if defined(ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY)
    // On these platforms, the TSC frequency is the nominal CPU
+@@ -332,10 +340,12 @@ static double GetNominalCPUFrequency() {
+   // If CPU scaling is in effect, we want to use the *maximum*
+   // frequency, not whatever CPU speed some random processor happens
+   // to be using now.
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) // pledge violation
+   if (ReadLongFromFile("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq",
+                        &freq)) {
+     return freq * 1e3;  // Value is kHz.
+   }
++#endif
+ 
+   return 1.0;
+ #endif  // !ABSL_INTERNAL_UNSCALED_CYCLECLOCK_FREQUENCY_IS_CPU_FREQUENCY
+@@ -433,6 +443,18 @@ pid_t GetTID() {
+   static_assert(sizeof(pid_t) == sizeof(thread),
+                 "In NaCL int expected to be the same size as a pointer");
+   return reinterpret_cast<pid_t>(thread);
++}
++
++#elif defined(__OpenBSD__)
++
++pid_t GetTID() {
++  return getthrid();
++}
++
++#elif defined(__FreeBSD__)
++
++pid_t GetTID() {
++  return pthread_getthreadid_np();
+ }
+ 
+ #else

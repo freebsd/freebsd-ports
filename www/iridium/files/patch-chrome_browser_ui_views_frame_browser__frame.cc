@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
 @@ -51,7 +51,7 @@
  #include "components/user_manager/user_manager.h"
@@ -27,7 +27,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -490,7 +490,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -508,7 +508,7 @@ void BrowserFrame::SelectNativeTheme() {
      return;
    }
  
@@ -36,7 +36,7 @@
    const auto* linux_ui_theme =
        ui::LinuxUiTheme::GetForWindow(GetNativeWindow());
    // Ignore the system theme for web apps with window-controls-overlay as the
-@@ -507,7 +507,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -525,7 +525,7 @@ void BrowserFrame::SelectNativeTheme() {
  bool BrowserFrame::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

@@ -1,4 +1,4 @@
---- third_party/boringssl/src/crypto/fipsmodule/aes/asm/aesni-x86_64.pl.orig	2023-07-24 14:27:53 UTC
+--- third_party/boringssl/src/crypto/fipsmodule/aes/asm/aesni-x86_64.pl.orig	2023-08-28 20:17:35 UTC
 +++ third_party/boringssl/src/crypto/fipsmodule/aes/asm/aesni-x86_64.pl
 @@ -275,6 +275,7 @@ $code.=<<___;
  .align	16
@@ -32,7 +32,7 @@
  #ifdef BORINGSSL_DISPATCH_TEST
  	movb \$1,BORINGSSL_function_hit(%rip)
  #endif
-@@ -1779,6 +1783,7 @@ $code.=<<___;
+@@ -1781,6 +1785,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_xts_encrypt:
  .cfi_startproc
@@ -40,7 +40,7 @@
  	lea	(%rsp),%r11			# frame pointer
  .cfi_def_cfa_register	%r11
  	push	%rbp
-@@ -2262,6 +2267,7 @@ $code.=<<___;
+@@ -2264,6 +2269,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_xts_decrypt:
  .cfi_startproc
@@ -48,7 +48,7 @@
  	lea	(%rsp),%r11			# frame pointer
  .cfi_def_cfa_register	%r11
  	push	%rbp
-@@ -2780,6 +2786,7 @@ $code.=<<___;
+@@ -2782,6 +2788,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_cbc_encrypt:
  .cfi_startproc
@@ -56,7 +56,7 @@
  	test	$len,$len		# check length
  	jz	.Lcbc_ret
  
-@@ -3329,6 +3336,7 @@ $code.=<<___;
+@@ -3331,6 +3338,7 @@ $code.=<<___;
  .align	16
  ${PREFIX}_set_decrypt_key:
  .cfi_startproc
@@ -64,7 +64,7 @@
  	.byte	0x48,0x83,0xEC,0x08	# sub rsp,8
  .cfi_adjust_cfa_offset	8
  	call	__aesni_set_encrypt_key
-@@ -3401,6 +3409,7 @@ $code.=<<___;
+@@ -3403,6 +3411,7 @@ $code.=<<___;
  ${PREFIX}_set_encrypt_key:
  __aesni_set_encrypt_key:
  .cfi_startproc

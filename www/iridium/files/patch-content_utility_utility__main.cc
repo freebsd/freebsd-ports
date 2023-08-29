@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2023-07-24 14:27:53 UTC
+--- content/utility/utility_main.cc.orig	2023-08-28 20:17:35 UTC
 +++ content/utility/utility_main.cc
 @@ -31,7 +31,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -44,7 +44,7 @@
  #include "components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"  // nogncheck
  #endif
  
-@@ -91,7 +97,7 @@ namespace content {
+@@ -92,7 +98,7 @@ namespace content {
  
  namespace {
  
@@ -53,7 +53,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -119,7 +125,7 @@ std::vector<std::string> GetNetworkContextsParentDirec
+@@ -120,7 +126,7 @@ std::vector<std::string> GetNetworkContextsParentDirec
  
  bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox sandbox_type) {
    const bool obtain_gpu_info =
@@ -62,7 +62,7 @@
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
-@@ -235,7 +241,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -236,7 +242,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -71,7 +71,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -264,7 +270,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -265,7 +271,7 @@ int UtilityMain(MainFunctionParams parameters) {
        pre_sandbox_hook = base::BindOnce(&screen_ai::ScreenAIPreSandboxHook);
        break;
  #endif
@@ -80,7 +80,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -291,6 +297,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -292,6 +298,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -88,7 +88,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox::policy::SandboxLinux::Options sandbox_options;
-@@ -299,6 +306,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -300,6 +307,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

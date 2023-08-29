@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame.h.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/ui/views/frame/browser_frame.h.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.h
 @@ -12,7 +12,7 @@
  #include "ui/views/context_menu_controller.h"
@@ -18,7 +18,7 @@
    // Returns which edges of the frame are tiled.
    const ui::WindowTiledEdges& tiled_edges() const { return tiled_edges_; }
    void set_tiled_edges(ui::WindowTiledEdges tiled_edges) {
-@@ -233,7 +233,7 @@ class BrowserFrame : public views::Widget, public view
+@@ -231,7 +231,7 @@ class BrowserFrame : public views::Widget, public view
    // contents for smoother dragging.
    TabDragKind tab_drag_kind_ = TabDragKind::kNone;
  

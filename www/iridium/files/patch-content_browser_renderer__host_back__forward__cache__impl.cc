@@ -1,6 +1,6 @@
---- content/browser/renderer_host/back_forward_cache_impl.cc.orig	2023-07-24 14:27:53 UTC
+--- content/browser/renderer_host/back_forward_cache_impl.cc.orig	2023-08-28 20:17:35 UTC
 +++ content/browser/renderer_host/back_forward_cache_impl.cc
-@@ -58,7 +58,7 @@ BASE_FEATURE(kBackForwardCacheSize,
+@@ -65,7 +65,7 @@ BASE_FEATURE(kBackForwardCacheSize,
  // Sets the BackForwardCache size for desktop.
  // See crbug.com/1291435.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

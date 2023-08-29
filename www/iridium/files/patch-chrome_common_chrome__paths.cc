@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/common/chrome_paths.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -48,14 +48,14 @@
  
@@ -27,7 +27,7 @@
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -418,12 +418,14 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -419,12 +419,14 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -44,7 +44,7 @@
  #endif
        break;
      }
-@@ -433,7 +435,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -434,7 +436,7 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -53,7 +53,7 @@
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
        if (!base::PathService::Get(chrome::DIR_USER_DATA, &cur))
          return false;
-@@ -441,7 +443,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -442,7 +444,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -62,7 +62,7 @@
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -485,7 +487,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -486,7 +488,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
  #endif
  
@@ -71,7 +71,7 @@
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -499,9 +501,12 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -500,9 +502,12 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL(
            "/etc/opt/chrome/native-messaging-hosts"));

@@ -1,15 +1,15 @@
---- services/video_capture/video_capture_service_impl.cc.orig	2023-07-24 14:27:53 UTC
+--- services/video_capture/video_capture_service_impl.cc.orig	2023-08-28 20:17:35 UTC
 +++ services/video_capture/video_capture_service_impl.cc
-@@ -43,7 +43,7 @@
+@@ -40,7 +40,7 @@
  #include "services/video_capture/lacros/device_factory_adapter_lacros.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "media/capture/capture_switches.h"
+ #include "media/capture/video/linux/video_capture_gpu_memory_buffer_manager.h"
  #include "services/viz/public/cpp/gpu/context_provider_command_buffer.h"
- #endif  // BUILDFLAG(IS_LINUX)
-@@ -109,7 +109,7 @@ class VideoCaptureServiceImpl::GpuDependenciesContext 
+@@ -107,7 +107,7 @@ class VideoCaptureServiceImpl::GpuDependenciesContext 
        this};
  };
  
@@ -18,7 +18,7 @@
  // Intended usage of this class is to create viz::Gpu in utility process and
  // connect to viz::GpuClient of browser process, which will call to Gpu service.
  // Also, this class holds the viz::ContextProvider to listen and monitor Gpu
-@@ -256,7 +256,7 @@ void VideoCaptureServiceImpl::LazyInitializeGpuDepende
+@@ -285,7 +285,7 @@ void VideoCaptureServiceImpl::LazyInitializeGpuDepende
    if (!gpu_dependencies_context_)
      gpu_dependencies_context_ = std::make_unique<GpuDependenciesContext>();
  
@@ -27,7 +27,7 @@
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
      if (!viz_gpu_context_provider_) {
        viz_gpu_context_provider_ =
-@@ -345,7 +345,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
+@@ -381,7 +381,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
  }
  #endif
  

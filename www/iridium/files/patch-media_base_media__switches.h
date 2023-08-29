@@ -1,6 +1,6 @@
---- media/base/media_switches.h.orig	2023-07-24 14:27:53 UTC
+--- media/base/media_switches.h.orig	2023-08-28 20:17:35 UTC
 +++ media/base/media_switches.h
-@@ -290,7 +290,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
+@@ -300,7 +300,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseDecoderStreamFor
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseFakeDeviceForMediaStream);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseMediaHistoryStore);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseR16Texture);
@@ -9,7 +9,7 @@
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinux);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoDecodeLinuxGL);
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kVaapiVideoEncodeLinux);
-@@ -423,7 +423,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kExposeOutOfProcessV
+@@ -436,7 +436,7 @@ MEDIA_EXPORT BASE_DECLARE_FEATURE(kExposeOutOfProcessV
  MEDIA_EXPORT BASE_DECLARE_FEATURE(kUseOutOfProcessVideoDecoding);
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  

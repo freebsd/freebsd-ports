@@ -1,6 +1,6 @@
---- services/network/public/mojom/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- services/network/public/mojom/BUILD.gn.orig	2023-08-28 20:17:35 UTC
 +++ services/network/public/mojom/BUILD.gn
-@@ -464,11 +464,11 @@ mojom("url_loader_base") {
+@@ -465,11 +465,11 @@ mojom("url_loader_base") {
    }
  
    enabled_features = []

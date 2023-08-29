@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_factory.h.orig	2023-01-17 19:19:00 UTC
+--- ui/base/x/x11_cursor_factory.h.orig	2023-08-28 20:17:35 UTC
 +++ ui/base/x/x11_cursor_factory.h
 @@ -20,7 +20,7 @@ namespace ui {
  class X11Cursor;
@@ -9,7 +9,7 @@
  class LinuxUi;
  #endif
  
-@@ -59,7 +59,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
+@@ -60,7 +60,7 @@ class COMPONENT_EXPORT(UI_BASE_X) X11CursorFactory
  
    std::map<mojom::CursorType, scoped_refptr<X11Cursor>> default_cursors_;
  
