@@ -1,9 +1,9 @@
-PORTNAME=	dbus-tcl
-PORTVERSION=	3.0
+PORTNAME=	dbus
+PORTVERSION=	3.1
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://chiselapp.com/user/schelte/repository/dbus/uv/
-DISTNAME=	dbus-${PORTVERSION}
+PKGNAMESUFFIX=	-tcl
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tcl interface to the D-Bus messaging system
