@@ -4,6 +4,9 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+BROKEN_purecap=	requires missing CheriABI Python
+USE_PKG64=	1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for installing Python wheels
 WWW=		https://github.com/pypa/installer
