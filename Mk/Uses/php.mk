@@ -321,7 +321,7 @@ PHP_MOD_PRIO=	30
 PHP_MOD_PRIO=	20
 .      endif
 .    endif
-PHP_EXT_INI_FILE=	etc/php/ext-${PHP_MOD_PRIO}-${PHP_MODNAME}.ini
+PHP_EXT_INI_FILE=	etc/php/ext-${PHP_MOD_PRIO}-${PHP_MODNAME}.ini.sample
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
@@ -356,7 +356,7 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@preunexec ${RM} %D/include/php/ext/php_config.h.orig" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "${PHP_EXT_INI_FILE}" \
+	@${ECHO_CMD} "@sample ${PHP_EXT_INI_FILE}" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "[" > ${PHP_EXT_PKGMESSAGE}
 	@${ECHO_CMD} "{" >> ${PHP_EXT_PKGMESSAGE}
