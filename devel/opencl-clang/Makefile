@@ -1,6 +1,7 @@
 PORTNAME=	opencl-clang
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${DISTVERSION_${FLAVOR}}
+DISTVERSION_llvm17=	17.0.0
 DISTVERSION_llvm16=	16.0.0
 DISTVERSION_llvm15=	15.0.0
 DISTVERSION_llvm14=	14.0.0
@@ -11,7 +12,7 @@ CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-.if !defined(FLAVOR) || ${FLAVOR} == llvm16
+.if ${FLAVOR:U} == llvm16
 PATCHFILES+=	529a9188114b.patch:-p1 # https://github.com/intel/opencl-clang/pull/415
 PATCHFILES+=	9f50367661bb.patch:-p1 # https://github.com/intel/opencl-clang/pull/419
 PATCHFILES+=	5491ffa3fde5.patch:-p1 # https://github.com/intel/opencl-clang/pull/416
@@ -28,7 +29,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${16 15 14 13 12 11:L:S/^/llvm/}
+FLAVORS=	${17 16 15 14 13 12 11:L:S/^/llvm/}
 
 USES=		cmake compiler:c++11-lib
 USE_GITHUB=	yes
