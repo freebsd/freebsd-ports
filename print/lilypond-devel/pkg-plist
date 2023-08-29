@@ -306,6 +306,7 @@ share/emacs/site-lisp/lilypond-words.el
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/midi.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/modal-transforms.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/music-functions.scm
+%%DATADIR%%/%%DISTVERSION%%/scm/lily/operators.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/output-lib.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/output-ps.scm
 %%DATADIR%%/%%DISTVERSION%%/scm/lily/output-svg.scm
