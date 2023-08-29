@@ -1,11 +1,7 @@
 PORTNAME=	libavif
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	648f8d0dd03f.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/1525
-PATCHFILES+=	d854bb762db6.patch:-p1 # https://github.com/AOMediaCodec/libavif/pull/1525
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for encoding and decoding .avif files
