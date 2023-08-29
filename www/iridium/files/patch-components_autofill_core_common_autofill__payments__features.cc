@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_payments_features.cc.orig	2023-07-24 14:27:53 UTC
+--- components/autofill/core/common/autofill_payments_features.cc.orig	2023-08-28 20:17:35 UTC
 +++ components/autofill/core/common/autofill_payments_features.cc
-@@ -281,7 +281,7 @@ const base::FeatureParam<int>
+@@ -301,7 +301,7 @@ BASE_FEATURE(kAutofillUseTwoDotsForLastFourDigits,
  bool ShouldShowImprovedUserConsentForCreditCardSave() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

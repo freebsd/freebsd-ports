@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/enterprise/remote_commands/cbcm_remote_commands_factory.cc
 @@ -11,7 +11,7 @@
  #include "chrome/browser/profiles/profile_manager.h"
@@ -6,7 +6,7 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
- #include "chrome/browser/enterprise/connectors/device_trust/device_trust_features.h"
+ #include "chrome/browser/enterprise/connectors/device_trust/device_trust_features.h"  // nogncheck
  #include "chrome/browser/enterprise/remote_commands/rotate_attestation_credential_job.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
 @@ -31,7 +31,7 @@ CBCMRemoteCommandsFactory::BuildJobForType(

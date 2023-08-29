@@ -1,8 +1,8 @@
---- ui/base/cursor/cursor_factory.cc.orig	2023-03-13 07:33:08 UTC
+--- ui/base/cursor/cursor_factory.cc.orig	2023-08-28 20:17:35 UTC
 +++ ui/base/cursor/cursor_factory.cc
 @@ -89,7 +89,7 @@ void CursorFactory::ObserveThemeChanges() {
- 
- void CursorFactory::SetDeviceScaleFactor(float scale) {}
+   NOTIMPLEMENTED();
+ }
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

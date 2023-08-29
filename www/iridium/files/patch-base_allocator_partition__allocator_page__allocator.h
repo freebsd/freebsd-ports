@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/page_allocator.h.orig	2023-07-24 14:27:53 UTC
+--- base/allocator/partition_allocator/page_allocator.h.orig	2023-08-28 20:17:35 UTC
 +++ base/allocator/partition_allocator/page_allocator.h
-@@ -241,7 +241,7 @@ void DecommitAndZeroSystemPages(void* address, size_t 
+@@ -245,7 +245,7 @@ void DecommitAndZeroSystemPages(void* address, size_t 
  // recommitted. Do not assume that this will not change over time.
  constexpr PA_COMPONENT_EXPORT(
      PARTITION_ALLOC) bool DecommittedMemoryIsAlwaysZeroed() {

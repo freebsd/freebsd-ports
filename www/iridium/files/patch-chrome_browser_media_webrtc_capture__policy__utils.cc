@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/capture_policy_utils.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/media/webrtc/capture_policy_utils.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/media/webrtc/capture_policy_utils.cc
-@@ -124,7 +124,7 @@ AllowedScreenCaptureLevel GetAllowedCaptureLevel(const
+@@ -139,7 +139,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry
  }
  
  bool IsGetAllScreensMediaAllowedForAnySite(content::BrowserContext* context) {
@@ -9,7 +9,7 @@
    Profile* profile = Profile::FromBrowserContext(context);
    if (!profile) {
      return false;
-@@ -160,7 +160,7 @@ bool IsGetAllScreensMediaAllowedForAnySite(content::Br
+@@ -174,7 +174,7 @@ bool IsGetAllScreensMediaAllowedForAnySite(content::Br
  
  bool IsGetAllScreensMediaAllowed(content::BrowserContext* context,
                                   const GURL& url) {

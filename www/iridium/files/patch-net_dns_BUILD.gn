@@ -1,6 +1,6 @@
---- net/dns/BUILD.gn.orig	2023-03-13 07:33:08 UTC
+--- net/dns/BUILD.gn.orig	2023-08-28 20:17:35 UTC
 +++ net/dns/BUILD.gn
-@@ -124,7 +124,7 @@ source_set("dns") {
+@@ -128,7 +128,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
@@ -9,7 +9,7 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -165,6 +165,7 @@ source_set("dns") {
+@@ -169,6 +169,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",
@@ -17,7 +17,7 @@
    ]
  
    allow_circular_includes_from = [
-@@ -428,9 +429,9 @@ source_set("tests") {
+@@ -434,9 +435,9 @@ source_set("tests") {
  
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]

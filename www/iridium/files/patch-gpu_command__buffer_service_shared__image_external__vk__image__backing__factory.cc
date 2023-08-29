@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-07-24 14:27:53 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-08-28 20:17:35 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -209,7 +209,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
+@@ -226,7 +226,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
      return false;
    }
  

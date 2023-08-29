@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -127,7 +127,7 @@
+@@ -129,7 +129,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,16 +9,16 @@
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_keyed_service.h"
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_service_factory.h"
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
-@@ -475,7 +475,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -477,7 +477,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-     if (base::FeatureList::IsEnabled(features::kTabGroupsSaveSyncIntegration)) {
+     if (base::FeatureList::IsEnabled(features::kTabGroupsSave)) {
        controllers.push_back(std::make_unique<syncer::ModelTypeController>(
            syncer::SAVED_TAB_GROUP,
-@@ -488,7 +488,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -490,7 +490,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  
  // Chrome prefers OS provided spell checkers where they exist. So only sync the
  // custom dictionary on platforms that typically don't provide one.
@@ -27,12 +27,12 @@
      // Dictionary sync is enabled by default.
      if (GetPrefService()->GetBoolean(spellcheck::prefs::kSpellCheckEnable)) {
        controllers.push_back(
-@@ -655,7 +655,7 @@ base::WeakPtr<syncer::ModelTypeControllerDelegate>
+@@ -661,7 +661,7 @@ base::WeakPtr<syncer::ModelTypeControllerDelegate>
  ChromeSyncClient::GetControllerDelegateForModelType(syncer::ModelType type) {
    switch (type) {
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
      case syncer::SAVED_TAB_GROUP: {
-       DCHECK(base::FeatureList::IsEnabled(
-           features::kTabGroupsSaveSyncIntegration));
+       DCHECK(base::FeatureList::IsEnabled(features::kTabGroupsSave));
+       return SavedTabGroupServiceFactory::GetForProfile(profile_)

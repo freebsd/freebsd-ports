@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2023-07-24 14:27:53 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2023-08-28 20:17:35 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
-@@ -394,8 +394,12 @@ bool TryRecommitSystemPagesInternal(
+@@ -396,8 +396,12 @@ bool TryRecommitSystemPagesInternal(
  
  void DiscardSystemPagesInternal(uintptr_t address, size_t length) {
    void* ptr = reinterpret_cast<void*>(address);

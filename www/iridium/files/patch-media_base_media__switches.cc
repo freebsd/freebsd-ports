@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2023-07-24 14:27:53 UTC
+--- media/base/media_switches.cc.orig	2023-08-28 20:17:35 UTC
 +++ media/base/media_switches.cc
 @@ -15,7 +15,7 @@
  #include "gpu/config/gpu_finch_features.h"
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -636,7 +636,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
+@@ -648,7 +648,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
  // Show toolbar button that opens dialog for controlling media sessions.
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -659,7 +659,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
+@@ -671,7 +671,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
               "MediaRemotingWithoutFullscreen",
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -671,7 +671,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
+@@ -683,7 +683,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -715,7 +715,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -727,7 +727,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -45,8 +45,8 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  BASE_FEATURE(kVaapiVideoDecodeLinux,
-@@ -1269,7 +1269,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
-     "UseOutOfProcessVideoDecoding", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -1294,7 +1294,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
+ };
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

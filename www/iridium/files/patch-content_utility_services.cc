@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2023-07-24 14:27:53 UTC
+--- content/utility/services.cc.orig	2023-08-28 20:17:35 UTC
 +++ content/utility/services.cc
 @@ -65,7 +65,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -63,7 +63,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -419,13 +419,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -418,13 +418,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  

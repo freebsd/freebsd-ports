@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_root.cc.orig	2023-07-24 14:27:53 UTC
+--- base/allocator/partition_allocator/partition_root.cc.orig	2023-08-28 20:17:35 UTC
 +++ base/allocator/partition_allocator/partition_root.cc
 @@ -46,7 +46,7 @@
  #include "wow64apiset.h"
@@ -9,7 +9,7 @@
  #include <pthread.h>
  #endif
  
-@@ -286,7 +286,7 @@ void PartitionAllocMallocInitOnce() {
+@@ -284,7 +284,7 @@ void PartitionAllocMallocInitOnce() {
      return;
    }
  
@@ -18,7 +18,7 @@
    // When fork() is called, only the current thread continues to execute in the
    // child process. If the lock is held, but *not* by this thread when fork() is
    // called, we have a deadlock.
-@@ -380,7 +380,7 @@ static size_t PartitionPurgeSlotSpan(
+@@ -376,7 +376,7 @@ static size_t PartitionPurgeSlotSpan(internal::SlotSpa
    constexpr size_t kMaxSlotCount =
        (PartitionPageSize() * kMaxPartitionPagesPerRegularSlotSpan) /
        MinPurgeableSlotSize();
@@ -27,7 +27,7 @@
    // It's better for slot_usage to be stack-allocated and fixed-size, which
    // demands that its size be constexpr. On IS_APPLE and Linux on arm64,
    // PartitionPageSize() is always SystemPageSize() << 2, so regardless of
-@@ -880,7 +880,7 @@ void PartitionRoot<thread_safe>::Init(PartitionOptions
+@@ -853,7 +853,7 @@ void PartitionRoot::Init(PartitionOptions opts) {
      // apple OSes.
      PA_CHECK((internal::SystemPageSize() == (size_t{1} << 12)) ||
               (internal::SystemPageSize() == (size_t{1} << 14)));

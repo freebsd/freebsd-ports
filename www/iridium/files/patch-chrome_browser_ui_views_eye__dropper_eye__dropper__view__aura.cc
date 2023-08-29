@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc.orig	2023-08-28 20:17:35 UTC
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc
-@@ -86,7 +86,7 @@ void EyeDropperView::MoveViewToFront() {
+@@ -87,7 +87,7 @@ void EyeDropperView::MoveViewToFront() {
  }
  
  void EyeDropperView::CaptureInputIfNeeded() {
