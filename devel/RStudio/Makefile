@@ -4,7 +4,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022.12.0+353
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -117,6 +117,10 @@ post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|<condition property="node.bin" value="../../../$${node.dir}/bin/node">|<condition property="node.bin" value="${LOCALBASE}/bin/node">|' \
 		${WRKSRC}/src/gwt/build.xml
+	# add $PREFIX/bin to PATH for the server daemon
+.if ${FLAVOR:U} == server
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/cpp/session/modules/SessionGit.cpp
+.endif
 
 pre-build:
 	@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
@@ -143,12 +147,6 @@ post-install:
 	# Some functions expect the pandoc symlink.
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc
 	@cd ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc && ${LN} -s ../../../../bin/pandoc
-	# Add $LOCALBASE/bin to PATH to allow RStudio-server to run gmake (R_HOME/etc/Renviron.site is installed, see https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html)
-.if ${FLAVOR:U} == server
-	#@${MKDIR} ${STAGEDIR}${LOCALBASE}/lib/R/etc
-	#@${ECHO} "PATH=\"${LOCALBASE}/bin:\$$PATH\"" > ${STAGEDIR}${LOCALBASE}/lib/R/etc/Renviron.site # it should be this way, but this fails: https://github.com/rstudio/rstudio/issues/9815
-	@${LN} -s ${LOCALBASE}/bin/${GMAKE} ${STAGEDIR}${PREFIX}/lib/rstudio-server/bin/postback/${GMAKE} # hack, should be as above, but at least gmake is in the path now
-.endif
 	# There is a variability in .js file names due to use of random numbers, so we use the automatic plist.
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio| ; s|%%CMAKE_BUILD_TYPE%%|${CMAKE_BUILD_TYPE:tl}|' > ${TMPPLIST}
 
