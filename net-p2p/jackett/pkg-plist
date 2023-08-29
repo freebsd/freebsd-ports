@@ -188,6 +188,7 @@
 %%DATADIR%%/Definitions/ex-torrenty.yml
 %%DATADIR%%/Definitions/exkinoray.yml
 %%DATADIR%%/Definitions/extratorrent-st.yml
+%%DATADIR%%/Definitions/extremebits.yml
 %%DATADIR%%/Definitions/extremetorrents.yml
 %%DATADIR%%/Definitions/extremlymtorrents.yml
 %%DATADIR%%/Definitions/exttorrents.yml
@@ -209,7 +210,6 @@
 %%DATADIR%%/Definitions/funkytorrents.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
-%%DATADIR%%/Definitions/gainbound.yml
 %%DATADIR%%/Definitions/gamera.yml
 %%DATADIR%%/Definitions/gamestorrents.yml
 %%DATADIR%%/Definitions/gay-torrents.yml
@@ -364,6 +364,7 @@
 %%DATADIR%%/Definitions/onlyencodes-api.yml
 %%DATADIR%%/Definitions/opencd.yml
 %%DATADIR%%/Definitions/oshenpt.yml
+%%DATADIR%%/Definitions/ostwiki.yml
 %%DATADIR%%/Definitions/ourbits.yml
 %%DATADIR%%/Definitions/p2pbg.yml
 %%DATADIR%%/Definitions/panda.yml
@@ -388,10 +389,12 @@
 %%DATADIR%%/Definitions/potuk.yml
 %%DATADIR%%/Definitions/proaudiotorrents.yml
 %%DATADIR%%/Definitions/proporno.yml
+%%DATADIR%%/Definitions/ptcafe.yml
 %%DATADIR%%/Definitions/ptchina.yml
 %%DATADIR%%/Definitions/pterclub.yml
 %%DATADIR%%/Definitions/ptfiles.yml
 %%DATADIR%%/Definitions/pthome.yml
+%%DATADIR%%/Definitions/ptlsp.yml
 %%DATADIR%%/Definitions/ptitzmx.yml
 %%DATADIR%%/Definitions/ptsbao.yml
 %%DATADIR%%/Definitions/pttime.yml
