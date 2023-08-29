@@ -1,5 +1,5 @@
 PORTNAME=	autobahn
-PORTVERSION=	21.11.1
+PORTVERSION=	22.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ GH_ACCOUNT=	crossbario
 GH_PROJECT=	autobahn-python
 USE_PYTHON=	autoplist distutils pytest
 
-OPTIONS_DEFINE=		ACCELERATE ENCRYPTION SCRAM SERIALIZATION
+OPTIONS_DEFINE=		ACCELERATE COMPRESS ENCRYPTION SCRAM SERIALIZATION
 OPTIONS_DEFAULT=	ACCELERATE ASYNCIO ENCRYPTION SCRAM SERIALIZATION \
 			TWISTED
 OPTIONS_MULTI=		BACKENDS
@@ -30,6 +30,7 @@ OPTIONS_FILE=		${PORT_DBDIR}/${OPTIONS_NAME}/${FLAVOR}-options
 
 ACCELERATE_DESC=	C-based WebSocket Acceleration
 ASYNCIO_DESC=		Asyncronous IO Support
+COMPRESS_DESC=		Compression support
 BACKENDS_DESC=		Network Backends
 ENCRYPTION_DESC=	TLS Transport / Cryptosign Encryption & Authentication
 SCRAM_DESC=		WAMP-SCRAM Authentication support
@@ -37,6 +38,7 @@ SERIALIZATION_DESC=	Serializers (MessagePack, CBOR, UBJSON, Flatbuffers)
 TWISTED_DESC=		Twisted network backend support
 
 ACCELERATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsaccel>=0.6.3:www/py-wsaccel@${PY_FLAVOR}
+COMPRESS_RUN_DEPENDS=			${PYTHON_PKGNAMEPREFIX}python-snappy>=0.6.0:archivers/py-python-snappy@${PY_FLAVOR}
 ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}openssl>=20.0.1:security/py-openssl@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pynacl>=1.4.0:security/py-pynacl@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pyqrcode>=1.2.1:graphics/py-pyqrcode@${PY_FLAVOR} \
