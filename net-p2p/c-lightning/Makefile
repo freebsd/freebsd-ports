@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	23.05.2
+PORTVERSION=	23.08
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -32,13 +32,14 @@ USES=		autoreconf:build \
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 ALL_TARGET=	default
-SHEBANG_FILES=	tools/reckless
+SHEBANG_FILES=	plugins/clnrest/clnrest.py \
+		tools/reckless
 
 EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-ccan_ccan_base64_base64.c \
 			${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
-OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER EXPERIMENTAL
+OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER
 OPTIONS_MULTI=		STORAGE
 OPTIONS_MULTI_STORAGE=	POSTGRESQL SQLITE
 OPTIONS_RADIO=		TESTING
@@ -48,8 +49,6 @@ COMPATIBILITY_CONFIGURE_ENABLE=	compat
 COMPATIBILITY_DESC=		Compatibility mode, good to disable to see if your software breaks
 DEVELOPER_CONFIGURE_ENABLE=	developer
 DEVELOPER_DESC=			Developer mode, good for testing
-EXPERIMENTAL_CONFIGURE_ENABLE=	experimental-features
-EXPERIMENTAL_DESC=		Enable experimental features
 POSTGRESQL_DESC=		Use PostgreSQL for storage
 POSTGRESQL_USES=		pgsql
 WANT_PGSQL=			client
@@ -71,8 +70,8 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:9f2f42df357f5:ext1/external/libwally-core \
-		ElementsProject:secp256k1-zkp:6ec1ff6040164:ext2/external/libwally-core/src/secp256k1 \
+		ElementsProject:libwally-core:bb4cd3ac802c7:ext1/external/libwally-core \
+		ElementsProject:secp256k1-zkp:ff33018fe765d:ext2/external/libwally-core/src/secp256k1 \
 		ianlancetaylor:libbacktrace:2446c66076480ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap
