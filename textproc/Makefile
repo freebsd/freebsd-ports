@@ -1666,6 +1666,7 @@
     SUBDIR += resume
     SUBDIR += resume-extensions
     SUBDIR += rfcdiff
+    SUBDIR += riffdiff
     SUBDIR += ripgrep
     SUBDIR += ripgrep-all
     SUBDIR += ripole

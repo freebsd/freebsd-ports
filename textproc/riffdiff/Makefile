@@ -1,0 +1,84 @@
+PORTNAME=	riffdiff
+DISTVERSION=	2.25.2
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Diff filter highlighting which line parts have changed
+WWW=		https://github.com/walles/riff
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	moar:textproc/moar
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	walles
+GH_PROJECT=	riff
+
+CARGO_CRATES=	addr2line-0.14.0 \
+		adler-0.2.3 \
+		aho-corasick-0.7.18 \
+		ansi_term-0.11.0 \
+		autocfg-1.0.1 \
+		backtrace-0.3.54 \
+		bitflags-1.3.2 \
+		bytecount-0.6.2 \
+		cc-1.0.79 \
+		cfg-if-1.0.0 \
+		ctor-0.1.16 \
+		difference-2.0.0 \
+		diffus-0.10.0 \
+		either-1.6.1 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
+		gimli-0.23.0 \
+		git-version-0.3.4 \
+		git-version-macro-0.3.4 \
+		hermit-abi-0.1.19 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.6 \
+		itertools-0.10.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.140 \
+		linux-raw-sys-0.1.4 \
+		memchr-2.5.0 \
+		miniz_oxide-0.4.3 \
+		num_cpus-1.13.0 \
+		object-0.22.0 \
+		output_vt100-0.1.2 \
+		pretty_assertions-0.6.1 \
+		proc-macro-hack-0.5.19 \
+		proc-macro2-1.0.24 \
+		quote-1.0.7 \
+		redox_syscall-0.2.10 \
+		regex-1.5.5 \
+		regex-syntax-0.6.26 \
+		rustc-demangle-0.1.18 \
+		rustix-0.36.9 \
+		syn-1.0.48 \
+		tempfile-3.4.0 \
+		threadpool-1.8.1 \
+		unicode-xid-0.2.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1
+
+PLIST_FILES=	bin/riff
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/riff
+
+.include <bsd.port.mk>
