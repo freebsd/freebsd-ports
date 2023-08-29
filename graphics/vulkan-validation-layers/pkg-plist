@@ -3,6 +3,7 @@ include/vulkan/error_message/logging.cpp
 include/vulkan/error_message/logging.h
 include/vulkan/external/xxhash.cpp
 include/vulkan/external/xxhash.h
+include/vulkan/generated/vk_api_version.h
 include/vulkan/generated/vk_dispatch_table_helper.h
 include/vulkan/generated/vk_enum_string_helper.h
 include/vulkan/generated/vk_extension_helper.h
