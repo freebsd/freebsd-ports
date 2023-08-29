@@ -8976,6 +8976,7 @@ share/OGRE/tests.cfg
 %%PORTDOCS%%%%DOCSDIR%%/api/html/hlms_components.svg
 %%PORTDOCS%%%%DOCSDIR%%/api/html/hlms_hash.svg
 %%PORTDOCS%%%%DOCSDIR%%/api/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/html/index.js
 %%PORTDOCS%%%%DOCSDIR%%/api/html/inherit_graph_0.map
 %%PORTDOCS%%%%DOCSDIR%%/api/html/inherit_graph_0.md5
 %%PORTDOCS%%%%DOCSDIR%%/api/html/inherit_graph_0.svg
