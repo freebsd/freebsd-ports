@@ -487,6 +487,7 @@
     SUBDIR += ml-aspell
     SUBDIR += ml1
     SUBDIR += mn-aspell
+    SUBDIR += moar
     SUBDIR += modlogan
     SUBDIR += mp_doccer
     SUBDIR += mr-aspell
