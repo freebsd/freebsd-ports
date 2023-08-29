@@ -935,7 +935,6 @@
 %%DATADIR%%/templates/dcim/inc/connection_endpoints.html
 %%DATADIR%%/templates/dcim/inc/endpoint_connection.html
 %%DATADIR%%/templates/dcim/inc/interface_vlans_table.html
-%%DATADIR%%/templates/dcim/inc/nonracked_devices.html
 %%DATADIR%%/templates/dcim/inc/panels/inventory_items.html
 %%DATADIR%%/templates/dcim/inc/rack_elevation.html
 %%DATADIR%%/templates/dcim/interface.html
