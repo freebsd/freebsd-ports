@@ -183,6 +183,7 @@
     SUBDIR += mindforger
     SUBDIR += moregroupware
     SUBDIR += mozo
+    SUBDIR += mytetra
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note
