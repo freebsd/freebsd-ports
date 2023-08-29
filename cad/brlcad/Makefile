@@ -29,6 +29,7 @@ USE_XORG=	ice sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 
 CMAKE_OFF=	BRLCAD_ENABLE_STRICT
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
+CXXFLAGS_powerpc64=	-mvsx
 
 TEST_TARGET=	check
 
