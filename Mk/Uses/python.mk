@@ -643,11 +643,11 @@ _CURRENTPORT:=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 	${_CURRENTPORT} != ${PYTHON_PKGNAMEPREFIX}setuptools58 && \
 	${_CURRENTPORT} != ${PYTHON_PKGNAMEPREFIX}setuptools44
 .    if ${PYTHON_VER} == 2.7
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
+BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/setuptools44:devel/py-setuptools44@${PY_FLAVOR}
+RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/setuptools44:devel/py-setuptools44@${PY_FLAVOR}
 .    else
-BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
+BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/setuptools:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/setuptools:devel/py-setuptools@${PY_FLAVOR}
 .    endif
 .  endif
 
@@ -691,9 +691,9 @@ PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 # PEP-517 support
 PEP517_BUILD_CMD?=	${PYTHON_CMD} -m build --no-isolation --wheel ${PEP517_BUILD_CONFIG_SETTING}
-PEP517_BUILD_DEPEND?=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR}
+PEP517_BUILD_DEPEND?=	${PYTHON_SITELIBDIR}/build:devel/py-build@${PY_FLAVOR}
 PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
-PEP517_INSTALL_DEPEND?=	${PYTHON_PKGNAMEPREFIX}installer>=0:devel/py-installer@${PY_FLAVOR}
+PEP517_INSTALL_DEPEND?=	${PYTHON_SITELIBDIR}/installer:devel/py-installer@${PY_FLAVOR}
 
 # nose support
 .  if defined(_PYTHON_FEATURE_NOSE)
@@ -793,13 +793,13 @@ PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.26,1:math/py-numpy@${PY_FLAVOR}
 
 .  if defined(_PYTHON_FEATURE_DISTUTILS)
 .    if ${PYTHON_MAJOR_VER} < 3
-PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
+PY_SETUPTOOLS=	${PYTHON_SITELIBDIR}/setuptools44:devel/py-setuptools44@${PY_FLAVOR}
 .    else
-#PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools58>0:devel/py-setuptools58@${PY_FLAVOR}
-PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+#PY_SETUPTOOLS=	${PYTHON_SITELIBDIR}/setuptools58:devel/py-setuptools58@${PY_FLAVOR}
+PY_SETUPTOOLS=	${PYTHON_SITELIBDIR}/setuptools:devel/py-setuptools@${PY_FLAVOR}
 .    endif
 .  else
-PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+PY_SETUPTOOLS=	${PYTHON_SITELIBDIR}/setuptools:devel/py-setuptools@${PY_FLAVOR}
 .  endif
 
 # Common Python modules that can be needed but only for some versions of Python.
