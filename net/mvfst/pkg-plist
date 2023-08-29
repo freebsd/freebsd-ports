@@ -41,6 +41,7 @@ include/quic/common/EnumArray.h
 include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
+include/quic/common/QuicAsyncUDPSocketImpl.h
 include/quic/common/QuicAsyncUDPSocketWrapper.h
 include/quic/common/QuicEventBase.h
 include/quic/common/QuicEventBaseInterface.h
