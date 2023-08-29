@@ -34,6 +34,7 @@
     SUBDIR += cfiles
     SUBDIR += charmtimetracker
     SUBDIR += chart
+    SUBDIR += cherrytree
     SUBDIR += clipit
     SUBDIR += clipmenu
     SUBDIR += clipnotify

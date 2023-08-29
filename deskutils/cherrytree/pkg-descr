@@ -1,0 +1,3 @@
+A hierarchical note taking application, featuring rich text and syntax
+highlighting, storing data in either a single file (XML or SQLite) or
+multiple files and directories.
