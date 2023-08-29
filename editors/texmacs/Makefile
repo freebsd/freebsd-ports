@@ -12,23 +12,17 @@ WWW=		https://www.texmacs.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	assigning to 'bool' from incompatible type 'nullptr_t'
-BROKEN_FreeBSD_14=	assigning to 'bool' from incompatible type 'nullptr_t'
-
-RUN_DEPENDS=	fig2dev:print/transfig
-
 BROKEN_armv6=		fails to compile: call to min is ambiguous
 BROKEN_armv7=		fails to compile: call to min is ambiguous
+
+RUN_DEPENDS=	fig2dev:print/transfig
 
 USES=		cpe desktop-file-utils gmake guile:1.8,alias iconv \
 		localbase pkgconfig python shared-mime-info shebangfix \
 		tex xorg
+USE_CXXSTD=	c++14
 USE_TEX=	tex:run dvipsk:run
-USE_XORG=	xext
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}" --disable-qt
-MAKE_ARGS=	CP="${CP} -R -f"
-ALL_TARGET=	${PORTNAME:tu}
+USE_XORG=	x11 xext
 
 SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 		plugins/eukleides/bin/* plugins/feynmf/bin/* \
@@ -36,6 +30,12 @@ SHEBANG_FILES=	plugins/asymptote/bin/* plugins/dratex/bin/* \
 		plugins/xypic/bin/* \
 		plugins/python/bin/tm_python plugins/sage/bin/tm_sage \
 		plugins/mathematica/bin/realpath.py
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}" --disable-qt
+
+MAKE_ARGS=	CP="${CP} -R -f"
+ALL_TARGET=	${PORTNAME:tu}
 
 DATADIR=	${PREFIX}/share/TeXmacs
 
@@ -53,9 +53,9 @@ GHOSTSCRIPT_CONFIGURE_ON=	--with-gs=yes
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-gs=no
 IMLIB2_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 IMLIB2_CONFIGURE_WITH=	imlib2
+PDF_IMPLIES=		FREETYPE GHOSTSCRIPT
 PDF_CONFIGURE_ENABLE=	pdf-renderer
 PDF_LDFLAGS=		-lz
-PDF_IMPLIES=		FREETYPE GHOSTSCRIPT
 SQLITE_USES=		sqlite
 SQLITE_CONFIGURE_ON=	--with-sqlite3
 
