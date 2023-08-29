@@ -1,10 +1,7 @@
 PORTNAME=	furnace
-PORTVERSION=	0.5.8
-PORTREVISION=	4
+PORTVERSION=	0.6pre9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
-MASTER_SITES=	http://sid.ethz.ch/debian/furnace/ \
-		LOCAL/ehaupt
-DISTNAME=	${PORTNAME}_${PORTVERSION}+git20220302+ds.orig
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Chiptune tracker compatible with DefleMask modules (.dmf)
@@ -18,7 +15,14 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		librtmidi.so:audio/rtmidi \
 		libsndfile.so:audio/libsndfile
 
-USES=		cmake pkgconfig sdl tar:xz
+USES=		cmake gl pkgconfig sdl tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	tildearrow
+GH_TUPLE=	libsdl-org:SDL:ffa78e6b:sdl/extern/SDL \
+		superctr:adpcm:ef7a2171:adpcm/extern/adpcm \
+		fmtlib:fmt:e57ca2e3:fmt/extern/fmt \
+		libsndfile:libsndfile:ca200890:libsndfile/extern/libsndfile
+USE_GL=		gl
 USE_SDL=	sdl2
 
 CMAKE_ARGS+=	-DBUILD_GUI:BOOL=ON \
@@ -27,8 +31,6 @@ CMAKE_ARGS+=	-DBUILD_GUI:BOOL=ON \
 		-DSYSTEM_RTMIDI=ON \
 		-DSYSTEM_SDL2:BOOL=ON \
 		-DSYSTEM_ZLIB:BOOL=ON
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}+git20220302+ds
 
 OPTIONS_DEFINE=	DOCS JACK
 

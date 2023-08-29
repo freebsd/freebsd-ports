@@ -1,83 +1,1483 @@
 bin/furnace
 share/applications/furnace.desktop
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/1-intro/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/2-interface/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/2-interface/components.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/2-interface/keyboard.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/channelbar.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/channels.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/effects.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/keyboard.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/3-pattern/pattern.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/8930.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/amiga.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/ay8910.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/c64.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/fm.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/game-boy.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/list.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/lynx.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/macro.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/pce.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/saa.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/standard.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/4-instrument/tia.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/5-wave/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/6-sample/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/amiga.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/arcade.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ay8910.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ay8930.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/c64.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/game-boy.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/genesis.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/nes.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/opll.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/pce.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/qsound.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/saa1099.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/sms.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/tia.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ym2151.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ym2610.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ym2610b.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ym2612.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/7-systems/ymu759.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/doc/README.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/exo-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/export-tech.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/format.md
-%%PORTDOCS%%%%DOCSDIR%%/papers/ibm-plex-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/liberation-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/mononoki-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/proggy-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/pt-mono-license.txt
-%%PORTDOCS%%%%DOCSDIR%%/papers/screenshot1.png
-%%PORTDOCS%%%%DOCSDIR%%/papers/unifont-license.txt
-%%DATADIR%%/demos/Another_winter.fur
-%%DATADIR%%/demos/Between_the_Circuits.fur
-%%DATADIR%%/demos/Carnage.fur
-%%DATADIR%%/demos/CorridorsOfTimeRMX.fur
-%%DATADIR%%/demos/DOOM_E1M1.fur
-%%DATADIR%%/demos/DOOM_E1M3.fur
-%%DATADIR%%/demos/GranularFurn.fur
-%%DATADIR%%/demos/Ice_Wind_OPMSPCM.fur
-%%DATADIR%%/demos/Jet_Pack_Adventure_GBAesque.fur
+%%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/concepts.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/hex.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/asset-list.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/basic-mode.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/components.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-edit.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-metronome.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-play-pattern.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-play-repeat.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-play.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-repeat.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-step.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/control-stop.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/controls-classic.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/controls-compact.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/controls-split.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/controls-vertical.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/docking.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/effect-list-window.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/effect-list.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/instruments-folder.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/instruments.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/interface1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/keyboard.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/menu-bar.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/order-list.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/order-list.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/play-edit-controls.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/samples.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/settings.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/song-info.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/tab1.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/tab2.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/tab3.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/wavetables.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/window.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/channelbar.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/effects.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/3-pattern/pattern.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/8930.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/FM-ADSRchart.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/amiga.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/ay8910.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/c140.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/c64.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fm.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fmopl.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/fmopll.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/game-boy.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/instrument-editor-top.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/lynx.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-ADSR.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-ADSRchart.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-LFO.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-button-ADSR.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-button-LFO.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-button-seq.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macro-seq.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/macroview.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/n163.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/nes.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/pce.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/psg.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/pv1000.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/saa.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/sample-map.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/scc.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/snes.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/ted.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/tia.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/vera.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/vrc6.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wavetable.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wonderswan.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/wsg.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/4-instrument/x1_010.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/instrument-wavetable.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/wave-editor-FM.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/wave-editor-shapes.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/wave-editor-tools.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/5-wave/wave-editor.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/6-sample/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/6-sample/sample-editor-buttons.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/6-sample/sample-editor.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/amiga.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ay8910.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ay8930.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/bubblesystem.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/c140.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/c64.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/dac.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/es5506.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/fds.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ga20.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/game-boy.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/genesis.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/k007232.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/k056320.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/lynx.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/mmc5.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/msm5232.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/msm6258.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/msm6295.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/n163.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/namco.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/nes.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/opl.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/opll.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/opz.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pce.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pcspkr.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pet.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pokemini.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pokey.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/pv1000.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/qsound.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ricoh.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/saa1099.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/scc.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/segapcm.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sm8521.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/sms.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/snes.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/soundunit.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/t6w28.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ted.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/tia.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/vera.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/vic20.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/virtual-boy.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/vrc6.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/wonderswan.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/x1-010.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2151.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2203.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2608.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2610.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2610b.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ym2612.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ymu759.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/ymz280b.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/7-systems/zxbeep.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/channels.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/channels.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chanosc-gradient.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chanosc.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chanosc.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chip-manager-change.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chip-manager-move.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chip-manager-remove.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chip-manager.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/chip-manager.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/clock.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/clock.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/comments.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/comments.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/compat-flags.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/find-find.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/find-replace.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/find-replace.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/groove.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/grooves.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/grooves.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/inputlatch.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/inputlatch.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/log-viewer.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-mixer.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer-patchbay.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/mixer.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/opmask.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/opmask.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/osc.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/osc.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/pat-manager.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/pattern-manager.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/piano.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/piano.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/register.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/regview.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/stats.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/8-advanced/stats.png
+%%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/README.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/emulation-cores.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/envelope.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/limited-samples.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/9-guides/opllswitching.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/README.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/clipboard-format.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/exo-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/export-tech.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/format.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/ibm-plex-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/icons.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/liberation-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/mononoki-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/multiplayer.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/newIns.md
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/proggy-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/pt-mono-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/screenshot1.png
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/screenshot2.png
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/screenshot3.png
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/unifont-license.txt
+%%PORTDOCS%%%%DOCSDIR%%/other/papers/zsm-format.md
 %%DATADIR%%/demos/README.md
-%%DATADIR%%/demos/The_Snippet.fur
-%%DATADIR%%/demos/Tubelectric_Fictional_Arcade.fur
-%%DATADIR%%/demos/bruno_time.fur
-%%DATADIR%%/demos/cueball.fur
-%%DATADIR%%/demos/darkstar.dmf
-%%DATADIR%%/demos/demoscenetypebeat.fur
-%%DATADIR%%/demos/m7 vibe.fur
-%%DATADIR%%/demos/ridiculous_game.fur
-%%DATADIR%%/demos/spamton.fur
-%%DATADIR%%/demos/super_fantasy_zone_mango.fur
-%%DATADIR%%/demos/yky.fur
+%%DATADIR%%/demos/amiga/bruno_time.fur
+%%DATADIR%%/demos/amiga/furnace0.6crk.fur
+%%DATADIR%%/demos/amiga/m7 vibe.fur
+%%DATADIR%%/demos/amiga/serendipid.fur
+%%DATADIR%%/demos/arcade/Destiny_Islands_Irem_M92.fur
+%%DATADIR%%/demos/arcade/Eternal_Forest_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/Ice_Wind_SegaPCM.fur
+%%DATADIR%%/demos/arcade/Mars_Bar_On_Mars_NamcoWSG.fur
+%%DATADIR%%/demos/arcade/Maximum_Overdrive_NamcoWSG.fur
+%%DATADIR%%/demos/arcade/Neo_Seaside_Volley_Court_NeoGeo.fur
+%%DATADIR%%/demos/arcade/Phoenix_cover_NamcoWSG.fur
+%%DATADIR%%/demos/arcade/Physics_Exam_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/Point_of_No_Return_SegaPCM.fur
+%%DATADIR%%/demos/arcade/Salamander_Starfield.fur
+%%DATADIR%%/demos/arcade/Some_Creatures_SegaPCM.fur
+%%DATADIR%%/demos/arcade/The_Good_Times_SegaPCM.fur
+%%DATADIR%%/demos/arcade/ToHeart_QoH98_TPower_Asuka120Style.fur
+%%DATADIR%%/demos/arcade/Tubelectric_Fictional_Arcade.fur
+%%DATADIR%%/demos/arcade/UT99_Run_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/Utter_Determination_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/ice_cap_NamcoC30.fur
+%%DATADIR%%/demos/arcade/iji_tor_segaxboard.fur
+%%DATADIR%%/demos/arcade/the_machines_are_socialising_SegaPCM.fur
+%%DATADIR%%/demos/ay8910/AY-3-8910_Jam.fur
+%%DATADIR%%/demos/ay8910/Flat Wave Society.fur
+%%DATADIR%%/demos/ay8910/Second_Addition.fur
+%%DATADIR%%/demos/ay8910/demoscenetypebeat.fur
+%%DATADIR%%/demos/ay8910/remark_music.fur
+%%DATADIR%%/demos/ay8910/vibe_zone.fur
+%%DATADIR%%/demos/ay8930/AY8930Shuffle.fur
+%%DATADIR%%/demos/ay8930/PlayingOnTheStairs.fur
+%%DATADIR%%/demos/ay8930/Red_Planet.fur
+%%DATADIR%%/demos/ay8930/duty fun.fur
+%%DATADIR%%/demos/ay8930/joyful.fur
+%%DATADIR%%/demos/c64/C64 junk.fur
+%%DATADIR%%/demos/c64/ChaosTune.fur
+%%DATADIR%%/demos/c64/DOOM_E1M1.fur
+%%DATADIR%%/demos/c64/DOOM_E1M3.fur
+%%DATADIR%%/demos/c64/The_Snippet.fur
+%%DATADIR%%/demos/c64/yeah!.fur
+%%DATADIR%%/demos/gameboy/Pleasure_of_Tension.fur
+%%DATADIR%%/demos/gameboy/You're_Doing_Well!.fur
+%%DATADIR%%/demos/gameboy/cheap.fur
+%%DATADIR%%/demos/gameboy/dancing_to_the_death.fur
+%%DATADIR%%/demos/gameboy/dtect.fur
+%%DATADIR%%/demos/gameboy/finger.fur
+%%DATADIR%%/demos/gameboy/freedom.fur
+%%DATADIR%%/demos/gameboy/ice_3_advert.fur
+%%DATADIR%%/demos/gameboy/lagtrain.fur
+%%DATADIR%%/demos/gameboy/minos.fur
+%%DATADIR%%/demos/gameboy/puggs_in_space.fur
+%%DATADIR%%/demos/gameboy/snowdin.fur
+%%DATADIR%%/demos/gameboy/spreadtro.fur
+%%DATADIR%%/demos/genesis/Another_winter.fur
+%%DATADIR%%/demos/genesis/Carnage.fur
+%%DATADIR%%/demos/genesis/Checknobankh.fur
+%%DATADIR%%/demos/genesis/CorridorsOfTimeRMX.fur
+%%DATADIR%%/demos/genesis/Equinox Intro.fur
+%%DATADIR%%/demos/genesis/Fancy_Promenard.fur
+%%DATADIR%%/demos/genesis/MegadriveOverdrive.fur
+%%DATADIR%%/demos/genesis/Plok_Beach.fur
+%%DATADIR%%/demos/genesis/Puyopuyo~n_DopplegangerArle-TsuuStyle.fur
+%%DATADIR%%/demos/genesis/Shovel_Knight_Title.fur
+%%DATADIR%%/demos/genesis/Solar_Man.fur
+%%DATADIR%%/demos/genesis/Stereotactics_Rewritten.fur
+%%DATADIR%%/demos/genesis/Swaggin_Dragon.dmf
+%%DATADIR%%/demos/genesis/darkstar.dmf
+%%DATADIR%%/demos/genesis/inside_the_computer.fur
+%%DATADIR%%/demos/genesis/laidback.fur
+%%DATADIR%%/demos/genesis/last_chiptune.fur
+%%DATADIR%%/demos/genesis/louder.fur
+%%DATADIR%%/demos/genesis/mm5_boss.fur
+%%DATADIR%%/demos/genesis/mummy_in_the_pyramid.fur
+%%DATADIR%%/demos/genesis/my_problem.fur
+%%DATADIR%%/demos/genesis/the_serenity_of_lonliness.fur
+%%DATADIR%%/demos/genesis/yky.fur
+%%DATADIR%%/demos/lynx/LedStorm.fur
+%%DATADIR%%/demos/lynx/Road_Rash_Grass_Valley.fur
+%%DATADIR%%/demos/lynx/Tyrian-Camanis.fur
+%%DATADIR%%/demos/lynx/chippylotus.fur
+%%DATADIR%%/demos/lynx/insert_title_here.fur
+%%DATADIR%%/demos/misc/BlueBolt_VIC20.fur
+%%DATADIR%%/demos/misc/Dreamliner_FMTowns.fur
+%%DATADIR%%/demos/misc/FiveTwoThreeTwo_MSM5232.fur
+%%DATADIR%%/demos/misc/GreenIdeas_PET.fur
+%%DATADIR%%/demos/misc/Inner Machinations YM2610B.fur
+%%DATADIR%%/demos/misc/Miami_Ice_Sharp_X1.fur
+%%DATADIR%%/demos/misc/Night_Market_TI994A.fur
+%%DATADIR%%/demos/misc/Optimistic_SharpX68k.fur
+%%DATADIR%%/demos/misc/QSound_smile.fur
+%%DATADIR%%/demos/misc/RunningOnThePlayground_2xT6W28.fur
+%%DATADIR%%/demos/misc/TerminalZone_SM8521.fur
+%%DATADIR%%/demos/misc/TimeMan_SharpX68k.fur
+%%DATADIR%%/demos/misc/Wicked_Express_X68000.fur
+%%DATADIR%%/demos/misc/atari_breakbeat_TIA.fur
+%%DATADIR%%/demos/misc/beeper_torture.fur
+%%DATADIR%%/demos/misc/combat_vehicle_pokey.fur
+%%DATADIR%%/demos/misc/empty_PV-1000.fur
+%%DATADIR%%/demos/misc/fursuits_for_the_suspiciously_rich_MSM5232.fur
+%%DATADIR%%/demos/misc/hope_for_the_dream_opm.fur
+%%DATADIR%%/demos/misc/lagrange_point_2023_opm.fur
+%%DATADIR%%/demos/misc/massive_x_opz.fur
+%%DATADIR%%/demos/misc/meaningful_connection_es5506.fur
+%%DATADIR%%/demos/misc/mushroomhill_SM8521.fur
+%%DATADIR%%/demos/misc/pseudogba_pwaa_godot.fur
+%%DATADIR%%/demos/misc/rf5wapianoroll.fur
+%%DATADIR%%/demos/misc/rule2_zx.fur
+%%DATADIR%%/demos/misc/sparkling_aria_pokemini.fur
+%%DATADIR%%/demos/misc/teddy_bear_midnight_jam_ted.fur
+%%DATADIR%%/demos/misc/the_erfngjt_TIA.fur
+%%DATADIR%%/demos/misc/the_king_of_crisp_opm.fur
+%%DATADIR%%/demos/msx/21492413.fur
+%%DATADIR%%/demos/msx/Gyruss_Stage_2.fur
+%%DATADIR%%/demos/msx/Nemesis2AirBattle.fur
+%%DATADIR%%/demos/msx/OPLL_High_and_Rising.fur
+%%DATADIR%%/demos/msx/Princess_of_the_Dead.fur
+%%DATADIR%%/demos/msx/Striking_Towards_Opposition.fur
+%%DATADIR%%/demos/msx/WakingUpWhenMorningAlarmRings_OPLL.fur
+%%DATADIR%%/demos/msx/opll-fashioned_drums.fur
+%%DATADIR%%/demos/msx/ranburu_song.fur
+%%DATADIR%%/demos/multichip/AgentX.fur
+%%DATADIR%%/demos/multichip/BONUS. Sonic 2 Boss.fur
+%%DATADIR%%/demos/multichip/Between_the_Circuits.fur
+%%DATADIR%%/demos/multichip/Boomer Kuwanger.fur
+%%DATADIR%%/demos/multichip/ComicPartytrack20.fur
+%%DATADIR%%/demos/multichip/Fantasy_Chip_Christmas.fur
+%%DATADIR%%/demos/multichip/Fight Against the Dark Matter.fur
+%%DATADIR%%/demos/multichip/Fiorella YM2610B+YM2203.fur
+%%DATADIR%%/demos/multichip/Fusion.fur
+%%DATADIR%%/demos/multichip/HoldOn.fur
+%%DATADIR%%/demos/multichip/Jet_Pack_Adventure_GBAesque.fur
+%%DATADIR%%/demos/multichip/MegaMari-Cirno.fur
+%%DATADIR%%/demos/multichip/MetalSlug_BaseCamp_SMS_TIA.fur
+%%DATADIR%%/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
+%%DATADIR%%/demos/multichip/Sky Chaze Zone 32X.fur
+%%DATADIR%%/demos/multichip/collab.fur
+%%DATADIR%%/demos/multichip/cueball.fur
+%%DATADIR%%/demos/multichip/double-dragon-stage1.fur
+%%DATADIR%%/demos/multichip/government funding breakcore-ish remix.fur
+%%DATADIR%%/demos/multichip/invicibility_mmc5_n163_fds.fur
+%%DATADIR%%/demos/multichip/meteor_shower.fur
+%%DATADIR%%/demos/multichip/not genesis thing.fur
+%%DATADIR%%/demos/multichip/one.fur
+%%DATADIR%%/demos/multichip/overdrive.fur
+%%DATADIR%%/demos/multichip/ridiculous_game.fur
+%%DATADIR%%/demos/multichip/silverlining.fur
+%%DATADIR%%/demos/multichip/skate_or_die.fur
+%%DATADIR%%/demos/multichip/splashingwater.fur
+%%DATADIR%%/demos/multichip/sunlight.fur
+%%DATADIR%%/demos/multichip/super_fantasy_zone_mango.fur
+%%DATADIR%%/demos/multichip/track8_n163_k053260.fur
+%%DATADIR%%/demos/nes/FDS TEST.fur
+%%DATADIR%%/demos/nes/Rise_against_the_ashes_to_the_new_dawn.fur
+%%DATADIR%%/demos/nes/Samsung SGH-x830 - Ringtone 8.fur
+%%DATADIR%%/demos/nes/Super_Space_Invaders_Title.fur
+%%DATADIR%%/demos/nes/The Cheetahmen.fur
+%%DATADIR%%/demos/nes/carve_your_own_path.fur
+%%DATADIR%%/demos/nes/going_up_a_step_at_time.fur
+%%DATADIR%%/demos/nes/oby1_ingame.fur
+%%DATADIR%%/demos/nes/one_sided_love.fur
+%%DATADIR%%/demos/nes/spamton.fur
+%%DATADIR%%/demos/nes/the_best-1990.fur
+%%DATADIR%%/demos/nes/turtle_byte.fur
+%%DATADIR%%/demos/opl/Contraduct Design OPL3 Cover.fur
+%%DATADIR%%/demos/opl/DASH.fur
+%%DATADIR%%/demos/opl/E1M4OPL2.fur
+%%DATADIR%%/demos/opl/Egyptian_Rule.fur
+%%DATADIR%%/demos/opl/Fly_to_the_Leaden_Sky_OPL3.fur
+%%DATADIR%%/demos/opl/Funky_Bubbles_OPL3.fur
+%%DATADIR%%/demos/opl/Memories_of_Triumph.fur
+%%DATADIR%%/demos/opl/Midnight_Dog_Orchestra.fur
+%%DATADIR%%/demos/opl/Moon.fur
+%%DATADIR%%/demos/opl/Oh no, more sine waves.fur
+%%DATADIR%%/demos/opl/PhantomBreakerBattleGrounds_ShinjukuStage-OPL3.fur
+%%DATADIR%%/demos/opl/Sliding_on_a_Rainbow.fur
+%%DATADIR%%/demos/opl/TeamInnocent-BGM4-OPL3Plus.fur
+%%DATADIR%%/demos/opl/Waterworld_-_Map.fur
+%%DATADIR%%/demos/opl/attack_the_barbarian_opl.fur
+%%DATADIR%%/demos/opl/e3m2_opl3.fur
+%%DATADIR%%/demos/opl/fight and flight.fur
+%%DATADIR%%/demos/opl/green_biker_dude_opl.fur
+%%DATADIR%%/demos/opl/home_wfl_opl3.fur
+%%DATADIR%%/demos/opl/the_foggy_cave_in_the_darkness.fur
+%%DATADIR%%/demos/pc98/Blue_Nebula.fur
+%%DATADIR%%/demos/pc98/CT_maintheme.fur
+%%DATADIR%%/demos/pc98/MMXStageClear.fur
+%%DATADIR%%/demos/pc98/atomic_failure.fur
+%%DATADIR%%/demos/pce/Bad_Dudes_Greased_Lightning.fur
+%%DATADIR%%/demos/pce/Fake Gameboy.fur
+%%DATADIR%%/demos/pce/Ma-Da-Ra.fur
+%%DATADIR%%/demos/pce/Warpdrive_Engage.fur
+%%DATADIR%%/demos/sms/FlowOfSN7.fur
+%%DATADIR%%/demos/sms/doorintosummer.fur
+%%DATADIR%%/demos/sms/gg_silver_surfer_st1.fur
+%%DATADIR%%/demos/sms/gg_soniccd_collision_chaos.fur
+%%DATADIR%%/demos/sms/thunderblade-type-ii.fur
+%%DATADIR%%/demos/snes/Breezy.fur
+%%DATADIR%%/demos/snes/Cosmic_Warehouse.fur
+%%DATADIR%%/demos/snes/MM8_Frost_Man.fur
+%%DATADIR%%/demos/snes/ManbowSMW.fur
+%%DATADIR%%/demos/snes/amalgam.fur
+%%DATADIR%%/demos/snes/changeyourheart.fur
+%%DATADIR%%/demos/snes/segacd.fur
+%%DATADIR%%/demos/snes/tetristheme.fur
+%%DATADIR%%/demos/snes/very chill snes.fur
+%%DATADIR%%/demos/specs2/Silver Surfer - Stage Music 1.fur
+%%DATADIR%%/demos/specs2/Tim_Follin.fur
+%%DATADIR%%/demos/specs2/atmosphere.fur
+%%DATADIR%%/demos/specs2/object.fur
+%%DATADIR%%/demos/specs2/su_memory.fur
+%%DATADIR%%/demos/specs2/thick bass test.fur
+%%DATADIR%%/demos/specs2/vaportrail_staffroll.fur
+%%DATADIR%%/demos/virtualboy/Rave_Dancetune.fur
+%%DATADIR%%/demos/virtualboy/SeeingRed.fur
+%%DATADIR%%/demos/wonderswan/Bullet_Hell.fur
+%%DATADIR%%/demos/wonderswan/Rusty_-_Queen_in_the_Dark_Night.fur
+%%DATADIR%%/demos/wonderswan/TimeTrial.fur
+%%DATADIR%%/demos/wonderswan/sijofsjfsoeife.fur
+%%DATADIR%%/demos/x16/Cafe - 010 Editor 2.0kg.fur
+%%DATADIR%%/demos/x16/Identity_Believer.fur
+%%DATADIR%%/demos/x16/Melody of Certain Feelings.fur
+%%DATADIR%%/demos/x16/Shades of Blue.fur
+%%DATADIR%%/demos/x16/TFV_Rise.fur
+%%DATADIR%%/demos/x16/dance with me.fur
+%%DATADIR%%/demos/x16/her11.fur
+%%DATADIR%%/demos/x16/keygen19.fur
+%%DATADIR%%/demos/x16/lunacommdemo.fur
+%%DATADIR%%/demos/x16/richca.fur
+%%DATADIR%%/demos/x16/watching_paint_dry.fur
+%%DATADIR%%/instruments/FM/accordion/Accordion.dmp
+%%DATADIR%%/instruments/FM/accordion/Harmonium.dmp
+%%DATADIR%%/instruments/FM/accordion/brickblock369 Accordion.dmp
+%%DATADIR%%/instruments/FM/bass/(CH3) Double Synth.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Bass Guitar 1.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Bass Guitar 2.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Bass Guitar 3.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Common Genesis Bass.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Electric Bass Guitar.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Growl Bass.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Heavy Electric Bass.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Low Piano.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Low Sax.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Low Square.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Low Trumpet.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Punch Packer.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Rounded Saw.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Slap Bass 1.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Slap Bass 2.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Slap Bass 3.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Space Synth.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Sunsoft Slap Bass.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Synth.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Techno Bass 1.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Techno Bass 2.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Thiel Bass.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Tuba 1.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Tuba 2.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) Twang.dmp
+%%DATADIR%%/instruments/FM/bass/(GEN) VRC7 Bass.dmp
+%%DATADIR%%/instruments/FM/bass/4-OP_Vowel_Bass.fui
+%%DATADIR%%/instruments/FM/bass/4_OP_Funky_Bass.fui
+%%DATADIR%%/instruments/FM/bass/Acoustic Bass 2.dmp
+%%DATADIR%%/instruments/FM/bass/Acoustic Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Algorithmic Bass.fui
+%%DATADIR%%/instruments/FM/bass/Bass Guitar.dmp
+%%DATADIR%%/instruments/FM/bass/Bass.fui
+%%DATADIR%%/instruments/FM/bass/BassThing.dmp
+%%DATADIR%%/instruments/FM/bass/Basses.opm
+%%DATADIR%%/instruments/FM/bass/Double Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Electric Finger Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Electric Fretless Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Electric Picked Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Electric Slap Bass.dmp
+%%DATADIR%%/instruments/FM/bass/FM-Bass-2.dmp
+%%DATADIR%%/instruments/FM/bass/FM_Bass.dmp
+%%DATADIR%%/instruments/FM/bass/FM_CriminalBass.fui
+%%DATADIR%%/instruments/FM/bass/Finger Bass.fui
+%%DATADIR%%/instruments/FM/bass/GEMSLike Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Heavy_synth_bass.fui
+%%DATADIR%%/instruments/FM/bass/House_Bass.fui
+%%DATADIR%%/instruments/FM/bass/Levin Bass.dmp
+%%DATADIR%%/instruments/FM/bass/OPNx_FingerBass.fui
+%%DATADIR%%/instruments/FM/bass/OPNx_PickBass.fui
+%%DATADIR%%/instruments/FM/bass/OPZ-Fake_Famicom_Tri.fui
+%%DATADIR%%/instruments/FM/bass/Passport Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Piano Bass.dmp
+%%DATADIR%%/instruments/FM/bass/PickMD.fui
+%%DATADIR%%/instruments/FM/bass/Power Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Punch Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Radical Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Real Bass 1.dmp
+%%DATADIR%%/instruments/FM/bass/Real Bass 2.dmp
+%%DATADIR%%/instruments/FM/bass/Resonant Bass.dmp
+%%DATADIR%%/instruments/FM/bass/SC-55 Synth Bass 1.dmp
+%%DATADIR%%/instruments/FM/bass/SC-55 SynthBass101.dmp
+%%DATADIR%%/instruments/FM/bass/Slap Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Slap Bass.fui
+%%DATADIR%%/instruments/FM/bass/Spooky Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Squire Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Sublime Bass.dmp
+%%DATADIR%%/instruments/FM/bass/Yamaha MU Synth Bass 2.dmp
+%%DATADIR%%/instruments/FM/bass/algobass.dmp
+%%DATADIR%%/instruments/FM/bass/bass1.fui
+%%DATADIR%%/instruments/FM/bass/bass2.fui
+%%DATADIR%%/instruments/FM/bass/bass3.fui
+%%DATADIR%%/instruments/FM/bass/bass4.fui
+%%DATADIR%%/instruments/FM/bass/bass5.fui
+%%DATADIR%%/instruments/FM/bass/bass6.fui
+%%DATADIR%%/instruments/FM/bass/bass_acoustic_00.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_00.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_01.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_02.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_03_muffled.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_04.fui
+%%DATADIR%%/instruments/FM/bass/bass_electric_05_amp.fui
+%%DATADIR%%/instruments/FM/bass/bass_growl_00_wobbly.fui
+%%DATADIR%%/instruments/FM/bass/bass_growl_01_wobbly2.fui
+%%DATADIR%%/instruments/FM/bass/bass_growl_02_wobbly3.fui
+%%DATADIR%%/instruments/FM/bass/bass_picked_00.fui
+%%DATADIR%%/instruments/FM/bass/bass_picked_01_snappy.fui
+%%DATADIR%%/instruments/FM/bass/bass_picked_02.fui
+%%DATADIR%%/instruments/FM/bass/bass_slap_00.fui
+%%DATADIR%%/instruments/FM/bass/bass_slap_01.fui
+%%DATADIR%%/instruments/FM/bass/bass_slap_02.fui
+%%DATADIR%%/instruments/FM/bass/dxbass1.dmp
+%%DATADIR%%/instruments/FM/bass/dxbass2.dmp
+%%DATADIR%%/instruments/FM/bass/dxbass3.dmp
+%%DATADIR%%/instruments/FM/bass/dxbass4.dmp
+%%DATADIR%%/instruments/FM/bass/dxbass5.dmp
+%%DATADIR%%/instruments/FM/bass/dxbass5slap.dmp
+%%DATADIR%%/instruments/FM/bass/fm_bass1.fui
+%%DATADIR%%/instruments/FM/bass/fm_bass2.fui
+%%DATADIR%%/instruments/FM/bass/fm_bass3.fui
+%%DATADIR%%/instruments/FM/bass/generic alg 0 bass.dmp
+%%DATADIR%%/instruments/FM/bass/nicco1690 Slap Bass.dmp
+%%DATADIR%%/instruments/FM/bass/opm_nestri.fui
+%%DATADIR%%/instruments/FM/bass/sonic_modbass.dmp
+%%DATADIR%%/instruments/FM/bass/tarylbass1.fui
+%%DATADIR%%/instruments/FM/bass/weird bass.dmp
+%%DATADIR%%/instruments/FM/default.fui
+%%DATADIR%%/instruments/FM/drums/(GEN) Crash.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Double Tom.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Hi-Hat Closed.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Hi-Hat Open.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Kick 1.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Kick 2.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Light Snare.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Obvious Kick (C-5 02CC).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Obvious Ride Closed (C-5).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Obvious Ride Open (C-5).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Obvious Snare (D#5 0299).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Obvious Tom (C-5 0266, G#4 0255, E-4 0244).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Snare 1.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Snare 2.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Snare 3.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Timpani.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Tom.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Trap Snare Carry (C-4, 0201).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Trap Snare Start (D-4 023F).dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Triangle.dmp
+%%DATADIR%%/instruments/FM/drums/(GEN) Wood Block.dmp
+%%DATADIR%%/instruments/FM/drums/4-7 Snare.fui
+%%DATADIR%%/instruments/FM/drums/909 Hat.dmp
+%%DATADIR%%/instruments/FM/drums/Compressed Clap.fui
+%%DATADIR%%/instruments/FM/drums/Cymbal.dmp
+%%DATADIR%%/instruments/FM/drums/Drum.fui
+%%DATADIR%%/instruments/FM/drums/GB Tom.fui
+%%DATADIR%%/instruments/FM/drums/Heavy Kick.fui
+%%DATADIR%%/instruments/FM/drums/Kick_B0.dmp
+%%DATADIR%%/instruments/FM/drums/Less Chrunchy Snare.dmp
+%%DATADIR%%/instruments/FM/drums/OPM Power Snare.fui
+%%DATADIR%%/instruments/FM/drums/Single Clap.fui
+%%DATADIR%%/instruments/FM/drums/Snare_B2.dmp
+%%DATADIR%%/instruments/FM/drums/Squishy Snare.fui
+%%DATADIR%%/instruments/FM/drums/Trap Kick.dmp
+%%DATADIR%%/instruments/FM/drums/Trap Snare.dmp
+%%DATADIR%%/instruments/FM/drums/[2OPHigh]HatClosed_B2.dmp
+%%DATADIR%%/instruments/FM/drums/[2OPHigh]HatOpen_B2.dmp
+%%DATADIR%%/instruments/FM/drums/crash_00.fui
+%%DATADIR%%/instruments/FM/drums/fmbigkick.fui
+%%DATADIR%%/instruments/FM/drums/fmclap.fui
+%%DATADIR%%/instruments/FM/drums/fmclap2.fui
+%%DATADIR%%/instruments/FM/drums/fmhat.fui
+%%DATADIR%%/instruments/FM/drums/fmopenhat.fui
+%%DATADIR%%/instruments/FM/drums/hihat_00.fui
+%%DATADIR%%/instruments/FM/drums/idk_something_percussion.fui
+%%DATADIR%%/instruments/FM/drums/kick_00_classic.fui
+%%DATADIR%%/instruments/FM/drums/kick_01_power.fui
+%%DATADIR%%/instruments/FM/drums/kick_02_power2.fui
+%%DATADIR%%/instruments/FM/drums/kick_03_muffled.fui
+%%DATADIR%%/instruments/FM/drums/kick_04_bassdrum.fui
+%%DATADIR%%/instruments/FM/drums/kick_05_noisy.fui
+%%DATADIR%%/instruments/FM/drums/kick_06_fat.fui
+%%DATADIR%%/instruments/FM/drums/kick_07_fat2.fui
+%%DATADIR%%/instruments/FM/drums/powersnare.fui
+%%DATADIR%%/instruments/FM/drums/snare_00_simple.fui
+%%DATADIR%%/instruments/FM/drums/snare_01_curvy.fui
+%%DATADIR%%/instruments/FM/drums/snare_02_weak.fui
+%%DATADIR%%/instruments/FM/drums/snare_03_weak2.fui
+%%DATADIR%%/instruments/FM/drums/snare_04_muffled.fui
+%%DATADIR%%/instruments/FM/drums/snare_05_intense.fui
+%%DATADIR%%/instruments/FM/drums/snareclap_G-2.fui
+%%DATADIR%%/instruments/FM/drums/thinclosedhihat.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Buzzer.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) C64 Wave Combo.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Clap.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Clink.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Crank Turn.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Decay Laser.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Laser Gun.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Laser.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Lightning Bolt.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) TV Static.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Techno TL Pitch Slider.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) Thunder Strike.dmp
+%%DATADIR%%/instruments/FM/effect/(GEN) U.F.O.dmp
+%%DATADIR%%/instruments/FM/effect/Acoustic String Slap SFX.dmp
+%%DATADIR%%/instruments/FM/effect/GEN_Wind.fui
+%%DATADIR%%/instruments/FM/effect/GEN_weird.fui
+%%DATADIR%%/instruments/FM/effect/Glide.dmp
+%%DATADIR%%/instruments/FM/effect/Heart.dmp
+%%DATADIR%%/instruments/FM/effect/Interference.dmp
+%%DATADIR%%/instruments/FM/effect/Ocean.dmp
+%%DATADIR%%/instruments/FM/effect/Skid.dmp
+%%DATADIR%%/instruments/FM/effect/Sore Throat.dmp
+%%DATADIR%%/instruments/FM/effect/[2OPLow]Analog Horror 1.dmp
+%%DATADIR%%/instruments/FM/effect/[2OPLow]Analog Horror 2.dmp
+%%DATADIR%%/instruments/FM/effect/fm_propeller.fui
+%%DATADIR%%/instruments/FM/effect/white nosie.dmp
+%%DATADIR%%/instruments/FM/guitar/(CH3) Double Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Banjo.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Electric Guitar 1.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Electric Guitar 2.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Electric Guitar 3.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Electric Guitar EX.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Grunge.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Rough Sitar.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Shamisen.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Sitar.dmp
+%%DATADIR%%/instruments/FM/guitar/(GEN) Space Sitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Acoustic Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Acoustic Nylon Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Acoustic Steel Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Banjo (Muted).opni
+%%DATADIR%%/instruments/FM/guitar/Banjo.opni
+%%DATADIR%%/instruments/FM/guitar/Distorted Guitar 1.dmp
+%%DATADIR%%/instruments/FM/guitar/Distorted Guitar 2.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Clean Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Distorted Guitar (High).dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Distorted Guitar (Low).dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Funk Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Guitar Harmonics.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Jazz Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Lap Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Muted Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Overdriven Guitar (High).dmp
+%%DATADIR%%/instruments/FM/guitar/Electric Overdriven Guitar (Low).dmp
+%%DATADIR%%/instruments/FM/guitar/Funk Guitar.fui
+%%DATADIR%%/instruments/FM/guitar/Gardenshroom.dmp
+%%DATADIR%%/instruments/FM/guitar/Guitar Test.opm
+%%DATADIR%%/instruments/FM/guitar/Hard Guitar.fui
+%%DATADIR%%/instruments/FM/guitar/Koto.opni
+%%DATADIR%%/instruments/FM/guitar/OPNx_ElectricGuitar.fui
+%%DATADIR%%/instruments/FM/guitar/Oud.opni
+%%DATADIR%%/instruments/FM/guitar/SSGuitar_A2.dmp
+%%DATADIR%%/instruments/FM/guitar/SSGuitar_B2.dmp
+%%DATADIR%%/instruments/FM/guitar/SSGuitar_F#2.dmp
+%%DATADIR%%/instruments/FM/guitar/SSGuitar_G2.dmp
+%%DATADIR%%/instruments/FM/guitar/Shamisen (Regular Pluck).opni
+%%DATADIR%%/instruments/FM/guitar/Shamisen (Tsugaru Slap).opni
+%%DATADIR%%/instruments/FM/guitar/Sitar.opni
+%%DATADIR%%/instruments/FM/guitar/Spanish Guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/Tamboura (Bass Sitar).opni
+%%DATADIR%%/instruments/FM/guitar/Ukulele.dmp
+%%DATADIR%%/instruments/FM/guitar/YM2151_DistGuitar.fui
+%%DATADIR%%/instruments/FM/guitar/distguitar_00.fui
+%%DATADIR%%/instruments/FM/guitar/high guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/powerchord.fui
+%%DATADIR%%/instruments/FM/guitar/sine distorted guitar.dmp
+%%DATADIR%%/instruments/FM/guitar/trashy guitar.dmp
+%%DATADIR%%/instruments/FM/horn/(CH3) Trumpet + Echo.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Dubious Trumpet.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Ringing Trumpet.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Trumpet 1.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Trumpet 2.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Trumpet 3.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) Trumpet EX.dmp
+%%DATADIR%%/instruments/FM/horn/(GEN) VRC7 Trumpet.dmp
+%%DATADIR%%/instruments/FM/horn/FM Brass.dmp
+%%DATADIR%%/instruments/FM/horn/GEN_Tuba.fui
+%%DATADIR%%/instruments/FM/horn/OPNx_SynthBrass.fui
+%%DATADIR%%/instruments/FM/horn/Saw Trumpet.dmp
+%%DATADIR%%/instruments/FM/horn/Trumpet.dmp
+%%DATADIR%%/instruments/FM/horn/ass overtone brass.dmp
+%%DATADIR%%/instruments/FM/horn/brass_00_wobbly.fui
+%%DATADIR%%/instruments/FM/horn/brass_01_bassish.fui
+%%DATADIR%%/instruments/FM/horn/brass_02_boring.fui
+%%DATADIR%%/instruments/FM/horn/brass_03_boring2.fui
+%%DATADIR%%/instruments/FM/keys/(CH3) Double Piano.dmp
+%%DATADIR%%/instruments/FM/keys/(CH3) Double Reed Organ.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Church Organ.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Piano 1.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Piano 2.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Reed Organ.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Short Piano.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Space Piano.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) Spoopy Organ.dmp
+%%DATADIR%%/instruments/FM/keys/(GEN) VRC7 Reed Organ.dmp
+%%DATADIR%%/instruments/FM/keys/80's Organ.dmp
+%%DATADIR%%/instruments/FM/keys/Bite Organ.dmp
+%%DATADIR%%/instruments/FM/keys/Celesta (High).dmp
+%%DATADIR%%/instruments/FM/keys/Celesta (Low).dmp
+%%DATADIR%%/instruments/FM/keys/Church Organ.dmp
+%%DATADIR%%/instruments/FM/keys/Circus Organ.fui
+%%DATADIR%%/instruments/FM/keys/Clavinet.dmp
+%%DATADIR%%/instruments/FM/keys/Creep Organ.dmp
+%%DATADIR%%/instruments/FM/keys/E. Piano 1 (Rhodes).dmp
+%%DATADIR%%/instruments/FM/keys/E. Piano 2 (DX).dmp
+%%DATADIR%%/instruments/FM/keys/ElisOrgan.fui
+%%DATADIR%%/instruments/FM/keys/Harpsichord.dmp
+%%DATADIR%%/instruments/FM/keys/Less Soft E Piano.dmp
+%%DATADIR%%/instruments/FM/keys/Low Piano.dmp
+%%DATADIR%%/instruments/FM/keys/OPNx_Piano.fui
+%%DATADIR%%/instruments/FM/keys/Organ 1 (Drawbar).dmp
+%%DATADIR%%/instruments/FM/keys/Organ 2 (Percussive).dmp
+%%DATADIR%%/instruments/FM/keys/Organ 3 (Rock Organ).dmp
+%%DATADIR%%/instruments/FM/keys/Organ 3 Alt (Rock Organ Alt).dmp
+%%DATADIR%%/instruments/FM/keys/Organ 5 (Percussive Variation).dmp
+%%DATADIR%%/instruments/FM/keys/Organ.dmp
+%%DATADIR%%/instruments/FM/keys/Piano 1 (Acoustic).dmp
+%%DATADIR%%/instruments/FM/keys/Piano 2 (Bright Acoustic).dmp
+%%DATADIR%%/instruments/FM/keys/Piano 3 (Electric Grand).dmp
+%%DATADIR%%/instruments/FM/keys/Piano Test.opm
+%%DATADIR%%/instruments/FM/keys/PianoMD.fui
+%%DATADIR%%/instruments/FM/keys/Reed Organ or Bandoneon.dmp
+%%DATADIR%%/instruments/FM/keys/Rock Organ.dmp
+%%DATADIR%%/instruments/FM/keys/Soft E Piano.dmp
+%%DATADIR%%/instruments/FM/keys/Sparksichord.dmp
+%%DATADIR%%/instruments/FM/keys/YM2151_E-PIANO.fui
+%%DATADIR%%/instruments/FM/keys/brickblock369 Church Organ.dmp
+%%DATADIR%%/instruments/FM/keys/brickblock369 Harpsichord.dmp
+%%DATADIR%%/instruments/FM/keys/fmpiano.fui
+%%DATADIR%%/instruments/FM/keys/harpsisine.dmp
+%%DATADIR%%/instruments/FM/keys/nicco1690 Church Organ.dmp
+%%DATADIR%%/instruments/FM/keys/organ_test/Organ Test - Notes.txt
+%%DATADIR%%/instruments/FM/keys/organ_test/Organ Test.opm
+%%DATADIR%%/instruments/FM/percussion/(CH3) Double Metalliphone.dmp
+%%DATADIR%%/instruments/FM/percussion/(CH3) Double Steel Drum.dmp
+%%DATADIR%%/instruments/FM/percussion/(CH3) Double Xylophone.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Bongo.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Chime.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Cowbell.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Deep Marimba.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Marimba.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Metalliphone.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Short Bongo.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Space Chime.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Space Marimba.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Steel Drum.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) VRC7 Chime.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) VRC7 Marimba.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) VRC7 Metalliphone.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) VRC7 Soft Hestian.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) VRC7 Xylophone.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Xylophone 1.dmp
+%%DATADIR%%/instruments/FM/percussion/(GEN) Xylophone 2.dmp
+%%DATADIR%%/instruments/FM/percussion/Agogo or Cowbell.dmp
+%%DATADIR%%/instruments/FM/percussion/BellMD.fui
+%%DATADIR%%/instruments/FM/percussion/Bell_Oct4-7.dmp
+%%DATADIR%%/instruments/FM/percussion/Chromatic Percussion.opm
+%%DATADIR%%/instruments/FM/percussion/ChurchBell.fui
+%%DATADIR%%/instruments/FM/percussion/Cowbell_F#5.dmp
+%%DATADIR%%/instruments/FM/percussion/Dangerously Cheap Timpani.fui
+%%DATADIR%%/instruments/FM/percussion/Dulcimer.dmp
+%%DATADIR%%/instruments/FM/percussion/Glockenspiel.dmp
+%%DATADIR%%/instruments/FM/percussion/Kalimba.dmp
+%%DATADIR%%/instruments/FM/percussion/Kalimba.fui
+%%DATADIR%%/instruments/FM/percussion/Marimba.dmp
+%%DATADIR%%/instruments/FM/percussion/Marimba.fui
+%%DATADIR%%/instruments/FM/percussion/Music Box.dmp
+%%DATADIR%%/instruments/FM/percussion/MusicBox.fui
+%%DATADIR%%/instruments/FM/percussion/OPN_-_Music_Box.fui
+%%DATADIR%%/instruments/FM/percussion/Peck.dmp
+%%DATADIR%%/instruments/FM/percussion/Rainbow_Bell.fui
+%%DATADIR%%/instruments/FM/percussion/Realistic Bell.dmp
+%%DATADIR%%/instruments/FM/percussion/Steel Drum.dmp
+%%DATADIR%%/instruments/FM/percussion/Timpani.dmp
+%%DATADIR%%/instruments/FM/percussion/Tubular Bells.dmp
+%%DATADIR%%/instruments/FM/percussion/VRC7 Vibraphone.dmp
+%%DATADIR%%/instruments/FM/percussion/Vibraphone.dmp
+%%DATADIR%%/instruments/FM/percussion/Xylophone.dmp
+%%DATADIR%%/instruments/FM/percussion/agogo.fui
+%%DATADIR%%/instruments/FM/percussion/alg 7 bongoes.dmp
+%%DATADIR%%/instruments/FM/percussion/bell_00_glockenspiel.fui
+%%DATADIR%%/instruments/FM/percussion/bell_01_glockenspiel_echoing.fui
+%%DATADIR%%/instruments/FM/percussion/bell_02_glockenspiel_wobbly.fui
+%%DATADIR%%/instruments/FM/percussion/brickblock369 Glockenspiel.dmp
+%%DATADIR%%/instruments/FM/percussion/brickblock369 Steel Drum.dmp
+%%DATADIR%%/instruments/FM/percussion/brickblock369 Timpani.dmp
+%%DATADIR%%/instruments/FM/percussion/fm_cowbell.fui
+%%DATADIR%%/instruments/FM/percussion/octave_8_bell.fui
+%%DATADIR%%/instruments/FM/percussion/trashy handbells.dmp
+%%DATADIR%%/instruments/FM/strings/(CH3) Double Viola.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Choir.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Fiddle.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Rapid Fiddle.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Space Violin.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) VRC7 Strings.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) VRC7 Viola.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Violin 1.dmp
+%%DATADIR%%/instruments/FM/strings/(GEN) Violin 2.dmp
+%%DATADIR%%/instruments/FM/strings/Earthbound Strings.dmp
+%%DATADIR%%/instruments/FM/strings/Enchant.dmp
+%%DATADIR%%/instruments/FM/strings/Ethereal Something.dmp
+%%DATADIR%%/instruments/FM/strings/Fifths Pad.dmp
+%%DATADIR%%/instruments/FM/strings/Fifths Type Beat.dmp
+%%DATADIR%%/instruments/FM/strings/OPNx_5thsPad.fui
+%%DATADIR%%/instruments/FM/strings/OPNx_String.fui
+%%DATADIR%%/instruments/FM/strings/Pad.dmp
+%%DATADIR%%/instruments/FM/strings/SSGPad.dmp
+%%DATADIR%%/instruments/FM/strings/Sawsine pad.dmp
+%%DATADIR%%/instruments/FM/strings/Slow Strings.fui
+%%DATADIR%%/instruments/FM/strings/Violin.fui
+%%DATADIR%%/instruments/FM/strings/ViolinMD.fui
+%%DATADIR%%/instruments/FM/strings/orchestal bullshit.dmp
+%%DATADIR%%/instruments/FM/strings/strings_00.fui
+%%DATADIR%%/instruments/FM/synth/(CH3) Double Ambience.dmp
+%%DATADIR%%/instruments/FM/synth/(CH3) Double Choir.dmp
+%%DATADIR%%/instruments/FM/synth/(CH3) Double Rounded Square.dmp
+%%DATADIR%%/instruments/FM/synth/(CH3) Saw & Organ.dmp
+%%DATADIR%%/instruments/FM/synth/(CH3) Sine Chord.dmp
+%%DATADIR%%/instruments/FM/synth/(CH3) Synth with Light Snare.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 1 16 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 1 4 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 1 8 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 3 16 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 3 8 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 5 16 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) 7 16 Pulse.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Ambience.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Church Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Cutoff.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Distorted Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) High Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Hyperspeed Decay Sine.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) K.K. Slider Aah.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) K.K. Slider Weh.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Low Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) NES Triangle.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Near Perfect Saw Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Near Perfect Square Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Perfect Saw Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Perfect Square Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Perfect Triangle Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Rattling Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Rough Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Rough Square.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Rounded Square.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Saw Malleable.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Sharp Saw.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Sine Growl.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Space Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Space Organ.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Space Saw.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Sparkle.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Spoopy.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Square Wave.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Synth with Closed Hi-Hat.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Synth with Open Hi-Hat.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Twang EX.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Twang Whistle.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) VRC7 Choir.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) VRC7 Hestian.dmp
+%%DATADIR%%/instruments/FM/synth/(GEN) Wahwah.dmp
+%%DATADIR%%/instruments/FM/synth/Abduction.dmp
+%%DATADIR%%/instruments/FM/synth/Altered Square.dmp
+%%DATADIR%%/instruments/FM/synth/Buttermilk.dmp
+%%DATADIR%%/instruments/FM/synth/Circuitbird Donk.dmp
+%%DATADIR%%/instruments/FM/synth/Cricket Chorus.fui
+%%DATADIR%%/instruments/FM/synth/Desert Synth.dmp
+%%DATADIR%%/instruments/FM/synth/Ecco.dmp
+%%DATADIR%%/instruments/FM/synth/FM_noname1.fui
+%%DATADIR%%/instruments/FM/synth/Guess.dmp
+%%DATADIR%%/instruments/FM/synth/Kirby SNES Synth Pad.fui
+%%DATADIR%%/instruments/FM/synth/Klax.dmp
+%%DATADIR%%/instruments/FM/synth/Kyd.dmp
+%%DATADIR%%/instruments/FM/synth/Love.dmp
+%%DATADIR%%/instruments/FM/synth/Metallic FM Lead.fui
+%%DATADIR%%/instruments/FM/synth/Octave_Square.fui
+%%DATADIR%%/instruments/FM/synth/Octave_Square2.fui
+%%DATADIR%%/instruments/FM/synth/Reverby_Live_Chords.fui
+%%DATADIR%%/instruments/FM/synth/RustEcho.dmp
+%%DATADIR%%/instruments/FM/synth/Saw.dmp
+%%DATADIR%%/instruments/FM/synth/Signal.dmp
+%%DATADIR%%/instruments/FM/synth/Space Cowboy.dmp
+%%DATADIR%%/instruments/FM/synth/Space Shredder.dmp
+%%DATADIR%%/instruments/FM/synth/Square.dmp
+%%DATADIR%%/instruments/FM/synth/Square.fui
+%%DATADIR%%/instruments/FM/synth/Squid.dmp
+%%DATADIR%%/instruments/FM/synth/Thin.dmp
+%%DATADIR%%/instruments/FM/synth/Tri.dmp
+%%DATADIR%%/instruments/FM/synth/Twoah.dmp
+%%DATADIR%%/instruments/FM/synth/[1OPHigh]Saw.dmp
+%%DATADIR%%/instruments/FM/synth/[2OPHigh]Filtered Square.dmp
+%%DATADIR%%/instruments/FM/synth/ass-loud lead.dmp
+%%DATADIR%%/instruments/FM/synth/cool leaed.dmp
+%%DATADIR%%/instruments/FM/synth/early 80s bs.dmp
+%%DATADIR%%/instruments/FM/synth/fm_grinder.fui
+%%DATADIR%%/instruments/FM/synth/fm_horror.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname2.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname3.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname4.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname5.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname6.fui
+%%DATADIR%%/instruments/FM/synth/fm_noname7.fui
+%%DATADIR%%/instruments/FM/synth/growl.fui
+%%DATADIR%%/instruments/FM/synth/huh.dmp
+%%DATADIR%%/instruments/FM/synth/mystic cave lead.dmp
+%%DATADIR%%/instruments/FM/synth/saw + whatever the fuck.dmp
+%%DATADIR%%/instruments/FM/synth/sawtooth.dmp
+%%DATADIR%%/instruments/FM/synth/snes-ish square.dmp
+%%DATADIR%%/instruments/FM/synth/sonic spinball toxic caves thingy.dmp
+%%DATADIR%%/instruments/FM/synth/whut.dmp
+%%DATADIR%%/instruments/FM/synth/yrwywryw.dmp
+%%DATADIR%%/instruments/FM/tfilib/banjo.tfi
+%%DATADIR%%/instruments/FM/tfilib/bass.tfi
+%%DATADIR%%/instruments/FM/tfilib/bell.tfi
+%%DATADIR%%/instruments/FM/tfilib/cymbal.tfi
+%%DATADIR%%/instruments/FM/tfilib/distbass.tfi
+%%DATADIR%%/instruments/FM/tfilib/distguit.tfi
+%%DATADIR%%/instruments/FM/tfilib/distslap.tfi
+%%DATADIR%%/instruments/FM/tfilib/elecbass.tfi
+%%DATADIR%%/instruments/FM/tfilib/fifths.tfi
+%%DATADIR%%/instruments/FM/tfilib/flute.tfi
+%%DATADIR%%/instruments/FM/tfilib/guitar.tfi
+%%DATADIR%%/instruments/FM/tfilib/harp.tfi
+%%DATADIR%%/instruments/FM/tfilib/harpsich.tfi
+%%DATADIR%%/instruments/FM/tfilib/hithat.tfi
+%%DATADIR%%/instruments/FM/tfilib/kick.tfi
+%%DATADIR%%/instruments/FM/tfilib/list.txt
+%%DATADIR%%/instruments/FM/tfilib/lyre.tfi
+%%DATADIR%%/instruments/FM/tfilib/marimba.tfi
+%%DATADIR%%/instruments/FM/tfilib/neslike.tfi
+%%DATADIR%%/instruments/FM/tfilib/ocarina.tfi
+%%DATADIR%%/instruments/FM/tfilib/organ.tfi
+%%DATADIR%%/instruments/FM/tfilib/piano.tfi
+%%DATADIR%%/instruments/FM/tfilib/sawtooth.tfi
+%%DATADIR%%/instruments/FM/tfilib/sax.tfi
+%%DATADIR%%/instruments/FM/tfilib/sine.tfi
+%%DATADIR%%/instruments/FM/tfilib/slapbass.tfi
+%%DATADIR%%/instruments/FM/tfilib/snare.tfi
+%%DATADIR%%/instruments/FM/tfilib/sofpiano.tfi
+%%DATADIR%%/instruments/FM/tfilib/softsaw.tfi
+%%DATADIR%%/instruments/FM/tfilib/softsqr.tfi
+%%DATADIR%%/instruments/FM/tfilib/square.tfi
+%%DATADIR%%/instruments/FM/tfilib/steldrum.tfi
+%%DATADIR%%/instruments/FM/tfilib/synbell.tfi
+%%DATADIR%%/instruments/FM/tfilib/tackpian.tfi
+%%DATADIR%%/instruments/FM/tfilib/timpani1.tfi
+%%DATADIR%%/instruments/FM/tfilib/timpani2.tfi
+%%DATADIR%%/instruments/FM/tfilib/toypiano.tfi
+%%DATADIR%%/instruments/FM/tfilib/triangle.tfi
+%%DATADIR%%/instruments/FM/tfilib/trumpet.tfi
+%%DATADIR%%/instruments/FM/tfilib/wooddrum.tfi
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b00.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b00a.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b00b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b01.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b01b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b02.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b02b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b02c MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b02c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b03.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b04.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b05.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b06.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b07.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b08.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b08b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b08c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b09.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b10.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b10b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b11.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b12.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b13.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b14.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b15.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b16.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b17.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b17b MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b17b SLAP (actual).dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b17b SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b17b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b18 MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b18 SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b18.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b19 MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b19 SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b19.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b20.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b21.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b21b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b21c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22 MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22 SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22c MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22c SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b22c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b23 MUTE.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b23 SLAP.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b23.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/B Series/b69.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p01.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p01b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p02.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p02b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p03.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p03b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p04.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p05.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p06.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p06b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p06c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p07.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p08.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p09.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p10.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p10b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/P Series/p11.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/act 1 void of space.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r10.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r10b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r11.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r12.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r13.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r14.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r15.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r16.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r2.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r27.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r3.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r33.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r4.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r5.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r65.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r6b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r7.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r7b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r7c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r8.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r8b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r8c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r9.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/R Series/r9b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/README.txt
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z00.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z01.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z02.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z02b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z02c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z03.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z04.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z04b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z04c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z05.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z05b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z05c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z05d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z06.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z06b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z07.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z08.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z09.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z10.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z10b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z10c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z10d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z10e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z11.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z11b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z11c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z11d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z11e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z12.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z13.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z14.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z14b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z14c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z14d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z15.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z15b (quiet).dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z15b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z16.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z16b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z16c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z16d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z17.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z17b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z17c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z17d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z17e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z18.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z19.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z20.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z20b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z21.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z22.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z22b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z23.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z24.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z24b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z24c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z25.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z26.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z26b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z26c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z26d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z26e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z27.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z28.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z28b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z28c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z29.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z30.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z30b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z30c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z31.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z32.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z33.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z33b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z33c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z33d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z33e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z34.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z34b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z35.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z36.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z37.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z38.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39b low vol.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39c.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39d.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z39e.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z40.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z41.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z41b.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/Z Series/z42.dmp
+%%DATADIR%%/instruments/FM/uhrwerk/arbys.dmp
+%%DATADIR%%/instruments/FM/wind/(CH3) Double Clarinet.dmp
+%%DATADIR%%/instruments/FM/wind/(CH3) Double Flute.dmp
+%%DATADIR%%/instruments/FM/wind/(CH3) Double Woodwind.dmp
+%%DATADIR%%/instruments/FM/wind/(CH3) Quadruple Ocarina.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Clarinet.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Didgeridoo.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Flute.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Forest Flute.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Harmonica.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Ocarina.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Saxophone EX.dmp
+%%DATADIR%%/instruments/FM/wind/(GEN) Saxophone.dmp
+%%DATADIR%%/instruments/FM/wind/B'arinet.dmp
+%%DATADIR%%/instruments/FM/wind/Clarinet.dmp
+%%DATADIR%%/instruments/FM/wind/English Horn.dmp
+%%DATADIR%%/instruments/FM/wind/FM_4OP_-_Tenor_Sax.fui
+%%DATADIR%%/instruments/FM/wind/Flute.dmp
+%%DATADIR%%/instruments/FM/wind/Harmonica.dmp
+%%DATADIR%%/instruments/FM/wind/OPNx_BottleBlow.fui
+%%DATADIR%%/instruments/FM/wind/Pan Flute.dmp
+%%DATADIR%%/instruments/FM/wind/bassoon.fui
+%%DATADIR%%/instruments/FM/wind/bassoon_clarinet.fui
+%%DATADIR%%/instruments/FM/wind/fm_pipeflute.fui
+%%DATADIR%%/instruments/FM/wind/woodwind_00.fui
+%%DATADIR%%/instruments/OPL/2-OP OPL3 Slap Bass.fui
+%%DATADIR%%/instruments/OPL/4op Bass.fui
+%%DATADIR%%/instruments/OPL/Chorus Organ.fui
+%%DATADIR%%/instruments/OPL/Closed Hi-hat.fui
+%%DATADIR%%/instruments/OPL/Crystal.fui
+%%DATADIR%%/instruments/OPL/DX7 Electric Piano.fui
+%%DATADIR%%/instruments/OPL/Distortion Guitar.fui
+%%DATADIR%%/instruments/OPL/Guitar 2.fui
+%%DATADIR%%/instruments/OPL/Guitar.fui
+%%DATADIR%%/instruments/OPL/Low Overdriven Guitar (Sine Carrier).fui
+%%DATADIR%%/instruments/OPL/Low Overdriven Guitar (Square Carrier).fui
+%%DATADIR%%/instruments/OPL/OPL-ClickKik.fui
+%%DATADIR%%/instruments/OPL/OPL-RhythmTemplate.fui
+%%DATADIR%%/instruments/OPL/OPL-RollingDrum.fui
+%%DATADIR%%/instruments/OPL/OPL1_Ride_Closed.fui
+%%DATADIR%%/instruments/OPL/OPL2-TwinkleBlare.fui
+%%DATADIR%%/instruments/OPL/OPL3-4opbrass11.fui
+%%DATADIR%%/instruments/OPL/OPL3-4opharmonica.fui
+%%DATADIR%%/instruments/OPL/OPL3-4opsitar.fui
+%%DATADIR%%/instruments/OPL/OPL3-FakeFalcomGuitar.fui
+%%DATADIR%%/instruments/OPL/OPL3-FakeFalcomString.fui
+%%DATADIR%%/instruments/OPL/OPL3-GabberKick.fui
+%%DATADIR%%/instruments/OPL/OPL3-GabberKick3-60hz-.fui
+%%DATADIR%%/instruments/OPL/OPL3-MajorSquare.fui
+%%DATADIR%%/instruments/OPL/OPL3-PWM.fui
+%%DATADIR%%/instruments/OPL/OPL3-PeriodicNoise.fui
+%%DATADIR%%/instruments/OPL/OPL3-SegaBass.fui
+%%DATADIR%%/instruments/OPL/OPL3-SyncDuck.fui
+%%DATADIR%%/instruments/OPL/OPL3-TwinkleKey.fui
+%%DATADIR%%/instruments/OPL/OPL3-clap.fui
+%%DATADIR%%/instruments/OPL/OPL3-easyhoova.fui
+%%DATADIR%%/instruments/OPL/OPL3_-_C64_like_sqr_snare.fui
+%%DATADIR%%/instruments/OPL/OPL3_-_PWM_Lead.fui
+%%DATADIR%%/instruments/OPL/OPL3_BigBass.fui
+%%DATADIR%%/instruments/OPL/OPL3_C64_Kick_or_Snare_Start.fui
+%%DATADIR%%/instruments/OPL/OPL3_C64_Snare_Carry.fui
+%%DATADIR%%/instruments/OPL/OPL3_Slap_Bass.fui
+%%DATADIR%%/instruments/OPL/OPL3_Springybass.fui
+%%DATADIR%%/instruments/OPL/OPLL_Clickik.fui
+%%DATADIR%%/instruments/OPL/OPL_GoodPanFlute.fui
+%%DATADIR%%/instruments/OPL/OPL_KoreanSquare.fui
+%%DATADIR%%/instruments/OPL/OPL_SupersawUnit.fui
+%%DATADIR%%/instruments/OPL/OPL_horn.fui
+%%DATADIR%%/instruments/OPL/OPM-lowpitch-fmclap.fui
+%%DATADIR%%/instruments/OPL/Open Hi-hat.fui
+%%DATADIR%%/instruments/OPL/Overdriven Guitar.fui
+%%DATADIR%%/instruments/OPL/Psuedo-PoKEY Perodic Noise (4OP).fui
+%%DATADIR%%/instruments/OPL/Snare Drum 2.fui
+%%DATADIR%%/instruments/OPL/Snare Drum.fui
+%%DATADIR%%/instruments/OPL/Synth Brass.fui
+%%DATADIR%%/instruments/OPL/Synth Guitar.fui
+%%DATADIR%%/instruments/OPL/Violin.fui
+%%DATADIR%%/instruments/OPL/key.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_bass_1.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_bass_2.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_bass_3.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_drum_kick.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_drum_power_snare.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_drum_snare.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_drum_tom.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_growl_synth.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_lead_guitar.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_piano_bell.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_rhythm_guitar_1.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_rhythm_guitar_2.fui
+%%DATADIR%%/instruments/OPL/opl3_4op_strings.fui
+%%DATADIR%%/instruments/OPLL/(SMSFM) Near Perfect Square Wave.dmp
+%%DATADIR%%/instruments/OPLL/Almost_Sine.fui
+%%DATADIR%%/instruments/OPLL/Alt_Oboe.fui
+%%DATADIR%%/instruments/OPLL/Better_Electric_Guitar.fui
+%%DATADIR%%/instruments/OPLL/Chime.fui
+%%DATADIR%%/instruments/OPLL/Electric_Guitar_2.fui
+%%DATADIR%%/instruments/OPLL/Electric_Guitar_3.fui
+%%DATADIR%%/instruments/OPLL/Finger_Bass.fui
+%%DATADIR%%/instruments/OPLL/Glass_and_Wood.fui
+%%DATADIR%%/instruments/OPLL/Half_Sine.fui
+%%DATADIR%%/instruments/OPLL/Hihat_Plus_Brass.fui
+%%DATADIR%%/instruments/OPLL/Overdriven_Guitar.fui
+%%DATADIR%%/instruments/OPLL/Reedlike_Sound.fui
+%%DATADIR%%/instruments/OPLL/Soft_Bass.fui
+%%DATADIR%%/instruments/OPLL/Soft_Clarinet.fui
+%%DATADIR%%/instruments/OPLL/Soft_EP.fui
+%%DATADIR%%/instruments/OPLL/Soft_Flute.fui
+%%DATADIR%%/instruments/OPLL/Steel_Guitar.fui
+%%DATADIR%%/instruments/OPLL/Triangle_Recorder.fui
+%%DATADIR%%/instruments/OPLL/Weeppiko-piano_guitar_idk.fui
+%%DATADIR%%/instruments/README.md
+%%DATADIR%%/instruments/other/(AY) Closed Hat.fui
+%%DATADIR%%/instruments/other/(AY) Hat-EnvBass.fui
+%%DATADIR%%/instruments/other/(AY) Kick E-1.fui
+%%DATADIR%%/instruments/other/(AY) Open Hat.fui
+%%DATADIR%%/instruments/other/(AY) Snare A#3.fui
+%%DATADIR%%/instruments/other/(S16) Computer Shutdown [C-6 0213].dmp
+%%DATADIR%%/instruments/other/(S16) Dog Whistle.dmp
+%%DATADIR%%/instruments/other/(S16) Donkey Kong Lead.dmp
+%%DATADIR%%/instruments/other/(S16) Hi-Hat Closed.dmp
+%%DATADIR%%/instruments/other/(S16) Hi-Hat Open.dmp
+%%DATADIR%%/instruments/other/(S16) Perfect Square Wave + Hi-Hat Closed.dmp
+%%DATADIR%%/instruments/other/(S16) Perfect Square Wave + Hi-Hat Open.dmp
+%%DATADIR%%/instruments/other/(S16) Portal Cast.dmp
+%%DATADIR%%/instruments/other/(SMS) 2-Arp Chord High.dmp
+%%DATADIR%%/instruments/other/(SMS) 2-Arp High.dmp
+%%DATADIR%%/instruments/other/(SMS) 2-Arp Major Low.dmp
+%%DATADIR%%/instruments/other/(SMS) 2-Arp Minor Low.dmp
+%%DATADIR%%/instruments/other/(SMS) 3-Arp High.dmp
+%%DATADIR%%/instruments/other/(SMS) 3-Arp Major.dmp
+%%DATADIR%%/instruments/other/(SMS) 3-Arp Minor.dmp
+%%DATADIR%%/instruments/other/(SMS) 5-Arp Major.dmp
+%%DATADIR%%/instruments/other/(SMS) 5-Arp Minor.dmp
+%%DATADIR%%/instruments/other/(SMS) Arp Snare.dmp
+%%DATADIR%%/instruments/other/(SMS) Attack.dmp
+%%DATADIR%%/instruments/other/(SMS) Buzz Noise.dmp
+%%DATADIR%%/instruments/other/(SMS) Crash.dmp
+%%DATADIR%%/instruments/other/(SMS) Cyclic Noise.dmp
+%%DATADIR%%/instruments/other/(SMS) Decay Noise.dmp
+%%DATADIR%%/instruments/other/(SMS) Decay.dmp
+%%DATADIR%%/instruments/other/(SMS) Down Slider.dmp
+%%DATADIR%%/instruments/other/(SMS) Hi-Hat & Note.dmp
+%%DATADIR%%/instruments/other/(SMS) Hi-Hat Closed.dmp
+%%DATADIR%%/instruments/other/(SMS) Hi-Hat Open.dmp
+%%DATADIR%%/instruments/other/(SMS) Kick Noise.dmp
+%%DATADIR%%/instruments/other/(SMS) Multi Slider.dmp
+%%DATADIR%%/instruments/other/(SMS) Obvious Crash.dmp
+%%DATADIR%%/instruments/other/(SMS) Record Scratch Down.dmp
+%%DATADIR%%/instruments/other/(SMS) Record Scratch Up.dmp
+%%DATADIR%%/instruments/other/(SMS) Retrig.dmp
+%%DATADIR%%/instruments/other/(SMS) Ride.dmp
+%%DATADIR%%/instruments/other/(SMS) Snare.dmp
+%%DATADIR%%/instruments/other/(SMS) Splash.dmp
+%%DATADIR%%/instruments/other/(SMS) Thump & Note.dmp
+%%DATADIR%%/instruments/other/(SMS) Tim Follin 6-Arp Fast Major.dmp
+%%DATADIR%%/instruments/other/(SMS) Tim Follin 6-Arp Fast Minor.dmp
+%%DATADIR%%/instruments/other/(SMS) Tim Follin 6-Arp Slow Major.dmp
+%%DATADIR%%/instruments/other/(SMS) Tim Follin 6-Arp Slow Minor.dmp
+%%DATADIR%%/instruments/other/(SMS) Tim Follin Lead.dmp
+%%DATADIR%%/instruments/other/(SMS) Tom A.dmp
+%%DATADIR%%/instruments/other/(SMS) Tom B.dmp
+%%DATADIR%%/instruments/other/(SMS) Up Slider.dmp
+%%DATADIR%%/instruments/other/(SMS) Variable.dmp
+%%DATADIR%%/instruments/other/(SMS) Whistle.dmp
+%%DATADIR%%/instruments/other/2A03 Noise Hi-Hat Closed.fui
+%%DATADIR%%/instruments/other/2A03 Noise Hi-Hat Open.fui
+%%DATADIR%%/instruments/other/2A03 Noise Kick.fui
+%%DATADIR%%/instruments/other/2A03 Noise Snare.fui
+%%DATADIR%%/instruments/other/2A03 Triangle Kick+Bass.fui
+%%DATADIR%%/instruments/other/2A03 Triangle Kick.fui
+%%DATADIR%%/instruments/other/2A03 Triangle Snare+Bass.fui
+%%DATADIR%%/instruments/other/2A03 Triangle Snare.fui
+%%DATADIR%%/instruments/other/AY Heavy Kick and Snare.fui
+%%DATADIR%%/instruments/other/AY Heavy Kick.fui
+%%DATADIR%%/instruments/other/AY kick.fui
+%%DATADIR%%/instruments/other/AY snare.fui
+%%DATADIR%%/instruments/other/C64_Snare.fui
+%%DATADIR%%/instruments/other/Castanets.fui
+%%DATADIR%%/instruments/other/Closed_Hi-hat.fui
+%%DATADIR%%/instruments/other/Echo.fui
+%%DATADIR%%/instruments/other/FDS-oneofthosejapaneseguitarsidkhowtheyarecalledyeah.fui
+%%DATADIR%%/instruments/other/FDS-overfuckingholyshitdriven-guitar.fui
+%%DATADIR%%/instruments/other/FDS-slapassbass.fui
+%%DATADIR%%/instruments/other/Flute.fui
+%%DATADIR%%/instruments/other/Follin Guitar 2.fui
+%%DATADIR%%/instruments/other/Follin Guitar.fui
+%%DATADIR%%/instruments/other/GBkick.fui
+%%DATADIR%%/instruments/other/GBsnare.fui
+%%DATADIR%%/instruments/other/Guitar.fui
+%%DATADIR%%/instruments/other/Gunshot.fui
+%%DATADIR%%/instruments/other/NES_0-2-5_arp_lead.fui
+%%DATADIR%%/instruments/other/NES_0-3-5_arp_lead.fui
+%%DATADIR%%/instruments/other/Octave Arp.fui
+%%DATADIR%%/instruments/other/Open_Hi-hat.fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc About.txt
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc ExampleInst [Hat] CH3.fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc ExampleInst [KickSnare] CH3.fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc ExampleInst [Nothing] CH3.fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc Hat_Closed CH4 [D].fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc Hat_Open CH4 [D].fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc Kick CH4 [C].fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc KickSnare CH3.fui
+%%DATADIR%%/instruments/other/SMSPerc/SMSPerc Snare CH4 [D].fui
+%%DATADIR%%/instruments/other/SMS_0-2-5_arp_lead.fui
+%%DATADIR%%/instruments/other/SMS_0-3-5_arp_lead.fui
+%%DATADIR%%/instruments/other/Side_Stick.fui
+%%DATADIR%%/instruments/other/Supersaw.fui
+%%DATADIR%%/instruments/other/TIA Bass Drum.fui
+%%DATADIR%%/instruments/other/TIA Clap.fui
+%%DATADIR%%/instruments/other/TIA Hi-Hat Long.fui
+%%DATADIR%%/instruments/other/TIA Hi-Hat.fui
+%%DATADIR%%/instruments/other/TIA Snare Drum.fui
+%%DATADIR%%/instruments/other/VERA_0-2-5_arp_lead.fui
+%%DATADIR%%/instruments/other/VERA_0-3-5_arp_lead.fui
+%%DATADIR%%/instruments/other/VERA_Noise_Kick.fui
+%%DATADIR%%/instruments/other/VERA_Noise_Snare.fui
+%%DATADIR%%/instruments/other/VIC20_kick.fui
+%%DATADIR%%/instruments/other/compatibility.fui
+%%DATADIR%%/wavetables/128x256/128x256bass.fuw
+%%DATADIR%%/wavetables/128x256/128x256chime.fuw
+%%DATADIR%%/wavetables/128x256/128x256lead.fuw
+%%DATADIR%%/wavetables/32x16/32x16ataribass.fuw
+%%DATADIR%%/wavetables/32x16/32x16brass.fuw
+%%DATADIR%%/wavetables/32x16/32x16clarinet.fuw
+%%DATADIR%%/wavetables/32x16/32x16distortedsquare.fuw
+%%DATADIR%%/wavetables/32x16/32x16eguitar.fuw
+%%DATADIR%%/wavetables/32x16/32x16flute.fuw
+%%DATADIR%%/wavetables/32x16/32x16guitar.fuw
+%%DATADIR%%/wavetables/32x16/32x16opllpiano.fuw
+%%DATADIR%%/wavetables/32x16/32x16opllvibra.fuw
+%%DATADIR%%/wavetables/32x16/32x16reedorgan.fuw
+%%DATADIR%%/wavetables/32x16/32x16saw.fuw
+%%DATADIR%%/wavetables/32x16/32x16saw2.fuw
+%%DATADIR%%/wavetables/32x16/32x16sax.fuw
+%%DATADIR%%/wavetables/32x16/32x16slapbass.fuw
+%%DATADIR%%/wavetables/32x16/32x16synthbass.fuw
+%%DATADIR%%/wavetables/32x16/32x16synthbrass.fuw
+%%DATADIR%%/wavetables/32x16/32x16trumpet.fuw
+%%DATADIR%%/wavetables/32x16/32x16voice.fuw
+%%DATADIR%%/wavetables/32x32/32x32accordion.fuw
+%%DATADIR%%/wavetables/32x32/32x32accordion2.fuw
+%%DATADIR%%/wavetables/32x32/32x32acousticguitar.fuw
+%%DATADIR%%/wavetables/32x32/32x32agogo.fuw
+%%DATADIR%%/wavetables/32x32/32x32ataribass.fuw
+%%DATADIR%%/wavetables/32x32/32x32bass2.fuw
+%%DATADIR%%/wavetables/32x32/32x32bass3.fuw
+%%DATADIR%%/wavetables/32x32/32x32bell.fuw
+%%DATADIR%%/wavetables/32x32/32x32brass.fuw
+%%DATADIR%%/wavetables/32x32/32x32brass2.fuw
+%%DATADIR%%/wavetables/32x32/32x32chime.fuw
+%%DATADIR%%/wavetables/32x32/32x32choir.fuw
+%%DATADIR%%/wavetables/32x32/32x32clarinet.fuw
+%%DATADIR%%/wavetables/32x32/32x32clarinet2.fuw
+%%DATADIR%%/wavetables/32x32/32x32distortedpulse.fuw
+%%DATADIR%%/wavetables/32x32/32x32distortedpulse2.fuw
+%%DATADIR%%/wavetables/32x32/32x32distortedsaw.fuw
+%%DATADIR%%/wavetables/32x32/32x32ebass.fuw
+%%DATADIR%%/wavetables/32x32/32x32eguitar.fuw
+%%DATADIR%%/wavetables/32x32/32x32eguitar2.fuw
+%%DATADIR%%/wavetables/32x32/32x32englishhorn.fuw
+%%DATADIR%%/wavetables/32x32/32x32fantasia.fuw
+%%DATADIR%%/wavetables/32x32/32x32filteredsaw.fuw
+%%DATADIR%%/wavetables/32x32/32x32filteredsquare.fuw
+%%DATADIR%%/wavetables/32x32/32x32flute.fuw
+%%DATADIR%%/wavetables/32x32/32x32frenchhorn.fuw
+%%DATADIR%%/wavetables/32x32/32x32frenchhorn2.fuw
+%%DATADIR%%/wavetables/32x32/32x32glockenspiel.fuw
+%%DATADIR%%/wavetables/32x32/32x32hardslap.fuw
+%%DATADIR%%/wavetables/32x32/32x32jazzguitar.fuw
+%%DATADIR%%/wavetables/32x32/32x32lead.fuw
+%%DATADIR%%/wavetables/32x32/32x32lead2.fuw
+%%DATADIR%%/wavetables/32x32/32x32mutetrumpet.fuw
+%%DATADIR%%/wavetables/32x32/32x32oboe.fuw
+%%DATADIR%%/wavetables/32x32/32x32octavelead.fuw
+%%DATADIR%%/wavetables/32x32/32x32octavesaw.fuw
+%%DATADIR%%/wavetables/32x32/32x32organ.fuw
+%%DATADIR%%/wavetables/32x32/32x32organ2.fuw
+%%DATADIR%%/wavetables/32x32/32x32organ3.fuw
+%%DATADIR%%/wavetables/32x32/32x32piano.fuw
+%%DATADIR%%/wavetables/32x32/32x32piano2.fuw
+%%DATADIR%%/wavetables/32x32/32x32reedorgan.fuw
+%%DATADIR%%/wavetables/32x32/32x32saw2.fuw
+%%DATADIR%%/wavetables/32x32/32x32sax.fuw
+%%DATADIR%%/wavetables/32x32/32x32strings.fuw
+%%DATADIR%%/wavetables/32x32/32x32strings2.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthbass.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthbell.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthlead.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthlead2.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthpiano.fuw
+%%DATADIR%%/wavetables/32x32/32x32synthstrings.fuw
+%%DATADIR%%/wavetables/32x32/32x32trumpet.fuw
+%%DATADIR%%/wavetables/32x32/32x32tuba.fuw
+%%DATADIR%%/wavetables/32x32/32x32vibraphone.fuw
+%%DATADIR%%/wavetables/32x32/32x32voice.fuw
+%%DATADIR%%/wavetables/32x32/32x32voice2.fuw
 share/icons/furnace.png
 share/icons/hicolor/1024x1024/apps/furnace.png
+share/icons/hicolor/128x128/apps/furnace.png
+share/icons/hicolor/128x128@2/apps/furnace.png
+share/icons/hicolor/16x16/apps/furnace.png
+share/icons/hicolor/16x16@2/apps/furnace.png
+share/icons/hicolor/256x256/apps/furnace.png
+share/icons/hicolor/256x256@2/apps/furnace.png
+share/icons/hicolor/32x32/apps/furnace.png
+share/icons/hicolor/32x32@2/apps/furnace.png
+share/icons/hicolor/512x512/apps/furnace.png
+share/icons/hicolor/512x512@2/apps/furnace.png
+share/icons/hicolor/64x64/apps/furnace.png
+share/icons/hicolor/64x64@2/apps/furnace.png
 share/metainfo/furnace.appdata.xml
