@@ -5,7 +5,6 @@ PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/
 PKGNAMESUFFIX=	-devel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	damjan.jov@gmail.com
 COMMENT=	Microsoft Windows compatibility environment
