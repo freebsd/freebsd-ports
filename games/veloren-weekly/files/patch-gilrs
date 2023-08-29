@@ -141,8 +141,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
                  Some(RawEvent { id, event, time }) => {
                      trace!("Original event: {:?}", RawEvent { id, event, time });
                      let id = GamepadId(id);
---- cargo-crates/gilrs-core-0.5.5/Cargo.toml.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/Cargo.toml
+--- cargo-crates/gilrs-core-0.5.7/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/Cargo.toml
 @@ -64,7 +64,6 @@ features = [
  version = "0.26.2"
  features = [
@@ -151,8 +151,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  ]
  default-features = false
  
---- cargo-crates/gilrs-core-0.5.5/examples/ev_core.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/examples/ev_core.rs
+--- cargo-crates/gilrs-core-0.5.7/examples/ev_core.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/examples/ev_core.rs
 @@ -5,7 +5,7 @@ fn main() {
  
      let mut gilrs = Gilrs::new().unwrap();
@@ -162,8 +162,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
              println!("{:?}", ev);
          }
      }
---- cargo-crates/gilrs-core-0.5.5/src/lib.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/lib.rs
+--- cargo-crates/gilrs-core-0.5.7/src/lib.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/lib.rs
 @@ -116,11 +116,6 @@ impl Gilrs {
          self.inner.next_event()
      }
@@ -176,8 +176,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
      /// Borrows `Gamepad` or return `None` if index is invalid. Returned gamepad may be disconnected.
      pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
          unsafe {
---- cargo-crates/gilrs-core-0.5.5/src/platform/default/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/default/gamepad.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/default/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/default/gamepad.rs
 @@ -11,7 +11,6 @@ use std::fmt::{Display, Formatter, Result as FmtResult
  use uuid::Uuid;
  
@@ -197,8 +197,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
          None
      }
  
---- cargo-crates/gilrs-core-0.5.5/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/linux/ff.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/linux/ff.rs
 @@ -12,7 +12,6 @@ use super::ioctl::{self, ff_effect, ff_replay, ff_rumb
  use std::{mem, slice};
  
@@ -224,8 +224,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
          };
      }
  }
---- cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/linux/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/linux/gamepad.rs
 @@ -17,33 +17,22 @@ use vec_map::VecMap;
  use uuid::Uuid;
  use vec_map::VecMap;
@@ -504,7 +504,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
          use std::os::unix::ffi::OsStrExt;
          use std::os::unix::io::IntoRawFd;
          use std::path::Path;
-@@ -950,7 +833,6 @@ enum Error {
+@@ -952,7 +835,6 @@ enum Error {
  enum Error {
      UdevCtx,
      UdevEnumerate,
@@ -512,7 +512,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  }
  
  impl Display for Error {
-@@ -958,16 +840,11 @@ impl Display for Error {
+@@ -960,16 +842,11 @@ impl Display for Error {
          match *self {
              Error::UdevCtx => f.write_str("Failed to create udev context"),
              Error::UdevEnumerate => f.write_str("Failed to create udev enumerate object"),
@@ -529,8 +529,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  
  const KEY_MAX: u16 = 0x2ff;
  #[allow(dead_code)]
---- cargo-crates/gilrs-core-0.5.5/src/platform/macos/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/macos/gamepad.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/macos/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/macos/gamepad.rs
 @@ -24,7 +24,6 @@ use std::thread;
  use std::sync::mpsc::{self, Receiver, Sender};
  use std::sync::{Arc, Mutex};
@@ -563,8 +563,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
              Some((event, Some(device))) => {
                  if event.event == EventType::Connected {
                      if self.gamepads.get(event.id).is_some() {
---- cargo-crates/gilrs-core-0.5.5/src/platform/wasm/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/wasm/gamepad.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/wasm/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/wasm/gamepad.rs
 @@ -7,7 +7,6 @@ use std::fmt::{Display, Formatter, Result as FmtResult
  
  use std::collections::VecDeque;
@@ -573,7 +573,7 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  
  use uuid::Uuid;
  use wasm_bindgen::JsCast;
-@@ -144,10 +143,6 @@ impl Gilrs {
+@@ -161,10 +160,6 @@ impl Gilrs {
          }
  
          self.event_cache.pop_front()
@@ -584,9 +584,9 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
      }
  
      pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
---- cargo-crates/gilrs-core-0.5.5/src/platform/windows_wgi/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/windows_wgi/gamepad.rs
-@@ -185,55 +185,36 @@ impl Gilrs {
+--- cargo-crates/gilrs-core-0.5.7/src/platform/windows_wgi/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/windows_wgi/gamepad.rs
+@@ -198,55 +198,36 @@ impl Gilrs {
      }
  
      pub(crate) fn next_event(&mut self) -> Option<Event> {
@@ -671,8 +671,8 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
      }
  
      pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
---- cargo-crates/gilrs-core-0.5.5/src/platform/windows_xinput/gamepad.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/gilrs-core-0.5.5/src/platform/windows_xinput/gamepad.rs
+--- cargo-crates/gilrs-core-0.5.7/src/platform/windows_xinput/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.7/src/platform/windows_xinput/gamepad.rs
 @@ -72,24 +72,7 @@ impl Gilrs {
  
      pub(crate) fn next_event(&mut self) -> Option<Event> {
