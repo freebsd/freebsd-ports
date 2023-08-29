@@ -30,7 +30,8 @@ PORTSCOUT=	limit:^[0-9]*\.0\.
 
 CXXFLAGS_powerpc64=	-mpower8-vector
 
-SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary
+SHEBANG_FILES=	auxil/zeekctl/auxil/trace-summary/trace-summary \
+		auxil/zeek-client/zeek-client
 
 SUB_FILES=	pkg-message
 NO_MTREE=	yes
