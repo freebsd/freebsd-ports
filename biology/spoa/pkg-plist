@@ -1,8 +1,11 @@
 bin/spoa
 include/spoa/alignment_engine.hpp
-include/spoa/architectures.hpp
 include/spoa/graph.hpp
 include/spoa/spoa.hpp
+include/spoa/version.hpp
+lib/cmake/spoa/spoaConfig.cmake
+lib/cmake/spoa/spoaConfigVersion.cmake
+lib/cmake/spoa/spoaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/spoa/spoaTargets.cmake
 lib/libspoa.so
 lib/libspoa.so.7.0.0
-libdata/pkgconfig/spoa-1.pc

@@ -1,6 +1,5 @@
 PORTNAME=	spoa
-DISTVERSION=	4.0.7
-PORTREVISION=	4
+DISTVERSION=	4.1.0
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bioparser>0:biology/bioparser \
-		${LOCALBASE}/include/biosoup/nucleic_acid.hpp:biology/biosoup \
+		biosoup>0:biology/biosoup \
 		cereal>0:devel/cereal \
 		simde>0:devel/simde
 LIB_DEPENDS=	libcpu_features.so:devel/cpu_features
@@ -24,8 +23,17 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	rvaser
 
-CMAKE_ON=	BUILD_SHARED_LIBS spoa_optimize_for_portability spoa_build_executable spoa_use_simde spoa_use_simde_nonvec spoa_use_simde_openmp
-CMAKE_OFF=	spoa_optimize_for_native
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		spoa_build_exe \
+		spoa_optimize_for_portability \
+		spoa_build_executable \
+		spoa_use_simde \
+		spoa_use_simde_nonvec \
+		spoa_use_simde_openmp \
+		spoa_use_cereal \
+		spoa_use_simde_openmp
+CMAKE_OFF=	spoa_optimize_for_native \
+		spoa_build_tests
 
 CXXFLAGS+=	-I${LOCALBASE}/include/cpu_features
 LDFLAGS+=	-lz -lcpu_features
