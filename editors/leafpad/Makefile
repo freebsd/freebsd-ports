@@ -14,18 +14,16 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		desktop-file-utils gettext gmake gnome pkgconfig
+USES=		desktop-file-utils gettext gmake gnome localbase:ldflags \
+		pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${CHMOD} a+x ${WRKSRC}/install-sh
