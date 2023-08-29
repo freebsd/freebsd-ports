@@ -1,6 +1,5 @@
 PORTNAME=	omniORB
 DISTVERSION=	${ABI_VER}.${ABI_MAJOR_VER}.${ABI_MINOR_VER}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTNAME}-${DISTVERSION:S/-2//}
 
@@ -9,6 +8,10 @@ COMMENT=	Robust high performance CORBA ORB for C++ and Python
 WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
+
+BROKEN_FreeBSD_15=	cannot convert 'pthread**' to 'pthread_t' {aka 'pthread*'}
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		compiler:gcc-c++11-lib gmake pkgconfig python shebangfix ssl \
 		tar:bzip2
@@ -31,16 +34,19 @@ MAKEFILE=	GNUmakefile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/-2//}
 
-ABI_VER=		4
-ABI_MAJOR_VER=		3
-ABI_MINOR_VER=		0
 PLIST_SUB+=		ABI_MAJOR_VER=${ABI_MAJOR_VER} \
 			ABI_MINOR_VER=${ABI_MINOR_VER} \
 			ABI_VER=${ABI_VER}
+
 OPTIONS_DEFINE=		DOCS STATIC
 OPTIONS_DEFAULT=	STATIC
 OPTIONS_SUB=		yes
+
 STATIC_CONFIGURE_OFF=	--disable-static
+
+ABI_VER=		4
+ABI_MAJOR_VER=		3
+ABI_MINOR_VER=		1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
