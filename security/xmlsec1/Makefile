@@ -1,8 +1,8 @@
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.37
+DISTVERSION=	1.2.38
 CATEGORIES=	security
-MASTER_SITES=	https://www.aleksey.com/xmlsec/download/ \
-		https://github.com/lsh123/xmlsec/releases/download/xmlsec-${PORTVERSION:S,.,_,g}/
+MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
+		https://www.aleksey.com/xmlsec/download/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	XML Security Library
@@ -11,61 +11,59 @@ WWW=		https://www.aleksey.com/xmlsec/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/Copyright
 
-LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libltdl.so:devel/libltdl
+LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig ssl
+USES=		gmake gnome libtool localbase pathfix pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl="${OPENSSLBASE}" \
-		--with-gcrypt="${LOCALBASE}" \
-		--enable-werror \
-		--enable-soap \
-		--disable-docs-build
-MAKE_ENV=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
+
 INSTALL_TARGET=	install-strip
 PORTDOCS=	*
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=	DOCS GNUTLS NSS
-OPTIONS_DEFAULT=	NSS
-OPTIONS_SUB=	yes
+CONFIGURE_ARGS=	--disable-static
 
-GNUTLS_DESC=		Enable GNUTLS support
-GNUTLS_CONFIGURE_ON=	--with-gnutls="${LOCALBASE}"
-GNUTLS_CONFIGURE_OFF=	--without-gnutls
-GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-NSS_DESC=		Enable Mozilla's NSS support
-NSS_CONFIGURE_ON=	--with-nss="${LOCALBASE}" \
-			--with-nspr="${LOCALBASE}"
-NSS_CONFIGURE_OFF=	--without-nss \
-			--without-nspr
-NSS_LIB_DEPENDS=	libnss3.so:security/nss \
-			libnspr4.so:devel/nspr \
-			libplds4.so:devel/nspr \
-			libplc4.so:devel/nspr
+OPTIONS_DEFINE=		DOCS
+OPTIONS_MULTI=		SSL
+OPTIONS_MULTI_SSL=	GNUTLS NSS OPENSSL GNUTLS
+OPTIONS_DEFAULT=	OPENSSL NSS
+OPTIONS_SUB=		yes
+
+GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+			libgnutls.so:security/gnutls
+GNUTLS_CONFIGURE_WITH=	gcrypt gnutls
+
+NSS_LIB_DEPENDS=	libnspr4.so:devel/nspr \
+			libnss3.so:security/nss
+NSS_CONFIGURE_WITH=	nspr nss
+
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_OFF=	--without-openssl
+OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/mozilla-nss/nss/' \
-		-e 's/mozilla-nspr/nspr/' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/(CP) -ru/(CP) -r/' \
 		-e 's/(CP) -u/(CP)/' \
-		${WRKSRC}/docs/Makefile.am ${WRKSRC}/docs/Makefile.in \
-		${WRKSRC}/docs/api/Makefile.am ${WRKSRC}/docs/api/Makefile.in \
-		${WRKSRC}/man/Makefile.am ${WRKSRC}/man/Makefile.in
+		${PATCH_WRKSRC}/docs/Makefile.am \
+		${PATCH_WRKSRC}/docs/Makefile.in \
+		${PATCH_WRKSRC}/docs/api/Makefile.am \
+		${PATCH_WRKSRC}/docs/api/Makefile.in \
+		${PATCH_WRKSRC}/man/Makefile.am \
+		${PATCH_WRKSRC}/man/Makefile.in
 
 post-patch-GNUTLS-on:
 # Don't rely on broken autodetection
 	@${REINPLACE_CMD} -e '/^GNUTLS_FOUND/s/no/yes/' \
-	    -e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+		-e '/^GNUTLS_LIBS=/s,"","-L${LOCALBASE}/lib -lgnutls",' \
+		${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-patch-NSS-on:
-# Makeing the xmlsec1 executable multi-threaded to let load -lnss,
-# when needed.
+	@${REINPLACE_CMD} -e 's/mozilla-nss/nss/' \
+		-e 's/mozilla-nspr/nspr/' ${PATCH_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib -lpthread\\,' \
-		${WRKSRC}/apps/Makefile.in
+		${PATCH_WRKSRC}/apps/Makefile.in
+
 
 .include <bsd.port.mk>
