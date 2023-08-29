@@ -1,6 +1,7 @@
 PORTNAME=	massif-visualizer
 DISTVERSION=	0.7.0
-CATEGORIES=	devel kde kde-applications
+PORTREVISION=	1
+CATEGORIES=	devel kde
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Graphical viewer for Massif data
