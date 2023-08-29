@@ -11,6 +11,10 @@ WWW=		http://popup.sourceforge.net/
 
 LICENSE=	GPLv2+
 
+BROKEN=		Fails to build with GNUstep 1.29.0
+DEPRECATED=	Abandonware, last release in 2004 and dead upstream
+EXPIRATION_DATE=2023-09-30
+
 USES=		gnustep
 USE_GNUSTEP=	back build
 
