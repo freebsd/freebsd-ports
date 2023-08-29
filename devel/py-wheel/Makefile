@@ -5,6 +5,9 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
+BROKEN_purecap=	requires missing CheriABI Python
+USE_PKG64=	1
+
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Built-package format for Python
 WWW=		https://github.com/pypa/wheel
