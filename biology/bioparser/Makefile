@@ -1,5 +1,5 @@
 PORTNAME=	bioparser
-DISTVERSION=	3.0.15
+DISTVERSION=	3.1.0
 CATEGORIES=	biology devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/rvaser/bioparser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	biosoup>0:biology/biosoup
+RUN_DEPENDS=	biosoup>0:biology/biosoup
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake
