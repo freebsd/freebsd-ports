@@ -1,0 +1,1836 @@
+diff --git Configure Configure
+index 913e080883..f9cf8af131 100755
+--- Configure
++++ Configure
+@@ -1200,6 +1200,7 @@ perl5=''
+ perladmin=''
+ perlpath=''
+ d_nv_preserves_uv=''
++d_nv_preserves_uvint=''
+ d_nv_zero_is_allbits_zero=''
+ i16size=''
+ i16type=''
+@@ -1209,10 +1210,13 @@ i64size=''
+ i64type=''
+ i8size=''
+ i8type=''
++ivintsize=''
++ivinttype=''
+ ivsize=''
+ ivtype=''
+ nv_overflows_integers_at=''
+ nv_preserves_uv_bits=''
++nv_preserves_uvint_bits=''
+ nvsize=''
+ nvtype=''
+ u16size=''
+@@ -1223,9 +1227,12 @@ u64size=''
+ u64type=''
+ u8size=''
+ u8type=''
++uvintsize=''
++uvinttype=''
+ uvsize=''
+ uvtype=''
+ ivdformat=''
++ivintdformat=''
+ nvEUformat=''
+ nvFUformat=''
+ nvGUformat=''
+@@ -1233,6 +1240,10 @@ nveformat=''
+ nvfformat=''
+ nvgformat=''
+ uvXUformat=''
++uvintXUformat=''
++uvintoformat=''
++uvintuformat=''
++uvintxformat=''
+ uvoformat=''
+ uvuformat=''
+ uvxformat=''
+@@ -1242,6 +1253,7 @@ prefixexp=''
+ installprivlib=''
+ privlib=''
+ privlibexp=''
++ptraddrsize=''
+ ptrsize=''
+ d_PRIXU64=''
+ d_PRId64=''
+@@ -3114,7 +3126,7 @@ esac
+ exe=\$1
+ shift
+ $to \$exe
+-$targetrun -p $targetport -l $targetuser $targethost "cd \$cwd && \$env \$exe \$@"
++$targetrun -p $targetport -l $targetuser $targetsshflags $targethost "cd \$cwd && \$env \$exe \$@"
+ EOF
+ 	    ;;
+ 	adb)
+@@ -3128,7 +3140,7 @@ EOF
+ 	*/Cross/mkdir)
+ 	    cat >$targetmkdir <<EOF
+ #!/bin/sh
+-$targetrun -p $targetport -l $targetuser $targethost "mkdir -p \$@"
++$targetrun -p $targetport -l $targetuser $targetsshflags $targethost "mkdir -p \$@"
+ EOF
+ 	    $chmod a+rx $targetmkdir
+ 	    ;;
+@@ -3145,11 +3157,11 @@ do
+   case "\$f" in
+   /*)
+     $targetmkdir \`dirname \$f\`
+-    $targetto -P $targetport -r $q \$f $targetuser@$targethost:\$f           2>/dev/null  || exit 1
++    $targetto -P $targetport -r $q $targetsshflags \$f $targetuser@$targethost:\$f           2>/dev/null  || exit 1
+     ;;
+   *)
+     $targetmkdir $targetdir/\`dirname \$f\`
+-    $targetto -P $targetport -r $q \$f $targetuser@$targethost:$targetdir/\$f 2>/dev/null || exit 1
++    $targetto -P $targetport -r $q $targetsshflags \$f $targetuser@$targethost:$targetdir/\$f 2>/dev/null || exit 1
+     ;;
+   esac
+ done
+@@ -3185,7 +3197,7 @@ EOF
+ for f in \$@
+ do
+   $rm -f \$f
+-  $targetfrom -P $targetport $q $targetuser@$targethost:$targetdir/\$f . || exit 1
++  $targetfrom -P $targetport $q $targetsshflags $targetuser@$targethost:$targetdir/\$f . || exit 1
+ done
+ exit 0
+ EOF
+@@ -7079,7 +7091,7 @@ case "$myarchname" in
+ esac
+ case "$targetarch" in
+ '') ;;
+-*)  archname=`echo $targetarch|sed 's,^[^-]*-,,'` ;;
++*)  archname="$targetarch";;
+ esac
+ myarchname="$tarch"
+ case "$archname" in
+@@ -7722,7 +7734,7 @@ EOCP
+ 	set try
+ 	if eval $compile_ok; then
+ 		ptrsize=`$run ./try`
+-		echo "Your pointers are $ptrsize bytes long."
++		echo "Your pointers are $ptrsize bytes long." >&4
+ 	else
+ 		dflt='4'
+ 		echo "(I can't seem to compile the test program.  Guessing...)" >&4
+@@ -7733,13 +7745,58 @@ EOCP
+ 	;;
+ esac
+ $rm_try
++echo " "
++case "$ptraddrsize" in
++'')
++	echo "Checking to see how big your addresses are..." >&4
++	$cat >try.c <<EOCP
++#include <stddef.h>
++#include <stdio.h>
++#$i_stdlib I_STDLIB
++#ifdef I_STDLIB
++#include <stdlib.h>
++#endif
++int main()
++{
++#ifdef __PTRADDR_TYPE__
++    printf("%d\n", (int)sizeof(ptraddr_t));
++#else
++    printf("%d\n", (int)sizeof(void *));
++#endif
++    exit(0);
++}
++EOCP
++	set try
++	if eval $compile_ok; then
++		ptraddrsize=`$run ./try`
++		echo "Your addresses are $ptraddrsize bytes long." >&4
++	else
++		dflt="$ptrsize"
++		echo "(I can't seem to compile the test program.  Guessing...)" >&4
++		rp="What is the size of an address (in bytes)?"
++		. ./myread
++		ptraddrsize="$ans"
++	fi
++	;;
++esac
++$rm_try
++if test $ptraddrsize -gt $ptrsize; then
++	cat <<EOM >&4
++*** Your addresses are $ptraddrsize bytes long,
++*** but your pointers are only $ptrsize bytes long.
++*** Cannot continue, aborting.
++
++EOM
++
++	exit 1
++fi
+ case "$use64bitall" in
+ "$define"|true|[yY]*)
+-	case "$ptrsize" in
++	case "$ptraddrsize" in
+ 	4)	cat <<EOM >&4
+ 
+ *** You have chosen a maximally 64-bit build,
+-*** but your pointers are only 4 bytes wide.
++*** but your addresses are only 4 bytes wide.
+ *** Please rerun Configure without -Duse64bitall.
+ EOM
+ 		case "$d_quad" in
+@@ -16551,18 +16608,31 @@ $echo "Choosing the C types to be used for Perl's internal types..." >&4
+ 
+ case "$use64bitint:$d_quad:$quadtype" in
+ define:define:?*)
+-	ivtype="$quadtype"
+-	uvtype="$uquadtype"
+-	ivsize=8
+-	uvsize=8
++	ivinttype="$quadtype"
++	uvinttype="$uquadtype"
++	ivintsize=8
++	uvintsize=8
+ 	;;
+-*)	ivtype="long"
+-	uvtype="unsigned long"
+-	ivsize=$longsize
+-	uvsize=$longsize
++*)
++	ivinttype="long"
++	uvinttype="unsigned long"
++	ivintsize=$longsize
++	uvintsize=$longsize
+ 	;;
+ esac
+ 
++if $test X"$ptrsize" != X"$ptraddrsize"; then
++	ivtype="intptr_t"
++	uvtype="uintptr_t"
++	ivsize=$ptrsize
++	uvsize=$ptrsize
++else
++	ivtype="$ivinttype"
++	uvtype="$uvinttype"
++	ivsize="$ivintsize"
++	uvsize="$uvintsize"
++fi
++
+ case "$uselongdouble:$d_longdbl" in
+ define:define)
+ 	nvtype="long double"
+@@ -16617,6 +16687,8 @@ esac
+ 
+ $echo "(IV will be "$ivtype", $ivsize bytes)"
+ $echo "(UV will be "$uvtype", $uvsize bytes)"
++$echo "(IVINT will be "$ivinttype", $ivintsize bytes)"
++$echo "(UVINT will be "$uvinttype", $uvintsize bytes)"
+ $echo "(NV will be "$nvtype", $nvsize bytes)"
+ 
+ $cat >try.c <<EOCP
+@@ -16737,7 +16809,7 @@ case "$i64type" in
+ 	;;
+ esac
+ 
+-$echo "Checking how many bits of your UVs your NVs can preserve..." >&4
++$echo "Checking how many bits of your UVINTs your NVs can preserve..." >&4
+ $cat <<EOP >try.c
+ #include <stdio.h>
+ #$i_stdlib I_STDLIB
+@@ -16752,23 +16824,23 @@ volatile int bletched = 0;
+ $signal_t blech(int s) { bletched = 1; }
+ #endif
+ int main() {
+-    $uvtype u = 0;
++    $uvinttype u = 0;
+     $nvtype d;
+-    int     n = 8 * $uvsize;
++    int     n = 8 * $uvintsize;
+     int     i;
+ #ifdef SIGFPE
+     signal(SIGFPE, blech);
+ #endif
+ 
+     for (i = 0; i < n; i++) {
+-      u = u << 1 | ($uvtype)1;
++      u = u << 1 | ($uvinttype)1;
+       d = ($nvtype)u;
+-      if (($uvtype)d != u)
++      if (($uvinttype)d != u)
+         break;
+       if (d <= 0)
+ 	break;
+       d = ($nvtype)(u - 1);
+-      if (($uvtype)d != (u - 1))
++      if (($uvinttype)d != (u - 1))
+         break;
+ #ifdef SIGFPE
+       if (bletched)
+@@ -16781,23 +16853,30 @@ int main() {
+ EOP
+ set try
+ 
+-d_nv_preserves_uv="$undef"
++d_nv_preserves_uvint="$undef"
+ if eval $compile; then
+-	nv_preserves_uv_bits="`$run ./try`"
++	nv_preserves_uvint_bits="`$run ./try`"
+ fi
+-case "$nv_preserves_uv_bits" in
++case "$nv_preserves_uvint_bits" in
+ \-[1-9]*)
+-	nv_preserves_uv_bits=`expr 0 - $nv_preserves_uv_bits`
+-	$echo "Your NVs can preserve all $nv_preserves_uv_bits bits of your UVs."  2>&1
+-	d_nv_preserves_uv="$define"
++	nv_preserves_uvint_bits=`expr 0 - $nv_preserves_uvint_bits`
++	$echo "Your NVs can preserve all $nv_preserves_uvint_bits bits of your UVINTs."  2>&1
++	d_nv_preserves_uvint="$define"
+ 	;;
+-[1-9]*)	$echo "Your NVs can preserve only $nv_preserves_uv_bits bits of your UVs."  2>&1
+-	d_nv_preserves_uv="$undef" ;;
++[1-9]*)	$echo "Your NVs can preserve only $nv_preserves_uvint_bits bits of your UVINTs."  2>&1
++	d_nv_preserves_uvint="$undef" ;;
+ *)	$echo "Can't figure out how many bits your NVs preserve." 2>&1
+-	nv_preserves_uv_bits="0" ;;
++	nv_preserves_uvint_bits="0" ;;
+ esac
+ $rm_try
+ 
++if $test X"$ptrsize" != X"$ptraddrsize"; then
++	d_nv_preserves_uv="$undef"
++else
++	d_nv_preserves_uv="$d_nv_preserves_uvint"
++fi
++nv_preserves_uv_bits="$nv_preserves_uvint_bits"
++
+ $echo "Checking to find the largest integer value your NVs can hold..." >&4
+ $cat <<EOP >try.c
+ #include <stdio.h>
+@@ -19770,7 +19849,7 @@ case "$multiarch" in
+ ''|[nN]*) multiarch="$undef" ;;
+ esac
+ 
+-: check for ordering of bytes in a UV
++: check for ordering of bytes in a UVINT
+ echo " "
+ case "$multiarch" in
+ *$define*)
+@@ -19800,20 +19879,20 @@ EOM
+ #include <stdlib.h>
+ #endif
+ #include <sys/types.h>
+-typedef $uvtype UV;
++typedef $uvinttype UVINT;
+ int main()
+ {
+ 	int i;
+ 	union {
+-		UV l;
+-		char c[$uvsize];
++		UVINT l;
++		char c[$uvintsize];
+ 	} u;
+ 
+-	if ($uvsize > 4)
+-		u.l = (((UV)0x08070605) << 32) | (UV)0x04030201;
++	if ($uvintsize > 4)
++		u.l = (((UVINT)0x08070605) << 32) | (UVINT)0x04030201;
+ 	else
+-		u.l = (UV)0x04030201;
+-	for (i = 0; i < $uvsize; i++)
++		u.l = (UVINT)0x04030201;
++	for (i = 0; i < $uvintsize; i++)
+ 		printf("%c", u.c[i]+'0');
+ 	printf("\n");
+ 	exit(0);
+@@ -19840,7 +19919,7 @@ EOM
+ 		fi
+ 		case "$xxx_prompt" in
+ 		y)
+-			rp="What is the order of bytes in $uvtype?"
++			rp="What is the order of bytes in $uvinttype?"
+ 			. ./myread
+ 			byteorder="$ans"
+ 			;;
+@@ -21398,38 +21477,51 @@ esac
+ echo " "
+ $echo "Checking the format strings to be used for Perl's internal types..." >&4
+ 
+-if $test X"$ivsize" = X8; then
+-	ivdformat="$sPRId64"
+-	uvuformat="$sPRIu64"
+-	uvoformat="$sPRIo64"
+-	uvxformat="$sPRIx64"
+-	uvXUformat="$sPRIXU64"
++if $test X"$ivintsize" = X8; then
++	ivintdformat="$sPRId64"
++	uvintuformat="$sPRIu64"
++	uvintoformat="$sPRIo64"
++	uvintxformat="$sPRIx64"
++	uvintXUformat="$sPRIXU64"
+ else
+-	if $test X"$ivsize" = X"$longsize"; then
+-		ivdformat='"ld"'
+-		uvuformat='"lu"'
+-		uvoformat='"lo"'
+-		uvxformat='"lx"'
+-		uvXUformat='"lX"'
++	if $test X"$ivintsize" = X"$longsize"; then
++		ivintdformat='"ld"'
++		uvintuformat='"lu"'
++		uvintoformat='"lo"'
++		uvintxformat='"lx"'
++		uvintXUformat='"lX"'
+ 	else
+-		if $test X"$ivsize" = X"$intsize"; then
+-			ivdformat='"d"'
+-			uvuformat='"u"'
+-			uvoformat='"o"'
+-			uvxformat='"x"'
+-			uvXUformat='"X"'
++		if $test X"$ivintsize" = X"$intsize"; then
++			ivintdformat='"d"'
++			uvintuformat='"u"'
++			uvintoformat='"o"'
++			uvintxformat='"x"'
++			uvintXUformat='"X"'
+ 		else
+ 			: far out
+-			if $test X"$ivsize" = X"$shortsize"; then
+-				ivdformat='"hd"'
+-				uvuformat='"hu"'
+-				uvoformat='"ho"'
+-				uvxformat='"hx"'
+-				uvXUformat='"hX"'
++			if $test X"$ivintsize" = X"$shortsize"; then
++				ivintdformat='"hd"'
++				uvintuformat='"hu"'
++				uvintoformat='"ho"'
++				uvintxformat='"hx"'
++				uvintXUformat='"hX"'
+ 			fi
+ 		fi
+ 	fi
+ fi
++if $test X"$ivsize" != X"$ivintsize"; then
++	ivdformat='"Pd"'
++	uvuformat='"Pu"'
++	uvoformat='"Po"'
++	uvxformat='"Px"'
++	uvXUformat='"PX"'
++else
++	ivdformat="$ivintdformat"
++	uvuformat="$uvintuformat"
++	uvoformat="$uvintoformat"
++	uvxformat="$uvintxformat"
++	uvXUformat="$uvintXUformat"
++fi
+ 
+ if $test X"$usequadmath" = X"$define"; then
+     nveformat='"Qe"'
+@@ -22042,7 +22134,7 @@ esac
+ 
+ : check for the select 'width'
+ case "$selectminbits" in
+-'') safebits=`expr $ptrsize \* 8`
++'') safebits=`expr $ptraddrsize \* 8`
+     case "$d_select" in
+ 	$define)
+ 		$cat <<EOM
+@@ -24528,6 +24620,7 @@ d_nexttoward='$d_nexttoward'
+ d_nice='$d_nice'
+ d_nl_langinfo='$d_nl_langinfo'
+ d_nv_preserves_uv='$d_nv_preserves_uv'
++d_nv_preserves_uvint='$d_nv_preserves_uvint'
+ d_nv_zero_is_allbits_zero='$d_nv_zero_is_allbits_zero'
+ d_off64_t='$d_off64_t'
+ d_old_pthread_create_joinable='$d_old_pthread_create_joinable'
+@@ -24976,6 +25069,9 @@ installvendorscript='$installvendorscript'
+ intsize='$intsize'
+ issymlink='$issymlink'
+ ivdformat='$ivdformat'
++ivintdformat='$ivintdformat'
++ivintsize='$ivintsize'
++ivinttype='$ivinttype'
+ ivsize='$ivsize'
+ ivtype='$ivtype'
+ known_extensions='$known_extensions'
+@@ -25059,6 +25155,7 @@ nvFUformat='$nvFUformat'
+ nvGUformat='$nvGUformat'
+ nv_overflows_integers_at='$nv_overflows_integers_at'
+ nv_preserves_uv_bits='$nv_preserves_uv_bits'
++nv_preserves_uvint_bits='$nv_preserves_uvint_bits'
+ nveformat='$nveformat'
+ nvfformat='$nvfformat'
+ nvgformat='$nvgformat'
+@@ -25096,6 +25193,7 @@ prefixexp='$prefixexp'
+ privlib='$privlib'
+ privlibexp='$privlibexp'
+ procselfexe='$procselfexe'
++ptraddrsize='$ptraddrsize'
+ ptrsize='$ptrsize'
+ quadkind='$quadkind'
+ quadtype='$quadtype'
+@@ -25282,6 +25380,12 @@ usevfork='$usevfork'
+ usrinc='$usrinc'
+ uuname='$uuname'
+ uvXUformat='$uvXUformat'
++uvintXUformat='$uvintXUformat'
++uvintoformat='$uvintoformat'
++uvintsize='$uvintsize'
++uvinttype='$uvinttype'
++uvintuformat='$uvintuformat'
++uvintxformat='$uvintxformat'
+ uvoformat='$uvoformat'
+ uvsize='$uvsize'
+ uvtype='$uvtype'
+diff --git config_h.SH config_h.SH
+index 8264f91dce..2ae471065c 100755
+--- config_h.SH
++++ config_h.SH
+@@ -858,7 +858,7 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+ 
+ /* BYTEORDER:
+  *	This symbol holds the hexadecimal constant defined in byteorder,
+- *	in a UV, i.e. 0x1234 or 0x4321 or 0x12345678, etc...
++ *	in a UVINT, i.e. 0x1234 or 0x4321 or 0x12345678, etc...
+  *	If the compiler supports cross-compiling or multiple-architecture
+  *	binaries, use compiler-defined macros to
+  *	determine the byte order.
+@@ -1210,6 +1210,13 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+  */
+ #define PTRSIZE $ptrsize		/**/
+ 
++/* PTRADDRSIZE:
++ *	This symbol contains the size of an address, so that the C preprocessor
++ *	can make decisions based on it.  It will be sizeof(ptraddr_t) if the
++ *	compiler supports ptraddr_t; otherwise it will be sizeof(void *).
++ */
++#define PTRADDRSIZE $ptraddrsize	/**/
++
+ /* Drand01:
+  *	This macro is to be used to generate uniformly distributed
+  *	random numbers over the range [0., 1.[.  You may have to supply
+@@ -3990,6 +3997,12 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+ /* UVTYPE:
+  *	This symbol defines the C type used for Perl's UV.
+  */
++/* IVINTTYPE:
++ *	This symbol defines the C type used for Perl's IVINT.
++ */
++/* UVINTTYPE:
++ *	This symbol defines the C type used for Perl's UVINT.
++ */
+ /* I8TYPE:
+  *	This symbol defines the C type used for Perl's I8.
+  */
+@@ -4075,6 +4088,8 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+  */
+ #define	IVTYPE		$ivtype		/**/
+ #define	UVTYPE		$uvtype		/**/
++#define	IVINTTYPE	$ivinttype	/**/
++#define	UVINTTYPE	$uvinttype	/**/
+ #define	I8TYPE		$i8type		/**/
+ #define	U8TYPE		$u8type		/**/
+ #define	I16TYPE		$i16type	/**/
+@@ -4088,6 +4103,7 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+ #define	NVTYPE		$nvtype		/**/
+ #define	IVSIZE		$ivsize		/**/
+ #define	UVSIZE		$uvsize		/**/
++#define	UVINTSIZE	$uvintsize	/**/
+ #define	I8SIZE		$i8size		/**/
+ #define	U8SIZE		$u8size		/**/
+ #define	I16SIZE		$i16size	/**/
+@@ -4099,11 +4115,11 @@ sed <<!GROK!THIS! >$CONFIG_H -e 's!^#undef\(.*/\)\*!/\*#define\1 \*!' -e 's!^#un
+ #define	U64SIZE		$u64size	/**/
+ #endif
+ #define	NVSIZE		$nvsize		/**/
+-#$d_nv_preserves_uv	NV_PRESERVES_UV
++#$d_nv_preserves_uv		NV_PRESERVES_UV
+ #define	NV_PRESERVES_UV_BITS	$nv_preserves_uv_bits
+ #define	NV_OVERFLOWS_INTEGERS_AT	($nv_overflows_integers_at)
+ #$d_nv_zero_is_allbits_zero	NV_ZERO_IS_ALLBITS_ZERO
+-#if UVSIZE == 8
++#if UVINTSIZE == 8
+ #   ifdef BYTEORDER
+ #       if BYTEORDER == 0x1234
+ #           undef BYTEORDER
+diff --git cv.h cv.h
+index 435dee6261..cd85acb50e 100644
+--- cv.h
++++ cv.h
+@@ -73,14 +73,14 @@ See L<perlguts/Autoloading with XSUBs>.
+ #define CvHSCXT(sv)	  *(assert_(CvISXSUB((CV*)(sv))) \
+         &(((XPVCV*)MUTABLE_PTR(SvANY(sv)))->xcv_padlist_u.xcv_hscxt))
+ #ifdef DEBUGGING
+-#  if PTRSIZE == 8
++#  if PTRADDRSIZE == 8
+ #    define PoisonPADLIST(sv) \
+         (((XPVCV*)MUTABLE_PTR(SvANY(sv)))->xcv_padlist_u.xcv_padlist = (PADLIST *)UINT64_C(0xEFEFEFEFEFEFEFEF))
+-#  elif PTRSIZE == 4
++#  elif PTRADDRSIZE == 4
+ #    define PoisonPADLIST(sv) \
+         (((XPVCV*)MUTABLE_PTR(SvANY(sv)))->xcv_padlist_u.xcv_padlist = (PADLIST *)0xEFEFEFEF)
+ #  else
+-#    error unknown pointer size
++#    error unknown address size
+ #  endif
+ #else
+ #  define PoisonPADLIST(sv) NOOP
+diff --git dist/Devel-PPPort/parts/embed.fnc dist/Devel-PPPort/parts/embed.fnc
+index 44821311c2..1aae405726 100644
+--- dist/Devel-PPPort/parts/embed.fnc
++++ dist/Devel-PPPort/parts/embed.fnc
+@@ -3058,7 +3058,7 @@ pR	|SV *	|varname	|NULLOK const GV *const gv|const char gvtype \
+ 
+ pX	|void	|sv_del_backref	|NN SV *const tsv|NN SV *const sv
+ #if defined(PERL_IN_SV_C)
+-TiR	|char *	|uiv_2buf	|NN char *const buf|const IV iv|UV uv|const int is_uv|NN char **const peob
++TiR	|char *	|uivint_2buf	|NN char *const buf|const IVINT iv|UVINT uv|const int is_uv|NN char **const peob
+ i	|void	|sv_unglob	|NN SV *const sv|U32 flags
+ S	|const char *|sv_display	|NN SV *const sv|NN char *tmpbuf|STRLEN tmpbuf_size
+ S	|void	|not_a_number	|NN SV *const sv
+diff --git doio.c doio.c
+index baca499d10..3dd9c3ac25 100644
+--- doio.c
++++ doio.c
+@@ -363,7 +363,7 @@ S_openn_setup(pTHX_ GV *gv, char *mode, PerlIO **saveifp, PerlIO **saveofp,
+     *savefd = -1;
+     *savetype = IoTYPE_CLOSED;
+ 
+-    Zero(mode,sizeof(mode),char);
++    Zero(mode, PERL_MODE_MAX, char);
+     PL_forkprocess = 1;		/* assume true if no fork */
+ 
+     /* If currently open - close before we re-open */
+diff --git embed.fnc embed.fnc
+index 551d468805..5380ee1826 100644
+--- embed.fnc
++++ embed.fnc
+@@ -1632,7 +1632,7 @@ pMb	|OP*	|ref		|NULLOK OP* o|I32 type
+ S	|OP*	|refkids	|NULLOK OP* o|I32 type
+ #endif
+ 
+-ATp	|void	|repeatcpy	|NN char* to|NN const char* from|I32 len|IV count
++ATp	|void	|repeatcpy	|NN char* to|NN const char* from|I32 len|IVINT count
+ AdTpP	|char*	|rninstr	|NN const char* big|NN const char* bigend \
+ 				|NN const char* little|NN const char* lend
+ Apd	|Sighandler_t|rsignal	|int i|Sighandler_t t
+@@ -3076,7 +3076,7 @@ pR	|SV *	|varname	|NULLOK const GV *const gv|const char gvtype \
+ 
+ pX	|void	|sv_del_backref	|NN SV *const tsv|NN SV *const sv
+ #if defined(PERL_IN_SV_C)
+-TiR	|char *	|uiv_2buf	|NN char *const buf|const IV iv|UV uv|const int is_uv|NN char **const peob
++TiR	|char *	|uivint_2buf	|NN char *const buf|const IVINT iv|UVINT uv|const int is_uv|NN char **const peob
+ i	|void	|sv_unglob	|NN SV *const sv|U32 flags
+ S	|const char *|sv_display	|NN SV *const sv|NN char *tmpbuf|STRLEN tmpbuf_size
+ S	|void	|not_a_number	|NN SV *const sv
+diff --git embed.h embed.h
+index 10214db1fb..b706d3298a 100644
+--- embed.h
++++ embed.h
+@@ -1917,7 +1917,7 @@
+ #define sv_pos_u2b_forwards	S_sv_pos_u2b_forwards
+ #define sv_pos_u2b_midway	S_sv_pos_u2b_midway
+ #define sv_unglob(a,b)		S_sv_unglob(aTHX_ a,b)
+-#define uiv_2buf		S_uiv_2buf
++#define uivint_2buf		S_uivint_2buf
+ #define utf8_mg_len_cache_update(a,b,c)	S_utf8_mg_len_cache_update(aTHX_ a,b,c)
+ #define utf8_mg_pos_cache_update(a,b,c,d,e)	S_utf8_mg_pos_cache_update(aTHX_ a,b,c,d,e)
+ #define visit(a,b,c)		S_visit(aTHX_ a,b,c)
+diff --git ext/B/B.xs ext/B/B.xs
+index e6e3fb8309..d1ecb24524 100644
+--- ext/B/B.xs
++++ ext/B/B.xs
+@@ -1183,7 +1183,7 @@ string(o, cv)
+             {
+                 struct op_argcheck_aux *p = (struct op_argcheck_aux*)aux;
+                 ret = Perl_newSVpvf(aTHX_ "%" IVdf ",%" IVdf,
+-                                    p->params, p->opt_params);
++                                    (IV)p->params, (IV)p->opt_params);
+                 if (p->slurpy)
+                     Perl_sv_catpvf(aTHX_ ret, ",%c", p->slurpy);
+                 ret = sv_2mortal(ret);
+diff --git gv.c gv.c
+index 10b729bf02..38d2d47225 100644
+--- gv.c
++++ gv.c
+@@ -2094,7 +2094,7 @@ S_gv_magicalize(pTHX_ GV *gv, HV *stash, const char *name, STRLEN len,
+                     AV* const av = GvAVn(gv);
+                     const Size_t n = *name;
+ 
+-                    sv_magic(MUTABLE_SV(av), (SV*)n, PERL_MAGIC_regdata, NULL, 0);
++                    sv_magic(MUTABLE_SV(av), (SV*)(IV)n, PERL_MAGIC_regdata, NULL, 0);
+                     SvREADONLY_on(av);
+ 
+                     require_tie_mod_s(gv, '+', "Tie::Hash::NamedCapture",0);
+@@ -2264,7 +2264,7 @@ S_gv_magicalize(pTHX_ GV *gv, HV *stash, const char *name, STRLEN len,
+                 AV* const av = GvAVn(gv);
+                 const Size_t n = *name;
+ 
+-                sv_magic(MUTABLE_SV(av), (SV*)n, PERL_MAGIC_regdata, NULL, 0);
++                sv_magic(MUTABLE_SV(av), (SV*)(UV)n, PERL_MAGIC_regdata, NULL, 0);
+                 SvREADONLY_on(av);
+             }
+             break;
+diff --git handy.h handy.h
+index 63441e2a22..7efc7ab7c7 100644
+--- handy.h
++++ handy.h
+@@ -1428,7 +1428,7 @@ or casts
+    (  (sizeof(c) == sizeof(U8))  ? inRANGE_helper_(U8, (c), (l), ((u)))     \
+     : (sizeof(c) == sizeof(U16)) ? inRANGE_helper_(U16,(c), (l), ((u)))     \
+     : (sizeof(c) == sizeof(U32)) ? inRANGE_helper_(U32,(c), (l), ((u)))     \
+-             : (__ASSERT_(sizeof(c) == sizeof(WIDEST_UTYPE))                \
++    : (__ASSERT_(sizeof(c) == sizeof(WIDEST_UTYPE) || sizeof(c) == sizeof(UV)) \
+                           inRANGE_helper_(WIDEST_UTYPE,(c), (l), ((u))))))
+ 
+ /* For internal use, this is used by machine-generated code which generates
+diff --git hints/freebsd.sh hints/freebsd.sh
+index 72db521ef7..1c2ae374f7 100644
+--- hints/freebsd.sh
++++ hints/freebsd.sh
+@@ -124,24 +124,24 @@ case "$osvers" in
+ 	;;
+ 
+ 3*|4*|5*|6*)
+-        objformat=`/usr/bin/objformat`
++        objformat=`$sysroot/usr/bin/objformat`
+         if [ x$objformat = xaout ]; then
+-            if [ -e /usr/lib/aout ]; then
+-                libpth="/usr/lib/aout /usr/local/lib /usr/lib"
+-                glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
++            if [ -e $sysroot/usr/lib/aout ]; then
++                libpth="$sysroot/usr/lib/aout $sysroot/usr/local/lib $sysroot/usr/lib"
++                glibpth="$sysroot/usr/lib/aout $sysroot/usr/local/lib $sysroot/usr/lib"
+             fi
+             lddlflags='-Bshareable'
+         else
+-            libpth="/usr/lib /usr/local/lib"
+-            glibpth="/usr/lib /usr/local/lib"
++            libpth="$sysroot/usr/lib $sysroot/usr/local/lib"
++            glibpth="$sysroot/usr/lib $sysroot/usr/local/lib"
+             ldflags="-Wl,-E "
+             lddlflags="-shared "
+         fi
+         cccdlflags='-DPIC -fPIC'
+         ;;
+ *)
+-       libpth="/usr/lib /usr/local/lib"
+-       glibpth="/usr/lib /usr/local/lib"
++       libpth="$sysroot/usr/lib $sysroot/usr/local/lib"
++       glibpth="$sysroot/usr/lib $sysroot/usr/local/lib"
+        ldflags="-Wl,-E "
+         lddlflags="-shared "
+         cccdlflags='-DPIC -fPIC'
+@@ -153,7 +153,7 @@ case "$osvers" in
+ 
+ *)
+ 	ccflags="${ccflags} -DHAS_FPSETMASK -DHAS_FLOATINGPOINT_H"
+-	if /usr/bin/file -L /usr/lib/libc.so | /usr/bin/grep -vq "not stripped" ; then
++	if /usr/bin/file -L $sysroot/usr/lib/libc.so | /usr/bin/grep -vq "not stripped" ; then
+ 	    usenm=false
+ 	fi
+         ;;
+diff --git hv.c hv.c
+index 7d21e5fdce..ce4f33d71b 100644
+--- hv.c
++++ hv.c
+@@ -2188,30 +2188,31 @@ Perl_hv_fill(pTHX_ HV *const hv)
+  */
+ 
+ PERL_STATIC_INLINE U32 S_ptr_hash(PTRV u) {
++    UVINT h = u;
+ #if PTRSIZE == 8
+     /*
+      * This is one of Thomas Wang's hash functions for 64-bit integers from:
+      * http://www.concentric.net/~Ttwang/tech/inthash.htm
+      */
+-    u = (~u) + (u << 18);
+-    u = u ^ (u >> 31);
+-    u = u * 21;
+-    u = u ^ (u >> 11);
+-    u = u + (u << 6);
+-    u = u ^ (u >> 22);
++    h = (~h) + (h << 18);
++    h = h ^ (h >> 31);
++    h = h * 21;
++    h = h ^ (h >> 11);
++    h = h + (h << 6);
++    h = h ^ (h >> 22);
+ #else
+     /*
+      * This is one of Bob Jenkins' hash functions for 32-bit integers
+      * from: http://burtleburtle.net/bob/hash/integer.html
+      */
+-    u = (u + 0x7ed55d16) + (u << 12);
+-    u = (u ^ 0xc761c23c) ^ (u >> 19);
+-    u = (u + 0x165667b1) + (u << 5);
+-    u = (u + 0xd3a2646c) ^ (u << 9);
+-    u = (u + 0xfd7046c5) + (u << 3);
+-    u = (u ^ 0xb55a4f09) ^ (u >> 16);
++    h = (h + 0x7ed55d16) + (h << 12);
++    h = (h ^ 0xc761c23c) ^ (h >> 19);
++    h = (h + 0x165667b1) + (h << 5);
++    h = (h + 0xd3a2646c) ^ (h << 9);
++    h = (h + 0xfd7046c5) + (h << 3);
++    h = (h ^ 0xb55a4f09) ^ (h >> 16);
+ #endif
+-    return (U32)u;
++    return (U32)h;
+ }
+ 
+ static struct xpvhv_aux*
+diff --git hv.h hv.h
+index 119cf8c966..27693680de 100644
+--- hv.h
++++ hv.h
+@@ -50,6 +50,9 @@ struct hek {
+      * dont work on aligned platforms like HPUX
+      * Also beware, the last byte of the hek_key buffer is a
+      * hidden flags byte about the key. */
++#ifdef __CHERI_PURE_CAPABILITY__
++    _Alignas(max_align_t)
++#endif
+      char       hek_key[1];        /* variable-length hash key */
+     /* the hash-key is \0-terminated */
+     /* after the \0 there is a byte for flags, such as whether the key
+diff --git inline.h inline.h
+index bbf27da6f5..4de4d26ee9 100644
+--- inline.h
++++ inline.h
+@@ -499,9 +499,9 @@ Perl_is_utf8_invariant_string_loc(const U8* const s, STRLEN len, const U8 ** ep)
+  * or'ing together the lowest bits of 'x'.  Hopefully the final term gets
+  * optimized out completely on a 32-bit system, and its mask gets optimized out
+  * on a 64-bit system */
+-#  define PERL_IS_SUBWORD_ADDR(x) (1 & (       PTR2nat(x)                     \
+-                                      |   (  PTR2nat(x) >> 1)                 \
+-                                      | ( ( (PTR2nat(x)                       \
++#  define PERL_IS_SUBWORD_ADDR(x) (1 & (       (size_t)PTR2nat(x)                     \
++                                      |   (  (size_t)PTR2nat(x) >> 1)                 \
++                                      | ( ( (size_t)(PTR2nat(x)                       \
+                                            & PERL_WORD_BOUNDARY_MASK) >> 2))))
+ 
+ #ifndef EBCDIC
+@@ -1866,7 +1866,7 @@ Perl_utf8n_to_uvchr_msgs(const U8 *s,
+     const U8 * const s0 = s;
+     const U8 * send = s0 + curlen;
+     UV uv = 0;      /* The 0 silences some stupid compilers */
+-    UV state = 0;
++    UVINT state = 0;
+ 
+     PERL_ARGS_ASSERT_UTF8N_TO_UVCHR_MSGS;
+ 
+@@ -1876,7 +1876,7 @@ Perl_utf8n_to_uvchr_msgs(const U8 *s,
+      * cases. */
+ 
+     while (s < send && LIKELY(state != 1)) {
+-        UV type = PL_strict_utf8_dfa_tab[*s];
++        UVINT type = PL_strict_utf8_dfa_tab[*s];
+ 
+         uv = (state == 0)
+              ?  ((0xff >> type) & NATIVE_UTF8_TO_I8(*s))
+diff --git myconfig.SH myconfig.SH
+index 1e8ae0bb9a..7379b04f63 100755
+--- myconfig.SH
++++ myconfig.SH
+@@ -58,6 +58,7 @@ Summary of my $package (revision $revision $version_patchlevel_string) configura
+     intsize=$intsize
+     longsize=$longsize
+     ptrsize=$ptrsize
++    ptraddrsize=$ptraddrsize
+     doublesize=$doublesize
+     byteorder=$byteorder
+     doublekind=$doublekind
+diff --git op.c op.c
+index 7006d57e22..e1e18d9b62 100644
+--- op.c
++++ op.c
+@@ -7036,7 +7036,7 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+      * in real life, and could require significant memory overhead. */
+     NV max_expansion = 1.;
+ 
+-    UV t_range_count, r_range_count, min_range_count;
++    UVINT t_range_count, r_range_count, min_range_count;
+     UV* t_array;
+     SV* t_invlist;
+     UV* r_map;
+@@ -7353,7 +7353,7 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+             bool merge_with_range_above = FALSE;
+             bool merge_with_range_below = FALSE;
+ 
+-            UV span, invmap_range_length_remaining;
++            UVINT span, invmap_range_length_remaining;
+             SSize_t j;
+             Size_t i;
+ 
+@@ -7389,7 +7389,7 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+                     {
+                         t++;
+                         t_range_count = valid_utf8_to_uvchr(t, &t_char_len)
+-                                      - t_cp + 1;
++                                      - (UVINT)t_cp + 1;
+                         t += t_char_len;
+                     }
+                     else {
+@@ -7432,7 +7432,8 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+                         {
+                             r++;
+                             r_range_count = valid_utf8_to_uvchr(r,
+-                                                    &r_char_len) - r_cp + 1;
++                                                    &r_char_len) -
++                                                    (UVINT)r_cp + 1;
+                             r += r_char_len;
+                         }
+                         else {
+@@ -7489,8 +7490,8 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+              * irrelevant if the map is to the special indicator */
+ 
+             invmap_range_length_remaining = (i + 1 < len)
+-                                            ? t_array[i+1] - t_cp
+-                                            : IV_MAX - t_cp;
++                                            ? (UVINT)t_array[i+1] - (UVINT)t_cp
++                                            : IV_MAX - (UVINT)t_cp;
+             span = MAX(1, MIN(min_range_count, invmap_range_length_remaining));
+ 
+             /* The end point of this chunk is where we are, plus the span, but
+@@ -7623,7 +7624,8 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+                         && (   (   r_cp == TR_SPECIAL_HANDLING
+                                 && r_map[i-1] == TR_SPECIAL_HANDLING)
+                             || (   r_cp != TR_SPECIAL_HANDLING
+-                                && r_cp - r_map[i-1] == t_cp - t_array[i-1])))
++                                && (UVINT)r_cp - (UVINT)r_map[i-1] ==
++                                   (UVINT)t_cp - (UVINT)t_array[i-1])))
+                     {
+                         merge_with_range_below = TRUE;
+                     }
+@@ -7854,8 +7856,8 @@ S_pmtrans(pTHX_ OP *o, OP *expr, OP *repl)
+                     r_map[i+2] = TR_UNLISTED;
+                 }
+                 DEBUG_yv(PerlIO_printf(Perl_debug_log,
+-                          "After iteration: span=%" UVuf ", t_range_count=%"
+-                          UVuf " r_range_count=%" UVuf "\n",
++                          "After iteration: span=%lu, t_range_count=%lu"
++                          " r_range_count=%lu\n",
+                           span, t_range_count, r_range_count));
+                 DEBUG_yv(invmap_dump(t_invlist, r_map));
+             } /* End of this chunk needs to be processed */
+diff --git pad.c pad.c
+index 543264fc70..e38d303cb1 100644
+--- pad.c
++++ pad.c
+@@ -162,9 +162,9 @@ Points directly to the body of the L</PL_comppad> array.
+ void
+ Perl_set_padlist(CV * cv, PADLIST *padlist){
+     PERL_ARGS_ASSERT_SET_PADLIST;
+-#  if PTRSIZE == 8
++#  if PTRADDRSIZE == 8
+     assert((Size_t)padlist != UINT64_C(0xEFEFEFEFEFEFEFEF));
+-#  elif PTRSIZE == 4
++#  elif PTRADDRSIZE == 4
+     assert((Size_t)padlist != 0xEFEFEFEF);
+ #  else
+ #    error unknown pointer size
+diff --git perl.c perl.c
+index 00b029fc97..e19d54db07 100644
+--- perl.c
++++ perl.c
+@@ -1741,7 +1741,7 @@ perl_parse(pTHXx_ XSINIT_t xsinit, int argc, char **argv, char **env)
+ 	 * the original argv[0].  (See below for 'contiguous', though.)
+ 	 * --jhi */
+ 	 const char *s = NULL;
+-	 const UV mask = ~(UV)(PTRSIZE-1);
++	 const UVINT mask = ~(UVINT)(PTRSIZE-1);
+          /* Do the mask check only if the args seem like aligned. */
+ 	 const UV aligned =
+ 	   (mask < ~(UV)0) && ((PTR2UV(argv[0]) & mask) == PTR2UV(argv[0]));
+diff --git perl.h perl.h
+index 17a21a1c42..2f97a0b980 100644
+--- perl.h
++++ perl.h
+@@ -1124,6 +1124,21 @@ Use C<L</UINTMAX_C>> to get the largest type available on the platform.
+ #ifdef I_STDINT
+     typedef intmax_t  PERL_INTMAX_T;
+     typedef uintmax_t PERL_UINTMAX_T;
++    typedef intptr_t  PERL_INTPTR_T;
++    typedef uintptr_t PERL_UINTPTR_T;
++#elif PTRSIZE == PTRADDRSIZE
++    /* PERL_INTMAX_T / PERL_UINTMAX_T defined later */
++#   if PTRSIZE == 4
++       typedef I32 PERL_INTPTR_T;
++       typedef U32 PERL_UNTPTR_T;
++#   elif PTRSIZE == 8
++       typedef I64 PERL_INTPTR_T;
++       typedef U64 PERL_UNTPTR_T;
++#   else
++#      error unknown pointer size
++#   endif
++#else
++#   error stdint.h required when PTRSIZE and PTRADDRSIZE differ
+ #endif
+ 
+ /* N.B.  We use QUADKIND here instead of HAS_QUAD here, because that doesn't
+@@ -2033,6 +2048,8 @@ my_snprintf()
+ 
+ typedef IVTYPE IV;
+ typedef UVTYPE UV;
++typedef IVINTTYPE IVINT;
++typedef UVINTTYPE UVINT;
+ 
+ #if defined(USE_64_BIT_INT) && defined(HAS_QUAD)
+ #  if QUADKIND == QUAD_IS_INT64_T && defined(INT64_MAX)
+@@ -2139,6 +2156,7 @@ You probably want to be using L<C</INT2PTR>> instead.
+ #define NUM2PTR(any,d)	(any)(PTRV)(d)
+ #define PTR2IV(p)	INT2PTR(IV,p)
+ #define PTR2UV(p)	INT2PTR(UV,p)
++#define PTR2UVINT(p)	INT2PTR(UVINT,p)
+ #define PTR2NV(p)	NUM2PTR(NV,p)
+ #define PTR2nat(p)	(PTRV)(p)	/* pointer to integer of PTRSIZE */
+ 
+@@ -2792,9 +2810,9 @@ the highest precision one available is used.
+ #define PERL_LONG_MIN ((long)LONG_MIN)
+ 
+ #ifdef UV_IS_QUAD
+-#    define PERL_UQUAD_MAX	(~(UV)0)
+-#    define PERL_UQUAD_MIN	((UV)0)
+-#    define PERL_QUAD_MAX 	((IV) (PERL_UQUAD_MAX >> 1))
++#    define PERL_UQUAD_MAX	(~(UVINT)0)
++#    define PERL_UQUAD_MIN	((UVINT)0)
++#    define PERL_QUAD_MAX 	((IVINT) (PERL_UQUAD_MAX >> 1))
+ #    define PERL_QUAD_MIN 	(-PERL_QUAD_MAX - ((3 & -1) == 3))
+ #endif
+ 
+diff --git pp.c pp.c
+index 68b4e46156..1a14a9f376 100644
+--- pp.c
++++ pp.c
+@@ -1102,7 +1102,7 @@ PP(pp_pow)
+                 is_int = 1;
+ 
+                 /* foo & (foo - 1) is zero only for a power of 2.  */
+-                if (!(baseuv & (baseuv - 1))) {
++                if (!(baseuv & (UVINT)(baseuv - 1))) {
+                     /* We are raising power-of-2 to a positive integer.
+                        The logic here will work for any base (even non-integer
+                        bases) but it can be less accurate than
+@@ -1128,8 +1128,8 @@ PP(pp_pow)
+                     SvIV_please_nomg(svr);
+                     RETURN;
+ 		} else {
+-		    unsigned int highbit = 8 * sizeof(UV);
+-		    unsigned int diff = 8 * sizeof(UV);
++		    unsigned int highbit = 8 * sizeof(UVINT);
++		    unsigned int diff = 8 * sizeof(UVINT);
+ 		    while (diff >>= 1) {
+ 			highbit -= diff;
+ 			if (baseuv >> highbit) {
+@@ -1137,7 +1137,7 @@ PP(pp_pow)
+ 			}
+ 		    }
+ 		    /* we now have baseuv < 2 ** highbit */
+-		    if (power * highbit <= 8 * sizeof(UV)) {
++		    if (power * highbit <= 8 * sizeof(UVINT)) {
+ 			/* result will definitely fit in UV, so use UV math
+ 			   on same algorithm as above */
+ 			UV result = 1;
+@@ -1239,7 +1239,7 @@ PP(pp_multiply)
+         U32 flags = (svl->sv_flags & svr->sv_flags);
+         if (flags & SVf_IOK) {
+             /* both args are simple IVs */
+-            UV topl, topr;
++            UVINT topl, topr;
+             il = SvIVX(svl);
+             ir = SvIVX(svr);
+           do_iv:
+@@ -1253,10 +1253,10 @@ PP(pp_multiply)
+              *     for 64-bits, its 33 bits */
+             if (!(
+                       ((topl+1) | (topr+1))
+-                    & ( (((UV)1) << (UVSIZE * 4 + 1)) - 2) /* 11..110 */
++                    & (UVINT)( (((UV)1) << (UVSIZE * 4 + 1)) - 2) /* 11..110 */
+             )) {
+                 SP--;
+-                TARGi(il * ir, 0); /* args not GMG, so can't be tainted */
++                TARGi((IVINT)il * (IVINT)ir, 0); /* args not GMG, so can't be tainted */
+                 SETs(TARG);
+                 RETURN;
+             }
+@@ -1295,12 +1295,12 @@ PP(pp_multiply)
+ 	if (SvIV_please_nomg(svl)) {
+ 	    bool auvok = SvUOK(svl);
+ 	    bool buvok = SvUOK(svr);
+-	    const UV topmask = (~ (UV)0) << (4 * sizeof (UV));
+-	    const UV botmask = ~((~ (UV)0) << (4 * sizeof (UV)));
+-	    UV alow;
+-	    UV ahigh;
+-	    UV blow;
+-	    UV bhigh;
++	    const UVINT topmask = (~ (UV)0) << (4 * sizeof (UVINT));
++	    const UVINT botmask = ~((~ (UV)0) << (4 * sizeof (UVINT)));
++	    UVINT alow;
++	    UVINT ahigh;
++	    UVINT blow;
++	    UVINT bhigh;
+ 
+ 	    if (auvok) {
+ 		alow = SvUVX(svl);
+@@ -1329,9 +1329,9 @@ PP(pp_multiply)
+ 	    }
+ 
+ 	    /* If this does sign extension on unsigned it's time for plan B  */
+-	    ahigh = alow >> (4 * sizeof (UV));
++	    ahigh = alow >> (4 * sizeof (UVINT));
+ 	    alow &= botmask;
+-	    bhigh = blow >> (4 * sizeof (UV));
++	    bhigh = blow >> (4 * sizeof (UVINT));
+ 	    blow &= botmask;
+ 	    if (ahigh && bhigh) {
+ 		NOOP;
+@@ -1340,7 +1340,7 @@ PP(pp_multiply)
+ 	    } else if (!ahigh && !bhigh) {
+ 		/* eg 32 bit is at most 0xFFFF * 0xFFFF == 0xFFFE0001
+ 		   so the unsigned multiply cannot overflow.  */
+-		const UV product = alow * blow;
++		const UVINT product = alow * blow;
+ 		if (auvok == buvok) {
+ 		    /* -ve * -ve or +ve * +ve gives a +ve result.  */
+ 		    SP--;
+@@ -1373,7 +1373,7 @@ PP(pp_multiply)
+ 		if (!(product_middle & topmask)) {
+ 		    /* OK, (ahigh * blow) won't lose bits when we shift it.  */
+ 		    UV product_low;
+-		    product_middle <<= (4 * sizeof (UV));
++		    product_middle <<= (4 * sizeof (UVINT));
+ 		    product_low = alow * blow;
+ 
+ 		    /* as for pp_add, UV + something mustn't get smaller.
+@@ -1820,7 +1820,7 @@ PP(pp_subtract)
+         U32 flags = (svl->sv_flags & svr->sv_flags);
+         if (flags & SVf_IOK) {
+             /* both args are simple IVs */
+-            UV topl, topr;
++            UVINT topl, topr;
+             il = SvIVX(svl);
+             ir = SvIVX(svr);
+           do_iv:
+@@ -1832,7 +1832,7 @@ PP(pp_subtract)
+              * are 00  or 11, then it's safe */
+             if (!( ((topl+1) | (topr+1)) & 2)) {
+                 SP--;
+-                TARGi(il - ir, 0); /* args not GMG, so can't be tainted */
++                TARGi((IVINT)il - (IVINT)ir, 0); /* args not GMG, so can't be tainted */
+                 SETs(TARG);
+                 RETURN;
+             }
+@@ -1863,7 +1863,7 @@ PP(pp_subtract)
+ 	/* Unless the left argument is integer in range we are going to have to
+ 	   use NV maths. Hence only attempt to coerce the right argument if
+ 	   we know the left is integer.  */
+-	UV auv = 0;
++	UVINT auv = 0;
+ 	bool auvok = FALSE;
+ 	bool a_valid = 0;
+ 
+@@ -1891,7 +1891,7 @@ PP(pp_subtract)
+ 	if (a_valid) {
+ 	    bool result_good = 0;
+ 	    UV result;
+-	    UV buv;
++	    UVINT buv;
+ 	    bool buvok = SvUOK(svr);
+ 
+ 	    if (buvok)
+@@ -2367,11 +2367,11 @@ PP(pp_bit_and)
+ 	const bool left_ro_nonnum  = !SvNIOKp(left) && SvREADONLY(left);
+ 	const bool right_ro_nonnum = !SvNIOKp(right) && SvREADONLY(right);
+ 	if (PL_op->op_private & HINT_INTEGER) {
+-	  const IV i = SvIV_nomg(left) & SvIV_nomg(right);
++	  const IV i = SvIV_nomg(left) & (IVINT)SvIV_nomg(right);
+ 	  SETi(i);
+ 	}
+ 	else {
+-	  const UV u = SvUV_nomg(left) & SvUV_nomg(right);
++	  const UV u = SvUV_nomg(left) & (UVINT)SvUV_nomg(right);
+ 	  SETu(u);
+ 	}
+ 	if (left_ro_nonnum && left != TARG) SvNIOK_off(left);
+@@ -2392,11 +2392,11 @@ PP(pp_nbit_and)
+     {
+ 	dATARGET; dPOPTOPssrl;
+ 	if (PL_op->op_private & HINT_INTEGER) {
+-	  const IV i = SvIV_nomg(left) & SvIV_nomg(right);
++	  const IV i = SvIV_nomg(left) & (IVINT)SvIV_nomg(right);
+ 	  SETi(i);
+ 	}
+ 	else {
+-	  const UV u = SvUV_nomg(left) & SvUV_nomg(right);
++	  const UV u = SvUV_nomg(left) & (UVINT)SvUV_nomg(right);
+ 	  SETu(u);
+ 	}
+     }
+@@ -2428,15 +2428,15 @@ PP(pp_bit_or)
+ 	const bool left_ro_nonnum  = !SvNIOKp(left) && SvREADONLY(left);
+ 	const bool right_ro_nonnum = !SvNIOKp(right) && SvREADONLY(right);
+ 	if (PL_op->op_private & HINT_INTEGER) {
+-	  const IV l = (USE_LEFT(left) ? SvIV_nomg(left) : 0);
+-	  const IV r = SvIV_nomg(right);
+-	  const IV result = op_type == OP_BIT_OR ? (l | r) : (l ^ r);
++	  const IVINT l = (USE_LEFT(left) ? SvIV_nomg(left) : 0);
++	  const IVINT r = SvIV_nomg(right);
++	  const IVINT result = op_type == OP_BIT_OR ? (l | r) : (l ^ r);
+ 	  SETi(result);
+ 	}
+ 	else {
+-	  const UV l = (USE_LEFT(left) ? SvUV_nomg(left) : 0);
+-	  const UV r = SvUV_nomg(right);
+-	  const UV result = op_type == OP_BIT_OR ? (l | r) : (l ^ r);
++	  const UVINT l = (USE_LEFT(left) ? SvUV_nomg(left) : 0);
++	  const UVINT r = SvUV_nomg(right);
++	  const UVINT result = op_type == OP_BIT_OR ? (l | r) : (l ^ r);
+ 	  SETu(result);
+ 	}
+ 	if (left_ro_nonnum && left != TARG) SvNIOK_off(left);
+@@ -2462,15 +2462,15 @@ PP(pp_nbit_or)
+     {
+ 	dATARGET; dPOPTOPssrl;
+ 	if (PL_op->op_private & HINT_INTEGER) {
+-	  const IV l = (USE_LEFT(left) ? SvIV_nomg(left) : 0);
+-	  const IV r = SvIV_nomg(right);
+-	  const IV result = op_type == OP_NBIT_OR ? (l | r) : (l ^ r);
++	  const IVINT l = (USE_LEFT(left) ? SvIV_nomg(left) : 0);
++	  const IVINT r = SvIV_nomg(right);
++	  const IVINT result = op_type == OP_NBIT_OR ? (l | r) : (l ^ r);
+ 	  SETi(result);
+ 	}
+ 	else {
+-	  const UV l = (USE_LEFT(left) ? SvUV_nomg(left) : 0);
+-	  const UV r = SvUV_nomg(right);
+-	  const UV result = op_type == OP_NBIT_OR ? (l | r) : (l ^ r);
++	  const UVINT l = (USE_LEFT(left) ? SvUV_nomg(left) : 0);
++	  const UVINT r = SvUV_nomg(right);
++	  const UVINT result = op_type == OP_NBIT_OR ? (l | r) : (l ^ r);
+ 	  SETu(result);
+ 	}
+     }
+@@ -3229,13 +3229,13 @@ Perl_translate_substr_offsets( STRLEN curlen, IV pos1_iv,
+ 		pos2_is_uv = 0;
+ 	} else {  /* len_iv >= 0 */
+ 	    if (!pos1_is_uv && pos1_iv < 0) {
+-		pos2_iv = pos1_iv + len_iv;
++		pos2_iv = pos1_iv + (IVINT)len_iv;
+ 		pos2_is_uv = (UV)len_iv > (UV)IV_MAX;
+ 	    } else {
+ 		if ((UV)len_iv > curlen-(UV)pos1_iv)
+ 		    pos2_iv = curlen;
+ 		else
+-		    pos2_iv = pos1_iv+len_iv;
++		    pos2_iv = pos1_iv + (IVINT)len_iv;
+ 		pos2_is_uv = 1;
+ 	    }
+ 	}
+@@ -6997,7 +6997,7 @@ PP(pp_argelem)
+     /* This is a copy of the relevant parts of pp_aassign().
+      */
+     if ((o->op_private & OPpARGELEM_MASK) == OPpARGELEM_AV) {
+-        IV i;
++        IVINT i;
+ 
+         if (AvFILL((AV*)targ) > -1) {
+             /* target should usually be empty. If we get get
+@@ -7036,7 +7036,7 @@ PP(pp_argelem)
+ 
+     }
+     else {
+-        IV i;
++        IVINT i;
+ 
+         assert((o->op_private & OPpARGELEM_MASK) == OPpARGELEM_HV);
+ 
+diff --git pp.h pp.h
+index cea956db40..d9a0f61d43 100644
+--- pp.h
++++ pp.h
+@@ -522,9 +522,9 @@ Does not use C<TARG>.  See also C<L</XPUSHu>>, C<L</mPUSHu>> and C<L</PUSHu>>.
+ #define USE_LEFT(sv) \
+         (SvOK(sv) || !(PL_op->op_flags & OPf_STACKED))
+ #define dPOPXiirl_ul_nomg(X) \
+-    IV right = (sp--, SvIV_nomg(TOPp1s));		\
++    IVINT right = (sp--, SvIV_nomg(TOPp1s));		\
+     SV *leftsv = CAT2(X,s);				\
+-    IV left = USE_LEFT(leftsv) ? SvIV_nomg(leftsv) : 0
++    IVINT left = USE_LEFT(leftsv) ? SvIV_nomg(leftsv) : 0
+ 
+ #define dPOPPOPssrl	dPOPXssrl(POP)
+ #define dPOPPOPnnrl	dPOPXnnrl(POP)
+@@ -537,7 +537,7 @@ Does not use C<TARG>.  See also C<L</XPUSHu>>, C<L</mPUSHu>> and C<L</PUSHu>>.
+ #define dPOPTOPiirl	dPOPXiirl(TOP)
+ #define dPOPTOPiirl_ul_nomg dPOPXiirl_ul_nomg(TOP)
+ #define dPOPTOPiirl_nomg \
+-    IV right = SvIV_nomg(TOPs); IV left = (sp--, SvIV_nomg(TOPs))
++    IVINT right = SvIV_nomg(TOPs); IVINT left = (sp--, SvIV_nomg(TOPs))
+ 
+ #define RETPUSHYES	RETURNX(PUSHs(&PL_sv_yes))
+ #define RETPUSHNO	RETURNX(PUSHs(&PL_sv_no))
+diff --git pp_hot.c pp_hot.c
+index 3348afedf1..c49fd6312f 100644
+--- pp_hot.c
++++ pp_hot.c
+@@ -1419,7 +1419,7 @@ PP(pp_add)
+         U32 flags = (svl->sv_flags & svr->sv_flags);
+         if (flags & SVf_IOK) {
+             /* both args are simple IVs */
+-            UV topl, topr;
++            UVINT topl, topr;
+             il = SvIVX(svl);
+             ir = SvIVX(svr);
+           do_iv:
+@@ -1431,7 +1431,7 @@ PP(pp_add)
+              * are 00  or 11, then it's safe */
+             if (!( ((topl+1) | (topr+1)) & 2)) {
+                 SP--;
+-                TARGi(il + ir, 0); /* args not GMG, so can't be tainted */
++                TARGi((IVINT)il + (IVINT)ir, 0); /* args not GMG, so can't be tainted */
+                 SETs(TARG);
+                 RETURN;
+             }
+@@ -1506,7 +1506,7 @@ PP(pp_add)
+         /* Unless the left argument is integer in range we are going to have to
+            use NV maths. Hence only attempt to coerce the right argument if
+            we know the left is integer.  */
+-        UV auv = 0;
++        UVINT auv = 0;
+         bool auvok = FALSE;
+         bool a_valid = 0;
+ 
+@@ -1538,7 +1538,7 @@ PP(pp_add)
+         if (a_valid) {
+             bool result_good = 0;
+             UV result;
+-            UV buv;
++            UVINT buv;
+             bool buvok = SvUOK(svr);
+         
+             if (buvok)
+@@ -3637,7 +3637,7 @@ PP(pp_multideref)
+ 
+                     if (lval) {
+                         if (!svp || !(sv = *svp)) {
+-                            IV len;
++                            IVINT len;
+                             if (!defer)
+                                 DIE(aTHX_ PL_no_aelem, elem);
+                             len = av_top_index(av);
+@@ -5389,7 +5389,7 @@ PP(pp_aelem)
+          }
+ #endif
+         if (!svp || !*svp) {
+-            IV len;
++            IVINT len;
+             if (!defer)
+                 DIE(aTHX_ PL_no_aelem, elem);
+             len = av_top_index(av);
+diff --git proto.h proto.h
+index faca6d1366..f08c66ac94 100644
+--- proto.h
++++ proto.h
+@@ -2913,7 +2913,7 @@ PERL_CALLCONV regnode*	Perl_regnext(pTHX_ regnode* p)
+ 			__attribute__warn_unused_result__;
+ #define PERL_ARGS_ASSERT_REGNEXT
+ 
+-PERL_CALLCONV void	Perl_repeatcpy(char* to, const char* from, I32 len, IV count);
++PERL_CALLCONV void	Perl_repeatcpy(char* to, const char* from, I32 len, IVINT count);
+ #define PERL_ARGS_ASSERT_REPEATCPY	\
+ 	assert(to); assert(from)
+ PERL_CALLCONV void	Perl_report_evil_fh(pTHX_ const GV *gv);
+@@ -6394,9 +6394,9 @@ PERL_STATIC_INLINE void	S_sv_unglob(pTHX_ SV *const sv, U32 flags);
+ 	assert(sv)
+ #endif
+ #ifndef PERL_NO_INLINE_FUNCTIONS
+-PERL_STATIC_INLINE char *	S_uiv_2buf(char *const buf, const IV iv, UV uv, const int is_uv, char **const peob)
++PERL_STATIC_INLINE char *	S_uivint_2buf(char *const buf, const IVINT iv, UVINT uv, const int is_uv, char **const peob)
+ 			__attribute__warn_unused_result__;
+-#define PERL_ARGS_ASSERT_UIV_2BUF	\
++#define PERL_ARGS_ASSERT_UIVINT_2BUF	\
+ 	assert(buf); assert(peob)
+ #endif
+ 
+diff --git regcomp.c regcomp.c
+index 9c6ccc2c1b..203dd2d6d9 100644
+--- regcomp.c
++++ regcomp.c
+@@ -1402,9 +1402,9 @@ S_edit_distance(const UV* src,
+ )
+ {
+     item *head = NULL;
+-    UV swapCount, swapScore, targetCharCount, i, j;
++    UVINT swapCount, swapScore, targetCharCount, i, j;
+     UV *scores;
+-    UV score_ceil = x + y;
++    UVINT score_ceil = x + y;
+ 
+     PERL_ARGS_ASSERT_EDIT_DISTANCE;
+ 
+@@ -2172,7 +2172,7 @@ S_is_ssc_worth_it(const RExC_state_t * pRExC_state, const regnode_ssc * ssc)
+             break;
+         }
+         end = MIN(end, max_code_points - 1);
+-        count += end - start + 1;
++        count += end - (UVINT)start + 1;
+         if (count >= max_match) {
+             invlist_iterfinish(ssc->invlist);
+             return FALSE;
+@@ -9522,10 +9522,10 @@ Perl__invlist_search(SV* const invlist, const UV cp)
+      *	array[i] <= cp < array[i+1]
+      */
+ 
+-    IV low = 0;
+-    IV mid;
+-    IV high = _invlist_len(invlist);
+-    const IV highest_element = high - 1;
++    IVINT low = 0;
++    IVINT mid;
++    IVINT high = _invlist_len(invlist);
++    const IVINT highest_element = high - 1;
+     const UV* array;
+ 
+     PERL_ARGS_ASSERT__INVLIST_SEARCH;
+@@ -9626,16 +9626,16 @@ Perl__invlist_union_maybe_complement_2nd(pTHX_ SV* const a, SV* const b,
+ 
+     const UV* array_a;    /* a's array */
+     const UV* array_b;
+-    UV len_a;	    /* length of a's array */
+-    UV len_b;
++    UVINT len_a;	    /* length of a's array */
++    UVINT len_b;
+ 
+     SV* u;			/* the resulting union */
+     UV* array_u;
+-    UV len_u = 0;
++    UVINT len_u = 0;
+ 
+-    UV i_a = 0;		    /* current index into a's array */
+-    UV i_b = 0;
+-    UV i_u = 0;
++    UVINT i_a = 0;		    /* current index into a's array */
++    UVINT i_b = 0;
++    UVINT i_u = 0;
+ 
+     /* running count, as explained in the algorithm source book; items are
+      * stopped accumulating and are output when the count changes to/from 0.
+@@ -9847,7 +9847,7 @@ Perl__invlist_union_maybe_complement_2nd(pTHX_ SV* const a, SV* const b,
+         len_u = i_u;
+     }
+     else {
+-        IV copy_count = len_a - i_a;
++        IVINT copy_count = len_a - i_a;
+         if (copy_count > 0) {   /* The non-exhausted input is 'a' */
+ 	    Copy(array_a + i_a, array_u + i_u, copy_count, UV);
+         }
+@@ -9906,16 +9906,16 @@ Perl__invlist_intersection_maybe_complement_2nd(pTHX_ SV* const a, SV* const b,
+ 
+     const UV* array_a;		/* a's array */
+     const UV* array_b;
+-    UV len_a;	/* length of a's array */
+-    UV len_b;
++    UVINT len_a;	/* length of a's array */
++    UVINT len_b;
+ 
+     SV* r;		     /* the resulting intersection */
+     UV* array_r;
+     UV len_r = 0;
+ 
+-    UV i_a = 0;		    /* current index into a's array */
+-    UV i_b = 0;
+-    UV i_r = 0;
++    UVINT i_a = 0;		    /* current index into a's array */
++    UVINT i_b = 0;
++    UVINT i_r = 0;
+ 
+     /* running count of how many of the two inputs are postitioned at ranges
+      * that are in their sets.  As explained in the algorithm source book,
+@@ -18594,7 +18594,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+                              * and the digit values represented are in
+                              * numerical order, they are from the same series.
+                              * */
+-                            if (         value - prevvalue > 9
++                            if (         value - (UVINT)prevvalue > 9
+                                 ||    (((    value - 0x1D7CE) % 10)
+                                      <= (prevvalue - 0x1D7CE) % 10))
+                             {
+@@ -19220,7 +19220,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+ 
+     if (optimizable) {
+         PERL_UINT_FAST8_T i;
+-        UV partial_cp_count = 0;
++        UVINT partial_cp_count = 0;
+         UV start[MAX_FOLD_FROMS+1] = { 0 }; /* +1 for the folded-to char */
+         UV   end[MAX_FOLD_FROMS+1] = { 0 };
+         bool single_range = FALSE;
+@@ -19234,7 +19234,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+                 if (! invlist_iternext(cp_list, &start[i], &end[i])) {
+                     break;
+                 }
+-                partial_cp_count += end[i] - start[i] + 1;
++                partial_cp_count += end[i] - (UVINT)start[i] + 1;
+             }
+ 
+             if (i == 1) {
+@@ -19757,7 +19757,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+ 
+             if (invlist_highest(cp_list) <= max_permissible) {
+                 UV this_start, this_end;
+-                UV lowest_cp = UV_MAX;  /* init'ed to suppress compiler warn */
++                UVINT lowest_cp = UV_MAX;  /* init'ed to suppress compiler warn */
+                 U8 bits_differing = 0;
+                 Size_t full_cp_count = 0;
+                 bool first_time = TRUE;
+@@ -19792,7 +19792,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+                         bits_differing  |= i ^ lowest_cp;
+                     }
+ 
+-                    full_cp_count += this_end - this_start + 1;
++                    full_cp_count += this_end - (UVINT)this_start + 1;
+                 }
+ 
+                 /* At the end of the loop, we count how many bits differ from
+@@ -19968,7 +19968,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+             && ! has_runtime_dependency
+             &&   anyof_flags == 0
+             &&   start[0] < (1 << ANYOFR_BASE_BITS)
+-            &&   end[0] - start[0]
++            &&   end[0] - (UVINT)start[0]
+                     < ((1U << (sizeof(((struct regnode_1 *)NULL)->arg1)
+                                    * CHARBITS - ANYOFR_BASE_BITS))))
+ 
+@@ -19977,7 +19977,7 @@ S_regclass(pTHX_ RExC_state_t *pRExC_state, I32 *flagp, U32 depth,
+             U8 high_utf8[UTF8_MAXBYTES+1];
+ 
+             ret = reganode(pRExC_state, ANYOFR,
+-                        (start[0] | (end[0] - start[0]) << ANYOFR_BASE_BITS));
++                        (start[0] | ((UVINT)end[0] - (UVINT)start[0]) << ANYOFR_BASE_BITS));
+ 
+             /* Place the lowest UTF-8 start byte in the flags field, so as to
+              * allow efficient ruling out at run time of many possible inputs.
+diff --git scope.h scope.h
+index 49177e32a8..9add102e14 100644
+--- scope.h
++++ scope.h
+@@ -209,7 +209,7 @@ scope has the given name. C<name> must be a literal string.
+         DEBUG_SCOPE("LEAVE \"" name "\"")				\
+         if (PL_scopestack_name)	{					\
+             assert(((char*)PL_scopestack_name[PL_scopestack_ix-1]	\
+-                        == (char*)name)					\
++                        == (char*)&(name))				\
+                     || strEQ(PL_scopestack_name[PL_scopestack_ix-1], name));        \
+         }								\
+         pop_scope();							\
+diff --git sv.c sv.c
+index 46bf9815cd..d0f25c7cc5 100644
+--- sv.c
++++ sv.c
+@@ -872,9 +872,9 @@ available in hv.c.
+ */
+ 
+ struct body_details {
+-    U8 body_size;	/* Size to allocate  */
+-    U8 copy;		/* Size of structure to copy (may be shorter)  */
+-    U8 offset;		/* Size of unalloced ghost fields to first alloced field*/
++    U16 body_size;	/* Size to allocate  */
++    U16 copy;		/* Size of structure to copy (may be shorter)  */
++    U16 offset;		/* Size of unalloced ghost fields to first alloced field*/
+     PERL_BITFIELD8 type : 4;        /* We have space for a sanity check. */
+     PERL_BITFIELD8 cant_upgrade : 1;/* Cannot upgrade this type */
+     PERL_BITFIELD8 zero_nv : 1;     /* zero the NV when upgrading from this */
+@@ -2037,7 +2037,7 @@ S_sv_2iuv_non_preserve(pTHX_ SV *const sv
+     PERL_ARGS_ASSERT_SV_2IUV_NON_PRESERVE;
+     PERL_UNUSED_CONTEXT;
+ 
+-    DEBUG_c(PerlIO_printf(Perl_debug_log,"sv_2iuv_non '%s', IV=0x%" UVxf " NV=%" NVgf " inttype=%" UVXf "\n", SvPVX_const(sv), SvIVX(sv), SvNVX(sv), (UV)numtype));
++    DEBUG_c(PerlIO_printf(Perl_debug_log,"sv_2iuv_non '%s', IV=0x%" UVxf " NV=%" NVgf " inttype=%" UVXf "\n", SvPVX_const(sv), SvUVX(sv), SvNVX(sv), (UV)numtype));
+     if (SvNVX(sv) < (NV)IV_MIN) {
+ 	(void)SvIOKp_on(sv);
+ 	(void)SvNOK_on(sv);
+@@ -2202,7 +2202,7 @@ S_sv_2iuv_common(pTHX_ SV *const sv)
+ 				  "0x%" UVxf " 2iv(%" UVuf " => %" IVdf ") (as unsigned)\n",
+ 				  PTR2UV(sv),
+ 				  SvUVX(sv),
+-				  SvUVX(sv)));
++				  SvIVX(sv)));
+ 	}
+     }
+     else if (SvPOKp(sv)) {
+@@ -2866,22 +2866,22 @@ static const union {
+     '9', '8', '9', '9'
+ }};
+ 
+-/* uiv_2buf(): private routine for use by sv_2pv_flags(): print an IV or
++/* uivint_2buf(): private routine for use by sv_2pv_flags(): print an IV or
+  * UV as a string towards the end of buf, and return pointers to start and
+  * end of it.
+  *
+- * We assume that buf is at least TYPE_CHARS(UV) long.
++ * We assume that buf is at least TYPE_CHARS(UVINT) long.
+  */
+ 
+ PERL_STATIC_INLINE char *
+-S_uiv_2buf(char *const buf, const IV iv, UV uv, const int is_uv, char **const peob)
++S_uivint_2buf(char *const buf, const IVINT iv, UVINT uv, const int is_uv, char **const peob)
+ {
+-    char *ptr = buf + TYPE_CHARS(UV);
++    char *ptr = buf + TYPE_CHARS(UVINT);
+     char * const ebuf = ptr;
+     int sign;
+     U16 *word_ptr, *word_table;
+ 
+-    PERL_ARGS_ASSERT_UIV_2BUF;
++    PERL_ARGS_ASSERT_UIVINT_2BUF;
+ 
+     /* ptr has to be properly aligned, because we will cast it to U16* */
+     assert(PTR2nat(ptr) % 2 == 0);
+@@ -3124,9 +3124,9 @@ Perl_sv_2pv_flags(pTHX_ SV *const sv, STRLEN *const lp, const U32 flags)
+ 	   converting the IV is going to be more efficient */
+ 	const U32 isUIOK = SvIsUV(sv);
+         /* The purpose of this union is to ensure that arr is aligned on
+-           a 2 byte boundary, because that is what uiv_2buf() requires */
++           a 2 byte boundary, because that is what uivint_2buf() requires */
+         union {
+-            char arr[TYPE_CHARS(UV)];
++            char arr[TYPE_CHARS(UVINT)];
+             U16 dummy;
+         } buf;
+ 	char *ebuf, *ptr;
+@@ -3134,7 +3134,7 @@ Perl_sv_2pv_flags(pTHX_ SV *const sv, STRLEN *const lp, const U32 flags)
+ 
+ 	if (SvTYPE(sv) < SVt_PVIV)
+ 	    sv_upgrade(sv, SVt_PVIV);
+-        ptr = uiv_2buf(buf.arr, SvIVX(sv), SvUVX(sv), isUIOK, &ebuf);
++        ptr = uivint_2buf(buf.arr, SvIVX(sv), SvUVX(sv), isUIOK, &ebuf);
+ 	len = ebuf - ptr;
+ 	/* inlined from sv_setpvn */
+ 	s = SvGROW_mutable(sv, len + 1);
+@@ -9011,7 +9011,7 @@ Perl_sv_inc_nomg(pTHX_ SV *const sv)
+ 	       And if we do get here I suspect that sv_setnv will croak. NWC
+ 	       Fall through. */
+ 	    DEBUG_c(PerlIO_printf(Perl_debug_log,"sv_inc punt failed to convert '%s' to IOK or NOKp, UV=0x%" UVxf " NV=%" NVgf "\n",
+-				  SvPVX_const(sv), SvIVX(sv), SvNVX(sv)));
++				  SvPVX_const(sv), SvUVX(sv), SvNVX(sv)));
+ 	}
+ #endif /* PERL_PRESERVE_IVUV */
+         if (!numtype && ckWARN(WARN_NUMERIC))
+@@ -9192,7 +9192,7 @@ Perl_sv_dec_nomg(pTHX_ SV *const sv)
+ 	       And if we do get here I suspect that sv_setnv will croak. NWC
+ 	       Fall through. */
+ 	    DEBUG_c(PerlIO_printf(Perl_debug_log,"sv_dec punt failed to convert '%s' to IOK or NOKp, UV=0x%" UVxf " NV=%" NVgf "\n",
+-				  SvPVX_const(sv), SvIVX(sv), SvNVX(sv)));
++				  SvPVX_const(sv), SvUVX(sv), SvNVX(sv)));
+ 	}
+     }
+ #endif /* PERL_PRESERVE_IVUV */
+@@ -10681,7 +10681,7 @@ Perl_sv_tainted(pTHX_ SV *const sv)
+     return FALSE;
+ }
+ 
+-#ifndef NO_MATHOMS  /* Can't move these to mathoms.c because call uiv_2buf(),
++#ifndef NO_MATHOMS  /* Can't move these to mathoms.c because call uivint_2buf(),
+                        private to this file */
+ 
+ /*
+@@ -10700,13 +10700,13 @@ void
+ Perl_sv_setpviv(pTHX_ SV *const sv, const IV iv)
+ {
+     /* The purpose of this union is to ensure that arr is aligned on
+-       a 2 byte boundary, because that is what uiv_2buf() requires */
++       a 2 byte boundary, because that is what uivint_2buf() requires */
+     union {
+-        char arr[TYPE_CHARS(UV)];
++        char arr[TYPE_CHARS(UVINT)];
+         U16 dummy;
+     } buf;
+     char *ebuf;
+-    char * const ptr = uiv_2buf(buf.arr, iv, 0, 0, &ebuf);
++    char * const ptr = uivint_2buf(buf.arr, iv, 0, 0, &ebuf);
+ 
+     PERL_ARGS_ASSERT_SV_SETPVIV;
+ 
+@@ -12322,6 +12322,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+ 	case 'z':
+ 	case 't':
+         case 'j':
++	case 'P':
+ 	    intsize = *q++;
+ 	    break;
+ 	}
+@@ -12512,7 +12513,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+                  && q == fmtstart + 1 /* plain %d, not %....d */
+                  && patend >= fmtstart + sizeof(UTF8f) - 1 /* long enough */
+                  && *q == '%'
+-                 && strnEQ(q + 1, (UTF8f) + 2, sizeof(UTF8f) - 3))
++                 && strnEQ(q + 1, &UTF8f[2], sizeof(UTF8f) - 3))
+             {
+ 		/* The argument has already gone through cBOOL, so the cast
+ 		   is safe. */
+@@ -12644,6 +12645,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+ #endif
+                         default:   iv = va_arg(*args, int);        break;
+                         case 'j':  iv = (IV) va_arg(*args, PERL_INTMAX_T); break;
++                        case 'P':  iv = va_arg(*args, PERL_INTPTR_T); break;
+                         case 'q':
+ #if IVSIZE >= 8
+                                    iv = va_arg(*args, Quad_t);     break;
+@@ -12662,6 +12664,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+                         case 'l':  iv = (long)tiv;   break;
+                         case 'V':
+                         default:   iv = tiv;         break;
++                        case 'P':  iv = (PERL_INTPTR_T)tiv; break;
+                         case 'q':
+ #if IVSIZE >= 8
+                                    iv = (Quad_t)tiv; break;
+@@ -12701,6 +12704,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+ #endif
+                         case 'j': uv = (UV) va_arg(*args, PERL_UINTMAX_T); break;
+                         default:  uv = va_arg(*args, unsigned);      break;
++                        case 'P': uv = va_arg(*args, PERL_UINTPTR_T); break;
+                         case 'q':
+ #if IVSIZE >= 8
+                                   uv = va_arg(*args, Uquad_t);       break;
+@@ -12719,6 +12723,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+                         case 'l': uv = (unsigned long)tuv;  break;
+                         case 'V':
+                         default:  uv = tuv;                 break;
++                        case 'P': uv = (PERL_UINTPTR_T)tuv; break;
+                         case 'q':
+ #if IVSIZE >= 8
+                                   uv = (Uquad_t)tuv;        break;
+@@ -12866,6 +12871,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+ 	    case 'z':
+ 	    case 't':
+ 	    case 'j':
++	    case 'P':
+ 		goto unknown;
+ 	    }
+ 
+@@ -13260,6 +13266,7 @@ Perl_sv_vcatpvfn_flags(pTHX_ SV *const sv, const char *const pat, const STRLEN p
+                     case 't':  *(va_arg(*args, ptrdiff_t*)) = i; break;
+ #endif
+                     case 'j':  *(va_arg(*args, PERL_INTMAX_T*)) = i; break;
++                    case 'P':  *(va_arg(*args, PERL_INTPTR_T*)) = i; break;
+                     case 'q':
+ #if IVSIZE >= 8
+                                *(va_arg(*args, Quad_t*))    = i; break;
+@@ -13863,7 +13870,7 @@ Perl_ptr_table_new(pTHX)
+ }
+ 
+ #define PTR_TABLE_HASH(ptr) \
+-  ((PTR2UV(ptr) >> 3) ^ (PTR2UV(ptr) >> (3 + 7)) ^ (PTR2UV(ptr) >> (3 + 17)))
++  ((PTR2UVINT(ptr) >> 3) ^ (PTR2UVINT(ptr) >> (3 + 7)) ^ (PTR2UVINT(ptr) >> (3 + 17)))
+ 
+ /* map an existing pointer using a table */
+ 
+@@ -13871,7 +13878,7 @@ STATIC PTR_TBL_ENT_t *
+ S_ptr_table_find(PTR_TBL_t *const tbl, const void *const sv)
+ {
+     PTR_TBL_ENT_t *tblent;
+-    const UV hash = PTR_TABLE_HASH(sv);
++    const UVINT hash = PTR_TABLE_HASH(sv);
+ 
+     PERL_ARGS_ASSERT_PTR_TABLE_FIND;
+ 
+@@ -13909,7 +13916,7 @@ Perl_ptr_table_store(pTHX_ PTR_TBL_t *const tbl, const void *const oldsv, void *
+     if (tblent) {
+ 	tblent->newval = newsv;
+     } else {
+-	const UV entry = PTR_TABLE_HASH(oldsv) & tbl->tbl_max;
++	const UVINT entry = PTR_TABLE_HASH(oldsv) & tbl->tbl_max;
+ 
+ 	if (tbl->tbl_arena_next == tbl->tbl_arena_end) {
+ 	    struct ptr_tbl_arena *new_arena;
+@@ -13939,8 +13946,8 @@ void
+ Perl_ptr_table_split(pTHX_ PTR_TBL_t *const tbl)
+ {
+     PTR_TBL_ENT_t **ary = tbl->tbl_ary;
+-    const UV oldsize = tbl->tbl_max + 1;
+-    UV newsize = oldsize * 2;
++    const UVINT oldsize = tbl->tbl_max + 1;
++    UVINT newsize = oldsize * 2;
+     UV i;
+ 
+     PERL_ARGS_ASSERT_PTR_TABLE_SPLIT;
+diff --git toke.c toke.c
+index 628a79fb43..0480b2003a 100644
+--- toke.c
++++ toke.c
+@@ -3178,8 +3178,8 @@ S_scan_const(pTHX_ char *start)
+                  */
+                 char * max_ptr;
+                 char * min_ptr;
+-                IV range_min;
+-		IV range_max;	/* last character in range */
++                IVINT range_min;
++                IVINT range_max; /* last character in range */
+                 STRLEN grow;
+                 Size_t offset_to_min = 0;
+                 Size_t extras = 0;
+@@ -11519,7 +11519,7 @@ Perl_scan_num(pTHX_ const char *start, YYSTYPE* lvalp)
+ 	     when in octal mode.
+ 	   */
+ 	    NV n = 0.0;
+-	    UV u = 0;
++	    UVINT u = 0;
+ 	    bool overflowed = FALSE;
+ 	    bool just_zero  = TRUE;	/* just plain 0 or binary number? */
+             bool has_digs = FALSE;
+@@ -11568,7 +11568,7 @@ Perl_scan_num(pTHX_ const char *start, YYSTYPE* lvalp)
+ 	    for (;;) {
+ 		/* x is used in the overflow test,
+ 		   b is the digit we're adding on. */
+-		UV x, b;
++		UVINT x, b;
+ 
+ 		switch (*s) {
+ 
+diff --git utf8.c utf8.c
+index 72d3ac2b7a..e8f9e45ad6 100644
+--- utf8.c
++++ utf8.c
+@@ -2778,7 +2778,8 @@ Perl_utf16_to_utf8(pTHX_ U8* p, U8* d, Size_t bytelen, Size_t *newlen)
+                 }
+                 p += 2;
+                 uv = ((uv - FIRST_HIGH_SURROGATE) << 10)
+-                                + (low - FIRST_LOW_SURROGATE) + FIRST_IN_PLANE1;
++                                + (UVINT)(low - FIRST_LOW_SURROGATE)
++                                + FIRST_IN_PLANE1;
+             }
+         }
+ #ifdef EBCDIC
+diff --git util.c util.c
+index 8103260181..e267e63107 100644
+--- util.c
++++ util.c
+@@ -3404,7 +3404,7 @@ Perl_my_pclose(pTHX_ PerlIO *ptr)
+ 
+ #define PERL_REPEATCPY_LINEAR 4
+ void
+-Perl_repeatcpy(char *to, const char *from, I32 len, IV count)
++Perl_repeatcpy(char *to, const char *from, I32 len, IVINT count)
+ {
+     PERL_ARGS_ASSERT_REPEATCPY;
+ 
+@@ -3421,10 +3421,8 @@ Perl_repeatcpy(char *to, const char *from, I32 len, IV count)
+ 
+         linear = count < PERL_REPEATCPY_LINEAR ? count : PERL_REPEATCPY_LINEAR;
+         for (items = 0; items < linear; ++items) {
+-            const char *q = from;
+-            IV todo;
+-            for (todo = len; todo > 0; todo--)
+-                *p++ = *q++;
++            memcpy(p, from, len);
++            p += len;
+         }
+ 
+         half = count / 2;
+@@ -5595,7 +5593,7 @@ Perl_xs_handshake(const U32 key, void * v_my_perl, const char * file, ...)
+     va_start(args, file);
+ 
+     got = INT2PTR(void*, (UV)(key & HSm_KEY_MATCH));
+-    need = (void *)(HS_KEY(FALSE, FALSE, "", "") & HSm_KEY_MATCH);
++    need = (void *)(UV)(HS_KEY(FALSE, FALSE, "", "") & HSm_KEY_MATCH);
+     if (UNLIKELY(got != need))
+         goto bad_handshake;
+ /* try to catch where a 2nd threaded perl interp DLL is loaded into a process
