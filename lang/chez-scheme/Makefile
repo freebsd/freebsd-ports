@@ -1,11 +1,12 @@
 PORTNAME=	chez-scheme
-PORTVERSION=	9.5.8a
+PORTVERSION=	9.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/cisco/ChezScheme/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		http://distfiles.pirateparty.in/ashish/:boot \
 		LOCAL/ashish:boot
-DISTFILES=	csv9.5.8${EXTRACT_SUFX} \
+DISTNAME=	csv${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-boot-ta6fb-${PORTVERSION}.tar.xz:boot \
 		${PORTNAME}-boot-ti3fb-${PORTVERSION}.tar.xz:boot
 
@@ -30,8 +31,7 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFLICTS_INSTALL=	petite-chez
 STRIP_FILES=	bin/petite bin/${PORTNAME} bin/${PORTNAME}-script
-CHEZ_LIBDIR=lib/csv9.5.8
-WRKSRC=		${WRKDIR}/csv9.5.8
+CHEZ_LIBDIR=	lib/${DISTNAME:S/.0$//}
 CFLAGS+=	-fPIC
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -luuid
@@ -55,11 +55,19 @@ CONFIGURE_ARGS+=	--threads --32 -m=ti3fb
 CHEZ_ARCH=	ti3fb
 .endif
 
+.if defined(NCURSES_RPATH)
+NCURSES_REPL=	-e 's|-Wl,-rpath,${NCURSESRPATH}||g'
+.else
+NCURSES_REPL=
+.endif
+
 post-patch:
 	${LN} -sf ${WRKDIR}/${CHEZ_ARCH} ${WRKSRC}/boot/
+
+post-configure:
 	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' \
-		-e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,-liconv,${ICONV_LIB},g' ${WRKSRC}/c/Mf-${CHEZ_ARCH}
+		-e 's,/usr/local,${LOCALBASE},g' ${NCURSES_REPL} \
+		-e 's,-liconv,${ICONV_LIB},g' ${WRKSRC}/${CHEZ_ARCH}/c/Mf-config ${WRKSRC}/c/Mf-${CHEZ_ARCH}
 
 pre-build-X11-off:
 	${ECHO_CMD} '#undef LIBX11' >>${WRKSRC}/c/version.h
@@ -70,6 +78,9 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${f}
 	@${CHMOD} -w ${STAGEDIR}${PREFIX}/${f}
 .endfor
+.if ("lib/${DISTNAME}" != "${CHEZ_LIBDIR}")
+	@${MV} ${STAGEDIR}${PREFIX}/lib/${DISTNAME} ${STAGEDIR}${PREFIX}/${CHEZ_LIBDIR}
+.endif
 	@${LN} -sf scheme.boot ${STAGEDIR}${PREFIX}/${CHEZ_LIBDIR}/${CHEZ_ARCH}/${PORTNAME}-script.boot
 
 .include <bsd.port.post.mk>

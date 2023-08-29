@@ -1,7 +1,7 @@
-TIMESTAMP = 1682796733
-SHA256 (csv9.5.8.tar.gz) = e5f8de4e9758cfbbd33caece157a9878fa18f8b2f9aa5e343eeefa14dd555642
-SIZE (csv9.5.8.tar.gz) = 35489260
-SHA256 (chez-scheme-boot-ta6fb-9.5.8a.tar.xz) = bddec1d95b6616d592d2e0dc741e78faf3d7055ceabf8837880eae33a1516226
-SIZE (chez-scheme-boot-ta6fb-9.5.8a.tar.xz) = 2125964
-SHA256 (chez-scheme-boot-ti3fb-9.5.8a.tar.xz) = 3b7ae54ba7da93cb547fbfbc5c2733e72e3e7f5d1681bc185250807a2acd291b
-SIZE (chez-scheme-boot-ti3fb-9.5.8a.tar.xz) = 2072924
+TIMESTAMP = 1693266475
+SHA256 (csv9.6.0.tar.gz) = 9fc70ca7646e8ef3b968f7184435e5df8c22abb751d450761e31ce50d71a660f
+SIZE (csv9.6.0.tar.gz) = 35690840
+SHA256 (chez-scheme-boot-ta6fb-9.6.0.tar.xz) = e5ec8558b0fb0ef39bef7ef0a123e02d421a6e034ee5c76efd93b85a01355093
+SIZE (chez-scheme-boot-ta6fb-9.6.0.tar.xz) = 2132184
+SHA256 (chez-scheme-boot-ti3fb-9.6.0.tar.xz) = 07f2c5b189b7713df150b5ff198e8a7bf37b04932c74b876c5fb377d68550833
+SIZE (chez-scheme-boot-ti3fb-9.6.0.tar.xz) = 2079624
