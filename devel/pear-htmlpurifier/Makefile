@@ -12,8 +12,11 @@ WWW=		http://htmlpurifier.org/
 
 LICENSE=	LGPL21
 
-PEAR_CHANNEL=	htmlpurifier.org
+DEPRECATED=	Unfetchable as the pear channel no longer works
+EXPIRATION_DATE=	2023-09-30
+
 USES=		cpe pear
+PEAR_CHANNEL=	htmlpurifier.org
 
 NO_ARCH=	yes
 
