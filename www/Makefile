@@ -35,6 +35,7 @@
     SUBDIR += angie-module-enhanced-memcached
     SUBDIR += angie-module-eval
     SUBDIR += angie-module-geoip2
+    SUBDIR += angie-module-headers-more
     SUBDIR += angie-module-image-filter
     SUBDIR += angie-module-jwt
     SUBDIR += angie-module-keyval
