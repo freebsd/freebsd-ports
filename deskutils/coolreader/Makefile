@@ -1,7 +1,6 @@
 PORTNAME=	coolreader
 DISTVERSIONPREFIX=	cr
-DISTVERSION=	3.2.55
-PORTREVISION=	2
+DISTVERSION=	3.2.59
 CATEGORIES=	deskutils
 
 MAINTAINER=	mistresssilvara@hotmail.com
@@ -17,7 +16,8 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libfribidi.so:converters/fribidi \
 		libunibreak.so:textproc/libunibreak \
-		libfontconfig.so:x11-fonts/fontconfig
+		libfontconfig.so:x11-fonts/fontconfig \
+		libzstd.so:archivers/zstd
 
 USES=		qt:5 cmake:noninja pkgconfig desktop-file-utils jpeg
 

@@ -74,5 +74,6 @@ share/cr3/textures/tx_sand_dark.jpg
 share/cr3/txt.css
 %%DOCS%%share/doc/cr3/changelog.gz
 share/man/man1/cr3.1.gz
+share/metainfo/cr3.appdata.xml
 share/pixmaps/cr3.png
 share/pixmaps/cr3.xpm
