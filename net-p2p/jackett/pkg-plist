@@ -158,7 +158,6 @@
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
-%%DATADIR%%/Definitions/dariustracker.yml
 %%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/datatalli.yml
@@ -333,7 +332,6 @@
 %%DATADIR%%/Definitions/monikadesign-api.yml
 %%DATADIR%%/Definitions/mousebits.yml
 %%DATADIR%%/Definitions/moviesdvdr.yml
-%%DATADIR%%/Definitions/moviesite.yml
 %%DATADIR%%/Definitions/movietorrent.yml
 %%DATADIR%%/Definitions/movietorrentz.yml
 %%DATADIR%%/Definitions/movieworld.yml
@@ -410,6 +408,7 @@
 %%DATADIR%%/Definitions/rapidzona.yml
 %%DATADIR%%/Definitions/rareshare2.yml
 %%DATADIR%%/Definitions/redbits-api.yml
+%%DATADIR%%/Definitions/redleaves.yml
 %%DATADIR%%/Definitions/redstartorrent.yml
 %%DATADIR%%/Definitions/reelflix-api.yml
 %%DATADIR%%/Definitions/resurrectthenet.yml
