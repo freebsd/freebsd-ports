@@ -1,0 +1,3 @@
+This module captures subrequest response bodies into variables.
+If you want similar (but more powerful) functionalities,
+see the www/angie-module-lua instead.

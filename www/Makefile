@@ -33,6 +33,7 @@
     SUBDIR += angie-module-cache-purge
     SUBDIR += angie-module-echo
     SUBDIR += angie-module-enhanced-memcached
+    SUBDIR += angie-module-eval
     SUBDIR += angie-module-geoip2
     SUBDIR += angie-module-image-filter
     SUBDIR += angie-module-jwt
