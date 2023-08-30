@@ -1,6 +1,6 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -49,7 +49,7 @@ GH_TUPLE=	\
 		go-chi:cors:v1.2.1:go_chi_cors/vendor/github.com/go-chi/cors \
 		go-chi:render:v1.0.3:go_chi_render/vendor/github.com/go-chi/render \
 		go-oauth2:oauth2:v4.5.2:go_oauth2_oauth2_v4/vendor/github.com/go-oauth2/oauth2/v4 \
-		go-pkgz:auth:v1.21.0:go_pkgz_auth/vendor/github.com/go-pkgz/auth \
+		go-pkgz:auth:v1.22.0:go_pkgz_auth/vendor/github.com/go-pkgz/auth \
 		go-pkgz:email:v0.4.1:go_pkgz_email/vendor/github.com/go-pkgz/email \
 		go-pkgz:expirable-cache:v1.0.0:go_pkgz_expirable_cache/vendor/github.com/go-pkgz/expirable-cache \
 		go-pkgz:jrpc:v0.3.0:go_pkgz_jrpc/vendor/github.com/go-pkgz/jrpc \
@@ -94,7 +94,7 @@ GH_TUPLE=	\
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		skip2:go-qrcode:da1b6568686e:skip2_go_qrcode/vendor/github.com/skip2/go-qrcode \
 		slack-go:slack:v0.12.2:slack_go_slack/vendor/github.com/slack-go/slack \
-		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:goleak:v1.2.1:uber_go_goleak/vendor/go.uber.org/goleak \
 		xdg-go:pbkdf2:v1.0.0:xdg_go_pbkdf2/vendor/github.com/xdg-go/pbkdf2 \
 		xdg-go:scram:v1.1.2:xdg_go_scram/vendor/github.com/xdg-go/scram \
