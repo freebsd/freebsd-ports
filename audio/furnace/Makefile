@@ -37,6 +37,8 @@ OPTIONS_DEFINE=	DOCS JACK
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CMAKE_OFF=		-DWITH_JACK:BOOL=OFF
 
+PORTSCOUT=	skipv:v${DISTVERSION}
+
 post-install:
 	${INSTALL_DATA} \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/1024x1024/apps/furnace.png \
