@@ -1,5 +1,5 @@
 PORTNAME=	kore
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.3
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 
