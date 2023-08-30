@@ -14,6 +14,7 @@ LICENSE_COMB=	multi
 DEPRECATED=	FreeBSD has been deprecated since 1.13.X and support has been dropped on 2.0
 EXPIRATION_DATE=	2023-09-30
 BROKEN_FreeBSD_14=	fails to compile: version script assignment of 'LIBPMEM2_1.0' to symbol 'pmem2_source_from_handle' failed: symbol not defined
+BROKEN_FreeBSD_15=	fails to compile: version script assignment of 'LIBPMEM2_1.0' to symbol 'pmem2_source_from_handle' failed: symbol not defined
 ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	bash:shells/bash
