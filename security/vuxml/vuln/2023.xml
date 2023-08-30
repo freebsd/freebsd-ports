@@ -1,3 +1,36 @@
+  <vuln vid="22fffa69-46fa-11ee-8290-a8a1599412c6">
+    <topic>chromium -- use after free in MediaStream</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>116.0.5845.140</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>116.0.5845.140</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop_29.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1472492] High CVE-2023-4572: Use after free in MediaStream. Reported by fwnfwn(@_fwnfwn) on 2023-08-12</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4472</cvename>
+      <url>https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop_29.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-29</discovery>
+      <entry>2023-08-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36a37c92-44b1-11ee-b091-6162c1274384">
     <topic>gitea -- information disclosure</topic>
     <affects>
