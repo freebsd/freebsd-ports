@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_postgres_module.so
+%%DEBUG%%%%MODDIR%%/ngx_postgres_module-debug.so

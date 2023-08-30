@@ -42,6 +42,7 @@
     SUBDIR += angie-module-ndk
     SUBDIR += angie-module-njs
     SUBDIR += angie-module-perl
+    SUBDIR += angie-module-postgres
     SUBDIR += angie-module-redis2
     SUBDIR += angie-module-xslt
     SUBDIR += anyremote2html
