@@ -65,4 +65,4 @@ share/icons/hicolor/scalable/apps/org.xfce.panel.whiskermenu.svg
 %%NLS%%share/locale/vi/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-whiskermenu-plugin.mo
-share/xfce4/panel/plugins/whiskermenu.desktop
+%%NLS%%share/xfce4/panel/plugins/whiskermenu.desktop
