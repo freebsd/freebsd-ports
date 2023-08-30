@@ -1,6 +1,6 @@
 PORTNAME=	spyder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.4
+DISTVERSION=	5.4.5
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
