@@ -180,7 +180,7 @@ PHP_VER=	${FLAVOR:S/^php//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 .    if ${PHP_VER} == 83
-PHP_EXT_DIR=   20220830
+PHP_EXT_DIR=   20230831
 PHP_EXT_INC=    hash json openssl pcre random spl
 .    elif ${PHP_VER} == 82
 PHP_EXT_DIR=   20220829
