@@ -1,5 +1,5 @@
 diff --git Configure Configure
-index fbc225822a..ab8110bf90 100755
+index fbc225822a..ff4feadeb6 100755
 --- Configure
 +++ Configure
 @@ -1198,6 +1198,7 @@ perl5=''
@@ -106,6 +106,15 @@ index fbc225822a..ab8110bf90 100755
  esac
  myarchname="$tarch"
  case "$archname" in
+@@ -7775,7 +7787,7 @@ EOCP
+ 	set try
+ 	if eval $compile_ok; then
+ 		ptrsize=`$run ./try`
+-		echo "Your pointers are $ptrsize bytes long."
++		echo "Your pointers are $ptrsize bytes long." >&4
+ 	else
+ 		dflt='4'
+ 		echo "(I can't seem to compile the test program.  Guessing...)" >&4
 @@ -7786,13 +7798,58 @@ EOCP
  	;;
  esac
@@ -123,7 +132,7 @@ index fbc225822a..ab8110bf90 100755
 +#endif
 +int main()
 +{
-+#ifdef _PTRADDR_T
++#ifdef __PTRADDR_TYPE__
 +    printf("%d\n", (int)sizeof(ptraddr_t));
 +#else
 +    printf("%d\n", (int)sizeof(void *));
@@ -134,7 +143,7 @@ index fbc225822a..ab8110bf90 100755
 +	set try
 +	if eval $compile_ok; then
 +		ptraddrsize=`$run ./try`
-+		echo "Your addresses are $ptraddrsize bytes long."
++		echo "Your addresses are $ptraddrsize bytes long." >&4
 +	else
 +		dflt="$ptrsize"
 +		echo "(I can't seem to compile the test program.  Guessing...)" >&4
