@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_rtmp_module.so
+%%DEBUG%%%%MODDIR%%/ngx_rtmp_module-debug.so
