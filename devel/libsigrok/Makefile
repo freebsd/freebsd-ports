@@ -30,6 +30,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
 CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
 .endif
