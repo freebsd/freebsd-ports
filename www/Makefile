@@ -39,6 +39,7 @@
     SUBDIR += angie-module-image-filter
     SUBDIR += angie-module-jwt
     SUBDIR += angie-module-keyval
+    SUBDIR += angie-module-ndk
     SUBDIR += angie-module-njs
     SUBDIR += angie-module-perl
     SUBDIR += angie-module-redis2

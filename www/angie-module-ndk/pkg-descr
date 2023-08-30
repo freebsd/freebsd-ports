@@ -1,0 +1,4 @@
+Module is designed to extend the Angie core functionality in a way that can be
+used as a basis of other modules. It has functions and macros to deal with
+generic tasks that don't currently have generic code as part of the core
+distribution.
