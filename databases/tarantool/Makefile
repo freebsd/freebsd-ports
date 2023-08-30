@@ -1,5 +1,5 @@
 PORTNAME=	tarantool
-PORTVERSION=	2.11.0
+PORTVERSION=	2.11.1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 
@@ -16,7 +16,7 @@ NOT_FOR_ARCHS=		armv6 i386 powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	fails to build: Unsupported architecture
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
-		msgpuck>=2.0_5:devel/msgpuck
+		msgpuck>=2.0_6:devel/msgpuck
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libicui18n.so:devel/icu \
 		libmsgpuck.so:devel/msgpuck \
