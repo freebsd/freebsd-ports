@@ -1,5 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	1.6.14
+DISTVERSION=	2.0.0
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -38,19 +38,14 @@ EXTRA_PATCHES=	${PATCHDIR}/elfv1-patch-build.sh
 EXTRA_PATCHES=	${PATCHDIR}/clang-patch-build.sh
 .endif
 
+NIMDIR=	${STAGEDIR}${PREFIX}/nim
+
 post-patch:
 .if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
 	@${REINPLACE_CMD} -e '/cc =/s/clang/gcc/' ${WRKSRC}/config/nim.cfg
 	@${REINPLACE_CMD} -e s/%%GCC_DEFAULT%%/${GCC_DEFAULT}/ \
 		${WRKSRC}/build.sh ${WRKSRC}/config/nim.cfg
 .endif
-	# Make a fake nimdoc.css so that we can change the expected target
-	# to where it should be, instead of where the nim project hard
-	# code it to be.
-	${MKDIR} ${WRKSRC}/share/doc/nim
-	${LN} -s ${WRKSRC}/doc/nimdoc.css ${WRKSRC}/share/doc/nim/nimdoc.css
-	${MKDIR} ${WRKSRC}/share/nim
-	${LN} -s ${WRKSRC}/tools/dochack ${WRKSRC}/share/nim/dochack
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
@@ -73,35 +68,36 @@ do-build-TOOLS-on:
 		-d:release --nimcache=${WRKSRC}/nimcache
 
 do-install:
+	${MKDIR} ${NIMDIR}
+	${MKDIR} ${NIMDIR}/bin
 	# Install nim compiler
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${STAGEDIR}${PREFIX}/bin
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nim
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${NIMDIR}/bin
+	${STRIP_CMD} ${NIMDIR}/bin/nim
 	# Install lib nim rtl
-	${INSTALL_LIB} ${WRKSRC}/lib/libnimrtl.so ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${NIMDIR}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/libnimrtl.so ${NIMDIR}/lib
 	# Install nim lib files
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
-	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME} "! -name libnimrtl.so")
-	${REINPLACE_CMD} 's|\.\.\/doc|/usr/local/share/doc/nim|g' ${WRKSRC}/compiler/commands.nim
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/compiler
-	(cd ${WRKSRC}/compiler && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/compiler "! -name nim ! -name nim1")
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${NIMDIR}/lib "! -name libnimrtl.so")
+	${MKDIR} ${NIMDIR}/lib/compiler
+	(cd ${WRKSRC}/compiler && ${COPYTREE_SHARE} . ${NIMDIR}/lib/compiler "! -name nim ! -name nim1")
 	# Configuration files
-	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${NIMDIR}/config
 .for file in nim.cfg nimdoc.cfg nimdoc.tex.cfg
-	${INSTALL_DATA} ${WRKSRC}/config/${file} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/${file} ${NIMDIR}/config
 .endfor
 
 do-install-DOCS-on:
 	${FIND} ${WRKSRC}/doc -name "*.idx" -delete
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${MKDIR} ${NIMDIR}/doc
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${NIMDIR}/doc)
+	${MKDIR} ${NIMDIR}/tools/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${NIMDIR}/tools/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${NIMDIR}/tools/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${NIMDIR}/tools/dochack
 
 do-install-TOOLS-on:
 .for t in ${TLIST}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${NIMDIR}/bin
 .endfor
 
 do-test:

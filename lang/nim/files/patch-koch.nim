@@ -1,6 +1,6 @@
---- koch.nim.orig	2021-10-19 00:39:28 UTC
+--- koch.nim.orig	2023-08-01 01:01:01 UTC
 +++ koch.nim
-@@ -139,18 +139,18 @@ proc csource(args: string) =
+@@ -145,28 +145,28 @@ proc csource(args: string) =
             "--main:compiler/nim.nim compiler/installer.ini $1") %
         [args, VersionAsString, compileNimInst])
  
@@ -17,29 +17,50 @@
 -  let commit = if latest: "HEAD" else: NimbleStableCommit
 -  cloneDependency(distDir, "https://github.com/nim-lang/nimble.git",
 -                  commit = commit, allowBundled = true)
+-  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/checksums.git",
+-                commit = ChecksumsStableCommit, allowBundled = true) # or copy it from dist?
 -  # installer.ini expects it under $nim/bin
 -  nimCompile("dist/nimble/src/nimble.nim",
--             options = "-d:release --noNimblePath " & args)
+-             options = "-d:release --mm:refc --noNimblePath " & args)
 +#proc bundleNimbleExe(latest: bool, args: string) =
 +#  let commit = if latest: "HEAD" else: NimbleStableCommit
 +#  cloneDependency(distDir, "https://github.com/nim-lang/nimble.git",
 +#                  commit = commit, allowBundled = true)
++#  cloneDependency(distDir / "nimble" / distDir, "https://github.com/nim-lang/checksums.git",
++#                commit = ChecksumsStableCommit, allowBundled = true) # or copy it from dist?
 +#  # installer.ini expects it under $nim/bin
 +#  nimCompile("dist/nimble/src/nimble.nim",
++#             options = "-d:release --mm:refc --noNimblePath " & args)
+ 
+-proc bundleAtlasExe(latest: bool, args: string) =
+-  let commit = if latest: "HEAD" else: AtlasStableCommit
+-  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
+-                  commit = commit, allowBundled = true)
+-  # installer.ini expects it under $nim/bin
+-  nimCompile("dist/atlas/src/atlas.nim",
+-             options = "-d:release --noNimblePath " & args)
++#proc bundleAtlasExe(latest: bool, args: string) =
++#  let commit = if latest: "HEAD" else: AtlasStableCommit
++#  cloneDependency(distDir, "https://github.com/nim-lang/atlas.git",
++#                  commit = commit, allowBundled = true)
++#  # installer.ini expects it under $nim/bin
++#  nimCompile("dist/atlas/src/atlas.nim",
 +#             options = "-d:release --noNimblePath " & args)
  
  proc bundleNimsuggest(args: string) =
    nimCompileFold("Compile nimsuggest", "nimsuggest/nimsuggest.nim",
-@@ -182,7 +182,7 @@ proc bundleWinTools(args: string) =
-                options = r"--cc:vcc --app:gui -d:ssl --noNimblePath --path:..\ui " & args)
+@@ -203,8 +203,8 @@ proc bundleChecksums(latest: bool) =
  
  proc zip(latest: bool; args: string) =
+   bundleChecksums(latest)
 -  bundleNimbleExe(latest, args)
+-  bundleAtlasExe(latest, args)
 +  #bundleNimbleExe(latest, args)
++  #bundleAtlasExe(latest, args)
    bundleNimsuggest(args)
    bundleNimpretty(args)
    bundleWinTools(args)
-@@ -191,15 +191,15 @@ proc zip(latest: bool; args: string) =
+@@ -213,15 +213,15 @@ proc zip(latest: bool; args: string) =
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim zip compiler/installer.ini" %
         ["tools/niminst/niminst".exe, VersionAsString])
  
@@ -62,16 +83,18 @@
    nimexec("cc -r $2 --var:version=$1 --var:mingw=none --main:compiler/nim.nim scripts compiler/installer.ini" %
         [VersionAsString, compileNimInst])
    exec("$# --var:version=$# --var:mingw=none --main:compiler/nim.nim xz compiler/installer.ini" %
-@@ -231,7 +231,7 @@ proc buildTools(args: string = "") =
- 
+@@ -257,8 +257,8 @@ proc testTools(args: string = "") =
  
  proc nsis(latest: bool; args: string) =
+   bundleChecksums(latest)
 -  bundleNimbleExe(latest, args)
+-  bundleAtlasExe(latest, args)
 +  #bundleNimbleExe(latest, args)
++  #bundleAtlasExe(latest, args)
    bundleNimsuggest(args)
    bundleWinTools(args)
    # make sure we have generated the niminst executables:
-@@ -503,27 +503,27 @@ proc icTest(args: string) =
+@@ -521,42 +521,42 @@ proc icTest(args: string) =
      exec(cmd)
      inc i
  
@@ -120,29 +143,29 @@
  
  
  proc hostInfo(): string =
-@@ -535,9 +535,9 @@ proc installDeps(dep: string, commit = "") =
+   "hostOS: $1, hostCPU: $2, int: $3, float: $4, cpuEndian: $5, cwd: $6" %
+     [hostOS, hostCPU, $int.sizeof, $float.sizeof, $cpuEndian, getCurrentDir()]
+ 
+-proc installDeps(dep: string, commit = "") =
++#proc installDeps(dep: string, commit = "") =
+   # the hashes/urls are version controlled here, so can be changed seamlessly
    # and tied to a nim release (mimicking git submodules)
-   var commit = commit
-   case dep
+-  var commit = commit
+-  case dep
 -  of "tinyc":
 -    if commit.len == 0: commit = "916cc2f94818a8a382dd8d4b8420978816c1dfb3"
 -    cloneDependency(distDir, "https://github.com/timotheecour/nim-tinyc-archive", commit)
+-  else: doAssert false, "unsupported: " & dep
++#  var commit = commit
++#  case dep
 +  #of "tinyc":
 +  #  if commit.len == 0: commit = "916cc2f94818a8a382dd8d4b8420978816c1dfb3"
 +  #  cloneDependency(distDir, "https://github.com/timotheecour/nim-tinyc-archive", commit)
-   else: doAssert false, "unsupported: " & dep
++#  else: doAssert false, "unsupported: " & dep
    # xxx: also add linenoise, niminst etc, refs https://github.com/nim-lang/RFCs/issues/206
  
-@@ -599,7 +599,7 @@ proc runCI(cmd: string) =
-       execFold("build nimsuggest_testing", "nim c -o:bin/nimsuggest_testing -d:release nimsuggest/nimsuggest")
-       execFold("Run nimsuggest tests", "nim r nimsuggest/tester")
- 
--    execFold("Run atlas tests", "nim c -r -d:atlasTests tools/atlas/atlas.nim clone https://github.com/disruptek/balls")
-+    #execFold("Run atlas tests", "nim c -r -d:atlasTests tools/atlas/atlas.nim clone https://github.com/disruptek/balls")
- 
-   when not defined(bsd):
-     if not doUseCpp:
-@@ -662,12 +662,12 @@ proc showHelp(success: bool) =
+ proc runCI(cmd: string) =
+@@ -679,18 +679,18 @@ proc showHelp(success: bool) =
    quit(HelpText % [VersionAsString & spaces(44-len(VersionAsString)),
                     CompileDate, CompileTime], if success: QuitSuccess else: QuitFailure)
  
@@ -161,12 +184,28 @@
  
  when isMainModule:
    var op = initOptParser()
-@@ -712,24 +712,24 @@ when isMainModule:
+   var
+     latest = false
+-    localDocsOnly = false
++    localDocsOnly = true
+     localDocsOut = ""
+     skipIntegrityCheck = false
+   while true:
+@@ -726,34 +726,34 @@ when isMainModule:
+       of "distrohelper": geninstall()
+       of "install": install(op.cmdLineRest)
+       of "testinstall": testUnixInstall(op.cmdLineRest)
+-      of "installdeps": installDeps(op.cmdLineRest)
++      #of "installdeps": installDeps(op.cmdLineRest)
+       of "runci": runCI(op.cmdLineRest)
+       of "test", "tests": tests(op.cmdLineRest)
        of "temp": temp(op.cmdLineRest)
        of "xtemp": xtemp(op.cmdLineRest)
        of "wintools": bundleWinTools(op.cmdLineRest)
 -      of "nimble": bundleNimbleExe(latest, op.cmdLineRest)
+-      of "atlas": bundleAtlasExe(latest, op.cmdLineRest)
 +      #of "nimble": bundleNimbleExe(latest, op.cmdLineRest)
++      #of "atlas": bundleAtlasExe(latest, op.cmdLineRest)
        of "nimsuggest": bundleNimsuggest(op.cmdLineRest)
        # toolsNoNimble is kept for backward compatibility with build scripts
        of "toolsnonimble", "toolsnoexternal":
@@ -174,9 +213,13 @@
        of "tools":
          buildTools(op.cmdLineRest)
 -        bundleNimbleExe(latest, op.cmdLineRest)
+-        bundleAtlasExe(latest, op.cmdLineRest)
++        #bundleNimbleExe(latest, op.cmdLineRest)
++        #bundleAtlasExe(latest, op.cmdLineRest)
+       of "checksums":
+         bundleChecksums(latest)
 -      of "pushcsource":
 -        quit "use this instead: https://github.com/nim-lang/csources_v1/blob/master/push_c_code.nim"
-+        #bundleNimbleExe(latest, op.cmdLineRest)
 +      #of "pushcsource":
 +      #  quit "use this instead: https://github.com/nim-lang/csources_v1/blob/master/push_c_code.nim"
        of "valgrind": valgrind(op.cmdLineRest)
