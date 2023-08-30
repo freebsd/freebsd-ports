@@ -6,9 +6,12 @@ share/icons/hicolor/48x48/apps/com.ulduzsoft.Birdtray.png
 share/icons/hicolor/64x64/apps/com.ulduzsoft.Birdtray.png
 share/icons/hicolor/scalable/apps/com.ulduzsoft.Birdtray.svg
 share/metainfo/com.ulduzsoft.Birdtray.appdata.xml
+share/ulduzsoft/birdtray/translations/dynamic_cs.qm
 share/ulduzsoft/birdtray/translations/dynamic_de.qm
+share/ulduzsoft/birdtray/translations/dynamic_el.qm
 share/ulduzsoft/birdtray/translations/dynamic_en.qm
 share/ulduzsoft/birdtray/translations/dynamic_es.qm
+share/ulduzsoft/birdtray/translations/dynamic_fr.qm
 share/ulduzsoft/birdtray/translations/dynamic_it.qm
 share/ulduzsoft/birdtray/translations/dynamic_nl.qm
 share/ulduzsoft/birdtray/translations/dynamic_pl.qm
@@ -16,9 +19,13 @@ share/ulduzsoft/birdtray/translations/dynamic_pt.qm
 share/ulduzsoft/birdtray/translations/dynamic_ru.qm
 share/ulduzsoft/birdtray/translations/dynamic_sv.qm
 share/ulduzsoft/birdtray/translations/dynamic_tr.qm
+share/ulduzsoft/birdtray/translations/dynamic_zh_cn.qm
+share/ulduzsoft/birdtray/translations/main_cs.qm
 share/ulduzsoft/birdtray/translations/main_de.qm
+share/ulduzsoft/birdtray/translations/main_el.qm
 share/ulduzsoft/birdtray/translations/main_en.qm
 share/ulduzsoft/birdtray/translations/main_es.qm
+share/ulduzsoft/birdtray/translations/main_fr.qm
 share/ulduzsoft/birdtray/translations/main_it.qm
 share/ulduzsoft/birdtray/translations/main_nl.qm
 share/ulduzsoft/birdtray/translations/main_pl.qm
@@ -26,3 +33,4 @@ share/ulduzsoft/birdtray/translations/main_pt.qm
 share/ulduzsoft/birdtray/translations/main_ru.qm
 share/ulduzsoft/birdtray/translations/main_sv.qm
 share/ulduzsoft/birdtray/translations/main_tr.qm
+share/ulduzsoft/birdtray/translations/main_zh_cn.qm
