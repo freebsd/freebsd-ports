@@ -1,9 +1,10 @@
 PORTNAME=	spectrwm
 DISTVERSIONPREFIX=	SPECTRWM_
 DISTVERSION=	3_4_1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pyrus@bsdmail.com
 COMMENT=	Small, dynamic tiling window manager for X11
 WWW=		https://github.com/conformal/spectrwm
 
