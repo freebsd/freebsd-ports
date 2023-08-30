@@ -1,0 +1,4 @@
+Module brings "echo", "sleep", "time", "exec" and more shell-style goodies
+to config file.
+It provides various utilities that help testing and debugging of other modules
+by trivially emulating different kinds of faked subrequest locations.

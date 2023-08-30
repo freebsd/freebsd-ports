@@ -31,6 +31,7 @@
     SUBDIR += angie-module-auth-spnego
     SUBDIR += angie-module-brotli
     SUBDIR += angie-module-cache-purge
+    SUBDIR += angie-module-echo
     SUBDIR += angie-module-geoip2
     SUBDIR += angie-module-image-filter
     SUBDIR += angie-module-jwt
