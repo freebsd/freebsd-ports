@@ -7836,3 +7836,4 @@ textproc/py-zope.tal||2023-08-27|Remove leaf zope ports that have no sense in ab
 databases/mysql-connector-java|databases/mysql-connector-j|2023-08-27|Following rename with upstream
 deskutils/kalendar|deskutils/merkuro|2023-08-28|Renamed upstream
 www/joomla3|www/joomla4|2023-08-30|Has expired: EOL upstream
+sysutils/llama|sysutils/walk|2023-08-31|Renamed to match upstream naming
