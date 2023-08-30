@@ -1,0 +1,3 @@
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_http_auth_spnego_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_auth_spnego_module-debug.so

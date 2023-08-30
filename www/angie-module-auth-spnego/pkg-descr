@@ -1,0 +1,3 @@
+Module adds SPNEGO support to Angie.
+It currently supports only Kerberos authentication via GSSAPI and
+does not support NTLMSSP in Negotiate.

@@ -28,6 +28,7 @@
     SUBDIR += analog
     SUBDIR += angie
     SUBDIR += angie-module-auth-jwt
+    SUBDIR += angie-module-auth-spnego
     SUBDIR += angie-module-brotli
     SUBDIR += angie-module-cache-purge
     SUBDIR += angie-module-geoip2
