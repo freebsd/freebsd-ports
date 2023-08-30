@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The substitutions filter dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_subs_filter_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/yaoweibin/ngx_http_substitutions_filter_module
+EOM
+}
+]
