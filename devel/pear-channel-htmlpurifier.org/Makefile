@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 WWW=		http://htmlpurifier.org/
 
+DEPRECATED=	PEAR Channel is no longer functional
+EXPIRATION_DATE=	2023-09-30
+
 PEAR_CHANNEL_HOST=	htmlpurifier.org
 PEAR_CHANNEL_ALIAS=	hp
 
