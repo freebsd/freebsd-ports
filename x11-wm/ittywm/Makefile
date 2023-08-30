@@ -3,7 +3,7 @@ DISTVERSION=	g20180507
 CATEGORIES=	x11-wm
 
 MAINTAINER=	pyrus@bsdmail.com
-COMMENT=	Ridiculously tiny libxcb window manager
+COMMENT=	Ridiculously tiny XCB window manager based on TinyWM
 WWW=		https://github.com/marshallmason/ittywm
 
 LICENSE=	PD
