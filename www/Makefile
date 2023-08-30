@@ -1988,6 +1988,7 @@
     SUBDIR += rubygem-gon-rails50
     SUBDIR += rubygem-gon-rails60
     SUBDIR += rubygem-gon-rails61
+    SUBDIR += rubygem-gon-rails70
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
@@ -2037,6 +2038,7 @@
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-json-jwt115
+    SUBDIR += rubygem-jsonb_accessor
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
@@ -2045,12 +2047,14 @@
     SUBDIR += rubygem-kaminari-actionview-rails52
     SUBDIR += rubygem-kaminari-actionview-rails60
     SUBDIR += rubygem-kaminari-actionview-rails61
+    SUBDIR += rubygem-kaminari-actionview-rails70
     SUBDIR += rubygem-kaminari-activerecord
     SUBDIR += rubygem-kaminari-activerecord-rails5
     SUBDIR += rubygem-kaminari-activerecord-rails50
     SUBDIR += rubygem-kaminari-activerecord-rails52
     SUBDIR += rubygem-kaminari-activerecord-rails60
     SUBDIR += rubygem-kaminari-activerecord-rails61
+    SUBDIR += rubygem-kaminari-activerecord-rails70
     SUBDIR += rubygem-kaminari-core
     SUBDIR += rubygem-kaminari-rails4
     SUBDIR += rubygem-kaminari-rails5
@@ -2058,6 +2062,7 @@
     SUBDIR += rubygem-kaminari-rails52
     SUBDIR += rubygem-kaminari-rails60
     SUBDIR += rubygem-kaminari-rails61
+    SUBDIR += rubygem-kaminari-rails70
     SUBDIR += rubygem-kubeclient
     SUBDIR += rubygem-layout_yullio_generator
     SUBDIR += rubygem-less
@@ -2069,6 +2074,7 @@
     SUBDIR += rubygem-lograge-rails52
     SUBDIR += rubygem-lograge-rails60
     SUBDIR += rubygem-lograge-rails61
+    SUBDIR += rubygem-lograge-rails70
     SUBDIR += rubygem-maruku
     SUBDIR += rubygem-mechanize
     SUBDIR += rubygem-merb-assets
