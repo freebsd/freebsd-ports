@@ -205,7 +205,8 @@
     "tailwindcss": "$tailwindcss",
     "@storybook/angular": {
       "zone.js": "0.12.0"
-    }
+    },
+    "replacestream": "4.0.3"
   },
   "resolutions": {
     "@types/react": "16.14.42"
