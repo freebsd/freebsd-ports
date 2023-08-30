@@ -1,24 +1,24 @@
-PORTNAME=	bspwm
-DISTVERSION=	0.9.10.20230405
-CATEGORIES=	x11-wm
+PORTNAME=		bspwm
+DISTVERSION=	0.9.10.20230829
+CATEGORIES=		x11-wm
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Tiling window manager based on binary space partitioning
 WWW=		https://github.com/baskerville/bspwm
 
-LICENSE=	BSD2CLAUSE
+LICENSE=		BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
-		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-keysyms.so:x11/xcb-util-keysyms
+				libxcb-icccm.so:x11/xcb-util-wm \
+				libxcb-keysyms.so:x11/xcb-util-keysyms
 RUN_DEPENDS=	sxhkd:x11/sxhkd
 
 USES=		gmake localbase:ldflags xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
-GH_TAGNAME=	8fc2269fe0f29a785885bcd9122812eae7226d7b
+GH_TAGNAME= af3bd8b4351f4478fe0fe3cfd6c09e44cb108b4b
 USE_XORG=	xcb
 
 CONFLICTS_INSTALL=	bspwm
