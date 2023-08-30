@@ -28,47 +28,73 @@
 
 . /etc/rc.subr
 
-name=openhab
-rcvar=openhab_enable
+case $0 in
+/etc/rc*)
+        # during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+        # so get the name of the script from $_file
+        name=$_file
+        ;;
+*)
+        name=$0
+        ;;
+esac
 
-load_rc_config $name
+name=${name##*/}
+rcvar=${name}_enable
 
-: ${openhab_enable:="NO"}
-: ${openhab_user:="openhab"}
-: ${openhab_group:="openhab"}
-: ${openhab_http_port:="8080"}
-: ${openhab_https_port:="8443"}
-: ${openhab_listen_address:="0.0.0.0"}
-: ${openhab_backup_dir:="/var/db/openhab/backups"}
-: ${openhab_home_dir:="%%PREFIX%%/libexec/openhab"}
-: ${openhab_conf_dir:="%%PREFIX%%/etc/openhab"}
-: ${openhab_runtime_dir:="%%PREFIX%%/libexec/openhab/runtime"}
-: ${openhab_userdata_dir:="/var/db/openhab/userdata"}
-: ${openhab_log_dir:="/var/log/openhab"}
+load_rc_config "${name}"
 
-export OPENHAB_USER="${openhab_user}"
-export OPENHAB_GROUP="${openhab_group}"
-export OPENHAB_HTTP_PORT="${openhab_http_port}"
-export OPENHAB_HTTPS_PORT="${openhab_https_port}"
-export OPENHAB_HTTP_ADDRESS="${openhab_listen_address}"
+eval "${rcvar}=\${${rcvar}:-'NO'}"
+eval "_openhab_user=\${${name}_user:-'openhab'}"
+eval "_openhab_group=\${${name}_group:-'openhab'}"
+
+eval "_openhab_http_port=\${${name}_http_port:-'8080'}"
+eval "_openhab_https_port=\${${name}_https_port:-'8443'}"
+eval "_openhab_listen_address=\${${name}_listen_address:-'0.0.0.0'}"
+
+eval "_openhab_backup_dir=\${${name}_backup_dir:-'/var/db/openhab/backups'}"
+eval "_openhab_home_dir=\${${name}_home_dir:-'%%PREFIX%%/libexec/openhab'}"
+eval "_openhab_conf_dir=\${${name}_conf_dir:-'%%PREFIX%%/etc/openhab'}"
+eval "_openhab_runtime_dir=\${${name}_runtime_dir:-'%%PREFIX%%/libexec/openhab/runtime'}"
+eval "_openhab_userdata_dir=\${${name}_userdata_dir:-'/var/db/openhab/userdata'}"
+eval "_openhab_log_dir=\${${name}_log_dir:-'/var/log/openhab'}"
+eval "_openhab_piddir=\${${name}_piddir}"
+
+eval "_openhab_java_opts=\${${name}_java_opts:-''}"
+
+export OPENHAB_USER="${_openhab_user}"
+export OPENHAB_GROUP="${_openhab_group}"
+export OPENHAB_HTTP_PORT="${_openhab_http_port}"
+export OPENHAB_HTTPS_PORT="${_openhab_https_port}"
+export OPENHAB_HTTP_ADDRESS="${_openhab_listen_address}"
 export OPENHAB_BACKUPS="${openhab_backup_dir}"
-export EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/cuau0 -Dsun.nio.fs.watchservice=polling ${openhab_java_opts}"
-export OPENHAB_HOME="${openhab_home_dir}"
-export OPENHAB_CONF="${openhab_conf_dir}"
-export OPENHAB_RUNTIME="${openhab_runtime_dir}"
-export OPENHAB_USERDATA="${openhab_userdata_dir}"
-export OPENHAB_LOGDIR="${openhab_log_dir}"
+export EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/cuau0 -Dsun.nio.fs.watchservice=polling ${_openhab_java_opts}"
+export OPENHAB_HOME="${_openhab_home_dir}"
+export OPENHAB_CONF="${_openhab_conf_dir}"
+export OPENHAB_RUNTIME="${_openhab_runtime_dir}"
+export OPENHAB_USERDATA="${_openhab_userdata_dir}"
+export OPENHAB_LOGDIR="${_openhab_log_dir}"
 # for UTF-8 encoding, language can be set inside openhab:
 export LC_ALL=en_US.UTF-8
 export JAVA_VERSION=17
 
 pidfile=/var/run/${name}/${name}.pid
 
+start_precmd="openhab_prestart"
+
 command=/usr/sbin/daemon
 command_args="-p ${pidfile} -c -t openhab ${OPENHAB_HOME}/start.sh server"
 
+openhab_prestart() {
+    # Make sure we have our RUNDIR, even if it's on a tmpfs
+    install -d -o ${_openhab_user} -g ${_openhab_group} -m 0755 "${_openhab_piddir}"
+    
+    install -d -o ${_openhab_user} -g ${_openhab_group} -m 0755 "${_openhab_log_dir}"
+}
+
+
 openhab_stop() {
-	${OPENHAB_RUNTIME}/bin/stop
+	su -m ${_openhab_user} -c "${OPENHAB_RUNTIME}/bin/stop"
 	if [ -e ${pidfile} ]; then
 		wait_for_pids $(cat ${pidfile})
 	fi
