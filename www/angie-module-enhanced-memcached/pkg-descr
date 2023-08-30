@@ -1,0 +1,3 @@
+Module is to be used to obtain responses from a memcached server.
+This module is based on the standard memcached module, with some additional
+features. Base configuration is identical to the standard module.
