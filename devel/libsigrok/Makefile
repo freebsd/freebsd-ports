@@ -30,6 +30,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install-strip
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
+CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
+.endif
+
 post-patch:
 # libusb can be disabled via src.conf(5), so detect via pkg-config
 	@${REINPLACE_CMD} -e 's/\(libusb-1\.0\) >= 1\.0\.[0-9]*/\1/' \
