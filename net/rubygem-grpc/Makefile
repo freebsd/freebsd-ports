@@ -19,6 +19,12 @@ USES=		cpe gem gmake pkgconfig
 
 MAKE_JOBS_UNSAFE=	yes
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
+
 post-patch:
 	@${RM} ${WRKSRC}/Makefile ${WRKSRC}/.yardopts
 	@${RM} -r ${WRKSRC}/etc ${WRKSRC}/include ${WRKSRC}/third_party ${WRKSRC}/src/boringssl ${WRKSRC}/src/core
