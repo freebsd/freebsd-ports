@@ -45,6 +45,7 @@
     SUBDIR += angie-module-postgres
     SUBDIR += angie-module-redis2
     SUBDIR += angie-module-rtmp
+    SUBDIR += angie-module-set-misc
     SUBDIR += angie-module-xslt
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el

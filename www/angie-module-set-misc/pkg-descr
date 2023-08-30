@@ -1,0 +1,4 @@
+Module extends the standard rewrite's directive set to provide more
+functionalities like URI escaping and unescaping, JSON quoting,
+Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding,
+random number generator, and more.
