@@ -47,6 +47,7 @@
     SUBDIR += angie-module-rtmp
     SUBDIR += angie-module-set-misc
     SUBDIR += angie-module-subs
+    SUBDIR += angie-module-upload
     SUBDIR += angie-module-xslt
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el

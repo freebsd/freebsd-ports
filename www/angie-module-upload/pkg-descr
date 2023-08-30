@@ -1,0 +1,4 @@
+Module parses request body storing all files being uploaded to a directory.
+The files are then being stripped from body and altered request is then passed
+to a location specified by upload_pass directive, thus allowing arbitrary
+handling of uploaded files.
