@@ -1,5 +1,5 @@
 PORTNAME=	vagrant
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -16,32 +16,30 @@ BUILD_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		curl:ftp/curl \
 		rubygem-bcrypt_pbkdf>=1.1:security/rubygem-bcrypt_pbkdf \
-		rubygem-bundler>=1.12.5:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.1.0:devel/rubygem-childprocess \
 		rubygem-ed25519>=1.3.0:security/rubygem-ed25519 \
 		rubygem-erubi>=0:www/rubygem-erubi \
 		rubygem-googleapis-common-protos-types>=1.3.0:devel/rubygem-googleapis-common-protos-types \
 		rubygem-grpc>=1.48.0:net/rubygem-grpc \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
-		rubygem-i18n>=1.8,2<2,2:devel/rubygem-i18n \
+		rubygem-i18n>=1.12,2:devel/rubygem-i18n \
 		rubygem-ipaddr>=1.2.4:net/rubygem-ipaddr \
-		rubygem-listen>=3.6:devel/rubygem-listen \
+		rubygem-listen>=3.7:devel/rubygem-listen \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
 		rubygem-mime-types>=3.3:misc/rubygem-mime-types \
-		rubygem-net-ftp>=0.1:ftp/rubygem-net-ftp \
+		rubygem-net-ftp>=0.2:ftp/rubygem-net-ftp \
 		rubygem-net-scp>=4.0.0:security/rubygem-net-scp \
 		rubygem-net-sftp>=4.0:security/rubygem-net-sftp \
 		rubygem-net-ssh>=7.0.0:security/rubygem-net-ssh \
-		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
+		rubygem-rb-kqueue>=0.2.0:devel/rubygem-rb-kqueue \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
-		rubygem-rgl>=0.5.7:devel/rubygem-rgl \
-		rubygem-ruby_dep>=0:devel/rubygem-ruby_dep \
-		rubygem-rubyzip>=2.2<3:archivers/rubygem-rubyzip \
-		rubygem-vagrant_cloud>=3.0.5<3.1:sysutils/rubygem-vagrant_cloud \
-		rubygem-wdm>=0.1.0<0.2:devel/rubygem-wdm \
-		rubygem-winrm-elevated>=1.2.1<2:sysutils/rubygem-winrm-elevated \
-		rubygem-winrm-fs>=1.3.4<2:sysutils/rubygem-winrm-fs \
-		rubygem-winrm>=2.3.4<3:sysutils/rubygem-winrm
+		rubygem-rgl>=0.5.10:devel/rubygem-rgl \
+		rubygem-rubyzip>=2.3.2:archivers/rubygem-rubyzip \
+		rubygem-vagrant_cloud>=3.0.5:sysutils/rubygem-vagrant_cloud \
+		rubygem-wdm>=0.1.1:devel/rubygem-wdm \
+		rubygem-winrm-elevated>=1.2.3<2:sysutils/rubygem-winrm-elevated \
+		rubygem-winrm-fs>=1.3.5<2:sysutils/rubygem-winrm-fs \
+		rubygem-winrm>=2.3.6<3:sysutils/rubygem-winrm
 
 USES=		cpe ruby shebangfix
 CPE_VENDOR=	hashicorp
@@ -54,9 +52,10 @@ SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \
 GEMFILES=	vagrant-${PORTVERSION}.gem
 RUBYGEMBIN=	gem
 
-NO_ARCH=	yes
+BUILD_TARGET=	${ARCH}-${OPSYS:tl}-${OSREL:R}
 
-PLIST_SUB+=	DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
+PLIST_SUB+=	BUILD_TARGET="${BUILD_TARGET}" \
+		DOC_DIR="lib/ruby/gems/${RUBY_VER}/doc" \
 		GEM_BASE_DIR="lib/ruby/gems/${RUBY_VER}/gems" \
 		GEMS_DIR="lib/ruby/gems/${RUBY_VER}" \
 		PORTVERSION="${PORTVERSION}"
@@ -74,7 +73,9 @@ ZSH_PLIST_FILES=	share/share/zsh/site-functions/_vagrant
 REMOVE_TARGETS=	.envrc .runner.sh .vimrc .yardopts flake.lock flake.nix Gemfile \
 		gen.go go.mod go.sum Makefile Rakefile shell.nix \
 		vagrant-config.hcl vagrant-spec.config.example.rb \
-		vagrant.gemspec
+		vagrant.gemspec vagrant_ssl.so
+
+REMOVE_TARGETS_EXT=	gem_make.out mkmf.log
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' \
@@ -96,9 +97,13 @@ do-build:
 
 post-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/ext
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/nix
 .for FILE in ${REMOVE_TARGETS}
 	${RM} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/gems/${PORTNAME}-${PORTVERSION}/${FILE}
+.endfor
+.for FILE in ${REMOVE_TARGETS_EXT}
+	${RM} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/extensions/${BUILD_TARGET}/${RUBY_VER}/${PORTNAME}-${PORTVERSION}/${FILE}
 .endfor
 
 post-install-BASH-on:

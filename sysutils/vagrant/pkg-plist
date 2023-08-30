@@ -1,5 +1,4 @@
 bin/vagrant
-%%GEMS_DIR%%/cache/vagrant-%%PORTVERSION%%.gem
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/CHANGELOG.md
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/LICENSE
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/README.md
@@ -21,6 +20,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/keys/vagrant.pub
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant_ssl.so
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/builder.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/action/builtin/box_add.rb
@@ -139,6 +139,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/experimental.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/file_checksum.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/file_mode.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/file_mutex.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/guest_hosts.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/guest_inspection.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/util/hash_with_indifferent_access.rb
@@ -284,6 +285,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/reload/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/resume/command.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/resume/plugin.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/serve/constants.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/snapshot/command/delete.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/snapshot/command/list.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/commands/snapshot/command/pop.rb
@@ -939,8 +941,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/puppet/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/puppet/provisioner/puppet.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/puppet/provisioner/puppet_server.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/bootstrap-salt.ps1
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/bootstrap-salt.sh
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/bootstrap_downloader.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/config.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/errors.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/provisioners/salt/plugin.rb
@@ -1060,6 +1061,7 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/provisioners/chef_solo/solo.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/provisioners/chef_zero/zero.erb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/templates/rgloader.rb
+%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/tools.go
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/version.txt
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/Dockerfile
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/binstubs/vagrant
@@ -1213,6 +1215,9 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alma/cap/flavor.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alma/guest.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/plugins/guests/alma/plugin.rb
+%%GEMS_DIR%%/cache/vagrant-%%PORTVERSION%%.gem
+%%GEMS_DIR%%/extensions/%%BUILD_TARGET%%/%%RUBY_VER%%/vagrant-%%PORTVERSION%%/gem.build_complete
+%%GEMS_DIR%%/extensions/%%BUILD_TARGET%%/%%RUBY_VER%%/vagrant-%%PORTVERSION%%/vagrant_ssl.so
 %%GEMS_DIR%%/specifications/vagrant-%%PORTVERSION%%.gemspec
 %%DATADIR%%/embedded/rgloader/loader.rb
 @dir %%GEMS_DIR%%/extensions
