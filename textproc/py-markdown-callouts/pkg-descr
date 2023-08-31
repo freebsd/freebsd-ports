@@ -1,0 +1,3 @@
+This extension for Python Markdown produces the same results as the
+"admonition" extension, but with a syntax that is much less intrusive and has
+a very reasonable fallback look for "vanilla" renderers.

@@ -1,0 +1,12 @@
+Use the more lightweight py-poetry-core instead py-poetry.
+
+--- pyproject.toml.orig	2022-09-18 20:43:59 UTC
++++ pyproject.toml
+@@ -48,5 +48,5 @@ filterwarnings = ["ignore::DeprecationWarning:.*:",
+                   "default::DeprecationWarning:markdown_callouts.*:"]
+ 
+ [build-system]
+-requires = ["poetry>=0.12"]
+-build-backend = "poetry.masonry.api"
++requires = ["poetry-core>=0.12"]
++build-backend = "poetry.core.masonry.api"
