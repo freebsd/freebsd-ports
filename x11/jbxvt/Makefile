@@ -3,7 +3,7 @@ PORTVERSION=	0.8
 CATEGORIES=	x11
 
 MAINTAINER=	pyrus@bsdmail.com
-COMMENT=	XVT fork in xcb
+COMMENT=	XVT terminal emulator fork in XCB
 WWW=		https://github.com/jefbed/jbxvt
 
 LICENSE=	MIT
