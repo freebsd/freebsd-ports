@@ -4049,6 +4049,7 @@
     SUBDIR += pecl-eio
     SUBDIR += pecl-ev
     SUBDIR += pecl-event
+    SUBDIR += pecl-excimer
     SUBDIR += pecl-expect
     SUBDIR += pecl-grpc
     SUBDIR += pecl-inotify
