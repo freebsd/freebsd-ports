@@ -22,6 +22,7 @@ HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--ld-opt="-L${LOCALBASE}/lib" \
+		--pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
 		--no-regex
 
 PLIST_FILES+=	include/nxt_auto_config.h \
@@ -34,7 +35,8 @@ PLIST_FILES+=	include/nxt_auto_config.h \
 		include/nxt_unit.h \
 		include/nxt_version.h \
 		include/nxt_websocket_header.h \
-		lib/libunit.a
+		lib/libunit.a \
+		libdata/pkgconfig/unit.pc
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE} build/lib/libunit.a
