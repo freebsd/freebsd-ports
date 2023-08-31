@@ -1,5 +1,6 @@
 PORTNAME=	polkit
 DISTVERSION=	123
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 
 MAINTAINER=	desktop@FreeBSD.org

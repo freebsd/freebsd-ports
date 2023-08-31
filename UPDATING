@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230822:
+  AUTHOR: arrowd@FreeBSD.org
+  AFFECTS: users of sysutils/polkit together with sysutils/consolekit2
+
+  ConsoleKit2 has grown some logind1 compatibility which resulted in breaking
+  changes in its API. One of its consumers, Polkit, is patched to handle it,
+  so make sure to update both ports simultaneously.
+
+20230822:
   AUTHOR: leres@FreeBSD.org
   AFFECTS: users of security/zeek
 
