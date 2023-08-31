@@ -1,5 +1,5 @@
 PORTNAME=	dparse
-DISTVERSION=	0.5.1
+DISTVERSION=	0.6.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,24 +11,30 @@ WWW=		https://github.com/pyupio/dparse
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	distutils autoplist
+USES=		cpe python
+CPE_VENDOR=	pyup
+CPE_PRODUCT=	dependency_parser
+USE_PYTHON=	autoplist distutils pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		PIPENV
-OPTIONS_DEFAULT=	PIPENV
+OPTIONS_DEFINE=		CONDA PIPENV
+OPTIONS_DEFAULT=	CONDA PIPENV
 
+CONDA_DESC=	Enable support for Conda YML parsing
 PIPENV_DESC=	Enable support to update Python Pipfiles
 
-PIPENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>0:devel/py-pipenv@${PY_FLAVOR}
+CONDA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
+PIPENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pipenv>=2022.12.19:devel/py-pipenv@${PY_FLAVOR}
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
