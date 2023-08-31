@@ -22,7 +22,6 @@
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
     SUBDIR += packagekit-qt
-    SUBDIR += parfetch-overlay
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-appstream
