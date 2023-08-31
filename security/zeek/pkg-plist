@@ -697,7 +697,6 @@ include/zeek/analyzer/protocol/dns/events.bif.h
 include/zeek/analyzer/protocol/file/File.h
 include/zeek/analyzer/protocol/file/events.bif.h
 include/zeek/analyzer/protocol/finger/legacy/Finger.h
-include/zeek/analyzer/protocol/finger/legacy/events.bif.h
 include/zeek/analyzer/protocol/ftp/FTP.h
 include/zeek/analyzer/protocol/ftp/events.bif.h
 include/zeek/analyzer/protocol/ftp/functions.bif.h
@@ -943,7 +942,6 @@ include/zeek/analyzer/protocol/ssl/tls-handshake-signed_certificate_timestamp.pa
 include/zeek/analyzer/protocol/ssl/tls-handshake.pac
 include/zeek/analyzer/protocol/ssl/types.bif.h
 include/zeek/analyzer/protocol/syslog/legacy/Syslog.h
-include/zeek/analyzer/protocol/syslog/legacy/events.bif.h
 include/zeek/analyzer/protocol/syslog/legacy/syslog-analyzer.pac
 include/zeek/analyzer/protocol/syslog/legacy/syslog-protocol.pac
 include/zeek/analyzer/protocol/syslog/legacy/syslog.pac
@@ -1171,8 +1169,8 @@ include/zeek/spicy/packet-analyzer.h
 include/zeek/spicy/port-range.h
 include/zeek/spicy/protocol-analyzer.h
 include/zeek/spicy/runtime-support.h
-%%SPICY%%include/zeek/spicy/spicy.bif.h
-%%SPICY%%include/zeek/spicy/spicyz/config.h
+include/zeek/spicy/spicy.bif.h
+include/zeek/spicy/spicyz/config.h
 include/zeek/spicy/spicyz/driver.h
 include/zeek/spicy/spicyz/glue-compiler.h
 include/zeek/stats.bif.func_h
@@ -1235,7 +1233,6 @@ lib/libparaglob.a
 %%SPICY%%lib/libspicy-rt-debug.a
 %%SPICY%%lib/libspicy-rt.a
 %%SPICY%%lib/libspicy.so
-@dir lib/%%ZEEKUSER%%/plugins
 lib/zeek/python/SubnetTree.py
 lib/zeek/python/_SubnetTree.so
 lib/zeek/python/broker/__init__.py
@@ -1367,7 +1364,6 @@ share/btest/scripts/spicy/diff-sort
 %%DATADIR%%/base/bif/plugins/Zeek_FileExtract.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_FileExtract.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_FileHash.events.bif.zeek
-%%DATADIR%%/base/bif/plugins/Zeek_Finger.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_GSSAPI.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_GTPv1.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_GTPv1.functions.bif.zeek
@@ -1452,7 +1448,6 @@ share/btest/scripts/spicy/diff-sort
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_SSL.types.bif.zeek
-%%DATADIR%%/base/bif/plugins/Zeek_Syslog.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.functions.bif.zeek
 %%DATADIR%%/base/bif/plugins/Zeek_TCP.types.bif.zeek
@@ -1467,7 +1462,7 @@ share/btest/scripts/spicy/diff-sort
 %%DATADIR%%/base/bif/plugins/Zeek_XMPP.events.bif.zeek
 %%DATADIR%%/base/bif/plugins/__load__.zeek
 %%DATADIR%%/base/bif/reporter.bif.zeek
-%%SPICY%%%%DATADIR%%/base/bif/spicy.bif.zeek
+%%DATADIR%%/base/bif/spicy.bif.zeek
 %%DATADIR%%/base/bif/stats.bif.zeek
 %%DATADIR%%/base/bif/store.bif.zeek
 %%DATADIR%%/base/bif/strings.bif.zeek
@@ -2049,7 +2044,6 @@ share/btest/scripts/spicy/diff-sort
 %%DATADIR%%/policy/tuning/defaults/warnings.zeek
 %%DATADIR%%/policy/tuning/json-logs.zeek
 %%DATADIR%%/policy/tuning/track-all-assets.zeek
-@dir %%DATADIR%%/spicy
 @sample %%DATADIR%%/site/local.zeek.sample
 %%SPICY%%share/zeek/spicy/zeek.spicy
 %%SPICY%%share/zeek/spicy/zeek_file.spicy

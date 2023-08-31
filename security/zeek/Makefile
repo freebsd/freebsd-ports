@@ -8,7 +8,7 @@ MAINTAINER=	leres@FreeBSD.org
 COMMENT=	System for detecting network intruders in real-time
 WWW=		https://www.zeek.org/
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	CC-BY-4.0
 
 BROKEN_FreeBSD_12_powerpc64=	does not build: error: zero-size array 'names'
 
