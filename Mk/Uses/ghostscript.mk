@@ -79,9 +79,9 @@ _GS_SELECTED?=		9-agpl
 .    endif
 .  endfor
 
-.  undef _GS_FLAVORED
+.  undef _GS_STATIC
 .  if empty(_GS_SELECTED:M9-agpl)
-_GS_FLAVORED=	yes
+_GS_STATIC=	yes
 .  endif
 
 # Resolve minor version number for X11.so library.
@@ -93,14 +93,14 @@ _GS_VERSION_MINOR=	9.56.1
 
 # dependencies
 _GS_LIB=	libgs.so
-_GS_PKGNAME=	ghostscript${_GS_SELECTED}${_GS_FLAVORED:?:-base}
-_GS_X11_PKGNAME=ghostscript${_GS_SELECTED}-x11
-_GS_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?:-base}
-_GS_X11_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?@:-}x11
+_GS_PKGNAME=	ghostscript${_GS_SELECTED}${_GS_STATIC:?:-base}
+_GS_X11_PKGNAME=ghostscript${_GS_SELECTED}${_GS_STATIC:?:-x11}
+_GS_PORT=	print/ghostscript${_GS_SELECTED}${_GS_STATIC:?:-base}
+_GS_X11_PORT=	print/ghostscript${_GS_SELECTED}${_GS_STATIC:?:-x11}
 
 .  for type in BUILD LIB RUN TEST
 .    if defined(_GS_${type}_DEP)
-.      if !defined(_GS_FLAVORED) || !${_GS_ARGS:Mx11}
+.      if !defined(_GS_STATIC) || !${_GS_ARGS:Mx11}
 .        if ${type:MLIB}
 ${type}_DEPENDS+=	${_GS_LIB}:${_GS_PORT}
 .        else
