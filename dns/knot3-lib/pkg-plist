@@ -73,8 +73,8 @@ lib/libdnssec.so.9
 lib/libdnssec.so.9.0.0
 lib/libknot.a
 lib/libknot.so
-lib/libknot.so.13
-lib/libknot.so.13.0.0
+lib/libknot.so.14
+lib/libknot.so.14.0.0
 lib/libzscanner.a
 lib/libzscanner.so
 lib/libzscanner.so.4
