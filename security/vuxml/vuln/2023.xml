@@ -1,3 +1,454 @@
+  <vuln vid="9b0d9832-47c1-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Network authentication attack via pam_krb5</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_2</lt></range>
+	<range><ge>13.1</ge><lt>13.1_9</lt></range>
+	<range><ge>12.4</ge><lt>12.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The problem detailed in FreeBSD-SA-23:04.pam_krb5 persisted following
+	the patch for that advisory.</p>
+	<h1>Impact:</h1>
+	<p>The impact described in FreeBSD-SA-23:04.pam_krb5 persists.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-3326</cvename>
+      <freebsdsa>SA-23:09.pam_krb5</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-08-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="291d0953-47c1-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Potential remote code execution via ssh-agent forwarding</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_2</lt></range>
+	<range><ge>13.1</ge><lt>13.1_9</lt></range>
+	<range><ge>12.4</ge><lt>12.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The server may cause ssh-agent to load shared libraries other than
+	those required for PKCS#11 support.  These shared libraries may have
+	side effects that occur on load and unload (dlopen and dlclose).</p>
+	<h1>Impact:</h1>
+	<p>An attacker with access to a server that accepts a forwarded
+	ssh-agent connection may be able to execute code on the machine running
+	ssh-agent.  Note that the attack relies on properties of operating
+	system-provided libraries.  This has been demonstrated on other
+	operating systems; it is unknown whether this attack is possible using
+	the libraries provided by a FreeBSD installation.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-38408</cvename>
+      <freebsdsa>SA-23:08.ssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-08-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ab437561-47c0-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- bhyve privileged guest escape via fwctl</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_2</lt></range>
+	<range><ge>13.1</ge><lt>13.1_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The fwctl driver implements a state machine which is executed when
+	the guest accesses certain x86 I/O ports.  The interface lets the guest
+	copy a string into a buffer resident in the bhyve process' memory.  A
+	bug in the state machine implementation can result in a buffer
+	overflowing when copying this string.</p>
+	<h1>Impact:</h1>
+	<p>A malicious, privileged software running in a guest VM can exploit
+	the buffer overflow to achieve code execution on the host in the bhyve
+	userspace process, which typically runs as root.  Note that bhyve runs
+	in a Capsicum sandbox, so malicious code is constrained by the
+	capabilities available to the bhyve process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-3494</cvename>
+      <freebsdsa>SA-23:07.bhyve</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-08-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3dabf5b8-47c0-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Remote denial of service in IPv6 fragment reassembly</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_2</lt></range>
+	<range><ge>13.1</ge><lt>13.1_9</lt></range>
+	<range><ge>12.4</ge><lt>12.4_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Each fragment of an IPv6 packet contains a fragment header which
+	specifies the offset of the fragment relative to the original packet,
+	and each fragment specifies its length in the IPv6 header.  When
+	reassembling the packet, the kernel calculates the complete IPv6 payload
+	length.  The payload length must fit into a 16-bit field in the IPv6
+	header.</p>
+	<p>Due to a bug in the kernel, a set of carefully crafted packets can
+	trigger an integer overflow in the calculation of the reassembled
+	packet's payload length field.</p>
+	<h1>Impact:</h1>
+	<p>Once an IPv6 packet has been reassembled, the kernel continues
+	processing its contents.  It does so assuming that the fragmentation
+	layer has validated all fields of the constructed IPv6 header.  This bug
+	violates such assumptions and can be exploited to trigger a remote
+	kernel panic, resulting in a denial of service.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-3107</cvename>
+      <freebsdsa>SA-23:06.ipv6</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-08-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e31a8f8e-47bf-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- ssh-add does not honor per-hop destination constraints</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>12.4</ge><lt>12.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When using ssh-add(1) to add smartcard keys to ssh-agent(1) with
+	per-hop destination constraints, a logic error prevented the constraints
+	from being sent to the agent resulting in keys being added to the agent
+	without constraints.</p>
+	<h1>Impact:</h1>
+	<p>A malicious server could leverage the keys provided by a forwarded
+	agent that would normally not be allowed due to the logic error.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-28531</cvename>
+      <freebsdsa>SA-23:05.openssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-06-21</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="41af0277-47bf-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Network authentication attack via pam_krb5</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_1</lt></range>
+	<range><ge>13.1</ge><lt>13.1_8</lt></range>
+	<range><ge>12.4</ge><lt>12.4_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>pam_krb5 authenticates the user by essentially running kinit(1) with
+	the password, getting a `ticket-granting ticket' (tgt) from the Kerberos
+	KDC (Key Distribution Center) over the network, as a way to verify the
+	password.</p>
+	<p>Normally, the system running the pam_krb5 module will also have a
+	keytab, a key provisioned by the KDC. The pam_krb5 module will use the
+	tgt to get a service ticket and validate it against the keytab, ensuring
+	the tgt is valid and therefore, the password is valid.</p>
+	<p>However, if a keytab is not provisioned on the system, pam_krb5 has
+	no way to validate the response from the KDC, and essentially trusts the
+	tgt provided over the network as being valid.</p>
+	<h1>Impact:</h1>
+	<p>In a non-default FreeBSD installation that leverages pam_krb5 for
+	authentication and does not have a keytab provisioned, an attacker that
+	is able to control both the password and the KDC responses can return a
+	valid tgt, allowing authentication to occur for any user on the
+	system.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-3326</cvename>
+      <freebsdsa>SA-23:04.pam_krb5</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-06-21</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c8eb4c40-47bd-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Multiple vulnerabilities in OpenSSL</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_7</lt></range>
+	<range><ge>12.4</ge><lt>12.4_2</lt></range>
+	<range><ge>12.3</ge><lt>12.3_12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<h2>X.400 address type confusion in X.509 GeneralName (CVE-2023-0286)</h2>
+	<p>There is a type confusion vulnerability relating to X.400 address processing
+	inside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but
+	the public structure definition for GENERAL_NAME incorrectly specified the type
+	of the x400Address field as ASN1_TYPE. This field is subsequently interpreted by
+	the OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an
+	ASN1_STRING.</p>
+	<h2>Timing Oracle in RSA Decryption (CVE-2022-4304)</h2>
+	<p>A timing based side channel exists in the OpenSSL RSA Decryption
+	implementation.</p>
+	<h2>Use-after-free following BIO_new_NDEF (CVE-2023-0215)</h2>
+	<p>The public API function BIO_new_NDEF is a helper function used for streaming
+	ASN.1 data via a BIO. It is primarily used internally to OpenSSL to support
+	the SMIME, CMS and PKCS7 streaming capabilities, but may also be called
+	directly by end user applications.</p>
+	<p>The function receives a BIO from the caller, prepends a new BIO_f_asn1 filter
+	BIO onto the front of it to form a BIO chain, and then returns the new head
+	of the BIO chain to the caller. Under certain conditions, for example if a
+	CMS recipient public key is invalid, the new filter BIO is freed and the
+	function returns a NULL result indicating a failure. However, in this case,
+	the BIO chain is not properly cleaned up and the BIO passed by the caller
+	still retains internal pointers to the previously freed filter BIO.</p>
+	<h2>Double free after calling PEM_read_bio_ex (CVE-2022-4450)</h2>
+	<p>The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and
+	decodes the "name" (e.g. "CERTIFICATE"), any header data and the payload
+	data.  If the function succeeds then the "name_out", "header" and "data"
+	arguments are populated with pointers to buffers containing the relevant
+	decoded data. The caller is responsible for freeing those buffers. It is
+	possible to construct a PEM file that results in 0 bytes of payload data. In
+	this case PEM_read_bio_ex() will return a failure code but will populate the
+	header argument with a pointer to a buffer that has already been freed.</p>
+	<h1>Impact:</h1>
+	<h2>X.400 address type confusion in X.509 GeneralName (CVE-2023-0286)</h2>
+	<p>When CRL checking is enabled (i.e. the application sets the
+	X509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass
+	arbitrary pointers to a memcmp call, enabling them to read memory contents or
+	enact a denial of service. In most cases, the attack requires the attacker to
+	provide both the certificate chain and CRL, neither of which need to have a
+	valid signature. If the attacker only controls one of these inputs, the other
+	input must already contain an X.400 address as a CRL distribution point, which
+	is uncommon. As such, this vulnerability is most likely to only affect
+	applications which have implemented their own functionality for retrieving CRLs
+	over a network.</p>
+	<h2>Timing Oracle in RSA Decryption (CVE-2022-4304)</h2>
+	<p>A timing based side channel exists in the OpenSSL RSA Decryption implementation
+	which could be sufficient to recover a plaintext across a network in a
+	Bleichenbacher style attack. To achieve a successful decryption an attacker
+	would have to be able to send a very large number of trial messages for
+	decryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5,
+	RSA-OEAP and RSASVE.</p>
+	<h2>Use-after-free following BIO_new_NDEF (CVE-2023-0215)</h2>
+	<p>A use-after-free will occur under certain conditions. This will most likely
+	result in a crash.</p>
+	<h2>Double free after calling PEM_read_bio_ex (CVE-2022-4450)</h2>
+	<p>A double free may occur. This will most likely lead to a crash. This could be
+	exploited by an attacker who has the ability to supply malicious PEM files
+	for parsing to achieve a denial of service attack.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-0286</cvename>
+      <cvename>2023-0215</cvename>
+      <cvename>2022-4450</cvename>
+      <cvename>2022-4304</cvename>
+      <freebsdsa>SA-23:03.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-02-16</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="09b7cd39-47bd-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- OpenSSH pre-authentication double free</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>12.4</ge><lt>12.4_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>A flaw in the backwards-compatibility key exchange route allows a
+	pointer to be freed twice.</p>
+	<h1>Impact:</h1>
+	<p>A remote, unauthenticated attacker may be able to cause a denial of
+	service, or possibly remote code execution.</p>
+	<p>Note that FreeBSD 12.3 and FreeBSD 13.1 include older versions of
+	OpenSSH, and are not affected.  FreeBSD 13.2-BETA1 and later include the
+	fix.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-25136</cvename>
+      <freebsdsa>SA-23:02.openssh</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-02-16</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3fcab88b-47bc-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- GELI silently omits the keyfile if read from stdin</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.1</ge><lt>13.1_6</lt></range>
+	<range><ge>12.4</ge><lt>12.4_1</lt></range>
+	<range><ge>12.3</ge><lt>12.3_11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>When GELI reads a key file from a standard input, it doesn't store it
+	anywhere.  If the user tries to initialize multiple providers at once,
+	for the second and subsequent devices the standard input stream will be
+	already empty.  In this case, GELI silently uses a NULL key as the user
+	key file.  If the user used only a key file without a user passphrase,
+	the master key was encrypted with an empty key file.  This might not be
+	noticed if the devices were also decrypted in a batch operation.</p>
+	<h1>Impact:</h1>
+	<p>Some GELI providers might be silently encrypted with a NULL key
+	file.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2023-0751</cvename>
+      <freebsdsa>SA-23:01.geli</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-02-08</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a005aea9-47bb-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Stack overflow in ping(8)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_5</lt></range>
+	<range><ge>12.3</ge><lt>12.3_10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>ping reads raw IP packets from the network to process responses in
+	the pr_pack() function.  As part of processing a response ping has to
+	reconstruct the IP header, the ICMP header and if present a "quoted
+	packet," which represents the packet that generated an ICMP error.
+	The quoted packet again has an IP header and an ICMP header.</p>
+	<p>The pr_pack() copies received IP and ICMP headers into stack buffers
+	for further processing.  In so doing, it fails to take into account the
+	possible presence of IP option headers following the IP header in either
+	the response or the quoted packet.  When IP options are present,
+	pr_pack() overflows the destination buffer by up to 40 bytes.</p>
+	<h1>Impact:</h1>
+	<p>The memory safety bugs described above can be triggered by a remote
+	host, causing the ping program to crash.</p>
+	<p>The ping process runs in a capability mode sandbox on all affected
+	versions of FreeBSD and is thus very constrained in how it can interact
+	with the rest of the system at the point where the bug can occur.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2022-23093</cvename>
+      <freebsdsa>SA-22:15.ping</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-11-29</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="97c1b0f7-47b9-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Multiple vulnerabilities in Heimdal</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.1</ge><lt>13.1_4</lt></range>
+	<range><ge>12.3</ge><lt>12.3_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Multiple security vulnerabilities have been discovered in the Heimdal
+	implementation of the Kerberos 5 network authentication
+	protocols and KDC.</p>
+	<ul>
+	  <li>CVE-2022-42898 PAC parse integer overflows</li>
+	  <li>CVE-2022-3437 Overflows and non-constant time leaks in DES{,3} and arcfour</li>
+	  <li>CVE-2021-44758 NULL dereference DoS in SPNEGO acceptors</li>
+	  <li>CVE-2022-44640 Heimdal KDC: invalid free in ASN.1 codec</li>
+	  <li>CVE-2019-14870 Validate client attributes in protocol-transition</li>
+	  <li>CVE-2019-14870 Apply forwardable policy in protocol-transition</li>
+	  <li>CVE-2019-14870 Always lookup impersonate client in DB</li>
+	</ul>
+	<h1>Impact:</h1>
+	<p>A malicious actor with control of the network between a client and a
+	service using Kerberos for authentication can impersonate either the
+	client or the service, enabling a man-in-the-middle (MITM) attack
+	circumventing mutual authentication.</p>
+	<p>Note that, while CVE-2022-44640 is a severe vulnerability, possibly
+	enabling remote code execution on other platforms, the version of
+	Heimdal included with the FreeBSD base system cannot be exploited in
+	this way on FreeBSD.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>2019-14870</cvename>
+      <cvename>2021-44758</cvename>
+      <cvename>2022-3437</cvename>
+      <cvename>2022-42898</cvename>
+      <cvename>2022-44640</cvename>
+      <freebsdsa>SA-22:14.heimdal</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2022-11-15</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22fffa69-46fa-11ee-8290-a8a1599412c6">
     <topic>chromium -- use after free in MediaStream</topic>
     <affects>
