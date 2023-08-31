@@ -1,6 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.0
+DISTVERSION=	0.24.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +27,10 @@ GH_ACCOUNT=	extrawurst
 
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
-		ahash-0.8.3 \
 		aho-corasick-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.75 \
-		arrayvec-0.7.4 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
@@ -43,7 +41,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bugreport-0.5.0 \
 		bumpalo-3.12.0 \
 		bwrap-1.3.0 \
-		bytemuck-1.13.0 \
 		bytesize-1.3.0 \
 		cassowary-0.3.0 \
 		cc-1.0.79 \
@@ -54,7 +51,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		clap_lex-0.4.0 \
 		codespan-reporting-0.11.1 \
 		core-foundation-sys-0.8.3 \
-		cpp_demangle-0.4.2 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.2 \
@@ -67,7 +63,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cxxbridge-flags-1.0.90 \
 		cxxbridge-macro-1.0.90 \
 		dashmap-5.4.0 \
-		debugid-0.8.0 \
 		diff-0.1.13 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
@@ -79,7 +74,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		fancy-regex-0.11.0 \
 		fastrand-1.9.0 \
 		filetime-0.2.20 \
-		findshlibs-0.10.2 \
 		flate2-1.0.25 \
 		fnv-1.0.7 \
 		form_urlencoded-1.2.0 \
@@ -106,7 +100,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
-		inferno-0.11.15 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
@@ -128,14 +121,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		lock_api-0.4.10 \
 		log-0.4.20 \
 		memchr-2.5.0 \
-		memmap2-0.5.10 \
 		memoffset-0.7.1 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
-		nix-0.26.2 \
 		notify-5.2.0 \
 		notify-debouncer-mini-0.2.1 \
-		num-format-0.4.4 \
 		num-traits-0.2.15 \
 		num_cpus-1.16.0 \
 		object-0.30.3 \
@@ -144,7 +134,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		onig_sys-69.8.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.25.0+1.1.1t \
-		openssl-sys-0.9.91 \
+		openssl-sys-0.9.92 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.7 \
@@ -154,13 +144,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
-		pprof-0.12.1 \
 		pretty_assertions-1.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-1.0.63 \
-		quick-xml-0.26.0 \
 		quote-1.0.29 \
 		ratatui-0.21.0 \
 		rayon-core-1.11.0 \
@@ -169,7 +157,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-1.9.1 \
 		regex-automata-0.3.4 \
 		regex-syntax-0.7.4 \
-		rgb-0.8.36 \
 		ron-0.8.0 \
 		rustc-demangle-0.1.21 \
 		rustix-0.36.8 \
@@ -191,14 +178,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
 		smallvec-1.11.0 \
-		stable_deref_trait-1.2.0 \
-		static_assertions-1.1.0 \
-		str_stack-0.1.0 \
 		strsim-0.10.0 \
 		struct-patch-0.2.3 \
 		struct-patch-derive-0.2.3 \
-		symbolic-common-12.2.0 \
-		symbolic-demangle-12.2.0 \
 		syn-1.0.107 \
 		syntect-5.1.0 \
 		sys-info-0.9.1 \
@@ -218,8 +200,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-segmentation-1.10.1 \
 		unicode-truncate-0.2.0 \
 		unicode-width-0.1.10 \
-		url-2.4.0 \
-		uuid-1.4.0 \
+		url-2.4.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.3 \
