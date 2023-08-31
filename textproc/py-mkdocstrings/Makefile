@@ -1,6 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.17.0
-PORTREVISION=	1
+DISTVERSION=	0.22.0
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,32 +10,50 @@ WWW=		https://github.com/mkdocstrings/mkdocstrings
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=1.1:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.2:textproc/py-mkdocs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=6.3:textproc/py-pymdown-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=0.1:textproc/py-mkdocs-autorefs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytkdocs>=0.14.0:textproc/py-pytkdocs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}mkdocs-autorefs>=0.3.1:textproc/py-mkdocs-autorefs@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>0:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517 pytest
+# Skip "test_sphinx_load_mkdocstrings_inventory_file" as it requires
+# mkdocs-gen-files (not in Ports tree, yet).
+# The same applies to "test_plugin" which requires markdown-exec (not in Ports
+# tree yet).
+PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin
 
+# Required otherwise the build process tries to get the current version via git
+MAKE_ENV=	PDM_BUILD_SCM_VERSION=${DISTVERSION}
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' ${WRKSRC}/setup.py
+OPTIONS_DEFINE=		CRYSTAL
+OPTIONS_DEFAULT=	CRYSTAL
+OPTIONS_RADIO=		PYHANDLER
+OPTIONS_RADIO_PYHANDLER=	PYTHON PYTHONLEGACY
 
-# Skip "test_sphinx_load_mkdocstrings_inventory_file" as it requires
-# mkdocs-gen-files (not in Ports tree, yet).
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs \
-		-k 'not test_sphinx_load_mkdocstrings_inventory_file'
+CRYSTAL_DESC=		Crystal language handler
+PYTHONLEGACY_DESC=	Legacy Python language handler
+PYTHON_DESC=		Python language handler
 
-.include <bsd.port.mk>
+CRYSTAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-crystal>=0.3.4:textproc/py-mkdocstrings-crystal@${PY_FLAVOR}
+PYTHONLEGACY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python-legacy>=0.2.1:textproc/py-mkdocstrings-python-legacy@${PY_FLAVOR}
+PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=0.5.2:textproc/py-mkdocstrings-python@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
