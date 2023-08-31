@@ -1,6 +1,5 @@
 PORTNAME=	labeling
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/labeling/
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
