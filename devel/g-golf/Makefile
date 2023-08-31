@@ -1,5 +1,5 @@
 PORTNAME=	g-golf
-DISTVERSION=	0.8.0-a.4
+DISTVERSION=	0.8.0-a.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -12,6 +12,7 @@ LICENSE=	LGPL3+
 
 BUILD_DEPENDS+=	guile-lib-${GUILE_FLAVOR}>=0.2.5:devel/guile-lib@${GUILE_FLAVOR}
 RUN_DEPENDS+=	guile-lib-${GUILE_FLAVOR}>=0.2.5:devel/guile-lib@${GUILE_FLAVOR}
+LIB_DEPENDS+=	libffi.so:devel/libffi
 
 USES=		gmake gnome guile:2.2,3.0,flavors libtool makeinfo pkgconfig
 USE_GNOME=	glib20 introspection:build,run
