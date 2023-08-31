@@ -1438,6 +1438,7 @@
     SUBDIR += py-mkdocs-simple-hooks
     SUBDIR += py-mkdocstrings
     SUBDIR += py-mkdocstrings-crystal
+    SUBDIR += py-mkdocstrings-python
     SUBDIR += py-morse3
     SUBDIR += py-mwparserfromhell
     SUBDIR += py-myst-parser
