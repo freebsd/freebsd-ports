@@ -5501,7 +5501,6 @@
     SUBDIR += py-responses
     SUBDIR += py-retry2
     SUBDIR += py-retrying
-    SUBDIR += py-retype
     SUBDIR += py-rfc3339
     SUBDIR += py-rfc3339-validator
     SUBDIR += py-rfc3986-validator
@@ -5684,7 +5683,6 @@
     SUBDIR += py-txaio
     SUBDIR += py-txi2p-tahoe
     SUBDIR += py-typechecks
-    SUBDIR += py-typed-ast
     SUBDIR += py-typeguard
     SUBDIR += py-typer
     SUBDIR += py-types-Flask
