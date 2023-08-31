@@ -18,7 +18,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-3326</cvename>
+      <cvename>CVE-2023-3326</cvename>
       <freebsdsa>SA-23:09.pam_krb5</freebsdsa>
     </references>
     <dates>
@@ -53,7 +53,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-38408</cvename>
+      <cvename>CVE-2023-38408</cvename>
       <freebsdsa>SA-23:08.ssh</freebsdsa>
     </references>
     <dates>
@@ -88,7 +88,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-3494</cvename>
+      <cvename>CVE-2023-3494</cvename>
       <freebsdsa>SA-23:07.bhyve</freebsdsa>
     </references>
     <dates>
@@ -128,7 +128,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-3107</cvename>
+      <cvename>CVE-2023-3107</cvename>
       <freebsdsa>SA-23:06.ipv6</freebsdsa>
     </references>
     <dates>
@@ -158,7 +158,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-28531</cvename>
+      <cvename>CVE-2023-28531</cvename>
       <freebsdsa>SA-23:05.openssh</freebsdsa>
     </references>
     <dates>
@@ -200,7 +200,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-3326</cvename>
+      <cvename>CVE-2023-3326</cvename>
       <freebsdsa>SA-23:04.pam_krb5</freebsdsa>
     </references>
     <dates>
@@ -282,10 +282,10 @@
       </body>
     </description>
     <references>
-      <cvename>2023-0286</cvename>
-      <cvename>2023-0215</cvename>
-      <cvename>2022-4450</cvename>
-      <cvename>2022-4304</cvename>
+      <cvename>CVE-2023-0286</cvename>
+      <cvename>CVE-2023-0215</cvename>
+      <cvename>CVE-2022-4450</cvename>
+      <cvename>CVE-2022-4304</cvename>
       <freebsdsa>SA-23:03.openssl</freebsdsa>
     </references>
     <dates>
@@ -316,7 +316,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-25136</cvename>
+      <cvename>CVE-2023-25136</cvename>
       <freebsdsa>SA-23:02.openssh</freebsdsa>
     </references>
     <dates>
@@ -351,7 +351,7 @@
       </body>
     </description>
     <references>
-      <cvename>2023-0751</cvename>
+      <cvename>CVE-2023-0751</cvename>
       <freebsdsa>SA-23:01.geli</freebsdsa>
     </references>
     <dates>
@@ -391,7 +391,7 @@
       </body>
     </description>
     <references>
-      <cvename>2022-23093</cvename>
+      <cvename>CVE-2022-23093</cvename>
       <freebsdsa>SA-22:15.ping</freebsdsa>
     </references>
     <dates>
@@ -436,11 +436,11 @@
       </body>
     </description>
     <references>
-      <cvename>2019-14870</cvename>
-      <cvename>2021-44758</cvename>
-      <cvename>2022-3437</cvename>
-      <cvename>2022-42898</cvename>
-      <cvename>2022-44640</cvename>
+      <cvename>CVE-2019-14870</cvename>
+      <cvename>CVE-2021-44758</cvename>
+      <cvename>CVE-2022-3437</cvename>
+      <cvename>CVE-2022-42898</cvename>
+      <cvename>CVE-2022-44640</cvename>
       <freebsdsa>SA-22:14.heimdal</freebsdsa>
     </references>
     <dates>
