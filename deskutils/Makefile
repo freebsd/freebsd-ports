@@ -273,6 +273,7 @@
     SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
+    SUBDIR += vnote
     SUBDIR += vym
     SUBDIR += walld
     SUBDIR += when
