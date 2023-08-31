@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.2
+DISTVERSION=	0.25.3
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ USE_CABAL=      Diff-0.4.1 \
 		base-compat-batteries-0.13.0 \
 		base-orphans-0.9.0 \
 		base16-bytestring-1.0.2.0 \
-		bifunctors-5.6.1 \
+		bifunctors-5.6.1_1 \
 		bitvec-1.1.4.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_3 \
@@ -42,7 +42,7 @@ USE_CABAL=      Diff-0.4.1 \
 		co-log-core-0.3.2.0_1 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
-		constraints-0.13.4 \
+		constraints-0.13.4_1 \
 		contravariant-1.5.5 \
 		cryptohash-md5-0.11.101.0_2 \
 		cryptohash-sha1-0.11.101.0_2 \
@@ -65,8 +65,8 @@ USE_CABAL=      Diff-0.4.1 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.15.0 \
 		fmlist-0.9.4 \
-		foldable1-classes-compat-0.1_2 \
-		free-5.2_1 \
+		foldable1-classes-compat-0.1_3 \
+		free-5.2_2 \
 		futhark-data-1.1.0.1 \
 		futhark-manifest-1.2.0.1 \
 		futhark-server-1.2.2.1 \
@@ -104,14 +104,14 @@ USE_CABAL=      Diff-0.4.1 \
 		parser-combinators-1.3.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.8.0.0 \
+		primitive-0.8.0.0_1 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_3 \
 		random-1.2.1.1 \
 		reflection-2.1.7 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.2_2 \
-		regex-pcre-builtin-0.95.2.3.8.44_4 \
+		regex-pcre-builtin-0.95.2.3.8.44_5 \
 		regex-tdfa-1.3.2.1_1 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.19 \
@@ -133,10 +133,10 @@ USE_CABAL=      Diff-0.4.1 \
 		text-rope-0.2 \
 		text-short-0.1.5_2 \
 		th-abstraction-0.5.0.0 \
-		th-compat-0.1.4_2 \
-		th-expand-syns-0.4.11.0_1 \
+		th-compat-0.1.4_3 \
+		th-expand-syns-0.4.11.0_2 \
 		th-lift-0.8.3 \
-		th-orphans-0.13.14_1 \
+		th-orphans-0.13.14_2 \
 		th-reify-many-0.1.10 \
 		these-1.2 \
 		time-compat-1.9.6.1_5 \
@@ -149,15 +149,15 @@ USE_CABAL=      Diff-0.4.1 \
 		utf8-string-1.0.2 \
 		uuid-1.3.15_2 \
 		uuid-types-1.0.5_4 \
-		vector-0.13.0.0_3 \
+		vector-0.13.0.0_5 \
 		vector-algorithms-0.9.0.1_2 \
 		vector-binary-instances-0.2.5.2_5 \
-		vector-stream-0.1.0.0_2 \
+		vector-stream-0.1.0.0_3 \
 		vector-th-unbox-0.2.2_4 \
 		versions-6.0.1 \
 		void-0.7.3 \
 		witherable-0.4.2_4 \
-		zlib-0.6.3.0_2
+		zlib-0.6.3.0_3
 
 CABAL_PROJECT=	remove
 
