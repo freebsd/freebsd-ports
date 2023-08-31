@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small demo for tkgeomap
 WWW=		http://www.tkgeomap.org/xeartk.html
 
+DEPRECATED=	Depends on expired astro/tkgeomap
+EXPIRATION_DATE=2023-11-30
+
 LIB_DEPENDS=	libtkgeomap.so:astro/tkgeomap
 
 USES=		tk:run
