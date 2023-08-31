@@ -114,6 +114,7 @@
 %%WWWDIR%%/install_lib
 %%WWWDIR%%/nagvis-make-admin
 %%WWWDIR%%/omd_install.sh
+%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/share/config.php
 %%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModInfo.php
 %%WWWDIR%%/share/frontend/nagvis-js/classes/FrontendModLogonDialog.php
@@ -678,6 +679,8 @@
 %%WWWDIR%%/share/userfiles/templates/default.map.html
 %%WWWDIR%%/share/userfiles/templates/default.overview.html
 %%WWWDIR%%/share/userfiles/templates/default.url.html
+%%WWWDIR%%/stub_hosttags.php
+%%WWWDIR%%/stub_multisite_auth.php
 @dir %%WWWDIR%%/etc/automaps
 @dir %%WWWDIR%%/share/userfiles/images/gadgets
 @dir %%WWWDIR%%/share/userfiles/styles
