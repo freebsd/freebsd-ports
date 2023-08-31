@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	16.0.1
-PORTREVISION=	2
+DISTVERSION=	16.3.0
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -26,16 +26,13 @@ _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
 GO_BUILDFLAGS= -ldflags=" \
 		-X gitlab.com/gitlab-org/gitlab-runner/commands.ROOTCONFIGDIR=${ETCDIR} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
-		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GL_TAGNAME:C/^(........).*/\1/} \
+		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${DISTVERSION} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${_BUILD_DATE} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BRANCH=${GITBRANCH} \
 		-s -w"
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-# Find tags here:
-# https://gitlab.com/gitlab-org/gitlab-runner/-/tags
-GL_TAGNAME=	79704081c9fe038e6054066d7d7462c712d7345e
-GITBRANCH=	16-0-stable
+GITBRANCH=	16-3-stable
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
