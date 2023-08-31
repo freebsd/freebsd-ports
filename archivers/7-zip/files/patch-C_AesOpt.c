@@ -1,6 +1,6 @@
---- C/AesOpt.c.orig	2022-04-12 15:59:22 UTC
+--- C/AesOpt.c.orig	2023-08-31 09:13:13 UTC
 +++ C/AesOpt.c
-@@ -506,7 +506,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
+@@ -554,7 +554,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
  #endif // ! USE_INTEL_VAES
  
  
@@ -9,7 +9,7 @@
  
    #if defined(__clang__)
      #if (__clang_major__ >= 8) // fix that check
-@@ -773,4 +773,25 @@ AES_FUNC_START2 (AesCtr_Code_HW)
+@@ -828,7 +828,28 @@ AES_FUNC_START2 (AesCtr_Code_HW)
  
  #endif // USE_HW_AES
  
@@ -36,3 +36,6 @@
 +AES_COMPAT_STUB (AesCtr_Code)
 +
 +#endif
+ 
+ #undef NUM_WAYS
+ #undef WOP_M1

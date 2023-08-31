@@ -1,6 +1,6 @@
---- C/Sha256Opt.c.orig	2022-04-12 16:00:07 UTC
+--- C/Sha256Opt.c.orig	2023-08-31 09:13:13 UTC
 +++ C/Sha256Opt.c
-@@ -212,7 +212,7 @@ void MY_FAST_CALL Sha256_UpdateBlocks_HW(UInt32 state[
+@@ -202,7 +202,7 @@ void Z7_FASTCALL Sha256_UpdateBlocks_HW(UInt32 state[8
  
  #endif // USE_HW_SHA
  

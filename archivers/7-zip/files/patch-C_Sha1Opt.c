@@ -1,6 +1,6 @@
---- C/Sha1Opt.c.orig	2022-04-12 16:00:26 UTC
+--- C/Sha1Opt.c.orig	2023-08-31 09:13:13 UTC
 +++ C/Sha1Opt.c
-@@ -212,7 +212,7 @@ void MY_FAST_CALL Sha1_UpdateBlocks_HW(UInt32 state[5]
+@@ -202,7 +202,7 @@ void Z7_FASTCALL Sha1_UpdateBlocks_HW(UInt32 state[5],
  
  #endif // USE_HW_SHA
  

@@ -1,6 +1,6 @@
---- C/CpuArch.c.orig	2021-12-12 14:45:15 UTC
+--- C/CpuArch.c.orig	2023-08-31 09:13:13 UTC
 +++ C/CpuArch.c
-@@ -417,6 +417,31 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
+@@ -762,6 +762,31 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
  
  #include <sys/auxv.h>
  
@@ -32,7 +32,7 @@
  #define USE_HWCAP
  
  #ifdef USE_HWCAP
-@@ -450,6 +475,7 @@ MY_HWCAP_CHECK_FUNC (SHA1)
+@@ -795,6 +820,7 @@ MY_HWCAP_CHECK_FUNC (SHA1)
  MY_HWCAP_CHECK_FUNC (SHA2)
  MY_HWCAP_CHECK_FUNC (AES)
  
