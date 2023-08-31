@@ -54,6 +54,7 @@
     SUBDIR += elementary-calendar
     SUBDIR += fasd
     SUBDIR += fbreader
+    SUBDIR += feathernotes
     SUBDIR += fet
     SUBDIR += fff
     SUBDIR += flameshot
