@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230915:
+  AFFECTS: users of print/ghostscript10
+  AUTHOR: michael.osipov@siemens.com
+
+  The port flavors have been replaced with a default port option of X11.
+  The flavors approach creates conflicting dependencies with other ports which
+  cannot be solved this time with the ports framework.
+
+  See PRs 270989 and 272541 for details.
+
 20230910:
   AFFECTS: users of dns/powerdns
   AUTHOR: tremere@cainites.net

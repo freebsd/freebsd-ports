@@ -1,6 +1,6 @@
 PORTNAME=	ghostscript
 DISTVERSION=	10.01.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVERSION:S/.//g}/
 PKGNAMESUFFIX=	${GS_MAJOR_VERSION}
@@ -23,12 +23,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	poppler-data>=0.4.9:graphics/poppler-data \
 		urw-base35-fonts>=20200910:x11-fonts/urw-base35-fonts
-
-FLAVORS=	default x11
-FLAVOR?=	${FLAVORS:[1]}
-default_CONFLICTS_INSTALL=	${PORTNAME}${GS_MAJOR_VERSION}-${FLAVORS:[2]}
-x11_PKGNAMESUFFIX=		${GS_MAJOR_VERSION}-${FLAVOR}
-x11_CONFLICTS_INSTALL=		${PORTNAME}${GS_MAJOR_VERSION}
 
 USES=		cpe gmake iconv jpeg localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
@@ -55,15 +49,6 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	so
 INSTALL_TARGET=	soinstall
 
-.if ${FLAVOR} == default
-CONFIGURE_ARGS+=	--without-x
-.endif
-.if ${FLAVOR} == x11
-USES+=			xorg
-USE_XORG=		ice sm x11 xext xt
-CONFIGURE_ARGS+=	--with-x
-.endif
-
 DATADIR=		${PREFIX}/share/${PORTNAME}/${DISTVERSION}
 
 GS_MAJOR_VERSION=	${DISTVERSION:R:R}
@@ -86,8 +71,8 @@ CONFIGURE_ARGS+=	--disable-compile-inits \
 			--with-libpaper \
 			--with-system-libtiff
 
-OPTIONS_DEFINE=		CUPS IJS TESSERACT
-OPTIONS_DEFAULT=	CUPS
+OPTIONS_DEFINE=		CUPS IJS TESSERACT X11
+OPTIONS_DEFAULT=	CUPS X11
 
 IJS_DESC=			Support libijs based Ghostscript devices
 TESSERACT_DESC=			Enable bundled Tesseract OCR engine
@@ -102,6 +87,10 @@ TESSERACT_USES=			compiler:c++17-lang
 TESSERACT_CONFIGURE_WITH=	tesseract
 # No TESSERACT_LIB_DEPENDS=	libtesseract.so:graphics/tesseract
 # See https://bugs.ghostscript.com/show_bug.cgi?id=706490
+
+X11_CONFIGURE_WITH=	x
+X11_USES=	xorg
+X11_USE=	xorg=ice,sm,x11,xext,xt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
