@@ -1,3 +1,610 @@
+  <vuln vid="1a15b928-5011-4953-8133-d49e24902fe1">
+    <topic>py-WsgiDAV -- XSS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-WsgiDAV</name>
+    <name>py38-WsgiDAV</name>
+    <name>py39-WsgiDAV</name>
+    <name>py310-WsgiDAV</name>
+    <name>py311-WsgiDAV</name>
+    <range><lt>4.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-xx6g-jj35-pxjv">
+      <p>Implementations using this library with directory browsing enabled may be susceptible to Cross Site Scripting (XSS) attacks.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41905</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-xx6g-jj35-pxjv</url>
+    </references>
+    <dates>
+      <discovery>2022-11-11</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="17efbe19-4e72-426a-8016-2b4e001c1378">
+    <topic>py-wagtail -- stored XSS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-wagtail</name>
+    <name>py38-wagtail</name>
+    <name>py39-wagtail</name>
+    <name>py310-wagtail</name>
+    <name>py311-wagtail</name>
+    <range><lt>4.1.4</lt></range>
+    <range><ge>4.2.0</ge><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-5286-f2rf-35c2">
+      <p>A stored cross-site scripting (XSS) vulnerability exists on ModelAdmin views within the Wagtail admin interface.</p>
+      <p>A user with a limited-permission editor account for the Wagtail admin could potentially craft pages and documents that, when viewed by a user with higher privileges, could perform actions with that user's credentials.</p>
+      <p>The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin, and only affects sites with ModelAdmin enabled.</p>
+      <p>For page, the vulnerability is in the "Choose a parent page" ModelAdmin view, available when managing pages via ModelAdmin.</p>
+      <p>For documents, the vulnerability is in the ModelAdmin Inspect view when displaying document fields.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28836</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-5286-f2rf-35c2</url>
+    </references>
+    <dates>
+      <discovery>2023-04-03</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2def7c4b-736f-4754-9f03-236fcb586d91">
+    <topic>py-wagtail -- DoS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-wagtail</name>
+    <name>py38-wagtail</name>
+    <name>py39-wagtail</name>
+    <name>py310-wagtail</name>
+    <name>py311-wagtail</name>
+    <range><ge>4.2.0</ge><lt>4.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-33pv-vcgh-jfg9">
+      <p>A memory exhaustion bug exists in Wagtail's handling of uploaded images and documents.</p>
+      <p>For both images and documents, files are loaded into memory during upload for additional processing.</p>
+      <p>A user with access to upload images or documents through the Wagtail admin interface could upload a file so large that it results in a crash or denial of service.</p>
+      <p>The vulnerability is not exploitable by an ordinary site visitor without access to the Wagtail admin.</p>
+      <p>It can only be exploited by admin users with permission to upload images or documents.</p>
+      <p>Image uploads are restricted to 10MB by default, however this validation only happens on the frontend and on the backend after the vulnerable code.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28837</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-33pv-vcgh-jfg9</url>
+    </references>
+    <dates>
+      <discovery>2023-04-03</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="181f5e49-b71d-4527-9464-d4624d69acc3">
+    <topic>py-treq -- sensitive information leak vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-treq</name>
+    <name>py38-treq</name>
+    <name>py39-treq</name>
+    <name>py310-treq</name>
+    <name>py311-treq</name>
+    <range><lt>22.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-fhpf-pp6p-55qc">
+      <p>Treq's request methods (`treq.get`, `treq.post`, `HTTPClient.request`, `HTTPClient.get`, etc.) accept cookies as a dictionary.</p>
+      <p>Such cookies are not bound to a single domain, and are therefore sent to *every* domain ("supercookies").</p>
+      <p>This can potentially cause sensitive information to leak upon an HTTP redirect to a different domain., e.g. should `https://example.com` redirect to `http://cloudstorageprovider.com` the latter will receive the cookie `session`.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23607</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-fhpf-pp6p-55qc</url>
+    </references>
+    <dates>
+      <discovery>2022-02-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4eb5dccb-923c-4f18-9cd4-b53f9e28d4d7">
+    <topic>py-Scrapy -- DoS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-Scrapy</name>
+    <name>py38-Scrapy</name>
+    <name>py39-Scrapy</name>
+    <name>py310-Scrapy</name>
+    <name>py311-Scrapy</name>
+    <range><le>2.8.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>kmike and nramirezuy report:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2017-83">
+      <p>Scrapy 1.4 allows remote attackers to cause a denial of service (memory consumption) via large files because arbitrarily many files are read into memory, which is especially problematic if the files are then individually written in a separate thread to a slow storage resource, as demonstrated by interaction between dataReceived (in core/downloader/handlers/http11.py) and S3FilesStore.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2017-14158</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2017-83</url>
+      <url>https://osv.dev/vulnerability/GHSA-h7wm-ph43-c39p</url>
+    </references>
+    <dates>
+      <discovery>2017-09-05</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="67fe5e5b-549f-4a2a-9834-53f60eaa415e">
+    <topic>py-Scrapy -- exposure of sensitive information vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-Scrapy</name>
+    <name>py38-Scrapy</name>
+    <name>py39-Scrapy</name>
+    <name>py310-Scrapy</name>
+    <name>py311-Scrapy</name>
+    <range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>ranjit-git reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2022-159">
+      <p>Exposure of Sensitive Information to an Unauthorized Actor in GitHub repository scrapy/scrapy prior to 2.6.1.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-0577</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2022-159</url>
+      <url>https://osv.dev/vulnerability/GHSA-cjvr-mfj7-j4j8</url>
+    </references>
+    <dates>
+      <discovery>2022-03-02</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5403af6-225e-48ba-b233-bd95ad26434a">
+    <topic>py-Scrapy -- cookie injection vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-Scrapy</name>
+    <name>py38-Scrapy</name>
+    <name>py39-Scrapy</name>
+    <name>py310-Scrapy</name>
+    <name>py311-Scrapy</name>
+    <range><lt>1.8.2</lt></range>
+    <range><ge>2.0.0</ge><lt>2.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-mfjm-vh54-3f96">
+      <p>Responses from domain names whose public domain name suffix contains 1 or more periods (e.g. responses from `example.co.uk`, given its public domain name suffix is `co.uk`) are able to set cookies that are included in requests to any other domain sharing the same domain name suffix.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://osv.dev/vulnerability/GHSA-mfjm-vh54-3f96</url>
+    </references>
+    <dates>
+      <discovery>2022-03-01</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2ad25820-c71a-4e6c-bb99-770c66fe496d">
+    <topic>py-Scrapy -- credentials leak vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-Scrapy</name>
+    <name>py38-Scrapy</name>
+    <name>py39-Scrapy</name>
+    <name>py310-Scrapy</name>
+    <name>py311-Scrapy</name>
+    <range><lt>1.8.3</lt></range>
+    <range><ge>2.0.0</ge><lt>2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-9x8m-2xpf-crp3">
+      <p>When the built-in HTTP proxy downloader middleware processes a request with `proxy` metadata, and that `proxy` metadata includes proxy credentials, the built-in HTTP proxy downloader middleware sets the `Proxy-Authentication` header, but only if that header is not already set.</p>
+      <p>There are third-party proxy-rotation downloader middlewares that set different `proxy` metadata every time they process a request.</p>
+      <p>Because of request retries and redirects, the same request can be processed by downloader middlewares more than once, including both the built-in HTTP proxy downloader middleware and any third-party proxy-rotation downloader middleware.</p>
+      <p>These third-party proxy-rotation downloader middlewares could change the `proxy` metadata of a request to a new value, but fail to remove the `Proxy-Authentication` header from the previous value of the `proxy` metadata, causing the credentials of one proxy to be leaked to a different proxy.</p>
+      <p>If you rotate proxies from different proxy providers, and any of those proxies requires credentials, you are affected, unless you are handling proxy rotation as described under **Workarounds** below.</p>
+      <p>If you use a third-party downloader middleware for proxy rotation, the same applies to that downloader middleware, and installing a patched version of Scrapy may not be enough;</p>
+      <p>patching that downloader middlware may be necessary as well.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://osv.dev/vulnerability/GHSA-9x8m-2xpf-crp3</url>
+    </references>
+    <dates>
+      <discovery>2022-07-29</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e831dd5a-7d8e-4818-aa1f-17dd495584ec">
+    <topic>py-httpx -- input validation vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-httpx013</name>
+    <name>py38-httpx013</name>
+    <name>py39-httpx013</name>
+    <name>py310-httpx013</name>
+    <name>py311-httpx013</name>
+    <range><lt>0.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>lebr0nli reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2022-183">
+      <p>Encode OSS httpx &lt;=1.0.0.beta0 is affected by improper input validation in `httpx.URL`, `httpx.Client` and some functions using `httpx.URL.copy_with`.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-41945</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2022-183</url>
+      <url>https://osv.dev/vulnerability/GHSA-h8pj-cxx2-jfg2</url>
+    </references>
+    <dates>
+      <discovery>2022-04-28</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1e37fa3e-5988-4991-808f-eae98047e2af">
+    <topic>py-httpie -- exposure of sensitive information vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-httpie</name>
+    <name>py38-httpie</name>
+    <name>py39-httpie</name>
+    <name>py310-httpie</name>
+    <name>py311-httpie</name>
+    <range><lt>3.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Glyph reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2022-34">
+      <p>HTTPie is a command-line HTTP client.</p>
+      <p>HTTPie has the practical concept of sessions, which help users to persistently store some of the state that belongs to the outgoing requests and incoming responses on the disk for further usage.</p>
+      <p>Before 3.1.0, HTTPie didn't distinguish between cookies and hosts they belonged.</p>
+      <p>This behavior resulted in the exposure of some cookies when there are redirects originating from the actual host to a third party website.</p>
+      <p>Users are advised to upgrade.</p>
+      <p>There are no known workarounds.</p>
+    </blockquote>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2022-167">
+      <p>Exposure of Sensitive Information to an Unauthorized Actor in GitHub repository httpie/httpie prior to 3.1.0.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24737</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2022-34</url>
+      <url>https://osv.dev/vulnerability/GHSA-9w4w-cpc8-h2fq</url>
+      <cvename>CVE-2022-0430</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2022-167</url>
+      <url>https://osv.dev/vulnerability/GHSA-6pc9-xqrg-wfqw</url>
+    </references>
+    <dates>
+      <discovery>2022-03-07</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="06492bd5-085a-4cc0-9743-e30164bdcb1c">
+    <topic>py-flask-security -- user redirect to arbitrary URL vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-flask-security</name>
+    <name>py38-flask-security</name>
+    <name>py39-flask-security</name>
+    <name>py310-flask-security</name>
+    <name>py311-flask-security</name>
+    <range><le>3.0.0_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Snyk reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-cg8c-gc2j-2wf7">
+      <p>This affects all versions of package Flask-Security.</p>
+      <p>When using the `get_post_logout_redirect` and `get_post_login_redirect` functions, it is possible to bypass URL validation and redirect a user to an arbitrary URL by providing multiple back slashes such as `\\\evil.com/path`.</p>
+      <p>This vulnerability is only exploitable if an alternative WSGI server other than Werkzeug is used, or the default behaviour of Werkzeug is modified using `'autocorrect_location_header=False`.</p>
+      <p>**Note:** Flask-Security is not maintained anymore.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-23385</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-cg8c-gc2j-2wf7</url>
+    </references>
+    <dates>
+      <discovery>2022-08-02</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="252f40cb-618c-47f4-a2cf-1abf30cffbbe">
+    <topic>py-Flask-Cors -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-Flask-Cors</name>
+    <name>py38-Flask-Cors</name>
+    <name>py39-Flask-Cors</name>
+    <name>py310-Flask-Cors</name>
+    <name>py311-Flask-Cors</name>
+    <range><lt>3.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>praetorian-colby-morgan reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2020-43">
+      <p>An issue was discovered in Flask-CORS (aka CORS Middleware for Flask) before 3.0.9.</p>
+      <p>It allows ../ directory traversal to access private resources because resource matching does not ensure that pathnames are in a canonical format.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25032</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2020-43</url>
+      <url>https://osv.dev/vulnerability/GHSA-xc3p-ff3m-f46v</url>
+    </references>
+    <dates>
+      <discovery>2020-08-31</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="692a5fd5-bb25-4df4-8a0e-eb91581f2531">
+    <topic>py-flask-caching -- remote code execution or local privilege escalation vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-flask-caching</name>
+    <name>py38-flask-caching</name>
+    <name>py39-flask-caching</name>
+    <name>py310-flask-caching</name>
+    <name>py311-flask-caching</name>
+    <range><le>2.0.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>subnix reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-13">
+      <p>The Flask-Caching extension through 2.0.2 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation.</p>
+      <p>If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-33026</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-13</url>
+      <url>https://osv.dev/vulnerability/GHSA-656c-6cxf-hvcv</url>
+    </references>
+    <dates>
+      <discovery>2021-05-13</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c2c89dea-2859-4231-8f3b-012be0d475ff">
+    <topic>py-django-photologue -- XSS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-django-photologue</name>
+    <name>py38-django-photologue</name>
+    <name>py39-django-photologue</name>
+    <name>py310-django-photologue</name>
+    <name>py311-django-photologue</name>
+    <range><le>3.15_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>domiee13 reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-287q-jfcp-9vhv">
+      <p>A vulnerability was found in django-photologue up to 3.15.1 and classified as problematic.</p>
+      <p>Affected by this issue is some unknown functionality of the file photologue/templates/photologue/photo_detail.html of the component Default Template Handler.</p>
+      <p>The manipulation of the argument object.caption leads to cross site scripting.</p>
+      <p>The attack may be launched remotely.</p>
+      <p>Upgrading to version 3.16 is able to address this issue.</p>
+      <p>The name of the patch is 960cb060ce5e2964e6d716ff787c72fc18a371e7.</p>
+      <p>It is recommended to apply a patch to fix this issue.</p>
+      <p>VDB-215906 is the identifier assigned to this vulnerability.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4526</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-287q-jfcp-9vhv</url>
+    </references>
+    <dates>
+      <discovery>2022-12-15</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cdc685b5-1724-49a1-ad57-2eaab68e9cc0">
+    <topic>py-pygments -- multiple DoS vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-pygments</name>
+    <name>py38-pygments</name>
+    <name>py39-pygments</name>
+    <name>py310-pygments</name>
+    <name>py311-pygments</name>
+    <range><lt>2.7.4</lt></range>
+      </package>
+      <package>
+    <name>py37-pygments-25</name>
+    <name>py38-pygments-25</name>
+    <name>py39-pygments-25</name>
+    <name>py310-pygments-25</name>
+    <name>py311-pygments-25</name>
+    <range><lt>2.7.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Red Hat reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-140">
+      <p>An infinite loop in SMLLexer in Pygments versions 1.5 to 2.7.3 may lead to denial of service when performing syntax highlighting of a Standard ML (SML) source file, as demonstrated by input that only contains the "exception" keyword.</p>
+    </blockquote>
+    <p>Ben Caller reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-141">
+      <p>In pygments 1.1+, fixed in 2.7.4, the lexers used to parse programming languages rely heavily on regular expressions.</p>
+      <p>Some of the regular expressions have exponential or cubic worst-case complexity and are vulnerable to ReDoS.</p>
+      <p>By crafting malicious input, an attacker can cause a denial of service.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-20270</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-140</url>
+      <url>https://osv.dev/vulnerability/GHSA-9w8r-397f-prfh</url>
+      <cvename>CVE-2021-27291</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-141</url>
+      <url>https://osv.dev/vulnerability/GHSA-pq64-v7f5-gqh8</url>
+    </references>
+    <dates>
+      <discovery>2021-03-17</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9b3324f-8e03-4ae3-89ce-8098cdc5bfa9">
+    <topic>py-markdown2 -- regular expression denial of service vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-markdown2</name>
+    <name>py38-markdown2</name>
+    <name>py39-markdown2</name>
+    <name>py310-markdown2</name>
+    <name>py311-markdown2</name>
+    <range><lt>2.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Ben Caller reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-20">
+      <p>markdown2 &gt;=1.0.1.18, fixed in 2.4.0, is affected by a regular expression denial of service vulnerability.</p>
+      <p>If an attacker provides a malicious string, it can make markdown2 processing difficult or delayed for an extended period of time.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-26813</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-20</url>
+      <url>https://osv.dev/vulnerability/GHSA-jr9p-r423-9m2r</url>
+    </references>
+    <dates>
+      <discovery>2021-03-03</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cf6f3465-e996-4672-9458-ce803f29fdb7">
+    <topic>py-markdown2 -- XSS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-markdown2</name>
+    <name>py38-markdown2</name>
+    <name>py39-markdown2</name>
+    <name>py310-markdown2</name>
+    <name>py311-markdown2</name>
+    <range><lt>2.3.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>TheGrandPew reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2020-65">
+      <p>python-markdown2 through 2.3.8 allows XSS because element names are mishandled unless a \w+ match succeeds.</p>
+      <p>For example, an attack might use elementname@ or elementname- with an onclick attribute.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-11888</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2020-65</url>
+      <url>https://osv.dev/vulnerability/GHSA-fv3h-8x5j-pvgq</url>
+    </references>
+    <dates>
+      <discovery>2020-04-20</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="83b29e3f-886f-439f-b9a8-72e014479ff9">
+    <topic>py-dparse -- REDoS vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-dparse</name>
+    <name>py38-dparse</name>
+    <name>py39-dparse</name>
+    <name>py310-dparse</name>
+    <name>py311-dparse</name>
+    <range><lt>0.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>yeisonvargasf reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2022-301">
+      <p>dparse is a parser for Python dependency files.</p>
+      <p>dparse in versions before 0.5.2 contain a regular expression that is vulnerable to a Regular Expression Denial of Service.</p>
+      <p>All the users parsing index server URLs with dparse are impacted by this vulnerability.</p>
+      <p>Users unable to upgrade should avoid passing index server URLs in the source file to be parsed.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39280</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2022-301</url>
+      <url>https://osv.dev/vulnerability/GHSA-8fg9-p83m-x5pq</url>
+    </references>
+    <dates>
+      <discovery>2022-10-06</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b0d9832-47c1-11ee-8e38-002590c1f29c">
     <topic>FreeBSD -- Network authentication attack via pam_krb5</topic>
     <affects>
