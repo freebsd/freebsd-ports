@@ -1,3 +1,114 @@
+  <vuln vid="970dcbe0-a947-41a4-abe9-7aaba87f41fe">
+    <topic>electron25 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.8.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.8.0">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-4427.</li>
+	    <li>Security: backported fix for CVE-2023-4428.</li>
+	    <li>Security: backported fix for CVE-2023-4429.</li>
+	    <li>Security: backported fix for CVE-2023-4430.</li>
+	    <li>Security: backported fix for CVE-2023-4572.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4427</cvename>
+      <url>https://github.com/advisories/GHSA-qqwc-fhxf-4mf3</url>
+      <cvename>CVE-2023-4428</cvename>
+      <url>https://github.com/advisories/GHSA-m56x-9vph-h345</url>
+      <cvename>CVE-2023-4429</cvename>
+      <url>https://github.com/advisories/GHSA-r43m-48vw-xgp3</url>
+      <cvename>CVE-2023-4430</cvename>
+      <url>https://github.com/advisories/GHSA-h295-rcc5-87jh</url>
+      <cvename>CVE-2023-4572</cvename>
+      <url>https://github.com/advisories/GHSA-6994-5wq3-gpjv</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="29f050e9-3ef4-4c5f-8204-503b41caf181">
+    <topic>electron24 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron24</name>
+	<range><lt>24.8.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v24.8.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-4427.</li>
+	    <li>Security: backported fix for CVE-2023-4428.</li>
+	    <li>Security: backported fix for CVE-2023-4430.</li>
+	    <li>Security: backported fix for CVE-2023-4572.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4427</cvename>
+      <url>https://github.com/advisories/GHSA-qqwc-fhxf-4mf3</url>
+      <cvename>CVE-2023-4428</cvename>
+      <url>https://github.com/advisories/GHSA-m56x-9vph-h345</url>
+      <cvename>CVE-2023-4430</cvename>
+      <url>https://github.com/advisories/GHSA-h295-rcc5-87jh</url>
+      <cvename>CVE-2023-4572</cvename>
+      <url>https://github.com/advisories/GHSA-6994-5wq3-gpjv</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="579c7489-c23d-454a-b0fc-ed9d80ea46e0">
+    <topic>electron22 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.23">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-4427.</li>
+	    <li>Security: backported fix for CVE-2023-4428.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4427</cvename>
+      <url>https://github.com/advisories/GHSA-qqwc-fhxf-4mf3</url>
+      <cvename>CVE-2023-4428</cvename>
+      <url>https://github.com/advisories/GHSA-m56x-9vph-h345</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a15b928-5011-4953-8133-d49e24902fe1">
     <topic>py-WsgiDAV -- XSS vulnerability</topic>
     <affects>
