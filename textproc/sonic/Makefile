@@ -2,6 +2,8 @@ PORTNAME=	sonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
 CATEGORIES=	textproc
+MASTER_SITES+=	https://clrd.ninjal.ac.jp/unidic_archive/cwj/2.1.2/:unidic
+DISTFILES+=	unidic-mecab-2.1.2_src.zip:unidic # check cargo-crates/lindera-unidic-XXX/build.rs
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Fast, lightweight, and schema-less search backend
@@ -215,6 +217,8 @@ PLIST_FILES=	bin/sonic \
 		"@sample ${ETCDIR}/config.cfg.sample"
 PORTDOCS=	CONFIGURATION.md PROTOCOL.md README.md
 OPTIONS_DEFINE=	DOCS
+
+CARGO_ENV+=	DISTDIR=${DISTDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sonic
