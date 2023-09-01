@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.73
+DISTVERSION=	1.74
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,8 +16,10 @@ BROKEN_i386=	compilation fails: conversion function cannot be redeclared, see ht
 
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp \
 		${PYTHON_PKGNAMEPREFIX}orderedmultidict>0:devel/py-orderedmultidict@${PY_FLAVOR}
+BUILD_DEPENDS+=	googletest>0:devel/googletest # workaround for https://github.com/chipsalliance/Surelog/issues/3826
 LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libuhdm.so:cad/uhdm
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags tcl:86,build
 USE_JAVA=	17 # Java selection fails in cmake when Java 11 is also installed, see https://gitlab.kitware.com/cmake/cmake/-/issues/24674
@@ -29,10 +31,12 @@ JAVA_RUN=	no
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
-GH_TUPLE=	alainmarcel:antlr4:a27cf84:antlr4/third_party/antlr4 \
-		google:googletest:460ae98:googletest/third_party/googletest
+GH_TUPLE=	alainmarcel:antlr4:a27cf84:antlr4/third_party/antlr4
 
-CMAKE_ON=	BUILD_SHARED_LIBS SURELOG_USE_HOST_UHDM
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		SURELOG_USE_HOST_UHDM \
+		SURELOG_USE_HOST_CAPNP \
+		SURELOG_USE_HOST_GTEST
 CMAKE_OFF=	SURELOG_BUILD_TESTS
 CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
