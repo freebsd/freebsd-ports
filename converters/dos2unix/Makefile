@@ -1,5 +1,5 @@
 PORTNAME=	dos2unix
-DISTVERSION=	7.5.0
+DISTVERSION=	7.5.1
 CATEGORIES=	converters
 MASTER_SITES=	SF \
 		https://waterlan.home.xs4all.nl/dos2unix/
