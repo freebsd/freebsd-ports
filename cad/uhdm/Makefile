@@ -1,6 +1,6 @@
 PORTNAME=	uhdm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.73
+DISTVERSION=	1.74
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,17 +11,19 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orderedmultidict>0:devel/py-orderedmultidict@${PY_FLAVOR}
+LIB_DEPENDS=	libcapnp.so:devel/capnproto
+TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang python:build tcl:86,build
-USE_LDCONFIG=	${PREFIX}/lib/uhdm
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	${PORTNAME:tu}
-GH_TUPLE=	capnproto:capnproto:928c839:capnproto/third_party/capnproto \
-		google:googletest:58d77fa:googletest/third_party/googletest
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		UHDM_USE_HOST_CAPNP \
+		UHDM_USE_HOST_GTEST
 CMAKE_OFF=	UHDM_BUILD_TESTS
 CMAKE_ARGS=	-DPython_EXECUTABLE=${PYTHON_CMD} -DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_TESTING_ON=	UHDM_BUILD_TESTS

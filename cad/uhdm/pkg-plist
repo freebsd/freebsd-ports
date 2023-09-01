@@ -299,14 +299,11 @@ include/uhdm/wait_fork.h
 include/uhdm/wait_stmt.h
 include/uhdm/waits.h
 include/uhdm/while_stmt.h
+lib/UHDM.capnp
 lib/cmake/UHDM/UHDMConfig.cmake
 lib/cmake/UHDM/UHDMConfigVersion.cmake
 lib/cmake/UHDM/UHDMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/UHDM/UHDMTargets.cmake
-lib/uhdm/UHDM.capnp
-lib/uhdm/libcapnp.so
-lib/uhdm/libcapnp.so.1.0.0
-lib/uhdm/libkj.so
-lib/uhdm/libkj.so.1.0.0
-lib/uhdm/libuhdm.so
+lib/libuhdm.so
+lib/libuhdm.so.1.74
 libdata/pkgconfig/UHDM.pc
