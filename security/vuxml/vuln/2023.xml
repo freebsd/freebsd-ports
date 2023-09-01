@@ -1,3 +1,53 @@
+  <vuln vid="aaea7b7c-4887-11ee-b164-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.3.0</ge><lt>16.3.1</lt></range>
+	<range><ge>16.2.0</ge><lt>16.2.5</lt></range>
+	<range><ge>4.1.0</ge><lt>16.1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/08/31/security-release-gitlab-16-3-1-released/">
+	  <p>Privilege escalation of "external user" to internal access through group service account</p>
+	  <p>Maintainer can leak sentry token by changing the configured URL (fix bypass)</p>
+	  <p>Google Cloud Logging private key showed in plain text in GitLab UI leaking to other group owners</p>
+	  <p>Information disclosure via project import endpoint</p>
+	  <p>Developer can leak DAST scanners "Site Profile" request headers and auth password</p>
+	  <p>Project forking outside current group</p>
+	  <p>User is capable of creating Model experiment and updating existing run's status in public project</p>
+	  <p>ReDoS in bulk import API</p>
+	  <p>Pagination for Branches and Tags can be skipped leading to DoS</p>
+	  <p>Internal Open Redirection Due to Improper handling of "../" characters</p>
+	  <p>Subgroup Member With Reporter Role Can Edit Group Labels</p>
+	  <p>Banned user can delete package registries</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3915</cvename>
+      <cvename>CVE-2023-4378</cvename>
+      <cvename>CVE-2023-3950</cvename>
+      <cvename>CVE-2023-4630</cvename>
+      <cvename>CVE-2022-4343</cvename>
+      <cvename>CVE-2023-4638</cvename>
+      <cvename>CVE-2023-4018</cvename>
+      <cvename>CVE-2023-3205</cvename>
+      <cvename>CVE-2023-4647</cvename>
+      <cvename>CVE-2023-1279</cvename>
+      <cvename>CVE-2023-0120</cvename>
+      <cvename>CVE-2023-1555</cvename>
+      <url>https://about.gitlab.com/releases/2023/08/31/security-release-gitlab-16-3-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-08-31</discovery>
+      <entry>2023-09-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8a52e5a-483d-11ee-971d-3df00e0f9020">
     <topic>Borg (Backup) -- flaw in cryptographic authentication scheme in Borg allowed an attacker to fake archives and indirectly cause backup data loss.</topic>
     <affects>
