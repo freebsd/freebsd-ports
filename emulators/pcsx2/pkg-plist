@@ -1,8 +1,8 @@
 bin/pcsx2-qt
-man/man1/PCSX2.1.gz
 share/applications/PCSX2.desktop
 share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/GameIndex.yaml
+%%DATADIR%%/resources/RedumpDatabase.yaml
 %%DATADIR%%/resources/cover-placeholder.png
 %%DATADIR%%/resources/fonts/Roboto-Regular-copyright
 %%DATADIR%%/resources/fonts/Roboto-Regular.ttf
@@ -36,6 +36,7 @@ share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/icons/flags/PAL-NL.png
 %%DATADIR%%/resources/icons/flags/PAL-NO.png
 %%DATADIR%%/resources/icons/flags/PAL-P.png
+%%DATADIR%%/resources/icons/flags/PAL-PL.png
 %%DATADIR%%/resources/icons/flags/PAL-R.png
 %%DATADIR%%/resources/icons/flags/PAL-S.png
 %%DATADIR%%/resources/icons/flags/PAL-SC.png
@@ -52,8 +53,8 @@ share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/shaders/common/ffx_cas.h
 %%DATADIR%%/resources/shaders/common/fxaa.fx
 %%DATADIR%%/resources/shaders/opengl/cas.glsl
-%%DATADIR%%/resources/shaders/opengl/common_header.glsl
 %%DATADIR%%/resources/shaders/opengl/convert.glsl
+%%DATADIR%%/resources/shaders/opengl/imgui.glsl
 %%DATADIR%%/resources/shaders/opengl/interlace.glsl
 %%DATADIR%%/resources/shaders/opengl/merge.glsl
 %%DATADIR%%/resources/shaders/opengl/present.glsl
@@ -62,6 +63,7 @@ share/pixmaps/PCSX2.png
 %%DATADIR%%/resources/shaders/opengl/tfx_vgs.glsl
 %%DATADIR%%/resources/shaders/vulkan/cas.glsl
 %%DATADIR%%/resources/shaders/vulkan/convert.glsl
+%%DATADIR%%/resources/shaders/vulkan/imgui.glsl
 %%DATADIR%%/resources/shaders/vulkan/interlace.glsl
 %%DATADIR%%/resources/shaders/vulkan/merge.glsl
 %%DATADIR%%/resources/shaders/vulkan/present.glsl

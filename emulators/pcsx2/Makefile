@@ -1,7 +1,6 @@
 PORTNAME=	pcsx2
-PORTVERSION=	1.7.4097
+PORTVERSION=	1.7.4970
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -14,27 +13,24 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	amd64
 
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
-# - rapidyaml (and c4core) come from 3rdparty/ (0.4.0 is needed)
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
-# - zydis comes from 3rdparty/
+# - fmt, rapidyaml, soundtouch, zydis, zstd, libzip
+#   are always included from 3rdparty/
 LIB_DEPENDS=	libpng.so:graphics/png \
+		libdbus-1.so:devel/dbus \
 		libavcodec.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
 		libavutil.so:multimedia/ffmpeg \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
-		libSoundTouch.so:audio/soundtouch \
-		libfmt.so:devel/libfmt \
-		libzip.so:archivers/libzip \
 		libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
 		libsndio.so:audio/sndio \
-		libzstd.so:archivers/zstd
-#		libryml.so:devel/rapidyaml \
-#		libglad.so:graphics/glad \
+		libbacktrace.so:devel/libbacktrace
 
-USES=		cmake desktop-file-utils gl pkgconfig qt:6 sdl xorg
+USES=		cmake compiler:c++20-lang \
+		desktop-file-utils gl pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
@@ -58,14 +54,14 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-minimum-req
 # See: cmake/BuildParameters.cmake
 CMAKE_ARGS+=	\
 		-DCMAKE_REQUIRED_INCLUDES:STRING=${LOCALBASE}/include/ \
-		-DQT_BUILD:BOOL=ON \
+		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources \
 		-DUSE_VTUNE:BOOL=OFF \
 		-DUSE_VULKAN:BOOL=OFF \
-		-DENABLE_TESTS:BOOL=OFF \
-		-DPCSX2_RESOURCES_PATH:STRING=${DATADIR}/resources
+		-DWAYLAND_API=OFF \
+		-DENABLE_TESTS:BOOL=OFF
 
 OPTIONS_DEFINE=	DOCS
-PORTDOCS=	Debugger.pdf GameIndex.pdf PCSX2_FAQ.pdf
+PORTDOCS=	Debugger.pdf GameIndex.pdf
 
 # - Program and resources are copied from target dir ${CONFIGURE_WRKSRC}/bin
 #   because only necessary resources are installed there (e.g. no dx11 stuff)
@@ -74,11 +70,10 @@ do-install:
 		${COPYTREE_SHARE} resources/ ${STAGEDIR}${DATADIR}/
 	${INSTALL_PROGRAM} ${CONFIGURE_WRKSRC}/bin/pcsx2-qt \
 		${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/pcsx2/Resources/AppIcon64.png \
+	${INSTALL_DATA} ${WRKSRC}/pcsx2-qt/resources/icons/AppIcon64.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/PCSX2.png
 	${INSTALL_DATA} ${WRKSRC}/.github/workflows/scripts/linux/pcsx2-qt.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/PCSX2.desktop
-	${INSTALL_MAN} ${WRKSRC}/bin/docs/PCSX2.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} && \

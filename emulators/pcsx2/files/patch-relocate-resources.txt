@@ -13,11 +13,11 @@ Allow relocation of resource files
  #-------------------------------------------------------------------------------
  # MacOS-specific things
  #-------------------------------------------------------------------------------
---- pcsx2/Frontend/CommonHost.cpp.orig	2023-02-10 03:43:10 UTC
-+++ pcsx2/Frontend/CommonHost.cpp
-@@ -128,6 +128,10 @@
+--- pcsx2/Pcsx2Config.cpp.orig	2023-08-31 07:45:23 UTC
++++ pcsx2/Pcsx2Config.cpp
+@@ -1676,6 +1676,10 @@ void EmuFolders::SetAppRoot()
  
- void CommonHost::SetResourcesDirectory()
+ void EmuFolders::SetResourcesDirectory()
  {
 +#ifdef PCSX2_RESOURCES_PATH
 +	// Resources' path specified at compile time
@@ -25,12 +25,12 @@ Allow relocation of resource files
 +#else
  #ifndef __APPLE__
  	// On Windows/Linux, these are in the binary directory.
- 	EmuFolders::Resources = Path::Combine(EmuFolders::AppRoot, "resources");
-@@ -135,6 +139,7 @@
+ 	Resources = Path::Combine(AppRoot, "resources");
+@@ -1683,6 +1687,7 @@ void EmuFolders::SetResourcesDirectory()
  	// On macOS, this is in the bundle resources directory.
- 	EmuFolders::Resources = Path::Canonicalize(Path::Combine(EmuFolders::AppRoot, "../Resources"));
+ 	Resources = Path::Canonicalize(Path::Combine(AppRoot, "../Resources"));
  #endif
 +#endif // PCSX2_RESOURCES_PATH
  }
  
- bool CommonHost::ShouldUsePortableMode()
+ bool EmuFolders::ShouldUsePortableMode()
