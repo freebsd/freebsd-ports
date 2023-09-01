@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# PROVIDE: xray-core
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf to enable `xray':
+#
+# xray_enable (bool):		Set to "NO" by default.
+#                           	Set it to "YES" to enable xray
+# xray_config (path):		Set to "%%PREFIX%%/etc/xray-core" by default
+#                             	Set it to the xray server config
+# xray_logdir (path):		Set to "/var/log/xray-core" by default.
+#                               Set it to the directory of xray log files
+# xray_env (str):		Set to "" by default.
+#                               Set it to the desired environment variables
+
+. /etc/rc.subr
+
+name="xray"
+rcvar="xray_enable"
+
+: ${xray_enable="NO"}
+: ${xray_config="%%PREFIX%%/etc/${name}-core"}
+: ${xray_logdir="/var/log/${name}-core"}
+: ${xray_env=""}
+: ${xray_user="%%USER%%"}
+: ${xray_group="%%GROUP%%"}
+
+asset_env="XRAY_LOCATION_ASSET=%%PREFIX%%/share/${name}-core"
+pidfile="/var/run/$name.pid"
+procname="%%PREFIX%%/bin/xray"
+command="/usr/sbin/daemon"
+command_args="-c -p ${pidfile} /usr/bin/env ${asset_env} ${xray_env} ${procname} -confdir ${xray_config}"
+required_files="${xray_config}"
+
+start_precmd="xray_startprecmd"
+
+xray_startprecmd() {
+	touch "${pidfile}"
+	chown ${xray_user}:${xray_group} "${pidfile}"
+	mkdir -p "${xray_logdir}"
+	chown -R ${xray_user}:${xray_group} "${xray_logdir}"
+}
+
+load_rc_config "$name"
+run_rc_command "$1"

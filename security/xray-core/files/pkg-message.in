@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+To start the Xray automatically when the system is started, append
+the following in your ${PREFIX}/etc/rc.conf file:
+
+xray_enable="YES"               # Xray Core
+
+To manually start the xray run (as root):
+# %%PREFIX%%/etc/rc.d/xray start
+
+To manually stop it:
+# %%PREFIX%%/etc/rc.d/xray stop
+EOM
+}
+]

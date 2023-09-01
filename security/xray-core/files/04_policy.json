@@ -1,0 +1,12 @@
+{
+  "policy": {
+    "levels": {
+    },
+    "system": {
+      "statsInboundUplink": false,
+      "statsInboundDownlink": false,
+      "statsOutboundUplink": false,
+      "statsOutboundDownlink": false
+    }
+  }
+}
