@@ -7842,3 +7842,4 @@ devel/py-retype||2023-08-31|Has expired: This project is no longer supported/mai
 ports-mgmt/parfetch-overlay||2023-08-31|Has expired: Unmaintained
 cad/py-cq-editor||2023-09-01|Has expired: Depends on expiring cad/py-cadquery
 cad/py-cadquery||2023-09-01|Has expired: Depends on exppired cad/py-ocp
+www/squid-devel||2023-09-01|Has expired: Not used anymore to create rc-state releases
