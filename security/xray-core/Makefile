@@ -9,7 +9,7 @@ DISTFILES=	geoip.dat:geoip \
 EXTRACT_ONLY=	v${DISTVERSION}.zip \
 		xtls-Xray-core-v${DISTVERSION}_GH0.tar.gz
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	kirill@drlebedev.com
 COMMENT=	Set of network penetration tools
 WWW=		https://github.com/XTLS/Xray-core
 
