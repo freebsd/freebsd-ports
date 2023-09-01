@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2023-09-01 04:52:40 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -2516,7 +2516,7 @@ const char kWebUIOmniboxPopupName[] = "WebUI Omnibox P
+@@ -2519,7 +2519,7 @@ const char kWebUIOmniboxPopupName[] = "WebUI Omnibox P
  const char kWebUIOmniboxPopupDescription[] =
      "If enabled, shows the omnibox suggestions popup in WebUI.";
  
@@ -9,7 +9,7 @@
  const char kWebUiSystemFontName[] = "WebUI System font";
  const char kWebUiSystemFontDescription[] =
      "If enabled, all WebUI surfaces will use the default UI font of the "
-@@ -6836,7 +6836,7 @@ const char kLibAssistantV2MigrationDescription[] =
+@@ -6839,7 +6839,7 @@ const char kLibAssistantV2MigrationDescription[] =
  
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -18,7 +18,7 @@
  const char kGetAllScreensMediaName[] = "GetAllScreensMedia API";
  const char kGetAllScreensMediaDescription[] =
      "When enabled, the getAllScreensMedia API for capturing multiple screens "
-@@ -7076,7 +7076,7 @@ const char kSearchWebInSidePanelDescription[] =
+@@ -7079,7 +7079,7 @@ const char kSearchWebInSidePanelDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
  const char kQuickCommandsName[] = "Quick Commands";
  const char kQuickCommandsDescription[] =
      "Enable a text interface to browser features. Invoke with Ctrl-Space.";
-@@ -7085,7 +7085,7 @@ const char kQuickCommandsDescription[] =
+@@ -7088,7 +7088,7 @@ const char kQuickCommandsDescription[] =
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
  const char kFollowingFeedSidepanelName[] = "Following feed in the sidepanel";
  const char kFollowingFeedSidepanelDescription[] =
      "Enables the following feed in the sidepanel.";
-@@ -7107,7 +7107,7 @@ const char kEnableProtoApiForClassifyUrlDescription[] 
+@@ -7110,7 +7110,7 @@ const char kEnableProtoApiForClassifyUrlDescription[] 
      "instead of JSON.";
  #endif
  
@@ -45,7 +45,7 @@
  const char kUseOutOfProcessVideoDecodingName[] =
      "Use out-of-process video decoding (OOP-VD)";
  const char kUseOutOfProcessVideoDecodingDescription[] =
-@@ -7125,7 +7125,7 @@ const char kWebShareDescription[] =
+@@ -7128,7 +7128,7 @@ const char kWebShareDescription[] =
      "platforms.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
  
@@ -54,7 +54,7 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -7145,7 +7145,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -7148,7 +7148,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -63,7 +63,7 @@
  const char kSkipUndecryptablePasswordsName[] =
      "Skip undecryptable passwords to use the available decryptable "
      "passwords.";
-@@ -7159,7 +7159,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
+@@ -7162,7 +7162,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
      "storage and requests initial sync.";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
@@ -72,7 +72,7 @@
  const char kAsyncDnsName[] = "Async DNS resolver";
  const char kAsyncDnsDescription[] = "Enables the built-in DNS resolver.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-@@ -7260,7 +7260,7 @@ const char kElasticOverscrollDescription[] =
+@@ -7263,7 +7263,7 @@ const char kElasticOverscrollDescription[] =
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -81,7 +81,7 @@
  const char kUIDebugToolsName[] = "Debugging tools for UI";
  const char kUIDebugToolsDescription[] =
      "Enables additional keyboard shortcuts to help debugging.";
-@@ -7289,7 +7289,7 @@ const char kSigninInterceptBubbleV2Description[] =
+@@ -7292,7 +7292,7 @@ const char kSigninInterceptBubbleV2Description[] =
  #endif
  
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || \

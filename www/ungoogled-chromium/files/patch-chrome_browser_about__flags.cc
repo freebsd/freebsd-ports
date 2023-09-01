@@ -1,4 +1,4 @@
---- chrome/browser/about_flags.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/about_flags.cc.orig	2023-09-01 04:52:40 UTC
 +++ chrome/browser/about_flags.cc
 @@ -224,7 +224,7 @@
  #include "ui/ui_features.h"
@@ -70,7 +70,7 @@
      {"omnibox-domain-suggestions",
       flag_descriptions::kOmniboxDomainSuggestionsName,
       flag_descriptions::kOmniboxDomainSuggestionsDescription, kOsDesktop,
-@@ -6687,7 +6687,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6691,7 +6691,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kParallelDownloadingDescription, kOsAll,
       FEATURE_VALUE_TYPE(download::features::kParallelDownloading)},
  
@@ -79,7 +79,7 @@
      {"enable-async-dns", flag_descriptions::kAsyncDnsName,
       flag_descriptions::kAsyncDnsDescription, kOsWin | kOsLinux,
       FEATURE_VALUE_TYPE(features::kAsyncDns)},
-@@ -8377,7 +8377,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8381,7 +8381,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -88,7 +88,7 @@
      {"quick-commands", flag_descriptions::kQuickCommandsName,
       flag_descriptions::kQuickCommandsDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kQuickCommands)},
-@@ -8638,7 +8638,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8642,7 +8642,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(ash::features::kWallpaperPerDesk)},
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -97,7 +97,7 @@
      {"enable-get-all-screens-media", flag_descriptions::kGetAllScreensMediaName,
       flag_descriptions::kGetAllScreensMediaDescription,
       kOsCrOS | kOsLacros | kOsLinux,
-@@ -8699,7 +8699,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -8703,7 +8703,7 @@ const FeatureEntry kFeatureEntries[] = {
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -106,7 +106,7 @@
      {
          "ui-debug-tools",
          flag_descriptions::kUIDebugToolsName,
-@@ -9267,7 +9267,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9271,7 +9271,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -115,7 +115,7 @@
      {"document-picture-in-picture-api",
       flag_descriptions::kDocumentPictureInPictureApiName,
       flag_descriptions::kDocumentPictureInPictureApiDescription,
-@@ -9987,7 +9987,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -9991,7 +9991,7 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kWebUIOmniboxPopupDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(omnibox::kWebUIOmniboxPopup)},
  
@@ -124,7 +124,7 @@
      {"webui-system-font", flag_descriptions::kWebUiSystemFontName,
       flag_descriptions::kWebUiSystemFontDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kWebUiSystemFont)},
-@@ -10172,7 +10172,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10176,7 +10176,7 @@ const FeatureEntry kFeatureEntries[] = {
  #endif
  
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || \
@@ -133,7 +133,7 @@
      {"data-retention-policies-disable-sync-types-needed",
       flag_descriptions::kDataRetentionPoliciesDisableSyncTypesNeededName,
       flag_descriptions::kDataRetentionPoliciesDisableSyncTypesNeededDescription,
-@@ -10580,7 +10580,7 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -10584,7 +10584,7 @@ const FeatureEntry kFeatureEntries[] = {
       FEATURE_VALUE_TYPE(features::kProcessPerSiteUpToMainFrameThreshold)},
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
