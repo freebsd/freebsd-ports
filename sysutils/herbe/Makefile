@@ -2,7 +2,7 @@ PORTNAME=	herbe
 DISTVERSION=	1.0.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon-less notifications without D-Bus
 WWW=		https://github.com/dudik/herbe
 
