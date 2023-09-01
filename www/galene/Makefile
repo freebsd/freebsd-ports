@@ -1,10 +1,11 @@
 PORTNAME=	galene
 DISTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	www net-im
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	The Galène videoconference server
-WWW=		https://galane.org
+WWW=		https://galene.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE

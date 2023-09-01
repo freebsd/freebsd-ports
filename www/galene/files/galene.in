@@ -24,7 +24,7 @@ load_rc_config "${name}"
 pidfile=/var/run/galene.pid
 procname="%%PREFIX%%/bin/galene"
 command="/usr/sbin/daemon"
-command_args="-cf -p ${pidfile} ${procname} -static ${galene_static} -http ${galene_http} -data ${galene_data} -groups ${galene_groups} -recordings ${galene_recordings} ${galene_args}"
+command_args="-cf -S -p ${pidfile} ${procname} -static ${galene_static} -http ${galene_http} -data ${galene_data} -groups ${galene_groups} -recordings ${galene_recordings} ${galene_args}"
 
 galene_startprecmd()
 {
