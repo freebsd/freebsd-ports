@@ -1,10 +1,9 @@
 PORTNAME=	lastpass-cli
-PORTVERSION=	1.3.3
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.3.6
 CATEGORIES=	security
 
-MAINTAINER=	tom@hur.st
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LastPass command line interface tool
 WWW=		https://lastpass.com/
 
@@ -29,14 +28,14 @@ PINENTRY_DESC=		Use pinentry for password entry
 XCLIP_DESC=		Use xclip for interacting with X11 clipboard
 XSEL_DESC=		Use xsel for interacting with X11 clipboard
 
-BASH_BUILD_DEPENDS=	bash-completion>=0:shells/bash-completion
-BASH_RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
-BASH_PLIST_FILES=	share/bash-completion/completions/lpass
-MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
-			xmlto:textproc/xmlto
-MANPAGES_ALL_TARGET=	all doc-man
-MANPAGES_INSTALL_TARGET=install install-doc
-MANPAGES_PLIST_FILES=	${MANPREFIX}/share/man/man1/lpass.1.gz
+BASH_BUILD_DEPENDS=		bash-completion>=0:shells/bash-completion
+BASH_RUN_DEPENDS=		bash-completion>=0:shells/bash-completion
+BASH_PLIST_FILES=		share/bash-completion/completions/lpass
+MANPAGES_BUILD_DEPENDS=		asciidoc:textproc/asciidoc \
+				xmlto:textproc/xmlto
+MANPAGES_ALL_TARGET=		all doc-man
+MANPAGES_INSTALL_TARGET=	install install-doc
+MANPAGES_PLIST_FILES=		${MANPREFIX}/share/man/man1/lpass.1.gz
 
 PINENTRY_RUN_DEPENDS=	pinentry:security/pinentry
 XCLIP_RUN_DEPENDS=	xclip:x11/xclip
