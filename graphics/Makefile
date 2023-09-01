@@ -613,6 +613,7 @@
     SUBDIR += opencv
     SUBDIR += opendx
     SUBDIR += openexr
+    SUBDIR += openexr-website-docs
     SUBDIR += openfx-arena
     SUBDIR += openfx-misc
     SUBDIR += opengl-man
