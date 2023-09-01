@@ -1,5 +1,5 @@
 PORTNAME=	forecast
-PORTVERSION=	8.21
+PORTVERSION=	8.21.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/forecast/
 
 LICENSE=	GPLv3
 
-CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
+RUN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-fracdiff>0:math/R-cran-fracdiff \
 		R-cran-generics>=0.1.2:devel/R-cran-generics \
 		R-cran-ggplot2>=2.2.1:graphics/R-cran-ggplot2 \
@@ -21,8 +21,6 @@ CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-tseries>0:finance/R-cran-tseries \
 		R-cran-urca>0:finance/R-cran-urca \
 		R-cran-zoo>0:math/R-cran-zoo
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles
 
