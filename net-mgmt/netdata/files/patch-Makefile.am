@@ -1,6 +1,6 @@
---- Makefile.am.orig	2023-06-17 06:42:31 UTC
-+++ Makefile.am
-@@ -39,7 +39,6 @@ EXTRA_DIST = \
+--- Makefile.am.orig	2023-07-23 18:43:42.030677684 -0600
++++ Makefile.am	2023-07-23 18:44:09.820603732 -0600
+@@ -39,7 +39,6 @@
      build/m4/ax_c__generic.m4 \
      build/m4/ax_compiler_vendor.m4 \
      build/m4/ax_cxx_compile_stdcxx.m4 \
@@ -8,7 +8,7 @@
      README.md \
      LICENSE \
      REDISTRIBUTED.md \
-@@ -256,16 +255,15 @@ ML_FILES += \
+@@ -254,16 +253,15 @@
      ml/ad_charts.h \
      ml/ad_charts.cc \
      ml/Config.cc \

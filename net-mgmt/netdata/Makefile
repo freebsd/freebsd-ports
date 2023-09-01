@@ -1,7 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.40.1
-PORTREVISION=	1
+DISTVERSION=	1.42.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -30,10 +29,10 @@ BINARY_ALIAS=	ar=llvm-ar ranlib=llvm-ranlib
 # Libs that you can't unbundle...
 # SQLite3, --exclude database/sqlite/sqlite3*
 # (lib)judy, --exclude libnetdata/libjudy
-EXTRACT_AFTER_ARGS=	--exclude httpd --exclude ml/dlib
+EXTRACT_AFTER_ARGS=	--exclude ml/dlib --exclude web/server/h2o
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-unit-tests --disable-httpd
+CONFIGURE_ARGS=	--disable-h2o --disable-unit-tests
 
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-D_WANT_VMMETER
@@ -51,7 +50,7 @@ PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_PERST=${NETDATA_PERST}
 
 OPTIONS_DEFINE=		CLOUD CUPS DBENGINE FREEIPMI GOPLUGIN LTO ML
-OPTIONS_DEFAULT=	CLOUD DBENGINE LTO
+OPTIONS_DEFAULT=	CLOUD DBENGINE LTO ML
 OPTIONS_EXCLUDE_riscv64=	LTO
 OPTIONS_SUB=		YES
 
@@ -106,6 +105,8 @@ post-install:
 			${STAGEDIR}${LOCALBASE}/lib/${PORTNAME}/conf.d/*/*.txt ; do \
 		${MV} $$fi $$fi".sample"; \
 	done)
+	${RM} ${STAGEDIR}${ETCDIR}/netdata-updater.conf
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/netdata/system
 
 post-install-CLOUD-off:
 	rm ${STAGEDIR}${PREFIX}/sbin/netdata-claim.sh
