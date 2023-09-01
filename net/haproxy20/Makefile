@@ -11,6 +11,11 @@ WWW=		https://www.haproxy.org
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream EOL reaches on 2024-06-30
+EXPIRATION_DATE=	2024-06-30
+BROKEN_FreeBSD_14=	process runaway
+BROKEN_FreeBSD_15=	process runaway
+
 CONFLICTS_INSTALL=	haproxy haproxy-devel haproxy17 haproxy18
 
 USES=		compiler:c++11-lang cpe gmake
