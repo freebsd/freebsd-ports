@@ -1,5 +1,5 @@
 PORTNAME=	swissfileknife
-PORTVERSION=	1.9.8.2
+PORTVERSION=	1.9.9.0
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/1-${PORTNAME}/${PORTVERSION}
 DISTNAME=	sfk-${PORTVERSION:R}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-DVER_STR_OS=\\\"${OPSYS:tl}-${ARCH}\\\"
 
-PLIST_FILES=	bin/sfk
+PLIST_FILES=	bin/sfk ${DATADIR_REL}/mtk.tar.gz
 PORTDOCS=	ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
@@ -27,6 +27,10 @@ post-patch:
 			${WRKSRC}/sfk.cpp ${WRKSRC}/sfkext.cpp
 	@${REINPLACE_CMD} -e '/_STDINT_H/,+6d' ${WRKSRC}/sfkmatch.hpp
 	@${REINPLACE_CMD} -e 's,^ *register,   ,' ${WRKSRC}/sfkpack.cpp
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${TAR} czvf ${STAGEDIR}${DATADIR}/mtk.tar.gz -C ${WRKSRC} mtk
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
