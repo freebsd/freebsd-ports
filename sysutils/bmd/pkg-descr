@@ -1,0 +1,6 @@
+The bmd is a light-weight bhyve management daemon that handles bhyve processes
+according to the configuration file. And also includes a command line tool that
+supports booting VM, shutdown VM, connecting to com console, listing VMs.
+The configuration file syntax looks similar to jail.conf(5) and extends
+template feature that contains a part of VM configurations common to multiple
+VMs. The bmd supports plugins to extend the functionality.

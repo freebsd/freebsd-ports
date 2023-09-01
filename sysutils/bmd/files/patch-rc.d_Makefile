@@ -1,0 +1,11 @@
+--- rc.d/Makefile.orig	2023-08-08 05:39:45 UTC
++++ rc.d/Makefile
+@@ -2,6 +2,8 @@ SCRIPTSDIR=	$(LOCALBASE)/etc/rc.d
+ SCRIPTS=	bmd
+ SCRIPTSNAME_bmd=bmd
+ SCRIPTSDIR=	$(LOCALBASE)/etc/rc.d
++SCRIPTSOWN!=	id -u
++SCRIPTSGRP!=	id -g
+
+ bmd:	bmd.in
+	sed 's|%%LOCALBASE%%|$(LOCALBASE)|' < bmd.in > bmd

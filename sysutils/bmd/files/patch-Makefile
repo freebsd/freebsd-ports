@@ -1,0 +1,24 @@
+--- Makefile.orig	2023-08-13 14:58:56 UTC
++++ Makefile
+@@ -1,11 +1,21 @@ LOCALBASE?=		/usr/local
+ MK_DEBUG_FILES?=	no
+ LOCALBASE?=		/usr/local
++BINOWN!=	id -u
++BINGRP!=	id -g
++DIROWN=		$(BINOWN)
++DIRGRP=		$(BINGRP)
++SHAREOWN=	$(BINOWN)
++SHAREGRP=	$(BINGRP)
+ SUBDIR=		rc.d
+ BINDIR=		$(LOCALBASE)/sbin
+ MANDIR=		$(LOCALBASE)/man/man
+ DIRS=		UEFIVARDIR PLUGINDIR
+ UEFIVARDIR=	$(LOCALBASE)/var/cache/bmd
++UEFIVARDIR_OWN=	$(BINOWN)
++UEFIVARDIR_GRP=	$(BINGRP)
+ PLUGINDIR=	$(LOCALBASE)/libexec/bmd
++PLUGINDIR_OWN=	$(BINOWN)
++PLUGINDIR_GRP=	$(BINGRP)
+ PROG=		bmd
+ MAN=		bmd.8 bmdctl.8 bmd.conf.5
+ LINKS=  	${BINDIR}/bmd ${BINDIR}/bmdctl

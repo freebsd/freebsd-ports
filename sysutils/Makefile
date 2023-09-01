@@ -136,6 +136,7 @@
     SUBDIR += bksh
     SUBDIR += bkt
     SUBDIR += blisp
+    SUBDIR += bmd
     SUBDIR += boot-extract
     SUBDIR += bottom
     SUBDIR += bpytop
