@@ -1,6 +1,6 @@
-TIMESTAMP = 1685053551
-SHA256 (webrtc-audio-processing-1.1.tar.gz) = 59b3d47aedd32dd6fe4836478499ebb7c5bcad815f14dccddbbd70e752a99e5f
-SIZE (webrtc-audio-processing-1.1.tar.gz) = 879222
+TIMESTAMP = 1693580731
+SHA256 (webrtc-audio-processing-1.2.tar.gz) = 93bff264b4ffd3e2ba5ac97ba05cadff56e342557d8431784847c5347e457667
+SIZE (webrtc-audio-processing-1.2.tar.gz) = 879752
 SHA256 (2083c9a5dd34.patch) = 3c34cc248c0292032b26ef67f078505037e51e84b6c7955162cac058aed54360
 SIZE (2083c9a5dd34.patch) = 4496
 SHA256 (d49a0855a33b.patch) = fe8a4421a664108e7f5223f61278cd5a9096d8d0f33d1d648ac2c952d4c633b4

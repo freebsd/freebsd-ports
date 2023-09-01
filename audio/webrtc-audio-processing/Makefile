@@ -1,6 +1,5 @@
 PORTNAME=	webrtc-audio-processing
-DISTVERSION=	1.1
-PORTREVISION=	1
+DISTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/${PORTNAME}/
 
@@ -20,6 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_powerpc=		fails to compile: ./webrtc/rtc_base/system/arch.h:54:2: Please add support for your architecture in rtc_base/system/arch.h
 
 BUILD_DEPENDS=	abseil>0:devel/abseil
+RUN_DEPENDS=	abseil>0:devel/abseil # pkgconfig
 
 USES=		compiler:c++17-lang meson pkgconfig
 USE_LDCONFIG=	yes
