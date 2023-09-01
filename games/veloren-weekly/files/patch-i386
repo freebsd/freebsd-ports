@@ -1,3 +1,5 @@
+https://gitlab.com/veloren/veloren/-/merge_requests/4103
+
 error[E0308]: mismatched types
    --> rtsim/src/gen/mod.rs:30:43
     |
