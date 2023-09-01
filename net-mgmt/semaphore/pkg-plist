@@ -40,3 +40,4 @@ bin/semaphore
 %%DATADIR%%/v2.8.58.sql
 %%DATADIR%%/v2.8.7.sql
 %%DATADIR%%/v2.8.8.sql
+%%DATADIR%%/v2.8.91.sql
