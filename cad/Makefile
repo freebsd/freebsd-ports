@@ -105,7 +105,6 @@
     SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
     SUBDIR += py-amaranth
-    SUBDIR += py-cadquery
     SUBDIR += py-cocotb
     SUBDIR += py-edalize
     SUBDIR += py-ezdxf
