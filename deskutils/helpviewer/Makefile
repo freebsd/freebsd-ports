@@ -14,6 +14,12 @@ LICENSE=	GPLv2
 USES=		gnustep tar:tgz
 USE_GNUSTEP=	back build
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+ADDITIONAL_CPPFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|Foundation/GSXML.h|GNUstepBase/GSXML.h|' \
 		${WRKSRC}/HandlerStructureXLP.h \
