@@ -1,5 +1,5 @@
 PORTNAME=		sbws
-PORTVERSION=		1.3.0
+PORTVERSION=		1.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=		net python
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +16,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysocks>=1.6.8:net/py-pysocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.4:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stem>=1.7.0:security/py-stem@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.5:sysutils/py-psutil@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}versioneer>=0:devel/py-versioneer@${PY_FLAVOR} \
 		tor:security/tor \
-		obfs4proxy:security/obfs4proxy-tor
+		obfs4proxy:security/obfs4proxy-tor \
+		snowflake-client:security/snowflake-tor
 
+		# testing depends on `git` and chutney. not adding that here. see `start_chutney.sh`
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>=0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-docstrings>=0:devel/py-flake8-docstrings@${PY_FLAVOR} \
@@ -39,17 +42,23 @@ CPE_VENDOR=	torproject
 GL_SITE=	https://gitlab.torproject.org/tpo
 GL_ACCOUNT=	network-health
 GL_PROJECT=	sbws
-GL_TAGNAME=	25aa5b232ca26729e1bf30a7c5a54fd22f5c3eeb
+GL_TAGNAME=	30a2256098fad8e8aaa06e325274546b4aead552
 
 SHEBANG_FILES=	setup.py \
+		sbws/core/bwfile_health.py \
+		scripts/maint/release.py \
 		scripts/tools/get-per-relay-budget.py \
-		scripts/tools/sbws-http-server.py \
 		scripts/tools/scale-v3bw-with-budget.py \
+		tests/integration/async_https_server.py \
 		tests/integration/stop_chutney.sh \
 		tests/integration/start_chutney.sh \
 		tests/integration/run.sh
 
 NO_ARCH=	yes
+
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=262759
+post-patch:
+	${RM} ${WRKSRC}/tests/__init__.py
 
 do-test:
 	cd ${WRKSRC} && \
