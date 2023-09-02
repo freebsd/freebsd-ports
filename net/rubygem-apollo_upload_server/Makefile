@@ -1,5 +1,5 @@
 PORTNAME=	apollo_upload_server
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.5
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jetruby/apollo_upload_server-ruby
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-actionpack61>=4.2:www/rubygem-actionpack61 \
+RUN_DEPENDS=	rubygem-actionpack70>=6.1.6:www/rubygem-actionpack70 \
 		rubygem-graphql>=1.8:devel/rubygem-graphql
 
 USES=		gem
