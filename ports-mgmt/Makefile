@@ -53,6 +53,7 @@
     SUBDIR += portless
     SUBDIR += portlint
     SUBDIR += portmaster
+    SUBDIR += portoptscli
     SUBDIR += portrac
     SUBDIR += ports-tools
     SUBDIR += portscout
