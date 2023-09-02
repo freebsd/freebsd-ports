@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.1.5
+DISTVERSION=	16.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,14 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.40.1:devel/git
+MY_DEPENDS=	git>=2.41.0:devel/git
 BUILD_DEPENDS=	bash>0:shells/bash \
+		${LOCALBASE}/bin/cmake:devel/cmake-core \
 		${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS} \
 		gitlab-shell>=14.17.0:devel/gitlab-shell
-LIB_DEPENDS=	libgit2.so:devel/libgit2
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+		libhttp_parser.so:www/http-parser
 
-USES=		cpe gmake go:modules,no_targets pkgconfig
+USES=		cpe gmake go:modules,no_targets iconv pkgconfig ssl
 
 CPE_VENDOR=	gitlab
 
@@ -32,6 +34,10 @@ MAKE_ENV+=	${GO_ENV}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
+
+USE_GITHUB=	nodefault
+# Check used version here: https://gitlab.com/gitlab-org/gitaly/-/blob/v16.3.1/Makefile#L181
+GH_TUPLE=	libgit2:libgit2:v1.5.1:build_deps_libgit2_source
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -52,6 +58,11 @@ go-post-fetch:
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 # ---------------------------
 
+post-extract:
+	${MKDIR} ${WRKSRC}/_build/deps/libgit2
+	@${RM} -r ${WORKSRC}/_build/deps/libgit2/source
+	@${RLN} ${WRKSRC_build_deps_libgit2_source} ${WRKSRC}/_build/deps/libgit2/source
+
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
 	${MV} ${WRKSRC}/config.toml.example ${WRKSRC}/config.toml.sample
@@ -60,7 +71,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	${FIND} ${WRKSRC} -name '*.orig' -delete
-	(cd ${WRKSRC}/_build/bin/ && ${COPYTREE_SHARE} .  ${STAGEDIR}${DATADIR}/bin && \
+	(cd ${WRKSRC}/_build/bin/ && ${COPYTREE_BIN} .  ${STAGEDIR}${DATADIR}/bin && \
 	cd ${WRKSRC} && ${COPYTREE_SHARE} config.toml.sample  ${STAGEDIR}${DATADIR})
 
 post-install:

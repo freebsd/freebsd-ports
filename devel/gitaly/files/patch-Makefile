@@ -1,19 +1,25 @@
---- Makefile.orig	2023-04-21 08:04:56 UTC
+--- Makefile.orig	2023-08-21 09:20:49 UTC
 +++ Makefile
-@@ -573,7 +573,7 @@ ${BUILD_DIR}/bin/%: ${BUILD_DIR}/intermediate/% | ${BU
- 	@ # This fallback is unique but non-deterministic, making it sufficient to avoid generating the
- 	@ # GNU build-id from the empty string and causing guaranteed collisions.
- 	${Q}GO_BUILD_ID=$$(go tool buildid "$<" || openssl rand -hex 32) && \
--	GNU_BUILD_ID=$$(echo $$GO_BUILD_ID | sha1sum | cut -d' ' -f1) && \
-+	GNU_BUILD_ID=$$(echo $$GO_BUILD_ID | sha1 | cut -d' ' -f1) && \
- 	if test "${OS}" = "Linux"; then \
- 		go run "${SOURCE_DIR}"/tools/replace-buildid \
- 			-input "$<" -input-build-id "${TEMPORARY_BUILD_ID}" \
-@@ -599,7 +599,6 @@ ${BUILD_DIR}/intermediate/gitaly:            GO_BUILD_
- ${BUILD_DIR}/intermediate/gitaly:            remove-legacy-go-mod ${GITALY_PACKED_EXECUTABLES}
- ${BUILD_DIR}/intermediate/praefect:          GO_BUILD_TAGS = ${SERVER_BUILD_TAGS}
- ${BUILD_DIR}/intermediate/gitaly-git2go:     GO_BUILD_TAGS = ${GIT2GO_BUILD_TAGS}
--${BUILD_DIR}/intermediate/gitaly-git2go:     libgit2
- ${BUILD_DIR}/intermediate/%:                 clear-go-build-cache-if-needed .FORCE
- 	@ # We're building intermediate binaries first which contain a fixed build ID
- 	@ # of "TEMP_GITALY_BUILD_ID". In the final binary we replace this build ID with
+@@ -628,16 +628,16 @@ ${DEPENDENCY_DIR}/protoc.version: dependency-version |
+ 	${Q}[ x"$$(cat "$@" 2>/dev/null)" = x"${PROTOC_VERSION} ${PROTOC_BUILD_OPTIONS}" ] || >$@ echo -n "${PROTOC_VERSION} ${PROTOC_BUILD_OPTIONS}"
+ 
+ ${LIBGIT2_INSTALL_DIR}/lib/libgit2.a: ${DEPENDENCY_DIR}/libgit2.version
+-	${Q}${GIT} -c init.defaultBranch=master init ${GIT_QUIET} ${LIBGIT2_SOURCE_DIR}
+-	${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" config remote.origin.url ${LIBGIT2_REPO_URL}
+-	${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" config remote.origin.tagOpt --no-tags
+-	${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" fetch --depth 1 ${GIT_QUIET} origin ${LIBGIT2_VERSION}
+-	${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" checkout ${GIT_QUIET} --detach FETCH_HEAD
++	#${Q}${GIT} -c init.defaultBranch=master init ${GIT_QUIET} ${LIBGIT2_SOURCE_DIR}
++	#${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" config remote.origin.url ${LIBGIT2_REPO_URL}
++	#${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" config remote.origin.tagOpt --no-tags
++	#${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" fetch --depth 1 ${GIT_QUIET} origin ${LIBGIT2_VERSION}
++	#${Q}${GIT} -C "${LIBGIT2_SOURCE_DIR}" checkout ${GIT_QUIET} --detach FETCH_HEAD
+ 	${Q}rm -rf ${LIBGIT2_BUILD_DIR}
+ 	${Q}mkdir -p ${LIBGIT2_BUILD_DIR}
+ 	${Q}cd ${LIBGIT2_BUILD_DIR} && cmake ${LIBGIT2_SOURCE_DIR} ${LIBGIT2_BUILD_OPTIONS}
+ 	${Q}CMAKE_BUILD_PARALLEL_LEVEL=$(shell nproc) cmake --build ${LIBGIT2_BUILD_DIR} --target install
+-	go install -a github.com/libgit2/git2go/${GIT2GO_VERSION}
++	#go install -a github.com/libgit2/git2go/${GIT2GO_VERSION}
+ 
+ # This target is responsible for checking out Git sources. In theory, we'd only
+ # need to depend on the source directory. But given that the source directory
