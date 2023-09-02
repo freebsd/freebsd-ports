@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.3.0
+PORTVERSION=	16.3.1
 DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	www devel
@@ -130,7 +130,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
 	rubygem-deckar01-task_list>=2.3.2<2.4:www/rubygem-deckar01-task_list \
 	rubygem-gitlab-markup>=1.9.0<1.10.0:textproc/rubygem-gitlab-markup \
-	rubygem-commonmarker>=0.23.9<0.24:textproc/rubygem-commonmarker \
+	rubygem-commonmarker>=0.23.10<0.24:textproc/rubygem-commonmarker \
 	rubygem-kramdown23>=2.3.1<2.4:textproc/rubygem-kramdown23 \
 	rubygem-redcloth>=4.3.2<4.4.0:www/rubygem-redcloth \
 	rubygem-rdoc63>=6.3.2<7:devel/rubygem-rdoc63 \
