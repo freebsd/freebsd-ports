@@ -11,6 +11,7 @@
 %%PMWIKIDIR%%/wikilib.d/Site.SideBar
 %%PMWIKIDIR%%/wikilib.d/Site.Search
 %%PMWIKIDIR%%/wikilib.d/Site.Preferences
+%%PMWIKIDIR%%/wikilib.d/Site.PmFormTemplates
 %%PMWIKIDIR%%/wikilib.d/Site.PageNotFound
 %%PMWIKIDIR%%/wikilib.d/Site.PageListTemplates
 %%PMWIKIDIR%%/wikilib.d/Site.PageActions
@@ -81,6 +82,7 @@
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MarkupExpressions
 %%PMWIKIDIR%%/wikilib.d/PmWiki.MailingLists
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LocalCustomizations
+%%PMWIKIDIR%%/wikilib.d/PmWiki.ListStyles
 %%PMWIKIDIR%%/wikilib.d/PmWiki.Links
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LinkVariables
 %%PMWIKIDIR%%/wikilib.d/PmWiki.LayoutVariables
@@ -150,6 +152,7 @@
 %%PMWIKIDIR%%/scripts/robots.php
 %%PMWIKIDIR%%/scripts/refcount.php
 %%PMWIKIDIR%%/scripts/prefs.php
+%%PMWIKIDIR%%/scripts/pmform.php
 %%PMWIKIDIR%%/scripts/phpdiff.php
 %%PMWIKIDIR%%/scripts/pgcust.php
 %%PMWIKIDIR%%/scripts/pagerev.php
