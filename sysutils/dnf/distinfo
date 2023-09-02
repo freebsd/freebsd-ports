@@ -1,3 +1,3 @@
-TIMESTAMP = 1687317166
-SHA256 (rpm-software-management-dnf-4.16.1_GH0.tar.gz) = 7480635ad06b280d9fb348a14b89d9529ba5d1253dbea1e1374f9bf092601192
-SIZE (rpm-software-management-dnf-4.16.1_GH0.tar.gz) = 2025369
+TIMESTAMP = 1693631007
+SHA256 (rpm-software-management-dnf-4.17.0_GH0.tar.gz) = 0f8c1a77f087d4ea291909429a2d90aecad195831a77276d41b9b8ebe60798c8
+SIZE (rpm-software-management-dnf-4.17.0_GH0.tar.gz) = 2026686
