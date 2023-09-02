@@ -1,8 +1,8 @@
 PORTNAME=	gammaray
-PORTVERSION=	2.11.3
+DISTVERSION=	2.11.3
 PORTREVISION=	3
-DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/KDAB/GammaRay/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
@@ -22,10 +22,6 @@ USE_QT=		3d concurrent core declarative designer gui help linguisttools \
 		location network printsupport script scripttools svg uiplugin \
 		webchannel widgets xml buildtools:build qdoc:build qmake:build
 USE_KDE=	coreaddons syntaxhighlighting
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	KDAB
-GH_PROJECT=	GammaRay
 
 CMAKE_OFF=	STACK_DETAILS_AUTO_DETECT
 CMAKE_ON=	STACK_DETAILS_DWARF
