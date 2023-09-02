@@ -11,7 +11,6 @@ WWW=		https://calibre-ebook.com/
 
 LICENSE=	GPLv3
 
-
 EXTRACT_DEPENDS=${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
