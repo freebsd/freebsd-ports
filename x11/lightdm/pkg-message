@@ -2,7 +2,7 @@
 {
 	message: <<EOD
 For LightDM to function, it requires one of the available greeters to be
-installed, which are available in the ports tree at x11/lightdm-*greeter*
+installed, for instance x11/lightdm-gtk-greeter or x11/slick-greeter .
 
 If you enable the lock-memory option in lightdm.conf (e.g. due to security
 concerns), you will also need to increase the maximum amount of memory FreeBSD
