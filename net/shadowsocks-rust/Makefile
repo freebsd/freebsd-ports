@@ -1,7 +1,6 @@
 PORTNAME=	shadowsocks-rust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.0
-PORTREVISION=	0
+DISTVERSION=	1.16.1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aes-0.8.3 \
 		aes-gcm-0.10.2 \
 		aes-gcm-siv-0.11.1 \
-		aho-corasick-1.0.4 \
+		aho-corasick-1.0.5 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.5.0 \
@@ -58,10 +57,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		chacha20-0.9.1 \
 		chacha20poly1305-0.10.1 \
 		checked_int_cast-1.0.0 \
-		chrono-0.4.26 \
+		chrono-0.4.28 \
 		cipher-0.4.4 \
-		clap-4.4.0 \
-		clap_builder-4.4.0 \
+		clap-4.4.2 \
+		clap_builder-4.4.2 \
 		clap_lex-0.5.1 \
 		cmake-0.1.50 \
 		colorchoice-1.0.0 \
@@ -92,7 +91,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		elliptic-curve-0.12.3 \
 		enum-as-inner-0.6.0 \
 		env_logger-0.10.0 \
-		errno-0.3.2 \
+		errno-0.3.3 \
 		errno-dragonfly-0.1.2 \
 		etherparse-0.13.0 \
 		fastrand-2.0.0 \
@@ -165,23 +164,22 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		managed-0.8.0 \
 		match_cfg-0.1.0 \
 		md-5-0.10.5 \
-		memchr-2.5.0 \
-		memoffset-0.7.1 \
+		memchr-2.6.2 \
 		mimalloc-0.1.38 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
 		native-tls-0.2.11 \
-		nix-0.26.2 \
+		nix-0.27.1 \
 		notify-6.1.1 \
 		num-traits-0.2.16 \
 		num_cpus-1.16.0 \
 		object-0.32.0 \
 		once_cell-1.18.0 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.56 \
+		openssl-0.10.57 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.91 \
+		openssl-sys-0.9.92 \
 		option-ext-0.2.0 \
 		ordered-float-2.10.0 \
 		p256-0.11.1 \
@@ -189,10 +187,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.8 \
 		percent-encoding-2.3.0 \
-		pest-2.7.2 \
-		pest_derive-2.7.2 \
-		pest_generator-2.7.2 \
-		pest_meta-2.7.2 \
+		pest-2.7.3 \
+		pest_derive-2.7.3 \
+		pest_generator-2.7.3 \
+		pest_meta-2.7.3 \
 		pin-project-1.1.3 \
 		pin-project-internal-1.1.3 \
 		pin-project-lite-0.2.13 \
@@ -227,8 +225,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
 		rustix-0.37.23 \
-		rustix-0.38.9 \
-		rustls-0.21.6 \
+		rustix-0.38.11 \
+		rustls-0.21.7 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
 		rustls-webpki-0.101.4 \
@@ -265,7 +263,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		spin-0.9.8 \
 		spki-0.6.0 \
 		stable_deref_trait-1.2.0 \
-		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
@@ -308,7 +305,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		universal-hash-0.5.1 \
 		unsafe-any-ors-1.0.0 \
 		untrusted-0.7.1 \
-		url-2.4.0 \
+		url-2.4.1 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
