@@ -6711,6 +6711,7 @@
     SUBDIR += rubygem-devise-rails60
     SUBDIR += rubygem-devise-rails61
     SUBDIR += rubygem-devise-rails70
+    SUBDIR += rubygem-devise48-rails70
     SUBDIR += rubygem-did_you_mean
     SUBDIR += rubygem-dig_rb
     SUBDIR += rubygem-directory_watcher
@@ -6824,6 +6825,7 @@
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gettext-setup
     SUBDIR += rubygem-gettext_i18n_rails
+    SUBDIR += rubygem-gettext_i18n_rails111
     SUBDIR += rubygem-gettext_i18n_rails18
     SUBDIR += rubygem-gettext_i18n_rails_js-rails5
     SUBDIR += rubygem-gettext_i18n_rails_js-rails50
@@ -6911,6 +6913,7 @@
     SUBDIR += rubygem-hashie-forbidden_attributes
     SUBDIR += rubygem-hashie4
     SUBDIR += rubygem-health_check
+    SUBDIR += rubygem-health_check-rails70
     SUBDIR += rubygem-heapy
     SUBDIR += rubygem-highline
     SUBDIR += rubygem-highline1
