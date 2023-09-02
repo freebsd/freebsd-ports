@@ -1,5 +1,5 @@
 PORTNAME=	far2l
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.2
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
@@ -9,8 +9,6 @@ WWW=		https://github.com/elfmz/far2l
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	gawk:lang/gawk gm4:devel/m4 \
-		${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libpcre.so:devel/pcre \
 		libuchardet.so:textproc/uchardet \
@@ -48,6 +46,8 @@ X11_USES=	xorg
 X11_USE=	XORG=ice,sm,x11,xext,xi
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,Linux x86_64,${OPSYS} ${ARCH},' \
+		${WRKSRC}/far2l/bootstrap/scripts/far2l_m4.pl
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
 
