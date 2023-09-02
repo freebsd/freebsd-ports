@@ -1,5 +1,5 @@
 PORTNAME=	nagios-plugins
-DISTVERSION=	2.4.3
+DISTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
