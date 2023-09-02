@@ -1,12 +1,9 @@
 PORTNAME=	calibre
 PORTVERSION=	6.25.0
 CATEGORIES=	deskutils python
-MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/ \
-		https://curl.haxx.se/ca/:cacert
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		cacert.pem:cacert
+MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:Ncacert.pem}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Ebook management application
@@ -14,6 +11,8 @@ WWW=		https://calibre-ebook.com/
 
 LICENSE=	GPLv3
 
+
+EXTRACT_DEPENDS=${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libwmflite.so:graphics/libwmf \
@@ -109,7 +108,7 @@ ISOCODESWRKSRC!=		${BSDMAKE} -C ${.CURDIR}/../../misc/iso-codes -V WRKSRC
 
 post-extract:
 	@${MV} ${WRKSRC_translations} ${WRKSRC}/src/translations
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/cacert.pem ${WRKSRC}/resources/mozilla-ca-certs.pem
+	@${CP} ${LOCALBASE}/share/certs/ca-root-nss.crt ${WRKSRC}/resources/mozilla-ca-certs.pem
 	@${CP} ${FILESDIR}/user-agent-data.json ${WRKSRC}/resources
 
 post-patch:
