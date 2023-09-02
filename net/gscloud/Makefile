@@ -1,7 +1,6 @@
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
-PORTREVISION=	8
+DISTVERSION=	0.13.0
 CATEGORIES=	net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -12,8 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-
 USE_GITHUB=	yes
+
 GH_ACCOUNT=	gridscale
 GH_TUPLE=	cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -28,14 +27,14 @@ GH_TUPLE=	cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpug
 		golang:net:2e3eb7b945c2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
 		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:gofuzz:v1.1.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
-		gridscale:gsclient-go:v3.10.0:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
+		gridscale:gsclient-go:v3.12.0:gridscale_gsclient_go_v3/vendor/github.com/gridscale/gsclient-go/v3 \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		imdario:mergo:v0.3.12:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -54,14 +53,13 @@ GH_TUPLE=	cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpug
 		modern-go:concurrent:bacd9c7ef1dd:modern_go_concurrent/vendor/github.com/modern-go/concurrent \
 		modern-go:reflect2:v1.0.2:modern_go_reflect2/vendor/github.com/modern-go/reflect2 \
 		pelletier:go-toml:v1.9.5:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
-		pelletier:go-toml:v2.0.5:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
+		pelletier:go-toml:v2.0.1:pelletier_go_toml_v2/vendor/github.com/pelletier/go-toml/v2 \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		protocolbuffers:protobuf-go:v1.28.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sethvargo:go-password:v0.2.0:sethvargo_go_password/vendor/github.com/sethvargo/go-password \
-		shurcooL:sanitized_anchor_name:v1.0.0:shurcool_sanitized_anchor_name/vendor/github.com/shurcooL/sanitized_anchor_name \
-		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.8.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:cast:v1.5.0:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.4.0:spf13_cobra/vendor/github.com/spf13/cobra \
