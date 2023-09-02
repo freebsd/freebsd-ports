@@ -30,6 +30,12 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
+CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
+.endif
+
 post-install:
 # Rename to avoid conflict with x11/wayout
 	${MV} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
