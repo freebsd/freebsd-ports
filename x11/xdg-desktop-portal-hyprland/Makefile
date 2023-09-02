@@ -50,6 +50,12 @@ OPTIONS_DEFAULT=SLURP
 SLURP_DESC=		Simple output chooser
 SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
+CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
+.endif
+
 .ifdef GH_TUPLE
 post-configure:
 	@${REINPLACE_CMD} 's/meson install/& \
