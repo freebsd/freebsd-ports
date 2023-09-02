@@ -1,5 +1,5 @@
 bin/qbittorrent-nox
-man/man1/qbittorrent-nox.1.gz
+share/man/man1/qbittorrent-nox.1.gz
 @owner %%USER%%
 @group %%GROUP%%
 @dir /var/db/qbittorrent/conf

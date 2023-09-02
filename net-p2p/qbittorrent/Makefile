@@ -1,5 +1,6 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	4.5.5
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,24 +22,21 @@ FLAVOR?=	${FLAVORS:[1]}
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
-USES=			compiler:c++14-lang cpe pkgconfig qmake:no_env qt:5 ssl tar:xz
-GNU_CONFIGURE=		yes
-USE_QT=			core network sql xml buildtools:build linguisttools:build qmake:build
-DESTDIRNAME=		INSTALL_ROOT
-CONFIGURE_ENV+=		openssl_CFLAGS="-I${OPENSSLINC}" openssl_LIBS="-L${OPENSSLLIB} -lssl"
-
+USES=			compiler:c++14-lang cpe pkgconfig cmake qt:6 ssl tar:xz
+USE_QT=			base svg translations
 USE_CXXSTD=		c++17 # prevent boost-related SEGV, see bug#264278
+
+CMAKE_ON=		QT6
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils gl
-USE_QT+=		concurrent gui svg widgets
 USE_GL=			gl
 .endif
 
 .if ${FLAVOR} == nox
 SUFFIX=			-nox
 COMMENT+=		(web UI version)
-CONFIGURE_ARGS=		--disable-gui
+CMAKE_OFF=		GUI
 USERS=			qbittorrent
 GROUPS=			qbittorrent
 USE_RC_SUBR=		qbittorrent
@@ -56,9 +54,8 @@ LIBTORRENT_DESC=	libtorrent version number to use
 LIBTORRENT1_DESC=	Version 1.x (default)
 LIBTORRENT2_DESC=	Version 2.x (experimental)
 
-DEBUG_CONFIGURE_ENABLE=	debug
-DBUS_CONFIGURE_ENABLE=	qt-dbus
-DBUS_USE=		qt=dbus
+DEBUG_CMAKE_BOOL=	debug
+DBUS_CMAKE_BOOL=	DBUS
 
 LIBTORRENT1_BUILD_DEPENDS=	libtorrent-rasterbar>0:net-p2p/libtorrent-rasterbar
 LIBTORRENT1_RUN_DEPENDS=	libtorrent-rasterbar>0:net-p2p/libtorrent-rasterbar
@@ -68,15 +65,9 @@ LIBTORRENT2_EXTRA_PATCHES=	${FILESDIR}/extrapatch-libtorrent-rasterbar2-settings
 
 PYTHON_DESC=		Install Python to support some plugin functionality
 PYTHON_USES=		python:run
-
-post-patch-PYTHON-on:
-	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_CMD}"|' ${WRKSRC}/src/base/utils/foreignapps.cpp
+PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent${SUFFIX}
-	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent${SUFFIX}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1/
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/man
 .if ${FLAVOR} == nox
 	@${MKDIR} ${STAGEDIR}/var/db/qbittorrent/conf ${STAGEDIR}/var/db/qbittorrent/Downloads
 .endif
