@@ -1,5 +1,5 @@
 PORTNAME=	thunar
-DISTVERSION=	4.18.6
+DISTVERSION=	4.18.7
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,9 +13,9 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libtumbler-1.so:deskutils/xfce4-tumbler \
-		libharfbuzz.so:print/harfbuzz \
-		libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libpcre2-8.so:devel/pcre2 \
+		libtumbler-1.so:deskutils/xfce4-tumbler
 RUN_DEPENDS=	pkexec:sysutils/polkit
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-tools gmake gnome \
@@ -28,8 +28,8 @@ USE_XORG=	ice sm x11
 CPE_VENDOR=	xfce
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-gio-unix \
-		--disable-gudev
+CONFIGURE_ARGS=	--disable-gudev \
+		--enable-gio-unix
 INSTALL_TARGET=	install-strip
 
 PORTSCOUT=	limitw:1,even
@@ -62,13 +62,15 @@ NOTIFY_LIB_DEPENDS=		libnotify.so:devel/libnotify
 PLUG_APR_CONFIGURE_ENABLE=	apr-plugin exif
 PLUG_APR_LIB_DEPENDS=		libexif.so:graphics/libexif
 
-PLUG_SBR_CONFIGURE_ENABLE=	sbr-plugin pcre
+PLUG_SBR_CONFIGURE_ENABLE=	pcre sbr-plugin
 PLUG_SBR_LIB_DEPENDS=		libpcre.so:devel/pcre
 
 PLUG_TPA_CONFIGURE_ENABLE=	tpa-plugin
-PLUG_TPA_USE=			gnome=gvfs xfce=panel
+PLUG_TPA_USE=			GNOME=gvfs \
+				XFCE=panel
 
 PLUG_UCA_CONFIGURE_ENABLE=	uca-plugin
+
 PLUG_WALL_CONFIGURE_ENABLE=	wallpaper-plugin
 
 post-patch:
