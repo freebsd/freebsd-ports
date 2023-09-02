@@ -1,13 +1,19 @@
 diff --git cli/main.c cli/main.c
-index 25ff5ca..d75bbb7 100644
+index 25ff5ca..055b05a 100644
 --- cli/main.c
 +++ cli/main.c
-@@ -306,7 +306,7 @@ apply_modversion(pkgconf_client_t *client, pkgconf_pkg_t *world, void *data, int
+@@ -305,10 +305,13 @@ apply_modversion(pkgconf_client_t *client, pkgconf_pkg_t *world, void *data, int
+ 		{
  			pkgconf_dependency_t *dep = world_iter->data;
  			pkgconf_pkg_t *pkg = dep->match;
++			size_t len = strlen(pkg->id);
  
 -			if (strncmp(pkg->id, queue_node->package, strlen(pkg->id)))
-+			if (strcmp(pkg->id, queue_node->package))
++			if (strncmp(pkg->id, queue_node->package, len))
  				continue;
  
++			if (!isspace(queue_node->package[len]) && queue_node->package[len] != '\0')
++				continue;
  			if (pkg->version != NULL) {
+ 				if (verbosity)
+ 					printf("%s: ", pkg->id);
