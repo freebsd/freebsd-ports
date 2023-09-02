@@ -1,9 +1,9 @@
 PORTNAME=	spin
-PORTVERSION=	6.5.0
+PORTVERSION=	6.5.2
 DISTVERSIONPREFIX=	version-
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	On-the-fly verification system for asynchronous concurrent systems
 WWW=		http://spinroot.com
 
