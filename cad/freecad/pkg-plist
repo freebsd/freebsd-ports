@@ -1209,6 +1209,7 @@ FreeCAD/Mod/Path/Path/Post/scripts/centroid_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/comparams_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/dxf_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/dynapath_post.py
+FreeCAD/Mod/Path/Path/Post/scripts/estlcam_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/example_pre.py
 FreeCAD/Mod/Path/Path/Post/scripts/fablin_post.py
 FreeCAD/Mod/Path/Path/Post/scripts/fangling_post.py
