@@ -36,6 +36,7 @@
     SUBDIR += code2000
     SUBDIR += comfortaa-ttf
     SUBDIR += comic-neue
+    SUBDIR += commit-mono
     SUBDIR += consolamono-ttf
     SUBDIR += courier-prime
     SUBDIR += cozette
