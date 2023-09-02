@@ -1,7 +1,7 @@
---- Gemfile.orig	2023-07-04 20:45:49 UTC
+--- Gemfile.orig	2023-08-21 09:25:45 UTC
 +++ Gemfile
-@@ -35,7 +35,7 @@ gem 'neighbor', '~> 0.2.3'
- gem 'rugged', '~> 1.5'
+@@ -46,7 +46,7 @@ gem 'neighbor', '~> 0.2.3'
+ gem 'rugged', '~> 1.6'
  gem 'grape-path-helpers', '~> 1.7.1'
  
 -gem 'faraday', '~> 1.0'
@@ -9,7 +9,7 @@
  gem 'marginalia', '~> 1.11.1'
  
  # Authorization
-@@ -55,8 +55,8 @@ gem 'omniauth-azure-activedirectory-v2', '~> 2.0'
+@@ -66,8 +66,8 @@ gem 'omniauth-azure-activedirectory-v2', '~> 2.0'
  gem 'omniauth-azure-oauth2', '~> 0.0.9', path: 'vendor/gems/omniauth-azure-oauth2' # See gem README.md
  gem 'omniauth-dingtalk-oauth2', '~> 1.0'
  gem 'omniauth-alicloud', '~> 2.0.1'
@@ -20,7 +20,7 @@
  gem 'omniauth-gitlab', '~> 4.0.0', path: 'vendor/gems/omniauth-gitlab' # See vendor/gems/omniauth-gitlab/README.md
  gem 'omniauth-google-oauth2', '~> 1.1'
  gem 'omniauth-oauth2-generic', '~> 0.2.2'
-@@ -67,7 +67,7 @@ gem 'omniauth_crowd', '~> 2.4.0', path: 'vendor/gems/o
+@@ -78,7 +78,7 @@ gem 'omniauth_crowd', '~> 2.4.0', path: 'vendor/gems/o
  gem 'omniauth_openid_connect', '~> 0.6.1'
  # Locked until Ruby 3.0 upgrade since upgrading will pull in an updated net-smtp gem.
  # See https://docs.gitlab.com/ee/development/emails.html#rationale.
@@ -29,7 +29,7 @@
  gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce' # See gem README.md
  gem 'omniauth-atlassian-oauth2', '~> 0.2.0'
  gem 'rack-oauth2', '~> 1.21.3'
-@@ -152,7 +152,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.7.0', require: 'fog/a
+@@ -166,7 +166,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.8.0', require: 'fog/a
  
  # for Google storage
  gem 'google-cloud-storage', '~> 1.44.0'
@@ -38,16 +38,19 @@
  gem 'google-apis-compute_v1', '~> 0.57.0'
  gem 'google-apis-container_v1', '~> 0.43.0'
  gem 'google-apis-container_v1beta1', '~> 0.43.0'
-@@ -173,7 +173,7 @@ gem 'seed-fu', '~> 2.3.7'
+@@ -187,9 +187,9 @@ gem 'seed-fu', '~> 2.3.7'
  gem 'elasticsearch-model', '~> 7.2'
  gem 'elasticsearch-rails', '~> 7.2', require: 'elasticsearch/rails/instrumentation'
  gem 'elasticsearch-api',   '7.13.3'
--gem 'aws-sdk-core', '~> 3.175.0'
-+gem 'aws-sdk-core', '~> 3.175'
+-gem 'aws-sdk-core', '~> 3.180.3'
++gem 'aws-sdk-core', '~> 3.180'
  gem 'aws-sdk-cloudformation', '~> 1'
- gem 'aws-sdk-s3', '~> 1.126.0'
+-gem 'aws-sdk-s3', '~> 1.132.1'
++gem 'aws-sdk-s3', '~> 1.132'
  gem 'faraday_middleware-aws-sigv4', '~>0.3.0'
-@@ -274,7 +274,7 @@ gem 'slack-messenger', '~> 2.3.4'
+ gem 'typhoeus', '~> 1.4.0' # Used with Elasticsearch to support http keep-alive connections
+ 
+@@ -289,7 +289,7 @@ gem 'slack-messenger', '~> 2.3.4'
  gem 'hangouts-chat', '~> 0.0.5', require: 'hangouts_chat'
  
  # Asana integration
@@ -56,12 +59,12 @@
  
  # FogBugz integration
  gem 'ruby-fogbugz', '~> 0.3.0'
-@@ -367,118 +367,17 @@ gem 'prometheus-client-mmap', '~> 0.25', require: 'pro
+@@ -385,78 +385,10 @@ gem 'prometheus-client-mmap', '~> 0.27', require: 'pro
  
  gem 'warning', '~> 1.3.0'
  
 -group :development do
--  gem 'lefthook', '~> 1.4.2', require: false
+-  gem 'lefthook', '~> 1.4.7', require: false
 -  gem 'rubocop'
 -  gem 'solargraph', '~> 0.47.2', require: false
 -
@@ -82,24 +85,21 @@
 -  gem 'parser', '~> 3.2', '>= 3.2.2.3'
 -  gem 'pry-byebug'
 -  gem 'pry-rails', '~> 0.3.9'
--  gem 'pry-shell', '~> 0.6.1'
+-  gem 'pry-shell', '~> 0.6.4'
 -
 -  gem 'awesome_print', require: false
 -
 -  gem 'database_cleaner', '~> 1.7.0'
 -  gem 'factory_bot_rails', '~> 6.2.0'
--  gem 'rspec-rails', '~> 6.0.1'
+-  gem 'rspec-rails', '~> 6.0.3'
 -
 -  # Prevent occasions where minitest is not bundled in packaged versions of ruby (see #3826)
 -  gem 'minitest', '~> 5.11.0'
 -
--  # Generate Fake data
--  gem 'ffaker', '~> 2.10'
--
 -  gem 'spring', '~> 4.1.0'
 -  gem 'spring-commands-rspec', '~> 1.0.4'
 -
--  gem 'gitlab-styles', '~> 10.0.0', require: false
+-  gem 'gitlab-styles', '~> 10.1.0', require: false
 -
 -  gem 'haml_lint', '~> 0.40.0', require: false
 -  gem 'bundler-audit', '~> 0.7.0.1', require: false
@@ -125,19 +125,21 @@
 -end
 -
  group :development, :test, :danger do
-   gem 'gitlab-dangerfiles', '~> 3.10.0', require: false
+   gem 'gitlab-dangerfiles', '~> 3.13.0', require: false
  end
  
 -group :development, :test, :coverage do
 -  gem 'simplecov', '~> 0.21', require: false
 -  gem 'simplecov-lcov', '~> 0.8.0', require: false
--  gem 'simplecov-cobertura', '~> 1.3.1', require: false
+-  gem 'simplecov-cobertura', '~> 2.1.0', require: false
 -  gem 'undercover', '~> 0.4.4', require: false
 -end
 -
  # Gems required in omnibus-gitlab pipeline
  group :development, :test, :omnibus do
    gem 'license_finder', '~> 7.0', require: false
+@@ -468,37 +400,8 @@ group :development, :test, :monorepo do
+   gem 'rspec_flaky', path: 'gems/rspec_flaky'
  end
  
 -group :test do
@@ -148,10 +150,9 @@
 -  gem 'rspec-parameterized', '~> 1.0', require: false
 +gem 'octokit', '>= 4.15'
  
--  gem 'capybara', '~> 3.39', '>= 3.39.1'
+-  gem 'capybara', '~> 3.39', '>= 3.39.2'
 -  gem 'capybara-screenshot', '~> 1.0.26'
--  # 4.9.1 drops Ruby 2.7 support. We can upgrade further after we drop Ruby 2.7 support.
--  gem 'selenium-webdriver', '= 4.9.0'
+-  gem 'selenium-webdriver', '= 4.11.0'
 -
 -  gem 'graphlyte', '~> 1.0.0'
 -
@@ -160,7 +161,7 @@
 -  gem 'webmock', '~> 3.18.1'
 -  gem 'rails-controller-testing'
 -  gem 'concurrent-ruby', '~> 1.1'
--  gem 'test-prof', '~> 1.2.1'
+-  gem 'test-prof', '~> 1.2.2'
 -  gem 'rspec_junit_formatter'
 -  gem 'guard-rspec'
 -  gem 'axe-core-rspec'
@@ -168,7 +169,7 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false
 -
--  gem 'gitlab_quality-test_tooling', '~> 0.8.1', require: false
+-  gem 'gitlab_quality-test_tooling', '~> 0.9.3', require: false
 -end
 -
 -gem 'octokit', '~> 4.15'
@@ -176,14 +177,14 @@
  gem 'gitlab-mail_room', '~> 0.0.23', require: 'mail_room'
  
  gem 'email_reply_trimmer', '~> 0.1'
-@@ -514,14 +413,14 @@ gem 'gitaly', '~> 16.1.0-rc2'
+@@ -534,14 +437,14 @@ gem 'gitaly', '~> 16.2.0-rc4'
  # KAS GRPC protocol definitions
- gem 'kas-grpc', '~> 0.1.0'
+ gem 'kas-grpc', '~> 0.2.0'
  
--gem 'grpc', '~> 1.42.0'
-+gem 'grpc', '~> 1.42'
+-gem 'grpc', '~> 1.55.0'
++gem 'grpc', '~> 1.55'
  
- gem 'google-protobuf', '~> 3.23', '>= 3.23.3'
+ gem 'google-protobuf', '~> 3.23', '>= 3.23.4'
  
  gem 'toml-rb', '~> 2.2.0'
  
@@ -193,7 +194,7 @@
  gem 'flipper-active_record', '~> 0.25.0'
  gem 'flipper-active_support_cache_store', '~> 0.25.0'
  gem 'unleash', '~> 3.2.2'
-@@ -535,7 +434,7 @@ gem 'grape_logging', '~> 1.8'
+@@ -555,7 +458,7 @@ gem 'grape_logging', '~> 1.8'
  gem 'gitlab-net-dns', '~> 0.9.2'
  
  # Countries list
@@ -202,15 +203,13 @@
  
  gem 'retriable', '~> 3.1.2'
  
-@@ -582,6 +481,11 @@ gem 'ed25519', '~> 1.3.0'
- # Error Tracking OpenAPI client
- # See https://gitlab.com/gitlab-org/gitlab/-/blob/master/doc/development/rake_tasks.md#update-openapi-client-for-error-tracking-feature
- gem 'error_tracking_open_api', path: 'vendor/gems/error_tracking_open_api'
+@@ -628,3 +531,9 @@ gem 'net-protocol', '~> 0.1.3'
+ gem 'net-http', '= 0.1.1'
+ 
+ gem 'duo_api', '~> 1.3'
 +
 +gem 'parser'
 +gem 'net-smtp'
 +gem 'net-pop'
 +gem 'psych', '~> 3.1'
- 
- # Vulnerability advisories
- gem 'cvss-suite', '~> 3.0.1', require: 'cvss_suite'
++
