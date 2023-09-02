@@ -1,5 +1,6 @@
 PORTNAME=	ristretto
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -22,10 +23,15 @@ USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		NLS
+OPTIONS_DEFINE=		NLS TUMBLER
+OPTIONS_DEFAULT=	TUMBLER
 OPTIONS_SUB=		yes
+
+TUMBLER_DESC=		Install Tumbler dependency for creating thumbnails
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
+
+TUMBLER_RUN_DEPENDS=	xfce4-tumbler>0:deskutils/xfce4-tumbler
 
 .include <bsd.port.mk>
