@@ -17,6 +17,7 @@ share/mime/packages/vym.xml
 %%DATADIR%%/demos/scripts/examplescript.vys
 %%DATADIR%%/demos/scripts/export-image.vys
 %%DATADIR%%/demos/scripts/iterating-branches.vys
+%%DATADIR%%/demos/scripts/setSelectionBoxDarkTheme.vys
 %%DATADIR%%/demos/scripts/strip-url.vys
 %%DATADIR%%/demos/task-management.vym
 %%DATADIR%%/demos/time-management.vym
@@ -109,6 +110,7 @@ share/mime/packages/vym.xml
 %%DATADIR%%/icons/configure-plus.svg
 %%DATADIR%%/icons/cursors/cursorcolorpicker.png
 %%DATADIR%%/icons/cursors/cursorxlink.png
+%%DATADIR%%/icons/document-save.svg
 %%DATADIR%%/icons/down-diagonal-left.png
 %%DATADIR%%/icons/down-diagonal-right.png
 %%DATADIR%%/icons/down.png
