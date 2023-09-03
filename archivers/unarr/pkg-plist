@@ -1,5 +1,9 @@
 include/unarr.h
+lib/cmake/unarr/unarr-config.cmake
+lib/cmake/unarr/unarr-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/unarr/unarr-targets.cmake
+lib/cmake/unarr/unarr-version.cmake
 lib/libunarr.so
 lib/libunarr.so.1
-lib/libunarr.so.1.0.0
+lib/libunarr.so.1.1.0
 libdata/pkgconfig/libunarr.pc

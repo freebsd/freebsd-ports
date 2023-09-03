@@ -1,6 +1,6 @@
 PORTNAME=	unarr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	archivers
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,10 +12,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
 
-USES=		cmake pathfix
+TEST_DEPENDS=	cmocka>0:sysutils/cmocka
+
+USES=		cmake:testing pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	selmf
+CMAKE_TESTING_ON=	BUILD_INTEGRATION_TESTS BUILD_UNIT_TESTS
 
 post-patch:
 .if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld
