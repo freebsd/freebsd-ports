@@ -1,5 +1,5 @@
 PORTNAME=	winrm
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.6
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-httpclient>=2.2.0.2<3:www/rubygem-httpclient \
 		rubygem-logging>=1.6.1<3.0:devel/rubygem-logging \
 		rubygem-nori>=2.0<3:devel/rubygem-nori \
-		rubygem-rubyntlm>=0.6.1<0.7:net/rubygem-rubyntlm
+		rubygem-rubyntlm>=0.6.3<0.7:net/rubygem-rubyntlm
 
 USES=		gem
 
