@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_riscv64=		fails to build: Hard-float 'd' ABI can't be used for a target that doesn't support the D instruction set extension
 
-USES=		cmake
+USES=		cmake pathfix
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	selmf
