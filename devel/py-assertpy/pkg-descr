@@ -1,0 +1,7 @@
+Simple assertions library for unit testing in Python with a nice
+fluent API. Supports both Python 2 and 3.
+
+Just import the assert_that function, and away you go...
+
+Of course, assertpy works best with a python test runner like pytest
+(our favorite) or Nose.

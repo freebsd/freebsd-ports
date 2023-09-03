@@ -4260,6 +4260,7 @@
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspectlib
     SUBDIR += py-aspy.yaml
+    SUBDIR += py-assertpy
     SUBDIR += py-ast-decompiler
     SUBDIR += py-asteval
     SUBDIR += py-astor
