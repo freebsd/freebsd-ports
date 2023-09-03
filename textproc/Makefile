@@ -1525,6 +1525,7 @@
     SUBDIR += py-qrcode
     SUBDIR += py-rdflib
     SUBDIR += py-readchar
+    SUBDIR += py-readtime
     SUBDIR += py-recommonmark
     SUBDIR += py-regex
     SUBDIR += py-reindent
