@@ -1,6 +1,6 @@
---- src/auto/configure.orig	2018-04-21 15:08:14 UTC
+--- src/auto/configure.orig	2023-09-03 18:37:03 UTC
 +++ src/auto/configure
-@@ -903,7 +903,7 @@ pdfdir='${docdir}'
+@@ -938,7 +938,7 @@ pdfdir='${docdir}'
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
  localedir='${datarootdir}/locale'
@@ -9,25 +9,25 @@
  
  ac_prev=
  ac_dashdash=
-@@ -5369,7 +5369,7 @@ $as_echo_n "checking Lua version of LuaJ
- if ${vi_cv_version_lua_luajit+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+@@ -5659,7 +5659,7 @@ if test ${vi_cv_version_lua_luajit+y}
+ then :
+   printf %s "(cached) " >&6
+ else $as_nop
 -   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //'`
 +   vi_cv_version_lua_luajit=`${vi_cv_path_luajit} -e "print(_VERSION)" | sed 's/.* //' | tr -d '/'`
  fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
- $as_echo "$vi_cv_version_lua_luajit" >&6; }
-@@ -5423,7 +5423,7 @@ $as_echo_n "checking Lua version... " >&
- if ${vi_cv_version_plain_lua+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_lua_luajit" >&5
+ printf "%s\n" "$vi_cv_version_lua_luajit" >&6; }
+@@ -5719,7 +5719,7 @@ if test ${vi_cv_version_plain_lua+y}
+ then :
+   printf %s "(cached) " >&6
+ else $as_nop
 -   vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //'`
 +   vi_cv_version_plain_lua=`${vi_cv_path_plain_lua} -e "print(_VERSION)" | sed 's/.* //' | tr -d '.'`
  fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
- $as_echo "$vi_cv_version_plain_lua" >&6; }
-@@ -5514,7 +5514,7 @@ rm -f core conftest.err conftest.$ac_obj
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $vi_cv_version_plain_lua" >&5
+ printf "%s\n" "$vi_cv_version_plain_lua" >&6; }
+@@ -5838,7 +5838,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
        LIBS=$libs_save
      fi
      if test "x$lua_ok" = "xyes"; then
@@ -36,8 +36,8 @@
        LUA_SRC="if_lua.c"
        LUA_OBJ="objects/if_lua.o"
        LUA_PRO="if_lua.pro"
-@@ -5571,7 +5571,8 @@ $as_echo "yes" >&6; }
-       $as_echo "#define DYNAMIC_LUA 1" >>confdefs.h
+@@ -5895,7 +5895,8 @@ printf "%s\n" "yes" >&6; }
+       printf "%s\n" "#define DYNAMIC_LUA 1" >>confdefs.h
  
        LUA_LIBS=""
 -      LUA_CFLAGS="-DDYNAMIC_LUA_DLL=\\\"${vi_cv_dll_name_lua}\\\" $LUA_CFLAGS"
