@@ -1,7 +1,7 @@
-TIMESTAMP = 1693543034
-SHA256 (jacktrip-jacktrip-v2.0.1_GH0.tar.gz) = 0e1e3a97f52db353086ea0003304fec10b6de18158103d548d32b59753890bde
-SIZE (jacktrip-jacktrip-v2.0.1_GH0.tar.gz) = 6264579
-SHA256 (jacktrip-Simple-FFT-06f237780364879337750d1ac9f3b000b4b7a160_GH0.tar.gz) = 4881eb33fae38e033eaf0ee123614eff8f27790708350043f2ae371150900006
-SIZE (jacktrip-Simple-FFT-06f237780364879337750d1ac9f3b000b4b7a160_GH0.tar.gz) = 22834
+TIMESTAMP = 1693756528
+SHA256 (jacktrip-jacktrip-v2.0.2_GH0.tar.gz) = 127f694335687312f3a51a5cd60e9344fee717cef4c6018147b7147956a62c24
+SIZE (jacktrip-jacktrip-v2.0.2_GH0.tar.gz) = 6265516
+SHA256 (jothepro-doxygen-awesome-css-9380569_GH0.tar.gz) = b57aa7345f76f23521f81c1d12d8286a33c47cf94b5ad38a85bdcf46c6aff5cc
+SIZE (jothepro-doxygen-awesome-css-9380569_GH0.tar.gz) = 431473
 SHA256 (x42-weakjack-cddbeec0953d68048d164c472c9b30a5d96778db_GH0.tar.gz) = 451a660ae579cc3d31d369efa08d2b7680fc3a7bfec7832e61d8b11575ad8d14
 SIZE (x42-weakjack-cddbeec0953d68048d164c472c9b30a5d96778db_GH0.tar.gz) = 7987
