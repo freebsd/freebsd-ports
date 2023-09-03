@@ -160,9 +160,6 @@ share/xpra/www/js/lib/jquery.js.gz
 share/xpra/www/js/lib/jsmpeg.js
 share/xpra/www/js/lib/jsmpeg.js.br
 share/xpra/www/js/lib/jsmpeg.js.gz
-share/xpra/www/js/lib/jszip.js
-share/xpra/www/js/lib/jszip.js.br
-share/xpra/www/js/lib/jszip.js.gz
 share/xpra/www/js/lib/lz4.js
 share/xpra/www/js/lib/lz4.js.br
 share/xpra/www/js/lib/lz4.js.gz
