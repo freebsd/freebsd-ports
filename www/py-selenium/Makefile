@@ -1,6 +1,5 @@
 PORTNAME=	selenium
-PORTVERSION=	3.141.0
-PORTREVISION=	1
+PORTVERSION=	4.12.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +9,11 @@ COMMENT=	Python bindings for Selenium
 WWW=		https://www.seleniumhq.org/
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.26:net/py-urllib3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}trio>=0.17:net/py-trio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}trio-websocket>=0.9:net/py-trio-websocket@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}certifi>=2021.10.8:security/py-certifi@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
