@@ -20,7 +20,8 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sphinx>=1.2,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_PORTDOCS=		*
 DOCS_VARS=		PYDISTUTILS_BUILD_TARGET=build_sphinx \
 			PYDISTUTILS_BUILDARGS="-n --all-files --fresh-env"
