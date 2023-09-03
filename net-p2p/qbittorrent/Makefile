@@ -1,11 +1,14 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	4.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	5b90e222a80849f346d0b12752aa1f7a9fb839fc.patch:-p1 # PR: Enable DBUS cmake option on FreeBSD
+
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Bittorrent client using Qt5 and libtorrent-rasterbar
+COMMENT=	Bittorrent client using Qt6 and libtorrent-rasterbar
 WWW=		https://www.qbittorrent.org/
 
 LICENSE=	GPLv2+
@@ -26,15 +29,19 @@ USES=			compiler:c++14-lang cpe pkgconfig cmake qt:6 ssl tar:xz
 USE_QT=			base svg translations
 USE_CXXSTD=		c++17 # prevent boost-related SEGV, see bug#264278
 
+USE_GITHUB=		nodefault
+GH_ACCOUNT=		qBittorrent
+GH_PROJECT=		qBittorrent
+
 CMAKE_ON=		QT6
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils gl
 USE_GL=			gl
+CMAKE_OFF=		WEBUI
 .endif
 
 .if ${FLAVOR} == nox
-SUFFIX=			-nox
 COMMENT+=		(web UI version)
 CMAKE_OFF=		GUI
 USERS=			qbittorrent
