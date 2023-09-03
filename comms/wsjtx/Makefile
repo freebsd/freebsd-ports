@@ -1,6 +1,6 @@
 PORTNAME=	wsjtx
 DISTVERSION=	2.5.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -48,7 +48,8 @@ make-hamlib-patch:
 	(cd ${WRKDIR}/.build/hamlib-prefix/src;diff -u hamlib/$f.orig hamlib/$f >> ${FILESDIR}/hamlib.patch || true)
 . endfor
 
-_WSJTX_PATCHES=	CMakeLists.txt Radio.cpp widgets/FrequencyLineEdit.cpp \
+_WSJTX_PATCHES=	wsjtx_config.h.in CMakeLists.txt Radio.cpp \
+		widgets/FrequencyLineEdit.cpp \
 		widgets/FrequencyDeltaLineEdit.cpp \
 		CMake/Modules/FindUsb.cmake \
 		CMake/Modules/FindHamlib.cmake
