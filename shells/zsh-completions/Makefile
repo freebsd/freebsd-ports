@@ -1,5 +1,5 @@
 PORTNAME=	zsh-completions
-PORTVERSION=	0.34.0
+PORTVERSION=	0.35.0
 CATEGORIES=	shells
 
 MAINTAINER=	sunpoet@FreeBSD.org
