@@ -20,7 +20,7 @@ GH_TUPLE=	shuque:bind9stats:687c94a:bind9stats
 
 SHEBANG_REGEX=	./(${EXAMPLES_DIRS:ts|})/.*
 SHEBANG_LANG=	expect gawk python3 zsh
-python3_CMD=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}
+python3_CMD=	${LOCALBASE}/bin/python${PYTHON_DEFAULT}
 zsh_CMD=	${LOCALBASE}/bin/zsh
 ruby_OLD_CMD=	/opt/csw/bin/ruby
 
