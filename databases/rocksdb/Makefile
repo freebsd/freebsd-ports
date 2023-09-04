@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	8.3.2
+PORTVERSION=	8.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -77,7 +77,7 @@ post-install:
 	# Locate all shared libraries. The STRIP_CMD below failed on our package building clusters.
 	${FIND} ${WRKSRC} ${STAGEDIR}${PREFIX} -name '*.so*'
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librocksdb.so
-	${INSTALL_LIB} ${WRKSRC}/librocksdb_tools.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/librocksdb_test.so ${WRKSRC}/librocksdb_tools.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/make_config.mk ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.post.mk>
