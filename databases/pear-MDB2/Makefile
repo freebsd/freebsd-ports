@@ -1,5 +1,6 @@
 PORTNAME=	MDB2
 DISTVERSION=	2.5.0b5
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
