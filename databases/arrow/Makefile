@@ -1,6 +1,5 @@
 PORTNAME=	arrow
-DISTVERSION=	8.0.0
-PORTREVISION=	13
+DISTVERSION=	13.0.0
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION} \
 		https://github.com/apache/orc/archive/rel/:orc
@@ -17,18 +16,32 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++14-lang localbase pkgconfig python:build
+USES=		cmake compiler:c++17-lang localbase pkgconfig python:build
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	nodefault
+GH_ACCOUNT=	apache
 
 WRKSRC_SUBDIR=	cpp
 
-CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=14 -DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 -DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE \
+		-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD_BENCHMARKS
 
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
 OPTIONS_GROUP_COMPRESSION=	BROTLI BZ2 LZ4 SNAPPY ZLIB ZSTD
-OPTIONS_GROUP_COMPONENTS=	COMPUTE CSV DATASET FILESYSTEM FLIGHT GANDIVA HDFS HIVESERVER2 IPC JSON MIMALLOC PARQUET ORC PLASMA PYTHON S3 SKYHOOK SUBSTRAIT BUILD_UTILITIES TESTING
+OPTIONS_GROUP_COMPONENTS=	ACERO COMPUTE CSV DATASET FILESYSTEM FLIGHT GANDIVA HDFS IPC JSON MIMALLOC PARQUET ORC S3 SKYHOOK SUBSTRAIT BUILD_UTILITIES TENSORFLOW TESTING
+OPTIONS_DEFINE=			UTF8PROC
+OPTIONS_DEFAULT=		UTF8PROC
 OPTIONS_SUB=			yes
+
+## Miscellaneous options
+
+UTF8PROC_DESC=			Build with support for Unicode properties using the utf8proc library
+UTF8PROC_CMAKE_BOOL=		ARROW_WITH_UTF8PROC
+UTF8PROC_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
+
+## DESCs
 
 COMPRESSION_DESC=		Compression support:
 COMPONENTS_DESC=		Build components:
@@ -55,17 +68,20 @@ ZSTD_LIB_DEPENDS=		libzstd.so:archivers/zstd
 
 ## Component options
 
+ACERO_DESC=			Arrow Acero Engine Module
+ACERO_CMAKE_BOOL=		ARROW_ACERO
+ACERO_IMPLIES=			COMPUTE IPC
+
 COMPUTE_DESC=			Arrow Compute Modules
 COMPUTE_CMAKE_BOOL=		ARROW_COMPUTE
-COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2 \
-				libutf8proc.so:textproc/utf8proc
+COMPUTE_LIB_DEPENDS=		libre2.so:devel/re2
 
 CSV_DESC=			Arrow CSV Parser Module
 CSV_CMAKE_BOOL=			ARROW_CSV
 
 DATASET_DESC=			Arrow Dataset Modules
 DATASET_CMAKE_BOOL=		ARROW_DATASET
-DATASET_IMPLIES=		COMPUTE FILESYSTEM
+DATASET_IMPLIES=		ACERO FILESYSTEM
 
 FILESYSTEM_DESC=		Arrow Filesystem Layer
 FILESYSTEM_CMAKE_BOOL=		ARROW_FILESYSTEM
@@ -88,18 +104,11 @@ GANDIVA_CMAKE_BOOL=		ARROW_GANDIVA
 GANDIVA_BUILD_DEPENDS=		${LOCALBASE}/bin/clang12:devel/llvm12 # explicitly requires llvm-12
 GANDIVA_LIB_DEPENDS=		libgrpc.so:devel/grpc \
 				libprotobuf.so:devel/protobuf \
-				libre2.so:devel/re2 \
-				libutf8proc.so:textproc/utf8proc
+				libre2.so:devel/re2
+GANDIVA_IMPLIES=		UTF8PROC
 
 HDFS_DESC=			Arrow HDFS bridge
 HDFS_CMAKE_BOOL=		ARROW_HDFS
-
-HIVESERVER2_DESC=		HiveServer2 client and Arrow adapter
-HIVESERVER2_USES=		python:build
-HIVESERVER2_VARS=		BINARY_ALIAS=python=${PYTHON_CMD}
-HIVESERVER2_BUILD_DEPENDS=	thrift:devel/thrift
-HIVESERVER2_CMAKE_BOOL=		ARROW_HIVESERVER2
-HIVESERVER2_BROKEN=		Pending conflict fix in thrift ports in bug#255538
 
 IPC_DESC=			Arrow IPC extensions
 IPC_CMAKE_BOOL=			ARROW_IPC
@@ -117,7 +126,7 @@ PARQUET_DESC=			Parquet libraries
 PARQUET_CMAKE_BOOL=		ARROW_PARQUET PARQUET_REQUIRE_ENCRYPTION
 PARQUET_USES=			ssl
 PARQUET_LIB_DEPENDS=		libthrift.so:devel/thrift-cpp
-PARQUET_IMPLIES=		COMPUTE
+PARQUET_IMPLIES=		IPC
 
 ORC_DESC=			Arrow ORC adapter
 ORC_CMAKE_BOOL=			ARROW_ORC
@@ -126,95 +135,70 @@ ORC_CONFIGURE_ENV=		ARROW_ORC_URL=file://${DISTDIR}/${DIST_SUBDIR}/release-1.6.6
 ORC_IMPLIES=			LZ4 SNAPPY ZLIB ZSTD # cpp/CMakeLists.txt
 ORC_BROKEN=			fatal error: 'orc/OrcFile.hh' file not found: https://issues.apache.org/jira/browse/ARROW-12624
 
-PLASMA_DESC=			Plasma object store
-PLASMA_CMAKE_BOOL=		ARROW_PLASMA
-PLASMA_LIB_DEPENDS=		libaws-c-auth.so:security/aws-c-auth \
-				libaws-c-compression.so:devel/aws-c-compression \
-				libaws-c-http.so:devel/aws-c-http \
-				libaws-c-mqtt.so:devel/aws-c-mqtt \
-				libaws-c-s3.so:devel/aws-c-s3 \
-				libaws-c-sdkutils.so:devel/aws-c-sdkutils \
-				libaws-crt-cpp.so:devel/aws-crt-cpp \
-				libgflags.so:devel/gflags
-
 BUILD_UTILITIES_DESC=		build Arrow commandline utilities
 BUILD_UTILITIES_CMAKE_BOOL=	ARROW_BUILD_UTILITIES
 
-PYTHON_DESC=			Build python extension support
-PYTHON_CMAKE_BOOL=		ARROW_PYTHON
-PYTHON_USES=			python
-PYTHON_BUILD_DEPENDS=		${PYNUMPY} # see https://issues.apache.org/jira/browse/ARROW-16820
-PYTHON_CMAKE_ON=		-DPython3_EXECUTABLE=${PYTHON_CMD}
-PYTHON_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
-PYTHON_RUN_DEPENDS=		${PYNUMPY}
-PYTHON_IMPLIES=			COMPUTE CSV DATASET FILESYSTEM HDFS JSON
-PYTHON_VARS=			PLIST_SUB+=PYTHON_SUFFIX=${PYTHON_SUFFIX}
+#PYTHON_DESC=			Build python extension support
+#PYTHON_CMAKE_BOOL=		ARROW_PYTHON
+#PYTHON_USES=			python
+#PYTHON_BUILD_DEPENDS=		${PYNUMPY} # see https://issues.apache.org/jira/browse/ARROW-16820
+#PYTHON_CMAKE_ON=		-DPython3_EXECUTABLE=${PYTHON_CMD}
+#PYTHON_RUN_DEPENDS=		${PYNUMPY}
+#PYTHON_IMPLIES=			COMPUTE CSV DATASET FILESYSTEM HDFS JSON
+#PYTHON_VARS=			PLIST_SUB+=PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
 S3_DESC=			S3 support
 S3_CMAKE_BOOL=			ARROW_S3
 S3_USES=			ssl
 S3_LIB_DEPENDS=			\
+				libaws-c-auth.so:security/aws-c-auth \
 				libaws-c-cal.so:security/aws-c-cal \
 				libaws-c-common.so:devel/aws-c-common \
+				libaws-c-compression.so:devel/aws-c-compression \
 				libaws-c-event-stream.so:devel/aws-c-event-stream \
+				libaws-c-http.so:devel/aws-c-http \
 				libaws-c-io.so:devel/aws-c-io \
+				libaws-c-mqtt.so:devel/aws-c-mqtt \
+				libaws-c-s3.so:devel/aws-c-s3 \
+				libaws-c-sdkutils.so:devel/aws-c-sdkutils \
 				libaws-checksums.so:devel/aws-checksums \
+				libaws-crt-cpp.so:devel/aws-crt-cpp \
 				libaws-cpp-sdk-s3.so:devel/aws-sdk-cpp \
 				libs2n.so:security/s2n-tls
-S3_IMPLIES=			ZLIB
 
 SKYHOOK_DESC=			Build the Skyhook libraries
 SKYHOOK_CMAKE_BOOL=		ARROW_SKYHOOK
+SKYHOOK_IMPLIES=		DATASET PARQUET
 SKYHOOK_BROKEN=			could NOT find librados
 
 SUBSTRAIT_DESC=			Build the Arrow Substrait Consumer Module
 SUBSTRAIT_CMAKE_BOOL=		ARROW_SUBSTRAIT
+SUBSTRAIT_IMPLIES=		DATASET IPC PARQUET
 SUBSTRAIT_BROKEN=		needs investigation
+
+TENSORFLOW_DESC=		TensorFlow support
+TENSORFLOW_CMAKE_BOOL=		ARROW_TENSORFLOW
+TENSORFLOW_BROKEN=		needs testing
 
 TESTING_DESC=			Arrow testing libraries
 TESTING_CMAKE_BOOL=		ARROW_TESTING
 TESTING_LIB_DEPENDS=		libgtest.so:devel/googletest
 
-.for opt in ${OPTIONS_GROUP_COMPRESSION} ${OPTIONS_GROUP_COMPONENTS}
+.for opt in ${OPTIONS_GROUP_COMPONENTS}
 .  if "${${opt}_BROKEN}" == ""
 OPTIONS_DEFAULT+=	${opt}
 .  endif
 .endfor
 
-.include <bsd.port.pre.mk>
-
-pre-configure-PYTHON-on:
-	@${REINPLACE_CMD} -e ' \
-		s|arrow_python|arrow_python${PYTHON_SUFFIX}|g; \
-		s|arrow-python|arrow-python${PYTHON_SUFFIX}|g \
-		' \
-		${WRKSRC}/../ci/appveyor-cpp-build.bat \
-		${WRKSRC}/../cpp/cmake_modules/FindArrowPython.cmake \
-		${WRKSRC}/../cpp/cmake_modules/FindArrowPythonFlight.cmake \
-		${WRKSRC}/../cpp/src/arrow/python/arrow-python-flight.pc.in \
-		${WRKSRC}/../cpp/src/arrow/python/arrow-python.pc.in \
-		${WRKSRC}/../cpp/src/arrow/python/ArrowPythonConfig.cmake.in \
-		${WRKSRC}/../cpp/src/arrow/python/ArrowPythonFlightConfig.cmake.in \
-		${WRKSRC}/../cpp/src/arrow/python/CMakeLists.txt \
-		${WRKSRC}/../dev/release/rat_exclude_files.txt \
-		${WRKSRC}/../dev/release/verify-apt.sh \
-		${WRKSRC}/../dev/release/verify-yum.sh \
-		${WRKSRC}/../dev/tasks/conda-recipes/arrow-cpp/meta.yaml \
-		${WRKSRC}/../dev/tasks/tasks.yml \
-		${WRKSRC}/../docs/source/developers/python.rst \
-		${WRKSRC}/../python/cmake_modules/FindArrowPython.cmake \
-		${WRKSRC}/../python/cmake_modules/FindArrowPythonFlight.cmake \
-		${WRKSRC}/../python/CMakeLists.txt \
-		${WRKSRC}/../python/pyarrow/__init__.py \
-		${WRKSRC}/../python/pyarrow/plasma.py \
-		${WRKSRC}/../python/setup.py
-	@${MV} ${WRKSRC}/src/arrow/python/arrow-python.pc.in ${WRKSRC}/src/arrow/python/arrow-python${PYTHON_SUFFIX}.pc.in
-	@${MV} ${WRKSRC}/src/arrow/python/arrow-python-flight.pc.in ${WRKSRC}/src/arrow/python/arrow-python${PYTHON_SUFFIX}-flight.pc.in
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPUTE} || ${PORT_OPTIONS:MFLIGHT} || ${PORT_OPTIONS:MGANDIVA}
-PLIST_FILES+=	lib/cmake/arrow/Findre2Alt.cmake
+PLIST_FILES+=	lib/cmake/Arrow/Findre2Alt.cmake
+.endif
+
+.if ${PORT_OPTIONS:MIPC} && ${PORT_OPTIONS:MBUILD_UTILITIES}
+PLIST_FILES+=	bin/arrow-file-to-stream \
+		bin/arrow-stream-to-file
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON} == "PYTHON" && ${PORT_OPTIONS:MFLIGHT} == "FLIGHT"
@@ -235,4 +219,4 @@ do-test: # tests fail to compile: https://issues.apache.org/jira/browse/ARROW-12
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

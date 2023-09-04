@@ -1,6 +1,6 @@
---- thirdparty/download_dependencies.sh.orig	2019-02-16 22:21:34 UTC
+--- thirdparty/download_dependencies.sh.orig	2023-08-17 08:05:04 UTC
 +++ thirdparty/download_dependencies.sh
-@@ -61,4 +61,6 @@ main() {
+@@ -62,4 +62,6 @@ main() {
    done
  }
  
