@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.12.0:www/py-cachecontrol@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.3.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}installer>=0.7<0.8:devel/py-installer@${PY_FLAVOR} \
@@ -35,17 +35,15 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING TRUSTSTORE
+OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING
 OPTIONS_DEFAULT=KEYRING
 COOKIECUTTER_DESC=	Use cookiecutter to generate project
 COPIER_DESC=		Use copier to generate project
 KEYRING_DESC=		Use keyring to save credentials
-TRUSTSTORE_DESC=	Use truststore as the SSL backend (Python 3.10+)
 
 COOKIECUTTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cookiecutter>=0:devel/py-cookiecutter@${PY_FLAVOR} \
-COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=0:devel/py-copier@${PY_FLAVOR} \
+COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=8.0.0:devel/py-copier@${PY_FLAVOR} \
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=0,1:security/py-keyring@${PY_FLAVOR} \
-TRUSTSTORE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}truststore>=0:security/py-truststore@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +53,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5:devel/py-importlib-r
 
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
+.else
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}truststore>=0:security/py-truststore@${PY_FLAVOR}
 .endif
 
 .if ${PYTHON_REL} < 31100
