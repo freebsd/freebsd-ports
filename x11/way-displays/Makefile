@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,6 @@ TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alex-courtis
-GH_TUPLE=	alex-courtis:alex-c-collections:v1.1.0:alex_c_collections/lib/alex-c-collections
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	VERSION="${DISTVERSIONFULL}"
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" OFLAGS=
