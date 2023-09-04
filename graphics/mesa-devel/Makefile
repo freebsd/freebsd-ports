@@ -4,8 +4,9 @@ DISTVERSIONSUFFIX=	-g1ae3c40732e
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	700efacda59c.patch:-p1
+PATCH_SITES=	https://github.com/mesa3d/${GL_PROJECT}/commit/:github
+PATCHFILES+=	700efacda59c.patch:-p1:github
+PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	3043f16d66bf.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/6881
 PATCHFILES+=	2930dcbb3329.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 
@@ -31,9 +32,9 @@ LIB_DEPENDS+=	libelf.so:devel/libelf
 
 USES=		bison cpe compiler:c++11-lib meson pkgconfig python:build shebangfix
 CPE_VENDOR=	mesa3d
-USE_GITHUB=	yes
-GH_ACCOUNT=	mesa3d
+USE_GITLAB=	yes
 USE_LDCONFIG=	yes
+GL_SITE=	https://gitlab.freedesktop.org
 BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
 MESON_ARGS=	-Dgallium-omx=disabled \
