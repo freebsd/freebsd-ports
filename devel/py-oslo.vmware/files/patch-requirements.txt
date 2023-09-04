@@ -1,9 +1,9 @@
---- requirements.txt.orig	2021-10-15 13:33:06 UTC
+--- requirements.txt.orig	2023-08-28 13:09:50 UTC
 +++ requirements.txt
-@@ -14,7 +14,7 @@ oslo.utils>=3.33.0 # Apache-2.0
- PyYAML>=3.13 # MIT
+@@ -15,7 +15,7 @@ PyYAML>=3.13 # MIT
  
  lxml>=4.5.0 # BSD
+ defusedxml>=0.7.1 # BSD
 -suds-community>=0.6 # LGPLv3+
 +suds>=0.6 # LGPLv3+
  eventlet!=0.18.3,!=0.20.1,>=0.18.2 # MIT
