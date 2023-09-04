@@ -14,6 +14,7 @@ include/algol68g/a68g-includes.h
 include/algol68g/a68g-level-3.h
 include/algol68g/a68g-lib.h
 include/algol68g/a68g-listing.h
+include/algol68g/a68g-mach.h
 include/algol68g/a68g-masks.h
 include/algol68g/a68g-math.h
 include/algol68g/a68g-moids.h
