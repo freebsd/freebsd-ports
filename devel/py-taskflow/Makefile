@@ -1,12 +1,13 @@
 PORTNAME=	taskflow
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Taskflow structured state management library
-WWW=		https://docs.openstack.org/taskflow/latest/
+WWW=		https://docs.openstack.org/taskflow/latest/ \
+		https://github.com/openstack/taskflow
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
