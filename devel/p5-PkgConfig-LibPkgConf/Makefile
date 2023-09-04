@@ -9,8 +9,6 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Interface to .pc file interface via libpkgconf
 WWW=		https://metacpan.org/release/PkgConfig-LibPkgConf
 
-BROKEN=		Incompatible with pkgconf 2.x (see https://github.com/PerlAlien/PkgConfig-LibPkgConf/pull/17)
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
