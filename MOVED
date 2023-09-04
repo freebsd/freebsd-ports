@@ -7845,3 +7845,4 @@ www/squid-devel||2023-09-01|Has expired: Not used anymore to create rc-state rel
 databases/rubygem-red-plasma||2023-09-04|Remove deprecated port. red-plasma is deprecated since 10.0.0. red-plasma will not be released from Apache Arrow 12.0.0 or so
 devel/rubygem-cucumber-cucumber-expressions15|devel/rubygem-cucumber-cucumber-expressions|2023-09-04|Remove obsoleted port. Use devel/rubygem-cucumber-cucumber-expressions instead
 devel/rubygem-cucumber-messages18|devel/rubygem-cucumber-messages|2023-09-04|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
+textproc/rubygem-cucumber-gherkin23|textproc/rubygem-cucumber-gherkin|2023-09-04|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
