@@ -1,0 +1,4 @@
+bin/adom
+%%PORTDOCS%%%%DOCSDIR%%/adomfaq.txt
+%%PORTDOCS%%%%DOCSDIR%%/credits.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
