@@ -5,7 +5,7 @@ MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
 
-MAINTAINER=	guido@kollerie.com
+MAINTAINER=	rm@FreeBSD.org
 COMMENT=	JetBrains PyCharm Professional Edition IDE
 WWW=		https://www.jetbrains.com/pycharm/
 
