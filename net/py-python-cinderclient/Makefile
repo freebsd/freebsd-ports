@@ -1,12 +1,13 @@
 PORTNAME=	python-cinderclient
-PORTVERSION=	9.3.0
+PORTVERSION=	9.4.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Block Storage API Client Library
-WWW=		https://docs.openstack.org/python-cinderclient/latest/
+WWW=		https://docs.openstack.org/python-cinderclient/latest/ \
+		https://github.com/openstack/python-cinderclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -4,5 +4,3 @@ of the OpenStack Cinder API.
 
 See the OpenStack CLI Reference for information on how to use the cinder
 command-line tool. You may also want to look at the OpenStack API documentation.
-
-See also: https://github.com/openstack/python-cinderclient
