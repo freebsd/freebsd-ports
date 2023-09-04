@@ -1,12 +1,13 @@
 PORTNAME=	os-brick
-PORTVERSION=	6.3.0
+PORTVERSION=	6.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Cinder brick library for managing local volume attaches
-WWW=		https://docs.openstack.org/os-brick/latest/
+WWW=		https://docs.openstack.org/os-brick/latest/ \
+		https://github.com/openstack/os-brick
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
