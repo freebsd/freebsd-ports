@@ -1,6 +1,6 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	4.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,7 +26,7 @@ nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
 USES=			compiler:c++14-lang cpe pkgconfig cmake qt:6 ssl tar:xz
-USE_QT=			base svg translations
+USE_QT=			base translations
 USE_CXXSTD=		c++17 # prevent boost-related SEGV, see bug#264278
 
 USE_GITHUB=		nodefault
@@ -37,6 +37,7 @@ CMAKE_ON=		QT6
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils gl
+USE_QT+=		svg
 USE_GL=			gl
 CMAKE_OFF=		WEBUI
 .endif
