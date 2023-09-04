@@ -1,5 +1,7 @@
 PORTNAME=	octave-forge-pythonic
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,7 +18,6 @@ USES=		octave python
 USE_GITLAB=	yes
 GL_ACCOUNT=	gnu-octave
 GL_PROJECT=	octave-pythonic
-GL_TAGNAME=	v0.1.2
 
 OCTAVE_SRC=		${GL_PROJECT}-${GL_TAGNAME}
 
