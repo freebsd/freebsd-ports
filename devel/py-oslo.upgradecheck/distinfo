@@ -1,3 +1,3 @@
-TIMESTAMP = 1677771271
-SHA256 (oslo.upgradecheck-2.1.1.tar.gz) = 9c69e2bebdecc68411871c18d3b4b679a7e88c9ec577e892fce0ce1dafed8de5
-SIZE (oslo.upgradecheck-2.1.1.tar.gz) = 19727
+TIMESTAMP = 1693333991
+SHA256 (oslo.upgradecheck-2.2.0.tar.gz) = b48fc9fe4b619b3e429de6acf6473353d74b09135e3aee6a3abb520dbfc25c28
+SIZE (oslo.upgradecheck-2.2.0.tar.gz) = 19857
