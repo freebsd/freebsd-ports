@@ -42,3 +42,12 @@
  
  all_but_some_tests: $(LIBRARY) $(BENCHMARKS) tools tools_lib test_libs $(ROCKSDBTESTS_SUBSET)
  
+@@ -1273,7 +1273,7 @@ package:
+ # 	Unit tests and tools
+ # ---------------------------------------------------------------------------
+ $(STATIC_LIBRARY): $(LIB_OBJECTS)
+-	$(AM_V_AR)rm -f $@ $(SHARED1) $(SHARED2) $(SHARED3) $(SHARED4)
++	$(AM_V_AR)rm -f $@
+ 	$(AM_V_at)$(AR) $(ARFLAGS) $@ $(LIB_OBJECTS)
+ 
+ $(STATIC_TEST_LIBRARY): $(TEST_OBJECTS)
