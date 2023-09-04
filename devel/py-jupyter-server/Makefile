@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.8.1:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.11:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.1.0:devel/py-anyio@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio3>=3.1.0:devel/py-anyio3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=0:security/py-argon2-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.4:devel/py-jupyter-client@${PY_FLAVOR} \
