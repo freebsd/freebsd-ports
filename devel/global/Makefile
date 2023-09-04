@@ -1,5 +1,6 @@
 PORTNAME=	global
 PORTVERSION=	6.6.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -12,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool ncurses perl5 shebangfix
 
+CONFIGURE_ARGS=	--with-exuberant-ctags=${LOCALBASE}/bin/exctags \
+		--with-python-interpreter=${LOCALBASE}/bin/python${PYTHON_DEFAULT} \
+		--with-universal-ctags=${LOCALBASE}/bin/uctags
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -22,7 +26,5 @@ INFO=		global
 CPE_VENDOR=	gnu
 
 SHEBANG_GLOB=	*.pl
-
-OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
