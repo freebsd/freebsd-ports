@@ -1,5 +1,5 @@
 PORTNAME=	rdf-normalize
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/ruby-rdf/rdf-normalize
 
 LICENSE=	UNLICENSE
 
-RUN_DEPENDS=	rubygem-rdf>=3.2<4:www/rubygem-rdf
+RUN_DEPENDS=	rubygem-rdf>=3.3<4:www/rubygem-rdf
 
 USES=		gem
 
