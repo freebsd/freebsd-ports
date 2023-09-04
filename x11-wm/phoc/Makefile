@@ -1,7 +1,10 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.0
+DISTVERSION=	0.31.0
 CATEGORIES=	x11-wm wayland
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	e6c8bd95c0eb.patch:-p1 # https://gitlab.gnome.org/World/Phosh/phoc/-/merge_requests/483
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Phone compositor
