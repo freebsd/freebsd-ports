@@ -7,7 +7,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, modern and high performance file watching and code reload in python
-WWW=		https://github.com/samuelcolvin/watchfiles
+WWW=		https://watchfiles.helpmanual.io/ \
+		https://github.com/samuelcolvin/watchfiles
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
