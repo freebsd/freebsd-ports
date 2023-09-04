@@ -39,6 +39,4 @@ PGSQL_VARS=			WANT_PGSQL=client
 REGEX_CONFIGURE_ENABLE=		regex
 SYSLOG_CONFIGURE_ENABLE=	log
 
-.include <bsd.port.options.mk>
-
 .include <bsd.port.mk>
