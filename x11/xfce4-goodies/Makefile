@@ -143,7 +143,7 @@ MENULIBRE_DESC=			Advanced compliant menu editor
 THEMES_DESC=			Additional themes for xfwm4
 
 BSDCPUFREQ_RUN_DEPENDS=		xfce4-bsdcpufreq-plugin>=0:sysutils/xfce4-bsdcpufreq-plugin
-MENULIBRE_RUN_DEPENDS=		py${PYTHON3_DEFAULT:S/.//}-menulibre>=0:x11/menulibre
+MENULIBRE_RUN_DEPENDS=		py${PYTHON_DEFAULT:S/.//}-menulibre>=0:x11/menulibre
 THEMES_RUN_DEPENDS=		xfce4-wm-themes>=0:misc/xfce4-wm-themes
 
 .include <bsd.port.mk>
