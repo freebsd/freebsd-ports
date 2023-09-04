@@ -1,5 +1,5 @@
 PORTNAME=	distributed
-PORTVERSION=	2023.8.1
+PORTVERSION=	2023.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toolz>=0.10.0:devel/py-toolz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.0.4:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.24.3,1:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}zict>=2.1.0:devel/py-zict@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}zict>=3.0.0:devel/py-zict@${PY_FLAVOR}
 
 USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
