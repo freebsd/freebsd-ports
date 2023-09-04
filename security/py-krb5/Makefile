@@ -1,5 +1,5 @@
 PORTNAME=	krb5
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/jborean93/pykrb5
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.29<3.0.0:lang/cython@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.32<4.0.0:lang/cython@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
