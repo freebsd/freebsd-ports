@@ -16,9 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 
 USES=		cpe python
 USE_PYTHON=	autoplist distutils
-
 CPE_VENDOR=	loguru_project
-
 NO_ARCH=	yes
 
 do-test:
