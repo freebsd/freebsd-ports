@@ -2,9 +2,9 @@ PORTNAME=	readline
 PORTVERSION=	8.2.${PATCHLEVEL}
 CATEGORIES=	devel
 MASTER_SITES=	GNU
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
+DISTNAME=	readline-${PORTVERSION:R}
 
-PATCH_SITES=	GNU/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}-patches
+PATCH_SITES=	GNU/readline/readline-${PORTVERSION:R}-patches
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for editing command lines as they are typed
@@ -31,7 +31,7 @@ PATCHES=	1
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:O:[-1]}
 .for patch in ${PATCHES}
-PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
+PATCHFILES+=	readline${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
 .endfor
 .else
 PATCHLEVEL=	0
