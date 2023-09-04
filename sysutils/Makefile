@@ -283,6 +283,7 @@
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detox
+    SUBDIR += devcpu-data
     SUBDIR += devctl-jail-kmod
     SUBDIR += devd-mount
     SUBDIR += devedeng
