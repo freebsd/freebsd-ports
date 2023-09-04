@@ -1,12 +1,13 @@
 PORTNAME=	python-designateclient
-PORTVERSION=	5.2.0
+PORTVERSION=	5.3.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack DNS-as-a-Service - Client
-WWW=		https://docs.openstack.org/python-designateclient/latest/
+WWW=		https://docs.openstack.org/python-designateclient/latest/ \
+		https://github.com/openstack/python-designateclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
