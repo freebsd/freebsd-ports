@@ -15,6 +15,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libyaml-cpp.so:devel/yaml-cpp \
 		libwayland-client.so:graphics/wayland \
 		libinput.so:x11/libinput
+TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
 USES=		compiler:c11 gmake pkgconfig
 USE_GITHUB=	yes
@@ -23,6 +24,7 @@ GH_TUPLE=	alex-courtis:alex-c-collections:v1.1.0:alex_c_collections/lib/alex-c-c
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	VERSION="${DISTVERSIONFULL}"
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}" OFLAGS=
+TEST_TARGET=	test
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz \
 		"@sample ${ETCDIR}/cfg.yaml.sample"
