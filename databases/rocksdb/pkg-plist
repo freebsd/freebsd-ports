@@ -123,5 +123,6 @@ lib/librocksdb.so
 lib/librocksdb.so.8
 lib/librocksdb.so.%%SHLIB_VER%%
 lib/librocksdb.so.%%PORTVERSION%%
+lib/librocksdb_test.so
 lib/librocksdb_tools.so
 libdata/pkgconfig/rocksdb.pc
