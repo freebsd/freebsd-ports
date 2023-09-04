@@ -78,7 +78,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-CL-232.8660.186
+%%DATADIR%%/lib/build-marker-CL-232.9559.58
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -171,7 +171,6 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/clion-packageManager-plugin/lib/clion-packageManager-plugin.jar
 %%DATADIR%%/plugins/clion-performanceTesting-plugin/lib/clion-performanceTesting-plugin.jar
 %%DATADIR%%/plugins/clion-runFile-plugin/lib/clion-runFile-plugin.jar
-%%DATADIR%%/plugins/clion-rustHelper-plugin/lib/clion-rustHelper-plugin.jar
 %%DATADIR%%/plugins/clion-test-boost-plugin/lib/clion-test-boost-plugin.jar
 %%DATADIR%%/plugins/clion-test-catch-plugin/lib/clion-test-catch-plugin.jar
 %%DATADIR%%/plugins/clion-test-doctest-plugin/lib/clion-test-doctest-plugin.jar
@@ -254,8 +253,8 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-d5aed4438951.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-d5aed4438951.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-8314e18161f9.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-8314e18161f9.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -362,9 +361,11 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/js-language-service.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/js-lanuage-api.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/.gitignore
+%%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/ide-get-element-type.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/ide-watcher.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/init.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/logger-impl.js
+%%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/node_modules/tsc-ide-plugin/ide-get-element-type.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/node_modules/tsc-ide-plugin/index.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/node_modules/tsc-ide-plugin/package.json
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/out-path-process.js
@@ -380,6 +381,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/ts-plugin.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/ts-session-latest.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/ts-session-provider.js
+%%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/tsconfig.json
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/typescript/util.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/.gitignore
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint-api.js
