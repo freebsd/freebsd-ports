@@ -1,6 +1,5 @@
 PORTNAME=	rust-coreutils
-DISTVERSION=	0.0.20
-PORTREVISION=	1
+DISTVERSION=	0.0.21
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,9 +17,7 @@ GH_ACCOUNT=	uutils
 GH_PROJECT=	coreutils
 
 CARGO_CRATES=	adler-1.0.2 \
-		ahash-0.7.6 \
-		aho-corasick-0.7.19 \
-		aho-corasick-1.0.1 \
+		aho-corasick-1.0.4 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
@@ -35,6 +32,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		binary-heap-plus-0.5.0 \
 		bindgen-0.63.0 \
 		bitflags-1.3.2 \
+		bitflags-2.3.3 \
 		blake2b_simd-1.0.1 \
 		blake3-1.4.0 \
 		block-buffer-0.10.3 \
@@ -45,10 +43,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.79 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.26 \
+		chrono-0.4.28 \
 		clang-sys-1.4.0 \
-		clap-4.3.0 \
-		clap_builder-4.3.0 \
+		clap-4.3.21 \
+		clap_builder-4.3.21 \
 		clap_complete-4.3.0 \
 		clap_lex-0.5.0 \
 		clap_mangen-0.2.9 \
@@ -61,18 +59,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		conv-0.3.3 \
 		core-foundation-sys-0.8.3 \
 		coz-0.1.3 \
-		cpp-0.5.7 \
-		cpp_build-0.5.7 \
-		cpp_common-0.5.7 \
-		cpp_macros-0.5.7 \
+		cpp-0.5.9 \
+		cpp_build-0.5.9 \
+		cpp_common-0.5.9 \
+		cpp_macros-0.5.9 \
 		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.14 \
 		crossbeam-utils-0.8.15 \
-		crossterm-0.26.1 \
-		crossterm_winapi-0.9.0 \
+		crossterm-0.27.0 \
+		crossterm_winapi-0.9.1 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		ctrlc-3.4.0 \
@@ -91,32 +89,31 @@ CARGO_CRATES=	adler-1.0.2 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		exacl-0.10.0 \
-		fastrand-1.8.0 \
+		fastrand-2.0.0 \
 		file_diff-1.0.0 \
-		filetime-0.2.20 \
+		filetime-0.2.22 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
 		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
 		fts-sys-0.2.4 \
-		fundu-1.2.0 \
-		fundu-core-0.2.0 \
-		futures-0.3.25 \
-		futures-channel-0.3.25 \
-		futures-core-0.3.25 \
-		futures-executor-0.3.25 \
-		futures-io-0.3.25 \
-		futures-macro-0.3.25 \
-		futures-sink-0.3.25 \
-		futures-task-0.3.25 \
+		fundu-2.0.0 \
+		fundu-core-0.3.0 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
 		futures-timer-3.0.2 \
-		futures-util-0.3.25 \
+		futures-util-0.3.28 \
 		gcd-2.3.0 \
 		generic-array-0.14.6 \
 		getrandom-0.2.9 \
 		glob-0.3.1 \
 		half-2.2.1 \
-		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hermit-abi-0.3.2 \
 		hex-0.4.3 \
@@ -127,12 +124,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		indicatif-0.17.3 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
-		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
-		is-terminal-0.4.7 \
+		is-terminal-0.4.9 \
 		itertools-0.11.0 \
 		itoa-1.0.4 \
-		js-sys-0.3.60 \
+		js-sys-0.3.64 \
 		keccak-0.1.4 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
@@ -143,12 +139,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		libm-0.2.7 \
 		linux-raw-sys-0.1.4 \
 		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.5 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
-		lscolors-0.14.0 \
+		lscolors-0.15.0 \
 		match_cfg-0.1.0 \
 		md-5-0.10.5 \
-		memchr-2.5.0 \
+		memchr-2.6.2 \
 		memmap2-0.7.0 \
 		memoffset-0.8.0 \
 		minimal-lexical-0.2.1 \
@@ -157,10 +154,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		notify-6.0.1 \
-		nu-ansi-term-0.47.0 \
-		num-bigint-0.4.3 \
+		nu-ansi-term-0.49.0 \
+		num-bigint-0.4.4 \
 		num-integer-0.1.45 \
-		num-traits-0.2.15 \
+		num-traits-0.2.16 \
 		num_cpus-1.16.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
@@ -170,7 +167,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ordered-multimap-0.6.0 \
 		os_display-0.1.3 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.7 \
+		parking_lot_core-0.9.8 \
 		parse_datetime-0.4.0 \
 		peeking_take_while-0.1.2 \
 		phf-0.11.2 \
@@ -196,22 +193,22 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_pcg-0.3.1 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		reference-counted-singleton-0.1.2 \
-		regex-1.9.1 \
-		regex-automata-0.3.1 \
-		regex-syntax-0.7.3 \
+		regex-1.9.5 \
+		regex-automata-0.3.8 \
+		regex-syntax-0.7.5 \
 		relative-path-1.8.0 \
-		rlimit-0.10.0 \
+		rlimit-0.10.1 \
 		roff-0.2.1 \
-		rstest-0.18.1 \
-		rstest_macros-0.18.1 \
+		rstest-0.18.2 \
+		rstest_macros-0.18.2 \
 		rust-ini-0.19.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.36.14 \
-		rustix-0.37.19 \
+		rustix-0.36.15 \
+		rustix-0.37.23 \
+		rustix-0.38.8 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		self_cell-1.0.1 \
@@ -223,7 +220,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sha2-0.10.7 \
 		sha3-0.10.8 \
 		shlex-1.1.0 \
-		signal-hook-0.3.15 \
+		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		siphasher-0.3.10 \
@@ -237,7 +234,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		subtle-2.4.1 \
 		syn-1.0.109 \
 		syn-2.0.23 \
-		tempfile-3.6.0 \
+		tempfile-3.8.0 \
 		term_grid-0.1.7 \
 		terminal_size-0.2.6 \
 		textwrap-0.16.0 \
@@ -249,7 +246,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		tiny-keccak-2.0.2 \
 		typenum-1.15.0 \
 		unicode-ident-1.0.5 \
-		unicode-linebreak-0.1.4 \
+		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
 		unicode-xid-0.2.4 \
@@ -259,11 +256,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
 		which-4.3.0 \
 		wild-2.1.0 \
 		winapi-0.3.9 \
@@ -288,7 +285,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		xattr-1.0.0 \
+		xattr-1.0.1 \
 		yansi-0.5.1 \
 		z85-3.0.5 \
 		zip-0.6.6

@@ -35,6 +35,7 @@ bin/%%BINPREFIX%%fold
 bin/%%BINPREFIX%%groups
 bin/%%BINPREFIX%%hashsum
 bin/%%BINPREFIX%%head
+bin/%%BINPREFIX%%hostid
 bin/%%BINPREFIX%%hostname
 bin/%%BINPREFIX%%id
 bin/%%BINPREFIX%%install
