@@ -1,6 +1,5 @@
 PORTNAME=	iconbrowser
-DISTVERSION=	2.1.1
-PORTREVISION=	4
+DISTVERSION=	2.2.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	duchateau.olivier@gmail.com

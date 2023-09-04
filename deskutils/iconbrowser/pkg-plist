@@ -12,8 +12,11 @@ share/icons/hicolor/48x48/apps/io.elementary.iconbrowser.svg
 share/icons/hicolor/48x48@2/apps/io.elementary.iconbrowser.svg
 share/icons/hicolor/64x64/apps/io.elementary.iconbrowser.svg
 share/icons/hicolor/64x64@2/apps/io.elementary.iconbrowser.svg
+share/locale/ca/LC_MESSAGES/io.elementary.iconbrowser.mo
+share/locale/en_GB/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/fr/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/ja/LC_MESSAGES/io.elementary.iconbrowser.mo
+share/locale/nb/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/pt/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/ru/LC_MESSAGES/io.elementary.iconbrowser.mo
 share/locale/sk/LC_MESSAGES/io.elementary.iconbrowser.mo
