@@ -6,7 +6,7 @@ CATEGORIES=	x11 wayland
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator
-WWW=		https://github.com/jwilm/alacritty
+WWW=		https://alacritty.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	dejavu>0:x11-fonts/dejavu
 
-USES=		cargo localbase:ldflags python:build ssl:build
+USES=		cargo localbase:ldflags python:build
 USE_GITHUB=	yes
 
 CARGO_CRATES=	adler-1.0.2 \
