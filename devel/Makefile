@@ -7575,6 +7575,7 @@
     SUBDIR += smooth
     SUBDIR += smv
     SUBDIR += snazy
+    SUBDIR += snitch
     SUBDIR += soapui
     SUBDIR += sobjectizer
     SUBDIR += socket_wrapper

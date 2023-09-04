@@ -1,0 +1,3 @@
+include/snitch/snitch_all.hpp
+lib/cmake/snitch/snitch-config.cmake
+lib/cmake/snitch/snitch-header-only-targets.cmake
