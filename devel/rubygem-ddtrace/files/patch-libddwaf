@@ -1,0 +1,84 @@
+Obtained from:	https://github.com/DataDog/dd-trace-rb/commit/eb5ddedf18cf9129bab06b4f3063437fc0aabfd9
+
+--- ddtrace.gemspec.orig	2023-08-30 13:30:50 UTC
++++ ddtrace.gemspec
+@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0"])
+   s.add_runtime_dependency(%q<debase-ruby_core_source>.freeze, ["= 3.2.1"])
+-  s.add_runtime_dependency(%q<libddwaf>.freeze, ["~> 1.9.0.0.0"])
++  s.add_runtime_dependency(%q<libddwaf>.freeze, ["~> 1.11.0.0.0"])
+   s.add_runtime_dependency(%q<libdatadog>.freeze, ["~> 3.0.0.1.0"])
+ end
+ 
+--- lib/datadog/appsec/contrib/rack/request_middleware.rb.orig	2023-08-30 13:30:50 UTC
++++ lib/datadog/appsec/contrib/rack/request_middleware.rb
+@@ -137,17 +137,19 @@ module Datadog
+               )
+             end
+ 
+-            if processor.ruleset_info
+-              span.set_tag('_dd.appsec.event_rules.version', processor.ruleset_info[:version])
++            if processor.diagnostics
++              diagnostics = processor.diagnostics
+ 
++              span.set_tag('_dd.appsec.event_rules.version', diagnostics['ruleset_version'])
++
+               unless @oneshot_tags_sent
+                 # Small race condition, but it's inoccuous: worst case the tags
+                 # are sent a couple of times more than expected
+                 @oneshot_tags_sent = true
+ 
+-                span.set_tag('_dd.appsec.event_rules.loaded', processor.ruleset_info[:loaded].to_f)
+-                span.set_tag('_dd.appsec.event_rules.error_count', processor.ruleset_info[:failed].to_f)
+-                span.set_tag('_dd.appsec.event_rules.errors', JSON.dump(processor.ruleset_info[:errors]))
++                span.set_tag('_dd.appsec.event_rules.loaded', diagnostics['rules']['loaded'].size.to_f)
++                span.set_tag('_dd.appsec.event_rules.error_count', diagnostics['rules']['loaded'].size.to_f)
++                span.set_tag('_dd.appsec.event_rules.errors', JSON.dump(diagnostics['rules']['errors']))
+                 span.set_tag('_dd.appsec.event_rules.addresses', JSON.dump(processor.addresses))
+ 
+                 # Ensure these tags reach the backend
+--- lib/datadog/appsec/event.rb.orig	2023-08-30 13:30:50 UTC
++++ lib/datadog/appsec/event.rb
+@@ -105,7 +105,7 @@ module Datadog
+ 
+           # accumulate triggers
+           tags['_dd.appsec.triggers'] ||= []
+-          tags['_dd.appsec.triggers'] += event[:waf_result].data
++          tags['_dd.appsec.triggers'] += event[:waf_result].events
+         end
+       end
+     end
+--- lib/datadog/appsec/processor.rb.orig	2023-08-30 13:30:50 UTC
++++ lib/datadog/appsec/processor.rb
+@@ -43,10 +43,10 @@ module Datadog
+         end
+       end
+ 
+-      attr_reader :ruleset_info, :addresses
++      attr_reader :diagnostics, :addresses
+ 
+       def initialize(ruleset:)
+-        @ruleset_info = nil
++        @diagnostics = nil
+         @addresses = []
+         settings = Datadog.configuration.appsec
+ 
+@@ -83,7 +83,7 @@ module Datadog
+         }
+ 
+         @handle = Datadog::AppSec::WAF::Handle.new(ruleset, obfuscator: obfuscator_config)
+-        @ruleset_info = @handle.ruleset_info
++        @diagnostics = @handle.diagnostics
+         @addresses = @handle.required_addresses
+ 
+         true
+@@ -92,7 +92,7 @@ module Datadog
+           "libddwaf failed to initialize, error: #{e.inspect}"
+         end
+ 
+-        @ruleset_info = e.ruleset_info if e.ruleset_info
++        @diagnostics = e.diagnostics if e.diagnostics
+ 
+         false
+       rescue StandardError => e
