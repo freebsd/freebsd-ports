@@ -12,7 +12,7 @@ WWW=		https://python-poetry.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.1.0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.5.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0.10.0<0.11:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0<0.14:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cleo>=2.0.0<3:devel/py-cleo@${PY_FLAVOR} \
