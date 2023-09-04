@@ -18,69 +18,13 @@ instructions at %%DOCSDIR%%/UPGRADE.rst
 EOM
 }
 { type: upgrade
-  maximum_version: 1.51.0
+  maximum_version: 1.88.0
   message: <<EOM
-Synapse 1.51.0 deprecates webclient listeners and non-HTTP(S)
-web_client_location settings. Please update your homeserver configurations
-accordingly.
+Starting with synapse 1.88.0, the old worker replication configuration has been
+deprecated [1]. Please read the official upgrade instructions on how to migrate your
+configuration.
 
-Additionally, if you run your own turn server for WebRTC and
-use Let's Encrypt certificates, be advised that some Android and iOS clients
-may be unable to connect. Please see upstream's turn-howto[0] for additional
-details on this issue.
-
-[0] https://matrix-org.github.io/synapse/latest/turn-howto.html
-
-EOM
-}
-{ type: upgrade
-  maximum_version: 1.55.0
-  message: <<EOM
-The default room version of synapse has been increased to version 9. Consider
-changing this if interoperability with other matrix servers is an issue.
-
-If you're using Mjolnir, be advised that this version of synapse is
-incompatible with Mjolnir 1.3.1 and earlier.
-
-EOM
-}
-{
-  message: <<EOM
-Running synapse with the sqlite backend is only recommended for testing purposes.
-Future versions of synapse will disable federation by default if sqlite is used.
-EOM
-}
-{ type: upgrade
-  message: <<EOM
-If you're currently using synapse with sqlite and would like to switch to postgres,
-please read the instructions at %%DOCSDIR%%/postgres.md
-EOM
-}
-{ type: upgrade
-  maximum_version: 1.55.2
-  message: <<EOM
-Synapse will now refuse to start up if open registration is enabled, in order to help
-mitigate abuse across the federation. If you would like to provide registration to
-anyone, consider adding email, recaptcha or token-based verification in order to
-prevent automated registration from bad actors. This check can be disabled by setting
-the enable_registration_without_verification option in your homeserver configuration
-file to true. More details are available in the upgrade notes[0].
-
-Synapse will additionally now refuse to start when using PostgreSQL with a non-C values
-for COLLATE and CTYPE, unless the config flag allow_unsafe_locale, found in the database
-section of the configuration file, is set to true. See the upgrade notes[1] for details.
-
-[0] https://matrix-org.github.io/synapse/v1.56/upgrade.html#open-registration-without-verification-is-now-disabled-by-default
-[1] https://matrix-org.github.io/synapse/v1.56/upgrade#change-in-behaviour-for-postgresql-databases-with-unsafe-locale
-EOM
-}
-{ type: upgrade
-  maximum_version: 1.62.0
-  message: <<EOM
-Starting with synapse 1.62.0, this port will no longer ship with sqlite support
-by default. If you rely on sqlite for your setup, please either migrate to
-postgresql, install the sqlite dependency manually or build a custom flavor of the
-port.
+[1] https://matrix-org.github.io/synapse/develop/upgrade.html#removal-of-worker_replication_-settings
 EOM
 }
 ]

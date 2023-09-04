@@ -1,6 +1,6 @@
---- pyproject.toml.orig	2023-07-04 15:35:46 UTC
-+++ pyproject.toml
-@@ -210,17 +210,6 @@ importlib_metadata = { version = ">=1.4", python = "<3
+--- pyproject.toml.orig	2023-08-30 18:21:32.688339700 +0800
++++ pyproject.toml	2023-08-31 02:55:41.490241000 +0800
+@@ -207,17 +207,6 @@
  # We are currently incompatible with >=2.0.0: (https://github.com/matrix-org/synapse/issues/15858)
  pydantic = "^1.7.4"
  
@@ -18,11 +18,11 @@
  # Optional Dependencies
  # ---------------------
  matrix-synapse-ldap3 = { version = ">=0.1", optional = true }
-@@ -370,7 +359,7 @@ furo = ">=2022.12.7,<2024.0.0"
+@@ -367,7 +356,7 @@
  # system changes.
  # We are happy to raise these upper bounds upon request,
  # provided we check that it's safe to do so (i.e. that CI passes).
--requires = ["poetry-core>=1.1.0,<=1.6.0", "setuptools_rust>=1.3,<=1.6.0"]
+-requires = ["poetry-core>=1.1.0,<=1.7.0", "setuptools_rust>=1.3,<=1.6.0"]
 +requires = ["poetry-core>=1.1.0,<=1.7.0", "setuptools_rust>=1.3,<=1.7.0"]
  build-backend = "poetry.core.masonry.api"
  
