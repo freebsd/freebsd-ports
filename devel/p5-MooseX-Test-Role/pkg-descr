@@ -1,0 +1,2 @@
+MooseX::Test::Role provides functions for testing roles. It supports roles
+created with Moose::Role, Moo::Role or Role::Tiny.
