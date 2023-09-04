@@ -199,6 +199,7 @@ ZSTD_CMAKE_BOOL=	GDAL_USE_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cmake/modules/packages/FindMySQL.cmake
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/alg/internal_libqhull/
 	@${RM} -r ${WRKSRC}/frmts/gif/giflib/
