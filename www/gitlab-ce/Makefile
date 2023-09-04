@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.1.5
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -83,7 +84,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-gpgme>=2.0.22<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap>=0.18.0<0.19:net/rubygem-net-ldap \
-	rubygem-grape>=1.7.0<1.8:devel/rubygem-grape \
+	rubygem-grape17>=1.7.0<1.8:devel/rubygem-grape17 \
 	rubygem-grape-entity>=0.10.0<0.11.0,1:devel/rubygem-grape-entity \
 	rubygem-rack-cors>=1.1.1<1.2.0:www/rubygem-rack-cors \
 	rubygem-grape-swagger>=1.6.1<1.7:devel/rubygem-grape-swagger \
