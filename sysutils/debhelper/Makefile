@@ -1,8 +1,8 @@
 PORTNAME=	debhelper
-PORTVERSION=	13.11.5
+PORTVERSION=	13.11.6
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	debhelper_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Helper programs for debian/rules
@@ -16,7 +16,7 @@ USES=		gmake perl5 shebangfix tar:xz
 MAKE_ARGS=	PREFIX=${PREFIX} SITE_PERL=${PREFIX}/${SITE_PERL_REL} VERSION=${PORTVERSION}
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/work
 
 PORTSCOUT=	limit:^[0-9\.]*$$
 
