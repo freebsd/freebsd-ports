@@ -502,6 +502,7 @@
     SUBDIR += qt6-examples
     SUBDIR += qt6ct
     SUBDIR += quantum++
+    SUBDIR += randomx
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led

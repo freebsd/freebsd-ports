@@ -1,0 +1,17 @@
+--- CMakeLists.txt.orig	2023-09-04 17:31:42 UTC
++++ CMakeLists.txt
+@@ -192,6 +192,8 @@ install(TARGETS randomx
+   ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+   PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
++if (${BUILD_TESTING})
++
+ add_executable(randomx-tests
+   src/tests/tests.cpp)
+ target_link_libraries(randomx-tests
+@@ -234,3 +236,5 @@ if(NOT HAVE_CXX_ATOMICS)
+ endif()
+ set_property(TARGET randomx-benchmark PROPERTY POSITION_INDEPENDENT_CODE ON)
+ set_property(TARGET randomx-benchmark PROPERTY CXX_STANDARD 11)
++
++endif()
