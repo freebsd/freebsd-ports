@@ -1,8 +1,12 @@
 PORTNAME=	budgie-desktop
 DISTVERSION=	10.8
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11 budgie
 MASTER_SITES=	BUDGIE
+
+PATCH_SITES=	https://github.com/BuddiesOfBudgie/budgie-desktop/commit/
+PATCHFILES=	980b72e1651b53fd9f11e2c87dd4ea029896c858.patch:-p1
 
 MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Modern and familiar desktop environment
