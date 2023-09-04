@@ -1,12 +1,13 @@
 PORTNAME=	automaton
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendly state machines for python
-WWW=		https://docs.openstack.org/automaton/latest/
+WWW=		https://docs.openstack.org/automaton/latest/ \
+		https://github.com/openstack/automaton
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
