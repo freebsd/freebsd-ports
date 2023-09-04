@@ -20,7 +20,8 @@ USES=		cmake compiler:c11 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	werman
 
-CMAKE_OFF=	BUILD_VST_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
+CMAKE_OFF=	BUILD_TESTS
+CMAKE_OFF+=	BUILD_VST_PLUGIN # https://github.com/werman/noise-suppression-for-voice/issues/65
 CXXFLAGS+=	-DJUCE_CUSTOM_VST3_SDK=1
 
 PLIST_SUB=	XARCH=${ARCH:S/amd64/x86_64/}
