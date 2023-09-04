@@ -4228,6 +4228,7 @@
     SUBDIR += py-antlr4-python3-runtime
     SUBDIR += py-anyconfig
     SUBDIR += py-anyio
+    SUBDIR += py-anyio3
     SUBDIR += py-anyjson
     SUBDIR += py-anytree
     SUBDIR += py-apache_conf_parser
