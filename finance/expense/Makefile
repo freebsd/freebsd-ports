@@ -18,13 +18,11 @@ WRKSRC=		${WRKDIR}/Expense
 
 PORTSCOUT=	ignore:1
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-ADDITIONAL_CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Expense.app/Expense
+
+post-patch:
+	@${REINPLACE_CMD} -e '/_recordSort/s,^int,NSComparisonResult,' \
+		${WRKSRC}/LedgerModel.[hm]
 
 .include <bsd.port.mk>
