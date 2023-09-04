@@ -9,17 +9,6 @@
  #pragma options nostrict
  #include <ppu_intrinsics.h>
  #endif
-@@ -736,8 +736,8 @@ void pwr6_minmax_val_double_unrolled6(const double *re
-   {
-     size_t residual =  datasize % __UNROLL_DEPTH_1;
-     size_t ofs = datasize - residual;
--    double register dmin[__UNROLL_DEPTH_1];
--    double register dmax[__UNROLL_DEPTH_1];
-+    double dmin[__UNROLL_DEPTH_1];
-+    double dmax[__UNROLL_DEPTH_1];
- 
-     for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j) 
-       {
 @@ -749,21 +749,21 @@ void pwr6_minmax_val_double_unrolled6(const double *re
        {
  	for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j) 
