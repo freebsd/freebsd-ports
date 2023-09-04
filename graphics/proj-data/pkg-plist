@@ -3,6 +3,8 @@
 %%DATADIR%%/ISL
 %%DATADIR%%/NKG
 %%DATADIR%%/README.DATA
+%%DATADIR%%/ar_ign_GEOIDE-Ar16.tif
+%%DATADIR%%/ar_ign_README.txt
 %%DATADIR%%/at_bev_AT_GIS_GRID.tif
 %%DATADIR%%/at_bev_AT_GIS_GRID_2021_09_28.tif
 %%DATADIR%%/at_bev_GEOID_BESSEL_Oesterreich.tif
@@ -41,6 +43,10 @@
 %%DATADIR%%/ca_nrc_CRD27_00.tif
 %%DATADIR%%/ca_nrc_CRD93_00.tif
 %%DATADIR%%/ca_nrc_GS7783.tif
+%%DATADIR%%/ca_nrc_HT2_1997.tif
+%%DATADIR%%/ca_nrc_HT2_1997_CGG2013a.tif
+%%DATADIR%%/ca_nrc_HT2_2002v70.tif
+%%DATADIR%%/ca_nrc_HT2_2002v70_CGG2013a.tif
 %%DATADIR%%/ca_nrc_HT2_2010v70.tif
 %%DATADIR%%/ca_nrc_HT2_2010v70_CGG2013a.tif
 %%DATADIR%%/ca_nrc_MAY76V20.tif
@@ -254,6 +260,7 @@
 %%DATADIR%%/pl_gugik_README.txt
 %%DATADIR%%/pl_gugik_geoid2011-PL-EVRF2007-NH.tif
 %%DATADIR%%/pl_gugik_geoid2011-PL-KRON86-NH.tif
+%%DATADIR%%/pl_gugik_geoid2021-PL-EVRF2007-NH.tif
 %%DATADIR%%/pt_dgt_D73_ETRS89_geo.tif
 %%DATADIR%%/pt_dgt_DLx_ETRS89_geo.tif
 %%DATADIR%%/pt_dgt_README.txt
