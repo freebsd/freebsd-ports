@@ -1,5 +1,5 @@
 PORTNAME=	regress
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings to Rust's regress ECMA regular expressions library
-WWW=		https://github.com/ridiculousfish/regress
+WWW=		https://github.com/crate-py/regress
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
