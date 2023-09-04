@@ -58,7 +58,7 @@ eval "_openhab_conf_dir=\${${name}_conf_dir:-'%%PREFIX%%/etc/openhab'}"
 eval "_openhab_runtime_dir=\${${name}_runtime_dir:-'%%PREFIX%%/libexec/openhab/runtime'}"
 eval "_openhab_userdata_dir=\${${name}_userdata_dir:-'/var/db/openhab/userdata'}"
 eval "_openhab_log_dir=\${${name}_log_dir:-'/var/log/openhab'}"
-eval "_openhab_piddir=\${${name}_piddir}"
+eval "_openhab_piddir=\${${name}_piddir:-/var/run/${name}}"
 
 eval "_openhab_java_opts=\${${name}_java_opts:-''}"
 
@@ -78,12 +78,12 @@ export OPENHAB_LOGDIR="${_openhab_log_dir}"
 export LC_ALL=en_US.UTF-8
 export JAVA_VERSION=17
 
-pidfile=/var/run/${name}/${name}.pid
+pidfile=${_openhab_piddir}/${name}.pid
 
 start_precmd="openhab_prestart"
 
 command=/usr/sbin/daemon
-command_args="-p ${pidfile} -c -t openhab ${OPENHAB_HOME}/start.sh server"
+command_args="-u ${_openhab_user} -p ${pidfile} -c -t openhab ${OPENHAB_HOME}/start.sh server"
 
 openhab_prestart() {
     # Make sure we have our RUNDIR, even if it's on a tmpfs

@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230904:
+  AUTHOR: netchild@FreeBSD.org
+  AFFECTS: users of misc/openhab
+
+  The rc.d script of 4.0.2 had an error which didn't take the user to
+  run openhab into account. After installing the update and stopping
+  openhab run (for the default settings)
+    chown -R openhab:openhab /var/db/openhab/userdata /var/log/openhab
+  If you use other directories for the userdata and logs, you need to
+  adapt accordingly.
+
 20230822:
   AUTHOR: arrowd@FreeBSD.org
   AFFECTS: users of sysutils/polkit together with sysutils/consolekit2
