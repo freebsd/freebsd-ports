@@ -1,5 +1,5 @@
 PORTNAME=	dataclass-array
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	dataclass_array-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dataclasses that behave like numpy arrays (with indexing, slicing, vectorization)
-WWW=		https://github.com/google-research/dataclass_array
+WWW=		https://dataclass-array.readthedocs.io/en/latest/ \
+		https://github.com/google-research/dataclass_array
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
