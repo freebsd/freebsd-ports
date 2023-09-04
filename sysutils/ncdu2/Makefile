@@ -1,6 +1,6 @@
 PORTNAME=	ncdu
 PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 PKGNAMESUFFIX=	2
@@ -27,7 +27,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} zig build ${BUILD_ARGS}
 
 do-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncdu
+	/usr/bin/llvm-strip ${STAGEDIR}${PREFIX}/bin/ncdu
 	${MV} ${STAGEDIR}${PREFIX}/bin/ncdu ${STAGEDIR}${PREFIX}/bin/ncdu2
 	${INSTALL_MAN} ${WRKSRC}/ncdu.1 ${STAGEDIR}${PREFIX}/share/man/man1/ncdu2.1
 
