@@ -771,6 +771,8 @@ CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
 # By default CMake picks up the highest available version of Python package.
 # Enforce the version required by the port or the default.
 CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
+CMAKE_ARGS+=	-DPython_EXECUTABLE:FILEPATH="${PYTHON_CMD}"
+CMAKE_ARGS+=	-DPython${PYTHON_MAJOR_VER}_EXECUTABLE:FILEPATH="${PYTHON_CMD}"
 
 # Python 3rd-party modules
 PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
