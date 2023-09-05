@@ -1,6 +1,7 @@
 PORTNAME=	pcsx2
 PORTVERSION=	1.7.4970
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libbacktrace.so:devel/libbacktrace
 
 USES=		cmake compiler:c++20-lang \
-		desktop-file-utils gl pkgconfig qt:6 sdl xorg
+		desktop-file-utils elfctl gl pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
@@ -40,6 +41,7 @@ USE_GL=		egl
 USE_SDL=	sdl2
 USE_XORG=	ice x11 xcb xext xpm xrandr
 USE_QT=		base tools
+ELF_FEATURES=	+wxneeded:bin/pcsx2-qt
 
 # SSE 4.1 instructions are a hard requirement, if CPUTYPE is defined
 # use whatever is set and let the build fail if it falls below
