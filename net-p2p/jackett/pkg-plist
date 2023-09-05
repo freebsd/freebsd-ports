@@ -100,7 +100,6 @@
 %%DATADIR%%/Definitions/beyond-hd.yml
 %%DATADIR%%/Definitions/bibliotik.yml
 %%DATADIR%%/Definitions/bigfangroup.yml
-%%DATADIR%%/Definitions/biho.yml
 %%DATADIR%%/Definitions/bitbazis.yml
 %%DATADIR%%/Definitions/bitded.yml
 %%DATADIR%%/Definitions/bithorlo.yml
@@ -140,7 +139,6 @@
 %%DATADIR%%/Definitions/chdbits.yml
 %%DATADIR%%/Definitions/cheggit.yml
 %%DATADIR%%/Definitions/chilebt.yml
-%%DATADIR%%/Definitions/cinefilhd.yml
 %%DATADIR%%/Definitions/cinemageddon.yml
 %%DATADIR%%/Definitions/cinemamovies.yml
 %%DATADIR%%/Definitions/cinematik.yml
@@ -160,7 +158,6 @@
 %%DATADIR%%/Definitions/danishbytes-api.yml
 %%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
-%%DATADIR%%/Definitions/datatalli.yml
 %%DATADIR%%/Definitions/deildu.yml
 %%DATADIR%%/Definitions/demonoid.yml
 %%DATADIR%%/Definitions/desitorrents-api.yml
@@ -202,7 +199,6 @@
 %%DATADIR%%/Definitions/filelisting.yml
 %%DATADIR%%/Definitions/finelite.yml
 %%DATADIR%%/Definitions/finvip.yml
-%%DATADIR%%/Definitions/firebit.yml
 %%DATADIR%%/Definitions/fluxzone.yml
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
@@ -461,7 +457,6 @@
 %%DATADIR%%/Definitions/teamhd.yml
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
-%%DATADIR%%/Definitions/tellytorrent-api.yml
 %%DATADIR%%/Definitions/teracod.yml
 %%DATADIR%%/Definitions/the-crazy-ones.yml
 %%DATADIR%%/Definitions/theempire.yml
@@ -544,7 +539,6 @@
 %%DATADIR%%/Definitions/uniongang.yml
 %%DATADIR%%/Definitions/unleashthecartoons.yml
 %%DATADIR%%/Definitions/unlimitz.yml
-%%DATADIR%%/Definitions/uploads.yml
 %%DATADIR%%/Definitions/utopia.yml
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
