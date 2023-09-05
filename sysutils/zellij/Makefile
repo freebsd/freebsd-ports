@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.2
-PORTREVISION=	1
+DISTVERSION=	0.38.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -61,6 +60,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bytecheck-0.6.9 \
 		bytecheck_derive-0.6.9 \
 		byteorder-1.4.3 \
+		bytes-1.4.0 \
 		cache-padded-1.2.0 \
 		cassowary-0.3.0 \
 		cc-1.0.73 \
@@ -175,6 +175,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		io-lifetimes-1.0.10 \
 		is-terminal-0.4.7 \
 		is_ci-1.1.1 \
+		itertools-0.10.5 \
 		itoa-1.0.2 \
 		js-sys-0.3.58 \
 		kdl-4.5.0 \
@@ -212,6 +213,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		mio-0.8.6 \
 		miow-0.3.7 \
 		more-asserts-0.2.2 \
+		multimap-0.8.3 \
 		names-0.14.0 \
 		nix-0.23.1 \
 		nix-0.24.2 \
@@ -244,6 +246,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		pest_derive-2.1.0 \
 		pest_generator-2.1.3 \
 		pest_meta-2.1.3 \
+		petgraph-0.6.3 \
 		phf-0.8.0 \
 		phf-0.10.1 \
 		phf-0.11.1 \
@@ -260,10 +263,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		polling-2.2.0 \
 		ppv-lite86-0.2.16 \
 		pretty-bytes-0.2.2 \
+		prettyplease-0.1.25 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.19 \
 		proc-macro2-1.0.56 \
+		prost-0.11.9 \
+		prost-build-0.11.9 \
+		prost-derive-0.11.9 \
+		prost-types-0.11.9 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		quote-1.0.27 \
@@ -379,7 +387,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-linebreak-0.1.2 \
 		unicode-normalization-0.1.19 \
 		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
+		unicode-width-0.1.10 \
 		unsafe-any-ors-1.0.0 \
 		url-2.2.2 \
 		utf8parse-0.2.0 \
