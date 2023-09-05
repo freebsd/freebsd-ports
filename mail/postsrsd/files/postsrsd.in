@@ -13,12 +13,6 @@
 # postsrsd_enable (bool):   Set to "NO" by default.
 #                           Set it to "YES" to enable postsrsd.
 # postsrsd_uid (str):       Set username to run postsrsd.
-# postsrsd_secret (str):    Secret file file. See postsrsd(8)
-# postsrsd_domain (str):    Local domain name: rewrite to originate from this domain
-# postsrsd_exclude_domains (str):      Domains to exclude (comma-separated list)
-# postsrsd_forward_port (int): Port to listen for forward map
-# postsrsd_reverse_port (int): Port to listen for reverse map
-# postsrsd_idle_timeout (int): Timeout for idle client connection
 # postsrsd_flags (str):     Flags passed to start command.
 
 . /etc/rc.subr
@@ -38,24 +32,12 @@ load_rc_config $name
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 : ${postsrsd_enable="NO"}
-: ${postsrsd_domain=`/bin/hostname`}
 : ${postsrsd_uid="mailnull"}
-: ${postsrsd_secret="%%PREFIX%%/etc/postsrsd.secret"}
-: ${postsrsd_forward_port="10001"}
-: ${postsrsd_reverse_port="10002"}
-: ${postsrsd_idle_timeout="1800"}
-: ${postsrsd_exclude_domains=""}
 
 # Options other than above can be set with $postsrsd_flags.
 # see postsrsd documentation for detail.
 
 [ -n "${postsrsd_uid}" ] && _uid_prefix="-u"
-[ -n "${postsrsd_domain}" ] && cmd_args="-d ${postsrsd_domain}"
-[ -n "${postsrsd_secret}" ] && cmd_args="${cmd_args} -s ${postsrsd_secret}"
-[ -n "${postsrsd_forward_port}" ] && cmd_args="${cmd_args} -f ${postsrsd_forward_port}"
-[ -n "${postsrsd_reverse_port}" ] && cmd_args="${cmd_args} -r ${postsrsd_reverse_port}"
-[ -n "${postsrsd_idle_timeout}" ] && cmd_args="${cmd_args} -t ${postsrsd_idle_timeout}"
-[ -n "${postsrsd_exclude_domains}" ] && cmd_args="${cmd_args} -X${postsrsd_exclude_domains}"
 
 command_args=" -D ${_uid_prefix} ${postsrsd_uid} -p ${pidfile} ${cmd_args} ${postsrsd_flags}"
 
