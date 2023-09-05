@@ -5,7 +5,9 @@ CATEGORIES=	sysutils kde kde-frameworks
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 secure and unified container for user passwords
 
-LIB_DEPENDS=	libassuan.so:security/libassuan
+LIB_DEPENDS=	libassuan.so:security/libassuan \
+		libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qca qt:5 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
@@ -29,9 +31,7 @@ OPTIONS_SUB=		yes
 .include <bsd.port.pre.mk>
 
 .if !${ABI:Mpurecap}
-LIB_DEPENDS+=	libgcrypt.so:security/libgcrypt \
-		libgpg-error.so:security/libgpg-error \
-		libgpgme.so:security/gpgme \
+LIB_DEPENDS+=	libgpgme.so:security/gpgme \
 		libqgpgme.so:security/gpgme-qt@qt5 \
 		libgpgmepp.so:security/gpgme-cpp
 .endif
