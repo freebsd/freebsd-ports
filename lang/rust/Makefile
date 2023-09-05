@@ -23,7 +23,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 IGNORE_FreeBSD_12_powerpc=	is missing a bootstrap for FreeBSD 12.x powerpc
-ONLY_FOR_ARCHS?=	aarch64
+ONLY_FOR_ARCHS?=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le powerpc \
+			riscv64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
@@ -73,7 +74,6 @@ RUST_BOOTSTRAP_VERSION?=	1.70.0
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
 # Rust's target arch string might be different from *BSD arch strings
-_RUST_ARCH_aarch64=	aarch64
 _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
 _RUST_ARCH_riscv64=	riscv64gc
