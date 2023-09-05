@@ -56,6 +56,8 @@ TMPDIR?=	${WRKDIR}
 
 OPTIONS_DEFINE=		DOCS GDB LTO SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
+# rust-{analysis,std}-*-wasm32-* are missing when building for aarch64.
+OPTIONS_EXCLUDE_aarch64=WASM
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
