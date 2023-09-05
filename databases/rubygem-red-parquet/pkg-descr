@@ -8,5 +8,3 @@ GObject Introspection can generate language bindings automatically at runtime.
 
 Red Parquet uses Apache Parquet GLib and gobject-introspection gem to generate
 Ruby bindings of Apache Parquet.
-
-See also: https://github.com/apache/arrow/tree/master/ruby/red-parquet
