@@ -31,6 +31,12 @@ BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cpe ninja:build pkgconfig python:build ssl tar:xz
+# Use LLVM 16 instead of LLVM for Morello based on LLVM 14.
+# 
+# With LLVM 15 and earlier, llvm-tblgen from the Rust repository is incorrectly
+# compiled and does not implement any flags (e.g., --gen-attrs). The exact
+# reason for that must be still investigated.
+USES+=		llvm:16,build
 
 CPE_VENDOR=	rust-lang
 
@@ -73,6 +79,13 @@ RUST_BOOTSTRAP_VERSION?=	1.70.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
+.include <bsd.port.pre.mk>
+
+# See USES at the top of this file.
+AR=			/usr/bin/ar
+CC=			${LOCALBASE64}/bin/clang${LLVM_VERSION}
+CXX=			${LOCALBASE64}/bin/clang++${LLVM_VERSION}
+
 # Rust's target arch string might be different from *BSD arch strings
 _RUST_ARCH_amd64=	x86_64
 _RUST_ARCH_i386=	i686
@@ -102,8 +115,6 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustfmt-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
-
-.include <bsd.port.pre.mk>
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
