@@ -1,4 +1,4 @@
---- C/AesOpt.c.orig	2023-08-31 09:13:13 UTC
+--- C/AesOpt.c.orig	2023-09-05 00:20:25 UTC
 +++ C/AesOpt.c
 @@ -554,7 +554,7 @@ VAES_COMPAT_STUB (AesCtr_Code_HW)
  #endif // ! USE_INTEL_VAES
@@ -24,7 +24,7 @@
 +#define AES_TYPE_data Byte
 +
 +#define AES_FUNC_START(name) \
-+    void MY_FAST_CALL name(UInt32 *p, Byte *data, size_t numBlocks) \
++    void name(UInt32 *p, Byte *data, size_t numBlocks) \
 +
 +#define AES_COMPAT_STUB(name) \
 +    AES_FUNC_START(name); \
