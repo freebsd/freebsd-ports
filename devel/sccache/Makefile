@@ -17,18 +17,25 @@ ONLY_FOR_ARCHS_REASON=	ring crate not ported to other architectures
 
 USES=		cargo ssl
 
-LIB_DEPENDS+=libzstd.so:archivers/zstd
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	DOCS
 
-PLIST_FILES=	bin/sccache
-PORTDOCS=	README.md
+PLIST_FILES=	bin/sccache \
+		bin/sccache-dist
+PORTDOCS=	README.md docs/Architecture.md docs/Azure.md docs/Caching.md \
+		docs/Configuration.md docs/Distributed.md \
+		docs/DistributedFreeBSD.md docs/DistributedQuickstart.md \
+		docs/GHA.md docs/Gcs.md docs/Jenkins.md docs/Local.md \
+		docs/Memcached.md docs/Redis.md docs/Releasing.md \
+		docs/ResponseFiles.md docs/Rust.md docs/S3.md docs/Webdav.md
+SUB_FILES=	pkg-message
 
-CARGO_FEATURES=	all
+CARGO_FEATURES=	dist-client,dist-server
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.20 \
@@ -36,7 +43,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		android_system_properties-0.1.5 \
 		anstyle-0.3.5 \
 		anstyle-1.0.0 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		ar-0.9.0 \
 		arc-swap-1.5.1 \
 		arrayref-0.3.6 \
@@ -47,7 +54,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		async-compat-0.2.1 \
 		async-trait-0.1.68 \
 		autocfg-1.1.0 \
-		backon-0.4.0 \
+		backon-0.4.1 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
 		base64-0.21.0 \
@@ -110,7 +117,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		error-chain-0.12.4 \
-		fastrand-1.8.0 \
+		fastrand-1.9.0 \
 		filetime-0.2.21 \
 		flagset-0.4.3 \
 		flate2-1.0.26 \
@@ -205,7 +212,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		number_prefix-0.4.0 \
 		object-0.30.3 \
 		once_cell-1.17.1 \
-		opendal-0.37.0 \
+		opendal-0.39.0 \
 		openssl-0.10.55 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
@@ -231,21 +238,20 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.56 \
+		proc-macro2-1.0.63 \
 		quick-error-1.2.3 \
-		quick-xml-0.27.1 \
-		quick-xml-0.28.1 \
+		quick-xml-0.29.0 \
 		quote-1.0.26 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redis-0.22.1 \
+		redis-0.23.3 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
 		regex-1.7.3 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
-		reqsign-0.13.0 \
+		reqsign-0.14.1 \
 		reqwest-0.11.18 \
 		resolv-conf-0.7.0 \
 		retry-2.0.0 \
@@ -258,10 +264,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rustix-0.36.4 \
 		rustix-0.37.7 \
 		rustls-0.20.7 \
-		rustls-0.21.1 \
+		rustls-0.21.7 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-1.0.1 \
-		rustls-webpki-0.100.1 \
+		rustls-webpki-0.101.4 \
 		ryu-1.0.11 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
@@ -270,7 +276,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		sct-0.7.0 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
-		semver-1.0.16 \
+		semver-1.0.17 \
 		serde-1.0.159 \
 		serde_derive-1.0.159 \
 		serde_json-1.0.94 \
@@ -321,6 +327,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tokio-1.28.2 \
 		tokio-macros-2.1.0 \
 		tokio-native-tls-0.3.0 \
+		tokio-retry-0.3.0 \
 		tokio-rustls-0.23.4 \
 		tokio-rustls-0.24.0 \
 		tokio-serde-0.8.0 \
@@ -409,9 +416,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		zstd-sys-2.0.7+zstd.1.5.4
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}
+.endfor
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sccache-dist
 .include <bsd.port.mk>
