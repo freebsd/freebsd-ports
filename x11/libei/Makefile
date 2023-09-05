@@ -10,8 +10,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
+		${PYTHON_SITELIBDIR}/attrs:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/jinja2:devel/py-Jinja2@${PY_FLAVOR}
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libevdev.so:devel/libevdev
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
