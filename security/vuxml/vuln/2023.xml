@@ -2956,7 +2956,7 @@
 	<name>py39-django41</name>
 	<name>py310-django41</name>
 	<name>py311-django41</name>
-	<range><lt>4.0.10</lt></range>
+	<range><lt>4.1.10</lt></range>
       </package>
       <package>
 	<name>py38-django42</name>
