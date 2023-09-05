@@ -1,17 +1,15 @@
 [
 {
   message: <<EOM
-Suyimazu was created for the gui usage in the first place,
-the gui can be opened via the commandline by typing Suyimazu
-but also via a shortcut (if you have allowed to create one).
+An application shortcut for the desktop will be not created by the port.
 
-For terminal fans there are also some fast commands:
+To open the main gui type: Suyimazu
 
-Examples:
+For quick commandline taks you can use the following examples:
 
-    To install something use: 	Suyimazu Install Steam
-    To launch something use: 	Suyimazu Launch Steam
-    To uninstall something use: Suyimazu Uninstall Steam
+    To install something use: 		Suyimazu Install Steam
+    To launch something use: 		Suyimazu Launch Steam
+    To uninstall something use: 	Suyimazu Uninstall Steam
 
 Enjoy playing!
 EOM
