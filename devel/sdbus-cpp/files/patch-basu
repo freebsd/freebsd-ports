@@ -21,6 +21,17 @@ libsystemd is Linux-only, so replace with basu
      message(STATUS "Building with libsystemd v${LIBSYSTEMD_VERSION}")
  else()
      # Build static libsystemd library as an external project
+--- pkgconfig/sdbus-c++.pc.in.orig	2021-10-25 07:02:37 UTC
++++ pkgconfig/sdbus-c++.pc.in
+@@ -5,7 +5,7 @@ Description: C++ library on top of sd-bus, a systemd D
+ 
+ Name: @PROJECT_NAME@
+ Description: C++ library on top of sd-bus, a systemd D-Bus library
+-Requires: libsystemd
++Requires: basu
+ Version: @SDBUSCPP_VERSION@
+ Libs: -L${libdir} -l@PROJECT_NAME@
+ Cflags: -I${includedir}
 --- src/Connection.cpp.orig	2021-10-25 07:02:37 UTC
 +++ src/Connection.cpp
 @@ -30,7 +30,7 @@
