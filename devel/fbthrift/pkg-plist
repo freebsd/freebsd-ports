@@ -268,6 +268,13 @@ include/thrift/lib/cpp2/async/TwoWayBridge.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/debug.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/detail/debug-inl-post.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/detail/debug-inl-pre.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/detail/pretty_print-inl-post.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/detail/pretty_print-inl-pre.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/diff.h
+include/thrift/lib/cpp2/debug_thrift_data_difference/pretty_print.h
 include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
@@ -427,6 +434,7 @@ include/thrift/lib/cpp2/server/Cpp2Worker.h
 include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
 include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
+include/thrift/lib/cpp2/server/IResourcePoolAcceptor.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
 include/thrift/lib/cpp2/server/MemoryTracker.h
@@ -513,6 +521,7 @@ include/thrift/lib/cpp2/transport/rocket/client/RequestContext.h
 include/thrift/lib/cpp2/transport/rocket/client/RequestContextQueue.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketClient.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallback.h
+include/thrift/lib/cpp2/transport/rocket/flush/FlushManager.h
 include/thrift/lib/cpp2/transport/rocket/framing/ErrorCode.h
 include/thrift/lib/cpp2/transport/rocket/framing/Flags.h
 include/thrift/lib/cpp2/transport/rocket/framing/FrameType.h
@@ -574,6 +583,7 @@ include/thrift/lib/cpp2/type/detail/TypeClassFromTypeTag.h
 include/thrift/lib/cpp2/type/detail/TypeInfo.h
 include/thrift/lib/cpp2/type/detail/TypeRegistry.h
 include/thrift/lib/cpp2/type/detail/Wrap.h
+include/thrift/lib/cpp2/util/AllocationColocator.h
 include/thrift/lib/cpp2/util/BucketedRate.h
 include/thrift/lib/cpp2/util/Checksum.h
 include/thrift/lib/cpp2/util/DebugString.h
