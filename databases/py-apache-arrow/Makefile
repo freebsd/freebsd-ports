@@ -1,6 +1,5 @@
 PORTNAME=	apache-arrow
-DISTVERSION=	8.0.0
-PORTREVISION=	4
+DISTVERSION=	13.0.0
 CATEGORIES=	databases python
 MASTER_SITES=	APACHE/arrow/arrow-${DISTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,13 +21,15 @@ RUN_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libarrow.so:databases/arrow # assumes that arrow is built with PYTHON=ON (python support is built)
 
 USES=		compiler:c++11-lang pkgconfig python
-USE_PYTHON=	distutils cython concurrent # autoplist is broken, see https://issues.apache.org/jira/browse/ARROW-16820
+USE_PYTHON=	distutils cython # autoplist is broken, see https://issues.apache.org/jira/browse/ARROW-16820
 
 WRKSRC_SUBDIR=	python
 
 MAKE_ENV=	FREEBSD_PYTHON_SUFFIX=${PYTHON_SUFFIX}
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyarrow/*.cpython-${PYTHON_SUFFIX}.so
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyarrow/*.cpython-${PYTHON_SUFFIX}.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pyarrow/libarrow_python.so
 
 .include <bsd.port.mk>
