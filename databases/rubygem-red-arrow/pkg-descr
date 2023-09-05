@@ -9,5 +9,3 @@ GObject Introspection can generate language bindings automatically at runtime.
 
 Red Arrow uses Apache Arrow GLib and gobject-introspection gem to generate Ruby
 bindings of Apache Arrow.
-
-See also: https://github.com/apache/arrow/tree/master/ruby/red-arrow
