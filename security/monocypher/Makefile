@@ -1,5 +1,5 @@
 PORTNAME=	monocypher
-DISTVERSION=	4.0.1
+DISTVERSION=	4.0.2
 CATEGORIES=	security
 MASTER_SITES=	https://monocypher.org/download/
 
@@ -16,5 +16,8 @@ USE_LDCONFIG=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	all
 TEST_TARGET=	test
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmonocypher.so.*
 
 .include <bsd.port.mk>

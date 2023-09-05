@@ -1,0 +1,8 @@
+--- monocypher.pc.orig	2023-09-05 14:54:15 UTC
++++ monocypher.pc
+@@ -1,4 +1,4 @@
+-prefix=/PREFIX
++prefix=PREFIX
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ includedir=${prefix}/include
