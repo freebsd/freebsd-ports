@@ -279,6 +279,7 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	kvm_t *nkvm;
 	const char *kernel;
 	std::string filename;
+	int osreldate;
 	bool writeable;
 
 	if (ops == NULL || ops->supply_pcb == NULL || ops->cpu_pcb_addr == NULL)
@@ -340,6 +341,14 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 	}
 #endif
 
+	kvm = nkvm;
+	vmcore = std::move(filename);
+	current_inferior()->push_target (&fbsd_kvm_ops);
+
+	/* Pop the target automatically upon failure. */
+	target_unpush_up unpusher;
+	unpusher.reset (&fbsd_kvm_ops);
+
 	/*
 	 * Determine the first address in KVA.  Newer kernels export
 	 * VM_MAXUSER_ADDRESS and the first kernel address can be
@@ -353,11 +362,29 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 		kernstart = kgdb_lookup("kernbase");
 	}
 
+	try {
+		CORE_ADDR osreldatesym = kgdb_lookup("osreldate");
+		osreldate = read_memory_unsigned_integer(osreldatesym, 4,
+		    gdbarch_byte_order (target_gdbarch ()));
+	} catch (const gdb_exception_error &e) {
+		error ("Failed to look up osreldate");
+	}
+
 	/*
-	 * Lookup symbols needed for stoppcbs[] handling, but don't
+	 * Look up symbols needed for stoppcbs handling, but don't
 	 * fail if they aren't present.
 	 */
 	stoppcbs = kgdb_lookup("stoppcbs");
+	if (osreldate > 1400088) {
+		/* stoppcbs is now a pointer rather than an array. */
+		try {
+			stoppcbs = read_memory_typed_address(stoppcbs,
+			    builtin_type(target_gdbarch())->builtin_data_ptr);
+		} catch (const gdb_exception_error &e) {
+			stoppcbs = 0;
+		}
+	}
+
 	try {
 		pcb_size = parse_and_eval_long("pcb_size");
 	} catch (const gdb_exception_error &e) {
@@ -378,10 +405,6 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 #endif
 		}
 	}
-
-	kvm = nkvm;
-	vmcore = std::move(filename);
-	current_inferior()->push_target (&fbsd_kvm_ops);
 
 	kgdb_dmesg();
 
@@ -406,6 +429,9 @@ fbsd_kvm_target_open (const char *args, int from_tty)
 
 	reinit_frame_cache ();
 	print_stack_frame (get_selected_frame (NULL), 0, SRC_AND_LOC, 1);
+
+	/* Keep the target pushed. */
+	unpusher.release ();
 }
 
 void
