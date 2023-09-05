@@ -112,7 +112,6 @@
     SUBDIR += py-gdstk
     SUBDIR += py-gmsh
     SUBDIR += py-lcapy
-    SUBDIR += py-ocp
     SUBDIR += py-phidl
     SUBDIR += py-pyfda
     SUBDIR += py-pygmsh

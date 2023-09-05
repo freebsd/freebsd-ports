@@ -7852,3 +7852,4 @@ net-p2p/transmission-qt|net-p2p/transmission|2023-09-10|Moved to a flavored vers
 net-p2p/transmission-utils|net-p2p/transmission|2023-09-10|Moved to a flavored version
 www/transmission-web|net-p2p/transmission|2023-09-10|Moved to the daemon flavor
 devel/rubygem-cucumber-tag-expressions4|devel/rubygem-cucumber-tag-expressions|2023-09-11|Remove obsoleted port. Use devel/rubygem-cucumber-tag-expressions instead
+cad/py-ocp||2023-09-05|Has expired: Broken since 2021
