@@ -1,0 +1,11 @@
+--- configure.orig	2008-07-11 13:25:52 UTC
++++ configure
+@@ -21156,7 +21156,7 @@ echo $ECHO_N "checking PURPLE_MAJOR_VERSION... $ECHO_C
+ 
+ { echo "$as_me:$LINENO: checking PURPLE_MAJOR_VERSION" >&5
+ echo $ECHO_N "checking PURPLE_MAJOR_VERSION... $ECHO_C" >&6; }
+-PURPLE_MAJOR_VERSION="`echo $PURPLE_VERSION|"$SED" -e's/^\([^.]*\).*$/\1/g'`"
++PURPLE_MAJOR_VERSION=2
+ 
+ { echo "$as_me:$LINENO: result: $PURPLE_MAJOR_VERSION" >&5
+ echo "${ECHO_T}$PURPLE_MAJOR_VERSION" >&6; }
