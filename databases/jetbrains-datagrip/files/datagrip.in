@@ -1,4 +1,5 @@
 #!/bin/sh
+
 export JAVA_HOME="${JAVA_HOME:-"%%JAVA_HOME%%"}"
 export SHELL="/bin/sh"
 
