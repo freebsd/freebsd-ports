@@ -1,6 +1,6 @@
 PORTNAME=	openssh
 DISTVERSION=	9.3p2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	OPENBSD/OpenSSH/portable
@@ -21,6 +21,7 @@ USES=			alias autoreconf compiler:c11 cpe localbase ncurses \
 			pkgconfig ssl
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
+			--without-zlib-version-check \
 			--with-ssl-engine \
 			--with-mantype=man \
 			--with-Werror
