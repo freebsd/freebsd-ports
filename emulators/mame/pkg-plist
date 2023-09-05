@@ -1687,7 +1687,10 @@ man/man6/mame.6.gz
 %%DATADIR%%/hash/m5_cart.xml
 %%DATADIR%%/hash/m5_cass.xml
 %%DATADIR%%/hash/m5_flop.xml
+%%DATADIR%%/hash/mac_cdrom.xml
 %%DATADIR%%/hash/mac_flop.xml
+%%DATADIR%%/hash/mac_flop_clcracked.xml
+%%DATADIR%%/hash/mac_flop_orig.xml
 %%DATADIR%%/hash/mac_hdd.xml
 %%DATADIR%%/hash/mac_hdflop.xml
 %%DATADIR%%/hash/mbc200.xml
