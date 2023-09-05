@@ -808,6 +808,7 @@
     SUBDIR += py-psycopg2
     SUBDIR += py-psycopg2cffi
     SUBDIR += py-pum
+    SUBDIR += py-pyarrow
     SUBDIR += py-pycql
     SUBDIR += py-pylibmc
     SUBDIR += py-pymemcache
