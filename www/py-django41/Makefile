@@ -1,5 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	4.1.10
+PORTVERSION=	4.1.11
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
