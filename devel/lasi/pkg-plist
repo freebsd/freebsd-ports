@@ -177,4 +177,4 @@ libdata/pkgconfig/lasi.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/SimpleLASiExample.png
-@dir %%DATADIR%%
+%%PORTEXAMPLES%%@dir %%DATADIR%%
