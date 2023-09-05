@@ -495,6 +495,7 @@ include/folly/folly-config.h
 include/folly/functional/ApplyTuple.h
 include/folly/functional/Invoke.h
 include/folly/functional/Partial.h
+include/folly/functional/protocol.h
 include/folly/functional/traits.h
 include/folly/futures/Barrier.h
 include/folly/futures/Future-inl.h
