@@ -2,7 +2,7 @@
 # UI SEARCH PATH OPTIONS
 #
 historypath               ~/.mame/histroy;~/.mame/dats;%%DATADIR%%/history/;%%DATADIR%%/dats/;.
-categorypath              folders
+categorypath              ~/.mame/folders;%%DATADIR%%/folders
 cabinets_directory        ~/.mame/cabinets;~/.mame/cabdevs;%%DATADIR%%/cabinets/;%%DATADIR%%/cabdevs/
 cpanels_directory         ~/.mame/cpanel;%%DATADIR%%/cpanel
 pcbs_directory            ~/.mame/pcb;%%DATADIR%%/pcb
@@ -20,7 +20,7 @@ howto_directory           ~/.mame/howto;%%DATADIR%%/howto
 select_directory          ~/.mame/select;%%DATADIR%%/select
 icons_directory           ~/.mame/icons;%%DATADIR%%/icons
 covers_directory          ~/.mame/covers;%%DATADIR%%/covers
-ui_path                   ui
+ui_path                   ~/.mame/ui;%%DATADIR%%/ui
 
 #
 # UI MISC OPTIONS
