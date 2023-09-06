@@ -10,7 +10,7 @@ WWW=		https://github.com/bloomberg/bde
 
 LICENSE=	APACHE20
 
-USES=		cmake python:3.8+,build pkgconfig
+USES=		cmake python:build pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bloomberg
