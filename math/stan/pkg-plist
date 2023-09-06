@@ -3,9 +3,11 @@ include/stan/analyze/mcmc/compute_effective_sample_size.hpp
 include/stan/analyze/mcmc/compute_potential_scale_reduction.hpp
 include/stan/analyze/mcmc/split_chains.hpp
 include/stan/callbacks/interrupt.hpp
+include/stan/callbacks/json_writer.hpp
 include/stan/callbacks/logger.hpp
 include/stan/callbacks/stream_logger.hpp
 include/stan/callbacks/stream_writer.hpp
+include/stan/callbacks/structured_writer.hpp
 include/stan/callbacks/tee_writer.hpp
 include/stan/callbacks/unique_stream_writer.hpp
 include/stan/callbacks/writer.hpp
@@ -108,11 +110,13 @@ include/stan/model/hessian_times_vector.hpp
 include/stan/model/indexing.hpp
 include/stan/model/indexing/access_helpers.hpp
 include/stan/model/indexing/assign.hpp
+include/stan/model/indexing/assign_cl.hpp
 include/stan/model/indexing/assign_varmat.hpp
 include/stan/model/indexing/deep_copy.hpp
 include/stan/model/indexing/index.hpp
 include/stan/model/indexing/rvalue.hpp
 include/stan/model/indexing/rvalue_at.hpp
+include/stan/model/indexing/rvalue_cl.hpp
 include/stan/model/indexing/rvalue_index_size.hpp
 include/stan/model/indexing/rvalue_varmat.hpp
 include/stan/model/log_prob_grad.hpp
@@ -140,6 +144,9 @@ include/stan/services/optimize/defaults.hpp
 include/stan/services/optimize/laplace_sample.hpp
 include/stan/services/optimize/lbfgs.hpp
 include/stan/services/optimize/newton.hpp
+include/stan/services/pathfinder/multi.hpp
+include/stan/services/pathfinder/psis.hpp
+include/stan/services/pathfinder/single.hpp
 include/stan/services/sample/defaults.hpp
 include/stan/services/sample/fixed_param.hpp
 include/stan/services/sample/hmc_nuts_dense_e.hpp
@@ -158,6 +165,7 @@ include/stan/services/sample/standalone_gqs.hpp
 include/stan/services/util/create_rng.hpp
 include/stan/services/util/create_unit_e_dense_inv_metric.hpp
 include/stan/services/util/create_unit_e_diag_inv_metric.hpp
+include/stan/services/util/duration_diff.hpp
 include/stan/services/util/experimental_message.hpp
 include/stan/services/util/generate_transitions.hpp
 include/stan/services/util/gq_writer.hpp
