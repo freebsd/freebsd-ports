@@ -1716,6 +1716,7 @@
     SUBDIR += opendht
     SUBDIR += opengrok
     SUBDIR += openocd
+    SUBDIR += opentelemetry-cpp
     SUBDIR += openwince-include
     SUBDIR += orc
     SUBDIR += orcania
