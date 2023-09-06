@@ -3,7 +3,7 @@ PORTVERSION=	0.9.8
 DISTVERSIONPREFIX=	upstream/
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	plcmaechler@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary configuration file encoder/decoder
 WWW=		https://github.com/rlaager/docsis
 
