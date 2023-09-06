@@ -1,6 +1,6 @@
 CARGO_CRATES=	aho-corasick-0.7.20 \
 		annotate-snippets-0.9.1 \
-		bindgen-0.66.1 \
+		bindgen-0.68.1 \
 		bitflags-1.3.2 \
 		bitflags-2.2.1 \
 		cc-1.0.78 \
@@ -13,19 +13,19 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		clap_lex-0.3.1 \
 		either-1.8.1 \
 		env_logger-0.10.0 \
-		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		glob-0.3.1 \
 		heck-0.4.0 \
-		hermit-abi-0.2.6 \
+		hermit-abi-0.3.2 \
 		humantime-2.1.0 \
 		io-lifetimes-1.0.4 \
-		is-terminal-0.4.2 \
+		is-terminal-0.4.7 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.139 \
 		libloading-0.7.4 \
-		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.8 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		minimal-lexical-0.2.1 \
@@ -33,19 +33,19 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		once_cell-1.17.0 \
 		os_str_bytes-6.4.1 \
 		peeking_take_while-0.1.2 \
-		prettyplease-0.2.0 \
+		prettyplease-0.2.7 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.52 \
-		quote-1.0.26 \
+		proc-macro2-1.0.60 \
+		quote-1.0.28 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.7 \
+		rustix-0.37.3 \
 		shlex-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
-		syn-2.0.7 \
+		syn-2.0.18 \
 		termcolor-1.2.0 \
 		unicode-ident-1.0.6 \
 		unicode-width-0.1.10 \
@@ -56,11 +56,22 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
 		yansi-term-0.1.2
