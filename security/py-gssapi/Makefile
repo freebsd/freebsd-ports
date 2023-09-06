@@ -1,5 +1,5 @@
 PORTNAME=	gssapi
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,8 @@ LICENSE=	ISCL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
-# Officially: 3.7-3.11
-USES=	python:3.8-3.11
+# Officially: 3.7-3.12
+USES=	python
 USE_PYTHON=	autoplist cython distutils
 
 OPTIONS_RADIO=	GSSAPI
