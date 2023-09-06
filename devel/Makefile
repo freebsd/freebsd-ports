@@ -1571,6 +1571,7 @@
     SUBDIR += marl
     SUBDIR += massif-visualizer
     SUBDIR += mate-common
+    SUBDIR += matreshka
     SUBDIR += maven
     SUBDIR += maven-wrapper
     SUBDIR += maven39
