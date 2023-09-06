@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcares.so:dns/c-ares
 RUN_DEPENDS=	c-ares>=1.18.1:dns/c-ares
 
 USES=		bison cmake compiler:c++17-lang cpe gettext-runtime perl5 \
-		python:3.7+ shebangfix ssl
+		python shebangfix ssl
 
 USE_LDCONFIG=	yes
 
