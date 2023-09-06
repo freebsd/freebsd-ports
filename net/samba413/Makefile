@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}413
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			5
+PORTREVISION=			6
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -19,7 +19,30 @@ USES=				cpe
 
 EXTRA_PATCHES+=			${PATCHDIR}/0001-Zfs-provision-1.patch:-p1 \
 				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
-				${PATCHDIR}/CVE-2022-3437-des3-overflow-v4a-4.12.patch:-p1
+				${PATCHDIR}/CVE-2022-3437-des3-overflow-v4a-4.12.patch:-p1 \
+				${PATCHDIR}/0001-CVE-2022-2127-s3-winbind-Move-big-NTLMv2-blob-checks.patch:-p1 \
+				${PATCHDIR}/0002-CVE-2022-2127-winbindd-Fix-WINBINDD_PAM_AUTH_CRAP-le.patch:-p1 \
+				${PATCHDIR}/0003-CVE-2022-2127-ntlm_auth-cap-lanman-response-length-v.patch:-p1 \
+				${PATCHDIR}/0004-CVE-2023-34966-CI-test-for-sl_unpack_loop.patch:-p1 \
+				${PATCHDIR}/0005-CVE-2023-34966-mdssvc-harden-sl_unpack_loop.patch:-p1 \
+				${PATCHDIR}/0006-CVE-2023-34967-CI-add-a-test-for-type-checking-of-da.patch:-p1 \
+				${PATCHDIR}/0007-CVE-2023-34967-mdssvc-add-type-checking-to-dalloc_va.patch:-p1 \
+				${PATCHDIR}/0010-CVE-2023-34968-lib-Move-subdir_of-to-source3-lib-uti.patch:-p1 \
+				${PATCHDIR}/0011-CVE-2023-34968-mdssvc-cache-and-reuse-stat-info-in-s.patch:-p1 \
+				${PATCHDIR}/0012-CVE-2023-34968-mdssvc-add-missing-kMDSStoreMetaScope.patch:-p1 \
+				${PATCHDIR}/0013-CVE-2023-34968-mdscli-use-correct-TALLOC-memory-cont.patch:-p1 \
+				${PATCHDIR}/0014-CVE-2023-34968-mdscli-remove-response-blob-allocatio.patch:-p1 \
+				${PATCHDIR}/0015-CVE-2023-34968-smbtorture-remove-response-blob-alloc.patch:-p1 \
+				${PATCHDIR}/0016-CVE-2023-34968-rpcclient-remove-response-blob-alloca.patch:-p1 \
+				${PATCHDIR}/0017-CVE-2023-34968-mdssvc-remove-response-blob-allocatio.patch:-p1 \
+				${PATCHDIR}/0018-CVE-2023-34968-mdssvc-switch-to-doing-an-early-retur.patch:-p1 \
+				${PATCHDIR}/0019-CVE-2023-34968-mdssvc-introduce-an-allocating-wrappe.patch:-p1 \
+				${PATCHDIR}/0020-CVE-2023-34968-mdscli-return-share-relative-paths.patch:-p1 \
+				${PATCHDIR}/0021-CVE-2023-34968-mdssvc-return-a-fake-share-path.patch:-p1
+
+# These have been removed from EXTRA_PATCHES because they are empty and patch(1) complains about them
+#				${PATCHDIR}/0008-CVE-2023-34967-CI-add-a-test-for-type-checking-of-da.patch:-p1
+#				${PATCHDIR}/0009-CVE-2023-34967-mdssvc-add-type-checking-to-dalloc_va.patch:-p1
 
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
