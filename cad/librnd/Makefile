@@ -68,15 +68,6 @@ STROKE_CONFIGURE_OFF=	--disable-stroke
 WGET_RUN_DEPENDS=	wget:ftp/wget
 WGET_CONFIGURE_OFF=	--disable-lib_wget
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-USES+=	llvm:max=15
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2} || ${PORT_OPTIONS:MGTK4} || ${PORT_OPTIONS:MMOTIF}
@@ -84,6 +75,10 @@ PLIST_SUB+=	GUI=""
 .else
 PLIST_SUB+=	GUI="@comment "
 .endif
+
+post-patch:
+	@${ECHO_CMD} 'USER_CFLAGS += -DSCCONFIG_ACCEPT_IMPLICIT' \
+		>> ${WRKSRC}/scconfig/Makefile
 
 pre-configure:
 	${REINPLACE_CMD} \
