@@ -1,21 +1,21 @@
 #!/bin/sh
-
-# PROVIDE: /service
+#
+# PROVIDE: runsvdir
 # BEFORE:  SERVERS
 # KEYWORD: shutdown
-
+#
 # Add the following lines to /etc/rc.conf to enable `runsvdir':
 #
-#runsvdir_enable="YES"		(default: NO)
-#runsvdir_path="/service"	(default: %%SERVICE_DIR%%)
-#
+# runsvdir_enable="YES"		(default: NO)
+# runsvdir_path="/var/service"	(default: %%SERVICE_DIR%%)
 
 . /etc/rc.subr
 
 name=runsvdir
 rcvar=runsvdir_enable
+desc="Runit service supervision"
 
-load_rc_config runsvdir
+load_rc_config $name
 
 : ${runsvdir_enable:=NO}
 : ${runsvdir_path=%%SERVICE_DIR%%}

@@ -1,0 +1,18 @@
+--- etc/freebsd/3.orig	2023-06-06 12:50:59 UTC
++++ etc/freebsd/3
+@@ -1,7 +1,7 @@
+ #!/bin/sh
+ exec 2>&1
+ 
+-PATH=/command:/sbin:/bin:/usr/sbin:/usr/bin
++PATH=/command:/sbin:/bin:/usr/sbin:/usr/bin:%%PREFIX%%/sbin:%%PREFIX%%/bin
+ 
+ echo 'Waiting for services to stop...'
+ sv -w196 force-stop /service/*
+@@ -11,5 +11,5 @@ echo 'Shutdown...'
+ if test -x /etc/runit/reboot; then
+   exec reboot
+ else
+-  exec halt
++  exec halt -p
+ fi

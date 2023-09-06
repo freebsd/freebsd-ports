@@ -1,6 +1,6 @@
 PORTNAME=	runit
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -36,14 +36,15 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	${REINPLACE_CMD} -i '' 's!/service/!${SERVICE_DIR}!' \
 		${PATCH_WRKSRC}/man/* ${PATCH_WRKSRC}/src/sv.c
-	${REINPLACE_CMD} -i '' '\|^PATH=|s|$$|:${PREFIX}/bin:${PREFIX}/sbin|' \
-		${PATCH_WRKSRC}/etc/freebsd/3
 	${FIND} ${PATCH_WRKSRC} -name '*.orig' -delete
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CC}" > ${WRKSRC}/src/conf-ld
-	${ECHO_CMD} '#define PREFIX "${PREFIX}"' >> ${WRKSRC}/src/runit.h
+	${REINPLACE_CMD} 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/src/runit.h	\
+		${WRKSRC}/etc/freebsd/1	\
+		${WRKSRC}/etc/freebsd/3
 
 do-build:
 	cd ${WRKSRC} && package/compile && package/check
