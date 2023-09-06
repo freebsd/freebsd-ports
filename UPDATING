@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230906:
+  AUTHOR: jrm@FreeBSD.org
+  AFFECTS: users of sysutils/devcpu-data*
+
+  The CPU microcode ports have been reorganized.  The new ports are:
+  sysutils/cpu-microcode, sysutils/cpu-microcode-amd,
+  sysutils/cpu-microcode-intel, and cpu-microcode-rc.
+
+  To install all CPU microcode packages:
+
+     pkg install cpu-microcode
+
+  To install only packages for a specific CPU vendor:
+
+     pkg install cpu-microcode-amd
+
+     or
+
+     pkg install cpu-microcode-intel
+
+  To give users time to adjust to these changes, sysutils/devcpu-data will
+  remain in the tree until the end of 2023.  The port has been converted to a
+  metaport and now provides the same functionality as sysutils/cpu-microcode.
+
+  Refer to the commit log in bc7829212d153aeff69b439d08e2e3001ef88ba3 for an
+  explanation as to why these changes were made.
+
 20230904:
   AUTHOR: netchild@FreeBSD.org
   AFFECTS: users of misc/openhab
