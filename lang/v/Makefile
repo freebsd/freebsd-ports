@@ -1,5 +1,5 @@
 PORTNAME=	v
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	lang
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,9 +16,9 @@ ALL_TARGET=	v
 LDFLAGS+=	-lm
 TEST_TARGET=	check
 
-GH_ACCOUNT=	vlang
-GH_TUPLE=	vlang:vc:02102e5:vc/vc
 USE_GITHUB=	yes
+GH_TUPLE=	vlang:v:${PORTVERSION} \
+		vlang:vc:b59fe13:vc/vc
 
 PORTSCOUT=	skipv:weekly.*
 
