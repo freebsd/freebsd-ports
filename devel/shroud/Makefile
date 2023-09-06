@@ -1,5 +1,6 @@
 PORTNAME=	shroud
-DISTVERSION=	0.12.2-20220929
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.13.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-wrapper-generator
 
@@ -17,7 +18,6 @@ USE_PYTHON=	distutils autoplist noflavors
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
-GH_TAGNAME=	f5a1aec
 
 NO_ARCH=	yes
 
