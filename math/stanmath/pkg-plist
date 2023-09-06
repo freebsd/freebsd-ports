@@ -147,6 +147,7 @@ include/stan/math/fwd/functor/gradient.hpp
 include/stan/math/fwd/functor/hessian.hpp
 include/stan/math/fwd/functor/jacobian.hpp
 include/stan/math/fwd/functor/operands_and_partials.hpp
+include/stan/math/fwd/functor/partials_propagator.hpp
 include/stan/math/fwd/functor/reduce_sum.hpp
 include/stan/math/fwd/meta.hpp
 include/stan/math/fwd/meta/is_fvar.hpp
@@ -687,6 +688,8 @@ include/stan/math/prim/fun/acos.hpp
 include/stan/math/prim/fun/acosh.hpp
 include/stan/math/prim/fun/add.hpp
 include/stan/math/prim/fun/add_diag.hpp
+include/stan/math/prim/fun/all.hpp
+include/stan/math/prim/fun/any.hpp
 include/stan/math/prim/fun/append_array.hpp
 include/stan/math/prim/fun/append_col.hpp
 include/stan/math/prim/fun/append_row.hpp
@@ -742,6 +745,7 @@ include/stan/math/prim/fun/cov_matrix_constrain_lkj.hpp
 include/stan/math/prim/fun/cov_matrix_free.hpp
 include/stan/math/prim/fun/cov_matrix_free_lkj.hpp
 include/stan/math/prim/fun/crossprod.hpp
+include/stan/math/prim/fun/csr_extract.hpp
 include/stan/math/prim/fun/csr_extract_u.hpp
 include/stan/math/prim/fun/csr_extract_v.hpp
 include/stan/math/prim/fun/csr_extract_w.hpp
@@ -763,6 +767,8 @@ include/stan/math/prim/fun/dot.hpp
 include/stan/math/prim/fun/dot_product.hpp
 include/stan/math/prim/fun/dot_self.hpp
 include/stan/math/prim/fun/eigen_comparisons.hpp
+include/stan/math/prim/fun/eigendecompose.hpp
+include/stan/math/prim/fun/eigendecompose_sym.hpp
 include/stan/math/prim/fun/eigenvalues.hpp
 include/stan/math/prim/fun/eigenvalues_sym.hpp
 include/stan/math/prim/fun/eigenvectors.hpp
@@ -961,8 +967,10 @@ include/stan/math/prim/fun/promote_elements.hpp
 include/stan/math/prim/fun/promote_scalar.hpp
 include/stan/math/prim/fun/pseudo_eigenvalues.hpp
 include/stan/math/prim/fun/pseudo_eigenvectors.hpp
+include/stan/math/prim/fun/qr.hpp
 include/stan/math/prim/fun/qr_Q.hpp
 include/stan/math/prim/fun/qr_R.hpp
+include/stan/math/prim/fun/qr_thin.hpp
 include/stan/math/prim/fun/qr_thin_Q.hpp
 include/stan/math/prim/fun/qr_thin_R.hpp
 include/stan/math/prim/fun/quad_form.hpp
@@ -993,6 +1001,7 @@ include/stan/math/prim/fun/scale_matrix_exp_multiply.hpp
 include/stan/math/prim/fun/scaled_add.hpp
 include/stan/math/prim/fun/sd.hpp
 include/stan/math/prim/fun/segment.hpp
+include/stan/math/prim/fun/select.hpp
 include/stan/math/prim/fun/sign.hpp
 include/stan/math/prim/fun/signbit.hpp
 include/stan/math/prim/fun/simplex_constrain.hpp
@@ -1018,6 +1027,7 @@ include/stan/math/prim/fun/sub_col.hpp
 include/stan/math/prim/fun/sub_row.hpp
 include/stan/math/prim/fun/subtract.hpp
 include/stan/math/prim/fun/sum.hpp
+include/stan/math/prim/fun/svd.hpp
 include/stan/math/prim/fun/svd_U.hpp
 include/stan/math/prim/fun/svd_V.hpp
 include/stan/math/prim/fun/symmetrize_from_lower_tri.hpp
@@ -1065,6 +1075,7 @@ include/stan/math/prim/functor.hpp
 include/stan/math/prim/functor/algebra_solver_adapter.hpp
 include/stan/math/prim/functor/apply.hpp
 include/stan/math/prim/functor/apply_scalar_binary.hpp
+include/stan/math/prim/functor/apply_scalar_ternary.hpp
 include/stan/math/prim/functor/apply_scalar_unary.hpp
 include/stan/math/prim/functor/apply_vector_unary.hpp
 include/stan/math/prim/functor/broadcast_array.hpp
@@ -1091,6 +1102,7 @@ include/stan/math/prim/functor/ode_ckrk.hpp
 include/stan/math/prim/functor/ode_rk45.hpp
 include/stan/math/prim/functor/ode_store_sensitivities.hpp
 include/stan/math/prim/functor/operands_and_partials.hpp
+include/stan/math/prim/functor/partials_propagator.hpp
 include/stan/math/prim/functor/reduce_sum.hpp
 include/stan/math/prim/functor/reduce_sum_static.hpp
 include/stan/math/prim/meta.hpp
@@ -1664,6 +1676,7 @@ include/stan/math/rev/fun/dims.hpp
 include/stan/math/rev/fun/divide.hpp
 include/stan/math/rev/fun/dot_product.hpp
 include/stan/math/rev/fun/dot_self.hpp
+include/stan/math/rev/fun/eigendecompose_sym.hpp
 include/stan/math/rev/fun/eigenvalues_sym.hpp
 include/stan/math/rev/fun/eigenvectors_sym.hpp
 include/stan/math/rev/fun/elt_divide.hpp
@@ -1786,6 +1799,7 @@ include/stan/math/rev/fun/squared_distance.hpp
 include/stan/math/rev/fun/stan_print.hpp
 include/stan/math/rev/fun/step.hpp
 include/stan/math/rev/fun/sum.hpp
+include/stan/math/rev/fun/svd.hpp
 include/stan/math/rev/fun/svd_U.hpp
 include/stan/math/rev/fun/svd_V.hpp
 include/stan/math/rev/fun/tan.hpp
@@ -1821,6 +1835,7 @@ include/stan/math/rev/functor/cvodes_utils.hpp
 include/stan/math/rev/functor/dae.hpp
 include/stan/math/rev/functor/dae_system.hpp
 include/stan/math/rev/functor/finite_diff_hessian_auto.hpp
+include/stan/math/rev/functor/finite_diff_hessian_times_vector_auto.hpp
 include/stan/math/rev/functor/gradient.hpp
 include/stan/math/rev/functor/idas_integrator.hpp
 include/stan/math/rev/functor/idas_service.hpp
@@ -1837,6 +1852,7 @@ include/stan/math/rev/functor/ode_adjoint.hpp
 include/stan/math/rev/functor/ode_bdf.hpp
 include/stan/math/rev/functor/ode_store_sensitivities.hpp
 include/stan/math/rev/functor/operands_and_partials.hpp
+include/stan/math/rev/functor/partials_propagator.hpp
 include/stan/math/rev/functor/reduce_sum.hpp
 include/stan/math/rev/functor/solve_newton.hpp
 include/stan/math/rev/functor/solve_powell.hpp
