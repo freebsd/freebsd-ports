@@ -33,8 +33,11 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/colors/white-256.clifm
 %%DATADIR%%/colors/white.clifm
 %%DATADIR%%/colors/zenburn.clifm
+%%DATADIR%%/functions/cd_on_quit.fish
 %%DATADIR%%/functions/cd_on_quit.sh
+%%DATADIR%%/functions/file_picker.fish
 %%DATADIR%%/functions/file_picker.sh
+%%DATADIR%%/functions/install-extensions.fish
 %%DATADIR%%/functions/subshell_notice.sh
 %%DATADIR%%/keybindings.clifm
 %%DATADIR%%/mimelist.clifm
@@ -70,7 +73,6 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/pager.sh
 %%DATADIR%%/plugins/pdf_viewer.sh
 %%DATADIR%%/plugins/plugins-helper
-%%DATADIR%%/plugins/recur_rm.sh
 %%DATADIR%%/plugins/rgfind.sh
 %%DATADIR%%/plugins/update.sh
 %%DATADIR%%/plugins/vid_viewer.sh
