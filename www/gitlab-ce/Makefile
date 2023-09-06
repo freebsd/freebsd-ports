@@ -203,7 +203,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sentry-rails>=5.8.0<5.9:devel/rubygem-sentry-rails \
 	rubygem-sentry-sidekiq>=5.8.0<5.9:devel/rubygem-sentry-sidekiq \
 	rubygem-pg_query>=4.2.3<4.3:databases/rubygem-pg_query \
-	rubygem-premailer-rails-rails70>=1.10.3<1.11:mail/rubygem-premailer-rails-rails70 \
+	rubygem-premailer-rails110-rails70>=1.10.3<1.11:mail/rubygem-premailer-rails110-rails70 \
 	rubygem-gitlab-labkit>=0.34.0<0.35:devel/rubygem-gitlab-labkit \
 	rubygem-thrift>=0.16.0:devel/rubygem-thrift \
 	rubygem-ruby_parser>=3.20<4.0:devel/rubygem-ruby_parser \
