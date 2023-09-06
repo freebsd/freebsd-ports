@@ -1,8 +1,7 @@
 PORTNAME=	discount
-PORTVERSION=	2.2.7c
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.2.7d
 CATEGORIES=	textproc devel
-#MASTER_SITES=	https://www.pell.portland.or.us/~orc/Code/discount/
+MASTER_SITES=	https://www.pell.portland.or.us/~orc/Code/discount/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C implementation of the Markdown markup language
@@ -21,9 +20,6 @@ HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install.man
 TEST_TARGET=	test
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	Orc
 
 CONFLICTS_INSTALL=	markdown
 
