@@ -17,7 +17,7 @@ lib/cmake/LibAlkimia5-%%VER%%/LibAlkimia5Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibAlkimia5-%%VER%%/LibAlkimia5Targets.cmake
 lib/libalkimia5.so
 lib/libalkimia5.so.8
-lib/libalkimia5.so.8.1.1
+lib/libalkimia5.so.8.1.2
 %%QT_QMLDIR%%/org/kde/alkimia/libqmlalkimia.so
 %%QT_QMLDIR%%/org/kde/alkimia/qmldir
 libdata/pkgconfig/libalkimia5.pc
@@ -87,6 +87,14 @@ share/locale/it/LC_MESSAGES/alkimia.mo
 share/locale/it/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/it/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/ja/LC_MESSAGES/alkimia.mo
+share/locale/ja/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/ja/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/ja/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/ka/LC_MESSAGES/alkimia.mo
+share/locale/ka/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/ko/LC_MESSAGES/alkimia.mo
 share/locale/ko/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_onlinequote.mo
@@ -127,6 +135,10 @@ share/locale/sv/LC_MESSAGES/alkimia.mo
 share/locale/sv/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_onlinequote.mo
 share/locale/sv/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
+share/locale/tr/LC_MESSAGES/alkimia.mo
+share/locale/tr/LC_MESSAGES/onlinequoteseditor.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_onlinequote.mo
+share/locale/tr/LC_MESSAGES/plasma_applet_org.wincak.foreigncurrencies2.mo
 share/locale/uk/LC_MESSAGES/alkimia.mo
 share/locale/uk/LC_MESSAGES/onlinequoteseditor.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_onlinequote.mo
