@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		ffprobe:multimedia/ffmpeg \
 		unrar:archivers/unrar
 
-USES=		python:3.7+ zip
+USES=		python zip
 
 USE_RC_SUBR=	bazarr
 
@@ -31,6 +31,7 @@ SUB_LIST=	MAINTAINER=${MAINTAINER} \
 		PYTHON_CMD=${PYTHON_CMD} \
 		USERS=${USERS}
 
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 
 USERS=		bazarr
