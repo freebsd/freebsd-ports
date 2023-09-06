@@ -67,12 +67,4 @@ transmission_prestart()
 	fi
 }
 
-# Unfortunately there was a typo in a previous version, which may have
-# left some people with /var/run/transmission/damon.pid .  Deal with
-# this for a few months at least, until everyone will have restarted
-# transmission
-if [ ! -f $pidfile -a -f /var/run/transmission/damon.pid ]; then
-	pidfile=/var/run/transmission/damon.pid
-fi
-
 run_rc_command $1

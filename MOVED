@@ -7847,3 +7847,9 @@ devel/rubygem-cucumber-messages18|devel/rubygem-cucumber-messages|2023-09-04|Rem
 textproc/rubygem-cucumber-gherkin23|textproc/rubygem-cucumber-gherkin|2023-09-04|Remove obsoleted port. Use textproc/rubygem-cucumber-gherkin instead
 textproc/rubygem-cucumber-html-formatter19|textproc/rubygem-cucumber-html-formatter|2023-09-04|Remove obsoleted port. Use textproc/rubygem-cucumber-html-formatter instead
 sysutils/bacula11-libs3|sysutils/bacula-libs3|2023-09-10|No reason to have version in the port name. Works with 11 and 13
+net-p2p/transmission-cli|net-p2p/transmission|2023-09-10|Moved to a flavored version
+net-p2p/transmission-daemon|net-p2p/transmission|2023-09-10|Moved to a flavored version
+net-p2p/transmission-gtk|net-p2p/transmission|2023-09-10|Moved to a flavored version
+net-p2p/transmission-qt|net-p2p/transmission|2023-09-10|Moved to a flavored version
+net-p2p/transmission-utils|net-p2p/transmission|2023-09-10|Moved to a flavored version
+www/transmission-web|net-p2p/transmission|2023-09-10|Moved to the daemon flavor

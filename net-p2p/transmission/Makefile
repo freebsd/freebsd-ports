@@ -1,29 +1,171 @@
 PORTNAME=	transmission
-DISTVERSION=	3.00
-PORTREVISION=	1
+DISTVERSION=	4.0.4
 CATEGORIES=	net-p2p
 
-MAINTAINER=	rigoletto@FreeBSD.org
-COMMENT=	Meta-port for Transmission BitTorrent client
-WWW=		https://www.transmissionbt.com/
+MAINTAINER=	mondo.debater_0q@icloud.com
+COMMENT=	Transmission BitTorrent client
+WWW=		https://www.transmissionbt.com
 
-USES=		metaport
+LICENSE=	GPLv3+
 
-OPTIONS_DEFINE=		CLI DAEMON GTK QT UTILS WEB
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+LIB_DEPENDS=	libb64.so:converters/libb64 \
+		libcurl.so:ftp/curl \
+		libdeflate.so:archivers/libdeflate \
+		libdht.so:devel/jech-dht \
+		libevent.so:devel/libevent \
+		libfmt.so:devel/libfmt \
+		libminiupnpc.so:net/miniupnpc \
+		libnatpmp.so:net/libnatpmp \
+		libpsl.so:dns/libpsl \
+		libutp.so:net-p2p/libutp
 
-CLI_DESC=		Command line version
-DAEMON_DESC=		Daemon version
-GTK_DESC=		GTK version
-QT_DESC=		Qt version
-UTILS_DESC=		Command line tools
-WEB_DESC=		Web client
+FLAVORS=		full cli daemon gtk qt utils
+FLAVOR?=		${FLAVORS:[1]}
+.for flavor in ${FLAVORS}
+${flavor}_PKGNAMESUFFIX=	-${flavor}
+.endfor
+full_LIB_DEPENDS=	${gtk_LIB_DEPENDS}
+gtk_LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
+			libharfbuzz.so:print/harfbuzz
 
-CLI_RUN_DEPENDS=	transmission-cli:net-p2p/transmission-cli
-DAEMON_RUN_DEPENDS=	transmission-daemon:net-p2p/transmission-daemon
-GTK_RUN_DEPENDS=	transmission-gtk:net-p2p/transmission-gtk
-QT_RUN_DEPENDS=		transmission-qt:net-p2p/transmission-qt
-UTILS_RUN_DEPENDS=	transmission-create:net-p2p/transmission-utils
-WEB_RUN_DEPENDS=	${DATADIR}/web/index.html:www/transmission-web
+USES=		cmake cpe iconv libtool localbase pkgconfig ssl
+
+CPE_VENDOR=	transmissionbt
+CPE_PRODUCT=	transmission
+
+USE_GITHUB=	YES
+GH_TUPLE=	google:googletest:af29db7:googletest/third-party/googletest \
+		transmission:fast_float:6624977:fast_float/third-party/fast_float \
+		transmission:utfcpp:b85efd6:utfcpp/third-party/utfcpp \
+		transmission:wide-integer:4de0b52:wideinteger/third-party/wide-integer
+
+.if ${FLAVOR} == gtk || ${FLAVOR} == full
+USES+=		desktop-file-utils gettext-runtime gettext-tools gnome
+USE_GNOME=	gdkpixbuf2 glibmm gtkmm30
+.endif
+
+.if ${FLAVOR} == qt || ${FLAVOR} == full
+USES+=		desktop-file-utils qmake:no_env qt:5
+USE_QT=		core dbus gui network svg widgets buildtools:build \
+		linguisttools:build
+.endif
+
+USE_RC_SUBR=	transmission
+
+CMAKE_ARGS=	-DCMAKE_C_STANDARD_INCLUDE_DIRECTORIES=${LOCALBASE}/include \
+		-DCMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES=${LOCALBASE}/include \
+		-DCMAKE_INSTALL_MANDIR="${PREFIX}/man"
+CMAKE_ON=	USE_SYSTEM_B64 USE_SYSTEM_DEFLATE USE_SYSTEM_DHT \
+		USE_SYSTEM_EVENT2 USE_SYSTEM_MINIUPNPC USE_SYSTEM_NATPMP \
+		USE_SYSTEM_PSL USE_SYSTEM_UTP
+CMAKE_OFF=	ENABLE_MAC REBUILD_WEB WITH_SYSTEMD
+
+USERS=		transmission
+GROUPS=		transmission
+
+PLIST=		${PKGDIR}/pkg-plist.${FLAVOR}
+
+.if ${FLAVOR} == cli
+CMAKE_ON+=	ENABLE_CLI
+CMAKE_OFF+=	ENABLE_GTK ENABLE_QT
+.endif
+
+.if ${FLAVOR} == daemon
+CMAKE_ON+=	ENABLE_DAEMON
+CMAKE_OFF+=	ENABLE_GTK ENABLE_QT
+.endif
+
+.if ${FLAVOR} == gtk || ${FLAVOR} == full
+CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
+CMAKE_ARGS+=	-DUSE_GTK_VERSION=3
+.endif
+
+.if ${FLAVOR} == qt || ${FLAVOR} == full
+CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
+CMAKE_ARGS+=	-DUSE_QT_VERSION=5
+.endif
+
+.if ${FLAVOR} == utils
+CMAKE_ON+=	ENABLE_UTILS
+CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_TESTS \
+		ENABLE_WERROR INSTALL_WEB
+.endif
+
+OPTIONS_DEFINE=		CLI DAEMON DOCS NLS TESTS UTILS WEB
+OPTIONS_DEFAULT=	DOCS NLS
+
+.if ${FLAVOR} == cli
+OPTIONS_DEFINE=		DAEMON DOCS NLS TESTS UTILS WEB
+OPTIONS_DEFAULT=	UTILS
+.endif
+
+.if ${FLAVOR} == daemon
+OPTIONS_DEFINE=		CLI DOCS NLS TESTS UTILS WEB
+OPTIONS_DEFAULT=	UTILS WEB
+.endif
+
+.if ${FLAVOR} == full
+OPTIONS_DEFAULT+=	CLI DAEMON DOCS NLS UTILS WEB
+.endif
+
+.if ${FLAVOR} == utils
+OPTIONS_DEFINE=		DOCS NLS
+OPTIONS_DEFAULT=	DOCS NLS
+.endif
+
+OPTIONS_SUB=	yes
+
+CLI_DESC=	Build remote & command-line (deprecated) clients
+DAEMON_DESC=	Build daemon
+TESTS_DESC=	Build & run unit tests
+UTILS_DESC=	Build utilities (create, edit, show)
+WEB_DESC=	Install web client
+
+CLI_CMAKE_BOOL=	ENABLE_CLI
+
+DAEMON_CMAKE_BOOL=	ENABLE_DAEMON
+
+NLS_USES=	gettext-runtime:lib
+NLS_CMAKE_BOOL=	ENABLE_NLS
+
+TESTS_CMAKE_BOOL=	ENABLE_TESTS
+
+UTILS_CMAKE_BOOL=	ENABLE_UTILS
+
+WEB_IMPLIES=	DAEMON
+WEB_CMAKE_BOOL=	INSTALL_WEB
+
+post-extract:
+	@${ECHO_MSG} "Cludging use of devel/libfmt as Transmission's CMakeLists.txt does not properly search for it."
+	@${MKDIR} ${WRKSRC}/third-party/fmt/include/fmt
+	@${LN} -Fs ${PREFIX}/include/fmt ${WRKSRC}/third-party/fmt/include/fmt
+
+post-extract-DOCS-on:
+	@${ECHO_MSG} "Removing outdated release notes"
+	@${FIND} ${WRKSRC}/news \( -name 'news-[0-3]*' -o -name '*beta*' \) -delete
+
+.if ${FLAVOR} == qt
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA}	${WRKSRC}/qt/icons/transmission.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/transmission.svg
+.endif
+
+.if ${FLAVOR} == daemon
+post-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}/home
+.endif
+
+post-install-DAEMON-on:
+	        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
+
+post-install-TESTS-on:
+	@${ECHO_MSG} "Running tests..."
+	@cd ${BUILD_WRKSRC}/tests/libtransmission/ && \
+		eval ${BUILD_WRKSRC}/tests/libtransmission/libtransmission-test \
+		--gtest_filter="-DhtTest.usesBootstrapFile" \
+		#fails in poudriere due to lack of networking, passes otherwise
+		--gtest_brief=1 \
+		--gtest_output=json:libtransmission-test.json
 
 .include <bsd.port.mk>

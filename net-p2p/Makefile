@@ -98,12 +98,7 @@
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
     SUBDIR += transmission
-    SUBDIR += transmission-cli
-    SUBDIR += transmission-daemon
-    SUBDIR += transmission-gtk
-    SUBDIR += transmission-qt
     SUBDIR += transmission-remote-gui
-    SUBDIR += transmission-utils
     SUBDIR += twitch-tui
     SUBDIR += udpt
     SUBDIR += uhub

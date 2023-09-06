@@ -1,8 +1,0 @@
-bin/transmission-cli
-share/man/man1/transmission-cli.1.gz
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.md
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/rpc-spec.txt
-%%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh

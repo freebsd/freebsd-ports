@@ -2351,7 +2351,6 @@
     SUBDIR += tor-browser
     SUBDIR += trac-devel
     SUBDIR += trafficserver
-    SUBDIR += transmission-web
     SUBDIR += transproxy
     SUBDIR += trunk
     SUBDIR += tt-rss
