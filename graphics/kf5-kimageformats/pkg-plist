@@ -10,6 +10,7 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_pcx.so
 %%QT_PLUGINDIR%%/imageformats/kimg_pic.so
 %%QT_PLUGINDIR%%/imageformats/kimg_psd.so
+%%QT_PLUGINDIR%%/imageformats/kimg_qoi.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ras.so
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
@@ -28,6 +29,7 @@ share/kservices5/qimageioplugins/ora.desktop
 share/kservices5/qimageioplugins/pcx.desktop
 share/kservices5/qimageioplugins/pic.desktop
 share/kservices5/qimageioplugins/psd.desktop
+share/kservices5/qimageioplugins/qoi.desktop
 share/kservices5/qimageioplugins/ras.desktop
 share/kservices5/qimageioplugins/rgb.desktop
 share/kservices5/qimageioplugins/tga.desktop
