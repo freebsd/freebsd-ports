@@ -21,7 +21,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libivykis.so:devel/ivykis
 
 USES=		autoreconf:build compiler:c11 cpe gettext-runtime gmake gnome \
-		libtool pathfix pkgconfig python:3.5+,build shebangfix ssl
+		libtool pathfix pkgconfig python:build shebangfix ssl
 
 CPE_VENDOR=	oneidentity
 
