@@ -8,7 +8,7 @@ MASTER_SITES=	http://ftp.corbina.net/gentoo-distfiles/d6/	\
 
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Simple battery meter
 WWW=		http://iplab.aist-nara.ac.jp/member/suguru/xbattbar.html
 
