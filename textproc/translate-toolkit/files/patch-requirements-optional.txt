@@ -21,16 +21,16 @@
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI
  # Format support
--mistletoe==1.1       # Markdown
-+mistletoe>=1.1       # Markdown
+-mistletoe==1.2.1       # Markdown
++mistletoe>=1.2.1       # Markdown
  # Format support
 -phply==1.2.6         # PHP
 -pyenchant==3.2.2     # spellcheck
 +phply>=1.2.6         # PHP
 +pyenchant>=3.2.2     # spellcheck
  # Windows Resources (rc2po and po2rc)
--pyparsing==3.1.0     # RC
-+pyparsing>=3.1.0     # RC
+-pyparsing==3.1.1     # RC
++pyparsing>=3.1.1     # RC
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
