@@ -13,6 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_14_i386=	lld crashes during build
+BROKEN_FreeBSD_15_i386=	lld crashes during build
 
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 
