@@ -1,3 +1,42 @@
+  <vuln vid="df0a2fd1-4c92-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>116.0.5845.179</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>116.0.5845.179</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1476403] High CVE-2023-4761: Out of bounds memory access in FedCM. Reported by DarkNavy on 2023-08-28</li>
+	    <li>[1473247] High CVE-2023-4762: Type Confusion in V8. Reported by Rong Jian of VRI on 2023-08-16</li>
+	    <li>[1469928] High CVE-2023-4763: Use after free in Networks. Reported by anonymous on 2023-08-03</li>
+	    <li>[1447237] High CVE-2023-4764: Incorrect security UI in BFCache. Reported by Irvan Kurniawan (sourc7) on 2023-05-20</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4761</cvename>
+      <cvename>CVE-2023-4762</cvename>
+      <cvename>CVE-2023-4763</cvename>
+      <cvename>CVE-2023-4764</cvename>
+      <url>https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-05</discovery>
+      <entry>2023-09-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8fd4f40a-4b7d-11ee-aa2a-080027de9982">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
