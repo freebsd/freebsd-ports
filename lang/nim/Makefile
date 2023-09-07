@@ -1,5 +1,6 @@
 PORTNAME=	nim
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -80,6 +81,7 @@ do-install:
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${NIMDIR}/lib "! -name libnimrtl.so")
 	${MKDIR} ${NIMDIR}/lib/compiler
 	(cd ${WRKSRC}/compiler && ${COPYTREE_SHARE} . ${NIMDIR}/lib/compiler "! -name nim ! -name nim1")
+	(cd ${WRKSRC}/dist/checksums && ${COPYTREE_SHARE} . ${NIMDIR}/lib/dist/checksums)
 	# Configuration files
 	${MKDIR} ${NIMDIR}/config
 .for file in nim.cfg nimdoc.cfg nimdoc.tex.cfg
