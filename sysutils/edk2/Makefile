@@ -1,5 +1,6 @@
 PORTNAME=	edk2
 PORTVERSION=	g202308
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
