@@ -81,18 +81,18 @@
      // Sadly, `LinuxPackager` type is not exported by electron-builder so we
      // have to improvise
      target = (packager as unknown as { executableName: string }).executableName;
---- ts/state/ducks/user.ts.orig	2023-02-05 15:03:14.076343000 +0100
-+++ ts/state/ducks/user.ts	2023-02-05 15:03:54.047783000 +0100
+--- ts/state/ducks/user.ts.orig	2023-09-06 22:21:55.000000000 +0200
++++ ts/state/ducks/user.ts	2023-09-07 19:44:10.838670000 +0200
 @@ -23,7 +23,7 @@ export type UserStateType = Readonly<{
    isMainWindowMaximized: boolean;
    localeMessages: LocaleMessagesType;
    menuOptions: MenuOptionsType;
 -  osName: 'linux' | 'macos' | 'windows' | undefined;
 +  osName: 'linux' | 'macos' | 'windows' | 'freebsd' | undefined;
-   ourACI: UUIDStringType | undefined;
+   ourAci: AciString | undefined;
    ourConversationId: string | undefined;
    ourDeviceId: number | undefined;
-@@ -100,7 +100,7 @@ export function getEmptyState(): UserStateType {
+@@ -114,7 +114,7 @@ export function getEmptyState(): UserStateType {
  // Reducer
  
  export function getEmptyState(): UserStateType {
@@ -101,7 +101,7 @@
  
    if (OS.isWindows()) {
      osName = 'windows';
-@@ -108,6 +108,8 @@ export function getEmptyState(): UserStateType {
+@@ -122,6 +122,8 @@ export function getEmptyState(): UserStateType {
      osName = 'macos';
    } else if (OS.isLinux()) {
      osName = 'linux';
