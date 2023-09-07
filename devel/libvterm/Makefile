@@ -1,7 +1,7 @@
 PORTNAME=	libvterm
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel
-MASTER_SITES=	https://www.leonerd.org.uk/code/libvterm/
+MASTER_SITES=	https://launchpad.net/libvterm/trunk/v0.3/+download/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
