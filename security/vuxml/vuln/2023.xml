@@ -1,3 +1,38 @@
+  <vuln vid="924cb116-4d35-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Wi-Fi encryption bypass</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_3</lt></range>
+	<range><ge>12.4</ge><lt>12.4_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The net80211 subsystem would fallback to the multicast key for unicast
+	traffic in the event the unicast key was removed.  This would result in
+	buffered unicast traffic being exposed to any stations with access to the
+	multicast key.</p>
+	<h1>Impact:</h1>
+	<p>As described in the "Framing Frames: Bypassing Wi-Fi Encryption by
+	Manipulating Transmit Queues" paper, an attacker can induce an access point
+	to buffer frames for a client, deauthenticate the client (causing the unicast
+	key to be removed from the access point), and subsequent flushing of the
+	buffered frames now encrypted with the multicast key.  This would give the
+	attacker access to the data.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-47522</cvename>
+      <freebsdsa>SA-23:11.wifi</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-09-06</discovery>
+      <entry>2023-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d35373ae-4d34-11ee-8e38-002590c1f29c">
     <topic>FreeBSD -- pf incorrectly handles multiple IPv6 fragment headers</topic>
     <affects>
