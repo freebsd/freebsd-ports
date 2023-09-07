@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.28.1
-PORTREVISION=	2
+DISTVERSION=	2.30.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -54,7 +53,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	5615b
+WEBRTC_REV=	5615e
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		0fc91d5d9071a1619d481fbc6a166fcd9a4ac0a9
@@ -100,15 +99,25 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/rust
 WEBRTCDIR=	${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/webrtc/src
 
-# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.28.1/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
+# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.30.0/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
 CARGO_CRATES=	adler-1.0.2 \
 		aead-0.4.3 \
 		aes-0.7.5 \
 		aes-gcm-siv-0.10.3 \
 		aho-corasick-1.0.1 \
 		android_system_properties-0.1.5 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
 		anyhow-1.0.71 \
+		async-stream-0.3.5 \
+		async-stream-impl-0.3.5 \
+		async-trait-0.1.68 \
 		autocfg-1.1.0 \
+		axum-0.6.18 \
+		axum-core-0.3.4 \
 		base64-0.13.1 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
@@ -121,6 +130,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
 		cipher-0.3.0 \
+		clap-4.3.8 \
+		clap_builder-4.3.8 \
+		clap_derive-4.3.2 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
 		combine-4.6.6 \
 		core-foundation-sys-0.8.4 \
 		cpufeatures-0.2.7 \
@@ -137,6 +151,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
+		fern-0.6.2 \
 		fixedbitset-0.4.2 \
 		flate2-1.0.26 \
 		fnv-1.0.7 \
@@ -152,7 +167,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		futures-util-0.3.28 \
 		generic-array-0.14.7 \
 		getrandom-0.1.16 \
+		getrandom-0.2.10 \
 		ghash-0.4.4 \
+		h2-0.3.20 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.2.6 \
@@ -160,7 +177,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		hex-0.4.3 \
 		hkdf-0.11.0 \
 		hmac-0.11.0 \
+		http-0.2.9 \
+		http-body-0.4.5 \
+		httparse-1.8.0 \
+		httpdate-1.0.2 \
 		humantime-2.1.0 \
+		hyper-0.14.26 \
+		hyper-timeout-0.4.1 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
@@ -175,12 +198,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		jni-sys-0.3.0 \
 		js-sys-0.3.61 \
 		lazy_static-1.4.0 \
-		libc-0.2.142 \
+		libc-0.2.147 \
 		libloading-0.6.7 \
 		linux-raw-sys-0.3.7 \
 		log-0.4.17 \
+		matchit-0.7.0 \
 		memchr-2.5.0 \
+		mime-0.3.17 \
 		miniz_oxide-0.7.1 \
+		mio-0.8.8 \
 		multimap-0.8.3 \
 		neon-0.10.1 \
 		neon-build-0.10.1 \
@@ -196,6 +222,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		opaque-debug-0.3.0 \
 		percent-encoding-2.2.0 \
 		petgraph-0.6.3 \
+		pin-project-1.1.0 \
+		pin-project-internal-1.1.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		polyval-0.5.3 \
@@ -209,8 +237,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		prost-types-0.11.9 \
 		quote-1.0.26 \
 		rand-0.7.3 \
+		rand-0.8.5 \
 		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
 		rand_core-0.5.1 \
+		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
 		redox_syscall-0.3.5 \
 		regex-1.8.1 \
@@ -220,6 +251,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		ring-0.16.20 \
 		rustix-0.37.19 \
 		rustls-0.20.8 \
+		rustversion-1.0.12 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
 		sct-0.7.0 \
@@ -234,6 +266,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sha2-0.9.9 \
 		slab-0.4.8 \
 		smallvec-1.10.0 \
+		socket2-0.4.9 \
 		spin-0.5.2 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
@@ -241,19 +274,35 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-1.0.109 \
 		syn-2.0.15 \
 		syn-mid-0.5.3 \
+		sync_wrapper-0.1.2 \
 		sysinfo-0.28.4 \
 		tempfile-3.5.0 \
 		termcolor-1.2.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
+		time-0.1.45 \
 		time-0.3.21 \
 		time-core-0.1.1 \
 		time-macros-0.2.9 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.28.0 \
+		tokio-io-timeout-1.2.0 \
+		tokio-macros-2.1.0 \
+		tokio-stream-0.1.14 \
+		tokio-util-0.7.8 \
 		toml_datetime-0.6.1 \
 		toml_edit-0.19.8 \
+		tonic-0.8.3 \
+		tonic-build-0.8.4 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
+		tower-service-0.3.2 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.26 \
+		tracing-core-0.1.31 \
+		tracing-futures-0.2.5 \
+		try-lock-0.2.4 \
 		typenum-1.16.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.8 \
@@ -262,9 +311,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		untrusted-0.7.1 \
 		ureq-2.6.2 \
 		url-2.3.1 \
+		utf8parse-0.2.1 \
 		version_check-0.9.4 \
 		walkdir-2.3.3 \
+		want-0.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
 		wasm-bindgen-backend-0.2.84 \
 		wasm-bindgen-macro-0.2.84 \
