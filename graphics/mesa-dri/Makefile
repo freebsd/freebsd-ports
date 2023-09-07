@@ -83,10 +83,8 @@ MESON_ARGS+=	-Dgallium-xa=disabled \
 		-Dosmesa=false
 
 .if ${ABI:Mpurecap}
-MESON_ARGS+=	-Degl=enabled \
-		-Dllvm=disabled
+MESON_ARGS+=	-Dllvm=disabled
 .else
-MESON_ARGS+=	-Degl=disabled
 LIB_DEPENDS+=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT}
 .endif
 
