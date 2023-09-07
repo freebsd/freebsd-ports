@@ -1662,6 +1662,7 @@
     SUBDIR += py-google
     SUBDIR += py-google-api-core
     SUBDIR += py-google-api-python-client
+    SUBDIR += py-google-cloud-aiplatform
     SUBDIR += py-google-cloud-appengine-logging
     SUBDIR += py-google-cloud-audit-log
     SUBDIR += py-google-cloud-bigquery
