@@ -22,7 +22,7 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.5.4:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.62.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-oauth2:oauth2:v4.4.2:go_oauth2_oauth2/vendor/github.com/go-oauth2/oauth2/v4 \
-		go-task:slim-sprig:348f09dbbbc0:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
+		go-task:slim-sprig:52ccab3ef572:go_task_slim_sprig/vendor/github.com/go-task/slim-sprig \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -32,16 +32,16 @@ GH_TUPLE=	\
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
-		golang:mod:v0.8.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.9.0:golang_net/vendor/golang.org/x/net \
+		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.7.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.7.0:golang_term/vendor/golang.org/x/term \
+		golang:sync:v0.2.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.8.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:daa745c078e1:google_go_genproto/vendor/google.golang.org/genproto \
 		google:pprof:d260c55eee4c:google_pprof/vendor/github.com/google/pprof \
@@ -83,17 +83,15 @@ GH_TUPLE=	\
 		mitchellh:mapstructure:v1.4.1:mitchellh_mapstructure/vendor/github.com/mitchellh/mapstructure \
 		nsf:jsondiff:f29ed568f4ce:nsf_jsondiff/vendor/github.com/nsf/jsondiff \
 		nsf:termbox-go:38ba6e5628f1:nsf_termbox_go/vendor/github.com/nsf/termbox-go \
-		onsi:ginkgo:v2.2.0:onsi_ginkgo/vendor/github.com/onsi/ginkgo/v2 \
-		oschwald:maxminddb-golang:v1.8.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
+		onsi:ginkgo:v2.9.5:onsi_ginkgo/vendor/github.com/onsi/ginkgo/v2 \
+		oschwald:maxminddb-golang:v1.12.0:oschwald_maxminddb_golang/vendor/github.com/oschwald/maxminddb-golang \
 		pelletier:go-toml:v1.9.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		quic-go:qtls-go1-18:v0.2.0:quic_go_qtls_go1_18/vendor/github.com/quic-go/qtls-go1-18 \
-		quic-go:qtls-go1-19:v0.2.0:quic_go_qtls_go1_19/vendor/github.com/quic-go/qtls-go1-19 \
-		quic-go:qtls-go1-20:v0.1.0:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
-		quic-go:quic-go:v0.32.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
+		quic-go:qtls-go1-20:v0.3.1:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
+		quic-go:quic-go:v0.37.4:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
@@ -108,13 +106,13 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:cb5eec2edc30:storj_common/vendor/storj.io/common \
+		storj:common:3e42ad28fcf6:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d100d7589f41:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:v0.0.1:storj_picobuf/vendor/storj.io/picobuf \
 		storj:private:ccd4db5ae659:storj_private/vendor/storj.io/private \
-		storj:uplink:035890d408c2:storj_uplink/vendor/storj.io/uplink \
-		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		storj:uplink:v1.11.0:storj_uplink/vendor/storj.io/uplink \
+		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.90.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
