@@ -1,3 +1,72 @@
+  <vuln vid="beb36f39-4d74-11ee-985e-bff341e78d94">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go120</name>
+	<range><lt>1.20.8</lt></range>
+      </package>
+      <package>
+	<name>go121</name>
+	<range><lt>1.21.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/62198">
+	  <p>cmd/go: go.mod toolchain directive allows arbitrary
+	   execution</p>
+	  <p>The go.mod toolchain directive, introduced in Go 1.21,
+	   could be leveraged to execute scripts and binaries
+	   relative to the root of the module when the "go" command
+	   was executed within the module. This applies to modules
+	   downloaded using the "go" command from the module proxy,
+	   as well as modules downloaded directly using VCS software.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/62196">
+	  <p>html/template: improper handling of HTML-like comments
+	   within script contexts</p>
+	  <p>The html/template package did not properly handle
+	   HMTL-like "&lt;!--" and "--&gt;"
+	   comment tokens, nor hashbang "#!" comment tokens, in
+	   &lt;script&gt; contexts. This may cause the template
+	   parser to improperly interpret the contents of
+	   &lt;script&gt; contexts, causing actions to be improperly
+	   escaped. This could be leveraged to perform an XSS attack.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/62197">
+	  <p>html/template: improper handling of special tags within
+	   script contexts</p>
+	  <p>The html/template package did not apply the proper rules
+	   for handling occurrences
+	   of "&lt;script", "&lt;!--", and "&lt;/script" within JS
+	   literals in &lt;script&lt; contexts. This may cause the
+	   template parser to improperly consider script contexts to
+	   be terminated early, causing actions to be improperly
+	   escaped. This could be leveraged to perform an XSS attack.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/62266">
+	  <p>crypto/tls: panic when processing post-handshake message
+	   on QUIC connections</p>
+	  <p>Processing an incomplete post-handshake message for a QUIC
+	   connection caused a panic.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39320</cvename>
+      <cvename>CVE-2023-39318</cvename>
+      <cvename>CVE-2023-39319</cvename>
+      <cvename>CVE-2023-39321</cvename>
+      <cvename>CVE-2023-39322</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/2C5vbR-UNkI/m/L1hdrPhfBAAJ?pli=1</url>
+    </references>
+    <dates>
+      <discovery>2023-09-06</discovery>
+      <entry>2023-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="924cb116-4d35-11ee-8e38-002590c1f29c">
     <topic>FreeBSD -- Wi-Fi encryption bypass</topic>
     <affects>
