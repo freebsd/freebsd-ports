@@ -30,19 +30,14 @@ BINARY_ALIAS=	make=${MAKE_CMD}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-USES+=	llvm:max=15
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
-.endif
-
 post-install:
 .for f in pcb-rnd txt2bxl bxl2txt gsch2pcb-rnd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$f
 .endfor
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pcb-rnd/plugins/*.so
+
+post-patch:
+	@${ECHO_CMD} 'USER_CFLAGS += -DSCCONFIG_ACCEPT_IMPLICIT' \
+		>> ${WRKSRC}/scconfig/Makefile
 
 .include <bsd.port.mk>
