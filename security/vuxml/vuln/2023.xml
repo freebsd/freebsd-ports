@@ -1,3 +1,37 @@
+  <vuln vid="d35373ae-4d34-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- pf incorrectly handles multiple IPv6 fragment headers</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_3</lt></range>
+	<range><ge>12.4</ge><lt>12.4_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>With a 'scrub fragment reassemble' rule, a packet containing multiple IPv6
+	fragment headers would be reassembled, and then immediately processed.  That
+	is, a packet with multiple fragment extension headers would not be recognized
+	as the correct ultimate payload. Instead a packet with multiple IPv6 fragment
+	headers would unexpectedly be interpreted as a fragmented packet, rather than
+	as whatever the real payload is.</p>
+	<h1>Impact:</h1>
+	<p>IPv6 fragments may bypass firewall rules written on the assumption all
+	fragments have been reassembled and, as a result, be forwarded or processed
+	by the host.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4809</cvename>
+      <freebsdsa>SA-23:10.pf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-09-06</discovery>
+      <entry>2023-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c72b13f-4d1d-11ee-a7f1-080027f5fec9">
     <topic>redis -- Possible bypassing ACL configuration</topic>
     <affects>
