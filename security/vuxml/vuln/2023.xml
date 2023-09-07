@@ -1,3 +1,43 @@
+  <vuln vid="6c72b13f-4d1d-11ee-a7f1-080027f5fec9">
+    <topic>redis -- Possible bypassing ACL configuration</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><ge>7.0.0</ge><lt>7.0.13</lt></range>
+	<range><ge>7.2.0</ge><lt>7.2.1</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.2.0.20230831</lt></range>
+      </package>
+      <package>
+	<name>redis70</name>
+	<range><ge>7.0.0</ge><lt>7.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>yangbodong22011 reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc">
+	  <p>
+	    Redis does not correctly identify keys accessed by SORT_RO
+	    and, as a result, may grant users executing this command
+	    access to keys that are not explicitly authorized by the
+	    ACL configuration.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41053</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-q4jr-5p56-4xwc</url>
+    </references>
+    <dates>
+      <discovery>2023-09-06</discovery>
+      <entry>2023-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df0a2fd1-4c92-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
