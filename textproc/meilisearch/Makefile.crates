@@ -369,6 +369,7 @@ CARGO_CRATES=	actix-codec-0.5.1 \
 		try-lock-0.2.4 \
 		typenum-1.16.0 \
 		ucd-trie-0.1.5 \
+		unescaper-0.1.2 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.9 \

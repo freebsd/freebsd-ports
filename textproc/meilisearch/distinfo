@@ -1,4 +1,4 @@
-TIMESTAMP = 1692870895
+TIMESTAMP = 1694091837
 SHA256 (meilisearch-mini-dashboard-build-0.2.11.zip) = 9cded8a4e2a2567bf9fbfa6461239292d10c96ead75f3eb6252a2f3b0b634a17
 SIZE (meilisearch-mini-dashboard-build-0.2.11.zip) = 1146148
 SHA256 (mecab-ipadic-2.7.0-20070801.tar.gz) = b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523
@@ -775,6 +775,8 @@ SHA256 (rust/crates/typenum-1.16.0.crate) = 497961ef93d974e23eb6f433eb5fe1b7930b
 SIZE (rust/crates/typenum-1.16.0.crate) = 42477
 SHA256 (rust/crates/ucd-trie-0.1.5.crate) = 9e79c4d996edb816c91e4308506774452e55e95c3c9de07b6729e17e15a5ef81
 SIZE (rust/crates/ucd-trie-0.1.5.crate) = 45391
+SHA256 (rust/crates/unescaper-0.1.2.crate) = a96a44ae11e25afb520af4534fd7b0bd8cd613e35a78def813b8cf41631fa3c8
+SIZE (rust/crates/unescaper-0.1.2.crate) = 17409
 SHA256 (rust/crates/unicase-2.6.0.crate) = 50f37be617794602aabbeee0be4f259dc1778fabe05e2d67ee8f79326d5cb4f6
 SIZE (rust/crates/unicase-2.6.0.crate) = 23478
 SHA256 (rust/crates/unicode-bidi-0.3.13.crate) = 92888ba5573ff080736b3648696b70cafad7d250551175acbaa4e0385b3e1460
@@ -919,7 +921,7 @@ SHA256 (meilisearch-nelson-675f13885548fb415ead8fbb447e9e6d9314000a_GH0.tar.gz) 
 SIZE (meilisearch-nelson-675f13885548fb415ead8fbb447e9e6d9314000a_GH0.tar.gz) = 1689
 SHA256 (meilisearch-heed-v0.12.7_GH0.tar.gz) = fe2b02763fd060fa784d5f8a91be607ab0659b35af94eae1f738343b0521ea44
 SIZE (meilisearch-heed-v0.12.7_GH0.tar.gz) = 38203
-SHA256 (meilisearch-meilisearch-v1.3.2_GH0.tar.gz) = aca49ad23eb21a9f5c86afc20dd9058c15a7fc6072c98eee3bb0891862c80336
-SIZE (meilisearch-meilisearch-v1.3.2_GH0.tar.gz) = 13889414
+SHA256 (meilisearch-meilisearch-v1.3.3_GH0.tar.gz) = d51ba58c6d4adfbdfcdaae91b45625c0f2ad0e0c606c4ca2bafc28648e9ee626
+SIZE (meilisearch-meilisearch-v1.3.3_GH0.tar.gz) = 13890683
 SHA256 (meilisearch-lmdb-6a01c0a_GH0.tar.gz) = b1b027cd46ad5121e84330fabb84b04466f862189b9b3ac33cb1dc984dfc449e
 SIZE (meilisearch-lmdb-6a01c0a_GH0.tar.gz) = 152993
