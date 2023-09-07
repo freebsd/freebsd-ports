@@ -1,3 +1,44 @@
+  <vuln vid="a57472ba-4d84-11ee-bf05-000c29de725b">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.18</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.18</lt></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><lt>3.10.13</lt></range>
+      </package>
+      <package>
+	<name>python311</name>
+	<range><lt>3.11.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://pythoninsider.blogspot.com/2023/08/python-3115-31013-3918-and-3818-is-now.html">
+	  <p>gh-108310: Fixed an issue where instances of ssl.SSLSocket were vulnerable
+	    to a bypass of the TLS handshake and included protections (like certificate
+	    verification) and treating sent unencrypted data as if it were post-handshake
+	    TLS encrypted data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-40217</cvename>
+      <url>https://pythoninsider.blogspot.com/2023/08/python-3115-31013-3918-and-3818-is-now.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-22</discovery>
+      <entry>2023-09-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="beb36f39-4d74-11ee-985e-bff341e78d94">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
