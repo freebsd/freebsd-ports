@@ -2,6 +2,7 @@ bin/furnace
 share/applications/furnace.desktop
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/concepts.md
+%%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/glossary.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/1-intro/hex.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/README.md
 %%PORTDOCS%%%%DOCSDIR%%/doc/2-interface/asset-list.md
@@ -236,6 +237,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/arcade/Utter_Determination_TaitoArcade.fur
 %%DATADIR%%/demos/arcade/ice_cap_NamcoC30.fur
 %%DATADIR%%/demos/arcade/iji_tor_segaxboard.fur
+%%DATADIR%%/demos/arcade/last_day_of_summer_NamcoC15.fur
 %%DATADIR%%/demos/arcade/the_machines_are_socialising_SegaPCM.fur
 %%DATADIR%%/demos/ay8910/AY-3-8910_Jam.fur
 %%DATADIR%%/demos/ay8910/Flat Wave Society.fur
@@ -375,6 +377,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/nes/oby1_ingame.fur
 %%DATADIR%%/demos/nes/one_sided_love.fur
 %%DATADIR%%/demos/nes/spamton.fur
+%%DATADIR%%/demos/nes/sweatsmile_bossfight.fur
 %%DATADIR%%/demos/nes/the_best-1990.fur
 %%DATADIR%%/demos/nes/turtle_byte.fur
 %%DATADIR%%/demos/opl/Contraduct Design OPL3 Cover.fur
