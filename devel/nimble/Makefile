@@ -10,8 +10,8 @@ WWW=		https://github.com/nim-lang/nimble
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	nim:lang/nim
-RUN_DEPENDS=	nim:lang/nim
+BUILD_DEPENDS=	${LOCALBASE}/nim/bin/nim:lang/nim
+RUN_DEPENDS=	${LOCALBASE}/nim/bin/nim:lang/nim
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nim-lang
@@ -19,7 +19,7 @@ GH_ACCOUNT=	nim-lang
 PLIST_FILES=	bin/nimble
 
 do-build:
-	@cd ${WRKSRC} && nim c -d:release --noNimblePath --parallelBuild=${MAKE_JOBS_NUMBER} --path:${LOCALBASE}/nim --nimcache:${WRKSRC}/nimcache src/nimble
+	@cd ${WRKSRC} && ${LOCALBASE}/nim/bin/nim c -d:release --noNimblePath --parallelBuild=${MAKE_JOBS_NUMBER} --path:${LOCALBASE}/nim --nimcache:${WRKSRC}/nimcache src/nimble
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nimble ${STAGEDIR}${PREFIX}/bin
