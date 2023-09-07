@@ -1,6 +1,5 @@
 PORTNAME=	terra
-DISTVERSION=	1.7-39
-PORTREVISION=	1
+DISTVERSION=	1.7-46
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libgdal.so:graphics/gdal \
 CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-ncdf4>0:math/R-cran-ncdf4
 
 USES=		compiler:c++17-lang cran:auto-plist,compiles sqlite:3
 
