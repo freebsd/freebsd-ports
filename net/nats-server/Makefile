@@ -1,5 +1,5 @@
 PORTNAME=	nats-server
-PORTVERSION=	2.9.21
+PORTVERSION=	2.9.22
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -13,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
-GH_TUPLE=	golang:crypto:v0.11.0:golang_crypto/vendor/golang.org/x/crypto \
+GH_TUPLE=	golang:crypto:v0.12.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
 		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		klauspost:compress:v1.16.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
-		nats-io:jwt:v2.4.1:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
+		nats-io:jwt:v2.5.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats.go:v1.28.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.4.4:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
