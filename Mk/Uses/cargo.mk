@@ -16,6 +16,23 @@ IGNORE+=	USES=cargo takes no arguments
 
 .sinclude "${MASTERDIR}/Makefile.crates"
 
+# nm and other LLVM utilities reading ports' object files created with Rust must
+# be compatible with the LLVM version that was used to compile Rust.
+LLVM_VERSION=		16
+BUILD_DEPENDS+=		clang${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+# binutils variables set here affect detecting compiler features in compiler.mk
+# that cannot run a compiler because at the stage of processing USES an LLVM
+# package might not be installed. Unfortunately, the ports build system does not
+# allow to overwrite binutils commands in CONFIGURE_ENV for ports using a
+# specific Uses file, nor it allows to detect the compiler features after
+# processing dependencies.
+AR=			/usr/bin/ar
+CC=			${LOCALBASE64}/bin/clang${LLVM_VERSION}
+CPP=			${LOCALBASE64}/bin/clang-cpp${LLVM_VERSION}
+CXX=			${LOCALBASE64}/bin/clang++${LLVM_VERSION}
+LD=			${LOCALBASE64}/bin/ld.lld${LLVM_VERSION}
+NM=			${LOCALBASE64}/bin/llvm-nm${LLVM_VERSION}
+
 # List of static dependencies.  The format is cratename-version.
 # CARGO_CRATES will be downloaded from MASTER_SITE_CRATESIO.
 CARGO_CRATES?=
