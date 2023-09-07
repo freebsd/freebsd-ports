@@ -17,18 +17,27 @@
      ;;
  esac
  
-@@ -2633,7 +2633,37 @@ fi
+@@ -1082,7 +1082,7 @@ cat > conftest.$ac_ext << EOF
+ #line 1083 "configure"
+ #include "confdefs.h"
+ 
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1088: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   ac_cv_prog_cc_works=yes
+@@ -2633,13 +2633,43 @@ fi
    ac_cv_flavor_gethostbyaddr=unknown
  else
    cat > conftest.$ac_ext <<EOF
 -#line 2637 "configure"
 +#line 2648 "configure"
-+#include "confdefs.h"
-+
-+    #include <stddef.h>
-+    #include <sys/types.h>
-+    #include <sys/socket.h>
-+    #include <netdb.h>
+ #include "confdefs.h"
+ 
+     #include <stddef.h>
+     #include <sys/types.h>
+     #include <sys/socket.h>
+     #include <netdb.h>
 +    struct hostent *gethostbyaddr(const void *addr, int len, int type) {
 +	return NULL;
 +    }
@@ -53,10 +62,16 @@
 +else
 +  cat > conftest.$ac_ext <<EOF
 +#line 2678 "configure"
- #include "confdefs.h"
- 
-     #include <stddef.h>
-@@ -2675,6 +2705,10 @@ echo "$ac_t""$ac_cv_flavor_gethostbyaddr
++#include "confdefs.h"
++
++    #include <stddef.h>
++    #include <sys/types.h>
++    #include <sys/socket.h>
++    #include <netdb.h>
+     struct hostent *gethostbyaddr(const char *addr, int len, int type) {
+ 	return NULL;
+     }
+@@ -2675,6 +2705,10 @@ echo "$ac_t""$ac_cv_flavor_gethostbyaddr" 1>&6
  	ac_cv_type_ghba_addr_t='const char *'
  	ac_cv_type_ghba_addrlen_t='size_t'
  	;;
@@ -67,3 +82,39 @@
      traditional | none)
  	ac_cv_type_ghba_addr_t='const char *'
  	ac_cv_type_ghba_addrlen_t='int'
+@@ -2712,7 +2746,7 @@ else
+     int getnameinfo(const struct sockaddr *sa, socklen_t salen, char *host,
+                     socklen_t hostlen, char *serv, socklen_t servlen,
+                     unsigned int flags) {
+-	return NULL;
++	return 0;
+     }
+     int main() {
+ 	(void)getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);
+@@ -2744,7 +2778,7 @@ else
+     int getnameinfo(const struct sockaddr *sa, socklen_t salen, char *host,
+                     socklen_t hostlen, char *serv, socklen_t servlen,
+                     int flags) {
+-	return NULL;
++	return 0;
+     }
+     int main() {
+ 	(void)getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);
+@@ -2775,7 +2809,7 @@ else
+     #include <netdb.h>
+     int getnameinfo(const struct sockaddr *sa, socklen_t salen, char *host,
+                     size_t hostlen, char *serv, size_t servlen, int flags) {
+-	return NULL;
++	return 0;
+     }
+     int main() {
+ 	(void)getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);
+@@ -2806,7 +2840,7 @@ else
+     #include <netdb.h>
+     int getnameinfo(const struct sockaddr *sa, size_t salen, char *host,
+                     size_t hostlen, char *serv, size_t servlen, int flags) {
+-	return NULL;
++	return 0;
+     }
+     int main() {
+ 	(void)getnameinfo(NULL, 0, NULL, 0, NULL, 0, 0);

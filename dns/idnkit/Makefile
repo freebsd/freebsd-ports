@@ -14,8 +14,6 @@ LICENSE_NAME=	Japan Network Information Center license
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-BROKEN_FreeBSD_14=	fails to configure: can't build runidn, since parameter type list of getnameinfo() is unknown to configure
-
 USES=		iconv libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} \
