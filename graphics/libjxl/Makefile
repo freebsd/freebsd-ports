@@ -16,6 +16,8 @@ LIB_DEPENDS=	libbrotlienc.so:archivers/brotli \
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lib cpe localbase:ldflags pkgconfig shared-mime-info
+# CHERI LLVM crashes when compiling libjxl.
+USES+=		llvm
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
@@ -63,8 +65,16 @@ PIXBUF_CMAKE_BOOL=	JPEGXL_ENABLE_PLUGIN_GDKPIXBUF
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PNG
 
+.include <bsd.port.pre.mk>
+
+# See USES at the top of this file.
+AR=			/usr/bin/ar
+CC=			${LOCALBASE64}/bin/clang${LLVM_VERSION}
+CXX=			${LOCALBASE64}/bin/clang++${LLVM_VERSION}
+RANLIB=			${LOCALBASE64}/bin/llvm-ranlib${LLVM_VERSION}
+
 post-patch:
 	@${REINPLACE_CMD} 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/plugins/gdk-pixbuf/jxl.thumbnailer
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
