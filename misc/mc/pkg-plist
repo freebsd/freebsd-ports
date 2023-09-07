@@ -6,7 +6,7 @@ bin/mcview
 %%ETCDIR%%/filehighlight.ini
 %%ETCDIR%%/mc.default.keymap
 %%ETCDIR%%/mc.emacs.keymap
-%%ETCDIR%%/mc.ext
+%%ETCDIR%%/mc.ext.ini
 %%ETCDIR%%/mc.keymap
 %%ETCDIR%%/mc.menu
 %%ETCDIR%%/mcedit.menu
@@ -169,7 +169,6 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.cs
 %%NLS%%%%DATADIR%%/hints/mc.hint.da
 %%NLS%%%%DATADIR%%/hints/mc.hint.de
-%%NLS%%%%DATADIR%%/hints/mc.hint.de_CH
 %%NLS%%%%DATADIR%%/hints/mc.hint.el
 %%NLS%%%%DATADIR%%/hints/mc.hint.en_GB
 %%NLS%%%%DATADIR%%/hints/mc.hint.eo
@@ -178,14 +177,13 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.eu
 %%NLS%%%%DATADIR%%/hints/mc.hint.fa
 %%NLS%%%%DATADIR%%/hints/mc.hint.fr
-%%NLS%%%%DATADIR%%/hints/mc.hint.fr_CA
 %%NLS%%%%DATADIR%%/hints/mc.hint.ga
 %%NLS%%%%DATADIR%%/hints/mc.hint.gl
 %%NLS%%%%DATADIR%%/hints/mc.hint.hu
 %%NLS%%%%DATADIR%%/hints/mc.hint.id
 %%NLS%%%%DATADIR%%/hints/mc.hint.it
-%%NLS%%%%DATADIR%%/hints/mc.hint.it_IT
 %%NLS%%%%DATADIR%%/hints/mc.hint.ja
+%%NLS%%%%DATADIR%%/hints/mc.hint.ka
 %%NLS%%%%DATADIR%%/hints/mc.hint.ko
 %%NLS%%%%DATADIR%%/hints/mc.hint.lt
 %%NLS%%%%DATADIR%%/hints/mc.hint.nb
@@ -198,10 +196,8 @@ man/man1/mcview.1.gz
 %%NLS%%%%DATADIR%%/hints/mc.hint.sk
 %%NLS%%%%DATADIR%%/hints/mc.hint.sr
 %%NLS%%%%DATADIR%%/hints/mc.hint.sv
-%%NLS%%%%DATADIR%%/hints/mc.hint.sv_SE
 %%NLS%%%%DATADIR%%/hints/mc.hint.tr
 %%NLS%%%%DATADIR%%/hints/mc.hint.uk
-%%NLS%%%%DATADIR%%/hints/mc.hint.zh
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh_CN
 %%NLS%%%%DATADIR%%/hints/mc.hint.zh_TW
 %%ICONV%%%%DATADIR%%/mc.charsets
@@ -241,6 +237,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/aspx.syntax
 %%EDITOR%%%%DATADIR%%/syntax/assembler.syntax
 %%EDITOR%%%%DATADIR%%/syntax/awk.syntax
+%%EDITOR%%%%DATADIR%%/syntax/b.syntax
 %%EDITOR%%%%DATADIR%%/syntax/c.syntax
 %%EDITOR%%%%DATADIR%%/syntax/cabal.syntax
 %%EDITOR%%%%DATADIR%%/syntax/changelog.syntax
@@ -301,6 +298,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/php.syntax
 %%EDITOR%%%%DATADIR%%/syntax/po.syntax
 %%EDITOR%%%%DATADIR%%/syntax/povray.syntax
+%%EDITOR%%%%DATADIR%%/syntax/privoxy.syntax
 %%EDITOR%%%%DATADIR%%/syntax/procmail.syntax
 %%EDITOR%%%%DATADIR%%/syntax/properties.syntax
 %%EDITOR%%%%DATADIR%%/syntax/protobuf.syntax
@@ -321,6 +319,7 @@ man/man1/mcview.1.gz
 %%EDITOR%%%%DATADIR%%/syntax/syntax.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tcl.syntax
 %%EDITOR%%%%DATADIR%%/syntax/texinfo.syntax
+%%EDITOR%%%%DATADIR%%/syntax/toml.syntax
 %%EDITOR%%%%DATADIR%%/syntax/ts.syntax
 %%EDITOR%%%%DATADIR%%/syntax/tt.syntax
 %%EDITOR%%%%DATADIR%%/syntax/unknown.syntax
