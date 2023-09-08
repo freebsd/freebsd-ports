@@ -11,15 +11,20 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf cpe gmake libtool
+USE_CSTD=	gnu99
+USE_LDCONFIG=	yes
+
 CPE_VENDOR=	${PORTNAME}_project
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	stedolan
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--disable-maintainer-mode
-USE_CSTD=	gnu99
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check # 3 tests fail, see https://github.com/jqlang/jq/issues/2885
 
 PORTDOCS=	*
 
