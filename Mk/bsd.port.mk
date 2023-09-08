@@ -2864,7 +2864,7 @@ IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
 .        endfor
 .      endfor
 .      for _abi in ${ABI}
-.        if defined(BROKEN_${_abi})
+.        if defined(BROKEN_${_abi}) || defined(BROKEN_${_abi}_failed)
 _BROKEN_ABI=	yes
 .        endif
 .      endfor
@@ -2896,11 +2896,16 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .        endif
 .      elif defined(_BROKEN_ABI)
 .        for _abi in ${ABI}
-.          if defined(BROKEN_${_abi})
+.          if defined(BROKEN_${_abi}) || defined(BROKEN_${_abi}_failed)
 .            if !defined(TRYBROKEN)
-IGNORE=		is marked as broken for ${_abi}: ${BROKEN_${_abi}}
-.              if ${_abi} == "purecap" && ${USE_PKG64} == 1
+IGNORE=		is marked as broken for ${_abi}
+.              if defined(BROKEN_${_abi}_failed)
+IGNORE:=	${IGNORE}: Poudriere failed to build this port in the past. Remove POUDRIERE_SKIP_FAILED from make.conf to rebuild it
+.              else
+IGNORE:=	${IGNORE}: ${BROKEN_${_abi}}
+.                if ${_abi} == "purecap" && ${USE_PKG64} == 1
 IGNORE:=	${IGNORE}. Consider installing this port with pkg64
+.                endif
 .              endif
 .            endif
 .          endif
