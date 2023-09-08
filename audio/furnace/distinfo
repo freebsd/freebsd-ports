@@ -1,6 +1,6 @@
-TIMESTAMP = 1694096352
-SHA256 (tildearrow-furnace-v0.6pre10_GH0.tar.gz) = 9ecc5a2f764f43065e0d2396911a468e6d691745fde2137277939d34f718a078
-SIZE (tildearrow-furnace-v0.6pre10_GH0.tar.gz) = 43577563
+TIMESTAMP = 1694152423
+SHA256 (tildearrow-furnace-v0.6pre11_GH0.tar.gz) = ace72e3b17860ff30c87f91a310059f25301811b18d6c92f307fd2f7db890f51
+SIZE (tildearrow-furnace-v0.6pre11_GH0.tar.gz) = 43579359
 SHA256 (libsdl-org-SDL-ffa78e6b_GH0.tar.gz) = 8fe46499dc6533bc472a633d8a2a0a0886160b3d158781f1e5782330cb4fcf0e
 SIZE (libsdl-org-SDL-ffa78e6b_GH0.tar.gz) = 8486775
 SHA256 (superctr-adpcm-ef7a2171_GH0.tar.gz) = 680e0d530586e8ad6a1a68f45cf8b065b6d67e5cbb3c1e6900af8d87a9301428
