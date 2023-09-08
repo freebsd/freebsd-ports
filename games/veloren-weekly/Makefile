@@ -10,6 +10,7 @@ WWW=		https://veloren.net/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with rust 1.72 https://gitlab.com/veloren/veloren/-/issues/1875
 BROKEN_aarch64=	https://github.com/rust-lang/libc/issues/3217
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	unsupported platform by https://github.com/wasmerio/wasmer
