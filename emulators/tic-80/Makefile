@@ -1,7 +1,6 @@
 PORTNAME=	TIC-80
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2164
-PORTREVISION=	3
+DISTVERSION=	1.1.2736
 CATEGORIES=	emulators games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,16 +10,18 @@ WWW=		https://tic80.com
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# only available as a static library
+# bump TIC-80 when quickjs is updated!
+BUILD_DEPENDS=	quickjs>0:lang/quickjs
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
-		libduktape.so:lang/duktape-lib \
 		libgif.so:graphics/giflib \
-		libhttp_parser.so:www/http-parser \
 		libinotify.so:devel/libinotify \
+		libjanet.so:lang/janet \
 		libpng16.so:graphics/png \
 		libsquirrel.so:lang/squirrel \
-		libunwind.so:devel/libunwind \
-		libuv.so:devel/libuv
+		libunwind.so:devel/libunwind
 
 # for moonscript
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
@@ -34,13 +35,19 @@ GH_TUPLE=	nesbox:blip-buf:330226d9b55ecbeea644e17b5e0f096a165ca07e:blip_buf/vend
 		kuba--:zip:d7df626f3aa457e01669f65e61bf8f484e352941:zip/vendor/zip \
 		nesbox:moonscript:17179283012b392bff972ad66231d73bfeec6e90:moonscript/vendor/moonscript \
 		cofyc:argparse:0d5f5d0745df14a3f373f7eed85bf524714f4524:argparse/vendor/argparse \
-		wasm3:wasm3:a3abb3f2d320994be59dfbe2cdafa8d0b6a8253e:wasm3/vendor/wasm3
+		wasm3:wasm3:a3abb3f2d320994be59dfbe2cdafa8d0b6a8253e:wasm3/vendor/wasm3 \
+		blueloveTH:pocketpy:v1.0.0:pocketpy/vendor/pocketpy \
+		erkkah:naett:v0.3.1:naett/vendor/naett \
+		notnullnotvoid:msf_gif:v2.2:msfgif/vendor/msf_gif
 USE_GL=		gl glu glut
 USE_SDL=	sdl2
 
+CFLAGS+=	-I${LOCALBASE}/include/quickjs -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib/quickjs
+LDLIBS+=	-lpthread
+
 # unbundled succesfully
 #		albertodemichelis:squirrel:9dcf74f99097898dd5a111c4a55b89d1c4d606c0:squirrel/vendor/squirrel
-#		svaarala:duktape-releases:28f915a5381ca3a7dfa22130d08fbc5a16ae5d2f:duktape/vendor/duktape
 #		lua:lua:75ea9ccbea7c4886f30da147fb67b693b2624c26:lua/vendor/lua
 #		madler:zlib:cacf7f1d4e3d44d871b605da3b647f07d718623f:zlib/vendor/zlib
 #		nesbox:giflib:1aa11b06d0025eda77b56aec8254130654d4397b:giflib/vendor/giflib
@@ -50,9 +57,9 @@ USE_SDL=	sdl2
 #		libsdl-org:SDL:b424665e0899769b200231ba943353a5fee1b6b6:sdl2/vendor/sdl2
 #		grimfang4:sdl-gpu:e3d350b325a0e0d0b3007f69ede62313df46c6ef:sdl_gpu/vendor/sdl-gpu
 #		nesbox:lpeg:73d8614a8dea404cf7bfe25a6e4cea7183dc9fb7:lpeg/vendor/lpeg
+#		janet-lang:janet:v1.29.1:janet/vendor/janet
 
 # not actually needed
-#		smuehlst:circle-stdlib:fdb3c4a948421d47fddab8042a92f980cba43915:circle_stdlib/vendor/circle-stdlib
 #		floooh:sokol:487822d82ca79dba7b67718d962e1ba6beef01b2:sokol/vendor/sokol
 #		mruby:mruby:0f45836b5954accf508f333f932741b925214471:mruby/vendor/mruby
 

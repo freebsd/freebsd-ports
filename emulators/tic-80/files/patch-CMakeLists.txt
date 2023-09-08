@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-05-02 07:31:14 UTC
+--- CMakeLists.txt.orig	2023-08-27 09:42:28 UTC
 +++ CMakeLists.txt
 @@ -14,7 +14,6 @@ if(CMAKE_BUILD_TYPE)
      string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE_UC)
@@ -8,7 +8,7 @@
  if(Git_FOUND)
      execute_process(
          COMMAND ${GIT_EXECUTABLE} status
-@@ -155,72 +154,18 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
+@@ -160,72 +159,18 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
  
  include(ExternalProject)
  
@@ -83,11 +83,9 @@
  # WREN
  ################################
  
-@@ -335,59 +280,11 @@ target_include_directories(wasm PUBLIC ${THIRDPARTY_DI
- #target_include_directories(wasm PRIVATE ${THIRDPARTY_DIR}/wasm3/src/optional)
- #target_include_directories(wasm PRIVATE ${THIRDPARTY_DIR}/wasm3/src/vm)
+@@ -362,41 +307,6 @@ if (BAREMETALPI)
+ endif()
  
--
  ################################
 -# SQUIRREL
 -################################
@@ -114,6 +112,7 @@
 -    ${SQUIRREL_DIR}/sqstdlib/sqstdstream.cpp
 -    ${SQUIRREL_DIR}/sqstdlib/sqstdstring.cpp
 -    ${SQUIRREL_DIR}/sqstdlib/sqstdsystem.cpp
+-
 -)
 -
 -add_library(squirrel STATIC ${SQUIRREL_SRC})
@@ -123,8 +122,17 @@
 -target_include_directories(squirrel PRIVATE ${SQUIRREL_DIR}/sqstdlib)
 -
 -################################
- # GIFLIB
+ # PocketPy (Python)
  ################################
+ 
+@@ -432,27 +342,8 @@ else()
+     target_compile_features(python PRIVATE cxx_std_17)
+ endif()
+ 
+-################################
+-# GIFLIB
+-################################
++find_package(GIF REQUIRED)
  
 -set(GIFLIB_DIR ${THIRDPARTY_DIR}/giflib)
 -set(GIFLIB_SRC
@@ -139,50 +147,92 @@
 -add_library(giflib STATIC ${GIFLIB_SRC})
 -target_include_directories(giflib
 -    PRIVATE ${GIFLIB_DIR}
--    INTERFACE ${THIRDPARTY_DIR}/giflib)
-+find_package(GIF REQUIRED)
- 
+-    INTERFACE 
+-        ${THIRDPARTY_DIR}/giflib 
+-        ${THIRDPARTY_DIR}/msf_gif)
+-
  ################################
  # Blipbuf
-@@ -397,13 +294,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
+ ################################
+@@ -461,36 +352,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
  target_include_directories(blipbuf INTERFACE ${THIRDPARTY_DIR}/blip-buf)
  
  ################################
--# Duktape
+-# QuickJS
 -################################
 -
--add_library(duktape STATIC ${THIRDPARTY_DIR}/duktape/src/duktape.c)
--target_include_directories(duktape INTERFACE ${THIRDPARTY_DIR}/duktape/src)
+-set(QUICKJS_DIR ${THIRDPARTY_DIR}/quickjs)
+-
+-file(STRINGS ${QUICKJS_DIR}/VERSION CONFIG_VERSION)
+-
+-add_library(quickjs STATIC
+-    ${QUICKJS_DIR}/quickjs.c 
+-    ${QUICKJS_DIR}/libregexp.c 
+-    ${QUICKJS_DIR}/libunicode.c
+-    ${QUICKJS_DIR}/cutils.c)
+-
+-target_compile_definitions(quickjs PUBLIC CONFIG_VERSION="${CONFIG_VERSION}")
+-target_include_directories(quickjs INTERFACE ${QUICKJS_DIR})
+-
+-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+-    target_compile_definitions(quickjs PRIVATE DUMP_LEAKS)
+-endif()
+-
+-if(BAREMETALPI OR N3DS)
+-    target_compile_definitions(quickjs PRIVATE POOR_CLIB) 
+-endif()
+-
+-if(LINUX)
+-    target_compile_definitions(quickjs PUBLIC _GNU_SOURCE _POSIX_C_SOURCE=200112)
+-    target_link_libraries(quickjs PUBLIC m dl pthread)
+-endif()
 -
 -################################
- # TIC-80 core
+ # Janet
  ################################
  
-@@ -440,19 +330,20 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -529,9 +390,7 @@ if(BUILD_WITH_JANET)
+         )
+     endif()
+ 
+-    add_library(janet ${THIRDPARTY_DIR}/janet/build/c/janet.c)
+-    target_include_directories(janet PUBLIC ${THIRDPARTY_DIR}/janet/src/include)
+-    target_include_directories(janet PUBLIC ${CMAKE_SOURCE_DIR}/build/janet/)
++    pkg_check_modules(JANET REQUIRED janet)
+ endif()
+ 
+ ################################
+@@ -578,24 +437,26 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+ 
+     target_include_directories(tic80core${SCRIPT}
          PRIVATE
++            ${THIRDPARTY_DIR}/msf_gif
              ${THIRDPARTY_DIR}/moonscript
              ${THIRDPARTY_DIR}/fennel
+             ${POCKETPY_DIR}/src
 +            ${LUA_INCLUDE_DIRS}
          PUBLIC
              ${CMAKE_SOURCE_DIR}/include
              ${CMAKE_SOURCE_DIR}/src)
  
      target_link_libraries(tic80core${SCRIPT}
--        lua 
--        lpeg 
-+        ${LUA_LIBRARIES} 
-         wren 
-         wasm 
-+        sqstdlib 
-         squirrel 
-         duktape 
-         blipbuf 
+-        lua
+-        lpeg
++        ${LUA_LIBRARIES}
+         wren
+         wasm
+         squirrel
++        sqstdlib
+         python
+         scheme
+         quickjs
+         blipbuf
 -        zlib
 +        z
      )
  
      if(BUILD_WITH_MRUBY)
-@@ -461,7 +352,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -608,7 +469,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
  
      if(${BUILD_DEPRECATED})
          target_compile_definitions(tic80core${SCRIPT} PRIVATE BUILD_DEPRECATED)
@@ -191,7 +241,7 @@
      endif()
  
      if(LINUX)
-@@ -498,6 +389,8 @@ endif()
+@@ -656,6 +517,8 @@ endif()
  ################################
  if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
  
@@ -200,7 +250,7 @@
      if(WIN32)
          set(HAVE_LIBC TRUE)
      endif()
-@@ -507,10 +400,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
+@@ -665,10 +528,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
          set(SDL_STATIC_PIC ON CACHE BOOL "" FORCE)
      endif()
  
@@ -211,7 +261,7 @@
  endif()
  
  ################################
-@@ -531,7 +420,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
+@@ -694,7 +553,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
          target_link_options(player-sdl PRIVATE -static)
      endif()
  
@@ -220,7 +270,7 @@
  endif()
  
  ################################
-@@ -657,34 +546,8 @@ endif()
+@@ -835,34 +694,8 @@ endif()
  # ZLIB
  ################################
  
@@ -256,7 +306,7 @@
  ################################
  # ZIP
  ################################
-@@ -693,6 +556,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
+@@ -871,6 +704,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
  add_subdirectory(${THIRDPARTY_DIR}/zip)
  
  ################################
@@ -269,7 +319,7 @@
  # bin2txt cart2prj prj2cart xplode wasmp2cart
  ################################
  
-@@ -713,7 +582,7 @@ if(BUILD_DEMO_CARTS)
+@@ -891,7 +730,7 @@ if(BUILD_DEMO_CARTS)
      target_link_libraries(wasmp2cart tic80core)
  
      add_executable(bin2txt ${TOOLS_DIR}/bin2txt.c)
@@ -278,34 +328,19 @@
  
      add_executable(xplode
          ${TOOLS_DIR}/xplode.c
-@@ -722,7 +591,7 @@ if(BUILD_DEMO_CARTS)
-         ${CMAKE_SOURCE_DIR}/src/studio/project.c)
+@@ -997,7 +836,7 @@ if(USE_NAETT)
  
-     target_include_directories(xplode PRIVATE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)
--    target_link_libraries(xplode tic80core png giflib)
-+    target_link_libraries(xplode tic80core PNG::PNG ${GIF_LIBRARIES})
- 
-     if(LINUX)
-         target_link_libraries(xplode m)
-@@ -803,54 +672,9 @@ target_include_directories(argparse INTERFACE ${THIRDP
- # libuv
- ################################
- 
--if(USE_LIBUV)
--    add_subdirectory(${THIRDPARTY_DIR}/libuv)
--endif()
-+pkg_check_modules(LIBUV REQUIRED libuv)
+     if(WIN32)
+         target_link_libraries(naett INTERFACE winhttp)
+-    elseif(LINUX)
++    elseif(LINUX OR FREEBSD)
+         find_package(CURL REQUIRED)
+         target_include_directories(naett PRIVATE ${CURL_INCLUDE_DIRS})
+         target_link_libraries(naett ${CURL_LIBRARIES})
+@@ -1005,40 +844,6 @@ if(USE_NAETT)
+ endif()
  
  ################################
--# HTTP parser
--################################
--
--if(USE_LIBUV)
--    add_library(http_parser STATIC ${THIRDPARTY_DIR}/http-parser/http_parser.c)
--    target_include_directories(http_parser INTERFACE ${THIRDPARTY_DIR}/http-parser)
--endif()
--
--################################
 -# PNG
 -################################
 -
@@ -343,24 +378,19 @@
  # TIC-80 studio
  ################################
  
-@@ -894,13 +718,13 @@ if(WIN32)
+@@ -1082,9 +887,9 @@ if(WIN32)
      target_include_directories(tic80studio PRIVATE ${THIRDPARTY_DIR}/dirent/include)
  endif()
  
 -target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
-+target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR} PRIVATE ${LUA_INCLUDE_DIRS})
++target_include_directories(tic80studio PUBLIC ${CMAKE_CURRENT_BINARY_DIR} PRIVATE ${LUA_INCLUDE_DIRS} ${THIRDPARTY_DIR}/msf_gif)
  
 -target_link_libraries(tic80studio tic80core zip wave_writer argparse giflib png)
-+target_link_libraries(tic80studio tic80core zip wave_writer argparse ${GIF_LIBRARIES} PNG::PNG)
++target_link_libraries(tic80studio tic80core zip wave_writer argparse ${GIF_LIBRARIES} png)
  
- if(USE_LIBUV)
-     target_compile_definitions(tic80studio PRIVATE USE_LIBUV)
--    target_link_libraries(tic80studio uv_a http_parser)
-+    target_link_libraries(tic80studio ${LIBUV_LIBRARIES} http_parser)
- endif()
- 
- if(BUILD_PRO)
-@@ -914,80 +738,6 @@ endif()
+ if(USE_NAETT)
+     target_compile_definitions(tic80studio PRIVATE USE_NAETT)
+@@ -1102,80 +907,6 @@ endif()
  target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
  
  ################################
@@ -441,7 +471,7 @@
  # TIC-80 app
  ################################
  
-@@ -1028,7 +778,7 @@ if(BUILD_SDL)
+@@ -1216,7 +947,7 @@ if(BUILD_SDL)
          endif()
  
      elseif(NOT ANDROID)
@@ -450,7 +480,7 @@
      endif()
  
      target_link_libraries(tic80 tic80studio)
-@@ -1044,13 +794,13 @@ if(BUILD_SDL)
+@@ -1237,13 +968,13 @@ if(BUILD_SDL)
      endif()
  
      if(BUILD_SDLGPU)
@@ -466,7 +496,7 @@
          endif()
      endif()
  
-@@ -1121,7 +871,7 @@ if(N3DS)
+@@ -1314,7 +1045,7 @@ if(N3DS)
          ${CMAKE_SOURCE_DIR}/src)
  
      target_link_directories(tic80_n3ds PRIVATE ${DEVKITPRO}/libctru/lib ${DEVKITPRO}/portlibs/3ds/lib)
@@ -475,7 +505,7 @@
  
      add_custom_command(TARGET tic80_n3ds
             POST_BUILD
-@@ -1181,7 +931,7 @@ if(BUILD_STUB)
+@@ -1374,7 +1105,7 @@ if(BUILD_STUB)
              endif()
  
          else()
@@ -484,7 +514,7 @@
          endif()
  
          target_link_libraries(tic80${SCRIPT} tic80core${SCRIPT} argparse)
-@@ -1193,13 +943,13 @@ if(BUILD_STUB)
+@@ -1386,13 +1117,13 @@ if(BUILD_STUB)
          endif()
  
          if(BUILD_SDLGPU)
