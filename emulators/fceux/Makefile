@@ -1,8 +1,11 @@
 PORTNAME=	fceux
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.5
-PORTREVISION=	2
+DISTVERSION=	2.6.6
 CATEGORIES=	emulators games
+
+PATCH_SITES=	https://github.com/TASEmulators/fceux/commit/
+PATCHFILES=	396096223ec58ff7f437ec0de7275240946531c5.diff:-p1 \
+		d2ee6351c08518c866bb48d89f58a67bb36931fc.diff:-p1
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	NES emulator
@@ -11,7 +14,8 @@ WWW=		https://fceux.com
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libminizip.so:archivers/minizip
+LIB_DEPENDS=	libarchive.so:archivers/libarchive \
+		libminizip.so:archivers/minizip
 
 USES=		cmake desktop-file-utils gl lua:51 pkgconfig qt:5 sdl
 USE_GL=		gl glu
