@@ -1,5 +1,6 @@
 PORTNAME=	elementary-code
 DISTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	miguel@gocobachi.dev
