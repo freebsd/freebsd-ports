@@ -5,7 +5,7 @@ DISTVERSION=	2.2.1
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
