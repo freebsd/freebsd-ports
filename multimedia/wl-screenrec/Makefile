@@ -1,5 +1,6 @@
 PORTNAME=	wl-screenrec
 PORTVERSION=	s20230808
+PORTREVISION=	1
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
