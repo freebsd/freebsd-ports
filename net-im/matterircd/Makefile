@@ -1,6 +1,7 @@
 PORTNAME=	matterircd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.1
+PORTREVISION=	1
 CATEGORIES=	net-im irc
 
 MAINTAINER=	chalpin@cs.wisc.edu
