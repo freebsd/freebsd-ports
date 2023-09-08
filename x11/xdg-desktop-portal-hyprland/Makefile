@@ -19,7 +19,8 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libpipewire-0.3.so:multimedia/pipewire
 RUN_DEPENDS=	grim:x11/grim \
-		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR}
+		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR} \
+		slurp:x11/slurp
 
 FLAVORS=	qt5 qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
@@ -35,12 +36,6 @@ MESON_ARGS=	-Dsd-bus-provider=basu -Dsystemd=disabled
 PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
-
-OPTIONS_DEFINE=	SLURP
-OPTIONS_DEFAULT=SLURP
-
-SLURP_DESC=		Simple output chooser
-SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
 .ifdef GH_TUPLE
 post-configure:
