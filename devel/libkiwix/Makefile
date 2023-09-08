@@ -1,6 +1,5 @@
 PORTNAME=	libkiwix
-DISTVERSION=	12.0.0
-PORTREVISION=	1
+DISTVERSION=	12.1.0
 CATEGORIES=	devel
 
 MAINTAINER=	olce.freebsd.ports@certner.fr
