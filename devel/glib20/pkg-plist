@@ -380,6 +380,7 @@ share/gettext/its/gschema.loc
 %%DATADIR%%-2.0/codegen/utils.py
 %%DATADIR%%-2.0/codegen/utils.pyc
 %%DATADIR%%-2.0/codegen/utils.pyo
+%%DATADIR%%-2.0/dtds/gresource.dtd
 %%DATADIR%%-2.0/gdb/glib_gdb.py
 %%DATADIR%%-2.0/gdb/gobject_gdb.py
 %%DATADIR%%-2.0/gettext/po/Makefile.in.in
@@ -561,6 +562,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-74.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-76.html
+%%GTKDOC%%share/gtk-doc/html/gio/api-index-2-78.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-full.html
 %%GTKDOC%%share/gtk-doc/html/gio/application.html
@@ -699,6 +701,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-74.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-76.html
+%%GTKDOC%%share/gtk-doc/html/glib/api-index-2-78.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-8.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-full.html
@@ -847,6 +850,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-74.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-76.html
+%%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-78.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-8.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-full.html

@@ -1,12 +1,9 @@
 PORTNAME=	glib
-DISTVERSION=	2.76.5
+DISTVERSION=	2.78.0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
-
-PATCH_SITES=	https://gitlab.gnome.org/GNOME/${PORTNAME}/-/commit/
-PATCHFILES+=	f6c40b1d27ed.patch:-p1 # https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3335
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
@@ -39,7 +36,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7600.5
+_LIBVERSION=	0.7800.0
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
