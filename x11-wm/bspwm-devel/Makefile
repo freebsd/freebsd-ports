@@ -3,7 +3,7 @@ DISTVERSION=	0.9.10.20230829
 CATEGORIES=		x11-wm
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Tiling window manager based on binary space partitioning
 WWW=		https://github.com/baskerville/bspwm
 

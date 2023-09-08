@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Fast and easy-to-use status bar
 WWW=		https://github.com/polybar/polybar
 

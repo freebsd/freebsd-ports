@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.04
 CATEGORIES=	sysutils
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Simple yet fancy CPU architecture fetching tool
 WWW=		https://github.com/Dr-Noob/cpufetch
 

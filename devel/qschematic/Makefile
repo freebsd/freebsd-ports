@@ -2,7 +2,7 @@ PORTNAME=	qschematic
 DISTVERSION=	1.4.0
 CATEGORIES=	devel
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Qt/C++ library providing widgets for drawing diagrams
 WWW=		https://github.com/simulton/qschematic
 

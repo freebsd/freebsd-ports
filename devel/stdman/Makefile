@@ -2,7 +2,7 @@ PORTNAME=	stdman
 DISTVERSION=	2022.07.30
 CATEGORIES=	devel docs
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Formatted C++20 stdlib man pages
 WWW=		https://github.com/jeaye/stdman
 

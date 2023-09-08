@@ -2,7 +2,7 @@ PORTNAME=	gpds
 DISTVERSION=	1.6.0
 CATEGORIES=	devel
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	General purpose data serializer library written in modern C++
 WWW=		https://gpds.simulton.com/
 

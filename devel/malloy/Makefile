@@ -2,7 +2,7 @@ PORTNAME=	malloy
 DISTVERSION=	0.6.2
 CATEGORIES=	devel
 
-MAINTAINER=	jbo@insane.engineer
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Embeddable HTTP(S) and WS(S) client/server components for C++
 WWW=		https://github.com/tectu/malloy
 
