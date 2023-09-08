@@ -1,6 +1,5 @@
 PORTNAME=	nvidia-drm-515-kmod
 PORTVERSION=	${NVIDIA_DISTVERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 
 RUN_DEPENDS+=	${KMODDIR}/drm.ko:graphics/drm-515-kmod

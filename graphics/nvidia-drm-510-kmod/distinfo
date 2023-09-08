@@ -1,5 +1,5 @@
-TIMESTAMP = 1692885801
-SHA256 (amshafer-nvidia-driver-535.98-nvidia-drm-510-kmod-535.98_1_GH0.tar.gz) = c09de4543af3bd6287aaf07172cbf53612a8cd3575c4904d2312ff03a36dee29
-SIZE (amshafer-nvidia-driver-535.98-nvidia-drm-510-kmod-535.98_1_GH0.tar.gz) = 185495971
+TIMESTAMP = 1693163544
+SHA256 (amshafer-nvidia-driver-535.104.05-nvidia-drm-510-kmod-535.104.05_GH0.tar.gz) = 58cac49adaddff90af9b791fa8d2f20f0dbf5141edb7b5d348e668aed6a48342
+SIZE (amshafer-nvidia-driver-535.104.05-nvidia-drm-510-kmod-535.104.05_GH0.tar.gz) = 185527867
 SHA256 (freebsd-drm-kmod-drm_v5.10.163_6_GH0.tar.gz) = 342eb5073f318d18667c605e639bd85e48de3be25861d8a730d0ca3dd7ba7726
 SIZE (freebsd-drm-kmod-drm_v5.10.163_6_GH0.tar.gz) = 20096515
