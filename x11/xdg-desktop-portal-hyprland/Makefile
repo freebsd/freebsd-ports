@@ -21,7 +21,8 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libpipewire-0.3.so:multimedia/pipewire
 RUN_DEPENDS=	grim:x11/grim \
-		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR}
+		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR} \
+		slurp:x11/slurp
 
 FLAVORS=	qt5 qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
@@ -43,12 +44,6 @@ PLIST_FILES=	libexec/${PORTNAME} \
 .if !exists(/usr/include/sys/timerfd.h)
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
-
-OPTIONS_DEFINE=	SLURP
-OPTIONS_DEFAULT=SLURP
-
-SLURP_DESC=		Simple output chooser
-SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
 .include <bsd.port.options.mk>
 

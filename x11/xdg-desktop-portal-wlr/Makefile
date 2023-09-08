@@ -20,7 +20,8 @@ LIB_DEPENDS=	libbasu.so:devel/basu \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
-RUN_DEPENDS=	grim:x11/grim
+RUN_DEPENDS=	grim:x11/grim \
+		slurp:x11/slurp
 
 USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
@@ -37,15 +38,12 @@ PLIST_FILES=	libexec/${PORTNAME} \
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
 
-OPTIONS_DEFINE=	MANPAGES SLURP
-OPTIONS_DEFAULT=MANPAGES SLURP
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}.5.gz
-
-SLURP_DESC=		Simple output chooser
-SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
 .include <bsd.port.options.mk>
 
