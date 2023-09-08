@@ -41,6 +41,11 @@ tpm2_abrmd_start()
     touch $logfile
     chmod 640 $logfile
     chown -R ${tpm2_abrmd_user}:${tpm2_abrmd_group} ${logfile}
+    
+    if ! kldstat -d -q -n tpm.ko; then
+        kldload tpm
+    fi
+    
     /usr/sbin/daemon -P ${pidfile} -u ${tpm2_abrmd_user} ${command} >>${logfile} 2>&1
 
     if is_process_running; then
