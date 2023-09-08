@@ -1303,7 +1303,16 @@ USE_SUBMAKE=	yes
 USE_SUBMAKE=	yes
 .    endif
 
-.    if exists(${MASTERDIR}/Makefile.${ARCH}-${OPSYS})
+.    for _abi in ${ABI}
+.      if exists(${MASTERDIR}/Makefile.${_abi})
+SUBMAKE_ABI=${_abi}
+.        break
+.      endif
+.    endfor
+.    if defined(SUBMAKE_ABI)
+.include "${MASTERDIR}/Makefile.${SUBMAKE_ABI}"
+USE_SUBMAKE=	yes
+.    elif exists(${MASTERDIR}/Makefile.${ARCH}-${OPSYS})
 .include "${MASTERDIR}/Makefile.${ARCH}-${OPSYS}"
 USE_SUBMAKE=	yes
 .    elif exists(${MASTERDIR}/Makefile.${OPSYS})
