@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.28.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/kovidgoyal/${PORTNAME}/commit/
