@@ -2864,7 +2864,7 @@ IGNORE+= "${${f}_IGNORE_${OPSYS}_${v}}"
 .        endfor
 .      endfor
 .      for _abi in ${ABI}
-.        if defined(BROKEN_${_abi}) || defined(BROKEN_${_abi}_failed)
+.        if defined(BROKEN_${_abi}) || (defined(BROKEN_${_abi}_failed) && defined(POUDRIERE_SKIP_FAILED))
 _BROKEN_ABI=	yes
 .        endif
 .      endfor
@@ -2896,7 +2896,7 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .        endif
 .      elif defined(_BROKEN_ABI)
 .        for _abi in ${ABI}
-.          if defined(BROKEN_${_abi}) || defined(BROKEN_${_abi}_failed)
+.          if defined(BROKEN_${_abi}) || (defined(BROKEN_${_abi}_failed) && defined(POUDRIERE_SKIP_FAILED))
 .            if !defined(TRYBROKEN)
 IGNORE=		is marked as broken for ${_abi}
 .              if defined(BROKEN_${_abi}_failed)
