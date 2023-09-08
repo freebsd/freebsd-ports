@@ -315,7 +315,7 @@ post-patch:
 	    ${WRKSRC}/third_party/test_fonts/fontconfig/BUILD.gn \
 	    ${WRKSRC}/third_party/vulkan-deps/vulkan-loader/src/BUILD.gn \
 	    ${WRKSRC}/third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h \
-	    ${WRKSRC}/third_party/wayland/features.gni
+	    ${WRKSRC}/third_party/wayland/BUILD.gn
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
