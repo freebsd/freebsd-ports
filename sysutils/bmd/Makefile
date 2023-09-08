@@ -1,5 +1,5 @@
 PORTNAME=	bmd
-DISTVERSION=	1.0
+DISTVERSION=	2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -9,8 +9,8 @@ WWW=		https://github.com/yuichiro-naito/bmd
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# Because bhyve runs on amd64 only.
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	bhyve runs on amd64 only
 
 RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware \
 		grub2-bhyve>0:sysutils/grub2-bhyve
