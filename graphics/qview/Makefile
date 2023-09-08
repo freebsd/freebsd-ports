@@ -1,5 +1,5 @@
 PORTNAME=	qview
-PORTVERSION=	5.0
+PORTVERSION=	6.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jurplel/qView/releases/download/${PORTVERSION}/
 DISTNAME=	qView-${PORTVERSION}
@@ -15,5 +15,12 @@ USE_QT=		buildtools:build concurrent:build linguisttools:build \
 		core gui network widgets imageformats:run
 
 WRKSRC=		${WRKDIR}/qView
+
+OPTIONS_DEFINE=	KF5
+OPTIONS_DEFAULT=	KF5
+
+KF5_DESC=	HEIF and AVIF support (via kimageformats)
+KF5_USES=	kde:5
+KF5_USE=	KDE=kimageformats:run
 
 .include <bsd.port.mk>
