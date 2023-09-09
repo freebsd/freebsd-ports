@@ -124,6 +124,10 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/56datrang.png
 %%DATADIR%%/help/images/56filter.png
 %%DATADIR%%/help/images/56stack.png
+%%DATADIR%%/help/images/57budgtime.png
+%%DATADIR%%/help/images/57cashflow.png
+%%DATADIR%%/help/images/57chartdrill.png
+%%DATADIR%%/help/images/57newhome.png
 %%DATADIR%%/help/images/5.png
 %%DATADIR%%/help/images/6.png
 %%DATADIR%%/help/images/7.png
@@ -141,6 +145,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/dlg-category1.png
 %%DATADIR%%/help/images/dlg-currencies1.png
 %%DATADIR%%/help/images/dlg-currencies2.png
+%%DATADIR%%/help/images/dlg-filter-common.png
 %%DATADIR%%/help/images/dlg-filter1.png
 %%DATADIR%%/help/images/dlg-filter2.png
 %%DATADIR%%/help/images/dlg-filter3.png
@@ -158,6 +163,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/dlg-prefs7.png
 %%DATADIR%%/help/images/dlg-prefs8.png
 %%DATADIR%%/help/images/dlg-prefs9.png
+%%DATADIR%%/help/images/dlg-prefsF.png
 %%DATADIR%%/help/images/dlg-properties1.png
 %%DATADIR%%/help/images/dlg-split1.png
 %%DATADIR%%/help/images/dlg-tag.png
@@ -184,6 +190,8 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/key_ctrl.png
 %%DATADIR%%/help/images/key_n.png
 %%DATADIR%%/help/images/key_r.png
+%%DATADIR%%/help/images/new12.png
+%%DATADIR%%/help/images/new24.png
 %%DATADIR%%/help/images/pm-cash.png
 %%DATADIR%%/help/images/pm-ccard.png
 %%DATADIR%%/help/images/pm-check.png
@@ -220,10 +228,16 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/win-budget1.png
 %%DATADIR%%/help/images/win-budget2.png
 %%DATADIR%%/help/images/win-carcost1.png
+%%DATADIR%%/help/images/win-main.png
 %%DATADIR%%/help/images/win-main1.png
+%%DATADIR%%/help/images/win-main2.png
+%%DATADIR%%/help/images/win-main3.png
+%%DATADIR%%/help/images/win-main4.png
+%%DATADIR%%/help/images/win-main5.png
 %%DATADIR%%/help/images/win-statistics1.png
 %%DATADIR%%/help/images/win-statistics2.png
 %%DATADIR%%/help/images/win-statistics3.png
+%%DATADIR%%/help/images/win-statistics4.png
 %%DATADIR%%/help/images/win-trendtime1.png
 %%DATADIR%%/help/images/win-trendtime2.png
 %%DATADIR%%/help/index.html
@@ -257,6 +271,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-forced.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-future.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-new.png
+%%DATADIR%%/icons/hicolor/16x16/status/hb-ope-prefilled.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-reconciled.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-remind.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-similar.png
@@ -325,6 +340,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/icons/hicolor/48x48/status/prf-columns.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-euro.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-folder.png
+%%DATADIR%%/icons/hicolor/48x48/status/prf-forecast.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-general.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-import.png
 %%DATADIR%%/icons/hicolor/48x48/status/prf-interface.png
@@ -332,8 +348,10 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/icons/hicolor/48x48/status/prf-report.png
 %%DATADIR%%/icons/hicolor/scalable/actions/edit-split-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/list-collapse-all-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/list-duplicate-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/list-expand-all-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/list-merge-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/open-in-browser-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/text-casesensitive-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/text-regularexpression-symbolic.svg
 %%DATADIR%%/icons/hicolor/scalable/actions/toggle-sign-symbolic.svg
