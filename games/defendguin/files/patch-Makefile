@@ -1,0 +1,36 @@
+--- Makefile.orig	2020-05-26 04:29:37 UTC
++++ Makefile
+@@ -9,8 +9,8 @@
+ 
+ # User-definable stuff:
+ 
+-CC=gcc
+-PREFIX=/usr/local
++#CC=gcc
++#PREFIX=/usr/local
+ MAN_PREFIX=$(PREFIX)
+ BIN_PREFIX=$(PREFIX)/bin
+ DATA_PREFIX=$(PREFIX)/share/defendguin/
+@@ -40,14 +40,14 @@ install:	defendguin
+ 
+ .PHONY: install
+ install:	defendguin
+-	install -d $(DATA_PREFIX)
+-	cp -R data/* $(DATA_PREFIX)
+-	chmod -R a+rX,g-w,o-w $(DATA_PREFIX)
+-	cp defendguin $(BIN_PREFIX)/
+-	chmod a+rx,g-w,o-w $(BIN_PREFIX)/defendguin
+-	-mkdir -p $(MAN_PREFIX)/man/man6/
+-	cp src/defendguin.6 $(MAN_PREFIX)/man/man6/
+-	chmod a+rx,g-w,o-w $(MAN_PREFIX)/man/man6/defendguin.6
++	install -d $(DESTDIR)$(DATA_PREFIX)
++	cp -R data/* $(DESTDIR)$(DATA_PREFIX)
++	chmod -R a+rX,g-w,o-w $(DESTDIR)$(DATA_PREFIX)
++	cp defendguin $(DESTDIR)$(BIN_PREFIX)/
++	chmod a+rx,g-w,o-w $(DESTDIR)$(BIN_PREFIX)/defendguin
++	-mkdir -p $(DESTDIR)$(MAN_PREFIX)/man/man6/
++	cp src/defendguin.6 $(DESTDIR)$(MAN_PREFIX)/man/man6/
++	chmod a+rx,g-w,o-w $(DESTDIR)$(MAN_PREFIX)/man/man6/defendguin.6
+ 
+ .PHONY: uninstall
+ uninstall:
