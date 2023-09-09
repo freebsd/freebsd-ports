@@ -1,7 +1,6 @@
 PORTNAME=	jq
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.7
-PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,9 +10,7 @@ WWW=		https://stedolan.github.io/jq/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:textproc/gsed
-
-USES=		autoreconf bison cpe gmake libtool
+USES=		autoreconf cpe gmake libtool
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
@@ -25,8 +22,6 @@ GH_ACCOUNT=	stedolan
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir="${DOCSDIR}" \
 		--disable-maintainer-mode
-
-BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed # fixes the build problem on 15: sed: No error: 0; checking for sys/cygwin.h... eval: ${+...}: Bad substitution
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # 3 tests fail, see https://github.com/jqlang/jq/issues/2885
