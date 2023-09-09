@@ -1,8 +1,11 @@
 PORTNAME=	brotli
-PORTVERSION=	1.0.9
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
+
+PATCH_SITES=	https://github.com/google/${PORTNAME}/commit/
+PATCHFILES=	741610efd335a8b6ff9be4c9bed643e0a74fdb6a.patch:-p1
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Generic-purpose lossless compression algorithm
@@ -11,20 +14,21 @@ WWW=		https://github.com/google/brotli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=		cmake:testing cpe pathfix pkgconfig
+CPE_VENDOR=	google
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
-USES=		autoreconf:build compiler:c++0x cpe gmake libtool pkgconfig
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CPE_VENDOR=	google
+PLIST_SUB=	SHLIBVER=${DISTVERSION:R}
 
-INSTALL_TARGET=	install-strip
-PLIST_SUB=	SHLIBVER=${PORTVERSION}
+CMAKE_OFF=	BUILD_TESTING
+CMAKE_ARGS=	-DSHARE_INSTALL_PREFIX=share
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		STATIC
+OPTIONS_SUB=		yes
 
-pre-configure:
-	(cd ${WRKSRC} && ./bootstrap)
+STATIC_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-static-libs
 
 .include <bsd.port.mk>
