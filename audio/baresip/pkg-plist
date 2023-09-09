@@ -13,7 +13,7 @@ lib/baresip/modules/ausine.so
 %%AVFORMAT%%lib/baresip/modules/avformat.so
 lib/baresip/modules/cons.so
 lib/baresip/modules/contact.so
-%%CTRL_DBUS%%lib/baresip/modules/ctrl_dbus.so
+@comment %%CTRL_DBUS%%lib/baresip/modules/ctrl_dbus.so
 lib/baresip/modules/ctrl_tcp.so
 lib/baresip/modules/debug_cmd.so
 lib/baresip/modules/dtls_srtp.so

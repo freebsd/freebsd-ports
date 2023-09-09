@@ -1,7 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.0
-PORTREVISION=	1
+DISTVERSION=	3.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	re>=${PORTVERSION}:audio/re \
-		rem>=${PORTVERSION}:audio/rem
+		rem>0:audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake ssl pkgconfig
@@ -20,8 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	baresip
 
 # FIXME values of the next 3 variables taken from source code Makefile
-ABI_MAJOR=	4
-ABI_AGE=	12
+ABI_MAJOR=	9
+ABI_AGE=	4
 ABI_REV=	0
 PLIST_SUB=	ABI_MAJOR=${ABI_MAJOR}
 PLIST_SUB+=	ABI_AGE=${ABI_AGE}
@@ -89,7 +88,8 @@ MODULES_LIST:=	$(MODULES_LIST);av1
 .endif
 
 .if ${PORT_OPTIONS:MAVCODEC}
-AVCODEC_DEPEND=	${LOCALBASE}/include/libavcodec/avcodec.h:multimedia/ffmpeg
+AVCODEC_DEPEND=	${LOCALBASE}/include/libavcodec/avcodec.h:multimedia/ffmpeg \
+			libdrm>0:graphics/libdrm
 MODULES_LIST:=	$(MODULES_LIST);avcodec
 .endif
 
@@ -161,6 +161,7 @@ MODULES_LIST:=	$(MODULES_LIST);pulse
 .if ${PORT_OPTIONS:MSDL}
 USES+=		sdl
 USE_SDL=	sdl2
+SDLDEPEND=	mesa-libs>0:graphics/mesa-libs
 MODULES_LIST:=	$(MODULES_LIST);sdl
 .endif
 
@@ -180,7 +181,9 @@ MODULES_LIST:=	$(MODULES_LIST);swscale
 .endif
 
 .if ${PORT_OPTIONS:MV4L2}
-V4L2_DEPEND=	${LOCALBASE}/include/libv4l2.h:multimedia/libv4l
+V4L2_DEPEND=	${LOCALBASE}/include/libv4l2.h:multimedia/libv4l \
+                v4l_compat>0:multimedia/v4l_compat
+
 MODULES_LIST:=	$(MODULES_LIST);v4l2
 .endif
 
