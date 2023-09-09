@@ -133,6 +133,7 @@ bin/cdb-nbtool
 %%GUI%%%%DATADIR%%/manual/properties/TableauSymmetry.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Trace.cnb
 %%GUI%%%%DATADIR%%/manual/properties/Vielbein.cnb
+%%GUI%%%%DATADIR%%/manual/properties/Weight.cnb
 %%GUI%%%%DATADIR%%/manual/properties/WeightInherit.cnb
 %%GUI%%%%DATADIR%%/notebook.html
 %%GUI%%%%DATADIR%%/notebook.tex
