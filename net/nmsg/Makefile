@@ -1,5 +1,5 @@
 PORTNAME=	nmsg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.0
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
@@ -24,13 +24,14 @@ PORTDOCS=	*
 
 # The DOXYGEN option is best effort.
 # If doxygen is installed, it will get used if the option is set to NO.
-OPTIONS_DEFINE=		YAJL ZEROMQ DOXYGEN EXAMPLES MANPAGES DOCS
-OPTIONS_DEFAULT=	YAJL ZEROMQ DOXYGEN MANPAGES
+OPTIONS_DEFINE=		JSON_C ZEROMQ DOXYGEN EXAMPLES MANPAGES DOCS
+OPTIONS_DEFAULT=	JSON_C ZEROMQ DOXYGEN MANPAGES
 OPTIONS_SUB=		yes
 
-YAJL_DESC=		JSON support via libyajl
-YAJL_CONFIGURE_WITH=	yajl
-YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
+JSON_C_DESC=		JSON support via libjson-c
+JSON_C_CONFIGURE_WITH=	json-c
+JSON_C_LIB_DEPENDS=	libjson-c.so:devel/json-c
+JSON_C_BROKEN_OFF=	Does not build without json-c
 ZEROMQ_DESC=		ZeroMQ support
 ZEROMQ_CONFIGURE_WITH=	libzmq
 ZEROMQ_LIB_DEPENDS=	libzmq.so:net/libzmq4
