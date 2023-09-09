@@ -1,6 +1,6 @@
 PORTNAME=	octopkg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.3.3
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,12 +10,12 @@ WWW=		https://tintaescura.com/projects/octopkg/
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++17-lang desktop-file-utils gl qmake qt:5
+USES=		compiler:c++17-lang desktop-file-utils gl qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	aarnt
 USE_GL=		gl
-USE_QT=		concurrent core declarative gui linguist network widgets xml \
-		buildtools:build
+USE_LOCALE=	en_US.UTF-8
+USE_QT=		base tools
 
 PLIST_FILES=	bin/${PORTNAME} \
 		lib/${PORTNAME}/${PORTNAME}-doas \
