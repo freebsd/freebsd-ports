@@ -1,3 +1,4 @@
+bin/dumpodf
 %%SITE_PERL%%/ODF/lpOD_Helper.pm
 %%SITE_PERL%%/ODF/lpOD_Helper/Unicode.pod
 %%PERL5_MAN3%%/ODF::lpOD_Helper.3.gz
