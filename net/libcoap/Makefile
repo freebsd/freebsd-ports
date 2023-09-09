@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
 CATEGORIES=	net
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C implementation of the Constrained Application Protocol
 WWW=		https://github.com/obgm/libcoap
 
