@@ -37,6 +37,7 @@ PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
 
+# XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
 CXXFLAGS+=	-D_LIBCPP_ENABLE_EXPERIMENTAL # std::vformat
 .endif
