@@ -1,12 +1,16 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.15.4
-PORTREVISION?=	2
+DISTVERSION?=	1.16
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9472e7e15268.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/18114
+PATCHFILES+=	0cbca92b27e8.patch:-p1 # https://github.com/hrydgard/ppsspp/pull/18115
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
@@ -29,11 +33,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
 		hrydgard:miniupnp:miniupnpd_2_1-502-g3a87be3:miniupnp/ext/miniupnp \
-		google:cpu_features:v0.7.0-60-g75ec988:cpu_features/ext/cpu_features \
+		google:cpu_features:v0.8.0-27-gfd4ffc1:cpu_features/ext/cpu_features \
 		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
 		KhronosGroup:SPIRV-Cross:sdk-1.3.239.0:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.11.0-188-g7bd1ec9:armips/ext/armips \
-		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem
+		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem \
+		RetroAchievements:rcheevos:v10.7.1-17-g813163c:rcheevos/ext/rcheevos \
+		Tencent:rapidjson:v1.1.0-415-g73063f50:rapidjson/ext/rapidjson
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
 
@@ -43,6 +49,7 @@ EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		glew opengl
 CMAKE_ON=	${FFMPEG LIBZIP SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_WAYLAND_WSI USE_VULKAN_DISPLAY_KHR
 CMAKE_OFF=	USE_DISCORD
+LDFLAGS+=	-Wl,--as-needed # ICE/SM/X11/Xext, Qt5Network
 SUB_FILES=	pkg-message
 PORTDATA=	assets
 
