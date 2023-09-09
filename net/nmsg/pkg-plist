@@ -4,6 +4,7 @@ include/nmsg/alias.h
 include/nmsg/asprintf.h
 include/nmsg/base/defs.h
 include/nmsg/base/dns.pb-c.h
+include/nmsg/base/dnsobs.pb-c.h
 include/nmsg/base/dnsqr.pb-c.h
 include/nmsg/base/dnstap.pb-c.h
 include/nmsg/base/email.pb-c.h
@@ -45,12 +46,13 @@ include/nmsg/zbuf.h
 lib/libnmsg.a
 lib/libnmsg.so
 lib/libnmsg.so.8
-lib/libnmsg.so.8.0.0
+lib/libnmsg.so.8.1.0
 lib/nmsg/nmsg_flt1_sample.so
 lib/nmsg/nmsg_msg9_base.so
 libdata/pkgconfig/libnmsg.pc
 %%MANPAGES%%man/man1/nmsgtool.1.gz
 %%DATADIR%%/base/dns.proto
+%%DATADIR%%/base/dnsobs.proto
 %%DATADIR%%/base/dnsqr.proto
 %%DATADIR%%/base/dnstap.proto
 %%DATADIR%%/base/email.proto
