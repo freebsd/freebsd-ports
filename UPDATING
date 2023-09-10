@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230910:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: tremere@cainites.net
+
+  In Authoritative Server 4.8, the LMDB backend gains a new Lightning
+  Stream-compatible schema, which requires a data migration (this is
+  automatic, and there is no migration back to the old schema). LMDB
+  backend users should pay extra attention to the Upgrade Notes
+  (https://doc.powerdns.com/authoritative/upgrading.html).
+
+20230910:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
 
