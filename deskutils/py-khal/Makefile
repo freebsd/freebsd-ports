@@ -4,7 +4,7 @@ CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	CalDAV-based calendar
 WWW=		https://lostpackets.de/khal/
 
