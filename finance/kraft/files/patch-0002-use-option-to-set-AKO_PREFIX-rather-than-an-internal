@@ -1,0 +1,25 @@
+From 50e090059365ddbacfd219325095f4f6c5f4aa7b Mon Sep 17 00:00:00 2001
+From: Klaas Freitag <kraft@freisturz.de>
+Date: Sat, 29 Apr 2023 22:23:27 +0200
+Subject: [PATCH] use option to set AKO_PREFIX rather than an internal variable
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git CMakeLists.txt CMakeLists.txt
+index 8b5374c..f5ecc41 100644
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -9,7 +9,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modul
+ set(CMAKE_AUTOMOC TRUE)
+ 
+ # Akonadi Prefix: Set this to KF5 for builds with Akonadi Libs before 5.23
+-set(AKO_PREFIX "KPim5")
++option(AKO_PREFIX "Akonadi Prefix, either KF5 or KPim5, can be set by -DAKO_PREFIX=KF5" "KPim5")
+ 
+ include(KDEInstallDirs)
+ include(KDECMakeSettings)
+-- 
+2.41.0
+
