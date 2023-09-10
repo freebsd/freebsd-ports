@@ -45,6 +45,7 @@ lib/hevea/html/gif.hva
 lib/hevea/html/graphics.hva
 lib/hevea/html/graphicx.hva
 lib/hevea/html/hevea.hva
+lib/hevea/html/lang.hva
 lib/hevea/html/mathjax.hva
 lib/hevea/html/mathjaxauto.hva
 lib/hevea/html/mathpartir.hva
@@ -63,9 +64,11 @@ lib/hevea/html/undersection.hva
 lib/hevea/html/urlhref.hva
 lib/hevea/html/xypic.hva
 lib/hevea/hyperref.hva
+lib/hevea/hyphenat.hva
 lib/hevea/ifpdf.hva
 lib/hevea/ifthen.hva
 lib/hevea/imagen
+lib/hevea/imakeidx.hva
 lib/hevea/import.hva
 lib/hevea/index.hva
 lib/hevea/info/article.hva

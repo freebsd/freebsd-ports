@@ -1,5 +1,5 @@
 PORTNAME=	hevea
-PORTVERSION=	2.34
+PORTVERSION=	2.36
 CATEGORIES=	textproc
 MASTER_SITES=	http://para.inria.fr/~maranget/hevea/distri/ \
 		ftp://ftp.inria.fr/INRIA/moscova/hevea/
@@ -12,11 +12,12 @@ WWW=		http://para.inria.fr/~maranget/hevea/
 
 BUILD_DEPENDS=	ocamlbuild:devel/ocaml-ocamlbuild
 
-OPTIONS_DEFINE=	DOCS
-
 PLIST_SUB=	HEVEAVERSION=${PORTVERSION}
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
+
 DOCS_DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.pdf \
 			${PORTNAME}-${PORTVERSION}-manual.tar.gz
 
