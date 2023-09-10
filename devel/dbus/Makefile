@@ -1,8 +1,8 @@
 PORTNAME=	dbus
-DISTVERSION=	1.14.6
+DISTVERSION=	1.14.10
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
+MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Message bus system for inter-application communication
@@ -34,7 +34,7 @@ PORTSCOUT=	limitw:1,even
 USERS=		messagebus
 GROUPS=		messagebus
 
-_LIBVERSION=	3.32.2
+_LIBVERSION=	3.32.4
 
 PLIST_SUB=	GROUPS=${GROUPS} \
 		VERSION="1.0" \
