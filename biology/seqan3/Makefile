@@ -1,6 +1,5 @@
 PORTNAME=	seqan3
-DISTVERSION=	3.2.0
-PORTREVISION=	2
+DISTVERSION=	3.3.0
 CATEGORIES=	biology devel math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,9 +19,10 @@ USES=		cmake localbase
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	seqan
-GH_TUPLE=	xxsds:sdsl-lite:cf9ff4a:sdsl_lite/submodules/sdsl-lite
+GH_TUPLE=	xxsds:sdsl-lite:d54d389:sdsl_lite/submodules/sdsl-lite
 
 USE_GCC=	yes # tests only pass with gcc, see https://github.com/seqan/seqan3/issues/2643, otherwise gcc isn't needed because this is a header-only library
+# tests fail to compile, see https://github.com/seqan/seqan3/issues/3191
 
 TEST_WRKSRC=	${WRKSRC}/.test
 

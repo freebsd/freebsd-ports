@@ -1,5 +1,5 @@
-TIMESTAMP = 1656041922
-SHA256 (seqan-seqan3-3.2.0_GH0.tar.gz) = 80d41dd035407cfec83eb3a4466d0421adc27129af684290c0c4da31421e7276
-SIZE (seqan-seqan3-3.2.0_GH0.tar.gz) = 1522246
-SHA256 (xxsds-sdsl-lite-cf9ff4a_GH0.tar.gz) = 9e328d00c3bdead09cfa35e75e20ace0e668d6dac0436ce9256f2156088f22e8
-SIZE (xxsds-sdsl-lite-cf9ff4a_GH0.tar.gz) = 1166065
+TIMESTAMP = 1694368553
+SHA256 (seqan-seqan3-3.3.0_GH0.tar.gz) = 96975406445c8a5974803eefa146ee2f85206f6d2c2bccf45171ee0b1a653fb8
+SIZE (seqan-seqan3-3.3.0_GH0.tar.gz) = 1564852
+SHA256 (xxsds-sdsl-lite-d54d389_GH0.tar.gz) = eaac28144b34a833afb8c03139abbe427d4b95a827bf5b9b6532353f9cff9ec1
+SIZE (xxsds-sdsl-lite-d54d389_GH0.tar.gz) = 1183835
