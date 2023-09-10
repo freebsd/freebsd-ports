@@ -73,6 +73,14 @@ share/help/el/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
 share/help/el/fr.romainvigier.MetadataCleaner/general.page
 share/help/el/fr.romainvigier.MetadataCleaner/index.page
 share/help/el/fr.romainvigier.MetadataCleaner/usage.page
+share/help/eo/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/eo/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
+share/help/eo/fr.romainvigier.MetadataCleaner/figures/clean-button.png
+share/help/eo/fr.romainvigier.MetadataCleaner/figures/icon.svg
+share/help/eo/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
+share/help/eo/fr.romainvigier.MetadataCleaner/general.page
+share/help/eo/fr.romainvigier.MetadataCleaner/index.page
+share/help/eo/fr.romainvigier.MetadataCleaner/usage.page
 share/help/es/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
 share/help/es/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/es/fr.romainvigier.MetadataCleaner/figures/clean-button.png
@@ -289,6 +297,14 @@ share/help/uk/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
 share/help/uk/fr.romainvigier.MetadataCleaner/general.page
 share/help/uk/fr.romainvigier.MetadataCleaner/index.page
 share/help/uk/fr.romainvigier.MetadataCleaner/usage.page
+share/help/ur/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ur/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
+share/help/ur/fr.romainvigier.MetadataCleaner/figures/clean-button.png
+share/help/ur/fr.romainvigier.MetadataCleaner/figures/icon.svg
+share/help/ur/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
+share/help/ur/fr.romainvigier.MetadataCleaner/general.page
+share/help/ur/fr.romainvigier.MetadataCleaner/index.page
+share/help/ur/fr.romainvigier.MetadataCleaner/usage.page
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/clean-button.png
@@ -315,6 +331,7 @@ share/locale/cs/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/da/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/de/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/el/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
+share/locale/eo/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/es/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/eu/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/fi/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
