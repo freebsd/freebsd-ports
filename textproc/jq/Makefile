@@ -1,6 +1,7 @@
 PORTNAME=	jq
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,7 @@ WWW=		https://stedolan.github.io/jq/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe gmake libtool
+USES=		autoreconf bison cpe gmake libtool
 USE_CSTD=	gnu99
 USE_LDCONFIG=	yes
 
