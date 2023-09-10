@@ -1,3 +1,29 @@
+  <vuln vid="4061a4b2-4fb1-11ee-acc7-0151f07bc899">
+    <topic>gitea -- block user account creation from blocked email domains</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.20.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/26812">
+	  <p>check blocklist for emails when adding them to account</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.20.4</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.20.4</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-09-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a57472ba-4d84-11ee-bf05-000c29de725b">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
