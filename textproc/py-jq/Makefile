@@ -1,5 +1,5 @@
 PORTNAME=	jq
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI LOCAL/mandree:mandree
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,6 +28,9 @@ USE_PYTHON=	autoplist distutils
 post-extract:
 		# move tests into place
 		${MV} ${WRKDIR}/jq-1.2.1/* ${WRKSRC}
+
+post-patch:
+		${REINPLACE_CMD} -e 's/\$$end/end of file/' ${WRKSRC}/tests/*.py
 
 post-install:
 		${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/jq*.so
