@@ -1,7 +1,6 @@
 PORTNAME=	gitui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.2
-PORTREVISION=	2
+DISTVERSION=	0.24.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +30,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		aho-corasick-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
+		anstream-0.5.0 \
+		anstyle-1.0.2 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-2.1.0 \
 		anyhow-1.0.75 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
@@ -46,11 +50,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cassowary-0.3.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.26 \
-		clap-4.1.14 \
-		clap_builder-4.1.14 \
-		clap_lex-0.4.0 \
+		chrono-0.4.30 \
+		clap-4.4.2 \
+		clap_builder-4.4.2 \
+		clap_lex-0.5.1 \
 		codespan-reporting-0.11.1 \
+		colorchoice-1.0.0 \
 		core-foundation-sys-0.8.3 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.8 \
@@ -134,8 +139,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.25.0+1.1.1t \
-		openssl-sys-0.9.92 \
+		openssl-src-300.1.3+3.1.2 \
+		openssl-sys-0.9.93 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.7 \
@@ -152,6 +157,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		proc-macro2-1.0.63 \
 		quote-1.0.29 \
 		ratatui-0.21.0 \
+		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
@@ -202,6 +208,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-truncate-0.2.0 \
 		unicode-width-0.1.10 \
 		url-2.4.1 \
+		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.3 \
