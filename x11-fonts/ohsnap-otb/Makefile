@@ -3,7 +3,7 @@ DISTVERSION=	1.8.0
 CATEGORIES=	x11-fonts
 PORTREVISION=	1
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced font based on Artwiz Snap
 WWW=		https://gitlab.com/rigoletto/ohsnap-otb
 

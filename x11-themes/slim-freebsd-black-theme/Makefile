@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme/get/
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple FreeBSD SLiM theme inspired on the FreeBSD SLiM theme
 WWW=		https://bitbucket.org/rigoletto-freebsd/slim-freebsd-black-theme
 

@@ -4,7 +4,7 @@ DISTVERSION=	1.1.12
 CATEGORIES?=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple CalDAV server using a postgres backend
 WWW=		https://www.davical.org/
 

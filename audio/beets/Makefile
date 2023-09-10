@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media library management system for obsessive-compulsive music geeks
 WWW=		https://beets.io/
 

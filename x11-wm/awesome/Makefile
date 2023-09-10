@@ -5,7 +5,7 @@ PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable, next generation framework window manager
 WWW=		https://awesomewm.org/
 

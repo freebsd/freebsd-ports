@@ -4,7 +4,7 @@ DISTVERSION=	1.0.10
 CATEGORIES=	x11-themes
 PKGNAMESUFFIX=	-qt5
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SVG-based theme engine for Qt, KDE and LXQt
 WWW=		https://github.com/tsujan/Kvantum
 

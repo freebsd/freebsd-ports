@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.27
 CATEGORIES=	devel
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mainline variant of Kademlia Distributed Hash Table (DHT)
 WWW=		http://www.pps.univ-paris-diderot.fr/~jch/software/bittorrent/
 

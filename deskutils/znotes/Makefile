@@ -2,7 +2,7 @@ PORTNAME=	znotes
 DISTVERSION=	0.4.7
 CATEGORIES=	deskutils
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple notes managment application based on Qt
 WWW=		http://znotes.sourceforge.net
 

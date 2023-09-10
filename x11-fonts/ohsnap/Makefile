@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF/osnapfont/
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced font based on Artwiz Snap
 WWW=		https://sourceforge.net/projects/osnapfont/
 

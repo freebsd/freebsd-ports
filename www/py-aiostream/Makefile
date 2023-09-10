@@ -4,7 +4,7 @@ CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generator-based operators for asynchronous iteration
 WWW=		https://github.com/vxgmichel/aiostream
 

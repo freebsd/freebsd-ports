@@ -4,7 +4,7 @@ CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Synchronize calendars and contacts
 WWW=		https://vdirsyncer.readthedocs.org/
 

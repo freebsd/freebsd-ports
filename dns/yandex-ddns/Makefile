@@ -3,7 +3,7 @@ DISTVERSION=	g20200613
 PORTREVISION=	13
 CATEGORIES=	dns
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use Yandex DNS as a dynamic DNS provider
 WWW=		https://github.com/thekvs/yandex-ddns
 

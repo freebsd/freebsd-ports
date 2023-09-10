@@ -5,7 +5,7 @@ DISTVERSIONSUFFIX=	-g5a9f33b
 PORTREVISION=	52
 CATEGORIES=	x11
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merge concurrent outputs for a status bar
 WWW=		https://github.com/sector-f/admiral
 

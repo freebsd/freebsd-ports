@@ -4,7 +4,7 @@ DISTVERSION=	0.64
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Andrew.s Web Libraries - PHP Utility Libraries
 WWW=		https://gitlab.com/davical-project/awl
 
