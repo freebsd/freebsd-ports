@@ -1,5 +1,5 @@
 PORTNAME=	ngspice_rework
-PORTVERSION=	38
+PORTVERSION=	41
 CATEGORIES=	cad
 MASTER_SITES=	SF/ngspice/ng-spice-rework/${PORTVERSION}
 DISTNAME=	ngspice-${PORTVERSION}
@@ -11,8 +11,6 @@ WWW=		https://ngspice.sourceforge.io/
 LICENSE=	BSD3CLAUSE BSD4CLAUSE LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_aarch64=	fails to link: missing sbrk
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 
