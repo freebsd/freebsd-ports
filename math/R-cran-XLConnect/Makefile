@@ -1,6 +1,6 @@
 PORTNAME=	XLConnect
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -24,8 +24,7 @@ USES=		cran
 USE_JAVA=	yes
 
 DEP_JARS=	commons-codec commons-collections4 commons-compress commons-io	\
-		log4j-api log4j-core poi poi-ooxml poi-ooxml-full SparseBitSet	\
-		xmlbeans
+		log4j poi poi-ooxml poi-ooxml-full SparseBitSet	xmlbeans
 
 post-install:
 .for j in ${DEP_JARS}

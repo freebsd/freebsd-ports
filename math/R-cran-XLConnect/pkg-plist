@@ -65,8 +65,7 @@
 %%R_MOD_DIR%%/java/commons-io.jar
 %%R_MOD_DIR%%/java/commons-math3.jar
 %%R_MOD_DIR%%/java/curvesapi-1.07.jar
-%%R_MOD_DIR%%/java/log4j-api.jar
-%%R_MOD_DIR%%/java/log4j-core.jar
+%%R_MOD_DIR%%/java/log4j.jar
 %%R_MOD_DIR%%/java/poi-ooxml-full.jar
 %%R_MOD_DIR%%/java/poi-ooxml.jar
 %%R_MOD_DIR%%/java/poi.jar
