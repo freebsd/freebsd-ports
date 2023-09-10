@@ -423,6 +423,7 @@
     SUBDIR += openssl-unsafe
     SUBDIR += openssl30
     SUBDIR += openssl31
+    SUBDIR += openssl32
     SUBDIR += openvas
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
