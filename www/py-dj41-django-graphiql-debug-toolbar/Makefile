@@ -11,6 +11,9 @@ WWW=		https://github.com/flavors/django-graphiql-debug-toolbar
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 4.1 ends December 2023, upgrade to the Django 4.2+ version of this port. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=	2023-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=2.2:www/py-django41@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-graphene-django>=2.0.0,1:devel/py-dj41-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-debug-toolbar>=3.1:www/py-dj41-django-debug-toolbar@${PY_FLAVOR}
