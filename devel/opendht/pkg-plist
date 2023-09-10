@@ -15,7 +15,7 @@ include/opendht/http.h
 include/opendht/indexation/pht.h
 include/opendht/infohash.h
 include/opendht/log.h
-include/opendht/log_enable.h
+include/opendht/logger.h
 include/opendht/network_engine.h
 include/opendht/network_utils.h
 include/opendht/node.h
