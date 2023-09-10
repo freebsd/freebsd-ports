@@ -13,6 +13,10 @@ lib/libbacsd-%%LIB_VERSION%%.so
 lib/libbacsd.so
 lib/libbacsql-%%LIB_VERSION%%.so
 lib/libbacsql.so
+%%S3%%lib/bacula-sd-cloud-driver-%%LIB_VERSION%%.so
+%%S3%%lib/bacula-sd-cloud-driver.so
+%%S3%%lib/bacula-sd-cloud-s3-driver-%%LIB_VERSION%%.so
+%%S3%%lib/bacula-sd-cloud-s3-driver.so
 sbin/bacula
 sbin/bacula-dir
 sbin/bacula-sd

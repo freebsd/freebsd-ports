@@ -1,6 +1,6 @@
 PORTNAME=	bacula
 DISTVERSION=	13.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	sysutils
 MASTER_SITES=	SF/bacula/bacula/${PORTVERSION}
 PKGNAMEPREFIX?=	#
@@ -31,8 +31,9 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE?=	MTX NLS IPV6
+OPTIONS_DEFINE?=	MTX NLS IPV6 S3
 MTX_DESC=		Install mtx for control of autochanger devices
+S3_DESC=		Install S3 plugin
 
 .if ${PKGNAMESUFFIX} == "13-server"
 OPTIONS_MULTI=		BACKEND
@@ -129,6 +130,11 @@ MTX_RUN_DEPENDS=	${LOCALBASE}/sbin/mtx:misc/mtx
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MS3}
+CONFIGURE_ARGS+=	--enable-s3
+LIB_DEPENDS+=		libs3.so:sysutils/bacula-libs3
+.endif
 
 # if IPv6 is not in the kernel, it generates many errors
 .if ! ${PORT_OPTIONS:MIPV6}
