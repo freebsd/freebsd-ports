@@ -21,8 +21,10 @@ include/gemmi/cif2mtz.hpp
 include/gemmi/cifdoc.hpp
 include/gemmi/contact.hpp
 include/gemmi/crd.hpp
+include/gemmi/ddl.hpp
 include/gemmi/dencalc.hpp
 include/gemmi/dirwalk.hpp
+include/gemmi/ecalc.hpp
 include/gemmi/eig3.hpp
 include/gemmi/elem.hpp
 include/gemmi/enumstr.hpp
