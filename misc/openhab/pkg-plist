@@ -322,7 +322,7 @@ libexec/openhab/runtime/system/org/openhab/distro/distro/%%PORTVERSION%%/distro-
 libexec/openhab/runtime/system/org/openhab/distro/openhab-addons/%%PORTVERSION%%/openhab-addons-%%PORTVERSION%%-features.xml
 libexec/openhab/runtime/system/org/openhab/osgiify/com.google.dagger/2.27/com.google.dagger-2.27.jar
 libexec/openhab/runtime/system/org/openhab/osgiify/com.igormaznitsa.jbbp/1.4.1/com.igormaznitsa.jbbp-1.4.1.jar
-libexec/openhab/runtime/system/org/openhab/osgiify/io.methvin.directory-watcher/0.17.1/io.methvin.directory-watcher-0.17.1.jar
+libexec/openhab/runtime/system/org/openhab/osgiify/io.methvin.directory-watcher/0.18.0/io.methvin.directory-watcher-0.18.0.jar
 libexec/openhab/runtime/system/org/openhab/osgiify/si.uom.si-units/2.1/si.uom.si-units-2.1.jar
 libexec/openhab/runtime/system/org/openhab/ui/bundles/org.openhab.ui.iconset.classic/%%PORTVERSION%%/org.openhab.ui.iconset.classic-%%PORTVERSION%%.jar
 libexec/openhab/runtime/system/org/openhab/ui/bundles/org.openhab.ui/%%PORTVERSION%%/org.openhab.ui-%%PORTVERSION%%.jar

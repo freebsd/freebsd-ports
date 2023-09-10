@@ -24,6 +24,12 @@ A workaround is to use the following rc.conf setting which will
 prefer IPv4 over IPv6:
 	openhab_java_opts="-Djava.net.preferIPv4Stack=true"
 
+OpenHAB contains some files/directories ending in .core, if you have
+	daily_clean_disks_enable="YES"
+for periodic runs (this is the default setting in /etc/default/periodic.conf), you should
+remove "*.core" from the daily_clean_disks_files setting in periodic.conf. Example:
+	daily_clean_disks_files="[#,]* .#* a.out *.CKP .emacs_[0-9]*"
+
 
 If you upgrade from a pevious version, make a backup of
 	/var/db/openhab
