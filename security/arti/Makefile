@@ -1,5 +1,6 @@
 PORTNAME=	arti
 DISTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -8,6 +9,8 @@ WWW=		https://arti.torproject.org/
 
 LICENSE=	MIT
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=Zeroize crate does not support i386
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo sqlite ssl
