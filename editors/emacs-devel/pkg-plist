@@ -706,6 +706,12 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/cross_circle_16.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/cross_circle_fill_16.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/cross_circle_fill_16.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_large_16.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_large_16.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_medium_16.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_medium_16.svg
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_small_16.pbm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/dot_small_16.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/heart_16.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/heart_16.svg
 %%DATADIR%%/%%EMACS_VER%%/etc/images/symbols/heart_fill_16.pbm
