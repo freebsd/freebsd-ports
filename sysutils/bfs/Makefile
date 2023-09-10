@@ -1,5 +1,5 @@
 PORTNAME=	bfs
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -16,6 +16,7 @@ USES=		compiler:c++17-lang gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
 
+MAKEFILE=	GNUmakefile
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=		ONIGURUMA
