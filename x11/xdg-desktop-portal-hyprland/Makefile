@@ -39,7 +39,9 @@ PLIST_FILES=	libexec/${PORTNAME} \
 
 # XXX Drop after FreeBSD 14.0 EOL around 2025-03-01
 .if exists(/usr/lib/libc++.so) && !exists(/usr/include/c++/v1/__format/write_escaped.h)
+# Emulate -fexperimental-library for GCC
 CXXFLAGS+=	-D_LIBCPP_ENABLE_EXPERIMENTAL # std::vformat
+LDFLAGS+=	-lc++experimental
 .endif
 
 .ifdef GH_TUPLE
