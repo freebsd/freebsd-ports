@@ -1,6 +1,5 @@
 PORTNAME=	suricata
-DISTVERSION=	6.0.13
-PORTREVISION=	3
+DISTVERSION=	7.0.0
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	rustc:lang/${RUST_DEFAULT}
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		liblz4.so:archivers/liblz4 \
 		libnet.so:net/libnet \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libyaml.so:textproc/libyaml
 
 USES=		autoreconf cpe gmake iconv:translit libtool localbase pathfix \
@@ -40,8 +39,7 @@ CONFLICTS_INSTALL=	libhtp
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=		GEOIP IPFW NETMAP NSS PORTS_PCAP PRELUDE PYTHON REDIS \
-			TESTS
+OPTIONS_DEFINE=		GEOIP IPFW NETMAP NSS PORTS_PCAP PYTHON REDIS TESTS
 OPTIONS_DEFINE_amd64=	HYPERSCAN
 OPTIONS_DEFAULT=	IPFW NETMAP PYTHON
 
@@ -49,8 +47,6 @@ OPTIONS_RADIO=		SCRIPTS
 OPTIONS_RADIO_SCRIPTS=	LUA LUAJIT
 
 OPTIONS_SUB=	yes
-
-PRELUDE_BROKEN=	Compilation broken, see https://redmine.openinfosecfoundation.org/issues/4065
 
 GEOIP_DESC=		GeoIP support
 HYPERSCAN_DESC=		Hyperscan support
@@ -60,7 +56,6 @@ LUA_DESC=		LUA scripting support
 NETMAP_DESC=		Netmap support for inline IDP
 NSS_DESC=		File checksums and SSL/TLS fingerprinting
 PORTS_PCAP_DESC=	Use libpcap from ports
-PRELUDE_DESC=		Prelude support for NIDS alerts
 PYTHON_DESC=		Python-based update and control utilities
 REDIS_DESC=		Redis output support
 SCRIPTS_DESC=		Scripting
@@ -79,7 +74,7 @@ LUAJIT_CONFIGURE_ON=	--enable-luajit
 LUA_USES=		lua:51
 LUA_CONFIGURE_ON=	--enable-lua
 
-NETMAP_CONFIGURE_ENABLE=	netmap # netmap-v14
+NETMAP_CONFIGURE_ENABLE=	netmap
 
 NSS_LIB_DEPENDS=	libnspr4.so:devel/nspr \
 			libnss3.so:security/nss
@@ -87,14 +82,6 @@ NSS_CONFIGURE_OFF=	--disable-nspr \
 			--disable-nss
 
 PORTS_PCAP_LIB_DEPENDS=	libpcap.so.1:net/libpcap
-
-PRELUDE_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
-				libgnutls.so:security/gnutls \
-				libgpg-error.so:security/libgpg-error \
-				libltdl.so:devel/libltdl \
-				libprelude.so:security/libprelude
-PRELUDE_CONFIGURE_ON=		--with-libprelude-prefix=${LOCALBASE}
-PRELUDE_CONFIGURE_ENABLE=	prelude
 
 PYTHON_BUILD_DEPENDS=		${PYTHON_RUN_DEPENDS}
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
