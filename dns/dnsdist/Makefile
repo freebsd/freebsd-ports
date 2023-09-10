@@ -1,6 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	1.8.0
-PORTREVISION=	2
+DISTVERSION=	1.8.1
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
