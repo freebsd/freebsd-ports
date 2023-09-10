@@ -15,6 +15,9 @@ WWW=		https://www.djangoproject.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 4.1 ends December 2023, upgrade to a newer version of Django. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=	2023-12-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zoneinfo>0:devel/py-backports.zoneinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asgiref>=3.5.2:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.2:databases/py-sqlparse@${PY_FLAVOR}
