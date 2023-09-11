@@ -39,6 +39,7 @@
     SUBDIR += csharp-mode.el
     SUBDIR += cython
     SUBDIR += cython-devel
+    SUBDIR += cython3
     SUBDIR += dhall
     SUBDIR += dlang-tools
     SUBDIR += duktape
