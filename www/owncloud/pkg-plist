@@ -1743,7 +1743,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/README.md
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/codecov.yml
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/composer.json
-%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/example-apache-kerberos.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/example-sso-kerberos.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/psalm.xml
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/ACL.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/AbstractServer.php
@@ -1770,6 +1770,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidPathException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidRequestException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidResourceException.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidTicket.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/InvalidTypeException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/NoLoginServerException.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Exception/NoRouteToHostException.php
@@ -1788,6 +1789,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/ITimeZoneProvider.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/KerberosApacheAuth.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/KerberosAuth.php
+%%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/KerberosTicket.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Native/NativeFileInfo.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Native/NativeReadStream.php
 %%WWWDIR%%/apps/files_external/3rdparty/icewind/smb/src/Native/NativeServer.php
@@ -3869,6 +3871,10 @@
 %%WWWDIR%%/core/img/actions/view-pause.svg
 %%WWWDIR%%/core/img/actions/view-play.svg
 %%WWWDIR%%/core/img/actions/view-previous.svg
+%%WWWDIR%%/core/img/app-registry/drawio.png
+%%WWWDIR%%/core/img/app-registry/onlyoffice.png
+%%WWWDIR%%/core/img/app-registry/richdocuments.png
+%%WWWDIR%%/core/img/app-registry/wopi.png
 %%WWWDIR%%/core/img/apps/shield.svg
 %%WWWDIR%%/core/img/apps/web.svg
 %%WWWDIR%%/core/img/apps/workflow.svg
@@ -9227,6 +9233,7 @@
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/lib/composer/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
