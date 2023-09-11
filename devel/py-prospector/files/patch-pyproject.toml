@@ -1,0 +1,27 @@
+--- pyproject.toml.orig	2023-05-25 01:28:05 UTC
++++ pyproject.toml
+@@ -38,7 +38,6 @@ prospector = 'prospector.run:main'
+ [tool.poetry.dependencies]
+ python = ">=3.7.2,<4.0"
+ pylint = ">=2.8.3"
+-pylint-celery = "0.3"
+ pylint-django = "~2.5"
+ pylint-plugin-utils = "~0.7"
+ pylint-flask = "0.6"
+@@ -46,13 +45,13 @@ requirements-detector = ">=1.2.0"
+ PyYAML = "*"
+ mccabe = "^0.7.0"
+ flake8 = "<6.0.0"
+-pyflakes = ">=2.2.0,<3.*"
++pyflakes = ">=2.2.0"
+ pycodestyle = ">=2.9.0"
+-pep8-naming = ">=0.3.3,<=0.10.0"
++pep8-naming = ">=0.3.3"
+ pydocstyle = ">=2.0.0"
+ dodgy = "^0.2.1"
+ toml = "^0.10.2"
+-setoptconf-tmp = "^0.3.1"
++setoptconf = "^0.3.0"
+ GitPython = "^3.1.27"
+ packaging = "*"
+ bandit = {version = ">=1.5.1", optional = true}

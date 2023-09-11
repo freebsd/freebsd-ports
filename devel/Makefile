@@ -5226,6 +5226,7 @@
     SUBDIR += py-prompt-toolkit2
     SUBDIR += py-property-cached
     SUBDIR += py-proselint
+    SUBDIR += py-prospector
     SUBDIR += py-proto-plus
     SUBDIR += py-protobuf
     SUBDIR += py-protobuf-compiler

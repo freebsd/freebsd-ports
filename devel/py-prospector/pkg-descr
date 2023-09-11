@@ -1,0 +1,13 @@
+Prospector is a tool to analyze Python code and output information about errors,
+potential problems, convention violations and complexity.
+
+It brings together the functionality of other Python analysis tools such as
+Pylint, pycodestyle, and McCabe complexity. See the Supported Tools
+documentation section for a complete list.
+
+The primary aim of Prospector is to be useful 'out of the box'. A common
+complaint of other Python analysis tools is that it takes a long time to filter
+through which errors are relevant or interesting to your own coding style.
+Prospector provides some default profiles, which hopefully will provide a good
+starting point and will be useful straight away, and adapts the output depending
+on the libraries your project uses.
