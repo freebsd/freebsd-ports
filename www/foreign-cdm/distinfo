@@ -1,0 +1,9 @@
+TIMESTAMP = 1695753109
+SHA256 (cdm-fef0b5aa1bd31efb88dfab804bdbe614f3d54f28.tar.gz) = 178ae15061d67943fa754e9ddf1903536c4cdb813dcdd90f98007f6238781a26
+SIZE (cdm-fef0b5aa1bd31efb88dfab804bdbe614f3d54f28.tar.gz) = 14361
+SHA256 (google-chrome-stable_116.0.5845.179-1_amd64.deb) = 75d091c547b4f336c88e45c61ba8b7a6fddb869034122b3ffe0ed60225c389b4
+SIZE (google-chrome-stable_116.0.5845.179-1_amd64.deb) = 96683480
+SHA256 (shkhln-foreign-cdm-1-32ed6209a25a60b3eef84e43cffb47a5da036290_GH0.tar.gz) = 434cab205adc99ebf7a985e0acb36ca70d2502398625e9377b33d4c6fce62785
+SIZE (shkhln-foreign-cdm-1-32ed6209a25a60b3eef84e43cffb47a5da036290_GH0.tar.gz) = 11772
+SHA256 (capnproto-capnproto-928c8390d4d562bd32dc79a42eb64e9bdba572d8_GH0.tar.gz) = 5c867f4758d7a3e2e0213e732e2b9a5ad70d1193a4d615bbab41df1d4051de37
+SIZE (capnproto-capnproto-928c8390d4d562bd32dc79a42eb64e9bdba572d8_GH0.tar.gz) = 2413835

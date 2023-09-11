@@ -1,0 +1,12 @@
+/compat/linux/usr/bin/fcdm-worker
+/compat/linux/usr/lib/foreign-cdm/libwidevinecdm.so
+lib/foreign-cdm/fcdm-fbsd.so
+share/chromium/WidevineCdm/LICENSE
+share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+share/chromium/WidevineCdm/manifest.json
+@dir /compat/linux/usr/bin
+@dir /compat/linux/usr/lib/foreign-cdm
+@dir /compat/linux/usr/lib
+@dir /compat/linux/usr
+@dir /compat/linux
+@dir /compat
