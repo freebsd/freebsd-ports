@@ -26,6 +26,6 @@
 %%DATA%%%%DATADIR%%/www/hgweb.cgi
 %%DATA%%%%DATADIR%%/www/hgweb.fcgi
 %%DATA%%%%DATADIR%%/www/hgweb.wsgi
-man/man1/hg.1.gz
-man/man5/hgignore.5.gz
-man/man5/hgrc.5.gz
+share/man/man1/hg.1.gz
+share/man/man5/hgignore.5.gz
+share/man/man5/hgrc.5.gz
