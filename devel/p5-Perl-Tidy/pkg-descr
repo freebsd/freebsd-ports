@@ -6,5 +6,3 @@ colored HTML output.
 If you want your code to conform to style.perl(7), you should use:
 perltidy -i=8 -t -pt=2 -bt=2 -sbt=2 -ci=4 -noll -sfs -nasc -ce
 (Written by knu)
-
-See also: http://perltidy.sourceforge.net/

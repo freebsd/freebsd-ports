@@ -2,7 +2,6 @@ bin/perltidy
 %%SITE_PERL%%/Perl/Tidy.pm
 %%SITE_PERL%%/Perl/Tidy.pod
 %%SITE_PERL%%/Perl/Tidy/Debugger.pm
-%%SITE_PERL%%/Perl/Tidy/DevNull.pm
 %%SITE_PERL%%/Perl/Tidy/Diagnostics.pm
 %%SITE_PERL%%/Perl/Tidy/FileWriter.pm
 %%SITE_PERL%%/Perl/Tidy/Formatter.pm
@@ -10,9 +9,6 @@ bin/perltidy
 %%SITE_PERL%%/Perl/Tidy/IOScalar.pm
 %%SITE_PERL%%/Perl/Tidy/IOScalarArray.pm
 %%SITE_PERL%%/Perl/Tidy/IndentationItem.pm
-%%SITE_PERL%%/Perl/Tidy/LineBuffer.pm
-%%SITE_PERL%%/Perl/Tidy/LineSink.pm
-%%SITE_PERL%%/Perl/Tidy/LineSource.pm
 %%SITE_PERL%%/Perl/Tidy/Logger.pm
 %%SITE_PERL%%/Perl/Tidy/Tokenizer.pm
 %%SITE_PERL%%/Perl/Tidy/VerticalAligner.pm
