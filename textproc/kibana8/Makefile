@@ -18,13 +18,14 @@ LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node16
 
-USES=		compiler:c++14-lang cpe nodejs:16,build,run python:build
+USES=		compiler:c++17-lang cpe nodejs:16,build,run python:build
 CPE_VENDOR=	elastic
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	nodejs:nan:v${_NODE_NAN_VER}:node_nan \
 		uhop:node-re2:${_NODE_RE2_VER}:node_re2
 
+USE_CXXSTD=	c++17
 USE_RC_SUBR=	${PORTNAME}
 
 CONFLICTS=	kibana7
