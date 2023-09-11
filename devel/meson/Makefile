@@ -7,6 +7,9 @@ MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
 WWW=		https://mesonbuild.com/
 
+BROKEN_purecap=	requires missing CheriABI Python at run time
+USE_PKG64=	1
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
