@@ -1,6 +1,6 @@
 PORTNAME=	qhull
 DISTVERSION=	8.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
@@ -17,8 +17,9 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		cmake tar:tgz
 USE_LDCONFIG=	yes
+CFLAGS+=	-fPIC
 
-CONFLICTS=	afni qhull5 qhull7
+CONFLICTS=	afni qhull7
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2020.2
 
