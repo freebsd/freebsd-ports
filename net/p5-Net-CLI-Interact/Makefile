@@ -1,5 +1,5 @@
 PORTNAME=	Net-CLI-Interact
-PORTVERSION=	2.400000
+PORTVERSION=	2.400002
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,11 +11,12 @@ WWW=		https://metacpan.org/release/Net-CLI-Interact
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-File-ShareDir-Install>=0.06:devel/p5-File-ShareDir-Install \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 		p5-Class-Mix>=0:devel/p5-Class-Mix \
 		p5-Config-Any>=0.27:devel/p5-Config-Any \
-		p5-File-ShareDir>=1:devel/p5-File-ShareDir \
+		p5-File-ShareDir>=0:devel/p5-File-ShareDir \
 		p5-IO-Tty>=0:devel/p5-IO-Tty \
 		p5-IPC-Run>=0:devel/p5-IPC-Run \
 		p5-Log-Dispatch-Config>=0:devel/p5-Log-Dispatch-Config \
@@ -27,7 +28,7 @@ RUN_DEPENDS=	p5-Class-Load>=0:devel/p5-Class-Load \
 TEST_DEPENDS=	p5-Test-File-ShareDir>=1.001002:devel/p5-Test-File-ShareDir
 
 USES=		perl5
-USE_PERL5=	modbuild
+USE_PERL5=	configure
 
 NO_ARCH=	yes
 
