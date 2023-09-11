@@ -33,6 +33,7 @@ BUILD_DEPENDS+=		${MESON_CMD}:devel/meson
 
 # meson uses ninja
 .include "${USESDIR}/ninja.mk"
+CONFIGURE_ENV+=		NINJA="${NINJA_CMD_RUN}"
 
 # meson might have issues with non-unicode locales
 USE_LOCALE?=	en_US.UTF-8

@@ -34,7 +34,11 @@ _NINJA_PORT=	/nonexistent
 .  endif
 
 .  if ${NINJA_DEFAULT} == ninja
+.    ifdef QEMU_EMULATING
+NINJA_CMD_RUN=	${LOCALBASE64}/bin/ninja
+.    else
 NINJA_CMD_RUN=	ninja
+.    endif
 _NINJA_PORT_RUN=devel/ninja
 .  elif ${NINJA_DEFAULT} == samurai
 NINJA_CMD_RUN=	samu
@@ -70,6 +74,7 @@ MAKE_ENV+=	NINJA_STATUS="[%p %s/%t] "
 MAKE_ARGS+=	-v
 .    endif
 CMAKE_ARGS+=	-GNinja
+CMAKE_ARGS+=	-DCMAKE_MAKE_PROGRAM=${NINJA_CMD_RUN}
 MAKEFILE=
 MAKE_CMD=	${NINJA_CMD}
 MAKE_FLAGS=
