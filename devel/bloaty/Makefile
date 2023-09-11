@@ -15,12 +15,12 @@ LIB_DEPENDS=	libre2.so:devel/re2 \
 		libcapstone.so:devel/capstone \
 		libprotobuf.so:devel/protobuf
 
-USES=		cmake compiler:c++11-lang pkgconfig
+USES=		cmake compiler:c++17-lang pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TUPLE=	abseil:abseil-cpp:bea85b5:abseil/third_party/abseil-cpp \
-		nico:demumble:01098ea:demumble/third_party/demumble
+GH_TUPLE=	nico:demumble:01098ea:demumble/third_party/demumble
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_OFF=	BLOATY_ENABLE_CMAKETARGETS BLOATY_ENABLE_BUILDID
 
 PLIST_FILES=	bin/bloaty
