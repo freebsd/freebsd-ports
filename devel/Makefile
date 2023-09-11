@@ -1575,8 +1575,8 @@
     SUBDIR += matreshka
     SUBDIR += maven
     SUBDIR += maven-wrapper
-    SUBDIR += maven39
     SUBDIR += maven363
+    SUBDIR += maven39
     SUBDIR += mcpp
     SUBDIR += mdb
     SUBDIR += mdds
