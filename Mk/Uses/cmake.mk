@@ -61,7 +61,11 @@ IGNORE=	Incorrect 'USES+= cmake:${cmake_ARGS}' usage: argument [${arg}] is not r
 
 # Check whehter other flags than only '_internal' are passed (this should be equivalent to PORT = devel/cmake-core
 .  if ${cmake_ARGS} != _internal
+.    ifdef QEMU_EMULATING
+CMAKE_CMD_RUN=		${LOCALBASE64}/bin/cmake
+.    else
 CMAKE_CMD_RUN=		cmake
+.    endif
 .    if defined(CMAKE_CMD)
 _CMAKE_PORT=		/nonexistent
 .    else
