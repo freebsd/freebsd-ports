@@ -1,6 +1,6 @@
 PORTNAME=	httpx-cache
 PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiorwlock>=1.2<2:devel/py-aiorwlock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}anyio3>=3.0<4:devel/py-anyio3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}anyio>=3.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=21.4<24.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fasteners>=0.16.3:devel/py-fasteners@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.23<1:www/py-httpx@${PY_FLAVOR} \
@@ -29,6 +29,6 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	REDIS
 
-REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=4.5<5:databases/py-redis@${PY_FLAVOR}
+REDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis4>=4.5<5:databases/py-redis4@${PY_FLAVOR}
 
 .include <bsd.port.mk>
