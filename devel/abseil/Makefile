@@ -1,5 +1,5 @@
 PORTNAME=	abseil
-PORTVERSION=	20220623.1
+PORTVERSION=	20230125.3
 CATEGORIES=	devel
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -8,7 +8,7 @@ WWW=		https://abseil.io/
 
 LICENSE=	APACHE20
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-cpp
 
