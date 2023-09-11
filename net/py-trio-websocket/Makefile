@@ -1,12 +1,12 @@
 PORTNAME=	trio-websocket
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WebSocket library for Trio
-WWW=		https://github.com/HyperionGray/trio-websocket
+WWW=		https://github.com/python-trio/trio-websocket
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
