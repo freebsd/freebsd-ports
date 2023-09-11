@@ -1,0 +1,4 @@
+Because of a tiny oddity in the python language, writing decorators without help
+can be a pain because you have to handle the no-parenthesis usage explicitly.
+decopatch provides a simple way to solve this issue so that writing decorators
+is simple and straightforward.
