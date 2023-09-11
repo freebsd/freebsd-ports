@@ -9,6 +9,15 @@
    major = read_define(version_file_path, 'BROTLI_VERSION_MAJOR')
    minor = read_define(version_file_path, 'BROTLI_VERSION_MINOR')
    patch = read_define(version_file_path, 'BROTLI_VERSION_PATCH')
+@@ -128,7 +128,7 @@ class BuildExt(build_ext):
+         target_lang=language)
+ 
+ 
+-NAME = 'Brotli'
++NAME = 'brotli'
+ 
+ VERSION = get_version()
+ 
 @@ -177,96 +177,17 @@ EXT_MODULES = [
          '_brotli',
          sources=[
@@ -103,13 +112,13 @@
          ],
          include_dirs=[
 -            'c/include',
-+            '/usr/local/include',
++            '%%LOCALBASE%%/include',
 +        ],
 +        libraries=[
 +            'brotlicommon', 'brotlidec', 'brotlienc',
 +        ],
 +        library_dirs=[
-+            '/usr/local/lib',
++            '%%LOCALBASE%%/lib',
          ]),
  ]
  
