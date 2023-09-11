@@ -21,6 +21,7 @@ bin/tpm2_duplicate
 bin/tpm2_ecdhkeygen
 bin/tpm2_ecdhzgen
 bin/tpm2_ecephemeral
+bin/tpm2_encodeobject
 bin/tpm2_encryptdecrypt
 bin/tpm2_eventlog
 bin/tpm2_evictcontrol
@@ -122,6 +123,7 @@ man/man1/tpm2_duplicate.1.gz
 man/man1/tpm2_ecdhkeygen.1.gz
 man/man1/tpm2_ecdhzgen.1.gz
 man/man1/tpm2_ecephemeral.1.gz
+man/man1/tpm2_encodeobject.1.gz
 man/man1/tpm2_encryptdecrypt.1.gz
 man/man1/tpm2_eventlog.1.gz
 man/man1/tpm2_evictcontrol.1.gz
