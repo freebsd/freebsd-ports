@@ -5564,6 +5564,7 @@
     SUBDIR += py-serializable
     SUBDIR += py-serpent
     SUBDIR += py-session-info
+    SUBDIR += py-setoptconf
     SUBDIR += py-setproctitle
     SUBDIR += py-setuptools
     SUBDIR += py-setuptools-declarative-requirements
