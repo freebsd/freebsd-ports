@@ -1,22 +1,23 @@
---- setup.py.orig	2020-08-27 06:24:08 UTC
+--- setup.py.orig	2023-09-07 13:16:56 UTC
 +++ setup.py
-@@ -25,7 +25,7 @@ CURR_DIR = os.path.abspath(os.path.dirname(os.path.rea
+@@ -35,7 +35,7 @@ def read_define(path, macro):
  
  def get_version():
-     """ Return BROTLI_VERSION string as defined in 'common/version.h' file. """
--    version_file_path = os.path.join(CURR_DIR, 'c', 'common', 'version.h')
-+    version_file_path = os.path.join(CURR_DIR, 'common', 'version.h')
-     version = 0
-     with open(version_file_path, 'r') as f:
-         for line in f:
-@@ -181,92 +181,17 @@ EXT_MODULES = [
+   """ Return library version string from 'common/version.h' file. """
+-  version_file_path = os.path.join(CURR_DIR, 'c', 'common', 'version.h')
++  version_file_path = os.path.join(CURR_DIR, 'version.h')
+   major = read_define(version_file_path, 'BROTLI_VERSION_MAJOR')
+   minor = read_define(version_file_path, 'BROTLI_VERSION_MINOR')
+   patch = read_define(version_file_path, 'BROTLI_VERSION_PATCH')
+@@ -177,96 +177,17 @@ EXT_MODULES = [
          '_brotli',
          sources=[
-             'python/_brotli.cc',
+             'python/_brotli.c',
 -            'c/common/constants.c',
 -            'c/common/context.c',
 -            'c/common/dictionary.c',
 -            'c/common/platform.c',
+-            'c/common/shared_dictionary.c',
 -            'c/common/transform.c',
 -            'c/dec/bit_reader.c',
 -            'c/dec/decode.c',
@@ -29,6 +30,7 @@
 -            'c/enc/brotli_bit_stream.c',
 -            'c/enc/cluster.c',
 -            'c/enc/command.c',
+-            'c/enc/compound_dictionary.c',
 -            'c/enc/compress_fragment.c',
 -            'c/enc/compress_fragment_two_pass.c',
 -            'c/enc/dictionary_hash.c',
@@ -48,6 +50,7 @@
 -            'c/common/context.h',
 -            'c/common/dictionary.h',
 -            'c/common/platform.h',
+-            'c/common/shared_dictionary_internal.h',
 -            'c/common/transform.h',
 -            'c/common/version.h',
 -            'c/dec/bit_reader.h',
@@ -66,6 +69,7 @@
 -            'c/enc/cluster.h',
 -            'c/enc/cluster_inc.h',
 -            'c/enc/command.h',
+-            'c/enc/compound_dictionary.h',
 -            'c/enc/compress_fragment.h',
 -            'c/enc/compress_fragment_two_pass.h',
 -            'c/enc/dictionary_hash.h',
@@ -99,13 +103,13 @@
          ],
          include_dirs=[
 -            'c/include',
-+            '%%LOCALBASE%%/include',
++            '/usr/local/include',
 +        ],
 +        libraries=[
 +            'brotlicommon', 'brotlidec', 'brotlienc',
 +        ],
 +        library_dirs=[
-+            '%%LOCALBASE%%/lib',
-         ],
-         language='c++'),
++            '/usr/local/lib',
+         ]),
  ]
+ 

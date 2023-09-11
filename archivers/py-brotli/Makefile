@@ -1,6 +1,5 @@
 PORTNAME=	brotli
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,24 +12,21 @@ WWW=		https://github.com/google/brotli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	brotli>=${PORTVERSION}:archivers/brotli
+BUILD_DEPENDS=	brotli>=${PORTVERSION},1<${PORTVERSION}_99,1:archivers/brotli \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 
-USES=		compiler:c++0x cpe pkgconfig python shebangfix zip
-USE_PYTHON=	autoplist concurrent distutils
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent pep517
 
 CPE_VENDOR=	google
 
-SHEBANG_FILES=	python/bro.py
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/setup.py
-	@${MKDIR} ${WRKSRC}/common/
+	@${MV} ${WRKSRC}/c/common/version.h ${WRKSRC}/
 # Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/c/
-
-pre-configure:
-	@${PRINTF} "#define BROTLI_VERSION 0x%x%03x%03x\n" `pkgconf --modversion libbrotlicommon | sed 's|\.| |g'` > ${WRKSRC}/common/version.h
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
