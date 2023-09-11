@@ -1,7 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,12 +10,15 @@ WWW=		https://spglib.github.io/spglib/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake
+USES=		cmake:testing
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+CMAKE_OFF=	SPGLIB_WITH_TESTS
+CMAKE_TESTING_ON=	SPGLIB_WITH_TESTS
+
 .if !exists(/usr/include/omp.h)
-CMAKE_OFF+=	USE_OMP
+CMAKE_OFF+=	SPGLIB_USE_OMP
 .else
 FORTRAN_LDFLAGS=	-lomp # workaround for: undefined reference to `__kmpc_fork_call'
 .endif
@@ -26,13 +28,6 @@ OPTIONS_DEFAULT=	FORTRAN
 OPTIONS_SUB=		yes
 
 FORTRAN_USES=		fortran
-FORTRAN_CMAKE_BOOL=	WITH_Fortran
-
-do-test: # from test/README.md
-	cd ${WRKSRC}/test && \
-		${CMAKE_BIN} -S . -B build -DUSE_SANITIZER="Address" -DCMAKE_BUILD_TYPE="Debug" && \
-		${CMAKE_BIN} --build build -j ${_MAKE_JOBS} && \
-		cd build && \
-		ctest
+FORTRAN_CMAKE_BOOL=	SPGLIB_WITH_Fortran
 
 .include <bsd.port.mk>

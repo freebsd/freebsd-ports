@@ -1,7 +1,6 @@
 PORTNAME=	spglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,15 +11,19 @@ WWW=		https://atztogo.github.io/spglib/
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY}
+LIB_DEPENDS=	libsymspg.so:science/spglib
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python
-USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/spglib/spglib/issues/192
+USES=		cmake python
+USE_PYTHON=	flavors pytest # tests fail to run, see https://github.com/spglib/spglib/issues/192
 USE_GITHUB=	yes
+
+CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 WRKSRC_SUBDIR=	python
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/spglib/_spglib*.so
+post-patch:
+	#@cd ${WRKSRC} && ${RLN} ../test .
+	@cd ${WRKSRC} && ${CP} -r ../test .
 
 .include <bsd.port.mk>
