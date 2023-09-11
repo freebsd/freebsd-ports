@@ -1299,6 +1299,7 @@
     SUBDIR += rubygem-winrm-elevated
     SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
+    SUBDIR += runas
     SUBDIR += rundeck3
     SUBDIR += runiq
     SUBDIR += runit
