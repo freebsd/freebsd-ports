@@ -1,0 +1,44 @@
+--- courier/module.esmtp/configure.orig	2021-05-23 09:20:27.435950000 +0200
++++ courier/module.esmtp/configure	2021-05-23 09:03:40.994588000 +0200
+@@ -661,6 +661,7 @@
+ PKG_CONFIG_LIBDIR
+ PKG_CONFIG_PATH
+ PKG_CONFIG
++certsdir
+ COURIERAUTHCONFIG
+ CPP
+ LT_SYS_LIBRARY_PATH
+@@ -788,6 +789,7 @@
+ with_gnu_ld
+ with_sysroot
+ enable_libtool_lock
++with_certsdir
+ with_mailuser
+ with_mailgroup
+ with_piddir
+@@ -1455,6 +1457,7 @@
+   --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
+   --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
+                           compiler's sysroot if not specified).
++ --with-certsdir Directory where certs are created
+ 
+   --with-piddir         Directory where PID files are located
+   --with-shellpath=path   Initialize PATH to path for .courier programs
+@@ -12332,6 +12335,17 @@
+ then
+ 	as_fn_error $? "courierauthconfig not found" "$LINENO" 5
+ fi
++
++
++# Check whether --with-certsdir was given.
++if test "${with_certsdir+set}" = set; then :
++  withval=$with_certsdir; certsdir="$withval"
++else
++  certsdir="$datadir"
++fi
++
++
++
+ 
+ 
+ 

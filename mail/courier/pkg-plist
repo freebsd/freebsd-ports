@@ -1,4 +1,4 @@
-@unexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
+@postunexec rm -f %D/etc/courier/*.dat 2>/dev/null || true
 bin/addcr
 @(%%MAILOWN%%,%%MAILGRP%%,) bin/cancelmsg
 bin/courier-config
@@ -12,26 +12,24 @@ bin/mailbot
 bin/maildiracl
 bin/maildirkw
 bin/maildirmake
-bin/maildrop
-bin/mailq
+@(,%%MAILGRP%%,4511) bin/maildrop
+@(%%MAILOWN%%,%%MAILGRP%%,2555) bin/mailq
 bin/makedat
 bin/makemime
 bin/mimegpg
 bin/preline
 bin/reformail
 bin/reformime
-bin/rmail
-bin/sendmail
+@(,%%MAILGRP%%,4511) bin/rmail
+@(,%%MAILGRP%%,4511) bin/sendmail
 bin/testmxlookup
+bin/verifysmtp
 bin/webmlmd
 bin/webmlmd.rc
 etc/courier/aliases/system
 %%WITHSYSTEMALIASES%%@exec [ -e /etc/aliases ] && ln -sf /etc/aliases %D/etc/courier/aliases/system
 %%WITHEMPTYALIASES%%@exec true > %D/etc/courier/aliases/system
-@unexec cmp -s %D/etc/courier/courierd %D/etc/courier/courierd.dist && rm -f %D/etc/courier/courierd 2>/dev/null || true
-etc/courier/courierd.dist
-@exec [ -f %D/etc/courier/courierd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/courierd.dist
-@comment etc/courier/courierd
+@sample etc/courier/courierd.sample
 etc/courier/crontab
 etc/courier/dsndelayed.txt
 etc/courier/dsndelivered.txt
@@ -43,50 +41,20 @@ etc/courier/dsnsubjectnotice.txt
 etc/courier/dsnsubjectwarn.txt
 etc/courier/enablefiltering
 etc/courier/esmtp.authpam
-etc/courier/esmtpauthclient
-@unexec cmp -s %D/etc/courier/esmtpd-msa %D/etc/courier/esmtpd-msa.dist && rm -f %D/etc/courier/esmtpd-msa 2>/dev/null || true
-etc/courier/esmtpd-msa.dist
-@exec [ -f %D/etc/courier/esmtpd-msa.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-msa.dist
-@comment etc/courier/esmtpd-msa
-@unexec cmp -s %D/etc/courier/esmtpd-ssl %D/etc/courier/esmtpd-ssl.dist && rm -f %D/etc/courier/esmtpd-ssl 2>/dev/null || true
-etc/courier/esmtpd-ssl.dist
-@exec [ -f %D/etc/courier/esmtpd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd-ssl.dist
-@comment etc/courier/esmtpd-ssl
-etc/courier/esmtpd.cnf
-@unexec cmp -s %D/etc/courier/esmtpd %D/etc/courier/esmtpd.dist && rm -f %D/etc/courier/esmtpd 2>/dev/null || true
-etc/courier/esmtpd.dist
-@exec [ -f %D/etc/courier/esmtpd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/esmtpd.dist
-@comment etc/courier/esmtpd
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxcoverpage.tr %D/etc/courier/faxcoverpage.tr.dist && rm -f %D/etc/courier/faxcoverpage.tr 2>/dev/null || true
-%%WITHFAX%%etc/courier/faxcoverpage.tr.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxcoverpage.tr.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxcoverpage.tr.dist
-%%WITHFAX%%@comment etc/courier/faxcoverpage.tr
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxnotifyrc %D/etc/courier/faxnotifyrc.dist && rm -f %D/etc/courier/faxnotifyrc 2>/dev/null || true
-%%WITHFAX%%etc/courier/faxnotifyrc.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxnotifyrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxnotifyrc.dist
-%%WITHFAX%%@comment etc/courier/faxnotifyrc
-%%WITHFAX%%@unexec cmp -s %D/etc/courier/faxrc %D/etc/courier/faxrc.dist && rm -f %D/etc/courier/faxrc 2>/dev/null || true
-%%WITHFAX%%etc/courier/faxrc.dist
-%%WITHFAX%%@exec [ -f %D/etc/courier/faxrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/faxrc.dist
-%%WITHFAX%%@comment etc/courier/faxrc
-@unexec cmp -s %D/etc/courier/imapd-ssl %D/etc/courier/imapd-ssl.dist && rm -f %D/etc/courier/imapd-ssl 2>/dev/null || true
-etc/courier/imapd-ssl.dist
-@exec [ -f %D/etc/courier/imapd-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd-ssl.dist
-@comment etc/courier/imapd-ssl
+@(%%MAILOWN%%,,) etc/courier/esmtpauthclient
+@sample etc/courier/esmtpd-msa.sample
+@sample etc/courier/esmtpd-ssl.sample
+@sample etc/courier/esmtpd.cnf.sample
+@sample etc/courier/esmtpd.sample
+%%WITHFAX%%@sample etc/courier/faxcoverpage.tr.sample
+%%WITHFAX%%@sample etc/courier/faxnotifyrc.sample
+%%WITHFAX%%@sample etc/courier/faxrc.sample
+@sample etc/courier/imapd-ssl.sample
 etc/courier/imapd.authpam
-etc/courier/imapd.cnf
-@unexec cmp -s %D/etc/courier/imapd %D/etc/courier/imapd.dist && rm -f %D/etc/courier/imapd 2>/dev/null || true
-etc/courier/imapd.dist
-@exec [ -f %D/etc/courier/imapd.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/imapd.dist
-@comment etc/courier/imapd
-@unexec cmp -s %D/etc/courier/ldapaddressbook %D/etc/courier/ldapaddressbook.dist && rm -f %D/etc/courier/ldapaddressbook 2>/dev/null || true
-etc/courier/ldapaddressbook.dist
-@exec [ -f %D/etc/courier/ldapaddressbook.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaddressbook.dist
-@comment etc/courier/ldapaddressbook
-%%WITHLDAP%%@unexec cmp -s %D/etc/courier/ldapaliasrc %D/etc/courier/ldapaliasrc.dist && rm -f %D/etc/courier/ldapaliasrc 2>/dev/null || true
-%%WITHLDAP%%etc/courier/ldapaliasrc.dist
-%%WITHLDAP%%@exec [ -f %D/etc/courier/ldapaliasrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/ldapaliasrc.dist
-%%WITHLDAP%%@comment etc/courier/ldapaliasrc
+@sample etc/courier/imapd.cnf.sample
+@sample etc/courier/imapd.sample
+@sample etc/courier/ldapaddressbook.sample
+%%WITHLDAP%%@sample etc/courier/ldapaliasrc.sample
 etc/courier/locallowercase
 etc/courier/maildrop
 etc/courier/maildropfilter
@@ -95,61 +63,44 @@ etc/courier/module.esmtp
 %%WITHFAX%%etc/courier/module.fax
 etc/courier/module.local
 %%WITHUUCP%%etc/courier/module.uucp
-@unexec cmp -s %D/etc/courier/pop3d-ssl %D/etc/courier/pop3d-ssl.dist && rm -f %D/etc/courier/pop3d-ssl 2>/dev/null || true
-etc/courier/pop3d-ssl.dist
-@exec [ -f %D/etc/courier/pop3d-ssl.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d-ssl.dist
-@comment etc/courier/pop3d-ssl
+@sample etc/courier/pop3d-ssl.sample
 etc/courier/pop3d.authpam
-etc/courier/pop3d.cnf
-@unexec cmp -s %D/etc/courier/pop3d %D/etc/courier/pop3d.dist && rm -f %D/etc/courier/pop3d 2>/dev/null || true
-etc/courier/pop3d.dist
-@exec [ -f %D/etc/courier/pop3d.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/pop3d.dist
-@comment etc/courier/pop3d
+@sample etc/courier/pop3d.cnf.sample
+@sample etc/courier/pop3d.sample
 etc/courier/quotawarnmsg.example
-etc/courier/rfcerr2045.txt
-etc/courier/rfcerr2046.txt
-etc/courier/rfcerr2047.txt
-etc/courier/rfcerrheader.txt
 etc/courier/smtpaccess/default
-@unexec cmp -s %D/etc/courier/sqwebmaild %D/etc/courier/sqwebmaild.dist && rm -f %D/etc/courier/sqwebmaild 2>/dev/null || true
-etc/courier/sqwebmaild.dist
-@exec [ -f %D/etc/courier/sqwebmaild.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/sqwebmaild.dist
-@comment etc/courier/sqwebmaild
+@sample etc/courier/sqwebmaild.sample
 etc/courier/webmail.authpam
-@unexec cmp -s %D/etc/courier/webmlmrc %D/etc/courier/webmlmrc.dist && rm -f %D/etc/courier/webmlmrc 2>/dev/null || true
-etc/courier/webmlmrc.dist
-@exec [ -f %D/etc/courier/webmlmrc.dist ] && %%LOCALBASE%%/share/sysconftool/sysconftool %D/etc/courier/webmlmrc.dist
-@comment etc/courier/webmlmrc
-libexec/courier/aliascombine
-libexec/courier/aliascreate
-libexec/courier/aliasexp
-libexec/courier/courierd
+@sample etc/courier/webmlmrc.sample
+@(%%MAILOWN%%,,) libexec/courier/aliascombine
+@(%%MAILOWN%%,,) libexec/courier/aliascreate
+@(%%MAILOWN%%,,) libexec/courier/aliasexp
+@(%%MAILOWN%%,,) libexec/courier/courierd
+libexec/courier/courierfilter
 libexec/courier/courierpop3d
 libexec/courier/courierpop3login
 libexec/courier/imaplogin
 libexec/courier/makedatprog
-@owner %%MAILOWN%%
-@group %%MAILGRP%%
-libexec/courier/modules/dsn/courierdsn
-libexec/courier/modules/esmtp/addcr
-libexec/courier/modules/esmtp/courieresmtp
-libexec/courier/modules/esmtp/courieresmtpd
-%%WITHFAX%%libexec/courier/modules/fax/courierfax
-libexec/courier/modules/local/courierdeliver
-libexec/courier/modules/local/courierlocal
-%%WITHUUCP%%libexec/courier/modules/uucp/courieruucp
-@owner
-@group
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/dsn/courierdsn
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/addcr
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/courieresmtp
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp/courieresmtpd
+%%WITHFAX%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/fax/courierfax
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local/courierdeliver
+@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local/courierlocal
+%%WITHUUCP%%@(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/uucp/courieruucp
 libexec/courier/pcpd
 libexec/courier/sqwebmaild
-libexec/courier/sqwebpasswd
-libexec/courier/submit
-libexec/courier/submitmkdir
+@(%%MAILOWN%%,%%MAILGRP%%,2555) libexec/courier/sqwebpasswd
+@(%%MAILOWN%%,,) libexec/courier/submit
+@(%%MAILOWN%%,,) libexec/courier/submitmkdir
 libexec/courier/webmail/webadmin
 libexec/courier/webmail/webmail
 libexec/courier/webmail/webmlm
 libexec/filters/dupfilter
 libexec/filters/perlfilter
+libexec/filters/ratefilter
+libexec/filters/verifyfilter
 man/man1/cancelmsg.1.gz
 man/man1/couriermlm.1.gz
 man/man1/couriertcpd.1.gz
@@ -161,6 +112,7 @@ man/man1/mailbot.1.gz
 man/man1/maildiracl.1.gz
 man/man1/maildirkw.1.gz
 man/man1/maildirmake.1.gz
+man/man1/maildirwatch.1.gz
 man/man1/maildrop.1.gz
 man/man1/mailq.1.gz
 man/man1/makedat.1.gz
@@ -183,7 +135,7 @@ man/man7/maildropgdbm.7.gz
 man/man8/aliaslookup.8.gz
 man/man8/courier.8.gz
 man/man8/courierfilter.8.gz
-man/man8/courierldapaliasd.8.gz
+%%WITHLDAP%%man/man8/courierldapaliasd.8.gz
 man/man8/courierperlfilter.8.gz
 man/man8/courierpop3d.8.gz
 man/man8/courierpop3login.8.gz
@@ -196,15 +148,20 @@ man/man8/imapd.8.gz
 man/man8/makeacceptmailfor.8.gz
 man/man8/makealiases.8.gz
 man/man8/makehosteddomains.8.gz
+man/man8/makeimapaccess.8.gz
 man/man8/makepercentrelay.8.gz
 man/man8/makesmtpaccess-msa.8.gz
 man/man8/makesmtpaccess.8.gz
+man/man8/mkdhparams.8.gz
 man/man8/mkesmtpdcert.8.gz
 man/man8/mkimapdcert.8.gz
 man/man8/mkpop3dcert.8.gz
 man/man8/pop3d-ssl.8.gz
 man/man8/pop3d.8.gz
+man/man8/ratefilter.8.gz
 man/man8/submit.8.gz
+man/man8/verifyfilter.8.gz
+man/man8/verifysmtp.8.gz
 sbin/aliaslookup
 sbin/courier
 sbin/courieresmtpd
@@ -220,10 +177,12 @@ sbin/imapd-ssl
 sbin/makeacceptmailfor
 sbin/makealiases
 sbin/makehosteddomains
+sbin/makeimapaccess
 sbin/makepercentrelay
 sbin/makesmtpaccess
 sbin/makesmtpaccess-msa
 %%WITHUUCP%%sbin/makeuucpneighbors
+sbin/mkdhparams
 sbin/mkesmtpdcert
 sbin/mkimapdcert
 sbin/mkpop3dcert
@@ -232,240 +191,253 @@ sbin/pop3d-ssl
 sbin/sharedindexinstall
 sbin/sharedindexsplit
 sbin/showconfig
-sbin/showmodules
+@(%%MAILOWN%%,,) sbin/showmodules
 sbin/webgpg
 sbin/webmaild
-share/courier/courierctl.start
-share/courier/couriermlm/adminrequest.tmpl
-share/courier/couriermlm/confsubj.tmpl
-share/courier/couriermlm/digestsubj.tmpl
-share/courier/couriermlm/fetch.tmpl
-share/courier/couriermlm/fetchsubj.tmpl
-share/courier/couriermlm/help.tmpl
-share/courier/couriermlm/idxheader2html.tmpl
-share/courier/couriermlm/idxheaderhtml.tmpl
-share/courier/couriermlm/idxheadertxt.tmpl
-share/courier/couriermlm/idxsubject.tmpl
-share/courier/couriermlm/modrejbody.tmpl
-share/courier/couriermlm/modrejheader.tmpl
-share/courier/couriermlm/modsubject.tmpl
-share/courier/couriermlm/modtext.tmpl
-share/courier/couriermlm/modtext2.tmpl
-share/courier/couriermlm/style.css.tmpl
-share/courier/couriermlm/sub.tmpl
-share/courier/couriermlm/sub2.tmpl
-share/courier/couriermlm/sub3.tmpl
-share/courier/couriermlm/sub4.tmpl
-share/courier/couriermlm/sub5.tmpl
-share/courier/couriermlm/suback.tmpl
-share/courier/couriermlm/subjrequest.tmpl
-share/courier/couriermlm/subreportfooter.tmpl
-share/courier/couriermlm/subreporthdr.tmpl
-share/courier/couriermlm/subreporthdr1.tmpl
-share/courier/couriermlm/subreporthdr2.tmpl
-share/courier/couriermlm/subreporthdr3.tmpl
-share/courier/couriermlm/unsub.tmpl
-share/courier/couriermlm/unsub2.tmpl
-share/courier/couriermlm/unsub3.tmpl
-share/courier/couriermlm/warn1headers.tmpl
-share/courier/couriermlm/warn1text.tmpl
-share/courier/couriermlm/warn1text2.tmpl
-share/courier/couriermlm/warn2msg.tmpl
-share/courier/couriermlm/webmlm.tmpl
-share/courier/couriermlm/webmlm.tmpl.html
-share/courier/couriermlm/webmlmconfirm.html
-share/courier/couriermlm/webmlmerror.tmpl.html
-share/courier/couriermlm/webmlmidx.html
-share/courier/couriermlm/webmlmlistadmin.tmpl.html
-share/courier/couriermlm/webmlmlistadminmod.tmpl.html
-share/courier/couriermlm/webmlmlistadminpw.tmpl.html
-share/courier/couriermlm/webmlmlistindex.tmpl.html
-share/courier/couriermlm/webmlmnotprocessed.html
-share/courier/couriermlm/webmlmpleasewait.tmpl.html
-share/courier/couriermlm/webmlmprocessed.html
-share/courier/couriermlm/webmlmrequestreceived.tmpl.html
-share/courier/couriermlm/webmlmsubinfo.tmpl.html
-share/courier/couriermlm/webmlmsublist.tmpl.html
-share/courier/courierwebadmin/admin-00machine.html
-share/courier/courierwebadmin/admin-00machine.pl
-share/courier/courierwebadmin/admin-05local.html
-share/courier/courierwebadmin/admin-05local.pl
-share/courier/courierwebadmin/admin-10password.html
-share/courier/courierwebadmin/admin-10password.pl
-share/courier/courierwebadmin/admin-15ldap.html
-share/courier/courierwebadmin/admin-15ldap.pl
-share/courier/courierwebadmin/admin-15ldapa.html
-share/courier/courierwebadmin/admin-15ldapa.pl
-share/courier/courierwebadmin/admin-15mysql.html
-share/courier/courierwebadmin/admin-15mysql.pl
-share/courier/courierwebadmin/admin-15pgsql.html
-share/courier/courierwebadmin/admin-15pgsql.pl
-share/courier/courierwebadmin/admin-20aliases.html
-share/courier/courierwebadmin/admin-20aliases.pl
-share/courier/courierwebadmin/admin-30esmtp.html
-share/courier/courierwebadmin/admin-30esmtp.pl
-share/courier/courierwebadmin/admin-31esmtp.html
-share/courier/courierwebadmin/admin-31esmtp.pl
-share/courier/courierwebadmin/admin-30xspf.html
-share/courier/courierwebadmin/admin-30xspf.pl
-share/courier/courierwebadmin/admin-34fax.html
-share/courier/courierwebadmin/admin-34fax.pl
-share/courier/courierwebadmin/admin-35fax.html
-share/courier/courierwebadmin/admin-35fax.pl
-share/courier/courierwebadmin/admin-40imap.html
-share/courier/courierwebadmin/admin-40imap.pl
-share/courier/courierwebadmin/admin-45pop3.html
-share/courier/courierwebadmin/admin-45pop3.pl
-share/courier/courierwebadmin/admin-47webmail.html
-share/courier/courierwebadmin/admin-47webmail.pl
-share/courier/courierwebadmin/admin-50bofh.html
-share/courier/courierwebadmin/admin-50bofh.pl
-share/courier/courierwebadmin/admin-cancel.pl
-share/courier/courierwebadmin/admin-main.html
-share/courier/courierwebadmin/admin-main.pl
-share/courier/courierwebadmin/admin-save.html
-share/courier/courierwebadmin/admin-save.pl
-share/courier/courierwebadmin/dumpenv.pl
-share/courier/courierwebadmin/login.html
-share/courier/courierwebadmin/notsupp.html
-share/courier/courierwebadmin/unsecure.html
-share/courier/courierwebadmin/webadmin.pl
-share/courier/courierwebadmin/webadmin.pm
-share/courier/esmtpd
-share/courier/esmtpd-ssl
-%%WITHFAX%%share/courier/faxmail/application-pdf.filter
-%%WITHFAX%%share/courier/faxmail/application-postscript.filter
-%%WITHFAX%%share/courier/faxmail/coverpage
-%%WITHFAX%%share/courier/faxmail/image-gif.filter
-%%WITHFAX%%share/courier/faxmail/image-jpeg.filter
-%%WITHFAX%%share/courier/faxmail/image-png.filter
-%%WITHFAX%%share/courier/faxmail/init
-%%WITHFAX%%share/courier/faxmail/new_fax
-%%WITHFAX%%share/courier/faxmail/text-plain.filter
-share/courier/filterctl
-share/courier/imapd
-share/courier/imapd-ssl
-share/courier/makeacceptmailfor
-share/courier/makealiases
-share/courier/makedat
-share/courier/makehosteddomains
-share/courier/makepercentrelay
-share/courier/makesmtpaccess
-%%WITHUUCP%%share/courier/makeuucpneighbors
-share/courier/mkesmtpdcert
-share/courier/mkimapdcert
-share/courier/mkpop3dcert
-share/courier/perlfilter-example.pl
-share/courier/perlfilter-wrapper.pl
-share/courier/pop3d
-share/courier/pop3d-ssl
-share/courier/sharedindexupdate
-share/courier/sqwebmail/cleancache.pl
-share/courier/sqwebmail/html/en-us/CHARSET
-share/courier/sqwebmail/html/en-us/ISPELLDICT
-share/courier/sqwebmail/html/en-us/LANGUAGE
-share/courier/sqwebmail/html/en-us/LANGUAGE_PREF
-share/courier/sqwebmail/html/en-us/LOCALE
-share/courier/sqwebmail/html/en-us/TIMEZONELIST
-share/courier/sqwebmail/html/en-us/abooklist.html
-share/courier/sqwebmail/html/en-us/acl.html
-share/courier/sqwebmail/html/en-us/attachments.html
-share/courier/sqwebmail/html/en-us/autoresponder.html
-share/courier/sqwebmail/html/en-us/calendarlogin.inc.html
-share/courier/sqwebmail/html/en-us/empty.html
-share/courier/sqwebmail/html/en-us/eventacl.html
-share/courier/sqwebmail/html/en-us/eventdaily.html
-share/courier/sqwebmail/html/en-us/eventdelete.html
-share/courier/sqwebmail/html/en-us/eventmonthly.html
-share/courier/sqwebmail/html/en-us/eventnotifydelete.txt
-share/courier/sqwebmail/html/en-us/eventnotifynew.txt
-share/courier/sqwebmail/html/en-us/eventnotifysubject.txt
-share/courier/sqwebmail/html/en-us/eventshow.html
-share/courier/sqwebmail/html/en-us/eventweekly.html
-share/courier/sqwebmail/html/en-us/expired.html
-share/courier/sqwebmail/html/en-us/filter.html
-share/courier/sqwebmail/html/en-us/folder.html
-share/courier/sqwebmail/html/en-us/folders.html
-share/courier/sqwebmail/html/en-us/gpg.html
-share/courier/sqwebmail/html/en-us/gpgcreate.html
-share/courier/sqwebmail/html/en-us/gpgerr.html
-share/courier/sqwebmail/html/en-us/index.html
-share/courier/sqwebmail/html/en-us/invalid.html
-share/courier/sqwebmail/html/en-us/keyimport.html
-share/courier/sqwebmail/html/en-us/ldaplist.html
-share/courier/sqwebmail/html/en-us/ldapsearch.html
-share/courier/sqwebmail/html/en-us/login.html
-share/courier/sqwebmail/html/en-us/loginform.inc.html
-share/courier/sqwebmail/html/en-us/navbar.inc.html
-share/courier/sqwebmail/html/en-us/navbar2.inc.html
-share/courier/sqwebmail/html/en-us/navbar3.inc.html
-share/courier/sqwebmail/html/en-us/newevent.html
-share/courier/sqwebmail/html/en-us/newmsg.html
-share/courier/sqwebmail/html/en-us/preferences.html
-share/courier/sqwebmail/html/en-us/print.html
-share/courier/sqwebmail/html/en-us/printnocookie.html
-share/courier/sqwebmail/html/en-us/printredirect.html
-share/courier/sqwebmail/html/en-us/quickadd.html
-share/courier/sqwebmail/html/en-us/readmsg.html
-share/courier/sqwebmail/html/en-us/redirect.html
-share/courier/sqwebmail/html/en-us/refreshfr.html
-share/courier/sqwebmail/html/en-us/smileys.txt
-share/courier/sqwebmail/html/en-us/spellchk.html
-share/courier/sqwebmail/html/en
-share/courier/sqwebmail/images/bg.png
-share/courier/sqwebmail/images/bluebottomleft.png
-share/courier/sqwebmail/images/bluebottomright.png
-share/courier/sqwebmail/images/bluetopleft.png
-share/courier/sqwebmail/images/bluetopright.png
-share/courier/sqwebmail/images/calendar.png
-share/courier/sqwebmail/images/cancel.png
-share/courier/sqwebmail/images/eventadd.png
-share/courier/sqwebmail/images/eventedit.png
-share/courier/sqwebmail/images/first.png
-share/courier/sqwebmail/images/folder.png
-share/courier/sqwebmail/images/folder2.png
-share/courier/sqwebmail/images/folders.png
-share/courier/sqwebmail/images/forward.png
-share/courier/sqwebmail/images/forwardatt.png
-share/courier/sqwebmail/images/fullheaders.png
-share/courier/sqwebmail/images/graybottomleft.png
-share/courier/sqwebmail/images/graybottomright.png
-share/courier/sqwebmail/images/graytopleft.png
-share/courier/sqwebmail/images/graytopright.png
-share/courier/sqwebmail/images/key.png
-share/courier/sqwebmail/images/last.png
-share/courier/sqwebmail/images/left.png
-share/courier/sqwebmail/images/left2.png
-share/courier/sqwebmail/images/logo.png
-share/courier/sqwebmail/images/print.png
-share/courier/sqwebmail/images/reply.png
-share/courier/sqwebmail/images/replyall.png
-share/courier/sqwebmail/images/replylist.png
-share/courier/sqwebmail/images/right.png
-share/courier/sqwebmail/images/right2.png
-share/courier/sqwebmail/images/save.png
-share/courier/sqwebmail/images/sep.png
-share/courier/sqwebmail/images/signin.png
-share/courier/sqwebmail/images/sm-frowney.png
-share/courier/sqwebmail/images/sm-frowney2.png
-share/courier/sqwebmail/images/sm-notsmiley.png
-share/courier/sqwebmail/images/sm-notsmiley2.png
-share/courier/sqwebmail/images/sm-ohno.png
-share/courier/sqwebmail/images/sm-smiley.png
-share/courier/sqwebmail/images/sm-smiley2.png
-share/courier/sqwebmail/images/sm-wink.png
-share/courier/sqwebmail/images/sm-wink2.png
-share/courier/sqwebmail/images/sqwebmail.css
-share/courier/sqwebmail/images/trash2.png
-share/courier/sqwebmail/images/uncancel.png
-share/courier/sqwebmail/images/wikifmt.html
-share/courier/sqwebmail/ldapsearch
-share/courier/sqwebmail/sendit.sh
-share/courier/sqwebmail/webgpg
+@owner %%SHAREOWN%%
+@group %%SHAREGRP%%
+%%DATADIR%%/courierctl.start
+%%DATADIR%%/couriermlm/adminrequest.tmpl
+%%DATADIR%%/couriermlm/confsubj.tmpl
+%%DATADIR%%/couriermlm/couriermlm-rcptfilter-ctlmsg
+%%DATADIR%%/couriermlm/couriermlm-rcptfilter-msg
+%%DATADIR%%/couriermlm/couriermlm-smtpfilter-ctlmsg
+%%DATADIR%%/couriermlm/couriermlm-smtpfilter-msg
+%%DATADIR%%/couriermlm/digestsubj.tmpl
+%%DATADIR%%/couriermlm/fetch.tmpl
+%%DATADIR%%/couriermlm/fetchsubj.tmpl
+%%DATADIR%%/couriermlm/help.tmpl
+%%DATADIR%%/couriermlm/idxheader2html.tmpl
+%%DATADIR%%/couriermlm/idxheaderhtml.tmpl
+%%DATADIR%%/couriermlm/idxheadertxt.tmpl
+%%DATADIR%%/couriermlm/idxsubject.tmpl
+%%DATADIR%%/couriermlm/modrejbody.tmpl
+%%DATADIR%%/couriermlm/modrejheader.tmpl
+%%DATADIR%%/couriermlm/modsubject.tmpl
+%%DATADIR%%/couriermlm/modtext.tmpl
+%%DATADIR%%/couriermlm/modtext2.tmpl
+%%DATADIR%%/couriermlm/style.css.tmpl
+%%DATADIR%%/couriermlm/sub.tmpl
+%%DATADIR%%/couriermlm/sub2.tmpl
+%%DATADIR%%/couriermlm/sub3.tmpl
+%%DATADIR%%/couriermlm/sub4.tmpl
+%%DATADIR%%/couriermlm/sub5.tmpl
+%%DATADIR%%/couriermlm/suback.tmpl
+%%DATADIR%%/couriermlm/subjrequest.tmpl
+%%DATADIR%%/couriermlm/subreportfooter.tmpl
+%%DATADIR%%/couriermlm/subreporthdr.tmpl
+%%DATADIR%%/couriermlm/subreporthdr1.tmpl
+%%DATADIR%%/couriermlm/subreporthdr2.tmpl
+%%DATADIR%%/couriermlm/subreporthdr3.tmpl
+%%DATADIR%%/couriermlm/unsub.tmpl
+%%DATADIR%%/couriermlm/unsub2.tmpl
+%%DATADIR%%/couriermlm/unsub3.tmpl
+%%DATADIR%%/couriermlm/warn1headers.tmpl
+%%DATADIR%%/couriermlm/warn1text.tmpl
+%%DATADIR%%/couriermlm/warn1text2.tmpl
+%%DATADIR%%/couriermlm/warn2msg.tmpl
+%%DATADIR%%/couriermlm/webmlm.tmpl
+%%DATADIR%%/couriermlm/webmlm.tmpl.html
+%%DATADIR%%/couriermlm/webmlmconfirm.html
+%%DATADIR%%/couriermlm/webmlmerror.tmpl.html
+%%DATADIR%%/couriermlm/webmlmidx.html
+%%DATADIR%%/couriermlm/webmlmlistadmin.tmpl.html
+%%DATADIR%%/couriermlm/webmlmlistadminmod.tmpl.html
+%%DATADIR%%/couriermlm/webmlmlistadminpw.tmpl.html
+%%DATADIR%%/couriermlm/webmlmlistindex.tmpl.html
+%%DATADIR%%/couriermlm/webmlmnotprocessed.html
+%%DATADIR%%/couriermlm/webmlmpleasewait.tmpl.html
+%%DATADIR%%/couriermlm/webmlmprocessed.html
+%%DATADIR%%/couriermlm/webmlmrequestreceived.tmpl.html
+%%DATADIR%%/couriermlm/webmlmsubinfo.tmpl.html
+%%DATADIR%%/couriermlm/webmlmsublist.tmpl.html
+%%DATADIR%%/courierwebadmin/admin-00machine.html
+%%DATADIR%%/courierwebadmin/admin-00machine.pl
+%%DATADIR%%/courierwebadmin/admin-05local.html
+%%DATADIR%%/courierwebadmin/admin-05local.pl
+%%DATADIR%%/courierwebadmin/admin-10password.html
+%%DATADIR%%/courierwebadmin/admin-10password.pl
+%%DATADIR%%/courierwebadmin/admin-15ldap.html
+%%DATADIR%%/courierwebadmin/admin-15ldap.pl
+%%DATADIR%%/courierwebadmin/admin-15ldapa.html
+%%DATADIR%%/courierwebadmin/admin-15ldapa.pl
+%%DATADIR%%/courierwebadmin/admin-15mysql.html
+%%DATADIR%%/courierwebadmin/admin-15mysql.pl
+%%DATADIR%%/courierwebadmin/admin-15pgsql.html
+%%DATADIR%%/courierwebadmin/admin-15pgsql.pl
+%%DATADIR%%/courierwebadmin/admin-20aliases.html
+%%DATADIR%%/courierwebadmin/admin-20aliases.pl
+%%DATADIR%%/courierwebadmin/admin-30esmtp.html
+%%DATADIR%%/courierwebadmin/admin-30esmtp.pl
+%%DATADIR%%/courierwebadmin/admin-30xspf.html
+%%DATADIR%%/courierwebadmin/admin-30xspf.pl
+%%DATADIR%%/courierwebadmin/admin-31esmtp.html
+%%DATADIR%%/courierwebadmin/admin-31esmtp.pl
+%%DATADIR%%/courierwebadmin/admin-34fax.html
+%%DATADIR%%/courierwebadmin/admin-34fax.pl
+%%DATADIR%%/courierwebadmin/admin-35fax.html
+%%DATADIR%%/courierwebadmin/admin-35fax.pl
+%%DATADIR%%/courierwebadmin/admin-40imap.html
+%%DATADIR%%/courierwebadmin/admin-40imap.pl
+%%DATADIR%%/courierwebadmin/admin-45pop3.html
+%%DATADIR%%/courierwebadmin/admin-45pop3.pl
+%%DATADIR%%/courierwebadmin/admin-47webmail.html
+%%DATADIR%%/courierwebadmin/admin-47webmail.pl
+%%DATADIR%%/courierwebadmin/admin-50bofh.html
+%%DATADIR%%/courierwebadmin/admin-50bofh.pl
+%%DATADIR%%/courierwebadmin/admin-cancel.pl
+%%DATADIR%%/courierwebadmin/admin-main.html
+%%DATADIR%%/courierwebadmin/admin-main.pl
+%%DATADIR%%/courierwebadmin/admin-save.html
+%%DATADIR%%/courierwebadmin/admin-save.pl
+%%DATADIR%%/courierwebadmin/dumpenv.pl
+%%DATADIR%%/courierwebadmin/login.html
+%%DATADIR%%/courierwebadmin/notsupp.html
+%%DATADIR%%/courierwebadmin/unsecure.html
+%%DATADIR%%/courierwebadmin/webadmin.pl
+%%DATADIR%%/courierwebadmin/webadmin.pm
+%%DATADIR%%/esmtpd
+%%DATADIR%%/esmtpd-ssl
+%%WITHFAX%%%%DATADIR%%/faxmail/application-pdf.filter
+%%WITHFAX%%%%DATADIR%%/faxmail/application-postscript.filter
+%%WITHFAX%%%%DATADIR%%/faxmail/coverpage
+%%WITHFAX%%%%DATADIR%%/faxmail/image-gif.filter
+%%WITHFAX%%%%DATADIR%%/faxmail/image-jpeg.filter
+%%WITHFAX%%%%DATADIR%%/faxmail/image-png.filter
+%%WITHFAX%%%%DATADIR%%/faxmail/init
+%%WITHFAX%%%%DATADIR%%/faxmail/new_fax
+%%WITHFAX%%%%DATADIR%%/faxmail/text-plain.filter
+%%DATADIR%%/filterctl
+%%DATADIR%%/imapd
+%%DATADIR%%/imapd-ssl
+%%DATADIR%%/makeacceptmailfor
+%%DATADIR%%/makealiases
+%%DATADIR%%/makedat
+%%DATADIR%%/makehosteddomains
+%%DATADIR%%/makeimapaccess
+%%DATADIR%%/makepercentrelay
+%%DATADIR%%/makesmtpaccess
+%%WITHUUCP%%%%DATADIR%%/makeuucpneighbors
+%%DATADIR%%/mkdhparams
+%%DATADIR%%/mkesmtpdcert
+%%DATADIR%%/mkimapdcert
+%%DATADIR%%/mkpop3dcert
+%%DATADIR%%/perlfilter-example.pl
+%%DATADIR%%/perlfilter-ratelimit.pl
+%%DATADIR%%/perlfilter-wrapper.pl
+%%DATADIR%%/pop3d
+%%DATADIR%%/pop3d-ssl
+%%DATADIR%%/sharedindexupdate
+%%DATADIR%%/sqwebmail/cleancache.pl
+%%DATADIR%%/sqwebmail/html/en
+%%DATADIR%%/sqwebmail/html/en-us/CHARSET
+%%DATADIR%%/sqwebmail/html/en-us/ISPELLDICT
+%%DATADIR%%/sqwebmail/html/en-us/LANGUAGE
+%%DATADIR%%/sqwebmail/html/en-us/LANGUAGE_PREF
+%%DATADIR%%/sqwebmail/html/en-us/LOCALE
+%%DATADIR%%/sqwebmail/html/en-us/TIMEZONELIST
+%%DATADIR%%/sqwebmail/html/en-us/abooklist.html
+%%DATADIR%%/sqwebmail/html/en-us/acl.html
+%%DATADIR%%/sqwebmail/html/en-us/attachments.html
+%%DATADIR%%/sqwebmail/html/en-us/autoresponder.html
+%%DATADIR%%/sqwebmail/html/en-us/calendarlogin.inc.html
+%%DATADIR%%/sqwebmail/html/en-us/empty.html
+%%DATADIR%%/sqwebmail/html/en-us/eventacl.html
+%%DATADIR%%/sqwebmail/html/en-us/eventdaily.html
+%%DATADIR%%/sqwebmail/html/en-us/eventdelete.html
+%%DATADIR%%/sqwebmail/html/en-us/eventmonthly.html
+%%DATADIR%%/sqwebmail/html/en-us/eventnotifydelete.txt
+%%DATADIR%%/sqwebmail/html/en-us/eventnotifynew.txt
+%%DATADIR%%/sqwebmail/html/en-us/eventnotifysubject.txt
+%%DATADIR%%/sqwebmail/html/en-us/eventshow.html
+%%DATADIR%%/sqwebmail/html/en-us/eventweekly.html
+%%DATADIR%%/sqwebmail/html/en-us/expired.html
+%%DATADIR%%/sqwebmail/html/en-us/filter.html
+%%DATADIR%%/sqwebmail/html/en-us/folder.html
+%%DATADIR%%/sqwebmail/html/en-us/folders.html
+%%DATADIR%%/sqwebmail/html/en-us/gpg.html
+%%DATADIR%%/sqwebmail/html/en-us/gpgcreate.html
+%%DATADIR%%/sqwebmail/html/en-us/gpgerr.html
+%%DATADIR%%/sqwebmail/html/en-us/index.html
+%%DATADIR%%/sqwebmail/html/en-us/invalid.html
+%%DATADIR%%/sqwebmail/html/en-us/keyimport.html
+%%DATADIR%%/sqwebmail/html/en-us/ldaplist.html
+%%DATADIR%%/sqwebmail/html/en-us/ldapsearch.html
+%%DATADIR%%/sqwebmail/html/en-us/login.html
+%%DATADIR%%/sqwebmail/html/en-us/loginform.inc.html
+%%DATADIR%%/sqwebmail/html/en-us/navbar.inc.html
+%%DATADIR%%/sqwebmail/html/en-us/navbar2.inc.html
+%%DATADIR%%/sqwebmail/html/en-us/navbar3.inc.html
+%%DATADIR%%/sqwebmail/html/en-us/newevent.html
+%%DATADIR%%/sqwebmail/html/en-us/newmsg.html
+%%DATADIR%%/sqwebmail/html/en-us/preferences.html
+%%DATADIR%%/sqwebmail/html/en-us/print.html
+%%DATADIR%%/sqwebmail/html/en-us/printnocookie.html
+%%DATADIR%%/sqwebmail/html/en-us/printredirect.html
+%%DATADIR%%/sqwebmail/html/en-us/quickadd.html
+%%DATADIR%%/sqwebmail/html/en-us/readmsg.html
+%%DATADIR%%/sqwebmail/html/en-us/redirect.html
+%%DATADIR%%/sqwebmail/html/en-us/refreshfr.html
+%%DATADIR%%/sqwebmail/html/en-us/smileys.txt
+%%DATADIR%%/sqwebmail/html/en-us/spellchk.html
+%%DATADIR%%/sqwebmail/images/bg.png
+%%DATADIR%%/sqwebmail/images/bluebottomleft.png
+%%DATADIR%%/sqwebmail/images/bluebottomright.png
+%%DATADIR%%/sqwebmail/images/bluetopleft.png
+%%DATADIR%%/sqwebmail/images/bluetopright.png
+%%DATADIR%%/sqwebmail/images/calendar.png
+%%DATADIR%%/sqwebmail/images/cancel.png
+%%DATADIR%%/sqwebmail/images/eventadd.png
+%%DATADIR%%/sqwebmail/images/eventedit.png
+%%DATADIR%%/sqwebmail/images/first.png
+%%DATADIR%%/sqwebmail/images/folder.png
+%%DATADIR%%/sqwebmail/images/folder2.png
+%%DATADIR%%/sqwebmail/images/folders.png
+%%DATADIR%%/sqwebmail/images/forward.png
+%%DATADIR%%/sqwebmail/images/forwardatt.png
+%%DATADIR%%/sqwebmail/images/fullheaders.png
+%%DATADIR%%/sqwebmail/images/graybottomleft.png
+%%DATADIR%%/sqwebmail/images/graybottomright.png
+%%DATADIR%%/sqwebmail/images/graytopleft.png
+%%DATADIR%%/sqwebmail/images/graytopright.png
+%%DATADIR%%/sqwebmail/images/key.png
+%%DATADIR%%/sqwebmail/images/last.png
+%%DATADIR%%/sqwebmail/images/left.png
+%%DATADIR%%/sqwebmail/images/left2.png
+%%DATADIR%%/sqwebmail/images/logo.png
+%%DATADIR%%/sqwebmail/images/print.png
+%%DATADIR%%/sqwebmail/images/reply.png
+%%DATADIR%%/sqwebmail/images/replyall.png
+%%DATADIR%%/sqwebmail/images/replylist.png
+%%DATADIR%%/sqwebmail/images/right.png
+%%DATADIR%%/sqwebmail/images/right2.png
+%%DATADIR%%/sqwebmail/images/save.png
+%%DATADIR%%/sqwebmail/images/sep.png
+%%DATADIR%%/sqwebmail/images/signin.png
+%%DATADIR%%/sqwebmail/images/sm-frowney.png
+%%DATADIR%%/sqwebmail/images/sm-frowney2.png
+%%DATADIR%%/sqwebmail/images/sm-notsmiley.png
+%%DATADIR%%/sqwebmail/images/sm-notsmiley2.png
+%%DATADIR%%/sqwebmail/images/sm-ohno.png
+%%DATADIR%%/sqwebmail/images/sm-smiley.png
+%%DATADIR%%/sqwebmail/images/sm-smiley2.png
+%%DATADIR%%/sqwebmail/images/sm-wink.png
+%%DATADIR%%/sqwebmail/images/sm-wink2.png
+%%DATADIR%%/sqwebmail/images/sqwebmail.css
+%%DATADIR%%/sqwebmail/images/trash2.png
+%%DATADIR%%/sqwebmail/images/uncancel.png
+%%DATADIR%%/sqwebmail/images/wikifmt.html
+%%DATADIR%%/sqwebmail/ldapsearch
+%%DATADIR%%/sqwebmail/sendit.sh
+%%DATADIR%%/sqwebmail/webgpg
+%%DATADIR%%/verifysender
+%%DATADIR%%/verifysenderfull
+@owner
+@group
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BENCHMARKS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.imap
-%%PORTDOCS%%%%DOCSDIR%%/BUGS.webmail
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.sqwebmail
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -478,10 +450,10 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.proxy
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
-%%PORTDOCS%%%%DOCSDIR%%/SECURITY.webmail
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY.sqwebmail
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/BUGS.imap.html
-%%PORTDOCS%%%%DOCSDIR%%/html/BUGS.webmail.html
+%%PORTDOCS%%%%DOCSDIR%%/html/BUGS.sqwebmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NEWS.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.gpglib.html
@@ -492,45 +464,38 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/README.pcp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.proxy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.sharedfolders.html
-%%PORTDOCS%%%%DOCSDIR%%/html/SECURITY.webmail.html
+%%PORTDOCS%%%%DOCSDIR%%/html/SECURITY.sqwebmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/aliases.html
 %%PORTDOCS%%%%DOCSDIR%%/html/aliaslookup.html
-%%PORTDOCS%%%%DOCSDIR%%/html/bg.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/bg.png
 %%PORTDOCS%%%%DOCSDIR%%/html/cancelmsg.html
-%%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/html/chinese_flag.png
 %%PORTDOCS%%%%DOCSDIR%%/html/courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierdsn.html
 %%WITHFAX%%%%PORTDOCS%%%%DOCSDIR%%/html/courierfax.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierfilter.html
-%%PORTDOCS%%%%DOCSDIR%%/html/courierldapaliasd.html
+%%WITHLDAP%%%%PORTDOCS%%%%DOCSDIR%%/html/courierldapaliasd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriermlm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierperlfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/courierpop3d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriertcpd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/couriertls.html
 %%WITHUUCP%%%%PORTDOCS%%%%DOCSDIR%%/html/courieruucp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cvs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/deliverquota.html
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-forward.html
+%%PORTDOCS%%%%DOCSDIR%%/html/download.html
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-exdata-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-security-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-verp-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/dupfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/esmtp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/esmtpd.html
-%%PORTDOCS%%%%DOCSDIR%%/html/footer.html
-%%PORTDOCS%%%%DOCSDIR%%/html/frame.js
-%%PORTDOCS%%%%DOCSDIR%%/html/header.html
 %%PORTDOCS%%%%DOCSDIR%%/html/icon.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/imapd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/html/japanese_flag.png
 %%PORTDOCS%%%%DOCSDIR%%/html/layout.html
 %%PORTDOCS%%%%DOCSDIR%%/html/links.html
@@ -550,17 +515,18 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/maildropgdbm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildroptips.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mailq.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makeacceptmailfor.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makealiases.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makedat.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makehosteddomains.html
+%%PORTDOCS%%%%DOCSDIR%%/html/makeimapaccess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makemime.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makepercentrelay.html
 %%PORTDOCS%%%%DOCSDIR%%/html/makesmtpaccess.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/html/menu.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mimegpg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mkdhparams.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mkesmtpdcert.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mkimapdcert.html
 %%PORTDOCS%%%%DOCSDIR%%/html/mkpop3dcert.html
@@ -569,78 +535,44 @@ share/courier/sqwebmail/webgpg
 %%PORTDOCS%%%%DOCSDIR%%/html/pop3d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/preline.html
 %%PORTDOCS%%%%DOCSDIR%%/html/queue.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ratefilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/reformail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/reformime.html
+%%PORTDOCS%%%%DOCSDIR%%/html/repo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rpm.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sendmail.html
+%%PORTDOCS%%%%DOCSDIR%%/html/socks.html
 %%PORTDOCS%%%%DOCSDIR%%/html/status.html
 %%PORTDOCS%%%%DOCSDIR%%/html/structures.html
-%%PORTDOCS%%%%DOCSDIR%%/html/style.css
 %%PORTDOCS%%%%DOCSDIR%%/html/submit.html
 %%PORTDOCS%%%%DOCSDIR%%/html/testmxlookup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/verifyfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/webmlmd.html
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/bin/cancelmsg
-@comment @exec chown %%BINOWN%%:mail %D/bin/maildrop
-@comment @exec chown %%BINOWN%%:%%MAILGRP%% %D/bin/mailq
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier
-@comment @exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/aliases
-@comment @exec chown %%BINOWN%%:%%BINGRP%% %D/etc/courier/courierd.dist
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/*.txt
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/esmtpauthclient
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/etc/courier/module.*
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascombine
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliascreate
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/aliasexp
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/courierd
-@comment @exec chown -Rh %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/modules/*
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submit
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/libexec/courier/submitmkdir
-@comment @exec chown %%MAILOWN%%:%%MAILGRP%% %D/sbin/showmodules
-@comment @exec chmod 0555 %D/libexec/courier
-@comment @exec chmod 0555 %D/libexec/courier/modules
-@comment @exec chmod 0555 %D/libexec/courier/modules/dsn
-@comment @exec chmod 0555 %D/libexec/courier/modules/esmtp
-@comment %%WITHFAX%%@exec chmod 0555 %D/libexec/courier/modules/fax
-@comment @exec chmod 0555 %D/libexec/courier/modules/local
-@comment %%WITHUUCP%%@exec chmod 0555 %D/libexec/courier/modules/uucp
-@comment @exec chmod 0555 %D/libexec/courier/webmail
-@comment @exec chmod 0555 %D/libexec/filters
-@comment @exec chmod 0555 %D/share/courier
-@comment @exec chmod 0555 %D/share/courier/couriermlm
-@comment @exec chmod 0555 %D/share/courier/courierwebadmin
-@comment %%WITHFAX%%@exec chmod 0555 %D/share/courier/faxmail
-@comment @exec chmod 0555 %D/share/courier/sqwebmail
-@comment @exec chmod 0555 %D/share/courier/sqwebmail/html
-@comment @exec chmod 0555 %D/share/courier/sqwebmail/html/en-us
-@comment @exec chmod 0555 %D/share/courier/sqwebmail/images
-@unexec echo y | crontab -u %%CACHEOWN%% -r 2>/dev/null || true
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/aliasdir
-@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/aliases
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/esmtpacceptmailfor.dir
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/esmtppercentrelay.dir
-@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/filters
-@dir(%%MAILOWN%%,%%MAILGRP%%,0750) etc/courier/filters/active
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/shared
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/shared.tmp
-@dir(%%MAILOWN%%,%%MAILGRP%%,0755) etc/courier/smtpaccess
-@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin
-@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin/added
-@dir(%%MAILOWN%%,%%MAILGRP%%,0700) etc/courier/webadmin/removed
-@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/dsn
-@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/esmtp
-%%WITHFAX%%@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/fax
-@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/local
-%%WITHUUCP%%@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules/uucp
-@dir(%%MAILOWN%%,%%MAILGRP%%,) libexec/courier/modules
-@dir %%CALENDIR%%/localcache
-@dir %%CALENDIR%%/private
-@dir %%CALENDIR%%/public
-@dir %%CALENDIR%%
-@dir %%LOCALSTATEDIR%%/allfilters
-@dir %%LOCALSTATEDIR%%/filters
-@dir %%LOCALSTATEDIR%%/msgq
-@dir %%LOCALSTATEDIR%%/msgs
-@dir %%LOCALSTATEDIR%%/tmp
-@dir %%LOCALSTATEDIR%%/track
+%%WITHCERTSDIR%%@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/.pem
+@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/aliasdir
+@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/aliases
+@dir etc/courier/esmtpacceptmailfor.dir
+@dir etc/courier/esmtppercentrelay.dir
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) etc/courier/filters/active
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) etc/courier/filters
+@dir etc/courier/imapaccess
+@dir etc/courier/shared
+@dir etc/courier/shared.tmp
+@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/webadmin/added
+@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier/webadmin/removed
+@dir(%%MAILOWN%%,%%MAILGRP%%,700) etc/courier/webadmin
+etc/courier/webadmin/restartauthcmd
+@dir(%%MAILOWN%%,%%MAILGRP%%,) etc/courier
+@dir(%%CACHEOWN%%,%%MAILGRP%%,700) %%CALENDIR%%/localcache
+@dir(%%CACHEOWN%%,%%MAILGRP%%,750) %%CALENDIR%%/private
+@dir(%%CACHEOWN%%,%%MAILGRP%%,755) %%CALENDIR%%/public
+@dir(%%BINOWN%%,%%BINGRP%%,755) %%CALENDIR%%
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) %%LOCALSTATEDIR%%/allfilters
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) %%LOCALSTATEDIR%%/filters
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) %%LOCALSTATEDIR%%/msgq
+@dir(%%MAILOWN%%,%%MAILGRP%%,750) %%LOCALSTATEDIR%%/msgs
+@dir(%%MAILOWN%%,%%MAILGRP%%,755) %%LOCALSTATEDIR%%/sts
+@dir(%%MAILOWN%%,%%MAILGRP%%,770) %%LOCALSTATEDIR%%/tmp
+@dir(%%MAILOWN%%,%%MAILGRP%%,755) %%LOCALSTATEDIR%%/track
 @dir %%LOCALSTATEDIR%%
 @dir %%CACHEDIR%%

@@ -1,5 +1,5 @@
---- webmail/msg2html.c.orig	2007-07-11 03:36:04.000000000 +0200
-+++ webmail/msg2html.c	2007-12-21 08:42:02.000000000 +0100
+--- libs/sqwebmail/msg2html.c.orig	2007-07-11 03:36:04.000000000 +0200
++++ libs/sqwebmail/msg2html.c	2007-12-21 08:42:02.000000000 +0100
 @@ -451,6 +451,7 @@
  char	*header, *value;
  char	*save_subject=0;

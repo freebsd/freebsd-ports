@@ -13,6 +13,7 @@
 prefix="%%PREFIX%%"
 exec_prefix="${prefix}"
 sysconfdir="${prefix}/etc/courier"
+certsdir="%%CERTSDIR%%"
 sbindir="${exec_prefix}/sbin"
 bindir="${exec_prefix}/bin"
 libexecdir="${prefix}/libexec"
@@ -127,7 +128,7 @@ courier_start()
 
 	if [ "$esmtpdcert" = 1 ]; then
 		# If we do not have a certificate, make one up.
-		if [ ! -f ${sysconfdir}/esmtpd.pem \
+		if [ ! -f ${certsdir}/esmtpd.pem \
 		  -a -x "$COURIERTLS" \
 		  -a -x ${sbindir}/mkesmtpdcert ]; then
 			echo -n " generating-ESMTP-SSL-certificate..."
@@ -194,10 +195,12 @@ courier_start()
 		case "$IMAPDSSLSTART" in
 		[Yy]*)	# If we do not have a certificate, make one up.
 			if [ -x "$COURIERTLS" ]; then
-				if [ ! -f ${sysconfdir}/imapd.pem \
+				if [ ! -f ${certsdir}/imapd.pem \
 				  -a -x ${sbindir}/mkimapdcert ]; then
 					echo -n " generating-IMAP-SSL-certificate..."
 					${sbindir}/mkimapdcert >/dev/null 2>&1
+					# double usage - DH params need to exist
+					esmtpdcert=1
 				fi
 				if [ -x ${sbindir}/imapd-ssl ]; then
 					echo -n " imapd-ssl"
@@ -227,10 +230,12 @@ courier_start()
 		case "$POP3DSSLSTART" in
 		[Yy]*)	# If we do not have a certificate, make one up.
 			if [ -x "$COURIERTLS" ]; then
-				if [ ! -f ${sysconfdir}/pop3d.pem \
+				if [ ! -f ${certsdir}/pop3d.pem \
 				  -a -x ${sbindir}/mkpop3dcert ]; then 
 					echo -n " generating-POP3-SSL-certificate..."
 					${sbindir}/mkpop3dcert >/dev/null 2>&1
+					# double usage - DH params need to exist
+					esmtpdcert=1
 				fi
 				if [ -x ${sbindir}/pop3d-ssl ]; then
 					echo -n " pop3d-ssl"
@@ -239,6 +244,15 @@ courier_start()
 			fi
 			;;
 		esac
+	fi
+
+	if [ "$esmtpdcert" = 1 ]; then
+		# If we do not have DH params, make them up.
+		if [ ! -f ${certsdir}/dhparams.pem \
+		  -a -x ${sbindir}/mkdhparams ]; then
+			echo -n " generating-DH-params..."
+			${sbindir}/mkdhparams >/dev/null 2>&1
+		fi
 	fi
 
 	LISTS=""

@@ -1,11 +1,20 @@
---- courier/module.esmtp/mkesmtpdcert.in.orig	2010-02-15 21:37:57.000000000 +0100
-+++ courier/module.esmtp/mkesmtpdcert.in	2010-02-15 21:37:16.000000000 +0100
-@@ -36,7 +36,7 @@
+--- courier/module.esmtp/mkesmtpdcert.in.orig	2021-05-23 14:00:04.926537000 +0200
++++ courier/module.esmtp/mkesmtpdcert.in	2021-05-23 14:04:14.542517000 +0200
+@@ -44,7 +44,7 @@
  then
- 	cp /dev/null @mydatadir@/esmtpd.pem
- 	chmod 600 @mydatadir@/esmtpd.pem
--	chown @mailuser@ @mydatadir@/esmtpd.pem
-+	/usr/sbin/chown @mailuser@ @mydatadir@/esmtpd.pem
- 	dd if=@RANDOMV@ of=@mydatadir@/esmtpd.rand count=1 2>/dev/null
+ 	cp /dev/null "$PEMFILE".pem
+ 	chmod 600 "$PEMFILE".pem
+-	chown @mailuser@ "$PEMFILE".pem
++	/usr/sbin/chown @mailuser@ "$PEMFILE".pem
+ 	dd if=@RANDOMV@ of="$PEMFILE".rand count=1 2>/dev/null
  	@OPENSSL@ req -new -x509 -days 365 -nodes \
- 		  -config @sysconfdir@/esmtpd.cnf -out @mydatadir@/esmtpd.pem -keyout @mydatadir@/esmtpd.pem || cleanup
+ 		  -config @sysconfdir@/esmtpd.cnf -out "$PEMFILE".pem -keyout "$PEMFILE".pem || cleanup
+@@ -74,7 +74,7 @@
+ 
+ 	cp /dev/null "$PEMFILE".pem
+ 	chmod 600 "$PEMFILE".pem
+-	chown @mailuser@ "$PEMFILE".pem
++	/usr/sbin/chown @mailuser@ "$PEMFILE".pem
+ 	cat "$PEMFILE".key "$PEMFILE".cert >"$PEMFILE".pem
+ 	rm -f "$PEMFILE".key "$PEMFILE".cert
+ fi

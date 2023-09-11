@@ -1,24 +1,22 @@
---- courier/perms.sh.in.orig	2007-07-01 11:36:31.000000000 -0400
-+++ courier/perms.sh.in	2007-07-01 11:36:31.000000000 -0400
-@@ -11,9 +11,6 @@
- datarootdir="@datarootdir@"
- 
+--- courier/perms.sh.in.orig	2019-02-03 21:11:16.000000000 +0100
++++ courier/perms.sh.in	2020-04-20 23:34:40.000000000 +0200
+@@ -12,7 +12,6 @@
  PERMS="
--.			755
--
+ .			755
+ 
 -@localstatedir@		755	x	bin	bin
  @localstatedir@/tmp	770
  @localstatedir@/msgs	750
  @localstatedir@/msgq	750
-@@ -47,7 +44,6 @@
- @sysconfdir@/rfcerr2046.txt	444	config
- @sysconfdir@/rfcerr2047.txt	444	config
+@@ -44,7 +43,6 @@
+ @sysconfdir@/webmlmrc.dist	644	config
+ @sysconfdir@/quotawarnmsg.example	444
  
 -@libexecdir@		755	x	bin	bin
  @libexecdir@/courier	755	x	bin	bin
  @libexecdir@/courier/modules	755	x	bin	bin
  @libexecdir@/courier/submitmkdir	4550
-@@ -61,14 +57,13 @@
+@@ -58,14 +56,13 @@
  @libexecdir@/courier/makedatprog	555
  @libexecdir@/courier/imaplogin		555	x	bin	bin
  @libexecdir@/courier/pcpd		555	x	bin	bin
@@ -27,16 +25,14 @@
  @libexecdir@/courier/webmail/webmail	555	x	root	bin
  @libexecdir@/courier/webmail/webmlm	555	x	root	bin
  @libexecdir@/courier/sqwebmaild		555
--@libexecdir@/courier/sqwebpasswd	2755
--@libexecdir@/courier/webmail/webadmin	4555	x	root	bin
-+@libexecdir@/courier/sqwebpasswd	2555
-+@libexecdir@/courier/webmail/webadmin	4511	x	root	bin
+ @libexecdir@/courier/sqwebpasswd	2555
+ @libexecdir@/courier/webmail/webadmin	511	x	root	root
  
 -@sbindir@			755	x	bin	bin
  @sbindir@/courier		555
  @sbindir@/showconfig		555
  @sbindir@/showmodules		550
-@@ -82,7 +77,6 @@
+@@ -79,7 +76,6 @@
  @datadir@/imapd			555	x	bin	bin
  @datadir@/imapd-ssl		555	x	bin	bin
  
@@ -44,27 +40,3 @@
  @bindir@/cancelmsg		6555
  @bindir@/courier-config		555
  @bindir@/mailq			2555
-@@ -111,10 +105,10 @@
- @sbindir@/makealiases		550
- @datadir@/makehosteddomains	555
- @sbindir@/makehosteddomains	555
--@datadir@/pop3d			755
--@sbindir@/pop3d			755
--@datadir@/pop3d-ssl		755
--@sbindir@/pop3d-ssl		755
-+@datadir@/pop3d			555
-+@sbindir@/pop3d			555
-+@datadir@/pop3d-ssl		555
-+@sbindir@/pop3d-ssl		555
- @sbindir@/webgpg		555
- 
- @datadir@			755	x	bin	bin
-@@ -226,7 +220,7 @@
- if test "@HAVE_LDAP@" != 0
- then
- 	echo @sysconfdir@/ldapaliasrc.dist 640 @mailuser@ @mailgroup@ config
--	echo @sbindir@/courierldapaliasd 700 @mailuser@ @mailgroup@
-+	echo @sbindir@/courierldapaliasd 500 @mailuser@ @mailgroup@
- fi
- 
- echo @datadir@/sqwebmail/images 755 @mailuser@ @mailgroup@

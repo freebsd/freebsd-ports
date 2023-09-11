@@ -1,6 +1,5 @@
 PORTNAME=	courier
-PORTVERSION=	0.65.3
-PORTREVISION=	6
+PORTVERSION=	1.1.11
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -11,19 +10,19 @@ WWW=		https://www.Courier-MTA.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-BROKEN=	ld: error: duplicate symbol: sqwebmail_content_charset
-DEPRECATED=	Broken for more than a year and fails to build on supported RELEASE
-EXPIRATION_DATE=	2023-06-01
-
-BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base
+BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
+		wget:ftp/wget
 LIB_DEPENDS=	libidn.so:dns/libidn \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libgdbm.so:databases/gdbm \
+		libcourier-unicode.so:devel/courier-unicode \
+		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool \
 		${LOCALBASE}/etc/mime.types:misc/mime-support \
 		p5-Net-CIDR>=0:net-mgmt/p5-Net-CIDR \
-		ca_root_nss>=3.*:security/ca_root_nss
-
+		ca_root_nss>=3.*:security/ca_root_nss \
+		${LOCALBASE}/bin/wget:ftp/wget
 CONFLICTS=	courier-imap-2.* couriermlm-0.* \
 		exim-4.* maildrop-1.* \
 		panda-imap-201* postfix-1.* postfix-2.* \
@@ -49,10 +48,10 @@ MAILDROPDEFAULT?=./Maildir
 
 # End of user-serviceable variables
 
-MAILOWN=	courier
-MAILGRP=	courier
-MAILUID=	465
-MAILGID=	465
+MAILOWN?=	courier
+MAILGRP?=	courier
+MAILUID?=	465
+MAILGID?=	465
 ETCDIR=		${PREFIX}/etc
 SYSCONFDIR=	${ETCDIR}/courier
 LIBEXECDIR=	${PREFIX}/libexec
@@ -62,13 +61,15 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2 ssl
+USES=		fam gettext gmake libtool perl5 pkgconfig tar:bzip2 ssl shebangfix
 USE_SUBMAKE=	yes
 USE_RC_SUBR=	courier
+SHEBANG_FILES=	courier/filters/perlfilter/perlfilter-ratelimit.pl \
+		courier/filters/perlfilter/perlfilter-wrapper.pl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-root-check \
-		--with-db=db \
+		--with-db=gdbm \
 		--enable-syslog=1 --enable-use-flock \
 		--program-transform-name=s,^,, \
 		--enable-utf7-folder-encoding \
@@ -87,29 +88,30 @@ CONFIGURE_ARGS=	--disable-root-check \
 		--with-cachedir=${CACHEDIR} \
 		--with-cacheowner=${CACHEOWN} \
 		--with-calendardir=${CALENDIR} \
-		--with-certsdir=${SYSCONFDIR} \
+		--with-mydatadir=${SYSCONFDIR} \
 		--with-transport='${WITH_TRANSPORT}' \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--with-paranoid-smtpext \
-		--enable-workarounds-for-imap-client-bugs
+		--enable-workarounds-for-imap-client-bugs \
+		--with-notice=unicode
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
 INSTALL_TARGET=	install-strip install-perms
 
 PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
+		CACHEOWN="${CACHEOWN}" CACHEDIR="${CACHEDIR}" \
+		CALENDIR="${CALENDIR}" LOCALSTATEDIR="${LOCALSTATEDIR}" \
 		MAILOWN="${MAILOWN}" MAILGRP="${MAILGRP}" \
 		MAILUID="${MAILUID}" MAILGID="${MAILGID}" \
-		CACHEOWN="${CACHEOWN}" CACHEDIR="${CACHEDIR}" \
-		CALENDIR="${CALENDIR}" LOCALSTATEDIR="${LOCALSTATEDIR}"
+		SHAREOWN="${SHAREOWN}" SHAREGRP="${SHAREGRP}"
+
 SUB_LIST:=	${PLIST_SUB}
 SUB_FILES+=	pkg-message crontab sharedindexupdate
-#SUB_FILES+=	pkg-install pkg-message crontab sharedindexupdate
 
-OPTIONS_DEFINE=	LDAP PROCMAIL SENDFAX UUCP IPV6 MAILDROPFLAGS DOCS
+OPTIONS_DEFINE=	LDAP PROCMAIL SENDFAX UUCP IPV6 DOCS CERTSDIR
 OPTIONS_GROUP=	WEBMAIL
-#OPTIONS_GROUP=	SYSTEM WEBMAIL
-#OPTIONS_GROUP_SYSTEM=	RCCONF MAILCONF PERIODIC
 OPTIONS_GROUP_WEBMAIL=	GNUPG WEBMAILRSENT WEBMAILFLAGS WEBMAILXFACE
 OPTIONS_RADIO=	ALIASES SPELL
 OPTIONS_RADIO_ALIASES=	SYSTEMALIASES EMPTYALIASES
@@ -123,7 +125,7 @@ ISPELL_DESC=	ISpell support for WebMail
 PROCMAIL_DESC=	Procmail local delivery support
 SENDFAX_DESC=	mgetty+sendfax support
 UUCP_DESC=	UUCP support
-MAILDROPFLAGS_DESC=	maildrop set flags patch
+CERTSDIR_DESC=	separate .pem directory for certificates
 WEBMAILRSENT_DESC=	enable Autorename Sent folder
 WEBMAILFLAGS_DESC=	webmail show flags patch
 WEBMAILXFACE_DESC=	experimental webmail X-Face patch
@@ -136,7 +138,6 @@ PERIODIC_DESC=	modify/create periodic.conf
 .include <bsd.port.options.mk>
 
 .include "${.CURDIR}/Makefile.doc"
-.include "${.CURDIR}/Makefile.own"
 
 .if ${PORT_OPTIONS:MLDAP}
 USES+=	ldap
@@ -174,6 +175,9 @@ SUB_LIST+=	WITHEMPTYALIASES="@comment "
 .if ${PORT_OPTIONS:MGNUPG}
 BUILD_DEPENDS+=	gpg:security/gnupg
 RUN_DEPENDS+=	gpg:security/gnupg
+.else
+# This is a hack! But works well (at least partially) for me...
+CONFIGURE_ENV+=	GPG="${WRKSRC}/fakegpg"
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
@@ -224,17 +228,13 @@ CONFIGURE_ARGS+=--with-ipv6
 CONFIGURE_ARGS+=--without-ipv6
 .endif
 
-.if ${PORT_OPTIONS:MMAILDROPFLAGS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-maildrop__maildir.C
-.endif
-
 .if ${PORT_OPTIONS:MWEBMAILXFACE}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__msg2html.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__msg2html.c
 .endif
 
 .if ${PORT_OPTIONS:MWEBMAILFLAGS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__folder.c ${FILESDIR}/extra-patch-webmail__maildir.c
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-webmail__maildir.h ${FILESDIR}/extra-patch-webmail__images__sqwebmail.css
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__folder.c ${FILESDIR}/extra-patch-libs__sqwebmail__maildir.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libs__sqwebmail__maildir.h ${FILESDIR}/extra-patch-libs__sqwebmail__images__sqwebmail.css
 .endif
 
 .if ${PORT_OPTIONS:MWEBMAILRSENT}
@@ -261,10 +261,35 @@ SUB_LIST+=	PERIODIC="y"
 SUB_LIST+=	PERIODIC="n"
 .endif
 
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	pkg-static: Unable to access file /wrkdirs/usr/ports/mail/courier/work/stage/usr/local/bin/couriertls
-BROKEN_FreeBSD_13=	pkg-static: Unable to access file /wrkdirs/usr/ports/mail/courier/work/stage/usr/local/bin/couriertls
+.if ${PORT_OPTIONS:MCERTSDIR}
+CONFIGURE_ARGS+=--with-certsdir=${SYSCONFDIR}/.pem
+PLIST_SUB+=	WITHCERTSDIR=""
+SUB_LIST+=	CERTSDIR="${SYSCONFDIR}/.pem"
+.else
+CONFIGURE_ARGS+=--with-certsdir=${SYSCONFDIR}
+PLIST_SUB+=	WITHCERTSDIR="@comment "
+SUB_LIST+=	CERTSDIR="${SYSCONFDIR}"
 .endif
+
+_CNFFILES=	esmtpd.cnf \
+		imapd.cnf \
+		pop3d.cnf
+
+_DISTEXFILES=	courierd.dist \
+		esmtpd-msa.dist \
+		esmtpd-ssl.dist \
+		esmtpd.dist \
+		faxcoverpage.tr.dist \
+		faxnotifyrc.dist \
+		faxrc.dist \
+		imapd-ssl.dist \
+		imapd.dist \
+		ldapaddressbook.dist \
+		ldapaliasrc.dist \
+		pop3d-ssl.dist \
+		pop3d.dist \
+		sqwebmaild.dist \
+		webmlmrc.dist
 
 pre-everything::
 	@${ECHO_MSG} "===> --------------------------------------------------------"
@@ -272,86 +297,95 @@ pre-everything::
 	@${ECHO_MSG} "===> --------------------------------------------------------"
 
 pre-patch:
-	@${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
+	${CP} ${TEMPLATES}/config.guess ${TEMPLATES}/config.sub ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's|#! perl|#!${PERL}|g' \
+	${REINPLACE_CMD} -i '' -e 's|#! perl|#!${PERL}|g' \
 		${WRKSRC}/webadmin/*.pl \
 		${WRKSRC}/webadmin/*.pl.in \
 		${WRKSRC}/courier/webadmin/*.pl \
 		${WRKSRC}/courier/webadmin/*.pl.in
-	@${REINPLACE_CMD} -e 's|^PROG=\./|PROG=exec ./|g' \
+	${REINPLACE_CMD} -e 's|^PROG=\./|PROG=exec ./|g' \
 		${WRKSRC}/courier/module.*/courier.config
-	@${REINPLACE_CMD} -e 's|@mydatadir@|@sysconfdir@|g' \
-		${WRKSRC}/*/mk*cert.* \
+	${REINPLACE_CMD} -e 's|@mydatadir@|@sysconfdir@|g' \
 		${WRKSRC}/*/*/mk*cert.*
-	@${REINPLACE_CMD} -e 's|^\(TLS_CERTFILE=\)@mydatadir@|\1@sysconfdir@|g' \
+	${REINPLACE_CMD} -e 's|^\(TLS_CERTFILE=\)@mydatadir@|\1@sysconfdir@|g' \
 		${WRKSRC}/*/*.dist.in \
 		${WRKSRC}/*/*/*.dist.in
-	@${REINPLACE_CMD} -e 's|^\(RANDFILE[[:space:]]*=[[:space:]]*\)@mydatadir@|\1@sysconfdir@|g' \
-		${WRKSRC}/*/*.cnf.openssl.in \
+	${REINPLACE_CMD} -e 's|^\(TLS_DHPARAMS=\)@mydatadir@|\1@sysconfdir@|g' \
+		${WRKSRC}/*/*.dist.in \
+		${WRKSRC}/*/*/*.dist.in
+	${REINPLACE_CMD} -e 's|^\(RANDFILE[[:space:]]*=[[:space:]]*\)@mydatadir@|\1@sysconfdir@|g' \
 		${WRKSRC}/*/*/*.cnf.openssl.in
-	@${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) \(.$$$$file.\)|${INSTALL_MAN} \1|' \
+	${REINPLACE_CMD} -e 's|$$(INSTALL_DATA) \(.$$$$file.\)|${INSTALL_MAN} \1|' \
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/*/Makefile.in \
 		${WRKSRC}/*/*/Makefile.in \
 		${WRKSRC}/*/*/*/Makefile.in
-	@${REINPLACE_CMD} -e 's|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"${INSTALL_PROGRAM} -s"|' \
+	${REINPLACE_CMD} -e 's|^\(INSTALL_STRIP_PROGRAM=\).*$$|\1"${INSTALL_PROGRAM} -s"|' \
 			-e 's|; ldapaliasd="yes"||' \
 		${WRKSRC}/configure \
 		${WRKSRC}/*/configure \
 		${WRKSRC}/*/*/configure \
 		${WRKSRC}/*/*/*/configure
-	@${REINPLACE_CMD} -E -e 's/(root|bin)[[:space:]]*bin/root	wheel/g' \
+	${REINPLACE_CMD} -E -e 's/(root|bin)[[:space:]]*bin/root	wheel/g' \
 		${WRKSRC}/courier/perms.sh.in
-	@${REINPLACE_CMD} '/^courieresmtp_LDADD =/s/$$/ -lcourierauth/' \
+	${REINPLACE_CMD} '/^courieresmtp_LDADD =/s/$$/ -lcourierauth/' \
 		${WRKSRC}/courier/module.esmtp/Makefile.in
 # Avoid conflict with C++20 <version> by adding .txt suffix
-	@${REINPLACE_CMD} -i .c++20 's/>version$$/&.txt/' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name configure -exec ${REINPLACE_CMD} \
+	${REINPLACE_CMD} -i .c++20 's/>version$$/&.txt/' ${WRKSRC}/configure
+	${FIND} ${WRKSRC} -name configure -exec ${REINPLACE_CMD} \
 		-i .c++20 '/^version.*cat/s,/version,&.txt,' {} +
 
+pre-configure:
+# This is a hack! But works well (at least partially) for me...
+	touch ${WRKSRC}/fakegpg
+	chmod +x ${WRKSRC}/fakegpg
+
 post-build:
-	@${PERL} -pi -e 's|^(auth)\s+(required).*|$$1\t\t$$2\tpam_unix.so\ttry_first_pass|g;' \
-		     -e 's|^(account)\s+(required).*|$$1 \t$$2\tpam_unix.so|g;' \
-		     -e 's|^(session)\s+(required).*|$$1 \t$$2\tpam_permit.so|g;' \
+	${PERL} -pi -e 's|^(auth)\s+(required).*|$$1\t\t$$2\tpam_unix.so\ttry_first_pass|g;' \
+		    -e 's|^(account)\s+(required).*|$$1 \t$$2\tpam_unix.so|g;' \
+		    -e 's|^(session)\s+(required).*|$$1 \t$$2\tpam_permit.so|g;' \
 		${WRKSRC}/*/*.authpam* \
 		${WRKSRC}/*/*/*.authpam*
-	@${LN} -f ${WRKSRC}/gpglib/README.html		${WRKSRC}/gpglib/README.gpglib.html
-	@${LN} -f ${WRKSRC}/imap/BUGS			${WRKSRC}/imap/BUGS.imap
-	@${LN} -f ${WRKSRC}/imap/BUGS.html		${WRKSRC}/imap/BUGS.imap.html
-	@${LN} -f ${WRKSRC}/imap/README			${WRKSRC}/imap/README.imap
-	@${LN} -f ${WRKSRC}/imap/README.html		${WRKSRC}/imap/README.imap.html
-	@${LN} -f ${WRKSRC}/maildrop/README.html	${WRKSRC}/maildrop/README.maildrop.html
-	@${LN} -f ${WRKSRC}/pcp/README.html		${WRKSRC}/pcp/README.pcp.html
-	@${LN} -f ${WRKSRC}/webmail/BUGS		${WRKSRC}/webmail/BUGS.webmail
-	@${LN} -f ${WRKSRC}/webmail/BUGS.html		${WRKSRC}/webmail/BUGS.webmail.html
-	@${LN} -f ${WRKSRC}/webmail/SECURITY		${WRKSRC}/webmail/SECURITY.webmail
-	@${LN} -f ${WRKSRC}/webmail/SECURITY.html	${WRKSRC}/webmail/SECURITY.webmail.html
+	${INSTALL} -lrs ${WRKSRC}/libs/gpglib/README.html	${WRKSRC}/libs/gpglib/README.gpglib.html
+	${INSTALL} -lrs ${WRKSRC}/libs/imap/BUGS		${WRKSRC}/libs/imap/BUGS.imap
+	${INSTALL} -lrs ${WRKSRC}/libs/imap/BUGS.html		${WRKSRC}/libs/imap/BUGS.imap.html
+	${INSTALL} -lrs ${WRKSRC}/libs/maildrop/README.html	${WRKSRC}/libs/maildrop/README.maildrop.html
+	${INSTALL} -lrs ${WRKSRC}/libs/pcp/README.html		${WRKSRC}/libs/pcp/README.pcp.html
+	${INSTALL} -lrs ${WRKSRC}/libs/sqwebmail/BUGS		${WRKSRC}/libs/sqwebmail/BUGS.sqwebmail
+	${INSTALL} -lrs ${WRKSRC}/libs/sqwebmail/BUGS.html	${WRKSRC}/libs/sqwebmail/BUGS.sqwebmail.html
+	${INSTALL} -lrs ${WRKSRC}/libs/sqwebmail/SECURITY	${WRKSRC}/libs/sqwebmail/SECURITY.sqwebmail
+	${INSTALL} -lrs ${WRKSRC}/libs/sqwebmail/SECURITY.html	${WRKSRC}/libs/sqwebmail/SECURITY.sqwebmail.html
 
 post-install:
-	@${LN} -f ${STAGEDIR}${SYSCONFDIR}/maildrop ${STAGEDIR}${SYSCONFDIR}/maildropfilter
-	@${INSTALL_DATA} /dev/null ${STAGEDIR}${SYSCONFDIR}/locallowercase
-	@${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${SYSCONFDIR}/
-	@${INSTALL_SCRIPT} ${WRKDIR}/sharedindexupdate ${STAGEDIR}${DATADIR}/
-.for file in ${OWNER0}
-	@-${CHOWN} -Rh ${BINOWN}:${BINGRP} ${STAGEDIR}${PREFIX}/${file}
+.for _cfgfile in ${_CNFFILES}
+	-${MV} ${STAGEDIR}${SYSCONFDIR}/${_cfgfile} ${STAGEDIR}${SYSCONFDIR}/${_cfgfile:S/.cnf/.cnf.sample/g}
 .endfor
+.for _cfgfile in ${_DISTEXFILES}
+	-${MV} ${STAGEDIR}${SYSCONFDIR}/${_cfgfile} ${STAGEDIR}${SYSCONFDIR}/${_cfgfile:S/.dist/.sample/g}
+.endfor
+	${INSTALL} -lrs ${STAGEDIR}${SYSCONFDIR}/maildrop ${STAGEDIR}${SYSCONFDIR}/maildropfilter
+	${INSTALL_DATA} /dev/null ${STAGEDIR}${SYSCONFDIR}/locallowercase
+	${INSTALL_DATA} ${WRKDIR}/crontab ${STAGEDIR}${SYSCONFDIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/sharedindexupdate ${STAGEDIR}${DATADIR}/
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in ${HTMLDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/html
 .endfor
-	@${INSTALL_DATA} ${STAGEDIR}${DATADIR}/htmldoc/* ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${STAGEDIR}${DATADIR}/htmldoc/* ${STAGEDIR}${DOCSDIR}/html
 .endif
-	@${RM} -r ${STAGEDIR}${DATADIR}/htmldoc
-	@-${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR}
-	@${CHMOD} -R a+r ${STAGEDIR}${DATADIR}/courierwebadmin
-	@${CHMOD} -R a-w ${STAGEDIR}${DATADIR} ${STAGEDIR}${LIBEXECDIR}/courier
-	@${CHMOD} 550 ${STAGEDIR}${LIBEXECDIR}/courier/modules/esmtp/courieresmtp*
+.if ${PORT_OPTIONS:MCERTSDIR}
+	${MKDIR} ${STAGEDIR}${SYSCONFDIR}/.pem
+.endif
+	${RM} -r ${STAGEDIR}${DATADIR}/htmldoc
+	${CHMOD} -R a+r ${STAGEDIR}${DATADIR}/courierwebadmin
+	${CHMOD} -R a-w ${STAGEDIR}${DATADIR} ${STAGEDIR}${LIBEXECDIR}/courier
+	${CHMOD} 550 ${STAGEDIR}${LIBEXECDIR}/courier/modules/esmtp/courieresmtp*
 
 .include <bsd.port.mk>

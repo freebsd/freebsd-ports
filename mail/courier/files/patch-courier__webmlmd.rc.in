@@ -1,10 +1,7 @@
---- courier/webmlmd.rc.in.orig	2007-03-05 05:43:24.000000000 +0100
-+++ courier/webmlmd.rc.in	2009-10-03 22:18:39.000000000 +0200
-@@ -1,48 +1,48 @@
- #! @SHELL@
- 
--case "$1" in
-+case "$0" in
+--- courier/webmlmd.rc.in.orig	2013-08-25 20:57:42.000000000 +0200
++++ courier/webmlmd.rc.in	2020-04-20 23:41:05.000000000 +0200
+@@ -3,46 +3,46 @@
+ case "$1" in
  
  /*)
 -	prog="$1"
@@ -56,6 +53,6 @@
  
 -	@SETENV@ -i @SHELL@ -c "set -a; . $3; $prog check || exit 1; \
 +	@SETENV@ -i @SHELL@ -c "set -a; . $2; $prog check || exit 1; \
+ 		@MKDIR_P@ `dirname $PIDFILE` ; \
  		@courierlogger@ -pid="'"${PIDFILE}"'" $LOGGEROPTS -restart $prog"
  	exit $?
- 	;;

@@ -1,5 +1,5 @@
---- webmail/maildir.c.orig	2008-07-20 05:15:08.000000000 +0200
-+++ webmail/maildir.c	2009-06-03 22:41:49.000000000 +0200
+--- libs/sqwebmail/maildir.c.orig	2008-07-20 05:15:08.000000000 +0200
++++ libs/sqwebmail/maildir.c	2009-06-03 22:41:49.000000000 +0200
 @@ -1091,6 +1091,42 @@
  	return (rc);
  }

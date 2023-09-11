@@ -1,0 +1,11 @@
+--- courier/pop3d-ssl.in.orig	2018-07-29 05:16:41.000000000 +0200
++++ courier/pop3d-ssl.in	2020-04-26 13:47:23.904914000 +0200
+@@ -32,7 +32,7 @@
+ 	then
+ 		rm -f "$TLS_CACHEFILE"
+ 		touch "$TLS_CACHEFILE"
+-		chown @mailuser@ "$TLS_CACHEFILE"
++		/usr/sbin/chown @mailuser@ "$TLS_CACHEFILE"
+ 		chgrp @mailgroup@  "$TLS_CACHEFILE"
+ 		chmod 600  "$TLS_CACHEFILE"
+ 	fi

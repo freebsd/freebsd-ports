@@ -1,0 +1,20 @@
+--- libs/imap/mkimapdcert.in.orig	2013-11-10 19:11:25.000000000 +0100
++++ libs/imap/mkimapdcert.in	2020-04-20 23:44:26.000000000 +0200
+@@ -42,7 +42,7 @@
+ then
+ 	cp /dev/null @certsdir@/imapd.pem
+ 	chmod 600 @certsdir@/imapd.pem
+-	chown @mailuser@ @certsdir@/imapd.pem
++	/usr/sbin/chown @mailuser@ @certsdir@/imapd.pem
+ 
+ 	dd if=@RANDOMV@ of=@certsdir@/imapd.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \
+@@ -60,7 +60,7 @@
+ 	chmod 600 @certsdir@/imapd.cert
+ 	cp /dev/null @certsdir@/imapd.pem
+ 	chmod 600 @certsdir@/imapd.pem
+-	chown @mailuser@ @certsdir@/imapd.pem
++	/usr/sbin/chown @mailuser@ @certsdir@/imapd.pem
+ 	cp /dev/null @certsdir@/imapd.pem
+ 	cp /dev/null @certsdir@/imapd.cert
+ 	cp /dev/null @certsdir@/imapd.key

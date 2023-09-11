@@ -1,6 +1,6 @@
---- webmail/images/sqwebmail.css.orig	2009-06-04 08:27:30.000000000 +0200
-+++ webmail/images/sqwebmail.css	2009-06-04 08:33:54.000000000 +0200
-@@ -142,6 +142,9 @@
+--- libs/sqwebmail/images/sqwebmail.css.orig	2009-06-04 08:27:30.000000000 +0200
++++ libs/sqwebmail/images/sqwebmail.css	2009-06-04 08:33:54.000000000 +0200
+@@ -169,6 +169,9 @@
  .folder-index-bg-1:hover { background-color: #bbbbbb }
  .folder-index-bg-2 { background-color: #ddddbb }
  .folder-index-bg-2:hover { background-color: #bbbbbb }
@@ -8,9 +8,9 @@
 +.folder-index-bg-3 { background-color: #ffffff }
 +.folder-index-bg-4 { background-color: #eeeecc }
  
- 	/* Selected message */
+ .folder-index-bg-1, .folder-index-bg-2 { white-space: nowrap }
  
-@@ -159,11 +162,13 @@
+@@ -188,7 +191,9 @@
  */
  
  .message-number { }
@@ -21,8 +21,3 @@
  .message-date { }
  .message-from { }
  .message-subject { }
--.message-size { font-family: monospace}
-+.message-size { font-family: monospace }
- 
- /***************************** Folder permissions ***********************/
- 

@@ -8,24 +8,22 @@ DOCS=	AUTHORS \
 	NEWS \
 	README \
 	TODO \
-	imap/BUGS.imap \
-	imap/README.imap \
-	imap/README.proxy \
-	maildir/README.maildirquota.txt \
-	maildir/README.sharedfolders.txt \
-	tcpd/README.couriertls \
-	webmail/BUGS.webmail \
-	webmail/SECURITY.webmail
+	libs/imap/BUGS.imap \
+	libs/imap/README.imap.proxy \
+	libs/maildir/README.maildirquota.txt \
+	libs/maildir/README.sharedfolders.txt \
+	libs/tcpd/README.couriertls \
+	libs/sqwebmail/BUGS.webmail \
+	libs/sqwebmail/SECURITY.webmail
 
 HTMLDOCS=NEWS.html \
-	gpglib/README.gpglib.html \
-	imap/BUGS.imap.html \
-	imap/README.imap.html \
-	imap/README.proxy.html \
-	maildir/README.maildirfilter.html \
-	maildir/README.maildirquota.html \
-	maildir/README.sharedfolders.html \
-	maildrop/README.maildrop.html \
-	pcp/README.pcp.html \
-	webmail/BUGS.webmail.html \
-	webmail/SECURITY.webmail.html
+	libs/gpglib/README.gpglib.html \
+	libs/imap/BUGS.imap.html \
+	libs/imap/README.imap.proxy.html \
+	libs/maildir/README.maildirfilter.html \
+	libs/maildir/README.maildirquota.html \
+	libs/maildir/README.sharedfolders.html \
+	libs/maildrop/README.maildrop.html \
+	libs/pcp/README.pcp.html \
+	libs/sqwebmail/BUGS.webmail.html \
+	libs/sqwebmail/SECURITY.webmail.html

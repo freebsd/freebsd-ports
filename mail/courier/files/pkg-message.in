@@ -61,6 +61,33 @@ job that runs at regular intervals (once every few hours is fine) that
 executes the following script to update the shared folder index:
 
 	%%PREFIX%%/share/courier/sharedindexupdate
+
+VERY IMPORTANT NOTICE - unicode Maildirs:
+
+For those:
+
+  Updating Courier-IMAP to version 5.0, and later, from prior versions of Courier-IMAP, or:
+  Updating SqWebmail to version 6.0, and later, from prior versions of SqWebmail, or:
+  Updating Courier to version 1.0, and later, from prior versions of Courier. 
+
+These versions have been updated to implement native Unicode support in several 
+E-mail-related protocols.
+
+Be absolutely sure to Read the instructions in the maildirmake
+manual page (see "Converting pre-unicode format maildirs" at
+http://www.courier-mta.org/maildirmake.html, or in the man page in
+this package) about updating from earlier versions; specifically the
+need to convert any existing maildirs to a Unicode naming scheme,
+and the need to update any other Courier packages together with
+updating this one.
+
+This message is only meant to make sure you are aware of the contents
+of the man page about updating from earlier versions, and the need for
+manual steps to update any existing maildirs.
+
+If you are installing for the first time, you can simply rerun configure
+with this option.	
+
 EOM
 }
 ]

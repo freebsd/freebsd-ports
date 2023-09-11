@@ -1,0 +1,20 @@
+--- libs/imap/mkpop3dcert.in.orig	2013-11-11 00:39:01.000000000 +0100
++++ libs/imap/mkpop3dcert.in	2020-04-20 23:46:52.000000000 +0200
+@@ -43,7 +43,7 @@
+ then
+ 	cp /dev/null @certsdir@/pop3d.pem
+ 	chmod 600 @certsdir@/pop3d.pem
+-	chown @mailuser@ @certsdir@/pop3d.pem
++	/usr/sbin/chown @mailuser@ @certsdir@/pop3d.pem
+ 
+ 	dd if=@RANDOMV@ of=@certsdir@/pop3d.rand count=1 2>/dev/null
+ 	@OPENSSL@ req -new -x509 -days 365 -nodes \
+@@ -62,7 +62,7 @@
+ 	chmod 600 @certsdir@/pop3d.cert
+ 	cp /dev/null @certsdir@/pop3d.pem
+ 	chmod 600 @certsdir@/pop3d.pem
+-	chown @mailuser@ @certsdir@/pop3d.pem
++	/usr/sbin/chown @mailuser@ @certsdir@/pop3d.pem
+ 
+ 	@CERTTOOL@ --generate-privkey --sec-param=$BITS --outfile pop3d.key
+ 	@CERTTOOL@ --generate-self-signed --load-privkey pop3d.key --outfile pop3d.cert --template @sysconfdir@/pop3d.cnf
