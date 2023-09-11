@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	6.2.50
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libglib-2.0.a:devel/glib20 \
 		bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
 
-USES=		bison compiler:c11 cpe gmake ninja:build perl5 pkgconfig python:build
+USES=		bison compiler:c11 cpe elfctl gmake ninja:build perl5 pkgconfig python:build
 
 USE_GITHUB=	yes
 GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:64ff0f053df \
@@ -48,6 +48,8 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --cc=${CC} \
 		--disable-docs --disable-tools --disable-system \
 		--disable-capstone \
 		--extra-cflags=-I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"\"${PREFIX}\\\"\"
+
+ELF_FEATURES=	+wxneeded:*-bsd-user/qemu-*
 
 TEST_TARGET=	check
 

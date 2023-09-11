@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	3.1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-user-static
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -15,13 +15,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64
 CONFLICTS_INSTALL=	qemu-user-static-devel
 
-USES=		bison compiler:c11 cpe gmake perl5 pkgconfig python:build
+USES=		bison compiler:c11 cpe elfctl gmake perl5 pkgconfig python:build
 USE_GITHUB=	yes
 GH_TUPLE=	qemu-bsd-user:qemu-bsd-user:527096e0c8	\
 		qemu:keycodemapdb:10739aa:keycodemapdb/ui/keycodemapdb
 HAS_CONFIGURE=	yes
 USE_PERL5=	build
 MAKE_ENV+=	BSD_MAKE="${MAKE}" V=1
+ELF_FEATURES=	+wxneeded:*-bsd-user/qemu-*
 
 USE_RC_SUBR=	qemu_user_static
 SUB_LIST=	NAME=qemu_user_static
