@@ -314,10 +314,26 @@ _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here
-_VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run cython_test \
-			distutils flavors noegginfo noflavors nose nose2 \
-			optsuffix pep517 py3kplist pytest pytest4 pythonprefix \
-			unittest unittest2
+_VALID_PYTHON_FEATURES=	allflavors \
+			autoplist \
+			concurrent \
+			cython \
+			cython_run \
+			cython_test \
+			distutils \
+			flavors \
+			noegginfo \
+			noflavors \
+			nose \
+			nose2 \
+			optsuffix \
+			pep517 \
+			py3kplist \
+			pytest \
+			pytest4 \
+			pythonprefix \
+			unittest \
+			unittest2
 _INVALID_PYTHON_FEATURES=
 .  for var in ${USE_PYTHON}
 .    if empty(_VALID_PYTHON_FEATURES:M${var})
@@ -581,6 +597,7 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # - it uses USE_PYTHON=distutils
 #
 
+# cython* support
 .  if defined(_PYTHON_FEATURE_CYTHON)
 BUILD_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 .  endif
