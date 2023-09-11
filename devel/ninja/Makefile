@@ -4,6 +4,11 @@ DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
 
+.ifdef QEMU_EMULATING
+BROKEN_purecap=	triggers SIGSEGV in the user mode
+USE_PKG64=	1
+.endif
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Small build system closest in spirit to Make
 WWW=		https://ninja-build.org/
