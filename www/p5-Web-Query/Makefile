@@ -1,6 +1,5 @@
 PORTNAME=	Web-Query
-PORTVERSION=	0.39
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	www
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +18,8 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:www/p5-HTML-Parser \
 		p5-HTML-TreeBuilder-LibXML>=0:www/p5-HTML-TreeBuilder-LibXML \
 		p5-HTML-TreeBuilder-XPath>=0:www/p5-HTML-TreeBuilder-XPath \
 		p5-libwww>=0:www/p5-libwww
-TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	configure
