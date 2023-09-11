@@ -1,6 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.md
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.md
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.md
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.md
@@ -93,7 +92,7 @@
 %%WWWDIR%%/js/bootstrap-3.4.1.js
 %%WWWDIR%%/js/comment.jsonld
 %%WWWDIR%%/js/commentmeta.jsonld
-%%WWWDIR%%/js/jquery-3.6.1.js
+%%WWWDIR%%/js/jquery-3.7.0.js
 %%WWWDIR%%/js/kjua-0.9.0.js
 %%WWWDIR%%/js/legacy.js
 %%WWWDIR%%/js/package-lock.json
@@ -102,7 +101,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-2.4.6.js
+%%WWWDIR%%/js/purify-3.0.4.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
@@ -143,7 +142,6 @@
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/InstalledVersions.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
-%%WWWDIR%%/vendor/composer/autoload_files.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
 %%WWWDIR%%/vendor/composer/autoload_psr4.php
 %%WWWDIR%%/vendor/composer/autoload_real.php
@@ -203,16 +201,6 @@
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/BinaryMath.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/RangesFromBoundaryCalculator.php
 %%WWWDIR%%/vendor/mlocati/ip-lib/src/Service/UnsignedIntegerMath.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/byte_safe_strings.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/cast_to_int.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/error_polyfill.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php
-%%WWWDIR%%/vendor/paragonie/random_compat/lib/random_int.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/BaseGenerator.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/GdGenerator.php
 %%WWWDIR%%/vendor/yzalis/identicon/src/Identicon/Generator/GeneratorInterface.php
