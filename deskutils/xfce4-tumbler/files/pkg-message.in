@@ -8,7 +8,18 @@ To override the default configuration, you must copy the rc-file:
 
 The COVER plugin requires manual configuration.
 
-For more information see http://docs.xfce.org/xfce/thunar/tumbler
+Tumbler supports external plugins to be able to generate thumbnails for
+more file formats.
+
+Plugins are configured through ".thumbnailer" files in
+%%LOCALBASE%%/share/thumbnailers or (for users) ~/.local/share/thumbnailers.
+
+Ports for libraries and programs sometimes provide such configuration
+files and binaries to support thumbnails for their formats (for example
+graphics/libheif).
+
+For more information see https://docs.xfce.org/xfce/tumbler/start and
+https://docs.xfce.org/xfce/tumbler/available_plugins
 EOM
 }
 ]
