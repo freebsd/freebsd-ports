@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cucumber generator and runtime for Rails
-WWW=		https://github.com/cucumber/cucumber-rails
+WWW=		https://cucumber.io/ \
+		https://github.com/cucumber/cucumber-rails
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
