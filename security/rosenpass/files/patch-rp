@@ -1,0 +1,16 @@
+--- rp.orig	2023-09-11 08:53:23 UTC
++++ rp
+@@ -350,12 +350,7 @@ main() {
+ 
+   project_name="rosenpass"
+   verbose=0
+-  scriptdir="$(dirname "${script}")"
+-  gitdir="$(detect_git_dir)" || true
+-  if [[ -d /nix ]]; then
+-    nixdir="$(readlink -f result/bin/rp | grep -Pio '^/nix/store/[^/]+(?=/bin/[^/]+)')" || true
+-  fi
+-  binary="$(find_rosenpass_binary)"
++  binary="%%PREFIX%%/bin/${project_name}"
+ 
+   # Parse command
+ 

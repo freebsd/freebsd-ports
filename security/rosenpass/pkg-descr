@@ -1,0 +1,5 @@
+Rosenpass provides a complement to the well-known WireGuard standard, adding
+quantum-hardened cryptography and key exchange while keeping the established
+WireGuard standard encryption security. So Rosenpass is an add-on, enhancing
+WireGuard+IBk-s key negotiation process with Post Quantum Secure (PQS)
+cryptography, based on the McEliece cryptosystem.
