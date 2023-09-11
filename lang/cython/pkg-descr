@@ -1,14 +1,10 @@
-The Cython language makes writing C extensions for the Python language
-as easy as Python itself. Cython is a source code translator based on
-the well-known Pyrex, but supports more cutting edge functionality and
-optimizations.
+Cython is a Python compiler that makes writing C extensions for Python as easy
+as Python itself. Cython is based on Pyrex, but supports more cutting edge
+functionality and optimizations.
 
-The Cython language is very close to the Python language (and most
-Python code is also valid Cython code), but Cython additionally supports
-calling C functions and declaring C types on variables and class
-attributes. This allows the compiler to generate very efficient C code
-from Cython code.
+Cython translates Python code to C/C++ code, but additionally supports calling C
+functions and declaring C types on variables and class attributes. This allows
+the compiler to generate very efficient C code from Cython code.
 
-This makes Cython the ideal language for writing glue code for external
-C libraries, and for fast C modules that speed up the execution of
-Python code.
+This makes Cython the ideal language for wrapping external C libraries, and for
+fast C modules that speed up the execution of Python code.
