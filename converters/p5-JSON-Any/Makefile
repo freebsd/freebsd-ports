@@ -1,6 +1,5 @@
 PORTNAME=	JSON-Any
-PORTVERSION=	1.39
-PORTREVISION=	1
+PORTVERSION=	1.40
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +16,7 @@ TEST_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS \
 		p5-JSON-DWIW>=0:converters/p5-JSON-DWIW \
 		p5-JSON-XS>=0:converters/p5-JSON-XS \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-Requires>=0:devel/p5-Test-Requires \
+		p5-Test-Needs>=0:devel/p5-Test-Needs \
 		p5-Test-Warnings>=0.009:devel/p5-Test-Warnings \
 		p5-Test-Without-Module>=0.17:devel/p5-Test-Without-Module
 
