@@ -1,5 +1,5 @@
 PORTNAME=	state_machines-activerecord
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/state-machines/state_machines-activerecord
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activerecord60>=5.1:databases/rubygem-activerecord60 \
-		rubygem-state_machines-activemodel>=0.8.0:databases/rubygem-state_machines-activemodel
+RUN_DEPENDS=	rubygem-activerecord60>=6.0:databases/rubygem-activerecord60 \
+		rubygem-state_machines-activemodel>=0.9.0:databases/rubygem-state_machines-activemodel
 
 USES=		gem
 
