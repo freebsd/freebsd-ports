@@ -1,5 +1,6 @@
 %%FONTSDIR%%/NotoKufiArabic-Bold.ttf
 %%FONTSDIR%%/NotoKufiArabic-Regular.ttf
+%%FONTSDIR%%/NotoMono-Regular.ttf
 %%FONTSDIR%%/NotoNaskhArabic-Bold.ttf
 %%FONTSDIR%%/NotoNaskhArabic-Regular.ttf
 %%FONTSDIR%%/NotoNaskhArabicUI-Bold.ttf
@@ -655,6 +656,7 @@
 %%FONTSDIR%%/NotoSansLaoUI-Thin.ttf
 %%FONTSDIR%%/NotoSansLepcha-Regular.ttf
 %%FONTSDIR%%/NotoSansLimbu-Regular.ttf
+%%FONTSDIR%%/NotoSansLinearB-Regular.ttf
 %%FONTSDIR%%/NotoSansLisu-Regular.ttf
 %%FONTSDIR%%/NotoSansLycian-Regular.ttf
 %%FONTSDIR%%/NotoSansLydian-Regular.ttf
@@ -666,7 +668,6 @@
 %%FONTSDIR%%/NotoSansMeeteiMayek-Regular.ttf
 %%FONTSDIR%%/NotoSansMongolian-Regular.ttf
 %%FONTSDIR%%/NotoSansMono-Black.ttf
-%%FONTSDIR%%/NotoSansMono-Bold.ttf
 %%FONTSDIR%%/NotoSansMono-Condensed.ttf
 %%FONTSDIR%%/NotoSansMono-CondensedBlack.ttf
 %%FONTSDIR%%/NotoSansMono-CondensedBold.ttf
@@ -689,7 +690,6 @@
 %%FONTSDIR%%/NotoSansMono-ExtraLight.ttf
 %%FONTSDIR%%/NotoSansMono-Light.ttf
 %%FONTSDIR%%/NotoSansMono-Medium.ttf
-%%FONTSDIR%%/NotoSansMono-Regular.ttf
 %%FONTSDIR%%/NotoSansMono-SemiBold.ttf
 %%FONTSDIR%%/NotoSansMono-SemiCondensed.ttf
 %%FONTSDIR%%/NotoSansMono-SemiCondensedBlack.ttf
@@ -869,7 +869,6 @@
 %%FONTSDIR%%/NotoSansSundanese-Regular.ttf
 %%FONTSDIR%%/NotoSansSylotiNagri-Regular.ttf
 %%FONTSDIR%%/NotoSansSymbols-Black.ttf
-%%FONTSDIR%%/NotoSansSymbols-Bold.ttf
 %%FONTSDIR%%/NotoSansSymbols-ExtraBold.ttf
 %%FONTSDIR%%/NotoSansSymbols-ExtraLight.ttf
 %%FONTSDIR%%/NotoSansSymbols-Light.ttf
