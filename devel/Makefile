@@ -4666,6 +4666,7 @@
     SUBDIR += py-find-libpython
     SUBDIR += py-findlibs
     SUBDIR += py-findpython
+    SUBDIR += py-fire
     SUBDIR += py-first
     SUBDIR += py-fixtures
     SUBDIR += py-flake8
