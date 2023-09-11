@@ -44,6 +44,10 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 CPE_VENDOR=	cryptography_project
 
+OPTIONS_DEFINE=	SSH
+
+SSH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.5:security/py-bcrypt@${PY_FLAVOR}
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
