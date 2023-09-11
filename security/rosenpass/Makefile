@@ -1,6 +1,7 @@
 PORTNAME=	rosenpass
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,12 +21,18 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 USES=		cargo
 USE_GITHUB=	yes
 PLIST_FILES=	bin/rosenpass \
-		bin/rp
+		bin/rp \
+		share/man/man1/rp.1.gz \
+		share/man/man1/rosenpass.1.gz
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/rp
 
 post-install:
+.for MANPAGE in ${PLIST_FILES:Mshare/man/*:T}
+	${INSTALL_MAN} ${WRKSRC}/doc/${MANPAGE:S/.gz//} \
+		${STAGEDIR}${MANPREFIX}/share/man/man${MANPAGE:C/^[^.]*[.]//:S/.gz//}/${MANPAGE:S/.gz//}
+.endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/rp ${STAGEDIR}${PREFIX}/bin/rp
 
 .include <bsd.port.mk>
