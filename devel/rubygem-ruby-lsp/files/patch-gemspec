@@ -1,0 +1,10 @@
+--- ruby-lsp.gemspec.orig	2023-09-09 15:08:55 UTC
++++ ruby-lsp.gemspec
+@@ -26,6 +26,6 @@ Gem::Specification.new do |s|
+   s.add_runtime_dependency(%q<language_server-protocol>.freeze, ["~> 3.17.0"])
+   s.add_runtime_dependency(%q<sorbet-runtime>.freeze, [">= 0"])
+   s.add_runtime_dependency(%q<syntax_tree>.freeze, [">= 6.1.1", "< 7"])
+-  s.add_runtime_dependency(%q<yarp>.freeze, [">= 0.9", "< 0.11"])
++  s.add_runtime_dependency(%q<yarp>.freeze, [">= 0.9", "< 0.12"])
+ end
+ 
