@@ -6,7 +6,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wire protocol plugin for Cucumber
-WWW=		https://github.com/cucumber/cucumber-ruby-wire
+WWW=		https://cucumber.io/ \
+		https://github.com/cucumber/cucumber-ruby-wire
 
 LICENSE=	MIT
 
