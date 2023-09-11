@@ -1,13 +1,12 @@
 PORTNAME=	openems
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.35-97
-PORTREVISION=	4
-DISTVERSIONSUFFIX=	-g0342eef
+DISTVERSION=	0.0.35-110
+DISTVERSIONSUFFIX=	-g782a738
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Electromagnetic field solver using the EC-FDTD method
-WWW=		https://openems.de/start/
+WWW=		https://www.openems.de/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
