@@ -1,5 +1,5 @@
 PORTNAME=	libcloud
-PORTVERSION=	3.7.0
+PORTVERSION=	3.8.0
 CATEGORIES=	net python
 MASTER_SITES=	APACHE/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR}
 
 NO_ARCH=	yes
 
-USES=		cpe python tar:bzip2
+USES=		cpe python
 USE_PYTHON=	distutils autoplist
 CPE_VENDOR=	apache
 
