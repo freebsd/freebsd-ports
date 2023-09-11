@@ -1787,6 +1787,7 @@
     SUBDIR += py-qt5-webengine
     SUBDIR += py-qt6-webengine
     SUBDIR += py-quilt3
+    SUBDIR += py-readability-lxml
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
     SUBDIR += py-requests-aws4auth

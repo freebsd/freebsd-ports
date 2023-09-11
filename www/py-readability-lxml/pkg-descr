@@ -1,0 +1,2 @@
+Fast HTML to text parser (article readability tool).
+Given an HTML document, it pulls out the main body text and cleans it up.
