@@ -1,5 +1,5 @@
 PORTNAME=	hsluv
-DISTVERSION=	5.0.3
+DISTVERSION=	5.0.4
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/hsluv/hsluv/issues/87
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
