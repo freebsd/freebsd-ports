@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR}
 LIB_DEPENDS=	libre2.so:devel/re2
 
-USES=		compiler:c11 localbase python
+USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
