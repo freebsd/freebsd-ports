@@ -15,7 +15,6 @@ include/pano13/file.h
 include/pano13/filter.h
 include/pano13/panorama.h
 include/pano13/panotypes.h
-include/pano13/pt_stdint.h
 include/pano13/pteditor.h
 include/pano13/ptutils.h
 include/pano13/queryfeature.h
