@@ -231,7 +231,7 @@ lib/libfreerdp2.so.%%MAJORVERSION%%
 lib/libfreerdp2.so.%%PATCHVERSION%%
 %%WAYLAND%%lib/libuwac0.so
 %%WAYLAND%%lib/libuwac0.so.0
-%%WAYLAND%%lib/libuwac0.so.0.1.1
+%%WAYLAND%%lib/libuwac0.so.0.2.0
 lib/libwinpr-tools2.so
 lib/libwinpr-tools2.so.%%MAJORVERSION%%
 lib/libwinpr-tools2.so.%%PATCHVERSION%%
