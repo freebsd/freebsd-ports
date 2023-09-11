@@ -263,6 +263,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/arcade/Tubelectric_Fictional_Arcade.fur
 %%DATADIR%%/demos/arcade/UT99_Run_TaitoArcade.fur
 %%DATADIR%%/demos/arcade/Utter_Determination_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/WSG_Loop_Tune_NamcoWSG.fur
 %%DATADIR%%/demos/arcade/ice_cap_NamcoC30.fur
 %%DATADIR%%/demos/arcade/iji_tor_segaxboard.fur
 %%DATADIR%%/demos/arcade/last_day_of_summer_NamcoC15.fur
@@ -284,6 +285,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/c64/DOOM_E1M3.fur
 %%DATADIR%%/demos/c64/The_Snippet.fur
 %%DATADIR%%/demos/c64/yeah!.fur
+%%DATADIR%%/demos/gameboy/On_Hold.fur
 %%DATADIR%%/demos/gameboy/Pleasure_of_Tension.fur
 %%DATADIR%%/demos/gameboy/You're_Doing_Well!.fur
 %%DATADIR%%/demos/gameboy/cheap.fur
@@ -378,6 +380,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/multichip/MegaMari-Cirno.fur
 %%DATADIR%%/demos/multichip/MetalSlug_BaseCamp_SMS_TIA.fur
 %%DATADIR%%/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
+%%DATADIR%%/demos/multichip/PinBot-C30C140.fur
 %%DATADIR%%/demos/multichip/Sky Chaze Zone 32X.fur
 %%DATADIR%%/demos/multichip/collab.fur
 %%DATADIR%%/demos/multichip/cueball.fur
@@ -464,6 +467,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/wonderswan/TimeTrial.fur
 %%DATADIR%%/demos/wonderswan/sijofsjfsoeife.fur
 %%DATADIR%%/demos/x16/Cafe - 010 Editor 2.0kg.fur
+%%DATADIR%%/demos/x16/Exerion_II_Tune.fur
 %%DATADIR%%/demos/x16/Identity_Believer.fur
 %%DATADIR%%/demos/x16/Melody of Certain Feelings.fur
 %%DATADIR%%/demos/x16/Shades of Blue.fur
