@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	1.1.1v
+PORTVERSION=	1.1.1w
 PORTEPOCH=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
@@ -12,7 +12,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl3[01] openssl-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl3[012] openssl-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
