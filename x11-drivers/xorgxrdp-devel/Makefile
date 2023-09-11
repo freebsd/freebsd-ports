@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
 GH_TAGNAME=	a07c9c8
-GH_TUPLE=	neutrinolabs:xrdp:a5d8bfd:xrdp
+GH_TUPLE=	neutrinolabs:xrdp:ae43cee:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
