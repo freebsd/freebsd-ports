@@ -1,5 +1,6 @@
 PORTNAME=	umbrello
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +17,7 @@ USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		solid sonnet syntaxhighlighting texteditor textwidgets unitconversion \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network printsupport svg webkit widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
