@@ -1,6 +1,6 @@
 PORTNAME=		webkit
 DISTVERSION=		5.212.0-alpha4
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=		www
 MASTER_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/releases/download/${DISTNAME}/
 PKGNAMEPREFIX=		qt5-
@@ -8,6 +8,9 @@ DISTNAME=		qt${PORTNAME}-${DISTVERSION}
 
 PATCH_SITES=		https://github.com/qt${PORTNAME}/qt${PORTNAME}/commit/
 PATCHFILES+=		78360c01c796b6260bf828bc9c8a0ef73c5132fd.patch:-p1
+
+DEPRECATED=		No longer actively maintained, increasing security concers
+EXPIRATION_DATE=	2023-12-31
 
 MAINTAINER=		kde@FreeBSD.org
 COMMENT=		QtWebKit with a more modern WebKit code base
