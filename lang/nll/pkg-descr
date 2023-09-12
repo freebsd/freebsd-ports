@@ -1,0 +1,11 @@
+NLL is a simple language for programming learning
+
+Simple script language for beginners for programming learning.
+
+Complicated sentence structures are abolished and It is designed to understand
+if you can go on reading it by a line unit.
+Integer arithmetic, character string processing, a floating decimal operation
+are possible.
+This has text drawing, graphic and sound function and can make simple games.
+
+NLL is one implementation in NLUX of programming language HOBBY.
