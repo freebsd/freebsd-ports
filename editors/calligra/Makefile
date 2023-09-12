@@ -1,6 +1,6 @@
 PORTNAME=	calligra
 DISTVERSION=	3.2.1
-PORTREVISION=	57
+PORTREVISION=	58
 CATEGORIES=	editors kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -54,16 +54,19 @@ USE_KDE=	activities akonadicontacts archive auth bookmarks calendarcore \
 		xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus declarative gui network opengl phonon4 \
-		printsupport script sql svg testlib webkit widgets x11extras \
+		printsupport script sql svg testlib widgets x11extras \
 		xml \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext
 
-OPTIONS_DEFINE=	OPENEXR
+OPTIONS_DEFINE=	OPENEXR WEBKIT
 OPTIONS_DEFAULT=	OPENEXR
 
 OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
+WEBKIT_DESC=		Use obsolete qt5-webkit to build Browser Plugin
+WEBKIT_USE=		QT5=webkit
+WEBKIT_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebKit
 
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DPRODUCTSET:STRING="DESKTOP"
