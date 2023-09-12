@@ -1650,6 +1650,7 @@ QA_ENV+=		STAGEDIR=${STAGEDIR} \
 				PKGORIGIN=${PKGORIGIN} \
 				LIB_RUN_DEPENDS='${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}' \
 				UNIFIED_DEPENDS=${_UNIFIED_DEPENDS:C,([^:]*:[^:]*):?.*,\1,:O:u:Q} \
+				WANTED_LIBRARIES='${LIB_DEPENDS:C,([^:]*):([^:]*):?.*,\1,}' \
 				PKGBASE=${PKGBASE} \
 				LICENSE="${LICENSE}" \
 				LICENSE_PERMS="${_LICENSE_PERMS}" \
