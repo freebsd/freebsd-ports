@@ -1,24 +1,22 @@
 PORTNAME=	zfs-stats
-PORTVERSION=	1.3.1
+DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	GH
 
 MAINTAINER=	mm@FreeBSD.org
-COMMENT=	Display human-readable ZFS statistics
+COMMENT=	Displays general ZFS information and human-readable statistics
 WWW=		https://www.vx.sk/zfs-stats/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		perl5 shebangfix
+USES=		perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska
 
 NO_BUILD=	yes
-SHEBANG_FILES=	zfs-*
-perl_OLD_CMD=	"/usr/bin/env -iS perl"
 
-PLIST_FILES=	bin/zfs-stats \
-		bin/zfs-mon
+PLIST_FILES=	bin/zfs-mon \
+		bin/zfs-stats
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zfs-stats ${STAGEDIR}${PREFIX}/bin/zfs-stats
