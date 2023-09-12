@@ -275,6 +275,7 @@ include/thrift/lib/cpp2/debug_thrift_data_difference/detail/pretty_print-inl-pos
 include/thrift/lib/cpp2/debug_thrift_data_difference/detail/pretty_print-inl-pre.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/diff.h
 include/thrift/lib/cpp2/debug_thrift_data_difference/pretty_print.h
+include/thrift/lib/cpp2/detail/EventHandlerRuntime.h
 include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
