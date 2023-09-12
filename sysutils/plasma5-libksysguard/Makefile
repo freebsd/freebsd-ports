@@ -1,6 +1,6 @@
 PORTNAME=	libksysguard
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,14 +9,14 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		globalaccel i18n iconthemes jobwidgets kdeclarative kio \
-		newstuff package plasma-framework service solid widgetsaddons \
-		windowsystem \
+		globalaccel i18n iconthemes jobwidgets kio package service \
+		solid widgetsaddons windowsystem newstuff \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network script webkit \
-		widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative gui location network \
+		printsupport webchannel widgets x11extras xml \
 		buildtools:build qmake:build
-USE_XORG=	x11
+
+USE_XORG=	ice sm x11 xext xres
 
 OPTIONS_DEFINE=	WEBENGINE
 
