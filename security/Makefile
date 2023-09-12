@@ -1071,7 +1071,6 @@
     SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += rnp
-    SUBDIR += rosenpass
     SUBDIR += rotate
     SUBDIR += rubygem-acme-client
     SUBDIR += rubygem-aes_key_wrap
