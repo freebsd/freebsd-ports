@@ -1,5 +1,6 @@
 PORTNAME=	incidenceeditor
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -21,8 +22,8 @@ USE_KDE+=	akonadi akonadicalendar akonadicontacts akonadimime calendarcore \
 		calendarsupport calendarutils contacts eventviews grantleetheme \
 		identitymanagement imap ldap libkdepim mailtransport mime pimcommon \
 		pimtextedit
-USE_QT=		concurrent core dbus gui network printsupport uitools \
-		webkit widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport \
+		widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
