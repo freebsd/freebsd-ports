@@ -1,5 +1,6 @@
 PORTNAME=	pimcommon
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +23,7 @@ USE_KDE=	archive attica auth codecs completion config configwidgets \
 USE_KDE+=	akonadi akonadicontacts akonadisearch contacts grantleetheme \
 		imap ktextaddons ldap libkdepim mime pimtextedit purpose
 USE_QT=		concurrent core dbus designer gui network printsupport script \
-		testlib uiplugin uitools webkit widgets xml \
+		testlib uiplugin uitools widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
