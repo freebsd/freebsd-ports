@@ -1,5 +1,6 @@
 PORTNAME=	rocs
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	math education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus declarative gui network script scripttools svg webkit \
+USE_QT=		concurrent core dbus declarative gui network script scripttools svg \
 		widgets xml xmlpatterns \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
