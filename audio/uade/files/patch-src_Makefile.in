@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	2022-10-01 15:24:39 UTC
+--- src/Makefile.in.orig	2023-09-08 20:23:51 UTC
 +++ src/Makefile.in
-@@ -7,7 +7,7 @@ ARCHFLAGS = {ARCHFLAGS}
- ARCHLIBS = {ARCHLIBS}
+@@ -8,7 +8,7 @@ ZAKALWEFLAGS = {ZAKALWEFLAGS}
  DEBUGFLAGS = {DEBUGFLAGS}
+ ZAKALWEFLAGS = {ZAKALWEFLAGS}
  
 -COMMONGCCOPTS = -Wall -Wno-unused -Wno-format -Wmissing-prototypes -Wstrict-prototypes -fno-exceptions -O2
-+COMMONGCCOPTS = -Wno-unused -Wno-format -Wmissing-prototypes -Wstrict-prototypes -fno-exceptions
++COMMONGCCOPTS = -Wall -Wno-unused -Wno-format -Wmissing-prototypes -Wstrict-prototypes -fno-exceptions
  
- TARGETCFLAGS = -fomit-frame-pointer $(COMMONGCCOPTS) $(DEBUGFLAGS) $(ARCHFLAGS)
- LIBRARIES = -lm $(AUDIOLIBS) $(ARCHLIBS)
+ TARGETCFLAGS = -fomit-frame-pointer $(COMMONGCCOPTS) $(DEBUGFLAGS) $(ARCHFLAGS) $(ZAKALWEFLAGS)
+ LIBRARIES = -lm $(AUDIOLIBS) $(ARCHLIBS) -lzakalwe

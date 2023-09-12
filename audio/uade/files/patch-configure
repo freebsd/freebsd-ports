@@ -1,6 +1,6 @@
---- configure.orig	2022-10-01 15:24:39 UTC
+--- configure.orig	2023-09-11 11:01:56 UTC
 +++ configure
-@@ -389,7 +389,7 @@ if test "$?" != "0"; then
+@@ -414,7 +414,7 @@ fi
      exit 1
  fi
  

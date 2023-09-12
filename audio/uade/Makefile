@@ -1,6 +1,5 @@
 PORTNAME=	uade
-PORTVERSION=	3.02
-PORTREVISION=	1
+PORTVERSION=	3.03
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
@@ -14,7 +13,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:shells/bash \
 		vasmm68k_mot:devel/vasm
 LIB_DEPENDS=	libao.so:audio/libao \
-		libbencodetools.so:devel/bencodetools
+		libbencodetools.so:devel/bencodetools \
+		libzakalwe.so:devel/libzakalwe
 
 USES=		gmake localbase:ldflags pathfix pkgconfig python:build \
 		shebangfix tar:bzip2
@@ -30,7 +30,8 @@ CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man/man1 \
 CONFIGURE_ENV=	PYTHON_INTERPRETER=${PYTHON_CMD} \
 		SYSCFLAGS='${CFLAGS}'
 
-SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view
+SHEBANG_FILES=	configure src/frontends/mod2ogg/mod2ogg2.sh.in \
+		write_audio/generate_amiga_oscilloscope_view
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS TEXTSCOPE

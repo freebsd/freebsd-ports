@@ -1,19 +1,11 @@
---- write_audio/Makefile.in.orig	2022-10-01 15:31:57 UTC
+--- write_audio/Makefile.in.orig	2023-09-08 20:23:51 UTC
 +++ write_audio/Makefile.in
-@@ -1,12 +1,12 @@
--CC = g++
--CCFLAGS = -W -Wall -O2 -g
--LDFLAGS = 
-+CXX ?= c++
-+CCFLAGS ?= -W -Wall -O2 -g
-+LDFLAGS ?= 
+@@ -1,6 +1,6 @@ CXX = {NATIVECXX}
+ CXX = {NATIVECXX}
+-CXXFLAGS = -W -Wall -O2 -g -std=c++11
+-LDFLAGS = -lm
++CXXFLAGS += -W -Wall -std=c++11
++LDFLAGS += -lm
  EXES = write_audio
  
  all:	$(EXES)
- 
- write_audio:	write_audio.cc
--	$(CC) $(CCFLAGS) -o $@ $< $(LDFLAGS)
-+	$(CXX) $(CCFLAGS) -o $@ $< $(LDFLAGS)
- 
- clean:
- 	rm -f $(EXES)
