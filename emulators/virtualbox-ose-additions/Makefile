@@ -99,6 +99,8 @@ post-patch:
 	@${ECHO_CMD} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> \
 	    ${WRKSRC}/LocalConfig.kmk
 	@${ECHO_CMD} 'VBOX_GCC_std = -std=c++11' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO_CMD} 'CXXDEFS += _LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR' >> \
+	    ${WRKSRC}/LocalConfig.kmk
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
