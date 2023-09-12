@@ -21,7 +21,6 @@ USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-SUB_FILES=	pkg-message
 CONFIGURE_ARGS=	--with-utempter
 
 OPTIONS_DEFINE=		NLS
