@@ -2,7 +2,7 @@ PORTNAME=	lebiniou-data
 DISTVERSION=	3.66.0
 CATEGORIES=	multimedia graphics
 
-MAINTAINER=	olivier@biniou.info
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Data for lebiniou
 WWW=		https://gitlab.com/lebiniou/lebiniou-data
 
