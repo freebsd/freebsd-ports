@@ -8,7 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	vishwin@FreeBSD.org
 COMMENT=	GTK Matrix IM client
-WWW=		https://wiki.gnome.org/Apps/Fractal
+WWW=		https://gitlab.gnome.org/GNOME/fractal
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
