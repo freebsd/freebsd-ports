@@ -1,6 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -36,7 +36,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		coreaddons crash dbusaddons emoticons filemetadata globalaccel \
 		guiaddons holidays i18n iconthemes idletime init itemmodels \
 		itemviews jobwidgets js jsembed kcmutils kdeclarative kdesu \
-		kdewebkit kio kscreenlocker kwin layer-shell-qt libkscreen \
+		kio kscreenlocker kwin layer-shell-qt libkscreen \
 		libksysguard newstuff notifications notifyconfig package parts \
 		people plasma-framework plasma-integration prison pty runner \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
@@ -46,7 +46,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		breeze-icons:run breeze:run kded:run kquickcharts:run \
 		milou:run oxygen-icons5:run
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
-		phonon4 printsupport qdbus script sql svg wayland webkit \
+		phonon4 printsupport qdbus script sql svg wayland \
 		widgets x11extras xml \
 		buildtools:build qmake:build testlib:build \
 		paths:run quickcontrols:run
