@@ -1,5 +1,6 @@
 PORTNAME=	solid
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,8 +10,8 @@ RUN_DEPENDS=	bsdisks:sysutils/bsdisks
 
 USES=		bison cmake compiler:c++11-lib kde:5 qt:5 tar:xz
 USE_KDE=	ecm:build
-USE_QT=		concurrent core dbus declarative gui linguisttools \
-		network widgets xml \
+USE_QT=		core dbus declarative gui linguisttools \
+		network xml \
 		buildtools:build qmake:build testlib:build
 
 OPTIONS_DEFINE=	IMOBILE
