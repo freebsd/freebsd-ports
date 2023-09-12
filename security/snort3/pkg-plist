@@ -97,6 +97,7 @@ include/snort/helpers/scratch_allocator.h
 include/snort/host_tracker/cache_allocator.h
 include/snort/host_tracker/cache_interface.h
 include/snort/host_tracker/host_cache.h
+include/snort/host_tracker/host_cache_segmented.h
 include/snort/host_tracker/host_tracker.h
 include/snort/log/log.h
 include/snort/log/log_text.h
