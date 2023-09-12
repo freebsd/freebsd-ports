@@ -3,7 +3,7 @@ DISTVERSION=	3.66.0
 PORTREVISION=	5
 CATEGORIES=	multimedia graphics
 
-MAINTAINER=	olivier@biniou.info
+MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	User-friendly, powerful music visualization / VJing tool
 WWW=		https://biniou.net/
 
