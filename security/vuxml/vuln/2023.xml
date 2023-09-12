@@ -1,3 +1,41 @@
+  <vuln vid="8eefa87f-31f1-496d-bf8e-2b465b6e4e8a">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>6.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v6.0.1">
+	  <p> File extraction limits were not correctly enforced
+	  for files containing large amounts of missing bytes. </p>
+	  <p> Sessions are sometimes not cleaned up completely
+	  within Zeek during shutdown, potentially causing a crash
+	  when using the -B dpd flag for debug logging. </p>
+	  <p> A specially-crafted HTTP packet can cause Zeek's
+	  filename extraction code to take a long time to process
+	  the data. </p>
+	  <p> A specially-crafted series of FTP packets made up of
+	  a CWD request followed by a large amount of ERPT requests
+	  may cause Zeek to spend a long time logging the commands.
+	  </p>
+	  <p> A specially-crafted VLAN packet can cause Zeek to
+	  overflow memory and potentially crash. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v6.0.1</url>
+    </references>
+    <dates>
+      <discovery>2023-09-12</discovery>
+      <entry>2023-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4061a4b2-4fb1-11ee-acc7-0151f07bc899">
     <topic>gitea -- block user account creation from blocked email domains</topic>
     <affects>
