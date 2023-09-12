@@ -80,6 +80,14 @@ CLOCK_DESC=		KCM Clock support
 
 .include <bsd.port.options.mk>
 
+.if defined(QEMU_EMULATING) && ${ABI:Mpurecap}
+# kpackagetool5 from devel/kf5-kpackage processing org.kde.plasma.desktop files
+# crashes under the user mode when executed by hybrid ABI cmake.
+PLIST_SUB+=	PLASMA_DESKTOP_APPDATA="@comment "
+.else
+PLIST_SUB+=	PLASMA_DESKTOP_APPDATA=""
+.endif
+
 .if !${ABI:Mpurecap}
 LIB_DEPENDS+=	libboost_system.so:devel/boost-libs
 USES+=		desktop-file-utils gnome

@@ -3064,10 +3064,10 @@ share/metainfo/org.kde.desktopcontainment.appdata.xml
 share/metainfo/org.kde.desktoptoolbox.appdata.xml
 share/metainfo/org.kde.paneltoolbox.appdata.xml
 share/metainfo/org.kde.plasma.activitypager.appdata.xml
-share/metainfo/org.kde.plasma.desktop.appdata.xml
-share/metainfo/org.kde.plasma.desktop.appmenubar.appdata.xml
-share/metainfo/org.kde.plasma.desktop.defaultPanel.appdata.xml
-share/metainfo/org.kde.plasma.desktop.emptyPanel.appdata.xml
+%%PLASMA_DESKTOP_APPDATA%%share/metainfo/org.kde.plasma.desktop.appdata.xml
+%%PLASMA_DESKTOP_APPDATA%%share/metainfo/org.kde.plasma.desktop.appmenubar.appdata.xml
+%%PLASMA_DESKTOP_APPDATA%%share/metainfo/org.kde.plasma.desktop.defaultPanel.appdata.xml
+%%PLASMA_DESKTOP_APPDATA%%share/metainfo/org.kde.plasma.desktop.emptyPanel.appdata.xml
 share/metainfo/org.kde.plasma.folder.appdata.xml
 share/metainfo/org.kde.plasma.icontasks.appdata.xml
 share/metainfo/org.kde.plasma.keyboardlayout.appdata.xml
