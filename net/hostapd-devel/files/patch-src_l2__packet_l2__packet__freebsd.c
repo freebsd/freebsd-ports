@@ -1,5 +1,5 @@
 --- src/l2_packet/l2_packet_freebsd.c.orig	2023-09-05 10:38:47.000000000 -0700
-+++ src/l2_packet/l2_packet_freebsd.c	2023-09-11 22:12:22.076149000 -0700
++++ src/l2_packet/l2_packet_freebsd.c	2023-09-11 22:21:57.799201000 -0700
 @@ -8,7 +8,10 @@
   */
  
@@ -12,7 +12,15 @@
  #include <net/bpf.h>
  #endif /* __APPLE__ */
  #include <pcap.h>
-@@ -76,24 +79,28 @@
+@@ -20,6 +23,7 @@
+ #include <sys/sysctl.h>
+ #endif /* __sun__ */
+ 
++#include <net/ethernet.h>
+ #include <net/if.h>
+ #include <net/if_dl.h>
+ #include <net/route.h>
+@@ -76,24 +80,33 @@
  {
  	struct l2_packet_data *l2 = eloop_ctx;
  	pcap_t *pcap = sock_ctx;
@@ -43,6 +51,24 @@
  		buf = (unsigned char *) (ethhdr + 1);
 -		len = hdr.caplen - sizeof(*ethhdr);
 +		len = hdr->caplen - sizeof(*ethhdr);
++		/* handle 8021Q encapsulated frames */
++		if (ethhdr->h_proto == htons(ETH_P_8021Q)) {
++			buf += ETHER_VLAN_ENCAP_LEN;
++			len -= ETHER_VLAN_ENCAP_LEN;
++		}
  	}
  	l2->rx_callback(l2->rx_callback_ctx, ethhdr->h_source, buf, len);
  }
+@@ -122,10 +135,10 @@
+ 	os_snprintf(pcap_filter, sizeof(pcap_filter),
+ 		    "not ether src " MACSTR " and "
+ 		    "( ether dst " MACSTR " or ether dst " MACSTR " ) and "
+-		    "ether proto 0x%x",
++		    "( ether proto 0x%x or ( vlan 0 and ether proto 0x%x ) )",
+ 		    MAC2STR(l2->own_addr), /* do not receive own packets */
+ 		    MAC2STR(l2->own_addr), MAC2STR(pae_group_addr),
+-		    protocol);
++		    protocol, protocol);
+ 	if (pcap_compile(l2->pcap, &pcap_fp, pcap_filter, 1, pcap_netp) < 0) {
+ 		fprintf(stderr, "pcap_compile: %s\n", pcap_geterr(l2->pcap));
+ 		return -1;
