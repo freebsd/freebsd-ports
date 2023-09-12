@@ -1,6 +1,6 @@
 PORTNAME=	gnat12
 PORTVERSION=	12.2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}:gcc	\
 		LOCAL/thierry:gnat
@@ -97,14 +97,31 @@ PLIST_SUB=	CONFTRGT=${CONFIGURE_TARGET} VER=${PORTVERSION}	\
 INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn	\
 		gnat-style libitm
 
+.if exists(/usr/lib32/libc.so)
+OPTIONS_DEFINE_amd64+=		MULTILIB
+OPTIONS_DEFAULT_amd64+=	MULTILIB
+OPTIONS_DEFINE_powerpc64+=	MULTILIB
+#OPTIONS_DEFAULT_powerpc64+=	MULTILIB # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105010
+MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
+MULTILIB_CONFIGURE_ENABLE=	multilib
+.else
+CONFIGURE_ARGS+=	--disable-multilib
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
 LIB_DIR_32=	""
 PLIST_SUB+=	64BITS="@comment "
 .else
-LIB_DIR_32=	"" 32
 PLIST_SUB+=	64BITS=""
+.  if empty(PORT_OPTIONS:MMULTILIB)
+LIB_DIR_32=	""
+PLIST_SUB+=	32BITS="@comment "
+.  else
+LIB_DIR_32=	"" 32
+PLIST_SUB+=	32BITS=""
+.  endif
 .endif
 .if ${ARCH} == aarch64
 PLIST_SUB+=	ARM="" NOARM="@comment "
