@@ -220,7 +220,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		openssl-0.10.55 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.90 \
+		openssl-sys-0.9.93 \
 		option-ext-0.2.0 \
 		os_str_bytes-6.5.1 \
 		overload-0.1.1 \
