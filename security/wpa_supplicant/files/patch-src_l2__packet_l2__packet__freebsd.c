@@ -1,5 +1,5 @@
 --- src/l2_packet/l2_packet_freebsd.c.orig	2022-01-16 12:51:29.000000000 -0800
-+++ src/l2_packet/l2_packet_freebsd.c	2022-04-14 07:21:15.259934000 -0700
++++ src/l2_packet/l2_packet_freebsd.c	2023-09-10 23:29:49.674128000 -0700
 @@ -8,7 +8,8 @@
   */
  
@@ -10,7 +10,7 @@
  #include <net/bpf.h>
  #endif /* __APPLE__ */
  #include <pcap.h>
-@@ -76,24 +77,27 @@
+@@ -76,24 +77,28 @@
  {
  	struct l2_packet_data *l2 = eloop_ctx;
  	pcap_t *pcap = sock_ctx;
@@ -24,6 +24,7 @@
 -	packet = pcap_next(pcap, &hdr);
 +	if (pcap_next_ex(pcap, &hdr, &packet) == -1) {
 +		wpa_printf(MSG_ERROR, "Error reading packet, has device disappeared?");
++		packet = NULL;
 +		eloop_terminate();
 +	}
  
