@@ -1,14 +1,15 @@
 PORTNAME=	kservice
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced plugin and service introspection
 
 USES=		bison cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz
-USE_KDE=	archive config coreaddons crash dbusaddons i18n \
+USE_KDE=	config coreaddons dbusaddons i18n \
 		doctools:build ecm:build
-USE_QT=		core dbus gui xml \
+USE_QT=		core dbus xml \
 		buildtools:build qmake:build
 
 # Make the applications.menu file not conflict with KDE4.
