@@ -1,6 +1,6 @@
 PORTNAME=	gitqlient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	1.6.2
 CATEGORIES=	devel
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -23,9 +23,9 @@ GH_PROJECT=	GitQlient \
 		AuxiliarCustomWidgets:aux \
 		git:git
 GH_TAGNAME=	40d0a02e5bdf2f49f9ea41ca533093b2808b0140:widget \
-		d1ed24e080521a239d5d5e2c2347fe211f0f3e4f:logger \
+		ce2f35bad6440a14802fed6c043323d4227ef9a9:logger \
 		f86e72abd442f73b1e3b10ac922908d03444f115:aux \
-		9166fa0226666fda39f3efc10394bc730286ed9d:git
+		fd63515ee55c2f4f0d8ac3969fcddf322964b3ee:git
 GH_SUBDIR=	src/QPinnableTabWidget:widget \
 		src/QLogger:logger \
 		src/AuxiliarCustomWidgets:aux \
