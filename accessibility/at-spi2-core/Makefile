@@ -1,5 +1,5 @@
 PORTNAME=	at-spi2-core
-PORTVERSION=	2.48.0
+PORTVERSION=	2.48.4
 CATEGORIES=	accessibility x11-toolkits
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -8,13 +8,15 @@ MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Assistive Technology Service Provider Interface
 WWW=		https://gitlab.gnome.org/GNOME/at-spi2-core
 
-LICENSE=	LGPL21
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Duse_systemd=false
 
 OPTIONS_DEFINE=	ATKONLY X11
 OPTIONS_DEFAULT=X11
@@ -27,8 +29,5 @@ ATKONLY_MESON_TRUE= atk_only
 X11_USES=		xorg
 X11_USE=		XORG=x11,xi,xtst
 X11_MESON_ENABLED=	x11
-
-post-install:
-	${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>
