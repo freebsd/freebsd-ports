@@ -144,6 +144,7 @@ include/folly/container/Foreach-inl.h
 include/folly/container/Foreach.h
 include/folly/container/HeterogeneousAccess-fwd.h
 include/folly/container/HeterogeneousAccess.h
+include/folly/container/IntrusiveHeap.h
 include/folly/container/Iterator.h
 include/folly/container/Merge.h
 include/folly/container/SparseByteSet.h
@@ -406,6 +407,7 @@ include/folly/experimental/io/IoUringBase.h
 include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
+include/folly/experimental/io/Liburing.h
 include/folly/experimental/io/SimpleAsyncIO.h
 include/folly/experimental/observer/CoreCachedObserver.h
 include/folly/experimental/observer/HazptrObserver.h
@@ -502,6 +504,7 @@ include/folly/futures/Future-inl.h
 include/folly/futures/Future-pre.h
 include/folly/futures/Future.h
 include/folly/futures/FutureSplitter.h
+include/folly/futures/HeapTimekeeper.h
 include/folly/futures/ManualTimekeeper.h
 include/folly/futures/Portability.h
 include/folly/futures/Promise-inl.h
