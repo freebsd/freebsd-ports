@@ -1,6 +1,6 @@
 PORTNAME=	ktexteditor
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,12 +12,12 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 USES=		cmake compiler:c++11-lib gettext kde:5 cpe pkgconfig \
 		qt:5 tar:xz xorg
 USE_KDE=	archive auth codecs completion config configwidgets \
-		coreaddons guiaddons i18n iconthemes itemviews \
+		coreaddons guiaddons i18n itemviews \
 		jobwidgets kio parts service solid sonnet syntaxhighlighting \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
-		script widgets xml xmlpatterns \
+		widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
