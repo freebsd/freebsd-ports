@@ -1,6 +1,6 @@
 PORTNAME=		kexi
 DISTVERSION=		3.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=		databases kde
 MASTER_SITES=		KDE/stable/${PORTNAME}/src
 DIST_SUBDIR=		KDE/${PORTNAME}
@@ -23,7 +23,7 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		texteditor textwidgets widgetsaddons windowsystem xmlgui \
 		breeze-icons:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
-		webkit widgets xml \
+		widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
@@ -32,5 +32,11 @@ CONFLICTS_INSTALL=	calligra-2*
 CMAKE_OFF=		BUILD_TESTING \
 			KEXI_ENABLE_QTGUI_FOR_TESTS
 CMAKE_ON=		KEXI_QTGUI_RUNTIME_AVAILABLE
+
+OPTIONS_DEFINE=		WEBKIT
+OPTIONS_SUB=		yes
+WEBKIT_DESC=		Use obsolete qt5-webkit to build Browser Plugin
+WEBKIT_USE=		QT5=webkit
+WEBKIT_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Qt5WebKit
 
 .include <bsd.port.mk>
