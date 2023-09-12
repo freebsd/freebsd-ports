@@ -1,5 +1,6 @@
 PORTNAME=	kio
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ USE_KDE=	archive auth bookmarks codecs completion config \
 		widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network \
-		script widgets x11extras xml \
+		widgets x11extras xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
