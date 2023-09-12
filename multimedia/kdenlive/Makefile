@@ -1,5 +1,6 @@
 PORTNAME=	kdenlive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,21 +17,20 @@ RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:multimedia/ffmpeg${FFMPEG_SUFX} \
 		${LOCALBASE}/lib/mlt-7/libmltqt.so:multimedia/mlt7-qt@qt5 \
 		${LOCALBASE}/lib/mlt-7/libmltglaxnimate.so:multimedia/mlt7-glaxnimate@qt5
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools \
-		gl mlt:7 pkgconfig qt:5 shared-mime-info kde:5 tar:xz xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gettext-tools gl \
+		kde:5 mlt:7 pkgconfig qt:5 shared-mime-info tar:xz xorg
 USE_GL=		gl glu
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash dbusaddons filemetadata \
-		guiaddons i18n iconthemes kio itemviews jobwidgets \
-		kdeclarative newstuff notifications notifyconfig package \
-		service solid sonnet textwidgets widgetsaddons windowsystem \
-		xmlgui \
+		guiaddons i18n iconthemes itemviews jobwidgets kdeclarative \
+		kio newstuff notifications notifyconfig package service solid \
+		sonnet textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build \
 		init:run
 USE_QT=		concurrent core dbus declarative gui multimedia network \
-		networkauth quickcontrols2 xml \
+		networkauth quickcontrols2 script svg widgets xml \
 		buildtools:build qmake:build \
-		quickcontrols:run script svg webkit widgets
+		quickcontrols:run
 USE_XORG=	x11
 CFLAGS+=	-isystem${LOCALBASE}/include # linux/input.h
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
