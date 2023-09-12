@@ -1455,6 +1455,7 @@
     SUBDIR += libxo
     SUBDIR += libxs
     SUBDIR += libxtend
+    SUBDIR += libzakalwe
     SUBDIR += libzim
     SUBDIR += libzookeeper
     SUBDIR += libzvbi

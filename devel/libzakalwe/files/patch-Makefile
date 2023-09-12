@@ -1,0 +1,37 @@
+--- Makefile.orig	2022-10-06 20:04:46 UTC
++++ Makefile
+@@ -1,10 +1,10 @@
+-AR = ar
+-CC = cgcc
+-GCC = gcc
+-CFLAGS = -W -Wall -O2 -I include -g -pthread -D_DEFAULT_SOURCE
+-LDFLAGS = -lm -lpthread
++AR ?= ar
++CC ?= cgcc
++GCC ?= gcc
++CFLAGS += -W -Wall -I include -pthread -D_DEFAULT_SOURCE
++LDFLAGS += -lm -lpthread
+ INSTALL = install
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ TEST_LINK_FLAG = -Wl,-rpath,.
+ 
+@@ -177,10 +177,13 @@ unix-support.o:	unix-support.c include/zakalwe/unix-su
+ unix-support.lo:	unix-support.c include/zakalwe/unix-support.h $(GENERAL_DEPS)
+ unix-support.o:	unix-support.c include/zakalwe/unix-support.h $(GENERAL_DEPS)
+ 
+-install:	all
+-	$(INSTALL) -m 644 libzakalwe.so "$(PREFIX)/lib"/
+-	mkdir -p -m 755 "$(PREFIX)/include/zakalwe"
+-	$(INSTALL) -m 644 include/zakalwe/*.h "$(PREFIX)/include/zakalwe"/
++strip:
++	strip libzakalwe.so
++
++install:	strip all
++	$(INSTALL) -m 644 libzakalwe.so "$(DESTDIR)$(PREFIX)/lib"/
++	mkdir -p -m 755 "$(DESTDIR)$(PREFIX)/include/zakalwe"
++	$(INSTALL) -m 644 include/zakalwe/*.h "$(DESTDIR)$(PREFIX)/include/zakalwe"/
+ 
+ clean:	
+ 	rm -f $(Z_TEST_BIN) *.o *.lo *.so
