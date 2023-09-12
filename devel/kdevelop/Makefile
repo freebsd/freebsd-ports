@@ -3,6 +3,7 @@
 #  devel/kdev-python
 PORTNAME=	kdevelop
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -52,6 +53,7 @@ SO_VER_LONG=	5.12.230800
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_LONG=${SO_VER_LONG}
 
 OPTIONS_DEFINE=	WEBENGINE
+OPTIONS_DEFAULT=	WEBENGINE
 WEBENGINE_DESC=	Use WebEngine as help reader
 WEBENGINE_USES=	qt:5
 WEBENGINE_USE=	QT=location,webchannel,webengine
