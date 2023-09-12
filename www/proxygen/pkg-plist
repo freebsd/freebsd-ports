@@ -1,5 +1,8 @@
+bin/hq
 bin/proxygen_curl
 bin/proxygen_echo
+bin/proxygen_h3datagram_client
+bin/proxygen_httperf2
 bin/proxygen_proxy
 bin/proxygen_push
 bin/proxygen_static
@@ -162,6 +165,7 @@ include/proxygen/lib/http/session/ServerPushLifecycle.h
 include/proxygen/lib/http/session/SimpleController.h
 include/proxygen/lib/http/session/TTLBAStats.h
 include/proxygen/lib/http/session/TransactionByteEvents.h
+include/proxygen/lib/http/sink/FlowControlInfo.h
 include/proxygen/lib/http/sink/HTTPSink.h
 include/proxygen/lib/http/sink/HTTPTransactionSink.h
 include/proxygen/lib/http/stats/ConnectionStats.h
@@ -248,6 +252,8 @@ include/proxygen/lib/utils/ZstdStreamDecompressor.h
 lib/cmake/proxygen/proxygen-config.cmake
 lib/cmake/proxygen/proxygen-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/proxygen/proxygen-targets.cmake
+lib/liblibhttperf2.so
 lib/libproxygen.so
 lib/libproxygencurl.so
+lib/libproxygenhqloggerhelper.so
 lib/libproxygenhttpserver.so
