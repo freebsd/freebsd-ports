@@ -14,7 +14,7 @@ WWW=		https://github.com/rust-lang/rust-bindgen
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo llvm:run
+USES=		cargo llvm:run,noexport
 PLIST_FILES=	bin/${PORTNAME:S/-cli//}
 
 post-patch:
