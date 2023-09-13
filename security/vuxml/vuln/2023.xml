@@ -25,8 +25,6 @@
       </body>
     </description>
     <references>
-      <cvename>INSERT CVE RECORD IF AVAILABLE</cvename>
-      <url>INSERT BLOCKQUOTE URL HERE</url>
       <cvename>CVE-2023-4763</cvename>
       <url>https://github.com/advisories/GHSA-w5hv-g8p5-vwjr</url>
       <cvename>CVE-2023-4762</cvename>
