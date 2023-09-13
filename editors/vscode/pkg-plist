@@ -310,6 +310,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/json/syntaxes/JSON.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/json/syntaxes/JSONC.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/json/syntaxes/JSONL.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/json/syntaxes/snippets.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/julia/language-configuration.json
 %%DATADIR%%/resources/app/extensions/julia/package.json
 %%DATADIR%%/resources/app/extensions/julia/package.nls.json
@@ -488,6 +489,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/hash.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/mappings.wasm
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/targets/node/terminateProcess.sh
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/basic-wat.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/w32appcontainertokens-XTRA77NA.node
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/watchdog.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/README.md
@@ -530,6 +532,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2016.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.date.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2017.object.d.ts
@@ -576,11 +579,14 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.sharedmemory.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2022.string.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.array.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.collection.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es2023.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es5.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.es6.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.decorators.d.ts
+%%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.disposable.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.full.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.esnext.intl.d.ts
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/lib.scripthost.d.ts
@@ -768,6 +774,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/theme-tomorrow-night-blue/package.json
 %%DATADIR%%/resources/app/extensions/theme-tomorrow-night-blue/package.nls.json
 %%DATADIR%%/resources/app/extensions/theme-tomorrow-night-blue/themes/tomorrow-night-blue-color-theme.json
+%%DATADIR%%/resources/app/extensions/tunnel-forwarding/.vscode/launch.json
+%%DATADIR%%/resources/app/extensions/tunnel-forwarding/dist/extension.js
+%%DATADIR%%/resources/app/extensions/tunnel-forwarding/media/icon.png
+%%DATADIR%%/resources/app/extensions/tunnel-forwarding/package.json
+%%DATADIR%%/resources/app/extensions/tunnel-forwarding/package.nls.json
 %%DATADIR%%/resources/app/extensions/typescript-basics/language-configuration.json
 %%DATADIR%%/resources/app/extensions/typescript-basics/package.json
 %%DATADIR%%/resources/app/extensions/typescript-basics/package.nls.json
@@ -951,6 +962,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/services/languageDetection/browser/languageDetectionSimpleWorker.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/search/worker/localFileSearch.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/textMate/browser/backgroundTokenization/worker/textMateTokenizationWorker.worker.js
+%%DATADIR%%/resources/app/out/vs/workbench/services/voiceRecognition/electron-sandbox/voiceTranscriptionWorklet.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.css
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.nls.js
