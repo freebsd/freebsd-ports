@@ -177,13 +177,7 @@ share/color/icc/ghostscript/srgb.icc
 %%DATADIR%%/Resource/Init/gs_typ42.ps
 %%DATADIR%%/Resource/Init/gs_type1.ps
 %%DATADIR%%/Resource/Init/gs_wan_e.ps
-%%DATADIR%%/Resource/Init/pdf_base.ps
-%%DATADIR%%/Resource/Init/pdf_draw.ps
-%%DATADIR%%/Resource/Init/pdf_font.ps
 %%DATADIR%%/Resource/Init/pdf_main.ps
-%%DATADIR%%/Resource/Init/pdf_ops.ps
-%%DATADIR%%/Resource/Init/pdf_rbld.ps
-%%DATADIR%%/Resource/Init/pdf_sec.ps
 %%DATADIR%%/Resource/Init/xlatmap
 %%DATADIR%%/Resource/SubstCID/CNS1-WMode
 %%DATADIR%%/Resource/SubstCID/GB1-WMode

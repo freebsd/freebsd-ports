@@ -1,6 +1,6 @@
 --- configure.orig	2022-04-04 13:48:49 UTC
 +++ configure
-@@ -11629,7 +11629,12 @@ if test "${enable_dynamic+set}" = set; then :
+@@ -13383,7 +13383,12 @@ if test "${enable_dynamic+set}" = set; then :
          DBG_CFLAGS="$DYNAMIC_CFLAGS $DBG_CFLAGS"
        ;;
        *bsd*)
