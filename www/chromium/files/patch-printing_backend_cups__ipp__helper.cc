@@ -1,6 +1,6 @@
---- printing/backend/cups_ipp_helper.cc.orig	2023-07-16 15:47:57 UTC
+--- printing/backend/cups_ipp_helper.cc.orig	2023-09-13 12:11:42 UTC
 +++ printing/backend/cups_ipp_helper.cc
-@@ -213,7 +213,7 @@ void ExtractResolutions(const CupsOptionProvider& prin
+@@ -215,7 +215,7 @@ void ExtractResolutions(const CupsOptionProvider& prin
    // Provide a default DPI if no valid DPI is found.
  #if BUILDFLAG(IS_MAC)
    constexpr gfx::Size kDefaultMissingDpi(kDefaultMacDpi, kDefaultMacDpi);

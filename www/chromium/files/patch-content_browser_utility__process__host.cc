@@ -1,4 +1,4 @@
---- content/browser/utility_process_host.cc.orig	2023-07-16 15:47:57 UTC
+--- content/browser/utility_process_host.cc.orig	2023-09-13 12:11:42 UTC
 +++ content/browser/utility_process_host.cc
 @@ -59,7 +59,7 @@
  #include "content/browser/v8_snapshot_files.h"
@@ -13,8 +13,8 @@
  #include "media/capture/capture_switches.h"
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "base/task/sequenced_task_runner.h"
  #include "components/viz/host/gpu_client.h"
  #include "media/capture/capture_switches.h"
@@ -31,8 +31,8 @@
        started_(false),
        name_(u"utility process"),
        file_data_(std::make_unique<ChildProcessLauncherFileData>()),
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
        gpu_client_(nullptr, base::OnTaskRunnerDeleter(nullptr)),
  #endif
        client_(std::move(client)) {
@@ -51,6 +51,6 @@
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     if (metrics_name_ == video_capture::mojom::VideoCaptureService::Name_) {
-       if (!base::CommandLine::ForCurrentProcess()->HasSwitch(
-               switches::kDisableVideoCaptureUseGpuMemoryBuffer) &&
+     // Pass `kVideoCaptureUseGpuMemoryBuffer` flag to video capture service only
+     // when the video capture use GPU memory buffer enabled and NV12 GPU memory
+     // buffer supported.

@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-08-17 07:33:31 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-09-13 12:11:42 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -220,7 +220,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -18,7 +18,7 @@
    struct rlimit limit;
    if (getrlimit(RLIMIT_NPROC, &limit) != 0)
      return kUnknownPlatformProcessLimit;
-@@ -1351,7 +1351,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1361,7 +1361,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
          return;
      }
  
@@ -27,7 +27,7 @@
      if (auto font_receiver = receiver.As<font_service::mojom::FontService>()) {
        ConnectToFontService(std::move(font_receiver));
        return;
-@@ -1440,7 +1440,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
+@@ -1450,7 +1450,7 @@ class RenderProcessHostImpl::IOThreadHostImpl : public
    std::unique_ptr<service_manager::BinderRegistry> binders_;
    mojo::Receiver<mojom::ChildProcessHost> receiver_{this};
  
@@ -36,7 +36,16 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -3555,6 +3555,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3514,7 +3514,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+             base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
+   }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
+   // for NV12 GPU memory buffer.
+   if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
+@@ -3575,6 +3575,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,

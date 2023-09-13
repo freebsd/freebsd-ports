@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2023-07-16 15:47:57 UTC
+--- media/base/video_frame.cc.orig	2023-09-13 12:11:42 UTC
 +++ media/base/video_frame.cc
 @@ -80,7 +80,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -54,7 +54,7 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1303,7 +1303,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1309,7 +1309,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -63,7 +63,7 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1416,7 +1416,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1422,7 +1422,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

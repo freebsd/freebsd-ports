@@ -1,7 +1,7 @@
---- content/renderer/BUILD.gn.orig	2023-07-16 15:47:57 UTC
+--- content/renderer/BUILD.gn.orig	2023-09-13 12:11:42 UTC
 +++ content/renderer/BUILD.gn
-@@ -204,6 +204,13 @@ target(link_target_type, "renderer") {
-     configs += [ "//build/config/compiler:enable_arc" ]
+@@ -200,6 +200,13 @@ target(link_target_type, "renderer") {
+     ]
    }
  
 +  if (is_bsd) {

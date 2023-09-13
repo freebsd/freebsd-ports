@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2023-03-09 06:31:50 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-09-13 12:11:42 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
@@ -108,9 +108,9 @@
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(
-@@ -174,11 +194,13 @@ void ChildProcessLauncherHelper::SetProcessBackgrounde
-     process.SetProcessBackgrounded(is_background);
+ void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+@@ -175,11 +195,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+   }
  }
  
 +#if !BUILDFLAG(IS_BSD)

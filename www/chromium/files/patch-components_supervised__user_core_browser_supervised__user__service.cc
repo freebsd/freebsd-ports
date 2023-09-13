@@ -1,11 +1,11 @@
---- components/supervised_user/core/browser/supervised_user_service.cc.orig	2023-08-17 07:33:31 UTC
+--- components/supervised_user/core/browser/supervised_user_service.cc.orig	2023-09-13 12:11:42 UTC
 +++ components/supervised_user/core/browser/supervised_user_service.cc
-@@ -70,7 +70,7 @@ void SupervisedUserService::Init() {
-   supervised_user::FirstTimeInterstitialBannerState banner_state =
+@@ -73,7 +73,7 @@ void SupervisedUserService::Init() {
        static_cast<supervised_user::FirstTimeInterstitialBannerState>(
            user_prefs_->GetInteger(prefs::kFirstTimeInterstitialBannerState));
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_IOS)
++    BUILDFLAG(IS_IOS) || BUILDFLAG(IS_BSD)
    if (supervised_user::CanDisplayFirstTimeInterstitialBanner()) {
      if (banner_state ==
              supervised_user::FirstTimeInterstitialBannerState::kUnknown &&

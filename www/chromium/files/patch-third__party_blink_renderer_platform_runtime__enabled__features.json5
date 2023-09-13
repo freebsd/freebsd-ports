@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-08-24 10:40:35 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-09-13 12:11:42 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -2675,7 +2675,7 @@
+@@ -2658,7 +2658,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -9,7 +9,7 @@
      },
      {
        name: "PaymentInstruments",
-@@ -3636,7 +3636,7 @@
+@@ -3654,7 +3654,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -18,7 +18,7 @@
      },
      {
        name: "URLPatternCompareComponent",
-@@ -3814,12 +3814,12 @@
+@@ -3848,12 +3848,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2023-08-17 07:33:31 UTC
+--- BUILD.gn.orig	2023-09-13 12:11:42 UTC
 +++ BUILD.gn
 @@ -61,7 +61,7 @@ declare_args() {
    root_extra_deps = []
@@ -42,7 +42,7 @@
      if (is_mac) {
        deps += [
          "//third_party/breakpad:dump_syms",
-@@ -668,7 +676,7 @@ group("gn_all") {
+@@ -671,7 +679,7 @@ group("gn_all") {
            host_os == "win") {
          deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
        }
@@ -51,16 +51,16 @@
        deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1092,7 +1100,7 @@ if (!is_ios && !is_cronet_build) {
+@@ -1095,7 +1103,7 @@ if (!is_ios && !is_cronet_build) {
      ]
    }
  
 -  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos) {
 +  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
-     # WPT Webdriver tests runner
-     # chrome/test/chromedriver/test/run_webdriver_tests.py
      script_test("webdriver_wpt_tests") {
-@@ -1196,7 +1204,7 @@ if (!is_ios && !is_cronet_build) {
+       script = "//third_party/blink/tools/run_wpt_tests.py"
+       args = [
+@@ -1185,7 +1193,7 @@ if (!is_ios && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1205,7 +1213,7 @@ if (!is_ios && !is_cronet_build) {
+@@ -1194,7 +1202,7 @@ if (!is_ios && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1679,7 +1687,7 @@ group("chromium_builder_perf") {
+@@ -1654,7 +1662,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

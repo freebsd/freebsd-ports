@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/xdg_toplevel_wrapper_impl.cc.orig	2023-05-31 08:12:17 UTC
+--- ui/ozone/platform/wayland/host/xdg_toplevel_wrapper_impl.cc.orig	2023-09-13 12:11:42 UTC
 +++ ui/ozone/platform/wayland/host/xdg_toplevel_wrapper_impl.cc
-@@ -277,7 +277,7 @@ void XDGToplevelWrapperImpl::ConfigureTopLevel(
+@@ -284,7 +284,7 @@ void XDGToplevelWrapperImpl::ConfigureTopLevel(
            CheckIfWlArrayHasValue(states, XDG_TOPLEVEL_STATE_ACTIVATED),
    };
  

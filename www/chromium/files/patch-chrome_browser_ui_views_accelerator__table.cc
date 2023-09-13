@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/accelerator_table.cc.orig	2023-08-17 07:33:31 UTC
+--- chrome/browser/ui/views/accelerator_table.cc.orig	2023-09-13 12:11:42 UTC
 +++ chrome/browser/ui/views/accelerator_table.cc
 @@ -72,11 +72,11 @@ const AcceleratorMapping kAcceleratorMap[] = {
      {ui::VKEY_S, ui::EF_PLATFORM_ACCELERATOR, IDC_SAVE_PAGE},
@@ -39,5 +39,5 @@
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
      {ui::VKEY_S, ui::EF_CONTROL_DOWN | ui::EF_SHIFT_DOWN,
-      IDC_RUN_SCREEN_AI_VISUAL_ANNOTATIONS},
+      IDC_CONTENT_CONTEXT_RUN_LAYOUT_EXTRACTION},
  #endif
