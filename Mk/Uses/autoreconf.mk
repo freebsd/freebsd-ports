@@ -65,6 +65,11 @@
 # Valid args:	build	Don't run autoreconf, only add build dependencies
 #		2.69	Use this legacy version
 #
+# Port maintainers can set the following variable:
+#
+# AUTORECONF_ARGS	The string to pass to autoreconf in addition to
+# 			the default "-f -i"
+#
 # MAINTAINER:	ports@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_AUTORECONF_MK)
@@ -122,7 +127,7 @@ do-autoreconf:
 		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running intltoolize'; \
 		${FALSE}; fi; fi)
 .    endif
-	@(cd ${AUTORECONF_WRKSRC} && if ! ${AUTORECONF} -f -i; then \
+	@(cd ${AUTORECONF_WRKSRC} && if ! ${AUTORECONF} -f -i ${AUTORECONF_ARGS}; then \
 		${ECHO_MSG} '===>  Mk/Uses/autoreconf.mk: Error running ${AUTORECONF}'; \
 		${FALSE}; fi)
 .  endif
