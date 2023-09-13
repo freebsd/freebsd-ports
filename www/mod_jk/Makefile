@@ -1,5 +1,5 @@
 PORTNAME=	mod_jk
-PORTVERSION=	1.2.48
+PORTVERSION=	1.2.49
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/tomcat/tomcat-connectors/jk/
