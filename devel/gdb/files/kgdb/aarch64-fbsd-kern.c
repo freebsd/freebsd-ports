@@ -126,13 +126,13 @@ aarch64_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 
 static const struct regcache_map_entry aarch64_fbsd_trapframe_map[] =
   {
-    { 1, AARCH64_SP_REGNUM, 0 },
-    { 1, AARCH64_LR_REGNUM, 0 },
-    { 1, AARCH64_PC_REGNUM, 0 },
-    { 1, AARCH64_CPSR_REGNUM, 0 },
+    { 1, AARCH64_SP_REGNUM, 8 },
+    { 1, AARCH64_LR_REGNUM, 8 },
+    { 1, AARCH64_PC_REGNUM, 8 },
+    { 1, AARCH64_CPSR_REGNUM, 8 },
     { 1, REGCACHE_MAP_SKIP, 8 },	/* esr */
     { 1, REGCACHE_MAP_SKIP, 8 },	/* far */
-    { 30, AARCH64_X0_REGNUM, 0 },	/* x0 ... x29 */
+    { 30, AARCH64_X0_REGNUM, 8 },	/* x0 ... x29 */
     { 0 },
   };
 
@@ -141,12 +141,12 @@ static const struct regcache_map_entry aarch64_fbsd_trapframe_map[] =
 
 static const struct regcache_map_entry aarch64_fbsd13_trapframe_map[] =
   {
-    { 1, AARCH64_SP_REGNUM, 0 },
-    { 1, AARCH64_LR_REGNUM, 0 },
-    { 1, AARCH64_PC_REGNUM, 0 },
+    { 1, AARCH64_SP_REGNUM, 8 },
+    { 1, AARCH64_LR_REGNUM, 8 },
+    { 1, AARCH64_PC_REGNUM, 8 },
     { 1, AARCH64_CPSR_REGNUM, 4 },
     { 1, REGCACHE_MAP_SKIP, 4 },	/* esr */
-    { 30, AARCH64_X0_REGNUM, 0 },	/* x0 ... x29 */
+    { 30, AARCH64_X0_REGNUM, 8 },	/* x0 ... x29 */
     { 0 },
   };
 
