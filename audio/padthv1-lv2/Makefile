@@ -1,5 +1,5 @@
 PORTNAME=	padthv1
-DISTVERSION=	0.9.31
+DISTVERSION=	0.9.32
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
@@ -17,10 +17,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libjack.so:audio/jack \
 		liblo.so:audio/liblo
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 \
 		shared-mime-info
+USE_QT=		base svg tools:build
 USE_GL=		gl
-USE_QT=		core gui svg widgets xml buildtools:build linguisttools:build qmake:build
 
 CMAKE_OFF=	CONFIG_ALSA_MIDI
 
