@@ -186,6 +186,7 @@
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += mytetra
+    SUBDIR += nanonote
     SUBDIR += nautilus-sendto
     SUBDIR += nextcloudclient
     SUBDIR += note

@@ -1,0 +1,5 @@
+Nanonote is a minimalist note taking application.
+It automatically saves anything you type. Being minimalist means it has no
+synchronisation, does not support multiple documents, images or any advanced
+formatting (the only formatting is highlighting URLs and Markdown-like
+headings).
