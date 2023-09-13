@@ -1,3 +1,32 @@
+  <vuln vid="4bc66a81-89d2-4696-a04b-defd2eb77783">
+    <topic>vscode -- VS Code Remote Code Execution Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.82.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers report:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/security/advisories/GHSA-r6q2-478f-5gmr">
+	  <p>Visual Studio Code Remote Code Execution Vulnerability</p>
+	  <p>A remote code execution vulnerability exists in VS Code 1.82.0 and earlier versions that working in a maliciously crafted package.json can result in executing commands locally. This scenario would require the attacker to get the VS Code user to open the malicious project and have get the user to open and work with malformed entries in the dependencies sections of the package.json file.</p>
+	  <p>VS Code uses the locally installed npm command to fetch information on package dependencies. A package dependency can be named in such a way that the npm tool runs a script instead.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-36742</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-36742</url>
+      <url>https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-36742</url>
+    </references>
+    <dates>
+      <discovery>2023-09-12</discovery>
+      <entry>2023-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8eefa87f-31f1-496d-bf8e-2b465b6e4e8a">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
