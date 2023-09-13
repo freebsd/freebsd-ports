@@ -1,5 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.24.0
+PORTVERSION=	2.24.1
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -35,8 +35,8 @@ TEST_DEPENDS=	${LOCALBASE}/share/hunspell/cs_CZ.dic:textproc/cs-hunspell	\
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-fabian
 
-USES=		autoreconf gettext gmake gnome iconv pathfix pkgconfig	\
-		python shebangfix
+USES=		autoreconf desktop-file-utils gettext gmake gnome iconv pathfix	\
+		pkgconfig python shebangfix
 SHEBANG_FILES=	engine/emoji-picker.in engine/ibus-engine-typing-booster.in	\
 		setup/ibus-setup-typing-booster.in
 SHEBANG_LANG=	sh

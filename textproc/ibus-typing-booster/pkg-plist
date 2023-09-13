@@ -56,8 +56,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotations/gd.xml
 %%DATADIR%%/data/annotations/gl.xml
 %%DATADIR%%/data/annotations/gu.xml
-%%DATADIR%%/data/annotations/ha_NE.xml
 %%DATADIR%%/data/annotations/ha.xml
+%%DATADIR%%/data/annotations/ha_NE.xml
 %%DATADIR%%/data/annotations/he.xml
 %%DATADIR%%/data/annotations/hi_Latn.xml
 %%DATADIR%%/data/annotations/hi.xml
@@ -216,7 +216,6 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/gl.xml
 %%DATADIR%%/data/annotationsDerived/gu.xml
 %%DATADIR%%/data/annotationsDerived/ha.xml
-%%DATADIR%%/data/annotationsDerived/ha_NE.xml
 %%DATADIR%%/data/annotationsDerived/he.xml
 %%DATADIR%%/data/annotationsDerived/hi.xml
 %%DATADIR%%/data/annotationsDerived/hi_Latn.xml
@@ -256,7 +255,6 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/ms.xml
 %%DATADIR%%/data/annotationsDerived/mt.xml
 %%DATADIR%%/data/annotationsDerived/my.xml
-%%DATADIR%%/data/annotationsDerived/nb.xml
 %%DATADIR%%/data/annotationsDerived/ne.xml
 %%DATADIR%%/data/annotationsDerived/nl.xml
 %%DATADIR%%/data/annotationsDerived/nn.xml
@@ -346,6 +344,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/itb_nltk.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_pango.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_pango.cpython-%%PYTHON_SUFFIX%%.pyc
+%%DATADIR%%/engine/__pycache__/itb_sound.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/engine/__pycache__/itb_sound.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_util.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_util.cpython-%%PYTHON_SUFFIX%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_version.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -366,6 +366,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/itb_emoji.py
 %%DATADIR%%/engine/itb_nltk.py
 %%DATADIR%%/engine/itb_pango.py
+%%DATADIR%%/engine/itb_sound.py
 %%DATADIR%%/engine/itb_util.py
 %%DATADIR%%/engine/itb_version.py
 %%DATADIR%%/engine/m17n_translit.py
