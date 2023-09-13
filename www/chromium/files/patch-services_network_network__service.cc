@@ -1,6 +1,6 @@
---- services/network/network_service.cc.orig	2023-08-17 07:33:31 UTC
+--- services/network/network_service.cc.orig	2023-09-13 12:11:42 UTC
 +++ services/network/network_service.cc
-@@ -92,7 +92,7 @@
+@@ -96,7 +96,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  

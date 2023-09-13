@@ -1,6 +1,6 @@
---- services/device/geolocation/location_arbitrator.cc.orig	2023-08-17 07:33:31 UTC
+--- services/device/geolocation/location_arbitrator.cc.orig	2023-09-13 12:11:42 UTC
 +++ services/device/geolocation/location_arbitrator.cc
-@@ -174,7 +174,7 @@ LocationArbitrator::NewNetworkLocationProvider(
+@@ -186,7 +186,7 @@ LocationArbitrator::NewNetworkLocationProvider(
  
  std::unique_ptr<LocationProvider>
  LocationArbitrator::NewSystemLocationProvider() {

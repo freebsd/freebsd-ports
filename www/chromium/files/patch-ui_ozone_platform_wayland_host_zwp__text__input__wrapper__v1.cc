@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/zwp_text_input_wrapper_v1.cc.orig	2023-08-24 14:51:50 UTC
+--- ui/ozone/platform/wayland/host/zwp_text_input_wrapper_v1.cc.orig	2023-09-13 12:11:42 UTC
 +++ ui/ozone/platform/wayland/host/zwp_text_input_wrapper_v1.cc
-@@ -224,6 +224,10 @@ void ZWPTextInputWrapperV1::SetSurroundingText(
+@@ -225,6 +225,10 @@ void ZWPTextInputWrapperV1::SetSurroundingText(
    // so if it exceeds 16 bits, it may be broken.
    static constexpr size_t kSizeLimit = 60000;
    if (HasAdvancedSurroundingTextSupport() && text.length() > kSizeLimit) {
@@ -11,7 +11,7 @@
      base::ScopedFD memfd(memfd_create("surrounding_text", MFD_CLOEXEC));
      if (!memfd.get()) {
        PLOG(ERROR) << "Failed to create memfd";
-@@ -236,6 +240,7 @@ void ZWPTextInputWrapperV1::SetSurroundingText(
+@@ -237,6 +241,7 @@ void ZWPTextInputWrapperV1::SetSurroundingText(
      zcr_extended_text_input_v1_set_large_surrounding_text(
          extended_obj_.get(), memfd.get(), text.length(),
          selection_range.start(), selection_range.end());

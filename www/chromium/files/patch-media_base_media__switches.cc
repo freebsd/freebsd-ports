@@ -1,4 +1,4 @@
---- media/base/media_switches.cc.orig	2023-08-17 07:33:31 UTC
+--- media/base/media_switches.cc.orig	2023-09-13 12:11:42 UTC
 +++ media/base/media_switches.cc
 @@ -15,7 +15,7 @@
  #include "gpu/config/gpu_finch_features.h"
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -648,7 +648,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
+@@ -652,7 +652,7 @@ BASE_FEATURE(kFallbackAfterDecodeError,
  // Show toolbar button that opens dialog for controlling media sessions.
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -671,7 +671,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
+@@ -675,7 +675,7 @@ BASE_FEATURE(kGlobalMediaControlsCrOSUpdatedUI,
  // If enabled, users can request Media Remoting without fullscreen-in-tab.
  BASE_FEATURE(kMediaRemotingWithoutFullscreen,
               "MediaRemotingWithoutFullscreen",
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -683,7 +683,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
+@@ -687,7 +687,7 @@ BASE_FEATURE(kMediaRemotingWithoutFullscreen,
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -727,7 +727,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -731,7 +731,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -45,7 +45,16 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  BASE_FEATURE(kVaapiVideoDecodeLinux,
-@@ -1294,7 +1294,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
+@@ -811,7 +811,7 @@ BASE_FEATURE(kVaapiVp9kSVCHWEncoding,
+              "VaapiVp9kSVCHWEncoding",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+ #endif  // defined(ARCH_CPU_X86_FAMILY) && BUILDFLAG(IS_CHROMEOS)
+-#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Enables the new V4L2StatefulVideoDecoder instead of V4L2VideoDecoder.
+ BASE_FEATURE(kV4L2FlatStatelessVideoDecoder,
+              "V4L2FlatStatelessVideoDecoder",
+@@ -1317,7 +1317,7 @@ const base::Feature MEDIA_EXPORT kUseOutOfProcessVideo
  };
  #endif  // BUILDFLAG(ALLOW_OOP_VIDEO_DECODER)
  

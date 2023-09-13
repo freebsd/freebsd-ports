@@ -1,6 +1,6 @@
---- v8/src/codegen/x64/assembler-x64.h.orig	2023-07-16 15:47:57 UTC
+--- v8/src/codegen/x64/assembler-x64.h.orig	2023-09-13 12:11:42 UTC
 +++ v8/src/codegen/x64/assembler-x64.h
-@@ -856,6 +856,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
+@@ -860,6 +860,7 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
    void ret(int imm16);
    void ud2();
    void setcc(Condition cc, Register reg);
@@ -8,7 +8,7 @@
  
    void pblendw(XMMRegister dst, Operand src, uint8_t mask);
    void pblendw(XMMRegister dst, XMMRegister src, uint8_t mask);
-@@ -913,8 +914,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
+@@ -917,8 +918,8 @@ class V8_EXPORT_PRIVATE Assembler : public AssemblerBa
    void jmp(Handle<Code> target, RelocInfo::Mode rmode);
  
    // Jump near absolute indirect (r64)

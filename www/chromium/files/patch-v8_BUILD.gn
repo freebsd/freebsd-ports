@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2023-08-17 07:33:31 UTC
+--- v8/BUILD.gn.orig	2023-09-13 12:11:42 UTC
 +++ v8/BUILD.gn
-@@ -1369,6 +1369,14 @@ config("toolchain") {
+@@ -1404,6 +1404,14 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -15,9 +15,9 @@
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2295,6 +2303,11 @@ template("run_mksnapshot") {
-         # list of builtins with incompatible profiles.
-         "--abort-on-bad-builtin-profile-data",
+@@ -2331,6 +2339,11 @@ template("run_mksnapshot") {
+         "--turbo-log-builtins-count-input",
+         v8_log_builtins_block_count_input,
        ]
 +      if (v8_current_cpu == "x86") {
 +        args -= [
@@ -26,8 +26,8 @@
 +      }
      }
  
-     # This is needed to distinguish between generating code for the simulator
-@@ -5920,7 +5933,7 @@ v8_component("v8_libbase") {
+     if (v8_enable_builtins_profiling) {
+@@ -6081,7 +6094,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -36,7 +36,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -5931,6 +5944,18 @@ v8_component("v8_libbase") {
+@@ -6092,6 +6105,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

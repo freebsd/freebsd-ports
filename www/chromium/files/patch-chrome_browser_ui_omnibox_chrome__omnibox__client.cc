@@ -1,6 +1,6 @@
---- chrome/browser/ui/omnibox/chrome_omnibox_client.cc.orig	2023-08-17 07:33:31 UTC
+--- chrome/browser/ui/omnibox/chrome_omnibox_client.cc.orig	2023-09-13 12:11:42 UTC
 +++ chrome/browser/ui/omnibox/chrome_omnibox_client.cc
-@@ -470,10 +470,18 @@ void ChromeOmniboxClient::OnAutocompleteAccept(
+@@ -474,10 +474,18 @@ void ChromeOmniboxClient::OnAutocompleteAccept(
                alternative_nav_match);
  
    // Store the details necessary to open the omnibox match via browser commands.

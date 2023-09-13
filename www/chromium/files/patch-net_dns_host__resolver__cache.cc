@@ -1,6 +1,6 @@
---- net/dns/host_resolver_cache.cc.orig	2023-08-17 07:33:31 UTC
+--- net/dns/host_resolver_cache.cc.orig	2023-09-13 12:11:42 UTC
 +++ net/dns/host_resolver_cache.cc
-@@ -159,7 +159,11 @@ void HostResolverCache::Set(
+@@ -161,7 +161,11 @@ void HostResolverCache::Set(
  
    std::string domain_name = result->domain_name();
    entries_.emplace(

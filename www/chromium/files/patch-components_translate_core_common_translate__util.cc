@@ -1,6 +1,6 @@
---- components/translate/core/common/translate_util.cc.orig	2023-04-05 11:05:06 UTC
+--- components/translate/core/common/translate_util.cc.orig	2023-09-13 12:11:42 UTC
 +++ components/translate/core/common/translate_util.cc
-@@ -33,7 +33,7 @@ BASE_FEATURE(kTranslateSubFrames,
+@@ -21,7 +21,7 @@ const char kSecurityOrigin[] = "https://translate.goog
  BASE_FEATURE(kTFLiteLanguageDetectionEnabled,
               "TFLiteLanguageDetectionEnabled",
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
