@@ -1,6 +1,6 @@
 PORTNAME=	kmymoney
 PORTVERSION=	5.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
 USE_QT=		buildtools:build core dbus gui network printsupport qmake:build \
-		sql testlib:build xml webkit widgets
+		sql testlib:build xml widgets
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons doctools:build ecm:build i18n \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
@@ -33,7 +33,7 @@ WEB_DESC=		Web content renderer
 OPTIONS_SINGLE=		WEB
 OPTIONS_SINGLE_WEB=	KDEWEBKIT QTWEBENGINE
 OPTIONS_DEFINE=		ADDRESSBOOK GNUPG HOLIDAYS QUOTES
-OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING KDEWEBKIT OFX QUOTES
+OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES QTWEBENGINE
 OPTIONS_SUB=		yes
 
 ADDRESSBOOK_DESC=	Address book support
