@@ -31,7 +31,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons iconthemes \
 		i18n kcmutils kdeclarative notifications package service \
 		wallet widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network widgets xml \
+USE_QT=		core dbus declarative gui network phonon4 widgets xml \
 		buildtools:build qmake:build
 USE_LDCONFIG=	yes
 

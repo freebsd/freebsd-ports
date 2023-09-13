@@ -710,9 +710,11 @@ share/locale/et/LC_MESSAGES/libmimetreeparser.mo
 share/locale/et/LC_MESSAGES/libtemplateparser.mo
 share/locale/et/LC_MESSAGES/libwebengineviewer.mo
 share/locale/eu/LC_MESSAGES/libmessagecomposer.mo
+share/locale/eu/LC_MESSAGES/libmessagecore.mo
 share/locale/eu/LC_MESSAGES/libmessagelist.mo
 share/locale/eu/LC_MESSAGES/libmessageviewer.mo
 share/locale/eu/LC_MESSAGES/libmimetreeparser.mo
+share/locale/eu/LC_MESSAGES/libtemplateparser.mo
 share/locale/eu/LC_MESSAGES/libwebengineviewer.mo
 share/locale/fa/LC_MESSAGES/libmessagelist.mo
 share/locale/fa/LC_MESSAGES/libmessageviewer.mo
