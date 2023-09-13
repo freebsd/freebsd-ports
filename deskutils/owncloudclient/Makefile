@@ -1,7 +1,7 @@
 PORTNAME=	owncloudclient
 DISTVERSION=	2.8.2
 DISTVERSIONSUFFIX=	.4246
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	https://download.owncloud.com/desktop/ownCloud/stable/${DISTVERSION}${DISTVERSIONSUFFIX}/source/
 DISTNAME=	ownCloud-${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -26,7 +26,7 @@ USE_KDE=	completion config coreaddons jobwidgets kio service \
 		widgetsaddons windowsystem \
 		ecm:build
 USE_LDCONFIG=	yes
-USE_QT=		concurrent core dbus gui network sql webkit widgets xml \
+USE_QT=		concurrent core dbus gui network sql widgets xml \
 		buildtools:build linguist:build qmake:build
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR:STRING=man \
