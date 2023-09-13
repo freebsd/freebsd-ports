@@ -1,8 +1,7 @@
 PORTNAME=	quantlib
-PORTVERSION=	1.20
-PORTREVISION=	4
+PORTVERSION=	1.31.1
 CATEGORIES=	finance math devel
-MASTER_SITES=	https://dl.bintray.com/${PORTNAME}/releases/
+MASTER_SITES=	http://github.com/lballabio/QuantLib/releases/download/v${PORTVERSION}/
 DISTNAME=	QuantLib-${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		compiler:c++11-lang libtool
+USES=		compiler:c++17-lang libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	EMACS=no
@@ -44,12 +43,16 @@ CONFIGURE_ARGS+=	--disable-unity-build
 CONFIGURE_ARGS+=	--enable-parallel-unit-test-runner
 CONFIGURE_ARGS+=	--with-boost-include=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-boost-lib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-std-any
 CONFIGURE_ARGS+=	--enable-std-classes # Prefer C++11 to Boost
+CONFIGURE_ARGS+=	--enable-std-optional
+CONFIGURE_ARGS+=	--enable-test-suite
 
 .for o in ${OPTIONS_DEFINE}
 $o_CONFIGURE_ENABLE=	${o:S/_/-/g:tl}
 .endfor
 
+CXXFLAGS+=	-std=c++17
 CXXFLAGS_i386=	-DBOOST_MATH_NO_LONG_DOUBLE_MATH_FUNCTIONS
 
 .include <bsd.port.mk>
