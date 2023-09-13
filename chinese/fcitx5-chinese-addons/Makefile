@@ -1,6 +1,6 @@
 PORTNAME=	fcitx5-chinese-addons
 DISTVERSION=	5.0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:py_stroke,py_table
@@ -35,9 +35,9 @@ USE_LDCONFIG=	yes
 
 GUI_DESC=	Configuration GUI
 GUI_USES=	qt:5
-GUI_USE=	qt=concurrent,dbus,webkit,buildtools:build,qmake:build
+GUI_USE=	qt=concurrent,dbus,webengine,buildtools:build,qmake:build
 GUI_LIB_DEPENDS=	libFcitx5Qt5DBusAddons.so:textproc/fcitx5-qt
-GUI_CMAKE_ON=	-DUSE_WEBKIT:BOOL=true
+GUI_CMAKE_ON=	-DUSE_WEBKIT:BOOL=false
 
 USE_KDE=	ecm
 
