@@ -1,3 +1,56 @@
+  <vuln vid="88754d55-521a-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>117.0.5938.62</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>117.0.5938.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_12.html">
+	 <p>This update includes 16 security fixes:</p>
+	 <ul>
+	    <li>[1479274] Critical CVE-2023-4863: Heap buffer overflow in WebP. Reported by Apple Security Engineering and Architecture (SEAR) and The Citizen Lab at The University of Torontoʼs Munk School on 2023-09-06</li>
+	    <li>[1430867] Medium CVE-2023-4900: Inappropriate implementation in Custom Tabs. Reported by Levit Nudi from Kenya on 2023-04-06</li>
+	    <li>[1459281] Medium CVE-2023-4901: Inappropriate implementation in Prompts. Reported by Kang Ali on 2023-06-29</li>
+	    <li>[1454515] Medium CVE-2023-4902: Inappropriate implementation in Input. Reported by Axel Chong on 2023-06-14</li>
+	    <li>[1446709] Medium CVE-2023-4903: Inappropriate implementation in Custom Mobile Tabs. Reported by Ahmed ElMasry on 2023-05-18</li>
+	    <li>[1453501] Medium CVE-2023-4904: Insufficient policy enforcement in Downloads. Reported by Tudor Enache @tudorhacks on 2023-06-09</li>
+	    <li>[1441228] Medium CVE-2023-4905: Inappropriate implementation in Prompts. Reported by Hafiizh on 2023-04-29</li>
+	    <li>[1449874] Low CVE-2023-4906: Insufficient policy enforcement in Autofill. Reported by Ahmed ElMasry on 2023-05-30</li>
+	    <li>[1462104] Low CVE-2023-4907: Inappropriate implementation in Intents. Reported by Mohit Raj (shadow2639)  on 2023-07-04</li>
+	    <li>[1451543] Low CVE-2023-4908: Inappropriate implementation in Picture in Picture. Reported by Axel Chong on 2023-06-06</li>
+	    <li>[1463293] Low CVE-2023-4909: Inappropriate implementation in Interstitials. Reported by Axel Chong on 2023-07-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4863</cvename>
+      <cvename>CVE-2023-4900</cvename>
+      <cvename>CVE-2023-4901</cvename>
+      <cvename>CVE-2023-4902</cvename>
+      <cvename>CVE-2023-4903</cvename>
+      <cvename>CVE-2023-4904</cvename>
+      <cvename>CVE-2023-4905</cvename>
+      <cvename>CVE-2023-4906</cvename>
+      <cvename>CVE-2023-4907</cvename>
+      <cvename>CVE-2023-4908</cvename>
+      <cvename>CVE-2023-4909</cvename>
+      <url>https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_12.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-12</discovery>
+      <entry>2023-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4bc66a81-89d2-4696-a04b-defd2eb77783">
     <topic>vscode -- VS Code Remote Code Execution Vulnerability</topic>
     <affects>
