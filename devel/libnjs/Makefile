@@ -1,6 +1,6 @@
 PORTNAME=	libnjs
 DISTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -97,7 +97,7 @@ PLIST_FILES=	include/njs_addr2line.h \
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/nginx/config
+		${WRKSRC}/auto/make
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libnjs
