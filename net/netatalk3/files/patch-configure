@@ -1,6 +1,40 @@
---- configure.orig	2022-03-22 04:51:09 UTC
-+++ configure
-@@ -17368,7 +17368,7 @@ if test "x$bdb_required" = "xyes"; then
+--- configure.orig	2023-09-11 13:10:58.000000000 -0400
++++ configure	2023-09-13 15:28:59.173250000 -0400
+@@ -18111,8 +18111,15 @@ fi
+ 		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+  int allow_severity = 0; int deny_severity = 0; extern char hosts_access(void);
+-			,hosts_access();
++ int
++main (void)
++{
++hosts_access();
+ 
++  ;
++  return 0;
++}
++
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"
+ then :
+@@ -18125,8 +18132,15 @@ else $as_nop
+ 				cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+  int allow_severity = 0; int deny_severity = 0; extern char hosts_access(void);
+-					,hosts_access();
++ int
++main (void)
++{
++hosts_access();
+ 
++  ;
++  return 0;
++}
++
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"
+ then :
+@@ -19064,7 +19078,7 @@ if test "x$bdb_required" = "xyes"; then
      trybdbdir=""
      dobdbsearch=yes
      bdb_search_dirs="/usr/local /usr"
