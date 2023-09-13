@@ -2,7 +2,7 @@ PORTNAME=	qcad
 PORTVERSION=	3.28.1.0
 DISTVERSIONPREFIX=	v
 #PORTREVISION=	1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 DIST_SUBDIR=	${PORTNAME}
 
@@ -29,8 +29,8 @@ USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 _USE_QT5=	buildtools qmake:build \
-		designer gui help imageformats network opengl script \
-		scripttools sql svg uitools xml xmlpatterns webkit
+		concurrent designer gui help imageformats network opengl script \
+		scripttools sql svg uitools xml xmlpatterns
 #_USE_QT6=	base tools
 #USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
 USE_QT=		${_USE_QT5}
