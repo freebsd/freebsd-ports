@@ -33,7 +33,8 @@ CMAKE_ARGS+=	-DBUILD_GUI:BOOL=ON \
 		-DSYSTEM_SDL2:BOOL=ON \
 		-DSYSTEM_ZLIB:BOOL=ON
 
-PORTSCOUT=	skipv:v${DISTVERSION}
+# tags are bogus, ignore until 0.6 is released
+PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	DOCS JACK
 
