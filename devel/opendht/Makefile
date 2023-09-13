@@ -1,6 +1,6 @@
 PORTNAME=	opendht
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.0.4
 CATEGORIES=	devel net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libargon2.so:security/libargon2 \
 RUN_DEPENDS=	msgpack-cxx>0:devel/msgpack-cxx
 TEST_DEPENDS=	cppunit>0:devel/cppunit
 
-USES=		cmake:testing compiler:c++17-lang localbase pathfix pkgconfig readline ssl
+USES=		cmake:testing compiler:c++17-lang localbase ncurses pathfix pkgconfig readline ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	savoirfairelinux
@@ -33,8 +33,6 @@ LDFLAGS+=	-lcrypto
 
 CMAKE_OFF=	OPENDHT_STATIC BUILD_TESTING
 CMAKE_TESTING_ON=	BUILD_TESTING # tests fail w/out explanation, see https://github.com/savoirfairelinux/opendht/issues/640, https://github.com/savoirfairelinux/opendht/issues/658
-
-PLIST_SUB=	SHL3=${PORTVERSION} SHL1=${PORTVERSION:R:R}
 
 OPTIONS_DEFINE=	PROXY_SERVER PROXY_CLIENT PUSH_NOTIFICATIONS DOCS
 
