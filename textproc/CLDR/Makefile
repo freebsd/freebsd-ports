@@ -1,5 +1,5 @@
 PORTNAME=	CLDR
-PORTVERSION=	42.0
+PORTVERSION=	43.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://unicode.org/Public/cldr/${PORTVERSION:R}/:src	\
 		http://www.unicode.org/:lic
