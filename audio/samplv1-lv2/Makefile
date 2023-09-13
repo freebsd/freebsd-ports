@@ -1,5 +1,5 @@
 PORTNAME=	samplv1
-DISTVERSION=	0.9.31
+DISTVERSION=	0.9.32
 CATEGORIES=	audio
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-lv2
@@ -18,10 +18,10 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:6 \
 		shared-mime-info
+USE_QT=		base svg tools:build
 USE_GL=		gl
-USE_QT=		core gui svg widgets xml buildtools:build linguisttools:build qmake:build
 
 PLIST_SUB=	SHL3=${PORTVERSION} SHL2=${PORTVERSION:R}
 
