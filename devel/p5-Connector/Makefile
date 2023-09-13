@@ -1,12 +1,11 @@
 PORTNAME=	Connector
-DISTVERSION=	1.47
-PORTREVISION=	1
+DISTVERSION=	1.51
 CATEGORIES=	devel perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Generic connection to a hierarchical-structured data set
-WWW=		https://github.com/mrscotty/connector
+WWW=		https://github.com/whiterabbitsecurity/connector
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -26,6 +25,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Proc-SafeExec>=0:devel/p5-Proc-SafeExec \
+		p5-Syntax-Keyword-Try>=0:devel/p5-Syntax-Keyword-Try \
 		p5-Template-Toolkit>=0:www/p5-Template-Toolkit \
 		p5-Text-CSV_XS>=0:textproc/p5-Text-CSV_XS \
 		p5-YAML>=1.06:textproc/p5-YAML
