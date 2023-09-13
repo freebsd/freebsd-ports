@@ -1,3 +1,82 @@
+  <vuln vid="773ce35b-eabb-47e0-98ca-669b2b98107a">
+    <topic>electron{24,25} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron24</name>
+	<range><lt>24.8.3</lt></range>
+      </package>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v24.8.3">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-4763.</li>
+	    <li>Security: backported fix for CVE-2023-4762.</li>
+	    <li>Security: backported fix for CVE-2023-4761.</li>
+	    <li>Security: backported fix for CVE-2023-4863.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>INSERT CVE RECORD IF AVAILABLE</cvename>
+      <url>INSERT BLOCKQUOTE URL HERE</url>
+      <cvename>CVE-2023-4763</cvename>
+      <url>https://github.com/advisories/GHSA-w5hv-g8p5-vwjr</url>
+      <cvename>CVE-2023-4762</cvename>
+      <url>https://github.com/advisories/GHSA-3wjr-p76q-rg8q</url>
+      <cvename>CVE-2023-4761</cvename>
+      <url>https://github.com/advisories/GHSA-8cgp-x4c5-vg9g</url>
+      <cvename>CVE-2023-4863</cvename>
+      <url>https://github.com/advisories/GHSA-j7hp-h8jx-5ppr</url>
+    </references>
+    <dates>
+      <discovery>2023-09-13</discovery>
+      <entry>2023-09-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3693eca5-f0d3-453c-9558-2353150495bb">
+    <topic>electron22 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.24</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.24">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-4572.</li>
+	    <li>Security: backported fix for CVE-2023-4762.</li>
+	    <li>Security: backported fix for CVE-2023-4863.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4572</cvename>
+      <url>https://github.com/advisories/GHSA-6994-5wq3-gpjv</url>
+      <cvename>CVE-2023-4762</cvename>
+      <url>https://github.com/advisories/GHSA-3wjr-p76q-rg8q</url>
+      <cvename>CVE-2023-4863</cvename>
+      <url>https://github.com/advisories/GHSA-j7hp-h8jx-5ppr</url>
+    </references>
+    <dates>
+      <discovery>2023-09-13</discovery>
+      <entry>2023-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="88754d55-521a-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
