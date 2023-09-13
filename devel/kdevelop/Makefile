@@ -22,7 +22,7 @@ LIB_DEPENDS=	libKasten4Controllers.so:devel/okteta \
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \
-		kde:5 llvm:build,run pkgconfig qt:5 shared-mime-info \
+		kde:5 llvm:build,run,noexport pkgconfig qt:5 shared-mime-info \
 		shebangfix tar:xz xorg
 USE_KDE=	archive attica auth bookmarks codecs completion config \
 		configwidgets coreaddons crash emoticons guiaddons i18n \
