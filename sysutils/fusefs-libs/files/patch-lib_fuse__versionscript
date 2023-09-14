@@ -1,0 +1,53 @@
+--- lib/fuse_versionscript.orig	2019-01-04 13:33:33 UTC
++++ lib/fuse_versionscript
+@@ -9,15 +9,15 @@ FUSE_2.2 {
+ 		fuse_loop_mt;
+ 		fuse_loop_mt_proc;
+ 		fuse_main;
+-		fuse_main_compat1;
+-		fuse_main_compat2;
+-		fuse_mount_compat1;
+-		fuse_new_compat1;
+-		fuse_new_compat2;
++#		fuse_main_compat1;
++#		fuse_main_compat2;
++#		fuse_mount_compat1;
++#		fuse_new_compat1;
++#		fuse_new_compat2;
+ 		fuse_process_cmd;
+ 		fuse_read_cmd;
+ 		fuse_set_getcontext_func;
+-		fuse_setup_compat2;
++#		fuse_setup_compat2;
+ };
+ 
+ FUSE_2.4 {
+@@ -56,10 +56,10 @@ FUSE_2.5 {
+ 
+ FUSE_2.5 {
+ 	global:
+-		fuse_lowlevel_new_compat;
+-		fuse_main_real_compat22;
+-		fuse_mount_compat22;
+-		fuse_new_compat22;
++#		fuse_lowlevel_new_compat;
++#		fuse_main_real_compat22;
++#		fuse_mount_compat22;
++#		fuse_new_compat22;
+ 		fuse_opt_parse;
+ 		fuse_opt_add_opt;
+ 		fuse_opt_add_arg;
+@@ -69,10 +69,10 @@ FUSE_2.5 {
+ 		fuse_remove_signal_handlers;
+ 		fuse_reply_create;
+ 		fuse_reply_open;
+-		fuse_reply_open_compat;
++#		fuse_reply_open_compat;
+ 		fuse_reply_statfs;
+-		fuse_reply_statfs_compat;
+-		fuse_setup_compat22;
++#		fuse_reply_statfs_compat;
++#		fuse_setup_compat22;
+ 		fuse_set_signal_handlers;
+ } FUSE_2.4;
+ 
