@@ -1,5 +1,7 @@
-TIMESTAMP = 1688025194
-SHA256 (WebAssembly-binaryen-version_114_GH0.tar.gz) = 54f794a843d96cc841bf8045a9dfeaad8161341f0b50ac5b197518c2d39482ce
-SIZE (WebAssembly-binaryen-version_114_GH0.tar.gz) = 4728373
+TIMESTAMP = 1694674523
+SHA256 (WebAssembly-binaryen-version_115_GH0.tar.gz) = 8682b98e8c6ec8e52425e77a8256e226ffc8b3436f3ef37c442f3d1bee5f7880
+SIZE (WebAssembly-binaryen-version_115_GH0.tar.gz) = 4792377
 SHA256 (google-googletest-e2239ee_GH0.tar.gz) = 47a8ca2e1be737588628cbc82726a7c4fed060ae0098709003845e3ef298da2f
 SIZE (google-googletest-e2239ee_GH0.tar.gz) = 886254
+SHA256 (9d79632c210a8c5002657ae87ff06c70ee109e8f.patch) = 0aff80918ffbddca8dfa32a0c59faf72e5b74cf97d0a0d4fcb6b0d51db35d507
+SIZE (9d79632c210a8c5002657ae87ff06c70ee109e8f.patch) = 958

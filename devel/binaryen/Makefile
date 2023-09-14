@@ -1,7 +1,10 @@
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_
-DISTVERSION=	114
+DISTVERSION=	115
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	9d79632c210a8c5002657ae87ff06c70ee109e8f.patch:-p1 #https://github.com/WebAssembly/binaryen/issues/5928
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Compiler infrastructure and toolchain library for WebAssembly
