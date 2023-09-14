@@ -1,6 +1,6 @@
 PORTNAME=	UCD
 PORTVERSION=	15.0.0
-PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.unicode.org/Public/zipped/${DISTVERSION}/:src	\
 		https://raw.githubusercontent.com/unicode-org/unihan-database/0da97601945f29dbd34ebc1a2f3bbd28bf3f8462/:lic
