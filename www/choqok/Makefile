@@ -1,6 +1,6 @@
 PORTNAME=	choqok
 DISTVERSION=	1.7.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION:R}/src
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=		WEBKIT
 OPTIONS_SUB=		yes
 WEBKIT_DESC=		Use obsolete qt5-webkit to build Browser Plugin
-WEBKIT_USE=		KDE=kdewebkit QT5=webkit
+WEBKIT_USE=		KDE=kdewebkit QT=webkit
 WEBKIT_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5WebKit
 
 .include <bsd.port.mk>
