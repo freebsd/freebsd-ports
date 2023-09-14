@@ -997,7 +997,7 @@ share/applications/bibletime.desktop
 %%DATADIR%%/icons/view_mag.svg
 %%DATADIR%%/icons/view_profile.svg
 %%DATADIR%%/icons/window_fullscreen.svg
-%%DATADIR%%/javascript/bthtml.js
+%%DATADIR%%/javascript/btwebengine.js
 %%DATADIR%%/license/license.html
 %%DATADIR%%/locale/bibletime_ui_ar.qm
 %%DATADIR%%/locale/bibletime_ui_bg.qm

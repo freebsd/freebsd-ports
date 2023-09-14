@@ -1,6 +1,6 @@
 PORTNAME=	bibletime
 PORTVERSION=	2.11.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -15,6 +15,6 @@ LIB_DEPENDS=	libclucene-core.so:textproc/clucene \
 
 USES=		cmake compiler:c11 qt:5 tar:xz ssl
 USE_QT=		buildtools core dbus gui linguist:build network printsupport \
-		script svg webkit widgets \
+		script svg webengine widgets \
 		xml qmake:build testlib:build
 .include <bsd.port.mk>
