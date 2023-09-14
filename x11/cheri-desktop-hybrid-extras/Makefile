@@ -1,5 +1,5 @@
 PORTNAME=	cheri-desktop-hybrid-extras
-PORTVERSION=	20221202
+PORTVERSION=	20230914
 PORTREVISION=	0
 CATEGORIES=	x11
 
@@ -12,6 +12,6 @@ USES=		metaport
 ONLY_FOR_ARCHS=		aarch64
 ONLY_FOR_ARCHS_REASON=	requires CheriABI or hybrid ABI www/cheri-desktop only available for arm64
 
-RUN_DEPENDS=	${LOCALBASE}/bin/firefox:www/firefox
+RUN_DEPENDS=	${LOCALBASE}/bin/chrome:www/chromium
 
 .include <bsd.port.mk>
