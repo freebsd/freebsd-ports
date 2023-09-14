@@ -21,6 +21,8 @@ CMAKE_ARGS=	-DCMAKE_BUILD_HOL=On # code is broken w/out this
 
 PLIST_FILES=	bin/${PORTNAME}
 
+PORTSCOUT=	limit:^.*[1-9]\.[1-9].*$$ # prevent tags like sledgehammerScheds
+
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/bin/${PORTNAME}* ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
