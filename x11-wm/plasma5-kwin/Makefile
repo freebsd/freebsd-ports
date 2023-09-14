@@ -1,5 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,8 +9,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
-		libdrm.so:graphics/libdrm \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libepoll-shim.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -23,7 +23,8 @@ LIB_DEPENDS=	libXcursor.so:x11/libXcursor \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
 		libxkbcommon.so:x11/libxkbcommon \
-		libxcvt.so:x11/libxcvt
+		libxcvt.so:x11/libxcvt \
+		libpipewire-0.3.so:multimedia/pipewire
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		xwayland-devel>0:x11-servers/xwayland-devel \
 		wayland-protocols>0:graphics/wayland-protocols \
@@ -38,18 +39,18 @@ USES=		cmake compiler:c++11-lib gettext gl gnome kde:5 pkgconfig qt:5 \
 		python:run
 USE_GL=		egl gbm
 USE_GNOME=	glib20
-USE_KDE=	activities attica auth breeze codecs completion config \
-		configwidgets coreaddons crash dbusaddons decoration \
-		globalaccel i18n iconthemes idletime init itemviews jobwidgets \
-		kcmutils kdeclarative kio kscreenlocker kwayland-integration \
-		newstuff notifications package plasma-framework runner service \
-		sonnet textwidgets wayland widgetsaddons windowsystem xmlgui \
+USE_KDE=	activities attica auth breeze codecs config configwidgets \
+		coreaddons crash dbusaddons decoration globalaccel i18n \
+		idletime init itemviews kcmutils kdeclarative kscreenlocker \
+		kwayland-integration newstuff notifications package \
+		plasma-framework runner service wayland widgetsaddons \
+		windowsystem xmlgui \
 		doctools:build ecm:build plasma-wayland-protocols:build
 USE_LDCONFIG=	yes
-USE_QT=		concurrent core dbus declarative gui multimedia network script \
-		sensors uiplugin uitools widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative gui network uiplugin uitools \
+		widgets x11extras xml \
 		buildtools:build qmake:build testlib:build \
-		quickcontrols2:run virtualkeyboard:run
+		multimedia:run quickcontrols2:run virtualkeyboard:run
 USE_XORG=	ice sm x11 xcb xext xi
 SHEBANG_FILES=	kconf_update/*.py \
 		kconf_update/*.pl \
