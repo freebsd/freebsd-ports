@@ -11,18 +11,16 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	used only by VMware supported architectures
 
-LIB_DEPENDS=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT}
-
-USES=		xorg
+USES=		llvm:lib,noexport xorg
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"
 
-MESON_ARGS+=	-Ddri-drivers="" \
-		-Dgallium-drivers="svga" \
+MESON_ARGS+=	-Dgallium-drivers="svga" \
 		-Dvulkan-drivers="" \
 		-Dplatforms="" \
+		-Dandroid-libbacktrace=disabled \
 		-Dgallium-vdpau=disabled \
 		-Dgallium-omx=disabled \
 		-Dgallium-va=disabled \
@@ -33,10 +31,13 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgles1=disabled \
 		-Dgles2=disabled \
 		-Dglx=disabled \
+		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
 		-Dopengl=false \
 		-Dshared-glapi=disabled \
-		-Dosmesa=false
+		-Dosmesa=false \
+		-Dvalgrind=disabled \
+		-Dxlib-lease=disabled
 
 LDFLAGS_i386=		-Wl,-znotext
 

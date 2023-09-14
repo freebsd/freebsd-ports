@@ -1,13 +1,13 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	3
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
 WWW=		https://www.mesa3d.org/
 
-LIB_DEPENDS+=	libLLVM-${LLVM_DEFAULT}.so:devel/llvm${LLVM_DEFAULT} \
-		libglapi.so:graphics/mesa-libs
+LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
+
+USES+=		llvm:lib,noexport
 
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND
@@ -33,7 +33,7 @@ ZSTD_MESON_ENABLED=	zstd
 
 ALL_GALLIUM_DRIVERS=	CROCUS I915 IRIS PANFROST R300 R600 RADEONSI SVGA \
 			SWRAST ZINK
-ALL_VULKAN_DRIVERS=	INTEL AMD SWRAST
+ALL_VULKAN_DRIVERS=	INTEL INTEL_HASVK AMD SWRAST
 
 GALLIUM_DRIVERS+=	SWRAST \
 			ZINK
@@ -51,7 +51,7 @@ BUILD_DEPENDS+=		glslangValidator:graphics/glslang
 .endif
 .if ${ARCH} == amd64 || ${ARCH} == i386
 GALLIUM_DRIVERS+=	CROCUS I915 IRIS SVGA
-VULKAN_DRIVERS+=	INTEL
+VULKAN_DRIVERS+=	INTEL INTEL_HASVK
 .endif
 
 LDFLAGS_i386=		-Wl,-znotext
@@ -73,14 +73,18 @@ MESON_ARGS+=	-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
 		-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
 
 # Disable some options
-MESON_ARGS+=	-Dgallium-xa=disabled \
+MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
+		-Dgallium-xa=disabled \
 		-Dgallium-vdpau=disabled \
 		-Dgallium-va=disabled \
-		-Dgles1=disabled \
-		-Dgles2=disabled \
+		-Dgles1=enabled \
+		-Dgles2=enabled \
 		-Dglx=disabled \
+		-Degl=enabled \
+		-Dlmsensors=disabled \
 		-Dmicrosoft-clc=disabled \
-		-Dosmesa=false
+		-Dosmesa=false \
+		-Dvalgrind=disabled
 
 .for _gd in ${ALL_GALLIUM_DRIVERS}
 . if defined(GALLIUM_DRIVERS) && ${GALLIUM_DRIVERS:M${_gd}}
