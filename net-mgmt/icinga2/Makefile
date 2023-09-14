@@ -1,7 +1,7 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.14.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	joneum@FreeBSD.org
@@ -35,8 +35,8 @@ UNITY_DESC=	Use icinga unity build system (faster, memory intensive)
 MONPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/monitoring-plugins
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 
-MYSQL_CMAKE_ON=		-DICINGA2_WITH_MYSQL:BOOL=true
-PGSQL_CMAKE_ON=		-DICINGA2_WITH_PGSQL:BOOL=true
+MYSQL_CMAKE_OFF=	-DICINGA2_WITH_MYSQL=OFF
+PGSQL_CMAKE_OFF=	-DICINGA2_WITH_PGSQL=OFF
 UNITY_CMAKE_OFF=	-DICINGA2_UNITY_BUILD=OFF
 
 ICINGA2USER?=	icinga
