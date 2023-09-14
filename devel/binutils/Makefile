@@ -40,6 +40,10 @@ CONFIGURE_ARGS+=	--disable-werror \
 MAKE_ARGS+=	LIBDL="" V=1
 MAKE_ENV+=	ac_cv_func_sbrk=0
 
+# Some versioned symbols in libctf are undefined when libctf-nobfd.so is linked.
+# Suppress errors with lld >= 17 due to these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 # Tests will always fail because --compress-debug-sections is always set to
 # zlib-gabi regardless of the compression setting by ./configure.
 # TEST_TARGET=	check
