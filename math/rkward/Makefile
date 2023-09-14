@@ -1,6 +1,6 @@
 PORTNAME=	rkward
 PORTVERSION=	0.7.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 
@@ -21,10 +21,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext fortran	\
 		kde:5 php:cli qt:5 shared-mime-info xorg
 USE_QT=		buildtools concurrent core dbus declarative gui location	\
 		network printsupport qmake script testlib webchannel webengine	\
-		webkit widgets xml
+		widgets xml
 USE_XORG=	ice x11 xext
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets coreaddons\
-		crash doctools ecm i18n itemviews jobwidgets kate:run kdewebkit kio	\
+		crash doctools ecm i18n itemviews jobwidgets kate:run kio	\
 		notifications parts service solid sonnet syntaxhighlighting texteditor	\
 		textwidgets widgetsaddons windowsystem xmlgui
 
