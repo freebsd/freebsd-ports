@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-db-include=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR}
 ALL_TARGET=	all rdoc
 INSTALL_TARGET=	site-install
+WITH_BDB6_PERMITTED=	yes
 
 DOCS=		Changes README.en bdb.rd docs/*.rd
 DOCSDIR=	${RUBY_MODDOCDIR}
