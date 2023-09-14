@@ -1,6 +1,6 @@
 PORTNAME=	merkaartor
 PORTVERSION=	0.19.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 QMAKE_ARGS=	SYSTEM_QUAZIP=1
 USE_QT=		buildtools:build \
 		concurrent core gui imageformats network printsupport svg \
-		webkit widgets xml
+		webengine widgets xml
 
 OPTIONS_DEFINE=	DEBUG GEOIMAGE NLS PROTOBUF ZBAR
 OPTIONS_DEFAULT=	GEOIMAGE
