@@ -1,6 +1,6 @@
 PORTNAME=	libxml2
 DISTVERSION=	2.10.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${DISTVERSION:R}/
 DIST_SUBDIR=	gnome
@@ -29,6 +29,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/share/ \
 		--with-lzma=/usr \
 		--${LIBXML2_SLAVE:Dwith:Uwithout}-python${LIBXML2_SLAVE:D=${PYTHON_CMD}:U}
+
+# Many symbols in the linker version script libxml2.syms are only defined when
+# --with-xptr-locs is enabled at configure time. Suppress errors with lld >= 17
+# due to these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
