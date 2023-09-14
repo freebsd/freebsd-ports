@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.08.116
-PORTREVISION=	1
+PORTVERSION=	2023.09.116.2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
