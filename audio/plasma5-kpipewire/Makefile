@@ -1,5 +1,6 @@
 PORTNAME=	kpipewire
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ USE_GL=		egl gbm gl
 USE_GNOME=	glib20
 USE_KDE=	coreaddons i18n wayland \
 		ecm:build plasma-wayland-protocols:build
-USE_QT=		core dbus declarative gui network wayland \
+USE_QT=		core declarative gui network wayland \
 		buildtools:build qmake:build
 
 .include <bsd.port.mk>
