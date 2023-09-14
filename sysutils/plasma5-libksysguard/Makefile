@@ -8,8 +8,8 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
-		globalaccel i18n iconthemes jobwidgets kio package service \
-		solid widgetsaddons windowsystem newstuff \
+		globalaccel i18n iconthemes jobwidgets kio newstuff package \
+		service solid widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		concurrent core dbus declarative gui location network \
 		printsupport webchannel widgets x11extras xml \
