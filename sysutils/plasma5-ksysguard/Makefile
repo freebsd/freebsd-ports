@@ -1,6 +1,6 @@
 PORTNAME=	ksysguard
 DISTVERSION=	5.22.0	# No longer released as part of KDE Plasma
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMEPREFIX=	plasma5-
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
@@ -13,9 +13,9 @@ WWW=		https://www.kde.org/plasma-desktop
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext kde:5 \
 		localbase pathfix qt:5 tar:xz xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
-		dbusaddons emoticons i18n iconthemes init itemmodels itemviews \
-		jobwidgets kio libksysguard newstuff notifications service \
-		solid widgetsaddons windowsystem xmlgui \
+		dbusaddons i18n iconthemes init itemviews jobwidgets kio \
+		libksysguard newstuff notifications service solid \
+		widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
 		buildtools:build qmake:build testlib:build
