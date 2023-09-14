@@ -1,5 +1,6 @@
 PORTNAME=	plasma-integration
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +14,7 @@ USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz xorg
 USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 		coreaddons i18n iconthemes itemviews jobwidgets kio \
-		notifications service solid wayland widgetsaddons windowsystem \
+		notifications service solid widgetsaddons windowsystem \
 		xdg-desktop-portal-kde xmlgui \
 		ecm:build plasma-wayland-protocols:build \
 		qqc2-desktop-style:run
