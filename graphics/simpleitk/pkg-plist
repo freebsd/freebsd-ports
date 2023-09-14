@@ -19,6 +19,8 @@ include/SimpleITK-%%VER%%/sitkAggregateLabelMapFilter.h
 include/SimpleITK-%%VER%%/sitkAndImageFilter.h
 include/SimpleITK-%%VER%%/sitkAntiAliasBinaryImageFilter.h
 include/SimpleITK-%%VER%%/sitkApproximateSignedDistanceMapImageFilter.h
+include/SimpleITK-%%VER%%/sitkAreaClosingImageFilter.h
+include/SimpleITK-%%VER%%/sitkAreaOpeningImageFilter.h
 include/SimpleITK-%%VER%%/sitkAsinImageFilter.h
 include/SimpleITK-%%VER%%/sitkAtan2ImageFilter.h
 include/SimpleITK-%%VER%%/sitkAtanImageFilter.h
@@ -223,6 +225,7 @@ include/SimpleITK-%%VER%%/sitkMacro.h
 include/SimpleITK-%%VER%%/sitkMagnitudeAndPhaseToComplexImageFilter.h
 include/SimpleITK-%%VER%%/sitkMaskImageFilter.h
 include/SimpleITK-%%VER%%/sitkMaskNegatedImageFilter.h
+include/SimpleITK-%%VER%%/sitkMaskedAssignImageFilter.h
 include/SimpleITK-%%VER%%/sitkMaskedFFTNormalizedCorrelationImageFilter.h
 include/SimpleITK-%%VER%%/sitkMaximumEntropyThresholdImageFilter.h
 include/SimpleITK-%%VER%%/sitkMaximumImageFilter.h
