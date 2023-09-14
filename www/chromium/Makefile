@@ -223,16 +223,22 @@ IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in bas
 .if ${COMPILER_VERSION} < 160
 LLVM_DEFAULT=		16
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
-			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
-			c++=${LOCALBASE}/bin/clang++${LLVM_DEFAULT} \
-			ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT} \
-			nm=${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT} \
-			ld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
+AR=			${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT}
+CC=			${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CPP=			${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CXX=			${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+LD=			${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
+NM=			${LOCALBASE}/bin/llvm-nm${LLVM_DEFAULT}
 .else
-BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
-			nm=/usr/bin/llvm-nm
+AR=/usr/bin/llvm-ar
+NM=/usr/bin/llvm-nm
 .endif
+BINARY_ALIAS+=		ar=${AR} \
+			c++=${CXX} \
+			cc=${CC} \
+			cpp=${CPP} \
+			ld=${LD} \
+			nm=${NM}
 
 # - swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
 # - map ffmpeg target to ${ARCH}
@@ -282,7 +288,8 @@ pre-configure:
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/third_party/ffmpeg && \
 		${PYTHON_CMD} chromium/scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
-		--config-only --branding=${FFMPEG_BRAND}
+		--config-only --branding=${FFMPEG_BRAND} \
+		-- --ar=${AR} --cc=${CC} --cxx=${CXX} --ld=${CXX} --nm=${NM}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${MKDIR} ${FFMPEG_CDIR}
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
