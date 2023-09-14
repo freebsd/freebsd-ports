@@ -2,7 +2,7 @@ PORTNAME=	cutegram
 PORTVERSION=	2.7.1
 DISTVERSIONPREFIX=	v
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 
 MAINTAINER=	henry.hu.sh@gmail.com
@@ -26,9 +26,10 @@ USES=		compiler:c++11-lang desktop-file-utils gl gnome qmake:outsource \
 USE_GL=		gl
 USE_QT=		qmake:build buildtools:build dbus core declarative graphicaleffects \
 		gui multimedia network quickcontrols sql sql-sqlite3 xml \
-		widgets webkit
+		widgets webengine
 QMAKE_ARGS=	LIBQTELEGRAM_INCLUDE_PATH="${LOCALBASE}/include/libqtelegram-ae" \
-		TELEGRAMQML_INCLUDE_PATH="${LOCALBASE}/include/telegramqml"
+		TELEGRAMQML_INCLUDE_PATH="${LOCALBASE}/include/telegramqml" \
+		DEFINES+=WEBENGINE_ASEMAN_WEBGRABBER
 
 post-patch:
 	@${REINPLACE_CMD} -e "/isEmpty(OPENSSL_INCLUDE_PATH)/d" \
