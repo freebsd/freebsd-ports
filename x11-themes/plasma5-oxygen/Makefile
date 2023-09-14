@@ -1,5 +1,6 @@
 PORTNAME=	oxygen
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +15,7 @@ USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz \
 USE_LDCONFIG=	yes
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		decoration frameworkintegration guiaddons i18n kcmutils \
-		service wayland widgetsaddons windowsystem \
+		service widgetsaddons windowsystem \
 		ecm:build
 USE_QT=		core dbus declarative gui network widgets x11extras xml \
 		buildtools:build qmake:build
