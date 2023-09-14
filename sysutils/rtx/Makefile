@@ -1,7 +1,7 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.9.0
-PORTREVISION=	1
+DISTVERSION=	2023.9.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,13 +22,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.5.0 \
-		anstyle-1.0.2 \
+		anstyle-1.0.3 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-2.1.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
-		base64-0.21.3 \
+		base64-0.21.4 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
 		block-buffer-0.10.4 \
@@ -36,14 +36,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		built-0.6.1 \
 		bumpalo-3.13.0 \
 		byteorder-1.4.3 \
-		bytes-1.4.0 \
+		bytes-1.5.0 \
 		cargo-lock-9.0.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.28 \
-		clap-4.4.2 \
+		chrono-0.4.30 \
+		clap-4.4.3 \
 		clap_builder-4.4.2 \
-		clap_complete-4.4.0 \
+		clap_complete-4.4.1 \
 		clap_derive-4.4.2 \
 		clap_lex-0.5.1 \
 		clap_mangen-0.2.13 \
@@ -133,12 +133,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.26 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.147 \
+		libc-0.2.148 \
 		libgit2-sys-0.15.2+1.6.4 \
 		libz-sys-1.1.12 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.5 \
+		linux-raw-sys-0.4.7 \
 		log-0.4.20 \
 		memchr-2.6.3 \
 		memoffset-0.9.0 \
@@ -162,8 +162,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.14 \
-		path-absolutize-3.1.0 \
-		path-dedot-3.1.0 \
+		path-absolutize-3.1.1 \
+		path-dedot-3.1.1 \
 		percent-encoding-2.3.0 \
 		pest-2.7.3 \
 		pest_derive-2.7.3 \
@@ -196,11 +196,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustix-0.37.23 \
-		rustix-0.38.11 \
+		rustix-0.38.13 \
 		rustls-0.21.7 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
-		rustls-webpki-0.101.4 \
+		rustls-webpki-0.101.5 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
@@ -212,7 +212,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.18 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
-		serde_json-1.0.105 \
+		serde_json-1.0.106 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.7 \
@@ -224,11 +224,11 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
 		socket2-0.4.9 \
-		socket2-0.5.3 \
+		socket2-0.5.4 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.31 \
+		syn-2.0.32 \
 		tar-0.4.40 \
 		tempfile-3.8.0 \
 		tera-1.19.1 \
@@ -246,9 +246,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.8 \
-		toml-0.7.6 \
+		toml-0.7.8 \
 		toml_datetime-0.6.3 \
-		toml_edit-0.19.14 \
+		toml_edit-0.19.15 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.31 \
@@ -264,7 +264,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.11 \
+		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
