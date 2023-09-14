@@ -12,6 +12,9 @@ WWW=		http://www.simplesystems.org/libtiff/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=		Upstream support stopped
+EXPIRATION_DATE=	2023-10-14
+
 LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libtiff.so:graphics/tiff \
 		libzstd.so:archivers/zstd
@@ -28,6 +31,8 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
 			--with-jpeg-lib-dir=${LOCALBASE}/lib \
 			--with-x
+
+PORTSCOUT=	skipv:1
 
 PLIST_FILES=	bin/tiffgt \
 		man/man1/tiffgt.1.gz
