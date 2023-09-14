@@ -351,6 +351,8 @@ post-build:
 	${INSTALL} -lrs ${WRKSRC}/libs/gpglib/README.html	${WRKSRC}/libs/gpglib/README.gpglib.html
 	${INSTALL} -lrs ${WRKSRC}/libs/imap/BUGS		${WRKSRC}/libs/imap/BUGS.imap
 	${INSTALL} -lrs ${WRKSRC}/libs/imap/BUGS.html		${WRKSRC}/libs/imap/BUGS.imap.html
+	${INSTALL} -lrs ${WRKSRC}/libs/imap/README.proxy	${WRKSRC}/libs/imap/README.imap.proxy
+	${INSTALL} -lrs ${WRKSRC}/libs/imap/README.proxy.html	${WRKSRC}/libs/imap/README.imap.proxy.html
 	${INSTALL} -lrs ${WRKSRC}/libs/maildrop/README.html	${WRKSRC}/libs/maildrop/README.maildrop.html
 	${INSTALL} -lrs ${WRKSRC}/libs/pcp/README.html		${WRKSRC}/libs/pcp/README.pcp.html
 	${INSTALL} -lrs ${WRKSRC}/libs/sqwebmail/BUGS		${WRKSRC}/libs/sqwebmail/BUGS.sqwebmail

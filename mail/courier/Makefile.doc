@@ -13,8 +13,8 @@ DOCS=	AUTHORS \
 	libs/maildir/README.maildirquota.txt \
 	libs/maildir/README.sharedfolders.txt \
 	libs/tcpd/README.couriertls \
-	libs/sqwebmail/BUGS.webmail \
-	libs/sqwebmail/SECURITY.webmail
+	libs/sqwebmail/BUGS.sqwebmail \
+	libs/sqwebmail/SECURITY.sqwebmail
 
 HTMLDOCS=NEWS.html \
 	libs/gpglib/README.gpglib.html \
@@ -25,5 +25,5 @@ HTMLDOCS=NEWS.html \
 	libs/maildir/README.sharedfolders.html \
 	libs/maildrop/README.maildrop.html \
 	libs/pcp/README.pcp.html \
-	libs/sqwebmail/BUGS.webmail.html \
-	libs/sqwebmail/SECURITY.webmail.html
+	libs/sqwebmail/BUGS.sqwebmail.html \
+	libs/sqwebmail/SECURITY.sqwebmail.html
