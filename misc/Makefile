@@ -507,6 +507,7 @@
     SUBDIR += raspberrypi-userland
     SUBDIR += raspbsd-led
     SUBDIR += ree
+    SUBDIR += retry
     SUBDIR += rfc
     SUBDIR += ringtonetools
     SUBDIR += rname
