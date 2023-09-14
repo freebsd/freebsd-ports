@@ -18,6 +18,7 @@ man/man1/remind.1.gz
 %%DATADIR%%/holidays/ca.rem
 %%DATADIR%%/holidays/fr.rem
 %%DATADIR%%/holidays/gr.rem
+%%DATADIR%%/holidays/ie.rem
 %%DATADIR%%/holidays/jewish.rem
 %%DATADIR%%/holidays/us.rem
 %%DATADIR%%/lang/auto.rem
