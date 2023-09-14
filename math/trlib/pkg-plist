@@ -10,6 +10,7 @@ lib/cmake/trlib/trlib-config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/trlib/trlib-config-version.cmake
 lib/cmake/trlib/trlib-config.cmake
 lib/libtrlib.so
+lib/libtrlib.so.0.4
 share/pkgconfig/trlib.pc
 %%DATADIR%%/src/trlib_eigen_inverse.c
 %%DATADIR%%/src/trlib_krylov.c
