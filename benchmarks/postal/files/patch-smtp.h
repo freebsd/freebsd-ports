@@ -1,34 +1,20 @@
---- smtp.h.orig	2012-01-14 12:36:56 UTC
+--- smtp.h.orig	2016-06-30 08:51:27 UTC
 +++ smtp.h
-@@ -4,14 +4,18 @@
- using namespace std;
- #include <string>
+@@ -6,7 +6,7 @@
  #include <cstring>
--#include <time.h>
-+#include <ctime>
+ #include <time.h>
  #include "conf.h"
-+#if defined(_LIBCPP_VERSION)
+-#include <tr1/unordered_map>
 +#include <unordered_map>
-+#else
- #ifdef HAVE_EXT_HASH_MAP
- using namespace __gnu_cxx;
- #include <ext/hash_map>
- #else
- #include <hash_map.h>
- #endif
-+#endif
  #include "tcp.h"
  #include "mutex.h"
  
-@@ -30,7 +34,11 @@ struct eqlng
+@@ -25,7 +25,7 @@
    }
  };
  
-+#if defined(_LIBCPP_VERSION)
+-typedef std::tr1::unordered_map<unsigned long, string *, hash<unsigned long>, eqlng> NAME_MAP;
 +typedef std::unordered_map<unsigned long, string *, hash<unsigned long>, eqlng> NAME_MAP;
-+#else
- typedef hash_map<unsigned long, string *, hash<unsigned long>, eqlng> NAME_MAP;
-+#endif
  
  class smtpData
  {

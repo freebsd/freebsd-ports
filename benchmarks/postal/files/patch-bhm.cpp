@@ -1,41 +1,6 @@
---- bhm.cpp.orig	2012-01-14 12:09:31 UTC
+--- bhm.cpp.orig	2016-06-30 09:04:24 UTC
 +++ bhm.cpp
-@@ -3,27 +3,25 @@
- #endif
- 
- #include "bhmusers.h"
--#include <errno.h>
--#include <ctype.h>
-+#include <cerrno>
-+#include <cctype>
- #include <unistd.h>
- #include <sys/wait.h>
--#include <signal.h>
--#include <stdio.h>
-+#include <csignal>
-+#include <cstdio>
-+#include <cstdlib>
- #include <sys/poll.h>
- #include <sys/types.h>
- #include <sys/socket.h>
- #include <arpa/inet.h>
-+#ifndef __FreeBSD__
- #include <netinet/ip.h>
-+#endif
- 
- #include "postal.h"
- #include "logit.h"
- #include "results.h"
- #include "basictcp.h"
--#ifdef USE_GNUTLS
--#include <errno.h>
--#include <gcrypt.h>
--GCRY_THREAD_OPTION_PTHREAD_IMPL;
--#endif
- 
- int processes = 0;
- int *thread_status;
-@@ -47,7 +45,7 @@ void usage(CPCCHAR msg = NULL)
+@@ -50,7 +50,7 @@
  
  int maxMsgSize = 10240;
  results res;
@@ -44,7 +9,7 @@
  
  int exitCount = 0;
  
-@@ -261,7 +259,7 @@ int readCommand(base_tcp &t, char *buf, int bufSize, b
+@@ -264,7 +264,7 @@
  
  void do_work(thread_data *td)
  {
@@ -53,7 +18,7 @@
  #ifdef USE_SSL
      , td->ssl
  #endif
-@@ -408,7 +406,7 @@ int main(int argc, char **argv)
+@@ -414,7 +414,7 @@
  #endif
      "\n");
  
@@ -62,10 +27,10 @@
    Logit *debug = NULL;
  
    if(debugName)
-@@ -419,7 +417,7 @@ int main(int argc, char **argv)
+@@ -425,7 +425,7 @@
    in.sin_family = AF_INET;
    in.sin_port = htons(port);
-   in.sin_addr.s_addr = INADDR_ANY;
+   memcpy(&in.sin_addr, &sin_addr, sizeof(sin_addr));
 -  if(listen_fd == -1 || bind(listen_fd, (sockaddr *)&in, sizeof(in))
 +  if(listen_fd == -1 || ::bind(listen_fd, (sockaddr *)&in, sizeof(in))
     || listen(listen_fd, 10))
