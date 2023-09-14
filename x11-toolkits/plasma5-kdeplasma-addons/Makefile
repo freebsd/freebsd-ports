@@ -1,5 +1,6 @@
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,16 +9,13 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 tar:xz \
 		xorg
-USE_KDE=	activities archive attica auth bookmarks codecs completion \
-		config configwidgets coreaddons crash emoticons guiaddons \
-		holidays i18n iconthemes init itemmodels itemviews jobwidgets \
-		kcmutils kdeclarative kio kross newstuff notifications package \
-		parts plasma-framework plasma-workspace runner service solid \
-		sonnet textwidgets unitconversion widgetsaddons windowsystem \
-		xmlgui \
+USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
+		holidays i18n init jobwidgets kcmutils kdeclarative kio \
+		newstuff notifications package plasma-framework runner service \
+		solid sonnet unitconversion widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus declarative graphicaleffects gui location \
-		network printsupport script webchannel widgets x11extras xml \
+		network webchannel widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
