@@ -15,7 +15,8 @@ include/rhash.h
 include/rhash_torrent.h
 lib/librhash.a
 lib/librhash.so
-lib/librhash.so.0
+lib/librhash.so.1
+lib/librhash.so.1.4.4
 libdata/pkgconfig/librhash.pc
 man/man1/ed2k-link.1.gz
 man/man1/edonr256-hash.1.gz
