@@ -15,10 +15,8 @@ bin/garage
 %%DOCSDIR%%/book/cookbook/from-source.md
 %%DOCSDIR%%/book/cookbook/gateways.md
 %%DOCSDIR%%/book/cookbook/real-world.md
-%%DOCSDIR%%/book/cookbook/recovering.md
 %%DOCSDIR%%/book/cookbook/reverse-proxy.md
 %%DOCSDIR%%/book/cookbook/systemd.md
-%%DOCSDIR%%/book/cookbook/upgrading.md
 %%DOCSDIR%%/book/design/_index.md
 %%DOCSDIR%%/book/design/benchmarks/endpoint-latency-dc.png
 %%DOCSDIR%%/book/design/benchmarks/endpoint-latency.png
@@ -35,7 +33,6 @@ bin/garage
 %%DOCSDIR%%/book/reference-manual/_index.md
 %%DOCSDIR%%/book/reference-manual/cli.md
 %%DOCSDIR%%/book/reference-manual/configuration.md
-%%DOCSDIR%%/book/reference-manual/layout.md
 %%DOCSDIR%%/book/reference-manual/s3-compatibility.md
 %%DOCSDIR%%/book/working-documents/_index.md
 %%DOCSDIR%%/book/working-documents/compatibility-target.md

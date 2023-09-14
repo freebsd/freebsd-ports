@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: garage
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf to enable garage:
+#
+# garage_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=garage
+desc="Distributed object storage"
+rcvar=${name}_enable
+
+# read configuration and set defaults
+load_rc_config $name
+: ${garage_enable="NO"}
+: ${garage_config="%%PREFIX%%/etc/garage.toml"}
+
+command="%%PREFIX%%/bin/${name}"
+required_files=${garage_config}
+command_args="-c ${garage_config} server"
+
+start_cmd="${command} -c ${garage_config} server"
+stop_cmd="pkill -15 ${name}"
+status_cmd="${command} status"
+
+run_rc_command "$1"
