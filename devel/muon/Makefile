@@ -1,5 +1,5 @@
 PORTNAME=	muon
-DISTVERSION=	0.1.0
+DISTVERSION=	0.2.0
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~lattis/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -8,7 +8,7 @@ COMMENT=	Build system compatible with meson
 WWW=		https://muon.build/
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
 
 BUILD_DEPENDS=	scdoc:textproc/scdoc
 
@@ -28,7 +28,7 @@ post-patch:
 
 do-configure:
 	@(cd ${WRKSRC} && \
-		${SH} bootstrap.sh && \
+		${SH} bootstrap.sh . && \
 		./muon setup -Dlibcurl=disabled -Dlibarchive=disabled ${BUILD_WRKSRC})
 
 do-install:
