@@ -1,8 +1,7 @@
 PORTNAME=	mailman
-DISTVERSION=	3.3.8
-PORTREVISION=	2
+DISTVERSION=	3.3.8-81
+DISTVERSIONSUFFIX=	-g5e4431af6
 CATEGORIES=	mail
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	einar@isnic.is
@@ -29,11 +28,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>=1.1:mail/py-aiosmtpd@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}zope.configuration>0:devel/py-zope.configuration@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.event>0:devel/py-zope.event@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>0:devel/py-zope.interface@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}authheaders>=0.15.2:mail/py-authheaders@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gunicorn>0:www/py-gunicorn@${PY_FLAVOR}
 
 USES=		cpe python
+USE_GITLAB=	yes
+
 CPE_VENDOR=	gnu
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	mailman
