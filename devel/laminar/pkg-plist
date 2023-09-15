@@ -1,0 +1,10 @@
+bin/laminarc
+@sample %%ETCDIR%%/%%LAMINARD%%.env.sample
+sbin/laminard
+share/man/man1/laminarc.1.gz
+share/man/man8/laminard.8.gz
+usr/share/bash-completion/completions/laminarc
+usr/share/zsh/site-functions/_laminarc
+@dir(%%USERS%%,%%GROUPS%%) %%HOMEDIR%%/cfg/jobs
+@dir(%%USERS%%,%%GROUPS%%) %%HOMEDIR%%/cfg
+@dir(%%USERS%%,%%GROUPS%%) %%HOMEDIR%%

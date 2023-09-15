@@ -1,0 +1,5 @@
+Laminar is a lightweight client-server CI service written in C++ and
+configured by environment variables. It comes with a built-in webserver
+and uses simple .run shell scripts as jobs.
+
+The client-server communication uses the Cap'n Proto format over sockets.
