@@ -1,6 +1,5 @@
 PORTNAME=	fox
-PORTVERSION=	1.7.83
-PORTREVISION=	1
+PORTVERSION=	1.7.84
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/
