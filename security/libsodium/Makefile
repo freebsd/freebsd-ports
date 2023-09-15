@@ -1,5 +1,8 @@
 PORTNAME=	libsodium
-PORTVERSION=	1.0.19
+#################################################
+# Make sure to bump all consumers when updating #
+#################################################
+PORTVERSION=	1.0.18
 CATEGORIES=	security
 MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
@@ -14,7 +17,6 @@ USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-WRKSRC=	${WRKDIR}/${PORTNAME}-stable
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
