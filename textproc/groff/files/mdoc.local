@@ -51,25 +51,42 @@
 .ds doc-default-operating-system FreeBSD\~13.0
 .
 .\" FreeBSD releases not found in doc-common
+.ds doc-operating-system-FreeBSD-2.2.0  2.2.0
 .ds doc-operating-system-FreeBSD-2.2.9  2.2.9
 .ds doc-operating-system-FreeBSD-7.4    7.4
 .ds doc-operating-system-FreeBSD-8.3    8.3
 .ds doc-operating-system-FreeBSD-8.4    8.4
+.ds doc-operating-system-FreeBSD-9      9  
 .ds doc-operating-system-FreeBSD-9.1    9.1
 .ds doc-operating-system-FreeBSD-9.2    9.2
 .ds doc-operating-system-FreeBSD-9.3    9.3
+.ds doc-operating-system-FreeBSD-10     10
 .ds doc-operating-system-FreeBSD-10.0   10.0
 .ds doc-operating-system-FreeBSD-10.1   10.1
 .ds doc-operating-system-FreeBSD-10.2   10.2
 .ds doc-operating-system-FreeBSD-10.3   10.3
 .ds doc-operating-system-FreeBSD-10.4   10.4
+.ds doc-operating-system-FreeBSD-11     11
 .ds doc-operating-system-FreeBSD-11.0   11.0
 .ds doc-operating-system-FreeBSD-11.1   11.1
 .ds doc-operating-system-FreeBSD-11.2   11.2
+.ds doc-operating-system-FreeBSD-12     12
 .ds doc-operating-system-FreeBSD-12.0   12.0
+.ds doc-operating-system-FreeBSD-12.1   12.1
+.ds doc-operating-system-FreeBSD-12.2   12.2
+.ds doc-operating-system-FreeBSD-12.3   12.3
+.ds doc-operating-system-FreeBSD-12.4   12.4
+.ds doc-operating-system-FreeBSD-13     13
 .ds doc-operating-system-FreeBSD-13.0   13.0
+.ds doc-operating-system-FreeBSD-13.1   13.1
+.ds doc-operating-system-FreeBSD-13.2   13.2
+.ds doc-operating-system-FreeBSD-13.3   13.3
+.ds doc-operating-system-FreeBSD-14     14
+.ds doc-operating-system-FreeBSD-14.0   14.0
+.ds doc-operating-system-FreeBSD-15.0   15.0
 .
 .\" Definitions for other *BSDs not (yet) in doc-common
+.ds doc-operating-system-NetBSD-7       7
 .ds doc-operating-system-NetBSD-7.0     7.0
 .
 .\" Definitions not (yet) in doc-syms
