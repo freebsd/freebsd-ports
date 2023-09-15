@@ -1,5 +1,6 @@
 PORTNAME=	multicat
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	net multimedia
 MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 
@@ -13,17 +14,26 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/bitstream/mpeg/ts.h:multimedia/bitstream
 
 USES=		localbase tar:bzip2
-ALL_TARGET=	${PORTNAME}
+ALL_TARGET=	multicat ingests aggregartp reordertp
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+PLIST_FILES=	bin/aggregartp \
+		bin/ingests \
+		bin/multicat \
+		bin/reordertp \
+		man/man1/aggregartp.1.gz \
+		man/man1/ingests.1.gz \
+		man/man1/multicat.1.gz \
+		man/man1/reordertp.1.gz
 PORTDOCS=	AUTHORS Changelog NEWS README
+BINARIES=	${ALL_TARGET}
 
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.for file in ${BINARIES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.endfor
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
