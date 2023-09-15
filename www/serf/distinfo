@@ -1,5 +1,5 @@
-TIMESTAMP = 1590959783
-SHA256 (serf-1.3.9.tar.bz2) = 549c2d21c577a8a9c0450facb5cca809f26591f048e466552240947bdf7a87cc
-SIZE (serf-1.3.9.tar.bz2) = 145132
+TIMESTAMP = 1694770008
+SHA256 (serf-1.3.10.tar.bz2) = be81ef08baa2516ecda76a77adf7def7bc3227eeb578b9a33b45f7b41dc064e6
+SIZE (serf-1.3.10.tar.bz2) = 147744
 SHA256 (py3-compat) = aa31670d4acf132400c78524caa9efbfdf76bde6f4a973bf72ae69b25fd4c4d0
 SIZE (py3-compat) = 2879
