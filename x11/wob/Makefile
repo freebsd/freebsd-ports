@@ -1,5 +1,5 @@
 PORTNAME=	wob
-DISTVERSION=	0.14.2
+DISTVERSION=	0.15
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,11 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.13:graphics/wayland-protocols
 LIB_DEPENDS=	libinih.so:devel/inih \
 		libwayland-client.so:graphics/wayland
+TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	francma
-MESON_ARGS=	-Dseccomp=disabled
+MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
@@ -26,5 +27,18 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 			man/man5/${PORTNAME}.ini.5.gz
+
+post-patch:
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/src/config.c \
+		${WRKSRC}/${PORTNAME}.1.scd
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
