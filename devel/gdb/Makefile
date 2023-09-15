@@ -1,6 +1,6 @@
 PORTNAME=	gdb
-DISTVERSION=	13.1
-PORTREVISION=	5
+DISTVERSION=	13.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -29,20 +29,18 @@ CONFIGURE_ARGS=	--program-suffix=${DISTVERSION:S/.//g} \
 		--enable-targets=all --enable-64-bit-bfd \
 		--with-separate-debug-dir=/usr/lib/debug \
 		${ICONV_CONFIGURE_ARG} \
-		--without-libunwind-ia64 --with-system-zlib
+		--without-libunwind-ia64
 CONFIGURE_OUTSOURCE=	yes
 CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-EXTRA_PATCHES=	${FILESDIR}/commit-a980a7d24b9
-EXTRA_PATCHES+=	${FILESDIR}/commit-ae61525fcf4
 
 VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-OPTIONS_DEFINE=	GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT \
-		TUI XXHASH
+OPTIONS_DEFINE=	DEBUGINFOD GDB_LINK GUILE KGDB NLS PYTHON \
+		SOURCE_HIGHLIGHT TUI XXHASH
 OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
 			TUI XXHASH
 OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
@@ -52,6 +50,7 @@ OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
 OPTIONS_SINGLE_ICONV=	PORT_ICONV SYSTEM_ICONV
 OPTIONS_SINGLE_ZLIB=	BUNDLED_ZLIB SYSTEM_ZLIB
 
+DEBUGINFOD=		Build gdb with debuginfod server support
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel debugging support
 BUNDLED_READLINE_DESC=	from gdb distfile
@@ -67,6 +66,8 @@ XXHASH_DESC=		Use xxHash for hashing (faster)
 OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
+DEBUGINFOD_CONFIGURE_WITH=	debuginfod
+DEBUGINFOD_LIB_DEPENDS=	libdebuginfod.so:devel/elfutils
 GUILE_CONFIGURE_WITH=	guile=guile-${GUILE_VER}
 GUILE_USES=		guile:2.2,3.0
 NLS_USES=	gettext-runtime
@@ -79,7 +80,7 @@ SOURCE_HIGHLIGHT_CONFIGURE_ENABLE=	source-highlight
 SOURCE_HIGHLIGHT_LIB_DEPENDS=	\
 	libsource-highlight.so:textproc/source-highlight
 SYSTEM_ICONV_USES=	iconv
-SYSTEM_ZLIB_WITH=	system-zlib
+SYSTEM_ZLIB_CONFIGURE_WITH=	system-zlib
 TUI_CONFIGURE_ENABLE=	tui
 XXHASH_CONFIGURE_OFF=	--with-xxhash=no
 XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
