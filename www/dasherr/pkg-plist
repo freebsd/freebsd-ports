@@ -1,0 +1,19 @@
+%%WWWDIR%%/editor.php
+%%WWWDIR%%/include/bootstrap.bundle.min.js
+%%WWWDIR%%/include/bootstrap.bundle.min.js.map
+%%WWWDIR%%/include/bootstrap.min.css
+%%WWWDIR%%/include/bootstrap.min.css.map
+%%WWWDIR%%/include/custom.css
+%%WWWDIR%%/include/editor_js.php
+%%WWWDIR%%/include/filesave.php
+%%WWWDIR%%/include/jquery.json-editor.min.js
+%%WWWDIR%%/include/jquery.min.js
+%%WWWDIR%%/include/preload.js
+%%WWWDIR%%/include/samplesettings.php
+%%WWWDIR%%/include/theming.js
+%%WWWDIR%%/include/worker.js
+%%WWWDIR%%/index.php
+%%WWWDIR%%/res/favicon.svg
+%%WWWDIR%%/settings.sh.json
+@sample(www,www,) %%WWWDIR%%/settings.sample.json %%WWWDIR%%/settings.json
+@dir %%WWWDIR%%/icons

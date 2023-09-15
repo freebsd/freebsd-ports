@@ -127,6 +127,7 @@
     SUBDIR += ctemplate
     SUBDIR += cutelyst
     SUBDIR += darkhttpd
+    SUBDIR += dasherr
     SUBDIR += davical
     SUBDIR += davix
     SUBDIR += dddbl
