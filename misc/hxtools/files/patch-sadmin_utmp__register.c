@@ -22,29 +22,3 @@
  		HXOPT_AUTOHELP,
  		HXOPT_TABLEEND,
  	};
-@@ -181,8 +185,10 @@ static int main2(int argc, const char **argv)
- 			setutxent();
- 			pututxline(&entry);
- 		}
-+#if 0
- 		if (Opt.op_wtmp)
- 			updwtmpx(Opt.fwtmp, &entry);
-+#endif
- 		if (Opt.op_lastlog)
- 			update_lastlog(Opt.flastlog, &entry);
- 	}
-@@ -193,11 +199,13 @@ static int main2(int argc, const char **argv)
- 			setutxent();
- 			pututxline(&entry);
- 		}
-+#if 0
- 		if (Opt.op_wtmp)
- 			updwtmpx(Opt.fwtmp, &entry);
-+#endif
- 	}
- 
--	endutent();
-+	endutxent();
- 	return EXIT_SUCCESS;
- }
- 

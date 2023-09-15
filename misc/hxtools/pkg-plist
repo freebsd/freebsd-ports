@@ -41,7 +41,6 @@ bin/tailhex
 bin/wktimer
 bin/xcp
 etc/hxloginpref.conf
-libexec/hxtools/cctypeinfo
 libexec/hxtools/clock_info
 libexec/hxtools/diff2php
 libexec/hxtools/doxygen-kerneldoc-filter
@@ -63,7 +62,6 @@ libexec/hxtools/vcsaview
 man/man1/aumeta.1.gz
 man/man1/bin2c.1.gz
 man/man1/bsvplay.1.gz
-man/man1/cctypeinfo.1.gz
 man/man1/checkbrack.1.gz
 man/man1/clock_info.1.gz
 man/man1/cwdiff.1.gz

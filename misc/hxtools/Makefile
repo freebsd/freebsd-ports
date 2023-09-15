@@ -1,5 +1,5 @@
 PORTNAME=	hxtools
-PORTVERSION=	20221120
+PORTVERSION=	20230411
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/
 
@@ -17,7 +17,7 @@ SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 		examples/git-deconstruct examples/rc4 sadmin/hxnetload \
 		sadmin/ldif-duplicate-attrs sadmin/ldif-leading-spaces \
 		sadmin/logontime sadmin/pmap_dirty sadmin/recursive_lower \
-		sadmin/vcsaview sdevel/checkbrack sdevel/cwdiff \
+		sadmin/vcsaview sdevel/cwdiff \
 		sdevel/diff2php sdevel/doxygen-kerneldoc-filter \
 		sdevel/git-author-stat sdevel/git-blame-stats \
 		sdevel/git-forest sdevel/git-revert-stats \
@@ -37,8 +37,15 @@ CONFLICTS_INSTALL=	grx psptoolchain-pspsdk-stage2 # bin/bin2c
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
+	@${REINPLACE_CMD} -e '/COMPAT_PROC/s,/compat/linux,${LINUXBASE},' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E '/COMPAT_PROC ?=/s,"","${LINUXBASE}",' \
+		${WRKSRC}/sadmin/hxnetload \
+		${WRKSRC}/sadmin/pmap_dirty \
+		${WRKSRC}/sdevel/paddrspacesize
 	@${REINPLACE_CMD} -E 's,(/usr)?/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/sadmin/su1
+	@${REINPLACE_CMD} -e '/checkbrack \\/d' ${WRKSRC}/sdevel/Makefile.in
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
