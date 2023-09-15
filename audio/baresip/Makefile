@@ -1,7 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.0
-PORTREVISION=	1
+DISTVERSION=	3.5.1
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +19,8 @@ GH_ACCOUNT=	baresip
 
 # FIXME values of the next 3 variables taken from source code Makefile
 ABI_MAJOR=	9
-ABI_AGE=	4
-ABI_REV=	0
+ABI_AGE=	5
+ABI_REV=	1
 PLIST_SUB=	ABI_MAJOR=${ABI_MAJOR}
 PLIST_SUB+=	ABI_AGE=${ABI_AGE} \
 		ABI_REV=${ABI_REV}
