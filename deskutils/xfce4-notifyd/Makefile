@@ -5,7 +5,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -29,8 +29,14 @@ USE_XORG=	ice sm x11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	CANBERRA NLS
 OPTIONS_SUB=	yes
+
+CANBERRA_DESC=	Sound (audio) support via canberra
+
+CANBERRA_LIB_DEPENDS=		libcanberra.so:audio/libcanberra \
+				libcanberra-gtk3.so:audio/libcanberra-gtk3
+CANBERRA_CONFIGURE_ENABLE=	canberra
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
