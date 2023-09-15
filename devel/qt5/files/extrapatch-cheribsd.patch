@@ -1094,7 +1094,7 @@ index 0165ce9075..0bc8b142e7 100644
  #ifndef QT_NO_DEBUG
      if (notifier->thread() != thread() || thread() != QThread::currentThread()) {
 diff --git src/corelib/kernel/qmetaobject.cpp src/corelib/kernel/qmetaobject.cpp
-index 7761ab7886..d9fe2bef0b 100644
+index 7761ab7886..8e44c9b4a3 100644
 --- src/corelib/kernel/qmetaobject.cpp
 +++ src/corelib/kernel/qmetaobject.cpp
 @@ -169,7 +169,7 @@ static inline const QByteArray stringData(const QMetaObject *mo, int index)
@@ -1102,7 +1102,7 @@ index 7761ab7886..d9fe2bef0b 100644
  {
      const QByteArrayData &d = mo->d.stringdata[index];
 -    const char *string = reinterpret_cast<const char *>(d.data());
-+    const char *string = reinterpret_cast<const char *>(d.boundedData(d.size));
++    const char *string = reinterpret_cast<const char *>(d.boundedData(sizeof(char)));
      return QLatin1String(string, d.size);
  }
  
