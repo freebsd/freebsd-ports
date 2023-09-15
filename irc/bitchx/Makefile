@@ -78,7 +78,9 @@ post-patch-TOGGLES-on:
 
 post-stage:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/bx/plugins/*.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/bx/wserv
+
+post-stage-PLUGINS-on:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/share/bx/plugins/*.so
 
 .include <bsd.port.mk>
