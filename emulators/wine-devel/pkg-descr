@@ -11,5 +11,3 @@ If you receive a message of "Did you reconfigure your kernel with
 "options USER_LDT"?" add the line
     machdep.max_ldt_segment="2048"
 to /boot/loader.conf and reboot.
-
-Gerald Pfeifer <gerald@FreeBSD.org>
