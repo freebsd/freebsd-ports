@@ -1,5 +1,5 @@
 PORTNAME=	libHX
-PORTVERSION=	4.12
+PORTVERSION=	4.14
 CATEGORIES=	lang
 MASTER_SITES=	https://inai.de/files/libhx/
 
@@ -22,5 +22,8 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
+
+post-install-DOCS-on:
+	${CP} -a ${INSTALL_WRKSRC}/doc/ ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
