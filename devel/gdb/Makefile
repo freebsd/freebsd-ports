@@ -64,7 +64,7 @@ OPTIONS_SINGLE_READLINE=	BUNDLED_READLINE PORT_READLINE
 OPTIONS_SINGLE_ICONV=	PORT_ICONV SYSTEM_ICONV
 OPTIONS_SINGLE_ZLIB=	BUNDLED_ZLIB SYSTEM_ZLIB
 
-DEBUGINFOD=		Build gdb with debuginfod server support
+DEBUGINFOD_DESC=	Build gdb with debuginfod server support
 GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
 KGDB_DESC=		Kernel debugging support
 BUNDLED_READLINE_DESC=	from gdb distfile
