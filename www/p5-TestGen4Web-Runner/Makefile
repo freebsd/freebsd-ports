@@ -5,7 +5,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN/WWW/MACKERS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to replay files recorded with TestGen4Web
 WWW=		https://metacpan.org/release/TestGen4Web-Runner
 

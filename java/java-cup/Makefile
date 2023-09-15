@@ -5,7 +5,7 @@ MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/releases/
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-bin-${PORTVERSION:S|.|-|}
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LALR parser generator in Java
 WWW=		http://www2.cs.tum.edu/projects/cup/
 

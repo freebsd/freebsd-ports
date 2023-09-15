@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNMP MIB Browser for X
 WWW=		https://sourceforge.net/projects/mbrowse/
 

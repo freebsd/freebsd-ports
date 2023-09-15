@@ -3,7 +3,7 @@ PORTVERSION=	1.8.1
 CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/jflex-de/jflex/releases/download/v${PORTVERSION}/
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Lexical Analyser Generator for Java[tm]
 WWW=		https://www.jflex.de/
 

@@ -3,7 +3,7 @@ PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release%200.8.x
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ utility for simple IOStream-based IPC
 WWW=		http://pstreams.sourceforge.net/
 

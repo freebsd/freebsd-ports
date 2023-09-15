@@ -5,7 +5,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eg@fbsd.lt
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for accessing TiVo using XML/HTTP
 WWW=		https://metacpan.org/release/Net-TiVo
 
