@@ -1,6 +1,5 @@
 PORTNAME=	musikcube
-DISTVERSION=	3.0.1
-PORTREVISION=	1
+DISTVERSION=	3.0.2
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +13,8 @@ BUILD_DEPENDS=	asio>0:net/asio
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavcodec.so:multimedia/ffmpeg \
 		libbasu.so:devel/basu \
-		libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libev.so:devel/libev \
-		libfaad.so:audio/faad \
 		libFLAC.so:audio/flac \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libmp3lame.so:audio/lame \
