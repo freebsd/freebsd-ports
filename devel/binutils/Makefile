@@ -36,7 +36,6 @@ CONFIGURE_ARGS+=	--disable-werror \
 			--with-sysroot=/ \
 			--enable-x86-relax-relocations=no \
 			--with-zstd \
-			--without-libelf --without-debuginfod \
 			--enable-default-compressed-debug-sections-algorithm=zstd
 MAKE_ARGS+=	LIBDL="" V=1
 MAKE_ENV+=	ac_cv_func_sbrk=0
