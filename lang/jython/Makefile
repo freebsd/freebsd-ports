@@ -2,8 +2,7 @@ PORTNAME=	jython
 PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	installer-
 CATEGORIES=	lang python java
-MASTER_SITES=	https://repo1.maven.org/maven2/org/python/jython-installer/${PORTVERSION}/ \
-		http://repo1.maven.org/maven2/org/python/jython-installer/${PORTVERSION}/
+MASTER_SITES=	https://repo1.maven.org/maven2/org/python/jython-installer/${PORTVERSION}/
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	python@FreeBSD.org

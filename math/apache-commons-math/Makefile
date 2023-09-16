@@ -3,7 +3,7 @@ PORTVERSION=	3.6.1
 PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	APACHE_COMMONS_SOURCE \
-		http://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
+		https://repo1.maven.org/maven2/junit/junit/4.8.2/:source2
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}3-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

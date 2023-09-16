@@ -1,7 +1,7 @@
 PORTNAME=	hamcrest
 PORTVERSION=	1.3
 CATEGORIES=	java devel
-MASTER_SITES=	http://repo1.maven.org/maven2/org/${PORTNAME}/${PORTNAME}-all/${PORTVERSION}/
+MASTER_SITES=	https://repo1.maven.org/maven2/org/${PORTNAME}/${PORTNAME}-all/${PORTVERSION}/
 DISTFILES=	${PORTNAME}-all-${PORTVERSION}.jar ${PORTNAME}-all-${PORTVERSION}-sources.jar
 EXTRACT_ONLY=
 
