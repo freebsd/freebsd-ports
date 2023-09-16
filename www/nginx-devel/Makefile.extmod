@@ -236,7 +236,7 @@ NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi_runtime.c
 
-NJS_GH_TUPLE=		nginx:njs:0.8.0:njs
+NJS_GH_TUPLE=		nginx:njs:0.8.1:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 NJS_XML_IMPLIES=	NJS
