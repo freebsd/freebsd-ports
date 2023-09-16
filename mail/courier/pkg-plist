@@ -446,9 +446,8 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.couriertls
-%%PORTDOCS%%%%DOCSDIR%%/README.imap
+%%PORTDOCS%%%%DOCSDIR%%/README.imap.proxy
 %%PORTDOCS%%%%DOCSDIR%%/README.maildirquota.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.proxy
 %%PORTDOCS%%%%DOCSDIR%%/README.sharedfolders.txt
 %%PORTDOCS%%%%DOCSDIR%%/SECURITY.sqwebmail
 %%PORTDOCS%%%%DOCSDIR%%/TODO
@@ -457,12 +456,11 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/html/NEWS.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.gpglib.html
-%%PORTDOCS%%%%DOCSDIR%%/html/README.imap.html
+%%PORTDOCS%%%%DOCSDIR%%/html/README.imap.proxy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.maildirfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.maildirquota.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.maildrop.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.pcp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/README.proxy.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.sharedfolders.html
 %%PORTDOCS%%%%DOCSDIR%%/html/SECURITY.sqwebmail.html
 %%PORTDOCS%%%%DOCSDIR%%/html/aliases.html
@@ -485,7 +483,6 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/html/documentation.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-courier.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dot-forward.html
-%%PORTDOCS%%%%DOCSDIR%%/html/download.html
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-exdata-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-security-smtpext.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/draft-varshavchik-verp-smtpext.txt
@@ -508,6 +505,7 @@ sbin/webmaild
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirkw.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirmake.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildirquota.html
+%%PORTDOCS%%%%DOCSDIR%%/html/maildirwatch.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildrop.README.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildrop.html
 %%PORTDOCS%%%%DOCSDIR%%/html/maildropex.html
