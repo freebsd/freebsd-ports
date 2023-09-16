@@ -1,9 +1,7 @@
 PORTNAME=	zfs-autobackup
-DISTVERSION=	3.1.3
+DISTVERSION=	3.2.2
 CATEGORIES=	sysutils python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	zfs_autobackup-${DISTVERSION}
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Periodicly backup zfs filesystems to other locations
@@ -15,6 +13,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	psy0rz
+GH_PROJECT=	zfs_autobackup
+GH_TAGNAME=	v${DISTVERSION}
 
 NO_ARCH=	yes
 
