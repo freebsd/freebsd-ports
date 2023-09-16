@@ -1,3 +1,42 @@
+  <vuln vid="11982747-544c-11ee-ac3e-a04a5edf46d9">
+    <topic>routinator -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>routinator</name>
+	<range><lt>0.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NLnet Labs report:</p>
+	<blockquote cite="https://nlnetlabs.nl/news/2023/Sep/13/routinator-0.12.2-released/">
+	  <p>This release fixes two issues in Routinator that can be exploited
+	  remotely by rogue RPKI CAs and repositories. We therefore advise all
+	  users of Routinator to upgrade to this release at their earliest
+	  convenience.</p>
+	  <p>The first issue, CVE-2022-39915, can lead to Routinator crashing
+	  when trying to decode certain illegal RPKI objects.</p>
+	  <p>The second issue, CVE-2022-39916, only affects users that have the
+	  rrdp-keep-responses option enabled which allows storing all received
+	  RRDP responses on disk. Because the file name for these responses is
+	  derived from the URI and the path wasn't checked properly, a RRDP URI
+	could be constructed that results in the response stored outside the
+	directory, possibly overwriting existing files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39915</cvename>
+      <url>https://nlnetlabs.nl/downloads/routinator/CVE-2023-39915.txt</url>
+      <cvename>CVE-2022-39916</cvename>
+      <url>https://nlnetlabs.nl/downloads/routinator/CVE-2023-39916.txt</url>
+    </references>
+    <dates>
+      <discovery>2022-12-08</discovery>
+      <entry>2023-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="833b469b-5247-11ee-9667-080027f5fec9">
     <topic>curl -- HTTP headers eat all memory</topic>
     <affects>
