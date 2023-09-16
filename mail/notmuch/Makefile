@@ -1,5 +1,5 @@
 PORTNAME=	notmuch
-DISTVERSION=	0.37
+DISTVERSION=	0.38
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	https://notmuchmail.org/releases/
@@ -27,8 +27,7 @@ TEST_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb \
 		gsha256sum:sysutils/coreutils \
 		gwc:sysutils/coreutils
 
-USES=		compiler:c++11-lang gmake gnome pkgconfig \
-		python:build,test
+USES=		gmake gnome pkgconfig python:build,test
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 .endif
@@ -69,11 +68,6 @@ DOXYGEN_USES=			perl5
 DOXYGEN_CONFIGURE_WITH=		api-docs
 MANPAGES_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
 MANPAGES_CONFIGURE_WITH=	docs
-
-# Avoid conflict with C++20 <version> by ignoring <...> under WRKSRC
-post-patch:
-	@${REINPLACE_CMD} -i .c++20 's/-I$$(srcdir)/-iquote$$(srcdir)/' \
-		${WRKSRC}/*/Makefile.local
 
 # Install bash completions without incurring a dependency on
 # shells/bash-completion.
