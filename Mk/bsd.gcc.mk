@@ -110,15 +110,14 @@ LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME} -L${_GCC_RUNTIME}
 CFLAGS:=		${CFLAGS:N-mretpoline}
 CXXFLAGS:=		${CXXFLAGS:N-mretpoline}
 
-.  if defined(_GCC_PORT)
 BUILD_DEPENDS+=	${CC}:lang/${_GCC_PORT}
-.    if defined(_USE_GCC_RUN_DEPENDS)
+.  if defined(_USE_GCC_RUN_DEPENDS)
 RUN_DEPENDS+=	${CC}:lang/${_GCC_PORT}
-.    endif
+.  endif
+
 # GCC ports already depend on binutils; make sure whatever we build
 # leverages this as well.
 USE_BINUTILS=	yes
-.  endif
 
 .endif # defined(_USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
