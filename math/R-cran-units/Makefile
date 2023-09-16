@@ -1,5 +1,5 @@
 PORTNAME=	units
-DISTVERSION=	0.8-3
+DISTVERSION=	0.8-4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +11,8 @@ LICENSE=	GPLv2
 
 CRAN_DEPENDS=	R-cran-Rcpp>=0.12.10:devel/R-cran-Rcpp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
-LIB_DEPENDS=	libudunits2.so:science/udunits
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libudunits2.so:science/udunits
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
 # Tests fails: https://github.com/r-quantities/units/issues/354
