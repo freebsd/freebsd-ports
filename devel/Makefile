@@ -1663,6 +1663,7 @@
     SUBDIR += obby
     SUBDIR += objconv
     SUBDIR += objecthash
+    SUBDIR += objfw
     SUBDIR += ocaml-annexlib
     SUBDIR += ocaml-calendar
     SUBDIR += ocaml-camljava

@@ -1,0 +1,18 @@
+ObjFW is a highly portable, lightweight, general purpose, open source
+Objective-C framework with full Objective-C 2.0, blocks and ARC support,
+providing not only basic classes like strings, arrays and dictionaries,
+but also providing abstractions for OS-dependant functionality like
+asynchronous sockets.
+
+While a lot of the core API is similar to Foundation, it breaks with
+Foundation's API on purpose in many places to embrace new features which
+Foundation can't use completely due to its backwards compatibility. One
+such example are exceptions, which are a first class citizen in ObjFW
+and not merely to inform the programmer of his wrongdoings like in
+Foundation.
+
+ObjFW runs on a huge list of platforms and offers the same API on all of
+them so that software written using ObjFW runs on all platforms
+supported by ObjFW without #ifdef hells or the like. It does not only
+run on almost any POSIX system that supports GCC >= 4, but it also works
+on Windows and niche platforms like the PlayStation Portable.
