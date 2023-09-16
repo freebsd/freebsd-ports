@@ -43,6 +43,9 @@ Merge any changes to %%WWWDIR%%/.htaccess.dist into .htaccess (above the
 and update the dynamic part of the file using the commandline:
 
   occ maintenance:update:htaccess
+
+As of Nextcloud 27.1.0 the recommended PHP version is 8.2.
+
 EOM
 }
 ]
