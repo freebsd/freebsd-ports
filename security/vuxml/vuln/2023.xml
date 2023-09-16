@@ -1,3 +1,29 @@
+  <vuln vid="b5508c08-547a-11ee-85eb-84a93843eb75">
+    <topic>Roundcube -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.3,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube webmail project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2023/09/15/security-update-1.6.3-released">
+	  <p>cross-site scripting (XSS) vulnerability in handling of
+	    linkrefs in plain text messages</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2023/09/15/security-update-1.6.3-released</url>
+    </references>
+    <dates>
+      <discovery>2023-09-15</discovery>
+      <entry>2023-09-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="773ce35b-eabb-47e0-98ca-669b2b98107a">
     <topic>electron{24,25} -- multiple vulnerabilities</topic>
     <affects>
