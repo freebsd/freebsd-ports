@@ -1,0 +1,8 @@
+--- Makefile.orig	2023-09-15 09:39:49 UTC
++++ Makefile
+@@ -1,4 +1,4 @@
+-CC = $(CROSS)gcc
++CC ?= $(CROSS)gcc
+ STRIP = $(CROSS)strip
+ PKG_CONFIG ?= pkg-config
+ PREFIX ?= /usr/local
