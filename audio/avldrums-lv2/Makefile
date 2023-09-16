@@ -1,6 +1,6 @@
 PORTNAME=	avldrums
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.7.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -28,6 +28,7 @@ MAKE_ENV=	avldrums_VERSION=${PORTVERSION}
 PLIST_FILES=	lib/lv2/avldrums.lv2/Black_Pearl_4_LV2.sf2 \
 		lib/lv2/avldrums.lv2/Blonde_Bop_HR_LV2.sf2 \
 		lib/lv2/avldrums.lv2/Blonde_Bop_LV2.sf2 \
+		lib/lv2/avldrums.lv2/Buskmans_Holiday_LV2.sf2 \
 		lib/lv2/avldrums.lv2/Red_Zeppelin_4_LV2.sf2 \
 		lib/lv2/avldrums.lv2/avldrums.so \
 		lib/lv2/avldrums.lv2/avldrums.ttl \
