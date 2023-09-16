@@ -1,5 +1,5 @@
-TIMESTAMP = 1646238370
-SHA256 (go/net-p2p_autoscan/autoscan-v1.3.0/v1.3.0.mod) = 33ec17bddffaf6ad7074f4209f9ba2841f7055f6c6954c7f58f6bb9a8c8013a3
-SIZE (go/net-p2p_autoscan/autoscan-v1.3.0/v1.3.0.mod) = 1648
-SHA256 (go/net-p2p_autoscan/autoscan-v1.3.0/v1.3.0.zip) = ea43405945bee5b9b8277292c91af262dd4450919b1ac5ec1fdead652c8820df
-SIZE (go/net-p2p_autoscan/autoscan-v1.3.0/v1.3.0.zip) = 78961
+TIMESTAMP = 1694868128
+SHA256 (go/net-p2p_autoscan/autoscan-v1.4.0/v1.4.0.mod) = d162903fe49931ae585493ce6f9bd86b3f8ca55e7f721f60f02af7f568ac8aa1
+SIZE (go/net-p2p_autoscan/autoscan-v1.4.0/v1.4.0.mod) = 1621
+SHA256 (go/net-p2p_autoscan/autoscan-v1.4.0/v1.4.0.zip) = e9a14dab8a0fa5d4ab549524b020404b0f21cd397fe760986390dfbb48f9eb82
+SIZE (go/net-p2p_autoscan/autoscan-v1.4.0/v1.4.0.zip) = 79398
