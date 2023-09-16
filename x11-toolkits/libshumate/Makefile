@@ -1,5 +1,5 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.0
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
 USES=		gettext gnome meson pkgconfig sqlite tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk40 introspection:build
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Dsysprof=disabled
 
 OPTIONS_DEFINE=	DOCS
 
