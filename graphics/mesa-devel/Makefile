@@ -47,6 +47,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		-Dvideo-codecs=vc1dec,h264dec,h264enc,h265dec,h265enc \
 		${NULL}
+LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
 OPTIONS_DEFINE=		LIBUNWIND LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
