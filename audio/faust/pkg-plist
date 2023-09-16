@@ -64,6 +64,7 @@ bin/faust2portaudiorust
 bin/faust2pure
 bin/faust2puredata
 bin/faust2raqt
+bin/faust2rnbo
 bin/faust2ros
 bin/faust2rosgtk
 bin/faust2rpialsaconsole
@@ -78,6 +79,7 @@ bin/faust2sndfile
 bin/faust2sublimecompletions
 bin/faust2supercollider
 bin/faust2svg
+bin/faust2svgplot
 bin/faust2svgviewer
 bin/faust2teensy
 bin/faust2tidalcycles
@@ -139,7 +141,6 @@ include/faust/dsp/dsp-tools.h
 include/faust/dsp/dsp.h
 include/faust/dsp/fastmath.cpp
 include/faust/dsp/faust-dynamic-engine.cpp
-include/faust/dsp/faust-dynamic-engine.cpp.orig
 include/faust/dsp/faust-dynamic-engine.h
 include/faust/dsp/faust-engine.h
 include/faust/dsp/faust-poly-engine.h
@@ -163,6 +164,7 @@ include/faust/dsp/poly-llvm-dsp.h
 include/faust/dsp/poly-wasm-dsp.h
 include/faust/dsp/proxy-dsp.h
 include/faust/dsp/proxy-osc-dsp.h
+include/faust/dsp/rnbo-dsp.h
 include/faust/dsp/sound-player.h
 include/faust/dsp/timed-dsp.h
 include/faust/dsp/timed-dsp.h.orig
@@ -263,7 +265,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.60.3
+lib/libfaust.so.2.68.0
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -377,6 +379,15 @@ lib/libfaust.so.2.60.3
 %%DATADIR%%/audiokit/FaustDSP.mm
 %%DATADIR%%/audiokit/README.md
 %%DATADIR%%/audiokit/SwiftGenerator.cpp
+%%DATADIR%%/autodiff/README.md
+%%DATADIR%%/autodiff/autodiff.cpp
+%%DATADIR%%/autodiff/autodiff.h
+%%DATADIR%%/autodiff/autodiff.sh
+%%DATADIR%%/autodiff/autodiffVerifier.cpp
+%%DATADIR%%/autodiff/autodiffVerifier.h
+%%DATADIR%%/autodiff/dspFactoryOwner.h
+%%DATADIR%%/autodiff/loss_example.png
+%%DATADIR%%/autodiff/plot.py
 %%DATADIR%%/basics.lib
 %%DATADIR%%/bela.cpp
 %%DATADIR%%/bench.cpp
@@ -667,6 +678,7 @@ lib/libfaust.so.2.60.3
 %%DATADIR%%/max-msp/faustgen-wrapper.maxpat
 %%DATADIR%%/max-msp/max-msp.cpp
 %%DATADIR%%/max-msp/max-msp64.cpp
+%%DATADIR%%/max-msp/rnbo.py
 %%DATADIR%%/max-msp/sndfile/arm/libsndfile.a
 %%DATADIR%%/max-msp/sndfile/intel/libsndfile.a
 %%DATADIR%%/max-msp/sndfile/sndfile.h
@@ -845,6 +857,13 @@ lib/libfaust.so.2.60.3
 %%DATADIR%%/spats.lib
 %%DATADIR%%/stdfaust.lib
 %%DATADIR%%/supercollider.cpp
+%%DATADIR%%/svgplot/README.md
+%%DATADIR%%/svgplot/example.png
+%%DATADIR%%/svgplot/heatmap.h
+%%DATADIR%%/svgplot/plot.h
+%%DATADIR%%/svgplot/probeexample.png
+%%DATADIR%%/svgplot/splitexample.png
+%%DATADIR%%/svgplot/svgplot.cpp
 %%DATADIR%%/synths.lib
 %%DATADIR%%/teensy/README.md
 %%DATADIR%%/teensy/teensy.cpp
@@ -950,3 +969,4 @@ lib/libfaust.so.2.60.3
 %%HIGHLIGHT%%share/highlight/langDefs/dsp.lang
 share/man/man1/faust.1.gz
 %%HIGHLIGHT%%share/vim/vimfiles/syntax/faust.vim
+@dir %%DATADIR%%/max-msp/py2max
