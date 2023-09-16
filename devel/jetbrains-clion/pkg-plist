@@ -78,7 +78,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-CL-232.9559.58
+%%DATADIR%%/lib/build-marker-CL-232.9921.42
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -1310,7 +1310,6 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.c
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.pxd
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.pyx
-%%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_312.c
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_32.pyd
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
 %%DATADIR%%/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_310_32.cp310-win32.pyd
@@ -1439,8 +1438,11 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/add_code_to_python_process.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/attach_pydevd.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/attach_script.py
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_custom_pyeval_settrace.hpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_custom_pyeval_settrace_310.hpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_custom_pyeval_settrace_311.hpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_custom_pyeval_settrace_common.hpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_settrace.hpp
-%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_settrace_37.hpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_utils.hpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/py_version.hpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/common/python.h
@@ -1491,6 +1493,10 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/attach.cpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/attach.h
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/compile_windows.bat
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/inject_dll.cpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/py_win_helpers.hpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/run_code_in_memory.hpp
+%%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/run_code_on_dllmain.cpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/stdafx.cpp
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/stdafx.h
 %%DATADIR%%/plugins/python-ce/helpers/pydev/pydevd_attach_to_process/windows/targetver.h
