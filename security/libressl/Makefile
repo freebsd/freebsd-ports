@@ -1,5 +1,6 @@
 PORTNAME=	libressl
 PORTVERSION=	3.7.3
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	OPENBSD/LibreSSL
 
@@ -64,6 +65,8 @@ post-patch-MAN3-off:
 
 post-install:
 	${RM} -r ${STAGEDIR}/${PREFIX}/etc/ssl/cert.pem
+	${RMDIR} ${STAGEDIR}${PREFIX}/etc/ssl/certs
+	${LN} -s /etc/ssl/certs ${STAGEDIR}${PREFIX}/etc/ssl/certs
 
 post-stage-MAN3-on:
 	(cd ${STAGEDIR}${MANPREFIX}; ${FIND} man/man3 -not -type d | \
