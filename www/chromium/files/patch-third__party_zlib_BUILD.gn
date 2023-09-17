@@ -1,6 +1,26 @@
---- third_party/zlib/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- third_party/zlib/BUILD.gn.orig	2023-09-17 18:22:45 UTC
 +++ third_party/zlib/BUILD.gn
-@@ -408,7 +408,7 @@ static_library("minizip") {
+@@ -127,7 +127,7 @@ if (use_arm_neon_optimizations) {
+     defines = [ "CRC32_ARMV8_CRC32" ]
+     if (is_android) {
+       defines += [ "ARMV8_OS_ANDROID" ]
+-    } else if (is_linux || is_chromeos) {
++    } else if ((is_linux || is_chromeos) && !is_bsd) {
+       defines += [ "ARMV8_OS_LINUX" ]
+     } else if (is_mac) {
+       defines += [ "ARMV8_OS_MACOS" ]
+@@ -137,6 +137,10 @@ if (use_arm_neon_optimizations) {
+       defines += [ "ARMV8_OS_FUCHSIA" ]
+     } else if (is_win) {
+       defines += [ "ARMV8_OS_WINDOWS" ]
++    } else if (is_openbsd) {
++      defines += [ "ARMV8_OS_OPENBSD" ]
++    } else if (is_freebsd) {
++      defines += [ "ARMV8_OS_FREEBSD" ]
+     } else {
+       assert(false, "Unsupported ARM OS")
+     }
+@@ -408,7 +412,7 @@ static_library("minizip") {
      ]
    }
  

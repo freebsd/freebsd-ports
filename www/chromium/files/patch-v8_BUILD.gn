@@ -1,4 +1,4 @@
---- v8/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- v8/BUILD.gn.orig	2023-09-17 18:22:45 UTC
 +++ v8/BUILD.gn
 @@ -1404,6 +1404,14 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
@@ -27,7 +27,20 @@
      }
  
      if (v8_enable_builtins_profiling) {
-@@ -6081,7 +6094,7 @@ v8_component("v8_libbase") {
+@@ -2353,6 +2366,12 @@ template("run_mksnapshot") {
+       if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
+         args += [ "--reorder-builtins" ]
+       }
++
++      if (v8_current_cpu == "x86") {
++        args -= [
++          "--abort-on-bad-builtin-profile-data",
++        ]
++      }
+     }
+ 
+     # This is needed to distinguish between generating code for the simulator
+@@ -6081,7 +6100,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -36,7 +49,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6092,6 +6105,18 @@ v8_component("v8_libbase") {
+@@ -6092,6 +6111,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
