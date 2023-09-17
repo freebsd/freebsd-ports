@@ -1,7 +1,11 @@
 include/suitesparse/RBio.h
-lib/cmake/SuiteSparse/FindRBio.cmake
+lib/cmake/RBio/RBioConfig.cmake
+lib/cmake/RBio/RBioConfigVersion.cmake
+lib/cmake/RBio/RBioTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/RBio/RBioTargets.cmake
 lib/librbio.a
 lib/librbio.so
 lib/librbio.so.4
-lib/librbio.so.4.0.0
+lib/librbio.so.4.2.0
+libdata/pkgconfig/RBio.pc
 %%PORTDOCS%%%%DOCSDIR%%/RBio_README.txt
