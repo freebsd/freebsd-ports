@@ -6,8 +6,10 @@ etc/ltfs.conf
 etc/ltfs.conf.local
 include/ltfs/config.h
 include/ltfs/libltfs/arch/arch_info.h
+include/ltfs/libltfs/arch/errormap.h
 include/ltfs/libltfs/arch/signal_internal.h
 include/ltfs/libltfs/arch/time_internal.h
+include/ltfs/libltfs/config_file.h
 include/ltfs/libltfs/dcache_ops.h
 include/ltfs/libltfs/iosched_ops.h
 include/ltfs/libltfs/kmi_ops.h
@@ -27,6 +29,7 @@ include/ltfs/libltfs/tape_ops.h
 include/ltfs/libltfs/tape.h
 include/ltfs/libltfs/uthash_ext.h
 include/ltfs/libltfs/uthash.h
+include/ltfs/libltfs/xml.h
 include/ltfs/tape_drivers/ibm_tape.h
 include/ltfs/tape_drivers/spc_op_codes.h
 include/ltfs/tape_drivers/ssc_op_codes.h
