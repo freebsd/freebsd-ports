@@ -28,6 +28,7 @@
 %%MANPAGES%%man/man1/glab-config.1.gz
 %%MANPAGES%%man/man1/glab-incident-close.1.gz
 %%MANPAGES%%man/man1/glab-incident-list.1.gz
+%%MANPAGES%%man/man1/glab-incident-note.1.gz
 %%MANPAGES%%man/man1/glab-incident-reopen.1.gz
 %%MANPAGES%%man/man1/glab-incident-subscribe.1.gz
 %%MANPAGES%%man/man1/glab-incident-unsubscribe.1.gz
