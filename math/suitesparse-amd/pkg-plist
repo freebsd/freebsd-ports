@@ -1,8 +1,12 @@
 include/suitesparse/amd.h
-lib/cmake/SuiteSparse/FindAMD.cmake
+lib/cmake/AMD/AMDConfig.cmake
+lib/cmake/AMD/AMDConfigVersion.cmake
+lib/cmake/AMD/AMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/AMD/AMDTargets.cmake
 lib/libamd.a
 lib/libamd.so
 lib/libamd.so.3
-lib/libamd.so.3.0.4
+lib/libamd.so.3.2.0
+libdata/pkgconfig/AMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/AMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf
