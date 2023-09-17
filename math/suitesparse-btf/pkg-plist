@@ -1,7 +1,11 @@
 include/suitesparse/btf.h
-lib/cmake/SuiteSparse/FindBTF.cmake
+lib/cmake/BTF/BTFConfig.cmake
+lib/cmake/BTF/BTFConfigVersion.cmake
+lib/cmake/BTF/BTFTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/BTF/BTFTargets.cmake
 lib/libbtf.a
 lib/libbtf.so
 lib/libbtf.so.2
-lib/libbtf.so.2.0.4
+lib/libbtf.so.2.2.0
+libdata/pkgconfig/BTF.pc
 %%PORTDOCS%%%%DOCSDIR%%/BTF_README.txt
