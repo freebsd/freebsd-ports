@@ -13,6 +13,7 @@ share/applications/vcmiclient.desktop
 %%QT%%share/applications/vcmieditor.desktop
 %%QT%%share/applications/vcmilauncher.desktop
 share/icons/hicolor/16x16/apps/vcmiclient.png
+share/icons/hicolor/22x22/apps/vcmiclient.png
 share/icons/hicolor/32x32/apps/vcmiclient.png
 share/icons/hicolor/48x48/apps/vcmiclient.png
 share/icons/hicolor/64x64/apps/vcmiclient.png
@@ -42,7 +43,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/heroSwap.png
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/itemEmpty.png
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/itemInactive.png
-%%DATADIR%%/Mods/vcmi/Data/radialMenu/stackInfo.png
+%%DATADIR%%/Mods/vcmi/Data/radialMenu/stackFillOne.png
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/stackMerge.png
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/stackSplitDialog.png
 %%DATADIR%%/Mods/vcmi/Data/radialMenu/stackSplitEqual.png
@@ -97,9 +98,14 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeft.png
 %%DATADIR%%/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftCorner.png
 %%DATADIR%%/Mods/vcmi/Sprites/battle/rangeHighlights/red/topLeftHalfCorner.png
+%%DATADIR%%/Mods/vcmi/Sprites/buttons/backpack.json
+%%DATADIR%%/Mods/vcmi/Sprites/buttons/backpackButtonIcon.png
+%%DATADIR%%/Mods/vcmi/Sprites/buttons/backpackNormal.png
+%%DATADIR%%/Mods/vcmi/Sprites/buttons/backpackPressed.png
 %%DATADIR%%/Mods/vcmi/Sprites/buttons/commander.json
 %%DATADIR%%/Mods/vcmi/Sprites/buttons/commanderNormal.png
 %%DATADIR%%/Mods/vcmi/Sprites/buttons/commanderPressed.png
+%%DATADIR%%/Mods/vcmi/Sprites/heroWindow/artifactSlotEmpty.png
 %%DATADIR%%/Mods/vcmi/Sprites/itpa.json
 %%DATADIR%%/Mods/vcmi/Sprites/mapFormatIcons/vcmi1.png
 %%DATADIR%%/Mods/vcmi/Sprites/settingsWindow/button190.json
@@ -150,6 +156,7 @@ share/icons/hicolor/scalable/apps/vcmiclient.svg
 %%DATADIR%%/Mods/vcmi/Sprites/vcmi/creatureIcons/towerLarge.png
 %%DATADIR%%/Mods/vcmi/Sprites/vcmi/creatureIcons/towerSmall.png
 %%DATADIR%%/Mods/vcmi/config/vcmi/chinese.json
+%%DATADIR%%/Mods/vcmi/config/vcmi/czech.json
 %%DATADIR%%/Mods/vcmi/config/vcmi/english.json
 %%DATADIR%%/Mods/vcmi/config/vcmi/french.json
 %%DATADIR%%/Mods/vcmi/config/vcmi/german.json
