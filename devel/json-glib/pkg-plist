@@ -16,7 +16,7 @@ include/json-glib-1.0/json-glib/json-version.h
 %%GIR%%lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.so
 lib/libjson-glib-1.0.so.0
-lib/libjson-glib-1.0.so.0.600.6
+lib/libjson-glib-1.0.so.0.800.0
 libdata/pkgconfig/json-glib-1.0.pc
 %%GIR%%share/gir-1.0/Json-1.0.gir
 %%PORTDOCS%%%%DOCSDIR%%-1.0/RedHatDisplay-Black.woff
@@ -270,6 +270,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.end_member.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_boolean_value.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_double_value.html
+%%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_current_node.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_error.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_int_value.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/method.Reader.get_member_name.html
@@ -334,6 +335,7 @@ libdata/pkgconfig/json-glib-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Serializable.list_properties.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Serializable.serialize_property.html
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.Serializable.set_property.html
+share/locale/ab/LC_MESSAGES/json-glib-1.0.mo
 share/locale/as/LC_MESSAGES/json-glib-1.0.mo
 share/locale/be/LC_MESSAGES/json-glib-1.0.mo
 share/locale/bg/LC_MESSAGES/json-glib-1.0.mo
@@ -350,6 +352,7 @@ share/locale/eo/LC_MESSAGES/json-glib-1.0.mo
 share/locale/es/LC_MESSAGES/json-glib-1.0.mo
 share/locale/et/LC_MESSAGES/json-glib-1.0.mo
 share/locale/eu/LC_MESSAGES/json-glib-1.0.mo
+share/locale/fa/LC_MESSAGES/json-glib-1.0.mo
 share/locale/fr/LC_MESSAGES/json-glib-1.0.mo
 share/locale/fur/LC_MESSAGES/json-glib-1.0.mo
 share/locale/gl/LC_MESSAGES/json-glib-1.0.mo
@@ -360,6 +363,7 @@ share/locale/hu/LC_MESSAGES/json-glib-1.0.mo
 share/locale/id/LC_MESSAGES/json-glib-1.0.mo
 share/locale/it/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ja/LC_MESSAGES/json-glib-1.0.mo
+share/locale/ka/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ko/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ky/LC_MESSAGES/json-glib-1.0.mo
 share/locale/lt/LC_MESSAGES/json-glib-1.0.mo

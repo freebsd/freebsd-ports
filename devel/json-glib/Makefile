@@ -1,5 +1,5 @@
 PORTNAME=	json-glib
-PORTVERSION=	1.6.6
+PORTVERSION=	1.8.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gettext gnome localbase meson python pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Dtests=false
 
 PORTDOCS=	*
 
@@ -35,9 +36,5 @@ DOCS_MESON_ENABLED=	gtk_doc
 GIR_DESC=	Build introspection data
 GIR_USE=	gnome=introspection
 GIR_MESON_ENABLED=	introspection
-
-post-install:
-	@${RM} -r ${STAGEDIR}${PREFIX}/libexec/installed-tests
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/installed-tests
 
 .include <bsd.port.mk>
