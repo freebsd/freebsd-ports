@@ -50,8 +50,10 @@ LDFLAGS+=	-Wl,--undefined-version
 CONFLICTS=	libbfd
 
 OPTIONS_DEFINE=	INFO NLS RELRO
-OPTIONS_DEFAULT=	INFO
+OPTIONS_DEFAULT=	ELFU_AUTO INFO
 OPTIONS_EXCLUDE=	NLS
+OPTIONS_RADIO=	ELFUTILS_ENABLE
+OPTIONS_RADIO_ELFUTILS_ENABLE=	ELFU_AUTO ELFU_YES ELFU_NO
 OPTIONS_SUB=	yes
 
 INFO_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-no-info
@@ -61,6 +63,12 @@ NLS_CONFIGURE_ENABLE=	nls
 RELRO_CONFIGURE_ON=	--enable-relro
 RELRO_CONFIGURE_OFF=	--enable-relro=no
 RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
+NLS_CONFIGURE_ENABLE=	nls
+ELFU_AUTO_DESC=	Auto-detect pre-installed devel/elfutils
+ELFU_YES_DESC=	Depend on and install devel/elfutils
+ELFU_YESLIB_DEPENDS=	libdebuginfod.so:devel/elfutils
+ELFU_NO_DESC=	Ingore pre-installed devel/elfutils
+ELFU_NO_CONFIGURE_ON=	--without-libelf --without-debuginfod
 
 aarch64_COMMENT=	GNU binutils for ${FLAVOR} development
 
@@ -127,6 +135,11 @@ INFO_INFO=	as \
 .endif
 
 .include <bsd.port.pre.mk>
+
+# In case devel/elfutils has been previously installed.
+.if ${PORT_OPTIONS:MELFU_AUTO} && exists(${LOCALBASE}/lib/libdebuginfod.so)
+LIB_DEPENDS+=	libdebuginfod.so:devel/elfutils
+.endif
 
 # Actual earliest version may differ slightly
 .if (${ARCH} != mips && ${ARCH} != mips64 && ${ARCH} != powerpcspe && ${ARCH} != powerpc && ${ARCH} != powerpc64 && ${ARCH} != riscv64 && !defined(PKGNAMEPREFIX)) || ((${ARCH} == powerpc || ${ARCH} == powerpc64) && ${CHOSEN_COMPILER_TYPE} != gcc && !defined(PKGNAMEPREFIX))
