@@ -656,6 +656,7 @@ bin/sumagui_logo_128sq.png
 bin/sumagui_logo_905sq.jpg
 bin/sumagui_logo_905sq.png
 bin/tedana_wrapper.py
+bin/test_afni_prog_help.tcsh
 bin/tfim
 bin/timing_tool.py
 bin/to3d
