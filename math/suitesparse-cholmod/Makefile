@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	4.0.4
+PORTVERSION=	4.2.0
 CATEGORIES=	math
 
 COMMENT=	Sparse CHOLesky MODification package
@@ -7,8 +7,7 @@ WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 LICENSE=	LGPL21+
 
-LIB_DEPENDS=	libmetis.so:math/metis		\
-		libamd.so:math/suitesparse-amd		\
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd		\
 		libcamd.so:math/suitesparse-camd	\
 		libcolamd.so:math/suitesparse-colamd	\
 		libccolamd.so:math/suitesparse-ccolamd
