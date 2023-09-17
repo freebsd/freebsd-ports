@@ -1,6 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.3.2
-PORTREVISION=	1
+DISTVERSION=	16.3.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -38,7 +37,10 @@ GL_ACCOUNT=	gitlab-org
 
 USE_GITHUB=	nodefault
 # Check used version here: https://gitlab.com/gitlab-org/gitaly/-/blob/v16.3.1/Makefile#L181
-GH_TUPLE=	libgit2:libgit2:v1.5.1:build_deps_libgit2_source
+# We use here a patched version that is including some patches already merged into 1.7 branch which fixes problems with FreeBSD 14
+# https://github.com/libgit2/libgit2/commit/251408cfd4ff8112efaa5c82ec81c9574c4bf022
+# https://github.com/libgit2/libgit2/commit/213d35ea6d69598693b7f4b5b737aa98c91ba98e
+GH_TUPLE=	mfechner:libgit2:3bd8f66803c056325d5835d1fbc0c2db2ef89d06:build_deps_libgit2_source
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
