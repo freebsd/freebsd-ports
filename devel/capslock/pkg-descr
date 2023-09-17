@@ -1,0 +1,4 @@
+Capslock is a capability analysis CLI for Go packages that informs users of
+which privileged operations a given package can access. This works by
+classifying the capabilities of Go packages by following transitive calls to
+privileged standard library operations.
