@@ -1,5 +1,16 @@
 --- configure.ac.orig	2020-10-25 20:53:44 UTC
 +++ configure.ac
+@@ -181,8 +181,8 @@ AS_IF([test "${WEBP}" = "yes" ], [
+     AS_IF([pkg-config libwebpmux ], [
+         AC_MSG_RESULT(yes)
+         AC_DEFINE([HAVE_WEBP], [1], [Define to 1 if WEBP is around])
+-        TEMP_CFLAGS="$TEMP_CFLAGS "`pkg-config --cflags libwebpmux`
+-        TEMP_LIBS="$TEMP_LIBS "`pkg-config --libs libwebpmux`
++	TEMP_CPPFLAGS="$TEMP_CPPFLAGS "`pkgconf --cflags libwebpmux libwebp`
++	TEMP_LIBS="$TEMP_LIBS "`pkgconf --libs libwebpmux libwebp`
+       ],[
+         AC_MSG_RESULT(no)
+       ]
 @@ -327,15 +327,11 @@ AS_IF([test "${MYSQL}" = "no"], [
      AC_MSG_CHECKING(for MySQL)
      AC_MSG_RESULT(skipped)
