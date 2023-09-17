@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.25.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -323,6 +323,9 @@ pre-configure-SMALL_LIGHT-on:
 
 do-configure-NJS-on:
 	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
+
+post-configure-OTEL-on:
+	${CAT} ${WRKSRC_otel}/src/modules.c >${WRKSRC}/objs/ngx_otel_module_modules.c
 
 .if !target(do-install)
 do-install:

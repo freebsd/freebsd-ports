@@ -258,6 +258,7 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libre2.so:devel/re2
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
+OTEL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-otel-config
 
 PASSENGER_NGINX_VER=	6.0.18
 PASSENGER_CATEGORIES=	ruby

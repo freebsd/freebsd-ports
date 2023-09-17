@@ -1,0 +1,34 @@
+--- ../nginx-otel-f58abc0/config.orig	2023-09-16 12:52:34.000000000 -0400
++++ ../nginx-otel-f58abc0/config	2023-09-16 21:19:32.540843000 -0400
+@@ -223,7 +223,7 @@
+ ngx_feature_run=no
+ ngx_feature_incs="#include <grpc/support/log.h>"
+ ngx_feature_path="/usr/include"
+-ngx_feature_libs="-lgrpc -lgpr"
++ngx_feature_libs="-lgrpc -lgpr -lgrpc++"
+ ngx_feature_test="gpr_log_verbosity_init();"
+ 
+ autocppfeature
+@@ -236,19 +236,18 @@
+     ngx_feature_path="/usr/local/include"
+ 
+     if [ $NGX_RPATH = YES ]; then
+-        ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -lgrpc -lgpr"
++        ngx_feature_libs="-R/usr/local/lib -L/usr/local/lib -lgrpc -lgpr -lgrpc++"
+     else
+-        ngx_feature_libs="-L/usr/local/lib -lgrpc -lgpr"
++        ngx_feature_libs="-L/usr/local/lib -lgrpc -lgpr -lgrpc++"
+     fi
+ 
+     autocppfeature
+ fi
+ 
+ if [ $ngx_found = yes ]; then
+-    ngx_module_libs="$ngx_module_libs -lgrpc -lgpr"
++    ngx_module_libs="$ngx_module_libs -lgrpc -lgpr -lgrpc++"
+ fi
+ 
+-#ngx_module_libs="$ngx_module_libs -lupb -lz -lm -lrt -lssl -lcrypto"
+ ngx_module_libs="$ngx_module_libs -lz -lm -lrt -lssl -lcrypto"
+ 
+ . auto/module
