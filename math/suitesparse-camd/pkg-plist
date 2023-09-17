@@ -1,8 +1,12 @@
 include/suitesparse/camd.h
-lib/cmake/SuiteSparse/FindCAMD.cmake
+lib/cmake/CAMD/CAMDConfig.cmake
+lib/cmake/CAMD/CAMDConfigVersion.cmake
+lib/cmake/CAMD/CAMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CAMD/CAMDTargets.cmake
 lib/libcamd.a
 lib/libcamd.so
 lib/libcamd.so.3
-lib/libcamd.so.3.0.4
+lib/libcamd.so.3.2.0
+libdata/pkgconfig/CAMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/CAMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CAMD_UserGuide.pdf
