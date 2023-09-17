@@ -1,7 +1,11 @@
 include/suitesparse/ccolamd.h
-lib/cmake/SuiteSparse/FindCCOLAMD.cmake
+lib/cmake/CCOLAMD/CCOLAMDConfig.cmake
+lib/cmake/CCOLAMD/CCOLAMDConfigVersion.cmake
+lib/cmake/CCOLAMD/CCOLAMDTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/CCOLAMD/CCOLAMDTargets.cmake
 lib/libccolamd.a
 lib/libccolamd.so
 lib/libccolamd.so.3
-lib/libccolamd.so.3.0.4
+lib/libccolamd.so.3.2.0
+libdata/pkgconfig/CCOLAMD.pc
 %%PORTDOCS%%%%DOCSDIR%%/CCOLAMD_README.txt
