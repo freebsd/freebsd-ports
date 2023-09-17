@@ -26,7 +26,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		coreaddons crash dbusaddons emoticons globalaccel \
 		guiaddons holidays i18n iconthemes idletime init itemmodels \
 		itemviews jobwidgets kcmutils kdeclarative kdesu \
-		kdewebkit kio kscreenlocker kwin layer-shell-qt libkscreen \
+		kio kscreenlocker kwin layer-shell-qt libkscreen \
 		libksysguard newstuff notifications notifyconfig package parts \
 		people plasma-framework plasma-integration prison pty runner \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
