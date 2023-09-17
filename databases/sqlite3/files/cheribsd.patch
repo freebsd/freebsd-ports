@@ -1,8 +1,8 @@
 diff --git configure configure
-index c5d122423..54881245f 100755
+index 29ca76b69..f18c6601c 100755
 --- configure
 +++ configure
-@@ -11569,7 +11569,7 @@ fi
+@@ -11636,7 +11636,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to support FTS3" >&5
  $as_echo_n "checking whether to support FTS3... " >&6; }
  if test "${enable_fts3}" = "yes" ; then
@@ -33,10 +33,10 @@ index 000000000..07fb567b9
 +rm -f manifest.tmp
 +
 diff --git src/btree.c src/btree.c
-index facb951d3..f925a90d9 100644
+index 87bc0058b..6fab28dfd 100644
 --- src/btree.c
 +++ src/btree.c
-@@ -4561,6 +4561,7 @@ static int btreeCursor(
+@@ -4630,6 +4630,7 @@ static int btreeCursor(
  
    /* Now that no other errors can occur, finish filling in the BtCursor
    ** variables and link the cursor into the BtShared list.  */
@@ -44,7 +44,7 @@ index facb951d3..f925a90d9 100644
    pCur->pgnoRoot = iTable;
    pCur->iPage = -1;
    pCur->pKeyInfo = pKeyInfo;
-@@ -8023,7 +8024,7 @@ static int balance_nonroot(
+@@ -8175,7 +8176,7 @@ static int balance_nonroot(
    */
    szScratch =
         nMaxCells*sizeof(u8*)                       /* b.apCell */
@@ -53,7 +53,7 @@ index facb951d3..f925a90d9 100644
       + pBt->pageSize;                              /* aSpace1 */
  
    assert( szScratch<=7*(int)pBt->pageSize );
-@@ -8033,7 +8034,7 @@ static int balance_nonroot(
+@@ -8185,7 +8186,7 @@ static int balance_nonroot(
      goto balance_cleanup;
    }
    b.szCell = (u16*)&b.apCell[nMaxCells];
@@ -62,7 +62,7 @@ index facb951d3..f925a90d9 100644
    assert( EIGHT_BYTE_ALIGNMENT(aSpace1) );
  
    /*
-@@ -9128,6 +9129,7 @@ int sqlite3BtreeInsert(
+@@ -9306,6 +9307,7 @@ int sqlite3BtreeInsert(
          UnpackedRecord r;
          r.pKeyInfo = pCur->pKeyInfo;
          r.aMem = pX->aMem;
@@ -71,10 +71,10 @@ index facb951d3..f925a90d9 100644
          r.default_rc = 0;
          r.eqSeen = 0;
 diff --git src/build.c src/build.c
-index e243e795f..679594e11 100644
+index 9be444c3c..adb0f4c07 100644
 --- src/build.c
 +++ src/build.c
-@@ -311,7 +311,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
+@@ -304,7 +304,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
    char *zSql;
    sqlite3 *db = pParse->db;
    u32 savedDbFlags = db->mDbFlags;
@@ -82,8 +82,8 @@ index e243e795f..679594e11 100644
 +  Parse saveParse;
  
    if( pParse->nErr ) return;
-   assert( pParse->nested<10 );  /* Nesting should only be of limited depth */
-@@ -327,7 +327,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
+   if( pParse->eParseMode ) return;
+@@ -321,13 +321,13 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
      return;
    }
    pParse->nested++;
@@ -92,8 +92,6 @@ index e243e795f..679594e11 100644
    memset(PARSE_TAIL(pParse), 0, PARSE_TAIL_SZ);
    db->mDbFlags |= DBFLAG_PreferBuiltin;
    sqlite3RunParser(pParse, zSql);
-@@ -335,7 +335,7 @@ void sqlite3NestedParse(Parse *pParse, const char *zFormat, ...){
-   pParse->zErrMsg = 0;
    db->mDbFlags = savedDbFlags;
    sqlite3DbFree(db, zSql);
 -  memcpy(PARSE_TAIL(pParse), saveBuf, PARSE_TAIL_SZ);
@@ -284,11 +282,23 @@ index 04d6298db..2db30d7d5 100644
    sqlite3_mutex_leave(mem.mutex);  
  }
  
+diff --git src/pager.c src/pager.c
+index 44384de5c..c7246827c 100644
+--- src/pager.c
++++ src/pager.c
+@@ -4828,6 +4828,7 @@ int sqlite3PagerOpen(
+   pPager->sjfd = (sqlite3_file*)pPtr;     pPtr += journalFileSize;
+   pPager->jfd =  (sqlite3_file*)pPtr;     pPtr += journalFileSize;
+   assert( EIGHT_BYTE_ALIGNMENT(pPager->jfd) );
++  pPtr = __builtin_assume_aligned(pPtr, SQLITE_MALLOC_ALIGNMENT);
+   memcpy(pPtr, &pPager, sizeof(pPager));  pPtr += sizeof(pPager);
+ 
+   /* Fill in the Pager.zFilename and pPager.zQueryParam fields */
 diff --git src/pcache1.c src/pcache1.c
-index a93b14689..aa77ffac9 100644
+index adbe95395..7d1143c1e 100644
 --- src/pcache1.c
 +++ src/pcache1.c
-@@ -771,7 +771,7 @@ static sqlite3_pcache *pcache1Create(int szPage, int szExtra, int bPurgeable){
+@@ -767,7 +767,7 @@ static sqlite3_pcache *pcache1Create(int szPage, int szExtra, int bPurgeable){
    int sz;               /* Bytes of memory required to allocate the new cache */
  
    assert( (szPage & (szPage-1))==0 && szPage>=512 && szPage<=65536 );
@@ -298,10 +308,10 @@ index a93b14689..aa77ffac9 100644
    sz = sizeof(PCache1) + sizeof(PGroup)*pcache1.separateCache;
    pCache = (PCache1 *)sqlite3MallocZero(sz);
 diff --git src/sqliteInt.h src/sqliteInt.h
-index 45e345346..0a47de632 100644
+index 2c893770b..242dd4240 100644
 --- src/sqliteInt.h
 +++ src/sqliteInt.h
-@@ -607,6 +607,9 @@
+@@ -619,6 +619,9 @@
  ** hack only.
  */
  #ifdef SQLITE_INLINE_MEMCPY
@@ -311,7 +321,7 @@ index 45e345346..0a47de632 100644
  # define memcpy(D,S,N) {char*xxd=(char*)(D);const char*xxs=(const char*)(S);\
                          int xxn=(N);while(xxn-->0)*(xxd++)=*(xxs++);}
  #endif
-@@ -936,6 +939,14 @@ typedef INT16_TYPE LogEst;
+@@ -942,6 +945,14 @@ typedef INT16_TYPE LogEst;
  #define LARGEST_UINT64 (0xffffffff|(((u64)0xffffffff)<<32))
  #define SMALLEST_INT64 (((i64)-1) - LARGEST_INT64)
  
@@ -326,7 +336,7 @@ index 45e345346..0a47de632 100644
  /*
  ** Round up a number to the next larger multiple of 8.  This is used
  ** to force 8-byte alignment on 64-bit architectures.
-@@ -945,18 +956,39 @@ typedef INT16_TYPE LogEst;
+@@ -951,18 +962,39 @@ typedef INT16_TYPE LogEst;
  ** ROUND8P() assumes that the argument is already an integer number of
  ** pointers in size, and so it is a no-op on systems where the pointer
  ** size is 8.
@@ -369,25 +379,40 @@ index 45e345346..0a47de632 100644
  
  /*
  ** Assert that the pointer X is aligned to an 8-byte boundary.  This
-@@ -970,7 +1002,12 @@ typedef INT16_TYPE LogEst;
+@@ -972,12 +1004,17 @@ typedef INT16_TYPE LogEst;
+ ** Except, if SQLITE_4_BYTE_ALIGNED_MALLOC is defined, then the
+ ** underlying malloc() implementation might return us 4-byte aligned
+ ** pointers.  In that case, only verify 4-byte alignment.
++**
++** For CHERI support we want 16-byte alignment. We also do this for native to
++** make debugging easier. The macro name is a lie anyway so I don't see why we
++** should't lie just a little bit more.
+ */
  #ifdef SQLITE_4_BYTE_ALIGNED_MALLOC
- # define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&3)==0)
+-# define EIGHT_BYTE_ALIGNMENT(X)   ((((uptr)(X) - (uptr)0)&3)==0)
++# define SQLITE_MALLOC_ALIGNMENT 4
  #else
--# define EIGHT_BYTE_ALIGNMENT(X)   ((((char*)(X) - (char*)0)&7)==0)
-+/*
-+ * For CHERI support we want 16-byte alignment. We also do this for native to
-+ * make debugging easier. The macro name is a lie anyway so I don't see why we
-+ * should't lie just a little bit more.
-+ */
-+# define EIGHT_BYTE_ALIGNMENT(X) ALIGNED_TO(X, SQLITE_DEFAULT_ALIGNMENT)
+-# define EIGHT_BYTE_ALIGNMENT(X)   ((((uptr)(X) - (uptr)0)&7)==0)
++# define SQLITE_MALLOC_ALIGNMENT SQLITE_DEFAULT_ALIGNMENT
  #endif
++#define EIGHT_BYTE_ALIGNMENT(X) ALIGNED_TO(X, SQLITE_MALLOC_ALIGNMENT)
  
  /*
+ ** Disable MMAP on platforms where it is known to not work
+@@ -3834,7 +3871,7 @@ struct Parse {
+ #define PARSE_HDR_SZ (offsetof(Parse,aTempReg)-offsetof(Parse,zErrMsg)) /* Recursive part w/o aColCache*/
+ #define PARSE_RECURSE_SZ offsetof(Parse,sLastToken)    /* Recursive part */
+ #define PARSE_TAIL_SZ (sizeof(Parse)-PARSE_RECURSE_SZ) /* Non-recursive part */
+-#define PARSE_TAIL(X) (((char*)(X))+PARSE_RECURSE_SZ)  /* Pointer to tail */
++#define PARSE_TAIL(X) (&(X)->sLastToken)  /* Pointer to tail */
+ 
+ /*
+ ** Return true if currently inside an sqlite3_declare_vtab() call.
 diff --git src/vdbe.c src/vdbe.c
-index ef9a23f64..20eea3cb3 100644
+index 2aa4e6df2..c3322d972 100644
 --- src/vdbe.c
 +++ src/vdbe.c
-@@ -265,9 +265,10 @@ static VdbeCursor *allocateCursor(
+@@ -268,9 +268,10 @@ static VdbeCursor *allocateCursor(
  
    int nByte;
    VdbeCursor *pCx = 0;
@@ -401,7 +426,7 @@ index ef9a23f64..20eea3cb3 100644
  
    assert( iCur>=0 && iCur<p->nCursor );
    if( p->apCsr[iCur] ){ /*OPTIMIZATION-IF-FALSE*/
-@@ -300,8 +301,9 @@ static VdbeCursor *allocateCursor(
+@@ -303,8 +304,9 @@ static VdbeCursor *allocateCursor(
    pCx->nField = nField;
    pCx->aOffset = &pCx->aType[nField];
    if( eCurType==CURTYPE_BTREE ){
@@ -413,7 +438,7 @@ index ef9a23f64..20eea3cb3 100644
      sqlite3BtreeCursorZero(pCx->uc.pCursor);
    }
    return pCx;
-@@ -731,6 +733,7 @@ int sqlite3VdbeExec(
+@@ -730,6 +732,7 @@ int sqlite3VdbeExec(
    u64 nProgressLimit;        /* Invoke xProgress() when nVmStep reaches this */
  #endif
    Mem *aMem = p->aMem;       /* Copy of p->aMem */
@@ -421,7 +446,7 @@ index ef9a23f64..20eea3cb3 100644
    Mem *pIn1 = 0;             /* 1st input operand */
    Mem *pIn2 = 0;             /* 2nd input operand */
    Mem *pIn3 = 0;             /* 3rd input operand */
-@@ -1167,6 +1170,7 @@ case OP_Halt: {
+@@ -1180,6 +1183,7 @@ case OP_Halt: {
      }
      aOp = p->aOp;
      aMem = p->aMem;
@@ -429,15 +454,15 @@ index ef9a23f64..20eea3cb3 100644
      pOp = &aOp[pcx];
      break;
    }
-@@ -4644,6 +4648,7 @@ case OP_SeekGT: {       /* jump, in3, group */
+@@ -4748,6 +4752,7 @@ case OP_SeekGT: {       /* jump, in3, group, ncycle */
      assert( oc!=OP_SeekLT || r.default_rc==+1 );
  
      r.aMem = &aMem[pOp->p3];
 +    assert( EIGHT_BYTE_ALIGNMENT(r.aMem) );
  #ifdef SQLITE_DEBUG
-     { int i; for(i=0; i<r.nField; i++) assert( memIsValid(&r.aMem[i]) ); }
- #endif
-@@ -5026,6 +5031,7 @@ case OP_Found: {        /* jump, in3 */
+     {
+       int i;
+@@ -5176,6 +5181,7 @@ case OP_Found: {        /* jump, in3, ncycle */
    pC->seekOp = pOp->opcode;
  #endif
    r.aMem = &aMem[pOp->p3];
@@ -445,7 +470,7 @@ index ef9a23f64..20eea3cb3 100644
    assert( pC->eCurType==CURTYPE_BTREE );
    assert( pC->uc.pCursor!=0 );
    assert( pC->isTable==0 );
-@@ -6174,6 +6180,7 @@ case OP_IdxInsert: {        /* in2 */
+@@ -6338,6 +6344,7 @@ case OP_IdxInsert: {        /* in2 */
    x.nKey = pIn2->n;
    x.pKey = pIn2->z;
    x.aMem = aMem + pOp->p3;
@@ -453,7 +478,7 @@ index ef9a23f64..20eea3cb3 100644
    x.nMem = (u16)pOp->p4.i;
    rc = sqlite3BtreeInsert(pC->uc.pCursor, &x,
         (pOp->p5 & (OPFLAG_APPEND|OPFLAG_SAVEPOSITION|OPFLAG_PREFORMAT)), 
-@@ -6244,6 +6251,7 @@ case OP_IdxDelete: {
+@@ -6408,6 +6415,7 @@ case OP_IdxDelete: {
    r.nField = (u16)pOp->p3;
    r.default_rc = 0;
    r.aMem = &aMem[pOp->p2];
@@ -461,7 +486,7 @@ index ef9a23f64..20eea3cb3 100644
    rc = sqlite3BtreeIndexMoveto(pCrsr, &r, &res);
    if( rc ) goto abort_due_to_error;
    if( res==0 ){
-@@ -6432,6 +6440,8 @@ case OP_IdxGE:  {       /* jump */
+@@ -6596,6 +6604,8 @@ case OP_IdxGE:  {       /* jump, ncycle */
      r.default_rc = 0;
    }
    r.aMem = &aMem[pOp->p3];
@@ -470,7 +495,7 @@ index ef9a23f64..20eea3cb3 100644
  #ifdef SQLITE_DEBUG
    {
      int i;
-@@ -7024,6 +7034,8 @@ case OP_Program: {        /* jump */
+@@ -7189,6 +7199,8 @@ case OP_Program: {        /* jump */
      pFrame->nChildCsr = pProgram->nCsr;
      pFrame->pc = (int)(pOp - aOp);
      pFrame->aMem = p->aMem;
@@ -479,7 +504,7 @@ index ef9a23f64..20eea3cb3 100644
      pFrame->nMem = p->nMem;
      pFrame->apCsr = p->apCsr;
      pFrame->nCursor = p->nCursor;
-@@ -7038,6 +7050,7 @@ case OP_Program: {        /* jump */
+@@ -7200,6 +7212,7 @@ case OP_Program: {        /* jump */
  #endif
  
      pEnd = &VdbeFrameMem(pFrame)[pFrame->nChildMem];
@@ -487,7 +512,7 @@ index ef9a23f64..20eea3cb3 100644
      for(pMem=VdbeFrameMem(pFrame); pMem!=pEnd; pMem++){
        pMem->flags = MEM_Undefined;
        pMem->db = db;
-@@ -7062,6 +7075,7 @@ case OP_Program: {        /* jump */
+@@ -7224,6 +7237,7 @@ case OP_Program: {        /* jump */
    p->nChange = 0;
    p->pFrame = pFrame;
    p->aMem = aMem = VdbeFrameMem(pFrame);
@@ -496,10 +521,10 @@ index ef9a23f64..20eea3cb3 100644
    p->nCursor = (u16)pFrame->nChildCsr;
    p->apCsr = (VdbeCursor **)&aMem[p->nMem];
 diff --git src/vdbeInt.h src/vdbeInt.h
-index 0e17c7d91..8dd1057ac 100644
+index b901a0180..daff17f9c 100644
 --- src/vdbeInt.h
 +++ src/vdbeInt.h
-@@ -212,6 +212,7 @@ struct sqlite3_value {
+@@ -211,6 +211,7 @@ struct sqlite3_value {
      int nZero;          /* Extra zero bytes when MEM_Zero and MEM_Blob set */
      const char *zPType; /* Pointer type when MEM_Term|MEM_Subtype|MEM_Null */
      FuncDef *pDef;      /* Used only when flags==MEM_Agg */
@@ -508,10 +533,10 @@ index 0e17c7d91..8dd1057ac 100644
    char *z;            /* String or BLOB value */
    int n;              /* Number of characters in string value, excluding '\0' */
 diff --git src/vdbeapi.c src/vdbeapi.c
-index 4e719ede3..c661f19cb 100644
+index d8fcda96d..77b111df4 100644
 --- src/vdbeapi.c
 +++ src/vdbeapi.c
-@@ -1124,10 +1124,13 @@ static const Mem *columnNullValue(void){
+@@ -1151,10 +1151,13 @@ static const Mem *columnNullValue(void){
    ** that a Mem structure is located on an 8-byte boundary. To prevent
    ** these assert()s from failing, when building with SQLITE_DEBUG defined
    ** using gcc, we force nullMem to be 8-byte aligned using the magical
@@ -528,10 +553,10 @@ index 4e719ede3..c661f19cb 100644
      = {
          /* .u          = */ {0},
 diff --git src/vdbeaux.c src/vdbeaux.c
-index 7c3be404e..3e327ff5b 100644
+index ecbf2d892..32fe3d97b 100644
 --- src/vdbeaux.c
 +++ src/vdbeaux.c
-@@ -2170,6 +2170,7 @@ int sqlite3VdbeNextOpcode(
+@@ -2280,6 +2280,7 @@ int sqlite3VdbeNextOpcode(
  void sqlite3VdbeFrameDelete(VdbeFrame *p){
    int i;
    Mem *aMem = VdbeFrameMem(p);
@@ -539,7 +564,7 @@ index 7c3be404e..3e327ff5b 100644
    VdbeCursor **apCsr = (VdbeCursor **)&aMem[p->nChildMem];
    assert( sqlite3VdbeFrameIsValid(p) );
    for(i=0; i<p->nChildCsr; i++){
-@@ -2524,6 +2525,7 @@ void sqlite3VdbeMakeReady(
+@@ -2633,6 +2634,7 @@ void sqlite3VdbeMakeReady(
    */
    x.nNeeded = 0;
    p->aMem = allocSpace(&x, 0, nMem*sizeof(Mem));
@@ -547,7 +572,7 @@ index 7c3be404e..3e327ff5b 100644
    p->aVar = allocSpace(&x, 0, nVar*sizeof(Mem));
    p->apArg = allocSpace(&x, 0, nArg*sizeof(Mem*));
    p->apCsr = allocSpace(&x, 0, nCursor*sizeof(VdbeCursor*));
-@@ -2621,6 +2623,7 @@ int sqlite3VdbeFrameRestore(VdbeFrame *pFrame){
+@@ -2718,6 +2720,7 @@ int sqlite3VdbeFrameRestore(VdbeFrame *pFrame){
    v->aOp = pFrame->aOp;
    v->nOp = pFrame->nOp;
    v->aMem = pFrame->aMem;
@@ -555,7 +580,7 @@ index 7c3be404e..3e327ff5b 100644
    v->nMem = pFrame->nMem;
    v->apCsr = pFrame->apCsr;
    v->nCursor = pFrame->nCursor;
-@@ -4014,6 +4017,7 @@ UnpackedRecord *sqlite3VdbeAllocUnpackedRecord(
+@@ -4113,6 +4116,7 @@ UnpackedRecord *sqlite3VdbeAllocUnpackedRecord(
    p = (UnpackedRecord *)sqlite3DbMallocRaw(pKeyInfo->db, nByte);
    if( !p ) return 0;
    p->aMem = (Mem*)&((char*)p)[ROUND8P(sizeof(UnpackedRecord))];
@@ -564,10 +589,10 @@ index 7c3be404e..3e327ff5b 100644
    p->pKeyInfo = pKeyInfo;
    p->nField = pKeyInfo->nKeyField + 1;
 diff --git src/vdbemem.c src/vdbemem.c
-index fd4ab0ccc..5fdcacd73 100644
+index d3cd55ba9..933c7f6c3 100644
 --- src/vdbemem.c
 +++ src/vdbemem.c
-@@ -1399,6 +1399,7 @@ static sqlite3_value *valueNew(sqlite3 *db, struct ValueNewStat4Ctx *p){
+@@ -1417,6 +1417,7 @@ static sqlite3_value *valueNew(sqlite3 *db, struct ValueNewStat4Ctx *p){
            assert( pRec->pKeyInfo->nAllField==nCol );
            assert( pRec->pKeyInfo->enc==ENC(db) );
            pRec->aMem = (Mem *)((u8*)pRec + ROUND8(sizeof(UnpackedRecord)));
@@ -575,7 +600,7 @@ index fd4ab0ccc..5fdcacd73 100644
            for(i=0; i<nCol; i++){
              pRec->aMem[i].flags = MEM_Null;
              pRec->aMem[i].db = db;
-@@ -1911,6 +1912,7 @@ void sqlite3Stat4ProbeFree(UnpackedRecord *pRec){
+@@ -1937,6 +1938,7 @@ void sqlite3Stat4ProbeFree(UnpackedRecord *pRec){
      int i;
      int nCol = pRec->pKeyInfo->nAllField;
      Mem *aMem = pRec->aMem;
