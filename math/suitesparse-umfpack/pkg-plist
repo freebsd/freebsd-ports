@@ -1,9 +1,13 @@
 include/suitesparse/umfpack.h
-lib/cmake/SuiteSparse/FindUMFPACK.cmake
+lib/cmake/UMFPACK/UMFPACKConfig.cmake
+lib/cmake/UMFPACK/UMFPACKConfigVersion.cmake
+lib/cmake/UMFPACK/UMFPACKTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/UMFPACK/UMFPACKTargets.cmake
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.6
-lib/libumfpack.so.6.1.1
+lib/libumfpack.so.6.2.0
+libdata/pkgconfig/UMFPACK.pc
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_QuickStart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_UserGuide.pdf
