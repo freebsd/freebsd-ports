@@ -1,7 +1,7 @@
 # PORTNAME block
 PORTNAME=	motion
 PORTVERSION=	4.3.2
-PORTREVISION=	7
+PORTREVISION=	8
 DISTVERSIONPREFIX=	release-
 CATEGORIES=	multimedia
 
@@ -13,8 +13,6 @@ WWW=		https://motion-project.github.io/
 # License block
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
-
-BROKEN=	fails to compile: undefined symbol: WebP*
 
 # Dependencies
 LIB_DEPENDS=	libwebp.so:graphics/webp \
