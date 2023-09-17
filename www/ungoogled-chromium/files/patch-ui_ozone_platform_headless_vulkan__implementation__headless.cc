@@ -1,6 +1,6 @@
---- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2022-12-02 17:56:32 UTC
+--- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2023-09-17 07:59:53 UTC
 +++ ui/ozone/platform/headless/vulkan_implementation_headless.cc
-@@ -155,7 +155,7 @@ VulkanImplementationHeadless::CreateImageFromGpuMemory
+@@ -141,7 +141,7 @@ VulkanImplementationHeadless::CreateImageFromGpuMemory
        VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT |
        VK_IMAGE_USAGE_TRANSFER_DST_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT;
    auto tiling = VK_IMAGE_TILING_OPTIMAL;

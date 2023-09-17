@@ -1,6 +1,6 @@
---- base/base_switches.h.orig	2023-05-05 12:12:41 UTC
+--- base/base_switches.h.orig	2023-09-17 07:59:53 UTC
 +++ base/base_switches.h
-@@ -57,7 +57,7 @@ extern const char kEnableIdleTracing[];
+@@ -56,7 +56,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  

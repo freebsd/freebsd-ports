@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2023-08-18 10:26:52 UTC
+--- content/public/common/content_features.cc.orig	2023-09-17 07:59:53 UTC
 +++ content/public/common/content_features.cc
 @@ -52,7 +52,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
               "AudioServiceOutOfProcess",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -534,7 +534,7 @@ BASE_FEATURE(kNetworkQualityEstimatorWebHoldback,
+@@ -507,7 +507,7 @@ BASE_FEATURE(kNetworkQualityEstimatorWebHoldback,
  // (activated by kUserAgentClientHint)
  BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -27,7 +27,7 @@
  // Supports proxying thread type changes of renderer processes to browser
  // process and having browser process handle adjusting thread properties (nice
  // value, c-group, latency sensitivity...) for renderers which have sandbox
-@@ -1406,7 +1406,7 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -1408,7 +1408,7 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -36,7 +36,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1465,7 +1465,11 @@ BASE_FEATURE(kWebUICodeCache,
+@@ -1466,7 +1466,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

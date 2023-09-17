@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2023-09-01 04:52:40 UTC
+--- chrome/browser/flag_descriptions.h.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -1418,7 +1418,7 @@ extern const char kOmniboxUpdatedConnectionSecurityInd
+@@ -1455,7 +1455,7 @@ extern const char kOmnibox2023RefreshConnectionSecurit
  extern const char kWebUIOmniboxPopupName[];
  extern const char kWebUIOmniboxPopupDescription[];
  
@@ -9,7 +9,7 @@
  extern const char kWebUiSystemFontName[];
  extern const char kWebUiSystemFontDescription[];
  #endif
-@@ -3934,7 +3934,7 @@ extern const char kLacrosMergeIcuDataFileName[];
+@@ -4039,7 +4039,7 @@ extern const char kLacrosMergeIcuDataFileName[];
  extern const char kLacrosMergeIcuDataFileDescription[];
  #endif  // #if BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -18,7 +18,7 @@
  extern const char kGetAllScreensMediaName[];
  extern const char kGetAllScreensMediaDescription[];
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-@@ -4064,14 +4064,14 @@ extern const char kSearchWebInSidePanelDescription[];
+@@ -4169,14 +4169,14 @@ extern const char kSearchWebInSidePanelDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -35,7 +35,7 @@
  extern const char kWebShareName[];
  extern const char kWebShareDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -4081,7 +4081,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
+@@ -4186,7 +4186,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
  extern const char kWebBluetoothConfirmPairingSupportDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -44,7 +44,7 @@
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -4091,7 +4091,7 @@ extern const char kOzonePlatformHintName[];
+@@ -4196,7 +4196,7 @@ extern const char kOzonePlatformHintName[];
  extern const char kOzonePlatformHintDescription[];
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -53,7 +53,7 @@
  extern const char kSkipUndecryptablePasswordsName[];
  extern const char kSkipUndecryptablePasswordsDescription[];
  
-@@ -4099,13 +4099,13 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
+@@ -4204,13 +4204,13 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
  extern const char kForcePasswordInitialSyncWhenDecryptionFailsDescription[];
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
@@ -69,16 +69,16 @@
  extern const char kFollowingFeedSidepanelName[];
  extern const char kFollowingFeedSidepanelDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -4121,7 +4121,7 @@ extern const char kEnableProtoApiForClassifyUrlName[];
+@@ -4221,7 +4221,7 @@ extern const char kEnableProtoApiForClassifyUrlName[];
  extern const char kEnableProtoApiForClassifyUrlDescription[];
  #endif  // BUILDFLAG(ENABLE_SUPERVISED_USERS)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- extern const char kUseOutOfProcessVideoDecodingName[];
- extern const char kUseOutOfProcessVideoDecodingDescription[];
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -4195,7 +4195,7 @@ extern const char kElasticOverscrollDescription[];
+ extern const char kEnableNetworkServiceSandboxName[];
+ extern const char kEnableNetworkServiceSandboxDescription[];
+ 
+@@ -4303,7 +4303,7 @@ extern const char kElasticOverscrollDescription[];
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
@@ -87,7 +87,7 @@
  extern const char kUIDebugToolsName[];
  extern const char kUIDebugToolsDescription[];
  
-@@ -4213,7 +4213,7 @@ extern const char kSigninInterceptBubbleV2Description[
+@@ -4312,7 +4312,7 @@ extern const char kSyncPollImmediatelyOnEveryStartupDe
  #endif
  
  #if BUILDFLAG(IS_WIN) || (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || \
@@ -96,3 +96,12 @@
  extern const char kDataRetentionPoliciesDisableSyncTypesNeededName[];
  extern const char kDataRetentionPoliciesDisableSyncTypesNeededDescription[];
  #endif
+@@ -4339,7 +4339,7 @@ extern const char kEnableAudioFocusEnforcementName[];
+ extern const char kEnableAudioFocusEnforcementDescription[];
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ extern const char kThirdPartyProfileManagementName[];
+ extern const char kThirdPartyProfileManagementDescription[];
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

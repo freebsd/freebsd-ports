@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -462,13 +462,13 @@
+@@ -469,13 +469,13 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -501,7 +501,7 @@
+@@ -508,7 +508,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -25,7 +25,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -706,7 +706,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
+@@ -713,7 +713,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
  const char kPluginsShowDetails[] = "plugins.show_details";
  
  // Deprecated 02/2023.
@@ -34,7 +34,7 @@
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -949,7 +949,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
+@@ -1004,7 +1004,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Deprecated 02/2023.
@@ -43,7 +43,7 @@
    registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1100,7 +1100,7 @@ void RegisterProfilePrefsForMigration(
+@@ -1160,7 +1160,7 @@ void RegisterProfilePrefsForMigration(
    registry->RegisterIntegerPref(kProfileAvatarTutorialShown, 0);
  #endif
  
@@ -52,7 +52,7 @@
    // Deprecated 08/2022.
    registry->RegisterBooleanPref(prefs::kUsesSystemThemeDeprecated, false);
  #endif
-@@ -1855,12 +1855,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1957,12 +1957,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -67,7 +67,7 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
  
-@@ -2013,7 +2013,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+@@ -2120,7 +2120,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Added 02/2023
@@ -76,7 +76,7 @@
    local_state->ClearPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -2178,7 +2178,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
+@@ -2290,7 +2290,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
    profile_prefs->ClearPref(kProfileAvatarTutorialShown);
  #endif
  

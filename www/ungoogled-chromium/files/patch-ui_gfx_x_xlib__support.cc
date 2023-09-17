@@ -1,17 +1,17 @@
---- ui/gfx/x/xlib_support.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/gfx/x/xlib_support.cc.orig	2023-09-17 07:59:53 UTC
 +++ ui/gfx/x/xlib_support.cc
 @@ -38,10 +38,18 @@ void InitXlib() {
    if (xlib_loader->loaded())
      return;
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  CHECK(xlib_loader->Load("libX11.so"));
 +#else
    CHECK(xlib_loader->Load("libX11.so.6"));
 +#endif
  
    auto* xlib_xcb_loader = GetXlibXcbLoader();
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  CHECK(xlib_xcb_loader->Load("libX11-xcb.so"));
 +#else
    CHECK(xlib_xcb_loader->Load("libX11-xcb.so.1"));

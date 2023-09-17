@@ -1,6 +1,6 @@
---- ui/base/ime/fake_text_input_client.h.orig	2023-05-05 12:12:41 UTC
+--- ui/base/ime/fake_text_input_client.h.orig	2023-09-17 07:59:53 UTC
 +++ ui/base/ime/fake_text_input_client.h
-@@ -73,7 +73,7 @@ class FakeTextInputClient : public TextInputClient {
+@@ -74,7 +74,7 @@ class FakeTextInputClient : public TextInputClient {
    void SetTextEditCommandForNextKeyEvent(TextEditCommand command) override;
    ukm::SourceId GetClientSourceForMetrics() const override;
    bool ShouldDoLearning() override;

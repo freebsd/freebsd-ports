@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut_manager.cc
-@@ -436,7 +436,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
+@@ -434,7 +434,7 @@ std::unique_ptr<ShortcutInfo> WebAppShortcutManager::B
      }
    }
  

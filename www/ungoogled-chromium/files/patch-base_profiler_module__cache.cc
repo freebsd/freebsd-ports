@@ -1,6 +1,6 @@
---- base/profiler/module_cache.cc.orig	2023-04-08 11:38:38 UTC
+--- base/profiler/module_cache.cc.orig	2023-09-17 07:59:53 UTC
 +++ base/profiler/module_cache.cc
-@@ -37,7 +37,7 @@ std::string TransformModuleIDToSymbolServerFormat(Stri
+@@ -52,7 +52,7 @@ std::string TransformModuleIDToSymbolServerFormat(Stri
    // Android and Linux Chrome builds use the "breakpad" format to index their
    // build id, so we transform the build id for these platforms. All other
    // platforms keep their symbols indexed by the original build ID.

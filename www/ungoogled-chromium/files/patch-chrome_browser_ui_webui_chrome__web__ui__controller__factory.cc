@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -213,7 +213,7 @@
+@@ -214,7 +214,7 @@
  #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
  #endif
  
-@@ -239,17 +239,17 @@
+@@ -240,17 +240,17 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -30,7 +30,7 @@
  #include "chrome/browser/ui/webui/connectors_internals/connectors_internals_ui.h"
  #endif
  
-@@ -399,7 +399,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -403,7 +403,7 @@ bool IsAboutUI(const GURL& url) {
  #if !BUILDFLAG(IS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -39,7 +39,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -665,7 +665,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -668,7 +668,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIMobileSetupHost)
      return &NewWebUI<ash::cellular_setup::MobileSetupUI>;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -48,7 +48,7 @@
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -727,7 +727,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -730,7 +730,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -57,7 +57,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -794,27 +794,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -797,27 +797,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

@@ -1,6 +1,6 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
-@@ -75,7 +75,7 @@
+@@ -80,7 +80,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_service_factory.h"
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
          // BUILDFLAG(IS_WIN)
-@@ -124,7 +124,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
+@@ -129,7 +129,7 @@ std::unique_ptr<KeyedService> BuildSyncService(
  // TODO(crbug.com/1052397): Reassess whether the following block needs to be
  // included in lacros-chrome once build flag switch of lacros-chrome is
  // complete.
@@ -18,9 +18,9 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
-@@ -252,7 +252,7 @@ SyncServiceFactory::SyncServiceFactory()
-   DependsOn(ThemeServiceFactory::GetInstance());
- #endif  // !BUILDFLAG(IS_ANDROID)
+@@ -251,7 +251,7 @@ SyncServiceFactory::SyncServiceFactory()
+   DependsOn(PasswordStoreFactory::GetInstance());
+   DependsOn(PowerBookmarkServiceFactory::GetInstance());
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

@@ -1,6 +1,6 @@
---- net/BUILD.gn.orig	2023-08-18 10:26:52 UTC
+--- net/BUILD.gn.orig	2023-09-17 07:59:53 UTC
 +++ net/BUILD.gn
-@@ -107,7 +107,7 @@ net_configs = [
+@@ -122,7 +122,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1235,6 +1235,19 @@ component("net") {
+@@ -1244,6 +1244,19 @@ component("net") {
      deps += [ "//third_party/xdg_shared_mime_info" ]
    }
  
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1395,7 +1408,7 @@ component("net") {
+@@ -1399,7 +1412,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -38,7 +38,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2875,7 +2888,7 @@ test("net_unittests") {
+@@ -2893,7 +2906,7 @@ test("net_unittests") {
      ]
    }
  
@@ -47,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2943,6 +2956,10 @@ test("net_unittests") {
+@@ -2961,6 +2974,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -58,7 +58,7 @@
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -3029,7 +3046,7 @@ test("net_unittests") {
+@@ -3043,7 +3060,7 @@ test("net_unittests") {
      ]
    }
  
@@ -67,7 +67,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3165,7 +3182,7 @@ test("net_unittests") {
+@@ -3178,7 +3195,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

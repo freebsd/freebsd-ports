@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2023-08-18 10:26:52 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2023-09-17 07:59:53 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -21,7 +21,7 @@ BASE_FEATURE(kUseClientConfigIPH,
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIPHAutofillFeedbackNewBadgeFeature,
               "IPH_AutofillFeedbackNewBadge",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -508,7 +508,8 @@ BASE_FEATURE(kIPHiOSPromoPostRestoreDefaultBrowserFeat
+@@ -516,7 +516,8 @@ BASE_FEATURE(kIPHiOSPromoPostRestoreDefaultBrowserFeat
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

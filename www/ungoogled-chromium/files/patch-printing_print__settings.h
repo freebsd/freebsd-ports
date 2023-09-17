@@ -1,4 +1,4 @@
---- printing/print_settings.h.orig	2023-05-05 12:12:41 UTC
+--- printing/print_settings.h.orig	2023-09-17 07:59:53 UTC
 +++ printing/print_settings.h
 @@ -21,7 +21,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -27,7 +27,7 @@
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -377,7 +377,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -381,7 +381,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  

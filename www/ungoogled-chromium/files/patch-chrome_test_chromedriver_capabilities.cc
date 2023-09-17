@@ -1,6 +1,6 @@
---- chrome/test/chromedriver/capabilities.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/test/chromedriver/capabilities.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/test/chromedriver/capabilities.cc
-@@ -355,7 +355,11 @@ Status ParseMobileEmulation(const base::Value& option,
+@@ -346,7 +346,11 @@ Status ParseMobileEmulation(const base::Value& option,
                          "'version' field of type string");
          }
  
@@ -12,7 +12,7 @@
        }
  
        client_hints.brands = std::move(brands);
-@@ -392,7 +396,11 @@ Status ParseMobileEmulation(const base::Value& option,
+@@ -384,7 +388,11 @@ Status ParseMobileEmulation(const base::Value& option,
                          "a 'version' field of type string");
          }
  

@@ -1,10 +1,10 @@
---- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-04-08 11:38:38 UTC
+--- base/allocator/partition_allocator/starscan/stack/stack.cc.orig	2023-09-17 07:59:53 UTC
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
 @@ -18,6 +18,10 @@
  #include <pthread.h>
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include <pthread_np.h>
 +#endif
 +
