@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.12.1
-PORTREVISION=	1
+DISTVERSION=	2.13.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +19,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.2 \
 		aho-corasick-1.0.2 \
 		android_system_properties-0.1.5 \
-		anstream-0.3.2 \
+		anstream-0.5.0 \
 		anstyle-1.0.1 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
+		anstyle-wincon-2.1.0 \
 		anyhow-1.0.68 \
 		arc-swap-1.6.0 \
 		arrayvec-0.5.2 \
@@ -32,7 +31,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		atoi-2.0.0 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bitflags-2.3.3 \
 		bstr-1.3.0 \
 		btoi-0.4.2 \
 		bumpalo-3.11.1 \
@@ -45,10 +43,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
-		clap-4.3.15 \
-		clap-help-0.5.0 \
-		clap_builder-4.3.15 \
-		clap_derive-4.3.12 \
+		clap-4.4.3 \
+		clap-help-0.6.2 \
+		clap_builder-4.4.2 \
+		clap_derive-4.4.2 \
 		clap_lex-0.5.0 \
 		cli-log-2.0.0 \
 		clru-0.6.1 \
@@ -61,7 +59,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		crokey-0.4.3 \
 		crokey-proc_macros-0.4.0 \
 		crossbeam-0.8.2 \
-		crossbeam-channel-0.5.6 \
+		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.13 \
 		crossbeam-queue-0.3.8 \
@@ -79,8 +77,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-sys-next-0.1.2 \
 		dunce-1.0.3 \
 		either-1.8.0 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
 		fastrand-1.8.0 \
 		file-size-1.0.3 \
 		filetime-0.2.19 \
@@ -88,7 +84,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		form_urlencoded-1.1.0 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.8 \
-		gix-0.37.1 \
+		gix-0.37.2 \
 		gix-actor-0.17.2 \
 		gix-attributes-0.8.3 \
 		gix-bitmap-0.2.1 \
@@ -98,7 +94,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		gix-config-value-0.10.1 \
 		gix-credentials-0.9.2 \
 		gix-date-0.4.3 \
-		gix-diff-0.26.2 \
+		gix-diff-0.26.3 \
 		gix-discover-0.13.1 \
 		gix-features-0.26.5 \
 		gix-glob-0.5.5 \
@@ -107,7 +103,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		gix-index-0.12.4 \
 		gix-lock-3.0.2 \
 		gix-mailmap-0.9.3 \
-		gix-object-0.26.3 \
+		gix-object-0.26.4 \
 		gix-odb-0.40.2 \
 		gix-pack-0.30.3 \
 		gix-path-0.7.2 \
@@ -126,7 +122,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		hashbrown-0.13.2 \
 		heck-0.4.0 \
 		hermit-abi-0.2.6 \
-		hermit-abi-0.3.2 \
 		hex-0.4.3 \
 		home-0.5.4 \
 		human_format-1.0.3 \
@@ -139,17 +134,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		io-close-0.3.7 \
-		is-terminal-0.4.9 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
-		lazy-regex-3.0.0 \
-		lazy-regex-proc_macros-3.0.0 \
+		lazy-regex-3.0.1 \
+		lazy-regex-proc_macros-3.0.1 \
 		libc-0.2.147 \
 		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.4.3 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
@@ -189,7 +182,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-automata-0.3.1 \
 		regex-syntax-0.7.3 \
 		remove_dir_all-0.5.3 \
-		rustix-0.38.4 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
@@ -212,7 +204,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-2.0.18 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		termimad-0.23.1 \
+		termimad-0.23.2 \
 		terminal-light-1.1.1 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
