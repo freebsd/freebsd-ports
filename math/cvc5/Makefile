@@ -1,10 +1,7 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.0.5
-PORTREVISION=	2
+DISTVERSION=	1.0.8
 CATEGORIES=	math java
-MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
-DISTFILES+=	antlr-3.4-complete.jar:antlr3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +15,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libcadical.a:math/cadical \
 		${LOCALBASE}/lib/symfpu.a:math/symfpu \
 		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libboost_system.so:devel/boost-libs
@@ -31,8 +29,7 @@ USE_JAVA=	yes
 JAVA_BUILD=	yes
 
 CMAKE_BUILD_TYPE=	Production
-CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3 \
-			-DFREEBSD_DISTDIR=${DISTDIR} \
+CMAKE_ARGS+=		-DFREEBSD_DISTDIR=${DISTDIR} \
 			-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		BUILD_BINDINGS_PYTHON USE_PYTHON3 # Python binding should be a separate port
@@ -91,15 +88,5 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
 
 PORTSCOUT=	limit:^cvc5-[1-9].* # prevent older generation versions like 1.8
-
-post-extract:
-	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr3.jar
-	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/antlr3
-	@${ECHO_CMD} "exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
-	@${CHMOD} +x ${WRKDIR}/antlr3
-
-xpost-patch:
-	@${REINPLACE_CMD} -e "s|sed -i'' -e 's|sed -i '' -e 's|g" \
-		${WRKSRC}/src/fix-install-headers.sh
 
 .include <bsd.port.mk>
