@@ -248,7 +248,7 @@ OPENTRACING_LIB_DEPENDS=	libopentracing.so:devel/libopentracing
 OPENTRACING_VARS=		DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
 OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing-config
 
-OTEL_GH_TUPLE=		osokin:nginx-otel:f58abc0:otel
+OTEL_GH_TUPLE=		osokin:nginx-otel:dc52126:otel
 OTEL_VARS=		DSO_EXTMODS+=otel OTEL_SUBDIR=/
 OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libcares.so:dns/c-ares \
@@ -258,7 +258,6 @@ OTEL_LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 			libre2.so:devel/re2
 OTEL_BUILD_DEPENDS=	${LOCALBASE}/include/opentelemetry/proto/common/v1/common.proto:devel/opentelemetry-proto
 OTEL_CONFIGURE_ENV+=	NGX_OTEL_PROTO_DIR=${PREFIX}/include
-OTEL_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-otel-config
 
 PASSENGER_NGINX_VER=	6.0.18
 PASSENGER_CATEGORIES=	ruby
