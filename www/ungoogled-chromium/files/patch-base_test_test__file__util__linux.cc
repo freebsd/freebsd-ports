@@ -1,10 +1,10 @@
---- base/test/test_file_util_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- base/test/test_file_util_linux.cc.orig	2023-09-17 07:59:53 UTC
 +++ base/test/test_file_util_linux.cc
 @@ -54,8 +54,10 @@ bool EvictFileFromSystemCache(const FilePath& file) {
      return false;
    if (fdatasync(fd.get()) != 0)
      return false;
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (posix_fadvise(fd.get(), 0, 0, POSIX_FADV_DONTNEED) != 0)
      return false;
 +#endif

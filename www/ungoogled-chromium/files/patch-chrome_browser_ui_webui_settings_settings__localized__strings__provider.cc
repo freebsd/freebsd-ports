@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -133,7 +133,7 @@
+@@ -134,7 +134,7 @@
  #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #endif
  
-@@ -153,7 +153,7 @@
+@@ -154,7 +154,7 @@
  #include "chrome/browser/ui/webui/certificate_manager_localized_strings_provider.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "ui/linux/linux_ui_factory.h"
  #include "ui/ozone/public/ozone_platform.h"
  #endif
-@@ -253,7 +253,7 @@ void AddCommonStrings(content::WebUIDataSource* html_s
+@@ -254,7 +254,7 @@ void AddCommonStrings(content::WebUIDataSource* html_s
        base::FeatureList::IsEnabled(
            supervised_user::kClearingCookiesKeepsSupervisedUsersSignedIn));
  
@@ -27,7 +27,7 @@
    bool allow_qt_theme = base::FeatureList::IsEnabled(ui::kAllowQt);
  #else
    bool allow_qt_theme = false;
-@@ -408,7 +408,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -415,7 +415,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
      {"sidePanelAlignLeft", IDS_SETTINGS_SIDE_PANEL_ALIGN_LEFT},
      {"sidePanelAlignRight", IDS_SETTINGS_SIDE_PANEL_ALIGN_RIGHT},
@@ -36,7 +36,7 @@
      {"gtkTheme", IDS_SETTINGS_GTK_THEME},
      {"useGtkTheme", IDS_SETTINGS_USE_GTK_THEME},
      {"qtTheme", IDS_SETTINGS_QT_THEME},
-@@ -418,7 +418,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -425,7 +425,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
@@ -45,7 +45,7 @@
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -443,7 +443,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -450,7 +450,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

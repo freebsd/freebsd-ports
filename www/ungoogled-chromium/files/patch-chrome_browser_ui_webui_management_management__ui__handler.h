@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
 @@ -24,14 +24,14 @@
  #include "extensions/common/extension_id.h"
@@ -26,9 +26,9 @@
  namespace device_signals {
  class UserPermissionService;
  }  // namespace device_signals
-@@ -173,7 +173,7 @@ class ManagementUIHandler : public content::WebUIMessa
-   base::Value::Dict GetThreatProtectionInfo(Profile* profile);
+@@ -174,7 +174,7 @@ class ManagementUIHandler : public content::WebUIMessa
    base::Value::List GetManagedWebsitesInfo(Profile* profile) const;
+   base::Value::List GetApplicationsInfo(Profile* profile) const;
    virtual policy::PolicyService* GetPolicyService();
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

@@ -1,10 +1,10 @@
---- content/browser/sandbox_host_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- content/browser/sandbox_host_linux.cc.orig	2023-09-17 07:59:53 UTC
 +++ content/browser/sandbox_host_linux.cc
 @@ -45,6 +45,7 @@ void SandboxHostLinux::Init() {
    // Instead, it replies on a temporary socket provided by the caller.
    PCHECK(0 == shutdown(browser_socket, SHUT_WR)) << "shutdown";
  
-+#if !defined(OS_BSD) 
++#if !BUILDFLAG(IS_BSD) 
    int pipefds[2];
    CHECK(0 == pipe(pipefds));
    const int child_lifeline_fd = pipefds[0];

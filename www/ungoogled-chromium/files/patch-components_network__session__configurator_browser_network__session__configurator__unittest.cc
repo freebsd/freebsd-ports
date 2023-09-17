@@ -1,11 +1,11 @@
---- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2023-04-08 11:38:38 UTC
+--- components/network_session_configurator/browser/network_session_configurator_unittest.cc.orig	2023-09-17 07:59:53 UTC
 +++ components/network_session_configurator/browser/network_session_configurator_unittest.cc
-@@ -794,7 +794,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
- }
+@@ -775,7 +775,7 @@ TEST_F(NetworkSessionConfiguratorTest, HostRules) {
  
  TEST_F(NetworkSessionConfiguratorTest, DefaultCacheBackend) {
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_MAC)
++    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    EXPECT_EQ(net::URLRequestContextBuilder::HttpCacheParams::DISK_SIMPLE,
              ChooseCacheType());
- #elif BUILDFLAG(IS_MAC)
+ #else

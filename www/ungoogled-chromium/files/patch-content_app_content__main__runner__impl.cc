@@ -1,6 +1,6 @@
---- content/app/content_main_runner_impl.cc.orig	2023-08-18 10:26:52 UTC
+--- content/app/content_main_runner_impl.cc.orig	2023-09-17 07:59:53 UTC
 +++ content/app/content_main_runner_impl.cc
-@@ -143,13 +143,13 @@
+@@ -142,13 +142,13 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -16,7 +16,7 @@
  #include "base/files/file_path_watcher_inotify.h"
  #include "base/native_library.h"
  #include "base/rand_util.h"
-@@ -187,6 +187,10 @@
+@@ -186,6 +186,10 @@
  #include "media/base/media_switches.h"
  #endif
  

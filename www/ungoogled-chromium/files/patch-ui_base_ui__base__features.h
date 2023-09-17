@@ -1,6 +1,15 @@
---- ui/base/ui_base_features.h.orig	2023-08-18 10:26:52 UTC
+--- ui/base/ui_base_features.h.orig	2023-09-17 07:59:53 UTC
 +++ ui/base/ui_base_features.h
-@@ -234,7 +234,7 @@ enum class ChromeRefresh2023Level {
+@@ -133,7 +133,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ BASE_DECLARE_FEATURE(kAlwaysConfirmComposition);
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+-#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ COMPONENT_EXPORT(UI_BASE_FEATURES)
+ BASE_DECLARE_FEATURE(kRedundantImeCompositionClearing);
+ #endif  // BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
+@@ -266,7 +266,7 @@ enum class ChromeRefresh2023Level {
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  ChromeRefresh2023Level GetChromeRefresh2023Level();
  

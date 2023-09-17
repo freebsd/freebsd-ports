@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/analysis/content_analysis_delegate.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/enterprise/connectors/analysis/content_analysis_delegate.cc.orig	2023-09-17 07:59:53 UTC
 +++ chrome/browser/enterprise/connectors/analysis/content_analysis_delegate.cc
 @@ -50,7 +50,7 @@
  #include "ui/base/l10n/l10n_util.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/enterprise/connectors/analysis/content_analysis_sdk_manager.h"  // nogncheck
  #endif
  
-@@ -555,7 +555,7 @@ void ContentAnalysisDelegate::PageRequestCallback(
+@@ -557,7 +557,7 @@ void ContentAnalysisDelegate::PageRequestCallback(
  bool ContentAnalysisDelegate::UploadData() {
    upload_start_time_ = base::TimeTicks::Now();
  
