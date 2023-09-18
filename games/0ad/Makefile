@@ -1,6 +1,6 @@
 PORTNAME=	0ad
 PORTVERSION=	0.0.26
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	http://releases.wildfiregames.com/ \
 		SF/zero-ad/releases
@@ -19,22 +19,20 @@ BROKEN_powerpc64=	fails to compile: _psutil_bsd.c: error: 'struct xtcpcb' has no
 BUILD_DEPENDS=	${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
 		zip:archivers/zip \
 		cmake:devel/cmake-core
-LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
-		libpng.so:graphics/png \
-		libogg.so:audio/libogg \
-		libvorbis.so:audio/libvorbis \
+		libpng16.so:graphics/png \
+		libvorbisfile.so:audio/libvorbis \
 		libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
 		libgloox.so:net-im/gloox \
 		libminiupnpc.so:net/miniupnpc \
-		libnspr4.so:devel/nspr \
 		libenet.so:net/enet \
-		libtiff.so:graphics/tiff \
 		libsodium.so:security/libsodium \
 		libfmt.so:devel/libfmt
 
-USES=		compiler:c++11-lib desktop-file-utils dos2unix gl gmake gnome \
-		iconv jpeg openal:al perl5 pkgconfig python:build sdl tar:xz \
+USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake gnome \
+		iconv openal:al perl5 pkgconfig python:build sdl tar:xz \
 		xorg
 USE_GNOME=	libxml2
 USE_GL=		gl
