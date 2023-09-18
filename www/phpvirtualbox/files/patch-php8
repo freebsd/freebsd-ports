@@ -144,12 +144,34 @@ diff -ur endpoints/screen.php.orig endpoints/screen.php
  		// Let the browser cache images for 3 seconds
  		$ctime = 0;
 -		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'],'_')) {
-+		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'] ?? '','_')) {
- 			$ctime = preg_replace("/.*_/",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
+-			$ctime = preg_replace("/.*_/",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
 -		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'],'_')) {
-+		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'] ?? '','_')) {
- 			$ctime = preg_replace("/.*_/",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
+-			$ctime = preg_replace("/.*_/",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
 -		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
++		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'] ?? '','_')) {
++			$ctime = preg_replace("/.*_/","",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
++		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'] ?? '','_')) {
++			$ctime = preg_replace("/.*_/","",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
++		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
+ 			$ctime = strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
+-		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
++		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
+ 			$ctime = strtotime($_ENV['HTTP_IF_MODIFIED_SINCE']);
+ 		}
+ 
+@@ -164,13 +164,13 @@
+ 
+ 		// Let the browser cache saved state images
+ 		$ctime = 0;
+-		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'],'_')) {
+-			$ctime = preg_replace("/.*_/",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
+-		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'],'_')) {
+-			$ctime = preg_replace("/.*_/",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
+-		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
++		if(strpos($_SERVER['HTTP_IF_NONE_MATCH'] ?? '','_')) {
++			$ctime = preg_replace("/.*_/","",str_replace('"','',$_SERVER['HTTP_IF_NONE_MATCH']));
++		} else if(strpos($_ENV['HTTP_IF_NONE_MATCH'] ?? '','_')) {
++			$ctime = preg_replace("/.*_/","",str_replace('"','',$_ENV['HTTP_IF_NONE_MATCH']));
 +		} else if(strpos($_SERVER['HTTP_IF_MODIFIED_SINCE'] ?? '','GMT')) {
  			$ctime = strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']);
 -		} else if(strpos($_ENV['HTTP_IF_MODIFIED_SINCE'],'GMT')) {
