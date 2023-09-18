@@ -1,5 +1,5 @@
 PORTNAME=	jetty
-PORTVERSION=	10.0.12
+PORTVERSION=	10.0.16
 CATEGORIES=	www java
 MASTER_SITES=	https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-home/${PORTVERSION}/
 PKGNAMESUFFIX=	10
@@ -17,7 +17,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe shebangfix
 
-CONFLICTS=	jetty8.* jetty9.*
+CONFLICTS=	jetty8.* jetty9.* jetty11.* jetty12.*
 
 USE_JAVA=	yes
 NO_ARCH=	yes
