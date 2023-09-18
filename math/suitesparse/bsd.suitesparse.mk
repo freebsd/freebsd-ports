@@ -37,7 +37,7 @@ LIB_DEPENDS+=	libsuitesparseconfig.so:math/suitesparse-config
 OPTIONS_DEFINE+=DEMOS
 .endif
 
-USES+=		cmake:insource
+USES+=		cmake:insource pathfix
 
 DOCSDIR=	${PREFIX}/share/doc/${SSPNAME}
 MAKE_ENV=	JOBS="${MAKE_JOBS_NUMBER}" \
@@ -57,6 +57,10 @@ DISTINFO_FILE=	${.CURDIR}/../../math/suitesparse/distinfo
 OPTIONS_DEFINE+=	DOCS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT+=	OPTIMIZED_CFLAGS
 
+.if ${MPORTNAME} == config ||	\
+	${MPORTNAME} == CHOLMOD ||	\
+	${MPORTNAME} == SPQR ||	\
+	${MPORTNAME} == UMFPACK
 OPTIONS_RADIO+=		BLAS
 OPTIONS_RADIO_BLAS+=	ATLAS GOTOBLAS NETLIB OPENBLAS
 OPTIONS_DEFAULT+=	OPENBLAS
@@ -66,6 +70,7 @@ GOTOBLAS_DESC=		Goto blas implementation
 GOTOBLAS_USES=		blaslapack:gotoblas
 NETLIB_USES=		blaslapack:netlib
 OPENBLAS_USES=		blaslapack:openblas
+.endif
 
 OPTIONS_DEFINE+=	OPENMP
 OPTIONS_EXCLUDE_aarch64=	OPENMP
