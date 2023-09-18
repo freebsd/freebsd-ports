@@ -1,5 +1,6 @@
 lib/postgresql/pg_qualstats.so
-share/postgresql/extension/pg_qualstats--2.0.3--2.0.4.sql
+share/postgresql/extension/pg_qualstats--2.0.4--2.1.0.sql
 share/postgresql/extension/pg_qualstats--2.0.4.sql
+share/postgresql/extension/pg_qualstats--2.1.0.sql
 share/postgresql/extension/pg_qualstats.control
 share/doc/postgresql/extension/pg_qualstats-README.md
