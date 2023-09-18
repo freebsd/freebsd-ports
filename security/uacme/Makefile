@@ -1,6 +1,7 @@
 PORTNAME=	uacme
 DISTVERSIONPREFIX=	upstream/
 DISTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	security www
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -43,6 +44,8 @@ OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		openssl=${OPENSSLBASE}
 UALPN_LIB_DEPENDS=		libev.so:devel/libev
 UALPN_CONFIGURE_WITH=		ualpn
+UALPN_CONFIGURE_ENV=		CFLAGS="`pkgconf --cflags libev`" \
+				LDFLAGS="`pkgconf --libs libev`"
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
