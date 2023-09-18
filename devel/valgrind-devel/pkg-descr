@@ -13,7 +13,3 @@ The Valgrind distribution includes 10 tools:
  - lackey, an example of using the framework
  - none, does no instumentation and can check that Valgrind runs correctly
  - exp-bbv, and experimental profiling tool using sampling
-
-Valgrind was initially ported to FreeBSD by Doug Rabson.
-
-See also: https://github.com/paulfloyd/freebsd_valgrind
