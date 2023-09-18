@@ -37,7 +37,7 @@ USE_KDE=	activities activities-stats attica auth baloo bookmarks codecs \
 		completion config configwidgets coreaddons crash dbusaddons \
 		filemetadata globalaccel guiaddons i18n iconthemes init \
 		itemmodels itemviews jobwidgets kcmutils kdeclarative \
-		kdelibs4support kio kpipewire libksysguard newstuff \
+		kdelibs4support kio libksysguard newstuff \
 		notifications notifyconfig package parts plasma-framework \
 		plasma-workspace runner service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
@@ -58,8 +58,8 @@ SHEBANG_FILES=	kcms/ksmserver/kconf_update/*.py \
 
 OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=		ACCOUNTS
-OPTIONS_DEFAULT=	ACCOUNTS
+OPTIONS_DEFINE=		ACCOUNTS PIPEWIRE
+OPTIONS_DEFAULT=	ACCOUNTS PIPEWIRE
 OPTIONS_GROUP=		IM
 OPTIONS_GROUP_IM=	IBUS SCIM
 IM_DESC=		Input Method Support
@@ -74,6 +74,9 @@ ACCOUNTS_LIB_DEPENDS=	libkaccounts.so:net-im/kaccounts-integration \
 			libaccounts-qt5.so:net-im/libaccounts-qt5
 ACCOUNTS_USE=		gnome=intltool
 ACCOUNTS_DESC=		Accounts management library support
+PIPEWIRE_DESC=		Use runtime dependency QML module 'org.kde.pipewire'
+PIPEWIRE_USE=		KDE=kpipewire
+PIPEWIRE_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_org.kde.pipewire-QMLModule
 
 post-patch:
 # Set the correct iso-codes directory
