@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.2
-PORTREVISION=	2
+DISTVERSION=	0.30.0
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
+		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
@@ -29,10 +30,11 @@ LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		librsync.so:net/librsync \
 		libwayland-client.so:graphics/wayland \
 		libwayland-cursor.so:graphics/wayland \
-		libxkbcommon.so:x11/libxkbcommon
+		libxkbcommon.so:x11/libxkbcommon \
+		libxxhash.so:devel/xxhash
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules magick pkgconfig python shebangfix ssl tar:xz \
+		go:1.21,modules magick pkgconfig python shebangfix ssl tar:xz \
 		terminfo xorg
 CPE_VENDOR=	kitty_project
 GH_TUPLE=	ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
@@ -50,11 +52,12 @@ USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
 
 SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
-		update-on-ox update-on-ubuntu
+		update-on-ox
 SHEBANG_GLOB=	*.py
 
 GO_MODULE=	github.com/kovidgoyal/kitty
 
+MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
 TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
 TEST_TARGET=	test
 
@@ -104,7 +107,7 @@ post-patch:
 # For librsync, we need to set header and library path
 do-build:
 	(cd ${WRKSRC} && \
-	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py \
+	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -OO setup.py \
 			--extra-include-dirs ${LOCALBASE}/include \
 			--extra-library-dirs ${LOCALBASE}/lib \
 			--libdir-name share \
