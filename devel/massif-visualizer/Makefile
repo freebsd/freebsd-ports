@@ -23,7 +23,7 @@ USE_KDE= 	archive  auth  auth  codecs  completion  config  config  \
 			solid sonnet texteditor textwidgets  widgetsaddons  windowsystem  \
 			xmlgui \
 			ecm:build
-USE_QT=		concurrent core dbus gui network printsupport svg widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport svg widgets xml xmlpatterns \
 			buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
