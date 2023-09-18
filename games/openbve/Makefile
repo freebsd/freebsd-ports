@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.9.1.2
+PORTVERSION=	1.9.2.2
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -18,7 +18,7 @@ GH_PROJECT=	OpenBVE
 USES=		gmake mono:nuget openal:soft sdl
 USE_SDL=	sdl2
 MAKEFILE=	makefile
-ALL_TARGET=	all-release
+ALL_TARGET=	all-${WITH_DEBUG:?debug:release}
 
 NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		DotNetZip=1.16.0 \

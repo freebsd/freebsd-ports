@@ -773,7 +773,6 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/TrainEditor2/undo.png
 %%DATADIR%%/Data/TrainEditor2/zoomin.png
 %%DATADIR%%/Data/TrainEditor2/zoomout.png
-%%DATADIR%%/Data/icon.bmp
 %%DATADIR%%/Data/icon.ico
 %%DATADIR%%/DevTools/LBAHeader.exe
 %%DATADIR%%/DevTools/LBAHeader.exe.config
