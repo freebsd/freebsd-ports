@@ -621,6 +621,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-complete-fileuri.png
 %%DATADIR%%/readme/wiki/cudatext-complete-from-text.png
 %%DATADIR%%/readme/wiki/cudatext-complete-pics.png
+%%DATADIR%%/readme/wiki/cudatext-config-toolbar.png
 %%DATADIR%%/readme/wiki/cudatext-console.png
 %%DATADIR%%/readme/wiki/cudatext-dynamic-hi.png
 %%DATADIR%%/readme/wiki/cudatext-editing-context-menu.png
@@ -629,6 +630,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-find-dlg.png
 %%DATADIR%%/readme/wiki/cudatext-find-markers.png
 %%DATADIR%%/readme/wiki/cudatext-findinfiles-intabs.png
+%%DATADIR%%/readme/wiki/cudatext-fmt-onsave.png
 %%DATADIR%%/readme/wiki/cudatext-fold-comments.png
 %%DATADIR%%/readme/wiki/cudatext-folding-gutter-ctx-menu.png
 %%DATADIR%%/readme/wiki/cudatext-fuzzy-and-normal.png
@@ -646,6 +648,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-micromap-on-scrollbar.png
 %%DATADIR%%/readme/wiki/cudatext-micromap_.png
 %%DATADIR%%/readme/wiki/cudatext-minimap.png
+%%DATADIR%%/readme/wiki/cudatext-project-icons.png
+%%DATADIR%%/readme/wiki/cudatext-project-seldir.png
 %%DATADIR%%/readme/wiki/cudatext-runner-thread.gif
 %%DATADIR%%/readme/wiki/cudatext-snippets-add-vscode.png
 %%DATADIR%%/readme/wiki/cudatext-snippets-editor.png
