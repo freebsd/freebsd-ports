@@ -46,6 +46,8 @@ CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 .endif
 
+PORTSCOUT=	skipv:experimental*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version.cmake
 
