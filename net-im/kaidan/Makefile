@@ -17,7 +17,7 @@ LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp@qt5 \
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 pkgconfig \
 		qt:5 tar:xz
-USE_KDE=	kirigami2 notifications qqc2-desktop-style \
+USE_KDE=	kio kirigami2 notifications qqc2-desktop-style \
 		ecm:build
 USE_QT=		core dbus declarative gui location multimedia network \
 		quickcontrols2 sql svg widgets xml \
