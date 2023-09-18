@@ -1,6 +1,5 @@
 PORTNAME=	riffdiff
-DISTVERSION=	2.25.2
-PORTREVISION=	1
+DISTVERSION=	2.26.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,12 +21,22 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		adler-0.2.3 \
 		aho-corasick-0.7.18 \
 		ansi_term-0.11.0 \
+		anstream-0.5.0 \
+		anstyle-1.0.2 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-2.1.0 \
 		autocfg-1.0.1 \
 		backtrace-0.3.54 \
 		bitflags-1.3.2 \
 		bytecount-0.6.2 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
+		clap-4.4.2 \
+		clap_builder-4.4.2 \
+		clap_derive-4.4.2 \
+		clap_lex-0.5.1 \
+		colorchoice-1.0.0 \
 		ctor-0.1.16 \
 		difference-2.0.0 \
 		diffus-0.10.0 \
@@ -38,6 +47,7 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		gimli-0.23.0 \
 		git-version-0.3.4 \
 		git-version-macro-0.3.4 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.6 \
@@ -52,30 +62,43 @@ CARGO_CRATES=	addr2line-0.14.0 \
 		output_vt100-0.1.2 \
 		pretty_assertions-0.6.1 \
 		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.24 \
-		quote-1.0.7 \
+		proc-macro2-1.0.66 \
+		quote-1.0.33 \
 		redox_syscall-0.2.10 \
 		regex-1.5.5 \
 		regex-syntax-0.6.26 \
 		rustc-demangle-0.1.18 \
 		rustix-0.36.9 \
+		strsim-0.10.0 \
 		syn-1.0.48 \
+		syn-2.0.30 \
 		tempfile-3.4.0 \
 		threadpool-1.8.1 \
+		unicode-ident-1.0.11 \
 		unicode-xid-0.2.1 \
+		utf8parse-0.2.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
 		windows-targets-0.42.1 \
+		windows-targets-0.48.5 \
 		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.48.5 \
 		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.48.5 \
 		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.48.5 \
 		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.48.5
 
 PLIST_FILES=	bin/riff
 
