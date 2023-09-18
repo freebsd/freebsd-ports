@@ -1,10 +1,10 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.1.0
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	676571b2c042.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/pull/84
+PATCHFILES+=	54b5467ec12f.patch:-p1 # https://github.com/hyprwm/xdg-desktop-portal-hyprland/pull/98
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	xdg-desktop-portal backend for hyprland
@@ -43,6 +43,10 @@ PLIST_FILES=	libexec/${PORTNAME} \
 CXXFLAGS+=	-D_LIBCPP_ENABLE_EXPERIMENTAL # std::vformat
 LDFLAGS+=	-lc++experimental
 .endif
+
+post-patch:
+# XXX Merge with hyprland-share-picker instead
+	@${REINPLACE_CMD} '/hyprland-share-picker/d' ${WRKSRC}/meson.build
 
 .ifdef GH_TUPLE
 post-configure:
