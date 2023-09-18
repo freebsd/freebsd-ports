@@ -1,0 +1,28 @@
+In file included from src/core/tools/renderdoc.cpp:4:
+externals/./renderdoc/renderdoc_app.h:46:2: error: "Unknown platform"
+   46 | #error "Unknown platform"
+      |  ^
+externals/./renderdoc/renderdoc_app.h:240:26: error: expected ')'
+  240 | typedef int(RENDERDOC_CC *pRENDERDOC_SetCaptureOptionU32)(RENDERDOC_CaptureOption opt, uint32_t val);
+      |                          ^
+externals/./renderdoc/renderdoc_app.h:240:12: note: to match this '('
+  240 | typedef int(RENDERDOC_CC *pRENDERDOC_SetCaptureOptionU32)(RENDERDOC_CaptureOption opt, uint32_t val);
+      |            ^
+[...]
+
+--- externals/./renderdoc/renderdoc_app.h~	2023-09-18 13:31:05.000000000 +0000
++++ externals/./renderdoc/renderdoc_app.h	2023-09-18 17:24:14.130392873 +0000
+@@ -38,12 +38,8 @@
+ 
+ #if defined(WIN32) || defined(__WIN32__) || defined(_WIN32) || defined(_MSC_VER)
+ #define RENDERDOC_CC __cdecl
+-#elif defined(__linux__)
+-#define RENDERDOC_CC
+-#elif defined(__APPLE__)
+-#define RENDERDOC_CC
+ #else
+-#error "Unknown platform"
++#define RENDERDOC_CC
+ #endif
+ 
+ #ifdef __cplusplus
