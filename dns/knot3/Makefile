@@ -1,5 +1,5 @@
 PORTNAME=	knot
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
