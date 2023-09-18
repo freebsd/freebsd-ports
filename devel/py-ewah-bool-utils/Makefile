@@ -1,5 +1,5 @@
 PORTNAME=	ewah-bool-utils
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,12 +13,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}cython3>=3.0:lang/cython3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.37.1:devel/py-wheel@${PY_FLAVOR} \
 		${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	pep517 cython autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} # tests fail to run, see https://github.com/yt-project/ewah_bool_utils/issues/41
 TEST_WRKSRC=	${WRKSRC}/tests
