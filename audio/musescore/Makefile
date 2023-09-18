@@ -1,6 +1,6 @@
 PORTNAME=	${GH_PROJECT:tl}
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
+DISTVERSION=	4.1.1
 CATEGORIES=	audio
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -15,13 +15,14 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libvorbis.so:audio/libvorbis \
 		libogg.so:audio/libogg \
 		libasound.so:audio/alsa-lib \
+		libasound_module_pcm_oss.so:audio/alsa-plugins \
 		libfreetype.so:print/freetype2
 
 USES=		cmake compiler:c++11-lib localbase \
 		pkgconfig qt:5
 USE_QT=		concurrent core dbus declarative designer graphicaleffects gui \
 		help location network networkauth opengl printsupport \
-		quickcontrols2 scripttools sql svg testlib \
+		quickcontrols quickcontrols2 scripttools sql svg testlib \
 		webchannel widgets x11extras xml xmlpatterns \
 		buildtools:build linguisttools:build qmake:build uitools:build
 

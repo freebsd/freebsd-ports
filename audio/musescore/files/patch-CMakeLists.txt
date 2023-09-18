@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-07-11 13:58:04.000000000 +0000
++++ CMakeLists.txt	2023-07-26 01:16:10.541419000 +0000
+@@ -46,7 +46,7 @@
+ # - vtest           - for visual tests (for CI)
+ # - utest           - for unit tests (for CI)
+ 
+-set(MUSESCORE_BUILD_MODE "dev" CACHE STRING "Build mode")
++set(MUSESCORE_BUILD_MODE "release" CACHE STRING "Build mode")
+ # Possible MUSESCORE_BUILD_MODE values:
+ # - dev     - for development/nightly builds
+ # - testing - for testing versions (alpha, beta, RC)
