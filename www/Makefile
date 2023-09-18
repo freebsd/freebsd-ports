@@ -31,6 +31,7 @@
     SUBDIR += angie-module-auth-spnego
     SUBDIR += angie-module-brotli
     SUBDIR += angie-module-cache-purge
+    SUBDIR += angie-module-dav-ext
     SUBDIR += angie-module-echo
     SUBDIR += angie-module-enhanced-memcached
     SUBDIR += angie-module-eval

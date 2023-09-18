@@ -1,0 +1,3 @@
+The standard DAV module provides partial WebDAV implementation and
+only supports GET, HEAD, PUT, DELETE, MKCOL, COPY and MOVE methods.
+This module adds PROPFIND, OPTIONS, LOCK and UNLOCK support.

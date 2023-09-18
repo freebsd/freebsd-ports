@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The dav-ext dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_dav_ext_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/arut/nginx-dav-ext-module
+EOM
+}
+]
