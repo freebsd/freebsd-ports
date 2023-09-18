@@ -1,9 +1,9 @@
 PORTNAME=	firefox
-DISTVERSION=	102.15.1
+DISTVERSION=	115.3.0
 PORTEPOCH=	1
 CATEGORIES=	www wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source \
-		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build2/source
+		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}esr-candidates/build1/source
 PKGNAMESUFFIX=	-esr
 DISTFILES=	${DISTNAME}esr.source${EXTRACT_SUFX}
 
@@ -12,14 +12,14 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 WWW=		https://www.mozilla.com/firefox
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
-		nss>=3.79.1:security/nss \
-		icu>=71.1,1:devel/icu \
+		nss>=3.90:security/nss \
+		icu>=73.1,1:devel/icu \
 		libevent>=2.1.8:devel/libevent \
-		harfbuzz>=4.1.0:print/harfbuzz \
+		harfbuzz>=7.3.0:print/harfbuzz \
 		graphite2>=1.3.14:graphics/graphite2 \
-		png>=1.6.37:graphics/png \
+		png>=1.6.39:graphics/png \
 		dav1d>=1.0.0:multimedia/dav1d \
-		libvpx>=1.11.0:multimedia/libvpx \
+		libvpx>=1.13.0:multimedia/libvpx \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		v4l_compat>0:multimedia/v4l_compat \
 		autoconf2.13:devel/autoconf2.13 \
@@ -61,10 +61,6 @@ post-patch:
 		${FIREFOX_DESKTOP}
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
-
-pre-configure:
-	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
-	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 post-install:
 	${INSTALL_DATA} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/
