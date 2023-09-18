@@ -28,6 +28,7 @@
     SUBDIR += gotktrix
     SUBDIR += gotosocial
     SUBDIR += gtkcord4
+    SUBDIR += gurk-rs
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabberd

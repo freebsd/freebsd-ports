@@ -1,0 +1,8 @@
+--- Cargo.toml.orig	2023-06-23 22:03:50.000000000 +0200
++++ Cargo.toml	2023-07-03 00:23:24.157641000 +0200
+@@ -100,4 +100,4 @@
+ [patch.crates-io]
+ # signal-protocol uses a fork of this library via the patch mechanism of cargo.
+ # Since it is not transitive, we have to add the patch here explicitly.
+-"curve25519-dalek" = { git = 'https://github.com/signalapp/curve25519-dalek', branch = 'lizard2' }
++"curve25519-dalek" = { path = '%%WRKDIR%%/curve25519-dalek-829f52e79c6d920243c8bf30c7f4ee2e8eac5246' }

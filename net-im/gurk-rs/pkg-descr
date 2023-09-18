@@ -1,0 +1,3 @@
+gurk-rs is TUI (terminal user inteface) for Signal messaging platform.
+It is written in Rust.
+Binary is 15 MB large and depends only on libs from base system.
