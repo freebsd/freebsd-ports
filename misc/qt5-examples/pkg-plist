@@ -6028,6 +6028,7 @@
 %%QT_EXAMPLEDIR%%/tutorials/alarms/AlarmModel.qml
 %%QT_EXAMPLEDIR%%/tutorials/alarms/TumblerDelegate.qml
 %%QT_EXAMPLEDIR%%/tutorials/alarms/alarms.pro
+%%QT_EXAMPLEDIR%%/tutorials/alarms/controls_conf.qrc
 %%QT_EXAMPLEDIR%%/tutorials/alarms/main.cpp
 %%QT_EXAMPLEDIR%%/tutorials/alarms/main.qml
 %%QT_EXAMPLEDIR%%/tutorials/alarms/qml.qrc

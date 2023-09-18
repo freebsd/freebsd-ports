@@ -20,4 +20,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/scripttools/ d' \
 		${WRKSRC}/src/src.pro
 
+# Fix version mismatches for CMake
+post-configure:
+	@${REINPLACE_CMD} -e '/${QT5_VERSION} $${_Qt5Script_FIND_VERSION_EXACT}/s|${QT5_VERSION}|'"$$(${MAKE} -C ../qt5-core -VQT5_VERSION)"'|' \
+		${WRKSRC}/lib/cmake/Qt5Script/Qt5ScriptConfig.cmake
+
 .include <bsd.port.mk>

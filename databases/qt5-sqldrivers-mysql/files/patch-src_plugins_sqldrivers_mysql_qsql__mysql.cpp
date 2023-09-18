@@ -1,9 +1,9 @@
---- src/plugins/sqldrivers/mysql/qsql_mysql.cpp.orig	2020-10-27 08:02:11 UTC
+--- src/plugins/sqldrivers/mysql/qsql_mysql.cpp.orig	2023-09-04 21:23:22 UTC
 +++ src/plugins/sqldrivers/mysql/qsql_mysql.cpp
-@@ -352,11 +360,11 @@ void QMYSQLResultPrivate::bindBlobs()
- 
-     for(i = 0; i < fields.count(); ++i) {
-         fieldInfo = fields.at(i).myField;
+@@ -363,11 +363,11 @@ void QMYSQLResultPrivate::bindBlobs()
+     MYSQL_BIND *bind;
+     for (int i = 0; i < fields.count(); ++i) {
+         const MYSQL_FIELD *fieldInfo = fields.at(i).myField;
 -        if (qIsBlob(inBinds[i].buffer_type) && meta && fieldInfo) {
 +        if (qIsBlob(inBinds[i].buffer_type) && meta && fieldInfo && fieldInfo->max_length) {
              bind = &inBinds[i];
