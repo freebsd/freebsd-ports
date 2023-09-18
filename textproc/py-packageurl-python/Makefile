@@ -1,5 +1,5 @@
 PORTNAME=	packageurl-python
-DISTVERSION=	0.9.3
+DISTVERSION=	0.11.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,14 +11,11 @@ WWW=		https://github.com/package-url/packageurl-python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/mit.LICENSE
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs
 
 .include <bsd.port.mk>
