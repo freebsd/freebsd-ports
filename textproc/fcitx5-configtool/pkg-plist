@@ -3,7 +3,7 @@ bin/fcitx5-migrator
 bin/fcitx5-plasma-theme-generator
 bin/kbd-layout-viewer5
 lib/libFcitx5Migrator.so
-lib/libFcitx5Migrator.so.5
+lib/libFcitx5Migrator.so.0
 lib/libFcitx5Migrator.so.%%VER%%
 %%QT_PLUGINDIR%%/kcms/kcm_fcitx5.so
 share/applications/kbd-layout-viewer5.desktop
