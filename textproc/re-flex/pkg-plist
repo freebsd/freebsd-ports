@@ -8,6 +8,7 @@ include/reflex/debug.h
 include/reflex/error.h
 include/reflex/flexlexer.h
 include/reflex/input.h
+include/reflex/linematcher.h
 include/reflex/matcher.h
 include/reflex/pcre2matcher.h
 include/reflex/pattern.h
