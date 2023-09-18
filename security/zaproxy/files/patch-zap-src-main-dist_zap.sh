@@ -1,5 +1,5 @@
---- zap/src/main/dist/zap.sh	2022-10-27 07:53:05.000000000 -0500
-+++ zap/src/main/dist/zap.sh	2022-10-31 18:52:02.376240000 -0500
+--- zap/src/main/dist/zap.sh	2023-07-11 09:00:57.000000000 -0500
++++ zap/src/main/dist/zap.sh	2023-09-18 17:22:08.753719000 -0500
 @@ -1,18 +1,7 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
@@ -39,17 +39,26 @@
  JAVA_MAJOR_VERSION=${JAVA_VERSION%%[.|-]*}
  JAVA_MINOR_VERSION=$(echo $JAVA_VERSION | awk -F\. '{ print $2 }')
  
-@@ -90,7 +79,7 @@
+@@ -90,21 +79,21 @@
    fi
  fi
  
 -ARGS=()
 +ARGS=""
  for var in "$@"; do
-   if [[ "$var" == -Xmx* ]]; then
+-  if [[ "$var" == -Xmx* ]]; then
++  if [ "$var" == -Xmx* ]; then
      # Overridden by the user
-@@ -104,7 +93,7 @@
-   elif [[ $var != -psn_* ]]; then
+     JMEM="$var"
+-  elif [[ $var == --jvmdebug* ]]; then
++  elif [ $var == --jvmdebug* ]; then
+ 	JAVADEBUGPORT=`echo "$var" | sed -e "s/--jvmdebug//g" | sed -e "s/=//g"`
+ 	if [ ! "$JAVADEBUGPORT" ]; then
+ 		JAVADEBUGPORT=1044
+ 	fi
+ 	JAVADEBUG="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=127.0.0.1:$JAVADEBUGPORT"
+-  elif [[ $var != -psn_* ]]; then
++  elif [ $var != -psn_* ]; then
      # Strip the automatic -psn_x_xxxxxxx argument that OS X automatically passes into apps, since
      # it freaks out ZAP
 -    ARGS+=("$var")
@@ -65,5 +74,5 @@
 +  %%JAVA_HOME%%/bin/java ${JMEM} ${JAVAGC} -Xdock:icon="../Resources/ZAP.icns" -jar "${BASEDIR}/zap-2.11.0.jar" "${ARGS[@]}"
  else
 -  exec java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "${BASEDIR}/@zapJar@" "${ARGS[@]}"
-+  %%JAVA_HOME%%/bin/java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "zap-%%VERSION%%.jar" "${ARGS}"
++  %%JAVA_HOME%%/bin/java ${JMEM} ${JAVAGC} ${JAVADEBUG} -jar "zap-%%VERSION%%.jar" ${ARGS}
  fi
