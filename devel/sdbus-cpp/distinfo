@@ -1,5 +1,5 @@
 TIMESTAMP = 1692524744
 SHA256 (Kistler-Group-sdbus-cpp-v1.3.0_GH0.tar.gz) = d44f59abdd64d8f1ca3af7db58bc6518cb081fc9ff16285c3d75a68f5c073d10
 SIZE (Kistler-Group-sdbus-cpp-v1.3.0_GH0.tar.gz) = 217150
-SHA256 (9dacffae0d33.patch) = c1c930d9f20444a0a38c19e10d814ad19582315c04c0394b25c90c0f45da972e
-SIZE (9dacffae0d33.patch) = 17230
+SHA256 (1e2d13a04a98.patch) = 374616d5a000a536d2947d3462a6b9ccf00777e2770a5a0bb3f87448f7b8786a
+SIZE (1e2d13a04a98.patch) = 17236

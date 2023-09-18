@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9dacffae0d33.patch:-p1 # https://github.com/Kistler-Group/sdbus-cpp/pull/358
+PATCHFILES+=	1e2d13a04a98.patch:-p1 # https://github.com/Kistler-Group/sdbus-cpp/pull/358
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	High-level C++ D-Bus library
