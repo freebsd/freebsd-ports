@@ -1,8 +1,7 @@
-commit 0aac9b2c295097dbef4d85302845196eaf9c9d60
+commit 8a1cb79aa0534bfcac637a960b66a1b2689cba76
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
-Date:   Sat Aug 19 19:46:49 2023 +0000
 
-    regenerate FreeBSD libwebrtc patch for Firefox 117
+    regenerate FreeBSD libwebrtc patch for Firefox 118
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index aa958f70420c..e6a2d969a1fd 100644
@@ -620,7 +619,7 @@ index c2d256488d9b..1b3eb3a6acb6 100644
  
  Library("aec3_config_gn")
 diff --git third_party/libwebrtc/api/audio/aec3_factory_gn/moz.build third_party/libwebrtc/api/audio/aec3_factory_gn/moz.build
-index ecd28a700696..4e5509d7162d 100644
+index 9a644d357f67..f9c2d536b5d3 100644
 --- third_party/libwebrtc/api/audio/aec3_factory_gn/moz.build
 +++ third_party/libwebrtc/api/audio/aec3_factory_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -629,7 +628,7 @@ index ecd28a700696..4e5509d7162d 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -38196,7 +38195,7 @@ index c6a45f9a3761..f1359947dd44 100644
  
  Library("audio_frame_manipulator_gn")
 diff --git third_party/libwebrtc/modules/audio_mixer/audio_mixer_impl_gn/moz.build third_party/libwebrtc/modules/audio_mixer/audio_mixer_impl_gn/moz.build
-index 32a47e6b064d..44ff455cc768 100644
+index fbbc0aeceaeb..580b07079735 100644
 --- third_party/libwebrtc/modules/audio_mixer/audio_mixer_impl_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_mixer/audio_mixer_impl_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -38205,7 +38204,7 @@ index 32a47e6b064d..44ff455cc768 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -38816,7 +38815,7 @@ index fd78a435604d..aed93b9c682d 100644
 -
  Library("adaptive_fir_filter_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn/moz.build third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn/moz.build
-index 6f67bd6fad7f..301dd09d6644 100644
+index 8d6169ec2406..1577754992fb 100644
 --- third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn/moz.build
 @@ -17,13 +17,22 @@ CXXFLAGS += [
@@ -38825,7 +38824,7 @@ index 6f67bd6fad7f..301dd09d6644 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_AVX2"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
@@ -39377,7 +39376,7 @@ index 97bbc435395f..0fba9b70c95b 100644
 -
  Library("aec3_fft_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/aec3/aec3_gn/moz.build third_party/libwebrtc/modules/audio_processing/aec3/aec3_gn/moz.build
-index 6646d41ff3a8..b680faacb6b6 100644
+index 6bc572f206ea..f4ed63e8bf46 100644
 --- third_party/libwebrtc/modules/audio_processing/aec3/aec3_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/aec3/aec3_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -39386,7 +39385,7 @@ index 6646d41ff3a8..b680faacb6b6 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -41279,7 +41278,7 @@ index f0e41cd6bd08..9fec01cfbcec 100644
  
  Library("aecm_core_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc/agc_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc/agc_gn/moz.build
-index 45e6cad30638..cafd3cc50045 100644
+index 395386d9a4d2..fdcc87394fd4 100644
 --- third_party/libwebrtc/modules/audio_processing/agc/agc_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc/agc_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -41288,7 +41287,7 @@ index 45e6cad30638..cafd3cc50045 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -42135,7 +42134,7 @@ index 9db9a639e7ae..865eee21cf92 100644
  
  Library("level_estimation_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/adaptive_digital_gain_controller_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/adaptive_digital_gain_controller_gn/moz.build
-index 7d16c9a9f5c1..ab3f79521ab8 100644
+index b6913ed5bcac..d8235d61acec 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/adaptive_digital_gain_controller_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/adaptive_digital_gain_controller_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -42144,7 +42143,7 @@ index 7d16c9a9f5c1..ab3f79521ab8 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -43202,7 +43201,7 @@ index a4572251ad4c..6817471d99c1 100644
  
  Library("cpu_features_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/fixed_digital_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/fixed_digital_gn/moz.build
-index 3a54fc31711b..e87103152bc9 100644
+index c25b4d0e6e55..aa7b9fbe475c 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/fixed_digital_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/fixed_digital_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -43211,7 +43210,7 @@ index 3a54fc31711b..e87103152bc9 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -43825,7 +43824,7 @@ index 5b1d68415a52..32bf484b86e7 100644
 -
  Library("gain_map_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/input_volume_controller_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/input_volume_controller_gn/moz.build
-index 582eb326f3d6..8fa3a2bba795 100644
+index d88ac20d7cbf..451dc5c6c994 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/input_volume_controller_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/input_volume_controller_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -43834,7 +43833,7 @@ index 582eb326f3d6..8fa3a2bba795 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -44263,7 +44262,7 @@ index 5a662f407985..c92be24aa407 100644
  
  Library("input_volume_stats_reporter_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/noise_level_estimator_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/noise_level_estimator_gn/moz.build
-index ba000d386223..21a9e8b6511a 100644
+index 0c3f13c2220e..e4926bc41ed4 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/noise_level_estimator_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/noise_level_estimator_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -44272,7 +44271,7 @@ index ba000d386223..21a9e8b6511a 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -46961,7 +46960,7 @@ index 263ec679e37d..e2c6c18ff9e0 100644
 -
  Library("vector_math_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/saturation_protector_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/saturation_protector_gn/moz.build
-index a1e6f309bffa..934bd6d2cdd2 100644
+index b5fe38f226e1..25e1268d0588 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/saturation_protector_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/saturation_protector_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -46970,7 +46969,7 @@ index a1e6f309bffa..934bd6d2cdd2 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -47184,7 +47183,7 @@ index a1e6f309bffa..934bd6d2cdd2 100644
  
  Library("saturation_protector_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/agc2/speech_level_estimator_gn/moz.build third_party/libwebrtc/modules/audio_processing/agc2/speech_level_estimator_gn/moz.build
-index bb1dbc67b847..ad6f735a2729 100644
+index aa4d6f2b9916..718d870cddd3 100644
 --- third_party/libwebrtc/modules/audio_processing/agc2/speech_level_estimator_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/agc2/speech_level_estimator_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -47193,7 +47192,7 @@ index bb1dbc67b847..ad6f735a2729 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -47844,7 +47843,7 @@ index 7f1c48ac391e..d6226679c01e 100644
  
  Library("api_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/apm_logging_gn/moz.build third_party/libwebrtc/modules/audio_processing/apm_logging_gn/moz.build
-index b6d96414b469..7a4060eadad0 100644
+index ddec2cbc3e39..b138ee7f9eed 100644
 --- third_party/libwebrtc/modules/audio_processing/apm_logging_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/apm_logging_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -47853,7 +47852,7 @@ index b6d96414b469..7a4060eadad0 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -48067,7 +48066,7 @@ index b6d96414b469..7a4060eadad0 100644
  
  Library("apm_logging_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/audio_buffer_gn/moz.build third_party/libwebrtc/modules/audio_processing/audio_buffer_gn/moz.build
-index 2291d2981df8..a6e68e27491a 100644
+index 328e0c7cfe07..d0921ac35100 100644
 --- third_party/libwebrtc/modules/audio_processing/audio_buffer_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/audio_buffer_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -48076,7 +48075,7 @@ index 2291d2981df8..a6e68e27491a 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -48698,7 +48697,7 @@ index 9b90bca379fd..af0fce3d5e23 100644
 -
  Library("audio_frame_view_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/audio_processing_gn/moz.build third_party/libwebrtc/modules/audio_processing/audio_processing_gn/moz.build
-index ab0ca7113f60..f5628add5044 100644
+index 028b486ee01e..906e240158f9 100644
 --- third_party/libwebrtc/modules/audio_processing/audio_processing_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/audio_processing_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -48707,7 +48706,7 @@ index ab0ca7113f60..f5628add5044 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -49350,7 +49349,7 @@ index 3e57c48b6fc4..3ceff91af48f 100644
  
  Library("capture_levels_adjuster_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/gain_controller2_gn/moz.build third_party/libwebrtc/modules/audio_processing/gain_controller2_gn/moz.build
-index fcbe873d276a..f87fc5607282 100644
+index 67e7fbc112a4..6abe5e1363e5 100644
 --- third_party/libwebrtc/modules/audio_processing/gain_controller2_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/gain_controller2_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -49359,7 +49358,7 @@ index fcbe873d276a..f87fc5607282 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -49795,7 +49794,7 @@ index 4c8aac9c3dad..28352a6c74f4 100644
  
  Library("high_pass_filter_gn")
 diff --git third_party/libwebrtc/modules/audio_processing/ns/ns_gn/moz.build third_party/libwebrtc/modules/audio_processing/ns/ns_gn/moz.build
-index 12076eedcb58..467f6e1046bb 100644
+index e1b1a395b708..7564f587464b 100644
 --- third_party/libwebrtc/modules/audio_processing/ns/ns_gn/moz.build
 +++ third_party/libwebrtc/modules/audio_processing/ns/ns_gn/moz.build
 @@ -12,12 +12,21 @@ AllowCompilerWarnings()
@@ -49804,7 +49803,7 @@ index 12076eedcb58..467f6e1046bb 100644
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
- DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "0"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -58583,7 +58582,7 @@ index f40abbac1407..d320b4ef86f8 100644
  
  Library("g722_3p_gn")
 diff --git third_party/libwebrtc/modules/utility/utility_gn/moz.build third_party/libwebrtc/modules/utility/utility_gn/moz.build
-index b932f5da73da..49d074bc4db2 100644
+index 8e60046c3417..e6d9cc9715bf 100644
 --- third_party/libwebrtc/modules/utility/utility_gn/moz.build
 +++ third_party/libwebrtc/modules/utility/utility_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -58607,7 +58606,7 @@ index b932f5da73da..49d074bc4db2 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,187 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,111 +48,17 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -58695,10 +58694,6 @@ index b932f5da73da..49d074bc4db2 100644
 -    DEFINES["_WIN32_WINNT"] = "0x0A00"
 -    DEFINES["_WINDOWS"] = True
 -    DEFINES["__STD_C"] = True
--
--    OS_LIBS += [
--        "winmm"
--    ]
 +    DEFINES["_DEBUG"] = True
  
  if CONFIG["CPU_ARCH"] == "aarch64":
@@ -58707,10 +58702,6 @@ index b932f5da73da..49d074bc4db2 100644
      DEFINES["WEBRTC_HAS_NEON"] = True
  
 -if CONFIG["CPU_ARCH"] == "arm":
--
--    CXXFLAGS += [
--        "-mfpu=neon"
--    ]
 -
 -    DEFINES["WEBRTC_ARCH_ARM"] = True
 -    DEFINES["WEBRTC_ARCH_ARM_V7"] = True
@@ -58728,12 +58719,10 @@ index b932f5da73da..49d074bc4db2 100644
  
  if CONFIG["CPU_ARCH"] == "x86":
  
--    DEFINES["WEBRTC_ENABLE_AVX2"] = True
--
--if CONFIG["CPU_ARCH"] == "x86_64":
--
--    DEFINES["WEBRTC_ENABLE_AVX2"] = True
--
+@@ -153,65 +68,8 @@ if CONFIG["CPU_ARCH"] == "x86_64":
+ 
+     DEFINES["WEBRTC_ENABLE_AVX2"] = True
+ 
 -if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
 -
 -    DEFINES["_DEBUG"] = True
@@ -58755,10 +58744,15 @@ index b932f5da73da..49d074bc4db2 100644
 -    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
 -
 -if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_X11"] = "1"
--
++if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
+ 
+     DEFINES["USE_X11"] = "1"
+ 
 -if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
+-
+-    CXXFLAGS += [
+-        "-mfpu=neon"
+-    ]
 -
 -    OS_LIBS += [
 -        "android_support",
@@ -58767,10 +58761,10 @@ index b932f5da73da..49d074bc4db2 100644
 -
 -if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
 -
-     CXXFLAGS += [
-         "-msse2"
-     ]
- 
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
+-
 -    OS_LIBS += [
 -        "android_support"
 -    ]
@@ -58784,22 +58778,13 @@ index b932f5da73da..49d074bc4db2 100644
 -    DEFINES["_GNU_SOURCE"] = True
 -
 -if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
-+    DEFINES["WEBRTC_ENABLE_AVX2"] = True
- 
--    CXXFLAGS += [
--        "-msse2"
--    ]
-+if CONFIG["CPU_ARCH"] == "x86_64":
- 
+-
 -    DEFINES["_GNU_SOURCE"] = True
-+    DEFINES["WEBRTC_ENABLE_AVX2"] = True
- 
+-
 -if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
-+if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
- 
+-
 -    DEFINES["_GNU_SOURCE"] = True
-+    DEFINES["USE_X11"] = "1"
- 
+-
  Library("utility_gn")
 diff --git third_party/libwebrtc/modules/video_capture/video_capture_internal_impl_gn/moz.build third_party/libwebrtc/modules/video_capture/video_capture_internal_impl_gn/moz.build
 index 4b4b418c551f..6daff73f66b4 100644
@@ -73451,15 +73436,16 @@ index a55837b63428..3310e1e14d3c 100644
  
  Library("ip_address_gn")
 diff --git third_party/libwebrtc/rtc_base/logging_gn/moz.build third_party/libwebrtc/rtc_base/logging_gn/moz.build
-index a1b3462893f1..7363168e0153 100644
+index 80f4b0c95a9f..22d90f577490 100644
 --- third_party/libwebrtc/rtc_base/logging_gn/moz.build
 +++ third_party/libwebrtc/rtc_base/logging_gn/moz.build
-@@ -12,11 +12,20 @@ AllowCompilerWarnings()
+@@ -12,12 +12,21 @@ AllowCompilerWarnings()
  DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
  DEFINES["RTC_DAV1D_IN_INTERNAL_DECODER_FACTORY"] = True
  DEFINES["RTC_ENABLE_VP9"] = True
 +DEFINES["USE_GLIB"] = "1"
 +DEFINES["USE_OZONE"] = "1"
+ DEFINES["WEBRTC_APM_DEBUG_DUMP"] = "1"
 +DEFINES["WEBRTC_BSD"] = True
  DEFINES["WEBRTC_ENABLE_PROTOBUF"] = "0"
  DEFINES["WEBRTC_LIBRARY_IMPL"] = True
@@ -73475,7 +73461,7 @@ index a1b3462893f1..7363168e0153 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -43,183 +52,32 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -44,183 +53,32 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
