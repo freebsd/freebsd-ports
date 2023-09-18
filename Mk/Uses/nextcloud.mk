@@ -17,11 +17,11 @@ PKGNAMEPREFIX=	nextcloud-
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 WRKSRC?=	${WRKDIR}/${PORTNAME}
 
-.if ${DISTNAME} == ${PORTNAME}
+.  if ${DISTNAME} == ${PORTNAME}
 DIST_SUBDIR?=   nextcloud/${PORTNAME}-${PORTVERSION}
-.else
+.  else
 DIST_SUBDIR?=	nextcloud
-.endif
+.  endif
 
 MASTER_SITES?=   https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 
@@ -30,6 +30,7 @@ LICENSE?=	AGPLv3
 RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=${NEXTCLOUD_RUN_DEPENDS}:www/nextcloud@${PHP_FLAVOR}
 
 USES+=		php:flavors
+IGNORE_WITH_PHP=	83
 NO_BUILD=	yes
 NO_ARCH=	yes
 
