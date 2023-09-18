@@ -27,6 +27,8 @@ USE_GNOME=	atk gdkpixbuf2 gtk30 pango
 PLIST_FILES=	bin/lapce \
 		bin/lapce-proxy
 
+PORTSCOUT=	https://github.com/${PORTNAME}/${PORTNAME}/releases
+
 #patch druid manually since it's not yet patched upstream
 post-patch:
 	@${FIND} ${WRKSRC}/../druid-0b9c00fcda238e392e758382f25166cd748fd305 \
