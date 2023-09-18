@@ -1,7 +1,7 @@
---- configure.orig	2021-03-03 09:00:00 UTC
+--- configure.orig	2023-07-19 17:58:46 UTC
 +++ configure
-@@ -268,7 +268,7 @@ searchbin ocamlfind
- if test $? -eq 1 -a $ocamlfind != "no"; then 
+@@ -258,7 +258,7 @@ searchbin ocamlfind
+ if test $? -eq 1 && test $ocamlfind != "no"; then 
      instmeth='findlib'
      if test "$installdir" = "auto"
 -    then installdir=`ocamlfind printconf destdir`; fi
@@ -9,10 +9,10 @@
  else
      searchbin install
      if test $? -eq 1; then instmeth='install'
-@@ -365,7 +365,7 @@ OCAMLOPTFLAGS=$mloptflags
- OCAMLINC=$mlinc
+@@ -354,7 +354,7 @@ OCAMLINC=$mlinc
  CFLAGS=$ccinc $ccdef $ccopt
  LIBS=$cclib
+ LDFLAGS=$ldflags
 -INSTALLDIR=$installdir
 +INSTALLDIR=${DESTDIR}$installdir
  INSTALL=install

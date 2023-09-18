@@ -19,3 +19,4 @@
 %%OCAML_SITELIBDIR%%/zarith/zarith.cmxs
 %%OCAML_SITELIBDIR%%/zarith/zarith.h
 %%OCAML_SITELIBDIR%%/zarith/zarith_top.cma
+%%OCAML_SITELIBDIR%%/zarith/zarith_version.cmx
