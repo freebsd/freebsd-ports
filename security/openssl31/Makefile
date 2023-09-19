@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
@@ -63,7 +63,7 @@ CRYPTODEV_DESC=	/dev/crypto support
 CT_DESC=	Certificate Transparency Support
 DES_DESC=	(Triple) Data Encryption Standard
 EC_DESC=	Optimize NIST elliptic curves
-FIPS_DESC=	Build FIPS provider (Note: NOT yet FIPS validated)
+FIPS_DESC=	Build FIPS provider
 GOST_DESC=	GOST (Russian standard)
 HASHES_DESC=	Hash Function Support
 I386_DESC=	i386 (instead of i486+)
