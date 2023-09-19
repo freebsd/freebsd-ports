@@ -1,5 +1,5 @@
 PORTNAME=	arc_summary
-PORTVERSION=	20220410
+PORTVERSION=	20230609
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/openzfs/zfs/${_REV}/cmd/
 DISTFILES=	${PORTNAME}?${PORTVERSION}
@@ -21,7 +21,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/arc_summary
 
-_REV=		0a9aaa7f0cc16f1771f492cce665bc5c5eb8e735
+_REV=		70ea484e3ec56c529c6c5027ffc43840100ce224
 
 do-extract:
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${PORTNAME}
