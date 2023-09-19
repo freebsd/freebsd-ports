@@ -4,6 +4,11 @@
 
 crowdsec is installed.
 
+Note: If you are using OPNsense or pfSense, ignore the following instructions and use the settings page of the
+CrowdSec plugin.
+
+-----
+
 You need to check/edit the following files in %%ETCDIR%% as described in https://doc.crowdsec.net/docs/configuration/crowdsec_configuration
 
  - config.yaml: main configuration
@@ -12,9 +17,12 @@ You need to check/edit the following files in %%ETCDIR%% as described in https:/
 
 Then you can enable the daemon via sysrc and run it.
 
+----------
 # sysrc crowdsec_enable="YES"
 crowdsec_enable: NO -> YES
 # service crowdsec start
+----------
+
 EOM
 }
 ]
