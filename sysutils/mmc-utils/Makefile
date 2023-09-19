@@ -1,5 +1,5 @@
 PORTNAME=	mmc-utils
-DISTVERSION=	20230612
+DISTVERSION=	20230807
 DISTVERSIONSUFFIX=	-${MMC_GITSHASH}
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git/snapshot/${MMC_GITHASH}${EXTRACT_SUFX}?dummy=/
@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 
 IGNORE_DragonFly=	only supported on FreeBSD
 CFLAGS+=	-DVERSION='\"${MMC_GITSHASH}\"'
-MMC_GITHASH=	6d593efc3cd00e4debd0ffc5806246390dc66242
+MMC_GITHASH=	613495ecaca97a19fa7f8f3ea23306472b36453c
 MMC_GITSHASH=	${MMC_GITHASH:C/^(........).*/\1/}
 PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
 USES=		gmake

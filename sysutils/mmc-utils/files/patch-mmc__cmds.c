@@ -1,4 +1,4 @@
---- mmc_cmds.c.orig	2023-02-09 14:16:51 UTC
+--- mmc_cmds.c.orig	2023-08-07 11:14:42 UTC
 +++ mmc_cmds.c
 @@ -28,7 +28,12 @@
  #include <errno.h>
@@ -13,10 +13,10 @@
  
  #include "mmc.h"
  #include "mmc_cmds.h"
-@@ -88,8 +93,15 @@ int write_extcsd_value(int fd, __u8 index, __u8 value,
- 			(value << 8) |
- 			EXT_CSD_CMD_SET_NORMAL;
- 	idata.flags = MMC_RSP_SPI_R1B | MMC_RSP_R1B | MMC_CMD_AC;
+@@ -95,8 +100,15 @@ int write_extcsd_value(int fd, __u8 index, __u8 value,
+ 
+ 	fill_switch_cmd(&idata, index, value);
+ 
 +#if defined(__FreeBSD__)
 +	if (timeout_ms != 0) {
 +		fprintf(stderr, "Command timeout not supported\n");
@@ -29,7 +29,7 @@
  
  	ret = ioctl(fd, MMC_IOC_CMD, &idata);
  	if (ret)
-@@ -121,8 +133,19 @@ static __u32 get_size_in_blks(int fd)
+@@ -128,8 +140,19 @@ static __u32 get_size_in_blks(int fd)
  {
  	int res;
  	int size;
@@ -49,7 +49,7 @@
  	if (res) {
  		fprintf(stderr, "Error getting device size, errno: %d\n",
  			errno);
-@@ -1974,8 +1997,10 @@ int do_read_extcsd(int nargs, char **argv)
+@@ -1981,8 +2004,10 @@ int do_read_extcsd(int nargs, char **argv)
  		       (ext_csd[EXT_CSD_CMDQ_DEPTH] & 0x1f) + 1);
  		printf("Command Enabled [CMDQ_MODE_EN]: 0x%02x\n",
  		       ext_csd[EXT_CSD_CMDQ_MODE_EN]);
@@ -60,7 +60,7 @@
  	}
  out_free:
  	return ret;
-@@ -2646,6 +2671,7 @@ int do_cache_dis(int nargs, char **argv)
+@@ -2648,6 +2673,7 @@ int do_cache_dis(int nargs, char **argv)
  	return do_cache_ctrl(0, nargs, argv);
  }
  
@@ -68,15 +68,15 @@
  static int erase(int dev_fd, __u32 argin, __u32 start, __u32 end)
  {
  	int ret = 0;
-@@ -2800,6 +2826,7 @@ out:
+@@ -2802,6 +2828,7 @@ out:
  	close(dev_fd);
  	return ret;
  }
 +#endif
  
- 
- int do_ffu(int nargs, char **argv)
-@@ -3145,6 +3172,7 @@ int do_preidle(int nargs, char **argv)
+ static void set_ffu_single_cmd(struct mmc_ioc_multi_cmd *multi_cmd,
+ 			       __u8 *ext_csd, unsigned int bytes, __u8 *buf,
+@@ -3137,6 +3164,7 @@ int do_preidle(int nargs, char **argv)
  	return 0;
  }
  
@@ -84,7 +84,7 @@
  int do_alt_boot_op(int nargs, char **argv)
  {
  	int fd, ret, boot_data_fd;
-@@ -3247,3 +3275,4 @@ dev_fd_close:
+@@ -3239,3 +3267,4 @@ dev_fd_close:
  		exit(1);
  	return 0;
  }
