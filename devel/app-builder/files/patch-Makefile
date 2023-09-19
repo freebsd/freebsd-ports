@@ -1,0 +1,20 @@
+--- Makefile.orig	2023-09-18 22:13:05 UTC
++++ Makefile
+@@ -41,8 +41,8 @@ test:
+ 	go test -v ./pkg/...
+ 
+ assets:
+-	~/go/bin/go-bindata -o ./pkg/package-format/bindata.go -pkg package_format -prefix ./pkg/package-format ./pkg/package-format/appimage/templates
+-	~/go/bin/go-bindata -o ./pkg/package-format/snap/snapScripts.go -pkg snap -prefix ./pkg/package-format/snap ./pkg/package-format/snap/desktop-scripts
++	go-bindata -o ./pkg/package-format/bindata.go -pkg package_format -prefix ./pkg/package-format ./pkg/package-format/appimage/templates
++	go-bindata -o ./pkg/package-format/snap/snapScripts.go -pkg snap -prefix ./pkg/package-format/snap ./pkg/package-format/snap/desktop-scripts
+ 
+ publish:
+ 	#make lint
+@@ -51,4 +51,4 @@ publish:
+ 
+ update-deps:
+ 	go get -u -d
+-	go mod tidy
+\ No newline at end of file
++	go mod tidy
