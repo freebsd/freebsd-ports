@@ -1,10 +1,10 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.42.2
+DISTVERSION=	1.42.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	me@forkbomb9.ch
+MAINTAINER=	nk@nkeor.me
 COMMENT=	Scalable distributed realtime performance and health monitoring
 WWW=		https://github.com/netdata/netdata
 
@@ -32,7 +32,7 @@ BINARY_ALIAS=	ar=llvm-ar ranlib=llvm-ranlib
 EXTRACT_AFTER_ARGS=	--exclude ml/dlib --exclude web/server/h2o
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-h2o --disable-unit-tests
+CONFIGURE_ARGS=	--disable-h2o --disable-unit-tests --with-user=netdata
 
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-D_WANT_VMMETER
