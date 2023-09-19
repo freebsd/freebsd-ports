@@ -15,6 +15,7 @@ LIB_DEPENDS=	libobuparse.so:multimedia/obuparse
 
 USES=		gmake localbase pathfix
 PATHFIX_MAKEFILEIN=	Makefile
+USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vimeo
@@ -27,7 +28,6 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--extra-libs="${LIBS}" \
 		--enable-shared
 MAKE_ARGS=	STRIP="${STRIP_CMD}"
-USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-Os //; /=.*-fexcess-precision/d' \
