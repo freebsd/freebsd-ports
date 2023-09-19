@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpfctl.so:net/libpfctl
 
-USES?=		autoreconf libtool localbase
+USES?=		autoreconf libtool localbase:ldflags
 
 LDFLAGS+=	-lpfctl
 
