@@ -26,15 +26,17 @@ PORTSCOUT=	limit:^2\.8\.[0-9][0-9][0-9]$
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-OPTIONS_DEFINE=			IPV6
+OPTIONS_DEFINE=			DEBUG IPV6
 OPTIONS_DEFAULT=		IPV6 OPENSSL
 OPTIONS_RADIO=			SSL
 OPTIONS_RADIO_SSL=		GNUTLS OPENSSL
+
+DEBUG_CONFIGURE_ON=	--enable-debug
 GNUTLS_LIB_DEPENDS=		libgcrypt.so:security/libgcrypt \
 				libgnutls.so:security/gnutls \
 				libgpg-error.so:security/libgpg-error
+GNUTLS_USES=	localbase:ldflags
 GNUTLS_CONFIGURE_ON=		--enable-gnutls
-GNUTLS_LDFLAGS=			-L${LOCALBASE}/lib
 IPV6_CONFIGURE_ENABLE=		ipv6
 OPENSSL_CONFIGURE_ENABLE=	ssl
 
