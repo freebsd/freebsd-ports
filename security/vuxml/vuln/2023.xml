@@ -1,3 +1,30 @@
+  <vuln vid="32a4896a-56da-11ee-9186-001b217b3468">
+    <topic>Gitlab -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.3.0</ge><lt>16.3.4</lt></range>
+	<range><ge>13.12.0</ge><lt>16.2.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/09/18/security-release-gitlab-16-3-4-released/">
+	  <p>Attacker can abuse scan execution policies to run pipelines as another user</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4998</cvename>
+      <url>https://about.gitlab.com/releases/2023/09/18/security-release-gitlab-16-3-4-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-09-18</discovery>
+      <entry>2023-09-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="11982747-544c-11ee-ac3e-a04a5edf46d9">
     <topic>routinator -- multiple vulnerabilities</topic>
     <affects>
