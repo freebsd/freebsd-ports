@@ -98,6 +98,7 @@ include/gltfio/MaterialProvider.h
 include/gltfio/NodeManager.h
 include/gltfio/ResourceLoader.h
 include/gltfio/TextureProvider.h
+include/gltfio/TrsTransformManager.h
 include/gltfio/materials/uberarchive.h
 include/gltfio/math.h
 include/ibl/Cubemap.h
