@@ -1,0 +1,35 @@
+--- ../stream-lua-nginx-module-0.0.13/config.orig
++++ ../stream-lua-nginx-module-0.0.13/config
+@@ -45,9 +45,9 @@
+         NGX_TEST_LD_OPT="$ngx_lua_opt_L $NGX_TEST_LD_OPT"
+
+         if [ $NGX_RPATH = YES ]; then
+-            ngx_feature_libs="-R$LUAJIT_LIB $ngx_lua_opt_L -lluajit-5.1 $luajit_ld_opt"
++            ngx_feature_libs="-R$LUAJIT_LIB $ngx_lua_opt_L -lluajit-5.1 -lpcre $luajit_ld_opt"
+         else
+-            ngx_feature_libs="$ngx_lua_opt_L -lluajit-5.1 $luajit_ld_opt"
++            ngx_feature_libs="$ngx_lua_opt_L -lluajit-5.1 -lpcre $luajit_ld_opt"
+         fi
+
+         . auto/feature
+@@ -71,9 +71,9 @@
+             NGX_TEST_LD_OPT="$ngx_lua_opt_L $NGX_TEST_LD_OPT"
+
+             if [ $NGX_RPATH = YES ]; then
+-                ngx_feature_libs="-R$LUAJIT_LIB $ngx_lua_opt_L -lluajit-5.1 $luajit_ld_opt"
++                ngx_feature_libs="-R$LUAJIT_LIB $ngx_lua_opt_L -lluajit-5.1 -lpcre $luajit_ld_opt"
+             else
+-                ngx_feature_libs="$ngx_lua_opt_L -lluajit-5.1 $luajit_ld_opt"
++                ngx_feature_libs="$ngx_lua_opt_L -lluajit-5.1 -lpcre $luajit_ld_opt"
+             fi
+
+             . auto/feature
+@@ -436,7 +436,7 @@
+             . auto/feature
+
+             if [ $ngx_found = yes ]; then
+-                CORE_LIBS="-Wl,--require-defined=pcre_version $CORE_LIBS"
++                :
+             fi
+         ;;
+     esac

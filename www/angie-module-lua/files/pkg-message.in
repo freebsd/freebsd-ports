@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+The Lua dynamic modules for Angie have been installed.
+To enable these modules, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ndk_http_module.so;
+    load_module modules/ngx_http_lua_module.so;
+    load_module modules/ngx_stream_lua_module.so;
+
+Please refer to the modules documentation for further details:
+https://github.com/openresty/lua-nginx-module
+https://github.com/openresty/stream-lua-nginx-module
+EOM
+}
+]

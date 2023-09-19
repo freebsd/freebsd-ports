@@ -1,4 +1,4 @@
-TIMESTAMP = 1693428404
+TIMESTAMP = 1695159959
 SHA256 (angie-1.2.0.tar.gz) = 82f23115c2e8ebf00d5429622ad96e8c7e785e87bc298b292246660cc61e2cff
 SIZE (angie-1.2.0.tar.gz) = 1510159
 SHA256 (kjdev-nginx-auth-jwt-0.2.1_GH0.tar.gz) = 23958d5f02012f56660cacc3c0355bafea10ceb77abb3f0e8da123edf1f7d8f1
@@ -25,6 +25,10 @@ SHA256 (max-lt-nginx-jwt-module-v3.2.2_GH0.tar.gz) = e6c2f4d82254fb64b01c24860bb
 SIZE (max-lt-nginx-jwt-module-v3.2.2_GH0.tar.gz) = 15681
 SHA256 (kjdev-nginx-keyval-0.1.0_GH0.tar.gz) = a239beffb3b3cb688f52bcaa105a13a27253a71e383c53a6597098fa99c5f82b
 SIZE (kjdev-nginx-keyval-0.1.0_GH0.tar.gz) = 17486
+SHA256 (openresty-lua-nginx-module-v0.10.25_GH0.tar.gz) = bc764db42830aeaf74755754b900253c233ad57498debe7a441cee2c6f4b07c2
+SIZE (openresty-lua-nginx-module-v0.10.25_GH0.tar.gz) = 725616
+SHA256 (openresty-stream-lua-nginx-module-v0.0.13_GH0.tar.gz) = 01b715754a8248cc7228e0c8f97f7488ae429d90208de0481394e35d24cef32f
+SIZE (openresty-stream-lua-nginx-module-v0.0.13_GH0.tar.gz) = 376245
 SHA256 (vision5-ngx_devel_kit-v0.3.2_GH0.tar.gz) = aa961eafb8317e0eb8da37eb6e2c9ff42267edd18b56947384e719b85188f58b
 SIZE (vision5-ngx_devel_kit-v0.3.2_GH0.tar.gz) = 66551
 SHA256 (nginx-njs-0.8.0_GH0.tar.gz) = b98033fff6aadcbb8e108b96e80c0d94c6e2103bcbe75846b5ae0b560696084b

@@ -1,0 +1,3 @@
+Module embeds the power of Lua into Angie HTTP and STREAM servers.
+By leveraging Angie's subrequests, this module allows the integration of
+the powerful Lua threads (known as "coroutines") into the Angie event model.
