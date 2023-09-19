@@ -1,5 +1,6 @@
 PORTNAME=	transmission
 DISTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	mondo.debater_0q@icloud.com
@@ -7,6 +8,7 @@ COMMENT=	Transmission BitTorrent client
 WWW=		https://www.transmissionbt.com
 
 LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libcurl.so:ftp/curl \
@@ -19,14 +21,18 @@ LIB_DEPENDS=	libb64.so:converters/libb64 \
 		libpsl.so:dns/libpsl \
 		libutp.so:net-p2p/libutp
 
-FLAVORS=		full cli daemon gtk qt utils
-FLAVOR?=		${FLAVORS:[1]}
+FLAVORS=			default cli daemon gtk qt utils
+FLAVOR?=			${FLAVORS:[1]}
 .for flavor in ${FLAVORS}
 ${flavor}_PKGNAMESUFFIX=	-${flavor}
 .endfor
-full_LIB_DEPENDS=	${gtk_LIB_DEPENDS}
-gtk_LIB_DEPENDS=	libayatana-appindicator3.so:devel/libayatana-appindicator \
-			libharfbuzz.so:print/harfbuzz
+
+CONFLICTS_INSTALL=		transmission-default
+default_CONFLICTS_INSTALL=     	transmission-*
+
+gtk_LIB_DEPENDS=		libayatana-appindicator3.so:devel/libayatana-appindicator \
+				libharfbuzz.so:print/harfbuzz
+GTK_LIB_DEPENDS=		${gtk_LIB_DEPENDS}
 
 USES=		cmake cpe iconv libtool localbase pkgconfig ssl
 
@@ -39,12 +45,12 @@ GH_TUPLE=	google:googletest:af29db7:googletest/third-party/googletest \
 		transmission:utfcpp:b85efd6:utfcpp/third-party/utfcpp \
 		transmission:wide-integer:4de0b52:wideinteger/third-party/wide-integer
 
-.if ${FLAVOR} == gtk || ${FLAVOR} == full
+.if ${FLAVOR} == gtk
 USES+=		desktop-file-utils gettext-runtime gettext-tools gnome
 USE_GNOME=	gdkpixbuf2 glibmm gtkmm30
 .endif
 
-.if ${FLAVOR} == qt || ${FLAVOR} == full
+.if ${FLAVOR} == qt
 USES+=		desktop-file-utils qmake:no_env qt:5
 USE_QT=		core dbus gui network svg widgets buildtools:build \
 		linguisttools:build
@@ -67,22 +73,24 @@ PLIST=		${PKGDIR}/pkg-plist.${FLAVOR}
 
 .if ${FLAVOR} == cli
 CMAKE_ON+=	ENABLE_CLI
-CMAKE_OFF+=	ENABLE_GTK ENABLE_QT
+CMAKE_OFF+=	ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == daemon
 CMAKE_ON+=	ENABLE_DAEMON
-CMAKE_OFF+=	ENABLE_GTK ENABLE_QT
+CMAKE_OFF+=	ENABLE_CLI ENABLE_GTK ENABLE_QT ENABLE_UTILS
 .endif
 
-.if ${FLAVOR} == gtk || ${FLAVOR} == full
-CMAKE_ON+=	ENABLE_GTK GTK_IS_REQUIRED
-CMAKE_ARGS+=	-DUSE_GTK_VERSION=3
+.if ${FLAVOR} == gtk
+CMAKE_ON+=	${GTK_CMAKE_ON}
+CMAKE_ARGS+=	${GTK_CMAKE_ARGS}
+CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
-.if ${FLAVOR} == qt || ${FLAVOR} == full
-CMAKE_ON+=	ENABLE_QT QT_IS_REQUIRED
-CMAKE_ARGS+=	-DUSE_QT_VERSION=5
+.if ${FLAVOR} == qt
+CMAKE_ON+=	${QT_CMAKE_ON}
+CMAKE_ARGS+=	${QT_CMAKE_ARGS}
+CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_UTILS INSTALL_WEB
 .endif
 
 .if ${FLAVOR} == utils
@@ -91,39 +99,51 @@ CMAKE_OFF+=	ENABLE_CLI ENABLE_DAEMON ENABLE_GTK ENABLE_QT ENABLE_TESTS \
 		ENABLE_WERROR INSTALL_WEB
 .endif
 
-OPTIONS_DEFINE=		CLI DAEMON DOCS NLS TESTS UTILS WEB
-OPTIONS_DEFAULT=	DOCS NLS
+OPTIONS_DEFINE=		CLI DAEMON DOCS GTK NLS QT TESTS UTILS WEB
+OPTIONS_DEFAULT=	CLI DAEMON DOCS GTK NLS QT UTILS WEB
 
-.if ${FLAVOR} == cli
-OPTIONS_DEFINE=		DAEMON DOCS NLS TESTS UTILS WEB
-OPTIONS_DEFAULT=	UTILS
+DOCS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-CMakeLists.txt
+.if ${FLAVOR:Ndefault} && ${FLAVOR:Ndaemon}
+EXTRA_PATCHES=		${DOCS_EXTRA_PATCHES_OFF}
 .endif
 
-.if ${FLAVOR} == daemon
-OPTIONS_DEFINE=		CLI DOCS NLS TESTS UTILS WEB
-OPTIONS_DEFAULT=	UTILS WEB
+.if ${FLAVOR:Mdaemon}
+OPTIONS_DEFINE=		DOCS NLS TESTS WEB
+OPTIONS_DEFAULT=	DOCS NLS WEB
 .endif
 
-.if ${FLAVOR} == full
-OPTIONS_DEFAULT+=	CLI DAEMON DOCS NLS UTILS WEB
-.endif
-
-.if ${FLAVOR} == utils
-OPTIONS_DEFINE=		DOCS NLS
-OPTIONS_DEFAULT=	DOCS NLS
+.if ${FLAVOR:Ndefault} && ${FLAVOR:Ndaemon}
+OPTIONS_DEFINE=		NLS TESTS
+OPTIONS_DEFAULT=	NLS
 .endif
 
 OPTIONS_SUB=	yes
 
 CLI_DESC=	Build remote & command-line (deprecated) clients
 DAEMON_DESC=	Build daemon
+GTK_DESC=	Build GTK+ client
+QT_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 UTILS_DESC=	Build utilities (create, edit, show)
-WEB_DESC=	Install web client
+WEB_DESC=	Install web client (imples daemon)
 
 CLI_CMAKE_BOOL=	ENABLE_CLI
 
 DAEMON_CMAKE_BOOL=	ENABLE_DAEMON
+
+GTK_CMAKE_ON=		ENABLE_GTK \
+			GTK_IS_REQUIRED
+GTK_CMAKE_ARGS+=	-DUSE_GTK_VERSION=3
+
+QT_CMAKE_ON=	ENABLE_QT \
+		QT_IS_REQUIRED
+QT_CMAKE_ARGS+=	-DUSE_QT_VERSION=5
+
+GTK_USES=	desktop-file-utils gettext-runtime gettext-tools gnome
+GTK_USE=	GNOME=gdkpixbuf2,glibmm,gtkmm30
+
+QT_USES=	desktop-file-utils qmake:no_env qt:5
+QT_USE=		QT=core,dbus,gui,network,svg,widgets,buildtools:build,linguisttools:build
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
@@ -153,11 +173,11 @@ post-install:
 
 .if ${FLAVOR} == daemon
 post-install:
-	${MKDIR} ${STAGEDIR}${ETCDIR}/home
+	        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
 .endif
 
 post-install-DAEMON-on:
-	        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
+		        ${MKDIR} ${STAGEDIR}${ETCDIR}/home
 
 post-install-TESTS-on:
 	@${ECHO_MSG} "Running tests..."
@@ -166,6 +186,5 @@ post-install-TESTS-on:
 		--gtest_filter="-DhtTest.usesBootstrapFile" \
 		#fails in poudriere due to lack of networking, passes otherwise
 		--gtest_brief=1 \
-		--gtest_output=json:libtransmission-test.json
 
 .include <bsd.port.mk>

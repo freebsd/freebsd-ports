@@ -2,16 +2,6 @@ bin/transmission-create
 bin/transmission-edit
 bin/transmission-remote
 bin/transmission-show
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.0.md
-%%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.1.md
-%%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.2.md
-%%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.3.md
-%%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.4.md
-%%PORTDOCS%%%%DOCSDIR%%/rpc-spec.md
-%%PORTDOCS%%%%DOCSDIR%%/send-email-when-torrent-done.sh
 man/man1/transmission-create.1.gz
 man/man1/transmission-edit.1.gz
 man/man1/transmission-remote.1.gz

@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230919:
+  AFFECTS: users of net-p2p/transmission
+  AUTHOR:  mondo.debater_0q@icloud.com
+
+  The 4.0 port haphazardly consolidated prior slave ports into flavors of a single port.
+  The flavors have now been revised to better match releases prior to 4.0.
+  The -full flavor included in the 4.0 port has been replaced with -default, which
+  restores the compile-time options of prior release's metaport. Other flavors allow
+  for more piecemeal installs. The prior -web slave port can be installed through the
+  -default flavor or the -daemon flavor.
+
+  See Bug 273841 for more details.
+
 20230915:
   AFFECTS: users of print/ghostscript10
   AUTHOR: michael.osipov@siemens.com

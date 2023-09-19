@@ -23,7 +23,11 @@
 # transmission_chown:	     By default, transmission checks and fixes the
 #			     permissions for its home directory.  If this
 #			     causes problems, set this variable to no.
-#
+# transmission_log:	     Use alternate log file for transmission.
+# 			     If not specified, it sends log to rsyslog.
+# transmission_log_level:    Set to 'critical', 'error', 'warn', 'info',
+# 			     'debug' or 'trace' to configure log verbosity.
+
 
 . /etc/rc.subr
 
@@ -48,6 +52,8 @@ transmission_flags=" \
 	${transmission_watch_dir:+-c ${transmission_watch_dir}} \
 	${transmission_conf_dir:+-g ${transmission_conf_dir}} \
 	${transmission_download_dir:+-w ${transmission_download_dir}} \
+	${transmission_log:+--logfile ${transmission_log}} \
+	${transmission_log_level:+--loglevel=${transmission_log_level}} \
 	${pidfile:+-x $pidfile} \
 	${transmission_flags}"
 
@@ -64,6 +70,10 @@ transmission_prestart()
 	if [ -n "$transmission_web_home" ]; then
 		TRANSMISSION_WEB_HOME=$transmission_web_home
 		export TRANSMISSION_WEB_HOME
+	fi
+	if [ -n "$transmission_log" ]; then
+		touch $transmission_log
+		chown $transmission_user:$transmission_group $transmission_log
 	fi
 }
 
