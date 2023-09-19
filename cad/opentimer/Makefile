@@ -13,7 +13,6 @@ BROKEN_i386=	undefined reference to `__atomic_compare_exchange_8' #'`
 BROKEN_powerpc=	undefined reference to `__atomic_compare_exchange_8' #'`
 
 USES=		cmake compiler:c++17-lang python:test shebangfix tcl
-#USE_GCC=	yes # fails to build with clang-11: https://github.com/OpenTimer/OpenTimer/issues/48
 
 SHEBANG_FILES=	inttest/*.py
 
