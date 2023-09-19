@@ -1,6 +1,5 @@
 PORTNAME=	libportal
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.7.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -26,12 +25,14 @@ OPTIONS_DEFAULT=	VAPI
 VAPI_MESON_TRUE=	vapi
 VAPI_USES=		vala:build
 
-MESON_ARGS=	-Ddocs=false -Dbackends=${BACKEND}
+MESON_ARGS=	-Ddocs=false \
+		-Dbackend-gtk3=disabled -Dbackend-gtk4=disabled -Dbackend-qt5=disabled
 OPTIONS_SUB=	yes
 
 .if defined(BACKEND)
 LIB_DEPENDS=	libportal.so:deskutils/libportal
 PLIST=		${PKGDIR}/pkg-plist.${BACKEND}
+MESON_ARGS+=	-Dbackend-${BACKEND}=enabled
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
