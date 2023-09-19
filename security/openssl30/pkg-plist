@@ -268,7 +268,8 @@ man/man5/x509v3_config.5ossl.gz
 @comment %%OPENSSLDIR%%/misc/tsget.pl
 %%OPENSSLDIR%%/misc/tsget
 @sample %%OPENSSLDIR%%/ct_log_list.cnf.dist %%OPENSSLDIR%%/ct_log_list.cnf
-%%OPENSSLDIR%%/fipsmodule.cnf
+%%FIPS%%%%OPENSSLDIR%%/fipsmodule.cnf
 @sample %%OPENSSLDIR%%/openssl.cnf.dist %%OPENSSLDIR%%/openssl.cnf
+@dir lib/ossl-modules
 @dir %%OPENSSLDIR%%/private
 @dir %%OPENSSLDIR%%/certs
