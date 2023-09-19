@@ -12,7 +12,9 @@
 #				Default is "NO".
 # crowdsec_config (str):	Set the agent config path.
 #				Default is "%%PREFIX%%/etc/crowdsec/config.yaml".
-# crowdsec_flags (str):	Set the extra flags to run agent.
+# crowdsec_machine_name (str):	Name for the crowdsec instance when it's running its own lapi.
+#				Default is "localhost".
+# crowdsec_flags (str):	Set the extra flags to run the agent.
 #				Default is ""
 
 . /etc/rc.subr
@@ -21,16 +23,18 @@ name=crowdsec
 desc="Crowdsec Agent"
 rcvar=crowdsec_enable
 
-load_rc_config $name
+load_rc_config "$name"
 
 : "${crowdsec_enable:=NO}"
 : "${crowdsec_config:=%%PREFIX%%/etc/crowdsec/config.yaml}"
+: "${crowdsec_machine_name:=localhost}"
 : "${crowdsec_flags:=}"
 
 pidfile=/var/run/${name}.pid
 required_files="$crowdsec_config"
 command="%%PREFIX%%/bin/${name}"
 start_cmd="${name}_start"
+stop_cmd="${name}_stop"
 start_precmd="${name}_precmd"
 configtest_cmd="${name}_configtest"
 extra_commands="configtest reload"
@@ -49,15 +53,23 @@ crowdsec_precmd() {
         cs_cli hub update || :
     fi
 
-    if [ "$(cs_cli machines list -o json)" = "[]" ]; then
-        echo "Registering LAPI"
-        cs_cli machines add --auto || :
-    fi
-
     CONFIG_DIR=$(Config ConfigPaths.ConfigDir)
-    if [ ! -s "${CONFIG_DIR}/online_api_credentials.yaml" ]; then
-        echo "Registering CAPI"
-        cs_cli capi register || :
+
+    # Is the LAPI enabled on this node?
+    if [ "$(cs_cli config show --key Config.API.Server.Enable)" != "false" ]; then
+
+        # There are no machines, we create the main one
+        if [ "$(cs_cli machines list -o json)" = "[]" ]; then
+            echo "Registering LAPI"
+            cs_cli machines add "${crowdsec_machine_name}" --auto || :
+        fi
+
+        # Register to the central server to receive the community blocklist and more
+        if [ ! -s "${CONFIG_DIR}/online_api_credentials.yaml" ]; then
+            echo "Registering CAPI"
+            cs_cli capi register || :
+        fi
+
     fi
 
     # This would work but takes 30secs to timeout while reading the metrics, because crowdsec is not running yet.
@@ -70,16 +82,44 @@ crowdsec_precmd() {
     fi
 }
 
+crowdsec_stop()
+{
+    if [ ! -f "$pidfile" ]; then
+        echo "${name} is not running."
+        return
+    fi
+    pid=$(cat "$pidfile")
+    if kill -0 "$pid" >/dev/null 2>&1; then
+        echo "Stopping ${name}."
+        kill -s TERM "$pid" >/dev/null 2>&1
+        # shellcheck disable=SC2034
+        for i in $(seq 1 20); do
+            sleep 1
+            if ! kill -0 "$pid" >/dev/null 2>&1; then
+                rm -f "$pidfile"
+                return
+            fi
+        done
+        echo "Timeout, terminating ${name} with SIGKILL."
+        kill -s KILL "$pid" >/dev/null 2>&1
+        rm -f "$pidfile"
+    else
+        echo "${name} is not running."
+    fi
+}
+
 crowdsec_start()
 {
-    /usr/sbin/daemon -f -p ${pidfile} -t "${desc}" -- \
-        ${command} -c "${crowdsec_config}" ${crowdsec_flags}
+    /usr/sbin/daemon -f -p "$pidfile" -t "$desc" -- \
+        "$command" -c "$crowdsec_config" ${crowdsec_flags}
 }
 
 crowdsec_configtest()
 {
     echo "Performing sanity check on ${name} configuration."
-        eval ${command} -c ${crowdsec_config} -t
+    if "$command" -c "$crowdsec_config" -t -error; then
+        echo "Configuration test OK"
+    fi
 }
 
 run_rc_command "$1"

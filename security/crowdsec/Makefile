@@ -1,8 +1,6 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-freebsd
+DISTVERSION=	1.5.4
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -12,21 +10,26 @@ WWW=		https://github.com/crowdsecurity/crowdsec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:no_targets
+LIB_DEPENDS=	libre2.so:devel/re2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	crowdsecurity
-GH_PROJECT=	crowdsec
-_BUILD_TAG=	b76e95e3
+USES=		go:modules pkgconfig
+_COMMIT=	e4dcdd25
+_BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec
 
-MAKE_ARGS=	BUILD_VERSION="${DISTVERSIONFULL}" \
-		BUILD_TAG="${_BUILD_TAG}" \
-		BUILD_VENDOR_FLAGS="-mod=vendor -modcacherw" \
-		DEFAULT_CONFIGDIR="${PREFIX}/etc/crowdsec" \
-		DEFAULT_DATADIR="/var/db/crowdsec/data"
+GO_MODULE=	github.com/crowdsecurity/crowdsec
+GO_TARGET=	./cmd/crowdsec ./cmd/crowdsec-cli ./cmd/notification-email ./cmd/notification-http ./cmd/notification-sentinel ./cmd/notification-slack ./cmd/notification-splunk
 
-ALL_TARGET=	build
+GO_BUILDFLAGS=	-v -trimpath -tags netgo,osusergo,sqlite_omit_load_extension,re2_cgo \
+		-ldflags="\
+		-a -s -w \
+		-X github.com/crowdsecurity/go-cs-lib/version.Version=${DISTVERSIONPREFIX}${DISTVERSION}-freebsd \
+		-X github.com/crowdsecurity/go-cs-lib/version.BuildDate=${_BUILD_DATE} \
+		-X github.com/crowdsecurity/go-cs-lib/version.Tag=${_COMMIT} \
+		-X $(GO_MODULE)/pkg/cwversion.Codename=alphaga \
+		-X $(GO_MODULE)/pkg/csconfig.defaultConfigDir=${PREFIX}/etc/crowdsec \
+		-X $(GO_MODULE)/pkg/csconfig.defaultDataDir=/var/db/crowdsec/data \
+		-X $(GO_MODULE)/pkg/cwversion.Libre2=C++"
 
 SUB_FILES=	pkg-deinstall pkg-install pkg-message crowdsec.cron upgrade-hub
 
@@ -52,15 +55,18 @@ do-install:
 	# Binaries
 	#
 
-	${INSTALL_PROGRAM} ${WRKSRC}/cmd/crowdsec/crowdsec ${STAGE_BIN}/
-	${INSTALL_PROGRAM} ${WRKSRC}/cmd/crowdsec-cli/cscli ${STAGE_BIN}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/crowdsec ${STAGE_BIN}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/crowdsec-cli ${STAGE_BIN}/cscli
+
+	# keep this around for compatibility
 	${LN} -s cscli ${STAGE_BIN}/crowdsec-cli
 
 	@${MKDIR} ${STAGE_PLUGINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/email/notification-email ${STAGE_PLUGINS}/
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/http/notification-http ${STAGE_PLUGINS}/
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/slack/notification-slack ${STAGE_PLUGINS}/
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/notifications/splunk/notification-splunk ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-email ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-http ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-sentinel ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-slack ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-splunk ${STAGE_PLUGINS}/
 
 	#
 	# Configuration
@@ -92,19 +98,23 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/email
-	@${MV} ${WRKSRC}/plugins/notifications/email/email.yaml \
+	@${MV} ${WRKSRC}/cmd/notification-email/email.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/email.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/http
-	@${MV} ${WRKSRC}/plugins/notifications/http/http.yaml \
+	@${MV} ${WRKSRC}/cmd/notification-http/http.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/http.yaml.sample
 
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/sentinel
+	@${MV} ${WRKSRC}/cmd/notification-sentinel/sentinel.yaml \
+		${STAGEDIR}${ETCDIR}/notifications/sentinel.yaml.sample
+
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
-	@${MV} ${WRKSRC}/plugins/notifications/slack/slack.yaml \
+	@${MV} ${WRKSRC}/cmd/notification-slack/slack.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/slack.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/splunk
-	@${MV} ${WRKSRC}/plugins/notifications/splunk/splunk.yaml \
+	@${MV} ${WRKSRC}/cmd/notification-splunk/splunk.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/splunk.yaml.sample
 
 	# updated by "cscli machines" at first service start
@@ -145,6 +155,7 @@ do-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/context.yaml
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/sentinel
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/splunk
 
