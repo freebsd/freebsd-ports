@@ -5,7 +5,6 @@ lib/caja-sendto/plugins/libnstemailclient.so
 lib/caja-sendto/plugins/libnstgajim.so
 lib/caja-sendto/plugins/libnstpidgin.so
 lib/caja-sendto/plugins/libnstremovable_devices.so
-lib/caja-sendto/plugins/libnstupnp.so
 lib/caja/extensions-2.0/libcaja-image-converter.so
 lib/caja/extensions-2.0/libcaja-open-terminal.so
 lib/caja/extensions-2.0/libcaja-sendto.so
