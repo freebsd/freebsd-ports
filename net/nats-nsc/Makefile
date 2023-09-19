@@ -1,6 +1,5 @@
 PORTNAME=	nsc
-PORTVERSION=	2.8.0
-PORTREVISION=	3
+PORTVERSION=	2.8.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
@@ -47,7 +46,7 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/Alec
 		mitchellh:go-wordwrap:v1.0.1:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nats-io:cliprompts:2737f3b8cbb9:nats_io_cliprompts_v2/vendor/github.com/nats-io/cliprompts \
 		nats-io:jsm.go:v0.0.35:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
-		nats-io:jwt:v2.4.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
+		nats-io:jwt:v2.5.2:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats-server:v2.9.6:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
 		nats-io:nats.go:v1.24.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.4.4:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
