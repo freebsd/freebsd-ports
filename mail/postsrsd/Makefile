@@ -1,5 +1,6 @@
 PORTNAME=	postsrsd
-PORTVERSION=	2.0.8
+DISTVERSION=	2.0.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	mail
 
@@ -32,6 +33,7 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	\
 		sbin/postsrsd \
+		"@sample ${ETCDIR}.conf.sample" \
 		"@dir /var/db/${PORTNAME}"
 
 PORTDOCS=	CHANGELOG.rst README.rst postsrsd.conf
@@ -47,5 +49,8 @@ REDIS_CMAKE_BOOL=	WITH_REDIS
 SQLITE_DESC=	Use sqlite3 backebd for storing envelope senders
 SQLITE_USES=	sqlite
 SQLITE_CMAKE_BOOL=	WITH_SQLITE
+
+post-install:
+		${INSTALL_DATA} ${WRKSRC}/doc/postsrsd.conf ${STAGEDIR}${PREFIX}/etc/postsrsd.conf.sample
 
 .include <bsd.port.mk>

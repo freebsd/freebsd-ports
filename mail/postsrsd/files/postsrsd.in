@@ -13,6 +13,7 @@
 # postsrsd_enable (bool):   Set to "NO" by default.
 #                           Set it to "YES" to enable postsrsd.
 # postsrsd_uid (str):       Set username to run postsrsd.
+# postsrsd_secret (str):    Secret file file. See postsrsd(8)
 # postsrsd_flags (str):     Flags passed to start command.
 
 . /etc/rc.subr
@@ -33,6 +34,7 @@ load_rc_config $name
 #
 : ${postsrsd_enable="NO"}
 : ${postsrsd_uid="mailnull"}
+: ${postsrsd_secret="%%PREFIX%%/etc/postsrsd.secret"}
 
 # Options other than above can be set with $postsrsd_flags.
 # see postsrsd documentation for detail.
