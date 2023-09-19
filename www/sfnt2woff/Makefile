@@ -11,6 +11,9 @@ WWW=		http://people.mozilla.org/~jkew/woff/
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	multi
 
+DEPRECATED=	Superseded by WOFF 2.0, please consider using devel/woff2
+EXPIRATION_DATE=2023-10-31
+
 NO_WRKSUBDIR=	yes
 USES=		gmake zip
 
