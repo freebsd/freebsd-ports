@@ -1,5 +1,6 @@
 PORTNAME=	dovecot-xaps
 DISTVERSION=	g20210623
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	PopularMoment@protonmail.com

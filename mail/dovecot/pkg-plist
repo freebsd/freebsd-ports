@@ -525,6 +525,7 @@ include/dovecot/ostream-dot.h
 include/dovecot/ostream-encrypt.h
 include/dovecot/ostream-failure-at.h
 include/dovecot/ostream-file-private.h
+include/dovecot/ostream-final-trickle.h
 include/dovecot/ostream-hash.h
 include/dovecot/ostream-metawrap.h
 include/dovecot/ostream-multiplex.h
