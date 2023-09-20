@@ -1,4 +1,4 @@
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -6,7 +6,7 @@ COMMENT=	Python module for libdnet
 
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
-USES=		autoreconf libtool python
+USES=		autoreconf libtool localbase:ldflags python
 
 MASTERDIR=	${.CURDIR}/../libdnet
 INSTALL_WRKSRC=	${WRKSRC}/python
