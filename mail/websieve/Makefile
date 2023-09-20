@@ -1,6 +1,6 @@
 PORTNAME=	websieve
 PORTVERSION=	0.63.a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${SIEVEVERSION}
 DISTNAME?=	${PORTNAME}-${SIEVEVERSION}
@@ -17,56 +17,34 @@ SIEVEVERSION=	${PORTVERSION:S/.//g}
 USES=		cpe perl5 shebangfix
 CPE_VENDOR=	${PORTNAME}_project
 USE_PERL5=	run
+
 SHEBANG_FILES=	websieve.pl
 
-NO_BUILD=	yes
 NO_ARCH=	yes
-
-OPTIONS_SINGLE=	TYPE
-OPTIONS_SINGLE_TYPE=	PERL CYRUS
-OPTIONS_RADIO=	CYRDEP
-OPTIONS_RADIO_CYRDEP=	CYRUS_IMAPD_23 CYRUS_IMAPD_24 CYRUS_IMAPD_25 \
-			CYRUS_IMAPD_30
-OPTIONS_DEFAULT=	CYRUS CYRUS_IMAPD_24
-
-TYPE_DESC=	Choose which sieve backend to use
-PERL_DESC=	Depend on generic Perl modules
-CYRUS_DESC=	Depend on Cyrus IMAPd Perl modules
-CYRDEP_DESC=	Which version of Cyrus IMAPd to depend on
-CYRUS_IMAPD_23_DESC=	Cyrus IMAPd version 2.3.x
-CYRUS_IMAPD_24_DESC=	Cyrus IMAPd version 2.4.x
-CYRUS_IMAPD_25_DESC=	Cyrus IMAPd version 2.5.x
-CYRUS_IMAPD_30_DESC=	Cyrus IMAPd version 3.0.x
-
-CYRUS_IMAPD_30_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd30
-CYRUS_IMAPD_25_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd25
-CYRUS_IMAPD_24_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd24
-CYRUS_IMAPD_23_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd23
-
-PERL_RUN_DEPENDS=	p5-IMAP-Admin>=0:mail/p5-IMAP-Admin \
-			p5-IMAP-Sieve>=0:mail/p5-IMAP-Sieve
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCYRUS}
-FUNCLIB_PL=	funclib.cyrus
-.else
-FUNCLIB_PL=	funclib.pl
-.endif
-
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-_check-config: my-check-config
-my-check-config:
-.if ${PORT_OPTIONS:MPERL}
-.if !empty(PORT_OPTIONS:MCYRUS_IMAPD_23) || \
-    !empty(PORT_OPTIONS:MCYRUS_IMAPD_24) || \
-    !empty(PORT_OPTIONS:MCYRUS_IMAPD_25) || \
-    !empty(PORT_OPTIONS:MCYRUS_IMAPD_30)
-	@${ECHO_MSG} "====> You cannot select a dependency on cyrus with the PERL option"
-_CHECK_CONFIG_ERROR=	true
-.endif
-.endif
+OPTIONS_DEFAULT=	CYRUS CYRUS_IMAPD_25
+OPTIONS_RADIO=	CYRDEP
+OPTIONS_RADIO_CYRDEP=	CYRUS_IMAPD_25 CYRUS_IMAPD_30
+OPTIONS_SINGLE=	TYPE
+OPTIONS_SINGLE_TYPE=	PERL CYRUS
+
+CYRDEP_DESC=	Which version of Cyrus IMAPd to depend on
+CYRUS_DESC=	Depend on Cyrus IMAPd Perl modules
+CYRUS_IMAPD_25_DESC=	Cyrus IMAPd version 2.5.x
+CYRUS_IMAPD_30_DESC=	Cyrus IMAPd version 3.0.x
+PERL_DESC=	Depend on generic Perl modules
+TYPE_DESC=	Choose which sieve backend to use
+
+CYRUS_VARS=	FUNCLIB_PL=funclib.cyrus
+CYRUS_VARS_OFF=	FUNCLIB_PL=funclib.pl
+CYRUS_IMAPD_25_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd25
+CYRUS_IMAPD_30_RUN_DEPENDS=	${SITE_ARCH}/Cyrus/SIEVE/managesieve.pm:mail/cyrus-imapd30
+PERL_PREVENTS=	CYRUS_IMAPD_25 CYRUS_IMAPD_30
+PERL_PREVENTS_MSG=You cannot select a dependency on cyrus with the PERL option
+PERL_RUN_DEPENDS=	p5-IMAP-Admin>=0:mail/p5-IMAP-Admin \
+			p5-IMAP-Sieve>=0:mail/p5-IMAP-Sieve
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,require[ 	]*'\./\([^']*\)',require '${PREFIX}/etc/websieve/\1'," \

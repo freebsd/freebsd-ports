@@ -1,6 +1,6 @@
---- websieve.pl.orig	Tue Jul  6 21:20:09 2004
-+++ websieve.pl	Sat Sep 29 16:02:22 2007
-@@ -640,7 +640,7 @@
+--- websieve.pl.orig	2023-09-20 11:39:29 UTC
++++ websieve.pl
+@@ -640,7 +640,7 @@ sub getuserinfo {
  #creates global variables $mode,@rules,@mailboxes,@quota and %vacation;
  # get quota
  	@quota=&getquota("INBOX") if ($havequota || !$useprocmail);
