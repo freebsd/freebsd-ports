@@ -41,6 +41,9 @@ UTF8PROC_MESON_NO=	disable-utf8proc
 
 PERL_USE_OFF=		perl5=build
 
+post-patch:
+	@${REINPLACE_CMD} 's|%%OPENSSLLIB%%|${OPENSSLLIB}|' ${WRKSRC}/meson.build
+
 post-install-PERL-off:
 	@${RM} -r ${STAGEDIR}${DATADIR}/scripts
 
