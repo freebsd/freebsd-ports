@@ -1,6 +1,13 @@
 bin/playsound2
 include/SDL2/SDL_sound.h
+lib/cmake/SDL2_sound/SDL2_sound-shared-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2_sound/SDL2_sound-shared-targets.cmake
+lib/cmake/SDL2_sound/SDL2_sound-static-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SDL2_sound/SDL2_sound-static-targets.cmake
+lib/cmake/SDL2_sound/SDL2_soundConfig.cmake
+lib/cmake/SDL2_sound/SDL2_soundConfigVersion.cmake
 lib/libSDL2_sound.a
 lib/libSDL2_sound.so
 lib/libSDL2_sound.so.2
-lib/libSDL2_sound.so.2.0.1
+lib/libSDL2_sound.so.2.0.2
+libdata/pkgconfig/SDL2_sound.pc
