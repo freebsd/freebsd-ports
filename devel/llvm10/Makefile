@@ -12,6 +12,9 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	LLVM and Clang
 WWW=		https://llvm.org/
 
+DEPRECATED=	Obsolete, unmaintained, few dependent ports
+EXPIRATION_DATE=	2023-09-30
+
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 LICENSE+=	LLVM2
 LICENSE_FILE_LLVM2=	${WRKSRC}/LICENSE.TXT
