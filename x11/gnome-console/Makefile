@@ -25,6 +25,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome localbase meson \
 		pkgconfig tar:xz
 USE_CSTD=	c11
 USE_GNOME=	gtk30 gtksourceview5 libadwaita
+MESON_ARGS=	${${PORTVERSION:R}<44:?-Dwerror=false:}
 GLIB_SCHEMAS=	org.gnome.Console.gschema.xml
 
 PORTSCOUT=	limitw:1,even
