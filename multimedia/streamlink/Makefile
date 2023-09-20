@@ -1,5 +1,5 @@
 PORTNAME=	streamlink
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,13 +21,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}pycryptodome>=3.4.3:security/py-pycryptodome@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}pysocks>1.5.7:net/py-pysocks@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}requests>2.26.0:www/py-requests@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}trio>=0.22.0:net/py-trio@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}trio-websocket>=0.9.0:net/py-trio-websocket@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0:devel/py-typing-extensions@${PY_FLAVOR}\
+		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}websocket-client>=1.2.1:www/py-websocket-client@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR}\
-		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}pytest-trio>0:devel/py-pytest-trio@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}\
@@ -36,9 +36,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports>0:devel/py-backports@${PY_FLAVOR}
 USES=		python pytest
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
-OPTIONS_DEFINE=		FFMPEG RTMPDUMP
-OPTIONS_DEFAULT=	FFMPEG RTMPDUMP
+OPTIONS_DEFINE=		FFMPEG
+OPTIONS_DEFAULT=	FFMPEG
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
-RTMPDUMP_RUN_DEPENDS=	rtmpdump:multimedia/rtmpdump
 
 .include <bsd.port.mk>
