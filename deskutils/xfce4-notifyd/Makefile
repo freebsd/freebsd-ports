@@ -4,7 +4,7 @@
 # Support of GTK is checked at compile time and themes directories too.
 
 PORTNAME=	xfce4-notifyd
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -26,6 +26,7 @@ USE_XFCE=	libutil panel
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	CANBERRA NLS
