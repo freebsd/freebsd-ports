@@ -1,5 +1,5 @@
 PORTNAME=	zita-resampler
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.2
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 
@@ -19,5 +19,7 @@ OPTIONS_DEFINE=		OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 OPTIMIZED_CFLAGS_CFLAGS=	-ffast-math
+
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
