@@ -1,6 +1,6 @@
 --- meson.build.orig	2023-05-01 08:45:22 UTC
 +++ meson.build
-@@ -178,6 +178,10 @@ endif
+@@ -178,6 +178,10 @@ if compiler.has_header('fcntl.h')
      conf_data.set('HAVE_FCNTL_H', 1)
  endif
  
@@ -11,7 +11,18 @@
  if compiler.has_header('libgen.h')
      conf_data.set('HAVE_LIBGEN_H', 1)
  endif
-@@ -845,7 +849,7 @@ endif
+@@ -344,8 +348,8 @@ gnutlsdeps = []
+ ssldeps = []
+ 
+ if conf_data.get('CONFIG_OPENSSL')
+-    ssldeps = dependency('openssl', static: st)
+-    deps += ssldeps
++    deps += compiler.find_library('crypto', dirs: '%%OPENSSLLIB%%')
++    deps += compiler.find_library('ssl', dirs: '%%OPENSSLLIB%%')
+     conf_data.set('USE_OPENSSL', true)
+     conf_data.set('CONFIG_GNUTLS', false)
+ elif conf_data.get('CONFIG_GNUTLS')
+@@ -845,7 +849,7 @@ if compiler.has_function('iconv', prefix: '#include <i
      conf_data.set('HAVE_ICONV', 1)
  endif
  
@@ -20,7 +31,7 @@
      conf_data.set('HAVE_ALLOCA', 1)
  endif
  
-@@ -861,7 +865,7 @@ endif
+@@ -861,7 +865,7 @@ if compiler.has_function('gnutls_certificate_set_x509_
      conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
  endif
  

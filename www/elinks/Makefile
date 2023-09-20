@@ -117,6 +117,7 @@ ZSTD_USES=		localbase
 ZSTD_MESON_TRUE=	zstd
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%OPENSSLLIB%%|${OPENSSLLIB}|g' ${WRKSRC}/meson.build
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/doc/tools/help2xml
 	@${REINPLACE_CMD} -e 's|/usr/bin/env python3|${PYTHON_CMD}|g' ${WRKSRC}/doc/tools/asciidoc/asciidoc.py
 
