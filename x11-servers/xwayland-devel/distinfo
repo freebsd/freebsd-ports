@@ -1,6 +1,6 @@
-TIMESTAMP = 1694530636
-SHA256 (xserver-xorg-server-21.0.99.1-515-gd1f142891.tar.bz2) = 41b45763164cdd86caaa6a938e9cd1eac7d70b66031eddff6e74c1e33ee065f3
-SIZE (xserver-xorg-server-21.0.99.1-515-gd1f142891.tar.bz2) = 3697507
+TIMESTAMP = 1695178800
+SHA256 (xserver-xorg-server-21.0.99.1-517-gf273c960c.tar.bz2) = 4f9fdbb2b8e1ec73a657db396146e914414c28d25d4e07feec7901404b505450
+SIZE (xserver-xorg-server-21.0.99.1-517-gf273c960c.tar.bz2) = 3697766
 SHA256 (xorgproto-xorgproto-2023.2.tar.bz2) = 537da47d01508e706e6321ef95adedc2015dd2e682cd6759df3d8b2de035b718
 SIZE (xorgproto-xorgproto-2023.2.tar.bz2) = 770862
 SHA256 (cd6c9c1246af.patch) = a50fd4511793a53cacefbca2c8436cf43d36ce21d245aadb5d17e16653580d75
