@@ -23,7 +23,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/strings.rst
 %%PORTDOCS%%%%DOCSDIR%%/swmr.rst
 %%PORTDOCS%%%%DOCSDIR%%/vds.rst
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew/%%PYTHON_VER%%.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.0.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.1.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.10.rst
@@ -45,6 +44,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.6.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.7.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.8.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.9.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bytesio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collective_io.py
