@@ -12,7 +12,7 @@ WWW=		https://sourceforge.net/projects/mpd/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe ssl
+USES=		cpe
 
 CPE_VENDOR=	mpd_project
 
