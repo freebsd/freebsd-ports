@@ -7856,3 +7856,4 @@ devel/rubygem-cucumber-tag-expressions4|devel/rubygem-cucumber-tag-expressions|2
 security/rosenpass|net/rosenpass|2023-09-12|Remove duplicate port
 dns/tinystats||2023-09-20|Has expired: djbdns got removed, port is no longer required
 mail/cyrus-imapd23||2023-09-20|Has expired: No longer supported by upstream
+mail/cyrus-imapd24||2023-09-20|Has expired: No longer supported by upstream

@@ -1,7 +1,0 @@
-TIMESTAMP = 1615288616
-SHA256 (cyrus-imapd-2.4.22.tar.gz) = 1a1a0133c39a2a2ba0dc60e7ef4a53af27c615b4e19e865ce0c77dcc3fd204d5
-SIZE (cyrus-imapd-2.4.22.tar.gz) = 2498555
-SHA256 (cyrus-imapd-2.4.4-autocreate-0.10-0.patch) = 1130e80b6604901ba8cf887c792fa8e4ef181b4cfc212720bcfc984163fe8a13
-SIZE (cyrus-imapd-2.4.4-autocreate-0.10-0.patch) = 74039
-SHA256 (cyrus-imapd-2.4.12-autosieve-0.6.0.patch) = daafab6c1a824d1d16745ea25a0bb6e404655ef690961e1dc236805e5c923135
-SIZE (cyrus-imapd-2.4.12-autosieve-0.6.0.patch) = 7626
