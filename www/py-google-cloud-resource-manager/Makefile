@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-resource-manager
-PORTVERSION=	1.10.3
+DISTVERSION=	1.10.4
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.34.0:www/py-google-api-co
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.19.5:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
