@@ -226,7 +226,6 @@
     SUBDIR += sheerdns
     SUBDIR += sleuth
     SUBDIR += subfinder
-    SUBDIR += tinystats
     SUBDIR += totd
     SUBDIR += udns
     SUBDIR += unbound
