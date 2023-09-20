@@ -77,7 +77,6 @@
     SUBDIR += couriergraph
     SUBDIR += crm114
     SUBDIR += cvsmail
-    SUBDIR += cyrus-imapd23
     SUBDIR += cyrus-imapd24
     SUBDIR += cyrus-imapd25
     SUBDIR += cyrus-imapd30
