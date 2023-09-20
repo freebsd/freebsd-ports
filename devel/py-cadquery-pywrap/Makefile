@@ -1,7 +1,7 @@
 PORTNAME=	cadquery-pywrap
 DISTVERSIONPREFIX=	occt
 DISTVERSION=	7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -24,18 +24,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}schema>0:devel/py-schema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>0:textproc/py-toml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toposort>0:devel/py-toposort@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
-		llvm${LLVMVER}>0:devel/llvm${LLVMVER} \
-		pybind11>=2.6:devel/pybind11
+		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python
-
+USES=		llvm:11,run python
 USE_GITHUB=	yes
 GH_ACCOUNT=	CadQuery
 GH_PROJECT=	pywrap
 GH_TAGNAME=	e8c7bc9
-
 USE_PYTHON=	autoplist concurrent distutils
-LLVMVER=	10
 
 .include <bsd.port.mk>
