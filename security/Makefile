@@ -920,6 +920,7 @@
     SUBDIR += py-google-auth-oauthlib
     SUBDIR += py-gpgme
     SUBDIR += py-gpsoauth
+    SUBDIR += py-greenbone-feed-sync
     SUBDIR += py-gssapi
     SUBDIR += py-gvm-tools
     SUBDIR += py-hkdf

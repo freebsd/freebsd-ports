@@ -1,0 +1,44 @@
+PORTNAME=	greenbone-feed-sync
+DISTVERSION=	23.8.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	security python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	acm@FreeBSD.org
+COMMENT=	new script for downloading the Greenbone Community Feed
+WWW=		https://github.com/greenbone/greenbone-feed-sync
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>0:devel/py-poetry-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
+		rsync:net/rsync
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	greenbone
+GH_PROJECT=	${PORTNAME}
+
+USES=		python
+USE_PYTHON=	pep517
+
+NO_ARCH=	yes
+
+USERS=		gvm
+GROUPS=		${USERS}
+
+post-extract:
+	${MV} ${WRKSRC}/tests ${WRKSRC}/greenbone/
+
+post-patch:
+	@${RM} ${WRKSRC}/greenbone/feed/sync/config.py.orig
+	@${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/greenbone/feed/sync/config.py
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/gvm
+	@${MKDIR} ${STAGEDIR}/var/lib/gvm
+	@${MKDIR} ${STAGEDIR}/var/lib/openvas/plugins
+	@${MKDIR} ${STAGEDIR}/var/lib/notus
+
+.include <bsd.port.mk>
