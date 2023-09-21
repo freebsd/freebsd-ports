@@ -181,6 +181,12 @@ EXTRACT_AFTER_ARGS?=	${DISTNAME:S,$,/examples,:S,^,--exclude ,} \
 			--no-same-owner --no-same-permissions
 .  endif # ! ${_QT_VER:M5}
 
+# Qt uses generated linker version scripts which always have a qt_version_tag
+# symbol, but that symbol is only defined in the main Qt shared library. For
+# other Qt components, this leads to lld >= 17 erroring out due to the symbol
+# being undefined. Supress these errors.
+LDFLAGS+=		-Wl,--undefined-version
+
 # Build setup for Qt6
 .  if ${_QT_VER:M6}
 CMAKE_ARGS+=		-DCMAKE_INSTALL_PREFIX=${PREFIX} \
