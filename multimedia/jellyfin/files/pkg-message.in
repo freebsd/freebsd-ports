@@ -10,7 +10,7 @@ If this is something that you do not want, remove this package with
 "pkg remove jellyfin"
 
 This package installs a service file. 
-Enable it with "sysrc jellyfin_enable=TRUE"
+Enable it with "service jellyfin enable"
 Start it with "service jellyfin start".
 
 The service file uses daemon to restart jellyfin if it crashes.
@@ -18,7 +18,7 @@ The service file will also change the permissions so that the updater works.
 If this behavior is unwanted you will need to edit the RC file manually and
 remove the daemon and/or the permissions changes.
 
-If you are running this in a jail please set "allow_mlock=1" or similar
+If you are running this in a jail please set "allow.mlock" or similar
 for this jail otherwise the program will fail to start.
 
 dotNET does not work well inside jails that are missing either a) VNET or 
@@ -33,7 +33,7 @@ EOM
 Those upgrading, as a reminder:
 
 This package installs a service file.
-Enable it with "sysrc jellyfin_enable=TRUE"
+Enable it with "service jellyfin enable"
 Start it with "service jellyfin start".
 
 The service file uses daemon to restart jellyfin if it crashes.
@@ -41,7 +41,7 @@ The service file will also change the permissions so that the updater works.
 If this behavior is unwanted you will need to edit the RC file manually and
 remove the daemon and/or the permissions changes.
 
-If you are running this in a jail please set "allow_mlock=1" or similar
+If you are running this in a jail please set "allow.mlock" or similar
 for this jail otherwise the program will fail to start.
 
 dotNET does not work well inside jails that are missing either a) VNET or 
