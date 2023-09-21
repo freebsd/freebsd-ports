@@ -1,6 +1,5 @@
 PORTNAME=	gjs
-PORTVERSION=	1.74.1
-PORTREVISION=	1
+PORTVERSION=	1.76.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libmozjs-102.so:lang/spidermonkey102 \
 
 USES=		compiler:c++11-lib gettext gnome \
 		localbase meson pkgconfig python:build readline tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
+USE_GNOME=	cairo gtk40 introspection pango
 USE_XORG=	x11 xext
 MESON_ARGS=	-Dprofiler=disabled \
 		-Dinstalled_tests=false
