@@ -4,7 +4,7 @@ PKGNAMESUFFIX=	-${LIBPROXY_SLAVE}
 
 COMMENT=	WebKit JavaScript plug-in for libproxy
 
-LIB_DEPENDS=	libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
+LIB_DEPENDS+=	libjavascriptcoregtk-4.0.so:www/webkit2-gtk3
 
 USES=		gettext-runtime gnome
 USE_GNOME=	glib20

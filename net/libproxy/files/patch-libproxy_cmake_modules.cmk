@@ -1,6 +1,6 @@
---- libproxy/cmake/modules.cmk.orig	2021-02-26 18:24:03 UTC
+--- libproxy/cmake/modules.cmk.orig	2022-06-20 13:54:49 UTC
 +++ libproxy/cmake/modules.cmk
-@@ -29,7 +29,9 @@ endif()
+@@ -32,7 +32,9 @@ message("MODULES TO BUILD:")
  ## Module definition
  #
  message("MODULES TO BUILD:")

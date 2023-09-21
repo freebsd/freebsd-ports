@@ -414,6 +414,7 @@
     SUBDIR += libpcapnav
     SUBDIR += libpfctl
     SUBDIR += libproxy
+    SUBDIR += libproxy-duktape
     SUBDIR += libproxy-gnome3
     SUBDIR += libproxy-kde
     SUBDIR += libproxy-pacrunner
