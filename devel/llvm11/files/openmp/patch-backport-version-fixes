@@ -1,21 +1,29 @@
 diff --git projects/openmp/libomptarget/plugins/exports projects/openmp/libomptarget/plugins/exports
-index a14bedf0791a..cc7beda183af 100644
+index 62bfc6e24d90..cc7beda183af 100644
 --- projects/openmp/libomptarget/plugins/exports
 +++ projects/openmp/libomptarget/plugins/exports
-@@ -1,16 +1,6 @@
+@@ -1,24 +1,6 @@
  VERS1.0 {
    global:
 -    __tgt_rtl_is_valid_binary;
+-    __tgt_rtl_is_data_exchangable;
 -    __tgt_rtl_number_of_devices;
 -    __tgt_rtl_init_requires;
 -    __tgt_rtl_init_device;
 -    __tgt_rtl_load_binary;
 -    __tgt_rtl_data_alloc;
 -    __tgt_rtl_data_submit;
+-    __tgt_rtl_data_submit_async;
 -    __tgt_rtl_data_retrieve;
+-    __tgt_rtl_data_retrieve_async;
+-    __tgt_rtl_data_exchange;
+-    __tgt_rtl_data_exchange_async;
 -    __tgt_rtl_data_delete;
 -    __tgt_rtl_run_target_team_region;
+-    __tgt_rtl_run_target_team_region_async;
 -    __tgt_rtl_run_target_region;
+-    __tgt_rtl_run_target_region_async;
+-    __tgt_rtl_synchronize;
 +    __tgt_rtl*;
    local:
      *;
@@ -48,7 +56,7 @@ index 3419dd8cd788..fb7a644155e2 100644
    libomp_check_linker_flag(-Wl,-z,noexecstack LIBOMP_HAVE_Z_NOEXECSTACK_FLAG)
  endif()
 diff --git projects/openmp/runtime/src/exports_so.txt projects/openmp/runtime/src/exports_so.txt
-index f7de5fd6474f..07a5424595bb 100644
+index 30222418163d..4e159a1abf29 100644
 --- projects/openmp/runtime/src/exports_so.txt
 +++ projects/openmp/runtime/src/exports_so.txt
 @@ -74,10 +74,8 @@ VERSION {
@@ -129,12 +137,12 @@ index 000000000000..912d160e7c06
 +
 +# end of file #
 diff --git projects/openmp/runtime/src/kmp_runtime.cpp projects/openmp/runtime/src/kmp_runtime.cpp
-index acd157db8e52..acc431ea0d7e 100644
+index e0c8cf241044..772942079b1b 100644
 --- projects/openmp/runtime/src/kmp_runtime.cpp
 +++ projects/openmp/runtime/src/kmp_runtime.cpp
-@@ -8297,3 +8297,20 @@ int __kmp_pause_resource(kmp_pause_status_t level) {
-     return 1;
-   }
+@@ -8305,3 +8305,20 @@ void __kmp_omp_display_env(int verbose) {
+   __kmp_display_env_impl(!verbose, verbose);
+   __kmp_release_bootstrap_lock(&__kmp_initz_lock);
  }
 +
 +// Empty symbols to export (see exports_so.txt) when feature is disabled
@@ -154,7 +162,7 @@ index acd157db8e52..acc431ea0d7e 100644
 +
 +// end of file
 diff --git projects/openmp/runtime/src/kmp_utility.cpp projects/openmp/runtime/src/kmp_utility.cpp
-index 44a99d0455b3..e04c9cbf4537 100644
+index 6e6785deb445..5f66e2509d33 100644
 --- projects/openmp/runtime/src/kmp_utility.cpp
 +++ projects/openmp/runtime/src/kmp_utility.cpp
 @@ -407,3 +407,16 @@ void __kmp_expand_file_name(char *result, size_t rlen, char *pattern) {
@@ -175,7 +183,7 @@ index 44a99d0455b3..e04c9cbf4537 100644
 +}
 +#endif
 diff --git projects/openmp/runtime/src/z_Linux_util.cpp projects/openmp/runtime/src/z_Linux_util.cpp
-index 1daa3d31047e..174ef2145205 100644
+index 3b5910fc95e8..e36952f30982 100644
 --- projects/openmp/runtime/src/z_Linux_util.cpp
 +++ projects/openmp/runtime/src/z_Linux_util.cpp
 @@ -1049,7 +1049,7 @@ void __kmp_exit_thread(int exit_status) {
