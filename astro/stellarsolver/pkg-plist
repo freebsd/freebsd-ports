@@ -72,7 +72,7 @@ lib/cmake/StellarSolver/StellarSolverConfig.cmake
 lib/cmake/StellarSolver/StellarSolverConfigVersion.cmake
 lib/libstellarsolver.so
 lib/libstellarsolver.so.2
-lib/libstellarsolver.so.2.4
+lib/libstellarsolver.so.2.5
 libdata/pkgconfig/stellarsolver.pc
 share/applications/com.github.rlancaste.stellarbatchsolver.desktop
 share/icons/hicolor/128x128/apps/StellarBatchSolverIcon.png
