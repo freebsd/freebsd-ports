@@ -27,6 +27,10 @@ TEST_ENV=	${MAKE_ENV} \
 		ALSA_CONFIG_PATH="${FILESDIR}/asound.conf.sample"
 TEST_TARGET=	check
 CPPFLAGS+=	-I${FILESDIR}
+# Some symbols in the linker version script Versions.in are only defined when
+# --enable-alisp is used at configure time. Suppress errors with lld >= 17 due
+# to these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
 
 OPTIONS_DEFINE=		PYTHON
 OPTIONS_SUB=		yes
