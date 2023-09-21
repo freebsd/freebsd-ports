@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_base_window.cc.orig	2023-05-31 14:28:29 UTC
+--- electron/shell/browser/api/electron_api_base_window.cc.orig	2023-09-20 06:48:06 UTC
 +++ electron/shell/browser/api/electron_api_base_window.cc
-@@ -1057,7 +1057,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
+@@ -1067,7 +1067,7 @@ void BaseWindow::SetIconImpl(v8::Isolate* isolate,
    static_cast<NativeWindowViews*>(window_.get())
        ->SetIcon(native_image->GetHICON(GetSystemMetrics(SM_CXSMICON)),
                  native_image->GetHICON(GetSystemMetrics(SM_CXICON)));
