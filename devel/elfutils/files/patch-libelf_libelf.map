@@ -1,0 +1,10 @@
+--- libelf/libelf.map.orig	2022-04-25 20:56:39 UTC
++++ libelf/libelf.map
+@@ -50,7 +50,6 @@ ELFUTILS_1.0 {
+     elf_rand;
+     elf_rawdata;
+     elf_rawfile;
+-    elf_scncnt;
+     elf_strptr;
+     elf_update;
+     elf_version;
