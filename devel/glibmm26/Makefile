@@ -1,5 +1,5 @@
 PORTNAME=	glibmm
-PORTVERSION=	2.76.0
+PORTVERSION=	2.78.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	26
@@ -20,7 +20,7 @@ SHEBANG_GLOB=	*.py
 
 MESON_ARGS=	-Dbuild-documentation=false
 
-PORTSCOUT=	limit:^2\.72
+PORTSCOUT=	limit:^2\.78
 PLIST_SUB=	VERSION=2.68
 
 .include <bsd.port.mk>
