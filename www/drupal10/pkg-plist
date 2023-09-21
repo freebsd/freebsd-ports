@@ -4402,6 +4402,9 @@
 %%WWWDIR%%/core/modules/comment/tests/src/Unit/CommentStatisticsUnitTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Unit/Entity/CommentLockTest.php
 %%WWWDIR%%/core/modules/comment/tests/src/Unit/Plugin/views/field/CommentBulkFormTest.php
+%%WWWDIR%%/core/modules/comment/tests/src/Unit/Plugin/views/field/EntityLinkTest.php
+%%WWWDIR%%/core/modules/comment/tests/src/Unit/Plugin/views/field/LinkApproveTest.php
+%%WWWDIR%%/core/modules/comment/tests/src/Unit/Plugin/views/field/LinkReplyTest.php
 %%WWWDIR%%/core/modules/config/config.info.yml
 %%WWWDIR%%/core/modules/config/config.links.menu.yml
 %%WWWDIR%%/core/modules/config/config.links.task.yml
@@ -4743,6 +4746,7 @@
 %%WWWDIR%%/core/modules/contact/tests/src/Kernel/Plugin/migrate/source/ContactCategoryTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Kernel/Plugin/migrate/source/d6/ContactSettingsTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Kernel/Views/ContactFieldsTest.php
+%%WWWDIR%%/core/modules/contact/tests/src/Unit/ContactLinkTest.php
 %%WWWDIR%%/core/modules/contact/tests/src/Unit/MailHandlerTest.php
 %%WWWDIR%%/core/modules/content_moderation/config/optional/views.view.moderated_content.yml
 %%WWWDIR%%/core/modules/content_moderation/config/schema/content_moderation.schema.yml
@@ -7448,6 +7452,7 @@
 %%WWWDIR%%/core/modules/media_library/tests/src/Kernel/MediaLibraryAddFormTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/Kernel/MediaLibraryStateTest.php
 %%WWWDIR%%/core/modules/media_library/tests/src/Kernel/MediaLibraryWidgetTest.php
+%%WWWDIR%%/core/modules/media_library/tests/src/Unit/MediaLibrarySelectFormTest.php
 %%WWWDIR%%/core/modules/menu_link_content/menu_link_content.info.yml
 %%WWWDIR%%/core/modules/menu_link_content/menu_link_content.install
 %%WWWDIR%%/core/modules/menu_link_content/menu_link_content.links.menu.yml
@@ -8327,6 +8332,9 @@
 %%WWWDIR%%/core/modules/node/tests/src/Unit/NodeOperationAccessTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Unit/PageCache/DenyNodePreviewTest.php
 %%WWWDIR%%/core/modules/node/tests/src/Unit/Plugin/views/field/NodeBulkFormTest.php
+%%WWWDIR%%/core/modules/node/tests/src/Unit/Plugin/views/field/RevisionLinkDeleteTest.php
+%%WWWDIR%%/core/modules/node/tests/src/Unit/Plugin/views/field/RevisionLinkRevertTest.php
+%%WWWDIR%%/core/modules/node/tests/src/Unit/Plugin/views/field/RevisionLinkTest.php
 %%WWWDIR%%/core/modules/options/config/schema/options.schema.yml
 %%WWWDIR%%/core/modules/options/migrations/state/options.migrate_drupal.yml
 %%WWWDIR%%/core/modules/options/options.api.php
@@ -11591,6 +11599,7 @@
 %%WWWDIR%%/core/modules/user/tests/src/Unit/Plugin/Validation/Constraint/ProtectedUserFieldConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Unit/Plugin/Validation/Constraint/UserMailRequiredValidatorTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Unit/Plugin/migrate/process/ConvertTokensTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Unit/Plugin/views/field/PermissionsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Unit/Plugin/views/field/UserBulkFormTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Unit/Theme/AdminNegotiatorTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Unit/UserAccessControlHandlerTest.php
@@ -12007,6 +12016,7 @@
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_field_revision_test.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_field_test.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_get_entity.yml
+%%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_get_entity_null.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_header.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_output.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_field_tokens.yml
@@ -12340,6 +12350,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/ViewsPreprocessTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/ViewsTemplateTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Wizard/WizardPluginBaseKernelTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Traits/ViewsLoggerTestTrait.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Controller/ViewAjaxControllerTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/EventSubscriber/RouteSubscriberTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/Block/ViewsBlockTest.php
@@ -12364,7 +12375,10 @@
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/SqlBaseTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/query/SqlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/display/BlockTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/BulkFormTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/EntityOperationsUnitTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/LinkBaseTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/RenderedEntityTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/query/MysqlDateSqlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/query/PostgresqlDateSqlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/query/SqliteDateSqlTest.php
