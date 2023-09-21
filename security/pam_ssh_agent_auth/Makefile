@@ -1,6 +1,6 @@
 PORTNAME=	pam_ssh_agent_auth
 PORTVERSION=	0.10.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -32,12 +32,5 @@ PLIST_FILES=	lib/pam_ssh_agent_auth.so \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pam_ssh_agent_auth.so
-
-.include <bsd.port.options.mk>
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-IGNORE_SSL=	base openssl30 openssl31
-IGNORE_SSL_REASON=	Compiles but does not generate a working module with OpenSSL 3.0.0 and later
-.endif
 
 .include <bsd.port.mk>
