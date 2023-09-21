@@ -1,6 +1,6 @@
 PORTNAME=	libphonenumber
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.13.20
+DISTVERSION=	8.13.21
 CATEGORIES=	devel
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,6 +16,10 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libprotobuf.so:devel/protobuf
 
 USES=		cmake:noninja compiler:c++17-lang pkgconfig
+# Workaround CMAKE_ARGS+=-DABSL_PROPAGATE_CXX_STD:BOOL=ON not being set in the
+# devel/abseil Makefile. As of version 8.13.21, libphonenumber no longer sets
+# the C++ dialect and expects to inherit it from abseil.
+USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 
