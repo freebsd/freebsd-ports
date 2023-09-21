@@ -37,7 +37,7 @@ GH_TUPLE=	nothings:stb:5736b15:stb/subprojects/stb \
 		Joshua-Ashton:vkroots:2675710:vkroots/subprojects/vkroots
 MESON_ARGS=	--force-fallback-for= # allow system wlroots + libliftoff
 MESON_ARGS+=	-Denable_openvr_support=false # https://github.com/ValveSoftware/openvr/pull/564
-MESON_ARCH_FAMILY=	${ARCH:S/amd/x86_/:S/i3/x/:C/v[67]//:S/powerpc64le/ppc64/:S/powerpc64/ppc64/:S/powerpc/ppc/}
+MESON_ARCH_FAMILY=	${ARCH:S/amd/x86_/:S/i3/x/:C/v[67]//:S/power/p/:S/le$//}
 PLIST_FILES=	bin/${PORTNAME} \
 		lib/libVkLayer_FROG_${PORTNAME}_wsi.so \
 		share/vulkan/implicit_layer.d/VkLayer_FROG_${PORTNAME}_wsi.${MESON_ARCH_FAMILY}.json
