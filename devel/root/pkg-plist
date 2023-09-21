@@ -1057,7 +1057,6 @@ include/root/RooFit/TestStatistics/RooSubsidiaryL.h
 include/root/RooFit/TestStatistics/RooSumL.h
 include/root/RooFit/TestStatistics/RooUnbinnedL.h
 include/root/RooFit/TestStatistics/buildLikelihood.h
-include/root/RooFit/TestStatistics/optional_parameter_types.h
 include/root/RooFit/UniqueId.h
 include/root/RooFitHS3/HistFactoryJSONTool.h
 include/root/RooFitHS3/RooJSONFactoryWSTool.h
@@ -4543,8 +4542,6 @@ lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf505_asciicfg.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf506_msgservice.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf506_msgservice.py
-%%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf507_debugtools.C
-%%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf507_debugtools.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf508_listsetmanip.C
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf508_listsetmanip.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/roofit/rf509_wsinteractive.C

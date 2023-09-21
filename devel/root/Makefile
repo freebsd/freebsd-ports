@@ -1,6 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.28.04
-PORTREVISION=	3
+DISTVERSION=	6.28.06
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
