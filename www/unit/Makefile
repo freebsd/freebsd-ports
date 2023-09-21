@@ -1,6 +1,6 @@
 PORTNAME=	unit
 PORTVERSION=	${UNIT_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 

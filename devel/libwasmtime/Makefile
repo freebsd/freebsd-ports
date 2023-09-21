@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	12.0.2
+PORTVERSION=	13.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -24,11 +24,8 @@ GH_PROJECT=	wasmtime
 
 CARGO_CARGOTOML=	${WRKSRC}/crates/c-api/Cargo.toml
 
-CARGO_CRATES=	addr2line-0.20.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		aead-0.4.3 \
-		aes-0.7.5 \
-		aes-gcm-0.9.4 \
 		ahash-0.8.2 \
 		aho-corasick-1.0.2 \
 		ambient-authority-0.0.2 \
@@ -42,17 +39,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		arbitrary-1.3.0 \
 		async-trait-0.1.71 \
 		atty-0.2.14 \
-		autocfg-0.1.8 \
 		autocfg-1.1.0 \
-		backtrace-0.3.68 \
+		backtrace-0.3.69 \
 		base64-0.21.0 \
-		base64ct-1.1.1 \
 		bincode-1.3.3 \
 		bit-set-0.5.2 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.3.3 \
-		block-buffer-0.9.0 \
 		block-buffer-0.10.2 \
 		bstr-1.6.0 \
 		bumpalo-3.12.0 \
@@ -60,6 +54,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		bytes-1.4.0 \
 		camino-1.1.4 \
 		cap-fs-ext-2.0.0 \
+		cap-net-ext-2.0.0 \
 		cap-primitives-2.0.0 \
 		cap-rand-2.0.0 \
 		cap-std-2.0.0 \
@@ -72,12 +67,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cast-0.3.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chacha20-0.8.1 \
-		chacha20poly1305-0.9.0 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
-		cipher-0.3.0 \
 		clap-4.3.12 \
 		clap_builder-4.3.12 \
 		clap_derive-4.3.12 \
@@ -85,7 +77,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
 		console-0.15.0 \
-		const-oid-0.6.2 \
 		cpp_demangle-0.3.5 \
 		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
@@ -95,29 +86,17 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.10 \
-		crypto-bigint-0.2.11 \
 		crypto-common-0.1.6 \
-		crypto-mac-0.11.1 \
-		ctr-0.8.0 \
 		cty-0.2.2 \
-		curve25519-dalek-3.2.0 \
 		debugid-0.8.0 \
-		der-0.4.5 \
-		derivative-2.2.0 \
 		derive_arbitrary-1.3.1 \
-		digest-0.9.0 \
 		digest-0.10.3 \
 		directories-next-2.0.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		downcast-rs-1.2.0 \
-		dunce-1.0.2 \
-		ecdsa-0.12.4 \
-		ed25519-1.5.3 \
-		ed25519-dalek-1.0.1 \
 		egg-0.6.0 \
 		either-1.6.1 \
-		elliptic-curve-0.10.6 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
 		env_logger-0.7.1 \
@@ -125,10 +104,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		equivalent-1.0.1 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
-		fallible-iterator-0.2.0 \
+		fallible-iterator-0.3.0 \
 		fastrand-1.9.0 \
 		fd-lock-4.0.0 \
-		ff-0.10.1 \
 		file-per-thread-logger-0.2.0 \
 		filecheck-0.5.0 \
 		filetime-0.2.16 \
@@ -147,12 +125,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		fxhash-0.2.1 \
 		fxprof-processed-profile-0.6.0 \
 		generic-array-0.14.5 \
-		getrandom-0.1.16 \
 		getrandom-0.2.9 \
-		ghash-0.4.4 \
-		gimli-0.27.3 \
+		gimli-0.28.0 \
 		glob-0.3.0 \
-		group-0.10.0 \
 		h2-0.3.19 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
@@ -162,8 +137,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
 		hermit-abi-0.3.0 \
-		hkdf-0.11.0 \
-		hmac-0.11.0 \
 		http-0.2.9 \
 		http-body-1.0.0-rc.2 \
 		http-body-util-0.1.0-rc.2 \
@@ -190,7 +163,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ittapi-sys-0.3.3 \
 		jobserver-0.1.24 \
 		js-sys-0.3.57 \
-		k256-0.9.6 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
 		libc-0.2.147 \
@@ -200,7 +172,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		linux-raw-sys-0.3.3 \
 		linux-raw-sys-0.4.3 \
 		listenfd-1.0.0 \
-		lock_api-0.4.7 \
 		log-0.4.17 \
 		mach-0.3.2 \
 		matchers-0.1.0 \
@@ -211,42 +182,26 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		memoffset-0.9.0 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
-		num-bigint-dig-0.7.0 \
-		num-integer-0.1.45 \
-		num-iter-0.1.43 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		number_prefix-0.3.0 \
-		object-0.31.1 \
+		object-0.32.0 \
 		ocaml-boxroot-sys-0.2.0 \
 		ocaml-interop-0.8.8 \
 		ocaml-sys-0.22.3 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
-		opaque-debug-0.3.0 \
 		openvino-0.5.0 \
 		openvino-finder-0.5.0 \
 		openvino-sys-0.5.0 \
-		p256-0.9.0 \
-		parking_lot-0.11.2 \
-		parking_lot_core-0.8.5 \
 		paste-1.0.7 \
-		pem-rfc7468-0.2.4 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkcs1-0.2.4 \
-		pkcs8-0.7.6 \
 		plotters-0.3.1 \
 		plotters-backend-0.3.2 \
 		plotters-svg-0.3.1 \
-		poly1305-0.7.2 \
-		polyval-0.5.3 \
 		ppv-lite86-0.2.16 \
-		pqcrypto-0.14.2 \
-		pqcrypto-internals-0.2.4 \
-		pqcrypto-kyber-0.7.5 \
-		pqcrypto-traits-0.3.4 \
 		pretty_env_logger-0.4.0 \
 		pretty_env_logger-0.5.0 \
 		proc-macro2-1.0.63 \
@@ -256,15 +211,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quote-1.0.29 \
-		rand-0.7.3 \
 		rand-0.8.5 \
-		rand_chacha-0.2.2 \
 		rand_chacha-0.3.1 \
-		rand_core-0.5.1 \
 		rand_core-0.6.3 \
-		rand_hc-0.2.0 \
 		rand_xorshift-0.3.0 \
-		rawbytes-0.1.2 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.13 \
@@ -278,47 +228,41 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		regex-syntax-0.7.4 \
 		region-2.2.0 \
 		ring-0.16.20 \
-		rsa-0.5.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.13 \
-		rustix-0.38.4 \
-		rustls-0.21.0 \
-		rustls-webpki-0.100.1 \
+		rustix-0.38.8 \
+		rustls-0.21.6 \
+		rustls-webpki-0.101.4 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
 		semver-1.0.17 \
-		serde-1.0.171 \
-		serde_derive-1.0.171 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
 		serde_json-1.0.80 \
-		sha2-0.9.9 \
 		sha2-0.10.2 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.0 \
 		shuffling-allocator-1.1.2 \
-		signature-1.3.2 \
 		similar-2.2.0 \
 		slab-0.4.7 \
 		slice-group-by-0.3.1 \
-		smallvec-1.8.0 \
+		smallvec-1.11.0 \
 		socket2-0.4.9 \
 		souper-ir-2.1.0 \
 		spdx-0.10.1 \
 		spin-0.5.2 \
 		spin-0.9.4 \
-		spki-0.4.1 \
 		sptr-0.3.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		subtle-2.4.1 \
 		symbolic_expressions-5.0.3 \
 		syn-1.0.92 \
-		syn-2.0.25 \
-		synstructure-0.12.6 \
+		syn-2.0.29 \
 		system-interface-0.26.0 \
 		target-lexicon-0.12.3 \
 		tempfile-3.6.0 \
@@ -349,7 +293,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
-		universal-hash-0.4.1 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
 		utf8parse-0.2.1 \
@@ -359,7 +302,6 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
 		want-0.3.0 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.87 \
 		wasm-bindgen-backend-0.2.87 \
@@ -367,24 +309,23 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
 		wasm-encoder-0.30.0 \
-		wasm-encoder-0.31.1 \
+		wasm-encoder-0.32.0 \
 		wasm-metadata-0.9.0 \
-		wasm-metadata-0.10.1 \
-		wasm-mutate-0.2.30 \
-		wasm-smith-0.12.13 \
+		wasm-metadata-0.10.3 \
+		wasm-mutate-0.2.32 \
+		wasm-smith-0.12.15 \
 		wasmi-0.20.0 \
 		wasmi_arena-0.1.0 \
 		wasmi_core-0.5.0 \
-		wasmparser-0.92.0 \
 		wasmparser-0.108.0 \
-		wasmparser-0.110.0 \
+		wasmparser-0.112.0 \
 		wasmparser-nostd-0.91.0 \
-		wasmprinter-0.2.62 \
+		wasmprinter-0.2.64 \
 		wast-35.0.2 \
-		wast-62.0.1 \
-		wat-1.0.69 \
+		wast-64.0.0 \
+		wat-1.0.71 \
 		web-sys-0.3.57 \
-		webpki-roots-0.23.0 \
+		webpki-roots-0.25.2 \
 		which-4.2.5 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -406,20 +347,16 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		wit-bindgen-rust-lib-0.9.0 \
 		wit-bindgen-rust-macro-0.9.0 \
 		wit-component-0.12.0 \
-		wit-component-0.13.1 \
+		wit-component-0.14.0 \
 		wit-parser-0.9.2 \
-		xoodyak-0.7.3 \
-		zeroize-1.4.3 \
-		zeroize_derive-1.3.2 \
+		wit-parser-0.11.0 \
 		zstd-0.11.1+zstd.1.5.2 \
 		zstd-safe-5.0.1+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2
 
 GH_TUPLE=	WebAssembly:wasm-c-api:c9d3128:wasm_c_api/crates/c-api/wasm-c-api \
 		WebAssembly:WASI:0ba0c5e:WASI/crates/wasi-common/WASI \
-		WebAssembly:wasi-crypto:67d9821:wasi_crypto/crates/wasi-crypto/spec \
-		WebAssembly:wasi-http:1c95bc2:wasi_http/crates/wasi-http/wasi-http \
-		WebAssembly:wasi-nn:8adc5b9:wasi_nn/crates/wasi-nn/spec \
+		WebAssembly:wasi-nn:c1f8b87:wasi_nn/crates/wasi-nn/spec \
 		WebAssembly:testsuite:7ef86dd:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
