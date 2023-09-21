@@ -1,3 +1,29 @@
+  <vuln vid="4fd7a2fc-5860-11ee-a1b3-dca632daf43b">
+    <topic>graphics/webp heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>webp</name>
+	<range><lt>1.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2023-4863">
+	  <p>Heap buffer overflow in WebP ... allowed a remote attacker to perform an out of bounds memory write ...</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4863</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-4863</url>
+    </references>
+    <dates>
+      <discovery>2023-09-12</discovery>
+      <entry>2023-09-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="58a738d4-57af-11ee-8c58-b42e991fc52e">
     <topic>libwebp heap buffer overflow</topic>
     <affects>
