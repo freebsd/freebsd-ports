@@ -1,7 +1,6 @@
 PORTNAME=	arianna
-DISTVERSION=	1.0.1
-CATEGORIES=	textproc kde
-MASTER_SITES=	KDE/stable/${PORTNAME}
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	textproc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	e-book reader
