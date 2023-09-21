@@ -20,6 +20,7 @@ include/hpdf_image.h
 include/hpdf_info.h
 include/hpdf_list.h
 include/hpdf_mmgr.h
+include/hpdf_namedict.h
 include/hpdf_objects.h
 include/hpdf_outline.h
 include/hpdf_page_label.h
@@ -31,4 +32,6 @@ include/hpdf_u3d.h
 include/hpdf_utils.h
 include/hpdf_version.h
 lib/libhpdf.so
-lib/libhpdf.so.%%SOVERSION%%
+lib/libhpdf.so.%%SHL1%%
+lib/libhpdf.so.%%SHL2%%
+lib/libhpdf.so.%%SHL3%%
