@@ -95,6 +95,7 @@
     SUBDIR += nestopia
     SUBDIR += o2em
     SUBDIR += ods2reader
+    SUBDIR += open-simh
     SUBDIR += open-vm-tools
     SUBDIR += openmsx
     SUBDIR += p5-Acme-6502

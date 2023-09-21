@@ -1,0 +1,12 @@
+Open SIMH is a highly portable, multi-system simulator.
+
+SIMH is a framework and family of computer simulators, initiated by Bob Supnik
+and continued with contributions (large and small) from many others, with the
+primary goal of enabling the preservation of knowledge contained in, and
+providing the ability to execute/experience, old/historic software via
+simulation of the hardware on which it ran. This goal has been successfully
+achieved and has for these years created a diverse community of users and
+developers.
+
+See the following link for a list of simulators and documentation:
+https://opensimh.org/simulators/
