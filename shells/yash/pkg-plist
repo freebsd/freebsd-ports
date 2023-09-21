@@ -110,6 +110,7 @@ man/man1/yash.1.gz
 %%DATADIR%%/completion/git-status
 %%DATADIR%%/completion/git-submodule
 %%DATADIR%%/completion/git-svn
+%%DATADIR%%/completion/git-switch
 %%DATADIR%%/completion/git-tag
 %%DATADIR%%/completion/git-whatchanged
 %%DATADIR%%/completion/git-worktree
@@ -151,6 +152,7 @@ man/man1/yash.1.gz
 %%DATADIR%%/completion/nl
 %%DATADIR%%/completion/nohup
 %%DATADIR%%/completion/od
+%%DATADIR%%/completion/pass
 %%DATADIR%%/completion/passwd
 %%DATADIR%%/completion/paste
 %%DATADIR%%/completion/patch
