@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-appconfig
-PORTVERSION=	1.35.0
+PORTVERSION=	1.37.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
