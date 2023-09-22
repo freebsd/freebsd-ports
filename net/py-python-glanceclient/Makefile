@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Image API Client Library
-WWW=		https://docs.openstack.org/python-glanceclient/latest/
+WWW=		https://docs.openstack.org/python-glanceclient/latest/ \
+		https://github.com/openstack/python-glanceclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
