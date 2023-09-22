@@ -1,12 +1,13 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Well designed Font QA tool
-WWW=		https://github.com/googlefonts/fontbakery
+WWW=		https://font-bakery.readthedocs.io/en/latest/ \
+		https://github.com/fonttools/fontbakery
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -36,8 +37,8 @@ NO_ARCH=	yes
 GH_ACCOUNT=	googlefonts
 USE_GITHUB=	yes
 
-OPTIONS_DEFINE=	FONTVAL FONTWERK GOOGLEFONTS ISO15008 NOTOFONTS SHAPING UFO_SOURCES
-OPTIONS_DEFAULT=FONTVAL FONTWERK GOOGLEFONTS ISO15008 NOTOFONTS SHAPING UFO_SOURCES
+OPTIONS_DEFINE=	FONTVAL FONTWERK GOOGLEFONTS ISO15008 NOTOFONTS SHAPING TYPENETWORK UFO_SOURCES
+OPTIONS_DEFAULT=FONTVAL FONTWERK GOOGLEFONTS ISO15008 NOTOFONTS SHAPING TYPENETWORK UFO_SOURCES
 FONTVAL_DESC=		Checks for Font Validator
 FONTWERK_DESC=		Checks for Fontwerk.com
 FONTWERK_IMPLIES=	GOOGLEFONTS
@@ -47,6 +48,7 @@ ISO15008_DESC=		Checks for suitability for in-car displays (ISO 15008)
 NOTOFONTS_DESC=		Checks for Noto fonts
 NOTOFONTS_IMPLIES=	GOOGLEFONTS
 SHAPING_DESC=		Checks for shaping
+TYPENETWORK_DESC=	Checks for Type Network
 UFO_SOURCES_DESC=	Checks for UFO sources
 
 FONTVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
@@ -64,6 +66,11 @@ SHAPING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}collidoscope>=0.5.2:print/py-collido
 			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.2.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}stringbrewer>=0:devel/py-stringbrewer@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.25.2:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
+TYPENETWORK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.2.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.25.2:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0:print/py-uharfbuzz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
 UFO_SOURCES_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}defcon>=0:x11-fonts/py-defcon@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=4.39.0:print/py-fonttools@${PY_FLAVOR} \
