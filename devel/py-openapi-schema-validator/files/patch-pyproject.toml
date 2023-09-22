@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-09-20 20:02:43 UTC
++++ pyproject.toml
+@@ -55,7 +55,7 @@ include = [
+ 
+ [tool.poetry.dependencies]
+ python = "^3.8.0"
+-jsonschema = "^4.19.1"
++jsonschema = "^4.19.0"
+ rfc3339-validator = "*" # requred by jsonschema for date-time checker
+ jsonschema-specifications = "^2023.5.2"
+ 
