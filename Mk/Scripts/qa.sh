@@ -653,7 +653,7 @@ proxydeps() {
 
 	rc=0
 
-	# Check all dynamicaly linked ELF files
+	# Check all dynamically linked ELF files
 	# Some .so are not executable, but we want to check them too.
 	while read -r file; do
 		# No results presents a blank line from heredoc.
