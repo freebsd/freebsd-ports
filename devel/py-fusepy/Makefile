@@ -4,16 +4,17 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple ctypes bindings for FUSE
-WWW=		https://pypi.org/project/fusepy/
+WWW=		https://github.com/fusepy/fusepy
 
 LICENSE=	ISCL
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fusefs # fuse.py
+USES=		fuse python
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-USES=		fuse python
-USE_PYTHON=	autoplist distutils
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}fusefs # fuse.py
 
 .include <bsd.port.mk>
