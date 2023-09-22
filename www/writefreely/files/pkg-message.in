@@ -1,15 +1,33 @@
+[
+{ type: install
+  message: <<<EOM
 WriteFreely has been installed.  The static files, configuration,
 and databases can be found in %%WWWDIR%%.
-To enable the WriteFreely daemon, add
+To enable the WriteFreely daemon, type
 
-    writefreely_enable="YES"
+    service writefreely enable
 
-to /etc/rc.conf.  Next type
+Next type
 
-    %%PREFIX%%/etc/rc.d/writefreely setup
+    service writefreely setup
 
 to interactively generate a configuration.  Finally type
 
-    %%PREFIX%%/etc/rc.d/writefreely start
+    service writefreely start
 
 to start the writefreely service.
+EOM
+}
+{ type: upgrade
+  maximum_version: "0.14.0"
+  message: <<<EOM
+WriteFreely has been upgraded, to a new minor version.
+If WriteFreely has already been enabled, migrate the database to the new
+minor version by typing
+
+    service writefreely stop
+    service writefreely migrate
+    service writefreely start
+EOM
+}
+]

@@ -29,6 +29,7 @@ bin/writefreely
 %%WWWDIR%%/pages/503.tmpl
 %%WWWDIR%%/pages/about.tmpl
 %%WWWDIR%%/pages/blank.tmpl
+%%WWWDIR%%/pages/contact.tmpl
 %%WWWDIR%%/pages/landing.tmpl
 %%WWWDIR%%/pages/login.tmpl
 %%WWWDIR%%/pages/privacy.tmpl

@@ -36,9 +36,10 @@ rcvar=writefreely_enable
 command="/usr/sbin/daemon"
 command_args="-P ${pidfile} -S -T ${writefreely_syslog_tag} -s ${writefreely_syslog_priority} -l ${writefreely_syslog_facility} -- %%PREFIX%%/bin/writefreely -c $writefreely_config serve"
 writefreely_chdir="$writefreely_home"
-extra_commands="setup"
+extra_commands="setup migrate"
 start_precmd="start_precmd"
 setup_cmd="setup_cmd"
+migrate_cmd="migrate_cmd"
 
 start_precmd()
 {
@@ -58,6 +59,11 @@ setup_cmd()
 {
 	su -m "$writefreely_user" -c "%%PREFIX%%/bin/writefreely -c '$writefreely_config' config start"
 	[ -f "$writefreely_home/writefreely.db" ] && chmod 700 "$writefreely_home/writefreely.db"
+}
+
+migrate_cmd()
+{
+	su -m "$writefreely_user" -c "%%PREFIX%%/bin/writefreely -c '$writefreely_config' db migrate"
 }
 
 cd "$writefreely_home"
