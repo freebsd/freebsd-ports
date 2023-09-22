@@ -1,16 +1,20 @@
---- CMakeLists.txt.orig	2023-02-08 14:06:47 UTC
+--- CMakeLists.txt.orig	2023-09-16 21:43:59 UTC
 +++ CMakeLists.txt
-@@ -167,11 +167,11 @@ endif ()
- 
- add_library(rhonabwy SHARED ${LIB_SRC})
+@@ -179,7 +179,7 @@ target_include_directories(rhonabwy
+     PUBLIC "$<BUILD_INTERFACE:${INC_DIR}>"
+     PUBLIC "$<BUILD_INTERFACE:${PROJECT_BINARY_DIR}>"
+     PUBLIC "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
+-target_link_libraries(rhonabwy PUBLIC ${RHONABWY_LIBS})
++target_link_libraries(rhonabwy PUBLIC ${RHONABWY_LIBS} -L${CMAKE_INSTALL_PREFIX}/lib -lgmp -lhogweed)
  set_target_properties(rhonabwy PROPERTIES
--        COMPILE_OPTIONS "-Wextra;-Wconversion"
-+        COMPILE_OPTIONS "-Wextra;-Wconversion;-Wno-sign-conversion;-Wno-unknown-warning-option"
          PUBLIC_HEADER "${INC_DIR}/rhonabwy.h;${PROJECT_BINARY_DIR}/rhonabwy-cfg.h"
          VERSION "${LIBRARY_VERSION}"
-         SOVERSION "${LIBRARY_SOVERSION}")
--target_link_libraries(rhonabwy ${LIBS})
-+target_link_libraries(rhonabwy ${LIBS} -L${CMAKE_INSTALL_PREFIX}/lib -lgmp)
+@@ -232,7 +232,7 @@ option(BUILD_RNBYC "Build rnbyc application." ON)
  
- set(SEARCH_ORCANIA OFF CACHE BOOL "Force to false") # Avoid to search and download orcania during yder search and download
- set(SEARCH_ORCANIA_U OFF CACHE BOOL "Force to false") # Avoid to search and download orcania during ulfius search and download
+ if (BUILD_RNBYC)
+     add_executable(rnbyc ${RNBYC_DIR}/rnbyc.c ${INC_DIR}/rhonabwy.h ${PROJECT_BINARY_DIR}/rhonabwy-cfg.h)
+-    set_target_properties(rnbyc PROPERTIES SKIP_BUILD_RPATH TRUE COMPILE_OPTIONS "-Wextra;-Wconversion")
++    set_target_properties(rnbyc PROPERTIES SKIP_BUILD_RPATH TRUE COMPILE_OPTIONS "-Wextra;-Wconversion;-Wno-sign-conversion;-Wno-unknown-warning-option")
+     add_dependencies(rnbyc rhonabwy)
+     target_link_libraries(rnbyc rhonabwy ${RHONABWY_LIBS} Yder::Yder Orcania::Orcania)
+     install(TARGETS rnbyc RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
