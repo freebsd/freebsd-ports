@@ -29,7 +29,9 @@ OPTIONS_DEFAULT=DOCS
 post-patch:
 # Fix parallel builds
 	@${REINPLACE_CMD} -e 's,test -d \.libs || mkdir,mkdir -p,' \
-		${WRKSRC}/libmp3lame/i386/Makefile.in
+		${WRKSRC}/libmp3lame/i386/Makefile.ir
+# Remove undefined symbol from linker version script - XXX to be removed with lame 3.101
+	@${REINPLACE_CMD} -e '/lame_init_old/d' ${WRKSRC}/include/libmp3lame.sym
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmp3lame.so.0
