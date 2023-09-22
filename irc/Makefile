@@ -105,6 +105,7 @@
     SUBDIR += thales
     SUBDIR += tircproxy
     SUBDIR += undernet-ircu
+    SUBDIR += unreal
     SUBDIR += weechat
     SUBDIR += weechat-otr
     SUBDIR += znc
