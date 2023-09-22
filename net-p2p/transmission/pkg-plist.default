@@ -14,9 +14,9 @@
 %%UTILS%%man/man1/transmission-remote.1.gz
 %%UTILS%%man/man1/transmission-show.1.gz
 %%QT%%share/applications/transmission-qt.desktop
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.0.md
 %%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.1.md
 %%PORTDOCS%%%%DOCSDIR%%/news/news-4.0.2.md
