@@ -10,5 +10,5 @@
 -  "fasteners>=0.16.3,<0.18.0",
 +  "fasteners>=0.16.3",
    "attrs>=21.4,<24.0",
-   "aiorwlock~=1.2"
+   "aiorwlock~=1.2",
  ]
