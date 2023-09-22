@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-factory_bot
-PORTVERSION=	2.23.1
+PORTVERSION=	2.24.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
