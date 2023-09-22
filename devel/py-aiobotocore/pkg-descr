@@ -1,0 +1,3 @@
+Async client for amazon services using botocore and aiohttp/asyncio.
+
+This library is a mostly full featured asynchronous version of botocore.
