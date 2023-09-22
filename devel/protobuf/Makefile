@@ -7,8 +7,8 @@ MASTER_SITES=	https://github.com/protocolbuffers/protobuf/releases/download/v${P
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data interchange format library
-WWW=		https://github.com/protocolbuffers/protobuf \
-		https://protobuf.dev/
+WWW=		https://protobuf.dev/ \
+		https://github.com/protocolbuffers/protobuf
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -37,9 +37,5 @@ PLIST_SUB=	PATCH_VERSION=${PORTVERSION:E}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CPE_VENDOR=	google
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^check-local:|disabled-&|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -Ee 's,[^ 	]*lib(gtest|gmock.*)\.la,-l\1,' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

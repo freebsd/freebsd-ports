@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2022-12-14 14:21:49 UTC
++++ Makefile.in
+@@ -2188,7 +2188,7 @@ uninstall-am: uninstall-pkgconfigDATA
+ # which takes a lot of time and is generally not useful to us.  Also, we don't
+ # want "make install" to recurse into gmock since we don't want to overwrite
+ # the installed version of gmock if there is one.
+-check-local:
++disabled-check-local:
+ 	@echo "Making lib/libgmock.a lib/libgmock_main.a in gmock"
+ 	@cd third_party/googletest/googletest && $(MAKE) $(AM_MAKEFLAGS) lib/libgtest.la lib/libgtest_main.la
+ 	@cd third_party/googletest/googlemock && $(MAKE) $(AM_MAKEFLAGS) lib/libgmock.la lib/libgmock_main.la
