@@ -384,10 +384,11 @@ NATIVE_BACKENDS+=	WebAssembly
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			LoongArch MSP430 NVPTX SystemZ VE WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
+_BE_INCS_AArch64=	arm_bf16.h arm_sme_draft_spec_subject_to_change.h arm_sve.h
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
-_BE_INCS_ARM=		arm_bf16.h arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sve.h
+_BE_INCS_ARM=		arm_cde.h arm_fp16.h arm_mve.h arm_neon.h arm_sve.h
 _BE_LIBS_ARM=		AsmParser Disassembler Utils
 _BE_LIBS_AVR=		AsmParser Disassembler
 _BE_LIBS_BPF=		AsmParser Disassembler

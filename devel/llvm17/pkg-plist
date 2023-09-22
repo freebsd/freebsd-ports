@@ -5618,7 +5618,6 @@ llvm%%LLVM_SUFFIX%%/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_acle.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_cmse.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_neon_sve_bridge.h
-%%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/arm_sme_draft_spec_subject_to_change.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/armintr.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/avx2intrin.h
 %%CLANG%%llvm%%LLVM_SUFFIX%%/lib/clang/%%LLVM_MAJOR%%/include/avx512bf16intrin.h
