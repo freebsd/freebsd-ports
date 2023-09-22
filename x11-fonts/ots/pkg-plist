@@ -1,3 +1,4 @@
+bin/cff_charstring
 bin/ots-fuzzer
 bin/ots-idempotent
 bin/ots-perf
