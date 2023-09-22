@@ -1,5 +1,5 @@
 PORTNAME=	python-engineio
-PORTVERSION=	4.7.0
+PORTVERSION=	4.7.1
 CATEGORIES=	devel net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,6 +10,8 @@ WWW=		https://github.com/miguelgrinberg/python-engineio
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simple-websocket>=0.10.0:www/py-simple-websocket@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
