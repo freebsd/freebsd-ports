@@ -1,4 +1,5 @@
 Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9fa7a94ff37bb604a48a8
+		https://github.com/pydantic/pydantic/commit/70d3c3e00f960191b4cc488ddb252f723fce8020
 
 --- pydantic/_internal/_core_utils.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/_internal/_core_utils.py
@@ -119,7 +120,7 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9f
      'typing-extensions>=4.6.1',
      'annotated-types>=0.4.0',
 -    "pydantic-core==2.6.3",
-+    "pydantic-core==2.7.0",
++    "pydantic-core==2.8.0",
  ]
  dynamic = ['version', 'readme']
  
