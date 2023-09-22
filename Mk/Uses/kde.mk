@@ -772,7 +772,7 @@ kde-tnef_PORT=			net/ktnef
 kde-tnef_LIB=			libKPim5Tnef.so
 
 kde-ktextaddons_PORT=		devel/ktextaddons
-kde-ktextaddons_LIB=		libKF5TextAutoCorrection.so
+kde-ktextaddons_LIB=		libKF5TextAutoCorrectionCore.so
 
 # PIM Applications
 kde-akonadiconsole_PORT=	deskutils/akonadiconsole
