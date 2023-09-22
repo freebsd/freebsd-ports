@@ -34,12 +34,4 @@ post-install:
 
 .endif # ${SLAVE_PORT} == no
 
-.include <bsd.port.pre.mk>
-
-pre-build:
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} < 45
-	@${REINPLACE_CMD} -e '/__attribute__/ s,deprecated(x),deprecated(),' \
-		${WRKSRC}/include/plist/plist.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
