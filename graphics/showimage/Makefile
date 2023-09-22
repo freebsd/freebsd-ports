@@ -1,7 +1,7 @@
 PORTNAME=	showimage
 PORTVERSION=	1.12
 CATEGORIES=	graphics kde
-MASTER_SITES=	LOCAL/jhale/showimage/
+MASTER_SITES=	LOCAL/kde/showimage/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Simple KDE based image viewer
