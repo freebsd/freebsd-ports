@@ -1,0 +1,2 @@
+S3FS builds on aiobotocore to provide a convenient Python filesystem interface
+for S3.
