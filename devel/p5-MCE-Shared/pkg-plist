@@ -3,6 +3,7 @@
 %%SITE_PERL%%/MCE/Shared/Array.pm
 %%SITE_PERL%%/MCE/Shared/Base.pm
 %%SITE_PERL%%/MCE/Shared/Cache.pm
+%%SITE_PERL%%/MCE/Shared/Common.pm
 %%SITE_PERL%%/MCE/Shared/Condvar.pm
 %%SITE_PERL%%/MCE/Shared/Handle.pm
 %%SITE_PERL%%/MCE/Shared/Hash.pm
@@ -17,6 +18,7 @@
 %%PERL5_MAN3%%/MCE::Shared::Array.3.gz
 %%PERL5_MAN3%%/MCE::Shared::Base.3.gz
 %%PERL5_MAN3%%/MCE::Shared::Cache.3.gz
+%%PERL5_MAN3%%/MCE::Shared::Common.3.gz
 %%PERL5_MAN3%%/MCE::Shared::Condvar.3.gz
 %%PERL5_MAN3%%/MCE::Shared::Handle.3.gz
 %%PERL5_MAN3%%/MCE::Shared::Hash.3.gz
