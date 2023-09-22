@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-networkmanager
-PORTVERSION=	1.35.0
+PORTVERSION=	1.36.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
