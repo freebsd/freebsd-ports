@@ -1,12 +1,13 @@
 PORTNAME=	h3
 PORTVERSION=	3.7.2
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hexagonal hierarchical geospatial indexing system
-WWW=		https://github.com/uber/h3
+WWW=		https://h3geo.org/ \
+		https://github.com/uber/h3
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
