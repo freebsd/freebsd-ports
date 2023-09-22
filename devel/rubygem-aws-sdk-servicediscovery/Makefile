@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-servicediscovery
-PORTVERSION=	1.56.0
+PORTVERSION=	1.58.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
