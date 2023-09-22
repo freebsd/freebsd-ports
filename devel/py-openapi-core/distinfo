@@ -1,3 +1,3 @@
-TIMESTAMP = 1689398859
-SHA256 (openapi_core-0.18.0.tar.gz) = ede9fe3a2b0a7f8870249c085b2d7e64b7bb169b46ceeaa3b812cceff2b05548
-SIZE (openapi_core-0.18.0.tar.gz) = 83474
+TIMESTAMP = 1695143313
+SHA256 (openapi_core-0.18.1.tar.gz) = 63fa13d9af226ac00119b0531ac9929e3dbb4cbe00216770784473fa6a03bc27
+SIZE (openapi_core-0.18.1.tar.gz) = 84070
