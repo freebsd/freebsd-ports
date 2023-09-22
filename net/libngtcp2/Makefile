@@ -1,12 +1,13 @@
 PORTNAME=	ngtcp2
-PORTVERSION=	0.17.0
+PORTVERSION=	0.19.1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ngtcp2/ngtcp2/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of QUIC protocol
-WWW=		https://github.com/ngtcp2/ngtcp2
+WWW=		https://nghttp2.org/ngtcp2/ \
+		https://github.com/ngtcp2/ngtcp2
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
