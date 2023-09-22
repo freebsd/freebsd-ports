@@ -1,3 +1,3 @@
-TIMESTAMP = 1691070226
-SHA256 (rubygem/aws-sdk-cloudformation-1.88.0.gem) = f83dbbd4ed6ff645f971bfbdbcf638406089310eb179c08ff2c16ff7227bcbb6
-SIZE (rubygem/aws-sdk-cloudformation-1.88.0.gem) = 160768
+TIMESTAMP = 1695143401
+SHA256 (rubygem/aws-sdk-cloudformation-1.89.0.gem) = 3bb736a1a66313e2bb2ac4ecee47deb312253b7168b3ae3ad5a05b25afbbcd87
+SIZE (rubygem/aws-sdk-cloudformation-1.89.0.gem) = 160256
