@@ -1,14 +1,14 @@
 Allow system wlroots to reduce maintenance (wlroots has tons of options)
 
---- meson.build.orig	2023-03-14 21:56:31 UTC
+--- meson.build.orig	2023-09-22 23:07:52 UTC
 +++ meson.build
 @@ -39,8 +39,8 @@ add_project_arguments(
    ],
    language: 'cpp')
  
--wlroots = subproject('wlroots', default_options: ['examples=false'])
+-wlroots = subproject('wlroots', default_options: ['examples=false', 'renderers=gles2'])
 -have_xwlr = wlroots.get_variable('features').get('xwayland')
-+wlroots = dependency('wlroots', version: ['>=0.17.0', '<0.18.0'], default_options: ['examples=false'])
++wlroots = dependency('wlroots', version: ['>=0.17.0', '<0.18.0'], default_options: ['examples=false', 'renderers=gles2'])
 +have_xwlr = wlroots.get_variable(pkgconfig: 'have_xwayland', internal: 'have_xwayland') == 'true'
  xcb_dep = dependency('xcb', required: get_option('xwayland'))
  
