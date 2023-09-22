@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-bigtable
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,9 @@ WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-big
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-google-cloud-bigtable-admin-v2>=0.0<1:net/rubygem-google-cloud-bigtable-admin-v2 \
-		rubygem-google-cloud-bigtable-v2>=0.0<1:net/rubygem-google-cloud-bigtable-v2 \
+RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
+		rubygem-google-cloud-bigtable-admin-v2>=0.0<1:net/rubygem-google-cloud-bigtable-admin-v2 \
+		rubygem-google-cloud-bigtable-v2>=0.14<1:net/rubygem-google-cloud-bigtable-v2 \
 		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core
 
 USES=		gem
