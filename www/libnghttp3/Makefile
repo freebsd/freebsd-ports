@@ -1,12 +1,13 @@
 PORTNAME=	nghttp3
-PORTVERSION=	0.13.0
+PORTVERSION=	0.15.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/ngtcp2/nghttp3/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	HTTP/3 C Library
-WWW=		https://github.com/ngtcp2/nghttp3
+WWW=		https://nghttp2.org/nghttp3/ \
+		https://github.com/ngtcp2/nghttp3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
