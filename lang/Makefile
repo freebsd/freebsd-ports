@@ -52,6 +52,7 @@
     SUBDIR += elk
     SUBDIR += elm
     SUBDIR += emacs-lisp-intro
+    SUBDIR += emilua
     SUBDIR += erlang
     SUBDIR += erlang-doc
     SUBDIR += erlang-java

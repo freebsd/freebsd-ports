@@ -1,0 +1,4 @@
+Emilua strives to be the most complete execution engine for Lua.
+Whether you want single-VM concurrency support to exploit complex
+async IO interactions or multi-VM support to exploit possible parallelism
+your needs should be covered.
