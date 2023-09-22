@@ -1,5 +1,5 @@
 PORTNAME=	cssbundling-rails
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
