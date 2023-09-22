@@ -4425,6 +4425,7 @@
     SUBDIR += py-buildbot-worker
     SUBDIR += py-buildbot-www
     SUBDIR += py-bullet3
+    SUBDIR += py-bump2version
     SUBDIR += py-bytecode
     SUBDIR += py-cabby
     SUBDIR += py-cached-property
