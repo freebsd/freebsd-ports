@@ -1,12 +1,13 @@
 PORTNAME=	python-keystoneclient
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client Library for OpenStack Identity
-WWW=		https://docs.openstack.org/python-keystoneclient/latest/
+WWW=		https://docs.openstack.org/python-keystoneclient/latest/ \
+		https://github.com/openstack/python-keystoneclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
