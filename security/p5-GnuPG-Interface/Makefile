@@ -1,12 +1,13 @@
 PORTNAME=	GnuPG-Interface
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for interfacing with GnuPG
-WWW=		https://metacpan.org/release/GnuPG-Interface
+WWW=		https://metacpan.org/release/GnuPG-Interface \
+		https://gnupg-interface.sourceforge.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
