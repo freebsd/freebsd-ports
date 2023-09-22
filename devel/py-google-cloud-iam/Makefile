@@ -1,12 +1,12 @@
 PORTNAME=	google-cloud-iam
-PORTVERSION=	2.12.1
+PORTVERSION=	2.12.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	IAM Service Account Credentials API client library
-WWW=		https://github.com/googleapis/python-iam
+WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-iam
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
