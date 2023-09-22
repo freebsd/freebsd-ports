@@ -1,3 +1,3 @@
-TIMESTAMP = 1655829846
-SHA256 (Flask-APScheduler-1.12.4.tar.gz) = 681dae34dc6cc9403ce674795e53abd0bff540472129cfd3d3c93e0e1d502da8
-SIZE (Flask-APScheduler-1.12.4.tar.gz) = 12825
+TIMESTAMP = 1695143379
+SHA256 (Flask-APScheduler-1.13.0.tar.gz) = 19555d6761990f110678aa584ab3ad0e7e698238e6ff60d8f38ab1322bda14c2
+SIZE (Flask-APScheduler-1.13.0.tar.gz) = 12618
