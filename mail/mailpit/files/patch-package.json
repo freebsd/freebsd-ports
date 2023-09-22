@@ -1,11 +1,11 @@
---- package.json.orig	2023-09-06 05:29:30 UTC
+--- package.json.orig	2023-09-22 04:40:49 UTC
 +++ package.json
-@@ -25,7 +25,7 @@
-   "devDependencies": {
-     "@popperjs/core": "^2.11.5",
+@@ -28,7 +28,7 @@
+     "@types/bootstrap": "^5.2.7",
+     "@types/tinycon": "^0.6.3",
      "@vue/compiler-sfc": "^3.2.37",
--    "esbuild": "^0.18.10",
-+    "esbuild-wasm": "^0.18.10",
+-    "esbuild": "^0.19.1",
++    "esbuild-wasm": "^0.19.1",
      "esbuild-plugin-vue-next": "^0.1.4",
      "esbuild-sass-plugin": "^2.3.2"
    }
