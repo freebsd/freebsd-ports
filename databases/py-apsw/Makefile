@@ -1,5 +1,5 @@
 PORTNAME=	apsw
-PORTVERSION=	3.43.0.0
+PORTVERSION=	3.43.1.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI \
 		https://sqlite.org/2023/:sqlite
