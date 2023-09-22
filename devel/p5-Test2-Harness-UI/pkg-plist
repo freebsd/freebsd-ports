@@ -182,6 +182,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/ResultBase.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/ResultSet.pm
 %%SITE_PERL%%/Test2/Harness/UI/Sweeper.pm
+%%SITE_PERL%%/Test2/Harness/UI/Sync.pm
 %%SITE_PERL%%/Test2/Harness/UI/UUID.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util/DateTimeFormat.pm
@@ -299,6 +300,7 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::Overlay::Run.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::Overlay::User.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Schema::ResultSet.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Sync.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util::Errors.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Util::HashBase.3.gz
