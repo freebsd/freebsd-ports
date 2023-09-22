@@ -29,14 +29,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-systemd
 INSTALL_TARGET=	install-strip
 
-OPTIONS_DEFINE=	CANBERRA NLS
+OPTIONS_DEFINE=	NLS SOUND
 OPTIONS_SUB=	yes
 
-CANBERRA_DESC=	Sound (audio) support via canberra
+SOUND_DESC=	Sound (audio) support via canberra
 
-CANBERRA_LIB_DEPENDS=		libcanberra.so:audio/libcanberra \
-				libcanberra-gtk3.so:audio/libcanberra-gtk3
-CANBERRA_CONFIGURE_ENABLE=	canberra
+SOUND_LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+			libcanberra-gtk3.so:audio/libcanberra-gtk3
+SOUND_CONFIGURE_ENABLE=	sound
 
 NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
