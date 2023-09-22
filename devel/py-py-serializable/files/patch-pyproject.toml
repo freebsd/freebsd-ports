@@ -1,0 +1,19 @@
+--- pyproject.toml.orig	2023-03-07 10:15:49 UTC
++++ pyproject.toml
+@@ -11,9 +11,6 @@ repository = "https://github.com/madpah/serializable"
+ packages = [
+     { include = "serializable" }
+ ]
+-include = [
+-    "LICENSE"
+-]
+ classifiers = [
+     # Trove classifiers - https://packaging.python.org/specifications/core-metadata/#metadata-classifier
+     # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
+@@ -63,4 +60,4 @@ version_variable = [
+ branch = "main"
+ upload_to_pypi = true
+ upload_to_release = true
+-build_command = "pip install poetry==1.1.12 && poetry build"
+\ No newline at end of file
++build_command = "pip install poetry==1.1.12 && poetry build"
