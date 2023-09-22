@@ -1,0 +1,10 @@
+Sus(picious) is an opinionated test framework designed with several goals:
+- As fast as possible, aiming for ~10,000 assertions per second per core.
+- Isolated tests which parallelise easily (including class definitions).
+- Native support for balanced (work-stealing) multi-core execution.
+- Incredible test output with detailed failure logging (including nested
+  assertions and predicates).
+
+Non-features:
+- Flexibility at the expense of performance.
+- Backwards compatibility.

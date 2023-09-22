@@ -7394,6 +7394,7 @@
     SUBDIR += rubygem-sugar-high
     SUBDIR += rubygem-sumbur
     SUBDIR += rubygem-sundawg_country_codes
+    SUBDIR += rubygem-sus
     SUBDIR += rubygem-svn2git
     SUBDIR += rubygem-swagger-blocks
     SUBDIR += rubygem-sync
