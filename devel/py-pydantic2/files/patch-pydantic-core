@@ -1,6 +1,33 @@
 Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9fa7a94ff37bb604a48a8
 		https://github.com/pydantic/pydantic/commit/70d3c3e00f960191b4cc488ddb252f723fce8020
+		https://github.com/pydantic/pydantic/commit/e5323ffaba449940028a9e580da81bdd3d8bd0c9
 
+--- pydantic/_internal/_config.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/_internal/_config.py
+@@ -65,6 +65,7 @@ class ConfigWrapper:
+     hide_input_in_errors: bool
+     defer_build: bool
+     schema_generator: type[GenerateSchema] | None
++    coerce_numbers_to_str: bool
+ 
+     def __init__(self, config: ConfigDict | dict[str, Any] | type[Any] | None, *, check: bool = True):
+         if check:
+@@ -160,6 +161,7 @@ class ConfigWrapper:
+                 str_max_length=self.config_dict.get('str_max_length'),
+                 str_min_length=self.config_dict.get('str_min_length'),
+                 hide_input_in_errors=self.config_dict.get('hide_input_in_errors'),
++                coerce_numbers_to_str=self.config_dict.get('coerce_numbers_to_str'),
+             )
+         )
+         return core_config
+@@ -200,6 +202,7 @@ config_defaults = ConfigDict(
+     json_encoders=None,
+     defer_build=False,
+     schema_generator=None,
++    coerce_numbers_to_str=False,
+ )
+ 
+ 
 --- pydantic/_internal/_core_utils.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/_internal/_core_utils.py
 @@ -262,9 +262,9 @@ class _WalkCoreSchema:
@@ -71,6 +98,20 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9f
                          model_name=cls.__name__,
                      )
                      inner_schema = apply_validators(fields_schema, decorators.root_validators.values(), None)
+--- pydantic/config.py.orig	2020-02-02 00:00:00 UTC
++++ pydantic/config.py
+@@ -207,5 +207,11 @@ class ConfigDict(TypedDict, total=False):
+     Defaults to `None`.
+     """
+ 
++    coerce_numbers_to_str: bool
++    """
++    If `True`, enables automatic coercion of any `Number` type to `str` in "lax" (non-strict) mode.
++    Defaults to `False`.
++    """
++
+ 
+ __getattr__ = getattr_migration(__name__)
 --- pydantic/json_schema.py.orig	2020-02-02 00:00:00 UTC
 +++ pydantic/json_schema.py
 @@ -795,8 +795,8 @@ class GenerateJsonSchema:
@@ -120,7 +161,7 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9f
      'typing-extensions>=4.6.1',
      'annotated-types>=0.4.0',
 -    "pydantic-core==2.6.3",
-+    "pydantic-core==2.8.0",
++    "pydantic-core==2.9.0",
  ]
  dynamic = ['version', 'readme']
  
@@ -135,6 +176,63 @@ Obtained from:	https://github.com/pydantic/pydantic/commit/2575e71894a32dc615f9f
              )
  
      class Model(BaseModel):
+--- tests/test_types.py.orig	2020-02-02 00:00:00 UTC
++++ tests/test_types.py
+@@ -12,6 +12,7 @@ from dataclasses import dataclass
+ from datetime import date, datetime, time, timedelta, timezone
+ from decimal import Decimal
+ from enum import Enum, IntEnum
++from numbers import Number
+ from pathlib import Path
+ from typing import (
+     Any,
+@@ -5690,3 +5691,46 @@ def test_decimal_float_precision() -> None:
+     assert ta.validate_python('1.1') == Decimal('1.1')
+     assert ta.validate_json('1') == Decimal('1')
+     assert ta.validate_python(1) == Decimal('1')
++
++
++def test_coerce_numbers_to_str_disabled_in_strict_mode() -> None:
++    class Model(BaseModel):
++        model_config = ConfigDict(strict=True, coerce_numbers_to_str=True)
++        value: str
++
++    with pytest.raises(ValidationError, match='value'):
++        Model.model_validate({'value': 42})
++    with pytest.raises(ValidationError, match='value'):
++        Model.model_validate_json('{"value": 42}')
++
++
++@pytest.mark.parametrize(
++    ('number', 'expected_str'),
++    [
++        pytest.param(42, '42', id='42'),
++        pytest.param(42.0, '42.0', id='42.0'),
++        pytest.param(Decimal('42.0'), '42.0', id="Decimal('42.0')"),
++    ],
++)
++def test_coerce_numbers_to_str(number: Number, expected_str: str) -> None:
++    class Model(BaseModel):
++        model_config = ConfigDict(coerce_numbers_to_str=True)
++        value: str
++
++    assert Model.model_validate({'value': number}).model_dump() == {'value': expected_str}
++
++
++@pytest.mark.parametrize(
++    ('number', 'expected_str'),
++    [
++        pytest.param('42', '42', id='42'),
++        pytest.param('42.0', '42', id='42.0'),
++        pytest.param('42.13', '42.13', id='42.13'),
++    ],
++)
++def test_coerce_numbers_to_str_from_json(number: str, expected_str: str) -> None:
++    class Model(BaseModel):
++        model_config = ConfigDict(coerce_numbers_to_str=True)
++        value: str
++
++    assert Model.model_validate_json(f'{{"value": {number}}}').model_dump() == {'value': expected_str}
 --- tests/test_utils.py.orig	2020-02-02 00:00:00 UTC
 +++ tests/test_utils.py
 @@ -547,8 +547,8 @@ def test_camel2snake(value: str, result: str) -> None:
