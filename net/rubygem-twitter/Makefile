@@ -1,12 +1,12 @@
 PORTNAME=	twitter
-PORTVERSION=	8.0.0
+PORTVERSION=	8.0.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby interface to the Twitter API
 WWW=		https://sferik.github.io/twitter/ \
-		https://github.com/sferik/twitter
+		https://github.com/sferik/twitter-ruby
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
