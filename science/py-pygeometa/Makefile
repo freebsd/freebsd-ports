@@ -1,12 +1,13 @@
 PORTNAME=	pygeometa
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.3
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate metadata for geospatial datasets
-WWW=		https://github.com/geopython/pygeometa
+WWW=		https://geopython.github.io/pygeometa/ \
+		https://github.com/geopython/pygeometa
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
