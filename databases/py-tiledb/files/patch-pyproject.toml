@@ -4,8 +4,8 @@
  
  # https://askubuntu.com/a/1407138
  # we encounter the above error in versions of setuptools<=58.3.0
--requires = ["setuptools>=42,<=58.3.0", "wheel", "pybind11<2.11.0", "cython<3.0"]
-+requires = ["setuptools>=42", "wheel", "pybind11<2.11.0", "cython<3.0"]
+-requires = ["setuptools>=42,<=58.3.0", "wheel", "pybind11<2.11.0", "Cython<3.0"]
++requires = ["setuptools>=42", "wheel", "pybind11<2.11.0", "Cython<3.0"]
  build-backend = "setuptools.build_meta"
  
  [tool.pytest.ini_options]
