@@ -1,5 +1,5 @@
 PORTNAME=	ulfius
-PORTVERSION=	2.7.13
+PORTVERSION=	2.7.14
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -15,8 +15,8 @@ BUILD_DEPENDS=	curl>=7.16.2:ftp/curl \
 		gnutls>=3.5.0:security/gnutls \
 		jansson>=2.4:devel/jansson \
 		libmicrohttpd>=0.9.53:www/libmicrohttpd \
-		orcania>=2.3.2:devel/orcania \
-		yder>=1.4.19:devel/yder
+		orcania>=2.3.3:devel/orcania \
+		yder>=1.4.20:devel/yder
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgnutls.so:security/gnutls \
 		libjansson.so:devel/jansson \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		cmake cpe pathfix
 
-CMAKE_OFF=	BUILD_RPM BUILD_ULFIUS_DOCUMENTATION BUILD_ULFIUS_TESTING DOWNLOAD_DEPENDENCIES
+CMAKE_OFF=	BUILD_RPM BUILD_ULFIUS_DOCUMENTATION BUILD_ULFIUS_TESTING
 CMAKE_ON=	BUILD_SHARED BUILD_STATIC BUILD_UWSC INSTALL_HEADER SEARCH_ORCANIA_U SEARCH_YDER WITH_CURL WITH_GNUTLS WITH_JANSSON WITH_WEBSOCKET WITH_WEBSOCKET_MESSAGE_LIST WITH_YDER
 MAKE_ENV=	MAN1=uwsc.1
 
