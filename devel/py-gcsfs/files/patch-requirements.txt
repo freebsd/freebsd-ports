@@ -1,0 +1,10 @@
+--- requirements.txt.orig	2023-09-15 20:26:32 UTC
++++ requirements.txt
+@@ -1,6 +1,6 @@
+ aiohttp!=4.0.0a0, !=4.0.0a1
+ decorator>4.1.2
+-fsspec==2023.9.1
++fsspec>=2023.9.1
+ google-auth>=1.2
+ google-auth-oauthlib
+ google-cloud-storage
