@@ -1,5 +1,12 @@
 include/hoel-cfg.h
 include/hoel.h
+lib/cmake/Hoel/FindJansson.cmake
+lib/cmake/Hoel/FindLibPQ.cmake
+lib/cmake/Hoel/FindMYSQL.cmake
+lib/cmake/Hoel/HoelConfig.cmake
+lib/cmake/Hoel/HoelConfigVersion.cmake
+lib/cmake/Hoel/HoelTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Hoel/HoelTargets.cmake
 lib/libhoel.a
 lib/libhoel.so
 lib/libhoel.so.1.4
