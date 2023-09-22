@@ -1,6 +1,6 @@
 PORTNAME=	gnucash
 PORTVERSION=	5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -14,9 +14,6 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	googletest>0:devel/googletest \
 		swig:devel/swig
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libgnome-keyring.so:security/libgnome-keyring \
 		libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu \
 		libsecret-1.so:security/libsecret \
@@ -71,8 +68,7 @@ OFX_DESC=	OFX support
 AQBANKING_CMAKE_BOOL=	WITH_AQBANKING
 AQBANKING_LIB_DEPENDS=	libaqbanking.so:finance/aqbanking \
 			libgwengui-gtk3.so:devel/gwenhywfar-gtk3 \
-			libgwenhywfar.so:devel/gwenhywfar \
-			libktoblzcheck.so:finance/ktoblzcheck
+			libgwenhywfar.so:devel/gwenhywfar
 AQBANKING_VARS=		GLIB_SCHEMAS+="org.gnucash.GnuCash.dialogs.flicker.gschema.xml \
 			org.gnucash.GnuCash.dialogs.import.hbci.gschema.xml"
 
