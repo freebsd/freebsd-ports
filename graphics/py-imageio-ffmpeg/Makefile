@@ -1,6 +1,5 @@
 PORTNAME=	imageio-ffmpeg
-PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTVERSION=	0.4.9
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,8 @@ WWW=		https://github.com/imageio/imageio-ffmpeg
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
