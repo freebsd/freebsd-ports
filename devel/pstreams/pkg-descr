@@ -1,1 +1,12 @@
-C++ utility for simple IOStream-based Inter-Process Communication
+PStreams allows you to run another program from your C++ application and to
+transfer data between the two programs similar to shell pipelines.
+
+In the simplest case, a PStreams class is like a C++ wrapper for the POSIX.2
+functions popen(3) and pclose(3), using C++ iostreams instead of C's stdio
+library.
+
+The library provides class templates in the style of the standard iostreams that
+can be used with any ISO C++ compiler on a POSIX platform. The classes use a
+streambuf class that uses fork(2) and the exec(2) family of functions to create
+a new process and creates up to three pipes to write/read data to/from the
+process.
