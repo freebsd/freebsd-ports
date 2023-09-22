@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of H3 library
-WWW=		https://github.com/uber/h3-py
+WWW=		https://uber.github.io/h3-py/ \
+		https://github.com/uber/h3-py
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
