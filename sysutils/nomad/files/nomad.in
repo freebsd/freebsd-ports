@@ -19,6 +19,10 @@
 #                               Default is "/var/tmp/nomad".
 # nomad_env (dir):          Set environment variables used with nomad
 #                               Default is "".
+# nomad_mode (mode):        Set the nomad mode to be used
+#                               Default is "agent".
+# nomad_args (args):        Set arguments to be passed to nomad
+#                               Default is "-data-dir=${nomad_dir}".
 
 . /etc/rc.subr
 
@@ -33,12 +37,14 @@ load_rc_config $name
 : ${nomad_group:="nomad"}
 : ${nomad_dir:="/var/tmp/nomad"}
 : ${nomad_env:=""}
+: ${nomad_mode:="agent"}
+: ${nomad_args:="-data-dir=${nomad_dir}"}
 
 pidfile=/var/run/nomad.pid
 procname="%%PREFIX%%/bin/nomad"
 command="/usr/sbin/daemon"
 extra_commands="reload"
-nomad_command="/usr/bin/env ${nomad_env} ${procname} agent -data-dir=${nomad_dir} ${nomad_args}"
+nomad_command="/usr/bin/env ${nomad_env} ${procname} ${nomad_mode} ${nomad_args}"
 command_args="-f -t ${name} -p ${pidfile} ${nomad_command}"
 
 start_precmd=nomad_startprecmd
