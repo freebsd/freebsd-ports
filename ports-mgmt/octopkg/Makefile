@@ -1,7 +1,8 @@
 PORTNAME=	octopkg
-DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
+MASTER_SITES=	https://github.com/aarnt/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Graphical front-end to the FreeBSD pkg-ng package manager
@@ -11,9 +12,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++17-lang desktop-file-utils gl qmake qt:6
-USE_GITHUB=	yes
-GH_ACCOUNT=	aarnt
-USE_GL=		gl
+USE_GL=		opengl
 USE_LOCALE=	en_US.UTF-8
 USE_QT=		base tools
 
