@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-qldbsession
-PORTVERSION=	1.29.0
+PORTVERSION=	1.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
