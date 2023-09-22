@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Orchestration API Client Library
-WWW=		https://docs.openstack.org/python-heatclient/latest/
+WWW=		https://docs.openstack.org/python-heatclient/latest/ \
+		https://github.com/openstack/python-heatclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
