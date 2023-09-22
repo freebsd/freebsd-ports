@@ -1,6 +1,6 @@
 PORTNAME=	ruqola
 MASTER_SITES=	KDE/stable/${PORTNAME}/
-DISTVERSION=	1.9.2
+DISTVERSION=	2.0.0
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -10,19 +10,18 @@ WWW=		https://apps.kde.org/ruqola/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5 \
-		libsecret-1.so:security/libsecret
+LIB_DEPENDS=	libKUserFeedbackCore.so:deskutils/kuserfeedback \
+		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		cmake compiler:c++11-lang gnome kde:5 localbase:ldflags qt:5 tar:xz xorg
-USE_GNOME=	glib20
+USES=		cmake compiler:c++11-lang kde:5 localbase:ldflags qt:5 tar:xz xorg
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons i18n iconthemes idletime itemviews \
-		jobwidgets kio kirigami2 notifications notifyconfig prison \
-		purpose service solid sonnet syntaxhighlighting textwidgets \
-		widgetsaddons windowsystem xmlgui \
+		jobwidgets kio ktextaddons notifications notifyconfig \
+		prison purpose service solid sonnet syntaxhighlighting \
+		textwidgets widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
-USE_QT=		concurrent core dbus declarative declarative gui multimedia \
-		network networkauth speech sql xml websockets widgets \
+USE_QT=		concurrent core dbus gui multimedia network networkauth \
+		sql xml websockets widgets \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 
