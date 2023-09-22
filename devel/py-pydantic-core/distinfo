@@ -1,6 +1,6 @@
-TIMESTAMP = 1695143325
-SHA256 (pydantic_core-2.8.0.tar.gz) = d6985b38b6c9bcd022a7862b7a806473081ac5fdc7d0e55e6892c9ca9ba5b524
-SIZE (pydantic_core-2.8.0.tar.gz) = 341468
+TIMESTAMP = 1695357821
+SHA256 (pydantic_core-2.9.0.tar.gz) = 3afee35fceaeea03e91714adbe5ba0ac1b1b949702b1af283bad175f55665c66
+SIZE (pydantic_core-2.9.0.tar.gz) = 345661
 SHA256 (rust/crates/ahash-0.8.3.crate) = 2c99f64d1e06488f620f932677e24bc6e2897582980441ae90a671415bd7ec2f
 SIZE (rust/crates/ahash-0.8.3.crate) = 42416
 SHA256 (rust/crates/aho-corasick-1.0.2.crate) = 43f6cb1bf222025340178f382c426f13757b2960e89779dfcb319c32542a5a41
