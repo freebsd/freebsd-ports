@@ -1,3 +1,3 @@
-TIMESTAMP = 1677771327
-SHA256 (python-barbicanclient-5.5.0.tar.gz) = 5def6e7aea465dae01860ede8bcc56d5fe808a1167f45aeb22a4fefc5d9edc2d
-SIZE (python-barbicanclient-5.5.0.tar.gz) = 129808
+TIMESTAMP = 1695143345
+SHA256 (python-barbicanclient-5.6.0.tar.gz) = ac3005aad309a883b08bae52710d85b56ffaf0ce21b3d1c73b35ae9b309ef82e
+SIZE (python-barbicanclient-5.6.0.tar.gz) = 129773

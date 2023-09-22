@@ -1,12 +1,13 @@
 PORTNAME=	python-barbicanclient
-PORTVERSION=	5.5.0
+PORTVERSION=	5.6.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client Library for OpenStack Barbican Key Management API
-WWW=		https://docs.openstack.org/python-barbicanclient/latest/
+WWW=		https://docs.openstack.org/python-barbicanclient/latest/ \
+		https://github.com/openstack/python-barbicanclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
