@@ -1120,7 +1120,6 @@
     SUBDIR += py-pystun
     SUBDIR += py-python-barbicanclient
     SUBDIR += py-python-bitcoinrpc
-    SUBDIR += py-python-ceilometerclient
     SUBDIR += py-python-cinderclient
     SUBDIR += py-python-designateclient
     SUBDIR += py-python-glanceclient
