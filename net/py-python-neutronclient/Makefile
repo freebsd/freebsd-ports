@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI and Client Library for OpenStack Networking
-WWW=		https://docs.openstack.org/python-neutronclient/latest/
+WWW=		https://docs.openstack.org/python-neutronclient/latest/ \
+		https://github.com/openstack/python-neutronclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

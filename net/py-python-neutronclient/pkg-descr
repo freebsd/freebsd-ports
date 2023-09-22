@@ -1,4 +1,2 @@
 This is a client library for Neutron built on the Neutron API. It provides a
 Python API (the neutronclient module) and a command-line tool (neutron).
-
-See also: https://github.com/openstack/python-neutronclient
