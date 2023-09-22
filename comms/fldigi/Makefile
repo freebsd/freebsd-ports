@@ -1,7 +1,8 @@
 PORTNAME=	fldigi
 DISTVERSION=	4.2.00
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.w1hkj.com/files/fldigi/
+MASTER_SITES=	SF/fldigi/${PORTNAME}
+#http://www.w1hkj.com/files/fldigi/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
