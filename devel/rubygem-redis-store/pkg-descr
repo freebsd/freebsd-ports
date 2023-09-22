@@ -1,4 +1,2 @@
 Namespaced Rack::Session, Rack::Cache, I18n and cache Redis stores for Ruby web
 frameworks.
-
-See also: https://github.com/redis-store/redis-store
