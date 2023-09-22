@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-storage
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=2.3.1<3.0:www/py-google-api-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-auth>=1.25.0<3.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-cloud-core>=2.3.0<3.0:www/py-google-cloud-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-resumable-media>=2.3.2:www/py-google-resumable-media@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-resumable-media>=2.6.0:www/py-google-resumable-media@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.18.0<3.0.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python
