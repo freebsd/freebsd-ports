@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client for the OpenStack Nova API
-WWW=		https://docs.openstack.org/python-novaclient/latest/
+WWW=		https://docs.openstack.org/python-novaclient/latest/ \
+		https://github.com/openstack/python-novaclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
