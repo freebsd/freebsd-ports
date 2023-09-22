@@ -92,7 +92,7 @@ tidy: ${VUXML_FLAT_FILE}
 	${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FLAT_FILE}" > "${VUXML_FILE}.tidy"
 
 newentry:
-	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}" ${CVE_ID}
+	@${SH} ${FILESDIR}/newentry.sh "${VUXML_CURRENT_FILE}" "CVE_ID=${CVE_ID}" "SA_ID=${SA_ID}"
 
 .if defined(VID) && !empty(VID)
 html: work/${VID}.html
