@@ -1,6 +1,5 @@
 PORTNAME=	tinycdb
-PORTVERSION=	0.78
-PORTREVISION=	2
+PORTVERSION=	0.80
 CATEGORIES=	databases
 MASTER_SITES=	http://www.corpit.ru/mjt/tinycdb/
 
