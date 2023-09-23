@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.160
+DISTVERSION=	1.11.169
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -22,31 +22,19 @@ LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-checksums.so:devel/aws-checksums \
 		libaws-crt-cpp.so:devel/aws-crt-cpp \
 		libcurl.so:ftp/curl \
-		libdbus-1.so:devel/dbus \
-		libFLAC.so:audio/flac \
-		libnghttp2.so:www/libnghttp2 \
-		libogg.so:audio/libogg \
-		libopus.so:audio/opus \
 		libpulse.so:audio/pulseaudio \
-		libs2n.so:security/s2n-tls \
-		libsndfile.so:audio/libsndfile \
-		libssh2.so:security/libssh2 \
-		libvorbis.so:audio/libvorbis
+		libs2n.so:security/s2n-tls
 
-USES=		cmake compiler:c++11-lib gettext-runtime localbase:ldflags \
-		pkgconfig ssl xorg
+USES=		cmake compiler:c++11-lib localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 USE_LDCONFIG=	yes
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xi xtst
 
 CMAKE_ARGS+=	-DBUILD_ONLY="${BUILD_ONLY}" \
 		-DCMAKE_INSTALL_LIBDIR=lib \
 		-DCMAKE_PREFIX_PATH=${LOCALBASE}
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_DEPS
-
-CXXFLAGS+=	-Wno-error -Wno-c11-extensions
 
 BUILD_ONLY?=
 
