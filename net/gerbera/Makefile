@@ -4,6 +4,9 @@ DISTVERSION=	1.12.1
 PORTREVISION=	3
 CATEGORIES=	net multimedia
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	37957aac0aea776e6f843af2358916f81056a405.patch:-p1
+
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Media server compatible with DLNA and UPnP
 WWW=		https://gerbera.io/
