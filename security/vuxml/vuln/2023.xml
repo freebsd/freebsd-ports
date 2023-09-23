@@ -1,3 +1,28 @@
+  <vuln vid="732282a5-5a10-11ee-bca0-001999f8d30b">
+    <topic>Mailpit affected by vulnerability in included go markdown module</topic>
+    <affects>
+      <package>
+	<name>mailpit</name>
+	<range><lt>1.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.9.1">
+	  <p>Update Go modules to address CVE-2023-42821 (go markdown module DoS).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-42821</cvename>
+    </references>
+    <dates>
+      <discovery>2023-09-23</discovery>
+      <entry>2023-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4fd7a2fc-5860-11ee-a1b3-dca632daf43b">
     <topic>graphics/webp heap buffer overflow</topic>
     <affects>
