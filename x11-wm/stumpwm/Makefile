@@ -1,7 +1,13 @@
 PORTNAME=	stumpwm
-DISTVERSION=	22.11
-PORTREVISION=	8
+DISTVERSION=	22.11-88
+DISTVERSIONSUFFIX=	-gbaf5df7
 CATEGORIES=	x11-wm lisp
+MASTER_SITES+=	https://beta.quicklisp.org/archive/alexandria/2023-10-21/:alexandria \
+		https://beta.quicklisp.org/archive/cl-ppcre/2023-06-18/:ppcre \
+		https://beta.quicklisp.org/archive/clx/2023-06-18/:clx
+DISTFILES+=	alexandria-20231021-git.tgz:alexandria \
+		cl-ppcre-20230618-git.tgz:ppcre \
+		clx-20230618-git.tgz:clx
 
 MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Tiling, keyboard driven Window Manager written in Common Lisp
@@ -10,77 +16,38 @@ WWW=		https://www.nongnu.org/stumpwm/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	cl-alexandria>=0:devel/cl-alexandria \
-		cl-alexandria-sbcl>=0:devel/cl-alexandria-sbcl \
-		cl-clx>=0:x11/cl-clx \
-		cl-clx-sbcl>=0:x11/cl-clx-sbcl \
-		cl-ppcre>=0:textproc/cl-ppcre \
-		cl-ppcre-sbcl>=0:textproc/cl-ppcre-sbcl \
+BUILD_DEPENDS=	sbcl:lang/sbcl \
 		texinfo>=0:print/texinfo
-RUN_DEPENDS=	cl-alexandria>=0:devel/cl-alexandria \
-		cl-alexandria-sbcl>=0:devel/cl-alexandria-sbcl \
-		cl-clx>=0:x11/cl-clx \
-		cl-clx-sbcl>=0:x11/cl-clx-sbcl \
-		cl-ppcre>=0:textproc/cl-ppcre \
-		cl-ppcre-sbcl>=0:textproc/cl-ppcre-sbcl
 
+USES=		autoreconf gmake
 USE_GITHUB=	yes
 USE_SBCL=	yes
 
-SUB_FILES=	stumpwm
-SUB_LIST=	ASDF_REGISTRY=${ASDF_REGISTRY} \
-		SBCL=${SBCL}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-module-dir=${DATADIR}/modules \
+		--enable-compression
+
+MAKE_ARGS=	destdir=${STAGEDIR}
 
 INFO=		${PORTNAME}
-PLIST_SUB=	ASDF_PATHNAME="${ASDF_PATHNAME:S,^${PREFIX}/,,}" \
-		ASDF_REGISTRY="${ASDF_REGISTRY:S,^${PREFIX}/,,}"
+PLIST_FILES=	bin/stumpwm
 PORTDOCS=	AUTHORS COPYING HACKING NEWS README.md
 PORTEXAMPLES=	sample-stumpwmrc.lisp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-post-patch:
-	@${CP} ${WRKSRC}/load-stumpwm.lisp.in ${WRKSRC}/load-stumpwm.lisp
-	@${REINPLACE_CMD} -e 's|@STUMPWM_ASDF_DIR@|${ASDF_PATHNAME}|' \
-		${WRKSRC}/load-stumpwm.lisp
-	${CP} ${WRKSRC}/make-image.lisp.in ${WRKSRC}/make-image.lisp
-	@${REINPLACE_CMD} -e 's|@MODULE_DIR@|${DATADIR}|' \
-		${WRKSRC}/make-image.lisp
+post-extract:
+	${FIND} ${WRKDIR} -type f -name \*.asd -a \! -name stumpwm\*.asd \
+		\! -name dynamic-mixins-swm.asd -exec ${LN} -s {} ${WRKSRC} \;
 
 do-build:
 	(cd ${WRKSRC} && \
-		CL_SOURCE_REGISTRY="${WRKSRC}" \
 		ASDF_OUTPUT_TRANSLATIONS="/:" \
-		FBSD_ASDF_COMPILE_PORT=t PORTNAME=${PORTNAME} WRKSRC=${WRKSRC}/ \
-		${SBCL} \
+		sbcl \
 		--noinform --non-interactive --no-sysinit --no-userinit \
+		--eval "(require :uiop)" \
 		--eval "(setf sb-impl::*default-external-format* :UTF-8)" \
-		--eval '#.(load "${LOCALBASE}/etc/asdf-init")' \
-		--eval "(asdf:oos 'asdf:compile-op :${PORTNAME} :force t)" \
-		--eval '(load "load-stumpwm.lisp")' \
-		--eval '(load "manual.lisp")' \
-		--eval '(stumpwm::generate-manual)' \
-		--eval '(sb-ext:quit)' && \
-		makeinfo stumpwm.texi)
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/dynamic-mixins/src \
-		${STAGEDIR}${ASDF_PATHNAME}/sbclfasl/dynamic-mixins/src \
-		${STAGEDIR}${ASDF_REGISTRY}
-	${INSTALL_SCRIPT} ${WRKDIR}/stumpwm ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/.dir-locals.el ${WRKSRC}/${PORTNAME}.asd \
-		${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
-	 ${INSTALL_DATA} ${WRKSRC}/dynamic-mixins/dynamic-mixins.asd \
-		${STAGEDIR}${ASDF_PATHNAME}/dynamic-mixins/
-	${INSTALL_DATA} ${WRKSRC}/dynamic-mixins/src/*.lisp \
-		${STAGEDIR}${ASDF_PATHNAME}/dynamic-mixins/src/
-	${INSTALL_DATA} ${WRKSRC}/*.fasl ${STAGEDIR}${ASDF_PATHNAME}/sbclfasl
-	${INSTALL_DATA} ${WRKSRC}/dynamic-mixins/src/*.fasl \
-		${STAGEDIR}${ASDF_PATHNAME}/sbclfasl/dynamic-mixins/src
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.info \
-		${STAGEDIR}${PREFIX}/${INFO_PATH}
-	@${RLN} ${STAGEDIR}${ASDF_PATHNAME}/${PORTNAME}.asd \
-		${STAGEDIR}${ASDF_REGISTRY}
+		--load ./make-image.lisp)
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -90,5 +57,4 @@ do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${STAGEDIR}/${EXAMPLESDIR}
 
-.include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
