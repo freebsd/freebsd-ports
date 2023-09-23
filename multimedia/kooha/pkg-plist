@@ -5,6 +5,7 @@ share/icons/hicolor/symbolic/apps/io.github.seadve.Kooha-symbolic.svg
 %%DATADIR%%/resources.gresource
 share/locale/ar/LC_MESSAGES/kooha.mo
 share/locale/bg/LC_MESSAGES/kooha.mo
+share/locale/bqi/LC_MESSAGES/kooha.mo
 share/locale/ca/LC_MESSAGES/kooha.mo
 share/locale/cs/LC_MESSAGES/kooha.mo
 share/locale/da/LC_MESSAGES/kooha.mo
@@ -35,6 +36,7 @@ share/locale/pl/LC_MESSAGES/kooha.mo
 share/locale/pt/LC_MESSAGES/kooha.mo
 share/locale/pt_BR/LC_MESSAGES/kooha.mo
 share/locale/ru/LC_MESSAGES/kooha.mo
+share/locale/si/LC_MESSAGES/kooha.mo
 share/locale/sk/LC_MESSAGES/kooha.mo
 share/locale/sr/LC_MESSAGES/kooha.mo
 share/locale/sr@latin/LC_MESSAGES/kooha.mo
