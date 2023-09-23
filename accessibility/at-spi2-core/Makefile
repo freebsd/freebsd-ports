@@ -15,7 +15,7 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
-USE_GNOME=	glib20 introspection:build
+USE_GNOME=	glib20 introspection:build libxml2:build
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ATKONLY X11
