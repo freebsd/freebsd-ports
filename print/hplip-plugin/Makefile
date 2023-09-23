@@ -1,5 +1,5 @@
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.23.5
+PORTVERSION=	3.23.8
 CATEGORIES=	print
 MASTER_SITES=	https://developers.hp.com/sites/default/files/
 DISTNAME=	hplip-${DISTVERSION}-plugin

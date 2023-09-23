@@ -649,6 +649,9 @@ share/ppd/HP/hp-2000c.ppd.gz
 share/ppd/HP/hp-2500c.ppd.gz
 share/ppd/HP/hp-910.ppd.gz
 share/ppd/HP/hp-915.ppd.gz
+share/ppd/HP/hp-Deskjet_2800_series.ppd.gz
+share/ppd/HP/hp-Deskjet_4200_series.ppd.gz
+share/ppd/HP/hp-Deskjet_4900_series.ppd.gz
 share/ppd/HP/hp-amp.ppd.gz
 share/ppd/HP/hp-business_inkjet_1000.ppd.gz
 share/ppd/HP/hp-business_inkjet_1100.ppd.gz
