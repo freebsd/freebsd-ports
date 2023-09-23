@@ -21,7 +21,7 @@ post-extract:
 	@${FIND} ${WRKSRC}/registry -name \*.py -exec ${REINPLACE_CMD} -i '' '/^#!/d' {} +
 
 post-patch:
-# XXX Drop after FreeBSD 12.* EOL around 2024-06-30
+# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
 	@if [ -L /usr/include/sched.h ]; then \
 		${REINPLACE_CMD} $$'/^namespace/i\\\n#undef major\\\n#undef minor\\\n\\\n' \
 			${WRKSRC}/include/vulkan/vulkan_structs.hpp; \
