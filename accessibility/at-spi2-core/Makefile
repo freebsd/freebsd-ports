@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
-USE_GNOME=	glib20 introspection:build
+USE_GNOME=	glib20 introspection:build libxml2:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Duse_systemd=false
 
