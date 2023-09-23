@@ -1,5 +1,6 @@
 PORTNAME=	php83
 DISTVERSION=	8.3.0RC2
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	https://downloads.php.net/~jakub/ \
 	https://downloads.php.net/~eric/
