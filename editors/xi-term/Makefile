@@ -10,6 +10,10 @@ WWW=		https://github.com/xi-frontend/xi-term
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Run segfaults. See also: https://github.com/xi-frontend/xi-term/issues/116
+DEPRECATED=	Frontend depends on deprecated editors/xi-core. No upstream activity.
+EXPIRATION_DATE=	2023-12-31
+
 RUN_DEPENDS=	xi-core:editors/xi-core
 
 USES=		cargo
