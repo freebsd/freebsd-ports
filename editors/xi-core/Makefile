@@ -11,6 +11,9 @@ WWW=		https://xi-editor.io
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
+DEPRECATED=	Project is currently discontinued, one depend port broken (editors/xi-term set to deprecation too). Upstream recommends editors/lapce
+EXPIRATION_DATE=	2023-12-31
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xi-editor
