@@ -10,8 +10,6 @@ WWW=		https://gitlab.gnome.org/GNOME/at-spi2-core
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
-
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson pkgconfig tar:xz
