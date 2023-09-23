@@ -4463,7 +4463,6 @@ sysutils/livecd||2020-05-05|Has expired: Broken for more than 6 months
 deskutils/osynctool||2020-05-06|Abandonware, website disappeared
 devel/libopensync||2020-05-06|Abandonware, website disappeared
 deskutils/libopensync-plugin-vformat-devel||2020-05-06|Abandonware, website disappeared
-sysutils/rundeck|sysutils/rundeck2|2020-05-07|Rename to avoid confusion with sysutils/rundeck3
 math/darknet|misc/darknet|2020-05-07|DarkNet is a machine learning project, not a math project
 www/rubygem-activeresource5|www/rubygem-activeresource|2020-05-08|Remove PKGNAMESUFFIX 3 years and 4 months after rubygem-activeresource removal
 finance/bitcoinnodestats||2020-05-12|Has expired: No longer maintained and not compatible with Django 2.2+
@@ -7858,3 +7857,4 @@ dns/tinystats||2023-09-20|Has expired: djbdns got removed, port is no longer req
 mail/cyrus-imapd23||2023-09-20|Has expired: No longer supported by upstream
 mail/cyrus-imapd24||2023-09-20|Has expired: No longer supported by upstream
 net/py-python-ceilometerclient||2023-09-22|Remove obsoleted port. This project is no longer maintained
+sysutils/rundeck3|sysutils/rundeck|2023-09-23|Rename to avoid confusion

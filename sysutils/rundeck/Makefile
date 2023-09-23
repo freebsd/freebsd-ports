@@ -1,9 +1,8 @@
 PORTNAME=	rundeck
-DISTVERSION=	3.4.10
-DISTVERSIONSUFFIX=	-20220118
+DISTVERSION=	4.16.0
+DISTVERSIONSUFFIX=	-20230825
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
-PKGNAMESUFFIX=	3
 EXTRACT_SUFX=	.war
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,13 +11,9 @@ WWW=		https://rundeck.org
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Unmaintained, upstream support ends 2023-03-23
-EXPIRATION_DATE=	2023-09-23
-
 USES=		cpe
 CPE_VENDOR=	pagerduty
-USE_JAVA=	yes
-JAVA_VERSION=	8+
+USE_JAVA=	8+s
 USE_RC_SUBR=	rundeck
 
 CONFLICTS_INSTALL=	rundeck2
