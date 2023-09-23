@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.6.4
+DISTVERSION=	0.6.5
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
@@ -23,8 +24,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/wayland-sessions/${PORTNAME}.desktop
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	EXAMPLES MANPAGES NLS X11
-OPTIONS_DEFAULT=EXAMPLES MANPAGES NLS X11
+OPTIONS_DEFINE=	EXAMPLES LIBRSVG2 MANPAGES NLS X11
+OPTIONS_DEFAULT=EXAMPLES LIBRSVG2 MANPAGES NLS X11
+OPTIONS_EXCLUDE=${LIBRSVG2_DEFAULT:Mlegacy:C/.+/LIBRSVG2/}
+
+LIBRSVG2_USE=		GNOME=librsvg2
+LIBRSVG2_MESON_ENABLED=	svg
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
