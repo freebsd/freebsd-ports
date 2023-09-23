@@ -1,17 +1,17 @@
 PORTNAME=	libkolabxml
-PORTVERSION=	1.1.6
-PORTREVISION=	16
+DISTVERSION=	1.2.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
+MASTER_SITES=	LOCAL/kde/${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kolab XML Format Schema Definitions Library
-WWW=		http://www.kolab.org/about/libkolabxml
+WWW=		https://kolab.org/
 
 # The XSD schemas in schemas/ are APACHE20-licensed, and some files
 # are in public domain. The library itself and the installed headers
 # are considered LGPL3-licensed, though.
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
 
 BUILD_DEPENDS=	xsdcxx:devel/xsd
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -26,10 +26,16 @@ CMAKE_OFF=	BUILD_TESTS \
 		JAVA_BINDINGS \
 		PHP_BINDINGS \
 		PYTHON_BINDINGS
-USES=		cmake
+USES=		cmake tar:xz
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+
+create-distfile:
+	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
+	${SH} ${FILESDIR}/create_libkolabxml_release.sh \
+		${DISTDIR}/${DIST_SUBDIR} \
+		${DISTVERSION}
 
 .include <bsd.port.mk>
