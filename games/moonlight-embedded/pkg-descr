@@ -3,3 +3,8 @@ GameStream, as used by the NVIDIA Shield.
 
 Moonlight Embedded allows you to stream your full collection of games
 from your powerful Windows desktop to your FreeBSD system.
+
+First, pair: # moonlight pair 192.168.0.1
+Then, connect: # moonlight stream -app Desktop -1080 192.168.0.1
+
+ENJOY!

@@ -1,0 +1,29 @@
+--- libgamestream/CMakeLists.txt.orig	2023-09-01 23:40:56 UTC
++++ libgamestream/CMakeLists.txt
+@@ -3,7 +3,7 @@ set(SO_VERSION 4)
+ find_package(LibUUID REQUIRED)
+ find_package(Threads REQUIRED)
+ find_package(CURL REQUIRED)
+-find_package(OpenSSL 1.0.2 REQUIRED)
++find_package(OpenSSL REQUIRED)
+ find_package(EXPAT REQUIRED)
+ 
+ pkg_check_modules(AVAHI REQUIRED avahi-client)
+@@ -15,9 +15,9 @@ aux_source_directory(../third_party/moonlight-common-c
+ aux_source_directory(../third_party/moonlight-common-c/src MOONLIGHT_COMMON_SRC_LIST)
+ aux_source_directory(../third_party/moonlight-common-c/reedsolomon MOONLIGHT_COMMON_SRC_LIST)
+ 
+-add_library(moonlight-common SHARED ${MOONLIGHT_COMMON_SRC_LIST})
++add_library(moonlight-common STATIC ${MOONLIGHT_COMMON_SRC_LIST})
+ 
+-add_library(gamestream SHARED ${GAMESTREAM_SRC_LIST})
++add_library(gamestream STATIC ${GAMESTREAM_SRC_LIST})
+ target_link_libraries(gamestream moonlight-common)
+ 
+ set_target_properties(gamestream PROPERTIES SOVERSION ${SO_VERSION} VERSION ${PROJECT_VERSION})
+@@ -28,5 +28,3 @@ target_include_directories(moonlight-common PRIVATE ..
+ target_link_libraries(gamestream ${CURL_LIBRARIES} ${OPENSSL_LIBRARIES} ${EXPAT_LIBRARIES} ${AVAHI_LIBRARIES} ${LIBUUID_LIBRARIES})
+ 
+ target_link_libraries(gamestream ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
+-
+-install(TARGETS gamestream moonlight-common DESTINATION ${CMAKE_INSTALL_LIBDIR})
