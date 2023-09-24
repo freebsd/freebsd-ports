@@ -1,6 +1,6 @@
 PORTNAME=	jellyfin
 DISTVERSION=	10.8.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/Thefrank/jellyfin-server-freebsd/releases/download/v${DISTVERSION}/
 DISTFILES=	jellyfin-combined_${DISTVERSION}_freebsd-${ARCH}.tar.gz \
