@@ -3,7 +3,7 @@ DISTVERSION=	20160907
 PORTREVISION=	7
 CATEGORIES=	x11-wm
 
-MAINTAINER=	femc7488@gmail.com
+MAINTAINER=	parakleta@darkreality.org
 COMMENT=	Feature-rich compositing window manager for X11
 WWW=		https://github.com/chjj/compton
 
