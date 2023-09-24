@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-jsonrpc
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/pycoverage@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR}
 
 USES=		python
-# test: 1 failed, 26 passed (test/test_streams.py:118: AssertionError)
+# test: 1 failed, 26 passed (test/test_streams.py:125: AssertionError)
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
