@@ -1,5 +1,5 @@
 PORTNAME=	gitlab_chronic_duration
-PORTVERSION=	0.10.6.2
+PORTVERSION=	0.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
