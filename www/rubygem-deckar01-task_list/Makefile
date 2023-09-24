@@ -1,5 +1,5 @@
 PORTNAME=	deckar01-task_list
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
