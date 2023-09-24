@@ -1,4 +1,4 @@
---- config.toml.example.orig	2023-08-21 09:20:49 UTC
+--- config.toml.example.orig	2023-09-21 08:51:45 UTC
 +++ config.toml.example
 @@ -2,10 +2,10 @@
  # Documentation lives at https://docs.gitlab.com/ee/administration/gitaly/ and
@@ -56,12 +56,8 @@
  # format = "json"
  # # Optional: Set log level to only log entries with that severity or above
  # # One of, in order: debug, info, warn, errror, fatal, panic
-@@ -72,14 +72,14 @@ dir = "/home/git/gitlab/log"
- 
- [gitlab-shell]
- # The directory where gitlab-shell is installed
--dir = "/home/git/gitlab-shell"
-+dir = "%%PREFIX%%/share/gitlab-shell"
+@@ -71,11 +71,11 @@ dir = "/home/git/gitlab/log"
+ # grpc_latency_buckets = [0.001, 0.005, 0.025, 0.1, 0.5, 1.0, 10.0, 30.0, 60.0, 300.0, 1500.0]
  
  [hooks]
 -custom_hooks_dir = "/home/git/custom_hooks"

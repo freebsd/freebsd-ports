@@ -1,4 +1,4 @@
---- config/database.yml.postgresql.orig	2023-05-18 16:48:55 UTC
+--- config/database.yml.postgresql.orig	2023-09-21 08:56:19 UTC
 +++ config/database.yml.postgresql
 @@ -26,13 +26,6 @@ production:
      username: git
@@ -42,8 +42,8 @@
  
  # Warning: The database defined as "test" will be erased and
  # re-generated from your development database when you run "rake".
-@@ -117,13 +96,6 @@ test: &test
-     prepared_statements: false
+@@ -119,19 +98,3 @@ test: &test
+     reaping_frequency: nil
      variables:
        statement_timeout: 15s
 -  geo:
@@ -53,6 +53,12 @@
 -    username: postgres
 -    password:
 -    host: localhost
-   embedding:
-     adapter: postgresql
-     encoding: unicode
+-    reaping_frequency: nil
+-  embedding:
+-    adapter: postgresql
+-    encoding: unicode
+-    database: gitlabhq_embedding_test
+-    username: postgres
+-    password:
+-    host: localhost
+-    reaping_frequency: nil

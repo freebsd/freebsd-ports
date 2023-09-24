@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.3.5
+DISTVERSION=	16.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -19,8 +19,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git
 BUILD_DEPENDS=	bash>0:shells/bash \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
 		${MY_DEPENDS}
-RUN_DEPENDS=	${MY_DEPENDS} \
-		gitlab-shell>=14.17.0:devel/gitlab-shell
+RUN_DEPENDS=	${MY_DEPENDS}
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libhttp_parser.so:www/http-parser
 
@@ -34,13 +33,6 @@ MAKE_ENV+=	${GO_ENV}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-
-USE_GITHUB=	nodefault
-# Check used version here: https://gitlab.com/gitlab-org/gitaly/-/blob/v16.3.1/Makefile#L181
-# We use here a patched version that is including some patches already merged into 1.7 branch which fixes problems with FreeBSD 14
-# https://github.com/libgit2/libgit2/commit/251408cfd4ff8112efaa5c82ec81c9574c4bf022
-# https://github.com/libgit2/libgit2/commit/213d35ea6d69598693b7f4b5b737aa98c91ba98e
-GH_TUPLE=	mfechner:libgit2:3bd8f66803c056325d5835d1fbc0c2db2ef89d06:build_deps_libgit2_source
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
@@ -60,11 +52,6 @@ go-post-fetch:
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
 		${SETENV} ${GO_ENV} GOPROXY=${GO_GOPROXY} ${GO_CMD} mod download -x all)
 # ---------------------------
-
-post-extract:
-	${MKDIR} ${WRKSRC}/_build/deps/libgit2
-	@${RM} -r ${WORKSRC}/_build/deps/libgit2/source
-	@${RLN} ${WRKSRC_build_deps_libgit2_source} ${WRKSRC}/_build/deps/libgit2/source
 
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/config.toml.example
