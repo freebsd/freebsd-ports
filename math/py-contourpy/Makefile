@@ -1,6 +1,5 @@
 PORTNAME=	contourpy
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,13 @@ WWW=		https://github.com/contourpy/contourpy
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pybind11:devel/py-pybind11@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pybind11:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}meson-python>=0:devel/meson-python@${PY_FLAVOR} \
+		meson:devel/meson
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		pkgconfig python
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 .include <bsd.port.mk>
