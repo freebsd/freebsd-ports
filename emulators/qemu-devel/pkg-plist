@@ -40,6 +40,11 @@ bin/qemu-system-i386
 %%NO_X86_TARGETS%%bin/qemu-system-xtensaeb
 %%BSDUSER%%bin/qemu-x86_64
 include/qemu-plugin.h
+include/fdt.h
+include/libfdt.h
+include/libfdt_env.h
+lib/libfdt.a
+libdata/pkgconfig/libfdt.pc
 man/man1/qemu.1.gz
 man/man1/qemu-img.1.gz
 man/man7/qemu-block-drivers.7.gz

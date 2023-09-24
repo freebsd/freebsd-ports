@@ -14,38 +14,6 @@ FreeBSD host notes
   to wait a bit for dhclient to do its thing; traffic to address 10.0.2.2 is
   routed to 127.1 on the host.
 
-- Expect timer problems when guest kernel HZ is > hosts, for example time
-  sleep 1 takes 49 seconds and booting sleeps for minutes at the acd0 probe
-  with a FreeSBIE 1.0 guest, thats because its kernel is built with HZ=5000,
-  and FreeBSD's default is 100...  (no longer a problem with FreeSBIE 1.1.)
-  The linux 2.6 kernel uses 1000 by default btw.  (changed to 250 later, and
-  recent linux kernels now no longer have a fixed HZ, aka `tickless
-  kernel'...)  Enabling /dev/rtc doesn't seem to help either (not included
-  since it needs a patch to emulators/rtc.)
-
-- Update: the above problem has gotten worse with FreeBSD guests
-  somewhere before 8.0, mainly since the kernel now usually wants
-  double or even quadruple number of timer irqs compared to HZ if
-  it detects an apic (and at least early versions of FreeBSD 8 had
-  a bug that essentially halved qemu's clock rate too); the only
-  reason you usually don't see symptoms of this with FreeBSD 8
-  guests is they automatically reduce their HZ to 100 when running
-  in a VM while the default for the host kernel is still HZ=1000.
-  Workaround: you can disable the apic clock in the guest by setting
-
-	hint.apic.0.clock="0"
-
-  in loader.conf(5) (or manually at the loader prompt), if that
-  doesn't work the only things you can do is either reduce the
-  guest's HZ to, say, 100 by setting e.g.
-
-	kern.hz="100"
-
-  from the loader as above (which usually is a good idea in a VM
-  anyway and FreeBSD 8 now does by itself as mentioned), or otherwise
-  increase the host's HZ to 2000 or even 4000 from the loader in
-  the same way.
-
 - The -smb option (smb-export local dir to guest using the default
   slirp networking) needs the samba port/package installed
   in addition to qemu. (SAMBA knob.)

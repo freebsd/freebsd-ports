@@ -1,6 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	8.0.0.20230505
-PORTREVISION=	1
+DISTVERSION=	8.2.0.20230531
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -17,8 +16,6 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 		bash:shells/bash
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
 		libnettle.so:security/nettle \
 		libpcre2-8.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
@@ -32,10 +29,11 @@ USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	a9fe9e191b4305b88c356a1ed9ac3baf89eb18aa
-GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:keycodemapdb/ui/keycodemapdb \
-		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/dtc \
-		qemu-project:meson:3a9b285a55b91b53b2acda987192274352ecb5be:meson/meson \
+GL_TAGNAME=	9824490dede64c1398b6a52095e5d22040529250
+GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
+		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
+		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
+		qemu-project:meson:cb0b6352b5b3fe548f2148999b4072eac76ff465:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
 		qemu-project:berkeley-testfloat-3:40619cbb3bf32872df8c53cc457039229428a263:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
 
@@ -64,7 +62,7 @@ VDE_DESC=		vde dependency (for vde networking)
 X86_TARGETS_DESC=	Build only x86 system targets
 CAPSTONE_CONFIGURE_ON=	--enable-capstone --extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=	--disable-capstone
-CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone4
+CAPSTONE_LIB_DEPENDS=	libcapstone.so:devel/capstone
 CURL_CONFIGURE_OFF=	--disable-curl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 DOCS_CONFIGURE_ENABLE=	docs
