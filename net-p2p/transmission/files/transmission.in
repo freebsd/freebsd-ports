@@ -53,7 +53,7 @@ transmission_flags=" \
 	${transmission_conf_dir:+-g ${transmission_conf_dir}} \
 	${transmission_download_dir:+-w ${transmission_download_dir}} \
 	${transmission_log:+--logfile ${transmission_log}} \
-	${transmission_log_level:+--loglevel=${transmission_log_level}} \
+	${transmission_log_level:+--loglevel ${transmission_log_level}} \
 	${pidfile:+-x $pidfile} \
 	${transmission_flags}"
 
