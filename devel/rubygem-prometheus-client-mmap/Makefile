@@ -1,5 +1,5 @@
 PORTNAME=	prometheus-client-mmap
-DISTVERSION=	0.27.0
+DISTVERSION=	0.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,14 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-rb_sys>=0.9<1:lang/rubygem-rb_sys
 
 USES=		gem
+# needs to be migrated to rust
+#USES=		cargo gem
+#GEMFILES=	${GEM_NAME}${EXTRACT_SUFX}
+#CARGO_CARGOTOML=	${WRKSRC}/ext/fast_mmaped_file_rs/Cargo.toml
+#CARGO_CARGOLOCK=	${WRKSRC}/ext/fast_mmaped_file_rs/Cargo.lock
+
+# Generate with: make cargo-crates
+# 85dd
 
 .include <bsd.port.options.mk>
 
