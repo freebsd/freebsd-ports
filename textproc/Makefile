@@ -1862,6 +1862,7 @@
     SUBDIR += rubygem-rubypants
     SUBDIR += rubygem-rugments
     SUBDIR += rubygem-sanitize
+    SUBDIR += rubygem-sanitize60
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-listen
     SUBDIR += rubygem-sass-rails-rails4

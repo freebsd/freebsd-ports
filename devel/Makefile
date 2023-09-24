@@ -6744,6 +6744,7 @@
     SUBDIR += rubygem-docile
     SUBDIR += rubygem-docopt
     SUBDIR += rubygem-drb
+    SUBDIR += rubygem-dry-cli
     SUBDIR += rubygem-dry-configurable
     SUBDIR += rubygem-dry-container
     SUBDIR += rubygem-dry-core
@@ -6811,6 +6812,7 @@
     SUBDIR += rubygem-flipper-active_support_cache_store-rails70
     SUBDIR += rubygem-flipper-ui
     SUBDIR += rubygem-flipper025
+    SUBDIR += rubygem-flipper026
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
@@ -7493,6 +7495,8 @@
     SUBDIR += rubygem-view_component-rails61
     SUBDIR += rubygem-view_component-rails70
     SUBDIR += rubygem-virtus
+    SUBDIR += rubygem-vite_rails-rails70
+    SUBDIR += rubygem-vite_ruby
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-warning
