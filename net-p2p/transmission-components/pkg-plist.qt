@@ -1,7 +1,7 @@
 bin/transmission-qt
 man/man1/transmission-qt.1.gz
 share/applications/transmission-qt.desktop
-share/icons/hicolor/scalable/apps/transmission.svg
+share/icons/hicolor/scalable/apps/transmission-qt.svg
 %%NLS%%%%DATADIR%%/translations/transmission_af.qm
 %%NLS%%%%DATADIR%%/translations/transmission_ca.qm
 %%NLS%%%%DATADIR%%/translations/transmission_da.qm

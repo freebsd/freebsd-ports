@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230930:
+  AFFECTS: users of Transmission (net-p2p/transmission@*)
+  AUTHOR:  mondo.debater_0q@icloud.com
+
+  Fixes Bug 274065 by reorganizing the port as a metaport
+  (net-p2p/transmission) and components port (net-p2p/transmission-components).
+  Each component may be installed through the flavors of
+  transmission-componenents (@cli, @daemon, @docs, @gtk, @qt, @utils).
+  Alternatively, one or more component may be installed by running make config
+  on the metaport net-p2p/transmission.
+
   AFFECTS: users of devel/php-composer2
   AUTHOR: madpilot@FreeBSD.org
 

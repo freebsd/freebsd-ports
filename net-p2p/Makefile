@@ -99,6 +99,7 @@
     SUBDIR += torrentcheck
     SUBDIR += torrentsniff
     SUBDIR += transmission
+    SUBDIR += transmission-components
     SUBDIR += transmission-remote-gui
     SUBDIR += twitch-tui
     SUBDIR += udpt
