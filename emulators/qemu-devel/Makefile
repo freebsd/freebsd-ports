@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	8.2.0.20230531
+DISTVERSION=	8.2.0.20230630
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -16,26 +16,26 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR} \
 		bash:shells/bash
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
-		libnettle.so:security/nettle \
-		libpcre2-8.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
-		pkgconfig python:build tar:xz xorg
+		pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 USE_GNOME=	cairo glib20 libxml2
 USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
+SHEBANG_FILES=	scripts/xml-preprocess.py
+
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	9824490dede64c1398b6a52095e5d22040529250
+GL_TAGNAME=	d39a84b7348faa5cd6b09921b57969482ca4c543
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:cb0b6352b5b3fe548f2148999b4072eac76ff465:meson/meson \
-		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/tests/fp/berkeley-softfloat-3 \
-		qemu-project:berkeley-testfloat-3:40619cbb3bf32872df8c53cc457039229428a263:berkeleytestfloat3/tests/fp/berkeley-testfloat-3
+		qemu-project:meson:9067139acb5f133e08ed15eba8a6d41246200b5b:meson/meson \
+		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
+		qemu-project:berkeley-testfloat-3:40619cbb3bf32872df8c53cc457039229428a263:berkeleytestfloat3/subprojects/berkeley-testfloat-3
 
 HAS_CONFIGURE=	yes
 
@@ -141,6 +141,12 @@ CONFIGURE_ARGS+=	--sparc_cpu=v9
 .endif
 
 PLIST_SUB+=	LINUXBOOT_DMA=""
+
+post-extract:
+	${CP} ${WRKSRC}/subprojects/packagefiles/berkeley-softfloat-3/* \
+		${WRKSRC}/subprojects/berkeley-softfloat-3/
+	${CP} ${WRKSRC}/subprojects/packagefiles/berkeley-testfloat-3/* \
+		${WRKSRC}/subprojects/berkeley-testfloat-3/
 
 post-patch-CDROM_DMA-off:
 	@${REINPLACE_CMD} -e '/USE_DMA_CDROM/d' ${WRKSRC}/include/hw/ide/internal.h
