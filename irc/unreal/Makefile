@@ -28,6 +28,8 @@ LOGDIR=		/var/log/ircd
 CACHEDIR=	/var/cache/ircd
 _TMPDIR=	/tmp
 
+EXTRACT_AFTER_ARGS=	--exclude extras/*.tar.gz
+
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	unrealircd
 
