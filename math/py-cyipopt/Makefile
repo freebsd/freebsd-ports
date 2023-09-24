@@ -1,7 +1,6 @@
 PORTNAME=	cyipopt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,15 +10,12 @@ WWW=		https://github.com/matthias-k/cyipopt
 
 LICENSE=	EPL
 
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libblas.so:math/blas \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		fortran python pkgconfig # fortran because ipopt's pkg-config returns gcc libs
 USE_PYTHON=	distutils cython autoplist pytest
