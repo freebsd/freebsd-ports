@@ -1,3 +1,3 @@
-TIMESTAMP = 1655733427
-SHA256 (rubygem/rack-cors-1.1.1.gem) = 4702644ac6d63ebbddff372a3cd4cd573513287e3524b5a5415f678970057a4b
-SIZE (rubygem/rack-cors-1.1.1.gem) = 53760
+TIMESTAMP = 1695537270
+SHA256 (rubygem/rack-cors-2.0.1.gem) = bcc66bdf5c6a4af05d571c4d01d35ac4a873552ba4f86c05fbe39365c39b9b0a
+SIZE (rubygem/rack-cors-2.0.1.gem) = 55296
