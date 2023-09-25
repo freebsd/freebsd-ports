@@ -2,6 +2,9 @@ PORTNAME=	libva
 DISTVERSION=	2.20.0
 CATEGORIES=	multimedia
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	6b0efda45140.patch:-p1 # https://github.com/intel/libva/pull/758
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	VAAPI wrapper and dummy driver
 WWW=		https://github.com/intel/libva
