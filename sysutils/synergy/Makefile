@@ -1,6 +1,7 @@
 PORTNAME=	synergy
 DISTVERSION=	1.14.6.19
 DISTVERSIONSUFFIX=	-stable
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	sysutils
 
@@ -50,6 +51,10 @@ LEGACY_CONFIGURE_ENV_OFF=	SYNERGY_NO_LEGACY=true
 LEGACY_USE=			QT=gui
 
 post-patch:
+	# Hardcoded path needs to be replaced with
+	#   --with-xkb-base defined in x11/keyboard-config
+	@${REINPLACE_CMD} -e 's|/usr/share/X11/xkb|${PREFIX}/share/X11/xkb"|' \
+		${WRKSRC}/src/lib/synergy/unix/AppUtilUnix.cpp
 	@${REINPLACE_CMD} -e 's|return "/etc"|return "${PREFIX}/etc"|' \
 		${WRKSRC}/src/lib/arch/unix/ArchFileUnix.cpp
 	@${REINPLACE_CMD} -e 's|/etc/synergy.conf|${PREFIX}/etc/synergy.conf|' \
