@@ -1,6 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.0.18
-PORTREVISION=	1
+DISTVERSION=	1.0.20
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://files.jkvinge.net/packages/strawberry/
@@ -14,23 +13,25 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
-LIB_DEPENDS=	libgnutls.so:security/gnutls \
-		libprotobuf.so:devel/protobuf \
+LIB_DEPENDS=	libprotobuf.so:devel/protobuf \
 		libtag.so:audio/taglib
 
-FLAVORS=		qt5 qt6
+FLAVORS=		qt6 qt5
 FLAVOR?=		${FLAVORS:[1]}
 qt5_CONFLICTS_INSTALL=	strawberry strawberry-qt6
 qt6_CONFLICTS_INSTALL=	strawberry strawberry-qt5
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime \
-		gnome pkgconfig qt:${FLAVOR:S/qt//} sqlite tar:xz xorg
+		gl gnome pkgconfig qt:${FLAVOR:S/qt//} sqlite tar:xz xorg
 
 USE_GNOME=	glib20
-_USE_QT5=	concurrent core dbus gui network sql sql-sqlite3:run widgets \
+_USE_GL_qt5=	#
+_USE_GL_qt6=	opengl
+USE_GL=		${_USE_GL_${FLAVOR}}
+_USE_QT_qt5=	concurrent core dbus gui network sql sql-sqlite3:run widgets \
 		x11extras buildtools:build linguisttools:build qmake:build
-_USE_QT6=	base sqldriver-sqlite:run tools:build
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+_USE_QT_qt6=	base sqldriver-sqlite:run tools:build
+USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	ice sm x11 xcb xext
 
 CMAKE_ON=	BUILD_WITH_${FLAVOR:tu}
@@ -43,8 +44,8 @@ OPTIONS_MULTI_BACKEND=	GSTREAMER VLC
 OPTIONS_MULTI_SOUND=	ALSA PULSEAUDIO
 OPTIONS_SINGLE=		UNICODE
 OPTIONS_SINGLE_UNICODE=	ICONV ICU
-OPTIONS_DEFINE=		CDIO IPOD MOODBAR MTP MUSICBRAINZ NLS TEST
-OPTIONS_DEFAULT=	ALSA GSTREAMER ICU MOODBAR MUSICBRAINZ
+OPTIONS_DEFINE=		CDIO EBUR128 IPOD MOODBAR MTP MUSICBRAINZ NLS TEST
+OPTIONS_DEFAULT=	ALSA EBUR128 GSTREAMER ICU MOODBAR MUSICBRAINZ
 OPTIONS_SUB=		yes
 
 BACKEND_DESC=		Playback engine
@@ -59,6 +60,11 @@ ALSA_CMAKE_BOOL=	ENABLE_ALSA
 CDIO_LIB_DEPENDS=	libcdio.so:sysutils/libcdio
 CDIO_CMAKE_BOOL=	ENABLE_AUDIOCD
 CDIO_IMPLIES=		GSTREAMER
+
+EBUR128_DESC=		EBU R 128 loudness normalization
+EBUR128_USES=		ebur128
+EBUR128_CMAKE_BOOL=	ENABLE_EBUR128
+EBUR128_IMPLIES=	GSTREAMER
 
 GSTREAMER_USES=		gstreamer
 GSTREAMER_CMAKE_BOOL=	ENABLE_GSTREAMER

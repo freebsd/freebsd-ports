@@ -2,15 +2,15 @@ Find OPTIONAL_COMPONENTS seperately. When the REQUIRED keyword is used,
 Qt5Config.cmake handles all components as required causing failure if
 optional components are missing.
 
---- CMakeLists.txt.orig	2022-09-18 23:50:52 UTC
+--- CMakeLists.txt.orig	2023-09-19 20:48:15 UTC
 +++ CMakeLists.txt
-@@ -207,7 +207,8 @@ endif()
-   list(APPEND QT_OPTIONAL_COMPONENTS X11Extras)
+@@ -195,7 +195,8 @@ endif()
+   list(APPEND QT_COMPONENTS X11Extras)
  endif()
  
--find_package(Qt${QT_VERSION_MAJOR} ${QT_MIN_VERSION} REQUIRED COMPONENTS ${QT_COMPONENTS} OPTIONAL_COMPONENTS ${QT_OPTIONAL_COMPONENTS})
+-find_package(Qt${QT_VERSION_MAJOR} ${QT_MIN_VERSION} COMPONENTS ${QT_COMPONENTS} REQUIRED OPTIONAL_COMPONENTS ${QT_OPTIONAL_COMPONENTS})
 +find_package(Qt${QT_VERSION_MAJOR} ${QT_MIN_VERSION} REQUIRED COMPONENTS ${QT_COMPONENTS})
 +find_package(Qt${QT_VERSION_MAJOR} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS ${QT_OPTIONAL_COMPONENTS})
  
- set(QtCore_LIBRARIES Qt${QT_VERSION_MAJOR}::Core)
- set(QtConcurrent_LIBRARIES Qt${QT_VERSION_MAJOR}::Concurrent)
+ if(Qt${QT_VERSION_MAJOR}DBus_FOUND)
+   get_target_property(QT_DBUSXML2CPP_EXECUTABLE Qt${QT_VERSION_MAJOR}::qdbusxml2cpp LOCATION)
