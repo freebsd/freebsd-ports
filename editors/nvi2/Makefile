@@ -1,7 +1,6 @@
 PORTNAME=	nvi2
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	leres@FreeBSD.org
@@ -34,6 +33,11 @@ PLIST_FILES=	bin/nex \
 		man/man1/nex.1.gz \
 		man/man1/nvi.1.gz \
 		man/man1/nview.1.gz
+
+post-patch:
+	${REINPLACE_CMD} -e \
+	    '/-Wall/s/^/add_compile_options(-fcolor-diagnostics)\n/' \
+	    ${WRKSRC}/CMakeLists.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/nvi ${STAGEDIR}${PREFIX}/bin
