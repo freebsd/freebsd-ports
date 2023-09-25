@@ -22,7 +22,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
-%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.19.8.jar
+%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.19.9.jar
 %%DATADIR%%/core/org.freeplane.core/lib/twemoji-12.1.4.jar
 %%DATADIR%%/doc/Freeplane_LaTeX.mm
 %%DATADIR%%/doc/Images/Preferences_Joining nodes.png
@@ -87,7 +87,6 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/api/ConditionalStyleNotFoundException.html
 %%DATADIR%%/doc/api/org/freeplane/api/ConditionalStyleRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/ConditionalStyles.html
-%%DATADIR%%/doc/api/org/freeplane/api/ConditionalStylesRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Connector.html
 %%DATADIR%%/doc/api/org/freeplane/api/ConnectorRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Controller.html
@@ -169,7 +168,6 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStyle.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStyleRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStyles.html
-%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStylesRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Connector.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConnectorRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Controller.html
