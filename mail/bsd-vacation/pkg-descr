@@ -1,0 +1,4 @@
+This is a port of the vacation(1) command based on the BSD4.3 version. It is
+based on the NetBSD version, which also incorporates changs from OpenBSD. It
+supports RFC 2076 "Common Internet Message Headers" and
+RFC 3834 "Recommendations for Automatic Responses to Electronic Mail".
