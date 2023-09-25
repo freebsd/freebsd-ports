@@ -1,3 +1,44 @@
+  <vuln vid="402fccd0-5b6d-11ee-9898-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.424</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.414.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2023-09-20/">
+	  <h1>Description</h1>
+	  <h5>(Medium) SECURITY-3261 / CVE-2023-43494</h5>
+	  <p>Builds can be filtered by values of sensitive build variables</p>
+	  <h5>(High) SECURITY-3245 / CVE-2023-43495</h5>
+	  <p>Stored XSS vulnerability</p>
+	  <h5>(High) SECURITY-3072 / CVE-2023-43496 </h5>
+	  <p>Temporary plugin file created with insecure permissions</p>
+	  <h5>(Low) SECURITY-3073 / CVE-2023-43497 (Stapler), CVE-2023-43498 (MultipartFormDataParser) </h5>
+	  <p>Temporary uploaded file created with insecure permissions</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43494</cvename>
+      <cvename>CVE-2023-43495</cvename>
+      <cvename>CVE-2023-43496</cvename>
+      <cvename>CVE-2023-43497</cvename>
+      <url>https://www.jenkins.io/security/advisory/2023-09-20/</url>
+    </references>
+    <dates>
+      <discovery>2023-09-20</discovery>
+      <entry>2023-09-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="732282a5-5a10-11ee-bca0-001999f8d30b">
     <topic>Mailpit affected by vulnerability in included go markdown module</topic>
     <affects>
