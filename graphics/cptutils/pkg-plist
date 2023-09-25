@@ -1,4 +1,3 @@
-bin/avlcpt
 bin/cptcat
 bin/cptclip
 bin/cptcont
@@ -17,6 +16,7 @@ bin/svgcss3
 bin/svggimp
 bin/svggpt
 bin/svgmap
+bin/svgpg
 bin/svgpng
 bin/svgpov
 bin/svgpsp
@@ -25,7 +25,6 @@ bin/svgsao
 bin/svgsvg
 bin/svgx
 bin/xycpt
-man/man1/avlcpt.1.gz
 man/man1/cptcat.1.gz
 man/man1/cptclip.1.gz
 man/man1/cptcont.1.gz
