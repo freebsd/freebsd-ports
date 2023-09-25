@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230924:
+  AFFECTS: users of XFCE desktop (x11-wm/xfce4)
+  AUTHOR: madpilot@FreeBSD.org
+
+  XFCE 4.18 is incompatible with the latest version of the adwaita
+  icon theme (version 42.0 and newer), which was used as the default one.
+  Due to this the default icon theme has been changed to
+  x11-themes/xfce-icons-elementary.
+
+  Users that have XFCE already installed and are using the adwaita
+  icon theme will notice missing icons. To fix this you can install
+  any other icon theme (like x11-themes/xfce-icons-elementary) and
+  configure XFCE to use that via the "appearance" settings application,
+  under the "icons" tab.
+
 20230919:
   AFFECTS: users of net-p2p/transmission
   AUTHOR:  mondo.debater_0q@icloud.com
