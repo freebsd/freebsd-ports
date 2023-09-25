@@ -63,11 +63,11 @@ lib/cmake/malloy/malloy-config.cmake
 lib/cmake/malloy/malloy-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/malloy/malloy-targets.cmake
 %%CLIENT%%lib/libmalloy-client.so
-%%CLIENT%%lib/libmalloy-client.so.0.6.2
+%%CLIENT%%lib/libmalloy-client.so.%%SOVERSION%%
 lib/libmalloy-core.so
-lib/libmalloy-core.so.0.6.2
+lib/libmalloy-core.so.%%SOVERSION%%
 %%SERVER%%lib/libmalloy-server.so
-%%SERVER%%lib/libmalloy-server.so.0.6.2
+%%SERVER%%lib/libmalloy-server.so.%%SOVERSION%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client/CMakeLists.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client/example.cmake
