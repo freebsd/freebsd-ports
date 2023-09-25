@@ -1,0 +1,11 @@
+--- libgamin/gamin_sym.version.orig	2007-07-04 13:36:48 UTC
++++ libgamin/gamin_sym.version
+@@ -2,8 +2,6 @@
+    global:
+        FAMCancelMonitor;
+        FAMClose;
+-       FAMDebugLevel;
+-       FAMDebug;
+        FamErrlist;
+        FAMErrno;
+        FAMMonitorCollection;
