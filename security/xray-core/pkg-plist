@@ -1,5 +1,4 @@
 bin/xray
-etc/rc.d/xray
 %%ETCDIR%%/00_log.json
 %%ETCDIR%%/01_api.json
 %%ETCDIR%%/02_dns.json

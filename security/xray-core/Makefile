@@ -1,10 +1,9 @@
 PORTNAME=	xray-core
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.5
-PORTREVISION=	1
+DISTVERSION=	1.8.4
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/v2ray/geoip/releases/download/202308310037/:geoip \
-		https://github.com/v2ray/domain-list-community/releases/download/20230825070717/:geosite
+MASTER_SITES=	https://github.com/v2fly/geoip/releases/download/202309080643/:geoip \
+		https://github.com/v2fly/domain-list-community/releases/download/20230911142809/:geosite
 DISTFILES=	geoip.dat:geoip \
 		dlc.dat:geosite
 EXTRACT_ONLY=	v${DISTVERSION}.zip \
@@ -36,15 +35,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	xtls
 GH_PROJECT=	Xray-core
 
-post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/geoip.dat ${WRKSRC}/geoip.dat
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/dlc.dat ${WRKSRC}/geosite.dat
-
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/geoip.dat ${STAGEDIR}${DATADIR}/geoip.dat
-	${INSTALL_DATA} ${WRKSRC}/geosite.dat ${STAGEDIR}${DATADIR}/geosite.dat
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/geoip.dat ${STAGEDIR}${DATADIR}/geoip.dat
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dlc.dat ${STAGEDIR}${DATADIR}/geosite.dat
 	${INSTALL_DATA} ${FILESDIR}/*.json ${STAGEDIR}${ETCDIR}/
 
 .include <bsd.port.mk>
