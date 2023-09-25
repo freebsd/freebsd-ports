@@ -1,7 +1,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.16.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -22,13 +22,13 @@ NOT_FOR_ARCHS_REASON=	only little-endian is supported, see \
 LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libsnappy.so:archivers/snappy \
 		libzstd.so:archivers/zstd \
-		libavcodec.so:multimedia/ffmpeg
+		libavcodec.so:multimedia/ffmpeg \
+		libminiupnpc.so:net/miniupnpc
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
 GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
-		hrydgard:miniupnp:miniupnpd_2_1-502-g3a87be3:miniupnp/ext/miniupnp \
 		google:cpu_features:v0.8.0-27-gfd4ffc1:cpu_features/ext/cpu_features \
 		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
 		KhronosGroup:SPIRV-Cross:sdk-1.3.239.0:SPIRV/ext/SPIRV-Cross \
@@ -43,7 +43,7 @@ USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig shared-mime-info
 EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		glew opengl
-CMAKE_ON=	${FFMPEG LIBZIP SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_VULKAN_DISPLAY_KHR
+CMAKE_ON=	${FFMPEG LIBZIP MINIUPNPC SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_VULKAN_DISPLAY_KHR
 CMAKE_OFF=	USE_DISCORD
 LDFLAGS+=	-Wl,--as-needed # ICE/SM/X11/Xext, Qt5Network
 SUB_FILES=	pkg-message
