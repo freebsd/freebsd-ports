@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.8.4
-PORTREVISION=	4
+DISTVERSION=	4.9.3
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -54,7 +53,6 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}
 USES=		cmake desktop-file-utils gl gnome jpeg localbase \
 		minizip openal pkgconfig python:build ssl xorg
 
-USE_CXXSTD=	c++17
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
@@ -106,14 +104,10 @@ TELEGRAM_API_ID=	601761
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 1400000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079
 USES+=	llvm:build
-CC=	${_LLVM_MK_PREFIX}/bin/clang
-CPP=	${_LLVM_MK_PREFIX}/bin/clang-cpp
-CXX=	${_LLVM_MK_PREFIX}/bin/clang++
-#LD?=	${_LLVM_MK_PREFIX}/bin/ld
 .else
-USES+=	compiler:c++17-lang
+USES+=	compiler:c++20-lang
 .endif
 
 post-patch:
