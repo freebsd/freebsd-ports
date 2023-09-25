@@ -1,5 +1,5 @@
 PORTNAME=	libdecor
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,10 +20,14 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 MESON_ARGS=	-Ddemo=false
 
-OPTIONS_DEFINE=	DBUS
-OPTIONS_DEFAULT=DBUS
+OPTIONS_DEFINE=	DBUS GTK3
+OPTIONS_DEFAULT=DBUS GTK3
+OPTIONS_SUB=	yes
 
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_MESON_ENABLED=	dbus
+
+GTK3_USE=		GNOME=gtk30
+GTK3_MESON_ENABLED=	gtk
 
 .include <bsd.port.mk>
