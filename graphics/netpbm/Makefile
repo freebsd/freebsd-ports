@@ -1,11 +1,11 @@
 PORTNAME=	netpbm
-DISTVERSION=	11.03.05
+DISTVERSION=	11.03.06
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/leres/netpbm
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
-WWW=		http://netpbm.sourceforge.net/
+WWW=		https://netpbm.sourceforge.net/
 
 LICENSE=	GPLv2 IJG LGPL21 MIT PD
 LICENSE_COMB=	multi
@@ -22,7 +22,7 @@ USES=		cpe gmake jpeg perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	netpbm_project
 
-SVN_REV=	r4636
+SVN_REV=	r4687
 
 SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm \
 		editor/pnmflip editor/pnmquant editor/ppmfade \
@@ -72,7 +72,7 @@ do-fetch:
 	${RM} -rf ${WRKDIR}
 	${MKDIR} ${WRKDIR}
 	svn export -r${SVN_REV} \
-	    svn://svn.code.sf.net/p/${PORTNAME}/code/advanced ${WRKSRC}
+	    https://svn.code.sf.net/p/${PORTNAME}/code/advanced ${WRKSRC}
 	${TAR} -jcf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C${WRKDIR} \
 	    ${DISTNAME}
 	${RM} -rf ${WRKDIR}
