@@ -1,3 +1,4 @@
+include/libplacebo/cache.h
 include/libplacebo/colorspace.h
 include/libplacebo/common.h
 include/libplacebo/config.h
@@ -10,6 +11,7 @@ include/libplacebo/gamut_mapping.h
 include/libplacebo/gpu.h
 include/libplacebo/log.h
 include/libplacebo/opengl.h
+include/libplacebo/options.h
 include/libplacebo/renderer.h
 include/libplacebo/shaders.h
 include/libplacebo/shaders/colorspace.h
@@ -31,5 +33,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.292
+lib/libplacebo.so.338
 libdata/pkgconfig/libplacebo.pc

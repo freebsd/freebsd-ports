@@ -1,6 +1,6 @@
 PORTNAME=	libplacebo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.292.1
+DISTVERSION=	6.338.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,14 +11,16 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 localbase:ldflags meson pkgconfig python:build
+USE_GITHUB=	nodefault
 USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
+GH_TUPLE=	fastfloat:fast_float:v5.2.0:fast_float/3rdparty/fast_float
 MESON_ARGS=	-Dd3d11=disabled -Dlibdovi=disabled -Ddemos=false
 
-OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN
-OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC
+OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN XXHASH
+OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC XXHASH
 OPTIONS_SINGLE=	VULKAN
 OPTIONS_SINGLE_VULKAN=	GLSLANG SHADERC
 OPTIONS_EXCLUDE+=	${ARCH:Naarch64:Namd64:Narmv[67]:Ni386:Npowerpc64:Npowerpc64le:Nx86_64:C/.+/LIBUNWIND/}
@@ -52,6 +54,11 @@ VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-heade
 			${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR}
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=	vulkan
+
+XXHASH_DESC=		Faster replacement for internal siphash
+XXHASH_BUILD_DEPENDS=	xxhash>0:devel/xxhash
+XXHASH_RUN_DEPENDS=	xxhash>0:devel/xxhash # pkg-config
+XXHASH_MESON_ENABLED=	xxhash
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
