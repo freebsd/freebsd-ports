@@ -1,5 +1,6 @@
 PORTNAME=	libXcursor
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -14,7 +15,8 @@ USE_XORG=	xrender x11 xfixes xorgproto
 CPE_VENDOR=	x
 CPE_PRODUCT=	libxcursor
 
-CONFIGURE_ARGS=	--with-icondir=${PREFIX}/share/icons
+CONFIGURE_ARGS=	--with-icondir=${PREFIX}/share/icons \
+		--with-cursorpath="~/.local/share/icons:~/.icons:${PREFIX}/share/icons:${PREFIX}/share/pixmaps"
 INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
