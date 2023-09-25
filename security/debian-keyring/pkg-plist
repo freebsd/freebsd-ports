@@ -1,0 +1,4 @@
+share/keyrings/debian-keyring.gpg
+share/keyrings/debian-maintainers.gpg
+share/keyrings/debian-nonupload.gpg
+share/keyrings/debian-role-keys.gpg

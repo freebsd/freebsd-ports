@@ -1,0 +1,6 @@
+GnuPG keys of Debian Developers and Maintainers
+
+The Debian project wants developers to digitally sign the announcements
+of their packages with GnuPG, to protect against forgeries. This package
+contains keyrings of GnuPG and keys of Debian Developers (uploading and
+non-uploading), as well as of Debian Maintainers.

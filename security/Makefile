@@ -124,6 +124,7 @@
     SUBDIR += cyrus-sasl2-sql
     SUBDIR += cyrus-sasl2-srp
     SUBDIR += d0_blind_id
+    SUBDIR += debian-keyring
     SUBDIR += dehydrated
     SUBDIR += denyhosts
     SUBDIR += destroy
