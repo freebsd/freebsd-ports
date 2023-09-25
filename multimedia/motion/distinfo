@@ -1,5 +1,3 @@
-TIMESTAMP = 1695017850
-SHA256 (Motion-Project-motion-release-4.3.2_GH0.tar.gz) = dafa4264b2d8e4778f8be5871f09b6c0ec710d5a836182c583469c18db944d70
-SIZE (Motion-Project-motion-release-4.3.2_GH0.tar.gz) = 849378
-SHA256 (af632f831127499ee541d9c719a930321718f294.patch) = 85dc0562c7dc358084c8c9556ebb8ef1592527d79f576f035f356bbdadf40c6c
-SIZE (af632f831127499ee541d9c719a930321718f294.patch) = 890
+TIMESTAMP = 1694746910
+SHA256 (Motion-Project-motion-release-4.5.1_GH0.tar.gz) = 0c824276bb23565b7cf10409ebdcb46b85fb1f6abca957252e52290bb1fe473e
+SIZE (Motion-Project-motion-release-4.5.1_GH0.tar.gz) = 856665
