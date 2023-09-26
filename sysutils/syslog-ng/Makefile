@@ -1,5 +1,5 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.3.1
+DISTVERSION=	4.4.0
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -231,7 +231,18 @@ PYTHON_MOD_PLIST_FILES=		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-
 		lib/syslog-ng/python/syslogng/modules/example/scl/example.conf \
 		lib/syslog-ng/python/syslogng/modules/hypr/__init__.py \
 		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
-		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf
+		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf \
+                lib/syslog-ng/python/syslogng/__pycache__/reloc%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__init__.py \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/compressable_file_buffer%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_destination%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/__pycache__/s3_object%%PYTHON_EXT_SUFFIX%%.pyc \
+                lib/syslog-ng/python/syslogng/modules/s3/compressable_file_buffer.py \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_destination.py \
+                lib/syslog-ng/python/syslogng/modules/s3/s3_object.py \
+                lib/syslog-ng/python/syslogng/modules/s3/scl/s3.conf \
+                lib/syslog-ng/python/syslogng/reloc.py
 
 
 CURL_CONFIGURE_OFF=		--with-libcurl=off
