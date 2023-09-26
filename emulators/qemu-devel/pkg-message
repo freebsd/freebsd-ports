@@ -18,12 +18,10 @@ FreeBSD host notes
   qemu. (SAMBA knob.)
 
 - If you want to use usb devices connected to the host in the guest
-  yot need either recent 10-current (not tested yet much) or you can
-  use usbredir over the network (see below); also unless you are
+  you can use usbredir over the network (see below); also unless you are
   running qemu as root you then need to fix permissions for /dev/ugen*
-  device nodes: if you are on 5.x or later (devfs) put a rule in
-  /etc/devfs.rules, activate it in /etc/rc.conf and run /etc/rc.d/devfs
-  restart.  Example devfs.rules:
+  device nodes: put a rule in /etc/devfs.rules, activate it in
+  /etc/rc.conf and run /etc/rc.d/devfs restart.  Example devfs.rules:
 
 	[ugen_ruleset=20]
 	add path 'ugen*' mode 660 group operator
@@ -77,7 +75,7 @@ processing error - resetting ehci HC
   FreeBSD guest versions.]
 
 - If you build qemu wihout SDL and then get crashes running it try passing it
-  -nographic.  This should probably be default in that case...
+  -nographic.
 
 - qemu's network boot roms (-boot n) have a bug when bootfiles sizes are a
   multiple of blksize, if this affects you (like with FreeBSD's /boot/pxeboot)
@@ -85,20 +83,13 @@ processing error - resetting ehci HC
 
 	cp /boot/pxeboot pxeboot-qemu && chmod +w pxeboot-qemu && echo >>pxeboot-qemu
 
-  and then use pxeboot-qemu.  Actually you need recent btx code
-  (from after 7.0 was released) because of the real mode boot
-  problem, so use at least pxeboot from there.  And I just did that
-  for the pxeboot extracted out of
+  and then use pxeboot-qemu. Actually you need recent btx code because
+  of the real mode boot problem, so use at least pxeboot from there.
 
-	ftp://ftp.freebsd.org/pub/FreeBSD/snapshots/200805/7.0-STABLE-200805-i386-bootonly.iso
-
-  and placed it here:
-
-	http://people.freebsd.org/~nox/qemu/pxeboot-qemu
-
-- If you use slirp (usernet, the default) and want to mount nfs into the guest
-  and you are not running qemu as root, then mountd(8) on the exporting box
-  needs to be run with -n in order to accept requests from ports >= 1024.
+- If you use slirp (usernet, the default) and want to mount nfs into the
+  guest and you are not running qemu as root, then mountd(8) on the
+  exporting box needs to be run with -n in order to accept requests from
+  ports >= 1024.
 
 - (not FreeBSD-specific:) There have been reports of qcow2 corruption with (at
   least) win2k guests on recent kvm (which uses similar qcow2 code than qemu
