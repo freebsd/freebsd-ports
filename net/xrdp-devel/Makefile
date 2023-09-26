@@ -1,6 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.80.b20230623
+DISTVERSION=	0.9.80.b20230926
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -30,9 +30,9 @@ USE_GITHUB=	yes
 
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	ae43cee
-GH_TUPLE=	neutrinolabs:librfxcodec:79619b6:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:v0.1.1:libpainter/libpainter \
+GH_TAGNAME=	98ad496
+GH_TUPLE=	neutrinolabs:librfxcodec:25f6128:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 
 CONFIGURE_ARGS=	--enable-imlib2 \

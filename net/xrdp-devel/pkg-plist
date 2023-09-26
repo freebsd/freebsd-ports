@@ -5,13 +5,7 @@ bin/xrdp-sesadmin
 bin/xrdp-sesrun
 bin/xrdp-dumpfv1
 lib/libpainter.a
-lib/libpainter.so
-lib/libpainter.so.0
-lib/libpainter.so.0.0.0
-lib/librfxencode.so
-lib/librfxencode.so.0.0.0
 lib/librfxencode.a
-lib/librfxencode.so.0
 include/ms-erref.h
 include/ms-fscc.h
 include/ms-rdpbcgr.h
