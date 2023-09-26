@@ -83,7 +83,8 @@ CONFIGURE_ARGS+=	--disable-freetype-bundling \
 			--with-jvm-variants=${JDK_BUILD_JVM} \
 			--with-milestone=fcs \
 			--with-package-path=${LOCALBASE} \
-			--with-zlib=system
+			--with-zlib=system \
+			--with-extra-ldflags="-Wl,--undefined-version"
 CONFIGURE_SCRIPT=	../../configure
 CONFIGURE_WRKSRC=	${WRKSRC}/common/autoconf
 
