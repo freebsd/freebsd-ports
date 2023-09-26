@@ -1,6 +1,5 @@
 PORTNAME=	foundationdb
-DISTVERSION=	7.1.25
-PORTREVISION=	1
+DISTVERSION=	7.1.29
 CATEGORIES=	databases
 
 # PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
@@ -12,7 +11,6 @@ WWW=		https://www.foundationdb.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to configure
 BROKEN_aarch64=	invalid asm rdtsc
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything else
@@ -24,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/msgpack.hpp:devel/msgpack-cxx \
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libeio.so:devel/libeio
 
-USES=		cmake compiler:c++17-lang mono:build python:build shebangfix \
+USES=		cmake compiler:c++20-lang mono:build python:build shebangfix \
 		ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple

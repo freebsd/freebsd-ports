@@ -1,6 +1,6 @@
---- cmake/FDBComponents.cmake.orig	2022-09-19 11:42:41 UTC
+--- cmake/FDBComponents.cmake.orig	2023-03-14 19:59:33 UTC
 +++ cmake/FDBComponents.cmake
-@@ -24,7 +24,7 @@ else()
+@@ -24,7 +24,7 @@ set(DISABLE_TLS OFF CACHE BOOL "Don't try to find Open
  if(DISABLE_TLS)
    set(WITH_TLS OFF)
  else()
@@ -9,7 +9,7 @@
    if(WIN32)
      set(OPENSSL_MSVC_STATIC_RT ON)
    endif()
-@@ -198,6 +198,13 @@ endif()
+@@ -201,6 +201,13 @@ else()
  endif()
  
  ################################################################################
@@ -23,7 +23,7 @@
  # Coroutine implementation
  ################################################################################
  
-@@ -242,6 +249,8 @@ function(print_components)
+@@ -245,6 +252,8 @@ function(print_components)
    message(STATUS "Build Documentation (make html):      ${WITH_DOCUMENTATION}")
    message(STATUS "Build Python sdist (make package):    ${WITH_PYTHON_BINDING}")
    message(STATUS "Configure CTest (depends on Python):  ${WITH_PYTHON}")
