@@ -2,7 +2,7 @@
 +++ cmake/GetMsgpack.cmake
 @@ -1,20 +1,7 @@
 -find_package(msgpack 3.3.0 EXACT QUIET CONFIG)
-+find_package(msgpack REQUIRED QUIET CONFIG)
++find_package(msgpack-cxx REQUIRED QUIET CONFIG)
  
  add_library(msgpack INTERFACE)
  
