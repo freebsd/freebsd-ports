@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# PROVIDE: icingadb
+# REQUIRE: SERVERS mysql postgresql
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# icingadb_enable:	Set to NO by default.
+#			Set it to YES to enable icingadb
+# icingadb_user:	The user account used to run the daemon.
+#			Default: %%ICINGA2USER%%
+# icingadb_group:	The group account used to run the daemon.
+#			Default: %%ICINGA2GROUP%%
+#
+
+. /etc/rc.subr
+
+name=icingadb
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${icingadb_enable:="NO"}
+: ${icingadb_user:="%%ICINGA2USER%%"}
+: ${icingadb_group:="%%ICINGA2GROUP%%"}
+
+icingadb_pid="/var/run/icingadb/icingadb.pid"
+icingadb_logfile="/var/log/icinga2/$name.log"
+icingadb_daemonflags="-o ${icingadb_logfile}"
+
+pidfile="$icingadb_pid"
+command="/usr/sbin/daemon"
+
+start_precmd=icingadb_precmd
+
+icingadb_precmd()
+{
+	[ -f ${icingadb_logfile} ] || install -g $icingadb_group -o $icingadb_user -m 644 /dev/null ${icingadb_logfile}
+
+	if [ ! -d "/var/run/icingadb" ]; then
+		install -d -o ${icingadb_user} -g ${icingadb_group} -m 0775 "/var/run/icingadb"
+	fi
+	if [ ! -e ${pidfile} ]; then
+		install -o ${icingadb_user} -g ${icingadb_group} /dev/null ${pidfile};
+	else
+		chown ${icingadb_user}:${icingadb_group} ${pidfile};
+	fi
+
+}
+
+command_args="$icingadb_daemonflags -P $pidfile -t ${name} -T ${name} %%PREFIX%%/bin/$name -c %%PREFIX%%/etc/icingadb/config.yml"
+
+run_rc_command "$1"

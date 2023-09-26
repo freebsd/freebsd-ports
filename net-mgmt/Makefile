@@ -87,6 +87,7 @@
     SUBDIR += icinga-php-library
     SUBDIR += icinga-php-thirdparty
     SUBDIR += icinga2
+    SUBDIR += icingadb
     SUBDIR += icingaweb2
     SUBDIR += icingaweb2-module-businessprocess
     SUBDIR += icingaweb2-module-cube
