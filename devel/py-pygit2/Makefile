@@ -8,7 +8,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Python bindings for libgit2
-WWW=		https://www.pygit2.org
+WWW=		https://www.pygit2.org \
+		https://github.com/libgit2/pygit2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
