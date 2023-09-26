@@ -83,6 +83,7 @@
     SUBDIR += biodiff
     SUBDIR += bn-aspell
     SUBDIR += br-aspell
+    SUBDIR += bsd-spell
     SUBDIR += bsddiff
     SUBDIR += bsdgrep
     SUBDIR += btparse
