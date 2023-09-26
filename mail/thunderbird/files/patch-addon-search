@@ -1,9 +1,9 @@
 https://github.com/mozilla/addons/issues/708
 https://github.com/mozilla/addons-frontend/issues/4610
 
---- comm/mail/app/profile/all-thunderbird.js.orig	2022-09-10 23:48:23.616215000 +0200
-+++ comm/mail/app/profile/all-thunderbird.js	2022-09-11 00:01:06.140736000 +0200
-@@ -167,10 +167,10 @@
+--- comm/mail/app/profile/all-thunderbird.js.orig	2023-09-18 22:38:56.049701000 +0200
++++ comm/mail/app/profile/all-thunderbird.js	2023-09-18 22:41:26.840390000 +0200
+@@ -207,10 +207,10 @@
  pref("extensions.getAddons.compatOverides.url", "https://services.addons.thunderbird.net/api/v3/addons/compat-override/?guid=%IDS%&lang=%LOCALE%");
  pref("extensions.getAddons.link.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/");
  pref("browser.dictionaries.download.url", "https://addons.thunderbird.net/%LOCALE%/%APP%/language-tools/");
@@ -18,7 +18,7 @@ https://github.com/mozilla/addons-frontend/issues/4610
  pref("extensions.getAddons.langpacks.url", "https://services.addons.thunderbird.net/api/v3/addons/language-tools/?app=thunderbird&type=language&appversion=%VERSION%");
  pref("extensions.getAddons.discovery.api_url", "https://services.addons.thunderbird.net/api/v4/discovery/?lang=%LOCALE%&edition=%DISTRIBUTION%");
  
-@@ -202,9 +202,9 @@
+@@ -242,9 +242,9 @@
  //  .. etc ..
  //
  pref("extensions.update.enabled", true);
@@ -30,20 +30,20 @@ https://github.com/mozilla/addons-frontend/issues/4610
  
  pref("extensions.update.interval", 86400);  // Check for updates to Extensions and
                                              // Themes every day
---- toolkit/mozapps/extensions/internal/AddonRepository.jsm.orig	2022-09-11 00:01:40.212952000 +0200
-+++ toolkit/mozapps/extensions/internal/AddonRepository.jsm	2022-09-11 00:07:14.587890000 +0200
-@@ -592,7 +592,7 @@
+--- toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs.orig	2023-09-18 22:35:42.082170000 +0200
++++ toolkit/mozapps/extensions/internal/AddonRepository.sys.mjs	2023-09-18 22:36:14.313490000 +0200
+@@ -596,7 +596,7 @@
        addon.version = String(aEntry.current_version.version);
        if (Array.isArray(aEntry.current_version.files)) {
          for (let file of aEntry.current_version.files) {
--          if (file.platform == "all" || file.platform == PLATFORM) {
-+          if (file.platform == "all" || file.platform == "linux" || file.platform == PLATFORM) {
+-          if (file.platform == "all" || file.platform == lazy.PLATFORM) {
++          if (file.platform == "all" || file.platform == "linux" || file.platform == lazy.PLATFORM) {
              if (file.url) {
-               addon.sourceURI = NetUtil.newURI(file.url);
+               addon.sourceURI = lazy.NetUtil.newURI(file.url);
              }
---- toolkit/mozapps/extensions/internal/XPIDatabase.jsm.orig	2022-09-11 00:08:09.244518000 +0200
-+++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm	2022-09-11 00:09:56.387390000 +0200
-@@ -569,7 +569,7 @@
+--- toolkit/mozapps/extensions/internal/XPIDatabase.jsm.orig	2023-09-18 22:36:52.473447000 +0200
++++ toolkit/mozapps/extensions/internal/XPIDatabase.jsm	2023-09-18 22:37:26.177990000 +0200
+@@ -634,7 +634,7 @@
      // Something is causing errors in here
      try {
        for (let platform of this.targetPlatforms) {
