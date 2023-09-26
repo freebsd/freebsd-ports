@@ -1,7 +1,12 @@
 PORTNAME=	kdiff3
 DISTVERSION=	1.10.5
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
+
+PATCH_SITES=	https://github.com/KDE/${PORTNAME}/commit/
+PATCHFILES+=	2642a7e71cfdf7ef95c1c07c7ccea3930c11cc48.patch:-p1
+PATCHFILES+=	341bb0322026053400def3aa7f46e1ac171d0fc5.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graphical frontend for diff
@@ -13,10 +18,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/range/algorithm.hpp:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang kde:5 qt:5 tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash i18n iconthemes jobwidgets kio \
-		parts service solid sonnet textwidgets widgetsaddons windowsystem \
-		xmlgui \
+USE_KDE=	auth codecs completion config configwidgets coreaddons \
+		crash i18n jobwidgets kio parts service solid sonnet \
+		textwidgets widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		concurrent core dbus gui network printsupport widgets xml \
 		buildtools:build qmake:build
