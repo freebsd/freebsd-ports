@@ -1,7 +1,7 @@
-TIMESTAMP = 1682107419
-SHA256 (freebsd-git-devtools/git-arc.sh?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = 4e7dc13e1f87ab09e8e584e57cae6ddf3a74cd4e82237357eb07403d2f27c5d7
-SIZE (freebsd-git-devtools/git-arc.sh?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = 17046
-SHA256 (freebsd-git-devtools/git-arc.1?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = 8d7e838a5f82b97868e4f8b5d6653d38c3fa5b559ace46efe4e6bd4348492090
-SIZE (freebsd-git-devtools/git-arc.1?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = 6954
-SHA256 (freebsd-git-devtools/mfc-candidates.sh?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = f719ddbd34ce99dc82e4e172cc10c80b6106d8bc8f4c4e3aaf0b5ce7e649c5f3
-SIZE (freebsd-git-devtools/mfc-candidates.sh?id=0455b90beeddb636b0644c5d47ef80ffb3e4b4c7) = 4479
+TIMESTAMP = 1695735108
+SHA256 (freebsd-git-devtools/git-arc.sh?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = 5dbcbde74b3a781b6d2ecff1929148c83ff0ff3608c0f1110327cffddf2cb25c
+SIZE (freebsd-git-devtools/git-arc.sh?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = 17038
+SHA256 (freebsd-git-devtools/git-arc.1?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = 011b470468af2994b0e0cca164dcf0ccfb870946fd3c5bb0ca7c4a0cb8b36b9d
+SIZE (freebsd-git-devtools/git-arc.1?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = 7111
+SHA256 (freebsd-git-devtools/mfc-candidates.sh?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = ad11d61abc37134b4a5a37e587e80144bdcce05fbfb3145892df1ab6f92f1d4d
+SIZE (freebsd-git-devtools/mfc-candidates.sh?id=61f8df6a13a357e1d45c22a2016b87491f10de87) = 4450
