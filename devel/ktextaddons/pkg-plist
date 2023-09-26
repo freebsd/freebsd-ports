@@ -35,6 +35,9 @@ include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditFindBar
 include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditor
 include/KF5/TextCustomEditor/TextCustomEditor/PlainTextEditorWidget
 include/KF5/TextCustomEditor/TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowser
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowserFindBar
+include/KF5/TextCustomEditor/TextCustomEditor/RichTextBrowserWidget
 include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditFindBar
 include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditor
 include/KF5/TextCustomEditor/TextCustomEditor/RichTextEditorWidget
@@ -45,6 +48,9 @@ include/KF5/TextCustomEditor/textcustomeditor/plaintexteditfindbar.h
 include/KF5/TextCustomEditor/textcustomeditor/plaintexteditor.h
 include/KF5/TextCustomEditor/textcustomeditor/plaintexteditorwidget.h
 include/KF5/TextCustomEditor/textcustomeditor/plaintextsyntaxspellcheckinghighlighter.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowser.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowserfindbar.h
+include/KF5/TextCustomEditor/textcustomeditor/richtextbrowserwidget.h
 include/KF5/TextCustomEditor/textcustomeditor/richtexteditfindbar.h
 include/KF5/TextCustomEditor/textcustomeditor/richtexteditor.h
 include/KF5/TextCustomEditor/textcustomeditor/richtexteditorwidget.h
