@@ -3,6 +3,9 @@
 @sample(,,640) etc/wifibox/appliance/iptables.sample
 @sample(,,640) etc/wifibox/appliance/udhcpd.conf.sample
 %%UDS_PASSTHRU%%@sample(,,640) etc/wifibox/appliance/uds_passthru.conf.sample
+%%IPV6%%%%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/appliance/dhcpcd.conf.sample
+%%IPV6%%@sample(,,640) etc/wifibox/appliance/ip6tables.sample
+%%IPV6%%@sample(,,640) etc/wifibox/appliance/radvd.conf.sample
 %%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
 %%APP_HOSTAPD%%@sample(,,640) etc/wifibox/hostapd/hostapd.conf.sample
 %%XX_MDNS%%@sample(,,640) etc/wifibox/appliance/mdnsd-services.conf.sample
@@ -21,6 +24,7 @@ share/wifibox/vmlinuz
 @dir /var/run/wifibox/appliance/cache/misc
 @dir /var/run/wifibox/appliance/cache
 @dir /var/run/wifibox/appliance/empty
+%%IPV6%%%%APP_WPA_SUPPLICANT%%@dir /var/run/wifibox/appliance/lib/dhcpcd
 @dir /var/run/wifibox/appliance/lib/iptables
 @dir /var/run/wifibox/appliance/lib/misc
 @dir /var/run/wifibox/appliance/lib/udhcpd
