@@ -1,8 +1,8 @@
   <vuln vid="ea9d1fd2-5d24-11ee-8507-b42e991fc52e">
-    <topic>nlnetlabs -- Possible path traversal when storing RRDP responses</topic>
+    <topic>routinator -- Possible path traversal when storing RRDP responses</topic>
     <affects>
       <package>
-	<name>nlnetlabs</name>
+	<name>routinator</name>
 	<range><ge>0.9.0</ge><lt>0.12.2</lt></range>
       </package>
     </affects>
