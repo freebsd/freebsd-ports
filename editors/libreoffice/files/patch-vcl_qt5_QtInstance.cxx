@@ -1,4 +1,4 @@
---- vcl/qt5/QtInstance.cxx.orig	2022-12-22 00:14:09 UTC
+--- vcl/qt5/QtInstance.cxx.orig	2023-07-28 18:13:49 UTC
 +++ vcl/qt5/QtInstance.cxx
 @@ -492,7 +492,7 @@ QtInstance::createPicker(css::uno::Reference<css::uno:
      {
@@ -13,7 +13,7 @@
  extern "C" {
  VCLPLUG_QT_PUBLIC SalInstance* create_SalInstance()
  {
--    static const bool bUseCairo = (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));
+-    static const bool bUseCairo = (nullptr == getenv("SAL_VCL_QT_USE_QFONT"));
 +    static const bool bUseCairo = true; // (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));
  
      std::unique_ptr<char* []> pFakeArgv;
