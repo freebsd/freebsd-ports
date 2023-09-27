@@ -1,6 +1,6 @@
 PORTNAME=	director
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.4.0
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}strictyaml>=0:devel/py-strictyaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pyaml-env>=0:devel/py-pyaml-env@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dotenv>=0:www/py-python-dotenv@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
