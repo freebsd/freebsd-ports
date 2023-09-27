@@ -619,6 +619,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Create a package for a port and _all_ of its dependencies.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
+# describe-json - Generate a JSON-compliant representation of each port.
 # check-plist		- Checks for files missing from the plist, and files in the plist
 #				  that are not installed by the port.
 # check-sanity		- Perform some basic checks of the port layout.
@@ -4405,6 +4406,78 @@ describe-${f}:
 .        endfor
 .      endif # empty(FLAVORS)
 .    endif
+
+.	if empty(FLAVORS) || defined(_DESCRIBE_WITH_FLAVOR)
+
+.		if defined(_DESCRIBE_WITH_FLAVOR)
+_JSON_OBJ_NAME="\"${FLAVOR}-${.CURDIR:T}\":"
+.		endif
+
+describe-json:
+	@(${ECHO_CMD} "${_JSON_OBJ_NAME} { ";\
+	${ECHO_CMD} \"uses\":[\"${USES:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"flavors\":[\"${FLAVORS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"options_default\":[\"${OPTIONS_DEFAULT:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"fetch_depends\":[\"${FETCH_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"extract_depends\":[\"${EXTRACT_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"patch_depends\":[\"${PATCH_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"build_depends\":[\"${BUILD_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"lib_depends\":[\"${LIB_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"run_depends\":[\"${RUN_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"test_depends\":[\"${TEST_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"pkg_depends\":[\"${PKG_DEPENDS:ts,:Q:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"complete_options_list\":[\"${COMPLETE_OPTIONS_LIST:ts,:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"categories\":[\"${CATEGORIES:ts,:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"license\":[\"${LICENSE:ts,:S/,/\",\"/g}\"], ;\
+	${ECHO_CMD} \"deprecated\":\""${DEPRECATED:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}" \", ;\
+	${ECHO_CMD} \"broken\":\"${BROKEN:Q:S/"/\\\"/g:S/\\\\*/*/g:S/\\\'/'/g}\", ;\
+	${ECHO_CMD} \"distversion\":\"${DISTVERSION}\", ;\
+	${ECHO_CMD} \"distversionprefix\":\"${DISTVERSIONPREFIX}\", ;\
+	${ECHO_CMD} \"distversionsuffix\":\"${DISTVERSIONSUFFIX}\", ;\
+	${ECHO_CMD} \"expiration_date\":\"${EXPIRATION_DATE}\", ;\
+	${ECHO_CMD} \"flavor\":\"${FLAVOR}\", ;\
+	${ECHO_CMD} \"gh_account\":\"${GH_ACCOUNT}\", ;\
+	${ECHO_CMD} \"gh_project\":\"${GH_PROJECT}\", ;\
+	${ECHO_CMD} \"gh_tagname\":\"${GH_TAGNAME}\", ;\
+	${ECHO_CMD} \"gl_account\":\"${GL_ACCOUNT}\", ;\
+	${ECHO_CMD} \"gl_commit\":\"${GL_COMMIT}\", ;\
+	${ECHO_CMD} \"gl_project\":\"${GL_PROJECT}\", ;\
+	${ECHO_CMD} \"gl_site\":\"${GL_SITE}\", ;\
+	${ECHO_CMD} \"maintainer\":\"${MAINTAINER}\", ;\
+	${ECHO_CMD} \"makefiles\":\"${MAKEFILES}\", ;\
+	${ECHO_CMD} \"pkgbase\":\"${PKGBASE}\", ;\
+	${ECHO_CMD} \"pkgname\":\"${PKGNAME}\", ;\
+	${ECHO_CMD} \"pkgnamesuffix\":\"${PKGNAMESUFFIX}\", ;\
+	${ECHO_CMD} \"pkgorigin\":\"${PKGORIGIN}\", ;\
+	${ECHO_CMD} \"pkg_depends\":\"${PKG_DEPENDS}\", ;\
+	${ECHO_CMD} \"portepoch\":\"${PORTEPOCH}\", ;\
+	${ECHO_CMD} \"portname\":\"${PORTNAME}\", ;\
+	${ECHO_CMD} \"portrevision\":\"${PORTREVISION}\", ;\
+	${ECHO_CMD} \"portversion\":\"${PORTVERSION}\", ;\
+	${ECHO_CMD} \"use_github\":\"${USE_GITHUB}\", ;\
+	${ECHO_CMD} \"use_gitlab\":\"${USE_GITLAB}\", ;\
+	${ECHO_CMD} \"www\":\"${WWW:Q}\" ;\
+	${ECHO_CMD} "}" >> ${INDEX_OUT})
+.	else # empty(FLAVORS)
+describe-json: ${FLAVORS:S/^/describe-json-/}
+_LAST_FLAVOR = ${FLAVORS:[-1]}
+.	for f in ${FLAVORS}
+describe-json-${f}:
+	@if [ "${f}" == "${FLAVORS:[1]}" ]; then \
+		${ECHO_CMD} "{" ;\
+	fi;
+	@cd ${.CURDIR} && ${SETENV} FLAVOR=${f} ${MAKE} -B -D_DESCRIBE_WITH_FLAVOR describe-json
+	@if [ "${f}" != "${_LAST_FLAVOR}" ]; then \
+		${ECHO_MSG} "," ;\
+	else \
+		${ECHO_CMD} "}" ;\
+	fi; \
+
+
+.	endfor
+.	endif # empty(FLAVORS)
+
+
 
 www-site:
 	@${ECHO_CMD} ${_WWW}

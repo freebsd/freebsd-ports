@@ -300,6 +300,26 @@ describe:
 .  endif
 .endif
 
+# Store last subdir name
+_LAST_DIR = ${SUBDIR:[-1]}
+describe-json:
+	@${ECHO_MSG} "{"
+	@for sub in ${SUBDIR}; do \
+	if ${TEST} -d ${.CURDIR}/$${sub}; then \
+		cd ${.CURDIR}/$${sub}; \
+		${ECHO_MSG} "\"$${sub}\": " ;\
+		${MAKE} -B describe-json || \
+			(${ECHO_CMD} "===> ${DIRPRFX}$${sub} failed" >&2; \
+			exit 1) ;\
+		if [ "$${sub}" != "${_LAST_DIR}" ]; then \
+			(${ECHO_MSG} ",") ; \
+		fi; \
+	else \
+		${ECHO_MSG} "===> ${DIRPRFX}$${sub} non-existent"; \
+	fi; \
+	done
+	@${ECHO_MSG} "}"
+
 .if !target(readmes)
 .  if defined(PORTSTOP)
 readmes: readme ${SUBDIR:S/^/_/:S/$/.readmes/}
