@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.18.4
+PORTVERSION=	4.18.5
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -13,9 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libdbusmenu-gtk3.so:devel/libdbusmenu \
+LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome \
