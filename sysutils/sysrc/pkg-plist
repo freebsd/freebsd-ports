@@ -1,5 +1,0 @@
-libexec/sysrc/include/messages.subr
-man/man8/sysrc.8.gz
-sbin/sysrc
-%%DATADIR%%/common.subr
-%%DATADIR%%/sysrc.subr
