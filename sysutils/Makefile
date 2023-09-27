@@ -1199,7 +1199,6 @@
     SUBDIR += rovclock
     SUBDIR += rpi-firmware
     SUBDIR += rset
-    SUBDIR += rsfetch
     SUBDIR += rshim-user-space
     SUBDIR += rsnapshot
     SUBDIR += rsyncbackup
