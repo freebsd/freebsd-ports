@@ -118,7 +118,6 @@
 %%DATADIR%%/Definitions/boxingtorrents.yml
 %%DATADIR%%/Definitions/broadcity.yml
 %%DATADIR%%/Definitions/brsociety-api.yml
-%%DATADIR%%/Definitions/btdigg.yml
 %%DATADIR%%/Definitions/btetree.yml
 %%DATADIR%%/Definitions/btmet.yml
 %%DATADIR%%/Definitions/btnext.yml
@@ -151,7 +150,6 @@
 %%DATADIR%%/Definitions/cpasbienclone.yml
 %%DATADIR%%/Definitions/crackingpatching.yml
 %%DATADIR%%/Definitions/crazyhd.yml
-%%DATADIR%%/Definitions/crazyspirits.yml
 %%DATADIR%%/Definitions/crnaberza.yml
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
@@ -182,6 +180,7 @@
 %%DATADIR%%/Definitions/esharenet.yml
 %%DATADIR%%/Definitions/estone.yml
 %%DATADIR%%/Definitions/ex-torrenty.yml
+%%DATADIR%%/Definitions/exitorrent-org.yml
 %%DATADIR%%/Definitions/exkinoray.yml
 %%DATADIR%%/Definitions/extratorrent-st.yml
 %%DATADIR%%/Definitions/extremebits.yml
@@ -259,6 +258,7 @@
 %%DATADIR%%/Definitions/idope.yml
 %%DATADIR%%/Definitions/ilcorsaroblu.yml
 %%DATADIR%%/Definitions/ilcorsaronero.yml
+%%DATADIR%%/Definitions/ildragonero.yml
 %%DATADIR%%/Definitions/immortuos.yml
 %%DATADIR%%/Definitions/indietorrents.yml
 %%DATADIR%%/Definitions/infire.yml
@@ -305,7 +305,6 @@
 %%DATADIR%%/Definitions/lst.yml
 %%DATADIR%%/Definitions/mactorrentsdownload.yml
 %%DATADIR%%/Definitions/madsrevolution.yml
-%%DATADIR%%/Definitions/magicheaven.yml
 %%DATADIR%%/Definitions/magico.yml
 %%DATADIR%%/Definitions/majomparade.yml
 %%DATADIR%%/Definitions/marinetracker.yml
@@ -420,6 +419,7 @@
 %%DATADIR%%/Definitions/rutor.yml
 %%DATADIR%%/Definitions/rutracker-ru.yml
 %%DATADIR%%/Definitions/satclubbing.yml
+%%DATADIR%%/Definitions/scenelinks.yml
 %%DATADIR%%/Definitions/scenerush.yml
 %%DATADIR%%/Definitions/seedfile.yml
 %%DATADIR%%/Definitions/seedoff.yml
@@ -543,6 +543,7 @@
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
 %%DATADIR%%/Definitions/vsttorrents.yml
+%%DATADIR%%/Definitions/wdt.yml
 %%DATADIR%%/Definitions/whiteangel.yml
 %%DATADIR%%/Definitions/wihd.yml
 %%DATADIR%%/Definitions/wintersakura.yml
