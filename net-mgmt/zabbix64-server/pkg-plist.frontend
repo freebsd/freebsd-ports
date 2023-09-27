@@ -1204,7 +1204,6 @@
 %%WWWDIR%%/include/triggers.inc.php
 %%WWWDIR%%/include/users.inc.php
 %%WWWDIR%%/include/validate.inc.php
-%%WWWDIR%%/include/views/configuration.copy.elements.php
 %%WWWDIR%%/include/views/configuration.graph.edit.php
 %%WWWDIR%%/include/views/configuration.graph.list.php
 %%WWWDIR%%/include/views/configuration.host.discovery.edit.php
@@ -1231,7 +1230,6 @@
 %%WWWDIR%%/include/views/js/common.init.js.php
 %%WWWDIR%%/include/views/js/common.item.edit.js.php
 %%WWWDIR%%/include/views/js/common.template.edit.js.php
-%%WWWDIR%%/include/views/js/configuration.copy.elements.js.php
 %%WWWDIR%%/include/views/js/configuration.graph.edit.js.php
 %%WWWDIR%%/include/views/js/configuration.graph.list.js.php
 %%WWWDIR%%/include/views/js/configuration.host.discovery.edit.js.php
