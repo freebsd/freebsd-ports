@@ -1,5 +1,5 @@
 PORTNAME=	cherrytree
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	deskutils
 MASTER_SITES=	https://www.giuspen.com/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,8 +14,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libenchant-2.so:textproc/enchant2 \
 		libfmt.so:devel/libfmt \
 		libfribidi.so:converters/fribidi \
-		libharfbuzz.so:print/harfbuzz \
 		libgspell-1.so:textproc/gspell \
+		libharfbuzz.so:print/harfbuzz \
 		libspdlog.so:devel/spdlog \
 		libuchardet.so:textproc/uchardet
 
