@@ -1,5 +1,5 @@
 PORTNAME=	wesnoth
-PORTVERSION=	1.16.9
+PORTVERSION=	1.16.10
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERSION} \
@@ -22,16 +22,16 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libicudata.so:devel/icu \
 		libharfbuzz.so:print/harfbuzz
 
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils gnome pkgconfig \
+		python:run readline shebangfix ssl sdl tar:bzip2 xorg
+USE_SDL=	image2 mixer2 ttf2
+USE_GNOME=	cairo pango
+USE_XORG=	ice sm x11 xext
+
 LDFLAGS+=	-L${LOCALBASE}/lib -lboost_system
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cmake compiler:c++17-lang cpe gnome pkgconfig \
-		python:run readline shebangfix ssl sdl tar:bzip2 xorg
-USE_SDL=	image2 mixer2 ttf2
-USE_LDCONFIG=	yes
-USE_GNOME=	cairo pango
-USE_XORG=	ice sm x11 xext
 SHEBANG_FILES=	data/tools/about_cfg_to_wiki \
 		data/tools/addon_manager/html.py \
 		data/tools/expand-terrain-macros.py \
