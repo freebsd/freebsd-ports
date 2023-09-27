@@ -60,12 +60,7 @@ topic=""
 source="SO-AND-SO"
 upstream_fix=""
 impact=""
-DESC_BODY="<body xmlns=\"http://www.w3.org/1999/xhtml\">
-	<p>${source} reports:</p>
-	<blockquote cite=\"${references}\">
-	  <p>${details}</p>
-	</blockquote>
-	</body>"
+DESC_BODY=""
 
 
 # Try to retrieve information if a CVE identifier was provided
@@ -99,6 +94,13 @@ if [ -n "${CVE_ID}" ]; then
 	references=$(jq -r "${pref}.url|@html" "${tmp_nvd}" | tr " " "\n") || exit 1
 	source=$(jq -r "${pref}.source|@html" "${tmp_nvd}" | tr " " "\n") || exit 1
 	topic=$(jq -r ".containers.cna.title|@html" "${tmp_mitre}" ) || exit 1
+
+DESC_BODY="<body xmlns=\"http://www.w3.org/1999/xhtml\">
+	<p>${source} reports:</p>
+	<blockquote cite=\"${references}\">
+	  <p>${details}</p>
+	</blockquote>
+	</body>"
 fi
 
 if [ -n "${SA_ID}" ]; then
