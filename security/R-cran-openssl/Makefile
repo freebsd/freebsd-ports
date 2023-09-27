@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-sodium>0:security/R-cran-sodium \
 		R-cran-testthat>0:devel/R-cran-testthat
-# Test fails with OpenSSL3: https://github.com/jeroen/openssl/issues/119
 
 USES=		cran:auto-plist,compiles shebangfix ssl
 
