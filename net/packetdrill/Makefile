@@ -8,6 +8,8 @@ WWW=		https://github.com/freebsd-net/packetdrill
 
 LICENSE=	GPLv2
 
+IGNORE_FreeBSD_12=	does not build
+
 USES=		bison python:run uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
@@ -30,7 +32,7 @@ pre-build:
 	cd ${WRKSRC} && ${LN} Makefile.FreeBSD Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
