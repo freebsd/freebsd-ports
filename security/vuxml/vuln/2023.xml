@@ -1,3 +1,36 @@
+  <vuln vid="ea9d1fd2-5d24-11ee-8507-b42e991fc52e">
+    <topic>nlnetlabs -- Possible path traversal when storing RRDP responses</topic>
+    <affects>
+      <package>
+	<name>nlnetlabs</name>
+	<range><ge>0.9.0</ge><lt>0.12.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>sep@nlnetlabs.nl reports:</p>
+	<blockquote cite="https://nlnetlabs.nl/downloads/routinator/CVE-2023-39916.txt">
+	  <p>NLnet Labs Routinator 0.9.0 up to and including 0.12.1 contains a
+	possible path traversal vulnerability in the optional, off-by-default
+	keep-rrdp-responses feature that allows users to store the content
+	of responses received for RRDP requests.  The location of these
+	stored responses is constructed from the URL of the request.  Due
+	to insufficient sanitation of the URL, it is possible for an attacker
+	to craft a URL that results in the response being stored outside
+	of the directory specified for it.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39916</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-39916</url>
+    </references>
+    <dates>
+      <discovery>2023-09-13</discovery>
+      <entry>2023-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="402fccd0-5b6d-11ee-9898-00e081b7aa2d">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
