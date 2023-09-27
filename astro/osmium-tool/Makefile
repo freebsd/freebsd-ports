@@ -1,6 +1,6 @@
 PORTNAME=	osmium-tool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
+DISTVERSION=	1.16.0
 CATEGORIES=	astro geography
 
 MAINTAINER=	ianthetechie@gmail.com
@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
 		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson \
 		hs-pandoc>0:textproc/hs-pandoc
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
-		libbz2.so:archivers/bzip2 \
 		libexpat.so:textproc/expat2
 
 USES=		cmake:testing
@@ -26,8 +25,7 @@ PORTEXAMPLES=		extract-example-config/*
 OPTIONS_DEFINE=		EXAMPLES LZ4
 OPTIONS_DEFAULT=	EXAMPLES LZ4
 
-LZ4_CMAKE_ON=	-DWITH_LZ4=ON
-LZ4_CMAKE_OFF=	-DWITH_LZ4=OFF
+LZ4_CMAKE_BOOL=	WITH_LZ4
 
 LZ4_DESC=		Build with support for LZ4 compression of PBF files
 LZ4_LIB_DEPENDS=	liblz4.so:archivers/liblz4
