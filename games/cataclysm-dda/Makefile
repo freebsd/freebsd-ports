@@ -46,7 +46,7 @@ CMAKE_ARGS+=	-DCURSES_INCLUDE_PATH:STRING="${NCURSESINC}"
 
 .endif
 
-PORTSCOUT=	limit:^0\.
+PORTSCOUT=	limit:^0\.[A-Z]
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version.cmake
