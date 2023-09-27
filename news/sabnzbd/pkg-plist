@@ -143,6 +143,8 @@ bin/SABnzbd.py
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/fonts/glyphicons-halflings-regular.svg
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/fonts/glyphicons-halflings-regular.ttf
 %%DATADIR%%/interfaces/Config/templates/staticcfg/bootstrap/js/bootstrap.min.js
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/Auto.css
+%%DATADIR%%/interfaces/Config/templates/staticcfg/css/Night.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/css/chartist.min.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/css/login.css
 %%DATADIR%%/interfaces/Config/templates/staticcfg/css/style.css
