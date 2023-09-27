@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-keyval
-GH_TUPLE=	kjdev:nginx-keyval:0.1.0:module
+GH_TUPLE=	kjdev:nginx-keyval:0.2.0:module
 
 COMMENT=	Angie keyval dynamic module
 
