@@ -1,6 +1,5 @@
 PORTNAME=	libixion
-PORTVERSION=	0.17.0
-PORTREVISION=	4
+PORTVERSION=	0.18.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://kohei.us/files/ixion/src/
 
@@ -11,7 +10,7 @@ WWW=		https://gitlab.com/ixion/ixion
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mdds>=2.0:devel/mdds
+BUILD_DEPENDS=	mdds>=2.1:devel/mdds
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		autoreconf libtool pkgconfig tar:xz
