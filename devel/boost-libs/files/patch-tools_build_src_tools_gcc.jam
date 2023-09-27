@@ -3,9 +3,9 @@ doesn't exist while /usr/lib only constains .so but not .so.SOVERSION
 files. Besides, LD_LIBRARY_PATH + -Wl,-rpath-link is same as -Wl,-rpath
 that USE_GCC already passes.
 
---- tools/build/src/tools/gcc.jam.orig	2018-04-09 15:17:58 UTC
+--- tools/build/src/tools/gcc.jam.orig	2023-08-08 21:02:57 UTC
 +++ tools/build/src/tools/gcc.jam
-@@ -213,24 +213,6 @@ rule init ( version ? : command * : options * : requir
+@@ -220,24 +220,6 @@ rule init ( version ? : command * : options * : requir
          toolset.add-defaults $(conditionx)\:<target-os>$(target-os) ;
      }
  

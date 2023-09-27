@@ -1,6 +1,6 @@
---- tools/boost_install/boost-install.jam.orig	2021-04-13 16:23:18 UTC
+--- tools/boost_install/boost-install.jam.orig	2023-08-08 21:02:56 UTC
 +++ tools/boost_install/boost-install.jam
-@@ -1252,16 +1252,16 @@ rule boost-install ( libraries * )
+@@ -1318,16 +1318,16 @@ rule boost-install ( libraries * )
      alias install-libraries-shared : install-libraries-shared-cygwin : <target-os>cygwin ;
      $(p).mark-target-as-explicit install-libraries-shared ;
  
@@ -20,7 +20,7 @@
      $(p).mark-target-as-explicit install-unprefixed-shared ;
  
      install-cmake-config $(libraries) ;
-@@ -1281,13 +1281,13 @@ rule boost-install ( libraries * )
+@@ -1347,13 +1347,13 @@ rule boost-install ( libraries * )
      install stage-libraries-static : $(libraries) : <location>$(stage-libdir) <install-dependencies>on <install-type>STATIC_LIB ;
      $(p).mark-target-as-explicit stage-libraries-static ;
  

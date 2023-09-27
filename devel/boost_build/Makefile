@@ -1,5 +1,5 @@
 PORTNAME=	build
-DISTVERSION=	4.9.4
+DISTVERSION=	4.10.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	boost-
 
@@ -17,7 +17,7 @@ USES=		compiler:c++11-lang python:test shebangfix tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	boostorg
 GH_PROJECT=	build
-GH_TAGNAME=	9f488e0
+GH_TAGNAME=	8d86b9a
 
 DATADIR=	${PREFIX}/share/b2
 

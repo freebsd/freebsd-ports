@@ -1,6 +1,6 @@
---- boost/config/compiler/clang.hpp.orig	2016-09-21 14:33:21 UTC
+--- boost/config/compiler/clang.hpp.orig	2023-08-08 21:02:50 UTC
 +++ boost/config/compiler/clang.hpp
-@@ -110,6 +110,16 @@
+@@ -126,6 +126,16 @@
  #  endif
  #endif
  
@@ -17,7 +17,7 @@
  #if !__has_feature(cxx_auto_type)
  #  define BOOST_NO_CXX11_AUTO_DECLARATIONS
  #  define BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS
-@@ -192,7 +202,13 @@
+@@ -208,7 +218,13 @@
  #  define BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX
  #endif
  

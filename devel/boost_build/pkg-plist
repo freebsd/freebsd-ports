@@ -87,6 +87,7 @@ bin/b2
 %%DATADIR%%/src/tools/features/instruction-set-feature.jam
 %%DATADIR%%/src/tools/features/internal-feature.jam
 %%DATADIR%%/src/tools/features/library-feature.jam
+%%DATADIR%%/src/tools/features/linemarkers-feature.jam
 %%DATADIR%%/src/tools/features/link-feature.jam
 %%DATADIR%%/src/tools/features/linkflags-feature.jam
 %%DATADIR%%/src/tools/features/local-visibility-feature.jam
@@ -124,6 +125,7 @@ bin/b2
 %%DATADIR%%/src/tools/generators/__init_generators__.jam
 %%DATADIR%%/src/tools/generators/archive-generator.jam
 %%DATADIR%%/src/tools/generators/c-compiling-generator.jam
+%%DATADIR%%/src/tools/generators/c-preprocessing-generator.jam
 %%DATADIR%%/src/tools/generators/dummy-generator.jam
 %%DATADIR%%/src/tools/generators/lib-generator.jam
 %%DATADIR%%/src/tools/generators/linking-generator.jam
