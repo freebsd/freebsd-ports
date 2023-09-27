@@ -1,4 +1,5 @@
 bin/lite-xl
+share/applications/org.lite_xl.lite_xl.desktop
 %%DATADIR%%/colors/abyss.lua
 %%DATADIR%%/colors/betelgeuse.lua
 %%DATADIR%%/colors/c0mfy.lua
@@ -271,3 +272,5 @@ bin/lite-xl
 %%DATADIR%%/string.lua
 %%DATADIR%%/system.lua
 %%DATADIR%%/utf8extra.lua
+share/metainfo/org.lite_xl.lite_xl.appdata.xml
+share/pixmaps/lite-xl.svg

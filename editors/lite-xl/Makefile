@@ -1,6 +1,7 @@
 PORTNAME=	lite-xl
 PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2
 
-USES=		lua:54 meson pkgconfig sdl
+USES=		desktop-file-utils lua:54 meson pkgconfig sdl
 USE_SDL=	sdl2
 
 USE_GITHUB=	yes
@@ -29,6 +30,13 @@ post-install:
 		${STAGEDIR}${DATADIR}/plugins
 	${CP} -a ${WRKSRC_plugins}/plugins \
 		${STAGEDIR}${DATADIR}/plugins/extra
+	${CP} -a ${WRKSRC}/resources/linux/org.lite_xl.lite_xl.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${CP} -a ${WRKSRC}/resources/linux/org.lite_xl.lite_xl.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/metainfo
+	${CP} -a ${WRKSRC}/resources/icons/lite-xl.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/changelog.md ${STAGEDIR}${DOCSDIR}
