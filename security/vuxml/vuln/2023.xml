@@ -1,3 +1,72 @@
+  <vuln vid="af065e47-5d62-11ee-bbae-1c61b4739ac9">
+    <topic>xrdp -- unchecked access to font glyph info</topic>
+    <affects>
+      <package>
+	<name>xrdp</name>
+	<range><lt>0.9.23.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xrdp team reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2023-42822">
+	<p>Access to the font glyphs in xrdp_painter.c is not bounds-checked.
+	Since some of this data is controllable by the user, this can result
+	in an out-of-bounds read within the xrdp executable. The vulnerability
+	allows an out-of-bounds read within a potentially privileged process.
+	On non-Debian platforms, xrdp tends to run as root. Potentially an
+	out-of-bounds write can follow the out-of-bounds read. There is no
+	denial-of-service impact, providing xrdp is running in forking mode. This
+	issue has been addressed in release 0.9.23.1. Users are advised to upgrade.
+	There are no known workarounds for this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-42822</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2023-42822</url>
+      <url>https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-2hjx-rm4f-r9hw</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-09-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c9ff1150-5d63-11ee-bbae-1c61b4739ac9">
+    <topic>xrdp -- Improper handling of session establishment errors allows bypassing OS-level session restrictions</topic>
+    <affects>
+      <package>
+	<name>xrdp</name>
+	<range><lt>0.9.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>xrdp team reports:</p>
+	<blockquote cite="https://www.cve.org/CVERecord?id=CVE-2023-40184">
+	<p>In versions prior to 0.9.23 improper handling of session establishment
+	errors allows bypassing OS-level session restrictions. The `auth_start_session`
+	function can return non-zero (1) value on, e.g., PAM error which may result
+	in session restrictions such as max concurrent sessions per user by PAM
+	(ex ./etc/security/limits.conf) to be bypassed. Users (administrators) don't
+	use restrictions by PAM are not affected. This issue has been addressed in
+	release version 0.9.23. Users are advised to upgrade. There are no known
+	workarounds for this issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-40184</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2023-40184</url>
+      <url>https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-f489-557v-47jq</url>
+    </references>
+    <dates>
+      <discovery>2023-08-30</discovery>
+      <entry>2023-09-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea9d1fd2-5d24-11ee-8507-b42e991fc52e">
     <topic>routinator -- Possible path traversal when storing RRDP responses</topic>
     <affects>
