@@ -7,3 +7,5 @@ SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
 SHA256 (54b5467ec12f.patch) = 2cacc5de7b4b72410b9d338377ee51927fdc61918bf4657dd4c03eda7e56b34f
 SIZE (54b5467ec12f.patch) = 2818
+SHA256 (f9461b0b7d30.patch) = 278adb116da65a783c8c1f103e2c6b3da8de413618cd7a3ced50f27c1a66f07e
+SIZE (f9461b0b7d30.patch) = 6421
