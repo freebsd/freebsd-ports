@@ -1,6 +1,5 @@
 PORTNAME?=		angie
-PORTVERSION=		1.2.0
-PORTREVISION=		1
+PORTVERSION=		1.3.0
 CATEGORIES+=		www
 MASTER_SITES+=		https://download.angie.software/files/:angie
 DISTNAME=		angie-${DISTVERSIONFULL}
@@ -116,7 +115,6 @@ OPTIONS_DEFINE?=	DEBUG
 OPTIONS_DEFAULT?=	DEBUG
 DEBUG_DESC?=		Include debug version
 
-
 .include <bsd.port.options.mk>
 
 post-patch-DEBUG-on:
@@ -168,13 +166,15 @@ do-install:
 .for i in fastcgi.conf fastcgi_params mime.types scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${STAGEDIR}${ETCDIR}/${i}.sample
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/conf/prometheus_all.conf \
+	    ${STAGEDIR}${ETCDIR}/prometheus_all.conf.sample
+
 	${INSTALL_DATA} ${WRKDIR}/angie.conf.sample \
 	    ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/default.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/http.d
 	${INSTALL_DATA} ${WRKDIR}/example.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/stream.d
-
 .for i in 50x.html index.html
 	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${WWWDIR}/html/${i}.sample
 .endfor
