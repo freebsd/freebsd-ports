@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-DISTVERSION=	8.2.0.20230731
+DISTVERSION=	8.2.0.20230831
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -22,14 +22,14 @@ USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t ninja perl5 \
 		pkgconfig python:build shebangfix tar:xz xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	qemu-project
-GL_TAGNAME=	2fc36530dec61eb83c73f5684a0e8f55a0b9a4d1
+GL_TAGNAME=	494a6a2cf7f775d2c20fd6df9601e30606cc2014
 GL_TUPLE=	qemu-project:keycodemapdb:f5772a62ec52591ff6870b7e8ef32482371f22c6:keycodemapdb/subprojects/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/subprojects/dtc \
 		qemu-project:libvfio-user:0b28d205572c80b568a1003db2c8f37ca333e4d7:libvfio/subprojects/libvfio-user \
-		qemu-project:meson:cf5adf0c646474f0259d123fad60ca5ed38ec891:meson/meson \
+		qemu-project:meson:5b16e830cc40827369cf3949a337112be74dec0e:meson/meson \
 		qemu-project:berkeley-softfloat-3:b64af41c3276f97f0e181920400ee056b9c88037:berkeleysoftfloat3/subprojects/berkeley-softfloat-3 \
-		qemu-project:berkeley-testfloat-3:40619cbb3bf32872df8c53cc457039229428a263:berkeleytestfloat3/subprojects/berkeley-testfloat-3
-USE_GNOME=	cairo glib20#libxml2
+		qemu-project:berkeley-testfloat-3:e7af9751d9f9fd3b47911f51a5cfd08af256a9ab:berkeleytestfloat3/subprojects/berkeley-testfloat-3
+USE_GNOME=	cairo glib20
 USE_PERL5=	build
 USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
@@ -85,7 +85,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_CONFIGURE_OFF=	--disable-gnutls
 GTK3_LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 GTK3_USES=	gettext gl
-GTK3_USE=	GNOME=gdkpixbuf2,gtk30,vte3 XORG=x11,xext
+GTK3_USE=	GNOME=gdkpixbuf2,vte3 XORG=x11,xext
 GTK3_CONFIGURE_OFF=	--disable-gtk --disable-vte
 JPEG_USES=		jpeg
 JPEG_CONFIGURE_OFF=	--disable-vnc-jpeg
@@ -93,13 +93,12 @@ NCURSES_BASE_USES=	ncurses:base
 NCURSES_DEFAULT_USES=	ncurses
 NCURSES_PORT_USES=	ncurses:port
 OPENGL_USES=	gl
-OPENGL_USE=	GL=gbm,gl
+OPENGL_USE=	GL=gbm
 OPENGL_CONFIGURE_OFF=	--disable-opengl
 PNG_LIB_DEPENDS=	libpng16.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-vnc-png
 SAMBA_USES=		samba:run # smbd
 SAMBA_CONFIGURE_ON=	--smbd=${LOCALBASE}/sbin/smbd
-#SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_CONFIGURE_OFF=	--disable-vnc-sasl
 STATIC_LINK_PREVENTS=		GTK3 X11
 STATIC_LINK_PREVENTS_MSG=	X11 ui cannot be built static
@@ -107,7 +106,6 @@ STATIC_LINK_CONFIGURE_ON=	--static
 USBREDIR_BUILD_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_RUN_DEPENDS=	usbredir>=0.6:net/usbredir
 USBREDIR_CONFIGURE_OFF=	--disable-usb-redir
-#VDE_LIB_DEPENDS=	libvdeplug.so:net/vde2
 VDE_CONFIGURE_OFF=	--disable-vde
 X11_USES=	sdl
 X11_USE=	SDL=sdl2 XORG=x11,xext GNOME=gdkpixbuf2
