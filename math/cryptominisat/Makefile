@@ -1,5 +1,6 @@
 PORTNAME=	cryptominisat
 DISTVERSION=	5.11.11
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	arrowd@FreeBSD.org

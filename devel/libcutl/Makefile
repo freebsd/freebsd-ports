@@ -1,6 +1,6 @@
 PORTNAME=	libcutl
 PORTVERSION=	1.10.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/${PORTNAME}/${PORTVERSION:R}/
 
