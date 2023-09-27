@@ -7857,3 +7857,4 @@ mail/cyrus-imapd24||2023-09-20|Has expired: No longer supported by upstream
 net/py-python-ceilometerclient||2023-09-22|Remove obsoleted port. This project is no longer maintained
 sysutils/rundeck3|sysutils/rundeck|2023-09-23|Rename to avoid confusion
 games/weebsay||2023-09-26|Has expired: API server is no longer functional
+devel/rubygem-mustache0|devel/rubygem-mustache|2023-09-27|Has expired: Use devel/mustache
