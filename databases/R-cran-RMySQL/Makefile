@@ -1,5 +1,5 @@
 PORTNAME=	RMySQL
-DISTVERSION=	0.10.25
+DISTVERSION=	0.10.26
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,9 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/RMySQL/
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-DBI>=0.4:databases/R-cran-DBI
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-DBI>=0.4:databases/R-cran-DBI
 
 USES=		cpe cran:auto-plist,compiles mysql
 
