@@ -29,6 +29,8 @@ MESON_ARGS=	-Dapp_exe="${PORTNAME}"
 
 CONFLICTS_INSTALL=powder-toy
 
+PORTSCOUT=	limit:^snapshot
+
 PORTDOCS=	README.md changelog.txt
 
 OPTIONS_DEFINE=		DOCS SSE
