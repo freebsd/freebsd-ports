@@ -1,5 +1,5 @@
 PORTNAME=	helvum
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 
 USES=		cargo desktop-file-utils gnome llvm meson pkgconfig
 USE_GITLAB=	yes
-USE_GNOME=	cairo gtk40
+USE_GNOME=	cairo gtk40 libadwaita
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	ryuukyu
 MAKE_ENV=	${CARGO_ENV}
