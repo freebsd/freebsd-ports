@@ -1,5 +1,5 @@
---- hw/xfree86/os-support/bsd/bsd_init.c.orig	2022-01-02 23:41:56.000000000 +0100
-+++ hw/xfree86/os-support/bsd/bsd_init.c	2022-06-29 11:57:25.596851000 +0200
+--- hw/xfree86/os-support/bsd/bsd_init.c.orig	2023-03-29 12:55:03 UTC
++++ hw/xfree86/os-support/bsd/bsd_init.c
 @@ -48,6 +48,8 @@ static int initialVT = -1;
  #if defined (SYSCONS_SUPPORT) || defined (PCVT_SUPPORT)
  static int VTnum = -1;
@@ -54,6 +54,15 @@
              }
              else {              /* xf86Info.ShareVTs */
                  close(xf86Info.consoleFd);
+@@ -303,7 +329,7 @@ xf86OpenConsole()
+     else {
+         /* serverGeneration != 1 */
+ #if defined (SYSCONS_SUPPORT) || defined (PCVT_SUPPORT)
+-        if (!xf86Info.ShareVTs &&
++        if (!xf86Info.ShareVTs && xf86Info.autoVTSwitch &&
+             (xf86Info.consType == SYSCONS || xf86Info.consType == PCVT)) {
+             if (ioctl(xf86Info.consoleFd, VT_ACTIVATE, xf86Info.vtno) != 0) {
+                 xf86Msg(X_WARNING, "xf86OpenConsole: VT_ACTIVATE failed\n");
 @@ -594,6 +620,8 @@ xf86CloseConsole()
      case SYSCONS:
      case PCVT:
@@ -63,3 +72,12 @@
          if (ioctl(xf86Info.consoleFd, VT_GETMODE, &VT) != -1) {
              VT.mode = VT_AUTO;
              ioctl(xf86Info.consoleFd, VT_SETMODE, &VT); /* dflt vt handling */
+@@ -604,7 +632,7 @@ xf86CloseConsole()
+                            strerror(errno));
+         }
+ #endif
+-        if (initialVT != -1)
++        if (xf86Info.autoVTSwitch && initialVT != -1)
+             ioctl(xf86Info.consoleFd, VT_ACTIVATE, initialVT);
+         break;
+ #endif                          /* SYSCONS_SUPPORT || PCVT_SUPPORT */
