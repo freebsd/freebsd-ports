@@ -28,9 +28,6 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 USES+=	llvm:max=15
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
 .endif
 
 post-install:
