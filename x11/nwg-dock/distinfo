@@ -1,6 +1,6 @@
-TIMESTAMP = 1692573917
-SHA256 (nwg-piotr-nwg-dock-v0.3.7_GH0.tar.gz) = f8a7c66aca1237af41dceb8c79ed00773d04ac267c4737cca63353b77c659fff
-SIZE (nwg-piotr-nwg-dock-v0.3.7_GH0.tar.gz) = 29864
+TIMESTAMP = 1695861001
+SHA256 (nwg-piotr-nwg-dock-v0.3.8_GH0.tar.gz) = d58aa9e79a46c9fe73a70b457ed6c94269feb4116b4de7586578185ddd3492b1
+SIZE (nwg-piotr-nwg-dock-v0.3.8_GH0.tar.gz) = 30034
 SHA256 (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = f8cee874873fe9fc1a81e8a7ca83df85c57aa86279c09cb8cba10d5feb7ed295
 SIZE (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = 2819
 SHA256 (dlasky-gotk3-layershell-b0c42cd8474f_GH0.tar.gz) = 7eed1f818f39e9124b2ef8fcf9df24adae371ce882f192b352be24e0408b3680
