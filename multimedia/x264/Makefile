@@ -27,7 +27,11 @@ COMMENT?=	H.264/MPEG-4 AVC Video Encoding (Front End CLI)
 WWW=		https://www.videolan.org/x264.html
 
 LICENSE=	GPLv2
+LICENSE_NAME_PGO=	PGO
 LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS_PGO=	auto-accept
+# ${Y4M_VIDEO_DISTFILE} file may not be mirrored
+LICENSE_DISTFILES_PGO=	${Y4M_VIDEO_DISTFILE}
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS?=	libx264.so:multimedia/libx264
@@ -39,18 +43,25 @@ X264_GITVER=	${GL_TAGNAME:C/^(.{7}).*/\1/}
 USES?=		pkgconfig
 USES+=		compiler:c11 gmake localbase shebangfix
 USE_GITLAB=	yes
-USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
 GL_TAGNAME=	baee400fa9ced6f5481a728138fed6e867b0ff7f
-HAS_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	configure
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS?=	--system-libx264
+CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
+			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
+			--extra-ldflags="${LDFLAGS}"
+
 PLIST_FILES?=	bin/x264
 
 OPTIONS_DEFINE+=	BASH DEBUG FFMS LAVF PGO SWSCALE
+OPTIONS_DEFAULT+=	BASH FFMS LAVF LSMASH SWSCALE
 OPTIONS_RADIO+=		MP4
 OPTIONS_RADIO_MP4+=	GPAC LSMASH
-OPTIONS_DEFAULT+=	BASH FFMS LAVF LSMASH SWSCALE
 
 .if make(makesum) # for optional distfiles
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
@@ -67,48 +78,32 @@ BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
 BASH_RUN_DEPENDS=	bash-completion>0:shells/bash-completion
 BASH_CONFIGURE_ENABLE=	bashcompletion
 BASH_PLIST_FILES=	share/bash-completion/completions/x264
-
-DEBUG_CONFIGURE_ENABLE=	debug
 DEBUG_CONFIGURE_OFF=	--enable-strip
-
+DEBUG_CONFIGURE_ENABLE=	debug
+FFMS_IMPLIES=		SWSCALE
 FFMS_LIB_DEPENDS=	libffms2.so:multimedia/ffms2
 FFMS_CONFIGURE_ENABLE=	ffms
-FFMS_IMPLIES=		SWSCALE
-
 GPAC_LIB_DEPENDS=	libgpac.so:multimedia/gpac-libgpac
 GPAC_CONFIGURE_ENABLE=	gpac
-
+LAVF_IMPLIES=		SWSCALE
 LAVF_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 			libavformat.so:multimedia/ffmpeg \
 			libavutil.so:multimedia/ffmpeg
 LAVF_CONFIGURE_ENABLE=	lavf
-LAVF_IMPLIES=		SWSCALE
-
 LSMASH_LIB_DEPENDS=	liblsmash.so:multimedia/l-smash
 LSMASH_CONFIGURE_ENABLE=lsmash
-
 PGO_DISTFILES=		${Y4M_VIDEO_DISTFILE}:pgo
 PGO_MAKE_ENV=		VIDS="${WRKDIR}/${Y4M_VIDEO}"
 PGO_ALL_TARGET=		fprofiled
-# y4m sample video
-Y4M_VIDEO=		example.y4m
-Y4M_VIDEO_DISTFILE=	example.y4m.bz2
-PGO_VARS=		USE_GCC=yes \
-			LICENSE+=PGO LICENSE_COMB=multi
-
-# ${Y4M_VIDEO_DISTFILE} file may not be mirrored
-LICENSE_NAME_PGO=	PGO
-LICENSE_DISTFILES_PGO=	${Y4M_VIDEO_DISTFILE}
-LICENSE_PERMS_PGO=	auto-accept
-
+PGO_USE=		GCC=yes
+PGO_VARS=		LICENSE+=PGO LICENSE_COMB=multi
 SWSCALE_LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 			libswscale.so:multimedia/ffmpeg
 SWSCALE_CONFIGURE_ENABLE=	swscale
 
-CONFIGURE_ARGS?=	--system-libx264
-CONFIGURE_ARGS+=	--prefix="${PREFIX}" \
-			--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
-			--extra-ldflags="${LDFLAGS}"
+# y4m sample video
+Y4M_VIDEO=		example.y4m
+Y4M_VIDEO_DISTFILE=	example.y4m.bz2
 
 post-extract-PGO-on:
 	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${Y4M_VIDEO_DISTFILE} \
@@ -131,7 +126,7 @@ pre-build:
 
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && !${PORT_OPTIONS:MPGO}
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
