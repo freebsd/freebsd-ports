@@ -1,5 +1,5 @@
 PORTNAME=	agate-sql
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 CATEGORIES=	databases textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://agate-sql.rtfd.org/
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.5.0:textproc/py-agate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy14<2:databases/py-sqlalchemy14@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy20:databases/py-sqlalchemy20@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
