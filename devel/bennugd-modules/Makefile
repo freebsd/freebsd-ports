@@ -13,14 +13,16 @@ WWW=		https://www.bennugd.org/
 LIB_DEPENDS=	libbgdrtm.so:devel/bennugd-core \
 		libpng.so:graphics/png
 
-USES=		dos2unix libtool pkgconfig sdl tar:bzip2
+USES=		dos2unix libtool pkgconfig sdl tar:bzip2 xorg
 USE_SDL=	sdl mixer
+USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/bennugd"
 DOS2UNIX_GLOB=	*.c
 INSTALL_TARGET=	install-strip
+CFLAGS+=	-Wno-incompatible-function-pointer-types -Wno-int-conversion
 
 WRKSRC=		${WRKDIR}/bennugd/${PORTNAME}
 
