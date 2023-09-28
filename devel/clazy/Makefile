@@ -24,8 +24,4 @@ OPTIONS_DEFINE=	DOCS
 
 DOCS_CMAKE_BOOL=	CLAZY_MAN_PAGE
 
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-
 .include <bsd.port.mk>
