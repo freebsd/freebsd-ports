@@ -1,6 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	8.5.3
 DISTVERSIONPREFIX=	frr-
+PORTREVISION=	1
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	8-pythontools
@@ -36,17 +37,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/etc/frr/support_bundle_commands.conf ${STAGEDIR}${ETCDIR}/
 .else
 
-LIB_DEPENDS=	libjson-c.so:devel/json-c \
-		libyang.so.2:net/libyang2 \
-		libcares.so:dns/c-ares \
-		libpcre2-8.so:devel/pcre2
+LIB_DEPENDS=	libcares.so:dns/c-ares \
+		libjson-c.so:devel/json-c \
+		libpcre2-8.so:devel/pcre2 \
+		libyang.so.2:net/libyang2
 
-USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
-		makeinfo python:build readline shebangfix
+USES=		autoreconf bison compiler:c++11-lang gmake libtool makeinfo \
+		pkgconfig python:build readline shebangfix
 
 BINARY_ALIAS=	python=${PYTHON_VERSION}
 
-CONFLICTS=	openbgpd openospfd zebra quagga
+CONFLICTS=	frr[79] openbgpd openospfd quagga zebra
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
@@ -61,30 +62,29 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SHEBANG_FILES=	tools/frr-reload.py \
-				tools/generate_support_bundle.py
-PLIST=			${.CURDIR}/pkg-plist
+		tools/generate_support_bundle.py
+PLIST=		${.CURDIR}/pkg-plist
 PKGMESSAGE=	""
 .else
 INFO=		frr
 
-OPTIONS_DEFINE=		BACKTRACE CONFIGROLLBACKS FPM DATACENTER LDPD PAM SHELLACCESS \
-			VTYSH MANPAGES MULTIPATH TCMALLOC RPKI SHARPD SNMP
-OPTIONS_DEFAULT=	BACKTRACE VTYSH RPKI FPM MANPAGES
+OPTIONS_DEFINE=		BACKTRACE CONFIGROLLBACKS DATACENTER FPM LDPD MANPAGES MULTIPATH \
+			PAM RPKI SHARPD SHELLACCESS SNMP TCMALLOC
+OPTIONS_DEFAULT=	BACKTRACE FPM MANPAGES RPKI
 OPTIONS_SUB=	yes
 
-BACKTRACE_DESC=	Enable backtrace
+BACKTRACE_DESC=		Enable backtrace
 CONFIGROLLBACKS_DESC=	Enable configuration rollback support
-FPM_DESC=		Enable Forwarding Plane Manager support
 DATACENTER_DESC=	Use reduced BGP timers
+FPM_DESC=		Enable Forwarding Plane Manager support
 LDPD_DESC=		Build ldpd
 MULTIPATH_DESC=		Allow 64 multipath routes (16 default)
 PAM_DESC=		Use libpam for PAM support in vtysh
 RPKI_DESC=		Add BGP RPKI (RFC 6810) support
+SHARPD_DESC=		Build sharpd
 SHELLACCESS_DESC=	Allow users to access shell/telnet/ssh
 SNMP_DESC=		SNMP support
-SHARPD_DESC=	Build sharpd
 TCMALLOC_DESC=		Use tcmalloc
-VTYSH_DESC=		Build integrated vty shell
 
 USERS=	frr
 GROUPS=	frr frrvty
@@ -96,6 +96,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-group=frr \
 		--enable-vty-group=frrvty \
+		--enable-vtysh \
 		--disable-doc-html \
 		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/run/frr \
@@ -106,29 +107,27 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-pbrd \
 		--with-vtysh-pager=cat
 
-MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-MANPAGES_CONFIGURE_OFF=		--disable-doc
-BACKTRACE_LIB_DEPENDS=	libunwind.so:devel/libunwind
+BACKTRACE_LIB_DEPENDS=		libunwind.so:devel/libunwind
 BACKTRACE_CONFIGURE_ENABLE=	backtrace
 CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks
 DATACENTER_CONFIGURE_ENABLE=	datacenter
-SHELLACCESS_CONFIGURE_ENABLE=	shell-access
 FPM_CONFIGURE_ENABLE=		fpm
-PAM_CONFIGURE_WITH=		libpam
 LDPD_CONFIGURE_ENABLE=		ldpd
+MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_CONFIGURE_OFF=		--disable-doc
 MULTIPATH_CONFIGURE_ON=		--enable-multipath=64
+PAM_CONFIGURE_WITH=		libpam
 RPKI_CONFIGURE_ENABLE=		rpki
 RPKI_LIB_DEPENDS=		librtr.so:net-mgmt/rtrlib \
 				libssh.so:security/libssh
-TCMALLOC_CONFIGURE_ENABLE=	tcmalloc
-TCMALLOC_LIB_DEPENDS=		libtcmalloc.so:devel/google-perftools
+SHARPD_CONFIGURE_ENABLE=		sharpd
+SHELLACCESS_CONFIGURE_ENABLE=	shell-access
 SNMP_CONFIGURE_ENABLE=		snmp
-SNMP_CFLAGS=			"-std=gnu99"
 SNMP_LIB_DEPENDS=		libnetsnmp.so:net-mgmt/net-snmp
 SNMP_USES=			ssl
-SHARPD_CONFIGURE_ENABLE=		sharpd
-VTYSH_CONFIGURE_ENABLE=		vtysh
+TCMALLOC_CONFIGURE_ENABLE=	tcmalloc
+TCMALLOC_LIB_DEPENDS=		libtcmalloc.so:devel/google-perftools
 
 USE_RC_SUBR=	frr watchfrr
 
