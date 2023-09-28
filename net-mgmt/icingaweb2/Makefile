@@ -1,7 +1,7 @@
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icinga-php-
 		icinga-php-thirdparty${PHP_PKGNAMESUFFIX}>=0.11.0:net-mgmt/icinga-php-thirdparty@${PHP_FLAVOR} \
 		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>=0.18.0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR}
 
-USES=		php:build,web,flavors shebangfix
-USE_PHP=	bcmath bitset ctype curl dom gd gettext iconv ldap \
+USES=		php:build,web,flavors shebangfix gettext
+USE_PHP=	bcmath bitset ctype curl dom fileinfo filter gd gettext iconv intl ldap \
 		mbstring mcrypt memcache memcached opcache pdo \
 		pdo_sqlite posix session simplexml soap sockets sqlite3 xml \
 		zlib
@@ -40,14 +40,12 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
 
-OPTIONS_DEFINE=		EXAMPLES LDAP MYSQL NLS PDF PGSQL SQLITE
+OPTIONS_DEFINE=		EXAMPLES LDAP MYSQL PDF PGSQL SQLITE
 OPTIONS_DEFAULT=	LDAP MYSQL PGSQL SQLITE
 
 PDF_DESC=		Export graphs as PDF
 PDF_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
 
-NLS_USES=	gettext
-NLS_USE=	PHP=intl
 PGSQL_USE=	PHP=pdo_pgsql,pgsql
 MYSQL_USE=	PHP=mysqli,pdo_mysql
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
