@@ -1,0 +1,14 @@
+https://lists.sr.ht/~emersion/public-inbox/patches/44750
+
+--- src/libsystemd/libsystemd.sym.orig	2022-12-16 10:13:02 UTC
++++ src/libsystemd/libsystemd.sym
+@@ -72,9 +72,6 @@ global:
+         sd_bus_get_current_message;
+         sd_bus_get_current_handler;
+         sd_bus_get_current_userdata;
+-        sd_bus_attach_event;
+-        sd_bus_detach_event;
+-        sd_bus_get_event;
+         sd_bus_add_filter;
+         sd_bus_add_match;
+         sd_bus_add_object;
