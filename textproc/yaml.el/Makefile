@@ -1,6 +1,6 @@
 PORTNAME=	yaml.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.5.4
 CATEGORIES=	textproc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -27,5 +27,10 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} yaml.el* \
 	    ${STAGEDIR}${PREFIX}/${EMACS_VERSION_SITE_LISPDIR})
+
+do-test:
+	(cd ${WRKSRC} \
+	&& ${EMACS_CMD} -Q -batch -L . -l ert -l yaml.el \
+	-l yaml-tests.el -f ert-run-tests-batch-and-exit)
 
 .include <bsd.port.mk>
