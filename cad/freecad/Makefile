@@ -1,5 +1,6 @@
 PORTNAME=	FreeCAD
 DISTVERSION=	0.21.1
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -28,7 +29,6 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libTKernel.so:cad/opencascade \
 		libxerces-c.so:textproc/xerces-c3 \
 		libboost_thread.so:devel/boost-libs \
-		libarea.so:devel/libarea \
 		libmed.so:french/med \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5
