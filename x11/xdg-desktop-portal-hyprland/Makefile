@@ -58,8 +58,11 @@ post-configure:
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
 BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
-USES+=		llvm:min=16,build,export
+USES+=		llvm:min=16,build
 PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
 CMAKE_BIN=	${LOCALBASE}/bin/cmake
 
