@@ -554,7 +554,6 @@
     SUBDIR += dia2code
     SUBDIR += dia2code+
     SUBDIR += ding-libs
-    SUBDIR += directfb
     SUBDIR += dispy
     SUBDIR += distcc
     SUBDIR += distel
