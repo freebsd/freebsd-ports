@@ -22,9 +22,6 @@ GH_PROJECT=	swift-corelibs-libdispatch
 
 .if ${OSVERSION} > 1400000
 USES+=	llvm:build
-CC=	${_LLVM_MK_PREFIX}/bin/clang
-CPP=	${_LLVM_MK_PREFIX}/bin/clang-cpp
-CXX=	${_LLVM_MK_PREFIX}/bin/clang++
 #LD?=	${_LLVM_MK_PREFIX}/bin/ld
 .else
 USES+=	compiler:c++17-lang
