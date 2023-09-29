@@ -41,7 +41,7 @@ RSYNC_RUN_DEPENDS=	rsync:net/rsync
 NOPRECIOUSMAKEVARS=	yes
 
 pre-configure:
-	cd ${WRKSRC} && ${MAKE_CMD} compiler
+	cd ${WRKSRC} && ${SETENV} CC="${CC}" ${MAKE_CMD} compiler
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/opam-installer
