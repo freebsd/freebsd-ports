@@ -1,7 +1,8 @@
 PORTNAME=	dunamai
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.1
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/mtkennerly/dunamai/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
