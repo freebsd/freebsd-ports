@@ -29,4 +29,7 @@ PLIST_FILES=	lib/gdalplugins/gdal_GRASS.so \
 USE_GITHUB=	yes
 GH_ACCOUNT=	OSGeo
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gdalplugins/*.so
+
 .include <bsd.port.mk>
