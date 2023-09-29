@@ -1,3 +1,40 @@
+  <vuln vid="6d9c6aae-5eb1-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>117.0.5938.132</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>117.0.5938.132</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	    <li>[1486441] High CVE-2023-5217: Heap buffer overflow in vp8 encoding in libvpx. Reported by Clément Lecigne of Google's Threat Analysis Group on 2023-09-25</li>
+	    <li>[1478889] High CVE-2023-5186: Use after free in Passwords. Reported by [pwn2car] on 2023-09-05</li>
+	    <li>[1475798] High CVE-2023-5187: Use after free in Extensions. Reported by Thomas Orlita on 2023-08-25</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5217</cvename>
+      <cvename>CVE-2023-5186</cvename>
+      <cvename>CVE-2023-5187</cvename>
+      <url>https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-27</discovery>
+      <entry>2023-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2bcd6ba4-d8e2-42e5-9033-b50b722821fb">
     <topic>electron{22,24,25} -- Heap buffer overflow in vp8 encoding in libvpx</topic>
     <affects>
