@@ -1,6 +1,6 @@
 PORTNAME=	sonarr
 PORTVERSION=	3.0.10.1567
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
 DISTNAME=	Sonarr.main.${PORTVERSION}.linux
@@ -17,6 +17,8 @@ RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo \
 
 USES=	sqlite:3
 USE_RC_SUBR=	sonarr
+
+CONFLICTS_INSTALL=	sonarr-devel
 
 NO_ARCH=	YES
 NO_BUILD=	YES

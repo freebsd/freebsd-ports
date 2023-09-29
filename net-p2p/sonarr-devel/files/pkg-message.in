@@ -1,0 +1,33 @@
+[
+{ type: install
+  message: <<EOM
+
+%%PORTNAME%% relies on Microsoft dotNET5+ SDK to be built
+Microsoft does not have an official version of dotNET for FreeBSD
+
+This package was built with an UNOFFICIAL UNSUPPORTED version of dotNET
+If this is something that you do not want, remove this package with
+"pkg remove %%PORTNAME%%"
+
+This package installs a service file.
+Enable it with "sysrc %%PORTNAME%%_enable=TRUE"
+Start it with "service %%PORTNAME%% start".
+
+If you are running this in a jail please set "allow_mlock=1" or similar
+for this jail otherwise the program will fail to start
+
+Finally, the built-in updater is disabled.
+If you like to use the updater, remove the file %%DATADIR%%/package_info,
+chown the directory %%DATADIR%%/bin to %%USERS%% and restart %%PORTNAME%%
+The built-in updater can now be configured in the Settings tab of %%PORTNAME%%
+
+NOTE: While the built-in updater will update %%PORTNAME%% it has side-effects:
+it breaks the ability of pkg to check for corruption in %%PORTNAME%% files
+it breaks the ability of pkg to determine if it has removed files correctly
+during "pkg remove %%PORTNAME%%" and also
+it breaks the fundamental understanding that updates should be handled only
+by the system that put the files there in the first place.
+
+EOM
+}
+]

@@ -5681,7 +5681,6 @@ biology/py-fastTSNE|math/py-openTSNE|2021-03-13|project renamed/reimplemented un
 misc/py-XlsxWriter|textproc/py-xlsxwriter|2021-03-13|Remove duplicate
 emulators/open-vm-tools-nox11|emulators/open-vm-tools@nox11|2021-03-17|Moved to a flavored, generic, version
 math/s2geometry|graphics/s2|2021-03-22|Remove duplicate port
-net-p2p/sonarr-devel|net-p2p/sonarr|2021-03-23|Removed, use net-p2p/sonarr instead
 www/py-django-jsonfield||2021-03-24|Removed: This port will be deleted in the future, please switch to use www/py-jsonfield or www/py-jsonfield2
 devel/hs-c2hs||2021-03-27|Has expired: Was used as BUILD_DEPENDS, not useful on its own
 x11-toolkits/tile||2021-03-27|Has expired: The Tile widget set is part of Tk 8.5 and above, see TIP 248
