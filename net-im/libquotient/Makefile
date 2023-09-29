@@ -52,9 +52,6 @@ _QT5_ONLY_qt6=		"@comment "
 # Work around compiler bug, see pr: 272285
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 USES+=		llvm
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
 .endif
 
 .include <bsd.port.mk>
