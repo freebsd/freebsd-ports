@@ -1,5 +1,6 @@
 PORTNAME=	freerdp
 DISTVERSION=	2.11.2
+PORTREVISION=	1
 CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
@@ -7,6 +8,8 @@ MASTER_SITES=	https://pub.freerdp.com/releases/ \
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
 PATCHFILES+=	61983cd6dcb86097d91b7ef405abc1266444a368.patch:-p1 # ffmpeg6 support: AVPicture
 								   # https://github.com/FreeRDP/FreeRDP/pull/8941
+PATCHFILES+=	b27b20b2a27217be44fbc5d734299dc45572a207.patch:-p1 # Advertise Image RFX GUID when rfx-mode:image
+								   # https://github.com/FreeRDP/FreeRDP/pull/9428
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Free implementation of Remote Desktop Protocol
