@@ -1404,7 +1404,6 @@
     SUBDIR += libsysinfo
     SUBDIR += libtai
     SUBDIR += libtap
-    SUBDIR += libtar
     SUBDIR += libtecla
     SUBDIR += libtermkey
     SUBDIR += libtextstyle
