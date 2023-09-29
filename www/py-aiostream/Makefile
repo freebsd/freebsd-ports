@@ -1,17 +1,22 @@
 PORTNAME=	aiostream
-DISTVERSION=	0.4.5
+PORTVERSION=	0.5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generator-based operators for asynchronous iteration
-WWW=		https://github.com/vxgmichel/aiostream
+WWW=		https://aiostream.readthedocs.io/en/stable/ \
+		https://github.com/vxgmichel/aiostream
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
