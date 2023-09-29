@@ -61,4 +61,3 @@ lib/libshiboken6.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/shiboken6_generator/_config.py
 %%PYTHON_SITELIBDIR%%/shiboken6_generator/_git_shiboken_generator_version.py
 libdata/pkgconfig/shiboken6.pc
-include/shiboken6/sbkwindows.h
