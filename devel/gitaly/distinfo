@@ -1,7 +1,7 @@
-TIMESTAMP = 1695114113
-SHA256 (go/devel_gitaly/gitaly-v16.3.4/go.mod) = 90b3743fb25526e4b77aeca1a9b00d0a99c5288da835d80bf29121fb2a211db2
-SIZE (go/devel_gitaly/gitaly-v16.3.4/go.mod) = 10532
-SHA256 (go/devel_gitaly/gitaly-v16.3.4/mfechner-libgit2-3bd8f66803c056325d5835d1fbc0c2db2ef89d06_GH0.tar.gz) = a86257b2563d588c3080cf8845c9bd812f52a45ca375862a05a5b9c45e7d7ddd
-SIZE (go/devel_gitaly/gitaly-v16.3.4/mfechner-libgit2-3bd8f66803c056325d5835d1fbc0c2db2ef89d06_GH0.tar.gz) = 5883130
-SHA256 (go/devel_gitaly/gitaly-v16.3.4/gitaly-v16.3.4.tar.bz2) = 9137523bf553a48caf689ab54d136935373cb05673d2b782f039a250bfb072ce
-SIZE (go/devel_gitaly/gitaly-v16.3.4/gitaly-v16.3.4.tar.bz2) = 2461104
+TIMESTAMP = 1695958229
+SHA256 (go/devel_gitaly/gitaly-v16.3.5/go.mod) = 90b3743fb25526e4b77aeca1a9b00d0a99c5288da835d80bf29121fb2a211db2
+SIZE (go/devel_gitaly/gitaly-v16.3.5/go.mod) = 10532
+SHA256 (go/devel_gitaly/gitaly-v16.3.5/mfechner-libgit2-3bd8f66803c056325d5835d1fbc0c2db2ef89d06_GH0.tar.gz) = a86257b2563d588c3080cf8845c9bd812f52a45ca375862a05a5b9c45e7d7ddd
+SIZE (go/devel_gitaly/gitaly-v16.3.5/mfechner-libgit2-3bd8f66803c056325d5835d1fbc0c2db2ef89d06_GH0.tar.gz) = 5883130
+SHA256 (go/devel_gitaly/gitaly-v16.3.5/gitaly-v16.3.5.tar.bz2) = f7ce644d65b1ade76c99b0495a0d0c726245b266280524e4280ecb54bfaec1b7
+SIZE (go/devel_gitaly/gitaly-v16.3.5/gitaly-v16.3.5.tar.bz2) = 2461324
