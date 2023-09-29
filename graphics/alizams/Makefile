@@ -7,6 +7,9 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM Viewer
 WWW=		https://github.com/AlizaMedicalImaging/AlizaMS
 
+PATCH_SITES=	https://github.com/AlizaMedicalImaging/AlizaMS/commit/
+PATCHFILES=	dff6bb9bbba97dcf67793712d589ce3cedf8876f.patch:-p1
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
@@ -29,7 +32,7 @@ CMAKE_ARGS=	-DALIZA_QT_VERSION=5
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != amd64
-CXXFLAGS+=	-DDISABLE_SIMDMATH # i386 also needs disabling SIND, see https://github.com/InsightSoftwareConsortium/ITK/issues/3771#issuecomment-1328839390
+CMAKE_ARGS+=	-DALIZA_DISABLE_SIMDMATH:BOOL=YES # i386 also needs disabling SIND, see https://github.com/InsightSoftwareConsortium/ITK/issues/3771#issuecomment-1328839390
 .endif
 
 .include <../../science/InsightToolkit/Makefile.version>
