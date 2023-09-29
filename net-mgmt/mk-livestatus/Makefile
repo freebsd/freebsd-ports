@@ -29,6 +29,8 @@ EXAMPLE_FILES=	example_multisite.py example.py \
 # parameter "command_file" from nagios.cfg
 COMMAND_FILE?=	/var/spool/nagios/rw/live
 
+CFLAGS+=	-fcommon
+
 OPTIONS_DEFINE=	EXAMPLES PERL
 OPTIONS_SINGLE=	NAGIOS
 OPTIONS_SINGLE_NAGIOS=	NAGIOS3 NAGIOS4
@@ -59,11 +61,4 @@ post-install-EXAMPLES-on:
 		${PORTEXAMPLES:S|^|${WRKSRC}/api/python/|}
 	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/api/python/|} ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.pre.mk>
-
-# Fix building with clang 11 ("ld: error: duplicate symbol: g_mainthread_id")
-.if ${OSVERSION} >= 1204000
-CFLAGS+=	-fcommon
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
