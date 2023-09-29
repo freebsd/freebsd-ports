@@ -26,9 +26,6 @@ MYC_ALL_TARGET=	myc
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 USES+=	llvm:max=14
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
 .endif
 
 post-install:
