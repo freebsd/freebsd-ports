@@ -4,7 +4,6 @@
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
     SUBDIR += a2jmidid
-    SUBDIR += aacgain
     SUBDIR += abcde
     SUBDIR += abcselect
     SUBDIR += abgate-lv2

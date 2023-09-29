@@ -7864,3 +7864,4 @@ x11-fonts/sourcecodepro-ttf|x11-fonts/source-code-pro-ttf|2023-09-30|Move x11-fo
 x11-fonts/sourceserifpro-ttf|x11-fonts/source-serif-ttf|2023-09-30|Move x11-fonts/sourceserifpro-ttf to x11-fonts/source-serif-ttf
 www/pserv||2023-09-30|Has expired: Abandonware, last release in 2005. Consider migrating to www/apache24 , www/lighttpd or www/nginx
 www/polipo||2023-09-30|Has expired: No longer maintained upstream
+audio/aacgain||2023-09-30|Has expired: Obsolete way of handling volume adjustment, consider using audio/rsgain
