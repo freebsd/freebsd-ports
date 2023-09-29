@@ -1,5 +1,5 @@
 PORTNAME=	datasette
-PORTVERSION=	0.64.3
+PORTVERSION=	0.64.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiofiles>=0.4:devel/py-aiofiles@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=1.0:devel/py-pluggy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR} \
-		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uvicorn>=0.11:www/py-uvicorn@${PY_FLAVOR}
 
 USES=		python
