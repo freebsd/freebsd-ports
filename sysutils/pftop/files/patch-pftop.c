@@ -1,6 +1,6 @@
---- pftop.c.orig	2007-11-07 01:36:46.000000000 -0500
-+++ pftop.c	2008-05-16 15:57:12.000000000 -0400
-@@ -1486,7 +1486,13 @@
+--- pftop.c.orig	2023-09-29 17:36:57 UTC
++++ pftop.c
+@@ -1663,7 +1663,13 @@ print_rule(struct pf_rule *pr)
  	print_fld_size(FLD_BYTES, pr->bytes);
  #endif
  	print_fld_uint(FLD_RULE, pr->nr);
@@ -15,7 +15,7 @@
  	if (pr->quick)
  		print_fld_str(FLD_QUICK, "Quick");
  
-@@ -1570,10 +1576,10 @@
+@@ -1747,10 +1753,10 @@ print_rule(struct pf_rule *pr)
  #ifdef HAVE_RULE_UGID
  	if (pr->uid.op)
  		tb_print_ugid(pr->uid.op, pr->uid.uid[0], pr->uid.uid[1],
@@ -28,9 +28,9 @@
  #endif
  
  	if (pr->flags || pr->flagset) {
-@@ -1765,7 +1771,12 @@
- 				  strerror(errno));
- 			return (-1);
+@@ -1952,7 +1958,12 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+ 			ret = -1;
+ 			break;
  		}
 +#ifdef PFALTQ_FLAG_IF_REMOVED
 +		if (pa.altq.qid > 0 &&

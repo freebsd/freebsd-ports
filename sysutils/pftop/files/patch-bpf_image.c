@@ -1,6 +1,6 @@
---- bpf_image.c.orig	2016-09-12 16:51:21.704680000 +0200
-+++ bpf_image.c	2016-09-12 16:43:28.038646000 +0200
-@@ -36,7 +36,7 @@
+--- bpf_image.c.orig	2022-06-07 16:20:35 UTC
++++ bpf_image.c
+@@ -36,7 +36,7 @@ bpf_image(p, n)
  
  char *
  bpf_image(p, n)

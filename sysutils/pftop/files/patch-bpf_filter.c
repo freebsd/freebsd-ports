@@ -1,6 +1,6 @@
---- bpf_filter.c.orig	2016-09-12 16:50:11.454297000 +0200
-+++ bpf_filter.c	2016-09-12 16:43:28.150188000 +0200
-@@ -143,8 +143,8 @@
+--- bpf_filter.c.orig	2022-06-07 16:20:35 UTC
++++ bpf_filter.c
+@@ -143,8 +143,8 @@ bpf_filter(pc, p, wirelen, buflen)
   */
  u_int
  bpf_filter(pc, p, wirelen, buflen)
