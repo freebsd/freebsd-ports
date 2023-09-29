@@ -1,6 +1,6 @@
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.10
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -20,9 +20,10 @@ LIB_DEPENDS=	librevenge-0.0.so:textproc/librevenge \
 		liblangtag.so:devel/liblangtag \
 		libxml2.so:textproc/libxml2
 
-USES=		compiler:c++11-lib gmake libtool localbase pkgconfig tar:xz
+USES=		compiler:c++17-lang gmake libtool localbase pkgconfig tar:xz
+USE_CXXSTD=	c++17
 
-MDDS_VERSION=	2.0
+MDDS_VERSION=	2.1
 
 CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs --with-mdds=${MDDS_VERSION}
 
