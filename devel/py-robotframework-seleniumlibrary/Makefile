@@ -1,5 +1,6 @@
 PORTNAME=	robotframework-seleniumlibrary
 PORTVERSION=	6.1.2
+PORTREVISION=	1
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}robotframework>=4.1.3:devel/py-robotframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}robotframework-pythonlibcore>=3.0.0:devel/py-robotframework-pythonlibcore@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}selenium>=3.141.0:www/py-selenium@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}selenium>=4.3.0:www/py-selenium@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
