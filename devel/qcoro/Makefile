@@ -30,7 +30,6 @@ PLIST_SUB=	QT_VER=${FLAVOR:S/qt//}
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc*}
-CXX=		clang++${LLVM_VERSION}
 USES+=		llvm:min=16
 .endif
 
