@@ -39,9 +39,6 @@ BIN_SYMLINKS=	bin/n14 \
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 USES+=		llvm:max=14
-CPP=            clang-cpp${LLVM_VERSION}
-CC=             clang${LLVM_VERSION}
-CXX=            clang++${LLVM_VERSION}
 .endif
 
 post-patch:
