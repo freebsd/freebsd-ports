@@ -404,7 +404,7 @@ include/netpbm/runlength.h
 include/netpbm/shhopt.h
 lib/libnetpbm.so
 lib/libnetpbm.so.11
-lib/libnetpbm.so.11.103
+lib/libnetpbm.so.11.104
 %%DATADIR%%/palmcolor8.map
 %%DATADIR%%/palmgray1.map
 %%DATADIR%%/palmgray2.map

@@ -1,5 +1,5 @@
 PORTNAME=	netpbm
-DISTVERSION=	11.03.06
+DISTVERSION=	11.04.02
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/leres/netpbm
 
@@ -22,7 +22,7 @@ USES=		cpe gmake jpeg perl5 shebangfix tar:xz
 USE_LDCONFIG=	yes
 CPE_VENDOR=	netpbm_project
 
-SVN_REV=	r4687
+SVN_REV=	r4709
 
 SHEBANG_FILES=	buildtools/makeman converter/pbm/pbmtox10bm \
 		editor/pnmflip editor/pnmquant editor/ppmfade \
@@ -52,7 +52,6 @@ X11_USE=	xorg=x11,xau,xcb,xdmcp
 
 post-patch:
 	${REINPLACE_CMD} -e 's|misc|share/netpbm|g' ${WRKSRC}/common.mk
-	${REINPLACE_CMD} -e 's|pkg-config|false|g' ${WRKSRC}/GNUmakefile
 .ifdef WITH_PIE
 .for dn in buildtools test
 	${REINPLACE_CMD} -e '/^all:/s/^/CFLAGS_FOR_BUILD+=${PIE_CFLAGS}\n/' \
