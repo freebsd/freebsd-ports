@@ -7871,3 +7871,4 @@ audio/libtremor||2023-09-30|Has expired: Obsolete, we only support hardware with
 audio/rioutil||2023-09-30|Has expired: Obsolete, supported hardware ia about 20 years old
 audio/waveplay||2023-09-30|Has expired: Abandoned upstream
 databases/mongodb42-tools||2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
+databases/mongodb42|databases/mongodb44|2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
