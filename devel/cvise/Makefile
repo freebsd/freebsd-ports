@@ -36,18 +36,10 @@ SHEBANG_FILES=	cvise-delta.py cvise.py
 CMAKE_ARGS+=	-DLLVM_DIR:PATH=${LLVM_PREFIX}/lib/cmake/llvm
 CMAKE_ARGS+=	-DClang_DIR:PATH=${LLVM_PREFIX}/lib/cmake/clang
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} < 150
-CPP=		clang-cpp${LLVM_VERSION}
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cvise.py
 
 do-test:
 	cd ${BUILD_WRKSRC} && pytest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
