@@ -15,6 +15,7 @@ LICENSE=	LGPL21
 BROKEN_armv6=	ld: error: can't create dynamic relocation R_ARM_ABS32 against symbol: caml_program in readonly segment
 BROKEN_armv7=	ld: error: can't create dynamic relocation R_ARM_ABS32 against symbol: caml_program in readonly segment
 
+LIB_DEPENDS+=	libzstd.so:archivers/zstd
 RUN_DEPENDS=	curl:ftp/curl \
 		gpatch:devel/patch
 
