@@ -677,6 +677,7 @@
     SUBDIR += libtree
     SUBDIR += libudisks
     SUBDIR += liburcu
+    SUBDIR += limine
     SUBDIR += lineak-defaultplugin
     SUBDIR += lineak-xosdplugin
     SUBDIR += lineakd
