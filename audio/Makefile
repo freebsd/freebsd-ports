@@ -400,7 +400,6 @@
     SUBDIR += libsonic
     SUBDIR += libsoxr
     SUBDIR += libspecbleach
-    SUBDIR += libtremor
     SUBDIR += libvorbis
     SUBDIR += libxmp
     SUBDIR += lilv
