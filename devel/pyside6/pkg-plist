@@ -4,6 +4,7 @@ include/PySide6/Qt3DExtras/pyside6_qt3dextras_python.h
 include/PySide6/Qt3DInput/pyside6_qt3dinput_python.h
 include/PySide6/Qt3DLogic/pyside6_qt3dlogic_python.h
 include/PySide6/Qt3DRender/pyside6_qt3drender_python.h
+include/PySide6/QtBluetooth/pyside6_qtbluetooth_python.h
 include/PySide6/QtCharts/pyside6_qtcharts_python.h
 include/PySide6/QtConcurrent/pyside6_qtconcurrent_python.h
 include/PySide6/QtCore/pyside6_qtcore_python.h
@@ -24,6 +25,7 @@ include/PySide6/QtMultimedia/pyside6_qtmultimedia_python.h
 include/PySide6/QtMultimediaWidgets/pyside6_qtmultimediawidgets_python.h
 include/PySide6/QtNetwork/pyside6_qtnetwork_python.h
 include/PySide6/QtNetworkAuth/pyside6_qtnetworkauth_python.h
+include/PySide6/QtNfc/pyside6_qtnfc_python.h
 include/PySide6/QtOpenGL/pyside6_qtopengl_python.h
 include/PySide6/QtOpenGLWidgets/pyside6_qtopenglwidgets_python.h
 %%WEBENGINE%%include/PySide6/QtPdf/pyside6_qtpdf_python.h
@@ -130,6 +132,8 @@ lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DLogic.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DRender.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/Qt3DRender.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtBluetooth.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtBluetooth.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtCharts.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtCharts.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtConcurrent.abi3.so
@@ -158,6 +162,8 @@ lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/QtNetwork.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtNetworkAuth.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtNetworkAuth.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtNfc.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtNfc.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGL.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGL.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGLWidgets.abi3.so
@@ -275,6 +281,7 @@ share/PySide6/typesystems/typesystem_3dextras.xml
 share/PySide6/typesystems/typesystem_3dinput.xml
 share/PySide6/typesystems/typesystem_3dlogic.xml
 share/PySide6/typesystems/typesystem_3drender.xml
+share/PySide6/typesystems/typesystem_bluetooth.xml
 share/PySide6/typesystems/typesystem_charts.xml
 share/PySide6/typesystems/typesystem_concurrent.xml
 share/PySide6/typesystems/typesystem_core.xml
@@ -299,6 +306,7 @@ share/PySide6/typesystems/typesystem_multimedia.xml
 share/PySide6/typesystems/typesystem_multimediawidgets.xml
 share/PySide6/typesystems/typesystem_network.xml
 share/PySide6/typesystems/typesystem_networkauth.xml
+share/PySide6/typesystems/typesystem_nfc.xml
 share/PySide6/typesystems/typesystem_opengl.xml
 share/PySide6/typesystems/typesystem_opengl_modifications1_0.xml
 share/PySide6/typesystems/typesystem_opengl_modifications1_0_compat.xml

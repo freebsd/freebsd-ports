@@ -1,5 +1,6 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ USES=		cmake gl llvm:lib python qt:6 tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
-USE_QT=		3d base charts datavis3d declarative doc httpserver \
+USE_QT=		3d base charts connectivity datavis3d declarative doc httpserver \
 		imageformats location multimedia networkauth positioning \
 		quick3d quicktimeline remoteobjects scxml sensors serialbus \
 		serialport shadertools speech svg tools translations wayland \
