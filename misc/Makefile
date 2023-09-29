@@ -560,6 +560,7 @@
     SUBDIR += table.el
     SUBDIR += talkfilters
     SUBDIR += tdfiglet
+    SUBDIR += tdrop
     SUBDIR += team
     SUBDIR += tellico
     SUBDIR += tempcontrol

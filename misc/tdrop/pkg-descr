@@ -1,0 +1,5 @@
+Tdrop makes dropdown terminals and windows.
+
+It is used for hiding/unhiding programs to achieve quake/dropdown
+functionality. It can create a dropdown window if one does not already
+exist or turn the current window into a dropdown on the fly.
