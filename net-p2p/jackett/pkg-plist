@@ -118,6 +118,7 @@
 %%DATADIR%%/Definitions/boxingtorrents.yml
 %%DATADIR%%/Definitions/broadcity.yml
 %%DATADIR%%/Definitions/brsociety-api.yml
+%%DATADIR%%/Definitions/btarg.yml
 %%DATADIR%%/Definitions/btetree.yml
 %%DATADIR%%/Definitions/btmet.yml
 %%DATADIR%%/Definitions/btnext.yml
@@ -242,8 +243,10 @@
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
 %%DATADIR%%/Definitions/hdtime.yml
+%%DATADIR%%/Definitions/hdtorrentsit.yml
 %%DATADIR%%/Definitions/hdturk.yml
 %%DATADIR%%/Definitions/hdu.yml
+%%DATADIR%%/Definitions/hdvbits.yml
 %%DATADIR%%/Definitions/hdvideo.yml
 %%DATADIR%%/Definitions/hdzone.yml
 %%DATADIR%%/Definitions/hebits.yml
@@ -376,7 +379,6 @@
 %%DATADIR%%/Definitions/polishtracker-api.yml
 %%DATADIR%%/Definitions/pornbay.yml
 %%DATADIR%%/Definitions/pornolab.yml
-%%DATADIR%%/Definitions/pornoslab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/potuk.yml
@@ -458,7 +460,6 @@
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
 %%DATADIR%%/Definitions/teracod.yml
-%%DATADIR%%/Definitions/the-crazy-ones.yml
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
 %%DATADIR%%/Definitions/thegeeks.yml
@@ -469,6 +470,7 @@
 %%DATADIR%%/Definitions/theoldschool-api.yml
 %%DATADIR%%/Definitions/thepiratebay.yml
 %%DATADIR%%/Definitions/theplace.yml
+%%DATADIR%%/Definitions/therarbg.yml
 %%DATADIR%%/Definitions/therebels-api.yml
 %%DATADIR%%/Definitions/thesceneplace.yml
 %%DATADIR%%/Definitions/theshinning-api.yml
@@ -529,7 +531,6 @@
 %%DATADIR%%/Definitions/turkseed.yml
 %%DATADIR%%/Definitions/turktorrent.yml
 %%DATADIR%%/Definitions/tvchaosuk.yml
-%%DATADIR%%/Definitions/tvroad.yml
 %%DATADIR%%/Definitions/u2.yml
 %%DATADIR%%/Definitions/ubits.yml
 %%DATADIR%%/Definitions/uhdbits.yml
@@ -539,6 +540,7 @@
 %%DATADIR%%/Definitions/uniongang.yml
 %%DATADIR%%/Definitions/unleashthecartoons.yml
 %%DATADIR%%/Definitions/unlimitz.yml
+%%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/utopia.yml
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
@@ -787,6 +789,7 @@
 %%DATADIR%%/System.Text.Encoding.Extensions.dll
 %%DATADIR%%/System.Text.Encoding.dll
 %%DATADIR%%/System.Text.Encodings.Web.dll
+%%DATADIR%%/System.Text.Json.dll
 %%DATADIR%%/System.Text.RegularExpressions.dll
 %%DATADIR%%/System.Threading.Overlapped.dll
 %%DATADIR%%/System.Threading.Tasks.Extensions.dll
