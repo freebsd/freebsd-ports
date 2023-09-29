@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.3
+DISTVERSION=	1.9.4
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -85,7 +85,7 @@ GL_TUPLE=	\
 		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
 		cznic:libc:8014ff305ac880ad7b60918a18992e59405eb7f3:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
-		cznic:memory:e2fb64fdde9445929cd9db710c4e02f8357b30c9:cznic_memory/vendor/modernc.org/memory \
+		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
 		cznic:sqlite:a16e15fbb42ad21e3665c92e257b4ec4600f2f15:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:f4c290107e9e43b1bb4a8bc7dcd154eb9b565cd8:cznic_strutil/vendor/modernc.org/strutil \
