@@ -38,14 +38,10 @@ USE_XORG=	x11
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc*}
-CXX=		clang++${LLVM_VERSION}
 USES+=		llvm:min=16
 .elif ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 # Work around compiler bug, see pr: 272285
 USES+=		llvm
-CC=		clang${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
 .endif
 
 .include <bsd.port.mk>
