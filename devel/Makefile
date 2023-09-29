@@ -334,7 +334,6 @@
     SUBDIR += capnproto080
     SUBDIR += capslock
     SUBDIR += capstone
-    SUBDIR += capstone3
     SUBDIR += capstone4
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
