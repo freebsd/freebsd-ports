@@ -1,3 +1,3 @@
-TIMESTAMP = 1674590554
-SHA256 (rubygem/openssl-3.1.0.gem) = e3a01279e918a7a5cf741db69b124864878b1a9783b1f2d34854bc1d444ac430
-SIZE (rubygem/openssl-3.1.0.gem) = 199168
+TIMESTAMP = 1695588874
+SHA256 (rubygem/openssl-3.2.0.gem) = 3c4bb8760977b4becd2819c6c2569bcf5c6f48b32b9f7a4ce1fd37f996378d14
+SIZE (rubygem/openssl-3.2.0.gem) = 203264
