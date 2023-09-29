@@ -4,14 +4,22 @@
       <package>
 	<name>php80-composer</name>
 	<range><lt>1.10.27</lt></range>
+	<range><gt>2.0.0</gt><lt>2.6.4</lt></range>
       </package>
       <package>
 	<name>php81-composer</name>
 	<range><lt>1.10.27</lt></range>
+	<range><gt>2.0.0</gt><lt>2.6.4</lt></range>
       </package>
       <package>
 	<name>php82-composer</name>
 	<range><lt>1.10.27</lt></range>
+	<range><gt>2.0.0</gt><lt>2.6.4</lt></range>
+      </package>
+      <package>
+	<name>php83-composer</name>
+	<range><lt>1.10.27</lt></range>
+	<range><gt>2.0.0</gt><lt>2.6.4</lt></range>
       </package>
       <package>
 	<name>php80-composer2</name>
@@ -25,13 +33,22 @@
 	<name>php82-composer2</name>
 	<range><lt>2.6.4</lt></range>
       </package>
+      <package>
+	<name>php83-composer2</name>
+	<range><lt>2.6.4</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Composer project reports:</p>
 	<blockquote cite="https://github.com/composer/composer/security/advisories/GHSA-jm6m-4632-36hf">
-	  <p>Description: Users publishing a composer.phar to a public web-accessible server where the composer.phar can be executed as a php file may be impacted if PHP also has register_argc_argv enabled in php.ini.</p>
-	  <p>Workaround: Make sure register_argc_argv is disabled in php.ini, and avoid publishing composer.phar to the web as this really should not happen.</p>
+	  <p>Description: Users publishing a composer.phar to a
+	  public web-accessible server where the composer.phar can
+	  be executed as a php file may be impacted if PHP also has
+	  register_argc_argv enabled in php.ini.</p>
+	  <p>Workaround: Make sure register_argc_argv is disabled
+	  in php.ini, and avoid publishing composer.phar to the web
+	  as this really should not happen.</p>
 	</blockquote>
       </body>
     </description>
@@ -42,6 +59,7 @@
     <dates>
       <discovery>2023-09-29</discovery>
       <entry>2023-09-29</entry>
+      <modified>2023-09-30</modified>
     </dates>
   </vuln>
 
