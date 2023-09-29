@@ -51,8 +51,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.12:devel/py-freezegun@${PY_F
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.12:devel/py-yaml@${PY_FLAVOR}
 		# testcontainers[mysql]>=3.0.3 is also required
 
-USES=		python pycryptography:test zip
-USE_PYTHON=	distutils cython concurrent autoplist pytest # 5 tests fail, depending on pyarrow, MySqlContainer, threadpoolctl
+USES=		python zip
+USE_PYTHON=	autoplist concurrent cryptography_test cython distutils pytest # 5 tests fail, depending on pyarrow, MySqlContainer, threadpoolctl
 
 post-install:
 	# strip binaries

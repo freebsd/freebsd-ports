@@ -18,8 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}josepy>=1.13.0:security/py-josepy@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytz>=2019.3,1:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.20.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils pytest
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils pytest
 
 NO_ARCH=	yes
 

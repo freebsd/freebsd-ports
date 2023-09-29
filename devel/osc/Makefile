@@ -12,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
 
-USES=		cpe python pycryptography:run
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	openSUSE
-USE_PYTHON=	autoplist distutils noflavors pytest
+USE_PYTHON=	autoplist cryptography distutils noflavors pytest
 NO_ARCH=	yes
 CPE_VENDOR=	suse
 CPE_PRODUCT=	opensuse_osc

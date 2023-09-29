@@ -33,10 +33,10 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		Xvfb:x11-servers/xorg-server@xvfb
 
 USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
-		python pycryptography:run shared-mime-info shebangfix tar:xz xorg
+		python shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
-USE_PYTHON=	cython distutils noflavors
+USE_PYTHON=	cryptography cython distutils noflavors
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xkbfile xrandr xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \

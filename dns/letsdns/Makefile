@@ -14,9 +14,9 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>0:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
-USES=		python pycryptography:run
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	LetsDNS
-USE_PYTHON=	autoplist pep517
+USE_PYTHON=	autoplist cryptography pep517
 
 .include <bsd.port.mk>

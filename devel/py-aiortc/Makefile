@@ -23,8 +23,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyee>=9.0.0:devel/py-pyee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylibsrtp>=0.5.6:devel/py-pylibsrtp@${PY_FLAVOR}
 
-USES=		localbase python pycryptography:run
-USE_PYTHON=	autoplist concurrent distutils
+USES=		localbase python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/codecs/*.so

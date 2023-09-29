@@ -20,8 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prometheus-client>=0:net-mgmt/py-prometheus-
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
 		tor:security/tor
 
-USES=		python pycryptography:run shebangfix
-USE_PYTHON=	autoplist distutils
+USES=		python shebangfix
+USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
 

@@ -16,8 +16,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL@${PY_FLAVOR}
 
-USES=		cmake gettext python pycryptography:run pyqt:5
+USES=		cmake gettext python pyqt:5
 USE_PYQT=	pyqt5
+USE_PYTHON=	cryptography
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 STRIP=

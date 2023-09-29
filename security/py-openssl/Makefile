@@ -17,8 +17,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pretend>0:devel/py-pretend@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-USES=		cpe python pycryptography:run
-USE_PYTHON=	autoplist concurrent distutils pytest pythonprefix
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent cryptography distutils pytest pythonprefix
 
 NO_ARCH=	yes
 

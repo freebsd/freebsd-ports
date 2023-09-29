@@ -12,8 +12,8 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}olefile>=0.45:devel/py-olefile@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	concurrent distutils autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 NO_ARCH=	yes
 

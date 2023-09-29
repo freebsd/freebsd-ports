@@ -18,8 +18,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.7.2:www/py-yarl@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-asyncio>0:devel/py-pytest-asyncio@${PY_FLAVOR}
 
-USES=		python pycryptography:build,run
-USE_PYTHON=	distutils autoplist pytest # 3 errors during tests, see https://github.com/ccxt/ccxt/issues/16661
+USES=		python
+USE_PYTHON=	distutils autoplist cryptography cryptography_build pytest # 3 errors during tests, see https://github.com/ccxt/ccxt/issues/16661
 
 NO_ARCH=	yes
 

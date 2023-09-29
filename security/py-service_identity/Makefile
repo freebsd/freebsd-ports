@@ -15,8 +15,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=16.0.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0:devel/py-pyasn1-modules@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0:devel/py-pyasn1@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
 

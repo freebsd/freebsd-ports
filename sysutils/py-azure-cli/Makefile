@@ -114,8 +114,8 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}semver>=2.13.0:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygithub>=1.55:devel/py-pygithub@${PY_FLAVOR}
 
-USES=		azurepy python pycryptography:run
-USE_PYTHON=	autoplist concurrent distutils
+USES=		azurepy python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 NO_ARCH=	yes
 

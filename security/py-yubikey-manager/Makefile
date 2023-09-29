@@ -27,8 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}makefun>0:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		dos2unix pycryptography python
-USE_PYTHON=	autoplist concurrent pep517 unittest
+USES=		dos2unix python
+USE_PYTHON=	autoplist concurrent cryptography cryptography_build pep517 unittest
 
 DOS2UNIX_GLOB=	*.adoc *.py
 

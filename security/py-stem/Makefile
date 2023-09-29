@@ -15,8 +15,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyflakes>0:devel/py-pyflakes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>0:devel/py-pycodestyle@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	distutils autoplist concurrent
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 NO_ARCH=	yes
 
 do-test:

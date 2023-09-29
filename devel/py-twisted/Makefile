@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=CONCH HTTP2 SERIAL TLS
 CONCH_DESC=	Conch secure shell SSH
 SERIAL_DESC=	Serial port extension
 
-CONCH_USES=		pycryptography:run
+CONCH_USE=		PYTHON=cryptography
 CONCH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.0:devel/py-appdirs@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.3:security/py-bcrypt@${PY_FLAVOR}
 HTTP2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=3.0<5.0:www/py-h2@${PY_FLAVOR} \

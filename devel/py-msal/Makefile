@@ -14,8 +14,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0<3:www/py-requests@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.0.0<3:www/py-pyjwt@${PY_FLAVOR}
 
 # cryptography>=0.6<43,1
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
 

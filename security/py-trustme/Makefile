@@ -18,8 +18,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}openssl>=0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils pytest
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

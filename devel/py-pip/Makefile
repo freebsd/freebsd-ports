@@ -32,9 +32,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0:devel/py-freezegun@${PY_FLAVOR
 		git:devel/git \
 		svn:devel/subversion
 
-USES=		cpe python pycryptography:test shebangfix
+USES=		cpe python shebangfix
 CPE_VENDOR=	pypa
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent cryptography_test distutils pytest
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC}/src/
 NO_ARCH=	yes

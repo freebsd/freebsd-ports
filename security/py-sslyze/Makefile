@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nassl>=5<6:security/py-nassl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=23,1<24,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tls-parser>=2<3:security/py-tls-parser@${PY_FLAVOR}
 
-USES=		pycryptography:run python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 NO_ARCH=	yes
 

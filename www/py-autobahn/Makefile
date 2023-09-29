@@ -14,12 +14,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	 ${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}txaio>=21.2.1:devel/py-txaio@${PY_FLAVOR}
 
-USES=		cpe python pycryptography:run
+USES=		cpe python
 CPE_VENDOR=	crossbar
 USE_GITHUB=	yes
 GH_ACCOUNT=	crossbario
 GH_PROJECT=	autobahn-python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist cryptography distutils pytest
 
 OPTIONS_DEFINE=		ACCELERATE COMPRESS ENCRYPTION SCRAM SERIALIZATION
 OPTIONS_DEFAULT=	ACCELERATE ASYNCIO ENCRYPTION SCRAM SERIALIZATION \

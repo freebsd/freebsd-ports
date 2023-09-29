@@ -18,9 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<=1.6.0:devel/py-reedsolo@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 
-USES=		python pycryptography:run
+USES=		python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent cryptography distutils pytest
 
 GH_ACCOUNT=	espressif
 NO_ARCH=	yes

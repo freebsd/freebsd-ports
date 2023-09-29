@@ -13,8 +13,8 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-axolotl-curve25519>=0:security/py-python-axolotl-curve25519@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.0:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils
+USES=		python 
+USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
 

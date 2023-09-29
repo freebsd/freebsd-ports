@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		cpe pycryptography:run python
-USE_PYTHON=	autoplist concurrent distutils unittest
+USES=		cpe python
+USE_PYTHON=	autoplist concurrent cryptography distutils unittest
 
 NO_ARCH=	yes
 

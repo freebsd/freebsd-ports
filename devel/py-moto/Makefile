@@ -37,8 +37,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-xray-sdk>=0.93:devel/py-aws-xray-sdk@${
 		${PYTHON_PKGNAMEPREFIX}sshpubkeys>=3.1.0:security/py-sshpubkeys@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 
-USES=		pycryptography:run python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography pep517 pytest
 
 NO_ARCH=	yes
 

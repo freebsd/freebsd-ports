@@ -28,6 +28,6 @@ CPE_VENDOR=	pyjwt_project
 OPTIONS_DEFINE=	CRYPTO
 OPTIONS_DEFAULT=CRYPTO
 
-CRYPTO_USES=	 pycryptography:run
+CRYPTO_USE=	PYTHON=cryptography
 
 .include <bsd.port.mk>

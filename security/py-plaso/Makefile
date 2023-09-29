@@ -52,9 +52,9 @@ RUN_DEPENDS=	libesedb>=e:devel/libesedb \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fakeredis>=0:databases/py-fakeredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python pycryptography:run
+USES=		python
 USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	autoplist concurrent cryptography distutils
 # Upstream archive contains files with UTF-8 names
 EXTRACT_CMD=	${SETENV} LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE} ${TAR}
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}

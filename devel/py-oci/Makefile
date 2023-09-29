@@ -23,8 +23,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.5.0:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=2016.10:devel/py-pytz@${PY_FLAVOR}
 
-USES=		python:3.8-3.11 pycryptography:run
-USE_PYTHON=	autoplist distutils
+USES=		python:3.8-3.11
+USE_PYTHON=	autoplist cryptography distutils
 
 NO_ARCH=	yes
 

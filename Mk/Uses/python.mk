@@ -82,6 +82,14 @@
 #			  prefix-less original name, e.g.
 #			  bin/foo-2.7 --> bin/foo.
 #
+#	cryptography_build
+#			- Depend on security/cryptography at build-time.
+#
+#	cryptography	- Depend on security/cryptography at run-time.
+#
+#	cryptography_test
+#			- Depend on security/cryptography at test-time.
+#
 #	cython		- Depend on lang/cython at build-time.
 #
 #	cython_run	- Depend on lang/cython at run-time.
@@ -317,6 +325,9 @@ _PYTHON_RELPORTDIR=		lang/python
 _VALID_PYTHON_FEATURES=	allflavors \
 			autoplist \
 			concurrent \
+			cryptography_build \
+			cryptography \
+			cryptography_test \
 			cython \
 			cython_run \
 			cython_test \
@@ -596,6 +607,25 @@ _PYTHONPKGLIST=	${WRKDIR}/.PLIST.pymodtmp
 # - it links against libpython*.so
 # - it uses USE_PYTHON=distutils
 #
+
+# cryptography* support
+.  if ${PYCRYPTOGRAPHY_DEFAULT} == rust
+CRYPTOGRAPHY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=41.0.3_1,1:security/py-cryptography@${PY_FLAVOR}
+.  else
+CRYPTOGRAPHY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography-legacy>=3.4.8_1,1:security/py-cryptography-legacy@${PY_FLAVOR}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CRYPTOGRAPHY_BUILD)
+BUILD_DEPENDS+=	${CRYPTOGRAPHY_DEPENDS}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CRYPTOGRAPHY)
+RUN_DEPENDS+=	${CRYPTOGRAPHY_DEPENDS}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CRYPTOGRAPHY_TEST)
+TEST_DEPENDS+=	${CRYPTOGRAPHY_DEPENDS}
+.  endif
 
 # cython* support
 .  if defined(_PYTHON_FEATURE_CYTHON)

@@ -47,9 +47,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cpe python pycryptography:run
+USES=		cpe python
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist cryptography distutils noflavors
 
 NO_ARCH=	yes
 

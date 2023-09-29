@@ -41,9 +41,9 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python pycryptography:run
+USES=		python
 USE_LOCALE=	en_US.UTF-8
-USE_PYTHON=	distutils autoplist concurrent
+USE_PYTHON=	autoplist concurrent cryptography distutils
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}
 TEST_TARGET=	run_tests.py
 

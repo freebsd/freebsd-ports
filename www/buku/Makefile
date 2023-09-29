@@ -16,8 +16,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.4.1:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.23,1:net/py-urllib3@${PY_FLAVOR}
 
-USES=		pycryptography:run python
-USE_PYTHON=	autoplist distutils noflavors
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils noflavors
 
 NO_ARCH=	yes
 

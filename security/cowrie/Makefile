@@ -27,10 +27,10 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}tftpy>0:ftp/py-tftpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>0:devel/py-twisted@${PY_FLAVOR}
 
-USES=		python pycryptography:run shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	bin/cowrie
 USE_GITHUB=	yes
-USE_PYTHON=	distutils noflavors autoplist
+USE_PYTHON=	autoplist cryptography noflavors distutils
 
 CONFLICTS_INSTALL=	py*-asciinema # bin/asciinema
 

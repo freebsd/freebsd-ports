@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR}
 
-USES=		python pycryptography:run
-USE_PYTHON=	distutils concurrent autoplist
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k
 NO_ARCH=		yes

@@ -17,8 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	python-${PORTNAME}
 
-USES=		python pycryptography:run
-USE_PYTHON=	autoplist distutils pytest
+USES=		python
+USE_PYTHON=	autoplist cryptography distutils pytest
 
 NO_ARCH=	yes
 
