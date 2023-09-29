@@ -10,6 +10,8 @@ WWW=		http://ceres-solver.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		configure error: Target "ceres" links to: CXSparse::CXSparse but the target was not found
+
 BUILD_DEPENDS=	glog>=0.5.0:devel/glog
 LIB_DEPENDS=	libglog.so:devel/glog
 RUN_DEPENDS:=	${BUILD_DEPENDS:Meigen*}
