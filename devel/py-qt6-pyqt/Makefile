@@ -1,5 +1,6 @@
 PORTNAME=	pyqt
 PORTVERSION=	${PYQT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -21,10 +22,10 @@ USE_GL+=	gl opengl
 USE_LOCALE=	C.UTF-8
 USE_PYTHON=	concurrent flavors
 USE_PYQT=	qtbuilder sip pysip
-USE_QT=		5compat base declarative imageformats languageserver lottie \
-		multimedia positioning quick3d remoteobjects sensors \
-		serialport speech shadertools svg tools translations \
-		webchannel websockets
+USE_QT=		5compat base connectivity declarative imageformats \
+		languageserver lottie multimedia positioning quick3d \
+		remoteobjects sensors serialport speech shadertools \
+		svg tools translations webchannel websockets
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
 
