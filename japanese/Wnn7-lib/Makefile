@@ -21,9 +21,6 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 USES+=	llvm:max=14
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
 .endif
 
 post-patch:
