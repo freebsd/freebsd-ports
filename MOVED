@@ -7877,3 +7877,4 @@ devel/capstone3|devel/capstone4|2023-09-30|Has expired: Use more recent upstream
 devel/directfb||2023-09-30|Has expired: Last upstream release was in 2015
 devel/electron23|devel/electron24|2023-09-30|Has expired: EOLed upstream, switch to newer version
 devel/libtar||2023-09-30|Has expired: Abandonware since 2013 and multiple CVEs over the years
+devel/pear-htmlpurifier||2023-09-30|Has expired: Unfetchable as the pear channel no longer works
