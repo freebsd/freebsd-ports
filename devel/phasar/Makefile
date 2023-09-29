@@ -27,10 +27,6 @@ SHEBANG_GLOB=	*.py *.sh
 
 CMAKE_OFF=	PHASAR_BUILD_UNITTESTS
 
-CC=		${LLVM_PREFIX}/bin/clang
-CPP=		${LLVM_PREFIX}/bin/clang-cpp
-CXX=		${LLVM_PREFIX}/bin/clang++
-
 post-patch: # workaround for https://github.com/secure-software-engineering/phasar/issues/564
 	# fix up the config directory location
 	@${REINPLACE_CMD} \
