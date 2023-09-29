@@ -56,9 +56,6 @@ PLIST_SUB=	SP_VER=${SP_VER}
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 USES+=	llvm:max=15
-CC=	clang${LLVM_VERSION}
-CPP=	clang-cpp${LLVM_VERSION}
-CXX=	clang++${LLVM_VERSION}
 CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_VERSION} \
 		LLVM_OBJDUMP=llvm-objdump${LLVM_VERSION}
 .endif
