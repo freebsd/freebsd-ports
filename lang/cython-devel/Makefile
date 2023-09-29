@@ -1,5 +1,5 @@
 PORTNAME=	cython
-DISTVERSION=	3.0.0b2
+DISTVERSION=	3.0.2
 CATEGORIES=	lang python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
@@ -16,11 +16,12 @@ USE_PYTHON=	allflavors autoplist concurrent distutils
 USE_GITHUB=	yes
 
 CONFLICTS_INSTALL=	py*-cython # bin/cygdb bin/cygdb-3.8 bin/cython bin/cython-3.8 bin/cythonize bin/cythonize-3.8
+CFLAGS+=	-Wno-unreachable-code
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Cython -name '*.so' -exec ${STRIP_CMD} {} +
 
 do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} runtests.py -vv
+	@cd ${WRKSRC} && ${SETENV} XDG_CACHE_HOME="${WRKDIR}" ${PYTHON_CMD} runtests.py -vv
 
 .include <bsd.port.mk>
