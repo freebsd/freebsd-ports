@@ -849,7 +849,6 @@
     SUBDIR += waon
     SUBDIR += wavbreaker
     SUBDIR += wavegain
-    SUBDIR += waveplay
     SUBDIR += wavetral
     SUBDIR += wavpack
     SUBDIR += wavplay

@@ -7869,3 +7869,4 @@ audio/ample||2023-09-30|Has expired: Abandonware, last release over 19 years ago
 audio/ccaudio2||2023-09-30|Has expired: Abandonware, no development since 2011
 audio/libtremor||2023-09-30|Has expired: Obsolete, we only support hardware with a fpu and other decoding libraries offer better performance
 audio/rioutil||2023-09-30|Has expired: Obsolete, supported hardware ia about 20 years old
+audio/waveplay||2023-09-30|Has expired: Abandoned upstream
