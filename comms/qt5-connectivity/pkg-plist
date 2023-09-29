@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/adapter_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/agent_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/androidbroadcastreceiver_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/androidutils_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/battery1_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/bluetoothmanagement_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/bluez5_helper_p.h
@@ -71,6 +72,7 @@
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothtransferreply_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothtransferrequest_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qbluetoothutils_winrt_p.h
+%%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qleadvertiser_bluez_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_android_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_bluez_p.h
 %%QT_INCDIR%%/QtBluetooth/%%FULLVER%%/QtBluetooth/private/qlowenergycontroller_bluezdbus_p.h
