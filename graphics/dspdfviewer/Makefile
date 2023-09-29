@@ -51,7 +51,7 @@ CFLAGS+=	-Wno-error=extra-semi-stmt
 .endif
 
 # Fixes build failure for Clang 11.0.0
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1300111 || ${OSVERSION} >= 1204000) && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${OPSYS} == FreeBSD && ${CHOSEN_COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=suggest-destructor-override
 CFLAGS+=	-Wno-error=suggest-override
 .endif
