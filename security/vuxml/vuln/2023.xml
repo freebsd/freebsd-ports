@@ -1,3 +1,59 @@
+  <vuln vid="6e0ebb4a-5e75-11ee-a365-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.4.0</ge><lt>16.4.1</lt></range>
+	<range><ge>16.3.0</ge><lt>16.3.5</lt></range>
+	<range><ge>8.15</ge><lt>16.2.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body>
+	<p>Attacker can add other projects policy bot as member to their own project and use that bot to trigger pipelines in victims project</p>	
+	<p>Group import allows impersonation of users in CI pipelines</p>	
+	<p>Developers can bypass code owners approval by changing a MR's base branch</p>	
+  	<p>Leaking source code of restricted project through a fork</p>	
+	<p>Third party library Consul requires enable-script-checks to be False to enable patch</p>	
+	<p>Service account not deleted when namespace is deleted allowing access to internal projects</p>	
+	<p>Enforce SSO settings bypassed for public projects for Members without identity</p>	
+	<p>Removed project member can write to protected branches</p>	
+	<p>Unauthorised association of CI jobs for Machine Learning experiments</p>	
+	<p>Force pipelines to not have access to protected variables and will likely fail using tags</p>	
+	<p>Maintainer can create a fork relationship between existing projects</p>	
+	<p>Disclosure of masked CI variables via processing CI/CD configuration of forks</p>	
+	<p>Asset Proxy Bypass using non-ASCII character in asset URI</p>	
+	<p>Unauthorized member can gain Allowed to push and merge access and affect integrity of protected branches</p>	
+	<p>Removed Developer can continue editing the source code of a public project</p>	
+	<p>A project reporter can leak owner's Sentry instance projects</p>	
+	<p>Math rendering in markdown can escape container and hijack clicks</p>	
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5207</cvename>
+      <cvename>CVE-2023-5207</cvename>
+      <cvename>CVE-2023-4379</cvename>
+      <cvename>CVE-2023-3413</cvename>
+      <cvename>CVE-2023-3914</cvename>
+      <cvename>CVE-2023-3115</cvename>
+      <cvename>CVE-2023-5198</cvename>
+      <cvename>CVE-2023-4532</cvename>
+      <cvename>CVE-2023-3917</cvename>
+      <cvename>CVE-2023-3920</cvename>
+      <cvename>CVE-2023-0989</cvename>
+      <cvename>CVE-2023-3906</cvename>
+      <cvename>CVE-2023-4658</cvename>
+      <cvename>CVE-2023-3979</cvename>
+      <cvename>CVE-2023-2233</cvename>
+      <cvename>CVE-2023-3922</cvename>
+      <url>https://about.gitlab.com/releases/2023/09/28/security-release-gitlab-16-4-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-09-28</discovery>
+      <entry>2023-09-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af065e47-5d62-11ee-bbae-1c61b4739ac9">
     <topic>xrdp -- unchecked access to font glyph info</topic>
     <affects>
