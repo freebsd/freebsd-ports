@@ -1,5 +1,5 @@
 PORTNAME=	pam
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	security pear
 
 MAINTAINER=	sunpoet@FreeBSD.org
