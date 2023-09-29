@@ -78,7 +78,6 @@
     SUBDIR += cardinal
     SUBDIR += carla
     SUBDIR += cava
-    SUBDIR += ccaudio2
     SUBDIR += cd-discid
     SUBDIR += cddb-bundle
     SUBDIR += cdparanoia

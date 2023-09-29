@@ -7866,3 +7866,4 @@ www/pserv||2023-09-30|Has expired: Abandonware, last release in 2005. Consider m
 www/polipo||2023-09-30|Has expired: No longer maintained upstream
 audio/aacgain||2023-09-30|Has expired: Obsolete way of handling volume adjustment, consider using audio/rsgain
 audio/ample||2023-09-30|Has expired: Abandonware, last release over 19 years ago
+audio/ccaudio2||2023-09-30|Has expired: Abandonware, no development since 2011
