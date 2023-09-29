@@ -11,6 +11,8 @@ WWW=		https://postgis.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		pkg-static: postgresql15-client-15.4 conflicts with postgresql11-client-11.21 (installs files into the same place).  Problematic file: /usr/local/bin/clusterdb
+
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgeos.so:graphics/geos \
 		libjson-c.so:devel/json-c \
