@@ -7872,3 +7872,4 @@ audio/rioutil||2023-09-30|Has expired: Obsolete, supported hardware ia about 20 
 audio/waveplay||2023-09-30|Has expired: Abandoned upstream
 databases/mongodb42-tools||2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
 databases/mongodb42|databases/mongodb44|2023-09-30|Has expired: Upstream EOL reached on 2023-04-30
+databases/redis6|databases/redis62|2023-09-30|Has expired: Has reached its EoL. Please migrate to newer version.
