@@ -1,6 +1,6 @@
---- src/libs/sqlite/CMakeLists.txt.orig	2022-12-14 03:18:24 UTC
+--- src/libs/sqlite/CMakeLists.txt.orig	2023-09-27 07:28:11 UTC
 +++ src/libs/sqlite/CMakeLists.txt
-@@ -53,6 +53,8 @@ add_qtc_library(Sqlite
+@@ -55,6 +55,8 @@ if (APPLE)
  
  if (APPLE)
    extend_qtc_library(SqliteC DEFINES _BSD_SOURCE)
