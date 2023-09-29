@@ -40,7 +40,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
-USES=		cmake desktop-file-utils gl gnome llvm:min=16,build pkgconfig python xorg
+USES=		cmake desktop-file-utils gl gnome llvm:min=16,build localbase pkgconfig python xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
@@ -70,11 +70,7 @@ GH_TAG_NATIVEFILEDIALOG=	7909f55
 GH_TAG_PATTERN_LANGUAGE=	57dc02b
 GH_TAG_YARA=	96790e5
 
-CC=	${LOCALBASE}/bin/clang16
-CXX=	${LOCALBASE}/bin/clang++16
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include \
-		-I${WRKSRC}/lib/external/pattern_language/generators/include \
+CXXFLAGS+=	-I${WRKSRC}/lib/external/pattern_language/generators/include \
 		-Wno-error=deprecated-declarations \
 		-Wno-error=literal-conversion
 
