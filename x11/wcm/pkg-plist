@@ -37,6 +37,7 @@ share/icons/hicolor/96x96/apps/wcm.png
 %%DATADIR%%/icons/plugin-invert.svg
 %%DATADIR%%/icons/plugin-join-views.svg
 %%DATADIR%%/icons/plugin-keycolor.svg
+%%DATADIR%%/icons/plugin-lxqt-shell.svg
 %%DATADIR%%/icons/plugin-mag.svg
 %%DATADIR%%/icons/plugin-move.svg
 %%DATADIR%%/icons/plugin-oswitch.svg
