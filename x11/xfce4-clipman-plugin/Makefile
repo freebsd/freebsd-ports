@@ -1,5 +1,5 @@
 PORTNAME=	xfce4-clipman-plugin
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -19,6 +19,7 @@ USE_XFCE=	panel
 USE_XORG=	ice sm x11 xorgproto xtst
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-wayland-scanner --disable-wayland-client
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		NLS QRCODE
