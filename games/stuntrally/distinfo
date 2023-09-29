@@ -1,5 +1,5 @@
-TIMESTAMP = 1648667237
-SHA256 (stuntrally-stuntrally-2.6.2_GH0.tar.gz) = a63550d5d13d20dca678c2cd8e30332cd41ca5380d14720c15549e6b0387bd55
-SIZE (stuntrally-stuntrally-2.6.2_GH0.tar.gz) = 651633552
-SHA256 (stuntrally-tracks-2.6.2_GH0.tar.gz) = 4fd587cf6cfe72e78530bb051bd423f9d0d0e38ca258e8254a4fdd6e60db5bcc
-SIZE (stuntrally-tracks-2.6.2_GH0.tar.gz) = 357438076
+TIMESTAMP = 1668431328
+SHA256 (stuntrally-stuntrally-2.7_GH0.tar.gz) = 462711306ec33e2dad1a729d7dbf0da2a8bfec2c36d582cc4c192c2e6f2de12c
+SIZE (stuntrally-stuntrally-2.7_GH0.tar.gz) = 770702361
+SHA256 (stuntrally-tracks-2.7_GH0.tar.gz) = fe7ba531fbdb3c5ba9b25f0748c2aac465c6aad33e957f722e2316a3129bd472
+SIZE (stuntrally-tracks-2.7_GH0.tar.gz) = 445486760

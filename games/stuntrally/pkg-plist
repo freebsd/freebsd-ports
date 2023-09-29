@@ -1,7 +1,8 @@
 %%EDITOR%%bin/sr-editor
+%%TRANSLATOR%%bin/sr-translator
 %%MASTER_SERVER%%bin/sr-masterserver
 %%GAME%%bin/stuntrally
 %%EDITOR%%share/applications/sr-editor.desktop
 %%GAME%%share/applications/stuntrally.desktop
-%%EDITOR%%share/icons/hicolor/64x64/apps/sr-editor.png
-%%GAME%%share/icons/hicolor/256x256/apps/stuntrally.png
+%%EDITOR%%share/icons/hicolor/512x512/apps/sr-editor.png
+%%GAME%%share/icons/hicolor/512x512/apps/stuntrally.png
