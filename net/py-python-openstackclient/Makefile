@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.5.0:devel/py-cliff@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=2.7,1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openstacksdk>=1.4.0:devel/py-openstacksdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}osc-lib>=2.3.0:devel/py-osc-lib@${PY_FLAVOR} \
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.5.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stevedore>=2.0.1:devel/py-stevedore@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cryptography distutils
 
 NO_ARCH=	yes
 
