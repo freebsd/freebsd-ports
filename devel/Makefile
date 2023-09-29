@@ -601,7 +601,6 @@
     SUBDIR += egypt
     SUBDIR += eiffelstudio
     SUBDIR += electron22
-    SUBDIR += electron23
     SUBDIR += electron24
     SUBDIR += electron25
     SUBDIR += elf
