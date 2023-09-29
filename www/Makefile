@@ -1435,7 +1435,6 @@
     SUBDIR += pmwiki
     SUBDIR += pnews
     SUBDIR += podcastamatic
-    SUBDIR += polipo
     SUBDIR += pomerium
     SUBDIR += pound
     SUBDIR += privatebin

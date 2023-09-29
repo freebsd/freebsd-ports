@@ -1,7 +1,0 @@
-bin/polipo
-@sample etc/polipo/config.sample
-@sample etc/polipo/forbidden.sample
-etc/periodic/daily/400.polipo
-man/man1/polipo.1.gz
-%%DATADIR%%/www/index.html
-@dir(polipo,polipo,0770) %%PCACHEDIR%%
