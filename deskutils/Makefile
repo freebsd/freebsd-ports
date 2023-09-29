@@ -20,7 +20,6 @@
     SUBDIR += birdtray
     SUBDIR += bookworm
     SUBDIR += budgie-desktop-view
-    SUBDIR += budgie-trash-applet
     SUBDIR += cairo-dock
     SUBDIR += cairo-dock-plugins
     SUBDIR += caja-extensions

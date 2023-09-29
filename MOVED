@@ -7859,3 +7859,4 @@ games/weebsay||2023-09-26|Has expired: API server is no longer functional
 devel/rubygem-mustache0|devel/rubygem-mustache|2023-09-27|Has expired: Use devel/mustache
 sysutils/rsfetch||2023-09-27|Has expired: Upstream unmaintained
 sysutils/sysrc||2023-09-27|Has expired: Migrated into src
+deskutils/budgie-trash-applet||2023-09-29|Has expired: Merged into newer x11/budgie-desktop >= 10.8
