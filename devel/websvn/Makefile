@@ -1,5 +1,6 @@
 PORTNAME=	websvn
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	devel www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:devel/subversion \
-		${LOCALBASE}/bin/composer:devel/php-composer2@${PHP_FLAVOR}
+		${LOCALBASE}/bin/composer:devel/php-composer@${PHP_FLAVOR}
 
 USES=		php:web,flavors cpe
 USE_GITHUB=	yes

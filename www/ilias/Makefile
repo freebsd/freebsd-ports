@@ -1,6 +1,7 @@
 PORTNAME=	ilias
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.5
+PORTREVISION=	1
 CATEGORIES=	www education
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -22,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Auth/Auth.php:security/pear-Auth@${PHP_FLAV
 		${LOCALBASE}/share/pear/MDB2.php:databases/pear-MDB2@${PHP_FLAVOR} \
 		${LOCALBASE}/share/pear/PEAR.php:devel/pear@${PHP_FLAVOR} \
 		${UNZIP_CMD}:archivers/unzip \
-		composer:devel/php-composer2@${PHP_FLAVOR} \
+		composer:devel/php-composer@${PHP_FLAVOR} \
 		sudo:security/sudo \
 		zip:archivers/zip
 
