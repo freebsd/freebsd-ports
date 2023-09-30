@@ -7880,3 +7880,4 @@ devel/libtar||2023-09-30|Has expired: Abandonware since 2013 and multiple CVEs o
 devel/pear-htmlpurifier||2023-09-30|Has expired: Unfetchable as the pear channel no longer works
 devel/pear-channel-htmlpurifier.org||2023-09-30|Has expired: PEAR Channel is no longer functional
 devel/pmdk||2023-09-30|Has expired: FreeBSD has been deprecated since 1.13.X and support has been dropped on 2.0
+graphics/povray36|graphics/povray37|2023-09-30|Has expired: No longer supported upstream; use POV-Ray 3.7 instead

@@ -12,7 +12,7 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 PLIST_FILES=	bin/povray
 
-POV_VERSIONS_ALL=	36 37 38
+POV_VERSIONS_ALL=	37 38
 #By default only the following version will be installed and
 #link bin/povray -> bin/povray${DEFAULT_VER} will be created.
 DEFAULT_VER?=	37
