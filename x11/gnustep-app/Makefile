@@ -1,6 +1,6 @@
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -64,7 +64,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		pixen>0:graphics/pixen \
 		plopfolio>0:deskutils/plopfolio \
 		poe>0:multimedia/poe \
-		popup>0:textproc/popup \
 		gnustep-preview>0:graphics/preview \
 		price>0:graphics/price \
 		remotedesk>0:net/remotedesk \
