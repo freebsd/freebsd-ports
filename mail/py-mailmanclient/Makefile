@@ -1,27 +1,27 @@
 PORTNAME=	mailmanclient
 PORTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Official Python bindings for the GNU Mailman 3 REST API
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python bindings for Mailman REST API
 WWW=		https://gitlab.com/mailman/mailmanclient
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>3.0:devel/py-flake8@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}flake8-bugbear>0:devel/py-flake8-bugbear@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mailman>0:mail/mailman3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}falcon>0:www/py-falcon@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}falcon>=1.4.1:www/py-falcon@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}httpx>=0:www/py-httpx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mailman>=3.3.1:mail/mailman3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-services>=0:devel/py-pytest-services@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC}/src/mailmanclient/tests && ${PYTHON_CMD} test_client.py
 
 .include <bsd.port.mk>
