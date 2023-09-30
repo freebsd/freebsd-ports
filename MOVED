@@ -7879,3 +7879,4 @@ devel/electron23|devel/electron24|2023-09-30|Has expired: EOLed upstream, switch
 devel/libtar||2023-09-30|Has expired: Abandonware since 2013 and multiple CVEs over the years
 devel/pear-htmlpurifier||2023-09-30|Has expired: Unfetchable as the pear channel no longer works
 devel/pear-channel-htmlpurifier.org||2023-09-30|Has expired: PEAR Channel is no longer functional
+devel/pmdk||2023-09-30|Has expired: FreeBSD has been deprecated since 1.13.X and support has been dropped on 2.0

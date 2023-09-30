@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-pmdk requires procfs(5). Add this line to your fstab(5):
-proc /proc procfs rw 0 0
-EOM
-}
-]

@@ -4148,7 +4148,6 @@
     SUBDIR += please
     SUBDIR += pmccabe
     SUBDIR += pmd
-    SUBDIR += pmdk
     SUBDIR += poco
     SUBDIR += popt
     SUBDIR += poser
