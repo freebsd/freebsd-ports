@@ -1,5 +1,5 @@
 PORTNAME=	autobahn
-PORTVERSION=	22.1.1
+PORTVERSION=	22.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,7 +48,6 @@ SCRAM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=20.1.0:security/py-argon
 				${PYTHON_PKGNAMEPREFIX}cffi>=1.14.5:devel/py-cffi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}passlib>=1.7.4:security/py-passlib@${PY_FLAVOR}
 SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cbor2>=5.2.0:devel/py-cbor2@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}cbor>=1.0.0:devel/py-cbor@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}flatbuffers>=1.12:devel/py-flatbuffers@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2:devel/py-msgpack@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}py-ubjson>=0.16.1:devel/py-py-ubjson@${PY_FLAVOR} \
