@@ -18,6 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	huertatipografica
 GH_PROJECT=	Alegreya-Sans
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
