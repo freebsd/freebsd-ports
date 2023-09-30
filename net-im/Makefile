@@ -43,7 +43,6 @@
     SUBDIR += kaccounts-integration
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
-    SUBDIR += kde-telepathy
     SUBDIR += kopete
     SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-approver
