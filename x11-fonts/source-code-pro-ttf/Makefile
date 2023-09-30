@@ -1,9 +1,9 @@
-PORTNAME=	sourcecodepro
-PORTVERSION=	2.038
+PORTNAME=	source-code-pro
+PORTVERSION=	2.042
 CATEGORIES=	x11-fonts
 PKGNAMESUFFIX=	-ttf
-MASTER_SITES=	https://github.com/adobe-fonts/source-code-pro/releases/download/2.038R-ro%2F1.058R-it%2F1.018R-VAR/
-DISTNAME=	TTF-source-code-pro-2.038R-ro-1.058R-it
+MASTER_SITES=	https://github.com/adobe-fonts/source-code-pro/releases/download/${PORTVERSION}R-u%2F1.062R-i%2F1.026R-vf/
+DISTNAME=	TTF-source-code-pro-${PORTVERSION}R-u_1.062R-i
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Set of fonts by Adobe designed for coders
@@ -24,6 +24,6 @@ PORTSCOUT=	skipv:variable-fonts
 
 do-install:
 	${MKDIR} ${STAGEDIR}${FONTSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>

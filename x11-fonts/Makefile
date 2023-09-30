@@ -258,8 +258,8 @@
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += showfont
+    SUBDIR += source-code-pro-ttf
     SUBDIR += source-sans-ttf
-    SUBDIR += sourcecodepro-ttf
     SUBDIR += sourceserifpro-ttf
     SUBDIR += spleen
     SUBDIR += steps-mono

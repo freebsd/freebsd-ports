@@ -7860,3 +7860,4 @@ devel/rubygem-mustache0|devel/rubygem-mustache|2023-09-27|Has expired: Use devel
 sysutils/rsfetch||2023-09-27|Has expired: Upstream unmaintained
 sysutils/sysrc||2023-09-27|Has expired: Migrated into src
 deskutils/budgie-trash-applet||2023-09-29|Has expired: Merged into newer x11/budgie-desktop >= 10.8
+x11-fonts/sourcecodepro-ttf|x11-fonts/source-code-pro-ttf|2023-09-30|Move x11-fonts/sourcecodepro-ttf to x11-fonts/source-code-pro-ttf
