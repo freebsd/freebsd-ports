@@ -1,8 +1,7 @@
 PORTNAME=	astrometry
-PORTVERSION=	0.93
-PORTREVISION=	2
+PORTVERSION=	0.94
 CATEGORIES=	astro
-MASTER_SITES=	http://astrometry.net/downloads/
+MASTER_SITES=	https://github.com/dstndstn/${PORTNAME}.net/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}.net-${PORTVERSION}
 
 MAINTAINER=	rhurlin@FreeBSD.org
