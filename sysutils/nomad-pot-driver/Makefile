@@ -1,7 +1,6 @@
 PORTNAME=	nomad-pot-driver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	9
+DISTVERSION=	0.9.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -29,6 +28,7 @@ GH_TUPLE=	\
 		Microsoft:go-winio:fc70bd9a86b5:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
 		NVIDIA:gpu-monitoring-tools:0d8df858cca4:nvidia_gpu_monitoring_tools/vendor/github.com/NVIDIA/gpu-monitoring-tools \
 		StackExchange:wmi:cbe66965904d:stackexchange_wmi/vendor/github.com/StackExchange/wmi \
+		alessio:shellescape:v1.4.2:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		agext:levenshtein:v1.2.1:agext_levenshtein/vendor/github.com/agext/levenshtein \
 		apparentlymart:go-textseg:v1.0.0:apparentlymart_go_textseg/vendor/github.com/apparentlymart/go-textseg \
 		appc:spec:v0.8.11:appc_spec/vendor/github.com/appc/spec \
