@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 do-install-LINKS-on:
-	${MKDIR} ${STAGEDIR}${PREFIX}${FCDIR_LINKS}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FCDIR_LINKS}/
 	cd ${STAGEDIR}${PREFIX}/${FCDIR_LINKS}/ && ${LN} -fs ../conf.avail/*dejavu*.conf .
 
 do-install-DOCS-on:
