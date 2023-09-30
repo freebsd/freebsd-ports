@@ -129,6 +129,7 @@
     SUBDIR += genyo
     SUBDIR += genyog
     SUBDIR += gnu-unifont
+    SUBDIR += gnu-unifont-otf
     SUBDIR += gnu-unifont-ttf
     SUBDIR += gofont-ttf
     SUBDIR += gohufont
