@@ -149,7 +149,6 @@
     SUBDIR += drupal10
     SUBDIR += drupal7
     SUBDIR += drupal7-wysiwyg
-    SUBDIR += drupal8
     SUBDIR += drupal9
     SUBDIR += drush
     SUBDIR += dtse
