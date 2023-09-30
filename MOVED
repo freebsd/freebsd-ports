@@ -7916,3 +7916,4 @@ textproc/yamcha||2023-09-30|Has expired: Last upstream release was in 2005
 japanese/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years ago. Consider using www/awstats
 www/dhttpd||2023-09-30|Has expired: Abandonware, last release in 15+ years ago. Consider using www/darkhttpd, www/obhttpd or www/miniserve
 www/drupal8|www/drupal9|2023-09-30|Has expired: Upstream EOL reached on 2021-11-17
+www/fnord||2023-09-30|Has expired: Deprecated upstream, consider using www/apache24, www/lighttpd or www/nginx
