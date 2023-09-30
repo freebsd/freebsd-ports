@@ -1,8 +1,7 @@
 PORTNAME=	heaptrack
-DISTVERSION=	1.4.0
-PORTREVISION=	5
+DISTVERSION=	1.5.0
 CATEGORIES=	devel kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Heap memory profiler
@@ -12,6 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		libdw.so:devel/elfutils \
 		libunwind.so:devel/libunwind \
 		libKChart.so:graphics/kdiagram \
 		libzstd.so:archivers/zstd
@@ -22,7 +22,7 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons i18n \
 		iconthemes itemmodels jobwidgets kio service solid \
 		threadweaver widgetsaddons windowsystem \
 		ecm:build
-USE_QT=		concurrent core dbus gui network widgets xml \
+USE_QT=		concurrent core dbus gui network svg widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
