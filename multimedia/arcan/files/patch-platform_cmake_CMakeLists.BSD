@@ -1,0 +1,15 @@
+Partially revert https://github.com/letoram/arcan/commit/3c1674a8f5db
+
+--- platform/cmake/CMakeLists.BSD.orig	2022-10-12 20:23:54 UTC
++++ platform/cmake/CMakeLists.BSD
+@@ -74,6 +74,10 @@ else()
+ 	set(BSD_VARIANT_DEFINITIONS
+ 		-DCLOCK_MONOTONIC_RAW=CLOCK_REALTIME_FAST)
+ 
++# FreeBSD 12.1 enabled evdev but Arcan crashes
++	if(${INPUT_PLATFORM} STREQUAL "evdev")
++		SET(INPUT_PLATFORM "syscons")
++	endif()
+ 	if (VIDEO_PLATFORM STREQUAL "egl-dri")
+ 		list(APPEND ARCAN_PLATFORM ${PLATFORM_PATH}/psep_open.c)
+ 	else()
