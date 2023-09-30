@@ -1,7 +1,7 @@
 PORTNAME=	dejavu
 PORTVERSION=	2.37
 DISTVERSIONPREFIX=	fonts-ttf-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_${PORTVERSION:R}_${PORTVERSION:E}/
 
