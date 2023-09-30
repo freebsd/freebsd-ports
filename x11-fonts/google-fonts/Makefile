@@ -1,6 +1,6 @@
 PORTNAME=	google-fonts
 DISTVERSION=	0.0.0.20210120
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -31,7 +31,7 @@ RUN_DEPENDS=	Andika>0:x11-fonts/andika \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		source-code-pro-ttf>0:x11-fonts/source-code-pro-ttf \
 		source-sans-ttf>0:x11-fonts/source-sans-ttf \
-		sourceserifpro-ttf>0:x11-fonts/sourceserifpro-ttf \
+		source-serif-ttf>0:x11-fonts/source-serif-ttf \
 		ubuntu-font>0:x11-fonts/ubuntu-font \
 		vollkorn-ttf>0:x11-fonts/vollkorn-ttf
 

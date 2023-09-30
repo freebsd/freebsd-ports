@@ -260,7 +260,7 @@
     SUBDIR += showfont
     SUBDIR += source-code-pro-ttf
     SUBDIR += source-sans-ttf
-    SUBDIR += sourceserifpro-ttf
+    SUBDIR += source-serif-ttf
     SUBDIR += spleen
     SUBDIR += steps-mono
     SUBDIR += stix-fonts
