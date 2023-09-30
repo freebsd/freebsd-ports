@@ -72,9 +72,6 @@ CONFIGURE_ARGS+=	--with-tls=none
 .endif
 
 post-patch:
-# required for sparc64, no-op elsewhere
-	@${REINPLACE_CMD} -e \
-		'/^VPATH = /s,$$,/src,' ${WRKSRC}/gc/Makefile.in
 # unbreak "make test" by using the same workaround as for OSX (darwin),
 # apparently because we both use clang (XXX: what about gcc?)
 	@${REINPLACE_CMD} -e \

@@ -10,8 +10,6 @@ WWW=		https://gatk.broadinstitute.org/hc/en-us
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: String index out of range: -1
-
 BUILD_DEPENDS=	gradle:devel/gradle
 
 USES=		gettext-runtime

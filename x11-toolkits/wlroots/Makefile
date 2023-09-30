@@ -66,13 +66,5 @@ post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} "/STR/s/meson.project_version()/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/include/wlr/meson.build
-# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
-# https://cgit.freebsd.org/src/commit/?id=d7535fb3e3cb
-	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1300515 ]; then \
-		${REINPLACE_CMD} -e '/POSIX/s/199309/200112/' \
-		${WRKSRC}/render/gles2/pass.c \
-		${WRKSRC}/render/gles2/renderer.c \
-		${WRKSRC}/types/wlr_presentation_time.c; \
-	fi
 
 .include <bsd.port.mk>

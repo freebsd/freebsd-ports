@@ -34,16 +34,12 @@ PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html \
 
 OPTIONS_DEFINE=	DOCS
 
+PICFLAG?=	-fpic
+
 .include <bsd.port.options.mk>
 
 CPPFILT?=	/usr/bin/c++filt
 READELF?=	/usr/bin/readelf
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \

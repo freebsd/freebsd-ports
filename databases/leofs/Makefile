@@ -10,7 +10,7 @@ WWW=		https://leo-project.net/
 
 LICENSE=	APACHE20
 
-NOT_FOR_ARCHS=		riscv64 sparc64
+NOT_FOR_ARCHS=		riscv64
 NOT_FOR_ARCHS_REASON=	does not build: error Please implement AtomicPointer for this platform
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/erlang21/bin/erlc:lang/erlang-runtime21 \

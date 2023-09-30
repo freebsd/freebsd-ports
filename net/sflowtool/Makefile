@@ -22,13 +22,6 @@ PORTEXAMPLES=	sflowenable
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.include <bsd.port.options.mk>
-
-# Patch byteswap.h where not available
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301511
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_sflowtool.c
-.endif
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

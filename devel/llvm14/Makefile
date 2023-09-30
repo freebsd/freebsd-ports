@@ -265,13 +265,6 @@ USES+=		gnome
 .if ${PORT_OPTIONS:MCOMPILER_RT}
 LLVM_ENABLE_PROJECTS+=	compiler-rt
 COMPILER_RT_PATTERN=	(sanitizer|include.xray|include\/fuzzer|profile\/InstrProfData.inc)
-.if ${OSVERSION} < 1300525
-# An unwind.h is require to build.  I think an in-tree one should be used
-# but this seems to work as a workaround...
-BUILD_DEPENDS+=	libunwind>0:devel/libunwind
-# Allow unwind.h to be found reliably
-USES+=	localbase
-.endif
 .endif
 
 .if ${PORT_OPTIONS:MEXTRAS}
@@ -327,7 +320,7 @@ CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 .include "${.CURDIR}/Makefile.COMMANDS"
 .include "${.CURDIR}/Makefile.MAN1SRCS"
 
-_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV Sparc X86
+_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
 _NATIVE_BACKENDS=	X86
@@ -372,7 +365,6 @@ _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_BACKWARDS_PowerPC=Exegesis
 _BE_INCS_RISCV=		riscv_vector.h
 _BE_LIBS_RISCV=		AsmParser Disassembler
-_BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_VE=		AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler Utils

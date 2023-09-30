@@ -13,7 +13,7 @@ WWW=		https://www.arduino.cc/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-# Confirmed for ARCHS below. Arm, PowerPC and Sparc untested. (Feedback welcome)
+# Confirmed for ARCHS below. Arm and PowerPC untested. (Feedback welcome)
 ONLY_FOR_ARCHS=	amd64 i386
 
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \

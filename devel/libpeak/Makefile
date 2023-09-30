@@ -10,7 +10,7 @@ WWW=		https://peak.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 
-ONLY_FOR_ARCHS=		amd64 i386 sparc64
+ONLY_FOR_ARCHS=		amd64 i386
 
 USES=		gmake libtool perl5 shebangfix
 USE_PERL5=	test

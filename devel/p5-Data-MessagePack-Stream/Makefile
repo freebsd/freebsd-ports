@@ -10,7 +10,6 @@ WWW=		https://metacpan.org/release/Data-MessagePack-Stream
 
 BROKEN_mips=	fails to build: atomic operations are not found
 BROKEN_mips64=	fails to build: atomic operations are not found
-BROKEN_sparc64=	fails to build: atomic operations are not found
 
 BUILD_DEPENDS=	p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Module-Build-XSUtil>=0:devel/p5-Module-Build-XSUtil \

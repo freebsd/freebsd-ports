@@ -8,9 +8,7 @@ PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/beyert/mlton-freebsd_bootstrap/raw/c7371c1/:bootstrap
 DISTFILES+=	${BOOTNAME}.i386-${OPSYS:tl}-13.txz:bootstrap \
-		${BOOTNAME}.amd64-${OPSYS:tl}-13.txz:bootstrap \
-		${BOOTNAME}.i386-${OPSYS:tl}-12.txz:bootstrap \
-		${BOOTNAME}.amd64-${OPSYS:tl}-12.txz:bootstrap
+		${BOOTNAME}.amd64-${OPSYS:tl}-13.txz:bootstrap
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Optimizing Standard ML compiler
@@ -33,7 +31,7 @@ USES=		compiler:c11 gmake
 BOOTNAME=	${BOOTNAMEPREFIX}${PORTNAME}${BOOTNAMESUFFIX}-${BOOTVERSIONPREFIX}${BOOTVERSION}${BOOTVERSIONSUFFIX}
 BOOTVERSIONSUFFIX=
 BOOTVERSION=	${PORTVERSION}
-BOOTOSMAJ=	${OSREL:R}
+BOOTOSMAJ=	13
 
 OPTIONS_DEFINE=			DOCS EXAMPLES
 OPTIONS_DEFAULT=		MLTON NATIVE
@@ -89,10 +87,6 @@ SMLNJ_VARS=			BOOT_DIST= \
 BOOT_WRKSRC=	${WRKSRC}/build
 BOOT_WRKTMP=	${WRKDIR}/mlton-bootstrap
 
-.if ${PORT_OPTIONS:MNATIVE} && ${OSREL:R} >= 13
-BOOTOSMAJ=	13
-.endif
-
 BOOT_DIST_NEW=	${PKGNAME}${DISTVERSIONSUFFIX}.${ARCH}-${OPSYS:tl}-${OSREL:R}-${HOST}${BOOT_SUFX}
 
 USE_GITHUB=	yes
@@ -103,7 +97,7 @@ GH_TAGNAME=	b2fca3d
 BOOT_CMD=	--xz
 BOOT_SUFX=	.txz
 
-RAM_SLOP_32=	$$(${SYSCTL} "hw.physmem" | ${AWK} '{ values = values" "$$2 } END { print values; }' | ${AWK} '{ "freebsd-version -r" | getline ver; split(ver, xs, "\."); kernelOSMAJ = xs[1]; osj = ${BOOTOSMAJ}; physmem = $$1 / 1024 / 1024 / 1024; os = kernelOSMAJ; maxphysmem = physmem; if (physmem > 3.2) { maxphysmem = 3.2; }; ospcent = 0.70; if (osj < 13 && os != osj) { ospcent = 0.65; } else if (os >= 13) { if (physmem < 3.1) { ospcent = 0.83; } else { ospcent = 0.80; } }; targetmem = maxphysmem * ospcent; targetpcent = targetmem / physmem; print int((targetpcent + 0.005) * 100) / 100; }')
+RAM_SLOP_32=	$$(${SYSCTL} "hw.physmem" | ${AWK} '{ values = values" "$$2 } END { print values; }' | ${AWK} '{ physmem = $$1 / 1024 / 1024 / 1024; maxphysmem = physmem; if (physmem > 3.2) { maxphysmem = 3.2; }; ospcent = 0.70; if (physmem < 3.1) { ospcent = 0.83; } else { ospcent = 0.80; }; targetmem = maxphysmem * ospcent; targetpcent = targetmem / physmem; print int((targetpcent + 0.005) * 100) / 100; }')
 
 post-extract:
 	@${MKDIR} ${BOOT_WRKSRC}

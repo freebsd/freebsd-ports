@@ -24,7 +24,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # see Userland/Libraries/LibWeb/Loader/ResourceLoader.h
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
-BROKEN_FreeBSD_12=	C++ template issues
 BROKEN_i386=	Userland/Libraries/LibJIT/GDBElf.cpp:29:24: bit cast source size does not equal destination size
 
 BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list

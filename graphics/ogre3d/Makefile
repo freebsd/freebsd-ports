@@ -11,8 +11,6 @@ WWW=		https://www.ogre3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/local/bin/ld: /usr/lib/crt1.o:(.got+0x60): undefined reference to 'main'
-
 LIB_DEPENDS=	libzzip.so:devel/zziplib \
 		libfreetype.so:print/freetype2
 
@@ -75,7 +73,7 @@ CXXFLAGS+=		-DNDEBUG -I${LOCALBASE}/include -I${LOCALBASE}/include/Imath
 
 post-patch:
 	@${REINPLACE_CMD} -e '\
-		s,defined(__x86_64__),& || defined(__sparc64__) || defined(__amd64__),' \
+		s,defined(__x86_64__),& || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
 post-patch-PYTHON-on:

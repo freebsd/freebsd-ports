@@ -157,13 +157,6 @@ SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 
 .include <bsd.port.pre.mk>
 
-# QGIS requires flex >= 2.5.6, see
-# https://github.com/qgis/QGIS/blob/fb0f334b06e0828e5695ffcaa7c7eb82d6516cb0/INSTALL.md
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1300501)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
-CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
-.endif
-
 pre-patch:
 	# Only PostgreSQL Client headers, not Server
 	@${REINPLACE_CMD} -e 's|set(POSTGRES_INCLUDE_DIR \$${PostgreSQL_INCLUDE_DIRS})|set(POSTGRES_INCLUDE ${LOCALBASE}/include)|g' \

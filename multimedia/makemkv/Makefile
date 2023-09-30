@@ -64,8 +64,7 @@ TARGET_ORDER_OVERRIDE=	290:pre-configure-FDK_AAC-on
 
 CC=		${LINUXBASE}/bin/gcc
 CXX=		${LINUXBASE}/bin/g++
-CPPFLAGS+=	-D_linux_ -DFORCE_OPENSSL_NO_EC \
-		${${OSVERSION}<1300000:?-Dcaddr_t=void\* -D__daddr_t_defined:}
+CPPFLAGS+=	-D_linux_ -DFORCE_OPENSSL_NO_EC
 PATCHELF_CMD?=	${LOCALBASE}/bin/patchelf
 LINUXSYSROOT=	${WRKDIR}/gnuroot
 HAS_CONFIGURE=	yes

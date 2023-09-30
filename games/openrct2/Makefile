@@ -19,7 +19,7 @@ WWW=		https://openrct2.io/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/licence.txt
 
-NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only for little-endian architectures
 
 BUILD_DEPENDS=	nlohmann-json>0:devel/nlohmann-json

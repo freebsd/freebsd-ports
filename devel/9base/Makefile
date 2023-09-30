@@ -11,7 +11,7 @@ WWW=		https://tools.suckless.org/9base
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=		amd64 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	has low-level code unavailable for ${ARCH}
 
 USES=		cpe shebangfix

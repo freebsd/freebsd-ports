@@ -81,12 +81,6 @@ IGNORE=		CABAL_PROJECT: invalid value: ${CABAL_PROJECT}
 BROKEN=		${USE_CABAL:Mbasement-0.0.1[4-5]} package doesn't compile on i386
 .  endif
 
-.  if ${OSVERSION} < 1302000 && defined(USE_CABAL) && ${USE_CABAL:Mtext-2.*}
-# Band-aids for a Clang bug that is shipped with FreeBSD < 13.2
-BUILD_DEPENDS+=	clang15:devel/llvm15
-BUILD_ARGS+=	--ghc-options='-pgmc clang++15'
-.  endif
-
 PKGNAMEPREFIX?=	hs-
 
 CABAL_EXECUTABLES?=	${PORTNAME}

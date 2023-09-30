@@ -21,9 +21,6 @@ LIB_DEPENDS=	libelf.so:devel/elfutils \
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		bash:shells/bash
 TEST_DEPENDS=	check>0:devel/check
-.if !exists(/usr/include/unwind.h)
-LIB_DEPENDS+=	libunwind.so:devel/libunwind
-.endif
 
 USES=		autoreconf compiler:c++14-lang localbase pkgconfig shebangfix
 

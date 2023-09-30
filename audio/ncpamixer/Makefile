@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake compiler:c++17-lang ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fulhax
@@ -20,14 +20,5 @@ GH_ACCOUNT=	fulhax
 WRKSRC_SUBDIR=	src
 
 PLIST_FILES=	bin/${PORTNAME}
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=          ncurses
-.else
-USES+=          ncurses:port
-CFLAGS+=	-I${LOCALBASE}/include/ncurses
-.endif
 
 .include <bsd.port.mk>

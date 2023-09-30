@@ -76,7 +76,7 @@ PLIST_SUB+=	X11=""
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+.if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-storage=fatty
 .endif
 

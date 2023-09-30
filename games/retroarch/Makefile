@@ -41,7 +41,6 @@ OPTIONS_DEFINE_i386=	WAYLAND
 OPTIONS_DEFAULT=FFMPEG OSS SDL OPENGL OPENAL V4L FREETYPE UDEV QT X11
 OPTIONS_DEFAULT_amd64=	WAYLAND
 OPTIONS_DEFAULT_i386=	WAYLAND
-OPTIONS_EXCLUDE_FreeBSD_12=	WAYLAND	# requires memfd_create()
 FFMPEG_DESC=	On-the-fly recording of gameplay with libavcodec
 WAYLAND_DESC=	Wayland display support
 UDEV_DESC=	udev device hotplug support

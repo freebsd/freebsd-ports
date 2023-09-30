@@ -12,8 +12,6 @@ WWW=		https://www.cgal.org/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN_sparc64=	does not build: fails to compile all_files.cpp
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:math/ntl
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libmpfr.so:math/mpfr \

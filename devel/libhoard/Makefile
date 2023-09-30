@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 BROKEN_mips=		no spin lock implementation is available for this platform
 BROKEN_mips64=		no spin lock implementation is available for this platform
-BROKEN_sparc64=		Does not build
 
 WRKSRC=		${WRKDIR}/Hoard/src
 MAKEFILE=	GNUmakefile

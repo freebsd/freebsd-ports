@@ -11,8 +11,6 @@ WWW=		https://www.bunkus.org/videotools/mkvtoolnix/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=	does not install
-
 BUILD_DEPENDS=	rake:devel/rubygem-rake \
 		docbook-xsl>=0:textproc/docbook-xsl \
 		xsltproc:textproc/libxslt

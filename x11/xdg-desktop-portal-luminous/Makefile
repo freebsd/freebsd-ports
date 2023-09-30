@@ -11,8 +11,6 @@ WWW=		https://github.com/waycrate/xdg-desktop-portal-luminous
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
-
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	slurp:x11/slurp

@@ -13,8 +13,6 @@ WWW=		https://acpica.org
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: comparison is always true due to limited range of data type
-
 USES=		gmake
 
 BUILD_WRKSRC=	${WRKSRC}/generate/unix

@@ -12,7 +12,6 @@ BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
 MAKE_ARGS=	CFONTDIR=${FONTSDIR} EFONTDIR=${FONTSDIR}
 MAKE_JOBS_UNSAFE=yes
-BROKEN_sparc64=		Does not build on sparc64
 
 NO_WRKSUBDIR=	yes
 

@@ -13,24 +13,18 @@ WWW=		http://xcoral.free.fr/
 
 LICENSE=	GPLv2
 
-USES=		bison compiler:c11 xorg
+LIB_DEPENDS=	libgnuregex.so.[6-9]:devel/libgnuregex
+
+USES=		bison compiler:c11 localbase:ldflags xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
 LIBS+=		-lgnuregex
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-isystem ${LOCALBASE}/include
 EXTRACT_AFTER_ARGS=	--exclude BR_Parser.[ch]
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1300000
-LIB_DEPENDS+=	libgnuregex.so.[6-9]:devel/libgnuregex
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| regex\.[co] | |g ; \
@@ -43,4 +37,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Doc/* ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -9,8 +9,6 @@ COMMENT=	Replacement Objective-C runtime supporting modern Objective-C features
 
 LICENSE=	MIT
 
-BROKEN_sparc64=		Does not compile on sparc64: Cannot configure clang properly
-
 USES=		cmake compiler objc:compiler
 
 USE_GITHUB=	yes

@@ -22,8 +22,6 @@ LDFLAGS+=		-Wl,--undefined-version
 DATADIR=		${PREFIX}/share/mlt-7
 
 .ifndef(SLAVEPORT) # Master port.
-BROKEN_sparc64=		does not compile on sparc64 (invokes i386 asm)
-
 USES+=			gnome mlt:7,nodepend
 USE_GNOME=		libxml2
 

@@ -10,8 +10,6 @@ WWW=		https://github.com/jasonroelofs/rice
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_12_powerpc64=	fails to configure: could not find ruby.h
-
 USES=		gem
 
 NO_ARCH=	yes

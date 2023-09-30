@@ -10,7 +10,6 @@ WWW=		https://www.powerdns.com/auth.html
 
 LICENSE=	GPLv2
 
-BROKEN_sparc64=	does not compile: error: to_string is not a member of std
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	archs with 32-bits time_t are no longer supported by upstream
 

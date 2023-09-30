@@ -28,7 +28,7 @@ CFLAGS+=	-Dcrc32_type=long
 CFLAGS+=	-Dcrc32_type=int
 .endif
 
-.if ! empty(ARCH:Mmips*) || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == "sparc64"
+.if ! empty(ARCH:Mmips*) || ${ARCH} == powerpc || ${ARCH} == powerpc64
 CFLAGS+=	-DCPU_BIGENDIAN
 .endif
 

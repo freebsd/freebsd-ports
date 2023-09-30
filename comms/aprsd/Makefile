@@ -11,8 +11,6 @@ WWW=		https://sourceforge.net/projects/aprsd/
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
-
 USE_CXXSTD=	c++14
 USE_RC_SUBR=	aprsd
 

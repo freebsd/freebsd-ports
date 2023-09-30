@@ -50,7 +50,7 @@ OPENMPI_CMAKE_ON=-DMPI_BASE_DIR=${LOCALBASE}/mpi/openmpi
 BLAS=		${BLASLIB}
 LAPACK=		${LAPACKLIB}
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 FPIC=	-fPIC
 .else
 FPIC=	-fpic

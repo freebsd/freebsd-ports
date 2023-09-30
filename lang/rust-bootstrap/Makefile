@@ -65,9 +65,6 @@ _RUST_LLVM_TARGET_riscv64=		RISCV
 .if ${OPSYS} != FreeBSD
 IGNORE=	is only for FreeBSD
 .endif
-.if (${FLAVOR} == powerpc64le || ${FLAVOR} == riscv64) && ${OSVERSION} < 1300116
-IGNORE=	will not build on 12.x due to old system
-.endif
 
 .if exists(${PATCHDIR}/${FLAVOR:S/_/-/})
 EXTRA_PATCHES+=	${PATCHDIR}/${FLAVOR:S/_/-/}

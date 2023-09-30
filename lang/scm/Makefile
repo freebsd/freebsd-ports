@@ -16,6 +16,8 @@ LICENSE=	LGPL21
 BROKEN_aarch64=		fails to link: missing sbrk
 BROKEN_riscv64=		fails to link: missing sbrk
 
+LIB_DEPENDS=	libgnuregex.so.[6-9]:devel/libgnuregex
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		readline zip
@@ -59,10 +61,6 @@ USES+=		compiler:gcc-c++11-lib
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1300000
-LIB_DEPENDS+=	libgnuregex.so.[6-9]:devel/libgnuregex
-.endif
 
 .if ${PORT_OPTIONS:MX11}
 SCM_MODULES+=	${SCM_MODULES_X11}

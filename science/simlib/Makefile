@@ -11,7 +11,7 @@ WWW=		https://www.fit.vutbr.cz/~peringer/SIMLIB/index.html.en
 LICENSE=	LGPL20
 
 BROKEN_riscv64=		fails to compile: process.cc:53:3: module process.cc is not ported to this processor architecture
-NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64 sparc64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
 
 USES=		gmake

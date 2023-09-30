@@ -167,7 +167,7 @@ PLIST=			${.CURDIR}/../ghc92/pkg-plist
 .endif
 
 # This version of ncurses is needed by bootstrap compiler
-.if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
+.if empty(PORT_OPTIONS:MBOOT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 .endif
 

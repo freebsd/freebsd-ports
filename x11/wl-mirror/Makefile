@@ -10,8 +10,6 @@ WWW=		https://github.com/Ferdi265/wl-mirror
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
-
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-egl.so:graphics/wayland

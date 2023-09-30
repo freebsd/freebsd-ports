@@ -8,8 +8,6 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 WWW=		http://www.w1hkj.com
 
-BROKEN_FreeBSD_12=	no hid support
-
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \

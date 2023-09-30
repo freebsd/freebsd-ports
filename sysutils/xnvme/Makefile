@@ -11,7 +11,6 @@ LICENSE=	BSD3CLAUSE
 
 NOT_FOR_ARCHS=	armv7 i386
 NOT_FOR_ARCHS_REASON=	use of types with platform-specific length
-BROKEN_FreeBSD_12=	no member named 'aio_iov' in 'struct aiocb'
 
 USES=		meson
 USE_LDCONFIG=	yes

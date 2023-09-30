@@ -8,8 +8,6 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio rig control program, cooperates with fldigi
 WWW=		http://www.w1hkj.com/flrig-help/index.html
 
-BROKEN_FreeBSD_12=	no hid support
-
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \

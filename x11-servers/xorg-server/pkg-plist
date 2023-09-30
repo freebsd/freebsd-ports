@@ -132,7 +132,6 @@ include/xorg/xf86PciInfo.h
 include/xorg/xf86Priv.h
 include/xorg/xf86Privstr.h
 include/xorg/xf86RandR12.h
-%%SPARC64%%include/xorg/xf86Sbus.h
 include/xorg/xf86VGAarbiter.h
 include/xorg/xf86Xinput.h
 include/xorg/xf86_OSlib.h

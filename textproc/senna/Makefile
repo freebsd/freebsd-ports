@@ -12,7 +12,6 @@ WWW=		http://qwik.jp/senna/
 BROKEN_aarch64=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
 BROKEN_armv6=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
 BROKEN_armv7=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
-BROKEN_sparc64=		does not build: libsenna.so: undefined reference to SEN_ATOMIC_ADD_EX
 
 USES=		compiler:c11 gmake libtool pathfix
 GNU_CONFIGURE=	yes

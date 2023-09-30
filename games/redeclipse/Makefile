@@ -13,8 +13,6 @@ LICENSE_COMB=	multi
 
 CONFLICTS_INSTALL=redeclipse16
 
-BROKEN_sparc64=	does not build on sparc64
-
 RUN_DEPENDS=	redeclipse-data>=${PORTVERSION}:games/redeclipse-data
 
 USE_GITHUB=	yes

@@ -22,6 +22,7 @@ GH_ACCOUNT=	ehaupt
 GH_PROJECT=	CheeseCutter
 
 MAKEFILE=	Makefile.ldc
+MAKE_ARGS=	DLDFLAGS=-L=-Wl,-z,nostart-stop-gc
 MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
 OPTIONS_DEFINE=	EXAMPLES
@@ -35,10 +36,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${f}.fr.1 ${STAGEDIR}${MANPREFIX}/share/man/fr/man1
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 1301000)
-MAKE_ARGS=	DLDFLAGS=-L=-Wl,-z,nostart-stop-gc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

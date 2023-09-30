@@ -58,12 +58,6 @@ DOCS_DESC=	Comprehensive qmc2 documentaion
 DOCS_ALL_TARGET=	doc
 DOCS_PORTDOCS=		html
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-EXTRA_PATCHES=	${PATCHDIR}/extra-scripts-sdl-includepaths
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}/|g' \
 		-e 's|%%DOCSDIR%%|${DOCSDIR}/|g' \

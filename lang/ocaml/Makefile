@@ -20,7 +20,6 @@ LICENSE_FILE_QPL10=	${WRKSRC}/LICENSE
 LICENSE_PERMS_QPL10=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_riscv64=		fails to build: hasgot.c:3:12: use of undeclared identifier 'secure_getenv'
-BROKEN_sparc64=	No rule to make target 'none.o', needed by 'libasmrun.a'
 BROKEN_mips64=	No ASM support
 BROKEN_mips=	No ASM support
 

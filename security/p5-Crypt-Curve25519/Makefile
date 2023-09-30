@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 BROKEN_mips=	fails to build: -m32 flag is not supported by this configuration
 BROKEN_mips64=	fails to build: -m32 flag is not supported by this configuration
-BROKEN_sparc64=	fails to build: -m32 flag is not supported by this configuration
 
 USES=		perl5 ssl
 USE_PERL5=	configure

@@ -32,6 +32,9 @@ WRKSRC=		${WRKDIR}/CalculiX/${CCX_VER}/src
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+CFLAGS+=	-fpic
+FFLAGS+=	-fpic
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -42,14 +45,6 @@ EXTRACT_ONLY+=	${DIST_HTM}
 .if $(PORT_OPTIONS:MEXAMPLES)
 DISTFILES+=	${DIST_EXAMPLES}
 EXTRACT_ONLY+=	${DIST_EXAMPLES}
-.endif
-
-.if ${ARCH} == "sparc64"
-CFLAGS+=	-fPIC
-FFLAGS+=	-fPIC
-.else
-CFLAGS+=	-fpic
-FFLAGS+=	-fpic
 .endif
 
 .if ${GCC_DEFAULT} >= 10

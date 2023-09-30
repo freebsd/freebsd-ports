@@ -11,8 +11,6 @@ WWW=		https://github.com/tdf/libcmis
 LICENSE=	LGPL20 MPL11 GPLv2
 LICENSE_COMB=	dual
 
-BROKEN_sparc64=	cannot link with boost
-
 BUILD_DEPENDS=	cppunit-config:devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \

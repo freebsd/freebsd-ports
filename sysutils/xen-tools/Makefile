@@ -75,10 +75,6 @@ DOCS_INSTALL_TARGET=	install-docs
 IGNORE=		only supported on FreeBSD
 .endif
 
-.if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
-BROKEN=	SPICE support requires FreeBSD version 13.0 or higher
-.endif
-
 post-extract:
 	${MV} ${WRKSRC_qemu} ${WRKSRC}/tools/qemu-xen
 	${RM} -rf ${WRKSRC}/tools/qemu-xen/dtc

@@ -119,12 +119,6 @@ MESON_ARGS+=	-Dsha1=libmd
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
-.if ${ARCH} == "sparc64"
-PLIST_SUB+=	SPARC64=""
-.else
-PLIST_SUB+=	SPARC64="@comment "
-.endif
-
 .if ${FLAVOR} == xorg
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d

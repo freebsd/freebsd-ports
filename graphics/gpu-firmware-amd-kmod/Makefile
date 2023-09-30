@@ -58,13 +58,6 @@ FLAVORS=	aldebaran \
 		vangogh \
 		yellow_carp
 
-cyan_skillfish2_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-dimgrey_cavefish_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-green_sardine_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-sienna_cichlid_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-navy_flounder_IGNORE_FreeBSD_12=	"Not supported on < 13.1"
-vangogh_IGNORE_FreeBSD_12=		"Not supported on < 13.1"
-
 USES=		kmod uidfix
 
 USE_GITHUB=	yes

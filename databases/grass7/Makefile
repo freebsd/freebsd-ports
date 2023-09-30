@@ -23,8 +23,6 @@ WWW=		https://grass.osgeo.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/GPL.TXT
 
-BROKEN_sparc64=	Does not configure on sparc64
-
 BUILD_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_SITELIBDIR}/six.py:devel/py-six@${PY_FLAVOR}
 LIB_DEPENDS=	libgdal.so:graphics/gdal \

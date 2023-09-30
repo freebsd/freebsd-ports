@@ -43,11 +43,4 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
-# https://cgit.freebsd.org/src/commit/?id=7a202823aa54
-.if !exists(/usr/include/sys/eventfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-LDFLAGS+=	-lepoll-shim
-.endif
-
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-CFLAGS+=	-DPIC ${PICFLAG}
+CFLAGS+=	-DPIC -fpic
 
 MAKE_ARGS=	GTK3=1
 .if defined(WITH_DEBUG)
@@ -33,12 +33,6 @@ MAKE_ARGS+=	DEBUG=1
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 MAKE_ARGS+=	CLANG=1
-.endif
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
-PICFLAG?=	-fpic
 .endif
 
 do-install:

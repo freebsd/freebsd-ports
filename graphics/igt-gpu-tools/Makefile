@@ -9,8 +9,6 @@ WWW=		https://drm.pages.freedesktop.org/igt-gpu-tools/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_FreeBSD_12=	unsupported on FreeBSD versions < 13.1
-
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libdw.so:devel/elfutils \

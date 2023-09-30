@@ -19,7 +19,6 @@ BROKEN_armv7=		fails to configure: cannot find /nxb-bin/usr/bin/cc
 BROKEN_powerpc64=	fails to compile: implicit declaration of function outb
 BROKEN_powerpc64le=	fails to compile: implicit declaration of function outb
 BROKEN_riscv64=		fails to build: gmake: No rule to make target 'Makefile'
-BROKEN_sparc64=		fails to compile: implicit declaration of function outb
 
 LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr \
 		libportaudio.so:audio/portaudio \

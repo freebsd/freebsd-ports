@@ -11,8 +11,6 @@ WWW=		https://snowstorm.sourceforge.net
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NOT_FOR_ARCHS=	sparc64
-
 USES=		gmake localbase:ldflags sdl
 USE_CXXSTD=	c++14
 USE_SDL=	sdl mixer

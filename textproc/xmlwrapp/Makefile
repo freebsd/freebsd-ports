@@ -11,8 +11,6 @@ WWW=		https://xmlwrapp.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12_powerpc64=	fails to configure: invalid value: boost_major_version=
-
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 
 OPTIONS_DEFINE=	XSLT DOCS

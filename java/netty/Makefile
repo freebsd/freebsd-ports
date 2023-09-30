@@ -49,8 +49,6 @@ NETTY_ARCH=	x86_32
 NETTY_ARCH=	ppc_32
 .elif ${ARCH:Mpowerpc64*}
 NETTY_ARCH=	ppc_64
-.elif ${ARCH} == "sparc64"
-NETTY_ARCH=	sparc_64
 .else
 # Default to ${ARCH}
 NETTY_ARCH=	${ARCH}

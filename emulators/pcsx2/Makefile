@@ -95,11 +95,4 @@ Makefile.tuples::
 			https://github.com/${PORTNAME}/${PORTNAME} . && \
 		${SH} ${FILESDIR}/gen_gh_tuple.sh >> ${.CURDIR}/Makefile.tuples
 
-.include <bsd.port.pre.mk>
-
-# Fixed in 13.2 with commit 4b6eb0e63c69 (libc++ update)
-.if (${OSVERSION} <= 1301503)
-BROKEN=		needs libc++ with std::bit_cast support
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

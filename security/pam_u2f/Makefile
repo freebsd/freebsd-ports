@@ -25,8 +25,4 @@ PLIST_FILES=	bin/pamu2fcfg \
 		man/man1/pamu2fcfg.1.gz \
 		man/man8/pam_u2f.8.gz
 
-.if !exists(/usr/libdata/pkgconfig/libcrypto.pc)
-CONFIGURE_ENV=	LIBCRYPTO_CFLAGS="-I${OPENSSLINC}" LIBCRYPTO_LIBS="-L${OPENSSLLIB} -lcrypto"
-.endif
-
 .include <bsd.port.mk>

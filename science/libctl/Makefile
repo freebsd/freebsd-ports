@@ -10,8 +10,6 @@ WWW=		https://libctl.readthedocs.io/en/latest/
 
 LICENSE=	GPLv2
 
-BROKEN_sparc64=	does not build
-
 USES=		fortran guile:2.2 libtool pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

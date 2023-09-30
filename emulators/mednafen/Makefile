@@ -16,8 +16,6 @@ LIB_DEPENDS=	libcdio.so:sysutils/libcdio \
 		libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis
 
-BROKEN_sparc64=		fails to compile due to internal compiler error
-
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl2 net2
 USE_GL=		gl glu

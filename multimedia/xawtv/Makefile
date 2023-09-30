@@ -21,18 +21,12 @@ USES=		cpe gmake iconv jpeg motif ncurses perl5 tar:bzip2 pkgconfig xorg
 
 CPE_VENDOR=	linuxtv
 
-OPTIONS_DEFINE=		AALIB BKTR DV ZVBI
+OPTIONS_DEFINE=		AALIB DV ZVBI
 OPTIONS_DEFINE_i386=	MMX
-OPTIONS_DEFAULT=	AALIB BKTR
-.if !exists(/usr/include/dev/bktr/ioctl_bt848.h)
-OPTIONS_EXCLUDE=	BKTR
-.endif
+OPTIONS_DEFAULT=	AALIB
 OPTIONS_SUB=		yes
 
-BKTR_DESC=	bktr(4) support
 ZVBI_DESC=	Enable libzvbi support
-
-BKTR_MAKE_ARGS=	HAVE_BKTR=yes
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xaw

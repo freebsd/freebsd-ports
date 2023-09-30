@@ -13,7 +13,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_powerpc=		Runaway cc1plus process
-BROKEN_sparc64=		Runaway cc1plus process
 
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png

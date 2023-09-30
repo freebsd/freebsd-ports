@@ -27,8 +27,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Cantera
 GH_TUPLE=	LLNL:sundials:887af43:sundials/ext/sundials # bundled sundials is only needed for the Octave option
 
-CXXFLAGS+=	${CXXFLAGS_${OPSYS}_${OSREL:R}}
-CXXFLAGS_FreeBSD_12=	-D_GNU_SOURCE
 MAKE_ARGS=	system_eigen='y' \
 		system_sundials='n' \
 		system_fmt='y' \

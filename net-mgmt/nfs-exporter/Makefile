@@ -25,13 +25,7 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 USES=		cargo
 USE_RC_SUBR=	nfs_exporter
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1302000
 SUB_LIST=	USER=nobody
-.else
-SUB_LIST=	USER=root
-.endif
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man8/${PORTNAME}.8.gz

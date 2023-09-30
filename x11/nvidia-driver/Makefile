@@ -189,7 +189,7 @@ post-patch: .SILENT
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
 # Pull the right header after FreeBSD src r347984
-.if ${OSVERSION} >= 1300029 && ${NVVERSION} >= 358.009
+.if ${NVVERSION} >= 358.009
 	${REINPLACE_CMD} -e '/^#include/s:lock\.h:mutex.h:' \
 		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-freebsd.c
 .endif

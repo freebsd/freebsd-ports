@@ -14,8 +14,4 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
-post-patch:	# required at least on sparc64
-	@${REINPLACE_CMD} -e '/<ucontext/ { x ; \
-		s,.*,#include <inttypes.h>, ; G ; }' ${WRKSRC}/pcl/pcl.c
-
 .include <bsd.port.mk>

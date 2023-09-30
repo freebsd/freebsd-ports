@@ -34,7 +34,7 @@ DEBUG_PORTDOCS=	DEBUGGER
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "sparc64" && ${ARCH} != "powerpc" && ${ARCH} != powerpc64
+.if ${ARCH} != "powerpc" && ${ARCH} != powerpc64
 CPPFLAGS+=	-DUSE_LITTLE_ENDIAN
 .endif
 

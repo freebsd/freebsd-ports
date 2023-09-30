@@ -17,7 +17,6 @@ LICENSE_COMB=	multi
 DEPRECATED=	Upstream EOL confirmed on 2023-10-10, removal planned for 2023-12-30
 BROKEN_armv6=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_armv7=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
-BROKEN_FreeBSD_12_powerpc64=	fails to link: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 

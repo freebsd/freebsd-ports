@@ -10,8 +10,6 @@ WWW=		https://nim-lang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copying.txt
 
-BROKEN_sparc64=	fails to build: build.sh: clang: not found
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
 TEST_DEPENDS=	node18>=0:www/node
 

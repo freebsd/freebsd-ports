@@ -11,7 +11,7 @@ WWW=		https://www.love2d.org/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Hashing not yet implemented for big endian
 
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug \

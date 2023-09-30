@@ -10,8 +10,6 @@ WWW=		https://github.com/hyprwm/xdg-desktop-portal-hyprland
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12=	libc++ too old
-
 BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
 LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp \
 		libdrm.so:graphics/libdrm \

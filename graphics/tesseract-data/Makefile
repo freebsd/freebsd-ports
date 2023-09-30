@@ -18,8 +18,6 @@ NO_ARCH=	yes
 DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	*
 
-BROKEN_sparc64=		Fails to install: runaway process
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for l in ${PORTDATA}

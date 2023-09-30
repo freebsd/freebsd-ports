@@ -42,10 +42,4 @@ post-patch:
 post-configure:
 	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
 
-# the FIND command works around a bug in FreeBSD 12.4 strip(1) which
-# leaves junk files when attempting to strip a file of unrecognised format.
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/chessx
-	${FIND} ${STAGEDIR}${PREFIX} -name 'ecp.????????' -delete
-
 .include <bsd.port.post.mk>

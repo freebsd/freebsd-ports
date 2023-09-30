@@ -43,7 +43,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|CFLAGS += -DIXPlint|& -DIXP_NEEDAPI=89|' \
 		${WRKSRC}/config.mk
 # Fix brain-damaged piece of code which breaks on arches where `size_t'
-# is not 32-bit unsigned integer (e.g. amd64, sparc64)
+# is not 32-bit unsigned integer (e.g. amd64)
 	${REINPLACE_CMD} -e '/wmii_strlcat/d' ${WRKSRC}/include/util.h
 	${REINPLACE_CMD} -e 's|strlcat|wmii_&|' ${WRKSRC}/include/util.h \
 		${WRKSRC}/cmd/util.c ${WRKSRC}/cmd/wmii/client.c

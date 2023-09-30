@@ -10,8 +10,6 @@ WWW=		https://www.gnu.org/software/clisp/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/GNU-GPL
 
-BROKEN_sparc64=	Does not compile
-
 LIB_DEPENDS=	libffcall.so:devel/libffcall \
 		libreadline.so:devel/readline \
 		libsigsegv.so:devel/libsigsegv

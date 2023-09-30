@@ -11,6 +11,7 @@ WWW=		https://smalltalk.gnu.org/
 LICENSE=	GPLv2+
 
 BROKEN_powerpc64=	Fails to build: gst-package: did not understand #~
+BROKEN_riscv64=		Fails to link: undefined reference to sbrk
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		gawk:lang/gawk

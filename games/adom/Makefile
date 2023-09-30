@@ -13,6 +13,8 @@ LICENSE_NAME=	The ADOM License
 LICENSE_FILE=	${WRKSRC}/docs/readme1st.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror
 
+LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
+
 NO_CDROM=	Copy of CD must be sent to author
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -29,10 +31,6 @@ OPTIONS_DEFINE=	DOCS
 ARCH_BITS=	64
 .elif ${ARCH} == i386
 ARCH_BITS=	32
-.endif
-
-.if ${OSVERSION} >= 1300078
-LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
 .endif
 
 do-install:

@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
-BROKEN_sparc64=		fails to compile
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		dos2unix libtool tar:tgz

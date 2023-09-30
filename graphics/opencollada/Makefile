@@ -10,8 +10,6 @@ WWW=		http://opencollada.org/
 
 LICENSE=	MIT
 
-BROKEN_sparc64=	cannot build: runaway process
-
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cmake compiler:c++11-lib dos2unix iconv localbase gnome pkgconfig

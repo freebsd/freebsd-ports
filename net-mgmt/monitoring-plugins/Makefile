@@ -122,11 +122,7 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1300041
-_PING6_CMD=	/sbin/ping6 -n -X %d -c %d %s
-.else
 _PING6_CMD=	/sbin/ping6 -n -t %d -c %d %s
-.endif
 
 .if !exists(/usr/bin/ssh) && empty(PORT_OPTIONS:MSSH_PORTABLE)
 PLIST_SUB+=	SSH="@comment "

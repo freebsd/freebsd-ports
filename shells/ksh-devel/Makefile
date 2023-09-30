@@ -19,8 +19,6 @@ WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
-BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
-
 HASH=		e9182bd6
 AST_COMMIT_DATE=	2023.09.24
 

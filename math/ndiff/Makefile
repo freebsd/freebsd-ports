@@ -29,11 +29,7 @@ GMP_CONFIGURE_ON=	--with-gmp
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MGMP}
-.if ${ARCH} == sparc64
-CONFIGURE_ARGS+=	--with-long-double
-.else
 CONFIGURE_ARGS+=	--with-double
-.endif
 .endif
 
 post-patch:

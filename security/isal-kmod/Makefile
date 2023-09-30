@@ -10,7 +10,6 @@ WWW=		https://github.com/bsdjhb/ocf_isa_l
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/isa-l_crypto/LICENSE
 
-IGNORE_FreeBSD_12=	requires FreeBSD 13.0 or later
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	yasm:devel/yasm

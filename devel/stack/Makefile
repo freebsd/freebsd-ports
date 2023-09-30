@@ -209,7 +209,7 @@ LLVM_VERSION=	10
 RUN_DEPENDS+=	llc${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 .endif
 
-.if ${OSVERSION} >= 1300078 && ${ARCH} != powerpc64
+.if ${ARCH} != powerpc64
 LIB_DEPENDS+=	libncursesw.so.8:misc/compat12x
 .endif
 

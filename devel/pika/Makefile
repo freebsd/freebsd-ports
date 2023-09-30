@@ -10,7 +10,6 @@ WWW=		https://github.com/pika-org/pika
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-BROKEN_FreeBSD_12=	compilation error: /usr/include/sys/sysctl.h:1117:25: error: unknown type name 'u_int'
 BROKEN_aarch64=		compilation error: error: 'regparm' is not valid on this platform
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs

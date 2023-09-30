@@ -35,12 +35,7 @@ PLIST_FILES=	bin/zerotier-cli bin/zerotier-idtool sbin/zerotier-one
 .if ${OPSYS} == "FreeBSD"
 # log output via syslog
 SUB_LIST+=	ZEROTIER_SYSLOG="-s debug -T zerotier"
-# after r347241 tun(4) and tap(4) have been merged to tuntap(4)
-.if (${OSVERSION} >= 1300028)
 SUB_LIST+=	ZEROTIER_IF_TAP="if_tuntap"
-.else
-SUB_LIST+=	ZEROTIER_IF_TAP="if_tap"
-.endif
 .else
 # we are not on FreeBSD
 SUB_LIST+=	ZEROTIER_IF_TAP="if_tap" \

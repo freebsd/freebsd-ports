@@ -22,7 +22,6 @@ MAKE_ARGS=	BINDIR=${PREFIX}/bin \
 		LIBDIR=${PREFIX}/lib \
 		MANDIR=${MANPREFIX}/man/man
 
-IGNORE_FreeBSD_12=	FreeBSD 12 has OPIE in base
 IGNORE_FreeBSD_13=	FreeBSD 13 has OPIE in base
 
 .include <bsd.port.mk>

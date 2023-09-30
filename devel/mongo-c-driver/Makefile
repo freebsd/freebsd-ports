@@ -87,10 +87,6 @@ CFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 .endif
 
-# .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300523
-# EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_libmongoc_src_mongoc_mongoc-counters-private.h
-# .endif
-
 pre-configure-CRYPTOPROFILE-on:
 .if ${SSL_DEFAULT:Mlibressl*}
 	@${ECHO_MSG} "CRYPTOPROFILE requires OpenSSL."

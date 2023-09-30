@@ -27,12 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-BROKEN=		pre-FreeBSD-13 assembler is not compatible with generated files
-.endif
-
 do-build:
 		${CP} ${WRKSRC}/config.example.mk ${WRKSRC}/config.mk
 		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS}
@@ -47,4 +41,4 @@ post-stage:
 do-test:
 		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} check
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

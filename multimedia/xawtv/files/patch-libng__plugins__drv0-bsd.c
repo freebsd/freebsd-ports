@@ -1,5 +1,5 @@
---- libng/plugins/drv0-bsd.c.orig	Wed Mar 12 17:45:56 2003
-+++ libng/plugins/drv0-bsd.c	Tue May 24 11:32:55 2005
+--- libng/plugins/drv0-bsd.c.orig	2020-05-15 23:32:25 UTC
++++ libng/plugins/drv0-bsd.c
 @@ -23,10 +23,12 @@
  
  #ifdef HAVE_DEV_IC_BT8XX_H
@@ -15,7 +15,7 @@
  #endif
  
  #include "grab-ng.h"
-@@ -127,7 +129,7 @@
+@@ -129,7 +131,7 @@ static struct STRTAB inputs[] = {
      {  3, "CSVIDEO"      },
      { -1, NULL }
  };
@@ -24,7 +24,7 @@
      METEOR_INPUT_DEV1,
      METEOR_INPUT_DEV0,
      METEOR_INPUT_DEV_SVIDEO,
-@@ -144,7 +146,7 @@
+@@ -146,7 +148,7 @@ static struct STRTAB norms[] = {
      {  6, "RSVD"      },
      { -1, NULL }
  };
@@ -33,7 +33,7 @@
      BT848_IFORM_F_NTSCM,
      BT848_IFORM_F_NTSCJ,
      BT848_IFORM_F_PALBDGHI,
-@@ -160,7 +162,7 @@
+@@ -162,7 +164,7 @@ static struct STRTAB audio[] = {
      {  2, "Intern"      },
      { -1, NULL }
  };
@@ -42,7 +42,7 @@
      AUDIO_TUNER,
      AUDIO_EXTERN,
      AUDIO_INTERN,
-@@ -242,7 +244,7 @@
+@@ -244,7 +246,7 @@ static int signal_off = METEOR_SIG_MODE_MASK;
  #define PREFIX "bktr: ioctl: "
  
  static int
@@ -51,7 +51,7 @@
  {
      int rc;
  
-@@ -296,7 +298,7 @@
+@@ -298,7 +300,7 @@ xioctl(int fd, int cmd, void *arg)
  	break;
      }
      default:
@@ -60,7 +60,7 @@
  	break;
      }
      fprintf(stderr,": %s\n",(rc == 0) ? "ok" : strerror(errno));
-@@ -474,7 +476,7 @@
+@@ -482,7 +484,7 @@ static void bsd_get_min_size(void *handle, int *min_wi
  /* ---------------------------------------------------------------------- */
  
  static int
@@ -69,7 +69,7 @@
  {
      switch (id) {
      case ATTR_ID_HUE:
-@@ -502,19 +504,20 @@
+@@ -510,19 +512,20 @@ bsd_get_range(int id, int *get, int *set)
  static int bsd_read_attr(struct ng_attribute *attr)
  {
      struct bsd_handle *h = attr->handle;
@@ -93,7 +93,7 @@
  		if (arg == inputs_map[i])
  		    value = i;
  	break;
-@@ -532,7 +535,7 @@
+@@ -540,7 +543,7 @@ static int bsd_read_attr(struct ng_attribute *attr)
  	break;
      case ATTR_ID_COUNT+1: /* AUDIO */
  	if (-1 != xioctl(h->tfd, BT848_GAUDIO, &arg))
@@ -102,7 +102,7 @@
  		if (arg == audio_map[i])
  		    value = i;
  	break;
-@@ -545,7 +548,8 @@
+@@ -553,7 +556,8 @@ static int bsd_read_attr(struct ng_attribute *attr)
  static void bsd_write_attr(struct ng_attribute *attr, int value)
  {
      struct bsd_handle *h = attr->handle;
@@ -112,7 +112,7 @@
  
      switch (attr->id) {
      case ATTR_ID_NORM:
-@@ -599,7 +603,15 @@
+@@ -607,7 +611,15 @@ static void bsd_setfreq(void *handle, unsigned long fr
  
  static int bsd_tuned(void *handle)
  {

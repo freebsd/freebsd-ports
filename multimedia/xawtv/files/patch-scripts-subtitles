@@ -1,12 +1,12 @@
---- scripts/subtitles.orig	2014-06-13 07:05:00.434754238 +0200
-+++ scripts/subtitles	2014-06-13 07:06:45.175747077 +0200
+--- scripts/subtitles.orig	2020-05-15 23:32:25 UTC
++++ scripts/subtitles
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#! /bin/sh
  #
  # display teletext subtitles (PAL) in xawtv
  # required: alevt-cap, xawtv-remote
-@@ -12,7 +12,7 @@
+@@ -12,7 +12,7 @@ device="/dev/vbi0"
  ##########################################################################
  # helpers
  

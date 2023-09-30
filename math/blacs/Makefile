@@ -43,7 +43,7 @@ F77EXTRAFLAGS+=	-fallow-argument-mismatch
 
 DEBUG_LEVEL=	0
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+.if ${ARCH} == "amd64"
 FPIC=	-fPIC
 .else
 FPIC=	-fpic

@@ -151,6 +151,8 @@ HTTP_IMAGE_FILTER_VARS=		DSO_BASEMODS+=http_image_filter_module
 HTTP_MP4_CONFIGURE_ON=		--with-http_mp4_module
 HTTP_PERL_CATEGORIES=		perl5
 HTTP_PERL_USES=			perl5
+# Fix build failure on clang >= 12
+HTTP_PERL_CFLAGS=		-Wno-compound-token-split-by-macro
 HTTP_PERL_VARS=			DSO_BASEMODS+=http_perl_module
 HTTP_RANDOM_INDEX_CONFIGURE_ON=	--with-http_random_index_module
 HTTP_REALIP_CONFIGURE_ON=	--with-http_realip_module
@@ -242,11 +244,6 @@ CFLAGS+=	-DNDEBUG
 
 .if ${PORT_OPTIONS:MPASSENGER}
 CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
-.endif
-
-# Fix build failure on clang >= 12
-.if ${PORT_OPTIONS:MHTTP_PERL} && ${OSVERSION} >= 1301000
-CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
 .if empty(PORT_OPTIONS:MLUA) && empty(PORT_OPTIONS:MMODSECURITY3) && \

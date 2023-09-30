@@ -21,16 +21,12 @@ PLIST_FILES=	lib/libtrlan.a lib/libtrlan.so lib/libtrlan.so.1
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+PICFLAG=	-fpic
+
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	trlan-ug.pdf
 PORTEXAMPLES=	Makefile README dense.f90 simple.f90 simple77.f simplec.c
-
-.if ${ARCH} == sparc64
-PICFLAG=	-fPIC
-.else
-PICFLAG=	-fpic
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \

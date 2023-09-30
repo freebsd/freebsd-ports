@@ -99,14 +99,6 @@ PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64="" AA
 PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_PREFIX="" AARCH64_PCM_SUFFIX=""
 .endif
 
-# Some files only installed with LLVM/Clang 13 (used on FreeBSD 12.4, 13.0 and 13.1)
-# TODO: Introduce USES+=llvm:min=14 instead when this can be deemed not too obtrusive on supported releases
-.if 1204000 <= ${OSVERSION} && ${OSVERSION} < 1302000 && ${OSVERSION} != 1301507
-PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13=""
-.else
-PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13="@comment "
-.endif
-
 # The following two files should not be staged. This happens even when PYROOT option is OFF.
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/root/__pycache__/cmdLineUtils.cpython-39.pyc

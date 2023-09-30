@@ -274,7 +274,7 @@ PYCLANG_PATTERN=	(clang\/(__init__|cindex|enumerations).py)$$
 .include "${.CURDIR}/Makefile.COMMANDS"
 .include "${.CURDIR}/Makefile.MAN1SRCS"
 
-_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV Sparc X86
+_FREEBSD_BACKENDS=	AArch64 ARM Mips PowerPC RISCV X86
 FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
 _NATIVE_BACKENDS=	X86
@@ -314,7 +314,6 @@ _BE_LIBS_MSP430=	AsmParser Disassembler
 _BE_LIBS_Mips=		AsmParser Disassembler
 _BE_LIBS_PowerPC=	AsmParser Disassembler
 _BE_LIBS_RISCV=		AsmParser Disassembler Utils
-_BE_LIBS_Sparc=		AsmParser Disassembler
 _BE_LIBS_SystemZ=	AsmParser Disassembler
 _BE_LIBS_WebAssembly=	AsmParser Disassembler
 _BE_LIBS_X86=		AsmParser Disassembler

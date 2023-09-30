@@ -10,7 +10,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/README.rst
 
 # NB: ncurses 6.1 is required.
-USES=		localbase
+USES=		localbase ncurses:base
 
 USE_CSTD=	gnu99
 USE_GITHUB=	yes
@@ -32,16 +32,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtm ${STAGEDIR}${PREFIX}/bin/mtm
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/mtm.ti ${STAGEDIR}${DATADIR}/mtm.ti
-
-.include <bsd.port.options.mk>
-
-.if make(makesum) || make(fetch) && "${NO_CHECKSUM}" == yes
-.else
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=		ncurses:base
-.else
-USES+=		ncurses:port
-.endif
-.endif
 
 .include <bsd.port.mk>

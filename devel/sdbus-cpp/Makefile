@@ -22,12 +22,4 @@ CMAKE_ON=	BUILD_CODE_GEN
 CMAKE_OFF=	BUILD_DOC
 CMAKE_TESTING_ON=	BUILD_TESTS
 
-# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
-# https://cgit.freebsd.org/src/commit/?id=7a202823aa54
-.if !exists(/usr/include/sys/eventfd.h)
-LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
-CFLAGS+=	`pkg-config --cflags epoll-shim`
-LDFLAGS+=	`pkg-config --libs epoll-shim`
-.endif
-
 .include <bsd.port.mk>

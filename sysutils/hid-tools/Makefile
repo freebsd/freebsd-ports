@@ -8,7 +8,6 @@ WWW=		https://gitlab.freedesktop.org/libevdev/hid-tools
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS_FreeBSD_12=	iichid>=0.0.6:sysutils/iichid
 RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}click>=0:devel/py-click@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pyudev>=0:devel/py-pyudev@${PY_FLAVOR} \

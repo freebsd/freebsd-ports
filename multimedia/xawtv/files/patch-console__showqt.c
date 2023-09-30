@@ -1,8 +1,8 @@
---- console/showqt.c.orig	Tue Nov 19 23:49:53 2002
-+++ console/showqt.c	Tue Nov 19 23:57:26 2002
-@@ -11,6 +11,15 @@
- #include <inttypes.h>
- #include <time.h>
+--- console/showqt.c.orig	2020-05-15 23:32:25 UTC
++++ console/showqt.c
+@@ -16,6 +16,15 @@
+ # define PRIx64 "llx"
+ #endif
  
 +#if !defined(PRId64)
 +#define PRId64    "lld"
@@ -14,5 +14,5 @@
 +
 +
  #if BYTE_ORDER == LITTLE_ENDIAN
- # define SWAP2(x) (((x>>8) & 0x00ff) |\
-                    ((x<<8) & 0xff00))
+ # define SWAP2(x) ((((uint16_t)x>>8)  & (uint16_t)0x00ff) |\
+ 		   (((uint16_t)x<<8)  & (uint16_t)0xff00))

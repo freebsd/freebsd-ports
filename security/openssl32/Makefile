@@ -45,8 +45,7 @@ OPTIONS_DEFAULT=ASM ASYNC CT DES EC FIPS GOST MAN3 MD4 NEXTPROTONEG \
 		THREADPOOL THREADS TLS1 TLS1_1 TLS1_2
 #OPTIONS_DEFAULT+=	KTLS pending updated KTLS patch
 
-OPTIONS_EXCLUDE=${${OSVERSION} < 1300042:?KTLS:} \
-		${${OSVERSION} > 1300000:?CRYPTODEV:}
+OPTIONS_EXCLUDE=CRYPTODEV
 
 OPTIONS_GROUP_OPTIMIZE_amd64=	EC
 
@@ -162,18 +161,10 @@ CONFIGURE_ARGS+=	BSD-riscv64
 IGNORE=	the OpenSSL port can not be installed over the base version
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000 && !${PORT_OPTIONS:MCRYPTODEV}
-CONFIGURE_ARGS+=	no-devcryptoeng
-.endif
-
 OPENSSLDIR?=	${PREFIX}/openssl
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
 .include "version.mk"
-
-.if ${PORT_OPTIONS:MASM}
-BROKEN_sparc64=	option ASM generates illegal instructions
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's|^MANDIR=.*$$|MANDIR=$$(INSTALLTOP)/man|' \

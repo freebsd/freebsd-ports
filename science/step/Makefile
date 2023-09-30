@@ -23,7 +23,6 @@ USE_QT=		concurrent core dbus declarative gui network opengl printsupport svg \
 		widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
-CXXFLAGS_sparc64=	-Wno-error=return-type
 
 SHEBANG_FILES=	step/data/extractxml
 

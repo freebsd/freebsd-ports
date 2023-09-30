@@ -13,8 +13,6 @@ LICENSE_COMB=		multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-BROKEN_sparc64=	Does not build: fails to link
-
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
 USES=		cmake:insource compiler:c++11-lang gettext-runtime pkgconfig tar:bzip2

@@ -119,11 +119,6 @@ XLA_VARS_OFF=	TF_ENABLE_XLA=0
 
 BAZEL_OPTS=	--output_user_root=${WRKDIR}/bazel_out
 
-.include <bsd.port.options.mk>
-.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1200000 && ${OSVERSION} < 1300000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-third_party_repo.bzl
-.endif
-
 post-extract:
 # THIRD_PARTY_TF_C_LICENSES is generated as a Bazel build target (see
 # //tensorflow/tools/lib_package:clicenses) and the empty file written

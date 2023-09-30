@@ -10,7 +10,7 @@ WWW=		https://github.com/Litres/turboxsl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le sparc64
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit \
 		libmemcached.so:databases/libmemcached

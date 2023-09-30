@@ -1,6 +1,6 @@
---- x11/Subdir.mk.orig	Mon Jan 12 18:56:17 2004
-+++ x11/Subdir.mk	Mon Feb  9 18:49:10 2004
-@@ -116,8 +116,8 @@
+--- x11/Subdir.mk.orig	2020-05-15 23:32:25 UTC
++++ x11/Subdir.mk
+@@ -117,8 +117,8 @@ x11/v4lctl       : LDFLAGS := $(DLFLAGS)
  x11/pia          : LDFLAGS := $(DLFLAGS)
  
  # compile flags
@@ -11,7 +11,7 @@
  
  
  # i18n
-@@ -128,12 +128,12 @@
+@@ -129,12 +129,12 @@ MOTV-app  := $(patsubst %,x11/MoTV.%.ad,$(LANGUAGES))
  # local targets
  x11/complete-xaw.o: x11/complete.c
  	@$(echo_compile_c)

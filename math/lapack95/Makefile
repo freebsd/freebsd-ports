@@ -29,13 +29,9 @@ WRKSRC=		${WRKDIR}/LAPACK95
 
 MAKE_JOBS_UNSAFE=yes
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "sparc64"
-PICFLAG?=	-fPIC
-.else
 PICFLAG?=	-fpic
-.endif
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 PORTEXAMPLES=	make.inc EXAMPLES1 EXAMPLES2

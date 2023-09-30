@@ -10,8 +10,6 @@ WWW=		https://www.zeek.org/
 
 LICENSE=	CC-BY-4.0
 
-BROKEN_FreeBSD_12_powerpc64=	does not build: error: zero-size array 'names'
-
 BUILD_DEPENDS=	bison>=3.3:devel/bison \
 		flex>=2.6:textproc/flex \
 		swig>=4.0.2:devel/swig

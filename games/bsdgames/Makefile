@@ -25,12 +25,6 @@ CONFLICTS=	hangman
 INFO=		wump
 INFO_PATH=	share/games
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300134
-MAKE_ARGS+=	NO_WERROR=yes
-.endif
-
 pre-install:
 .for d in atc larn quiz.db boggle
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/$d
@@ -49,4 +43,4 @@ post-install:
 	@${TOUCH} ${STAGEDIR}/var/games/atc_score
 	@${FIND} ${STAGEDIR}/var/games -type f -exec ${MV} {} {}.sample \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

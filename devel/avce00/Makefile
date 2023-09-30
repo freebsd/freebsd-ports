@@ -26,7 +26,7 @@ PORTDOCS=	avce00.html
 post-extract:
 	${REINPLACE_CMD} -e 's#gcc#${CC}#g' ${WRKSRC}/GNUmakefile
 	${CP} ${WRKSRC}/GNUmakefile ${WRKSRC}/Makefile
-.if ${ARCH} == "powerpc" || ${ARCH} == "sparc64" || ${ARCH} == powerpc64
+.if ${ARCH} == "powerpc" || ${ARCH} == powerpc64
 	@${REINPLACE_CMD} -e 's#LSB#MSB#g' ${WRKSRC}/Makefile
 .endif
 

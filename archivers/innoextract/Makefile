@@ -11,8 +11,6 @@ WWW=		https://constexpr.org/innoextract/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	does not build: undefined reference to std::ctype<char>::_M_widen_init()
-
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang iconv

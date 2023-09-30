@@ -39,16 +39,4 @@ OPTIONS_SUB=	yes
 
 OPENMP_CONFIGURE_ENABLE=	openmp
 
-.include <bsd.port.options.mk>
-
-# We don't have cexpl implemented in earlier versions
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=216862
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300521
-
-LIB_DEPENDS+=	libopenlibm.so:math/openlibm
-LDFLAGS+=	-lopenlibm
-
-.endif
-
 .include <bsd.port.mk>

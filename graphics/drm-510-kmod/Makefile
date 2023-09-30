@@ -26,9 +26,6 @@ GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301000
-IGNORE=		not supported on older than 13.1, no kernel support
-.endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
 .endif

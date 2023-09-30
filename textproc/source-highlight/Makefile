@@ -11,8 +11,6 @@ WWW=		https://www.gnu.org/software/src-highlite/source-highlight.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_sparc64=		fails to compile with GCC 4.2
-
 BUILD_DEPENDS=	exctags:devel/ctags
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 

@@ -11,7 +11,7 @@ WWW=		https://hashcat.net/hashcat/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.txt
 
-NOT_FOR_ARCHS=	powerpc powerpc64 powerpcspe sparc64
+NOT_FOR_ARCHS=	powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	fails to compile: compiling for big-endian architecture not supported
 
 BUILD_DEPENDS=	minizip:archivers/minizip

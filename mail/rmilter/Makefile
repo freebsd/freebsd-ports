@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-NOT_FOR_ARCHS=		mips sparc64
+NOT_FOR_ARCHS=		mips
 NOT_FOR_ARCHS_REASON=	fails to compile: error: Unsupported word size
 
 USE_GITHUB=	yes

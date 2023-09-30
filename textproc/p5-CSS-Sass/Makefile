@@ -11,8 +11,6 @@ WWW=		https://metacpan.org/release/OCBNET/CSS-Sass-3.4.12
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: /usr/local/bin/ld: cannot find -lc++
-
 BUILD_DEPENDS=	p5-ExtUtils-CppGuess>=0.14:devel/p5-ExtUtils-CppGuess \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Encode-Locale>=0.01:converters/p5-Encode-Locale \

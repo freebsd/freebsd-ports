@@ -94,10 +94,6 @@ PLIST_FILES+=	bin/python${PYTHON_VER}${ABIFLAGS} \
 		libdata/pkgconfig/python-${PYTHON_VER}${ABIFLAGS}-embed.pc
 .endif
 
-.if ${ARCH} == sparc64
-CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
-.endif
-
 # See https://bugs.freebsd.org/115940 and https://bugs.freebsd.org/193650
 .if !exists(/usr/bin/ypcat) || defined(WITHOUT_NIS)
 PLIST_SUB+=	NO_NIS="@comment "

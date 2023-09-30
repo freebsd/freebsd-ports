@@ -16,7 +16,6 @@ EXPIRATION_DATE=2024-03-17
 
 BROKEN_armv6=		fails to link: undefined reference to 'backtrace'
 BROKEN_powerpc64=	fails to compile: Assertion failed: (get_int () == TLS_SCHEMA_V2), function parse_tlo_file, file generate.c, line 2832.
-BROKEN_sparc64=		fails to compile: assertion fails
 
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libwebp.so:graphics/webp \

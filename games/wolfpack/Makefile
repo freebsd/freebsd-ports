@@ -25,15 +25,9 @@ GROUPS=		wolfpack
 USE_RC_SUBR=	wolfpack
 SUB_FILES+=	pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
 		${WRKSRC}/Make.mk ${WRKSRC}/sources.mk
-.if ${ARCH} == "sparc64"
-	${REINPLACE_CMD} -e '/ucontext\.h/ { h; s|ucontext|sys/types|; G; }' \
-		${WRKSRC}/src/lib/lwp/lwpint.h
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
@@ -43,4 +37,4 @@ post-install:
 	${STAGEDIR}${PREFIX}/lib/wolfpack/pconfig > \
 		${STAGEDIR}${ETCDIR}/econfig.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

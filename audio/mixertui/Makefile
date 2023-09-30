@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libsysctlmibinfo2.so:devel/libsysctlmibinfo2
 
+USES=	ncurses
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
@@ -23,13 +24,5 @@ PLIST_FILES=	sbin/${PORTNAME} \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
-USES+=	ncurses
-.else
-USES+=	ncurses:port
-.endif
 
 .include <bsd.port.mk>

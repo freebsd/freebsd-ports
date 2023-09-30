@@ -48,7 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|\(OGRE_RW_MUTEX.*\);$$|\1|g' \
 		${WRKSRC}/OgreMain/include/Threading/OgreThreadDefinesBoost.h
 	@${REINPLACE_CMD} -e '\
-		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__sparc64__) || defined(__amd64__),' \
+		s,defined(__x86_64__),& || defined(__powerpc__) || defined(__amd64__),' \
 		${WRKSRC}/OgreMain/include/OgrePlatform.h
 
 post-patch-BOOST-off:

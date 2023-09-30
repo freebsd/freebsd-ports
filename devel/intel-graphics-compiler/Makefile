@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	only Intel GPUs on x86 are supported
-BROKEN_FreeBSD_12_i386=	clang crashes during build
 BROKEN_FreeBSD_14_i386=	lld crashes during build
 
 BUILD_DEPENDS=	vc-intrinsics-${FLAVOR}>=0.4.0:devel/vc-intrinsics@${FLAVOR}

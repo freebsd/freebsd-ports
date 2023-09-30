@@ -16,8 +16,6 @@ LICENSE_NAME_MAT=	dated material
 LICENSE_TEXT_MAT=	dated material
 LICENSE_PERMS_MAT=	pkg-mirror dist-mirror auto-accept
 
-BROKEN_sparc64=		Fails to compile
-
 WRKSRC=		${WRKDIR}/live
 
 HAS_CONFIGURE=	yes

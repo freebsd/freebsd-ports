@@ -25,14 +25,7 @@ MESON_ARGS=	-Ddocbook-docs=disabled -Dman-pages=disabled -Dpytest=disabled \
 		-Dflatpak-interfaces=disabled -Dsandboxed-image-validation=false \
 		-Dsystemd=disabled
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400008) \
- || ${OSVERSION} < 1300000
-IGNORE=		requires O_PATH support in open(2)
-.endif
-
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

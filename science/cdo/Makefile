@@ -40,6 +40,7 @@ MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
+CFLAGS+=	-DPTHREAD_MUTEXATTR
 
 CGRIBEX_CONFIGURE_WITH=	cgribex
 CGRIBEX_LIB_DEPENDS=	libcgribex.so:science/cgribex
@@ -60,12 +61,6 @@ UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UUID_CONFIGURE_OFF=	ac_cv_func_uuid_create=no ac_cv_have_decl_uuid_create=no ac_cv_have_decl_uuid_generate=no ac_cv_lib_uuid_uuid_generate=no
 UUID_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "sparc64"
-CFLAGS+=	-DPTHREAD_MUTEXATTR
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS = / s| contrib||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$(libdir)/\($$$$pkgconfigfile\)|${PREFIX}/libdata/\1|' ${WRKSRC}/libcdi/src/Makefile.in
@@ -77,4 +72,4 @@ post-install:
 test-NETCDF-on:
 	@cd ${WRKSRC}/ && ${SETENV} CDO_PATH=src/cdo src/cdotest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -40,13 +40,9 @@ ALL_TARGET_STATIC=	metis
 WRKSRC_STATIC=		${WRKSRC}
 INSTALL_WRKSRC_STATIC=	${WRKSRC_STATIC}/libmetis
 
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == "sparc64"
-CFLAGS+=	-fPIC
-.else
 CFLAGS+=	-fpic
-.endif
+
+.include <bsd.port.options.mk>
 
 pre-configure:
 	@${REINPLACE_CMD} -e "/^# Add compiler flags/,/^$$/d" \

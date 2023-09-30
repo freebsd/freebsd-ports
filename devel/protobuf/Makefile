@@ -12,8 +12,6 @@ WWW=		https://protobuf.dev/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_sparc64=	fails to compile: no atomic ops available
-
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libjsoncpp.so:devel/jsoncpp
 TEST_DEPENDS=	googletest>=0:devel/googletest

@@ -51,18 +51,4 @@ GNUTLS_MESON_OFF=	-Dgnutls=false
 GTK4_USE=		GNOME=gtk40
 GTK4_MESON_ON=		-Dgtk4=true
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
-CPP=		${LOCALBASE}/bin/clang-cpp${_LLVM_VERSION}
-CC=		${LOCALBASE}/bin/clang${_LLVM_VERSION}
-CXX=		${LOCALBASE}/bin/clang++${_LLVM_VERSION}
-BUILD_DEPENDS+=	llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
-.if ${LLVM_DEFAULT} == 10
-_LLVM_VERSION=	11
-.else
-_LLVM_VERSION=	${LLVM_DEFAULT}
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

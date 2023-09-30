@@ -11,7 +11,6 @@ LICENSE=	GPLv2
 
 BROKEN_i386=	type 'hash<long long>' does not provide a call operator
 BROKEN_powerpc=	type 'hash<long long>' does not provide a call operator
-BROKEN_sparc64=	does not compile on sparc64: gcc bug
 
 USES=		compiler:c++0x gmake gl python ruby qt:5
 USE_GITHUB=	yes

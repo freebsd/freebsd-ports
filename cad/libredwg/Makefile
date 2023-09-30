@@ -42,7 +42,7 @@ PYTHON_PORTEXAMPLES=	load_dwg.py
 PYTHON_VARS=		SHEBANG_FILES+=examples/load_dwg.py
 
 post-patch:
-# XXX: switch the order of #include's to unbreak on powerpc/sparc64
+# XXX: switch the order of #include's to unbreak on powerpc
 # which are still based on gcc-4.2.1 (should be no-op elsewhere)
 	@${REINPLACE_CMD} -e '/#include "com/ { x; s/^/#include <stdlib.h>/; \
 		G; }; 24d' ${WRKSRC}/src/common.c

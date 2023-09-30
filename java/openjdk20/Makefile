@@ -157,9 +157,6 @@ CONFIGURE_ARGS+=	--disable-warnings-as-errors
 .if ${ARCH} == aarch64 || (defined(PPC_ABI) && ${PPC_ABI} == ELFv1)
 CONFIGURE_ARGS+=	--disable-dtrace
 .endif
-.if ${ARCH} == powerpc64 && ${OSREL:C/\.[0-9]//} == 12
-EXTRA_PATCHES=		${PATCHDIR}/extra-patch-src_hotspot_cpu_ppc_vm__version__ppc.hpp
-.endif
 .if ${ARCH} == aarch64
 CONFIGURE_ARGS+=	--with-boot-jdk-jvmargs=-XX:-UseCompressedClassPointers
 MAKE_ENV+=		JAVA_TOOL_OPTIONS="-XX:-UseCompressedClassPointers"

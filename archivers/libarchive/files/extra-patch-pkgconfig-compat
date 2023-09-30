@@ -1,7 +1,0 @@
---- build/pkgconfig/libarchive.pc.in.orig	2022-12-09 13:38:31 UTC
-+++ build/pkgconfig/libarchive.pc.in
-@@ -10,4 +10,3 @@ Cflags: -I${includedir}
- Cflags.private: -DLIBARCHIVE_STATIC
- Libs: -L${libdir} -larchive
- Libs.private: @LIBS@
--Requires.private: @LIBSREQUIRED@

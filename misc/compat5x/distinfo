@@ -1,7 +1,5 @@
-TIMESTAMP = 1703070263
+TIMESTAMP = 1703070264
 SHA256 (compat5x-amd64-5.4.0.8.1.tar.bz2) = 58dc8fcd2764bec4cb109f54e34d543aa90fe3e94123463de745c76ba9839b13
 SIZE (compat5x-amd64-5.4.0.8.1.tar.bz2) = 5854551
 SHA256 (compat5x-i386-5.4.0.8.1.tar.bz2) = 1aa980a48586e38e03936f51631c665b62e252d13dc23ac8e82b9669844b798e
 SIZE (compat5x-i386-5.4.0.8.1.tar.bz2) = 2712692
-SHA256 (compat5x-sparc64-5.4.0.8.1.tar.bz2) = 2adea66847df4aa24571b7d314bfd29cf682c7f8d61ba1c95c602f13b55f4aec
-SIZE (compat5x-sparc64-5.4.0.8.1.tar.bz2) = 2782405

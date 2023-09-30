@@ -96,11 +96,6 @@ USES+=		ncurses:port
 USES+=		ncurses
 .endif
 
-# fix clang static_assert on 12.x releases, https://github.com/kovidgoyal/kitty/pull/5398
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD}':1" ${WRKSRC}/setup.py
 	${REINPLACE_CMD} -i.bak -e "s:%%DATADIR%%:${DATADIR}:1" \
