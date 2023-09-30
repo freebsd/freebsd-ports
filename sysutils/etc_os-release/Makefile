@@ -10,6 +10,9 @@ MAINTAINER=	tcberner@FreeBSD.org
 COMMENT=	Operating system identification file
 WWW=		https://www.freedesktop.org/software/systemd/man/os-release.html
 
+DEPRECATED=	No longer required after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
