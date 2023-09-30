@@ -1,2 +1,0 @@
-bin/logstash-forwarder
-@sample etc/logstash-forwarder.conf.example etc/logstash-forwarder.conf

@@ -696,7 +696,6 @@
     SUBDIR += loganalyzer
     SUBDIR += logrotate
     SUBDIR += logstalgia
-    SUBDIR += logstash-forwarder
     SUBDIR += logstash7
     SUBDIR += logstash8
     SUBDIR += logtool
