@@ -7900,3 +7900,5 @@ net-im/ktp-text-ui||2023-09-30|Has expired: Will not be part of KDE Gear 23.08 i
 net-im/ktp-contact-list||2023-09-30|Has expired: Will not be part of KDE Gear 23.08 in August
 net-im/ktp-filetransfer-handler||2023-09-30|Has expired: Will not be part of KDE Gear 23.08 in August
 net-im/ktp-common-internals||2023-09-30|Has expired: Will not be part of KDE Gear 23.08 in August
+net/openldap24-client|net/openldap25-client|2023-09-30|Has expired: No longer supported by upstream.  Please use a newer version of OpenLDAP instead
+net/openldap24-server|net/openldap25-server|2023-09-30|Has expired: No longer supported by upstream.  Please use a newer version of OpenLDAP instead

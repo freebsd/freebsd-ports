@@ -53,7 +53,6 @@ DEFAULT_OPENLDAP_VER?=	${OPENLDAP_DEFAULT:S/.//}
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 # OpenLDAP client versions currently supported
-OPENLDAP24_LIB=		libldap-2.4.so.2
 OPENLDAP25_LIB=		libldap-2.5.so.0
 OPENLDAP26_LIB=		libldap.so.2
 

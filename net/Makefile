@@ -571,8 +571,6 @@
     SUBDIR += openbgpd
     SUBDIR += openbgpd6
     SUBDIR += openbgpd7
-    SUBDIR += openldap24-client
-    SUBDIR += openldap24-server
     SUBDIR += openldap25-client
     SUBDIR += openldap25-server
     SUBDIR += openldap26-client
