@@ -1,7 +1,7 @@
 PORTNAME=	jbig2dec
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	graphics devel
-MASTER_SITES=	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9533/
+MASTER_SITES=	https://github.com/ArtifexSoftware/jbig2dec/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decoder implementation of the JBIG2 image compression format
