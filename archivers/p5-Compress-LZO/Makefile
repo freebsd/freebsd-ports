@@ -13,9 +13,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-Devel-CheckLib>=0.9:devel/p5-Devel-CheckLib
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		perl5
+USES=		perl5 localbase:ldflags
 USE_PERL5=	configure
 
 post-install:
