@@ -1,4 +1,5 @@
 bin/ghe-backup
+bin/ghe-backup-progress
 bin/ghe-host-check
 bin/ghe-restore
 @sample etc/github.backup.config.sample
@@ -28,9 +29,12 @@ bin/ghe-restore
 %%DATADIR%%/ghe-docker-init
 %%DATADIR%%/ghe-gc-disable
 %%DATADIR%%/ghe-gc-enable
+%%DATADIR%%/ghe-incremental-backup-restore
 %%DATADIR%%/ghe-maintenance-mode-status
 %%DATADIR%%/ghe-prune-snapshots
 %%DATADIR%%/ghe-restore-actions
+%%DATADIR%%/ghe-restore-chat-integration
+%%DATADIR%%/ghe-restore-column-encryption-keys
 %%DATADIR%%/ghe-restore-es-audit-log
 %%DATADIR%%/ghe-restore-es-rsync
 %%DATADIR%%/ghe-restore-external-database-compatibility-check
@@ -43,13 +47,20 @@ bin/ghe-restore
 %%DATADIR%%/ghe-restore-mysql-logical
 %%DATADIR%%/ghe-restore-packages
 %%DATADIR%%/ghe-restore-pages
+%%DATADIR%%/ghe-restore-redis
 %%DATADIR%%/ghe-restore-repositories
 %%DATADIR%%/ghe-restore-repositories-gist
+%%DATADIR%%/ghe-restore-secret-scanning-encryption-keys
 %%DATADIR%%/ghe-restore-settings
 %%DATADIR%%/ghe-restore-snapshot-path
+%%DATADIR%%/ghe-restore-ssh-keys
 %%DATADIR%%/ghe-restore-storage
 %%DATADIR%%/ghe-rsync
+%%DATADIR%%/ghe-rsync-feature-checker
+%%DATADIR%%/ghe-rsync-size
 %%DATADIR%%/ghe-ssh
 %%DATADIR%%/ghe-ssh-config
 %%DATADIR%%/ghe-ssh-leaked-host-keys-list.txt
+%%DATADIR%%/requirements.txt
+%%DATADIR%%/track-progress
 %%DATADIR%%/version
