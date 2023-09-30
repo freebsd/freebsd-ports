@@ -1,7 +1,7 @@
 PORTNAME=	source-sans
-PORTVERSION=	3.046
-MASTER_SITES=	https://github.com/adobe-fonts/source-sans/releases/download/${PORTVERSION}R/
+PORTVERSION=	3.052
 CATEGORIES=	x11-fonts
+MASTER_SITES=	https://github.com/adobe-fonts/source-sans/releases/download/${PORTVERSION}R/
 PKGNAMESUFFIX=	-ttf
 DISTNAME=	TTF-source-sans-${PORTVERSION}R
 
@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 PORTSCOUT=	skipv:variable-fonts
 
 do-install:
-	${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/TTF/*.ttf ${STAGEDIR}${FONTSDIR}/
 
 .include <bsd.port.mk>
