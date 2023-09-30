@@ -1,5 +1,6 @@
 PORTNAME=	foreign-cdm
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm \
 		https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/:widevine
@@ -16,6 +17,7 @@ ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		linux-c7-devtoolset>0:devel/linux-c7-devtoolset
+RUN_DEPENDS=	linux_base-c7>0:emulators/linux_base-c7
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
