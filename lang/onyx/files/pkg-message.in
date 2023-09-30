@@ -1,7 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-See %%DOCSDIR%% for documentation in HTML and PDF formats.
-EOM
-}
-]

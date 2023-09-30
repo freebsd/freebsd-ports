@@ -227,7 +227,6 @@
     SUBDIR += ocaml-autoconf
     SUBDIR += ocaml-camlidl
     SUBDIR += ocaml-nox11
-    SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += opencoarrays
     SUBDIR += opensycl
