@@ -115,6 +115,10 @@
 	<name>electron25</name>
 	<range><lt>25.8.4</lt></range>
       </package>
+      <package>
+	<name>libvpx</name>
+	<range><lt>1.13.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -134,6 +138,7 @@
     <dates>
       <discovery>2023-09-28</discovery>
       <entry>2023-09-29</entry>
+      <modified>2023-09-30</modified>
     </dates>
   </vuln>
 
