@@ -7904,3 +7904,4 @@ net/openldap24-client|net/openldap25-client|2023-09-30|Has expired: No longer su
 net/openldap24-server|net/openldap25-server|2023-09-30|Has expired: No longer supported by upstream.  Please use a newer version of OpenLDAP instead
 science/crf++||2023-09-30|Has expired: Last upstream activity was in 2015
 security/fwbuilder||2023-09-30|Has expired: Abandonware since Jan 2021
+sysutils/istatserver||2023-09-30|Has expired: Upstream last activity was in 2018

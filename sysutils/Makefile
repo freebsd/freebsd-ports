@@ -600,7 +600,6 @@
     SUBDIR += ipsc
     SUBDIR += isc-cron
     SUBDIR += isomaster
-    SUBDIR += istatserver
     SUBDIR += istio
     SUBDIR += jadm
     SUBDIR += jail-primer
