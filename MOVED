@@ -7914,3 +7914,4 @@ sysutils/bareos19-server|sysutils/bareos20-server|2023-09-30|Has expired: Upstre
 textproc/popup||2023-09-30|Has expired: Abandonware, last release in 2004 and dead upstream
 textproc/yamcha||2023-09-30|Has expired: Last upstream release was in 2005
 japanese/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years ago. Consider using www/awstats
+www/dhttpd||2023-09-30|Has expired: Abandonware, last release in 15+ years ago. Consider using www/darkhttpd, www/obhttpd or www/miniserve

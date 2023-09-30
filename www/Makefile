@@ -136,7 +136,6 @@
     SUBDIR += deno
     SUBDIR += devd
     SUBDIR += dfileserver
-    SUBDIR += dhttpd
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dokuwiki
