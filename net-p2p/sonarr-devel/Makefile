@@ -1,5 +1,5 @@
 PORTNAME=	sonarr
-DISTVERSION=	4.0.0.682
+DISTVERSION=	4.0.0.686
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download.sonarr.tv/v4/develop/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -16,18 +16,15 @@ ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
 		krb5>0:security/krb5 \
-		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=	ssl:run sqlite:3
-
+USES=	ssl:run sqlite:3 iconv
 USE_RC_SUBR=	sonarr
 
 CONFLICTS_INSTALL=	sonarr
 
 NO_BUILD=	YES
-
 SUB_FILES=	sonarr package_info pkg-message
 SUB_LIST=	DATADIR=${DATADIR} \
 		GROUPS=${GROUPS} \
@@ -40,8 +37,6 @@ WRKSRC=		${WRKDIR}/Sonarr
 
 USERS=		sonarr
 GROUPS=		sonarr
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	${RM} -rf ${WRKSRC}/Sonarr.Update
