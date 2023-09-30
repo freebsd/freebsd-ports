@@ -1,5 +1,6 @@
 PORTNAME=	readme-renderer
 PORTVERSION=	37.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +23,7 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	MD
+OPTIONS_DEFAULT=MD
 MD_DESC=	Markdown support
 
 MD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.8.0:textproc/py-cmarkgfm@${PY_FLAVOR}
