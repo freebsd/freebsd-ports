@@ -1,5 +1,5 @@
 PORTNAME=	wl-screenrec
-PORTVERSION=	s20230916
+PORTVERSION=	s20230920
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 USES=		cargo llvm
 USE_GITHUB=	yes
 GH_ACCOUNT=	russelltg
-GH_TAGNAME=	f08aed5
+GH_TAGNAME=	a36c592
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
