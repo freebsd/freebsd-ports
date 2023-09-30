@@ -1,6 +1,5 @@
 PORTNAME=	textdistance
-PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTVERSION=	4.6.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,15 @@ WWW=		https://github.com/life4/textdistance
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+# Tests (18 failed, 180 passed)
+# tests/test_external.py: RuntimeError (Levenshtein, DamerauLevenshtein, and Hamming)
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
