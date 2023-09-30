@@ -45,7 +45,6 @@
     SUBDIR += kaidan
     SUBDIR += kopete
     SUBDIR += ktp-common-internals
-    SUBDIR += ktp-contact-list
     SUBDIR += ktp-filetransfer-handler
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
