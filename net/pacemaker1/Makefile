@@ -22,16 +22,14 @@ SHEBANG_FILES+=		cts/cts \
 
 REPLACE_ARGS_GETOPT=	-e 's,getopt,${LOCALBASE}/bin/getopt,'
 
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-cts_remote.py \
+		${PATCHDIR}/extra-patch-cts_watcher.py
+
 .include <bsd.port.pre.mk>
 
 # Fix building it with clang 11
 .if ${OSVERSION} >= 1300000
 CFLAGS+=	-fcommon
-.endif
-
-.if ${PYTHON_SUFFIX} > 36
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-cts_remote.py \
-		${PATCHDIR}/extra-patch-cts_watcher.py
 .endif
 
 post-patch: post-patch-common
