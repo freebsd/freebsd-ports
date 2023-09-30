@@ -18,6 +18,7 @@ USES=		kmod
 
 OPTIONS_SINGLE=		NETMAP
 OPTIONS_SINGLE_NETMAP=	NETMAP_ON NETMAP_OFF
+OPTIONS_DEFAULT=	NETMAP_OFF
 
 NETMAP_ON_DESC=		Enable netmap(4) support unconditionally
 NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
