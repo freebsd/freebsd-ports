@@ -44,7 +44,6 @@
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
     SUBDIR += kopete
-    SUBDIR += ktp-common-internals
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
     SUBDIR += libmesode
