@@ -1,5 +1,5 @@
 PORTNAME=	sslyze
-PORTVERSION=	5.1.3
+PORTVERSION=	5.2.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://github.com/nabla-c0d3/sslyze
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nassl>=5<6:security/py-nassl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic>=1.7<1.11:devel/py-pydantic@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nassl>=5.1<6:security/py-nassl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10<2.4:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=23,1<24,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tls-parser>=2<3:security/py-tls-parser@${PY_FLAVOR}
 
