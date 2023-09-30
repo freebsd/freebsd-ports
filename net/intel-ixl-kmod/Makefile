@@ -1,6 +1,6 @@
 PORTNAME?=	ixl
 PORTVERSION?=	1.13.4
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net
 MASTER_SITES?=	https://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/ \
 		http://downloadmirror.intel.com/${MASTER_SITE_SUBDIR}/
@@ -17,10 +17,8 @@ LICENSE=	BSD2CLAUSE
 USES=		kmod
 
 OPTIONS_SINGLE=		NETMAP
-OPTIONS_SINGLE_NETMAP=	NETMAP_AUTO NETMAP_ON NETMAP_OFF
-OPTIONS_DEFAULT=	NETMAP_AUTO
+OPTIONS_SINGLE_NETMAP=	NETMAP_ON NETMAP_OFF
 
-NETMAP_AUTO_DESC=	Enable netmap(4) support on supported OS versions
 NETMAP_ON_DESC=		Enable netmap(4) support unconditionally
 NETMAP_OFF_DESC=	Disable netmap(4) support unconditionally
 
@@ -41,18 +39,12 @@ MAKE_ENV+=	WERROR=""
 PLIST_FILES+=	man/man4/${link}.4.gz
 .endfor
 
-MAX_NETMAP_OSVERSION?=	1200500  # Maximum OSVERSION for which NETMAP support works
-
 .include <bsd.port.pre.mk>
 
 # Fixup for slave ports that use this as a master port. sbruno
 .if ${PORTNAME} == ixl
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
 ONLY_FOR_ARCHS_REASON=	only supported on 32-bit architectures
-.endif
-
-.if ${PORT_OPTIONS:MNETMAP_AUTO} && ${OSVERSION} <= ${MAX_NETMAP_OSVERSION}
-CFLAGS+=	-DDEV_NETMAP
 .endif
 
 do-install:
