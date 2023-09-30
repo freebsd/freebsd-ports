@@ -18,6 +18,8 @@ WWW=		https://www.onlyoffice.com/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on EOL NodeJS 16
+EXPIRATION_DATE=	2023-10-30
 BROKEN_i386=	fails to build
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
