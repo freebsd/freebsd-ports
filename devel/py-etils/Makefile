@@ -19,7 +19,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	ARRAY_TYPES EAPP ECOLAB EDC ENP EPATH EPY ETREE ETQDM
+OPTIONS_DEFINE=	ARRAY_TYPES EAPP ECOLAB EDC ENP EPATH EPATH_GCS EPATH_S3 EPY ETREE ETQDM
 OPTIONS_DEFAULT=ARRAY_TYPES EAPP EDC ENP EPATH EPY ETREE ETQDM
 ARRAY_TYPES_DESC=	Typing annotations for jax, numpy, ... arrays
 ARRAY_TYPES_IMPLIES=	ENP
@@ -32,6 +32,8 @@ EDC_IMPLIES=		EPY
 ENP_DESC=		Numpy utilities
 ENP_IMPLIES=		EPY
 EPATH_DESC=		Pathlib-like API
+EPATH_GCS_DESC=		Pathlib-like API for GCS
+EPATH_S3_DESC=		Pathlib-like API for S3
 EPATH_IMPLIES=		EPY
 EPY_DESC=		Collection of generic python utilities
 ETREE_DESC=		Tree utilities for tf.nest, jax.tree_utils, DeepMind tree
@@ -49,6 +51,8 @@ EPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:devel/py-fsspec@${PY_FLAVOR}
 			${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}zipp>=0:devel/py-zipp@${PY_FLAVOR}
+EPATH_GCS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gcsfs>=0:devel/py-gcsfs@${PY_FLAVOR}
+EPATH_S3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}s3fs>=0:devel/py-s3fs@${PY_FLAVOR}
 EPY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 ETQDM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tqdm>=0:misc/py-tqdm@${PY_FLAVOR}
