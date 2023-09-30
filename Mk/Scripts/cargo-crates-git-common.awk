@@ -65,7 +65,9 @@ function split_git_url(info, git_url,		url, path, account, project, commit, i, d
 			# "GitHub silently converts tags starting with v to not have v in the filename
 			# and extraction directory.  It also replaces + with -."
 			dir_ver = commit
-			sub(/^[vV]/, "", dir_ver)
+			if (dir_ver ~ /^[vV][0-9]/) {
+				sub(/^[vV]/, "", dir_ver)
+			}
 			gsub(/\+/, "-", dir_ver)
 			gsub(/--/, "-", dir_ver)
 			info["dir"] = sprintf("%s-%s", project, dir_ver)
