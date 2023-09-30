@@ -47,7 +47,6 @@
     SUBDIR += ktp-common-internals
     SUBDIR += ktp-contact-list
     SUBDIR += ktp-filetransfer-handler
-    SUBDIR += ktp-text-ui
     SUBDIR += libaccounts-glib
     SUBDIR += libaccounts-qt5
     SUBDIR += libmesode
