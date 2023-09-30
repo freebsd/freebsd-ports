@@ -167,7 +167,6 @@
     SUBDIR += ftimes
     SUBDIR += fuzz
     SUBDIR += fwanalog
-    SUBDIR += fwbuilder
     SUBDIR += fwknop
     SUBDIR += fwlogwatch
     SUBDIR += gcr
