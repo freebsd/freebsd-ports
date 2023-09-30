@@ -1,5 +1,5 @@
 PORTNAME=	webauthn
-PORTVERSION=	1.2.1
+PORTVERSION=	1.11.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,10 @@ WWW=		https://github.com/duo-labs/py_webauthn
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=0.24.0:devel/py-asn1crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}attrs>=21.2.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cattrs>=1.8.0:devel/py-cattrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cbor2>=4.0.1:devel/py-cbor2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=20.0.1,1:security/py-openssl@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.4.0:devel/py-asn1crypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cbor2>=5.4.2.post1:devel/py-cbor2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.10.11:devel/py-pydantic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=23.2.0,1:security/py-openssl@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cryptography distutils unittest
