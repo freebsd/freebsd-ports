@@ -1,5 +1,5 @@
 PORTNAME=	boto3
-PORTVERSION=	1.28.53
+PORTVERSION=	1.28.57
 CATEGORIES=	www python devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.31.${PORTVERSION:E}<1.32.0:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<2.0.0:devel/py-jmespath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.6.0<0.7.0:net/py-s3transfer@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}s3transfer>=0.7.0<0.8.0:net/py-s3transfer@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
