@@ -21,4 +21,11 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	AWSCLI BOTO3
+AWSCLI_DESC=	Use awscli
+BOTO3_DESC=	Use boto3
+
+AWSCLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscli>=1.29.17:devel/py-awscli@${PY_FLAVOR}
+BOTO3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.28.17:www/py-boto3@${PY_FLAVOR}
+
 .include <bsd.port.mk>
