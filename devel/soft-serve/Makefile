@@ -1,7 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.5
-PORTREVISION=	1
+DISTVERSION=	0.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -14,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	charmbracelet
 GO_MODULE=	github.com/charmbracelet/soft-serve
 GO_TARGET=	./cmd/soft
 USE_RC_SUBR=	soft-serve
