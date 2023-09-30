@@ -2,7 +2,7 @@ PORTNAME=	unixbench
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.1.3-51
 DISTVERSIONSUFFIX=	-g6705203
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -10,27 +10,24 @@ COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 WWW=		https://github.com/kdlucas/byte-unixbench
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	x11perf:x11/x11perf
 
-USES=		gmake gl perl5 shebangfix xorg
+USES=		gmake gl localbase:ldflags perl5 shebangfix xorg
+USE_GL=		gl
+SHEBANG_FILES=	Run pgms/gfx-x11
+USE_XORG=	x11 xext
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	kdlucas
 GH_PROJECT=	byte-unixbench
-WRKSRC_SUBDIR=	UnixBench
-USE_GL=	gl
-USE_XORG=	x11 xext
-CFLAGS+=	-I${LOCALBASE}/include \
-			-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-OPTIONS_EXCLUDE_aarch64=	OPTIMIZED_CFLAGS
-MAKE_ENV=	"UB_GCC_OPTIONS=-O3 -ffast-math -fomit-frame-pointer"
-#march generates code that can be incompatibe with previous CPU generations
-OPTIMIZED_CFLAGS_MAKE_ENV=	"UB_GCC_OPTIONS=-O3 -ffast-math -fomit-frame-pointer -march=native"
+WRKSRC_SUBDIR=	UnixBench
+
+MAKE_ENV=	UB_GCC_OPTIONS=" "
 
 SUB_FILES=	unixbench
-SHEBANG_FILES=	Run pgms/gfx-x11
 
 post-patch:
 	${REINPLACE_CMD} -e 's/^CC=gcc/#CC=gcc/' ${WRKSRC}/Makefile
