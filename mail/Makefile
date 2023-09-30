@@ -553,7 +553,6 @@
     SUBDIR += qpopper
     SUBDIR += qsf
     SUBDIR += qsheff
-    SUBDIR += qtools
     SUBDIR += queue-fix
     SUBDIR += queue-repair
     SUBDIR += rainloop
