@@ -7885,3 +7885,4 @@ lang/onyx||2023-09-30|Has expired: Requires deprecated cook port
 lang/perl5.32|lang/perl5.34|2023-09-30|Has expired: Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 mail/qtools||2023-09-30|Has expired: Upstream last activity in 2003
 math/djbfft||2023-09-30|Has expired: Abandonware, slow and untouched by upstream for over 20 years
+math/py-matplotlib2|math/py-matplotlib|2023-09-30|Has expired: Upstream support ended in 2020 and do not support python3 versions existing on the tree
