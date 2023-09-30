@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	archivers
 PKGNAMEPREFIX=	lib
 
-MAINTAINER=	martin@waschbuesch.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LZ4 compression library, lossless and very fast
 WWW=		https://lz4.github.io/lz4/
 
