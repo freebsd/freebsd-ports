@@ -10,6 +10,18 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230929:
+AUTHOR: sunpoet@FreeBSD.org
+
+  USE_PYTHON=cryptography{,_build,_test} has been added to the ports tree.
+  20230722 entry is obsoleted now. All existing USES=pycryptography* have
+  been converted to USE_PYTHON=cryptography{,_build,_test} in PR 273727.
+
+  Usage:
+    USE_PYTHON=cryptography_build adds security/py-cryptography to BUILD_DEPENDS
+    USE_PYTHON=cryptography adds security/py-cryptography to RUN_DEPENDS
+    USE_PYTHON=cryptography_test adds security/py-cryptography to TEST_DEPENDS
+
 20230823:
 AUTHOR: tcberner@FreeBSD.org
 
