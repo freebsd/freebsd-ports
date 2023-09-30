@@ -7911,3 +7911,4 @@ www/bareos19-webui|www/bareos20-webui|2023-09-30|Has expired: Upstream EOL reach
 sysutils/bareos19-traymonitor|sysutils/bareos20-traymonitor|2023-09-30|Has expired: Upstream EOL reached
 sysutils/bareos19-client|sysutils/bareos20-client|2023-09-30|Has expired: Upstream EOL reached
 sysutils/bareos19-server|sysutils/bareos20-server|2023-09-30|Has expired: Upstream EOL reached
+textproc/popup||2023-09-30|Has expired: Abandonware, last release in 2004 and dead upstream

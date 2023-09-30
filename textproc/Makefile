@@ -1284,7 +1284,6 @@
     SUBDIR += pict
     SUBDIR += po4a
     SUBDIR += pod2mdoc
-    SUBDIR += popup
     SUBDIR += popup-stacks
     SUBDIR += ppower4
     SUBDIR += print-n-times
