@@ -7887,3 +7887,4 @@ mail/qtools||2023-09-30|Has expired: Upstream last activity in 2003
 math/djbfft||2023-09-30|Has expired: Abandonware, slow and untouched by upstream for over 20 years
 math/py-matplotlib2|math/py-matplotlib|2023-09-30|Has expired: Upstream support ended in 2020 and do not support python3 versions existing on the tree
 net-im/kde-telepathy||2023-09-30|Has expired: Will not be part of KDE Gear 23.08 in August
+net/easysoap||2023-09-30|Has expired: Last release was in 2006
