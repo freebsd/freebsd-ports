@@ -7919,3 +7919,4 @@ www/drupal8|www/drupal9|2023-09-30|Has expired: Upstream EOL reached on 2021-11-
 www/fnord||2023-09-30|Has expired: Deprecated upstream, consider using www/apache24, www/lighttpd or www/nginx
 www/grafana8|www/grafana9|2023-09-30|Has expired: EOLed upstream
 www/mediawiki138|www/mediawiki139|2023-09-30|Has expired: end of life upstream
+www/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years ago. Consider using www/awstats

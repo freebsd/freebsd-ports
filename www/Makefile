@@ -61,7 +61,6 @@
     SUBDIR += aria2
     SUBDIR += asql
     SUBDIR += authelia
-    SUBDIR += awffull
     SUBDIR += awstats
     SUBDIR += axis2
     SUBDIR += bacula-web
