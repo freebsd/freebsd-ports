@@ -1,5 +1,6 @@
 PORTNAME=	cucumber-core
 PORTVERSION=	12.0.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ WWW=		https://cucumber.io/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-cucumber-gherkin>=25<27:textproc/rubygem-cucumber-gherkin \
+RUN_DEPENDS=	rubygem-cucumber-gherkin26>=25<27:textproc/rubygem-cucumber-gherkin26 \
 		rubygem-cucumber-messages>=20<23:devel/rubygem-cucumber-messages \
 		rubygem-cucumber-tag-expressions>=5.0.4<6:devel/rubygem-cucumber-tag-expressions
 
