@@ -388,7 +388,6 @@
     SUBDIR += libe-book
     SUBDIR += libebml
     SUBDIR += libepubgen
-    SUBDIR += libextractor
     SUBDIR += libexttextcat
     SUBDIR += libfo
     SUBDIR += libfolia
