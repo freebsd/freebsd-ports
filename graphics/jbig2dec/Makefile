@@ -10,15 +10,18 @@ WWW=		https://github.com/ArtifexSoftware/jbig2dec
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix
+USES=		cpe libtool pathfix python:env,test shebangfix
 
 CONFIGURE_ENV=	ac_cv_func_getopt_long=yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 LDFLAGS+=	-lmd
+TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	artifex
+
+SHEBANG_FILES=	*.py
 
 OPTIONS_DEFINE=	PNG
 OPTIONS_DEFAULT=PNG
