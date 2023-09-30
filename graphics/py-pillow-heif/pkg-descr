@@ -1,0 +1,10 @@
+Python bindings to libheif for working with HEIF images and plugin for Pillow.
+
+Features:
+- Decoding of 8, 10, 12 bit HEIC and AVIF files.
+- Encoding of 8, 10, 12 bit HEIC and AVIF files.
+- EXIF, XMP, IPTC read & write support.
+- Support of multiple images in one file and a PrimaryImage attribute.
+- Adding & removing thumbnails.
+- Reading of Depth Images.
+- Adding HEIF support to Pillow in one line of code as a plugin.
