@@ -5857,6 +5857,7 @@
     SUBDIR += py-ypy-websocket
     SUBDIR += py-yunomi
     SUBDIR += py-zarr
+    SUBDIR += py-zc.lockfile
     SUBDIR += py-zclockfile
     SUBDIR += py-zconfig
     SUBDIR += py-zfp
