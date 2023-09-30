@@ -7917,3 +7917,4 @@ japanese/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years
 www/dhttpd||2023-09-30|Has expired: Abandonware, last release in 15+ years ago. Consider using www/darkhttpd, www/obhttpd or www/miniserve
 www/drupal8|www/drupal9|2023-09-30|Has expired: Upstream EOL reached on 2021-11-17
 www/fnord||2023-09-30|Has expired: Deprecated upstream, consider using www/apache24, www/lighttpd or www/nginx
+www/grafana8|www/grafana9|2023-09-30|Has expired: EOLed upstream
