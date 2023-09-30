@@ -1,5 +1,5 @@
 PORTNAME=	puppet_forge
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
