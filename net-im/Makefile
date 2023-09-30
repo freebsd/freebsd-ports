@@ -46,7 +46,6 @@
     SUBDIR += kopete
     SUBDIR += ktp-common-internals
     SUBDIR += ktp-contact-list
-    SUBDIR += ktp-contact-runner
     SUBDIR += ktp-desktop-applets
     SUBDIR += ktp-filetransfer-handler
     SUBDIR += ktp-kded-module
