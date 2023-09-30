@@ -1596,6 +1596,7 @@
     SUBDIR += py-django-redis
     SUBDIR += py-django-registration
     SUBDIR += py-django-registration-redux
+    SUBDIR += py-django-requests-debug-toolbar
     SUBDIR += py-django-reversion
     SUBDIR += py-django-reversion-compare
     SUBDIR += py-django-rich
