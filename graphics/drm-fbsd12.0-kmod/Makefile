@@ -13,6 +13,9 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64 and i386
 
+DEPRECATED=	Requires soon to reach EOL FreeBSD 12
+EXPIRATION_DATE=	2023-12-31
+
 OPTIONS_DEFINE=	DEBUG
 
 USES=		kmod uidfix compiler:c++11-lang
