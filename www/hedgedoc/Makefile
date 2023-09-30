@@ -16,6 +16,9 @@ WWW=		https://hedgedoc.org/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on EOL NodeJS 16
+EXPIRATION_DATE=	2023-10-30
+
 BROKEN_i386=	fails to build: no i386 sqlite3.node file found
 
 BUILD_DEPENDS=	git:devel/git \
