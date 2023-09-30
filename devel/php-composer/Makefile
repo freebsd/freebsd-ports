@@ -1,5 +1,5 @@
 PORTNAME=	composer
-DISTVERSION=	1.10.26
+DISTVERSION=	2.6.4
 CATEGORIES=	devel
 MASTER_SITES=	https://getcomposer.org/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
@@ -12,8 +12,6 @@ COMMENT=	Dependency Manager for PHP
 WWW=		https://getcomposer.org/
 
 LICENSE=	MIT
-
-DEPRECATED=	packagist.org is dropping API v1 support, please use newer 2.x version
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
@@ -29,6 +27,12 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/composer \
 		bin/composer.phar
+
+OPTIONS_DEFINE=		CURL
+OPTIONS_DEFAULT=	CURL
+
+CURL_DESC=	Install the cURL extension for faster downloads
+CURL_USE=	PHP=curl
 
 do-extract:
 	${MKDIR} ${WRKSRC}/

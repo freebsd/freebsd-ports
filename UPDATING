@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230930:
+  AFFECTS: users of devel/php-composer2
+  AUTHOR: madpilot@FreeBSD.org
+
+  The composer2 ports has been moved over the old devel/php-composer
+  port, which was still providing the old EOLed version 1 of the
+  software.
+
+  Please use `pkg install php81-composer` (substitute 81 with the
+  PHP version you're using) to properly upgrade.
+
 20230924:
   AFFECTS: users of XFCE desktop (x11-wm/xfce4)
   AUTHOR: madpilot@FreeBSD.org
