@@ -1658,7 +1658,6 @@
     SUBDIR += rand
     SUBDIR += randlm
     SUBDIR += rapidxml
-    SUBDIR += raptor
     SUBDIR += raptor2
     SUBDIR += rasqal
     SUBDIR += re-flex

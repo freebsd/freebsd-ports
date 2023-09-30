@@ -7920,3 +7920,4 @@ www/fnord||2023-09-30|Has expired: Deprecated upstream, consider using www/apach
 www/grafana8|www/grafana9|2023-09-30|Has expired: EOLed upstream
 www/mediawiki138|www/mediawiki139|2023-09-30|Has expired: end of life upstream
 www/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years ago. Consider using www/awstats
+textproc/raptor||2023-09-30|Has expired: No new release in 10+ years and superseded by 2.0-branch, consider using textproc/raptor2
