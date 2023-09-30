@@ -1,5 +1,5 @@
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	p5-Test-Requires>=0:devel/p5-Test-Requires
+TEST_DEPENDS=	p5-IPC-Run3>=0.048:devel/p5-IPC-Run3 \
+		p5-Test-Requires>=0:devel/p5-Test-Requires
 
 USES=		perl5
 USE_PERL5=	configure
