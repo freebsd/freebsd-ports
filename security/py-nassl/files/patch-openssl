@@ -1,4 +1,4 @@
---- nassl/_nassl/nassl_SSL.c.orig	2022-11-20 14:28:29 UTC
+--- nassl/_nassl/nassl_SSL.c.orig	2023-09-24 06:39:12 UTC
 +++ nassl/_nassl/nassl_SSL.c
 @@ -1034,6 +1034,7 @@ static PyObject *nassl_SSL_get_dh_info(nassl_SSL_Objec
          return return_dict;
@@ -16,7 +16,7 @@
  #endif
      else
      {
---- nassl/_nassl/nassl_SSL_CTX.c.orig	2022-11-20 14:28:29 UTC
+--- nassl/_nassl/nassl_SSL_CTX.c.orig	2023-09-24 06:39:12 UTC
 +++ nassl/_nassl/nassl_SSL_CTX.c
 @@ -88,8 +88,10 @@ static PyObject* nassl_SSL_CTX_new(PyTypeObject *type,
  		    // Replicate the pre-1.1.0 OpenSSL API to avoid breaking _nassl's API
@@ -29,7 +29,7 @@
  		    SSL_CTX_set_max_proto_version(sslCtx, 0);
  			break;
  		#endif
---- nassl/ssl_client.py.orig	2022-11-20 14:28:29 UTC
+--- nassl/ssl_client.py.orig	2023-09-24 06:39:12 UTC
 +++ nassl/ssl_client.py
 @@ -429,6 +429,25 @@ class SslClient(BaseSslClient):
      # The default client uses the modern OpenSSL
@@ -57,7 +57,7 @@
      def write_early_data(self, data: bytes) -> int:
          """Returns the number of (encrypted) bytes sent."""
          if self._is_handshake_completed:
---- setup.py.orig	2022-11-20 14:28:29 UTC
+--- setup.py.orig	2023-09-24 06:39:12 UTC
 +++ setup.py
 @@ -2,29 +2,25 @@ import copy
  import sys
@@ -95,7 +95,7 @@
          "nassl.ocsp_response",
          "nassl.cert_chain_verifier",
      ],
-@@ -71,58 +67,21 @@ BASE_NASSL_EXT_SETUP = {
+@@ -71,63 +67,20 @@ BASE_NASSL_EXT_SETUP = {
      ],
  }
  
@@ -114,6 +114,11 @@
 -    )
 -else:
 -    BASE_NASSL_EXT_SETUP["extra_compile_args"].append("-Wall")
+-
+-    if CURRENT_PLATFORM in SupportedPlatformEnum.all_linux_platforms():
+-        # Hide internal OpenSSL symbols to avoid "symbol confusion" when Python loads the system's OpenSSL libraries
+-        # https://github.com/nabla-c0d3/nassl/issues/95
+-        BASE_NASSL_EXT_SETUP["extra_link_args"].append("-Wl,--exclude-libs=ALL")
 -
 -    if CURRENT_PLATFORM == SupportedPlatformEnum.LINUX_64:
 -        # Explicitly disable executable stack on Linux 64 to address issues with Ubuntu on Windows
@@ -141,7 +146,7 @@
 -    }
 -)
 -
- # The configure the setup for modern nassl
+-# The configure the setup for modern nassl
 -modern_openssl_config = ModernOpenSslBuildConfig(CURRENT_PLATFORM)
 -
  MODERN_NASSL_EXT_SETUP = copy.deepcopy(BASE_NASSL_EXT_SETUP)
@@ -161,7 +166,7 @@
          ],
      }
  )
-@@ -131,18 +90,11 @@ MODERN_NASSL_EXT_SETUP["sources"].append(
+@@ -136,18 +89,11 @@ MODERN_NASSL_EXT_SETUP["sources"].append(
  )  # API only available in modern nassl
  
  
@@ -182,7 +187,7 @@
  )
  
  
---- tests/SSL_CTX_test.py.orig	2022-11-20 14:28:29 UTC
+--- tests/SSL_CTX_test.py.orig	2023-09-24 06:39:12 UTC
 +++ tests/SSL_CTX_test.py
 @@ -2,11 +2,11 @@ import tempfile
  
@@ -198,7 +203,7 @@
  class TestCommonSSL_CTX:
      def test_new(self, nassl_module):
          assert nassl_module.SSL_CTX(OpenSslVersionEnum.SSLV23.value)
---- tests/SSL_test.py.orig	2022-11-20 14:28:29 UTC
+--- tests/SSL_test.py.orig	2023-09-24 06:39:12 UTC
 +++ tests/SSL_test.py
 @@ -1,11 +1,10 @@
  import pytest
@@ -248,7 +253,7 @@
 -        test_ssl.set_connect_state()
 -        with pytest.raises(_nassl.OpenSSLError, match="ssl handshake failure"):
 -            test_ssl.write("tests")
---- tests/X509_test.py.orig	2022-11-20 14:28:29 UTC
+--- tests/X509_test.py.orig	2023-09-24 06:39:12 UTC
 +++ tests/X509_test.py
 @@ -1,10 +1,9 @@
  import pytest
@@ -262,7 +267,7 @@
  class TestX509:
      def test_from_pem(self, nassl_module):
          # Given a PEM-formatted certificate
---- tests/ocsp_response_test.py.orig	2022-11-20 14:28:29 UTC
+--- tests/ocsp_response_test.py.orig	2023-09-24 06:39:12 UTC
 +++ tests/ocsp_response_test.py
 @@ -5,7 +5,6 @@ import pytest
  import socket
@@ -281,7 +286,7 @@
  class TestCommonOcspResponseOnline:
      def test(self, ssl_client_cls):
          # Given a website that support OCSP stapling
---- tests/ssl_client_test.py.orig	2022-11-20 14:28:29 UTC
+--- tests/ssl_client_test.py.orig	2023-09-24 06:39:12 UTC
 +++ tests/ssl_client_test.py
 @@ -4,7 +4,6 @@ from pathlib import Path
  import pytest
