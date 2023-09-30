@@ -1,4 +1,4 @@
---- ddtrace/appsec/iast/_taint_tracking/CMakeLists.txt.orig	2023-07-25 21:04:28 UTC
+--- ddtrace/appsec/iast/_taint_tracking/CMakeLists.txt.orig	2023-09-26 19:15:41 UTC
 +++ ddtrace/appsec/iast/_taint_tracking/CMakeLists.txt
 @@ -22,11 +22,7 @@ else()
  endif(BUILD_MACOS)
@@ -13,10 +13,3 @@
  
  include_directories(".")
  
-@@ -66,4 +62,4 @@ set_target_properties(
-         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_LIST_DIR}"
- )
- 
--target_link_libraries(${APP_NAME} PRIVATE absl::node_hash_map)
-\ No newline at end of file
-+target_link_libraries(${APP_NAME} PRIVATE absl::node_hash_map)
