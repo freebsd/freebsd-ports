@@ -1,5 +1,5 @@
 PORTNAME=	nextcloudclient
-PORTVERSION=	3.9.4
+PORTVERSION=	3.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -19,7 +19,7 @@ USES=		cmake:noninja compiler:c++14-lang desktop-file-utils gmake \
 USE_KDE=	archive
 USE_QT=		buildtools:build concurrent core dbus declarative graphicaleffects \
 		gui linguist:build location network printsupport qmake:build \
-		quickcontrols quickcontrols2 sql svg testlib webchannel websockets \
+		quickcontrols quickcontrols2 svg webchannel websockets \
 		widgets xml
 CMAKE_ARGS=	-DBUILD_UPDATER:BOOL=OFF \
 		-DCMAKE_INSTALL_MANDIR:STRING=man \
