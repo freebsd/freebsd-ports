@@ -12,6 +12,8 @@ WWW=		https://www.ms-studio.com/FontSales/anonymouspro.html
 LICENSE=	OFL11
 
 USES=		fonts zip
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
