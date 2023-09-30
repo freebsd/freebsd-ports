@@ -7913,3 +7913,4 @@ sysutils/bareos19-client|sysutils/bareos20-client|2023-09-30|Has expired: Upstre
 sysutils/bareos19-server|sysutils/bareos20-server|2023-09-30|Has expired: Upstream EOL reached
 textproc/popup||2023-09-30|Has expired: Abandonware, last release in 2004 and dead upstream
 textproc/yamcha||2023-09-30|Has expired: Last upstream release was in 2005
+japanese/awffull||2023-09-30|Has expired: Abandonware, last release in 14+ years ago. Consider using www/awstats

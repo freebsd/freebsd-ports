@@ -14,7 +14,6 @@
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
-    SUBDIR += awffull
     SUBDIR += bible_names-fpw
     SUBDIR += boiled-mozc
     SUBDIR += bookview
