@@ -274,7 +274,6 @@
     SUBDIR += dihydrogen
     SUBDIR += dionysus
     SUBDIR += disco
-    SUBDIR += djbfft
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dune-alugrid
