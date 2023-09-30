@@ -1,5 +1,5 @@
 PORTNAME=	Parse-PlainConfig
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,11 @@ LICENSE_FILE_ART10=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Class-EHierarchy>=2.00:devel/p5-Class-EHierarchy \
-		p5-Paranoid>=2.05:devel/p5-Paranoid
+		p5-Paranoid>=2.10:devel/p5-Paranoid
 
-NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
