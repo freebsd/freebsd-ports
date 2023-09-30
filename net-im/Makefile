@@ -44,7 +44,6 @@
     SUBDIR += kaccounts-providers
     SUBDIR += kaidan
     SUBDIR += kopete
-    SUBDIR += ktp-accounts-kcm
     SUBDIR += ktp-approver
     SUBDIR += ktp-auth-handler
     SUBDIR += ktp-call-ui
