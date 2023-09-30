@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-09-06 10:32:49 UTC
++++ pyproject.toml
+@@ -25,7 +25,7 @@ classifiers = [
+ dynamic = ["version"]  # will read __version__ from willow/__init__.py
+ requires-python = ">=3.8"
+ dependencies = [
+-    "filetype>=1.0.10,!=1.1.0",
++    "filetype>=1.0.7,!=1.1.0",
+     "defusedxml>=0.7,<1.0",
+ ]
+ 
