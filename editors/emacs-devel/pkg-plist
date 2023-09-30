@@ -995,6 +995,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/avoid.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/battery.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/battery.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/bind-key.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/bind-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/bindings.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/bindings.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/bookmark.el.gz
@@ -3632,6 +3634,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/json-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ld-script.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/lua-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/m4-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/m4-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/make-mode.el.gz
@@ -4053,8 +4057,6 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url-vars.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/url/url.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/use-package/bind-key.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/use-package/bind-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/use-package/use-package-bind-key.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/use-package/use-package-bind-key.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/use-package/use-package-core.el.gz
