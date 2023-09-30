@@ -1,5 +1,5 @@
 PORTNAME=	haml
-PORTVERSION=	6.1.2
+PORTVERSION=	6.2.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,8 @@ RUN_DEPENDS=	rubygem-temple>=0.8.0:devel/rubygem-temple \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
 USES=		cpe gem shebangfix
+
+NO_ARCH=	yes
 
 PLIST_FILES=	bin/haml
 
