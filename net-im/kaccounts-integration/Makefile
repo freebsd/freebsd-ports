@@ -25,7 +25,6 @@ USE_QT=		concurrent core dbus declarative gui network widgets xml \
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc*} && ${OSVERSION} < 1400092
-CXX=		clang++${LLVM_VERSION}
 USES+=		llvm:min=16
 .endif
 
