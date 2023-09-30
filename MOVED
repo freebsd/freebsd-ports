@@ -7912,3 +7912,4 @@ sysutils/bareos19-traymonitor|sysutils/bareos20-traymonitor|2023-09-30|Has expir
 sysutils/bareos19-client|sysutils/bareos20-client|2023-09-30|Has expired: Upstream EOL reached
 sysutils/bareos19-server|sysutils/bareos20-server|2023-09-30|Has expired: Upstream EOL reached
 textproc/popup||2023-09-30|Has expired: Abandonware, last release in 2004 and dead upstream
+textproc/yamcha||2023-09-30|Has expired: Last upstream release was in 2005

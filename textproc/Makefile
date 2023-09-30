@@ -2116,7 +2116,6 @@
     SUBDIR += xwindiff
     SUBDIR += y2l
     SUBDIR += yali
-    SUBDIR += yamcha
     SUBDIR += yaml-mode.el
     SUBDIR += yaml.el
     SUBDIR += yamlfmt
