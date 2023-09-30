@@ -6126,6 +6126,7 @@
     SUBDIR += rubygem-aws-sdk-backupgateway
     SUBDIR += rubygem-aws-sdk-backupstorage
     SUBDIR += rubygem-aws-sdk-batch
+    SUBDIR += rubygem-aws-sdk-bedrock
     SUBDIR += rubygem-aws-sdk-billingconductor
     SUBDIR += rubygem-aws-sdk-braket
     SUBDIR += rubygem-aws-sdk-budgets
