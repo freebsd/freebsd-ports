@@ -1,5 +1,5 @@
 PORTNAME=	numexpr
-PORTVERSION=	2.8.6
+PORTVERSION=	2.8.7
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.13.3,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		dos2unix python
+USES=		dos2unix python:3.9+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
