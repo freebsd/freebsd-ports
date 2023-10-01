@@ -12,6 +12,9 @@ WWW=		https://git.zx2c4.com/wireguard-freebsd/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
+DEPRECATED=	Only useful for FreeBSD 12 which is EoL soon
+EXPIRATION_DATE=	2023-12-31
+
 USES=		kmod tar:xz uidfix
 
 WRKSRC_SUBDIR=	src
