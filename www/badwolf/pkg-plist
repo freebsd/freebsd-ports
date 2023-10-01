@@ -10,12 +10,12 @@ share/icons/hicolor/64x64/apps/badwolf.png
 share/icons/hicolor/scalable/apps/badwolf.svg
 share/man/man1/badwolf.1.gz
 %%NLS%%@dir %%DATADIR%%/locale
-%%DATADIR%%/locale/de/LC_MESSAGES/Badwolf.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/Badwolf.mo
-%%DATADIR%%/locale/pt_BR/LC_MESSAGES/Badwolf.mo
-%%DATADIR%%/locale/tr/LC_MESSAGES/Badwolf.mo
-%%DATADIR%%/locale/vi/LC_MESSAGES/Badwolf.mo
-share/man/de/man1/badwolf.1.gz
-share/man/fr/man1/badwolf.1.gz
-share/man/tr/man1/badwolf.1.gz
-share/man/vi/man1/badwolf.1.gz
+%%NLS%%%%DATADIR%%/locale/de/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/fr/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/pt_BR/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/tr/LC_MESSAGES/Badwolf.mo
+%%NLS%%%%DATADIR%%/locale/vi/LC_MESSAGES/Badwolf.mo
+%%NLS%%share/man/de/man1/badwolf.1.gz
+%%NLS%%share/man/fr/man1/badwolf.1.gz
+%%NLS%%share/man/tr/man1/badwolf.1.gz
+%%NLS%%share/man/vi/man1/badwolf.1.gz

@@ -1,5 +1,6 @@
 PORTNAME=	badwolf
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://hacktivis.me/releases/
 
@@ -35,7 +36,7 @@ LIBSOUP_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 LIBSOUP_CONFIGURE_ENV=	WITH_URI_PARSER=libsoup2
 
 NLS_USES=		gettext
-NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-Makefile
+NLS_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-configure
 
 GURI_USE_GNOME=		glib20
 LIBAV_USE_GSTREAMER=	libav
