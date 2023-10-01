@@ -5497,6 +5497,7 @@
     SUBDIR += py-rebulk
     SUBDIR += py-recordclass
     SUBDIR += py-recurring-ical-events
+    SUBDIR += py-red-black-tree-mod
     SUBDIR += py-rednose
     SUBDIR += py-reedsolo
     SUBDIR += py-referencing

@@ -1,0 +1,9 @@
+red-black-tree-mod is a pair of python modules implementing red
+black trees.
+
+Red-black trees are a little slower than treaps, but they give a
+nice low standard deviation in operation times, and this code is
+rather flexible.
+
+A module is provided for red black trees that enforce uniqueness.
+They allow for set-like use and dictionary-like use.
