@@ -37,12 +37,6 @@ MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 PIXBUF_USE=		GNOME=gdkpixbuf2
 PIXBUF_MESON_ENABLED=	icons
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
-CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
-.endif
-
 post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},g' \

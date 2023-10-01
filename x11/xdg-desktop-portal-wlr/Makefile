@@ -45,12 +45,6 @@ MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
 MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}.5.gz
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400097
-CFLAGS+=	-D__BSD_VISIBLE -D__XSI_VISIBLE
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/${PORTNAME}.5.scd

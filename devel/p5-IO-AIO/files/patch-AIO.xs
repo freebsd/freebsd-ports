@@ -1,18 +1,6 @@
---- AIO.xs.orig	2022-09-28 08:22:50 UTC
+--- AIO.xs.orig	2022-09-25 16:29:50 UTC
 +++ AIO.xs
-@@ -169,9 +169,11 @@
- # include <sys/eventfd.h>
- #endif
- 
-+#define cv condvar_cv
- #if HAVE_TIMERFD
- # include <sys/timerfd.h>
- #endif
-+#undef cv
- 
- #if HAVE_RLIMITS
-   #include <sys/time.h>
-@@ -2926,7 +2928,7 @@ fexecve (SV *fh, SV *args, SV *envs = &PL_sv_undef)
+@@ -2924,7 +2924,7 @@ fexecve (SV *fh, SV *args, SV *envs = &PL_sv_undef)
  	OUTPUT: RETVAL
  
  int
