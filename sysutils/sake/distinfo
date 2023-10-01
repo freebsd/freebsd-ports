@@ -1,7 +1,7 @@
-TIMESTAMP = 1686550932
-SHA256 (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/v0.15.0.mod) = 470c360aff9bac3decef79d6ab5036b4971e5f2a5ffc82d4bd00533753edf4ff
-SIZE (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/v0.15.0.mod) = 970
-SHA256 (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/v0.15.0.zip) = 4efaae8d14d506d5d8c24ed23c1a87d8fff15647a9872428f30a7c8048299f06
-SIZE (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/v0.15.0.zip) = 1143236
-SHA256 (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/alajmo-sake-v0.15.0_GH0.tar.gz) = d8acd196e254d4c784723894407394ba32776aa940a9a6f19be653ca17fd356d
-SIZE (go/sysutils_sake/alajmo-sake-v0.15.0_GH0/alajmo-sake-v0.15.0_GH0.tar.gz) = 1060093
+TIMESTAMP = 1696145465
+SHA256 (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/v0.15.1.mod) = 470c360aff9bac3decef79d6ab5036b4971e5f2a5ffc82d4bd00533753edf4ff
+SIZE (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/v0.15.1.mod) = 970
+SHA256 (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/v0.15.1.zip) = a492df8b4aa3a0d7ec0a8760a77979471147986af6a8b993132460068273f740
+SIZE (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/v0.15.1.zip) = 1143400
+SHA256 (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/alajmo-sake-v0.15.1_GH0.tar.gz) = 58fb1e776c02f3b252f721f94f6dffad26cbff6cf5bd04ef719fa03f193ab44d
+SIZE (go/sysutils_sake/alajmo-sake-v0.15.1_GH0/alajmo-sake-v0.15.1_GH0.tar.gz) = 1060199
