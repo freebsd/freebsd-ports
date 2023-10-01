@@ -5877,6 +5877,7 @@
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
     SUBDIR += pycharm-pro
+    SUBDIR += pycomposefile
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common

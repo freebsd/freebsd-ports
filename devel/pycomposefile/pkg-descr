@@ -1,0 +1,3 @@
+Structured deserialization of Docker Compose files.
+
+A Python library mainly used for the azure-cli application.
