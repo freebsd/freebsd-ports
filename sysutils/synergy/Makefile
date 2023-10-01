@@ -53,7 +53,7 @@ LEGACY_USE=			QT=gui
 post-patch:
 	# Hardcoded path needs to be replaced with
 	#   --with-xkb-base defined in x11/keyboard-config
-	@${REINPLACE_CMD} -e 's|/usr/share/X11/xkb|${PREFIX}/share/X11/xkb"|' \
+	@${REINPLACE_CMD} -e 's|/usr/share/X11/xkb|${PREFIX}/share/X11/xkb|' \
 		${WRKSRC}/src/lib/synergy/unix/AppUtilUnix.cpp
 	@${REINPLACE_CMD} -e 's|return "/etc"|return "${PREFIX}/etc"|' \
 		${WRKSRC}/src/lib/arch/unix/ArchFileUnix.cpp
