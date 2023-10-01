@@ -542,7 +542,6 @@
     SUBDIR += pecl-mongodb
     SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
-    SUBDIR += percona-pam-for-mysql
     SUBDIR += percona-toolkit
     SUBDIR += percona57-client
     SUBDIR += percona57-pam-for-mysql
