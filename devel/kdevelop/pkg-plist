@@ -416,7 +416,7 @@ lib/libKDevPlatformVcs.so
 lib/libKDevPlatformVcs.so.%%SO_VER_LONG%%
 lib/libKDevPlatformVcs.so.%%SO_VER%%
 lib/libKDevelopSessionsWatch.so
-%%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/kdev_filters.so
+%%QT_PLUGINDIR%%/grantlee/%%GRANTLEE_VERSION_SHORT%%/kdev_filters%%GRANTLEE_DEBUG_SUFFIX%%.so
 %%QT_PLUGINDIR%%/kdevplatform/%%SO_VER%%/kdevandroid.so
 %%QT_PLUGINDIR%%/kdevplatform/%%SO_VER%%/kdevappwizard.so
 %%QT_PLUGINDIR%%/kdevplatform/%%SO_VER%%/kdevastyle.so
