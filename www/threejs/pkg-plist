@@ -100,11 +100,9 @@
 %%WWWDIR%%/helpers/SkeletonHelper.js
 %%WWWDIR%%/helpers/SpotLightHelper.js
 %%WWWDIR%%/lights/AmbientLight.js
-%%WWWDIR%%/lights/AmbientLightProbe.js
 %%WWWDIR%%/lights/DirectionalLight.js
 %%WWWDIR%%/lights/DirectionalLightShadow.js
 %%WWWDIR%%/lights/HemisphereLight.js
-%%WWWDIR%%/lights/HemisphereLightProbe.js
 %%WWWDIR%%/lights/Light.js
 %%WWWDIR%%/lights/LightProbe.js
 %%WWWDIR%%/lights/LightShadow.js
