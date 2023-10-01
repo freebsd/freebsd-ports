@@ -7926,3 +7926,4 @@ databases/percona-pam-for-mysql||2023-10-01|Has expired: Upstream EOL reaches on
 databases/percona57-pam-for-mysql||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
 databases/percona57-server||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
 databases/percona57-client||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
+sysutils/nfs-over-tls||2023-10-01|Has expired: All supported releases of FreeBSD include this in base

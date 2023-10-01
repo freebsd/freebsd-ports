@@ -816,7 +816,6 @@
     SUBDIR += nerdctl
     SUBDIR += netevent
     SUBDIR += nfcutils
-    SUBDIR += nfs-over-tls
     SUBDIR += nitrogen
     SUBDIR += nix
     SUBDIR += nmrpflash
