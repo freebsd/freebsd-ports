@@ -543,9 +543,6 @@
     SUBDIR += pecl-redis
     SUBDIR += pecl-rrd
     SUBDIR += percona-toolkit
-    SUBDIR += percona57-client
-    SUBDIR += percona57-pam-for-mysql
-    SUBDIR += percona57-server
     SUBDIR += pg-gvm
     SUBDIR += pg.el
     SUBDIR += pgFormatter

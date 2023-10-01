@@ -7923,3 +7923,6 @@ net-p2p/transmission-gtk|net-p2p/transmission-components@gtk|2023-09-30|Moved fo
 net-p2p/transmission-qt|net-p2p/transmission-components@qt|2023-09-30|Moved for metaport
 net-p2p/transmission-utils|net-p2p/transmission-components@utils|2023-09-30|Moved for metaport
 databases/percona-pam-for-mysql||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
+databases/percona57-pam-for-mysql||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
+databases/percona57-server||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
+databases/percona57-client||2023-10-01|Has expired: Upstream EOL reaches on 2023-10-01
