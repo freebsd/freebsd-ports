@@ -1,0 +1,2 @@
+yosys-ghdl-plugin is a plugin that enables synthesis of VHDL with
+yosys and ghdl.
