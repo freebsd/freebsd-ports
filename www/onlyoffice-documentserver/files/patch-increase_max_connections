@@ -1,0 +1,42 @@
+--- server/Common/sources/constants.js.orig	2023-09-07 13:17:16 UTC
++++ server/Common/sources/constants.js
+@@ -85,7 +85,7 @@ exports.LICENSE_RESULT = {
+   NotBefore: 16
+ };
+ 
+-exports.LICENSE_CONNECTIONS = 20;
++exports.LICENSE_CONNECTIONS = 2000;
+ exports.LICENSE_EXPIRE_USERS_ONE_DAY = 24 * 60 * 60; // day in seconds
+ 
+ exports.AVS_OFFICESTUDIO_FILE_UNKNOWN =  0x0000;
+--- web-apps/apps/documenteditor/mobile/src/lib/patch.jsx.orig	2023-09-07 13:14:46 UTC
++++ web-apps/apps/documenteditor/mobile/src/lib/patch.jsx
+@@ -4,7 +4,7 @@ const EditorUIController = () => {
+ };
+ 
+ EditorUIController.isSupportEditFeature = () => {
+-    return false
++    return true
+ };
+ 
+ EditorUIController.getToolbarOptions = () => {
+--- web-apps/apps/presentationeditor/mobile/src/lib/patch.jsx.orig	2023-09-07 13:15:25 UTC
++++ web-apps/apps/presentationeditor/mobile/src/lib/patch.jsx
+@@ -1,6 +1,6 @@
+ 
+ const EditorUIController = () => null;
+ 
+-EditorUIController.isSupportEditFeature = () => false;
++EditorUIController.isSupportEditFeature = () => true;
+ 
+ export default EditorUIController;
+--- web-apps/apps/spreadsheeteditor/mobile/src/lib/patch.jsx.orig	2023-09-07 13:16:07 UTC
++++ web-apps/apps/spreadsheeteditor/mobile/src/lib/patch.jsx
+@@ -1,6 +1,6 @@
+ 
+ const EditorUIController = () => null;
+ 
+-EditorUIController.isSupportEditFeature = () => false;
++EditorUIController.isSupportEditFeature = () => true;
+ 
+ export default EditorUIController;

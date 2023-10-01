@@ -886,17 +886,21 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/charttype.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/charttype_combo.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/charttypebutton.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/chatgpt_left.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/coeditingmodemenu.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/document_language_window.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/draw_tools.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/editseries.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/find_small.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/hyperlinkwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/numberformat.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/ole_table.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/palette_custom.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/pentool.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/right_chart_3d.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/selectdata.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/setpassword.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/en/images/zoom_left.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/es/images/3dchart.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/es/images/charteditor.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/es/images/coeditingmodemenu.png
@@ -917,17 +921,21 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/charttype.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/charttype_combo.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/charttypebutton.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/chatgpt_left.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/coeditingmodemenu.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/document_language_window.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/draw_tools.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/editseries.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/find_small.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/hyperlinkwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/numberformat.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/ole_table.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/palette_custom.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/pentool.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/right_chart_3d.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/selectdata.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/setpassword.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/fr/images/zoom_left.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/images/symbols.css
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/images/symbols.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/it/images/3dchart.png
@@ -952,12 +960,14 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/charttypebutton.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/coeditingmodemenu.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/document_language_window.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/draw_tools.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/editseries.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/find_small.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/hyperlinkwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/numberformat.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/ole_table.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/palette_custom.png
+%%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/pentool.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/right_chart_3d.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/selectdata.png
 %%WWWDIR%%/documentserver/web-apps/apps/common/main/resources/help/ru/images/setpassword.png
@@ -1744,6 +1754,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/FormsTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/ProgramInterface/HomeTab.htm
@@ -1766,6 +1777,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/BackgroundColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/ChangeColorScheme.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/ChangeWrappingStyle.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/ConvertFootnotesEndnotes.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/CopyClearFormatting.htm
@@ -1774,6 +1786,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/CreateLists.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/CreateTableOfContents.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/DecorationStyles.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Drawio.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/FillingOutForm.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/FontTypeSizeColor.htm
@@ -1814,6 +1827,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/SetPageParameters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/SetTabStops.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Speech.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Speechinput.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Thesaurus.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Translator.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Typograf.htm
@@ -1822,6 +1836,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/WordCounter.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Wordpress.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/acceptreject_dropdown.png
@@ -1861,6 +1876,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/comboboxsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/compare_final.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/compare_markup.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/compare_markup_balloons.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/compare_method.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/compare_original.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/complex_field_inserted.png
@@ -1881,6 +1897,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/darkmode_form.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/darkmode_oform.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/date_time.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/date_time_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/date_time_tip.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/datecontentcontrol2.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/datesettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/drawio_diagram.png
@@ -1930,6 +1948,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/insertcaptionbox.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/insertedfields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_formstab.png
@@ -1941,6 +1960,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_referencestab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_reviewtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/interface/formstab.png
@@ -1959,6 +1979,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/keytips1.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/keytips2.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/linenumbers_window.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/list_line_indent.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/listlevel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/mailmerge_options.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/mailmergerecipients.png
@@ -1970,6 +1991,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/moving_chart.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/moving_form_fields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/multilevellistsettings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/multilevellistsettings_advanced.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/navigationpanel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/navigationpanel_viewer.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/oform.png
@@ -1987,6 +2009,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/phone_number_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/phone_number_tip.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/previewinsertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/printsettingswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/proofing.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/protectdocument.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/en/images/radio_button_settings.png
@@ -2273,6 +2296,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/FormsTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/ProgramInterface/HomeTab.htm
@@ -2295,6 +2319,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/BackgroundColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/ChangeColorScheme.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/ChangeWrappingStyle.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/ConvertFootnotesEndnotes.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/CopyClearFormatting.htm
@@ -2303,6 +2328,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/CreateLists.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/CreateTableOfContents.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/DecorationStyles.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Drawio.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/FillingOutForm.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/FontTypeSizeColor.htm
@@ -2343,6 +2369,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/SetPageParameters.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/SetTabStops.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Speech.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Speechinput.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Thesaurus.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Translator.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Typograf.htm
@@ -2351,6 +2378,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/WordCounter.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Wordpress.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/acceptreject_dropdown.png
@@ -2391,6 +2419,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/comboboxsettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/compare_final.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/compare_markup.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/compare_markup_ballons.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/compare_method.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/compare_original.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/comparison.png
@@ -2414,6 +2443,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/darkmode_oform.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/databars.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/date_time.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/date_time_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/date_time_tip.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/datecontentcontrol2.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/datesettings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/drawio_diagram.png
@@ -2468,6 +2499,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/insertcaptionbox.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/insertedfields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/insertslicer_window.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_formstab.png
@@ -2479,6 +2511,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_referencestab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_reviewtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/interface/formstab.png
@@ -2509,6 +2542,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/moving_chart.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/moving_form_fields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/multilevellistsettings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/multilevellistsettings_advanced.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/navigationpanel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/navigationpanel_viewer.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/oform.png
@@ -2549,6 +2583,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/pivot_values_field_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/pivottoptoolbar.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/previewinsertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/printsettingswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/protectdocument.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/radio_button_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/fr/images/radio_button_tip.png
@@ -2675,6 +2710,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/jitsi_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/ocr_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/rainbow.gif
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/speechinput_plugin.gif
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/sprite.css
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/telegram.gif
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/images/thesaurus_plugin.gif
@@ -2914,6 +2950,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/SupportedFormats.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/HelpfulHints/Viewer.htm
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/FormsTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/ProgramInterface/HomeTab.htm
@@ -3081,6 +3118,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/insert_symbols_windows.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/insertcaptionbox.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/insertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_formstab.png
@@ -3092,6 +3130,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_referencestab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_reviewtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/interface/formstab.png
@@ -3119,6 +3158,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/moving_chart.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/moving_form_fields.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/multilevellistsettings.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/multilevellistsettings_advanced.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/navigationpanel.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/navigationpanel_viewer.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/oform.png
@@ -3136,6 +3176,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/phone_number_settings.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/phone_number_tip.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/previewinsertedfields.png
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/printsettingswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/proofing.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/protectdocument.png
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/help/ru/images/radio_button_settings.png
@@ -3604,6 +3645,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-borders-twin-outer-outer.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-caption.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-checkbox.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-clear-style.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-columns.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-combine.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-combo-box.svg
@@ -3621,6 +3663,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-ic-reviewview.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-img-wrap.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-line-numbering.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-next-field.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-notes.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-pagebreak.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-paragraph-borders-all.svg
@@ -3632,20 +3675,18 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-paragraph-borders-right.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-paragraph-borders-top.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-phone.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-previous-field.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-radio-button.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-restrict-editing.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-review-deny.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-review-next.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-review-prev.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-review-save.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-save-form.svg
+%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-submit-form.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-text-field.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-watermark.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/btn-zip-code.svg
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/clear-style.svg
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/next-field.svg
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/previous-field.svg
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/save-form.svg
-%%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/big/submit-form.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-add-text.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-cc-plaintext.svg
 %%WWWDIR%%/documentserver/web-apps/apps/documenteditor/main/resources/img/toolbar/2.5x/btn-cc-richtext.svg
@@ -4102,6 +4143,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/AnimationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/CollaborationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/HomeTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/ProgramInterface/InsertTab.htm
@@ -4113,10 +4155,12 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/AddingAnimations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/AlignArrangeObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/ApplyTransitions.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/CopyClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/CopyPasteUndoRedo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/CreateLists.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/FillObjectsSelectColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/HighlightedCode.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/InsertAutoshapes.htm
@@ -4141,6 +4185,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/Translator.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/ViewPresentationInfo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/addtolayout.png
@@ -4187,6 +4232,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_animationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_hometab.png
@@ -4195,6 +4241,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_protectiontab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_transitionstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/interface/hometab.png
@@ -4216,6 +4263,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/placeholder_object.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/presenter_mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/preview_mode.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/printsettingswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/proofing.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/recognizedfunctions.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/en/images/replacetext.png
@@ -4386,6 +4434,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/AnimationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/CollaborationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/HomeTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/ProgramInterface/InsertTab.htm
@@ -4397,10 +4446,12 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/AddingAnimations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/AlignArrangeObjects.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/ApplyTransitions.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/CopyClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/CopyPasteUndoRedo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/CreateLists.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/FillObjectsSelectColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/HighlightedCode.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/InsertAutoshapes.htm
@@ -4425,6 +4476,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/Translator.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/ViewPresentationInfo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/addtolayout.png
@@ -4470,6 +4522,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_animationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_collaborationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_hometab.png
@@ -4478,6 +4531,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_protectiontab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_transitionstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/interface/hometab.png
@@ -4499,6 +4553,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/placeholder_object.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/presenter_mode.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/preview_mode.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/printsettingswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/recognizedfunctions.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/replacetext.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/fr/images/right_autoshape.png
@@ -4694,6 +4749,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/AnimationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/CollaborationTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/HomeTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/ProgramInterface/InsertTab.htm
@@ -4708,6 +4764,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/CopyClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/CopyPasteUndoRedo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/CreateLists.htm
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/FillObjectsSelectColor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/InsertAutoshapes.htm
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/UsageInstructions/InsertCharts.htm
@@ -4773,6 +4830,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_animationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_collaborationtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_hometab.png
@@ -4780,6 +4838,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_transitionstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/presentationeditor/main/resources/help/ru/images/interface/hometab.png
@@ -6764,6 +6823,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/amorlinc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/and.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/arabic.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/arraytotext.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/asc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/asin.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/asinh.htm
@@ -6894,6 +6954,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/even.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/exact.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/exp.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/expand.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/expon-dist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/expondist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/f-dist-rt.htm
@@ -6905,6 +6966,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/factdouble.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/false.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/fdist.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/filter.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/find.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/findb.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/finv.htm
@@ -7125,6 +7187,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sec.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sech.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/second.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sequence.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/seriessum.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sheets.htm
@@ -7136,6 +7199,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sln.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/slope.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/small.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sort.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sqrt.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/sqrtpi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/standardize.htm
@@ -7215,6 +7279,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/wraprows.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/xirr.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/xlookup.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/xmatch.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/xnpv.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/xor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/Functions/year.htm
@@ -7238,6 +7303,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/DataTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/FormulaTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/HomeTab.htm
@@ -7249,15 +7315,17 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/ProtectionTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/ProgramInterface/ViewTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/AddBorders.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/AddExternalLinks.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/AddHyperlinks.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/AlignText.htm
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/AllowEditRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ChangeNumberFormat.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ConditionalFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/CopyPasteData.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/DataValidation.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/FontTypeSizeStyle.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/FormattedTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/GroupData.htm
@@ -7282,6 +7350,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/Password.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/PhotoEditor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/PivotTables.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ProtectRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ProtectSheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ProtectSpreadsheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ProtectWorkbook.htm
@@ -7298,6 +7367,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/ViewDocInfo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/WatchWindow.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/abs.png
@@ -7330,6 +7400,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/array7.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/array8.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/array9.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/arraytotext.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/asc.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/asin.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/asinh.png
@@ -7543,8 +7614,11 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/exactfalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/exacttrue.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/exp.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/expand.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/expon-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/expondist.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/externallinks.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/extlinkwarning.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/f-dist-rt.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/f-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/f-inv-rt.png
@@ -7558,6 +7632,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/fill_gradient.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/fill_pattern.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/fill_picture.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/filter.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/filterbycolor.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/filterwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/find.png
@@ -7667,6 +7742,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/datatab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_datatab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_formulatab.png
@@ -7677,6 +7753,8 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_protectiontab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/desltop_drawtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/interface/formulatab.png
@@ -7770,11 +7848,15 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/networkdays-intl.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/networkdays.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newnamewindow.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_2colorscale.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_3colorscale.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_average.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_blankerror.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_databar.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_date.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_duplicateunique.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_formula.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_iconsets.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_text.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_topbottom.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/newrule_valueis.png
@@ -7927,6 +8009,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/selectrow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/selecttable.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/separator.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sequence.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/seriessum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/severalsheets.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/shape_properties.png
@@ -7961,6 +8044,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/smartart_rightclick.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/smartart_rightclick2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/smartart_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sort.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sortcomments.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sortoptionswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/en/images/sparkline_advancedsettings1.png
@@ -9179,6 +9263,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/amorlinc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/and.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/arabic.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/arraytotext.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/asc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/asin.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/asinh.htm
@@ -9309,6 +9394,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/even.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/exact.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/exp.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/expand.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/expon-dist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/expondist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/f-dist-rt.htm
@@ -9320,6 +9406,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/factdouble.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/false.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/fdist.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/filter.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/find.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/findb.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/finv.htm
@@ -9540,6 +9627,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sec.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sech.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/second.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sequence.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/seriessum.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sheets.htm
@@ -9551,6 +9639,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sln.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/slope.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/small.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sort.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sqrt.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/sqrtpi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/standardize.htm
@@ -9630,6 +9719,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/wraprows.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/xirr.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/xlookup.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/xmatch.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/xnpv.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/xor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/Functions/year.htm
@@ -9653,6 +9743,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/DataTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/FormulaTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/HomeTab.htm
@@ -9664,15 +9755,17 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/ProtectionTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/ProgramInterface/ViewTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/AddBorders.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/AddExternalLinks.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/AddHyperlinks.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/AlignText.htm
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/AllowEditRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ChangeNumberFormat.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ChatGPT.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/CommunicationPlugins.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ConditionalFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/CopyPasteData.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/DataValidation.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/FontTypeSizeStyle.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/FormattedTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/GroupData.htm
@@ -9697,6 +9790,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/Password.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/PhotoEditor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/PivotTables.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ProtectRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ProtectSheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ProtectSpreadsheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ProtectWorkbook.htm
@@ -9713,6 +9807,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/ViewDocInfo.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/WatchWindow.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/YouTube.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/UsageInstructions/Zoom.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/callback.js
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/editor.css
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/abs.png
@@ -9745,6 +9840,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/array7.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/array8.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/array9.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/arraytotext.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/asc.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/asin.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/asinh.png
@@ -9952,8 +10048,11 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/exactfalse.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/exacttrue.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/exp.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/expand.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/expon-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/expondist.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/externallinks.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/extlinkwarning.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/f-dist-rt.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/f-dist.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/f-inv-rt.png
@@ -9967,6 +10066,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/fill_gradient.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/fill_pattern.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/fill_picture.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/filter.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/filterbycolor.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/filterwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/find.png
@@ -10076,6 +10176,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/datatab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_datatab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_formulatab.png
@@ -10086,6 +10187,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_protectiontab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/formulatab.png
@@ -10096,6 +10198,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/pivottabletab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/protectiontab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/protectsheet_highlighted.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/interface/viewtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/internallink.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/intrate.png
@@ -10339,6 +10442,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/selectrow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/selecttable.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/separator.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sequence.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/seriessum.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/severalsheets.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/shape_properties.png
@@ -10374,6 +10478,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/smartart_rightclick.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/smartart_rightclick2.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/smartart_settings.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sort.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sortcomments.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sortoptionswindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/fr/images/sparkline_advancedsettings1.png
@@ -11640,6 +11745,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/amorlinc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/and.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/arabic.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/arraytotext.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/asc.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/asin.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/asinh.htm
@@ -11770,6 +11876,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/even.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/exact.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/exp.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/expand.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/expon-dist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/expondist.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/f-dist-rt.htm
@@ -11781,6 +11888,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/factdouble.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/false.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/fdist.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/filter.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/find.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/findb.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/finv.htm
@@ -12001,6 +12109,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sec.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sech.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/second.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sequence.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/seriessum.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sheets.htm
@@ -12012,6 +12121,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sln.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/slope.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/small.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sort.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sqrt.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/sqrtpi.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/standardize.htm
@@ -12091,6 +12201,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/wraprows.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/xirr.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/xlookup.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/xmatch.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/xnpv.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/xor.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/Functions/year.htm
@@ -12114,6 +12225,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/HelpfulHints/VersionHistory.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/CollaborationTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/DataTab.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/DrawTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/FileTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/FormulaTab.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/ProgramInterface/HomeTab.htm
@@ -12127,12 +12239,12 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/AddBorders.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/AddHyperlinks.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/AlignText.htm
-%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/AllowEditRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ChangeNumberFormat.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ClearFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ConditionalFormatting.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/CopyPasteData.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/DataValidation.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/DrawingOperations.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/FontTypeSizeStyle.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/FormattedTables.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/GroupData.htm
@@ -12155,6 +12267,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/OpenCreateNew.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/Password.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/PivotTables.htm
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ProtectRanges.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ProtectSheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ProtectSpreadsheet.htm
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/UsageInstructions/ProtectWorkbook.htm
@@ -12533,6 +12646,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/datatab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_collaborationtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_datatab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_formulatab.png
@@ -12543,6 +12657,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_pluginstab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_protectiontab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/desktop_viewtab.png
+%%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/drawtab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/editorwindow.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/filetab.png
 %%WWWDIR%%/documentserver/web-apps/apps/spreadsheeteditor/main/resources/help/ru/images/interface/formulatab.png

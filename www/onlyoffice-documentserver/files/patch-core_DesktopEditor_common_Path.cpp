@@ -3,10 +3,10 @@
 @@ -34,7 +34,7 @@
  
  #if defined(_WIN32) || defined (_WIN64)
-     #include <tchar.h>
+ #include <tchar.h>
 -#elif __linux__ || MAC
 +#elif __linux__ || __FreeBSD__ || MAC
-     #include <libgen.h>
+ #include <libgen.h>
  #endif
  
 @@ -53,7 +53,7 @@ namespace NSSystemPath
