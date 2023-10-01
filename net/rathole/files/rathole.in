@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# PROVIDE: %%NAME%%
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable `%%NAME%%':
+#
+# %%NAME%%_enable (bool):    Set to "NO" by default.
+#                           Set it to "YES" to enable %%NAME%%
+# %%NAME%%_conf_file (str):  Path to config file.
+#                           Set to "%%ETCDIR%%/%%NAME%%.conf" by default.
+# %%NAME%%_mode (str):       Mode %%NAME%% runs in.
+#                           Set to "server" by default.
+#                           Set it to "client" to run in client-mode.
+# %%NAME%%_user (str):       User that runs %%NAME%%.
+#                           Set to "nobody" by default.
+#
+
+. /etc/rc.subr
+
+name="%%NAME%%"
+rcvar=%%NAME%%_enable
+desc="rc script to start/stop %%NAME%%"
+
+set_rcvar %%NAME%%_conf_file "%%ETCDIR%%/${name}.conf" "Path to config file"
+set_rcvar %%NAME%%_mode "server" "Mode %%NAME%% runs in (either 'server' or 'client')"
+set_rcvar %%NAME%%_user "nobody" "User that runs %%NAME%%"
+
+load_rc_config "$name"
+
+pidfile="%%PIDDIR%%/${name}.pid"
+logfile="%%LOGDIR%%/${name}.log"
+run_mode_param=--server
+
+command=/usr/sbin/daemon
+actual_command="%%PREFIX%%/bin/%%NAME%%"
+start_precmd=%%NAME%%_prestart
+command_args="-H -P \${pidfile} -t \${name} -u \${%%NAME%%_user} -o \${logfile} ${actual_command} \${run_mode_param} \${%%NAME%%_conf_file}"
+
+%%NAME%%_prestart()
+{
+  case $%%NAME%%_mode in
+    client)
+      run_mode_param="--client"
+    ;;
+    *)
+      run_mode_param="--server"
+    ;;
+  esac
+}
+
+run_rc_command "$1"

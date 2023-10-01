@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To enable %%NAME%% at startup, add the following line to your 'rc.conf':
+%%NAME%%_enable="YES"
+
+Configure %%NAME%% by editing '%%ETCDIR%%/%%NAME%%.conf'.
+Example configurations can be found here:
+  https://github.com/rapiz1/rathole/tree/main/examples
+
+Run
+  service %%NAME%% rcvar
+to learn about existing rc script parameters and their defaults.
+
+Note that there are two operating modes for %%NAME%%: server or
+client.
+
+Note that the rc script runs %%NAME%% as user 'nobody' by default.
+This might lead to permission problems since the user is not
+allowed to open ports below 1024.
+If you really need %%NAME%% to react on a port below 1024, you
+could configure your firewall to redirect traffic to a higher
+port (e.g. redirect port 80 to port 8080 where %%NAME%% listens).
+
+EOM
+}
+]
