@@ -1,10 +1,10 @@
 PORTNAME=	gnat12
-PORTVERSION=	12.2.0
-PORTREVISION=	5
+DISTVERSION=	12.2.0
+PORTREVISION=	6
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GCC}:gcc	\
+MASTER_SITES=	${MASTER_SITE_GCC}:gcc \
 		LOCAL/thierry:gnat
-MASTER_SITE_SUBDIR=releases/gcc-${PORTVERSION}
+MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
 DISTFILES=	gcc-${PORTVERSION}.tar.xz:gcc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -14,26 +14,28 @@ WWW=		https://www.adacore.com/community
 LICENSE=	GPLv2 GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libgmp.so:math/gmp	\
-		libmpc.so:math/mpc	\
-		libisl.so:devel/isl	\
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libisl.so:devel/isl \
+		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr
+
+RUN_DEPENDS=	${LOCALBASE}/bin/as:devel/binutils
 
 USES=		bison gettext-runtime gmake iconv libtool localbase tar:xz
 USE_BINUTILS=	yes
 BINARY_ALIAS=	make=${GMAKE}
 
-OPTIONS_DEFINE=	ASSETS
-OPTIONS_RADIO=	BOOTSTRAP
-OPTIONS_RADIO_BOOTSTRAP=	GCC6AUX	PREVASSET
-OPTIONS_DEFAULT=GCC6AUX
+OPTIONS_DEFINE=			ASSETS
+OPTIONS_RADIO=			BOOTSTRAP
+OPTIONS_RADIO_BOOTSTRAP=	GCC6AUX PREVASSET
+OPTIONS_DEFAULT=		GCC6AUX
 .if defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT+=	ASSETS
+OPTIONS_DEFAULT+=		ASSETS
 .endif
-OPTIONS_SUB=	yes
-ASSETS_DESC=	Build an asset for future bootstrap on the target platform
-GCC6AUX_DESC=	Bootstrap from lang/gcc6-aux
-PREVASSET_DESC=	Bootstrap from the previous asset (if available)
+OPTIONS_SUB=			yes
+ASSETS_DESC=			Build an asset for future bootstrap on the target platform
+GCC6AUX_DESC=			Bootstrap from lang/gcc6-aux
+PREVASSET_DESC=			Bootstrap from the previous asset (if available)
 
 GCC6AUX_BUILD_DEPENDS=	gcc6-aux>0:lang/gcc6-aux
 PREVASSET_DISTFILES+=	${PREV_ASSET_FILE}.tar.xz:gnat
@@ -42,70 +44,73 @@ GCC6AUX_VARS=	PATHAUX=${LOCALBASE}/gcc6-aux/bin
 PREVASSET_VARS=	PATHAUX=${WRKDIR}/${PREV_ASSET_FILE}/bin
 ASSETS_VARS=	PKGMESSAGE=${WRKDIR}/pkg-message
 
-GNU_CONFIGURE=	yes
-CONFIGURE_OUTSOURCE=	yes
-WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
-PKG_PREFIX=	${PREFIX}/${PORTNAME}
-FULLPATH=	/sbin:/bin:/usr/sbin:/usr/bin:${PATHAUX}:${PREFIX}/bin:${LOCALBASE}/bin
-TARGLIB=	${PKG_PREFIX}/lib/gcc${GCCVER}
+GNU_CONFIGURE=			yes
+CONFIGURE_OUTSOURCE=		yes
+WRKSRC=				${WRKDIR}/gcc-${PORTVERSION}
+PKG_PREFIX=			${PREFIX}/${PORTNAME}
+FULLPATH=			/sbin:/bin:/usr/sbin:/usr/bin:${PATHAUX}:${PREFIX}/bin:${LOCALBASE}/bin
+TARGLIB=			${PKG_PREFIX}/lib \
+				${PKG_PREFIX}/lib/gcc${GCCVER}
 GNU_CONFIGURE_PREFIX=	${PKG_PREFIX}
-GNU_CONFIGURE_MANPREFIX=${PKG_PREFIX}
-MANPREFIX=	${PKG_PREFIX}
-CONFIGURE_ENV+=	PATH=${FULLPATH}	\
-		CC=${PATHAUX}/gcc	\
-		CXX=${PATHAUX}/g++
-CONFIGURE_ARGS=	--enable-languages="c,ada"	\
-		--with-pkgversion="${OPSYS} Ports Collection"	\
-		--enable-gnu-indirect-function	\
-		--with-as=${LOCALBASE}/bin/as	\
-		--with-ld=${LOCALBASE}/bin/ld	\
-		--enable-threads=posix	\
-		--disable-libquadmath	\
-		--enable-host-shared	\
-		--disable-libmudflap	\
-		--with-system-zlib	\
-		--disable-libgomp	\
-		--disable-libssp	\
-		--enable-libada		\
-		--without-zstd
-CONFIGURE_TARGET=	${GARCH}-portbld-${PLATFORM}
+GNU_CONFIGURE_MANPREFIX=	${PKG_PREFIX}
+MANPREFIX=			${PKG_PREFIX}
+CONFIGURE_ENV+=			CC=${PATHAUX}/gcc \
+				CXX=${PATHAUX}/g++ \
+				PATH=${FULLPATH}
+CONFIGURE_ARGS=			--disable-libgomp \
+				--disable-libmudflap \
+				--disable-libquadmath \
+				--disable-libssp \
+				--disable-bootstrap \
+				--enable-gnu-indirect-function \
+				--enable-host-shared \
+				--enable-languages="c,ada" \
+				--enable-libada \
+				--enable-threads=posix \
+				--with-as=${LOCALBASE}/bin/as \
+				--with-ld=${LOCALBASE}/bin/ld \
+				--with-pkgversion="${OPSYS} Ports Collection" \
+				--with-system-zlib \
+				--without-zstd
+CONFIGURE_TARGET=		${GARCH}-portbld-${PLATFORM}
 
 MAKE_ENV+=	PATH=${FULLPATH}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	${TARGLIB}
 
 GNATMAKE=	${PATHAUX}/gnatmake
-GNATBING=	${PATHAUX}/gnatbind
+GNATBIND=	${PATHAUX}/gnatbind
 
 GCCVER=		${PORTVERSION:R:R}
 
-PLATFORM=	${OPSYS:tl}${OSREL}
-GARCH=		${ARCH:S/amd64/x86_64/}
-OS_LABEL4VERS=	[${OPSYS}${GARCH:S/amd//:S/x86_//:S/aarch/\/ARM/:S/i386/32/}]
-REVFILE=	${WRKSRC}/gcc/REVISION
-PHASEFILE=	${WRKSRC}/gcc/DEV-PHASE
-ASSET_FILE=	gnat-${GARCH}-${OPSYS:tl}.${OSREL:R}-${PKGVERSION}
+PLATFORM=		${OPSYS:tl}${OSREL}
+GARCH=			${ARCH:S/amd64/x86_64/}
+OS_LABEL4VERS=		[${OPSYS}${GARCH:S/amd//:S/x86_//:S/aarch/\/ARM/:S/i386/32/}]
+REVFILE=		${WRKSRC}/gcc/REVISION
+PHASEFILE=		${WRKSRC}/gcc/DEV-PHASE
+ASSET_FILE=		gnat-${GARCH}-${OPSYS:tl}.${OSREL:R}-${PKGVERSION}
 PREV_ASSET_VER?=	${PORTVERSION}
 PREV_ASSET_REV?=	_2
-PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
+PREV_ASSET_GCC=		${PREV_ASSET_VER:R:R}
 PREV_ASSET_OSREL?=	${OSREL:R}
-PREV_ASSET_FILE=gnat-${GARCH}-${OPSYS:tl}.${PREV_ASSET_OSREL}-${PREV_ASSET_VER}${PREV_ASSET_REV}
+PREV_ASSET_FILE=	gnat-${GARCH}-${OPSYS:tl}.${PREV_ASSET_OSREL}-${PREV_ASSET_VER}${PREV_ASSET_REV}
 
-PLIST_SUB=	CONFTRGT=${CONFIGURE_TARGET} VER=${PORTVERSION}	\
-		ASSET_FILE=${ASSET_FILE}
+PLIST_SUB=	ASSET_FILE=${ASSET_FILE} \
+		CONFTRGT=${CONFIGURE_TARGET} \
+		VER=${PORTVERSION}
 # add-plist-info does not honor GNU_CONFIGURE_PREFIX => remove INFO files
-INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn	\
+INFOS=		cpp cppinternals gcc gccinstall gccint gnat_rm gnat_ugn \
 		gnat-style libitm
 
 .if exists(/usr/lib32/libc.so)
-OPTIONS_DEFINE_amd64+=		MULTILIB
+OPTIONS_DEFINE_amd64+=	MULTILIB
 OPTIONS_DEFAULT_amd64+=	MULTILIB
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
 #OPTIONS_DEFAULT_powerpc64+=	MULTILIB # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105010
-MULTILIB_DESC=		Build support for 32-bit and 64-bit targets
+MULTILIB_DESC=			Build support for 32-bit and 64-bit targets
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
-CONFIGURE_ARGS+=	--disable-multilib
+CONFIGURE_ARGS+=		--disable-multilib
 .endif
 
 .include <bsd.port.pre.mk>
@@ -124,9 +129,11 @@ PLIST_SUB+=	32BITS=""
 .  endif
 .endif
 .if ${ARCH} == aarch64
-PLIST_SUB+=	ARM="" NOARM="@comment "
+PLIST_SUB+=	ARM="" \
+		NOARM="@comment "
 .else
-PLIST_SUB+=	ARM="@comment " NOARM=""
+PLIST_SUB+=	ARM="@comment " \
+		NOARM=""
 .endif
 
 pre-configure:
