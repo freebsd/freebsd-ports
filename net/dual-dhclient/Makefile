@@ -11,6 +11,8 @@ COMMENT=	Spawns dhclients for a dual-stack network
 
 LICENSE=	PD
 
+DEPRECATED=	Use net/dual-dhclient-daemon instead
+
 RUN_DEPENDS=	${LOCALBASE}/sbin/dhclient:net/isc-dhcp44-client
 
 NO_WRKSUBDIR=	yes
