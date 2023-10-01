@@ -1,12 +1,7 @@
 PORTNAME=	kdiff3
-DISTVERSION=	1.10.5
-PORTREVISION=	1
+DISTVERSION=	1.10.6
 CATEGORIES=	textproc kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
-
-PATCH_SITES=	https://github.com/KDE/${PORTNAME}/commit/
-PATCHFILES+=	2642a7e71cfdf7ef95c1c07c7ccea3930c11cc48.patch:-p1
-PATCHFILES+=	341bb0322026053400def3aa7f46e1ac171d0fc5.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graphical frontend for diff
