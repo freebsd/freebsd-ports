@@ -1,0 +1,10 @@
+--- lib/iso9660/libiso9660.sym.orig	2018-08-12 16:33:48 UTC
++++ lib/iso9660/libiso9660.sym
+@@ -18,7 +18,6 @@ iso9660_find_fs_lsn
+ iso9660_filelist_new
+ iso9660_filelist_free
+ iso9660_find_fs_lsn
+-iso9660_fs_find_lsn
+ iso9660_fs_find_lsn_with_path
+ iso9660_fs_read_pvd
+ iso9660_fs_read_superblock
