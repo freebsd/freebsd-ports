@@ -1,4 +1,4 @@
---- chrome/common/media/cdm_registration.cc.orig	2023-09-04 16:08:25 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2023-09-27 23:09:59 UTC
 +++ chrome/common/media/cdm_registration.cc
 @@ -25,11 +25,11 @@
  
@@ -12,9 +12,9 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD)
  #include "base/no_destructor.h"
+ #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
  #include "components/cdm/common/cdm_manifest.h"
- #include "media/cdm/supported_audio_codecs.h"
-@@ -58,7 +58,7 @@ using Robustness = content::CdmInfo::Robustness;
+@@ -56,7 +56,7 @@ using Robustness = content::CdmInfo::Robustness;
  #if BUILDFLAG(ENABLE_WIDEVINE)
  #if (BUILDFLAG(BUNDLE_WIDEVINE_CDM) ||            \
       BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)) && \
@@ -33,7 +33,7 @@
  // sandbox. On Windows and Mac, the bundled CDM is handled by the component
  // updater.
 @@ -125,7 +125,7 @@ content::CdmInfo* GetBundledWidevine() {
-         // BUILDFLAG(IS_CHROMEOS))
+         // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
  
  #if BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
