@@ -1,5 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	8.14
+DISTVERSION=	8.15
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/

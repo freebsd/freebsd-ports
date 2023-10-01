@@ -427,6 +427,8 @@ include/wine/windows/dwrite_2.h
 include/wine/windows/dwrite_2.idl
 include/wine/windows/dwrite_3.h
 include/wine/windows/dwrite_3.idl
+include/wine/windows/dxcore.h
+include/wine/windows/dxcore_interface.h
 include/wine/windows/dxdiag.h
 include/wine/windows/dxerr8.h
 include/wine/windows/dxerr9.h
@@ -1032,6 +1034,8 @@ include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
 include/wine/windows/windns.h
 include/wine/windows/windot11.h
+include/wine/windows/windows.applicationmodel.core.h
+include/wine/windows/windows.applicationmodel.core.idl
 include/wine/windows/windows.applicationmodel.h
 include/wine/windows/windows.applicationmodel.idl
 include/wine/windows/windows.devices.bluetooth.h
@@ -1079,12 +1083,20 @@ include/wine/windows/windows.graphics.effects.idl
 include/wine/windows/windows.graphics.holographic.h
 include/wine/windows/windows.graphics.holographic.idl
 include/wine/windows/windows.h
+include/wine/windows/windows.management.deployment.h
+include/wine/windows/windows.management.deployment.idl
+include/wine/windows/windows.media.capture.h
+include/wine/windows/windows.media.capture.idl
 include/wine/windows/windows.media.closedcaptioning.h
 include/wine/windows/windows.media.closedcaptioning.idl
 include/wine/windows/windows.media.devices.h
 include/wine/windows/windows.media.devices.idl
+include/wine/windows/windows.media.effects.h
+include/wine/windows/windows.media.effects.idl
 include/wine/windows/windows.media.h
 include/wine/windows/windows.media.idl
+include/wine/windows/windows.media.render.h
+include/wine/windows/windows.media.render.idl
 include/wine/windows/windows.media.speechrecognition.h
 include/wine/windows/windows.media.speechrecognition.idl
 include/wine/windows/windows.media.speechsynthesis.h
@@ -1172,6 +1184,7 @@ include/wine/windows/winuser.h
 include/wine/windows/winuser.rh
 include/wine/windows/winver.h
 include/wine/windows/wlanapi.h
+include/wine/windows/wldp.h
 include/wine/windows/wmcodecdsp.h
 include/wine/windows/wmcodecdsp.idl
 include/wine/windows/wmdrmsdk.h
@@ -1462,6 +1475,7 @@ lib/wine/%%WINEARCH%%-unix/dwmapi.dll.so
 lib/wine/%%WINEARCH%%-unix/dwrite.dll.so
 lib/wine/%%WINEARCH%%-unix/dwrite.so
 lib/wine/%%WINEARCH%%-unix/dx8vb.dll.so
+lib/wine/%%WINEARCH%%-unix/dxcore.dll.so
 lib/wine/%%WINEARCH%%-unix/dxdiag.exe.so
 lib/wine/%%WINEARCH%%-unix/dxdiagn.dll.so
 lib/wine/%%WINEARCH%%-unix/dxgi.dll.so
@@ -2151,6 +2165,7 @@ lib/wine/%%WINEARCH%%-unix/winver.exe.so
 lib/wine/%%WINEARCH%%-unix/wlanapi.dll.so
 lib/wine/%%WINEARCH%%-unix/wlanui.dll.so
 lib/wine/%%WINEARCH%%-unix/wldap32.dll.so
+lib/wine/%%WINEARCH%%-unix/wldp.dll.so
 lib/wine/%%WINEARCH%%-unix/wmasf.dll.so
 lib/wine/%%WINEARCH%%-unix/wmic.exe.so
 lib/wine/%%WINEARCH%%-unix/wmiutils.dll.so
@@ -2412,6 +2427,7 @@ lib/wine/%%WINEARCH%%-windows/dswave.dll
 lib/wine/%%WINEARCH%%-windows/dwmapi.dll
 lib/wine/%%WINEARCH%%-windows/dwrite.dll
 lib/wine/%%WINEARCH%%-windows/dx8vb.dll
+lib/wine/%%WINEARCH%%-windows/dxcore.dll
 lib/wine/%%WINEARCH%%-windows/dxdiag.exe
 lib/wine/%%WINEARCH%%-windows/dxdiagn.dll
 lib/wine/%%WINEARCH%%-windows/dxgi.dll
@@ -2919,6 +2935,7 @@ lib/wine/%%WINEARCH%%-windows/winver.exe
 lib/wine/%%WINEARCH%%-windows/wlanapi.dll
 lib/wine/%%WINEARCH%%-windows/wlanui.dll
 lib/wine/%%WINEARCH%%-windows/wldap32.dll
+lib/wine/%%WINEARCH%%-windows/wldp.dll
 lib/wine/%%WINEARCH%%-windows/wmasf.dll
 lib/wine/%%WINEARCH%%-windows/wmi.dll
 lib/wine/%%WINEARCH%%-windows/wmic.exe
