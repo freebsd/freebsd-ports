@@ -1,3 +1,3 @@
-TIMESTAMP = 1692173654
-SHA256 (opensearch-2.9.0-linux-x64.tar.gz) = 03d623c2d99a7100c2f0faddc8ffda8ba27eae8aa63ff6f3f7dad2337be8b68c
-SIZE (opensearch-2.9.0-linux-x64.tar.gz) = 805162121
+TIMESTAMP = 1695950494
+SHA256 (opensearch-2.10.0-linux-x64.tar.gz) = a092f17571e7f9f129d804d67721516df33f41e6c05a24fb7288312302eb81fb
+SIZE (opensearch-2.10.0-linux-x64.tar.gz) = 818191376

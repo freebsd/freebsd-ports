@@ -1,5 +1,5 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 USES=		nodejs:18,build,run python:build
 USE_RC_SUBR=	${PORTNAME}
 
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	CHROME
@@ -24,7 +23,8 @@ OPTIONS_DEFINE=	CHROME
 CHROME_DESC=	Add dependency on www/chromium (required for PDF reports)
 CHROME_RUN_DEPENDS=chrome:www/chromium
 
-NODE_VER=	18.16.1
+NODE_VER=	18.18.0
+NO_BUILD=	yes
 
 _DEVDIR=	${WRKDIR}/.devdir
 

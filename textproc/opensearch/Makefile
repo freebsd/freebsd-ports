@@ -1,5 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -18,7 +18,7 @@ CONFLICTS=	opensearch13
 
 USES=		cpe shebangfix
 USE_JAVA=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	bin/opensearch bin/opensearch-cli \
