@@ -1,6 +1,7 @@
 PORTNAME=	wasmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kjozic@gmail.com
@@ -10,10 +11,8 @@ WWW=		https://wasmer.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 riscv64
-ONLY_FOR_ARCHS_REASON= only aarch64, amd64 and riscv64 are supported so far
-BROKEN_aarch64=	needs fix for mcontext_t in lib/vm/src/trap/traphandlers.rs
-BROKEN_riscv64=	build issues
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	only aarch64 and amd64 are supported so far
 
 BUILD_DEPENDS=	bash>0:shells/bash
 
