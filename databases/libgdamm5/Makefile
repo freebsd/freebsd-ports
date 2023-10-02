@@ -5,7 +5,7 @@ CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for libgda5 library
 WWW=		https://www.gtkmm.org/
 

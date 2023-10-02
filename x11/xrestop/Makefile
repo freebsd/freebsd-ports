@@ -3,7 +3,7 @@ PORTVERSION=	0.4
 PORTREVISION=	5
 CATEGORIES=	x11
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
 WWW=		https://www.freedesktop.org/wiki/Software/xrestop/
 

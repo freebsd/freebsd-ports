@@ -5,7 +5,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for gconf2 API library
 WWW=		http://gtkmm.sourceforge.net/
 

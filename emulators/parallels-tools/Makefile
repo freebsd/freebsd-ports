@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	LOCAL/bland
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallels Desktop Tools for FreeBSD
 WWW=		https://www.parallels.com/products/desktop/
 

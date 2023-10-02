@@ -5,7 +5,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ code generator backend for glade and glade2
 WWW=		http://home.wtal.de/petig/Gtk/
 

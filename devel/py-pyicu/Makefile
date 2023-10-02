@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyICU-${PORTVERSION}
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python extension wrapping IBM's ICU C++ API #'
 WWW=		https://pypi.org/project/PyICU/
 

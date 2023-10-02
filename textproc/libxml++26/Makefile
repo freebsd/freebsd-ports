@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GNOME
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML API for C++
 WWW=		http://libxmlplusplus.sourceforge.net/
 

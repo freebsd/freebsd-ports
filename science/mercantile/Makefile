@@ -3,7 +3,7 @@ DISTVERSION=	1.2.1
 CATEGORIES=	science
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spherical mercator coordinate and tile utilities
 WWW=		https://github.com/mapbox/mercantile
 

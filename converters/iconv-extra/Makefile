@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	LOCAL/bland
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional charsets for the iconv library (those from the Unicode site)
 
 LICENSE=	BSD3CLAUSE

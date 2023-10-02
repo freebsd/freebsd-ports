@@ -4,7 +4,7 @@ PORTREVISION=	6
 CATEGORIES=	converters
 MASTER_SITES=	LOCAL/bland
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Charset conversion library and utilities
 
 LICENSE=	BSD3CLAUSE

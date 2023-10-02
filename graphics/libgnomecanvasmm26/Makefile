@@ -5,7 +5,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	bland@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for libgnomecanvas library
 WWW=		http://gtkmm.sourceforge.net/
 
