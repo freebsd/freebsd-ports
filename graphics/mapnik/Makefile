@@ -1,14 +1,16 @@
 PORTNAME=	mapnik
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
-PORTREVISION=	3
+PORTREVISION=  4
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/mapnik/mapnik/releases/download/${DISTVERSIONFULL}/
 
-PATCH_SITES=	https://github.com/mapnik/mapnik/commit/
+PATCH_SITES=	https://github.com/mapnik/mapnik/commit/ \
+		https://gitlab.archlinux.org/archlinux/packaging/packages/mapnik/-/raw/f9f723222c0af50e4db747e7c4e8138dbc769f53/
 PATCHFILES=	8944e81367d2b3b91a41e24116e1813c01491e5d.patch \
 		83779b7b6bdd229740b1b5e12a4a8fe27114cb7d.patch \
-		7f0daee8b37d8cf6eff32529b1762ffd5104f3f3.patch
+		7f0daee8b37d8cf6eff32529b1762ffd5104f3f3.patch \
+		boost-1.83.patch
 PATCH_DIST_STRIP=	-p1 -F3
 
 MAINTAINER=	david.hummel@gmail.com
@@ -19,7 +21,10 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libboost_program_options.so:devel/boost-libs \
+		libboost_regex.so:devel/boost-libs \
+		libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu
@@ -37,8 +42,8 @@ CONFIGURE_ARGS=	CPP_TESTS=False \
 		CUSTOM_LDFLAGS="${LDFLAGS}" \
 		DEMO=False \
 		DESTDIR="${STAGEDIR}" \
-		FAST=True \
 		INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`" \
+		PGSQL2SQLITE=True \
 		SVG2PNG=True \
 		SYSTEM_FONTS=${LOCALBASE}/share/fonts/dejavu \
 		XMLPARSER=libxml2
@@ -75,7 +80,7 @@ POSTGIS_USES=		pgsql
 PGRASTER_VARS=		INPUT_PLUGINS+=pgraster
 PGRASTER_USES=		pgsql
 SQLITE3_VARS=		INPUT_PLUGINS+=sqlite
-SQLITE3_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+SQLITE3_USES=		sqlite:3
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_MAKE_ARGS_OFF=	PNG=False
@@ -110,6 +115,7 @@ post-patch:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mapnik-index \
 		${STAGEDIR}${PREFIX}/bin/mapnik-render \
+		${STAGEDIR}${PREFIX}/bin/pgsql2sqlite \
 		${STAGEDIR}${PREFIX}/bin/shapeindex \
 		${STAGEDIR}${PREFIX}/bin/svg2png
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

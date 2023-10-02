@@ -1,6 +1,7 @@
 bin/mapnik-config
 bin/mapnik-index
 bin/mapnik-render
+bin/pgsql2sqlite
 bin/shapeindex
 bin/svg2png
 include/mapnik/agg/agg_alpha_mask_u8.h
