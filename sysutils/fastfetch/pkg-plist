@@ -5,10 +5,10 @@ share/bash-completion/completions/fastfetch
 %%DATADIR%%/presets/all.jsonc
 %%DATADIR%%/presets/btw
 %%DATADIR%%/presets/btw.jsonc
-%%DATADIR%%/presets/devinfo
-%%DATADIR%%/presets/devinfo-verbose
-%%DATADIR%%/presets/devinfo.jsonc
+%%DATADIR%%/presets/ci
 %%DATADIR%%/presets/examples/1
+%%DATADIR%%/presets/examples/10.jsonc
+%%DATADIR%%/presets/examples/11.jsonc
 %%DATADIR%%/presets/examples/2
 %%DATADIR%%/presets/examples/2.jsonc
 %%DATADIR%%/presets/examples/3
@@ -29,4 +29,3 @@ share/bash-completion/completions/fastfetch
 %%DATADIR%%/presets/paleofetch.jsonc
 %%DATADIR%%/presets/software
 %%DATADIR%%/presets/software.jsonc
-%%DATADIR%%/presets/verbose
