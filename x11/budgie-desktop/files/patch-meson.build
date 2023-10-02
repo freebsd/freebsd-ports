@@ -1,0 +1,24 @@
+--- meson.build.orig	2023-09-30 15:44:12 UTC
++++ meson.build
+@@ -67,12 +67,6 @@ cdata = configuration_data()
+ # Inspired by https://github.com/GNOME/recipes/blob/master/meson.build
+ package_version = meson.project_version()
+ 
+-if fs.exists('.git')
+-    git = find_program('git')
+-    git_version = run_command('git', ['rev-parse', 'HEAD'], check: true)
+-    package_version += ' (git-'+git_version.stdout().strip()+')'
+-endif
+-
+ cdata.set_quoted('PACKAGE_VERSION', package_version)
+ 
+ # Make gettext work
+@@ -154,7 +148,7 @@ if xdg_appdir == ''
+     if with_stateless == true
+         xdg_appdir = join_paths(datadir, 'xdg', 'autostart')
+     else
+-        xdg_appdir = join_paths(get_option('sysconfdir'), 'xdg', 'autostart')
++        xdg_appdir = join_paths(confdir, 'xdg', 'autostart')
+     endif
+ endif
+ 
