@@ -1188,6 +1188,9 @@ ABI=
 .      if (${ARCH:Maarch64*c*} || ${ARCH:Mriscv*c*})
 ABI+=	purecap
 .      endif
+.      if ${ARCH:Maarch64cb}
+ABI+=	benchmark
+.      endif
 .    endif
 
 # Get operating system versions for a cross build
