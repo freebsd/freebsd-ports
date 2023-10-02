@@ -1,28 +1,19 @@
---- f_check.orig	2021-05-03 06:50:22.000000000 +0900
-+++ f_check	2021-05-06 23:42:10.192934000 +0900
-@@ -326,7 +326,7 @@
+--- f_check.orig	2023-04-01 20:18:01 UTC
++++ f_check
+@@ -360,6 +360,16 @@ if [ -n "$link" ]; then
+     	        flag="-lomp"
+     	        ;;
+     	    esac
++
++    	    case "$hostos" in "FreeBSD")
++        	    case "$CC" in
++                    gcc*) ;;
++                    *)
++                        # clang is assumed
++                        flag="-lomp"
++                        ;;
++                esac
++    	    esac
+     	esac
  
-     foreach $flags (@flags) {
- 	if (
--	    ($flags =~ /^\-L/)
-+	    ($flags =~ /^\-L\S/)
- 	    && ($flags !~ /^-LIST:/)
- 	    && ($flags !~ /^-LANG:/)
- 	    ) {
-@@ -358,7 +358,7 @@
- 	}
- 
- 	if (
--	    ($flags =~ /^\-l/)
-+	    ($flags =~ /^\-l\S/)
- 	    && ($flags !~ /ibrary/)
- 	    && ($flags !~ /gfortranbegin/)
- 	    && ($flags !~ /frtbegin/)
-@@ -369,6 +369,7 @@
- 	    && ($flags !~ /kernel32/)
- 	    && ($flags !~ /advapi32/)
- 	    && ($flags !~ /shell32/)
-+	    && ($flags !~ /gomp/)
- 	    && ($flags !~ /omp/ || ($vendor !~ /PGI/ && $vendor !~ /FUJITSU/ && $flags =~ /omp/))
- 	    && ($flags !~ /[0-9]+/ || ($vendor == FUJITSU && $flags =~ /^-lfj90/))
- 		&& ($flags !~ /^\-l$/)
+         case "$flag" in -l*)
