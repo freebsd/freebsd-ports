@@ -1,5 +1,5 @@
 PORTNAME=	mediawiki
-PORTVERSION=	1.35.11
+PORTVERSION=	1.35.13
 CATEGORIES=	www
 MASTER_SITES=	http://releases.wikimedia.org/mediawiki/${PORTVERSION:R}/
 PKGNAMESUFFIX=	135${PHP_PKGNAMESUFFIX}
@@ -10,7 +10,7 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
-CONFLICTS=	mediawiki13[8-9] mediawiki140
+CONFLICTS=	mediawiki13[8-9] mediawiki14[0-9]
 
 USES=		cpe php:flavors shebangfix
 SHEBANG_FILES=	maintenance/dev/*.sh \
