@@ -4,10 +4,15 @@
 
 crowdsec-firewall-bouncer is installed.
 
+Note: If you are using OPNsense or pfSense, ignore the following instructions and use the settings page of the
+CrowdSec plugin.
+
+-----
+
 If you are running crowdsec on this machine, the bouncer will register itself with
 the Local API when it's started the first time.
 
-If the LAPI is on another machine, you need to manually register the bouncer
+If the LAPI is on a different machine, you need to manually register the bouncer
 and fill api_key and api_url in %%ETCDIR%%/crowdsec-firewall-bouncer.yaml before
 starting the service.
 

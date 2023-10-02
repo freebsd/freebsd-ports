@@ -11,6 +11,8 @@
 #					Default is "NO"
 # crowdsec_firewall_config (str):	Set the bouncer config path.
 #					Default is "%%ETCDIR%%/crowdsec-firewall-bouncer.yaml"
+# crowdsec_firewall_name (str):		Name of the bouncer to register.
+#					Default is dynamically generated.
 # crowdsec_firewall_flags (str):	extra flags to run bouncer.
 #					Default is ""
 
@@ -20,39 +22,77 @@ name=crowdsec_firewall
 desc="Crowdsec Firewall"
 rcvar=crowdsec_firewall_enable
 
-load_rc_config $name
+load_rc_config "$name"
 
 : "${crowdsec_firewall_enable:=NO}"
 : "${crowdsec_firewall_config:=%%ETCDIR%%/crowdsec-firewall-bouncer.yaml}"
+: "${crowdsec_firewall_name:=cs-firewall-bouncer-$(date +%s)}"
 : "${crowdsec_firewall_flags:=}"
 
 pidfile=/var/run/${name}.pid
 required_files="$crowdsec_firewall_config"
 command="%%PREFIX%%/bin/crowdsec-firewall-bouncer"
 start_cmd="${name}_start"
+stop_cmd="${name}_stop"
 start_precmd="${name}_precmd"
+configtest_cmd="${name}_configtest"
+extra_commands="configtest"
 
 crowdsec_firewall_precmd() {
     CSCLI=%%PREFIX%%/bin/cscli
-    orig_line="api_key: \${API_KEY}"
+    # there might be quotes
+    orig_line="api_key: .*\${API_KEY}.*"
     # IF the bouncer is not configured
     if grep -q "^${orig_line}" "${crowdsec_firewall_config}"; then
-        BOUNCER="cs-firewall-bouncer-$(date +%s)"
         # AND crowdsec is installed..
         if command -v "$CSCLI" >/dev/null; then
             # THEN, register it to the local API
-            API_KEY=$($CSCLI bouncers add "${BOUNCER}" -o raw)
+            API_KEY=$($CSCLI bouncers add "${crowdsec_firewall_name}" -o raw)
             if [ -n "$API_KEY" ]; then
-                sed -i "" "s/^${orig_line}/api_key: ${API_KEY}     # ${BOUNCER}/" "${crowdsec_firewall_config}"
-                echo "Registered: ${BOUNCER}"
+                sed -i "" "s|^${orig_line}|api_key: ${API_KEY}     # ${crowdsec_firewall_name}|" "${crowdsec_firewall_config}"
+                echo "Registered: ${crowdsec_firewall_name}"
             fi
         fi
     fi
 }
 
+crowdsec_firewall_stop()
+{
+    if [ ! -f "$pidfile" ]; then
+        echo "${name} is not running."
+        return
+    fi
+    pid=$(cat "$pidfile")
+    if kill -0 "$pid" >/dev/null 2>&1; then
+        echo "Stopping ${name}."
+        kill -s TERM "$pid" >/dev/null 2>&1
+        # shellcheck disable=SC2034
+        for i in $(seq 1 20); do
+            sleep 1
+            if ! kill -0 "$pid" >/dev/null 2>&1; then
+                rm -f "$pidfile"
+                return
+            fi
+        done
+        echo "Timeout, terminating ${name} with SIGKILL."
+        kill -s KILL "$pid" >/dev/null 2>&1
+        rm -f "$pidfile"
+    else
+        echo "${name} is not running."
+    fi
+}
+
 crowdsec_firewall_start() {
-    /usr/sbin/daemon -f -p ${pidfile} -t "${desc}" -- \
-        ${command} -c "${crowdsec_firewall_config}" ${crowdsec_firewall_flags}
+    /usr/sbin/daemon -f -p "$pidfile" -t "$desc" -- \
+        "$command" -c "$crowdsec_firewall_config" ${crowdsec_firewall_flags}
+}
+
+crowdsec_firewall_configtest()
+{
+    echo "Performing sanity check on ${name} configuration."
+    if "$command" -c "$crowdsec_firewall_config" -t; then
+        echo "Configuration test OK"
+    fi
 }
 
 run_rc_command "$1"
