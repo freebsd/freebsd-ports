@@ -1,3 +1,51 @@
+  <vuln vid="e59fed96-60da-11ee-9102-000c29de725b">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+	<package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.13</lt></range>
+      </package>
+      <package>
+	<name>mediawiki139</name>
+	<range><lt>1.39.5</lt></range>
+      </package>
+      <package>
+	<name>mediawiki140</name>
+	<range><lt>1.40.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawikwi reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/BRWOWACCHMYRIS7JRTT6XD44X3362MVL/">
+	  <p>(T264765, CVE-2023-PENDING) SECURITY: Users without correct permission
+	    are incorrectly shown MediaWiki:Missing-revision-permission.</p>
+	  <p>(T333050, CVE-2023-PENDING) SECURITY: Fix infinite loop for
+	    self-redirects with variants conversion.</p>
+	  <p>(T340217, CVE-2023-PENDING) SECURITY: Vector 2022: Numerous unescaped
+	    messages leading to potential XSS.</p>
+	  <p>(T340220, CVE-2023-PENDING) SECURITY: Vector 2022: vector-intro-page
+	    message is assumed to yield a valid title.</p>
+	  <p>(T340221, CVE-2023-PENDING) SECURITY: XSS via
+	    'youhavenewmessagesmanyusers' and 'youhavenewmessages' messages.</p>
+	  <p>(T341529, CVE-2023-PENDING) SECURITY: diff-multi-sameuser ("X
+	    intermediate revisions by the same user not shown") ignores username
+	    suppression.</p>
+	  <p>(T341565, CVE-2023-3550) SECURITY: Stored XSS when uploading crafted XML
+	    file to Special:Upload (non-standard configuration).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3550</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/BRWOWACCHMYRIS7JRTT6XD44X3362MVL/</url>
+    </references>
+    <dates>
+      <discovery>2023-09-01</discovery>
+      <entry>2023-10-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="33922b84-5f09-11ee-b63d-0897988a1c07">
     <topic>Remote Code Execution via web-accessible composer</topic>
     <affects>
