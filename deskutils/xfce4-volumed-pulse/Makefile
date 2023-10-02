@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-volumed-pulse
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		libpulse.so:audio/pulseaudio
 
 USES=		gmake gnome libtool pkgconfig tar:bz2 xfce
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
+USE_GNOME=	glib20 gtk30
 USE_XFCE=	xfconf
 
 GNU_CONFIGURE=	yes

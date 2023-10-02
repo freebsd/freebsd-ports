@@ -1,6 +1,6 @@
 PORTNAME=	libexo
 PORTVERSION=	4.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	exo-${DISTVERSIONFULL}
@@ -15,9 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 BUILD_DEPENDS=	p5-URI>=1.70:net/p5-URI
 RUN_DEPENDS=	p5-URI>=1.70:net/p5-URI
 

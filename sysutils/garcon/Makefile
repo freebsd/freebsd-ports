@@ -1,5 +1,6 @@
 PORTNAME=	garcon
 PORTVERSION=	4.18.1
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -12,9 +13,7 @@ WWW=		https://www.xfce.org/
 # documentation is under GFDL 1.1.
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce

@@ -1,5 +1,6 @@
 PORTNAME=	libxfce4menu
 PORTVERSION=	4.18.4
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DISTNAME=	libxfce4ui-${DISTVERSIONFULL}
@@ -11,9 +12,7 @@ WWW=		https://www.xfce.org/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libepoxy.so:graphics/libepoxy \
+LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libgtop-2.0.so:devel/libgtop \
 		libharfbuzz.so:print/harfbuzz
 
@@ -21,7 +20,7 @@ USES=		compiler:c11 gettext-tools gmake gnome libtool pathfix \
 		pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_LDCONFIG=	yes
-USE_XFCE=	xfconf
+USE_XFCE=	libutil xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes

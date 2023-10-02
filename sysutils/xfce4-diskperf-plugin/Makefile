@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-diskperf-plugin
 PORTVERSION=	2.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,10 +12,12 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-diskperf-plugin
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
 USES=		compiler:c11 gettext-tools gnome gmake libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gtk30 intltool
-USE_XFCE=	panel
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
+USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

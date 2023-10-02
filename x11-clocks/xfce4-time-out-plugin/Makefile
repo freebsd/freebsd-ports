@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-time-out-plugin
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

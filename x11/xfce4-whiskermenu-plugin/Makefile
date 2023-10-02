@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-whiskermenu-plugin
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++14-lang gettext-tools gnome localbase \
 		pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30
-USE_XFCE=	panel
+USE_XFCE=	garcon libexo panel xfconf
 
 OPTIONS_DEFINE=		ACCOUNTS_SERVICE GTK_LAYER_SHELL LTO NLS
 OPTIONS_DEFAULT=	ACCOUNTS_SERVICE GTK_LAYER_SHELL LTO

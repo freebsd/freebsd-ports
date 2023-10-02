@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -11,10 +11,12 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-systemload-plugin
 
 LICENSE=	BSD2CLAUSE
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel xfconf
 
 SSP_UNSAFE=	yes
 GNU_CONFIGURE=	yes

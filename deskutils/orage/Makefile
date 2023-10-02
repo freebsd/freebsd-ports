@@ -1,6 +1,6 @@
 PORTNAME=	orage
 PORTVERSION=	4.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -12,10 +12,7 @@ WWW=		https://git.xfce.org/apps/orage/about/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpopt.so:devel/popt \
-		libical.so:devel/libical \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libical.so:devel/libical \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gmake gnome \

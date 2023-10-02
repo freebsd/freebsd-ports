@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-screenshooter-plugin
 PORTVERSION=	1.10.4
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 DISTNAME=	xfce4-screenshooter-${DISTVERSIONFULL}
@@ -19,7 +20,7 @@ USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_CSTD=	c99
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libxml2
-USE_XFCE=	panel
+USE_XFCE=	libexo libmenu panel xfconf
 USE_XORG=	ice sm x11 xfixes xext
 
 GNU_CONFIGURE=	yes

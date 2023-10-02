@@ -1,8 +1,6 @@
-#
-
 PORTNAME=	xfce4-bsdcpufreq-plugin
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils xfce
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -11,11 +9,10 @@ COMMENT=	Displays the current CPU clock frequency in the panel
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gnome pkgconfig xfce
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 PLIST_FILES=	lib/xfce4/panel/plugins/libbsdcpufreq.so \

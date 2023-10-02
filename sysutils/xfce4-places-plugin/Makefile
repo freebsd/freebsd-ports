@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-places-plugin
 PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libnotify.so:devel/libnotify \
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_XFCE=	panel thunar
+USE_XFCE=	libexo libmenu panel xfconf
 USE_XORG=	ice sm x11
 
 GNU_CONFIGURE=	yes

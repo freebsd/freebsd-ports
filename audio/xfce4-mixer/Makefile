@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-mixer
 PORTVERSION=	4.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -25,7 +25,7 @@ USES=		compiler:c11 gettext-tools gmake gnome gstreamer libtool \
 		pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
 USE_GSTREAMER=	good
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel xfconf
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

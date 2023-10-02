@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-generic-slider
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
@@ -12,9 +13,7 @@ WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext gmake gnome libtool pkgconfig tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool

@@ -1,5 +1,6 @@
 PORTNAME=	gigolo
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	XFCE/apps
 
@@ -12,7 +13,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
-USES=		fuse gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
+USES=		gettext-tools gmake gnome pkgconfig tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gvfs intltool
 USE_XORG=	x11
 

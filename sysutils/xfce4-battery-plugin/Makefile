@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,7 +18,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 USES=		alias gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 USE_LDCONFIG=	yes
 
 SSP_UNSAFE=	yes

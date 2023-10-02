@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-pulseaudio-plugin
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -18,7 +19,7 @@ RUN_DEPENDS=	pavucontrol>=2.0:audio/pavucontrol
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
-USE_XFCE=	panel
+USE_XFCE=	libexo panel xfconf
 USE_XORG=	x11
 
 GNU_CONFIGURE=	yes

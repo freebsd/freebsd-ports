@@ -1,6 +1,6 @@
 PORTNAME=	dashboard
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/apps
 PKGNAMEPREFIX=	xfce4-
@@ -23,7 +23,7 @@ USES=		compiler:c11 gettext-tools gl gmake gnome localbase libtool \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool libwnck3
 USE_XFCE=	garcon xfconf
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xinerama xrandr
-USE_GL=		egl gl
+USE_GL=		egl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

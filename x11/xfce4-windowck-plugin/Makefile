@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-windowck-plugin
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	xdt-csource:devel/xfce4-dev-tools
 USES=		gettext-tools gmake gnome libtool python:build pkgconfig \
 		shebangfix tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libwnck3 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel xfconf
 USE_XORG=	x11
 SHEBANG_GLOB=	*.py
 

@@ -1,6 +1,6 @@
 PORTNAME=	xfce4-appmenu-plugin
 DISTVERSION=	0.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -27,7 +27,7 @@ MESON_ARGS=	-Dvalapanel=disabled \
 		-Dregistrar=disabled \
 		-Dappmenu-gtk-module=disabled
 
-USE_XFCE=	panel
+USE_XFCE=	panel xfconf
 USE_GNOME=	gtk30 glib20 gtk20 gdkpixbuf2
 
 USE_GITLAB=	yes

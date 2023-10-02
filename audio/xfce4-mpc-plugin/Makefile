@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-mpc-plugin
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -17,7 +18,7 @@ RUN_DEPENDS=	musicpd:audio/musicpd
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=		yes
 INSTALL_TARGET=		install-strip

@@ -1,7 +1,7 @@
 PORTNAME=		xfce4-docklike-plugin
 PORTVERSION=		0.4.0
 DISTVERSIONPREFIX=	${PORTNAME}
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		x11 xfce
 
 MAINTAINER=		bsd@quentb.com
@@ -28,7 +28,7 @@ INSTALL_TARGET=		install-strip
 LDFLAGS+=		-L${LOCALBASE}/lib -linotify
 
 USE_GNOME=		cairo gdkpixbuf2 gtk30 intltool libwnck3
-USE_XFCE=		panel
+USE_XFCE=		libmenu panel
 USE_XORG=		x11
 
 OPTIONS_DEFINE=		NLS

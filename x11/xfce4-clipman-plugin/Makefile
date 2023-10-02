@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -15,7 +16,7 @@ LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel xfconf
 USE_XORG=	ice sm x11 xorgproto xtst
 
 GNU_CONFIGURE=	yes

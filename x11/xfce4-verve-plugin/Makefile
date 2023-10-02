@@ -1,5 +1,6 @@
 PORTNAME=	verve-plugin
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 PKGNAMEPREFIX=	xfce4-
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 intltool pango
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

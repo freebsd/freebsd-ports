@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-mount-plugin
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -16,7 +17,7 @@ USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_LDCONFIG=	yes
-USE_XFCE=	panel
+USE_XFCE=	libmenu panel
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
