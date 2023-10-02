@@ -1,11 +1,19 @@
---- data/meson.build.orig	2023-02-19 16:48:41 UTC
+--- data/meson.build.orig	2023-09-30 15:44:12 UTC
 +++ data/meson.build
-@@ -15,3 +15,8 @@ install_data(
-     version_file,
+@@ -16,7 +16,13 @@ install_data(
      install_dir: join_paths(datadir, 'budgie')
  )
-+
+ 
+-install_data(
+-    'budgie-portals.conf',
+-    install_dir: join_paths(datadir, 'xdg-desktop-portal')
 +# Our own settings
 +install_data('25_org.buddiesofbudgie-default-settings.gschema.override',
 +    install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
-+)
+ )
++
++# It requires, x11/xdg-desktop-portal-gtk > 1.17.x
++#install_data(
++#    'budgie-portals.conf',
++#    install_dir: join_paths(datadir, 'xdg-desktop-portal')
++#)
