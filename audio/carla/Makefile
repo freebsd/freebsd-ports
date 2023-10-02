@@ -1,7 +1,6 @@
 PORTNAME=	Carla
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.6
-PORTREVISION=	1
+DISTVERSION=	2.5.7
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +14,10 @@ LIB_DEPENDS=	liblo.so:audio/liblo \
 		libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyliblo>0:audio/py-pyliblo@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib desktop-file-utils gl gmake gnome localbase \
+USES=		compiler:c++11-lib desktop-file-utils gl gmake localbase \
 		pkgconfig pyqt:5 python qt:5 sdl shared-mime-info shebangfix \
 		tar:bz2 xorg
 USE_PYQT=	pyqt5 sip
-USE_GNOME=	gtk20 gtk30
 USE_QT=		core gui widgets buildtools:build
 USE_GL=		gl
 USE_XORG=	x11
@@ -40,10 +38,8 @@ MAKE_ARGS=	HAVE_QT4=false \
 BINARY_ALIAS=	pyuic5=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		pyrcc5=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER}
 
-OPTIONS_DEFINE=		FFMPEG FLUIDSYNTH LINUXSAMPLER
-OPTIONS_DEFAULT=	FFMPEG FLUIDSYNTH JACK
-OPTIONS_DEFAULT_amd64=	LINUXSAMPLER
-OPTIONS_DEFAULT_i386=	LINUXSAMPLER
+OPTIONS_DEFINE=		FFMPEG FLUIDSYNTH
+OPTIONS_DEFAULT=	FLUIDSYNTH JACK # FFMPEG is broken due to https://github.com/falkTX/Carla/issues/1814
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	JACK PULSEAUDIO
 BACKEND_DESC=		Audio backend
@@ -53,10 +49,6 @@ FFMPEG_MAKE_ARGS_OFF=		HAVE_FFMPEG=false
 
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
 FLUIDSYNTH_MAKE_ARGS_OFF=	HAVE_FLUIDSYNTH=false
-
-LINUXSAMPLER_DESC=		Use LinuxSampler: a software audio sampler
-LINUXSAMPLER_LIB_DEPENDS=	liblinuxsampler.so:audio/linuxsampler
-LINUXSAMPLER_MAKE_ARGS_OFF=	HAVE_LINUXSAMPLER=false
 
 JACK_BUILD_DEPENDS=		jackit>0:audio/jack
 JACK_RUN_DEPENDS=		${LOCALBASE}/lib/libjack.so:audio/jack
