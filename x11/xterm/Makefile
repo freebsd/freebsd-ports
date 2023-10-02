@@ -1,5 +1,5 @@
 PORTNAME=	xterm
-PORTVERSION=	384
+PORTVERSION=	385
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -57,6 +57,7 @@ GNOME_USES=			desktop-file-utils
 LOGGING_CONFIGURE_ENABLE=	logging
 LUIT_IMPLIES=			WCHAR
 LUIT_BUILD_DEPENDS=		luit:x11/luit
+LUIT_RUN_DEPENDS=		luit:x11/luit
 LUIT_CONFIGURE_ENABLE=		luit
 NEXTAW_LIB_DEPENDS=		libneXtaw.so:x11-toolkits/neXtaw
 NEXTAW_CONFIGURE_WITH=		neXtaw
