@@ -1,6 +1,5 @@
 PORTNAME=	soundtracker
-DISTVERSION=	1.0.3
-PORTREVISION=	3
+DISTVERSION=	1.0.4
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -18,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils gettext gmake gnome pkgconfig shebangfix tar:xz xorg
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pango
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 libxml2 pango
 USE_XORG=	x11
 
 SHEBANG_FILES=	soundtracker_convert_config
@@ -30,12 +29,13 @@ CONFIGURE_ARGS=	--disable-alsa
 
 OPTIONS_MULTI=		BACKEND
 OPTIONS_MULTI_BACKEND=	JACK OSS PULSEAUDIO SDL
-OPTIONS_DEFAULT=	JACK OSS PULSEAUDIO SDL
+OPTIONS_DEFAULT=	OSS PULSEAUDIO SDL # JACK
 
 BACKEND_DESC=			Audio backends:
 
 JACK_CONFIGURE_ENABLE=		jack
 JACK_LIB_DEPENDS=		libjack.so:audio/jack
+JACK_BROKEN=			# 2023-10-02: JACK option is be broken because the build doesn't use Jack when the option is set
 
 OSS_CONFIGURE_ENABLE=		oss
 

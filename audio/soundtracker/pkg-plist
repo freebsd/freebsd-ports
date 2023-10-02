@@ -27,8 +27,10 @@ share/pixmaps/soundtracker-icon.png
 %%DATADIR%%/cheat-sheet.ru.txt
 %%DATADIR%%/crop-16.png
 %%DATADIR%%/downarrow.xpm
+%%DATADIR%%/env_inverse.png
 %%DATADIR%%/env_scale.png
-%%DATADIR%%/envelope-box.xml
+%%DATADIR%%/envelope-box.ui
+%%DATADIR%%/extensions/sample-editor/sox.menu
 %%DATADIR%%/flat.xpm
 %%DATADIR%%/history-16.png
 %%DATADIR%%/led_off.xpm
@@ -45,7 +47,7 @@ share/pixmaps/soundtracker-icon.png
 %%DATADIR%%/play_cur.xpm
 %%DATADIR%%/play_from.png
 %%DATADIR%%/rightarrow.xpm
-%%DATADIR%%/sample-editor.xml
+%%DATADIR%%/sample-editor.ui
 %%DATADIR%%/sample-go-loop-beg-22.png
 %%DATADIR%%/sample-go-loop-end-22.png
 %%DATADIR%%/sample-play-loop-22.png
@@ -55,7 +57,7 @@ share/pixmaps/soundtracker-icon.png
 %%DATADIR%%/select-none-22.png
 %%DATADIR%%/sharp.xpm
 %%DATADIR%%/soundtracker-icon.png
-%%DATADIR%%/soundtracker.xml
+%%DATADIR%%/soundtracker.ui
 %%DATADIR%%/soundtracker_splash.png
 %%DATADIR%%/stop.xpm
 %%DATADIR%%/unmuted.png
