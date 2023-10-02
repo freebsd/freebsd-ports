@@ -1,12 +1,13 @@
 PORTNAME=	sdl2
-DISTVERSION=	2.28.3
+DISTVERSION=	2.28.4
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform multimedia development API
-WWW=		https://www.libsdl.org/
+WWW=		https://www.libsdl.org/ \
+		https://github.com/libsdl-org/SDL
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
