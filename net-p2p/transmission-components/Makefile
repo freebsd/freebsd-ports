@@ -135,7 +135,7 @@ qt_DESC=	Build QT client
 TESTS_DESC=	Build & run unit tests
 utils_DESC=	Build utilities (create, edit, remote, show)
 cli_DESC=	Build command-line client (deprecated)
-WEB_DESC=	Install web client (imples daemon)
+WEB_DESC=	Install web client (implies daemon)
 
 NLS_USES=	gettext-runtime:lib
 NLS_CMAKE_BOOL=	ENABLE_NLS
