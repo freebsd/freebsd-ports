@@ -249,6 +249,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/amiga/serendipid.fur
 %%DATADIR%%/demos/arcade/Destiny_Islands_Irem_M92.fur
 %%DATADIR%%/demos/arcade/Eternal_Forest_TaitoArcade.fur
+%%DATADIR%%/demos/arcade/Hexionology.fur
 %%DATADIR%%/demos/arcade/Ice_Wind_SegaPCM.fur
 %%DATADIR%%/demos/arcade/Mars_Bar_On_Mars_NamcoWSG.fur
 %%DATADIR%%/demos/arcade/Maximum_Overdrive_NamcoWSG.fur
@@ -269,8 +270,10 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/arcade/last_day_of_summer_NamcoC15.fur
 %%DATADIR%%/demos/arcade/the_machines_are_socialising_SegaPCM.fur
 %%DATADIR%%/demos/ay8910/AY-3-8910_Jam.fur
+%%DATADIR%%/demos/ay8910/Drifting in Colour.fur
 %%DATADIR%%/demos/ay8910/Flat Wave Society.fur
 %%DATADIR%%/demos/ay8910/Second_Addition.fur
+%%DATADIR%%/demos/ay8910/cardboardmywater.fur
 %%DATADIR%%/demos/ay8910/demoscenetypebeat.fur
 %%DATADIR%%/demos/ay8910/remark_music.fur
 %%DATADIR%%/demos/ay8910/vibe_zone.fur
@@ -299,6 +302,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/gameboy/puggs_in_space.fur
 %%DATADIR%%/demos/gameboy/snowdin.fur
 %%DATADIR%%/demos/gameboy/spreadtro.fur
+%%DATADIR%%/demos/genesis/All Good Times.fur
 %%DATADIR%%/demos/genesis/Another_winter.fur
 %%DATADIR%%/demos/genesis/Carnage.fur
 %%DATADIR%%/demos/genesis/Checknobankh.fur
@@ -364,6 +368,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/msx/Princess_of_the_Dead.fur
 %%DATADIR%%/demos/msx/Striking_Towards_Opposition.fur
 %%DATADIR%%/demos/msx/WakingUpWhenMorningAlarmRings_OPLL.fur
+%%DATADIR%%/demos/msx/attack_the_barbarian.fur
 %%DATADIR%%/demos/msx/opll-fashioned_drums.fur
 %%DATADIR%%/demos/msx/ranburu_song.fur
 %%DATADIR%%/demos/multichip/AgentX.fur
@@ -401,6 +406,7 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/nes/FDS TEST.fur
 %%DATADIR%%/demos/nes/Rise_against_the_ashes_to_the_new_dawn.fur
 %%DATADIR%%/demos/nes/Samsung SGH-x830 - Ringtone 8.fur
+%%DATADIR%%/demos/nes/Sky Sanctuary Zone.fur
 %%DATADIR%%/demos/nes/Super_Space_Invaders_Title.fur
 %%DATADIR%%/demos/nes/The Cheetahmen.fur
 %%DATADIR%%/demos/nes/carve_your_own_path.fur
@@ -425,7 +431,6 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/opl/Sliding_on_a_Rainbow.fur
 %%DATADIR%%/demos/opl/TeamInnocent-BGM4-OPL3Plus.fur
 %%DATADIR%%/demos/opl/Waterworld_-_Map.fur
-%%DATADIR%%/demos/opl/attack_the_barbarian_opl.fur
 %%DATADIR%%/demos/opl/e3m2_opl3.fur
 %%DATADIR%%/demos/opl/fight and flight.fur
 %%DATADIR%%/demos/opl/green_biker_dude_opl.fur
@@ -446,8 +451,10 @@ share/applications/furnace.desktop
 %%DATADIR%%/demos/sms/thunderblade-type-ii.fur
 %%DATADIR%%/demos/snes/Breezy.fur
 %%DATADIR%%/demos/snes/Cosmic_Warehouse.fur
+%%DATADIR%%/demos/snes/IMU Café.fur
 %%DATADIR%%/demos/snes/MM8_Frost_Man.fur
 %%DATADIR%%/demos/snes/ManbowSMW.fur
+%%DATADIR%%/demos/snes/Sadness.fur
 %%DATADIR%%/demos/snes/amalgam.fur
 %%DATADIR%%/demos/snes/changeyourheart.fur
 %%DATADIR%%/demos/snes/segacd.fur
