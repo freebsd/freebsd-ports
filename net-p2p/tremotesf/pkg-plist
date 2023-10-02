@@ -1,0 +1,10 @@
+bin/tremotesf
+share/applications/org.equeim.Tremotesf.desktop
+share/icons/hicolor/16x16/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/22x22/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/24x24/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/256x256/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/32x32/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/48x48/apps/org.equeim.Tremotesf.png
+share/icons/hicolor/scalable/apps/org.equeim.Tremotesf.svg
+share/metainfo/org.equeim.Tremotesf.appdata.xml

@@ -101,6 +101,7 @@
     SUBDIR += transmission
     SUBDIR += transmission-components
     SUBDIR += transmission-remote-gui
+    SUBDIR += tremotesf
     SUBDIR += twitch-tui
     SUBDIR += udpt
     SUBDIR += uhub
