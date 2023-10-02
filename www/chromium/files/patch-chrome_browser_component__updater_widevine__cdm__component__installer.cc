@@ -1,5 +1,14 @@
 --- chrome/browser/component_updater/widevine_cdm_component_installer.cc.orig	2023-09-27 23:09:54 UTC
 +++ chrome/browser/component_updater/widevine_cdm_component_installer.cc
+@@ -40,7 +40,7 @@
+ #include "third_party/widevine/cdm/buildflags.h"
+ #include "third_party/widevine/cdm/widevine_cdm_common.h"
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD)
+ #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
+ #endif
+ 
 @@ -77,7 +77,7 @@ const char ImageLoaderComponentName[] = "WidevineCdm";
  const char ImageLoaderComponentName[] = "WidevineCdm";
  #endif
