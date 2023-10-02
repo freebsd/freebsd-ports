@@ -100,3 +100,5 @@
 .  el \{ .if "\*[doc-locale]"fr.ISO8859-1" \
 .    mso mdoc/fr.ISO8859-1
 .\}\}
+.\" don't show topic in italic, be compatible with groff 1.22.4 and mandoc: PR: 273885
+.ds doc-page-topic-font \f[R]
