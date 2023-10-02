@@ -1,5 +1,5 @@
 PORTNAME=	gvm-tools
-DISTVERSION=	23.4.0
+DISTVERSION=	23.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ post-extract:
 	${MV} ${WRKSRC}/scripts ${WRKSRC}/gvmtools/
 
 post-patch:
-	${REINPLACE_CMD} '32,33d' ${WRKSRC}/pyproject.toml
+	${REINPLACE_CMD} '30,31d' ${WRKSRC}/pyproject.toml
 
 pre-configure:
 	@cd ${WRKSRC} && poetry2setup > ${WRKSRC}/setup.py

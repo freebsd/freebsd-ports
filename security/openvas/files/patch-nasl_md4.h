@@ -1,10 +1,10 @@
---- nasl/md4.h	2023-04-02 01:42:54.408984000 -0500
-+++ nasl/md4.h	2023-04-02 01:43:11.470498000 -0500
-@@ -28,5 +28,4 @@
- 
+--- nasl/md4.h	2023-08-31 14:23:03.000000000 -0500
++++ nasl/md4.h	2023-09-21 00:00:17.238876000 -0500
+@@ -16,4 +16,5 @@
  void
  mdfour_ntlmssp (unsigned char *out, const unsigned char *in, int n);
--
+ 
 -#endif
 \ No newline at end of file
 +#endif
++

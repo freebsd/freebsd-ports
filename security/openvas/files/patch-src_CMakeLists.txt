@@ -1,5 +1,5 @@
 --- src/CMakeLists.txt	2022-07-18 04:07:38.000000000 -0500
-+++ sc/CMakeLists.txt	2022-07-31 19:53:15.521197000 -0500
++++ src/CMakeLists.txt	2022-07-31 19:53:15.521197000 -0500
 @@ -30,7 +30,9 @@
  pkg_check_modules (LIBGVM_BOREAS REQUIRED libgvm_boreas>=22.4)
  pkg_check_modules (LIBGVM_UTIL REQUIRED libgvm_util>=22.4)

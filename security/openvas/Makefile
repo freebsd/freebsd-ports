@@ -1,5 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	22.7.0
+DISTVERSION=	22.7.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -20,17 +20,20 @@ LIB_DEPENDS=	libgvm_base.so:security/gvm-libs \
 		libgnutls.so:security/gnutls \
 		libnetsnmp.so:net-mgmt/net-snmp \
 		libjson-glib-1.0.so:devel/json-glib
-RUN_DEPENDS=	redis-server:databases/redis \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}greenbone-feed-sync>0:security/py-greenbone-feed-sync@${PY_FLAVOR} \
+		redis-server:databases/redis \
 		snmpget:net-mgmt/net-snmp \
 		rsync:net/rsync \
-		nmap:security/nmap \
-		${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR}
+		nmap:security/nmap
 
 USES=		bison cmake gnome pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}-scanner
 USE_GNOME=	glib20
+
+CMAKE_ARGS+=	-DINSTALL_OLD_SYNC_SCRIPT=OFF
 
 USERS=		gvm
 GROUPS=		${USERS}

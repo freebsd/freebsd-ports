@@ -153,6 +153,7 @@ Basic instructions for configure your gvm infraestruture are following:
    https://github.com/greenbone/openvas/blob/master/INSTALL.md
    https://github.com/greenbone/ospd/blob/master/doc/INSTALL-ospd-scanner.md
    https://github.com/greenbone/gsa/blob/master/INSTALL.md
+   https://github.com/greenbone/greenbone-feed-sync/blob/main/README.md
    https://greenbone.github.io/docs/latest/index.html
 
    and

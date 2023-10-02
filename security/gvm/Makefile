@@ -1,5 +1,5 @@
 PORTNAME=	gvm
-PORTVERSION=	22.7.0
+PORTVERSION=	22.9.0
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -22,6 +22,9 @@ RUN_DEPENDS+=   ${LOCALBASE}/sbin/openvas:security/openvas
 
 # Install Notus Scanner
 RUN_DEPENDS+=	${LOCALBASE}/bin/notus-scanner:security/py-notus-scanner
+
+# Install Greenbone Community Feed
+RUN_DEPENDS+=	greenbone-feed-sync:security/py-greenbone-feed-sync@${PY_FLAVOR}
 
 # Install GVM Web Interface
 RUN_DEPENDS+=	${LOCALBASE}/sbin/gsad:security/gsad
