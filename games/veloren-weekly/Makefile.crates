@@ -747,16 +747,16 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		xml-rs-0.8.16 \
 		xmlparser-0.13.5 \
 		yasna-0.5.2 \
-		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git\#fca4bbdfa51bf054b155a455935b3792975c989d \
+		keyboard-keynames@git+https://gitlab.com/Imbris/keyboard-keynames.git?tag=veloren-winit-0.28\#fca4bbdfa51bf054b155a455935b3792975c989d \
 		wgpu-profiler@git+https://github.com/Imberflur/wgpu-profiler?tag=wgpu-0.8\#b156eb145bc223386ef344860d9b33b3c181650c \
 		tui@git+https://github.com/fdehau/tui-rs.git?branch=paragraph-scroll\#54b841fab6cfdb38e8dc1382176e965787964b4c \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=abb1a705827984e11706d7bb97fb7a459e1e6533\#abb1a705827984e11706d7bb97fb7a459e1e6533 \
 		ntapi@git+https://github.com/MSxDOS/ntapi.git?rev=9f56b149c9e25796739157c0fce3e0007a7de6eb\#9f56b149c9e25796739157c0fce3e0007a7de6eb \
 		fluent,fluent-bundle,fluent-syntax,intl-memoizer@git+https://github.com/juliancoffee/fluent-rs.git?branch=patched\#929cf9512de121cce9b4cbf1cb860cd3294a1cd9 \
-		egui_winit_platform@git+https://github.com/Imberflur/egui_winit_platform.git\#99685556bf323cb6b57565ae63aaf934457e95c0 \
+		egui_winit_platform@git+https://github.com/Imberflur/egui_winit_platform.git?tag=veloren-winit-0.28\#99685556bf323cb6b57565ae63aaf934457e95c0 \
 		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#59fddc617696e68d28a75c2137a08c2572efb986 \
 		naga@git+https://github.com/gfx-rs/naga?tag=gfx-25\#057d03ad86f18e3bb3866b20901d8d4e892dd3d6 \
-		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
+		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=veloren-winit-0.28\#47243c257c8b8dd6c506b060804cb00b618aa0aa \
 		gfx-auxil,gfx-backend-dx11,gfx-backend-dx12,gfx-backend-empty,gfx-backend-gl,gfx-backend-metal,gfx-backend-vulkan,gfx-hal,range-alloc@git+https://github.com/gfx-rs/gfx?rev=27a1dae3796d33d23812f2bb8c7e3b5aea18b521\#27a1dae3796d33d23812f2bb8c7e3b5aea18b521 \
 		wgpu,wgpu-core,wgpu-types@git+https://github.com/pythonesque/wgpu.git?rev=179ea209374a92837cde252f1d9ee01f628cae08\#179ea209374a92837cde252f1d9ee01f628cae08 \
 		portpicker@git+https://github.com/xMAC94x/portpicker-rs?rev=df6b37872f3586ac3b21d08b56c8ec7cd92fb172\#df6b37872f3586ac3b21d08b56c8ec7cd92fb172 \
