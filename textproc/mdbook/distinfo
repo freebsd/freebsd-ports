@@ -1,4 +1,4 @@
-TIMESTAMP = 1691316810
+TIMESTAMP = 1696188363
 SHA256 (rust/crates/addr2line-0.20.0.crate) = f4fa78e18c64fce05e902adecd7a5eed15a5e0a3439f7b0e169f0252214865e3
 SIZE (rust/crates/addr2line-0.20.0.crate) = 39558
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -485,5 +485,5 @@ SHA256 (rust/crates/xml5ever-0.17.0.crate) = 4034e1d05af98b51ad7214527730626f019
 SIZE (rust/crates/xml5ever-0.17.0.crate) = 41208
 SHA256 (rust/crates/yansi-0.5.1.crate) = 09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec
 SIZE (rust/crates/yansi-0.5.1.crate) = 16525
-SHA256 (rust-lang-mdBook-v0.4.34_GH0.tar.gz) = 6d0542a1bec4f9841552084643c11f104472646fc82a280a07fba05ae2df4602
-SIZE (rust-lang-mdBook-v0.4.34_GH0.tar.gz) = 1525388
+SHA256 (rust-lang-mdBook-v0.4.35_GH0.tar.gz) = 2fcefce12acc957c1d604e60c309502b9ec37040f6f70656f12c81374ff27bd4
+SIZE (rust-lang-mdBook-v0.4.35_GH0.tar.gz) = 1527612
