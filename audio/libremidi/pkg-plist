@@ -19,6 +19,10 @@ include/libremidi/backends/alsa_seq/midi_in.hpp
 include/libremidi/backends/alsa_seq/midi_out.hpp
 include/libremidi/backends/alsa_seq/observer.hpp
 include/libremidi/backends/alsa_seq/shared_handler.hpp
+include/libremidi/backends/alsa_seq_ump.hpp
+include/libremidi/backends/alsa_seq_ump/config.hpp
+include/libremidi/backends/alsa_seq_ump/helpers.hpp
+include/libremidi/backends/alsa_seq_ump/midi_out.hpp
 include/libremidi/backends/coremidi.hpp
 include/libremidi/backends/coremidi/config.hpp
 include/libremidi/backends/coremidi/helpers.hpp
@@ -50,6 +54,8 @@ include/libremidi/backends/jack/midi_in.hpp
 include/libremidi/backends/jack/midi_out.hpp
 include/libremidi/backends/jack/observer.hpp
 include/libremidi/backends/jack/shared_handler.hpp
+include/libremidi/backends/linux/alsa.hpp
+include/libremidi/backends/linux/dylib_loader.hpp
 include/libremidi/backends/linux/helpers.hpp
 include/libremidi/backends/linux/udev.hpp
 include/libremidi/backends/winmidi.hpp
