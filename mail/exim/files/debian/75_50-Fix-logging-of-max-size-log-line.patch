@@ -5,7 +5,6 @@ Subject: [PATCH] Fix logging of max-size log line
 
 Broken-by: d12746bc15d8
 ---
- doc/ChangeLog        |  5 +++++
  src/log.c                |  7 ++++---
  test/confs/0633              | 21 ++++++++++++++++++++
  test/scripts/0000-Basic/0633 |  9 +++++++++
@@ -17,24 +16,6 @@ Broken-by: d12746bc15d8
  create mode 100644 test/stderr/0633
  create mode 100644 test/stdout/0633
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -28,10 +28,15 @@ JH/13 Bug 2929: Fix using $recipients af
- JH/14 Bug 2933: Fix regex substring match variables for null matches. Since 4.96
-       a capture group which obtained no text (eg. "(abc)*" matching zero
-       occurrences) could cause a segfault if the corresponding $<n> was
-       expanded.
- 
-+JH/18 Fix a fencepost error in logging.  Previously (since 4.92) when a log line
-+      was exactly sized compared to the log buffer, a crash occurred with the
-+      misleading message "bad memory reference; pool not found".
-+      Found and traced by Jasen Betts.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/log.c
 +++ b/src/log.c
 @@ -803,11 +803,11 @@ Returns:    nothing

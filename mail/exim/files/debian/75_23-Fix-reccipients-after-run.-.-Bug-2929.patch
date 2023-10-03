@@ -5,26 +5,9 @@ Subject: [PATCH 2/2] Fix $reccipients after ${run...}.  Bug 2929
 
 Broken-by: cfe6acff2d
 ---
- doc/ChangeLog | 3 +++
  src/transport.c   | 3 ++-
  2 files changed, 5 insertions(+), 1 deletion(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -20,10 +20,13 @@
- 
- JH/12 Bug 2930: Fix daemon startup.  When started from any process apart from
-       pid 1, in the normal "background daemon" mode, having to drop process-
-       group leadership also lost track of needing to create listener sockets.
- 
-+JH/13 Bug 2929: Fix using $recipients after ${run...}.  A change made for 4.96
-+      resulted in the variable appearing empty.  Find and fix by Ruben Jenster.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/transport.c
 +++ b/src/transport.c
 @@ -2342,13 +2342,14 @@

@@ -5,28 +5,10 @@ Subject: [PATCH 3/3] DANE: do not check dns_again_means_nonexist for TLSA
  results of TRY_AGAIN
 
 ---
- doc/doc-docbook/spec.xfpt |  7 ++++++-
- doc/ChangeLog     |  4 ++++
  src/dns.c             | 35 ++++++++++++++++++++++-------------
+ doc/doc-docbook/spec.xfpt |  7 ++++++-
  3 files changed, 32 insertions(+), 14 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -46,10 +46,14 @@ JH/19 Bug 2911: Fix a recursion in DNS l
- JH/20 Bug 2954: (OpenSSL) Fix setting of explicit EC curve/group.  Previously
-       this always failed, probably leading to the usual downgrade to in-clear
-       connections.
- 
- 
-+JH/20 Fix TLSA lookups.  Previously dns_again_means_nonexist would affect
-+      SERVFAIL results, which breaks the downgrade resistance of DANE.  Change
-+      to not checking that list for these looks.
-+
- 
- Exim version 4.96
- -----------------
- 
- JH/01 Move the wait-for-next-tick (needed for unique message IDs) from
 --- a/src/dns.c
 +++ b/src/dns.c
 @@ -904,25 +904,34 @@ if (dnsa->answerlen < 0) switch (h_errno

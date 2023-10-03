@@ -5,28 +5,10 @@ Subject: [PATCH] Fix crash in expansions
 
 Broken-by: 1058096b8c53
 ---
- doc/ChangeLog | 4 ++++
  src/expand.c      | 9 +++++----
  test/stderr/0630      | 1 +
  3 files changed, 10 insertions(+), 4 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -50,10 +50,14 @@ JH/20 Bug 2954: (OpenSSL) Fix setting of
- 
- JH/20 Fix TLSA lookups.  Previously dns_again_means_nonexist would affect
-       SERVFAIL results, which breaks the downgrade resistance of DANE.  Change
-       to not checking that list for these looks.
- 
-+JH/23 Fix crash in string expansions. Previously, if an empty variable was
-+      immediately followed by an expansion operator, a null-indirection read
-+      was done, killing the process.
-+
- 
- Exim version 4.96
- -----------------
- 
- JH/01 Move the wait-for-next-tick (needed for unique message IDs) from
 --- a/src/expand.c
 +++ b/src/expand.c
 @@ -4652,11 +4652,11 @@ while (*s)

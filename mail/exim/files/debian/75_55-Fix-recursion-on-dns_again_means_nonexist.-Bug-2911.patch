@@ -4,7 +4,6 @@ Date: Wed, 28 Dec 2022 19:39:06 +0000
 Subject: [PATCH] Fix recursion on dns_again_means_nonexist. Bug 2911
 
 ---
- doc/ChangeLog        |  8 +++++
  src/dns.c                | 12 ++++++++
  test/confs/2202              | 18 +++++++++--
  test/scripts/2200-dnsdb/2202 |  8 +++++
@@ -12,27 +11,6 @@ Subject: [PATCH] Fix recursion on dns_again_means_nonexist. Bug 2911
  test/stdout/2202             |  8 +++++
  6 files changed, 108 insertions(+), 4 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -33,10 +33,18 @@ JH/14 Bug 2933: Fix regex substring matc
- JH/18 Fix a fencepost error in logging.  Previously (since 4.92) when a log line
-       was exactly sized compared to the log buffer, a crash occurred with the
-       misleading message "bad memory reference; pool not found".
-       Found and traced by Jasen Betts.
- 
-+JH/19 Bug 2911: Fix a recursion in DNS lookups.  Previously, if the main option
-+      dns_again_means_nonexist included an element causing a DNS lookup which
-+      iteslf returned DNS_AGAIN, unbounded recursion occurred.  Possible results
-+      included (though probably not limited to) a process crash from stack
-+      memory limit, or from excessive open files.  Replace this with a paniclog
-+      whine (as this is likely a configuration error), and returning
-+      DNS_NOMATCH.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/dns.c
 +++ b/src/dns.c
 @@ -799,10 +799,11 @@ int

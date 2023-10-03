@@ -4,7 +4,6 @@ Date: Fri, 30 Sep 2022 13:49:41 +0100
 Subject: [PATCH] GnuTLS: fix for clients offering no TLS extensions
 
 ---
- doc/ChangeLog              |  3 +++
  src/tls-gnu.c                  |  3 ++-
  src/tls-openssl.c              | 39 +++++++++++++++---------------
  test/confs/2091                    |  1 +
@@ -17,23 +16,6 @@ Subject: [PATCH] GnuTLS: fix for clients offering no TLS extensions
  create mode 100644 test/scripts/2090-GnuTLS-ALPN/2091
  create mode 100644 test/stdout/2091
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -10,10 +10,14 @@
-       more than one message arrived in a single connection a reference from
-       the earlier message could be re-used.  Often a sigsegv resulted.
-       These variables were introduced in Exim 4.87.
-       Debug help from Graeme Fowler.
- 
-+JH/10 GnuTLS: fix for (IOT?) clients offering no TLS extensions at all.
-+      Find and fix by Jasen Betts.
-+
-+
- 
- Exim version 4.96
- -----------------
- 
- JH/01 Move the wait-for-next-tick (needed for unique message IDs) from
 --- a/src/tls-gnu.c
 +++ b/src/tls-gnu.c
 @@ -1130,12 +1130,13 @@

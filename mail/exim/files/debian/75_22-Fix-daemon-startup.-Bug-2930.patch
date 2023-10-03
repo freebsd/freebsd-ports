@@ -5,27 +5,9 @@ Subject: [PATCH 1/2] Fix daemon startup.  Bug 2930
 
 Broken-by: 7d5055276a
 ---
- doc/ChangeLog | 4 ++++
  src/daemon.c      | 8 ++++++--
  2 files changed, 10 insertions(+), 2 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -16,10 +16,14 @@
-       Find and fix by Jasen Betts.
- 
- HS/01 Bug 2728: Introduce EDITME option "DMARC_API" to work around incompatible
-       API changes in libopendmarc.
- 
-+JH/12 Bug 2930: Fix daemon startup.  When started from any process apart from
-+      pid 1, in the normal "background daemon" mode, having to drop process-
-+      group leadership also lost track of needing to create listener sockets.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/daemon.c
 +++ b/src/daemon.c
 @@ -1744,19 +1744,23 @@

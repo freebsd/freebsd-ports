@@ -4,28 +4,11 @@ Date: Sat, 15 Oct 2022 19:30:58 +0200
 Subject: [PATCH 1/2] Fix: Build with libopendmarc 1.4.x (fixes 2728)
 
 ---
- doc/ChangeLog     | 3 +++
  src/EDITME            | 7 +++++--
  src/config.h.defaults | 1 +
  src/dmarc.c           | 7 ++++++-
  4 files changed, 15 insertions(+), 3 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -13,10 +13,13 @@
-       Debug help from Graeme Fowler.
- 
- JH/10 GnuTLS: fix for (IOT?) clients offering no TLS extensions at all.
-       Find and fix by Jasen Betts.
- 
-+HS/01 Bug 2728: Introduce EDITME option "DMARC_API" to work around incompatible
-+      API changes in libopendmarc.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/EDITME
 +++ b/src/EDITME
 @@ -600,18 +600,21 @@
