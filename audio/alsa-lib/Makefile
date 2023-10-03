@@ -1,21 +1,15 @@
 PORTNAME=	alsa-lib
-PORTVERSION=	1.2.2
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.2.10
 CATEGORIES=	audio
-MASTER_SITES=	GH
+MASTER_SITES=	https://www.alsa-project.org/files/pub/lib/
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	alsa-project
-GH_PROJECT=	${PORTNAME}
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	ALSA compatibility library
 WWW=		https://www.alsa-project.org/
 
 LICENSE=	LGPL21+
 
-USES=		autoreconf cpe libtool:keepla tar:bzip2
+USES=		cpe libtool:keepla tar:bzip2
 CPE_VENDOR=	alsa-project
 CPE_PRODUCT=	alsa
 USE_LDCONFIG=	yes
@@ -32,8 +26,8 @@ CPPFLAGS+=	-I${FILESDIR}
 # to these undefined symbols.
 LDFLAGS+=	-Wl,--undefined-version
 
-OPTIONS_DEFINE=		PYTHON
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_SUB=	yes
 
 PYTHON_USES=			gettext-runtime python
 PYTHON_CONFIGURE_ENABLE=	mixer-pymods python
