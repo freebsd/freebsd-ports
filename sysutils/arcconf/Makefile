@@ -1,10 +1,9 @@
 PORTNAME=	arcconf
-DISTVERSION=	4_01_24763
-PORTREVISION=	1
+DISTVERSION=	4.09.00.${BUILD}
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.adaptec.com/raid/storage_manager/
-DISTNAME=	arcconf_v${DISTVERSION}
+DISTNAME=	arcconf_B${BUILD}
 
 MAINTAINER=	michael@fuckner.net
 COMMENT=	Adaptec SCSI/SAS RAID administration tool
@@ -16,10 +15,12 @@ LICENSE_FILE=	${WRKSRC}/freebsd${DIST_TYPE}/cmdline/License.txt
 LICENSE_PERMS=	no-pkg-sell no-dist-sell no-dist-mirror auto-accept
 
 ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCH_REASON=	precompiled binary
 LIB_DEPENDS=	libstdc++.so.6:lang/gcc${GCC_DEFAULT}
 
 USES=		zip
 USE_GCC=	yes
+BUILD=		25611
 
 SUB_FILES+=	${PERIODICSCRIPT}
 
