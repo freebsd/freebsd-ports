@@ -4,8 +4,8 @@ include/wget.h
 include/wgetver.h
 lib/libwget.a
 lib/libwget.so
-lib/libwget.so.1
-lib/libwget.so.1.0.0
+lib/libwget.so.2
+lib/libwget.so.2.0.0
 libdata/pkgconfig/libwget.pc
 %%MANPAGES%%man/man1/wget2.1.gz
 %%DOXYGEN%%man/man3/libwget-base64.3.gz
