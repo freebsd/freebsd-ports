@@ -1,5 +1,5 @@
 PORTNAME=	winetricks
-PORTVERSION=	20230212
+PORTVERSION=	20230903
 CATEGORIES=	emulators
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -19,6 +19,7 @@ USE_PERL5=	run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Winetricks
+GH_TAGNAME=	29e1006
 
 NO_ARCH=	yes
 NO_BUILD=	yes
