@@ -1,5 +1,5 @@
 PORTNAME=	ansible-core
-DISTVERSION=	2.15.2
+DISTVERSION=	2.15.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,19 +44,6 @@ TEST_ENV=	${MAKE_ENV}
 BINARY_ALIAS=	python=${PYTHON_CMD}
 NO_ARCH=	yes
 
-PLIST_FILES=	share/man/man1/ansible-config.1.gz \
-		share/man/man1/ansible-console.1.gz \
-		share/man/man1/ansible-doc.1.gz \
-		share/man/man1/ansible-galaxy.1.gz \
-		share/man/man1/ansible-inventory.1.gz \
-		share/man/man1/ansible-playbook.1.gz \
-		share/man/man1/ansible-pull.1.gz \
-		share/man/man1/ansible-vault.1.gz \
-		share/man/man1/ansible.1.gz
-PORTEXAMPLES=	ansible.cfg hosts
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 post-patch:
 # Preserve the original paths in
 # test/units/cli/galaxy/test_execute_list_collection.py.
@@ -66,16 +53,6 @@ post-patch:
 			-e 's|/etc/ansible|${ETCDIR}|g' \
 			-e 's|/usr/share/ansible|${DATADIR}|g'
 	${FIND} ${WRKSRC} -type f -name "*.bak" -delete
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/*.1 \
-		${STAGEDIR}${MAN1PREFIX}/share/man/man1
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/ansible.cfg ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/hosts ${STAGEDIR}${EXAMPLESDIR}
 
 post-stage:
 	${FIND} ${STAGEDIR}${PREFIX}/bin -type l -name ansible-\* -lname ansible \
