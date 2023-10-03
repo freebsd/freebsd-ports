@@ -12,8 +12,6 @@ LICENSE_NAME=	VIM License
 LICENSE_FILE=	${WRKSRC}/../../runtime/doc/uganda.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-CONFLICTS_INSTALL=	vim vim-gtk2 vim-gtk3 vim-motif vim-x11
-
 DISTINFO_FILE=	${VIM_PORT}/distinfo
 ALL_TARGET=	${PORTNAME}
 PORTSCOUT=	ignore:1

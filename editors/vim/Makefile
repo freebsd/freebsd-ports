@@ -45,10 +45,6 @@ CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
 ${f}_PKGNAMESUFFIX=	-${f}
 .endfor
 
-.for f in ${FLAVORS:Ntiny}
-${f}_CONFLICTS_INSTALL=	xxd
-.endfor
-
 # GUI flavors
 .if ${FLAVOR:U} == console
 GUI=		no
@@ -95,8 +91,8 @@ USE_XORG=	ice sm x11 xmu xpm xt
 # Options {{{1
 # The bulk of the OPTIONS are for normal (non-tiny) vim
 ### Make sure any new options are excluded below in CONSOLE/TINY
-OPTIONS_DEFAULT=	CTAGS_BASE PYTHON
-OPTIONS_DEFINE=		MAKE_JOBS NLS XTERM_SAVE
+OPTIONS_DEFAULT=	CTAGS_BASE PYTHON XXD
+OPTIONS_DEFINE=		MAKE_JOBS NLS XTERM_SAVE XXD
 OPTIONS_SINGLE=		CTAGS
 OPTIONS_SINGLE_CTAGS=	CTAGS_BASE CTAGS_EXUBERANT CTAGS_UNIVERSAL
 OPTIONS_GROUP=		LANGBIND
@@ -113,6 +109,7 @@ OPTIONS_EXCLUDE:=	${OPTIONS_DEFINE:NMAKE_JOBS} \
 
 MAKE_JOBS_DESC=		Enable parallel build
 XTERM_SAVE_DESC=	Restore xterm screen after exit
+XXD_DESC=		Install xxd hexdumper
 
 CTAGS_BASE_DESC=	Use system ctags
 CTAGS_EXUBERANT_DESC=	Use exctags instead of ctags
@@ -126,6 +123,8 @@ MAKE_JOBS_VARS_OFF=	MAKE_JOBS_UNSAFE=yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+
+XXD_RUN_DEPENDS=	xxd:sysutils/xxd
 
 # LANGUAGE BINDINGS
 LANGBIND_DESC=		Optional language bindings
@@ -189,6 +188,8 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/defaults_freebsd.vim ${STAGEDIR}${DATADIR}/${VIM_VER}
 	${RM} ${STAGEDIR}${PREFIX}/bin/ex
 	${RM} ${STAGEDIR}${PREFIX}/bin/view
+	${RM} ${STAGEDIR}${PREFIX}/bin/xxd
+	${FIND} ${STAGEDIR}${PREFIX} -name xxd.1 -delete
 .  for F in eview evim gview gvim gvimdiff rgview rgvim rview rvim vimdiff
 	${LN} -sf vim ${STAGEDIR}${PREFIX}/bin/$F
 .  endfor
