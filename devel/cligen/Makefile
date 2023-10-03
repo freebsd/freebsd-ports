@@ -1,5 +1,5 @@
 PORTNAME=	cligen
-PORTVERSION=	6.3.0
+PORTVERSION=	6.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	dave@dogwood.com
@@ -9,7 +9,7 @@ WWW=		https://cligen.se/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		bison:alias compiler:c11 gmake
+USES=		autoreconf bison:alias compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clicon
