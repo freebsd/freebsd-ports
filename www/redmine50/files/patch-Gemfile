@@ -1,10 +1,10 @@
---- Gemfile.orig	2023-03-05 21:35:36 UTC
+--- Gemfile.orig	2023-09-30 08:40:03 UTC
 +++ Gemfile
-@@ -3,24 +3,24 @@ source 'https://rubygems.org'
+@@ -3,30 +3,30 @@ gem 'bundler', '>= 1.12.0'
  ruby '>= 2.5.0', '< 3.2.0'
  gem 'bundler', '>= 1.12.0'
  
--gem 'rails', '6.1.7.2'
+-gem 'rails', '6.1.7.6'
 +gem 'rails', '>=6.1.6'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
 -gem 'rouge', '~> 3.28.0'
@@ -17,11 +17,17 @@
 -gem "mail", "~> 2.7.1"
 +gem "mail", ">= 2.7"
  gem 'csv', '~> 3.2.0'
--gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '~> 1.13.10')
-+gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '>= 1.13.9')
+ gem 'nokogiri', (if Gem.ruby_version < Gem::Version.new('2.6.0')
+                    '~> 1.12.5'
+                  elsif Gem.ruby_version < Gem::Version.new('2.7.0')
+-                   '~> 1.13.10'
++                   '>= 1.13.9'
+                  else
+                    '~> 1.15.2'
+                  end)
  gem "rexml", require: false if Gem.ruby_version >= Gem::Version.new('3.0')
 -gem 'i18n', '~> 1.10.0'
--gem 'rbpdf', '~> 1.21.0'
+-gem 'rbpdf', '~> 1.21.3'
 +gem 'i18n', '>= 1.10.0'
 +gem 'rbpdf', '>= 1.21.0'
  gem 'addressable'
@@ -33,7 +39,7 @@
  gem 'net-pop', '~> 0.1.1'
  # Rails 6.1.6.1 does not work with Pysch 3.0.2, which is installed by default with Ruby 2.5. See https://github.com/rails/rails/issues/45590
  gem 'psych', '>= 3.1.0' if Gem.ruby_version < Gem::Version.new('2.6.0')
-@@ -34,85 +34,9 @@ gem 'rqrcode'
+@@ -40,85 +40,9 @@ group :ldap do
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -97,7 +103,7 @@
 -
 -group :test do
 -  gem "rails-dom-testing"
--  gem 'mocha', (Gem.ruby_version < Gem::Version.new('2.7.0') ? ['>= 1.4.0', '< 2.0.0'] : '>= 1.4.0')
+-  gem 'mocha', '>= 2.0.1'
 -  gem 'simplecov', '~> 0.21.2', :require => false
 -  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
 -  # For running system tests
@@ -120,7 +126,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exist?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -121,4 +45,8 @@ end
+@@ -127,4 +51,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
