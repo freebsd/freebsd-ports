@@ -5,7 +5,6 @@ Subject: [PATCH] OpenSSL: fix tls_eccurve setting explicit curve/group.  Bug
  2954
 
 ---
- doc/ChangeLog          |  4 +++
  src/tls-openssl.c          | 39 ++++++++++++++----------
  test/confs/2148                | 54 ++++++++++++++++++++++++++++++++++
  test/confs/2149                | 39 +++++++++++++-----------
@@ -23,23 +22,6 @@ Subject: [PATCH] OpenSSL: fix tls_eccurve setting explicit curve/group.  Bug
  create mode 100644 test/scripts/2100-OpenSSL/2148
  create mode 100644 test/stderr/2148
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -41,10 +41,14 @@ JH/19 Bug 2911: Fix a recursion in DNS l
-       included (though probably not limited to) a process crash from stack
-       memory limit, or from excessive open files.  Replace this with a paniclog
-       whine (as this is likely a configuration error), and returning
-       DNS_NOMATCH.
- 
-+JH/20 Bug 2954: (OpenSSL) Fix setting of explicit EC curve/group.  Previously
-+      this always failed, probably leading to the usual downgrade to in-clear
-+      connections.
-+
- 
- 
- Exim version 4.96
- -----------------
- 
 --- a/src/tls-openssl.c
 +++ b/src/tls-openssl.c
 @@ -657,16 +657,16 @@ if (dh_bitsize <= tls_dh_max_bits)

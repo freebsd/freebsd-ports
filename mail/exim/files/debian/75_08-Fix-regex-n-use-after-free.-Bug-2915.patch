@@ -4,7 +4,6 @@ Date: Wed, 31 Aug 2022 15:37:40 +0100
 Subject: [PATCH] Fix $regex<n> use-after-free.  Bug 2915
 
 ---
- doc/ChangeLog           |  8 +++++++-
  src/exim.c                  |  4 +---
  src/expand.c                |  2 +-
  src/functions.h             |  1 +
@@ -13,31 +12,6 @@ Subject: [PATCH] Fix $regex<n> use-after-free.  Bug 2915
  src/smtp_in.c               |  2 ++
  7 files changed, 55 insertions(+), 17 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -4,15 +4,21 @@
- 
- JH/04 Bug 2903: avoid exit on an attempt to rewrite a malformed address.
-       Make the rewrite never match and keep the logging.  Trust the
-       admin to be using verify=header-syntax (to actually reject the message).
- 
-+JH/08 Bug 2915: Fix use-after-free for $regex<n> variables. Previously when
-+      more than one message arrived in a single connection a reference from
-+      the earlier message could be re-used.  Often a sigsegv resulted.
-+      These variables were introduced in Exim 4.87.
-+      Debug help from Graeme Fowler.
-+
- 
- Exim version 4.96
- -----------------
- 
--JH/01 Move the wait-for-next-tick (needed for unique messmage IDs) from
-+JH/01 Move the wait-for-next-tick (needed for unique message IDs) from
-       after reception to before a subsequent reception.  This should
-       mean slightly faster delivery, and also confirmation of reception
-       to senders.
- 
- JH/02 Move from using the pcre library to pcre2.  The former is no longer
 --- a/src/exim.c
 +++ b/src/exim.c
 @@ -1999,12 +1999,10 @@

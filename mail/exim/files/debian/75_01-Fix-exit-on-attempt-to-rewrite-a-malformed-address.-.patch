@@ -4,7 +4,6 @@ Date: Tue, 12 Jul 2022 22:14:04 +0100
 Subject: [PATCH] Fix exit on attempt to rewrite a malformed address.  Bug 2903
 
 ---
- doc/ChangeLog        |   5 +
  src/rewrite.c            |   9 +-
  test/confs/0471              |   7 +
  test/log/0471                |   5 +
@@ -12,23 +11,6 @@ Subject: [PATCH] Fix exit on attempt to rewrite a malformed address.  Bug 2903
  test/stderr/0471             | 245 ++++++++++++++++++++++++++++++++++-
  6 files changed, 267 insertions(+), 8 deletions(-)
 
---- a/doc/ChangeLog
-+++ b/doc/ChangeLog
-@@ -1,9 +1,14 @@
- This document describes *changes* to previous versions, that might
- affect Exim's operation, with an unchanged configuration file.  For new
- options, and new features, see the NewStuff file next to this ChangeLog.
- 
-+JH/04 Bug 2903: avoid exit on an attempt to rewrite a malformed address.
-+      Make the rewrite never match and keep the logging.  Trust the
-+      admin to be using verify=header-syntax (to actually reject the message).
-+
-+
- Exim version 4.96
- -----------------
- 
- JH/01 Move the wait-for-next-tick (needed for unique messmage IDs) from
-       after reception to before a subsequent reception.  This should
 --- a/src/rewrite.c
 +++ b/src/rewrite.c
 @@ -493,19 +493,18 @@
