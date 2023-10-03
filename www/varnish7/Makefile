@@ -1,6 +1,5 @@
 PORTNAME=	varnish
-DISTVERSION=	7.3.0
-PORTREVISION=	1
+DISTVERSION=	7.4.1
 CATEGORIES=	www
 MASTER_SITES=	https://varnish-cache.org/downloads/
 PKGNAMESUFFIX=	7

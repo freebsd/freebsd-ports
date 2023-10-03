@@ -44,6 +44,7 @@ include/varnish/tbl/req_flags.h
 include/varnish/tbl/sess_attr.h
 include/varnish/tbl/sess_close.h
 include/varnish/tbl/symbol_kind.h
+include/varnish/tbl/vcl_context.h
 include/varnish/tbl/vcc_feature_bits.h
 include/varnish/tbl/vcl_returns.h
 include/varnish/tbl/vcl_states.h
@@ -85,6 +86,7 @@ include/varnish/vsa.h
 include/varnish/vsb.h
 include/varnish/vsha256.h
 include/varnish/vtcp.h
+include/varnish/vte.h
 include/varnish/vtim.h
 include/varnish/vtree.h
 include/varnish/vut_options.h
@@ -92,7 +94,7 @@ include/varnish/vut.h
 include/varnish/waiter/waiter.h
 lib/libvarnishapi.so
 lib/libvarnishapi.so.3
-lib/libvarnishapi.so.3.0.0
+lib/libvarnishapi.so.3.1.0
 lib/varnish/vmods/libvmod_blob.so
 lib/varnish/vmods/libvmod_cookie.so
 lib/varnish/vmods/libvmod_debug.so
@@ -123,6 +125,7 @@ man/man7/varnish-cli.7.gz
 man/man7/varnish-counters.7.gz
 man/man7/vcl-backend.7.gz
 man/man7/vcl-probe.7.gz
+man/man7/vcl-step.7.gz
 man/man7/vcl-var.7.gz
 man/man7/vcl.7.gz
 man/man7/vsl-query.7.gz
@@ -133,6 +136,14 @@ share/aclocal/varnish-legacy.m4
 share/aclocal/varnish.m4
 %%PORTDOCS%%%%DOCSDIR%%/builtin.vcl
 %%PORTDOCS%%%%DOCSDIR%%/example.vcl
+%%DATADIR%%/vcc/vmod_blob.vcc
+%%DATADIR%%/vcc/vmod_cookie.vcc
+%%DATADIR%%/vcc/vmod_directors.vcc
+%%DATADIR%%/vcc/vmod_proxy.vcc
+%%DATADIR%%/vcc/vmod_purge.vcc
+%%DATADIR%%/vcc/vmod_std.vcc
+%%DATADIR%%/vcc/vmod_unix.vcc
+%%DATADIR%%/vcc/vmod_vtc.vcc
 %%DATADIR%%/vcl/devicedetect.vcl
 %%DATADIR%%/vmodtool.py
 %%DATADIR%%/vsctool.py
