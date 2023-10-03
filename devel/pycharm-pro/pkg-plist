@@ -23,7 +23,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-232.9559.58
+%%DATADIR%%/lib/build-marker-PY-232.9921.89
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -397,8 +397,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-31761ecb2e0b-0a4b8ce1ca43.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-31761ecb2e0b-0a4b8ce1ca43.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a427f841dc3c-0a4b8ce1ca43.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a427f841dc3c-0a4b8ce1ca43.txt
 %%DATADIR%%/plugins/python-pyscript/lib/python-pyscript.jar
 %%DATADIR%%/plugins/python-sharedIndexes-downloadable/lib/python-sharedIndexes-downloadable.jar
 %%DATADIR%%/plugins/python-sharedIndexes/lib/python-sharedIndexes.jar
@@ -1257,7 +1257,6 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.c
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.pxd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython.pyx
-%%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_312.c
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_32.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
 %%DATADIR%%/plugins/python/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_310_32.cp310-win32.pyd
@@ -4994,7 +4993,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/typeshed/test_cases/stdlib/typing/check_all.py
 %%DATADIR%%/plugins/python/helpers/typeshed/test_cases/stdlib/typing/check_pattern.py
 %%DATADIR%%/plugins/python/helpers/virtualenv-20.13.0.pyz
-%%DATADIR%%/plugins/python/helpers/virtualenv-20.16.7.pyz
+%%DATADIR%%/plugins/python/helpers/virtualenv-20.24.5.pyz
 %%DATADIR%%/plugins/python/jupyter-web/3rdpartylicenses.txt
 %%DATADIR%%/plugins/python/jupyter-web/87.js
 %%DATADIR%%/plugins/python/jupyter-web/cancel.png
