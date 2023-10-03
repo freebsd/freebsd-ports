@@ -1,0 +1,3 @@
+Simple proxy (SOCKS4(a), SOCKS5(h), HTTP tunnel) server built with
+anyio. It is used for testing python-socks, aiohttp-socks and
+httpx-socks packages.

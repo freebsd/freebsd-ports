@@ -1161,6 +1161,7 @@
     SUBDIR += py-suds
     SUBDIR += py-tacacs_plus
     SUBDIR += py-terminado
+    SUBDIR += py-tiny-proxy
     SUBDIR += py-tofu
     SUBDIR += py-transip
     SUBDIR += py-trio
