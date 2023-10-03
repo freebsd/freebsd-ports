@@ -1,6 +1,7 @@
 include/s2n.h
 include/s2n/unstable/crl.h
 include/s2n/unstable/fingerprint.h
+include/s2n/unstable/ktls.h
 include/s2n/unstable/npn.h
 include/s2n/unstable/renegotiate.h
 lib/libs2n.so
