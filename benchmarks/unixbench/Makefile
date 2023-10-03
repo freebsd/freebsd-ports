@@ -10,7 +10,7 @@ COMMENT=	BYTE magazine's Public Domain benchmark for UNIX
 WWW=		https://github.com/kdlucas/byte-unixbench
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 RUN_DEPENDS=	x11perf:x11/x11perf
 
