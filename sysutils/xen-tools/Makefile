@@ -1,13 +1,23 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
-PORTVERSION=	4.17.0
-PORTREVISION=	1
+DISTVERSION=	4.17.2.20230929
 CATEGORIES=	sysutils emulators
-MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	xen-project
+GL_TAGNAME=	0b56bed864ca9b572473957f0254aefa797216f2
+GL_TUPLE=	qemu-project:qemu:v7.0.0:qemu \
+		qemu-project:dtc:b6910bec:dtc \
+		qemu-project:capstone:f8b1b833:capstone \
+		qemu-project:meson:12f9f04b:meson \
+		qemu-project:libslirp:a88d9ace:libslirp \
+		qemu-project:keycodemapdb:d21009b1:keycodemapdb \
+		qemu-project:berkeley-testfloat-3:5a59dcec:testfloat \
+		qemu-project:berkeley-softfloat-3:b64af41c:softfloat
 
 MAINTAINER=	royger@FreeBSD.org
-COMMENT=	Xen management tools
-WWW=		https://wiki.xen.org/wiki/XL
+COMMENT=	Xen Hypervisor management tools
+WWW=		https://www.xenproject.org/
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
@@ -61,11 +71,6 @@ DOCS_ALL_TARGET=	docs
 INSTALL_TARGET=		install-tools
 DOCS_INSTALL_TARGET=	install-docs
 
-# clang build fixes
-EXTRA_PATCHES+=	${PATCHDIR}/0001-xen-x86-Remove-the-use-of-K-R-functions.patch:-p1 \
-		${PATCHDIR}/0001-tools-Remove-the-use-of-K-R-functions.patch:-p1 \
-		${PATCHDIR}/0001-tools-convert-bitfields-to-unsigned-type.patch:-p1
-
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} != FreeBSD
@@ -75,6 +80,23 @@ IGNORE=		only supported on FreeBSD
 .if ${PORT_OPTIONS:MSPICE} && ${OSVERSION} < 1300008
 BROKEN=	SPICE support requires FreeBSD version 13.0 or higher
 .endif
+
+post-extract:
+	${MV} ${WRKSRC_qemu} ${WRKSRC}/tools/qemu-xen
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/dtc
+	${MV} ${WRKSRC_dtc} ${WRKSRC}/tools/qemu-xen/dtc
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/capstone
+	${MV} ${WRKSRC_capstone} ${WRKSRC}/tools/qemu-xen/capstone
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/meson
+	${MV} ${WRKSRC_meson} ${WRKSRC}/tools/qemu-xen/meson
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/slirp
+	${MV} ${WRKSRC_libslirp} ${WRKSRC}/tools/qemu-xen/slirp
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
+	${MV} ${WRKSRC_keycodemapdb} ${WRKSRC}/tools/qemu-xen/ui/keycodemapdb
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-testfloat-3
+	${MV} ${WRKSRC_testfloat} ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-testfloat-3
+	${RM} -rf ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-softfloat-3
+	${MV} ${WRKSRC_softfloat} ${WRKSRC}/tools/qemu-xen/tests/fp/berkeley-softfloat-3
 
 post-patch:
 	@for p in `ls ${FILESDIR}/*qemuu*.patch 2>/dev/null`; do \

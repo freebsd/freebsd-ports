@@ -207,7 +207,7 @@ lib/libxlutil.so.4.17.0
 %%PYTHON_SITELIBDIR%%/grub/LiloConf.pyc
 %%PYTHON_SITELIBDIR%%/grub/__init__.py
 %%PYTHON_SITELIBDIR%%/grub/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pygrub-0.6-py%%PYTHON_VER%%.egg-info
+%%PYTHON_SITELIBDIR%%/pygrub-0.7-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/xen-3.0-py%%PYTHON_VER%%.egg-info
 %%PYTHON_SITELIBDIR%%/xen/__init__.py
 %%PYTHON_SITELIBDIR%%/xen/__init__.pyc

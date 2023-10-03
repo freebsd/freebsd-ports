@@ -1,9 +1,11 @@
 PORTNAME=	xen
-PORTVERSION=	4.17.0
-PORTREVISION=	1
-CATEGORIES=	emulators
-MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 PKGNAMESUFFIX=	-kernel
+DISTVERSION=	4.17.2.20230929
+CATEGORIES=	emulators
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	xen-project
+GL_TAGNAME=	0b56bed864ca9b572473957f0254aefa797216f2
 
 MAINTAINER=	royger@FreeBSD.org
 COMMENT=	Hypervisor using a microkernel design
@@ -26,14 +28,7 @@ PLIST_FILES=	/boot/xen \
 		lib/debug/boot/xen.debug \
 		lib/debug/boot/xen-debug.debug
 
-# XSAs
-EXTRA_PATCHES+=	${PATCHDIR}/xsa425.patch:-p1 \
-		${PATCHDIR}/xsa426.patch:-p1 \
-		${PATCHDIR}/0001-xen-Work-around-Clang-IAS-macro-expansion-bug.patch:-p1
-# Backports
-# clang build fixes
-EXTRA_PATCHES+=	${PATCHDIR}/0001-xen-x86-Remove-the-use-of-K-R-functions.patch:-p1
-# Support for fetching video mode from PVH dom0
+# Support for fetching video mode for PVH dom0
 EXTRA_PATCHES+=	${PATCHDIR}/0001-x86-platform-introduce-hypercall-to-get-initial-vide.patch:-p1 \
 		${PATCHDIR}/0001-x86-platform-make-XENPF_get_dom0_console-actually-us.patch:-p1
 
