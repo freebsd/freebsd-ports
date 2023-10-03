@@ -1,5 +1,5 @@
 PORTNAME=	clixon
-PORTVERSION=	6.2.0
+PORTVERSION=	6.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	dave@dogwood.com
@@ -9,13 +9,12 @@ WWW=		https://www.clicon.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-#LIB_DEPENDS=	libfcgi.so:www/fcgi
 BUILD_DEPENDS=	cligen>=${PORTVERSION}:devel/cligen \
 		nghttp2>=0:www/nghttp2
 RUN_DEPENDS=	cligen>=${PORTVERSION}:devel/cligen \
 		nghttp2>=0:www/nghttp2
 
-USES=		bison compiler:c11 gmake
+USES=		autoreconf bison compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clicon

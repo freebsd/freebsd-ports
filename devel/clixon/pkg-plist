@@ -77,9 +77,9 @@ lib/libclixon_cli.so.%%LIBVERSION%%
 %%NO_OFF%%lib/libclixon_restconf.so.%%LIBVERSION%%
 sbin/clixon_backend
 %%NO_OFF%%sbin/clixon_restconf
-%%DATADIR%%/clixon-autocli@2022-02-11.yang
-%%DATADIR%%/clixon-config@2023-03-01.yang
-%%DATADIR%%/clixon-lib@2023-03-01.yang
+%%DATADIR%%/clixon-autocli@2023-09-01.yang
+%%DATADIR%%/clixon-config@2023-05-01.yang
+%%DATADIR%%/clixon-lib@2023-05-01.yang
 %%DATADIR%%/clixon-restconf@2022-08-01.yang
 %%DATADIR%%/clixon-rfc5277@2008-07-01.yang
 %%DATADIR%%/clixon-xml-changelog@2019-03-21.yang
