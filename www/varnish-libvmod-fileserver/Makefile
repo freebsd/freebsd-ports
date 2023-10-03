@@ -1,6 +1,6 @@
 PORTNAME=	libvmod-fileserver
 PORTVERSION=	0.0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 PKGNAMEPREFIX=	varnish-
 
@@ -75,8 +75,8 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 		time-0.1.45 \
 		unicode-ident-1.0.8 \
 		unicode-width-0.1.10 \
-		varnish-0.0.16 \
-		varnish-sys-0.0.16 \
+		varnish-0.0.17 \
+		varnish-sys-0.0.17 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
 		wasm-bindgen-backend-0.2.84 \
@@ -92,7 +92,7 @@ CARGO_CRATES=	android_system_properties-0.1.5 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	gquintard
 GH_PROJECT=	vmod_fileserver
-GH_TAGNAME=	d4c1019
+GH_TAGNAME=	20ef23b
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
