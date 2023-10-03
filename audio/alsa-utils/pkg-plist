@@ -14,8 +14,9 @@ bin/aseqdump
 bin/aseqnet
 bin/axfer
 bin/iecset
+bin/nhlt-dmic-info
 bin/speaker-test
-lib/udev/89-alsa-ucm.rules
+lib/alsa-topology/libalsatplg_module_nhlt.so
 lib/udev/90-alsa-restore.rules
 %%MANPAGES%%man/fr/man8/alsaconf.8.gz
 %%MANPAGES%%man/man1/aconnect.1.gz
@@ -38,6 +39,7 @@ lib/udev/90-alsa-restore.rules
 %%MANPAGES%%man/man1/axfer-transfer.1.gz
 %%MANPAGES%%man/man1/axfer.1.gz
 %%MANPAGES%%man/man1/iecset.1.gz
+%%MANPAGES%%man/man1/nhlt-dmic-info.1.gz
 %%MANPAGES%%man/man1/speaker-test.1.gz
 %%MANPAGES%%man/man7/alsactl_init.7.gz
 %%MANPAGES%%man/man8/alsaconf.8.gz
@@ -52,12 +54,16 @@ share/alsa/init/hda
 share/alsa/init/help
 share/alsa/init/info
 share/alsa/init/test
-share/alsa/speaker-test/sample_map.csv
 %%NLS%%share/locale/de/LC_MESSAGES/alsa-utils.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/alsaconf.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/alsa-utils.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/alsaconf.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/alsa-utils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/alsaconf.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/alsa-utils.mo
 share/sounds/alsa/Front_Center.wav
 share/sounds/alsa/Front_Left.wav
 share/sounds/alsa/Front_Right.wav

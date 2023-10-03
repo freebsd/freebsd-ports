@@ -1,3 +1,3 @@
-TIMESTAMP = 1634081670
-SHA256 (alsa-project-alsa-utils-v1.2.2_GH0.tar.gz) = 9da1ce4f12a4dd56d55cd5a8f6ae7d56ac91397c3d37fdfcd737adeeb34fce1c
-SIZE (alsa-project-alsa-utils-v1.2.2_GH0.tar.gz) = 1252639
+TIMESTAMP = 1695515854
+SHA256 (alsa-utils-1.2.10.tar.bz2) = 104b62ec7f02a7ce16ca779f4815616df1cc21933503783a9107b5944f83063a
+SIZE (alsa-utils-1.2.10.tar.bz2) = 1625707
