@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}configargparse>=0.9.3:devel/py-configargparse@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}configargparse>=1.5.3:devel/py-configargparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.6:devel/py-configobj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=1.0.1:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}josepy>=1.13.0:security/py-josepy@${PY_FLAVOR} \
@@ -41,6 +41,16 @@ MANPAGES_BUILD_DEPENDS=	${RUN_DEPENDS} \
 MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
 			share/man/man7/certbot.7.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.1:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py ${WRKSRC}/certbot/_internal/tests/cli_test.py
 
@@ -57,4 +67,4 @@ post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include "${.CURDIR}/../py-acme/version.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

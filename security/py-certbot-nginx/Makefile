@@ -21,8 +21,14 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.1:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot_nginx/_internal/constants.py
 
 .include "${.CURDIR}/../py-acme/version.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

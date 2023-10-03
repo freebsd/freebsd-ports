@@ -13,9 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certbot>=${ACME_VERSION},1:security/py-certbot@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.5.5:www/py-google-api-python-client@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}httplib2>=0:www/py-httplib2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}oauth2client>=4.0:security/py-oauth2client@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.6.5:www/py-google-api-python-client@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}google-auth>=2.16.0:security/py-google-auth@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
