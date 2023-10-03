@@ -1,6 +1,6 @@
 PORTNAME=	colmap
 DISTVERSION=	3.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -28,6 +28,7 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 
 USES=		cmake compiler:${OPENMP}c++11-lib desktop-file-utils eigen:3 gl \
 		localbase python:env qt:5 sqlite
+USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 USE_GL=		gl glew
 USE_QT=		core gui widgets buildtools:build opengl:build qmake:build
