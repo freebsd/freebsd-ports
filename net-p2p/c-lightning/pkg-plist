@@ -24,7 +24,6 @@ libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-auth.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-list-methods.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-rpc-method.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger.png
-libexec/c-lightning/plugins/clnrest/README.md
 libexec/c-lightning/plugins/clnrest/__init__.py
 libexec/c-lightning/plugins/clnrest/clnrest.py
 libexec/c-lightning/plugins/clnrest/requirements.txt

@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	23.08
+PORTVERSION=	23.08.1
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -35,8 +35,7 @@ ALL_TARGET=	default
 SHEBANG_FILES=	plugins/clnrest/clnrest.py \
 		tools/reckless
 
-EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-ccan_ccan_base64_base64.c \
-			${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
+EXTRA_PATCHES_aarch64=	${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
 EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
 
 OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER
