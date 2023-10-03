@@ -1,6 +1,5 @@
 PORTNAME=	foreign-cdm
-PORTVERSION=	1
-PORTREVISION=	1
+PORTVERSION=	2
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm \
 		https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/:widevine
@@ -22,7 +21,7 @@ RUN_DEPENDS=	linux_base-c7>0:emulators/linux_base-c7
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	foreign-cdm
-GH_TAGNAME=	32ed6209a25a60b3eef84e43cffb47a5da036290
+GH_TAGNAME=	760e440839f4456373460dcb61cfa8e36618d310
 GH_TUPLE=	capnproto:capnproto:928c8390d4d562bd32dc79a42eb64e9bdba572d8:capnproto/third_party/capnproto
 
 MAKE_ENV=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++ \
