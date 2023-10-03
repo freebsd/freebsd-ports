@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.0.3
-PORTREVISION=	1
+DISTVERSION=	7.0.4
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +18,11 @@ GH_ACCOUNT=	yamafaktory
 CARGO_CRATES=	addr2line-0.20.0 \
 		adler-1.0.2 \
 		anes-0.1.6 \
-		anstream-0.3.2 \
+		anstream-0.6.4 \
 		anstyle-1.0.1 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
+		anstyle-wincon-3.0.1 \
 		anyhow-1.0.75 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
@@ -36,15 +35,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.3.24 \
-		clap_builder-4.3.24 \
-		clap_derive-4.3.12 \
+		clap-4.4.6 \
+		clap_builder-4.4.6 \
+		clap_derive-4.4.2 \
 		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
 		colored_json-3.2.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.16 \
@@ -82,8 +80,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		proc-macro2-1.0.63 \
 		psm-0.1.21 \
 		quote-1.0.29 \
-		rayon-1.7.0 \
-		rayon-core-1.11.0 \
+		rayon-1.8.0 \
+		rayon-core-1.12.0 \
 		regex-1.8.4 \
 		regex-syntax-0.7.2 \
 		rustc-demangle-0.1.23 \
@@ -91,15 +89,15 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.186 \
-		serde_derive-1.0.186 \
-		serde_json-1.0.105 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
+		serde_json-1.0.107 \
 		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
 		syn-2.0.29 \
-		thiserror-1.0.47 \
-		thiserror-impl-1.0.47 \
+		thiserror-1.0.49 \
+		thiserror-impl-1.0.49 \
 		tinytemplate-1.2.1 \
 		tokio-1.32.0 \
 		tokio-macros-2.1.0 \
