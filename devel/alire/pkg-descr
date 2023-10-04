@@ -1,0 +1,15 @@
+ALIRE: Ada LIbrary REpository.
+
+A catalog of ready-to-use Ada libraries plus a command-line tool (alr) to
+obtain, build, and use with your own projects.
+
+alr is designed to configure, and deploy custom isolated userspace
+environments, known as a project or workspace. Environments will contain
+all the state, and dependencies it requires for operation.
+
+Properties and dependencies of projects are managed through a TOML file
+(alire.toml, found at the root of Alire workspaces). This file exists locally
+for working copies of projects, and the Alire community index stores the files
+corresponding to its projects.
+
+You can check the environment alr is using with 'alr printenv'
