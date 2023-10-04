@@ -1,6 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.258
-PORTREVISION=	1
+DISTVERSION=	0.259
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -46,7 +45,7 @@ USE_XORG=	x11 xext xi xinerama xrender
 
 MAKEFILE=	makefile
 MAKE_ARGS=	TARGETOS=freebsd \
-		VERBOSE="1"
+		VERBOSE=1
 MAKE_ENV=	LDOPTS="${LDFLAGS}" \
 		NO_USE_PORTAUDIO=1 \
 		NO_USE_PULSEAUDIO=1 \
@@ -130,50 +129,51 @@ MAKE_ARGS+=	PTR64=1
 .endif
 
 post-extract:
-	@${MV} ${WRKSRC}/src/lib/util/png.h \
+	${MV} ${WRKSRC}/src/lib/util/png.h \
 		${WRKSRC}/src/lib/util/localpng.h
 
 post-patch:
 # Prefer some system headers over bundled.
-	@${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/dirent.h
-	@${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/signal.h
+	${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/dirent.h
+	${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/signal.h
 # Accommodate GENie conception of BSD.
-	@${MV} ${_GENIE}/build/gmake.freebsd \
+	${MV} ${_GENIE}/build/gmake.freebsd \
 		${_GENIE}/build/gmake.bsd
 # Patch build to use bundled PNG.
-	@${GREP} -rl '"png.h"' ${WRKSRC}/src | \
+	${GREP} -rl '"png.h"' ${WRKSRC}/src | \
 		${XARGS} ${REINPLACE_CMD} -e 's|"png.h"|"localpng.h"|'
-	@${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
+	${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 
 do-build-DOCS-on:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} html SPHINXBUILD=sphinx-build-${PYTHON_VER})
-	@${RM} ${WRKSRC}/docs/build/html/.buildinfo
+	${RM} ${WRKSRC}/docs/build/html/.buildinfo
 
 post-build:
 	(cd ${WRKSRC}/docs && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} man SPHINXBUILD=sphinx-build-${PYTHON_VER})
-
-	@${FIND} ${WRKSRC}/language -type f -name "*.po" -delete
+	${FIND} ${WRKSRC}/language -type f -name "*.po" -delete
 
 do-install:
 .for DATA in artwork bgfx ctrlr ini hash plugins samples
 	(cd ${WRKSRC} && \
 		${COPYTREE_SHARE} ${DATA} ${STAGEDIR}${DATADIR})
 .endfor
-
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/build/man/MAME.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/mame.6 \
-		${STAGEDIR}${MANPREFIX}/man/man6
-
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for INI in mame plugin ui
 	${INSTALL_DATA} ${WRKDIR}/${INI}.ini \
 		${STAGEDIR}${ETCDIR}/${INI}.ini.sample
 .endfor
+	${MKDIR} ${STAGEDIR}${DATADIR}/keymaps
+.for KEYMAP in be br ch de es fr gb it pt se
+	${INSTALL_DATA} ${WRKSRC}/keymaps/km_${KEYMAP}_LINUX.map \
+		${STAGEDIR}${DATADIR}/keymaps/km_${KEYMAP}.map
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/docs/build/man/MAME.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/mame.6 \
+		${STAGEDIR}${PREFIX}/share/man/man6
 
 do-install-DEBUG-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/mamed \
@@ -198,11 +198,10 @@ do-install-TOOLS-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} \
 		${STAGEDIR}${PREFIX}/bin
 .endfor
-
 .for MANUAL in castool chdman floptool imgtool jedutil ldplayer ldresample \
 	ldverify romcmp
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${MANUAL}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
+		${STAGEDIR}${PREFIX}/share/man/man1
 .endfor
 
 .include <bsd.port.mk>
