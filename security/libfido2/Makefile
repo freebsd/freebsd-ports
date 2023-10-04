@@ -28,4 +28,8 @@ OPTIONS_DEFINE=	DOCS
 EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-openssl
 .endif
 
+.if ${SSL_DEFAULT} == openssl30
+CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
+.endif
+
 .include <bsd.port.post.mk>
