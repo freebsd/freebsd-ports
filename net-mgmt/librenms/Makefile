@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	23.9.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -31,7 +32,8 @@ USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
 		sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 
-SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
+SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
+		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
 		../librenms-vendor-${PORTVERSION}/bin/carbon \
 		../librenms-vendor-${PORTVERSION}/bin/doctrine-dbal \
 		../librenms-vendor-${PORTVERSION}/bin/patch-type-declarations \
@@ -50,15 +52,19 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf
 		../librenms-vendor-${PORTVERSION}/symfony/var-dumper/Resources/bin/var-dump-server \
 		../librenms-vendor-${PORTVERSION}/symfony/yaml/Resources/bin/yaml-lint \
 		addhost.php alerts.php artisan billing-calculate.php \
-		check-services.php config_to_json.php daily.php delhost.php \
-		discovery.php dist-pollers.php irc.php LibreNMS/wrapper.py lnms \
-		ping.php poll-billing.php poller-wrapper.py poller.php \
-		renamehost.php scripts/auth_test.php \
+		check-services.php config_to_json.php cronic daily.php daily.sh \
+		delhost.php discovery-wrapper.py discovery.php dist-pollers.php \
+		irc.php librenms-service.py LibreNMS/command_runner.py \
+		LibreNMS/wrapper.py lnms misc/lnms-completion.bash \
+		misc/smokeping-debian.example misc/smokeping-rhel.example \
+		pbin.sh ping.php poll-billing.php poller-wrapper.py poller.php \
+		renamehost.php scripts/auth_test.php scripts/bash_lint.sh \
 		scripts/check_requirements.py scripts/collect-port-polling.php \
 		scripts/collect-snmp-data.php scripts/composer_wrapper.php \
 		scripts/dynamic_check_requirements.py scripts/gen_rancid.php \
-		scripts/gen_smokeping.php scripts/github-remove scripts/ifAlias \
-		scripts/json-app-tool.php scripts/manage_bills.php \
+		scripts/gen_smokeping.php scripts/git-pre-commit-hook.sh \
+		scripts/github-remove scripts/ifAlias scripts/json-app-tool.php \
+		scripts/manage_bills.php \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
@@ -71,7 +77,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf
 		scripts/save-test-data.php scripts/syslog-notify-oxidized.php \
 		scripts/test-alert.php scripts/test-template.php \
 		scripts/tune_port.php scripts/watchmaillog/watchmaillog.pl \
-		snmptrap.php syslog.php validate.php
+		snmp-scan.py snmptrap.php syslog.php validate.php
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -241,8 +247,8 @@ post-install:
 	${ECHO_CMD} "@dir etc/cron.d" >> ${TMPPLIST}
 	${ECHO_CMD} "etc/cron.d/librenms" >> ${TMPPLIST}
 
-	# avoid the "Global lnms shortcut not installed." validataion warning.
-	# this can also be run as root.
+# avoid the "Global lnms shortcut not installed." validataion warning.
+# this can also be run as root.
 	${RLN} ${STAGEDIR}${WWWDIR}/lnms ${STAGEDIR}${PREFIX}/bin/lnms
 	${ECHO_CMD} "bin/lnms" >> ${TMPPLIST}
 
