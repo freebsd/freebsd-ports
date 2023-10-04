@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231004:
+  AFFECTS: www/gitlab-ce
+  AUTHOR:  mfechner@FreeBSD.org
+
+  Before you upgrade to version 16.4.x or higher, make sure you did the
+  upgrade to 16.3.x!
+
+  The database migration for 16.4.1 can fail due to unexpected name of a foreign key.
+  So it is recommended to have a database backup available in case the solution
+  described in the update manual does not work for you.
+
+  The upgrade manual can be found as usual here:
+  https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.3-16.4-freebsd.md
+  
+  
 20230930:
   AFFECTS: users of Transmission (net-p2p/transmission@*)
   AUTHOR:  mondo.debater_0q@icloud.com
