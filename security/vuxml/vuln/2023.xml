@@ -1,3 +1,36 @@
+  <vuln vid="4e45c45b-629e-11ee-8290-a8a1599412c6">
+    <topic>chromium -- type confusion in v8</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>117.0.5938.149</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>117.0.5938.149</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1485829] High CVE-2023-5346: Type Confusion in V8. Reported by Amit Kumar on 2023-09-22</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5346</cvename>
+      <url>https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-10-03</discovery>
+      <entry>2023-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="162a675b-6251-11ee-8e38-002590c1f29c">
     <topic>FreeBSD -- arm64 boot CPUs may lack speculative execution protections</topic>
     <affects>
