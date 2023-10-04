@@ -1,3 +1,94 @@
+  <vuln vid="162a675b-6251-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- arm64 boot CPUs may lack speculative execution protections</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>On CPU 0 the check for the SMCCC workaround is called before
+	SMCCC support has been initialized.</p>
+	<h1>Impact:</h1>
+	<p>No speculative execution workarounds are installed on CPU 0.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5370</cvename>
+      <freebsdsa>SA-23:14.smccc</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-10-03</discovery>
+      <entry>2023-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e261e71c-6250-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- copy_file_range insufficient capability rights check</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>The syscall checked only for the CAP_READ and CAP_WRITE
+	capabilities on the input and output file descriptors, respectively.
+	Using an offset is logically equivalent to seeking, and the syscall
+	must additionally require the CAP_SEEK capability.</p>
+	<h1>Impact:</h1>
+	<p>A sandboxed process with only read or write but no seek capability
+	on a file descriptor may be able to read data from or write data
+	to an arbitrary location within the file corresponding to that file
+	descriptor.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5369</cvename>
+      <freebsdsa>SA-23:13.capsicum</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-10-03</discovery>
+      <entry>2023-10-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fefcd340-624f-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- msdosfs data disclosure</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>13.2</ge><lt>13.2_4</lt></range>
+	<range><ge>12.4</ge><lt>12.4_6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In certain cases using the truncate or ftruncate system call
+	to extend a file size populates the additional space in the file
+	with unallocated data from the underlying disk device, rather than
+	zero bytes.</p>
+	<h1>Impact:</h1>
+	<p>A user with write access to files on a msdosfs file system may
+	be able to read unintended data (for example, from a previously
+	deleted file).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5368</cvename>
+      <freebsdsa>SA-23:12.msdosfs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-10-03</discovery>
+      <entry>2023-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e59fed96-60da-11ee-9102-000c29de725b">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
