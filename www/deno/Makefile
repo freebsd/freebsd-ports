@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BROKEN_i386=	cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_cpu_speed'
 
 BUILD_DEPENDS=	gn:devel/gn \
-		libunwind>0:devel/libunwind
+		libunwind>0:devel/libunwind \
+		protoc:devel/protobuf
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo compiler:c++20-lang cpe gmake gnome ninja:build pkgconfig:build python:3.9+,build
