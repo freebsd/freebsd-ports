@@ -1,6 +1,6 @@
 PORTNAME=	newsboat
 DISTVERSION=	2.30.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -27,6 +27,7 @@ SHEBANG_FILES=	contrib/bookmark-evernote.sh contrib/exportOPMLWithTags.py \
 		contrib/slashdot.rb doc/examples/example-exec-script.py \
 		contrib/newsboat_reorganize.py
 
+MAKE_ENV=		${CARGO_ENV}
 CARGO_BUILD=		no
 CARGO_INSTALL=		no
 CARGO_TARGET_DIR=	${WRKSRC}/target
