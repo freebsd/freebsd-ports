@@ -19,6 +19,7 @@ share/applications/geeqie.desktop
 %%DATADIR%%/applications/symlink.desktop
 %%DATADIR%%/applications/tethered-photography.desktop
 %%DATADIR%%/template.desktop
+share/icons/hicolor/scalable/apps/geeqie.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/geeqie.mo
 %%NLS%%share/locale/be/LC_MESSAGES/geeqie.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/geeqie.mo

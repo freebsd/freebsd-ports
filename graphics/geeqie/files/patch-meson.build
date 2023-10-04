@@ -1,59 +1,20 @@
---- meson.build.orig	2022-08-08 14:22:00 UTC
+--- meson.build.orig	2023-06-24 16:32:21 UTC
 +++ meson.build
-@@ -357,7 +357,7 @@ lua_dep = []
+@@ -416,7 +416,7 @@ lua_dep = []
  req_version = '>=5.3'
  option = get_option('lua')
  if not option.disabled()
--    lua_dep = dependency('lua5.3',  version : req_version, required : get_option('lua'))
-+    lua_dep = dependency('lua-5.3',  version : req_version, required : get_option('lua'))
-     if lua_dep.found()
-         conf_data.set('HAVE_LUA', 1)
-         summary({'lua' : ['lua supported:', true]}, section : 'Configuration', bool_yn : true)
-@@ -401,7 +401,7 @@ endif
- tiff_dep = []
- option = get_option('tiff')
- if not option.disabled()
--    tiff_dep = cc.find_library('libtiff', required: get_option('tiff'))
-+    tiff_dep = dependency('libtiff-4', required: get_option('tiff'))
-     if tiff_dep.found()
-         if cc.has_function('TIFFClientOpen', dependencies : tiff_dep)
-             conf_data.set('HAVE_TIFF', 1)
-@@ -446,6 +446,11 @@ else
-     summary({'nl_langinfo' : ['nl_langinfo not found - first weekday depends on locale:', false, 'first weekday defaults to Monday']}, section : 'Documentation', bool_yn : true)
- endif
- 
-+result = cc.has_function('strverscmp', prefix : '#include <string.h>')
-+if result
-+    conf_data.set('HAVE_STRVERSCMP', 1)
-+endif
-+
- conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
- conf_data.set_quoted('GQ_APPDIR', gq_appdir)
- conf_data.set_quoted('GQ_BINDIR', gq_bindir)
-@@ -486,7 +491,7 @@ else
- endif
- 
- pandoc = find_program('pandoc', required : false)
--if pandoc.found()
-+if false
-     run_command(find_program('gen_readme.sh'), meson.source_root(), meson.build_root(), check : false)
- 
-     install_data('README.md', 'COPYING', 'TODO', 'AUTHORS',
-@@ -494,16 +499,9 @@ if pandoc.found()
-                  install_dir : helpdir)
-     summary({'README' : ['README.html created:', true]}, section : 'Documentation', bool_yn : true)
+-    foreach name : ['lua', 'lua5.3', 'lua-5.3', 'lua53']
++    foreach name : ['lua-5.3']
+         lua_dep = dependency(name, version: req_version, required: get_option('lua'))
+         if lua_dep.found()
+             break
+@@ -452,7 +452,7 @@ if not option.disabled()
  else
--    install_data('README.md', 'COPYING', 'TODO', 'AUTHORS',
-+    install_data('README.md', 'TODO', 'AUTHORS',
-                  install_dir : helpdir)
-     summary({'README' : ['pandoc not found - README.html created:', false]}, section : 'Documentation', bool_yn : true)
--endif
--
--evince = find_program('evince', required : false)
--if evince.found()
--    summary({'print preview' : ['print preview supported:', true]}, section : 'Documentation', bool_yn : true)
--else
--    summary({'print preview' : ['evince not found - print preview supported:', false]}, section : 'Documentation', bool_yn : true)
+     summary({'pandoc' : ['disabled - README.html created:', false]}, section : 'Documentation', bool_yn : true)
  endif
+-install_data('README.md', 'COPYING', 'TODO', install_dir : helpdir)
++install_data('README.md', 'TODO', install_dir : helpdir)
  
- install_data('geeqie.png', install_dir : icondir)
+ poppler_glib_dep = []
+ req_version = '>=0.62'
