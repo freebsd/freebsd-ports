@@ -1,5 +1,5 @@
 PORTNAME=	llvm
-DISTVERSION=	17.0.1
+DISTVERSION=	17.0.2
 PORTREVISION=	0
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
@@ -384,7 +384,7 @@ NATIVE_BACKENDS+=	WebAssembly
 STANDARD_BACKENDS=	${_FREEBSD_BACKENDS} AMDGPU AVR BPF Hexagon Lanai \
 			LoongArch MSP430 NVPTX SystemZ VE WebAssembly XCore
 _BE_LIBS_COMMON=	CodeGen Desc Info
-_BE_INCS_AArch64=	arm_bf16.h arm_sme_draft_spec_subject_to_change.h arm_sve.h
+_BE_INCS_AArch64=	arm_bf16.h arm_sme_draft_spec_subject_to_change.h
 _BE_LIBS_AArch64=	AsmParser Disassembler Utils
 _BE_LIBS_BACKWARDS_AArch64=Exegesis
 _BE_LIBS_AMDGPU=	AsmParser Disassembler TargetMCA Utils
