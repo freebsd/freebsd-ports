@@ -1,5 +1,5 @@
 PORTNAME=	sngrep
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/irontec/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		autoreconf localbase ncurses pkgconfig
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-zlib
 
 OPTIONS_DEFINE=		EEP IPV6 PCRE UNICODE
 OPTIONS_DEFAULT=	EEP IPV6 UNICODE OPENSSL
