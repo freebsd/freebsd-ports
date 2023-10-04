@@ -7929,3 +7929,4 @@ databases/percona57-client||2023-10-01|Has expired: Upstream EOL reaches on 2023
 sysutils/nfs-over-tls||2023-10-01|Has expired: All supported releases of FreeBSD include this in base
 x11/antimicro|x11/antimicrox|2023-10-01|Has expired: Replaced by x11/antimicrox upstream no longer maintained
 security/krb5-appl||2023-10-01|Has expired: Desupported by upstream, uses old ciphers
+sysutils/mstflint-lite|sysutils/mstflint|2023-10-05|Parent port is now lite by default

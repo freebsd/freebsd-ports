@@ -23,6 +23,7 @@ include/mstflint/mtcr.h
 include/mstflint/mtcr_com_defs.h
 include/mstflint/tools_layouts/adb_to_c_utils.h
 include/mstflint/tools_layouts/icmd_layouts.h
+include/mstflint/tools_layouts/icmd_hca_layouts.h
 %%ADAB%%lib/libadb_parser.a
 lib/libcmdif.a
 lib/libdev_mgt.a
@@ -32,6 +33,10 @@ lib/libdev_mgt.a
 %%ADAB%%lib/libprint_util_lib.a
 lib/libreg_access.a
 lib/libtools_layouts.a
+lib/libadb_utils.a
+lib/libmlxarchive_layouts.a
+lib/libmlxconfig_4th_gen_layouts.a
+lib/libmlxconfig_4th_gen_regsiters.a
 lib/mstflint/libmtcr_ul.a
 lib/mstflint/python_tools/c_dev_mgt.so
 lib/mstflint/python_tools/ccmdif.so
@@ -92,10 +97,15 @@ lib/mstflint/python_tools/mstresourcedump/utils/constants.py
 lib/mstflint/python_tools/mstresourcedump/validation/ArgToMenuVerifier.py
 lib/mstflint/python_tools/mstresourcedump/validation/CapabilityValidator.py
 lib/mstflint/python_tools/mstresourcedump/validation/__init__.py
+lib/mstflint/python_tools/regaccess_structs.py
+lib/mstflint/python_tools/mstresourceparse/ResourceParseManager.py
+lib/mstflint/python_tools/mstresourceparse/parsers/AdbResourceParser.py
+lib/mstflint/python_tools/mstresourceparse/parsers/AddressValueParser.py
+lib/mstflint/python_tools/mstresourceparse/parsers/ResourceParser.py
+lib/mstflint/python_tools/mstresourceparse/utils/common_functions.py
 lib/mstflint/python_tools/mstresourceparse/__init__.py
 lib/mstflint/python_tools/mstresourceparse/mstresourceparse.py
 lib/mstflint/python_tools/mstresourceparse/parsers/AdbParser.py
-lib/mstflint/python_tools/mstresourceparse/parsers/Parser.py
 lib/mstflint/python_tools/mstresourceparse/parsers/__init__.py
 lib/mstflint/python_tools/mstresourceparse/resource_data/AdbData.py
 lib/mstflint/python_tools/mstresourceparse/resource_data/DataPrinter.py
@@ -144,6 +154,7 @@ man/man1/mstvpd.1.gz
 %%DATADIR%%/BlueField.csv
 %%DATADIR%%/BlueField2.csv
 %%DATADIR%%/BlueField3.csv
+%%DATADIR%%/BW00.csv
 %%DATADIR%%/Cable.csv
 %%DATADIR%%/CableQSFP.csv
 %%DATADIR%%/CableQSFPaging.csv
@@ -162,7 +173,6 @@ man/man1/mstvpd.1.gz
 %%DATADIR%%/ConnectX6DX.csv
 %%DATADIR%%/ConnectX6LX.csv
 %%DATADIR%%/ConnectX7.csv
-%%DATADIR%%/GB100.csv
 %%DATADIR%%/Quantum2.csv
 %%DATADIR%%/Quantum3.csv
 %%DATADIR%%/InfiniScaleIV.csv
