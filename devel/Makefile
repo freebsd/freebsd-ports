@@ -1004,6 +1004,7 @@
     SUBDIR += ignition-tools
     SUBDIR += ikos
     SUBDIR += imake
+    SUBDIR += immer
     SUBDIR += imtui
     SUBDIR += inastemp
     SUBDIR += include-what-you-use
