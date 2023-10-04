@@ -3,6 +3,9 @@ DISTVERSION=	${QT6_VERSION}
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt6-
 
+PATCH_SITES=	https://github.com/qt/qtdeclarative/commit/
+PATCHFILES=	54059d0dffd1966c8a442b3675eb979c32c16cbe.patch:-p1 # QTBUG-117513
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt declarative framework for dynamic user interfaces
 WWW=		https://qt-project.org
@@ -36,9 +39,6 @@ PLIST_SUB+=	QML_JIT=""
 .else
 PLIST_SUB+=	QML_JIT="@comment "
 .endif
-
-post-patch:
-	${REINPLACE_CMD} -e "s#python3#${PYTHON_CMD}#g" ${WRKSRC}/cmake/QtDeclarativeSetup.cmake
 
 # TODO: do this cleaner
 post-install:

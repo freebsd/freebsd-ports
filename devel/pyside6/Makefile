@@ -1,10 +1,13 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/qtproject/pyside-pyside-setup/commit/
+PATCHFILES+=	4a3fe49a0976f19ca03c869caded8cde8ac60315.patch:-p3 # Fix build with Qt 6.5.3
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 6

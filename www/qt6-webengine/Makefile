@@ -15,7 +15,6 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -26,6 +25,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:www/py-html5lib@${PY_FLAVOR} \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libcups.so:print/cups \
 		libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
 		libevent.so:devel/libevent \
@@ -50,7 +50,7 @@ USES=	bison cmake gl gnome gperf jpeg localbase:ldflags minizip ninja:build \
 	nodejs:build,lts pkgconfig python:build qt-dist:6,webengine xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2 libxslt
-USE_QT=		base declarative:run positioning quick3d:build webchannel
+USE_QT=		base declarative:run positioning quick3d:build tools webchannel
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xshmfence xtst
 
@@ -84,7 +84,7 @@ DO_MAKE_BUILD=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} -j1 $
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
-QT6_VERSION=	6.5.2
+QT6_VERSION=	6.5.3
 
 OPTIONS_DEFAULT=	ALSA
 OPTIONS_SINGLE=		AUDIO
