@@ -1,7 +1,6 @@
 PORTNAME=	wayvnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.7.1
 CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,8 +9,6 @@ WWW=		https://github.com/any1/wayvnc
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build after https://github.com/any1/neatvnc/commit/58d6dff5e520
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libaml.so:devel/aml \
