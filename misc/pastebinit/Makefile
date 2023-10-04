@@ -1,18 +1,16 @@
 PORTNAME=	pastebinit
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.2
 CATEGORIES=	misc python
-MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Command line utility for pastebin
-WWW=		https://phab.lubuntu.me/source/pastebinit/
+WWW=		https://github.com/pastebinit/pastebinit
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:devel/py-configobj@${PY_FLAVOR}
-
 USES=		python:run shebangfix
+USE_GITHUB=	yes
 SHEBANG_FILES=	pastebinit
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -26,16 +24,18 @@ OPTIONS_DEFAULT=PASTEBINS
 PASTEBINS_DESC=	Install default pastebins
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/pastebin.d|${DATADIR}/pastebin.d|' \
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${DATADIR}|g' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/pastebinit
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 do-install-PASTEBINS-on:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} pastebin.d ${STAGEDIR}${DATADIR}/
 
 do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
