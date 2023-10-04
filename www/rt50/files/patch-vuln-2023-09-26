@@ -1,0 +1,1118 @@
+The following issues are addressed with these security updates:
+
+    RT is vulnerable to unvalidated email headers in incoming email and the mail-gateway REST interface. This vulnerability is assigned CVE-2023-41259.
+    RT is vulnerable to information leakage via response messages returned from requests sent via the mail-gateway REST interface. This vulnerability is assigned CVE-2023-41260.
+    RT 5.0 is vulnerable to information leakage via transaction searches made by authenticated users in the transaction query builder. This vulnerability is assigned CVE-2023-45024.
+    RT 5.0 can reveal information about data on various RT objects in errors and other response messages to REST 2 requests.
+
+diff --git a/docs/web_deployment.pod b/docs/web_deployment.pod
+index 6ee03d48d8..c22001103a 100644
+--- docs/web_deployment.pod
++++ docs/web_deployment.pod
+@@ -127,6 +127,31 @@ RT to access the Authorization header.
+ 
+ More information is available in L<RT::Authen::Token>.
+ 
++=head3 Restricting the REST 1.0 mail-gateway
++
++RT processes email via a REST 1.0 endpoint. If you accept email on the same
++server as your running RT, you can restrict this endpoint to localhost only
++with a configuration like the following:
++
++    # Accept requests only from localhost
++    <Location /REST/1.0/NoAuth/mail-gateway>
++        Require local
++    </Location>
++
++If you run C<bin/rt-mailgate> on a separate server, you can update
++the above to allow additional IP addresses.
++
++    <Location /REST/1.0/NoAuth/mail-gateway>
++        Require ip 127.0.0.1 ::1 192.0.2.0  # Add you actual IPs
++    </Location>
++
++See the L<Apache documentation|https://httpd.apache.org/docs/2.4/mod/mod_authz_host.html>
++for additional configuration options.
++
++After adding this configuration, test receiving email and confirm
++your C<bin/rt-mailgate> utility and C</etc/aliases> configurations
++can successfully submit email to RT.
++
+ =head2 nginx
+ 
+ C<nginx> requires that you start RT's fastcgi process externally, for
+diff --git a/lib/RT/Articles.pm b/lib/RT/Articles.pm
+index 79e771884e..787924ffff 100644
+--- lib/RT/Articles.pm
++++ lib/RT/Articles.pm
+@@ -970,6 +970,11 @@ sub SimpleSearch {
+     return $self;
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'ShowArticle', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Assets.pm b/lib/RT/Assets.pm
+index f6cf8ee647..516869f9cc 100644
+--- lib/RT/Assets.pm
++++ lib/RT/Assets.pm
+@@ -1932,6 +1932,11 @@ sub _ProcessRestrictions {
+ 
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'ShowAsset', Object => RT->System ) ? 1 : 0;
++}
++
+ 1;
+ 
+ RT::Base->_ImportOverlays();
+diff --git a/lib/RT/Attachment.pm b/lib/RT/Attachment.pm
+index 2c50447a91..3fed08a360 100644
+--- lib/RT/Attachment.pm
++++ lib/RT/Attachment.pm
+@@ -1090,6 +1090,17 @@ sub _CacheConfig {
+ }
+ 
+ 
++=head2 CurrentUserCanSee
++
++Returns true if the current user can see the attachment, via corresponding
++transaction's rights check.
++
++=cut
++
++sub CurrentUserCanSee {
++    my $self = shift;
++    return $self->TransactionObj->CurrentUserCanSee;
++}
+ 
+ 
+ =head2 id
+diff --git a/lib/RT/Catalog.pm b/lib/RT/Catalog.pm
+index 1354207523..31946435b1 100644
+--- lib/RT/Catalog.pm
++++ lib/RT/Catalog.pm
+@@ -297,6 +297,28 @@ sub CurrentUserCanSee {
+         || $self->CurrentUserHasRight('AdminCatalog');
+ }
+ 
++=head2 CurrentUserCanCreate
++
++Returns true if the current user can create a new catalog, using I<AdminCatalog>.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminCatalog');
++}
++
++=head2 CurrentUserCanModify
++
++Returns true if the current user can modify the catalog, using I<AdminCatalog>.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminCatalog');
++}
++
+ =head2 Owner
+ 
+ Returns an L<RT::User> object for this catalog's I<Owner> role group.  On error,
+diff --git a/lib/RT/Catalogs.pm b/lib/RT/Catalogs.pm
+index 250793c47b..6d67a47720 100644
+--- lib/RT/Catalogs.pm
++++ lib/RT/Catalogs.pm
+@@ -114,6 +114,11 @@ sub _Init {
+ 
+ sub Table { "Catalogs" }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'ShowCatalog', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Class.pm b/lib/RT/Class.pm
+index 01079040c0..03a7926cc2 100644
+--- lib/RT/Class.pm
++++ lib/RT/Class.pm
+@@ -507,6 +507,39 @@ sub IncludeArticleCFValue {
+     return $self->{'_cf_include_hash'}{"Value-".$cfobj->Id};
+ }
+ 
++=head2 CurrentUserCanSee
++
++Returns true if the current user can see the class, using I<SeeClass>.
++
++=cut
++
++sub CurrentUserCanSee {
++    my $self = shift;
++    return $self->CurrentUserHasRight('SeeClass');
++}
++
++=head2 CurrentUserCanCreate
++
++Returns true if the current user can create a new class, using I<AdminClass>.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminClass');
++}
++
++=head2 CurrentUserCanModify
++
++Returns true if the current user can modify the class, using I<AdminClass>.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminClass');
++}
++
+ =head2 id
+ 
+ Returns the current value of id. 
+diff --git a/lib/RT/Classes.pm b/lib/RT/Classes.pm
+index ff446dddfb..9cac032d48 100644
+--- lib/RT/Classes.pm
++++ lib/RT/Classes.pm
+@@ -81,6 +81,11 @@ sub AddRecord {
+ 
+ sub _SingularClass { "RT::Class" }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'SeeClass', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/CustomField.pm b/lib/RT/CustomField.pm
+index 79c1f1f5a5..e261eb6f8e 100644
+--- lib/RT/CustomField.pm
++++ lib/RT/CustomField.pm
+@@ -2072,6 +2072,28 @@ sub CurrentUserCanSee {
+     return 0;
+ }
+ 
++=head2 CurrentUserCanCreate
++
++If the user has I<AdminCustomField> they can create a new custom field.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminCustomField');
++}
++
++=head2 CurrentUserCanModify
++
++If the user has I<AdminCustomField> they can modify the custom field.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminCustomField');
++}
++
+ =head2 IncludeContentForValue [VALUE] (and SetIncludeContentForValue)
+ 
+ Gets or sets the  C<IncludeContentForValue> for this custom field. RT
+diff --git a/lib/RT/CustomFields.pm b/lib/RT/CustomFields.pm
+index 253513d0f9..0fc5569adb 100644
+--- lib/RT/CustomFields.pm
++++ lib/RT/CustomFields.pm
+@@ -475,6 +475,11 @@ sub LimitToCatalog  {
+     }
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'SeeCustomField', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/CustomRole.pm b/lib/RT/CustomRole.pm
+index ec37402925..750aaf2575 100644
+--- lib/RT/CustomRole.pm
++++ lib/RT/CustomRole.pm
+@@ -544,6 +544,28 @@ sub GroupType {
+     return 'RT::CustomRole-' . $self->id;
+ }
+ 
++=head2 CurrentUserCanCreate
++
++Returns true if the current user can create a new custom role, using I<AdminCustomRoles>.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminClass');
++}
++
++=head2 CurrentUserCanModify
++
++Returns true if the current user can modify the custom role, using I<AdminCustomRoles>.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminClass');
++}
++
+ =head2 id
+ 
+ Returns the current value of id.
+diff --git a/lib/RT/CustomRoles.pm b/lib/RT/CustomRoles.pm
+index 6cac676858..75587c71ed 100644
+--- lib/RT/CustomRoles.pm
++++ lib/RT/CustomRoles.pm
+@@ -213,6 +213,12 @@ sub LimitToAdded {
+     return RT::ObjectCustomRoles->new( $self->CurrentUser )->LimitTargetToAdded( $self => @_ );
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    # Not typo, user needs SeeQueue to see CustomRoles
++    return $self->CurrentUser->HasRight( Right => 'SeeQueue', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Group.pm b/lib/RT/Group.pm
+index ccc92fe7c1..03e20eb707 100644
+--- lib/RT/Group.pm
++++ lib/RT/Group.pm
+@@ -1311,17 +1311,43 @@ sub _Set {
+ 
+ =head2 CurrentUserCanSee
+ 
+-Always returns 1; unfortunately, for historical reasons, users have
+-always been able to examine groups they have indirect access to, even if
+-they do not have SeeGroup explicitly.
++Unfortunately, for historical reasons, users have always been able to
++examine groups they have indirect access to, even if they do not have
++SeeGroup explicitly.
++
++We do require "SeeGroup" to see transactions of current group.
+ 
+ =cut
+ 
+ sub CurrentUserCanSee {
+     my $self = shift;
+-    return 1;
++    my ($what, $txn) = @_;
++
++    return 1 if ( $what // '' ) ne 'Transaction';
++    return $self->CurrentUserHasRight('SeeGroup');
++}
++
++=head2 CurrentUserCanCreate
++
++Returns true if the current user can create a new group, using I<AdminGroup>.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminGroup');
+ }
+ 
++=head2 CurrentUserCanModify
++
++Returns true if the current user can modify the group, using I<AdminGroup>.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminGroup');
++}
+ 
+ =head2 PrincipalObj
+ 
+diff --git a/lib/RT/Groups.pm b/lib/RT/Groups.pm
+index 2f341bbba3..51a43f95e3 100644
+--- lib/RT/Groups.pm
++++ lib/RT/Groups.pm
+@@ -537,6 +537,11 @@ sub SimpleSearch {
+     return $self;
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'SeeGroup', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Interface/Email.pm b/lib/RT/Interface/Email.pm
+index 39bd5c4169..648e0e7f61 100644
+--- lib/RT/Interface/Email.pm
++++ lib/RT/Interface/Email.pm
+@@ -161,6 +161,10 @@ sub Gateway {
+         );
+     }
+ 
++    # Clean up sensitive headers. Crypt related headers are cleaned up in RT::Interface::Email::Crypt::VerifyDecrypt
++    my @headers = qw( RT-Attach RT-Send-Cc RT-Send-Bcc RT-Message-ID RT-DetectedAutoGenerated RT-Squelch-Replies-To );
++    $Message->head->delete($_) for @headers;
++
+     #Set up a queue object
+     my $SystemQueueObj = RT::Queue->new( RT->SystemUser );
+     $SystemQueueObj->Load( $args{'queue'} );
+diff --git a/lib/RT/Interface/Email/Crypt.pm b/lib/RT/Interface/Email/Crypt.pm
+index bc3427ca49..9d4d4fe584 100644
+--- lib/RT/Interface/Email/Crypt.pm
++++ lib/RT/Interface/Email/Crypt.pm
+@@ -73,13 +73,14 @@ sub VerifyDecrypt {
+     );
+ 
+     # we clean all possible headers
+-    my @headers =
++    my @headers = (
+         qw(
+             X-RT-Incoming-Encryption
+             X-RT-Incoming-Signature X-RT-Privacy
+             X-RT-Sign X-RT-Encrypt
+         ),
+-        map "X-RT-$_-Status", RT::Crypt->Protocols;
++        map "X-RT-$_-Status", RT::Crypt->Protocols
++    );
+     foreach my $p ( $args{'Message'}->parts_DFS ) {
+         $p->head->delete($_) for @headers;
+     }
+diff --git a/lib/RT/Interface/Web.pm b/lib/RT/Interface/Web.pm
+index 444eb1c24e..da0ec92bf8 100644
+--- lib/RT/Interface/Web.pm
++++ lib/RT/Interface/Web.pm
+@@ -5792,6 +5792,28 @@ sub ParseCalendarData {
+     return undef;
+ }
+ 
++sub PreprocessTransactionSearchQuery {
++    my %args = (
++        Query      => undef,
++        ObjectType => 'RT::Ticket',
++        @_
++    );
++
++    my @limits;
++    if ( $args{ObjectType} eq 'RT::Ticket' ) {
++        @limits = (
++            q{TicketType = 'ticket'},
++            qq{ObjectType = '$args{ObjectType}'},
++            $args{Query} =~ /^\s*\(.*\)$/ ? $args{Query} : "($args{Query})"
++        );
++    }
++    else {
++        # Other ObjectTypes are not supported for now
++        @limits = 'id = 0';
++    }
++    return join ' AND ', @limits;
++}
++
+ package RT::Interface::Web;
+ RT::Base->_ImportOverlays();
+ 
+diff --git a/lib/RT/ObjectCustomFieldValue.pm b/lib/RT/ObjectCustomFieldValue.pm
+index 53e62c2334..4815f76406 100644
+--- lib/RT/ObjectCustomFieldValue.pm
++++ lib/RT/ObjectCustomFieldValue.pm
+@@ -815,6 +815,7 @@ object, otherwise false.
+ 
+ sub CurrentUserCanSee {
+     my $self = shift;
++    return undef unless $self->Id;
+     return $self->CustomFieldObj->CurrentUserHasRight('SeeCustomField');
+ }
+ 
+diff --git a/lib/RT/Queue.pm b/lib/RT/Queue.pm
+index 29ba7db3ad..609a7ebe5b 100644
+--- lib/RT/Queue.pm
++++ lib/RT/Queue.pm
+@@ -810,6 +810,29 @@ sub CurrentUserCanSee {
+     return $self->CurrentUserHasRight('SeeQueue');
+ }
+ 
++
++=head2 CurrentUserCanCreate
++
++Returns true if the current user can create a new queue, using I<AdminQueue>.
++
++=cut
++
++sub CurrentUserCanCreate {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminQueue');
++}
++
++=head2 CurrentUserCanModify
++
++Returns true if the current user can modify the queue, using I<AdminQueue>.
++
++=cut
++
++sub CurrentUserCanModify {
++    my $self = shift;
++    return $self->CurrentUserHasRight('AdminQueue');
++}
++
+ =head2 id
+ 
+ Returns the current value of id. 
+diff --git a/lib/RT/Queues.pm b/lib/RT/Queues.pm
+index 5a916d70a0..0d031b8ebe 100644
+--- lib/RT/Queues.pm
++++ lib/RT/Queues.pm
+@@ -128,6 +128,11 @@ sub ItemsOrderBy {
+     return $items;
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'SeeQueue', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/REST2/Resource/Article.pm b/lib/RT/REST2/Resource/Article.pm
+index f3a0eb32d7..d52fff739d 100644
+--- lib/RT/REST2/Resource/Article.pm
++++ lib/RT/REST2/Resource/Article.pm
+@@ -80,17 +80,11 @@ sub create_record {
+ 
+     return (\400, "Invalid Class") if !$data->{Class};
+ 
+-    my $class = RT::Class->new(RT->SystemUser);
++    my $class = RT::Class->new($self->current_user);
+     $class->Load($data->{Class});
+ 
+-    return (\400, "Invalid Class") if !$class->Id;
+-
+     return ( \403, $self->record->loc("Permission Denied") )
+-        unless $self->record->CurrentUser->HasRight(
+-        Right  => 'CreateArticle',
+-        Object => $class,
+-        )
+-        and $class->Disabled != 1;
++        unless $class->Id and !$class->__Value('Disabled') and $class->CurrentUserHasRight('CreateArticle');
+ 
+     my ($ok, $txn, $msg) = $self->_create_record($data);
+     return ($ok, $msg);
+diff --git a/lib/RT/REST2/Resource/Asset.pm b/lib/RT/REST2/Resource/Asset.pm
+index a29f637b7c..70e66464ba 100644
+--- lib/RT/REST2/Resource/Asset.pm
++++ lib/RT/REST2/Resource/Asset.pm
+@@ -83,10 +83,8 @@ sub create_record {
+     my $catalog = RT::Catalog->new($self->record->CurrentUser);
+     $catalog->Load($data->{Catalog});
+ 
+-    return (\400, "Invalid Catalog") if !$catalog->Id;
+-
+-    return (\403, $self->record->loc("Permission Denied", $catalog->Name))
+-        unless $catalog->CurrentUserHasRight('CreateAsset');
++    return (\403, $self->record->loc("Permission Denied"))
++        unless $catalog->Id and !$catalog->__Value('Disabled') and $catalog->CurrentUserHasRight('CreateAsset');
+ 
+     return $self->_create_record($data);
+ }
+diff --git a/lib/RT/REST2/Resource/Collection.pm b/lib/RT/REST2/Resource/Collection.pm
+index 2f0f16eab2..7653d5695c 100644
+--- lib/RT/REST2/Resource/Collection.pm
++++ lib/RT/REST2/Resource/Collection.pm
+@@ -189,7 +189,7 @@ sub serialize {
+ 
+     my %results = (
+         count       => scalar(@results)         + 0,
+-        total       => $collection->CountAll    + 0,
++        total       => $collection->CurrentUserCanSeeAll ? ( $collection->CountAll + 0 ) : undef,
+         per_page    => $collection->RowsPerPage + 0,
+         page        => ($collection->FirstRow / $collection->RowsPerPage) + 1,
+         items       => \@results,
+@@ -205,18 +205,20 @@ sub serialize {
+         }
+     }
+ 
+-    $results{pages} = ceil($results{total} / $results{per_page});
+-    if ($results{page} < $results{pages}) {
+-        my $page = $results{page} + 1;
+-        $uri->query_form( @query_form, page => $results{page} + 1 );
+-        $results{next_page} = $uri->as_string;
+-    };
+-    if ($results{page} > 1) {
+-        # If we're beyond the last page, set prev_page as the last page
+-        # available, otherwise, the previous page.
+-        $uri->query_form( @query_form, page => ($results{page} > $results{pages} ? $results{pages} : $results{page} - 1) );
+-        $results{prev_page} = $uri->as_string;
+-    };
++    $results{pages} = defined $results{total} ? ceil($results{total} / $results{per_page}) : undef;
++    if ( $results{pages} ) {
++        if ($results{page} < $results{pages}) {
++            my $page = $results{page} + 1;
++            $uri->query_form( @query_form, page => $results{page} + 1 );
++            $results{next_page} = $uri->as_string;
++        }
++        if ($results{page} > 1) {
++            # If we're beyond the last page, set prev_page as the last page
++            # available, otherwise, the previous page.
++            $uri->query_form( @query_form, page => ($results{page} > $results{pages} ? $results{pages} : $results{page} - 1) );
++            $results{prev_page} = $uri->as_string;
++        }
++    }
+ 
+     return \%results;
+ }
+diff --git a/lib/RT/REST2/Resource/CustomField.pm b/lib/RT/REST2/Resource/CustomField.pm
+index 62e2d737b7..1924a95f2f 100644
+--- lib/RT/REST2/Resource/CustomField.pm
++++ lib/RT/REST2/Resource/CustomField.pm
+@@ -87,21 +87,6 @@ sub serialize {
+     return $data;
+ }
+ 
+-sub forbidden {
+-    my $self = shift;
+-    my $method = $self->request->method;
+-    if ($self->record->id) {
+-        if ($method eq 'GET') {
+-            return !$self->record->CurrentUserHasRight('SeeCustomField');
+-        } else {
+-            return !($self->record->CurrentUserHasRight('SeeCustomField') && $self->record->CurrentUserHasRight('AdminCustomField'));
+-        }
+-    } else {
+-        return !$self->current_user->HasRight(Right => "AdminCustomField", Object => RT->System);
+-    }
+-    return 0;
+-}
+-
+ sub hypermedia_links {
+     my $self = shift;
+     my $links = $self->_default_hypermedia_links(@_);
+diff --git a/lib/RT/REST2/Resource/Group.pm b/lib/RT/REST2/Resource/Group.pm
+index 58f46c1255..c955d1558f 100644
+--- lib/RT/REST2/Resource/Group.pm
++++ lib/RT/REST2/Resource/Group.pm
+@@ -58,9 +58,7 @@ extends 'RT::REST2::Resource::Record';
+ with 'RT::REST2::Resource::Record::Readable'
+         => { -alias => { serialize => '_default_serialize' } },
+     'RT::REST2::Resource::Record::DeletableByDisabling',
+-        => { -alias => { delete_resource => '_delete_resource' } },
+     'RT::REST2::Resource::Record::Writable',
+-        => { -alias => { create_record => '_create_record' } },
+     'RT::REST2::Resource::Record::Hypermedia'
+         => { -alias => { hypermedia_links => '_default_hypermedia_links' } };
+ 
+@@ -102,33 +100,20 @@ sub hypermedia_links {
+     return $links;
+ }
+ 
+-sub create_record {
++override forbidden => sub {
+     my $self = shift;
+-    my $data = shift;
+ 
+-    return (\403, $self->record->loc("Permission Denied"))
+-        unless  $self->current_user->HasRight(
+-            Right   => "AdminGroup",
+-            Object  => RT->System,
+-        );
+-
+-    return $self->_create_record($data);
+-}
+-
+-sub delete_resource {
+-    my $self = shift;
+-
+-    return (\403, $self->record->loc("Permission Denied"))
+-        unless $self->record->CurrentUserHasRight('AdminGroup');
+-
+-    return $self->_delete_resource;
+-}
+-
+-sub forbidden {
+-    my $self = shift;
+-    return 0 unless $self->record->id;
+-    return !$self->record->CurrentUserHasRight('SeeGroup');
+-}
++    # For historical reasons, RT::Group::CurrentUserCanSee always returns true.
++    # For REST2, we want to check SeeGroup.
++    no warnings 'redefine';
++    my $original_can_see = \&RT::Group::CurrentUserCanSee;
++    local *RT::Group::CurrentUserCanSee = sub {
++        my $self = shift;
++        return 0 unless $original_can_see->($self, @_);
++        return $self->CurrentUserHasRight('SeeGroup');
++    };
++    return super();
++};
+ 
+ __PACKAGE__->meta->make_immutable;
+ 
+diff --git a/lib/RT/REST2/Resource/GroupMembers.pm b/lib/RT/REST2/Resource/GroupMembers.pm
+index 4c0bb0a49a..df555babec 100644
+--- lib/RT/REST2/Resource/GroupMembers.pm
++++ lib/RT/REST2/Resource/GroupMembers.pm
+@@ -114,9 +114,7 @@ sub dispatch_rules {
+ 
+ sub forbidden {
+     my $self = shift;
+-    return 0 unless $self->group->id;
+     return !$self->group->CurrentUserHasRight('AdminGroupMembership');
+-    return 1;
+ }
+ 
+ sub serialize {
+diff --git a/lib/RT/REST2/Resource/ObjectCustomFieldValue.pm b/lib/RT/REST2/Resource/ObjectCustomFieldValue.pm
+index b9d6fa1cb3..4dbc9cb7a8 100644
+--- lib/RT/REST2/Resource/ObjectCustomFieldValue.pm
++++ lib/RT/REST2/Resource/ObjectCustomFieldValue.pm
+@@ -71,12 +71,6 @@ sub content_types_provided {
+     { [ {$self->record->ContentType || 'text/plain; charset=utf-8' => 'to_binary'} ] };
+ }
+ 
+-sub forbidden {
+-    my $self = shift;
+-    return 0 unless $self->record->id;
+-    return !$self->record->CurrentUserHasRight('SeeCustomField');
+-}
+-
+ sub to_binary {
+     my $self = shift;
+     unless ($self->record->CustomFieldObj->Type =~ /^(?:Image|Binary)$/) {
+diff --git a/lib/RT/REST2/Resource/RT.pm b/lib/RT/REST2/Resource/RT.pm
+index 6a31ba3a71..724880af72 100644
+--- lib/RT/REST2/Resource/RT.pm
++++ lib/RT/REST2/Resource/RT.pm
+@@ -71,7 +71,9 @@ sub to_json {
+     my $self = shift;
+     return JSON::to_json({
+         Version => $RT::VERSION,
+-        Plugins => [ RT->Config->Get('Plugins') ],
++        $self->current_user->HasRight( Object => RT->System, Right => 'SuperUser' )
++            ? ( Plugins => [ RT->Config->Get('Plugins') ] )
++            : (),
+     }, { pretty => 1 });
+ }
+ __PACKAGE__->meta->make_immutable;
+diff --git a/lib/RT/REST2/Resource/Record.pm b/lib/RT/REST2/Resource/Record.pm
+index b335dab09e..df1223e993 100644
+--- lib/RT/REST2/Resource/Record.pm
++++ lib/RT/REST2/Resource/Record.pm
+@@ -100,10 +100,21 @@ sub resource_exists {
+ 
+ sub forbidden {
+     my $self = shift;
+-    return 0 unless $self->record->id;
++    my $method = $self->request->method;
++
++    my $right_method;
++    if ( $self->record->id ) {
++        $right_method = $method =~ /^(?:GET|HEAD)$/ ? 'CurrentUserCanSee' : 'CurrentUserCanModify';
++    }
++    else {
++        # Even without id, the method can be GET, e.g. to access a not-exsting record.
++        $right_method = $method =~ /^(?:GET|HEAD)$/ ? 'CurrentUserCanSee' : 'CurrentUserCanCreate';
++    }
++
++    if ( $self->record->can($right_method) ) {
++        return !$self->record->$right_method;
++    }
+ 
+-    my $can_see = $self->record->can("CurrentUserCanSee");
+-    return 1 if $can_see and not $self->record->$can_see();
+     return 0;
+ }
+ 
+diff --git a/lib/RT/REST2/Resource/Ticket.pm b/lib/RT/REST2/Resource/Ticket.pm
+index 1873f0a636..64b4d67647 100644
+--- lib/RT/REST2/Resource/Ticket.pm
++++ lib/RT/REST2/Resource/Ticket.pm
+@@ -225,16 +225,11 @@ sub validate_input {
+     if ( $args{'Action'} eq 'create' ) {
+         return (0, "Could not create ticket. Queue not set", 400) if !$data->{Queue};
+ 
+-        my $queue = RT::Queue->new(RT->SystemUser);
++        my $queue = RT::Queue->new($self->current_user);
+         $queue->Load($data->{Queue});
+ 
+-        return (0, "Unable to find queue", 400) if !$queue->Id;
+-
+-        return (0, $self->record->loc("No permission to create tickets in the queue '[_1]'", $queue->Name), 403)
+-            unless $self->record->CurrentUser->HasRight(
+-                Right  => 'CreateTicket',
+-                Object => $queue,
+-            ) and $queue->Disabled != 1;
++        return (0, $self->record->loc("No permission to create tickets in the queue '[_1]'", $data->{Queue}), 403)
++            unless $queue->Id and $queue->__Value('Disabled') != 1 and $queue->CurrentUserHasRight('CreateTicket');
+     }
+ 
+     if ( $args{'Action'} eq 'update' ) {
+diff --git a/lib/RT/REST2/Resource/User.pm b/lib/RT/REST2/Resource/User.pm
+index 510a8c7740..af4c8c0c2b 100644
+--- lib/RT/REST2/Resource/User.pm
++++ lib/RT/REST2/Resource/User.pm
+@@ -105,9 +105,8 @@ around 'serialize' => sub {
+ 
+ sub forbidden {
+     my $self = shift;
+-    return 0 if not $self->record->id;
+-    return 0 if $self->record->id == $self->current_user->id;
+     return 0 if $self->current_user->Privileged;
++    return 0 if ( $self->record->id || 0 ) == $self->current_user->id;
+     return 1;
+ }
+ 
+diff --git a/lib/RT/SearchBuilder.pm b/lib/RT/SearchBuilder.pm
+index adb1e4e953..03088d9394 100644
+--- lib/RT/SearchBuilder.pm
++++ lib/RT/SearchBuilder.pm
+@@ -1150,6 +1150,11 @@ sub DistinctFieldValues {
+     return @values;
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->HasRight( Right => 'SuperUser', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/SearchBuilder/Role/Roles.pm b/lib/RT/SearchBuilder/Role/Roles.pm
+index ac36e8538c..06462d3e88 100644
+--- lib/RT/SearchBuilder/Role/Roles.pm
++++ lib/RT/SearchBuilder/Role/Roles.pm
+@@ -97,7 +97,7 @@ sub _RoleGroupClass {
+ 
+ sub _RoleGroupsJoin {
+     my $self = shift;
+-    my %args = (New => 0, Class => '', Name => '', @_);
++    my %args = (New => 0, Class => '', Name => '', Alias => 'main', @_);
+ 
+     $args{'Class'} ||= $self->_RoleGroupClass;
+ 
+@@ -118,7 +118,7 @@ sub _RoleGroupsJoin {
+     # Previously (before 4.4) this used an inner join.
+     my $groups = $self->Join(
+         TYPE            => 'left',
+-        ALIAS1          => 'main',
++        ALIAS1          => $args{Alias},
+         FIELD1          => $instance,
+         TABLE2          => 'Groups',
+         FIELD2          => 'Instance',
+diff --git a/lib/RT/Ticket.pm b/lib/RT/Ticket.pm
+index 741d2e3007..ec7f6922fb 100644
+--- lib/RT/Ticket.pm
++++ lib/RT/Ticket.pm
+@@ -3788,6 +3788,10 @@ sub Serialize {
+     $obj->Load( $store{EffectiveId} );
+     $store{EffectiveId} = \($obj->UID);
+ 
++    unless ( $self->CurrentUserCanSeeTime ) {
++        delete $store{$_} for qw/TimeEstimated TimeLeft TimeWorked/;
++    }
++
+     return %store;
+ }
+ 
+diff --git a/lib/RT/Tickets.pm b/lib/RT/Tickets.pm
+index fbaa2d602a..99fd3db13f 100644
+--- lib/RT/Tickets.pm
++++ lib/RT/Tickets.pm
+@@ -2856,7 +2856,8 @@ sub CurrentUserCanSee {
+             return unless @queues;
+             $self->Limit(
+                 SUBCLAUSE       => 'ACL',
+-                ALIAS           => 'main',
++                # RT::Transactions::CurrentUserCanSee reuses RT::Tickets::CurrentUserCanSee
++                ALIAS           => $self->isa('RT::Transactions') ? $self->_JoinTickets : 'main',
+                 FIELD           => 'Queue',
+                 OPERATOR        => 'IN',
+                 VALUE           => [ @queues ],
+@@ -2912,6 +2913,8 @@ sub CurrentUserCanSee {
+                     FIELD           => 'Owner',
+                     VALUE           => $id,
+                     ENTRYAGGREGATOR => $ea,
++                    # RT::Transactions::CurrentUserCanSee reuses RT::Tickets::CurrentUserCanSee
++                    ALIAS           => $self->isa('RT::Transactions') ? $self->_JoinTickets : 'main',
+                 );
+             }
+             else {
+@@ -3563,6 +3566,12 @@ sub Query {
+     return $self->{_sql_query};
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return 1 if RT->Config->Get('UseSQLForACLChecks');
++    return $self->CurrentUser->HasRight( Right => 'ShowTicket', Object => RT->System ) ? 1 : 0;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Transactions.pm b/lib/RT/Transactions.pm
+index 21ca3cd86e..e03d2995a8 100644
+--- lib/RT/Transactions.pm
++++ lib/RT/Transactions.pm
+@@ -142,7 +142,28 @@ sub AddRecord {
+     my $self = shift;
+     my ($record) = @_;
+ 
+-    return unless $record->CurrentUserCanSee;
++    if ( $self->{_is_ticket_only_search} && RT->Config->Get('UseSQLForACLChecks') ) {
++        # UseSQLForACLChecks implies ShowTicket only, need to check out extra rights here.
++        my $type = $record->__Value('Type');
++        if ( $type eq 'Comment' ) {
++            return unless $record->CurrentUserHasRight('ShowTicketComments');
++        }
++        elsif ( $type eq 'CommentEmailRecord' ) {
++            return
++                unless $record->CurrentUserHasRight('ShowTicketComments')
++                && $record->CurrentUserHasRight('ShowOutgoingEmail');
++        }
++        elsif ( $type eq 'EmailRecord' ) {
++            return unless $record->CurrentUserHasRight('ShowOutgoingEmail');
++        }
++        elsif ( $type eq 'CustomField' ) {
++            return unless $record->CurrentUserCanSee;
++        }
++    }
++    else {
++        return unless $record->CurrentUserCanSee;
++    }
++
+     return $self->SUPER::AddRecord($record);
+ }
+ 
+@@ -1111,6 +1132,28 @@ sub _parser {
+             return $self->_CloseParen unless $node->isLeaf;
+         }
+     );
++
++    # Determine if it's a ticket transaction search
++    $tree->traverse(
++        sub {
++            my $node = shift;
++            return unless $node->isLeaf and $node->getNodeValue;
++            my ($key, $subkey, $meta, $op, $value, $bundle)
++                = @{$node->getNodeValue}{qw/Key Subkey Meta Op Value Bundle/};
++            return unless $key eq 'ObjectType' && $value eq 'RT::Ticket' && $op eq '=';
++
++            my $is_ticket_only_search = 1;
++            while ( my $parent = $node->getParent ) {
++                last if $parent->isRoot;
++                if ( lc( $parent->getNodeValue // '' ) eq 'or' ) {
++                    $is_ticket_only_search = 0;
++                    last;
++                }
++                $node = $parent;
++            }
++            $self->{_is_ticket_only_search} ||= $is_ticket_only_search;
++        }
++    );
+ }
+ 
+ sub FromSQL {
+@@ -1166,6 +1209,59 @@ sub Query {
+     return $self->{_sql_query};
+ }
+ 
++our $AUTOLOAD;
++sub AUTOLOAD {
++    my $self = shift;
++    my ($method) = ( $AUTOLOAD =~ /::(\w+)$/ );
++
++    no strict 'refs';
++
++    # Reuse RT::Tickets methods for UseSQLForACLChecks related joins/limitations.
++    if ( $self->{_is_ticket_only_search} && RT::Tickets->can($method) ) {
++        my @args = @_;
++        if ( $method eq '_RoleGroupsJoin' ) {
++            push @args, Alias => $self->_JoinTickets;
++        }
++
++        if ( $method eq '_RoleGroupClass' ) {
++            # We want ticket's role group class here
++            unshift @args, 'RT::Tickets';
++        }
++        else {
++            unshift @args, $self;
++        }
++
++        return "RT::Tickets::$method"->(@args);
++    }
++    elsif ( $method ne 'DESTROY' ) {
++        require Carp;
++        Carp::croak "Undefined subroutine &$AUTOLOAD called";
++    }
++}
++
++sub _DoSearch {
++    my $self = shift;
++    $self->CurrentUserCanSee if $self->{_is_ticket_only_search} && RT->Config->Get('UseSQLForACLChecks');
++    return $self->SUPER::_DoSearch( @_ );
++}
++
++sub _DoCount {
++    my $self = shift;
++    $self->CurrentUserCanSee if $self->{_is_ticket_only_search} && RT->Config->Get('UseSQLForACLChecks');
++    return $self->SUPER::_DoCount( @_ );
++}
++
++sub CleanSlate {
++    my $self = shift;
++    if ( $self->{_is_ticket_only_search} && RT->Config->Get('UseSQLForACLChecks') ) {
++        RT::Tickets::CleanSlate( $self, @_ ) ;
++    }
++    else {
++        $self->SUPER::CleanSlate(@_);
++    }
++    delete $self->{_is_ticket_only_search};
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/lib/RT/Users.pm b/lib/RT/Users.pm
+index 33bbbac1f9..16297e4ddf 100644
+--- lib/RT/Users.pm
++++ lib/RT/Users.pm
+@@ -715,6 +715,11 @@ sub SimpleSearch {
+     return $self;
+ }
+ 
++sub CurrentUserCanSeeAll {
++    my $self = shift;
++    return $self->CurrentUser->Privileged;
++}
++
+ RT::Base->_ImportOverlays();
+ 
+ 1;
+diff --git a/share/html/Elements/CollectionList b/share/html/Elements/CollectionList
+index 2895d2cc83..2f6aeceeb9 100644
+--- share/html/Elements/CollectionList
++++ share/html/Elements/CollectionList
+@@ -49,11 +49,7 @@
+ if (!$Collection) {
+     $Collection = $Class->new( $session{'CurrentUser'} );
+     if ( $Class eq 'RT::Transactions' ) {
+-        my @limits = ( "ObjectType = '$ObjectType'", $Query ? "($Query)" : () );
+-        if ( $ObjectType eq 'RT::Ticket' ) {
+-            unshift @limits, "TicketType = 'ticket'";
+-        }
+-        $Query = join ' AND ', @limits;
++        $Query = PreprocessTransactionSearchQuery( Query => $Query, ObjectType => $ObjectType );
+     }
+     $Collection->FromSQL($Query);
+ }
+diff --git a/share/html/REST/1.0/NoAuth/mail-gateway b/share/html/REST/1.0/NoAuth/mail-gateway
+index 9adad505d4..95ffe17137 100644
+--- share/html/REST/1.0/NoAuth/mail-gateway
++++ share/html/REST/1.0/NoAuth/mail-gateway
+@@ -59,9 +59,18 @@ use RT::Interface::Email;
+ $r->content_type('text/plain; charset=utf-8');
+ $m->error_format('text');
+ my ( $status, $error, $Ticket ) = RT::Interface::Email::Gateway( \%ARGS );
++
++# Obscure the message to avoid any information disclosure unless
++# in DevelMode.
++my $log_error;
++unless ( RT->Config->Get('DevelMode') ) {
++    $log_error = $error;
++    $error = 'operation unsuccessful';
++}
++
+ if ( $status == 1 ) {
+   $m->out("ok\n");
+-  if ( $Ticket && $Ticket->Id ) {
++  if ( $Ticket && $Ticket->Id && RT->Config->Get('DevelMode') ) {
+     $m->out( 'Ticket: '  . ($Ticket->Id             || '') . "\n" );
+     $m->out( 'Queue: '   . ($Ticket->QueueObj->Name || '') . "\n" );
+     $m->out( 'Owner: '   . ($Ticket->OwnerObj->Name || '') . "\n" );
+@@ -73,9 +82,11 @@ if ( $status == 1 ) {
+ }
+ else {
+   if ( $status == -75 ) {
++    RT->Logger->error("mail-gateway returned status -75: $log_error") if $log_error;
+     $m->out( "temporary failure - $error\n" );
+   }
+   else {
++    RT->Logger->error("mail-gateway error: $log_error") if $log_error;
+     $m->out( "not ok - $error\n" );
+   }
+ }
+diff --git a/share/html/Search/Results.html b/share/html/Search/Results.html
+index 53d901f3ad..eb37986b3f 100644
+--- share/html/Search/Results.html
++++ share/html/Search/Results.html
+@@ -177,15 +177,9 @@ $session{$session_name} = $Class->new($session{'CurrentUser'}) ;
+ my ( $ok, $msg );
+ if ( $Query ) {
+     if ( $Class eq 'RT::Transactions' ) {
+-        my @limits = ( "ObjectType = '$ObjectType'", "($Query)" );
+-        if ( $ObjectType eq 'RT::Ticket' ) {
+-            unshift @limits, "TicketType = 'ticket'";
+-        }
+-        ( $ok, $msg ) = $session{$session_name}->FromSQL( join ' AND ', @limits );
+-    }
+-    else {
+-        ( $ok, $msg ) = $session{$session_name}->FromSQL($Query);
++        $Query = PreprocessTransactionSearchQuery( Query => $Query, ObjectType => $ObjectType );
+     }
++    ( $ok, $msg ) = $session{$session_name}->FromSQL($Query);
+ }
+ 
+ # Provide an empty search if parsing failed
+diff --git a/share/html/Search/Results.tsv b/share/html/Search/Results.tsv
+index 6a3bfc442b..cddb99dfc9 100644
+--- share/html/Search/Results.tsv
++++ share/html/Search/Results.tsv
+@@ -61,17 +61,11 @@ my $collection = $Class->new( $session{'CurrentUser'} );
+ my @limits;
+ 
+ if ( $Class eq 'RT::Transactions' ) {
+-    @limits = ( "ObjectType = '$ObjectType'", "($Query)" );
+-    if ( $ObjectType eq 'RT::Ticket' ) {
+-        unshift @limits, "TicketType = 'ticket'";
+-    }
+-}
+-else {
+-    push @limits, $Query;
++    $Query = PreprocessTransactionSearchQuery( Query => $Query, ObjectType => $ObjectType );
+ }
+ 
+ if ( $Query ) {
+-    $collection->FromSQL( join ' AND ', @limits );
++    $collection->FromSQL( $Query );
+ }
+ elsif ( $Class eq 'RT::Assets' ) {
+     my $catalog_obj = LoadDefaultCatalog($ARGS{'Catalog'} || '');
