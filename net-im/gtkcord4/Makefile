@@ -1,7 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.12
-PORTREVISION=	1
+DISTVERSION=	0.0.13
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,12 +21,11 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		danieljoos:wincred:v1.1.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		diamondburned:adaptive:fa139be203a8:diamondburned_adaptive/vendor/github.com/diamondburned/adaptive \
 		diamondburned:arikawa:4224b93c4e01:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
-		diamondburned:chatkit:0a896b3e0bc0:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
-		diamondburned:gotext:4e200827134c:diamondburned_gotext/vendor/github.com/leonelquinteros/gotext \
+		diamondburned:chatkit:66a46d3d2a92:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
 		diamondburned:gotk4-adwaita:bfe82926e1be:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
 		diamondburned:gotk4:ad325703aa2e:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
-		diamondburned:gotkit:3658c907eb6b:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
-		diamondburned:ningen:736ded6dc985:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
+		diamondburned:gotkit:f664ea5c2236:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
+		diamondburned:ningen:f3dbe02c7c8d:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
@@ -43,11 +41,12 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		gorilla:websocket:v1.4.2:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		ianlancetaylor:cgosymbolizer:a1ae3e4bba26:ianlancetaylor_cgosymbolizer/vendor/github.com/ianlancetaylor/cgosymbolizer \
 		kylelemons:godebug:v1.1.0:kylelemons_godebug/vendor/github.com/kylelemons/godebug \
+		leonelquinteros:gotext:37f474cfb069:leonelquinteros_gotext/vendor/github.com/leonelquinteros/gotext \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		sahilm:fuzzy:v0.1.0:sahilm_fuzzy/vendor/github.com/sahilm/fuzzy \
 		twmb:murmur3:v1.1.3:twmb_murmur3/vendor/github.com/twmb/murmur3 \
 		yalue:merged_fs:v1.2.3:yalue_merged_fs/vendor/github.com/yalue/merged_fs \
-		yuin:goldmark:v1.4.13:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		yuin:goldmark:v1.5.6:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.2.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring
 CGO_LDFLAGS+=	-Wl,--as-needed # gtk4 deps
 PLIST_FILES=	bin/${PORTNAME}
