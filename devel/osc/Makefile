@@ -1,5 +1,5 @@
 PORTNAME=	osc
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -25,6 +25,12 @@ PORTDOCS=	*
 PYTEST_BROKEN_TESTS=	testPrdiffDiffstat
 
 OPTIONS_DEFINE=	DOCS
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/contrib/osc.zsh ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_osc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKSRC}/contrib/osc.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/osc.fish
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
