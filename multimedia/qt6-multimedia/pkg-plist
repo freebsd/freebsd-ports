@@ -6,6 +6,8 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiodevice_p.h
 %%PULSEAUDIO%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudioengine_pulse_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiohelpers_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiostatemachine_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiostatemachineutils_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiosystem_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qcamera_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qcameradevice_p.h
@@ -26,7 +28,7 @@
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformmediaplayer_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformmediaplugin_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformmediarecorder_p.h
-%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformscreencapture_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformsurfacecapture_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformvideodevices_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformvideosink_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qplatformvideosource_p.h
@@ -96,6 +98,7 @@
 %%QT_INCDIR%%/QtMultimedia/qscreencapture.h
 %%QT_INCDIR%%/QtMultimedia/qsoundeffect.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimedia-config.h
+%%QT_INCDIR%%/QtMultimedia/qtmultimediadefs.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimediaexports.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimediaglobal.h
 %%QT_INCDIR%%/QtMultimedia/qtmultimediaversion.h
@@ -125,6 +128,7 @@
 %%QT_INCDIR%%/QtMultimediaWidgets/QtMultimediaWidgetsDepends
 %%QT_INCDIR%%/QtMultimediaWidgets/QtMultimediaWidgetsVersion
 %%QT_INCDIR%%/QtMultimediaWidgets/qgraphicsvideoitem.h
+%%QT_INCDIR%%/QtMultimediaWidgets/qtmultimediawidgetdefs.h
 %%QT_INCDIR%%/QtMultimediaWidgets/qtmultimediawidgetsexports.h
 %%QT_INCDIR%%/QtMultimediaWidgets/qtmultimediawidgetsglobal.h
 %%QT_INCDIR%%/QtMultimediaWidgets/qtmultimediawidgetsversion.h

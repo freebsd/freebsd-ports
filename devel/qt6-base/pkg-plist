@@ -1,12 +1,5 @@
-@dir lib/cmake/Qt6/QtBuildInternals/QtStandaloneTestTemplateProject
-@dir lib/cmake/Qt6/ios
-@dir lib/cmake/Qt6/macos
 bin/androiddeployqt6
 bin/qmake6
-%%QT_INCDIR%%/QtExampleIcons/QtExampleIcons
-%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsDepends
-%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsVersion
-%%QT_INCDIR%%/QtExampleIcons/qtexampleiconsversion.h
 %%QT_INCDIR%%/QtConcurrent/QtConcurrent
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentDepends
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentFilter
@@ -875,6 +868,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtDBus/qdbuserror.h
 %%QT_INCDIR%%/QtDBus/qdbusextratypes.h
 %%QT_INCDIR%%/QtDBus/qdbusinterface.h
+%%QT_INCDIR%%/QtDBus/qdbusmacros.h
 %%QT_INCDIR%%/QtDBus/qdbusmessage.h
 %%QT_INCDIR%%/QtDBus/qdbusmetatype.h
 %%QT_INCDIR%%/QtDBus/qdbuspendingcall.h
@@ -893,6 +887,10 @@ bin/qmake6
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/QtDeviceDiscoverySupportDepends
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/QtDeviceDiscoverySupportVersion
 %%QT_INCDIR%%/QtDeviceDiscoverySupport/qtdevicediscoverysupportversion.h
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIcons
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsDepends
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsVersion
+%%QT_INCDIR%%/QtExampleIcons/qtexampleiconsversion.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbbackingstore_p.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbcursor_p.h
 %%QT_INCDIR%%/QtFbSupport/%%FULLVER%%/QtFbSupport/private/qfbscreen_p.h
@@ -1870,6 +1868,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtSql/QtSql
 %%QT_INCDIR%%/QtSql/QtSqlDepends
 %%QT_INCDIR%%/QtSql/QtSqlVersion
+%%QT_INCDIR%%/QtSql/qsql.h
 %%QT_INCDIR%%/QtSql/qsqldatabase.h
 %%QT_INCDIR%%/QtSql/qsqldriver.h
 %%QT_INCDIR%%/QtSql/qsqldriverplugin.h
@@ -1941,6 +1940,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtTest/qbenchmarkmetric.h
 %%QT_INCDIR%%/QtTest/qsignalspy.h
 %%QT_INCDIR%%/QtTest/qtest.h
+%%QT_INCDIR%%/QtTest/qtest_global.h
 %%QT_INCDIR%%/QtTest/qtest_gui.h
 %%QT_INCDIR%%/QtTest/qtest_network.h
 %%QT_INCDIR%%/QtTest/qtest_widgets.h
@@ -1982,6 +1982,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qcompleter_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qdatetimeedit_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qdialog_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qdialogbuttonbox_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qdockarealayout_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qdockwidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qeffects_p.h
@@ -3555,23 +3556,23 @@ libdata/pkgconfig/Qt6Sql.pc
 libdata/pkgconfig/Qt6Test.pc
 libdata/pkgconfig/Qt6Widgets.pc
 libdata/pkgconfig/Qt6Xml.pc
-%%QT_LIBEXECDIR%%/android_emulator_launcher.sh
-%%QT_LIBEXECDIR%%/cmake_automoc_parser
-%%QT_LIBEXECDIR%%/ensure_pro_file.cmake
-%%QT_LIBEXECDIR%%/moc
-%%QT_LIBEXECDIR%%/qlalr
+%%QT_TOOLDIR%%/android_emulator_launcher.sh
+%%QT_TOOLDIR%%/cmake_automoc_parser
+%%QT_TOOLDIR%%/ensure_pro_file.cmake
+%%QT_TOOLDIR%%/moc
+%%QT_TOOLDIR%%/qlalr
 %%QT_TOOLDIR%%/qt-cmake-private
 %%QT_TOOLDIR%%/qt-cmake-private-install.cmake
 %%QT_TOOLDIR%%/qt-cmake-standalone-test
-%%QT_LIBEXECDIR%%/qt-internal-configure-tests
-%%QT_LIBEXECDIR%%/qt-testrunner.py
-%%QT_LIBEXECDIR%%/qvkgen
-%%QT_LIBEXECDIR%%/rcc
+%%QT_TOOLDIR%%/qt-internal-configure-tests
+%%QT_TOOLDIR%%/qt-testrunner.py
+%%QT_TOOLDIR%%/qvkgen
+%%QT_TOOLDIR%%/rcc
 %%QT_TOOLDIR%%/sanitizer-testrunner.py
 %%QT_TOOLDIR%%/syncqt
-%%QT_LIBEXECDIR%%/tracegen
+%%QT_TOOLDIR%%/tracegen
 %%QT_TOOLDIR%%/tracepointgen
-%%QT_LIBEXECDIR%%/uic
+%%QT_TOOLDIR%%/uic
 %%QT_DOCDIR%%/config/exampleurl-qt3d.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtactiveqt.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtandroidextras.qdocconf
@@ -3697,6 +3698,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/global/template/style/offline-simple.css
 %%QT_DOCDIR%%/global/template/style/offline.css
 %%QT_DOCDIR%%/global/template/style/online.css
+%%QT_DOCDIR%%/global/template/style/tech_preview.svg
 %%QT_DOCDIR%%/global/template/style/theqtcompany.png
 %%QT_DATADIR%%/modules/Concurrent.json
 %%QT_DATADIR%%/modules/Core.json
