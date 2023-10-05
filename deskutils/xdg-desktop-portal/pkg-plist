@@ -7,11 +7,13 @@ share/dbus-1/interfaces/org.freedesktop.impl.portal.Access.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Account.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.AppChooser.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Background.xml
+share/dbus-1/interfaces/org.freedesktop.impl.portal.Clipboard.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.DynamicLauncher.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Email.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.FileChooser.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.GlobalShortcuts.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Inhibit.xml
+share/dbus-1/interfaces/org.freedesktop.impl.portal.InputCapture.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Lockdown.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.Notification.xml
 share/dbus-1/interfaces/org.freedesktop.impl.portal.PermissionStore.xml
@@ -27,6 +29,7 @@ share/dbus-1/interfaces/org.freedesktop.impl.portal.Wallpaper.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Account.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Background.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Camera.xml
+share/dbus-1/interfaces/org.freedesktop.portal.Clipboard.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Device.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Documents.xml
 share/dbus-1/interfaces/org.freedesktop.portal.DynamicLauncher.xml
@@ -36,6 +39,7 @@ share/dbus-1/interfaces/org.freedesktop.portal.FileTransfer.xml
 share/dbus-1/interfaces/org.freedesktop.portal.GameMode.xml
 share/dbus-1/interfaces/org.freedesktop.portal.GlobalShortcuts.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Inhibit.xml
+share/dbus-1/interfaces/org.freedesktop.portal.InputCapture.xml
 share/dbus-1/interfaces/org.freedesktop.portal.Location.xml
 share/dbus-1/interfaces/org.freedesktop.portal.MemoryMonitor.xml
 share/dbus-1/interfaces/org.freedesktop.portal.NetworkMonitor.xml
@@ -57,6 +61,8 @@ share/dbus-1/interfaces/org.freedesktop.portal.Wallpaper.xml
 share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service
 share/dbus-1/services/org.freedesktop.portal.Desktop.service
 share/dbus-1/services/org.freedesktop.portal.Documents.service
+share/locale/be/LC_MESSAGES/xdg-desktop-portal.mo
+share/locale/ca/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/cs/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/da/LC_MESSAGES/xdg-desktop-portal.mo
 share/locale/de/LC_MESSAGES/xdg-desktop-portal.mo
