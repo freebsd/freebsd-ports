@@ -1,6 +1,6 @@
 PORTNAME=	fftw3
 DISTVERSION=	3.3.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -28,6 +28,17 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-threads --disable-fortran
 MPIDIR?=	${LOCALBASE}/mpi/openmpi
+
+SHLIB_VER_MAJ=	${DISTVERSION:R:R}
+SHLIB_VER_MIN=	6
+SHLIB_VER_PAT=	${DISTVERSION:E}
+SHLIB_VER=	${SHLIB_VER_MAJ}.${SHLIB_VER_MIN}.${SHLIB_VER_PAT}
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER} \
+		SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
+SUB_FILES=	FFTW3LibraryDepends.cmake
+SUB_LIST=	FFTW3_SUFX=${FFTW3_SUFX} \
+		SHLIB_VER=${SHLIB_VER} \
+		SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
 
 .if ${FFTW3_FLAVOR} == "default"
 INFO=	fftw3
@@ -145,6 +156,8 @@ post-patch:
 		${WRKSRC}/api/import-system-wisdom.c \
 		${WRKSRC}/doc/fftw3* \
 		${WRKSRC}/tools/*
+	@${REINPLACE_CMD} -e '/^cmakedir/s|fftw3|fftw3@PREC_SUFFIX@|' \
+		${WRKSRC}/Makefile.in
 .if ${FFTW3_FLAVOR} != "default"
 	@${REINPLACE_CMD} -E \
 	-e '/(DIST_COMMON|bin_SCRIPTS|BUILT_SOURCES|EXTRA_DIST) =/,\
@@ -164,8 +177,9 @@ post-configure:
 post-configure-G77_WRAPPERS-on:
 	@${ECHO_CMD} "#define WITH_G77_WRAPPERS 1" >> ${WRKSRC}/config.h
 
-.if ${FFTW3_FLAVOR} != "default"
 post-install:
+	${INSTALL_DATA} ${WRKDIR}/FFTW3LibraryDepends.cmake ${STAGEDIR}${PREFIX}/lib/cmake/fftw3${FFTW3_SUFX}
+.if ${FFTW3_FLAVOR} != "default"
 	${INSTALL_MAN} ${WRKSRC}/tools/fftw${FFTW3_SUFX}-wisdom.1 ${STAGEDIR}${PREFIX}/man/man1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so
 .endif
