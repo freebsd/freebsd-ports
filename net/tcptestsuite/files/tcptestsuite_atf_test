@@ -6359,6 +6359,66 @@ socket_api_setsockopt_hoplimit_passive_ipv6_cleanup() {
     restore_sysctls
 }
 
+atf_test_case socket_api_setsockopt_md5_active_ipv4 cleanup
+socket_api_setsockopt_md5_active_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+socket_api_setsockopt_md5_active_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-active-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-active-ipv4.pkt
+}
+socket_api_setsockopt_md5_active_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case socket_api_setsockopt_md5_active_ipv6 cleanup
+socket_api_setsockopt_md5_active_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+socket_api_setsockopt_md5_active_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-active-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-active-ipv6.pkt
+}
+socket_api_setsockopt_md5_active_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case socket_api_setsockopt_md5_passive_ipv4 cleanup
+socket_api_setsockopt_md5_passive_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+socket_api_setsockopt_md5_passive_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-passive-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-passive-ipv4.pkt
+}
+socket_api_setsockopt_md5_passive_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case socket_api_setsockopt_md5_passive_ipv6 cleanup
+socket_api_setsockopt_md5_passive_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+socket_api_setsockopt_md5_passive_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-passive-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/socket-api/setsockopt/socket-api-setsockopt-md5-passive-ipv6.pkt
+}
+socket_api_setsockopt_md5_passive_ipv6_cleanup() {
+    restore_sysctls
+}
+
 atf_test_case socket_api_setsockopt_tos_active_ipv4 cleanup
 socket_api_setsockopt_tos_active_ipv4_head() {
     atf_set timeout 10
@@ -6749,6 +6809,156 @@ rcv_ack_without_data_syn_sent_ack_outside_right_ipv6_cleanup() {
     restore_sysctls
 }
 
+atf_test_case rcv_ack_time_wait_using_shutdown_left_edge_ipv4 cleanup
+rcv_ack_time_wait_using_shutdown_left_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_left_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-left-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-left-edge-ipv4.pkt
+}
+rcv_ack_time_wait_using_shutdown_left_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_left_edge_ipv6 cleanup
+rcv_ack_time_wait_using_shutdown_left_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_left_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-left-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-left-edge-ipv6.pkt
+}
+rcv_ack_time_wait_using_shutdown_left_edge_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_middle_ipv4 cleanup
+rcv_ack_time_wait_using_shutdown_middle_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_middle_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-middle-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-middle-ipv4.pkt
+}
+rcv_ack_time_wait_using_shutdown_middle_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_middle_ipv6 cleanup
+rcv_ack_time_wait_using_shutdown_middle_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_middle_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-middle-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-middle-ipv6.pkt
+}
+rcv_ack_time_wait_using_shutdown_middle_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_outside_left_ipv4 cleanup
+rcv_ack_time_wait_using_shutdown_outside_left_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_outside_left_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-left-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-left-ipv4.pkt
+}
+rcv_ack_time_wait_using_shutdown_outside_left_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_outside_left_ipv6 cleanup
+rcv_ack_time_wait_using_shutdown_outside_left_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_outside_left_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-left-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-left-ipv6.pkt
+}
+rcv_ack_time_wait_using_shutdown_outside_left_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_outside_right_ipv4 cleanup
+rcv_ack_time_wait_using_shutdown_outside_right_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_outside_right_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-right-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-right-ipv4.pkt
+}
+rcv_ack_time_wait_using_shutdown_outside_right_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_outside_right_ipv6 cleanup
+rcv_ack_time_wait_using_shutdown_outside_right_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_outside_right_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-right-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-outside-right-ipv6.pkt
+}
+rcv_ack_time_wait_using_shutdown_outside_right_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_right_edge_ipv4 cleanup
+rcv_ack_time_wait_using_shutdown_right_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_right_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-right-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-right-edge-ipv4.pkt
+}
+rcv_ack_time_wait_using_shutdown_right_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_ack_time_wait_using_shutdown_right_edge_ipv6 cleanup
+rcv_ack_time_wait_using_shutdown_right_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_ack_time_wait_using_shutdown_right_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-right-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-ack-time-wait/rcv-ack-time-wait-using-shutdown-right-edge-ipv6.pkt
+}
+rcv_ack_time_wait_using_shutdown_right_edge_ipv6_cleanup() {
+    restore_sysctls
+}
+
 atf_test_case rcv_fin_ack_with_data_closed_ipv4 cleanup
 rcv_fin_ack_with_data_closed_ipv4_head() {
     atf_set timeout 10
@@ -7049,6 +7259,156 @@ rcv_fin_ack_without_data_syn_sent_ack_outside_right_ipv6_cleanup() {
     restore_sysctls
 }
 
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv4 cleanup
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-left-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-left-edge-ipv4.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv6 cleanup
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-left-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-left-edge-ipv6.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_middle_ipv4 cleanup
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-middle-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-middle-ipv4.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_middle_ipv6 cleanup
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-middle-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-middle-ipv6.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_middle_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv4 cleanup
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-left-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-left-ipv4.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv6 cleanup
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-left-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-left-ipv6.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv4 cleanup
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-right-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-right-ipv4.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv6 cleanup
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-right-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-outside-right-ipv6.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv4 cleanup
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-right-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-right-edge-ipv4.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv6 cleanup
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-right-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-ack-time-wait/rcv-fin-ack-time-wait-using-shutdown-right-edge-ipv6.pkt
+}
+rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv6_cleanup() {
+    restore_sysctls
+}
+
 atf_test_case rcv_fin_with_data_closed_ipv4 cleanup
 rcv_fin_with_data_closed_ipv4_head() {
     atf_set timeout 10
@@ -7226,6 +7586,156 @@ rcv_fin_without_data_syn_sent_ipv6_body() {
     atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-syn-sent/rcv-fin-without-data-syn-sent-ipv6.pkt
 }
 rcv_fin_without_data_syn_sent_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_left_edge_ipv4 cleanup
+rcv_fin_time_wait_using_shutdown_left_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_left_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-left-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-left-edge-ipv4.pkt
+}
+rcv_fin_time_wait_using_shutdown_left_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_left_edge_ipv6 cleanup
+rcv_fin_time_wait_using_shutdown_left_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_left_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-left-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-left-edge-ipv6.pkt
+}
+rcv_fin_time_wait_using_shutdown_left_edge_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_middle_ipv4 cleanup
+rcv_fin_time_wait_using_shutdown_middle_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_middle_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-middle-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-middle-ipv4.pkt
+}
+rcv_fin_time_wait_using_shutdown_middle_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_middle_ipv6 cleanup
+rcv_fin_time_wait_using_shutdown_middle_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_middle_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-middle-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-middle-ipv6.pkt
+}
+rcv_fin_time_wait_using_shutdown_middle_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_outside_left_ipv4 cleanup
+rcv_fin_time_wait_using_shutdown_outside_left_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_outside_left_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-left-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-left-ipv4.pkt
+}
+rcv_fin_time_wait_using_shutdown_outside_left_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_outside_left_ipv6 cleanup
+rcv_fin_time_wait_using_shutdown_outside_left_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_outside_left_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-left-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-left-ipv6.pkt
+}
+rcv_fin_time_wait_using_shutdown_outside_left_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_outside_right_ipv4 cleanup
+rcv_fin_time_wait_using_shutdown_outside_right_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_outside_right_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-right-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-right-ipv4.pkt
+}
+rcv_fin_time_wait_using_shutdown_outside_right_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_outside_right_ipv6 cleanup
+rcv_fin_time_wait_using_shutdown_outside_right_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_outside_right_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-right-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-outside-right-ipv6.pkt
+}
+rcv_fin_time_wait_using_shutdown_outside_right_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_right_edge_ipv4 cleanup
+rcv_fin_time_wait_using_shutdown_right_edge_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_right_edge_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-right-edge-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-right-edge-ipv4.pkt
+}
+rcv_fin_time_wait_using_shutdown_right_edge_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_fin_time_wait_using_shutdown_right_edge_ipv6 cleanup
+rcv_fin_time_wait_using_shutdown_right_edge_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_fin_time_wait_using_shutdown_right_edge_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-right-edge-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-fin-time-wait/rcv-fin-time-wait-using-shutdown-right-edge-ipv6.pkt
+}
+rcv_fin_time_wait_using_shutdown_right_edge_ipv6_cleanup() {
     restore_sysctls
 }
 
@@ -7526,6 +8036,246 @@ rcv_rst_ack_without_data_syn_sent_ack_outside_right_ipv6_body() {
     atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-syn-sent/rcv-rst-ack-without-data-syn-sent-ack-outside-right-ipv6.pkt
 }
 rcv_rst_ack_without_data_syn_sent_ack_outside_right_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv4 cleanup
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv6 cleanup
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-ack-time-wait/rcv-rst-ack-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+}
+rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
@@ -9629,243 +10379,243 @@ rcv_rst_without_data_syn_sent_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_left_edge_insecure_ipv4 cleanup
-rcv_rst_time_wait_left_edge_insecure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_left_edge_insecure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-insecure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
 }
-rcv_rst_time_wait_left_edge_insecure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_left_edge_insecure_ipv6 cleanup
-rcv_rst_time_wait_left_edge_insecure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_left_edge_insecure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-insecure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
 }
-rcv_rst_time_wait_left_edge_insecure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_left_edge_secure_ipv4 cleanup
-rcv_rst_time_wait_left_edge_secure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_left_edge_secure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-secure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
 }
-rcv_rst_time_wait_left_edge_secure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_left_edge_secure_ipv6 cleanup
-rcv_rst_time_wait_left_edge_secure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_left_edge_secure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-left-edge-secure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
 }
-rcv_rst_time_wait_left_edge_secure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_left_insecure_ipv4 cleanup
-rcv_rst_time_wait_outside_left_insecure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_left_insecure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-insecure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
 }
-rcv_rst_time_wait_outside_left_insecure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_left_insecure_ipv6 cleanup
-rcv_rst_time_wait_outside_left_insecure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_left_insecure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-insecure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
 }
-rcv_rst_time_wait_outside_left_insecure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_left_secure_ipv4 cleanup
-rcv_rst_time_wait_outside_left_secure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_left_secure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-secure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
 }
-rcv_rst_time_wait_outside_left_secure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_left_secure_ipv6 cleanup
-rcv_rst_time_wait_outside_left_secure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_left_secure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-left-secure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
 }
-rcv_rst_time_wait_outside_left_secure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_right_insecure_ipv4 cleanup
-rcv_rst_time_wait_outside_right_insecure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_right_insecure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-insecure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
 }
-rcv_rst_time_wait_outside_right_insecure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_right_insecure_ipv6 cleanup
-rcv_rst_time_wait_outside_right_insecure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_right_insecure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-insecure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
 }
-rcv_rst_time_wait_outside_right_insecure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_right_secure_ipv4 cleanup
-rcv_rst_time_wait_outside_right_secure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_right_secure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-secure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
 }
-rcv_rst_time_wait_outside_right_secure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_outside_right_secure_ipv6 cleanup
-rcv_rst_time_wait_outside_right_secure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_outside_right_secure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-outside-right-secure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
 }
-rcv_rst_time_wait_outside_right_secure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_right_edge_insecure_ipv4 cleanup
-rcv_rst_time_wait_right_edge_insecure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_right_edge_insecure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-insecure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
 }
-rcv_rst_time_wait_right_edge_insecure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_right_edge_insecure_ipv6 cleanup
-rcv_rst_time_wait_right_edge_insecure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_right_edge_insecure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-insecure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
 }
-rcv_rst_time_wait_right_edge_insecure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_right_edge_secure_ipv4 cleanup
-rcv_rst_time_wait_right_edge_secure_ipv4_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv4 cleanup
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_right_edge_secure_ipv4_body() {
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv4_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-secure-ipv4.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
 }
-rcv_rst_time_wait_right_edge_secure_ipv4_cleanup() {
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_rst_time_wait_right_edge_secure_ipv6 cleanup
-rcv_rst_time_wait_right_edge_secure_ipv6_head() {
+atf_test_case rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv6 cleanup
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_rst_time_wait_right_edge_secure_ipv6_body() {
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv6_body() {
     
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-right-edge-secure-ipv6.pkt
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-rst-time-wait/rcv-rst-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
 }
-rcv_rst_time_wait_right_edge_secure_ipv6_cleanup() {
+rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
@@ -10166,6 +10916,246 @@ rcv_syn_ack_without_data_syn_sent_ack_outside_right_ipv6_body() {
     atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-syn-sent/rcv-syn-ack-without-data-syn-sent-ack-outside-right-ipv6.pkt
 }
 rcv_syn_ack_without_data_syn_sent_ack_outside_right_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv4 cleanup
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv6 cleanup
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-ack-time-wait/rcv-syn-ack-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+}
+rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
@@ -11249,6 +12239,486 @@ rcv_syn_fin_without_data_syn_sent_dropping_enabled_ipv6_cleanup() {
     restore_sysctls
 }
 
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-insecure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-left-edge-secure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-insecure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-left-secure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-insecure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-outside-right-secure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-insecure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-drop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-drop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-drop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-drop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv6_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv4 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv4_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv4_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-nodrop-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-nodrop-ipv4.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv4_cleanup() {
+    restore_sysctls
+}
+
+atf_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv6 cleanup
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv6_head() {
+    atf_set timeout 10
+    atf_set require.config allow_sysctl_side_effects
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv6_body() {
+    
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-nodrop-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-fin-time-wait/rcv-syn-fin-time-wait-using-shutdown-right-edge-secure-nodrop-ipv6.pkt
+}
+rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv6_cleanup() {
+    restore_sysctls
+}
+
 atf_test_case rcv_syn_fin_wait_1_left_edge_insecure_ipv4 cleanup
 rcv_syn_fin_wait_1_left_edge_insecure_ipv4_head() {
     atf_set timeout 10
@@ -12089,243 +13559,243 @@ rcv_syn_without_data_syn_sent_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_left_edge_insecure_ipv4 cleanup
-rcv_syn_time_wait_left_edge_insecure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_left_edge_insecure_ipv4_body() {
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv4_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-insecure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-insecure-ipv4.pkt
 }
-rcv_syn_time_wait_left_edge_insecure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_left_edge_insecure_ipv6 cleanup
-rcv_syn_time_wait_left_edge_insecure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_left_edge_insecure_ipv6_body() {
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv6_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-insecure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-insecure-ipv6.pkt
 }
-rcv_syn_time_wait_left_edge_insecure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_left_edge_secure_ipv4 cleanup
-rcv_syn_time_wait_left_edge_secure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_left_edge_secure_ipv4_body() {
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv4_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-secure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-secure-ipv4.pkt
 }
-rcv_syn_time_wait_left_edge_secure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_left_edge_secure_ipv6 cleanup
-rcv_syn_time_wait_left_edge_secure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_left_edge_secure_ipv6_body() {
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv6_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-left-edge-secure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-left-edge-secure-ipv6.pkt
 }
-rcv_syn_time_wait_left_edge_secure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_left_insecure_ipv4 cleanup
-rcv_syn_time_wait_outside_left_insecure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_left_insecure_ipv4_body() {
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv4_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-insecure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-insecure-ipv4.pkt
 }
-rcv_syn_time_wait_outside_left_insecure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_left_insecure_ipv6 cleanup
-rcv_syn_time_wait_outside_left_insecure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_left_insecure_ipv6_body() {
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv6_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-insecure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-insecure-ipv6.pkt
 }
-rcv_syn_time_wait_outside_left_insecure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_left_secure_ipv4 cleanup
-rcv_syn_time_wait_outside_left_secure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_left_secure_ipv4_body() {
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv4_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-secure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-secure-ipv4.pkt
 }
-rcv_syn_time_wait_outside_left_secure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_left_secure_ipv6 cleanup
-rcv_syn_time_wait_outside_left_secure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_left_secure_ipv6_body() {
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv6_body() {
     
-    atf_expect_timeout "FreeBSD intentionally does not follow the specification."
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-left-secure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-left-secure-ipv6.pkt
 }
-rcv_syn_time_wait_outside_left_secure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_right_insecure_ipv4 cleanup
-rcv_syn_time_wait_outside_right_insecure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_right_insecure_ipv4_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv4_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-insecure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-insecure-ipv4.pkt
 }
-rcv_syn_time_wait_outside_right_insecure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_right_insecure_ipv6 cleanup
-rcv_syn_time_wait_outside_right_insecure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_right_insecure_ipv6_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv6_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-insecure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-insecure-ipv6.pkt
 }
-rcv_syn_time_wait_outside_right_insecure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_right_secure_ipv4 cleanup
-rcv_syn_time_wait_outside_right_secure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_right_secure_ipv4_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv4_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-secure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-secure-ipv4.pkt
 }
-rcv_syn_time_wait_outside_right_secure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_outside_right_secure_ipv6 cleanup
-rcv_syn_time_wait_outside_right_secure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_outside_right_secure_ipv6_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv6_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-outside-right-secure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-outside-right-secure-ipv6.pkt
 }
-rcv_syn_time_wait_outside_right_secure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_right_edge_insecure_ipv4 cleanup
-rcv_syn_time_wait_right_edge_insecure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_right_edge_insecure_ipv4_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv4_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-insecure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-insecure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-insecure-ipv4.pkt
 }
-rcv_syn_time_wait_right_edge_insecure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_right_edge_insecure_ipv6 cleanup
-rcv_syn_time_wait_right_edge_insecure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_right_edge_insecure_ipv6_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv6_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-insecure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-insecure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-insecure-ipv6.pkt
 }
-rcv_syn_time_wait_right_edge_insecure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv6_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_right_edge_secure_ipv4 cleanup
-rcv_syn_time_wait_right_edge_secure_ipv4_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv4 cleanup
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv4_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_right_edge_secure_ipv4_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv4_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-secure-ipv4.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-secure-ipv4.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-secure-ipv4.pkt
 }
-rcv_syn_time_wait_right_edge_secure_ipv4_cleanup() {
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv4_cleanup() {
     restore_sysctls
 }
 
-atf_test_case rcv_syn_time_wait_right_edge_secure_ipv6 cleanup
-rcv_syn_time_wait_right_edge_secure_ipv6_head() {
+atf_test_case rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv6 cleanup
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv6_head() {
     atf_set timeout 10
     atf_set require.config allow_sysctl_side_effects
 }
-rcv_syn_time_wait_right_edge_secure_ipv6_body() {
-    atf_expect_fail "FreeBSD intentionally does not follow the specification."
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv6_body() {
     
-    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-secure-ipv6.pkt
-    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-right-edge-secure-ipv6.pkt
+    
+    save_sysctls /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
+    atf_check -o ignore -e ignore /usr/local/share/tcptestsuite/double-check.sh	        /usr/local/bin/packetdrill --tun_dev=tun0 --persistent_tun_dev	        /usr/local/share/tcptestsuite/state-event-engine/rcv-syn-time-wait/rcv-syn-time-wait-using-shutdown-right-edge-secure-ipv6.pkt
 }
-rcv_syn_time_wait_right_edge_secure_ipv6_cleanup() {
+rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv6_cleanup() {
     restore_sysctls
 }
 
@@ -13593,6 +15063,10 @@ atf_init_test_cases() {
 	atf_add_test_case socket_api_getsockopt_tcpinfo_ipv6
 	atf_add_test_case socket_api_setsockopt_hoplimit_active_ipv6
 	atf_add_test_case socket_api_setsockopt_hoplimit_passive_ipv6
+	atf_add_test_case socket_api_setsockopt_md5_active_ipv4
+	atf_add_test_case socket_api_setsockopt_md5_active_ipv6
+	atf_add_test_case socket_api_setsockopt_md5_passive_ipv4
+	atf_add_test_case socket_api_setsockopt_md5_passive_ipv6
 	atf_add_test_case socket_api_setsockopt_tos_active_ipv4
 	atf_add_test_case socket_api_setsockopt_tos_passive_ipv4
 	atf_add_test_case socket_api_setsockopt_traffic_class_active_ipv6
@@ -13619,6 +15093,16 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_ack_without_data_syn_sent_ack_outside_left_ipv6
 	atf_add_test_case rcv_ack_without_data_syn_sent_ack_outside_right_ipv4
 	atf_add_test_case rcv_ack_without_data_syn_sent_ack_outside_right_ipv6
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_left_edge_ipv4
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_left_edge_ipv6
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_middle_ipv4
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_middle_ipv6
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_outside_left_ipv4
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_outside_left_ipv6
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_outside_right_ipv4
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_outside_right_ipv6
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_right_edge_ipv4
+	atf_add_test_case rcv_ack_time_wait_using_shutdown_right_edge_ipv6
 	atf_add_test_case rcv_fin_ack_with_data_closed_ipv4
 	atf_add_test_case rcv_fin_ack_with_data_closed_ipv6
 	atf_add_test_case rcv_fin_ack_without_data_closed_ipv4
@@ -13639,6 +15123,16 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_fin_ack_without_data_syn_sent_ack_outside_left_ipv6
 	atf_add_test_case rcv_fin_ack_without_data_syn_sent_ack_outside_right_ipv4
 	atf_add_test_case rcv_fin_ack_without_data_syn_sent_ack_outside_right_ipv6
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv4
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_left_edge_ipv6
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_middle_ipv4
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_middle_ipv6
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv4
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_outside_left_ipv6
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv4
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_outside_right_ipv6
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv4
+	atf_add_test_case rcv_fin_ack_time_wait_using_shutdown_right_edge_ipv6
 	atf_add_test_case rcv_fin_with_data_closed_ipv4
 	atf_add_test_case rcv_fin_with_data_closed_ipv6
 	atf_add_test_case rcv_fin_without_data_closed_ipv4
@@ -13651,6 +15145,16 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_fin_with_data_syn_sent_ipv6
 	atf_add_test_case rcv_fin_without_data_syn_sent_ipv4
 	atf_add_test_case rcv_fin_without_data_syn_sent_ipv6
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_left_edge_ipv4
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_left_edge_ipv6
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_middle_ipv4
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_middle_ipv6
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_outside_left_ipv4
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_outside_left_ipv6
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_outside_right_ipv4
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_outside_right_ipv6
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_right_edge_ipv4
+	atf_add_test_case rcv_fin_time_wait_using_shutdown_right_edge_ipv6
 	atf_add_test_case rcv_rst_ack_with_data_closed_ipv4
 	atf_add_test_case rcv_rst_ack_with_data_closed_ipv6
 	atf_add_test_case rcv_rst_ack_without_data_closed_ipv4
@@ -13671,6 +15175,22 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_rst_ack_without_data_syn_sent_ack_outside_left_ipv6
 	atf_add_test_case rcv_rst_ack_without_data_syn_sent_ack_outside_right_ipv4
 	atf_add_test_case rcv_rst_ack_without_data_syn_sent_ack_outside_right_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_ack_time_wait_using_shutdown_right_edge_secure_ipv6
 	atf_add_test_case rcv_rst_close_wait_left_edge_insecure_ipv4
 	atf_add_test_case rcv_rst_close_wait_left_edge_insecure_ipv6
 	atf_add_test_case rcv_rst_close_wait_left_edge_secure_ipv4
@@ -13811,22 +15331,22 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_rst_with_data_syn_sent_ipv6
 	atf_add_test_case rcv_rst_without_data_syn_sent_ipv4
 	atf_add_test_case rcv_rst_without_data_syn_sent_ipv6
-	atf_add_test_case rcv_rst_time_wait_left_edge_insecure_ipv4
-	atf_add_test_case rcv_rst_time_wait_left_edge_insecure_ipv6
-	atf_add_test_case rcv_rst_time_wait_left_edge_secure_ipv4
-	atf_add_test_case rcv_rst_time_wait_left_edge_secure_ipv6
-	atf_add_test_case rcv_rst_time_wait_outside_left_insecure_ipv4
-	atf_add_test_case rcv_rst_time_wait_outside_left_insecure_ipv6
-	atf_add_test_case rcv_rst_time_wait_outside_left_secure_ipv4
-	atf_add_test_case rcv_rst_time_wait_outside_left_secure_ipv6
-	atf_add_test_case rcv_rst_time_wait_outside_right_insecure_ipv4
-	atf_add_test_case rcv_rst_time_wait_outside_right_insecure_ipv6
-	atf_add_test_case rcv_rst_time_wait_outside_right_secure_ipv4
-	atf_add_test_case rcv_rst_time_wait_outside_right_secure_ipv6
-	atf_add_test_case rcv_rst_time_wait_right_edge_insecure_ipv4
-	atf_add_test_case rcv_rst_time_wait_right_edge_insecure_ipv6
-	atf_add_test_case rcv_rst_time_wait_right_edge_secure_ipv4
-	atf_add_test_case rcv_rst_time_wait_right_edge_secure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_left_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_left_edge_secure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_left_insecure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_left_secure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_right_insecure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_outside_right_secure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_right_edge_insecure_ipv6
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv4
+	atf_add_test_case rcv_rst_time_wait_using_shutdown_right_edge_secure_ipv6
 	atf_add_test_case rcv_syn_ack_with_data_closed_ipv4
 	atf_add_test_case rcv_syn_ack_with_data_closed_ipv6
 	atf_add_test_case rcv_syn_ack_without_data_closed_ipv4
@@ -13847,6 +15367,22 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_syn_ack_without_data_syn_sent_ack_outside_left_ipv6
 	atf_add_test_case rcv_syn_ack_without_data_syn_sent_ack_outside_right_ipv4
 	atf_add_test_case rcv_syn_ack_without_data_syn_sent_ack_outside_right_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_insecure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_left_edge_secure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_insecure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_left_secure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_insecure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_outside_right_secure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_insecure_ipv6
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv4
+	atf_add_test_case rcv_syn_ack_time_wait_using_shutdown_right_edge_secure_ipv6
 	atf_add_test_case rcv_syn_close_wait_left_edge_insecure_ipv4
 	atf_add_test_case rcv_syn_close_wait_left_edge_insecure_ipv6
 	atf_add_test_case rcv_syn_close_wait_left_edge_secure_ipv4
@@ -13919,6 +15455,38 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_syn_fin_without_data_syn_sent_dropping_disabled_ipv6
 	atf_add_test_case rcv_syn_fin_without_data_syn_sent_dropping_enabled_ipv4
 	atf_add_test_case rcv_syn_fin_without_data_syn_sent_dropping_enabled_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_insecure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_left_edge_secure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_insecure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_left_secure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_insecure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_outside_right_secure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_insecure_nodrop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_drop_ipv6
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv4
+	atf_add_test_case rcv_syn_fin_time_wait_using_shutdown_right_edge_secure_nodrop_ipv6
 	atf_add_test_case rcv_syn_fin_wait_1_left_edge_insecure_ipv4
 	atf_add_test_case rcv_syn_fin_wait_1_left_edge_insecure_ipv6
 	atf_add_test_case rcv_syn_fin_wait_1_left_edge_secure_ipv4
@@ -13975,22 +15543,22 @@ atf_init_test_cases() {
 	atf_add_test_case rcv_syn_with_data_syn_sent_ipv6
 	atf_add_test_case rcv_syn_without_data_syn_sent_ipv4
 	atf_add_test_case rcv_syn_without_data_syn_sent_ipv6
-	atf_add_test_case rcv_syn_time_wait_left_edge_insecure_ipv4
-	atf_add_test_case rcv_syn_time_wait_left_edge_insecure_ipv6
-	atf_add_test_case rcv_syn_time_wait_left_edge_secure_ipv4
-	atf_add_test_case rcv_syn_time_wait_left_edge_secure_ipv6
-	atf_add_test_case rcv_syn_time_wait_outside_left_insecure_ipv4
-	atf_add_test_case rcv_syn_time_wait_outside_left_insecure_ipv6
-	atf_add_test_case rcv_syn_time_wait_outside_left_secure_ipv4
-	atf_add_test_case rcv_syn_time_wait_outside_left_secure_ipv6
-	atf_add_test_case rcv_syn_time_wait_outside_right_insecure_ipv4
-	atf_add_test_case rcv_syn_time_wait_outside_right_insecure_ipv6
-	atf_add_test_case rcv_syn_time_wait_outside_right_secure_ipv4
-	atf_add_test_case rcv_syn_time_wait_outside_right_secure_ipv6
-	atf_add_test_case rcv_syn_time_wait_right_edge_insecure_ipv4
-	atf_add_test_case rcv_syn_time_wait_right_edge_insecure_ipv6
-	atf_add_test_case rcv_syn_time_wait_right_edge_secure_ipv4
-	atf_add_test_case rcv_syn_time_wait_right_edge_secure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_left_edge_insecure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_left_edge_secure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_left_insecure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_left_secure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_right_insecure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_outside_right_secure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_right_edge_insecure_ipv6
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv4
+	atf_add_test_case rcv_syn_time_wait_using_shutdown_right_edge_secure_ipv6
 	atf_add_test_case active_connection_setup_ipv4
 	atf_add_test_case active_connection_setup_ipv6
 	atf_add_test_case getsockopt_tcp_maxseg_established_ipv4
