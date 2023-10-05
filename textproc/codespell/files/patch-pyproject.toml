@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2023-06-14 17:58:55 UTC
+--- pyproject.toml.orig	2023-10-02 19:34:35 UTC
 +++ pyproject.toml
-@@ -64,7 +64,7 @@ repository = "https://github.com/codespell-project/cod
+@@ -65,7 +65,7 @@ repository = "https://github.com/codespell-project/cod
  
  [build-system]
  build-backend = "setuptools.build_meta"
--requires = ["setuptools>=64", "setuptools_scm[toml]>=6.2"]
-+requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
+-requires = ["setuptools>=64", "setuptools_scm[toml]>=6.2, != 8.0.0"]
++requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2, != 8.0.0"]
  
  [tool.setuptools_scm]
  write_to = "codespell_lib/_version.py"
