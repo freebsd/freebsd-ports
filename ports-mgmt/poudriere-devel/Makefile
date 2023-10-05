@@ -1,6 +1,6 @@
 PORTNAME=	poudriere
 DISTVERSION=	3.3.99.20220831
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -22,13 +22,12 @@ GH_TAGNAME=	3.3.0-1135-g137c376a8
 GNU_CONFIGURE=	yes
 ETCDIR=		${PREFIX}/etc/poudriere.d
 
-OPTIONS_DEFINE=	BASH CERTS DIALOG4PORTS EXAMPLES QEMU ZSH
-OPTIONS_DEFAULT=BASH CERTS DIALOG4PORTS ZSH
+OPTIONS_DEFINE=	BASH MANIFESTS DIALOG4PORTS EXAMPLES QEMU ZSH
+OPTIONS_DEFAULT=BASH MANIFESTS DIALOG4PORTS ZSH
 OPTIONS_SUB=	yes
 
-CERTS_DESC=		Install checksum and SSL certificates for jail creation
-CERTS_RUN_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
-CERTS_RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
+MANIFESTS_DESC=		Install manifests for jail creation
+MANIFESTS_RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
 
 DIALOG4PORTS_DESC=	Install dialog4ports for options command
 DIALOG4PORTS_RUN_DEPENDS=	dialog4ports>0:ports-mgmt/dialog4ports
