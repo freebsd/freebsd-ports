@@ -7930,3 +7930,4 @@ sysutils/nfs-over-tls||2023-10-01|Has expired: All supported releases of FreeBSD
 x11/antimicro|x11/antimicrox|2023-10-01|Has expired: Replaced by x11/antimicrox upstream no longer maintained
 security/krb5-appl||2023-10-01|Has expired: Desupported by upstream, uses old ciphers
 sysutils/mstflint-lite|sysutils/mstflint|2023-10-05|Parent port is now lite by default
+net/frr7|net/frr8|2023-10-05|Keeping only the 2 last major branches in port tree
