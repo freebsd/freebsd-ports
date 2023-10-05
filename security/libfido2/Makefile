@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 # Skip libcrypto.pc while using OpenSSL from base system on older FreeBSD versions which does not skip this file
 .if ${SSL_DEFAULT} == base && !exists(/usr/libdata/pkgconfig/libcrypto.pc)
-EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-openssl
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openssl
 .endif
 
 .if ${SSL_DEFAULT} == openssl30
