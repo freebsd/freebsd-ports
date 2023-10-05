@@ -1,5 +1,5 @@
 PORTNAME=	rgeo-shapefile
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
