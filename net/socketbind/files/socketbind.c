@@ -2,32 +2,31 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
 #include <dlfcn.h>
+#include <stdlib.h>
 
-static void *socket_p, *dl_handle;
+static void *socket_p = NULL;
 
 static struct sockaddr_in bind_addr;
 static int	   do_bind;
 
 int socket(int domain, int type, int protocol) {
 	auto int res;
-	if (dl_handle == NULL) {
+	if (socket_p == NULL) {
 		char *str;
-		dl_handle = dlopen("/usr/lib/libc.so", RTLD_LAZY);
-		if (dl_handle == NULL) 
-			return -1;
-		socket_p = dlsym(dl_handle, "socket");
+		socket_p = dlsym(RTLD_NEXT, "socket");
 		if (!socket_p)
 			return -1;
 #ifdef DEBUG
 		printf("Loaded socket %x\n", socket_p);
 #endif
 
-		if ((str = getenv("BINDTO")) != NULL) {
+		if ((domain == PF_INET) && (str = getenv("BINDTO")) != NULL) {
 #ifdef DEBUG
 			printf("Thinking about bind\n");
 #endif
-			if (ascii2addr(AF_INET, str, &bind_addr.sin_addr)) {
+			if (inet_aton(str, &bind_addr.sin_addr)) {
 				do_bind = 1;
 				bind_addr.sin_len = INET_ADDRSTRLEN;
 				bind_addr.sin_family = AF_INET;
