@@ -1,11 +1,10 @@
-bin/FMIWrapper
 bin/OMEdit
 bin/OMNotebook
 bin/OMPlot
 bin/OMShell
+bin/OMShell-terminal
 bin/OMSimulator
 bin/OMSimulatorPython3
-bin/StartTLMFmiWrapper
 bin/omc
 bin/omc-diff
 include/omc/FMI/fmi_import_context.h
@@ -118,9 +117,9 @@ include/omc/JM/jm_string_set.h
 include/omc/JM/jm_types.h
 include/omc/JM/jm_vector.h
 include/omc/JM/jm_vector_template.h
-include/omc/OMSimulator.h
+include/omc/OMSimulator/OMSimulator.h
+include/omc/OMSimulator/Types.h
 include/omc/ParModelica/auto/om_pm_interface.hpp
-include/omc/Types.h
 include/omc/c/ModelicaUtilities.h
 include/omc/c/dataReconciliation/dataReconciliation.h
 include/omc/c/fmi-export/fmu1_model_interface.c.inc
@@ -152,6 +151,7 @@ include/omc/c/openmodelica_types.h
 include/omc/c/optimization/OptimizerData.h
 include/omc/c/optimization/OptimizerInterface.h
 include/omc/c/optimization/OptimizerLocalFunction.h
+include/omc/c/simulation/jacobian_util.h
 include/omc/c/simulation/modelinfo.h
 include/omc/c/simulation/omc_simulation_util.h
 include/omc/c/simulation/options.h
@@ -200,6 +200,7 @@ include/omc/c/simulation/solver/mixedSearchSolver.h
 include/omc/c/simulation/solver/mixedSystem.h
 include/omc/c/simulation/solver/model_help.h
 include/omc/c/simulation/solver/newtonIteration.h
+include/omc/c/simulation/solver/newton_diagnostics.h
 include/omc/c/simulation/solver/nonlinearSolverHomotopy.h
 include/omc/c/simulation/solver/nonlinearSolverHybrd.h
 include/omc/c/simulation/solver/nonlinearSolverNewton.h
@@ -214,6 +215,7 @@ include/omc/c/simulation/solver/solver_main.h
 include/omc/c/simulation/solver/spatialDistribution.h
 include/omc/c/simulation/solver/stateset.h
 include/omc/c/simulation/solver/sundials_error.h
+include/omc/c/simulation/solver/sundials_util.h
 include/omc/c/simulation/solver/sym_solver_ssc.h
 include/omc/c/simulation/solver/synchronous.h
 include/omc/c/simulation_data.h
@@ -226,7 +228,6 @@ include/omc/c/util/doubleEndedList.h
 include/omc/c/util/generic_array.h
 include/omc/c/util/index_spec.h
 include/omc/c/util/integer_array.h
-include/omc/c/util/jacobian_util.h
 include/omc/c/util/java_interface.h
 include/omc/c/util/jni.h
 include/omc/c/util/jni_md.h
@@ -653,6 +654,9 @@ include/omc/zconf.h
 include/omc/zlib.h
 include/omc/zmq.h
 include/omc/zmq_utils.h
+lib/omc/AnnotationsBuiltin_1_x.mo
+lib/omc/AnnotationsBuiltin_2_x.mo
+lib/omc/AnnotationsBuiltin_3_x.mo
 lib/omc/MetaModelicaBuiltin.mo
 lib/omc/ModelicaBuiltin.mo
 lib/omc/NFModelicaBuiltin.mo
@@ -664,8 +668,6 @@ lib/omc/OMSimulator/System.py
 lib/omc/OMSimulator/Types.py
 lib/omc/OMSimulator/__init__.py
 lib/omc/OMSimulator/capi.py
-lib/omc/OMSimulator/libOMSimulator.so
-lib/omc/OMSimulator/libomtlmsimulator.so
 lib/omc/PDEModelicaBuiltin.mo
 lib/omc/cpp/libOMCppCVode.so
 lib/omc/cpp/libOMCppDASSL.so
@@ -685,7 +687,7 @@ lib/omc/cpp/libOMCppModelicaUtilities.so
 lib/omc/cpp/libOMCppModelicaUtilities_static.a
 lib/omc/cpp/libOMCppNewton.so
 lib/omc/cpp/libOMCppNewton_static.a
-lib/omc/cpp/libOMCppOMCFactory.so
+lib/omc/cpp/libOMCppOMCFactory.a
 lib/omc/cpp/libOMCppSimController.so
 lib/omc/cpp/libOMCppSimulationSettings.so
 lib/omc/cpp/libOMCppSolver.so
@@ -725,10 +727,10 @@ lib/omc/liblis.a
 lib/omc/libmetis.a
 lib/omc/libomcgc.so
 lib/omc/libomcruntime.a
-lib/omc/libomtlmsimulator.so
-lib/omc/libqwt.so
-lib/omc/libqwt.so.6
-lib/omc/libqwt.so.6.1.5
+lib/omc/libomqwt.so
+lib/omc/libomqwt.so.6
+lib/omc/libomqwt.so.6.1.5
+lib/omc/libomsensplugin.so
 lib/omc/libsuitesparseconfig.a
 lib/omc/libsundials_arkode.a
 lib/omc/libsundials_cvode.a
@@ -823,6 +825,7 @@ share/omc/sources/c/gc/memory_pool.c
 share/omc/sources/c/gc/omc_gc.c
 share/omc/sources/c/math-support/pivot.c
 share/omc/sources/c/meta/meta_modelica_catch.c
+share/omc/sources/c/simulation/jacobian_util.c
 share/omc/sources/c/simulation/omc_simulation_util.c
 share/omc/sources/c/simulation/options.c
 share/omc/sources/c/simulation/simulation_info_json.c
@@ -855,7 +858,6 @@ share/omc/sources/c/util/doubleEndedList.c
 share/omc/sources/c/util/generic_array.c
 share/omc/sources/c/util/index_spec.c
 share/omc/sources/c/util/integer_array.c
-share/omc/sources/c/util/jacobian_util.c
 share/omc/sources/c/util/list.c
 share/omc/sources/c/util/modelica_string.c
 share/omc/sources/c/util/modelica_string_lit.c
@@ -873,6 +875,7 @@ share/omc/sources/c/util/simulation_options.c
 share/omc/sources/c/util/string_array.c
 share/omc/sources/c/util/utility.c
 share/omc/sources/c/util/varinfo.c
+share/omnotebook/OMNotebookHelp.onb
 share/omnotebook/commands.xml
 share/omnotebook/drmodelica/AccessControl/AccessDemo.onb
 share/omnotebook/drmodelica/AccessControl/Exercise1.onb

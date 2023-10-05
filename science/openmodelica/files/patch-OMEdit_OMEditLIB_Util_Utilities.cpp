@@ -1,6 +1,6 @@
---- OMEdit/OMEditLIB/Util/Utilities.cpp.orig	2022-12-11 19:01:44 UTC
+--- OMEdit/OMEditLIB/Util/Utilities.cpp.orig	2023-04-14 14:33:28 UTC
 +++ OMEdit/OMEditLIB/Util/Utilities.cpp
-@@ -1012,7 +1012,7 @@ QIcon Utilities::FileIconProvider::FileIconProviderImp
+@@ -1019,7 +1019,7 @@ QIcon Utilities::FileIconProvider::FileIconProviderImp
    // Get icon from OS.
    QIcon icon;
    // File icons are unknown on linux systems.

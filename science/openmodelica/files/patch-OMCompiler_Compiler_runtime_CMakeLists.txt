@@ -1,6 +1,6 @@
---- OMCompiler/Compiler/runtime/CMakeLists.txt.orig	2022-12-11 22:46:50 UTC
+--- OMCompiler/Compiler/runtime/CMakeLists.txt.orig	2023-04-14 14:33:28 UTC
 +++ OMCompiler/Compiler/runtime/CMakeLists.txt
-@@ -242,7 +242,11 @@ endif()
+@@ -234,7 +234,11 @@ endif()
  if (MINGW)
    set(OMC_MAKE_EXE "mingw32-make")
  else()
