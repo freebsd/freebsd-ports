@@ -1,5 +1,6 @@
 PORTNAME=	l-smash-works
 DISTVERSION=	20230716
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 

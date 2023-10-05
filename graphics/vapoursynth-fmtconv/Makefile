@@ -1,5 +1,6 @@
 PORTNAME=	fmtconv
 DISTVERSION=	r30
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/EleonoreMizo/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	vapoursynth-
