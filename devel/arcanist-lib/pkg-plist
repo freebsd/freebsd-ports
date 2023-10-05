@@ -17,7 +17,6 @@ lib/php/arcanist/resources/arclint/include-exclude.arclint.example
 lib/php/arcanist/resources/php/symbol-information.json
 lib/php/arcanist/resources/spelling/english.json
 lib/php/arcanist/resources/ssl/README
-lib/php/arcanist/resources/ssl/default.pem
 lib/php/arcanist/scripts/__init_script__.php
 lib/php/arcanist/scripts/arcanist.php
 lib/php/arcanist/scripts/hgdaemon/hgdaemon_client.php
