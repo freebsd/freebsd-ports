@@ -1,12 +1,13 @@
 PORTNAME=	scikit-base
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Base classes for sklearn-like parametric objects
-WWW=		https://github.com/sktime/skbase
+WWW=		https://skbase.readthedocs.io/en/latest/ \
+		https://github.com/sktime/skbase
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
