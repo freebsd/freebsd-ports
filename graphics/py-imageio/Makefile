@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.31.4
+PORTVERSION=	2.31.5
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
