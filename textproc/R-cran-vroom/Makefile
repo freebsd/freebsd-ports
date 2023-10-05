@@ -1,13 +1,14 @@
 PORTNAME=	vroom
-PORTVERSION=	1.6.3
+DISTVERSION=	1.6.4
 CATEGORIES=	textproc
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Read and Write Rectangular Text Data Quickly
 WWW=		https://cran.r-project.org/web/packages/vroom/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-cli>=3.2.0:devel/R-cran-cli \
@@ -25,6 +26,8 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-withr>0:devel/R-cran-withr
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
+TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
+# Some tests failing: https://github.com/tidyverse/vroom/issues/520
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles shebangfix
 
