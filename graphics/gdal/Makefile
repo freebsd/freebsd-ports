@@ -156,7 +156,9 @@ HDF5_LIB_DEPENDS=	libhdf5.so:science/hdf5
 HEIF_CMAKE_BOOL=	GDAL_USE_HEIF
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 KML_CMAKE_BOOL=		GDAL_USE_LIBKML
-KML_LIB_DEPENDS=	libkmlbase.so:science/libkml
+KML_LIB_DEPENDS=	libkmlbase.so:science/libkml \
+			liburiparser.so:net/uriparser
+KML_USES=		minizip
 LERC_CMAKE_BOOL=	GDAL_USE_LERC
 LERC_LIB_DEPENDS=	libLerc.so:graphics/lerc
 LIBXML2_CMAKE_BOOL=	GDAL_USE_LIBXML2
