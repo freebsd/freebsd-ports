@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon
 PORTVERSION=	5.4.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -13,8 +13,7 @@ WWW=		https://github.com/linuxmint/cinnamon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
-		${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri
+BUILD_DEPENDS=	${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri
 LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libmuffin.so:x11-wm/muffin \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
@@ -24,7 +23,6 @@ LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libsoup-2.4.so:devel/libsoup \
 		libxapp.so:x11/xapp
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
-		ca_root_nss>0:security/ca_root_nss \
 		gnome-themes-extra>3.0.0:x11-themes/gnome-themes-extra \
 		caribou>0:accessibility/caribou \
 		cinnamon-control-center:sysutils/cinnamon-control-center \
