@@ -1,0 +1,3 @@
+sbin/frr-reload.py
+sbin/generate_support_bundle.py
+%%ETCDIR%%/support_bundle_commands.conf
