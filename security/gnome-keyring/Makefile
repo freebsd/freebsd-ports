@@ -1,6 +1,6 @@
 PORTNAME=	gnome-keyring
 PORTVERSION=	42.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -11,8 +11,7 @@ COMMENT=	Program that keeps passwords and other secrets
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
-		docbook-xsl>=0:textproc/docbook-xsl \
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		gcr>=3.5.3:security/gcr
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgpg-error.so:security/libgpg-error \
@@ -20,8 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libtasn1.so:security/libtasn1 \
 		libp11-kit.so:security/p11-kit \
 		libgcrypt.so:security/libgcrypt
-RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
-		pinentry-gnome3:security/pinentry-gnome
+RUN_DEPENDS=	pinentry-gnome3:security/pinentry-gnome
 
 PORTSCOUT=	limitw:1,even
 
