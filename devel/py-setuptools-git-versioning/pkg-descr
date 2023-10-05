@@ -1,0 +1,12 @@
+Use git repo data (latest tag, current commit hash, etc) for building a version
+number according PEP 440.
+
+Features:
+- Can be installed & configured through both setup.py and PEP 518's
+  pyproject.toml
+- Does not require to change source code of the project
+- Tag-, file-, and callback-based versioning schemas are supported
+- Templates for tag, dev and dirty versions are separated
+- Templates support a lot of substitutions including git and environment
+  information
+- Well-documented

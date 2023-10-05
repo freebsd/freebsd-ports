@@ -5578,6 +5578,7 @@
     SUBDIR += py-setuptools-declarative-requirements
     SUBDIR += py-setuptools-gettext
     SUBDIR += py-setuptools-git
+    SUBDIR += py-setuptools-git-versioning
     SUBDIR += py-setuptools-pkg
     SUBDIR += py-setuptools-rust
     SUBDIR += py-setuptools44
