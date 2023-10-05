@@ -1,0 +1,5 @@
+Lager is a C++ library to assist value-oriented design by implementing
+the unidirectional data-flow architecture. It is heavily inspired by
+Elm and Redux, and enables composable designs by promoting the use of
+simple value types and testable application logic via pure functions.
+And you get time-travel for free!
