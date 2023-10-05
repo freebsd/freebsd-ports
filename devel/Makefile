@@ -5300,6 +5300,7 @@
     SUBDIR += py-pyjsparser
     SUBDIR += py-pykdtree
     SUBDIR += py-pylama
+    SUBDIR += py-pyleri
     SUBDIR += py-pylev
     SUBDIR += py-pylibsrtp
     SUBDIR += py-pylint-django
