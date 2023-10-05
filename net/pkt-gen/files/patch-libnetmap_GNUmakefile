@@ -1,10 +1,9 @@
---- libnetmap/GNUmakefile.orig	2022-02-11 07:45:02 UTC
+--- libnetmap/GNUmakefile.orig	2023-04-22 12:00:00 UTC
 +++ libnetmap/GNUmakefile
-@@ -1,6 +1,7 @@
+@@ -1,6 +1,6 @@
  SRCDIR ?= ../
  PREFIX ?= usr/local
 -CFLAGS=-O2 -pipe -Wall -Werror
-+CFLAGS=-O2 -pipe -Wall
 +CFLAGS=-O2 -pipe -Wall
  CFLAGS +=-g
  CFLAGS += -I $(SRCDIR)/sys

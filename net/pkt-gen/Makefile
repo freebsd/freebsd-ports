@@ -1,6 +1,5 @@
 PORTNAME=	pkt-gen
-PORTVERSION=	g2023.03.22
-PORTREVISION=	1
+PORTVERSION=	g2023.04.22
 CATEGORIES=	net
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -13,7 +12,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	luigirizzo
 GH_PROJECT=	netmap
-GH_TAGNAME=	0a53f85
+GH_TAGNAME=	eea4f11
 MAKEFILE=	GNUmakefile
 
 OPTIONS_DEFINE=	PCAP
@@ -22,7 +21,9 @@ OPTIONS_DEFAULT=	PCAP
 PCAP_MAKE_ARGS=	WITH_PCAP=1
 
 PLIST_FILES=	bin/pkt-gen \
-		bin/nmreplay
+		bin/nmreplay \
+		share/man/man8/nmreplay.8.gz \
+		share/man/man8/pkt-gen.8.gz
 
 do-build:
 	cd ${WRKSRC}/libnetmap && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE}
@@ -34,5 +35,9 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/apps/nmreplay/nmreplay \
 		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/apps/pkt-gen/pkt-gen.8 \
+		${STAGEDIR}${PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/apps/nmreplay/nmreplay.8 \
+		${STAGEDIR}${PREFIX}/share/man/man8
 
 .include <bsd.port.mk>
