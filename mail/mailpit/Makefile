@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.4
+DISTVERSION=	1.9.5
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -32,6 +32,7 @@ GH_TUPLE=	\
 		PuerkitoBio:goquery:v1.8.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		axllent:semver:v0.0.1:axllent_semver/vendor/github.com/axllent/semver \
+		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		cention-sany:utf7:26cad61bd60a:cention_sany_utf7/vendor/github.com/cention-sany/utf7 \
 		cznic:ql:v1.2.0:cznic_ql/vendor/github.com/cznic/ql \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
@@ -63,6 +64,7 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
+		microcosm-cc:bluemonday:v1.0.25:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		reiver:go-oi:v1.0.0:reiver_go_oi/vendor/github.com/reiver/go-oi \
