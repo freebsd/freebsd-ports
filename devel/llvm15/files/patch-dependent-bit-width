@@ -1,0 +1,114 @@
+From 48fb6659610a3177e8606681046dfa0d19f67203 Mon Sep 17 00:00:00 2001
+From: Collin Baker <collinbaker@chromium.org>
+Date: Tue, 14 Mar 2023 09:57:44 -0400
+Subject: [PATCH] [libclang] No longer attempt to get a dependent bit-width
+
+Handle template parameter-dependent bit field widths in libclang
+
+In a class template, a bit field's width may depend on a template
+parameter. In this case the width expression cannot be evaluated.
+
+Previously clang_getFieldDeclBitWidth() would assert, or cause memory
+unsafety and return an invalid result if assertions are disabled.
+
+This adds a check for this case which returns an error code.
+
+This work was largely taken from an earlier patch which was reverted
+due to an accidental API duplication
+(https://reviews.llvm.org/D130303).
+
+Fixes: https://github.com/llvm/llvm-project/issues/56644
+Co-authored-by: Aaron Ballman <aaron@aaronballman.com>
+Differential Revision: https://reviews.llvm.org/D146039
+---
+ clang/docs/ReleaseNotes.rst     |  4 ++++
+ clang/include/clang-c/Index.h   | 26 ++++++++++++++++++--------
+ clang/tools/libclang/CXType.cpp |  4 ++--
+ 3 files changed, 24 insertions(+), 10 deletions(-)
+
+diff --git a/clang/docs/ReleaseNotes.rst clang/docs/ReleaseNotes.rst
+index cfec4ed96ad9bf9..66a9210c35b6610 100644
+--- a/clang/docs/ReleaseNotes.rst
++++ clang/docs/ReleaseNotes.rst
+@@ -315,6 +315,10 @@ libclang
+   ``clang_CXIndex_setInvocationEmissionPathOption`` in favor of the new
+   function ``clang_createIndexWithOptions`` in order to improve thread safety.
+ 
++- Added check in ``clang_getFieldDeclBitWidth`` for whether a bit-field
++  has an evaluable bit width. Fixes undefined behavior when called on a
++  bit-field whose width depends on a template paramter.
++
+ Static Analyzer
+ ---------------
+ - Fix incorrect alignment attribute on the this parameter of certain
+diff --git a/clang/include/clang-c/Index.h clang/include/clang-c/Index.h
+index bc9e100846be699..710668740e0e6f6 100644
+--- a/clang/include/clang-c/Index.h
++++ clang/include/clang-c/Index.h
+@@ -3029,9 +3029,25 @@ CINDEX_LINKAGE unsigned long long
+ clang_getEnumConstantDeclUnsignedValue(CXCursor C);
+ 
+ /**
+- * Retrieve the bit width of a bit field declaration as an integer.
++ * Returns non-zero if the cursor specifies a Record member that is a bit-field.
++ */
++CINDEX_LINKAGE unsigned clang_Cursor_isBitField(CXCursor C);
++
++/**
++ * Retrieve the bit width of a bit-field declaration as an integer.
+  *
+- * If a cursor that is not a bit field declaration is passed in, -1 is returned.
++ * If the cursor does not reference a bit-field, or if the bit-field's width
++ * expression cannot be evaluated, -1 is returned.
++ *
++ * For example:
++ * \code
++ * if (clang_Cursor_isBitField(Cursor)) {
++ *   int Width = clang_getFieldDeclBitWidth(Cursor);
++ *   if (Width != -1) {
++ *     // The bit-field width is not value-dependent.
++ *   }
++ * }
++ * \endcode
+  */
+ CINDEX_LINKAGE int clang_getFieldDeclBitWidth(CXCursor C);
+ 
+@@ -3660,12 +3676,6 @@ CINDEX_LINKAGE CXType clang_Type_getTemplateArgumentAsType(CXType T,
+  */
+ CINDEX_LINKAGE enum CXRefQualifierKind clang_Type_getCXXRefQualifier(CXType T);
+ 
+-/**
+- * Returns non-zero if the cursor specifies a Record member that is a
+- *   bitfield.
+- */
+-CINDEX_LINKAGE unsigned clang_Cursor_isBitField(CXCursor C);
+-
+ /**
+  * Returns 1 if the base class specified by the cursor with kind
+  *   CX_CXXBaseSpecifier is virtual.
+diff --git a/clang/tools/libclang/CXType.cpp clang/tools/libclang/CXType.cpp
+index a1d157c63995b14..eb8bfc25a7c9106 100644
+--- a/clang/tools/libclang/CXType.cpp
++++ clang/tools/libclang/CXType.cpp
+@@ -10,11 +10,11 @@
+ //
+ //===--------------------------------------------------------------------===//
+ 
++#include "CXType.h"
+ #include "CIndexer.h"
+ #include "CXCursor.h"
+ #include "CXString.h"
+ #include "CXTranslationUnit.h"
+-#include "CXType.h"
+ #include "clang/AST/Decl.h"
+ #include "clang/AST/DeclObjC.h"
+ #include "clang/AST/DeclTemplate.h"
+@@ -378,7 +378,7 @@ int clang_getFieldDeclBitWidth(CXCursor C) {
+     const Decl *D = getCursorDecl(C);
+ 
+     if (const FieldDecl *FD = dyn_cast_or_null<FieldDecl>(D)) {
+-      if (FD->isBitField())
++      if (FD->isBitField() && !FD->getBitWidth()->isValueDependent())
+         return FD->getBitWidthValue(getCursorContext(C));
+     }
+   }
