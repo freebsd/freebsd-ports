@@ -1,5 +1,6 @@
 PORTNAME=	subtitlecomposer
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 

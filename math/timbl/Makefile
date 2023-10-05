@@ -1,5 +1,6 @@
 PORTNAME=	timbl
 DISTVERSION=	6.8.2
+PORTREVISION=	1
 CATEGORIES=	math education
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 

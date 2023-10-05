@@ -1,5 +1,6 @@
 PORTNAME=	qstardict
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://qstardict.ylsoftware.com/files/
 

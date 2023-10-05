@@ -1,5 +1,6 @@
 PORTNAME=	ucto
 DISTVERSION=	0.29
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 

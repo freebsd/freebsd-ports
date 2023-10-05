@@ -1,5 +1,6 @@
 PORTNAME=	tarantool
 PORTVERSION=	2.11.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://download.tarantool.org/tarantool/src/
 

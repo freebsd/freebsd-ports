@@ -1,6 +1,6 @@
 PORTNAME=	logseq
 PORTVERSION=	0.9.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
@@ -77,6 +77,5 @@ repackage-node-modules:
 		&& ${ECHO_CMD} -n "SIZE (logseq/better-sqlite-${BETTER_SQLITE_VERSION}.node.zip) = " \
 		&& ${STAT} -f %z /tmp/logseq/better-sqlite-${BETTER_SQLITE_VERSION}.node.zip
 	@${ECHO_CMD}
-
 
 .include <bsd.port.mk>

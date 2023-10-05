@@ -1,6 +1,6 @@
 PORTNAME=	scribus
 PORTVERSION=	1.5.8
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -64,7 +64,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
 		${WRKSRC}/scribus/desaxe/digester.cpp
 .endif
-
 
 post-install:
 		${LN} -sf ../share/icons/1_5_1/scribus.png \
