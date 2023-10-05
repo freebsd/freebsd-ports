@@ -1,5 +1,5 @@
 PORTNAME=	cryptopp
-PORTVERSION=	8.8.0
+PORTVERSION=	8.9.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/ \
 		http://www.cryptopp.com/

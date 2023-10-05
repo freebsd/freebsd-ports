@@ -1,6 +1,6 @@
 PORTNAME=	urbackup-server
 DISTVERSION=	2.5.26
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
