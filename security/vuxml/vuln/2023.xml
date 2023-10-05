@@ -1,3 +1,43 @@
+  <vuln vid="4f254817-6318-11ee-b2ff-080027de9982">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<name>py311-django32</name>
+	<range><lt>3.2.22</lt></range>
+      </package>
+      <package>
+	<name>py39-django41</name>
+	<name>py310-django41</name>
+	<name>py311-django41</name>
+	<range><lt>4.1.12</lt></range>
+      </package>
+      <package>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Django reports:</p>
+       <blockquote cite="https://www.djangoproject.com/weblog/2023/oct/04/security-releases/">
+	<p>CVE-2023-43665: Denial-of-service possibility in django.utils.text.Truncator.</p>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43665</cvename>
+      <url>https://www.djangoproject.com/weblog/2023/oct/04/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-01</discovery>
+      <entry>2023-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="915855ad-283d-4597-b01e-e0bf611db78b">
     <topic>libspf2 -- Integer Underflow Remote Code Execution</topic>
     <affects>
