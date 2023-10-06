@@ -45,6 +45,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_active24.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ad.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ali.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_artfiles.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_anx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_arvan.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_aurora.sh
@@ -52,6 +53,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_aws.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_azion.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_azure.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_bookmyname.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_bunny.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_cf.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_clouddns.sh
@@ -66,6 +68,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ddnss.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_desec.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_df.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dnsexit.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dgon.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dnshome.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_dnsservices.sh
@@ -164,6 +167,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_servercow.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_simply.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_tele3.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_tencent.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_udr.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ultra.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_world4you.sh
@@ -180,6 +184,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zilore.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zone.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_zonomi.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/aws_ses.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/bark.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/callmebotWhatsApp.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/notify/cqhttp.sh
