@@ -1,5 +1,5 @@
 PORTNAME=	scamper
-PORTVERSION=	20230614b
+PORTVERSION=	20230614c
 CATEGORIES=	net
 MASTER_SITES=	https://www.caida.org/catalog/software/scamper/code/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
