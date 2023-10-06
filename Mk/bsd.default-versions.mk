@@ -140,7 +140,7 @@ PYTHON_DEFAULT?=	3.9
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.0, 3.1, 3.2, 3.3
 RUBY_DEFAULT?=		3.1
-# Possible values: rust, rust-bootstrap, rust-nightly
+# Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
 # Possible values: 4.13, 4.16
 SAMBA_DEFAULT?=		4.13
