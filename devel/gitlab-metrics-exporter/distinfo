@@ -1,7 +1,0 @@
-TIMESTAMP = 1678910541
-SHA256 (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/v0.1.2.mod) = bce095c599e295c1c6ef6dcc5bd6a7812db4f4cbb5af267bd83cbb01712b0c34
-SIZE (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/v0.1.2.mod) = 1183
-SHA256 (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/v0.1.2.zip) = 5900bd9eeee7844c35a1a82668541bbd1c6ff9642cf74e802a5aee65291329f0
-SIZE (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/v0.1.2.zip) = 1539074
-SHA256 (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/devel_gitlab-metrics-exporter/gitlab-metrics-exporter-v0.1.2/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
