@@ -1,5 +1,6 @@
 PORTNAME=	opensmtpd
 PORTVERSION=	7.3.0
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	p2
 PORTEPOCH=	1
 CATEGORIES=	mail
@@ -14,11 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-OPTIONS_DEFINE=	CA_BUNDLE MAILERCONF PAM TABLE_DB
+OPTIONS_DEFINE=	MAILERCONF PAM TABLE_DB
 
-OPTIONS_DEFAULT=	CA_BUNDLE PAM TABLE_DB
+OPTIONS_DEFAULT=	PAM TABLE_DB
 
-CA_BUNDLE_DESC=		Use NSS CA bundle for SSL instead of /etc/ssl/cert.pem
 MAILERCONF_DESC=	Activate OpenSMTPD in mailer.conf(5)
 TABLE_DB_DESC=		Build table-db plugin (aliases)
 
@@ -36,9 +36,6 @@ USERS=		_smtpd _smtpq
 GROUPS=		_smtpd _smtpq
 
 OPTIONS_SUB=	yes
-
-CA_BUNDLE_CONFIGURE_WITH=	path-CAfile=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 PAM_CONFIGURE_WITH=	auth-pam=smtpd
 TABLE_DB_CONFIGURE_WITH=	table-db
