@@ -7932,3 +7932,4 @@ security/krb5-appl||2023-10-01|Has expired: Desupported by upstream, uses old ci
 sysutils/mstflint-lite|sysutils/mstflint|2023-10-05|Parent port is now lite by default
 net/frr7|net/frr8|2023-10-05|Keeping only the 2 last major branches in port tree
 devel/rubygem-gitlab-license_finder||2023-10-06|Removed
+devel/rubygem-thor10|devel/rubygem-thor|2023-10-06|Removed
