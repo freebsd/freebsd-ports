@@ -65,11 +65,6 @@ lib/kritaplugins/kritaembossfilter.so
 lib/kritaplugins/kritaexample.so
 lib/kritaplugins/kritaexif.so
 lib/kritaplugins/kritaexperimentpaintop.so
-lib/kritaplugins/kritaiptc.so
-lib/kritaplugins/kritajxlexport.so
-lib/kritaplugins/kritajxlimport.so
-lib/kritaplugins/kritatoolencloseandfill.so
-lib/kritaplugins/kritaxmp.so
 %%OPENEXR%%lib/kritaplugins/kritaexrexport.so
 %%OPENEXR%%lib/kritaplugins/kritaexrimport.so
 lib/kritaplugins/kritaextensioncolorsfilters.so
@@ -95,8 +90,12 @@ lib/kritaplugins/kritahistorydocker.so
 lib/kritaplugins/kritaimageenhancement.so
 lib/kritaplugins/kritaimagesplit.so
 lib/kritaplugins/kritaindexcolors.so
+lib/kritaplugins/kritaiptc.so
+lib/kritaplugins/kritajp2import.so
 lib/kritaplugins/kritajpegexport.so
 lib/kritaplugins/kritajpegimport.so
+lib/kritaplugins/kritajxlexport.so
+lib/kritaplugins/kritajxlimport.so
 lib/kritaplugins/kritakraexport.so
 lib/kritaplugins/kritakraimport.so
 lib/kritaplugins/kritakrzexport.so
@@ -145,6 +144,7 @@ lib/kritaplugins/kritaresourcemanager.so
 lib/kritaplugins/kritarotateimage.so
 lib/kritaplugins/kritaroundcornersfilter.so
 lib/kritaplugins/kritaroundmarkerpaintop.so
+lib/kritaplugins/kritasamplescreencolor.so
 lib/kritaplugins/kritascreentonegenerator.so
 %%OPENEXR%%lib/kritaplugins/kritaseexprgenerator.so
 lib/kritaplugins/kritaselectiontools.so
@@ -171,6 +171,7 @@ lib/kritaplugins/kritatiffimport.so
 lib/kritaplugins/kritatoolSmartPatch.so
 lib/kritaplugins/kritatoolcrop.so
 lib/kritaplugins/kritatooldyna.so
+lib/kritaplugins/kritatoolencloseandfill.so
 lib/kritaplugins/kritatoollazybrush.so
 lib/kritaplugins/kritatoolpolygon.so
 lib/kritaplugins/kritatoolpolyline.so
@@ -181,7 +182,9 @@ lib/kritaplugins/kritawavefilter.so
 lib/kritaplugins/kritawaveletdecompose.so
 lib/kritaplugins/kritawebpexport.so
 lib/kritaplugins/kritawebpimport.so
+lib/kritaplugins/kritawgcolorselector.so
 lib/kritaplugins/kritaxcfimport.so
+lib/kritaplugins/kritaxmp.so
 lib/libkritabasicflakes.so
 lib/libkritabasicflakes.so.%%SHLIB_SHVER%%
 lib/libkritabasicflakes.so.%%SHLIB_VER%%
@@ -224,6 +227,9 @@ lib/libkritalibpaintop.so.%%SHLIB_VER%%
 lib/libkritametadata.so
 lib/libkritametadata.so.%%SHLIB_SHVER%%
 lib/libkritametadata.so.%%SHLIB_VER%%
+lib/libkritamultiarch.so
+lib/libkritamultiarch.so.%%SHLIB_SHVER%%
+lib/libkritamultiarch.so.%%SHLIB_VER%%
 lib/libkritapigment.so
 lib/libkritapigment.so.%%SHLIB_SHVER%%
 lib/libkritapigment.so.%%SHLIB_VER%%
@@ -234,7 +240,7 @@ lib/libkritapsd.so
 lib/libkritapsd.so.%%SHLIB_SHVER%%
 lib/libkritapsd.so.%%SHLIB_VER%%
 lib/libkritapsdutils.so
-lib/libkritapsdutils.so.18
+lib/libkritapsdutils.so.%%SHLIB_SHVER%%
 lib/libkritapsdutils.so.%%SHLIB_VER%%
 lib/libkritaqmicinterface.so
 lib/libkritaqmicinterface.so.%%SHLIB_SHVER%%
@@ -251,12 +257,12 @@ lib/libkritaresourcewidgets.so.%%SHLIB_VER%%
 lib/libkritastore.so
 lib/libkritastore.so.%%SHLIB_SHVER%%
 lib/libkritastore.so.%%SHLIB_VER%%
+lib/libkritatiffpsd.so
 lib/libkritatiffpsd.so.%%SHLIB_SHVER%%
 lib/libkritatiffpsd.so.%%SHLIB_VER%%
 lib/libkritaui.so
 lib/libkritaui.so.%%SHLIB_SHVER%%
 lib/libkritaui.so.%%SHLIB_VER%%
-lib/libkritatiffpsd.so
 lib/libkritaversion.so
 lib/libkritaversion.so.%%SHLIB_SHVER%%
 lib/libkritaversion.so.%%SHLIB_VER%%
@@ -307,6 +313,7 @@ share/applications/krita_csv.desktop
 share/applications/krita_gif.desktop
 share/applications/krita_heif.desktop
 share/applications/krita_heightmap.desktop
+share/applications/krita_jp2.desktop
 share/applications/krita_jpeg.desktop
 share/applications/krita_jxl.desktop
 share/applications/krita_kra.desktop
@@ -406,6 +413,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/actions/MoveTool.action
 %%DATADIR%%/actions/PathTool.action
 %%DATADIR%%/actions/SvgTextTool.action
+%%DATADIR%%/actions/WGColorSelector.action
 %%DATADIR%%/actions/asccdl.action
 %%DATADIR%%/actions/colorsfilters.action
 %%DATADIR%%/actions/convertheightnormalmap.action
@@ -417,13 +425,16 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/actions/kritamenu.action
 %%DATADIR%%/actions/normalize.action
 %%DATADIR%%/actions/palettize.action
+%%PYTHON%%%%DATADIR%%/actions/plugin_importer.action
 %%DATADIR%%/actions/recorder.action
+%%PYTHON%%%%DATADIR%%/actions/tenbrushes.action
+%%PYTHON%%%%DATADIR%%/actions/tenscripts.action
 %%DATADIR%%/actions/threshold.action
 %%DATADIR%%/actions/tools.action
 %%DATADIR%%/brushes/triangle.svg
 %%DATADIR%%/bundles/Krita_3_Default_Resources.bundle
 %%DATADIR%%/bundles/Krita_4_Default_Resources.bundle
-%%OPENEXR%%%%DATADIR%%/bundles/Krita_Artists_SeExpr_examples.bundle
+%%DATADIR%%/bundles/Krita_Artists_SeExpr_examples.bundle
 %%DATADIR%%/bundles/README
 %%DATADIR%%/bundles/RGBA_brushes.bundle
 %%DATADIR%%/donation/banner.png
@@ -469,6 +480,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/images/krita-tangentnormal-preview.png
 %%DATADIR%%/images/krita-tangentnormal.png
 %%DATADIR%%/images/krita_roundmarkerop.svg
+%%DATADIR%%/input/clipstudiopaintcompatible.profile
 %%DATADIR%%/input/kritadefault.profile
 %%DATADIR%%/input/painttoolsaicompatible.profile
 %%DATADIR%%/input/photoshopcompatible.profile
@@ -787,8 +799,8 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/preset_icons/tool_icons/09_04_knife-rake.png
 %%DATADIR%%/preset_icons/tool_icons/09_05_paint-roller.png
 %%DATADIR%%/preset_icons/tool_icons/10_01_color-effect.png
-%%DATADIR%%/preset_icons/tool_icons/10_02_adjustement-contrast.png
-%%DATADIR%%/preset_icons/tool_icons/10_03_adjustement-dark.png
+%%DATADIR%%/preset_icons/tool_icons/10_02_adjustment-contrast.png
+%%DATADIR%%/preset_icons/tool_icons/10_03_adjustment-dark.png
 %%DATADIR%%/preset_icons/tool_icons/10_04_filter.png
 %%DATADIR%%/preset_icons/tool_icons/10_05_deform.png
 %%DATADIR%%/preset_icons/tool_icons/10_06_clone.png
@@ -810,9 +822,6 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/preset_icons/tool_icons/12_09_Pastel_Bar_01.png
 %%DATADIR%%/preset_icons/tool_icons/12_10_Pastel_Bar_04.png
 %%DATADIR%%/preset_icons/tool_icons/12_11_Pastel_Bar_02.png
-%%PYTHON%%%%DATADIR%%/actions/plugin_importer.action
-%%PYTHON%%%%DATADIR%%/actions/tenbrushes.action
-%%PYTHON%%%%DATADIR%%/actions/tenscripts.action
 %%PYTHON%%%%DATADIR%%/pykrita/assignprofiledialog/Manual.html
 %%PYTHON%%%%DATADIR%%/pykrita/assignprofiledialog/__init__.py
 %%PYTHON%%%%DATADIR%%/pykrita/assignprofiledialog/assignprofiledialog.py
@@ -1145,6 +1154,7 @@ share/icons/hicolor/scalable/apps/krita.svgz
 %%DATADIR%%/qmlthemes/default/sizes.js
 %%DATADIR%%/qmlthemes/default/theme.qml
 %%OPENEXR%%%%DATADIR%%/seexpr_scripts/Disney_noisecolor2.kse
+%%DATADIR%%/shortcuts/clip_studio_paint_compatible.shortcuts
 %%DATADIR%%/shortcuts/krita_default.shortcuts
 %%DATADIR%%/shortcuts/paint_tool_sai_compatible.shortcuts
 %%DATADIR%%/shortcuts/photoshop_compatible.shortcuts
@@ -1243,6 +1253,7 @@ share/kritaplugins/modify_selection.xmlgui
 share/kritaplugins/offsetimage.xmlgui
 share/kritaplugins/resourcemanager.xmlgui
 share/kritaplugins/rotateimage.xmlgui
+share/kritaplugins/samplescreencolor.xmlgui
 share/kritaplugins/shearimage.xmlgui
 share/kritaplugins/waveletdecompose.xmlgui
 share/locale/af/LC_MESSAGES/krita.mo
