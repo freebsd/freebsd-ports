@@ -8,12 +8,3 @@
                  && test "$PACKAGE" != libintl; }; then
            gt_use_preinstalled_gnugettext=yes
          else
-@@ -35320,7 +35319,7 @@ then :
-              # On Solaris 10 or newer, this test is no longer needed, because
-              # libc contains the fully functional pthread functions.
-              case "$host_os" in
--               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux*)
-+               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux* | freebsd*)
- 
- printf "%s\n" "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
- 

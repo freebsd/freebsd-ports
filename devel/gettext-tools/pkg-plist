@@ -27,7 +27,7 @@ lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.so
 lib/libgettextpo.so.0
-lib/libgettextpo.so.0.5.9
+lib/libgettextpo.so.0.5.10
 lib/libgettextsrc-%%PORTVERSION%%.so
 lib/libgettextsrc.so
 man/man1/autopoint.1.gz
