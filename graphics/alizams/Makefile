@@ -1,14 +1,11 @@
 PORTNAME=	alizams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.3
+DISTVERSION=	1.9.5
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DICOM Viewer
 WWW=		https://github.com/AlizaMedicalImaging/AlizaMS
-
-PATCH_SITES=	https://github.com/AlizaMedicalImaging/AlizaMS/commit/
-PATCHFILES=	dff6bb9bbba97dcf67793712d589ce3cedf8876f.patch:-p1
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
