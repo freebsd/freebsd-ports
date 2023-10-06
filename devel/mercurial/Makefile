@@ -1,5 +1,6 @@
 PORTNAME=	mercurial
 PORTVERSION=	6.5.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -17,12 +18,10 @@ USES=		cpe python shebangfix
 SHEBANG_FILES=	contrib/hgweb.fcgi hgweb.cgi
 USE_PYTHON=	autoplist pep517
 
-OPTIONS_DEFINE=		CA_BUNDLE DATA DOCS NLS FREEBSD
-OPTIONS_DEFAULT=	CA_BUNDLE DATA
+OPTIONS_DEFINE=		DATA DOCS NLS FREEBSD
+OPTIONS_DEFAULT=	DATA
 OPTIONS_SUB=		yes
 
-CA_BUNDLE_DESC=		Install CA Certificates
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 DATA_SUB_FILES=		pkg-message
 FREEBSD_DESC=		Patches used internally by the FreeBSD Project
 FREEBSD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-authormapsuffix
