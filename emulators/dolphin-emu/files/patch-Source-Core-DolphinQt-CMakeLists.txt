@@ -1,8 +1,8 @@
 Add DISABLE_NLS option
 
---- Source/Core/DolphinQt/CMakeLists.txt.orig	2022-07-06 07:23:55 UTC
+--- Source/Core/DolphinQt/CMakeLists.txt.orig	2023-07-23 02:24:09 UTC
 +++ Source/Core/DolphinQt/CMakeLists.txt
-@@ -475,6 +475,9 @@ if(WIN32)
+@@ -479,6 +479,9 @@ if(WIN32)
    )
  endif()
  
@@ -12,7 +12,7 @@ Add DISABLE_NLS option
  # Handle localization
  find_package(Gettext)
  
-@@ -526,6 +529,8 @@ if(GETTEXT_MSGFMT_EXECUTABLE)
+@@ -530,6 +533,8 @@ if(GETTEXT_MSGFMT_EXECUTABLE)
      endif()
    endforeach()
  endif()

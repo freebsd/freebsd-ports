@@ -1,3 +1,13 @@
-TIMESTAMP = 1657135938
-SHA256 (dolphin-emu-dolphin-5.0.16795-7321802_GH0.tar.gz) = 89c314a186240ac71b30e7620469e5245e4fe50ed52a24f4c9a3b98688be4507
-SIZE (dolphin-emu-dolphin-5.0.16795-7321802_GH0.tar.gz) = 34939218
+TIMESTAMP = 1696355651
+SHA256 (dolphin-emu-dolphin-5.0.19870-8c2a1c1_GH0.tar.gz) = 539fb312ad194b35dfce0cb1b9aeac64f29490ea2cebbd1a42da0cf696525f87
+SIZE (dolphin-emu-dolphin-5.0.19870-8c2a1c1_GH0.tar.gz) = 20538143
+SHA256 (mozilla-cubeb-27d2a102b0b75d9e49d43bc1ea516233fb87d778_GH0.tar.gz) = 9326a22d41b30b6d613c248a8ea2eb56c5ffc76a7080b0127165682fd8eba13e
+SIZE (mozilla-cubeb-27d2a102b0b75d9e49d43bc1ea516233fb87d778_GH0.tar.gz) = 223102
+SHA256 (epezent-implot-d87512353495e7760e7fda7566a05beef7627d8f_GH0.tar.gz) = b85b27cde80816c6ecbd63390e5cb9d3ea56211a63564372b7a7f89fe5b76a9b
+SIZE (epezent-implot-d87512353495e7760e7fda7566a05beef7627d8f_GH0.tar.gz) = 137760
+SHA256 (google-googletest-58d77fa8070e8cec2dc1ed015d66b454c8d78850_GH0.tar.gz) = c6ab3b6b33f51ef7465921f8f8c10c15d7cbc510761a15a18ad85babf6d73278
+SIZE (google-googletest-58d77fa8070e8cec2dc1ed015d66b454c8d78850_GH0.tar.gz) = 855887
+SHA256 (RetroAchievements-rcheevos-d9e990e6d13527532b7e2bb23164a1f3b7f33bb5_GH0.tar.gz) = dc165d4e7ce7b2b36169d94cc3291012e4b1fdf6a49b6b1d33c5126b289c888f
+SIZE (RetroAchievements-rcheevos-d9e990e6d13527532b7e2bb23164a1f3b7f33bb5_GH0.tar.gz) = 540722
+SHA256 (arsenm-sanitizers-cmake-aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a_GH0.tar.gz) = 9f5b073625375322236a94ce8d2d803cdedad321c91e63845f487b9ebfb2c433
+SIZE (arsenm-sanitizers-cmake-aab6948fa863bc1cbe5d0850bc46b9ef02ed4c1a_GH0.tar.gz) = 7234

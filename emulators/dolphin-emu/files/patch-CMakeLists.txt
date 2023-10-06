@@ -1,11 +1,44 @@
---- CMakeLists.txt.orig	2022-07-06 07:23:55 UTC
+Fix detection of several libraries
+
+1) Use system zlib instead of zlib-ng
+
+archivers/zlib-ng port is built with native mode enabled and exposes symbols
+with a 'zng_' prefix that causes link-time errors.
+
+See: https://github.com/zlib-ng/zlib-ng/blob/develop/PORTING.md#zlib-ng-native-mode
+
+2) Fix minizip detection
+
+minizip is found using the name 'minizip-ng' with pkgconf
+
+3) Fix xxhash detection
+
+Add missing call to dolphin_find_optional_system_library_pkgconfig() to
+detect libxxhash
+
+--- CMakeLists.txt.orig	2023-07-23 02:24:09 UTC
 +++ CMakeLists.txt
-@@ -133,7 +133,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
- # Set up paths
- set(bindir  ${CMAKE_INSTALL_PREFIX}/bin               CACHE PATH "bindir")
- set(datadir ${CMAKE_INSTALL_PREFIX}/share/dolphin-emu CACHE PATH "datadir")
--set(mandir  ${CMAKE_INSTALL_PREFIX}/share/man         CACHE PATH "mandir")
-+set(mandir  ${CMAKE_INSTALL_PREFIX}/man               CACHE PATH "mandir")
- add_definitions(-DDATA_DIR="${datadir}/")
+@@ -663,10 +663,7 @@ dolphin_find_optional_system_library(pugixml Externals
  
- if(CMAKE_SYSROOT)
+ dolphin_find_optional_system_library_pkgconfig(ENET libenet>=1.3.8 enet::enet Externals/enet)
+ 
+-if(NOT XXHASH_FOUND)
+-  message(STATUS "Using static xxhash from Externals")
+-  add_subdirectory(Externals/xxhash)
+-endif()
++dolphin_find_optional_system_library_pkgconfig(XXHASH libxxhash xxhash:xxhash Externals/xxhash)
+ 
+ dolphin_find_optional_system_library(BZip2 Externals/bzip2)
+ 
+@@ -676,9 +673,9 @@ dolphin_make_imported_target_if_missing(LibLZMA::LibLZ
+ 
+ dolphin_find_optional_system_library_pkgconfig(ZSTD libzstd>=1.4.0 zstd::zstd Externals/zstd)
+ 
+-dolphin_find_optional_system_library_pkgconfig(ZLIB zlib-ng ZLIB::ZLIB Externals/zlib-ng)
++dolphin_find_optional_system_library_pkgconfig(ZLIB zlib ZLIB::ZLIB Externals/zlib-ng)
+ 
+-dolphin_find_optional_system_library_pkgconfig(MINIZIP minizip>=3.0.0 minizip::minizip Externals/minizip)
++dolphin_find_optional_system_library_pkgconfig(MINIZIP minizip-ng>=3.0.0 minizip::minizip Externals/minizip)
+ 
+ dolphin_find_optional_system_library(LZO Externals/LZO)
+ 

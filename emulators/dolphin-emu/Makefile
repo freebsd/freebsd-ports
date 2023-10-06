@@ -1,6 +1,5 @@
 PORTNAME=	dolphin-emu
-PORTVERSION=	5.0.16795
-PORTREVISION=	6
+PORTVERSION=	5.0.19870
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -15,7 +14,6 @@ LICENSE_COMB=	multi
 # - enet and soundtouch come from Externals/ as Dolphin's versions diverge
 #   (see comments in CMakeLists.txt)
 # Various problems that may be addressed in the future:
-# - xxhash comes from Externals/ as it cannot be properly detected yet
 # - freesurround comes from Externals/ as it is not available from ports yet
 # - cubeb comes from Externals/ as it is not available from ports yet
 # - gtest detection is missing (Externals/ version enforced by CMakeLists.txt)
@@ -28,10 +26,12 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
 		libfmt.so:devel/libfmt \
 		libpugixml.so:textproc/pugixml \
+		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd \
 		libminizip-ng.so:archivers/minizip-ng \
 		liblzo2.so:archivers/lzo2 \
-		libpng.so:graphics/png \
+		libspng.so:graphics/libspng \
+		libspeexdsp.so:audio/speexdsp \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
 		libsndio.so:audio/sndio \
@@ -40,30 +40,35 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmbedtls.so:security/mbedtls \
 		libcurl.so:ftp/curl \
 		libhidapi.so:comms/hidapi \
-		libxml2.so:textproc/libxml2
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl iconv \
-		pkgconfig qmake qt:5 sdl xorg
+USES=		cmake compiler:c++17-lang desktop-file-utils elfctl gl iconv \
+		pkgconfig qmake qt:6 sdl xorg
+
+ELF_FEATURES=	+noaslr:Binaries/dolphin-emu*
 
 # See: https://fr.dolphin-emu.org/download/?ref=btn
 # for latest beta version and associated commit
 USE_GITHUB=	yes
 GH_PROJECT=	dolphin
-GH_TAGNAME=	7321802
+GH_TAGNAME=	8c2a1c1
+.include "${.CURDIR}/Makefile.tuples"
 
-USE_GL=		gl glew glu
+USE_GL=		egl gl
 USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xi xrandr
-USE_QT=		buildtools:build core gui widgets
+USE_QT=		base svg
 
 # XXX USE_MGBA crashes configure step
 CMAKE_ARGS+=	-DUSE_UPNP:BOOL=ON \
 		-DENABLE_QT:BOOL=ON \
 		-DENABLE_ALSA:BOOL=OFF \
 		-DENABLE_PULSEAUDIO:BOOL=ON \
+		-DENABLE_VULKAN:BOOL=OFF \
 		-DUSE_DISCORD_PRESENCE:BOOL=OFF \
-		-DENABLE_AUTOUPDATE=OFF \
-		-DUSE_MGBA=OFF
+		-DUSE_MGBA:BOOL=OFF \
+		-DENABLE_AUTOUPDATE:BOOL=OFF \
+		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 
 # XXX Fix build on archs where 'unsigned long' is 32bit
@@ -93,5 +98,18 @@ LIB_DEPENDS+=	libLLVM-${LLVM_DEFAULT:C/^([6-9])0/\1/}.so:devel/llvm${LLVM_DEFAUL
 .else
 CMAKE_ARGS+=	-DENABLE_LLVM:BOOL=OFF
 .endif
+
+# For maintainer (do not forget to clean up Makefile.tuples afterwards to
+# remove useless submodules)
+Makefile.tuples::
+	@${ECHO_CMD} -n > ${.CURDIR}/Makefile.tuples
+	@${RM} -rf ${WRKDIR}/.maintainer.checkout
+	@${MKDIR} ${WRKDIR}/.maintainer.checkout && \
+		cd ${WRKDIR}/.maintainer.checkout && \
+		git clone https://github.com/${GH_ACCOUNT}/${GH_PROJECT} . && \
+		git checkout ${GH_TAGNAME} && \
+		git submodule init && \
+		git submodule update --recursive && \
+		${SH} ${FILESDIR}/gen_gh_tuple.sh > ${.CURDIR}/Makefile.tuples
 
 .include <bsd.port.post.mk>
