@@ -31,7 +31,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.34.3
+lib/libgnutls.so.30.34.4
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
