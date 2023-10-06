@@ -13,6 +13,7 @@ WWW=		https://hyprland.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build after https://gitlab.freedesktop.org/wlroots/wlroots/-/commit/a289f812d620
 BROKEN_FreeBSD_12=	libc++ too old
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
