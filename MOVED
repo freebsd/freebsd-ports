@@ -7935,3 +7935,4 @@ devel/rubygem-gitlab-license_finder||2023-10-06|Removed
 devel/rubygem-thor10|devel/rubygem-thor|2023-10-06|Removed
 devel/rubygem-gitlab-sidekiq-fetcher||2023-10-06|Removed
 devel/rubygem-aws-sdk-s31126|devel/rubygem-aws-sdk-s3|2023-10-06|Use devel/rubygem-aws-sdk-s3
+devel/rubygem-aws-sdk-core3175|devel/rubygem-aws-sdk-core|2023-10-06|Use devel/rubygem-aws-sdk-core
