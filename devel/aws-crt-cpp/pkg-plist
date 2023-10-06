@@ -32,10 +32,11 @@ include/aws/crt/io/Stream.h
 include/aws/crt/io/TlsOptions.h
 include/aws/crt/io/Uri.h
 include/aws/crt/mqtt/Mqtt5Client.h
-include/aws/crt/mqtt/Mqtt5ClientCore.h
 include/aws/crt/mqtt/Mqtt5Packets.h
 include/aws/crt/mqtt/Mqtt5Types.h
 include/aws/crt/mqtt/MqttClient.h
+include/aws/crt/mqtt/MqttConnection.h
+include/aws/crt/mqtt/MqttTypes.h
 include/aws/iot/Mqtt5Client.h
 include/aws/iot/MqttClient.h
 include/aws/iot/MqttCommon.h
