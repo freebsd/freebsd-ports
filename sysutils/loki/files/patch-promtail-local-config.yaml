@@ -1,0 +1,11 @@
+--- clients/cmd/promtail/promtail-local-config.yaml.orig	2023-10-05 01:40:22.549761000 +0000
++++ clients/cmd/promtail/promtail-local-config.yaml	2023-10-05 01:41:28.869261000 +0000
+@@ -3,7 +3,7 @@
+   grpc_listen_port: 0
+ 
+ positions:
+-  filename: /tmp/positions.yaml
++  filename: /var/db/promtail/positions.yaml
+ 
+ clients:
+   - url: http://localhost:3100/loki/api/v1/push

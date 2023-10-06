@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# PROVIDE: promtail
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable promtail
+# promtail_enable="YES"
+#
+# promtail_enable (bool):
+#     Set it to YES to enable promtail
+#     Set to NO by default
+# promtail_user (string):
+#     Set user that promtail will run under
+#     Default is "%%PROMTAIL_USER%%"
+# promtail_group (string):
+#     Set group that own promtail files
+#     Default is "%%LOKI_GROUP%%"
+# promtail_config (string)
+#     Set full path to config file
+#     Default is "%%PREFIX%%/etc/promtail.yaml"
+# promtail_logfile (string)
+#     Set full path to log file
+#     Default is "/var/log/promtail/promtail.log"
+# promtail_loglevel (string)
+#     Set log level. Only log messages with the given severity or above.
+#     Valid levels: [debug, info, warn, error]
+#     Default is "warn"
+# promtail_args (string)
+#     Set additional command line arguments
+#     Default is ""
+
+. /etc/rc.subr
+
+name=promtail
+rcvar=promtail_enable
+
+load_rc_config $name
+
+: ${promtail_enable:="NO"}
+: ${promtail_user:="%%PROMTAIL_USER%%"}
+: ${promtail_group:="%%LOKI_GROUP%%"}
+: ${promtail_config:="%%PREFIX%%/etc/promtail.yaml"}
+: ${promtail_logfile:="/var/log/promtail/promtail.log"}
+: ${promtail_loglevel:="warn"}
+
+pidfile="/var/run/${name}/${name}.pid"
+required_files="${promtail_config}"
+
+procname="%%PREFIX%%/bin/promtail"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -t ${name} -o ${promtail_logfile} \
+	${procname} \
+	--config.file=${promtail_config} \
+	--log.level=${promtail_loglevel} \
+	${promtail_args}"
+
+start_precmd="promtail_start_precmd"
+
+promtail_start_precmd() {
+	if [ ! -d "/var/run/${name}" ]; then
+		install -d -m 0750 -o ${promtail_user} -g ${promtail_group} "/var/run/${name}"
+	fi
+
+	if [ ! -d "/var/log/promtail" ]; then
+		install -d -m 0750 -o ${promtail_user} -g ${promtail_group} "/var/log/promtail"
+	fi
+}
+
+run_rc_command "$1"

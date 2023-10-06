@@ -3,11 +3,15 @@ bin/loki-canary
 bin/logcli
 bin/promtail
 @sample etc/loki.yaml.sample
+@sample etc/promtail.yaml.sample
 @owner %%LOKI_USER%%
 @group %%LOKI_GROUP%%
 @mode 750
 @dir %%LOKI_DATADIR%%
 @dir %%LOKI_DATADIR%%/rules-temp
+@owner %%PROMTAIL_USER%%
+@mode 750
+@dir %%PROMTAIL_DATADIR%%
 @mode
 @group
 @owner

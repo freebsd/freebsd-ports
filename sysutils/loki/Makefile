@@ -326,7 +326,7 @@ GH_TUPLE=	\
 		xdg-go:stringprep:v1.0.4:xdg_go_stringprep/vendor/github.com/xdg-go/stringprep \
 		yuin:gopher-lua:v1.1.0:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua
 
-USE_RC_SUBR=	loki
+USE_RC_SUBR=	loki promtail
 
 GO_TARGET=	./cmd/loki ./cmd/loki-canary ./cmd/logcli ./clients/cmd/promtail
 
@@ -334,12 +334,17 @@ LOKI_USER?=	loki
 LOKI_GROUP?=	loki
 LOKI_DATADIR?=	/var/db/${PORTNAME}
 
-USERS=		${LOKI_USER}
+PROMTAIL_USER?=	promtail
+PROMTAIL_DATADIR?=	/var/db/promtail
+
+USERS=		${LOKI_USER} ${PROMTAIL_USER}
 GROUPS=		${LOKI_GROUP}
 
 SUB_LIST=	LOKI_USER=${LOKI_USER} \
 		LOKI_GROUP=${LOKI_GROUP} \
-		LOKI_DATADIR=${LOKI_DATADIR}
+		LOKI_DATADIR=${LOKI_DATADIR} \
+		PROMTAIL_USER=${PROMTAIL_USER} \
+		PROMTAIL_DATADIR=${PROMTAIL_DATADIR}
 
 PLIST_SUB=	${SUB_LIST}
 
@@ -372,7 +377,9 @@ post-extract:
 
 post-install:
 	@${CP} ${WRKSRC}/cmd/loki/loki-local-config.yaml ${STAGEDIR}${PREFIX}/etc/loki.yaml.sample
+	@${CP} ${WRKSRC}/clients/cmd/promtail/promtail-local-config.yaml ${STAGEDIR}${PREFIX}/etc/promtail.yaml.sample
 	@${MKDIR} ${STAGEDIR}${LOKI_DATADIR}
 	@${MKDIR} ${STAGEDIR}${LOKI_DATADIR}/rules-temp
+	@${MKDIR} ${STAGEDIR}${PROMTAIL_DATADIR}
 
 .include <bsd.port.mk>
