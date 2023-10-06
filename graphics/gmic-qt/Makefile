@@ -1,6 +1,6 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.3.0
+DISTVERSION=	3.3.1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		gmake:devel/gmake
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
-		libpng.so:graphics/png
+		libpng16.so:graphics/png
 
 FLAVORS=	none gimp # reflect the value of GMIC_QT_HOST for simplicity
 FLAVOR?=	${FLAVORS:[1]}
