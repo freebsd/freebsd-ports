@@ -1,6 +1,6 @@
 PORTNAME=	aria2
 PORTVERSION=	1.36.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/aria2/aria2/releases/download/release-${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -17,7 +17,7 @@ USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig ssl tar:xz
 CONFIGURE_ARGS=	--disable-epoll \
 		--enable-bittorrent --enable-libaria2 --enable-metalink --enable-shared --enable-ssl --enable-threads=posix --enable-websocket \
 		--with-disk-cache=${ARIA2_DISK_CACHE} \
-		--with-libz --with-openssl \
+		--with-libz --with-openssl --without-ca-bundle \
 		--without-appletls --without-gnutls --without-libgcrypt --without-libgmp --without-libnettle
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
@@ -34,18 +34,14 @@ ARIA2_DISK_CACHE?=	16M
 
 CPE_VENDOR=	aria2_project
 
-OPTIONS_DEFINE=	CA_BUNDLE CARES DOCS LIBUV NLS SQLITE SSH2 STATIC
+OPTIONS_DEFINE=	CARES DOCS LIBUV NLS SQLITE SSH2 STATIC
 OPTIONS_SINGLE=	XML
 OPTIONS_SINGLE_XML=	EXPAT LIBXML2
-OPTIONS_DEFAULT=CA_BUNDLE LIBXML2 SQLITE STATIC
+OPTIONS_DEFAULT=LIBXML2 SQLITE STATIC
 OPTIONS_SUB=	yes
-CA_BUNDLE_DESC=	Use CA bundle from Mozilla Project
 LIBUV_DESC=	Event polling via libuv
 SSH2_DESC=	SSH2 protocol support
 
-CA_BUNDLE_CONFIGURE_OFF=--without-ca-bundle
-CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CARES_CONFIGURE_WITH=	libcares
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 EXPAT_CONFIGURE_WITH=	libexpat
