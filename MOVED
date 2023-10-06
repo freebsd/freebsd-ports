@@ -7931,3 +7931,4 @@ x11/antimicro|x11/antimicrox|2023-10-01|Has expired: Replaced by x11/antimicrox 
 security/krb5-appl||2023-10-01|Has expired: Desupported by upstream, uses old ciphers
 sysutils/mstflint-lite|sysutils/mstflint|2023-10-05|Parent port is now lite by default
 net/frr7|net/frr8|2023-10-05|Keeping only the 2 last major branches in port tree
+devel/rubygem-gitlab-license_finder||2023-10-06|Removed
