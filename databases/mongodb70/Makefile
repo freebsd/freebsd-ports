@@ -75,7 +75,7 @@ GROUPS=		mongodb
 
 OPTIONS_DEFINE=		LTO SASL SSL NOAVX
 OPTIONS_DEFINE_aarch64=	ARMV80A
-OPTIONS_DEFAULT=	LTO SASL SSL
+OPTIONS_DEFAULT=	SASL SSL
 
 # MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
 # Can give corruption on high concurrency.
