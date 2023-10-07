@@ -37,10 +37,8 @@ index 6b3bdc7..7c6c342 100644
  
    // The following values are OS and endian-independent synonyms.
    //
-diff --git gfx/skia/skia/third_party/skcms/skcms.cc gfx/skia/skia/third_party/skcms/skcms.cc
-index 6b4d87b..7c0559d 100644
---- gfx/skia/skia/third_party/skcms/skcms.cc
-+++ gfx/skia/skia/third_party/skcms/skcms.cc
+--- gfx/skia/skia/modules/skcms/skcms.cc.orig
++++ gfx/skia/skia/modules/skcms/skcms.cc
 @@ -30,6 +30,8 @@
          #include <avx512fintrin.h>
          #include <avx512dqintrin.h>
@@ -49,8 +47,8 @@ index 6b4d87b..7c0559d 100644
 +    #define SKCMS_PORTABLE
  #endif
  
- // sizeof(x) will return size_t, which is 32-bit on some machines and 64-bit on others.
-@@ -280,20 +282,28 @@ enum {
+ static bool runtime_cpu_detection = true;
+@@ -324,20 +326,28 @@
  static uint16_t read_big_u16(const uint8_t* ptr) {
      uint16_t be;
      memcpy(&be, ptr, sizeof(be));

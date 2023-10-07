@@ -11,10 +11,10 @@ Date:   Thu Jun 13 11:53:00 2019 -0700
  4 files changed, 34 insertions(+), 3 deletions(-)
 
 diff --git config/external/moz.build config/external/moz.build
-index ab77121..75595d9 100644
+index a0877c9d717e..5caa2036e0ec 100644
 --- config/external/moz.build
 +++ config/external/moz.build
-@@ -49,8 +49,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
+@@ -45,8 +45,9 @@ if not CONFIG["MOZ_SYSTEM_LIBVPX"]:
      external_dirs += ["media/libvpx"]
  
  if CONFIG["MOZ_AV1"]:
@@ -27,10 +27,10 @@ index ab77121..75595d9 100644
  if not CONFIG["MOZ_SYSTEM_PNG"]:
      external_dirs += ["media/libpng"]
 diff --git config/system-headers.mozbuild config/system-headers.mozbuild
-index a1b58eb..65729f9 100644
+index d9489c8f15e4..4d2f15e18c1c 100644
 --- config/system-headers.mozbuild
 +++ config/system-headers.mozbuild
-@@ -1289,6 +1289,14 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
+@@ -1291,6 +1291,14 @@ if CONFIG['MOZ_ENABLE_LIBPROXY']:
          'proxy.h',
      ]
  
@@ -46,10 +46,10 @@ index a1b58eb..65729f9 100644
      system_headers += [
          'vpx_mem/vpx_mem.h',
 diff --git dom/media/platforms/moz.build dom/media/platforms/moz.build
-index 8509aec..eb6f129 100644
+index c71f22a22eee..efbd523b1225 100644
 --- dom/media/platforms/moz.build
 +++ dom/media/platforms/moz.build
-@@ -78,6 +78,11 @@ if CONFIG["MOZ_AV1"]:
+@@ -80,6 +80,11 @@ if CONFIG["MOZ_AV1"]:
          "agnostic/AOMDecoder.cpp",
          "agnostic/DAV1DDecoder.cpp",
      ]
@@ -62,33 +62,33 @@ index 8509aec..eb6f129 100644
  if CONFIG["MOZ_OMX"]:
      EXPORTS += [
 diff --git media/ffvpx/libavcodec/moz.build media/ffvpx/libavcodec/moz.build
-index 0069865..e806fc8 100644
---- media/ffvpx/libavcodec/moz.build.orig
+index 5675c28234a1..56344e5e4c98 100644
+--- media/ffvpx/libavcodec/moz.build
 +++ media/ffvpx/libavcodec/moz.build
-@@ -108,10 +108,14 @@
-         'vp9prob.c',
-         'vp9recon.c'
+@@ -109,10 +109,14 @@ if not CONFIG['MOZ_FFVPX_AUDIOONLY']:
+         'vp9recon.c',
+         'vpx_rac.c',
      ]
 -    USE_LIBS += [
 -        'dav1d',
 -        'media_libdav1d_asm',
 -    ]
 +    if CONFIG["MOZ_SYSTEM_AV1"]:
-+      CFLAGS += CONFIG['MOZ_SYSTEM_LIBDAV1D_CFLAGS']
-+      OS_LIBS += CONFIG['MOZ_SYSTEM_LIBDAV1D_LIBS']
++        CFLAGS += CONFIG['MOZ_SYSTEM_LIBDAV1D_CFLAGS']
++        OS_LIBS += CONFIG['MOZ_SYSTEM_LIBDAV1D_LIBS']
 +    else:
-+      USE_LIBS += [
-+          'dav1d',
-+          'media_libdav1d_asm',
-+      ]
-     if CONFIG['MOZ_WAYLAND']:
++        USE_LIBS += [
++            'dav1d',
++            'media_libdav1d_asm',
++        ]
+     if CONFIG["MOZ_WIDGET_TOOLKIT"] == "gtk":
          LOCAL_INCLUDES += ['/media/mozva']
          SOURCES += [
 diff --git toolkit/moz.configure toolkit/moz.configure
-index 0069865..e806fc8 100644
+index 2e56fa46ce59..23e30935c4bc 100644
 --- toolkit/moz.configure
 +++ toolkit/moz.configure
-@@ -523,7 +523,23 @@ def av1(value):
+@@ -745,7 +745,23 @@ def av1(value):
          return True
  
  
@@ -113,7 +113,7 @@ index 0069865..e806fc8 100644
  def dav1d_asm(target):
      if target.cpu in ("aarch64", "x86", "x86_64"):
          return True
-@@ -539,6 +555,7 @@ set_config("MOZ_DAV1D_ASM", dav1d_asm)
+@@ -761,6 +777,7 @@ set_config("MOZ_DAV1D_ASM", dav1d_asm)
  set_define("MOZ_DAV1D_ASM", dav1d_asm)
  set_config("MOZ_AV1", av1)
  set_define("MOZ_AV1", av1)
