@@ -31,17 +31,15 @@ CONFIGURE_ARGS+=	--disable-all \
 			--with-password-argon2=${LOCALBASE}
 DESTDIRNAME=		INSTALL_ROOT
 
-USES+=		autoreconf:build ssl
+USES+=		autoreconf:build localbase ssl
 USE_GNOME=	libxml2
 
-CPPFLAGS=	-I${LOCALBASE}/include
-
-LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
+LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE+=		CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
-				MYSQLND PHPDBG ZTS
+				MYSQLND NOASLR PHPDBG ZTS
 OPTIONS_DEFAULT=		CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
@@ -83,6 +81,7 @@ FPM_VARS=		PHP_SAPI+=fpm \
 			USE_RC_SUBR+=php-fpm
 IPV6_CONFIGURE_OFF=	--disable-ipv6
 LINKTHR_LIBS=		-lpthread
+NOASLR_USES=	elfctl
 MYSQLND_CONFIGURE_ON=	--enable-mysqlnd
 PHPDBG_CONFIGURE_ON=	--enable-phpdbg
 PHPDBG_VARS=		PHP_SAPI+=phpdbg
@@ -96,6 +95,23 @@ PKGMESSAGE=		${PKGDIR}/pkg-message.mod
 MODULENAME=		libphp
 SHORTMODNAME=		php
 WARNING=		"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
+.endif
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:NOASLR}
+.if ${PORT_OPTIONS:MCLI}
+ELF_FEATURES+=+noaslr:sapi/cli/php
+.endif
+.if ${PORT_OPTIONS:MCGI}
+ELF_FEATURES+=+noaslr:sapi/cgi/php-cgi
+.endif
+.if ${PORT_OPTIONS:MPHPDBG}
+ELF_FEATURES+=+noaslr:sapi/phpdbg/phpdbg
+.endif
+.if ${PORT_OPTIONS:MFPM}
+ELF_FEATURES+=+noaslr:sapi/fpm/php-fpm
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
