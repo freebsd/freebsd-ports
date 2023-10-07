@@ -1,10 +1,10 @@
 wf-touch and wf-utils are untagged and have no other consumers. Keep
 it private to wayfire package for now.
 
---- meson.build.orig	2020-11-08 17:19:12 UTC
+--- meson.build.orig	2023-10-07 08:36:28 UTC
 +++ meson.build
-@@ -41,8 +41,8 @@ if not use_system_wfconfig
-   wfconfig = subproject('wf-config').get_variable('wfconfig')
+@@ -69,8 +69,8 @@ endif
+ 	endif
  endif
  
 -wfutils = subproject('wf-utils').get_variable('wfutils')

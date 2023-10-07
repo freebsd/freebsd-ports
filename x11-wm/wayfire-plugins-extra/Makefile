@@ -10,6 +10,8 @@ WWW=		https://wayfire.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build after https://github.com/WayfireWM/wayfire/commit/ea80ae3bcb01
+
 BUILD_DEPENDS=	wayland-scanner:graphics/wayland \
 		wayland-protocols>0:graphics/wayland-protocols \
 		wayfire>0:x11-wm/wayfire

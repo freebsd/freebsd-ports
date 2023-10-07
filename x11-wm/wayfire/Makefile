@@ -1,7 +1,6 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.5
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -15,18 +14,21 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		wf-config>=0.7.0<0.9.0:devel/wf-config \
+		nlohmann-json>0:devel/nlohmann-json \
+		wf-config>=0.8.0<0.9.0:devel/wf-config \
 		${LOCALBASE}/include/xf86drmMode.h:graphics/libdrm \
 		wayland-protocols>=1.12:graphics/wayland-protocols \
 		glm>=0.9.8:math/glm \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
-LIB_DEPENDS=	libinotify.so:devel/libinotify \
+LIB_DEPENDS=	libevdev.so:devel/libevdev \
+		libinotify.so:devel/libinotify \
 		libwf-config.so:devel/wf-config \
 		libpng.so:graphics/png \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
+TEST_DEPENDS=	doctest>0:devel/doctest
 
 USES=		compiler:c++17-lang gl gnome jpeg meson pkgconfig xorg
 USE_GITHUB=	yes
@@ -35,7 +37,8 @@ USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
-		WayfireWM:wf-utils:889fdaf:wfutils/subprojects/wf-utils
+		WayfireWM:wf-utils:15f8e16:wfutils/subprojects/wf-utils
+MESON_ARGS=	-Dtests=disabled
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -52,5 +55,12 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini ${STAGEDIR}${EXAMPLESDIR}
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
