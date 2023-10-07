@@ -24,7 +24,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/compilers/org.eclipse.equinox.common-3.17.0.jar
 %%DATADIR%%/compilers/org.eclipse.equinox.preferences-3.10.100.jar
 %%DATADIR%%/compilers/org.eclipse.equinox.registry-3.11.200.jar
-%%DATADIR%%/compilers/org.eclipse.jdt.core-3.26.0.jar
+%%DATADIR%%/compilers/org.eclipse.jdt.core-3.32.0.jar
 %%DATADIR%%/compilers/org.eclipse.osgi-3.18.200.jar
 %%DATADIR%%/compilers/org.eclipse.text-3.12.300.jar
 %%DATADIR%%/javadoc/allclasses-frame.html
@@ -172,14 +172,14 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/libs/annotations-13.0.jar
-%%DATADIR%%/libs/bcel-6.6.1.jar
+%%DATADIR%%/libs/bcel-6.7.0.jar
 %%DATADIR%%/libs/codesize-1.2.jar
 %%DATADIR%%/libs/commons-lang3-3.12.0.jar
 %%DATADIR%%/libs/org.osgi.service.prefs-1.1.2.jar
 %%DATADIR%%/libs/osgi.annotation-8.0.1.jar
 %%DATADIR%%/libs/picocontainer-2.15.jar
-%%DATADIR%%/libs/kotlin-stdlib-1.7.22.jar
-%%DATADIR%%/libs/kotlin-stdlib-common-1.7.22.jar
+%%DATADIR%%/libs/kotlin-stdlib-1.8.10.jar
+%%DATADIR%%/libs/kotlin-stdlib-common-1.8.10.jar
 %%DATADIR%%/libs/robocode.battle-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.core-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/robocode.host-%%PORTVERSION%%.jar
@@ -190,6 +190,7 @@ share/applications/robocodeTwinDuel.desktop
 %%DATADIR%%/libs/robocode.ui.editor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/roborumble.jar
 %%DATADIR%%/license/epl-v10.html
+%%DATADIR%%/set_java_options.sh
 @(,,755) %%DATADIR%%/meleerumble.sh
 %%DATADIR%%/robocode.ico
 @(,,755) %%DATADIR%%/robocode.sh
