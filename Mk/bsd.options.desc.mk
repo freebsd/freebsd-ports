@@ -373,6 +373,7 @@ NIS_DESC?=		Network Information Services/YP support
 NLS_DESC?=		Native Language Support
 NMAP_DESC?=		NMAP security scanning support
 NNTP_DESC?=		NNTP (News) support
+NOASLR_DESC?=		Disable ASLR support
 NOTIFY_DESC?=		Desktop notification support
 NSS_DESC?=		SSL/TLS support via NSS
 NTLM_DESC?=		NTLM authentication support
