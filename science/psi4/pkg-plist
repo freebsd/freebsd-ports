@@ -2354,6 +2354,10 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/basis/sadlej-lpol-ds.gbs
 %%DATADIR%%/basis/sadlej-lpol-fl.gbs
 %%DATADIR%%/basis/sadlej-lpol-fs.gbs
+%%DATADIR%%/basis/sap_grasp_large.gbs
+%%DATADIR%%/basis/sap_grasp_small.gbs
+%%DATADIR%%/basis/sap_helfem_large.gbs
+%%DATADIR%%/basis/sap_helfem_small.gbs
 %%DATADIR%%/basis/sto-3g.gbs
 %%DATADIR%%/basis/sto-6g.gbs
 %%DATADIR%%/databases/A24.py
