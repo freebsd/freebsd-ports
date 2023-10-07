@@ -1,6 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.13
+DISTVERSION=	0.0.14
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -49,6 +49,22 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		yuin:goldmark:v1.5.6:yuin_goldmark/vendor/github.com/yuin/goldmark \
 		zalando:go-keyring:v0.2.1:zalando_go_keyring/vendor/github.com/zalando/go-keyring
 CGO_LDFLAGS+=	-Wl,--as-needed # gtk4 deps
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/so.libdb.gtkcord4.desktop \
+		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
+		share/metainfo/so.libdb.gtkcord4.metainfo.xml
+
+post-extract:
+# Prune after https://github.com/diamondburned/gtkcord4/commit/86b3ea579df1
+	${RM} ${WRKSRC}/nix/xyz.diamondb.gtkcord4.desktop
+	${RM} ${WRKSRC}/xyz.diamondb.gtkcord4.metainfo.xml
+
+post-install:
+# Install extras similar to Nix flake
+.for f in nix/*.desktop *.metainfo.xml internal/icons/hicolor/scalable/apps/logo.svg
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
+	${INSTALL_DATA} ${WRKSRC}/${f} \
+		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
+.endfor
 
 .include <bsd.port.mk>
