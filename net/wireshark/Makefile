@@ -1,5 +1,5 @@
 PORTNAME=	wireshark
-DISTVERSION=	4.0.9
+DISTVERSION=	4.0.10
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
