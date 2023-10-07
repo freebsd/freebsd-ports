@@ -1,4 +1,4 @@
-TIMESTAMP = 1680313970
+TIMESTAMP = 1696652348
 SHA256 (choria-io-go-choria-v0.27.0_GH0.tar.gz) = e8725acf899414980b92175a48844aefea3001044ba6273d4aaea93ac2a896c5
 SIZE (choria-io-go-choria-v0.27.0_GH0.tar.gz) = 7452184
 SHA256 (AlecAivazis-survey-v2.3.6_GH0.tar.gz) = 625a234986f6a91a09ca25e88b907d29af1ea1df7601c38b1b79937571f209ee
@@ -125,8 +125,8 @@ SHA256 (google-uuid-v1.3.0_GH0.tar.gz) = 7f7f37c47980e0afcc178a9ffc390bec29ed237
 SIZE (google-uuid-v1.3.0_GH0.tar.gz) = 16210
 SHA256 (goss-org-GOnetstat-22be0bd9e64d_GH0.tar.gz) = 336375b1ad24b4ad8880df17d0cb92b6bfd0df20beeffe877ce4eedcf6f98b58
 SIZE (goss-org-GOnetstat-22be0bd9e64d_GH0.tar.gz) = 3957
-SHA256 (goss-org-go-ps-953ade48a71b_GH0.tar.gz) = 15b62bb170289a02a2d0ee7def6053d846fac952ac710f58a4a36e99da028cbb
-SIZE (goss-org-go-ps-953ade48a71b_GH0.tar.gz) = 7655
+SHA256 (goss-org-go-ps-484db64eaa754408ebb3333c9a9b1a2aea5edb02_GH0.tar.gz) = e42ac1680f190fe3d968821fc6c8a3c5ef69ebcebbde1fc7e7598e68710bdbf1
+SIZE (goss-org-go-ps-484db64eaa754408ebb3333c9a9b1a2aea5edb02_GH0.tar.gz) = 7591
 SHA256 (goss-org-goss-v0.3.21_GH0.tar.gz) = 04ca4bd42d8201b655772e8d7b7d9efee5b7a7bbce0459ce4c06d8cbbb29b623
 SIZE (goss-org-goss-v0.3.21_GH0.tar.gz) = 119733
 SHA256 (gosuri-uilive-v0.0.4_GH0.tar.gz) = d6d60529725b8fe0a75d30361961257f2dc0c99ae567256fb6d9e45bf5243036
