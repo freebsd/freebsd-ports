@@ -27,6 +27,7 @@
     SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
+    SUBDIR += bsd-vacation
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
