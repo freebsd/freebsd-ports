@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	6.27.0
+PORTVERSION=	6.28.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -29,8 +29,7 @@ BUILD_DEPENDS=		${LOCALBASE}/bin/cmake:devel/cmake-core \
 			${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 			liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \
 			MathJax3>0:www/mathjax3
-LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2 \
+LIB_DEPENDS=		libfreetype.so:print/freetype2 \
 			libhunspell-1.7.so:textproc/hunspell \
 			libhyphen.so:textproc/hyphen \
 			libicudata.so:devel/icu \
@@ -65,11 +64,10 @@ RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}apsw>=0:databases/py-apsw@${PY_FLAVOR} \
 			pdftohtml:graphics/poppler-utils \
 			xdg-open:devel/xdg-utils
 
-USES=		desktop-file-utils gettext-runtime gl gnome localbase:ldflags \
+USES=		desktop-file-utils gettext-runtime:build gl localbase:ldflags \
 		pkgconfig pyqt:6 python qt:6 shared-mime-info shebangfix ssl \
 		tar:xz xorg
-USE_GL=		egl gl
-USE_GNOME=	glib20
+USE_GL=		opengl
 USE_PYQT=	pyqt6 pysip qtbuilder sip webengine
 USE_QT=		base
 USE_RC_SUBR=	calibre

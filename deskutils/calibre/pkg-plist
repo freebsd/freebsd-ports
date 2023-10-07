@@ -1539,6 +1539,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/dictionaries/es-ES/es-ES.aff
 %%DATADIR%%/dictionaries/es-ES/es-ES.dic
 %%DATADIR%%/dictionaries/es-ES/locales
+%%DATADIR%%/dictionaries/online-catalog.json
 %%DATADIR%%/ebook-convert-complete.calibre_msgpack
 %%DATADIR%%/editor-functions.json
 %%DATADIR%%/editor-help/css.json
