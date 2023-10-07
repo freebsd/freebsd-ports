@@ -1,9 +1,6 @@
 PORTNAME=	rspamd
-PORTVERSION=	3.6
+PORTVERSION=	3.7.1
 CATEGORIES=	mail
-
-PATCH_SITES=	https://github.com/rspamd/rspamd/commit/
-PATCHFILES=	ffbab4fbf218514845b8e5209aec044621b1f460.patch:-p1
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
