@@ -1,6 +1,7 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
 DISTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,9 +15,10 @@ BUILD_DEPENDS=	abc:cad/abc \
 		bash:shells/bash \
 		gawk:lang/gawk
 LIB_DEPENDS=	libffi.so:devel/libffi
-RUN_DEPENDS=	xdot:x11/py-xdot@${PY_FLAVOR}
-TEST_DEPENDS=	bash:shells/bash \
-		iverilog:cad/iverilog
+RUN_DEPENDS=	xdot:x11/py-xdot@${PY_FLAVOR} \
+		bash:shells/bash
+
+TEST_DEPENDS=	iverilog:cad/iverilog
 
 USES=		bison compiler:c++11-lang gmake pkgconfig python readline \
 		shebangfix tcl
