@@ -1,7 +1,9 @@
 bin/lfortran
+share/jupyter/kernels/fortran/kernel.json
 %%DATADIR%%/lib/impure/lfortran_intrinsics.h
 %%DATADIR%%/lib/lfortran_intrinsic_bit.mod
 %%DATADIR%%/lib/lfortran_intrinsic_builtin.mod
+%%DATADIR%%/lib/lfortran_intrinsic_custom.mod
 %%DATADIR%%/lib/lfortran_intrinsic_ieee_arithmetic.mod
 %%DATADIR%%/lib/lfortran_intrinsic_iso_c_binding.mod
 %%DATADIR%%/lib/lfortran_intrinsic_iso_fortran_env.mod
@@ -14,5 +16,6 @@ bin/lfortran
 %%DATADIR%%/lib/lfortran_intrinsic_string.mod
 %%DATADIR%%/lib/lfortran_intrinsic_trig.mod
 %%DATADIR%%/lib/liblfortran_runtime.so
+%%DATADIR%%/lib/liblfortran_runtime.so.0
+%%DATADIR%%/lib/liblfortran_runtime.so.0.21.1
 %%DATADIR%%/lib/liblfortran_runtime_static.a
-share/jupyter/kernels/fortran/kernel.json
