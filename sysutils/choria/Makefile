@@ -81,7 +81,7 @@ GH_TUPLE=	\
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		goss-org:GOnetstat:22be0bd9e64d:goss_org_gonetstat/vendor/github.com/goss-org/GOnetstat \
-		goss-org:go-ps:953ade48a71b:goss_org_go_ps/vendor/github.com/goss-org/go-ps \
+		goss-org:go-ps:484db64eaa754408ebb3333c9a9b1a2aea5edb02:goss_org_go_ps/vendor/github.com/goss-org/go-ps \
 		goss-org:goss:v0.3.21:goss_org_goss/vendor/github.com/goss-org/goss \
 		gosuri:uilive:v0.0.4:gosuri_uilive/vendor/github.com/gosuri/uilive \
 		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
