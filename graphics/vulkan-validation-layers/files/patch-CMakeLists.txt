@@ -1,26 +1,39 @@
-CMake Error at CMakeLists.txt:71 (find_package):
-  Could not find a package configuration file provided by
-  "VulkanUtilityLibraries" with any of the following names:
+CMake Error at layers/CMakeLists.txt:74 (target_link_libraries):
+  Target "VkLayer_utils" links to:
 
-    VulkanUtilityLibrariesConfig.cmake
-    vulkanutilitylibraries-config.cmake
+    Vulkan::LayerSettings
 
-  Add the installation prefix of "VulkanUtilityLibraries" to
-  CMAKE_PREFIX_PATH or set "VulkanUtilityLibraries_DIR" to a directory
-  containing one of the above files.  If "VulkanUtilityLibraries" provides a
-  separate development package or SDK, be sure it has been installed.
+  but the target was not found.  Possible reasons include:
 
---- CMakeLists.txt.orig	2023-09-06 01:26:34 UTC
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+CMake Error at layers/CMakeLists.txt:318 (target_link_libraries):
+  Target "vvl" links to:
+
+    SPIRV-Headers::SPIRV-Headers
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+--- CMakeLists.txt.orig	2023-10-07 00:41:35 UTC
 +++ CMakeLists.txt
-@@ -68,7 +68,10 @@ endif()
-     endif()
- endif()
+@@ -72,8 +72,14 @@ find_package(VulkanUtilityLibraries CONFIG QUIET)
+ find_package(VulkanHeaders CONFIG QUIET)
  
--find_package(VulkanUtilityLibraries REQUIRED CONFIG QUIET)
-+find_package(VulkanUtilityLibraries CONFIG QUIET)
+ find_package(VulkanUtilityLibraries CONFIG QUIET)
 +if (NOT TARGET Vulkan::UtilityHeaders OR NOT TARGET Vulkan::LayerSettings)
 +    add_subdirectory(Vulkan-Utility-Libraries EXCLUDE_FROM_ALL SYSTEM)
 +endif()
  
- if (ANNOTATED_SPEC_LINK)
-     message("ANNOTATED_SPEC_LINK is ${ANNOTATED_SPEC_LINK}")
+ find_package(SPIRV-Headers CONFIG QUIET)
++if (NOT TARGET SPIRV-Headers::SPIRV-Headers)
++    add_subdirectory(SPIRV-Headers EXCLUDE_FROM_ALL SYSTEM)
++endif()
+ 
+ find_package(SPIRV-Tools-opt CONFIG QUIET)
+ 
