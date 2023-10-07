@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.5
+DISTVERSION=	1.9.6
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -40,11 +40,11 @@ GH_TUPLE=	\
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.13.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.12.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.12.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.15.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.12.0:golang_sys/vendor/golang.org/x/sys \
+		golang:crypto:v0.14.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.13.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.13.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.16.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.13.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.13.0:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:5421fefb8386:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
@@ -89,7 +89,7 @@ GL_TUPLE=	\
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
-		cznic:sqlite:a16e15fbb42ad21e3665c92e257b4ec4600f2f15:cznic_sqlite/vendor/modernc.org/sqlite \
+		cznic:sqlite:12bc57f91e51cc33fc258f3fb292cf0d8320ae7e:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:f4c290107e9e43b1bb4a8bc7dcd154eb9b565cd8:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
