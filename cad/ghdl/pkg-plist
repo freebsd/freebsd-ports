@@ -4,7 +4,12 @@ bin/ghwdump
 include/ghdl/libghw.h
 include/ghdl/vhpi_user.h
 include/ghdl/vpi_user.h
+%%SYNTH%%include/ghdl/synth.h
+%%SYNTH%%include/ghdl/synth_gates.h
 lib/ghdl/ansi_color.sh
+lib/libghdl-3_0_0.so
+lib/libghdl.a
+lib/libghdl.link
 %%LLVM%%lib/ghdl/grt-exec.lst
 %%LLVM%%lib/ghdl/grt-shared.lst
 %%LLVM%%lib/ghdl/grt.lst
