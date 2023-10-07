@@ -1,5 +1,5 @@
 PORTNAME=	nats-server
-PORTVERSION=	2.10.1
+PORTVERSION=	2.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -21,7 +21,7 @@ GH_TUPLE=	golang:crypto:v0.13.0:golang_crypto/vendor/golang.org/x/crypto \
 		klauspost:compress:v1.17.0:klauspost_compress/vendor/github.com/klauspost/compress \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		nats-io:jwt:v2.5.2:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats.go:v1.29.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats.go:v1.30.2:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.4.5:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
