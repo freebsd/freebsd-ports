@@ -12,6 +12,7 @@ LICENSE=	BSD2CLAUSE BSD3CLAUSE MIT
 LICENSE_COMB=	multi
 
 BROKEN_i386=	error: timestamp is not lock-free on this architecture
+BROKEN_powerpc=	error: timestamp is not lock-free on this architecture
 
 USES=		gmake pkgconfig sqlite tar:xz
 
