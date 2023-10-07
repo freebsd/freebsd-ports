@@ -1,0 +1,11 @@
+--- src/Makefile.am.orig	2023-10-07 16:13:36 UTC
++++ src/Makefile.am
+@@ -18,7 +18,7 @@ parse.c: parse.peg
+ # _DARWIN_C_SOURCE is for NI_MAXHOST on OS X
+ # _XOPEN_SOURCE is for struct sigaction
+ # _GNU_SOURCE is for h_errno and gethostbyname-related macros
+-___rinetd_CFLAGS = -std=c99 -D_POSIX_C_SOURCE=200809L \
++___rinetd_CFLAGS = -std=c99 \
+                    -D_XOPEN_SOURCE -D_GNU_SOURCE -D_DARWIN_C_SOURCE \
+                    -Wall -Wextra -Wwrite-strings
+ 
