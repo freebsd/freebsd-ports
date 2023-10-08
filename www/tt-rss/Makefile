@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20230614
+PORTVERSION=	g20231004
 PORTEPOCH=	2
 CATEGORIES=	www
 
@@ -15,7 +15,7 @@ USES=		gettext-tools php:cli,web shebangfix
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
-GL_TAGNAME=	dc25a9cf6816b756cb38490eab93f02589c44a10
+GL_TAGNAME=	c779e2ba0d71942579dd27ccdcad0295bd06e45f
 
 USE_PHP=	ctype dom exif fileinfo filter iconv intl json mbstring openssl \
 		pcntl pdo phar posix session simplexml sockets tokenizer xml \
