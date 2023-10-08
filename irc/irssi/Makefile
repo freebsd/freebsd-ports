@@ -1,5 +1,5 @@
 PORTNAME=	irssi
-DISTVERSION=	1.4.4
+DISTVERSION=	1.4.5
 PORTEPOCH=	2
 CATEGORIES?=	irc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
