@@ -7,3 +7,5 @@ SHA256 (WayfireWM-wf-utils-15f8e16_GH0.tar.gz) = 8f32164bb2c620252aa5ca74f03f25d
 SIZE (WayfireWM-wf-utils-15f8e16_GH0.tar.gz) = 48505
 SHA256 (dd479c06bf84.patch) = c58562defa005b8b3188d8a64003f0ee5444fef7449ed0a5f899d70b1901fb6d
 SIZE (dd479c06bf84.patch) = 2086
+SHA256 (564b75a45d7c.patch) = 723750d0a09cdf5a806af5563385f510f16c7dc16c582ba81a4c49fbce389c88
+SIZE (564b75a45d7c.patch) = 684
