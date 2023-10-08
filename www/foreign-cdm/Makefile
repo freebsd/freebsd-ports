@@ -1,10 +1,9 @@
 PORTNAME=	foreign-cdm
 PORTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	www multimedia linux
-MASTER_SITES=	https://arrowd.name/:cdm \
-		https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/:widevine
-DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm \
-		google-chrome-stable_${CHROME_VERSION}_amd64.deb:widevine
+MASTER_SITES=	https://arrowd.name/:cdm
+DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	CDM agent for Chromium
@@ -27,25 +26,31 @@ GH_TUPLE=	capnproto:capnproto:928c8390d4d562bd32dc79a42eb64e9bdba572d8:capnproto
 MAKE_ENV=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++ \
 		MAKE_JOBS_NUMBER=${MAKE_JOBS_NUMBER}
 
-CHROME_VERSION=	116.0.5845.179-1
+SUB_FILES=	fcdm-setup-env
+
+PLIST_FILES=	libexec/fcdm-worker \
+		lib/foreign-cdm/fcdm-fbsd.so \
+		share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so \
+		share/chromium/WidevineCdm/manifest.json \
+		share/foreign-cdm/fcdm-setup-env
+
 CDM_INT_HASH=	fef0b5aa1bd31efb88dfab804bdbe614f3d54f28
 
 post-extract:
 	${MV} ${WRKDIR}/*.h ${WRKSRC}/third_party/cdm/
-	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
 
 do-install:
-	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/build/fcdm-worker ${STAGEDIR}${LINUXBASE}/usr/bin
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/foreign-cdm
-	${MV} ${WRKSRC}/build/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/lib/foreign-cdm/
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/chromium
-	${MV} ${WRKDIR}/opt/google/chrome/WidevineCdm ${STAGEDIR}${PREFIX}/share/chromium/
-	${MKDIR} ${STAGEDIR}${LINUXBASE}/usr/lib/foreign-cdm
-	${MV} ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so ${STAGEDIR}${LINUXBASE}/usr/lib/foreign-cdm
+	${INSTALL_PROGRAM} ${WRKSRC}/build/fcdm-worker ${STAGEDIR}${PREFIX}/libexec/
 
-post-install:
-	${LN} -s ${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/fcdm-setup-env ${STAGEDIR}${DATADIR}
+
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/foreign-cdm
+	${CP} ${WRKSRC}/build/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/lib/foreign-cdm/
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so
+
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64
+	${LN} -s ${PREFIX}/lib/foreign-cdm/fcdm-fbsd.so ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/_platform_specific/linux_x64/libwidevinecdm.so
+	${LN} -s ${PREFIX}/lib/WidevineCdm/manifest.json ${STAGEDIR}${PREFIX}/share/chromium/WidevineCdm/manifest.json
 
 .include <bsd.port.mk>
