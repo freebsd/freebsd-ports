@@ -223,7 +223,7 @@ include/ObjFWRT/ObjFWRT.h
 %%TLS%%include/ObjFWTLS/ObjFWTLS.h
 lib/libobjfw.so
 lib/libobjfw.so.1
-lib/libobjfw.so.1.0.1
+lib/libobjfw.so.1.0.2
 lib/libobjfwrt.so
 lib/libobjfwrt.so.1
 lib/libobjfwrt.so.1.0.0
