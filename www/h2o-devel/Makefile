@@ -29,9 +29,6 @@ SHEBANG_FILES=	share/h2o/start_server
 
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=OFF \
 		-DWITH_BUNDLED_SSL=OFF
-.if ${ARCH} == "i386"
-CMAKE_ARGS+=	-DWITH_FUSION=OFF
-.endif
 
 CONFLICTS=	h2o
 
@@ -59,6 +56,12 @@ MRUBY_DESC=		Build with embedded mruby handler support
 MRUBY_USES=		bison ruby:build
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+CMAKE_ARGS+=	-DWITH_FUSION=OFF
+.endif
+
 .include <bsd.port.options.mk>
 
 post-install:
@@ -72,4 +75,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
