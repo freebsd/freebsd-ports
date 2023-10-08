@@ -1,6 +1,5 @@
 PORTNAME=	foreign-cdm
-PORTVERSION=	2
-PORTREVISION=	1
+PORTVERSION=	3
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	https://arrowd.name/:cdm
 DISTFILES=	cdm-${CDM_INT_HASH}.tar.gz:cdm
@@ -20,7 +19,7 @@ RUN_DEPENDS=	linux_base-c7>0:emulators/linux_base-c7
 USE_GITHUB=	yes
 GH_ACCOUNT=	shkhln
 GH_PROJECT=	foreign-cdm
-GH_TAGNAME=	760e440839f4456373460dcb61cfa8e36618d310
+GH_TAGNAME=	e953bc0d35344b7e4474969ed37f4e0f9be01451
 GH_TUPLE=	capnproto:capnproto:928c8390d4d562bd32dc79a42eb64e9bdba572d8:capnproto/third_party/capnproto
 
 MAKE_ENV=	LINUX_CC=/compat/linux/opt/rh/devtoolset-11/root/usr/bin/g++ \
