@@ -628,7 +628,6 @@
     SUBDIR += minetest
     SUBDIR += minetest_game
     SUBDIR += minetestmapper
-    SUBDIR += minilens
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += mkhexgrid
