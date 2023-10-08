@@ -1,0 +1,53 @@
+https://gitlab.freedesktop.org/pipewire/pipewire-rs/-/commit/ff923ee9dfe0
+
+error[E0308]: mismatched types
+   --> cargo-crates/libspa-0.7.2/src/pod/parser.rs:180:75
+    |
+180 |             let res = spa_sys::spa_pod_parser_get_long(self.as_raw_ptr(), long.as_mut_ptr());
+    |                       --------------------------------                    ^^^^^^^^^^^^^^^^^ expected `*mut i64`, found `*mut i32`
+    |                       |
+    |                       arguments to this function are incorrect
+    |
+    = note: expected raw pointer `*mut i64`
+               found raw pointer `*mut i32`
+note: function defined here
+   --> cargo-crates/libspa-sys-0.7.2/src/pod/parser.rs:61:12
+    |
+61  |     pub fn spa_pod_parser_get_long(parser: *mut spa_pod_parser, value: *mut i64) -> c_int;
+    |            ^^^^^^^^^^^^^^^^^^^^^^^
+
+--- cargo-crates/libspa-0.7.2/src/pod/parser.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libspa-0.7.2/src/pod/parser.rs
+@@ -2,7 +2,7 @@ use std::{
+ // SPDX-License-Identifier: MIT
+ 
+ use std::{
+-    ffi::{c_char, c_double, c_float, c_int, c_long, c_void, CStr},
++    ffi::{c_char, c_double, c_float, c_void, CStr},
+     marker::PhantomData,
+     mem::MaybeUninit,
+ };
+@@ -162,9 +162,9 @@ impl<'d> Parser<'d> {
+         }
+     }
+ 
+-    pub fn get_int(&mut self) -> Result<c_int, Errno> {
++    pub fn get_int(&mut self) -> Result<i32, Errno> {
+         unsafe {
+-            let mut int: MaybeUninit<c_int> = MaybeUninit::uninit();
++            let mut int: MaybeUninit<i32> = MaybeUninit::uninit();
+             let res = spa_sys::spa_pod_parser_get_int(self.as_raw_ptr(), int.as_mut_ptr());
+             if res >= 0 {
+                 Ok(int.assume_init())
+@@ -174,9 +174,9 @@ impl<'d> Parser<'d> {
+         }
+     }
+ 
+-    pub fn get_long(&mut self) -> Result<c_long, Errno> {
++    pub fn get_long(&mut self) -> Result<i64, Errno> {
+         unsafe {
+-            let mut long: MaybeUninit<c_long> = MaybeUninit::uninit();
++            let mut long: MaybeUninit<i64> = MaybeUninit::uninit();
+             let res = spa_sys::spa_pod_parser_get_long(self.as_raw_ptr(), long.as_mut_ptr());
+             if res >= 0 {
+                 Ok(long.assume_init())
