@@ -26,10 +26,10 @@ CONFIGURE_ARGS=	--disable-werror \
 		--enable-netrc \
 		--enable-openssl-auto-load-config \
 		--enable-progress-meter \
-		--without-ca-bundle \
-		--without-ca-path \
 		--with-fish-functions-dir=${LOCALBASE}/share/fish/completions \
-		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions
+		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions \
+		--without-ca-bundle \
+		--without-ca-path
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
 		ac_cv_func_SSLv2_client_method=no
 GNU_CONFIGURE=	yes
@@ -86,6 +86,7 @@ CURL_DEBUG_CONFIGURE_ENABLE=	curldebug
 DEBUG_CONFIGURE_ENABLE=	debug
 DICT_CONFIGURE_ENABLE=	dict
 FTP_CONFIGURE_ENABLE=	ftp
+GNUTLS_CONFIGURE_ON=	--with-ca-fallback
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libnettle.so:security/nettle
@@ -123,6 +124,7 @@ LIBSSH2_CONFIGURE_WITH=	libssh2
 LIBSSH2_LIB_DEPENDS=	libssh2.so:security/libssh2
 MQTT_CONFIGURE_ENABLE=	mqtt
 NTLM_CONFIGURE_ENABLE=	ntlm
+OPENSSL_CONFIGURE_ON=	--with-ca-fallback
 OPENSSL_CONFIGURE_WITH=	openssl=${OPENSSLBASE}
 OPENSSL_CPPFLAGS=	-I${OPENSSLINC}
 OPENSSL_LDFLAGS=	-L${OPENSSLLIB}
@@ -149,10 +151,6 @@ ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MGNUTLS} || ${PORT_OPTIONS:MOPENSSL}
-CONFIGURE_ARGS+=--with-ca-fallback
-.endif
 
 .if ((!${PORT_OPTIONS:MGNUTLS} && !${PORT_OPTIONS:MOPENSSL}) || (${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT:Mlibressl*})) && ${PORT_OPTIONS:MTLS_SRP}
 IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
