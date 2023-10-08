@@ -329,6 +329,7 @@
     SUBDIR += links1
     SUBDIR += linux-c7-qtwebkit
     SUBDIR += linux-opera
+    SUBDIR += linux-widevine-cdm
     SUBDIR += litmus
     SUBDIR += ljdeps
     SUBDIR += llhttp
