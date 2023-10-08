@@ -14,7 +14,7 @@
      if script.endswith(".php"):
          # save calling the sh process
 -        base = ("/usr/bin/env", "php")
-+        base = ("/usr/local/bin/php",)
++        base = ("%%LOCALBASE%%/bin/php",)
      else:
          base = ()
  

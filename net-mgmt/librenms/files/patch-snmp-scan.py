@@ -6,7 +6,7 @@
              arguments = [
 -                "/usr/bin/env",
 -                "lnms",
-+                "/usr/local/bin/lnms",
++                "%%LOCALBASE%%/bin/lnms",
                  "device:add",
                  "-g",
                  POLLER_GROUP,
@@ -15,7 +15,7 @@
      try:
          CONFIG = json.loads(
 -            check_output(["/usr/bin/env", "php", "config_to_json.php"]).decode()
-+            check_output(["/usr/local/bin/php", "config_to_json.php"]).decode()
++            check_output(["%%LOCALBASE%%/bin/php", "config_to_json.php"]).decode()
          )
      except CalledProcessError as e:
          parser.error(

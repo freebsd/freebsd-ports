@@ -5,7 +5,7 @@
          $install_dir = $validator->getBaseDir();
  
 -        $lnms = str_replace('lnms:', '', rtrim(`whereis -b lnms 2>/dev/null`));
-+        $lnms = rtrim(`/usr/bin/find /usr/local/bin -name lnms`);
++        $lnms = rtrim(`/usr/bin/find %%LOCALBASE%%/bin -name lnms`);
          $path = rtrim(`echo "\$PATH"`);
  
          // if couldn't find lnms and we have PATH
