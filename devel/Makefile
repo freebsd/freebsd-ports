@@ -4249,6 +4249,7 @@
     SUBDIR += py-argparse
     SUBDIR += py-args
     SUBDIR += py-arpeggio
+    SUBDIR += py-array-api-compat
     SUBDIR += py-arrow
     SUBDIR += py-asciimatics
     SUBDIR += py-asgi-lifespan

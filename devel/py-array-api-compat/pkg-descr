@@ -1,0 +1,11 @@
+This is a small wrapper around common array libraries that is compatible with
+the Array API standard. Currently, NumPy, CuPy, and PyTorch are supported.
+
+Note that some of the functionality in this library is backwards incompatible
+with the corresponding wrapped libraries. The end-goal is to eventually make
+each array library itself fully compatible with the array API, but this requires
+making backwards incompatible changes in many cases, so this will take some
+time.
+
+Currently all libraries here are implemented against the 2022.12 version of the
+standard.
