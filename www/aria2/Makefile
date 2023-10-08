@@ -1,6 +1,6 @@
 PORTNAME=	aria2
 PORTVERSION=	1.36.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/aria2/aria2/releases/download/release-${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -17,7 +17,7 @@ USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig ssl tar:xz
 CONFIGURE_ARGS=	--disable-epoll \
 		--enable-bittorrent --enable-libaria2 --enable-metalink --enable-shared --enable-ssl --enable-threads=posix --enable-websocket \
 		--with-disk-cache=${ARIA2_DISK_CACHE} \
-		--with-libz --with-openssl --without-ca-bundle \
+		--with-libz --with-openssl \
 		--without-appletls --without-gnutls --without-libgcrypt --without-libgmp --without-libnettle
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
