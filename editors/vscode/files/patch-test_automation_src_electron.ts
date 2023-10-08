@@ -1,6 +1,6 @@
---- test/automation/src/electron.ts.orig	2022-11-09 00:04:34 UTC
+--- test/automation/src/electron.ts.orig	2023-10-03 13:06:11 UTC
 +++ test/automation/src/electron.ts
-@@ -101,7 +101,7 @@ export function getDevElectronPath(): string {
+@@ -103,7 +103,7 @@ export function getDevElectronPath(): string {
  	switch (process.platform) {
  		case 'darwin':
  			return join(buildPath, 'electron', `${product.nameLong}.app`, 'Contents', 'MacOS', 'Electron');
@@ -9,7 +9,7 @@
  			return join(buildPath, 'electron', `${product.applicationName}`);
  		case 'win32':
  			return join(buildPath, 'electron', `${product.nameShort}.exe`);
-@@ -114,7 +114,7 @@ export function getBuildElectronPath(root: string): st
+@@ -116,7 +116,7 @@ export function getBuildElectronPath(root: string): st
  	switch (process.platform) {
  		case 'darwin':
  			return join(root, 'Contents', 'MacOS', 'Electron');
