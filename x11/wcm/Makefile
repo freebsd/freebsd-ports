@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
 CATEGORIES=	x11 wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	aade4224e23e.patch:-p1 # https://github.com/WayfireWM/wcm/pull/69
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayfire Config Manager
 WWW=		https://wayfire.org/
