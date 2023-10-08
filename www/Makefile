@@ -1481,6 +1481,7 @@
     SUBDIR += py-cinemagoer
     SUBDIR += py-cookies
     SUBDIR += py-crossplane
+    SUBDIR += py-css-html-js-minify
     SUBDIR += py-css-parser
     SUBDIR += py-csscompressor
     SUBDIR += py-cssmin
