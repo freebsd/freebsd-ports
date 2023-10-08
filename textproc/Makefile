@@ -1563,6 +1563,7 @@
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx-issues
     SUBDIR += py-sphinx-markdown-tables
+    SUBDIR += py-sphinx-material
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-sitemap
     SUBDIR += py-sphinx-tabs
