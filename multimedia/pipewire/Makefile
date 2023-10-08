@@ -1,6 +1,5 @@
 PORTNAME=	pipewire
-DISTVERSION=	0.3.62
-PORTREVISION=	3
+DISTVERSION=	0.3.81
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 
 USES=		compiler:c11 gettext-tools gnome localbase:ldflags meson \
-		ncurses pkgconfig python:build readline ssl
+		ncurses pkgconfig python:build ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -36,6 +35,7 @@ GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_ENABLED=gstreamer gstreamer-device-provider
 
 PIPEWIRE_JACK_DESC=		Build pipewire-jack
+PIPEWIRE_JACK_LIB_DEPENDS=	libopus.so:audio/opus
 PIPEWIRE_JACK_MESON_ENABLED=	pipewire-jack
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
@@ -63,7 +63,7 @@ VULKAN_MESON_ENABLED=	vulkan
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-MEDIA_SESSION_VERSION=	0.4.1
+MEDIA_SESSION_VERSION=	0.4.2
 
 MESON_ARGS=	-D pw-cat=enabled \
 		-D v4l2=enabled \
@@ -80,6 +80,8 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D x11=disabled \
 		-D x11-xfixes=disabled \
 		-D pipewire-v4l2=disabled \
+		-D libmysofa=disabled \
+		-D libffado=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
 # Fake pkg-config support before https://cgit.freebsd.org/src/commit/?id=396851c20aeb
