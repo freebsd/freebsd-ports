@@ -1,6 +1,6 @@
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/nss/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
@@ -17,7 +17,13 @@ USE_PERL5=	build
 NO_ARCH=	yes
 WRKSRC_SUBDIR=	nss
 
+OPTIONS_DEFINE=		ETCSYMLINK
+OPTIONS_DEFAULT=	ETCSYMLINK
+
 OPTIONS_SUB=		yes
+
+ETCSYMLINK_DESC=	Add symlink to /etc/ssl/cert.pem
+ETCSYMLINK_CONFLICTS_INSTALL=	ca-roots-[0-9]*
 
 CERTDIR?=	share/certs
 PLIST_SUB+=	CERTDIR=${CERTDIR}
@@ -42,5 +48,9 @@ do-install:
 	${LN} -sf ../../${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/etc/ssl/cert.pem.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/openssl
 	${LN} -sf ../${CERTDIR}/ca-root-nss.crt ${STAGEDIR}${PREFIX}/openssl/cert.pem.sample
+
+do-install-ETCSYMLINK-on:
+	${MKDIR} ${STAGEDIR}/etc/ssl
+	${LN} -sf ../..${PREFIX}/${CERTDIR}/ca-root-nss.crt ${STAGEDIR}/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
