@@ -1,6 +1,5 @@
 PORTNAME=	django-modelcluster
-PORTVERSION=	6.0
-PORTREVISION=	1
+PORTVERSION=	6.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +11,8 @@ WWW=		https://github.com/wagtail/django-modelcluster
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=2.2:www/py-django32@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>=2015.2,1:devel/py-pytz@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>=2022.4,1:devel/py-pytz@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
@@ -23,6 +22,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	TAGGIT
 TAGGIT_DESC=	Tagging support
 
-TAGGIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-taggit>=0.20:www/py-django-taggit@${PY_FLAVOR}
+TAGGIT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-taggit>=2.0:www/py-django-taggit@${PY_FLAVOR}
 
 .include <bsd.port.mk>
