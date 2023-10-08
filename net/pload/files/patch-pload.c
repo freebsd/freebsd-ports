@@ -1,6 +1,6 @@
 --- pload.c.orig	2000-02-01 07:11:24 UTC
 +++ pload.c
-@@ -285,6 +285,13 @@ static XtResource pload_resources[] = {
+@@ -285,6 +285,14 @@ static XtResource pload_resources[] = {
  /************* Main () ******************/
  int main (int argc, char *argv[])
  {
@@ -10,11 +10,12 @@
 +	/* save original argv pointers */
 +	for(i = 0; argv[i]; i++)
 +		orig_argv[i] = argv[i];
++        orig_argv[i] = NULL; /* add trailing NULL pointer */
 +
  	Progname = argv[0];
  	
  	toplevel = XtAppInitialize (
-@@ -301,6 +308,11 @@ int main (int argc, char *argv[])
+@@ -301,6 +309,12 @@ int main (int argc, char *argv[])
  	   and exit */	
  	if (argc != 1) Usage();
  	
@@ -22,11 +23,12 @@
 +	   argv so that ps(1) shows the command line */
 +	for(i = 0; orig_argv[i]; i++)
 +		argv[i] = orig_argv[i];
++	argv[i] = orig_argv[i];	/* copy trailing NULL pointer */
 +
  	XtGetApplicationResources(
  		toplevel,			/* widget */
  		(XtPointer) &resources, 	/* where to put */
-@@ -596,27 +608,26 @@ void CheckForWMExit(	Widget w, 
+@@ -596,27 +610,26 @@ void CheckForWMExit(	Widget w, 
  void do_total(char *b, double total)
  {
  	if (total < 1024.0)
@@ -62,7 +64,7 @@
  	return;
  }
  
-@@ -643,6 +654,9 @@ void make_label(char *fmt, unsigned long total, double
+@@ -643,6 +656,9 @@ void make_label(char *fmt, unsigned long total, double
  					break;
  				case 'M':
  					do_rate(buff, max);

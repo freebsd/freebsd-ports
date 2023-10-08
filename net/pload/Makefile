@@ -1,6 +1,6 @@
 PORTNAME=	pload
-PORTVERSION=	0.9.5
-PORTREVISION=	5
+DISTVERSION=	0.9.5
+PORTREVISION=	6
 CATEGORIES=	net sysutils
 MASTER_SITES=	http://opal.com/src/pload/ LOCAL/pav
 
