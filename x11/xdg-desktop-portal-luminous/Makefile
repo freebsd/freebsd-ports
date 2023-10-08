@@ -39,9 +39,5 @@ post-patch:
 	@${REINPLACE_CMD} -e "/cargo.*build/s/$$/ '--verbose', '--verbose',/" \
 		-e "/cp/s,'target','..' / & / '${CARGO_BUILD_TARGET}'," \
 		${WRKSRC}/meson.build
-# XXX Drop after deskutils/xdg-desktop-portal >= 1.17.0 update
-# https://github.com/flatpak/xdg-desktop-portal/commit/939f0b0fcec6
-	@${ECHO_CMD} 'UseIn=wlroots;sway;Wayfire;river;phosh;Hyprland;' \
-		>>${WRKSRC}/misc/luminous.portal
 
 .include <bsd.port.mk>
