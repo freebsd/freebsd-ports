@@ -1,6 +1,6 @@
---- src/tools.cc.orig	2021-12-07 14:15:52 UTC
+--- src/tools.cc.orig	2023-02-28 09:10:25 UTC
 +++ src/tools.cc
-@@ -608,7 +608,7 @@ no_suid(void)
+@@ -650,7 +650,7 @@ no_suid(void)
      uid = geteuid();
      debugs(21, 3, "no_suid: PID " << getpid() << " giving up root privileges forever");
  
