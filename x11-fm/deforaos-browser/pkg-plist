@@ -29,6 +29,10 @@ lib/libBrowser.so
 lib/libBrowser.so.0
 lib/libBrowser.so.0.0
 libdata/pkgconfig/Browser.pc
+%%PORTDOCS%%share/doc/Browser/COPYING
+%%PORTDOCS%%share/doc/Browser/README.md
+%%PORTDOCS%%share/doc/Browser/pinentry-sudo-askpass
+%%PORTDOCS%%share/doc/Browser/zenity-sudo-askpass
 %%PORTDOCS%%man/man1/browser.1.gz
 %%PORTDOCS%%man/man1/copy.1.gz
 %%PORTDOCS%%man/man1/delete.1.gz
@@ -38,8 +42,10 @@ libdata/pkgconfig/Browser.pc
 %%PORTDOCS%%man/man1/open.1.gz
 %%PORTDOCS%%man/man1/properties.1.gz
 %%PORTDOCS%%man/man1/view.1.gz
-share/applications/deforaos-browser.desktop
-share/applications/deforaos-desktop-settings.desktop
+share/applications/org.defora.browser.desktop
+share/applications/org.defora.browser-folder.desktop
+share/applications/org.defora.desktop-settings.desktop
+share/applications/org.defora.view.desktop
 share/icons/hicolor/16x16/apps/browser-view-details.png
 share/icons/hicolor/16x16/apps/browser-view-icons.png
 share/icons/hicolor/16x16/apps/browser-view-list.png
