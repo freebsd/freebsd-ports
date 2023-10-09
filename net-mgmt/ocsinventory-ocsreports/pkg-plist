@@ -13,6 +13,7 @@
 %%WWWDIR%%/backend/AUTH/methode/cas.php
 %%WWWDIR%%/backend/AUTH/methode/ldap.php
 %%WWWDIR%%/backend/AUTH/methode/local.php
+%%WWWDIR%%/backend/AUTH/methode/sso_only.php
 %%WWWDIR%%/backend/identity/identity.php
 %%WWWDIR%%/backend/identity/methode/cas.php
 %%WWWDIR%%/backend/identity/methode/ldap.php
@@ -73,6 +74,7 @@
 %%WWWDIR%%/config/teledeploy/script/scheduledupdateagent.ps1
 %%WWWDIR%%/config/urls.xml
 %%WWWDIR%%/crontab/cron_all_software.php
+%%WWWDIR%%/crontab/cron_clean_orphan.php
 %%WWWDIR%%/crontab/cron_cve.php
 %%WWWDIR%%/crontab/cron_cve_computer.php
 %%WWWDIR%%/crontab/cron_ipdiscover.php
@@ -93,7 +95,7 @@
 %%WWWDIR%%/dbconfig.inc.php.sample
 %%WWWDIR%%/extensions/Readme.md
 %%WWWDIR%%/favicon.ico
-%%WWWDIR%%/files/cve/csv_example.csv
+%%WWWDIR%%/files/cve/cve_matching_mostknown.csv
 %%WWWDIR%%/files/ocsbase.sql
 %%WWWDIR%%/files/ocsbase_new.sql
 %%WWWDIR%%/files/oui.txt
@@ -160,6 +162,14 @@
 %%WWWDIR%%/files/update/7067.sql
 %%WWWDIR%%/files/update/7068.sql
 %%WWWDIR%%/files/update/7069.sql
+%%WWWDIR%%/files/update/7070.sql
+%%WWWDIR%%/files/update/7071.sql
+%%WWWDIR%%/files/update/7072.sql
+%%WWWDIR%%/files/update/7073.sql
+%%WWWDIR%%/files/update/7074.sql
+%%WWWDIR%%/files/update/7075.sql
+%%WWWDIR%%/files/update/7076.sql
+%%WWWDIR%%/files/update/7077.sql
 %%WWWDIR%%/image/adjustment.png
 %%WWWDIR%%/image/apple-logo.png
 %%WWWDIR%%/image/binary.png
@@ -763,6 +773,7 @@
 %%WWWDIR%%/plugins/computer_detail/cd_teledeploymanage/cd_teledeploymanage.php
 %%WWWDIR%%/plugins/computer_detail/cd_unixlocalgroups/cd_unixlocalgroups.php
 %%WWWDIR%%/plugins/computer_detail/cd_unixlocalusers/cd_unixlocalusers.php
+%%WWWDIR%%/plugins/computer_detail/cd_usbdevices/cd_usbdevices.php
 %%WWWDIR%%/plugins/computer_detail/cd_videos/cd_videos.php
 %%WWWDIR%%/plugins/computer_detail/cd_vm/cd_vm.php
 %%WWWDIR%%/plugins/computer_detail/require/functions.php
@@ -879,6 +890,7 @@
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_csv_snmp.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_export_ocs.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_export_snmp.php
+%%WWWDIR%%/plugins/main_sections/ms_export/ms_export_snmp_conf.php
 %%WWWDIR%%/plugins/main_sections/ms_export/ms_soft_csv.php
 %%WWWDIR%%/plugins/main_sections/ms_extensionmanager/ms_extensionmanager.php
 %%WWWDIR%%/plugins/main_sections/ms_groups/ms_custom_groups.php
@@ -1060,6 +1072,7 @@
 %%WWWDIR%%/tools/gz.php
 %%WWWDIR%%/tools/install_plugin.py
 %%WWWDIR%%/tools/recompose_paquet.php
+%%WWWDIR%%/tools/sync_snmp_types.php
 %%WWWDIR%%/update.php
 %%WWWDIR%%/var.php
 %%WWWDIR%%/vendor/autoload.php
@@ -1076,13 +1089,11 @@
 %%WWWDIR%%/vendor/ircmaxell/password-compat/composer.json
 %%WWWDIR%%/vendor/ircmaxell/password-compat/lib/password.php
 %%WWWDIR%%/vendor/ircmaxell/password-compat/version-test.php
-%%WWWDIR%%/vendor/jasig/phpcas/.codecov.yml
 %%WWWDIR%%/vendor/jasig/phpcas/CAS.php
 %%WWWDIR%%/vendor/jasig/phpcas/LICENSE
 %%WWWDIR%%/vendor/jasig/phpcas/NOTICE
 %%WWWDIR%%/vendor/jasig/phpcas/README.md
 %%WWWDIR%%/vendor/jasig/phpcas/composer.json
-%%WWWDIR%%/vendor/jasig/phpcas/phpunit.xml.dist
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/AuthenticationException.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Autoload.php
@@ -1130,6 +1141,10 @@
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Request/Exception.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Request/MultiRequestInterface.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Request/RequestInterface.php
+%%WWWDIR%%/vendor/jasig/phpcas/source/CAS/ServiceBaseUrl/AllowedListDiscovery.php
+%%WWWDIR%%/vendor/jasig/phpcas/source/CAS/ServiceBaseUrl/Base.php
+%%WWWDIR%%/vendor/jasig/phpcas/source/CAS/ServiceBaseUrl/Interface.php
+%%WWWDIR%%/vendor/jasig/phpcas/source/CAS/ServiceBaseUrl/Static.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/Session/PhpSession.php
 %%WWWDIR%%/vendor/jasig/phpcas/source/CAS/TypeMismatchException.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/COMMITMENT
@@ -1180,6 +1195,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-si.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-sr.php
@@ -1191,6 +1207,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/DSNConfigurator.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuthTokenProvider.php
