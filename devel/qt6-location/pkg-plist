@@ -39,6 +39,7 @@
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeofiletilecache_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeojson_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomaneuver_p.h
+%%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomaneuverderived_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomap_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomap_p_p.h
 %%QT_INCDIR%%/QtLocation/%%FULLVER%%/QtLocation/private/qgeomapitemgeometry_p.h
