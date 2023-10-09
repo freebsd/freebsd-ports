@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	bash:shells/bash
-BUILD_DEPENDS=	xxd:editors/vim
+BUILD_DEPENDS=	xxd:sysutils/xxd
 
 USES=		desktop-file-utils gettext-tools gnome jpeg \
 		lua:53 meson pkgconfig shebangfix
