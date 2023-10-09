@@ -1,6 +1,7 @@
 PORTNAME=	mstflint
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.25.0-1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -44,8 +45,6 @@ post-patch:
 		${WRKSRC}/mlxlink/Makefile.am \
 		${WRKSRC}/mlxarchive/Makefile.am \
 		${WRKSRC}/mlxreg/Makefile.am
-
-RUN_DEPENDS+=	ca_root_nss>=0:security/ca_root_nss
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mstflint/python_tools/rreg_access.so
