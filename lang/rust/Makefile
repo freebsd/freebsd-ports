@@ -166,7 +166,7 @@ post-patch:
 
 post-patch-PORT_LLVM-on:
 # WASM target hardcodes bundled lld
-	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_DEFAULT}"|' \
+	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
 		${WRKSRC}/compiler/rustc_target/src/spec/wasm_base.rs
 
 do-configure:
