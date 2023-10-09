@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.51.1
-PORTREVISION=	1
+DISTVERSION=	0.52.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -63,6 +62,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		libc-0.2.139 \
 		libm-0.2.7 \
 		libmimalloc-sys-0.1.24 \
+		line-numbers-0.2.2 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
