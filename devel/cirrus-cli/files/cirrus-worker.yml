@@ -1,0 +1,12 @@
+token: CHANGEME
+
+name: cirrus1-on-premises-change-me
+
+labels:
+  jail: FreeBSD
+
+log:
+  level: info
+  file: /usr/local/cirrus/cirrus-worker.log
+  rotate-size: 100 MB
+  max-rotations: 10

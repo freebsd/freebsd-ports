@@ -1,0 +1,8 @@
+bin/cirrus
+@owner root
+@group cirrus
+@mode 0640
+@sample etc/cirrus-worker.yml.sample
+@mode
+@group
+@owner

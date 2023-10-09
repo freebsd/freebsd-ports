@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+A sample configuration file is installed at %%PREFIX%%/etc/cirrus-worker.yml,
+requiring a few modifications to work correctly.
+
+For more details about the configuration file, please refer to:
+https://github.com/cirruslabs/cirrus-cli/blob/master/PERSISTENT-WORKERS.md#configuration
+EOM
+}
+]
