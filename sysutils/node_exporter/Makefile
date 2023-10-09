@@ -1,7 +1,6 @@
 PORTNAME=	node_exporter
-PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	7
+DISTVERSION=	1.6.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dor.bsd@xm0.uk
@@ -12,11 +11,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake go:modules shebangfix
-USE_GITHUB=	yes
-GH_ACCOUNT=	prometheus
 USE_RC_SUBR=	node_exporter
 
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_MODULE=	github.com/prometheus/${PORTNAME}
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 OPTIONS_DEFINE=	DOCS
@@ -28,10 +25,6 @@ LD_FLAG_STRING=	-s \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
 		${LD_FLAG_X_PREFIX}.BuildUser=${BUILD_USER}
 LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME:H}/common/version
-
-# This Makefile includes the GH_TUPLE section.
-# Generated with: env M2T_GITHUB=$M2T_GITHUB make gomod-vendor > out
-.include "Makefile.modules"
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
