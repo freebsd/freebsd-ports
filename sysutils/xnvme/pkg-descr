@@ -1,0 +1,6 @@
+xNVMe provides the means to program and interact with NMe devices from user
+space. The foundation of xNVMe is libxnvme, a user space library for working
+with NVMe devices. It provides a C API for memory management, that is, for
+allocating physical / DMA transferable memory when needed. xNVMe is an NVMe
+command interface allowing you to submit and complete NVMe commands in a
+synchronous as well as an asynchronous manner.
