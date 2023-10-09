@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -45,7 +45,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
-# make test: 3 failed, 175 passed, 8 skipped, 11 warnings
+# make test: 3 failed, 178 passed, 8 skipped, 13 warnings
 # test/plugins/test_flake8_lint.py:95,234,256: AssertionError
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest

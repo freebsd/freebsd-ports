@@ -1,17 +1,17 @@
---- pyproject.toml.orig	2023-09-10 10:22:10 UTC
+--- pyproject.toml.orig	2023-10-04 16:18:21 UTC
 +++ pyproject.toml
 @@ -27,29 +27,29 @@ all = [
  
  [project.optional-dependencies]
  all = [
--    "autopep8>=1.6.0,<2.1.0",
+-    "autopep8>=2.0.4,<2.1.0",
 -    "flake8>=6.1.0,<7",
 -    "mccabe>=0.7.0,<0.8.0",
 -    "pycodestyle>=2.11.0,<2.12.0",
 -    "pydocstyle>=6.3.0,<6.4.0",
 -    "pyflakes>=3.1.0,<3.2.0",
 -    "pylint>=2.5.0,<3",
-+    "autopep8>=1.6.0",
++    "autopep8>=2.0.4",
 +    "flake8>=6.1.0",
 +    "mccabe>=0.7.0",
 +    "pycodestyle>=2.11.0",
@@ -20,8 +20,9 @@
 +    "pylint>=2.5.0",
      "rope>1.2.0",
 -    "yapf>=0.33.0",
+-    "whatthepatch>=1.0.2,<2.0.0"
 +    "yapf>=0.32.0",
-     "whatthepatch>=1.0.2,<2.0.0"
++    "whatthepatch>=1.0.2"
  ]
 -autopep8 = ["autopep8>=1.6.0,<2.1.0"]
 -flake8 = ["flake8>=6.1.0,<7"]
@@ -30,7 +31,7 @@
 -pydocstyle = ["pydocstyle>=6.3.0,<6.4.0"]
 -pyflakes = ["pyflakes>=3.1.0,<3.2.0"]
 -pylint = ["pylint>=2.5.0,<3"]
-+autopep8 = ["autopep8>=1.6.0"]
++autopep8 = ["autopep8>=2.0.4"]
 +flake8 = ["flake8>=6.1.0"]
 +mccabe = ["mccabe>=0.7.0"]
 +pycodestyle = ["pycodestyle>=2.11.0"]
@@ -39,7 +40,7 @@
 +pylint = ["pylint>=2.5.0"]
  rope = ["rope>1.2.0"]
 -yapf = ["yapf>=0.33.0", "whatthepatch>=1.0.2,<2.0.0"]
-+yapf = ["yapf>=0.33.0", "whatthepatch>=1.0.2"]
++yapf = ["yapf>=0.32.0", "whatthepatch>=1.0.2"]
  websockets = ["websockets>=10.3"]
  test = [
 -    "pylint>=2.5.0,<3",
