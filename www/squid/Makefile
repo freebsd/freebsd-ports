@@ -1,12 +1,12 @@
 PORTNAME=	squid
-DISTVERSION=	5.9
+DISTVERSION=	6.3
 CATEGORIES=	www
-MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v5/ \
-		http://www1.il.squid-cache.org/Versions/v5/ \
-		http://www1.jp.squid-cache.org/Versions/v5/ \
-		http://www2.gr.squid-cache.org/Versions/v5/ \
-		http://ca2.squid-cache.org/Versions/v5/ \
-		http://www.squid-cache.org/Versions/v5/
+MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v6/ \
+		http://www1.il.squid-cache.org/Versions/v6/ \
+		http://www1.jp.squid-cache.org/Versions/v6/ \
+		http://www2.gr.squid-cache.org/Versions/v6/ \
+		http://ca2.squid-cache.org/Versions/v6/ \
+		http://www.squid-cache.org/Versions/v6/
 
 PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
 		http://www1.il.squid-cache.org/%SUBDIR%/ \
@@ -14,7 +14,7 @@ PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
 		http://www2.gr.squid-cache.org/%SUBDIR%/ \
 		http://ca2.squid-cache.org/%SUBDIR%/ \
 		http://www.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v5/changesets
+PATCH_SITE_SUBDIR=	Versions/v6/changesets
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	HTTP Caching Proxy
@@ -58,6 +58,7 @@ OPTIONS_DEFAULT=ARP_ACL AUTH_NIS CACHE_DIGESTS DELAY_POOLS FOLLOW_XFF FS_AUFS \
 		WCCPV2
 
 ARP_ACL_CONFIGURE_ENABLE=	eui
+AUTH_LDAP_CONFIGURE_WITH=	ldap
 AUTH_LDAP_USES=			ldap
 AUTH_LDAP_VARS=			BASIC_AUTH+=LDAP DIGEST_AUTH+="eDirectory LDAP" EXTERNAL_ACL+="LDAP_group eDirectory_userip"
 AUTH_SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
@@ -66,7 +67,7 @@ AUTH_SMB_USES=			samba:run
 AUTH_SMB_VARS=			BASIC_AUTH+=SMB EXTERNAL_ACL+=wbinfo_group
 AUTH_SQL_RUN_DEPENDS=		p5-DBI>=1.08:databases/p5-DBI
 AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
-TDB_CONFIGURE_ENABLE=		tdb
+TDB_CONFIGURE_WITH=		tdb
 TDB_LIB_DEPENDS=		libtdb.so:databases/tdb
 TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
@@ -75,6 +76,7 @@ ECAP_CONFIGURE_ENABLE=		ecap
 ECAP_LIB_DEPENDS=		libecap.so:www/libecap
 ECAP_USES=			pkgconfig:build
 ESI_CONFIGURE_ENABLE=		esi
+ESI_CONFIGURE_WITH=		expat xml2
 ESI_LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 				libxml2.so:textproc/libxml2
 FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
@@ -90,14 +92,14 @@ FS_AUFS_VARS=			STORAGE_SCHEMES+=aufs DISKIO_MODULES+=DiskThreads
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS,
 # e.g. SQUID_CONFIGURE_ARGS=--with-aufs-threads=N
 FS_AUFS_LDFLAGS=		-pthread
-FS_AUFS_CONFIGURE_OFF=		--without-pthreads
+FS_AUFS_CONFIGURE_WITH=		pthreads
 FS_DISKD_VARS=			STORAGE_SCHEMES+=diskd DISKIO_MODULES+=DiskDaemon
 FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 NETTLE_LIB_DEPENDS=		libnettle.so:security/nettle
-NETTLE_CONFIGURE_OFF=		--without-nettle
+NETTLE_CONFIGURE_WITH=		nettle
 SNMP_CONFIGURE_ENABLE=		snmp
 SSL_CONFIGURE_ENABLE=		ssl
-SSL_CONFIGURE_ON=		--with-openssl=${OPENSSLBASE} \
+SSL_CONFIGURE_ON=		--with-openssl \
 				--enable-security-cert-generators="file" \
 				LIBOPENSSL_CFLAGS=-I${OPENSSLINC} \
 				LIBOPENSSL_LIBS="-lcrypto -lssl"
@@ -120,7 +122,7 @@ WCCP_CONFIGURE_ENABLE=		wccp
 
 GSSAPI_NONE_CONFIGURE_ON=	--without-heimdal-krb5 \
 				--without-mit-krb5 \
-				--without-gss
+				--without-gnugss
 
 GSSAPI_BASE_USES=		gssapi
 GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
@@ -177,8 +179,6 @@ WCCPV2_DESC=		Web Cache Coordination Protocol v2
 WCCP_DESC=		Web Cache Coordination Protocol
 
 change_files=	ChangeLog \
-		contrib/nextstep/makepkg \
-		contrib/nextstep/post_install \
 		errors/Makefile.am \
 		errors/Makefile.in \
 		src/auth/basic/SMB_LM/README.html \
@@ -209,23 +209,20 @@ CONFIGURE_ARGS=	--with-default-user=squid \
 		--with-swapdir=/var/squid/cache \
 		--without-gnutls \
 		--with-included-ltdl \
-		--enable-auth \
-		--enable-zph-qos \
 		--enable-build-info \
-		--enable-loadable-modules \
 		--enable-removal-policies="lru heap" \
 		--disable-epoll \
-		--disable-linux-netfilter \
-		--disable-linux-tproxy \
-		--disable-translation \
 		--disable-arch-native \
-		--disable-strict-error-checking
+		--disable-strict-error-checking \
+		--without-systemd \
+		--without-netfilter-conntrack \
+		--without-cap
 
 .include <bsd.port.options.mk>
 
 # Authentication methods and modules:
 
-BASIC_AUTH+=	DB SMB_LM NCSA PAM POP3 RADIUS fake getpwnam
+BASIC_AUTH+=	DB NCSA PAM POP3 RADIUS SMB_LM fake getpwnam
 DIGEST_AUTH+=	file
 EXTERNAL_ACL+=	file_userip unix_group delayer
 
@@ -253,20 +250,20 @@ DISKIO_MODULES+=	AIO Blocking IpcIo Mmapped
 
 CONFIGURE_ARGS+=	--enable-auth-basic="${BASIC_AUTH}" \
 			--enable-auth-digest="${DIGEST_AUTH}" \
-			--enable-external-acl-helpers="${EXTERNAL_ACL}" \
 			--enable-auth-negotiate="${NEGOTIATE_AUTH}" \
 			--enable-auth-ntlm="fake SMB_LM" \
+			--enable-log-daemon-helpers="file DB" \
+			--enable-external-acl-helpers="${EXTERNAL_ACL}" \
+			--enable-url-rewrite-helpers="fake LFS" \
+			--enable-security-cert-validators="fake" \
+			--enable-storeid-rewrite-helpers="file" \
 			--enable-storeio="${STORAGE_SCHEMES}" \
 			--enable-disk-io="${DISKIO_MODULES}" \
-			--enable-log-daemon-helpers="file DB" \
-			--enable-url-rewrite-helpers="fake LFS" \
-			--enable-storeid-rewrite-helpers="file" \
-			--enable-security-cert-validators="fake"
 
 # Other options set via 'make config':
 
 .if ${PORT_OPTIONS:MDEBUG} || defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--disable-optimizations --enable-debug-cbdata
+CONFIGURE_ARGS+=	--disable-optimizations
 WITH_DEBUG?=		yes
 .endif
 
