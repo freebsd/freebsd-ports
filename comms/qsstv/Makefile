@@ -2,12 +2,12 @@ PORTNAME=	qsstv
 PORTVERSION=	9.5.8
 PORTREVISION=	2
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/
+MASTER_SITES=	${WWW}/${PORTNAME}/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio SSTV/FAX reception program for unix
-WWW=		http://users.telenet.be/on4qz/
+WWW=		https://www.qsl.net/on4qz/
 
 LICENSE=	GPLv3
 
