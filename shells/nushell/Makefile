@@ -607,10 +607,14 @@ DATAFRAME_DESC=		Include the dataframe feature
 DATAFRAME_VARS=		CARGO_BUILD_ARGS+=--features=dataframe
 DATAFRAME_BROKEN=	see https://github.com/nushell/nushell/issues/7665
 
+.include <bsd.port.pre.mk>
+
+# avoid address space exhaustion in compiler
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nu
 
-do-test:
-	@${CARGO_CARGO_RUN} test --workspace
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
