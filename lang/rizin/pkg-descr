@@ -1,0 +1,5 @@
+Rizin is a free and open source reverse engineering framework. It takes a
+unique, Unix-friendly approach on reverse engineering. By default, it can be
+used in a shell-like environment tailored specifically to analyzing binaries
+directly from the command line without unnecessary weight. However, if you do
+want more, it provides a perfect basis for GUI and scripting.
