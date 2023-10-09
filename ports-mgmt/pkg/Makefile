@@ -27,6 +27,8 @@ USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
 .if ${ARCH} == aarch64 || ${ARCH} == riscv64
 PKG_SUFFIX=	64
+.elif ${ARCH} == aarch64cb
+PKG_SUFFIX=	64cb
 .endif
 CFLAGS+=	-DPKG_SUFFIX=\\\"${PKG_SUFFIX}\\\"
 .ifdef PKG_SUFFIX
