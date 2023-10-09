@@ -1166,7 +1166,7 @@ MAINTAINER?=	ports@FreeBSD.org
 .    if !defined(ARCH)
 ARCH!=	${UNAME} -p
 .    endif
-HOSTARCH:=	${ARCH:S/aarch64c/aarch64/:S/riscv64c/riscv64/}
+HOSTARCH:=	${ARCH:C/^aarch64.*c.*/aarch64/:C/^riscv64.*c.*/riscv64/}
 .    if defined(CROSS_TOOLCHAIN)
 ARCH=	${CROSS_TOOLCHAIN:C,-.*$,,}
 .    endif
