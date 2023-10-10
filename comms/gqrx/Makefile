@@ -1,7 +1,6 @@
 PORTNAME=	gqrx
-PORTVERSION=	2.16
+PORTVERSION=	2.17.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
 
@@ -32,16 +31,21 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libjack.so:audio/jack \
 		libportaudio.so:audio/portaudio
 
-USES=		cmake compiler:c++11-lang gl pkgconfig qt:5
+USES=		cmake compiler:c++11-lang gl pkgconfig qt:6
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gqrx-sdr
 USE_GL=		gl
-USE_QT=		core gui network svg widgets
+USE_QT=		base svg
 
 # XXX Use Portaudio as Gqrx is invariably linked to it
 # (auto-detected and used through Gnuradio CMake files)
 CMAKE_ARGS+=	-DLINUX_AUDIO_BACKEND:STRING="Portaudio"
+
+# XXX Work around Gnuradio 3.8 headers (gnuradio/rpcserver_aggregator.h) still
+# using std::unary_function (removed with C++17). This breaks when building
+# on FreeBSD 14: error: no template named 'unary_function' in namespace 'std'
+CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 PLIST_FILES=	bin/gqrx \
 		share/applications/dk.gqrx.gqrx.desktop \
