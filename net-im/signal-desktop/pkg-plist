@@ -8,7 +8,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/libEGL.so
 %%DATADIR%%/libGLESv2.so
 %%DATADIR%%/libffmpeg.so
-%%DATADIR%%/libvk_swiftshader.so
+%%NOT_AARCH64%%%%DATADIR%%/libvk_swiftshader.so
 %%DATADIR%%/libvulkan.so
 %%DATADIR%%/locales/af-ZA.pak
 %%DATADIR%%/locales/af.pak

@@ -104,6 +104,14 @@ PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
 
 YARN_TIMESTAMP=	1661146515
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+PLIST_SUB+=	NOT_AARCH64="@comment "
+.elif ${ARCH} == amd64
+PLIST_SUB+=	NOT_AARCH64=""
+.endif
+
 fetch-yarn:
 	if [ ! -f ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz ]; then \
 		${MKDIR} /tmp/signal-desktop; \
@@ -230,4 +238,4 @@ create-caches-tarball:
 	cd ${WRKDIR} && \
 		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
