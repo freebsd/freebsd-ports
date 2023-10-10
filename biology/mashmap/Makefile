@@ -11,6 +11,7 @@ LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	compilation fails: fatal error: unknown type name '__uint128_t'
+BROKEN_powerpc=	compilation fails: fatal error: unknown type name '__uint128_t'
 
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		libhts.so:biology/htslib
