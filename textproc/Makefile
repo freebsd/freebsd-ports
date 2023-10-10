@@ -1558,10 +1558,12 @@
     SUBDIR += py-sphinx-copybutton
     SUBDIR += py-sphinx-design
     SUBDIR += py-sphinx-examples
+    SUBDIR += py-sphinx-gallery
     SUBDIR += py-sphinx-inline-tabs
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx-issues
     SUBDIR += py-sphinx-markdown-tables
+    SUBDIR += py-sphinx-material
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-sitemap
     SUBDIR += py-sphinx-tabs

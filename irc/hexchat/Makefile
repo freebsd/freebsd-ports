@@ -1,6 +1,6 @@
 PORTNAME=	hexchat
 DISTVERSION=	2.16.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc gnome
 MASTER_SITES=	https://dl.hexchat.net/hexchat/
 
@@ -36,20 +36,17 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=		CA_BUNDLE CANBERRA DBUS DOCS FISHLIM LUA PERL TEXTFE \
-			SYSINFO
+OPTIONS_DEFINE=		CANBERRA DBUS DOCS FISHLIM LUA PERL SYSINFO TEXTFE
 
-OPTIONS_DEFAULT=	CA_BUNDLE CANBERRA DBUS PERL
+OPTIONS_DEFAULT=	CANBERRA DBUS PERL
 
 OPTIONS_SUB=	yes
 
-CA_BUNDLE_DESC=		Include CA bundle for SSL verification
 CANBERRA_DESC=		Audio support via Libcanberra
 FISHLIM_DESC=		FiSHLiM plugin
 TEXTFE_DESC=		Text frontend
 SYSINFO_DESC=		Sysinfo plugin
 
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 CANBERRA_MESON_ON=	-Dlibcanberra=enabled
 CANBERRA_MESON_OFF=	-Dlibcanberra=disabled

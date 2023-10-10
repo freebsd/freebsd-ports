@@ -1,5 +1,5 @@
 PORTNAME=	protocol-websocket
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,7 @@ WWW=		https://github.com/socketry/protocol-websocket
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-protocol-http>=0.2<1:www/rubygem-protocol-http \
-		rubygem-protocol-http1>=0.2<1:www/rubygem-protocol-http1
+RUN_DEPENDS=	rubygem-protocol-http>=0.2<1:www/rubygem-protocol-http
 
 USES=		gem
 

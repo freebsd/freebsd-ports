@@ -49,3 +49,7 @@ SHA256 (rust/2023-07-13/rust-std-1.71.0-riscv64gc-unknown-freebsd.tar.xz) = 4ca3
 SIZE (rust/2023-07-13/rust-std-1.71.0-riscv64gc-unknown-freebsd.tar.xz) = 24375500
 SHA256 (rust/2023-07-13/cargo-1.71.0-riscv64gc-unknown-freebsd.tar.xz) = b49977e17a42a9175cfa016941a6006f8e188f610f4ed59945f114fcb9f04820
 SIZE (rust/2023-07-13/cargo-1.71.0-riscv64gc-unknown-freebsd.tar.xz) = 10130160
+SHA256 (rust/71958da4854176c50a8b12470b956d5c7ed11817.patch) = 5a6b67dfc1218ea953421816834ffe3aa8ac1fc078dfaea4ebab121460ca5211
+SIZE (rust/71958da4854176c50a8b12470b956d5c7ed11817.patch) = 2007
+SHA256 (rust/6ddf9128b2b55f9def80af57f7353d2521527c6a.patch) = 6eaaaf6714c496b610712aa9ecbe1a1614e042323ec872fbf31a0a74c9020f29
+SIZE (rust/6ddf9128b2b55f9def80af57f7353d2521527c6a.patch) = 1278

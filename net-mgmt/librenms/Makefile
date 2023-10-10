@@ -1,6 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	23.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -150,17 +150,20 @@ _OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
 		vendor/symfony/string/Resources/bin
 
 post-patch:
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/Php.php
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
-	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
-	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/System.php
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/includes/html/output/capture.inc.php
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/config.php.default
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/poller-wrapper.py
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/dist/librenms-scheduler.cron
-	${REINPLACE_CMD}    's|%%WWWDIR%%|${WWWDIR}|g'                        ${WRKSRC}/dist/librenms-scheduler.cron
-	${REINPLACE_CMD}    's|%%USER%%|${WWWOWN}|g'                          ${WRKSRC}/dist/librenms-scheduler.cron
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/LibreNMS/__init__.py \
+		${WRKSRC}/LibreNMS/wrapper.py \
+		${WRKSRC}/LibreNMS/Util/Version.php \
+		${WRKSRC}/LibreNMS/Validations/Php.php \
+		${WRKSRC}/LibreNMS/Validations/System.php \
+		${WRKSRC}/config.php.default \
+		${WRKSRC}/includes/html/output/capture.inc.php \
+		${WRKSRC}/poller-wrapper.py \
+		${WRKSRC}/snmp-scan.py
+	${REINPLACE_CMD} 's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
+	${REINPLACE_CMD} 's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
+	${REINPLACE_CMD} 's|%%WWWDIR%%|${WWWDIR}|g'                        ${WRKSRC}/dist/librenms-scheduler.cron
+	${REINPLACE_CMD} 's|%%USER%%|${WWWOWN}|g'                          ${WRKSRC}/dist/librenms-scheduler.cron
 	${RM} ${WRKSRC}/LibreNMS/Validations/Updates.php
 	${RM} -rf ${WRKSRC}/logs
 

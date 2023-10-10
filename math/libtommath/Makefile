@@ -1,6 +1,5 @@
 PORTNAME=	libtommath
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libtom/libtommath/releases/download/v${DISTVERSION}/
 DISTNAME=	ltm-${DISTVERSION}
@@ -12,12 +11,13 @@ WWW=		https://libtom.net/
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake libtool:build tar:xz
+USES=		gmake libtool:build pathfix tar:xz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 USE_LDCONFIG=	yes
 
 MAKEFILE=	makefile.shared
+MAKE_ENV+=	IGNORE_SPEED=yes
 ALL_TARGET=	default
 CFLAGS+=	-fPIC
 PORTDOCS=	*
@@ -30,6 +30,10 @@ PLIST_FILES=	include/tommath.h \
 		libdata/pkgconfig/libtommath.pc
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(LIBPATH)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/${MAKEFILE}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -45,6 +45,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/modules.d/hfilter.conf
 %%ETCDIR%%/modules.d/history_redis.conf
 %%ETCDIR%%/modules.d/http_headers.conf
+%%ETCDIR%%/modules.d/known_senders.conf
 %%ETCDIR%%/modules.d/maillist.conf
 %%ETCDIR%%/modules.d/metadata_exporter.conf
 %%ETCDIR%%/modules.d/metric_exporter.conf
@@ -160,6 +161,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/lua_aws.lua
 %%DATADIR%%/lualib/lua_bayes_learn.lua
 %%DATADIR%%/lualib/lua_cfg_transform.lua
+%%DATADIR%%/lualib/lua_cfg_utils.lua
 %%DATADIR%%/lualib/lua_clickhouse.lua
 %%DATADIR%%/lualib/lua_content/ical.lua
 %%DATADIR%%/lualib/lua_content/init.lua
@@ -226,7 +228,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/redis_scripts/ratelimit_check.lua
 %%DATADIR%%/lualib/redis_scripts/ratelimit_cleanup_pending.lua
 %%DATADIR%%/lualib/redis_scripts/ratelimit_update.lua
-%%DATADIR%%/lualib/rescore_utility.lua
 %%DATADIR%%/lualib/rspamadm/clickhouse.lua
 %%DATADIR%%/lualib/rspamadm/configgraph.lua
 %%DATADIR%%/lualib/rspamadm/confighelp.lua
@@ -243,7 +244,6 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/mime.lua
 %%DATADIR%%/lualib/rspamadm/neural_test.lua
 %%DATADIR%%/lualib/rspamadm/publicsuffix.lua
-%%DATADIR%%/lualib/rspamadm/rescore.lua
 %%DATADIR%%/lualib/rspamadm/stat_convert.lua
 %%DATADIR%%/lualib/rspamadm/statistics_dump.lua
 %%DATADIR%%/lualib/rspamadm/template.lua
@@ -273,6 +273,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/plugins/history_redis.lua
 %%DATADIR%%/plugins/http_headers.lua
 %%DATADIR%%/plugins/ip_score.lua
+%%DATADIR%%/plugins/known_senders.lua
 %%DATADIR%%/plugins/maillist.lua
 %%DATADIR%%/plugins/maps_stats.lua
 %%DATADIR%%/plugins/metadata_exporter.lua
@@ -355,7 +356,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/www/js/lib/d3pie.min.js
 %%DATADIR%%/www/js/lib/fontawesome.min.js
 %%DATADIR%%/www/js/lib/footable.min.js
-%%DATADIR%%/www/js/lib/jquery-3.6.3.min.js
+%%DATADIR%%/www/js/lib/jquery-3.7.0.min.js
 %%DATADIR%%/www/js/lib/jquery.stickytabs.min.js
 %%DATADIR%%/www/js/lib/linenumbers.min.js
 %%DATADIR%%/www/js/lib/nprogress.min.js

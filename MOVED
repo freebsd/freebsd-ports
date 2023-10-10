@@ -7938,3 +7938,6 @@ devel/rubygem-aws-sdk-s31126|devel/rubygem-aws-sdk-s3|2023-10-06|Use devel/rubyg
 devel/rubygem-aws-sdk-core3175|devel/rubygem-aws-sdk-core|2023-10-06|Use devel/rubygem-aws-sdk-core
 devel/gitlab-metrics-exporter||2023-10-06|Removed
 net/rubygem-octokit5|net/rubygem-octokit|2023-10-06|Use net/rubygem-octokit
+games/minilens||2023-10-08|Has expired: Depends on expired devel/godot2 (use devel/godot instead)
+games/tanks-of-freedom||2023-10-08|Has expired: Depends on expired devel/godot2 (use devel/godot instead)
+devel/godot2|devel/godot|2023-10-08|Has expired: Requires legacy OpenSSL 1.1.1 so use devel/godot

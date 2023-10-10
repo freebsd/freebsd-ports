@@ -5,8 +5,19 @@ FreeBSD does not, and can not warrant that the certification authorities
 whose certificates are included in this package have in any way been
 audited for trustworthiness or RFC 3647 compliance.
 
-Assessment and verification of trust is the complete responsibility of the
-system administrator.
+Assessment and verification of trust is the complete responsibility of
+the system administrator.
+
+This package installs symlinks to support root certificate discovery
+for software that either uses other cryptographic libraries than
+OpenSSL, or use OpenSSL but do not follow recommended practice.
+
+If you prefer to do this manually, replace the following symlinks with
+either an empty file or your site-local certificate bundle.
+
+  * /etc/ssl/cert.pem
+  * %%PREFIX%%/etc/ssl/cert.pem
+  * %%PREFIX%%/openssl/cert.pem
 EOM
 }
 ]

@@ -1,13 +1,14 @@
 PORTNAME=	aria2
 PORTVERSION=	1.36.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/aria2/aria2/releases/download/release-${PORTVERSION}/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Yet another download tool
-WWW=		https://aria2.github.io/
+WWW=		https://aria2.github.io/ \
+		https://github.com/aria2/aria2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,10 +16,21 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c++11-lib cpe libtool pathfix pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-epoll \
-		--enable-bittorrent --enable-libaria2 --enable-metalink --enable-shared --enable-ssl --enable-threads=posix --enable-websocket \
+		--enable-bittorrent \
+		--enable-libaria2 \
+		--enable-metalink \
+		--enable-shared \
+		--enable-ssl \
+		--enable-threads=posix \
+		--enable-websocket \
 		--with-disk-cache=${ARIA2_DISK_CACHE} \
-		--with-libz --with-openssl --without-ca-bundle \
-		--without-appletls --without-gnutls --without-libgcrypt --without-libgmp --without-libnettle
+		--with-libz \
+		--with-openssl \
+		--without-appletls \
+		--without-gnutls \
+		--without-libgcrypt \
+		--without-libgmp \
+		--without-libnettle
 CONFIGURE_ENV=	OPENSSL_CFLAGS=-I${OPENSSLINC} \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		ac_cv_path_RST2HTML=no

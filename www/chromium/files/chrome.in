@@ -17,8 +17,9 @@ EOMSG
 fi
 ulimit -c 0
 
-# variables for foreign-cdm
-export FCDM_CDM_SO_PATH=/compat/linux/usr/lib/foreign-cdm/libwidevinecdm.so
-export FCDM_WORKER_PATH=/compat/linux/usr/bin/fcdm-worker
+# source foreign-cdm environment
+if [ -r %%PREFIX%%/share/foreign-cdm/fcdm-setup-env ] ; then
+	. %%PREFIX%%/share/foreign-cdm/fcdm-setup-env
+fi
 
 exec %%PREFIX%%/share/chromium/chrome ${1+"$@"}

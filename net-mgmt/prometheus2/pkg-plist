@@ -9,6 +9,9 @@ bin/promtool
 %%PROMETHEUS_CONSOLES_DIR%%/node.html
 %%PROMETHEUS_CONSOLES_DIR%%/prometheus-overview.html
 %%PROMETHEUS_CONSOLES_DIR%%/prometheus.html
+%%PORTDOCS%%%%DOCSDIR%%/command-line/index.md
+%%PORTDOCS%%%%DOCSDIR%%/command-line/%%PROMETHEUS_USER%%.md
+%%PORTDOCS%%%%DOCSDIR%%/command-line/promtool.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/alerting_rules.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/configuration.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/https.md

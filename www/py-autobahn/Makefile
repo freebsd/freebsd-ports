@@ -1,5 +1,5 @@
 PORTNAME=	autobahn
-PORTVERSION=	22.2.2
+PORTVERSION=	23.6.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -41,14 +41,14 @@ ACCELERATE_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}wsaccel>=0.6.3:www/py-wsaccel@${
 COMPRESS_RUN_DEPENDS=			${PYTHON_PKGNAMEPREFIX}python-snappy>=0.6.0:archivers/py-python-snappy@${PY_FLAVOR}
 ENCRYPTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}openssl>=20.0.1:security/py-openssl@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pynacl>=1.4.0:security/py-pynacl@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}pyqrcode>=1.2.1:graphics/py-pyqrcode@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}pytrie>=0.4.0:devel/py-pytrie@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}service_identity>=18.1.0:security/py-service_identity@${PY_FLAVOR}
 SCRAM_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}argon2-cffi>=20.1.0:security/py-argon2-cffi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}cffi>=1.14.5:devel/py-cffi@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}passlib>=1.7.4:security/py-passlib@${PY_FLAVOR}
 SERIALIZATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cbor2>=5.2.0:devel/py-cbor2@${PY_FLAVOR} \
-				${PYTHON_PKGNAMEPREFIX}flatbuffers>=1.12:devel/py-flatbuffers@${PY_FLAVOR} \
+				${PYTHON_PKGNAMEPREFIX}flatbuffers>=22.12.6:devel/py-flatbuffers@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}msgpack>=1.0.2:devel/py-msgpack@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}py-ubjson>=0.16.1:devel/py-py-ubjson@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}ujson>=4.0.2:devel/py-ujson@${PY_FLAVOR}

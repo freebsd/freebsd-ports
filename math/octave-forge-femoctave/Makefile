@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-femoctave
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

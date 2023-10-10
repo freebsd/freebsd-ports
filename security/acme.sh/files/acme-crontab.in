@@ -1,5 +1,5 @@
 #
-# This file should be copied to /usr/local/etc/cron.d/acme
+# This file should be copied to %%PREFIX%%/etc/cron.d/acme
 
 # use /bin/sh to run commands, overriding the default set by cron
 #SHELL=/bin/sh
@@ -7,6 +7,24 @@
 # mail any output to here, no matter whose crontab this is
 #MAILTO=me@example.org
 
-# set mm and hh to the time (e.g. hh:mm) of day you want the
-# cronjob to run
+# uncomment, set mm and hh to the time (e.g. hh:mm) of day you want the
+# cronjob to run - pick one of the following and enable it. Running more
+# than one won't hurt, but you should avoid running them concurrently.
+#
+# the lockf ensures only one runs at a time if for some reason it never completes.
+# I tend to do this for most cronjobs.
+
+
+# This will send only errors to your email, everything else goes to /dev/null
+# I find it lacks context.
 mm hh * * * %%ACME_USER%% %%PREFIX%%/sbin/acme.sh --cron --home /var/db/acme/.acme.sh  > /dev/null
+
+#
+# This dumps STDERR and STDOUT to a file and should never generate an email.
+# The resulting log file shows any errors in context, which I found more useful for debugging.
+# I set this file to rotate daily, since the cronjob also runs daily.
+# I still get email if something goes wrong, via the SAVED_MAIL_FROM and
+# SAVED_MAIL_TO options in account.conf - I also use NOTIFY_HOOK='pushover,mail'
+# which requires setting SAVED_PUSHOVER_TOKEN and SAVED_PUSHOVER_USER.
+#
+mm hh * * * %%ACME_USER%% /usr/bin/lockf -t 0 /tmp/.acme.sh.cronjob %%PREFIX%%/sbin/acme.sh --cron --home /var/db/acme/.acme.sh  >  /var/log/acme.sh.cronjob.log 2>&1

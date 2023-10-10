@@ -1,5 +1,6 @@
 PORTNAME=	tremotesf
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 
 MAINTAINER=	vsasjason@gmail.com
@@ -12,21 +13,21 @@ BUILD_DEPENDS=	cxxopts>0:devel/cxxopts
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libpsl.so:dns/libpsl
 
-USES=		cmake desktop-file-utils gettext-tools kde:5 pkgconfig qt:5 xorg
+USES=		cmake:testing desktop-file-utils gettext-tools kde:5 pkgconfig \
+		qt:5 xorg
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	equeim
-GH_PROJECT=	tremotesf2 libtremotesf:lib
-GH_SUBDIR=	src/libtremotesf:lib
-GH_TAGNAME=	2756631:lib
+GH_ACCOUNT=	equeim yhirose:httplib
+GH_PROJECT=	tremotesf2 libtremotesf:lib cpp-httplib:httplib
+GH_SUBDIR=	src/libtremotesf:lib \
+		src/libtremotesf/3rdparty/cpp-httplib:httplib
+GH_TAGNAME=	27566318386b27d75f3ecbee3f91aa02e7da4460:lib v0.12.6:httplib
 
 USE_KDE=	widgetsaddons windowsystem
 
-USE_QT=		concurrent core buildtools:build dbus gui linguisttools:build \
-		network qmake:build widgets
+USE_QT=		core dbus gui network widgets buildtools:build concurrent:build \
+		linguisttools:build qmake:build testlib:build
 
 USE_XORG=	x11
-
-CMAKE_OFF=	BUILD_TESTING
 
 .include <bsd.port.mk>

@@ -1,17 +1,18 @@
 PORTNAME=	librewolf
-DISTVERSION=	109.0.1.2
-PORTREVISION=	10
+DISTVERSION=	117.0.1-1
 CATEGORIES=	www wayland
-MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${DISTVERSION:R}-2/
-DISTNAME=	${PORTNAME}-${DISTVERSION:R}-2.source.
+MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${DISTVERSION:R}-1/
+DISTNAME=	${PORTNAME}-${DISTVERSION:R}-1.source.
 EXTRACT_SUFX=	tar.gz
 
-PATCH_SITES=	https://gitlab.com/librewolf-community/browser/source/-/raw/d114d4f8e8271adcb854082060c387b16ac56352/
+PATCH_SITES=	https://gitlab.com/librewolf-community/browser/source/-/raw/5a211f7bad8dcf188a96b408cc143082df8d30a8/
 PATCHFILES=	patches/unity_kde/unity-menubar.patch?inline=false:-p1
-
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Custom version of Firefox, focused on privacy, security and freedom
 WWW=		https://librewolf.net/
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nss>=3.84:security/nss \
@@ -74,7 +75,7 @@ MOZ_OPTIONs=	--enable-application=browser \
 		MOZ_SERVICES_HEALTHREPORT=0
 
 # helpful when testing beta
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}-2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}-1
 
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/firefox-snap/firefox.desktop

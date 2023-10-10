@@ -892,7 +892,6 @@
     SUBDIR += gocritic
     SUBDIR += godot
     SUBDIR += godot-tools
-    SUBDIR += godot2
     SUBDIR += godot35
     SUBDIR += godot35-tools
     SUBDIR += goffice
@@ -4250,6 +4249,7 @@
     SUBDIR += py-argparse
     SUBDIR += py-args
     SUBDIR += py-arpeggio
+    SUBDIR += py-array-api-compat
     SUBDIR += py-arrow
     SUBDIR += py-asciimatics
     SUBDIR += py-asgi-lifespan
@@ -6191,6 +6191,7 @@
     SUBDIR += rubygem-aws-sdk-dataexchange
     SUBDIR += rubygem-aws-sdk-datapipeline
     SUBDIR += rubygem-aws-sdk-datasync
+    SUBDIR += rubygem-aws-sdk-datazone
     SUBDIR += rubygem-aws-sdk-dax
     SUBDIR += rubygem-aws-sdk-detective
     SUBDIR += rubygem-aws-sdk-devicefarm

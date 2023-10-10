@@ -1,8 +1,8 @@
 PORTNAME=	radmind
-PORTVERSION=	1.15.4
-PORTREVISION=	2021062801
+DISTVERSION=	1.16.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/voretaq7/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/voretaq7/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
 MAINTAINER=	mikeg@bsd-box.net
 COMMENT=	Utility for administering filesystem changes
@@ -13,7 +13,7 @@ LICENSE_NAME=	University of Michigan License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=	gmake ssl
+USES=	gmake ssl localbase
 USE_RC_SUBR=	radmind
 
 GNU_CONFIGURE=	yes
@@ -31,7 +31,15 @@ GROUPS=		${RADMINUSER}
 
 PLIST_SUB=	RADMIND_BASE_DIR=${RADMIND_BASE_DIR:S@/@@} RADMINUSER=${RADMINUSER}
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		SASL PAM ZLIB DOCS
+OPTIONS_DEFAULT=	SASL PAM ZLIB DOCS
+
+PAM_CONFIGURE_ENABLE=	pam
+
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL_CONFIGURE_ENABLE=	sasl
+
+ZLIB_CONFIGURE_ENABLE=	zlib
 
 DOCS=		COPYRIGHT SPEC README.md
 
@@ -39,10 +47,6 @@ RADMIND_BASE_DIR?=	${DESTDIR}/var/radmind
 RADMINUSER=	radmind
 
 .include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CONFIGURE_ARGS+=	--enable-profiled=no
-.endif
 
 post-install:
 	# Ugly hack to remove generated man pages
@@ -64,6 +68,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/tmp/file
 	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/tmp/transcript
 	${MKDIR} ${STAGEDIR}${RADMIND_BASE_DIR}/transcript
-	${CP}    ${FILESDIR}/config.sample ${STAGEDIR}${RADMIND_BASE_DIR}/config.sample
+	${INSTALL_DATA}    ${FILESDIR}/config.sample ${STAGEDIR}${RADMIND_BASE_DIR}/
 
 .include <bsd.port.mk>

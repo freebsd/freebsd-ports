@@ -5,7 +5,7 @@
                      wrappers[wrapper_type]["executable"],
                  )
 -                command = "/usr/bin/env php {} -h {}".format(executable, device_id)
-+                command = "/usr/local/bin/php php {} -h {}".format(executable, device_id)
++                command = "%%LOCALBASE%%/bin/php php {} -h {}".format(executable, device_id)
                  if modules is not None and len(str(modules).strip()):
                      module_str = re.sub("\s", "", str(modules).strip())
                      command = command + " -m {}".format(module_str)

@@ -10,7 +10,7 @@ Register for an account: https://www.maxmind.com/en/geolite2/signup
 Get a (free) license key from your accounts page.
 
 Place the generated account key and license key
-into %%DATADIR%%/GeoIP.conf
+into %%PREFIX%%/etc/GeoIP.conf
 UPGRADE
 }
 { type: install
@@ -22,7 +22,7 @@ Register for an account: https://www.maxmind.com/en/geolite2/signup
 Get a license key: https://www.maxmind.com/en/accounts/155743/license-key
 
 Place the generated account key and license key
-into %%DATADIR%%/GeoIP.conf
+into %%PREFIX%%/etc/GeoIP.conf
 INSTALL
 }
 ]

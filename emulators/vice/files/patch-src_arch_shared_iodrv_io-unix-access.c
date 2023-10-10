@@ -1,4 +1,4 @@
---- src/arch/shared/iodrv/io-unix-access.c.orig	2022-12-24 19:44:57 UTC
+--- src/arch/shared/iodrv/io-unix-access.c.orig	2022-12-27 23:56:56 UTC
 +++ src/arch/shared/iodrv/io-unix-access.c
 @@ -26,6 +26,15 @@
  
@@ -16,3 +16,15 @@
  #ifdef UNIX_COMPILE
  
  #include <fcntl.h>
+@@ -121,7 +130,11 @@ static uint8_t device_io_inb(uint16_t addr)
+ #ifdef HAVE_INBV
+     return inbv(addr);
+ #else
++#ifdef HAVE_INB
+     return inb(addr);
++#else
++    return 0;
++#endif
+ #endif
+ }
+ 

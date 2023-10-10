@@ -118,7 +118,6 @@ lib/wayfire/libxdg-activation.so
 lib/wayfire/libzoom.so
 libdata/pkgconfig/wayfire.pc
 man/man1/wayfire.1.gz
-man/wayfire.1.gz
 %%EXAMPLESDIR%%/wayfire.ini
 %%DATADIR%%/metadata/alpha.xml
 %%DATADIR%%/metadata/animate.xml

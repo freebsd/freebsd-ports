@@ -6,7 +6,7 @@ MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/commit/
 PATCHFILES+=	3db96bfbac475022a32b70473b767b21a8d70c7f.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/issues/4427
-PATCHFILES+=	5183d14d331e4f2022b9ab0f83d45e4e17951013.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/5650
+PATCHFILES+=	f0355a6341aceee93ce4d4d70cd9ec3a44081c38.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/5650
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor

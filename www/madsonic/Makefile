@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madsonic streaming media server
 WWW=		https://www.madsonic.org
 
+DEPRECATED=	Depends on www/jetty8 which has been listed as end of life since 2015
+EXPIRATION_DATE=2023-11-30
+
 LICENSE=	GPLv3
 
 RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \

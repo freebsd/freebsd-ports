@@ -1,12 +1,13 @@
 PORTNAME=	bleach
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Easy safelist-based HTML-sanitizing tool
-WWW=		https://github.com/mozilla/bleach
+WWW=		https://bleach.readthedocs.io/en/latest/ \
+		https://github.com/mozilla/bleach
 
 LICENSE=	APACHE20
 

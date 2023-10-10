@@ -1,0 +1,120 @@
+From 62f65e0842985750697476cc59b830205b7b4826 Mon Sep 17 00:00:00 2001
+From: Yauheni Akhotnikau <eao197@gmail.com>
+Date: Mon, 14 Aug 2023 14:28:29 +0300
+Subject: [PATCH] Update for dependencies.
+
+SObjectizer -> 5.8.0.1
+fmtlib -> 10.1.0
+spdlog -> 1.12.0
+
+A new header file utils/string_literal_fmt.hpp with formatter for
+fmtlib.
+---
+ arataga/acl_handler/a_handler.cpp               |  1 +
+ arataga/acl_handler/handlers/data_transfer.cpp  |  1 +
+ .../handlers/http/authentification_handler.cpp  |  1 +
+ .../handlers/http/ordinary_method_handler.cpp   |  1 +
+ arataga/acl_handler/handlers/socks5.cpp         |  1 +
+ .../interactor/a_nameserver_interactor.cpp      |  2 ++
+ arataga/utils/string_literal_fmt.hpp            | 17 +++++++++++++++++
+ externals.rb                                    |  6 +++---
+ 8 files changed, 27 insertions(+), 3 deletions(-)
+ create mode 100644 arataga/utils/string_literal_fmt.hpp
+
+diff --git a/arataga/acl_handler/a_handler.cpp b/arataga/acl_handler/a_handler.cpp
+index 35656ae..9ca791b 100644
+--- acl_handler/a_handler.cpp
++++ acl_handler/a_handler.cpp
+@@ -10,6 +10,7 @@
+ #include <arataga/acl_handler/exception.hpp>
+ 
+ #include <arataga/utils/overloaded.hpp>
++#include <arataga/utils/string_literal_fmt.hpp>
+ 
+ #include <arataga/logging/wrap_logging.hpp>
+ 
+diff --git a/arataga/acl_handler/handlers/data_transfer.cpp b/arataga/acl_handler/handlers/data_transfer.cpp
+index 1eb0950..57c1d63 100644
+--- acl_handler/handlers/data_transfer.cpp
++++ acl_handler/handlers/data_transfer.cpp
+@@ -8,6 +8,7 @@
+ #include <arataga/acl_handler/buffers.hpp>
+ 
+ #include <arataga/utils/overloaded.hpp>
++#include <arataga/utils/string_literal_fmt.hpp>
+ 
+ #include <noexcept_ctcheck/pub.hpp>
+ 
+diff --git a/arataga/acl_handler/handlers/http/authentification_handler.cpp b/arataga/acl_handler/handlers/http/authentification_handler.cpp
+index dad8334..120f201 100644
+--- acl_handler/handlers/http/authentification_handler.cpp
++++ acl_handler/handlers/http/authentification_handler.cpp
+@@ -9,6 +9,7 @@
+ #include <arataga/acl_handler/handlers/http/responses.hpp>
+ 
+ #include <arataga/utils/overloaded.hpp>
++#include <arataga/utils/string_literal_fmt.hpp>
+ 
+ #include <restinio/helpers/http_field_parsers/authorization.hpp>
+ #include <restinio/helpers/http_field_parsers/basic_auth.hpp>
+diff --git a/arataga/acl_handler/handlers/http/ordinary_method_handler.cpp b/arataga/acl_handler/handlers/http/ordinary_method_handler.cpp
+index 0048167..dddbf14 100644
+--- acl_handler/handlers/http/ordinary_method_handler.cpp
++++ acl_handler/handlers/http/ordinary_method_handler.cpp
+@@ -12,6 +12,7 @@
+ #include <arataga/acl_handler/out_data_piece.hpp>
+ 
+ #include <arataga/utils/subview_of.hpp>
++#include <arataga/utils/string_literal_fmt.hpp>
+ 
+ #include <restinio/helpers/http_field_parsers/connection.hpp>
+ 
+diff --git a/arataga/acl_handler/handlers/socks5.cpp b/arataga/acl_handler/handlers/socks5.cpp
+index 45236a5..a3bf424 100644
+--- acl_handler/handlers/socks5.cpp
++++ acl_handler/handlers/socks5.cpp
+@@ -8,6 +8,7 @@
+ #include <arataga/acl_handler/buffers.hpp>
+ 
+ #include <arataga/utils/overloaded.hpp>
++#include <arataga/utils/string_literal_fmt.hpp>
+ 
+ #include <variant>
+ 
+diff --git a/arataga/dns_resolver/interactor/a_nameserver_interactor.cpp b/arataga/dns_resolver/interactor/a_nameserver_interactor.cpp
+index b1b19f8..b020c38 100644
+--- dns_resolver/interactor/a_nameserver_interactor.cpp
++++ dns_resolver/interactor/a_nameserver_interactor.cpp
+@@ -7,6 +7,8 @@
+ 
+ #include <arataga/logging/wrap_logging.hpp>
+ 
++#include <arataga/utils/string_literal_fmt.hpp>
++
+ #include <arataga/nothrow_block/macros.hpp>
+ 
+ #include <noexcept_ctcheck/pub.hpp>
+diff --git a/arataga/utils/string_literal_fmt.hpp b/arataga/utils/string_literal_fmt.hpp
+new file mode 100644
+index 0000000..5d67e1e
+--- /dev/null
++++ utils/string_literal_fmt.hpp
+@@ -0,0 +1,17 @@
++/*!
++ * @file
++ * @brief Helper for formatting/printing of string_literal via fmtlib.
++ * @since v.0.3.0.1
++ */
++
++#pragma once
++
++#include <arataga/utils/string_literal.hpp>
++
++#include <fmt/ostream.h>
++
++template<>
++struct fmt::formatter< arataga::utils::string_literal_t >
++	:	public fmt::ostream_formatter
++{};
++
+ 

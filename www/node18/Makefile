@@ -27,7 +27,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++11-lib gmake localbase pkgconfig python:build shebangfix
+USES=		compiler:c++11-lib gmake localbase pkgconfig python:build shebangfix tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \

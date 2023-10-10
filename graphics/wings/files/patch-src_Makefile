@@ -1,11 +1,13 @@
---- src/Makefile.orig	2019-04-06 15:47:18 UTC
+diff --git src/Makefile src/Makefile
+index 234f075e..bf82dafc 100644
+--- src/Makefile
 +++ src/Makefile
-@@ -142,7 +142,7 @@ APP_TARGET = $(EBIN)/$(APP_FILE)
+@@ -147,7 +147,7 @@ APP_TARGET = $(EBIN)/$(APP_FILE)
  # ----------------------------------------------------
  # FLAGS
  # ----------------------------------------------------
--ERL_COMPILE_FLAGS += -Werror -I ../.. -I../_deps $(TYPE_FLAGS) \
-+ERL_COMPILE_FLAGS += -I .. -I../_deps $(TYPE_FLAGS) \
- '-Dwings_version="$(WINGS_VSN)"' -pa $(WINGS_INTL)
+-ERL_COMPILE_FLAGS += +nowarn_match_float_zero -Werror -I ../.. -I../_deps $(TYPE_FLAGS) -pa $(WINGS_INTL)
++ERL_COMPILE_FLAGS += +nowarn_match_float_zero -I ../.. -I../_deps -I .. $(TYPE_FLAGS) -pa $(WINGS_INTL)
  
  # ----------------------------------------------------
+ # Targets

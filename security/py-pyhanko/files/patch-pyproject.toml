@@ -16,12 +16,14 @@
  description = "Tools for stamping and signing PDF files"
  authors = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
  maintainers = [{name = "Matthias Valvekens", email = "dev@mvalvekens.be"}]
-@@ -36,7 +36,7 @@ requires-python = ">=3.7"
+@@ -36,8 +36,8 @@ requires-python = ">=3.7"
  dependencies = [
      "asn1crypto>=1.5.1",
      "qrcode>=6.1",
 -    "tzlocal>=4.3",
+-    "pyhanko-certvalidator==0.24.*",
 +    "tzlocal>=4.2",
-     "pyhanko-certvalidator==0.24.*",
++    "pyhanko-certvalidator>=0.24,<0.26",
      "click>=7.1.2",
      "requests>=2.24.0",
+     "pyyaml>=5.3.1",

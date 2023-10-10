@@ -1,5 +1,5 @@
 PORTNAME=	drush
-DISTVERSION=	8.4.11
+DISTVERSION=	8.4.12
 PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/drush-ops/drush/releases/download/${DISTVERSION}/

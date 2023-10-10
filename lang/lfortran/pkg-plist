@@ -17,5 +17,5 @@ share/jupyter/kernels/fortran/kernel.json
 %%DATADIR%%/lib/lfortran_intrinsic_trig.mod
 %%DATADIR%%/lib/liblfortran_runtime.so
 %%DATADIR%%/lib/liblfortran_runtime.so.0
-%%DATADIR%%/lib/liblfortran_runtime.so.0.21.1
+%%DATADIR%%/lib/liblfortran_runtime.so.%%VER%%
 %%DATADIR%%/lib/liblfortran_runtime_static.a

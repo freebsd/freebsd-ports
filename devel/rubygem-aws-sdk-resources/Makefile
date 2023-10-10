@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.171.0
+PORTVERSION=	3.172.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -106,6 +106,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-dataexchange>=1<2:devel/rubygem-aws-sdk-dataexchange \
 		rubygem-aws-sdk-datapipeline>=1<2:devel/rubygem-aws-sdk-datapipeline \
 		rubygem-aws-sdk-datasync>=1<2:devel/rubygem-aws-sdk-datasync \
+		rubygem-aws-sdk-datazone>=1<2:devel/rubygem-aws-sdk-datazone \
 		rubygem-aws-sdk-dax>=1<2:devel/rubygem-aws-sdk-dax \
 		rubygem-aws-sdk-detective>=1<2:devel/rubygem-aws-sdk-detective \
 		rubygem-aws-sdk-devicefarm>=1<2:devel/rubygem-aws-sdk-devicefarm \

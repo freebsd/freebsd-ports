@@ -8,6 +8,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/fcitx/${PORTNAME}/commit/
+PATCHFILES=	7fb3a5500270877d93b61b11b2a17b9b8f6a506b.patch:-p1
+
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	New implementation of the Fcitx IME framework
 WWW=		https://github.com/fcitx/fcitx5

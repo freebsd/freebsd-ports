@@ -60,7 +60,7 @@ INI_VARS=		MANPAGES+="ini2po po2ini"
 LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}Levenshtein>=0.12:devel/py-Levenshtein@${PY_FLAVOR}
 MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.2.1:textproc/py-mistletoe@${PY_FLAVOR}
 MARKDOWN_VARS=		MANPAGES+="md2po po2md"
-PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.5:devel/py-phply@${PY_FLAVOR}
+PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
 RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.7:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"

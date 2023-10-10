@@ -1,6 +1,6 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20230817
+DISTVERSION=	2.3.0-dev.20230928
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		cmake:noninja compiler:c11 cpe perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	70dd2d8
+GH_TAGNAME=	cb9f500
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
@@ -53,9 +53,14 @@ OPTIONS_DEFINE=		DOCS MRUBY
 OPTIONS_DEFAULT=	MRUBY
 OPTIONS_SUB=		yes
 MRUBY_DESC=		Build with embedded mruby handler support
-
 MRUBY_USES=		bison ruby:build
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+CMAKE_ARGS+=	-DWITH_FUSION=OFF
+.endif
 
 .include <bsd.port.options.mk>
 
@@ -70,4 +75,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

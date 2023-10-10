@@ -180,6 +180,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Conroe.xml
 %%DATADIR%%/cpu_map/x86_Cooperlake.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Genoa.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome.xml

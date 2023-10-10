@@ -1,7 +1,9 @@
 PORTNAME=	polymake
 DISTVERSION=	4.10
+PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	https://polymake.org/lib/exe/fetch.php/download/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/V${DISTVERSION}/ \
+		https://polymake.org/lib/exe/fetch.php/download/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-minimal
 
 MAINTAINER=	bsd@philippost.de
@@ -59,13 +61,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-permlib=${LOCALBASE}/lib \
 		--without-java \
 		--without-javaview \
+		--without-native \
 		--without-sympol
 CONFIGURE_LOG=	build/bundled.log
 
 # Optional features; SoPlex defaults to off due to licencsing and SCIP defaults
 # to off due to a dependency on libsoplex.so.
-OPTIONS_DEFINE=	LRS NATIVE NORMALIZ OPENMP PPL SCIP SINGULAR SOPLEX TESTS
-OPTIONS_DEFAULT=	BLISS LRS NORMALIZ OPENMP PPL SINGULAR
+OPTIONS_DEFINE=	LRS NORMALIZ OPENMP OPTIMIZED_CFLAGS PPL SCIP SINGULAR SOPLEX TESTS
+OPTIONS_DEFAULT=	BLISS LRS NORMALIZ OPENMP OPTIMIZED_CFLAGS PPL SINGULAR
 # Exlude lrslib on i386 and powerpc because it is marked BROKEN for those
 # architectures
 OPTIONS_EXCLUDE_i386=	LRS
@@ -80,7 +83,6 @@ OPTIONS_SINGLE_GRAPH=	BLISS NAUTY
 BLISS_DESC=	Compute graph automorphism groups using bliss
 GRAPH_DESC=	Graph automorphism groups
 LRS_DESC=	Convex hull computation and vertex enumeration
-NATIVE_DESC=	Build with native optimizations (-march=native)
 NAUTY_DESC=	Compute graph automorphism groups using nauty
 NORMALIZ_DESC=	Computations in affine monoids and lattice polytopes
 PPL_DESC=	Manipulation of convex polyhedra
@@ -103,13 +105,13 @@ LRS_CONFIGURE_ON=	--with-lrs=${LOCALBASE} \
 LRS_CONFIGURE_OFF=	--without-lrs
 LRS_LIB_DEPENDS=	liblrs.so:math/lrslib
 
-NATIVE_CONFIGURE_OFF=	--without-native
-
 NORMALIZ_CONFIGURE_ON=	--with-libnormaliz=${LOCALBASE}
 NORMALIZ_CONFIGURE_OFF=	--without-libnormaliz
 NORMALIZ_LIB_DEPENDS=	libnormaliz.so:math/libnormaliz
 
 OPENMP_CONFIGURE_OFF=	--without-openmp
+
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 PPL_CONFIGURE_ON=	--with-ppl=${LOCALBASE}
 PPL_CONFIGURE_OFF=	--without-ppl

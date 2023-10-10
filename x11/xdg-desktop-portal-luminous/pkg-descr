@@ -1,0 +1,3 @@
+An alternative to xdg-desktop-portal-wlr for wlroots compositors.
+This project is a stand alone binary and does not depend on grim.
+libwayshot is used as the screencopy backend to enable screenshots.

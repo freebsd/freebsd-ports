@@ -48,10 +48,11 @@ CONFLICTS_INSTALL?=	rust-nightly
 # ?= to allow users to still overwrite it in make.conf.
 TMPDIR?=	${WRKDIR}
 
-OPTIONS_DEFINE=		DOCS GDB LTO SOURCES WASM
+OPTIONS_DEFINE=		DOCS GDB LTO PORT_LLVM SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
+PORT_LLVM_DESC=	Build against devel/llvm instead of bundled copy (experimental)
 SOURCES_DESC=	Install source files
 WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 
@@ -60,12 +61,12 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
+PORT_LLVM_USES=		llvm:min=14,lib,noexport
+PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
-			_RUST_BUILD_WASM=true \
 			_RUST_TARGETS+=wasm32-unknown-unknown
-WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.json for the date and version values
 BOOTSTRAPS_DATE?=		2023-07-13
@@ -94,6 +95,13 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .include <bsd.port.pre.mk>
+
+.ifndef NIGHTLY_DATE
+PATCH_SITES=	https://github.com/rust-lang/rust/commit/
+# LLVM 17 API compatibility fixes
+PATCHFILES=	71958da4854176c50a8b12470b956d5c7ed11817.patch:-p1 \
+		6ddf9128b2b55f9def80af57f7353d2521527c6a.patch:-p1
+.endif
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
@@ -156,6 +164,11 @@ post-patch:
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
 
+post-patch-PORT_LLVM-on:
+# WASM target hardcodes bundled lld
+	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
+		${WRKSRC}/compiler/rustc_target/src/spec/wasm_base.rs
+
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
@@ -190,7 +203,11 @@ do-configure:
 	@${ECHO_CMD} 'default-linker="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'lld=${_RUST_BUILD_WASM}' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MWASM} && !${PORT_OPTIONS:MPORT_LLVM}
+	@${ECHO_CMD} 'lld=true' >> ${WRKSRC}/config.toml
+.else
+	@${ECHO_CMD} 'lld=false' >> ${WRKSRC}/config.toml
+.endif
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'lto="thin"' >> ${WRKSRC}/config.toml
 .endif
@@ -229,6 +246,9 @@ do-configure:
 	@${ECHO_CMD} 'linker="${WRKDIR}/ld-wrapper"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
+.endif
+.if ${PORT_OPTIONS:MPORT_LLVM}
+	@${ECHO_CMD} 'llvm-config="${LOCALBASE}/bin/${LLVM_CONFIG}"' >> ${WRKSRC}/config.toml
 .endif
 .endfor
 	@${ECHO_CMD} '[dist]' >> ${WRKSRC}/config.toml

@@ -96,6 +96,7 @@ lib/erlang/lib/wings/ebin/wings_msg.beam
 lib/erlang/lib/wings/ebin/wings_obj.beam
 lib/erlang/lib/wings/ebin/wings_outliner.beam
 lib/erlang/lib/wings/ebin/wings_palette.beam
+lib/erlang/lib/wings/ebin/wings_palette_imports.beam
 lib/erlang/lib/wings/ebin/wings_pb.beam
 lib/erlang/lib/wings/ebin/wings_pick.beam
 lib/erlang/lib/wings/ebin/wings_pick_nif.beam
@@ -357,6 +358,8 @@ lib/erlang/lib/wings/plugins/commands/wpc_absolute_scale_pl.lang
 lib/erlang/lib/wings/plugins/commands/wpc_absolute_scale_pt.lang
 lib/erlang/lib/wings/plugins/commands/wpc_absolute_scale_tr.lang
 lib/erlang/lib/wings/plugins/commands/wpc_absolute_scale_zh-tw.lang
+lib/erlang/lib/wings/plugins/commands/wpc_align_to_axis.beam
+lib/erlang/lib/wings/plugins/commands/wpc_align_to_axis_en.lang
 lib/erlang/lib/wings/plugins/commands/wpc_ambocc.beam
 lib/erlang/lib/wings/plugins/commands/wpc_ambocc_de.lang
 lib/erlang/lib/wings/plugins/commands/wpc_ambocc_en.lang
@@ -445,6 +448,8 @@ lib/erlang/lib/wings/plugins/commands/wpc_doosabin_ko.lang
 lib/erlang/lib/wings/plugins/commands/wpc_doosabin_pl.lang
 lib/erlang/lib/wings/plugins/commands/wpc_doosabin_tr.lang
 lib/erlang/lib/wings/plugins/commands/wpc_doosabin_zh-tw.lang
+lib/erlang/lib/wings/plugins/commands/wpc_duplicate_radial.beam
+lib/erlang/lib/wings/plugins/commands/wpc_duplicate_radial_en.lang
 lib/erlang/lib/wings/plugins/commands/wpc_explode.beam
 lib/erlang/lib/wings/plugins/commands/wpc_explode_de.lang
 lib/erlang/lib/wings/plugins/commands/wpc_explode_en.lang
@@ -684,6 +689,7 @@ lib/erlang/lib/wings/plugins/import_export/wpc_kerky_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_kerky_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_kerky_es-ES.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_lwo.beam
+lib/erlang/lib/wings/plugins/import_export/wpc_lwo_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_obj.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_obj_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_obj_en.lang
@@ -726,6 +732,8 @@ lib/erlang/lib/wings/plugins/import_export/wpc_svg_path_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_svg_path_es-ES.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_svg_path_jp.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_svg_path_ko.lang
+lib/erlang/lib/wings/plugins/import_export/wpc_wmf_paths.beam
+lib/erlang/lib/wings/plugins/import_export/wpc_wmf_paths_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_wrl.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_wrl_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_wrl_en.lang
@@ -748,6 +756,11 @@ lib/erlang/lib/wings/plugins/import_export/wpc_yafaray.beam
 lib/erlang/lib/wings/plugins/import_export/wpc_yafaray_de.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_yafaray_en.lang
 lib/erlang/lib/wings/plugins/import_export/wpc_yafaray_es-ES.lang
+lib/erlang/lib/wings/plugins/import_export/x3d_import.beam
+lib/erlang/lib/wings/plugins/import_export/x3d_import__sgi.beam
+lib/erlang/lib/wings/plugins/import_export/x3d_import_en.lang
+lib/erlang/lib/wings/plugins/import_export/x_import.beam
+lib/erlang/lib/wings/plugins/import_export/x_import_en.lang
 lib/erlang/lib/wings/plugins/primitives/README
 lib/erlang/lib/wings/plugins/primitives/wpc_bbox.beam
 lib/erlang/lib/wings/plugins/primitives/wpc_bbox_de.lang
@@ -801,6 +814,8 @@ lib/erlang/lib/wings/plugins/primitives/wpc_ncube_jp.lang
 lib/erlang/lib/wings/plugins/primitives/wpc_ncube_ko.lang
 lib/erlang/lib/wings/plugins/primitives/wpc_ncube_tr.lang
 lib/erlang/lib/wings/plugins/primitives/wpc_ncube_zh-tw.lang
+lib/erlang/lib/wings/plugins/primitives/wpc_oblong.beam
+lib/erlang/lib/wings/plugins/primitives/wpc_oblong_en.lang
 lib/erlang/lib/wings/plugins/primitives/wpc_plane.beam
 lib/erlang/lib/wings/plugins/primitives/wpc_plane_de.lang
 lib/erlang/lib/wings/plugins/primitives/wpc_plane_en.lang
@@ -930,6 +945,7 @@ lib/erlang/lib/wings/src/wings_msg.erl
 lib/erlang/lib/wings/src/wings_obj.erl
 lib/erlang/lib/wings/src/wings_outliner.erl
 lib/erlang/lib/wings/src/wings_palette.erl
+lib/erlang/lib/wings/src/wings_palette_imports.erl
 lib/erlang/lib/wings/src/wings_pb.erl
 lib/erlang/lib/wings/src/wings_pick.erl
 lib/erlang/lib/wings/src/wings_pick_nif.erl

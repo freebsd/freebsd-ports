@@ -5,6 +5,7 @@ CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	dd479c06bf84.patch:-p1 # https://github.com/WayfireWM/wayfire/issues/599
+PATCHFILES+=	564b75a45d7c.patch:-p1 # https://github.com/WayfireWM/wayfire/pull/1943
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	3D Wayland compositor

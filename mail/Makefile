@@ -27,13 +27,13 @@
     SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
-    SUBDIR += bsd-vacation
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bogofilter-bdb
     SUBDIR += bogofilter-kc
     SUBDIR += bogofilter-sqlite
+    SUBDIR += bsd-vacation
     SUBDIR += bsfilter
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer

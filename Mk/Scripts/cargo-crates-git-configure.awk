@@ -90,8 +90,8 @@ function find_replaced_crates(input, output,		in_patch_crates_io, line, cols) {
 	close(output)
 }
 
-function add_crates_io_patches(		header_printed, cmd, cargotoml, source, crates) {
-	header_printed = 0
+function add_crates_io_patches(		print_header, local_crates, cmd, cargotoml, source, crates) {
+	print_header = 0
 # --exclude-dir not supported on FreeBSD < 13
 #	cmd = GREP " --include='*/Cargo.toml' --exclude-dir='" CARGO_VENDOR_DIR "' -Flr 'patch.crates-io' " WRKSRC
 	cmd = FIND " " WRKSRC " -name Cargo.toml -not -path '" CARGO_VENDOR_DIR "/*' -exec " GREP " -Flr 'patch.crates-io' {} \\\+"
@@ -106,14 +106,18 @@ function add_crates_io_patches(		header_printed, cmd, cargotoml, source, crates)
 				split(source_crates[source], crates)
 				for (j in crates) {
 					if (replaced_crates[crates[j]]) {
-						if (!header_printed) {
-							printf("[patch.crates-io]\n")
-							header_printed = 1
-						}
-						printf("%s = { path = '%s' }\n", crates[j], get_source_dir(source, crates[j]))
+						print_header = 1
+						local_crates[crates[j]] = get_source_dir(source, crates[j])
 					}
 				}
 			}
+		}
+	}
+	if (print_header == 1) {
+		printf("[patch.crates-io]\n")
+
+		for (i in local_crates) {
+			printf("%s = { path = '%s' }\n", i, local_crates[i])
 		}
 	}
 	close(cmd)

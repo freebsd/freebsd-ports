@@ -8,8 +8,6 @@ WWW=		https://github.com/freebsd-net/packetdrill
 
 LICENSE=	GPLv2
 
-IGNORE_FreeBSD_12=	does not build
-
 USES=		bison python:run uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd-net
@@ -24,12 +22,12 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 # XXX Static libraries with PIE are currently unsupported.
 MAKE_ARGS+=	WITHOUT_PIE=true
-
+TEST_TARGET=	tests
 # 'MD5_Init' is deprecated on OpenSSL 3
 CFLAGS+=	-Wno-deprecated
 
 pre-build:
-	cd ${WRKSRC} && ${LN} Makefile.FreeBSD Makefile
+	cd ${WRKSRC} && ${LN} -f Makefile.FreeBSD Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}

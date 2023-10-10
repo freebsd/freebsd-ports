@@ -22,7 +22,6 @@ name="postsrsd"
 rcvar=postsrsd_enable
 
 start_precmd="postsrsd_prepcmd"
-stop_postcmd="postsrsd_postcmd"
 command="%%PREFIX%%/sbin/postsrsd"
 _piddir="/var/run/postsrsd"
 pidfile="${_piddir}/${name}.pid"
@@ -54,12 +53,6 @@ postsrsd_prepcmd ()
     if [ ! -f "${postsrsd_secret}" ] ; then
 	env -i tr -cd "[:alnum:]" < /dev/urandom | head -c 24 > "${postsrsd_secret}"
     fi
-}
-
-postsrsd_postcmd()
-{
-    # just if the directory is empty
-    rmdir ${_piddir} > /dev/null 2>&1
 }
 
 # to let rc.subr kill them all

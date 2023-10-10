@@ -1,9 +1,9 @@
 PORTNAME=	check_mysql_health
-PORTVERSION=	2.2.2
+DISTVERSION=	3.0.0.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kirill@varnakov.com
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
 WWW=		https://labs.consol.de/de/nagios/check_mysql_health/
 
@@ -11,6 +11,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
+
+USES=		perl5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-statefiles-dir=${NAGIOSDIR} \
@@ -21,7 +23,6 @@ CONFIGURE_ARGS=	--with-statefiles-dir=${NAGIOSDIR} \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--with-perl=${PERL}
 
-USES=		perl5
 NO_ARCH=	yes
 
 NAGIOSUSER?=	nagios

@@ -1,0 +1,18 @@
+Sphinx-Gallery is a Sphinx extension that builds an HTML gallery of examples
+from any set of Python scripts.
+
+Features:
+- Create example galleries automatically by running pure Python example scripts
+  while capturing outputs + figures, rendering them into reST files built into
+  your documentation by Sphinx
+- Embed reST in your example Python files, allowing you to interweave
+  narrative-like content with code that generates plots in your documentation.
+  Sphinx-Gallery also automatically generates a Jupyter Notebook for each your
+  example page.
+- Add mini-galleries for API documentation. Sphinx-Gallery can generate
+  mini-galleries listing all examples that use a particular function/method/etc.
+- Add intersphinx links to your examples. Sphinx-Gallery can automatically add
+  links to API documentation for functions/methods/classes that are used in your
+  examples (for any Python module that uses intersphinx).
+- Manage multiple galleries to create and embed galleries for several folders of
+  examples.
