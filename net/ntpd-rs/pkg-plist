@@ -1,11 +1,5 @@
-bin/demobilize-server
 bin/ntp-ctl
 bin/ntp-daemon
 bin/ntp-metrics-exporter
-bin/nts-ke
-bin/nts-ke-server
-bin/peer-state
-bin/rate-limit-server
-bin/simple-daemon
 @sample %%ETCDIR%%/ntp.server.toml.sample
 @sample %%ETCDIR%%/ntp.toml.sample

@@ -1,7 +1,6 @@
 PORTNAME=	ntpd-rs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
-PORTREVISION=	1
+DISTVERSION=	1.0.0
 CATEGORIES=	net
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -21,12 +20,12 @@ GROUPS=		_ntp
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pendulum-project
+CARGO_CRATES=
 
-BINFILES=	demobilize-server ntp-ctl ntp-daemon ntp-metrics-exporter nts-ke nts-ke-server peer-state rate-limit-server simple-daemon
-SAMPLEFILES=	ntp.server.toml ntp.toml
+BINFILES=	ntp-ctl ntp-daemon ntp-metrics-exporter
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/ntp-daemon/src/config/mod.rs
+	@${REINPLACE_CMD} 's|%%ETCDIR%%|${ETCDIR}|' ${WRKSRC}/ntpd/src/daemon/config/mod.rs
 
 do-install:
 .for f in ${BINFILES}
@@ -34,8 +33,7 @@ do-install:
 .endfor
 
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-.for f in ${SAMPLEFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/ntp.server.toml ${STAGEDIR}${ETCDIR}/ntp.server.toml.sample
+	${INSTALL_DATA} ${WRKSRC}/docs/examples/conf/ntp.toml.default ${STAGEDIR}${ETCDIR}/ntp.toml.sample
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- ntp-daemon/src/config/mod.rs.orig	2023-07-28 13:42:06 UTC
-+++ ntp-daemon/src/config/mod.rs
+--- ntpd/src/daemon/config/mod.rs.orig	2023-07-28 13:42:06 UTC
++++ ntpd/src/daemon/config/mod.rs
 @@ -272,7 +272,7 @@ impl Config {
          }
  
