@@ -15,7 +15,7 @@ WWW=		http://www.openusd.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 # CMakeLists.txt fails for non-64-bit architectures: Compiler does not support 64-bit builds
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc # CMakeLists.txt fails for non-64-bit architectures: Compiler does not support 64-bit builds
 
 LIB_DEPENDS=	libtbb.so:devel/tbb
 
