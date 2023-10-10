@@ -38,7 +38,9 @@
 %%QT_INCDIR%%/QtSerialBus/QModbusRequest
 %%QT_INCDIR%%/QtSerialBus/QModbusResponse
 %%QT_INCDIR%%/QtSerialBus/QModbusRtuSerialClient
+%%QT_INCDIR%%/QtSerialBus/QModbusRtuSerialMaster
 %%QT_INCDIR%%/QtSerialBus/QModbusRtuSerialServer
+%%QT_INCDIR%%/QtSerialBus/QModbusRtuSerialSlave
 %%QT_INCDIR%%/QtSerialBus/QModbusServer
 %%QT_INCDIR%%/QtSerialBus/QModbusTcpClient
 %%QT_INCDIR%%/QtSerialBus/QModbusTcpConnectionObserver
