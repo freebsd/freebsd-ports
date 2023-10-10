@@ -1,3 +1,38 @@
+  <vuln vid="bf545001-b96d-42e4-9d2e-60fdee204a43">
+	  <topic>h2o -- HTTP/2 Rapid Reset attack vulnerability</topic>
+    <affects>
+      <package>
+    <name>h2o</name>
+    <range><le>2.2.6</le></range>
+      </package>
+      <package>
+    <name>h2o-devel</name>
+    <range><lt>2.3.0.d.20231010</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>Kazuo Okuhu reports:</p>
+    <blockquote cite="https://github.com/h2o/h2o/issues/3291">
+		<p>
+		H2O is vulnerable to the HTTP/2 Rapid Reset attack.
+		An attacker might be able to consume more than adequate amount of
+		processing power of h2o and the backend servers by mounting the
+		attack.
+    </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-44487</cvename>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-2m7v-gc89-fjqf</url>
+    </references>
+    <dates>
+      <discovery>2023-10-10</discovery>
+      <entry>2023-10-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4f254817-6318-11ee-b2ff-080027de9982">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
