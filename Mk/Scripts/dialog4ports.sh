@@ -10,8 +10,8 @@ if [ -z "${DIALOG4PORTS}" -o -z "${PORTSDIR}" -o -z "${MAKE}" ]; then
 	exit 1
 fi
 
-: ${DIALOGPORT:=ports-mgmt/dialog4ports}
-: ${DIALOGNAME:=dialog4ports}
+: ${DIALOGPORT:=ports-mgmt/portconfig}
+: ${DIALOGNAME:=portconfig}
 
 OPTIONSFILE="$1"
 

@@ -33,7 +33,7 @@ DIALOG?=		/usr/bin/dialog
 .else
 DIALOG?=		/usr/bin/bsddialog
 .endif
-DIALOG4PORTS?=		${LOCALBASE}/bin/dialog4ports
+DIALOG4PORTS?=		${LOCALBASE}/bin/portconfig
 DIFF?=			/usr/bin/diff
 DIRNAME?=		/usr/bin/dirname
 EGREP?=			/usr/bin/egrep
