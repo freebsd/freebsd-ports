@@ -1,7 +1,7 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.24
-PORTEPOCH=	1
+DISTVERSION=	0.3.20
+PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
 DISTFILES=	large.tgz:lapack_tmg \
