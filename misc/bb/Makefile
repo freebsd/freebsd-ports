@@ -25,9 +25,7 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
 USES+=		compiler:gcc-c++11-lib
-.endif
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.elif ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
