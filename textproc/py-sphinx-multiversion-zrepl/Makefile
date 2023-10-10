@@ -1,22 +1,26 @@
 PORTNAME=	sphinx-multiversion
-DISTVERSION=	0.2.4
-PORTREVISION=	1
+DISTVERSION=	g20230909
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-zrepl
 
 MAINTAINER=	driesm@FreeBSD.org
-COMMENT=	Sphinx extension for building self-hosted versioned docs
-WWW=		https://github.com/Holzhaus/sphinx-multiversion
+COMMENT=	Sphinx extension for building self-hosted versioned docs (zrepl fork)
+WWW=		https://github.com/zrepl/sphinx-multiversion
 
 LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=2.1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	zrepl
+GH_TAGNAME=	52c915d
+
 USE_PYTHON=	autoplist concurrent distutils
 
-CONFLICTS_INSTALL=	sphinx-multiversion-zrepl
+CONFLICTS_INSTALL=	sphinx-multiversion
 
 NO_ARCH=	yes
 
