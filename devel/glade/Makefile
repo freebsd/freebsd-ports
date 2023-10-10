@@ -1,6 +1,6 @@
 PORTNAME=	glade
 PORTVERSION=	3.40.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -41,7 +41,7 @@ PYTHON_USE=		GNOME=pygobject3
 
 WEBKIT_DESC=		Webkit glade support
 WEBKIT_MESON_ENABLED=	webkit2gtk
-WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
-			libwebkit2gtk-4.0.so:www/webkit2-gtk3
+WEBKIT_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3 \
+			libwebkit2gtk-4.1.so:www/webkit2-gtk3
 
 .include <bsd.port.mk>
