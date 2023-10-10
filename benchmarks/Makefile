@@ -75,6 +75,7 @@
     SUBDIR += polygraph
     SUBDIR += postal
     SUBDIR += postmark
+    SUBDIR += py-asv
     SUBDIR += py-asv-runner
     SUBDIR += py-locust
     SUBDIR += py-naarad
