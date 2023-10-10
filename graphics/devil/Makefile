@@ -7,7 +7,8 @@ CATEGORIES=	graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform image library
-WWW=		http://openil.sourceforge.net/
+WWW=		https://openil.sourceforge.net/ \
+		https://github.com/DentonW/DevIL
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

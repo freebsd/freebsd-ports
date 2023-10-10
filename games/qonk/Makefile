@@ -6,7 +6,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Small space build and conquer strategy game
-WWW=		http://qonk.sourceforge.net/
+WWW=		https://scratchpad.fandom.com/wiki/Qonk \
+		https://sourceforge.net/projects/qonk/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

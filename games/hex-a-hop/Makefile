@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:S/-//g}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Puzzle game based on hexagonal tiles
-WWW=		http://hexahop.sourceforge.net/
+WWW=		https://hexahop.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

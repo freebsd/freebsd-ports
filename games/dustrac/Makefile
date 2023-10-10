@@ -5,7 +5,7 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-view racing game
-WWW=		http://dustrac.sourceforge.net/
+WWW=		https://dustrac.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

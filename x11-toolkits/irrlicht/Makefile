@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Irrlicht%20SDK/${PORTVERSION:R}/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	High performance realtime 3D engine
-WWW=		http://irrlicht.sourceforge.net/
+WWW=		https://irrlicht.sourceforge.io/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/readme.txt

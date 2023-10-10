@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Computer game visualizing quantum mechanics
-WWW=		http://quantumminigolf.sourceforge.net
+WWW=		https://quantumminigolf.sourceforge.net/
 
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libfftw3.so:math/fftw3

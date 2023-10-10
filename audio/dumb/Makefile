@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	IT, XM, S3M, and MOD player library
-WWW=		http://dumb.sourceforge.net
+WWW=		https://dumb.sourceforge.net/
 
 USES=		gmake
 
