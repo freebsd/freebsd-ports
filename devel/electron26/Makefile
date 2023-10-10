@@ -2,10 +2,12 @@ PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
 CATEGORIES=	devel
-MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v26.3.0/:chromium \
+		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
 		https://commondatastorage.googleapis.com/chromium-fonts/:chromium_testfonts
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
+		${CHROMIUM_NODE_MODULES_HASH}:chromium_node \
 		${CHROMIUM_TEST_FONTS_HASH}:chromium_testfonts \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
@@ -214,7 +216,9 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			116.0.5845.190
+CHROMIUM_VER=			116.0.5845.228
+# See ${WRKSRC}/third_party/node/node_modules.tar.gz.sha1 for CHROMIUM_NODE_MODULES_HASH
+CHROMIUM_NODE_MODULES_HASH=	937cea04689b7b8dcf3cb9adbb12c79d1d6c38bb
 # See ${WRKSRC}/third_party/test_fonts/test_fonts.tar.gz.sha1 for CHROMIUM_TEST_FONTS_HASH
 CHROMIUM_TEST_FONTS_HASH=	336e775eec536b2d785cc80eff6ac39051931286
 # See ${WRKSRC}/electron/DEPS for NODE_VER
@@ -228,7 +232,7 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 # See ${WRKSRC}/electron/DEPS for MANTLE_VER
 MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 
-YARN_TIMESTAMP=	1696290438
+YARN_TIMESTAMP=	1696756633
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
@@ -327,6 +331,7 @@ post-extract:
 		${WRKSRC}/third_party/squirrel.mac/vendor/ReactiveObjC
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/${GH_PROJECT_mantle}-${MANTLE_VER} \
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
+	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/node_modules ${WRKSRC}/third_party/node
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/test_fonts ${WRKSRC}/third_party/test_fonts
 # Install node modules for electron
 	${MV} ${WRKDIR}/${PORTNAME}-${ELECTRON_VER}/yarn-offline-cache ${WRKDIR}
