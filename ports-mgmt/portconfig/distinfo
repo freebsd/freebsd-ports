@@ -1,3 +1,3 @@
-TIMESTAMP = 1672844565
-SHA256 (alfix-portconfig-a19a1ff5cbd2dbfa18bb5402b936fdefb515a06d_GL0.tar.gz) = f28d1e3f8992dbec60d7dfef1771b2ab4453a304dbbe02000d22df3374de9b70
-SIZE (alfix-portconfig-a19a1ff5cbd2dbfa18bb5402b936fdefb515a06d_GL0.tar.gz) = 121219
+TIMESTAMP = 1691325982
+SHA256 (portconfig-0.6.tar.bz2) = 9bcd104be0504555d48a4040fbaddbc1cf3f92f7ac52187f75a1203dadff6692
+SIZE (portconfig-0.6.tar.bz2) = 120799

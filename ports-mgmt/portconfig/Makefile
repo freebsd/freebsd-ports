@@ -1,5 +1,5 @@
 PORTNAME=	portconfig
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -14,7 +14,6 @@ USES=		localbase:ldflags
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_TAGNAME=	a19a1ff5cbd2dbfa18bb5402b936fdefb515a06d
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
