@@ -1,5 +1,5 @@
 PORTNAME=		hitch
-PORTVERSION=		1.7.3
+PORTVERSION=		1.8.0
 CATEGORIES=		security
 MASTER_SITES=		http://hitch-tls.org/source/ \
 			ZI
