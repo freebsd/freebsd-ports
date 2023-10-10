@@ -1,8 +1,8 @@
 #!/bin/sh
-SIGNAL_VERS=v6.32.0
+SIGNAL_VERS=v6.33.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
-node_version=$(awk /'"node":'/'{print $2}' package.json | sed 's/"//g')
+node_version=$(awk /'"node":'/'{print $2}' /tmp/package.json | sed 's/"//g')
 echo "NODE_VERSION= ${node_version}"
 
 ringrtc_version=$(grep '@signalapp/ringrtc"' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
