@@ -97,6 +97,7 @@
 %%QT_INCDIR%%/QtWaylandClient/qtwaylandclientexports.h
 %%QT_INCDIR%%/QtWaylandClient/qtwaylandclientglobal.h
 %%QT_INCDIR%%/QtWaylandClient/qtwaylandclientversion.h
+%%QT_INCDIR%%/QtWaylandClient/qwaylandclientexport.h
 %%QT_INCDIR%%/QtWaylandClient/qwaylandclientextension.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qtwaylandcompositor-config_p.h
 %%QT_INCDIR%%/QtWaylandCompositor/%%FULLVER%%/QtWaylandCompositor/private/qtwaylandcompositorglobal_p.h
@@ -260,6 +261,7 @@
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandcompositorextension.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylanddestroylistener.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylanddrag.h
+%%QT_INCDIR%%/QtWaylandCompositor/qwaylandexport.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandidleinhibitv1.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandinputmethodcontrol.h
 %%QT_INCDIR%%/QtWaylandCompositor/qwaylandiviapplication.h
