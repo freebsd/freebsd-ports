@@ -10,7 +10,7 @@ WWW=		https://klee.github.io/
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 
-NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS=	i386 powerpc
 
 BUILD_DEPENDS=	gmake:devel/gmake
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
