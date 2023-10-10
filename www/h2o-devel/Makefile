@@ -1,6 +1,6 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20230928
+DISTVERSION=	2.3.0-dev.20231010
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		cmake:noninja compiler:c11 cpe perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
-GH_TAGNAME=	cb9f500
+GH_TAGNAME=	8f8e35a
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 
