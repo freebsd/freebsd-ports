@@ -1,5 +1,5 @@
 PORTNAME=	Dancer2
-PORTVERSION=	0.400001
+PORTVERSION=	1.0.0
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,6 +20,7 @@ RUN_DEPENDS=	p5-CLI-Osprey>=0:devel/p5-CLI-Osprey \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
 		p5-Config-Any>=0:devel/p5-Config-Any \
 		p5-File-Share>=0:devel/p5-File-Share \
+		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Hash-Merge-Simple>=0:devel/p5-Hash-Merge-Simple \
 		p5-HTTP-Date>=0:www/p5-HTTP-Date \
 		p5-HTTP-Headers-Fast>=0.21:www/p5-HTTP-Headers-Fast \
