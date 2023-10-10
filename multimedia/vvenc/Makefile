@@ -12,6 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
+BROKEN_powerpc=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
 
 USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
