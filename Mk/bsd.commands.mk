@@ -28,7 +28,11 @@ CP?=			/bin/cp
 CPIO?=			/usr/bin/cpio
 CUT?=			/usr/bin/cut
 DC?=			/usr/bin/dc
+.if exists(/usr/bin/dialog)
 DIALOG?=		/usr/bin/dialog
+.else
+DIALOG?=		/usr/bin/bsddialog
+.endif
 DIALOG4PORTS?=		${LOCALBASE}/bin/dialog4ports
 DIFF?=			/usr/bin/diff
 DIRNAME?=		/usr/bin/dirname
