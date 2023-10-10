@@ -176,6 +176,12 @@ lib/cmake/Qt6/FindNodejs.cmake
 lib/cmake/Qt6/FindPkgConfigHost.cmake
 lib/cmake/Qt6/FindSnappy.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebEngineTestsConfig.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginConfig.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginConfigVersion.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6Designer/Qt6QWebEngineViewPluginTargets.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QPdfPluginConfigVersion.cmake
@@ -313,6 +319,7 @@ lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginequickdelegatesqml_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginewidgets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webenginewidgets_private.pri
+%%QT_PLUGINDIR%%/designer/libqwebengineview.so
 %%QT_PLUGINDIR%%/imageformats/libqpdf.so
 %%QT_QMLDIR%%/QtQuick/Pdf/+Material/PdfStyle.qml
 %%QT_QMLDIR%%/QtQuick/Pdf/+Universal/PdfStyle.qml
