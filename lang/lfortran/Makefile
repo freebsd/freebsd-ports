@@ -1,6 +1,6 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.2
+DISTVERSION=	0.21.5
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -34,7 +34,17 @@ USE_LDCONFIG=	yes
 
 LLVM_VERSION=	15	# 16 is supported too
 
-OPTIONS_DEFINE=	EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES # NB
+# NB is broken ATM
+NB_DESC=	Documentation as a Jupyter notebook
+NB_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}	\
+			sphinx-intl:textproc/py-sphinx@${PY_FLAVOR}	\
+			myst-inv:textproc/py-myst-parser@${PY_FLAVOR}   \
+			jupyter:devel/py-jupyter-core@${PY_FLAVOR}	\
+			${PYTHON_PKGNAMEPREFIX}nbsphinx>0:textproc/py-nbsphinx@${PY_FLAVOR}	\
+			${PYTHON_PKGNAMEPREFIX}sphinx_material>0:textproc/py-sphinx-material@${PY_FLAVOR}	\
+			${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR}	\
+
 PORTEXAMPLES=	*
 
 # Xeus: version 3.0.5 is required and xeus-zmq 1.0.2
@@ -57,6 +67,9 @@ PLIST_SUB=	VER=${PORTVERSION}
 
 pre-configure:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/version
+
+do-build-NB-on:
+	(cd ${WRKSRC}/doc && ${PYTHON_CMD} build.py)
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
