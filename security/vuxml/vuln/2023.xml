@@ -1,3 +1,43 @@
+  <vuln vid="d6c19e8c-6806-11ee-9464-b42e991fc52e">
+    <topic>curl -- SOCKS5 heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><gt>7.69.0</gt></range>
+	<range><lt>8.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The curl team reports:</p>
+	<blockquote cite="https://curl.se/docs/CVE-2023-38545.html">
+	<p>This flaw makes curl overflow a heap based buffer in the
+	  SOCKS5 proxy handshake. When curl is asked to pass along
+	  the hostname to the SOCKS5 proxy to allow that to resolve
+	  the address instead of it getting done by curl itself, the
+	  maximum length that hostname can be is 255 bytes. If the
+	  hostname is detected to be longer than 255 bytes, curl
+	  switches to local name resolving and instead passes on the
+	  resolved address only to the proxy. Due to a bug, the
+	  local variable that means "let the host resolve the name"
+	  could get the wrong value during a slow SOCKS5 handshake,
+	  and contrary to the intention, copy the too long hostname
+	  to the target buffer instead of copying just the resolved
+	  address there.
+	</p>
+	</blockquote>
+    </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-38545</cvename>
+      <url>https://curl.se/docs/CVE-2023-38545.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-30</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf545001-b96d-42e4-9d2e-60fdee204a43">
 	  <topic>h2o -- HTTP/2 Rapid Reset attack vulnerability</topic>
     <affects>
