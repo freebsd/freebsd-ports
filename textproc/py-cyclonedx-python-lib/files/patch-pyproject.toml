@@ -11,16 +11,14 @@
  classifiers = [
    # Trove classifiers - https://packaging.python.org/specifications/core-metadata/#metadata-classifier
    # Full list: https://pypi.python.org/pypi?%3Aaction=list_classifiers
-@@ -53,9 +49,9 @@ keywords = [
+@@ -53,8 +49,8 @@ keywords = [
  [tool.poetry.dependencies]
  # ATTENTION: keep `deps.lowest.r` file in sync
  python = "^3.7"
 -packageurl-python = ">= 0.11"
 -py-serializable = "^0.11.1"
--sortedcontainers = "^2.4.0"
 +packageurl-python = ">= 0.9"
 +py-serializable = ">= 0.11.1"
-+sortedcontainers = "^2.3.0"
+ sortedcontainers = "^2.4.0"
  license-expression = "^30"
  
- [tool.poetry.dev-dependencies]
