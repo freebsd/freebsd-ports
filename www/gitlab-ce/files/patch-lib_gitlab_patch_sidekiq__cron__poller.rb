@@ -5,7 +5,7 @@
  require 'sidekiq/cron/version'
  
 -if Gem::Version.new(Sidekiq::VERSION) != Gem::Version.new('6.5.7')
-+if Gem::Version.new(Sidekiq::VERSION) != Gem::Version.new('6.5.11')
++if Gem::Version.new(Sidekiq::VERSION) != Gem::Version.new('6.5.12')
    raise 'New version of sidekiq detected, please remove or update this patch'
  end
  
