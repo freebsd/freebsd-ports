@@ -16,6 +16,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pythonprefix
 PYDISTUTILS_PKGNAME=	CXX
 
+NO_ARCH=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 
