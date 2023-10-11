@@ -1,3 +1,2 @@
 %%SITE_PERL%%/Math/Round.pm
-%%SITE_PERL%%/auto/Math/Round/autosplit.ix
 %%PERL5_MAN3%%/Math::Round.3.gz
