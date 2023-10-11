@@ -1,5 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.81
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -71,6 +72,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D raop=enabled \
 		-D avb=disabled \
 		-D bluez5=disabled \
+		-D compress-offload=disabled \
 		-D jack=disabled \
 		-D libcamera=disabled \
 		-D libcanberra=disabled \
