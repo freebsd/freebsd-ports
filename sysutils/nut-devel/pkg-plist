@@ -119,7 +119,7 @@ lib/libnutscan.so.2.0.2
 %%MODBUS%%libexec/nut/phoenixcontact_modbus
 %%MODBUS%%libexec/nut/socomec_jbus
 %%SERIAL%%libexec/nut/victronups
-libexec/sockdebug
+%%DEV%%libexec/sockdebug
 %%MANPAGES%%%%DEV%%man/man3/libnutclient.3.gz
 %%MANPAGES%%%%DEV%%man/man3/libnutclient_commands.3.gz
 %%MANPAGES%%%%DEV%%man/man3/libnutclient_devices.3.gz
@@ -271,7 +271,7 @@ libexec/sockdebug
 %%MANPAGES%%%%SERIAL%%man/man8/victronups.8.gz
 %%MANPAGES%%%%USB%%man/man8/bcmxcp_usb.8.gz
 %%MANPAGES%%%%USB%%man/man8/richcomm_usb.8.gz
-%%MANPAGES%%man/man8/sockdebug.8.gz
+%%MANPAGES%%%%DEV%%man/man8/sockdebug.8.gz
 %%MANPAGES%%%%USB%%man/man8/tripplite_usb.8.gz
 %%MANPAGES%%%%USB%%man/man8/usbhid-ups.8.gz
 %%MANPAGES%%%%SNMP%%man/man8/snmp-ups.8.gz
