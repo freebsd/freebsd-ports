@@ -945,6 +945,7 @@
     SUBDIR += py-gym-notices
     SUBDIR += py-hdbscan
     SUBDIR += py-hdmedians
+    SUBDIR += py-hepstats
     SUBDIR += py-heyoka
     SUBDIR += py-igraph
     SUBDIR += py-iminuit
