@@ -4,6 +4,11 @@ share/man/man1/gromit-mpx.1.gz
 share/applications/net.christianbeier.Gromit-MPX.desktop
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.active.svg
 share/icons/hicolor/scalable/apps/net.christianbeier.Gromit-MPX.svg
+share/locale/de/LC_MESSAGES/gromit-mpx.mo
+share/locale/es/LC_MESSAGES/gromit-mpx.mo
+share/locale/fa/LC_MESSAGES/gromit-mpx.mo
+share/locale/he/LC_MESSAGES/gromit-mpx.mo
+share/locale/it/LC_MESSAGES/gromit-mpx.mo
 share/metainfo/net.christianbeier.Gromit-MPX.appdata.xml
 share/pixmaps/net.christianbeier.Gromit-MPX.active.png
 share/pixmaps/net.christianbeier.Gromit-MPX.png
