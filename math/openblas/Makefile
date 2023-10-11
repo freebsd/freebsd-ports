@@ -10,7 +10,7 @@ DIST_SUBDIR=	openblas
 
 MAINTAINER=	phd_kimberlite@yahoo.co.jp
 COMMENT=	Optimized BLAS library based on GotoBLAS2
-WWW=		https://github.com/xianyi/OpenBLAS
+WWW=		https://github.com/OpenMathLib/OpenBLAS
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		compiler:c11 cpe fortran gmake perl5 pkgconfig
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	xianyi
+GH_ACCOUNT=	OpenMathLib
 GH_PROJECT=	OpenBLAS
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
