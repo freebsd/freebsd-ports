@@ -382,6 +382,12 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.6 \
 
 PLIST_FILES=	bin/pijul
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LTO_UNSAFE=	yes
+.endif
+
 post-patch:
 	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.6/* ${WRKSRC}/
 
