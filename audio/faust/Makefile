@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.68.0
+DISTVERSION=	2.68.1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,7 +41,7 @@ EXAMPLES_CMAKE_BOOL=	FREEBSD_INSTALL_EXAMPLES
 HIGHLIGHT_DESC=		Syntax highlighting in Kate, gedit, Highlight, vim
 HTTPD_LIB_DESC=		Build httpd support library
 
-HTTPD_CMAKE_BOOL=	INCLUDE_HTTP
+HTTPD_LIB_CMAKE_BOOL=	INCLUDE_HTTP HTTPDYNAMIC
 HTTPD_LIB_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 
 PORTEXAMPLES=		*
