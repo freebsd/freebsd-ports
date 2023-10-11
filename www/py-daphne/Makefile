@@ -1,0 +1,23 @@
+PORTNAME=	daphne
+PORTVERSION=	4.0.0
+CATEGORIES=	www python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Django ASGI (HTTP/WebSocket) server
+WWW=		https://github.com/django/daphne
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.5.2<4:www/py-asgiref@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}autobahn>=22.4.2:www/py-autobahn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}twisted>=22.4:devel/py-twisted@${PY_FLAVOR}
+
+USES=		python
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>

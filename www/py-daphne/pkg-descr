@@ -1,0 +1,5 @@
+Daphne is a HTTP, HTTP2 and WebSocket protocol server for ASGI and ASGI-HTTP,
+developed to power Django Channels.
+
+It supports automatic negotiation of protocols; there's no need for URL
+prefixing to determine WebSocket endpoints versus HTTP endpoints.
