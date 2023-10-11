@@ -1,6 +1,5 @@
 PORTNAME=	y-py
-PORTVERSION=	0.6.0
-PORTREVISION=	4
+PORTVERSION=	0.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,12 +7,13 @@ DISTFILES=	y_py-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for the Y-CRDT built from yrs (Rust)
-WWW=		https://github.com/y-crdt/ypy
+WWW=		https://ypy.readthedocs.io/en/latest/ \
+		https://github.com/y-crdt/ypy
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.14:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.2.3<2:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python
 USE_PYTHON=	autoplist concurrent pep517
