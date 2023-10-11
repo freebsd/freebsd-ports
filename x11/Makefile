@@ -610,11 +610,11 @@
     SUBDIR += xtrans
     SUBDIR += xtrlock
     SUBDIR += xtset
+    SUBDIR += xvattr
     SUBDIR += xvidtune
     SUBDIR += xvinfo
     SUBDIR += xvkbd
     SUBDIR += xvmcinfo
-    SUBDIR += xvattr
     SUBDIR += xvt
     SUBDIR += xwatchwin
     SUBDIR += xwd
