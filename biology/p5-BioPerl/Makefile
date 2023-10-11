@@ -1,15 +1,15 @@
 PORTNAME=	BioPerl
-PORTVERSION=	1.007007
-PORTREVISION=	1
+PORTVERSION=	1.007008
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:CJFIELDS
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E:S|00|.|g}
+DISTNAME=	BioPerl-${PORTVERSION:R}${PORTVERSION:E:S|00|.|g}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of Perl modules for bioinformatics
-WWW=		https://bioperl.org/
+WWW=		https://metacpan.org/dist/BioPerl \
+		https://bioperl.org/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -29,12 +29,11 @@ RUN_DEPENDS=	p5-Data-Stag>=0:devel/p5-Data-Stag \
 		p5-Test-Most>=0:devel/p5-Test-Most \
 		p5-Test-RequiresInternet>=0:devel/p5-Test-RequiresInternet \
 		p5-URI>=0:net/p5-URI \
-		p5-XML-DOM-XPath>=0:textproc/p5-XML-DOM-XPath \
 		p5-XML-DOM>=0:textproc/p5-XML-DOM \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML \
+		p5-XML-SAX>=0:textproc/p5-XML-SAX \
 		p5-XML-SAX-Base>=0:textproc/p5-XML-SAX-Base \
 		p5-XML-SAX-Writer>=0:textproc/p5-XML-SAX-Writer \
-		p5-XML-SAX>=0:textproc/p5-XML-SAX \
 		p5-XML-Twig>=0:textproc/p5-XML-Twig \
 		p5-XML-Writer>=0:textproc/p5-XML-Writer \
 		p5-YAML>=0:textproc/p5-YAML \

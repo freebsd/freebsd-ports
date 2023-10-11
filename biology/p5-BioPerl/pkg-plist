@@ -384,7 +384,6 @@ bin/bp_unflatten_seq
 %%SITE_PERL%%/Bio/SeqIO/gbxml.pm
 %%SITE_PERL%%/Bio/SeqIO/gcg.pm
 %%SITE_PERL%%/Bio/SeqIO/genbank.pm
-%%SITE_PERL%%/Bio/SeqIO/interpro.pm
 %%SITE_PERL%%/Bio/SeqIO/kegg.pm
 %%SITE_PERL%%/Bio/SeqIO/largefasta.pm
 %%SITE_PERL%%/Bio/SeqIO/locuslink.pm
@@ -896,7 +895,6 @@ bin/bp_unflatten_seq
 %%PERL5_MAN3%%/Bio::SeqIO::gbxml.3.gz
 %%PERL5_MAN3%%/Bio::SeqIO::gcg.3.gz
 %%PERL5_MAN3%%/Bio::SeqIO::genbank.3.gz
-%%PERL5_MAN3%%/Bio::SeqIO::interpro.3.gz
 %%PERL5_MAN3%%/Bio::SeqIO::kegg.3.gz
 %%PERL5_MAN3%%/Bio::SeqIO::largefasta.3.gz
 %%PERL5_MAN3%%/Bio::SeqIO::locuslink.3.gz
