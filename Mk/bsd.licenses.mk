@@ -645,7 +645,7 @@ ${_LICENSE_COOKIE}:
 .      if !defined(NO_LICENSES_DIALOGS)
 # Dialog interface
 .        if ${_LICENSE_COMB} == "single"
-	@${DIALOG} --title "License for ${PKGNAME} (${_LICENSE})" \
+	@${SETENV} LC_ALL=C.UTF-8 ${DIALOG} --title "License for ${PKGNAME} (${_LICENSE})" \
 		--yes-label Accept --no-label Reject --yesno \
 		"$$(${CAT} ${_LICENSE_FILE})" 21 76
 
@@ -662,13 +662,13 @@ ${_LICENSE_COOKIE}:
 	done; \
 	menu_cmd="$${menu_cmd} REJECT \"Reject the licenses (all)\""; \
 	while true; do \
-		${SH} -c "$${menu_cmd} 2>\"$${tmpfile}\""; \
+		${SH} -c "${SETENV} LC_ALL=C.UTF-8 $${menu_cmd} 2>\"$${tmpfile}\""; \
 		result=$$(${CAT} "$${tmpfile}"); \
 		case $${result} in \
 		REJECT) exit 1;; \
 		VIEW_*) name=$$(${ECHO_CMD} $${result} | ${SED} -e 's/^VIEW_//'); \
 				file=$$(${GREP} "^$${name}:" ${_LICENSE_ASK_DATA} | ${CUT} -d : -f 2); \
-				${DIALOG} --textbox "$${file}" 21 75 ;; \
+				${SETENV} LC_ALL=C.UTF-8 ${DIALOG} --textbox "$${file}" 21 75 ;; \
 		USE_*)  name=$$(${ECHO_CMD} $${result} | ${SED} -e 's/^USE_//'); \
 				${ECHO_CMD} $${name} > ${_LICENSE_COOKIE}; \
 				break ;; \
@@ -680,7 +680,7 @@ ${_LICENSE_COOKIE}:
 .          for lic in ${_LICENSE_TO_ASK}
 	@${ECHO_CMD} "${lic}:${_LICENSE_FILE_${lic}}" >> ${_LICENSE_ASK_DATA}
 .          endfor
-	@menu_cmd="${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
+	@menu_cmd="${SETENV} LC_ALL=C.UTF-8 ${DIALOG} --hline \"This port requires you to accept all mentioned licenses\" --menu \"License for ${PKGNAME} (multi)\" 21 70 15"; \
 	trap '${RM} $$tmpfile' EXIT INT TERM; \
 	tmpfile=$$(mktemp -t portlicenses); \
 	for lic in ${_LICENSE_TO_ASK}; do \
@@ -695,7 +695,7 @@ ${_LICENSE_COOKIE}:
 		REJECT) exit 1 ;; \
 		VIEW_*) name=$$(${ECHO_CMD} $${result} | ${SED} -e 's/^VIEW_//'); \
 				file=$$(${GREP} "^$${name}:" ${_LICENSE_ASK_DATA} | ${CUT} -d : -f 2); \
-				${DIALOG} --textbox "$${file}" 21 75 ;; \
+				${SETENV} LC_ALL=C.UTF-8 ${DIALOG} --textbox "$${file}" 21 75 ;; \
 		esac; \
 	done
 .        endif
