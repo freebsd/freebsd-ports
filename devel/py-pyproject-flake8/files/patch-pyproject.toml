@@ -4,8 +4,8 @@
  requires-python = ">=3.8.1"
  dependencies = [
      "tomli; python_version < '3.11'",
--    "flake8 == 6.0.0"
-+    "flake8 >= 6.0.0"
+-    "flake8 == 6.1.0"
++    "flake8 >= 6.1.0"
  ]
  
  [project.urls]
