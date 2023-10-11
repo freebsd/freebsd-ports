@@ -23,6 +23,7 @@
     SUBDIR += compton
     SUBDIR += ctwm
     SUBDIR += cwm
+    SUBDIR += deforaos-panel
     SUBDIR += devilspie
     SUBDIR += devilspie2
     SUBDIR += durden
