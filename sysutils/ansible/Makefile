@@ -1,5 +1,6 @@
 PORTNAME=	ansible
 DISTVERSION=	8.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +12,8 @@ WWW=		https://www.ansible.com/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR} \
+		 ${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources
 
 USES=		ansible:env cpe python:3.9+ shebangfix
 CPE_VENDOR=	redhat
