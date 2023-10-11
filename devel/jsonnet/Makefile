@@ -1,6 +1,6 @@
 PORTNAME=	jsonnet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	gasol.wu@gmail.com
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	nlohmann-json>=3.6.1:devel/nlohmann-json
 LIB_DEPENDS=	libc4core.so:devel/c4core \
 		libryml.so:devel/rapidyaml
 
-USES=		compiler:c++11-lib cmake localbase:ldflags
+USES=		compiler:c++17-lang cmake localbase:ldflags
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
