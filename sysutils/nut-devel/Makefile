@@ -136,8 +136,6 @@ NSS_LIB_DEPENDS=	libnss3.so:security/nss
 NSS_CONFIGURE_WITH=	nss
 
 DEV_CONFIGURE_WITH=	dev
-DEV_PLIST_SUB=		DEV=""
-DEV_PLIST_SUB_OFF=	DEV="@comment "
 
 .include <bsd.port.pre.mk>
 
