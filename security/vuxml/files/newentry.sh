@@ -60,7 +60,12 @@ topic=""
 source="SO-AND-SO"
 upstream_fix=""
 impact=""
-DESC_BODY=""
+DESC_BODY="<body xmlns=\"http://www.w3.org/1999/xhtml\">
+	<p>${source} reports:</p>
+	<blockquote cite=\"${references}\">
+	  <p>${details}</p>
+	</blockquote>
+	</body>"
 
 
 # Try to retrieve information if a CVE identifier was provided
