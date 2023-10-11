@@ -30,9 +30,11 @@ sbin/pkg_validate
 %%DATADIR%%/bsda_util.sh
 %%DATADIR%%/buildflags.awk
 %%DATADIR%%/buildflags.mk
+%%DATADIR%%/compat.sh
 %%DATADIR%%/distviper.sh
 %%DATADIR%%/interrupt.mk
 %%DATADIR%%/loaderupdate.sh
+%%DATADIR%%/lst.sh
 %%DATADIR%%/makeplist.sh
 %%DATADIR%%/makeplist_filter.awk
 %%DATADIR%%/makeplist_keywords.awk
@@ -48,4 +50,5 @@ sbin/pkg_validate
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/ref/bsda_err.md
 %%PORTDOCS%%%%DOCSDIR%%/ref/bsda_obj.md
+%%PORTDOCS%%%%DOCSDIR%%/ref/lst.md
 %%PORTDOCS%%%%DOCSDIR%%/ref/type.md
