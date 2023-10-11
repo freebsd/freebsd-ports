@@ -38,9 +38,9 @@ include/bifrost/UnitigIterator.hpp
 include/bifrost/UnitigIterator.tcc
 include/bifrost/UnitigMap.hpp
 include/bifrost/UnitigMap.tcc
+include/bifrost/fastmod.h
 include/bifrost/getRSS.h
 include/bifrost/kseq.h
-include/bifrost/libdivide.h
 include/bifrost/libpopcnt.h
 include/bifrost/minHashIterator.hpp
 include/bifrost/roaring.h
