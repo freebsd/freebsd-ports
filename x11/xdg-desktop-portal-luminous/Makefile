@@ -10,7 +10,6 @@ WWW=		https://github.com/waycrate/xdg-desktop-portal-luminous
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=273258
 BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
 
 LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire \
