@@ -3,8 +3,7 @@
     <affects>
       <package>
 	<name>curl</name>
-	<range><gt>7.69.0</gt></range>
-	<range><lt>8.4.0</lt></range>
+	<range><gt>7.69.0</gt><lt>8.4.0</lt></range>
       </package>
     </affects>
     <description>
@@ -35,6 +34,7 @@
     <dates>
       <discovery>2023-09-30</discovery>
       <entry>2023-10-11</entry>
+      <modified>2023-10-11</modified>
     </dates>
   </vuln>
 
