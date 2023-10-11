@@ -1,6 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	24.03
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecmma/tree-sitter-hare/archive/:treesitterhare \
 		https://git.sr.ht/~jummit/tree-sitter-wren/archive/:treesitterwren \
@@ -23,10 +23,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 
-CONFLICTS_INSTALL=	shx
-
 USE_GITHUB=	yes
-USE_GITLAB=	nodefault
 GH_ACCOUNT=	helix-editor
 GH_TUPLE=	\
 		briot:tree-sitter-ada:ba0894ef:briot_tree_sitter_ada/runtime/grammars/sources/ada \
@@ -209,7 +206,8 @@ GH_TUPLE=	\
 		ikatyang:tree-sitter-yaml:0e36bed1:ikatyang_tree_sitter_yaml/runtime/grammars/sources/yaml \
 		Philipp-M:tree-sitter-yuck:e3d91a3c:Philipp_M_tree_sitter_yuck/runtime/grammars/sources/yuck \
 		maxxnino:tree-sitter-zig:0d08703e:maxxnino_tree_sitter_zig/runtime/grammars/sources/zig
-GL_TUPLE=       \
+USE_GITLAB=	nodefault
+GL_TUPLE=	\
 		https://gitlab.com:gabmus:tree-sitter-blueprint:863cea9f:gabmus_tree_sitter_blueprint/runtime/grammars/sources/blueprint \
 		https://gitlab.com:TheZoq2:tree-sitter-lpf:db7372e6:TheZoq2_tree_sitter_lpf/runtime/grammars/sources/lpf \
 		https://gitlab.com:xasc:tree-sitter-t32:6da5e3cb:xasc_tree_sitter_t32/runtime/grammars/sources/t32
@@ -220,7 +218,12 @@ TREE_SITTER_GEMINI_REV=	3cc5e4bdf572d5df4277fc2e54d6299bd59a54b3
 TREE_SITTER_JSHIGH_REV=	4a95461c4761c624f2263725aca79eeaefd36cad
 TREE_SITTER_TSHIGH_REV=	6aac031ad88dd6317f02ac0bb27d099a553a7d8c
 CARGO_CARGOTOML=	${WRKSRC}/helix-term/Cargo.toml
+.if !defined(WITH_DEBUG)
+CARGO_INSTALL_ARGS+=	--config profile.release.strip=true
+.endif
 CARGO_INSTALL_PATH=	./helix-term
+
+CONFLICTS_INSTALL=	shx
 
 post-extract:
 	cd ${WRKSRC}/runtime/grammars/sources && ${CP} -a typescript tsx
