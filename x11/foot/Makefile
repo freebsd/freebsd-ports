@@ -1,6 +1,5 @@
 PORTNAME=	foot
-DISTVERSION=	1.15.3
-PORTREVISION=	1
+DISTVERSION=	1.16.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		tllist>=1.0.4:devel/tllist \
-		wayland-protocols>0:graphics/wayland-protocols
+		wayland-protocols>=1.32:graphics/wayland-protocols
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-client.so:graphics/wayland \
 		libfcft.so:x11-fonts/fcft \

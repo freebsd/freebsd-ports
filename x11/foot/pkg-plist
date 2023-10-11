@@ -38,6 +38,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/nord
 %%DATADIR%%/themes/nordiq
 %%DATADIR%%/themes/onedark
+%%DATADIR%%/themes/panda
 %%DATADIR%%/themes/paper-color-dark
 %%DATADIR%%/themes/paper-color-light
 %%DATADIR%%/themes/rezza
