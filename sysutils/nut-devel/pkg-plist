@@ -271,7 +271,7 @@ libexec/sockdebug
 %%MANPAGES%%%%SERIAL%%man/man8/victronups.8.gz
 %%MANPAGES%%%%USB%%man/man8/bcmxcp_usb.8.gz
 %%MANPAGES%%%%USB%%man/man8/richcomm_usb.8.gz
-man/man8/sockdebug.8.gz
+%%MANPAGES%%man/man8/sockdebug.8.gz
 %%MANPAGES%%%%USB%%man/man8/tripplite_usb.8.gz
 %%MANPAGES%%%%USB%%man/man8/usbhid-ups.8.gz
 %%MANPAGES%%%%SNMP%%man/man8/snmp-ups.8.gz
