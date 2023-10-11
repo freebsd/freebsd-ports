@@ -1,11 +1,12 @@
 PORTNAME=	ruby-saml
-PORTVERSION=	1.15.0
+PORTVERSION=	1.16.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	SAML toolkit for Ruby on Rails
-WWW=		https://github.com/onelogin/ruby-saml
+WWW=		https://developers.onelogin.com/saml/ruby \
+		https://github.com/SAML-Toolkits/ruby-saml
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
