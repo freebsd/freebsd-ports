@@ -1,5 +1,5 @@
 PORTNAME=	ijson
-PORTVERSION=	3.2.0.post0
+PORTVERSION=	3.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,10 +18,12 @@ OPTIONS_DEFINE=	YAJL
 YAJL_DESC=	Enable yajl2_c backend
 
 YAJL_LIB_DEPENDS=	libyajl.so:devel/yajl
+YAJL_MAKE_ENV=		IJSON_BUILD_YAJL2C='1'
+YAJL_MAKE_ENV_OFF=	IJSON_BUILD_YAJL2C='0'
 YAJL_USES=		localbase:ldflags
 YAJL_VARS_OFF=		NO_ARCH=yes
 
-post-patch-YAJL-off:
-	@${REINPLACE_CMD} -e 's|if embed_yajl or have_yajl|if False|' ${WRKSRC}/setup.py
+post-install-YAJL-on:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>
