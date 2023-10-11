@@ -1,5 +1,5 @@
 PORTNAME=	rsyslog
-PORTVERSION=	8.2308.0
+PORTVERSION=	8.2310.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
