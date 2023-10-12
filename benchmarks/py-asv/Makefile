@@ -38,4 +38,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_F
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+# failed because conda is not available
+PYTEST_IGNORED_TESTS=	test_custom_commands \
+			test_installed_commit_hash \
+			test_install_success \
+			test_install_env_matrix_values
+
 .include <bsd.port.mk>
