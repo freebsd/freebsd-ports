@@ -1,3 +1,62 @@
+  <vuln vid="07ee8c14-68f1-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>118.0.5993.70</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>118.0.5993.70</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 20 security fixes:</p>
+	 <ul>
+	    <li>[1487110] Critical CVE-2023-5218: Use after free in Site Isolation. Reported by @18楼梦想改造家 on 2023-09-27</li>
+	    <li>[1062251] Medium CVE-2023-5487: Inappropriate implementation in Fullscreen. Reported by Anonymous on 2020-03-17</li>
+	    <li>[1414936] Medium CVE-2023-5484: Inappropriate implementation in Navigation. Reported by Thomas Orlita on 2023-02-11</li>
+	    <li>[1476952] Medium CVE-2023-5475: Inappropriate implementation in DevTools. Reported by Axel Chong on 2023-08-30</li>
+	    <li>[1425355] Medium CVE-2023-5483: Inappropriate implementation in Intents. Reported by Axel Chong on 2023-03-17</li>
+	    <li>[1458934] Medium CVE-2023-5481: Inappropriate implementation in Downloads. Reported by Om Apip on 2023-06-28</li>
+	    <li>[1474253] Medium CVE-2023-5476: Use after free in Blink History. Reported by Yunqin Sun on 2023-08-20</li>
+	    <li>[1483194] Medium CVE-2023-5474: Heap buffer overflow in PDF. Reported by [pwn2car] on 2023-09-15</li>
+	    <li>[1471253] Medium CVE-2023-5479: Inappropriate implementation in Extensions API. Reported by Axel Chong on 2023-08-09</li>
+	    <li>[1395164] Low CVE-2023-5485: Inappropriate implementation in Autofill. Reported by Ahmed ElMasry on 2022-12-02</li>
+	    <li>[1472404] Low CVE-2023-5478: Inappropriate implementation in Autofill. Reported by Ahmed ElMasry on 2023-08-12</li>
+	    <li>[1472558] Low CVE-2023-5477: Inappropriate implementation in Installer. Reported by Bahaa Naamneh of Crosspoint Labs on 2023-08-13</li>
+	    <li>[1357442] Low CVE-2023-5486: Inappropriate implementation in Input. Reported by Hafiizh on 2022-08-29</li>
+	    <li>[1484000] Low CVE-2023-5473: Use after free in Cast. Reported by DarkNavy on 2023-09-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5218</cvename>
+      <cvename>CVE-2023-5487</cvename>
+      <cvename>CVE-2023-5484</cvename>
+      <cvename>CVE-2023-5475</cvename>
+      <cvename>CVE-2023-5483</cvename>
+      <cvename>CVE-2023-5481</cvename>
+      <cvename>CVE-2023-5476</cvename>
+      <cvename>CVE-2023-5474</cvename>
+      <cvename>CVE-2023-5479</cvename>
+      <cvename>CVE-2023-5485</cvename>
+      <cvename>CVE-2023-5478</cvename>
+      <cvename>CVE-2023-5477</cvename>
+      <cvename>CVE-2023-5486</cvename>
+      <cvename>CVE-2023-5473</cvename>
+      <url>https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2023-10-10</discovery>
+      <entry>2023-10-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4281b712-ad6b-4c21-8f66-619a9150691f">
     <topic>electron25 -- Use after free in extensions vulnerability</topic>
     <affects>
