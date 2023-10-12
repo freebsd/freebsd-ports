@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.7.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.12.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
@@ -36,10 +36,10 @@ GH_TUPLE=	\
 		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:v0.2.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.8.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.3.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.11.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.12.0:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -90,14 +90,14 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		quic-go:qtls-go1-20:v0.3.1:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
-		quic-go:quic-go:v0.37.4:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
+		quic-go:qtls-go1-20:v0.3.2:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
+		quic-go:quic-go:v0.38.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
 		segmentio:backo-go:23eae7c10bd3:segmentio_backo_go/vendor/github.com/segmentio/backo-go \
 		shopspring:decimal:v1.2.0:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		spacemonkeygo:monkit:fb89f20752cb:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
+		spacemonkeygo:monkit:v3.0.22:spacemonkeygo_monkit/vendor/github.com/spacemonkeygo/monkit/v3 \
 		spacemonkeygo:spacelog:2296661a0572:spacemonkeygo_spacelog/vendor/github.com/spacemonkeygo/spacelog \
 		spacemonkeygo:tlshowdy:8fa2cec1d7cd:spacemonkeygo_tlshowdy/vendor/github.com/spacemonkeygo/tlshowdy \
 		spf13:afero:v1.6.0:spf13_afero/vendor/github.com/spf13/afero \
@@ -106,12 +106,12 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:3e42ad28fcf6:storj_common/vendor/storj.io/common \
+		storj:common:0ce0a575e6f8:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d100d7589f41:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
-		storj:picobuf:v0.0.1:storj_picobuf/vendor/storj.io/picobuf \
-		storj:private:ccd4db5ae659:storj_private/vendor/storj.io/private \
-		storj:uplink:v1.11.0:storj_uplink/vendor/storj.io/uplink \
+		storj:picobuf:c4ba17033c6c:storj_picobuf/vendor/storj.io/picobuf \
+		storj:private:ca2d4ab44679:storj_private/vendor/storj.io/private \
+		storj:uplink:v1.12.1:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v72.90.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
