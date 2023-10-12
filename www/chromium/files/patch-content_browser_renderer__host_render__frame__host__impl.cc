@@ -1,6 +1,6 @@
---- content/browser/renderer_host/render_frame_host_impl.cc.orig	2023-09-13 12:11:42 UTC
+--- content/browser/renderer_host/render_frame_host_impl.cc.orig	2023-10-11 18:22:24 UTC
 +++ content/browser/renderer_host/render_frame_host_impl.cc
-@@ -8509,7 +8509,11 @@ void RenderFrameHostImpl::SendFencedFrameReportingBeac
+@@ -8672,7 +8672,11 @@ void RenderFrameHostImpl::SendFencedFrameReportingBeac
    for (const blink::FencedFrame::ReportingDestination& destination :
         destinations) {
      SendFencedFrameReportingBeaconInternal(
@@ -12,7 +12,7 @@
          /*from_renderer=*/true, attribution_reporting_runtime_features,
          GetFrameTreeNodeId());
    }
-@@ -8545,7 +8549,11 @@ void RenderFrameHostImpl::SendFencedFrameReportingBeac
+@@ -8708,7 +8712,11 @@ void RenderFrameHostImpl::SendFencedFrameReportingBeac
    }
  
    SendFencedFrameReportingBeaconInternal(
@@ -24,7 +24,7 @@
        blink::FencedFrame::ReportingDestination::kBuyer,
        /*from_renderer=*/true, attribution_reporting_runtime_features,
        GetFrameTreeNodeId());
-@@ -8617,8 +8625,13 @@ void RenderFrameHostImpl::MaybeSendFencedFrameReportin
+@@ -8779,8 +8787,13 @@ void RenderFrameHostImpl::MaybeSendFencedFrameReportin
    for (blink::FencedFrame::ReportingDestination destination :
         info->destinations) {
      initiator_rfh->SendFencedFrameReportingBeaconInternal(

@@ -1,6 +1,6 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-09-13 12:11:42 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-10-11 18:22:24 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -93,7 +93,7 @@
+@@ -92,7 +92,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  #include "chrome/common/chrome_paths_internal.h"
  #include "chrome/grit/chromium_strings.h"
  #include "ui/base/l10n/l10n_util.h"
-@@ -184,7 +184,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+@@ -183,7 +183,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
    auth_dynamic_params->basic_over_http_enabled =
        local_state->GetBoolean(prefs::kBasicAuthOverHttpEnabled);
  
@@ -18,7 +18,7 @@
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -242,7 +242,7 @@ NetworkSandboxState IsNetworkSandboxEnabledInternal() 
+@@ -241,7 +241,7 @@ NetworkSandboxState IsNetworkSandboxEnabledInternal() 
    if (g_previously_failed_to_launch_sandboxed_service) {
      return NetworkSandboxState::kDisabledBecauseOfFailedLaunch;
    }
@@ -27,7 +27,7 @@
    auto* local_state = g_browser_process->local_state();
  #endif
  
-@@ -263,7 +263,7 @@ NetworkSandboxState IsNetworkSandboxEnabledInternal() 
+@@ -262,7 +262,7 @@ NetworkSandboxState IsNetworkSandboxEnabledInternal() 
    }
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -36,7 +36,16 @@
    if (local_state &&
        local_state->HasPrefPath(prefs::kNetworkServiceSandboxEnabled)) {
      return local_state->GetBoolean(prefs::kNetworkServiceSandboxEnabled)
-@@ -494,7 +494,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -457,7 +457,7 @@ void SystemNetworkContextManager::DeleteInstance() {
+   g_system_network_context_manager = nullptr;
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ SystemNetworkContextManager::GssapiLibraryLoadObserver::
+     GssapiLibraryLoadObserver(SystemNetworkContextManager* owner)
+     : owner_(owner) {}
+@@ -515,7 +515,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -45,7 +54,7 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -541,7 +541,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -562,7 +562,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -54,7 +63,7 @@
    pref_change_registrar_.Add(
        prefs::kEnforceLocalAnchorConstraintsEnabled,
        base::BindRepeating(&SystemNetworkContextManager::
-@@ -590,7 +590,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -611,7 +611,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -63,7 +72,7 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -619,7 +619,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -640,7 +640,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kChromeRootStoreEnabled, false);
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -72,7 +81,7 @@
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -628,7 +628,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -649,11 +649,11 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
  
    registry->RegisterListPref(prefs::kExplicitlyAllowedNetworkPorts);
  
@@ -80,8 +89,22 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    registry->RegisterBooleanPref(prefs::kNetworkServiceSandboxEnabled, true);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   registry->RegisterBooleanPref(prefs::kReceivedHttpAuthNegotiateHeader, false);
+ #endif  // BUILDFLAG(IS_LINUX)
  }
-@@ -980,7 +980,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
+@@ -702,7 +702,7 @@ void SystemNetworkContextManager::OnNetworkServiceCrea
+   OnNewHttpAuthDynamicParams(http_auth_dynamic_params);
+   network_service->ConfigureHttpAuthPrefs(std::move(http_auth_dynamic_params));
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   gssapi_library_loader_observer_.Install(network_service);
+ #endif  // BUILDFLAG(IS_LINUX)
+ 
+@@ -1009,7 +1009,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

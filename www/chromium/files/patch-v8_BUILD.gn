@@ -1,6 +1,6 @@
---- v8/BUILD.gn.orig	2023-09-17 18:22:45 UTC
+--- v8/BUILD.gn.orig	2023-10-11 18:22:24 UTC
 +++ v8/BUILD.gn
-@@ -1404,6 +1404,14 @@ config("toolchain") {
+@@ -1417,6 +1417,14 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -15,32 +15,20 @@
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2331,6 +2339,11 @@ template("run_mksnapshot") {
-         "--turbo-log-builtins-count-input",
-         v8_log_builtins_block_count_input,
+@@ -2358,6 +2366,12 @@ template("run_mksnapshot") {
        ]
-+      if (v8_current_cpu == "x86") {
-+        args -= [
-+          "--abort-on-bad-builtin-profile-data",
-+        ]
-+      }
      }
  
-     if (v8_enable_builtins_profiling) {
-@@ -2353,6 +2366,12 @@ template("run_mksnapshot") {
-       if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
-         args += [ "--reorder-builtins" ]
-       }
++    if (v8_current_cpu == "x86") {
++      args -= [
++        "--abort-on-bad-builtin-profile-data",
++      ]
++    }
 +
-+      if (v8_current_cpu == "x86") {
-+        args -= [
-+          "--abort-on-bad-builtin-profile-data",
-+        ]
-+      }
+     if (v8_enable_builtins_profiling) {
+       args += [ "--turbo-profiling" ]
      }
- 
-     # This is needed to distinguish between generating code for the simulator
-@@ -6081,7 +6100,7 @@ v8_component("v8_libbase") {
+@@ -6111,7 +6125,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -49,7 +37,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6092,6 +6111,18 @@ v8_component("v8_libbase") {
+@@ -6122,6 +6136,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

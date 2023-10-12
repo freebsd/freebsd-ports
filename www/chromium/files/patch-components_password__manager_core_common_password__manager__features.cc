@@ -1,4 +1,4 @@
---- components/password_manager/core/common/password_manager_features.cc.orig	2023-09-13 12:11:42 UTC
+--- components/password_manager/core/common/password_manager_features.cc.orig	2023-10-11 18:22:24 UTC
 +++ components/password_manager/core/common/password_manager_features.cc
 @@ -18,7 +18,7 @@ BASE_FEATURE(kEnableOverwritingPlaceholderUsernames,
               "EnableOverwritingPlaceholderUsernames",
@@ -9,9 +9,9 @@
  // When enabled, initial sync will be forced during startup if the password
  // store has encryption service failures.
  BASE_FEATURE(kForceInitialSyncWhenDecryptionFails,
-@@ -101,7 +101,7 @@ BASE_FEATURE(kRevampedPasswordManagementBubble,
+@@ -99,7 +99,7 @@ BASE_FEATURE(kRecoverFromNeverSaveAndroid,
+              "RecoverFromNeverSaveAndroid_LAUNCHED",
               base::FEATURE_ENABLED_BY_DEFAULT);
- #endif
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
