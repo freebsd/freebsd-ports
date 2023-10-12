@@ -1,11 +1,13 @@
 PORTNAME=	sqwebmail
-PORTVERSION=	6.0.6
+PORTVERSION=	6.2.4
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 WWW=		https://inter7.com/sqwebmail/
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
