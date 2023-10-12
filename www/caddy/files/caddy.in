@@ -70,9 +70,10 @@ else
 fi
 
 # Extra Commands
-extra_commands="configtest reload"
+extra_commands="configtest reload reloadssl"
 configtest_cmd="caddy_execute validate ${caddy_flags}"
 reload_cmd="caddy_execute reload ${caddy_flags}"
+reloadssl_cmd="caddy_execute reload --force ${caddy_flags}"
 
 caddy_execute()
 {
