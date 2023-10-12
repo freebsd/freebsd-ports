@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR} \
-		 ${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources
+		 ${PYTHON_PKGNAMEPREFIX}importlib-resources>0:devel/py-importlib-resources@${PY_FLAVOR}
 
 USES=		ansible:env cpe python:3.9+ shebangfix
 CPE_VENDOR=	redhat
