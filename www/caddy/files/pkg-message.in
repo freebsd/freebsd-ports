@@ -96,7 +96,7 @@ If you have relied upon earlier defaults:
 - Stop the server, and update ownership on Caddy runtime files:
 
   # service caddy stop
-  # chown -r www:www /var/db/caddy /var/log/caddy /var/run/caddy
+  # chown -R www:www /var/db/caddy /var/log/caddy /var/run/caddy
 
 Other changes may be necessary depending on your exact Caddy
 configuration.
