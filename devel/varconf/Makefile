@@ -7,6 +7,9 @@ MASTER_SITES=	SF/worldforge/${PORTNAME}%20%28config%20lib%29/${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Configuration System for the STAGE Server
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
 USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:bzip2

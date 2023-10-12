@@ -11,6 +11,9 @@ WWW=		https://www.worldforge.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20 \
 		libcurl.so:ftp/curl
 

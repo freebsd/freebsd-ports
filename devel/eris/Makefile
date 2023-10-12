@@ -11,6 +11,9 @@ WWW=		https://www.worldforge.org/index.php/components/eris/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 LIB_DEPENDS=	libAtlas-0.6.so:devel/atlas-devel \
 		libskstream-0.3.so:net/skstream \
 		libwfmath-1.0.so:math/wfmath \

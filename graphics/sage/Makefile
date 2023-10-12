@@ -8,6 +8,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	OpenGL extension library
 WWW=		http://www.worldforge.org/dev/eng/libraries/sage
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 CONFIGURE_ARGS=	--program-transform-name=
 GNU_CONFIGURE=	yes
 USES=		gl libtool pathfix sdl

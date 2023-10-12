@@ -8,6 +8,9 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Worldforge math library
 WWW=		https://www.worldforge.org/
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 USES=		libtool pathfix pkgconfig compiler:c++11-lib
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

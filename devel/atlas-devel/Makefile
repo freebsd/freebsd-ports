@@ -13,6 +13,9 @@ WWW=		https://www.worldforge.org/index.php/components/atlas-cpp/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	There has been no release for most of the Worldforge libraries in the past 10 years.
+EXPIRATION_DATE=2023-12-31
+
 USES=		libtool pathfix compiler:c++11-lib tar:bzip2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
