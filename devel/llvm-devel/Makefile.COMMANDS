@@ -64,6 +64,7 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
+		readtapi \
 		opt \
 		sancov
 
