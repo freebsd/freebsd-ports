@@ -27,7 +27,7 @@ OPTIONS_SUB=	yes
 MANIFESTS_DESC=		Install manifests for jail creation
 MANIFESTS_RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
 
-PORTCONFIG_DESC=	Install dialog4ports for options command
+PORTCONFIG_DESC=	Install portconfig for options command
 PORTCONFIG_RUN_DEPENDS=	portconfig>0:ports-mgmt/portconfig
 
 QEMU_DESC=	Add qemu-user-static for non-x86 architectures
