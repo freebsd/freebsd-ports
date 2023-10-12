@@ -1,3 +1,32 @@
+  <vuln vid="4281b712-ad6b-4c21-8f66-619a9150691f">
+    <topic>electron25 -- Use after free in extensions vulnerability</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.1">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5187.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5187</cvename>
+      <url>https://github.com/advisories/GHSA-hg3r-958g-g8vq</url>
+    </references>
+    <dates>
+      <discovery>2023-10-11</discovery>
+      <entry>2023-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d6c19e8c-6806-11ee-9464-b42e991fc52e">
     <topic>curl -- SOCKS5 heap buffer overflow</topic>
     <affects>
