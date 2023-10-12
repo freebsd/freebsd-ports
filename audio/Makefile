@@ -598,6 +598,7 @@
     SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
+    SUBDIR += pipewire-module-xrdp
     SUBDIR += pithos
     SUBDIR += plasma5-kpipewire
     SUBDIR += plasma5-plasma-pa
