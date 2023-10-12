@@ -18,6 +18,7 @@
 %%WWWDIR%%/ajax/compareKbRevisions.php
 %%WWWDIR%%/ajax/dashboard.php
 %%WWWDIR%%/ajax/dcroom_size.php
+%%WWWDIR%%/ajax/debug.php
 %%WWWDIR%%/ajax/displayMessageAfterRedirect.php
 %%WWWDIR%%/ajax/domainrecord_data_form.php
 %%WWWDIR%%/ajax/dropdownAllItems.php
@@ -65,6 +66,7 @@
 %%WWWDIR%%/ajax/getMapPoint.php
 %%WWWDIR%%/ajax/getShareDashboardDropdownValue.php
 %%WWWDIR%%/ajax/getUserPicture.php
+%%WWWDIR%%/ajax/get_item_content.php
 %%WWWDIR%%/ajax/helpdesk_observer.php
 %%WWWDIR%%/ajax/impact.php
 %%WWWDIR%%/ajax/index.php
@@ -121,6 +123,7 @@
 %%WWWDIR%%/ajax/unlockobject.php
 %%WWWDIR%%/ajax/updateTrackingDeviceType.php
 %%WWWDIR%%/ajax/updateTranslationFields.php
+%%WWWDIR%%/ajax/updateTranslationValue.php
 %%WWWDIR%%/ajax/updatecurrenttab.php
 %%WWWDIR%%/ajax/viewsubitem.php
 %%WWWDIR%%/ajax/visibility.php
@@ -141,7 +144,7 @@
 %%WWWDIR%%/css/includes/components/_asset-form.scss
 %%WWWDIR%%/css/includes/components/_browser_tree.scss
 %%WWWDIR%%/css/includes/components/_buttons-group.scss
-%%WWWDIR%%/css/includes/components/_debug-panel.scss
+%%WWWDIR%%/css/includes/components/_debug-toolbar.scss
 %%WWWDIR%%/css/includes/components/_documentation.scss
 %%WWWDIR%%/css/includes/components/_fileupload.scss
 %%WWWDIR%%/css/includes/components/_flatpickr.scss
@@ -268,6 +271,15 @@
 %%WWWDIR%%/css/lib/bootstrap/scss/mixins/_visually-hidden.scss
 %%WWWDIR%%/css/lib/bootstrap/scss/utilities/_api.scss
 %%WWWDIR%%/css/lib/bootstrap/scss/vendor/_rfs.scss
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-100-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-200-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-300-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-400-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-500-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-600-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-700-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-800-normal.woff
+%%WWWDIR%%/css/lib/fontsource/inter/files/inter-all-900-normal.woff
 %%WWWDIR%%/css/lib/fontsource/inter/files/inter-cyrillic-100-normal.woff2
 %%WWWDIR%%/css/lib/fontsource/inter/files/inter-cyrillic-200-normal.woff2
 %%WWWDIR%%/css/lib/fontsource/inter/files/inter-cyrillic-300-normal.woff2
@@ -666,7 +678,6 @@
 %%WWWDIR%%/front/fieldunicity.php
 %%WWWDIR%%/front/filesystem.form.php
 %%WWWDIR%%/front/filesystem.php
-%%WWWDIR%%/front/find_num.php
 %%WWWDIR%%/front/fqdn.form.php
 %%WWWDIR%%/front/fqdn.php
 %%WWWDIR%%/front/graph.send.php
@@ -1199,6 +1210,23 @@
 %%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/ticket_fix_internal_tto_escalation.php
 %%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/unmanageds.php
 %%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/wrong_fkey.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/changes.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/configs.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/dates.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/networkport.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/problems.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/queuednotification.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/ram_field.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/rule.php
+%%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8/rule_tickets.php
+%%WWWDIR%%/install/migrations/update_10.0.8_to_10.0.9.php
+%%WWWDIR%%/install/migrations/update_10.0.8_to_10.0.9/queuednotification.php
+%%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10.php
+%%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10/configs.php
+%%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10/ldap_fields.php
+%%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10/mailcollector.php
+%%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10/templates.php
 %%WWWDIR%%/install/migrations/update_9.1.0_to_9.1.1.php
 %%WWWDIR%%/install/migrations/update_9.1.1_to_9.1.3.php
 %%WWWDIR%%/install/migrations/update_9.1.x_to_9.2.0.php
@@ -1271,6 +1299,45 @@
 %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0/transfer.php
 %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0/uuids.php
 %%WWWDIR%%/install/mysql/.htaccess
+%%WWWDIR%%/install/mysql/glpi-0.80.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.6-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.80.7-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.6-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.7-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.8-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.83.9-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.6-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.7-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.84.8-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.85.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-0.90.5-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
@@ -1278,6 +1345,22 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.5-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.6-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.7-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.8-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.9-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.6-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.1.7-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.2.0-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.2.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.2.2-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.2.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.2.4-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.2-empty.sql
@@ -1336,6 +1419,8 @@
 %%WWWDIR%%/js/marketplace.min.js
 %%WWWDIR%%/js/misc.js
 %%WWWDIR%%/js/misc.min.js
+%%WWWDIR%%/js/modules/Debug/Debug.js
+%%WWWDIR%%/js/modules/Debug/Debug.min.js
 %%WWWDIR%%/js/modules/Kanban/Kanban.js
 %%WWWDIR%%/js/modules/Kanban/Kanban.min.js
 %%WWWDIR%%/js/modules/Search/GenericView.js
@@ -1361,6 +1446,17 @@
 %%WWWDIR%%/js/rack.min.js
 %%WWWDIR%%/js/reservations.js
 %%WWWDIR%%/js/reservations.min.js
+%%WWWDIR%%/js/webkit_fix.js
+%%WWWDIR%%/js/webkit_fix.min.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/LICENSE.txt
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload-process.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload-process.min.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload-validate.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload-validate.min.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.fileupload.min.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.iframe-transport.js
+%%WWWDIR%%/lib/blueimp/jquery-file-upload/jquery.iframe-transport.min.js
 %%WWWDIR%%/lib/bundles/base.js
 %%WWWDIR%%/lib/bundles/base.min.js
 %%WWWDIR%%/lib/bundles/chartist.js
@@ -2410,10 +2506,20 @@
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/ug.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/uk.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/uk.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/uz.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/uz.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/vi.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/vi.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh-Hans.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh-Hans.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh-Hant.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh-Hant.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_HK.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_HK.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_MO.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_MO.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_SG.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/zh_SG.min.js
 %%WWWDIR%%/public/lib/tinymce.js
 %%WWWDIR%%/public/lib/tinymce.js.map
 %%WWWDIR%%/public/lib/tinymce.min.js
@@ -2715,6 +2821,17 @@
 %%WWWDIR%%/src/DCRoom.php
 %%WWWDIR%%/src/Dashboard/Dashboard.php
 %%WWWDIR%%/src/Dashboard/Filter.php
+%%WWWDIR%%/src/Dashboard/Filters/AbstractFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/DatesFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/DatesModFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/GroupTechFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/ItilCategoryFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/LocationFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/ManufacturerFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/RequestTypeFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/StateFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/TicketTypeFilter.php
+%%WWWDIR%%/src/Dashboard/Filters/UserTechFilter.php
 %%WWWDIR%%/src/Dashboard/Grid.php
 %%WWWDIR%%/src/Dashboard/Item.php
 %%WWWDIR%%/src/Dashboard/Provider.php
@@ -2726,6 +2843,10 @@
 %%WWWDIR%%/src/DatabaseInstanceType.php
 %%WWWDIR%%/src/Datacenter.php
 %%WWWDIR%%/src/DbUtils.php
+%%WWWDIR%%/src/Debug/Profile.php
+%%WWWDIR%%/src/Debug/Profiler.php
+%%WWWDIR%%/src/Debug/ProfilerSection.php
+%%WWWDIR%%/src/Debug/Toolbar.php
 %%WWWDIR%%/src/DeviceBattery.php
 %%WWWDIR%%/src/DeviceBatteryModel.php
 %%WWWDIR%%/src/DeviceBatteryType.php
@@ -2837,6 +2958,7 @@
 %%WWWDIR%%/src/HTMLTableUnknownHeadersOrder.php
 %%WWWDIR%%/src/Holiday.php
 %%WWWDIR%%/src/Html.php
+%%WWWDIR%%/src/Http/Firewall.php
 %%WWWDIR%%/src/Http/ProxyRouter.php
 %%WWWDIR%%/src/Http/Response.php
 %%WWWDIR%%/src/IPAddress.php
@@ -3310,6 +3432,7 @@
 %%WWWDIR%%/src/USBVendor.php
 %%WWWDIR%%/src/Unmanaged.php
 %%WWWDIR%%/src/Update.php
+%%WWWDIR%%/src/UploadHandler.php
 %%WWWDIR%%/src/User.php
 %%WWWDIR%%/src/UserCategory.php
 %%WWWDIR%%/src/UserEmail.php
@@ -3331,6 +3454,7 @@
 %%WWWDIR%%/templates/components/checkbox_matrix.html.twig
 %%WWWDIR%%/templates/components/dashboard/widget_form.html.twig
 %%WWWDIR%%/templates/components/dates_timeline.html.twig
+%%WWWDIR%%/templates/components/debug/debug_toolbar.html.twig
 %%WWWDIR%%/templates/components/dropdown/limit.html.twig
 %%WWWDIR%%/templates/components/form/buttons.html.twig
 %%WWWDIR%%/templates/components/form/computerantivirus.html.twig
@@ -3394,6 +3518,7 @@
 %%WWWDIR%%/templates/components/modal.html.twig
 %%WWWDIR%%/templates/components/pager.html.twig
 %%WWWDIR%%/templates/components/photoswipe.html.twig
+%%WWWDIR%%/templates/components/plugin_uninstall_modal.html.twig
 %%WWWDIR%%/templates/components/rss_feed.html.twig
 %%WWWDIR%%/templates/components/search/controls.html.twig
 %%WWWDIR%%/templates/components/search/display_data.html.twig
@@ -3402,7 +3527,6 @@
 %%WWWDIR%%/templates/components/user/info_card.html.twig
 %%WWWDIR%%/templates/components/user/link_with_tooltip.html.twig
 %%WWWDIR%%/templates/components/user/picture.html.twig
-%%WWWDIR%%/templates/debug_panel.html.twig
 %%WWWDIR%%/templates/display_and_die.html.twig
 %%WWWDIR%%/templates/dropdown_form.html.twig
 %%WWWDIR%%/templates/generic_show_form.html.twig
@@ -3475,41 +3599,6 @@
 %%WWWDIR%%/templates/password_form.html.twig
 %%WWWDIR%%/vendor/.htaccess
 %%WWWDIR%%/vendor/autoload.php
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/LICENSE.txt
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/README.md
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/SECURITY.md
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/VULNERABILITIES.md
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/composer.json
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-noscript.css
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-ui-noscript.css
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload-ui.css
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/css/jquery.fileupload.css
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/docker-compose.yml
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/img/loading.gif
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/img/progressbar.gif
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors/jquery.postmessage-transport.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors/jquery.xdr-transport.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/demo.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-audio.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-image.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-process.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-ui.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-validate.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload-video.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.fileupload.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/jquery.iframe-transport.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/vendor/jquery.ui.widget.js
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/package-lock.json
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/package.json
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/app.yaml
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/main.py
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/static/favicon.ico
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/static/robots.txt
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/Dockerfile
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/UploadHandler.php
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/index.php
-%%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/php.ini
 %%WWWDIR%%/vendor/brick/math/CHANGELOG.md
 %%WWWDIR%%/vendor/brick/math/LICENSE
 %%WWWDIR%%/vendor/brick/math/SECURITY.md
@@ -4793,6 +4882,8 @@
 %%WWWDIR%%/vendor/psr/http-message/LICENSE
 %%WWWDIR%%/vendor/psr/http-message/README.md
 %%WWWDIR%%/vendor/psr/http-message/composer.json
+%%WWWDIR%%/vendor/psr/http-message/docs/PSR7-Interfaces.md
+%%WWWDIR%%/vendor/psr/http-message/docs/PSR7-Usage.md
 %%WWWDIR%%/vendor/psr/http-message/src/MessageInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/RequestInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/ResponseInterface.php
@@ -5459,7 +5550,6 @@
 %%WWWDIR%%/vendor/seld/jsonlint/LICENSE
 %%WWWDIR%%/vendor/seld/jsonlint/README.md
 %%WWWDIR%%/vendor/seld/jsonlint/composer.json
-%%WWWDIR%%/vendor/seld/jsonlint/phpstan.neon.dist
 %%WWWDIR%%/vendor/seld/jsonlint/src/Seld/JsonLint/DuplicateKeyException.php
 %%WWWDIR%%/vendor/seld/jsonlint/src/Seld/JsonLint/JsonParser.php
 %%WWWDIR%%/vendor/seld/jsonlint/src/Seld/JsonLint/Lexer.php
@@ -5930,6 +6020,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
@@ -5950,6 +6041,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php81/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php81/Php81.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/README.md
+%%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/composer.json
@@ -6499,7 +6591,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.7
+%%WWWDIR%%/version/10.0.10
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6579,10 +6671,14 @@
 @dir %%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5
 @dir %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6
 @dir %%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7
+@dir %%WWWDIR%%/install/migrations/update_10.0.7_to_10.0.8
+@dir %%WWWDIR%%/install/migrations/update_10.0.8_to_10.0.9
+@dir %%WWWDIR%%/install/migrations/update_10.0.9_to_10.0.10
 @dir %%WWWDIR%%/install/migrations/update_9.4.x_to_9.5.0
 @dir %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0
 @dir %%WWWDIR%%/install/mysql
 @dir %%WWWDIR%%/js
+@dir %%WWWDIR%%/js/modules/Debug/
 @dir %%WWWDIR%%/js/Forms
 @dir %%WWWDIR%%/js/RichText
 @dir %%WWWDIR%%/js/modules
@@ -6590,6 +6686,8 @@
 @dir %%WWWDIR%%/js/modules/Search
 @dir %%WWWDIR%%/js/modules/SearchTokenizer
 @dir %%WWWDIR%%/lib
+@dir %%WWWDIR%%/lib/blueimp/
+@dir %%WWWDIR%%/lib/blueimp/jquery-file-upload/
 @dir %%WWWDIR%%/lib/bundles
 @dir %%WWWDIR%%/locales
 @dir %%WWWDIR%%/marketplace
@@ -6693,6 +6791,8 @@
 @dir %%WWWDIR%%/src/ContentTemplates/Parameters/ParametersTypes
 @dir %%WWWDIR%%/src/Csv
 @dir %%WWWDIR%%/src/Dashboard
+@dir %%WWWDIR%%/src/Dashboard/Filters/
+@dir %%WWWDIR%%/src/Debug/
 @dir %%WWWDIR%%/src/Exception
 @dir %%WWWDIR%%/src/Features
 @dir %%WWWDIR%%/src/Http
@@ -6723,6 +6823,7 @@
 @dir %%WWWDIR%%/templates/central/lists
 @dir %%WWWDIR%%/templates/components
 @dir %%WWWDIR%%/templates/components/dashboard
+@dir %%WWWDIR%%/templates/components/debug/
 @dir %%WWWDIR%%/templates/components/dropdown
 @dir %%WWWDIR%%/templates/components/form
 @dir %%WWWDIR%%/templates/components/itilobject
@@ -6748,18 +6849,6 @@
 @dir %%WWWDIR%%/templates/pages/setup/general
 @dir %%WWWDIR%%/templates/pages/tools
 @dir %%WWWDIR%%/vendor
-@dir %%WWWDIR%%/vendor/blueimp
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/css
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/img
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/cors
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/js/vendor
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/gae-python/static
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php
-@dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files
 @dir %%WWWDIR%%/vendor/brick
 @dir %%WWWDIR%%/vendor/brick/math
 @dir %%WWWDIR%%/vendor/brick/math/src
@@ -6952,6 +7041,7 @@
 @dir %%WWWDIR%%/vendor/psr/http-factory
 @dir %%WWWDIR%%/vendor/psr/http-factory/src
 @dir %%WWWDIR%%/vendor/psr/http-message
+@dir %%WWWDIR%%/vendor/psr/http-message/docs/
 @dir %%WWWDIR%%/vendor/psr/http-message/src
 @dir %%WWWDIR%%/vendor/psr/log
 @dir %%WWWDIR%%/vendor/psr/log/Psr
