@@ -1,7 +1,6 @@
 PORTNAME=	zrepl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	9
+DISTVERSION=	0.6.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -26,7 +25,7 @@ SUB_FILES=	pkg-message 500.zrepl
 OPTIONS_DEFINE=		EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
-MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.5,1:textproc/py-sphinx@${PY_FLAVOR}
+MANPAGES_BUILD_DEPENDS=	sphinx-multiversion:textproc/py-sphinx-multiversion-zrepl@${PY_FLAVOR}
 MANPAGES_USES=		gmake python:build
 MANPAGES_PLIST_FILES=	man/man1/zrepl.1.gz
 
