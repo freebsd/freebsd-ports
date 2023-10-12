@@ -1,6 +1,6 @@
---- components/management_strings.grdp.orig	2023-09-17 07:59:53 UTC
+--- components/management_strings.grdp.orig	2023-10-13 13:20:35 UTC
 +++ components/management_strings.grdp
-@@ -343,7 +343,7 @@
+@@ -346,7 +346,7 @@
    </if>
  
    <!-- Strings related to Chrome Enterprise Device Signals Sharing -->

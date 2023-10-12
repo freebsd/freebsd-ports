@@ -1,15 +1,24 @@
---- printing/print_settings.h.orig	2023-09-17 07:59:53 UTC
+--- printing/print_settings.h.orig	2023-10-13 13:20:35 UTC
 +++ printing/print_settings.h
-@@ -21,7 +21,7 @@
- #include "ui/gfx/geometry/rect.h"
- #include "ui/gfx/geometry/size.h"
+@@ -25,7 +25,7 @@
+ #include "base/values.h"
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include <map>
  
  #include "base/values.h"
-@@ -74,7 +74,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -51,7 +51,7 @@ inline constexpr char kMacSystemPrintDialogDataPrintSe
+     "print_settings";
+ #endif  // BUILDFLAG(IS_MAC)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ inline constexpr char kLinuxSystemPrintDialogDataPrinter[] = "printer_name";
+ inline constexpr char kLinuxSystemPrintDialogDataPrintSettings[] =
+     "print_settings";
+@@ -101,7 +101,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      std::string vendor_id;
    };
  
@@ -18,7 +27,7 @@
    using AdvancedSettings = std::map<std::string, base::Value>;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -246,7 +246,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -276,7 +276,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -27,7 +36,7 @@
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -381,7 +381,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -429,7 +429,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  

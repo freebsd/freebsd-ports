@@ -1,8 +1,8 @@
---- chrome/browser/defaults.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/defaults.cc.orig	2023-10-13 13:20:35 UTC
 +++ chrome/browser/defaults.cc
-@@ -46,7 +46,7 @@ const bool kShowHelpMenuItemIcon = false;
- 
- const bool kDownloadPageHasShowInFolder = true;
+@@ -44,7 +44,7 @@ const bool kShowHelpMenuItemIcon = true;
+ const bool kShowHelpMenuItemIcon = false;
+ #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

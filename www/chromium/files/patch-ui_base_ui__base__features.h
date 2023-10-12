@@ -1,7 +1,7 @@
---- ui/base/ui_base_features.h.orig	2023-09-13 12:11:42 UTC
+--- ui/base/ui_base_features.h.orig	2023-10-11 18:22:24 UTC
 +++ ui/base/ui_base_features.h
-@@ -133,7 +133,7 @@ COMPONENT_EXPORT(UI_BASE_FEATURES)
- BASE_DECLARE_FEATURE(kAlwaysConfirmComposition);
+@@ -138,7 +138,7 @@ BASE_DECLARE_FEATURE(kSupportF11AndF12KeyShortcuts);
+ COMPONENT_EXPORT(UI_BASE_FEATURES) bool AreF11AndF12ShortcutsEnabled();
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  BASE_DECLARE_FEATURE(kRedundantImeCompositionClearing);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-@@ -266,7 +266,7 @@ enum class ChromeRefresh2023Level {
+@@ -273,7 +273,7 @@ enum class ChromeRefresh2023Level {
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  ChromeRefresh2023Level GetChromeRefresh2023Level();
  

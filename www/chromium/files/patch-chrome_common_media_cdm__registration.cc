@@ -1,16 +1,16 @@
---- chrome/common/media/cdm_registration.cc.orig	2023-09-27 23:09:59 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2023-10-11 18:22:24 UTC
 +++ chrome/common/media/cdm_registration.cc
 @@ -25,11 +25,11 @@
  
  #if BUILDFLAG(ENABLE_WIDEVINE)
  #include "third_party/widevine/cdm/widevine_cdm_common.h"  // nogncheck
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_FREEBSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "base/native_library.h"
  #include "chrome/common/chrome_paths.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "base/no_destructor.h"
  #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
  #include "components/cdm/common/cdm_manifest.h"
@@ -19,7 +19,7 @@
  #if (BUILDFLAG(BUNDLE_WIDEVINE_CDM) ||            \
       BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  // Create a CdmInfo for a Widevine CDM, using |version|, |cdm_library_path|, and
  // |capability|.
  std::unique_ptr<content::CdmInfo> CreateWidevineCdmInfo(
@@ -28,7 +28,7 @@
  
  #if BUILDFLAG(BUNDLE_WIDEVINE_CDM) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  // On Linux/ChromeOS we have to preload the CDM since it uses the zygote
  // sandbox. On Windows and Mac, the bundled CDM is handled by the component
  // updater.
@@ -37,7 +37,7 @@
  
  #if BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT) && \
 -    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  // This code checks to see if a component updated Widevine CDM can be found. If
  // there is one and it looks valid, return the CdmInfo for that CDM. Otherwise
  // return nullptr.
@@ -46,7 +46,7 @@
        kWidevineCdmType, base::Version(), base::FilePath());
  
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FREEBSD)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #if defined(WIDEVINE_CDM_MIN_GLIBC_VERSION)
    base::Version glibc_version(gnu_get_libc_version());
    DCHECK(glibc_version.IsValid());

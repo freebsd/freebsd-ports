@@ -1,6 +1,6 @@
---- ui/ozone/platform/x11/ozone_platform_x11.cc.orig	2023-08-18 10:26:52 UTC
+--- ui/ozone/platform/x11/ozone_platform_x11.cc.orig	2023-10-13 13:20:35 UTC
 +++ ui/ozone/platform/x11/ozone_platform_x11.cc
-@@ -197,7 +197,7 @@ class OzonePlatformX11 : public OzonePlatform,
+@@ -196,7 +196,7 @@ class OzonePlatformX11 : public OzonePlatform,
        properties->supports_global_application_menus = true;
        properties->app_modal_dialogs_use_event_blocker = true;
        properties->fetch_buffer_formats_for_gmb_on_gpu = true;

@@ -1,6 +1,6 @@
---- sandbox/policy/features.cc.orig	2023-06-05 19:39:05 UTC
+--- sandbox/policy/features.cc.orig	2023-10-13 13:20:35 UTC
 +++ sandbox/policy/features.cc
-@@ -15,7 +15,11 @@ namespace sandbox::policy::features {
+@@ -19,7 +19,11 @@ namespace sandbox::policy::features {
  // (Only causes an effect when feature kNetworkServiceInProcess is disabled.)
  BASE_FEATURE(kNetworkServiceSandbox,
               "NetworkServiceSandbox",

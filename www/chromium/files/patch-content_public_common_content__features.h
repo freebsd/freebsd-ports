@@ -1,6 +1,6 @@
---- content/public/common/content_features.h.orig	2023-09-13 12:11:42 UTC
+--- content/public/common/content_features.h.orig	2023-10-11 18:22:24 UTC
 +++ content/public/common/content_features.h
-@@ -108,7 +108,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
+@@ -120,7 +120,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
      kFledgeLimitNumAuctionsParam;
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kFractionalScrollOffsets);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGreaseUACH);

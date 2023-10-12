@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2023-09-17 07:59:53 UTC
+--- content/app/content_main_runner_impl.cc.orig	2023-10-13 13:20:35 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -142,13 +142,13 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -64,7 +64,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -808,11 +822,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -830,11 +844,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -78,7 +78,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1007,8 +1020,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1029,8 +1042,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
        process_type == switches::kZygoteProcess) {
      PreSandboxInit();
    }
@@ -99,7 +99,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1076,7 +1101,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1098,7 +1123,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
            ->ReconfigureAfterFeatureListInit(process_type);
      }
  
@@ -108,7 +108,7 @@
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1111,6 +1136,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1133,6 +1158,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

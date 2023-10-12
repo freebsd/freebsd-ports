@@ -1,4 +1,4 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2023-09-13 12:11:42 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2023-10-11 18:22:24 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
 @@ -60,7 +60,7 @@
  #        include "libANGLE/renderer/gl/cgl/DisplayCGL.h"
@@ -18,16 +18,16 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == 0)
              {
-@@ -452,7 +452,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -457,7 +457,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
  #if defined(ANGLE_ENABLE_OPENGL)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayWGL(state);
 -#    elif defined(ANGLE_PLATFORM_LINUX)
 +#    elif defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_BSD)
  #        if defined(ANGLE_USE_GBM)
-             if (platformType == 0 ||
-                 platformType == EGL_PLATFORM_VULKAN_DISPLAY_MODE_HEADLESS_ANGLE)
-@@ -501,7 +501,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+             if (platformType == 0)
+             {
+@@ -508,7 +508,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
                  impl = rx::CreateVulkanWin32Display(state);
              }
              break;
@@ -36,7 +36,7 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == EGL_PLATFORM_GBM_KHR && rx::IsVulkanGbmDisplayAvailable())
              {
-@@ -2125,7 +2125,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2148,7 +2148,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  

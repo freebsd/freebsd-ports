@@ -1,4 +1,4 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-10-13 13:20:35 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
 @@ -129,13 +129,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
@@ -22,10 +22,19 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/companion/visual_search/visual_search_suggestions_service_factory.h"
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
- #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -949,7 +949,7 @@ void PopulateChromeFrameBinders(
+@@ -831,7 +831,7 @@ void BindScreen2xMainContentExtractor(
+ #endif
+ 
+ #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ void BindVisualSuggestionsModelProvider(
+     content::RenderFrameHost* frame_host,
+     mojo::PendingReceiver<
+@@ -977,7 +977,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -34,7 +43,7 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -957,7 +957,7 @@ void PopulateChromeFrameBinders(
+@@ -985,7 +985,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -43,7 +52,7 @@
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParentOrOuterDocument()) {
      // The service binder will reject non-primary main frames, but we still need
-@@ -1031,7 +1031,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1065,7 +1065,7 @@ void PopulateChromeWebUIFrameBinders(
        commerce::CommerceInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -52,7 +61,7 @@
    RegisterWebUIControllerInterfaceBinder<
        connectors_internals::mojom::PageHandler,
        enterprise_connectors::ConnectorsInternalsUI>(map);
-@@ -1046,7 +1046,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1080,7 +1080,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -61,7 +70,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1535,7 +1535,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1578,7 +1578,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

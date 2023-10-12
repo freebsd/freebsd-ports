@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2023-09-13 12:11:42 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2023-10-11 18:22:24 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -23,7 +23,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kIPHAutofillFeedbackNewBadgeFeature);
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
-@@ -210,7 +210,8 @@ BASE_DECLARE_FEATURE(kIPHiOSPromoPostRestoreDefaultBro
+@@ -211,7 +211,8 @@ BASE_DECLARE_FEATURE(kIPHiOSPromoPasswordManagerWidget
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

@@ -16,4 +16,10 @@ EOMSG
 	exit 1
 fi
 ulimit -c 0
+
+# source foreign-cdm environment
+if [ -r %%PREFIX%%/share/foreign-cdm/fcdm-setup-env ] ; then
+	. %%PREFIX%%/share/foreign-cdm/fcdm-setup-env
+fi
+
 exec %%PREFIX%%/share/ungoogled-chromium/ungoogled-chromium ${1+"$@"}

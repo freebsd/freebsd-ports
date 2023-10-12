@@ -1,4 +1,4 @@
---- base/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- base/BUILD.gn.orig	2023-10-11 18:22:24 UTC
 +++ base/BUILD.gn
 @@ -198,7 +198,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
@@ -9,7 +9,7 @@
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1112,11 +1112,23 @@ component("base") {
+@@ -1111,11 +1111,23 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -33,8 +33,8 @@
 +
    if (use_allocator_shim) {
      if (is_apple) {
-       sources += [ "allocator/early_zone_registration_mac.h" ]
-@@ -1133,7 +1145,7 @@ component("base") {
+       sources += [ "allocator/early_zone_registration_apple.h" ]
+@@ -1135,7 +1147,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -43,7 +43,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2075,6 +2087,22 @@ component("base") {
+@@ -2080,6 +2092,22 @@ component("base") {
      ]
    }
  
@@ -66,7 +66,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2207,6 +2235,29 @@ component("base") {
+@@ -2212,6 +2240,29 @@ component("base") {
      }
    }
  
@@ -96,7 +96,7 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2217,7 +2268,7 @@ component("base") {
+@@ -2222,7 +2273,7 @@ component("base") {
    }
  
    if (dep_libevent) {
@@ -105,7 +105,7 @@
    }
  
    if (use_libevent) {
-@@ -3587,7 +3638,7 @@ test("base_unittests") {
+@@ -3596,7 +3647,7 @@ test("base_unittests") {
      ]
    }
  
@@ -114,7 +114,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3608,7 +3659,7 @@ test("base_unittests") {
+@@ -3617,7 +3668,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -123,7 +123,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3619,7 +3670,7 @@ test("base_unittests") {
+@@ -3628,7 +3679,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -132,7 +132,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3871,7 +3922,7 @@ test("base_unittests") {
+@@ -3884,7 +3935,7 @@ test("base_unittests") {
      }
    }
  

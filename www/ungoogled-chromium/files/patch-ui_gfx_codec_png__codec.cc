@@ -1,7 +1,7 @@
---- ui/gfx/codec/png_codec.cc.orig	2023-06-05 19:39:05 UTC
+--- ui/gfx/codec/png_codec.cc.orig	2023-10-13 13:20:35 UTC
 +++ ui/gfx/codec/png_codec.cc
-@@ -11,7 +11,7 @@
- #include "base/memory/raw_ptr_exclusion.h"
+@@ -12,7 +12,7 @@
+ #include "base/metrics/histogram_macros.h"
  #include "base/notreached.h"
  #include "base/strings/string_util.h"
 -#include "third_party/libpng/png.h"

@@ -1,7 +1,7 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-09-13 12:11:42 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-10-11 18:22:24 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -213,7 +213,7 @@
- #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
+@@ -210,7 +210,7 @@
+ #include "chrome/browser/ui/webui/chromeos/chrome_url_disabled/chrome_url_disabled_ui.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/webui/webui_js_error/webui_js_error_ui.h"
  #endif
  
-@@ -239,17 +239,17 @@
+@@ -236,17 +236,17 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -30,7 +30,7 @@
  #include "chrome/browser/ui/webui/connectors_internals/connectors_internals_ui.h"
  #endif
  
-@@ -402,7 +402,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -399,7 +399,7 @@ bool IsAboutUI(const GURL& url) {
  #if !BUILDFLAG(IS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -39,7 +39,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -667,7 +667,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -660,7 +660,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIMobileSetupHost)
      return &NewWebUI<ash::cellular_setup::MobileSetupUI>;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -48,7 +48,7 @@
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -729,7 +729,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -722,7 +722,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -57,7 +57,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -796,27 +796,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -789,27 +789,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
