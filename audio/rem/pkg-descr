@@ -1,7 +1,0 @@
-Librem is a portable and generic library for real-time audio and video
-processing.
-
-Features
-
-- Audio buffering, mixing, codecs and resampling
-- Video mixing, rescaling and pixel format conversion
