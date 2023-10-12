@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231011:
+  AFFECTS: users of www/caddy
+  AUTHOR:  adamw@FreeBSD.org
+
+  The default admin endpoint has changed from localhost:2019 to
+  /var/run/caddy/caddy.sock. Using a Unix socket is more secure,
+  allowing it to be secured by filesystem permissions rather than
+  requiring a firewall.
+
+  If you only control caddy from the rc(8) script (service caddy ...),
+  you don't need to do anything. If you access the API yourself, you
+  will want to update your scripts to use the new socket.
+
+  To use the old endpoint, add the following to /etc/rc.conf:
+
+    caddy_admin="localhost:2019"
+
 20231009:
   AFFECTS: users of net/ntpd-rs
   AUTHOR: mikael@freebsd.org
@@ -25,8 +42,8 @@ you update your ports collection, before attempting any port upgrades.
 
   The upgrade manual can be found as usual here:
   https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.3-16.4-freebsd.md
-  
-  
+
+
 20230930:
   AFFECTS: users of Transmission (net-p2p/transmission@*)
   AUTHOR:  mondo.debater_0q@icloud.com
