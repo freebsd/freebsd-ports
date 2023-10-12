@@ -1,3 +1,59 @@
+  <vuln vid="bd92f1ab-690c-11ee-9ed0-001fc69cd6dc">
+    <topic>11/libX11 multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libX11</name>
+	<range><lt>1.8.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg/2023-October/061506.html">
+	  <dl>
+	    <dt>CVE-2023-43785: out-of-bounds memory access in _XkbReadKeySyms()</dt>
+	    <dd>When libX11 is processing the reply from the X server to the XkbGetMap
+	    request, if it detected the number of symbols in the new map was less
+	    than the size of the buffer it had allocated, it always added room for
+	    128 more symbols, instead of the actual size needed. While the
+	    _XkbReadBufferCopyKeySyms() helper function returned an error if asked
+	    to copy more keysyms into the buffer than there was space allocated for,
+	    the caller never checked for an error and assumed the full set of keysyms
+	    was copied into the buffer and could then try to read out of bounds when
+	    accessing the buffer.  libX11 1.8.7 has been patched to both fix the size
+	    allocated and check for error returns from _XkbReadBufferCopyKeySyms().</dd>
+	    <dt>CVE-2023-43786: stack exhaustion in XPutImage</dt>
+	    <dd>When splitting a single line of pixels into chunks that fit in a single
+	    request (not using the BIG-REQUESTS extension) to send to the X server,
+	    the code did not take into account the number of bits per pixel, so would
+	    just loop forever finding it needed to send more pixels than fit in the
+	    given request size and not breaking them down into a small enough chunk to
+	    fit.  An XPM file was provided that triggered this bug when loaded via
+	    libXpm's XpmReadFileToPixmap() function, which in turn calls XPutImage()
+	    and hit this bug.</dd>
+	    <dt>CVE-2023-43787: integer overflow in XCreateImage() leading to a heap overflow</dt>
+	    <dd>When creating an image, there was no validation that the multiplication
+	    of the caller-provided width by the visual's bits_per_pixel did not
+	    overflow and thus result in the allocation of a buffer too small to hold
+	    the data that would be copied into it.  An XPM file was provided that
+	    triggered this bug when loaded via libXpm's XpmReadFileToPixmap() function,
+	    which in turn calls XCreateImage() and hit this bug.i</dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43785</cvename>
+      <cvename>CVE-2023-43786</cvename>
+      <cvename>CVE-2023-43787</cvename>
+      <url>https://lists.x.org/archives/xorg/2023-October/061506.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-22</discovery>
+      <entry>2023-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="07ee8c14-68f1-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
