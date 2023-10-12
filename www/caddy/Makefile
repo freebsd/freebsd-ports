@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe go:modules
 CPE_VENDOR=	caddyserver
 
+USERS=		www
+GROUPS=		www
+
 USE_RC_SUBR=	caddy
 SUB_FILES=	Caddyfile.sample caddy pkg-message
 

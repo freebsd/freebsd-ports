@@ -6,22 +6,41 @@ To enable caddy:
 
 - Edit %%ETCDIR%%/Caddyfile
   See https://caddyserver.com/docs/
-- Add caddy_enable="YES" to /etc/rc.conf
+- Run 'service enable caddy'
+
+Note while Caddy currently defaults to running as root:wheel, it is strongly
+recommended to run the server as an unprivileged user, such as www:www --
+
+- Use security/portacl-rc to enable privileged port binding:
+
+  # pkg install security/portacl-rc
+  # sysrc portacl_users+=www
+  # sysrc portacl_user_www_tcp="http https"
+  # sysrc portacl_user_www_udp="https"
+  # service portacl enable
+  # service portacl start
+
+- Configure caddy to run as www:www
+
+  # sysrc caddy_user=www caddy_group=www
+
+- Note if Caddy has been started as root previously, files in
+  /var/log/caddy, /var/db/caddy, and /var/run/caddy may require their ownership
+  changing manually.
 
 %%PREFIX%%/etc/rc.d/caddy has the following defaults:
 
 - Server log: /var/log/caddy/caddy.log
   (runtime messages, NOT an access.log)
 - Automatic SSL certificate storage: /var/db/caddy/data/caddy/
-- Runs as root:wheel (you can run as another user, like www,
-  but caddy will be unable to bind to low-numbered ports,
-  including 80 and 443)
+- Administration endpoint: //unix/var/run/caddy/caddy.sock
+- Runs as root:wheel (this will change to www:www in the future)
 
 INSTALL
 }
 {
   type: upgrade
-  maximum_version: 2.3.0
+  maximum_version: "2.3.0"
   message: <<UPGRADE
 The default locations for caddy runtime files have changed!
 
@@ -35,6 +54,57 @@ The default locations for caddy runtime files have changed!
   (was /root/.config/caddy)
 
 You can change these defaults. See %%PREFIX%%/etc/rc.d/caddy
+
+UPGRADE
+}
+{
+  type: upgrade
+  maximum_version: "2.7.4_2"
+  message: <<UPGRADE
+The default Caddy administration endpoint location has been changed from
+localhost:2019 to a protected Unix domain socket located in
+/var/run/caddy/caddy.sock
+
+This can be overridden with the `caddy_admin` rc variable, or by specifiying
+an alternative in the Caddyfile `admin` section, documented here:
+
+  https://caddyserver.com/docs/caddyfile/options#admin
+
+The previous default, particularly paired with the server running as root,
+may have serious security implications for shared machines with untrusted
+users.
+
+UPGRADE
+}
+{
+  type: upgrade
+  message: <<UPGRADE
+It is STRONGLY RECOMMENDED to run Caddy as an unprivileged user, such as
+www:www, rather than the current default of root:wheel.
+
+If you have relied upon earlier defaults:
+
+- Use security/portacl-rc to enable privileged port binding:
+
+  # pkg install security/portacl-rc
+  # sysrc portacl_users+=www
+  # sysrc portacl_user_www_tcp="http https"
+  # sysrc portacl_user_www_udp="https"
+  # service portacl enable
+  # service portacl start
+
+- Stop the server, and update ownership on Caddy runtime files:
+
+  # service caddy stop
+  # chown -r www:www /var/db/caddy /var/log/caddy /var/run/caddy
+
+Other changes may be necessary depending on your exact Caddy
+configuration.
+
+- Change the default runtime user, and restart the server:
+
+  # sysrc caddy_user=www caddy_group=www
+  # service caddy start
 
 UPGRADE
 }
