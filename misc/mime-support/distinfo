@@ -1,3 +1,5 @@
-TIMESTAMP = 1555683589
-SHA256 (mime-support_3.62.tar.gz) = 54e0a03e0cd63c7c9fe68a18ead0a2143fd3c327604215f989d85484d0409f4a
-SIZE (mime-support_3.62.tar.gz) = 37130
+TIMESTAMP = 1697125650
+SHA256 (media-types_10.1.0.tar.xz) = c35ec1ae0d0446aa903322f8f91a908a0d4270444326bfbad24b61fbe5600a0d
+SIZE (media-types_10.1.0.tar.xz) = 59052
+SHA256 (mailcap_3.69.tar.xz) = 969c6e24d861f1c50203d93f8b5ddc680a2e2c3fd84de489b1b65baad92120cb
+SIZE (mailcap_3.69.tar.xz) = 26644

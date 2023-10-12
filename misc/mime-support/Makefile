@@ -1,8 +1,9 @@
 PORTNAME=	mime-support
-PORTVERSION=	3.62
+PORTVERSION=	3.66
 CATEGORIES=	misc
-MASTER_SITES=	DEBIAN_POOL
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/([0-9]*\.[0-9]*)\.(.*)/\1-\2/}
+MASTER_SITES=	DEBIAN
+MASTER_SITE_SUBDIR=	pool/main/m/mailcap pool/main/m/media-types
+DISTFILES=	media-types_10.1.0.tar.xz mailcap_3.69.tar.xz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	MIME Media Types list
@@ -10,22 +11,21 @@ WWW=		https://packages.qa.debian.org/m/mime-support.html
 
 LICENSE=	PD
 
-USES=		cpe shebangfix
+USES=		cpe shebangfix tar:xz
 
 CPE_VENDOR=	debian
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 NO_ARCH=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/run-mailcap etc/mime.types \
 		man/man1/run-mailcap.1.gz
 
-SHEBANG_FILES=	run-mailcap
+SHEBANG_FILES=	mailcap/run-mailcap
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/run-mailcap ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/mime.types ${STAGEDIR}${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/run-mailcap.man ${STAGEDIR}${MANPREFIX}/man/man1/run-mailcap.1
+	${INSTALL_SCRIPT} ${WRKSRC}/mailcap/run-mailcap ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/media-types/mime.types ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/mailcap/run-mailcap.man ${STAGEDIR}${MANPREFIX}/man/man1/run-mailcap.1
 
 .include <bsd.port.mk>
