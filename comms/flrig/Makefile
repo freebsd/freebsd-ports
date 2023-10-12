@@ -1,8 +1,8 @@
 PORTNAME=	flrig
-PORTVERSION=	1.3.54
-PORTREVISION=	2
+PORTVERSION=	2.0.04
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/fldigi/${PORTNAME}
+MASTER_SITES=	SF/fldigi/${PORTNAME} \
+		http://www.w1hkj.com/files/fldigi/
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Ham Radio rig control program, cooperates with fldigi
@@ -12,9 +12,10 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libfltk.so:x11-toolkits/fltk
+		libfltk.so:x11-toolkits/fltk \
+		libudev.so:devel/libudev-devd
 
-USES=		gmake jpeg xorg
+USES=		gmake jpeg xorg desktop-file-utils
 USE_XORG=	x11 xrender xcursor xfixes xext xft xinerama
 
 GNU_CONFIGURE=	yes
