@@ -1,3 +1,37 @@
+  <vuln vid="199cdb4d-690d-11ee-9ed0-001fc69cd6dc">
+    <topic>x11/libXpm multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libXpm</name>
+	<range><lt>3.5.17</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg/2023-October/061506.html">
+	  <dl>
+	    <dt>CVE-2023-43788: Out of bounds read in XpmCreateXpmImageFromBuffer</dt>
+	    <dd>An out-of-bounds read is located in ParseComment() when reading from
+	    a memory buffer instead of a file, as it continued to look for the
+	    closing comment marker past the end of the buffer.</dd>
+	    <dt>CVE-2023-43789: Out of bounds read on XPM with corrupted colormap</dt>
+	    <dd>A corrupted colormap section may cause libXpm to read out of bounds.</dd>
+	  </dl>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43788</cvename>
+      <cvename>CVE-2023-43789</cvename>
+      <url>https://lists.x.org/archives/xorg/2023-October/061506.html</url>
+    </references>
+    <dates>
+      <discovery>2023-09-22</discovery>
+      <entry>2023-10-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bd92f1ab-690c-11ee-9ed0-001fc69cd6dc">
     <topic>11/libX11 multiple vulnerabilities</topic>
     <affects>
