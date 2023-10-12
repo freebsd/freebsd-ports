@@ -1,6 +1,6 @@
 PORTNAME=	mpop
 DISTVERSION=	1.4.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/mpop/releases/
 
