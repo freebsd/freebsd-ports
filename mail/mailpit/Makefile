@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.6
+DISTVERSION=	1.9.7
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -43,10 +43,10 @@ GH_TUPLE=	\
 		golang:crypto:v0.14.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:image:v0.13.0:golang_image/vendor/golang.org/x/image \
 		golang:mod:v0.13.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.16.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.17.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.13.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.13.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.14.0:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:5421fefb8386:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.3.1:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
