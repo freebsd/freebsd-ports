@@ -1,0 +1,9 @@
+base-dbg.txz	4fefc008baa742dedb50468f5f9bd066f79d65fd185b9343e67c110c776ce6f4	1690	base_dbg	"Base system (Debugging)"	off
+base.txz	70af44dcd1e1083fd969efcb02a01ed488ae30a615f6c7aa3c777464f522c456	29568	base	"Base system (MANDATORY)"	on
+kernel-dbg.txz	9c2fc871abd3b67374ff5cf3c8d183cd26d4b24a86bf6f110a1a169f6a2893ed	858	kernel_dbg	"Kernel (Debugging)"	on
+kernel.txz	54f15ce25b0fdc7f9c78bedd38ed15dff04f2e6c7085a95d297dc5500d829d27	869	kernel	"Kernel (MANDATORY)"	on
+lib32-dbg.txz	e0bd7600dd87e6cb37cd35c3b23037f0d0bddb7d653950005f11bf65b001ce54	257	lib32_dbg	"32-bit compatibility libraries (Debugging)"	off
+lib32.txz	b99d5a456e99c3085d73588dc68b2d569485d3c2993dfa2ca03a67ff20c49e5b	728	lib32	"32-bit compatibility libraries"	on
+ports.txz	a39b03fcfff0e4a19493538d41629ef9c76cfa363dd921771020ef01dff730a2	198005	ports	"Ports tree"	off
+src.txz	eeba50d27730d8697963d4ae6959d7816c14fc4edea9ff14e6efc4239b3600b8	105188	src	"System source tree"	off
+tests.txz	501bd218ea9024f450a9c86c5925a2e7cec048ad84cf5a864bfa1c2c2ad446cb	7096	tests	"Test suite"	off
