@@ -1,5 +1,5 @@
 PORTNAME=	pound
-PORTVERSION=	4.7
+PORTVERSION=	4.10
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
@@ -8,6 +8,9 @@ COMMENT=	HTTP/HTTPS reverse-proxy and load-balancer
 WWW=		https://github.com/graygnuorg/pound
 
 LICENSE=	GPLv3+
+
+TEST_DEPENDS=	p5-IO-FDPass>=0:devel/p5-IO-FDPass \
+		p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		cpe gmake ssl
 CPE_VENDOR=	apsis
@@ -25,7 +28,7 @@ OPTIONS_DEFINE=	DOCS DSAPARAM PCRE
 OPTIONS_DEFAULT=PCRE
 DSAPARAM_DESC=	Generate DH parameters without using "safe" primes
 
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE_LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
 PCRE_USES=	localbase
 PCRE_CONFIGURE_ENABLE=	pcreposix
 
