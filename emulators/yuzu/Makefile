@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20231011
+PORTVERSION=	s20231013
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -46,7 +46,7 @@ qt6_OPTIONS_EXCLUDE=	QT5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	da6824d9fd
+GH_TAGNAME=	a8bd02acd8
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yuzu-emu:sirit:ab75463:sirit/externals/sirit \
 		GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:v3.0.1-94-g9b0fc3e:VulkanMemoryAllocator/externals/VulkanMemoryAllocator \
@@ -55,9 +55,9 @@ GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		arun11299:cpp-jwt:v1.4-14-ge12ef06:cpp_jwt/externals/cpp-jwt \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		benhoyt:inih:r52:inih/externals/inih/inih \
-		eggert:tz:2022c:tz/externals/nx_tzdb/tzdb_to_nx/externals/tz/tz \
+		eggert:tz:2022g-11-g16ce126a:tz/externals/nx_tzdb/tzdb_to_nx/externals/tz/tz \
 		kinetiknz:cubeb:cubeb-0.2-1452-g48689ae:cubeb/externals/cubeb \
-		lat9nq:tzdb_to_nx:220816-27-g212afa2:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
+		lat9nq:tzdb_to_nx:221202:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
 		yhirose:cpp-httplib:v0.12.0-3-g6d963fb:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing elfctl localbase:ldflags pkgconfig sdl ssl
