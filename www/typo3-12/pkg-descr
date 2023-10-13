@@ -1,6 +1,7 @@
 We support each TYPO3 sprint release until the next minor version is published.
-Once released in April 2023, the long-term support version of TYPO3 12 will receive
-bug fixes until October 2024, and we will provide security updates until April 2026.
+Once released in April 2023, the long-term support version of TYPO3 12 will
+receive bug fixes until October 2024, and we will provide security updates until
+April 2026.
 
 We encourage users and agencies to install and use the sprint releases until the
 LTS release is available. Further details about the releases and planned release
@@ -16,4 +17,5 @@ System requirements
 * PHP 8.1
 * MariaDB 10.3+ / MySQL 8.0+ / PostgreSQL 10.0+ / SQLite 3.8.3+
 * Modern Browsers
-* Detailed list of requirements: https://get.typo3.org/version/12#system-requirements
+* Detailed list of requirements:
+	https://get.typo3.org/version/12#system-requirements
