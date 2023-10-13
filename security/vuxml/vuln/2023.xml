@@ -3472,7 +3472,7 @@
       </package>
       <package>
 	<name>samba413</name>
-	<range><lt>4.13.18</lt></range>
+	<range><lt>4.13.17_6</lt></range>
       </package>
     </affects>
     <description>
