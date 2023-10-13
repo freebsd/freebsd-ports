@@ -1,5 +1,5 @@
 PORTNAME=	goland
-DISTVERSION=	2023.2.2
+DISTVERSION=	2023.2.3
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
@@ -20,7 +20,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
-USES=		cpe python:run shebangfix
+USES=		cpe desktop-file-utils python:run shebangfix
 
 CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
