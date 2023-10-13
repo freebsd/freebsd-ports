@@ -1,6 +1,6 @@
 bin/qt6ct
 lib/libqt6ct-common.so
-lib/libqt6ct-common.so.0.8
+lib/libqt6ct-common.so.0.9
 %%QT_PLUGINDIR%%/platformthemes/libqt6ct.so
 %%QT_PLUGINDIR%%/styles/libqt6ct-style.so
 share/applications/qt6ct.desktop
