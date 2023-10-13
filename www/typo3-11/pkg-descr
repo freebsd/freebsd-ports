@@ -12,7 +12,8 @@ System requirements
 * PHP 7.4, 8.0, 8.1
 * MariaDB 10.2.7+ / Microsoft SQL Server / MySQL 5.7.9+ / PostgreSQL / SQLite
 * Modern Browsers
-* Detailed list of requirements: https://get.typo3.org/version/11#system-requirements
+* Detailed list of requirements:
+	https://get.typo3.org/version/11#system-requirements
 
 Supported Until
 Free: 2024-10-31
