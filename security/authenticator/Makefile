@@ -1,6 +1,5 @@
 PORTNAME=	authenticator
-DISTVERSION=	4.3.1
-PORTREVISION=	14
+DISTVERSION=	4.4.0
 CATEGORIES=	security
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,11 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_i386=	fails to build in aes crate
 
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
-		libzbar.so:graphics/zbar \
-		libpipewire-0.3.so:multimedia/pipewire
+		libzbar.so:graphics/zbar
 RUN_DEPENDS=	${LOCALBASE}/lib/gstreamer-1.0/libgstgtk4.so:multimedia/gstreamer1-plugins-rust
 
-USES=		cargo desktop-file-utils gettext gnome gstreamer llvm meson pkgconfig sqlite ssl
+USES=		cargo desktop-file-utils gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	gl zbar
@@ -32,9 +30,6 @@ CARGO_TEST=	no
 GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
-		${WRKSRC_crate_clang-sys}/build/common.rs \
-		${WRKSRC_crate_clang-sys}/src/support.rs
 	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
