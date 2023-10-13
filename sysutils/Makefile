@@ -183,8 +183,10 @@
     SUBDIR += cdrtools
     SUBDIR += cfengine
     SUBDIR += cfengine-devel
+    SUBDIR += cfengine-lts
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles-devel
+    SUBDIR += cfengine-masterfiles-lts
     SUBDIR += cfengine-masterfiles320
     SUBDIR += cfengine-masterfiles321
     SUBDIR += cfengine-masterfiles322
