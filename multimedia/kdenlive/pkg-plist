@@ -516,7 +516,6 @@ share/knsrcfiles/kdenlive_luts.knsrc
 share/knsrcfiles/kdenlive_renderprofiles.knsrc
 share/knsrcfiles/kdenlive_titles.knsrc
 share/knsrcfiles/kdenlive_wipes.knsrc
-share/kxmlgui5/kdenlive/kdenliveui.rc
 share/locale/ar/LC_MESSAGES/kdenlive.mo
 share/locale/az/LC_MESSAGES/kdenlive.mo
 share/locale/bs/LC_MESSAGES/kdenlive.mo

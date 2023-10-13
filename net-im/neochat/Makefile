@@ -1,6 +1,5 @@
 PORTNAME=	neochat
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-im deskutils kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

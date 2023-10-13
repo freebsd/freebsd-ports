@@ -12,10 +12,10 @@ share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
 share/dbus-1/system-services/org.kde.kalarm.rtcwake.service
 share/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
-share/icons/breeze-dark/16x16/actions/show-today.svg
-share/icons/breeze-dark/22x22/actions/show-today.svg
-share/icons/breeze/16x16/actions/show-today.svg
-share/icons/breeze/22x22/actions/show-today.svg
+share/icons/breeze-dark/actions/16/show-today.svg
+share/icons/breeze-dark/actions/22/show-today.svg
+share/icons/breeze/actions/16/show-today.svg
+share/icons/breeze/actions/22/show-today.svg
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png

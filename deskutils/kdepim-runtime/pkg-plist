@@ -36,6 +36,7 @@ lib/libmaildir.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/pim5/akonadi/config/akonotesconfig.so
 %%QT_PLUGINDIR%%/pim5/akonadi/config/birthdaysconfig.so
 %%QT_PLUGINDIR%%/pim5/akonadi/config/contactsconfig.so
+%%QT_PLUGINDIR%%/pim5/akonadi/config/googleconfig.so
 %%QT_PLUGINDIR%%/pim5/akonadi/config/icalconfig.so
 %%QT_PLUGINDIR%%/pim5/akonadi/config/icaldirconfig.so
 %%QT_PLUGINDIR%%/pim5/akonadi/config/maildirconfig.so
