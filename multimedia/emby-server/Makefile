@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.7.14.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -136,7 +136,7 @@ do-install:
 	(${INSTALL_PROGRAM} ${WRKSRC}/ffprobe ${STAGEDIR}${PREFIX}/lib/emby-server/bin)
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/lib
 	(cd ${WRKDIR}/lib && ${COPYTREE_BIN} . ${STAGEDIR}${PREFIX}/lib/emby-server/lib)
-	${RLN} ${LOCALBASE}/lib/libimagequant.so.0.0.0 ${STAGEDIR}${PREFIX}/lib/emby-server/lib/libimagequant.so.0
+	${RLN} ${LOCALBASE}/lib/libimagequant.so.0.0.4 ${STAGEDIR}${PREFIX}/lib/emby-server/lib/libimagequant.so.0
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system
 	(${INSTALL_DATA} ${WRKDIR}/SQLitePCLRaw.provider.sqlite3.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system "! -name EmbyServer")

@@ -1,6 +1,5 @@
 PORTNAME=	libimagequant
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.2.2
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +20,7 @@ CARGO_INSTALL_ARGS:=	${CARGO_BUILD_ARGS}
 PLIST_FILES=	include/libimagequant.h \
 		lib/libimagequant.a \
 		lib/libimagequant.so \
-		lib/libimagequant.so.0.0.0 \
+		lib/libimagequant.so.0.0.4 \
 		libdata/pkgconfig/imagequant.pc
 
 do-build:
