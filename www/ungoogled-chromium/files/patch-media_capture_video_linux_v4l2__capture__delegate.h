@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.h.orig	2023-09-17 07:59:53 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.h.orig	2023-10-13 13:20:35 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.h
 @@ -35,7 +35,7 @@ class Location;
  
@@ -31,7 +31,16 @@
  
    // Check whether the control is controllable (and not changed automatically).
    bool IsControllableControl(int control_id);
-@@ -157,7 +157,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -133,7 +133,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+                      const base::Location& from_here,
+                      const std::string& reason);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // Systems which describe a "color space" usually map that to one or more of
+   // {primary, matrix, transfer, range}. BuildColorSpaceFromv4l2() will use the
+   // matched value as first priority. Otherwise, if there is no best matching
+@@ -167,7 +167,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    // Clockwise rotation in degrees. This value should be 0, 90, 180, or 270.
    int rotation_;
  

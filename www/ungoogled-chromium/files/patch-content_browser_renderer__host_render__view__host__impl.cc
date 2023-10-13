@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_view_host_impl.cc.orig	2023-07-21 09:49:17 UTC
+--- content/browser/renderer_host/render_view_host_impl.cc.orig	2023-10-13 13:20:35 UTC
 +++ content/browser/renderer_host/render_view_host_impl.cc
 @@ -273,7 +273,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
@@ -6,6 +6,6 @@
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   prefs->system_font_family_name = gfx::Font().GetFontName();
- #elif BUILDFLAG(IS_FUCHSIA)
-   // Make Blink's "focus ring" invisible. The focus ring is a hairline border
+   base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
+   if (command_line->HasSwitch(switches::kSystemFontFamily)) {
+     prefs->system_font_family_name =

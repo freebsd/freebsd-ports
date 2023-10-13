@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2023-08-18 10:26:52 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc.orig	2023-10-13 13:20:35 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_connector_service_factory.cc
 @@ -11,7 +11,7 @@
  #include "chrome/browser/profiles/profile.h"
@@ -18,9 +18,9 @@
    return IsDeviceTrustConnectorFeatureEnabled();
  #else
    return false;
-@@ -78,7 +78,7 @@ KeyedService* DeviceTrustConnectorServiceFactory::Buil
- 
-   auto* service = new DeviceTrustConnectorService(profile->GetPrefs());
+@@ -80,7 +80,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
+   std::unique_ptr<DeviceTrustConnectorService> service =
+       std::make_unique<DeviceTrustConnectorService>(profile->GetPrefs());
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)

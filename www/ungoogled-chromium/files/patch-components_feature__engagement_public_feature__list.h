@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_list.h.orig	2023-09-17 07:59:53 UTC
+--- components/feature_engagement/public/feature_list.h.orig	2023-10-13 13:20:35 UTC
 +++ components/feature_engagement/public/feature_list.h
-@@ -258,7 +258,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPromoPostRestoreDefaultB
+@@ -259,7 +259,7 @@ DEFINE_VARIATION_PARAM(kIPHiOSPromoPasswordManagerWidg
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillFeedbackNewBadgeFeature,
                         "IPH_AutofillFeedbackNewBadge");
  DEFINE_VARIATION_PARAM(kIPHBatterySaverModeFeature, "IPH_BatterySaverMode");
-@@ -332,7 +332,8 @@ DEFINE_VARIATION_PARAM(kIPHBackNavigationMenuFeature, 
+@@ -335,7 +335,8 @@ DEFINE_VARIATION_PARAM(kIPHBackNavigationMenuFeature, 
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -19,16 +19,16 @@
  DEFINE_VARIATION_PARAM(kIPHAutofillExternalAccountProfileSuggestionFeature,
                         "IPH_AutofillExternalAccountProfileSuggestion");
  DEFINE_VARIATION_PARAM(kIPHAutofillVirtualCardCVCSuggestionFeature,
-@@ -538,7 +539,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
-         VARIATION_ENTRY(kIPHiOSShareToolbarItemFeature),
+@@ -541,7 +542,7 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          VARIATION_ENTRY(kIPHiOSPromoPostRestoreDefaultBrowserFeature),
+         VARIATION_ENTRY(kIPHiOSPromoPasswordManagerWidgetFeature),
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
          VARIATION_ENTRY(kIPHAutofillFeedbackNewBadgeFeature),
          VARIATION_ENTRY(kIPHBatterySaverModeFeature),
          VARIATION_ENTRY(kIPHCompanionSidePanelFeature),
-@@ -585,7 +586,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
+@@ -589,7 +590,8 @@ constexpr flags_ui::FeatureEntry::FeatureVariation
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

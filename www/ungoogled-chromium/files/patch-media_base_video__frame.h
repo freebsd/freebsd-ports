@@ -1,7 +1,7 @@
---- media/base/video_frame.h.orig	2023-09-17 07:59:53 UTC
+--- media/base/video_frame.h.orig	2023-10-13 13:20:35 UTC
 +++ media/base/video_frame.h
 @@ -44,7 +44,7 @@
- #include "base/mac/scoped_cftyperef.h"
+ #include "base/apple/scoped_cftyperef.h"
  #endif  // BUILDFLAG(IS_APPLE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
