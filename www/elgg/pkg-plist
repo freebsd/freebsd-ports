@@ -4508,6 +4508,7 @@
 %%WWWDIR%%/vendor/composer/semver/LICENSE
 %%WWWDIR%%/vendor/composer/semver/README.md
 %%WWWDIR%%/vendor/composer/semver/composer.json
+%%WWWDIR%%/vendor/composer/semver/phpstan-baseline.neon
 %%WWWDIR%%/vendor/composer/semver/src/Comparator.php
 %%WWWDIR%%/vendor/composer/semver/src/CompilingMatcher.php
 %%WWWDIR%%/vendor/composer/semver/src/Constraint/Bound.php
@@ -4928,9 +4929,6 @@
 %%WWWDIR%%/vendor/doctrine/deprecations/composer.json
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
-%%WWWDIR%%/vendor/doctrine/deprecations/phpcs.xml
-%%WWWDIR%%/vendor/doctrine/deprecations/phpstan.neon
-%%WWWDIR%%/vendor/doctrine/deprecations/psalm.xml
 %%WWWDIR%%/vendor/doctrine/event-manager/LICENSE
 %%WWWDIR%%/vendor/doctrine/event-manager/README.md
 %%WWWDIR%%/vendor/doctrine/event-manager/UPGRADE.md
@@ -17776,16 +17774,10 @@
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/GO/SchedulerTest.php
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/async_job.php
 %%WWWDIR%%/vendor/peppeocchi/php-cron-scheduler/tests/test_job.php
-%%WWWDIR%%/vendor/php-di/invoker/.github/CONTRIBUTING.md
-%%WWWDIR%%/vendor/php-di/invoker/.github/FUNDING.yml
-%%WWWDIR%%/vendor/php-di/invoker/.github/pull_request_template.md
-%%WWWDIR%%/vendor/php-di/invoker/.github/workflows/ci.yml
-%%WWWDIR%%/vendor/php-di/invoker/.phpcs.xml.dist
 %%WWWDIR%%/vendor/php-di/invoker/CONTRIBUTING.md
 %%WWWDIR%%/vendor/php-di/invoker/LICENSE
 %%WWWDIR%%/vendor/php-di/invoker/README.md
 %%WWWDIR%%/vendor/php-di/invoker/composer.json
-%%WWWDIR%%/vendor/php-di/invoker/doc/parameter-resolvers.md
 %%WWWDIR%%/vendor/php-di/invoker/src/CallableResolver.php
 %%WWWDIR%%/vendor/php-di/invoker/src/Exception/InvocationException.php
 %%WWWDIR%%/vendor/php-di/invoker/src/Exception/NotCallableException.php
