@@ -17,6 +17,15 @@
  )
  
  
+@@ -210,7 +209,7 @@ install_requires = [
+     'diff-match-patch>=20181111',
+     'intervaltree>=3.0.2',
+     'ipython>=7.31.1,<9.0.0,!=8.8.0,!=8.9.0,!=8.10.0,!=8.11.0,!=8.12.0,!=8.12.1',
+-    'jedi>=0.17.2,<0.19.0',
++    'jedi>=0.17.2',
+     'jellyfish>=0.7',
+     'jsonschema>=3.2.0',
+     'keyring>=17.0.0',
 @@ -229,7 +228,7 @@ install_requires = [
      'pyls-spyder>=0.4.0',
      'pyqt5<5.16',
