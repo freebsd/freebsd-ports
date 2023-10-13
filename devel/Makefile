@@ -7794,6 +7794,7 @@
     SUBDIR += tokei
     SUBDIR += tokio-console
     SUBDIR += toml11
+    SUBDIR += tomlplusplus
     SUBDIR += tortoisehg
     SUBDIR += tpasm
     SUBDIR += tradcpp
