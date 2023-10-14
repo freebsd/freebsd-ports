@@ -1,3 +1,29 @@
+  <vuln vid="ae0ee356-6ae1-11ee-bfb6-8c164567ca3c">
+    <topic>libcue -- out-of-bounds array access</topic>
+    <affects>
+      <package>
+	<name>libcue</name>
+	<range><lt>2.3.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libcue team reports:</p>
+	<blockquote cite="https://github.com/lipnitsk/libcue/releases/tag/v2.3.0">
+	  <p>There is a vulnerability to out-of-bounds array access.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43641</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-43641</url>
+    </references>
+    <dates>
+      <discovery>2023-10-09</discovery>
+      <entry>2023-10-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a1b2624-6a89-11ee-af06-5404a68ad561">
     <topic>traefik -- Resource exhaustion by malicious HTTP/2 client</topic>
     <affects>
