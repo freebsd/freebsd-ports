@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3
 
 BROKEN=		fails to build
+DEPRECATED=	Outdated, fails to build and marked broken several months ago
+EXPIRATION_DATE=2023-11-30
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
