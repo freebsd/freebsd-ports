@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp \
 		protoc:devel/protobuf
 
 BROKEN=		error: use of undeclared identifier '_1'
+DEPRECATED=	Marked broken for more than a year
+EXPIRATION_DATE=2023-11-30
 
 USES=		compiler:c++11-lang gl gmake iconv qmake qt:5 sdl sqlite ssl
 USE_GL=		gl
