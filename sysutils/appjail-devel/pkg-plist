@@ -13,11 +13,14 @@ libexec/appjail/appjail-config/tok
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
+%%DATADIR%%/cmd/checkOld
 %%DATADIR%%/cmd/cmd
 %%DATADIR%%/cmd/cpuset
+%%DATADIR%%/cmd/deleteOld
 %%DATADIR%%/cmd/disable
 %%DATADIR%%/cmd/enable
 %%DATADIR%%/cmd/enabled
+%%DATADIR%%/cmd/etcupdate
 %%DATADIR%%/cmd/expose
 %%DATADIR%%/cmd/fetch
 %%DATADIR%%/cmd/fstab
@@ -143,6 +146,7 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
+%%DATADIR%%/scripts/super-mv.sh
 %%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/linux.conf
