@@ -10,6 +10,9 @@ LICENSE=	GPLv2+ BSD3CLAUSE BSD2CLAUSE
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Fails to build and marked broken for several months
+EXPIRATION_DATE=2023-11-30
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libIL.so:graphics/devil \
 		libogg.so:audio/libogg \
