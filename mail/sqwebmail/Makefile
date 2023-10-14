@@ -14,7 +14,8 @@ BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libcourier-unicode.so:devel/courier-unicode
+		libcourier-unicode.so:devel/courier-unicode \
+		libidn2.so:dns/libidn2
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
