@@ -116,6 +116,9 @@ post-install:
 .if !defined(OCIO_SLAVE) || (defined(OCIO_SLAVE) && ${OCIO_SLAVE} != pymodule)
 	@cd ${STAGEDIR}${PREFIX} && ${RM} -r lib/libOpenColorIO*.a lib/python*
 .endif
+.if defined(OCIO_SLAVE) && ${OCIO_SLAVE} == tools
+	${RM} -r ${STAGEDIR}${PREFIX}/share/OpenColorIO
+.endif
 
 post-install-DOCS-on:
 	@cd ${STAGEDIR}${PREFIX}/share/doc && ${MV} OpenColorIO ${PKGNAMEPREFIX}${PORTNAME}
