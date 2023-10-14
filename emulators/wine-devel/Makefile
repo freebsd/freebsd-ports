@@ -1,11 +1,11 @@
 PORTNAME=	wine
-DISTVERSION=	8.15
+DISTVERSION=	8.16
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	damjan.jov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
 WWW=		https://www.winehq.org
 

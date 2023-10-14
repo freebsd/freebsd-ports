@@ -1304,6 +1304,7 @@ lib/wine/%%WINEARCH%%-unix/amsi.dll.so
 lib/wine/%%WINEARCH%%-unix/amstream.dll.so
 lib/wine/%%WINEARCH%%-unix/apphelp.dll.so
 lib/wine/%%WINEARCH%%-unix/appwiz.cpl.so
+lib/wine/%%WINEARCH%%-unix/appxdeploymentclient.dll.so
 lib/wine/%%WINEARCH%%-unix/arp.exe.so
 lib/wine/%%WINEARCH%%-unix/aspnet_regiis.exe.so
 lib/wine/%%WINEARCH%%-unix/atl.dll.so
@@ -2034,6 +2035,7 @@ lib/wine/%%WINEARCH%%-unix/spoolsv.exe.so
 lib/wine/%%WINEARCH%%-unix/sppc.dll.so
 lib/wine/%%WINEARCH%%-unix/srclient.dll.so
 lib/wine/%%WINEARCH%%-unix/srvcli.dll.so
+lib/wine/%%WINEARCH%%-unix/srvsvc.dll.so
 lib/wine/%%WINEARCH%%-unix/sspicli.dll.so
 lib/wine/%%WINEARCH%%-unix/start.exe.so
 lib/wine/%%WINEARCH%%-unix/sti.dll.so
@@ -2103,6 +2105,7 @@ lib/wine/%%WINEARCH%%-unix/wiaservc.dll.so
 lib/wine/%%WINEARCH%%-unix/wimgapi.dll.so
 lib/wine/%%WINEARCH%%-unix/win32u.dll.so
 lib/wine/%%WINEARCH%%-unix/win32u.so
+lib/wine/%%WINEARCH%%-unix/windows.applicationmodel.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.devices.bluetooth.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.devices.enumeration.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.devices.usb.dll.so
@@ -2253,6 +2256,7 @@ lib/wine/%%WINEARCH%%-windows/amstream.dll
 lib/wine/%%WINEARCH%%-windows/apisetschema.dll
 lib/wine/%%WINEARCH%%-windows/apphelp.dll
 lib/wine/%%WINEARCH%%-windows/appwiz.cpl
+lib/wine/%%WINEARCH%%-windows/appxdeploymentclient.dll
 lib/wine/%%WINEARCH%%-windows/arp.exe
 lib/wine/%%WINEARCH%%-windows/aspnet_regiis.exe
 lib/wine/%%WINEARCH%%-windows/atl.dll
@@ -2780,6 +2784,7 @@ lib/wine/%%WINEARCH%%-windows/spoolsv.exe
 lib/wine/%%WINEARCH%%-windows/sppc.dll
 lib/wine/%%WINEARCH%%-windows/srclient.dll
 lib/wine/%%WINEARCH%%-windows/srvcli.dll
+lib/wine/%%WINEARCH%%-windows/srvsvc.dll
 lib/wine/%%WINEARCH%%-windows/sspicli.dll
 lib/wine/%%WINEARCH%%-windows/start.exe
 lib/wine/%%WINEARCH%%-windows/stdole2.tlb
@@ -2872,6 +2877,7 @@ lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win87em.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winaspi.dll16
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/windebug.dll16
+lib/wine/%%WINEARCH%%-windows/windows.applicationmodel.dll
 lib/wine/%%WINEARCH%%-windows/windows.devices.bluetooth.dll
 lib/wine/%%WINEARCH%%-windows/windows.devices.enumeration.dll
 lib/wine/%%WINEARCH%%-windows/windows.devices.usb.dll
