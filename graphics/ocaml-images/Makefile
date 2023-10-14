@@ -13,6 +13,8 @@ COMMENT=	Objective Caml image processing library
 WWW=		http://pauillac.inria.fr/camlimages/
 
 BROKEN=		does not build: broken plist
+DEPRECATED=	Fails to package and marked broken over a year ago
+EXPIRATION_DATE=2023-11-30
 
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ocaml.m4:lang/ocaml-autoconf
 BUILD_DEPENDS+=	omake:devel/omake
