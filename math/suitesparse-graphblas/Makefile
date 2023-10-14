@@ -1,5 +1,5 @@
 PORTNAME=	${MPORTNAME:tl}
-PORTVERSION=	8.2.0
+PORTVERSION=	8.2.1
 CATEGORIES=	math
 
 COMMENT=	Graph algorithms in the language of linear algebra
@@ -10,6 +10,7 @@ LICENSE=	APACHE20
 USES=		localbase:ldflags
 
 MPORTNAME=	GraphBLAS
+CMAKE_ARGS+=	-DNSTATIC:BOOL=false
 USE_LDCONFIG=	yes
 
 PORTDOCS=	CSC20_OpenMP_GraphBLAS.pdf Davis_HPEC18.pdf	\
