@@ -1,4 +1,4 @@
-TIMESTAMP = 1696742918
+TIMESTAMP = 1697337335
 SHA256 (rust/crates/ab_glyph-0.2.22.crate) = b1061f3ff92c2f65800df1f12fc7b4ff44ee14783104187dd04dfee6f11b0fd2
 SIZE (rust/crates/ab_glyph-0.2.22.crate) = 18440
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046
@@ -1045,5 +1045,5 @@ SHA256 (rust/crates/zvariant_derive-3.15.0.crate) = 934d7a7dfc310d6ee06c87ffe88e
 SIZE (rust/crates/zvariant_derive-3.15.0.crate) = 10943
 SHA256 (rust/crates/zvariant_utils-1.0.1.crate) = 7234f0d811589db492d16893e3f21e8e2fd282e6d01b0cddee310322062cc200
 SIZE (rust/crates/zvariant_utils-1.0.1.crate) = 6223
-SHA256 (waycrate-xdg-desktop-portal-luminous-v0.1.1_GH0.tar.gz) = 32ca45851bf0001ed51fb392fda5cc8b9d3537489596d7e8897600238af793a0
-SIZE (waycrate-xdg-desktop-portal-luminous-v0.1.1_GH0.tar.gz) = 53217
+SHA256 (waycrate-xdg-desktop-portal-luminous-v0.1.4_GH0.tar.gz) = da9b9c5fdabcd44fc9f0ee947a65a74259f90872cf47bc66fa3b474062875c37
+SIZE (waycrate-xdg-desktop-portal-luminous-v0.1.4_GH0.tar.gz) = 64804
