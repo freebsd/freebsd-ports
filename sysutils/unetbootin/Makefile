@@ -2,7 +2,8 @@ PORTNAME=	unetbootin
 PORTVERSION=	702
 PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/UNetbootin/${PORTVERSION} \
+		https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -30,8 +31,8 @@ post-patch:
 
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && ${LUPDATE} unetbootin.pro \
-		     && ${LRELEASE} unetbootin.pro \
-		     && ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
+		&& ${LRELEASE} unetbootin.pro \
+		&& ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unetbootin ${STAGEDIR}${PREFIX}/bin
