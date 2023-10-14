@@ -6,7 +6,7 @@ lib/cmake/SPEX/SPEXTargets.cmake
 lib/libspex.a
 lib/libspex.so
 lib/libspex.so.2
-lib/libspex.so.2.2.0
+lib/libspex.so.2.2.1
 libdata/pkgconfig/SPEX.pc
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_README.md
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_UserGuide.pdf
