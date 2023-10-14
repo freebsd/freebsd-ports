@@ -28,7 +28,7 @@ NC_DESC=	Install TLS-enabled netcat
 
 CONFLICTS_INSTALL=		libressl \
 				libretls
-default_CONFLICTS_INSTALL=	openssl openssl3[012] openssl-quictls
+default_CONFLICTS_INSTALL=	openssl openssl111 openssl3[12] openssl-quictls
 
 .if ${FLAVOR:U} == default
 OPTIONS_EXCLUDE=	LIBTLS
