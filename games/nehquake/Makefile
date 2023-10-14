@@ -11,6 +11,8 @@ WWW=		http://planetquake.com/nehahra/
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: sb_lines
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: sb_lines
+DEPRECATED= Fails to build, abandoned upstream and marked broken over a year go
+EXPIRATION_DATE=2023-11-30
 
 USES=		gl gmake dos2unix tar:bzip2 xorg
 USE_GL=		gl
