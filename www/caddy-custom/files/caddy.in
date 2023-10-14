@@ -4,14 +4,39 @@
 # REQUIRE: LOGIN DAEMON NETWORKING
 # KEYWORD: shutdown
 
-# To enable caddy, add 'caddy_enable="YES"' to /etc/rc.conf or
-# /etc/rc.conf.local
+# To enable caddy:
+#
+# - Edit %%PREVIX%%/etc/caddy/Caddyfile
+#   See https://caddyserver.com/docs/
+# - Run 'service enable caddy'
+#
+# Note while Caddy currently defaults to running as root:wheel, it is strongly
+# recommended to run the server as an unprivileged user, such as www:www.
+#
+# - Use security/portacl-rc to enable privileged port binding:
+#
+#   # pkg install security/portacl-rc
+#   # sysrc portacl_users+=www
+#   # sysrc portacl_user_www_tcp="http https"
+#   # sysrc portacl_user_www_udp="https"
+#   # service portacl enable
+#   # service portacl start
+#
+# - Configure caddy to run as www:www
+#
+#   # sysrc caddy_user=www caddy_group=www
+#
+# - Note if Caddy has been started as root previously, files in
+#   /var/log/caddy, /var/db/caddy, and /var/run/caddy may require their ownership
+#   changing manually.
 
 # Optional settings:
 # caddy_command (string):     Full path to the caddy binary
 # caddy_config (string):      Full path to caddy config file
 #                             (%%PREFIX%%/etc/caddy/Caddyfile)
 # caddy_adapter (string):     Config adapter type (caddyfile)
+# caddy_admin (string):       Default administration endpoint
+#                             (unix//var/run/caddy/caddy.sock)
 # caddy_directory (string):   Root for caddy storage (ACME certs, etc.)
 #                             (/var/db/caddy)
 # caddy_extra_flags (string): Extra flags passed to caddy start
@@ -39,9 +64,10 @@ load_rc_config $name
 # Defaults
 : ${caddy_enable:=NO}
 : ${caddy_adapter:=caddyfile}
-: ${caddy_config:="%%PREFIX%%/etc/caddy/Caddyfile"}
+: ${caddy_config:="%%PREFIX%%/etc/${name}/Caddyfile"}
+: ${caddy_admin:="unix//var/run/${name}/${name}.sock"}
 : ${caddy_command:="%%PREFIX%%/bin/${name}"}
-: ${caddy_directory:=/var/db/caddy}
+: ${caddy_directory:="/var/db/${name}"}
 : ${caddy_extra_flags:=""}
 : ${caddy_logdir:="/var/log/${name}"}
 : ${caddy_logfile:="${caddy_logdir}/${name}.log"}
@@ -52,6 +78,9 @@ load_rc_config $name
 : ${XDG_CONFIG_HOME:="${caddy_directory}/config"}
 : ${XDG_DATA_HOME:="${caddy_directory}/data"}
 export XDG_CONFIG_HOME XDG_DATA_HOME
+
+# Default admin interface
+export CADDY_ADMIN="${caddy_admin}"
 
 command="${caddy_command}"
 pidfile="/var/run/${name}/${name}.pid"
@@ -70,9 +99,10 @@ else
 fi
 
 # Extra Commands
-extra_commands="configtest reload"
+extra_commands="configtest reload reloadssl"
 configtest_cmd="caddy_execute validate ${caddy_flags}"
 reload_cmd="caddy_execute reload ${caddy_flags}"
+reloadssl_cmd="caddy_execute reload --force ${caddy_flags}"
 
 caddy_execute()
 {
@@ -115,7 +145,7 @@ caddy_prestop()
 
     echo -n "Stopping caddy... "
 
-    result="$(caddy_execute stop 2>&1)"
+    result="$(caddy_execute stop ${caddy_flags} 2>&1)"
     if [ ${?} -eq 0 ]; then
         echo "done"
         exit 0
