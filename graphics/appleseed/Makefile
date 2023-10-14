@@ -24,6 +24,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}hq
 
 BROKEN=		cannot build with recent Boost and OCIO libs
+DEPRECATED=	Fails to build and marked broken for several months
+EXPIRATION_DATE=2023-11-30
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	not ported to it yet
