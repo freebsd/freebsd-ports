@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		yarn-node18>0:www/yarn-node18
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl30 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		${LOCALBASE}/lib/libsignal_tokenizer.a:devel/signal-fts5-extension \
