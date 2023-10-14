@@ -44,6 +44,8 @@ SHEBANG_FILES=	csg/scripts/csg_call.in csg/scripts/csg_inverse.in \
 		xtp/scripts/xtp_modify_jobfile.in \
 		xtp/scripts/xtp_qmmm2qm.in
 
+CXXFLAGS+=	-DBOOST_TIMER_ENABLE_DEPRECATED
+
 CMAKE_ON=	BUILD_XTP
 CMAKE_ARGS=	-DLOCALBASE=${LOCALBASE} -DPython_EXECUTABLE=${PYTHON_CMD}
 
