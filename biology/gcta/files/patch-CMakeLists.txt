@@ -1,0 +1,98 @@
+--- CMakeLists.txt.orig	2022-08-03 06:01:52 UTC
++++ CMakeLists.txt
+@@ -3,7 +3,7 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+ SET(PROJECT_NAME_STR GCTA2)
+ PROJECT(${PROJECT_NAME_STR} C CXX)
+ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+-SET(CMAKE_CXX_STANDARD 11)
++SET(CMAKE_CXX_STANDARD 14)
+ SET(CMAKE_C_STANDARD 11)
+ 
+ # get system architecture
+@@ -16,8 +16,8 @@ endif()
+     MESSAGE(FATAL_ERROR "Use the Visual Studio project file which located in gcta_win64 directory")
+ endif()
+ 
+-if("${CMAKE_SYSTEM_NAME}" MATCHES "Linux" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
+-    MESSAGE("Linux and Mac are supported.")
++if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Linux" OR "${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
++    MESSAGE("FreeBSD, Linux and Mac are supported.")
+ else()
+     MESSAGE("Your system: ${CMAKE_SYSTEM_NAME}")
+     MESSAGE(FATAL_ERROR "Only Linux and Mac are currently supported.")
+@@ -43,18 +43,18 @@ INCLUDE_DIRECTORIES("${EIGEN3_INCLUDE_DIR}")
+ ENDIF()
+ INCLUDE_DIRECTORIES("${EIGEN3_INCLUDE_DIR}")
+ 
+-SET(SPECTRA_LIB "$ENV{SPECTRA_LIB}")
+-IF(NOT SPECTRA_LIB)
+-    MESSAGE(FATAL_ERROR "Specify environment variable SPECTRA_LIB to the location of Spectra package")
++SET(SPECTRA_INCLUDE_DIR "$ENV{SPECTRA_INCLUDE_DIR}")
++IF(NOT SPECTRA_INCLUDE_DIR)
++    MESSAGE(FATAL_ERROR "Specify environment variable SPECTRA_INCLUDE_DIR to the location of Spectra package")
+ ENDIF()
+-INCLUDE_DIRECTORIES("${SPECTRA_LIB}")
++INCLUDE_DIRECTORIES("${SPECTRA_INCLUDE_DIR}")
+ 
+ 
+-SET(BOOST_LIB "$ENV{BOOST_LIB}")
+-IF(NOT BOOST_LIB)
+-    MESSAGE(FATAL_ERROR "Specify environment variable BOOST_LIB to the location of BOOST library")
++SET(BOOST_INCLUDE_DIR "$ENV{BOOST_INCLUDE_DIR}")
++IF(NOT BOOST_INCLUDE_DIR)
++    MESSAGE(FATAL_ERROR "Specify environment variable BOOST_INCLUDE_DIR to the location of BOOST headers")
+ ENDIF()
+-INCLUDE_DIRECTORIES("${BOOST_LIB}")
++INCLUDE_DIRECTORIES("${BOOST_INCLUDE_DIR}")
+ 
+ 
+ # PLINK2.0 pgen library;
+@@ -63,13 +63,28 @@ message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECT
+ 
+ 
+ message(STATUS "ARCHITECTURE:${CMAKE_LIBRARY_ARCHITECTURE}")
+-if(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
++if("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+     SET(OPENBLAS "$ENV{OPENBLAS}")
+     IF(NOT OPENBLAS)
+         MESSAGE(FATAL_ERROR "Specify environment variable OPENBLAS to the location of OPENBLAS package")
+     ENDIF()
+     INCLUDE_DIRECTORIES("${OPENBLAS}/include")
+ 
++    find_library(lib_openblas NAMES openblas PATHS "${OPENBLAS}" "${LOCALBASE}/lib")
++    set(BLAS_LIB ${lib_openblas})
++
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
++    set(CMAKE_CXX_FLAGS_RELEASE  "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
++    set(CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g")
++    add_compile_options(-fopenmp)
++
++elseif(CMAKE_LIBRARY_ARCHITECTURE STREQUAL "aarch64")
++    SET(OPENBLAS "$ENV{OPENBLAS}")
++    IF(NOT OPENBLAS)
++        MESSAGE(FATAL_ERROR "Specify environment variable OPENBLAS to the location of OPENBLAS package")
++    ENDIF()
++    INCLUDE_DIRECTORIES("${OPENBLAS}/include")
++
+     find_library(lib_openblas NAMES openblas PATHS "${OPENBLAS}" "${OPENBLAS}/lib")
+     set(BLAS_LIB ${lib_openblas})
+ 
+@@ -169,6 +184,8 @@ if(APPLE)
+ if(APPLE)
+     link_directories(${MKLROOT}/lib)
+     link_directories(/usr/local/lib)
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++    link_directories(${LOCALBASE}/lib)
+ else(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     #linux
+     link_directories(${MKLROOT}/../../../lib/intel64)
+@@ -179,6 +196,9 @@ if(APPLE)
+ if(APPLE)
+     # iomp5
+     target_link_libraries(gcta64 ${libs_list} Pgenlib mainV1 z ${BLAS_LIB} sqlite3 zstd_s omp pthread m dl )
++elseif("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
++    # FIXME: Clean this up
++    target_link_libraries(gcta64 mainV1 ${libs_list} Pgenlib gsl z sqlite3 zstd -Wl,--start-group ${BLAS_LIB} -Wl,--end-group -Wl,--whole-archive -lpthread -Wl,--no-whole-archive m dl)
+ else()
+     if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+         # error keeps only

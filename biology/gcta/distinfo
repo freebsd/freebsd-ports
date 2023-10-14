@@ -1,5 +1,5 @@
-TIMESTAMP = 1657137653
-SHA256 (gcta_1.26.0_src.zip) = 554c48f421c93cbaf64b1c300ca507d8e7a56086b5c7d857227fbd4048f42acf
-SIZE (gcta_1.26.0_src.zip) = 198045
-SHA256 (eigen-3.3.9.tar.gz) = 7985975b787340124786f092b3a07d594b2e9cd53bbfe5f3d9b1daee7d55f56f
-SIZE (eigen-3.3.9.tar.gz) = 2142379
+TIMESTAMP = 1697202096
+SHA256 (jianyangqt-gcta-v1.94.1_GH0.tar.gz) = d38841587bef016d7885cc1b3287d7ed0373bd370674130e814e2c5e6a90bfbf
+SIZE (jianyangqt-gcta-v1.94.1_GH0.tar.gz) = 1101577
+SHA256 (zhilizheng-plink-ng-3744540_GH0.tar.gz) = dfa4879bc6bcbe24411451748c7c5dc803e42cafa55b008134f0d123cd933222
+SIZE (zhilizheng-plink-ng-3744540_GH0.tar.gz) = 3222588

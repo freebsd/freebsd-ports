@@ -1,34 +1,40 @@
 PORTNAME=	gcta
-DISTVERSION=	1.26.0
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.94.1
 CATEGORIES=	biology
-MASTER_SITES=	https://cnsgenomics.com/software/gcta/pre_gcta/:main \
-		https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_VERSION}/:eigen
-DISTFILES=	${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}:main \
-		eigen-${EIGEN_VERSION}.tar.gz:eigen
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genome-wide Complex Trait Analysis
 WWW=		https://cnsgenomics.com/software/gcta/index.html
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/GNU_General_Public_License_v3.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libopenblas.so:math/openblas
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		spectra>0:math/spectra
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libopenblas.so:math/openblas \
+		libsqlite3.so:databases/sqlite3 \
+		libzstd.so:archivers/zstd
 
-USES=		compiler:c++11-lang dos2unix gmake localbase:ldflags zip
+USES=		cmake eigen:3 localbase:ldflags
+USE_GITHUB=	yes
 
-CXXFLAGS+=	-I${WRKDIR}/eigen-${EIGEN_VERSION} -fopenmp
-LDFLAGS+=	-lopenblas
+GH_ACCOUNT=	jianyangqt
+GH_TUPLE=	zhilizheng:plink-ng:3744540:plink/submods/plink-ng
 
-INSTALL_TARGET=	install-strip
-PLIST_FILES=	bin/gcta
+CONFIGURE_ENV+=	EIGEN3_INCLUDE_DIR=${LOCALBASE}/include/eigen3 \
+		BOOST_INCLUDE_DIR=${LOCALBASE}/include/boost \
+		OPENBLAS=${LOCALBASE} \
+		SPECTRA_INCLUDE_DIR=${LOCALBASE}/include/Spectra
 
-EIGEN_VERSION=	3.3.9
+LDFLAGS+=	-fopenmp
 
-do-extract:
-	@${UNZIP_NATIVE_CMD} -d ${WRKSRC} ${DISTDIR}/${PORTNAME}_${DISTVERSION}_src${EXTRACT_SUFX}
-	@cd ${WRKDIR} && \
-		${TAR} xzf ${DISTDIR}/eigen-${EIGEN_VERSION}.tar.gz
+PLIST_FILES=	bin/gcta64 bin/gcta
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
+	${RLN} ${STAGEDIR}${PREFIX}/bin/gcta64 ${STAGEDIR}${PREFIX}/bin/gcta
 
 .include <bsd.port.mk>
