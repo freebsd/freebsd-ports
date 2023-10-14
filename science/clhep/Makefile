@@ -1,5 +1,5 @@
 PORTNAME=	clhep
-PORTVERSION=	2.4.7.0
+PORTVERSION=	2.4.7.1
 CATEGORIES=	science math
 MASTER_SITES=	https://proj-clhep.web.cern.ch/proj-clhep/dist1/
 
@@ -22,7 +22,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		'/DESTINATION/s|lib$${LIB_SUFFIX}|libdata|' \
 		${WRKSRC}/cmake/Modules/ClhepToolchain.cmake
-	@${REINPLACE_CMD} -e '/mixmax_skip_N8.icc/d; s/mixmax_skip_N240.icc//g' \
-		${WRKSRC}/Random/Random/CMakeLists.txt
 
 .include <bsd.port.mk>
