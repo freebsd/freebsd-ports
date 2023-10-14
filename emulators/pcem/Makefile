@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: CGACONST
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: CGACONST
+DEPRECATED=	Fails to build and marked broken over a year ago
+EXPIRATION_DATE=2023-11-30
 
 USES=		autoreconf compiler gl gmake localbase:ldflags openal pkgconfig sdl zip
 USE_GL=		gl
