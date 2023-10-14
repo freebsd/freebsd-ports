@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.37.1
+DISTVERSION=	1.37.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -24,7 +24,7 @@ GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.78.0
+V8_VERS=	0.79.2
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -143,15 +143,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_ast-0.29.3 \
 		deno_cache_dir-0.6.0 \
 		deno_config-0.3.1 \
-		deno_core-0.218.0 \
+		deno_core-0.222.0 \
 		deno_doc-0.67.0 \
 		deno_emit-0.28.0 \
 		deno_graph-0.55.0 \
 		deno_lint-0.51.0 \
 		deno_lockfile-0.17.1 \
 		deno_media_type-0.1.2 \
-		deno_npm-0.15.1 \
-		deno_ops-0.94.0 \
+		deno_npm-0.15.2 \
+		deno_ops-0.98.0 \
 		deno_semver-0.4.0 \
 		deno_semver-0.5.1 \
 		deno_task_shell-0.13.2 \
@@ -171,8 +171,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen_derive-0.1.4 \
 		dprint-core-0.62.1 \
 		dprint-plugin-json-0.17.4 \
-		dprint-plugin-markdown-0.16.1 \
-		dprint-plugin-typescript-0.87.1 \
+		dprint-plugin-markdown-0.16.2 \
+		dprint-plugin-typescript-0.88.1 \
 		dprint-swc-ext-0.12.0 \
 		dsa-0.6.1 \
 		dyn-clone-1.0.14 \
@@ -454,7 +454,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.107 \
 		serde_repr-0.1.16 \
 		serde_urlencoded-0.7.1 \
-		serde_v8-0.127.0 \
+		serde_v8-0.131.0 \
 		sha-1-0.10.0 \
 		sha1-0.10.6 \
 		sha2-0.10.8 \
@@ -579,7 +579,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf8parse-0.2.1 \
 		uuid-0.8.2 \
 		uuid-1.4.1 \
-		v8-0.78.0 \
+		v8-0.79.2 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vsimd-0.8.0 \
