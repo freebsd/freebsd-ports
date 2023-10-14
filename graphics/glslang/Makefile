@@ -1,6 +1,9 @@
 PORTNAME=	glslang
-DISTVERSION=	13.0.0
+DISTVERSION=	13.1.0
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	eac012fff3a7.patch:-p1 # https://github.com/KhronosGroup/glslang/pull/3406
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	OpenGL and OpenGL ES shader front end and validator
@@ -13,5 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cmake:testing compiler:c++11-lib python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	KhronosGroup
+CMAKE_ON=	ALLOW_EXTERNAL_SPIRV_TOOLS
 
 .include <bsd.port.mk>
