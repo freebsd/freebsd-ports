@@ -5,23 +5,6 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20231014:
-  AFFECTS: users of security/openssl and security/openssl30
-  AUTHOR: brnrd@FreeBSD.org
-
-  The openssl port was renamed to openssl111 and subsequently the
-  openssl30 port was renamed to openssl.
-
-  The shared library version of OpenSSL has been bumped.
-
-  Users of DEFAULT_VERSIONS= ssl=openssl30 must update this to
-  ssl=openssl.
-  Users of DEFAULT_VERSIONS= ssl=openssl should not change this unless
-  they use ports that require the deprecated OpenSSL 1.1.1 version.
-
-  You must rebuild all ports that depend on OpenSSL if you use OpenSSL
-  from ports.
-
 20231011:
   AFFECTS: users of www/caddy
   AUTHOR:  adamw@FreeBSD.org
