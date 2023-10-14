@@ -11,6 +11,9 @@ WWW=		http://freetennis.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated port graphics/ocaml-images
+EXPIRATION_DATE=2023-11-30
+
 BUILD_DEPENDS=	ocamlopt:lang/ocaml \
 		ocaml-images>3.0:graphics/ocaml-images \
 		${OCAML_DEPENDS}
