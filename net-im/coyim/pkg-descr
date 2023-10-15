@@ -1,3 +1,3 @@
-CoyIM is a chat client that is safe and secure by default: no
+CoyIM is an XMPP chat client that is safe and secure by default: no
 settings to change, no plugins to install, no computer configuration
-to change.
+to change. Requires Tor and is written in Go.
