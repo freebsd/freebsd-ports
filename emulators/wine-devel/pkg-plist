@@ -282,6 +282,8 @@ include/wine/windows/d3d12sdklayers.h
 include/wine/windows/d3d12sdklayers.idl
 include/wine/windows/d3d12shader.h
 include/wine/windows/d3d12shader.idl
+include/wine/windows/d3d12video.h
+include/wine/windows/d3d12video.idl
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
@@ -715,6 +717,7 @@ include/wine/windows/netcfgx.h
 include/wine/windows/netcfgx.idl
 include/wine/windows/netcon.h
 include/wine/windows/netcon.idl
+include/wine/windows/netevent.h
 include/wine/windows/netfw.h
 include/wine/windows/netfw.idl
 include/wine/windows/netioapi.h
@@ -924,6 +927,8 @@ include/wine/windows/structuredquerycondition.h
 include/wine/windows/structuredquerycondition.idl
 include/wine/windows/svrapi.h
 include/wine/windows/synchapi.h
+include/wine/windows/systemmediatransportcontrolsinterop.h
+include/wine/windows/systemmediatransportcontrolsinterop.idl
 include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
 include/wine/windows/taskschd.h
@@ -1111,6 +1116,8 @@ include/wine/windows/windows.perception.spatial.surfaces.h
 include/wine/windows/windows.perception.spatial.surfaces.idl
 include/wine/windows/windows.security.credentials.h
 include/wine/windows/windows.security.credentials.idl
+include/wine/windows/windows.security.credentials.ui.h
+include/wine/windows/windows.security.credentials.ui.idl
 include/wine/windows/windows.security.cryptography.h
 include/wine/windows/windows.security.cryptography.idl
 include/wine/windows/windows.security.isolation.h
@@ -1162,6 +1169,7 @@ include/wine/windows/winnls32.h
 include/wine/windows/winnt.h
 include/wine/windows/winnt.rh
 include/wine/windows/winperf.h
+include/wine/windows/winppi.h
 include/wine/windows/winreg.h
 include/wine/windows/winresrc.h
 include/wine/windows/winsafer.h
@@ -2114,10 +2122,13 @@ lib/wine/%%WINEARCH%%-unix/windows.gaming.ui.gamebar.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.globalization.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.devices.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.dll.so
+lib/wine/%%WINEARCH%%-unix/windows.media.mediacontrol.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.speech.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.networking.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.networking.hostname.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.perception.stub.dll.so
+lib/wine/%%WINEARCH%%-unix/windows.security.credentials.ui.userconsentverifier.dll.so
+lib/wine/%%WINEARCH%%-unix/windows.storage.applicationdata.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.system.profile.systemmanufacturers.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.ui.dll.so
 lib/wine/%%WINEARCH%%-unix/windowscodecs.dll.so
@@ -2886,10 +2897,13 @@ lib/wine/%%WINEARCH%%-windows/windows.gaming.ui.gamebar.dll
 lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.dll
+lib/wine/%%WINEARCH%%-windows/windows.media.mediacontrol.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll
 lib/wine/%%WINEARCH%%-windows/windows.networking.hostname.dll
 lib/wine/%%WINEARCH%%-windows/windows.perception.stub.dll
+lib/wine/%%WINEARCH%%-windows/windows.security.credentials.ui.userconsentverifier.dll
+lib/wine/%%WINEARCH%%-windows/windows.storage.applicationdata.dll
 lib/wine/%%WINEARCH%%-windows/windows.system.profile.systemmanufacturers.dll
 lib/wine/%%WINEARCH%%-windows/windows.ui.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
