@@ -10,7 +10,7 @@ WWW=		https://launchpad.net/xmlf90
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	fox-xml
+CONFLICTS_INSTALL=	fox-xml # see https://gitlab.com/siesta-project/libraries/xmlf90/-/issues/8
 
 USES=		autoreconf fortran gmake libtool
 USE_LDCONFIG=	yes
