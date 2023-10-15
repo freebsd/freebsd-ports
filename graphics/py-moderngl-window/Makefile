@@ -1,5 +1,5 @@
 PORTNAME=	moderngl-window
-DISTVERSION=	2.4.4
+DISTVERSION=	2.4.5
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9:graphics/py-pillow@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=10.0.1:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}moderngl<6:graphics/py-moderngl@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}pyglet>0:graphics/py-pyglet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyglet>=2.0.0:graphics/py-pyglet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyrr>=0.10.3,<1:math/py-pyrr@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyWavefront>0:misc/py-PyWavefront@${PY_FLAVOR} # optional
 #RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}trimesh>0:devel/py-trimesh@${PY_FLAVOR} # optional, causes conflicts due to pyglet1 vs. pyglet
