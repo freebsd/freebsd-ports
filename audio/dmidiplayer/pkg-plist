@@ -1,6 +1,7 @@
 bin/dmidiplayer
 share/applications/net.sourceforge.dmidiplayer.desktop
 %%DATADIR%%/Negra_Sombra.kar
+%%DATADIR%%/Schubert_Standchen.mid
 %%DATADIR%%/dmidiplayer_cs.qm
 %%DATADIR%%/dmidiplayer_de.qm
 %%DATADIR%%/dmidiplayer_es.qm
