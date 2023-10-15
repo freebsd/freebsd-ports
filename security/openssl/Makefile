@@ -12,7 +12,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-#EXPIRES=	2025-03-25
+#EXPIRATION_DATE=	2026-09-07
 
 CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl111 openssl3[12] openssl-quictls
 
