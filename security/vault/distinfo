@@ -1,4 +1,4 @@
-TIMESTAMP = 1688100641
+TIMESTAMP = 1697381170
 SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/go.mod) = 95341cf91029519fbefe7ffd6deca16e4e8b66c5161dcb2702857d5e8bb86c62
 SIZE (go/security_vault/hashicorp-vault-v1.14.0_GH0/go.mod) = 26115
 SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/api/go.mod) = ed6f55c24bcb000178b01e54a80e175bc4d7266f3c6c4933a852f9f629c91e76
@@ -11,5 +11,7 @@ SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/api/auth/userpass/go.mod) 
 SIZE (go/security_vault/hashicorp-vault-v1.14.0_GH0/api/auth/userpass/go.mod) = 108
 SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/sdk/go.mod) = f712cb4478cf99ce40d2edb3c2c30ac05179373b7cf8e6b6a917c65506d9db27
 SIZE (go/security_vault/hashicorp-vault-v1.14.0_GH0/sdk/go.mod) = 4153
+SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/vault-web_ui-1.14.0.tar.gz) = edfe47e08484831a685058570207d183eaf5aa6aa043fb414a1fddc6bf08e395
+SIZE (go/security_vault/hashicorp-vault-v1.14.0_GH0/vault-web_ui-1.14.0.tar.gz) = 2118920
 SHA256 (go/security_vault/hashicorp-vault-v1.14.0_GH0/hashicorp-vault-v1.14.0_GH0.tar.gz) = 0fad3903be0573312447e7250adc192e920cead1fb5d4dc4cca6c79c385907eb
 SIZE (go/security_vault/hashicorp-vault-v1.14.0_GH0/hashicorp-vault-v1.14.0_GH0.tar.gz) = 30824651
