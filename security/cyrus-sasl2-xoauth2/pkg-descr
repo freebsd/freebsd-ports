@@ -1,0 +1,6 @@
+This is a plugin implementation of XOAUTH2 for cyrus-sasl2.
+
+OAuth 2.0 is a protocol for authorization. The specification and
+extensions are being developed within the IETF OAuth Working Group.
+XOAUTH2 is standard OAuth 2.0 plus a nonstandard SASL binding for OAuth
+that allows clients to send OAuth 2.0 access tokens.
