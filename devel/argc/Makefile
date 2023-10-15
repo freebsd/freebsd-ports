@@ -1,6 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigoden
 
-CARGO_CRATES=	aho-corasick-1.0.5 \
-		anstyle-1.0.3 \
+CARGO_CRATES=	aho-corasick-1.1.2 \
+		anstyle-1.0.4 \
 		anyhow-1.0.75 \
 		assert_cmd-2.0.12 \
 		assert_fs-1.0.13 \
@@ -26,8 +26,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		base64-0.21.4 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
-		bstr-1.6.2 \
-		cc-1.0.83 \
+		bstr-1.7.0 \
 		cfg-if-1.0.0 \
 		console-0.15.7 \
 		convert_case-0.6.0 \
@@ -38,9 +37,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		errno-0.3.3 \
-		errno-dragonfly-0.1.2 \
-		fastrand-2.0.0 \
+		errno-0.3.5 \
+		fastrand-2.0.1 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		futures-0.3.28 \
@@ -57,75 +55,75 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		glob-0.3.1 \
 		globset-0.4.13 \
 		globwalk-0.8.1 \
-		hashbrown-0.14.0 \
-		hermit-abi-0.3.2 \
+		hashbrown-0.14.1 \
+		hermit-abi-0.3.3 \
 		home-0.5.5 \
 		ignore-0.4.20 \
-		indexmap-2.0.0 \
-		insta-1.31.0 \
-		itertools-0.10.5 \
+		indexmap-2.0.2 \
+		insta-1.34.0 \
+		itertools-0.11.0 \
 		itoa-1.0.9 \
 		lazy_static-1.4.0 \
-		libc-0.2.148 \
+		libc-0.2.149 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.7 \
+		linux-raw-sys-0.4.10 \
 		log-0.4.20 \
-		memchr-2.6.3 \
+		memchr-2.6.4 \
 		minimal-lexical-0.2.1 \
 		natord-1.0.9 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.16 \
+		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
 		once_cell-1.18.0 \
 		option-ext-0.2.0 \
 		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
-		predicates-3.0.3 \
+		predicates-3.0.4 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.67 \
+		proc-macro2-1.0.69 \
 		quote-1.0.33 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.9.5 \
-		regex-automata-0.3.8 \
-		regex-syntax-0.7.5 \
+		regex-1.10.0 \
+		regex-automata-0.4.1 \
+		regex-syntax-0.8.1 \
 		relative-path-1.9.0 \
 		rstest-0.18.2 \
 		rstest_macros-0.18.2 \
 		rustc_version-0.4.0 \
-		rustix-0.38.13 \
+		rustix-0.38.18 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
-		semver-1.0.18 \
+		semver-1.0.20 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
 		serde_json-1.0.107 \
 		shell-words-1.1.0 \
-		similar-2.2.1 \
+		similar-2.3.0 \
 		slab-0.4.9 \
 		smawk-0.3.2 \
-		syn-2.0.37 \
+		syn-2.0.38 \
 		tempfile-3.8.0 \
 		termtree-0.4.1 \
 		textwrap-0.16.0 \
-		thiserror-1.0.48 \
-		thiserror-impl-1.0.48 \
+		thiserror-1.0.49 \
+		thiserror-impl-1.0.49 \
 		thread_local-1.1.7 \
 		threadpool-1.8.1 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.10.1 \
-		unicode-width-0.1.10 \
+		unicode-width-0.1.11 \
 		wait-timeout-0.2.0 \
 		walkdir-2.4.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		which-4.4.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
