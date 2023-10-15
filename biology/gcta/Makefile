@@ -32,9 +32,20 @@ LDFLAGS+=	-fopenmp
 
 PLIST_FILES=	bin/gcta64 bin/gcta
 
+.include <bsd.port.pre.mk>
+
+# Temporary hack for clang build errors:
+# /usr/ports/biology/gcta/work/gcta-1.94.1/submods/plink-ng/2.0/plink2_base.h:1008:23: error: argument to '__builtin_neon_vshrq_n_v' must be a constant integer
+# return R_CAST(VecW, _mm_srli_epi64(R_CAST(__m128i, vv), ct));
+# /usr/lib/clang/14.0.5/include/arm_neon.h:25260:24: note: expanded from macro 'vshrq_n_u64'
+# __ret = (uint64x2_t) __builtin_neon_vshrq_n_v((int8x16_t)__s0, __p1, 51);
+.if ${ARCH} == aarch64
+USE_GCC=	yes
+.endif
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gcta64 ${STAGEDIR}${PREFIX}/bin
 	${RLN} ${STAGEDIR}${PREFIX}/bin/gcta64 ${STAGEDIR}${PREFIX}/bin/gcta
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
