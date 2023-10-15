@@ -13,7 +13,6 @@ LICENSE=	CC-BY-4.0
 BROKEN_FreeBSD_12_powerpc64=	does not build: error: zero-size array 'names'
 
 BUILD_DEPENDS=	bison>=3.3:devel/bison \
-		cmake>=3.15.0:devel/cmake \
 		flex>=2.6:textproc/flex \
 		swig>=4.0.2:devel/swig
 LIB_DEPENDS=	libcares.so:dns/c-ares
