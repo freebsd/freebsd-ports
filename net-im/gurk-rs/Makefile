@@ -19,6 +19,13 @@ GH_ACCOUNT=	boxdot
 PLIST_FILES=	bin/gurk \
 		${DATADIR}/README.md
 
+.include <bsd.port.pre.mk>
+
+# avoid address space exhaustion on armv7
+.if ${ARCH:Marmv?}
+LTO_UNSAFE=	yes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e s,%%WRKDIR%%,${WRKDIR}, ${WRKSRC}/Cargo.toml
 
@@ -27,4 +34,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
