@@ -1,5 +1,5 @@
 PORTNAME=	ManimPango
-DISTVERSION=	0.4.3
+DISTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +10,13 @@ WWW=		https://manimpango.manim.community/en/latest/
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		gettext-runtime gnome pkgconfig python
-USE_PYTHON=	distutils cython autoplist pytest # tests fail to import manimpango, see https://github.com/ManimCommunity/ManimPango/issues/99
+USE_PYTHON=	pep517 cython autoplist pytest # tests fail to import manimpango, see https://github.com/ManimCommunity/ManimPango/issues/99
 USE_GNOME=	cairo glib20 pango
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

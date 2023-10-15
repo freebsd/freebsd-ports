@@ -1,0 +1,9 @@
+--- requirements-dev.txt.orig	2023-10-15 04:52:20 UTC
++++ requirements-dev.txt
+@@ -1,5 +1,5 @@
+ pytest-cov>=4.0,<5.0
+ pytest>=7.0.0,<8.0.0
+-Cython>=3.0.2
++Cython>0
+ coverage>=7.3.2,<8.0.0
+ setuptools>=59.2.0

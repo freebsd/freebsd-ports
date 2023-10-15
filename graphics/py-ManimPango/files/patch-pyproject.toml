@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2023-10-15 04:53:07 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+-requires = ["Cython>=3.0.2", "setuptools>=59.2.0", "wheel"]
++requires = ["Cython>0", "setuptools>=59.2.0", "wheel"]
+ 
+ [tool.isort]
+ # from https://black.readthedocs.io/en/stable/compatible_configs.html
