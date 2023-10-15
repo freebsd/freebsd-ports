@@ -14,8 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 BROKEN_powerpc=		does not compile
 BROKEN_powerpc64=	does not build: undefined reference to fmax
 
-BUILD_DEPENDS=	cmake:devel/cmake
-
 CONFIGURE_WRKSRC=	${WRKDIR}/build
 BUILD_WRKSRC=		${WRKDIR}/build
 INSTALL_WRKSRC=		${WRKDIR}/build
