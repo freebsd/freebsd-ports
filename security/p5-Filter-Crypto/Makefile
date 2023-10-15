@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-PAR-Packer>=0:devel/p5-PAR-Packer
 TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes
 
 USES=		perl5 ssl
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Cannot detect OpenSSL 3.0.0 and later
 USE_PERL5=	configure
 

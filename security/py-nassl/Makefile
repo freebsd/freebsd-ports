@@ -11,7 +11,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 # Upstream bug https://github.com/nabla-c0d3/nassl/issues/110
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 libcrypt.so
 
 USES=		python ssl

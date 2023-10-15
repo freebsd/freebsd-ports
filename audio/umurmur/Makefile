@@ -28,7 +28,7 @@ LIB_DEPENDS+=	libmbedtls.so:security/mbedtls
 CONFIGURE_ARGS=	--with-ssl=mbedtls
 .else
 USES+=		ssl
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated CRYPTO_MEM_CHECK_ON
 CONFIGURE_ARGS=	--with-ssl=openssl
 .endif

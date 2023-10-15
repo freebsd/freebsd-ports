@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 DEPRECATED=	Upstream last release was in 2012 and seems dead
 
 USES=		cpe gmake gnome libtool ssl
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	undefined reference due to --no-allow-shlib-undefined: EVP_MD_type
 CPE_VENDOR=	xar_project
 USE_GNOME=	libxml2

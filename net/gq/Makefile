@@ -45,7 +45,7 @@ DND_CONFIGURE_ENABLE=	browser-dns
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 BROKEN=	Fails to build with OpenSSL 1.1.1t and later
-BROKEN_SSL=	base openssl openssl30 openssl31
+BROKEN_SSL=	base openssl openssl111 openssl31
 BROKEN_SSL_REASON=	Fails to build with OpenSSL 1.1.1t and later
 .endif
 

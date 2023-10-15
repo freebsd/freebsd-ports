@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 USES=		cargo localbase ssl
 
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Fails to find OpenSSL development headers
 
 CARGO_CRATES=	aho-corasick-1.0.2 \
@@ -65,8 +65,8 @@ PLIST_FILES=	bin/gbump
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl openssl31
 BROKEN_SSL_REASON=	Fails to find OpenSSL 3 development headers
 .endif
 
