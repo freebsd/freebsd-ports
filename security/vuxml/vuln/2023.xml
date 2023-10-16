@@ -1,3 +1,35 @@
+  <vuln vid="f8c2f741-6be1-11ee-b33a-a04a5edf46d9">
+    <topic>moonlight-embedded -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>moonlight-embedded</name>
+	<range><lt>2.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The moonlight-embedded project reports:</p>
+	<blockquote cite="https://github.com/moonlight-stream/moonlight-embedded/releases/tag/v2.6.1">
+	  <p>Moonlight Embedded v2.6.1 fixed CVE-2023-42799, CVE-2023-42800,
+	    and CVE-2023-42801.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2022-42799</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-42799</url>
+      <cvename>CVE-2022-42800</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-42800</url>
+      <cvename>CVE-2022-42801</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-42801</url>
+    </references>
+    <dates>
+      <discovery>2022-01-11</discovery>
+      <entry>2023-10-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ee26d45-6ddb-11ee-9898-00e081b7aa2d">
     <topic>jenkins -- HTTP/2 denial of service vulnerability in bundled Jetty</topic>
     <affects>
