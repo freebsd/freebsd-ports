@@ -39,6 +39,7 @@ libdata/pkgconfig/libnet.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ip_link.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ip_raw.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/isl.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mpls.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ntp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ospf_hello.c
@@ -60,5 +61,6 @@ libdata/pkgconfig/libnet.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tftp.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tring_tcp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tring_tcp2.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/udld.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp1.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/udp2.c
