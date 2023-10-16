@@ -1,5 +1,5 @@
 PORTNAME=	etils
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,9 @@ ENP_DESC=		Numpy utilities
 ENP_IMPLIES=		EPY
 EPATH_DESC=		Pathlib-like API
 EPATH_GCS_DESC=		Pathlib-like API for GCS
+EPATH_GCS_IMPLIES=	EPATH
 EPATH_S3_DESC=		Pathlib-like API for S3
+EPATH_S3_IMPLIES=	EPATH
 EPATH_IMPLIES=		EPY
 EPY_DESC=		Collection of generic python utilities
 ETREE_DESC=		Tree utilities for tf.nest, jax.tree_utils, DeepMind tree
