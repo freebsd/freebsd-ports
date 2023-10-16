@@ -11,7 +11,6 @@ LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
-		protozero>=0:devel/protozero \
 		gdal>=0:graphics/gdal \
 		protozero>=0:devel/protozero \
 		expat>=0:textproc/expat2 \
