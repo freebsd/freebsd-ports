@@ -1,12 +1,12 @@
 PORTNAME=	kommit
 DISTVERSION=	1.0.2
 PORTREVISION=	1
-MASTER_SITES=	KDE/stable/${PORTNAME}/
 CATEGORIES=	devel kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Git gui client for KDE
-WWW=		https://github.com/HamedMasafi/GitKlient
+COMMENT=	Git GUI client for KDE
+WWW=		https://apps.kde.org/kommit/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
