@@ -11,7 +11,7 @@ WWW=		https://github.com/django-crispy-forms/django-crispy-forms
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=0:www/py-django32@${PY_FLAVOR}
 
@@ -21,5 +21,7 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}dj22-django-crispy-forms
+
+PORTSCOUT=	skipv:2.1
 
 .include <bsd.port.mk>
