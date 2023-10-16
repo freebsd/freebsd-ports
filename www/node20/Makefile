@@ -1,5 +1,5 @@
 PORTNAME=	node
-PORTVERSION=	20.8.0
+PORTVERSION=	${NODEJS_PORTVERSION}
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://nodejs.org/dist/v${PORTVERSION}/
@@ -63,6 +63,7 @@ NLS_BUILD_DEPENDS=	icu>=69.1:devel/icu
 NLS_CONFIGURE_ON=	--with-intl=system-icu
 NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 
+.include "Makefile.version"
 .include <bsd.port.options.mk>
 
 .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
