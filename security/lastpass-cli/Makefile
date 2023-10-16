@@ -41,6 +41,8 @@ PINENTRY_RUN_DEPENDS=	pinentry:security/pinentry
 XCLIP_RUN_DEPENDS=	xclip:x11/xclip
 XSEL_RUN_DEPENDS=	xsel:x11/xsel-conrad
 
+CMAKE_ARGS+=	-DOPENSSL_ROOT_DIR=${OPENSSLBASE}
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/-Wno-language-extension-token//g' \
 		${WRKSRC}/CMakeLists.txt
