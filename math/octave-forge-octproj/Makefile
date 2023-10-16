@@ -16,6 +16,8 @@ LIB_DEPENDS+=	libproj.so:graphics/proj
 
 USES=		octave
 
+NO_ARCH=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e s/CC/MKOCTFILE/ -e s/-Wall// -e s/-Wextra// ${WRKSRC}/Makefile
 
