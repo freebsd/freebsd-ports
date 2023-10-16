@@ -1,5 +1,5 @@
 PORTNAME=	paranoia
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/rubysherpas/paranoia
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord60>=5.1<7.1:databases/rubygem-activerecord60
+RUN_DEPENDS=	rubygem-activerecord60>=5.1<7.2:databases/rubygem-activerecord60
 
 USES=		gem
 
