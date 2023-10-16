@@ -7946,3 +7946,4 @@ audio/rem||2023-10-12|Has expired: Deprecated, replaced by libre
 net/openmpi3|net/openmpi|2023-10-12|Has expired: OpenMPI 3 is not maintained by the upstream project anymore and will be removed
 graphics/tiffgt||2023-10-14|Has expired: Upstream support stopped
 security/openssl30|security/openssl|2023-10-14|Upgrade security/openssl to 3.0
+x11-fonts/gnu-unifont-ttf|x11-fonts/gnu-unifont-otf|2023-10-16|Remove obsoleted port. Use x11-fonts/gnu-unifont-otf instead
