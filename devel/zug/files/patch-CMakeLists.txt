@@ -1,14 +1,15 @@
 Compile with -std=c++17 to avoid Boost dependency
---- CMakeLists.txt.orig	2023-06-26 14:57:01 UTC
+--- CMakeLists.txt.orig	2023-10-15 12:49:36 UTC
 +++ CMakeLists.txt
-@@ -5,8 +5,8 @@ project(zug VERSION 0.1.0)
+@@ -3,9 +3,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_
+ cmake_policy(SET CMP0056 NEW) # honor link flags in try_compile()
+ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
  
- project(zug VERSION 0.1.0)
+-project(zug VERSION 0.1.0)
++project(zug VERSION 0.1.1)
  
 -set(CMAKE_CXX_STANDARD 14)
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
 +set(CMAKE_CXX_STANDARD 17)
-+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
  set(CMAKE_EXPORT_COMPILE_COMMANDS on)
  set(CMAKE_CXX_EXTENSIONS off)
- if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")

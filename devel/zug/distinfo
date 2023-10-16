@@ -1,5 +1,3 @@
-TIMESTAMP = 1696424846
-SHA256 (arximboldi-zug-v0.1.0_GH0.tar.gz) = 7d9d57a55399784392ba8fa67fcf246b9f5aec8f002c69e1fe4b5f66657214b8
-SIZE (arximboldi-zug-v0.1.0_GH0.tar.gz) = 219501
-SHA256 (b7eb15fd7c4e26c42f673a566e0d561c49ac5bca.patch) = aec0518a349027a55be2c08cba18665c0ba3b5c14daf03d3bbc83351de81b20a
-SIZE (b7eb15fd7c4e26c42f673a566e0d561c49ac5bca.patch) = 1961
+TIMESTAMP = 1697487594
+SHA256 (arximboldi-zug-v0.1.1_GH0.tar.gz) = 1b9c8f962e40baa6f0c6af35f957444850063d550078a3ebd0227727b8ef193c
+SIZE (arximboldi-zug-v0.1.1_GH0.tar.gz) = 102857

@@ -1,10 +1,7 @@
 PORTNAME=	zug
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/arximboldi/zug/commit/
-PATCHFILES+=	b7eb15fd7c4e26c42f673a566e0d561c49ac5bca.patch:-p1
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Transducers for C++
@@ -17,6 +14,7 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	arximboldi
 
+CMAKE_ON=	DISABLE_WERROR
 CMAKE_OFF=	zug_BUILD_DOCS
 
 NO_ARCH=	yes
