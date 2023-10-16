@@ -1,12 +1,12 @@
-bin/aec
+cmake/libaec-config-version.cmake
+cmake/libaec-config.cmake
 include/libaec.h
 include/szlib.h
 lib/libaec.a
 lib/libaec.so
 lib/libaec.so.0
-lib/libaec.so.0.0.12
+lib/libaec.so.0.1.2
 lib/libsz.a
 lib/libsz.so
 lib/libsz.so.2
 lib/libsz.so.2.0.1
-man/man1/aec.1.gz
