@@ -1,18 +1,26 @@
---- docs/README.pod.orig	2023-09-01 23:40:56 UTC
+--- docs/README.pod.orig	2023-10-11 15:50:11 UTC
 +++ docs/README.pod
-@@ -27,6 +27,11 @@ Stream game from host to this computer.
+@@ -13,7 +13,10 @@ Usage: I<moonlight> E<lt>actionE<gt> [options] [host]
  
- List all available games and application on host.
+ =item B<pair>
  
-+=item B<discover>
-+
-+Discover moonlight server host.Need start avahi-daemon first.
-+NOTE:It's not work under wifibox.
-+
- =item B<quit>
+-Pair this computer with the host.
++ Pair this computer with the host.
++ If [host] is not specified here,moonlight will auto discover host first.
++ It's need start avahi-daemon first.
++ NOTE:It's not work under wifibox.
  
- Quit the current running game or application on host.
-@@ -99,9 +104,9 @@ By default, 1392 is used on LAN and 1024 on WAN.
+ =item B<unpair>
+ 
+@@ -22,6 +25,7 @@ Unpair this computer with the host.
+ =item B<stream>
+ 
+ Stream game from host to this computer.
++If [host] is not specified here,moonlight will auto discover host first.
+ 
+ =item B<list>
+ 
+@@ -99,9 +103,9 @@ By default, 1392 is used on LAN and 1024 on WAN.
  =item B<-codec> [I<CODEC>]
  
  Select codec to use.
@@ -25,7 +33,7 @@
  
  =item B<-remote> [I<yes/no/auto>]
  
-@@ -138,8 +143,10 @@ By default the gamecontrollerdb.txt provided by Moonli
+@@ -138,8 +142,10 @@ By default the gamecontrollerdb.txt provided by Moonli
  =item B<-platform> [I<PLATFORM>]
  
  Select platform for audio and video output and input.
@@ -37,19 +45,22 @@
  =item B<-nounsupported>
  
  Don't stream if resolution is not officially supported by the server
-@@ -170,11 +177,6 @@ Enable the I<INPUT> device.
+@@ -170,10 +176,11 @@ Enable the I<INPUT> device.
  By default all available input devices are enabled.
  Only evdev devices /dev/input/event* are supported.
  
 -=item B<-audio> [I<DEVICE>]
--
++=item B<-nosdl>
+ 
 -Use <DEVICE> as audio output device.
 -The default value is 'sysdefault' for ALSA and 'hdmi' for OMX on the Raspberry Pi.
--
++Use libevdev to drive game controller instead.
++SDL controller module have better compatibility for gamepad.
++So it's not recommended.
+ 
  =item B<-windowed>
  
- Display the stream in a window instead of fullscreen.
-@@ -182,22 +184,48 @@ Only available when X11 or SDL platform is used.
+@@ -182,22 +189,51 @@ Only available when X11 or SDL platform is used.
  
  =back
  
@@ -74,32 +85,36 @@
  
  If no user specified configuration file is available the configuration will be loaded from:
  
-   /etc/moonlight/moonlight.conf
+-  /etc/moonlight/moonlight.conf
++  /usr/local/etc/moonlight.conf
  
 -A documented example configuration file can be found at /etc/moonlight/moonlight.conf.
 +A documented example configuration file can be found at /usr/local/etc/moonlight.conf.
  
--=head1 COMMENTS
 +=head1 KEYBOARD SHORTCUTS
- 
- Use Ctrl+Alt+Shift+Q or Play+Back+LeftShoulder+RightShoulder to quit the streaming session.
- 
++
++ Use Ctrl+Alt+Shift+Q or Play+Back+LeftShoulder+RightShoulder to quit the streaming session.
++ Use Ctrl+Alt+Shift+Z to Grab/Ungrab keyboard.
++ It may not grab the keyboard Using sdl platform under wayland.
++
 +=head1 GAMEPAD
 +
 +FreeBSD supports fewer controllers.Please see hgame(4) xb360gp(4) ps4dshock(4) and FreeBSD forums...
 +SDL platforms have better compatibility for gamepad.
 +
-+=head1 COMMENTS
-+
-+Platform 'sdl' and 'x11' is soft decoding.
-+Platform 'x11_vaapi' and 'x11_vdpau' is hard decoding.
-+If you want to use GPU decoding,you must meet 3 conditions:
-+  1.Use platform 'x11_vaapi' or 'x11_vdpau'.
-+  2.Use Intel or AMD(not test) GPU driver in xorg.conf
+ =head1 COMMENTS
+ 
+-Use Ctrl+Alt+Shift+Q or Play+Back+LeftShoulder+RightShoulder to quit the streaming session.
++Platform 'sdl' and 'x11' is soft decoding.'x11' is deprecated.
++Platform 'x11_vaapi' and 'x11_vdpau' is hard accel decoding.
++If you want to use GPU decoding for intel gpu,you must meet 3 conditions:
++  1.Use platform 'x11_vaapi'
++  2.Use intel GPU driver in xorg.conf but not modesetting.
 +  3.Install package:libva-intel-driver/libva-intel-media-driver or libva-vdpau-driver.
+ 
 +
  =head1 AUTHOR
  
 -Iwan Timmer E<lt>irtimmer@gmail.comE<gt>
-+Thanks Iwan Timmer and every contributor!
-+Armin Zhu E<lt>lisp_25689@163.comE<gt>
++ Thanks Iwan Timmer and every contributor!
++ Armin Zhu E<lt>lisp_25689@163.comE<gt>.
