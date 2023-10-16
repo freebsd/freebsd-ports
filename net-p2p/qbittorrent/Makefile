@@ -1,6 +1,6 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	4.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -73,7 +73,11 @@ LIBTORRENT2_EXTRA_PATCHES=	${FILESDIR}/extrapatch-libtorrent-rasterbar2-settings
 
 PYTHON_DESC=		Install Python to support some plugin functionality
 PYTHON_USES=		python:run
-PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} \
+		-e 's|"python3"|"${PYTHON_CMD}"|' \
+		${WRKSRC}/src/base/utils/foreignapps.cpp
 
 post-install:
 .if ${FLAVOR} == nox
