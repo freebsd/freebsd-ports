@@ -1,5 +1,6 @@
 PORTNAME=	check_mysql_health
 DISTVERSION=	3.0.0.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:databases/p5-DBD-mysql
 
-USES=		perl5
+USES=		autoreconf perl5 gmake
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-statefiles-dir=${NAGIOSDIR} \
