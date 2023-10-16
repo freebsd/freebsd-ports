@@ -1,0 +1,3 @@
+The opentelemetry-sdk gem provides the reference implementation of the
+OpenTelemetry Ruby API. Using opentelemetry-sdk, an application can collect,
+analyze, and export telemetry data such as distributed traces and metrics.
