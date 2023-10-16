@@ -2,7 +2,8 @@ PORTNAME=	scilab
 PORTVERSION=	6.1.1
 PORTREVISION=	12
 CATEGORIES=	math cad java
-MASTER_SITES=	https://cgit.scilab.org/scilab/snapshot/
+MASTER_SITES=	https://www.scilab.org/download/${PORTVERSION}/
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Scientific software package for numerical computations
@@ -39,7 +40,6 @@ LDFLAGS+=	${ICONV_LIB}
 
 CONFIGURE_ENV=	BLAS_LIBS="${BLASLIB}" LAPACK_LIBS="${LAPACKLIB}"
 INSTALL_TARGET=	install-strip
-WRKSRC_SUBDIR=	scilab
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
