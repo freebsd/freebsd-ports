@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2023-07-01 12:59:48 UTC
+--- pyproject.toml.orig	2023-10-15 08:57:48 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  [build-system]
@@ -6,6 +6,6 @@
  requires = [
 -  "setuptools>=67.8",
 +  "setuptools>=61",
-   "wheel",
  ]
  backend-path = [
+   "_custom_build",
