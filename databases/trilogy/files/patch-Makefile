@@ -1,0 +1,24 @@
+--- Makefile.orig	2023-09-18 20:57:42 UTC
++++ Makefile
+@@ -21,16 +21,19 @@ else
+ endif
+ 
+ .PHONY: all
+-all: libtrilogy.a examples
++all: libtrilogy.a libtrilogy.so examples
+ 
+ .PHONY: examples
+ examples: $(EXAMPLES)
+ 
+-example/%: example/%.c libtrilogy.a
++example/%: example/%.c libtrilogy.so
+ 	$(CC) -o $@ $(CFLAGS) -pedantic $(LDFLAGS) $^ $(OPENSSL)
+ 
+ libtrilogy.a: $(OBJS)
+ 	$(AR) r $@ $^
++
++libtrilogy.so: $(OBJS)
++	$(CC) -shared $^ -o $@
+ 
+ %.o: %.c inc/trilogy/*.h
+ 	$(CC) -o $@ $(CFLAGS) -pedantic -c $<

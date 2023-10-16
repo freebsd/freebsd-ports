@@ -1,0 +1,16 @@
+bin/trilogy_query
+include/trilogy.h
+include/trilogy/blocking.h
+include/trilogy/buffer.h
+include/trilogy/builder.h
+include/trilogy/charset.h
+include/trilogy/client.h
+include/trilogy/error.h
+include/trilogy/packet_parser.h
+include/trilogy/protocol.h
+include/trilogy/reader.h
+include/trilogy/socket.h
+include/trilogy/vendor/curl_hostcheck.h
+include/trilogy/vendor/openssl_hostname_validation.h
+lib/libtrilogy.a
+lib/libtrilogy.so
