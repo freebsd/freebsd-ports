@@ -899,6 +899,7 @@
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-session_store
+    SUBDIR += rubygem-activerecord-trilogy-adapter
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord5
     SUBDIR += rubygem-activerecord50
