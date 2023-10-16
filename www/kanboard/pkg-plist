@@ -1,5 +1,6 @@
 @owner %%KANBOARD_USERNAME%%
 @group %%KANBOARD_GROUPNAME%%
+%%WWWDIR%%/.devcontainer/devcontainer.json
 %%WWWDIR%%/.htaccess
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/app/.htaccess
@@ -478,6 +479,7 @@
 %%WWWDIR%%/app/Job/TaskFileEventJob.php
 %%WWWDIR%%/app/Job/TaskLinkEventJob.php
 %%WWWDIR%%/app/Job/UserMentionJob.php
+%%WWWDIR%%/app/Locale/bg_BG/translations.php
 %%WWWDIR%%/app/Locale/bs_BA/translations.php
 %%WWWDIR%%/app/Locale/ca_ES/translations.php
 %%WWWDIR%%/app/Locale/cs_CZ/translations.php
@@ -1052,8 +1054,11 @@
 %%WWWDIR%%/assets/fonts/fontawesome-webfont.ttf
 %%WWWDIR%%/assets/fonts/fontawesome-webfont.woff
 %%WWWDIR%%/assets/fonts/fontawesome-webfont.woff2
+%%WWWDIR%%/assets/img/adaptive-favicon.svg
 %%WWWDIR%%/assets/img/favicon.png
-%%WWWDIR%%/assets/img/icon.svg
+%%WWWDIR%%/assets/img/inkscape-optimized-icon.svg
+%%WWWDIR%%/assets/img/inkscape-path-icon.svg
+%%WWWDIR%%/assets/img/inkscape-text-icon.svg
 %%WWWDIR%%/assets/img/touch-icon-ipad-retina.png
 %%WWWDIR%%/assets/img/touch-icon-ipad.png
 %%WWWDIR%%/assets/img/touch-icon-iphone-retina.png
@@ -2032,6 +2037,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-intl-normalizer/bootstrap80.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
