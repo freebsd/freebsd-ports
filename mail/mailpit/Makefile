@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.7
+DISTVERSION=	1.9.8
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -32,7 +32,6 @@ GH_TUPLE=	\
 		PuerkitoBio:goquery:v1.8.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
 		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		axllent:semver:v0.0.1:axllent_semver/vendor/github.com/axllent/semver \
-		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		cention-sany:utf7:26cad61bd60a:cention_sany_utf7/vendor/github.com/cention-sany/utf7 \
 		cznic:ql:v1.2.0:cznic_ql/vendor/github.com/cznic/ql \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
@@ -55,23 +54,20 @@ GH_TUPLE=	\
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/github.com/jaytaylor/html2text \
 		jhillyerd:enmime:v1.0.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
-		k3a:html2text:v1.2.1:k3a_html2text/vendor/github.com/k3a/html2text \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.17.0:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.17.1:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
 		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
-		microcosm-cc:bluemonday:v1.0.25:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		reiver:go-oi:v1.0.0:reiver_go_oi/vendor/github.com/reiver/go-oi \
 		reiver:go-telnet:9ff0b2ab096e:reiver_go_telnet/vendor/github.com/reiver/go-telnet \
 		remyoudompheng:bigfft:24d4a6f8daec:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v1.7.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
