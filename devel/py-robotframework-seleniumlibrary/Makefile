@@ -1,13 +1,13 @@
 PORTNAME=	robotframework-seleniumlibrary
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+PORTVERSION=	6.1.3
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Web testing library for Robot Framework
-WWW=		https://github.com/robotframework/SeleniumLibrary
+WWW=		https://robotframework.org/SeleniumLibrary/ \
+		https://github.com/robotframework/SeleniumLibrary
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
