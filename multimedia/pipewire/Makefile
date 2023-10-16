@@ -16,6 +16,7 @@ BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \
 		libepoll-shim.so:devel/libepoll-shim \
+		libopus.so:audio/opus \
 		libsndfile.so:audio/libsndfile \
 		libudev.so:devel/libudev-devd \
 		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
@@ -36,7 +37,6 @@ GSTREAMER_USES=		gstreamer
 GSTREAMER_MESON_ENABLED=gstreamer gstreamer-device-provider
 
 PIPEWIRE_JACK_DESC=		Build pipewire-jack
-PIPEWIRE_JACK_LIB_DEPENDS=	libopus.so:audio/opus
 PIPEWIRE_JACK_MESON_ENABLED=	pipewire-jack
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
