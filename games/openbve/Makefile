@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.9.2.2
+PORTVERSION=	1.9.2.3
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -57,14 +57,20 @@ OPTIONS_DEFINE=	DOCS
 BROKEN=		fails to build with Mono version ${MONO_DEFAULT}: error MSB4184: The expression ""Program.cs".GetPathsOfAllDirectoriesAbove()" cannot be evaluated. Method 'System.String.GetPathsOfAllDirectoriesAbove' not found.
 .endif
 
+.if defined(WITH_DEBUG)
+PLIST_SUB+=	DEBUG="" RELEASE="@comment "
+.else
+PLIST_SUB+=	RELEASE="" DEBUG="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/TargetFrameworkVersion/s,4\.7\.2,4.6.1,' \
 		${WRKSRC}/source/TrainEditor2/TrainEditor2.csproj
 
 do-install:
 # This is Windows only, so can be removed
-	${RM} ${WRKSRC}/bin_release/AtsPluginProxy.*
-	${CP} -a ${WRKSRC}/bin_release ${STAGEDIR}${DATADIR}
+	${RM} ${WRKSRC}/bin_[dr]*/AtsPluginProxy.*
+	${CP} -a ${WRKSRC}/bin_[dr]* ${STAGEDIR}${DATADIR}
 .for script program in openbve OpenBve openbve-objectviewer ObjectViewer \
     openbve-routeviewer RouteViewer
 	${PRINTF} '#!/bin/sh\n\nexec mono ${DATADIR}/${program}.exe\
