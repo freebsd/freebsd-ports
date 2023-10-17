@@ -80,9 +80,10 @@ lib/cmake/Surelog/SurelogConfig.cmake
 lib/cmake/Surelog/SurelogConfigVersion.cmake
 lib/cmake/Surelog/SurelogTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Surelog/SurelogTargets.cmake
-lib/surelog/libantlr4-runtime.a
-lib/surelog/libsurelog.so
-%%PYTHON%%lib/surelog/python/slSV3_1aPythonListener.py
-%%PYTHON%%lib/surelog/python/slformatmsg.py
-%%PYTHON%%lib/surelog/python/slwaivers.py
+lib/libantlr4-runtime.a
+lib/libsurelog.so
+lib/libsurelog.so.1.76
+%%PYTHON%%lib/surelog-python/python/slSV3_1aPythonListener.py
+%%PYTHON%%lib/surelog-python/python/slformatmsg.py
+%%PYTHON%%lib/surelog-python/python/slwaivers.py
 libdata/pkgconfig/Surelog.pc

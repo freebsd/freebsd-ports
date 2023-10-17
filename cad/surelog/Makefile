@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.74
+DISTVERSION=	1.76
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,8 @@ JAVA_RUN=	no
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
-GH_TUPLE=	alainmarcel:antlr4:a27cf84:antlr4/third_party/antlr4
+GH_TUPLE=	alainmarcel:antlr4:a27cf84:antlr4/third_party/antlr4 \
+		nlohmann:json:788e546:json/third_party/json
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		SURELOG_USE_HOST_UHDM \
