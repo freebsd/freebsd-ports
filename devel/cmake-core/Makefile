@@ -39,6 +39,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${WRKSRC}/InitialCache.cmake"
 
+# Quick fix to enable build with non-base SSL (PR: 274512)
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
 OPTIONS_DEFINE=	DOCS CPACK
 OPTIONS_DEFAULT=	CPACK
 OPTIONS_SUB=	yes
