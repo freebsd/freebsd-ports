@@ -83,6 +83,8 @@ crowdsec_firewall_stop()
 }
 
 crowdsec_firewall_start() {
+    # ensure we have a backend if the config file was not patched
+    export BACKEND=pf
     /usr/sbin/daemon -f -p "$pidfile" -t "$desc" -- \
         "$command" -c "$crowdsec_firewall_config" ${crowdsec_firewall_flags}
 }
