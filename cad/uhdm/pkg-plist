@@ -216,6 +216,7 @@ include/uhdm/real_var.h
 include/uhdm/ref_module.h
 include/uhdm/ref_obj.h
 include/uhdm/ref_obj_interf_net_var_group.h
+include/uhdm/ref_typespec.h
 include/uhdm/ref_var.h
 include/uhdm/reg.h
 include/uhdm/reg_array.h
@@ -299,11 +300,11 @@ include/uhdm/wait_fork.h
 include/uhdm/wait_stmt.h
 include/uhdm/waits.h
 include/uhdm/while_stmt.h
-lib/UHDM.capnp
 lib/cmake/UHDM/UHDMConfig.cmake
 lib/cmake/UHDM/UHDMConfigVersion.cmake
 lib/cmake/UHDM/UHDMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/UHDM/UHDMTargets.cmake
 lib/libuhdm.so
-lib/libuhdm.so.1.74
+lib/libuhdm.so.1.76
 libdata/pkgconfig/UHDM.pc
+%%DATADIR%%/UHDM.capnp
