@@ -1,16 +1,16 @@
 PORTNAME=	libcpuid
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/anrieff/libcpuid/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Small x86 CPU identification library
-WWW=		http://libcpuid.sourceforge.net/
+WWW=		https://libcpuid.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool python:test shebangfix
+USES=		libtool pathfix python:test shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
