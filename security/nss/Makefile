@@ -1,5 +1,5 @@
 PORTNAME=	nss
-PORTVERSION=	3.93
+PORTVERSION=	3.94
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:tu:C/[-.]/_/g}_RTM/src
 
@@ -30,7 +30,7 @@ MAKE_ENV=	NSPR_LIB_DIR="${LOCALBASE}/lib" \
 		NSS_ENABLE_WERROR=0 \
 		NSS_DISABLE_GTESTS=1 \
 		NSS_USE_SYSTEM_SQLITE=1
-CFLAGS+=	-I${LOCALBASE}/include/nspr -Wno-error=unused-function
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/nspr -Wno-error=unused-function
 
 SUB_FILES=	nss-config nss.pc
 SUB_LIST=	PORTVERSION=${PORTVERSION}
