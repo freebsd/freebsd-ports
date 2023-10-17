@@ -50,6 +50,7 @@ bin/xscreensaver-hacks/cubestack
 bin/xscreensaver-hacks/cubestorm
 bin/xscreensaver-hacks/cubetwist
 bin/xscreensaver-hacks/cubicgrid
+bin/xscreensaver-hacks/cubocteversion
 bin/xscreensaver-hacks/cwaves
 bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
@@ -62,6 +63,7 @@ bin/xscreensaver-hacks/discoball
 bin/xscreensaver-hacks/discrete
 bin/xscreensaver-hacks/distort
 bin/xscreensaver-hacks/drift
+bin/xscreensaver-hacks/droste
 bin/xscreensaver-hacks/dymaxionmap
 bin/xscreensaver-hacks/endgame
 bin/xscreensaver-hacks/energystream
@@ -162,6 +164,7 @@ bin/xscreensaver-hacks/nerverot
 bin/xscreensaver-hacks/noof
 bin/xscreensaver-hacks/noseguy
 bin/xscreensaver-hacks/pacman
+bin/xscreensaver-hacks/papercube
 bin/xscreensaver-hacks/pedal
 bin/xscreensaver-hacks/peepers
 bin/xscreensaver-hacks/penetrate
@@ -199,6 +202,7 @@ bin/xscreensaver-hacks/scooter
 bin/xscreensaver-hacks/shadebobs
 bin/xscreensaver-hacks/sierpinski
 bin/xscreensaver-hacks/sierpinski3d
+bin/xscreensaver-hacks/skulloop
 bin/xscreensaver-hacks/skytentacles
 bin/xscreensaver-hacks/slidescreen
 bin/xscreensaver-hacks/slip
@@ -321,6 +325,7 @@ man/man6/cubestack.6.gz
 man/man6/cubestorm.6.gz
 man/man6/cubetwist.6.gz
 man/man6/cubicgrid.6.gz
+man/man6/cubocteversion.6.gz
 man/man6/cwaves.6.gz
 man/man6/cynosure.6.gz
 man/man6/dangerball.6.gz
@@ -333,6 +338,7 @@ man/man6/discoball.6.gz
 man/man6/discrete.6.gz
 man/man6/distort.6.gz
 man/man6/drift.6.gz
+man/man6/droste.6.gz
 man/man6/dymaxionmap.6.gz
 man/man6/endgame.6.gz
 man/man6/energystream.6.gz
@@ -431,6 +437,7 @@ man/man6/nerverot.6.gz
 man/man6/noof.6.gz
 man/man6/noseguy.6.gz
 man/man6/pacman.6.gz
+man/man6/papercube.6.gz
 man/man6/pedal.6.gz
 man/man6/peepers.6.gz
 man/man6/penetrate.6.gz
@@ -467,6 +474,7 @@ man/man6/scooter.6.gz
 man/man6/shadebobs.6.gz
 man/man6/sierpinski.6.gz
 man/man6/sierpinski3d.6.gz
+man/man6/skulloop.6.gz
 man/man6/skytentacles.6.gz
 man/man6/slidescreen.6.gz
 man/man6/slip.6.gz
@@ -523,7 +531,7 @@ share/applications/xscreensaver-settings.desktop
 share/applications/xscreensaver-start.desktop
 share/applications/xscreensaver-stop.desktop
 share/applications/xscreensaver.desktop
-share/fonts/xscreensaver/OCRAStd.otf
+share/fonts/xscreensaver/OCRA.ttf
 share/fonts/xscreensaver/SpecialElite.ttf
 share/fonts/xscreensaver/clacon.ttf
 share/fonts/xscreensaver/gallant12x22.ttf
@@ -601,6 +609,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/cubestorm.xml
 %%DATADIR%%/config/cubetwist.xml
 %%DATADIR%%/config/cubicgrid.xml
+%%DATADIR%%/config/cubocteversion.xml
 %%DATADIR%%/config/cwaves.xml
 %%DATADIR%%/config/cynosure.xml
 %%DATADIR%%/config/dangerball.xml
@@ -613,6 +622,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/discrete.xml
 %%DATADIR%%/config/distort.xml
 %%DATADIR%%/config/drift.xml
+%%DATADIR%%/config/droste.xml
 %%DATADIR%%/config/dymaxionmap.xml
 %%DATADIR%%/config/endgame.xml
 %%DATADIR%%/config/energystream.xml
@@ -712,6 +722,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/noof.xml
 %%DATADIR%%/config/noseguy.xml
 %%DATADIR%%/config/pacman.xml
+%%DATADIR%%/config/papercube.xml
 %%DATADIR%%/config/pedal.xml
 %%DATADIR%%/config/peepers.xml
 %%DATADIR%%/config/penetrate.xml
@@ -749,6 +760,7 @@ share/pixmaps/xscreensaver.png
 %%DATADIR%%/config/shadebobs.xml
 %%DATADIR%%/config/sierpinski.xml
 %%DATADIR%%/config/sierpinski3d.xml
+%%DATADIR%%/config/skulloop.xml
 %%DATADIR%%/config/skytentacles.xml
 %%DATADIR%%/config/slidescreen.xml
 %%DATADIR%%/config/slip.xml

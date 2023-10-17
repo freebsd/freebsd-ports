@@ -1,6 +1,5 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.06
-PORTREVISION=	3
+DISTVERSION=	6.07
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -19,8 +18,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgle.so:graphics/gle \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags \
-		perl5 pkgconfig xorg
+USES=		autoreconf cpe desktop-file-utils gettext gl gmake gnome \
+		jpeg localbase:ldflags perl5 pkgconfig xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
 USE_PERL5=	run
@@ -95,6 +94,8 @@ post-patch:
 	${REINPLACE_CMD} -e "s|/etc/pam.d|${PREFIX}/etc/pam.d|g" \
 		${WRKSRC}/driver/passwd-pam.c \
 		${WRKSRC}/driver/xscreensaver.man
+	${REINPLACE_CMD} -e "s|/usr/bin/perl|${PREFIX}/bin/perl|" \
+		${WRKSRC}/hacks/check-configs.pl
 
 post-patch-NSFW-off:
 	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
