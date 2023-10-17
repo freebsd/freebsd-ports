@@ -1,6 +1,6 @@
 PORTNAME=	open-motif
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -25,7 +25,8 @@ USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libXmu.so:x11-toolkits/libXmu
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-printing=no
