@@ -2,7 +2,7 @@ Falkon is a very fast web browser that uses QtWebEngine, and aims to be
 lightweight on all major platforms.  It has all the standard functions
 that are expected from a web browser, including bookmarks, history,
 sidebar, and tabs.  Plus: integral AdBlock, and editing of the local CA
-Certificates database with an SSL manager.
+certificate database with an SSL manager.
 
 Falkon has a wide range of features that are supported by KDE
 Frameworks, and many integration points with KDE Plasma.
