@@ -1,5 +1,5 @@
 PORTNAME=	scala
-DISTVERSION=	3.1.0
+DISTVERSION=	3.3.1
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/lampepfl/dotty/releases/download/${DISTVERSION}/
 DISTNAME=	scala3-${DISTVERSION}
