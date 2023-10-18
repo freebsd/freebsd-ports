@@ -1,3 +1,28 @@
+  <vuln vid="d2ad7647-6dd9-11ee-85eb-84a93843eb75">
+    <topic>Roundcube -- XSS vulnerability in SVG</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2023/10/16/security-update-1.6.4-released">
+	  <p>cross-site scripting (XSS) vulnerability in handling of SVG in HTML messages</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2023/10/16/security-update-1.6.4-released</url>
+    </references>
+    <dates>
+      <discovery>2023-10-16</discovery>
+      <entry>2023-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8706e097-6db7-11ee-8744-080027f5fec9">
     <topic>redis -- Possible bypassing Unix socket permissions</topic>
     <affects>
