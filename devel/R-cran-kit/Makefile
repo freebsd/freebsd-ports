@@ -1,7 +1,7 @@
 PORTNAME=	kit
 DISTVERSION=	0.0.15
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Data Manipulation Functions Implemented in C
