@@ -1,3 +1,45 @@
+  <vuln vid="8706e097-6db7-11ee-8744-080027f5fec9">
+    <topic>redis -- Possible bypassing Unix socket permissions</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.2.2</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.2.2.20231018</lt></range>
+      </package>
+      <package>
+	<name>redis70</name>
+	<range><lt>7.0.14</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team  reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/r81pHa-dcI8">
+	  <p>
+	    The wrong order of listen(2) and chmod(2) calls creates a
+	    race condition that can be used by another process to
+	    bypass desired Unix socket permissions on startup.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45145</cvename>
+      <url>https://groups.google.com/g/redis-db/c/r81pHa-dcI8</url>
+    </references>
+    <dates>
+      <discovery>2023-10-18</discovery>
+      <entry>2023-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ae0ee356-6ae1-11ee-bfb6-8c164567ca3c">
     <topic>libcue -- out-of-bounds array access</topic>
     <affects>
