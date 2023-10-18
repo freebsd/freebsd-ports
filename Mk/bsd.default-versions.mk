@@ -112,7 +112,7 @@ OPENLDAP_DEFAULT?=	26
 # Possible values: 5.34, 5.36, 5.38, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
-PERL5_DEFAULT?=		5.34
+PERL5_DEFAULT?=		5.36
 .  elif !defined(PERL5_DEFAULT)
 # There's no need to replace development versions, like "5.23" with "devel"
 # because 1) nobody is supposed to use it outside of poudriere, and 2) it must
