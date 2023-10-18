@@ -39,6 +39,11 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}chempy # chempy port is unrelated, see
 
 CXXFLAGS+=	-DMSGPACK_NO_BOOST # in line with MSGPACK_USE_BOOST=OFF in devel/msgpack-cxx
 
+.if !exists(/usr/include/omp.h)
+PYDISTUTILS_CONFIGUREARGS+=	--use-openmp=no
+PYDISTUTILS_BUILDARGS+=		--use-openmp=no
+.endif
+
 OPTIONS_SINGLE=		GUI
 OPTIONS_SINGLE_GUI=	QT5 TK
 OPTIONS_DEFAULT=	QT5
