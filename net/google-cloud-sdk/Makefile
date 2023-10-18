@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-sdk
-PORTVERSION=	450.0.0
+PORTVERSION=	451.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/
 DISTNAME=	google-cloud-sdk-${PORTVERSION}-linux-x86_64
@@ -43,10 +43,6 @@ post-extract:
 		${WRKSRC}/rpm \
 		${WRKSRC}/deb \
 		${WRKSRC}/lib/third_party/grpc/_cython/cygrpc.so
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|python2.7|PYTHON_CMD}|g' ${WRKSRC}/bin/git-credential-gcloud.sh ${WRKSRC}/bin/gcloud
-	@${RM} ${WRKSRC}/bin/*.bak ${WRKSRC}/bin/*.orig
 
 do-install:
 	${RM} -r ${WRKSRC}/help ${WRKSRC}/.install/.download
