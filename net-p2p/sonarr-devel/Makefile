@@ -1,5 +1,6 @@
 PORTNAME=	sonarr
 DISTVERSION=	4.0.0.697
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download.sonarr.tv/v4/develop/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
@@ -16,10 +17,11 @@ ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
 		krb5>0:security/krb5 \
+		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=	ssl:run sqlite:3 iconv
+USES=	ssl:run sqlite:3
 USE_RC_SUBR=	sonarr
 
 CONFLICTS_INSTALL=	sonarr
