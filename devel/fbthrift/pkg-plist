@@ -491,6 +491,7 @@ include/thrift/lib/cpp2/transport/core/ManagedConnectionIf.h
 include/thrift/lib/cpp2/transport/core/RequestStateMachine.h
 include/thrift/lib/cpp2/transport/core/RpcMetadataPlugins.h
 include/thrift/lib/cpp2/transport/core/RpcMetadataUtil.h
+include/thrift/lib/cpp2/transport/core/SendCallbacks.h
 include/thrift/lib/cpp2/transport/core/ThriftChannelIf.h
 include/thrift/lib/cpp2/transport/core/ThriftClient.h
 include/thrift/lib/cpp2/transport/core/ThriftClientCallback.h
