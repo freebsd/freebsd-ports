@@ -83,6 +83,7 @@
 @sample %%ETCDIR%%/queuerules.conf.sample
 @sample %%ETCDIR%%/queues.conf.sample
 @sample %%ETCDIR%%/res_config_mysql.conf.sample
+@sample %%ETCDIR%%/res_config_odbc.conf.sample
 @sample %%ETCDIR%%/res_config_sqlite.conf.sample
 @sample %%ETCDIR%%/res_config_sqlite3.conf.sample
 @sample %%ETCDIR%%/res_corosync.conf.sample
@@ -260,6 +261,7 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/refer.h
 include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
