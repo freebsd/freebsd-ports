@@ -1,6 +1,6 @@
-TIMESTAMP = 1697635855
-SHA256 (chromium-118.0.5993.88.tar.xz) = d59d772b448c07c9e95eff70f88975bd2b62a29f97202dd33c68c03c582512c2
-SIZE (chromium-118.0.5993.88.tar.xz) = 353452032
+TIMESTAMP = 1697662254
+SHA256 (chromium-118.0.5993.88.tar.xz) = f2c0748f815cc4b5c5007788836cee3f07c505b6e74e2e1cd8ab4808e0ac8e59
+SIZE (chromium-118.0.5993.88.tar.xz) = 3245581816
 SHA256 (chrome-linux-118.0.5993.88-llvm13.profdata.tar.xz) = 4f8de8da69c7965f4b383033afedbc84553ad44cea6c62e5d364e2add8378b98
 SIZE (chrome-linux-118.0.5993.88-llvm13.profdata.tar.xz) = 28955676
 SHA256 (chromium-118.0.5993.88-testdata.tar.xz) = 8f22c6b7e78b912509aeceb86ecc82fb35fc96db6c6b34b6f9fb1e05ba2b82a5
