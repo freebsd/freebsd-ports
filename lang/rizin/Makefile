@@ -7,7 +7,8 @@ MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	UNIX-like reverse engineering framework and command-line toolset
 WWW=		https://rizin.re
 
-LICENSE=	LGPLv3 GPLv3
+LICENSE=	LGPL3 GPLv3
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
