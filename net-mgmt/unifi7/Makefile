@@ -53,7 +53,7 @@ GROUPS=		unifi
 
 OPTIONS_DEFINE=	EXTERNALDB
 
-.if (empty(FLAVOR) || ${FLAVOR:U} == externaldb)
+.if ${FLAVOR:U} == externaldb
 OPTIONS_DEFAULT+=	EXTERNALDB
 .endif
 
