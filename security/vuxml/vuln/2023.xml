@@ -1,3 +1,36 @@
+  <vuln vid="1ee26d45-6ddb-11ee-9898-00e081b7aa2d">
+    <topic>jenkins -- HTTP/2 denial of service vulnerability in bundled Jetty</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.428</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.414.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2023-10-18/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3291 / CVE-2023-36478, CVE-2023-44487</h5>
+	  <p>HTTP/2 denial of service vulnerability in bundled Jetty</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-36478</cvename>
+      <cvename>CVE-2023-44487</cvename>
+      <url>https://www.jenkins.io/security/advisory/2023-10-18/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-18</discovery>
+      <entry>2023-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2ad7647-6dd9-11ee-85eb-84a93843eb75">
     <topic>Roundcube -- XSS vulnerability in SVG</topic>
     <affects>
