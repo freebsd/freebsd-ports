@@ -1,5 +1,5 @@
 PORTNAME=	bastille
-PORTVERSION=	0.9.20220714
+DISTVERSION=	0.10.20231013
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
@@ -11,7 +11,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bastillebsd
-GH_TAGNAME=	da377f4
 
 NO_BUILD=	yes
 NO_ARCH=	yes

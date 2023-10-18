@@ -23,9 +23,11 @@ bin/bastille
 %%DATADIR%%/rename.sh
 %%DATADIR%%/restart.sh
 %%DATADIR%%/service.sh
+%%DATADIR%%/setup.sh
 %%DATADIR%%/start.sh
 %%DATADIR%%/stop.sh
 %%DATADIR%%/sysrc.sh
+%%DATADIR%%/tags.sh
 %%DATADIR%%/template.sh
 %%DATADIR%%/templates/default/base/Bastillefile
 %%DATADIR%%/templates/default/clone/Bastillefile
