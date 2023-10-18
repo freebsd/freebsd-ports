@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.35.0
+DISTVERSION=	2.37.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		go:1.21,modules
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
