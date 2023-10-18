@@ -1,8 +1,10 @@
 PORTNAME=	p11-kit
-DISTVERSION=	0.24.1
-PORTREVISION=	2
+DISTVERSION=	0.25.0
 CATEGORIES=	security devel
-MASTER_SITES=	https://github.com/p11-glue/p11-kit/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/p11-glue/${PORTNAME}/releases/download/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/p11-glue/${PORTNAME}/commit/
+PATCHFILES=	d1d4b0ac316a27c739ff91e6c4153f1154e96e5a.patch:-p1
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Library for loading and enumerating of PKCS\#11 modules
