@@ -1,7 +1,7 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.20.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	string_theory>=3.1:devel/string_theory \
 		miniaudio>=0.11.9:audio/miniaudio
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
-USES=		cargo cmake compiler:c++17-lang pkgconfig sdl xorg gl lua:53
+USES=		cargo cmake compiler:c++17-lang pkgconfig sdl xorg gl lua:53+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ja2-stracciatella
 GH_PROJECT=	ja2-stracciatella
@@ -176,17 +176,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-# Compilation with clang's broken in 14-CURRENT
-.if ${OSVERSION} >= 1400000
-# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=236344
-# Copy-pasted gcc-c++11-lib from Mk/Uses/compiler.mk
-USE_GCC=	yes
-CHOSEN_COMPILER_TYPE=	gcc
-CXXFLAGS+=	-nostdinc++ -isystem /usr/include/c++/v1
-LDFLAGS+=	-L${WRKDIR}
-_USES_configure+=	200:gcc-libc++-configure
-gcc-libc++-configure:
-	@${LN} -fs /usr/lib/libc++.so ${WRKDIR}/libstdc++.so
+.if ${OSVERSION} >= 1400000 && ${ARCH} == "i386"
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 
 .include <bsd.port.post.mk>
