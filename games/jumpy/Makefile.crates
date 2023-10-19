@@ -24,9 +24,9 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		arrayvec-0.7.4 \
 		ash-0.37.3+1.3.251 \
 		async-channel-1.9.0 \
-		async-executor-1.5.4 \
+		async-executor-1.6.0 \
 		async-lock-2.8.0 \
-		async-task-4.4.1 \
+		async-task-4.5.0 \
 		atomic-arena-0.1.1 \
 		atomicell-0.1.9 \
 		autocfg-1.1.0 \
@@ -73,7 +73,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags-2.4.0 \
+		bitflags-2.4.1 \
 		bitset-core-0.1.1 \
 		bitvec-1.0.1 \
 		block-0.1.6 \
@@ -192,7 +192,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		gpu-descriptor-types-0.1.2 \
 		guillotiere-0.6.2 \
 		hashbrown-0.12.3 \
-		hashbrown-0.14.1 \
+		hashbrown-0.14.2 \
 		hassle-rs-0.10.0 \
 		hex-0.4.3 \
 		hexasphere-9.1.0 \
@@ -230,7 +230,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		libm-0.2.8 \
 		libudev-sys-0.1.4 \
 		litrs-0.2.3 \
-		lock_api-0.4.10 \
+		lock_api-0.4.11 \
 		log-0.4.20 \
 		lyon_algorithms-1.0.3 \
 		lyon_geom-1.0.4 \
@@ -292,9 +292,9 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		ordered-float-3.9.2 \
 		overload-0.1.1 \
 		owned_ttf_parser-0.19.0 \
-		parking-2.1.1 \
+		parking-2.2.0 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.8 \
+		parking_lot_core-0.9.9 \
 		parry2d-0.13.5 \
 		paste-1.0.14 \
 		path-absolutize-3.1.1 \
@@ -336,10 +336,11 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		rectangle-pack-0.4.2 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
+		redox_syscall-0.4.1 \
 		redox_users-0.4.3 \
-		regex-1.10.1 \
+		regex-1.10.2 \
 		regex-automata-0.1.10 \
-		regex-automata-0.4.2 \
+		regex-automata-0.4.3 \
 		regex-syntax-0.6.29 \
 		regex-syntax-0.8.2 \
 		renderdoc-sys-1.0.0 \
@@ -397,8 +398,8 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		sysinfo-0.29.10 \
 		tap-1.0.1 \
 		termcolor-1.3.0 \
-		thiserror-1.0.49 \
-		thiserror-impl-1.0.49 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
 		thread_local-1.1.7 \
 		tiff-0.9.0 \
 		tiny-skia-0.8.4 \
@@ -408,7 +409,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		tinyvec_macros-0.1.1 \
 		toml_datetime-0.6.3 \
 		toml_edit-0.19.15 \
-		tracing-0.1.39 \
+		tracing-0.1.40 \
 		tracing-attributes-0.1.27 \
 		tracing-core-0.1.32 \
 		tracing-log-0.1.3 \
@@ -431,7 +432,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		ureq-2.8.0 \
 		url-2.4.1 \
 		ustr-0.10.0 \
-		uuid-1.4.1 \
+		uuid-1.5.0 \
 		valuable-0.1.0 \
 		vec_map-0.8.2 \
 		venial-0.5.0 \
@@ -460,7 +461,7 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		wgpu-core-0.16.1 \
 		wgpu-hal-0.16.2 \
 		wgpu-types-0.16.1 \
-		wide-0.7.12 \
+		wide-0.7.13 \
 		widestring-1.0.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -500,6 +501,6 @@ CARGO_CRATES=	ab_glyph-0.2.22 \
 		x11rb-protocol-0.10.0 \
 		xcursor-0.3.4 \
 		xml-rs-0.8.19 \
+		bones_asset,bones_bevy_renderer,bones_ecs,bones_framework,bones_lib,bones_schema,bones_schema_macros,bones_utils,bones_utils_macros@git+https://github.com/fishfolk/bones\#3fd1ace195e2a9ac684c247cd08995b3e5a5b93b \
 		bevy_egui@git+https://github.com/zicklag/bevy_egui?branch=feat/egui-0.23\#aeb3d7f1eaaacc67cf3966974d1e31f31e8fad62 \
-		bones_asset,bones_bevy_renderer,bones_ecs,bones_framework,bones_lib,bones_schema,bones_schema_macros,bones_utils,bones_utils_macros@git+https://github.com/fishfolk/bones\#65d667e2ccd691388f0318c76d3a236bee9d11be \
 		kira@git+https://github.com/zicklag/kira.git?branch=feat/sync\#e587b155e862567677c114d0d6fc2963be37c14b

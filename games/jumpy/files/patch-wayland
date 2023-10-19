@@ -297,8 +297,8 @@ https://github.com/bevyengine/bevy/issues/4106
  ]
  
  [[package]]
---- ../bones-65d667e2ccd691388f0318c76d3a236bee9d11be/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-10-15 20:01:13 UTC
-+++ ../bones-65d667e2ccd691388f0318c76d3a236bee9d11be/framework_crates/bones_bevy_renderer/Cargo.toml
+--- ../bones-3fd1ace195e2a9ac684c247cd08995b3e5a5b93b/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-10-19 21:40:14 UTC
++++ ../bones-3fd1ace195e2a9ac684c247cd08995b3e5a5b93b/framework_crates/bones_bevy_renderer/Cargo.toml
 @@ -26,7 +26,7 @@ default-features = false
  
  [dependencies.bevy]
