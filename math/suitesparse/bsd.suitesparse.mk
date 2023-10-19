@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.2.1
+SSPVERSION=	7.2.2
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -50,6 +50,8 @@ LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstall
 
 INSTALL_TARGET=	install # skip USES=cmake
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+
+PLIST_SUB+=	VER=${PORTVERSION}
 
 # FIXME: wont work if .CURDIR contains spaces
 DISTINFO_FILE=	${.CURDIR}/../../math/suitesparse/distinfo
