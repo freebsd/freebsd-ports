@@ -6,7 +6,7 @@ lib/cmake/CHOLMOD/CHOLMODTargets.cmake
 lib/libcholmod.a
 lib/libcholmod.so
 lib/libcholmod.so.4
-lib/libcholmod.so.4.2.1
+lib/libcholmod.so.%%VER%%
 libdata/pkgconfig/CHOLMOD.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_UserGuide.pdf
