@@ -1,0 +1,5 @@
+chericat is a standalone tool that runs on CheriBSD.  It
+can be used by either attaching to a running process or parsing a
+coredump to produce capability-related data, which is stored in a local
+SQL database.  The data can then be queried to retrieve information
+regarding the capabilities created at that snapshot.
