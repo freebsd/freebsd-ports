@@ -1,6 +1,7 @@
 PORTNAME=	monero-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.3.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	ports@FreeBSD.org
@@ -45,10 +46,12 @@ GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
 
 CFLAGS+=	-D_WANT_SEMUN
 
-OPTIONS_DEFINE=		DOXYGEN
+OPTIONS_DEFINE=		DOXYGEN NATIVE
 DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen:devel/doxygen
 DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
+NATIVE_CMAKE_ON=	-DARCH=native
+NATIVE_CMAKE_OFF=	-DARCH=default
 
 .include <bsd.port.pre.mk>
 
