@@ -27,6 +27,8 @@ RUN_DEPENDS=	capnproto080>=0.8.0:devel/capnproto080 \
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
+CFLAGS_armv6+=	-Wno-c++11-narrowing
+CFLAGS_armv7+=	-Wno-c++11-narrowing
 CFLAGS_i386+=	-Wno-c++11-narrowing
 CMAKE_ARGS=	-DCATCH_INCLUDE_DIR=${LOCALBASE}/include/catch2 \
 		-Dlibmagic_DICTIONARY=/usr/share/misc/magic.mgc
