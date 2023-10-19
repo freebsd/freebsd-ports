@@ -13,6 +13,7 @@ libexec/appjail/appjail-config/tok
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
+%%DATADIR%%/cmd/apply
 %%DATADIR%%/cmd/checkOld
 %%DATADIR%%/cmd/cmd
 %%DATADIR%%/cmd/cpuset
