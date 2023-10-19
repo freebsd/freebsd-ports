@@ -3,6 +3,7 @@ PORTVERSION=	${UNIT_VERSION}
 CATEGORIES=	www
 MASTER_SITES?=	https://unit.nginx.org/download/
 DISTNAME=	unit-${PORTVERSION}
+DISTINFO_FILE=	${.CURDIR}/../../www/unit/distinfo
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Command-line management tool for NGINX Unit
