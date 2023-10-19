@@ -1,5 +1,5 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.07
+DISTVERSION=	6.08
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
