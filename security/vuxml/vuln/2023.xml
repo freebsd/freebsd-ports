@@ -1,3 +1,37 @@
+  <vuln vid="f923205f-6e66-11ee-85eb-84a93843eb75">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.58</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://dlcdn.apache.org/httpd/CHANGES_2.4.58">
+	  <ul>
+	    <li>CVE-2023-45802: Apache HTTP Server: HTTP/2 stream
+	      memory not reclaimed right away on RST</li>
+	    <li>CVE-2023-43622: Apache HTTP Server: DoS in HTTP/2 with
+	      initial windows size 0</li>
+	    <li>CVE-2023-31122: mod_macro buffer over-read</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-45802</cvename>
+      <cvename>CVE-2023-43622</cvename>
+      <cvename>CVE-2023-31122</cvename>
+      <url>https://dlcdn.apache.org/httpd/CHANGES_2.4.58</url>
+    </references>
+    <dates>
+      <discovery>2023-10-19</discovery>
+      <entry>2023-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f8c2f741-6be1-11ee-b33a-a04a5edf46d9">
     <topic>moonlight-embedded -- multiple vulnerabilities</topic>
     <affects>
