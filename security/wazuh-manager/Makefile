@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.5.2
+DISTVERSION=	4.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/22/libraries/sources/:wazuh_sources \
@@ -28,6 +28,7 @@ IGNORE_FreeBSD_12_aarch64=	FreeBSD 12.x is not supported on ${ARCH}
 ONLY_FOR_ARCHS=	amd64 aarch64
 
 USE_GITHUB=	yes
+
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
@@ -93,7 +94,7 @@ WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account 
 
 WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py3.9 f2py3 f2py fixup_pubsub_v1_keywords.py \
 		flask futurize jp.py jsonschema normalizer openapi-spec-validator pasteurize \
-		plasma_store pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
+		pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
 		pyrsa-verify rstpep2html.py rst2s5.py rst2xetex.py rst2man.py rst2odt.py \
 		rst2latex.py rst2pseudoxml.py rst2odt_prepstyles.py rst2html.py rst2html5.py \
 		rst2html4.py rst2xml.py tabulate wsdump.py
@@ -128,8 +129,8 @@ WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.21.6-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-8.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-13.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		PyYAML-5.3.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
@@ -141,17 +142,21 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000
-FBSD_VERSION_BASE=freebsd_12_4_release_p1
+FBSD_VERSION_BASE=freebsd_12_4_release
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_2_release
+FBSD_VERSION_BASE=freebsd_13_2_release_p4
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1400000
-FBSD_VERSION_BASE=freebsd_14_0_current
+.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+FBSD_VERSION_BASE=freebsd_14_0_rc1
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
+.elif ${OSVERSION} >= 1500000
+FBSD_VERSION_BASE=freebsd_15_0_current
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
+DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
 IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif

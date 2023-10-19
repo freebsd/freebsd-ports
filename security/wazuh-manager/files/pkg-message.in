@@ -26,7 +26,38 @@ Wazuh Manager was installed
   # chmod 640 /var/ossec/etc/sslmanager.key
   # chmod 640 /var/ossec/etc/sslmanager.cert
 
-5) Add Wazuh manager to /etc/rc.conf
+5) FreeBSD SCA files can be downloaded from the following
+
+  # fetch https://people.freebsd.org/~acm/ports/wazuh/wazuh-freebsd-sca.tar.gz
+
+  Extract and put them to /var/ossec/etc/ruleset/sca. Do not forget change permissions
+
+  # chown root:wazuh /var/ossec/ruleset/sca/cis_freebsd*.yml
+  # chmod 640 /var/ossec/ruleset/sca/cis_freebsd*.yml
+
+6) Aditional decoders and rules files can be download from:
+
+  # fetch https://people.freebsd.org/~acm/ports/wazuh/0600-freebsd_decoders.xml
+  # fetch https://people.freebsd.org/~acm/ports/wazuh/1000-freebsd_rules.xml
+  # cp 0600-freebsd_decoders.xml /var/ossec/ruleset/decoders
+  # cp 1000-freebsd_rules.xml /var/ossec/ruleset/rules
+
+  Do not forget change permissions
+
+  # chown root:wazuh /var/ossec/ruleset/decoders/0600-freebsd_decoders.xml
+  # chmod 640 /var/ossec/ruleset/decoders/0600-freebsd_decoders.xml
+  # chown root:wazuh /var/ossec/ruleset/rules/1000-freebsd_rules.xml
+  # chmod 640 /var/ossec/ruleset/rules/1000-freebsd_rules.xml
+
+  These decoders and rules are used for extract /var/log/userlog entries from
+  FreeBSD agents. It is necessary add a localfile entry to /var/ossec/etc/ossec.conf
+
+  <localfile>
+    <log_format>syslog</log_format>
+    <location>/var/log/userlog</location>
+  </localfile>
+  
+7) Add Wazuh manager to /etc/rc.conf
 
   # sysrc wazuh_manager_enable="YES"
 
@@ -34,11 +65,11 @@ Wazuh Manager was installed
   
   # service wazuh-manager enable
 
-6) Start Wazuh manager
+8) Start Wazuh manager
 
   # service wazuh-manager start
 
-7) Enjoy it ;)
+9) Enjoy it ;)
 EOM
 }
 ]

@@ -1,5 +1,5 @@
---- src/Makefile	2023-09-05 02:28:24.000000000 -0500
-+++ src/Makefile	2023-09-21 16:31:47.443425000 -0500
+--- src/Makefile	2023-10-05 22:19:43.000000000 -0500
++++ src/Makefile	2023-10-19 01:17:52.035644000 -0500
 @@ -40,9 +40,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -12,7 +12,16 @@
  
  ARCH_FLAGS =
  
-@@ -241,10 +243,10 @@
+@@ -92,7 +94,7 @@
+ USE_PRELUDE?=no
+ USE_ZEROMQ?=no
+ USE_GEOIP?=no
+-USE_INOTIFY=no
++USE_INOTIFY?=no
+ USE_BIG_ENDIAN=no
+ USE_AUDIT=no
+ MINGW_HOST=unknown
+@@ -242,10 +244,10 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -25,7 +34,18 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -860,6 +862,8 @@
+@@ -471,8 +473,8 @@
+ ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
+ 	DEFINES+=-DINOTIFY_ENABLED
+ 	ifeq (${uname_S},FreeBSD)
+-		OSSEC_LDFLAGS+=-L/usr/local/lib -I/usr/local/include
+-		OSSEC_LIBS+=-linotify
++		OSSEC_LDFLAGS+=-L/usr/local/lib
++		OSSEC_LIBS+=-L/usr/local/lib -linotify
+ 		OSSEC_CFLAGS+=-I/usr/local/include
+ 	endif
+ endif
+@@ -875,6 +877,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -34,7 +54,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1037,9 +1041,13 @@
+@@ -1052,9 +1056,13 @@
  ifeq (${uname_S},Linux)
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli
  else
@@ -48,7 +68,7 @@
  
  
  #### procps #########
-@@ -2245,10 +2253,33 @@
+@@ -2260,10 +2268,33 @@
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
@@ -82,7 +102,7 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2266,6 +2297,7 @@
+@@ -2281,6 +2312,7 @@
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db
  
