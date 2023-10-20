@@ -13,9 +13,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 WWW=		http://mingw.sourceforge.net
 
-CONFLICTS=	mingw-bin-msvcrt
+DEPRECATED=	Last upstream release was in 2014 and project mingw32 is defunct
+EXPIRATION_DATE=	2023-11-21
 
 USES=		tar:xz
+
+CONFLICTS=	mingw-bin-msvcrt
 
 RUNTIMEVERSION=	4.0.3-1
 APIVERSION=	4.0.3-1
