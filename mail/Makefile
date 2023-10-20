@@ -639,7 +639,6 @@
     SUBDIR += sieve-connect
     SUBDIR += sigrot
     SUBDIR += simscan
-    SUBDIR += slapd-cyrus
     SUBDIR += slimta
     SUBDIR += sma
     SUBDIR += smfsav
