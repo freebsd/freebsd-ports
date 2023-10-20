@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.8
+DISTVERSION=	1.9.9
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -45,6 +45,7 @@ GH_TUPLE=	\
 		golang:net:v0.17.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.13.0:golang_text/vendor/golang.org/x/text \
+		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.14.0:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:5421fefb8386:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.3.1:google_uuid/vendor/github.com/google/uuid \
@@ -59,7 +60,7 @@ GH_TUPLE=	\
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
-		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
