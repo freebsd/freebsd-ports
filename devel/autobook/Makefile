@@ -1,11 +1,11 @@
 PORTNAME=	autobook
 PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	http://sources.redhat.com/autobook/
+MASTER_SITES=	https://sourceware.org/autobook/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU autoconf, automake, and libtool - The Book
-WWW=		http://sources.redhat.com/autobook/
+WWW=		https://sourceware.org/autobook/
 
 LICENSE=	OPL
 LICENSE_NAME=	OPEN PUBLICATION LICENSE
