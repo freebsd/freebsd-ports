@@ -10,14 +10,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses and Panel terminal library for Windows
 WWW=		http://pdcurses.sourceforge.net/
 
+DEPRECATED=	Last upstream release was in 2009 and mingw32 project is defunct
+EXPIRATION_DATE=	2023-11-20
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:devel/mingw32-bin-msvcrt
 
 USES=		gmake
+
 MAKEFILE=	gccwin32.mak
-WRKSRC=		${WRKDIR}/${DISTNAME}/win32
 MAKE_ARGS+=	CC=${PKGNAMEPREFIX}gcc LIBEXE=${PKGNAMEPREFIX}ar
 ALL_TARGET=	pdcurses.a
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/win32
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/include
