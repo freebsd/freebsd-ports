@@ -2,12 +2,12 @@ PORTNAME=	libffi
 PORTVERSION=	3.0.13
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sourceware.org/pub/libffi/
+MASTER_SITES=	SOURCEWARE/libffi/
 PKGNAMEPREFIX=	mingw32-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The libffi library cross-compiled for MinGW32
-WWW=		http://sources.redhat.com/libffi/
+WWW=		https://sourceware.org/libffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
