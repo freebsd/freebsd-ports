@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-10-20 20:39:31 UTC
+--- CMakeLists.txt.orig	2023-09-16 06:22:49 UTC
 +++ CMakeLists.txt
-@@ -113,8 +115,8 @@ include(OptimizeForArchitecture)
+@@ -122,8 +122,8 @@ include(OptimizeForArchitecture)
  OptimizeForArchitecture()
  
  if (UNIX AND NOT OpenMVG_BUILD_COVERAGE)

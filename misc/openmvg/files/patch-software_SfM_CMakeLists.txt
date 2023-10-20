@@ -1,8 +1,8 @@
 - workaround for https://github.com/openMVG/openMVG/issues/1962
 
---- software/SfM/CMakeLists.txt.orig	2021-11-14 08:42:39 UTC
+--- software/SfM/CMakeLists.txt.orig	2023-09-16 06:22:49 UTC
 +++ software/SfM/CMakeLists.txt
-@@ -200,6 +200,7 @@ target_link_libraries(openMVG_main_ComputeStructureFro
+@@ -189,6 +189,7 @@ target_link_libraries(openMVG_main_FrustumFiltering
      openMVG_system
      openMVG_features
      openMVG_sfm
