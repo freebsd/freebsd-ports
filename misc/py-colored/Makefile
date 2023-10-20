@@ -1,5 +1,5 @@
 PORTNAME=	colored
-DISTVERSION=	1.4.4
+DISTVERSION=	2.2.3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,8 +10,10 @@ WWW=		https://gitlab.com/dslackw/colored
 
 LICENSE=	MIT
 
-USES=		python
-USE_PYTHON=	autoplist distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
+
+USES=		python:3.9+
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
