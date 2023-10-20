@@ -1,15 +1,18 @@
 PORTNAME=	fireflies
 PORTVERSION=	2.07
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11
-MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
+MASTER_SITES=	${WWW}/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of xscreensaver
-WWW=		http://somewhere.fscked.org/fireflies/
+WWW=		https://mpcomplete.org/proj/fireflies
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		unmaintained upstream since dec 2005
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libgfx.so:graphics/libgfx
 
