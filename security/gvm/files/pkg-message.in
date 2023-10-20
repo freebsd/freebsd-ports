@@ -26,7 +26,7 @@ Basic instructions for configure your gvm infraestruture are following:
    # echo "[notus-scanner]" > /usr/local/etc/gvm/notus-scanner.toml
    # echo 'mqtt-broker-address = "localhost"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo 'mqtt-broker-port = "1883"' >> /usr/local/etc/gvm/notus-scanner.toml
-   # echo 'products-directory = "/var/lib/openvas/plugins/notus/products"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'products-directory = "/var/lib/notus/products"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo 'log-level = "INFO"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo "disable-hashsum-verification = false" >> /usr/local/etc/gvm/notus-scanner.toml
 
@@ -37,8 +37,8 @@ Basic instructions for configure your gvm infraestruture are following:
 
   # pw groupmod redis -M gvm
 
-5) security/gvmd uses PostgreSQL database. Generally, PostgreSQL must be 
-   installed in the same server where security/gvmd is running: 
+5) security/gvmd uses PostgreSQL database (server and contrib). Generally, 
+   PostgreSQL must be installed in the same server where security/gvmd is running: 
 
   # su postgres
   # createuser -DRS gvm

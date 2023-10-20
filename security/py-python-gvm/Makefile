@@ -1,5 +1,5 @@
 PORTNAME=	python-gvm
-DISTVERSION=	23.5.1
+DISTVERSION=	23.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -i "" -e 's|/run/gvmd/|/var/run/gvmd/|g' \
 		${WRKSRC}/gvm/connections.py
-	${REINPLACE_CMD} '31d' ${WRKSRC}/pyproject.toml
+	${REINPLACE_CMD} -e 's|, { include = "tests", format = "sdist" }||g' \
+		${WRKSRC}/pyproject.toml
 
 pre-configure:
 	@cd ${WRKSRC} && poetry2setup > ${WRKSRC}/setup.py
