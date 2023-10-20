@@ -1,3 +1,35 @@
+  <vuln vid="e14b9870-62a4-11ee-897b-000bab9f87f1">
+    <topic>Request Tracker -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>rt44</name>
+        <range><lt>4.4.6</lt></range>
+      </package>
+      <package>
+        <name>rt50</name>
+        <range><lt>5.0.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Request Tracker reports:</p>
+        <p>CVE-2023-41259 SECURITY: RT is vulnerable to unvalidated email headers in incoming email and the mail-gateway REST interface.</p>
+        <p>CVE-2023-41260 SECURITY: RT is vulnerable to information leakage via response messages returned from requests sent via the mail-gateway REST interface.</p>
+        <p>CVE-2023-45024 SECURITY: RT 5.0 is vulnerable to information leakage via transaction searches made by authenticated users in the transaction query builder.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41259</cvename>
+      <cvename>CVE-2023-41260</cvename>
+      <cvename>CVE-2023-45024</cvename>
+      <url>https://bestpractical.com/request-tracker/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-18</discovery>
+      <entry>2023-10-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9000591b-483b-45ac-9c87-b3df3a4198ec">
     <topic>electron{25,26} -- Use after free in Site Isolation</topic>
     <affects>
