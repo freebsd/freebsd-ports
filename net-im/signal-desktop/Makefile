@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.34.0
+DISTVERSION=	6.35.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -132,10 +132,6 @@ fetch-yarn:
 			@yarn-offline-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
 	fi
-
-post-patch:
-	${REINPLACE_CMD} "s#%%EPOCH%%#${_BUILD_DATE}#" \
-		${WRKSRC}/ts/scripts/get-expire-time.ts
 
 post-extract:
 	# install yarn modules and fail silently

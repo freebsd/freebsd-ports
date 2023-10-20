@@ -1,6 +1,6 @@
---- ts/updater/index.ts.orig	2022-12-04 09:57:09 UTC
+--- ts/updater/index.ts.orig	2023-10-19 19:29:53 UTC
 +++ ts/updater/index.ts
-@@ -61,6 +61,6 @@ function autoUpdateDisabled() {
+@@ -72,6 +72,6 @@ function autoUpdateDisabled() {
  
  function autoUpdateDisabled() {
    return (
