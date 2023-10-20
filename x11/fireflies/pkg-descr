@@ -1,1 +1,5 @@
-fireflies is a extention of xscreensaver.
+A bunch of fireflies chase a few baits around the screen, leaving colorful
+tails which get blown around by the wind.
+
+This screensaver is installed as a "hack" for xscreensaver. When built with
+SDL support, it can also be run standalone.
