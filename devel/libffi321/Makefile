@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	321
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foreign Function Interface (stripped down compat version)
-WWW=		http://sources.redhat.com/libffi/
+WWW=		https://sourceware.org/libffi/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
