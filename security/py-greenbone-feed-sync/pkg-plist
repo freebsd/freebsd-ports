@@ -49,9 +49,3 @@ bin/greenbone-scapdata-sync
 @dir(gvm,gvm,750) /var/lib/notus
 @dir(gvm,gvm,750) /var/lib/openvas/plugins
 @dir(gvm,gvm,750) /var/lib/openvas
-@dir etc/gvm
-@dir /var/lib/gvm
-@dir /var/lib/notus
-@dir /var/lib/openvas/plugins
-@dir /var/lib/openvas
-@dir /var/lib
