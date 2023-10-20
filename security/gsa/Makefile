@@ -1,7 +1,7 @@
 PORTNAME=	gsa
 DISTVERSIONPREFIX=	v
 DISTVERSION=	22.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/greenbone/gsa
 
 LICENSE=	AGPLv3+
 
-BUILD_DEPENDS=	yarn:www/yarn
+BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 RUN_DEPENDS=	${LOCALBASE}/sbin/gsad:security/gsad
 
 USES=		nodejs:build
@@ -19,7 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	gsa
 
-YARN_BIN=	${LOCALBASE}/bin/yarn
+NPM_BIN=	${LOCALBASE}/bin/npm
 
 # to rebuild the deps archive:
 #   1. set DEV_UPDATE_MODE=yes
@@ -29,27 +29,25 @@ YARN_BIN=	${LOCALBASE}/bin/yarn
 #   5. make clean makesum
 
 DEV_UPDATE_MODE=	no
-DEPS_CACHE_DIR=		${WRKDIR}
+DEPS_CACHE_DIR=		${WRKSRC}
 
 .if (${DEV_UPDATE_MODE} == "yes")
+NPM_ARGS=	install
 post-build:
-	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX} yarn-offline-cache
+	@cd ${DEPS_CACHE_DIR} && ${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX} node_modules
 	@${ECHO} "(!!!) Please upload the cache archive: ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}"
 .else
-MASTER_SITES+=	LOCAL/acm/gsa/:yarn_cache
-DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
-YARN_ARGS=	--offline
+MASTER_SITES+=	LOCAL/acm/gsa/:npm_cache
+DISTFILES+=	${PORTNAME}-cache-${DISTVERSION}${EXTRACT_SUFX}:npm_cache
+NPM_ARGS=	run build
 .endif
 
-post-patch:
-	${ECHO_CMD} 'yarn-offline-mirror "${WRKDIR}/yarn-offline-cache"' >> \
-		${WRKSRC}/.yarnrc
+post-extract:
+	@${MV} ${WRKDIR}/node_modules ${WRKSRC}
 
 do-build:
 	@cd ${WRKSRC} && \
-		${YARN_BIN} ${YARN_ARGS}
-	@cd ${WRKSRC} && \
-		${YARN_BIN} ${YARN_ARGS} build
+		${NPM_BIN} ${NPM_ARGS}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gvm/gsad/web
