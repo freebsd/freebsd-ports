@@ -23,8 +23,8 @@ CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
 
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}c \
-		man/man1/${PORTNAME}.1.gz \
-		man/man1/${PORTNAME}c.1.gz
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man1/${PORTNAME}c.1.gz
 PORTDOCS=	README.md
 PORTEXAMPLES=	autostart sxhkdrc xephyr.sh
 
