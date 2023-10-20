@@ -58,7 +58,7 @@ MAILGRP?=	courier
 #
 # End of user variables
 
-USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2
+USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 
