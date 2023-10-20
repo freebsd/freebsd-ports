@@ -1,6 +1,5 @@
 PORTNAME=	geany-plugin-macro
 PORTVERSION=	${GEANY_VER}
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

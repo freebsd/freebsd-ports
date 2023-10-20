@@ -1,4 +1,4 @@
-GEANY_VER=		1.38
+GEANY_VER=		2.0
 
 GEANY_PLUGINS=		addons \
 			autoclose \
