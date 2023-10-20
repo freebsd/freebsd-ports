@@ -2,6 +2,8 @@
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
+sbin/rt-clean-shorteners
+sbin/rt-email-expiring-auth-tokens
 @dir(root,rt,0750) %%RT_ETC_DIR%%
 @dir(root,rt,0750) %%RT_ETC_DIR%%/RT_SiteConfig.d
 @mode 0440
@@ -164,6 +166,7 @@ bin/rt-mailgate
 %%SITE_PERL%%/RT/Interface/Web/Middleware/StaticHeaders.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder.pm
 %%SITE_PERL%%/RT/Interface/Web/QueryBuilder/Tree.pm
+%%SITE_PERL%%/RT/Interface/Web/ReportsRegistry.pm
 %%SITE_PERL%%/RT/Interface/Web/Request.pm
 %%SITE_PERL%%/RT/Interface/Web/Scrubber.pm
 %%SITE_PERL%%/RT/Interface/Web/Scrubber/Permissive.pm
@@ -737,6 +740,12 @@ sbin/standalone_httpd
 %%DOCSDIR%%/upgrade/5.0.4/schema.Pg
 %%DOCSDIR%%/upgrade/5.0.4/schema.SQLite
 %%DOCSDIR%%/upgrade/5.0.4/schema.mysql
+%%DOCSDIR%%/upgrade/5.0.5/content
+%%DOCSDIR%%/upgrade/5.0.5/indexes
+%%DOCSDIR%%/upgrade/5.0.5/schema.Oracle
+%%DOCSDIR%%/upgrade/5.0.5/schema.Pg
+%%DOCSDIR%%/upgrade/5.0.5/schema.SQLite
+%%DOCSDIR%%/upgrade/5.0.5/schema.mysql
 %%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%DOCSDIR%%/upgrade/reset-sequences
 %%DOCSDIR%%/upgrade/sanity-check-stylesheets
@@ -893,6 +902,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Admin/Scrips/Elements/EditBasics
 %%DATADIR%%/html/Admin/Scrips/Elements/EditCustomCode
 %%DATADIR%%/html/Admin/Scrips/Elements/SelectTemplate
+%%DATADIR%%/html/Admin/Scrips/Logging.html
 %%DATADIR%%/html/Admin/Scrips/Modify.html
 %%DATADIR%%/html/Admin/Scrips/Objects.html
 %%DATADIR%%/html/Admin/Scrips/index.html
@@ -1142,6 +1152,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Elements/Refresh
 %%DATADIR%%/html/Elements/RefreshHomepage
 %%DATADIR%%/html/Elements/SavedSearches
+%%DATADIR%%/html/Elements/SavedSearchSelectUser
 %%DATADIR%%/html/Elements/ScrubHTML
 %%DATADIR%%/html/Elements/SearchFilter
 %%DATADIR%%/html/Elements/Section
@@ -1396,6 +1407,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Create.html
 %%DATADIR%%/html/SelfService/CreateTicketInQueue.html
 %%DATADIR%%/html/SelfService/Display.html
+%%DATADIR%%/html/SelfService/Download/CustomFieldValue/dhandler
 %%DATADIR%%/html/SelfService/Elements/GotoTicket
 %%DATADIR%%/html/SelfService/Elements/Header
 %%DATADIR%%/html/SelfService/Elements/MyGroupRequests
@@ -1403,6 +1415,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
+%%DATADIR%%/html/SelfService/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
 %%DATADIR%%/html/SelfService/Helpers/TextDiff
@@ -1476,6 +1489,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/autohandler
 %%DATADIR%%/html/Tools/MyDay.html
 %%DATADIR%%/html/Tools/MyReminders.html
+%%DATADIR%%/html/Tools/PreviewSearches.html
 %%DATADIR%%/html/Tools/index.html
 %%DATADIR%%/html/Transaction/Display.html
 %%DATADIR%%/html/User/Elements/AssetList
