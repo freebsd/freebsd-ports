@@ -19,7 +19,6 @@ include/geany/plugindata.h
 include/geany/pluginutils.h
 include/geany/prefs.h
 include/geany/project.h
-include/geany/scintilla/Compat.h
 include/geany/scintilla/SciLexer.h
 include/geany/scintilla/Sci_Position.h
 include/geany/scintilla/Scintilla.h
@@ -54,12 +53,14 @@ share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/LexillaLicense.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ScintillaLicense.txt
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/html/images/build_menu_commands_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/edit_change_history.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/find_in_files_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/main_window.png
@@ -80,11 +81,13 @@ share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_various.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/replace_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/sidebar_documents_only.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/sidebar_show_paths.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/sidebar_show_tree.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%DATADIR%%/GPL-2
 %%DATADIR%%/colorschemes/alt.conf
-%%DATADIR%%/filetype_extensions.conf
 %%DATADIR%%/filedefs/filetypes.Arduino.conf
 %%DATADIR%%/filedefs/filetypes.CUDA.conf
 %%DATADIR%%/filedefs/filetypes.Clojure.conf
@@ -105,6 +108,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.ada
 %%DATADIR%%/filedefs/filetypes.asciidoc
 %%DATADIR%%/filedefs/filetypes.asm
+%%DATADIR%%/filedefs/filetypes.autoit
 %%DATADIR%%/filedefs/filetypes.batch
 %%DATADIR%%/filedefs/filetypes.bibtex
 %%DATADIR%%/filedefs/filetypes.c
@@ -122,10 +126,10 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.docbook
 %%DATADIR%%/filedefs/filetypes.erlang
 %%DATADIR%%/filedefs/filetypes.f77
-%%DATADIR%%/filedefs/filetypes.ferite
 %%DATADIR%%/filedefs/filetypes.forth
 %%DATADIR%%/filedefs/filetypes.fortran
 %%DATADIR%%/filedefs/filetypes.freebasic
+%%DATADIR%%/filedefs/filetypes.gdscript
 %%DATADIR%%/filedefs/filetypes.glsl
 %%DATADIR%%/filedefs/filetypes.go
 %%DATADIR%%/filedefs/filetypes.haskell
@@ -163,8 +167,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filedefs/filetypes.xml
 %%DATADIR%%/filedefs/filetypes.yaml
 %%DATADIR%%/filedefs/filetypes.zephir
-%%DATADIR%%/geany-3.0.css
-%%DATADIR%%/geany-3.20.css
+%%DATADIR%%/filetype_extensions.conf
 %%DATADIR%%/geany.css
 %%DATADIR%%/geany.glade
 %%DATADIR%%/snippets.conf
@@ -185,6 +188,7 @@ share/applications/geany.desktop
 %%DATADIR%%/templates/files/main.cxx
 %%DATADIR%%/templates/files/main.d
 %%DATADIR%%/templates/files/main.java
+%%DATADIR%%/templates/files/main.md
 %%DATADIR%%/templates/files/main.py
 %%DATADIR%%/templates/files/main.vala
 %%DATADIR%%/templates/files/module.erl
@@ -212,6 +216,7 @@ share/icons/hicolor/16x16/apps/geany.png
 share/icons/hicolor/24x24/actions/geany-build.png
 share/icons/hicolor/24x24/actions/geany-close-all.png
 share/icons/hicolor/24x24/actions/geany-save-all.png
+share/icons/hicolor/24x24/apps/geany.png
 share/icons/hicolor/32x32/actions/geany-build.png
 share/icons/hicolor/32x32/actions/geany-close-all.png
 share/icons/hicolor/32x32/actions/geany-save-all.png
