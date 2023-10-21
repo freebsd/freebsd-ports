@@ -4573,6 +4573,7 @@
     SUBDIR += py-dateutil
     SUBDIR += py-dateutils
     SUBDIR += py-datrie
+    SUBDIR += py-dbt-extractor
     SUBDIR += py-dbus
     SUBDIR += py-ddsketch
     SUBDIR += py-ddt
