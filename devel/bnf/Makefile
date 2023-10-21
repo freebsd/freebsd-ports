@@ -4,13 +4,12 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Generate C parser given a grammar in BNF notation
 WWW=		https://www.nongnu.org/bnf/
 
 LICENSE=	GPLv2
 
-USES=		makeinfo
 GNU_CONFIGURE=	yes
 
 INFO=		bnf
