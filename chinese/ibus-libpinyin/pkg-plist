@@ -37,6 +37,7 @@ share/ibus/component/libpinyin.xml
 %%NLS%%share/locale/de/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/ibus-libpinyin.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/ibus-libpinyin.mo
 %%NLS%%share/locale/si/LC_MESSAGES/ibus-libpinyin.mo
