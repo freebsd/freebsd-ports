@@ -5,14 +5,14 @@ CATEGORIES=	ftp
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Yet another FTP client, similar to ftp(1)
-WWW=		https://web.archive.org/web/20180422134425/http://www.yafc-ftp.com/
+WWW=		https://github.com/sebastinas/yafc
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	glib>0:devel/glib20
 
-USES=		autoreconf gmake localbase makeinfo pkgconfig ssl tar:xz
+USES=		autoreconf gmake localbase pkgconfig ssl tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastinas
 
@@ -23,18 +23,18 @@ CONFIGURE_ARGS=	--with-krb5=no \
 		--with-socks=no
 CONFIGURE_ENV=	ac_cv_ipv6=yes
 
-INFO=		yafc
 PLIST_FILES=	bin/yafc \
 		man/man1/yafc.1.gz
 PORTEXAMPLES=	inputrc yafcrc
 
-OPTIONS_DEFINE=		BASH EXAMPLES NLS READLINE SSH
-OPTIONS_DEFAULT=	BASH SSH
+OPTIONS_DEFINE=		BASH EXAMPLES INFO NLS READLINE SSH
+OPTIONS_DEFAULT=	BASH INFO SSH
 
 BASH_CONFIGURE_OFF=	--with-bash-completion=no
 BASH_CONFIGURE_ON=	--with-bash-completion=yes
 BASH_PLIST_FILES=	etc/bash_completion.d/yafc
-
+INFO_USES=		makeinfo
+INFO_INFO=		yafc
 NLS_USES=		gettext gnome
 NLS_USE=		GNOME=intltool
 NLS_CONFIGURE_WITH=	gettext=${LOCALBASE}
@@ -49,6 +49,12 @@ SSH_CONFIGURE_OFF=	--without-ssh
 
 pre-configure:
 	@(cd ${WRKSRC} && ${LOCALBASE}/bin/glib-gettextize -f -c)
+
+post-patch-INFO-off:
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.am
+
+post-install-INFO-off:
+	${INSTALL_MAN} ${WRKSRC}/doc/yafc.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
