@@ -9,7 +9,7 @@ WWW=		https://pecl.php.net/package/imagick
 
 LICENSE=	PHP301
 
-USES=		cpe php:pecl localbase magick:nox11
+USES=		cpe php:pecl localbase magick
 
 CPE_VENDOR=	php
 
