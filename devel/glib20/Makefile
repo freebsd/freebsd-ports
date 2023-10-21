@@ -86,9 +86,6 @@ post-configure-GTKDOC-on:
 	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|/usr/share/locale/locale|${LOCALBASE}/share/locale/locale|g' \
-		${WRKSRC}/glib/gutils.c
 	${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
 		${WRKSRC}/gio/gdbus-2.0/codegen/gdbus-codegen.in \
 		${WRKSRC}/glib/gtester-report.in \
