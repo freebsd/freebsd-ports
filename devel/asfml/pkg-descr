@@ -1,0 +1,8 @@
+ASFML is an Ada binding of, various viscosity, to the Simple and Fast
+Multimedia Library (SFML). It uses Ada types, and portable defined types which
+eliminates the inclusion of Ada interface libraries, however most functions are
+directly imported.
+
+ASFML is written in standard Ada without the use of any specific GNAT
+extensions, however, some indirect dependency could exist through the
+representation of some types.
