@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library for SDTS related development
 WWW=		https://mcmcweb.er.usgs.gov/sdts/sdtsxx/
 
+DEPRECATED=	Last upstream release was in 2003 and both MASTER_SITES and WWW are unreachable
+EXPIRATION_DATE=	2023-11-22
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		autoreconf bison dos2unix gmake libtool makeinfo
