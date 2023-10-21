@@ -1,6 +1,5 @@
 PORTNAME=	libheif
-DISTVERSION=	1.16.1
-PORTREVISION=	2
+DISTVERSION=	1.17.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,18 +12,24 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsharpyuv.so:graphics/webp
 
-USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
-		localbase:ldflags pkgconfig
+USES=		cmake:testing compiler:c++11-lang cpe gettext-runtime gnome \
+		localbase:ldflags pathfix pkgconfig
 CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf2 glib20
 USE_LDCONFIG=	yes
 PLIST_SUB=	LIB_VER=${DISTVERSION}
 
-OPTIONS_DEFINE=		AOM DAV1D EXAMPLES LIBDE265 SVTAV1 RAV1E X265
-OPTIONS_DEFAULT=	AOM DAV1D LIBDE265 SVTAV1 X265
+CMAKE_OFF=	BUILD_TESTING \
+		WITH_KVAZAAR
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Doxygen
+
+OPTIONS_DEFINE=	AOM DAV1D EXAMPLES FFMPEG JPEG LIBDE265 \
+		OPENJPEG SVTAV1 RAV1E X265
+OPTIONS_DEFAULT=AOM DAV1D FFMPEG JPEG OPENJPEG SVTAV1 X265
 OPTIONS_SUB=	yes
 
 AOM_DESC=		AV1 encoding/decoding via libaom
+FFMPEG_DESC=		Use FFmpeg (support for HEVC decoding)
 DAV1D_DESC=		Build dav1e decoder
 LIBDE265_DESC=		Use libde265 (support for HEVC decoding)
 SVTAV1_DESC=		Build svt-av1 encoder
@@ -38,11 +43,20 @@ DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
 DAV1D_CMAKE_BOOL=	WITH_DAV1D
 
 EXAMPLES_LIB_DEPENDS=	libpng16.so:graphics/png
-EXAMPLES_USES=		jpeg
 EXAMPLES_CMAKE_BOOL=	WITH_EXAMPLES
+EXAMPLE_IMPLIES=	JPEG
+
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_CMAKE_BOOL=	WITH_FFMPEG_DECODER
+
+JPEG_USES=		jpeg
+JPEG_CMAKE_BOOL=	WITH_JPEG_ENCODER WITH_JPEG_DECODER
 
 LIBDE265_LIB_DEPENDS=	libde265.so:multimedia/libde265
 LIBDE265_CMAKE_BOOL=	WITH_LIBDE265
+
+OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
+OPENJPEG_CMAKE_BOOL=	WITH_OpenJPEG_ENCODER WITH_OpenJPEG_DECODER
 
 SVTAV1_LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 SVTAV1_CMAKE_BOOL=	WITH_SvtEnc
