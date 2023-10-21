@@ -10,18 +10,18 @@ WWW=		https://www.gnu.org/software/mifluz/
 
 LICENSE=	GPLv3
 
-USES=		bison compiler iconv libtool makeinfo pathfix
+USES=		bison compiler iconv libtool localbase:ldflags pathfix
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-posixmutexes \
 		--localstatedir="${PREFIX}/var" \
 		--without-unac
+
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	htdig # bin/htdb_dump bin/htdb_load bin/htdb_stat
 
