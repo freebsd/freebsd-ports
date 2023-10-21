@@ -4999,6 +4999,7 @@
     SUBDIR += py-mime
     SUBDIR += py-miniKanren
     SUBDIR += py-minidump
+    SUBDIR += py-minimal-snowplow-tracker
     SUBDIR += py-minimongo
     SUBDIR += py-minio
     SUBDIR += py-mock

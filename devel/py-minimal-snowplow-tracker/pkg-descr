@@ -1,0 +1,12 @@
+Add analytics to your Python apps and Python games with the Snowplow event
+tracker for Python.
+
+With this tracker you can collect event data from your Python-based
+applications, games or Python web servers/frameworks.
+
+This is a fork of the original Snowplow Python tracker v0.8.0, with a number of
+changes:
+- All emitters except for the basic one removed
+- Tests converted to docker
+- All tracking event methods except for structured/unstructured removed
+- Python 3.7 supported
