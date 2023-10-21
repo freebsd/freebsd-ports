@@ -1,4 +1,4 @@
---- src/networking-headers.h.orig
+--- src/networking-headers.h.orig	2021-12-11 09:07:37 UTC
 +++ src/networking-headers.h
 @@ -25,6 +25,8 @@
   */

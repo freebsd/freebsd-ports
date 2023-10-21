@@ -1,5 +1,5 @@
---- src/libserveez/defines.h.orig	2013-01-20 23:49:50.000000000 +0900
-+++ src/libserveez/defines.h	2013-02-25 14:11:54.000000000 +0900
+--- src/libserveez/defines.h.orig	2021-12-11 09:07:37 UTC
++++ src/libserveez/defines.h
 @@ -34,6 +34,14 @@
  #include <winsock2.h>
  #endif
