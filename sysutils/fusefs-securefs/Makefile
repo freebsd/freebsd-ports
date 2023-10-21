@@ -1,6 +1,5 @@
 PORTNAME=	securefs
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+DISTVERSION=	0.14.3
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -11,19 +10,23 @@ WWW=		https://github.com/netheril96/securefs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN=		does not build
-
+BUILD_DEPENDS=	${LOCALBASE}/include/tclap/TCLAPConfig.h:devel/tclap
 LIB_DEPENDS=	libutf8proc.so:textproc/utf8proc \
-		libjsoncpp.so:devel/jsoncpp
+		libargon2.so:security/libargon2 \
+		libjsoncpp.so:devel/jsoncpp \
+		libcryptopp.so:security/cryptopp \
+		libabsl_strings.so:devel/abseil
 
-USES=		cmake compiler:c++11-lang fuse
-LDFLAGS+=	-L${LOCALBASE}/lib -lutf8proc -ljsoncpp
+USES=		cmake compiler:c++17-lang fuse pkgconfig
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	netheril96
+
 PLIST_FILES=	bin/securefs
 
-post-patch:
-	${REINPLACE_CMD} "s|@GIT_VERSION@|${PORTVERSION}|" ${WRKSRC}/sources/git-version.cpp.in
-	${MV} ${WRKSRC}/sources/git-version.cpp.in ${WRKSRC}/sources/git-version.cpp
+CMAKE_OFF=	SECUREFS_ENABLE_BUILD_TEST \
+		SECUREFS_ENABLE_UNIT_TEST \
+		SECUREFS_USE_VCPKG
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 
 .include <bsd.port.mk>
