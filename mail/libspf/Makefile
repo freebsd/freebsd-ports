@@ -12,6 +12,9 @@ WWW=		http://software.schmorp.de/pkg/libspf.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandonware, last commit upstream 14 years ago. Consider migrating to mail/libspf2
+EXPIRATION_DATE=2023-12-31
+
 MAKE_JOBS_UNSAFE=yes
 
 GNU_CONFIGURE=	yes
