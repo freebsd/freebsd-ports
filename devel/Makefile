@@ -4793,6 +4793,7 @@
     SUBDIR += py-hgtools
     SUBDIR += py-hidraw
     SUBDIR += py-holidays
+    SUBDIR += py-hologram
     SUBDIR += py-homebase
     SUBDIR += py-http-prompt
     SUBDIR += py-humanize
