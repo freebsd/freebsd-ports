@@ -1,6 +1,5 @@
 PORTNAME=	HPCombi
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math devel
 
@@ -15,11 +14,12 @@ ONLY_FOR_ARCHS_REASON=	uses AVX instruction set
 
 BUILD_DEPENDS=	sparsehash>0:devel/sparsehash
 LIB_DEPENDS=	libbenchmark.so:devel/benchmark
+TEST_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hivert
 
-USES=		cmake compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags pkgconfig
 
 NO_ARCH=	yes
 
