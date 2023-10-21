@@ -141,11 +141,9 @@ Basic instructions for configure your gvm infraestruture are following:
 
 14) gvm log files are stores to /var/log/gvm directory
 
-15) gsad can export results to PDF. It needs print/texlive-texmf port
+15) gsad can export results to PDF. It needs print/tex-xetex port
   
-  # pkg install texlive-texmf
-
-  It will install 1G of data
+  # pkg install tex-xetex
 
 16) If you need more configure information you can look at the following links:
 
