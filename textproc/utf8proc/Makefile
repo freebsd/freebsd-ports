@@ -1,7 +1,7 @@
 PORTNAME=	utf8proc
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.0
 CATEGORIES=	textproc devel
+MASTER_SITES=	https://github.com/JuliaStrings/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	UTF-8 processing library
@@ -11,17 +11,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cmake
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	JuliaStrings
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 PLIST_FILES=	include/utf8proc.h \
 		lib/libutf8proc.so \
-		lib/libutf8proc.so.2 \
-		lib/libutf8proc.so.2.6.0 \
+		lib/libutf8proc.so.3 \
+		lib/libutf8proc.so.3.0.0 \
 		libdata/pkgconfig/libutf8proc.pc
 PORTDOCS=	NEWS.md README.md
 
