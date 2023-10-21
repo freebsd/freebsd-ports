@@ -11,6 +11,9 @@ WWW=		https://www.gnu.org/software/guile/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2002 and no longer relevant nowadays
+EXPIRATION_DATE=	2023-11-21
+
 USES=		guile:1.8,build,run
 
 GNU_CONFIGURE=	yes
