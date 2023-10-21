@@ -475,6 +475,7 @@
     SUBDIR += criterion
     SUBDIR += cscope
     SUBDIR += cscout
+    SUBDIR += csfml
     SUBDIR += csmith
     SUBDIR += csoap
     SUBDIR += cssc
