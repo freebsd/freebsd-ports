@@ -1,16 +1,13 @@
 PORTNAME=	cwm
-DISTVERSION=	7.1
+DISTVERSION=	7.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://leahneukirchen.org/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Minimalistic window manager for X11 based on evilwm
 WWW=		https://github.com/leahneukirchen/cwm
 
 LICENSE=	ISCL
-
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
 
 USES=		pkgconfig xorg
 USE_XORG=	x11 xft xrandr
