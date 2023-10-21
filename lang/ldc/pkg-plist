@@ -1,3 +1,4 @@
+bin/ldc-build-plugin
 bin/ldc-build-runtime
 bin/ldc-profdata
 bin/ldc-prune-cache
@@ -14,6 +15,7 @@ include/d/core/checkedint.d
 include/d/core/cpuid.d
 include/d/core/demangle.d
 include/d/core/exception.d
+include/d/core/factory.d
 include/d/core/gc/config.d
 include/d/core/gc/gcinterface.d
 include/d/core/gc/registry.d
@@ -201,6 +203,8 @@ include/d/core/sys/linux/execinfo.d
 include/d/core/sys/linux/fcntl.d
 include/d/core/sys/linux/fs.d
 include/d/core/sys/linux/ifaddrs.d
+include/d/core/sys/linux/input.d
+include/d/core/sys/linux/input_event_codes.d
 include/d/core/sys/linux/io_uring.d
 include/d/core/sys/linux/link.d
 include/d/core/sys/linux/netinet/in_.d
@@ -225,6 +229,7 @@ include/d/core/sys/linux/termios.d
 include/d/core/sys/linux/time.d
 include/d/core/sys/linux/timerfd.d
 include/d/core/sys/linux/tipc.d
+include/d/core/sys/linux/uinput.d
 include/d/core/sys/linux/unistd.d
 include/d/core/sys/netbsd/dlfcn.d
 include/d/core/sys/netbsd/err.d
@@ -516,6 +521,7 @@ include/d/etc/c/odbc/sqlucode.d
 include/d/etc/c/sqlite3.d
 include/d/etc/c/zlib.d
 include/d/etc/linux/memoryerror.d
+include/d/etc/valgrind/valgrind.d
 include/d/importc.h
 include/d/ldc/asan.d
 include/d/ldc/attributes.d
@@ -704,22 +710,22 @@ include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.102
-lib/libdruntime-ldc-debug-shared.so.102.2
+lib/libdruntime-ldc-debug-shared.so.105
+lib/libdruntime-ldc-debug-shared.so.105.2
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.102
-lib/libdruntime-ldc-shared.so.102.2
+lib/libdruntime-ldc-shared.so.105
+lib/libdruntime-ldc-shared.so.105.2
 lib/libdruntime-ldc.a
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.102
-lib/libphobos2-ldc-debug-shared.so.102.2
+lib/libphobos2-ldc-debug-shared.so.105
+lib/libphobos2-ldc-debug-shared.so.105.2
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.102
-lib/libphobos2-ldc-shared.so.102.2
+lib/libphobos2-ldc-shared.so.105
+lib/libphobos2-ldc-shared.so.105.2
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
