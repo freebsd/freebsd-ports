@@ -9,19 +9,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNATS, the GNU Problem Report Management System
 WWW=		https://www.gnu.org/software/gnats/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BROKEN_mips=		Does not build: error: conflicting types for yy_scan_string
 BROKEN_mips64=		Does not build: error: conflicting types for yy_scan_string
 BROKEN_FreeBSD_12_powerpc64=	fails to build on powerpc64 elfv1: conflicting types for yy_scan_string
 
-GNU_CONFIGURE=	yes
-USES=		cpe gmake makeinfo
-USE_GCC=	yes
-USERS=		gnats
-
+USES=		cpe gettext-runtime gmake
 CPE_VENDOR=	gnu
+USE_GCC=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PKGINSTALL=	${WRKDIR}/pkg-install
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--sharedstatedir=${GNATSDBDIR}
 
 .ifdef WANT_FREEFALL_CFG
 EXTRA_PATCHES+=		${PATCHDIR}/extrapatch-*
@@ -31,10 +31,6 @@ WITH_SUBMITTER_ID=	current-users
 WITH_ORGANIZATION=	FreeBSD
 WITH_GNATSD_SERVICE=	support
 .endif
-
-GNATSDBDIR?=		/var/db/gnats
-
-CONFIGURE_ARGS+=	--sharedstatedir=${GNATSDBDIR}
 
 .ifdef WITH_SUBMITTER_ID
 CONFIGURE_ARGS+=	--with-submitter=${WITH_SUBMITTER_ID}
@@ -48,30 +44,31 @@ CONFIGURE_ARGS+=	--with-organization=${WITH_ORGANIZATION:Q}
 CONFIGURE_ARGS+=	--with-gnats-service=${WITH_GNATSD_SERVICE}
 .endif
 
-PLIST_SUB=	GNATSDBDIR=${GNATSDBDIR}
+USERS=		gnats
+
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGMESSAGE=	${WRKDIR}/pkg-message
 INFO=		gnats-faq gnats
+PLIST_SUB=	GNATSDBDIR=${GNATSDBDIR}
 PORTDOCS=	NEWS UPGRADING
 
 OPTIONS_DEFINE=	DOCS EMACS SERVER
 OPTIONS_DEFAULT=SERVER
 OPTIONS_SUB=	yes
-EMACS_USES=	emacs
+
 EMACS_DESC=	Install Emacs Lisp support file
-EMACS_VARS=	EMACS_NO_DEPENDS=yes
 SERVER_DESC=	Install the gnats server too
 
+EMACS_USES=	emacs
+EMACS_CONFIGURE_ON=--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
+EMACS_PLIST_SUB_OFF=	EMACS_SITE_LISPDIR="@comment "
+EMACS_VARS=	EMACS_NO_DEPENDS=yes
+SERVER_ALL_TARGET_OFF=	all-tools
+SERVER_INSTALL_TARGET_OFF=	install-tools
+
+GNATSDBDIR?=		/var/db/gnats
+
 .include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSERVER}
-ALL_TARGET=	all-tools
-INSTALL_TARGET=	install-tools
-.endif
-
-.if ${PORT_OPTIONS:MEMACS}
-CONFIGURE_ARGS+=--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
-.else
-PLIST_SUB+=	EMACS_SITE_LISPDIR="@comment "
-.endif
 
 pre-everything::
 .if !defined(PACKAGE_BUILDING) && !defined(WANT_FREEFALL_CFG)
@@ -87,6 +84,9 @@ pre-everything::
 	@${ECHO}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|info man|man|g' ${WRKSRC}/doc/Makefile.in
+
 pre-configure:
 	@${ECHO_CMD} 'RELEASE_TAG="\`uname -srm\`"' > ${WRKSRC}/release-info
 
@@ -100,13 +100,13 @@ post-build:
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gnats
 
-post-install:
-.if ${PORT_OPTIONS:MSERVER}
+post-install-SERVER-on:
 	${MV} ${STAGEDIR}${ETCDIR}/databases.default \
 		${STAGEDIR}${ETCDIR}/databases.sample
 	${MV} ${STAGEDIR}${ETCDIR}/gnatsd.host_access.default \
 		${STAGEDIR}${ETCDIR}/gnatsd.host_access.sample
-.endif
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
