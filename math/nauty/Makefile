@@ -1,10 +1,11 @@
 PORTNAME=	nauty
-PORTVERSION=	2.8.6
+DISTVERSION=	2.8.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://users.cecs.anu.edu.au/~bdm/nauty/ \
 		https://pallini.di.uniroma1.it/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}${DISTVERSION:S/./_/g}
 
 MAINTAINER=	moritz@schmi.tt
 COMMENT=	Nauty & Traces are programs for computing graph automorphism
@@ -15,18 +16,20 @@ LICENSE=	APACHE20
 USES=		gmake
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-tls # this makes nauty thread-safe, math/libnormaliz requires nauty with tls
+CONFIGURE_ARGS=	--enable-tls --disable-clz ${CONFIGURE_ARGS_${ARCH}} # this makes nauty thread-safe, math/libnormaliz requires nauty with tls
+CONFIGURE_ARGS_aarch64=	--enable-popcnt
+CONFIGURE_ARGS_amd64=	--enable-popcnt
+CONFIGURE_ARGS_armv7=	--enable-popcnt
+CONFIGURE_ARGS_i386=	--disable-popcnt
+CONFIGURE_ARGS_powerpc64=	--disable-popcnt
+CONFIGURE_ARGS_riscv64=	--disable-popcnt
 
 MAKEFILE=	makefile
 MAKE_ARGS=	includedir=${PREFIX}/include/${PORTNAME} # place headers into a dedicated directory
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=	DOCS NATIVE
-
-NATIVE_DESC=		Build with native optimizations (-march=native, etc)
-NATIVE_CONFIGURE_ON=	--disable-generic --enable-clz --enable-popcnt
-NATIVE_CONFIGURE_OFF=	--enable-generic --disable-clz --disable-popcnt
+OPTIONS_DEFINE=	DOCS
 
 post-build: # build shared libraries: based on how static libraries are created
 	# rebuild .o files with -fPIC
