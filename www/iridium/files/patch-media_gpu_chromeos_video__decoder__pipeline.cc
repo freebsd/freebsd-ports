@@ -1,6 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2023-08-28 20:17:35 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2023-11-22 14:00:11 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -986,14 +986,14 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1033,14 +1033,14 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
      }
    }
  
@@ -17,7 +17,7 @@
    // Linux w/ V4L2 should not use a custom allocator
    // Only tested with video_decode_accelerator_tests
    // TODO(wenst@) Test with full Chromium Browser
-@@ -1124,7 +1124,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1177,7 +1177,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  

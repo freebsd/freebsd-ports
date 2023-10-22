@@ -1,5 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.09.116.2
+PORTVERSION=	2023.11.119
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 PATCH_SITES=	https://nerd.hu/distfiles/
-PATCHFILES+=	disable-privacy-sandbox-891b80bbfcdb15e8292143efd1715fa3f30662c4.patch:-p1
+PATCHFILES+=	disable-privacy-sandbox-13fc15e4ec454e3397f11bdc1bf2627c121a37e8.patch:-p1
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -240,7 +240,7 @@ PLIST_SUB+=	NOT_AARCH64=""
 FFMPEG_TARGET=	ia32
 .endif
 
-FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/freebsd/${FFMPEG_TARGET}
 
 # Allow relocations against read-only segments (override lld default)

@@ -1,7 +1,7 @@
---- base/test/launcher/test_launcher.cc.orig	2023-07-24 14:27:53 UTC
+--- base/test/launcher/test_launcher.cc.orig	2023-11-22 14:00:11 UTC
 +++ base/test/launcher/test_launcher.cc
-@@ -69,6 +69,7 @@
- #include "third_party/libxml/chromium/libxml_utils.h"
+@@ -70,6 +70,7 @@
+ #include "testing/gtest/include/gtest/gtest.h"
  
  #if BUILDFLAG(IS_POSIX)
 +#include <signal.h>

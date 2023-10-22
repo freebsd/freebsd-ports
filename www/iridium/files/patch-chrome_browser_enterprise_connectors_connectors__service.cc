@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/connectors_service.cc.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/enterprise/connectors/connectors_service.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/enterprise/connectors/connectors_service.cc
-@@ -527,7 +527,7 @@ bool ConnectorsService::ConnectorsEnabled() const {
+@@ -548,7 +548,7 @@ bool ConnectorsService::ConnectorsEnabled() const {
  
    Profile* profile = Profile::FromBrowserContext(context_);
  

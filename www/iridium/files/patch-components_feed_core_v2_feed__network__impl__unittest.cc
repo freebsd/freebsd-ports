@@ -1,6 +1,6 @@
---- components/feed/core/v2/feed_network_impl_unittest.cc.orig	2023-07-24 14:27:53 UTC
+--- components/feed/core/v2/feed_network_impl_unittest.cc.orig	2023-10-21 11:51:27 UTC
 +++ components/feed/core/v2/feed_network_impl_unittest.cc
-@@ -801,8 +801,8 @@ TEST_F(FeedNetworkTest, SendApiRequest_DecodesClientIn
+@@ -753,8 +753,8 @@ TEST_F(FeedNetworkTest, SendApiRequest_DecodesClientIn
  
    EXPECT_EQ(feedwire::ClientInfo::CHROME_ANDROID, client_info.app_type());
    EXPECT_EQ(feedwire::Version::RELEASE, client_info.app_version().build_type());

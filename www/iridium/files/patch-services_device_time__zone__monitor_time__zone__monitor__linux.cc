@@ -1,10 +1,10 @@
---- services/device/time_zone_monitor/time_zone_monitor_linux.cc.orig	2023-04-22 17:45:15 UTC
+--- services/device/time_zone_monitor/time_zone_monitor_linux.cc.orig	2023-10-21 11:51:27 UTC
 +++ services/device/time_zone_monitor/time_zone_monitor_linux.cc
 @@ -131,7 +131,11 @@ class TimeZoneMonitorLinuxImpl
      // false positives are harmless, assuming the false positive rate is
      // reasonable.
      const char* const kFilesToWatch[] = {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +        "/etc/localtime",
 +#else
          "/etc/localtime", "/etc/timezone", "/etc/TZ",

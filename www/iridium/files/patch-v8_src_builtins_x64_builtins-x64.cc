@@ -1,4 +1,4 @@
---- v8/src/builtins/x64/builtins-x64.cc.orig	2023-08-28 20:17:35 UTC
+--- v8/src/builtins/x64/builtins-x64.cc.orig	2023-11-22 14:00:11 UTC
 +++ v8/src/builtins/x64/builtins-x64.cc
 @@ -44,6 +44,8 @@ namespace internal {
  #define __ ACCESS_MASM(masm)
@@ -9,7 +9,7 @@
    __ LoadAddress(kJavaScriptCallExtraArg1Register,
                   ExternalReference::Create(address));
    __ Jump(BUILTIN_CODE(masm->isolate(), AdaptorWithBuiltinExitFrame),
-@@ -458,7 +460,7 @@ void Generate_JSEntryVariant(MacroAssembler* masm, Sta
+@@ -430,7 +432,7 @@ void Generate_JSEntryVariant(MacroAssembler* masm, Sta
    // Jump to a faked try block that does the invoke, with a faked catch
    // block that sets the pending exception.
    __ jmp(&invoke);
@@ -18,26 +18,17 @@
  
    // Store the current pc as the handler offset. It's used later to create the
    // handler table.
-@@ -3828,6 +3830,8 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
-     RestoreParentSuspender(masm, rbx, rcx);
-   }
-   __ bind(&suspend);
+@@ -3324,6 +3326,9 @@ void SwitchBackAndReturnPromise(MacroAssembler* masm, 
+ void GenerateExceptionHandlingLandingPad(MacroAssembler* masm,
+                                          Label* return_promise) {
+   int catch_handler = __ pc_offset();
 +
 +  __ endbr64();
-   // No need to process the return value if the stack is suspended, there is a
-   // single 'externref' value (the promise) which doesn't require conversion.
- 
-@@ -4094,6 +4098,9 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
-   // thrown exception.
-   if (stack_switch) {
-     int catch_handler = __ pc_offset();
 +
-+    __ endbr64();
-+
-     // Restore rsp to free the reserved stack slots for the sections.
-     __ leaq(rsp, MemOperand(rbp, kLastSpillOffset));
+   // Restore rsp to free the reserved stack slots for the sections.
+   __ leaq(rsp, MemOperand(rbp, StackSwitchFrameConstants::kLastSpillOffset));
  
-@@ -4361,6 +4368,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
+@@ -3655,6 +3660,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
    LoadJumpBuffer(masm, jmpbuf, true);
    __ Trap();
    __ bind(&resume);
@@ -45,7 +36,7 @@
    __ LeaveFrame(StackFrame::STACK_SWITCH);
    __ ret(0);
  }
-@@ -4508,6 +4516,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
+@@ -3787,6 +3793,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
    }
    __ Trap();
    __ bind(&suspend);

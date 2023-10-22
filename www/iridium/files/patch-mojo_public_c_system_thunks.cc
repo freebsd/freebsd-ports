@@ -1,6 +1,6 @@
---- mojo/public/c/system/thunks.cc.orig	2022-12-06 08:09:13 UTC
+--- mojo/public/c/system/thunks.cc.orig	2023-11-22 14:00:11 UTC
 +++ mojo/public/c/system/thunks.cc
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  #include "mojo/public/c/system/message_pipe.h"
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/files/file_path.h"
  #include "base/scoped_native_library.h"
-@@ -72,7 +72,7 @@ class CoreLibraryInitializer {
+@@ -73,7 +73,7 @@ class CoreLibraryInitializer {
  
    MojoResult LoadLibrary(base::FilePath library_path) {
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \
@@ -18,7 +18,7 @@
      if (library_ && library_->is_valid())
        return MOJO_RESULT_OK;
  
-@@ -86,7 +86,7 @@ class CoreLibraryInitializer {
+@@ -87,7 +87,7 @@ class CoreLibraryInitializer {
  
      if (library_path.empty()) {
        // Default to looking for the library in the current working directory.
@@ -27,7 +27,7 @@
        const base::FilePath::CharType kDefaultLibraryPathValue[] =
            FILE_PATH_LITERAL("./libmojo_core.so");
  #elif BUILDFLAG(IS_FUCHSIA)
-@@ -142,7 +142,7 @@ class CoreLibraryInitializer {
+@@ -143,7 +143,7 @@ class CoreLibraryInitializer {
  
   private:
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || \

@@ -1,6 +1,6 @@
---- net/cert/cert_verify_proc_unittest.cc.orig	2023-08-28 20:17:35 UTC
+--- net/cert/cert_verify_proc_unittest.cc.orig	2023-11-22 14:00:11 UTC
 +++ net/cert/cert_verify_proc_unittest.cc
-@@ -215,7 +215,7 @@ scoped_refptr<CertVerifyProc> CreateCertVerifyProc(
+@@ -213,7 +213,7 @@ scoped_refptr<CertVerifyProc> CreateCertVerifyProc(
      case CERT_VERIFY_PROC_IOS:
        return base::MakeRefCounted<CertVerifyProcIOS>(std::move(crl_set));
  #endif
@@ -9,7 +9,7 @@
      case CERT_VERIFY_PROC_BUILTIN:
        return CreateCertVerifyProcBuiltin(std::move(cert_net_fetcher),
                                           std::move(crl_set),
-@@ -244,7 +244,7 @@ constexpr CertVerifyProcType kAllCertVerifiers[] = {
+@@ -242,7 +242,7 @@ constexpr CertVerifyProcType kAllCertVerifiers[] = {
      CERT_VERIFY_PROC_ANDROID,
  #elif BUILDFLAG(IS_IOS)
      CERT_VERIFY_PROC_IOS,

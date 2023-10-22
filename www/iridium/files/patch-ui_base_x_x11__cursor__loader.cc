@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_loader.cc.orig	2022-12-01 10:35:46 UTC
+--- ui/base/x/x11_cursor_loader.cc.orig	2023-11-22 14:00:11 UTC
 +++ ui/base/x/x11_cursor_loader.cc
 @@ -32,7 +32,7 @@
  #include "ui/gfx/x/xproto.h"
@@ -13,7 +13,7 @@
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so", RTLD_LAZY));
 +#else
    std::unique_ptr<void, DlCloser> lib(dlopen("libXcursor.so.1", RTLD_LAZY));
@@ -30,9 +30,9 @@
      // The toolkit theme has the highest priority.
      LinuxUi::instance() ? LinuxUi::instance()->GetCursorThemeName()
                          : std::string(),
-@@ -443,7 +447,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
-   if (base::StringToInt(GetEnv(kXcursorSizeEnv), &size) && size > 0)
+@@ -448,7 +452,7 @@ uint32_t XCursorLoader::GetPreferredCursorSize() const
      return size;
+   }
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

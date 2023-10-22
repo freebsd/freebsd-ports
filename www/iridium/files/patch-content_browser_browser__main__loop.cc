@@ -1,6 +1,6 @@
---- content/browser/browser_main_loop.cc.orig	2023-07-24 14:27:53 UTC
+--- content/browser/browser_main_loop.cc.orig	2023-11-22 14:00:11 UTC
 +++ content/browser/browser_main_loop.cc
-@@ -245,6 +245,12 @@
+@@ -247,6 +247,12 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
  #endif
  
@@ -13,7 +13,7 @@
  // One of the linux specific headers defines this as a macro.
  #ifdef DestroyAll
  #undef DestroyAll
-@@ -538,6 +544,12 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -540,6 +546,12 @@ int BrowserMainLoop::EarlyInitialization() {
    // by now since a thread to start the ServiceManager has been created
    // before the browser main loop starts.
    DCHECK(SandboxHostLinux::GetInstance()->IsInitialized());
@@ -26,7 +26,7 @@
  #endif
  
    // GLib's spawning of new processes is buggy, so it's important that at this
-@@ -575,7 +587,7 @@ int BrowserMainLoop::EarlyInitialization() {
+@@ -577,7 +589,7 @@ int BrowserMainLoop::EarlyInitialization() {
    base::PlatformThread::SetCurrentThreadType(base::ThreadType::kCompositing);
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

@@ -1,7 +1,7 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
 @@ -212,7 +212,7 @@
- #include "chrome/browser/ui/webui/app_launcher_page_ui.h"
+ #include "chrome/browser/ui/webui/chromeos/chrome_url_disabled/chrome_url_disabled_ui.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -30,7 +30,7 @@
  #include "chrome/browser/ui/webui/connectors_internals/connectors_internals_ui.h"
  #endif
  
-@@ -398,7 +398,7 @@ bool IsAboutUI(const GURL& url) {
+@@ -401,7 +401,7 @@ bool IsAboutUI(const GURL& url) {
  #if !BUILDFLAG(IS_ANDROID)
            || url.host_piece() == chrome::kChromeUITermsHost
  #endif
@@ -39,7 +39,7 @@
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -664,7 +664,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -660,7 +660,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUIMobileSetupHost)
      return &NewWebUI<ash::cellular_setup::MobileSetupUI>;
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -48,7 +48,7 @@
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -726,7 +726,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -723,7 +723,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -57,7 +57,7 @@
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -793,27 +793,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -794,27 +794,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
