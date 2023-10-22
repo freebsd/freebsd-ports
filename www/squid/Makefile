@@ -1,16 +1,14 @@
 PORTNAME=	squid
-DISTVERSION=	6.3
+DISTVERSION=	6.4
 CATEGORIES=	www
 MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/v6/ \
 		http://www1.il.squid-cache.org/Versions/v6/ \
-		http://www1.jp.squid-cache.org/Versions/v6/ \
 		http://www2.gr.squid-cache.org/Versions/v6/ \
 		http://ca2.squid-cache.org/Versions/v6/ \
 		http://www.squid-cache.org/Versions/v6/
 
 PATCH_SITES=	http://www2.pl.squid-cache.org/%SUBDIR%/ \
 		http://www1.il.squid-cache.org/%SUBDIR%/ \
-		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.gr.squid-cache.org/%SUBDIR%/ \
 		http://ca2.squid-cache.org/%SUBDIR%/ \
 		http://www.squid-cache.org/%SUBDIR%/
