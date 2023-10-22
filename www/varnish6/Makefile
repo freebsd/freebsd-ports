@@ -12,6 +12,9 @@ WWW=		https://www.varnish-cache.org/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unsupported version upstream, consider migrating to www/varnish7
+EXPIRATION_DATE=2023-12-31
+
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 LIB_DEPENDS=	libpcre.so:devel/pcre
