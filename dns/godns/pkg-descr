@@ -1,0 +1,3 @@
+GoDNS is Dynamic DNS (DDNS) a client that supports various domain providers
+and allows generating notifications upon change through e-mail (SMTP) or using
+services such as Discord, Pushover, Slack and Telegram.

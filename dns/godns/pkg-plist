@@ -1,0 +1,2 @@
+bin/godns
+@sample etc/godns-config.json.sample

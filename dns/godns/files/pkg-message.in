@@ -1,0 +1,19 @@
+[
+{ type: install
+  message: <<EOM
+  Edit /etc/rc.conf(.local) to start GoDNS automatically at system
+  startup. Command line arguments can be set via godns_args.
+
+  A sample configuration file is installed at the follow location:
+  %%PREFIX%%/etc/godns-config.json.sample
+
+  If you're testing out your setup be aware that GoDNS will refuse
+  to run if you've disabled external ip address lookup and your
+  local interface uses a private ip address.
+
+  Logfile is located at /var/log/godns/godns.log
+
+  For more documentation visit https://github.com/TimothyYe/godns
+EOM
+}
+]
