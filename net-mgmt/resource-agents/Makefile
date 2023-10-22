@@ -1,5 +1,5 @@
 PORTNAME=	resource-agents
-PORTVERSION=	4.12.0
+PORTVERSION=	4.13.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		redis-cli:databases/redis
+LIB_DEPENDS=	libqb.so:devel/libqb
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		autoreconf gmake gnome pkgconfig python shebangfix
@@ -23,8 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-fatal-warnings --with-version=${PORTVERSION} \
 		PACKAGE_STRING="${PORTNAME} ${PORTVERSION}" \
 		PACKAGE_VERSION="${PORTVERSION}"
-
-CONFLICTS=	heartbeat
 
 SHEBANG_LANG=	sh
 sh_OLD_CMD=	/bin/sh
