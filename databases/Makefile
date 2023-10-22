@@ -757,6 +757,7 @@
     SUBDIR += py-databases
     SUBDIR += py-dbf
     SUBDIR += py-dbt-core
+    SUBDIR += py-dbt-duckdb
     SUBDIR += py-dbt-semantic-interfaces
     SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
