@@ -9,6 +9,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alternative threads-aware malloc
 WWW=		http://www.malloc.de/en/
 
+DEPRECATED=    Abandonware, last release in 2006 and there are other alternative malloc implementations available
+EXPIRATION_DATE=2023-11-30
+
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
