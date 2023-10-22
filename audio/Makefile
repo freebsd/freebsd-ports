@@ -629,6 +629,7 @@
     SUBDIR += py-apetag
     SUBDIR += py-aubio
     SUBDIR += py-audioread
+    SUBDIR += py-auditok
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
     SUBDIR += py-essentia
