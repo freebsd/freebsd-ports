@@ -22,13 +22,6 @@ _COROSYNC_INSTALLED_VER:=  ${_COROSYNC_INSTALLED_VER:M'*':C/'//g}
 _COROSYNC_INSTALLED_VER_MAJOR=	${_COROSYNC_INSTALLED_VER:C/([0-9]*).[0-9]*.*/\1/g}
 _COROSYNC_INSTALLED_VER_MINOR=	${_COROSYNC_INSTALLED_VER:C/[0-9]*.([0-9]*).*/\1/g}
 
-# Currently corosync 3 is tagged 2.99.x so this is a temporary
-# work around until the final version is released.
-.    if ${_COROSYNC_INSTALLED_VER_MAJOR} == 2 && ${_COROSYNC_INSTALLED_VER_MINOR} == 99
-_COROSYNC_INSTALLED_VER_MAJOR=	3
-_COROSYNC_INSTALLED_VER_MINOR=	0
-.    endif
-
 .    if ${COROSYNC_DEFAULT} != ${_COROSYNC_INSTALLED_VER_MAJOR}
 IGNORE=	DEFAULT_VERSIONS=corosync=${COROSYNC_DEFAULT} but ${_COROSYNC_INSTALLED_VER} is installed
 .    endif

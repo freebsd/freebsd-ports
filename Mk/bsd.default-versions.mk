@@ -37,7 +37,7 @@ APACHE_DEFAULT?=	2.4
 # Possible values: 5, 18
 BDB_DEFAULT?=		5
 # Possible values: 2, 3
-COROSYNC_DEFAULT?=	2
+COROSYNC_DEFAULT?=	3
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
 EBUR128_DEFAULT?=	rust
