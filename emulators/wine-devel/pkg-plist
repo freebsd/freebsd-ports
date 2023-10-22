@@ -1644,6 +1644,7 @@ lib/wine/%%WINEARCH%%-unix/libfaultrep.a
 lib/wine/%%WINEARCH%%-unix/libgdi32.a
 lib/wine/%%WINEARCH%%-unix/libgdiplus.a
 lib/wine/%%WINEARCH%%-unix/libglu32.a
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libhal.a
 lib/wine/%%WINEARCH%%-unix/libhid.a
 lib/wine/%%WINEARCH%%-unix/libhidclass.a
@@ -2145,6 +2146,8 @@ lib/wine/%%WINEARCH%%-unix/wined3d.dll.so
 lib/wine/%%WINEARCH%%-unix/winedbg.exe.so
 lib/wine/%%WINEARCH%%-unix/winedevice.exe.so
 lib/wine/%%WINEARCH%%-unix/winefile.exe.so
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.dll.so
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 lib/wine/%%WINEARCH%%-unix/winehid.sys.so
 lib/wine/%%WINEARCH%%-unix/winemapi.dll.so
 lib/wine/%%WINEARCH%%-unix/winemenubuilder.exe.so
@@ -2918,6 +2921,7 @@ lib/wine/%%WINEARCH%%-windows/wined3d.dll
 lib/wine/%%WINEARCH%%-windows/winedbg.exe
 lib/wine/%%WINEARCH%%-windows/winedevice.exe
 lib/wine/%%WINEARCH%%-windows/winefile.exe
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-windows/winegstreamer.dll
 lib/wine/%%WINEARCH%%-windows/winehid.sys
 lib/wine/%%WINEARCH%%-windows/winemapi.dll
 lib/wine/%%WINEARCH%%-windows/winemenubuilder.exe

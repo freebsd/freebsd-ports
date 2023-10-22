@@ -81,6 +81,7 @@ GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
 ALSA_CONFIGURE_WITH=	alsa
+ALSA_USES=		gstreamer
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 
@@ -97,6 +98,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 MONO_RUN_DEPENDS=	wine-mono-devel>0:emulators/wine-mono-devel
 
 OSS_CONFIGURE_WITH=	oss
+OSS_USES=		gstreamer
 
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
@@ -112,6 +114,14 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libvulkan.so:graphics/vulkan-loader
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MALSA} || ${PORT_OPTIONS:MOSS}
+CONFIGURE_ARGS+=	--with-gstreamer
+PLIST_SUB+=		GSTREAMER=""
+.else
+CONFIGURE_ARGS+=	--without-gstreamer
+PLIST_SUB+=		GSTREAMER="@comment "
+.endif
 
 .if (${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
 _LLVM_VERSION=	15
