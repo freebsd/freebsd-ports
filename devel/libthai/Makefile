@@ -1,7 +1,8 @@
 PORTNAME=	libthai
 DISTVERSION=	0.1.29
 CATEGORIES=	devel
-MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
+MASTER_SITES=	https://github.com/tlwg/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+		https://linux.thai.net/pub/thailinux/software/libthai/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai language support library
