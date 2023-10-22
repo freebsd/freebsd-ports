@@ -318,6 +318,7 @@
     SUBDIR += py-pymediainfo
     SUBDIR += py-pysubs2
     SUBDIR += py-soco
+    SUBDIR += py-srt
     SUBDIR += py-subliminal
     SUBDIR += py-tartube
     SUBDIR += py-tvnamer
