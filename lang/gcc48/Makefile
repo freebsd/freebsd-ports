@@ -26,7 +26,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS+=	runtest:misc/dejagnu
 .endif
 
-USES=		compiler cpe gmake iconv libtool makeinfo perl5 tar:bzip2
+USES=		compiler cpe gmake iconv libtool perl5 tar:bzip2
 USE_BINUTILS=	yes
 USE_PERL5=	build
 
@@ -70,7 +70,6 @@ CONFIGURE_ARGS+=--disable-nls \
 		--with-system-zlib \
 		--disable-libgcj \
 		--enable-languages=${LANGUAGES}
-MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 USE_LDCONFIG=	${TARGLIB}
 PLIST_SUB+=	GCC_VERSION=${GCC_VERSION} \
 		GNU_HOST=${CONFIGURE_TARGET} \
@@ -97,7 +96,6 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC} ; contrib/gcc_update --touch
-	@${RM} ${WRKSRC}/gcc/*/*.info*
 
 .if defined(MAINTAINER_MODE)
 full-regression-test: build
