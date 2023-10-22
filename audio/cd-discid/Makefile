@@ -1,21 +1,21 @@
 PORTNAME=	cd-discid
-PORTVERSION=	0.9
+DISTVERSION=	1.4-14
+DISTVERSIONSUFFIX=	-ga69bd89
 CATEGORIES=	audio
-MASTER_SITES=	http://lly.org/~rcw/cd-discid/
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend utility to retrieve CDDB discid information
-WWW=		http://lly.org/~rcw/cd-discid/
+WWW=		http://linukz.org/cd-discid.shtml
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${PREFIX}/man/man1
+USE_GITHUB=	yes
+GH_ACCOUNT=	taem
+
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1
 
 PLIST_FILES=	bin/cd-discid \
 		man/man1/cd-discid.1.gz
-
-post-patch:
-	@${REINPLACE_CMD} -e "s/-o 0//g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

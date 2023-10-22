@@ -1,11 +1,11 @@
---- Makefile.orig	2003-01-05 20:18:07 UTC
+--- Makefile.orig	2023-10-22 08:45:17 UTC
 +++ Makefile
-@@ -1,6 +1,6 @@
- VERSION = 0.8
--CC = gcc
--CFLAGS = -g -O2
-+CC ?= cc
-+CFLAGS ?= -O -pipe
- LDFLAGS =
- LIBS = 
- DEFS =  
+@@ -30,8 +30,6 @@ cd-discid: $(OBJS)
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+ 
+ install: cd-discid
+-	mkdir -p $(BINDIR)
+-	mkdir -p $(MANDIR)
+ 	$(INSTALL) cd-discid $(DESTDIR)$(BINDIR)/cd-discid
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/cd-discid
+ 	$(INSTALL) -m 644 cd-discid.1 $(DESTDIR)$(MANDIR)/cd-discid.1
