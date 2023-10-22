@@ -1,0 +1,32 @@
+--- src/Makefile.orig	2014-08-12 16:57:16 UTC
++++ src/Makefile
+@@ -2,23 +2,21 @@ BINDIR=$(PREFIX)/bin
+ PREFIX=%%PREFIX%%
+ BINDIR=$(PREFIX)/bin
+ 
+-CC = g++
+-
+ objfiles=bpatch.o archfunc.o file.o system.o tmpstore.o deltup.o 
+-libs=-lstdc++ -lz -lbz2 -lcrypto #-lssl
++libs=-lstdc++ -lz -lbz2 -L/usr/local/lib -lcrypto #-lssl
+ 
+ #edelta: edelta.cpp deltup
+-#	gcc edelta.cpp ${CXXFLAGS} -o edelta
++#	${CXX} edelta.cpp ${CXXFLAGS} -o edelta
+ %.o : %.cpp
+-	${CC} -c $< -o $@ ${CXXFLAGS} #-g #-Wall -pedantic
++	${CXX} -c $< -o $@ ${CXXFLAGS} #-g #-Wall -pedantic
+ 
+ all: deltup
+ 
+ depend:
+-	gcc -MM *.cpp > .depend
+-	
++	$CXX -MM *.cpp > .depend
++
+ deltup: $(objfiles)
+-	${CC} $(objfiles) ${CXXFLAGS} -o deltup $(libs)
++	${CXX} $(objfiles) ${CXXFLAGS} -o deltup $(libs)
+ 
+ install: deltup
+ 	mkdir -p $(DESTDIR)$(BINDIR)
