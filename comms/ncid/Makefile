@@ -12,6 +12,9 @@ WWW=		http://ncid.sourceforge.net/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/GPL.md
 
+DEPRECATED=	Umaintained for over a year, outdated and unsupported version upstream
+EXPIRATION_DATE=2023-12-31 
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	libpcre.so:devel/pcre
 RUN_DEPENDS=	bash:shells/bash
