@@ -8,6 +8,9 @@ COMMENT=	Command-line Logitech Harmony configuration tool
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Logitech Harmony were officially discontinued in 2021, last major product in 2019.
+EXPIRATION_DATE=2024-12-31
+
 LIB_DEPENDS=	libconcord.so:comms/libconcord
 
 USES=		tar:bzip2
