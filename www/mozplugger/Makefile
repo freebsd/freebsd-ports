@@ -10,6 +10,9 @@ WWW=		http://mozplugger.mozdev.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Obsolete, defunct as Mozilla Firefox dropped support for plugin interface as of ESR 60
+EXPIRATION_DATE=2023-11-30
+
 GNU_CONFIGURE=	yes
 USES=		desthack gmake webplugin:native xorg
 USE_XORG=	x11 xt
