@@ -13,7 +13,6 @@
 %%JAVAJARDIR%%/log4j-jakarta-web.jar
 %%JAVAJARDIR%%/log4j-jcl.jar
 %%JAVAJARDIR%%/log4j-jdbc-dbcp2.jar
-%%JAVAJARDIR%%/log4j-jmx-gui.jar
 %%JAVAJARDIR%%/log4j-jpa.jar
 %%JAVAJARDIR%%/log4j-jpl.jar
 %%JAVAJARDIR%%/log4j-jul.jar
@@ -21,7 +20,6 @@
 %%JAVAJARDIR%%/log4j-layout-template-json.jar
 %%JAVAJARDIR%%/log4j-mongodb3.jar
 %%JAVAJARDIR%%/log4j-mongodb4.jar
-%%JAVAJARDIR%%/log4j-osgi.jar
 %%JAVAJARDIR%%/log4j-slf4j-impl.jar
 %%JAVAJARDIR%%/log4j-slf4j2-impl.jar
 %%JAVAJARDIR%%/log4j-spring-boot.jar
