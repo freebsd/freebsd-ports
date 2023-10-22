@@ -1,4 +1,4 @@
-PORTVERSION=		2.1.5
+PORTVERSION=		2.1.6
 PKGNAMESUFFIX=		2
 
 WWW=		https://www.clusterlabs.org/pacemaker/
@@ -18,6 +18,8 @@ LIB_DEPENDS+=		libffi.so:devel/libffi \
 	libunistring.so:devel/libunistring
 
 USES+=	gettext
+
+SHEBANG_FILES+=	agents/ocf/*
 
 post-patch: post-patch-common
 

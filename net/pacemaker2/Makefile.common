@@ -38,7 +38,8 @@ USE_LDCONFIG=		yes
 USE_PYTHON=		py3kplist
 USE_RC_SUBR=		${PORTNAME}
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-fatal-warnings \
+CONFIGURE_ARGS=		--disable-dependency-tracking \
+			--disable-fatal-warnings \
 			--disable-hardening \
 			--with-corosync \
 			--without-heartbeat
@@ -53,7 +54,6 @@ PATHFIX_MAKEFILEIN=	Makefile.am
 SHEBANG_LANG=		sh
 sh_OLD_CMD=		${SH}
 sh_CMD=			${LOCALBASE}/bin/bash
-SHEBANG_FILES=		extra/resources/*
 
 OPTIONS_DEFINE=		DBUS DOCS MANPAGES SNMP
 OPTIONS_DEFAULT=	MANPAGES
