@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.quut.com/gsm/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio converter and library for converting u-law to gsm encoding
-WWW=		http://kbs.cs.tu-berlin.de/~jutta/toast.html
+WWW=		https://www.quut.com/gsm/
 
 LICENSE=	TU-BERLIN
 LICENSE_NAME=	Technische Universitaet Berlin copyright
