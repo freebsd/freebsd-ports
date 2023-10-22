@@ -3,11 +3,9 @@ PKGNAMESUFFIX=		2
 
 WWW=		https://www.clusterlabs.org/pacemaker/
 
-.include "${.CURDIR}/../pacemaker1/Makefile.common"
+.include "${.CURDIR}/Makefile.common"
 
 CONFIGURE_ARGS+=	--with-noarch-pkgconfigdir=${PREFIX}/libdata/pkgconfig
-
-CONFLICTS+=		pacemaker1
 
 LIB_DEPENDS+=		libffi.so:devel/libffi \
 	libgmp.so:math/gmp \

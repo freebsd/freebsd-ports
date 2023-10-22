@@ -929,7 +929,6 @@
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
     SUBDIR += p5-srv2pf
-    SUBDIR += pacemaker1
     SUBDIR += pacemaker2
     SUBDIR += packetdrill
     SUBDIR += packter-agent
