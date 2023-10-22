@@ -10,6 +10,9 @@ WWW=		http://www.jcraft.com/jzlib/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Abandonware, untouched for over 10 years and Java Platform 8+ provides a Deflater class
+EXPIRATION_DATE=2023-11-30
+
 USES=		cpe zip
 USE_JAVA=	yes
 NO_ARCH=	yes
