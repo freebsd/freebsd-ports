@@ -11,6 +11,8 @@ WWW=		https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64 powerpc64le
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblsmash.so:multimedia/l-smash
