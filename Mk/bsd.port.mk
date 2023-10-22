@@ -576,7 +576,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # fetch-urlall-recursive-list
 #				- Show list of URLS to retrieve ${DISTFILES} and
 #				  ${PATCHFILES} for this port and dependencies.
-#
 # all-depends-list
 #				- Show all directories which are dependencies
 #				  for this port.
@@ -601,8 +600,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Show all directories which are test-dependencies
 #				  for this port.
 # install-missing-packages
-#               - Install missing dependencies from package and mark
-#                 them as automatically installed.
+#				- Install missing dependencies from package and mark
+#				  them as automatically installed.
 # extract		- Unpacks ${DISTFILES} into ${WRKDIR}.
 # patch			- Apply any provided patches to the source.
 # configure		- Runs either GNU configure, one or more local configure
@@ -619,10 +618,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Create a package for a port and _all_ of its dependencies.
 # describe		- Try to generate a one-line description for each port for
 #				  use in INDEX files and the like.
-# describe-json - Generate a JSON-compliant representation of each port.
-# check-plist		- Checks for files missing from the plist, and files in the plist
-#				  that are not installed by the port.
-# check-sanity		- Perform some basic checks of the port layout.
+# describe-json	- Generate a JSON-compliant representation of each port.
+# check-plist	- Checks for files missing from the plist, and files in the
+#				  plist that are not installed by the port.
+# check-sanity	- Perform some basic checks of the port layout.
 # checkpatch	- Do a "patch -C" instead of a "patch".  Note that it may
 #				  give incorrect results if multiple patches deal with
 #				  the same file.
@@ -859,7 +858,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  described below except that any line beginning with @comment
 #				  is deleted.
 # SUB_LIST		- List of "variable=value" pair for substitution in ${SUB_FILES}
-#				  Some pairs are added by default: eg. PREFIX=${PREFIX}
+#				  Some pairs are added by default: e.g. PREFIX=${PREFIX}
 #
 # USE_LDCONFIG  - If set to "yes", this adds ${PREFIX}/lib to the list of
 #				  directories to be searched for shared libraries.
@@ -905,7 +904,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  "Name" "Comment" "Icon" "Exec" "Categories" StartupNotify
 #				  Rules:
 #					* Only add desktop entries for applications which do not
-#					  require a terminal (ie. X applications).
+#					  require a terminal (i.e. X11 applications).
 #					* If the upstream distribution already installs .desktop
 #					  files, you do not need to use this.
 #					* If you require a more elaborate .desktop file than this
@@ -1123,10 +1122,8 @@ makepatch:
 		${SH} ${SCRIPTSDIR}/smart_makepatch.sh
 .  endif
 
-
 # Start of options section
 .  if defined(INOPTIONSMK) || ( !defined(USEOPTIONSMK) && !defined(AFTERPORTMK) )
-
 
 # Get the default maintainer
 MAINTAINER?=	ports@FreeBSD.org
@@ -1546,7 +1543,6 @@ SUB_LIST+=	${FLAVOR:tu}="" NO_${FLAVOR:tu}="@comment "
 .      endif
 .    endif # defined(${FLAVOR})
 
-
 EXTRACT_SUFX?=			.tar.gz
 
 .    if defined(USE_LINUX_PREFIX)
@@ -1920,7 +1916,6 @@ CO_ENV+=	NO_PREFIX_RMDIR=1
 .    else
 CO_ENV+=	NO_PREFIX_RMDIR=0
 .    endif
-
 
 METADIR=		${WRKDIR}/.metadir
 
@@ -3416,7 +3411,6 @@ _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTREPOSITORY}
 _PORTS_DIRECTORIES+=	${PKGLATESTREPOSITORY}
 _EXTRA_PACKAGE_TARGET_DEP+=	${PKGLATESTFILE}
 
-
 ${PKGLATESTFILE}: ${PKGFILE} ${PKGLATESTREPOSITORY}
 	${INSTALL} -l rs ${PKGFILE} ${PKGLATESTFILE}
 
@@ -3488,7 +3482,6 @@ install-package:
 	fi; \
 	${PKG_ADD} ${_INSTALL_PKG_ARGS} $${_pkgfile}
 .    endif
-
 
 # Utility targets follow
 
@@ -4323,7 +4316,6 @@ create-manifest:
 			${PKG_NOTES_ENV}                                      \
 			${SH} ${SCRIPTSDIR}/create-manifest.sh
 
-
 # Print out package names.
 
 package-depends:
@@ -4473,11 +4465,8 @@ describe-json-${f}:
 		${ECHO_CMD} "}" ;\
 	fi; \
 
-
 .	endfor
 .	endif # empty(FLAVORS)
-
-
 
 www-site:
 	@${ECHO_CMD} ${_WWW}
@@ -4523,7 +4512,6 @@ _PRETTY_PRINT_DEPENDS_LIST=\
 		${ECHO_MSG} -n `${AWK} -F\| "\\$$1 ~ /^${PKGNAME}/ {print \\$$$${fldnum};}" ${INDEXDIR}/${INDEXFILE}` ; \
 		${ECHO_MSG} "\" to $$target."; \
 	fi;
-
 
 .    if !target(pretty-print-build-depends-list)
 pretty-print-build-depends-list:
