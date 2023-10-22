@@ -1,6 +1,9 @@
 PORTNAME=	remmina
-DISTVERSION=	1.4.31
+DISTVERSION=	1.4.33
 CATEGORIES=	net gnome
+
+PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	dbd6f94974c4d7df313963ffefecb1ff8ca9ecb6.patch:-p1 # https://gitlab.com/Remmina/Remmina/-/merge_requests/2540
 
 MAINTAINER=	fernape@FreeBSD.org
 COMMENT=	GTK Remote Desktop Client
@@ -26,7 +29,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_TAGNAME=	61ea9b6681104cadf0a3f8c25bd3e5685ee6691a
+GL_TAGNAME=	2c4e1479433e51418ecb6089f35182bfebc5b57e
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 
