@@ -1,6 +1,5 @@
 PORTNAME=	gnuastro
-PORTVERSION=	0.20
-PORTREVISION=	1
+PORTVERSION=	0.21
 CATEGORIES=	astro
 MASTER_SITES=	GNU
 
@@ -34,6 +33,9 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,gcc,$(CC),' \
 		${WRKSRC}/bin/buildprog/ui.c
+	@${REINPLACE_CMD} -e 's,^make -f,g&,' \
+		${WRKSRC}/bin/script/pointing-simulate.sh \
+		${WRKSRC}/bin/script/zeropoint.sh
 
 post-install:
 	@${FIND} ${STAGEDIR}${PREFIX}/etc -name \*.conf \
