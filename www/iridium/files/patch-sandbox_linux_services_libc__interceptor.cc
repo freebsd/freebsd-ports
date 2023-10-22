@@ -1,10 +1,10 @@
---- sandbox/linux/services/libc_interceptor.cc.orig	2023-01-17 19:19:00 UTC
+--- sandbox/linux/services/libc_interceptor.cc.orig	2023-10-21 11:51:27 UTC
 +++ sandbox/linux/services/libc_interceptor.cc
 @@ -12,7 +12,9 @@
  #include <stddef.h>
  #include <stdint.h>
  #include <string.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/prctl.h>
 +#endif
  #include <sys/socket.h>

@@ -1,4 +1,4 @@
---- media/base/video_frame.cc.orig	2023-07-24 14:27:53 UTC
+--- media/base/video_frame.cc.orig	2023-10-21 11:51:27 UTC
 +++ media/base/video_frame.cc
 @@ -80,7 +80,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
@@ -45,7 +45,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -901,7 +901,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
+@@ -902,7 +902,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapVideoFrame(
      }
    }
  
@@ -54,7 +54,7 @@
    DCHECK(frame->dmabuf_fds_);
    // If there are any |dmabuf_fds_| plugged in, we should refer them too.
    wrapping_frame->dmabuf_fds_ = frame->dmabuf_fds_;
-@@ -1303,7 +1303,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
+@@ -1310,7 +1310,7 @@ const gpu::MailboxHolder& VideoFrame::mailbox_holder(
                          : mailbox_holders_[texture_index];
  }
  
@@ -63,7 +63,7 @@
  const std::vector<base::ScopedFD>& VideoFrame::DmabufFds() const {
    DCHECK_EQ(storage_type_, STORAGE_DMABUFS);
  
-@@ -1416,7 +1416,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
+@@ -1423,7 +1423,7 @@ VideoFrame::VideoFrame(const VideoFrameLayout& layout,
        storage_type_(storage_type),
        visible_rect_(Intersection(visible_rect, gfx::Rect(layout.coded_size()))),
        natural_size_(natural_size),

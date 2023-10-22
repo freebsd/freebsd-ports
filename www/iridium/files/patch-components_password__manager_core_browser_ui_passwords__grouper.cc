@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/ui/passwords_grouper.cc.orig	2023-08-28 20:17:35 UTC
+--- components/password_manager/core/browser/ui/passwords_grouper.cc.orig	2023-10-21 11:51:27 UTC
 +++ components/password_manager/core/browser/ui/passwords_grouper.cc
-@@ -403,7 +403,11 @@ absl::optional<PasskeyCredential> PasswordsGrouper::Ge
+@@ -277,7 +277,11 @@ absl::optional<PasskeyCredential> PasswordsGrouper::Ge
    const std::vector<PasskeyCredential>& passkeys =
        map_group_id_to_credentials_[group_id_iterator->second].passkeys;
    const auto passkey_it =

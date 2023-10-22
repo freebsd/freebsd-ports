@@ -1,12 +1,10 @@
---- extensions/common/api/runtime.json.orig	2023-07-24 14:27:53 UTC
+--- extensions/common/api/runtime.json.orig	2023-10-21 11:51:27 UTC
 +++ extensions/common/api/runtime.json
-@@ -89,7 +89,8 @@
-           "cros",
-           "linux",
-           "openbsd",
--          "fuchsia"
-+          "fuchsia",
-+          "freebsd"
+@@ -89,6 +89,7 @@
+             {"name": "cros", "description": "Specifies the Chrome operating system."},
+             {"name": "linux", "description": "Specifies the Linux operating system."},
+             {"name": "openbsd", "description": "Specifies the OpenBSD operating system."},
++            {"name": "freebsd", "description": "Specifies the FreeBSD operating system."},
+             {"name": "fuchsia", "description": "Specifies the Fuchsia operating system."}
          ]
        },
-       {

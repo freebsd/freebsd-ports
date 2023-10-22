@@ -1,10 +1,10 @@
---- third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc.orig	2023-08-28 20:17:35 UTC
+--- third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc.orig	2023-10-21 11:51:27 UTC
 +++ third_party/perfetto/src/trace_processor/db/storage/numeric_storage.cc
-@@ -280,8 +280,13 @@ BitVector NumericStorage::LinearSearch(FilterOp op,
+@@ -245,8 +245,13 @@ BitVector NumericStorage::LinearSearch(FilterOp op,
    } else if (const auto* i32 = std::get_if<int32_t>(&*val)) {
      auto* start = static_cast<const int32_t*>(data_) + range.start;
      TypedLinearSearch(*i32, start, op, builder);
-+#if defined(__OpenBSD__) && defined(__i386__)
++#if (defined(__OpenBSD__) || defined(__FreeBSD__)) && defined(__i386__)
 +  } else if (const auto* db = std::get_if<long double>(&*val)) {
 +    auto* start = static_cast<const long double*>(data_) + range.start;
 +#else

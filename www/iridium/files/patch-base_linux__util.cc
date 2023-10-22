@@ -1,4 +1,4 @@
---- base/linux_util.cc.orig	2022-10-05 07:34:01 UTC
+--- base/linux_util.cc.orig	2023-10-21 11:51:27 UTC
 +++ base/linux_util.cc
 @@ -15,6 +15,7 @@
  
@@ -12,7 +12,7 @@
  }
  
  bool GetThreadsForProcess(pid_t pid, std::vector<pid_t>* tids) {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  return false;
 +#else
    // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22

@@ -1,11 +1,11 @@
---- remoting/host/chromoting_host.cc.orig	2023-03-13 07:33:08 UTC
+--- remoting/host/chromoting_host.cc.orig	2023-10-21 11:51:27 UTC
 +++ remoting/host/chromoting_host.cc
-@@ -132,7 +132,7 @@ void ChromotingHost::StartChromotingHostServices() {
+@@ -128,7 +128,7 @@ void ChromotingHost::Start(const std::string& host_own
+       &ChromotingHost::OnIncomingSession, base::Unretained(this)));
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void ChromotingHost::StartChromotingHostServices() {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
    DCHECK(!ipc_server_);
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
-   named_mojo_ipc_server::EndpointOptions options;
-   options.server_name = GetChromotingHostServicesServerName();
- #if BUILDFLAG(IS_WIN)

@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.cc.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -271,7 +271,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
+@@ -306,7 +306,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
               "TopChromeWebUIUsesSpareRenderer",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

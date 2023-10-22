@@ -1,6 +1,6 @@
---- components/feature_engagement/public/event_constants.h.orig	2022-03-28 18:11:04 UTC
+--- components/feature_engagement/public/event_constants.h.orig	2023-10-21 11:51:27 UTC
 +++ components/feature_engagement/public/event_constants.h
-@@ -13,7 +13,7 @@ namespace events {
+@@ -14,7 +14,7 @@ namespace events {
  
  // Desktop
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2023-07-24 14:27:53 UTC
+--- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2023-10-21 11:51:27 UTC
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  
  #if BUILDFLAG(IS_WIN)
  #include "content/public/child/dwrite_font_proxy_init_win.h"
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"
  #endif
  
-@@ -66,7 +66,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -78,7 +78,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
      // Initialize font access for Skia.
  #if BUILDFLAG(IS_WIN)
    content::InitializeDWriteFontProxy();
@@ -18,7 +18,7 @@
    mojo::PendingRemote<font_service::mojom::FontService> font_service;
    content::UtilityThread::Get()->BindHostReceiver(
        font_service.InitWithNewPipeAndPassReceiver());
-@@ -89,7 +89,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
+@@ -101,7 +101,7 @@ PaintPreviewCompositorCollectionImpl::PaintPreviewComp
                               base::BindOnce([] { SkFontMgr::RefDefault(); }));
  
    // Sanity check that fonts are working.

@@ -1,6 +1,6 @@
---- content/browser/compositor/viz_process_transport_factory.cc.orig	2023-08-28 20:17:35 UTC
+--- content/browser/compositor/viz_process_transport_factory.cc.orig	2023-10-21 11:51:27 UTC
 +++ content/browser/compositor/viz_process_transport_factory.cc
-@@ -110,7 +110,7 @@ class HostDisplayClient : public viz::HostDisplayClien
+@@ -108,7 +108,7 @@ class HostDisplayClient : public viz::HostDisplayClien
    // viz::HostDisplayClient:
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

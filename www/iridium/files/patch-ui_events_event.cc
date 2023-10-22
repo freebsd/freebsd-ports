@@ -1,4 +1,4 @@
---- ui/events/event.cc.orig	2023-08-28 20:17:35 UTC
+--- ui/events/event.cc.orig	2023-10-21 11:51:27 UTC
 +++ ui/events/event.cc
 @@ -427,7 +427,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
@@ -18,7 +18,7 @@
  // This value matches Windows, Fuchsia WHEEL_DELTA, and (roughly) Firefox on
  // Linux.
  // static
-@@ -931,7 +931,7 @@ void KeyEvent::InitializeNative() {
+@@ -936,7 +936,7 @@ void KeyEvent::InitializeNative() {
    if (synthesize_key_repeat_enabled_ && IsRepeated(GetLastKeyEvent()))
      set_flags(flags() | EF_IS_REPEAT);
  

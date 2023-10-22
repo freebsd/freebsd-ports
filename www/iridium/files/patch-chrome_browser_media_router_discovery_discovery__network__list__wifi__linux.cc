@@ -1,4 +1,4 @@
---- chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc
 @@ -9,7 +9,11 @@
  #include <sys/socket.h>
@@ -6,7 +6,7 @@
  
 +#include "build/build_config.h"
 +
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <linux/wireless.h>
 +#endif
  
@@ -16,7 +16,7 @@
  bool MaybeGetWifiSSID(const std::string& if_name, std::string* ssid_out) {
    DCHECK(ssid_out);
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    base::ScopedFD ioctl_socket(socket(AF_INET, SOCK_DGRAM, 0));
    if (!ioctl_socket.is_valid()) {
      // AF_INET is for IPv4, so it may fail for IPv6-only hosts even when there

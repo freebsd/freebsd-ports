@@ -1,6 +1,6 @@
---- components/crash/core/app/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- components/crash/core/app/BUILD.gn.orig	2023-10-21 11:51:27 UTC
 +++ components/crash/core/app/BUILD.gn
-@@ -60,7 +60,7 @@ static_library("app") {
+@@ -72,7 +72,7 @@ static_library("app") {
      "crashpad.h",
    ]
  
@@ -9,7 +9,7 @@
      sources += [ "crashpad_linux.cc" ]
    }
  
-@@ -73,6 +73,10 @@ static_library("app") {
+@@ -85,6 +85,10 @@ static_library("app") {
      ]
    }
  
@@ -20,7 +20,7 @@
    defines = [ "CRASH_IMPLEMENTATION" ]
  
    public_deps = [ ":lib" ]
-@@ -101,7 +105,7 @@ static_library("app") {
+@@ -113,7 +117,7 @@ static_library("app") {
      libs = [ "log" ]
    }
  
@@ -29,7 +29,7 @@
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -233,11 +237,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+@@ -241,11 +245,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
    # define custom UserStreamDataSources.
    executable("chrome_crashpad_handler") {
      sources = [ "chrome_crashpad_handler.cc" ]

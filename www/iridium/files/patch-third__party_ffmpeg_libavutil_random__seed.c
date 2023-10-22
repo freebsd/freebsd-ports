@@ -1,10 +1,10 @@
---- third_party/ffmpeg/libavutil/random_seed.c.orig	2022-03-28 18:11:04 UTC
+--- third_party/ffmpeg/libavutil/random_seed.c.orig	2023-10-21 11:51:27 UTC
 +++ third_party/ffmpeg/libavutil/random_seed.c
-@@ -30,6 +30,11 @@
- #include <windows.h>
- #include <bcrypt.h>
+@@ -35,6 +35,11 @@
+ #elif CONFIG_OPENSSL
+ #include <openssl/rand.h>
  #endif
-+#if HAVE_ARC4RANDOM
++#if HAVE_ARC4RANDOM_BUF
 +#undef __BSD_VISIBLE
 +#define __BSD_VISIBLE 1
 +#include <stdlib.h>

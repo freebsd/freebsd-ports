@@ -1,4 +1,4 @@
---- ui/gl/gl_switches.cc.orig	2023-07-24 14:27:53 UTC
+--- ui/gl/gl_switches.cc.orig	2023-10-21 11:51:27 UTC
 +++ ui/gl/gl_switches.cc
 @@ -11,7 +11,7 @@
  #include "base/android/build_info.h"
@@ -9,7 +9,7 @@
  #include <vulkan/vulkan_core.h>
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif
-@@ -271,7 +271,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -294,7 +294,7 @@ bool IsDefaultANGLEVulkan() {
        base::android::SDK_VERSION_Q)
      return false;
  #endif  // BUILDFLAG(IS_ANDROID)

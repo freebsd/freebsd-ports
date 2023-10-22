@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_base/rand_util_posix.cc.orig	2022-10-05 07:34:01 UTC
+--- base/allocator/partition_allocator/partition_alloc_base/rand_util_posix.cc.orig	2023-10-21 11:51:27 UTC
 +++ base/allocator/partition_allocator/partition_alloc_base/rand_util_posix.cc
-@@ -86,6 +86,10 @@ void RandBytes(void* output, size_t output_length) {
+@@ -90,6 +90,10 @@ void RandBytes(void* output, size_t output_length) {
    if (getentropy(output, output_length) == 0) {
      return;
    }
@@ -9,5 +9,5 @@
 +    return;
 +  }
  #endif
- 
-   // If the OS-specific mechanisms didn't work, fall through to reading from
+   // If getrandom(2) above returned with an error and the /dev/urandom fallback
+   // took place on Linux/ChromeOS bots, they would fail with a CHECK in

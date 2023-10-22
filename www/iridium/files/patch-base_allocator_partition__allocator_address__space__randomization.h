@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/address_space_randomization.h.orig	2023-03-13 07:33:08 UTC
+--- base/allocator/partition_allocator/address_space_randomization.h.orig	2023-10-21 11:51:27 UTC
 +++ base/allocator/partition_allocator/address_space_randomization.h
 @@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
  #if defined(ARCH_CPU_64_BITS)
  
 -  #if defined(MEMORY_TOOL_REPLACES_ALLOCATOR)
-+  #if defined(MEMORY_TOOL_REPLACES_ALLOCATOR) && !defined(OS_BSD)
++  #if defined(MEMORY_TOOL_REPLACES_ALLOCATOR) && !BUILDFLAG(IS_BSD)
  
      // We shouldn't allocate system pages at all for sanitizer builds. However,
      // we do, and if random hint addresses interfere with address ranges

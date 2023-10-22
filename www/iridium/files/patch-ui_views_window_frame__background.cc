@@ -1,4 +1,4 @@
---- ui/views/window/frame_background.cc.orig	2022-03-28 18:11:04 UTC
+--- ui/views/window/frame_background.cc.orig	2023-10-21 11:51:27 UTC
 +++ ui/views/window/frame_background.cc
 @@ -110,7 +110,7 @@ void FrameBackground::PaintMaximized(gfx::Canvas* canv
                                       int width) const {
@@ -7,5 +7,5 @@
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && \
      BUILDFLAG(ENABLE_DESKTOP_AURA)
-   ui::NativeTheme::ExtraParams params;
-   params.frame_top_area.use_custom_frame = use_custom_frame_;
+   ui::NativeTheme::FrameTopAreaExtraParams frame_top_area;
+   frame_top_area.use_custom_frame = use_custom_frame_;

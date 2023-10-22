@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
 @@ -24,14 +24,14 @@
  #include "extensions/common/extension_id.h"
@@ -17,7 +17,7 @@
  extern const char kManagementDeviceSignalsDisclosure[];
  #endif  // #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -114,7 +114,7 @@ class StatusCollector;
+@@ -117,7 +117,7 @@ class StatusCollector;
  class SystemLogUploader;
  }  // namespace policy
  
@@ -26,9 +26,9 @@
  namespace device_signals {
  class UserPermissionService;
  }  // namespace device_signals
-@@ -173,7 +173,7 @@ class ManagementUIHandler : public content::WebUIMessa
-   base::Value::Dict GetThreatProtectionInfo(Profile* profile);
+@@ -177,7 +177,7 @@ class ManagementUIHandler : public content::WebUIMessa
    base::Value::List GetManagedWebsitesInfo(Profile* profile) const;
+   base::Value::List GetApplicationsInfo(Profile* profile) const;
    virtual policy::PolicyService* GetPolicyService();
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

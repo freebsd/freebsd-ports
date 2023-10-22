@@ -1,6 +1,6 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2023-07-24 14:27:53 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2023-10-21 11:51:27 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -50,7 +50,7 @@
+@@ -51,7 +51,7 @@
  #include "net/base/network_change_notifier.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -67,7 +67,7 @@
+@@ -68,7 +68,7 @@
  #include "chromeos/lacros/dbus/lacros_dbus_thread_manager.h"
  #endif
  
@@ -18,7 +18,7 @@
  #include "ui/linux/linux_ui.h"          // nogncheck
  #include "ui/linux/linux_ui_factory.h"  // nogncheck
  #endif
-@@ -138,7 +138,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -139,7 +139,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {
@@ -27,7 +27,7 @@
    ui::InitializeInputMethodForTesting();
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -167,7 +167,7 @@ void ShellBrowserMainParts::ToolkitInitialized() {
+@@ -168,7 +168,7 @@ void ShellBrowserMainParts::ToolkitInitialized() {
    if (switches::IsRunWebTestsSwitchPresent())
      return;
  
@@ -36,7 +36,7 @@
    ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
-@@ -214,7 +214,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
+@@ -215,7 +215,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
    ShellDevToolsManagerDelegate::StopHttpHandler();
    browser_context_.reset();
    off_the_record_browser_context_.reset();

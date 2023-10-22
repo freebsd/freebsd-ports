@@ -1,6 +1,6 @@
---- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2023-08-28 20:17:35 UTC
+--- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig	2023-10-21 11:51:27 UTC
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
-@@ -298,7 +298,15 @@ static inline char *loader_platform_executable_path(ch
+@@ -304,7 +304,15 @@ static inline char *loader_platform_executable_path(ch
  
      return buffer;
  }
@@ -15,5 +15,5 @@
 +}
 +#elif defined(__Fuchsia__)
  static inline char *loader_platform_executable_path(char *buffer, size_t size) { return NULL; }
- #elif defined(__QNXNTO__)
+ #elif defined(__QNX__)
  

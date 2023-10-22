@@ -1,24 +1,24 @@
---- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/printing/print_backend_service_manager.cc
-@@ -687,7 +687,7 @@ PrintBackendServiceManager::RegisterClient(
-       query_clients_.insert(client_id);
-       break;
-     case ClientType::kQueryWithUi:
--#if !BUILDFLAG(IS_LINUX)
-+#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
-       if (!query_with_ui_clients_.empty())
-         return absl::nullopt;
- #endif
-@@ -960,7 +960,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
-       break;
+@@ -33,7 +33,7 @@
+ #include "printing/buildflags/buildflags.h"
+ #include "printing/printing_features.h"
  
-     case ClientType::kQueryWithUi:
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       // No need to update if there were other query with UI clients.
-       if (query_with_ui_clients_.size() > 1)
-         return absl::nullopt;
-@@ -1017,7 +1017,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+ #include "content/public/common/content_switches.h"
+ #endif
+ 
+@@ -851,7 +851,7 @@ PrintBackendServiceManager::GetServiceFromBundle(
+         host.BindNewPipeAndPassReceiver(),
+         content::ServiceProcessHost::Options()
+             .WithDisplayName(IDS_UTILITY_PROCESS_PRINT_BACKEND_SERVICE_NAME)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+             .WithExtraCommandLineSwitches({switches::kMessageLoopTypeUi})
+ #endif
+             .Pass());
+@@ -1024,7 +1024,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        return kNoClientsRegisteredResetOnIdleTimeout;
  
      case ClientType::kQueryWithUi:
