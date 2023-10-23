@@ -80,6 +80,7 @@
 %%WWWDIR%%/app/Census/CensusOfCanada1901.php
 %%WWWDIR%%/app/Census/CensusOfCanada1911.php
 %%WWWDIR%%/app/Census/CensusOfCanada1921.php
+%%WWWDIR%%/app/Census/CensusOfCanada1931.php
 %%WWWDIR%%/app/Census/CensusOfCanadaPraries1916.php
 %%WWWDIR%%/app/Census/CensusOfCanadaPraries1926.php
 %%WWWDIR%%/app/Census/CensusOfCzechRepublic.php
@@ -2744,6 +2745,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/AbstractMySQLPlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/AbstractPlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/DateIntervalUnit.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/DB2111Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/DB2Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/Keywords/DB2Keywords.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/Keywords/KeywordList.php
@@ -2761,6 +2763,8 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/Keywords/SQLServer2012Keywords.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/Keywords/SQLServerKeywords.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1027Platform.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1043Platform.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDb1052Platform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MariaDBPlatform.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MySQL/CollationMetadataProvider/CachingCollationMetadataProvider.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Platforms/MySQL/CollationMetadataProvider/ConnectionCollationMetadataProvider.php
@@ -2848,6 +2852,7 @@
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Parser/Visitor.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/SQL/Parser.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Statement.php
+%%WWWDIR%%/vendor/doctrine/dbal/src/Tools/Console/Command/CommandCompatibility.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Tools/Console/Command/ReservedWordsCommand.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Tools/Console/Command/RunSqlCommand.php
 %%WWWDIR%%/vendor/doctrine/dbal/src/Tools/Console/ConnectionNotFound.php
@@ -2894,9 +2899,6 @@
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
 %%WWWDIR%%/vendor/doctrine/deprecations/LICENSE
-%%WWWDIR%%/vendor/doctrine/deprecations/phpcs.xml
-%%WWWDIR%%/vendor/doctrine/deprecations/phpstan.neon
-%%WWWDIR%%/vendor/doctrine/deprecations/psalm.xml
 %%WWWDIR%%/vendor/doctrine/event-manager/composer.json
 %%WWWDIR%%/vendor/doctrine/event-manager/LICENSE
 %%WWWDIR%%/vendor/doctrine/event-manager/phpstan.neon.dist
@@ -5240,9 +5242,6 @@
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueue.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/TaskQueueInterface.php
 %%WWWDIR%%/vendor/guzzlehttp/promises/src/Utils.php
-%%WWWDIR%%/vendor/guzzlehttp/promises/vendor-bin/php-cs-fixer/composer.json
-%%WWWDIR%%/vendor/guzzlehttp/promises/vendor-bin/phpstan/composer.json
-%%WWWDIR%%/vendor/guzzlehttp/promises/vendor-bin/psalm/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/composer.json
 %%WWWDIR%%/vendor/guzzlehttp/psr7/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/psr7/src/AppendStream.php
@@ -6862,6 +6861,7 @@
 %%WWWDIR%%/vendor/league/mime-type-detection/composer.json
 %%WWWDIR%%/vendor/league/mime-type-detection/LICENSE
 %%WWWDIR%%/vendor/league/mime-type-detection/src/EmptyExtensionToMimeTypeMap.php
+%%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionLookup.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionMimeTypeDetector.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/ExtensionToMimeTypeMap.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/FinfoMimeTypeDetector.php
@@ -7892,6 +7892,9 @@
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/CacheItemPoolInterface.php
 %%WWWDIR%%/vendor/psr/cache/src/InvalidArgumentException.php
+%%WWWDIR%%/vendor/psr/clock/composer.json
+%%WWWDIR%%/vendor/psr/clock/LICENSE
+%%WWWDIR%%/vendor/psr/clock/src/ClockInterface.php
 %%WWWDIR%%/vendor/psr/container/.gitignore
 %%WWWDIR%%/vendor/psr/container/composer.json
 %%WWWDIR%%/vendor/psr/container/LICENSE
@@ -8605,6 +8608,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Mbstring.php
+%%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
@@ -8631,6 +8635,7 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php81/composer.json
 %%WWWDIR%%/vendor/symfony/polyfill-php81/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php81/Php81.php
+%%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/CURLStringFile.php
 %%WWWDIR%%/vendor/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php
 %%WWWDIR%%/vendor/symfony/service-contracts/.gitignore
 %%WWWDIR%%/vendor/symfony/service-contracts/Attribute/Required.php
