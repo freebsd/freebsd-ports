@@ -16,3 +16,4 @@ lib/cmake/simdutf/simdutfTargets.cmake
 lib/libsimdutf.so.5.0.0
 lib/libsimdutf.so.5
 lib/libsimdutf.so
+libdata/pkgconfig/simdutf.pc
