@@ -1,5 +1,6 @@
 PORTNAME=	weechat
-DISTVERSION=	4.1.0
+PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -13,17 +14,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgcrypt.so:security/libgcrypt \
 		libgnutls.so:security/gnutls \
-		libgpg-error.so:security/libgpg-error \
-		libzstd.so:archivers/zstd
+		libgpg-error.so:security/libgpg-error
 
 USES=		cmake cpe libtool ncurses pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
 
-OPTIONS_DEFINE=		BACKTRACE DOCS HEADLESS ICON ICONV MANPAGES NLS
+OPTIONS_DEFINE=		BACKTRACE DOCS HEADLESS ICON ICONV MANPAGES NLS ZSTD
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CHARSET HEADLESS ICON LUA MANPAGES \
-			NLS PERL PYTHON RUBY TCL TYPING
+			NLS PERL PYTHON RUBY TCL TYPING ZSTD
 OPTIONS_SUB=		yes
 
 OPTIONS_GROUP=		PLUGINS
@@ -41,7 +41,7 @@ PYTHON_DESC=		Python script support
 RUBY_DESC=		Ruby script support
 TYPING_DESC=		Typing status plugin
 
-.for _opt in ${OPTIONS_GROUP_PLUGINS} BACKTRACE HEADLESS ICONV GNUTLS NLS
+.for _opt in ${OPTIONS_GROUP_PLUGINS} BACKTRACE HEADLESS ICONV GNUTLS NLS ZSTD
 ${_opt}_CMAKE_BOOL=	ENABLE_${_opt}
 .endfor
 
@@ -65,6 +65,7 @@ RUBY_USES=		ruby
 TCL_CMAKE_ON=		-DTCL_VERSION:STRING="${TCL_VER}" \
 			-DTCL_TCLSH:PATH="${TCLSH}"
 TCL_USES=		tcl
+ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 .include <bsd.port.pre.mk>
 
