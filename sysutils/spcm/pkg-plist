@@ -113,6 +113,7 @@ sbin/cluster-wip-checkout
 sbin/cluster-wip-update
 sbin/compute-node-set-arc-max
 sbin/node-iftop
+sbin/node-power-on
 sbin/node-set-type
 sbin/node-sync-all-users
 sbin/node-sync-groups
