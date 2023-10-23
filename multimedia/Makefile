@@ -5,6 +5,7 @@
     SUBDIR += ab25
     SUBDIR += acidrip
     SUBDIR += aegisub
+    SUBDIR += alass
     SUBDIR += aom
     SUBDIR += aravis
     SUBDIR += arcan
