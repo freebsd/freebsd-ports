@@ -1,27 +1,35 @@
---- ./Makefile.orig	2013-11-12 06:44:44.000000000 -0200
-+++ ./Makefile	2014-07-24 21:27:45.000000000 -0300
-@@ -151,10 +151,10 @@
- 	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS)	$(LIBS) -o $(BINARY_NAME)
- 
- cfg.o: Makefile cfg.c
--	$(CC) $(CFLAGS) -DCFGDIR=\"$(DESTDIR)$(CFGDIR)\" -c cfg.c -o cfg.o
-+	$(CC) $(CFLAGS) -DCFGDIR=\"$(CFGDIR)\" -c cfg.c -o cfg.o
- 
- main.o: Makefile main.c
--	$(CC) $(CFLAGS) -DCFGDIR=\"$(DESTDIR)$(CFGDIR)\" -c main.c -o main.o
-+	$(CC) $(CFLAGS) -DCFGDIR=\"$(CFGDIR)\" -c main.c -o main.o
- 
- check test: latex2rtf
+--- Makefile.orig	2020-05-30 14:08:19 UTC
++++ Makefile
+@@ -138,7 +138,7 @@ TEST=  \
+ 	test/enc_ot2.tex             test/keywords.tex       test/bib_natbib4.tex   \
+ 	test/graphicspath.tex        test/bib_style.tex      test/tikz.tex          \
+ 	test/tikz2.tex
+-	
++
+ OBJS=fonts.o direct.o encodings.o commands.o stack.o funct1.o tables.o \
+ 	chars.o ignore.o cfg.o main.o utils.o parser.o lengths.o counters.o \
+ 	preamble.o letterformat.o equations.o convert.o xrefs.o definitions.o graphics.o \
+@@ -163,7 +163,7 @@ check test: latex2rtf
  	cd test && $(MAKE) clean
-@@ -209,7 +209,6 @@
- 	cd doc && $(MAKE) -k
+ 	cd test && $(MAKE)
+ 	cd test && $(MAKE) check
+-	
++
+ fullcheck: latex2rtf
+ 	cd scripts && $(MAKE)
+ 	cd test && $(MAKE) clean
+@@ -209,10 +209,8 @@ releasedate:
+ 	$(RM) version.h.bak
+ 
+ doc: doc/latex2rtf.texi doc/Makefile
+-	cd doc && $(MAKE) -k
  
  install: latex2rtf doc/latex2rtf.1 $(CFGS) scripts/latex2png
 -	cd doc && $(MAKE)
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(MANDIR)
  	$(MKDIR) $(DESTDIR)$(CFGDIR)
-@@ -217,9 +216,6 @@
+@@ -220,24 +218,7 @@ install: latex2rtf doc/latex2rtf.1 $(CFGS) scripts/lat
  	cp -p doc/latex2rtf.1    $(DESTDIR)$(MANDIR)
  	cp -p doc/latex2png.1    $(DESTDIR)$(MANDIR)
  	cp -p $(CFGS)            $(DESTDIR)$(CFGDIR)
@@ -29,5 +37,33 @@
 -	cp -p doc/latex2rtf.pdf  $(DESTDIR)$(SUPPORTDIR)
 -	cp -p doc/latex2rtf.txt  $(DESTDIR)$(SUPPORTDIR)
  	cp -p $(BINARY_NAME)     $(DESTDIR)$(BINDIR)
- 	@echo "******************************************************************"
- 	@echo "*** latex2rtf successfully installed as \"$(BINARY_NAME)\""
+-	@echo "******************************************************************"
+-	@echo "*** latex2rtf successfully installed as \"$(BINARY_NAME)\""
+-	@echo "*** in directory \"$(BINDIR)\""
+-	@echo "***"
+-	@echo "*** \"make install-info\" will install TeXInfo files "
+-	@echo "***"
+-	@echo "*** latex2rtf was compiled to search for its configuration files in"
+-	@echo "***           \"$(CFGDIR)\" "
+-	@echo "***"
+-	@echo "*** If the configuration files are moved then either"
+-	@echo "***   1) set the environment variable RTFPATH to this new location, or"
+-	@echo "***   2) use the command line option -P /path/to/cfg, or"
+-	@echo "***   3) edit the Makefile and recompile"
+-	@echo "******************************************************************"
+ 
+ install-info: doc/latex2rtf.info
+ 	$(MKDIR) $(DESTDIR)$(INFODIR)
+@@ -252,10 +233,10 @@ realclean: checkdir clean
+ appleclean:
+ 	sudo xattr -r -d com.apple.FinderInfo ../trunk
+ 	sudo xattr -r -d com.apple.TextEncoding ../trunk
+-	
++
+ splint:
+ 	splint -weak $(SRCS) $(HDRS)
+-	
++
+ .PHONY: all check checkdir clean depend dist doc install install_info realclean latex2rtf uptodate releasedate splint fullcheck
+ 
+ # created using "make depend"
