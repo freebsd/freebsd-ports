@@ -636,6 +636,7 @@
     SUBDIR += moon-buggy
     SUBDIR += moonlander
     SUBDIR += moonlight-embedded
+    SUBDIR += moonlight-qt
     SUBDIR += moria
     SUBDIR += motogt
     SUBDIR += mrboom
