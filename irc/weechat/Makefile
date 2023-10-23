@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-DISTVERSION=	4.0.5
+DISTVERSION=	4.1.0
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -57,7 +57,6 @@ LUA_USES=		lua pkgconfig
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
 MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-NLS_BROKEN_OFF=		NLS option error: "ld: error: undefined symbol: libintl_bindtextdomain"
 NLS_USES=		gettext
 PERL_USES=		perl5
 PHP_USES=		php:build,embed
