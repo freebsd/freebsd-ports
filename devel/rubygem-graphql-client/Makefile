@@ -1,6 +1,5 @@
 PORTNAME=	graphql-client
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +9,8 @@ WWW=		https://github.com/github/graphql-client
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activesupport61>=3.0:devel/rubygem-activesupport61 \
-		rubygem-graphql>=1.8<2:devel/rubygem-graphql
+RUN_DEPENDS=	rubygem-activesupport70>=3.0:devel/rubygem-activesupport70 \
+		rubygem-graphql>=0:devel/rubygem-graphql
 
 USES=		gem
 
