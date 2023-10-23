@@ -1,21 +1,96 @@
+  <vuln vid="22df5074-71cd-11ee-85eb-84a93843eb75">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql57-server</name>
+	<range><lt>5.7.44</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-c++</name>
+	<range><lt>8.0.35</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-j</name>
+	<range><lt>8.1.1</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-odbc</name>
+	<range><lt>8.1.1</lt></range>
+      </package>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.35</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuoct2023.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 37 new security patches, plus
+	    additional third party patches noted below, for Oracle MySQL. 9 of
+	    these vulnerabilities may be remotely exploitable without
+	    authentication, i.e., may be exploited over a network without
+	    requiring user credentials.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2022-42898</cvename>
+      <cvename>CVE-2023-2650</cvename>
+      <cvename>CVE-2023-3817</cvename>
+      <cvename>CVE-2023-22015</cvename>
+      <cvename>CVE-2023-22026</cvename>
+      <cvename>CVE-2023-22028</cvename>
+      <cvename>CVE-2023-22032</cvename>
+      <cvename>CVE-2023-22059</cvename>
+      <cvename>CVE-2023-22064</cvename>
+      <cvename>CVE-2023-22065</cvename>
+      <cvename>CVE-2023-22066</cvename>
+      <cvename>CVE-2023-22068</cvename>
+      <cvename>CVE-2023-22070</cvename>
+      <cvename>CVE-2023-22078</cvename>
+      <cvename>CVE-2023-22079</cvename>
+      <cvename>CVE-2023-22084</cvename>
+      <cvename>CVE-2023-22092</cvename>
+      <cvename>CVE-2023-22094</cvename>
+      <cvename>CVE-2023-22095</cvename>
+      <cvename>CVE-2023-22097</cvename>
+      <cvename>CVE-2023-22102</cvename>
+      <cvename>CVE-2023-22103</cvename>
+      <cvename>CVE-2023-22104</cvename>
+      <cvename>CVE-2023-22110</cvename>
+      <cvename>CVE-2023-22111</cvename>
+      <cvename>CVE-2023-22112</cvename>
+      <cvename>CVE-2023-22113</cvename>
+      <cvename>CVE-2023-22114</cvename>
+      <cvename>CVE-2023-22115</cvename>
+      <cvename>CVE-2023-38545</cvename>
+      <url>https://www.oracle.com/security-alerts/cpuoct2023.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2023-10-17</discovery>
+      <entry>2023-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e14b9870-62a4-11ee-897b-000bab9f87f1">
     <topic>Request Tracker -- multiple vulnerabilities</topic>
     <affects>
       <package>
-        <name>rt44</name>
-        <range><lt>4.4.6</lt></range>
+	<name>rt44</name>
+	<range><lt>4.4.6</lt></range>
       </package>
       <package>
-        <name>rt50</name>
-        <range><lt>5.0.4</lt></range>
+	<name>rt50</name>
+	<range><lt>5.0.4</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Request Tracker reports:</p>
-        <p>CVE-2023-41259 SECURITY: RT is vulnerable to unvalidated email headers in incoming email and the mail-gateway REST interface.</p>
-        <p>CVE-2023-41260 SECURITY: RT is vulnerable to information leakage via response messages returned from requests sent via the mail-gateway REST interface.</p>
-        <p>CVE-2023-45024 SECURITY: RT 5.0 is vulnerable to information leakage via transaction searches made by authenticated users in the transaction query builder.</p>
+	<p>Request Tracker reports:</p>
+	<p>CVE-2023-41259 SECURITY: RT is vulnerable to unvalidated email headers in incoming email and the mail-gateway REST interface.</p>
+	<p>CVE-2023-41260 SECURITY: RT is vulnerable to information leakage via response messages returned from requests sent via the mail-gateway REST interface.</p>
+	<p>CVE-2023-45024 SECURITY: RT 5.0 is vulnerable to information leakage via transaction searches made by authenticated users in the transaction query builder.</p>
       </body>
     </description>
     <references>
