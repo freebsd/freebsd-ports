@@ -1,0 +1,4 @@
+lazrs is a Python bindings for the laz-rs Rust crate.
+
+lazrs allows to read/write compressed LASer (LAS) file format
+representing 3-dimensional point cloud data.
