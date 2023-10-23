@@ -1,0 +1,3 @@
+laszip is a Python bindings for LASzip.
+
+The main purpose is for integration within laspy.
