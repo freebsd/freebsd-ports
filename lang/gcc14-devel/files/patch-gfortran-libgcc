@@ -58,10 +58,10 @@ anything wrong.)
        unsigned int i;
 --- libgfortran/Makefile.in.orig
 +++ libgfortran/Makefile.in
-@@ -736,7 +736,7 @@
+@@ -759,7 +759,7 @@
  	$(LTLDFLAGS) $(LIBQUADLIB) ../libbacktrace/libbacktrace.la \
  	$(HWCAP_LDFLAGS) \
-	$(LIBM) $(extra_ldflags_libgfortran) \
+	$(LIBM) $(extra_darwin_ldflags_libgfortran) \
 -	$(version_arg) -Wc,-shared-libgcc
 +	$(version_arg)
  
