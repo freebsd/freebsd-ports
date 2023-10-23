@@ -1,0 +1,11 @@
+--- src/crypto/CMakeLists.txt.orig	2023-10-23 03:21:28 UTC
++++ src/crypto/CMakeLists.txt
+@@ -50,7 +50,7 @@ set(crypto_sources
+   CryptonightR_JIT.c
+   tree-hash.c)
+ 
+-if(ARCH_ID STREQUAL "i386" OR ARCH_ID STREQUAL "x86_64" OR ARCH_ID STREQUAL "x86-64" OR ARCH_ID STREQUAL "amd64")
++if(ARCH_ID STREQUAL "x86_64" OR ARCH_ID STREQUAL "x86-64" OR ARCH_ID STREQUAL "amd64")
+ list(APPEND crypto_sources CryptonightR_template.S)
+ endif()
+ 
