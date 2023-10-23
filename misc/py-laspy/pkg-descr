@@ -1,0 +1,6 @@
+Laspy is a pythonic interface for reading/modifying/creating .LAS LIDAR
+files matching specification 1.0-1.4.
+
+LAS (and its compressed counterpart LAZ), is a popular format for lidar
+pointcloud and full waveform, laspy reads and writes these formats and
+provides a Python API via Numpy Arrays.
