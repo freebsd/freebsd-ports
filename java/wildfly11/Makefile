@@ -9,6 +9,9 @@ MAINTAINER=	yerenkow@gmail.com
 COMMENT=	Replacement for JBoss Application Server
 WWW=		https://wildfly.org/
 
+DEPRECATED=	End of life upstream
+EXPIRATION_DATE=2023-11-30
+
 LICENSE=	GPLv2
 
 USE_RC_SUBR=	wildfly11

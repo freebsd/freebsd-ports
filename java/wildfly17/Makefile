@@ -8,6 +8,9 @@ MAINTAINER=	reig.simeo@gmail.com
 COMMENT=	Java Jakarta EE8 application server developed by Red Hat
 WWW=		https://wildfly.org/
 
+DEPRECATED=	End of life upstream
+EXPIRATION_DATE=2023-11-30
+
 LICENSE=	GPLv2
 
 USE_RC_SUBR=	wildfly17
