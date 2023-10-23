@@ -2,6 +2,8 @@ lib/systemd/user/xdg-desktop-portal-gtk.service
 libexec/xdg-desktop-portal-gtk
 share/applications/xdg-desktop-portal-gtk.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service
+share/locale/be/LC_MESSAGES/xdg-desktop-portal-gtk.mo
+share/locale/ca/LC_MESSAGES/xdg-desktop-portal-gtk.mo
 share/locale/cs/LC_MESSAGES/xdg-desktop-portal-gtk.mo
 share/locale/da/LC_MESSAGES/xdg-desktop-portal-gtk.mo
 share/locale/de/LC_MESSAGES/xdg-desktop-portal-gtk.mo
