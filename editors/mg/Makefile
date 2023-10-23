@@ -1,18 +1,18 @@
 PORTNAME=	mg
-DISTVERSION=	20230501
+DISTVERSION=	20231016
 PORTEPOCH=	1
 CATEGORIES=	editors
+MASTER_SITES=   https://hydrus.org.uk/downloads/
 
 MAINTAINER=	cdr.nil@gmail.com
 COMMENT=	Small, fast Emacs-like editor
-WWW=		https://github.com/hboetes/mg
+WWW=		https://man.openbsd.org/mg
 
 LICENSE=	PD
 
 USES=		ncurses
-USE_GITHUB=	yes
-GH_ACCOUNT=	hboetes
 STAGEOWN=	${USER}
+# replace with STAGEGRP=${.MAKE.GID} once FreeBSD 12 is EOL
 STAGEGRP!=	id -gn
 MAKE_ARGS+=	BINOWN=${STAGEOWN} BINGRP=${STAGEGRP} MANOWN=${STAGEOWN} \
 		MANGRP=${STAGEGRP} BINDIR=${PREFIX}/bin \
@@ -28,7 +28,7 @@ PLIST_FILES=	/rescue/mg
 .else
 PLIST_FILES=	bin/mg \
 		man/man1/mg.1.gz
-PORTDOCS=	README README.md tutorial
+PORTDOCS=	README tutorial
 OPTIONS_DEFINE=	DOCS
 .endif
 
