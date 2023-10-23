@@ -13,26 +13,32 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-WRKSRC_SUBDIR=	sources
+USES=		jpeg localbase:ldflags
 
-USES=		makeinfo
-MAKE_ARGS=	infodir=${PREFIX}/${INFO_PATH}
 MAKE_ENV=	DEFINES="${CPPFLAGS}" ALL_LIBS="${LDFLAGS}"
 
-CPPFLAGS+=	-DUNIX -I${LOCALBASE}/include
-LDFLAGS+=	-lm -L${LOCALBASE}/lib -ltiff -lpng -lz
+CPPFLAGS+=	-DUNIX
+LDFLAGS+=	-lm -ltiff -lpng -lz
 
-INFO=		hp2xx
+WRKSRC_SUBDIR=	sources
+
 PLIST_FILES=	bin/hp2xx man/man1/hp2xx.1.gz
 
-OPTIONS_DEFINE=		X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=		INFO X11
+OPTIONS_DEFAULT=	INFO X11
 
+INFO_USES=		makeinfo
+INFO_MAKE_ARGS=	infodir=${PREFIX}/${INFO_PATH}
+INFO_INFO=		hp2xx
 X11_USES=		xorg
 X11_USE=		XORG=x11
 X11_MAKE_ENV=		PREVIEWER=to_x11
 X11_MAKE_ENV_OFF=	PREVIEWER=no_prev
-X11_CPPFLAGS=		-DHAS_UNIX_X11 -I${LOCALBASE}/include
-X11_LDFLAGS=		-L${LOCALBASE}/lib -lX11
+X11_CPPFLAGS=		-DHAS_UNIX_X11
+X11_LDFLAGS=		-lX11
+
+post-patch-INFO-off:
+	@${REINPLACE_CMD} -e '/^all:/s|hp2xx.info||g; \
+		/^install:/s|install-info||g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

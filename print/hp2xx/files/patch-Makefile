@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jun 22 00:16:34 2003
-+++ Makefile	Tue Jun 24 07:53:46 2003
-@@ -35,7 +35,7 @@
+--- Makefile.orig	2003-06-21 15:16:34 UTC
++++ Makefile
+@@ -35,7 +35,7 @@ STRIP    = strip
  
  # Installation sites (GNU conventions):
  #
@@ -9,7 +9,7 @@
  bindir   = $(prefix)/bin
  includedir = $(prefix)/include
  mandir   = $(prefix)/man
-@@ -45,14 +45,14 @@
+@@ -45,14 +45,14 @@ infodir  = $(prefix)/info
  # CC and CFLAGS set for gcc, but any ANSI-C compiler should work.
  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
  #
@@ -27,7 +27,7 @@
  CPPFLAGS = -I.            # only sometimes needed; see below for examples
  BINDCMD  =                # only needed for EMX and DJGPP DOS extenders
  
-@@ -65,9 +65,9 @@
+@@ -65,9 +65,9 @@ BINDCMD  =                # only needed for EMX and DJ
  #
  # Generic UNIX + X11 previewer (default)
  #
@@ -40,7 +40,7 @@
  #
  # for experimental truetype font support
  #
-@@ -230,13 +230,13 @@
+@@ -230,13 +230,13 @@ ALL_CFLAGS	= -c $(CFLAGS)
  
  # $(SRCS) NOT USED YET:
  SRCS	= clip.c fillpoly.c\
@@ -56,17 +56,18 @@
  	  to_vec.o to_pcx.o to_pcl.o  to_eps.o to_img.o to_pbm.o \
  	  to_rgip.o to_fig.o std_main.o $(PREVIEWER).o pendef.o lindef.o $(EX_OBJ)
  
-@@ -244,7 +244,8 @@
+@@ -244,8 +244,9 @@ PROGRAM	= hp2xx
  
  $(PROGRAM): $(OBJS)
  	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) $(EX_LIBS) -o $(PROGRAM)
 -	$(BINDCMD)
-+
-+all: $(PROGRAM) hp2xx.info
  
++all: $(PROGRAM) 
++
  default:
  	@echo "This makefile needs manual configuration! Edit it now!
-@@ -268,9 +269,9 @@
+ 	@echo "After configuration, you may use the following commands:
+@@ -268,9 +269,9 @@ default:
  #									#
  #########################################################################
  
@@ -79,8 +80,12 @@
  
  
  #########################################################################
-@@ -330,15 +331,11 @@
- install:	install-bin install-info install-man
+@@ -327,18 +328,14 @@ realclean:
+ TAGS:
+ 	@echo make TAGS -- not supported nor needed.
+ 
+-install:	install-bin install-info install-man
++install:	install-bin  install-man
  
  install-bin:	$(PROGRAM)
 -		-$(STRIP) $(PROGRAM)
