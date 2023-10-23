@@ -1,7 +1,7 @@
 PORTNAME=	libsemigroups
 PORTVERSION=	1.3.7
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,18 +22,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fmt --with-external-fmt=yes	\
 		--with-external-eigen
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-OPTIONS_DEFINE=	NATIVE
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--disable-hpcombi
 .endif
-
-post-patch-NATIVE-off:
-	@${REINPLACE_CMD} -e 's/-march=native/-march=default/' ${WRKSRC}/m4/ax_check_hpcombi.m4
 
 pre-configure:
 .if ${ARCH} == amd64
