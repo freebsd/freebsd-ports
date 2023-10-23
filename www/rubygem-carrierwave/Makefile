@@ -1,6 +1,5 @@
 PORTNAME=	carrierwave
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +9,10 @@ WWW=		https://github.com/carrierwaveuploader/carrierwave
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-activemodel61>=4.0.0:databases/rubygem-activemodel61 \
-		rubygem-activesupport61>=4.0.0:devel/rubygem-activesupport61 \
+RUN_DEPENDS=	rubygem-activemodel70>=4.0.0:databases/rubygem-activemodel70 \
+		rubygem-activesupport70>=4.0.0:devel/rubygem-activesupport70 \
 		rubygem-mime-types>=1.16:misc/rubygem-mime-types \
-		rubygem-ssrf_filter>=1.0<2:security/rubygem-ssrf_filter
+		rubygem-ssrf_filter>=1.0<1.1.0:security/rubygem-ssrf_filter
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
