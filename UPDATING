@@ -5,6 +5,27 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231027:
+  AFFECTS: users of print/ghostscript9*
+  AUTHOR: michaelo@FreeBSD.org
+
+  The default ghostscript version has been updated from 9 to 10.
+
+  If you compile your own ports you may keep 9 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ghostscript 9 as default version
+  #
+  DEFAULT_VERSIONS+=ghostscript=9
+
+  If you wish to update to the new default version, you need to first stop any
+  software that uses ghostscript. Then, you will need to follow these steps,
+  depending upon how you manage your system.
+
+  Please note that print/ghostcript9* will be removed in the future since it is
+  not supported by upstream anymore.
+
 20231026:
   AFFECTS: users of lang/chicken
   AUTHOR: gahr@FreeBSD.org

@@ -5,11 +5,11 @@
 # Valid ARGS:	<version>, build, lib, run, test, x11
 #
 # version 	The chooseable versions are 9, agpl and 10. If no version is
-#		specified version agpl is selected. 9 and agpl are synonymous.
+#		specified version 10 is selected. 9 and agpl are synonymous.
 #
-#		USES=ghostscript:9	# Use Ghostscript 9
-#		USES=ghostscript:run	# Use the set default Ghostscript as a run dependency
-#		USES=ghostscript:9,build # Use ghostscript 9 as a build dependency.
+#		USES=ghostscript:10	    # Use Ghostscript 10
+#		USES=ghostscript:run	# Use to set default Ghostscript as a run dependency
+#		USES=ghostscript:9,build # Use Ghostscript 9 as a build dependency.
 #
 # build		Ghostscript is used as BUILD_DEPENDS
 # lib		Ghostscript is used as LIB_DEPENDS
@@ -86,7 +86,7 @@ _GS_STATIC=	yes
 
 # Resolve minor version number for X11.so library.
 .  if !empty(_GS_SELECTED:M10)
-_GS_VERSION_MINOR=	10.01.2
+_GS_VERSION_MINOR=	10.02.0
 .  elif !empty(_GS_SELECTED:M9-agpl)
 _GS_VERSION_MINOR=	9.56.1
 .  endif
