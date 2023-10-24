@@ -27,7 +27,7 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.27.jar
+%%T%%/lib/ecj-4.29.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jakartaee-migration-1.0.7-shaded.jar
 %%T%%/lib/jasper-el.jar
@@ -54,7 +54,6 @@
 %%T%%/lib/tomcat-websocket.jar
 %%T%%/lib/websocket-api.jar
 %%T%%/lib/websocket-client-api.jar
-@dir %%T%%/endorsed
 @postunexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually
 @owner %%WWWOWN%%
 @group %%WWWGRP%%
@@ -296,8 +295,6 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
-%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
