@@ -4,7 +4,7 @@
 # Usage:	USES=ssl
 # Valid ARGS:	none (build and run), build, run
 #
-# The user can choose which ssl library he wants with:
+# The user can choose which ssl library they want with:
 #
 # DEFAULT_VERSIONS+=	ssl=<openssl variant>
 #
