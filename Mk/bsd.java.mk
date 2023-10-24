@@ -22,7 +22,8 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 8[+] 11[+] 17[+] 18[+])
+#					versions. (allowed values: 8[+] 11[+] 17[+] 18[+] 19[+]
+#					20[+] 21[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -159,7 +160,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .    endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	8 11 17 18
+__JAVA_VERSION_LIST=	8 11 17 18 19 20 21
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
