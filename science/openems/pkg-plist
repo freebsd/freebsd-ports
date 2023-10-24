@@ -9,7 +9,7 @@ lib/libnf2ff.so.0
 lib/libnf2ff.so.0.1.0
 lib/libopenEMS.so
 lib/libopenEMS.so.0
-lib/libopenEMS.so.0.0.35
+lib/libopenEMS.so.0.0.36
 %%DATADIR%%/matlab/AR_estimate.m
 %%DATADIR%%/matlab/Add2Queue.m
 %%DATADIR%%/matlab/AddCPWPort.m
