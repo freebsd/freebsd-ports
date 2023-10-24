@@ -1,6 +1,6 @@
 PORTNAME=	quickjs
 DISTVERSION=	2021.03.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang devel
 MASTER_SITES=	https://bellard.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
@@ -12,6 +12,8 @@ WWW=		https://bellard.org/quickjs/
 LICENSE=	MIT
 
 USES=		compiler:c11 cpe gmake tar:xz
+USE_LDCONFIG=	yes
+
 CPE_VENDOR=	${PORTNAME}_project
 
 EXTRA_PATCHES=	${FILESDIR}/extra-${CHOSEN_COMPILER_TYPE}-patch-Makefile
