@@ -1,6 +1,7 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	0.11.1
 DISTVERSIONSUFFIX=	+fixup
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
