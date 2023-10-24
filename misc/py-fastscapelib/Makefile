@@ -1,6 +1,6 @@
 PORTNAME=	fastscapelib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	misc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		xtensor-python>0:math/xtensor-python \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>0:devel/py-pyproject-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build-core>0:devel/py-scikit-build-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
