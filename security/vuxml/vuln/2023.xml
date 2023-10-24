@@ -1,3 +1,40 @@
+  <vuln vid="4a4712ae-7299-11ee-85eb-84a93843eb75">
+    <topic>OpenSSL -- potential loss of confidentiality</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.12,1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.4</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SO-AND-SO reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20231024.txt">
+	  <p>Moderate severity: A bug has been identified in the processing
+	    of key and initialisation vector (IV) lengths. This can lead to
+	    potential truncation or overruns during the initialisation of
+	    some symmetric ciphers.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5363</cvename>
+      <url>https://www.openssl.org/news/secadv/20231024.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-10-24</discovery>
+      <entry>2023-10-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="22df5074-71cd-11ee-85eb-84a93843eb75">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
