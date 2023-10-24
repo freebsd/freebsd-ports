@@ -29,14 +29,17 @@ lib/cairo-lang/corelib/src/starknet/account.cairo
 lib/cairo-lang/corelib/src/starknet/class_hash.cairo
 lib/cairo-lang/corelib/src/starknet/contract_address.cairo
 lib/cairo-lang/corelib/src/starknet/eth_address.cairo
+lib/cairo-lang/corelib/src/starknet/eth_signature.cairo
 lib/cairo-lang/corelib/src/starknet/event.cairo
 lib/cairo-lang/corelib/src/starknet/info.cairo
 lib/cairo-lang/corelib/src/starknet/secp256_trait.cairo
 lib/cairo-lang/corelib/src/starknet/secp256k1.cairo
 lib/cairo-lang/corelib/src/starknet/secp256r1.cairo
+lib/cairo-lang/corelib/src/starknet/storage.cairo
 lib/cairo-lang/corelib/src/starknet/storage_access.cairo
 lib/cairo-lang/corelib/src/starknet/syscalls.cairo
 lib/cairo-lang/corelib/src/starknet/testing.cairo
+lib/cairo-lang/corelib/src/string.cairo
 lib/cairo-lang/corelib/src/test.cairo
 lib/cairo-lang/corelib/src/test/array_test.cairo
 lib/cairo-lang/corelib/src/test/bool_test.cairo
@@ -56,6 +59,8 @@ lib/cairo-lang/corelib/src/test/secp256k1_test.cairo
 lib/cairo-lang/corelib/src/test/secp256r1_test.cairo
 lib/cairo-lang/corelib/src/test/test_utils.cairo
 lib/cairo-lang/corelib/src/test/testing_test.cairo
+lib/cairo-lang/corelib/src/test/to_byte_array_test.cairo
 lib/cairo-lang/corelib/src/testing.cairo
+lib/cairo-lang/corelib/src/to_byte_array.cairo
 lib/cairo-lang/corelib/src/traits.cairo
 lib/cairo-lang/corelib/src/zeroable.cairo
