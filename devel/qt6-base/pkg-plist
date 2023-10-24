@@ -1520,7 +1520,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qauthenticator_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdecompresshelper_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdnslookup_p.h
-%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdtls_p.h
+%%DTLS%%%%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qdtls_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostaddress_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhostinfo_p.h
 %%QT_INCDIR%%/QtNetwork/%%FULLVER%%/QtNetwork/private/qhsts_p.h
@@ -1591,8 +1591,8 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/QDnsMailExchangeRecord
 %%QT_INCDIR%%/QtNetwork/QDnsServiceRecord
 %%QT_INCDIR%%/QtNetwork/QDnsTextRecord
-%%QT_INCDIR%%/QtNetwork/QDtls
-%%QT_INCDIR%%/QtNetwork/QDtlsClientVerifier
+%%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtls
+%%DTLS%%%%QT_INCDIR%%/QtNetwork/QDtlsClientVerifier
 %%QT_INCDIR%%/QtNetwork/QHostAddress
 %%QT_INCDIR%%/QtNetwork/QHostInfo
 %%QT_INCDIR%%/QtNetwork/QHstsPolicy
@@ -1642,7 +1642,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtNetwork/qabstractsocket.h
 %%QT_INCDIR%%/QtNetwork/qauthenticator.h
 %%QT_INCDIR%%/QtNetwork/qdnslookup.h
-%%QT_INCDIR%%/QtNetwork/qdtls.h
+%%DTLS%%%%QT_INCDIR%%/QtNetwork/qdtls.h
 %%QT_INCDIR%%/QtNetwork/qhostaddress.h
 %%QT_INCDIR%%/QtNetwork/qhostinfo.h
 %%QT_INCDIR%%/QtNetwork/qhstspolicy.h
