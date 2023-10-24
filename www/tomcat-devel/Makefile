@@ -1,5 +1,5 @@
 PORTNAME=	tomcat
-DISTVERSION=	11.0.0-M6
+DISTVERSION=	11.0.0-M13
 CATEGORIES=	www java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${DISTVERSION:C/([0-9]+)(.*)/\1/}/v${DISTVERSION}/bin
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ RUN_DEPENDS=	jsvc:devel/apache-commons-daemon
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 USE_RC_SUBR=	${PKGBASE:C/-/_/}
 
 NO_ARCH=	yes
@@ -48,7 +48,6 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
-	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/endorsed
 	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
 
 post-install:
