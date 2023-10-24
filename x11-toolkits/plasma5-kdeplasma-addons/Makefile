@@ -1,6 +1,5 @@
 PORTNAME=	kdeplasma-addons
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

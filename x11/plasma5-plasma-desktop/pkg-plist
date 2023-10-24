@@ -4063,6 +4063,7 @@ share/plasma/shells/org.kde.plasma.desktop/contents/layout.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/containmentactions_middlebutton.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_migrate_font_settings.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/digitalclock_rename_timezonedisplay_key.js
+share/plasma/shells/org.kde.plasma.desktop/contents/updates/folderview_fix_recursive_screenmapping.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/keyboardlayout_migrateiconsetting.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/keyboardlayout_remove_shortcut.js
 share/plasma/shells/org.kde.plasma.desktop/contents/updates/klipper_clear_config.js
