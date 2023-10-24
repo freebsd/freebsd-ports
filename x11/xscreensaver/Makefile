@@ -18,19 +18,18 @@ RUN_DEPENDS=	giftopnm:graphics/netpbm \
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
 		unix-selfauth-helper>0:security/unix-selfauth-helper
 
-USES=		autoreconf cpe gettext gl gmake gnome jpeg localbase:ldflags \
-		perl5 pkgconfig shebangfix xorg
+USES=		cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
+		pkgconfig shebangfix xorg
 CPE_VENDOR=	xscreensaver_project
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2
-USE_PERL5=	run
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xrandr xrender xt xxf86vm
 
 SHEBANG_FILES=	hacks/check-configs.pl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-locking \
-		--with-app-defaults=${PREFIX}/lib/X11/app-defaults/ \
+		--with-app-defaults=${PREFIX}/lib/X11/app-defaults \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
 		--with-dpms-ext \
 		--with-gl \
@@ -84,9 +83,6 @@ XSNOW_RUN_DEPENDS=		xsnow:x11/xsnow
 FIREF_HACKBIN=	${LOCALBASE}/bin/xscreensaver-hacks/fireflies
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
-			-e 's|pkg_config --list-all|pkg_config --help|' \
-			${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e "s|/etc/pam.d|${PREFIX}/etc/pam.d|g" \
 		${WRKSRC}/driver/passwd-pam.c \
 		${WRKSRC}/driver/xscreensaver.man
@@ -94,6 +90,9 @@ post-patch:
 post-patch-NSFW-off:
 	${REINPLACE_CMD} -e 's|Dick Pix|Stuff|' ${WRKSRC}/hacks/bsod.c
 	${REINPLACE_CMD} -e 's|dick pics|data, etc.|' ${WRKSRC}/hacks/bsod.c
+
+pre-configure-NLS-on:
+	cd ${WRKSRC} && ${LOCALBASE}/bin/intltoolize -f -c
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
