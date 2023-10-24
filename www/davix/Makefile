@@ -1,6 +1,6 @@
 PORTNAME=	davix
 DISTVERSIONPREFIX=	R_
-DISTVERSION=	0_8_4
+DISTVERSION=	0_8_5
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_ACCOUNT=	cern-fts
 GH_TUPLE=	google:googletest:f570b27:googletest/deps/googletest
 
 CMAKE_OFF=	EMBEDDED_LIBCURL DAVIX_TESTS
-CMAKE_TESTING_ON=	DAVIX_TESTS UNIT_TESTS BENCH_TESTS # unclear how to run tests, see https://github.com/cern-fts/davix/issues/96
+CMAKE_TESTING_ON=	DAVIX_TESTS UNIT_TESTS BENCH_TESTS # 1 test fails, and several tests hang, see https://github.com/cern-fts/davix/issues/108
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
