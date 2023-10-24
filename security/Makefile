@@ -193,6 +193,7 @@
     SUBDIR += gonepass
     SUBDIR += gopass
     SUBDIR += gorilla
+    SUBDIR += gosec
     SUBDIR += gost-engine
     SUBDIR += gostsum
     SUBDIR += gpa
