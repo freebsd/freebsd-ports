@@ -1,6 +1,5 @@
 PORTNAME=	slib
-PORTVERSION=	3b6 # Keep this in sync with lang/slib
-PORTREVISION=	3
+PORTVERSION=	3b7 # Keep this in sync with lang/slib
 CATEGORIES=	lang scheme
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-${FLAVOR}
