@@ -1324,6 +1324,7 @@
     SUBDIR += trezord
     SUBDIR += tripwire
     SUBDIR += trousers
+    SUBDIR += trufflehog
     SUBDIR += tthsum
     SUBDIR += u2f-devd
     SUBDIR += uacme
