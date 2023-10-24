@@ -39,7 +39,7 @@ include/CSXCAD/ParameterCoord.h
 include/CSXCAD/ParameterObjects.h
 lib/libCSXCAD.so
 lib/libCSXCAD.so.0
-lib/libCSXCAD.so.0.6.2
+lib/libCSXCAD.so.0.6.3
 share/CSXCAD/matlab/AddBox.m
 share/CSXCAD/matlab/AddConductingSheet.m
 share/CSXCAD/matlab/AddCurve.m
