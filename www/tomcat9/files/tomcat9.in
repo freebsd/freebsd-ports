@@ -111,7 +111,7 @@ extra_commands="reload"
 _tomcat_java_version=`${_tomcat_java_home}/bin/java -version 2>&1 | /usr/bin/awk -F '"' '/version/ {print $2}'`
 
 case "${_tomcat_java_version}" in
-	9* | 1[0-9]* )
+	9* | [1-2][0-9]* )
 		_tomcat_endorsed_dirs_option=
 		;;
 	*)
