@@ -150,7 +150,7 @@ _USE_QT5_ONLY+=		sql-ibase
 .  endif
 
 _USE_QT6_ONLY=		5compat base httpserver languageserver lottie positioning \
-			quickeffectmaker shadertools tools translations \
+			quick3dphysics quickeffectmaker shadertools tools translations \
 			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
@@ -293,6 +293,9 @@ qt-qmake_PATH=		${_QT_RELNAME}-qmake>=${_QT_VERSION:R}
 
 qt-quick3d_PORT=	x11-toolkits/${_QT_RELNAME}-quick3d
 qt-quick3d_LIB=		libQt${_QT_LIBVER}Quick3D.so
+
+qt-quick3dphysics_PORT=	science/${_QT_RELNAME}-quick3dphysics
+qt_quick3dphysics_LIB=	libQt${_QT_LIBVER}Quick3DPhysics.so
 
 qt-quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
 qt-quickcontrols_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Controls/qmldir

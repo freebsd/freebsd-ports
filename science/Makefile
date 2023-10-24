@@ -450,6 +450,7 @@
     SUBDIR += qcl
     SUBDIR += qiskit-aer
     SUBDIR += qmcpack
+    SUBDIR += qt6-quick3dphysics
     SUBDIR += quantum-espresso
     SUBDIR += quantum-espresso-pseudopotentials
     SUBDIR += quantum-jet

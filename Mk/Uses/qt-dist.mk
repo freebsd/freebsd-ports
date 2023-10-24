@@ -29,7 +29,7 @@ _QT5_DISTS=		gamepad graphicaleffects quickcontrols \
 			quickcontrols2 script webglplugin \
 			x11extras xmlpatterns
 _QT6_DISTS=		5compat doc httpserver languageserver lottie positioning \
-			quickeffectmaker shadertools
+			quick3dphysics quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
