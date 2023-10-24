@@ -12,7 +12,7 @@ WWW=		http://www2.informatik.uni-stuttgart.de/ivi/bs/research/arab_e.htm
 LICENSE=	LPPL10
 
 USES=		tar:tgz tex
-USE_TEX=	base # texmf
+USE_TEX=	base
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
