@@ -1,5 +1,6 @@
 PORTNAME=	quickjs
 DISTVERSION=	2021.03.27
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	https://bellard.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${DISTVERSION:S/./-/g}
@@ -24,5 +25,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%GCC_DEFAULT%%/${GCC_DEFAULT}/' \
 		${WRKSRC}/Makefile
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libquickjs.so
 
 .include <bsd.port.post.mk>

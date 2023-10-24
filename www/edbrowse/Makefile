@@ -1,6 +1,7 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -10,9 +11,8 @@ WWW=		https://edbrowse.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/quickjs/quickjs.h:lang/quickjs \
-		${LOCALBASE}/lib/quickjs/libquickjs.a:lang/quickjs
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libquickjs.so:lang/quickjs \
 		libodbc.so:databases/unixODBC \
 		libpcre2-8.so:devel/pcre2
 

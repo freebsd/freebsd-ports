@@ -14,7 +14,7 @@
  
  # LDFLAGS for quickjs loading.
 -QUICKJS_LDFLAGS = $(QUICKJS_DIR)/libquickjs.a -ldl
-+QUICKJS_LDFLAGS = /usr/local/lib/quickjs/libquickjs.a -ldl
++QUICKJS_LDFLAGS = -lquickjs
  ifeq ($(shell uname),Linux)
  	QUICKJS_LDFLAGS += -latomic
  endif

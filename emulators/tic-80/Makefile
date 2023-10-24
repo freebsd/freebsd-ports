@@ -1,6 +1,7 @@
 PORTNAME=	TIC-80
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2736
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -10,9 +11,6 @@ WWW=		https://tic80.com
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-# only available as a static library
-# bump TIC-80 when quickjs is updated!
-BUILD_DEPENDS=	quickjs>0:lang/quickjs
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
 		libdbus-1.so:devel/dbus \
@@ -20,6 +18,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libinotify.so:devel/libinotify \
 		libjanet.so:lang/janet \
 		libpng16.so:graphics/png \
+		libquickjs.so:lang/quickjs \
 		libsquirrel.so:lang/squirrel \
 		libunwind.so:devel/libunwind
 
