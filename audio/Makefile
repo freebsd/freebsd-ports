@@ -319,6 +319,7 @@
     SUBDIR += jconvolver
     SUBDIR += jid3lib
     SUBDIR += jmatconvol
+    SUBDIR += jnoisemeter
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
