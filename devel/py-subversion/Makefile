@@ -6,7 +6,7 @@ WWW=		https://subversion.apache.org/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/py3c.h:devel/py3c
 
-USES=		python:2.7+
+USES=		python
 USE_PYTHON=	flavors py3kplist
 
 # There is bug in python bindings Makefile
@@ -16,12 +16,6 @@ PORTREVISION_114=	2
 PORTREVISION_LTS=	0
 
 SVN_BUILD_BINDINGS=	yes
-
-.if ${FLAVOR:Upy37:Mpy3*}
-WITH_SUBVERSION_VER=	114
-.else
-WITH_SUBVERSION_VER=	LTS
-.endif
 
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 

@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231031:
+  AFFECTS: users of devel/subversion-lts
+  AUTHOR: michaelo@FreeBSD.org
+
+  devel/subversion-lts has been updated from 1.10.x to the latest LTS version,
+  1.14.x. Some changes between these releases may require attention from
+  administrators or users.
+  Refer to https://subversion.apache.org/docs/release-notes/1.14.html#compat-misc for details.
+
 20231028:
   AFFECTS: users of net-mgmt/nfdump
 

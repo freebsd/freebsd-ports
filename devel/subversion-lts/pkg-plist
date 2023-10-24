@@ -51,6 +51,7 @@ include/subversion-1/svn_md5.h
 include/subversion-1/svn_mergeinfo.h
 include/subversion-1/svn_nls.h
 include/subversion-1/svn_opt.h
+include/subversion-1/svn_opt_impl.h
 include/subversion-1/svn_path.h
 include/subversion-1/svn_pools.h
 include/subversion-1/svn_props.h
@@ -63,6 +64,7 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_subst.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_types_impl.h
 include/subversion-1/svn_user.h
 include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
@@ -198,14 +200,6 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnclean.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-centos/svnlog.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnbuild.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svncheck.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnclean.sh
-%%SERF%%%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared-daily-ra_serf/svnlog.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnbuild.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svncheck.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnclean.sh
-%%DATADIR%%/buildbot/slaves/svn-x64-macosx-gnu-shared/svnlog.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/mkramdisk.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/rmramdisk.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/setenv.sh
@@ -214,6 +208,7 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svncheck-bindings.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svncheck.sh
 %%DATADIR%%/buildbot/slaves/svn-x64-macosx/svnclean.sh
+%%DATADIR%%/buildbot/slaves/svnbot-common/README
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svnbuild.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck-bindings.sh
 %%DATADIR%%/buildbot/slaves/ubuntu-x64/svncheck.sh
@@ -233,11 +228,6 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svncheck.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnclean.bat
 %%DATADIR%%/buildbot/slaves/win32-xp-VS2005/svnlog.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/config.bat.tmpl
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnbuild.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svncheck.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnclean.bat
-%%DATADIR%%/buildbot/slaves/xp-vc60-ia32/svnlog.bat
 %%DATADIR%%/client-side/bash_completion
 %%DATADIR%%/client-side/bash_completion_test
 %%DATADIR%%/client-side/change-svn-wc-format.py
@@ -259,6 +249,7 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/client-side/svn-viewspec.py
 %%DATADIR%%/client-side/svnconflict/README
 %%DATADIR%%/client-side/svnconflict/svnconflict.c
+%%DATADIR%%/client-side/svnviewspec_test.py
 %%DATADIR%%/client-side/wcfind
 %%DATADIR%%/dev/analyze-svnlogs.py
 %%DATADIR%%/dev/aprerr.txt
@@ -360,19 +351,23 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/dist/backport_tests_data/backport_branch_with_original_revision.dump
 %%DATADIR%%/dist/backport_tests_data/backport_branches.dump
 %%DATADIR%%/dist/backport_tests_data/backport_indented_entry.dump
+%%DATADIR%%/dist/backport_tests_data/backport_logsummary_colon.dump
 %%DATADIR%%/dist/backport_tests_data/backport_multirevisions.dump
 %%DATADIR%%/dist/backport_tests_data/backport_two_approveds.dump
 %%DATADIR%%/dist/backport_tests_data/backport_unicode_entry.dump
 %%DATADIR%%/dist/backport_tests_pl.py
 %%DATADIR%%/dist/backport_tests_py.py
+%%DATADIR%%/dist/changes-to-html.py
 %%DATADIR%%/dist/checksums.py
 %%DATADIR%%/dist/detect-conflicting-backports.py
 %%DATADIR%%/dist/dist.sh
+%%DATADIR%%/dist/edit-N-log-messages
 %%DATADIR%%/dist/extract-for-examination.sh
 %%DATADIR%%/dist/merge-approved-backports.py
 %%DATADIR%%/dist/nightly.sh
 %%DATADIR%%/dist/nominate.pl
 %%DATADIR%%/dist/rat-excludes
+%%DATADIR%%/dist/release-lines.yaml
 %%DATADIR%%/dist/release.py
 %%DATADIR%%/dist/security/__init__.py
 %%DATADIR%%/dist/security/_gnupg.py
@@ -380,9 +375,12 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/dist/security/mailer.py
 %%DATADIR%%/dist/security/mailinglist.py
 %%DATADIR%%/dist/security/parser.py
+%%DATADIR%%/dist/templates/STATUS.ezt
 %%DATADIR%%/dist/templates/download.ezt
 %%DATADIR%%/dist/templates/rc-news.ezt
 %%DATADIR%%/dist/templates/rc-release-ann.ezt
+%%DATADIR%%/dist/templates/release-notes-lts.ezt
+%%DATADIR%%/dist/templates/release-notes.ezt
 %%DATADIR%%/dist/templates/stable-news.ezt
 %%DATADIR%%/dist/templates/stable-release-ann.ezt
 %%DATADIR%%/dist/test.sh
@@ -470,3 +468,4 @@ man/man8/svnserve.8.gz
 %%DATADIR%%/server-side/test_svn_server_log_parse.py
 %%DATADIR%%/xslt/svnindex.css
 %%DATADIR%%/xslt/svnindex.xsl
+@dir %%DATADIR%%/buildbot/slaves/svn-arm64-gentoo
