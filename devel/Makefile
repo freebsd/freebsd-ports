@@ -7873,6 +7873,7 @@
     SUBDIR += zapcc
     SUBDIR += zeal
     SUBDIR += zfp
+    SUBDIR += zix
     SUBDIR += zls
     SUBDIR += zookeeper
     SUBDIR += zthread
