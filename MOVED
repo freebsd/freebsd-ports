@@ -7950,3 +7950,5 @@ x11-fonts/gnu-unifont-ttf|x11-fonts/gnu-unifont-otf|2023-10-16|Remove obsoleted 
 mail/slapd-cyrus||2023-10-20|Has expired: Last upstream release was in 2013
 net/pacemaker1|net/pacemaker2|2023-10-22|Hasn't built in a long time, last upstream release was a while ago, use pacemaker2
 multimedia/subsync|multimedia/ffsubsync|2023-10-22|Project was renamed
+dns/libasr-devel||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD
+dns/libasr||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD

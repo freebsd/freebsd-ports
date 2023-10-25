@@ -1,5 +1,0 @@
-include/asr.h
-lib/libasr.a
-lib/libasr.so
-lib/libasr.so.0
-lib/libasr.so.0.0.3
