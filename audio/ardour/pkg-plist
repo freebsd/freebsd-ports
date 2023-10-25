@@ -41,6 +41,7 @@ lib/%%ARDOUR_MAJOR%%/ardour-%%VERSION%%
 lib/%%ARDOUR_MAJOR%%/ardour-avahi
 lib/%%ARDOUR_MAJOR%%/ardour-exec-wrapper
 lib/%%ARDOUR_MAJOR%%/ardour-vst-scanner
+%%VST3%%lib/%%ARDOUR_MAJOR%%/ardour-vst3-scanner
 lib/%%ARDOUR_MAJOR%%/backends/libdummy_audiobackend.so
 lib/%%ARDOUR_MAJOR%%/backends/libjack_audiobackend.so
 lib/%%ARDOUR_MAJOR%%/engines/libclearlooks.so
@@ -94,6 +95,7 @@ lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport2.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport8.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_generic_midi.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launch_control_xl.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launchpad_pro.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_mcp.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_osc.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_us2400.so
@@ -178,6 +180,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/icons/halfnote.png
 %%DATADIR%%/icons/i_beam_cursor.png
 %%DATADIR%%/icons/launch_control_xl.png
+%%DATADIR%%/icons/launchpad-pro.png
 %%DATADIR%%/icons/mezzforte.png
 %%DATADIR%%/icons/mezzoforte.png
 %%DATADIR%%/icons/mezzopiano.png
@@ -233,6 +236,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/icons/solo-safe-icon.png
 %%DATADIR%%/icons/soloed-by-others.png
 %%DATADIR%%/icons/soundcloud.png
+%%DATADIR%%/icons/ssl-uf8-small.png
 %%DATADIR%%/icons/thirtysecondnote.png
 %%DATADIR%%/icons/time_exp.png
 %%DATADIR%%/icons/trim_bottom_cursor.png
@@ -271,6 +275,10 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/mcp/qcon_g2ex+g2.device
 %%DATADIR%%/mcp/qex+qcon.device
 %%DATADIR%%/mcp/ruco.device
+%%DATADIR%%/mcp/ssl-uf8+1.device
+%%DATADIR%%/mcp/ssl-uf8+2.device
+%%DATADIR%%/mcp/ssl-uf8+3.device
+%%DATADIR%%/mcp/ssl-uf8.device
 %%DATADIR%%/mcp/two_platform_x+_platform_m+.device
 %%DATADIR%%/mcp/user.profile
 %%DATADIR%%/mcp/x-touch+2x-touch-compact.device
@@ -285,6 +293,8 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/media/.daw-meta.xml
 %%DATADIR%%/media/click-120bpm.flac
 %%DATADIR%%/media/click.mid
+%%DATADIR%%/midi_maps/AKAI_APCmini.map
+%%DATADIR%%/midi_maps/AKAI_APCmini_mk2.map
 %%DATADIR%%/midi_maps/AKAI_MIDIMix_EQ_Mode.map
 %%DATADIR%%/midi_maps/AKAI_MIDIMix_Normal_Mode.map
 %%DATADIR%%/midi_maps/AKAI_MPK225_Normal.map
@@ -292,12 +302,15 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/midi_maps/AKAI_MPK249.map
 %%DATADIR%%/midi_maps/AKAI_MPK61.map
 %%DATADIR%%/midi_maps/AKAI_MPKmini.map
+%%DATADIR%%/midi_maps/AKAI_MPKminiplus.map
 %%DATADIR%%/midi_maps/Alesis_Q49v2.map
 %%DATADIR%%/midi_maps/Alesis_QX25.map
 %%DATADIR%%/midi_maps/Alesis_VI25.map
 %%DATADIR%%/midi_maps/Arturia_KeyLab49.map
 %%DATADIR%%/midi_maps/Arturia_MiniLab_mkII.map
 %%DATADIR%%/midi_maps/DDX3216.map
+%%DATADIR%%/midi_maps/Devine_Versakey.map
+%%DATADIR%%/midi_maps/Donner_StarryPad.map
 %%DATADIR%%/midi_maps/Korg_nanoKONTROL.map
 %%DATADIR%%/midi_maps/Korg_nanoKONTROL2.map
 %%DATADIR%%/midi_maps/Korg_nanoKONTROL2_With_Master.map
@@ -576,6 +589,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Kurzweil_PC88_MX.midnam
 %%DATADIR%%/patchfiles/Kurzweil_PC88_VGM.midnam
 %%DATADIR%%/patchfiles/Kurzweil_PX_Plus.midnam
+%%DATADIR%%/patchfiles/Kurzweil_SP4.midnam
 %%DATADIR%%/patchfiles/Kurzweil_SP88x.midnam
 %%DATADIR%%/patchfiles/Lexicon_DR_Music_FX_Expansion.midnam
 %%DATADIR%%/patchfiles/Lexicon_Dual_FX_Expansion.midnam
@@ -608,6 +622,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Moog_MF_108M_Cluster_Flux.midnam
 %%DATADIR%%/patchfiles/Moog_Minitaur.midnam
 %%DATADIR%%/patchfiles/Moog_Slim_Phatty.midnam
+%%DATADIR%%/patchfiles/Moog_Subsequent_37.midnam
 %%DATADIR%%/patchfiles/Morning_Star_MacWaveMaker.midnam
 %%DATADIR%%/patchfiles/Nord_Modular.midnam
 %%DATADIR%%/patchfiles/Novation_A_Station.midnam
@@ -801,6 +816,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/a_dtmf_phone.lua
 %%DATADIR%%/scripts/a_mute.lua
 %%DATADIR%%/scripts/a_slow_mute.lua
+%%DATADIR%%/scripts/a_stereo_routing.lua
 %%DATADIR%%/scripts/ab_switch.lua
 %%DATADIR%%/scripts/access_action.lua
 %%DATADIR%%/scripts/add_MIDI_monitor.lua
@@ -809,6 +825,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/addscopes.lua
 %%DATADIR%%/scripts/amp5.lua
 %%DATADIR%%/scripts/avldrums_midimap.lua
+%%DATADIR%%/scripts/barlow_arp.lua
 %%DATADIR%%/scripts/bounce_replace.lua
 %%DATADIR%%/scripts/bypass_all_plugins.lua
 %%DATADIR%%/scripts/collapse_playlists.lua
@@ -833,6 +850,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/pitch_to_mts.lua
 %%DATADIR%%/scripts/post_export_save_hook.lua
 %%DATADIR%%/scripts/preare_record_example.lua
+%%DATADIR%%/scripts/raptor_arp.lua
 %%DATADIR%%/scripts/record_now.lua
 %%DATADIR%%/scripts/remove_unknown_procs.lua
 %%DATADIR%%/scripts/reset_mixer.lua
@@ -852,6 +870,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/s_region_gain2.lua
 %%DATADIR%%/scripts/s_region_gain_curve.lua
 %%DATADIR%%/scripts/s_replaceplugin.lua
+%%DATADIR%%/scripts/s_sections.lua
 %%DATADIR%%/scripts/s_selection.lua
 %%DATADIR%%/scripts/s_set_region_fades.lua
 %%DATADIR%%/scripts/s_showhide_track.lua
@@ -868,6 +887,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/session_template_advanced.lua
 %%DATADIR%%/scripts/session_template_record.lua
 %%DATADIR%%/scripts/set_automation_mode.lua
+%%DATADIR%%/scripts/simple_arp.lua
 %%DATADIR%%/scripts/singen.lua
 %%DATADIR%%/scripts/spectrogram.lua
 %%DATADIR%%/scripts/split_all_markers.lua

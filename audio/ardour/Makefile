@@ -1,11 +1,11 @@
 PORTNAME=	ardour
-DISTVERSION=	7.5.0
+DISTVERSION=	8.1.0
 CATEGORIES=	audio
 # Official source download is tailored to browsers, downloads from github are
 # deliberately made empty. Put the badly named distfile into a subdirectory.
 MASTER_SITES=	https://community.ardour.org/download/release/
 DISTNAME=	Ardour-${DISTVERSION}
-DISTFILES=	534
+DISTFILES=	550
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dev@submerge.ch
@@ -42,7 +42,6 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libcurl.so:ftp/curl \
 		libogg.so:audio/libogg \
 		libFLAC.so:audio/flac \
-		libSoundTouch.so:audio/soundtouch \
 		libwebsockets.so:net/libwebsockets
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
@@ -54,7 +53,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	x11
 
 CONFIGURE_ARGS=	--optimize --ptformat --freedesktop --no-phone-home \
-		--with-backends=jack,dummy --internal-shared-libs --no-vst3 \
+		--with-backends=jack,dummy --internal-shared-libs \
 		${CONFIGURE_ARGS_${ARCH}}
 CONFIGURE_ARGS_amd64=	--arch='-msse -mfpmath=sse -DARCH_X86' --dist-target=x86_64
 # only support for i686 or better
@@ -62,13 +61,22 @@ CONFIGURE_ARGS_i386=	--arch='-msse -mfpmath=sse -march=i686 -DARCH_X86' --dist-t
 
 LDFLAGS_powerpc=	-Wl,-z,notext
 
+ARDOUR_MAJOR=	ardour8
+ETCDIR=		${PREFIX}/etc/${ARDOUR_MAJOR}
+DATADIR=	${PREFIX}/share/${ARDOUR_MAJOR}
 BINARY_ALIAS+=	gas=${CC}
 
-ARDOUR_MAJOR=	ardour7
-DATADIR=	${PREFIX}/share/${ARDOUR_MAJOR}
-ETCDIR=		${PREFIX}/etc/${ARDOUR_MAJOR}
 PLIST_SUB+=	VERSION=${PORTVERSION} \
 		ARDOUR_MAJOR=${ARDOUR_MAJOR}
+
+OPTIONS_DEFINE=		VST3
+OPTIONS_SUB=		yes
+
+VST3_DESC=		Build with VST3 plugin support
+
+VST3_BUILD_DEPENDS=	vst3sdk>0:audio/vst3sdk
+# Inverted logic, the --vst3 argument _disables_ VST3 support.
+VST3_CONFIGURE_OFF=	--vst3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/obj\.use            = '\''libsmf libpbd'\''/obj\.use            = '\''libsmf_internal libpbd'\''/g' ${WRKSRC}/libs/evoral/wscript
@@ -98,5 +106,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/${ARDOUR_MAJOR}-new_empty_session
 	@${LN} -sf ffmpeg ${STAGEDIR}${PREFIX}/bin/ffmpeg_harvid
 	@${LN} -sf ffprobe ${STAGEDIR}${PREFIX}/bin/ffprobe_harvid
+
+post-install-VST3-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${ARDOUR_MAJOR}/ardour-vst3-scanner
 
 .include <bsd.port.mk>
