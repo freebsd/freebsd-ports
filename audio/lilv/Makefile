@@ -1,6 +1,5 @@
 PORTNAME=	lilv
-PORTVERSION=	0.24.12
-PORTREVISION=	1
+DISTVERSION=	0.24.22
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
@@ -15,21 +14,15 @@ BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
 		libsord-0.so:devel/sord \
-		libsratom-0.so:audio/sratom
+		libsratom-0.so:audio/sratom \
+		libzix-0.so:devel/zix
 RUN_DEPENDS=	lv2>=1.14.0:audio/lv2
 
-USES=		pkgconfig python:build tar:bzip2 waf
-
+USES=		meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
-
+MESON_ARGS=	-Ddocs=disabled \
+		--mandir=${PREFIX}/share/man
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_SUB=	VERSION=${PORTVERSION}
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblilv-0.so.${PORTVERSION}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lilv-bench
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2apply
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2bench
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2info
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lv2ls
 
 .include <bsd.port.mk>
