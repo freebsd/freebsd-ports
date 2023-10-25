@@ -374,6 +374,7 @@
     SUBDIR += exa
     SUBDIR += exfat-utils
     SUBDIR += extipl
+    SUBDIR += eza
     SUBDIR += ezjail
     SUBDIR += f2
     SUBDIR += f3
