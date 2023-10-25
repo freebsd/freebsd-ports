@@ -1,31 +1,21 @@
---- config.mk.in.orig	2022-09-29 12:04:51 UTC
+--- config.mk.in.orig	2023-10-24 13:44:06 UTC
 +++ config.mk.in
-@@ -13,17 +13,19 @@
- #	$ cd /usr/ports/devel/libconfig; make install
- #	$ cd /usr/ports/net/mosquitto; make install
- #	$ cd /usr/ports/devel/gmake; make install
-+#	$ cd /usr/ports/devel/pkgconf; make install
-+#	$ cd /usr/ports/misc/e2fsprogs-libuuid; make install
- #
- # Or as a package:
- #
--#	$ sudo pkg install lmdb curl libconfig mosquitto gmake
-+#	$ sudo pkg install pkgconf lmdb curl libconfig mosquitto gmake e2fsprogs-libuuid
+@@ -22,10 +22,10 @@
  #
  # Uncomment the following lines and replace "no" with "yes":
  #
 -# CC      = clang
 -# CFLAGS += -I/usr/local/include
--# MORELIBS += -L /usr/local/lib
+-# MORELIBS += -L /usr/local/lib -luuid
 -FREEBSD ?= no
 +CC      = clang
 +CFLAGS += -I/usr/local/include
 +MORELIBS += -L /usr/local/lib -luuid
-+FREEBSD ?= YES
++FREEBSD ?= yes
  #
  # Now build recorder with the "gmake" command:
  #
-@@ -61,10 +63,10 @@ WITH_GREENWICH ?= no
+@@ -63,10 +63,10 @@ WITH_GREENWICH ?= no
  
  # Where should the recorder store its data? This directory must
  # exist and be writeable by recorder (and readable by ocat)
@@ -38,7 +28,7 @@
  
  # Define the precision for reverse-geo lookups. The higher
  # the number, the more granular reverse-geo will be:
-@@ -87,7 +89,7 @@ GHASHPREC = 7
+@@ -89,7 +89,7 @@ GHASHPREC = 7
  JSON_INDENT ?= no
  
  # Location of optional default configuration file

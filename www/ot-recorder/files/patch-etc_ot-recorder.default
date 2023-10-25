@@ -1,0 +1,11 @@
+--- etc/ot-recorder.default.orig	2023-10-25 15:22:53 UTC
++++ etc/ot-recorder.default
+@@ -9,7 +9,7 @@
+ # Storage directory
+ #
+ 
+-# OTR_STORAGEDIR="/var/spool/owntracks/recorder/store"
++# OTR_STORAGEDIR="/var/db/owntracks/recorder/store"
+ 
+ # -----------------------------------------------------
+ # Address or hostname of the MQTT broker
