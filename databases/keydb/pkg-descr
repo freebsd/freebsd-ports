@@ -1,0 +1,18 @@
+KeyDB is a high performance fork of Redis with a focus on multithreading,
+memory efficiency, and high throughput. In addition to performance
+improvements, KeyDB offers features such as Active Replication, FLASH
+Storage and Subkey Expires. KeyDB has a MVCC architecture that allows you
+to execute queries such as KEYS and SCAN without blocking the database and
+degrading performance.
+
+KeyDB maintains full compatibility with the Redis protocol, modules, and
+scripts. This includes the atomicity guarantees for scripts and transactions.
+Because KeyDB keeps in sync with Redis development KeyDB is a superset of
+Redis functionality, making KeyDB a drop in replacement for existing Redis
+deployments.
+
+On the same hardware KeyDB can achieve significantly higher throughput than
+Redis. Active-Replication simplifies hot-spare failover allowing you to
+easily distribute writes over replicas and use simple TCP based load
+balancing/failover. KeyDB's higher performance allows you to do more on less
+hardware which reduces operation costs and complexity.

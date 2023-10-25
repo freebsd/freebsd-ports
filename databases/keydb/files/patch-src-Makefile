@@ -1,0 +1,52 @@
+--- src/Makefile.orig	2023-10-25 15:47:51 UTC
++++ src/Makefile
+@@ -138,21 +138,11 @@ endif	
+ # Override default settings if possible
+ -include .make-settings
+ 
+-DEBUG=-g -ggdb
+ FINAL_CFLAGS=$(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS) $(KEYDB_CFLAGS) $(REDIS_CFLAGS)
+ FINAL_CXXFLAGS=$(CXX_STD) $(WARN) $(OPT) $(DEBUG) $(CXXFLAGS) $(KEYDB_CFLAGS) $(REDIS_CFLAGS)
+ FINAL_LDFLAGS=$(LDFLAGS) $(KEYDB_LDFLAGS) $(DEBUG)
+ FINAL_LIBS+=-lm -lz -lcrypto -lbz2 -lzstd -llz4 -lsnappy
+ 
+-ifneq ($(uname_S),Darwin)
+-	FINAL_LIBS+=-latomic
+-endif
+-# Linux ARM32 needs -latomic at linking time
+-ifneq (,$(findstring armv,$(uname_M)))
+-	FINAL_LIBS+=-latomic
+-endif
+-
+-
+ ifeq ($(uname_S),SunOS)
+ 	# SunOS
+ 	ifeq ($(findstring -m32,$(FINAL_CFLAGS)),)
+@@ -211,7 +201,9 @@ ifeq ($(uname_S),NetBSD)
+ else
+ ifeq ($(uname_S),FreeBSD)
+ 	# FreeBSD
+-	FINAL_LIBS+= -lpthread -lexecinfo
++	FINAL_LIBS+= -lpthread -lexecinfo -luuid
++	FINAL_CFLAGS?= $(CFLAGS) $(REDIS_CFLAGS) -I${PREFIX}/include
++	FINAL_LDFLAGS= $(LDFLAGS) -pthread
+ else
+ ifeq ($(uname_S),DragonFly)
+ 	# DragonFly
+@@ -347,7 +339,7 @@ else
+ endif
+ 
+ # Alpine OS doesn't have support for the execinfo backtrace library we use for debug, so we provide an alternate implementation using libwunwind.
+-OS := $(shell cat /etc/os-release | grep ID= | head -n 1 | cut -d'=' -f2)
++OS := $(shell uname -r)
+ ifeq ($(OS),alpine)
+     FINAL_CXXFLAGS+=-DUNW_LOCAL_ONLY -DALPINE
+     FINAL_LIBS += -lunwind
+@@ -417,7 +409,6 @@ persist-settings: distclean
+ 	echo PREV_FINAL_CFLAGS=$(FINAL_CFLAGS) >> .make-settings
+ 	echo PREV_FINAL_CXXFLAGS=$(FINAL_CXXFLAGS) >> .make-settings
+ 	echo PREV_FINAL_LDFLAGS=$(FINAL_LDFLAGS) >> .make-settings
+-	-(cd modules && $(MAKE))
+ 	-(cd ../deps && $(MAKE) $(DEPENDENCY_TARGETS))
+ 
+ .PHONY: persist-settings

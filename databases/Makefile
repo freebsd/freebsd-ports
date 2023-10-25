@@ -120,6 +120,7 @@
     SUBDIR += kbibtex
     SUBDIR += kdb
     SUBDIR += kexi
+    SUBDIR += keydb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb15
