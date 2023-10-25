@@ -135,6 +135,7 @@ include/botan-%%BOTANMAJOR%%/botan/tls_ciphersuite.h
 include/botan-%%BOTANMAJOR%%/botan/tls_client.h
 include/botan-%%BOTANMAJOR%%/botan/tls_exceptn.h
 include/botan-%%BOTANMAJOR%%/botan/tls_extensions.h
+include/botan-%%BOTANMAJOR%%/botan/tls_external_psk.h
 include/botan-%%BOTANMAJOR%%/botan/tls_handshake_msg.h
 include/botan-%%BOTANMAJOR%%/botan/tls_magic.h
 include/botan-%%BOTANMAJOR%%/botan/tls_messages.h
@@ -166,6 +167,7 @@ include/botan-%%BOTANMAJOR%%/botan/x509path.h
 include/botan-%%BOTANMAJOR%%/botan/x509self.h
 include/botan-%%BOTANMAJOR%%/botan/xmss.h
 include/botan-%%BOTANMAJOR%%/botan/xmss_parameters.h
+include/botan-%%BOTANMAJOR%%/botan/xof.h
 include/botan-%%BOTANMAJOR%%/botan/zfec.h
 include/botan-%%BOTANMAJOR%%/botan/zlib.h
 lib/libbotan-%%BOTANMAJOR%%.a
