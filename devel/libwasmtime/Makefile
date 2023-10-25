@@ -1,7 +1,6 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	13.0.0
+PORTVERSION=	14.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	osa@FreeBSD.org
@@ -36,7 +35,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
+		anyhow-1.0.75 \
 		arbitrary-1.3.0 \
 		async-trait-0.1.71 \
 		atty-0.2.14 \
@@ -160,8 +159,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		is-terminal-0.4.7 \
 		itertools-0.10.3 \
 		itoa-1.0.1 \
-		ittapi-0.3.3 \
-		ittapi-sys-0.3.3 \
+		ittapi-0.3.4 \
+		ittapi-sys-0.3.4 \
 		jobserver-0.1.24 \
 		js-sys-0.3.57 \
 		lazy_static-1.4.0 \
@@ -208,7 +207,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		proc-macro2-1.0.63 \
 		proptest-1.0.0 \
 		psm-0.1.18 \
-		pulldown-cmark-0.9.3 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
 		quote-1.0.29 \
@@ -243,11 +241,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		semver-1.0.17 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
-		serde_json-1.0.80 \
+		serde_json-1.0.107 \
 		sha2-0.10.2 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.0 \
 		shuffling-allocator-1.1.2 \
+		signal-hook-registry-1.4.1 \
 		similar-2.2.0 \
 		slab-0.4.7 \
 		slice-group-by-0.3.1 \
@@ -287,7 +286,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-subscriber-0.3.17 \
 		try-lock-0.2.4 \
 		typenum-1.15.0 \
-		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.21 \
@@ -309,22 +307,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-encoder-0.30.0 \
-		wasm-encoder-0.32.0 \
-		wasm-metadata-0.9.0 \
-		wasm-metadata-0.10.3 \
-		wasm-mutate-0.2.32 \
-		wasm-smith-0.12.15 \
+		wasm-encoder-0.35.0 \
+		wasm-metadata-0.10.9 \
+		wasm-mutate-0.2.38 \
+		wasm-smith-0.12.21 \
 		wasmi-0.20.0 \
 		wasmi_arena-0.1.0 \
 		wasmi_core-0.5.0 \
-		wasmparser-0.108.0 \
-		wasmparser-0.112.0 \
+		wasmparser-0.115.0 \
 		wasmparser-nostd-0.91.0 \
-		wasmprinter-0.2.64 \
+		wasmprinter-0.2.70 \
 		wast-35.0.2 \
-		wast-64.0.0 \
-		wat-1.0.71 \
+		wast-66.0.2 \
+		wat-1.0.77 \
 		web-sys-0.3.57 \
 		webpki-roots-0.25.2 \
 		which-4.2.5 \
@@ -342,22 +337,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.48.0 \
 		winx-0.36.1 \
-		wit-bindgen-0.9.0 \
-		wit-bindgen-core-0.9.0 \
-		wit-bindgen-rust-0.9.0 \
-		wit-bindgen-rust-lib-0.9.0 \
-		wit-bindgen-rust-macro-0.9.0 \
-		wit-component-0.12.0 \
-		wit-component-0.14.0 \
-		wit-parser-0.9.2 \
-		wit-parser-0.11.0 \
+		wit-bindgen-0.13.0 \
+		wit-bindgen-core-0.13.0 \
+		wit-bindgen-rust-0.13.0 \
+		wit-bindgen-rust-macro-0.13.0 \
+		wit-component-0.16.0 \
+		wit-parser-0.12.1 \
 		zstd-0.11.1+zstd.1.5.2 \
 		zstd-safe-5.0.1+zstd.1.5.2 \
 		zstd-sys-2.0.1+zstd.1.5.2
 
 GH_TUPLE=	WebAssembly:wasm-c-api:c9d3128:wasm_c_api/crates/c-api/wasm-c-api \
 		WebAssembly:WASI:0ba0c5e:WASI/crates/wasi-common/WASI \
-		WebAssembly:wasi-nn:c1f8b87:wasi_nn/crates/wasi-nn/spec \
+		WebAssembly:wasi-nn:e2310b8:wasi_nn/crates/wasi-nn/spec \
 		WebAssembly:testsuite:7ef86dd:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
@@ -366,6 +358,7 @@ PLIST_FILES=	include/doc-wasm.h \
 		include/wasi.h \
 		include/wasm.h \
 		include/wasmtime.h \
+		include/wasmtime/async.h \
 		include/wasmtime/config.h \
 		include/wasmtime/engine.h \
 		include/wasmtime/error.h \
