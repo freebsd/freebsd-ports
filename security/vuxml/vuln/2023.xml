@@ -1,3 +1,64 @@
+  <vuln vid="9e2fdfc7-e237-4393-9fa5-2d50908c66b3">
+    <topic>xorg-server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.9,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nestserver</name>
+	<range><lt>21.1.9,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><lt>21.0.99.1.542</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2023-October/003430.html">
+	  <ul>
+	    <li>ZDI-CAN-22153/CVE-2023-5367: X.Org server: OOB write
+	    in XIChangeDeviceProperty/RRChangeOutputProperty
+
+	    <p>When prepending values to an existing property an
+	    invalid offset calculation causes the existing values to
+	    be appended at the wrong offset. The resulting memcpy()
+	    would write into memory outside the heap-allocated
+	    array.</p></li>
+
+	    <li>ZDI-CAN-21608/CVE-2023-5380: Use-after-free bug in
+	    DestroyWindow
+
+	    <p>This vulnerability requires a legacy multi-screen setup
+	    with multiple protocol screens ("Zaphod"). If the pointer
+	    is warped from one screen to the root window of the other
+	    screen, the enter/leave code may retain a reference to the
+	    previous pointer window. Destroying this window leaves
+	    that reference in place, other windows may then trigger a
+	    use-after-free bug when they are destroyed. </p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.x.org/archives/xorg-announce/2023-October/003430.html</url>
+      <cvename>CVE-2023-5367</cvename>
+      <cvename>CVE-2023-5380</cvename>
+    </references>
+    <dates>
+      <discovery>2023-10-25</discovery>
+      <entry>2023-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a8fb8e3a-730d-11ee-ab61-b42e991fc52e">
     <topic>squid -- Multiple vulnerabilities</topic>
     <affects>
