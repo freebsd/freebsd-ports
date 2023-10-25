@@ -1,6 +1,5 @@
 PORTNAME=	osgearth
-PORTVERSION=	3.4
-PORTREVISION=	3
+PORTVERSION=	3.5
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics geography
 
@@ -13,32 +12,41 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgdal.so:graphics/gdal \
-		libgeos.so:graphics/geos \
+		libgeos_c.so:graphics/geos \
 		libosg.so:graphics/osg \
-		libprotoc.so:devel/protobuf \
+		libprotobuf.so:devel/protobuf \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++11-lang gl pkgconfig sqlite
-
+USES=		cmake compiler:c++14-lang gl pkgconfig sqlite
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	gwaldron ocornut:imgui Esri:lerc Tencent:rapidjson
 GH_PROJECT=	imgui:imgui lerc:lerc rapidjson:rapidjson
 GH_TAGNAME=	9e8e5ac:imgui 19542a0:lerc f54b0e4:rapidjson
-
-USE_CXXSTD=	c++11
+USE_GL=		gl
 USE_LDCONFIG=	yes
-USE_GL+=	gl glu
 
 CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \
 		-DCMAKE_LIBRARY_PATH:PATH=${LOCALBASE}/lib \
 		-DLIB_POSTFIX:STRING=""
 
+LDFLAGS+=	-Wl,--as-needed
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+OPTIONS_DEFINE=		SPDLOG
+OPTIONS_DEFAULT=	SPDLOG
+SPDLOG_DESC=		Logging support via devel/spdlog
+
+SPDLOG_LIB_DEPENDS=	libspdlog.so:devel/spdlog
 
 post-extract:
 .for sm in imgui lerc rapidjson
 	@${MV} ${WRKSRC_${sm}}/* ${WRKSRC}/src/third_party/${sm}/
 .endfor
+
+post-patch-SPDLOG-off:
+	@${REINPLACE_CMD} '/find_package(spdlog)/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.options.mk>
 

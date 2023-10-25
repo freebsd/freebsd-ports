@@ -1,23 +1,19 @@
-bin/osgEarth_tests
 bin/osgearth_3pv
 bin/osgearth_annotation
 bin/osgearth_atlas
 bin/osgearth_bakefeaturetiles
-bin/osgearth_bindless
 bin/osgearth_boundarygen
 bin/osgearth_city
 bin/osgearth_clamp
 bin/osgearth_cluster
 bin/osgearth_conv
 bin/osgearth_createtile
-bin/osgearth_drawables
 bin/osgearth_eci
 bin/osgearth_ephemeris
 bin/osgearth_featurefilter
 bin/osgearth_features
 bin/osgearth_graticule
 bin/osgearth_heatmap
-bin/osgearth_horizon
 bin/osgearth_infinitescroll
 bin/osgearth_lights
 bin/osgearth_los
@@ -28,8 +24,6 @@ bin/osgearth_minimap
 bin/osgearth_mrt
 bin/osgearth_mvtindex
 bin/osgearth_occlusionculling
-bin/osgearth_overlayviewer
-bin/osgearth_shadercomp
 bin/osgearth_skyview
 bin/osgearth_terrainprofile
 bin/osgearth_tfs
@@ -62,7 +56,6 @@ include/osgEarth/BillboardSymbol
 include/osgEarth/Bing
 include/osgEarth/Bounds
 include/osgEarth/BufferFilter
-include/osgEarth/BuildConfig.h
 include/osgEarth/BuildGeometryFilter
 include/osgEarth/BuildTextFilter
 include/osgEarth/Cache
@@ -222,7 +215,6 @@ include/osgEarth/MVT
 include/osgEarth/Map
 include/osgEarth/MapboxGLGlyphManager
 include/osgEarth/MapCallback
-include/osgEarth/MapInfo
 include/osgEarth/MapModelChange
 include/osgEarth/MapNode
 include/osgEarth/MapNodeObserver
@@ -332,6 +324,7 @@ include/osgEarth/TerrainEffect
 include/osgEarth/TerrainEngineNode
 include/osgEarth/TerrainEngineRequirements
 include/osgEarth/TerrainLayer
+include/osgEarth/TerrainMeshLayer
 include/osgEarth/TerrainOptions
 include/osgEarth/TerrainProfile
 include/osgEarth/TerrainResources
@@ -362,6 +355,7 @@ include/osgEarth/TileSourceImageLayer
 include/osgEarth/TileVisitor
 include/osgEarth/TiledFeatureModelGraph
 include/osgEarth/TiledFeatureModelLayer
+include/osgEarth/TiledModelLayer
 include/osgEarth/TimeControl
 include/osgEarth/TimeSeriesImage
 include/osgEarth/TopologyGraph
@@ -382,7 +376,6 @@ include/osgEarth/VisibleLayer
 include/osgEarth/WFS
 include/osgEarth/WMS
 include/osgEarth/WindLayer
-include/osgEarth/WingedEdgeMesh
 include/osgEarth/WireLines
 include/osgEarth/XYZ
 include/osgEarth/XYZFeatureSource
@@ -430,7 +423,7 @@ include/osgEarthDrivers/scriptengine_javascript/duktape.h
 include/osgEarthDrivers/sky_gl/GLSkyOptions
 include/osgEarthDrivers/sky_simple/SimpleSkyOptions
 lib/libosgEarth.so
-lib/libosgEarth.so.148
+lib/libosgEarth.so.149
 lib/libosgEarth.so.%%PORTVERSION%%.0
 lib/osgPlugins-3.6.5/osgdb_earth.so
 lib/osgPlugins-3.6.5/osgdb_fastdxt.so
