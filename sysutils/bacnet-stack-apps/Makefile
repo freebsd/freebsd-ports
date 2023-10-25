@@ -8,7 +8,7 @@ COMMENT=	open source protocol stack for embedded systems (apps)
 WWW=		https://github.com/bacnet-stack/bacnet-stack
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	license/readme.txt
+LICENSE_FILE=	${WRKSRC}/license/readme.txt
 
 RUN_DEPENDS=	bash:shells/bash
 
