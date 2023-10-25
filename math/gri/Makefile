@@ -10,6 +10,9 @@ WWW=		http://gri.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Last upstream release was in 2012 and gnuplot generates better results
+EXPIRATION_DATE=	2023-11-26
+
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
 USES=		cpe gmake localbase:ldflags readline shebangfix makeinfo tex
