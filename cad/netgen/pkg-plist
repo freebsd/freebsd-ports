@@ -1,6 +1,8 @@
 bin/netgen
 include/core/archive.hpp
 include/core/array.hpp
+include/core/autodiff.hpp
+include/core/autodiffdiff.hpp
 include/core/bitarray.hpp
 include/core/concurrentqueue.h
 include/core/exception.hpp
@@ -58,7 +60,6 @@ include/csg/triapprox.hpp
 include/csg/vscsg.hpp
 include/general/autodiff.hpp
 include/general/autoptr.hpp
-include/general/dynamicmem.hpp
 include/general/gzstream.h
 include/general/hashtabl.hpp
 include/general/myadt.hpp
@@ -85,7 +86,6 @@ include/gprim/geom3d.hpp
 include/gprim/geomfuncs.hpp
 include/gprim/geomobjects.hpp
 include/gprim/geomops.hpp
-include/gprim/geomops2.hpp
 include/gprim/geomtest3d.hpp
 include/gprim/gprim.hpp
 include/gprim/spline.hpp
@@ -217,6 +217,7 @@ lib/libtogl.a
 %%PYTHON_SITELIBDIR%%/netgen/__init__.py
 %%PYTHON_SITELIBDIR%%/netgen/__main__.py
 %%PYTHON_SITELIBDIR%%/netgen/config.py
+%%PYTHON_SITELIBDIR%%/netgen/config_cli.py
 %%PYTHON_SITELIBDIR%%/netgen/csg.py
 %%PYTHON_SITELIBDIR%%/netgen/geom2d.py
 %%PYTHON_SITELIBDIR%%/netgen/gui.py
