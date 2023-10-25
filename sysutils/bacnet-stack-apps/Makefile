@@ -1,6 +1,6 @@
 PORTNAME=	bacnet-stack
 PORTVERSION=	1.3.1
-CATEGORIES=	devel
+CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-apps
 
 MAINTAINER=	acm@FreeBSD.org
