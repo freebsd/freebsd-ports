@@ -1,0 +1,2 @@
+BACnet Protocol Stack library provides a BACnet application layer, network
+layer and media access (MAC) layer communications services.
