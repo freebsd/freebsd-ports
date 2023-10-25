@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2023-09-29 19:56:28.400665000 -0500
++++ CMakeLists.txt	2023-09-29 19:57:28.695265000 -0500
+@@ -562,6 +562,16 @@
+     ports/bsd/datetime-init.c
+     ports/bsd/mstimer-init.c
+     ports/bsd/stdbool.h)
++elseif(${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++  message(STATUS "BACNET: building for FreeBSD")
++  set(BACNET_PORT_DIRECTORY_PATH ${CMAKE_CURRENT_LIST_DIR}/ports/bsd)
++    
++  target_sources(${PROJECT_NAME} PRIVATE
++    ports/bsd/bacport.h
++    ports/bsd/bip-init.c
++    ports/bsd/datetime-init.c
++    ports/bsd/mstimer-init.c
++    ports/bsd/stdbool.h)
+ endif()
+ 
+ target_include_directories(${PROJECT_NAME} PUBLIC
