@@ -1,6 +1,5 @@
 PORTNAME=	sonarr
-DISTVERSION=	4.0.0.697
-PORTREVISION=	1
+DISTVERSION=	4.0.0.700
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://download.sonarr.tv/v4/develop/${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
