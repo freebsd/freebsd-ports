@@ -46,6 +46,7 @@ include/QGpgME/VerifyDetachedJob
 include/QGpgME/VerifyOpaqueJob
 include/QGpgME/WKDLookupJob
 include/QGpgME/WKDLookupResult
+include/QGpgME/WKDRefreshJob
 include/QGpgME/WKSPublishJob
 include/qgpgme/abstractimportjob.h
 include/qgpgme/addexistingsubkeyjob.h
@@ -97,4 +98,5 @@ include/qgpgme/verifydetachedjob.h
 include/qgpgme/verifyopaquejob.h
 include/qgpgme/wkdlookupjob.h
 include/qgpgme/wkdlookupresult.h
+include/qgpgme/wkdrefreshjob.h
 include/qgpgme/wkspublishjob.h
