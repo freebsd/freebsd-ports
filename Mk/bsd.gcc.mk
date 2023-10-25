@@ -134,6 +134,4 @@ test-gcc:
 	@echo CFLAGS=\"${CFLAGS}\"
 	@echo CXXFLAGS=\"${CXXFLAGS}\"
 	@echo LDFLAGS=\"${LDFLAGS}\"
-	@echo "BUILD_DEPENDS=${BUILD_DEPENDS}"
-	@echo "RUN_DEPENDS=${RUN_DEPENDS}"
 .endif
