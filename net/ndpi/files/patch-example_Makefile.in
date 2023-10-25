@@ -1,6 +1,14 @@
---- example/Makefile.in.orig	2023-02-01 17:29:59 UTC
+--- example/Makefile.in.orig	2023-10-23 09:45:30 UTC
 +++ example/Makefile.in
-@@ -6,46 +6,23 @@ SRCHOME=../src
+@@ -1,54 +1,28 @@ CXX=@CXX@
+ AR=@AR@
+ CC=@CC@
+ CXX=@CXX@
+-ifeq ($(OS),Darwin)
+-CC=clang -fno-color-diagnostics
+-endif
+ BUILD_MINGW=@BUILD_MINGW@
+ BUILD_MINGW_X64=@BUILD_MINGW_X64@
  DISABLE_NPCAP=@DISABLE_NPCAP@
  EXE_SUFFIX=@EXE_SUFFIX@
  SRCHOME=../src
@@ -50,7 +58,7 @@
  
  libndpiReader.a: $(COMMON_SOURCES:%.c=%.o) $(LIBNDPI)
  	$(AR) rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
-@@ -61,10 +38,10 @@ install: ndpiReader$(EXE_SUFFIX)
+@@ -64,10 +38,10 @@ install: ndpiReader$(EXE_SUFFIX)
  
  install: ndpiReader$(EXE_SUFFIX)
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/
