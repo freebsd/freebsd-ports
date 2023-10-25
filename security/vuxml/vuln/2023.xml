@@ -1,3 +1,34 @@
+  <vuln vid="a8fb8e3a-730d-11ee-ab61-b42e991fc52e">
+    <topic>squid -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>6.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid-cache project reports:</p>
+	<blockquote cite="https://github.com/squid-cache/squid/security/advisories?page=1">
+	  <ul>
+	    <li>Denial of Service in FTP</li>
+	    <li>Request/Response smuggling in HTTP/1.1 and ICAP</li>
+	    <li>Denial of Service in HTTP Digest Authentication</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/squid-cache/squid/security/advisories/GHSA-2g3c-pg7q-g59w</url>
+      <url>https://github.com/squid-cache/squid/security/advisories/GHSA-j83v-w3p4-5cqh</url>
+      <url>https://github.com/squid-cache/squid/security/advisories/GHSA-phqj-m8gv-cq4g</url>
+    </references>
+    <dates>
+      <discovery>2023-10-21</discovery>
+      <entry>2023-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a4712ae-7299-11ee-85eb-84a93843eb75">
     <topic>OpenSSL -- potential loss of confidentiality</topic>
     <affects>
