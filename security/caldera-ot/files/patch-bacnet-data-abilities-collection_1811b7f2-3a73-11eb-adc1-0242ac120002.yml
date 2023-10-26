@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/collection/1811b7f2-3a73-11eb-adc1-0242ac120002.yml	2023-10-25 16:29:02.618965000 -0500
++++ bacnet/data/abilities/collection/1811b7f2-3a73-11eb-adc1-0242ac120002.yml	2023-10-25 16:35:40.258610000 -0500
+@@ -10,6 +10,11 @@
+     name: Automated Collection
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacepics #{bacnet.device.instance}
+     linux:
+       sh:
+         timeout: 360
+@@ -23,4 +28,4 @@
+         command: |
+           .\bacepics.exe #{bacnet.device.instance}
+         payloads:
+-          - bacepics.exe
+\ No newline at end of file
++          - bacepics.exe

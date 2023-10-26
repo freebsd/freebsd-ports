@@ -1,0 +1,23 @@
+--- bacnet/data/abilities/collection/47432648-5678-11eb-ae93-0242ac130002.yml	2023-10-25 16:29:10.047474000 -0500
++++ bacnet/data/abilities/collection/47432648-5678-11eb-ae93-0242ac130002.yml	2023-10-25 16:36:11.635820000 -0500
+@@ -10,6 +10,13 @@
+     name: Point & Tag Identification
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./bacrp-freebsd #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.obj.property} #{bacnet.read.index}
++        payloads:
++          - bacrp-freebsd
+     linux:
+       sh:
+         timeout: 360
+@@ -23,4 +30,4 @@
+         command: |
+           .\bacrp.exe #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.obj.property} #{bacnet.read.index}
+         payloads:
+-          - bacrp.exe
+\ No newline at end of file
++          - bacrp.exe

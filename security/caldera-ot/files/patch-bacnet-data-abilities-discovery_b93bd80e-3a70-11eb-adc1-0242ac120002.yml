@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/discovery/b93bd80e-3a70-11eb-adc1-0242ac120002.yml	2023-10-25 16:36:50.057204000 -0500
++++ bacnet/data/abilities/discovery/b93bd80e-3a70-11eb-adc1-0242ac120002.yml	2023-10-25 16:38:29.989935000 -0500
+@@ -10,6 +10,11 @@
+     name: Remote System Discovery
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacwi
+     linux:
+       sh:
+         timeout: 360
+@@ -23,4 +28,4 @@
+         command: |
+           .\bacwi.exe
+         payloads:
+-          - bacwi.exe
+\ No newline at end of file
++          - bacwi.exe

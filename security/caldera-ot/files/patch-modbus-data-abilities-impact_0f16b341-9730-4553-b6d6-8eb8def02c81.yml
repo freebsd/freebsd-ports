@@ -1,0 +1,22 @@
+--- modbus/data/abilities/impact/0f16b341-9730-4553-b6d6-8eb8def02c81.yml	2023-10-25 17:58:23.307634000 -0500
++++ modbus/data/abilities/impact/0f16b341-9730-4553-b6d6-8eb8def02c81.yml	2023-10-25 17:59:48.668864000 -0500
+@@ -12,6 +12,12 @@
+     name: Manipulation of Control
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        command:
++          './modbus_cli-freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} write_multi_r #{modbus.write_multi_r.start}  #{modbus.write_multi_r.value} #{modbus.write_multi_r.count}'
++        payloads:
++        - modbus_cli-freebsd
+     linux:
+       sh:
+         command:
+@@ -23,4 +29,4 @@
+         command:
+           '.\modbus_cli.exe #{modbus.all.deviceip} --port #{modbus.all.deviceport} write_multi_r #{modbus.write_multi_r.start} #{modbus.write_multi_r.value} #{modbus.write_multi_r.count}'
+         payloads:
+-        - modbus_cli.exe
+\ No newline at end of file
++        - modbus_cli.exe

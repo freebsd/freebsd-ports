@@ -66,6 +66,7 @@
     SUBDIR += ca_root_nss
     SUBDIR += caesarcipher
     SUBDIR += caldera
+    SUBDIR += caldera-ot
     SUBDIR += calife
     SUBDIR += cardpeek
     SUBDIR += cargo-audit

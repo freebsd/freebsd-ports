@@ -1,0 +1,21 @@
+--- bacnet/data/abilities/collection/73a8f024-656d-11eb-ae93-0242ac130002.yml	2023-10-25 16:29:17.712333000 -0500
++++ bacnet/data/abilities/collection/73a8f024-656d-11eb-ae93-0242ac130002.yml	2023-10-25 16:36:42.766893000 -0500
+@@ -9,6 +9,11 @@
+     attack_id: T0801
+     name: Monitor Process State
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          bacarf #{bacnet.device.instance} #{bacnet.file.instance} #{bacnet.read.local_name}
+     linux:
+       sh:
+         timeout: 360
+@@ -22,4 +27,4 @@
+         command: |
+           .\bacarf.exe #{bacnet.device.instance} #{bacnet.file.instance} #{bacnet.read.local_name}
+         payloads:
+-          - bacarf.exe
+\ No newline at end of file
++          - bacarf.exe
