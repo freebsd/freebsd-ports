@@ -22,6 +22,8 @@
 #                             module on start up and load if not loaded.
 # apache24_fib (str):	      Set an altered default network view for apache
 # apache24_configcheck_disable (bool): Set to "YES" to disable sanity check on startup
+# apache24_aslr_disable (bool): Set to "YES" to disable ASLR (Address Space Layout
+#                             Randomization): workaround for PR#268318
 
 . /etc/rc.subr
 
@@ -46,6 +48,7 @@ envvars="%%PREFIX%%/sbin/envvars"
 [ -z "$apache24limits_args" ]   && apache24limits_args="-e -C daemon"
 [ -z "$apache24_http_accept_enable" ] && apache24_http_accept_enable="NO"
 [ -z "$apache24_configcheck_disable" ] && apache24_configcheck_disable="NO"
+[ -z "$apache24_aslr_disable" ] && apache24_aslr_disable="NO"
 
 apache24_accf()
 {
@@ -76,6 +79,7 @@ if [ -n "$2" ]; then
 		eval apache24limits_args="\${apache24limits_${profile}_args:-${apache24limits_args}}"
 		eval apache24_fib="\${apache24_${profile}_fib:-${apache24_fib}}"
 		eval apache24_configcheck_disable="\${apache24_${profile}_configcheck_disable:-${apache24_configcheck_disable}}"
+		eval apache24_aslr_disable="\${apache24_${profile}_aslr_disable:-${apache24_aslr_disable}}"
 		eval command="\${apache24_${profile}_command:-${command}}"
 		eval pidfile="\${apache24_${profile}_pidfile:-${pidfile}}"
 		eval apache24_envvars="\${apache24_${profile}_envvars:-${envvars}}"
@@ -189,6 +193,13 @@ apache24_precmd()
 
 }
 
+apache24_checkalsr () {
+	if checkyesno apache24_aslr_disable
+	then
+		command="/usr/bin/proccontrol -m aslr -s disable ${command}"
+	fi
+}
+
 apache24_checkfib () {
 	if command -v check_namevarlist > /dev/null 2>&1; then
 		check_namevarlist fib && return 0
@@ -206,6 +217,7 @@ apache24_checkfib () {
 }
 
 apache24_prestart() {
+	apache24_checkalsr
 	apache24_checkfib
 	apache24_precmd
 }
