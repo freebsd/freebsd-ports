@@ -6,7 +6,7 @@ MASTER_SITES=	LOCAL/thierry
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	9box can "pack" windows inside itself
-WWW=		http://www.nongnu.org/9box/
+WWW=		http://savannah.nongnu.org/projects/9box/
 
 PLIST_FILES=	bin/9box
 USES=		gmake xorg
