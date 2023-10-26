@@ -12,6 +12,9 @@ WWW=		https://www.digikam.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
+DEPRECATED=Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=2023-11-26
+
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	config coreaddons i18n kdewebkit kio service widgetsaddons \
 		ecm:build
