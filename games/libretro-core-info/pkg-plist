@@ -5,6 +5,8 @@ share/libretro/info/4do_libretro.info
 share/libretro/info/81_libretro.info
 share/libretro/info/a5200_libretro.info
 share/libretro/info/advanced_tests_libretro.info
+share/libretro/info/anarch_libretro.info
+share/libretro/info/ardens_libretro.info
 share/libretro/info/arduous_libretro.info
 share/libretro/info/atari800_libretro.info
 share/libretro/info/bk_libretro.info
@@ -26,6 +28,7 @@ share/libretro/info/cannonball_libretro.info
 share/libretro/info/cap32_libretro.info
 share/libretro/info/cdi2015_libretro.info
 share/libretro/info/chailove_libretro.info
+share/libretro/info/chimerasnes_libretro.info
 share/libretro/info/citra2018_libretro.info
 share/libretro/info/citra_canary_libretro.info
 share/libretro/info/citra_libretro.info
@@ -37,6 +40,7 @@ share/libretro/info/desmume2015_libretro.info
 share/libretro/info/desmume_libretro.info
 share/libretro/info/dinothawr_libretro.info
 share/libretro/info/directxbox_libretro.info
+share/libretro/info/dirksimple_libretro.info
 share/libretro/info/dolphin_launcher_libretro.info
 share/libretro/info/dolphin_libretro.info
 share/libretro/info/dosbox_core_libretro.info
@@ -47,25 +51,18 @@ share/libretro/info/dosbox_svn_libretro.info
 share/libretro/info/duckstation_libretro.info
 share/libretro/info/easyrpg_libretro.info
 share/libretro/info/ecwolf_libretro.info
+share/libretro/info/emuscv_libretro.info
 share/libretro/info/emux_chip8_libretro.info
 share/libretro/info/emux_gb_libretro.info
 share/libretro/info/emux_nes_libretro.info
 share/libretro/info/emux_sms_libretro.info
+share/libretro/info/ep128emu_core_libretro.info
+share/libretro/info/fake08_libretro.info
 share/libretro/info/fbalpha2012_cps1_libretro.info
 share/libretro/info/fbalpha2012_cps2_libretro.info
 share/libretro/info/fbalpha2012_cps3_libretro.info
 share/libretro/info/fbalpha2012_libretro.info
 share/libretro/info/fbalpha2012_neogeo_libretro.info
-share/libretro/info/chimerasnes_libretro.info
-share/libretro/info/dirksimple_libretro.info
-share/libretro/info/emuscv_libretro.info
-share/libretro/info/ep128emu_core_libretro.info
-share/libretro/info/fake08_libretro.info
-share/libretro/info/mamemess_libretro.info
-share/libretro/info/mojozork_libretro.info
-share/libretro/info/numero_libretro.info
-share/libretro/info/onscripter_libretro.info
-share/libretro/info/puzzlescript_libretro.info
 share/libretro/info/fbneo_libretro.info
 share/libretro/info/fceumm_libretro.info
 share/libretro/info/ffmpeg_libretro.info
@@ -80,6 +77,7 @@ share/libretro/info/freej2me_libretro.info
 share/libretro/info/frodo_libretro.info
 share/libretro/info/fsuae_libretro.info
 share/libretro/info/fuse_libretro.info
+share/libretro/info/galaksija_libretro.info
 share/libretro/info/gambatte_libretro.info
 share/libretro/info/gearboy_libretro.info
 share/libretro/info/gearcoleco_libretro.info
@@ -112,6 +110,7 @@ share/libretro/info/mame2015_libretro.info
 share/libretro/info/mame2016_libretro.info
 share/libretro/info/mame_libretro.info
 share/libretro/info/mamearcade_libretro.info
+share/libretro/info/mamemess_libretro.info
 share/libretro/info/mednafen_gba_libretro.info
 share/libretro/info/mednafen_lynx_libretro.info
 share/libretro/info/mednafen_ngp_libretro.info
@@ -133,6 +132,7 @@ share/libretro/info/mess2015_libretro.info
 share/libretro/info/meteor_libretro.info
 share/libretro/info/mgba_libretro.info
 share/libretro/info/minivmac_libretro.info
+share/libretro/info/mojozork_libretro.info
 share/libretro/info/moonlight_libretro.info
 share/libretro/info/mpv_libretro.info
 share/libretro/info/mrboom_libretro.info
@@ -143,11 +143,14 @@ share/libretro/info/mupen64plus_next_gles3_libretro.info
 share/libretro/info/mupen64plus_next_libretro.info
 share/libretro/info/nekop2_libretro.info
 share/libretro/info/neocd_libretro.info
+share/libretro/info/nes_libretro.info
 share/libretro/info/nestopia_libretro.info
 share/libretro/info/np2kai_libretro.info
+share/libretro/info/numero_libretro.info
 share/libretro/info/nxengine_libretro.info
 share/libretro/info/o2em_libretro.info
 share/libretro/info/oberon_libretro.info
+share/libretro/info/onscripter_libretro.info
 share/libretro/info/open-source-notices.info
 share/libretro/info/openlara_libretro.info
 share/libretro/info/opentyrian_libretro.info
@@ -171,6 +174,7 @@ share/libretro/info/prboom_libretro.info
 share/libretro/info/prosystem_libretro.info
 share/libretro/info/puae2021_libretro.info
 share/libretro/info/puae_libretro.info
+share/libretro/info/puzzlescript_libretro.info
 share/libretro/info/px68k_libretro.info
 share/libretro/info/quasi88_libretro.info
 share/libretro/info/quicknes_libretro.info
@@ -181,6 +185,7 @@ share/libretro/info/remotejoy_libretro.info
 share/libretro/info/retro8_libretro.info
 share/libretro/info/retrodream_libretro.info
 share/libretro/info/rustation_libretro.info
+share/libretro/info/rvvm_libretro.info
 share/libretro/info/same_cdi_libretro.info
 share/libretro/info/sameboy_libretro.info
 share/libretro/info/sameduck_libretro.info
@@ -220,6 +225,7 @@ share/libretro/info/tic80_libretro.info
 share/libretro/info/tyrquake_libretro.info
 share/libretro/info/uae4arm_libretro.info
 share/libretro/info/ume2015_libretro.info
+share/libretro/info/uw8_libretro.info
 share/libretro/info/uzem_libretro.info
 share/libretro/info/vaporspec_libretro.info
 share/libretro/info/vba_next_libretro.info
@@ -228,6 +234,7 @@ share/libretro/info/vecx_libretro.info
 share/libretro/info/vemulator_libretro.info
 share/libretro/info/vice_x128_libretro.info
 share/libretro/info/vice_x64_libretro.info
+share/libretro/info/vice_x64dtv_libretro.info
 share/libretro/info/vice_x64sc_libretro.info
 share/libretro/info/vice_xcbm2_libretro.info
 share/libretro/info/vice_xcbm5x0_libretro.info
@@ -235,7 +242,9 @@ share/libretro/info/vice_xpet_libretro.info
 share/libretro/info/vice_xplus4_libretro.info
 share/libretro/info/vice_xscpu64_libretro.info
 share/libretro/info/vice_xvic_libretro.info
+share/libretro/info/vircon32_libretro.info
 share/libretro/info/virtualjaguar_libretro.info
+share/libretro/info/virtualxt_libretro.info
 share/libretro/info/vitaquake2-rogue_libretro.info
 share/libretro/info/vitaquake2-xatrix_libretro.info
 share/libretro/info/vitaquake2-zaero_libretro.info
