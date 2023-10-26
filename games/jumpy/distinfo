@@ -1,4 +1,4 @@
-TIMESTAMP = 1697758372
+TIMESTAMP = 1698348378
 SHA256 (rust/crates/ab_glyph-0.2.22.crate) = b1061f3ff92c2f65800df1f12fc7b4ff44ee14783104187dd04dfee6f11b0fd2
 SIZE (rust/crates/ab_glyph-0.2.22.crate) = 18440
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046
@@ -1011,5 +1011,5 @@ SHA256 (zicklag-bevy_egui-aeb3d7f1eaaacc67cf3966974d1e31f31e8fad62_GH0.tar.gz) =
 SIZE (zicklag-bevy_egui-aeb3d7f1eaaacc67cf3966974d1e31f31e8fad62_GH0.tar.gz) = 122911
 SHA256 (zicklag-kira-e587b155e862567677c114d0d6fc2963be37c14b_GH0.tar.gz) = 49695c26d6ae8dc6d58e5f935a0ccf7f44ceb5a147c39f79be421802c1e5a4a3
 SIZE (zicklag-kira-e587b155e862567677c114d0d6fc2963be37c14b_GH0.tar.gz) = 100155
-SHA256 (fishfolk-jumpy-v0.8.1_GH0.tar.gz) = 93b129d15a2d562efeccb45a46afffe5bf3227664a05e0237711e6a96d3eed8d
-SIZE (fishfolk-jumpy-v0.8.1_GH0.tar.gz) = 43165697
+SHA256 (fishfolk-jumpy-v0.8.2_GH0.tar.gz) = 570199367870bfa6e26fc42ce3eafb0fb88d39252f00987b414b7a32db2f5f08
+SIZE (fishfolk-jumpy-v0.8.2_GH0.tar.gz) = 43165768
