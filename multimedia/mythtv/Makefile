@@ -15,6 +15,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment
 .endif
+DEPRECATED=Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=2023-11-26
 
 LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libmp3lame.so:audio/lame \
