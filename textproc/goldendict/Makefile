@@ -9,6 +9,9 @@ WWW=		http://goldendict.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=	2023-11-26
+
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		liblzo2.so:archivers/lzo2 \
 		libogg.so:audio/libogg \
