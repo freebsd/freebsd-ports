@@ -1,9 +1,9 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
-MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVEVEYEAR}/
+MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf-source
-DISTNAME=	${PORTNAME}-${PORTVERSION}-texmf
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-freebsd
 DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
@@ -16,19 +16,7 @@ USE_PERL5=	build
 
 CONFLICTS_INSTALL=	texlive-base-202[0-9]*
 
-EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
-			${INCLUDE_FILES:S,^,--include ${DISTNAME}/,} \
-			${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
 NO_BUILD=	yes
-
-INCLUDE_FILES=	texmf-dist/source
-EXCLUDE_FILES=	texmf-dist/source/fonts/japanese-otf \
-		texmf-dist/source/fonts/japanese-otf-uptex \
-		texmf-dist/source/fonts/uptex texmf-dist/source/jadetex \
-		texmf-dist/source/lambda texmf-dist/source/lualatex \
-		texmf-dist/source/luatex texmf-dist/source/platex \
-		texmf-dist/source/uplatex texmf-dist/source/xelatex \
-		texmf-dist/source/xmltex
 
 TEXHASHDIRS=	${TEXMFDISTDIR}
 
@@ -36,33 +24,62 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 
 do-install:
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
+	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		-C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
-	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|g' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/ae/clean \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/ae/install \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/avremu/test-suite/test-suite \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/fifinddo-info/makevars/bashvars.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/fifinddo-info/makevars/texvars.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/nwafuthesis/build.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/support/optexcount/install.sh
-	${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/wargame/utils/wgexport.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/wargame/utils/wgsvg2tikz.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/support/optexcount/optexcount.py
-	${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${PERL}|g' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/hyph-utf8/contributed/make-exhyph.pl \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/ruhyphen/sorthyph \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/ruhyphen/reduce-patt \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/proposal/bin/checksum \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/proposal/bin/filedate
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
+
+
+.if defined(MAINTAINER_MODE)
+_INCLUDE_FILES=	source
+_EXCLUDE_FILES=	source/fonts/japanese-otf source/luatex source/platex \
+		source/fonts/japanese-otf-uptex source/xmltex \
+		source/fonts/uptex source/jadetex \
+		source/lambda source/lualatex source/uplatex source/xelatex
+_WRKSRC=	${WRKDIR}/texlive-20230313-texmf-source
+
+_maintainer-extract:
+	${MAKE} clean
+	${MKDIR} ${_WRKSRC}
+	${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME_TEXMF}${EXTRACT_SUFX} \
+		-C ${_WRKSRC}$ \
+		--strip-components 1 --no-same-permission --no-same-owner \
+		${_INCLUDE_FILES:S,^,--include ${DISTNAME_TEXMF}/texmf-dist/,} \
+		${_EXCLUDE_FILES:S,^,--exclude ${DISTNAME_TEXMF}/texmf-dist/,}
+
+_maintainer-patch: _maintainer-extract
+	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|g' \
+		${_WRKSRC}/texmf-dist/source/fonts/ae/clean \
+		${_WRKSRC}/texmf-dist/source/fonts/ae/install \
+		${_WRKSRC}/texmf-dist/source/latex/avremu/test-suite/test-suite \
+		${_WRKSRC}/texmf-dist/source/latex/fifinddo-info/makevars/bashvars.sh \
+		${_WRKSRC}/texmf-dist/source/latex/fifinddo-info/makevars/texvars.sh \
+		${_WRKSRC}/texmf-dist/source/latex/nwafuthesis/build.sh \
+		${_WRKSRC}/texmf-dist/source/support/optexcount/install.sh
+	${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|' \
+		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py \
+		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
+		${_WRKSRC}/texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
+		${_WRKSRC}/texmf-dist/source/latex/wargame/utils/wgexport.py \
+		${_WRKSRC}/texmf-dist/source/latex/wargame/utils/wgsvg2tikz.py \
+		${_WRKSRC}/texmf-dist/source/support/optexcount/optexcount.py
+	${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${PERL}|g' \
+		${_WRKSRC}/texmf-dist/source/generic/hyph-utf8/contributed/make-exhyph.pl \
+		${_WRKSRC}/texmf-dist/source/generic/ruhyphen/sorthyph \
+		${_WRKSRC}/texmf-dist/source/generic/ruhyphen/reduce-patt \
+		${_WRKSRC}/texmf-dist/source/latex/proposal/bin/checksum \
+		${_WRKSRC}/texmf-dist/source/latex/proposal/bin/filedate
+
+_maintainer-dist: _maintainer-patch
+	${TAR} --options xz:compression-level=9 -Jcvf \
+		${WRKDIR}/texlive-20230313-texmf-source-freebsd.tar.xz \
+		-C ${WRKDIR} ${PORTNAME}-${TEXLIVE_VERSION}${PKGNAMESUFFIX}
+	scp ${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+		bofh@freefall.freebsd.org://home/tex/public_distfiles/
+
+.endif
 
 .include <bsd.port.mk>
