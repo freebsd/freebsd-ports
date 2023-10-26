@@ -183,7 +183,6 @@ lib/libdracodec.a
 lib/libfilabridge.a
 lib/libfilaflat.a
 lib/libfilamat.a
-lib/libfilamat_lite.a
 lib/libfilament-iblprefilter.a
 lib/libfilament.a
 lib/libfilameshio.a
