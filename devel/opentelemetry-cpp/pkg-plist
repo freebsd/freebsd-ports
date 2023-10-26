@@ -282,3 +282,10 @@ lib/libopentelemetry_metrics.so
 lib/libopentelemetry_resources.so
 lib/libopentelemetry_trace.so
 lib/libopentelemetry_version.so
+libdata/pkgconfig/opentelemetry_api.pc
+libdata/pkgconfig/opentelemetry_common.pc
+libdata/pkgconfig/opentelemetry_logs.pc
+libdata/pkgconfig/opentelemetry_metrics.pc
+libdata/pkgconfig/opentelemetry_resources.pc
+libdata/pkgconfig/opentelemetry_trace.pc
+libdata/pkgconfig/opentelemetry_version.pc
