@@ -48,11 +48,13 @@ include/SFCGAL/algorithm/minkowskiSum.h
 include/SFCGAL/algorithm/normal.h
 include/SFCGAL/algorithm/offset.h
 include/SFCGAL/algorithm/orientation.h
+include/SFCGAL/algorithm/partition_2.h
 include/SFCGAL/algorithm/plane.h
 include/SFCGAL/algorithm/straightSkeleton.h
 include/SFCGAL/algorithm/tesselate.h
 include/SFCGAL/algorithm/translate.h
 include/SFCGAL/algorithm/union.h
+include/SFCGAL/algorithm/visibility.h
 include/SFCGAL/algorithm/volume.h
 include/SFCGAL/capi/sfcgal_c.h
 include/SFCGAL/config.h
@@ -77,6 +79,8 @@ include/SFCGAL/detail/graph/algorithm/isHalfEdge.h
 include/SFCGAL/detail/graph/algorithm/orientation.h
 include/SFCGAL/detail/io/OsgFactory.h
 include/SFCGAL/detail/io/Serialization.h
+include/SFCGAL/detail/io/WkbReader.h
+include/SFCGAL/detail/io/WkbWriter.h
 include/SFCGAL/detail/io/WktReader.h
 include/SFCGAL/detail/io/WktWriter.h
 include/SFCGAL/detail/polygonSetToMultiPolygon.h
@@ -100,6 +104,7 @@ include/SFCGAL/io/GeometryStreams.h
 include/SFCGAL/io/ewkt.h
 include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h
+include/SFCGAL/io/wkb.h
 include/SFCGAL/io/wkt.h
 include/SFCGAL/numeric.h
 include/SFCGAL/triangulate/triangulate2DZ.h
