@@ -1,6 +1,5 @@
 PORTNAME=	xorgproto
-DISTVERSION=	2022.1
-PORTREVISION=	1
+DISTVERSION=	2023.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,7 +8,7 @@ WWW=		https://gitlab.freedesktop.org/xorg/proto/xorgproto
 
 LICENSE=	MIT
 
-USES=		xorg-cat:proto
+USES=		tar:xz xorg-cat:proto
 
 NO_ARCH=	yes
 

@@ -118,6 +118,7 @@ include/X11/extensions/xtestconst.h
 include/X11/extensions/xtestext1const.h
 include/X11/extensions/xtestext1proto.h
 include/X11/extensions/xtestproto.h
+include/X11/extensions/xwaylandproto.h
 include/X11/fonts/FS.h
 include/X11/fonts/FSproto.h
 include/X11/fonts/font.h
@@ -154,7 +155,7 @@ libdata/pkgconfig/xf86driproto.pc
 libdata/pkgconfig/xf86vidmodeproto.pc
 libdata/pkgconfig/xineramaproto.pc
 libdata/pkgconfig/xproto.pc
-%%PORTDOCS%%%%DOCSDIR%%/PM_spec
+libdata/pkgconfig/xwaylandproto.pc
 %%PORTDOCS%%%%DOCSDIR%%/compositeproto.txt
 %%PORTDOCS%%%%DOCSDIR%%/damageproto.txt
 %%PORTDOCS%%%%DOCSDIR%%/dri2proto.txt
@@ -165,3 +166,4 @@ libdata/pkgconfig/xproto.pc
 %%PORTDOCS%%%%DOCSDIR%%/renderproto.txt
 %%PORTDOCS%%%%DOCSDIR%%/resproto.txt
 %%PORTDOCS%%%%DOCSDIR%%/xv-protocol-v2.txt
+%%PORTDOCS%%%%DOCSDIR%%/xwaylandproto.txt
