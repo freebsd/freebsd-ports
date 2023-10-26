@@ -11,9 +11,12 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 WWW=		https://tug.org/texlive/
 
-USES=		cpe python:run tar:xz tex
+# Reduce DEPENDS temporarily
+#USES=		cpe python:run tar:xz tex
+USES=		cpe tar:xz tex
 CPE_VENDOR=	tug
-USE_TEX=	base basic:extract texhash tlmgr:run
+#USE_TEX=	base basic:extract texhash tlmgr:run
+USE_TEX=	texhash tlmgr:run
 
 NO_ARCH=	yes
 NO_BUILD=	yes
@@ -33,7 +36,6 @@ do-install:
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
 .if defined(MAINTAINER_MODE)
-MAINTAINER_DISTNAME=	${DISTNAME_TEXMF}
 EXCLUDE_FILES=		\*/doc/man ls-R doc dvipdfm dvipdfmx dvips \
 			fonts/cmap/dvipdfmx fonts/cmap/uptex fonts/enc/dvips \
 			fonts/map/dvipdfm fonts/map/dvipdfmx fonts/map/dvips \
