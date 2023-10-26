@@ -10,6 +10,9 @@ WWW=		https://fuel-scm.org/fossil/home
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=	2023-11-26
+
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	fossil:devel/fossil
 
