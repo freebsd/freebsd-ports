@@ -11,6 +11,9 @@ WWW=		https://csoundqt.github.io/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl-2.1.txt
 
+DEPRECATED=		Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=	2023-11-26
+
 LIB_DEPENDS=	libcsound64.so:audio/csound
 
 USES=		compiler:c++11-lib desktop-file-utils gl gmake qmake qt:5 shared-mime-info
