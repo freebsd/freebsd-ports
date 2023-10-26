@@ -1,5 +1,5 @@
 PORTNAME=	libretro-shaders-glsl
-DISTVERSION=	g20200314
+DISTVERSION=	g20231025
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,6 +11,6 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	glsl-shaders
-GH_TAGNAME=	7052b09dc657d56bea443d5661dccbebcafe32dc
+GH_TAGNAME=	e66776c08364e22a0f78c8c97cf755b6870eb060
 
 .include <bsd.port.mk>
