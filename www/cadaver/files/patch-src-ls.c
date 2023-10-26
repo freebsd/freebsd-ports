@@ -1,8 +1,10 @@
---- src/ls.c	2008-10-10 11:29:05.000000000 -0400
-+++ src/ls.c	2010-04-16 14:31:42.000000000 -0400
-@@ -40,5 +40,4 @@
+--- src/ls.c.orig	2022-10-30 10:46:52 UTC
++++ src/ls.c
+@@ -39,7 +39,6 @@
+ #include "i18n.h"
  #include "commands.h"
  #include "cadaver.h"
 -#include "basename.h"
  #include "utils.h"
  
+ struct fetch_context {

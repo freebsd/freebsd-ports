@@ -1,6 +1,7 @@
---- Makefile.in	2008-02-11 05:29:53.000000000 -0500
-+++ Makefile.in	2010-04-16 14:31:42.000000000 -0400
-@@ -42,6 +42,6 @@
+--- Makefile.in.orig	2022-10-30 10:46:52 UTC
++++ Makefile.in
+@@ -41,8 +41,8 @@ SUBDIRS = lib/neon
+ OBJECTS = src/cadaver.o src/common.o src/commands.o src/ls.o	\
  	 src/cmdline.o src/options.o src/utils.o src/edit.o \
  	src/version.o src/search.o 
 -LIBOBJS = lib/basename.o lib/dirname.o lib/rpmatch.o lib/yesno.o	\
@@ -9,7 +10,9 @@
 +	lib/getpass.o \
  	@LIBOBJS@
  ALLOBJS = $(OBJECTS) $(LIBOBJS)
-@@ -92,8 +92,8 @@
+ 
+@@ -91,10 +91,10 @@ Makefile: Makefile.in
+ src/cadaver.o: src/cadaver.c config.h src/common.h	\
  	src/options.h src/cmdline.h src/commands.h src/cadaver.h
  src/options.o: src/options.c config.h src/options.h src/cadaver.h src/common.h 
 -src/cmdline.o: src/cmdline.c src/cmdline.h src/cadaver.h lib/basename.h \
@@ -21,3 +24,4 @@
 +	src/options.h src/common.h
  src/edit.o: src/edit.c src/cadaver.h src/options.h src/common.h
  src/common.o: src/common.c src/common.h config.h
+ src/ls.o: src/ls.c src/commands.h src/cadaver.h config.h

@@ -1,5 +1,5 @@
---- src/cadaver.c.orig	2010-10-15 17:01:46.000000000 +0200
-+++ src/cadaver.c	2010-10-15 17:02:29.000000000 +0200
+--- src/cadaver.c.orig	2022-10-30 10:46:52 UTC
++++ src/cadaver.c
 @@ -42,6 +42,9 @@
  #ifdef HAVE_LOCALE_H
  #include <locale.h>

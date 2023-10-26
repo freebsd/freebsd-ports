@@ -1,8 +1,10 @@
---- src/version.c	2007-08-22 08:17:27.000000000 -0400
-+++ src/version.c	2010-04-16 14:31:42.000000000 -0400
-@@ -41,5 +41,4 @@
+--- src/version.c.orig	2022-10-30 10:46:52 UTC
++++ src/version.c
+@@ -40,7 +40,6 @@
+ #include "i18n.h"
  #include "commands.h"
  #include "cadaver.h"
 -#include "basename.h"
  #include "utils.h"
  
+ /* Message body for REPORT */

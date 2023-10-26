@@ -1,8 +1,10 @@
---- src/search.c	2007-08-22 08:24:56.000000000 -0400
-+++ src/search.c	2010-04-16 14:31:42.000000000 -0400
-@@ -42,5 +42,4 @@
+--- src/search.c.orig	2022-10-30 10:46:52 UTC
++++ src/search.c
+@@ -42,7 +42,6 @@
+ #include "i18n.h"
  #include "commands.h"
  #include "cadaver.h"
 -#include "basename.h"
  #include "options.h"
  #include "utils.h"
+ 
