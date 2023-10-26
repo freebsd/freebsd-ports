@@ -1,19 +1,20 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.2
+DISTVERSION=	0.14.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland output mirror client
 WWW=		https://github.com/Ferdi265/wl-mirror
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
+LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+		libwayland-egl.so:graphics/wayland
 
 USES=		cmake gl pkgconfig
 USE_GITHUB=	yes
