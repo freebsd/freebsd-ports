@@ -11,8 +11,8 @@ WWW=		https://pgpool.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Upstream EOL reaches on 2023-12-31
-EXPIRATION_DATE=	2023-12-31
+DEPRECATED=	Upstream EOL reaches on 2024-10-31
+EXPIRATION_DATE=	2024-12-31
 
 USES=		gmake libtool pgsql:11+
 USE_LDCONFIG=	yes
