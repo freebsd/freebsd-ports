@@ -187,6 +187,7 @@
 %%PERL5_MAN3%%/Image::ExifTool::WriteRIFF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::WriteXMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Writer.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::XISF.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::XMP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::XMP2.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::XMPStruct.3.gz
@@ -417,6 +418,7 @@
 %%SITE_PERL%%/Image/ExifTool/WriteRIFF.pl
 %%SITE_PERL%%/Image/ExifTool/WriteXMP.pl
 %%SITE_PERL%%/Image/ExifTool/Writer.pl
+%%SITE_PERL%%/Image/ExifTool/XISF.pm
 %%SITE_PERL%%/Image/ExifTool/XMP.pm
 %%SITE_PERL%%/Image/ExifTool/XMP2.pl
 %%SITE_PERL%%/Image/ExifTool/XMPStruct.pl
