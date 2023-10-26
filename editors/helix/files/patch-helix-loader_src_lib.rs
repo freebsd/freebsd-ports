@@ -1,6 +1,6 @@
---- helix-loader/src/lib.rs.orig	2023-03-31 08:14:01 UTC
+--- helix-loader/src/lib.rs.orig	2023-10-25 16:37:27 UTC
 +++ helix-loader/src/lib.rs
-@@ -54,6 +54,8 @@ fn prioritize_runtime_dirs() -> Vec<PathBuf> {
+@@ -90,6 +90,8 @@ fn prioritize_runtime_dirs() -> Vec<PathBuf> {
          rt_dirs.push(dir.into());
      }
  
