@@ -1,0 +1,14 @@
+procs is a replacement for `ps` written in Rust.
+
+Features:
+- Colored and human-readable output
+    - Automatic theme detection based on terminal background
+- Multi-column keyword search
+- Some additional information which are not supported by `ps`
+    - TCP/UDP port
+    - Read/Write throughput
+    - Docker container name
+    - More memory information
+- Pager support
+- Watch mode (like `top`)
+- Tree view
