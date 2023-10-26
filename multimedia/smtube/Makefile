@@ -11,6 +11,9 @@ WWW=		https://www.smtube.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
 
+DEPRECATED=Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=2023-11-26
+
 RUN_DEPENDS=	yt-dlp:www/yt-dlp
 
 USES=		gl gmake qt:5 tar:bzip2
