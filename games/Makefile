@@ -510,6 +510,7 @@
     SUBDIR += libretro-beetle_vb
     SUBDIR += libretro-beetle_wswan
     SUBDIR += libretro-bluemsx
+    SUBDIR += libretro-boom3
     SUBDIR += libretro-cap32
     SUBDIR += libretro-core-info
     SUBDIR += libretro-desmume2015
