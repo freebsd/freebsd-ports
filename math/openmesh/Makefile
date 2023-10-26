@@ -12,6 +12,9 @@ WWW=		https://www.openmesh.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=2023-11-26
+
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang dos2unix gl qt:5 xorg
