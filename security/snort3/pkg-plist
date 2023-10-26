@@ -85,6 +85,7 @@ include/snort/hash/hashes.h
 include/snort/helpers/process.h
 include/snort/helpers/sigsafe.h
 include/snort/hash/lru_cache_local.h
+include/snort/hash/lru_segmented_cache_shared.h
 include/snort/hash/lru_cache_shared.h
 include/snort/hash/xhash.h
 include/snort/helpers/base64_encoder.h
@@ -264,14 +265,14 @@ include/snort/utils/event_gen.h
 include/snort/utils/infractions.h
 include/snort/utils/kmap.h
 include/snort/utils/memcap_allocator.h
-include/snort/utils/util_ber.h
-include/snort/utils/util_numa.h
 include/snort/utils/primed_allocator.h
 include/snort/utils/safec.h
 include/snort/utils/sflsq.h
 include/snort/utils/stats.h
 include/snort/utils/util.h
+include/snort/utils/util_ber.h
 include/snort/utils/util_cstring.h
+include/snort/utils/util_numa.h
 include/snort/utils/util_unfold.h
 include/snort/utils/util_utf.h
 lib/snort/daq/daq_file.so
