@@ -14,6 +14,9 @@ WWW=		https://kxstudio.linuxaudio.org/Applications:Cadence
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
+EXPIRATION_DATE=	2023-11-26
+
 RUN_DEPENDS=	jackit>0:audio/jack \
 		jack_capture:audio/jack-capture
 
