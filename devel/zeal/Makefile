@@ -11,6 +11,9 @@ WWW=		https://zealdocs.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=		Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=	2023-11-26
+
 LIB_DEPENDS=	libxcb.so:x11/libxcb \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
