@@ -1,5 +1,5 @@
 PORTNAME=	lib${GH_PROJECT}
-PORTVERSION=	14.0.1
+PORTVERSION=	14.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -349,7 +349,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 
 GH_TUPLE=	WebAssembly:wasm-c-api:c9d3128:wasm_c_api/crates/c-api/wasm-c-api \
 		WebAssembly:WASI:0ba0c5e:WASI/crates/wasi-common/WASI \
-		WebAssembly:wasi-nn:e2310b8:wasi_nn/crates/wasi-nn/spec \
+		WebAssembly:wasi-nn:c1f8b87:wasi_nn/crates/wasi-nn/spec \
 		WebAssembly:testsuite:7ef86dd:testsuite/tests/spec_testsuite \
 		WebAssembly:wasi-testsuite:09517e5:wasi_testsuite/tests/wasi_testsuite/wasi-common \
 		WebAssembly:wasi-threads:e1893c0:wasi_threads/tests/wasi_testsuite/wasi-threads
