@@ -1,11 +1,11 @@
---- src/libretro/libretro-common/rthreads/rthreads.c.orig	2022-07-12 14:45:04 UTC
+--- src/libretro/libretro-common/rthreads/rthreads.c.orig	2023-11-02 10:45:06 UTC
 +++ src/libretro/libretro-common/rthreads/rthreads.c
-@@ -67,6 +67,8 @@
- #include <mach/mach.h>
+@@ -58,7 +58,7 @@
+ #include <time.h>
  #endif
  
-+#include <sys/time.h>
-+
- struct thread_data
- {
-    void (*func)(void*);
+-#if defined(VITA) || defined(BSD) || defined(ORBIS)
++#if defined(VITA) || defined(BSD) || defined(ORBIS) || (__FreeBSD__ <= 12)
+ #include <sys/time.h>
+ #endif
+ 
