@@ -143,6 +143,7 @@
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
     SUBDIR += drawing
+    SUBDIR += drawio
     SUBDIR += drawpile
     SUBDIR += drm-510-kmod
     SUBDIR += drm-515-kmod

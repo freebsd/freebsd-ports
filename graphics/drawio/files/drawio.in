@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# workaround Chromium bug https://bugs.chromium.org/p/chromium/issues/detail?id=918234
+if [ "$DBUS_SESSION_BUS_ADDRESS" = "" ]; then
+    export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
+fi
+
+exec %%DATADIR%%/drawio  "$@"
