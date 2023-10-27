@@ -1,3 +1,36 @@
+  <vuln vid="db33e250-74f7-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>118.0.5993.117</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>118.0.5993.117</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_24.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[1491296] High CVE-2023-5472: Use after free in Profiles. Reported by @18楼梦想改造家 on 2023-10-10</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5472</cvename>
+      <url>https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2023-10-24</discovery>
+      <entry>2023-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9e2fdfc7-e237-4393-9fa5-2d50908c66b3">
     <topic>xorg-server -- Multiple vulnerabilities</topic>
     <affects>
