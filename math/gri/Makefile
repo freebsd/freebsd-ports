@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible plotting language for producing scientific graphs
-WWW=		http://gri.sourceforge.net/
+WWW=		https://gri.sourceforge.net/
 
 LICENSE=	GPLv2
 

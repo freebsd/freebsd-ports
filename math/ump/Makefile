@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical, easy to use math program
-WWW=		http://u-m-p.sourceforge.net/
+WWW=		https://u-m-p.sourceforge.net/
 
 LICENSE=	GPLv2
 

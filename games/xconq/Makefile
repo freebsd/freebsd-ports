@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical multi-player strategy game and game design system
-WWW=		http://xconq.sourceforge.net/
+WWW=		https://xconq.sourceforge.net/
 
 LICENSE=	GPLv2+
 

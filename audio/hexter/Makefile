@@ -6,7 +6,7 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DSSI softsynth that models the sound generation of a Yamaha DX7
-WWW=		http://dssi.sourceforge.net/hexter.html
+WWW=		https://dssi.sourceforge.net/hexter.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ DISTNAME=	ZopePageTemplates-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zope-less version of Zope Page Templates
-WWW=		http://zpt.sourceforge.net/
+WWW=		https://zpt.sourceforge.net/
 
 USES=		python tar:tgz
 USE_PYTHON=	distutils autoplist

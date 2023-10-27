@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ancient puzzle
-WWW=		http://jtans.sourceforge.net/
+WWW=		https://jtans.sourceforge.net/
 
 LICENSE=	GPLv2+ # got from website
 

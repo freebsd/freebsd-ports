@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/MCrypt/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
-WWW=		http://mcrypt.sourceforge.net/
+WWW=		https://mcrypt.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

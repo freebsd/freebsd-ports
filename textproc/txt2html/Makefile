@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert raw text to something with a little HTML formatting
-WWW=		http://txt2html.sourceforge.net/
+WWW=		https://txt2html.sourceforge.net/
 
 BUILD_DEPENDS=	p5-Getopt-ArgvFile>=0:devel/p5-Getopt-ArgvFile \
 		p5-YAML-Syck>=0:textproc/p5-YAML-Syck

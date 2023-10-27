@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
-WWW=		http://drumpiler.sourceforge.net/
+WWW=		https://drumpiler.sourceforge.net/
 
 USES=		sdl
 USE_SDL=	sdl

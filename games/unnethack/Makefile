@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New variant of NetHack
-WWW=		http://unnethack.sourceforge.net/
+WWW=		https://unnethack.sourceforge.net/
 
 LICENSE=	nethack
 LICENSE_NAME=	NETHACK GENERAL PUBLIC LICENSE

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTNAME}-${PORTVERS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced AES file encryption tool
-WWW=		http://ncrypt.sourceforge.net/
+WWW=		https://ncrypt.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

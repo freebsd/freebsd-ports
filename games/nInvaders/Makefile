@@ -7,7 +7,7 @@ DISTNAME=	ninvaders-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space Invaders clone for ncurses
-WWW=		http://ninvaders.sourceforge.net/
+WWW=		https://ninvaders.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/peak/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel Events and Asynchronous tasKing Library
-WWW=		http://peak.sourceforge.net/
+WWW=		https://peak.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

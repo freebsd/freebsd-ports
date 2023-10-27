@@ -8,7 +8,7 @@ DISTNAME=	python-mode-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the Python language
-WWW=		http://python-mode.sourceforge.net/
+WWW=		https://python-mode.sourceforge.net/
 
 NO_BUILD=	yes
 

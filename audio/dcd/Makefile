@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, programmable, intelligent CD player
-WWW=		http://dcdplayer.sourceforge.net/
+WWW=		https://dcdplayer.sourceforge.net/
 
 LICENSE=	GPLv2
 

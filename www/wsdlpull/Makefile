@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ WSDL Parser
-WWW=		http://wsdlpull.sourceforge.net/
+WWW=		https://wsdlpull.sourceforge.net/
 
 LICENSE=	LGPL21 # code says LGPL20+ and MIT though
 LICENSE_FILE=	${WRKSRC}/COPYING

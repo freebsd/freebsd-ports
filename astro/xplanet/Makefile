@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw pictures of the earth textured by an image
-WWW=		http://xplanet.sourceforge.net/
+WWW=		https://xplanet.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		iconv:wchar_t localbase xorg

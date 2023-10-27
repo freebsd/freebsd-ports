@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-devel-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Genetic Algorithm Utility Library
-WWW=		http://gaul.sourceforge.net/
+WWW=		https://gaul.sourceforge.net/
 
 LIB_DEPENDS=	libslang.so:devel/libslang2
 

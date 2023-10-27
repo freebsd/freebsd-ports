@@ -6,7 +6,7 @@ MASTER_SITES=	http://xdiskusage.sourceforge.net/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show where disk space is taken up
-WWW=		http://xdiskusage.sourceforge.net/
+WWW=		https://xdiskusage.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/README

@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-plugin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIMP plugin to "refocus" images through FIR Wiener filtering
-WWW=		http://refocus.sourceforge.net/
+WWW=		https://refocus.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

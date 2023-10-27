@@ -6,7 +6,7 @@ MASTER_SITES=	SF/sdl-dc/${PORTNAME}/1.0-2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apogee's Rise Of The Triad source port
-WWW=		http://sdl-dc.sourceforge.net/
+WWW=		https://sdl-dc.sourceforge.net/
 
 USES=		compiler:c11 gmake sdl tar:bzip2
 USE_SDL=	sdl mixer

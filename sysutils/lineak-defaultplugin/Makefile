@@ -7,7 +7,7 @@ DIST_SUBDIR=	lineak
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Default plugins for lineakd
-WWW=		http://lineak.sourceforge.net/
+WWW=		https://lineak.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides effective control of VirtualBox machines
-WWW=		http://vboxtool.sourceforge.net
+WWW=		https://vboxtool.sourceforge.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.txt

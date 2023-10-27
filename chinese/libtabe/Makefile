@@ -7,7 +7,7 @@ DISTNAME=	libtabe_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unified library for Chinese text processing
-WWW=		http://libtabe.sourceforge.net/
+WWW=		https://libtabe.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

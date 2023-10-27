@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tennis simulation
-WWW=		http://freetennis.sourceforge.net/
+WWW=		https://freetennis.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but full-featured backup/restore perl scripts (uses gnu tar)
-WWW=		http://cdbkup.sourceforge.net/
+WWW=		https://cdbkup.sourceforge.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/eject:sysutils/eject \
 		cdrecord:sysutils/cdrtools

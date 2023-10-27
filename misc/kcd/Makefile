@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change directory in full-screen visual mode
-WWW=		http://kcd.sourceforge.net/
+WWW=		https://kcd.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

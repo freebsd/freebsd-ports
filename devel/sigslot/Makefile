@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Signal/Slot Library
-WWW=		http://sigslot.sourceforge.net/
+WWW=		https://sigslot.sourceforge.net/
 
 PLIST_FILES=	include/sigslot.h
 NO_BUILD=	yes

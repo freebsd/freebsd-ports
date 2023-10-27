@@ -6,7 +6,7 @@ MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/cvsdelta/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
-WWW=		http://cvsdelta.sourceforge.net/
+WWW=		https://cvsdelta.sourceforge.net/
 
 USES=	ruby
 NO_BUILD=	yes

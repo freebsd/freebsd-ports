@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANSI C library for parsing GNU style command line arguments
-WWW=		http://argtable.sourceforge.net/
+WWW=		https://argtable.sourceforge.net/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

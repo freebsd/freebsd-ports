@@ -6,7 +6,7 @@ MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl interface to the Cyrus SASLv2 library
-WWW=		http://beepcore-tcl.sourceforge.net/tclsasl.html
+WWW=		https://beepcore-tcl.sourceforge.net/tclsasl.html
 
 LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 

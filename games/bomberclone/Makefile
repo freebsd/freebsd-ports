@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of Atomic Bomber Man
-WWW=		http://bomberclone.sourceforge.net/
+WWW=		https://bomberclone.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

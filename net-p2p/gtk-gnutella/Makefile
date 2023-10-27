@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK based Gnutella client
-WWW=		http://gtk-gnutella.sourceforge.net/
+WWW=		https://gtk-gnutella.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

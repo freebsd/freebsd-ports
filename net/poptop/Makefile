@@ -9,7 +9,7 @@ DISTFILES=	pptpd-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows 9x compatible PPTP (VPN) server
-WWW=		http://poptop.sourceforge.net/
+WWW=		https://poptop.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_DISTFILES=	pptpd-${PORTVERSION}${EXTRACT_SUFX}

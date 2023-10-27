@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to burn audio CDs from MP3, Ogg, Vorbis, FLAC files
-WWW=		http://mp3burn.sourceforge.net/
+WWW=		https://mp3burn.sourceforge.net/
 
 RUN_DEPENDS=	mpg123:audio/mpg123 \
 		ogg123:audio/vorbis-tools \

@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	openwince-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of the useful include files for embedded developers
-WWW=		http://openwince.sourceforge.net/include/
+WWW=		https://openwince.sourceforge.net/include/
 
 USES=		gmake tar:bzip2
 GNU_CONFIGURE=	yes

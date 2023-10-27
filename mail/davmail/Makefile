@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-${REVISION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange Gateway
-WWW=		http://davmail.sourceforge.net/
+WWW=		https://davmail.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ EXTRACT_ONLY=	${PORTNAME}src.4_2${EXTRACT_SUFX} ${PORTNAME}mk.4_2${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Solution Algorithm for Arbitrary Configuration
-WWW=		http://isaac-cfd.sourceforge.net/
+WWW=		https://isaac-cfd.sourceforge.net/
 
 LICENSE=	ISAAC
 LICENSE_NAME=	ISAAC_LICENSE

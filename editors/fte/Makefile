@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-featured text editor for X11
-WWW=		http://fte.sourceforge.net/
+WWW=		https://fte.sourceforge.net/
 
 LICENSE=	ART10 GPLv2
 LICENSE_COMB=	dual

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary packing utility that uses a genetic algorithm
-WWW=		http://gaffitter.sourceforge.net/
+WWW=		https://gaffitter.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

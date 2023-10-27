@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DEMO_DISTFILE:S/$/:demo/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
-WWW=		http://openrm.sourceforge.net
+WWW=		https://openrm.sourceforge.net
 
 LICENSE=	LGPL20+  # from sources, though LICENSE file is LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.html

@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sql Server exploit toolkit
-WWW=		http://sqlninja.sourceforge.net/
+WWW=		https://sqlninja.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

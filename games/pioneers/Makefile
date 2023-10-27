@@ -6,7 +6,7 @@ MASTER_SITES=	SF/pio/Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet playable version of the Settlers of Catan
-WWW=		http://pio.sourceforge.net/
+WWW=		https://pio.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

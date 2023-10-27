@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto-resuming command line NNTP file grabber
-WWW=		http://nget.sourceforge.net/
+WWW=		https://nget.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

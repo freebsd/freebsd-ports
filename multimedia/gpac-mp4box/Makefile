@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	gpac-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for merge mpg4 from Gpac
-WWW=		http://gpac.sourceforge.net/
+WWW=		https://gpac.sourceforge.net/
 
 LICENSE=	LGPL21
 

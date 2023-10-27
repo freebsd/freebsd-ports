@@ -6,7 +6,7 @@ MASTER_SITES=	http://rmap.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
-WWW=		http://rmap.sourceforge.net/
+WWW=		https://rmap.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

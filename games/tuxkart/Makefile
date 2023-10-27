@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Racing game starring Tux
-WWW=		http://tuxkart.sourceforge.net/
+WWW=		https://tuxkart.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

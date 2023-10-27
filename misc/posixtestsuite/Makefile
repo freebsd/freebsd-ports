@@ -6,7 +6,7 @@ MASTER_SITES=	SF/posixtest/posixtest/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open POSIX Test Suite
-WWW=		http://posixtest.sourceforge.net/
+WWW=		https://posixtest.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/posixtestsuite
 

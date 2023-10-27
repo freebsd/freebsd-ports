@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nils Weller's C compiler for Unix systems
-WWW=		http://nwcc.sourceforge.net/
+WWW=		https://nwcc.sourceforge.net/
 
 ONLY_FOR_ARCHS=	i386 amd64
 

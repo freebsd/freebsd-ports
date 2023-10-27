@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}17
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compare/diff two (comma) separated files with each other
-WWW=		http://csvdiff.sourceforge.net/
+WWW=		https://csvdiff.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

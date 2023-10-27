@@ -9,7 +9,7 @@ DISTFILES=	BDB-${PORTVERSION}-src.tgz \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to Berkeley DB for GNUstep
-WWW=		http://fortytwo.sourceforge.net/
+WWW=		https://fortytwo.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE

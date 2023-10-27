@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of `WHO iS ONline' protocol
-WWW=		http://whoson.sourceforge.net/
+WWW=		https://whoson.sourceforge.net/
 
 LICENSE=	PD OpenSSL
 LICENSE_COMB=	multi

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
-WWW=		http://libtlen.sourceforge.net/
+WWW=		https://libtlen.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -8,7 +8,7 @@ DISTFILES=	FT-${PORTVERSION}-src.tgz \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph management system for GNUstep
-WWW=		http://FortyTwo.sourceforge.net/index.html
+WWW=		https://FortyTwo.sourceforge.net/index.html
 
 LICENSE=	LGPL21
 

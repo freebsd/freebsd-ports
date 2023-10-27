@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use library for strong hashes such as MD5 and SHA1
-WWW=		http://mhash.sourceforge.net/
+WWW=		https://mhash.sourceforge.net/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

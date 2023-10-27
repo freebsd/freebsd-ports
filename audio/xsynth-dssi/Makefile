@@ -6,7 +6,7 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classic analog style software synthesizer
-WWW=		http://dssi.sourceforge.net/download.html
+WWW=		https://dssi.sourceforge.net/download.html
 
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:audio/dssi \
 		${LOCALBASE}/include/ladspa.h:audio/ladspa

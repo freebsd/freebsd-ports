@@ -5,7 +5,7 @@ MASTER_SITES=	SF/lasange-system/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Masterserver for IdSoftware games (D3, EF, H2, Q2, Q3, QW)
-WWW=		http://lasange-system.sourceforge.net/
+WWW=		https://lasange-system.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

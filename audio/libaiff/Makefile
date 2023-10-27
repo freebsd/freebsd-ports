@@ -5,7 +5,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Read and write AIFF files
-WWW=		http://aifftools.sourceforge.net/libaiff/
+WWW=		https://aifftools.sourceforge.net/libaiff/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

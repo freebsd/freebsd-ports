@@ -6,7 +6,7 @@ MASTER_SITES=	SF/radius-engine/ld21/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple game about escaping from work
-WWW=		http://radius-engine.sourceforge.net/development/the-grind--ld21-.html
+WWW=		https://radius-engine.sourceforge.net/development/the-grind--ld21-.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/License.txt

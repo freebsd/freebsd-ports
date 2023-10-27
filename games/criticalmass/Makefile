@@ -8,7 +8,7 @@ DISTNAME=	CriticalMass-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL/OpenGL space shoot'em up game
-WWW=		http://criticalmass.sourceforge.net/
+WWW=		https://criticalmass.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

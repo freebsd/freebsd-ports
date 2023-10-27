@@ -7,7 +7,7 @@ DISTNAME=	q3cel-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
-WWW=		http://q3cellshading.sourceforge.net/
+WWW=		https://q3cellshading.sourceforge.net/
 
 DEPRECATED=	BROKEN for more than 2 years on all supported versions
 EXPIRATION_DATE=	2023-11-30

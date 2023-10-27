@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-text search system
-WWW=		http://hyperestraier.sourceforge.net/
+WWW=		https://hyperestraier.sourceforge.net/
 
 BUILD_DEPENDS=	qdbm>=1.8.77:databases/qdbm
 # check configure for min version of qdbm.

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.0beta3
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL Solar System simulator for X Window System
-WWW=		http://openuniverse.sourceforge.net/
+WWW=		https://openuniverse.sourceforge.net/
 
 USES=		gl gmake jpeg localbase xorg
 USE_CXXSTD=	c++14

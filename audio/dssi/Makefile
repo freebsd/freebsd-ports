@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for audio processing plugins
-WWW=		http://dssi.sourceforge.net/
+WWW=		https://dssi.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

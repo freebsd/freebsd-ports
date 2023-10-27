@@ -9,7 +9,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully compliant DynDNS.org client for UNIX (supports NIC v2.0)
-WWW=		http://ipcheck.sourceforge.net/
+WWW=		https://ipcheck.sourceforge.net/
 
 LICENSE=	GPLv2
 

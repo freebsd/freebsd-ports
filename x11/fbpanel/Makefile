@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight, NETWM compliant X11 desktop panel
-WWW=		http://fbpanel.sourceforge.net/
+WWW=		https://fbpanel.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

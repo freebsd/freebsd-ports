@@ -7,7 +7,7 @@ DISTNAME=	redcoder
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Corewars evolver - generates warriors using genetic algorithms
-WWW=		http://redcoder.sourceforge.net/?p=species
+WWW=		https://redcoder.sourceforge.net/?p=species
 
 LICENSE=	GPLv1+ # though COPYING files mention LGPL21 and GPLv2 instead
 

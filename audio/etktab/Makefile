@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Guitar tablature editor
-WWW=		http://etktab.sourceforge.net/
+WWW=		https://etktab.sourceforge.net/
 
 USES=		tk
 NO_BUILD=	yes

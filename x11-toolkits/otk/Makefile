@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_lib_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Widget library based on OpenGL
-WWW=		http://otk.sourceforge.net/
+WWW=		https://otk.sourceforge.net/
 
 LICENSE=	LGPL20+
 

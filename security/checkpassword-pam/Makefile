@@ -6,7 +6,7 @@ MASTER_SITES=	SF/checkpasswd-pam/checkpasswd-pam/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of checkpassword authentication program
-WWW=		http://checkpasswd-pam.sourceforge.net/
+WWW=		https://checkpasswd-pam.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

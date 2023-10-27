@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
-WWW=		http://xtrader.sourceforge.net/
+WWW=		https://xtrader.sourceforge.net/
 
 LIB_DEPENDS=	libptypes.so:devel/ptypes \
 		libfltk.so.1:x11-toolkits/fltk

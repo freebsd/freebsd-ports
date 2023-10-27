@@ -7,7 +7,7 @@ DISTNAME=	mrxvt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development version of mrxvt
-WWW=		http://materm.sourceforge.net/
+WWW=		https://materm.sourceforge.net/
 
 LICENSE=	GPLv2
 

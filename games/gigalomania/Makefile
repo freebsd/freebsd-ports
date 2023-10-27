@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 2D real time strategy god game
-WWW=		http://gigalomania.sourceforge.net/
+WWW=		https://gigalomania.sourceforge.net/
 
 USES=		sdl zip
 USE_CXXSTD=	c++14

@@ -8,7 +8,7 @@ DISTNAME=	cdplayer-${CDPLAYER_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDDB client bundle GNUstep
-WWW=		http://gsburn.sourceforge.net/
+WWW=		https://gsburn.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

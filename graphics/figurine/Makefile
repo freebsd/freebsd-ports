@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing program for X11
-WWW=		http://figurine.sourceforge.net/
+WWW=		https://figurine.sourceforge.net/
 
 LICENSE=	GPLv2
 

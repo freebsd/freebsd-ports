@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Uptimes project client
-WWW=		http://upclient.sourceforge.net
+WWW=		https://upclient.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

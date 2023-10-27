@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ documentation generator
-WWW=		http://scandoc.sourceforge.net/
+WWW=		https://scandoc.sourceforge.net/
 
 LICENSE=	ARTPERL10
 LICENSE_FILE=	${WRKSRC}/COPYING

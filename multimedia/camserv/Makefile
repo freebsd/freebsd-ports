@@ -7,7 +7,7 @@ MASTER_SITES=	SF/cserv/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free program to do streaming video via the web
-WWW=		http://cserv.sourceforge.net/
+WWW=		https://cserv.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

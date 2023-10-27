@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTLM / NTLM Session Response / NTLMv2 authenticating HTTP proxy
-WWW=		http://cntlm.sourceforge.net/
+WWW=		https://cntlm.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

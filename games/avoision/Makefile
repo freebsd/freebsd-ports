@@ -6,7 +6,7 @@ MASTER_SITES=	SF/avsn/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple collect-dots-avoid-blocks game
-WWW=		http://avsn.sourceforge.net/
+WWW=		https://avsn.sourceforge.net/
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0
 LICENSE_COMB=	multi

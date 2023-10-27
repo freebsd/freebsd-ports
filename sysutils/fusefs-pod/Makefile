@@ -8,7 +8,7 @@ DISTNAME=	fusepod-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for iPod
-WWW=		http://fusepod.sourceforge.net/
+WWW=		https://fusepod.sourceforge.net/
 
 LIB_DEPENDS=	libgpod.so:audio/libgpod\
 		libtag.so:audio/taglib

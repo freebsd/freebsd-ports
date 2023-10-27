@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific plotting package
-WWW=		http://plplot.sourceforge.net/
+WWW=		https://plplot.sourceforge.net/
 
 LICENSE=	LGPL21+
 

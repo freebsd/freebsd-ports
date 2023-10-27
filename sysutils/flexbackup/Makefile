@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar
-WWW=		http://flexbackup.sourceforge.net/
+WWW=		https://flexbackup.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

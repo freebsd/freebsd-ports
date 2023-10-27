@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lua script-based 2D engine built on top of OpenGL and SDL
-WWW=		http://radius-engine.sourceforge.net/
+WWW=		https://radius-engine.sourceforge.net/
 
 LICENSE=	MIT
 

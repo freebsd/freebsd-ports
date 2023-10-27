@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates the detach feature of screen
-WWW=		http://dtach.sourceforge.net/
+WWW=		https://dtach.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

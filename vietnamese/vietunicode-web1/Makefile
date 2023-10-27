@@ -7,7 +7,7 @@ DISTNAME=	VietFontsWeb1_ttf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	100% Viet Unicode & Viet Phan/Pali-Sanskrit compatible
-WWW=		http://vietunicode.sourceforge.net/
+WWW=		https://vietunicode.sourceforge.net/
 
 USES=		zip
 DIST_SUBDIR=	VietUnicode

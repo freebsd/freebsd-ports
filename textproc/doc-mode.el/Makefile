@@ -8,7 +8,7 @@ DISTNAME=	doc-mode-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asciidoc fontlocking for emacs
-WWW=		http://xpt.sourceforge.net/tools/doc-mode/
+WWW=		https://xpt.sourceforge.net/tools/doc-mode/
 
 USES=		emacs tar:tgz
 

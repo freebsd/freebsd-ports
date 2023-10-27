@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
-WWW=		http://dnsutl.sourceforge.net/
+WWW=		https://dnsutl.sourceforge.net/
 
 LIB_DEPENDS=	libexplain.so:devel/libexplain
 

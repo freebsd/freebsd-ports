@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle solver
-WWW=		http://burrtools.sourceforge.net/
+WWW=		https://burrtools.sourceforge.net/
 
 LICENSE=	GPLv2+ # COPYING is GPLv3
 

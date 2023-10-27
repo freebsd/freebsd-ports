@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-chinese-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 converter with Chinese maps
-WWW=		http://ttf2pt1.sourceforge.net/
+WWW=		https://ttf2pt1.sourceforge.net/
 
 RUN_DEPENDS=	ttf2pt1:print/ttf2pt1
 

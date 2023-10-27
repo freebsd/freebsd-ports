@@ -5,7 +5,7 @@ MASTER_SITES=	http://avl.enemy.org/utils/hextools/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools for dealing with hex files
-WWW=		http://gnuwin32.sourceforge.net/packages/hextools.htm
+WWW=		https://gnuwin32.sourceforge.net/packages/hextools.htm
 
 LICENSE=	HEXTOOLS
 LICENSE_NAME=	License of hextools

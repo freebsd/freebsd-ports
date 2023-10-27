@@ -6,7 +6,7 @@ MASTER_SITES=	SF/logreporters/${PORTNAME}/release/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Postfix MTA log parser
-WWW=		http://logreporters.sourceforge.net/
+WWW=		https://logreporters.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

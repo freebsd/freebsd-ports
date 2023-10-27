@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight pager for netwm compatible window managers
-WWW=		http://obpager.sourceforge.net/
+WWW=		https://obpager.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to merge and sort by date http log files
-WWW=		http://mergelog.sourceforge.net/
+WWW=		https://mergelog.sourceforge.net/
 
 USES=	gmake
 GNU_CONFIGURE=	yes

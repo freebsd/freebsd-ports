@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert the result of the cflow utility in a VCG format
-WWW=		http://cflow2vcg.sourceforge.net/
+WWW=		https://cflow2vcg.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

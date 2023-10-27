@@ -7,7 +7,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight TCP socket scripting
-WWW=		http://netscript.sourceforge.net/
+WWW=		https://netscript.sourceforge.net/
 
 LICENSE=	PD
 

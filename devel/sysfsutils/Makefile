@@ -6,7 +6,7 @@ MASTER_SITES=	SF/linux-diag/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System Utilities Based on Sysfs
-WWW=		http://linux-diag.sourceforge.net/Sysfsutils.html
+WWW=		https://linux-diag.sourceforge.net/Sysfsutils.html
 
 GNU_CONFIGURE=	yes
 USES=		cpe libtool

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	El-Kabong is a speedy, yet forgiving, SAX-style HTML parser
-WWW=		http://ekhtml.sourceforge.net/
+WWW=		https://ekhtml.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

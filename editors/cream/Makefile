@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/Cream/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gvim extension with many features
-WWW=		http://cream.sourceforge.net/
+WWW=		https://cream.sourceforge.net/
 
 LICENSE=	GPLv3+
 

@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/downloads/alonbl/mp3unicode/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags charset converter
-WWW=		http://mp3unicode.sourceforge.net/
+WWW=		https://mp3unicode.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

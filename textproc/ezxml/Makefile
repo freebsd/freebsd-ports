@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/ezXML/ezXML%20${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use C library for parsing XML documents
-WWW=		http://ezxml.sourceforge.net/
+WWW=		https://ezxml.sourceforge.net/
 
 USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Color vt102 terminal emulator with transparency support
-WWW=		http://aterm.sourceforge.net/
+WWW=		https://aterm.sourceforge.net/
 
 MAKE_JOBS_UNSAFE=	yes
 

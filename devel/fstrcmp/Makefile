@@ -5,7 +5,7 @@ MASTER_SITES=	SF/fstrcmp/fstrcmp/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for fuzzy string comparisons
-WWW=		http://fstrcmp.sourceforge.net/
+WWW=		https://fstrcmp.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

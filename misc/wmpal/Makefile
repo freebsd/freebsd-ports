@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	One of the most useless dockapps in the world
-WWW=		http://wmpal.sourceforge.net/
+WWW=		https://wmpal.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

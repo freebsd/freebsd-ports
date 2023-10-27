@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies, and more
-WWW=		http://jclassinfo.sourceforge.net/
+WWW=		https://jclassinfo.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

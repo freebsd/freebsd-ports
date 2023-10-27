@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Printer filter for EPSON EPL-5700L etc
-WWW=		http://epsonepl.sourceforge.net/
+WWW=		https://epsonepl.sourceforge.net/
 
 LIB_DEPENDS=	libijs.so:print/libijs
 

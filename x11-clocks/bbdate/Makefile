@@ -6,7 +6,7 @@ MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool made for Blackbox that displays the date in a decorated window
-WWW=		http://bbtools.sourceforge.net/
+WWW=		https://bbtools.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

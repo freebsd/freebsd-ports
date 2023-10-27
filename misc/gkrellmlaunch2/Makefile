@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application launcher plugin for GKrellM2
-WWW=		http://gkrellmlaunch.sourceforge.net/
+WWW=		https://gkrellmlaunch.sourceforge.net/
 
 LICENSE=	GPLv2+
 

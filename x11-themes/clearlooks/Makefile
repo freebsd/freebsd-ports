@@ -6,7 +6,7 @@ MASTER_SITES=	SF/clearlooks/clearlooks/clearlooks%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	GTK 2.x engine based on Bluecurve
-WWW=		http://clearlooks.sourceforge.net/
+WWW=		https://clearlooks.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

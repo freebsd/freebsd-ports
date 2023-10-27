@@ -16,7 +16,7 @@ DISTFILES=	wqy-bitmapsong-pcf-1.0.0-RC1.tar.gz:bitmapfont \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU GPL-licensed font set covering CJK and other Unicode characters
-WWW=		http://wqy.sourceforge.net/en/
+WWW=		https://wqy.sourceforge.net/en/
 
 LICENSE=	GPLv2
 

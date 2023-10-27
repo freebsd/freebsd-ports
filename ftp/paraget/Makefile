@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel FTP-fetching program
-WWW=		http://paraget.sourceforge.net/
+WWW=		https://paraget.sourceforge.net/
 
 LICENSE=	GPLv2
 

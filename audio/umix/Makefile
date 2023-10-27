@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
-WWW=		http://umix.sourceforge.net/
+WWW=		https://umix.sourceforge.net/
 
 USES=		alias ncurses
 GNU_CONFIGURE=	yes

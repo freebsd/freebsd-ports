@@ -7,7 +7,7 @@ DISTNAME=	RexxWrapper-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that wraps Rexx source or tokenised code into an executable
-WWW=		http://rexxwrapper.sourceforge.net/
+WWW=		https://rexxwrapper.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

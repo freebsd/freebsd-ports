@@ -7,7 +7,7 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Framework for Motif
-WWW=		http://viewklass.sourceforge.net/
+WWW=		https://viewklass.sourceforge.net/
 
 LICENSE=	LGPL20+
 

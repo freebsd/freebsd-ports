@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}_src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java extension of BSD YACC-compatible parser generator
-WWW=		http://byaccj.sourceforge.net
+WWW=		https://byaccj.sourceforge.net
 
 PLIST_FILES=	bin/byaccj
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src

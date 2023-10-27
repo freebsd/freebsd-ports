@@ -6,7 +6,7 @@ MASTER_SITES=	SF/domainkeys/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys library
-WWW=		http://domainkeys.sourceforge.net/
+WWW=		https://domainkeys.sourceforge.net/
 
 USES=		uidfix ssl
 USE_LDCONFIG=	yes

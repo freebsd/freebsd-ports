@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	True Type Font to Postscript Type 1 Converter
-WWW=		http://ttf2pt1.sourceforge.net/
+WWW=		https://ttf2pt1.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

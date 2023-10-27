@@ -6,7 +6,7 @@ MASTER_SITES=	SF/snowstorm/OpenGlad/Openglad-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator
-WWW=		http://snowstorm.sourceforge.net
+WWW=		https://snowstorm.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

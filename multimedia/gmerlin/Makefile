@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
-WWW=		http://gmerlin.sourceforge.net/
+WWW=		https://gmerlin.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

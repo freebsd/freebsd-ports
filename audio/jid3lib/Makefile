@@ -6,7 +6,7 @@ MASTER_SITES=	SF/javamusictag/${PORTNAME}/beta-dev6
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
-WWW=		http://javamusictag.sourceforge.net/index.html
+WWW=		https://javamusictag.sourceforge.net/index.html
 
 USE_JAVA=	yes
 USE_ANT=	yes

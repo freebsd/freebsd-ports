@@ -5,7 +5,7 @@ MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool intended for Blackbox that checks for new mail
-WWW=		http://bbtools.sourceforge.net/
+WWW=		https://bbtools.sourceforge.net/
 
 LICENSE=	GPLv2+
 

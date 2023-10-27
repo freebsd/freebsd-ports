@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP, and Gopher mirroring tool
-WWW=		http://pavuk.sourceforge.net/
+WWW=		https://pavuk.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

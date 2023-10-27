@@ -6,7 +6,7 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin
-WWW=		http://dssi.sourceforge.net/
+WWW=		https://dssi.sourceforge.net/
 
 LIB_DEPENDS=	libdssialsacompat.so:audio/libdssialsacompat \
 		liblo.so:audio/liblo \

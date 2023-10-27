@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remake of classic roguelike game "Sword of Fargoal"
-WWW=		http://squidfighter.sourceforge.net/fargoal/
+WWW=		https://squidfighter.sourceforge.net/fargoal/
 
 LIB_DEPENDS=	liballeg.so:devel/allegro
 

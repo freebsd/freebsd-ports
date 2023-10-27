@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/TuxNES/TuxNES%20v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System 8-bit emulator
-WWW=		http://tuxnes.sourceforge.net/
+WWW=		https://tuxnes.sourceforge.net/
 
 LICENSE=	GPLv2
 

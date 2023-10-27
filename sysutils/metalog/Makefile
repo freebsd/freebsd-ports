@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern syslogd replacement with PCRE support
-WWW=		http://metalog.sourceforge.net/
+WWW=		https://metalog.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

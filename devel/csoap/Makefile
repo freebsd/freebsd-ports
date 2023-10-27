@@ -7,7 +7,7 @@ DISTNAME=	libsoap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client/server SOAP library written in pure C
-WWW=		http://csoap.sourceforge.net/
+WWW=		https://csoap.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		gnome libtool pathfix

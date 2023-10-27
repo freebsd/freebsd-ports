@@ -10,7 +10,7 @@ PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to configure various aspects of FreeBSD
-WWW=		http://druidbsd.sourceforge.net/
+WWW=		https://druidbsd.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

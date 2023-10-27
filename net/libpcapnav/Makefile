@@ -6,7 +6,7 @@ MASTER_SITES=	SF/netdude/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	libpcap wrapper library
-WWW=		http://netdude.sourceforge.net/
+WWW=		https://netdude.sourceforge.net/
 
 USES=		libtool
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${DOCSDIR}

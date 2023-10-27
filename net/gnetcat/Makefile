@@ -7,7 +7,7 @@ DISTNAME=	netcat-0.7.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
-WWW=		http://netcat.sourceforge.net/
+WWW=		https://netcat.sourceforge.net/
 
 USES=		gettext iconv tar:bzip2
 GNU_CONFIGURE=	yes

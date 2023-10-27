@@ -5,7 +5,7 @@ MASTER_SITES=	SF/linux-decnet/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-DECnet project LAT protocol suite
-WWW=		http://linux-decnet.sourceforge.net/
+WWW=		https://linux-decnet.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keeps collection of mailboxes synchronized
-WWW=		http://mailsync.sourceforge.net/
+WWW=		https://mailsync.sourceforge.net/
 
 LICENSE=	GPLv2
 

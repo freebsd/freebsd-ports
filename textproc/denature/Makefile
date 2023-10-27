@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to PDF converter
-WWW=		http://denature.sourceforge.net/
+WWW=		https://denature.sourceforge.net/
 
 LICENSE=	GPLv2
 

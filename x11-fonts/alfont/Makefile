@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper around the freetype2 library
-WWW=		http://opensnc.sourceforge.net/alfont/
+WWW=		https://opensnc.sourceforge.net/alfont/
 
 LICENSE=	FTL
 LICENSE_NAME=	The FreeType Project LICENSE (FTL)

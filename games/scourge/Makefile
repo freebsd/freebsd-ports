@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue-like game
-WWW=		http://scourge.sourceforge.net/
+WWW=		https://scourge.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultra lightweight xml-rpc library written in C++
-WWW=		http://ulxmlrpcpp.sourceforge.net/
+WWW=		https://ulxmlrpcpp.sourceforge.net/
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

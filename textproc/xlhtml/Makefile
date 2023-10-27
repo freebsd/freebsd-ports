@@ -7,7 +7,7 @@ MASTER_SITES=	SF/chicago/${PORTNAME}/backend
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Excel and PowerPoint files to HTML and text
-WWW=		http://chicago.sourceforge.net/xlhtml/
+WWW=		https://chicago.sourceforge.net/xlhtml/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

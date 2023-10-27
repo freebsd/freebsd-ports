@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database Independent Abstraction Layer for C
-WWW=		http://libdbi.sourceforge.net/
+WWW=		https://libdbi.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/florence/florence/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible scalable virtual keyboard
-WWW=		http://florence.sourceforge.net/
+WWW=		https://florence.sourceforge.net/
 
 LICENSE=	GPLv2+ GFDL
 LICENSE_COMB=	multi

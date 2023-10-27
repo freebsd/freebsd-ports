@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bibliographic reference database
-WWW=		http://refdb.sourceforge.net/
+WWW=		https://refdb.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

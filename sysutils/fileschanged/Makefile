@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility that reports when files have been altered
-WWW=		http://fileschanged.sourceforge.net/
+WWW=		https://fileschanged.sourceforge.net/
 
 LIB_DEPENDS=	libargp.so:devel/argp-standalone
 BUILD_DEPENDS=	help2man:misc/help2man

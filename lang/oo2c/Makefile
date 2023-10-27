@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${BITS}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
-WWW=		http://ooc.sourceforge.net/OOCref/OOCref_16.html
+WWW=		https://ooc.sourceforge.net/OOCref/OOCref_16.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

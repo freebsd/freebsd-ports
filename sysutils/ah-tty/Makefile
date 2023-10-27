@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic helper for command prompts and shells
-WWW=		http://ah-tty.sourceforge.net/
+WWW=		https://ah-tty.sourceforge.net/
 
 USES=		ncurses
 GNU_CONFIGURE=	yes

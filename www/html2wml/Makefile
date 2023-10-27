@@ -6,7 +6,7 @@ MASTER_SITES=	SF/htmlwml/Html2Wml/${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI that can do on-the-fly HTML to WML conversion
-WWW=		http://htmlwml.sourceforge.net/
+WWW=		https://htmlwml.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KAME racoon IKE daemon, ipsec-tools version
-WWW=		http://ipsec-tools.sourceforge.net/
+WWW=		https://ipsec-tools.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

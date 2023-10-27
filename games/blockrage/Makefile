@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Falling blocks game with 2-player hotseat mode
-WWW=		http://blockrage.sourceforge.net/
+WWW=		https://blockrage.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

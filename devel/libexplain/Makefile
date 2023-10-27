@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library which may be used to explain Unix and Linux system call errors
-WWW=		http://libexplain.sourceforge.net/
+WWW=		https://libexplain.sourceforge.net/
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE

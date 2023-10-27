@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
-WWW=		http://openprinting.sourceforge.net/
+WWW=		https://openprinting.sourceforge.net/
 
 USES=		gettext gmake iconv libtool localbase tar:bzip2
 USE_LDCONFIG=	yes

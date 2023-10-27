@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP Traffic Analyzer
-WWW=		http://yconalyzer.sourceforge.net/
+WWW=		https://yconalyzer.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		gmake tar:bzip2

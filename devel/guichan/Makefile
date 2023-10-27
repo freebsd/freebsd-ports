@@ -6,7 +6,7 @@ MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/guichan/${DISTFILES}/af535
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small, efficient C++ GUI library designed for games
-WWW=		http://guichan.sourceforge.net/
+WWW=		https://guichan.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

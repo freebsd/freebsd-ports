@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to help CSS style sheets creation and maintenance
-WWW=		http://cssed.sourceforge.net/
+WWW=		https://cssed.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

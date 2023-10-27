@@ -6,7 +6,7 @@ CATEGORIES=	lang math
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreted language for scientific simulations
-WWW=		http://yorick.sourceforge.net/
+WWW=		https://yorick.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

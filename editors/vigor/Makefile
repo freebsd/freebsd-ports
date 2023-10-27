@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi clone inspired by the userfriendly comic strip
-WWW=		http://vigor.sourceforge.net/
+WWW=		https://vigor.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE

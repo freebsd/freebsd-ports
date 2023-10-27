@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL Monitoring Tool
-WWW=		http://mtop.sourceforge.net/
+WWW=		https://mtop.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

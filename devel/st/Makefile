@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}ate-threads/${PORTNAME}ate-threads/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State Threads Library for Internet Applications
-WWW=		http://state-threads.sourceforge.net/
+WWW=		https://state-threads.sourceforge.net/
 
 USES=		uidfix
 USE_LDCONFIG=	yes

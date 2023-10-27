@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-bin.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pilot a small space ship
-WWW=		http://moagg.sourceforge.net/
+WWW=		https://moagg.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

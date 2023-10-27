@@ -6,7 +6,7 @@ MASTER_SITES=	SF/radius-engine/egp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maze on the Isle of Crete
-WWW=		http://radius-engine.sourceforge.net/development/cretan-hubris--egp-2012-02-.html
+WWW=		https://radius-engine.sourceforge.net/development/cretan-hubris--egp-2012-02-.html
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0
 LICENSE_COMB=	multi

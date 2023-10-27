@@ -7,7 +7,7 @@ DIST_SUBDIR=	box
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for box, the figure description language
-WWW=		http://boxc.sourceforge.net
+WWW=		https://boxc.sourceforge.net
 
 LICENSE=	GPLv2+ LGPL3+
 LICENSE_COMB=	multi

@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game of yore similar to the "Tron" and "Nibbles"
-WWW=		http://heroes.sourceforge.net/
+WWW=		https://heroes.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

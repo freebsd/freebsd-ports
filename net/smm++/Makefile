@@ -7,7 +7,7 @@ DISTNAME=	smm611
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical mudclient with mapper
-WWW=		http://smm.sourceforge.net/
+WWW=		https://smm.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../docu/GPL

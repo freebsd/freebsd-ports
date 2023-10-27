@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
-WWW=		http://math-atlas.sourceforge.net/
+WWW=		https://math-atlas.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

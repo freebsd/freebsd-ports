@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java command line processor
-WWW=		http://jcmdline.sourceforge.net/
+WWW=		https://jcmdline.sourceforge.net/
 
 LICENSE=	MPL11
 LICENSE_FILE=	${WRKSRC}/LICENSE

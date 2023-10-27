@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-base/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose implementation of the xmlrpc specification in C
-WWW=		http://xmlrpc-epi.sourceforge.net/
+WWW=		https://xmlrpc-epi.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

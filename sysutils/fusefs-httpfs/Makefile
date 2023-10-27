@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}2-${VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fuse-based http filesystem
-WWW=		http://httpfs.sourceforge.net/
+WWW=		https://httpfs.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/debian/copyright

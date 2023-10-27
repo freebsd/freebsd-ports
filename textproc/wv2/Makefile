@@ -6,7 +6,7 @@ MASTER_SITES=	SF/wvware/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing routines to access Microsoft Word files
-WWW=		http://wvware.sourceforge.net/
+WWW=		https://wvware.sourceforge.net/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB

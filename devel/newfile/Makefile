@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating starter files in various languages
-WWW=		http://newfile.sourceforge.net/
+WWW=		https://newfile.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

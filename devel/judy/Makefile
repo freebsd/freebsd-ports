@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose dynamic array
-WWW=		http://judy.sourceforge.net/
+WWW=		https://judy.sourceforge.net/
 
 LICENSE=	LGPL21
 

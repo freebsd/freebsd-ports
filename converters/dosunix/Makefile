@@ -5,7 +5,7 @@ MASTER_SITES=	http://dosunix.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulation of text files in a mixed DOS/Windows and Unix environment
-WWW=		http://dosunix.sourceforge.net/
+WWW=		https://dosunix.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very basic painting program
-WWW=		http://mtpaint.sourceforge.net/rgbpaint.html
+WWW=		https://mtpaint.sourceforge.net/rgbpaint.html
 
 LICENSE=	GPLv2+
 

@@ -7,7 +7,7 @@ DISTNAME=	madfuload-1.2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	M-Audio DFU Firmware for Transit, Ozone, Sonica, MobilePre
-WWW=		http://usb-midi-fw.sourceforge.net/
+WWW=		https://usb-midi-fw.sourceforge.net/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dfu-util:comms/dfu-util
 

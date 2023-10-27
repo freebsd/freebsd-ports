@@ -6,7 +6,7 @@ MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple video encoder
-WWW=		http://fame.sourceforge.net/
+WWW=		https://fame.sourceforge.net/
 
 LIB_DEPENDS=	libfame.so:multimedia/libfame
 

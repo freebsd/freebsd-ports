@@ -5,7 +5,7 @@ CATEGORIES=	print
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UTF-8 to PostScript converter using Pango
-WWW=		http://paps.sourceforge.net/
+WWW=		https://paps.sourceforge.net/
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

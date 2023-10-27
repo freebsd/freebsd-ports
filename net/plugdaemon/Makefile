@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plug proxy daemon, forwards TCP/IP connections
-WWW=		http://plugdaemon.sourceforge.net/
+WWW=		https://plugdaemon.sourceforge.net/
 
 PLIST_FILES=	man/man1/plug.1.gz sbin/plug
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to calculate the impedance of transmission lines
-WWW=		http://atlc.sourceforge.net/
+WWW=		https://atlc.sourceforge.net/
 
 LICENSE=	GPLv2+
 

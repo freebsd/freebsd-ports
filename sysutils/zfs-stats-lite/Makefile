@@ -5,7 +5,7 @@ MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display human-readable ZFS statistics
-WWW=		http://druidbsd.sourceforge.net/download.shtml #zfs-stats-lite
+WWW=		https://druidbsd.sourceforge.net/download.shtml #zfs-stats-lite
 
 LICENSE=	BSD2CLAUSE
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard MIDI File file player and recorder for JACK MIDI
-WWW=		http://jack-smf-utils.sourceforge.net/
+WWW=		https://jack-smf-utils.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

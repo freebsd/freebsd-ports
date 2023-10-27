@@ -6,7 +6,7 @@ MASTER_SITES=	http://sary.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suffix array library and tools, which provide fast full-text search
-WWW=		http://sary.sourceforge.net/index.html.en
+WWW=		https://sary.sourceforge.net/index.html.en
 
 USES=		gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20

@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
-WWW=		http://libnoise.sourceforge.net/
+WWW=		https://libnoise.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKDIR}/COPYING.txt

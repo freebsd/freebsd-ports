@@ -7,7 +7,7 @@ DISTNAME=	ZThread-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platform-independent object-oriented C++ threading library
-WWW=		http://zthread.sourceforge.net/
+WWW=		https://zthread.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

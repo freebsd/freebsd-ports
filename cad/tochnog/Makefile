@@ -9,7 +9,7 @@ DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free explicit/implicit Finite Element Program
-WWW=		http://tochnog.sourceforge.net/
+WWW=		https://tochnog.sourceforge.net/
 
 LICENSE=	GPLv2
 

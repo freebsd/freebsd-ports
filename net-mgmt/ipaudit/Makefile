@@ -5,7 +5,7 @@ MASTER_SITES=	SF/ipaudit/ipaudit
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP traffic summarizer
-WWW=		http://ipaudit.sourceforge.net/
+WWW=		https://ipaudit.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

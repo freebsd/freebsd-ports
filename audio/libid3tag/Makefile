@@ -5,7 +5,7 @@ MASTER_SITES=	https://codeberg.org/tenacityteam/${PORTNAME}/archive/${DISTVERSIO
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ID3 tags library (part of MAD project)
-WWW=		http://mad.sourceforge.net/
+WWW=		https://mad.sourceforge.net/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

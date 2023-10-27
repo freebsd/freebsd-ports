@@ -5,7 +5,7 @@ MASTER_SITES=	SF/xiangqi-engine/xiangqi-engine/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese chess (Xiangqi) program
-WWW=		http://xiangqi-engine.sourceforge.net/
+WWW=		https://xiangqi-engine.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

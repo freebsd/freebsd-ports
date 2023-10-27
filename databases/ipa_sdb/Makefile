@@ -6,7 +6,7 @@ MASTER_SITES=	SF/ipa-system/modules/ipa_sdb
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPA simple database module
-WWW=		http://ipa-system.sourceforge.net/modules/ipa_sdb/
+WWW=		https://ipa-system.sourceforge.net/modules/ipa_sdb/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

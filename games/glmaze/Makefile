@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer OpenGL Maze Game
-WWW=		http://glmaze.sourceforge.net/
+WWW=		https://glmaze.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

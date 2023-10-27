@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSL stylesheets to convert UML to SVG
-WWW=		http://uml2svg.sourceforge.net/
+WWW=		https://uml2svg.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

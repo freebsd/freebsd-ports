@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	LAN chat client compatible with quickChat and Vypress Chat (TM)
-WWW=		http://vqcc-gtk.sourceforge.net/
+WWW=		https://vqcc-gtk.sourceforge.net/
 
 LIB_DEPENDS=	libstartup-notification-1.so:x11/startup-notification
 

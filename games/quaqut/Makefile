@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20C%20sources/${PORTNAME}-${PORTVERSION
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Queries information from Unreal Tournament 2004 game servers
-WWW=		http://quaqut.sourceforge.net/
+WWW=		https://quaqut.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

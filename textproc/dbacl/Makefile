@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digramic Bayesian classifier
-WWW=		http://dbacl.sourceforge.net/
+WWW=		https://dbacl.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

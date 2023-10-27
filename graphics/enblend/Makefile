@@ -7,7 +7,7 @@ DISTNAME=	enblend-enfuse-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for image blending with multiresolution splines
-WWW=		http://enblend.sourceforge.net/
+WWW=		https://enblend.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

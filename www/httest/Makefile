@@ -5,7 +5,7 @@ MASTER_SITES=	SF/htt/htt${PORTVERSION:R}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP Test Tool
-WWW=		http://htt.sourceforge.net/
+WWW=		https://htt.sourceforge.net/
 
 LICENSE=	APACHE20
 

@@ -6,7 +6,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulation of water waves on the desktop
-WWW=		http://xdesktopwaves.sourceforge.net/
+WWW=		https://xdesktopwaves.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

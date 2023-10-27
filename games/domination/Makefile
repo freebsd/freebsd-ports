@@ -10,7 +10,7 @@ EXTRACT_ONLY=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Board game that is a bit like the well known game Risk
-WWW=		http://domination.sourceforge.net/
+WWW=		https://domination.sourceforge.net/
 
 LICENSE=	GPLv3
 

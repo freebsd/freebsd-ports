@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-23jul2003
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 GUI for the bochs debugger (revision 2)
-WWW=		http://bfe.sourceforge.net/
+WWW=		https://bfe.sourceforge.net/
 
 RUN_DEPENDS=	bochs:emulators/bochs
 

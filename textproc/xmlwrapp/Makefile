@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern style C++ library for working with XML data
-WWW=		http://xmlwrapp.sourceforge.net/
+WWW=		https://xmlwrapp.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

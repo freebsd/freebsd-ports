@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce HTML and printed documents from LaTeX source
-WWW=		http://hyperlatex.sourceforge.net/
+WWW=		https://hyperlatex.sourceforge.net/
 
 RUN_DEPENDS=	ppmtogif:graphics/netpbm
 

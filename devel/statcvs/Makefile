@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS repository activity report generator
-WWW=		http://statcvs.sourceforge.net/
+WWW=		https://statcvs.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/etc/LICENSE

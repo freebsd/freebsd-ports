@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BuDDy%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Decision Diagram library
-WWW=		http://buddy.sourceforge.net/
+WWW=		https://buddy.sourceforge.net/
 
 USES=		gmake libtool
 GNU_CONFIGURE=	yes

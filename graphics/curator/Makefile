@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Static Image Gallery Generator for web or CD-ROM galleries
-WWW=		http://curator.sourceforge.net/
+WWW=		https://curator.sourceforge.net/
 
 USES=		magick:6,run python
 USE_PYTHON=	distutils autoplist concurrent optsuffix

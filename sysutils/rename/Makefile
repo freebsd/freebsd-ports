@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rename multiple files using regular expressions
-WWW=		http://rename.sourceforge.net/
+WWW=		https://rename.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

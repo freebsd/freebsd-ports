@@ -7,7 +7,7 @@ DISTNAME=	PRICE-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image filtering and manipulation using GNUstep
-WWW=		http://price.sourceforge.net/
+WWW=		https://price.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

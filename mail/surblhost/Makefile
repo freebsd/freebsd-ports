@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check if a hostname is blacklisted
-WWW=		http://surblhost.sourceforge.net/
+WWW=		https://surblhost.sourceforge.net/
 
 USES=	tar:bzip2
 GNU_CONFIGURE=	yes

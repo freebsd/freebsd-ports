@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Debugging Support Library
-WWW=		http://libcwd.sourceforge.net/
+WWW=		https://libcwd.sourceforge.net/
 
 LICENSE=	QPL10
 LICENSE_NAME=	Q Public License, Version 1.0

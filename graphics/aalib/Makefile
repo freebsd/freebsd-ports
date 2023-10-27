@@ -6,7 +6,7 @@ MASTER_SITES=	SF/aa-project/aa-lib/1.4rc5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII art library
-WWW=		http://aa-project.sourceforge.net/aalib/
+WWW=		https://aa-project.sourceforge.net/aalib/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
