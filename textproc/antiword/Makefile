@@ -2,11 +2,11 @@ PORTNAME=	antiword
 PORTVERSION=	0.37
 PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.winfield.demon.nl/linux/
+MASTER_SITES=	https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl/linux/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application for displaying Microsoft(R) Word documents
-WWW=		http://www.winfield.demon.nl/index.html
+WWW=		https://web.archive.org/web/20221207132720/http://www.winfield.demon.nl
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/Docs/COPYING
