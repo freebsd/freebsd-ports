@@ -49,6 +49,7 @@ include/openssl/dsa.h
 include/openssl/dsaerr.h
 include/openssl/dtls1.h
 include/openssl/e_os2.h
+include/openssl/e_ostime.h
 include/openssl/ebcdic.h
 include/openssl/ec.h
 include/openssl/ecdh.h
