@@ -7962,3 +7962,4 @@ devel/electron22|devel/electron24|2023-11-02|Has expired: Depends on EOL NodeJS 
 www/hedgedoc||2023-11-02|Has expired: Depends on EOL NodeJS 16
 games/libretro-beetle_bsnes|games/libretro-mednafen_bsnes|2023-10-26|Follow naming of libretro-super build script
 games/libretro-beetle_gba|games/libretro-mednafen_gba|2023-10-26|Follow naming of libretro-super build script
+games/libretro-beetle_lynx|games/libretro-mednafen_lynx|2023-10-26|Follow naming of libretro-super build script
