@@ -7969,3 +7969,4 @@ games/libretro-beetle_pce_fast|games/libretro-mednafen_pce_fast|2023-10-26|Follo
 games/libretro-beetle_pcfx|games/libretro-mednafen_pcfx|2023-10-26|Follow naming of libretro-super build script
 games/libretro-beetle_saturn|games/libretro-mednafen_saturn|2023-10-26|Follow naming of libretro-super build script
 games/libretro-beetle_supergrafx|games/libretro-mednafen_supergrafx|2023-10-26|Follow naming of libretro-super build script
+games/libretro-beetle_vb|games/libretro-mednafen_vb|2023-10-26|Follow naming of libretro-super build script
