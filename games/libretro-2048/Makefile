@@ -1,5 +1,5 @@
 PORTNAME=	libretro-2048
-PORTVERSION=	0.20220327
+DISTVERSION=	0.20230220
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,14 +13,14 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	a8899c9
+GH_TAGNAME=	331c1de588ed8f8c370dcbc488e5434a3c09f0f2
 
 PLIST_FILES=	lib/libretro/2048_libretro.so
 
 MAKEFILE=	Makefile.libretro
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/2048_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/2048_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
