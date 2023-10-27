@@ -513,6 +513,7 @@
     SUBDIR += libretro-boom3
     SUBDIR += libretro-cap32
     SUBDIR += libretro-core-info
+    SUBDIR += libretro-desmume
     SUBDIR += libretro-desmume2015
     SUBDIR += libretro-dosbox
     SUBDIR += libretro-emux
