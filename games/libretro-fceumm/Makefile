@@ -1,5 +1,5 @@
 PORTNAME=	libretro-fceumm
-PORTVERSION=	0.20220406
+DISTVERSION=	0.20230916
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,12 +13,12 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	b3c35b6
+GH_TAGNAME=	7fad08e5522e5396a1196055fc106be9b5d5de77
 
 PLIST_FILES=	lib/libretro/fceumm_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/fceumm_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/fceumm_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
