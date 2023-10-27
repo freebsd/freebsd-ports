@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic mail classification tool, acts as a POP3 proxy
-WWW=		http://getpopfile.org/
+WWW=		https://getpopfile.org/
 
 LICENSE=	GPLv2
 

@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.soft-switch.org/downloads/unicall/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for supervisory tone generation and detection
-WWW=		http://www.soft-switch.org/
+WWW=		https://www.soft-switch.org/
 
 LICENSE=	LGPL21
 

@@ -7,7 +7,7 @@ DISTNAME=	sdlconsole-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drop down console that can be easily added to any SDL application
-WWW=		http://wacha.ch/wiki/sdlconsole/
+WWW=		https://wacha.ch/wiki/sdlconsole/
 
 USES=		libtool sdl
 USE_SDL=	sdl

@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.langfeldt.net/w3mir/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All-purpose HTTP copying and mirroring tool
-WWW=		http://www.langfeldt.net/w3mir/
+WWW=		https://www.langfeldt.net/w3mir/
 
 LICENSE=	ART10
 

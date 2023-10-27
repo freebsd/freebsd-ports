@@ -6,7 +6,7 @@ CATEGORIES=	chinese textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chewing intelligent phonetic input method library
-WWW=		http://chewing.im
+WWW=		https://chewing.im
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

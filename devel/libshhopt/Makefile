@@ -7,7 +7,7 @@ DISTNAME=	shhopt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing command line options
-WWW=		http://shh.thathost.com/pub-unix/ #shhopt
+WWW=		https://shh.thathost.com/pub-unix/ #shhopt
 
 LICENSE=	ART10
 

@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.ioplex.com/~miallen/domc/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight implementation of the DOM in ANSI C
-WWW=		http://www.ioplex.com/~miallen/domc/
+WWW=		https://www.ioplex.com/~miallen/domc/
 
 LICENSE=	MIT
 

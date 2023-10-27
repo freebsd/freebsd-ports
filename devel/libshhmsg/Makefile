@@ -6,7 +6,7 @@ DISTNAME=	shhmsg-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for displaying messages
-WWW=		http://shh.thathost.com/pub-unix/ #shhmsg
+WWW=		https://shh.thathost.com/pub-unix/ #shhmsg
 
 LICENSE=	ART10
 

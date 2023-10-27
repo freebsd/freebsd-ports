@@ -5,7 +5,7 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Solitaire card game for X Window System
-WWW=		http://shh.thathost.com/pub-unix/ #sol
+WWW=		https://shh.thathost.com/pub-unix/ #sol
 
 LICENSE=	ART10
 

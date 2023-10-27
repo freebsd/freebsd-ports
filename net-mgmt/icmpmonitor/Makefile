@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple host icmp monitoring tool
-WWW=		http://www.crocodile.org/software.html
+WWW=		https://www.crocodile.org/software.html
 
 LICENSE=	GPLv2 BSD4CLAUSE
 LICENSE_COMB=	multi

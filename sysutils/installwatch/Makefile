@@ -6,7 +6,7 @@ MASTER_SITES=	http://asic-linux.com.mx/~izto/checkinstall/files/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File creation/modification logger
-WWW=		http://asic-linux.com.mx/~izto/checkinstall/installwatch.html
+WWW=		https://asic-linux.com.mx/~izto/checkinstall/installwatch.html
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
