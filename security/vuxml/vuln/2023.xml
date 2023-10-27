@@ -1,3 +1,42 @@
+  <vuln vid="386a14bb-1a21-41c6-a2cf-08d79213379b">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>6.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v6.0.2">
+	  <p> A specially-crafted SSL packet could cause Zeek to
+	  leak memory and potentially crash. </p>
+	  <p> A specially-crafted series of FTP packets could cause
+	  Zeek to log entries for requests that have already been
+	  completed, using resources unnecessarily and potentially
+	  causing Zeek to lose other traffic. </p>
+	  <p> A specially-crafted series of SSL packets could cause
+	  Zeek to output a very large number of unnecessary alerts
+	  for the same record. </p>
+	  <p> A specially-crafted series of SSL packets could cause
+	  Zeek to generate very long ssl_history fields in the
+	  ssl.log, potentially using a large amount of memory due
+	  to unbounded state growth </p>
+	  <p> A specially-crafted IEEE802.11 packet could cause
+	  Zeek to overflow memory and potentially crash </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v6.0.2</url>
+    </references>
+    <dates>
+      <discovery>2023-10-27</discovery>
+      <entry>2023-10-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="db33e250-74f7-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
