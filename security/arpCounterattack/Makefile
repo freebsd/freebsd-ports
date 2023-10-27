@@ -7,7 +7,7 @@ MASTER_SITES=	http://isis.poly.edu/~bk/${PORTNAME}/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Detects and remedies ARP attacks
-WWW=		http://acm.poly.edu/wiki/ARP_Counterattack
+WWW=		https://web.archive.org/web/20161008074851/http://acm.poly.edu/wiki/ARP_Counterattack
 
 LIB_DEPENDS=	libdnet.so:net/libdnet \
 		libpcap.so:net/libpcap
