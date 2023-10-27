@@ -19,10 +19,6 @@ you update your ports collection, before attempting any port upgrades.
   #
   DEFAULT_VERSIONS+=ghostscript=9
 
-  If you wish to update to the new default version, you need to first stop any
-  software that uses ghostscript. Then, you will need to follow these steps,
-  depending upon how you manage your system.
-
   Please note that print/ghostcript9* will be removed in the future since it is
   not supported by upstream anymore.
 
