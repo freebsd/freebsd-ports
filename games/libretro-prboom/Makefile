@@ -1,5 +1,5 @@
 PORTNAME=	libretro-prboom
-PORTVERSION=	0.20220327
+DISTVERSION=	0.20230528
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,12 +13,12 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	b22a6b1
+GH_TAGNAME=	6ec854969fd9dec33bb2cab350f05675d1158969
 
 PLIST_FILES=	lib/libretro/prboom_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/prboom_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/prboom_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
