@@ -1,5 +1,5 @@
-PORTNAME=	libretro-vbanext
-PORTVERSION=	0.20220327
+PORTNAME=	libretro-vba_next
+DISTVERSION=	0.20230603
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	vba-next
-GH_TAGNAME=	ebd175d
+GH_TAGNAME=	ee92625d2f1666496be4f5662508a2430e846b00
 
 PLIST_FILES=	lib/libretro/vba_next_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/vba_next_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/vba_next_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
