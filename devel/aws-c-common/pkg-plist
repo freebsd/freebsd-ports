@@ -69,6 +69,7 @@ include/aws/common/stdint.h
 include/aws/common/string.h
 include/aws/common/string.inl
 include/aws/common/system_info.h
+include/aws/common/system_resource_util.h
 include/aws/common/task_scheduler.h
 include/aws/common/thread.h
 include/aws/common/thread_scheduler.h

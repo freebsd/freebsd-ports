@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-common
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -19,5 +19,8 @@ USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
+
+# Test failure: test_memory_usage_maxrss
+# https://github.com/awslabs/aws-c-common/issues/1070
 
 .include <bsd.port.mk>
