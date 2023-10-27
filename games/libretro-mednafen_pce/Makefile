@@ -1,5 +1,5 @@
-PORTNAME=	libretro-beetle_pce
-PORTVERSION=	0.20220218
+PORTNAME=	libretro-mednafen_pce
+DISTVERSION=	0.20231006
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-pce-libretro
-GH_TAGNAME=	ccb9096
+GH_TAGNAME=	b59e34af5383fdfe626af5900bbb231871ece0ea
 
 PLIST_FILES=	lib/libretro/mednafen_pce_libretro.so
 

@@ -7964,3 +7964,4 @@ games/libretro-beetle_bsnes|games/libretro-mednafen_bsnes|2023-10-26|Follow nami
 games/libretro-beetle_gba|games/libretro-mednafen_gba|2023-10-26|Follow naming of libretro-super build script
 games/libretro-beetle_lynx|games/libretro-mednafen_lynx|2023-10-26|Follow naming of libretro-super build script
 games/libretro-beetle_ngp|games/libretro-mednafen_ngp|2023-10-26|Follow naming of libretro-super build script
+games/libretro-beetle_pce|games/libretro-mednafen_pce|2023-10-26|Follow naming of libretro-super build script
