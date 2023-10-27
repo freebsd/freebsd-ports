@@ -1,4 +1,4 @@
-PORTNAME=	libretro-beetle_bsnes
+PORTNAME=	libretro-mednafen_bsnes
 PORTVERSION=	0.20220406
 CATEGORIES=	games
 
@@ -19,7 +19,7 @@ GH_TAGNAME=	d770563
 PLIST_FILES=	lib/libretro/mednafen_snes_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/mednafen_snes_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/mednafen_snes_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

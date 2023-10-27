@@ -497,7 +497,6 @@
     SUBDIR += libretro
     SUBDIR += libretro-2048
     SUBDIR += libretro-a5200
-    SUBDIR += libretro-beetle_bsnes
     SUBDIR += libretro-beetle_gba
     SUBDIR += libretro-beetle_lynx
     SUBDIR += libretro-beetle_ngp
@@ -532,6 +531,7 @@
     SUBDIR += libretro-mame2000
     SUBDIR += libretro-mame2003
     SUBDIR += libretro-mame2003_plus
+    SUBDIR += libretro-mednafen_bsnes
     SUBDIR += libretro-melonds
     SUBDIR += libretro-mgba
     SUBDIR += libretro-mu
