@@ -1,6 +1,5 @@
 PORTNAME=	libretro-vecx
-PORTVERSION=	0.20220327
-PORTREVISION=	1
+DISTVERSION=	0.20230601
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,12 +14,12 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
-GH_TAGNAME=	141af28
+GH_TAGNAME=	a401c268e425dc8ae6a301e7fdb9a9e96f39b8ea
 
 PLIST_FILES=	lib/libretro/vecx_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/vecx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/vecx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
