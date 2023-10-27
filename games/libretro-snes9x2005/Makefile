@@ -1,6 +1,6 @@
 PORTNAME=	libretro-snes9x2005
-DISTVERSION=	1.34-409
-DISTVERSIONSUFFIX=	-gfd45b0e
+DISTVERSION=	0.20220725
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,11 +19,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x2005
+GH_TAGNAME=	fd45b0e055bce6cff3acde77414558784e93e7d0
 
 PLIST_FILES=	lib/libretro/snes9x2005_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/snes9x2005_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/snes9x2005_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
