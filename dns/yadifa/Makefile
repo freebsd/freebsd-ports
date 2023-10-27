@@ -1,6 +1,6 @@
 PORTNAME=	yadifa
-DISTVERSION=	2.6.4
-DISTVERSIONSUFFIX=	-10892
+DISTVERSION=	2.6.5
+DISTVERSIONSUFFIX=	-11201
 CATEGORIES=	dns
 MASTER_SITES=	https://www.yadifa.eu/sites/default/files/releases/ \
 		https://dns.company/downloads/yadifa/
@@ -17,9 +17,6 @@ USE_RC_SUBR=	${PORTNAME}d
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
-
-# obsolete in next version, so > 2.6.2
-LDFLAGS+=	-lexecinfo
 
 SUB_LIST+=	GROUPS="${GROUPS}" \
 		USERS="${USERS}"
@@ -62,6 +59,9 @@ RRL_CONFIGURE_OFF=		--disable-rrl
 RRSIG_CONFIGURE_OFF=		--disable-rrsig-management
 TCL_USES=			tcl
 ZONESIGN_CONFIGURE_ENABLE=	zonesign
+
+CTRL_IMPLIES=			MASTER
+MASTER_IMPLIES=			DDNS RRSIG
 
 post-configure:
 	${REINPLACE_CMD} -e 's|^docdir = .*|docdir = ${EXAMPLESDIR}|' ${WRKSRC}/etc/Makefile

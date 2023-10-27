@@ -1,6 +1,7 @@
 %%EXAMPLES%%etc/bash_completion.d/yadifa.sh
 %%EXAMPLES%%etc/bash_completion.d/yadifad.sh
 @sample etc/yadifad.conf.sample
+%%CTRL%%bin/yadifa
 etc/yakeyrolld.conf
 include/dnscore/acl-config.h
 include/dnscore/acl.h
