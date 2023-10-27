@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USES=		ghostscript:run tex
-USE_TEX=	base texhash # texmf
+USE_TEX=	base texhash
 ALL_TARGET=	# empty
 # workaround for svgfonts.c not including kpathsea/c-auto.h
 CFLAGS+=	-DHAVE_PROTOTYPES
