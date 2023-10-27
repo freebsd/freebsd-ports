@@ -1,5 +1,5 @@
 PORTNAME=	libretro-mame2000
-PORTVERSION=	0.20220405
+DISTVERSION=	0.20230425
 CATEGORIES=	games
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -8,14 +8,12 @@ WWW=		https://github.com/libretro/mame2000-libretro
 
 LICENSE=	GPLv2
 
-BROKEN_aarch64=	fails to build: src/libretro/libretro-common/libco/aarch64.c:25:1: error: meaningless 'volatile' on asm outside function
-
 USES=		compiler:c++11-lib dos2unix gmake
 DOS2UNIX_FILES=	src/cpu/tms9900/99xxstat.h
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	mame2000-libretro
-GH_TAGNAME=	f35db38
+GH_TAGNAME=	720b8ad4cbd76abd57b9aeced9ba541dc8476f7f
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libretro/mame2000_libretro.so
@@ -27,7 +25,7 @@ CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/mame2000_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/mame2000_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.post.mk>
