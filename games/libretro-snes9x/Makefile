@@ -1,6 +1,6 @@
 PORTNAME=	libretro-snes9x
-DISTVERSION=	1.53-2017
-DISTVERSIONSUFFIX=	-g2ed8d68
+DISTVERSION=	0.20231013
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,13 +19,14 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	snes9x
+GH_TAGNAME=	ec4ebfc8f3819a9522fcb8e53eed985090017b1b
 
 PLIST_FILES=	lib/libretro/snes9x_libretro.so
 
-MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/libretro
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/libretro/snes9x_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/libretro/snes9x_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
