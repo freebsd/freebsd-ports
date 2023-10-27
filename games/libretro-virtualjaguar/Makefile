@@ -1,5 +1,5 @@
 PORTNAME=	libretro-virtualjaguar
-PORTVERSION=	0.20220304
+DISTVERSION=	0.20230601
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	virtualjaguar-libretro
-GH_TAGNAME=	263c979
+GH_TAGNAME=	8126e5c504ac7217a638f38e4cd9190822c8abdd
 
 PLIST_FILES=	lib/libretro/virtualjaguar_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/virtualjaguar_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/virtualjaguar_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
