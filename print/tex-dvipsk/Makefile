@@ -1,11 +1,12 @@
 PORTNAME=	dvipsk
 PORTVERSION=	${TEXLIVE_YEAR}.1
 CATEGORIES=	print
-MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
+MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/:source \
+		LOCAL/tex:texmf
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME_TEXMF}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \
+		${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}-freebsd${EXTRACT_SUFX}:texmf
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -29,16 +30,6 @@ CONFIGURE_ARGS=	--with-kpathsea-includes=${LOCALBASE}/include \
 
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=			am m4 build-aux texk/dvipsk texk/lcdf-typetools
-EXTRACT_AFTER_ARGS_TEXMF=	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
-				--strip-components 1 --no-same-permission \
-				--no-same-owner \
-				${EXCLUDE_FILES:S,^,--exclude ,} \
-				${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-EXTRACT_FILES_TEXMF=		texmf-dist/doc/dvips/ texmf-dist/dvips/ \
-				texmf-dist/fonts/map/dvips/ \
-				texmf-dist/fonts/enc/dvips/ \
-				texmf-dist/tex/generic/dvips/
-EXCLUDE_FILES=			texmf-dist/dvips/xdvi
 WRKSRC=				${WRKDIR}/${DISTNAME}/texk/dvipsk
 
 INFO=		dvips
@@ -48,13 +39,40 @@ PLIST_FILES=	bin/afm2tfm \
 		man/man1/dvips.1.gz
 
 pre-install:
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${TEXLIVE_VERSION}-texmf${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS_TEXMF}
+	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}-freebsd${EXTRACT_SUFX} \
+		-C ${STAGEDIR}${PREFIX}/share \
+		--strip-components 1 --no-same-permission --no-same-owner
 
 post-install:
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
+
+.if defined(MAINTAINER_MODE)
+_EXTRACT_FILES=		texmf-dist/doc/dvips/ texmf-dist/dvips/ \
+				texmf-dist/fonts/map/dvips/ \
+				texmf-dist/fonts/enc/dvips/ \
+				texmf-dist/tex/generic/dvips/
+_EXCLUDE_FILES=			texmf-dist/dvips/xdvi
+_WRKSRC=	${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}
+
+_maintainer-extract:
+	${MAKE} clean
+	${MKDIR} ${_WRKSRC}
+	${TAR} -xf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME_TEXMF}${EXTRACT_SUFX} \
+		-C ${_WRKSRC}$ \
+		--strip-components 1 --no-same-permission --no-same-owner \
+		${_EXCLUDE_FILES:S,^,--exclude ,} \
+		${_EXTRACT_FILES:S,^,${DISTNAME_TEXMF}/,}
+
+_maintainer-dist: _maintainer-extract
+	${TAR} --options xz:compression-level=9 -Jcvf \
+		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}-freebsd.tar.xz \
+		-C ${WRKDIR} ${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}
+	scp ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}-${TEXLIVE_VERSION}-freebsd.tar.xz \
+		bofh@freefall.freebsd.org://home/tex/public_distfiles/
+
+.endif
 
 .include <bsd.port.mk>
