@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20231027:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  When updating to >= 23.10.0, a broken crontab is fixed. This breakage
+  caused the validation error: Scheduler is not running
+  After updating, If that error does not clear for you, run:
+
+    sudo lnms config:cache
+
+20231027:
   AFFECTS: users of print/ghostscript9*
   AUTHOR: michaelo@FreeBSD.org
 
