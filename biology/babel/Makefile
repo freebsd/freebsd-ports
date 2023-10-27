@@ -2,12 +2,11 @@ PORTNAME=	babel
 PORTVERSION=	1.6
 PORTREVISION=	4
 CATEGORIES=	biology converters
-MASTER_SITES=	http://smog.com/chem/babel/files/ \
-		http://www.ccl.net/cca/software/UNIX/babel/
+MASTER_SITES=	http://www.ccl.net/cca/software/UNIX/babel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts among various molecular file formats
-WWW=		http://smog.com/chem/babel/
+WWW=		https://web.archive.org/web/20030604155749/http://smog.com/chem/babel/
 
 CONFLICTS_INSTALL=	openbabel
 
