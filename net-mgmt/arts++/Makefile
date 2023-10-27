@@ -3,11 +3,11 @@ PORTVERSION=	1.1.a13
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.caida.org/tools/utilities/arts/download/
+MASTER_SITES=	https://distrib-coffee.ipsl.jussieu.fr/pub/linux/momonga/3/SOURCES/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network data storage and analysis library from CAIDA
-WWW=		http://www.caida.org/tools/utilities/arts/
+WWW=		https://catalog.caida.org/software/arts
 
 LICENSE=	LGPL21
 
