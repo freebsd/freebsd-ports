@@ -51,6 +51,7 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 CGO_LDFLAGS+=	-Wl,--as-needed # gtk4 deps
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/so.libdb.gtkcord4.desktop \
+		share/dbus-1/services/so.libdb.gtkcord4.service \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/metainfo/so.libdb.gtkcord4.metainfo.xml
 
@@ -58,9 +59,13 @@ post-extract:
 # Prune after https://github.com/diamondburned/gtkcord4/commit/86b3ea579df1
 	${RM} ${WRKSRC}/nix/xyz.diamondb.gtkcord4.desktop
 
+post-patch:
+	@${REINPLACE_CMD} 's,/usr/bin,${PREFIX}/bin,' ${WRKSRC}/nix/*.service
+
 post-install:
 # Install extras similar to Nix flake
-.for f in nix/*.desktop *.metainfo.xml internal/icons/hicolor/scalable/apps/logo.svg
+.for f in nix/*.desktop nix/*.service *.metainfo.xml \
+		internal/icons/hicolor/scalable/apps/logo.svg
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}
