@@ -1,5 +1,5 @@
-PORTNAME=	libretro-beetle_pce_fast
-PORTVERSION=	0.20220205
+PORTNAME=	libretro-mednafen_pce_fast
+DISTVERSION=	0.20231006
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-pce-fast-libretro
-GH_TAGNAME=	e880168
+GH_TAGNAME=	1ce7a4a941b10aa0c2973cb441b89ee99e2c8d0e
 
 PLIST_FILES=	lib/libretro/mednafen_pce_fast_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/mednafen_pce_fast_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/mednafen_pce_fast_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
