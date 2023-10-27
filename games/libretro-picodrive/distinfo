@@ -1,3 +1,13 @@
-TIMESTAMP = 1588710031
-SHA256 (libretro-picodrive-0.20200504-600894e_GH0.tar.gz) = 939a1564c799df211b96522e35609398f7d836a53e38488e80b944baf84aa48d
-SIZE (libretro-picodrive-0.20200504-600894e_GH0.tar.gz) = 1437950
+TIMESTAMP = 1698314829
+SHA256 (libretro-picodrive-0.20230811-570319349588288f64c676123244acdb0be33881_GH0.tar.gz) = 868966163ed95a8ab5570284224a489be1de501c865a577de5b2bcb5f0593d0c
+SIZE (libretro-picodrive-0.20230811-570319349588288f64c676123244acdb0be33881_GH0.tar.gz) = 1822880
+SHA256 (irixxxx-libpicofe-7b58e15_GH0.tar.gz) = 2d9ad2456fef958b68dc44163eebd883711e03be85f65a3c5db65edb35b5e2ad
+SIZE (irixxxx-libpicofe-7b58e15_GH0.tar.gz) = 87448
+SHA256 (notaz-cyclone68000-425e3a4_GH0.tar.gz) = aaf0caf9af100f3ec30a18f7a0848c04d0ffce4fdf8bcf2a4d19a661727f2cdd
+SIZE (notaz-cyclone68000-425e3a4_GH0.tar.gz) = 64395
+SHA256 (digital-sound-antiques-emu2413-1.5.9_GH0.tar.gz) = d81c6806122d697e7a0219c9d77b556218c3b6533d7228314159f43e54be814f
+SIZE (digital-sound-antiques-emu2413-1.5.9_GH0.tar.gz) = 17866
+SHA256 (rtissera-libchdr-a20e04c_GH0.tar.gz) = fd765082b48e098a4d659f2dbf6fe5de429db23f45309c710fb5f9dbbaf5167a
+SIZE (rtissera-libchdr-a20e04c_GH0.tar.gz) = 1747219
+SHA256 (mackron-dr_libs-dd762b8_GH0.tar.gz) = be1bb304f8d4d43024e8e4d89c5ed8f3fc235e0992bcffcbfba93b243f661214
+SIZE (mackron-dr_libs-dd762b8_GH0.tar.gz) = 513676
