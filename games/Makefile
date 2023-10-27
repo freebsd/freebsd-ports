@@ -539,7 +539,7 @@
     SUBDIR += libretro-nxengine
     SUBDIR += libretro-o2em
     SUBDIR += libretro-opera
-    SUBDIR += libretro-paralleln64
+    SUBDIR += libretro-parallel_n64
     SUBDIR += libretro-pcsx_rearmed
     SUBDIR += libretro-picodrive
     SUBDIR += libretro-play

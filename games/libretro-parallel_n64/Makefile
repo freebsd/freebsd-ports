@@ -1,6 +1,5 @@
-PORTNAME=	libretro-paralleln64
-PORTVERSION=	0.20220406
-PORTREVISION=	1
+PORTNAME=	libretro-parallel_n64
+DISTVERSION=	0.20230906
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,12 +27,12 @@ MAKE_ARGS=	WITH_DYNAREC=${DYNAREC}
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	parallel-n64
-GH_TAGNAME=	b804ab1
+GH_TAGNAME=	49eadb4da85f7e3bd59b60f61e8fd5dbfb9f07d5
 
 PLIST_FILES=	lib/libretro/parallel_n64_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/parallel_n64_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/parallel_n64_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
