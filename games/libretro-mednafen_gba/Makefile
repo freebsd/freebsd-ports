@@ -1,5 +1,5 @@
-PORTNAME=	libretro-beetle_gba
-PORTVERSION=	0.20210918
+PORTNAME=	libretro-mednafen_gba
+DISTVERSION=	0.20210918
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-gba-libretro
-GH_TAGNAME=	3818257
+GH_TAGNAME=	38182572571a48cb58057cde64b915237c4e2d58
 
 PLIST_FILES=	lib/libretro/mednafen_gba_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/mednafen_gba_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/mednafen_gba_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
