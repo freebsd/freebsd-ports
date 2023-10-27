@@ -1,5 +1,5 @@
 PORTNAME=	libretro-quicknes
-PORTVERSION=	0.20220228
+DISTVERSION=	0.20230528
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	QuickNES_Core
-GH_TAGNAME=	e6f08c1
+GH_TAGNAME=	058d66516ed3f1260b69e5b71cd454eb7e9234a3
 
 PLIST_FILES=	lib/libretro/quicknes_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/quicknes_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/quicknes_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
