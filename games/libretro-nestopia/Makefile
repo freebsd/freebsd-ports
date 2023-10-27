@@ -1,5 +1,5 @@
 PORTNAME=	libretro-nestopia
-PORTVERSION=	0.20220322
+DISTVERSION=	0.20230528
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,14 +14,14 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	nestopia
-GH_TAGNAME=	7dbd5c6
+GH_TAGNAME=	3dcbec4682e079312d6943e1357487645ec608c7
 
 PLIST_FILES=	lib/libretro/nestopia_libretro.so
 
-MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/libretro
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/libretro/nestopia_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/libretro/nestopia_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>
