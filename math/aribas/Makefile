@@ -1,16 +1,17 @@
 PORTNAME=	aribas
 PORTVERSION=	1.64
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.mathematik.uni-muenchen.de/pub/forster/aribas/UNIX_LINUX/ \
+MASTER_SITES=	https://www.mathematik.uni-muenchen.de/~forster/sw/UNIX_LINUX/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for big integer/multi-precision floating point arithmetic
-WWW=		http://www.mathematik.uni-muenchen.de/~forster/sw/adownload.html
+WWW=		https://www.mathematik.uni-muenchen.de/~forster/sw/aribas.html
 
 BUILD_WRKSRC=	${WRKSRC}/src
 
-PLIST_FILES=	bin/aribas man/man1/aribas.1.gz
+PLIST_FILES=	bin/aribas \
+		man/man1/aribas.1.gz
 PORTDOCS=	README aribas.doc aribas.man aribas.tut
 PORTEXAMPLES=	README factor.ari pi.ari queens.ari
 
