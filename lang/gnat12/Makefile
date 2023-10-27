@@ -104,13 +104,28 @@ _PLATFORM=		${OPSYS:tl}${OSREL}
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 _PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
 _PREV_ASSET_OSREL?=	${OSREL:R}
-_PREV_ASSET_REV?=	_2
 _PREV_ASSET_VER?=	${DISTVERSION}
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
 _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GCC6AUX_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == aarch64
+_PREV_ASSET_REV?=	_5
+.elif ${ARCH} == i386
+.  if ${OSREL:R} == 14
+_PREV_ASSET_REV?=	_5
+.  else
+_PREV_ASSET_REV?=	_6
+.  endif
+.else	# amd64
+.  if ${OSREL:R} == 12 || ${OSREL:R} == 14
+_PREV_ASSET_REV?=	_5
+.  else
+_PREV_ASSET_REV?=	_6
+.  endif
+.endif
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
 LIB_DIR_32=	""
