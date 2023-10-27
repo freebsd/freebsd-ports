@@ -1,6 +1,5 @@
-PORTNAME=	libretro-uae
-PORTVERSION=	0.20220404
-PORTREVISION=	1
+PORTNAME=	libretro-puae
+DISTVERSION=	0.20231014
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	libretro-uae
-GH_TAGNAME=	8c44289
+GH_TAGNAME=	e13578877d1764bde7d6fb5b404c0965fa209540
 
 CFLAGS+=	-fcommon
 
@@ -26,11 +25,8 @@ LDFLAGS_i386=	-Wl,-z,notext
 
 PLIST_FILES=	lib/libretro/puae_libretro.so
 
-#post-patch:
-#	${REINPLACE_CMD} 's/" GIT_VERSION/${GH_TAGNAME}"/' ${WRKSRC}/libretro/libretro.c
-
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/puae_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/puae_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

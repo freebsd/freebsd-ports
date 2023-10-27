@@ -556,8 +556,8 @@
     SUBDIR += libretro-stella2014
     SUBDIR += libretro-tgbdual
     SUBDIR += libretro-tyrquake
-    SUBDIR += libretro-uae
     SUBDIR += libretro-vbanext
+    SUBDIR += libretro-puae
     SUBDIR += libretro-vecx
     SUBDIR += libretro-virtualjaguar
     SUBDIR += libretro-xrick

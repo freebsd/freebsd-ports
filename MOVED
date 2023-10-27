@@ -7973,3 +7973,4 @@ games/libretro-beetle_vb|games/libretro-mednafen_vb|2023-10-26|Follow naming of 
 games/libretro-beetle_wswan|games/libretro-mednafen_wswan|2023-10-26|Follow naming of libretro-super build script
 games/libretro-fbalpha|games/libretro-fbalpha2012|2023-10-26|Follow naming of libretro-super build script
 games/libretro-paralleln64|games/libretro-parallel_n64|2023-10-26|Follow naming of libretro-super build script
+games/libretro-uae|games/libretro-puae|2023-10-26|Follow naming of libretro-super build script
