@@ -1,7 +1,7 @@
 PORTNAME=	primme
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,14 +25,12 @@ CFLAGS+=	-fPIC
 LDFLAGS+=	${LAPACKLIB} -lm
 
 OPTIONS_RADIO=	LINALG
-OPTIONS_RADIO_LINALG=	ATLAS GOTOBLAS NETLIB OPENBLAS
+OPTIONS_RADIO_LINALG=	ATLAS NETLIB OPENBLAS
 OPTIONS_DEFAULT=	OPENBLAS
 
 LINALG_DESC=		Choose which linear algebra interface (LAPACK) implementation to use:
 
-GOTOBLAS_DESC=		Goto blas implementation
 ATLAS_USES=		blaslapack:atlas
-GOTOBLAS_USES=		blaslapack:gotoblas
 NETLIB_USES=		blaslapack:netlib
 NETLIB_LDFLAGS=		-lblas # XXX why this isn't covered by blaslapack:netlib?
 OPENBLAS_USES=		blaslapack:openblas
