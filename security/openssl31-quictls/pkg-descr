@@ -1,0 +1,8 @@
+This is a fork of OpenSSL to enable QUIC. This fork adds API that can be
+used by QUIC implementations for connection handshakes.
+
+There is a community need for a QUIC capable TLS library. This fork is
+intended as stopgap solution to enable higher level frameworks and runtimes
+to use QUIC with the proven and reliable TLS functionality from OpenSSL.
+This fork will be maintained until OpenSSL officially provides reasonable
+support for QUIC implementations.

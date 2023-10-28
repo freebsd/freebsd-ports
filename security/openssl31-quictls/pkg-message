@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+
+This QUIC capable OpenSSL fork is in an ALPHA stage
+
+Do NOT use for production!
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+
+This QUIC capable OpenSSL fork is in an ALPHA stage
+
+Do NOT use for production!
+
+EOM
+}
+]
