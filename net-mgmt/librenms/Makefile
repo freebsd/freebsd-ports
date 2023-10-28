@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	23.10.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -14,9 +15,7 @@ LICENSE=	GPLv3
 IGNORE_WITH_PHP=	82
 
 # perhaps we also need python-memcache python-mysqldb
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
-		${LOCALBASE}/share/pear/Net/IPv6.php:net/pear-Net_IPv6@${PHP_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>0:www/py-python-dotenv@${PY_FLAVOR} \
 		bash:shells/bash \
 		dot:graphics/graphviz \
@@ -28,7 +27,7 @@ USES=		cpe php python shebangfix
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
 		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
-		sockets tokenizer xml xmlwriter zip
+		sockets tokenizer xml xmlwriter zip zlib
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/build-phar.sh \
