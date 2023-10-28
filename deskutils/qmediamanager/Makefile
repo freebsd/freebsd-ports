@@ -1,6 +1,6 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.1.1
-PORTREVISION=	1
+DISTVERSION=	0.1.1-2
+DISTVERSIONSUFFIX=	-g2dc5c7b
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	libxtend>=0.1.8:devel/libxtend
 LIB_DEPENDS=	libxtend.so:devel/libxtend
 RUN_DEPENDS=	npmount>0:sysutils/npmount \
 		devd-mount>0:sysutils/devd-mount \
-		auto-admin>=0.7.18:sysutils/auto-admin \
+		auto-admin>=0.8.0:sysutils/auto-admin \
 		rxvt-unicode>0:x11/rxvt-unicode
 
 USES=		gl qmake qt:6
