@@ -10,6 +10,9 @@ WWW=		http://www.webfwlog.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on EOL MySQL 5.7
+EXPIRATION_DATE=	2023-11-28
+
 USES=		cpe php:web
 
 GNU_CONFIGURE=	yes
