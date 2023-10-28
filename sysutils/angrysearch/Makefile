@@ -10,6 +10,9 @@ WWW=		https://github.com/DoTheEvo/ANGRYsearch
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
+EXPIRATION_DATE=	2023-11-28
+
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
