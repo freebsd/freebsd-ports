@@ -13,6 +13,9 @@ WWW=		https://launchpad.net/qr-tools
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
+EXPIRATION_DATE=	2023-11-28
+
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zbar-py>=1.0.4:graphics/py-zbar-py@${PY_FLAVOR}
