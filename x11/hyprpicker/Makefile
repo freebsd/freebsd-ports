@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
+USES=		compiler:c++11-lib cmake gnome localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
