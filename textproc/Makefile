@@ -2081,7 +2081,6 @@
     SUBDIR += write-good
     SUBDIR += wv
     SUBDIR += wv2
-    SUBDIR += xalan-c
     SUBDIR += xalan-j
     SUBDIR += xenv
     SUBDIR += xerces-c3

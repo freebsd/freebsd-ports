@@ -7952,3 +7952,4 @@ net/pacemaker1|net/pacemaker2|2023-10-22|Hasn't built in a long time, last upstr
 multimedia/subsync|multimedia/ffsubsync|2023-10-22|Project was renamed
 dns/libasr-devel||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD
 dns/libasr||2023-10-25|Has expired: libasr will be maintained only as part of OpenSMTPD
+textproc/xalan-c||2023-10-28|Has expired: Upstream no longer continuing; please consider textproc/libxslt, textproc/qt5-xmlpatterns or SaxonC as potential alternatives
