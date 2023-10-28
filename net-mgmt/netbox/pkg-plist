@@ -1014,6 +1014,7 @@
 %%DATADIR%%/templates/dcim/virtualchassis_edit.html
 %%DATADIR%%/templates/dcim/virtualchassis_remove_member.html
 %%DATADIR%%/templates/dcim/virtualdevicecontext.html
+%%DATADIR%%/templates/django/forms/widgets/checkbox.html
 %%DATADIR%%/templates/exceptions/import_error.html
 %%DATADIR%%/templates/exceptions/permission_error.html
 %%DATADIR%%/templates/exceptions/programming_error.html
