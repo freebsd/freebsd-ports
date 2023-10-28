@@ -1,3 +1,6 @@
 NPMount is a command-line tool to provide limited mount and unmount
 capabilities to non-privileged users, such as mounting and unmounting
-external media including optical discs and thumb drives.
+external media including optical discs and thumb drives.  It is
+primarily intended to be a companion tool for automount services
+such as FreeBSD's devd, NetBSD's devpubd, etc. and client tools such
+as qmediamanager.
