@@ -240,6 +240,7 @@ man/man3/bl_align_map_seq_sub.3.gz
 man/man3/bl_align_set_max_mismatch_percent.3.gz
 man/man3/bl_align_set_min_match.3.gz
 man/man3/bl_bed_check_order.3.gz
+man/man3/bl_bed_gff3_cmp.3.gz
 man/man3/bl_bed_gff_cmp.3.gz
 man/man3/bl_bed_read.3.gz
 man/man3/bl_bed_set_block_count.3.gz
@@ -430,6 +431,8 @@ man/man3/bl_sam_copy_header.3.gz
 man/man3/bl_sam_fclose.3.gz
 man/man3/bl_sam_fopen.3.gz
 man/man3/bl_sam_free.3.gz
+man/man3/bl_sam_gff3_cmp.3.gz
+man/man3/bl_sam_gff3_overlap.3.gz
 man/man3/bl_sam_gff_cmp.3.gz
 man/man3/bl_sam_gff_overlap.3.gz
 man/man3/bl_sam_init.3.gz
