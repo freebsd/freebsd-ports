@@ -1,7 +1,7 @@
 PORTNAME=	godot
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.3
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	devel games
 PKGNAMESUFFIX?=	35
 
@@ -51,8 +51,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# tagged 24/1 for 3.5.1
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:9e68af38d9f2:DEMOS
+# 3.5 head as of 28/2
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:c0180d20d10d:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
