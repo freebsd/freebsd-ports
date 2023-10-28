@@ -1,6 +1,5 @@
 PORTNAME=	libosinfo
-PORTVERSION=	1.10.0
-PORTREVISION=	2
+PORTVERSION=	1.11.0
 CATEGORIES=	devel
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 
@@ -25,7 +24,7 @@ CONFIGURE_ARGS+=	-Denable-vala=disabled \
 			-Dwith-usb-ids-path=${LOCALBASE}/share/usbids/usb.ids \
 			-Dwith-pci-ids-path=${LOCALBASE}/share/pciids/pci.ids
 
-SHLIB_VER=	0.1010.0
+SHLIB_VER=	0.1011.0
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 
 OPTIONS_DEFINE=	GTKDOC
