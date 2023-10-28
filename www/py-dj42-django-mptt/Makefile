@@ -21,4 +21,8 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=		yes
 
+# Upstream of NetBox pinned django-mptt to 0.14.0 since the 0.15.0 release
+# dropped support for Python 3.8
+PORTSCOUT=	limit:^0\.14\.
+
 .include <bsd.port.mk>
