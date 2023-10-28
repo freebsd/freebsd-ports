@@ -1,7 +1,7 @@
 PORTNAME=	KVIrc
 DISTVERSION=	5.0.0-102
 DISTVERSIONSUFFIX=	-geb3fdd6b1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,9 +17,10 @@ LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gnome \
 		kde:5 perl5 pkgconfig python qt:5 ssl tar:bzip2 xorg
 USE_GNOME=	glib20
-USE_PERL5=	build
+USE_PERL5=	run build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n notifications \
-		service widgetsaddons windowsystem xmlgui
+		service widgetsaddons windowsystem xmlgui \
+		ecm:build
 USE_QT=		core dbus gui multimedia network phonon4 printsupport sql svg \
 		widgets x11extras xml \
 		buildtools:build qmake:build
