@@ -1,7 +1,7 @@
 PORTNAME=	godot
-DISTVERSION=	4.0.2
+DISTVERSION=	4.1.2
 DISTVERSIONSUFFIX=	-stable
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES=	devel games
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -54,8 +54,8 @@ AUDIO_DESC=		Audio support
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_MAKE_ARGS=		alsa=True
 ALSA_MAKE_ARGS_OFF=	alsa=False
-# 4.0 head at 3/3
-EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:778baf07cc7d:DEMOS
+# 4.0 head at 29/3
+EXAMPLES_GH_TUPLE=	godotengine:godot-demo-projects:05c8f822972f:DEMOS
 EXAMPLES_PORTEXAMPLES=	*
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MAKE_ARGS=	pulseaudio=True
