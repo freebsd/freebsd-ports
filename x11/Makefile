@@ -52,6 +52,7 @@
     SUBDIR += damask
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
+    SUBDIR += deforaos-locker
     SUBDIR += deskmenu
     SUBDIR += disman
     SUBDIR += dmenu
