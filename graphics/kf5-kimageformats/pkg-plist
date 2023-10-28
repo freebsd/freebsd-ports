@@ -12,6 +12,7 @@
 %%QT_PLUGINDIR%%/imageformats/kimg_psd.so
 %%QT_PLUGINDIR%%/imageformats/kimg_qoi.so
 %%QT_PLUGINDIR%%/imageformats/kimg_ras.so
+%%RAW%%%%QT_PLUGINDIR%%/imageformats/kimg_raw.so
 %%QT_PLUGINDIR%%/imageformats/kimg_rgb.so
 %%QT_PLUGINDIR%%/imageformats/kimg_tga.so
 %%QT_PLUGINDIR%%/imageformats/kimg_xcf.so
@@ -31,6 +32,7 @@ share/kservices5/qimageioplugins/pic.desktop
 share/kservices5/qimageioplugins/psd.desktop
 share/kservices5/qimageioplugins/qoi.desktop
 share/kservices5/qimageioplugins/ras.desktop
+%%RAW%%share/kservices5/qimageioplugins/raw.desktop
 share/kservices5/qimageioplugins/rgb.desktop
 share/kservices5/qimageioplugins/tga.desktop
 share/kservices5/qimageioplugins/xcf.desktop
