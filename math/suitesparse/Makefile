@@ -1,5 +1,5 @@
 PORTNAME=	suitesparse
-PORTVERSION=	7.2.2
+PORTVERSION=	7.3.0
 CATEGORIES=	math
 
 MAINTAINER=	fortran@FreeBSD.org
