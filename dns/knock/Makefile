@@ -10,9 +10,6 @@ WWW=		https://github.com/guelfoweb/knock
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
-EXPIRATION_DATE=	2023-11-28
-
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
