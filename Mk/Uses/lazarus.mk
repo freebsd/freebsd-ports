@@ -9,7 +9,9 @@
 # gtk2      - This automatically build lazarus-app with gtk2 interface
 #     
 # qt5       - This automatically build lazarus-app with qt5 interface
-#                
+#
+# qt6       - This automatically build lazarus-app with qt6 interface
+#
 # flavors   - This automatically build lazarus-app with flavors feature
 #
 # If the port not requires compile lazarus project files automatically, you can
@@ -46,13 +48,17 @@ _INCLUDE_USES_LAZARUS_MK=   yes
 WARNING+=	"DEFAULT_LAZARUS_VER is defined, consider using DEFAULT_VERSIONS=lazarus=${DEFAULT_LAZARUS_VER} instead"
 .  endif
 
-.  if ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
-IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nflavors}
+.  if ${lazarus_ARGS:Mqt6} && !defined(WANT_LAZARUS_DEVEL)
+IGNORE=		"DEFAULT_LAZARUS_VER not support qt6 flavor, consider using: gtk2 or qt5 instead"
+.  endif
+
+.  if ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
+IGNORE=		Unknown argument for USES=lazarus: ${lazarus_ARGS:Ngtk2:Nqt5:Nqt6:Nflavors}
 .  endif
 
 .  if !empty(LAZARUS_NO_FLAVORS)
-.    if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
-IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5}
+.    if ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5:Nqt6}
+IGNORE=         Unknown argument for LAZARUS_NO_FLAVORS: ${LAZARUS_NO_FLAVORS:Ngtk2:Nqt5:Nqt6}
 .    endif
 .  endif
 
@@ -77,6 +83,10 @@ LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
 MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
 
 LAZARUS_FLAVORS=	gtk2 qt5
+
+.  if defined(WANT_LAZARUS_DEVEL)
+LAZARUS_FLAVORS+=	qt6
+.  endif
 
 .  if ${lazarus_ARGS:Mflavors}
 .    if defined(LAZARUS_NO_FLAVORS)
@@ -115,6 +125,12 @@ BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus$
 LIB_DEPENDS+=	libQt5Pas.so:x11-toolkits/qt5pas
 LCL_PLATFORM=	qt5
 BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt5${LAZARUS_DEVELSUFFIX}
+.  endif
+
+.  if ${lazarus_ARGS:Mqt6} || ${FLAVOR} == qt6
+LIB_DEPENDS+=	libQt6Pas.so:x11-toolkits/qt6pas
+LCL_PLATFORM=	qt6
+BUILD_DEPENDS+=	${LCL_UNITS_DIR}/${LCL_PLATFORM}/interfaces.ppu:editors/lazarus-qt6${LAZARUS_DEVELSUFFIX}
 .  endif
 
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild
