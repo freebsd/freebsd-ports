@@ -1,6 +1,7 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -21,7 +22,7 @@ USES=		desktop-file-utils pyqt:5 python shared-mime-info shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenShot
 GH_PROJECT=	${PORTNAME}-qt
-USE_PYQT=	pyqt5
+USE_PYQT=	pyqt5 webengine
 USE_PYTHON=	distutils optsuffix
 SHEBANG_FILES=	src/language/generate_translations.py\
 		src/language/show_translations.py\
