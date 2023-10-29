@@ -1,9 +1,9 @@
 PORTNAME?=	husky
-PORTVERSION=	1.9.20191207
+PORTVERSION=	1.9.20200418
 PORTEPOCH?=	0
 CATEGORIES?=	news mail
 MASTER_SITES=	http://download.huskyproject.org/sources/
-DISTNAME=	husky-all-1.9-source-20191207
+DISTNAME=	husky-all-1.9-source-20200418
 
 MAINTAINER?=	osharoiko@gmail.com
 COMMENT?=	Husky full featured highly portable FTN Tosser
