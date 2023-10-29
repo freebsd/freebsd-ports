@@ -15,9 +15,6 @@ LICENSE_NAME=	Open-Source PyMOL Copyright
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
-EXPIRATION_DATE=	2023-11-28
-
 BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		${LOCALBASE}/include/mmtf.hpp:science/mmtf-cpp
