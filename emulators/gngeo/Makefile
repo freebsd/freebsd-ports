@@ -11,9 +11,11 @@ WWW=		https://github.com/pepone42/gngeo
 
 LICENSE=	GPLv2
 
+DEPRECATED=	BROKEN for more that 2 years after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
+BROKEN_i386=	unknown argument: '-frerun-loop-opt'
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: current_fix
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: current_fix
-BROKEN_i386=	unknown argument: '-frerun-loop-opt'
 
 USES=		autoreconf compiler:features gl gmake sdl
 USE_SDL=	image sdl
