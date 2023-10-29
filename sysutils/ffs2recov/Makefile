@@ -10,6 +10,8 @@ WWW=		https://BSDforge.com/projects/sysutils/ffs2recov/
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	BROKEN on supported versions after EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	Changes made to the ffs2 filesystem in FreeBSD 13 are no longer compatible with ffs2recov
 BROKEN_FreeBSD_14=	Changes made to the ffs2 filesystem in FreeBSD 13 are no longer compatible with ffs2recov
 
