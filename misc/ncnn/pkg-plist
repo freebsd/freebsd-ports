@@ -29,6 +29,7 @@ include/ncnn/paramdict.h
 include/ncnn/pipeline.h
 include/ncnn/pipelinecache.h
 include/ncnn/platform.h
+include/ncnn/simplemath.h
 include/ncnn/simpleocv.h
 include/ncnn/simpleomp.h
 include/ncnn/simplestl.h
