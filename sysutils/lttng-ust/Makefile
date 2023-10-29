@@ -1,6 +1,5 @@
 PORTNAME=	lttng-ust
-PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTVERSION=	2.13.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
@@ -10,24 +9,25 @@ WWW=		https://github.com/lttng/lttng-ust
 
 LICENSE=		LGPL21 MIT GPLv2
 LICENSE_COMB=		dual
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING
-LICENSE_FILE_MIT=	${WRKSRC}/COPYING
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-
-BROKEN=		fails to configure: Cannot find liburcu-bp lib. Use LDFLAGS=-Ldir to specify its location
+LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		xmlto:textproc/xmlto
 LIB_DEPENDS=	liburcu.so:sysutils/liburcu
 
-USES=		autoreconf gmake libtool localbase pathfix python \
+USES=		autoreconf gmake libtool localbase pathfix pkgconfig python \
 		shebangfix tar:bzip2
 USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	tools/lttng-gen-tp
+
 GNU_CONFIGURE=	yes
 # XXX: build fails if cmake is detected, see PR 253327
 CONFIGURE_ENV=	ac_cv_prog_HAVE_CMAKE=no
+
 INSTALL_TARGET=	install-strip
-SHEBANG_FILES=	tools/lttng-gen-tp
 TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS

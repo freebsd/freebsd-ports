@@ -1,18 +1,13 @@
---- doc/examples/hello-static-lib/Makefile.orig	2016-08-08 21:25:36 UTC
+--- doc/examples/hello-static-lib/Makefile.orig	2022-03-25 15:37:17 UTC
 +++ doc/examples/hello-static-lib/Makefile
-@@ -14,13 +14,9 @@
- #
+@@ -8,8 +8,8 @@
  # This makefile is purposefully kept simple to support GNU and BSD make.
  
--ifdef AM_CC
--	CC = $(AM_CC)
--endif
--
  LOCAL_CPPFLAGS += -I.
 -LIBS = -ldl -llttng-ust	# On Linux
 -#LIBS = -lc -llttng-ust	# On BSD
 +#LIBS = -ldl -llttng-ust	# On Linux
 +LIBS = -llttng-ust	# On FreeBSD
- 
- all: hello
+ AM_V_P := :
+ AR ?= ar
  

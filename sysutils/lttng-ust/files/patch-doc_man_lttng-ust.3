@@ -1,38 +1,53 @@
---- doc/man/lttng-ust.3.orig	2016-11-29 22:13:51 UTC
+--- doc/man/lttng-ust.3.orig	2022-03-25 17:53:42 UTC
 +++ doc/man/lttng-ust.3
-@@ -88,7 +88,7 @@ lttng-ust \- LTTng user space tracing
- #define \fBtracepoint_enabled\fR(\fIprov_name\fR, \fIt_name\fR)
- .fi
+@@ -2,12 +2,12 @@
+ .\"     Title: lttng-ust
+ .\"    Author: [see the "AUTHORS" section]
+ .\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+-.\"      Date: 03/25/2022
++.\"      Date: 04/07/2022
+ .\"    Manual: LTTng Manual
+ .\"    Source: LTTng 2.13.2
+ .\"  Language: English
+ .\"
+-.TH "LTTNG\-UST" "3" "03/25/2022" "LTTng 2\&.13\&.2" "LTTng Manual"
++.TH "LTTNG\-UST" "3" "04/07/2022" "LTTng 2\&.13\&.2" "LTTng Manual"
+ .\" -----------------------------------------------------------------
+ .\" * Define some portability stuff
+ .\" -----------------------------------------------------------------
+@@ -114,7 +114,7 @@ Link with, following this manual page:
+ .sp -1
+ .IP \(bu 2.3
+ .\}
+-\fB-llttng-ust -ldl\fR
++\fB-llttng-ust\fR
+ .RE
  .sp
--Link with \fB-llttng-ust -ldl\fR, following this man page\&.
-+Link with \fB-llttng-ust\fR, following this man page\&.
- .SH "DESCRIPTION"
- .sp
- The \fILinux Trace Toolkit: next generation\fR <http://lttng.org/> is an open source software package used for correlated tracing of the Linux kernel, user applications, and user libraries\&.
-@@ -919,7 +919,7 @@ Then, link your application with this ob
+ .RS 4
+@@ -1066,7 +1066,7 @@ Then, link your application with this object file (or 
  .RS 4
  .\}
  .nf
--cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
-+cc \-o app tp\&.o app\&.o \-llttng\-ust
+-$ cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
++$ cc \-o app tp\&.o app\&.o \-llttng\-ust
  .fi
  .if n \{\
  .RE
-@@ -1004,7 +1004,7 @@ This tracepoint provider shared object i
+@@ -1151,7 +1151,7 @@ This tracepoint provider shared object isn\(cqt linked
  .RS 4
  .\}
  .nf
--cc \-o app app\&.o tp\-define\&.o \-ldl
-+cc \-o app app\&.o tp\-define\&.o
+-$ cc \-o app app\&.o tp\-define\&.o \-ldl
++$ cc \-o app app\&.o tp\-define\&.o
  .fi
  .if n \{\
  .RE
-@@ -1544,7 +1544,7 @@ You can compile the source files and lin
+@@ -1823,7 +1823,7 @@ You can compile the source files and link them togethe
  .nf
- cc \-c \-I\&. tp\&.c
- cc \-c app\&.c
--cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
-+cc \-o app tp\&.o app\&.o \-llttng\-ust
+ $ cc \-c \-I\&. tp\&.c
+ $ cc \-c app\&.c
+-$ cc \-o app tp\&.o app\&.o \-llttng\-ust \-ldl
++$ cc \-o app tp\&.o app\&.o \-llttng\-ust
  .fi
  .if n \{\
  .RE

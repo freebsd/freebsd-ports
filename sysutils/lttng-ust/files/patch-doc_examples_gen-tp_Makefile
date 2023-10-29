@@ -1,17 +1,13 @@
---- doc/examples/gen-tp/Makefile.orig	2016-08-08 21:25:36 UTC
+--- doc/examples/gen-tp/Makefile.orig	2022-03-25 15:37:17 UTC
 +++ doc/examples/gen-tp/Makefile
-@@ -17,12 +17,8 @@
- #
- # This makefile is purposefully kept simple to support GNU and BSD make.
+@@ -12,8 +12,8 @@
  
--ifdef AM_CC
--	CC = $(AM_CC)
--endif
--
+ PYTHON := python
+ 
 -LIBS = -ldl -llttng-ust		#On Linux
 -#LIBS = -lc -llttng-ust		#On BSD
 +#LIBS = -ldl -llttng-ust		#On Linux
 +LIBS = -llttng-ust		#On FreeBSD
+ AM_V_P := :
  
  all: sample
- 
