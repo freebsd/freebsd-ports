@@ -2,6 +2,7 @@
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/gdrivecontextmenuaction.so
 %%QT_PLUGINDIR%%/kf5/kio/gdrive.so
 %%QT_PLUGINDIR%%/kf5/propertiesdialog/gdrivepropertiesplugin.so
+%%QT_PLUGINDIR%%/kf5/purpose/purpose_gdrive.so
 share/accounts/services/kde/google-drive.service
 share/knotifications5/gdrive.notifyrc
 share/locale/ar/LC_MESSAGES/kio5_gdrive.mo
@@ -48,3 +49,4 @@ share/locale/zh_CN/LC_MESSAGES/kio5_gdrive.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_gdrive.mo
 share/metainfo/org.kde.kio_gdrive.metainfo.xml
 share/remoteview/gdrive-network.desktop
+share/purpose/purpose_gdrive_config.qml
