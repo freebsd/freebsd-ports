@@ -15,7 +15,7 @@ RUN_DEPENDS+=	${KMODDIR}/nvidia.ko:x11/nvidia-driver
 
 LICENSE_FILE=	${WRKSRC}/nvidia/doc/license.txt
 
-NVIDIA_GH_TAGNAME=	${PKGNAME}
+NVIDIA_GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 USE_GITHUB=	yes
 GH_ACCOUNT=	amshafer freebsd:drm
 GH_PROJECT=	nvidia-driver drm-kmod:drm
