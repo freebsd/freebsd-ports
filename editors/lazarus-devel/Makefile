@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
-PORTVERSION=	2.3.0
+DISTVERSION=	3.0.0.20231028
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -9,7 +9,7 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2 devel)
 WWW=		https://www.lazarus-ide.org/
 
-CONFLICTS?=	${PORTNAME}-qt5-* ${PORTNAME}-gtk2-2*
+CONFLICTS?=	lazarus-gtk2 lazarus-qt5 lazarus-qt5-devel lazarus-qt6-devel
 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		fpcres:lang/fpc-utils
@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_TAGNAME=	8d4b429879fc99ee4652c966015e19e2cb1131d8
+GL_COMMIT=	da69f50a82ed2c57fdecc26023f75431bffe3d42
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_FPC?=	chm cairo dblib fcl-base fcl-db fcl-fpcunit fcl-image fcl-json fcl-net \
@@ -36,7 +36,7 @@ OPT?=		"-Sgic "
 MAKE_ENV=	OPT=${OPT}
 PLIST=		${WRKDIR}/pkg-plist
 #WRKSRC?=	${WRKDIR}/${PORTNAME}
-DATADIR?=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
+DATADIR?=	${PREFIX}/share/${PORTNAME}-${LAZARUS_BASE}
 
 OPTIONS_DEFINE=		GDB
 GDB_DESC=		Install a newest version  of gdb
@@ -45,6 +45,7 @@ OPTIONS_DEFAULT=	GDB
 .include <bsd.port.options.mk>
 
 LAZARUS_ARCH=	${ARCH:S,amd64,x86_64,}
+LAZARUS_BASE=	3.0.0
 
 BUILDNAME=	${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_PLATFORM?=	gtk2
@@ -79,13 +80,14 @@ post-patch:
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} bigide LCL_PLATFORM=${LCL_PLATFORM}
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} tools LCL_PLATFORM=${LCL_PLATFORM}
 
 post-build:
 	@cd ${WRKSRC} && \
 		${RM} -R COPYING* README* debian localize.bat test *.orig *.bak startlazarus.app \
-			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig
+			ide/Makefile*.orig ide/Makefile*.bak lcl/interfaces/qt5/qtobjects.pas.orig \
+			.git*
+	@cd ${WRKSRC} && \
+		${FIND} . -name ".gitignore" -exec ${RM} "{}" \;
 
 pre-install:
 	@${ECHO} "#!/bin/sh" > ${WRKDIR}/lazarus-wrapper
@@ -135,24 +137,24 @@ do-install:
 		@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 		@cd ${WRKSRC}/${DIRE} && \
 			${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
-				${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
+				${FIND} * -type f -exec ${INSTALL_DATA} -p {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/tools/svn2revisioninc ${STAGEDIR}${DATADIR}/tools/lazres ${STAGEDIR}${DATADIR}/tools/lrstolfm \
 		${STAGEDIR}${DATADIR}/tools/updatepofiles
 
-.for FILE in lazarus startlazarus lazbuild
+.for FILE in lazarus lazbuild startlazarus
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
 	@cd ${WRKDIR}/docs && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DOCSDIR}/{}" \;
-	@${LN} -s ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
+	@${LN} -sf ${DOCSDIR} ${STAGEDIR}${DATADIR}/docs
 
 	@cd ${WRKDIR}/examples && \
 		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${EXAMPLESDIR}/{}" \; && \
 			${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${EXAMPLESDIR}/{}" \;
-	@${LN} -s ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
+	@${LN} -sf ${EXAMPLESDIR} ${STAGEDIR}${DATADIR}/examples
 
 .for RESO in 128 16 256 32 48 64
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${RESO}x${RESO}/apps
@@ -177,6 +179,6 @@ do-install:
 .for FILE in ${MAN1S}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-	${LN} -s ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
+	${LN} -sf ${DATADIR}/lazbuild ${STAGEDIR}${PREFIX}/bin/lazbuild
 
 .include <bsd.port.mk>
