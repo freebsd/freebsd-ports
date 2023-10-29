@@ -1,6 +1,5 @@
 PORTNAME=	qt6pas
-PORTVERSION=	6.2.6
-PORTREVISION=	1
+PORTVERSION=	6.2.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	LOCAL/acm/
 
@@ -12,7 +11,7 @@ USES=		compiler:c++11-lang qmake qt:6
 USE_QT=		base:build declarative:build tools:build
 USE_LDCONFIG=	yes
 
-QT6_VER_MIN=	6.2.6
+QT6_VER_MIN=	6.2.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-mincoming-stack-boundary=2||g' ${WRKSRC}/Qt6Pas.pro
