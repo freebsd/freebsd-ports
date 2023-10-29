@@ -1,6 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	23.10.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -178,6 +178,9 @@ do-install:
 .for f in ${_SCRIPT_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}/${WWWDIR}
 .endfor
+	# avoid: Error: lnms file is owned by root, it should be owned and ran by a non-privileged user
+	${ECHO_CMD} "@(www,wheel,0555) www/${PORTNAME}/lnms" >> ${TMPPLIST}
+
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/vendor
 	(cd ${WRKDIR}/${PORTNAME}-vendor-${PORTVERSION} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/vendor)
 
@@ -219,7 +222,7 @@ do-install-EXAMPLES-on:
 post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' -or -name '.gitignore' ')' -delete
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' | grep -v www/librenms/lnms >> ${TMPPLIST}
 
 # we do this file separately because it needs a different chmod/chown
 # it will eventually contains secrets
