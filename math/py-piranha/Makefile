@@ -9,12 +9,14 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python binding for Piranha, the computer algebra system
 WWW=		https://github.com/bluescarni/piranha
 
-BROKEN=		does not build: src/real.hpp:811:11: error: expected unqualified-id
-
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.gpl3
 LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.lgpl3
+
+DEPRECATED=	BROKEN for more than a year and last upstream activity was in 2018
+EXPIRATION_DATE=	2023-11-30
+BROKEN=		does not build: src/real.hpp:811:11: error: expected unqualified-id
 
 BUILD_DEPENDS=	${LOCALBASE}/include/piranha/piranha.hpp:math/${PORTNAME}
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
