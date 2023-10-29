@@ -15,6 +15,9 @@ LICENSE_NAME=	The Kannel Software License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on EOL MySQL 5.7
+EXPIRATION_DATE=	2023-11-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 PORTSCOUT=	skipv:1.5.0

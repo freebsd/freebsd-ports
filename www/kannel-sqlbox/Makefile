@@ -13,6 +13,9 @@ LICENSE_NAME=	The Kannel Software License, Version 1.0
 LICENSE_FILE=	${WRKSRC}/KannelLICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Depends on EOL MySQL 5.7 (www/kannel)
+EXPIRATION_DATE=	2023-11-30
+
 BUILD_DEPENDS=	${LOCALBASE}/include/kannel/gw-config.h:www/kannel
 RUN_DEPENDS=	${LOCALBASE}/sbin/bearerbox:www/kannel
 LIB_DEPENDS=	libpcreposix.so:devel/pcre
