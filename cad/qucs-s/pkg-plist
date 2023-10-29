@@ -220,6 +220,10 @@ share/man/man1/qucs-s.1.gz
 %%DATADIR%%/examples/qucsator/time_resistor.sch
 %%DATADIR%%/examples/qucsator/triode.sch
 %%DATADIR%%/examples/qucsator/wilkinson.sch
+%%DATADIR%%/examples/symbols/schematic_symbols.sch
+%%DATADIR%%/examples/symbols/symbols_blank.sch
+%%DATADIR%%/examples/symbols/symbols_optos.sch
+%%DATADIR%%/examples/symbols/symbols_transformers.sch
 %%DATADIR%%/examples/xyce/BJT_DC_xyce.sch
 %%DATADIR%%/examples/xyce/Xyce2ToneTest.sch
 %%DATADIR%%/examples/xyce/Xyce2ToneTest_mod.sch
@@ -311,10 +315,13 @@ share/man/man1/qucs-s.1.gz
 %%DATADIR%%/library/MOSFETs.lib
 %%DATADIR%%/library/NMOSFETs.lib
 %%DATADIR%%/library/OpAmps.lib
+%%DATADIR%%/library/Optocoupler.lib
 %%DATADIR%%/library/PMOSFETs.lib
+%%DATADIR%%/library/PhotovoltaicRelay.lib
 %%DATADIR%%/library/Regulators.lib
 %%DATADIR%%/library/SpiceOpamp.lib
 %%DATADIR%%/library/Substrates.lib
+%%DATADIR%%/library/Thyristor.lib
 %%DATADIR%%/library/Transformers.lib
 %%DATADIR%%/library/Transistors.lib
 %%DATADIR%%/library/Tubes.lib
