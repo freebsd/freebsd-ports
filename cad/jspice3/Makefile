@@ -7,6 +7,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adaptation of the Berkeley Spice3f4 with superconductivity
 WWW=		http://www.wrcad.com/jspice3.html
 
+DEPRECATED=	BROKEN for more than 2 years on all supported versions after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_aarch64=		fails to install: jspice3: No such file or directory
 BROKEN_riscv64=		fails to install: jspice3: No such file or directory
 BROKEN_FreeBSD_13=	fails to install: jspice3: No such file or directory
