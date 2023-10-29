@@ -1,5 +1,6 @@
 PORTNAME=	kio-gdrive
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -17,7 +18,7 @@ RUN_DEPENDS=	kaccounts-providers>=0:net-im/kaccounts-providers
 USES=		cmake gettext gnome kde:5 pkgconfig qt:5 tar:xz
 USE_GNOME=	intltool
 USE_KDE=	completion config coreaddons i18n jobwidgets kio \
-		notifications service solid widgetsaddons windowsystem \
+		notifications purpose service solid widgetsaddons windowsystem \
 		gapi \
 		ecm:build
 USE_QT=		concurrent core dbus gui network widgets xml \
