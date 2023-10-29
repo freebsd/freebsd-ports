@@ -2,7 +2,7 @@ PORTNAME=	lazarus
 PORTVERSION=	2.2.6
 DISTVERSIONSUFFIX=	-0
 PKGNAMESUFFIX?=  -gtk2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	editors devel
 MASTER_SITES=	SF/${PORTNAME}/Lazarus%20Zip%20_%20GZip/Lazarus%20${PORTVERSION} \
 		LOCAL/acm/freepascal
@@ -12,7 +12,7 @@ MAINTAINER?=	acm@FreeBSD.org
 COMMENT?=	Portable Delphi-like IDE for the FreePascal compiler (GTK2)
 WWW=		https://www.lazarus-ide.org/
 
-CONFLICTS?=	${PORTNAME}-qt5
+CONFLICTS?=	lazarus-gtk2-devel lazarus-qt5 lazarus-qt5-devel lazarusqt6-devel
 
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		fpcres:lang/fpc-utils
@@ -136,7 +136,7 @@ do-install:
 		@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 		@cd ${WRKSRC}/${DIRE} && \
 			${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
-				${FIND} * -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
+				${FIND} * -type f -exec ${INSTALL_DATA} -p {} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 	@${CHMOD} +x ${STAGEDIR}${DATADIR}/tools/svn2revisioninc ${STAGEDIR}${DATADIR}/tools/lazres ${STAGEDIR}${DATADIR}/tools/lrstolfm \
 		${STAGEDIR}${DATADIR}/tools/updatepofiles
