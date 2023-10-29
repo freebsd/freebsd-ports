@@ -11,9 +11,6 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 
 PYQT_DIST=	yes
 
-DEPRECATED=		Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
-
 LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5 \
 		libdbus-1.so:devel/dbus
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR} \
