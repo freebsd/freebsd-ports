@@ -19,27 +19,30 @@ The Lazarus RAD devel was installed
 4) You can use %%LOCALBASE%%/bin/gdb debugger instead of gdb installed debugger
    installed from base system. Lazarus works better with this version.
 
-5) The lazbuild.cfg file has been removed, it is not necessary anymore. Now
-   we can use the following ports for aplications that depend of lazarus
+5) We can use the following ports for aplications that depend of lazarus
    and these can be built with an interface different than lazarus has compiled
    by default:
 
    editors/lazarus
+   editors/lazarus-devel
    editors/lazarus-qt5
+   editors/lazarus-qt5-devel
+   editors/lazarus-qt6-devel
 
-   You can added those ports if you want support for gtk2 or qt5
+   You can added those ports if you want support for gtk2, qt5 or qt6
    interfaces. Please look at net-p2p/transmission-remote-gui like a example of
    how use it
 
-6) If you want built apps using trunk version of lazarus, you must add the
+6) If you want built apps using devel version of lazarus, you must add the
    following into /etc/make.conf file
 
    WANT_LAZARUS_DEVEL=  yes
 
-   It is neccesary for use devel version of lazarus (gtk2 or qt5)
+   It is neccesary for use devel version of lazarus (gtk2, qt5 or qt6)
 
    editors/lazarus-devel
    editors/lazarus-qt5-devel
+   editors/lazarus-qt6-devel
 
 7) Enjoy it ;)
 EOM

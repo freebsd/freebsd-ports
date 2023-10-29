@@ -2,7 +2,7 @@ PKGNAMESUFFIX?=  -qt5-devel
 
 COMMENT=	Portable Delphi-like IDE for the FreePascal compiler (QT5 devel)
 
-CONFLICTS=	${PORTNAME}-gtk2-* ${PORTNAME}-qt5-2*
+CONFLICTS=	lazarus-gtk2 lazarus-gtk2-devel lazarus-qt5 lazarus-qt6-devel
 
 LIB_DEPENDS=	libQt5Pas.so:x11-toolkits/qt5pas
 
