@@ -11,6 +11,8 @@ WWW=		https://github.com/openshift/installer
 LICENSE=	APACHE20
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE
 
+DEPRECATED=	BROKEN for more than a year
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		unfetchable dependency openshift-cluster-api-provider-gcp
 
 ONLY_FOR_ARCHS=	amd64
