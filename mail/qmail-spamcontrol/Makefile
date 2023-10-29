@@ -11,6 +11,8 @@ EXTRACT_ONLY=	${QMAIL_DIST}
 COMMENT=	Qmail MTA with SpamControl patches
 WWW=		http://www.fehcom.de/qmail/spamcontrol.html
 
+DEPRECATED=	BROKEN for more than 4+ years
+EXPIRATION_DATE=	2023-11-30
 BROKEN_FreeBSD_12=	incomplete definition of type 'struct X509_name_st'
 BROKEN_FreeBSD_13=	incomplete definition of type 'struct X509_name_st'
 BROKEN_FreeBSD_14=	incomplete definition of type 'struct X509_name_st'
