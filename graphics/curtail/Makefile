@@ -1,6 +1,6 @@
 PORTNAME=	curtail
 DISTVERSION=	1.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,6 @@ BUILD_DEPENDS=	appstream-util:devel/appstream-glib
 RUN_DEPENDS=	cwebp:graphics/webp \
 		jpegoptim:graphics/jpegoptim \
 		libadwaita>0:x11-toolkits/libadwaita \
-		optipng:graphics/optipng \
 		oxipng:graphics/oxipng \
 		pngquant:graphics/pngquant \
 		scour:textproc/py-scour@${PY_FLAVOR}
