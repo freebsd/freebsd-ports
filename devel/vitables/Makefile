@@ -10,9 +10,6 @@ WWW=		https://github.com/uvemas/ViTables
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
-EXPIRATION_DATE=	2023-11-28
-
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
