@@ -13,9 +13,6 @@ WWW=		https://github.com/chipmuenk/pyFDA
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
-EXPIRATION_DATE=	2023-11-28
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>0:textproc/py-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
