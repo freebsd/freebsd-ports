@@ -10,6 +10,8 @@ WWW=		http://corsair626.no-ip.org/microdc/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	BROKEN for more than an year
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		does not build: undefined symbol: main_to_utf8_string
 
 CONFLICTS=	tthsum
