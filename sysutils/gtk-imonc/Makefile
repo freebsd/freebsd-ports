@@ -10,6 +10,8 @@ WWW=		http://stefan-strigler.de/gtkimonc/
 
 LICENSE=	GPLv2+
 
+DEPRECATED=	BROKEN for more than 2 years
+EXPIRATION_DATE=	2023-11-30
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: admin_passwd
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: admin_passwd
 
