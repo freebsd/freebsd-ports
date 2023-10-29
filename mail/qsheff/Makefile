@@ -12,6 +12,8 @@ WWW=		http://www.enderunix.org/qsheff/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	BROKEN on all supported versions after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: CUSTOM_PROG
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: CUSTOM_PROG
 
