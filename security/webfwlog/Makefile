@@ -1,5 +1,6 @@
 PORTNAME=	webfwlog
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://devel.webfwlog.net/download/v1.1.x/
@@ -10,17 +11,20 @@ WWW=		http://www.webfwlog.net/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Depends on EOL MySQL 5.7
-EXPIRATION_DATE=	2023-11-28
-
 USES=		cpe php:web
+USE_PHP=		session
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-syslog \
 			--sysconfdir=${ETCDIR} \
 			--disable-dependency-tracking
 
-USE_PHP=		session
+SUB_FILES=	pkg-message
+SUB_LIST+=	VERSION=${PORTVERSION}
+
+PLIST_SUB+=	WWWGRP=${WWWGRP}
+PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
+		README README.geoip README.pdf ReleaseNotes
 
 OPTIONS_DEFINE=		DOCS
 
@@ -32,7 +36,7 @@ OPTIONS_GROUP=		GEOIPV2
 OPTIONS_GROUP_GEOIPV2=	LIBMAXMINDDB MAXMINDDB BDB
 GEOIPV2_DESC=		GEOIPv2 support
 
-OPTIONS_DEFAULT=	MYSQLIPV6 MYSQL
+OPTIONS_DEFAULT=	PGSQL
 
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_USE=		php=mysqli
@@ -69,14 +73,6 @@ BDB_CONFIGURE_WITH=		libdb=${BDB_LIB_NAME}
 BDB_CPPFLAGS=			-I${BDB_INCLUDE_DIR}
 BDB_LDFLAGS=			-L${BDB_LIB_DIR}
 BDB_USES=			bdb
-
-PORTDOCS=	AUTHORS COPYING CREDITS ChangeLog INSTALL \
-		README README.geoip README.pdf ReleaseNotes
-
-SUB_FILES=	pkg-message
-SUB_LIST+=	VERSION=${PORTVERSION}
-
-PLIST_SUB+=	WWWGRP=${WWWGRP}
 
 .include <bsd.port.options.mk>
 
