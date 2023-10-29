@@ -10,6 +10,8 @@ WWW=		http://pdfedit.cz/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	BROKEN on all supported versions for 2 years after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_powerpc64=	fails to configure: error: Could not link against boost_program_options
 BROKEN_sparc64=		fails to configure: error: Could not link against boost_program_options
 BROKEN_FreeBSD_13=	fails to compile: call to 'advance' is ambiguous
