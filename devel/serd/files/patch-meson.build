@@ -1,14 +1,10 @@
-Manpage is available even with -Ddocs=disabled
-
---- meson.build.orig	2022-09-09 03:07:05 UTC
+--- meson.build.orig	2023-10-23 14:57:25 UTC
 +++ meson.build
-@@ -135,9 +135,7 @@ if not get_option('tools').disabled()
- 
-   meson.override_find_program('serdi', serdi)
- 
--  if not get_option('docs').disabled()
-     install_man(files('doc/serdi.1'))
--  endif
+@@ -228,6 +228,4 @@ endif
+   subdir('test')
  endif
  
- ###########
+-if not get_option('docs').disabled()
+-  subdir('doc')
+-endif
++subdir('doc')
