@@ -3,7 +3,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	9
 CATEGORIES=	www
 
-MAINTAINER=	dbaio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 # Co-maintainer: Alberto Mijares <amijaresp@gmail.com> (PR/173889)
 COMMENT=	Add-on module for www/kannel (svn rev.55)
 WWW=		https://redmine.kannel.org/projects/kannel-sq-lbox
