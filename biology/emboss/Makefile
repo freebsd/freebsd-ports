@@ -1,6 +1,6 @@
 PORTNAME=	emboss
 PORTVERSION=	6.6.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	biology
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
@@ -17,8 +17,7 @@ BUILD_DEPENDS=	clustalw:biology/clustalw \
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png
 
-USES=		gmake libtool iconv mysql pgsql ssl
-IGNORE_WITH_MYSQL=	80
+USES=		gmake libtool iconv localbase:ldflags pgsql ssl
 USE_SUBMAKE=	yes
 
 CONFLICTS=	qmail-ldap digest
@@ -29,16 +28,18 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message emboss-shell
 SUB_LIST=	PREFIX=${PREFIX} DATADIR=${DATADIR}
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG}
 INSTALL_TARGET=	install-strip
 
 DOCSDIR=	${PREFIX}/share/${PORTNAME:tu}/doc
 DATADIR=	${PREFIX}/share/${PORTNAME:tu}
 
-OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFINE=	DOCS MYSQL X11
 OPTIONS_DEFAULT=	X11
+
 DOCS_CONFIGURE_ON=	--with-docroot=${DOCSDIR}
+MYSQL_USES=	mysql
+MYSQL_VARS=	IGNORE_WITH_MYSQL=80
 X11_USES=	motif xorg
 X11_USE=	XORG=x11
 X11_LIB_DEPENDS=	libgd.so:graphics/gd \
