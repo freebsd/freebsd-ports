@@ -12,6 +12,8 @@ MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	Quake III Arena -- first person shooter (native build)
 WWW=		http://www.idsoftware.com/games/quake/quake3-arena/
 
+DEPRECATED=	BROKEN for more than 4 years on all supported versions after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: re
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: re
 
