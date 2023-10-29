@@ -11,6 +11,10 @@ WWW=		https://github.com/haecker-felix/gradio
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	BROKEN for more than a year
+EXPIRATION_DATE=	2023-11-30
+BROKEN=		Does not build against current vala
+
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libjson-glib-1.0.so:devel/json-glib
 
@@ -19,11 +23,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haecker-felix
 GH_PROJECT=	Gradio
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
-USE_GSTREAMER=	mpg123 soup
-
 GLIB_SCHEMAS=	de.haeckerfelix.gradio.gschema.xml
-
-BROKEN=		Does not build against current vala
+USE_GSTREAMER=	mpg123 soup
 
 post-patch:
 	${REINPLACE_CMD} -e "s,python3,${PYTHON_CMD}," ${WRKSRC}/meson_post_install.sh
