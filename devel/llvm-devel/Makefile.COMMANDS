@@ -64,7 +64,6 @@ LLVM_COMMANDS=	\
 		llvm-undname \
 		llvm-windres \
 		llvm-xray \
-		readtapi \
 		opt \
 		sancov
 
@@ -132,9 +131,9 @@ LLD_COMMANDS=	\
 LLDB_COMMANDS=	\
 		lldb \
 		lldb-argdumper \
+		lldb-dap \
 		lldb-instr \
-		lldb-server \
-		lldb-vscode
+		lldb-server
 
 MLIR_COMMANDS=	\
 		mlir-cat \
@@ -145,6 +144,7 @@ MLIR_COMMANDS=	\
 		mlir-opt \
 		mlir-pdll \
 		mlir-pdll-lsp-server \
+		mlir-query \
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate \
