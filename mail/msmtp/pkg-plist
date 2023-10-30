@@ -8,6 +8,7 @@ man/man1/msmtp.1.gz
 %%NLS%%share/locale/eo/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/msmtp.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/msmtp.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/msmtp.mo
