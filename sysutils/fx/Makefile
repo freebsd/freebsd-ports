@@ -1,5 +1,5 @@
 PORTNAME=	fx
-DISTVERSION=	30.0.3
+DISTVERSION=	30.2.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	nulldutra@proton.me
@@ -32,8 +32,6 @@ GH_TUPLE=	\
 		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-localereader:v0.0.1:mattn_go_localereader/vendor/github.com/mattn/go-localereader \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mazznoer:colorgrad:v0.9.1:mazznoer_colorgrad/vendor/github.com/mazznoer/colorgrad \
-		mazznoer:csscolorparser:v0.1.2:mazznoer_csscolorparser/vendor/github.com/mazznoer/csscolorparser \
 		muesli:ansi:2e021307bc4b:muesli_ansi/vendor/github.com/muesli/ansi \
 		muesli:cancelreader:v0.2.2:muesli_cancelreader/vendor/github.com/muesli/cancelreader \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
