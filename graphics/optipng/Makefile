@@ -1,35 +1,31 @@
 PORTNAME=	optipng
-PORTVERSION=	0.7.7
+DISTVERSION=	0.7.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/OptiPNG/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tom@hur.st
 COMMENT=	Optimizer for PNG files
-WWW=		http://optipng.sourceforge.net/
+WWW=		https://optipng.sourceforge.net/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-OPTIONS_DEFINE=	BUNDLED_LIBPNG BUNDLED_ZLIB DOCS
+LIB_DEPENDS=	libpng.so:graphics/png
 
-BUNDLED_LIBPNG_DESC=		Use bundled libpng
-BUNDLED_LIBPNG_CONFIGURE_OFF=	--with-system-libpng
-BUNDLED_LIBPNG_CONFIGURE_ON=	--without-system-libpng
-BUNDLED_LIBPNG_LIB_DEPENDS_OFF=	libpng.so:graphics/png
-BUNDLED_LIBPNG_USES_OFF=	localbase:ldflags
-
-BUNDLED_ZLIB_DESC=		Use bundled zlib
-BUNDLED_ZLIB_CONFIGURE_OFF=	--with-system-zlib
-BUNDLED_ZLIB_CONFIGURE_ON=	--without-system-zlib
-
-USES=		cpe gmake
-HAS_CONFIGURE=	yes
-
+USES=		cpe gmake localbase:ldflags
 CPE_VENDOR=	optipng_project
 
-PLIST_FILES=	bin/optipng man/man1/optipng.1.gz
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-system-libpng \
+		--with-system-zlib
+
+PLIST_FILES=	bin/optipng \
+		man/man1/optipng.1.gz
 PORTDOCS=	history.txt optipng.man.html optipng.man.pdf optipng.man.txt \
 		png_optimization.html todo.txt
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/optipng/optipng ${STAGEDIR}${PREFIX}/bin/
