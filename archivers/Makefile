@@ -87,6 +87,7 @@
     SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
+    SUBDIR += lzsa
     SUBDIR += makeself
     SUBDIR += mar
     SUBDIR += maxcso

@@ -1,0 +1,10 @@
+--- Makefile.orig	2023-02-27 17:23:00 UTC
++++ Makefile
+@@ -1,5 +1,5 @@
+-CC=clang
+-CFLAGS=-O3 -g -fomit-frame-pointer -Isrc/libdivsufsort/include -Isrc
++CC?= clang
++CFLAGS+= -Isrc/libdivsufsort/include -Isrc
+ OBJDIR=obj
+ LDFLAGS=
+ 

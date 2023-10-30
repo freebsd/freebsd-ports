@@ -1,0 +1,2 @@
+LZSA is a collection of byte-aligned compression formats that are specifically
+engineered for very fast decompression on 8-bit systems.
