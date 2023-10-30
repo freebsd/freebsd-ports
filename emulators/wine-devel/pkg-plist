@@ -1644,7 +1644,6 @@ lib/wine/%%WINEARCH%%-unix/libfaultrep.a
 lib/wine/%%WINEARCH%%-unix/libgdi32.a
 lib/wine/%%WINEARCH%%-unix/libgdiplus.a
 lib/wine/%%WINEARCH%%-unix/libglu32.a
-%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libhal.a
 lib/wine/%%WINEARCH%%-unix/libhid.a
 lib/wine/%%WINEARCH%%-unix/libhidclass.a
@@ -1774,6 +1773,7 @@ lib/wine/%%WINEARCH%%-unix/libwindowscodecs.a
 lib/wine/%%WINEARCH%%-unix/libwindowscodecsext.a
 lib/wine/%%WINEARCH%%-unix/libwinecrt0.a
 lib/wine/%%WINEARCH%%-unix/libwined3d.a
+%%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/libwinegstreamer.a
 lib/wine/%%WINEARCH%%-unix/libwinevulkan.a
 lib/wine/%%WINEARCH%%-unix/libwinhttp.a
 lib/wine/%%WINEARCH%%-unix/libwininet.a
