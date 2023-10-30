@@ -1,5 +1,5 @@
 PORTNAME=	goland
-DISTVERSION=	2023.2.3
+DISTVERSION=	2023.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	https://download-cdn.jetbrains.com/go/
 PKGNAMEPREFIX=	jetbrains-
