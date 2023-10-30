@@ -1,7 +1,6 @@
 PORTNAME=	fclones
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.1
-PORTREVISION=	1
+DISTVERSION=	0.34.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,15 +44,15 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.1 \
+		clap-4.4.7 \
+		clap_builder-4.4.7 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
 		constant_time_eq-0.3.0 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.9 \
+		cpufeatures-0.2.11 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
@@ -141,12 +140,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
 		rust_decimal-1.32.0 \
-		rustix-0.38.20 \
+		rustix-0.38.21 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		scopeguard-1.2.0 \
-		serde-1.0.189 \
-		serde_derive-1.0.189 \
+		serde-1.0.190 \
+		serde_derive-1.0.190 \
 		serde_json-1.0.107 \
 		serde_test-1.0.176 \
 		sha2-0.10.8 \
@@ -158,7 +157,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		strsim-0.10.0 \
 		syn-2.0.38 \
 		sysinfo-0.29.10 \
-		tempfile-3.8.0 \
+		tempfile-3.8.1 \
 		terminal_size-0.3.0 \
 		thiserror-1.0.50 \
 		thiserror-impl-1.0.50 \
