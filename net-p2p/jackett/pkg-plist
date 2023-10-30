@@ -78,6 +78,7 @@
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animetime.yml
 %%DATADIR%%/Definitions/animetracker.yml
+%%DATADIR%%/Definitions/animetorrentsro.yml
 %%DATADIR%%/Definitions/animeworld-api.yml
 %%DATADIR%%/Definitions/anirena.yml
 %%DATADIR%%/Definitions/anisource.yml
@@ -150,12 +151,11 @@
 %%DATADIR%%/Definitions/cpabien.yml
 %%DATADIR%%/Definitions/cpasbienclone.yml
 %%DATADIR%%/Definitions/crackingpatching.yml
-%%DATADIR%%/Definitions/crazyhd.yml
+%%DATADIR%%/Definitions/crazyspirits.yml
 %%DATADIR%%/Definitions/crnaberza.yml
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
-%%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
 %%DATADIR%%/Definitions/demonoid.yml
@@ -168,6 +168,7 @@
 %%DATADIR%%/Definitions/divteam.yml
 %%DATADIR%%/Definitions/dmhy.yml
 %%DATADIR%%/Definitions/docspedia.yml
+%%DATADIR%%/Definitions/dreamingtree.yml
 %%DATADIR%%/Definitions/dreamtracker.yml
 %%DATADIR%%/Definitions/drugari.yml
 %%DATADIR%%/Definitions/dxp.yml
@@ -194,6 +195,7 @@
 %%DATADIR%%/Definitions/fantastiko.yml
 %%DATADIR%%/Definitions/fappaizuri.yml
 %%DATADIR%%/Definitions/fastscene.yml
+%%DATADIR%%/Definitions/fearnopeer.yml
 %%DATADIR%%/Definitions/femdomcult.yml
 %%DATADIR%%/Definitions/file-tracker.yml
 %%DATADIR%%/Definitions/filelisting.yml
@@ -203,6 +205,7 @@
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
+%%DATADIR%%/Definitions/fusionmayhem.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
 %%DATADIR%%/Definitions/gamera.yml
@@ -330,7 +333,6 @@
 %%DATADIR%%/Definitions/monikadesign-api.yml
 %%DATADIR%%/Definitions/mousebits.yml
 %%DATADIR%%/Definitions/moviesdvdr.yml
-%%DATADIR%%/Definitions/movietorrent.yml
 %%DATADIR%%/Definitions/movietorrentz.yml
 %%DATADIR%%/Definitions/movieworld.yml
 %%DATADIR%%/Definitions/mteamtp.yml
@@ -371,8 +373,6 @@
 %%DATADIR%%/Definitions/peersfm.yml
 %%DATADIR%%/Definitions/pier720.yml
 %%DATADIR%%/Definitions/pignetwork.yml
-%%DATADIR%%/Definitions/piratbit.yml
-%%DATADIR%%/Definitions/piratbitl.yml
 %%DATADIR%%/Definitions/pixelcove.yml
 %%DATADIR%%/Definitions/pixelcove2fa.yml
 %%DATADIR%%/Definitions/polishsource.yml
@@ -534,6 +534,7 @@
 %%DATADIR%%/Definitions/u2.yml
 %%DATADIR%%/Definitions/ubits.yml
 %%DATADIR%%/Definitions/uhdbits.yml
+%%DATADIR%%/Definitions/ultra-hd.yml
 %%DATADIR%%/Definitions/ultrahd.yml
 %%DATADIR%%/Definitions/uniondht.yml
 %%DATADIR%%/Definitions/unionfansub.yml
@@ -561,7 +562,6 @@
 %%DATADIR%%/Definitions/xxxadulttorrent.yml
 %%DATADIR%%/Definitions/xxxclub.yml
 %%DATADIR%%/Definitions/xxxtor.yml
-%%DATADIR%%/Definitions/xxxtorrents.yml
 %%DATADIR%%/Definitions/ydypt.yml
 %%DATADIR%%/Definitions/yggcookie.yml
 %%DATADIR%%/Definitions/yggtorrent.yml
