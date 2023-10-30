@@ -5,7 +5,7 @@ CATEGORIES=	sysutils net
 
 MAINTAINER=	grembo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
-WWW=		https://github.com/araujobsd/pftop/
+WWW=		https://github.com/grembo/pftop/
 
 LICENSE=	BSD2CLAUSE
 
