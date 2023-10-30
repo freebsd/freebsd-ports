@@ -1,7 +1,6 @@
 PORTNAME=	OpenFermion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +11,7 @@ WWW=		https://github.com/quantumlib/OpenFermion
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cirq-core>=0.15.0:science/py-cirq-core@${PY_FLAVOR} \
+PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cirq-core>=1.0:science/py-cirq-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cirq-google>=0.15.0:science/py-cirq-google@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}deprecation>0:devel/py-deprecation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.8:science/py-h5py@${PY_FLAVOR} \
@@ -26,7 +25,7 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # 91 tests fail, see https://github.com/quantumlib/OpenFermion/issues/851
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quantumlib
