@@ -1,6 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	8.4.0
-PORTREVISION=	1
+DISTVERSION=	8.5.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +20,6 @@ USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/install_semodule.bsx \
 		ansible_collections/community/zabbix/roles/zabbix_server/files/install_semodule.bsx \
-		ansible_collections/cyberark/conjur/ci/build_release \
-		ansible_collections/cyberark/conjur/ci/publish_to_galaxy \
 		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr \
 		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
 # It's probably best to leave shebangs in modules untouched as they must be
