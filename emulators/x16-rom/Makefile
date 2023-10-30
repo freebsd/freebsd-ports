@@ -1,12 +1,13 @@
 PORTNAME=	x16-rom
-DISTVERSION=	r44
+DISTVERSION=	r45
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Commander X16 ROM
 WWW=		https://github.com/X16Community
 
-BUILD_DEPENDS=	cc65:devel/cc65 \
+BUILD_DEPENDS=	lzsa:archivers/lzsa \
+		cc65:devel/cc65 \
 		bash:shells/bash
 
 USES=		gmake python:build shebangfix
