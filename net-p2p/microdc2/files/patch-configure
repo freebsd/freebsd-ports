@@ -1,11 +1,19 @@
---- configure.orig	2006-12-25 02:45:07 +0800
+--- configure.orig	2006-12-24 18:45:07 UTC
 +++ configure
-@@ -21508,7 +21508,7 @@ cat >>confdefs.h <<\_ACEOF
+@@ -21501,14 +21501,14 @@ fi
+ 
+ if test -n "$XML_CONFIG" && test -n "$TR"; then
+   LIBXML2_VERSION=`$XML_CONFIG --version | $TR -d "."`
+-  if test $LIBXML2_VERSION -eq 2616; then
++  if false; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define XML_SAVE_FORMAT 1
  _ACEOF
  
    fi
 -  if test $LIBXML2_VERSION -ge 2616; then
-+  if test $LIBXML2_VERSION \> 2615; then
++  if true; then
      cat >>confdefs.h <<\_ACEOF
  #define HAVE_LIBXML2 1
  _ACEOF
