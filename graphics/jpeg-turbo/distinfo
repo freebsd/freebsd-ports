@@ -1,5 +1,3 @@
-TIMESTAMP = 1689030143
-SHA256 (libjpeg-turbo-3.0.0.tar.gz) = c77c65fcce3d33417b2e90432e7a0eb05f59a7fff884022a9d931775d583bfaa
-SIZE (libjpeg-turbo-3.0.0.tar.gz) = 2799663
-SHA256 (035ea386d1b6a99a8a1e2ab57cc1fc903569136c.patch) = 6acb276db2875b9929b2d6697c5cb22b842fec35bc325fbcc0d0b795ee582900
-SIZE (035ea386d1b6a99a8a1e2ab57cc1fc903569136c.patch) = 4194
+TIMESTAMP = 1697566698
+SHA256 (libjpeg-turbo-3.0.1.tar.gz) = 22429507714ae147b3acacd299e82099fce5d9f456882fc28e252e4579ba2a75
+SIZE (libjpeg-turbo-3.0.1.tar.gz) = 2800900
