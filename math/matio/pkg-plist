@@ -9,6 +9,7 @@ libdata/pkgconfig/matio.pc
 man/man3/Mat_Close.3.gz
 man/man3/Mat_CreateVer.3.gz
 man/man3/Mat_GetDir.3.gz
+man/man3/Mat_GetFileAccessMode.3.gz
 man/man3/Mat_GetFilename.3.gz
 man/man3/Mat_GetHeader.3.gz
 man/man3/Mat_GetLibraryVersion.3.gz
