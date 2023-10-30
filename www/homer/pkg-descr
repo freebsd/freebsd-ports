@@ -1,0 +1,6 @@
+A dead simple static HOMepage for your servER to keep your services on hand,
+from a simple yaml configuration file.
+
+If you need authentication support, you're on your own (it can be secured using
+a web server auth module or exposing it only through a VPN network / SSH tunnel,
+etc)
