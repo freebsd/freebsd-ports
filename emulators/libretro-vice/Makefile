@@ -1,5 +1,5 @@
 PORTNAME=	libretro-vice
-PORTVERSION=	0.20201218
+DISTVERSION=	0.20231006
 CATEGORIES=	emulators games
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -17,7 +17,7 @@ USES=		compiler:c11 gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	vice-libretro
-GH_TAGNAME=	5725415
+GH_TAGNAME=	f3542eb9ce3ad7284e2bb69e68bbc10596774b40
 
 MAKE_ARGS=	EMUTYPE=${FLAVOR}
 PLIST_FILES=	lib/libretro/vice_${FLAVOR}_libretro.so
