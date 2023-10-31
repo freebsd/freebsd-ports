@@ -1,6 +1,4 @@
-A minimalist, dependency-free FreeBSD program to clone/pull git
-repositories. Intended for non-developers, gitup synchronizes local
-copies of repositories without the additional overhead that the
-official git client requires. Because gitup neither uses nor updates
-the contents of .git directories, the official git client should not
-be used on repositories cloned or modified with gitup.
+A minimalist FreeBSD program to clone/pull Git repositories.
+
+Intended for non-developers, gitup(1) synchronizes local repositories
+without the complexities of the official Git client, git(1).
