@@ -1,11 +1,8 @@
-@owner %%HOMER_USERNAME%%
-@dir %%WWWDIR%%/assets
-@dir %%WWWDIR%%/assets/icons
-@dir %%WWWDIR%%/assets/tools
-@dir %%WWWDIR%%/resources
+@dir %%ETCDIR%%
 %%WWWDIR%%/assets/additional-page.yml.dist
 %%WWWDIR%%/assets/config-demo.yml.dist
-@sample %%WWWDIR%%/assets/config.yml.dist %%WWWDIR%%/assets/config.yml
+%%WWWDIR%%/assets/config.yml
+@sample %%WWWDIR%%/assets/config.yml.dist %%ETCDIR%%/config.yml
 %%WWWDIR%%/assets/config.yml.dist.sample-sui
 %%WWWDIR%%/assets/custom.css.sample
 %%WWWDIR%%/assets/icons/README.md
