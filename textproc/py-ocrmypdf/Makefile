@@ -1,5 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	15.3.0
+DISTVERSION=	15.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,9 +32,7 @@ USES=		ghostscript:run python:3.9+ shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 # Skip some checks as they yield wrong results if run with the root account
 PYTEST_IGNORED_TESTS=	test_chmod \
-			test_dev_null \
 			test_input_file_not_readable \
-			test_outputtype_none \
 			test_malformed_docinfo # leads to an internal pytest error
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
