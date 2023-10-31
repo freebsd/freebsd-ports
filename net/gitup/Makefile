@@ -1,10 +1,10 @@
 PORTNAME=	gitup
-DISTVERSION=	0.98-8
-DISTVERSIONSUFFIX=	-g097fa9f
+DISTVERSION=	0.98-14
+DISTVERSIONSUFFIX=	-g5e26080
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
-COMMENT=	Minimalist, dependency-free program to clone/pull git repositories
+COMMENT=	Minimalist, dependency-free program to clone/pull Git repositories
 WWW=		https://github.com/johnmehr/gitup
 
 LICENSE=	BSD2CLAUSE
