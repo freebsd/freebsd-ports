@@ -946,6 +946,7 @@
     SUBDIR += py-keyrings.alt
     SUBDIR += py-krb5
     SUBDIR += py-libnacl
+    SUBDIR += py-liboqs-python
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
     SUBDIR += py-merkletools
