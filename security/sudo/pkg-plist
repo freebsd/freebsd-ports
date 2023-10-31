@@ -92,6 +92,7 @@ sbin/sudo_sendlog
 %%NLS%%share/locale/hr/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/id/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/sudoers.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/sudo.mo
