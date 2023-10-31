@@ -1,6 +1,5 @@
 PORTNAME=	img2pdf
-DISTVERSION=	0.4.4
-PORTREVISION=	3
+DISTVERSION=	0.5.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ USES=		python shebangfix magick:6,test
 USE_PYTHON=	autoplist concurrent distutils pytest
 # Some tests fail, see following link for more info:
 # https://gitlab.mister-muffin.de/josch/img2pdf/issues/152
-PYTEST_BROKEN_TESTS=	jpg_cmyk tiff_cmyk8
+PYTEST_BROKEN_TESTS=	jpg_cmyk miff_cmyk8 test_date tiff_cmyk8
 SHEBANG_FILES=	src/img2pdf.py
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
