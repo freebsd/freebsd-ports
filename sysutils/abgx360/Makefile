@@ -1,6 +1,5 @@
 PORTNAME=	abgx360
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://abgx360.hadzz.com/dl/
 
