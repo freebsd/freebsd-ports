@@ -1,5 +1,5 @@
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.72
+PORTVERSION=	1.4.73
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
