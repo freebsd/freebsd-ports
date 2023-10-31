@@ -1,0 +1,10 @@
+--- subprojects/SuiteSparse.wrap.orig	2023-07-09 05:08:54 UTC
++++ subprojects/SuiteSparse.wrap
+@@ -1,6 +1,6 @@ url = https://github.com/DrTimothyAldenDavis/SuiteSpar
+ [wrap-git]
+ url = https://github.com/DrTimothyAldenDavis/SuiteSparse.git
+-revision = v5.13.0
++revision = v7.3.0
+ depth = 1
+ 
+ patch_directory = SuiteSparse
