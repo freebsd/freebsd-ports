@@ -579,6 +579,7 @@
     SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += pa-applet
     SUBDIR += pacpl
     SUBDIR += padthv1-lv2
     SUBDIR += paman
