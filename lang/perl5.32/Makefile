@@ -25,7 +25,7 @@ USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
 
 TEST_TARGET=	test_harness
 TEST_ENV=	${MAKE_ENV} \
-		LD_LIBRARY_PATH=${WRKSRC} \
+		${LD_LIBRARY_PATH_VAR}=${WRKSRC} \
 		TEST_JOBS=${MAKE_JOBS_NUMBER}
 
 PORTSCOUT=	limit:^${PERL_VER}.
@@ -42,6 +42,7 @@ CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
 			-Dcf_email=${MAINTAINER} \
 			-Dcf_time="`${STAT} -t \"%a %b %d %T %Z %Y\" -f %Sm ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}`" \
 			-Dinc_version_list=none \
+			-Dldlibpthname=${LD_LIBRARY_PATH_VAR} \
 			-Dlibperl=libperl.so.${PERL_VERSION} \
 			-Dman1dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man1 \
 			-Dman3dir=${PREFIX}/${PERLMANPREFIX_REL}/man/man3 \
@@ -285,7 +286,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${SITE_ARCH}/sys
 # h2ph needs perl, but perl is not installed, it's only
 # staged, so, use the one in WRKDIR
-	(cd /usr/include && ${SETENV} LD_LIBRARY_PATH=${WRKSRC} \
+	(cd /usr/include && ${SETENV} ${LD_LIBRARY_PATH_VAR}=${WRKSRC} \
 		${WRKSRC}/perl -I ${WRKSRC}/lib ${STAGEDIR}${PREFIX}/bin/h2ph${BINSUFFIX} \
 		-d ${STAGEDIR}${SITE_ARCH} *.h machine/*.h sys/*.h >/dev/null)
 	@${FIND} ${STAGEDIR}${SITE_ARCH} -name '*.ph' | sed -e 's|${STAGEDIR}||' >> ${TMPPLIST}
