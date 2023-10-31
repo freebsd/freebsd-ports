@@ -1193,6 +1193,13 @@ ABI+=	benchmark
 .      endif
 .    endif
 
+# Get the LD*_LIBRARY_PATH environment variable name
+.    if ${ABI:Mbenchmark}
+LD_LIBRARY_PATH_VAR=	LD_64CB_LIBRARY_PATH
+.    else
+LD_LIBRARY_PATH_VAR=	LD_LIBRARY_PATH
+.    endif
+
 # Get operating system versions for a cross build
 .    if defined(CROSS_SYSROOT)
 .      if !exists(${CROSS_SYSROOT}/usr/include/sys/param.h)
