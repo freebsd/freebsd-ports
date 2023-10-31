@@ -1,6 +1,6 @@
 PORTNAME=	mercury
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.3.1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-rpc
 
@@ -10,6 +10,8 @@ WWW=		https://mercury-hpc.github.io/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+LIB_DEPENDS=	libjson-c.so:devel/json-c
 
 USES=		cmake:testing
 USE_LDCONFIG=	yes

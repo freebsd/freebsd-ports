@@ -1,6 +1,6 @@
-TIMESTAMP = 1691129378
-SHA256 (mercury-hpc-mercury-v2.3.0_GH0.tar.gz) = 2d2bb7900ee9c32b923798352d06d859f588fb593a9943253aa3c28758fa1c6b
-SIZE (mercury-hpc-mercury-v2.3.0_GH0.tar.gz) = 506473
+TIMESTAMP = 1698713584
+SHA256 (mercury-hpc-mercury-v2.3.1_GH0.tar.gz) = b24b0b053e9656055c5229fee83cecbba7e8fc605df3020907cb7b7eae9b8e98
+SIZE (mercury-hpc-mercury-v2.3.1_GH0.tar.gz) = 515691
 SHA256 (mercury-hpc-kwsys-ee35b49_GH0.tar.gz) = c3b03e95e5aca586d3fa8662d30676c60bbfad2d8d6f4e84a0c67cec3fad163f
 SIZE (mercury-hpc-kwsys-ee35b49_GH0.tar.gz) = 225218
 SHA256 (mercury-hpc-mchecksum-a4c489d_GH0.tar.gz) = c3a42462b9040a049872834155832cef395a82ef78b4fd42bab4bb20ce63d07a
