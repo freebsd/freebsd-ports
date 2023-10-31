@@ -1,6 +1,6 @@
 PORTNAME=	ps2eps
 PORTVERSION=	1.64
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	http://www.tm.uka.de/~bless/ \
 		http://www.ipv6.tm.uka.de/~bless/

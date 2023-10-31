@@ -1,5 +1,6 @@
 PORTNAME=	opencbm
 PORTVERSION=	${OCBM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	comms archivers
 
 MAINTAINER=	zirias@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	flpsed
 DISTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://flpsed.org/
 

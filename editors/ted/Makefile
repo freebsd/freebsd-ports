@@ -1,6 +1,6 @@
 PORTNAME=	ted
 PORTVERSION=	2.23
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/ \
 		http://fossies.org/linux/misc/

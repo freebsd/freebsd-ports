@@ -1,6 +1,6 @@
 PORTNAME=	pstotext
 PORTVERSION=	1.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	http://ftp.gwdg.de/pub/ghostscript/contrib/ \
 		http://ftp.sunet.se/pub/text-processing/postscript/interpreters/ghostscript/contrib/ \

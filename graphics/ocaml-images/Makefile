@@ -1,6 +1,6 @@
 PORTNAME=	images
 PORTVERSION=	4.0.1
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
