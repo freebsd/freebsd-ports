@@ -23,7 +23,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-232.9921.89
+%%DATADIR%%/lib/build-marker-PY-232.10072.31
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -189,8 +189,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-8314e18161f9.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-8314e18161f9.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-a7bc8b56ba54.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-a7bc8b56ba54.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/diagnosticMessages.json
@@ -397,8 +397,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a427f841dc3c-0a4b8ce1ca43.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a427f841dc3c-0a4b8ce1ca43.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b578fcab1c51-0a4b8ce1ca43.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b578fcab1c51-0a4b8ce1ca43.txt
 %%DATADIR%%/plugins/python-pyscript/lib/python-pyscript.jar
 %%DATADIR%%/plugins/python-sharedIndexes-downloadable/lib/python-sharedIndexes-downloadable.jar
 %%DATADIR%%/plugins/python-sharedIndexes/lib/python-sharedIndexes.jar
@@ -1176,6 +1176,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/python/helpers/pycharm_matplotlib_backend/__init__.py
 %%DATADIR%%/plugins/python/helpers/pycharm_matplotlib_backend/backend_interagg.py
 %%DATADIR%%/plugins/python/helpers/pycharm_matplotlib_backend/sitecustomize.py
+%%DATADIR%%/plugins/python/helpers/pycodestyle-2.10.0.py
+%%DATADIR%%/plugins/python/helpers/pycodestyle-2.8.0.py
 %%DATADIR%%/plugins/python/helpers/pycodestyle.py
 %%DATADIR%%/plugins/python/helpers/pydev/LICENSE
 %%DATADIR%%/plugins/python/helpers/pydev/MANIFEST.in
