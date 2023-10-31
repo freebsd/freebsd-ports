@@ -1,7 +1,4 @@
 %%DATADIR%%/graylog.jar
-%%DATADIR%%/plugin/%%PORTNAME%%-plugin-aws-%%DISTVERSION%%.jar
-%%DATADIR%%/plugin/%%PORTNAME%%-plugin-collector-%%DISTVERSION%%.jar
-%%DATADIR%%/plugin/%%PORTNAME%%-plugin-integrations-%%DISTVERSION%%.jar
 %%DATADIR%%/plugin/%%PORTNAME%%-storage-elasticsearch7-%%DISTVERSION%%.jar
 %%DATADIR%%/plugin/%%PORTNAME%%-storage-opensearch2-%%DISTVERSION%%.jar
 @dir(%%GRAYLOGUSER%%,%%GRAYLOGGROUP%%,750) %%ETCDIR%%/server
