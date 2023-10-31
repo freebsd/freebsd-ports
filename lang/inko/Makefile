@@ -1,6 +1,7 @@
 PORTNAME=	inko
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	inko-lang
 
 MAKE_ENV=	LLVM_SYS_150_PREFIX=${LLVM_PREFIX} \
-		INKO_RT=${PREFIX}/lib/inko/runtime
+		INKO_RT=${PREFIX}/lib/inko/runtime \
+		INKO_STD=${PREFIX}/lib/inko
 
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
@@ -108,14 +110,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0
 
-PLIST_FILES=	bin/${PORTNAME} \
-		lib/inko/runtime/libinko.a
-
 do-install:
 	# executable
 	${INSTALL_PROGRAM} ${WRKDIR}/target/*-freebsd/release/inko ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	# runtime library
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/inko/runtime
 	${INSTALL_DATA} ${WRKDIR}/target/*-freebsd/release/libinko.a ${STAGEDIR}${PREFIX}/lib/inko/runtime
+	# standard library
+	cd ${WRKSRC}/std/src && ${COPYTREE_SHARE} std ${STAGEDIR}${PREFIX}/lib/inko
 
 .include <bsd.port.mk>
