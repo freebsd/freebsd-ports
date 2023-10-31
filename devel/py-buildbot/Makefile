@@ -1,5 +1,6 @@
 PORTNAME=	buildbot
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -48,6 +49,10 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 # https://github.com/buildbot/buildbot/commit/9251a994e7ba5f8ab9e678b49920bdc38cd52b3d
 BUILDBOT_REMOVE_ME=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/buildbot/reporters/templates
 POST_PLIST+=		fix-plist
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|twisted_ver = ">= 18.7.0, <=22.10.0"|twisted_ver = ">= 18.7.0"|g' \
+		${WRKSRC}/setup.py
 
 fix-plist:
 	${REINPLACE_CMD} -e 's|^${BUILDBOT_REMOVE_ME}$$||' ${TMPPLIST}
