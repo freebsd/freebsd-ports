@@ -11,6 +11,6 @@ include/riemann/simple.h
 lib/libriemann-client-gnutls.a
 lib/libriemann-client-gnutls.so
 lib/libriemann-client-gnutls.so.11
-lib/libriemann-client-gnutls.so.11.1.0
+lib/libriemann-client-gnutls.so.11.1.1
 libdata/pkgconfig/riemann-client.pc
 man/man1/riemann-client.1.gz

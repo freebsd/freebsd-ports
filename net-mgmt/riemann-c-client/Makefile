@@ -1,5 +1,5 @@
 PORTNAME=	riemann-c-client
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://git.madhouse-project.org/algernon/${PORTNAME}/archive/
 
