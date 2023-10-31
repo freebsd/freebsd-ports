@@ -1,5 +1,6 @@
 PORTNAME=	sudo
 PORTVERSION=	1.9.14p3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -12,7 +13,7 @@ LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cpe libtool
+USES=		cpe libtool pkgconfig
 CPE_VENDOR=	todd_miller
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -29,8 +30,8 @@ LDFLAGS+=	-lgcc
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=		AUDIT DISABLE_AUTH DISABLE_ROOT_SUDO DOCS EXAMPLES \
-			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON
-OPTIONS_DEFAULT=	AUDIT PAM
+			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL
+OPTIONS_DEFAULT=	AUDIT PAM SSL
 OPTIONS_RADIO=		KERBEROS SSSD
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
 OPTIONS_RADIO_SSSD=	SSSD SSSD_DEVEL
@@ -44,6 +45,7 @@ KERBEROS_DESC=		Enable Kerberos 5 authentication (no PAM support)
 NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
+SSL_DESC=		Use OpenSSL TLS and SHA2 functions
 SSSD_DESC=		Enable SSSD backend support.
 SSSD_DEVEL_DESC=	Enable SSSD-devel backend support.
 
@@ -80,6 +82,9 @@ PAM_CONFIGURE_ON=	--with-pam
 
 PYTHON_USES=		python
 PYTHON_CONFIGURE_ENABLE=python
+
+SSL_USES=		ssl
+SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
 SSSD_RUN_DEPENDS=	sssd:security/sssd
 SSSD_CONFIGURE_ON=	--with-sssd
