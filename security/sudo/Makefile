@@ -1,6 +1,5 @@
 PORTNAME=	sudo
-PORTVERSION=	1.9.14p3
-PORTREVISION=	1
+PORTVERSION=	1.9.15
 CATEGORIES=	security
 MASTER_SITES=	SUDO
 
@@ -30,11 +29,10 @@ LDFLAGS+=	-lgcc
 PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=		AUDIT DISABLE_AUTH DISABLE_ROOT_SUDO DOCS EXAMPLES \
-			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL
+			INSULTS LDAP NLS NOARGS_SHELL OPIE PAM PYTHON SSL SSSD
 OPTIONS_DEFAULT=	AUDIT PAM SSL
-OPTIONS_RADIO=		KERBEROS SSSD
+OPTIONS_RADIO=		KERBEROS
 OPTIONS_RADIO_KERBEROS=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT
-OPTIONS_RADIO_SSSD=	SSSD SSSD_DEVEL
 OPTIONS_SUB=		yes
 
 AUDIT_DESC=		Enable BSM audit support
@@ -46,8 +44,7 @@ NOARGS_SHELL_DESC=	Run a shell if no arguments are given
 OPIE_DESC=		Enable one-time passwords (no PAM support)
 PYTHON_DESC=		Enable python plugin support
 SSL_DESC=		Use OpenSSL TLS and SHA2 functions
-SSSD_DESC=		Enable SSSD backend support.
-SSSD_DEVEL_DESC=	Enable SSSD-devel backend support.
+SSSD_DESC=		Enable SSSD backend support
 
 AUDIT_CONFIGURE_WITH=	bsm-audit
 
@@ -86,11 +83,10 @@ PYTHON_CONFIGURE_ENABLE=python
 SSL_USES=		ssl
 SSL_CONFIGURE_ON=	--enable-openssl=${OPENSSLBASE}
 
+SSSD_PREVENTS=		GSSAPI_HEIMDAL
+SSSD_PREVENTS_MSG=	sssd requires MIT kerberos and it conflicts with heimdal
 SSSD_RUN_DEPENDS=	sssd:security/sssd
 SSSD_CONFIGURE_ON=	--with-sssd
-
-SSSD_DEVEL_RUN_DEPENDS=	sssd:security/sssd-devel
-SSSD_DEVEL_CONFIGURE_ON=	--with-sssd
 
 LOGFAC?=		authpriv
 SUDO_LDAP_CONF?=	ldap.conf
@@ -112,6 +108,13 @@ CONFIGURE_ARGS+=	--enable-kerb5-instance="${SUDO_KERB5_INSTANCE}"
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400072
+. if ${PORT_OPTIONS:MOPIE}
+BUILD_DEPENDS+=	opie>0:security/opie
+RUN_DEPENDS+=	opie>0:security/opie
+. endif
+.endif
+
 .if ${ARCH} == "arm"
 CONFIGURE_ARGS+=	--disable-pie
 .endif
@@ -120,8 +123,6 @@ post-patch:
 	@${REINPLACE_CMD} -E '/install-(binaries|noexec):/,/^$$/ \
 		s/\$$\(INSTALL\)/& ${STRIP}/;s/-b\~/-b ~/' \
 		${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's,$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(docdir),$$(srcdir)/sudoers2ldif $$(DESTDIR)$$(bindir),' \
-		${WRKSRC}/plugins/sudoers/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pam.conf ${STAGEDIR}${PREFIX}/etc/pam.d/sudo.default
@@ -130,6 +131,7 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/sudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cvtsudoers
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sudoreplay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/sudo/sudo_intercept.so
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_logsrvd
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/sudo_sendlog
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/visudo
