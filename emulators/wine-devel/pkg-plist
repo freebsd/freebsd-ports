@@ -257,10 +257,12 @@ include/wine/windows/d3d10_1.h
 include/wine/windows/d3d10_1.idl
 include/wine/windows/d3d10_1shader.h
 include/wine/windows/d3d10effect.h
+include/wine/windows/d3d10effect.idl
 include/wine/windows/d3d10misc.h
 include/wine/windows/d3d10sdklayers.h
 include/wine/windows/d3d10sdklayers.idl
 include/wine/windows/d3d10shader.h
+include/wine/windows/d3d10shader.idl
 include/wine/windows/d3d11.h
 include/wine/windows/d3d11.idl
 include/wine/windows/d3d11_1.h
