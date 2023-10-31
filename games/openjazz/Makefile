@@ -1,5 +1,5 @@
 PORTNAME=	openjazz
-PORTVERSION=	20190106
+PORTVERSION=	20231028
 CATEGORIES=	games
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -26,7 +26,7 @@ SUB_FILES=	pkg-message
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/openjazz.000 ${STAGEDIR}${DATADIR}
+	${TOUCH} ${STAGEDIR}${DATADIR}/.keepme
 	${INSTALL_PROGRAM} ${WRKSRC}/OpenJazz ${STAGEDIR}${PREFIX}/bin/openjazz
 
 .include <bsd.port.mk>
