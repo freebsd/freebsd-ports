@@ -482,11 +482,13 @@ man/man7/paperless.7.gz
 %%WWWDIR%%/static/django_extensions/js/jquery.autocomplete.js
 %%WWWDIR%%/static/django_extensions/js/jquery.bgiframe.js
 %%WWWDIR%%/static/djangoql/css/completion.css
+%%WWWDIR%%/static/djangoql/css/completion.css.map
 %%WWWDIR%%/static/djangoql/css/completion_admin.css
 %%WWWDIR%%/static/djangoql/css/syntax_help.css
 %%WWWDIR%%/static/djangoql/img/completion_example.png
 %%WWWDIR%%/static/djangoql/img/completion_example_scaled.png
 %%WWWDIR%%/static/djangoql/js/completion.js
+%%WWWDIR%%/static/djangoql/js/completion.js.map
 %%WWWDIR%%/static/djangoql/js/completion_admin.js
 %%WWWDIR%%/static/djangoql/js/completion_admin_toggle.js
 %%WWWDIR%%/static/djangoql/js/completion_admin_toggle_off.js
