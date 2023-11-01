@@ -2266,6 +2266,7 @@
     SUBDIR += rubygem-stimulus-rails-rails70
     SUBDIR += rubygem-swd
     SUBDIR += rubygem-tailwindcss-rails
+    SUBDIR += rubygem-tailwindcss-rails-rails70
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-tinyatom
