@@ -1,0 +1,15 @@
+--- arch/arm/mach-bhyve/Kconfig.orig	2023-11-01 18:14:48 UTC
++++ arch/arm/mach-bhyve/Kconfig
+@@ -0,0 +1,12 @@
++if ARCH_BHYVE
++
++config SYS_VENDOR
++	default "emulation"
++
++config SYS_BOARD
++	default "bhyve-arm"
++
++config SYS_CONFIG_NAME
++	default "bhyve-arm64"
++
++endif
