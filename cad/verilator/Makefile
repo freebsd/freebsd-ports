@@ -16,7 +16,7 @@ BUILD_DEPENDS=	autoconf>0:devel/autoconf \
 		bash:shells/bash \
 		${LOCALBASE}/bin/ar:devel/binutils \
 		help2man:misc/help2man
-LIB_DEPENDS=	libsystemc.so:devel/systemc
+LIB_DEPENDS=	libsystemc.so:devel/systemc # systemc is only added to share/verilator/include/verilated.mk for use during verilation, verilator's own binaries aren't linked with systemc
 RUN_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
