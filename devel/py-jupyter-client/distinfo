@@ -1,3 +1,3 @@
-TIMESTAMP = 1697463220
-SHA256 (jupyter_client-8.4.0.tar.gz) = dc1b857d5d7d76ac101766c6e9b646bf18742721126e72e5d484c75a993cada2
-SIZE (jupyter_client-8.4.0.tar.gz) = 338114
+TIMESTAMP = 1698341309
+SHA256 (jupyter_client-8.5.0.tar.gz) = e8754066510ce456358df363f97eae64b50860f30dc1fe8c6771440db3be9a63
+SIZE (jupyter_client-8.5.0.tar.gz) = 339190
