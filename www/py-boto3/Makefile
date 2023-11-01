@@ -1,6 +1,7 @@
 PORTNAME=	boto3
-PORTVERSION=	1.28.63
+PORTVERSION=	1.28.72
 CATEGORIES=	www python devel
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -18,8 +19,5 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	boto
 
 .include <bsd.port.mk>
