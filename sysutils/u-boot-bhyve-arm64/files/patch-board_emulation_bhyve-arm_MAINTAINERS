@@ -1,0 +1,9 @@
+--- board/emulation/bhyve-arm/MAINTAINERS.orig	2023-11-01 18:14:48 UTC
++++ board/emulation/bhyve-arm/MAINTAINERS
+@@ -0,0 +1,6 @@
++QEMU ARM 'VIRT' BOARD
++M:	Andrew Turner <andrew@fubar.geek.nz>
++S:	Maintained
++F:	board/emulation/bhyve-arm/
++F:	include/configs/bhyve-arm.h
++F:	configs/bhyve_arm64_defconfig

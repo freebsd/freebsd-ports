@@ -1,0 +1,31 @@
+--- arch/arm/Kconfig.orig	2023-07-11 15:20:44 UTC
++++ arch/arm/Kconfig
+@@ -569,6 +569,11 @@ config ARCH_AT91
+ 	select SPL_BOARD_INIT if SPL && !TARGET_SMARTWEB
+ 	select SPL_SEPARATE_BSS if SPL
+ 
++config ARCH_BHYVE
++	bool "FreeBSD bhyve"
++	select ARM64
++	select DM
++
+ config ARCH_DAVINCI
+ 	bool "TI DaVinci"
+ 	select CPU_ARM926EJS
+@@ -2176,6 +2181,8 @@ source "arch/arm/mach-bcmstb/Kconfig"
+ 
+ source "arch/arm/mach-bcmstb/Kconfig"
+ 
++source "arch/arm/mach-bhyve/Kconfig"
++
+ source "arch/arm/mach-davinci/Kconfig"
+ 
+ source "arch/arm/mach-exynos/Kconfig"
+@@ -2301,6 +2308,7 @@ source "board/eets/pdu001/Kconfig"
+ source "board/broadcom/bcmns3/Kconfig"
+ source "board/cavium/thunderx/Kconfig"
+ source "board/eets/pdu001/Kconfig"
++source "board/emulation/bhyve-arm/Kconfig"
+ source "board/emulation/qemu-arm/Kconfig"
+ source "board/freescale/ls2080aqds/Kconfig"
+ source "board/freescale/ls2080ardb/Kconfig"
