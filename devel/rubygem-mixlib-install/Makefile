@@ -1,11 +1,12 @@
 PORTNAME=	mixlib-install
-PORTVERSION=	3.12.27
+PORTVERSION=	3.12.28
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to interact with the software distribution system in Chef
-WWW=		https://www.chef.io/
+WWW=		https://www.chef.io/ \
+		https://github.com/chef/mixlib-install
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
