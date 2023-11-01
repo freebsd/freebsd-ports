@@ -272,7 +272,6 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2
 
-
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
 
