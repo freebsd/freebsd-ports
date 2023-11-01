@@ -3519,6 +3519,7 @@
     SUBDIR += p5-Test-Exception
     SUBDIR += p5-Test-Exit
     SUBDIR += p5-Test-Expect
+    SUBDIR += p5-Test-ExpectAndCheck
     SUBDIR += p5-Test-FailWarnings
     SUBDIR += p5-Test-Fake-HTTPD
     SUBDIR += p5-Test-Fatal
