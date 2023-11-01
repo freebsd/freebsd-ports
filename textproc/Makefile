@@ -1705,6 +1705,7 @@
     SUBDIR += rubygem-actiontext60
     SUBDIR += rubygem-actiontext61
     SUBDIR += rubygem-actiontext70
+    SUBDIR += rubygem-actiontext71
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
