@@ -1,9 +1,9 @@
 Reference:	https://cgit.freebsd.org/ports/commit/?id=f08b67611f0b19c0ee8d9053ee4d22e09b03f2b1
 
---- aws-crt-ffi/crt/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2022-07-30 03:57:26 UTC
+--- aws-crt-ffi/crt/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c.orig	2023-10-20 20:00:18 UTC
 +++ aws-crt-ffi/crt/aws-lc/crypto/fipsmodule/cpucap/cpu_ppc64le.c
-@@ -25,7 +25,11 @@
- #endif
+@@ -27,7 +27,11 @@
+ extern uint8_t OPENSSL_cpucap_initialized;
  
  void OPENSSL_cpuid_setup(void) {
 +#if defined(__linux__)
@@ -11,6 +11,6 @@ Reference:	https://cgit.freebsd.org/ports/commit/?id=f08b67611f0b19c0ee8d9053ee4
 +#elif defined(__FreeBSD__)
 +  elf_aux_info(AT_HWCAP2, &OPENSSL_ppc64le_hwcap2, sizeof(OPENSSL_ppc64le_hwcap2));
 +#endif
+   OPENSSL_cpucap_initialized = 1;
  }
  
- int CRYPTO_is_PPC64LE_vcrypto_capable(void) {
