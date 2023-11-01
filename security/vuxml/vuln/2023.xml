@@ -1,3 +1,44 @@
+  <vuln vid="a612c25f-788a-11ee-8d57-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.5.0</ge><lt>16.5.1</lt></range>
+	<range><ge>16.4.0</ge><lt>16.4.2</lt></range>
+	<range><ge>11.6.0</ge><lt>16.3.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/10/31/security-release-gitlab-16-5-1-16-4-2-16-3-6-released/">
+	  <p>Disclosure of CI/CD variables using Custom project templates</p>
+	  <p>GitLab omnibus DoS crash via OOM with CI Catalogs</p>
+	  <p>Parsing gitlab-ci.yml with large string via timeout input leads to Denial of Service</p>
+	  <p>DoS - Blocking FIFO files in Tar archives</p>
+	  <p>Titles exposed by service-desk template</p>
+	  <p>Approval on protected environments can be bypassed</p>
+	  <p>Version information disclosure when super_sidebar_logged_out feature flag is enabled</p>
+	  <p>Add abuse detection for search syntax filter pipes</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3399</cvename>
+      <cvename>CVE-2023-5825</cvename>
+      <cvename>CVE-2023-3909</cvename>
+      <cvename>CVE-2023-3246</cvename>
+      <cvename>CVE-2023-5600</cvename>
+      <cvename>CVE-2023-4700</cvename>
+      <cvename>CVE-2023-5831</cvename>
+      <url>https://about.gitlab.com/releases/2023/10/31/security-release-gitlab-16-5-1-16-4-2-16-3-6-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-31</discovery>
+      <entry>2023-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="386a14bb-1a21-41c6-a2cf-08d79213379b">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
