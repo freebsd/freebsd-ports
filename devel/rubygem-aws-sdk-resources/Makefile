@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.172.0
+PORTVERSION=	3.173.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -149,7 +149,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-frauddetector>=1<2:devel/rubygem-aws-sdk-frauddetector \
 		rubygem-aws-sdk-fsx>=1<2:devel/rubygem-aws-sdk-fsx \
 		rubygem-aws-sdk-gamelift>=1<2:devel/rubygem-aws-sdk-gamelift \
-		rubygem-aws-sdk-gamesparks>=1<2:devel/rubygem-aws-sdk-gamesparks \
 		rubygem-aws-sdk-glacier>=1<2:devel/rubygem-aws-sdk-glacier \
 		rubygem-aws-sdk-globalaccelerator>=1<2:devel/rubygem-aws-sdk-globalaccelerator \
 		rubygem-aws-sdk-glue>=1<2:devel/rubygem-aws-sdk-glue \
