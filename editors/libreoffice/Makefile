@@ -364,6 +364,8 @@ CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-c++11-narrowing \
 CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 .endif
 
+LDFLAGS+=	-Wl,--undefined-version
+
 post-patch:
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
