@@ -1920,7 +1920,6 @@
     SUBDIR += rubygem-ya2yaml
     SUBDIR += rubygem-yard
     SUBDIR += rubygem-yard-chef
-    SUBDIR += rubygem-yarp
     SUBDIR += rubygem-zmq
     SUBDIR += rw-aspell
     SUBDIR += rxp

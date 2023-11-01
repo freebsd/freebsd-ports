@@ -1,4 +1,0 @@
-Yet Another Ruby Parser is a parser for the Ruby programming language. It is
-designed to be portable, error tolerant, and maintainable. It is written in C99
-and has no dependencies. It is currently being integrated into CRuby, JRuby,
-TruffleRuby, Sorbet, and Syntax Tree.
