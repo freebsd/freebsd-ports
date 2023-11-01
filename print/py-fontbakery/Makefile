@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfont>=0:x11-fonts/py-babelfont@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}babelfont>=3.0.1:x11-fonts/py-babelfont@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beziers>=0.5.0:graphics/py-beziers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cmarkgfm>=0.4:textproc/py-cmarkgfm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fonttools>=4.39.0:print/py-fonttools@${PY_FLAVOR} \
