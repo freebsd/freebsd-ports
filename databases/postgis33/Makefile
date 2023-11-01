@@ -18,13 +18,14 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgdal.so:graphics/gdal \
 		libpcre2-8.so:devel/pcre2
 
-USES=		alias compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
+USES=		alias compiler:c++14-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:11+ shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} NUMERICFLAGS=${PORTVERSION}
+USE_CXXSTD=	c++14
 SHEBANG_FILES=	extensions/address_standardizer/*.pl regress/run_test.pl \
 		utils/postgis_restore.pl.in utils/*.pl
 WANT_PGSQL=	server
