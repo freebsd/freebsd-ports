@@ -1,9 +1,13 @@
+include/libunwind-%%ARCH%%.h
 include/libunwind-common.h
 %%COREDUMP%%include/libunwind-coredump.h
 include/libunwind-dynamic.h
 include/libunwind-ptrace.h
-include/libunwind-%%ARCH%%.h
 include/libunwind.h
+lib/libunwind-%%ARCH%%.a
+lib/libunwind-%%ARCH%%.so
+lib/libunwind-%%ARCH%%.so.8
+lib/libunwind-%%ARCH%%.so.8.0.1
 %%COREDUMP%%lib/libunwind-coredump.a
 %%COREDUMP%%lib/libunwind-coredump.so
 %%COREDUMP%%lib/libunwind-coredump.so.0
@@ -18,10 +22,6 @@ lib/libunwind-setjmp.a
 lib/libunwind-setjmp.so
 lib/libunwind-setjmp.so.0
 lib/libunwind-setjmp.so.0.0.0
-lib/libunwind-%%ARCH%%.a
-lib/libunwind-%%ARCH%%.so
-lib/libunwind-%%ARCH%%.so.8
-lib/libunwind-%%ARCH%%.so.8.0.1
 lib/libunwind.a
 lib/libunwind.so
 lib/libunwind.so.8
@@ -47,7 +47,9 @@ man/man3/unw_get_accessors.3.gz
 man/man3/unw_get_fpreg.3.gz
 man/man3/unw_get_proc_info.3.gz
 man/man3/unw_get_proc_info_by_ip.3.gz
+man/man3/unw_get_proc_info_in_range.3.gz
 man/man3/unw_get_proc_name.3.gz
+man/man3/unw_get_proc_name_by_ip.3.gz
 man/man3/unw_get_reg.3.gz
 man/man3/unw_getcontext.3.gz
 man/man3/unw_init_local.3.gz
