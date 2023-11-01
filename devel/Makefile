@@ -6062,6 +6062,7 @@
     SUBDIR += rubygem-activejob60
     SUBDIR += rubygem-activejob61
     SUBDIR += rubygem-activejob70
+    SUBDIR += rubygem-activejob71
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activerecord-deprecated_finders
     SUBDIR += rubygem-activesupport4
