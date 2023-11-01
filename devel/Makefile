@@ -7395,6 +7395,7 @@
     SUBDIR += rubygem-sprockets-rails-rails60
     SUBDIR += rubygem-sprockets-rails-rails61
     SUBDIR += rubygem-sprockets-rails-rails70
+    SUBDIR += rubygem-sprockets-rails-rails71
     SUBDIR += rubygem-sprockets-sass
     SUBDIR += rubygem-sprockets2
     SUBDIR += rubygem-sprockets3
