@@ -1,13 +1,14 @@
 PORTNAME=	rails
 PORTVERSION=	7.0.8
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	70
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Full-stack web application framework
-WWW=		https://github.com/rails/rails \
-		https://rubyonrails.org/
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails
 
 LICENSE=	MIT
 
@@ -27,30 +28,31 @@ RUN_DEPENDS=	rubygem-actioncable70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-bootsnap>=1.4.4:devel/rubygem-bootsnap \
 		rubygem-capybara>=3.26:devel/rubygem-capybara \
 		rubygem-connection_pool>=0:net/rubygem-connection_pool \
-		rubygem-cssbundling-rails>=0:www/rubygem-cssbundling-rails \
+		rubygem-cssbundling-rails-rails70>=0:www/rubygem-cssbundling-rails-rails70 \
 		rubygem-dalli>=3.0.1:databases/rubygem-dalli \
 		rubygem-image_processing>=1.2<2:graphics/rubygem-image_processing \
-		rubygem-importmap-rails>=0:www/rubygem-importmap-rails \
-		rubygem-jsbundling-rails>=0:www/rubygem-jsbundling-rails \
+		rubygem-importmap-rails-rails70>=0:www/rubygem-importmap-rails-rails70 \
+		rubygem-jsbundling-rails-rails70>=0:www/rubygem-jsbundling-rails-rails70 \
 		rubygem-json>=2.0.0:devel/rubygem-json \
 		rubygem-libxml-ruby>=0:textproc/rubygem-libxml-ruby \
 		rubygem-listen>=3.3<4:devel/rubygem-listen \
 		rubygem-minitest>=5.15.0:devel/rubygem-minitest \
 		rubygem-nokogiri>=1.8.1:textproc/rubygem-nokogiri \
-		rubygem-propshaft>=0.1.7:www/rubygem-propshaft \
-		rubygem-puma>=0:www/rubygem-puma \
+		rubygem-propshaft-rails70>=0.1.7:www/rubygem-propshaft-rails70 \
+		rubygem-puma>=5.0.3:www/rubygem-puma \
 		rubygem-que>=0:devel/rubygem-que \
 		rubygem-rack-cache>=1.2<2:www/rubygem-rack-cache \
-		rubygem-rake>=11.1:devel/rubygem-rake \
+		rubygem-rake>=13:devel/rubygem-rake \
+		rubygem-readline-ext>=0:devel/rubygem-readline-ext \
 		rubygem-redis-namespace>=0:databases/rubygem-redis-namespace \
 		rubygem-rexml>=0:textproc/rubygem-rexml \
 		rubygem-selenium-webdriver>=4.11.0:www/rubygem-selenium-webdriver \
 		rubygem-sprockets-rails-rails70>=2.0.0:devel/rubygem-sprockets-rails-rails70 \
 		rubygem-sqlite3>=1.4<2:databases/rubygem-sqlite3 \
-		rubygem-stimulus-rails>=0:www/rubygem-stimulus-rails \
+		rubygem-stimulus-rails-rails70>=0:www/rubygem-stimulus-rails-rails70 \
 		rubygem-sucker_punch>=0:devel/rubygem-sucker_punch \
-		rubygem-tailwindcss-rails>=0:www/rubygem-tailwindcss-rails \
-		rubygem-turbo-rails>=0:www/rubygem-turbo-rails \
+		rubygem-tailwindcss-rails-rails70>=0:www/rubygem-tailwindcss-rails-rails70 \
+		rubygem-turbo-rails-rails70>=0:www/rubygem-turbo-rails-rails70 \
 		rubygem-webmock>=0:www/rubygem-webmock \
 		rubygem-webrick>=0:www/rubygem-webrick
 
@@ -63,4 +65,10 @@ CPE_PRODUCT=	ruby_on_rails
 
 PORTSCOUT=	limit:^7\.0\.
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} <= 3.1
+RUN_DEPENDS+=	rubygem-cgi>=0.3.6:www/rubygem-cgi
+.endif
+
+.include <bsd.port.post.mk>
