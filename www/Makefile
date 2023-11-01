@@ -1970,6 +1970,7 @@
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cssbundling-rails
+    SUBDIR += rubygem-cssbundling-rails-rails70
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
     SUBDIR += rubygem-davclient
