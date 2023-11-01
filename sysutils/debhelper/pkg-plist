@@ -52,6 +52,7 @@ bin/dh_makeshlibs
 bin/dh_md5sums
 bin/dh_missing
 bin/dh_movefiles
+bin/dh_movetousr
 bin/dh_perl
 bin/dh_prep
 bin/dh_shlibdeps
@@ -137,6 +138,7 @@ bin/prerm-wm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/elf_tools.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/installinitramfs.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/installsysusers.pm
+%%SITE_PERL%%/Debian/Debhelper/Sequence/movetousr.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/root_sequence.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/single_binary.pm
 %%SITE_PERL%%/Debian/Debhelper/Sequence/systemd.pm
