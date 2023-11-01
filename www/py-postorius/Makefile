@@ -1,5 +1,5 @@
 PORTNAME=	postorius
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.10
 CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://gitlab.com/mailman/postorius
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.8:mail/py-django-mailman3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.2:www/py-django32@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-mailman3>=1.3.10:mail/py-django-mailman3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mailmanclient>=3.3.3:mail/py-mailmanclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}readme-renderer>=0:devel/py-readme-renderer@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=0:www/py-beautifulsoup@${PY_FLAVOR} \
