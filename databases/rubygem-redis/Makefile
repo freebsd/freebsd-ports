@@ -1,5 +1,5 @@
 PORTNAME=	redis
-PORTVERSION=	5.0.7
+PORTVERSION=	5.0.8
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/redis/redis-rb
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-redis-client>=0.9.0:databases/rubygem-redis-client
+RUN_DEPENDS=	rubygem-redis-client>=0.17.0:databases/rubygem-redis-client
 
 USES=		gem
 
