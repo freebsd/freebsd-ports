@@ -2189,6 +2189,7 @@
     SUBDIR += rubygem-rails60
     SUBDIR += rubygem-rails61
     SUBDIR += rubygem-rails70
+    SUBDIR += rubygem-rails71
     SUBDIR += rubygem-rails_12factor
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-rails_serve_static_assets
