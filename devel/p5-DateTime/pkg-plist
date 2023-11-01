@@ -9,6 +9,7 @@
 %%SITE_ARCH%%/DateTime/Types.pm
 %%SITE_ARCH%%/auto/DateTime/DateTime.so
 %%PERL5_MAN3%%/DateTime.3.gz
+%%PERL5_MAN3%%/DateTime::Conflicts.3.gz
 %%PERL5_MAN3%%/DateTime::Duration.3.gz
 %%PERL5_MAN3%%/DateTime::Infinite.3.gz
 %%PERL5_MAN3%%/DateTime::LeapSecond.3.gz
