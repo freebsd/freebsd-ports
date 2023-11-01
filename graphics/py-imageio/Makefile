@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python library for reading and writing image, video formats
-WWW=		https://github.com/imageio/imageio
+WWW=		https://imageio.readthedocs.io/en/stable/ \
+		https://github.com/imageio/imageio
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
