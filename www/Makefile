@@ -2079,6 +2079,7 @@
     SUBDIR += rubygem-jquery-ui-rails-rails4
     SUBDIR += rubygem-jruby-rack
     SUBDIR += rubygem-jsbundling-rails
+    SUBDIR += rubygem-jsbundling-rails-rails70
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-json-jwt115
