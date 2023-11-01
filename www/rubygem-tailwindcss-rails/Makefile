@@ -1,5 +1,6 @@
 PORTNAME=	tailwindcss-rails
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/rails/tailwindcss-rails
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-railties70>=6.0.0:www/rubygem-railties70
+RUN_DEPENDS=	rubygem-railties71>=6.0.0:www/rubygem-railties71
 
 USES=		gem
 
