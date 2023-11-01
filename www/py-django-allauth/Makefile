@@ -1,5 +1,5 @@
 PORTNAME=	django-allauth
-PORTVERSION=	0.57.0
+PORTVERSION=	0.58.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	User registration with social account authentication
 WWW=		https://allauth.org/ \
+		https://docs.allauth.org/en/latest/ \
 		https://github.com/pennersr/django-allauth
 
 LICENSE=	MIT
