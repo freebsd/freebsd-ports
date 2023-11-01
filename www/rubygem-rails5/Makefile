@@ -7,7 +7,8 @@ PKGNAMESUFFIX=	5
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Full-stack web application framework
-WWW=		https://github.com/rails/rails
+WWW=		https://rubyonrails.org/ \
+		https://github.com/rails/rails
 
 LICENSE=	MIT
 
