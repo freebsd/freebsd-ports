@@ -246,7 +246,7 @@
     SUBDIR += hedgedoc
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
-    SUBDIR += homer
+    SUBDIR += homer-web
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-gitit

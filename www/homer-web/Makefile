@@ -1,10 +1,12 @@
 PORTNAME=	homer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	23.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
+MASTER_SITES=	https://github.com/bastienwirtz/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
+PKGNAMESUFFIX=	-web
 DISTNAME=	homer
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Dead simple static HOMepage for your servER
@@ -13,8 +15,6 @@ WWW=		https://github.com/bastienwirtz/homer
 LICENSE=	APACHE20
 
 USES=		zip
-USE_GITHUB=	nodefault
-GH_ACCOUNT=	bastienwirtz
 
 NO_ARCH=	YES
 NO_BUILD=	YES
@@ -27,6 +27,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/resources
 	cd ${WRKDIR}/resources && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/resources
 	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/assets/config.yml.dist \
+		${STAGEDIR}${ETCDIR}/config.yml.dist
 	${INSTALL_DATA} ${WRKDIR}/assets/config.yml.dist \
 		${STAGEDIR}${ETCDIR}/config.yml
 

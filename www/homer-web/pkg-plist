@@ -1,8 +1,8 @@
-@dir %%ETCDIR%%
+@sample %%ETCDIR%%/config.yml.dist %%ETCDIR%%/config.yml
 %%WWWDIR%%/assets/additional-page.yml.dist
 %%WWWDIR%%/assets/config-demo.yml.dist
 %%WWWDIR%%/assets/config.yml
-@sample %%WWWDIR%%/assets/config.yml.dist %%ETCDIR%%/config.yml
+%%WWWDIR%%/assets/config.yml.dist
 %%WWWDIR%%/assets/config.yml.dist.sample-sui
 %%WWWDIR%%/assets/custom.css.sample
 %%WWWDIR%%/assets/icons/README.md
