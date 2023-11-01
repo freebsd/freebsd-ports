@@ -1959,6 +1959,7 @@
     SUBDIR += rubygem-browser
     SUBDIR += rubygem-cal-heatmap-rails
     SUBDIR += rubygem-carrierwave
+    SUBDIR += rubygem-carrierwave1
     SUBDIR += rubygem-cgi
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
