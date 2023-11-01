@@ -73,7 +73,7 @@ GUILE_DEFAULT?=		2.2
 # Format:	     version[-flavor]
 # Examples:	     6-nox11, 7
 IMAGEMAGICK_DEFAULT?=	7
-# Possible values: 8, 11, 17, 18
+# Possible values: 8, 11, 17, 18, 19, 20, 21
 JAVA_DEFAULT?=		8
 # Possible values: 2.2.6, 3.0.0
 .  if !defined(WANT_LAZARUS_DEVEL)
