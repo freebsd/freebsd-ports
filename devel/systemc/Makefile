@@ -1,5 +1,6 @@
 PORTNAME=	systemc
 DISTVERSION=	2.3.4
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	_pub_rev_20190614
 CATEGORIES=	devel
 
@@ -13,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	configure: error: sorry...architecture not supported
 
-USES=		gmake libtool
+USES=		compiler:c++17-lang gmake libtool
+USE_CXXSTD=	c++17 # needs to match that of cad/verilator, to avoid mismatches like https://github.com/verilator/verilator/issues/4499
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
