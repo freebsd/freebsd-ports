@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.5.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -97,7 +98,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
 	rubygem-kaminari-rails70>=1.2.2<1.3:www/rubygem-kaminari-rails70 \
 	rubygem-hamlit>=2.15.0<2.16:www/rubygem-hamlit \
-	rubygem-carrierwave>=1.3.4<2.0:www/rubygem-carrierwave \
+	rubygem-carrierwave1>=1.3.4<2.0:www/rubygem-carrierwave1 \
 	rubygem-mini_magick410>=4.10.1<4.11:graphics/rubygem-mini_magick410 \
 	rubygem-fog-aws>=3.18<4:net/rubygem-fog-aws \
 	rubygem-fog-core210>=2.1.0<2.1.1:devel/rubygem-fog-core210 \
@@ -138,7 +139,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-asciidoctor-include-ext>=0.4.0<0.5.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml00>=0.0.16<0.1:textproc/rubygem-asciidoctor-plantuml00 \
 	rubygem-asciidoctor-kroki>=0.8.0<0.9:textproc/rubygem-asciidoctor-kroki \
-	rubygem-rouge>=4.1.3<4.2:textproc/rubygem-rouge \
+	rubygem-rouge41>=4.1.3<4.2:textproc/rubygem-rouge41 \
 	rubygem-truncato>=0.7.12<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.15.4<2:textproc/rubygem-nokogiri \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
@@ -153,7 +154,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-sidekiq6>=6.5.7<6.6:devel/rubygem-sidekiq6 \
 	rubygem-sidekiq-cron18>=1.8.0<1.9:devel/rubygem-sidekiq-cron18 \
 	rubygem-redis-namespace19>=1.9.0<1.10.0:databases/rubygem-redis-namespace19 \
-	rubygem-fugit>=1.8.1<1.9:devel/rubygem-fugit \
+	rubygem-fugit18>=1.8.1<1.9:devel/rubygem-fugit18 \
 	rubygem-httparty>=0.21.0<0.22:www/rubygem-httparty \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
