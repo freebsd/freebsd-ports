@@ -1,3 +1,39 @@
+  <vuln vid="d2505ec7-78ea-11ee-9131-6f01853956d5">
+    <topic>open-vm-tools -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>open-vm-tools</name>
+	<range><lt>12.3.5</lt></range>
+      </package>
+      <package>
+	<name>open-vm-tools-nox11</name>
+	<range><lt>12.3.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VMware reports:</p>
+	<blockquote cite="https://www.vmware.com/security/advisories/VMSA-2023-0024.html">
+	  <p>This update includes 2 security fixes:</p>
+	  <ul>
+	     <li>High CVE-2023-34058: SAML token signature bypass vulnerability</li>
+	     <li>High CVE-2023-34059: File descriptor hijack vulnerability in the vmware-user-suid-wrapper</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-34058</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-34058</url>
+      <cvename>CVE-2023-34059</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-34059</url>
+    </references>
+    <dates>
+      <discovery>2023-10-26</discovery>
+      <entry>2023-11-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a612c25f-788a-11ee-8d57-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
