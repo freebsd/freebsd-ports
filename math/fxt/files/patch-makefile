@@ -1,4 +1,4 @@
---- makefile.orig	2021-04-06 13:42:27 UTC
+--- makefile.orig	2023-10-20 14:17:07 UTC
 +++ makefile
 @@ -8,22 +8,22 @@ PROJ=fxt
  include flags.mk
@@ -15,7 +15,8 @@
 -FXT_CXXFLAGS += $(OFLAGS) # uncomment for OPTIMIZATION
 +#FXT_CXXFLAGS += $(OFLAGS) # uncomment for OPTIMIZATION
  #FXT_CXXFLAGS += -O3 # test -O3
- #FXT_CXXFLAGS += $(GFLAGS) # uncomment for DEBUGGING
+-FXT_CXXFLAGS += $(GFLAGS) # uncomment for DEBUGGING
++#FXT_CXXFLAGS += $(GFLAGS) # uncomment for DEBUGGING
  #FXT_CXXFLAGS += $(PFLAGS) # uncomment for PROFILING
  #
 -FXT_CXXFLAGS += $(WFLAGS) # uncomment for WARNINGS
@@ -29,9 +30,12 @@
  
  #FXT_CXXFLAGS += $(CLANG_FLAGS)  ## for clang++
  
-@@ -200,27 +200,27 @@ install: lib
+@@ -199,15 +199,15 @@ INCDIR=$(PREFIX)/include/fxt
+ .PHONY: install  ## install to $(PREFIX)/lib/ and $(PREFIX)/include/fxt/
+ install: lib
  	: '[$@]'
- 	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(INCDIR)'
+-	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(INCDIR)'
++	@echo 'PREFIX=$(PREFIX)  LIBDIR=$(LIBDIR)  INCDIR=$(DESTDIR)$(INCDIR)'
  	@:
 -	@test -d $(INCDIR)  ||  mkdir $(INCDIR)
 -	@$(FXT_INSTALL) $(FXTIDIR)/*.h $(INCDIR)/
@@ -49,31 +53,3 @@
  	: '[$@ OK]'
  
  .PHONY: chk-install ##x print whether installed header files are up to date
- chk-install:
- 	@(cd src  &&  find . -maxdepth 2 -name \*.h | sort) > tmp-hdr1
--	@(cd $(INCDIR)/  &&  find . -name \*.h | sort) > tmp-hdr2
-+	@(cd $(DESTDIR)$(INCDIR)/  &&  find . -name \*.h | sort) > tmp-hdr2
- 	@-diff tmp-hdr1 tmp-hdr2
- 	@rm tmp-hdr1 tmp-hdr2
- 
--.PHONY: uninstall  ## uninstall headers and lib, but leave directory $(INCDIR)
-+.PHONY: uninstall  ## uninstall headers and lib, but leave directory $(DESTDIR)$(INCDIR)
- uninstall:
--	: '[$@]'  ## note: we do not remove $(INCDIR)
--	rm -rf $(INCDIR)/*
--	rm -f $(LIBDIR)/$(FXTLIB)
-+	: '[$@]'  ## note: we do not remove $(DESTDIR)$(INCDIR)
-+	rm -rf $(DESTDIR)$(INCDIR)/*
-+	rm -f $(DESTDIR)$(LIBDIR)/$(FXTLIB)
- 
- .PHONY: reinstall  ## uninstall and install
- reinstall: # uninstall install
-@@ -785,7 +785,7 @@ showsrc:
- #	@for h in */*.h; do \
- # grep -L $$h depend.mk &>/dev/null || echo $$h ; done
- #
--##	@for h in $$(ls -1 $(INCDIR) ); do \
-+##	@for h in $$(ls -1 $(DESTDIR)$(INCDIR) ); do \
- 
- #.PHONY: shownotes ##x show comments that contain the string "note"
- #shownotes:
