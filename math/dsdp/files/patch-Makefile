@@ -9,6 +9,6 @@
 -	${SH_LD} ${DSDPLIBSO} *.o -o ${DSDPLIBSO}; \
 +	echo "building ${DSDPLIBSO}"
 +	${AR} x ${DSDPLIB}
-+	$(CC) -shared $(LDFLAGS) -llapack -lblas -lm *.o -o ${DSDPLIBSO}; \
++	$(SH_LD) $(LDFLAGS) -llapack -lblas -lm *.o -o ${DSDPLIBSO}; \
  	cd ../ ; \
  	${RM} tmp
