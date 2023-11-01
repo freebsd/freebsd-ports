@@ -1,5 +1,5 @@
 PORTNAME=	rubocop
-PORTVERSION=	1.57.1
+PORTVERSION=	1.57.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -11,8 +11,7 @@ WWW=		https://rubocop.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-base64>=0.1.1<0.2:converters/rubygem-base64 \
-		rubygem-json>=2.3<3:devel/rubygem-json \
+RUN_DEPENDS=	rubygem-json>=2.3<3:devel/rubygem-json \
 		rubygem-language_server-protocol>=3.17.0:devel/rubygem-language_server-protocol \
 		rubygem-parallel>=1.10<2:sysutils/rubygem-parallel \
 		rubygem-parser>=3.2.2.4:devel/rubygem-parser \
