@@ -29,8 +29,7 @@ GL_PROJECT=	gitlab-foss
 # so we download the required go.mod file from gitlab
 # lines are taken from go.mk
 # ---------------------------
-FETCH_DEPENDS=	${GO_CMD}:${GO_PORT} \
-		ca_root_nss>0:security/ca_root_nss
+FETCH_DEPENDS=	${GO_CMD}:${GO_PORT}
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-foss/-/raw/v${DISTVERSION}/workhorse/
 DISTFILES+=	go.mod
 DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
