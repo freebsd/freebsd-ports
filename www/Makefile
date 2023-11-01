@@ -2263,6 +2263,7 @@
     SUBDIR += rubygem-smashing
     SUBDIR += rubygem-socksify
     SUBDIR += rubygem-stimulus-rails
+    SUBDIR += rubygem-stimulus-rails-rails70
     SUBDIR += rubygem-swd
     SUBDIR += rubygem-tailwindcss-rails
     SUBDIR += rubygem-task_list
