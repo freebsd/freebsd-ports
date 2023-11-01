@@ -1,3 +1,3 @@
-TIMESTAMP = 1682710174
-SHA256 (valgrind-3.21.0.tar.bz2) = 10ce1618bb3e33fad16eb79552b0a3e1211762448a0d7fce11c8a6243b9ac971
-SIZE (valgrind-3.21.0.tar.bz2) = 17449484
+TIMESTAMP = 1698777812
+SHA256 (valgrind-3.22.0.tar.bz2) = c811db5add2c5f729944caf47c4e7a65dcaabb9461e472b578765dd7bf6d2d4c
+SIZE (valgrind-3.22.0.tar.bz2) = 16565502
