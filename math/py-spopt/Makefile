@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spatial Optimization in PySAL
-WWW=		https://github.com/pysal/spopt
+WWW=		https://pysal.org/spopt/ \
+		https://github.com/pysal/spopt
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
