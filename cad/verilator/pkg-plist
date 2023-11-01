@@ -93,7 +93,6 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_timing.cpp
 %%DATADIR%%/include/verilated_timing.h
 %%DATADIR%%/include/verilated_trace.h
-%%DATADIR%%/include/verilated_trace_defs.h
 %%DATADIR%%/include/verilated_trace_imp.h
 %%DATADIR%%/include/verilated_types.h
 %%DATADIR%%/include/verilated_vcd_c.cpp
@@ -103,6 +102,7 @@ man/man1/verilator_profcfunc.1.gz
 %%DATADIR%%/include/verilated_vpi.cpp
 %%DATADIR%%/include/verilated_vpi.h
 %%DATADIR%%/include/verilatedos.h
+%%DATADIR%%/include/vltstd/sv_vpi_user.h
 %%DATADIR%%/include/vltstd/svdpi.h
 %%DATADIR%%/include/vltstd/vpi_user.h
 %%DATADIR%%/verilator-config-version.cmake
