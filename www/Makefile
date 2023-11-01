@@ -2062,6 +2062,7 @@
     SUBDIR += rubygem-httpi
     SUBDIR += rubygem-hurley
     SUBDIR += rubygem-importmap-rails
+    SUBDIR += rubygem-importmap-rails-rails70
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-sanity
