@@ -74,7 +74,6 @@
     SUBDIR += c3270
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
-    SUBDIR += ceph14
     SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony

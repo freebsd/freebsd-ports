@@ -7956,3 +7956,4 @@ www/homer|www/homer-web|2023-11-01|Rename port to be consistent with Arch
 textproc/rubygem-yarp|textproc/rubygem-prism|2023-11-01|Remove obsoleted port. Use textproc/rubygem-prism instead
 audio/p5-MIDI|audio/p5-MIDI-Perl|2023-11-01|Move audio/p5-MIDI to audio/p5-MIDI-Perl
 devel/xtoolchain-llvm-devel||2023-11-02|Subsumed into devel/llvm-devel
+net/ceph14||2023-11-02|Has expired: End of life upstream since 2021-06-30
