@@ -1,7 +1,7 @@
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -13,21 +13,22 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:audio/ladspa
-LIB_DEPENDS=	libFLAC.so:audio/flac \
-		libfluidsynth.so:audio/fluidsynth \
-		libfontconfig.so:x11-fonts/fontconfig \
-		libsamplerate.so:audio/libsamplerate \
-		libsndfile.so:audio/libsndfile \
-		libvorbis.so:audio/libvorbis \
-		libogg.so:audio/libogg \
+LIB_DEPENDS=	libcarla_utils.so:audio/carla \
 		libfftw3.so:math/fftw3 \
 		libfftw3f.so:math/fftw3-float \
+		libFLAC.so:audio/flac \
 		libfltk.so:x11-toolkits/fltk \
-		libcarla_utils.so:audio/carla \
+		libfluidsynth.so:audio/fluidsynth \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libmp3lame.so:audio/lame \
+		libogg.so:audio/libogg \
+		libQt5X11Extras.so:x11/qt5-x11extras \
 		libQt5Xml.so:textproc/qt5-xml \
-		libQt5X11Extras.so:x11/qt5-x11extras
-RUN_DEPENDS=	${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
-		${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
+		libsamplerate.so:audio/libsamplerate \
+		libsndfile.so:audio/libsndfile \
+		libvorbis.so:audio/libvorbis
+RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/cmt.so:audio/cmt \
+		${LOCALBASE}/share/ladspa/rdf/caps.rdf:audio/caps-plugins \
 		${LOCALBASE}/share/ladspa/rdf/swh-plugins.rdf:audio/swhplugins \
 		${LOCALBASE}/share/ladspa/rdf/tap-plugins.rdf:audio/tap-plugins
 
@@ -38,14 +39,15 @@ GH_ACCOUNT=	LMMS
 GH_TUPLE=	mjansson:rpmalloc:1.4.0:rpmalloc/src/3rdparty/rpmalloc/rpmalloc \
 		lukas-w:qt5-x11embed:ec77d4ba40bebc0c53a016adb646b6fa65dd5faf:qt5x11embed/src/3rdparty/qt5-x11embed
 USE_LDCONFIG=	yes
-USE_QT=		core gui widgets x11extras xml buildtools:build linguisttools:build qmake:build
+USE_QT=		core gui widgets x11extras xml buildtools:build \
+		linguisttools:build qmake:build
 USE_XORG=	xcursor xext xfixes xft xinerama xrender
 
 CMAKE_ON=	WANT_QT5
-CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_SWH WANT_STK \
+CMAKE_OFF=	WANT_ALSA WANT_CALF WANT_CAPS WANT_CMT WANT_STK WANT_SWH \
 		WANT_TAP WANT_VST
 
-OPTIONS_DEFINE=		OSS JACK PULSEAUDIO PORTAUDIO SDL SNDIO
+OPTIONS_DEFINE=		JACK OSS PORTAUDIO PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	OSS
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
@@ -61,12 +63,6 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_CMAKE_BOOL=	WANT_SNDIO
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-PLIST_SUB=	LINUXSAMPLER=""
-.else
-PLIST_SUB=	LINUXSAMPLER="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|/usr|${LOCALBASE}|g' ${WRKSRC}/src/core/ConfigManager.cpp

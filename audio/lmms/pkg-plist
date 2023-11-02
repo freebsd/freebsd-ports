@@ -246,7 +246,6 @@ lib/lmms/libdualfilter.so
 lib/lmms/libdynamicsprocessor.so
 lib/lmms/libeq.so
 lib/lmms/libflanger.so
-%%LINUXSAMPLER%%lib/lmms/libgigplayer.so
 lib/lmms/libhydrogenimport.so
 lib/lmms/libkicker.so
 lib/lmms/libladspabrowser.so
