@@ -1,5 +1,5 @@
 PORTNAME=	fldigi
-DISTVERSION=	4.2.02
+DISTVERSION=	4.2.03
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/fldigi/${PORTNAME} \
 		http://www.w1hkj.com/files/fldigi/
@@ -7,6 +7,8 @@ MASTER_SITES=	SF/fldigi/${PORTNAME} \
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Digital decoder for psk, cw, psk31, olivia
 WWW=		http://www.w1hkj.com
+
+BROKEN_FreeBSD_12=	no hid support
 
 LICENSE=	GPLv3
 
@@ -19,7 +21,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libpng.so:graphics/png \
 		libportaudio.so:audio/portaudio \
 		libsamplerate.so:audio/libsamplerate \
-		libsndfile.so:audio/libsndfile
+		libsndfile.so:audio/libsndfile \
+		libudev.so:devel/libudev-devd
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils gmake jpeg \
 		perl5 pkgconfig shebangfix xorg
