@@ -7863,7 +7863,6 @@
     SUBDIR += xtensa-esp32-elf
     SUBDIR += xtl
     SUBDIR += xtl-quant-stack
-    SUBDIR += xtoolchain-llvm-devel
     SUBDIR += xwpe
     SUBDIR += xxgdb
     SUBDIR += xxhash

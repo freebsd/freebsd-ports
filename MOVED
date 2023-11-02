@@ -7955,3 +7955,4 @@ textproc/xalan-c||2023-10-28|Has expired: Upstream no longer continuing; please 
 www/homer|www/homer-web|2023-11-01|Rename port to be consistent with Arch
 textproc/rubygem-yarp|textproc/rubygem-prism|2023-11-01|Remove obsoleted port. Use textproc/rubygem-prism instead
 audio/p5-MIDI|audio/p5-MIDI-Perl|2023-11-01|Move audio/p5-MIDI to audio/p5-MIDI-Perl
+devel/xtoolchain-llvm-devel||2023-11-02|Subsumed into devel/llvm-devel
