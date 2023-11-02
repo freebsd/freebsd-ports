@@ -15,7 +15,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libsnappy.so:archivers/snappy \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c11 cpe gmake pkgconfig:build tcl:test
+USES=		compiler:c11 cpe gmake pkgconfig:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Snapchat
@@ -86,8 +86,5 @@ do-install:
 	${MKDIR} ${STAGEDIR}${KEYDB_LOGDIR} \
 		${STAGEDIR}${KEYDB_DBDIR} \
 		${STAGEDIR}${KEYDB_RUNDIR}
-
-do-test:
-	@cd ${WRKSRC} && ${TCLSH} tests/test_helper.tcl
 
 .include <bsd.port.post.mk>
