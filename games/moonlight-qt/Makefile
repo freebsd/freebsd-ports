@@ -1,5 +1,5 @@
 PORTNAME=	moonlight
-DISTVERSION=	5.0.0
+DISTVERSION=	5.0.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-qt/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-qt
