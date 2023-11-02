@@ -210,7 +210,7 @@ LICENSE?=	${PYQT_LICENSE}
 
 PLIST_SUB+=	PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
 
-SIP_ARGS=	--qmake ${QMAKE} \
+SIP_ARGS+=	--qmake ${QMAKE} \
 		--verbose \
 		--build-dir build \
 		--protected-is-public \
