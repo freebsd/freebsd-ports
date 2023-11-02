@@ -1,0 +1,13 @@
+Do not use vendored openssl
+
+--- asyncgit/Cargo.toml.orig	2023-11-01 20:43:42 UTC
++++ asyncgit/Cargo.toml
+@@ -21,7 +21,7 @@ log = "0.4"
+ # git2 = { path = "../../extern/git2-rs", features = ["vendored-openssl"]}
+ # git2 = { git="https://github.com/extrawurst/git2-rs.git", rev="fc13dcc", features = ["vendored-openssl"]}
+ # pinning to vendored openssl, using the git2 feature this gets lost with new resolver
+-openssl-sys = { version = '0.9', features = ["vendored"], optional = true }
++openssl-sys = { version = '0.9', optional = true }
+ rayon = "1.7"
+ rayon-core = "1.11"
+ scopetime = { path = "../scopetime", version = "0.1" }

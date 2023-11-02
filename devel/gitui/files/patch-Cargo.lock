@@ -1,0 +1,28 @@
+Remove vendored openssl-src
+
+--- Cargo.lock.orig	2023-11-01 20:34:52 UTC
++++ Cargo.lock
+@@ -1147,15 +1147,6 @@ checksum = "ff011a302c396a5197692431fc1948019154afc178
+ checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
+ 
+ [[package]]
+-name = "openssl-src"
+-version = "300.1.3+3.1.2"
+-source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "cd2c101a165fff9935e34def4669595ab1c7847943c42be86e21503e482be107"
+-dependencies = [
+- "cc",
+-]
+-
+-[[package]]
+ name = "openssl-sys"
+ version = "0.9.93"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -1163,7 +1154,6 @@ dependencies = [
+ dependencies = [
+  "cc",
+  "libc",
+- "openssl-src",
+  "pkg-config",
+  "vcpkg",
+ ]
