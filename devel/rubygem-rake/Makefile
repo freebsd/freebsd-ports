@@ -1,11 +1,12 @@
 PORTNAME=	rake
-PORTVERSION=	13.0.6
+PORTVERSION=	13.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Make
-WWW=		https://github.com/ruby/rake
+WWW=		https://ruby.github.io/rake/ \
+		https://github.com/ruby/rake
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
