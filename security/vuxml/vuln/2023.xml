@@ -1,3 +1,37 @@
+  <vuln vid="4f370c80-79ce-11ee-be8e-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php80</name>
+	<name>phpmyfaq-php81</name>
+	<name>phpmyfaq-php82</name>
+	<name>phpmyfaq-php83</name>
+	<range><lt>3.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2023-10-27">
+	  <p>XSS</p>
+	  <p>Insufficient session expiration</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5863</cvename>
+      <cvename>CVE-2023-5865</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-5863</url>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-5865</url>
+      <url>https://huntr.com/bounties/fbfd4e84-61fb-4063-8f11-15877b8c1f6f/</url>
+      <url>https://huntr.com/bounties/4c4b7395-d9fd-4ca0-98d7-2e20c1249aff/</url>
+    </references>
+    <dates>
+      <discovery>2023-10-31</discovery>
+      <entry>2023-11-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2505ec7-78ea-11ee-9131-6f01853956d5">
     <topic>open-vm-tools -- Multiple vulnerabilities</topic>
     <affects>
