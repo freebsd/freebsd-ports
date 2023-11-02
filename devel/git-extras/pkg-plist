@@ -27,6 +27,7 @@ bin/git-feature
 bin/git-force-clone
 bin/git-fork
 bin/git-fresh-branch
+bin/git-get
 bin/git-gh-pages
 bin/git-graft
 bin/git-guilt
@@ -101,6 +102,7 @@ man/man1/git-feature.1.gz
 man/man1/git-force-clone.1.gz
 man/man1/git-fork.1.gz
 man/man1/git-fresh-branch.1.gz
+man/man1/git-get.1.gz
 man/man1/git-gh-pages.1.gz
 man/man1/git-graft.1.gz
 man/man1/git-guilt.1.gz
