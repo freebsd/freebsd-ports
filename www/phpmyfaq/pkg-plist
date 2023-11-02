@@ -180,6 +180,7 @@
 %%WWWDIR%%/assets/themes/default/scss/layout/_autocomplete.scss
 %%WWWDIR%%/assets/themes/default/scss/layout/_faq.scss
 %%WWWDIR%%/assets/themes/default/scss/layout/_login.scss
+%%WWWDIR%%/assets/themes/default/scss/layout/_navigation.scss
 %%WWWDIR%%/assets/themes/default/scss/layout/_setup.scss
 %%WWWDIR%%/assets/themes/default/scss/layout/_startpage.scss
 %%WWWDIR%%/assets/themes/default/scss/style.scss
@@ -509,7 +510,6 @@
 %%WWWDIR%%/src/libs/elastic/transport/src/Serializer/XmlSerializer.php
 %%WWWDIR%%/src/libs/elastic/transport/src/Transport.php
 %%WWWDIR%%/src/libs/elastic/transport/src/TransportBuilder.php
-%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/.buildkite/pipeline.yml
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/BREAKING_CHANGES.md
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/CHANGELOG.md
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/LICENSE
@@ -932,9 +932,7 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Snapshot.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Sql.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ssl.php
-%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/SynonymRule.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Synonyms.php
-%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/SynonymsSets.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Tasks.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/TextStructure.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Transform.php
@@ -2577,6 +2575,7 @@
 %%WWWDIR%%/src/phpMyFAQ/Entity/TagEntity.php
 %%WWWDIR%%/src/phpMyFAQ/Entity/TemplateMetaDataEntity.php
 %%WWWDIR%%/src/phpMyFAQ/Enums/AttachmentStorageType.php
+%%WWWDIR%%/src/phpMyFAQ/Enums/AuthenticationSourceType.php
 %%WWWDIR%%/src/phpMyFAQ/Enums/BackupType.php
 %%WWWDIR%%/src/phpMyFAQ/Export.php
 %%WWWDIR%%/src/phpMyFAQ/Export/Html5.php
