@@ -4,7 +4,7 @@ DISTVERSION=	5.1.3
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	rkoberman@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of routing policy tools to interact with the IRR
 WWW=		https://github.com/irrtoolset/irrtoolset
 
