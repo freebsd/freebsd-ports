@@ -43,12 +43,11 @@ GLIB_MESON_ENABLED=	glib
 GOBJECT_DESC=		Depend on gobject
 GLIB_DESC=		Depend on glib
 
-OPTIONS_EXCLUDE_aarch64c=	GOBJECT GLIB
-OPTIONS_EXCLUDE_riscv64c=	GOBJECT GLIB
+OPTIONS_EXCLUDE_purecap=	GOBJECT GLIB
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+. !${ABI:Mpurecap}
 USES+=			gnome
 .endif
 

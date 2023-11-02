@@ -9,7 +9,7 @@ WWW=		https://cheribsd.org/
 
 USES=		metaport
 
-ONLY_FOR_ARCHS=		aarch64 aarch64c
+ONLY_FOR_ARCHS=		aarch64 aarch64c aarch64cb
 ONLY_FOR_ARCHS_REASON=	requires GPU support available only on the Morello platform
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dolphin:x11-fm/dolphin
@@ -35,9 +35,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/wallpapers/Elarun/metadata.json:x11-themes/plas
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64 || ${ARCH} == aarch64c
 RUN_DEPENDS+=	${LOCALBASE}/lib/dri/panfrost_dri.so:graphics/mesa-dri
-.endif
 
 SUB_FILES=	sddm \
 		seatd

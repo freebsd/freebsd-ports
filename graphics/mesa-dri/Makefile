@@ -36,11 +36,11 @@ ALL_VULKAN_DRIVERS=	INTEL AMD SWRAST
 
 GALLIUM_DRIVERS+=	SWRAST \
 			ZINK
-.if ${ARCH} != aarch64c
+.if !${ARCH:Maarch64*c*}
 VULKAN_DRIVERS+=	SWRAST	# lavapipe
 .endif
 
-.if ${ARCH} == aarch64 || ${ARCH} == aarch64c
+.if ${ARCH:Maarch64*}
 GALLIUM_DRIVERS+=	PANFROST
 .endif
 

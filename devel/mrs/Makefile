@@ -10,7 +10,7 @@ WWW=		https://github.com/ctsrd-cheri/mrs
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
 
-ONLY_FOR_ARCHS=	aarch64c riscv64c
+ONLY_FOR_ARCHS=	aarch64c aarch64cb riscv64c
 
 FLAVORS=	cherivoke cherivoke_stats \
 		cornucopia cornucopia_stats \

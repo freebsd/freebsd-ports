@@ -10,7 +10,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_COMB=	single
 LICENSE_FILE=	${WRKSRC}/jemalloc/COPYING
 
-ONLY_FOR_ARCHS=	aarch64c riscv64c
+ONLY_FOR_ARCHS=	aarch64c aarch64cb riscv64c
 
 USES=		cmake compiler:c++17-lang
 

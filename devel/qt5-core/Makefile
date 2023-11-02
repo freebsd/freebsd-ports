@@ -52,11 +52,11 @@ MORE_WRKSRCS=	src/tools/bootstrap src/corelib src/tools/qlalr
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+.if !${ABI:Mpurecap}
 USES+=		gnome
 .endif
 
-.if ${ARCH} == aarch64c || ${ARCH} == riscv64c
+.if ${ABI:Mpurecap}
 CONFIGURE_ARGS+=-no-glib -no-mimetype-database -qt-harfbuzz -no-icu
 .else
 CONFIGURE_ARGS+=-no-harfbuzz

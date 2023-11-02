@@ -25,7 +25,7 @@ QT_BINARIES=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+.if !${ABI:Mpurecap}
 USES+=          gnome
 .endif
 

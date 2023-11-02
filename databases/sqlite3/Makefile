@@ -261,7 +261,7 @@ post-install:
 .if !defined(TEA)
 	${INSTALL_MAN} "${WRKSRC}/${PORTNAME}.1" "${STAGEDIR}${PREFIX}/man/man1"
 	${RM} "${STAGEDIR}${PREFIX}/include/msvc.h"
-.if ${ARCH} != aarch64c && ${ARCH} != riscv64c
+.if !${ABI:Mpurecap}
 	${SETENV} LD_LIBMAP_DISABLE=1 ldd -a "${STAGEDIR}${PREFIX}/bin/${PORTNAME}" "${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so"
 .endif
 	${INSTALL_PROGRAM} "${WRKSRC}/sqldiff" "${STAGEDIR}${PREFIX}/bin"
