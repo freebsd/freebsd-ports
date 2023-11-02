@@ -1,0 +1,9 @@
+Crumb is a high level, functional, interpreted, dynamically typed,
+general-purpose programming language, with a terse syntax, and a verbose
+standard library.
+
+It features:
+* Strictly no side effects* to help you write functional code
+* The ability to localize the effects of imported Crumb file.
+* Dynamic typing and garbage collectio.
+* 0 keywords, everything is a functio.

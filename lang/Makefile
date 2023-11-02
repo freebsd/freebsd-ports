@@ -35,6 +35,7 @@
     SUBDIR += coffeescript
     SUBDIR += colm
     SUBDIR += cparser
+    SUBDIR += crumb
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
     SUBDIR += cython
