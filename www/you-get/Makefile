@@ -6,7 +6,8 @@ MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dumb downloader that scrapes the web
-WWW=		https://you-get.org/
+WWW=		https://you-get.org/ \
+		https://github.com/soimort/you-get
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
