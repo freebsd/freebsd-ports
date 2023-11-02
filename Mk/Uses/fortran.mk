@@ -28,7 +28,7 @@ FFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 F90FLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
-		-L${LOCALBASE}/lib/gcc${_GCC_VER} -B${LOCALBASE}/bin
+		-L${LOCALBASE}/lib/gcc${_GCC_VER}
 .  else
 IGNORE=		USES=fortran: invalid arguments: ${fortran_ARGS}
 .  endif
