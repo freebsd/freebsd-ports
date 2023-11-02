@@ -1,6 +1,6 @@
 PORTNAME=	wt
 DISTVERSION=	4.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 
 PATCH_SITES=	https://github.com/emweb/wt/commit/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libboost_system.so:devel/boost-libs \
 		libGraphicsMagick.so:graphics/GraphicsMagick
 
-USES=		cmake compiler:c++14-lang cpe pkgconfig ssl
+USES=		cmake:testing compiler:c++14-lang cpe pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	emweb
 CPE_VENDOR=	emweb
@@ -35,11 +35,12 @@ CMAKE_ARGS=	-DCONFIGDIR:STRING=${LOCALBASE}/etc/${PORTNAME} \
 		-DWT_WRASTERIMAGE_IMPLEMENTATION:STRING=GraphicsMagick \
 		-DENABLE_SSL:BOOL=ON \
 		-DDESTDIR:STRING=${STAGEDIR}
+CMAKE_OFF=	BUILD_TESTS
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 OPTIONS_DEFINE=	\
 	DEBUG \
 	EXAMPLES \
-	TESTS \
 	RESOURCES \
 	HARU \
 	PANGO \
@@ -49,7 +50,6 @@ OPTIONS_DEFINE=	\
 	LIBWTTEST \
 	UNWIND
 OPTIONS_DEFAULT=	\
-	TESTS \
 	RESOURCES \
 	HARU \
 	PANGO \
@@ -60,7 +60,6 @@ OPTIONS_SUB=	yes
 NO_OPTIONS_SORT=	yes
 
 EXAMPLES_DESC=		Install examples (implies SQLITE3 and WTHTTP)
-TESTS_DESC=		Build Wt tests
 RESOURCES_DESC=		Install resources directory
 HARU_DESC=		Enable Haru Free PDF Library
 SAML_DESC=		Build built-in SAML service provider for Wt::Auth
@@ -134,8 +133,6 @@ SQLITE3_CMAKE_BOOL=	ENABLE_SQLITE
 SQLITE3_USES=		sqlite:3
 SQLITE3_CMAKE_ON=	-DENABLE_LIBWTDBO:BOOL=ON
 
-TESTS_CMAKE_BOOL=	BUILD_TESTS
-
 UNWIND_CMAKE_BOOL=	ENABLE_UNWIND
 UNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
 
@@ -167,5 +164,11 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/wt_config.xml \
 		${STAGEDIR}${ETCDIR}/wt_config.xml.sample
+
+do-test:
+	@cd ${WRKSRC}/test && \
+		${BUILD_WRKSRC}/test/test.wt && \
+		${BUILD_WRKSRC}/test/test.sqlite3 && \
+		${BUILD_WRKSRC}/test/test.http
 
 .include <bsd.port.mk>
