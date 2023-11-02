@@ -1,0 +1,17 @@
+FlexiBLAS is a BLAS and LAPACK wrapper library with runtime exchangable
+backends.
+
+- Runtime exchangeable BLAS and LAPACK backend without recompilation of any
+  software.
+- Supports all BLAS functions and al LAPACK functions from Version 3.10.0 with
+  an 100% BLAS and LAPACK compatible ABI/API.
+- Flexible per system/per user/per host configuration files.
+- Integration of user-owned BLAS libraries without administrator privileges,
+  even in system-wide installed programs.
+- Interface for GNU Octave to change the BLAS backend at runtime.
+- Works with NETLIB-BLAS, OpenBLAS, ATLAS, Intel MKL, BLIS, ...
+- Aware of 32-bit and 64-bit integers
+- New: Introspection API to build analysis and profiling tools.
+
+See also: <https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release>
+and <https://github.com/mpimd-csc/flexiblas>.

@@ -329,6 +329,7 @@
     SUBDIR += fftw3-quad
     SUBDIR += flann
     SUBDIR += flexfloat
+    SUBDIR += flexiblas
     SUBDIR += flint2
     SUBDIR += flintqs
     SUBDIR += flopc++
