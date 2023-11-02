@@ -1,5 +1,5 @@
 PORTNAME=	cyclonedx-python-lib
-PORTVERSION=	4.2.3
+PORTVERSION=	5.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,13 +14,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}license-expression>=30<31:textproc/py-license-expression@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.9:textproc/py-packageurl-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.11.1:devel/py-py-serializable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.11:textproc/py-packageurl-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.15<1:devel/py-py-serializable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.4.0<3:devel/py-sortedcontainers@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	JSON_VALIDATION VALIDATION XML_VALIDATION
+JSON_VALIDATION_DESC=	JSON validation
+VALIDATION_DESC=	JSON and XML validation
+XML_VALIDATION_DESC=	XML validation
+
+JSON_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR}
+VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18<5:devel/py-jsonschema@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
+XML_VALIDATION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
 
 .include <bsd.port.mk>
