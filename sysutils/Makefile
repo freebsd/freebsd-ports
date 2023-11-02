@@ -410,6 +410,7 @@
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
+    SUBDIR += flipperbit
     SUBDIR += flock
     SUBDIR += flog
     SUBDIR += flowgger
