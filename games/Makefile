@@ -703,6 +703,7 @@
     SUBDIR += openbor3711
     SUBDIR += openbor3979
     SUBDIR += openbor4432
+    SUBDIR += openbor7144
     SUBDIR += openbubbles
     SUBDIR += openbve
     SUBDIR += opencity
