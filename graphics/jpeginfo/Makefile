@@ -1,6 +1,5 @@
 PORTNAME=	jpeginfo
-PORTVERSION=	1.7.0
-PORTREVISION=	1
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.kokkonen.net/tjko/src/
 
@@ -19,5 +18,8 @@ MAKE_ARGS=	INSTALL_ROOT=${STAGEDIR}
 
 PLIST_FILES=	bin/jpeginfo \
 		share/man/man1/jpeginfo.1.gz
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jpeginfo
 
 .include <bsd.port.mk>
