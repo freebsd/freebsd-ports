@@ -1,5 +1,5 @@
 PORTNAME=	importmap-rails
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails70
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack70>=6.0.0:www/rubygem-actionpack70 \
+		rubygem-activesupport70>=6.0.0:devel/rubygem-activesupport70 \
 		rubygem-railties70>=6.0.0:www/rubygem-railties70
 
 USES=		gem
