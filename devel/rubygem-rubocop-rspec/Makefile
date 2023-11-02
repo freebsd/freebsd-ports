@@ -1,5 +1,5 @@
 PORTNAME=	rubocop-rspec
-PORTVERSION=	2.24.1
+PORTVERSION=	2.25.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/rubocop/rubocop-rspec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.md
 
-RUN_DEPENDS=	rubygem-rubocop>=1.33<2:devel/rubygem-rubocop \
+RUN_DEPENDS=	rubygem-rubocop>=1.40<2:devel/rubygem-rubocop \
 		rubygem-rubocop-capybara>=2.17<3:devel/rubygem-rubocop-capybara \
 		rubygem-rubocop-factory_bot>=2.22<3:devel/rubygem-rubocop-factory_bot
 
