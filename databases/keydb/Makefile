@@ -1,6 +1,6 @@
 PORTNAME=	keydb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.3.3
+DISTVERSION=	6.3.4
 CATEGORIES=	databases
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libsnappy.so:archivers/snappy \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c11 cpe gmake pkgconfig:build
+USES=		compiler:c11 cpe gmake localbase:ldflags pkgconfig:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Snapchat
@@ -25,8 +25,7 @@ USE_RC_SUBR=	keydb keydb_sentinel
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -lm -lexecinfo -L${LOCALBASE}/lib
+LDFLAGS+=	-lpthread -lm -lexecinfo
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \
@@ -44,13 +43,13 @@ PLIST_SUB=	KEYDB_DBDIR=${KEYDB_DBDIR} \
 		KEYDB_RUNDIR=${KEYDB_RUNDIR} \
 		KEYDB_USER=${USERS}
 
-OPTIONS_DEFINE=		TLS
-OPTIONS_DEFAULT=	TLS
+OPTIONS_DEFINE=	TLS
+OPTIONS_DEFAULT=TLS
 
 TLS_DESC=	Use TLS (openssl req.)
 
-TLS_USES=		ssl
-TLS_MAKE_ENV=		BUILD_TLS=yes
+TLS_USES=	ssl
+TLS_MAKE_ENV=	BUILD_TLS=yes
 
 BIN_FILES=	keydb-benchmark keydb-check-aof keydb-check-rdb keydb-cli \
 		keydb-sentinel keydb-server
