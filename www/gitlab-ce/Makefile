@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -34,7 +34,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
 	rubygem-rails70>=7.0.8<7.1:www/rubygem-rails70 \
 	rubygem-vite_rails-rails70>=0:devel/rubygem-vite_rails-rails70 \
-	rubygem-bootsnap>=1.16.0<1.17:devel/rubygem-bootsnap \
+	rubygem-bootsnap116>=1.16.0<1.17:devel/rubygem-bootsnap116 \
 	rubygem-openssl>=3.0<4:security/rubygem-openssl \
 	rubygem-ipaddr>=1.2.5<1.3:net/rubygem-ipaddr \
 	rubygem-responders-rails70>=3.0<4.0:www/rubygem-responders-rails70 \
