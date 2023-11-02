@@ -1,5 +1,6 @@
 PORTNAME=	emacs
 DISTVERSION=	29.1
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
@@ -29,7 +30,7 @@ full_CONFLICTS_INSTALL=		emacs-canna emacs-nox
 nox_PKGNAMESUFFIX=		-nox
 nox_CONFLICTS_INSTALL=		emacs emacs-canna
 
-USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
+USES=		cpe gmake localbase:ldflags ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
 
 GNU_CONFIGURE=		yes
@@ -72,6 +73,7 @@ CONFIGURE_ENV=		ac_cv_header_sys_sysinfo_h=no
 
 CONFLICTS_INSTALL=	emacs-devel emacs-devel-nox
 
+BINARY_ALIAS=	makeinfo=true
 SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${DISTVERSION}
 
