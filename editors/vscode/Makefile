@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.83.1
-PORTREVISION=	2
+DISTVERSION=	1.84.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -67,7 +66,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	f1b07bd25dfad64b0167beb15359ae573aecd2cc
+SOURCE_COMMIT_HASH=	d037ac076cee195194f93ce6fe2bdfe2969cc82d
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -79,7 +78,7 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 USE_LDCONFIG=	${DATADIR}
 
 # Keep NODE_VER in sync with www/node18 DISTVERSION
-NODE_VER=	18.18.0
+NODE_VER=	18.18.2
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
@@ -215,6 +214,11 @@ do-build:
 	cd ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH} && \
 		${SHA256} -r *-v${ELECTRON_VER}-linux-*.zip | \
 		${SED} -e 's/ / */' > SHASUMS256.txt
+	# add newline character at the end of the file if not already
+	${AWK} '1' ${WRKSRC}/build/checksums/electron.txt > \
+		${WRKSRC}/build/checksums/electron.txt.new
+	${MV} -f ${WRKSRC}/build/checksums/electron.txt.new \
+		${WRKSRC}/build/checksums/electron.txt
 	cd ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH} && \
 		${SHA256} -r *-v${ELECTRON_VER}-linux-*.zip | \
 		${SED} -e 's/ / */' >> ${WRKSRC}/build/checksums/electron.txt

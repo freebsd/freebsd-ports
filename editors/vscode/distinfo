@@ -1,7 +1,7 @@
-TIMESTAMP = 1697178490
-SHA256 (vscode/yarn-offline-cache-1.83.1.tar.gz) = cf22841613b221a7ac69c635fb2a73328f737f660c33886b41f0ff0392ba8924
-SIZE (vscode/yarn-offline-cache-1.83.1.tar.gz) = 334078092
-SHA256 (vscode/vscode-marketplace-exts-1.83.1.tar.gz) = d3df55c3d8c8ac3e9444642b9ac9119fdd61512f89870a93a4f364577261f52f
-SIZE (vscode/vscode-marketplace-exts-1.83.1.tar.gz) = 1755683
-SHA256 (vscode/microsoft-vscode-1.83.1_GH0.tar.gz) = 45c563424dfbff6e80c5621b5ecc1b7276141c944c1fa39401a98a800b576410
-SIZE (vscode/microsoft-vscode-1.83.1_GH0.tar.gz) = 17167986
+TIMESTAMP = 1698914533
+SHA256 (vscode/yarn-offline-cache-1.84.0.tar.gz) = 57e666af2c989e9cd74544156e3c9e5f6c5e0eb65b60cd0252376b782407d1fe
+SIZE (vscode/yarn-offline-cache-1.84.0.tar.gz) = 334827323
+SHA256 (vscode/vscode-marketplace-exts-1.84.0.tar.gz) = 9c72311f40096b5cb823c22478f92af99584d52187250b6a986d7e3177a2adc2
+SIZE (vscode/vscode-marketplace-exts-1.84.0.tar.gz) = 1728524
+SHA256 (vscode/microsoft-vscode-1.84.0_GH0.tar.gz) = 85d5964044cce63870a51c973d2dc6a0f63a3f42dd319cdaf59259f309078031
+SIZE (vscode/microsoft-vscode-1.84.0_GH0.tar.gz) = 17329952
