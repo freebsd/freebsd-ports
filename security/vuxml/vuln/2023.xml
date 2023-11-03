@@ -1,3 +1,60 @@
+  <vuln vid="a1e27775-7a61-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.105</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.105</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_31.html">
+	 <p>This update includes 15 security fixes:</p>
+	 <ul>
+	    <li>[1492698] High CVE-2023-5480: Inappropriate implementation in Payments. Reported by Vsevolod Kokorin (Slonser) of Solidlab on 2023-10-14</li>
+	    <li>[1492381] High CVE-2023-5482: Insufficient data validation in USB. Reported by DarkNavy on 2023-10-13</li>
+	    <li>[1492384] High CVE-2023-5849: Integer overflow in USB. Reported by DarkNavy on 2023-10-13</li>
+	    <li>[1281972] Medium CVE-2023-5850: Incorrect security UI in Downloads. Reported by Mohit Raj (shadow2639) on 2021-12-22</li>
+	    <li>[1473957] Medium CVE-2023-5851: Inappropriate implementation in Downloads. Reported by Shaheen Fazim on 2023-08-18</li>
+	    <li>[1480852] Medium CVE-2023-5852: Use after free in Printing. Reported by [pwn2car] on 2023-09-10</li>
+	    <li>[1456876] Medium CVE-2023-5853: Incorrect security UI in Downloads. Reported by Hafiizh on 2023-06-22</li>
+	    <li>[1488267] Medium CVE-2023-5854: Use after free in Profiles. Reported by Dohyun Lee (@l33d0hyun) of SSD-Disclosure Labs &amp; DNSLab, Korea Univ on 2023-10-01</li>
+	    <li>[1492396] Medium CVE-2023-5855: Use after free in Reading Mode. Reported by ChaobinZhang on 2023-10-13</li>
+	    <li>[1493380] Medium CVE-2023-5856: Use after free in Side Panel. Reported by Weipeng Jiang (@Krace) of VRI on 2023-10-17</li>
+	    <li>[1493435] Medium CVE-2023-5857: Inappropriate implementation in Downloads. Reported by Will Dormann on 2023-10-18</li>
+	    <li>[1457704] Low CVE-2023-5858: Inappropriate implementation in WebApp Provider. Reported by Axel Chong on 2023-06-24</li>
+	    <li>[1482045] Low CVE-2023-5859: Incorrect security UI in Picture In Picture. Reported by Junsung Lee on 2023-09-13</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5480</cvename>
+      <cvename>CVE-2023-5482</cvename>
+      <cvename>CVE-2023-5849</cvename>
+      <cvename>CVE-2023-5850</cvename>
+      <cvename>CVE-2023-5851</cvename>
+      <cvename>CVE-2023-5852</cvename>
+      <cvename>CVE-2023-5853</cvename>
+      <cvename>CVE-2023-5854</cvename>
+      <cvename>CVE-2023-5855</cvename>
+      <cvename>CVE-2023-5856</cvename>
+      <cvename>CVE-2023-5857</cvename>
+      <cvename>CVE-2023-5858</cvename>
+      <cvename>CVE-2023-5859</cvename>
+      <url>https://chromereleases.googleblog.com/2023/10/stable-channel-update-for-desktop_31.html</url>
+    </references>
+    <dates>
+      <discovery>2023-10-31</discovery>
+      <entry>2023-11-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4f370c80-79ce-11ee-be8e-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
