@@ -1,6 +1,6 @@
 PORTNAME=	hyprland-share-picker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
