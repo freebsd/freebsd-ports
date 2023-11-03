@@ -140,6 +140,7 @@ lib/kritaplugins/kritaqmlexport.so
 lib/kritaplugins/kritaraindropsfilter.so
 lib/kritaplugins/kritarandompickfilter.so
 lib/kritaplugins/kritarecorderdocker.so
+lib/kritaplugins/kritaresettransparent.so
 lib/kritaplugins/kritaresourcemanager.so
 lib/kritaplugins/kritarotateimage.so
 lib/kritaplugins/kritaroundcornersfilter.so
