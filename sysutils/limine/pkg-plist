@@ -1,7 +1,7 @@
 bin/limine
 include/limine.h
 share/doc/limine/CONFIG.md
-share/doc/limine/LICENSE
+share/doc/limine/COPYING
 share/doc/limine/PHILOSOPHY.md
 share/doc/limine/PROTOCOL.md
 share/doc/limine/README.md

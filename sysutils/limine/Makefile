@@ -1,5 +1,5 @@
 PORTNAME=	limine
-DISTVERSION=	5.20230928.2
+DISTVERSION=	5.20231103.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}-bootloader/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -8,7 +8,7 @@ COMMENT=	Modern, advanced, portable, multiprotocol bootloader
 WWW=		https://limine-bootloader.org/
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	mtools:emulators/mtools \
 		nasm:devel/nasm
