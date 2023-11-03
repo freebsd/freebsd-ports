@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-10-11 18:22:24 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-11-03 10:09:45 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h
 @@ -24,7 +24,7 @@
  #include "ui/views/controls/image_view.h"
@@ -27,7 +27,7 @@
    gfx::Insets MirroredFrameBorderInsets() const override;
    gfx::Insets GetInputInsets() const override;
    SkRRect GetRestoredClipRegion() const override;
-@@ -186,7 +186,7 @@ class PictureInPictureBrowserFrameView
+@@ -188,7 +188,7 @@ class PictureInPictureBrowserFrameView
    // Called when mouse entered or exited the pip window.
    void OnMouseEnteredOrExitedWindow(bool entered);
  
@@ -36,7 +36,7 @@
    // Sets the window frame provider so that it will be used for drawing.
    void SetWindowFrameProvider(ui::WindowFrameProvider* window_frame_provider);
  
-@@ -349,7 +349,7 @@ class PictureInPictureBrowserFrameView
+@@ -355,7 +355,7 @@ class PictureInPictureBrowserFrameView
    // `top_bar_color_animation_`.
    absl::optional<SkColor> current_foreground_color_;
  

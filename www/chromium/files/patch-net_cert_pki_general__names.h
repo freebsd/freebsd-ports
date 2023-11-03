@@ -1,8 +1,8 @@
---- net/cert/pki/general_names.h.orig	2023-10-11 18:22:24 UTC
+--- net/cert/pki/general_names.h.orig	2023-11-03 10:09:45 UTC
 +++ net/cert/pki/general_names.h
-@@ -7,6 +7,7 @@
- 
+@@ -8,6 +8,7 @@
  #include <memory>
+ #include <string_view>
  #include <vector>
 +#include <string>
  

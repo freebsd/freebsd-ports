@@ -1,6 +1,6 @@
---- net/base/features.cc.orig	2023-09-13 12:11:42 UTC
+--- net/base/features.cc.orig	2023-11-03 10:09:45 UTC
 +++ net/base/features.cc
-@@ -177,7 +177,7 @@ BASE_FEATURE(kCertDualVerificationTrialFeature,
+@@ -169,7 +169,7 @@ BASE_FEATURE(kSameSiteDefaultChecksMethodRigorously,
  #if BUILDFLAG(CHROME_ROOT_STORE_OPTIONAL)
  BASE_FEATURE(kChromeRootStoreUsed,
               "ChromeRootStoreUsed",

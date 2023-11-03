@@ -1,4 +1,4 @@
---- printing/mojom/printing_context_mojom_traits.cc.orig	2023-10-11 18:22:24 UTC
+--- printing/mojom/printing_context_mojom_traits.cc.orig	2023-11-03 10:09:45 UTC
 +++ printing/mojom/printing_context_mojom_traits.cc
 @@ -19,7 +19,7 @@
  #include "base/numerics/safe_conversions.h"
@@ -18,12 +18,12 @@
    DCHECK(out->advanced_settings().empty());
    if (!data.ReadAdvancedSettings(&out->advanced_settings()))
      return false;
-@@ -239,7 +239,7 @@ bool StructTraits<
+@@ -238,7 +238,7 @@ bool StructTraits<
+     if (system_print_dialog_data.size() != dictionary_entries) {
        return false;
      }
- 
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      // The dictionary must contain three strings.
-     base::Value* value = system_print_dialog_data.Find(
+     const base::Value* value = system_print_dialog_data.Find(
          printing::kLinuxSystemPrintDialogDataPrinter);

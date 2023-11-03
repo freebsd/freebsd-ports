@@ -1,6 +1,6 @@
---- v8/src/codegen/x64/macro-assembler-x64.h.orig	2023-10-11 18:22:24 UTC
+--- v8/src/codegen/x64/macro-assembler-x64.h.orig	2023-11-03 10:09:45 UTC
 +++ v8/src/codegen/x64/macro-assembler-x64.h
-@@ -646,11 +646,14 @@ class V8_EXPORT_PRIVATE MacroAssembler
+@@ -655,11 +655,14 @@ class V8_EXPORT_PRIVATE MacroAssembler
  
    // Define a function entrypoint. This doesn't emit any code for this
    // architecture, as control-flow integrity is not supported for it.

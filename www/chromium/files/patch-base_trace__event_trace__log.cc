@@ -1,6 +1,6 @@
---- base/trace_event/trace_log.cc.orig	2023-10-11 18:22:24 UTC
+--- base/trace_event/trace_log.cc.orig	2023-11-03 10:09:45 UTC
 +++ base/trace_event/trace_log.cc
-@@ -2190,8 +2190,13 @@ void TraceLog::SetTraceBufferForTesting(
+@@ -2191,8 +2191,13 @@ void TraceLog::SetTraceBufferForTesting(
  #if BUILDFLAG(USE_PERFETTO_CLIENT_LIBRARY)
  void TraceLog::OnSetup(const perfetto::DataSourceBase::SetupArgs& args) {
    AutoLock lock(track_event_lock_);
