@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" || ${ARCH} == "powerpc"
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH:Marmv?} != ""
 CFLAGS+=	-Wno-error=tautological-constant-out-of-range-compare
 .endif
 
