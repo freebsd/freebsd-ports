@@ -1,4 +1,4 @@
---- src/lib/Makefile.in.orig	2023-10-23 09:45:30 UTC
+--- src/lib/Makefile.in.orig	2023-11-02 19:51:08 UTC
 +++ src/lib/Makefile.in
 @@ -14,15 +14,12 @@ includedir = @includedir@/ndpi
  PREFIX     = @prefix@
@@ -31,7 +31,7 @@
 -ifneq ($(OS),Windows_NT)
 -OS := $(shell uname)
 -endif
- BUILD_MINGW    		 = @BUILD_MINGW@
+-BUILD_MINGW    		 = @BUILD_MINGW@
 -
 -ifeq ($(OS),Darwin)
 -CC=clang -fno-color-diagnostics
@@ -41,7 +41,7 @@
 -NDPI_LIB_SHARED_BASE = libndpi
 -NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE)-@NDPI_VERSION_SHORT@.dll
 -else
--SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
+ SONAME_FLAG=-Wl,-soname,$(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
 -endif
 -endif
  
