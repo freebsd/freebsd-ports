@@ -1,0 +1,7 @@
+Quackle is a free crossword game artificial intelligence and analysis
+tool that rivals the best players in the world!
+
+It can be configured to play and analyze crossword games with any board
+layout and use the newest lexicons. Quackle includes a move generator,
+move evaluator, simulator, and Qt-based user interface and can be used
+with any board layout, alphabet, lexicon, and tile distribution.
