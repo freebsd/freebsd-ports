@@ -1,0 +1,13 @@
+--- Makefile.in.orig	2020-07-25 18:25:51 UTC
++++ Makefile.in
+@@ -22,8 +22,8 @@ install: all
+ install: all
+ 	mkdir -p ${DESTDIR}${bindir}
+ 	mkdir -p ${DESTDIR}${mandir}/man1
+-	install -m 755 fswebcam ${DESTDIR}${bindir}
+-	install -m 644 fswebcam.1.gz ${DESTDIR}${mandir}/man1
++	${BSD_INSTALL_PROGRAM} fswebcam ${DESTDIR}${bindir}
++	${BSD_INSTALL_MAN} fswebcam.1.gz ${DESTDIR}${mandir}/man1
+ 
+ fswebcam: $(OBJS)
+ 	$(CC) -o fswebcam $(OBJS) $(LDFLAGS)
