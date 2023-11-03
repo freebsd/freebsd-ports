@@ -1,5 +1,6 @@
 %%FFMPEG%%etc/alsa/conf.d/10-rate-lav.conf
 %%SAMPLERATE%%etc/alsa/conf.d/10-samplerate.conf
+%%JACK%%etc/alsa/conf.d/50-jack.conf
 %%FFMPEG%%etc/alsa/conf.d/60-a52-encoder.conf
 @comment etc/alsa/conf.d/50-arcam-av-ctl.conf
 @comment etc/alsa/conf.d/50-oss.conf
@@ -52,6 +53,7 @@ lib/alsa-lib/libasound_module_pcm_vdownmix.so
 %%FFMPEG%%share/alsa/alsa.conf.d/10-rate-lav.conf
 %%SAMPLERATE%%share/alsa/alsa.conf.d/10-samplerate.conf
 @comment share/alsa/alsa.conf.d/50-arcam-av-ctl.conf
+%%JACK%%share/alsa/alsa.conf.d/50-jack.conf
 @comment share/alsa/alsa.conf.d/50-oss.conf
 %%PULSEAUDIO%%share/alsa/alsa.conf.d/50-pulseaudio.conf
 %%FFMPEG%%share/alsa/alsa.conf.d/60-a52-encoder.conf
