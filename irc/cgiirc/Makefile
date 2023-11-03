@@ -6,7 +6,7 @@ MASTER_SITES=	http://cgiirc.org/releases/ \
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	IRC web gateway written in Perl
-WWW=		http://cgiirc.sourceforge.net/
+WWW=		https://cgiirc.sourceforge.net/
 
 LICENSE=	GPLv2
 

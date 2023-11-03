@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}0-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	XFFM Interprocess Communication and Control
-WWW=		http://xffm.sourceforge.net/libtubo.html
+WWW=		https://xffm.sourceforge.net/libtubo.html
 
 LICENSE=	GPLv3
 

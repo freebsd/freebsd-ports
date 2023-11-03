@@ -7,7 +7,7 @@ MASTER_SITES=	SF/najitool/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library that generates, converts, and filters files
-WWW=		http://najitool.sourceforge.net/
+WWW=		https://najitool.sourceforge.net/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE

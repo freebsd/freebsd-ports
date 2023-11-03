@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}5-${PORTVERSION}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Basic library used by some rfm applications
-WWW=		http://xffm.sourceforge.net/libxffm.html
+WWW=		https://xffm.sourceforge.net/libxffm.html
 
 LICENSE=	GPLv3
 
