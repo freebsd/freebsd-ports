@@ -1,4 +1,4 @@
---- Makefile.in.orig	2022-07-29 17:15:08 UTC
+--- Makefile.in.orig	2023-11-03 09:27:20 UTC
 +++ Makefile.in
 @@ -40,7 +40,8 @@ else ifeq ($(OS), $(filter $(OS), FreeBSD))
  	LUA_PLATFORM=macosx
@@ -10,7 +10,20 @@
  endif
  
  
-@@ -99,7 +100,7 @@ RPM_DATA_PKG = $(TARGET)-data-$(NTOPNG_VERSION)-@REVIS
+@@ -77,11 +78,7 @@ ifeq ($(HAS_ZSTD), 0)
+ 
+ HAS_ZSTD=$(shell $(PKG_CONFIG) --exists libzstd && echo 0)
+ ifeq ($(HAS_ZSTD), 0)
+-   ifeq ($(OS), $(filter $(OS), FreeBSD))
+-	ZSTD_LIB = /usr/local/lib/libzstd.a
+-     else
+-	ZSTD_LIB = $(shell $(PKG_CONFIG) --libs libzstd)
+-   endif
++  ZSTD_LIB = $(shell $(PKG_CONFIG) --libs libzstd)
+ endif
+ 
+ ######
+@@ -102,7 +99,7 @@ RPM_DATA_PKG = $(TARGET)-data-$(NTOPNG_VERSION)-@REVIS
  RPM_DATA_PKG = $(TARGET)-data-$(NTOPNG_VERSION)-@REVISION@.noarch.rpm
  ######
  
