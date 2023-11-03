@@ -1907,6 +1907,7 @@
     SUBDIR += reddsaver
     SUBDIR += redmine50
     SUBDIR += rejik
+    SUBDIR += remark42
     SUBDIR += reportmagic
     SUBDIR += repos-style
     SUBDIR += reproxy

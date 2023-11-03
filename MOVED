@@ -7960,5 +7960,4 @@ net/ceph14||2023-11-02|Has expired: End of life upstream since 2021-06-30
 www/sfnt2woff||2023-11-02|Has expired: Superseded by WOFF 2.0, please consider using devel/woff2
 textproc/kibana7||2023-11-02|Has expired: Depends on EOL NodeJS 16
 devel/electron22|devel/electron24|2023-11-02|Has expired: Depends on EOL NodeJS 16
-www/remark42||2023-11-02|Has expired: Depends on EOL NodeJS 16
 www/hedgedoc||2023-11-02|Has expired: Depends on EOL NodeJS 16
