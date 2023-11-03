@@ -27,6 +27,9 @@ LICENSE_NAME=	End User License Agreement
 LICENSE_TEXT=	See https://obsidian.md/terms
 LICENSE_PERMS=
 
+DEPRECATED=	Depends on upstream EOLed electron24
+EXPIRATION_DATE=	2023-12-04
+
 BUILD_DEPENDS=	electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION}
 RUN_DEPENDS=	electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION}
 
