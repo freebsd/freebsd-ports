@@ -1,6 +1,8 @@
 Check for NO_BUNDLE and NO_VENV environment variables.
 
---- build/configure/src/main.rs.orig	2023-08-19 22:41:35 UTC
+Disable setup for offline documentation.
+
+--- build/configure/src/main.rs.orig	2023-10-31 21:56:55 UTC
 +++ build/configure/src/main.rs
 @@ -9,6 +9,8 @@ mod web;
  mod rust;
@@ -19,7 +21,7 @@ Check for NO_BUNDLE and NO_VENV environment variables.
  use rust::build_rust;
  use rust::check_minilints;
  use rust::check_rust;
-@@ -43,13 +46,24 @@ fn main() -> Result<()> {
+@@ -45,15 +48,24 @@ fn main() -> Result<()> {
      check_proto(build, inputs![glob!["proto/**/*.proto"]])?;
  
      setup_python(build)?;
@@ -37,6 +39,8 @@ Check for NO_BUNDLE and NO_VENV environment variables.
      build_and_check_web(build)?;
      build_and_check_aqt(build)?;
 -    build_bundle(build)?;
+-
+-    setup_sphix(build)?;
 +    
 +    if env::var("NO_BUNDLE").is_ok() {
 +        println!("NO_BUNDLE is set, skipping build of bundles.");

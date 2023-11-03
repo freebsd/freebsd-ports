@@ -186,12 +186,15 @@ man/man1/anki.1.gz
 %%DATADIR%%/_aqt/data/web/pages/image-occlusion.css
 %%DATADIR%%/_aqt/data/web/pages/image-occlusion.html
 %%DATADIR%%/_aqt/data/web/pages/image-occlusion.js
+%%DATADIR%%/_aqt/data/web/pages/import-anki-package.css
+%%DATADIR%%/_aqt/data/web/pages/import-anki-package.html
+%%DATADIR%%/_aqt/data/web/pages/import-anki-package.js
 %%DATADIR%%/_aqt/data/web/pages/import-csv.css
 %%DATADIR%%/_aqt/data/web/pages/import-csv.html
 %%DATADIR%%/_aqt/data/web/pages/import-csv.js
-%%DATADIR%%/_aqt/data/web/pages/import-log.css
-%%DATADIR%%/_aqt/data/web/pages/import-log.html
-%%DATADIR%%/_aqt/data/web/pages/import-log.js
+%%DATADIR%%/_aqt/data/web/pages/import-page.css
+%%DATADIR%%/_aqt/data/web/pages/import-page.html
+%%DATADIR%%/_aqt/data/web/pages/import-page.js
 %%DATADIR%%/_aqt/forms/about_qt5.py
 %%DATADIR%%/_aqt/forms/about_qt6.py
 %%DATADIR%%/_aqt/forms/addcards_qt5.py
@@ -234,8 +237,6 @@ man/man1/anki.1.gz
 %%DATADIR%%/_aqt/forms/exporting_qt6.py
 %%DATADIR%%/_aqt/forms/fields_qt5.py
 %%DATADIR%%/_aqt/forms/fields_qt6.py
-%%DATADIR%%/_aqt/forms/fields_web_qt5.py
-%%DATADIR%%/_aqt/forms/fields_web_qt6.py
 %%DATADIR%%/_aqt/forms/filtered_deck_qt5.py
 %%DATADIR%%/_aqt/forms/filtered_deck_qt6.py
 %%DATADIR%%/_aqt/forms/finddupes_qt5.py
@@ -292,6 +293,8 @@ man/man1/anki.1.gz
 %%DATADIR%%/anki/_vendor/stringcase.py
 %%DATADIR%%/anki/ankidroid_pb2.py
 %%DATADIR%%/anki/ankidroid_pb2.pyi
+%%DATADIR%%/anki/ankiweb_pb2.py
+%%DATADIR%%/anki/ankiweb_pb2.pyi
 %%DATADIR%%/anki/backend_pb2.py
 %%DATADIR%%/anki/backend_pb2.pyi
 %%DATADIR%%/anki/browser.py
@@ -359,9 +362,8 @@ man/man1/anki.1.gz
 %%DATADIR%%/anki/rsbackend.py
 %%DATADIR%%/anki/scheduler/__init__.py
 %%DATADIR%%/anki/scheduler/base.py
+%%DATADIR%%/anki/scheduler/dummy.py
 %%DATADIR%%/anki/scheduler/legacy.py
-%%DATADIR%%/anki/scheduler/v1.py
-%%DATADIR%%/anki/scheduler/v2.py
 %%DATADIR%%/anki/scheduler/v3.py
 %%DATADIR%%/anki/scheduler_pb2.py
 %%DATADIR%%/anki/scheduler_pb2.pyi
@@ -447,7 +449,6 @@ man/man1/anki.1.gz
 %%DATADIR%%/aqt/forms/emptycards.py
 %%DATADIR%%/aqt/forms/exporting.py
 %%DATADIR%%/aqt/forms/fields.py
-%%DATADIR%%/aqt/forms/fields_web.py
 %%DATADIR%%/aqt/forms/filtered_deck.py
 %%DATADIR%%/aqt/forms/finddupes.py
 %%DATADIR%%/aqt/forms/findreplace.py
@@ -473,8 +474,7 @@ man/man1/anki.1.gz
 %%DATADIR%%/aqt/gui_hooks.py
 %%DATADIR%%/aqt/import_export/__init__.py
 %%DATADIR%%/aqt/import_export/exporting.py
-%%DATADIR%%/aqt/import_export/import_csv_dialog.py
-%%DATADIR%%/aqt/import_export/import_log_dialog.py
+%%DATADIR%%/aqt/import_export/import_dialog.py
 %%DATADIR%%/aqt/import_export/importing.py
 %%DATADIR%%/aqt/importing.py
 %%DATADIR%%/aqt/legacy.py
