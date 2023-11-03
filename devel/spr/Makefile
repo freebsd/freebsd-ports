@@ -1,7 +1,6 @@
 PORTNAME=	spr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.4
-PORTREVISION=	8
+DISTVERSION=	1.3.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,164 +10,188 @@ WWW=		https://github.com/getcord/spr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libgit2.so:devel/libgit2
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	getcord
 
-CARGO_CRATES=	addr2line-0.17.0 \
+CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.18 \
-		arc-swap-1.5.0 \
+		ahash-0.7.6 \
+		aho-corasick-1.0.2 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		arc-swap-1.6.0 \
 		ascii-0.9.3 \
-		async-trait-0.1.56 \
+		async-trait-0.1.68 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		backtrace-0.3.65 \
-		base64-0.13.0 \
+		backtrace-0.3.67 \
+		base64-0.13.1 \
+		base64-0.21.2 \
 		bitflags-1.3.2 \
-		bumpalo-3.10.0 \
+		bstr-1.5.0 \
+		bumpalo-3.13.0 \
 		byteorder-1.4.3 \
 		bytes-1.1.0 \
-		cc-1.0.73 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.2.6 \
-		clap_derive-3.2.6 \
-		clap_lex-0.2.3 \
+		chrono-0.4.26 \
+		clap-3.2.25 \
+		clap_derive-3.2.25 \
+		clap_lex-0.2.4 \
 		combine-3.8.1 \
-		console-0.15.0 \
-		dialoguer-0.10.1 \
+		console-0.15.7 \
+		core-foundation-sys-0.8.4 \
+		dialoguer-0.10.4 \
 		doc-comment-0.3.3 \
-		either-1.6.1 \
+		either-1.8.1 \
 		encode_unicode-0.3.6 \
-		encoding_rs-0.8.31 \
-		fastrand-1.7.0 \
+		encoding_rs-0.8.32 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
-		futures-lite-1.12.0 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
-		futures-util-0.3.21 \
-		gimli-0.26.1 \
-		git2-0.14.4 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-lite-1.13.0 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
+		futures-util-0.3.28 \
+		getrandom-0.2.10 \
+		gimli-0.27.2 \
+		git2-0.17.2 \
+		git2-ext-0.6.0 \
 		graphql-introspection-query-0.2.0 \
 		graphql-parser-0.4.0 \
 		graphql_client-0.11.0 \
 		graphql_client_codegen-0.11.0 \
 		graphql_query_derive-0.11.0 \
-		h2-0.3.13 \
-		hashbrown-0.12.1 \
-		heck-0.4.0 \
+		h2-0.3.19 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		http-0.2.8 \
+		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
+		http-0.2.9 \
 		http-body-0.4.5 \
-		httparse-1.7.1 \
+		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		hyper-0.14.19 \
-		hyper-rustls-0.23.0 \
+		hyper-0.14.26 \
+		hyper-rustls-0.24.0 \
 		hyperx-1.4.0 \
+		iana-time-zone-0.1.57 \
+		iana-time-zone-haiku-0.1.2 \
 		idna-0.2.3 \
-		indexmap-1.9.1 \
-		indoc-1.0.6 \
+		indexmap-1.9.3 \
+		indoc-1.0.9 \
 		instant-0.1.12 \
-		ipnet-2.5.0 \
-		itoa-1.0.2 \
-		jobserver-0.1.24 \
-		js-sys-0.3.58 \
-		jsonwebtoken-8.1.1 \
+		io-lifetimes-1.0.11 \
+		ipnet-2.7.2 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
+		jobserver-0.1.26 \
+		js-sys-0.3.64 \
+		jsonwebtoken-8.3.0 \
 		language-tags-0.3.2 \
-		lazy-regex-2.3.0 \
-		lazy-regex-proc_macros-2.3.0 \
+		lazy-regex-2.5.0 \
+		lazy-regex-proc_macros-2.4.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.126 \
-		libgit2-sys-0.13.4+1.4.2 \
-		libz-sys-1.1.8 \
-		log-0.4.17 \
-		matches-0.1.9 \
+		libc-0.2.146 \
+		libgit2-sys-0.15.2+1.6.4 \
+		libz-sys-1.1.9 \
+		linux-raw-sys-0.3.8 \
+		log-0.4.19 \
+		matches-0.1.10 \
 		memchr-2.5.0 \
-		mime-0.3.16 \
-		miniz_oxide-0.5.3 \
-		mio-0.8.4 \
+		mime-0.3.17 \
+		miniz_oxide-0.6.2 \
+		mio-0.8.8 \
 		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		num_cpus-1.13.1 \
-		num_threads-0.1.6 \
-		object-0.28.4 \
+		num_cpus-1.15.0 \
+		object-0.30.4 \
 		octocrab-0.16.0 \
-		once_cell-1.12.0 \
-		os_str_bytes-6.1.0 \
-		parking-2.0.0 \
-		pem-1.0.2 \
+		once_cell-1.18.0 \
+		os_str_bytes-6.5.1 \
+		parking-2.1.0 \
+		pem-1.1.1 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.25 \
+		pkg-config-0.3.27 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.40 \
-		quote-1.0.20 \
-		redox_syscall-0.2.13 \
-		regex-1.5.6 \
-		regex-syntax-0.6.26 \
-		remove_dir_all-0.5.3 \
-		reqwest-0.11.11 \
+		proc-macro2-1.0.60 \
+		quote-1.0.28 \
+		redox_syscall-0.3.5 \
+		regex-1.8.4 \
+		regex-syntax-0.7.2 \
+		reqwest-0.11.18 \
 		ring-0.16.20 \
-		rustc-demangle-0.1.21 \
-		rustls-0.20.6 \
-		rustls-pemfile-1.0.0 \
-		ryu-1.0.10 \
+		rustc-demangle-0.1.23 \
+		rustix-0.37.20 \
+		rustls-0.21.1 \
+		rustls-pemfile-1.0.2 \
+		rustls-webpki-0.100.1 \
+		ryu-1.0.13 \
 		sct-0.7.0 \
 		secrecy-0.8.0 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.81 \
-		serde_path_to_error-0.1.7 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
+		serde_json-1.0.96 \
+		serde_path_to_error-0.1.11 \
 		serde_urlencoded-0.7.1 \
-		signal-hook-registry-1.4.0 \
+		shell-words-1.1.0 \
+		shlex-1.1.0 \
+		signal-hook-registry-1.4.1 \
 		simple_asn1-0.6.2 \
-		slab-0.4.6 \
+		slab-0.4.8 \
 		smawk-0.3.1 \
-		snafu-0.7.1 \
-		snafu-derive-0.7.1 \
-		socket2-0.4.4 \
+		snafu-0.7.4 \
+		snafu-derive-0.7.4 \
+		socket2-0.4.9 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
-		syn-1.0.98 \
-		tempfile-3.3.0 \
-		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
-		textwrap-0.15.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		time-0.1.44 \
-		time-0.3.11 \
-		time-macros-0.2.4 \
+		syn-1.0.109 \
+		syn-2.0.18 \
+		tempfile-3.6.0 \
+		termcolor-1.2.0 \
+		terminal_size-0.2.6 \
+		textwrap-0.15.2 \
+		textwrap-0.16.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		time-0.1.45 \
+		time-0.3.22 \
+		time-core-0.1.1 \
+		time-macros-0.2.9 \
 		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
-		tokio-1.19.2 \
-		tokio-macros-1.8.0 \
-		tokio-rustls-0.23.4 \
-		tokio-util-0.7.3 \
+		tinyvec_macros-0.1.1 \
+		tokio-1.28.2 \
+		tokio-macros-2.1.0 \
+		tokio-rustls-0.24.1 \
+		tokio-util-0.7.8 \
 		tower-service-0.3.2 \
-		tracing-0.1.35 \
-		tracing-core-0.1.28 \
-		try-lock-0.2.3 \
+		tracing-0.1.37 \
+		tracing-core-0.1.31 \
+		try-lock-0.2.4 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.1 \
-		unicode-linebreak-0.1.2 \
-		unicode-normalization-0.1.19 \
-		unicode-width-0.1.9 \
+		unicode-bidi-0.3.13 \
+		unicode-ident-1.0.9 \
+		unicode-linebreak-0.1.4 \
+		unicode-normalization-0.1.22 \
+		unicode-width-0.1.10 \
 		unreachable-1.0.0 \
 		untrusted-0.7.1 \
-		url-2.2.2 \
+		url-2.3.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
@@ -176,31 +199,48 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		want-0.3.0 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.81 \
-		wasm-bindgen-backend-0.2.81 \
-		wasm-bindgen-futures-0.4.31 \
-		wasm-bindgen-macro-0.2.81 \
-		wasm-bindgen-macro-support-0.2.81 \
-		wasm-bindgen-shared-0.2.81 \
-		web-sys-0.3.58 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-futures-0.4.37 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		web-sys-0.3.64 \
 		webpki-0.22.0 \
-		webpki-roots-0.22.3 \
+		webpki-roots-0.22.6 \
+		which-4.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.36.1 \
-		windows_aarch64_msvc-0.36.1 \
-		windows_i686_gnu-0.36.1 \
-		windows_i686_msvc-0.36.1 \
-		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1 \
+		windows-0.48.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
 		winreg-0.10.1 \
-		zeroize-1.5.5
+		zeroize-1.6.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/*/release/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
