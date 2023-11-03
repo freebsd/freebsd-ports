@@ -1,5 +1,5 @@
 PORTNAME=	pass-secrets
-PORTVERSION=	s20230220
+PORTVERSION=	s20231103
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,9 +15,9 @@ RUN_DEPENDS=	pass:sysutils/password-store
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	nullobsi
-GH_TAGNAME=	7220576
-CMAKE_OFF=	INSTALL_DBUS_SERVICE
-PLIST_FILES=	bin/${PORTNAME}
+GH_TAGNAME=	0423a84
+PLIST_FILES=	bin/${PORTNAME} \
+		share/dbus-1/services/si.nullob.pass-secrets.service
 
 post-patch:
 	@${REINPLACE_CMD} '/systemd/d' ${WRKSRC}/CMakeLists.txt
