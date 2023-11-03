@@ -1,7 +1,13 @@
 %%DATADIR%%/ibt-0040-0041.ddc
 %%DATADIR%%/ibt-0040-0041.sfi
+%%DATADIR%%/ibt-0040-4150.ddc
+%%DATADIR%%/ibt-0040-4150.sfi
 %%DATADIR%%/ibt-0041-0041.ddc
 %%DATADIR%%/ibt-0041-0041.sfi
+%%DATADIR%%/ibt-1040-0041.ddc
+%%DATADIR%%/ibt-1040-0041.sfi
+%%DATADIR%%/ibt-1040-4150.ddc
+%%DATADIR%%/ibt-1040-4150.sfi
 %%DATADIR%%/ibt-11-5.ddc
 %%DATADIR%%/ibt-11-5.sfi
 %%DATADIR%%/ibt-12-16.ddc
@@ -18,6 +24,8 @@
 %%DATADIR%%/ibt-19-0-0.sfi
 %%DATADIR%%/ibt-19-0-1.ddc
 %%DATADIR%%/ibt-19-0-1.sfi
+%%DATADIR%%/ibt-19-0-3.ddc
+%%DATADIR%%/ibt-19-0-3.sfi
 %%DATADIR%%/ibt-19-0-4.ddc
 %%DATADIR%%/ibt-19-0-4.sfi
 %%DATADIR%%/ibt-19-16-4.ddc

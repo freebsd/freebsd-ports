@@ -1,8 +1,8 @@
 PORTNAME=	iwmbt-firmware
-PORTVERSION=	20221109
-DEB_REVISION=	2
+DISTVERSION=	20230515
+DEB_REVISION=	3
 CATEGORIES=	comms
-MASTER_SITES=	DEBIAN/pool/non-free/f/firmware-nonfree/:main \
+MASTER_SITES=	DEBIAN/pool/non-free-firmware/f/firmware-nonfree/:main \
 		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/intel/:old
 DISTFILES=	${MAINFW_FILE}:main \
 		${OLDFW_FILE}${OLDFW_SUFX}:old
@@ -20,7 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-MAINFW_FILE=	firmware-iwlwifi_${PORTVERSION}-${DEB_REVISION}_all.deb
+MAINFW_FILE=	firmware-iwlwifi_${DISTVERSION}-${DEB_REVISION}_all.deb
 OLDFW_FILE=	ibt-hw-37.8.10-fw-22.50.19.14.f.bseq
 OLDFW_SUFX=	?id=6be4747ea1d731f661c5320acf3f1273a459d6da
 
