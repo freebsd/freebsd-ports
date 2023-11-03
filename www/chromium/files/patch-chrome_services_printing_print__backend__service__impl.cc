@@ -1,4 +1,4 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2023-09-13 12:11:42 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2023-11-03 10:09:45 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
 @@ -46,7 +46,7 @@
  #include "printing/backend/cups_connection_pool.h"
@@ -27,7 +27,7 @@
    // Use task runner associated with equivalent of UI thread.  Needed for calls
    // made through `PrintDialogLinuxInterface` to properly execute.
    CHECK(base::SequencedTaskRunner::HasCurrentDefault());
-@@ -466,7 +466,7 @@ void PrintBackendServiceImpl::Init(
+@@ -460,7 +460,7 @@ void PrintBackendServiceImpl::Init(
    // `InitCommon()`.
    InitializeProcessForPrinting();
    print_backend_ = PrintBackend::CreateInstance(locale);
@@ -36,7 +36,7 @@
    // Test framework already initializes the UI, so this should not go in
    // `InitCommon()`.  Additionally, low-level Linux UI is not needed when tests
    // are using `TestPrintingContext`.
-@@ -686,7 +686,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
+@@ -680,7 +680,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
        print_backend_->GetPrinterDriverInfo(*printer_name));
  

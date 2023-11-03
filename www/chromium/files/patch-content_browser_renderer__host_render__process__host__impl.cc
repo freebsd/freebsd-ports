@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-10-11 18:22:24 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-11-03 10:09:45 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -220,7 +220,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -36,7 +36,7 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -3261,7 +3261,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -3256,7 +3256,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -45,11 +45,11 @@
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3321,6 +3321,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3316,6 +3316,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
 +    switches::kDisableUnveil,
+     switches::kDisableUseSharedImagesForPepperVideo,
      switches::kDisableV8IdleTasks,
      switches::kDisableVideoCaptureUseGpuMemoryBuffer,
-     switches::kDisableWebGLImageChromium,

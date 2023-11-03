@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-10-11 18:22:24 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-11-03 10:09:45 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
 @@ -66,13 +66,13 @@
  #include "ui/events/ozone/layout/stub/stub_keyboard_layout_engine.h"
@@ -34,7 +34,7 @@
      linux_ui_delegate_ =
          std::make_unique<LinuxUiDelegateWayland>(connection_.get());
  #endif
-@@ -510,7 +510,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -507,7 +507,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  

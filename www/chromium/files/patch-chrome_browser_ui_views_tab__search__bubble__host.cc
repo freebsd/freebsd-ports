@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tab_search_bubble_host.cc.orig	2023-09-13 12:11:42 UTC
+--- chrome/browser/ui/views/tab_search_bubble_host.cc.orig	2023-11-03 10:09:45 UTC
 +++ chrome/browser/ui/views/tab_search_bubble_host.cc
-@@ -184,7 +184,7 @@ bool TabSearchBubbleHost::ShouldTabSearchRenderBeforeT
+@@ -186,7 +186,7 @@ bool TabSearchBubbleHost::ShouldTabSearchRenderBeforeT
  // Mac should have tabsearch on the right side. Windows >= Win10 has the
  // Tab Search button as a FrameCaptionButton, but it still needs to be on the
  // left if it exists.
