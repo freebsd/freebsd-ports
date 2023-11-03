@@ -13,4 +13,5 @@ Migrate from Gateway or Filesystem Mode
 See for more details:
 https://min.io/docs/minio/linux/operations/install-deploy-manage/migrate-fs-gateway.html
 EOM
+}
 ]

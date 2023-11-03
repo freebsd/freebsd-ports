@@ -6,6 +6,6 @@
   defaults are those which provide FreeBSD-specific settings. Read through
   $VIMRUNTIME/defaults.vim to see Vim's defaults, and see ':h initialization'
   for the standard locations Vim looks for configuration files.
-    EOM
+EOM
   }
 ]
