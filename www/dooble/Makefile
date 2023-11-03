@@ -1,6 +1,10 @@
 PORTNAME=	dooble
 DISTVERSION=	2023.08.30
+PORTREVISION=	1
 CATEGORIES=	www
+
+PATCH_SITES=	https://github.com/textbrowser/dooble/commit/
+PATCHFILES+=	95c0d3277d714ea1dba658ff4433bde3eb29ef76.patch:-p1 # Fix build with Qt 6.6.0
 
 MAINTAINER=	eric@camachat.org
 COMMENT=	Dooble Web Browser
@@ -21,11 +25,13 @@ GH_ACCOUNT=	textbrowser
 USE_GL=		gl
 .if ${FLAVOR} == qt5
 PKGNAMESUFFIX=	-${FLAVOR}
-USE_QT=		concurrent core declarative gui location network printsupport \
-		sql webchannel webengine widgets xml sql-sqlite3:run \
+USE_QT=		charts concurrent core declarative gui location network \
+		printsupport sql webchannel webengine widgets xml \
+		sql-sqlite3:run \
 		buildtools:build qmake:build
 . elif ${FLAVOR} == qt6
-USE_QT=		base charts sqldriver-sqlite webchannel webengine
+USE_QT=		base charts declarative positioning webchannel webengine \
+		sqldriver-sqlite:run
 .endif
 USE_XORG=	xcb
 
@@ -34,15 +40,6 @@ QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 PLIST_FILES=	${PREFIX}/share/applications/${PORTNAME}.desktop \
 		${PREFIX}/share/pixmaps/${PORTNAME}.png \
 		bin/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${FLAVOR:U} == qt5
-QT5_VER_MINOR=	${QT5_VERSION:C/^[0-9]+\.//:C/\..+$//}
-.if ${QT5_VER_MINOR} < 15
-BROKEN=		Qt 5.15 or higher required, using 5.${QT5_VER_MINOR} now
-.endif
-.endif
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/Dooble ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
@@ -53,4 +50,4 @@ do-install:
 		desktop-file-edit --set-icon=${PREFIX}/share/pixmaps/${PORTNAME}.png ${WRKSRC}/${PORTNAME}.desktop
 		${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
