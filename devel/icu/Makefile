@@ -25,7 +25,7 @@ CONFIGURE_ARGS+=--with-data-packaging=archive \
 		--disable-samples \
 		--enable-static
 CPPFLAGS+=	-DICU_NO_USER_DATA_OVERRIDE
-MAKE_ARGS=	VERBOSE=1
+MAKE_ARGS=	VERBOSE=1 LDLIBRARYPATH_ENVVAR="${LD_LIBRARY_PATH_VAR}"
 TEST_TARGET=	check
 CPE_VENDOR=	${PORTNAME}-project
 CPE_PRODUCT=	international_components_for_unicode
