@@ -604,6 +604,7 @@ bin/imupsam
 bin/init_user_dotfiles.py
 bin/inspec
 bin/lesion_align
+bin/lib_dataTable.R
 bin/make_pq_script.py
 bin/make_random_timing.py
 bin/make_stim_times.py
