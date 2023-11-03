@@ -15,6 +15,7 @@ include/gpsim/16bit-tmrs.h
 include/gpsim/ValueCollections.h
 include/gpsim/a2d_v2.h
 include/gpsim/a2dconverter.h
+include/gpsim/at.h
 include/gpsim/attributes.h
 include/gpsim/bit.h
 include/gpsim/bitlog.h
@@ -72,6 +73,7 @@ include/gpsim/pic-ioports.h
 include/gpsim/pic-packages.h
 include/gpsim/pic-processor.h
 include/gpsim/pic-registers.h
+include/gpsim/pid.h
 include/gpsim/pie.h
 include/gpsim/pir.h
 include/gpsim/pm_rd.h
@@ -96,6 +98,7 @@ include/gpsim/ttoken.h
 include/gpsim/uart.h
 include/gpsim/ui.h
 include/gpsim/value.h
+include/gpsim/wdt.h
 include/gpsim/xref.h
 include/gpsim/zcd.h
 lib/libgpsim.a
@@ -126,3 +129,4 @@ lib/libgpsimgui.a
 lib/libgpsimgui.so
 lib/libgpsimgui.so.0
 lib/libgpsimgui.so.0.0.0
+libdata/pkgconfig/gpsim.pc
