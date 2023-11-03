@@ -1,6 +1,7 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,11 +11,8 @@ WWW=		https://mevislab.github.io/pythonqt/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
-
 USES=		gettext-runtime gl python qmake qt:5
-USE_QT=		core declarative gui multimedia network opengl printsupport sql svg webkit widgets xml xmlpatterns \
+USE_QT=		core declarative gui multimedia network opengl printsupport sql svg widgets xml xmlpatterns \
 		buildtools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes
