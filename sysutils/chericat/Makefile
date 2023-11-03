@@ -9,6 +9,8 @@ WWW=		https://github.com/CTSRD-CHERI/chericat
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE
 
+USES=		localbase:ldflags
+
 USE_GITHUB=	yes
 GH_PROJECT=	chericat
 GH_ACCOUNT=	CTSRD-CHERI

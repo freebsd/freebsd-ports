@@ -1,0 +1,12 @@
+--- Makefile.orig
++++ Makefile
+@@ -6,8 +6,7 @@
+ CFLAGS?=-g -O0
+ CFLAGS+=-Wall -Wcheri
+ 
+-INC=-I/usr/include -I/usr/local/include -I$(DEPS)
+-LDFLAGS=-L/usr/lib -L/usr/local/lib 
++INC=-I$(DEPS)
+ 
+ .PHONY: all
+ .PHONY: make_dir
