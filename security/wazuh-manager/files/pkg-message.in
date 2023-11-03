@@ -8,17 +8,22 @@ Wazuh Manager was installed
    # cp /etc/localtime /var/ossec/etc
 
 2) You must edit /var/ossec/etc/ossec.conf.sample for your setup and rename/copy
-   it to ossec.conf. 
+   it to ossec.conf.
 
    Take a look wazuh manager configuration at the following url:
 
    https://documentation.wazuh.com/current/user-manual/manager/index.html
 
-3) You can find additional useful files installed at 
+3) Move /var/ossec/etc/client.keys.sample to /var/ossec/etc/client.keys. This
+   file is used to store all agents credentials connected to wazuh-manager
+
+   # mv /var/ossec/etc/client.keys.sample /var/ossec/etc/client.keys
+
+4) You can find additional useful files installed at
 
   # /var/ossec/packages_files/manager_installation_scripts
 
-4) Do not forget generate auth certificate
+5) Do not forget generate auth certificate
 
   # openssl req -x509 -batch -nodes -days 365 -newkey rsa:2048 \
 	-subj "/C=US/ST=California/CN=Wazuh/" \
@@ -26,7 +31,7 @@ Wazuh Manager was installed
   # chmod 640 /var/ossec/etc/sslmanager.key
   # chmod 640 /var/ossec/etc/sslmanager.cert
 
-5) FreeBSD SCA files can be downloaded from the following
+6) FreeBSD SCA files can be downloaded from the following
 
   # fetch https://people.freebsd.org/~acm/ports/wazuh/wazuh-freebsd-sca.tar.gz
 
@@ -35,7 +40,7 @@ Wazuh Manager was installed
   # chown root:wazuh /var/ossec/ruleset/sca/cis_freebsd*.yml
   # chmod 640 /var/ossec/ruleset/sca/cis_freebsd*.yml
 
-6) Aditional decoders and rules files can be download from:
+7) Aditional decoders and rules files can be download from:
 
   # fetch https://people.freebsd.org/~acm/ports/wazuh/0600-freebsd_decoders.xml
   # fetch https://people.freebsd.org/~acm/ports/wazuh/1000-freebsd_rules.xml
@@ -57,7 +62,7 @@ Wazuh Manager was installed
     <location>/var/log/userlog</location>
   </localfile>
   
-7) Add Wazuh manager to /etc/rc.conf
+8) Add Wazuh manager to /etc/rc.conf
 
   # sysrc wazuh_manager_enable="YES"
 
@@ -65,11 +70,11 @@ Wazuh Manager was installed
   
   # service wazuh-manager enable
 
-8) Start Wazuh manager
+9) Start Wazuh manager
 
   # service wazuh-manager start
 
-9) Enjoy it ;)
+10) Enjoy it ;)
 EOM
 }
 ]

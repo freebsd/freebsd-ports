@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.5.4
+DISTVERSION=	4.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/22/libraries/sources/:wazuh_sources
@@ -69,7 +69,7 @@ CONFLICTS=	ossec-* wazuh-manager
 SUB_FILES=	pkg-message
 
 WZBIN_FILES=	agent-auth manage_agents wazuh-agentd wazuh-execd wazuh-logcollector \
-		wazuh-modulesd wazuh-syscheckd
+		wazuh-modulesd
 
 WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account \
 		host-deny ip-customblock restart-wazuh route-null kaspersky wazuh-slack
@@ -117,6 +117,7 @@ do-install:
 .for FILE in ${WZBIN_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${FILE} ${STAGEDIR}${WAZUHPREFIX}/bin
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/src/syscheckd/build/bin/wazuh-syscheckd ${STAGEDIR}${WAZUHPREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/init/wazuh-client.sh ${STAGEDIR}${WAZUHPREFIX}/bin/wazuh-control
 
 	${TOUCH} ${STAGEDIR}${WAZUHPREFIX}/etc/localtime
@@ -125,7 +126,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/syscollector/norm_config.json ${STAGEDIR}${WAZUHPREFIX}/queue/syscollector
 	${INSTALL_DATA} ${WRKSRC}/etc/local_internal_options.conf ${STAGEDIR}${WAZUHPREFIX}/etc/local_internal_options.conf
 
-	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/etc/client.keys
+	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/etc/client.keys.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/wpk_root.pem ${STAGEDIR}${WAZUHPREFIX}/etc/
 
 	${INSTALL_DATA} ${WRKSRC}/etc/ossec-agent.conf ${STAGEDIR}${WAZUHPREFIX}/etc/ossec.conf.sample
@@ -168,13 +169,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/orm.py
 
-
-	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca \;
+	${INSTALL_DATA} ${WRKSRC}/ruleset/sca/generic/sca_unix_audit.yml ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca/
 
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhext.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhshared.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/dbsync/build/lib/libdbsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/rsync/build/lib/librsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/syscheckd/build/lib/libfimdb.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
 
