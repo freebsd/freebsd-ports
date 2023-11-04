@@ -120,6 +120,12 @@ MAKE_ENV+=		QT_SELECT=${_QT_RELNAME}
 CONFIGURE_ENV+=		QMAKEMODULES="${WRKSRC}/mkspecs/modules:${LOCALBASE}/${QT_MKSPECDIR_REL}/modules"
 MAKE_ENV+=		QMAKEMODULES="${WRKSRC}/mkspecs/modules:${LOCALBASE}/${QT_MKSPECDIR_REL}/modules"
 
+# Qt uses generated linker version scripts which always have a qt_version_tag
+# symbol, but that symbol is only defined in the main Qt shared library. For
+# other Qt components, this leads to lld >= 17 erroring out due to the symbol
+# being undefined. Supress these errors.
+LDFLAGS+=		-Wl,--undefined-version
+
 _USES_POST+=		qt
 .endif # _QT_MK_INCLUDED
 
