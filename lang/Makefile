@@ -224,6 +224,7 @@
     SUBDIR += njs
     SUBDIR += nll
     SUBDIR += nqc
+    SUBDIR += numbat
     SUBDIR += nwcc
     SUBDIR += nx
     SUBDIR += nyan
