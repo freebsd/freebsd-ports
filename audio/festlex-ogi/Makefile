@@ -18,6 +18,9 @@ LICENSE_NAME=	festlex
 LICENSE_TEXT=	No commercial use
 LICENSE_PERMS=	auto-accept
 
+DEPRECATED=	Both MASTER_SITES and WWW are defunct
+EXPIRATION_DATE=	2023-12-04
+
 WRKSRC=		${WRKDIR}/festival
 
 NO_BUILD=	yes
