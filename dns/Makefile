@@ -239,6 +239,7 @@
     SUBDIR += wrapsrv
     SUBDIR += yadifa
     SUBDIR += yandex-ddns
+    SUBDIR += zdns
     SUBDIR += zkt
     SUBDIR += zonenotify
 
