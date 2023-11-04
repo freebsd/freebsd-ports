@@ -18,7 +18,7 @@ BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 
 USES=		cmake compiler:c++17-lang gnome pathfix perl5 pkgconfig \
 		python:build shebangfix
-USE_GCC=	yes
+USE_GCC=	yes # clang fails: https://gitlab.com/gromacs/gromacs/-/issues/4909
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
