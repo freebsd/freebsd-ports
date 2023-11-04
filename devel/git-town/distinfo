@@ -1,7 +1,7 @@
-TIMESTAMP = 1698884383
-SHA256 (go/devel_git-town/git-town-v10.0.0/v10.0.0.mod) = 3e9464fa6647bc301aacc052effc1a6aedd3e65bd61831dae966f90515029e76
-SIZE (go/devel_git-town/git-town-v10.0.0/v10.0.0.mod) = 1961
-SHA256 (go/devel_git-town/git-town-v10.0.0/v10.0.0.zip) = b91f86125797b74217de6e734fbf335e7013f3ceba69e03c5b638983c3a1f9a3
-SIZE (go/devel_git-town/git-town-v10.0.0/v10.0.0.zip) = 673606
-SHA256 (go/devel_git-town/git-town-v10.0.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
-SIZE (go/devel_git-town/git-town-v10.0.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
+TIMESTAMP = 1699069368
+SHA256 (go/devel_git-town/git-town-v10.0.1/v10.0.1.mod) = 3e9464fa6647bc301aacc052effc1a6aedd3e65bd61831dae966f90515029e76
+SIZE (go/devel_git-town/git-town-v10.0.1/v10.0.1.mod) = 1961
+SHA256 (go/devel_git-town/git-town-v10.0.1/v10.0.1.zip) = fb066b582e4cd6353a14df6c8dae187dd9e84ed99a0edb9892c725641dfa1b8a
+SIZE (go/devel_git-town/git-town-v10.0.1/v10.0.1.zip) = 673667
+SHA256 (go/devel_git-town/git-town-v10.0.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/devel_git-town/git-town-v10.0.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
