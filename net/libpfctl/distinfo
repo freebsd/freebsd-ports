@@ -1,8 +1,8 @@
 TIMESTAMP = 1691072277
 SHA256 (libpfctl-134ced89c4ca.tar.gz) = 320ce04fc4cc4e07bdb7146437b46d258d6b2625958ab071a6a62f8146e375ea
 SIZE (libpfctl-134ced89c4ca.tar.gz) = 11323
-SHA256 (libpfctl-12.4.tar.gz) = 1797dd44939bcb1b4eb5725049f83470f50d075a62482fd1242503f5940729d4
-SIZE (libpfctl-12.4.tar.gz) = 9871
+SHA256 (libpfctl-12.4.tar.gz) = 010eb6b2687c97cb78adaccfd4688fc2c3fdcb2433a913bcfb4de141f1fb76b3
+SIZE (libpfctl-12.4.tar.gz) = 9872
 SHA256 (libpfctl-13.2.tar.gz) = d64960e28563faaa26603647648d99feadfa6187781a618ab99b39a99b6c4711
 SIZE (libpfctl-13.2.tar.gz) = 9870
 TIMESTAMP = 1693208658
