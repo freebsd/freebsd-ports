@@ -8,7 +8,4 @@ attributes of the Domain Object.
 In order to conform to the .BR model, extensions to the EPP Domain Name
 and Contact Mapping were made (draft-neves-epp-brdomain and
 draft-neves-epp-brorg), supported since version 0.2. The documentation
-for these extensions is available at EPP References [1].
-
-[1]
-http://registro.br/epp/rfc-EN.html
+for these extensions is available at EPP References.
