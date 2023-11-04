@@ -114,6 +114,7 @@ include/tvm/runtime/container/map.h
 include/tvm/runtime/container/optional.h
 include/tvm/runtime/container/shape_tuple.h
 include/tvm/runtime/container/string.h
+include/tvm/runtime/container/variant.h
 include/tvm/runtime/contrib/libtorch_runtime.h
 include/tvm/runtime/contrib/papi.h
 include/tvm/runtime/crt/aot_executor.h
@@ -140,6 +141,7 @@ include/tvm/runtime/device_api.h
 include/tvm/runtime/executor_info.h
 include/tvm/runtime/logging.h
 include/tvm/runtime/memory.h
+include/tvm/runtime/memory/memory_manager.h
 include/tvm/runtime/metadata.h
 include/tvm/runtime/metadata_base.h
 include/tvm/runtime/metadata_types.h
@@ -155,7 +157,6 @@ include/tvm/runtime/serializer.h
 include/tvm/runtime/threading_backend.h
 include/tvm/runtime/vm/bytecode.h
 include/tvm/runtime/vm/executable.h
-include/tvm/runtime/vm/memory_manager.h
 include/tvm/runtime/vm/vm.h
 include/tvm/script/ir_builder/base.h
 include/tvm/script/ir_builder/ir/frame.h
@@ -244,6 +245,7 @@ include/tvm/topi/nn/layer_norm.h
 include/tvm/topi/nn/local_response_norm.h
 include/tvm/topi/nn/mapping.h
 include/tvm/topi/nn/pooling.h
+include/tvm/topi/nn/rms_norm.h
 include/tvm/topi/nn/softmax.h
 include/tvm/topi/reduction.h
 include/tvm/topi/rocm/dense.h
