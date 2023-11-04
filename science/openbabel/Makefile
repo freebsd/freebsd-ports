@@ -18,11 +18,12 @@ LIB_DEPENDS=	libmaeparser.so:science/maeparser	\
 
 CONFLICTS_INSTALL=	babel
 
-USES=		cmake:testing compiler:c++11-lang eigen:3 gnome pkgconfig tar:bz2
+USES=		cmake:testing compiler:c++11-lang eigen:3 gnome perl5 pkgconfig tar:bz2
 USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes # temporary
+USE_PERL5=	build
 
 CMAKE_ON=	WITH_COORDGEN WITH_JSON OPENBABEL_USE_SYSTEM_RAPIDJSON WITH_MAEPARSER
 CMAKE_OFF=	ENABLE_TESTS PYTHON_BINDINGS
