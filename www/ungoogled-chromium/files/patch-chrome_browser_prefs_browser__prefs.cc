@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2023-10-13 13:20:35 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -475,13 +475,13 @@
+@@ -482,18 +482,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,13 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -514,7 +514,7 @@
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
+ #endif
+ 
+@@ -525,7 +525,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -25,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -659,7 +659,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
+@@ -671,7 +671,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
  const char kPluginsShowDetails[] = "plugins.show_details";
  
  // Deprecated 02/2023.
@@ -34,7 +40,7 @@
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -945,7 +945,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
+@@ -992,7 +992,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Deprecated 02/2023.
@@ -43,7 +49,7 @@
    registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1856,12 +1856,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1943,12 +1943,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -56,9 +62,9 @@
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
+   enterprise_signin::RegisterProfilePrefs(registry);
  #endif
- 
-@@ -2011,7 +2011,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+@@ -2103,7 +2103,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Added 02/2023

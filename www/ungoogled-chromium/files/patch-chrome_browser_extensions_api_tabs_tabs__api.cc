@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2023-10-13 13:20:35 UTC
+--- chrome/browser/extensions/api/tabs/tabs_api.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/extensions/api/tabs/tabs_api.cc
-@@ -843,7 +843,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
+@@ -844,7 +844,7 @@ ExtensionFunction::ResponseAction WindowsCreateFunctio
  // ui::SHOW_STATE_MINIMIZED above, on Linux the window is not created as
  // minimized.
  // TODO(crbug.com/1410400): Remove this workaround when linux is fixed.

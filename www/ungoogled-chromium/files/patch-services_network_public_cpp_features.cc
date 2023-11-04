@@ -1,6 +1,6 @@
---- services/network/public/cpp/features.cc.orig	2023-10-13 13:20:35 UTC
+--- services/network/public/cpp/features.cc.orig	2023-11-04 07:08:51 UTC
 +++ services/network/public/cpp/features.cc
-@@ -378,7 +378,7 @@ BASE_FEATURE(kPrivateNetworkAccessPermissionPrompt,
+@@ -371,7 +371,7 @@ BASE_FEATURE(kPrivateNetworkAccessPermissionPrompt,
  // that can be adequately sandboxed.
  BASE_FEATURE(kOutOfProcessSystemDnsResolution,
               "OutOfProcessSystemDnsResolution",
