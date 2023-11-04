@@ -1,6 +1,6 @@
---- base/test/launcher/test_launcher.cc.orig	2023-10-13 13:20:35 UTC
+--- base/test/launcher/test_launcher.cc.orig	2023-11-04 07:08:51 UTC
 +++ base/test/launcher/test_launcher.cc
-@@ -68,6 +68,7 @@
+@@ -70,6 +70,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  
  #if BUILDFLAG(IS_POSIX)

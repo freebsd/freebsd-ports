@@ -1,6 +1,6 @@
---- ui/aura/screen_ozone.h.orig	2023-02-11 09:11:04 UTC
+--- ui/aura/screen_ozone.h.orig	2023-11-04 07:08:51 UTC
 +++ ui/aura/screen_ozone.h
-@@ -46,7 +46,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
+@@ -44,7 +44,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    display::Display GetDisplayMatching(
        const gfx::Rect& match_rect) const override;
    display::Display GetPrimaryDisplay() const override;
@@ -9,7 +9,7 @@
    std::unique_ptr<display::Screen::ScreenSaverSuspender> SuspendScreenSaver()
        override;
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-@@ -73,7 +73,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
+@@ -71,7 +71,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    ui::PlatformScreen* platform_screen() { return platform_screen_.get(); }
  
   private:

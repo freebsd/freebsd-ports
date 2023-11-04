@@ -1,6 +1,6 @@
---- components/supervised_user/core/browser/proto_fetcher.cc.orig	2023-09-17 07:59:53 UTC
+--- components/supervised_user/core/browser/proto_fetcher.cc.orig	2023-11-04 07:08:51 UTC
 +++ components/supervised_user/core/browser/proto_fetcher.cc
-@@ -398,8 +398,11 @@ class RetryingFetcherImpl final : public DeferredFetch
+@@ -525,8 +525,11 @@ class RetryingFetcherImpl final : public DeferredFetch
    // Not copyable.
    RetryingFetcherImpl(const RetryingFetcherImpl&) = delete;
    RetryingFetcherImpl& operator=(const RetryingFetcherImpl&) = delete;
@@ -13,7 +13,7 @@
      callback_ = std::move(callback);
      Retry();
    }
-@@ -435,7 +438,11 @@ class RetryingFetcherImpl final : public DeferredFetch
+@@ -564,7 +567,11 @@ class RetryingFetcherImpl final : public DeferredFetch
    }
  
    // Client callback.
@@ -25,7 +25,7 @@
  
    // Retry controls.
    base::OneShotTimer timer_;
-@@ -578,7 +585,11 @@ ParallelFetchManager<Request, Response>::ParallelFetch
+@@ -707,7 +714,11 @@ ParallelFetchManager<Request, Response>::ParallelFetch
  template <typename Request, typename Response>
  void ParallelFetchManager<Request, Response>::Fetch(
      const Request& request,

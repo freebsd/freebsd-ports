@@ -1,8 +1,8 @@
---- services/device/public/cpp/generic_sensor/sensor_reading.h.orig	2023-10-13 13:20:35 UTC
+--- services/device/public/cpp/generic_sensor/sensor_reading.h.orig	2023-11-04 07:08:51 UTC
 +++ services/device/public/cpp/generic_sensor/sensor_reading.h
-@@ -5,6 +5,8 @@
- #ifndef SERVICES_DEVICE_PUBLIC_CPP_GENERIC_SENSOR_SENSOR_READING_H_
- #define SERVICES_DEVICE_PUBLIC_CPP_GENERIC_SENSOR_SENSOR_READING_H_
+@@ -8,6 +8,8 @@
+ #include <stddef.h>
+ #include <stdint.h>
  
 +#include <cstdint>
 +

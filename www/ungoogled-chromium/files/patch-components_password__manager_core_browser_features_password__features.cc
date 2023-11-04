@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.cc.orig	2023-10-27 05:38:38 UTC
+--- components/password_manager/core/browser/features/password_features.cc.orig	2023-11-04 07:08:51 UTC
 +++ components/password_manager/core/browser/features/password_features.cc
-@@ -27,7 +27,7 @@ BASE_FEATURE(kBiometricTouchToFill,
+@@ -20,7 +20,7 @@ BASE_FEATURE(kBiometricTouchToFill,
  // Delete undecryptable passwords from the store when Sync is active.
  BASE_FEATURE(kClearUndecryptablePasswordsOnSync,
               "ClearUndecryptablePasswordsInSync",

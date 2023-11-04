@@ -1,6 +1,6 @@
---- v8/src/baseline/x64/baseline-assembler-x64-inl.h.orig	2023-07-21 09:49:17 UTC
+--- v8/src/baseline/x64/baseline-assembler-x64-inl.h.orig	2023-11-04 07:08:51 UTC
 +++ v8/src/baseline/x64/baseline-assembler-x64-inl.h
-@@ -73,9 +73,7 @@ MemOperand BaselineAssembler::FeedbackVectorOperand() 
+@@ -76,9 +76,7 @@ MemOperand BaselineAssembler::FeedbackCellOperand() {
  
  void BaselineAssembler::Bind(Label* label) { __ bind(label); }
  

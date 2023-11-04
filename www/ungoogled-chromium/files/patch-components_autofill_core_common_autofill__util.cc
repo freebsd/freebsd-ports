@@ -1,6 +1,6 @@
---- components/autofill/core/common/autofill_util.cc.orig	2023-09-17 07:59:53 UTC
+--- components/autofill/core/common/autofill_util.cc.orig	2023-11-04 07:08:51 UTC
 +++ components/autofill/core/common/autofill_util.cc
-@@ -153,7 +153,7 @@ bool SanitizedFieldIsEmpty(const std::u16string& value
+@@ -133,7 +133,7 @@ bool SanitizedFieldIsEmpty(const std::u16string& value
  
  bool ShouldAutoselectFirstSuggestionOnArrowDown() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

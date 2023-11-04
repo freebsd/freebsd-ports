@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2023-07-21 09:49:17 UTC
+--- chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/media/webrtc/chrome_screen_enumerator.cc
 @@ -21,7 +21,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)
@@ -36,9 +36,9 @@
  void ChromeScreenEnumerator::SetDesktopCapturerForTesting(
      std::unique_ptr<webrtc::DesktopCapturer> capturer) {
    g_desktop_capturer_for_testing.Get() = std::move(capturer);
-@@ -143,7 +143,7 @@ void ChromeScreenEnumerator::EnumerateScreens(
+@@ -142,7 +142,7 @@ void ChromeScreenEnumerator::EnumerateScreens(
+     ScreensCallback screens_callback) const {
    DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
-   DCHECK(base::FeatureList::IsEnabled(blink::features::kGetAllScreensMedia));
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
