@@ -1,4 +1,4 @@
---- libguile/numbers.c.orig	2016-12-15 00:03:33 UTC
+--- libguile/numbers.c.orig	2020-03-07 17:29:32 UTC
 +++ libguile/numbers.c
 @@ -45,7 +45,11 @@
  #  include <config.h>
@@ -12,7 +12,7 @@
  #include <assert.h>
  
  #include <math.h>
-@@ -183,7 +187,7 @@ static double atanh (double x) { return 0.5 * log ((1 
+@@ -191,7 +195,7 @@ static double atanh (double x) { return 0.5 * log ((1 
  
  
  #if defined (GUILE_I)

@@ -1,5 +1,5 @@
---- libguile/posix.c.orig	2019-07-01 05:21:54.000000000 -0700
-+++ libguile/posix.c	2021-11-23 12:10:16.007364000 -0800
+--- libguile/posix.c.orig	2019-07-01 12:21:54 UTC
++++ libguile/posix.c
 @@ -28,6 +28,7 @@
  #include <uniconv.h>
  
