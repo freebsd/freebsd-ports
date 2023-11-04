@@ -19,5 +19,5 @@ include/librist/urlparam.h
 include/librist/version.h
 lib/librist.so
 lib/librist.so.4
-lib/librist.so.4.2.0
+lib/librist.so.4.3.1
 libdata/pkgconfig/librist.pc
