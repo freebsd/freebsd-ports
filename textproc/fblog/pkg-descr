@@ -1,0 +1,3 @@
+fblog is a small tool to view json log files.
+
+It allows to print specific fields, filter logs, etc.

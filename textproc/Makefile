@@ -203,6 +203,7 @@
     SUBDIR += extract_url
     SUBDIR += ezxml
     SUBDIR += fa-aspell
+    SUBDIR += fblog
     SUBDIR += fcitx-m17n
     SUBDIR += fcitx-qt5
     SUBDIR += fcitx-table-other
