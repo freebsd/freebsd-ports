@@ -39,6 +39,7 @@ GH_TUPLE=	google:snappy:${DISTVERSION:R}:google \
 		kiyo-masui:bitshuffle:${BITSHUFFLE_V}:masui
 
 USE_JAVA=	yes
+JAVA_BUILD=	jre # prevent JAVA_RUN via bsd.java.mk
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	CXX="${CXX}"
 TEST_TARGET=	test
