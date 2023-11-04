@@ -11,6 +11,7 @@ share/man/man1/podman-auto-update.1.gz
 share/man/man1/podman-build.1.gz
 share/man/man1/podman-commit.1.gz
 share/man/man1/podman-completion.1.gz
+share/man/man1/podman-compose.1.gz
 share/man/man1/podman-container-attach.1.gz
 share/man/man1/podman-container-checkpoint.1.gz
 share/man/man1/podman-container-cleanup.1.gz
@@ -55,6 +56,11 @@ share/man/man1/podman-diff.1.gz
 share/man/man1/podman-events.1.gz
 share/man/man1/podman-exec.1.gz
 share/man/man1/podman-export.1.gz
+share/man/man1/podman-farm-create.1.gz
+share/man/man1/podman-farm-list.1.gz
+share/man/man1/podman-farm-remove.1.gz
+share/man/man1/podman-farm-update.1.gz
+share/man/man1/podman-farm.1.gz
 share/man/man1/podman-generate-kube.1.gz
 share/man/man1/podman-generate-spec.1.gz
 share/man/man1/podman-generate-systemd.1.gz
