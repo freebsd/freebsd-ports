@@ -29,7 +29,7 @@ RUN_DEPENDS=	guile-aclocal>=3:lang/guile-aclocal
 
 USES+=		guile:${PORTVERSION:R},env \
 		charsetfix compiler:c11 cpe gmake iconv libtool \
-		makeinfo pathfix pkgconfig readline localbase
+		pathfix pkgconfig readline localbase
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
