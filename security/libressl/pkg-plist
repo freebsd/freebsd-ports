@@ -25,7 +25,6 @@ include/openssl/curve25519.h
 include/openssl/des.h
 include/openssl/dh.h
 include/openssl/dsa.h
-include/openssl/dso.h
 include/openssl/dtls1.h
 include/openssl/ec.h
 include/openssl/ecdh.h
