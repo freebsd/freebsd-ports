@@ -2,11 +2,6 @@ PORTNAME=	geonext
 PORTVERSION=	1.74
 CATEGORIES+=	math education graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/${PORTVERSION}/
-# For the slave ports
-.if ${WITH_LANG} != "en"
-PKGNAMEPREFIX=	${WITH_LANG}-
-.endif
-
 DISTNAME=	geonext.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -48,6 +43,11 @@ PLIST_SUB+=	MASTER=""
 WITH_LANG=	en
 .else
 PLIST_SUB+=	MASTER="@comment "
+.endif
+
+# For the slave ports
+.if ${WITH_LANG} != "en"
+PKGNAMEPREFIX=	${WITH_LANG}-
 .endif
 
 .include <bsd.port.pre.mk>
