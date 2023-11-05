@@ -11,6 +11,9 @@ WWW=		https://wiki.gnome.org/Projects/GUPnP
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated port net/gupnp14
+EXPIRATION_DATE=2023-11-30
+
 BUILD_DEPENDS=	gobject-introspection>=0.10:devel/gobject-introspection \
 		gssdp14>=1.2.0:net/gssdp14 \
 		gupnp14>=1.2.0:net/gupnp14
