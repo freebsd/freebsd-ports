@@ -16,6 +16,8 @@ LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		octave
 
+LDFLAGS+=	-L${PREFIX}/lib
+
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
