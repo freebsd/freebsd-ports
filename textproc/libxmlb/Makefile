@@ -10,7 +10,6 @@ WWW=		https://github.com/hughsie/libxmlb
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 LIB_DEPENDS=	libstemmer.so:textproc/snowballstemmer \
 		libzstd.so:archivers/zstd
 
@@ -18,5 +17,10 @@ USES=		gnome meson pkgconfig localbase:ldflags tar:xz
 USE_GNOME=	glib20 introspection:build
 
 MESON_ARGS=	-Dstemmer=true
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_MESON_TRUE=	gtkdoc
 
 .include <bsd.port.mk>
