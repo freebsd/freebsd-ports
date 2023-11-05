@@ -1,3 +1,30 @@
+  <vuln vid="a1a1f81c-7c13-11ee-bcf1-f8b156b6dcc8">
+    <topic>vorbistools -- heap buffer overflow in oggenc</topic>
+    <affects>
+      <package>
+	<name>vorbis-tools</name>
+	<range><lt>1.4.2_4,3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Frank-Z7 reports:</p>
+	<blockquote cite="https://github.com/xiph/vorbis-tools/issues/41">
+	  <p>Heap buffer overflow when vorbis-tools/oggenc converts
+	    WAV files to Ogg files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-43361</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-43361</url>
+    </references>
+    <dates>
+      <discovery>2023-09-16</discovery>
+      <entry>2023-11-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fe7ac70a-792b-11ee-bf9a-a04a5edf46d9">
     <topic>PptiPNG -- Global-buffer-overflow</topic>
     <affects>
