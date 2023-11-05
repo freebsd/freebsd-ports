@@ -1,5 +1,3 @@
-TIMESTAMP = 1693756018
-SHA256 (qbittorrent-4.5.5.tar.xz) = 8e84a5ba63c7203cfb2e5bb23e27d000120fb8e9dfb6e9f9a1064dce1b9294e9
-SIZE (qbittorrent-4.5.5.tar.xz) = 4352524
-SHA256 (5b90e222a80849f346d0b12752aa1f7a9fb839fc.patch) = 2f04e36efa91d30042e222f9a11fb386d46e81a7cd45be74ad6a66ab4ef65c36
-SIZE (5b90e222a80849f346d0b12752aa1f7a9fb839fc.patch) = 1410
+TIMESTAMP = 1699162250
+SHA256 (qbittorrent-4.6.0.tar.xz) = 27a5954dccd3948dc69dd59d24ee8f4f7427bdc09359fb30cf05c786b370d3be
+SIZE (qbittorrent-4.6.0.tar.xz) = 4482148
