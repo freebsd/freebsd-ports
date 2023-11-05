@@ -9,8 +9,8 @@ WWW=		http://opencbm.sourceforge.net/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	cc65:devel/cc65
-RUN_DEPENDS=	opencbm=${PORTVERSION}:comms/opencbm \
-		opencbm-kmod=${PORTVERSION}:comms/opencbm-kmod
+RUN_DEPENDS=	opencbm=${PKGVERSION}:comms/opencbm \
+		opencbm-kmod>0:comms/opencbm-kmod
 
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes

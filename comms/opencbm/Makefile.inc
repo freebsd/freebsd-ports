@@ -1,4 +1,5 @@
 OCBM_VERSION=	0.4.99.104
+OCBM_REVISION=	1
 DISTVERSIONPREFIX=	v
 DISTINFO_FILE=	${.CURDIR}/../opencbm/distinfo
 
@@ -17,3 +18,11 @@ PLIST_SUB=	OCBM_VERSION=${OCBM_VERSION}
 PORTSCOUT=	limit:^v\d
 
 PLUGINBASENAME=	${PREFIX}/lib/opencbm/plugin/libopencbm-
+
+.if ${PORTNAME:Nopencbm-kmod}
+.  if defined(PORTREVISION)
+IGNORE=		PORTREVISION must not be defined explicitly
+.  else
+PORTREVISION=	${OCBM_REVISION}
+.  endif
+.endif
