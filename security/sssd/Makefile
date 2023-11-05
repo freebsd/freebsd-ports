@@ -37,7 +37,8 @@ FLAVOR?=	${FLAVORS:[1]}
 smb_PKGNAMESUFFIX=	-smb
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-selinux --without-semanage \
+CONFIGURE_ARGS=	ac_cv_prog_PO4A=no \
+		--without-selinux --without-semanage \
 		--without-libnl --without-nfsv4-idmapd-plugin \
 		--without-autofs --without-secrets --without-kcm \
 		--without-python2-bindings --with-python-prefix=${PREFIX} \
