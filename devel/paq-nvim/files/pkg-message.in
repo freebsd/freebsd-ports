@@ -1,0 +1,27 @@
+[
+{ type: install
+  message: <<EOM
+To get started with a minimal configuration,
+add the following Lua to your configuration:
+
+require "paq" {}
+
+Or, start with declaring packages:
+
+require "paq" {
+  "user_alice/ucl_all_things.nvim",
+  "user_bob/nvtree_all_things.nvim",
+}
+
+Plugin commands:
+:PaqClean   - Remove all packages that are not listed in your configuration.
+:PaqInstall - Install all packages listed in your configuration.
+:PaqList    - List managed packages.
+:PaqSync    - Execute commands PaqInstall, PaqUpdate, and PaqClean.
+:PaqUpdate  - Update all packages already on your system.
+
+Upon first usage, you will have to run PaqUpdate to populate your runtime, and
+again when the Port is updated. See :help paq for more information.
+EOM
+}
+]

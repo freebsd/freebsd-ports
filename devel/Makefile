@@ -3868,6 +3868,7 @@
     SUBDIR += pam_wrapper
     SUBDIR += papi
     SUBDIR += papilio-loader
+    SUBDIR += paq-nvim
     SUBDIR += parallel-hashmap
     SUBDIR += parol
     SUBDIR += parol-ls

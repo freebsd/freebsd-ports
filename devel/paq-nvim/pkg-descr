@@ -1,0 +1,10 @@
+Paq is a minimal, simple to use packer manager for Neovim written in Lua and
+is aimed for users who make use of Lua for their configuration language.
+It is written to make use of existing Neovim features, and to have a simple
+and familiar interface for declaring packages.
+
+Features:
+* Can install, update, and remove any package from a valid repository
+* Utilises git(1) to fetch packages from valid Git repositories
+* Supports asynchronous updates
+* Written in Lua, configured in Lua
