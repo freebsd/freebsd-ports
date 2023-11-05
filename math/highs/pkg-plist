@@ -17,6 +17,8 @@ include/highs/ipm/IpxWrapper.h
 include/highs/lp_data/HConst.h
 include/highs/lp_data/HStruct.h
 include/highs/lp_data/HighsAnalysis.h
+include/highs/lp_data/HighsCallback.h
+include/highs/lp_data/HighsCallbackStruct.h
 include/highs/lp_data/HighsDebug.h
 include/highs/lp_data/HighsInfo.h
 include/highs/lp_data/HighsInfoDebug.h
@@ -79,6 +81,8 @@ include/highs/presolve/ICrash.h
 include/highs/presolve/ICrashUtil.h
 include/highs/presolve/ICrashX.h
 include/highs/presolve/PresolveComponent.h
+include/highs/qpsolver/a_asm.hpp
+include/highs/qpsolver/a_quass.hpp
 include/highs/qpsolver/perturbation.hpp
 include/highs/qpsolver/quass.hpp
 include/highs/qpsolver/scaling.hpp
@@ -132,6 +136,6 @@ lib/cmake/highs/highs-config.cmake
 lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libhighs.so
-lib/libhighs.so.1.5
-lib/libhighs.so.1.5.3
+lib/libhighs.so.1.6
+lib/libhighs.so.1.6.0
 libdata/pkgconfig/highs.pc

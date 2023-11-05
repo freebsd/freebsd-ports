@@ -1,7 +1,6 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.3
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -12,9 +11,7 @@ WWW=		https://github.com/ERGO-Code/HiGHS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libOsi.so:math/osi
-
-USES=		blaslapack cmake:testing compiler:c++11-lang pkgconfig
+USES=		cmake:testing compiler:c++11-lang pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ERGO-Code
