@@ -1,6 +1,5 @@
 PORTNAME=	boolector
-DISTVERSION=	3.2.2
-PORTREVISION=	2
+DISTVERSION=	3.2.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +18,7 @@ LIB_DEPENDS=	libbtor2parser.so:math/btor2tools \
 		libgmp.so:math/gmp
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake:noninja compiler:c++11-lang cpe python:test # ninja fails to build tests
+USES=		cmake:noninja,testing compiler:c++11-lang cpe python:test # ninja fails to build tests
 
 CPE_VENDOR=	boolector_project
 
@@ -28,16 +27,8 @@ GH_ACCOUNT=	Boolector
 
 CMAKE_ON=	BUILD_SHARED_LIBS \
 		USE_GMP
+CMAKE_OFF=	TESTING
+CMAKE_TESTING_ON=	TESTING # tests fail to comile, see https://github.com/Boolector/boolector/issues/216
 CMAKE_ARGS=	-DCaDiCaL_INCLUDE_DIR=${LOCALBASE}/include
-
-do-test:
-	@${FIND} ${WRKDIR} -name "*.py" \
-		| ${XARGS} ${REINPLACE_CMD} -e 's|#!/usr/bin/env python$$|#!${PYTHON_CMD}| ; s|#!/usr/bin/env python3$$|#!${PYTHON_CMD}|'
-	@${FIND} ${WRKDIR} -name "*.sh" \
-		| ${XARGS} ${REINPLACE_CMD} 's|#!/bin/bash$$|#!${LOCALBASE}/bin/bash|'
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
 .include <bsd.port.mk>
