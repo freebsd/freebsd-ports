@@ -1,0 +1,8 @@
+QXFUN: A quad precision package with special functions (approximately 33 digit
+precision).
+
+This package enhances an IEEE quad precision floating-point facility (approx. 33
+digit accuracy) to include a library of numerous special functions, all by
+making only very minor changes to existing Fortran programs. The package should
+run correctly on any Unix-based system supporting a Fortran-2008 compiler and
+IEEE 128-bit floating-point arithmetic, in hardware or software.

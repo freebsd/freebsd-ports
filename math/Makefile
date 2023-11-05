@@ -268,12 +268,14 @@
     SUBDIR += curv
     SUBDIR += cvc5
     SUBDIR += dbcsr
+    SUBDIR += ddfun
     SUBDIR += deal.ii
     SUBDIR += dgl
     SUBDIR += dieharder
     SUBDIR += dihydrogen
     SUBDIR += dionysus
     SUBDIR += disco
+    SUBDIR += dqfun
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dune-alugrid
@@ -1093,6 +1095,7 @@
     SUBDIR += qrupdate
     SUBDIR += qtiplot-doc
     SUBDIR += qwtplot3d
+    SUBDIR += qxfun
     SUBDIR += randlib
     SUBDIR += rankwidth
     SUBDIR += rapid
