@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 DISTVERSION=	7.7.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -163,6 +163,11 @@ pre-configure:
 
 post-build-DOXYGEN-on:
 	(cd ${WRKSRC} && ./gendoc -overview)
+
+post-stage:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/OpenCASCADE
+	${MV} ${STAGEDIR}${PREFIX}/lib/cmake/*.cmake	\
+		${STAGEDIR}${PREFIX}/lib/cmake/OpenCASCADE
 
 post-install:
 	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${DISTVERSION:C/-beta//} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
