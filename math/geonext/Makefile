@@ -2,6 +2,11 @@ PORTNAME=	geonext
 PORTVERSION=	1.74
 CATEGORIES+=	math education graphics java
 MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/${PORTVERSION}/
+# For the slave ports
+.if ${WITH_LANG} != "en"
+PKGNAMEPREFIX=	${WITH_LANG}-
+.endif
+
 DISTNAME=	geonext.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,10 +16,19 @@ WWW=		http://www.geonext.de
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-WRKSRC=		${WRKDIR}/geonext_install
-NO_BUILD=	yes
+DEPRECATED=	Last upstream release was in 2014
+EXPIRATION_DATE=	2023-12-05
+
 USES=		zip
 USE_JAVA=	yes
+
+NO_BUILD=	yes
+SUB_FILES=	geonext
+SUB_LIST+=	JAVA="${LOCALBASE}/bin/java" LANG=${WITH_LANG}
+
+WRKSRC=		${WRKDIR}/geonext_install
+
+PLIST_SUB+=	LANG=${WITH_LANG}
 
 DATA=	cacerts didmat.crt geonext-batik.jar geonext.html geonext.jar \
 	help.jar help_de.jar help_fr.jar help_gr.jar help_it.jar \
@@ -35,15 +49,6 @@ WITH_LANG=	en
 .else
 PLIST_SUB+=	MASTER="@comment "
 .endif
-
-# For the slave ports
-.if ${WITH_LANG} != "en"
-PKGNAMEPREFIX=	${WITH_LANG}-
-.endif
-
-PLIST_SUB+=	LANG=${WITH_LANG}
-SUB_FILES=	geonext
-SUB_LIST+=	JAVA="${LOCALBASE}/bin/java" LANG=${WITH_LANG}
 
 .include <bsd.port.pre.mk>
 
