@@ -12,6 +12,9 @@ WWW=		https://www.gnugadu.org
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2006
+EXPIRATION_DATE=	2023-12-05
+
 LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile \
 		libgadu.so:polish/libgadu \
 		libfreetype.so:print/freetype2 \
