@@ -1,6 +1,5 @@
 PORTNAME=	prql
-DISTVERSION=	0.9.4
-PORTREVISION=	2
+DISTVERSION=	0.10.0
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -9,43 +8,43 @@ COMMENT=	Language for transforming data: powerful, pipelined SQL replacement
 WWW=		https://prql-lang.org
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/../../LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PRQL
-
-WRKSRC_SUBDIR=	crates/prqlc
 
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		ahash-0.7.6 \
 		ahash-0.8.3 \
-		aho-corasick-0.7.20 \
-		aho-corasick-1.0.1 \
+		aho-corasick-1.0.5 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		ansi-to-html-0.1.3 \
 		anstream-0.3.2 \
-		anstyle-1.0.0 \
-		anstyle-parse-0.2.0 \
+		anstream-0.6.4 \
+		anstyle-1.0.2 \
+		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
+		anstyle-wincon-3.0.1 \
+		anyhow-1.0.75 \
 		ariadne-0.3.0 \
 		arrayvec-0.7.2 \
-		arrow-41.0.0 \
-		arrow-arith-41.0.0 \
-		arrow-array-41.0.0 \
-		arrow-buffer-41.0.0 \
-		arrow-cast-41.0.0 \
-		arrow-data-41.0.0 \
-		arrow-ord-41.0.0 \
-		arrow-row-41.0.0 \
-		arrow-schema-41.0.0 \
-		arrow-select-41.0.0 \
-		arrow-string-41.0.0 \
+		arrow-47.0.0 \
+		arrow-arith-47.0.0 \
+		arrow-array-47.0.0 \
+		arrow-buffer-47.0.0 \
+		arrow-cast-47.0.0 \
+		arrow-data-47.0.0 \
+		arrow-ord-47.0.0 \
+		arrow-row-47.0.0 \
+		arrow-schema-47.0.0 \
+		arrow-select-47.0.0 \
+		arrow-string-47.0.0 \
 		async-native-tls-0.4.0 \
 		async-trait-0.1.68 \
 		asynchronous-codec-0.6.1 \
@@ -56,7 +55,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bigdecimal-0.3.1 \
 		bindgen-0.65.1 \
 		bitflags-1.3.2 \
-		bitflags-2.3.3 \
+		bitflags-2.4.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
 		borsh-0.10.3 \
@@ -64,7 +63,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		borsh-derive-internal-0.10.3 \
 		borsh-schema-derive-internal-0.10.3 \
 		bstr-0.2.17 \
-		bstr-1.5.0 \
+		bstr-1.6.2 \
 		bufstream-0.1.4 \
 		bumpalo-3.13.0 \
 		bytecheck-0.6.11 \
@@ -72,33 +71,33 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		cast-0.3.0 \
-		cc-1.0.79 \
+		cc-1.0.83 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
+		chrono-0.4.31 \
 		chumsky-0.9.2 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
 		clang-sys-1.6.1 \
 		clap-2.34.0 \
-		clap-4.3.0 \
-		clap_builder-4.3.0 \
-		clap_complete-4.3.0 \
+		clap-4.4.6 \
+		clap_builder-4.4.6 \
+		clap_complete-4.4.1 \
 		clap_complete_command-0.5.1 \
 		clap_complete_fig-4.3.0 \
 		clap_complete_nushell-0.1.11 \
-		clap_derive-4.3.0 \
+		clap_derive-4.4.2 \
 		clap_lex-0.5.0 \
-		clio-0.3.4 \
+		clio-0.3.3 \
 		cmake-0.1.50 \
 		color-eyre-0.6.2 \
 		color-spantrace-0.2.0 \
 		colorchoice-1.0.0 \
 		colorchoice-clap-1.0.0 \
 		combine-4.6.6 \
-		comfy-table-6.1.4 \
+		comfy-table-7.0.1 \
 		connection-string-0.2.0 \
 		console-0.15.7 \
 		console_error_panic_hook-0.1.7 \
@@ -106,7 +105,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		const-random-macro-0.1.15 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.7 \
+		cpufeatures-0.2.9 \
 		crc32fast-1.3.2 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
@@ -115,17 +114,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.14 \
 		crossbeam-queue-0.3.8 \
-		crossbeam-utils-0.8.15 \
+		crossbeam-utils-0.8.16 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
-		csv-1.2.1 \
-		csv-core-0.1.10 \
+		csv-1.3.0 \
+		csv-core-0.1.11 \
 		darling-0.20.1 \
 		darling_core-0.20.1 \
 		darling_macro-0.20.1 \
 		derive_utils-0.13.0 \
 		digest-0.10.7 \
-		duckdb-0.8.1 \
+		duckdb-0.9.1 \
 		either-1.8.1 \
 		encode_unicode-0.3.6 \
 		encoding-0.2.33 \
@@ -139,13 +138,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		enumflags2-0.7.7 \
 		enumflags2_derive-0.7.7 \
 		env_logger-0.10.0 \
-		errno-0.3.1 \
+		equivalent-1.0.1 \
+		errno-0.3.3 \
 		errno-dragonfly-0.1.2 \
 		eyre-0.6.8 \
 		fallible-iterator-0.2.0 \
 		fallible-iterator-0.3.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fastrand-1.9.0 \
+		fastrand-2.0.0 \
 		filetime-0.2.22 \
 		flate2-1.0.26 \
 		fnv-1.0.7 \
@@ -173,41 +173,41 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		getrandom-0.2.9 \
 		gimli-0.27.2 \
 		glob-0.3.1 \
-		globset-0.4.10 \
+		globset-0.4.13 \
 		half-1.8.2 \
 		half-2.2.1 \
 		handlebars-4.3.7 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
+		hashbrown-0.14.0 \
 		hashlink-0.8.2 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
-		hermit-abi-0.3.1 \
+		hermit-abi-0.3.2 \
 		hmac-0.12.1 \
 		humantime-2.1.0 \
-		iana-time-zone-0.1.56 \
+		iana-time-zone-0.1.57 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.3.0 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indoc-1.0.9 \
+		indexmap-2.0.0 \
+		indoc-2.0.4 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
-		insta-1.31.0 \
-		insta-cmd-0.3.0 \
-		instant-0.1.12 \
+		insta-1.34.0 \
+		insta-cmd-0.4.0 \
 		io-enum-1.1.0 \
-		io-lifetimes-1.0.11 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
-		itoa-1.0.6 \
+		itoa-1.0.9 \
 		jni-0.21.1 \
 		jni-sys-0.3.0 \
 		jobserver-0.1.26 \
-		js-sys-0.3.60 \
+		js-sys-0.3.64 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
@@ -219,49 +219,49 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.147 \
-		libduckdb-sys-0.8.1 \
+		libc-0.2.149 \
+		libduckdb-sys-0.9.1 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
 		libsqlite3-sys-0.26.0 \
 		libz-sys-1.1.9 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.5 \
+		linux-raw-sys-0.4.10 \
 		lock_api-0.4.9 \
-		log-0.4.17 \
+		log-0.4.20 \
 		lru-0.10.0 \
 		md-5-0.10.5 \
 		md5-0.6.1 \
-		mdbook-0.4.29 \
+		mdbook-0.4.35 \
 		mdbook-preprocessor-boilerplate-0.1.2 \
-		memchr-2.5.0 \
+		memchr-2.6.3 \
 		memoffset-0.8.0 \
 		memoffset-0.9.0 \
 		minijinja-0.31.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.6 \
+		mio-0.8.8 \
 		mysql-24.0.0 \
 		mysql-common-derive-0.30.2 \
 		mysql_common-0.30.4 \
 		named_pipe-0.4.1 \
 		native-tls-0.2.11 \
 		nom-7.1.3 \
-		notify-6.1.0 \
-		num-0.4.0 \
+		normpath-1.1.1 \
+		notify-6.1.1 \
+		num-0.4.1 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.3 \
 		num-integer-0.1.45 \
 		num-iter-0.1.43 \
 		num-rational-0.4.1 \
-		num-traits-0.2.15 \
+		num-traits-0.2.16 \
 		num_cpus-1.15.0 \
 		object-0.30.3 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
-		opener-0.5.2 \
+		opener-0.6.1 \
 		openssl-0.10.55 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -272,10 +272,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		peeking_take_while-0.1.2 \
 		pem-2.0.1 \
 		percent-encoding-2.2.0 \
-		pest-2.6.0 \
-		pest_derive-2.6.0 \
-		pest_generator-2.6.0 \
-		pest_meta-2.6.0 \
+		pest-2.7.0 \
+		pest_derive-2.7.0 \
+		pest_generator-2.7.0 \
+		pest_meta-2.7.0 \
 		pg_bigdecimal-0.1.5 \
 		phf-0.11.1 \
 		phf_shared-0.11.1 \
@@ -285,8 +285,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
 		plotters-svg-0.3.3 \
-		postgres-0.19.5 \
-		postgres-protocol-0.6.5 \
+		postgres-0.19.7 \
+		postgres-protocol-0.6.6 \
 		postgres-types-0.2.5 \
 		ppv-lite86-0.2.17 \
 		pretty-hex-0.3.0 \
@@ -302,12 +302,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.9.3 \
 		pulldown-cmark-to-cmark-11.0.0 \
-		pyo3-0.19.0 \
-		pyo3-build-config-0.19.0 \
-		pyo3-ffi-0.19.0 \
-		pyo3-macros-0.19.0 \
-		pyo3-macros-backend-0.19.0 \
-		quote-1.0.28 \
+		pyo3-0.20.0 \
+		pyo3-build-config-0.20.0 \
+		pyo3-ffi-0.20.0 \
+		pyo3-macros-0.20.0 \
+		pyo3-macros-backend-0.20.0 \
+		quote-1.0.33 \
 		radium-0.7.0 \
 		rand-0.7.3 \
 		rand-0.8.5 \
@@ -320,10 +320,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
-		regex-1.9.1 \
+		regex-1.10.2 \
 		regex-automata-0.1.10 \
-		regex-automata-0.3.3 \
-		regex-syntax-0.7.3 \
+		regex-automata-0.3.9 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.7.5 \
+		regex-syntax-0.8.2 \
 		rend-0.4.0 \
 		rkyv-0.7.42 \
 		rkyv_derive-0.7.42 \
@@ -331,13 +333,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rust_decimal-1.29.1 \
 		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
-		rustix-0.37.19 \
-		rustix-0.38.6 \
-		rustler-0.29.0 \
-		rustler_codegen-0.29.0 \
+		rustix-0.38.19 \
+		rustler-0.30.0 \
+		rustler_codegen-0.30.0 \
 		rustler_sys-2.3.0 \
-		rustversion-1.0.12 \
-		ryu-1.0.13 \
+		rustversion-1.0.14 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
 		saturating-0.1.0 \
 		schannel-0.1.21 \
@@ -346,25 +347,25 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		seahash-4.1.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
-		semver-1.0.17 \
-		serde-1.0.163 \
-		serde_derive-1.0.163 \
-		serde_json-1.0.96 \
-		serde_yaml-0.9.21 \
+		semver-1.0.20 \
+		serde-1.0.189 \
+		serde_derive-1.0.189 \
+		serde_json-1.0.107 \
+		serde_yaml-0.9.25 \
 		sha1-0.10.5 \
-		sha2-0.10.6 \
+		sha2-0.10.7 \
 		sharded-slab-0.1.4 \
 		shlex-1.1.0 \
 		signal-hook-registry-1.4.1 \
 		simdutf8-0.1.4 \
-		similar-2.2.1 \
+		similar-2.3.0 \
 		similar-asserts-1.5.0 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
 		smallvec-1.10.0 \
 		socket2-0.5.3 \
-		sqlformat-0.2.1 \
-		sqlparser-0.36.0 \
+		sqlformat-0.2.2 \
+		sqlparser-0.38.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		stringprep-0.1.2 \
@@ -372,23 +373,22 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		strum-0.24.1 \
 		strum-0.25.0 \
 		strum_macros-0.24.3 \
-		strum_macros-0.25.0 \
+		strum_macros-0.25.3 \
 		subprocess-0.2.9 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.17 \
+		syn-2.0.32 \
 		tap-1.0.1 \
 		tar-0.4.38 \
-		target-lexicon-0.12.7 \
-		tempfile-3.5.0 \
+		target-lexicon-0.12.11 \
+		tempfile-3.8.0 \
 		termcolor-1.2.0 \
-		terminal_size-0.2.6 \
+		terminal_size-0.3.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		thiserror-1.0.48 \
+		thiserror-impl-1.0.48 \
 		thread_local-1.1.7 \
 		tiberius-0.12.2 \
-		time-0.1.45 \
 		time-0.3.21 \
 		time-core-0.1.1 \
 		time-macros-0.2.9 \
@@ -396,32 +396,32 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.32.0 \
+		tokio-1.33.0 \
 		tokio-macros-2.1.0 \
-		tokio-postgres-0.7.8 \
-		tokio-util-0.7.8 \
+		tokio-postgres-0.7.10 \
+		tokio-util-0.7.9 \
 		toml-0.5.11 \
 		toml_datetime-0.6.2 \
 		toml_edit-0.19.10 \
 		topological-sort-0.2.2 \
 		tracing-0.1.37 \
-		tracing-attributes-0.1.24 \
+		tracing-attributes-0.1.26 \
 		tracing-core-0.1.31 \
 		tracing-error-0.2.0 \
 		tracing-subscriber-0.3.17 \
 		twox-hash-1.6.3 \
 		typenum-1.16.0 \
-		ucd-trie-0.1.5 \
+		ucd-trie-0.1.6 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.9 \
+		unicode-ident-1.0.11 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
 		unicode_categories-0.1.1 \
-		unindent-0.1.11 \
+		unindent-0.2.3 \
 		unreachable-1.0.0 \
-		unsafe-libyaml-0.2.8 \
+		unsafe-libyaml-0.2.9 \
 		url-2.3.1 \
 		utf8parse-0.2.1 \
 		uuid-1.3.3 \
@@ -429,19 +429,19 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		void-1.0.2 \
-		walkdir-2.3.3 \
+		walkdir-2.4.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.87 \
 		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-futures-0.4.33 \
+		wasm-bindgen-futures-0.4.37 \
 		wasm-bindgen-macro-0.2.87 \
 		wasm-bindgen-macro-support-0.2.87 \
 		wasm-bindgen-shared-0.2.87 \
-		wasm-bindgen-test-0.3.33 \
-		wasm-bindgen-test-macro-0.3.33 \
+		wasm-bindgen-test-0.3.37 \
+		wasm-bindgen-test-macro-0.3.37 \
 		web-sys-0.3.60 \
+		whoami-1.4.1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -473,9 +473,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1
 
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+
 PLIST_FILES=	bin/prqlc
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/prqlc
+do-install:
+	# workaround for error: found a virtual manifest at `xx` instead of a package manifest
+	${INSTALL_PROGRAM} \
+		${WRKDIR}/target/*/release/prqlc \
+		${STAGEDIR}${PREFIX}/bin/prqlc
 
 .include <bsd.port.mk>
