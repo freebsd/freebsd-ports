@@ -17,6 +17,7 @@ share/metainfo/net.sourceforge.VMPK.metainfo.xml
 %%DATADIR%%/help_es.html
 %%DATADIR%%/help_ru.html
 %%DATADIR%%/help_sr.html
+%%DATADIR%%/help_zh_CN.html
 %%DATADIR%%/it-qwerty.xml
 %%DATADIR%%/pc102mac.xml
 %%DATADIR%%/pc102win.xml

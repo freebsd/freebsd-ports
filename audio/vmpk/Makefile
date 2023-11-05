@@ -1,6 +1,5 @@
 PORTNAME=	vmpk
-DISTVERSION=	0.8.8
-PORTREVISION=	3
+DISTVERSION=	0.8.10
 CATEGORIES=	audio
 MASTER_SITES=	SF/vmpk/vmpk/${PORTVERSION}/
 
@@ -13,8 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdrumstick-rt.so:audio/drumstick
 
-USES=		compiler:c++11-lang cmake localbase:ldflags pkgconfig qt:6 tar:bz2 xorg
-USE_QT=		base svg tools:build
+USES=		compiler:c++11-lang cmake gl localbase:ldflags pkgconfig qt:6 tar:bz2 xorg
+USE_QT=		base tools:build
+USE_GL=		gl opengl
 USE_XORG=	xcb
 
 CMAKE_ON=	EMBED_TRANSLATIONS
