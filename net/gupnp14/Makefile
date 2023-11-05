@@ -12,6 +12,9 @@ WWW=		https://wiki.gnome.org/Projects/GUPnP
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unsupported legacy version upstream, also fails to build with newer versions of libxml2. Consider migrating to net/gupnp
+EXPIRATION_DATE=2023-11-30
+
 BUILD_DEPENDS=	glib>=2.66:devel/glib20 \
 		gobject-introspection>=1.36:devel/gobject-introspection \
 		gssdp14>=1.3.0:net/gssdp14 \
