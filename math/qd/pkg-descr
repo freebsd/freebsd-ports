@@ -7,3 +7,6 @@ are also provided.
 
 This work was done at Lawrence Berkeley National Laboratory,
 NERSC Division, Yozo Hida with Xiaoye S. Li and David H. Bailey.
+
+Note: This package is an older package, it is not thread-safe. New users should
+use DQFUN, QXFUN or DDFUN.
