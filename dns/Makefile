@@ -105,6 +105,7 @@
     SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += mdnsd
+    SUBDIR += mosdns
     SUBDIR += namesilo_ddns
     SUBDIR += nextdns
     SUBDIR += noip
