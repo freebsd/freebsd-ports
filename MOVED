@@ -7960,18 +7960,18 @@ www/sfnt2woff||2023-11-02|Has expired: Superseded by WOFF 2.0, please consider u
 textproc/kibana7||2023-11-02|Has expired: Depends on EOL NodeJS 16
 devel/electron22|devel/electron24|2023-11-02|Has expired: Depends on EOL NodeJS 16
 www/hedgedoc||2023-11-02|Has expired: Depends on EOL NodeJS 16
-games/libretro-beetle_bsnes|games/libretro-mednafen_bsnes|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_gba|games/libretro-mednafen_gba|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_lynx|games/libretro-mednafen_lynx|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_ngp|games/libretro-mednafen_ngp|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_pce|games/libretro-mednafen_pce|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_pce_fast|games/libretro-mednafen_pce_fast|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_pcfx|games/libretro-mednafen_pcfx|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_saturn|games/libretro-mednafen_saturn|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_supergrafx|games/libretro-mednafen_supergrafx|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_vb|games/libretro-mednafen_vb|2023-10-26|Follow naming of libretro-super build script
-games/libretro-beetle_wswan|games/libretro-mednafen_wswan|2023-10-26|Follow naming of libretro-super build script
-games/libretro-fbalpha|games/libretro-fbalpha2012|2023-10-26|Follow naming of libretro-super build script
-games/libretro-paralleln64|games/libretro-parallel_n64|2023-10-26|Follow naming of libretro-super build script
-games/libretro-uae|games/libretro-puae|2023-10-26|Follow naming of libretro-super build script
-games/libretro-vbanext|games/libretro-vba_next|2023-10-26|Follow naming of libretro-super build script
+games/libretro-beetle_bsnes|games/libretro-mednafen_bsnes|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_gba|games/libretro-mednafen_gba|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_lynx|games/libretro-mednafen_lynx|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_ngp|games/libretro-mednafen_ngp|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_pce|games/libretro-mednafen_pce|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_pce_fast|games/libretro-mednafen_pce_fast|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_pcfx|games/libretro-mednafen_pcfx|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_saturn|games/libretro-mednafen_saturn|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_supergrafx|games/libretro-mednafen_supergrafx|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_vb|games/libretro-mednafen_vb|2023-11-06|Follow naming of libretro-super build script
+games/libretro-beetle_wswan|games/libretro-mednafen_wswan|2023-11-06|Follow naming of libretro-super build script
+games/libretro-fbalpha|games/libretro-fbalpha2012|2023-11-06|Follow naming of libretro-super build script
+games/libretro-paralleln64|games/libretro-parallel_n64|2023-11-06|Follow naming of libretro-super build script
+games/libretro-uae|games/libretro-puae|2023-11-06|Follow naming of libretro-super build script
+games/libretro-vbanext|games/libretro-vba_next|2023-11-06|Follow naming of libretro-super build script
