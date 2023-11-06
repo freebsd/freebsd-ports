@@ -559,6 +559,7 @@
     SUBDIR += pg_similarity
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_tileserv
+    SUBDIR += pg_vector
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagroal
