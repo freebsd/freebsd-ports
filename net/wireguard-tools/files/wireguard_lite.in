@@ -82,13 +82,6 @@ wireguard_stop()
 
 		ifconfig ${interface} destroy
 	done
-
-	if kldstat -q -n if_wg; then
-		if ! kldunload if_wg > /dev/null 2>&1; then
-			warn "Can't unload if_wg module."
-			return 1
-		fi
-	fi
 }
 
 wireguard_reload()
