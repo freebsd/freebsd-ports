@@ -37,6 +37,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bitwarden
 GH_PROJECT=	clients
 
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
+
 BUILD_WRKSRC=	${WRKSRC}/apps/cli
 
 PLIST_FILES=	bin/bw \
@@ -65,7 +67,8 @@ pre-fetch:
 		${MKDIR} ${WRKDIR}/node-modules-cache; \
 		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/node-modules-cache; \
 		cd ${WRKDIR}/node-modules-cache && \
-		${SETENV} HOME=${WRKDIR} npm ci --ignore-scripts --no-progress; \
+		${SETENV} HOME=${WRKDIR} npm install -g --prefix=${WRKDIR} npm@9.9.0 && \
+		${SETENV} HOME=${WRKDIR} PATH=${WRKDIR}/bin:${PATH} npm ci --ignore-scripts --no-progress; \
 		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
 			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
 		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
