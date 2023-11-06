@@ -156,9 +156,7 @@ lib/R/library/MASS/scripts/ch13.R
 lib/R/library/MASS/scripts/ch14.R
 lib/R/library/MASS/scripts/ch15.R
 lib/R/library/MASS/scripts/ch16.R
-lib/R/library/Matrix/Copyrights
 lib/R/library/Matrix/DESCRIPTION
-lib/R/library/Matrix/Doxyfile
 lib/R/library/Matrix/INDEX
 lib/R/library/Matrix/LICENCE
 lib/R/library/Matrix/Meta/Rd.rds
@@ -179,7 +177,6 @@ lib/R/library/Matrix/data/KNex.R
 lib/R/library/Matrix/data/USCounties.R
 lib/R/library/Matrix/data/datalist
 lib/R/library/Matrix/data/wrld_1deg.R
-lib/R/library/Matrix/doc/Announce.txt
 lib/R/library/Matrix/doc/Comparisons.R
 lib/R/library/Matrix/doc/Comparisons.Rnw
 lib/R/library/Matrix/doc/Comparisons.pdf
@@ -197,7 +194,6 @@ lib/R/library/Matrix/doc/SuiteSparse/CHOLMOD.txt
 lib/R/library/Matrix/doc/SuiteSparse/COLAMD.txt
 lib/R/library/Matrix/doc/SuiteSparse/SPQR.txt
 lib/R/library/Matrix/doc/SuiteSparse/SuiteSparse_config.txt
-lib/R/library/Matrix/doc/SuiteSparse/UserGuides.txt
 lib/R/library/Matrix/doc/index.html
 lib/R/library/Matrix/doc/sparseModels.R
 lib/R/library/Matrix/doc/sparseModels.Rnw
@@ -793,6 +789,8 @@ lib/R/library/mgcv/libs/mgcv.so
 %%NLS%%lib/R/library/mgcv/po/en@quot/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/fr/LC_MESSAGES/mgcv.mo
+%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/R-mgcv.mo
+%%NLS%%lib/R/library/mgcv/po/it/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/R-mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/ko/LC_MESSAGES/mgcv.mo
 %%NLS%%lib/R/library/mgcv/po/pl/LC_MESSAGES/R-mgcv.mo
@@ -1103,6 +1101,9 @@ lib/R/library/survival/doc/discrim.R
 lib/R/library/survival/doc/discrim.Rnw
 lib/R/library/survival/doc/discrim.pdf
 lib/R/library/survival/doc/index.html
+lib/R/library/survival/doc/matrix.R
+lib/R/library/survival/doc/matrix.Rnw
+lib/R/library/survival/doc/matrix.pdf
 lib/R/library/survival/doc/multi.Rnw
 lib/R/library/survival/doc/multi.pdf
 lib/R/library/survival/doc/other.Rnw
@@ -1110,6 +1111,9 @@ lib/R/library/survival/doc/other.pdf
 lib/R/library/survival/doc/population.R
 lib/R/library/survival/doc/population.Rnw
 lib/R/library/survival/doc/population.pdf
+lib/R/library/survival/doc/redistribute.R
+lib/R/library/survival/doc/redistribute.Rnw
+lib/R/library/survival/doc/redistribute.pdf
 lib/R/library/survival/doc/splines.R
 lib/R/library/survival/doc/splines.Rnw
 lib/R/library/survival/doc/splines.pdf
