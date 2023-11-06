@@ -6,7 +6,7 @@ MASTER_SITES=	SF/gnupdate/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files
-WWW=		http://gnupdate.sourceforge.net/components/libcomprex/index.xml
+WWW=		https://gnupdate.sourceforge.net/components/libcomprex/index.xml
 
 LICENSE=	LGPL21
 

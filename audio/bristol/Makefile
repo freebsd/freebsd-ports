@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.60
 
 MAINTAINER=	pierrejacques.mimifir@gmail.com
 COMMENT=	Vintage synthesizers emulation for electric pianos and organs
-WWW=		http://bristol.sourceforge.net/
+WWW=		https://bristol.sourceforge.net/
 
 LICENSE=	GPLv2
 

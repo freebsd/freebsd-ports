@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	03
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Microsoft file word processor format import filter library
-WWW=		http://libwps.sourceforge.net/
+WWW=		https://libwps.sourceforge.net/
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

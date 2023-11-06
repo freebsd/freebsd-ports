@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
-WWW=		http://sdpa.sourceforge.net/
+WWW=		https://sdpa.sourceforge.net/
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING

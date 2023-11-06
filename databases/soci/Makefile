@@ -6,7 +6,7 @@ CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	C++ Database Access Library
-WWW=		http://soci.sourceforge.net/
+WWW=		https://soci.sourceforge.net/
 
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt

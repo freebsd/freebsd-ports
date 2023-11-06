@@ -7,7 +7,7 @@ DISTNAME=	dia2code-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Complete rewrite of dia2code in C++
-WWW=		http://dia2code.sourceforge.net/
+WWW=		https://dia2code.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

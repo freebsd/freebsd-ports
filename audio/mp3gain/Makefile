@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tool to normalize the gain of MP3 files
-WWW=		http://mp3gain.sourceforge.net/
+WWW=		https://mp3gain.sourceforge.net/
 
 LICENSE=	LGPL21
 

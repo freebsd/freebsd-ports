@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	marck@FreeBSD.org
 COMMENT=	Simple Cisco NetFlow data collector
-WWW=		http://ehnt.sourceforge.net/
+WWW=		https://ehnt.sourceforge.net/
 
 PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
 		man/man1/ehnt.1.gz man/man8/ehntserv.8.gz \

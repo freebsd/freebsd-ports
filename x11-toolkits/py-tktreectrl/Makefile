@@ -7,7 +7,7 @@ DISTNAME=	TkinterTreectrl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TkTreectrl Python bindings
-WWW=		http://tkintertreectrl.sourceforge.net/
+WWW=		https://tkintertreectrl.sourceforge.net/
 
 LICENSE=	PD
 

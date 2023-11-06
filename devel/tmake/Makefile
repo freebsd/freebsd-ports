@@ -6,7 +6,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Extremely portable perl-based make utility
-WWW=		http://tmake.sourceforge.net/
+WWW=		https://tmake.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

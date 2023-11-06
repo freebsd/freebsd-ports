@@ -7,7 +7,7 @@ DISTNAME=	JChessBoard-${PORTVERSION}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Chess game and PGN viewer/editor written in Java
-WWW=		http://jchessboard.sourceforge.net/
+WWW=		https://jchessboard.sourceforge.net/
 
 LICENSE=	GPLv2
 

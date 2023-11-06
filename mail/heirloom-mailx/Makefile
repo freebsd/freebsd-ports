@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	heirloom-
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	BSD mail utility with MIME, IMAP, POP3, SMTP, and S/MIME extensions
-WWW=		http://heirloom.sourceforge.net/mailx.html
+WWW=		https://heirloom.sourceforge.net/mailx.html
 
 LICENSE=	BSD4CLAUSE
 

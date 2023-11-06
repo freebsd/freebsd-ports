@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-1.4/
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	On-link icmpv6 message monitoring and reporting daemon
-WWW=		http://ndpmon.sourceforge.net
+WWW=		https://ndpmon.sourceforge.net
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

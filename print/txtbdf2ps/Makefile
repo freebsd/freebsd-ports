@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.txt
 
 MAINTAINER=	ak@FreeBSD.org
 COMMENT=	Translator TXT + BDF to PS
-WWW=		http://oldrus-ispell.sourceforge.net/txtbdf2ps.html
+WWW=		https://oldrus-ispell.sourceforge.net/txtbdf2ps.html
 
 PLIST_FILES=	bin/txtbdf2ps
 USES=		perl5 shebangfix

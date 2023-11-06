@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Free OS independent dictionary application
-WWW=		http://jalingo.sourceforge.net/
+WWW=		https://jalingo.sourceforge.net/
 
 LICENSE=	GPLv2
 

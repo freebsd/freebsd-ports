@@ -7,7 +7,7 @@ DISTNAME=	gkrellmoon-${PORTVERSION}
 
 MAINTAINER=	w@wrzask.pl
 COMMENT=	Moon clock plugin for Gkrellm2
-WWW=		http://gkrellmoon.sourceforge.net/
+WWW=		https://gkrellmoon.sourceforge.net/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:sysutils/gkrellm2

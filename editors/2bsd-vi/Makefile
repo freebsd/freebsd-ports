@@ -8,7 +8,7 @@ DISTNAME=	ex-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	The original vi editor, updated to run on modern OSes
-WWW=		http://ex-vi.sourceforge.net/
+WWW=		https://ex-vi.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

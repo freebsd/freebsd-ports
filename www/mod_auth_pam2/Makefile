@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use PAM modules for user authentication
-WWW=		http://pam.sourceforge.net/mod_auth_pam/
+WWW=		https://pam.sourceforge.net/mod_auth_pam/
 
 USES=		apache
 WRKSRC=		${WRKDIR}/${PORTNAME}

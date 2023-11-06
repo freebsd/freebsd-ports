@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	zmey20000@yahoo.com
 COMMENT=	Expect-like tool for pure shell
-WWW=		http://empty.sourceforge.net/
+WWW=		https://empty.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

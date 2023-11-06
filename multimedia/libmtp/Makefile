@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Media Transfer Protocol (MTP) library
-WWW=		http://libmtp.sourceforge.net/
+WWW=		https://libmtp.sourceforge.net/
 
 LICENSE=	LGPL21+
 

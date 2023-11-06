@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	-qt5
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Library to manage JSON objects with Qt
-WWW=		http://qjson.sourceforge.net/
+WWW=		https://qjson.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.lib

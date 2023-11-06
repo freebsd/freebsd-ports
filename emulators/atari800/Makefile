@@ -11,7 +11,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Atari 8-bit computer emulator
-WWW=		http://atari800.sourceforge.net/
+WWW=		https://atari800.sourceforge.net/
 
 LICENSE=	GPLv2 ROM
 LICENSE_COMB=	multi

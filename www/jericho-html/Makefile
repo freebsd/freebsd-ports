@@ -5,7 +5,7 @@ MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
-WWW=		http://jerichohtml.sourceforge.net/doc/index.html
+WWW=		https://jerichohtml.sourceforge.net/doc/index.html
 
 USES=		zip
 USE_JAVA=	yes

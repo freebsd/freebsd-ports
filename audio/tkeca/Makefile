@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Tk interface to ecasound
-WWW=		http://tkeca.sourceforge.net/
+WWW=		https://tkeca.sourceforge.net/
 
 LICENSE=	GPLv2
 

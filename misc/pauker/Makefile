@@ -7,7 +7,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	alex@stangl.us
 COMMENT=	Java-based flashcard learning using the Leitner system
-WWW=		http://pauker.sourceforge.net
+WWW=		https://pauker.sourceforge.net
 
 USE_JAVA=	yes
 NO_BUILD=	yes

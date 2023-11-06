@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Check bank codes of German banks
-WWW=		http://ktoblzcheck.sourceforge.net/
+WWW=		https://ktoblzcheck.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

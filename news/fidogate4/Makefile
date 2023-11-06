@@ -8,7 +8,7 @@ PKGNAMESUFFIX?=	4${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fido-Internet Gateway and Tosser
-WWW=		http://fidogate.sourceforge.net/
+WWW=		https://fidogate.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

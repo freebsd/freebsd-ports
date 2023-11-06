@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	health-
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Nutrition software to record what you eat
-WWW=		http://nut.sourceforge.net/
+WWW=		https://nut.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

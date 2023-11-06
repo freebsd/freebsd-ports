@@ -5,7 +5,7 @@ CATEGORIES=	editors
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	File editor/viewer/analyzer for executables
-WWW=		http://hte.sourceforge.net/
+WWW=		https://hte.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

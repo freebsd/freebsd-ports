@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Replacement for nss_ldap
-WWW=		http://yptransitd.sourceforge.net/
+WWW=		https://yptransitd.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

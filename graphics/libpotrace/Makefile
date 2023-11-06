@@ -6,7 +6,7 @@ DISTNAME=	potrace-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for transforming bitmaps into vector graphics
-WWW=		http://potrace.sourceforge.net
+WWW=		https://potrace.sourceforge.net
 
 LICENSE=	GPLv2
 

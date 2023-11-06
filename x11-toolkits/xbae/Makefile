@@ -7,7 +7,7 @@ DISTNAME=	xbae-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Motif-based widget which displays a grid of cells as a spreadsheet
-WWW=		http://xbae.sourceforge.net/
+WWW=		https://xbae.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

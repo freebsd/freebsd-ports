@@ -6,7 +6,7 @@ MASTER_SITES=	SF/cqinet/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio Echolink client for UNIX
-WWW=		http://cqinet.sourceforge.net/
+WWW=		https://cqinet.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gpl.txt

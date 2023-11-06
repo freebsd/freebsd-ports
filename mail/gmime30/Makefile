@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	30
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
-WWW=		http://spruce.sourceforge.net/gmime/
+WWW=		https://spruce.sourceforge.net/gmime/
 
 LICENSE=	LGPL21
 

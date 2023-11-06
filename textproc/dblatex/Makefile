@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}3-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DocBook to LaTeX/ConTeXt Publishing
-WWW=		http://dblatex.sourceforge.net/
+WWW=		https://dblatex.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

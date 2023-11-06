@@ -6,7 +6,7 @@ MASTER_SITES=	http://telepathy.freedesktop.org/releases/telepathy-mission-contro
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Telepathy component to apps to abstract details of connection managers
-WWW=		http://mission-control.sourceforge.net/
+WWW=		https://mission-control.sourceforge.net/
 
 LIB_DEPENDS=	libtelepathy-glib.so:net-im/telepathy-glib \
 		libdbus-glib-1.so:devel/dbus-glib \

@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jsmith@resonatingmedia.com
 COMMENT=	Very configurable FTP server that can do chroot easily
-WWW=		http://bftpd.sourceforge.net/
+WWW=		https://bftpd.sourceforge.net/
 
 LICENSE=	GPLv2
 

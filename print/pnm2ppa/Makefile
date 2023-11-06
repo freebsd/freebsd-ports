@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	000.fbsd@quip.cz
 COMMENT=	Convert PNM images to PPA for some HP printers
-WWW=		http://pnm2ppa.sourceforge.net/
+WWW=		https://pnm2ppa.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/en/LICENSE

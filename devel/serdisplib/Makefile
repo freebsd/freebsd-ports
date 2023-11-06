@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	Library to drive graphical LC- and OLED displays
-WWW=		http://serdisplib.sourceforge.net/
+WWW=		https://serdisplib.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Utilities from the Free Unix Spectrum Emulator
-WWW=		http://fuse-emulator.sourceforge.net/
+WWW=		https://fuse-emulator.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

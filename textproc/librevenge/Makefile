@@ -5,7 +5,7 @@ MASTER_SITES=	SF/libwpd/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Base library for writing document import filters
-WWW=		http://libwpd.sourceforge.net
+WWW=		https://libwpd.sourceforge.net
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

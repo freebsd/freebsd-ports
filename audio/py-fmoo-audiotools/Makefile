@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ryu0@ymail.com
 COMMENT=	Collection of command line audio handling utilities
-WWW=		http://audiotools.sourceforge.net
+WWW=		https://audiotools.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

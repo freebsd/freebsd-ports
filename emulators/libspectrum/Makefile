@@ -5,7 +5,7 @@ MASTER_SITES=	SF/fuse-emulator/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Handling of ZX-Spectrum emulator files formats
-WWW=		http://fuse-emulator.sourceforge.net/libspectrum.php
+WWW=		https://fuse-emulator.sourceforge.net/libspectrum.php
 
 LICENSE=	GPLv2
 

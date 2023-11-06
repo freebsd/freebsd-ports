@@ -5,7 +5,7 @@ MASTER_SITES=	SF/gopherus/v${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Classic text interface to the gopherspace
-WWW=		http://gopherus.sourceforge.net/
+WWW=		https://gopherus.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

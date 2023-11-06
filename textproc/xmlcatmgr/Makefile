@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	SGML and XML catalog manager
-WWW=		http://xmlcatmgr.sourceforge.net/
+WWW=		https://xmlcatmgr.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

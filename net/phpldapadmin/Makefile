@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	PHP application to administer LDAP over the web
-WWW=		http://phpldapadmin.sourceforge.net/
+WWW=		https://phpldapadmin.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

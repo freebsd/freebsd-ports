@@ -6,7 +6,7 @@ MASTER_SITES=	SF/panotools/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Cross-platform library behind Panorama Tools and other photo stitchers
-WWW=		http://panotools.sourceforge.net/
+WWW=		https://panotools.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

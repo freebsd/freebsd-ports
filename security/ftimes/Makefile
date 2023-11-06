@@ -6,7 +6,7 @@ MASTER_SITES=		SF
 
 MAINTAINER=		klm@uidzero.org
 COMMENT=		System baselining and evidence collection tool
-WWW=		http://ftimes.sourceforge.net/FTimes/
+WWW=		https://ftimes.sourceforge.net/FTimes/
 
 LICENSE=		BSD3CLAUSE APACHE20 MIT
 LICENSE_COMB=		multi

@@ -7,7 +7,7 @@ DISTNAME=	CUnit-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Automated unit testing framework for C
-WWW=		http://cunit.sourceforge.net/
+WWW=		https://cunit.sourceforge.net/
 
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING

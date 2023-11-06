@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Library to access data on a CDDB server
-WWW=		http://libcddb.sourceforge.net/
+WWW=		https://libcddb.sourceforge.net/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

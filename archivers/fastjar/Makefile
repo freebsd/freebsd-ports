@@ -6,7 +6,7 @@ MASTER_SITES=	LOCAL/maho/fastjar
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Version of JDK's `jar' command written entirely in C
-WWW=		http://fastjar.sourceforge.net/
+WWW=		https://fastjar.sourceforge.net/
 
 LICENSE=	GPLv2
 

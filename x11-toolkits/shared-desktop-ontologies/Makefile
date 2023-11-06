@@ -5,7 +5,7 @@ MASTER_SITES=	SF/oscaf/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Interoperability between desktops and collaborative environments
-WWW=		http://oscaf.sourceforge.net
+WWW=		https://oscaf.sourceforge.net
 
 CMAKE_ARGS+=	-DPKGCONFIG_INSTALL_DIR:PATH="libdata/pkgconfig/"
 INSTALL_TARGET=	install

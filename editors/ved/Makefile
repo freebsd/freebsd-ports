@@ -2,7 +2,7 @@ PORTNAME=	ved
 CATEGORIES=	editors
 
 COMMENT=	Visual editor (easy to learn, fast, and lean)
-WWW=		http://schilytools.sourceforge.net/ved.html
+WWW=		https://schilytools.sourceforge.net/ved.html
 
 OPTIONS_DEFINE=	DOCS
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Scid/Scid%204.7/
 
 MAINTAINER=	bsd@volki.at
 COMMENT=	Free chess database application
-WWW=		http://scid.sourceforge.net/
+WWW=		https://scid.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

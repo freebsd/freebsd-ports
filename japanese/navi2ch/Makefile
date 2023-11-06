@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	2ch.net and 2ch-like BBS navigator for Emacsen
-WWW=		http://navi2ch.sourceforge.net
+WWW=		https://navi2ch.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

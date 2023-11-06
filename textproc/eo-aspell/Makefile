@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Esperanto dictionary
-WWW=		http://aspell.sourceforge.net/
+WWW=		https://aspell.sourceforge.net/
 
 DICT=	 	eo
 

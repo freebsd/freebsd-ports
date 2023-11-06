@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Library for reading and writing Data Matrix barcodes
-WWW=		http://libdmtx.sourceforge.net/
+WWW=		https://libdmtx.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

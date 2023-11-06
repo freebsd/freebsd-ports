@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Enriched clone of the game "Logical"
-WWW=		http://pathological.sourceforge.net/
+WWW=		https://pathological.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

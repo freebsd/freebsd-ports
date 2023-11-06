@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PO
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	SIP benchmarking and testing tool
-WWW=		http://sipp.sourceforge.net/
+WWW=		https://sipp.sourceforge.net/
 
 LICENSE=	GPLv2
 

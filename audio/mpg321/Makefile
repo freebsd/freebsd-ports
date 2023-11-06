@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Command-line MP3 player, compatible with mpg123
-WWW=		http://mpg321.sourceforge.net/
+WWW=		https://mpg321.sourceforge.net/
 
 LIB_DEPENDS=	libao.so:audio/libao \
 		libid3tag.so:audio/libid3tag \

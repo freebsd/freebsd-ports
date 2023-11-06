@@ -10,7 +10,7 @@ PKGNAMESUFFIX?=	-devel
 
 MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
-WWW=		http://tidy.sourceforge.net/
+WWW=		https://tidy.sourceforge.net/
 
 LICENSE=	HTML_TIDY
 LICENSE_NAME=	HTML Tidy License

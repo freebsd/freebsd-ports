@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	dthiele@gmx.net
 COMMENT=	Daemon to monitor and configure modern scanner's buttons
-WWW=		http://scanbuttond.sourceforge.net/
+WWW=		https://scanbuttond.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Manipulate the file headers in tar archive files in various ways
-WWW=		http://tardy.sourceforge.net/
+WWW=		https://tardy.sourceforge.net/
 
 LICENSE=	GPLv3
 

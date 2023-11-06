@@ -6,7 +6,7 @@ MASTER_SITES=	SF/xprobe/xprobe2/Xprobe2%20${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner
-WWW=		http://xprobe.sourceforge.net/
+WWW=		https://xprobe.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

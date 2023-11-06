@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	logan@elandsys.com
 COMMENT=	Network grep
-WWW=		http://ngrep.sourceforge.net/
+WWW=		https://ngrep.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

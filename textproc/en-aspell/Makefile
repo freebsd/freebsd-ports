@@ -4,7 +4,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell English dictionaries
-WWW=		http://aspell.sourceforge.net/
+WWW=		https://aspell.sourceforge.net/
 
 DICT=		en
 

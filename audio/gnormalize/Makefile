@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	Alternative for replaygain
-WWW=		http://gnormalize.sourceforge.net/
+WWW=		https://gnormalize.sourceforge.net/
 
 RUN_DEPENDS+=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		wavegain:audio/wavegain

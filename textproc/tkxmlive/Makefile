@@ -7,7 +7,7 @@ DISTNAME=		tkxmlive-0.1.5-1
 
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		Tcl/Tk XML intelligence visual editor
-WWW=		http://tkxmlive.sourceforge.net/
+WWW=		https://tkxmlive.sourceforge.net/
 
 RUN_DEPENDS+=		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:x11-toolkits/bwidget
 

@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sasaki12@gmail.com
 COMMENT=	Sendmail Sender Address Validator
-WWW=		http://smfs.sourceforge.net/
+WWW=		https://smfs.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

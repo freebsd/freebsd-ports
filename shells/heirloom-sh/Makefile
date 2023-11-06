@@ -6,7 +6,7 @@ MASTER_SITES=	SF/heirloom/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable version of OpenSolaris' Bourne Shell
-WWW=		http://heirloom.sourceforge.net/sh.html
+WWW=		https://heirloom.sourceforge.net/sh.html
 
 LICENSE=	CDDL
 

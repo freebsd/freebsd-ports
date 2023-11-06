@@ -7,7 +7,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Genetic variant annotation and effect prediction toolbox
-WWW=		http://snpeff.sourceforge.net/
+WWW=		https://snpeff.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

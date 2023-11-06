@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software simulator for Microchip PIC microcontrollers
-WWW=		http://gpsim.sourceforge.net/
+WWW=		https://gpsim.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Wonderful puzzle game
-WWW=		http://fillets.sourceforge.net/
+WWW=		https://fillets.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

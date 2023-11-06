@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Port of the Linux pstree, killall, and pidof commands
-WWW=		http://psmisc.sourceforge.net/
+WWW=		https://psmisc.sourceforge.net/
 
 LICENSE=	GPLv2
 

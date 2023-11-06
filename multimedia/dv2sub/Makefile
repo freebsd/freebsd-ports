@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	oz@nixil.net
 COMMENT=	Extracts info or subtitles from DV stream
-WWW=		http://dv2sub.sourceforge.net/
+WWW=		https://dv2sub.sourceforge.net/
 
 LIB_DEPENDS=	libdv.so:multimedia/libdv
 

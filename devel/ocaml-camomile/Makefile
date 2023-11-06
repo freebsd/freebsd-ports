@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Comprehensive Unicode library for Objective Caml
-WWW=		http://camomile.sourceforge.net/
+WWW=		https://camomile.sourceforge.net/
 
 LICENSE=	LGPL21
 

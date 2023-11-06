@@ -7,7 +7,7 @@ DISTNAME=	STAF${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Software Testing Automation Framework
-WWW=		http://staf.sourceforge.net/
+WWW=		https://staf.sourceforge.net/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE.htm

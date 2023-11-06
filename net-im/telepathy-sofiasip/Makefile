@@ -6,7 +6,7 @@ MASTER_SITES=	SF/tp-sofiasip/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	SIP (sofia-sip) Connection Manager for Telepathy Framework
-WWW=		http://sofia-sip.sourceforge.net/
+WWW=		https://sofia-sip.sourceforge.net/
 
 LIB_DEPENDS=	libsofia-sip-ua.so:net/sofia-sip \
 		libtelepathy-glib.so:net-im/telepathy-glib \

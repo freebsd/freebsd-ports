@@ -6,7 +6,7 @@ MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Video encoding library
-WWW=		http://fame.sourceforge.net/
+WWW=		https://fame.sourceforge.net/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

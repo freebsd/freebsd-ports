@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Port Forwarding Daemon
-WWW=		http://portfwd.sourceforge.net/
+WWW=		https://portfwd.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

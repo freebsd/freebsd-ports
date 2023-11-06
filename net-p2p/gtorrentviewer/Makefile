@@ -7,7 +7,7 @@ DISTNAME=	GTorrentViewer-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GTK 2 viewer and editor for BitTorrent meta files
-WWW=		http://gtorrentviewer.sourceforge.net/
+WWW=		https://gtorrentviewer.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

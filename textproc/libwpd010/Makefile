@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	010
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
-WWW=		http://libwpd.sourceforge.net/
+WWW=		https://libwpd.sourceforge.net/
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

@@ -6,7 +6,7 @@ DISTFILES=	Sokobano.zip
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Entertaining Sokoban game with nice 3D graphics
-WWW=		http://sokobano.sourceforge.net/
+WWW=		https://sokobano.sourceforge.net/
 
 LICENSE=	GPLv2
 

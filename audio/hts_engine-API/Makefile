@@ -7,7 +7,7 @@ DISTNAME=	hts_engine_API-${PORTVERSION}
 
 MAINTAINER=	tomason510@gmail.com
 COMMENT=	HMM-based speech synthesis system (HTS) engine and API
-WWW=		http://hts-engine.sourceforge.net/
+WWW=		https://hts-engine.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

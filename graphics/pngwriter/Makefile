@@ -5,7 +5,7 @@ CATEGORIES=	graphics devel
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
-WWW=		http://pngwriter.sourceforge.net/
+WWW=		https://pngwriter.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

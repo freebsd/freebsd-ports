@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	spamass-
 
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Plugin for SpamAssassin supporting iXhash
-WWW=		http://ixhash.sourceforge.net/
+WWW=		https://ixhash.sourceforge.net/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

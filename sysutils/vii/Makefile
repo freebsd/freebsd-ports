@@ -7,7 +7,7 @@ MASTER_SITES=	http://vii.sourceforge.net/ \
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Execute a command repeatedly and scroll the output
-WWW=		http://vii.sourceforge.net/
+WWW=		https://vii.sourceforge.net/
 
 LICENSE=	GPLv2
 

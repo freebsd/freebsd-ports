@@ -7,7 +7,7 @@ DISTNAME=	garden-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Old school 2D vertical shoot-em-up with some innovative elements
-WWW=		http://garden.sourceforge.net/
+WWW=		https://garden.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

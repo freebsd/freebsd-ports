@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Useful widget set complementary to GTK 2.0
-WWW=		http://gtkextra.sourceforge.net/
+WWW=		https://gtkextra.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

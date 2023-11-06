@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Record CD-R[W]s in disk-at-once mode
-WWW=		http://cdrdao.sourceforge.net/
+WWW=		https://cdrdao.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

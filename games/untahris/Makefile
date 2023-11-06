@@ -7,7 +7,7 @@ EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Play several classic fun, simple arcade games in multiplayer mode
-WWW=		http://untahris.sourceforge.net
+WWW=		https://untahris.sourceforge.net
 
 USES=		dos2unix sdl
 USE_SDL=	sdl net ttf mixer

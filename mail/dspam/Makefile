@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	danny@dannywarren.com
 COMMENT=	Bayesian spam filter
-WWW=		http://dspam.sourceforge.net/
+WWW=		https://dspam.sourceforge.net/
 
 LICENSE=	AGPLv3
 

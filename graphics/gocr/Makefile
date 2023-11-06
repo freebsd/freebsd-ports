@@ -5,7 +5,7 @@ MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	OCR (Optical Character Recognition) program
-WWW=		http://jocr.sourceforge.net/
+WWW=		https://jocr.sourceforge.net/
 
 LICENSE=	GPLv2
 

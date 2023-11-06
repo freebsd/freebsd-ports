@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	benjsc@FreeBSD.org
 COMMENT=	Elvin Publish/Subscribe Message Bus server based on the Elvin protocol
-WWW=		http://avis.sourceforge.net/
+WWW=		https://avis.sourceforge.net/
 
 USES=		zip
 USE_JAVA=	yes

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/libspiff/Sources/${PORTVERSION}
 
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	XSPF parsing library
-WWW=		http://libspiff.sourceforge.net/
+WWW=		https://libspiff.sourceforge.net/
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

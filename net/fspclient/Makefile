@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Ftp-like client for the FSP service
-WWW=		http://fspclient.sourceforge.net/
+WWW=		https://fspclient.sourceforge.net/
 
 CONFLICTS_INSTALL=	alliance
 USES=		tar:bzip2 scons

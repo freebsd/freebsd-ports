@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Tool for generating number sequences and arithmetic evaluation
-WWW=		http://ised.sourceforge.net/
+WWW=		https://ised.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

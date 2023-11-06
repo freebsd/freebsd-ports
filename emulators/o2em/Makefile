@@ -9,7 +9,7 @@ DISTFILES=	o2em117src.zip:1 \
 
 MAINTAINER=	techgunter@yahoo.com
 COMMENT=	Odyssey2 / Videopac console emulator
-WWW=		http://o2em.sourceforge.net/
+WWW=		https://o2em.sourceforge.net/
 
 LIB_DEPENDS=	liballeg.so:devel/allegro
 

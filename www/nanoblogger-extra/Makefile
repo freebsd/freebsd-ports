@@ -6,7 +6,7 @@ MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Extras for nanoblogger, a small weblog engine
-WWW=		http://nanoblogger.sourceforge.net/
+WWW=		https://nanoblogger.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Remote control service over Bluetooth, infrared, or TCP/IP networking
-WWW=		http://anyremote.sourceforge.net/
+WWW=		https://anyremote.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

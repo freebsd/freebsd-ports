@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-rc/}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Sparse matrix library
-WWW=		http://librsb.sourceforge.net/
+WWW=		https://librsb.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

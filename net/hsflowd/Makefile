@@ -5,7 +5,7 @@ MASTER_SITES=	ZI
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Agent that exports metrics using the sFlow protocol
-WWW=		http://host-sflow.sourceforge.net/
+WWW=		https://host-sflow.sourceforge.net/
 
 BROKEN_mips=		fails to compile: src/FreeBSD/Makefile: Malformed conditional (empty $(BINDIR))
 BROKEN_mips64=		fails to compile: src/FreeBSD/Makefile: Malformed conditional (empty $(BINDIR))

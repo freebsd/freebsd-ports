@@ -10,7 +10,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	BibTeX replacement for users of biblatex
-WWW=		http://biblatex-biber.sourceforge.net/
+WWW=		https://biblatex-biber.sourceforge.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

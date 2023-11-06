@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
-WWW=		http://tclx.sourceforge.net/
+WWW=		https://tclx.sourceforge.net/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

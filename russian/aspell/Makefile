@@ -6,7 +6,7 @@ CATEGORIES=	russian textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Russian dictionary
-WWW=		http://aspell.sourceforge.net/
+WWW=		https://aspell.sourceforge.net/
 
 DICT=	 	ru
 

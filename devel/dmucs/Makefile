@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Distributed Multi-User Compilation System (for use with distcc)
-WWW=		http://dmucs.sourceforge.net/
+WWW=		https://dmucs.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

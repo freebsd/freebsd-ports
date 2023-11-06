@@ -6,7 +6,7 @@ DISTNAME=	pptp-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
-WWW=		http://pptpclient.sourceforge.net/
+WWW=		https://pptpclient.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

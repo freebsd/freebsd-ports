@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-level, extensible programming language
-WWW=		http://seed7.sourceforge.net/
+WWW=		https://seed7.sourceforge.net/
 
 # The interpreter and the example programs use the GPL license, while the
 # runtime library uses the LGPL license.

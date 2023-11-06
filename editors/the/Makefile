@@ -7,7 +7,7 @@ DISTNAME=	THE-${PORTVERSION:S/.r/RC/}
 
 MAINTAINER=	comet.berkeley@gmail.com
 COMMENT=	The Hessling Editor, like the VM/CMS xedit editor
-WWW=		http://hessling-editor.sourceforge.net/
+WWW=		https://hessling-editor.sourceforge.net/
 
 LICENSE=	GPLv2
 

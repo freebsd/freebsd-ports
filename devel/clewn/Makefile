@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Clewn provides Gdb support within Vim
-WWW=		http://clewn.sourceforge.net/index.html
+WWW=		https://clewn.sourceforge.net/index.html
 
 RUN_DEPENDS=	vim:editors/vim
 

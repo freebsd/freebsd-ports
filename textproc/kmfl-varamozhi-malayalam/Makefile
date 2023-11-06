@@ -9,7 +9,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL Malayalam keyboard according to the Mozhi scheme
-WWW=		http://varamozhi.sourceforge.net/
+WWW=		https://varamozhi.sourceforge.net/
 
 RUN_DEPENDS=	kmflcomp:textproc/kmflcomp
 

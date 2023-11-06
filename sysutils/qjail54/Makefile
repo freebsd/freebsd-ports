@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	54
 
 MAINTAINER=	qjail1@a1poweruser.com
 COMMENT=	Utility to quickly deploy and manage jails
-WWW=		http://qjail.sourceforge.net/
+WWW=		https://qjail.sourceforge.net/
 
 LICENSE=	BERNE-CONVENTION
 LICENSE_NAME=	Berne Convention

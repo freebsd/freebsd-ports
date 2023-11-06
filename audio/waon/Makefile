@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	kichiki@users.sourceforge.net
 COMMENT=	Wave-to-Notes transcriber and some utility tools
-WWW=		http://waon.sourceforge.net/
+WWW=		https://waon.sourceforge.net/
 
 LICENSE=	GPLv2
 

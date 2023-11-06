@@ -6,7 +6,7 @@ CATEGORIES=	net
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	KAME DHCP6 client, server, and relay
-WWW=		http://wide-dhcpv6.sourceforge.net/
+WWW=		https://wide-dhcpv6.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

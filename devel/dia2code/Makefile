@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Small utility used to generate code from a Dia diagram
-WWW=		http://dia2code.sourceforge.net/
+WWW=		https://dia2code.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

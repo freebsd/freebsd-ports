@@ -8,7 +8,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	KMFL IMEngine for IBus framework
-WWW=		http://kmfl.sourceforge.net/
+WWW=		https://kmfl.sourceforge.net/
 
 LIB_DEPENDS=	libibus-1.0.so:textproc/ibus \
 		libkmfl.so:textproc/libkmfl \

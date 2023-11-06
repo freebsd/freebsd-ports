@@ -6,7 +6,7 @@ MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Shakespeare programming language
-WWW=		http://shakespearelang.sourceforge.net/
+WWW=		https://shakespearelang.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

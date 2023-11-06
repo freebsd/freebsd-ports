@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
-WWW=		http://libecc.sourceforge.net/
+WWW=		https://libecc.sourceforge.net/
 
 LICENSE=	GPLv2+
 

@@ -6,7 +6,7 @@ DISTNAME=	fsp-2.8.1b29
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	FSP daemon, clients, and scanner
-WWW=		http://fsp.sourceforge.net/
+WWW=		https://fsp.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

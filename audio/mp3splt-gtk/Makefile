@@ -6,7 +6,7 @@ MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
-WWW=		http://mp3splt.sourceforge.net/
+WWW=		https://mp3splt.sourceforge.net/
 
 LICENSE=	GPLv2
 

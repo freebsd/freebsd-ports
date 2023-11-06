@@ -6,7 +6,7 @@ CATEGORIES=	devel tcl
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GNU readline for TCL
-WWW=		http://tclreadline.sourceforge.net/
+WWW=		https://tclreadline.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

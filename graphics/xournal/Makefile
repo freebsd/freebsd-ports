@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	me@janh.de
 COMMENT=	Notetaking application that can annotate PDFs
-WWW=		http://xournal.sourceforge.net
+WWW=		https://xournal.sourceforge.net
 
 LICENSE=	GPLv2
 

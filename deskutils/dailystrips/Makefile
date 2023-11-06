@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Utility to download or view your favorite online comic strips daily
-WWW=		http://dailystrips.sourceforge.net/
+WWW=		https://dailystrips.sourceforge.net/
 
 LICENSE=	GPLv2
 

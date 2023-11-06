@@ -6,7 +6,7 @@ MASTER_SITES=	SF/g19linux/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	G19 library
-WWW=		http://g19linux.sourceforge.net/
+WWW=		https://g19linux.sourceforge.net/
 
 USES=		libtool pkgconfig
 USE_LDCONFIG=	yes

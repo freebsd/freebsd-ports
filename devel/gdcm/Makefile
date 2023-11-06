@@ -5,7 +5,7 @@ MASTER_SITES=	SF/gdcm/gdcm%20${GDCM_MAJOR}.x/GDCM%20${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Grassroots DICOM library
-WWW=		http://gdcm.sourceforge.net/
+WWW=		https://gdcm.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

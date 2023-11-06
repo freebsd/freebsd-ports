@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Compiler of Keyman KMFL keyboard sources to use with SCIM/IBus
-WWW=		http://kmfl.sourceforge.net/
+WWW=		https://kmfl.sourceforge.net/
 
 BUILD_DEPENDS=	bison:devel/bison
 

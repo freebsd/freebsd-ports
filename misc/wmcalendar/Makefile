@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Dockable calendar with interface to iCalendar based calendars
-WWW=		http://wmcalendar.sourceforge.net/
+WWW=		https://wmcalendar.sourceforge.net/
 
 LIB_DEPENDS=	libical.so:devel/libical
 

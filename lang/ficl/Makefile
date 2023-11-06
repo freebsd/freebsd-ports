@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all/${PORTNAME}${PORTVERSION:C/([[:digi
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	Forth Inspired Command Language
-WWW=		http://ficl.sourceforge.net/
+WWW=		https://ficl.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${PATCHDIR}/LICENSE.txt

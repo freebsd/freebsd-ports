@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Flexible SFV checksum utility
-WWW=		http://bsdsfv.sourceforge.net/
+WWW=		https://bsdsfv.sourceforge.net/
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/bsdsfv

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	Keygrabber for the Blackbox window manager
-WWW=		http://bbkeys.sourceforge.net/
+WWW=		https://bbkeys.sourceforge.net/
 
 LICENSE=	MIT
 

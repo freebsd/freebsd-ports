@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	Menu generator for X Window Managers and desktop environments
-WWW=		http://menumaker.sourceforge.net/
+WWW=		https://menumaker.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -9,7 +9,7 @@ DIST_SUBDIR=	tmu
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	Free Tibetan Machine Uni font
-WWW=		http://thdltools.sourceforge.net/
+WWW=		https://thdltools.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt

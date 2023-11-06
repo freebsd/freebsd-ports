@@ -6,7 +6,7 @@ DISTNAME=	repeater${PORTVERSION:C/\.//}
 
 MAINTAINER=	oleg@newestvision.com
 COMMENT=	UltraVNC repeater
-WWW=		http://ultravnc.sourceforge.net/addons/repeater.html
+WWW=		https://ultravnc.sourceforge.net/addons/repeater.html
 
 LICENSE=	GPLv2+
 

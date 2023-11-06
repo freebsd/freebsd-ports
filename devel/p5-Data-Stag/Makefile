@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Structured Tags data structures
-WWW=		http://stag.sourceforge.net
+WWW=		https://stag.sourceforge.net
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

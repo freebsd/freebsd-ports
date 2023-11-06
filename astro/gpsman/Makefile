@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/distrib
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	Tcl/Tk-based GPS management utility
-WWW=		http://gpsman.sourceforge.net/
+WWW=		https://gpsman.sourceforge.net/
 
 OPTIONS_DEFINE=	DOCS
 

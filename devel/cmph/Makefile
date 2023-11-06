@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	jessekempf@gmail.com
 COMMENT=	Minimal perfect hashes for C
-WWW=		http://cmph.sourceforge.net/
+WWW=		https://cmph.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		libtool pathfix

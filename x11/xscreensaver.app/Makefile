@@ -6,7 +6,7 @@ MASTER_SITES=	SF/xscreensaverapp/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	WindowMaker dockapp to control XScreenSaver
-WWW=		http://xscreensaverapp.sourceforge.net/
+WWW=		https://xscreensaverapp.sourceforge.net/
 
 LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 

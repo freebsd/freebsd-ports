@@ -7,7 +7,7 @@ MASTER_SITES=	SF \
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
-WWW=		http://vtun.sourceforge.net/
+WWW=		https://vtun.sourceforge.net/
 
 LICENSE=	GPLv2
 

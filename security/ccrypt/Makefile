@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}/ \
 
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	Command-line utility for encrypting and decrypting files and streams
-WWW=		http://ccrypt.sourceforge.net/
+WWW=		https://ccrypt.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

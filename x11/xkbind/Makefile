@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Minimal keyboard layout indicator program
-WWW=		http://xkbind.sourceforge.net/
+WWW=		https://xkbind.sourceforge.net/
 
 LICENSE=	GPLv2
 

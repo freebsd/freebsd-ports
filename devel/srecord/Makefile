@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Collection of powerful tools for manipulating EPROM load files
-WWW=		http://srecord.sourceforge.net/
+WWW=		https://srecord.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE

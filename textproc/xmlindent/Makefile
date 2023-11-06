@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XML stream reformatter
-WWW=		http://xmlindent.sourceforge.net
+WWW=		https://xmlindent.sourceforge.net
 
 LICENSE=	GPLv2
 

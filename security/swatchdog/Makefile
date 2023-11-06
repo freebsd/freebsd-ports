@@ -5,7 +5,7 @@ MASTER_SITES=	SF/swatch/${PORTNAME}
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple log watcher formerly known as swatch
-WWW=		http://swatch.sourceforge.net/
+WWW=		https://swatch.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

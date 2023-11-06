@@ -6,7 +6,7 @@ MASTER_SITES=	SF/mikmod/libmikmod/${PORTVERSION}/
 
 MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
-WWW=		http://mikmod.sourceforge.net/
+WWW=		https://mikmod.sourceforge.net/
 
 LICENSE=	LGPL21
 

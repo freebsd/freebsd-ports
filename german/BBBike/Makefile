@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	slaven@rezic.de
 COMMENT=	Route-finder for cyclists in Berlin and Brandenburg
-WWW=		http://bbbike.sourceforge.net
+WWW=		https://bbbike.sourceforge.net
 
 BUILD_DEPENDS=	p5-Inline-C>=0:devel/p5-Inline-C \
 		p5-CDB_File>=0:databases/p5-CDB_File

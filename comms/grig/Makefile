@@ -5,7 +5,7 @@ CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Amateur Radio control front-end
-WWW=		http://groundstation.sourceforge.net/
+WWW=		https://groundstation.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

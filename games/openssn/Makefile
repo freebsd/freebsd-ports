@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Modern submarine simulator
-WWW=		http://openssn.sourceforge.net/
+WWW=		https://openssn.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Italian dictionary
-WWW=		http://linguistico.sourceforge.net/
+WWW=		https://linguistico.sourceforge.net/
 
 DICT=	 	it
 

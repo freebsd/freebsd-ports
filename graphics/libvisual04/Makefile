@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	04
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Abstraction library that sits between apps and visual plugin
-WWW=		http://libvisual.sourceforge.net/
+WWW=		https://libvisual.sourceforge.net/
 
 LICENSE=	LGPL21+
 

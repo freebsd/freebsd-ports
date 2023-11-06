@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	David.K.Gerry@GMail.com
 COMMENT=	Speech server for Festival Lite used by yasr and Emacspeak
-WWW=		http://eflite.sourceforge.net/
+WWW=		https://eflite.sourceforge.net/
 
 BUILD_DEPENDS=	flite:audio/flite
 RUN_DEPENDS=	flite:audio/flite

@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	03
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library and tools to work with WordPerfect Graphics (WPG) files
-WWW=		http://libwpg.sourceforge.net/
+WWW=		https://libwpg.sourceforge.net/
 
 LICENSE=	LGPL21 MPL20
 LICENSE_COMB=	dual

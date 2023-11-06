@@ -7,7 +7,7 @@ DISTNAME=	SimpleParse-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python EBNF parser generator (with mx.TextTools derivative)
-WWW=		http://simpleparse.sourceforge.net/ \
+WWW=		https://simpleparse.sourceforge.net/ \
 		https://github.com/mcfletch/simpleparse
 
 USES=		python

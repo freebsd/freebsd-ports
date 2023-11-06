@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/stable/${PORTVERSION}%20%28beta%29
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Text web browser, ambitious, in active development
-WWW=		http://netrik.sourceforge.net/
+WWW=		https://netrik.sourceforge.net/
 
 RUN_DEPENDS=	wget:ftp/wget
 

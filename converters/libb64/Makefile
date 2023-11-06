@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	ismail.yenigul@surgate.com
 COMMENT=	Library for fast Base64 encoding and decoding
-WWW=		http://libb64.sourceforge.net/
+WWW=		https://libb64.sourceforge.net/
 
 BUILD_DEPENDS=	makedepend:devel/makedepend
 

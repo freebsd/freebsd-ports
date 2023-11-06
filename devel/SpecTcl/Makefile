@@ -7,7 +7,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
-WWW=		http://spectcl.sourceforge.net/
+WWW=		https://spectcl.sourceforge.net/
 
 LICENSE=	SUN
 LICENSE_NAME=	SUN

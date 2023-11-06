@@ -10,7 +10,7 @@ PATCHFILES=	aescrypt-0.7-roam-whopper-01.patch.gz
 
 MAINTAINER=	mauroeldritch@gmail.com
 COMMENT=	Command-line AES encryption/decryption suite
-WWW=		http://aescrypt.sourceforge.net/
+WWW=		https://aescrypt.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

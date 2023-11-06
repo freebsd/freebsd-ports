@@ -10,7 +10,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX backend for Jade, DSSSL processor for SGML/XML documents
-WWW=		http://jadetex.sourceforge.net/
+WWW=		https://jadetex.sourceforge.net/
 
 USES=		tar:xz tex
 USE_TEX=	fmtutil pdftex xmltex

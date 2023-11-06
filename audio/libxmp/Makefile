@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${POR
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Module rendering library for xmp
-WWW=		http://xmp.sourceforge.net/
+WWW=		https://xmp.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/docs/COPYING.LIB

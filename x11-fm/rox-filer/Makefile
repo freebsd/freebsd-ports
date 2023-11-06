@@ -6,7 +6,7 @@ MASTER_SITES=	SF/rox/rox/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Simple and easy to use graphical file manager
-WWW=		http://rox.sourceforge.net/phpwiki/index.php/ROX-Filer
+WWW=		https://rox.sourceforge.net/phpwiki/index.php/ROX-Filer
 
 LICENSE=	GPLv2+
 

@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Java library to access OS/400 or i5/OS systems
-WWW=		http://jt400.sourceforge.net/
+WWW=		https://jt400.sourceforge.net/
 
 LICENSE=	IBMPL10
 LICENSE_NAME=	IBM Public License 1.0

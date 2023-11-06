@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export
-WWW=		http://ipcad.sourceforge.net/
+WWW=		https://ipcad.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

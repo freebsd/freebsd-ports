@@ -5,7 +5,7 @@ MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	citrin@citrin.ru
 COMMENT=	Utility to split MP3 and Ogg files (via CUE sheets)
-WWW=		http://mp3splt.sourceforge.net/
+WWW=		https://mp3splt.sourceforge.net/
 
 LICENSE=	GPLv2
 

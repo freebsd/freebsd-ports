@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	C++ class library for daemons, clients, servers, and more
-WWW=		http://rudiments.sourceforge.net
+WWW=		https://rudiments.sourceforge.net
 
 LICENSE=	LGPL20
 

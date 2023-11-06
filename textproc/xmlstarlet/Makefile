@@ -6,7 +6,7 @@ MASTER_SITES=	SF/xmlstar/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Command Line XML Toolkit
-WWW=		http://xmlstar.sourceforge.net/
+WWW=		https://xmlstar.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

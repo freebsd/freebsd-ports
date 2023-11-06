@@ -7,7 +7,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modular system for rapid whole genome alignment
-WWW=		http://mummer.sourceforge.net/
+WWW=		https://mummer.sourceforge.net/
 
 LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

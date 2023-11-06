@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	API compatible clone of the Motif toolkit
-WWW=		http://lesstif.sourceforge.net/
+WWW=		https://lesstif.sourceforge.net/
 
 LICENSE=	LGPL20+
 

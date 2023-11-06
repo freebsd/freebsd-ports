@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Open source implementation of GLUT library
-WWW=		http://freeglut.sourceforge.net/
+WWW=		https://freeglut.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

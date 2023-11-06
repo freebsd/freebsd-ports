@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Parametric equalizer LV2 audio plugin
-WWW=		http://eq10q.sourceforge.net
+WWW=		https://eq10q.sourceforge.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

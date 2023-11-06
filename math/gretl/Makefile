@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	GNU Regression, Econometrics, and Time-series Library
-WWW=		http://gretl.sourceforge.net/
+WWW=		https://gretl.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

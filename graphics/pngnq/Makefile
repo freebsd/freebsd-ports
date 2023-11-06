@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	stb@lassitu.de
 COMMENT=	Tool for quantizing PNG images in RGBA format
-WWW=		http://pngnq.sourceforge.net/
+WWW=		https://pngnq.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

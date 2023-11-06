@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ivoras@FreeBSD.org
 COMMENT=	High performance cache server similar to memcached
-WWW=		http://mdcached.sourceforge.net/
+WWW=		https://mdcached.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

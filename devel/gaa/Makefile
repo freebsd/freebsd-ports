@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	GPL Argument Analyser
-WWW=		http://gaa.sourceforge.net/
+WWW=		https://gaa.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		bison

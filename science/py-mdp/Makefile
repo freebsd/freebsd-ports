@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME:tu}-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modular toolkit for Data Processing
-WWW=		http://mdp-toolkit.sourceforge.net/
+WWW=		https://mdp-toolkit.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

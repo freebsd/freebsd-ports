@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Metadata injector for FLV files
-WWW=		http://yamdi.sourceforge.net/
+WWW=		https://yamdi.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

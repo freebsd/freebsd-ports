@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Set of configuration scripts for the TCSH shell
-WWW=		http://tcshrc.sourceforge.net/
+WWW=		https://tcshrc.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

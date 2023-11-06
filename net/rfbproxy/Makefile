@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	pphillips@experts-exchange.com
 COMMENT=	Simple tool for recording VNC sessions
-WWW=		http://rfbproxy.sourceforge.net/
+WWW=		https://rfbproxy.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

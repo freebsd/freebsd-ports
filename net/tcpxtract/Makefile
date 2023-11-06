@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Tool for extracting files from network traffic
-WWW=		http://tcpxtract.sourceforge.net/
+WWW=		https://tcpxtract.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

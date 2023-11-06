@@ -6,7 +6,7 @@ MASTER_SITES=	SF/muttprint/muttprint/muttprint-${PORTVERSION}
 
 MAINTAINER=	guru@unixarea.de
 COMMENT=	Utility to print mail for most any mail client
-WWW=		http://muttprint.sourceforge.net/
+WWW=		https://muttprint.sourceforge.net/
 
 LICENSE=	GPLv2
 

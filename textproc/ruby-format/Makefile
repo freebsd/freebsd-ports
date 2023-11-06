@@ -8,7 +8,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Perl like formats for Ruby
-WWW=		http://formatr.sourceforge.net/
+WWW=		https://formatr.sourceforge.net/
 
 USES=	ruby
 

@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 
 MAINTAINER=	hsmtkk@gmail.com
 COMMENT=	XML-Conscious PPM Compression
-WWW=		http://xmlppm.sourceforge.net/
+WWW=		https://xmlppm.sourceforge.net/
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/bs2b/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	Bauer Stereophonic-to-Binaural DSP
-WWW=		http://bs2b.sourceforge.net/
+WWW=		https://bs2b.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -2,7 +2,7 @@ PORTNAME=	sccs
 CATEGORIES=	devel
 
 COMMENT=	Source Code Control System (SCCS)
-WWW=		http://sccs.sourceforge.net/
+WWW=		https://sccs.sourceforge.net/
 
 TEST_DEPENDS=	star:archivers/star
 

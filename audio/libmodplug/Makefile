@@ -4,7 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	ModPlug mod-like music shared libraries
-WWW=		http://modplug-xmms.sourceforge.net/
+WWW=		https://modplug-xmms.sourceforge.net/
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING

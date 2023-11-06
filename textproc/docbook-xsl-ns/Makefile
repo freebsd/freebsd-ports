@@ -7,7 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Namespace-aware DocBook XSLT stylesheets
-WWW=		http://docbook.sourceforge.net
+WWW=		https://docbook.sourceforge.net
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/rolo/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jgh@FreeBSD.org
 COMMENT=	vCard library
-WWW=		http://rolo.sourceforge.net/
+WWW=		https://rolo.sourceforge.net/
 
 USES=		bison:alias libtool tar:bzip2
 GNU_CONFIGURE=	yes

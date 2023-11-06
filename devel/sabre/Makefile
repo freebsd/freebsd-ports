@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Simple API for Binary REpresentations and an UDF Library
-WWW=		http://sabre-library.sourceforge.net/
+WWW=		https://sabre-library.sourceforge.net/
 
 LICENSE=	LGPL21
 

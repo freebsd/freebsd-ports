@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Simple TCP port forwarder
-WWW=		http://tcpsg.sourceforge.net/
+WWW=		https://tcpsg.sourceforge.net/
 
 OPTIONS_DEFINE=	DOCS
 

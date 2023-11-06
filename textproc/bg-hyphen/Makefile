@@ -9,7 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Bulgarian hyphenation rules
-WWW=		http://bgoffice.sourceforge.net
+WWW=		https://bgoffice.sourceforge.net
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

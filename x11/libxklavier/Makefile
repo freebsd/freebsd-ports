@@ -7,7 +7,7 @@ MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Utility library to make XKB stuff easier
-WWW=		http://gswitchit.sourceforge.net/
+WWW=		https://gswitchit.sourceforge.net/
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes
 RUN_DEPENDS=	xkbcomp:x11/xkbcomp \

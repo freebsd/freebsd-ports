@@ -5,7 +5,7 @@ MASTER_SITES=	ftp://ftpmirror.uk/freebsd-ports/rtg/
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Flexible, high-performance SNMP statistics monitoring system
-WWW=		http://rtg.sourceforge.net
+WWW=		https://rtg.sourceforge.net
 
 LICENSE=	GPLv2
 

@@ -5,7 +5,7 @@ MASTER_SITES=	SF/cciss/${PORTNAME}
 
 MAINTAINER=	fw@moov.de
 COMMENT=	Reports status of logical drives on ciss(4) controllers
-WWW=		http://cciss.sourceforge.net
+WWW=		https://cciss.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

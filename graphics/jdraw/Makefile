@@ -9,7 +9,7 @@ EXTRACT_ONLY=
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Pixel oriented graphics editor
-WWW=		http://jdraw.sourceforge.net
+WWW=		https://jdraw.sourceforge.net
 
 NO_BUILD=	yes
 USE_JAVA=	yes

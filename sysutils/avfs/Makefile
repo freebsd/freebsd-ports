@@ -5,7 +5,7 @@ MASTER_SITES=	SF/avf/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	mp39590@gmail.com
 COMMENT=	Virtual File System library
-WWW=		http://avf.sourceforge.net/
+WWW=		https://avf.sourceforge.net/
 
 # FUSE daemon is licensed as GPLv2, shared library is LGPLv2
 LICENSE=	LGPL20 GPLv2

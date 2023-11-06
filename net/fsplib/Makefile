@@ -5,7 +5,7 @@ MASTER_SITES=	SF/fsp/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library implementing FSP protocol
-WWW=		http://fsp.sourceforge.net/fsplib.html
+WWW=		https://fsp.sourceforge.net/fsplib.html
 
 LICENSE=	FSPSSC
 LICENSE_NAME=	FSP software suite copyright

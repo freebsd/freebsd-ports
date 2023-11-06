@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Verbose replacement for getopt
-WWW=		http://tclap.sourceforge.net/
+WWW=		https://tclap.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

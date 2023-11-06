@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION}
 
 MAINTAINER=	sergey.v.brunov@gmail.com
 COMMENT=	Free mind-mapping software written in Java
-WWW=		http://freemind.sourceforge.net/
+WWW=		https://freemind.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/license

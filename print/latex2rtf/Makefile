@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
-WWW=		http://latex2rtf.sourceforge.net/
+WWW=		https://latex2rtf.sourceforge.net/
 
 LICENSE=	GPLv2+
 

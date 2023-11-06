@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/libxmp/xmp-cli/releases/download/${PORTNAME}-${
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Player for many different Amiga and PC module formats
-WWW=		http://xmp.sourceforge.net/
+WWW=		https://xmp.sourceforge.net/
 
 LICENSE=	GPLv2
 

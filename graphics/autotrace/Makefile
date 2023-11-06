@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/AutoTrace/${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Convert bitmap to vector graphics
-WWW=		http://AutoTrace.sourceforge.net/
+WWW=		https://AutoTrace.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

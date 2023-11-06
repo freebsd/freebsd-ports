@@ -6,7 +6,7 @@ MASTER_SITES=	https://github.com/adah1972/${PORTNAME}/releases/download/${PORTNA
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Implementation of the line and word breaking algorithm for Unicode
-WWW=		http://vimgadgets.sourceforge.net/libunibreak/
+WWW=		https://vimgadgets.sourceforge.net/libunibreak/
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENCE

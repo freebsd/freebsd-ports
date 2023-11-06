@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	Rootkit detection tool
-WWW=		http://rkhunter.sourceforge.net
+WWW=		https://rkhunter.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/files/LICENSE

@@ -6,7 +6,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}_src${EXTRACT_SUFX}
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	JNI library for easy use of global X11 hotkeys from Java
-WWW=		http://jxgrabkey.sourceforge.net/
+WWW=		https://jxgrabkey.sourceforge.net/
 
 LICENSE=	LGPL3
 

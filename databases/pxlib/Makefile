@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C library to read various Paradox files
-WWW=		http://pxlib.sourceforge.net
+WWW=		https://pxlib.sourceforge.net
 
 LICENSE=	GPLv2
 

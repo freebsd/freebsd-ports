@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	List, test, and extract compressed files from a ZIP archive
-WWW=		http://infozip.sourceforge.net/UnZip.html
+WWW=		https://infozip.sourceforge.net/UnZip.html
 
 LICENSE=	Info-ZIP
 LICENSE_NAME=	Info-ZIP license

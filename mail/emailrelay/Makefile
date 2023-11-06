@@ -7,7 +7,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	robertn@the-nelsons.org
 COMMENT=	Simple SMTP proxy and store-and-forward MTA
-WWW=		http://emailrelay.sourceforge.net/
+WWW=		https://emailrelay.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

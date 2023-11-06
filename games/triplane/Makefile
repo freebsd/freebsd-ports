@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}-classic-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Port of the original Triplane Turmoil game
-WWW=		http://triplane.sourceforge.net/
+WWW=		https://triplane.sourceforge.net/
 
 LICENSE=	GPLv3
 

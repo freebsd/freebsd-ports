@@ -6,7 +6,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Curses-based logic game similar to Sokoban and Boulder Dash
-WWW=		http://npush.sourceforge.net/
+WWW=		https://npush.sourceforge.net/
 
 USES=		ncurses
 PORTDOCS=	*

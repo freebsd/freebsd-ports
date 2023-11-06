@@ -7,7 +7,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	sean@chittenden.org
 COMMENT=	Flexible Ruby profiler
-WWW=		http://aspectr.sourceforge.net/rbprof/
+WWW=		https://aspectr.sourceforge.net/rbprof/
 
 OPTIONS_DEFINE=	DOCS
 

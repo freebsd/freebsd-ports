@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	-lv2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	LV2 port for the TAP (Tom's Audio Processing) plugins
-WWW=		http://tap-plugins.sourceforge.net/
+WWW=		https://tap-plugins.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

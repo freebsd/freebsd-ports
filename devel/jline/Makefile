@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	Java library for handling console input
-WWW=		http://jline.sourceforge.net/
+WWW=		https://jline.sourceforge.net/
 
 LICENSE=	BSD4CLAUSE
 

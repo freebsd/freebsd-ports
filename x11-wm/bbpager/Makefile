@@ -6,7 +6,7 @@ MASTER_SITES=	SF/bbtools/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	A.J.Caines@halplant.com
 COMMENT=	Pager for the Blackbox window manager
-WWW=		http://bbtools.sourceforge.net/
+WWW=		https://bbtools.sourceforge.net/
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes

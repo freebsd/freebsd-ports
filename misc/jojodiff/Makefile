@@ -6,7 +6,7 @@ DISTNAME=	jdiff${PORTVERSION:S/.//g}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Diff and patch utilities for binary files
-WWW=		http://jojodiff.sourceforge.net/
+WWW=		https://jojodiff.sourceforge.net/
 
 LICENSE=	GPLv3+
 

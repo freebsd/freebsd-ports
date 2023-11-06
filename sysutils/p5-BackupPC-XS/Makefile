@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Perl extension for BackupPC libraries
-WWW=		http://backuppc.sourceforge.net
+WWW=		https://backuppc.sourceforge.net
 
 LICENSE=	GPLv3
 

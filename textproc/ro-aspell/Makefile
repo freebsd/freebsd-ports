@@ -5,7 +5,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Romanian dictionary
-WWW=		http://rospell.sourceforge.net/
+WWW=		https://rospell.sourceforge.net/
 
 DICT=	 	ro
 

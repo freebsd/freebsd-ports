@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility to test and create .sfv files
-WWW=		http://pure-sfv.sourceforge.net/
+WWW=		https://pure-sfv.sourceforge.net/
 
 LICENSE=	GPLv2
 

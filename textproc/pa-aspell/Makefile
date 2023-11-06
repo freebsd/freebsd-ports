@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Punjabi dictionary
-WWW=		http://punlinux.sourceforge.net/
+WWW=		https://punlinux.sourceforge.net/
 
 DICT=	 	pa
 

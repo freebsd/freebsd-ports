@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Persistent DB connection pooling/proxying/load balancing system
-WWW=		http://sqlrelay.sourceforge.net/
+WWW=		https://sqlrelay.sourceforge.net/
 
 LICENSE=	LGPL20
 

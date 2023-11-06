@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	Simple GTK 2.0 color selector
-WWW=		http://gcolor2.sourceforge.net/
+WWW=		https://gcolor2.sourceforge.net/
 
 LICENSE=	GPLv2
 
