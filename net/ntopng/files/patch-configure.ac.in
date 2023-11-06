@@ -90,15 +90,13 @@
  if test ! -z "$NDPI_CUST_INC" ; then :
    NDPI_INC=$NDPI_CUST_INC
  fi
-@@ -339,46 +295,9 @@ AC_ARG_WITH(json-c-static,
+@@ -339,45 +295,10 @@ AC_ARG_WITH(json-c-static,
      [PKG_CHECK_MODULES(JSON, json-c, [], [AC_MSG_ERROR(Please install libjson-c-dev package prerequisite)])]
  )
  
 -if test -x /bin/freebsd-version; then
 - FREEBSD_VERSION=`freebsd-version | cut -f 1 -d '.'`
 -fi
-+SSL_INC="-I%%SSL_INC%%"
-+SSL_LIB="-L%%SSL_LIB%% -lssl -lcrypto"
  
 -if test "${FREEBSD_VERSION}" != "14"; then
 -pkg-config --exists libssl
@@ -135,11 +133,13 @@
 -  fi
 -fi
 -fi
--
++AC_DEFINE_UNQUOTED(NO_SSL_DL, 1, [has openssl])
++SSL_INC="-I%%SSL_INC%%"
++SSL_LIB="-L%%SSL_LIB%% -lssl -lcrypto"
+ 
  AC_MSG_CHECKING([PF_RING nBPF])
  NBPF_HOME=${PWD}/../PF_RING/userland/nbpf
- LIBNBPF=${NBPF_HOME}/libnbpf.a
-@@ -510,12 +429,8 @@ AS_VAR_IF(with_hiredis, yes, [
+@@ -510,12 +431,8 @@ AS_VAR_IF(with_hiredis, yes, [
      pkg-config --exists hiredis
      if test "$?" -ne 1; then
      HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
@@ -153,7 +153,7 @@
      echo "Please install hiredis package prerequisite"
      exit -1
      fi
-@@ -533,14 +448,14 @@ if test "${with_nedge+set}" != set; then
+@@ -533,14 +450,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
@@ -170,7 +170,7 @@
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -560,18 +475,18 @@ if test "${with_nedge+set}" != set; then
+@@ -560,18 +477,18 @@ if test "${with_nedge+set}" != set; then
           CXXFLAGS="${CXXFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -195,7 +195,7 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -756,14 +671,12 @@ else
+@@ -756,14 +673,12 @@ else
      echo "Building without support for MySQL libraries."
    fi
  else
