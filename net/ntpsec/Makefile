@@ -1,6 +1,7 @@
 PORTNAME=	ntpsec
 DISTVERSIONPREFIX=	NTPsec_
 DISTVERSION=	1_2_2a
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,10 +25,14 @@ MAKE_ENV=	NOSYNC=1 # workaround for the console problem: https://gitlab.com/NTPs
 
 TEST_TARGET=	check
 
-OPTIONS_DEFINE=			DOCS
+OPTIONS_DEFINE=			DOCS REFCLOCKS
+OPTIONS_DEFAULT=		REFCLOCKS
 
 DOCS_CONFIGURE_ENABLE=	doc
 DOCS_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor # alternatively ntpsec can use asciidoc:textproc/asciidoc but it prefers asciidoctor
+
+REFCLOCKS_DESC=	Enable all refclocks
+REFCLOCKS_VARS=	CONFIGURE_ARGS+=--refclock=all
 
 PORTSCOUT=	limit:^\d+\. # prevent alpha-numeric strings
 
