@@ -506,7 +506,7 @@
     SUBDIR += libretro-desmume2015
     SUBDIR += libretro-dosbox
     SUBDIR += libretro-emux
-    SUBDIR += libretro-fbalpha
+    SUBDIR += libretro-fbalpha2012
     SUBDIR += libretro-fbneo
     SUBDIR += libretro-fceumm
     SUBDIR += libretro-fmsx
