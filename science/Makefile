@@ -202,6 +202,7 @@
     SUBDIR += mstore
     SUBDIR += multicharge
     SUBDIR += multiwfn
+    SUBDIR += mutationpp
     SUBDIR += namd
     SUBDIR += nest
     SUBDIR += netcdf
