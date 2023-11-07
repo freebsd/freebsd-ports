@@ -1,5 +1,6 @@
 PORTNAME=	libretro-emux
 DISTVERSION=	0.20191014
+PORTEPOCH=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
