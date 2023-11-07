@@ -10,7 +10,7 @@ WWW=		https://www.davidhbailey.com/dhbsoftware/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		fortran libtool
+USES=		autoreconf:build fortran libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 INSTALL_TARGET=	install-strip
