@@ -134,6 +134,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/broken.png
 %%DATADIR%%/images/calibrate-printer.png
 %%DATADIR%%/images/cartoon.png
+%%DATADIR%%/images/cartoon2.jpg
 %%DATADIR%%/images/change-alpha.png
 %%DATADIR%%/images/choose-captions.png
 %%DATADIR%%/images/chromatic1.png
