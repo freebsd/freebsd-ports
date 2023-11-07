@@ -180,6 +180,7 @@ libdata/pkgconfig/neon.pc
 %%NLS%%share/locale/de/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/neon.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/neon.mo
