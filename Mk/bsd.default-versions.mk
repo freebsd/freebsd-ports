@@ -56,9 +56,9 @@ FPC_DEFAULT?=		3.2.2
 .  else
 FPC_DEFAULT?=		3.3.1
 .  endif
-# Possible values: 9, 10, 11, 12
+# Possible values: 9, 10, 11, 12, 13, 14
 # (Any other version is completely unsupported and not meant for general use.)
-GCC_DEFAULT?=		12
+GCC_DEFAULT?=		13
 # Possible values: 10
 GHOSTSCRIPT_DEFAULT?=	10
 # Possible values: mesa-libs, mesa-devel
