@@ -32,7 +32,7 @@ GH_TUPLE=	\
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
-		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \
+		golang:mod:v0.11.0:golang_mod/vendor/golang.org/x/mod \
 		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
@@ -90,8 +90,8 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		quic-go:qtls-go1-20:v0.3.2:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
-		quic-go:quic-go:v0.38.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
+		quic-go:qtls-go1-20:v0.3.4:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
+		quic-go:quic-go:v0.39.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
@@ -106,16 +106,17 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:0ce0a575e6f8:storj_common/vendor/storj.io/common \
+		storj:common:96ee88859b9d:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d100d7589f41:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:c4ba17033c6c:storj_picobuf/vendor/storj.io/picobuf \
 		storj:private:ca2d4ab44679:storj_private/vendor/storj.io/private \
 		storj:uplink:v1.12.1:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
-		stripe:stripe-go:v72.90.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v72 \
+		stripe:stripe-go:v75.8.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v75 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
 		uber-go:atomic:v1.7.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		uber-go:mock:v0.3.0:uber_go_mock/vendor/go.uber.org/mock \
 		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.16.0:uber_go_zap/vendor/go.uber.org/zap \
 		vbauerster:mpb:v8.4.0:vbauerster_mpb/vendor/github.com/vbauerster/mpb/v8 \
