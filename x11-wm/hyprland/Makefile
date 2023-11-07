@@ -1,12 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.0
-PORTREVISION=	2
+DISTVERSION=	0.32.0
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	913c8b81ad44.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/3589
-PATCHFILES+=	df00727310b8.patch:-p1 # wlroots 0.17
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -47,14 +42,6 @@ OPTIONS_DEFAULT=X11
 
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland
-
-post-extract:
-.if defined(PATCHFILES) && ${PATCHFILES:Mdf00727310b8*}
-# Pretend to be a regular file for vendor patch to apply as is
-	@${RMDIR} ${WRKSRC}/subprojects/wlroots
-	@${ECHO_CMD} "Subproject commit 3406c1b17a4a7e6d4e2a7d9c1176affa72bce1bc" \
-		>${WRKSRC}/subprojects/wlroots
-.endif
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
