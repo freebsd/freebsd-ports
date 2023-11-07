@@ -204,6 +204,7 @@
     SUBDIR += multiwfn
     SUBDIR += mutationpp
     SUBDIR += namd
+    SUBDIR += ncrystal
     SUBDIR += nest
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
