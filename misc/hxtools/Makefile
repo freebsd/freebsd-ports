@@ -1,7 +1,8 @@
 PORTNAME=	hxtools
-PORTVERSION=	20230411
+PORTVERSION=	20231101
 CATEGORIES=	misc
-MASTER_SITES=	http://inai.de/files/hxtools/
+MASTER_SITES=	http://inai.de/files/hxtools/ \
+		https://codeberg.org/jengelh/hxtools/releases/download/rel-${PORTVERSION}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Collection of miscellaneous tools and scripts
