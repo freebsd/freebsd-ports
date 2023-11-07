@@ -25,7 +25,7 @@ GH_ACCOUNT=	pika-org
 CMAKE_ON=	PIKA_WITH_MALLOC
 CMAKE_ON+=	PIKA_WITH_GENERIC_CONTEXT_COROUTINES # prerequisite, build breaks on aarch64, armv6 w/out it
 CMAKE_TESTING_ON=	PIKA_WITH_TESTS PIKA_WITH_TESTS_UNIT PIKA_WITH_TESTS_REGRESSIONS # only hellow_world test runs, see https://github.com/pika-org/pika/issues/853
-CMAKE_TESTING_TARGET=	tests
+CMAKE_TESTING_TARGET=	test
 
 BINARY_ALIAS=	git=false
 
