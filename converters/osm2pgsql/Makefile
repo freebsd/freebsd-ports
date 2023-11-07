@@ -1,6 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTVERSION=	1.10.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -12,6 +11,9 @@ WWW=		https://osm2pgsql.org/ \
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	needs a 64 bit architecture
+
 LIB_DEPENDS=	libproj.so:graphics/proj \
 		libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
@@ -19,10 +21,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
 		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
 		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
 
+USES=		cmake compiler:c++17-lang pgsql python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
-
-USES=		cmake compiler:c++17-lang pgsql python:run shebangfix
 SHEBANG_FILES=	scripts/osm2pgsql-replication
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
@@ -34,6 +35,7 @@ PORTDOCS=	AUTHORS CONTRIBUTING.md README.md
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS LUAJIT TEST # GEN (utility built with this option is not installed)
+OPTIONS_DEFAULT=GEN
 
 LUAJIT_DESC=		Build with LuaJIT support
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
@@ -45,14 +47,15 @@ TEST_CMAKE_ON=		-DCMAKE_CTEST_ARGUMENTS="--label-regex;NoDB;--output-on-failure"
 TEST_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>=0:devel/py-behave@${PY_FLAVOR}
 TEST_TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>=0:devel/py-behave@${PY_FLAVOR}
 #GEN_DESC=		Build experimental osm2pgsql-gen data generalization utility
-#GEN_LIB_DEPENDS=	libpotrace.so:graphics/libpotrace
-#GEN_BUILD_DEPENDS=	${LOCALBASE}/include/CImg.h:graphics/cimg
+#GEN_LIB_DEPENDS=	libpotrace.so:graphics/libpotrace \
+			#libopencv_core.so:graphics/opencv
+#GEN_CMAKE_BOOL=		BUILD_GEN
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|find_package(Lua |&${LUA_VER} EXACT |' \
 		${WRKSRC}/CMakeLists.txt
 # for post-patch-GEN-off: when GEN option is implemented
-	@${REINPLACE_CMD} -Ee '/find_(path|library)/ s,(potrace|CImg),no&,' \
+	@${REINPLACE_CMD} -Ee '/find_(path|library)/ s,(potrace|opencv),no&,' \
 		${WRKSRC}/CMakeLists.txt
 
 post-install-DOCS-on:
