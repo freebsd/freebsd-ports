@@ -104,6 +104,7 @@ include/fizz/protocol/FizzBase-inl.h
 include/fizz/protocol/FizzBase.h
 include/fizz/protocol/HandshakeContext-inl.h
 include/fizz/protocol/HandshakeContext.h
+include/fizz/protocol/IFactory.h
 include/fizz/protocol/KeyScheduler.h
 include/fizz/protocol/OpenSSLFactory.h
 include/fizz/protocol/Params.h
