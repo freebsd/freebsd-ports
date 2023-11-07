@@ -90,7 +90,7 @@ you update your ports collection, before attempting any port upgrades.
 
   logging.http section has now been split into two parts, logging.http is for
   the Mailman internal code and logging.gunicorn is for Gunicorn specifically
-  since they have different logging formats. This should fix suprious errors
+  since they have different logging formats. This should fix spurious errors
   with KeyError: t that was often confusing for users.
 
   Python 3.9 is now the minimum supported version of Python.
