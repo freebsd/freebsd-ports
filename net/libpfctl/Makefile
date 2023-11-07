@@ -1,5 +1,5 @@
 PORTNAME=	libpfctl
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
 
@@ -25,7 +25,7 @@ PLIST_FILES=	\
 .if ${OSREL} == "15.0"
 DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
 .else
-DISTFILES=	libpfctl-${OSREL}.tar.gz
+DISTFILES=	libpfctl-${OSREL}_1.tar.gz
 .endif
 
 do-install:
