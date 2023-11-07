@@ -1,3 +1,5 @@
-TIMESTAMP = 1687240757
-SHA256 (archspec-0.2.1.tar.gz) = 0974a8a95831d2d43cce906c5b79a35d5fd2bf9be478b0e3b7d83ccc51ac815e
-SIZE (archspec-0.2.1.tar.gz) = 37082
+TIMESTAMP = 1699372786
+SHA256 (archspec-archspec-v0.2.2_GH0.tar.gz) = 47fd277895cf539d92ed653176a7633650ea51a1d7dbbcdebed2304bfff6c5a9
+SIZE (archspec-archspec-v0.2.2_GH0.tar.gz) = 28310
+SHA256 (archspec-archspec-json-d844bb3_GH0.tar.gz) = 266228375aac75830a322998ca676c1f99a8d3022fd610cd082964f639ad93e4
+SIZE (archspec-archspec-json-d844bb3_GH0.tar.gz) = 20180

@@ -1,7 +1,8 @@
 PORTNAME=	archspec
-DISTVERSION=	0.2.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.2
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
+
+USE_GITHUB=	yes
+GH_TUPLE=	archspec:archspec-json:d844bb3:json/archspec/json
 
 NO_ARCH=	yes
 
