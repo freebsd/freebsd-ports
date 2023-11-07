@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.8.2
+PORTVERSION=	1.9.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autopep8>0:textproc/py-autopep8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docstring-to-markdown>0:textproc/py-docstring-to-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>0:devel/py-jedi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mccabe>0:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>0:devel/py-pluggy@${PY_FLAVOR} \
@@ -45,8 +46,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
-# make test: 3 failed, 178 passed, 8 skipped, 13 warnings
-# test/plugins/test_flake8_lint.py:95,234,256: AssertionError
+# make test: 4 failed, 185 passed, 8 skipped, 13 warnings
+# test/plugins/test_pylint_lint.py:49: IndexError
+# test/plugins/test_pylint_lint.py:99,126,137: AssertionError
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
