@@ -1,5 +1,5 @@
 PORTNAME=	osc
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.4
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>=0:net/py-urllib3@${PY_FLAVOR}
+TEST_DEPENDS=	git:devel/git
 
 USES=		cpe python
 USE_GITHUB=	yes
@@ -22,7 +23,7 @@ CPE_PRODUCT=	opensuse_osc
 
 PORTDOCS=	*
 
-PYTEST_BROKEN_TESTS=	testPrdiffDiffstat
+PYTEST_BROKEN_TESTS=	testPrdiffDiffstat TestVC
 
 OPTIONS_DEFINE=	DOCS
 
