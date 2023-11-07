@@ -1,5 +1,5 @@
 PORTNAME=	roundcube
-DISTVERSION=	1.6.4
+DISTVERSION=	1.6.5
 PORTEPOCH=	1
 CATEGORIES?=	mail www
 MASTER_SITES=	https://github.com/roundcube/roundcubemail/releases/download/${DISTVERSION}/
