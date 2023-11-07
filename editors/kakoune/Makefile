@@ -25,7 +25,7 @@ DEBUG_MAKE_ARGS_OFF=	debug=no
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} > 1302506 && ${OSVERSION} < 1400000)
+.if ${OSVERSION} > 1302506
 PATCHFILES=	344d31f42b8ced12626d4f87a22ffa5a671668fd.patch
 PATCH_SITES=	https://github.com/mawww/kakoune/commit/
 PATCH_DIST_STRIP=	-p1
