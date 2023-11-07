@@ -1,0 +1,4 @@
+.include "${.PARSEDIR}/../llvm-cheri/Makefile.MAN1SRCS"
+
+# Workaround for llvm-cheri/llvm-morello version skew
+LLVM_MAN1SRCS:=	${LLVM_MAN1SRCS:Nllvm-tli-checker.1}
