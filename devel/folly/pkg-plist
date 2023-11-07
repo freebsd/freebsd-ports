@@ -62,6 +62,7 @@ include/folly/MPMCQueue.h
 include/folly/MacAddress.h
 include/folly/MapUtil.h
 include/folly/Math.h
+include/folly/MaybeManagedPtr.h
 include/folly/Memory.h
 include/folly/MicroLock.h
 include/folly/MicroSpinLock.h
