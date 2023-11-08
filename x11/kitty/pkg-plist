@@ -4,9 +4,9 @@ share/applications/kitty-open.desktop
 share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/.nojekyll
-%%PORTDOCS%%%%DOCSDIR%%/_downloads/1792bad15b12979994cd6ecc54c967a6/rowcolumn-diacritics.txt
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/a489ebbb52d84eeb19a12b2fda7debda/diff.conf
+%%PORTDOCS%%%%DOCSDIR%%/_downloads/f0a0de9ec8d9ff4456206db8e0814937/rowcolumn-diacritics.txt
 %%PORTDOCS%%%%DOCSDIR%%/_images/diff.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/hints_mode.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/panel.png
@@ -55,6 +55,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_overview_249bd848.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_performance_fb7e6752.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pipe_168d77ad.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_pointer-shapes_96e448ee.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_press-mentions_84bca3c2.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_protocol-extensions_ea5204ed.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_quickstart_9d1a56df.png
@@ -111,6 +112,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_sources/overview.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/performance.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pipe.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pointer-shapes.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/press-mentions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/protocol-extensions.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/quickstart.rst.txt
@@ -204,6 +206,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/performance.html
 %%PORTDOCS%%%%DOCSDIR%%/pipe.html
+%%PORTDOCS%%%%DOCSDIR%%/pointer-shapes.html
 %%PORTDOCS%%%%DOCSDIR%%/press-mentions.html
 %%PORTDOCS%%%%DOCSDIR%%/protocol-extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/quickstart.html
@@ -284,14 +287,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kittens/icat/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 %%DATADIR%%/kittens/icat/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/kittens/icat/main.py
-%%DATADIR%%/kittens/mouse_demo/__init__.py
-%%DATADIR%%/kittens/mouse_demo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/kittens/mouse_demo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%DATADIR%%/kittens/mouse_demo/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/kittens/mouse_demo/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/kittens/mouse_demo/__pycache__/main%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-%%DATADIR%%/kittens/mouse_demo/__pycache__/main%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/kittens/mouse_demo/main.py
 %%DATADIR%%/kittens/panel/__init__.py
 %%DATADIR%%/kittens/panel/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/kittens/panel/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
