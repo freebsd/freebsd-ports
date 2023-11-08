@@ -1,6 +1,7 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	science # physics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +16,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		cmake:devel/cmake-core
+RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist
