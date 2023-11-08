@@ -109,10 +109,4 @@ post-install-MEDIASESSION-on:
 	${INSTALL_DATA} ${WRKDIR}/10-alsa-default.conf \
 		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.d
 
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:C,3[0-9],3,} == openssl3
-CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
