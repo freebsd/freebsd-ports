@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.10.3
-PORTREVISION=	1
+DISTVERSION=	4.11.5
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -109,6 +108,32 @@ TELEGRAM_API_ID=	601761
 USES+=	llvm:max=15,build
 .else
 USES+=	compiler:c++20-lang
+.endif
+
+post-extract:
+	# Some of the third-party components already built, and
+	# can be safely removed
+	${RM} -rf \
+		${WRKSRC}/Telegram/ThirdParty/QR \
+		${WRKSRC}/Telegram/ThirdParty/dispatch \
+		${WRKSRC}/Telegram/ThirdParty/expected \
+		${WRKSRC}/Telegram/ThirdParty/fcitx5-qt \
+		${WRKSRC}/Telegram/ThirdParty/hime \
+		${WRKSRC}/Telegram/ThirdParty/hunspell \
+		${WRKSRC}/Telegram/ThirdParty/jemalloc \
+		${WRKSRC}/Telegram/ThirdParty/lz4 \
+		${WRKSRC}/Telegram/ThirdParty/minizip \
+		${WRKSRC}/Telegram/ThirdParty/jimf \
+		${WRKSRC}/Telegram/ThirdParty/plasma-wayland-protocols \
+		${WRKSRC}/Telegram/ThirdParty/range-v3 \
+		${WRKSRC}/Telegram/ThirdParty/wayland \
+		${WRKSRC}/Telegram/ThirdParty/wayland-protocols \
+		${WRKSRC}/Telegram/ThirdParty/xxHash
+
+.if ${FLAVOR} == qt5
+	${RM} -rf \
+		${WRKSRC}/Telegram/ThirdParty/kcoreaddons \
+		${WRKSRC}/Telegram/ThirdParty/kimageformats
 .endif
 
 post-patch:
