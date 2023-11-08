@@ -1,5 +1,5 @@
 PORTNAME=	x16-rom
-DISTVERSION=	r45
+DISTVERSION=	r46
 CATEGORIES=	emulators
 
 MAINTAINER=	makc@FreeBSD.org
@@ -17,6 +17,7 @@ GH_ACCOUNT=	X16Community
 
 SHEBANG_FILES=	findsymbols
 MAKE_JOBS_UNSAFE=	yes
+NO_ARCH=	yes
 
 DATADIR=	${PREFIX}/share/x16-emulator
 BINARY_ALIAS=	make=${MAKE_CMD} \
