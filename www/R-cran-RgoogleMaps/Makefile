@@ -1,6 +1,5 @@
 PORTNAME=	RgoogleMaps
-PORTVERSION=	1.4.5.3
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,11 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/RgoogleMaps/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-png>0:graphics/R-cran-png \
-		R-cran-sp>0:math/R-cran-sp
-RUN_DEPENDS=	${CRAN_DEPENDS}
-BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-png>0:graphics/R-cran-png
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
