@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.11.0
+DISTVERSION=	2023.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -75,7 +75,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.5 \
+		errno-0.3.6 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		eyre-0.6.8 \
@@ -130,8 +130,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		jobserver-0.1.27 \
 		js-sys-0.3.65 \
 		lazy_static-1.4.0 \
-		libc-0.2.149 \
+		libc-0.2.150 \
 		libgit2-sys-0.16.1+1.7.1 \
+		libredox-0.0.1 \
 		libz-sys-1.1.12 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.10 \
@@ -151,10 +152,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		number_prefix-0.4.0 \
 		object-0.32.1 \
 		once_cell-1.18.0 \
-		openssl-0.10.58 \
+		openssl-0.10.59 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.94 \
+		openssl-sys-0.9.95 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.14 \
@@ -180,10 +181,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.4 \
 		rayon-1.8.0 \
 		rayon-core-1.12.0 \
-		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
-		redox_users-0.4.3 \
+		redox_users-0.4.4 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
@@ -208,8 +208,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.38.0 \
 		semver-1.0.20 \
-		serde-1.0.190 \
-		serde_derive-1.0.190 \
+		serde-1.0.192 \
+		serde_derive-1.0.192 \
 		serde_json-1.0.108 \
 		serde_spanned-0.6.4 \
 		serde_urlencoded-0.7.1 \
@@ -226,7 +226,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		spin-0.9.8 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.38 \
+		syn-2.0.39 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tar-0.4.40 \
@@ -246,9 +246,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
-		toml-0.8.6 \
+		toml-0.8.8 \
 		toml_datetime-0.6.5 \
 		toml_edit-0.20.7 \
+		toml_edit-0.21.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.40 \
 		tracing-core-0.1.32 \
@@ -310,7 +311,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
-		winnow-0.5.18 \
+		winnow-0.5.19 \
 		winreg-0.50.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
