@@ -1,3 +1,72 @@
+  <vuln vid="f4464e49-7e04-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- Incorrect libcap_net limitation list manipulation</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Casper services allow limiting operations that a process can
+	perform.  Each service maintains a specific list of permitted
+	operations.  Certain operations can be further restricted, such as
+	specifying which domain names can be resolved.  During the verification
+	of limits, the service must ensure that the new set of constraints
+	is a subset of the previous one.  In the case of the cap_net service,
+	the currently limited set of domain names was fetched incorrectly.</p>
+	<h1>Impact:</h1>
+	<p>In certain scenarios, if only a list of resolvable domain names
+	was specified without setting any other limitations, the application
+	could submit a new list of domains including include entries not
+	previously in the list.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5978</cvename>
+      <freebsdsa>SA-23:16.cap_net</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-11-08</discovery>
+      <entry>2023-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5afcc9a4-7e04-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- libc stdio buffer overflow</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>13.2</ge><lt>13.2_5</lt></range>
+	<range><ge>12.4</ge><lt>12.4_7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>For line-buffered streams the __sflush() function did not
+	correctly update the FILE object's write space member when the
+	write(2) system call returns an error.</p>
+	<h1>Impact:</h1>
+	<p>Depending on the nature of an application that calls libc's
+	stdio functions and the presence of errors returned from the write(2)
+	system call (or an overridden stdio write routine) a heap buffer
+	overfly may occur.  Such overflows may lead to data corruption or
+	the execution of arbitrary code at the privilege level of the calling
+	program.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5941</cvename>
+      <freebsdsa>SA-23:15.stdio</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-11-08</discovery>
+      <entry>2023-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a1a1f81c-7c13-11ee-bcf1-f8b156b6dcc8">
     <topic>vorbistools -- heap buffer overflow in oggenc</topic>
     <affects>
