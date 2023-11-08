@@ -5,7 +5,7 @@ MASTER_SITES=	APACHE_COMMONS_BINARIES
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of I/O utilities for Java
 WWW=		https://commons.apache.org/proper/commons-io/
 

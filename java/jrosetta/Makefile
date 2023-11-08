@@ -8,7 +8,7 @@ DISTFILES=	${PORTNAME}-api-${PORTVERSION}.jar:api \
 		${PORTNAME}-engine-${PORTVERSION}.jar:engine
 EXTRACT_ONLY=	#
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for building a graphical console in Swing
 WWW=		http://dev.artenum.com/projects/JRosetta
 

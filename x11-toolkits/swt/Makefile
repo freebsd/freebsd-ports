@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	http://archive.eclipse.org/eclipse/downloads/drops4/R-${DISTVERSION}-202109060500/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-gtk-linux-x86_64
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 WWW=		https://www.eclipse.org/swt/
 

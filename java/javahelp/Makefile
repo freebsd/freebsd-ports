@@ -3,7 +3,7 @@ PORTVERSION=	2.0.05.20170719
 PORTREVISION=	1
 CATEGORIES=	java devel
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online help support for Java applications
 WWW=		https://javaee.github.io/javahelp/
 

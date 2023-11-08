@@ -3,7 +3,7 @@ PORTVERSION=	4.2.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	java graphics
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Graph Diagram Component version X
 WWW=		https://github.com/jgraph/jgraphx
 

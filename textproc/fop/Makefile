@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 WWW=		https://xmlgraphics.apache.org/fop/
 

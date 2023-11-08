@@ -5,7 +5,7 @@ MASTER_SITES=	APACHE_COMMONS_SOURCE
 PKGNAMEPREFIX=	apache-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 WWW=		https://commons.apache.org/proper/commons-collections/
 

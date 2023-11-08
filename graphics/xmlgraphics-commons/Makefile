@@ -5,7 +5,7 @@ CATEGORIES=	graphics textproc java
 MASTER_SITES=	APACHE/xmlgraphics/commons/binaries \
 		https://archive.apache.org/dist/xmlgraphics/commons/binaries/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
 WWW=		https://xmlgraphics.apache.org/commons/
 

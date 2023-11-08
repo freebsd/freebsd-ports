@@ -5,7 +5,7 @@ MASTER_SITES=	APACHE/xerces/${PORTNAME}/binaries
 DISTNAME=	${PORTNAME}-external-${DISTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides common XML code for Apache projects
 WWW=		https://xerces.apache.org/xml-commons/
 
