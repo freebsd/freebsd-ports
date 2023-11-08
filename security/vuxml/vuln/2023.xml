@@ -1,3 +1,36 @@
+  <vuln vid="77fc311d-7e62-11ee-8290-a8a1599412c6">
+    <topic>chromium -- security update</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.123</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.123</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[1497859] High CVE-2023-5996: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab via Tianfu Cup 2023 on 2023-10-30</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5996</cvename>
+      <url>https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-07</discovery>
+      <entry>2023-11-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a5956603-7e4f-11ee-9df6-84a93843eb75">
     <topic>OpenSSL -- DoS in DH generation</topic>
     <affects>
@@ -26,11 +59,11 @@
 	<body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenSSL project reports:</p>
 	<blockquote cite="https://www.openssl.org/news/secadv/20231106.txt">
-          <p>Excessive time spent in DH check / generation with large Q
-            parameter value (low).
+	  <p>Excessive time spent in DH check / generation with large Q
+	    parameter value (low).
 	    Generating excessively long X9.42 DH keys or checking
-            excessively long X9.42 DH keys or parameters may be very slow.
-          </p>
+	    excessively long X9.42 DH keys or parameters may be very slow.
+	  </p>
 	</blockquote>
 	</body>
     </description>
