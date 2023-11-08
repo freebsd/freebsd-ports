@@ -1,5 +1,6 @@
 PORTNAME=	openssl
 PORTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	31-quictls
 
