@@ -2460,6 +2460,7 @@
     SUBDIR += vdradmin-am
     SUBDIR += vertx
     SUBDIR += vger
+    SUBDIR += vieb
     SUBDIR += vigil
     SUBDIR += vimb
     SUBDIR += visitors
