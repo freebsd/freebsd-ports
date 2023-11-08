@@ -31,6 +31,7 @@ CFLAGS_armv6+=	-Wno-c++11-narrowing
 CFLAGS_armv7+=	-Wno-c++11-narrowing
 CFLAGS_i386+=	-Wno-c++11-narrowing
 CMAKE_ARGS=	-DCATCH_INCLUDE_DIR=${LOCALBASE}/include/catch2 \
+		-DFREEBSD_OPENSSLBASE=${OPENSSLBASE} \
 		-Dlibmagic_DICTIONARY=/usr/share/misc/magic.mgc
 CMAKE_OFF=	TILEDB_ABSEIL \
 		TILEDB_ALLOW_REGEX_CHAR_PATH \
