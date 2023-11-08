@@ -1,5 +1,5 @@
 PORTNAME=	postfix
-DISTVERSION=	3.9-20230924
+DISTVERSION=	3.9-20231030
 PORTEPOCH=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
