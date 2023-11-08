@@ -1,6 +1,6 @@
 PORTNAME=	jaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -72,9 +72,9 @@ CARGO_CRATES=	ahash-0.8.6 \
 		syn-2.0.38 \
 		tempfile-3.3.0 \
 		termcolor-1.2.0 \
-		time-0.3.22 \
-		time-core-0.1.1 \
-		time-macros-0.2.9 \
+		time-0.3.20 \
+		time-core-0.1.0 \
+		time-macros-0.2.8 \
 		unicode-ident-1.0.10 \
 		unicode-width-0.1.11 \
 		urlencoding-2.1.3 \
