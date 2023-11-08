@@ -5,7 +5,6 @@ share/icons/hicolor/128x128/apps/subtitlecomposer.png
 share/icons/hicolor/16x16/apps/subtitlecomposer.png
 share/icons/hicolor/256x256/apps/subtitlecomposer.png
 share/icons/hicolor/32x32/apps/subtitlecomposer.png
-share/kxmlgui5/subtitlecomposer/subtitlecomposerui.rc
 share/locale/ar/LC_MESSAGES/subtitlecomposer.mo
 share/locale/bg/LC_MESSAGES/subtitlecomposer.mo
 share/locale/ca/LC_MESSAGES/subtitlecomposer.mo
