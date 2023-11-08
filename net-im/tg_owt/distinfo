@@ -1,6 +1,6 @@
-TIMESTAMP = 1695758173
-SHA256 (desktop-app-tg_owt-0.0.20230918-592b14d_GH0.tar.gz) = ff40fbb4b229ecbaf96a7ece17af6b4076ab21591500878bce50db81c5494704
-SIZE (desktop-app-tg_owt-0.0.20230918-592b14d_GH0.tar.gz) = 13719987
+TIMESTAMP = 1698950086
+SHA256 (desktop-app-tg_owt-0.0.20231101-71cce98_GH0.tar.gz) = 1e48900bd7d84efc737670962559d8845f52eaa382add32766f9fa1259e24e78
+SIZE (desktop-app-tg_owt-0.0.20231101-71cce98_GH0.tar.gz) = 13720179
 SHA256 (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = e995f06ce4fd4a9641e6a8e5d8d2258710eef481a07307a3e727012f1a83c442
 SIZE (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = 1957422
 SHA256 (cisco-libsrtp-a566a9_GH0.tar.gz) = 3a02196f8bb36ff640cb1d24920414f9c80e3d7ca78304cab0e6a70ca72a683f
