@@ -1,6 +1,6 @@
 PORTNAME=	mailman
 DISTVERSION=	2.1.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -17,7 +17,7 @@ WWW=		https://www.list.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/gnu-COPYING-GPL
 
-USES=		autoreconf cpe fakeroot python:2.7 shebangfix tar:tgz
+USES=		cpe fakeroot python:2.7 shebangfix tar:tgz
 CPE_VENDOR=	gnu
 
 USE_RC_SUBR=	mailman
