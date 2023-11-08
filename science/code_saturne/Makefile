@@ -1,5 +1,6 @@
 PORTNAME=	code_saturne
 PORTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
