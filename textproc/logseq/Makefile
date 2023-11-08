@@ -13,7 +13,7 @@ WWW=		https://logseq.com
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		desktop-file-utils electronfix:25 shared-mime-info
+USES=		desktop-file-utils electronfix:25 shared-mime-info zip
 
 ELECTRONFIX_MAIN_EXECUTABLE=	Logseq
 SUB_FILES=	Logseq
