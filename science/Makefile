@@ -369,6 +369,7 @@
     SUBDIR += py-mp-api
     SUBDIR += py-mpcontribs-client
     SUBDIR += py-mrchem
+    SUBDIR += py-ncrystal
     SUBDIR += py-netCDF4
     SUBDIR += py-netcdf-flattener
     SUBDIR += py-nglview
