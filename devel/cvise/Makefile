@@ -1,5 +1,5 @@
 PORTNAME=	cvise
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -35,11 +35,5 @@ SHEBANG_FILES=	cvise-delta.py cvise.py
 
 CMAKE_ARGS+=	-DLLVM_DIR:PATH=${LLVM_PREFIX}/lib/cmake/llvm
 CMAKE_ARGS+=	-DClang_DIR:PATH=${LLVM_PREFIX}/lib/cmake/clang
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cvise.py
-
-do-test:
-	cd ${BUILD_WRKSRC} && pytest
 
 .include <bsd.port.mk>
