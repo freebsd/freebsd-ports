@@ -10,6 +10,8 @@ WWW=		https://github.com/dalance/procs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to build: mismatched types ... expected `[i8; 9]`, found `[u8; 9]`
+
 USES=		cargo llvm:lib
 
 USE_GITHUB=	yes
