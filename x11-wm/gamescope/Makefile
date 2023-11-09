@@ -1,11 +1,9 @@
 PORTNAME=	gamescope
-DISTVERSION=	3.12.7
+DISTVERSION=	3.13.0
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
-PATCHFILES+=	dd851e58b79b.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/979
-PATCHFILES+=	8a7fa50bb2fc.patch:-p1 # -Dbenchmark=disabled
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
@@ -38,7 +36,7 @@ GH_ACCOUNT=	ValveSoftware
 GH_TUPLE=	nothings:stb:5736b15:stb/subprojects/stb \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-316-gd790ced:spirv_headers/thirdparty/SPIRV-Headers \
 		Joshua-Ashton:reshade:v4.4.2-2572-g9fdbea68:reshade/src/reshade \
-		Joshua-Ashton:vkroots:2675710:vkroots/subprojects/vkroots
+		Joshua-Ashton:vkroots:d5ef31a:vkroots/subprojects/vkroots
 MESON_ARGS=	--force-fallback-for= # allow system wlroots + libliftoff
 MESON_ARGS+=	-Dbenchmark=disabled # gamescope_color_microbench isn't installed
 MESON_ARGS+=	-Denable_openvr_support=false # https://github.com/ValveSoftware/openvr/pull/564
