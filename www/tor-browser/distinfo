@@ -1,3 +1,11 @@
-TIMESTAMP = 1684065683
-SHA256 (src-firefox-tor-browser-102.11.0esr-12.0-1-build1.tar.xz) = 9b64d00e9bb5ad63f005e8f950800ab3a12f75f214c55f900d88df26bce1ba5d
-SIZE (src-firefox-tor-browser-102.11.0esr-12.0-1-build1.tar.xz) = 511957244
+TIMESTAMP = 1699195800
+SHA256 (src-firefox-tor-browser-115.4.0esr-13.0-1-build2.tar.xz) = 7b8d90c9d5ac0cc527da5e8170893e6c5af0f7ad924cfcde9a7ebfbdf3f2e486
+SIZE (src-firefox-tor-browser-115.4.0esr-13.0-1-build2.tar.xz) = 544811340
+SHA256 (manual_112141.zip) = f767bc5f655f1263623b7af588cfb045d3e41ee019dc7ecd713decc5c1a0ea9b
+SIZE (manual_112141.zip) = 26293073
+SHA256 (firefox-tor-browser-13.0.1-build2-firefox-1l0n-out.tar) = bbd290cd134e3a114241077ba82582617ab6c5117ff2226381943c504bd09775
+SIZE (firefox-tor-browser-13.0.1-build2-firefox-1l0n-out.tar) = 18848768
+SHA256 (tpo-translation-3faf7dcd545109f7bbd8a6374838e139ca422d6c_GL0.tar.gz) = e6fdc79f74d2c438a44e5ffb6404e3d64bab879cf146e88a170ccdcef3596d9b
+SIZE (tpo-translation-3faf7dcd545109f7bbd8a6374838e139ca422d6c_GL0.tar.gz) = 108057
+SHA256 (tpo-translation-51bc08246d73990d461f747fb3c8cc7b6f66c1f4_GL0.tar.gz) = a57dd8210d347ca69f5731cd768862673d692c0a5a3364f411cc5fa1fb88c98e
+SIZE (tpo-translation-51bc08246d73990d461f747fb3c8cc7b6f66c1f4_GL0.tar.gz) = 1059523
