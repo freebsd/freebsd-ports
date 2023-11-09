@@ -11,6 +11,10 @@ include/muParserTemplateMagic.h
 include/muParserTest.h
 include/muParserToken.h
 include/muParserTokenReader.h
+lib/cmake/muparser/muparser-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/muparser/muparser-targets.cmake
+lib/cmake/muparser/muparserConfig.cmake
+lib/cmake/muparser/muparserConfigVersion.cmake
 lib/libmuparser.so
 lib/libmuparser.so.2
 lib/libmuparser.so.%%MUPARSER_VERSION%%
