@@ -1,6 +1,5 @@
 PORTNAME=	tcpflow
-PORTVERSION=	1.5.0
-PORTREVISION=	6
+PORTVERSION=	1.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.digitalcorpora.org/downloads/${PORTNAME}/
 
