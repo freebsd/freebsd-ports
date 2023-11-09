@@ -1,3 +1,125 @@
+  <vuln vid="31f45d06-7f0e-11ee-94b4-6cc21735f730">
+    <topic>postgresql-server -- Memory disclosure in aggregate function calls</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>16.1</lt></range>
+	<range><lt>15.5</lt></range>
+	<range><lt>14.10</lt></range>
+	<range><lt>13.13</lt></range>
+	<range><lt>12.17</lt></range>
+	<range><lt>11.22</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-5868/">
+	  <p>
+	    Certain aggregate function calls receiving "unknown"-type
+	    arguments could disclose bytes of server memory from the end of
+	    the "unknown"-type value to the next zero byte. One typically
+	    gets an "unknown"-type value via a string literal having no type
+	    designation. We have not confirmed or ruled out viability of
+	    attacks that arrange for presence of notable, confidential
+	    information in disclosed bytes.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5868</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-5868/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-09</discovery>
+      <entry>2023-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0f445859-7f0e-11ee-94b4-6cc21735f730">
+    <topic>postgresql-server -- Buffer overrun from integer overflow in array modification</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>16.1</lt></range>
+	<range><lt>15.5</lt></range>
+	<range><lt>14.10</lt></range>
+	<range><lt>13.13</lt></range>
+	<range><lt>12.17</lt></range>
+	<range><lt>11.22</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-5869/">
+	  <p>
+	    While modifying certain SQL array values, missing
+	    overflow checks let authenticated database users write
+	    arbitrary bytes to a memory area that facilitates
+	    arbitrary code execution. Missing overflow checks also
+	    let authenticated database users read a wide area of
+	    server memory. The CVE-2021-32027 fix covered some
+	    attacks of this description, but it missed others.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5869</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-5869/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-09</discovery>
+      <entry>2023-11-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bbb18fcb-7f0d-11ee-94b4-6cc21735f730">
+    <topic>postgresql-server -- Role pg_cancel_backend can signal certain superuser processes</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>16.1</lt></range>
+	<range><lt>15.5</lt></range>
+	<range><lt>14.10</lt></range>
+	<range><lt>13.13</lt></range>
+	<range><lt>12.17</lt></range>
+	<range><lt>11.22</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-5870/">
+	  <p>
+	    Documentation says the pg_cancel_backend role cannot
+	    signal "a backend owned by a superuser". On the
+	    contrary, it can signal background workers, including
+	    the logical replication launcher. It can signal
+	    autovacuum workers and the autovacuum launcher.
+	    Signaling autovacuum workers and those two launchers
+	    provides no meaningful exploit, so exploiting this
+	    vulnerability requires a non-core extension with a
+	    less-resilient background worker. For example, a
+	    non-core background worker that does not auto-restart
+	    would experience a denial of service with respect to
+	    that particular background worker.
+	  </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5870</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-5870/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-09</discovery>
+      <entry>2023-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5558dded-a870-4fbe-8b0a-ba198db47007">
     <topic>electron{25,26} -- multiple vulnerabilities</topic>
     <affects>
