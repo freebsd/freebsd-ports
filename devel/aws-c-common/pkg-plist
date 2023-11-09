@@ -19,6 +19,7 @@ include/aws/common/common.h
 include/aws/common/condition_variable.h
 include/aws/common/config.h
 include/aws/common/cpuid.h
+include/aws/common/cross_process_lock.h
 include/aws/common/date_time.h
 include/aws/common/device_random.h
 include/aws/common/encoding.h

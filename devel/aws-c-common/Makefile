@@ -1,11 +1,8 @@
 PORTNAME=	aws-c-common
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.8
 PORTEPOCH=	1
 CATEGORIES=	devel
-
-PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=     c80ce50.patch:-p1 # Fix test failure, issue 1070
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Core c99 package for AWS SDK for C

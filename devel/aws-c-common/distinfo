@@ -1,5 +1,3 @@
-TIMESTAMP = 1698826719
-SHA256 (awslabs-aws-c-common-v0.9.6_GH0.tar.gz) = 5c30cc066a7f05fb8e4728f93aeed0e0e2698197a6df76237ac4e1200977d090
-SIZE (awslabs-aws-c-common-v0.9.6_GH0.tar.gz) = 548750
-SHA256 (c80ce50.patch) = 4249f9e6c54fe21834d7aa58d8ea8a654a09b38a6da8f44583c48eaaede5b9ff
-SIZE (c80ce50.patch) = 3372
+TIMESTAMP = 1699519187
+SHA256 (awslabs-aws-c-common-v0.9.8_GH0.tar.gz) = e794bc5f901d810d367de75257aab110df358a2f67f3823b48f63934d2c24ec6
+SIZE (awslabs-aws-c-common-v0.9.8_GH0.tar.gz) = 552159
