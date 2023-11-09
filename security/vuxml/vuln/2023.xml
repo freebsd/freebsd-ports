@@ -1,3 +1,39 @@
+  <vuln vid="5558dded-a870-4fbe-8b0a-ba198db47007">
+    <topic>electron{25,26} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.4</lt></range>
+      </package>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.4">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5849.</li>
+	    <li>Security: backported fix for CVE-2023-5482.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5849</cvename>
+      <url>https://github.com/advisories/GHSA-7cjp-92p9-vr97</url>
+      <cvename>CVE-2023-5482</cvename>
+      <url>https://github.com/advisories/GHSA-pq78-6h8h-rcf4</url>
+    </references>
+    <dates>
+      <discovery>2023-11-08</discovery>
+      <entry>2023-11-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ade0c4d-7e83-11ee-9a8c-00155d01f201">
     <topic>libsndfile_project -- Integer overflow in dataend calculation</topic>
     <affects>
