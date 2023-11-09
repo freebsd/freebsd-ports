@@ -1,5 +1,6 @@
 PORTNAME=	sshguard
 PORTVERSION=	2.4.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/${PORTVERSION}
@@ -9,6 +10,8 @@ COMMENT=	Protect hosts from brute-force attacks against SSH and other services
 WWW=		https://www.sshguard.net/
 
 LICENSE=	BSD2CLAUSE
+
+USES=		autoreconf
 
 USE_RC_SUBR=	sshguard
 
