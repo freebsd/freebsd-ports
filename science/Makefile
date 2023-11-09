@@ -175,6 +175,7 @@
     SUBDIR += maeparser
     SUBDIR += massxpert
     SUBDIR += mbdyn
+    SUBDIR += mcpl
     SUBDIR += mcstas
     SUBDIR += mcstas-comps
     SUBDIR += mctc-lib

@@ -1,0 +1,16 @@
+bin/mcpl-config
+bin/mcpl2phits
+bin/mcpl2ssw
+bin/mcpltool
+bin/phits2mcpl
+bin/pymcpltool
+bin/ssw2mcpl
+include/mcpl.h
+lib/cmake/MCPL/MCPLConfig.cmake
+lib/cmake/MCPL/MCPLConfigVersion.cmake
+lib/cmake/MCPL/MCPLTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/MCPL/MCPLTargets.cmake
+lib/libmcpl.so
+lib/libphitsmcpl.so
+lib/libsswmcpl.so
+share/MCPL/python/mcpl.py
