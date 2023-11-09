@@ -43,7 +43,7 @@ include/guido/VGPen.h
 include/guido/VGSystem.h
 lib/libGUIDOEngine.so
 lib/libGUIDOEngine.so.1
-lib/libGUIDOEngine.so.1.7.1
+lib/libGUIDOEngine.so.1.7.7
 share/fonts/guidolib/guido2.svg
 share/fonts/guidolib/guido2.ttf
 %%DATADIR%%/doc/GMNRefCard.pdf
