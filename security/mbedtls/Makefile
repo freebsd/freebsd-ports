@@ -1,5 +1,5 @@
 PORTNAME=	mbedtls
-PORTVERSION=	2.28.5
+PORTVERSION=	2.28.6
 DISTVERSIONPREFIX=${PORTNAME}-
 CATEGORIES=	security devel
 
@@ -7,7 +7,8 @@ MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	SSL/TLS and cryptography library
 WWW=		https://www.trustedfirmware.org/projects/mbed-tls/
 
-LICENSE=	APACHE20
+LICENSE=	APACHE20 GPLv2+
+LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake python:test shebangfix
