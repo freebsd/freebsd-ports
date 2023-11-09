@@ -10,7 +10,6 @@ WWW=		https://guido.grame.fr/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gmake:devel/gmake
 LIB_DEPENDS=	libmidisharelight.so:audio/midisharelight
 
 USES=		compiler:c++17-lang cmake gnome localbase:ldflags pkgconfig
