@@ -29,6 +29,7 @@ include/xsimd/arch/xsimd_sse4_1.hpp
 include/xsimd/arch/xsimd_sse4_2.hpp
 include/xsimd/arch/xsimd_ssse3.hpp
 include/xsimd/arch/xsimd_sve.hpp
+include/xsimd/arch/xsimd_wasm.hpp
 include/xsimd/config/xsimd_arch.hpp
 include/xsimd/config/xsimd_config.hpp
 include/xsimd/config/xsimd_cpuid.hpp
@@ -61,6 +62,7 @@ include/xsimd/types/xsimd_ssse3_register.hpp
 include/xsimd/types/xsimd_sve_register.hpp
 include/xsimd/types/xsimd_traits.hpp
 include/xsimd/types/xsimd_utils.hpp
+include/xsimd/types/xsimd_wasm_register.hpp
 include/xsimd/xsimd.hpp
 lib/cmake/xsimd/xsimdConfig.cmake
 lib/cmake/xsimd/xsimdConfigVersion.cmake
