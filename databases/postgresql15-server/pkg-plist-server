@@ -897,6 +897,7 @@ lib/postgresql/utf8_and_win.so
 %%NLS%%share/locale/ka/LC_MESSAGES/pg_upgrade-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/pg_waldump-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ka/LC_MESSAGES/plpgsql-%%PG_VERSION%%.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/postgres-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/initdb-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_archivecleanup-%%PG_VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/pg_basebackup-%%PG_VERSION%%.mo
