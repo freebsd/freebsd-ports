@@ -1,6 +1,5 @@
 PORTNAME=	cmake
 DISTVERSION=	${_CMAKE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-gui-${FLAVOR}
 
@@ -18,25 +17,31 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
-
+FLAVORS=		qt5 qt6
+FLAVOR?=		qt5
 qt5_CONFLICTS_INSTALL=	cmake-gui-qt6
 qt6_CONFLICTS_INSTALL=	cmake-gui-qt5
 
 USES=		cmake:run,insource compiler:c++11-lang desktop-file-utils libarchive \
 		shared-mime-info qt:${FLAVOR:S/qt//}
-_USE_QT5=	core gui widgets buildtools:build qmake:build
-_USE_QT6=	base
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+_USE_QT_qt5=	core gui widgets buildtools:build qmake:build
+_USE_QT_qt6=	base
+USE_QT=		${_USE_QT_${FLAVOR}}
 CMAKE_ARGS=	-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
 		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}" \
 		-DCMake_QT_MAJOR_VERSION=${FLAVOR:S/qt//}
 CMAKE_ON=	BUILD_QtDialog \
-		CMAKE_USE_SYSTEM_LIBRARIES \
+		CMAKE_USE_SYSTEM_CURL \
+		CMAKE_USE_SYSTEM_EXPAT \
+		CMAKE_USE_SYSTEM_FORM \
+		CMAKE_USE_SYSTEM_JSONCPP \
+		CMAKE_USE_SYSTEM_LIBARCHIVE \
+		CMAKE_USE_SYSTEM_LIBRHASH \
+		CMAKE_USE_SYSTEM_LIBUV \
 		SPHINX_MAN
 CMAKE_OFF=	BUILD_CursesDialog \
-		CMake_SPHINX_DEPEND_ON_EXECUTABLES
+		CMake_SPHINX_DEPEND_ON_EXECUTABLES \
+		CMAKE_USE_SYSTEM_CPPDAP
 
 ALL_TARGET=	cmake-gui documentation
 
