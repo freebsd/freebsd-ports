@@ -12,5 +12,5 @@ include/coin-or/asl/r_opn.hd
 include/coin-or/asl/stdio1.h
 lib/libcoinasl.so
 lib/libcoinasl.so.2
-lib/libcoinasl.so.2.0.0
+lib/libcoinasl.so.2.0.1
 libdata/pkgconfig/coinasl.pc
