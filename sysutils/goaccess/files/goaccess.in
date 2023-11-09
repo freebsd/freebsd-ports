@@ -19,6 +19,7 @@ rcvar=goaccess_enable
 
 load_rc_config $name
 
+: ${goaccess_enable:=NO}
 : ${goaccess_html:=/var/run/goaccess/goaccess.html}
 : ${goaccess_log:=/var/log/httpd-access.log}
 : ${goaccess_config:=%%ETCDIR%%/goaccess.conf}
