@@ -1,6 +1,6 @@
 PORTNAME=	tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.15.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
@@ -43,7 +43,8 @@ GO_TARGET=	./cmd/auth/cookieauth \
 		./cmd/ssadump \
 		./cmd/stress \
 		./cmd/stringer \
-		./cmd/toolstash
+		./cmd/toolstash \
+		./internal/cmd/deadcode
 
 CONFLICTS_INSTALL=	easygit rubygem-bundler
 
