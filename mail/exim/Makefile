@@ -497,6 +497,10 @@ SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
 .if ${PORT_OPTIONS:MSRS}
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSUPPORT_SRS,' \
 		-e 's,XX_SRS_LIBS_XX,,'
+.elif ${PORT_OPTIONS:MOLD_SRS}
+LIB_DEPENDS+=	libsrs_alt.so:mail/libsrs_alt
+SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DEXPERIMENTAL_SRS_ALT,' \
+		-e 's,XX_SRS_LIBS_XX,-L${LOCALBASE}/lib -lsrs_alt,'
 .else
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 		-e 's,XX_SRS_LIBS_XX,,'
