@@ -1,6 +1,5 @@
 PORTNAME=	matplotlib
-PORTVERSION=	3.7.1
-PORTREVISION=	3
+DISTVERSION=	3.8.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +11,8 @@ WWW=		https://matplotlib.org/
 LICENSE=	PSFL
 
 BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm7>0:devel/py-setuptools_scm7@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=6.2:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>=0:devel/py-pyparsing@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=0.10:security/py-certifi@${PY_FLAVOR} \
@@ -40,7 +41,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python shebangfix uniquefiles:dirs
 USE_CXXSTD=	c++14
-USE_PYTHON=	distutils
+USE_PYTHON=	pep517
 
 PLIST_SUB=	VER=${PORTVERSION}
 PORTEXAMPLES=	*
@@ -55,7 +56,7 @@ post-install:
 		| ${XARGS} ${STRIP_CMD}
 
 post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
+	#@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	#${CP} -R ${WRKSRC}/examples/ ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
