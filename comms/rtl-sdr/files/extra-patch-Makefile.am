@@ -1,6 +1,6 @@
---- Makefile.am.orig	2019-02-20 23:16:25.926790000 +0100
-+++ Makefile.am	2019-02-20 23:16:48.243426000 +0100
-@@ -21,29 +21,4 @@
+--- Makefile.am.orig	2023-11-06 14:19:31 UTC
++++ Makefile.am
+@@ -21,29 +21,4 @@ EXTRA_DIST = git-version-gen .version
  
  EXTRA_DIST = git-version-gen .version
  

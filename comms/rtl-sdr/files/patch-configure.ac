@@ -1,6 +1,6 @@
---- configure.ac.orig	2012-08-23 08:40:54.000000000 +0200
-+++ configure.ac	2012-08-23 11:47:20.000000000 +0200
-@@ -34,7 +32,7 @@
+--- configure.ac.orig	2023-11-03 09:21:21 UTC
++++ configure.ac
+@@ -35,7 +35,7 @@ dnl pthreads
  
  dnl checks for required libraries
  dnl pthreads
