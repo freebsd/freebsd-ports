@@ -45,7 +45,6 @@ share/cmake/VulkanHeaders/VulkanHeadersConfigVersion.cmake
 share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
-share/vulkan/registry/genvk.py
 share/vulkan/registry/parse_dependency.py
 share/vulkan/registry/profiles/VP_KHR_roadmap_2022.json
 share/vulkan/registry/reg.py
