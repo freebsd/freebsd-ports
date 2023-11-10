@@ -1,5 +1,5 @@
 PORTNAME=	flexiblas
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	math
 MASTER_SITES=	https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/
 
@@ -9,7 +9,6 @@ WWW=		https://www.mpi-magdeburg.mpg.de/projects/flexiblas
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	tbb>0:devel/tbb	# oneTBB should be supported in 3.3.1
 LIB_DEPENDS=	libblas.so:math/blas	\
 		libblis.so:math/blis	\
 		liblapack.so:math/lapack
