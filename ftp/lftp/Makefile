@@ -1,17 +1,17 @@
 PORTNAME=	lftp
 PORTVERSION=	4.9.2
 CATEGORIES=	ftp
-MASTER_SITES=	http://lftp.tech/ftp/ \
-		http://lftp.tech/ftp/old/ \
-		http://lftp.cybermirror.org/ \
-		http://lftp.cybermirror.org/old/ \
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
 		http://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/
+		http://lftp.cybermirror.org/ \
+		http://lftp.cybermirror.org/old/ \
+		http://lftp.tech/ftp/ \
+		http://lftp.tech/ftp/old/
 
 MAINTAINER=	martymac@FreeBSD.org
-COMMENT=	Shell-like command line FTP client
+COMMENT=	Shell-like command-line FTP client
 WWW=		https://lftp.tech/
 
 LICENSE=	GPLv3
@@ -20,31 +20,30 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libidn2.so:dns/libidn2
 
-USES=		compiler:c++11-lang charsetfix cpe iconv libtool localbase \
+USES=		charsetfix compiler:c++11-lang cpe iconv libtool localbase \
 		readline shebangfix
-GNU_CONFIGURE=	yes
 CPE_VENDOR=	lftp_project
 
-PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL \
-		MIRRORS NEWS README README.debug-levels README.modules \
-		THANKS TODO
+SHEBANG_FILES=	src/convert-mozilla-cookies src/verify-file src/xdg-move
 
-SHEBANG_FILES=	src/verify-file \
-		src/convert-mozilla-cookies \
-		src/xdg-move
+GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_RADIO=	SSL
-OPTIONS_RADIO_SSL=	OPENSSL GNUTLS
+PORTDOCS=	AUTHORS BUGS ChangeLog FAQ FEATURES INSTALL MIRRORS NEWS README \
+		README.debug-levels README.modules THANKS TODO
+
+OPTIONS_DEFINE=		DOCS NLS
 OPTIONS_DEFAULT=	OPENSSL
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=	nls
-OPENSSL_CONFIGURE_WITH=	openssl
-OPENSSL_USES=	ssl
-GNUTLS_CONFIGURE_WITH=	gnutls
+OPTIONS_RADIO=		SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_SUB=		yes
+
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-GNUTLS_USES=	pkgconfig
+GNUTLS_USES=		pkgconfig
+GNUTLS_CONFIGURE_WITH=	gnutls
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+OPENSSL_USES=		ssl
+OPENSSL_CONFIGURE_WITH=	openssl
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
