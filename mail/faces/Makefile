@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Visual mail, user, and print face server
-WWW=		http://faces.sourceforge.net/
+WWW=		https://faces.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

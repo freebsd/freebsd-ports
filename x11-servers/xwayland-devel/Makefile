@@ -1,7 +1,7 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-520
-DISTVERSIONSUFFIX=	-g287638db5
+DISTVERSION=	21.0.99.1-553
+DISTVERSIONSUFFIX=	-g141e7dd8a
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
@@ -39,7 +39,6 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_TUPLE=	xorg/proto:xorgproto:xorgproto-2023.2:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -81,11 +80,5 @@ EI_MESON_OFF=		-Dxwayland_ei=false
 NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
-
-.ifdef GL_TUPLE
-post-configure:
-	@${REINPLACE_CMD} 's/meson install/& \
-		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
-.endif
 
 .include <bsd.port.mk>

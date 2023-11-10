@@ -6,7 +6,7 @@ MASTER_SITES=	SF/w-calc/Wcalc/${PORTVERSION}
 
 MAINTAINER=	amarendra.godbole@gmail.com
 COMMENT=	Natural-expression command-line calculator
-WWW=		http://w-calc.sourceforge.net/
+WWW=		https://w-calc.sourceforge.net/
 
 LICENSE=	GPLv2
 

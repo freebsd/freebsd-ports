@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_hover_card_bubble_view.cc.orig	2023-08-28 20:17:35 UTC
+--- chrome/browser/ui/views/tabs/tab_hover_card_bubble_view.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/ui/views/tabs/tab_hover_card_bubble_view.cc
-@@ -364,7 +364,7 @@ TabHoverCardBubbleView::TabHoverCardBubbleView(Tab* ta
+@@ -372,7 +372,7 @@ TabHoverCardBubbleView::TabHoverCardBubbleView(Tab* ta
    // not become active. Setting this to false creates the need to explicitly
    // hide the hovercard on press, touch, and keyboard events.
    SetCanActivate(false);

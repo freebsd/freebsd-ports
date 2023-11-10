@@ -1,6 +1,5 @@
 PORTNAME=	ungoogled-chromium
-PORTVERSION=	117.0.5938.149
-PORTREVISION=	1
+PORTVERSION=	119.0.6045.105
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -101,7 +100,8 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 # Some parts don't have use_system_* flag, and can be turned on/off by using
 # replace_gn_files.py script, some parts just turned on/off for target host
 # OS "target_os == is_bsd", like libusb, libpci.
-GN_ARGS+=	fatal_linker_warnings=false \
+GN_ARGS+=	enable_widevine=true \
+		fatal_linker_warnings=false \
 		icu_use_data_file=false \
 		is_clang=true \
 		optimize_webui=true \
@@ -152,7 +152,7 @@ GN_BOOTSTRAP_FLAGS=	--no-clean --no-rebuild --skip-generate-buildfiles
 SUB_FILES=	ungoogled-chromium.desktop ungoogled-chromium
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO PIPEWIRE TEST
+OPTIONS_DEFINE=		CODECS CUPS DEBUG DRIVER KERBEROS LTO PIPEWIRE TEST WIDEVINE
 OPTIONS_DEFAULT=	CODECS CUPS DRIVER KERBEROS PIPEWIRE SNDIO
 OPTIONS_EXCLUDE_aarch64=LTO
 OPTIONS_GROUP=		AUDIO
@@ -226,6 +226,9 @@ SNDIO_PREVENTS=		ALSA PULSEAUDIO
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
+
+WIDEVINE_DESC=		Depend on foreign-cdm to enable playback of DRM content
+WIDEVINE_RUN_DEPENDS=	foreign-cdm>0:www/foreign-cdm
 
 .include "Makefile.tests"
 TEST_DISTFILES=		chromium-${DISTVERSION}-testdata${EXTRACT_SUFX} \

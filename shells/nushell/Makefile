@@ -1,5 +1,6 @@
 PORTNAME=	nushell
 DISTVERSION=	0.85.0
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -606,6 +607,13 @@ OPTIONS_DEFINE=		DATAFRAME
 DATAFRAME_DESC=		Include the dataframe feature
 DATAFRAME_VARS=		CARGO_BUILD_ARGS+=--features=dataframe
 DATAFRAME_BROKEN=	see https://github.com/nushell/nushell/issues/7665
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LIB_DEPENDS=	libatomic.so:lang/gcc${GCC_DEFAULT}
+LDFLAGS=	-L/usr/local/lib/gcc${GCC_DEFAULT} -latomic
+.endif
 
 .include <bsd.port.pre.mk>
 

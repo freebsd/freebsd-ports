@@ -1,0 +1,23 @@
+--- bacnet/data/abilities/impact/1a2faf5a-4601-11eb-b378-0242ac130002.yml	2023-10-25 16:38:37.618186000 -0500
++++ bacnet/data/abilities/impact/1a2faf5a-4601-11eb-b378-0242ac130002.yml	2023-10-25 16:39:38.892194000 -0500
+@@ -10,6 +10,13 @@
+     name: Manipulation of Control
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        timeout: 360
++        command: |
++          ./bacwp-freebsd #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.obj.property} #{bacnet.write.priority} #{bacnet.write.index} #{bacnet.write.tag} #{bacnet.write.value}
++        payloads:
++          - bacwp-freebsd
+     linux:
+       sh:
+         timeout: 360
+@@ -23,4 +30,4 @@
+         command: |
+           .\bacwp.exe #{bacnet.device.instance} #{bacnet.obj.type} #{bacnet.obj.instance} #{bacnet.obj.property} #{bacnet.write.priority} #{bacnet.write.index} #{bacnet.write.tag} #{bacnet.write.value}
+         payloads:
+-          - bacwp.exe
+\ No newline at end of file
++          - bacwp.exe

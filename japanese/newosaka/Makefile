@@ -7,6 +7,8 @@ DISTFILES=	new-osaka.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator of Japanese EUC documents into Osaka language
 
+DEPRECATED=	BROKEN on all supported versions for more than 4 years after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	ld: error: undefined symbol: gets
 BROKEN_FreeBSD_14=	ld: error: undefined symbol: gets
 

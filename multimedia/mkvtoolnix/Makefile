@@ -1,6 +1,5 @@
 PORTNAME=	mkvtoolnix
-PORTVERSION=	79.0
-PORTREVISION=	1
+PORTVERSION=	80.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/

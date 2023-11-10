@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2023.8.2
+DISTVERSION=	2023.10.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -37,6 +37,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bitwarden
 GH_PROJECT=	clients
 
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
+
 BUILD_WRKSRC=	${WRKSRC}/apps/cli
 
 PLIST_FILES=	bin/bw \
@@ -47,7 +49,7 @@ PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 PREFETCH_FILE=	${PKGNAME}-node-modules${EXTRACT_SUFX}
-PREFETCH_TIMESTAMP=	1693392508
+PREFETCH_TIMESTAMP=	1699354730
 PKG_NODE_VER=	18.15.0
 PKG_FETCH_VER=	3.5
 PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
@@ -65,7 +67,8 @@ pre-fetch:
 		${MKDIR} ${WRKDIR}/node-modules-cache; \
 		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/node-modules-cache; \
 		cd ${WRKDIR}/node-modules-cache && \
-		${SETENV} HOME=${WRKDIR} npm ci --ignore-scripts --no-progress; \
+		${SETENV} HOME=${WRKDIR} npm install -g --prefix=${WRKDIR} npm@9.9.0 && \
+		${SETENV} HOME=${WRKDIR} PATH=${WRKDIR}/bin:${PATH} npm ci --ignore-scripts --no-progress; \
 		${FIND} ${WRKDIR}/node-modules-cache -depth 1 -print | \
 			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
 		${FIND} ${WRKDIR}/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \

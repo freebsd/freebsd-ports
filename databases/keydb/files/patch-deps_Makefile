@@ -1,0 +1,10 @@
+--- deps/Makefile.orig	2023-10-25 17:16:24 UTC
++++ deps/Makefile
+@@ -38,7 +38,6 @@ distclean:
+ 	-(cd linenoise && $(MAKE) clean) > /dev/null || true
+ 	-(cd lua && $(MAKE) clean) > /dev/null || true
+ 	-(cd jemalloc && [ -f Makefile ] && $(MAKE) distclean) > /dev/null || true
+-	-(cd rocksdb && $(MAKE) clean) > /dev/null || true
+ 	-(cd hdr_histogram && $(MAKE) clean) > /dev/null || true
+ 	-(rm -f .make-*)
+ 

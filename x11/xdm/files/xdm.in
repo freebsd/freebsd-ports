@@ -38,7 +38,11 @@ xdm_set_vty()
 {
 	# X views vt as starting at 01, not ttyv0
 	vtarg=`printf vt%02d $((${xdm_tty#ttyv} + 1))`
-	command_args="-server \":0 local %%LOCALBASE%%/bin/X :0 $vtarg\""
+	xserver_args=$(grep '^:0' %%LOCALBASE%%/etc/X11/xdm/Xservers)
+	if [ $? -ne 0 ]; then
+		xserver_args=":0 local %%LOCALBASE%%/bin/X :0"
+	fi
+	command_args="-server \"$xserver_args $vtarg\""
 }
 
 run_rc_command $1

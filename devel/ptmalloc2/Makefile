@@ -12,6 +12,9 @@ WWW=		http://www.malloc.de/en/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Abandonware, last release in 2006 and there are other alternative malloc implementations available
+EXPIRATION_DATE=2023-11-30
+
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk
 

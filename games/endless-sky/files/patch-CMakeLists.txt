@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-06-18 21:53:14 UTC
+--- CMakeLists.txt.orig	2023-10-21 20:01:54 UTC
 +++ CMakeLists.txt
-@@ -257,19 +257,21 @@ elseif(WIN32)
+@@ -259,19 +259,21 @@ elseif(WIN32)
  	install(FILES changelog DESTINATION .)
  	install(FILES license.txt DESTINATION .)
  elseif(UNIX)
@@ -11,8 +11,8 @@
 +	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
  
  	# Install the desktop file.
--	install(FILES endless-sky.desktop DESTINATION share/applications)
-+	install(FILES endless-sky.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+-	install(FILES io.github.endless_sky.endless_sky.desktop DESTINATION share/applications)
++	install(FILES io.github.endless_sky.endless_sky.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
  
  	# Install app center metadata.
 -	install(FILES io.github.endless_sky.endless_sky.appdata.xml DESTINATION share/metainfo)
@@ -26,7 +26,7 @@
  			RENAME endless-sky.png)
  	endforeach()
  
-@@ -281,15 +283,15 @@ elseif(UNIX)
+@@ -283,15 +285,15 @@ elseif(UNIX)
  		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
  		VERBATIM)
  	target_sources(EndlessSky PRIVATE endless-sky.6.gz)

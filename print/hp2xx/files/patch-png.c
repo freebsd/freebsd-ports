@@ -1,5 +1,5 @@
---- png.c.orig	2003-06-21 17:31:51.000000000 +0200
-+++ png.c	2012-05-06 06:59:14.000000000 +0200
+--- png.c.orig	2003-06-21 15:31:51 UTC
++++ png.c
 @@ -6,6 +6,7 @@
  #include <stdlib.h>
  #include "to_png.h"
@@ -8,7 +8,7 @@
  
  #define PDNCOL 256
  
-@@ -36,7 +37,7 @@
+@@ -36,7 +37,7 @@ FILE *fd;
  	}
  
  	/* set up error handlimg for libpng */

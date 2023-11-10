@@ -1,6 +1,6 @@
 PORTNAME=	libva-nvidia-driver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.10
+DISTVERSION=	0.0.11
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

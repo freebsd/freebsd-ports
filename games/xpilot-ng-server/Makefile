@@ -7,7 +7,7 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Enhanced version of XPilot (server program)
-WWW=		http://xpilot.sourceforge.net/
+WWW=		https://xpilot.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

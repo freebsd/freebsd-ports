@@ -76,6 +76,7 @@
     SUBDIR += gdnsd3
     SUBDIR += gen6dns
     SUBDIR += getdns
+    SUBDIR += godns
     SUBDIR += hesiod
     SUBDIR += hetzner_ddns
     SUBDIR += hostdb
@@ -92,8 +93,6 @@
     SUBDIR += ldapdns
     SUBDIR += ldns
     SUBDIR += letsdns
-    SUBDIR += libasr
-    SUBDIR += libasr-devel
     SUBDIR += libbind
     SUBDIR += libidn
     SUBDIR += libidn2
@@ -106,6 +105,7 @@
     SUBDIR += mDNSResponder_nss
     SUBDIR += maradns
     SUBDIR += mdnsd
+    SUBDIR += mosdns
     SUBDIR += namesilo_ddns
     SUBDIR += nextdns
     SUBDIR += noip
@@ -240,6 +240,7 @@
     SUBDIR += wrapsrv
     SUBDIR += yadifa
     SUBDIR += yandex-ddns
+    SUBDIR += zdns
     SUBDIR += zkt
     SUBDIR += zonenotify
 

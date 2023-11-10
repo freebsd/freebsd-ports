@@ -15,8 +15,7 @@ MASTER_SITES=	SOURCEWARE/binutils/releases/binutils:source1 \
 		GNU/mpfr:source8 \
 		ftp://ftp.invisible-island.net/ncurses/:source9 \
 		GNU/ncurses:source9 \
-		SOURCEWARE/newlib:source10 \
-		ftp://sources.redhat.com/pub/newlib/:source10
+		SOURCEWARE/newlib:source10
 DISTFILES=	binutils-2.25.1.tar.bz2:source1 \
 		expat-2.1.0.tar.gz:source2 \
 		gcc-${GCCVER}.tar.bz2:source3 \

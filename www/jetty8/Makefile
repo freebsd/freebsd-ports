@@ -10,6 +10,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Full-featured web server implemented entirely in Java
 WWW=		https://www.eclipse.org/jetty/
 
+DEPRECATED=	End of life in 2014, consider migrating to www/jetty10
+EXPIRATION_DATE=2023-11-30
+
 LICENSE=	APACHE20 EPL
 LICENSE_COMB=	dual
 

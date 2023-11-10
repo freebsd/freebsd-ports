@@ -1,15 +1,20 @@
 PORTNAME=	pkgconf
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
+
+PATCH_SITES=	${WWW}/commit/ \
+		https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	652aff97906d7eadca6fe727b16f6511d8dbfe05.patch:-p1
 
 # NOTE: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
 # discretion.
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
-WWW=		https://git.sr.ht/~kaniini/pkgconf
+WWW=		https://gitea.treehouse.systems/ariadne/${PORTNAME}
 
 LICENSE=	ISCL
 

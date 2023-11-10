@@ -1,5 +1,5 @@
 PORTNAME=	moonlight-embedded
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/moonlight-stream/moonlight-embedded/releases/download/v${DISTVERSION}/
 
@@ -34,9 +34,8 @@ NO_WRKSUBDIR=	yes
 CFLAGS+=	-DHAS_SOCKLEN_T=1 -I${LOCALBASE}/include/libepoll-shim/
 LDFLAGS+=	-lepoll-shim
 
-pre-configure:
-	@${REINPLACE_CMD} -e 's@/etc/moonlight/moonlight.conf@${PREFIX}/etc/moonlight.conf@' \
-		-e 's@moonligt@moonlight@g' \
+post-patch:
+	@${REINPLACE_CMD} -e 's@/usr/local@${PREFIX}@' \
 		${WRKSRC}/docs/README.pod
 
 post-install:

@@ -1,5 +1,5 @@
 PORTNAME=	crow-translate
-PORTVERSION=	2.10.10
+PORTVERSION=	2.11.0
 CATEGORIES=	textproc
 
 MAINTAINER=	ehaupt@FreeBSD.org

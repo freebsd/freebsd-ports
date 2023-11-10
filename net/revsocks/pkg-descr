@@ -1,0 +1,9 @@
+Reverse SOCKS5 tunneler with SSL/TLS and proxy support.
+
+Features:
+
+  *  Single executable
+  *  Encrypted communication with TLS
+  *  DNS tunneling support (SOCKS5 over DNS)
+  *  Support for proxies
+  *  Automatic SSL/TLS certificate generation if not specified

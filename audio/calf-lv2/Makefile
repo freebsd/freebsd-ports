@@ -49,6 +49,8 @@ SSE_CONFIGURE_ENABLE=	sse
 
 PORTDOCS=	*
 
+PORTSCOUT=		limit:^[0-9\.]*$$ # prevet tags like 'works'
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64le

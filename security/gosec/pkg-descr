@@ -1,0 +1,2 @@
+gosec is a Go security checker that inspects source code for security problems
+by scanning the Go AST and SSA code representation.

@@ -10,7 +10,7 @@ DISTFILES=	${DISTNAME:S/na/n-a/}.tar.bz2 \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacman clone in full 3D with a few surprises
-WWW=		http://pacmanarena.sourceforge.net/
+WWW=		https://pacmanarena.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

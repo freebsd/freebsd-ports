@@ -1,5 +1,5 @@
 PORTNAME=	contourpy
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVO
 
 USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+
+BINARY_ALIAS=	pybind11-config=pybind11-config-${PYTHON_VER}
 
 .include <bsd.port.mk>

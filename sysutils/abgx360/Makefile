@@ -1,14 +1,11 @@
 PORTNAME=	abgx360
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
-MASTER_SITES=	http://abgx360.xecuter.com/dl/ \
-		http://update.cooltrainer.org/freebsd-ports/sysutils/abgx360/ \
-		http://dl.dropbox.com/u/59058148/
+MASTER_SITES=	http://abgx360.hadzz.com/dl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Verify and repair Xbox 360 backup images
-WWW=		https://abgx360.xecuter.com/
+WWW=		http://abgx360.hadzz.com/
 
 LICENSE=	NONE
 

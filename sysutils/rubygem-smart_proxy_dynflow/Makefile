@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_dynflow
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	foreman-proxy>=1.12.0:net/foreman-proxy \
 		rubygem-dynflow>=1.6<2:devel/rubygem-dynflow \
-		rubygem-rest-client>=0:www/rubygem-rest-client \
-		rubygem-sqlite3>=0:databases/rubygem-sqlite3
+		rubygem-rest-client>=2.0<3:www/rubygem-rest-client \
+		rubygem-sqlite3>=1.0<2:databases/rubygem-sqlite3
 
 USES=		gem
 

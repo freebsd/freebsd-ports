@@ -377,6 +377,8 @@
 %%WWWDIR%%/apps/dav/l10n/sr@latin.json
 %%WWWDIR%%/apps/dav/l10n/sv.js
 %%WWWDIR%%/apps/dav/l10n/sv.json
+%%WWWDIR%%/apps/dav/l10n/sv_SE.js
+%%WWWDIR%%/apps/dav/l10n/sv_SE.json
 %%WWWDIR%%/apps/dav/l10n/ta.js
 %%WWWDIR%%/apps/dav/l10n/ta.json
 %%WWWDIR%%/apps/dav/l10n/ta_LK.js
@@ -1365,6 +1367,8 @@
 %%WWWDIR%%/apps/files/l10n/eo.json
 %%WWWDIR%%/apps/files/l10n/es.js
 %%WWWDIR%%/apps/files/l10n/es.json
+%%WWWDIR%%/apps/files/l10n/es_419.js
+%%WWWDIR%%/apps/files/l10n/es_419.json
 %%WWWDIR%%/apps/files/l10n/es_AR.js
 %%WWWDIR%%/apps/files/l10n/es_AR.json
 %%WWWDIR%%/apps/files/l10n/es_CL.js
@@ -1501,6 +1505,8 @@
 %%WWWDIR%%/apps/files/l10n/su.json
 %%WWWDIR%%/apps/files/l10n/sv.js
 %%WWWDIR%%/apps/files/l10n/sv.json
+%%WWWDIR%%/apps/files/l10n/sv_SE.js
+%%WWWDIR%%/apps/files/l10n/sv_SE.json
 %%WWWDIR%%/apps/files/l10n/sw_KE.js
 %%WWWDIR%%/apps/files/l10n/sw_KE.json
 %%WWWDIR%%/apps/files/l10n/ta.js
@@ -1694,7 +1700,10 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Cache/SysVCacheItemPool.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Cache/TypedItem.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/CacheTrait.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/CredentialSource/FileSource.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/CredentialSource/UrlSource.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/AppIdentityCredentials.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ExternalAccountCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/GCECredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/IAMCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ImpersonatedServiceAccountCredentials.php
@@ -1703,6 +1712,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ServiceAccountJwtAccessCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/UserRefreshCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/CredentialsLoader.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/ExternalAccountCredentialSourceInterface.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/FetchAuthTokenCache.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/FetchAuthTokenInterface.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/GCECache.php
@@ -1722,6 +1732,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/ServiceAccountSignerTrait.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/SignBlobInterface.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/UpdateMetadataInterface.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/UpdateMetadataTrait.php
 %%WWWDIR%%/apps/files_external/3rdparty/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/apps/files_external/3rdparty/guzzlehttp/guzzle/README.md
 %%WWWDIR%%/apps/files_external/3rdparty/guzzlehttp/guzzle/composer.json
@@ -2056,6 +2067,8 @@
 %%WWWDIR%%/apps/files_external/l10n/eo.json
 %%WWWDIR%%/apps/files_external/l10n/es.js
 %%WWWDIR%%/apps/files_external/l10n/es.json
+%%WWWDIR%%/apps/files_external/l10n/es_419.js
+%%WWWDIR%%/apps/files_external/l10n/es_419.json
 %%WWWDIR%%/apps/files_external/l10n/es_AR.js
 %%WWWDIR%%/apps/files_external/l10n/es_AR.json
 %%WWWDIR%%/apps/files_external/l10n/es_CL.js
@@ -2170,6 +2183,8 @@
 %%WWWDIR%%/apps/files_external/l10n/sr@latin.json
 %%WWWDIR%%/apps/files_external/l10n/sv.js
 %%WWWDIR%%/apps/files_external/l10n/sv.json
+%%WWWDIR%%/apps/files_external/l10n/sv_SE.js
+%%WWWDIR%%/apps/files_external/l10n/sv_SE.json
 %%WWWDIR%%/apps/files_external/l10n/ta.js
 %%WWWDIR%%/apps/files_external/l10n/ta.json
 %%WWWDIR%%/apps/files_external/l10n/ta_LK.js
@@ -2387,6 +2402,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/eo.json
 %%WWWDIR%%/apps/files_sharing/l10n/es.js
 %%WWWDIR%%/apps/files_sharing/l10n/es.json
+%%WWWDIR%%/apps/files_sharing/l10n/es_419.js
+%%WWWDIR%%/apps/files_sharing/l10n/es_419.json
 %%WWWDIR%%/apps/files_sharing/l10n/es_AR.js
 %%WWWDIR%%/apps/files_sharing/l10n/es_AR.json
 %%WWWDIR%%/apps/files_sharing/l10n/es_CL.js
@@ -2503,6 +2520,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/sr@latin.json
 %%WWWDIR%%/apps/files_sharing/l10n/sv.js
 %%WWWDIR%%/apps/files_sharing/l10n/sv.json
+%%WWWDIR%%/apps/files_sharing/l10n/sv_SE.js
+%%WWWDIR%%/apps/files_sharing/l10n/sv_SE.json
 %%WWWDIR%%/apps/files_sharing/l10n/ta.js
 %%WWWDIR%%/apps/files_sharing/l10n/ta.json
 %%WWWDIR%%/apps/files_sharing/l10n/ta_IN.js
@@ -2645,6 +2664,8 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/eo.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es.js
 %%WWWDIR%%/apps/files_trashbin/l10n/es.json
+%%WWWDIR%%/apps/files_trashbin/l10n/es_419.js
+%%WWWDIR%%/apps/files_trashbin/l10n/es_419.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es_AR.js
 %%WWWDIR%%/apps/files_trashbin/l10n/es_AR.json
 %%WWWDIR%%/apps/files_trashbin/l10n/es_CL.js
@@ -2755,6 +2776,8 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/sr@latin.json
 %%WWWDIR%%/apps/files_trashbin/l10n/sv.js
 %%WWWDIR%%/apps/files_trashbin/l10n/sv.json
+%%WWWDIR%%/apps/files_trashbin/l10n/sv_SE.js
+%%WWWDIR%%/apps/files_trashbin/l10n/sv_SE.json
 %%WWWDIR%%/apps/files_trashbin/l10n/ta.js
 %%WWWDIR%%/apps/files_trashbin/l10n/ta.json
 %%WWWDIR%%/apps/files_trashbin/l10n/ta_LK.js
@@ -3323,6 +3346,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/eo.json
 %%WWWDIR%%/apps/systemtags/l10n/es.js
 %%WWWDIR%%/apps/systemtags/l10n/es.json
+%%WWWDIR%%/apps/systemtags/l10n/es_419.js
+%%WWWDIR%%/apps/systemtags/l10n/es_419.json
 %%WWWDIR%%/apps/systemtags/l10n/es_AR.js
 %%WWWDIR%%/apps/systemtags/l10n/es_AR.json
 %%WWWDIR%%/apps/systemtags/l10n/es_MX.js
@@ -3417,6 +3442,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/sr@latin.json
 %%WWWDIR%%/apps/systemtags/l10n/sv.js
 %%WWWDIR%%/apps/systemtags/l10n/sv.json
+%%WWWDIR%%/apps/systemtags/l10n/sv_SE.js
+%%WWWDIR%%/apps/systemtags/l10n/sv_SE.json
 %%WWWDIR%%/apps/systemtags/l10n/ta.js
 %%WWWDIR%%/apps/systemtags/l10n/ta.json
 %%WWWDIR%%/apps/systemtags/l10n/ta_LK.js
@@ -4054,6 +4081,8 @@
 %%WWWDIR%%/core/l10n/eo.json
 %%WWWDIR%%/core/l10n/es.js
 %%WWWDIR%%/core/l10n/es.json
+%%WWWDIR%%/core/l10n/es_419.js
+%%WWWDIR%%/core/l10n/es_419.json
 %%WWWDIR%%/core/l10n/es_AR.js
 %%WWWDIR%%/core/l10n/es_AR.json
 %%WWWDIR%%/core/l10n/es_CL.js
@@ -4186,6 +4215,8 @@
 %%WWWDIR%%/core/l10n/su.json
 %%WWWDIR%%/core/l10n/sv.js
 %%WWWDIR%%/core/l10n/sv.json
+%%WWWDIR%%/core/l10n/sv_SE.js
+%%WWWDIR%%/core/l10n/sv_SE.json
 %%WWWDIR%%/core/l10n/sw_KE.js
 %%WWWDIR%%/core/l10n/sw_KE.json
 %%WWWDIR%%/core/l10n/ta.js
@@ -7014,6 +7045,22 @@
 %%WWWDIR%%/lib/composer/laminas/laminas-validator/src/ValidatorPluginManagerAwareInterface.php
 %%WWWDIR%%/lib/composer/laminas/laminas-validator/src/ValidatorPluginManagerFactory.php
 %%WWWDIR%%/lib/composer/laminas/laminas-validator/src/ValidatorProviderInterface.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/LICENSE.md
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/composer.json
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Contracts/Serializable.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Contracts/Signer.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Exceptions/InvalidSignatureException.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Exceptions/MissingSecretKeyException.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Exceptions/PhpVersionNotSupportedException.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/SerializableClosure.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Serializers/Native.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Serializers/Signed.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Signers/Hmac.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Support/ClosureScope.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Support/ClosureStream.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Support/ReflectionClosure.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/Support/SelfReference.php
+%%WWWDIR%%/lib/composer/laravel/serializable-closure/src/UnsignedSerializableClosure.php
 %%WWWDIR%%/lib/composer/league/flysystem/LICENSE
 %%WWWDIR%%/lib/composer/league/flysystem/composer.json
 %%WWWDIR%%/lib/composer/league/flysystem/src/Adapter/AbstractAdapter.php
@@ -7329,19 +7376,6 @@
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/ParserFactory.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php
 %%WWWDIR%%/lib/composer/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php
-%%WWWDIR%%/lib/composer/opis/closure/LICENSE
-%%WWWDIR%%/lib/composer/opis/closure/composer.json
-%%WWWDIR%%/lib/composer/opis/closure/functions.php
-%%WWWDIR%%/lib/composer/opis/closure/src/Analyzer.php
-%%WWWDIR%%/lib/composer/opis/closure/src/ClosureContext.php
-%%WWWDIR%%/lib/composer/opis/closure/src/ClosureScope.php
-%%WWWDIR%%/lib/composer/opis/closure/src/ClosureStream.php
-%%WWWDIR%%/lib/composer/opis/closure/src/ISecurityProvider.php
-%%WWWDIR%%/lib/composer/opis/closure/src/ReflectionClosure.php
-%%WWWDIR%%/lib/composer/opis/closure/src/SecurityException.php
-%%WWWDIR%%/lib/composer/opis/closure/src/SecurityProvider.php
-%%WWWDIR%%/lib/composer/opis/closure/src/SelfReference.php
-%%WWWDIR%%/lib/composer/opis/closure/src/SerializableClosure.php
 %%WWWDIR%%/lib/composer/owncloud/tarstreamer/LICENSE
 %%WWWDIR%%/lib/composer/owncloud/tarstreamer/composer.json
 %%WWWDIR%%/lib/composer/owncloud/tarstreamer/src/TarHeader.php
@@ -9490,6 +9524,7 @@
 %%WWWDIR%%/lib/composer/symfony/translation/Writer/TranslationWriter.php
 %%WWWDIR%%/lib/composer/symfony/translation/Writer/TranslationWriterInterface.php
 %%WWWDIR%%/lib/composer/symfony/translation/composer.json
+%%WWWDIR%%/lib/kernel.php
 %%WWWDIR%%/lib/l10n/ach.js
 %%WWWDIR%%/lib/l10n/ach.json
 %%WWWDIR%%/lib/l10n/ady.js
@@ -9672,6 +9707,8 @@
 %%WWWDIR%%/lib/l10n/su.json
 %%WWWDIR%%/lib/l10n/sv.js
 %%WWWDIR%%/lib/l10n/sv.json
+%%WWWDIR%%/lib/l10n/sv_SE.js
+%%WWWDIR%%/lib/l10n/sv_SE.json
 %%WWWDIR%%/lib/l10n/sw_KE.js
 %%WWWDIR%%/lib/l10n/sw_KE.json
 %%WWWDIR%%/lib/l10n/ta.js
@@ -10081,7 +10118,6 @@
 %%WWWDIR%%/lib/private/Repair/DisableExtraThemes.php
 %%WWWDIR%%/lib/private/Repair/DropOldJobs.php
 %%WWWDIR%%/lib/private/Repair/DropOldTables.php
-%%WWWDIR%%/lib/private/Repair/FillETags.php
 %%WWWDIR%%/lib/private/Repair/InnoDB.php
 %%WWWDIR%%/lib/private/Repair/MoveAvatarIntoSubFolder.php
 %%WWWDIR%%/lib/private/Repair/MoveAvatarOutsideHome.php
@@ -10547,6 +10583,7 @@
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/settings/Application.php
 %%WWWDIR%%/settings/ChangePassword/Controller.php
+%%WWWDIR%%/settings/Controller/AppConfigController.php
 %%WWWDIR%%/settings/Controller/AppSettingsController.php
 %%WWWDIR%%/settings/Controller/AuthSettingsController.php
 %%WWWDIR%%/settings/Controller/CertificateController.php
@@ -10671,6 +10708,8 @@
 %%WWWDIR%%/settings/l10n/eo.json
 %%WWWDIR%%/settings/l10n/es.js
 %%WWWDIR%%/settings/l10n/es.json
+%%WWWDIR%%/settings/l10n/es_419.js
+%%WWWDIR%%/settings/l10n/es_419.json
 %%WWWDIR%%/settings/l10n/es_AR.js
 %%WWWDIR%%/settings/l10n/es_AR.json
 %%WWWDIR%%/settings/l10n/es_CL.js
@@ -10789,6 +10828,8 @@
 %%WWWDIR%%/settings/l10n/sr@latin.json
 %%WWWDIR%%/settings/l10n/sv.js
 %%WWWDIR%%/settings/l10n/sv.json
+%%WWWDIR%%/settings/l10n/sv_SE.js
+%%WWWDIR%%/settings/l10n/sv_SE.json
 %%WWWDIR%%/settings/l10n/ta.js
 %%WWWDIR%%/settings/l10n/ta.json
 %%WWWDIR%%/settings/l10n/ta_IN.js

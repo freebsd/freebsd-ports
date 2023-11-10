@@ -134,6 +134,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/broken.png
 %%DATADIR%%/images/calibrate-printer.png
 %%DATADIR%%/images/cartoon.png
+%%DATADIR%%/images/cartoon2.jpg
 %%DATADIR%%/images/change-alpha.png
 %%DATADIR%%/images/choose-captions.png
 %%DATADIR%%/images/chromatic1.png
@@ -316,13 +317,13 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/soft-focus2.png
 %%DATADIR%%/images/sphere.png
 %%DATADIR%%/images/sphere2.jpg
-%%DATADIR%%/images/stack-layer.png
 %%DATADIR%%/images/stack-noise.png
 %%DATADIR%%/images/stack-noise2.png
 %%DATADIR%%/images/stack-paint.png
 %%DATADIR%%/images/stack-paint2.jpg
 %%DATADIR%%/images/stack-split.png
 %%DATADIR%%/images/stack-split2.png
+%%DATADIR%%/images/stack-versions.png
 %%DATADIR%%/images/stretch.png
 %%DATADIR%%/images/texture.png
 %%DATADIR%%/images/texture2.png

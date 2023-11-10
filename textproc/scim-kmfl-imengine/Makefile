@@ -8,7 +8,7 @@ DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	SCIM KMFL IMEngine platform for Keyman (KMN) language keyboards
-WWW=		http://kmfl.sourceforge.net/
+WWW=		https://kmfl.sourceforge.net/
 
 BUILD_DEPENDS=	scim:textproc/scim
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

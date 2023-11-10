@@ -6,4 +6,5 @@ nat on $v4egress_if inet from <cni-nat> to any -> ($v4egress_if)
 nat on $v6egress_if inet6 from <cni-nat> to !ff00::/8 -> ($v6egress_if)
 
 rdr-anchor "cni-rdr/*"
+nat-anchor "cni-rdr/*"
 table <cni-nat>

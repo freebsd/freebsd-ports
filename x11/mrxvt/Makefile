@@ -6,7 +6,7 @@ MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tabbed version of rxvt
-WWW=		http://materm.sourceforge.net/
+WWW=		https://materm.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

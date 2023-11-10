@@ -1,7 +1,7 @@
 PORTNAME=	rearx
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	24
+PORTREVISION=	25
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -173,8 +173,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 .endif
 

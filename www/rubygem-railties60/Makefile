@@ -24,7 +24,7 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/rails
 
-CONFLICTS_INSTALL=	rubygem-railties4 rubygem-railties5 rubygem-railties50
+CONFLICTS_INSTALL=	rubygem-railties[0-9] rubygem-railties[0-9][0-9]
 
 PORTSCOUT=	limit:^6\.0\.
 

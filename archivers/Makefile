@@ -87,6 +87,7 @@
     SUBDIR += lzmalib
     SUBDIR += lzo2
     SUBDIR += lzop
+    SUBDIR += lzsa
     SUBDIR += makeself
     SUBDIR += mar
     SUBDIR += maxcso
@@ -192,6 +193,7 @@
     SUBDIR += py-bz2file
     SUBDIR += py-compressed-rtf
     SUBDIR += py-cramjam
+    SUBDIR += py-laszip
     SUBDIR += py-libarchive-c
     SUBDIR += py-lz4
     SUBDIR += py-lzma

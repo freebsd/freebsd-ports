@@ -1,11 +1,7 @@
 PORTNAME=	monero-cli
-# To build from an arbitrary git commit comment DISTVERSION and PORTREVISION (if present)
-DISTVERSION=	0.18.2.2
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
-# and uncomment the following two lines (use for example -git-HEAD or -git-b6420e1)
-#PORTVERSION=	0
-#PKGNAMESUFFIX=	-git-HEAD
+DISTVERSION=	0.18.3.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,7 +11,6 @@ WWW=		https://getmonero.org/
 LICENSE=	BSD3CLAUSE
 
 BROKEN_SSL=	libressl
-BROKEN_i386=	fails to compile: register r15d is only available in 64-bit mode
 BROKEN_aarch64=	fails to compile: uses unavailable HWCAP_AES and getauxval
 
 LIB_DEPENDS=	\
@@ -50,10 +45,12 @@ GH_TUPLE=	monero-project:monero:${GIT_COMMIT} \
 
 CFLAGS+=	-D_WANT_SEMUN
 
-OPTIONS_DEFINE=		DOXYGEN
+OPTIONS_DEFINE=		DOXYGEN NATIVE
 DOXYGEN_BUILD_DEPENDS=	dot:graphics/graphviz \
 			doxygen:devel/doxygen
 DOXYGEN_CMAKE_BOOL=	BUILD_DOCUMENTATION
+NATIVE_CMAKE_ON=	-DARCH=native
+NATIVE_CMAKE_OFF=	-DARCH=default
 
 .include <bsd.port.pre.mk>
 

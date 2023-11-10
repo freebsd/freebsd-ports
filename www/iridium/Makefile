@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.09.116.2
-PORTREVISION=	1
+PORTVERSION=	2023.10.118
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -241,7 +240,7 @@ PLIST_SUB+=	NOT_AARCH64=""
 FFMPEG_TARGET=	ia32
 .endif
 
-FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
+FFMPEG_BDIR=	${WRKSRC}/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/freebsd/${FFMPEG_TARGET}
 
 # Allow relocations against read-only segments (override lld default)

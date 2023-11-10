@@ -1,5 +1,5 @@
 bin/endless-sky
-share/applications/endless-sky.desktop
+share/applications/io.github.endless_sky.endless_sky.desktop
 share/icons/hicolor/128x128/apps/endless-sky.png
 share/icons/hicolor/16x16/apps/endless-sky.png
 share/icons/hicolor/22x22/apps/endless-sky.png

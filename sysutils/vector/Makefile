@@ -1,7 +1,7 @@
 PORTNAME=	vector
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	27
+PORTREVISION=	28
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
@@ -564,8 +564,8 @@ LTO_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 .endif
 

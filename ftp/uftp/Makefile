@@ -1,12 +1,12 @@
 PORTNAME=	uftp
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/uftp-multicast/source-tar
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Multicast capable FTP client and server
-WWW=		http://uftp-multicast.sourceforge.net
+WWW=		https://uftp-multicast.sourceforge.net
 
 LICENSE=	GPLv3
 

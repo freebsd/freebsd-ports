@@ -482,7 +482,7 @@ dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 # free: 533
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin
 redis:*:535:535::0:0:Redis Daemon:/nonexistent:/usr/sbin/nologin
-# free: 536
+keydb:*:536:536::0:0:KeyDB Daemon:/nonexistent:/usr/sbin/nologin
 # free: 537
 # free: 538
 # free: 539
@@ -763,7 +763,7 @@ foreman_proxy:*:812:812::0:0:Foreman Smart Proxy:/usr/local/share/foreman-proxy:
 hitch:*:813:813::0:0:Hitch TLS Proxy:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
 uchiwa:*:815:815::0:0:Uchiwa Dashboard:/nonexistent:/usr/sbin/nologin
-# free: 816
+promtail:*:816:967::0:0:Promtail:/var/db/promtail:/usr/sbin/nologin
 rslsync:*:817:817::0:0:Resilio Sync Daemon:/nonexistent:/usr/sbin/nologin
 jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/bin/sh
 rundeck:*:819:819::0:0:Rundeck:/usr/local/rundeck:/bin/sh
@@ -775,7 +775,7 @@ selenium:*:824:824::0:0:Selenium Daemon User:/usr/local/selenium:/bin/sh
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
 _tuptime:*:827:827::0:0:Tuptime:/var/lib/tuptime:/usr/sbin/nologin
-# free: 828
+cirrus:*:828:828::0:0:Cirrus CI:/usr/local/cirrus:/bin/sh
 # free: 829
 # free: 830
 # free: 831

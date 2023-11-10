@@ -6,31 +6,35 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
-WWW=		http://gmerlin.sourceforge.net/
+WWW=		https://gmerlin.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=		Upstream last activity was in 2012
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libgavl.so:multimedia/gavl \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		gettext gl gnome libtool makeinfo pathfix pkgconfig sqlite xorg
-USE_GNOME=	gtk20 libxml2
-USE_XORG=	x11 xext xfixes xinerama xv
+USES=		gettext gl gnome libtool localbase makeinfo pathfix pkgconfig sqlite xorg
 USE_GL=		gl
+USE_GNOME=	gtk20 libxml2
+USE_LDCONFIG=	yes
+USE_XORG=	x11 xext xfixes xinerama xv
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz \
 		--disable-esd --disable-lqt
-USE_LDCONFIG=	yes
-LLD_UNSAFE=	yes
+CONFIGURE_ENV=	ac_cv_func_inotify_init=no
+
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--add-needed
+
+LLD_UNSAFE=	yes
 
 INFO=		gmerlin
 
@@ -73,7 +77,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-ldl||g'
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 

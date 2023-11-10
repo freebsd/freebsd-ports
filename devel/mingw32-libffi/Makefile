@@ -2,24 +2,34 @@ PORTNAME=	libffi
 PORTVERSION=	3.0.13
 PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://sourceware.org/pub/libffi/
+MASTER_SITES=	SOURCEWARE/libffi/
 PKGNAMEPREFIX=	mingw32-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The libffi library cross-compiled for MinGW32
-WWW=		http://sources.redhat.com/libffi/
+WWW=		https://sourceware.org/libffi/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Last upstream release was in 2014 and mingw32 project is defunct
+EXPIRATION_DATE=	2023-11-20
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt
 
-SSP_UNSAFE=	fails to link
+USES=		cpe libtool
+CPE_VENDOR=	${PORTNAME}_project
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_PREFIX=	${PREFIX}/mingw32
 CONFIGURE_ARGS=	--host="mingw32" --enable-shared
-CC=		${PKGNAMEPREFIX}gcc
+
 CFLAGS=		-O2	# Override CFLAGS for a cross-build
-USES=		cpe libtool
-CPE_VENDOR=	${PORTNAME}_project
+SSP_UNSAFE=	fails to link
+
+CC=		${PKGNAMEPREFIX}gcc
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-patch:

@@ -1,0 +1,12 @@
+--- Source/WebKit/webkitglib-symbols.map.orig	2021-05-17 13:22:43 UTC
++++ Source/WebKit/webkitglib-symbols.map
+@@ -3,9 +3,6 @@ global:
+   jsc_*;
+   webkit_*;
+   extern "C++" {
+-    "bmalloc::PerThreadStorage<bmalloc::PerHeapKind<bmalloc::Cache> >::s_didInitialize";
+-    "bmalloc::PerThreadStorage<bmalloc::PerHeapKind<bmalloc::Cache> >::s_key";
+-    "bmalloc::vmPageSize()::cached";
+     "WebKit::NetworkProcessMain(int, char**)";
+     "WebKit::WebKitExtensionManager::initialize(WebKit::InjectedBundle*, API::Object*)";
+     "WebKit::WebKitExtensionManager::singleton()";

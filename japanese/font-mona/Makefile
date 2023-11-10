@@ -8,7 +8,7 @@ DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	12,14,16-dot Kanji fonts
-WWW=		http://monafont.sourceforge.net/
+WWW=		https://monafont.sourceforge.net/
 
 LICENSE=	PD
 

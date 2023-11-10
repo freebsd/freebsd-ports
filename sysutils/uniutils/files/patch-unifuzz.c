@@ -1,6 +1,6 @@
---- unifuzz.c.orig	2008-04-04 06:30:58.000000000 +0200
-+++ unifuzz.c	2013-09-05 09:50:49.000000000 +0200
-@@ -97,7 +97,7 @@
+--- unifuzz.c.orig	2020-11-20 08:28:53 UTC
++++ unifuzz.c
+@@ -97,7 +97,7 @@ EmitBadUTF8 () {
  }
  
  /* Emit the middle character from each range */

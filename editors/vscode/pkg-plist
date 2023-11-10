@@ -275,6 +275,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ini/syntaxes/ini.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/ipynb/README.md
 %%DATADIR%%/resources/app/extensions/ipynb/dist/ipynbMain.js
+%%DATADIR%%/resources/app/extensions/ipynb/media/icon.png
 %%DATADIR%%/resources/app/extensions/ipynb/notebook-out/cellAttachmentRenderer.js
 %%DATADIR%%/resources/app/extensions/ipynb/package.json
 %%DATADIR%%/resources/app/extensions/ipynb/package.nls.json
@@ -488,8 +489,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/extension.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/hash.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/mappings.wasm
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/renameWorker.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/targets/node/terminateProcess.sh
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/ui/basic-wat.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/vendor/acorn-loose.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/vendor/acorn.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/w32appcontainertokens-XTRA77NA.node
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/src/watchdog.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/README.md
@@ -606,6 +610,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/zh-tw/diagnosticMessages.generated.json
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/package.json
 %%DATADIR%%/resources/app/extensions/notebook-renderers/README.md
+%%DATADIR%%/resources/app/extensions/notebook-renderers/media/icon.png
 %%DATADIR%%/resources/app/extensions/notebook-renderers/package.json
 %%DATADIR%%/resources/app/extensions/notebook-renderers/package.nls.json
 %%DATADIR%%/resources/app/extensions/notebook-renderers/renderer-out/index.js
@@ -674,6 +679,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ruby/package.json
 %%DATADIR%%/resources/app/extensions/ruby/package.nls.json
 %%DATADIR%%/resources/app/extensions/ruby/syntaxes/ruby.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/rust/build/update-grammar.mjs
 %%DATADIR%%/resources/app/extensions/rust/language-configuration.json
 %%DATADIR%%/resources/app/extensions/rust/package.json
 %%DATADIR%%/resources/app/extensions/rust/package.nls.json
@@ -849,6 +855,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/node/cpuUsage.sh
 %%DATADIR%%/resources/app/out/vs/base/node/ps.sh
 %%DATADIR%%/resources/app/out/vs/base/node/terminateProcess.sh
+%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload-slim.js
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload.js
 %%DATADIR%%/resources/app/out/vs/base/worker/workerMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.js
@@ -880,12 +887,15 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived2.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived3.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived4.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/clear.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineDeleted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineInserted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineModified.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/error.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/foldedAreas.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/format.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/quickFixes.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/save.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/taskCompleted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/taskFailed.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/terminalBell.mp3
@@ -960,7 +970,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/services/languageDetection/browser/languageDetectionSimpleWorker.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/search/worker/localFileSearch.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/textMate/browser/backgroundTokenization/worker/textMateTokenizationWorker.worker.js
-%%DATADIR%%/resources/app/out/vs/workbench/services/voiceRecognition/electron-sandbox/voiceTranscriptionWorklet.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.css
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.nls.js

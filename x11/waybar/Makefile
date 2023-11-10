@@ -1,5 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.22
+DISTVERSION=	0.9.24
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -70,7 +70,8 @@ JACK_MESON_ENABLED=	jack
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
-MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
+MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight-slider.5.gz \
+			man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-battery.5.gz \
 			man/man5/${PORTNAME}-bluetooth.5.gz \
 			man/man5/${PORTNAME}-cava.5.gz \
@@ -88,6 +89,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-mpd.5.gz \
 			man/man5/${PORTNAME}-mpris.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
+			man/man5/${PORTNAME}-pulseaudio-slider.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
 			man/man5/${PORTNAME}-river-layout.5.gz \
 			man/man5/${PORTNAME}-river-mode.5.gz \

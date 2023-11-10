@@ -1,0 +1,13 @@
+- workaround for https://gitlab.kitware.com/cmake/cmake/-/issues/25358
+
+--- CMakeLists.txt.orig	2023-10-24 00:58:47 UTC
++++ CMakeLists.txt
+@@ -100,7 +100,7 @@ message(STATUS "TinyXML_LIBRARY: ${TinyXML_LIBRARY}")
+ 
+ INCLUDE_DIRECTORIES( ${TinyXML_INCLUDE_DIR} )
+ 
+-find_package(HDF5 1.8 COMPONENTS C HL REQUIRED)
++find_package(HDF5 COMPONENTS C HL REQUIRED)
+ INCLUDE_DIRECTORIES (${HDF5_INCLUDE_DIRS})
+ link_directories(${HDF5_LIBRARY_DIRS})
+ # hdf5 compat

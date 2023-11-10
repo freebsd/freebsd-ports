@@ -1,8 +1,8 @@
---- cmake/QtRpathHelpers.cmake.orig	2022-09-19 10:23:04 UTC
+--- cmake/QtRpathHelpers.cmake.orig	2023-09-21 19:24:26 UTC
 +++ cmake/QtRpathHelpers.cmake
-@@ -5,6 +5,8 @@ function(qt_internal_get_relative_rpath_base_token out
+@@ -8,6 +8,8 @@ function(qt_internal_get_relative_rpath_base_token out
          set(rpath_rel_base "@loader_path")
-     elseif(LINUX OR SOLARIS OR FREEBSD OR HURD)
+     elseif(LINUX OR SOLARIS OR FREEBSD OR HURD OR OPENBSD)
          set(rpath_rel_base "$ORIGIN")
 +    elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
 +        set(rpath_rel_base "$ORIGIN")

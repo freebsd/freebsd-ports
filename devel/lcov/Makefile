@@ -5,7 +5,7 @@ MASTER_SITES=	SF/ltp/Coverage%20Analysis/LCOV-${PORTVERSION}
 
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Linux Test Project GCOV extension
-WWW=		http://ltp.sourceforge.net/coverage/lcov.php
+WWW=		https://ltp.sourceforge.net/coverage/lcov.php
 
 LICENSE=	GPLv2
 

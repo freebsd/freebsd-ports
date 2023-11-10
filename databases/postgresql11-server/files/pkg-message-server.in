@@ -36,7 +36,7 @@ postgres:\
 	:tc=default:
 ---
 and run `cap_mkdb /etc/login.conf'.
-Then add 'postgresql_class="postgres"' to /etc/rc.conf.
+Then add 'postgresql_login_class="postgres"' to /etc/rc.conf.
 
 ======================================================================
 

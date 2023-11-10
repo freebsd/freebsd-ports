@@ -18,8 +18,6 @@ BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_openssl31=		not ready for openssl31
 
-BUILD_DEPENDS=  cmake>=3.18.1:devel/cmake
-
 USES=		cmake ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=     gost-engine

@@ -7,7 +7,7 @@ DISTNAME=	rebuild_db-${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	IPod shuffle database builder
-WWW=		http://shuffle-db.sourceforge.net/
+WWW=		https://shuffle-db.sourceforge.net/
 
 USES=		python shebangfix
 NO_ARCH=	yes

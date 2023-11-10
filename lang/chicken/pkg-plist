@@ -4,8 +4,8 @@ bin/chicken-install
 bin/chicken-profile
 bin/chicken-status
 bin/chicken-uninstall
-bin/csc
-bin/csi
+bin/chicken-csc
+bin/chicken-csi
 %%FEATHERS%%bin/feathers
 include/chicken/chicken-config.h
 include/chicken/chicken.h
@@ -62,8 +62,8 @@ man/man1/chicken-profile.1.gz
 man/man1/chicken-status.1.gz
 man/man1/chicken-uninstall.1.gz
 man/man1/chicken.1.gz
-man/man1/csc.1.gz
-man/man1/csi.1.gz
+man/man1/chicken-csc.1.gz
+man/man1/chicken-csi.1.gz
 %%FEATHERS%%man/man1/feathers.1.gz
 %%FEATHERS%%%%DATADIR%%/feathers.tcl
 %%DATADIR%%/setup.defaults

@@ -1,5 +1,5 @@
 PORTNAME=	ne
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	editors
 MASTER_SITES=	http://ne.di.unimi.it/
 

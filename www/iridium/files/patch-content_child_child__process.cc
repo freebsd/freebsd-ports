@@ -1,6 +1,6 @@
---- content/child/child_process.cc.orig	2023-07-24 14:27:53 UTC
+--- content/child/child_process.cc.orig	2023-10-21 11:51:27 UTC
 +++ content/child/child_process.cc
-@@ -67,7 +67,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
+@@ -70,7 +70,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
        io_thread_(std::make_unique<ChildIOThread>()) {
    const base::CommandLine& command_line =
        *base::CommandLine::ForCurrentProcess();

@@ -1,6 +1,6 @@
 PORTNAME=	asl
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	math
 MASTER_SITES=	https://coin-or-tools.github.io/ThirdParty-ASL/:solvers
 PKGNAMEPREFIX=	coin-or-

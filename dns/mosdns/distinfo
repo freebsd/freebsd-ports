@@ -1,0 +1,5 @@
+TIMESTAMP = 1699248831
+SHA256 (go/dns_mosdns/mosdns-v5.3.1/v5.3.1.mod) = b33460a1f771d4e9ca3eed461131d81dbc52ff00b1f2d350619e55096137be6f
+SIZE (go/dns_mosdns/mosdns-v5.3.1/v5.3.1.mod) = 2962
+SHA256 (go/dns_mosdns/mosdns-v5.3.1/v5.3.1.zip) = cd0a8698cb1fefc5a7dc97f357c5b953018a27ec883f3efb06659ccf0df37d4b
+SIZE (go/dns_mosdns/mosdns-v5.3.1/v5.3.1.zip) = 272625

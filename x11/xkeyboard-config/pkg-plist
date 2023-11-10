@@ -1,4 +1,3 @@
-libdata/pkgconfig/xkeyboard-config.pc
 man/man7/xkeyboard-config.7.gz
 share/X11/xkb/compat/README
 share/X11/xkb/compat/accessx
@@ -90,6 +89,7 @@ share/X11/xkb/symbols/af
 share/X11/xkb/symbols/al
 share/X11/xkb/symbols/altwin
 share/X11/xkb/symbols/am
+share/X11/xkb/symbols/ancient
 share/X11/xkb/symbols/apl
 share/X11/xkb/symbols/ara
 share/X11/xkb/symbols/at
@@ -99,6 +99,7 @@ share/X11/xkb/symbols/ba
 share/X11/xkb/symbols/bd
 share/X11/xkb/symbols/be
 share/X11/xkb/symbols/bg
+share/X11/xkb/symbols/bqn
 share/X11/xkb/symbols/br
 share/X11/xkb/symbols/brai
 share/X11/xkb/symbols/bt
@@ -153,7 +154,6 @@ share/X11/xkb/symbols/is
 share/X11/xkb/symbols/it
 share/X11/xkb/symbols/jolla_vndr/sbj
 share/X11/xkb/symbols/jp
-share/X11/xkb/symbols/jv
 share/X11/xkb/symbols/ke
 share/X11/xkb/symbols/keypad
 share/X11/xkb/symbols/kg
@@ -187,7 +187,6 @@ share/X11/xkb/symbols/macintosh_vndr/no
 share/X11/xkb/symbols/macintosh_vndr/pt
 share/X11/xkb/symbols/macintosh_vndr/se
 share/X11/xkb/symbols/macintosh_vndr/us
-share/X11/xkb/symbols/mao
 share/X11/xkb/symbols/md
 share/X11/xkb/symbols/me
 share/X11/xkb/symbols/mk

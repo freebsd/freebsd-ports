@@ -1,5 +1,5 @@
 PORTNAME=	glib
-DISTVERSION=	2.78.0
+DISTVERSION=	2.78.1
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -36,7 +36,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7800.0
+_LIBVERSION=	0.7800.1
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
@@ -86,9 +86,6 @@ post-configure-GTKDOC-on:
 	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|/usr/share/locale/locale|${LOCALBASE}/share/locale/locale|g' \
-		${WRKSRC}/glib/gutils.c
 	${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
 		${WRKSRC}/gio/gdbus-2.0/codegen/gdbus-codegen.in \
 		${WRKSRC}/glib/gtester-report.in \

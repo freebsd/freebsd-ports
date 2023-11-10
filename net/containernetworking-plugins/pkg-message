@@ -21,10 +21,19 @@ enable PF support for these redirections using sysctl:
 # sysctl net.pf.filter_local=1
 # service pf restart
 
-These redirect rules do not currently work if the destination address is
-localhost (e.g. 127.0.0.1 or ::1) - always use the hosts IP address when
-connecting to a service inside a container using a port redirection. For example
-if host port 1234 is redirected to an http service running in a container, you
-could connect to it using:
+Redirect rules will work if the destination address is localhost (e.g. 127.0.0.1
+or ::1) - to enable this, the following line must be included in your
+/etc/pf.conf:
+
+nat-anchor "cni-rdr/*"
+
+if upgrading from an older version, this needs to be added to /etc/pf.conf.
+
+For example if host port 1234 is redirected to an http service running in a
+container, you could connect to it using:
 
 # fetch -o- http://$(hostname):1234
+
+or
+
+# fetch -o- http://localhost:1234

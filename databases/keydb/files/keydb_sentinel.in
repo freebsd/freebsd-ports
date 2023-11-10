@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: keydb_sentinel
+# REQUIRE: LOGIN
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `sentinel':
+#
+#keydb_sentinel_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="keydb_sentinel"
+rcvar="${name}_enable"
+
+command="/usr/local/bin/keydb-sentinel"
+pidfile="/var/run/keydb/$name.pid"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${keydb_sentinel_enable="NO"}
+: ${keydb_sentinel_user="keydb"}
+: ${keydb_sentinel_config="/usr/local/etc/$name.conf"}
+
+command_args="${keydb_sentinel_config} --daemonize yes --pidfile ${pidfile}"
+required_files="${keydb_sentinel_config}"
+start_precmd="${name}_checks"
+restart_precmd="${name}_checks"
+
+keydb_sentinel_checks()
+{
+    if [ x`id -u ${keydb_sentinel_user}` != x`stat -f %u ${keydb_sentinel_config}` ]; then
+	err 1 "${keydb_sentinel_config} must be owned by user ${keydb_sentinel_user}"
+    fi
+}
+
+run_rc_command "$1"

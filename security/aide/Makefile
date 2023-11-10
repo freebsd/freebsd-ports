@@ -1,5 +1,5 @@
 PORTNAME=	aide
-PORTVERSION=	0.17.4
+PORTVERSION=	0.18.6
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
@@ -8,16 +8,23 @@ COMMENT=	File and directory integrity checker
 WWW=		https://aide.github.io/
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
-		libpcre.so:devel/pcre
+		libpcre.so:devel/pcre \
+		libe2p.so:sysutils/e2fsprogs-core
 
 USES=		bison gmake localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
+		--with-posix-acl \
+		--with-e2fsattrs \
 		--mandir=${MANPREFIX}/man \
 		--with-config_file=${PREFIX}/etc/aide.conf
-CONFIGURE_ENV=	YACC="bison -y"
+CONFIGURE_ENV=	YACC="bison -y" \
+		POSIX_ACL_CFLAGS="-I/usr/include/sys" \
+		POSIX_ACL_LIBS="-L/usr/lib" \
+		MHASH_CFLAGS="-I${LOCALBASE}/include" \
+		MHASH_LIBS="-L${LOCALBASE}/lib -lmhash"
 
 LDFLAGS+=	-lpthread
 

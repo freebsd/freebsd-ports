@@ -36,6 +36,7 @@
 %%HTML%%%%DOCBASE%%/en/articles/solid-state/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vm-design/index.html
+%%HTML%%%%DOCBASE%%/en/articles/vpn-ipsec/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/boot/index.html
@@ -617,6 +618,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/dru.key
 %%HTML%%%%DOCBASE%%/pgpkeys/dryice.key
 %%HTML%%%%DOCBASE%%/pgpkeys/dsl.key
+%%HTML%%%%DOCBASE%%/pgpkeys/dumbbell.key
 %%HTML%%%%DOCBASE%%/pgpkeys/dutchdaemon.key
 %%HTML%%%%DOCBASE%%/pgpkeys/dwmalone.key
 %%HTML%%%%DOCBASE%%/pgpkeys/eadler.key
@@ -688,6 +690,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/jdp.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jedgar.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jesper.key
+%%HTML%%%%DOCBASE%%/pgpkeys/jfree.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jgh.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jhale.key
 %%HTML%%%%DOCBASE%%/pgpkeys/jhay.key
@@ -791,6 +794,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/mheinen.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mhorne.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mi.key
+%%HTML%%%%DOCBASE%%/pgpkeys/michaelo.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mikael.key
 %%HTML%%%%DOCBASE%%/pgpkeys/mikeh.key
 %%HTML%%%%DOCBASE%%/pgpkeys/milki.key
@@ -1032,6 +1036,7 @@
 %%PDF%%%%DOCBASE%%/en/articles/solid-state/solid-state_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vinum/vinum_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vm-design/vm-design_en.pdf
+%%PDF%%%%DOCBASE%%/en/articles/vpn-ipsec/vpn-ipsec_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/arch-handbook/arch-handbook_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/design-44bsd/design-44bsd_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/dev-model/dev-model_en.pdf

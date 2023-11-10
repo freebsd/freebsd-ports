@@ -1,4 +1,4 @@
-Uniutils consists of five programs for finding out what is in a Unicode file.
+Uniutils consists of six programs for finding out what is in a Unicode file.
 They are useful when working with Unicode files when one doesn't know the
 writing system, doesn't have the necessary font, needs to inspect invisible
 characters, needs to find out whether characters have been combined or in what
@@ -19,3 +19,6 @@ determines and explains the validity of a sequence of bytes as a UTF8 encoding.
 
 Unirev is a filter that reverses UTF-8 strings character-by-character (as
 opposed to byte-by-byte).
+
+Unisurrogate takes a codepoint on the command line and, if it falls outside the
+BMP, reports its surrogate decomposition.

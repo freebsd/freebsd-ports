@@ -72,6 +72,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm_redis.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sql.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sql_schema.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sql_sup.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sql_pt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_stun.beam
@@ -176,6 +177,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_ws.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_occupantid.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_admin.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_admin_opt.beam
@@ -587,6 +589,7 @@
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql.beam
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql_app.beam
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql_auth.beam
+%%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql_bin.beam
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql_conn.beam
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/ebin/p1_mysql_sup.beam
 %%MYSQL%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/p1_mysql-%%P1_MYSQL_VER%%/include/p1_mysql.hrl
@@ -763,9 +766,11 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0363.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0369.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0377.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0402.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0403.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0405.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0417.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0421.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0422.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0424.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0425.beam
@@ -846,6 +851,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/js/muc.js
 %%REDIS%%%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/lua/redis_sm.lua
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ar.msg
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/bg.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ca.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/cs.msg
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/de.msg

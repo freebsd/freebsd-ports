@@ -1,8 +1,11 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
+
+PATCH_SITES=	https://github.com/h2o/h2o/pull/:github
+PATCHFILES=	3293.patch:-p1:github
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Optimized HTTP/2 server including support for TLS 1.3 and HTTP/1.x
@@ -11,6 +14,7 @@ WWW=		https://github.com/h2o/h2o
 LICENSE=	BSD2CLAUSE MIT
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream EOL confirmed on 2023-10-10, removal planned for 2023-12-30
 BROKEN_armv6=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_armv7=	fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_FreeBSD_12_powerpc64=	fails to link: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
@@ -18,17 +22,18 @@ BROKEN_FreeBSD_12_powerpc64=	fails to link: unrecognized option '-Wl,-rpath=/usr
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		cmake:noninja compiler:c11 cpe perl5 pkgconfig shebangfix ssl
-USE_GITHUB=	yes
-USE_PERL5=	run
-USE_LDCONFIG=	yes
-
 CPE_VENDOR=	dena
-
-CONFLICTS=	h2o-devel
+USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+USE_PERL5=	run
+USE_RC_SUBR=	${PORTNAME}
 
 SHEBANG_FILES=	share/h2o/start_server
 
-PORTDOCS=	README.md
+CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
+		-DWITH_BUNDLED_SSL=OFF
+
+CONFLICTS=	h2o-devel
 
 SUB_FILES=	${PORTNAME} ${PORTNAME}.conf.sample
 SUB_LIST+=	H2O_GROUP=${H2O_GROUP} \
@@ -39,23 +44,20 @@ PLIST_SUB=	H2O_GROUP=${H2O_GROUP} \
 		H2O_LOGDIR=${H2O_LOGDIR} \
 		H2O_USER=${H2O_USER}
 
+PORTDOCS=	README.md
+
 H2O_USER?=	www
 H2O_GROUP?=	www
 
 H2O_LOGDIR=	/var/log/${PORTNAME}/
-
-USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS MRUBY
 OPTIONS_DEFAULT=	MRUBY
 OPTIONS_SUB=		yes
 MRUBY_DESC=		Build with embedded mruby handler support
 
-CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=ON \
-		-DWITH_BUNDLED_SSL=OFF
-
-MRUBY_CMAKE_BOOL=	WITH_MRUBY
 MRUBY_USES=		bison ruby:build
+MRUBY_CMAKE_BOOL=	WITH_MRUBY
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|exec perl|exec ${LOCALBASE}/bin/perl|' \

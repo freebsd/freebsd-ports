@@ -1,5 +1,5 @@
 PORTNAME=	xdoctest
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI # has no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,10 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.11.0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.0.15:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=2.0.15:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>=3.0.0:devel/py-pytest-cov@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils concurrent autoplist pytest
+USE_PYTHON=	distutils concurrent autoplist pytest # 2 tests fail
 
 NO_ARCH=	yes
 

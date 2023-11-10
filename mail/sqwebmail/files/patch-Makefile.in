@@ -1,7 +1,7 @@
---- Makefile.in.orig	2017-06-23 20:05:50.000000000 +0900
-+++ Makefile.in	2017-08-11 02:13:12.050582000 +0900
-@@ -395,18 +395,18 @@
- 
+--- Makefile.in.orig	2023-08-28 12:32:30 UTC
++++ Makefile.in
+@@ -404,13 +404,13 @@ EXTRA_DIST = INSTALL.html README NEWS README.html READ
+ 	packaging/debian/sqwebmail-apache2.lintian-overrides
  scriptbindir = $(sbindir)
  scriptbin_SCRIPTS = \
 -	sharedindexinstall sharedindexsplit
@@ -14,35 +14,9 @@
 -	sharedindexinstall sharedindexsplit
 +	sharedindexinstall.sqwebmail sharedindexsplit.sqwebmail
  
- pkgman8dir = @mandir@/man8
--pkgman8_DATA = deliverquota.8
-+pkgman8_DATA = deliverquota.sqwebmail.8
- pkgman1dir = @mandir@/man1
--pkgman1_DATA = maildirmake.1
-+pkgman1_DATA = maildirmake.sqwebmail.1
- WWW = $$HOME/www/www.courier-mta.org
+ WWW = $$HOME/www/hostrocket/courier-mta.org
  @HAVE_HTMLPAGES_TRUE@NEWS_SOURCE = html/index.html
- all: config.h
-@@ -1091,14 +1091,14 @@
- maildirmake: libs/maildir/maildirmake
- 	cp libs/maildir/maildirmake .
- 
--maildirmake.1: libs/maildir/maildirmake.1
--	cp libs/maildir/maildirmake.1 .
-+maildirmake.sqwebmail.1: libs/maildir/maildirmake.1
-+	cp libs/maildir/maildirmake.1 maildirmake.sqwebmail.1
- 
- deliverquota: libs/maildir/deliverquota
- 	cp libs/maildir/deliverquota .
- 
--deliverquota.8: libs/maildir/deliverquota.8
--	cp libs/maildir/deliverquota.8 .
-+deliverquota.sqwebmail.8: libs/maildir/deliverquota.8
-+	cp libs/maildir/deliverquota.8 deliverquota.sqwebmail.8
- 
- reformime: libs/rfc2045/reformime
- 	cp libs/rfc2045/reformime .
-@@ -1106,11 +1106,11 @@
+@@ -1068,11 +1068,11 @@ reformime: libs/rfc2045/reformime
  makemime: libs/rfc2045/makemime
  	cp libs/rfc2045/makemime .
  

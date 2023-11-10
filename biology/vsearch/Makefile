@@ -1,6 +1,7 @@
 PORTNAME=		vsearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=		2.23.0
+DISTVERSION=		2.24.0
+PORTREVISION=		1
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	Explicitly enumerated by upstream developers
-
-LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
 
 USES=		autoreconf ghostscript:build gmake localbase
 USE_GITHUB=	yes

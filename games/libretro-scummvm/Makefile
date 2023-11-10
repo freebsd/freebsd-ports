@@ -1,5 +1,5 @@
 PORTNAME=	libretro-scummvm
-PORTVERSION=	0.20201129
+DISTVERSION=	0.20231021
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,23 +8,27 @@ WWW=		https://github.com/libretro/scummvm
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_13=	engines/sludge/loadsave.cpp:201:10: error: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
-BROKEN_FreeBSD_14=	engines/sludge/loadsave.cpp:201:10: error: cannot initialize return object of type 'bool' with an rvalue of type 'nullptr_t'
+BROKEN=		requires network access
 
-USES=		compiler:c++11-lib gmake
+BUILD_DEPENDS=	bash:shells/bash \
+		git:devel/git
+
+USES=		compiler:c++11-lib gmake shebangfix
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	yes
+USE_GITHUB=	yesx
 GH_ACCOUNT=	libretro
 GH_PROJECT=	scummvm
-GH_TAGNAME=	7b1e929
+GH_TAGNAME=	d836ec97edb3aca21ab1d2aea6a4dbf00420cbf9
 
 PLIST_FILES=	lib/libretro/scummvm_libretro.so
 
-MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/backends/platform/libretro
+
+SHEBANG_FILES=	backends/platform/libretro/scripts/*.sh
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/backends/platform/libretro/build/scummvm_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${BUILD_WRKSRC}/scummvm_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

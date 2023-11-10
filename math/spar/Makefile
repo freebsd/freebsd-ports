@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Spar/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Modular math parser
-WWW=		http://spar.sourceforge.net/
+WWW=		https://spar.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

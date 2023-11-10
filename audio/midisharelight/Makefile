@@ -4,7 +4,7 @@ CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Light version of the MidiShare library
-WWW=		http://midishare.sourceforge.net
+WWW=		https://midishare.sourceforge.net
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE

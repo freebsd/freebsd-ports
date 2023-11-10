@@ -23,7 +23,7 @@
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
 -        CONDITION BUILD_WITH_PCH AND NOT LINUX
-+	CONDITION BUILD_WITH_PCH AND NOT (LINUX OR FREEBSD)
++        CONDITION BUILD_WITH_PCH AND NOT LINUX AND NOT FREEBSD
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on

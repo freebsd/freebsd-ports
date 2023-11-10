@@ -8,7 +8,7 @@ DISTFILES=	jogl-v${PORTVERSION}.tar.xz \
 		gluegen-v${PORTVERSION}.tar.xz \
 		jcpp-v${PORTVERSION}.tar.xz
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java bindings for OpenGL
 WWW=		https://jogamp.org/jogl
 

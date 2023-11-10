@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	andrey@bsdnir.info
 COMMENT=	DKIM filter for Postfix
-WWW=		http://dkimproxy.sourceforge.net/
+WWW=		https://dkimproxy.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

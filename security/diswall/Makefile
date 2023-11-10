@@ -1,7 +1,6 @@
 PORTNAME=	diswall
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.2
-PORTREVISION=	2
+DISTVERSION=	0.4.3
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,14 +18,15 @@ GH_PROJECT=	diswall-rs
 
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.3 \
+		allocator-api2-0.2.16 \
 		async-channel-1.6.1 \
 		async-task-4.1.0 \
 		atomic-waker-1.0.0 \
-		autocfg-1.1.0 \
 		base64-0.13.0 \
 		base64-url-1.4.10 \
 		base64ct-1.1.1 \
 		bitflags-1.3.2 \
+		bitflags-2.4.1 \
 		block-buffer-0.9.0 \
 		blocking-1.1.0 \
 		bumpalo-3.9.1 \
@@ -49,6 +49,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		digest-0.9.0 \
 		ed25519-1.4.0 \
 		ed25519-dalek-1.0.1 \
+		equivalent-1.0.1 \
 		event-listener-2.5.2 \
 		fastrand-1.7.0 \
 		flate2-1.0.23 \
@@ -59,29 +60,26 @@ CARGO_CRATES=	adler-1.0.2 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
 		getrandom-0.2.5 \
-		hashbrown-0.12.3 \
-		hashbrown-0.13.2 \
+		hashbrown-0.14.2 \
 		hostname-0.3.1 \
 		idna-0.2.3 \
-		indexmap-1.9.2 \
+		indexmap-2.1.0 \
 		instant-0.1.12 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
 		json-0.12.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.139 \
+		libc-0.2.150 \
 		lock_api-0.4.6 \
 		log-0.4.17 \
-		lru-0.9.0 \
+		lru-0.12.0 \
 		match_cfg-0.1.0 \
 		matches-0.1.9 \
-		memchr-2.4.1 \
-		memoffset-0.7.1 \
+		memchr-2.6.4 \
 		miniz_oxide-0.5.1 \
 		nats-0.24.0 \
-		nix-0.26.2 \
+		nix-0.27.1 \
 		nkeys-0.2.0 \
-		nom8-0.2.0 \
 		nuid-0.3.2 \
 		num_threads-0.1.5 \
 		once_cell-1.17.1 \
@@ -93,7 +91,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		pem-rfc7468-0.2.4 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.8 \
-		pin-utils-0.1.0 \
 		pkcs8-0.7.6 \
 		pkg-config-0.3.25 \
 		ppv-lite86-0.2.16 \
@@ -123,7 +120,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		serde_json-1.0.81 \
 		serde_nanos-0.1.2 \
 		serde_repr-0.1.7 \
-		serde_spanned-0.6.1 \
+		serde_spanned-0.6.4 \
 		sha2-0.9.9 \
 		signatory-0.23.2 \
 		signature-1.5.0 \
@@ -134,7 +131,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		sqlite-0.27.3 \
 		sqlite3-src-0.4.0 \
 		sqlite3-sys-0.14.0 \
-		static_assertions-1.1.0 \
 		subtle-2.4.1 \
 		syn-1.0.107 \
 		synstructure-0.12.6 \
@@ -143,9 +139,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-macros-0.2.4 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		toml-0.7.2 \
-		toml_datetime-0.6.1 \
-		toml_edit-0.19.3 \
+		toml-0.8.6 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.20.7 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.7 \
 		unicode-ident-1.0.6 \
@@ -177,6 +173,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_i686_msvc-0.36.1 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.36.1 \
+		winnow-0.5.19 \
 		zeroize-1.5.5 \
 		zeroize_derive-1.3.2
 

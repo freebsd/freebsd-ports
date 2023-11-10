@@ -1,6 +1,6 @@
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.28.2
+DISTVERSION=	1.28.3
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://influxdata.com/time-series-platform/telegraf/
 
 LICENSE=	MIT
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7
 
 USES=		go:modules
 

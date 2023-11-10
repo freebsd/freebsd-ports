@@ -1,6 +1,6 @@
---- components/policy/tools/generate_policy_source.py.orig	2023-01-17 19:19:00 UTC
+--- components/policy/tools/generate_policy_source.py.orig	2023-10-21 11:51:27 UTC
 +++ components/policy/tools/generate_policy_source.py
-@@ -49,9 +49,9 @@ PLATFORM_STRINGS = {
+@@ -37,9 +37,9 @@ PLATFORM_STRINGS = {
      'ios': ['ios'],
      'fuchsia': ['fuchsia'],
      'chrome.win': ['win'],

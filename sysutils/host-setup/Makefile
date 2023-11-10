@@ -5,7 +5,7 @@ MASTER_SITES=	http://druidbsd.sourceforge.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System configuration setup/management utility
-WWW=		http://druidbsd.sourceforge.net/
+WWW=		https://druidbsd.sourceforge.net/
 
 NO_ARCH=	yes
 NO_BUILD=	yes

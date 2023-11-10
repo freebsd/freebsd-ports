@@ -1,0 +1,81 @@
+From afca5696c4f477dcae4a0484dad2d7314884f020 Mon Sep 17 00:00:00 2001
+From: alxpl <alxpl@users.noreply.github.com>
+Date: Tue, 1 Aug 2023 13:43:09 +0200
+Subject: [PATCH] specify namespace to which functions belong
+
+This should take care of issue [#30](https://github.com/SciDAVis/scidavis/issues/30).
+
+--- libscidavis/src/importOPJ.cpp
++++ libscidavis/src/importOPJ.cpp
+@@ -323,7 +323,7 @@ bool ImportOPJ::importSpreadsheet(const OriginFile &opj, const Origin::SpreadShe
+             }
+         case Origin::Text:
+             table->column(j)->setColumnMode(SciDAVis::ColumnMode::Text);
+-            for (int i = 0; i < min((int)column.data.size(), maxrows); ++i) {
++            for (int i = 0; i < std::min((int)column.data.size(), maxrows); ++i) {
+                 scidavis_column->setTextAt(i, column.data[i].as_string());
+             }
+             break;
+@@ -379,7 +379,7 @@ bool ImportOPJ::importSpreadsheet(const OriginFile &opj, const Origin::SpreadShe
+             default:
+                 format = "dd.MM.yyyy";
+             }
+-            for (int i = 0; i < min((int)column.data.size(), maxrows); ++i)
++            for (int i = 0; i < std::min((int)column.data.size(), maxrows); ++i)
+                 scidavis_column->setValueAt(i, column.data[i].as_double());
+             table->column(j)->setColumnMode(SciDAVis::ColumnMode::DateTime);
+             DateTime2StringFilter *filter =
+@@ -423,7 +423,7 @@ bool ImportOPJ::importSpreadsheet(const OriginFile &opj, const Origin::SpreadShe
+                 format = "hh:mm:ss.zzz";
+                 break;
+             }
+-            for (int i = 0; i < min((int)column.data.size(), maxrows); ++i)
++            for (int i = 0; i < std::min((int)column.data.size(), maxrows); ++i)
+                 scidavis_column->setValueAt(i, column.data[i].as_double());
+             table->column(j)->setColumnMode(SciDAVis::ColumnMode::DateTime);
+             DateTime2StringFilter *filter =
+@@ -443,7 +443,7 @@ bool ImportOPJ::importSpreadsheet(const OriginFile &opj, const Origin::SpreadShe
+                 format = "M";
+                 break;
+             }
+-            for (int i = 0; i < min((int)column.data.size(), maxrows); ++i)
++            for (int i = 0; i < std::min((int)column.data.size(), maxrows); ++i)
+                 scidavis_column->setValueAt(i, column.data[i].as_double());
+             table->column(j)->setColumnMode(SciDAVis::ColumnMode::Month);
+             DateTime2StringFilter *filter =
+@@ -463,7 +463,7 @@ bool ImportOPJ::importSpreadsheet(const OriginFile &opj, const Origin::SpreadShe
+                 format = "d";
+                 break;
+             }
+-            for (int i = 0; i < min((int)column.data.size(), maxrows); ++i)
++            for (int i = 0; i < std::min((int)column.data.size(), maxrows); ++i)
+                 scidavis_column->setValueAt(i, column.data[i].as_double());
+             table->column(j)->setColumnMode(SciDAVis::ColumnMode::Day);
+             DateTime2StringFilter *filter =
+@@ -554,7 +554,7 @@ bool ImportOPJ::importTables(const OriginFile &opj)
+ #endif
+             QVector<qreal> values;
+             values.resize(rowCount * columnCount);
+-            for (int i = 0; i < min((int)values.size(), (int)layer.data.size()); i++) {
++            for (int i = 0; i < std::min((int)values.size(), (int)layer.data.size()); i++) {
+                 values[i] = layer.data[i];
+             }
+             Matrix->setCells(values);
+@@ -1006,7 +1006,7 @@ bool ImportOPJ::importGraphs(const OriginFile &opj)
+             grid->enableZeroLineX(0);
+             grid->enableZeroLineY(0);
+ 
+-            vector<Origin::GraphAxisFormat> formats;
++            std::vector<Origin::GraphAxisFormat> formats;
+             formats.push_back(layer.yAxis.formatAxis[0]); // left
+             formats.push_back(layer.yAxis.formatAxis[1]); // right
+             formats.push_back(layer.xAxis.formatAxis[0]); // bottom
+@@ -1014,7 +1014,7 @@ bool ImportOPJ::importGraphs(const OriginFile &opj)
+             graph->setXAxisTitle(parseOriginText(decodeMbcs(formats[2].label.text.c_str())));
+             graph->setYAxisTitle(parseOriginText(decodeMbcs(formats[0].label.text.c_str())));
+ 
+-            vector<Origin::GraphAxisTick> ticks;
++            std::vector<Origin::GraphAxisTick> ticks;
+             ticks.push_back(layer.yAxis.tickAxis[0]); // left
+             ticks.push_back(layer.yAxis.tickAxis[1]); // right
+             ticks.push_back(layer.xAxis.tickAxis[0]); // bottom

@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig	2023-10-13 13:20:35 UTC
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.h
 @@ -18,7 +18,7 @@
  #include "components/safe_browsing/core/common/proto/csd.pb.h"
@@ -9,7 +9,7 @@
  #include "chrome/services/file_util/public/cpp/sandboxed_document_analyzer.h"
  #endif
  
-@@ -106,7 +106,7 @@ class FileAnalyzer {
+@@ -109,7 +109,7 @@ class FileAnalyzer {
        const safe_browsing::ArchiveAnalyzerResults& archive_results);
  #endif
  
@@ -18,7 +18,7 @@
    void StartExtractDocumentFeatures();
    void OnDocumentAnalysisFinished(
        const DocumentAnalyzerResults& document_results);
-@@ -136,7 +136,7 @@ class FileAnalyzer {
+@@ -139,7 +139,7 @@ class FileAnalyzer {
        dmg_analyzer_{nullptr, base::OnTaskRunnerDeleter(nullptr)};
  #endif
  

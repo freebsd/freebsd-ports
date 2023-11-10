@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Mail notification program for Gnome
-WWW=		http://gnubiff.sourceforge.net/
+WWW=		https://gnubiff.sourceforge.net/
 
 LIB_DEPENDS=	libpopt.so:devel/popt
 

@@ -6,7 +6,7 @@ MASTER_SITES=	SOURCEWARE/docbook-tools/new-trials/SOURCES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
-WWW=		http://sources.redhat.com/docbook-tools/
+WWW=		https://www.sourceware.org/docbook-tools/
 
 BUILD_DEPENDS+=	docbook-sgml>0:textproc/docbook-sgml \
 		dsssl-docbook-modular>0:textproc/dsssl-docbook-modular \

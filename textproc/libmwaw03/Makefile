@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	03
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Import library for some old mac text documents
-WWW=		http://libmwaw.sourceforge.net/
+WWW=		https://libmwaw.sourceforge.net/
 
 LICENSE=	LGPL21+ MPL20
 LICENSE_COMB=	dual

@@ -1,6 +1,6 @@
 PORTNAME=	transmission-remote-gui
 PORTVERSION=	5.18.0
-PORTREVISION=	15
+PORTREVISION=	16
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -25,7 +25,7 @@ DESKTOP_ENTRIES="Transmission Remote GUI" \
                 "Remote GUI for transmission daemon" \
                 "transgui" \
                 "${PREFIX}/bin/transgui" \
-                "Application;Network;" \
+                "Network;P2P;" \
                 ${TRUE}
 
 PLIST_FILES=	bin/transgui \

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed and get your fingers' CPS
-WWW=		http://typespeed.sourceforge.net/
+WWW=		https://typespeed.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

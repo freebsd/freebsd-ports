@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple generic functions
-WWW=		https://pypi.org/project/simplegeneric/
+WWW=		https://github.com/mindw/simplegeneric
 
 LICENSE=	ZPL21
 

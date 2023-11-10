@@ -1,3 +1,4 @@
+bin/pika-bind
 include/pika/affinity/affinity_data.hpp
 include/pika/affinity/config/defines.hpp
 include/pika/affinity/parse_affinity_options.hpp
@@ -136,6 +137,7 @@ include/pika/execution.hpp
 include/pika/execution/algorithms/bulk.hpp
 include/pika/execution/algorithms/detail/helpers.hpp
 include/pika/execution/algorithms/detail/partial_algorithm.hpp
+include/pika/execution/algorithms/drop_operation_state.hpp
 include/pika/execution/algorithms/drop_value.hpp
 include/pika/execution/algorithms/ensure_started.hpp
 include/pika/execution/algorithms/execute.hpp
@@ -152,6 +154,7 @@ include/pika/execution/algorithms/sync_wait.hpp
 include/pika/execution/algorithms/then.hpp
 include/pika/execution/algorithms/transfer.hpp
 include/pika/execution/algorithms/transfer_just.hpp
+include/pika/execution/algorithms/transfer_when_all.hpp
 include/pika/execution/algorithms/unpack.hpp
 include/pika/execution/algorithms/when_all.hpp
 include/pika/execution/algorithms/when_all_vector.hpp
@@ -420,15 +423,11 @@ include/pika/runtime/config_entry.hpp
 include/pika/runtime/custom_exception_info.hpp
 include/pika/runtime/debugging.hpp
 include/pika/runtime/detail/runtime_fwd.hpp
-include/pika/runtime/get_locality_id.hpp
-include/pika/runtime/get_locality_name.hpp
-include/pika/runtime/get_num_all_localities.hpp
 include/pika/runtime/get_os_thread_count.hpp
 include/pika/runtime/get_thread_name.hpp
 include/pika/runtime/get_worker_thread_num.hpp
 include/pika/runtime/os_thread_type.hpp
 include/pika/runtime/report_error.hpp
-include/pika/runtime/run_as_pika_thread.hpp
 include/pika/runtime/runtime.hpp
 include/pika/runtime/runtime_fwd.hpp
 include/pika/runtime/runtime_handlers.hpp
@@ -443,7 +442,6 @@ include/pika/runtime_configuration/config/defines.hpp
 include/pika/runtime_configuration/init_ini_data.hpp
 include/pika/runtime_configuration/runtime_configuration.hpp
 include/pika/runtime_configuration/runtime_configuration_fwd.hpp
-include/pika/runtime_configuration/runtime_mode.hpp
 include/pika/schedulers/config/defines.hpp
 include/pika/schedulers/deadlock_detection.hpp
 include/pika/schedulers/local_priority_queue_scheduler.hpp
@@ -518,6 +516,7 @@ include/pika/threading_base/create_work.hpp
 include/pika/threading_base/detail/external_timer/apex.hpp
 include/pika/threading_base/detail/external_timer/default.hpp
 include/pika/threading_base/detail/get_default_pool.hpp
+include/pika/threading_base/detail/global_activity_count.hpp
 include/pika/threading_base/detail/reset_backtrace.hpp
 include/pika/threading_base/detail/reset_lco_description.hpp
 include/pika/threading_base/detail/tracy.hpp
@@ -674,4 +673,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.17.0
+lib/libpika.so.0.20.0

@@ -1,6 +1,6 @@
---- src/platformsupport/input/evdevmouse/qevdevmousehandler.cpp.orig	2020-07-03 14:25:13 UTC
+--- src/platformsupport/input/evdevmouse/qevdevmousehandler.cpp.orig	2023-09-21 19:24:26 UTC
 +++ src/platformsupport/input/evdevmouse/qevdevmousehandler.cpp
-@@ -53,12 +53,7 @@
+@@ -17,12 +17,7 @@
  
  #include <errno.h>
  

@@ -1,0 +1,8 @@
+Jnoisemeter is a small Jack app for accurate measurement of
+audio signals, in particular noise signals.
+
+The simplest use is to measure the S/N ratio of your
+sound card. If you can calibrate the input levels of
+your soundcard it can also be used (with some external
+hardware) to measure noise levels of any type of audio
+equipment, including preamps and microphones.

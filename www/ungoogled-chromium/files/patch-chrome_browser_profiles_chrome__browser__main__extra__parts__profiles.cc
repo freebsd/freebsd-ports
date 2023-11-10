@@ -1,6 +1,6 @@
---- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/profiles/chrome_browser_main_extra_parts_profiles.cc
-@@ -379,18 +379,18 @@
+@@ -392,18 +392,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -22,7 +22,7 @@
  #include "chrome/browser/browser_switcher/browser_switcher_service_factory.h"
  #include "chrome/browser/enterprise/connectors/analysis/local_binary_upload_service_factory.h"
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
-@@ -589,7 +589,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -606,7 +606,7 @@ void ChromeBrowserMainExtraPartsProfiles::
    if (breadcrumbs::IsEnabled()) {
      BreadcrumbManagerKeyedServiceFactory::GetInstance();
    }
@@ -31,9 +31,9 @@
    browser_switcher::BrowserSwitcherServiceFactory::GetInstance();
  #endif
    browser_sync::UserEventServiceFactory::GetInstance();
-@@ -675,23 +675,23 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -706,26 +706,26 @@ void ChromeBrowserMainExtraPartsProfiles::
+   enterprise_commands::UserRemoteCommandsServiceFactory::GetInstance();
  #endif
-   enterprise::ProfileIdServiceFactory::GetInstance();
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS_ASH)
 +    BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
@@ -58,8 +58,12 @@
 +    BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
    enterprise_signals::UserPermissionServiceFactory::GetInstance();
  #endif
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   enterprise_signin::EnterpriseSigninServiceFactory::GetInstance();
+ #endif
  #if BUILDFLAG(ENABLE_SESSION_SERVICE)
-@@ -794,7 +794,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -840,7 +840,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -68,7 +72,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    metrics::DesktopProfileSessionDurationsServiceFactory::GetInstance();
  #endif
-@@ -888,7 +888,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -935,7 +935,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if BUILDFLAG(IS_CHROMEOS)
    policy::PolicyCertServiceFactory::GetInstance();
  #endif
@@ -77,7 +81,7 @@
    policy::ProfileTokenPolicyWebSigninServiceFactory::GetInstance();
  #endif
    policy::UserCloudPolicyInvalidatorFactory::GetInstance();
-@@ -929,7 +929,7 @@ void ChromeBrowserMainExtraPartsProfiles::
+@@ -976,7 +976,7 @@ void ChromeBrowserMainExtraPartsProfiles::
  #if !BUILDFLAG(IS_ANDROID)
    ProfileThemeUpdateServiceFactory::GetInstance();
  #endif

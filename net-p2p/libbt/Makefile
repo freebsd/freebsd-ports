@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
-WWW=		http://libbt.sourceforge.net/
+WWW=		https://libbt.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi

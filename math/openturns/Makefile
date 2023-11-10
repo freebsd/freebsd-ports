@@ -1,7 +1,6 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20
-PORTREVISION=	14
+DISTVERSION=	1.21
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,10 +37,8 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libhdf5_cpp.so:science/hdf5 \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack \
-		libmetis.so:math/metis \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libnauty.so:math/nauty \
 		libnlopt.so:math/nlopt \
 		libOsi.so:math/osi \
 		libpagmo.so:science/pagmo2 \
@@ -50,8 +47,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libspqr.so:math/suitesparse-spqr \
 		libsuitesparseconfig.so:math/suitesparse-config \
 		libsz.so:science/libaec \
-		libtbb.so:devel/onetbb \
-		libunwind.so:devel/libunwind
+		libtbb.so:devel/onetbb
 
 USES=		bison blaslapack:openblas cmake eigen:3 gnome jpeg localbase:ldflags pkgconfig sqlite xorg # compiler:c++17-lang
 USE_GITHUB=	yes
@@ -64,6 +60,7 @@ CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=
 		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
 CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
 CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
+CMAKE_OFF+=	USE_CERES # ceres-solver-2.2.0 fails to be found by cmake, see https://github.com/ceres-solver/ceres-solver/issues/1023
 
 TEST_TARGET=	check # 10 tests are known to fail: https://github.com/openturns/openturns/issues/1919
 
@@ -77,7 +74,7 @@ PYTHON_CMAKE_ON=	-DSWIG_EXECUTABLE=${LOCALBASE}/bin/swig
 PYTHON_PY_DEPENDS=	${PYNUMPY} \
 			${PYTHON_PKGNAMEPREFIX}chaospy>0:math/py-chaospy@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}matplotlib>=1.3.1:math/py-matplotlib@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 PYTHON_BUILD_DEPENDS=	swig:devel/swig \

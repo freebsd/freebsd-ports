@@ -7,7 +7,7 @@ DISTNAME=	free-sa-2.0.0b6p7
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
-WWW=		http://free-sa.sourceforge.net
+WWW=		https://free-sa.sourceforge.net
 
 LICENSE=	GPLv3
 

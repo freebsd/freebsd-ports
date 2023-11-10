@@ -7,12 +7,12 @@ bin/astcrop
 bin/astfits
 bin/astmatch
 bin/astmkcatalog
-bin/astmknoise
 bin/astmkprof
 bin/astnoisechisel
 bin/astquery
 bin/astscript-ds9-region
 bin/astscript-fits-view
+bin/astscript-pointing-simulate
 bin/astscript-psf-scale-factor
 bin/astscript-psf-select-stars
 bin/astscript-psf-stamp
@@ -34,7 +34,6 @@ bin/astwarp
 @sample etc/astfits.conf.sample
 @sample etc/astmatch.conf.sample
 @sample etc/astmkcatalog.conf.sample
-@sample etc/astmknoise.conf.sample
 @sample etc/astmkprof-3d.conf.sample
 @sample etc/astmkprof.conf.sample
 @sample etc/astnoisechisel-3d.conf.sample
@@ -72,6 +71,7 @@ include/gnuastro/pdf.h
 include/gnuastro/permutation.h
 include/gnuastro/pointer.h
 include/gnuastro/polygon.h
+include/gnuastro/pool.h
 include/gnuastro/qsort.h
 include/gnuastro/speclines.h
 include/gnuastro/statistics.h
@@ -86,12 +86,12 @@ include/gnuastro/warp.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.18
-lib/libgnuastro.so.18.0.0
+lib/libgnuastro.so.19
+lib/libgnuastro.so.19.0.0
 lib/libgnuastro_make.a
 lib/libgnuastro_make.so
-lib/libgnuastro_make.so.18
-lib/libgnuastro_make.so.18.0.0
+lib/libgnuastro_make.so.19
+lib/libgnuastro_make.so.19.0.0
 libdata/pkgconfig/gnuastro.pc
 man/man1/astarithmetic.1.gz
 man/man1/astbuildprog.1.gz
@@ -102,12 +102,12 @@ man/man1/astcrop.1.gz
 man/man1/astfits.1.gz
 man/man1/astmatch.1.gz
 man/man1/astmkcatalog.1.gz
-man/man1/astmknoise.1.gz
 man/man1/astmkprof.1.gz
 man/man1/astnoisechisel.1.gz
 man/man1/astquery.1.gz
 man/man1/astscript-ds9-region.1.gz
 man/man1/astscript-fits-view.1.gz
+man/man1/astscript-pointing-simulate.1.gz
 man/man1/astscript-psf-scale-factor.1.gz
 man/man1/astscript-psf-select-stars.1.gz
 man/man1/astscript-psf-stamp.1.gz
@@ -151,4 +151,5 @@ share/info/gnuastro-figures/sphereandplane.png
 share/info/gnuastro-figures/sphereandplane.txt
 %%DATADIR%%/astscript-fits-view.desktop
 %%DATADIR%%/completion.bash
+%%DATADIR%%/pointing-simulate.mk
 %%DATADIR%%/zeropoint.mk

@@ -12,6 +12,8 @@ WWW=		https://plv8.github.io/
 
 LICENSE=	PostgreSQL
 
+DEPRECATED=	BROKEN for more than a year
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		does not build: plv8.cc:1397:20: error: no matching constructor for initialization of 'v8::ScriptOrigin'
 
 BUILD_DEPENDS=	bash:shells/bash

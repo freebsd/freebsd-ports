@@ -1,6 +1,6 @@
 PORTNAME=	texmaker
 PORTVERSION=	5.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.xm1math.net/texmaker/

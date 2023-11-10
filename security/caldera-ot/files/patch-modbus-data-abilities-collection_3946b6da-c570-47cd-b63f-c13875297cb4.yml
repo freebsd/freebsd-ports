@@ -1,0 +1,22 @@
+--- modbus/data/abilities/collection/3946b6da-c570-47cd-b63f-c13875297cb4.yml	2023-10-25 17:55:59.073472000 -0500
++++ modbus/data/abilities/collection/3946b6da-c570-47cd-b63f-c13875297cb4.yml	2023-10-25 17:57:16.281999000 -0500
+@@ -12,6 +12,12 @@
+     name: Point & Tag Identification
+   repeatable: True
+   platforms:
++    freebsd:
++      sh:
++        command:
++          './modbus_cli-freebsd #{modbus.all.deviceip} --port #{modbus.all.deviceport} read_ir #{modbus.read_ir.start} #{modbus.read_ir.count}'
++        payloads:
++        - modbus_cli-freebsd
+     linux:
+       sh:
+         command:
+@@ -23,4 +29,4 @@
+         command:
+           '.\modbus_cli.exe #{modbus.all.deviceip} --port #{modbus.all.deviceport} read_ir #{modbus.read_ir.start} #{modbus.read_ir.count}'
+         payloads:
+-        - modbus_cli.exe
+\ No newline at end of file
++        - modbus_cli.exe

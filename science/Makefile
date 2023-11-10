@@ -175,6 +175,7 @@
     SUBDIR += maeparser
     SUBDIR += massxpert
     SUBDIR += mbdyn
+    SUBDIR += mcpl
     SUBDIR += mcstas
     SUBDIR += mcstas-comps
     SUBDIR += mctc-lib
@@ -202,7 +203,9 @@
     SUBDIR += mstore
     SUBDIR += multicharge
     SUBDIR += multiwfn
+    SUBDIR += mutationpp
     SUBDIR += namd
+    SUBDIR += ncrystal
     SUBDIR += nest
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
@@ -367,6 +370,7 @@
     SUBDIR += py-mp-api
     SUBDIR += py-mpcontribs-client
     SUBDIR += py-mrchem
+    SUBDIR += py-ncrystal
     SUBDIR += py-netCDF4
     SUBDIR += py-netcdf-flattener
     SUBDIR += py-nglview
@@ -450,6 +454,7 @@
     SUBDIR += qcl
     SUBDIR += qiskit-aer
     SUBDIR += qmcpack
+    SUBDIR += qt6-quick3dphysics
     SUBDIR += quantum-espresso
     SUBDIR += quantum-espresso-pseudopotentials
     SUBDIR += quantum-jet

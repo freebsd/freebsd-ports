@@ -66,6 +66,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/coffeescript.lang
 %%DATADIR%%/langDefs/coldfusion.lang
 %%DATADIR%%/langDefs/conf.lang
+%%DATADIR%%/langDefs/cpp2.lang
 %%DATADIR%%/langDefs/critic.lang
 %%DATADIR%%/langDefs/crk.lang
 %%DATADIR%%/langDefs/crystal.lang
@@ -83,6 +84,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/ebnf2.lang
 %%DATADIR%%/langDefs/eiffel.lang
 %%DATADIR%%/langDefs/elixir.lang
+%%DATADIR%%/langDefs/elm.lang
 %%DATADIR%%/langDefs/email.lang
 %%DATADIR%%/langDefs/erb.lang
 %%DATADIR%%/langDefs/erlang.lang
@@ -90,6 +92,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/exapunks.lang
 %%DATADIR%%/langDefs/excel.lang
 %%DATADIR%%/langDefs/express.lang
+%%DATADIR%%/langDefs/factor.lang
 %%DATADIR%%/langDefs/fame.lang
 %%DATADIR%%/langDefs/fasm.lang
 %%DATADIR%%/langDefs/felix.lang

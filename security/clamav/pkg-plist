@@ -69,6 +69,7 @@ share/man/man8/clamd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-eol.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-freshclam.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-ignore.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-malware-fp-reports.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-misc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-ml.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq/faq-pua.html

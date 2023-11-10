@@ -1,9 +1,9 @@
 PORTNAME=	gqrx
-PORTVERSION=	2.16
+PORTVERSION=	2.17.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	comms hamradio
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Software defined radio receiver powered by GNU Radio and Qt
@@ -32,16 +32,29 @@ LIB_DEPENDS=	libgnuradio-runtime.so:comms/gnuradio \
 		libjack.so:audio/jack \
 		libportaudio.so:audio/portaudio
 
-USES=		cmake compiler:c++11-lang gl pkgconfig qt:5
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt6
+
+USES=		cmake compiler:c++11-lang gl pkgconfig qt:${FLAVOR:S/qt//}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gqrx-sdr
 USE_GL=		gl
-USE_QT=		core gui network svg widgets
+_USE_QT_qt5=	core gui network svg widgets
+_USE_QT_qt6=	base svg
+USE_QT=		${_USE_QT_${FLAVOR}}
+
+CONFLICTS_INSTALL=	gqrx ${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
 
 # XXX Use Portaudio as Gqrx is invariably linked to it
 # (auto-detected and used through Gnuradio CMake files)
-CMAKE_ARGS+=	-DLINUX_AUDIO_BACKEND:STRING="Portaudio"
+CMAKE_ARGS+=	-DLINUX_AUDIO_BACKEND:STRING="Portaudio" \
+		-DFORCE_QT${FLAVOR:S/qt//}:BOOL=ON
+
+# XXX Work around Gnuradio 3.8 headers (gnuradio/rpcserver_aggregator.h) still
+# using std::unary_function (removed with C++17). This breaks when building
+# on FreeBSD 14: error: no template named 'unary_function' in namespace 'std'
+CXXFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
 
 PLIST_FILES=	bin/gqrx \
 		share/applications/dk.gqrx.gqrx.desktop \

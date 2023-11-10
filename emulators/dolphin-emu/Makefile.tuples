@@ -1,4 +1,5 @@
 GH_TUPLE= \
+	GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:498e20dfd1343d99b9115201034bb0219801cdec:VulkanMemoryAllocator/Externals/VulkanMemoryAllocator \
 	mozilla:cubeb:27d2a102b0b75d9e49d43bc1ea516233fb87d778:cubeb/Externals/cubeb/cubeb \
 	epezent:implot:d87512353495e7760e7fda7566a05beef7627d8f:implot/Externals/implot/implot \
 	google:googletest:58d77fa8070e8cec2dc1ed015d66b454c8d78850:googletest/Externals/gtest \

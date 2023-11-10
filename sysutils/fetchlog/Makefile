@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	alexander.haderer@loescap.de
 COMMENT=	Fetch and convert new messages of a logfile
-WWW=		http://fetchlog.sourceforge.net/
+WWW=		https://fetchlog.sourceforge.net/
 
 LICENSE=	GPLv2
 

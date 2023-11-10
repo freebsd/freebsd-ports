@@ -1,6 +1,8 @@
 TIMESTAMP = 1696355651
 SHA256 (dolphin-emu-dolphin-5.0.19870-8c2a1c1_GH0.tar.gz) = 539fb312ad194b35dfce0cb1b9aeac64f29490ea2cebbd1a42da0cf696525f87
 SIZE (dolphin-emu-dolphin-5.0.19870-8c2a1c1_GH0.tar.gz) = 20538143
+SHA256 (GPUOpen-LibrariesAndSDKs-VulkanMemoryAllocator-498e20dfd1343d99b9115201034bb0219801cdec_GH0.tar.gz) = 4cb34c92b57d132d3200aa8c9b7f758e963eaeb31b6127d6edd0cd0902dc177e
+SIZE (GPUOpen-LibrariesAndSDKs-VulkanMemoryAllocator-498e20dfd1343d99b9115201034bb0219801cdec_GH0.tar.gz) = 880127
 SHA256 (mozilla-cubeb-27d2a102b0b75d9e49d43bc1ea516233fb87d778_GH0.tar.gz) = 9326a22d41b30b6d613c248a8ea2eb56c5ffc76a7080b0127165682fd8eba13e
 SIZE (mozilla-cubeb-27d2a102b0b75d9e49d43bc1ea516233fb87d778_GH0.tar.gz) = 223102
 SHA256 (epezent-implot-d87512353495e7760e7fda7566a05beef7627d8f_GH0.tar.gz) = b85b27cde80816c6ecbd63390e5cb9d3ea56211a63564372b7a7f89fe5b76a9b

@@ -1,6 +1,6 @@
 PORTNAME=	openmesh
 DISTVERSION=	9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.openmesh.org/media/Releases/${DISTVERSION}/
 DISTNAME=	OpenMesh-${DISTVERSION}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++11-lang dos2unix gl qt:5 xorg
-USE_QT=		core concurrent gui help network opengl printsupport script scripttools sql svg x11extras xml xmlpatterns webkit widgets \
+USE_QT=		core gui opengl widgets \
 		buildtools:build qmake:build uitools:build
-USE_GL=		gl glu glut
+USE_GL=		gl glu
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
 

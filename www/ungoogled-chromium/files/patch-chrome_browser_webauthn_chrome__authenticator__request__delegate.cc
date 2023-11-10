@@ -1,6 +1,6 @@
---- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/webauthn/chrome_authenticator_request_delegate.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/webauthn/chrome_authenticator_request_delegate.cc
-@@ -602,7 +602,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
+@@ -672,7 +672,7 @@ void ChromeAuthenticatorRequestDelegate::ConfigureDisc
      g_observer->ConfiguringCable(request_type);
    }
  
@@ -9,3 +9,12 @@
    // No caBLEv1 on Linux. It tends to crash bluez.
    if (base::Contains(pairings_from_extension,
                       device::CableDiscoveryData::Version::V1,
+@@ -879,7 +879,7 @@ void ChromeAuthenticatorRequestDelegate::OnTransportAv
+     device::FidoRequestHandlerBase::TransportAvailabilityInfo data) {
+   if (base::FeatureList::IsEnabled(device::kWebAuthnFilterGooglePasskeys) &&
+       dialog_model()->relying_party_id() == kGoogleRpId &&
+-      std::ranges::any_of(data.recognized_credentials,
++      base::ranges::any_of(data.recognized_credentials,
+                           IsCredentialFromPlatformAuthenticator)) {
+     // Regrettably, Chrome will create webauthn credentials for things other
+     // than authentication (e.g. credit card autofill auth) under the rp id

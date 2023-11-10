@@ -1,0 +1,3 @@
+Trilogy Adapter is a Ruby on Rails Active Record database adapter for Trilogy, a
+client library for MySQL-compatible database servers, designed for performance,
+flexibility, and ease of embedding.

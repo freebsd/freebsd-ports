@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	5250 Telnet protocol and Terminal
-WWW=		http://tn5250.sourceforge.net/
+WWW=		https://tn5250.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

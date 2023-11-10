@@ -12,6 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		installs into the build directory, see https://github.com/univrsal/scrab/issues/7
+DEPRECATED=	Fails to package and marked broken over 10 months ago
+EXPIRATION_DATE=2023-11-30
 
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio
 

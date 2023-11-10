@@ -8,26 +8,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU version of Shogi
 WWW=		http://www.cs.caltech.edu/~mvanier/hacking/gnushogi/gnushogi.html
 
-USES=		makeinfo
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 
-INFO=		gnushogi
+OPTIONS_DEFINE=	DOCS INFO
+OPTIONS_DEFAULT=	INFO
 
-OPTIONS_DEFINE=	DOCS
+INFO_USES=		makeinfo
+INFO_INFO=		gnushogi
 
-post-extract:
+post-extract-INFO-on:
 	-@${RM} ${WRKSRC}/doc/gnushogi.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/lib/gnushogi|/${DATADIR_REL}|g' \
-		${WRKSRC}/gnushogi/Makefile.in
-	@${REINPLACE_CMD} -e '/HAVE_SETLINEBUF/s|ifdef|ifndef|' \
-		${WRKSRC}/gnushogi/gnushogi.h
 	@${REINPLACE_CMD} -e '/<sys\/file.h>/d' \
 		${WRKSRC}/gnushogi/*dsp.c
 
-pre-build:
+pre-build-INFO-on:
 	cd ${WRKSRC}/doc && makeinfo --no-split gnushogi
 
 do-install:
@@ -35,7 +35,11 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.6 ${STAGEDIR}${MANPREFIX}/man/man6
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${STAGEDIR}${DATADIR}
+
+do-install-INFO-on:
 	@${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${STAGEDIR}${DOCSDIR}

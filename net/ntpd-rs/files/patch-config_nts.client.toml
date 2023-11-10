@@ -1,8 +1,0 @@
---- config/nts.client.toml.orig	2023-07-28 10:29:25 UTC
-+++ config/nts.client.toml
-@@ -18,4 +18,4 @@ startup-panic-threshold = { forward = "inf", backward 
- startup-panic-threshold = { forward = "inf", backward = 1800 }
- 
- [observe]
--path = "/run/ntpd-rs/observe"
-+path = "/var/run/ntpd-rs/observe"

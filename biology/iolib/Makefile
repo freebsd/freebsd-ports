@@ -5,7 +5,7 @@ CATEGORIES=	biology
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose trace file (and Experiment File) reading interface
-WWW=		http://staden.sourceforge.net/
+WWW=		https://staden.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

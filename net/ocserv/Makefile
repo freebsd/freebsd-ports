@@ -1,5 +1,5 @@
 PORTNAME=	ocserv
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.2
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
@@ -38,7 +38,7 @@ GROUPS=		_ocserv
 
 PLIST_SUB=	GROUPS="${GROUPS}" \
 		USERS="${USERS}"
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 PORTEXAMPLES=	profile.xml sample.config sample.passwd
 
 OPTIONS_DEFINE=	DOCS EXAMPLES GSSAPI MAXMIND RADIUS

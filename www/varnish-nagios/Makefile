@@ -10,6 +10,8 @@ WWW=		https://www.varnish-cache.org/utility/nagios-varnish-plugin
 LICENSE=	BSD2CLAUSE
 
 BROKEN=		fails to build
+DEPRECATED=	Marked BROKEN for months, also depends on deprecated version of Varnish
+EXPIRATION_DATE=2023-11-30
 
 RUN_DEPENDS=	sudo:security/sudo
 

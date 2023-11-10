@@ -1,5 +1,5 @@
 PORTNAME=	remmina
-DISTVERSION=	1.4.32
+DISTVERSION=	1.4.33
 CATEGORIES=	net gnome
 
 PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -29,7 +29,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_TAGNAME=	4804f68f23045a38c3a7be46810fce14bac2fc3c
+GL_TAGNAME=	2c4e1479433e51418ecb6089f35182bfebc5b57e
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 

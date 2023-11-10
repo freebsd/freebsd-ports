@@ -1,0 +1,5 @@
+JSONSchema Path provides object-oriented JSONSchema.
+
+Key features:
+- Traverse schema like paths
+- Access schema on demand with separate dereferencing accessor layer

@@ -1,13 +1,13 @@
 PORTNAME=	epsonepl
 PORTVERSION=	0.2.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GS-IJS%20Plugin%20v${PORTVERSION}
 DISTNAME=	${PORTNAME}ijs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Printer filter for EPSON EPL-5700L etc
-WWW=		http://epsonepl.sourceforge.net/
+WWW=		https://epsonepl.sourceforge.net/
 
 LIB_DEPENDS=	libijs.so:print/libijs
 

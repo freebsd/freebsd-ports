@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to xsl:fo converter
-WWW=		http://html2fo.sourceforge.net/
+WWW=		https://html2fo.sourceforge.net/
 
 PLIST_FILES=	bin/html2fo
 WRKSRC=		${WRKDIR}/${PORTNAME}

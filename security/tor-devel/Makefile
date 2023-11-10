@@ -11,6 +11,8 @@ WWW=		https://www.torproject.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Ignored for more than a year and security/tor is more recent than this
+EXPIRATION_DATE=	2023-11-30
 IGNORE=		TorProject didn't release any development version at this time
 
 USES=		compiler:c11 cpe gmake pkgconfig # should be compiler:c99 or compiler:gnu99

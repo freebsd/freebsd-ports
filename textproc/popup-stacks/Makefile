@@ -7,7 +7,7 @@ DISTFILES=	English-German.cstack.gz German-French.cstack.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stacks for use with Popup
-WWW=		http://popup.sourceforge.net/
+WWW=		https://popup.sourceforge.net/
 
 LICENSE=	GPLv2
 

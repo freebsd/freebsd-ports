@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	saper@saper.info
 COMMENT=	MPEG audio analysis toolkit
-WWW=		http://maaate.sourceforge.net/
+WWW=		https://maaate.sourceforge.net/
 
 LICENSE=	GPLv2
 

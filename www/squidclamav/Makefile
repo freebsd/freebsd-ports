@@ -1,5 +1,5 @@
 PORTNAME=	squidclamav
-PORTVERSION=	7.2
+PORTVERSION=	7.3
 CATEGORIES=	www security
 MASTER_SITES=	SF
 
@@ -27,7 +27,5 @@ CFLAGS+=	-DHAVE_STRNSTR
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFGDIR=.*|CFGDIR="${PREFIX}/etc/c-icap"|g' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/etc/squidclamav.conf|${PREFIX}/etc/c\\-icap/squidclamav.conf|g' \
-		${WRKSRC}/doc/squidclamav.1 ${WRKSRC}/src/squidclamav.h
 
 .include <bsd.port.mk>

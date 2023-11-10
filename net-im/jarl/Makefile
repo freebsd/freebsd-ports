@@ -7,7 +7,7 @@ DISTNAME=	Jarl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl/Tk Jabber client
-WWW=		http://jarl.sourceforge.net/
+WWW=		https://jarl.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -9,7 +9,7 @@ DISTNAME=	monafont-ttf-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	TrueType Kanji fonts
-WWW=		http://monafont.sourceforge.net/
+WWW=		https://monafont.sourceforge.net/
 
 LICENSE=	PD
 

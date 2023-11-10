@@ -5,7 +5,7 @@ MASTER_SITES=	SF/tap-plugins/tap-plugins/${PORTVERSION}
 
 MAINTAINER=	taku@tackymt.homeip.net
 COMMENT=	LADSPA Plugins by Tom Szilagy
-WWW=		http://tap-plugins.sourceforge.net/
+WWW=		https://tap-plugins.sourceforge.net/
 
 LICENSE=	GPLv2
 

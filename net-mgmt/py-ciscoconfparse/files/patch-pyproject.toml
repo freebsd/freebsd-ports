@@ -1,0 +1,25 @@
+Just use poetry-core and remove directives that are unknown for it.
+
+Avoid the installation of the test suite into the top of Python's site-lib.
+
+--- pyproject.toml.orig	2023-10-29 15:08:28 UTC
++++ pyproject.toml
+@@ -2,9 +2,8 @@
+ 
+ [build-system]
+ # See -> PEP 517
+-requires = ["poetry>=1.5.1", "poetry-core>=1.6.1", "wheel>=0.38.4", "packaging>=23.0"]
++requires = ["poetry-core>=1.6.1", "wheel>=0.38.4", "packaging>=23.0"]
+ build-backend = "poetry.core.masonry.api"
+-requires-python = ">=3.8.0"
+ 
+ ##############################################################################
+ #
+@@ -38,7 +37,6 @@ packages = [
+ packages = [
+     # Syntax -> https://python-poetry.org/docs/pyproject/#packages
+     { include = "ciscoconfparse/*" },
+-    { include = "tests/*" },
+ ]
+ # See -> https://python-poetry.org/docs/pyproject/#include-and-exclude
+ include = [

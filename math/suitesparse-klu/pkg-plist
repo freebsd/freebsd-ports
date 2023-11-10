@@ -11,11 +11,11 @@ lib/cmake/KLU_CHOLMOD/KLU_CHOLMODTargets.cmake
 lib/libklu.a
 lib/libklu.so
 lib/libklu.so.2
-lib/libklu.so.2.2.0
+lib/libklu.so.%%VER%%
 lib/libklu_cholmod.a
 lib/libklu_cholmod.so
 lib/libklu_cholmod.so.2
-lib/libklu_cholmod.so.2.2.0
+lib/libklu_cholmod.so.%%VER%%
 libdata/pkgconfig/KLU.pc
 libdata/pkgconfig/KLU_CHOLMOD.pc
 %%PORTDOCS%%%%DOCSDIR%%/KLU_README.txt

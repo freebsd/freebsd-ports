@@ -1,6 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.7
+DISTVERSION=	4.3.0
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Not supported on i386
 
-USES=		cpe go:1.19,modules gmake
+USES=		cpe go:1.21,modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
 

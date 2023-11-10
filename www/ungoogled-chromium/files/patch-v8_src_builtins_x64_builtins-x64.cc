@@ -1,4 +1,4 @@
---- v8/src/builtins/x64/builtins-x64.cc.orig	2023-09-17 07:59:53 UTC
+--- v8/src/builtins/x64/builtins-x64.cc.orig	2023-11-04 07:08:51 UTC
 +++ v8/src/builtins/x64/builtins-x64.cc
 @@ -44,6 +44,8 @@ namespace internal {
  #define __ ACCESS_MASM(masm)
@@ -18,26 +18,17 @@
  
    // Store the current pc as the handler offset. It's used later to create the
    // handler table.
-@@ -4015,6 +4017,8 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
-     RestoreParentSuspender(masm, rbx, rcx);
-   }
-   __ bind(&suspend);
+@@ -3324,6 +3326,9 @@ void SwitchBackAndReturnPromise(MacroAssembler* masm, 
+ void GenerateExceptionHandlingLandingPad(MacroAssembler* masm,
+                                          Label* return_promise) {
+   int catch_handler = __ pc_offset();
 +
 +  __ endbr64();
-   // No need to process the return value if the stack is suspended, there is a
-   // single 'externref' value (the promise) which doesn't require conversion.
- 
-@@ -4281,6 +4285,9 @@ void GenericJSToWasmWrapperHelper(MacroAssembler* masm
-   // thrown exception.
-   if (stack_switch) {
-     int catch_handler = __ pc_offset();
 +
-+    __ endbr64();
-+
-     // Restore rsp to free the reserved stack slots for the sections.
-     __ leaq(rsp, MemOperand(rbp, kLastSpillOffset));
+   // Restore rsp to free the reserved stack slots for the sections.
+   __ leaq(rsp, MemOperand(rbp, StackSwitchFrameConstants::kLastSpillOffset));
  
-@@ -4567,6 +4574,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
+@@ -3655,6 +3660,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
    LoadJumpBuffer(masm, jmpbuf, true);
    __ Trap();
    __ bind(&resume);
@@ -45,7 +36,7 @@
    __ LeaveFrame(StackFrame::STACK_SWITCH);
    __ ret(0);
  }
-@@ -4711,6 +4719,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
+@@ -3787,6 +3793,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
    }
    __ Trap();
    __ bind(&suspend);

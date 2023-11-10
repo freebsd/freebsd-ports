@@ -1,6 +1,6 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.16.5
+DISTVERSION?=	1.16.6
 PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
@@ -8,7 +8,7 @@ MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/do
 DISTFILES=	${PORTNAME}.1:manpage
 EXTRACT_ONLY=	${DISTFILES:N*\:manpage:C/:.*//}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PSP emulator in C++ with dynarec JIT for x86, ARM, MIPS
 WWW=		https://www.ppsspp.org/
 
@@ -34,7 +34,7 @@ GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
 		KhronosGroup:SPIRV-Cross:sdk-1.3.239.0:SPIRV/ext/SPIRV-Cross \
 		Kingcom:armips:v0.11.0-188-g7bd1ec9:armips/ext/armips \
 		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem \
-		RetroAchievements:rcheevos:v10.7.1-28-ga34895b:rcheevos/ext/rcheevos \
+		RetroAchievements:rcheevos:v10.7.1-37-g24dc84c:rcheevos/ext/rcheevos \
 		Tencent:rapidjson:v1.1.0-415-g73063f50:rapidjson/ext/rapidjson
 
 CONFLICTS_INSTALL=	${PORTNAME}-*

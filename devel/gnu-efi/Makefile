@@ -5,7 +5,7 @@ MASTER_SITES=	SF/gnu-efi
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	SDK for EFI applications
-WWW=		http://gnu-efi.sourceforge.net/
+WWW=		https://gnu-efi.sourceforge.net/
 
 LICENSE=	GPLv2
 

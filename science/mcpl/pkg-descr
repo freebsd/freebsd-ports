@@ -1,0 +1,7 @@
+MCPL is a binary file format for usage in physics simulations.
+
+MCPL files contain lists of particle state information, and allows for easy
+storage and interchange of particles between various Monte Carlo simulation
+applications. It is implemented in portable C code and is made available to
+the scientific community, along with converters and plugins for several popular
+simulation packages.

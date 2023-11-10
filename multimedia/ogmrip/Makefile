@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application and libraries for encoding DVDs into DivX/OGM files
-WWW=		http://ogmrip.sourceforge.net/
+WWW=		https://ogmrip.sourceforge.net/
 
 LICENSE=	GPLv2+  # from source, though COPYING says LGPLv2
 

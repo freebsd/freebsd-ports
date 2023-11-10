@@ -1,12 +1,11 @@
 PORTNAME=	gpsim
-DISTVERSION=	0.31.0
-PORTREVISION=	1
+DISTVERSION=	0.32.0
 CATEGORIES=	misc
 MASTER_SITES=	SF
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Software simulator for Microchip PIC microcontrollers
-WWW=		http://gpsim.sourceforge.net/
+WWW=		https://gpsim.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -14,15 +13,18 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	gpasm:devel/gputils
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libpopt.so:devel/popt
 RUN_DEPENDS=	gpasm:devel/gputils
 
 USES=		compiler:c++11-lang gmake gnome libtool localbase:ldflags pathfix pkgconfig readline
 USE_CXXSTD=	c++11
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20 pango
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 CONFLICTS_BUILD=	ga
 

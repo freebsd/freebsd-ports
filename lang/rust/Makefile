@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.72.0
+PORTVERSION?=	1.73.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -61,7 +61,7 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-PORT_LLVM_USES=		llvm:min=14,lib,noexport
+PORT_LLVM_USES=		llvm:min=15,lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
@@ -69,8 +69,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2023-07-13
-RUST_BOOTSTRAP_VERSION?=	1.71.0
+BOOTSTRAPS_DATE?=		2023-08-24
+RUST_BOOTSTRAP_VERSION?=	1.72.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -95,13 +95,6 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
 
 .include <bsd.port.pre.mk>
-
-.ifndef NIGHTLY_DATE
-PATCH_SITES=	https://github.com/rust-lang/rust/commit/
-# LLVM 17 API compatibility fixes
-PATCHFILES=	71958da4854176c50a8b12470b956d5c7ed11817.patch:-p1 \
-		6ddf9128b2b55f9def80af57f7353d2521527c6a.patch:-p1
-.endif
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD

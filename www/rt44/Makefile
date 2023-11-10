@@ -1,5 +1,5 @@
 PORTNAME=	rt
-DISTVERSION=	4.4.6
+DISTVERSION=	4.4.7
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	44

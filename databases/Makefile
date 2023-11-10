@@ -120,6 +120,7 @@
     SUBDIR += kbibtex
     SUBDIR += kdb
     SUBDIR += kexi
+    SUBDIR += keydb
     SUBDIR += kyotocabinet
     SUBDIR += kyototycoon
     SUBDIR += ldb15
@@ -558,6 +559,7 @@
     SUBDIR += pg_similarity
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_tileserv
+    SUBDIR += pg_vector
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgagroal
@@ -647,6 +649,7 @@
     SUBDIR += postgis31
     SUBDIR += postgis32
     SUBDIR += postgis33
+    SUBDIR += postgis34
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-idn
     SUBDIR += postgresql-jdbc
@@ -755,6 +758,10 @@
     SUBDIR += py-couchdb
     SUBDIR += py-databases
     SUBDIR += py-dbf
+    SUBDIR += py-dbt-core
+    SUBDIR += py-dbt-duckdb
+    SUBDIR += py-dbt-semantic-interfaces
+    SUBDIR += py-dbt-snowflake
     SUBDIR += py-dbutils
     SUBDIR += py-duckdb
     SUBDIR += py-fakeredis
@@ -823,7 +830,10 @@
     SUBDIR += py-redis3
     SUBDIR += py-redis4
     SUBDIR += py-rrdtool
+    SUBDIR += py-schemachange
     SUBDIR += py-sispy
+    SUBDIR += py-snowddl
+    SUBDIR += py-snowflake-connector-python
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy-json
     SUBDIR += py-sqlalchemy-migrate
@@ -894,11 +904,13 @@
     SUBDIR += rubygem-activemodel60
     SUBDIR += rubygem-activemodel61
     SUBDIR += rubygem-activemodel70
+    SUBDIR += rubygem-activemodel71
     SUBDIR += rubygem-activerecord-explain-analyze
     SUBDIR += rubygem-activerecord-import
     SUBDIR += rubygem-activerecord-jdbc-adapter
     SUBDIR += rubygem-activerecord-jdbcmysql-adapter
     SUBDIR += rubygem-activerecord-session_store
+    SUBDIR += rubygem-activerecord-trilogy-adapter
     SUBDIR += rubygem-activerecord4
     SUBDIR += rubygem-activerecord5
     SUBDIR += rubygem-activerecord50
@@ -906,6 +918,7 @@
     SUBDIR += rubygem-activerecord60
     SUBDIR += rubygem-activerecord61
     SUBDIR += rubygem-activerecord70
+    SUBDIR += rubygem-activerecord71
     SUBDIR += rubygem-after_commit_queue
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
@@ -962,6 +975,7 @@
     SUBDIR += rubygem-globalid-rails60
     SUBDIR += rubygem-globalid-rails61
     SUBDIR += rubygem-globalid-rails70
+    SUBDIR += rubygem-globalid-rails71
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-influxdb
@@ -1014,6 +1028,7 @@
     SUBDIR += rubygem-state_machines-activerecord
     SUBDIR += rubygem-state_machines-activerecord08
     SUBDIR += rubygem-tarantool
+    SUBDIR += rubygem-trilogy
     SUBDIR += sequeler
     SUBDIR += sfcgal
     SUBDIR += sharedance
@@ -1059,6 +1074,7 @@
     SUBDIR += tinycdb
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
+    SUBDIR += trilogy
     SUBDIR += tsearch_extras
     SUBDIR += tuning-primer
     SUBDIR += twemproxy

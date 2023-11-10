@@ -766,6 +766,7 @@ man/man3/XcmsTekHVCQueryMaxVC.3.gz
 man/man3/XcmsTekHVCQueryMaxVSamples.3.gz
 man/man3/XcmsTekHVCQueryMinV.3.gz
 man/man3/XkbActionCtrls.3.gz
+man/man3/XkbActionSetCtrls.3.gz
 man/man3/XkbAddDeviceLedInfo.3.gz
 man/man3/XkbAddGeomColor.3.gz
 man/man3/XkbAddGeomDoodad.3.gz
@@ -784,7 +785,6 @@ man/man3/XkbAllocClientMap.3.gz
 man/man3/XkbAllocCompatMap.3.gz
 man/man3/XkbAllocControls.3.gz
 man/man3/XkbAllocDeviceInfo.3.gz
-man/man3/XkbAllocDeviceLedInfo.3.gz
 man/man3/XkbAllocGeomColors.3.gz
 man/man3/XkbAllocGeomDoodads.3.gz
 man/man3/XkbAllocGeomKeyAliases.3.gz
@@ -810,7 +810,6 @@ man/man3/XkbBellEvent.3.gz
 man/man3/XkbChangeControls.3.gz
 man/man3/XkbChangeDeviceInfo.3.gz
 man/man3/XkbChangeEnabledControls.3.gz
-man/man3/XkbChangeIndicators.3.gz
 man/man3/XkbChangeMap.3.gz
 man/man3/XkbChangeNames.3.gz
 man/man3/XkbChangeTypesOfKey.3.gz
@@ -848,10 +847,8 @@ man/man3/XkbFreeIndicatorMaps.3.gz
 man/man3/XkbFreeKeyboard.3.gz
 man/man3/XkbFreeNames.3.gz
 man/man3/XkbFreeServerMap.3.gz
-man/man3/XkbGetAccessXTimeout.3.gz
 man/man3/XkbGetAutoRepeatRate.3.gz
 man/man3/XkbGetAutoResetControls.3.gz
-man/man3/XkbGetBounceKeysDelay.3.gz
 man/man3/XkbGetCompatMap.3.gz
 man/man3/XkbGetControls.3.gz
 man/man3/XkbGetControlsChanges.3.gz
@@ -861,7 +858,6 @@ man/man3/XkbGetDeviceInfo.3.gz
 man/man3/XkbGetDeviceInfoChanges.3.gz
 man/man3/XkbGetDeviceLedInfo.3.gz
 man/man3/XkbGetGeometry.3.gz
-man/man3/XkbGetIndicatorChanges.3.gz
 man/man3/XkbGetIndicatorMap.3.gz
 man/man3/XkbGetIndicatorState.3.gz
 man/man3/XkbGetKeyActions.3.gz
@@ -874,14 +870,11 @@ man/man3/XkbGetKeyVirtualModMap.3.gz
 man/man3/XkbGetKeyboard.3.gz
 man/man3/XkbGetKeyboardByName.3.gz
 man/man3/XkbGetMap.3.gz
-man/man3/XkbGetNameChanges.3.gz
 man/man3/XkbGetNamedDeviceIndicator.3.gz
 man/man3/XkbGetNamedGeometry.3.gz
 man/man3/XkbGetNamedIndicator.3.gz
 man/man3/XkbGetNames.3.gz
-man/man3/XkbGetSlowKeysDelay.3.gz
 man/man3/XkbGetState.3.gz
-man/man3/XkbGetStickyKeysOptions.3.gz
 man/man3/XkbGetUpdatedMap.3.gz
 man/man3/XkbGetVirtualMods.3.gz
 man/man3/XkbGetXlibControls.3.gz
@@ -894,14 +887,13 @@ man/man3/XkbKeyGroupInfo.3.gz
 man/man3/XkbKeyGroupWidth.3.gz
 man/man3/XkbKeyGroupsWidth.3.gz
 man/man3/XkbKeyHasActions.3.gz
+man/man3/XkbKeyKeyType.3.gz
+man/man3/XkbKeyKeyTypeIndex.3.gz
 man/man3/XkbKeyNumActions.3.gz
 man/man3/XkbKeyNumGroups.3.gz
 man/man3/XkbKeyNumSyms.3.gz
 man/man3/XkbKeySymEntry.3.gz
-man/man3/XkbKeySymsOffset.3.gz
 man/man3/XkbKeySymsPtr.3.gz
-man/man3/XkbKeyType.3.gz
-man/man3/XkbKeyTypeIndex.3.gz
 man/man3/XkbKeyTypesForCoreSymbols.3.gz
 man/man3/XkbKeycodeToKeysym.3.gz
 man/man3/XkbKeysymToModifiers.3.gz
@@ -916,7 +908,6 @@ man/man3/XkbLookupKeySym.3.gz
 man/man3/XkbModActionVMods.3.gz
 man/man3/XkbNoteControlsChanges.3.gz
 man/man3/XkbNoteDeviceChanges.3.gz
-man/man3/XkbNoteIndicatorChanges.3.gz
 man/man3/XkbNoteNameChanges.3.gz
 man/man3/XkbOpenDisplay.3.gz
 man/man3/XkbOutOfRangeGroupInfo.3.gz
@@ -929,7 +920,6 @@ man/man3/XkbResizeDeviceButtonActions.3.gz
 man/man3/XkbResizeKeyActions.3.gz
 man/man3/XkbResizeKeySyms.3.gz
 man/man3/XkbResizeKeyType.3.gz
-man/man3/XkbSAActionSetCtrls.3.gz
 man/man3/XkbSAGroup.3.gz
 man/man3/XkbSAPtrDfltValue.3.gz
 man/man3/XkbSARedirectSetVMods.3.gz
@@ -942,10 +932,8 @@ man/man3/XkbSASetPtrDfltValue.3.gz
 man/man3/XkbSASetScreen.3.gz
 man/man3/XkbSelectEventDetails.3.gz
 man/man3/XkbSelectEvents.3.gz
-man/man3/XkbSetAccessXTimeout.3.gz
 man/man3/XkbSetAutoRepeatRate.3.gz
 man/man3/XkbSetAutoResetControls.3.gz
-man/man3/XkbSetBounceKeysDelay.3.gz
 man/man3/XkbSetCompatMap.3.gz
 man/man3/XkbSetControls.3.gz
 man/man3/XkbSetDebuggingFlags.3.gz

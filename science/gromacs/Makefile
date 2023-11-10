@@ -2,7 +2,7 @@ PORTNAME=	gromacs
 DISTVERSION=	2023.2
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
+MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,9 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 
-USES=		cmake compiler:c++17-lang gnome perl5 pkgconfig python:build shebangfix
+USES=		cmake compiler:c++17-lang gnome pathfix perl5 pkgconfig \
+		python:build shebangfix
+USE_GCC=	yes # clang fails: https://gitlab.com/gromacs/gromacs/-/issues/4909
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

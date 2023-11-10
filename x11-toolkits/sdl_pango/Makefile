@@ -10,7 +10,7 @@ PATCHFILES=	SDL_Pango-0.1.2-API-adds.patch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL API to the Pango text rendering engine of GNOME 2.x
-WWW=		http://sdlpango.sourceforge.net/
+WWW=		https://sdlpango.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

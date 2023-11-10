@@ -9,7 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian thesaurus
-WWW=		http://linguistico.sourceforge.net/pages/thesaurus_italiano.html
+WWW=		https://linguistico.sourceforge.net/pages/thesaurus_italiano.html
 
 LICENSE=	AGPLv3
 

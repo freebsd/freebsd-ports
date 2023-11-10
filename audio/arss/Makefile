@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Additive Image Synthesizer (convert audio to images, images to audio)
-WWW=		http://arss.sourceforge.net/
+WWW=		https://arss.sourceforge.net/
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3
 

@@ -5,6 +5,146 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231104:
+  AFFECTS: users of security/libressl
+  AUTHOR: brnrd@FreeBSD.org
+
+  The port has been updated to the latest stable version 3.8 of LibreSSL.
+  The shared library versions of the libraries have been bumped.
+
+  After upgrading, manually update all packages that depend on any of the
+  libraries provided by LibreSSL (libssl, libcrypto and libtls) since the
+  versions of these libraries have changed. Normally, you can obtain the
+  list of dependent software by running the following command:
+
+  # pkg info -r libressl
+
+  Then you should rebuild all ports depending on libressl to avoid dangling
+  shared library dependencies.
+
+20231031:
+  AFFECTS: users of devel/subversion-lts
+  AUTHOR: michaelo@FreeBSD.org
+
+  devel/subversion-lts has been updated from 1.10.x to the latest LTS version,
+  1.14.x. Some changes between these releases may require attention from
+  administrators or users.
+  Refer to https://subversion.apache.org/docs/release-notes/1.14.html#compat-misc for details.
+
+20231028:
+  AFFECTS: users of net-mgmt/nfdump
+
+  nfdump-1.7.x is compatible to nfdump-1.6.18, which means it can
+  read files created with nfdump-1.6.18 or newer. Flow files created
+  with earlier nfdump versions may not contain all flow elements.
+  If you have older files, it is recommended to use nfdump-1.6.17
+  to update the records.
+
+  nfdump 1.7.x provides the same set of programs as 1.6.x and can
+  be used almost as a drop-in replacement. This may change in future
+  and older legacy programs may be removed. You can convert any old
+  files from nfdump-1.6 to nfdump-1.7 format by reading/writing
+  files: ./nfdump -r old-flowfile -y -w new-flowfile
+
+  Please note, that only nfdump may read older flow files. All other
+  programs relay on the new file format.
+
+20231027:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  When updating to >= 23.10.0, a broken crontab is fixed. This breakage
+  caused the validation error: Scheduler is not running
+  After updating, If that error does not clear for you, run:
+
+    sudo lnms config:cache
+
+20231027:
+  AFFECTS: users of print/ghostscript9*
+  AUTHOR: michaelo@FreeBSD.org
+
+  The default ghostscript version has been updated from 9 to 10.
+
+  If you compile your own ports you may keep 9 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep ghostscript 9 as default version
+  #
+  DEFAULT_VERSIONS+=ghostscript=9
+
+  Please note that print/ghostcript9* will be removed in the future since it is
+  not supported by upstream anymore.
+
+20231026:
+  AFFECTS: users of lang/chicken
+  AUTHOR: gahr@FreeBSD.org
+
+  The chicken binaries csc and csi, together with their manual pages, have been
+  renamed to chicken-csc and chicken-csi, to avoid conflicts with lang/mono.
+  This is in line with what several Linux distros do. See PR 274736.
+
+20231023:
+  AFFECTS: users of mail/mailman3
+  AUTHOR: einar@isnic.is
+
+  logging.http section has now been split into two parts, logging.http is for
+  the Mailman internal code and logging.gunicorn is for Gunicorn specifically
+  since they have different logging formats. This should fix spurious errors
+  with KeyError: t that was often confusing for users.
+
+  Python 3.9 is now the minimum supported version of Python.
+
+20231017:
+  AFFECTS: users of lang/perl5*
+  AUTHOR: delphij@FreeBSD.org
+
+  The default Perl version has been switched to Perl 5.36.  If you are using
+  binary packages to upgrade your system, you do not have anything to do, pkg
+  upgrade will do the right thing.  For the other people, follow the
+  instructions in entry 20181213, it should still be the same.
+
+20231014:
+  AFFECTS: users of security/openssl and security/openssl30
+  AUTHOR: brnrd@FreeBSD.org
+
+  The openssl port was renamed to openssl111 and subsequently the
+  openssl30 port was renamed to openssl.
+
+  The shared library version of OpenSSL has been bumped.
+
+  Users of DEFAULT_VERSIONS= ssl=openssl30 must update this to
+  ssl=openssl.
+  Users of DEFAULT_VERSIONS= ssl=openssl should not change this unless
+  they use ports that require the deprecated OpenSSL 1.1.1 version.
+
+  You must rebuild all ports that depend on OpenSSL if you use OpenSSL
+  from ports.
+
+20231011:
+  AFFECTS: users of www/caddy
+  AUTHOR:  adamw@FreeBSD.org
+
+  The default admin endpoint has changed from localhost:2019 to
+  /var/run/caddy/caddy.sock. Using a Unix socket is more secure,
+  allowing it to be secured by filesystem permissions rather than
+  requiring a firewall.
+
+  If you only control caddy from the rc(8) script (service caddy ...),
+  you don't need to do anything. If you access the API yourself, you
+  will want to update your scripts to use the new socket.
+
+  To use the old endpoint, add the following to /etc/rc.conf:
+
+    caddy_admin="localhost:2019"
+
+20231009:
+  AFFECTS: users of net/ntpd-rs
+  AUTHOR: mikael@freebsd.org
+
+  In 1.0.0 the configuration has been completely reworked, please check the
+  documentation for details. Configuration will not automatically migrate.
+
 20231004:
   AFFECTS: www/gitlab-ce
   AUTHOR:  mfechner@FreeBSD.org
@@ -18,8 +158,8 @@ you update your ports collection, before attempting any port upgrades.
 
   The upgrade manual can be found as usual here:
   https://gitlab.fechner.net/mfechner/Gitlab-docu/-/blob/master/update/16.3-16.4-freebsd.md
-  
-  
+
+
 20230930:
   AFFECTS: users of Transmission (net-p2p/transmission@*)
   AUTHOR:  mondo.debater_0q@icloud.com
@@ -5190,7 +5330,7 @@ leave you without networking.
 	  Then you will need to rebuild everything that uses libperl.so, you
 	  can do so with:
 
-	portmaster -f `pkg shlib -qR libperl.so.5.26`
+	portmaster `pkg shlib -qR libperl.so.5.26`
 
 	  If, for some reason, this command fails at one point, it is safe to
 	  run it again, it will not rebuild what it already rebuilt, as the

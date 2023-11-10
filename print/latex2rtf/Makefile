@@ -1,26 +1,34 @@
 PORTNAME=	latex2rtf
-DISTVERSION=	2.3.17
-PORTREVISION=	1
+DISTVERSION=	2.3.18
 CATEGORIES=	print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-unix/${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Translator from LaTeX to RTF
-WWW=		http://latex2rtf.sourceforge.net/
+WWW=		https://latex2rtf.sourceforge.net/
 
-USES=		cpe shebangfix makeinfo
-SHEBANG_FILES=	${WRKSRC}/scripts/latex2png
+LICENSE=	GPLv2+
 
+USES=		cpe shebangfix
 CPE_VENDOR=	latex2rtf_project
 
+SHEBANG_FILES=	${WRKSRC}/scripts/latex2png
+
+MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1 CFGDIR=${DATADIR}/cfg \
+		BINDIR=${PREFIX}/bin
+
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 OPTIONS_DEFINE=	LATEX2PNG
-LATEX2PNG_DESC=	Install latex2png utility
 OPTIONS_SUB=	yes
+
+LATEX2PNG_DESC=	Install latex2png utility
 
 LATEX2PNG_USES=		magick:6,run tex
 LATEX2PNG_USE=		TEX=dvipsk,latex,xetex
 
-MAKE_ARGS+=	MANDIR=${PREFIX}/man/man1 CFGDIR=${DATADIR}/cfg \
-		BINDIR=${PREFIX}/bin
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

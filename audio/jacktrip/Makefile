@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.1.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libjack.so:audio/jack \
 		librtaudio.so:audio/rtaudio
 
 USES=		meson compiler:c++17-lang gl pkgconfig qt:6
-USE_QT=		base declarative svg webchannel webengine websockets
+USE_QT=		5compat base declarative svg webchannel webengine websockets
 USE_GL=		gl
 
 USE_GITHUB=	yes

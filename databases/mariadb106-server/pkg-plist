@@ -210,6 +210,7 @@ lib/mysql/plugin/test_sql_service.so
 lib/mysql/plugin/test_versioning.so
 lib/mysql/plugin/type_mysql_json.so
 lib/mysql/plugin/type_test.so
+lib/mysql/plugin/type_mysql_timestamp.so
 %%WSREP%%lib/mysql/plugin/wsrep_info.so
 lib/mysql/plugin/zstd.so
 libexec/mariadbd

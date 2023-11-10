@@ -1,6 +1,6 @@
 PORTNAME=	libretro-desmume2015
-PORTVERSION=	0.20220405
-PORTREVISION=	2
+DISTVERSION=	0.20220405
+PORTREVISION=	3
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,18 +11,18 @@ LICENSE=	GPLv2
 
 BROKEN_aarch64=	fails to compile: invokes x86 assembler
 
-USES=		compiler:c++11-lib gmake gl
+USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
-USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	desmume2015
-GH_TAGNAME=	af397ff
+GH_TAGNAME=	af397ff3d1f208c27f3922cc8f2b8e08884ba893
 
 PLIST_FILES=	lib/libretro/desmume2015_libretro.so
 
-MAKEFILE=	Makefile.freebsd
+MAKEFILE=	Makefile.libretro
+BUILD_WRKSRC=	${WRKSRC}/desmume
 
 .include <bsd.port.options.mk>
 
@@ -31,7 +31,7 @@ MAKE_ENV+=	DESMUME_JIT=0
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/desmume/desmume2015_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/desmume/desmume2015_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

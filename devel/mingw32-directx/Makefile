@@ -10,11 +10,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DirectX header files for use with MinGW
 WWW=		https://www.libsdl.org/extras/win32/cygwin/README.txt
 
+DEPRECATED=	Last upstream release was in 2002 and mingw32 project is more or less dead
+EXPIRATION_DATE=	2023-11-20
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		mingwm10.dll:devel/mingw32-bin-msvcrt
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/mingw32/include

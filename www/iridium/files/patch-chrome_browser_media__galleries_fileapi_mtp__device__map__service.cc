@@ -1,10 +1,10 @@
---- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
 @@ -39,10 +39,12 @@ void MTPDeviceMapService::RegisterMTPFileSystem(
      // Note that this initializes the delegate asynchronously, but since
      // the delegate will only be used from the IO thread, it is guaranteed
      // to be created before use of it expects it to be there.
-+#if !defined(OS_BSD) 
++#if !BUILDFLAG(IS_BSD) 
      CreateMTPDeviceAsyncDelegate(
          device_location, read_only,
          base::BindOnce(&MTPDeviceMapService::AddAsyncDelegate,

@@ -1,4 +1,5 @@
 bin/janet
+include/janet/janet_%%SOVERSION%%.h
 include/janet/janet.h
 include/janet.h
 lib/janet/.keep

@@ -57,6 +57,7 @@ include/KPublicTransport/kpublictransport/locationquerymodel.h
 include/KPublicTransport/kpublictransport/locationreply.h
 include/KPublicTransport/kpublictransport/locationrequest.h
 include/KPublicTransport/kpublictransport/manager.h
+include/KPublicTransport/kpublictransport/onboardstatus.h
 include/KPublicTransport/kpublictransport/path.h
 include/KPublicTransport/kpublictransport/pathmodel.h
 include/KPublicTransport/kpublictransport/platform.h

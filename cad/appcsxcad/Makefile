@@ -1,8 +1,6 @@
 PORTNAME=	appcsxcad
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2-9
-DISTVERSIONSUFFIX=	-g97ba30e
-PORTREVISION=	6
+DISTVERSION=	0.2.3
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,17 +11,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libCSXCAD.so:cad/csxcad \
-		libexpat.so:textproc/expat2 \
-		libfreetype.so:print/freetype2 \
 		libhdf5.so:science/hdf5 \
-		libpng16.so:graphics/png \
 		libQCSXCAD.so:cad/qcsxcad \
-		libsz.so:science/libaec \
-		libtiff.so:graphics/tiff \
 		libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
 
-USES=		cmake jpeg pkgconfig qt:5 xorg
-USE_QT=		core gui sql widgets xml buildtools:build qmake:build
+USES=		cmake gl pkgconfig qt:5 xorg
+USE_QT=		core gui opengl widgets xml buildtools:build qmake:build
+USE_GL=		opengl
 USE_XORG=	ice sm x11 xext xt
 USE_LDCONFIG=	yes
 

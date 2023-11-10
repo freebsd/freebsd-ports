@@ -11,6 +11,9 @@ WWW=		https://github.com/raelgc/scudcloud
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Depends on deprecated devel/py-qt5-pyqt
+EXPIRATION_DATE=	2023-11-28
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsmin>0:devel/py-jsmin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 

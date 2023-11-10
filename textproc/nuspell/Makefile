@@ -1,6 +1,6 @@
 PORTNAME=	nuspell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.3
+DISTVERSION=	5.1.4
 CATEGORIES=	textproc
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libicuuc.so:devel/icu
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake:testing compiler:c++17-lang
 USE_GITHUB=	yes

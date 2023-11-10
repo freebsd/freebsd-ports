@@ -26,7 +26,7 @@ Basic instructions for configure your gvm infraestruture are following:
    # echo "[notus-scanner]" > /usr/local/etc/gvm/notus-scanner.toml
    # echo 'mqtt-broker-address = "localhost"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo 'mqtt-broker-port = "1883"' >> /usr/local/etc/gvm/notus-scanner.toml
-   # echo 'products-directory = "/var/lib/openvas/plugins/notus/products"' >> /usr/local/etc/gvm/notus-scanner.toml
+   # echo 'products-directory = "/var/lib/notus/products"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo 'log-level = "INFO"' >> /usr/local/etc/gvm/notus-scanner.toml
    # echo "disable-hashsum-verification = false" >> /usr/local/etc/gvm/notus-scanner.toml
 
@@ -37,8 +37,8 @@ Basic instructions for configure your gvm infraestruture are following:
 
   # pw groupmod redis -M gvm
 
-5) security/gvmd uses PostgreSQL database. Generally, PostgreSQL must be 
-   installed in the same server where security/gvmd is running: 
+5) security/gvmd uses PostgreSQL database (server and contrib). Generally, 
+   PostgreSQL must be installed in the same server where security/gvmd is running: 
 
   # su postgres
   # createuser -DRS gvm
@@ -141,11 +141,9 @@ Basic instructions for configure your gvm infraestruture are following:
 
 14) gvm log files are stores to /var/log/gvm directory
 
-15) gsad can export results to PDF. It needs print/texlive-texmf port
+15) gsad can export results to PDF. It needs print/tex-xetex port
   
-  # pkg install texlive-texmf
-
-  It will install 1G of data
+  # pkg install tex-xetex
 
 16) If you need more configure information you can look at the following links:
 

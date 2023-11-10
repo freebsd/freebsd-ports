@@ -1,5 +1,5 @@
 PORTNAME=	netgen
-PORTVERSION=	6.2.2304
+PORTVERSION=	6.2.2305
 DISTVERSIONPREFIX=	v
 CATEGORIES=	cad
 
@@ -30,6 +30,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${TK_INCLUDEDIR}/generic -I${TK_INCLUDEDIR}/
 LDFLAGS+=	-lexecinfo
 
 CMAKE_OFF=	USE_NATIVE_ARCH
+
+CMAKE_ARGS+=	-DUSE_OCC=OFF
 
 CONFLICTS_INSTALL=	libvisual pybind11 # bin/netgen include/pybind11/attr.h lib/libvisual.so
 

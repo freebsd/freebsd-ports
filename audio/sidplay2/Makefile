@@ -7,7 +7,7 @@ DISTNAME=	sidplay-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID music player using libsidplay2
-WWW=		http://sidplay2.sourceforge.net/
+WWW=		https://sidplay2.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

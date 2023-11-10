@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consistency check utility for MPEG Layer 2 or 3 files or streams
-WWW=		http://mp3ck.sourceforge.net/
+WWW=		https://mp3ck.sourceforge.net/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

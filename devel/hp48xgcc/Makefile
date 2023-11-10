@@ -12,7 +12,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU C cross-compiler for HP48 calculators
-WWW=		http://hp48xgcc.sourceforge.net/
+WWW=		https://hp48xgcc.sourceforge.net/
 
 LICENSE=	GPLv2
 

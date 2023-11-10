@@ -7,7 +7,7 @@ DISTNAME=	SDL-Ball_${PORTVERSION}_src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Arkanoid/Breakout clone with pretty graphics
-WWW=		http://sdl-ball.sourceforge.net/
+WWW=		https://sdl-ball.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

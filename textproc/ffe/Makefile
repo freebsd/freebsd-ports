@@ -6,7 +6,7 @@ MASTER_SITES=	SF/ff-extractor/ff-extractor/${DISTVERSION}
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Flat file extractor
-WWW=		http://ff-extractor.sourceforge.net/
+WWW=		https://ff-extractor.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

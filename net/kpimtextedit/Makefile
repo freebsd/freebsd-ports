@@ -1,5 +1,6 @@
 PORTNAME=	kpimtextedit
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+POTREVISION=	1
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,8 +12,8 @@ LICENSE=	LGPL21
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons \
 		emoticons i18n iconthemes init itemmodels itemviews jobwidgets \
-		kdelibs4support kio service solid sonnet syntaxhighlighting textwidgets \
-		widgetsaddons windowsystem xmlgui \
+		kdelibs4support kio ktextaddons service solid sonnet syntaxhighlighting \
+		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
 USE_QT=		concurrent core dbus gui network speech widgets xml \
 		buildtools:build qmake:build

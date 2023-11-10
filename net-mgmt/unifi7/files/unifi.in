@@ -45,7 +45,12 @@ load_rc_config ${name}
 : ${unifi_group:=%%GROUPS%%}
 : ${unifi_chdir=%%JAVASHAREDIR%%/unifi}
 : ${unifi_java_home=%%JAVA_HOME%%}
-: ${unifi_javaflags="-Djava.awt.headless=true -Xmx1024M"}
+: ${unifi_javaflags="-Djava.awt.headless=true -Xmx1024M \
+	--add-opens java.base/java.lang=ALL-UNNAMED \
+	--add-opens java.base/java.time=ALL-UNNAMED \
+	--add-opens java.base/sun.security.util=ALL-UNNAMED \
+	--add-opens java.base/java.io=ALL-UNNAMED \
+	--add-opens java.rmi/sun.rmi.transport=ALL-UNNAMED"}
 
 pidfile="/var/run/unifi/${name}.pid"
 procname=${unifi_java_home}/bin/java

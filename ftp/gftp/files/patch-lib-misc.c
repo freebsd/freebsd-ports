@@ -6,11 +6,9 @@ its only argument is NULL, then this returned string was unreferenced.
  lib/misc.c |    2 ++
  1 files changed, 2 insertions(+), 0 deletions(-)
 
-diff --git a/lib/misc.c b/lib/misc.c
-index 16c019b..2791466 100644
---- lib/misc.c.orig
+--- lib/misc.c.orig	2022-02-15 06:31:19 UTC
 +++ lib/misc.c
-@@ -143,6 +143,8 @@ gftp_expand_path (gftp_request * request, const char *src)
+@@ -145,6 +145,8 @@ char * gftp_expand_path (gftp_request * request, const
         tempchar;
    struct passwd *pw;
  

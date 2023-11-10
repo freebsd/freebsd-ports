@@ -1,5 +1,5 @@
 PORTNAME=	kafka
-DISTVERSION=	3.5.1
+DISTVERSION=	3.6.0
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
@@ -46,7 +46,7 @@ USERS=		${KAFKA_USER}
 GROUPS=		${KAFKA_GROUP}
 
 KAFKA_BINS=	connect-distributed.sh connect-mirror-maker.sh \
-		connect-standalone.sh kafka-acls.sh \
+		connect-plugin-path.sh connect-standalone.sh kafka-acls.sh \
 		kafka-broker-api-versions.sh kafka-cluster.sh kafka-configs.sh \
 		kafka-console-consumer.sh kafka-console-producer.sh \
 		kafka-consumer-groups.sh kafka-consumer-perf-test.sh \

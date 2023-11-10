@@ -3,9 +3,11 @@ lib/lv2/yoshimi.lv2/manifest.ttl
 lib/lv2/yoshimi.lv2/yoshimi.ttl
 lib/lv2/yoshimi.lv2/yoshimi_lv2.so
 share/applications/yoshimi.desktop
+share/icons/hicolor/128x128/apps/yoshimi.png
+share/icons/hicolor/256x256/apps/yoshimi.png
+share/icons/hicolor/64x64/apps/yoshimi.png
 share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/man/man1/yoshimi.1.gz
-share/metainfo/yoshimi.appdata.xml
 share/metainfo/yoshimi.metainfo.xml
 share/pixmaps/yoshimi.png

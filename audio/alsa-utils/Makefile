@@ -1,11 +1,9 @@
 PORTNAME=	alsa-utils
-PORTVERSION=	1.2.2
-DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTVERSION=	1.2.10
 CATEGORIES=	audio
-MASTER_SITES=	GH
+MASTER_SITES=	https://www.alsa-project.org/files/pub/utils/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	ALSA compatibility utilities
 WWW=		https://www.alsa-project.org/
 
@@ -17,11 +15,8 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libinotify.so:devel/libinotify
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
 
-USES=		autoreconf gettext-tools gmake libtool localbase ncurses shebangfix \
-		tar:bzip2 pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	alsa-project
-GH_PROJECT=	${PORTNAME}
+USES=		gettext-tools gmake libtool localbase ncurses pkgconfig \
+		shebangfix tar:bzip2
 SHEBANG_FILES=	alsa-info/alsa-info.sh alsaconf/alsaconf.in bat/alsabat-test.sh
 
 GNU_CONFIGURE=	yes
@@ -53,12 +48,12 @@ NLS_LIBS=		-lintl
 SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
 SAMPLERATE_CONFIGURE_ENV_OFF=	ac_cv_header_samplerate_h=no
 
+#${WRKSRC}/speaker-test/samples/sample_map.csv
 post-patch:
 	@${REINPLACE_CMD} \
 		's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/alsactl/alsactl_init.xml \
 		${WRKSRC}/speaker-test/speaker-test.1 \
-		${WRKSRC}/speaker-test/samples/sample_map.csv \
 		${WRKSRC}/alsaconf/alsaconf.fr.8 \
 		${WRKSRC}/alsaconf/alsaconf.8 \
 		${WRKSRC}/utils/alsa-utils.spec.in \

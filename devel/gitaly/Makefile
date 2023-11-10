@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.4.1
+DISTVERSION=	16.5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.41.0:devel/git
+MY_DEPENDS=	git>=2.42.0:devel/git
 BUILD_DEPENDS=	bash>0:shells/bash \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
 		${MY_DEPENDS}
@@ -39,8 +39,7 @@ GL_ACCOUNT=	gitlab-org
 # so we download the required go.mod file from gitlab
 # lines are taken from go.mk
 # ---------------------------
-FETCH_DEPENDS=	${GO_CMD}:${GO_PORT} \
-		ca_root_nss>0:security/ca_root_nss
+FETCH_DEPENDS=	${GO_CMD}:${GO_PORT}
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitaly/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod
 DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}

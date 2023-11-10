@@ -5,7 +5,7 @@ CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Read and manipulate raw images from various digital cameras
-WWW=		http://ufraw.sourceforge.net/
+WWW=		https://ufraw.sourceforge.net/
 
 LICENSE=	GPLv2
 

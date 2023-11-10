@@ -6,7 +6,7 @@ MASTER_SITES=	SF/ipa-system/modules/ipa_conv
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPA accounting/database module for converting statistics
-WWW=		http://ipa-system.sourceforge.net/modules/ipa_conv/
+WWW=		https://ipa-system.sourceforge.net/modules/ipa_conv/
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ipa_mod.h:sysutils/ipa
 

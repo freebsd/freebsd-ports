@@ -1,0 +1,3 @@
+ZDNS is a command-line utility that provides high-speed DNS lookups.
+ZDNS is written in Go and contains its own recursive resolution code and
+a cache optimized for performing lookups of a diverse set of names.

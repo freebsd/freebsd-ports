@@ -1,0 +1,29 @@
+--- bacnet/payloads/17f06fa2-44e1-11eb-b378-0242ac130002.yml	2023-10-25 18:28:04.475705000 -0500
++++ bacnet/payloads/17f06fa2-44e1-11eb-b378-0242ac130002.yml	2023-10-25 18:29:24.972817000 -0500
+@@ -21,6 +21,9 @@
+     id: 6ecaedd8-656c-11eb-ae93-0242ac130002
+ 
+ # WriteProp
++  bacwp-freebsd:
++    description: BACnet WriteProperty Service - FreeBSD
++    id: 3781c3ee-738e-11ee-9734-8851fb56e3b2
+   bacwp:
+     description: BACnet WriteProperty Service - Linux
+     id: 1a2faf5a-4601-11eb-b378-0242ac130002
+@@ -29,6 +32,9 @@
+     id: 82b101d4-656c-11eb-ae93-0242ac130002
+ 
+ # ReadProp
++  bacrp-freebsd:
++    description: BACnet ReadProperty Service - FreeBSD
++    id: 4b6ce399-738e-11ee-9734-8851fb56e3b2
+   bacrp:
+     description: BACnet ReadProperty Service - Linux
+     id: 748d5c80-5679-11eb-ae93-0242ac130002
+@@ -50,4 +56,4 @@
+     id: e2e4d612-656b-11eb-ae93-0242ac130002
+   bacarf.exe:
+     description: BACnet AtomicReadFile - Windows
+-    id: 938f09a6-656c-11eb-ae93-0242ac130002
+\ No newline at end of file
++    id: 938f09a6-656c-11eb-ae93-0242ac130002

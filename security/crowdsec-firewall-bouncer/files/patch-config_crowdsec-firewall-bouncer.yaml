@@ -1,0 +1,9 @@
+--- config/crowdsec-firewall-bouncer.yaml.orig	2023-07-31 19:34:51 UTC
++++ config/crowdsec-firewall-bouncer.yaml
+@@ -1,4 +1,5 @@
+-mode: ${BACKEND}
++mode: pf
++retry_initial_connect: true
+ update_frequency: 10s
+ log_mode: file
+ log_dir: /var/log/

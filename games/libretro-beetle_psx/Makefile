@@ -1,6 +1,5 @@
 PORTNAME=	libretro-beetle_psx
-PORTVERSION=	0.20220211
-PORTREVISION=	2
+DISTVERSION=	0.20231020
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +15,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	beetle-psx-libretro
-GH_TAGNAME=	88929ae
+GH_TAGNAME=	e505f5a93eebba8f96a040f478d77b6ffb2015b1
 
 PLIST_FILES=	lib/libretro/mednafen_psx_libretro.so
 
@@ -27,7 +26,7 @@ USE_GCC=	yes:build
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/mednafen_psx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/mednafen_psx_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.post.mk>

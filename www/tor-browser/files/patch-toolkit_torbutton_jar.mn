@@ -1,0 +1,80 @@
+--- toolkit/torbutton/jar.mn.orig	2023-11-06 01:20:34.330541000 +0100
++++ toolkit/torbutton/jar.mn	2023-11-06 01:25:07.776233000 +0100
+@@ -13,3 +13,77 @@
+ 
+ % locale torbutton en-US %locale/en-US/
+   locale/en-US/ (chrome/locale/en-US/*)
++% locale torbutton ar %locale/ar/
++  locale/ar/ (chrome/locale/ar/*)
++% locale torbutton ca %locale/ca/
++  locale/ca/ (chrome/locale/ca/*)
++% locale torbutton cs %locale/cs/
++  locale/cs/ (chrome/locale/cs/*)
++% locale torbutton da %locale/da/
++  locale/da/ (chrome/locale/da/*)
++% locale torbutton de %locale/de/
++  locale/de/ (chrome/locale/de/*)
++% locale torbutton el %locale/el/
++  locale/el/ (chrome/locale/el/*)
++% locale torbutton es-ES %locale/es-ES/
++  locale/es-ES/ (chrome/locale/es-ES/*)
++% locale torbutton fa %locale/fa/
++  locale/fa/ (chrome/locale/fa/*)
++% locale torbutton fi %locale/fi/
++  locale/fi/ (chrome/locale/fi/*)
++% locale torbutton fr %locale/fr/
++  locale/fr/ (chrome/locale/fr/*)
++% locale torbutton ga-IE %locale/ga-IE/
++  locale/ga-IE/ (chrome/locale/ga-IE/*)
++% locale torbutton he %locale/he/
++  locale/he/ (chrome/locale/he/*)
++% locale torbutton hu %locale/hu/
++  locale/hu/ (chrome/locale/hu/*)
++% locale torbutton id %locale/id/
++  locale/id/ (chrome/locale/id/*)
++% locale torbutton is %locale/is/
++  locale/is/ (chrome/locale/is/*)
++% locale torbutton it %locale/it/
++  locale/it/ (chrome/locale/it/*)
++% locale torbutton ja %locale/ja/
++  locale/ja/ (chrome/locale/ja/*)
++% locale torbutton ka %locale/ka/
++  locale/ka/ (chrome/locale/ka/*)
++% locale torbutton ko %locale/ko/
++  locale/ko/ (chrome/locale/ko/*)
++% locale torbutton lt %locale/lt/
++  locale/lt/ (chrome/locale/lt/*)
++% locale torbutton mk %locale/mk/
++  locale/mk/ (chrome/locale/mk/*)
++% locale torbutton ms %locale/ms/
++  locale/ms/ (chrome/locale/ms/*)
++% locale torbutton my %locale/my/
++  locale/my/ (chrome/locale/my/*)
++% locale torbutton nb-NO %locale/nb-NO/
++  locale/nb-NO/ (chrome/locale/nb-NO/*)
++% locale torbutton nl %locale/nl/
++  locale/nl/ (chrome/locale/nl/*)
++% locale torbutton pl %locale/pl/
++  locale/pl/ (chrome/locale/pl/*)
++% locale torbutton pt-BR %locale/pt-BR/
++  locale/pt-BR/ (chrome/locale/pt-BR/*)
++% locale torbutton ro %locale/ro/
++  locale/ro/ (chrome/locale/ro/*)
++% locale torbutton ru %locale/ru/
++  locale/ru/ (chrome/locale/ru/*)
++% locale torbutton sq %locale/sq/
++  locale/sq/ (chrome/locale/sq/*)
++% locale torbutton sv-SE %locale/sv-SE/
++  locale/sv-SE/ (chrome/locale/sv-SE/*)
++% locale torbutton th %locale/th/
++  locale/th/ (chrome/locale/th/*)
++% locale torbutton tr %locale/tr/
++  locale/tr/ (chrome/locale/tr/*)
++% locale torbutton uk %locale/uk/
++  locale/uk/ (chrome/locale/uk/*)
++% locale torbutton vi %locale/vi/
++  locale/vi/ (chrome/locale/vi/*)
++% locale torbutton zh-CN %locale/zh-CN/
++  locale/zh-CN/ (chrome/locale/zh-CN/*)
++% locale torbutton zh-TW %locale/zh-TW/
++  locale/zh-TW/ (chrome/locale/zh-TW/*)

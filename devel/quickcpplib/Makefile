@@ -1,5 +1,6 @@
 PORTNAME=	quickcpplib
 DISTVERSION=	g20230614
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,8 +9,6 @@ WWW=		https://github.com/ned14/quickcpplib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
-
-BROKEN_i386=	complation fails: __int128 is not supported on this target
 
 USES=		cmake:testing
 

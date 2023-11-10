@@ -7,7 +7,7 @@ DISTNAME=	loader${PORTVERSION:C/\.//}
 
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Configurable web graber/spider
-WWW=		http://scloader.sourceforge.net
+WWW=		https://scloader.sourceforge.net
 
 LICENSE=	GPLv2
 

@@ -1,7 +1,7 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.19.5
+DISTVERSION=	3.20.1
 CATEGORIES=	science devel
-MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
+MASTER_SITES=	http://web.cels.anl.gov/projects/petsc/download/release-snapshots/ # was: https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org

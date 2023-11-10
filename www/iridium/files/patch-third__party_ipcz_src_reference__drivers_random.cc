@@ -1,7 +1,7 @@
---- third_party/ipcz/src/reference_drivers/random.cc.orig	2023-07-24 14:27:53 UTC
+--- third_party/ipcz/src/reference_drivers/random.cc.orig	2023-10-21 11:51:27 UTC
 +++ third_party/ipcz/src/reference_drivers/random.cc
-@@ -15,7 +15,7 @@
- #include <limits>
+@@ -14,7 +14,7 @@
+ #include <windows.h>
  #elif BUILDFLAG(IS_FUCHSIA)
  #include <zircon/syscalls.h>
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
@@ -9,8 +9,8 @@
  #include <asm/unistd.h>
  #include <sys/syscall.h>
  #include <unistd.h>
-@@ -78,7 +78,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
-   ABSL_ASSERT(ok);
+@@ -86,7 +86,7 @@ void RandomBytes(absl::Span<uint8_t> destination) {
+   process_prng_fn(destination.data(), destination.size());
  #elif BUILDFLAG(IS_FUCHSIA)
    zx_cprng_draw(destination.data(), destination.size());
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

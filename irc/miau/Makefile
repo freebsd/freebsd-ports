@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	freebsd-ports@dan.me.uk
 COMMENT=	Fully featured easy to use IRC-bouncer
-WWW=		http://miau.sourceforge.net/
+WWW=		https://miau.sourceforge.net/
 
 USES=		iconv tar:bzip2
 GNU_CONFIGURE=	yes

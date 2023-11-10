@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merge mp3 files (and other formats)
-WWW=		http://mp3wrap.sourceforge.net/
+WWW=		https://mp3wrap.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 

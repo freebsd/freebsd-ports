@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Sophisticated scripter based on Tcl/Tk
-WWW=		http://expect.sourceforge.net
+WWW=		https://expect.sourceforge.net
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/license.terms

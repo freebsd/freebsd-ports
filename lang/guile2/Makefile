@@ -20,14 +20,14 @@ RUN_DEPENDS=	guile-aclocal>=3:lang/guile-aclocal
 
 USES=		guile:${PORTVERSION:R},env \
 		charsetfix compiler:c11 cpe gmake iconv libtool localbase \
-		makeinfo ncurses pathfix pkgconfig readline tar:lz
+		ncurses pathfix pkgconfig readline tar:lz
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=-${GUILE_VER}
 # eliminate some pointless configure warnings/errors
-CONFIGURE_ENV+= gl_cv_func_working_mktime=yes \
+CONFIGURE_ENV+=	gl_cv_func_working_mktime=yes \
 		ac_cv_header_sys_timeb_h=0
 
 MAKE_JOBS_UNSAFE=	yes

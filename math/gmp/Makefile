@@ -9,26 +9,25 @@ WWW=		https://gmplib.org/
 
 LICENSE=	LGPL3
 
-USES=		cpe libtool makeinfo tar:xz pathfix
-
+USES=		cpe libtool tar:xz pathfix
 CPE_VENDOR=	gmplib
-
-OPTIONS_DEFINE=	CPU_OPTS
-CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
-
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--infodir=${PREFIX}/${INFO_PATH} \
-		--mandir=${PREFIX}/man \
-		--enable-cxx
-
 USE_LDCONFIG=	yes
 
-INFO=		gmp
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-cxx
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+
+OPTIONS_DEFINE=	CPU_OPTS INFO
+OPTIONS_DEFAULT=	INFO
+
+CPU_OPTS_DESC=	Enable assembly optimizations for your CPU
+
+INFO_USES=	makeinfo
+INFO_CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
+INFO_INFO=		gmp
 
 .include <bsd.port.pre.mk>
 
@@ -50,7 +49,10 @@ CONFIGURE_ENV+=	ABI="64"
 CONFIGURE_ENV+=	ABI="32"
 .endif
 
-post-extract:
+post-extract-INFO-on:
 	@${RM} ${WRKSRC}/doc/gmp.info*
+
+post-patch-INFO-off:
+	${REINPLACE_CMD} -e '/^SUBDIRS/ s|doc||' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>

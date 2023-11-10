@@ -1,6 +1,6 @@
 PORTNAME=	dvisvg
 DISTVERSION=	0.7.1d
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	http://dvisvg.sourceforge.net/files/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USES=		ghostscript:run tex
-USE_TEX=	base texhash # texmf
+USE_TEX=	base texhash
 ALL_TARGET=	# empty
 # workaround for svgfonts.c not including kpathsea/c-auto.h
 CFLAGS+=	-DHAVE_PROTOTYPES

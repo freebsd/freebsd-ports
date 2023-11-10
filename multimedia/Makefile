@@ -5,6 +5,7 @@
     SUBDIR += ab25
     SUBDIR += acidrip
     SUBDIR += aegisub
+    SUBDIR += alass
     SUBDIR += aom
     SUBDIR += aravis
     SUBDIR += arcan
@@ -62,12 +63,14 @@
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
+    SUBDIR += ffsubsync
     SUBDIR += filebot
     SUBDIR += flvmeta
     SUBDIR += flvstreamer
     SUBDIR += flvtool++
     SUBDIR += fpc-dts
     SUBDIR += fpc-libvlc
+    SUBDIR += fswebcam
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
@@ -318,6 +321,7 @@
     SUBDIR += py-pymediainfo
     SUBDIR += py-pysubs2
     SUBDIR += py-soco
+    SUBDIR += py-srt
     SUBDIR += py-subliminal
     SUBDIR += py-tartube
     SUBDIR += py-tvnamer
@@ -356,7 +360,6 @@
     SUBDIR += snapcast
     SUBDIR += spook
     SUBDIR += streamlink
-    SUBDIR += subsync
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleoffsetmodifier
     SUBDIR += subtools

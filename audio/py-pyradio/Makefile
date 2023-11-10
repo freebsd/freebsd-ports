@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.9.2.15
+DISTVERSION=	0.9.2.19
 PORTREVISION=	0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,24 +30,29 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
 USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	coderholic
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
+
+NO_ARCH=	yes
 
 PLIST_FILES=	share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 PORTDOCS=	*
 
-OPTIONS_DEFINE=			DOCS
-OPTIONS_DEFAULT=		MPV
+OPTIONS_DEFINE=			DOCS METADATA
+OPTIONS_DEFAULT=		METADATA MPV
 OPTIONS_SINGLE=			MEDIA_PLAYER
 OPTIONS_SINGLE_MEDIA_PLAYER=	MPLAYER MPV VLC
 
+METADATA_DESC=	Insert tags, chapters and cover into recordings
 # override predefined
 MPV_DESC=	Mpv media player support
 VLC_DESC=	VLC media player support
 
 DOCS_PLIST_FILES=	man/man1/pyradio.1.gz \
 			man/man1/pyradio_rb.1.gz \
+			man/man1/pyradio_rec.1.gz \
 			man/man1/pyradio_server.1.gz
+METADATA_RUN_DEPENDS+=	mkvinfo:multimedia/mkvtoolnix
 MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc

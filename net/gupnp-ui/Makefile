@@ -11,6 +11,9 @@ WWW=		https://wiki.gnome.org/Projects/GUPnP
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on deprecated port net/gupnp14
+EXPIRATION_DATE=2023-11-30
+
 BUILD_DEPENDS=	gupnp14>=0.3:net/gupnp14
 LIB_DEPENDS=	libgupnp-1.2.so:net/gupnp14 \
 		libsoup-2.4.so:devel/libsoup

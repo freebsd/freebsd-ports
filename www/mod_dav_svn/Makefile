@@ -9,6 +9,9 @@ WWW=		https://subversion.apache.org/
 
 USES=		apache
 
+PORTREVISION_114=	0
+PORTREVISION_LTS=	0
+
 .include "${.CURDIR}/../../devel/subversion/Makefile.addons"
 
 CONFIGURE_ARGS+=	--with-apxs=${APXS} \

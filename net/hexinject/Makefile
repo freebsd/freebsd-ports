@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Versatile packet injector and sniffer
-WWW=		http://hexinject.sourceforge.net
+WWW=		https://hexinject.sourceforge.net
 
 LICENSE=	BSD2CLAUSE
 

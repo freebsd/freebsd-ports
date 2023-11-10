@@ -1,5 +1,5 @@
 PORTNAME=	libretro-prosystem
-PORTVERSION=	0.20220228
+DISTVERSION=	0.20230817
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,12 +14,12 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	prosystem-libretro
-GH_TAGNAME=	fbf62c3
+GH_TAGNAME=	4202ac5bdb2ce1a21f84efc0e26d75bb5aa7e248
 
 PLIST_FILES=	lib/libretro/prosystem_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/prosystem_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/prosystem_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

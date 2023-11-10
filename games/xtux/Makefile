@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Humorous Arcade game for X
-WWW=		http://xtux.sourceforge.net/
+WWW=		https://xtux.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

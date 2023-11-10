@@ -11,7 +11,7 @@ PATCHFILES+=	b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Utility and library for computing and checking of file hashes
-WWW=		http://rhash.sourceforge.net/
+WWW=		https://rhash.sourceforge.net/
 
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

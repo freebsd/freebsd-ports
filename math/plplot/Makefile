@@ -1,12 +1,12 @@
 PORTNAME=	plplot
 DISTVERSION=	5.15.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scientific plotting package
-WWW=		http://plplot.sourceforge.net/
+WWW=		https://plplot.sourceforge.net/
 
 LICENSE=	LGPL21+
 

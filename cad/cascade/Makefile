@@ -5,7 +5,7 @@ MASTER_SITES=	SF/rfcascade/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Simple tool to analyze noise and distortion of a RF system
-WWW=		http://rfcascade.sourceforge.net/
+WWW=		https://rfcascade.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 USES=		groff

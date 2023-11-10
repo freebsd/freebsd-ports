@@ -6,10 +6,12 @@ MASTER_SITES=	SF/mp3splt/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Utility to split mp3 and ogg files (via GTK Interface)
-WWW=		http://mp3splt.sourceforge.net/
+WWW=		https://mp3splt.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	BROKEN on all supported versions for more than 2 years after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: tree_columns
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: tree_columns
 
@@ -20,12 +22,10 @@ LIB_DEPENDS=	libmp3splt.so:audio/libmp3splt \
 		libid3tag.so:audio/libid3tag \
 		libltdl.so:devel/libltdl
 
-USES=		desktop-file-utils gmake gnome gstreamer pkgconfig
+USES=		desktop-file-utils gmake gnome gstreamer localbase:ldflags pkgconfig
 USE_GNOME=	gtk30
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--disable-audacious --with-mp3splt=${LOCALBASE} \
 		--with-mp3splt-includes=${LOCALBASE}/include \
 		--with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest

@@ -40,6 +40,7 @@ GH_TUPLE=	ataulien:bgfx-cmake:9a9b596:bgfxcmake/lib/bgfx-cmake \
 USE_XORG=	ice sm x11 xcursor xext xinerama xrandr
 USE_GL=		gl glu
 CMAKE_ARGS+=	-DREGOTH_BUILD_WITH_SYSTEM_OPENAL:BOOL=YES
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 LDFLAGS_i386=	-Wl,-znotext
 
 post-extract:

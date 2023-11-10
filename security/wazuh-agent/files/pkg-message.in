@@ -14,11 +14,16 @@ Wazuh Agent was installed
 
    https://documentation.wazuh.com/current/user-manual/index.html
 
-3) You can find additional useful files installed at
+3) Move /var/ossec/etc/client.keys.sample to /var/ossec/etc/client.keys. This
+   file is used to store agent credentials
+
+   # mv /var/ossec/etc/client.keys.sample /var/ossec/etc/client.keys
+
+4) You can find additional useful files installed at
 
   # /var/ossec/packages_files/agent_installation_scripts
 
-4) Add Wazuh agent to /etc/rc.conf
+5) Add Wazuh agent to /etc/rc.conf
 
   # sysrc wazuh_agent_enable="YES"
 
@@ -26,11 +31,11 @@ Wazuh Agent was installed
 
   # service wazuh-agent enable
 
-5) Start Wazuh agent
+6) Start Wazuh agent
 
   # service wazuh-agent start
 
-6) Enjoy it ;)
+7) Enjoy it ;)
 EOM
 }
 ]

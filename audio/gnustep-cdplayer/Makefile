@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	gnustep-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNUstep CD player with CDDB support
-WWW=		http://gsburn.sourceforge.net/
+WWW=		https://gsburn.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

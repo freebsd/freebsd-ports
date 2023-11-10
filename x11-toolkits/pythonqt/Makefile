@@ -1,6 +1,7 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gettext-runtime gl python qmake qt:5
-USE_QT=		core declarative gui multimedia network opengl printsupport sql svg webkit widgets xml xmlpatterns \
+USE_QT=		core declarative gui multimedia network opengl printsupport sql svg widgets xml xmlpatterns \
 		buildtools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes

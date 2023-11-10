@@ -6,6 +6,7 @@ etc/pam.d/lms
 lib/liblmsauth.so
 lib/liblmsav.so
 lib/liblmsdatabase.so
+lib/liblmsfeedback.so
 lib/liblmsimage.so
 lib/liblmsmetadata.so
 lib/liblmsrecommendation.so

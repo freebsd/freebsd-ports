@@ -1,5 +1,6 @@
 PORTNAME=	node
-PORTVERSION=	18.16.0
+PORTVERSION=	${NODEJS_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -9,4 +10,6 @@ WWW=		https://nodejs.org/ \
 
 USES=		metaport nodejs:run
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../node${NODEJS_VERSION}/Makefile.version"
+.include <bsd.port.post.mk>

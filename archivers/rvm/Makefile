@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Archive manager that uses rsync to manage backups
-WWW=		http://rvm.sourceforge.net/
+WWW=		https://rvm.sourceforge.net/
 
 LICENSE=	GPLv2
 

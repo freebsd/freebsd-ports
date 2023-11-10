@@ -4,7 +4,7 @@ CATEGORIES=	devel textproc www
 
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	C and C++ Code Counter
-WWW=		http://cccc.sourceforge.net/
+WWW=		https://cccc.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/cccc/COPYING

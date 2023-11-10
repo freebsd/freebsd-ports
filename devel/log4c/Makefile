@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Logging for C Library
-WWW=		http://log4c.sourceforge.net/
+WWW=		https://log4c.sourceforge.net/
 
 LICENSE=	LGPL21
 

@@ -1,5 +1,5 @@
 PORTNAME=	snazy
-DISTVERSION=	0.51.3
+DISTVERSION=	0.52.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	chmouel
 
-CARGO_CRATES=	aho-corasick-1.0.5 \
+CARGO_CRATES=	aho-corasick-1.1.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.5.0 \
@@ -24,11 +24,11 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
-		bumpalo-3.13.0 \
+		bumpalo-3.14.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		chrono-0.4.30 \
-		clap-4.4.2 \
+		chrono-0.4.31 \
+		clap-4.4.3 \
 		clap_builder-4.4.2 \
 		clap_complete-4.4.1 \
 		clap_derive-4.4.2 \
@@ -47,7 +47,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		is-terminal-0.4.9 \
 		itoa-1.0.9 \
 		js-sys-0.3.64 \
-		libc-0.2.147 \
+		libc-0.2.148 \
 		linux-raw-sys-0.4.7 \
 		log-0.4.20 \
 		memchr-2.6.3 \
@@ -55,7 +55,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		nom-7.1.3 \
 		num-traits-0.2.16 \
 		once_cell-1.18.0 \
-		proc-macro2-1.0.66 \
+		proc-macro2-1.0.67 \
 		quote-1.0.33 \
 		redox_syscall-0.3.5 \
 		regex-1.9.5 \
@@ -65,12 +65,12 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		ryu-1.0.15 \
 		serde-1.0.188 \
 		serde_derive-1.0.188 \
-		serde_json-1.0.106 \
+		serde_json-1.0.107 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.32 \
+		syn-2.0.37 \
 		tempfile-3.8.0 \
-		unicode-ident-1.0.11 \
+		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
 		wasm-bindgen-0.2.87 \
 		wasm-bindgen-backend-0.2.87 \

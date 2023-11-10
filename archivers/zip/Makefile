@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	ler@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with PKZIP
-WWW=		http://infozip.sourceforge.net/Zip.html
+WWW=		https://infozip.sourceforge.net/Zip.html
 
 # License is BSD-based, but not identical, so install with documentation
 LICENSE=	BSD3CLAUSE

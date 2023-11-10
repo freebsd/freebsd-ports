@@ -4,7 +4,7 @@ CATEGORIES=	archivers
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Create & extract files from DOS .ARC files
-WWW=		http://arc.sourceforge.net/
+WWW=		https://arc.sourceforge.net/
 
 LICENSE=	GPLv2
 

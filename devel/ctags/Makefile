@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	Feature-filled tagfile generator for vi and emacs clones
-WWW=		http://ctags.sourceforge.net/
+WWW=		https://ctags.sourceforge.net/
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-macro-patterns --with-readlib

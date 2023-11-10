@@ -13,21 +13,20 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game of yore similar to the "Tron" and "Nibbles"
-WWW=		http://heroes.sourceforge.net/
+WWW=		https://heroes.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsmpeg.so:multimedia/smpeg
 
-USES=		gettext gmake iconv makeinfo sdl
+USES=		gettext gmake iconv localbase:ldflags sdl
 USE_SDL=	mixer sdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
-CONFIGURE_ENV=	MAKEINFO="${MAKEINFO} --no-split"
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib -lsmpeg -lm
+LDFLAGS+=	-lpthread -lsmpeg -lm
 
 INFO=		heroes
 
@@ -52,7 +51,6 @@ post-patch:
 		${FIND} $${dir} -name "Makefile*" -delete; \
 	done
 	@${RM} ${WRKSRC}/lib/getopt.h
-	@${RM} ${WRKSRC}/doc/*.info*
 
 post-install:
 .for dir in levels pics tilesets

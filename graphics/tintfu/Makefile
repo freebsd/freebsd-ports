@@ -8,7 +8,7 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GraphViz .dot file editor
-WWW=		http://tintfu.sourceforge.net/
+WWW=		https://tintfu.sourceforge.net/
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

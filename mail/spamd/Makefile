@@ -6,7 +6,7 @@ MASTER_SITES=	SF/freebsdspamd/spamd
 
 MAINTAINER=	koue@chaosophia.net
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
-WWW=		http://freebsdspamd.sourceforge.net/
+WWW=		https://freebsdspamd.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce-Emacs Integration
-WWW=		http://p4el.sourceforge.net/
+WWW=		https://p4el.sourceforge.net/
 
 RUN_DEPENDS=	p4:devel/p4
 

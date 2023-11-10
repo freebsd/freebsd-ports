@@ -1,5 +1,6 @@
 PORTNAME=	code_saturne
-PORTVERSION=	8.0.0
+PORTVERSION=	8.0.2
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	https://www.code-saturne.org/releases/
 
@@ -10,7 +11,7 @@ WWW=		https://www.code-saturne.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}	\
+BUILD_DEPENDS=	${MPI4PY}	\
 		gsed:textproc/gsed
 LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libcgns.so:science/cgnslib	\
@@ -22,7 +23,7 @@ LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo	\
 		libcblas.so:math/cblas		\
 		libmedC.so:french/med
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR}	\
-		${PYTHON_PKGNAMEPREFIX}mpi4py>0:net/py-mpi4py@${PY_FLAVOR}	\
+		${MPI4PY}	\
 		pbs-config:sysutils/torque	\
 		xmgrace:math/grace	\
 		bash:shells/bash	\

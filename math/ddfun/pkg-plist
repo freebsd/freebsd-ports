@@ -1,0 +1,11 @@
+include/ddfuna.mod
+include/ddfune.mod
+include/ddmodule.mod
+%%PORTDOCS%%%%DOCSDIR%%/README-ddfun.txt
+%%PORTDOCS%%%%DOCSDIR%%/testddfun.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/testdqfun.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpphixdd.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tpslqm1dd.ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/tquaddd.ref.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1dd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tpslqm1dd.f90

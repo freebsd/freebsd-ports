@@ -1,6 +1,7 @@
 bin/minizinc
 bin/mzn2doc
 include/minizinc/MIPdomains.hh
+include/minizinc/_thirdparty/b64/ccommon.h
 include/minizinc/_thirdparty/b64/cdecode.h
 include/minizinc/_thirdparty/b64/cencode.h
 include/minizinc/_thirdparty/b64/decode.h
@@ -58,6 +59,8 @@ include/minizinc/solvers/MIP/MIP_cplex_solverfactory.hh
 include/minizinc/solvers/MIP/MIP_cplex_wrap.hh
 include/minizinc/solvers/MIP/MIP_gurobi_solverfactory.hh
 include/minizinc/solvers/MIP/MIP_gurobi_wrap.hh
+include/minizinc/solvers/MIP/MIP_highs_solverfactory.hh
+include/minizinc/solvers/MIP/MIP_highs_wrap.hh
 include/minizinc/solvers/MIP/MIP_osicbc_solverfactory.hh
 include/minizinc/solvers/MIP/MIP_osicbc_wrap.hh
 include/minizinc/solvers/MIP/MIP_scip_solverfactory.hh
@@ -67,6 +70,8 @@ include/minizinc/solvers/MIP/MIP_solverinstance.hpp
 include/minizinc/solvers/MIP/MIP_wrap.hh
 include/minizinc/solvers/MIP/MIP_xpress_solverfactory.hh
 include/minizinc/solvers/MIP/MIP_xpress_wrap.hh
+include/minizinc/solvers/chuffed_solverfactory.hh
+include/minizinc/solvers/chuffed_solverinstance.hh
 include/minizinc/solvers/fzn_solverfactory.hh
 include/minizinc/solvers/fzn_solverinstance.hh
 include/minizinc/solvers/geas/geas_constraints.hh
@@ -244,6 +249,7 @@ lib/libmzn.so
 %%DATADIR%%/std/arg_sort_float.mzn.deprecated.mzn
 %%DATADIR%%/std/arg_sort_int.mzn
 %%DATADIR%%/std/arg_sort_int.mzn.deprecated.mzn
+%%DATADIR%%/std/arg_val.mzn
 %%DATADIR%%/std/at_least.mzn
 %%DATADIR%%/std/at_least.mzn.deprecated.mzn
 %%DATADIR%%/std/at_least_int.mzn
@@ -311,6 +317,20 @@ lib/libmzn.so
 %%DATADIR%%/std/exactly_int.mzn
 %%DATADIR%%/std/exactly_set.mzn
 %%DATADIR%%/std/experimental.mzn
+%%DATADIR%%/std/experimental/all.mzn
+%%DATADIR%%/std/experimental/on_restart.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_complete.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_last_val_bool.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_last_val_float.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_last_val_int.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_last_val_set.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_sol_bool.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_sol_float.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_sol_int.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_sol_set.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_status.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_uniform_float.mzn
+%%DATADIR%%/std/experimental/on_restart/fzn_on_restart_uniform_int.mzn
 %%DATADIR%%/std/flatzinc_builtins.mzn
 %%DATADIR%%/std/fzn_all_different_int.mzn
 %%DATADIR%%/std/fzn_all_different_int_opt.mzn
@@ -347,6 +367,12 @@ lib/libmzn.so
 %%DATADIR%%/std/fzn_arg_sort_float_reif.mzn
 %%DATADIR%%/std/fzn_arg_sort_int.mzn
 %%DATADIR%%/std/fzn_arg_sort_int_reif.mzn
+%%DATADIR%%/std/fzn_arg_val_bool.mzn
+%%DATADIR%%/std/fzn_arg_val_bool_opt.mzn
+%%DATADIR%%/std/fzn_arg_val_float.mzn
+%%DATADIR%%/std/fzn_arg_val_float_opt.mzn
+%%DATADIR%%/std/fzn_arg_val_int.mzn
+%%DATADIR%%/std/fzn_arg_val_int_opt.mzn
 %%DATADIR%%/std/fzn_array_int_union.mzn
 %%DATADIR%%/std/fzn_array_opt_int_union.mzn
 %%DATADIR%%/std/fzn_array_set_intersect.mzn
@@ -661,6 +687,8 @@ lib/libmzn.so
 %%DATADIR%%/std/fzn_value_precede_int_reif.mzn
 %%DATADIR%%/std/fzn_value_precede_set.mzn
 %%DATADIR%%/std/fzn_value_precede_set_reif.mzn
+%%DATADIR%%/std/fzn_var_perm_sym.mzn
+%%DATADIR%%/std/fzn_var_sqr_sym.mzn
 %%DATADIR%%/std/fzn_write.mzn
 %%DATADIR%%/std/fzn_write_reif.mzn
 %%DATADIR%%/std/fzn_writes.mzn
@@ -772,6 +800,7 @@ lib/libmzn.so
 %%DATADIR%%/std/redefinitions-2.2.1.mzn
 %%DATADIR%%/std/redefinitions-2.3.3.mzn
 %%DATADIR%%/std/redefinitions-2.5.2.mzn
+%%DATADIR%%/std/redefinitions-2.7.1.mzn
 %%DATADIR%%/std/redefinitions.mzn
 %%DATADIR%%/std/regular.mzn
 %%DATADIR%%/std/regular_nfa.mzn
@@ -829,6 +858,8 @@ lib/libmzn.so
 %%DATADIR%%/std/value_precede_int.mzn.deprecated.mzn
 %%DATADIR%%/std/value_precede_set.mzn
 %%DATADIR%%/std/value_precede_set.mzn.deprecated.mzn
+%%DATADIR%%/std/var_perm_sym.mzn
+%%DATADIR%%/std/var_sqr_sym.mzn
 %%DATADIR%%/std/weighted_spanning_tree.mzn
 %%DATADIR%%/std/write.mzn
 %%DATADIR%%/std/writes.mzn

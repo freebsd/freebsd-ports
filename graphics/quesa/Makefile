@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
-WWW=		http://quesa.sourceforge.net/
+WWW=		https://quesa.sourceforge.net/
 
 USES=		gl libtool xorg
 USE_CXXSTD=	gnu++98

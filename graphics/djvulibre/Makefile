@@ -6,7 +6,7 @@ MASTER_SITES=	SF/djvu/DjVuLibre/${PORTVERSION}
 
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	DjVu base libraries and utilities
-WWW=		http://djvu.sourceforge.net/
+WWW=		https://djvu.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

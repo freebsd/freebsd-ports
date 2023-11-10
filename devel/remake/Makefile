@@ -7,7 +7,7 @@ DISTNAME=	remake-4.3+dbg-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Fork of gmake with debugger
-WWW=		http://bashdb.sourceforge.net/remake/
+WWW=		https://bashdb.sourceforge.net/remake/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

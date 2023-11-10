@@ -7,7 +7,7 @@ MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fluxbox utility to create and manage icons on the desktop
-WWW=		http://fluxbox.sourceforge.net/fbdesk/
+WWW=		https://fluxbox.sourceforge.net/fbdesk/
 
 LICENSE=	MIT
 

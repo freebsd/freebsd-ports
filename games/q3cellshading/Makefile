@@ -7,34 +7,46 @@ DISTNAME=	q3cel-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
-WWW=		http://q3cellshading.sourceforge.net/
+WWW=		https://q3cellshading.sourceforge.net/
 
+DEPRECATED=	BROKEN for more than 2 years on all supported versions
+EXPIRATION_DATE=	2023-11-30
+BROKEN=	ld: error: duplicate symbol: re
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: re
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: re
 
 USES=		compiler dos2unix gmake zip
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/code/unix
+
+MAKE_ENV=	LIBDIR="${LIBDIR}"
 MAKE_JOBS_UNSAFE=	yes
 
-LIBDIR=		${PREFIX}/lib/${PORTNAME}
-MAKE_ENV=	LIBDIR="${LIBDIR}"
+BUILD_WRKSRC=	${WRKSRC}/code/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
 
 VM_ARCHS=	i386 powerpc
 
 OPTIONS_DEFINE=	GAMELIBS OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS SMP_CLIENT
 OPTIONS_MULTI=	FLAVOR
 OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED SMP_CLIENT
-OPTIONS_DEFAULT=	CLIENT DEDICATED OPTIMIZED_CFLAGS SMP_CLIENT
 OPTIONS_SUB=	yes
 
 CLIENT_DESC=		Build client
 DEDICATED_DESC=		Build dedicated server
 GAMELIBS_DESC=		Force building game libraries
 SMP_CLIENT_DESC=	Build SMP (threaded) client
+
+CLIENT_MAKE_ENV=	CLIENT=YES
+CLIENT_VARS=	Q3BIN+=quake3
+DEDICATED_MAKE_ENV=	DEDICATED=YES
+DEDICATED_VARS=	Q3BIN+=q3ded
+OPTIMIZED_CFLAGS_MAKE_ENV=	OPTIMIZED_CFLAGS=YES
+SMP_CLIENT_MAKE_ENV=	SMP=YES
+SMP_CLIENT_VARS=	Q3BIN+=quake3-smp
+
+LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
@@ -58,27 +70,8 @@ USE_GL=		glu
 USE_XORG=	xxf86dga xxf86vm
 .endif
 
-.if ${PORT_OPTIONS:MCLIENT}
-MAKE_ENV+=	CLIENT=YES
-Q3BIN+=		quake3
-.endif
-
-.if ${PORT_OPTIONS:MDEDICATED}
-MAKE_ENV+=	DEDICATED=YES
-Q3BIN+=		q3ded
-.endif
-
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	GAMELIBS=YES
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
-
-.if ${PORT_OPTIONS:MSMP_CLIENT}
-MAKE_ENV+=	SMP=YES
-Q3BIN+=		quake3-smp
 .endif
 
 .include <bsd.port.pre.mk>

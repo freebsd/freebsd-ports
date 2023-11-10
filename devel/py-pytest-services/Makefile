@@ -19,4 +19,6 @@ RUN_DEPENDS=	pytest-${PYTHON_VER}:devel/py-pytest@${PY_FLAVOR}
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

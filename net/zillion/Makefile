@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-0_1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed computing project
-WWW=		http://zillion.sourceforge.net/
+WWW=		https://zillion.sourceforge.net/
 
 LICENSE=	BSDunclear
 LICENSE_NAME=	Unclear BSD License

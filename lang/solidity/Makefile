@@ -1,5 +1,5 @@
 PORTNAME=	solidity
-PORTVERSION=	0.8.21
+PORTVERSION=	0.8.23
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

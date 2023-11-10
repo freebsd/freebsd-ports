@@ -1,6 +1,6 @@
---- components/device_signals/core/browser/user_permission_service_impl.cc.orig	2023-07-24 14:27:53 UTC
+--- components/device_signals/core/browser/user_permission_service_impl.cc.orig	2023-10-21 11:51:27 UTC
 +++ components/device_signals/core/browser/user_permission_service_impl.cc
-@@ -74,7 +74,7 @@ bool UserPermissionServiceImpl::ShouldCollectConsent()
+@@ -92,7 +92,7 @@ bool UserPermissionServiceImpl::ShouldCollectConsent()
           consent_required_by_dependent_policy;
  }
  

@@ -1,6 +1,6 @@
 PORTNAME=	pijul
 PORTVERSION=	1.0.0.b6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -381,6 +381,12 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.6 \
 		zvariant_utils-1.0.1
 
 PLIST_FILES=	bin/pijul
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LTO_UNSAFE=	yes
+.endif
 
 post-patch:
 	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.6/* ${WRKSRC}/

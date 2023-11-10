@@ -1,6 +1,7 @@
 PORTNAME=	edbrowse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.8.5
+DISTVERSION=	3.8.7
+PORTREVISION=	1
 CATEGORIES=	www editors
 
 MAINTAINER=	alfix86@gmail.com
@@ -8,14 +9,14 @@ COMMENT=	Line-oriented web browser and text editor
 WWW=		https://edbrowse.org/
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/quickjs/quickjs.h:lang/quickjs \
-		${LOCALBASE}/lib/quickjs/libquickjs.a:lang/quickjs
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libquickjs.so:lang/quickjs \
 		libodbc.so:databases/unixODBC \
 		libpcre2-8.so:devel/pcre2
 
-USES=		compiler:c11 gmake perl5 pkgconfig readline
+USES=		compiler:c11 gmake perl5 pkgconfig readline ssl
 USE_PERL5=	build
 USE_GITHUB=	yes
 
@@ -37,7 +38,6 @@ do-install:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && \
 		${FIND} . \( -name article.wikipedia -or -name "man-edbrowse*" \) -delete  && \

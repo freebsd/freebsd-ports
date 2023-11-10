@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Binary file viewer and editor
-WWW=		http://beye.sourceforge.net/
+WWW=		https://beye.sourceforge.net/
 
 LICENSE=	GPLv2
 

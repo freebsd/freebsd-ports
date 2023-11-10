@@ -4,7 +4,7 @@
 
 PKGNAMEPREFIX=	suitesparse-
 SSPNAME=	suitesparse
-SSPVERSION=	7.2.0
+SSPVERSION=	7.3.1
 DISTVERSIONPREFIX=	v
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -51,6 +51,8 @@ LDFLAGS+=	-L${WRKSRC}/lib # prevent linking with shared libs from the preinstall
 INSTALL_TARGET=	install # skip USES=cmake
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
+PLIST_SUB+=	VER=${PORTVERSION}
+
 # FIXME: wont work if .CURDIR contains spaces
 DISTINFO_FILE=	${.CURDIR}/../../math/suitesparse/distinfo
 
@@ -62,12 +64,12 @@ OPTIONS_DEFAULT+=	OPTIMIZED_CFLAGS
 	${MPORTNAME} == SPQR ||	\
 	${MPORTNAME} == UMFPACK
 OPTIONS_RADIO+=		BLAS
-OPTIONS_RADIO_BLAS+=	ATLAS GOTOBLAS NETLIB OPENBLAS
+OPTIONS_RADIO_BLAS+=	ATLAS BLIS NETLIB OPENBLAS
 OPTIONS_DEFAULT+=	OPENBLAS
+BLIS_DESC=		BLAS implemntation from FLAME
 
 ATLAS_USES=		blaslapack:atlas
-GOTOBLAS_DESC=		Goto blas implementation
-GOTOBLAS_USES=		blaslapack:gotoblas
+BLIS_USES=		blaslapack:blis
 NETLIB_USES=		blaslapack:netlib
 OPENBLAS_USES=		blaslapack:openblas
 .endif

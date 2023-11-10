@@ -55,6 +55,10 @@ CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=			-fno-color-diagnostics
 CONFIGURE_ENV+=			NOCOLOR=yes
 MAKE_ENV+=			NOCOLOR=yes
+# Some symbols in tevent's linker version scripts are not defined, but since the
+# scripts are generated dynamically, suppress errors with lld >= 17 due to these
+# undefined symbols.
+LDFLAGS+=			-Wl,--undefined-version
 
 post-patch:
 				@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \

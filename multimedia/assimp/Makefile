@@ -1,6 +1,7 @@
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +18,7 @@ USES=		cmake:testing compiler:c++17-lang cpe localbase:ldflags pkgconfig # miniz
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=		ASSIMP_BUILD_TESTS
+CMAKE_OFF=		ASSIMP_BUILD_TESTS ASSIMP_BUILD_ZLIB BUILD_STATIC_LIBS
 CMAKE_ON=		ASSIMP_BUILD_MINIZIP # workaround for https://github.com/assimp/assimp/issues/4374
 CMAKE_TESTING_ON=	ASSIMP_BUILD_TESTS
 CMAKE_TESTING_TARGET=	${ALL_TARGET} # hack to avoid target

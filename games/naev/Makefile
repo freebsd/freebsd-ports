@@ -1,7 +1,7 @@
 PORTNAME=	naev
 PORTVERSION=	0.10.6
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	2
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
 
@@ -41,8 +41,7 @@ USE_GL=		gl glu
 USE_GNOME=	intltool libxml2
 USE_SDL=	sdl2 image2
 
-SHEBANG_GLOB=	*.py
-SHEBANG_LANG=	python
+SHEBANG_GLOB=	*.py *.sh
 
 MESON_ARGS=	-Ddocs_c=disabled -Ddocs_lua=disabled
 

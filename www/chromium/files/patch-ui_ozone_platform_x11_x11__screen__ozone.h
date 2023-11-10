@@ -1,11 +1,11 @@
---- ui/ozone/platform/x11/x11_screen_ozone.h.orig	2023-09-13 12:11:42 UTC
+--- ui/ozone/platform/x11/x11_screen_ozone.h.orig	2023-11-03 10:09:45 UTC
 +++ ui/ozone/platform/x11/x11_screen_ozone.h
-@@ -61,7 +61,7 @@ class X11ScreenOzone : public PlatformScreen,
-   std::string GetCurrentWorkspace() override;
-   base::Value::List GetGpuExtraInfo(
-       const gfx::GpuExtraInfo& gpu_extra_info) override;
+@@ -102,7 +102,7 @@ class X11ScreenOzone : public PlatformScreen,
+   // Indicates that |this| is initialized.
+   bool initialized_ = false;
+ 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   void SetDisplayConfig(const DisplayConfig& display_config) override;
+   base::ScopedObservation<ui::LinuxUi, DeviceScaleFactorObserver>
+       display_scale_factor_observer_{this};
  #endif
- 

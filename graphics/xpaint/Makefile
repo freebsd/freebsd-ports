@@ -6,7 +6,7 @@ MASTER_SITES=	SF/sf-${PORTNAME}/sf-${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple paint program
-WWW=		http://sf-xpaint.sourceforge.net/
+WWW=		https://sf-xpaint.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

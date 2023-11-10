@@ -1,8 +1,8 @@
 PORTNAME=	asciio
-PORTVERSION=	1.51.3
-PORTREVISION=	2
+PORTVERSION=	1.9.02
+PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/CPAN/authors/id/N/NK/NKH/ \
+MASTER_SITES=	https://cpan.metacpan.org/authors/id/N/NK/NKH/ \
 		LOCAL/ehaupt
 DISTNAME=	App-Asciio-${PORTVERSION}
 
@@ -20,11 +20,18 @@ BUILD_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-Data-TreeDumper-Renderer-GTK>=0:devel/p5-Data-TreeDumper-Renderer-GTK \
 		p5-Directory-Scratch>=0:devel/p5-Directory-Scratch \
 		p5-Eval-Context>=0:devel/p5-Eval-Context \
-		p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
+		p5-Gtk3>=0:x11-toolkits/p5-Gtk3 \
 		p5-Hash-Slice>=0.03:devel/p5-Hash-Slice \
+		p5-IO-Prompter>=0:devel/p5-IO-Prompter \
 		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Module-Util>=0:devel/p5-Module-Util \
+		p5-Pango>0:x11-toolkits/p5-Pango \
+		p5-Sereal>=0:converters/p5-Sereal \
 		p5-Sub-Exporter>=0:devel/p5-Sub-Exporter \
+		p5-Term-ReadKey>0:devel/p5-Term-ReadKey \
+		p5-Term-Size-Any>=0:devel/p5-Term-Size-Any \
+		p5-Term-TermKey>=0:devel/p5-Term-TermKey \
 		p5-Text-Diff>=1.41:textproc/p5-Text-Diff
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-Class-ISA>=0:devel/p5-Class-ISA

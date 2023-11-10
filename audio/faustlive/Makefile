@@ -1,5 +1,5 @@
 PORTNAME=	faustlive
-DISTVERSION=	2.5.15-20230512
+DISTVERSION=	2.5.16
 #MASTER_SITES=	https://github.com/grame-cncm/faustlive/releases/download/${DISTVERSION}/
 #DISTFILES=	FaustLive-${DISTVERSION}${EXTRACT_SUFX} 
 CATEGORIES=	audio
@@ -20,14 +20,13 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libqrencode.so:graphics/libqrencode \
 		libsndfile.so:audio/libsndfile # audio/alsa-lib isn't really needed: https://github.com/grame-cncm/faustlive/issues/3
 
-USES=		compiler:c++11-lang gl llvm:min=13,lib pkgconfig qmake qt:5 shebangfix # llvm version should be the same as in audio/faust
+USES=		compiler:c++11-lang gl llvm:min=13,lib ncurses pkgconfig qmake qt:5 shebangfix # llvm version should be the same as in audio/faust
 USE_QT=		core gui network widgets buildtools:build
 USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/Resources/Libs
-GH_TAGNAME=	15ddcbc
+GH_TUPLE=	grame-cncm:faustlibraries:bbbb1be:grame_cncm_faustlibraries/Resources/Libs
 
 #WRKSRC=		${WRKDIR}/FaustLive-${DISTVERSION}
 

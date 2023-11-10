@@ -1,28 +1,23 @@
 PORTNAME=	slib
-PORTVERSION=	3b6
+PORTVERSION=	3b7
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Portable scheme library
 WWW=		https://people.csail.mit.edu/jaffer/SLIB.html
 
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake makeinfo
-
-ALL_TARGET=	slib.info
-INFO=		slib
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+INFO=		slib
 PORTDOCS=	ANNOUNCE ChangeLog FAQ README
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/lib/slib|${PREFIX}/share/slib|' ${WRKSRC}/guile.init
-	@${TOUCH} ${WRKSRC}/*.txi
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

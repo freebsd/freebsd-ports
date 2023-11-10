@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of DOM Implementations
-WWW=		http://gmetadom.sourceforge.net/
+WWW=		https://gmetadom.sourceforge.net/
 
 LIB_DEPENDS=	libgdome.so:textproc/gdome2
 

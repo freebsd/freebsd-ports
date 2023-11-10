@@ -22,7 +22,7 @@ _QT_MK_INCLUDED=	qt.mk
 
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
-QT5_VERSION?=		5.15.10
+QT5_VERSION?=		5.15.11
 QT6_VERSION?=		6.5.3
 PYSIDE6_VERSION?=	6.5.3
 
@@ -120,6 +120,12 @@ MAKE_ENV+=		QT_SELECT=${_QT_RELNAME}
 CONFIGURE_ENV+=		QMAKEMODULES="${WRKSRC}/mkspecs/modules:${LOCALBASE}/${QT_MKSPECDIR_REL}/modules"
 MAKE_ENV+=		QMAKEMODULES="${WRKSRC}/mkspecs/modules:${LOCALBASE}/${QT_MKSPECDIR_REL}/modules"
 
+# Qt uses generated linker version scripts which always have a qt_version_tag
+# symbol, but that symbol is only defined in the main Qt shared library. For
+# other Qt components, this leads to lld >= 17 erroring out due to the symbol
+# being undefined. Supress these errors.
+LDFLAGS+=		-Wl,--undefined-version
+
 _USES_POST+=		qt
 .endif # _QT_MK_INCLUDED
 
@@ -150,7 +156,7 @@ _USE_QT5_ONLY+=		sql-ibase
 .  endif
 
 _USE_QT6_ONLY=		5compat base httpserver languageserver lottie positioning \
-			quickeffectmaker shadertools tools translations \
+			quick3dphysics quickeffectmaker shadertools tools translations \
 			sqldriver-sqlite sqldriver-mysql sqldriver-psql sqldriver-odbc
 
 # Dependency tuples: _LIB should be preferred if possible.
@@ -293,6 +299,9 @@ qt-qmake_PATH=		${_QT_RELNAME}-qmake>=${_QT_VERSION:R}
 
 qt-quick3d_PORT=	x11-toolkits/${_QT_RELNAME}-quick3d
 qt-quick3d_LIB=		libQt${_QT_LIBVER}Quick3D.so
+
+qt-quick3dphysics_PORT=	science/${_QT_RELNAME}-quick3dphysics
+qt_quick3dphysics_LIB=	libQt${_QT_LIBVER}Quick3DPhysics.so
 
 qt-quickcontrols_PORT=	x11-toolkits/${_QT_RELNAME}-quickcontrols
 qt-quickcontrols_PATH=	${LOCALBASE}/${QT_QMLDIR_REL}/QtQuick/Controls/qmldir

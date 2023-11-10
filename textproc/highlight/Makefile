@@ -1,5 +1,5 @@
 PORTNAME=	highlight
-PORTVERSION=	4.8
+PORTVERSION=	4.10
 PORTEPOCH=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -42,6 +42,6 @@ post-install:
 .for cfg in filetypes lsp
 	@cd ${STAGEDIR}${ETCDIR} && ${MV} ${cfg}.conf ${cfg}.conf.sample
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/highlight
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/highlight*
 
 .include <bsd.port.mk>

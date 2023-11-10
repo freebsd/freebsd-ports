@@ -1,5 +1,5 @@
 PORTNAME=	pyzabbix
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}semantic-version>=2.8.5:devel/py-semantic-version@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

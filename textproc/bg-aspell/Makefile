@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Aspell Bulgarian dictionary
-WWW=		http://bgoffice.sourceforge.net/aspell/index.html
+WWW=		https://bgoffice.sourceforge.net/aspell/index.html
 
 DICT=	 	bg
 

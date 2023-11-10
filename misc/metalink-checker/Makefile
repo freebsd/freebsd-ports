@@ -7,7 +7,7 @@ DISTNAME=	checker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script to check metalink files and complete a basic download
-WWW=		http://metalinks.sourceforge.net/
+WWW=		https://metalinks.sourceforge.net/
 
 LICENSE=	GPLv2+
 

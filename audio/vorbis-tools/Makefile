@@ -1,6 +1,6 @@
 PORTNAME=	vorbis-tools
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+DISTVERSION=	1.4.2
+PORTREVISION=	4
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/vorbis/

@@ -2,7 +2,7 @@ PORTNAME=	star
 CATEGORIES=	archivers
 
 COMMENT=	Unique standard tape archiver with many enhancements
-WWW=		http://cdrtools.sourceforge.net/private/star.html
+WWW=		https://cdrtools.sourceforge.net/private/star.html
 
 PORTDOCS=	README* STARvsGNUTAR
 

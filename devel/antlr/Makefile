@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	https://www.antlr2.org/download/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition
 WWW=		https://www.antlr2.org/
 

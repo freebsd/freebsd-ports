@@ -7,7 +7,7 @@ DISTFILES=	# none
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Python modules to access to SQL Relay
-WWW=		http://sqlrelay.sourceforge.net/
+WWW=		https://sqlrelay.sourceforge.net/
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
 LIB_DEPENDS=	libsqlrclient.so:${SQLRELAY_PORTDIR}

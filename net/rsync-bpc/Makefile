@@ -4,7 +4,7 @@ CATEGORIES=	net
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Modified rsync that used as part of BackupPC
-WWW=		http://backuppc.sourceforge.net/
+WWW=		https://backuppc.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

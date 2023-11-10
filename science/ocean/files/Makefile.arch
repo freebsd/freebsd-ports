@@ -26,4 +26,4 @@ BLAS = -L$(PREFIX) -lopenblas
 # Install Directory
 INSTDIR = $(DESTDIR)$(PREFIX)/bin
 
-MPI_LDFLAGS=	-L${MPI_HOME}/lib
+MPI_LDFLAGS=	${MPI_LIBS}

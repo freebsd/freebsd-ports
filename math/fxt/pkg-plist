@@ -332,6 +332,7 @@ include/fxt/comb/mset-perm-gray.h
 include/fxt/comb/mset-perm-lex-rec.h
 include/fxt/comb/mset-perm-lex.h
 include/fxt/comb/mset-perm-pref.h
+include/fxt/comb/msetpart.h
 include/fxt/comb/necklace.h
 include/fxt/comb/num-compositions.h
 include/fxt/comb/num-necklaces.h
@@ -1177,6 +1178,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-perm-pref-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-subset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/mset-subset-lex-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/msetpart-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/msetpart-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-gray-rec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-gray-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/naf-pos-rec-demo.cc
@@ -1457,8 +1460,6 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/young-tab-rgs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/young-tab-rgs-subset-lex-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/young-tab-rgs-subset-lex-out.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/zzztest-demo.cc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/zzztest-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/attic/dichotomy-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/attic/dichotomy-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray-demo.cc

@@ -1,6 +1,5 @@
 PORTNAME=	kuserfeedback
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.3.0
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -20,8 +19,8 @@ OPTIONS_DEFINE=	SERVER
 
 SERVER_DESC=		Enable all features (requires php)
 SERVER_USES=		php
-SERVER_CMAKE_BOOL=	ENABLE_PHP
-SERVER_BUILD_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
-SERVER_RUN_DEPENDS=	phpunit:devel/phpunit6@${PHP_FLAVOR}
+SERVER_CMAKE_BOOL=	ENABLE_PHP ENABLE_PHP_UNIT
+SERVER_BUILD_DEPENDS=	phpunit:devel/phpunit9@${PHP_FLAVOR}
+SERVER_RUN_DEPENDS=	phpunit:devel/phpunit9@${PHP_FLAVOR}
 
 .include <bsd.port.mk>

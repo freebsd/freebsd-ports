@@ -1,9 +1,13 @@
 %%TEST%%bin/mysofa2json
 include/mysofa.h
+lib/cmake/mysofa/mysofaConfig.cmake
+lib/cmake/mysofa/mysofaConfigVersion.cmake
+lib/cmake/mysofa/mysofaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/mysofa/mysofaTargets.cmake
 %%STATIC%%lib/libmysofa.a
 lib/libmysofa.so
 lib/libmysofa.so.1
-lib/libmysofa.so.1.3.0
+lib/libmysofa.so.1.3.2
 libdata/pkgconfig/libmysofa.pc
 %%DATADIR%%/MIT_KEMAR_normal_pinna.sofa
 %%DATADIR%%/default.sofa

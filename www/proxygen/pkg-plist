@@ -62,6 +62,7 @@ include/proxygen/lib/http/codec/CodecUtil.h
 include/proxygen/lib/http/codec/ControlMessageRateLimitFilter.h
 include/proxygen/lib/http/codec/DebugFilter.h
 include/proxygen/lib/http/codec/DefaultHTTPCodecFactory.h
+include/proxygen/lib/http/codec/DirectErrorsRateLimitFilter.h
 include/proxygen/lib/http/codec/ErrorCode.h
 include/proxygen/lib/http/codec/FlowControlFilter.h
 include/proxygen/lib/http/codec/HQControlCodec.h
@@ -85,8 +86,11 @@ include/proxygen/lib/http/codec/HTTPParallelCodec.h
 include/proxygen/lib/http/codec/HTTPRequestVerifier.h
 include/proxygen/lib/http/codec/HTTPSettings.h
 include/proxygen/lib/http/codec/HeaderDecodeInfo.h
+include/proxygen/lib/http/codec/HeadersRateLimitFilter.h
 include/proxygen/lib/http/codec/QPACKDecoderCodec.h
 include/proxygen/lib/http/codec/QPACKEncoderCodec.h
+include/proxygen/lib/http/codec/RateLimitFilter.h
+include/proxygen/lib/http/codec/ResetsRateLimitFilter.h
 include/proxygen/lib/http/codec/SettingsId.h
 include/proxygen/lib/http/codec/TransportDirection.h
 include/proxygen/lib/http/codec/compress/CompressionInfo.h
@@ -255,5 +259,6 @@ lib/cmake/proxygen/proxygen-targets.cmake
 lib/liblibhttperf2.so
 lib/libproxygen.so
 lib/libproxygencurl.so
+lib/libproxygendeviousbaton.so
 lib/libproxygenhqloggerhelper.so
 lib/libproxygenhttpserver.so

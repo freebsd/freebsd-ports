@@ -1,6 +1,6 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2023-09-17 07:59:53 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-11-04 07:08:51 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
-@@ -20,7 +20,9 @@
+@@ -21,7 +21,9 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
@@ -10,7 +10,7 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  
  namespace content {
-@@ -45,14 +47,20 @@ ChildProcessLauncherHelper::GetFilesToMap() {
+@@ -46,14 +48,20 @@ ChildProcessLauncherHelper::GetFilesToMap() {
  }
  
  bool ChildProcessLauncherHelper::IsUsingLaunchOptions() {
@@ -31,7 +31,7 @@
      // Convert FD mapping to FileHandleMappingVector
      options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
          base::GlobalDescriptors::kBaseDescriptor);
-@@ -64,7 +72,9 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+@@ -65,7 +73,9 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
  
      options->environment = delegate_->GetEnvironment();
    } else {
@@ -41,7 +41,7 @@
      // Environment variables could be supported in the future, but are not
      // currently supported when launching with the zygote.
      DCHECK(delegate_->GetEnvironment().empty());
-@@ -81,6 +91,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -82,6 +92,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
    Process process;
@@ -49,7 +49,7 @@
    ZygoteCommunication* zygote_handle = GetZygoteForLaunch();
    if (zygote_handle) {
      // TODO(crbug.com/569191): If chrome supported multiple zygotes they could
-@@ -91,7 +102,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -92,7 +103,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
@@ -57,7 +57,7 @@
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
-@@ -100,15 +110,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -101,15 +111,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          oom_score = content::kLowestRendererOomScore;
        ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(handle, oom_score);
      }
@@ -76,7 +76,7 @@
  
  #if BUILDFLAG(IS_CHROMEOS)
    if (GetProcessType() == switches::kRendererProcess) {
-@@ -130,10 +142,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+@@ -131,10 +143,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -91,7 +91,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -157,13 +173,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -160,13 +176,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.
@@ -109,7 +109,7 @@
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -175,11 +195,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+@@ -179,11 +199,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
    }
  }
  

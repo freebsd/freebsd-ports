@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/Program/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	Flight simulator in which the player rescues people
-WWW=		http://searchandrescue.sourceforge.net/
+WWW=		https://searchandrescue.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

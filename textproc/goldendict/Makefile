@@ -1,5 +1,6 @@
 PORTNAME=	goldendict
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -19,11 +20,14 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 USES=		compiler:c++11-lang gnome iconv:wchar_t pkgconfig \
 		qmake qt:5 xorg
 USE_GITHUB=	yes
+GH_ACCOUNT=	vedgy
+GH_TAGNAME=	5a87a71
 USE_XORG=	x11 xtst
-USE_QT=		buildtools:build linguisttools:build core gui help \
-		network printsupport sql svg webkit widgets \
-		x11extras xml
-QMAKE_ARGS=	${PORTNAME}.pro CONFIG+="zim_support"
+USE_QT=		buildtools:build linguisttools:build \
+		core declarative gui help network printsupport \
+		sql svg webchannel webengine widgets x11extras xml
+
+QMAKE_ARGS=	${PORTNAME}.pro CONFIG+="use_qtwebengine zim_support"
 
 OPTIONS_DEFINE=	EPWING FFMPEG MULTIMEDIA OPENCC
 OPTIONS_DEFAULT=	EPWING FFMPEG MULTIMEDIA OPENCC
@@ -45,7 +49,8 @@ OPENCC_LIB_DEPENDS=	libopencc.so:chinese/opencc
 OPENCC_QMAKE_ON=	CONFIG+="chinese_conversion_support"
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^VERSION = /s,git,&-8c5b26a,' \
+	@${REINPLACE_CMD} -e '/QMAKE_CXXFLAGS += -rdynamic/d ; \
+	    /^VERSION = /s,git,&-${GH_ACCOUNT}-${GH_TAGNAME},' \
 		${WRKSRC}/goldendict.pro
 	@${REINPLACE_CMD} -e '/^#include <stdio\.h>/ { x; \
 		s/^/#include <locale.h>/; G; }' ${WRKSRC}/main.cc

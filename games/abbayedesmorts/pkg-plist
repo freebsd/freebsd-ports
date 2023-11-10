@@ -34,5 +34,6 @@ bin/abbayev2
 %%DATADIR%%/sounds/onedeathn.ogg
 %%DATADIR%%/sounds/shoot.ogg
 %%DATADIR%%/sounds/slash.ogg
+share/appdata/abbaye.appdata.xml
 share/applications/abbaye.desktop
 share/pixmaps/abbaye.png

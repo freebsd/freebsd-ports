@@ -1,5 +1,5 @@
-TIMESTAMP = 1685474006
-SHA256 (go/sysutils_kapp/kapp-v0.56.0/v0.56.0.mod) = 3b8bfb03e66188642cfd12b11c019965c599ffcb6e1269b607382eab015b69ff
-SIZE (go/sysutils_kapp/kapp-v0.56.0/v0.56.0.mod) = 3004
-SHA256 (go/sysutils_kapp/kapp-v0.56.0/v0.56.0.zip) = 758017bfb8ce80e5d23a525c7d7de5ff3047539952b65d26df6299ed695ec3ab
-SIZE (go/sysutils_kapp/kapp-v0.56.0/v0.56.0.zip) = 1420848
+TIMESTAMP = 1698032627
+SHA256 (go/sysutils_kapp/kapp-v0.59.0/v0.59.0.mod) = 6bb0db0bfc212886e21f31e20d63b224e890fd92353ab6b3703b6b8018fc0efd
+SIZE (go/sysutils_kapp/kapp-v0.59.0/v0.59.0.mod) = 2845
+SHA256 (go/sysutils_kapp/kapp-v0.59.0/v0.59.0.zip) = a64015a2c121eb41d03aaf727056050f3c214303ee35c69acd0b44d30eaafd2e
+SIZE (go/sysutils_kapp/kapp-v0.59.0/v0.59.0.zip) = 1423907

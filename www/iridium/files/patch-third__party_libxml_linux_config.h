@@ -1,8 +1,8 @@
---- third_party/libxml/linux/config.h.orig	2023-01-17 19:19:00 UTC
+--- third_party/libxml/linux/config.h.orig	2023-10-21 11:51:27 UTC
 +++ third_party/libxml/linux/config.h
-@@ -72,6 +72,9 @@
- /* Define to 1 if you have the `putenv' function. */
- #define HAVE_PUTENV 1
+@@ -69,6 +69,9 @@
+ /* Define to 1 if you have the <pthread.h> header file. */
+ #define HAVE_PTHREAD_H /**/
  
 +/* Define to 1 if you have the `arc4random' function. */
 +#define HAVE_ARC4RANDOM 1

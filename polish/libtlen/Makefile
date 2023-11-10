@@ -6,7 +6,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Backend for interoperability with Tlen.pl, Polish IM network
-WWW=		http://libtlen.sourceforge.net/
+WWW=		https://libtlen.sourceforge.net/
+
+DEPRECATED=	Last upstream release was in 2004
+EXPIRATION_DATE=	2023-12-05
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

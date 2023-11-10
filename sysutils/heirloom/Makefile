@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Collection of standard Unix utilities
-WWW=		http://heirloom.sourceforge.net/
+WWW=		https://heirloom.sourceforge.net/
 
 BUILD_DEPENDS=	ksh:shells/pdksh
 RUN_DEPENDS:=	${BUILD_DEPENDS}

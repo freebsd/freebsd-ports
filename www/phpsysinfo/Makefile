@@ -1,6 +1,7 @@
 PORTNAME=	phpsysinfo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4.3
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	tremere@cainites.net
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe php:web
 USE_GITHUB=	yes
-USE_PHP=	dom mbstring simplexml xml
+USE_PHP=	dom mbstring simplexml xml xsl
 
 NO_ARCH=	yes
 NO_BUILD=	yes

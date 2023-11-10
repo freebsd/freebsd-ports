@@ -1,5 +1,5 @@
 PORTNAME=	tg_owt
-PORTVERSION=	0.0.20230918
+PORTVERSION=	0.0.20231101
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +21,7 @@ USE_XORG=	x11 xcomposite xdamage xrender xrandr xtst
 USE_GL=		gbm
 USE_GITHUB=	yes
 GH_ACCOUNT=	desktop-app
-GH_TAGNAME=	592b14d
+GH_TAGNAME=	71cce98
 
 # libyuv cloned from https://chromium.googlesource.com/libyuv/libyuv
 # when updating port check if hash tag in the submodule was updated
@@ -29,8 +29,5 @@ GH_TUPLE=	abseil:abseil-cpp:8c0b94e:abseilcpp/src/third_party/abseil-cpp \
 		cisco:libsrtp:a566a9:libsrtp/src/third_party/libsrtp \
 		google:crc32c:21fc8ef:crc32c/src/third_party/crc32c/src \
 		klemensn:libyuv:04821d:libyuv/src/third_party/libyuv
-
-# mute deprecation warnings from abseil submodule
-CXXFLAGS+=	-Wno-deprecated-builtins
 
 .include <bsd.port.mk>

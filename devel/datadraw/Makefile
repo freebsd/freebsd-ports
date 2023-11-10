@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature rich persistent database generator
-WWW=		http://datadraw.sourceforge.net/
+WWW=		https://datadraw.sourceforge.net/
 
 LICENSE=	GPLv2
 

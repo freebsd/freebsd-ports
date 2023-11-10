@@ -1,5 +1,5 @@
 PORTNAME=	cryptography
-PORTVERSION=	41.0.4
+PORTVERSION=	41.0.5
 PORTEPOCH=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
@@ -8,7 +8,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cryptographic recipes and primitives for Python developers
-WWW=		https://github.com/pyca/cryptography
+WWW=		https://cryptography.io/en/latest/ \
+		https://github.com/pyca/cryptography
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

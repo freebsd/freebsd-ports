@@ -88,6 +88,7 @@
     SUBDIR += backuppc-devel
     SUBDIR += backuppc4
     SUBDIR += backupuser
+    SUBDIR += bacnet-stack-apps
     SUBDIR += bacula-libs3
     SUBDIR += bacula11-client
     SUBDIR += bacula11-client-static
@@ -183,8 +184,10 @@
     SUBDIR += cdrtools
     SUBDIR += cfengine
     SUBDIR += cfengine-devel
+    SUBDIR += cfengine-lts
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles-devel
+    SUBDIR += cfengine-masterfiles-lts
     SUBDIR += cfengine-masterfiles320
     SUBDIR += cfengine-masterfiles321
     SUBDIR += cfengine-masterfiles322
@@ -372,6 +375,7 @@
     SUBDIR += exa
     SUBDIR += exfat-utils
     SUBDIR += extipl
+    SUBDIR += eza
     SUBDIR += ezjail
     SUBDIR += f2
     SUBDIR += f3
@@ -382,6 +386,7 @@
     SUBDIR += fanout
     SUBDIR += fastfetch
     SUBDIR += fatback
+    SUBDIR += fclones
     SUBDIR += fcode-utils
     SUBDIR += fconfig
     SUBDIR += fcron
@@ -405,6 +410,7 @@
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
+    SUBDIR += flipperbit
     SUBDIR += flock
     SUBDIR += flog
     SUBDIR += flowgger
@@ -1042,6 +1048,7 @@
     SUBDIR += procenv
     SUBDIR += process-viewer
     SUBDIR += procmap
+    SUBDIR += procs
     SUBDIR += progsreiserfs
     SUBDIR += pslist
     SUBDIR += psmisc
@@ -1469,6 +1476,7 @@
     SUBDIR += u-boot-bananapi
     SUBDIR += u-boot-bananapim2
     SUBDIR += u-boot-beaglebone
+    SUBDIR += u-boot-bhyve-arm64
     SUBDIR += u-boot-chip
     SUBDIR += u-boot-clearfog
     SUBDIR += u-boot-cubieboard

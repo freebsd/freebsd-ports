@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port extras (demos, mods, etc)
-WWW=		http://uhexen2.sourceforge.net/
+WWW=		https://uhexen2.sourceforge.net/
 
 RUN_DEPENDS=	uhexen2>0:games/uhexen2
 

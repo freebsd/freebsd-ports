@@ -13,6 +13,8 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		does not build: scons: _defines() missing 2 required positional arguments:
+DEPRECATED=	Deprecated upstream, consider migrating to audio/mixxx
+EXPIRATION_DATE=2023-11-30
 
 BUILD_DEPENDS=	lv2>=1.14.0:audio/lv2
 LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \

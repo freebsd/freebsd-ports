@@ -16,18 +16,19 @@ WWW=		https://wiki.gnome.org/Apps/Taquin/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	BROKEN for more than a year and no upstream activity for more than 2 years
+EXPIRATION_DATE=	2023-11-30
+BROKEN=		Does not build with current vala
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3
 
-PORTSCOUT=	limitw:1,even
-
 USES=		gettext gmake gnome localbase meson pathfix pkgconfig tar:xz vala:build xorg
 USE_GNOME=	cairo gsound gtk30 intlhack librsvg2 libxml2:build
+GLIB_SCHEMAS=	org.gnome.Taquin.gschema.xml
 USE_XORG=	x11
 
-GLIB_SCHEMAS=	org.gnome.Taquin.gschema.xml
-
-BROKEN=		Does not build with current vala
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.mk>

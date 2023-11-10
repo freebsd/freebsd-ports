@@ -1,3 +1,4 @@
+bin/synthpod_d2tk
 %%DUMMY%%bin/synthpod_dummy
 %%JACK%%bin/synthpod_jack
 %%X11%%bin/synthpod_sandbox_x11
@@ -7,12 +8,12 @@
 bin/synthpod_sandbox_show
 bin/synthpod_sandbox_kx
 %%X11%%bin/synthpod_ui
-%%X11%%lib/lv2/synthpod.lv2/synthpod_nk.so
-lib/lv2/synthpod.lv2/Abel-Regular.ttf
+%%X11%%lib/lv2/synthpod.lv2/Abel-Regular.ttf
 lib/lv2/synthpod.lv2/atom.png
 lib/lv2/synthpod.lv2/atom_inverted.png
 lib/lv2/synthpod.lv2/audio.png
 lib/lv2/synthpod.lv2/automaton.png
+lib/lv2/synthpod.lv2/bug.png
 lib/lv2/synthpod.lv2/cancel.png
 lib/lv2/synthpod.lv2/control.png
 lib/lv2/synthpod.lv2/cv.png
@@ -30,6 +31,8 @@ lib/lv2/synthpod.lv2/plus.png
 lib/lv2/synthpod.lv2/settings.png
 lib/lv2/synthpod.lv2/synthpod.so
 lib/lv2/synthpod.lv2/synthpod.ttl
+%%X11%%lib/lv2/synthpod.lv2/synthpod_nk.so
+%%X11%%lib/lv2/synthpod.lv2/synthpod_ui.so
 %%X11%%lib/lv2/synthpod.lv2/synthpod_ui.ttl
 lib/lv2/synthpod.lv2/time.png
 lib/lv2/synthpod.lv2/user.png

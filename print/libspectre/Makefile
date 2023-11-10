@@ -1,5 +1,6 @@
 PORTNAME=	libspectre
-PORTVERSION=	0.2.12
+DISTVERSION=	0.2.12
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
@@ -9,7 +10,7 @@ WWW=		https://www.freedesktop.org/wiki/Software/libspectre/
 
 LICENSE=	GPLv2
 
-USES=		ghostscript gmake gnome libtool localbase pathfix pkgconfig
+USES=		ghostscript gnome libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo
 GNU_CONFIGURE=	yes

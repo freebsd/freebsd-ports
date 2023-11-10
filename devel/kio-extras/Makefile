@@ -1,6 +1,5 @@
 PORTNAME=	kio-extras
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -52,8 +51,8 @@ EXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
 EXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 
 EXIV_DESC=		Provides support for automatic rotation of JPEGs in the thumbnail kioslave
-EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Exiv2
-EXIV_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
+EXIV_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5kExiv2
+EXIV_USE=		KDE=libkexiv2
 
 SLP_DESC=		Provides SLP support in the network:/ kioslave
 SLP_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_SLP

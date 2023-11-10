@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/paint/object_paint_properties_sparse.h.orig	2023-08-17 07:33:31 UTC
+--- third_party/blink/renderer/core/paint/object_paint_properties_sparse.h.orig	2023-10-11 18:22:24 UTC
 +++ third_party/blink/renderer/core/paint/object_paint_properties_sparse.h
-@@ -269,8 +269,8 @@ class CORE_EXPORT ObjectPaintPropertiesSparse : public
+@@ -272,8 +272,8 @@ class CORE_EXPORT ObjectPaintPropertiesSparse : public
        NodeList& nodes,
        NodeId node_id,
        const ParentType& parent,

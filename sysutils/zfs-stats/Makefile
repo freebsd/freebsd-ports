@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Displays general ZFS information and human-readable statistics
-WWW=		https://www.vx.sk/zfs-stats/
+WWW=		https://github.com/mmatuska/zfs-stats
 
 LICENSE=	BSD2CLAUSE
 

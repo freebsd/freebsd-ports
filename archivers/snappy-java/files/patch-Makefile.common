@@ -1,17 +1,32 @@
---- Makefile.common.orig	2020-05-06 17:26:51 UTC
+--- Makefile.common.orig	2023-09-27 02:22:20 UTC
 +++ Makefile.common
-@@ -45,7 +45,7 @@ endif
+@@ -29,8 +29,13 @@ IBM_JDK_LIB := lib/inc_ibm
+ ifeq ($(OS_NAME),Mac)
+ ENDIANESS:="Little Endian"
+ else
+-ENDIANESS:=$(shell lscpu | grep "Byte Order" |cut -d ":" -f2)
++_btord:=$(shell sysctl -n hw.byteorder)
++ifeq ($(_btord),1234)
++ENDIANESS:="Little Endian"
++else
++ENDIANESS:="Big Endian"
+ endif
++endif
  
+ # Windows uses different path separators
+ ifeq ($(OS_NAME),Windows)
+@@ -51,7 +56,7 @@ endif
  # os=Default is meant to be generic unix/linux
  
--known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 FreeBSD-x86_64 Windows-x86 Windows-x86_64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64
-+known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 FreeBSD-aarch64 FreeBSD-ppc64 FreeBSD-ppc64le FreeBSD-x86 FreeBSD-x86_64 Windows-x86 Windows-x86_64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64
+ # To support new CPU architecture, add a new target name here
+-known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64
++known_os_archs := Linux-x86 Linux-x86_64 Linux-arm Linux-armv6 Linux-armv7 Linux-android-arm Linux-android-aarch64 Linux-aarch64 Linux-ppc Linux-ppc64 Linux-ppc64le Linux-s390 Linux-s390x Mac-x86 Mac-x86_64 Mac-aarch64 FreeBSD-aarch64 FreeBSD-ppc64 FreeBSD-ppc64le FreeBSD-x86 FreeBSD-x86_64 Windows-x86 Windows-x86_64 Windows-aarch64 SunOS-x86 SunOS-sparc SunOS-x86_64 AIX-ppc AIX-ppc64 Linux-riscv Linux-riscv64
  os_arch := $(OS_NAME)-$(OS_ARCH)
  IBM_JDK_7 := $(findstring IBM, $(shell $(JAVA) -version 2>&1 | grep IBM | grep "JRE 1.7"))
  
-@@ -249,6 +249,34 @@ Mac-x86_64_CXXFLAGS  := -Ilib/inc_mac -I$(JAVA_HOME)/i
+@@ -262,6 +267,34 @@ Mac-x86_64_CXXFLAGS  := -Ilib/inc_mac -I$(JAVA_HOME)/i
  Mac-x86_64_LINKFLAGS := -dynamiclib
- Mac-x86_64_LIBNAME   := libsnappyjava.jnilib
+ Mac-x86_64_LIBNAME   := libsnappyjava.dylib
  Mac-x86_64_SNAPPY_FLAGS  :=
 +
 +FreeBSD-aarch64_CXX          := $(CROSS_PREFIX)g++
@@ -42,5 +57,5 @@
 +FreeBSD-x86_LIBNAME      := libsnappyjava.so
 +FreeBSD-x86_SNAPPY_FLAGS :=
  
- FreeBSD-x86_64_CXX          := $(CROSS_PREFIX)g++
- FreeBSD-x86_64_STRIP        := $(CROSS_PREFIX)strip
+ Mac-aarch64_CXX       := c++ -arch arm64
+ Mac-aarch64_STRIP     := strip -x

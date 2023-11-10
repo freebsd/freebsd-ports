@@ -1,0 +1,5 @@
+TIMESTAMP = 1699087114
+SHA256 (go/dns_zdns/zdns-v1.0.0/v1.0.0.mod) = 22fd94eb06abb7cd2592ac62d82bef179e2622ec1306a10ac7e6ee5ae118f0ec
+SIZE (go/dns_zdns/zdns-v1.0.0/v1.0.0.mod) = 1269
+SHA256 (go/dns_zdns/zdns-v1.0.0/v1.0.0.zip) = 1e841d7ffed452d15411f987721c94a5cf604c22f47e69941218d9f3bfd5945c
+SIZE (go/dns_zdns/zdns-v1.0.0/v1.0.0.zip) = 115777

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user-defined functions for the MySQL server
-WWW=		http://mysql-udf.sourceforge.net/
+WWW=		https://mysql-udf.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 

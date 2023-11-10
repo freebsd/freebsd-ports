@@ -1,0 +1,75 @@
+--- src/irc-server/Makefile.in.orig	2023-10-21 11:24:01 UTC
++++ src/irc-server/Makefile.in
+@@ -150,7 +150,7 @@ ARFLAGS = cru
+ AM_V_AR = $(am__v_AR_@AM_V@)
+ am__v_AR_ = $(am__v_AR_@AM_DEFAULT_V@)
+ am__v_AR_0 = @echo "  AR      " $@;
+-am__v_AR_1 = 
++am__v_AR_1 =
+ libircserver_a_AR = $(AR) $(ARFLAGS)
+ libircserver_a_LIBADD =
+ am_libircserver_a_OBJECTS = irc-proto.$(OBJEXT) irc-crypt.$(OBJEXT) \
+@@ -167,11 +167,11 @@ am__v_P_1 = :
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+ am__v_GEN_0 = @echo "  GEN     " $@;
+-am__v_GEN_1 = 
++am__v_GEN_1 =
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-am__v_at_1 = 
++am__v_at_1 =
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)/src
+ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
+ am__maybe_remake_depfiles = depfiles
+@@ -187,7 +187,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+ AM_V_lt = $(am__v_lt_@AM_V@)
+ am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
+ am__v_lt_0 = --silent
+-am__v_lt_1 = 
++am__v_lt_1 =
+ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+@@ -195,7 +195,7 @@ LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOO
+ AM_V_CC = $(am__v_CC_@AM_V@)
+ am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
+ am__v_CC_0 = @echo "  CC      " $@;
+-am__v_CC_1 = 
++am__v_CC_1 =
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+@@ -203,7 +203,7 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+-am__v_CCLD_1 = 
++am__v_CCLD_1 =
+ SOURCES = $(libircserver_a_SOURCES)
+ DIST_SOURCES = $(libircserver_a_SOURCES)
+ am__can_run_installinfo = \
+@@ -426,7 +426,7 @@ $(am__aclocal_m4_deps):
+ clean-noinstLIBRARIES:
+ 	-test -z "$(noinst_LIBRARIES)" || rm -f $(noinst_LIBRARIES)
+ 
+-libircserver.a: $(libircserver_a_OBJECTS) $(libircserver_a_DEPENDENCIES) $(EXTRA_libircserver_a_DEPENDENCIES) 
++libircserver.a: $(libircserver_a_OBJECTS) $(libircserver_a_DEPENDENCIES) $(EXTRA_libircserver_a_DEPENDENCIES)
+ 	$(AM_V_at)-rm -f libircserver.a
+ 	$(AM_V_AR)$(libircserver_a_AR) libircserver.a $(libircserver_a_OBJECTS) $(libircserver_a_LIBADD)
+ 	$(AM_V_at)$(RANLIB) libircserver.a
+@@ -725,13 +725,6 @@ uninstall-am:
+ # GNU date's ‘-r’ flag, which BSD date does not support.
+ 
+ timestamp.c: $(top_builddir)/config.status
+-	if date --version >/dev/null 2>&1 ; then			\
+-	  DATESTR=`date -r $< -u +'%Y-%m-%d %R UTC'` ;			\
+-	else								\
+-	  MDATE=`$(top_builddir)/build-aux/mdate-sh $<` ;		\
+-	  DATESTR=`date -jf "%d %B %Y" "$$MDATE" +'%Y-%m-%d %R UTC'` ;	\
+-	fi ;								\
+-	printf 'static char created[] = "%s";\n' "$$DATESTR" > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

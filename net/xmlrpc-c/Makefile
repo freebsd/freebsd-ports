@@ -1,15 +1,16 @@
 PORTNAME=	xmlrpc-c
 PORTVERSION=	1.54.06
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
-WWW=		http://xmlrpc-c.sourceforge.net/
+WWW=		https://xmlrpc-c.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		gmake pkgconfig tar:tgz
+USES=		gmake pkgconfig ssl tar:tgz
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -18,7 +19,8 @@ MAKEFILE=	GNUmakefile
 MAKE_ENV+=	INSTALL_SHLIB="${INSTALL_LIB}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAKE_JOBS_UNSAFE=	yes
-LDFLAGS+=	-lm
+CFLAGS=		-I${OPENSSLINC}
+LDFLAGS=	-L${OPENSSLLIB} -lm
 
 CONFLICTS=	xmlrpc-epi-0.*
 
@@ -34,7 +36,6 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_ENABLE=	curl-client
 LIBWWW_LIB_DEPENDS=	libwwwcore.so:www/libwww \
 		libexpat.so:textproc/expat2
-LIBWWW_USES=	ssl
 LIBWWW_CONFIGURE_ENABLE=libwww-client
 LIBWWW_CONFIGURE_WITH=	libwww-ssl
 

@@ -1,7 +1,8 @@
 PORTNAME=	openmvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0
-PORTREVISION=	12
+DISTVERSION=	2.0-78
+PORTREVISION=	1
+DISTVERSIONSUFFIX=	-gd67601b7
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -38,7 +39,6 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libgmp.so:math/gmp \
 		libjbig.so:graphics/jbigkit \
 		libmetis.so:math/metis \
-		libnauty.so:math/nauty \
 		libopenblas.so:math/openblas \
 		libOsi.so:math/osi \
 		libpng.so:graphics/png \

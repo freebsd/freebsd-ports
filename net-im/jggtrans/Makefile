@@ -10,16 +10,16 @@ WWW=		http://jggtrans.jajcus.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Upstream last release was in 2014
+EXPIRATION_DATE=	2023-12-05
+
 LIB_DEPENDS=	libidn.so:dns/libidn \
 		libexpat.so:textproc/expat2 \
 		libgadu.so:polish/libgadu
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake gnome pkgconfig
+USES=		gettext gmake gnome localbase:ldflags pkgconfig
 USE_GNOME=	glib20
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	-I${LOCALBASE}/include
 
 USE_RC_SUBR=	jggtrans
 

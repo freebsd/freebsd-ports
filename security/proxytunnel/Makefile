@@ -1,5 +1,5 @@
 PORTNAME=	proxytunnel
-PORTVERSION=	1.11
+PORTVERSION=	1.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -15,7 +15,7 @@ BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		minixmlto:textproc/minixmlto
 
 USES=		cpe gmake pkgconfig ssl
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Fails to build with ld: error: undefined symbol: SSL_get_peer_certificate
 USE_GITHUB=	yes
 

@@ -5,7 +5,7 @@ MASTER_SITES=	SF/nmea/NmeaLib/nmea-0.5.x
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Library for working with the NMEA protocol
-WWW=		http://nmea.sourceforge.net/
+WWW=		https://nmea.sourceforge.net/
 
 LICENSE=	LGPL21
 

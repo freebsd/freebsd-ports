@@ -25,7 +25,7 @@ tidy () {
 	    [ "$db" = "$exim_dbdir/db/*.lockfile" ] && continue
 	    echo
 	    db_name=`basename "$db" .lockfile`
-	    if [ -e "${exim_dbdir}/db/${db_name}" ]; then
+	    if [ -e "${exim_dbdir}/db/${db_name}.db" ]; then
 	        "$exim_tidydb" "$exim_dbdir" "$db_name"
 	    fi
 	done

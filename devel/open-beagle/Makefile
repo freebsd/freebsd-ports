@@ -7,7 +7,7 @@ DISTNAME=	beagle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Evolutionary Computation Framework
-WWW=		http://beagle.sourceforge.net/
+WWW=		https://beagle.sourceforge.net/
 
 BUILD_DEPENDS+=	gsed:textproc/gsed
 

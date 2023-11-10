@@ -3,7 +3,7 @@ CATEGORIES=	shells
 
 COMMENT=	Bourne Shell extended by J. Schilling
 MAINTAINER=	fuz@FreeBSD.org
-WWW=		http://schilytools.sourceforge.net/bosh.html
+WWW=		https://schilytools.sourceforge.net/bosh.html
 
 # bin/bosh
 CONFLICTS_INSTALL=	bosh-cli

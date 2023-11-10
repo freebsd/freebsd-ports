@@ -1,20 +1,18 @@
---- CMakeLists.txt.orig	2022-11-10 19:15:49 UTC
+--- CMakeLists.txt.orig	2023-11-07 15:25:19 UTC
 +++ CMakeLists.txt
-@@ -173,7 +173,7 @@ if (NOT EXTERNAL_PROTOZERO)
- endif()
+@@ -28,6 +28,7 @@ endif()
  
- if (NOT EXTERNAL_FMT)
--    set(FMT_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/contrib/fmt/include")
-+	include_directories("${CMAKE_CURRENT_SOURCE_DIR}/contrib/fmt/include")
- endif()
+ option(BUILD_TESTS    "Build test suite" OFF)
+ option(BUILD_COVERAGE "Build with coverage" OFF)
++option(BUILD_GEN      "Build gen" OFF)
+ option(WITH_LUA       "Build with Lua support" ON)
+ option(WITH_LUAJIT    "Build with LuaJIT support" OFF)
  
- if (NOT EXTERNAL_RAPIDJSON)
-@@ -183,7 +183,7 @@ endif()
- include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src ${CMAKE_CURRENT_BINARY_DIR})
- 
- find_package(Osmium 2.17.3 REQUIRED COMPONENTS io)
--include_directories(SYSTEM ${OSMIUM_INCLUDE_DIRS} ${PROTOZERO_INCLUDE_DIR} ${FMT_INCLUDE_DIR})
-+include_directories(SYSTEM ${OSMIUM_INCLUDE_DIRS} ${PROTOZERO_INCLUDE_DIR})
- 
- if (WITH_LUA)
-     if (WITH_LUAJIT)
+@@ -289,7 +290,6 @@ if (${POTRACE_LIBRARY} STREQUAL "POTRACE_LIBRARY-NOTFO
+ else()
+     if (WITH_LUA)
+         message(STATUS "Found opencv and potrace library. Building osm2pgsql-gen.")
+-        set(BUILD_GEN 1)
+         include_directories(SYSTEM ${POTRACE_INCLUDE_DIR})
+         add_executable(osm2pgsql-gen src/gen/osm2pgsql-gen.cpp
+                     src/gen/canvas.cpp

@@ -12,6 +12,8 @@ WWW=		https://sourceforge.net/projects/fnccheck/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	BROKEN for more than an year and last upstream release was in 2012
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		does not build: /usr/local/include/libiberty/libiberty.h:317:74: error: expected function body after function declarator
 
 BUILD_DEPENDS=	gnulibiberty>=2.19.1:devel/gnulibiberty

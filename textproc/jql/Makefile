@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.0.4
+DISTVERSION=	7.0.6
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,114 +15,115 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
-CARGO_CRATES=	addr2line-0.20.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
+		aho-corasick-1.1.2 \
 		anes-0.1.6 \
 		anstream-0.6.4 \
-		anstyle-1.0.1 \
-		anstyle-parse-0.2.1 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
 		anyhow-1.0.75 \
 		autocfg-1.1.0 \
-		backtrace-0.3.68 \
-		bitflags-2.3.3 \
-		bumpalo-3.13.0 \
-		bytes-1.4.0 \
+		backtrace-0.3.69 \
+		bitflags-2.4.1 \
+		bumpalo-3.14.0 \
+		bytes-1.5.0 \
 		cast-0.3.0 \
-		cc-1.0.79 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.4.6 \
-		clap_builder-4.4.6 \
-		clap_derive-4.4.2 \
-		clap_lex-0.5.0 \
+		clap-4.4.7 \
+		clap_builder-4.4.7 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
 		colorchoice-1.0.0 \
-		colored_json-3.2.0 \
+		colored_json-4.0.0 \
 		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.16 \
-		either-1.8.1 \
-		equivalent-1.0.0 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
-		gimli-0.27.3 \
+		either-1.9.0 \
+		equivalent-1.0.1 \
+		errno-0.3.5 \
+		gimli-0.28.0 \
 		half-1.8.2 \
-		hashbrown-0.14.0 \
+		hashbrown-0.14.2 \
 		heck-0.4.1 \
-		hermit-abi-0.3.1 \
-		indexmap-2.0.0 \
-		is-terminal-0.4.8 \
+		hermit-abi-0.3.3 \
+		indexmap-2.1.0 \
+		is-terminal-0.4.9 \
 		itertools-0.10.5 \
-		itoa-1.0.6 \
-		js-sys-0.3.64 \
-		libc-0.2.147 \
-		linux-raw-sys-0.4.3 \
-		log-0.4.19 \
-		memchr-2.5.0 \
+		itoa-1.0.9 \
+		js-sys-0.3.65 \
+		libc-0.2.149 \
+		linux-raw-sys-0.4.10 \
+		log-0.4.20 \
+		memchr-2.6.4 \
 		memoffset-0.9.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
 		nom-7.1.3 \
-		num-traits-0.2.15 \
+		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
-		object-0.31.1 \
+		object-0.32.1 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
-		pin-project-lite-0.2.12 \
+		pin-project-lite-0.2.13 \
 		plotters-0.3.5 \
 		plotters-backend-0.3.5 \
 		plotters-svg-0.3.5 \
-		proc-macro2-1.0.63 \
+		proc-macro2-1.0.69 \
 		psm-0.1.21 \
-		quote-1.0.29 \
+		quote-1.0.33 \
 		rayon-1.8.0 \
 		rayon-core-1.12.0 \
-		regex-1.8.4 \
-		regex-syntax-0.7.2 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
 		rustc-demangle-0.1.23 \
-		rustix-0.38.1 \
-		ryu-1.0.13 \
+		rustix-0.38.21 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		scopeguard-1.1.0 \
-		serde-1.0.188 \
-		serde_derive-1.0.188 \
-		serde_json-1.0.107 \
+		scopeguard-1.2.0 \
+		serde-1.0.190 \
+		serde_derive-1.0.190 \
+		serde_json-1.0.108 \
 		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
-		syn-2.0.29 \
-		thiserror-1.0.49 \
-		thiserror-impl-1.0.49 \
+		syn-2.0.38 \
+		thiserror-1.0.50 \
+		thiserror-impl-1.0.50 \
 		tinytemplate-1.2.1 \
-		tokio-1.32.0 \
+		tokio-1.33.0 \
 		tokio-macros-2.1.0 \
-		unicode-ident-1.0.9 \
+		unicode-ident-1.0.12 \
 		utf8parse-0.2.1 \
-		walkdir-2.3.3 \
-		wasm-bindgen-0.2.87 \
-		wasm-bindgen-backend-0.2.87 \
-		wasm-bindgen-macro-0.2.87 \
-		wasm-bindgen-macro-support-0.2.87 \
-		wasm-bindgen-shared-0.2.87 \
-		web-sys-0.3.64 \
+		walkdir-2.4.0 \
+		wasm-bindgen-0.2.88 \
+		wasm-bindgen-backend-0.2.88 \
+		wasm-bindgen-macro-0.2.88 \
+		wasm-bindgen-macro-support-0.2.88 \
+		wasm-bindgen-shared-0.2.88 \
+		web-sys-0.3.65 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
+		winapi-util-0.1.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.48.1 \
-		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 

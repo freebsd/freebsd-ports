@@ -1,24 +1,26 @@
---- third_party/zlib/BUILD.gn.orig	2023-07-24 14:27:53 UTC
+--- third_party/zlib/BUILD.gn.orig	2023-10-21 11:51:27 UTC
 +++ third_party/zlib/BUILD.gn
 @@ -127,7 +127,7 @@ if (use_arm_neon_optimizations) {
-     # Disabled for iPhone, as described in DDI0487C_a_armv8_arm:
-     #  "All implementations of the ARMv8.1 architecture are required to
-     #   implement the CRC32* instructions. These are optional in ARMv8.0."
--    if (!is_ios) {
-+    if (!is_ios && !is_bsd) {
-       defines = [ "CRC32_ARMV8_CRC32" ]
-       if (is_android) {
-         defines += [ "ARMV8_OS_ANDROID" ]
-@@ -148,7 +148,7 @@ if (use_arm_neon_optimizations) {
-   source_set("zlib_arm_crc32") {
-     visibility = [ ":*" ]
- 
--    if (!is_ios) {
-+    if (!is_ios && !is_bsd) {
-       include_dirs = [ "." ]
- 
-       if (!is_win && !is_clang) {
-@@ -416,7 +416,7 @@ static_library("minizip") {
+     defines = [ "CRC32_ARMV8_CRC32" ]
+     if (is_android) {
+       defines += [ "ARMV8_OS_ANDROID" ]
+-    } else if (is_linux || is_chromeos) {
++    } else if ((is_linux || is_chromeos) && !is_bsd) {
+       defines += [ "ARMV8_OS_LINUX" ]
+     } else if (is_mac) {
+       defines += [ "ARMV8_OS_MACOS" ]
+@@ -137,6 +137,10 @@ if (use_arm_neon_optimizations) {
+       defines += [ "ARMV8_OS_FUCHSIA" ]
+     } else if (is_win) {
+       defines += [ "ARMV8_OS_WINDOWS" ]
++    } else if (is_openbsd) {
++      defines += [ "ARMV8_OS_OPENBSD" ]
++    } else if (is_freebsd) {
++      defines += [ "ARMV8_OS_FREEBSD" ]
+     } else {
+       assert(false, "Unsupported ARM OS")
+     }
+@@ -408,7 +412,7 @@ static_library("minizip") {
      ]
    }
  

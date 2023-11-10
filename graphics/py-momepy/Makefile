@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Urban Morphology Measuring Toolkit
-WWW=		https://github.com/pysal/momepy
+WWW=		https://docs.momepy.org/en/stable/ \
+		https://github.com/pysal/momepy
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

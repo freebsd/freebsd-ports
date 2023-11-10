@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.b/beta/}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Allow non SOCKS aware applications to use SOCKS without modification
-WWW=		http://tsocks.sourceforge.net
+WWW=		https://tsocks.sourceforge.net
 
 LICENSE=	GPLv2
 

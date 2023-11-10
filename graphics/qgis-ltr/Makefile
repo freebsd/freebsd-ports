@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.28.11
+DISTVERSION=	3.28.12
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -10,6 +10,9 @@ WWW=		https://qgis.org/en/site/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+
+DEPRECATED=Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=2023-11-26
 
 BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		opencl>=0:devel/opencl \

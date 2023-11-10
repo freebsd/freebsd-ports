@@ -71,4 +71,3 @@ libexec/knxd_args
 %%DATADIR%%/EIBD.pas
 %%DATADIR%%/eibclient.php
 @sample etc/knxd.conf.sample
-

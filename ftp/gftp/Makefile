@@ -1,6 +1,5 @@
 PORTNAME=	gftp
-PORTVERSION=	2.7.0b
-PORTREVISION=	1
+PORTVERSION=	2.9.1b
 CATEGORIES=	ftp
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -9,10 +8,15 @@ WWW=		http://gftp.seul.org/
 
 LICENSE=	GPLv2
 
-USES=		autoreconf gnome gmake libtool pathfix pkgconfig ssl tar:bzip2
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2
+
+USES=		autoreconf desktop-file-utils gettext-tools gnome gmake pathfix \
+		pkgconfig ssl tar:bzip2
 USE_GITHUB=	yes
 GH_ACCOUNT=	masneyb
-USE_GNOME=	glib20 gtk20
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk20
 
 GNU_CONFIGURE=	yes
 
@@ -21,11 +25,15 @@ CFLAGS+=	-D_WANT_SEMUN
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=		gettext
-NLS_USE=		GNOME=intltool
+NLS_USES=		gettext iconv
 NLS_CONFIGURE_OFF=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
+NLS_CPPFLAGS=		-I${LOCALBASE}/include
+NLS_LIBS=		-L${LOCALBASE}/lib -lintl
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/config.rpath
+	@${MKDIR} ${WRKSRC}/autoconf
+	@${MKDIR} ${WRKSRC}/autoconf-m4
+	@${TOUCH} ${WRKSRC}/autoconf/config.rpath
 
 .include <bsd.port.mk>

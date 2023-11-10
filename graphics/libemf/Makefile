@@ -7,7 +7,7 @@ DISTNAME=	libemf-${DISTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
-WWW=		http://libemf.sourceforge.net/
+WWW=		https://libemf.sourceforge.net/
 
 LICENSE=	LGPL21
 

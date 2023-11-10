@@ -1,5 +1,6 @@
 PORTNAME=	jacode.pl
 DISTVERSION=	2.13.4.31
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:INA/${PORTNAME:S|j|J|:S|.pl||}
@@ -19,6 +20,10 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 PLIST_FILES=	${SITE_PERL_REL}/${PORTNAME}\
 		${SITE_PERL_REL}/${PORTNAME:S|j|J|:S|.pl|.pm|}
+
+pre-patch:
+	@${FIND} ${WRKSRC}/lib/jacode.pl ${WRKSRC}/t -type f -exec\
+		${REINPLACE_CMD} -e "s|jacode'|jacode::|g" -e "s|jcode'|jcode::|g" {} \;
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}

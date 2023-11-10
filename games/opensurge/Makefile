@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}-src-build${SVN_REV}${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game based on the Sonic the Hedgehog universe
-WWW=		http://opensnc.sourceforge.net/
+WWW=		https://opensnc.sourceforge.net/
 
 LICENSE=	GPLv2+ CC-BY-SA-3.0
 LICENSE_COMB=	multi

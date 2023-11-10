@@ -8,7 +8,7 @@ DISTNAME=	ocamlsdl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml interface to the SDL
-WWW=		http://ocamlsdl.sourceforge.net/
+WWW=		https://ocamlsdl.sourceforge.net/
 
 LICENSE=	LGPL20+ # source says LGPL20+, COPYING says LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

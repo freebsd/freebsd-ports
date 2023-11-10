@@ -1,3 +1,3 @@
-TIMESTAMP = 1680025441
-SHA256 (xorg/lib/libXpm-3.5.15.tar.xz) = 60bb906c5c317a6db863e39b69c4a83fdbd2ae2154fcf47640f8fefc9fdfd1c1
-SIZE (xorg/lib/libXpm-3.5.15.tar.xz) = 459140
+TIMESTAMP = 1696424461
+SHA256 (xorg/lib/libXpm-3.5.17.tar.xz) = 64b31f81019e7d388c822b0b28af8d51c4622b83f1f0cb6fa3fc95e271226e43
+SIZE (xorg/lib/libXpm-3.5.17.tar.xz) = 468964

@@ -1,7 +1,6 @@
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.
 DISTVERSION=	${_CMAKE_VERSION}
-PORTREVISION=	3
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-core
 
@@ -34,14 +33,19 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--system-libarchive \
 		--system-librhash \
 		--system-libuv \
+		--no-system-cppdap \
 		--no-system-curl \
 		--no-system-nghttp2 \
 		--parallel=${MAKE_JOBS_NUMBER} \
 		--init="${WRKSRC}/InitialCache.cmake"
 
-OPTIONS_DEFINE=	DOCS CPACK
+# Quick fix to enable build with non-base SSL (PR: 274512)
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
+
+OPTIONS_DEFINE=		DOCS CPACK
 OPTIONS_DEFAULT=	CPACK
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 CPACK_DESC=		Enable FreeBSD generator in CPack (experimental)
 CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
@@ -60,6 +64,7 @@ INSTALL_TARGET=	install/strip
 # syntax in the initial cache.
 pre-configure:
 	@${CP} "${FILESDIR}/InitialCache.cmake" "${WRKSRC}/InitialCache.cmake"
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 pre-configure-CPACK-on:
 	@${REINPLACE_CMD} \
@@ -88,7 +93,6 @@ post-patch:
 		${WRKSRC}/Modules/FindDCMTK.cmake
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/Modules/FindFLEX.cmake
-	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 # cmake-gui(1) is installed by devel/cmake-gui. Remove the man page's source to
 # prevent it from being built/installed by devel/cmake.

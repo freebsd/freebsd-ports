@@ -7,7 +7,7 @@
    NAMES "arssym.h"
    PATHS ${ARPACKPP_PREFIX} ${ARPACKPP_ROOT}
 -  PATH_SUFFIXES "include" "include/arpack++"
-+  PATH_SUFFIXES "include" "include/ARPACK++"
++  PATH_SUFFIXES "include" "include/arpackpp"
    NO_DEFAULT_PATH
  )
  
@@ -15,7 +15,7 @@
  find_path(ARPACKPP_INCLUDE_DIR
    NAMES "arssym.h"
 -  PATH_SUFFIXES "include" "include/arpack++"
-+  PATH_SUFFIXES "include" "include/ARPACK++"
++  PATH_SUFFIXES "include" "include/arpackpp"
  )
  
  # The arpack++ package in Debian also includes a shared library that we have

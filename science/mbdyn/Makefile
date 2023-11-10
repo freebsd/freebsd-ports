@@ -1,6 +1,6 @@
 PORTNAME=	mbdyn
 DISTVERSION=	1.7.3
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	science
 MASTER_SITES=	https://www.mbdyn.org/userfiles/downloads/
 
@@ -32,12 +32,11 @@ INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	METIS CHACO
 OPTIONS_RADIO=	BLAS
-OPTIONS_RADIO_BLAS=	REFERENCE GOTOBLAS ATLAS
+OPTIONS_RADIO_BLAS=	REFERENCE ATLAS
 OPTIONS_DEFAULT=	REFERENCE
 
 ATLAS_DESC=	ATLAS
 CHACO_DESC=	Enable chaco-support
-GOTOBLAS_DESC=	GotoBLAS2
 METIS_DESC=	Enable metis-support
 REFERENCE_DESC=	Blas / Lapack
 
@@ -47,9 +46,6 @@ ATLAS_USES=	blaslapack:atlas
 CHACO_BUILD_DEPENDS=	${LOCALBASE}/lib/libchaco.a:math/chaco
 CHACO_CONFIGURE_ON=	--with-chaco=yes
 CHACO_CONFIGURE_OFF=	--with-chaco=no
-
-GOTOBLAS_CONFIGURE_ON=	--with-blas=goto --with-goto=goto2
-GOTOBLAS_USES=	blaslapack:gotoblas
 
 METIS_CONFIGURE_ON=	--with-metis=yes
 METIS_CONFIGURE_OFF=	--with-metis=no

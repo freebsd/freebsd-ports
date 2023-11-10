@@ -1,6 +1,13 @@
---- python/mozbuild/mozbuild/gn_processor.py.orig	2022-11-03 22:19:40.000000000 +0100
-+++ python/mozbuild/mozbuild/gn_processor.py	2022-11-07 21:11:42.596355000 +0100
-@@ -166,6 +166,7 @@
+commit 0c96c599752d8d8f68b5ed8a6344888d1b505773
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+
+    fixup gn_processor.py for FreeBSD
+
+diff --git python/mozbuild/mozbuild/gn_processor.py python/mozbuild/mozbuild/gn_processor.py
+index b6c51ee010a8..15b4bda9df6e 100644
+--- python/mozbuild/mozbuild/gn_processor.py
++++ python/mozbuild/mozbuild/gn_processor.py
+@@ -185,6 +185,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
      }
      oses = {
          "android": "Android",
@@ -8,7 +15,7 @@
          "linux": "Linux",
          "mac": "Darwin",
          "openbsd": "OpenBSD",
-@@ -662,15 +663,15 @@
+@@ -735,16 +736,16 @@ def main():
  
      vars_set = []
      for is_debug in (True, False):
@@ -24,11 +31,13 @@
 +            if target_os in ("android", "freebsd", "linux", "win"):
                  target_cpus.append("x86")
 -            if target_os == "linux":
+-                target_cpus.extend(["ppc64", "riscv64", "mipsel", "mips64el"])
 +            if target_os in ("freebsd", "linux"):
-                 target_cpus.append("ppc64")
++                target_cpus.extend(["ppc64", "mipsel", "mips64el"])
              for target_cpu in target_cpus:
                  vars = {
-@@ -679,7 +680,7 @@
+                     "host_cpu": "x64",
+@@ -752,7 +753,7 @@ def main():
                      "target_cpu": target_cpu,
                      "target_os": target_os,
                  }

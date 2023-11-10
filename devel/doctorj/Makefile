@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for analyzing Java code and documentation
-WWW=		http://doctorj.sourceforge.net/
+WWW=		https://doctorj.sourceforge.net/
 
 USE_JAVA=	yes
 USE_ANT=	yes

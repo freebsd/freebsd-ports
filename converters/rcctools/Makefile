@@ -6,7 +6,7 @@ MASTER_SITES=	SF/rusxmms/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Charset conversion utility with language and encoding autodetection
-WWW=		http://rusxmms.sourceforge.net
+WWW=		https://rusxmms.sourceforge.net
 
 LIB_DEPENDS=	librcc.so:devel/librcc
 

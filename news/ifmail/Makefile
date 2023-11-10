@@ -6,7 +6,7 @@ MASTER_SITES=	SUNSITE/system/fido
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FidoNet(tm) support package for UN*X platform
-WWW=		http://ifmail.sourceforge.net/
+WWW=		https://ifmail.sourceforge.net/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/README

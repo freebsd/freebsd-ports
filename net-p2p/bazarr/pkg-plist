@@ -436,9 +436,9 @@
 %%DATADIR%%/bin/frontend/build/assets/@mantine/modals-06fc84bc.js
 %%DATADIR%%/bin/frontend/build/assets/@mantine/notifications-19fa8d62.js
 %%DATADIR%%/bin/frontend/build/assets/index-5c5baf89.css
-%%DATADIR%%/bin/frontend/build/assets/index-7f5c040b.js
-%%DATADIR%%/bin/frontend/build/assets/index-80bf5e18.js
-%%DATADIR%%/bin/frontend/build/assets/index-f711df91.js
+%%DATADIR%%/bin/frontend/build/assets/index-840de852.js
+%%DATADIR%%/bin/frontend/build/assets/index-934ec18a.js
+%%DATADIR%%/bin/frontend/build/assets/index-df4809cf.js
 %%DATADIR%%/bin/frontend/build/assets/roboto-all-300-normal-6d79427c.woff
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-300-normal-47aa3bfa.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-ext-300-normal-435e4b7f.woff2
@@ -9480,6 +9480,8 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/greeksubs%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/greeksubtitles%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/greeksubtitles%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/hdbits%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/hdbits%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/hosszupuska%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/hosszupuska%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/karagarga%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -9570,6 +9572,7 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/gestdown.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/greeksubs.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/greeksubtitles.py
+%%DATADIR%%/bin/libs/subliminal_patch/providers/hdbits.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/hosszupuska.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/karagarga.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/ktuvit.py
@@ -11697,8 +11700,11 @@
 %%DATADIR%%/bin/migrations/versions/__pycache__/195144da1f7e_%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/95cd4cf40d7a_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/95cd4cf40d7a_%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/migrations/versions/__pycache__/cee6a710cb71_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/migrations/versions/__pycache__/cee6a710cb71_%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/dc09994b7e65_%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/migrations/versions/__pycache__/dc09994b7e65_%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/migrations/versions/cee6a710cb71_.py
 %%DATADIR%%/bin/migrations/versions/dc09994b7e65_.py
 %%DATADIR%%/bin/postgres-requirements.txt
 %%DATADIR%%/bin/requirements.txt

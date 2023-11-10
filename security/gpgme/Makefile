@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.22.0
+PORTVERSION=	1.23.1
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -91,8 +91,10 @@ TEST_USE=	QT=testlib:build
 PLIST_SUB=	QT_SUFFIX="" qt_SUFFIX=""
 .    else
 USES+=		compiler:c++17-lang pkgconfig qt:6
-USE_QT=		base
 USE_CXXSTD=	c++17
+USE_LOCALE=	C.UTF-8
+USE_QT=		base
+CXXFLAGS+=	-fPIC
 PLIST_SUB=	QT_SUFFIX="${QT_STR}" qt_SUFFIX="${FLAVOR}"
 .    endif
 
@@ -119,6 +121,8 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|mno-direct-extern-access|fno-direct-access-external-data|g' \
+		${WRKSRC}/configure
 .if defined(SLAVEPORT)
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'

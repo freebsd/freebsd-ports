@@ -1,5 +1,5 @@
 PORTNAME=	mod_http2
-DISTVERSION=	2.0.21
+DISTVERSION=	2.0.25
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${ARCH:Marmv?} != ""
 CFLAGS+=	-Wno-error=tautological-constant-out-of-range-compare
 .endif
 

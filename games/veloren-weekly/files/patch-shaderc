@@ -1,29 +1,29 @@
 - Restore system shaderc support
 - Detect system shaderc on BSDs
 
---- Cargo.lock.orig	2023-01-06 18:27:46 UTC
+--- Cargo.lock.orig	2023-10-08 11:35:01 UTC
 +++ Cargo.lock
-@@ -5630,8 +5630,9 @@ name = "shaderc"
+@@ -5614,8 +5614,9 @@ name = "shaderc"
  
  [[package]]
  name = "shaderc"
 -version = "0.8.0"
 -source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
-+version = "0.8.1"
++version = "0.8.2"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "77a410ea26a220ceaef964dd71054ccd63cc97fd54393014c09046e795127824"
++checksum = "31cef52787a0db5108788ea20bed13d6bf4b96287c5c5201e55725f7070f3443"
  dependencies = [
   "libc",
   "shaderc-sys",
-@@ -5639,8 +5640,9 @@ name = "shaderc-sys"
+@@ -5623,8 +5624,9 @@ name = "shaderc-sys"
  
  [[package]]
  name = "shaderc-sys"
 -version = "0.8.0"
 -source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
-+version = "0.8.1"
++version = "0.8.2"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "a281c39df7d8a0a97e9430409abb466ff4bd046875c4d97591935042bbffc898"
++checksum = "1e8f8439fffcffd6efcd74197204addf935dbab5752696bd990a6cd36d54cf64"
  dependencies = [
   "cmake",
   "libc",
@@ -56,8 +56,8 @@
  # cmake crate used by shaderc, newer version 0.1.46 uses a new cmake command that is not available in our CI cmake version
  # see https://github.com/alexcrichton/cmake-rs/issues/131
  cmake = "=0.1.45"
---- cargo-crates/shaderc-sys-0.8.1/build/build.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/shaderc-sys-0.8.1/build/build.rs
+--- cargo-crates/shaderc-sys-0.8.2/build/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/shaderc-sys-0.8.2/build/build.rs
 @@ -287,10 +287,13 @@ fn main() {
              }
          } {

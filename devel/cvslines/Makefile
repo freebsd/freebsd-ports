@@ -5,7 +5,7 @@ MASTER_SITES=		SF
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches
-WWW=		http://cvslines.sourceforge.net/menu.html
+WWW=		https://cvslines.sourceforge.net/menu.html
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 NO_BUILD=		yes

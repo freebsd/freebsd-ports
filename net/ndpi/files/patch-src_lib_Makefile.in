@@ -1,6 +1,4 @@
--	/bin/rm -f libndpi.a $(OBJECTS)
-new file mode 100644
---- src/lib/Makefile.in.orig	2023-02-01 17:29:59 UTC
+--- src/lib/Makefile.in.orig	2023-11-02 19:51:08 UTC
 +++ src/lib/Makefile.in
 @@ -14,15 +14,12 @@ includedir = @includedir@/ndpi
  PREFIX     = @prefix@
@@ -9,19 +7,19 @@ new file mode 100644
 -ifneq ($(OS),Windows_NT)
 -CFLAGS     += -fPIC -DPIC
 -endif
--CFLAGS     += -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
+-CFLAGS     += -I. -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
 +CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
  LDFLAGS    += @NDPI_LDFLAGS@
  LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  
--OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
--HEADERS   = $(wildcard ../include/*.h)
-+OBJECTS != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
-+HEADERS != ls ../include/*.h
+-OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst third_party/src/hll/%.c, third_party/src/hll/%.o, $(wildcard third_party/src/hll/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
+-HEADERS   = $(wildcard ../include/*.h) $(wildcard ../include/*.h)
++OBJECTS   != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls third_party/src/hll/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
++HEADERS   != ls ../include/*.h
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
-@@ -30,27 +27,9 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
+@@ -30,27 +27,7 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  
@@ -33,10 +31,10 @@ new file mode 100644
 -ifneq ($(OS),Windows_NT)
 -OS := $(shell uname)
 -endif
- BUILD_MINGW    		 = @BUILD_MINGW@
- 
+-BUILD_MINGW    		 = @BUILD_MINGW@
+-
 -ifeq ($(OS),Darwin)
--CC=clang
+-CC=clang -fno-color-diagnostics
 -SONAME_FLAG=
 -else
 -ifneq ($(BUILD_MINGW),)

@@ -1,0 +1,107 @@
+Index: ccp.h
+===================================================================
+--- src/ccp.h	(revision 2511)
++++ src/ccp.h	(working copy)
+@@ -39,7 +39,7 @@
+   #define CCP_TY_PRED1		1	/* Predictor type 1 */
+   #define CCP_TY_PRED2		2	/* Predictor type 2 */
+   #define CCP_TY_PUDDLE		3	/* Puddle Jumper */
+-  #define CCP_TY_HWPPC		16	/* Hewlett-Packard PPC */
++  #define CCP_TY_HPPPC		16	/* Hewlett-Packard PPC */
+   #define CCP_TY_STAC		17	/* Stac Electronics LZS */
+   #define CCP_TY_MPPC		18	/* Microsoft PPC */
+   #define CCP_TY_GAND		19	/* Gandalf FZA */
+@@ -50,6 +50,7 @@
+   #define CCP_TY_DCE		25	/* Data Compression in Data Circuit-Terminating Equipment */
+   #define CCP_TY_DEFLATE	26	/* Gzip "deflate" compression */
+   #define CCP_TY_V44		27	/* V.44/LZJH Compression Protocol */
++  #define CCP_TY_LASTKNOWN	CCP_TY_V44
+ 
+   #define CCP_OVERHEAD		2
+ 
+--- src/ccp.c.orig	2023-10-27 15:59:28.379182000 +0700
++++ src/ccp.c	2023-10-27 16:00:57.038431000 +0700
+@@ -60,7 +60,7 @@
+   static int		CcpCheckEncryption(Bund b);
+   static int		CcpSetCommand(Context ctx, int ac, const char *const av[], const void *arg);
+   static CompType	CcpFindComp(int type, int *indexp);
+-  static const char	*CcpTypeName(int type, char *buf, size_t len);
++  static const char	*CcpTypeName(u_char type, char *buf, size_t len);
+ 
+   static void		CcpNgCtrlEvent(int type, void *cookie);
+   static void		CcpNgDataEvent(int type, void *cookie);
+@@ -132,28 +132,6 @@
+     NULL, NULL, NULL, NULL
+   };
+ 
+-  /* Names for different types of compression */
+-  static const struct ccpname {
+-    u_char	type;
+-    const char	*name;
+-  } gCcpTypeNames[] = {
+-    { CCP_TY_OUI,		"OUI" },
+-    { CCP_TY_PRED1,		"PRED1" },
+-    { CCP_TY_PRED2,		"PRED2" },
+-    { CCP_TY_PUDDLE,		"PUDDLE" },
+-    { CCP_TY_HWPPC,		"HWPPC" },
+-    { CCP_TY_STAC,		"STAC" },
+-    { CCP_TY_MPPC,		"MPPC" },
+-    { CCP_TY_GAND,		"GAND" },
+-    { CCP_TY_V42BIS,		"V42BIS" },
+-    { CCP_TY_BSD,		"BSD" },
+-    { CCP_TY_LZS_DCP,		"LZS-DCP" },
+-    { CCP_TY_MVRCA,		"MVRCA" },
+-    { CCP_TY_DCE,		"DCE" },
+-    { CCP_TY_DEFLATE,		"DEFLATE" },
+-    { CCP_TY_V44,		"V.44/LZJH" },
+-    { 0,			NULL },
+-  };
+ 
+ int		gCcpCsock = -1;		/* Socket node control socket */
+ int		gCcpDsock = -1;		/* Socket node data socket */
+@@ -1107,17 +1085,35 @@ CcpFindComp(int type, int *indexp)
+  */
+ 
+ static const char *
+-CcpTypeName(int type, char *buf, size_t len)
+-{
+-  const struct ccpname	*p;
++CcpTypeName(u_char type, char *buf, size_t len)
++ {
++  /* Names for different types of compression */
++  static const char * const ccpnames[] = {
++      "OUI",
++      "PRED1",
++      "PRED2",
++      "PUDDLE",
++      "HPPPC",
++      "STAC",
++      "MPPC",
++      "GAND",
++      "V42BIS",
++      "BSD",
++      "UNKNOWN[22]",
++      "LZS_DCP",
++      "MVRCA",
++      "DCE",
++      "DEFLATE",
++      "V.44/LZJH"
++  };
++  if (type <= CCP_TY_PUDDLE)
++    return(ccpnames[type]);
+ 
+-  for (p = gCcpTypeNames; p->name; p++) {
+-    if (p->type == type) {
+-	strlcpy(buf, p->name, len);
+-        return (buf);
+-    }
+-  }
+-  snprintf(buf, sizeof(buf), "UNKNOWN[%d]", type);
++  if (type >= CCP_TY_HPPPC && type <= CCP_TY_LASTKNOWN)
++    /* type - (CCP_TY_HPPPC-CCP_TY_PUDDLE-1) */
++    return(ccpnames[type - 12]);
++
++  snprintf(buf, len, "UNKNOWN[%u]", (unsigned)type);
+   return(buf);
+ }
+ 

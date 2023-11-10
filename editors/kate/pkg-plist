@@ -42,6 +42,7 @@ man/pt/man1/kate.1.gz
 man/pt_BR/man1/kate.1.gz
 man/ru/man1/kate.1.gz
 man/sv/man1/kate.1.gz
+man/tr/man1/kate.1.gz
 man/uk/man1/kate.1.gz
 share/applications/org.kde.kate.desktop
 share/applications/org.kde.kwrite.desktop

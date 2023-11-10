@@ -7,7 +7,7 @@ DIST_SUBDIR=	stardict
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
-WWW=		http://stardict.sourceforge.net/
+WWW=		https://stardict.sourceforge.net/
 
 NO_BUILD=	yes
 NO_ARCH=	yes

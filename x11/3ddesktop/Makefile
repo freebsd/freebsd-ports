@@ -6,7 +6,7 @@ MASTER_SITES=	SF/desk3d/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Virtual Desktop Switcher
-WWW=		http://desk3d.sourceforge.net/
+WWW=		https://desk3d.sourceforge.net/
 
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 

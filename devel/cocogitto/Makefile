@@ -1,6 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	5.5.0
-PORTREVISION=	1
+DISTVERSION=	5.6.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -81,7 +80,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		globwalk-0.8.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.3.1 \
+		hermit-abi-0.3.2 \
 		humansize-2.1.3 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
@@ -120,10 +119,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		parse-zoneinfo-0.3.0 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.2.0 \
-		pest-2.6.0 \
-		pest_derive-2.6.0 \
-		pest_generator-2.6.0 \
-		pest_meta-2.6.0 \
+		pest-2.7.2 \
+		pest_derive-2.7.2 \
+		pest_generator-2.7.2 \
+		pest_meta-2.7.2 \
 		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \

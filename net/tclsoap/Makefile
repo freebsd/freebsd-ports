@@ -6,7 +6,7 @@ DISTNAME=	TclSOAP-${PORTVERSION}
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	SOAP and XML-RPC support for TCL library
-WWW=		http://tclsoap.sourceforge.net/
+WWW=		https://tclsoap.sourceforge.net/
 
 LICENSE=	MIT
 

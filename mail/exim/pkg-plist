@@ -5,7 +5,9 @@
 %%EXIM%%sbin/exim_dbmbuild
 %%EXIM%%sbin/exim_dumpdb
 %%EXIM%%sbin/exim_fixdb
+%%EXIM%%sbin/exim_id_update
 %%EXIM%%sbin/exim_lock
+%%EXIM%%sbin/exim_msgdate
 %%EXIM%%sbin/exim_tidydb
 %%EXIM%%sbin/exicyclog
 %%EXIM%%sbin/exigrep

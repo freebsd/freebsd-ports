@@ -107,7 +107,11 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/yuv_only.txt
 %%DATADIR%%/chain_normalizers.ini
 %%DATADIR%%/core/consumer_multi.yml
+%%DATADIR%%/core/consumer_null.yml
+%%DATADIR%%/core/filter_audiochannels.yml
+%%DATADIR%%/core/filter_audioconvert.yml
 %%DATADIR%%/core/filter_audiomap.yml
+%%DATADIR%%/core/filter_audioseam.yml
 %%DATADIR%%/core/filter_audiowave.yml
 %%DATADIR%%/core/filter_autofade.yml
 %%DATADIR%%/core/filter_box_blur.yml
@@ -118,6 +122,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/filter_fieldorder.yml
 %%DATADIR%%/core/filter_gamma.yml
 %%DATADIR%%/core/filter_greyscale.yml
+%%DATADIR%%/core/filter_imageconvert.yml
 %%DATADIR%%/core/filter_luma.yml
 %%DATADIR%%/core/filter_mask_apply.yml
 %%DATADIR%%/core/filter_mask_start.yml
@@ -133,6 +138,8 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/link_timeremap.yml
 %%DATADIR%%/core/loader.dict
 %%DATADIR%%/core/loader.ini
+%%DATADIR%%/core/producer_abnormal.yml
+%%DATADIR%%/core/producer_blank.yml
 %%DATADIR%%/core/producer_colour.yml
 %%DATADIR%%/core/producer_consumer.yml
 %%DATADIR%%/core/producer_hold.yml

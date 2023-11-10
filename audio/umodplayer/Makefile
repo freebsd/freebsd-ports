@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/^0.//:tu}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console module player
-WWW=		http://umodplayer.sourceforge.net/
+WWW=		https://umodplayer.sourceforge.net/
 
 LICENSE=	PD
 

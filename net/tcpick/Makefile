@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Text-based TCP stream sniffer
-WWW=		http://tcpick.sourceforge.net/
+WWW=		https://tcpick.sourceforge.net/
 
 LICENSE=	GPLv2
 

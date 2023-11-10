@@ -1,13 +1,13 @@
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	80
+PORTREVISION=	82
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Cross-Lisp portability package
-WWW=		http://clocc.sourceforge.net
+WWW=		https://clocc.sourceforge.net
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:devel/cl-port
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:devel/cl-port

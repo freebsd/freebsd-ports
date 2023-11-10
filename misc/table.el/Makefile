@@ -8,7 +8,7 @@ EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create and edit WYSIWYG text based embedded tables in Emacs
-WWW=		http://table.sourceforge.net/
+WWW=		https://table.sourceforge.net/
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

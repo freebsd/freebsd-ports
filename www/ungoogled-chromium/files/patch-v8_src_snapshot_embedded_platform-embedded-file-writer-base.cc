@@ -1,6 +1,6 @@
---- v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc.orig	2023-02-11 09:11:04 UTC
+--- v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc.orig	2023-11-04 07:08:51 UTC
 +++ v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
-@@ -142,6 +142,8 @@ EmbeddedTargetOs ToEmbeddedTargetOs(const char* s) {
+@@ -143,6 +143,8 @@ EmbeddedTargetOs ToEmbeddedTargetOs(const char* s) {
      return EmbeddedTargetOs::kWin;
    } else if (string == "starboard") {
      return EmbeddedTargetOs::kStarboard;

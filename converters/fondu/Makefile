@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Series of programs to interconvert between mac fonts
-WWW=		http://fondu.sourceforge.net/
+WWW=		https://fondu.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 

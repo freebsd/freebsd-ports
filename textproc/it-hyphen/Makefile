@@ -9,7 +9,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hyphenation rules
-WWW=		http://linguistico.sourceforge.net/pages/start.html
+WWW=		https://linguistico.sourceforge.net/pages/start.html
 
 LICENSE=	LGPL21
 

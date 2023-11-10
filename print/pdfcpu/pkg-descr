@@ -1,0 +1,4 @@
+PDF processing library providing both an API and a CLI with focus on strong
+support for batch processing and scripting via a rich command-line. Common
+functions such as extract assets, merge, split, rotate, trim, validate,
+watermark PDF files are supported and many more.

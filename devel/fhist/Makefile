@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Utilities to maintain file history, do file comparisons, and merges
-WWW=		http://fhist.sourceforge.net/
+WWW=		https://fhist.sourceforge.net/
 
 LICENSE=	GPLv3
 

@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2023-08-17 07:33:31 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2023-11-03 10:09:45 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -234,7 +234,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -235,7 +235,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  

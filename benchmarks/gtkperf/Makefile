@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measure your system's GTK performance
-WWW=		http://gtkperf.sourceforge.net
+WWW=		https://gtkperf.sourceforge.net
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USES=		gmake gnome pkgconfig

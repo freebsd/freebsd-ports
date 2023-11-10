@@ -1,0 +1,5 @@
+Test::ExpectAndCheck creates objects that assist in writing unit tests with
+mocked object instances. Each mock instance will expect to receive a given list
+of method calls. Each method call is checked that it received the right
+arguments, and will return a prescribed result. At the end of each test, each
+object is checked to ensure all the expected methods were called.

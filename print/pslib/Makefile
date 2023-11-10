@@ -7,7 +7,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-library for generating multi page PostScript documents
-WWW=		http://pslib.sourceforge.net/
+WWW=		https://pslib.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

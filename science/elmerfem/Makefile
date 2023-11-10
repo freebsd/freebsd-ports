@@ -10,6 +10,9 @@ WWW=		https://www.csc.fi/web/elmer
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on deprecated www/qt5-webkit
+EXPIRATION_DATE=	2023-11-26
+
 LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis \

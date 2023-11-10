@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	java-
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Find Bugs in Java Programs
-WWW=		http://findbugs.sourceforge.net/
+WWW=		https://findbugs.sourceforge.net/
 
 LICENSE=	LGPL21
 USE_JAVA=	yes

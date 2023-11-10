@@ -1,5 +1,6 @@
 PORTNAME=	openssl
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.12
+PORTREVISION=	1
 CATEGORIES=	security devel
 PKGNAMESUFFIX=	-quictls
 
@@ -10,7 +11,7 @@ WWW=		https://www.github.com/quictls/openssl
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl3[012]
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3[12]
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
 
@@ -24,7 +25,7 @@ USES=		cpe perl5
 USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PKGNAMESUFFIX:S/-//}
-GH_TAGNAME=	c960369e667c985c0e95a7b071e7df0c9360cef6
+GH_TAGNAME=	${PORTNAME}-${PORTVERSION}-quic1
 
 TEST_TARGET=	test
 

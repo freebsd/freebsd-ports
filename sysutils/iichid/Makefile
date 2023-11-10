@@ -9,8 +9,11 @@ WWW=		https://github.com/wulf7/iichid
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Merged into base from 13
+EXPIRATION_DATE=	2023-12-31
 IGNORE_FreeBSD_13=	Is a part of base system
 IGNORE_FreeBSD_14=	Is a part of base system
+IGNORE_FreeBSD_15=	Is a part of base system
 
 USES=	kmod uidfix
 

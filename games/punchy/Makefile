@@ -1,7 +1,7 @@
 PORTNAME=	punchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,7 +29,7 @@ BINARY_ALIAS+=	python=${PYTHON_CMD}
 CARGO_ENV+=	V8_FROM_SOURCE=1 CLANG_BASE_PATH="/usr" GN_ARGS='${GN_ARGS}'
 GN_ARGS+=	use_custom_libcxx=false
 
-.if ${MACHINE_ARCH} == i386
+.if ${MACHINE_ARCH} == i386 || "${MACHINE_ARCH:Marmv?}" != ""
 # https://github.com/rust-lang/rust/issues/85598
 LTO_UNSAFE=	yes
 CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false

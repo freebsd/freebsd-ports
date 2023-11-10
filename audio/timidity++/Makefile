@@ -6,7 +6,7 @@ DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER?=	fuz@FreeBSD.org
 COMMENT?=	Software MIDI player
-WWW=		http://timidity.sourceforge.net/
+WWW=		https://timidity.sourceforge.net/
 
 LICENSE=	GPLv2+
 

@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Table/matrix widget extension to Tk
-WWW=		http://tktable.sourceforge.net/
+WWW=		https://tktable.sourceforge.net/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

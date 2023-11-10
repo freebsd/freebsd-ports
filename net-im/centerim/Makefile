@@ -12,6 +12,9 @@ WWW=		https://www.centerim.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Last upstream release was in 2011
+EXPIRATION_DATE=	2023-12-05
+
 LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libcurl.so:ftp/curl \
 		libgpg-error.so:security/libgpg-error

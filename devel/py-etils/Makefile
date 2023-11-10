@@ -1,5 +1,5 @@
 PORTNAME=	etils
-PORTVERSION=	1.5.0
+PORTVERSION=	1.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,9 @@ ENP_DESC=		Numpy utilities
 ENP_IMPLIES=		EPY
 EPATH_DESC=		Pathlib-like API
 EPATH_GCS_DESC=		Pathlib-like API for GCS
+EPATH_GCS_IMPLIES=	EPATH
 EPATH_S3_DESC=		Pathlib-like API for S3
+EPATH_S3_IMPLIES=	EPATH
 EPATH_IMPLIES=		EPY
 EPY_DESC=		Collection of generic python utilities
 ETREE_DESC=		Tree utilities for tf.nest, jax.tree_utils, DeepMind tree
@@ -45,7 +47,8 @@ EAPP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}absl-py>=0:devel/py-absl-py@${PY_FLAVOR
 			${PYTHON_PKGNAMEPREFIX}simple-parsing>=0:devel/py-simple-parsing@${PY_FLAVOR}
 ECOLAB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter>=0:devel/py-jupyter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}mediapy>=0:devel/py-mediapy@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 ENP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 EPATH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fsspec>=0:devel/py-fsspec@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}importlib-resources>=0:devel/py-importlib-resources@${PY_FLAVOR} \

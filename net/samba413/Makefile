@@ -567,6 +567,10 @@ MAKE_ENV+=			RPCGEN_CPP="${CPP}"
 #.if ${readline_ARGS} == port
 #CFLAGS+=			-D_FUNCTION_DEF
 #.endif
+# Some symbols in samba's linker version scripts are not defined, but since the
+# scripts are generated dynamically, suppress errors with lld >= 17 due to these
+# undefined symbols.
+LDFLAGS+=			-Wl,--undefined-version
 
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305

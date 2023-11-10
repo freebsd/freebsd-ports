@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ap@page2rss.com
 COMMENT=	Template system for C
-WWW=		http://ctemplate.sourceforge.net/
+WWW=		https://ctemplate.sourceforge.net/
 
 LICENSE=	NONE
 

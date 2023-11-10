@@ -9,6 +9,7 @@ include/aws/io/host_resolver.h
 include/aws/io/io.h
 include/aws/io/logging.h
 include/aws/io/message_pool.h
+include/aws/io/pem.h
 include/aws/io/pipe.h
 include/aws/io/pkcs11.h
 include/aws/io/retry_strategy.h

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/all-in-one/${PORTVERSION}
 
 MAINTAINER=	monwarez@mailoo.org
 COMMENT=	Free, open-source racing car simulator
-WWW=		http://torcs.sourceforge.net/
+WWW=		https://torcs.sourceforge.net/
 
 LICENSE=	GPLv2
 

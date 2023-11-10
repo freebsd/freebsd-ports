@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	obscenum999@gmail.com
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
-WWW=		http://uhexen2.sourceforge.net/
+WWW=		https://uhexen2.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC bot written in C for UNIX, Windows, and AmigaOS
-WWW=		http://dancer.sourceforge.net/
+WWW=		https://dancer.sourceforge.net/
 
 PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

@@ -4,6 +4,7 @@ include/alsa/asoundlib.h
 include/alsa/conf.h
 include/alsa/control.h
 include/alsa/control_external.h
+include/alsa/control_plugin.h
 include/alsa/error.h
 include/alsa/global.h
 include/alsa/hwdep.h
@@ -42,6 +43,8 @@ include/alsa/sound/uapi/sscape_ioctl.h
 include/alsa/sound/uapi/tlv.h
 include/alsa/timer.h
 include/alsa/topology.h
+include/alsa/ump.h
+include/alsa/ump_msg.h
 include/alsa/use-case.h
 include/alsa/version.h
 include/asoundlib.h
@@ -119,6 +122,7 @@ share/alsa/cards/YMF744.conf
 share/alsa/cards/aliases.conf
 share/alsa/cards/pistachio-card.conf
 share/alsa/cards/vc4-hdmi.conf
+share/alsa/ctl/default.conf
 share/alsa/pcm/center_lfe.conf
 share/alsa/pcm/default.conf
 share/alsa/pcm/dmix.conf

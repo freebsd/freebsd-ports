@@ -232,14 +232,14 @@ MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.3:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
-NAXSI_NGINX_VER=	1.5
+NAXSI_NGINX_VER=	1.6
 NAXSI_GH_TUPLE=		wargio:naxsi:${NAXSI_NGINX_VER}:naxsi \
-			libinjection:libinjection:51f3a96:libinjection
+			libinjection:libinjection:4aa3894:libinjection
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
 NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi-libinjection__sqli_c \
 			${PATCHDIR}/extra-patch-naxsi_config
 
-NJS_GH_TUPLE=		nginx:njs:0.8.1:njs
+NJS_GH_TUPLE=		nginx:njs:0.8.2:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
 
 NJS_XML_IMPLIES=	NJS

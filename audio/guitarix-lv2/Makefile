@@ -66,6 +66,8 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_USE=	GNOME=intltool
 
+BROKEN=		fails to find faust version, see https://github.com/brummer10/guitarix/issues/135
+
 post-install:
 	# strip, see https://sourceforge.net/p/guitarix/bugs/60/
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/guitarix

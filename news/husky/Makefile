@@ -1,13 +1,13 @@
 PORTNAME?=	husky
-PORTVERSION=	1.9.20191207
+PORTVERSION=	1.9.20201211
 PORTEPOCH?=	0
 CATEGORIES?=	news mail
 MASTER_SITES=	http://download.huskyproject.org/sources/
-DISTNAME=	husky-all-1.9-source-20191207
+DISTNAME=	husky-all-1.9-source-20201211
 
 MAINTAINER?=	osharoiko@gmail.com
 COMMENT?=	Husky full featured highly portable FTN Tosser
-WWW=		http://husky.sourceforge.net/
+WWW=		https://husky.sourceforge.net/
 
 .if ${PORTNAME} == "husky"
 RUN_DEPENDS=	hpt:news/husky-hpt \

@@ -12,7 +12,7 @@ WWW=		https://homepages.see.leeds.ac.uk/~earawa/FoX/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	xmlf90
+CONFLICTS_INSTALL=	xmlf90 # https://github.com/andreww/fox/issues/80
 
 GNU_CONFIGURE=	yes
 USES=		fortran gmake

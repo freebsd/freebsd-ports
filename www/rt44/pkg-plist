@@ -1197,12 +1197,14 @@ sbin/standalone_httpd
 %%DATADIR%%/html/SelfService/Create.html
 %%DATADIR%%/html/SelfService/CreateTicketInQueue.html
 %%DATADIR%%/html/SelfService/Display.html
+%%DATADIR%%/html/SelfService/Download/CustomFieldValue/dhandler
 %%DATADIR%%/html/SelfService/Elements/GotoTicket
 %%DATADIR%%/html/SelfService/Elements/Header
 %%DATADIR%%/html/SelfService/Elements/MyRequests
 %%DATADIR%%/html/SelfService/Elements/RequestUpdate
 %%DATADIR%%/html/SelfService/Elements/SearchArticle
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/CustomFieldValues
+%%DATADIR%%/html/SelfService/Helpers/Autocomplete/Principals
 %%DATADIR%%/html/SelfService/Helpers/Autocomplete/Users
 %%DATADIR%%/html/SelfService/Helpers/ShortcutHelp
 %%DATADIR%%/html/SelfService/Helpers/Upload/Add
@@ -1258,7 +1260,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/Graphs/Elements/EditGraphProperties
 %%DATADIR%%/html/Ticket/Graphs/Elements/ShowGraph
 %%DATADIR%%/html/Ticket/Graphs/Elements/ShowLegends
-%%DATADIR%%/html/Ticket/Graphs/dhandler
 %%DATADIR%%/html/Ticket/Graphs/index.html
 %%DATADIR%%/html/Ticket/History.html
 %%DATADIR%%/html/Ticket/Modify.html
@@ -1272,6 +1273,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/Ticket/autohandler
 %%DATADIR%%/html/Tools/MyDay.html
 %%DATADIR%%/html/Tools/MyReminders.html
+%%DATADIR%%/html/Tools/PreviewSearches.html
 %%DATADIR%%/html/Tools/index.html
 %%DATADIR%%/html/User/Elements/AssetList
 %%DATADIR%%/html/User/Elements/Portlets/ActiveTickets

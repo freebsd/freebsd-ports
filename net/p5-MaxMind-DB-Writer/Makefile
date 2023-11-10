@@ -1,5 +1,5 @@
 PORTNAME=	MaxMind-DB-Writer
-PORTVERSION=	0.300003
+PORTVERSION=	0.300004
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MAXMIND
@@ -11,12 +11,14 @@ WWW=		https://metacpan.org/release/MaxMind-DB-Writer
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
+
+DEPRECATED=	This is the final release. This distribution is no longer being developed
+EXPIRATION_DATE=2023-12-31
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Data-Dumper-Concise>=0:devel/p5-Data-Dumper-Concise \
 		p5-Data-IEEE754>=0:devel/p5-Data-IEEE754 \
-		p5-Digest-SHA1>=0:security/p5-Digest-SHA1 \
 		p5-Math-Int128>=0.21:math/p5-Math-Int128 \
 		p5-Math-Int64>=0.51:math/p5-Math-Int64 \
 		p5-MaxMind-DB-Common>=0:net/p5-MaxMind-DB-Common \

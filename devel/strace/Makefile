@@ -10,9 +10,12 @@ WWW=		https://sourceforge.net/projects/strace/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	BROKEN on all supported versions after EOL of 12
+EXPIRATION_DATE=	2023-12-31
+ONLY_FOR_ARCHS=	i386
+
 USES=		cpe shebangfix perl5 tar:bzip2	# perl5 for strace-graph
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386
 CPE_VENDOR=	strace_project
 
 SHEBANG_FILES=	strace-graph

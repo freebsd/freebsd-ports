@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/Tar.Gz_Bz2%20Archive/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tiny Vector and Matrix template library
-WWW=		http://tvmet.sourceforge.net/
+WWW=		https://tvmet.sourceforge.net/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

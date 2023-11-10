@@ -20,4 +20,11 @@ USE_KDE=	archive config coreaddons i18n \
 USE_QT=		core gui xml \
 		buildtools:build qmake:build
 
+OPTIONS_DEFINE=	MOBIPOCKET
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
+
+MOBIPOCKET_DESC=	Mobipocket plugin to handle metadata
+MOBIPOCKET_LIB_DEPENDS=	libqmobipocket.so:graphics/kdegraphics-mobipocket
+
 .include <bsd.port.mk>

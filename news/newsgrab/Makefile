@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
-WWW=		http://newsgrab.sourceforge.net/
+WWW=		https://newsgrab.sourceforge.net/
 
 RUN_DEPENDS=	p5-NNTPClient>=0:news/p5-NNTPClient \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \

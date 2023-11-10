@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tracks bandwidth usage by IP address
-WWW=		http://bandwidthd.sourceforge.net/
+WWW=		https://bandwidthd.sourceforge.net/
 
 LICENSE=	GPLv3+ # "any version of the GPL that is current as of your download"
 

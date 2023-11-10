@@ -102,6 +102,11 @@ CONFIGURE_ARGS+=--disable-tls
 CONFIGURE_ARGS+=--disable-precomp-headers
 .endif
 
+# wxWidgets uses the same linker version script for all its shared libraries, so
+# some symbols are expectedly undefined. Suppress errors with lld >= 17 due to
+# these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 post-build-NLS-on:
 	@${DO_MAKE_BUILD} allmo -C ${BUILD_WRKSRC}/locale
 

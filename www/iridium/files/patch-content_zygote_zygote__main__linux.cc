@@ -1,10 +1,10 @@
---- content/zygote/zygote_main_linux.cc.orig	2023-07-24 14:27:53 UTC
+--- content/zygote/zygote_main_linux.cc.orig	2023-10-21 11:51:27 UTC
 +++ content/zygote/zygote_main_linux.cc
 @@ -11,7 +11,9 @@
  #include <stddef.h>
  #include <stdint.h>
  #include <string.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/prctl.h>
 +#endif
  #include <sys/socket.h>
@@ -14,7 +14,7 @@
  #include "sandbox/linux/services/thread_helpers.h"
  #include "sandbox/linux/suid/client/setuid_sandbox_client.h"
  #include "sandbox/policy/linux/sandbox_debug_handling_linux.h"
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif
  #include "sandbox/policy/sandbox.h"
@@ -24,7 +24,7 @@
  
  namespace {
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  void CloseFds(const std::vector<int>& fds) {
    for (const auto& it : fds) {
      PCHECK(0 == IGNORE_EINTR(close(it)));
@@ -42,7 +42,7 @@
  
  bool ZygoteMain(
      std::vector<std::unique_ptr<ZygoteForkDelegate>> fork_delegates) {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    sandbox::SetAmZygoteOrRenderer(true, GetSandboxFD());
  
    auto* linux_sandbox = sandbox::policy::SandboxLinux::GetInstance();

@@ -143,3 +143,16 @@ etc/rc.d/appjail-dns
 %%DATADIR%%/makejail/write/all/GLOBAL
 %%DATADIR%%/scripts/ajdns.sh
 %%DATADIR%%/scripts/dnsmasq-hook.sh
+libexec/appjail/find-number-from-start/find-number-from-start
+libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
+%%DATADIR%%/cmd/apply
+%%DATADIR%%/cmd/checkOld
+%%DATADIR%%/cmd/deleteOld
+%%DATADIR%%/cmd/devfs
+%%DATADIR%%/cmd/etcupdate
+%%DATADIR%%/lib/devfs
+%%DATADIR%%/lib/select
+%%DATADIR%%/makejail/cmd/all/DEVICE
+%%DATADIR%%/makejail/write/all/DEVICE
+%%DATADIR%%/scripts/load-devfs-rules.sh
+%%DATADIR%%/scripts/super-mv.sh

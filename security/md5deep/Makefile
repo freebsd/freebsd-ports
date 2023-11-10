@@ -5,7 +5,7 @@ CATEGORIES=	security
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Program to compute various message digests recursively
-WWW=		http://md5deep.sourceforge.net
+WWW=		https://md5deep.sourceforge.net
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

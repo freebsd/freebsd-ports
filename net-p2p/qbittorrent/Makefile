@@ -1,11 +1,7 @@
 PORTNAME=	qbittorrent
-DISTVERSION=	4.5.5
-PORTREVISION=	3
+DISTVERSION=	4.6.0
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5b90e222a80849f346d0b12752aa1f7a9fb839fc.patch:-p1 # PR: Enable DBUS cmake option on FreeBSD
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Bittorrent client using Qt6 and libtorrent-rasterbar
@@ -16,8 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_FreeBSD_12_powerpc64=	fails to build: ./base/tristatebool.h:44:5: 'constexpr' constructor does not have empty body
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
-
 CXXFLAGS+=	-DBOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED # error: "Boost.Stacktrace requires `_Unwind_Backtrace` function. Define `_GNU_SOURCE` macro or `BOOST_STACKTRACE_GNU_SOURCE_NOT_REQUIRED` if _Unwind_Backtrace is available without `_GNU_SOURCE`."
 
 FLAVORS=	default nox
@@ -25,7 +19,7 @@ FLAVOR?=	${FLAVORS:[1]}
 nox_PKGNAMESUFFIX=	-nox
 nox_PLIST=		${MASTERDIR}/pkg-plist-nox
 
-USES=			compiler:c++14-lang cpe pkgconfig cmake qt:6 ssl tar:xz
+USES=			compiler:c++14-lang cpe pkgconfig cmake localbase qt:6 ssl tar:xz
 USE_QT=			base translations
 USE_CXXSTD=		c++17 # prevent boost-related SEGV, see bug#264278
 
@@ -73,7 +67,11 @@ LIBTORRENT2_EXTRA_PATCHES=	${FILESDIR}/extrapatch-libtorrent-rasterbar2-settings
 
 PYTHON_DESC=		Install Python to support some plugin functionality
 PYTHON_USES=		python:run
-PYTHON_BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+post-patch-PYTHON-on:
+	@${REINPLACE_CMD} \
+		-e 's|"python3"|"${PYTHON_CMD}"|' \
+		${WRKSRC}/src/base/utils/foreignapps.cpp
 
 post-install:
 .if ${FLAVOR} == nox

@@ -1,4 +1,4 @@
---- content/browser/utility_process_host_receiver_bindings.cc.orig	2023-07-24 14:27:53 UTC
+--- content/browser/utility_process_host_receiver_bindings.cc.orig	2023-10-21 11:51:27 UTC
 +++ content/browser/utility_process_host_receiver_bindings.cc
 @@ -10,12 +10,12 @@
  #include "content/public/browser/content_browser_client.h"
@@ -10,8 +10,8 @@
  #include "content/browser/font_service.h"  // nogncheck
  #endif
  
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "components/viz/host/gpu_client.h"
  #include "content/public/browser/gpu_client.h"
  #endif
@@ -26,8 +26,8 @@
      return;
    }
  #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    if (auto gpu_receiver = receiver.As<viz::mojom::Gpu>()) {
      gpu_client_ =
          content::CreateGpuClient(std::move(gpu_receiver), base::DoNothing());

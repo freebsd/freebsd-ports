@@ -1,7 +1,7 @@
 PORTNAME=	treefmt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	7
+DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,121 +9,161 @@ COMMENT=	One CLI to format the code tree
 WWW=		https://numtide.github.io/treefmt/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	numtide
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
-		anyhow-1.0.57 \
+CARGO_CRATES=	aho-corasick-0.7.20 \
+		aho-corasick-1.0.2 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		anyhow-1.0.71 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		bitflags-2.3.3 \
 		block-buffer-0.9.0 \
-		bstr-0.2.17 \
-		bumpalo-3.9.1 \
-		cast-0.2.7 \
+		bstr-1.6.0 \
+		bumpalo-3.13.0 \
+		cast-0.3.0 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
+		clap-4.3.11 \
+		clap-verbosity-flag-2.0.1 \
+		clap_builder-4.3.11 \
+		clap_derive-4.3.2 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
 		console-0.13.0 \
-		cpufeatures-0.2.2 \
-		criterion-0.3.5 \
-		criterion-plot-0.4.4 \
-		crossbeam-channel-0.5.4 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.8 \
-		crossbeam-utils-0.8.8 \
-		csv-1.1.6 \
+		cpufeatures-0.2.9 \
+		criterion-0.3.6 \
+		criterion-plot-0.4.5 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
+		csv-1.2.2 \
 		csv-core-0.1.10 \
+		difflib-0.4.0 \
 		digest-0.9.0 \
 		directories-3.0.2 \
 		dirs-sys-0.3.7 \
-		either-1.6.1 \
+		downcast-0.11.0 \
+		either-1.8.1 \
 		encode_unicode-0.3.6 \
-		fastrand-1.7.0 \
-		filetime-0.2.16 \
+		env_logger-0.10.0 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
+		filetime-0.2.21 \
+		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		generic-array-0.14.5 \
-		getrandom-0.2.6 \
-		globset-0.4.8 \
+		fragile-2.0.0 \
+		generic-array-0.14.7 \
+		getrandom-0.2.10 \
+		globset-0.4.10 \
 		half-1.8.2 \
-		heck-0.3.3 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		ignore-0.4.18 \
+		hermit-abi-0.3.2 \
+		humantime-2.1.0 \
+		ignore-0.4.20 \
 		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-0.4.8 \
-		itoa-1.0.1 \
-		js-sys-0.3.57 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.9 \
+		itertools-0.10.5 \
+		itoa-1.0.8 \
+		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.125 \
-		log-0.4.16 \
+		libc-0.2.147 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
+		log-0.4.19 \
 		memchr-2.5.0 \
-		memoffset-0.6.5 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.1 \
-		once_cell-1.10.0 \
+		memoffset-0.9.0 \
+		mockall-0.11.4 \
+		mockall_derive-0.11.4 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.15 \
+		num_cpus-1.16.0 \
+		once_cell-1.18.0 \
 		oorandom-11.1.3 \
 		opaque-debug-0.3.0 \
 		path-clean-0.1.0 \
-		plotters-0.3.1 \
-		plotters-backend-0.3.2 \
-		plotters-svg-0.3.1 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.37 \
-		quote-1.0.18 \
-		rayon-1.5.2 \
-		rayon-core-1.9.2 \
-		redox_syscall-0.2.13 \
+		plotters-0.3.5 \
+		plotters-backend-0.3.5 \
+		plotters-svg-0.3.5 \
+		predicates-2.1.5 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-1.0.64 \
+		quote-1.0.29 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.5.5 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.6.25 \
-		remove_dir_all-0.5.3 \
-		rustc_version-0.4.0 \
-		ryu-1.0.9 \
+		regex-1.9.1 \
+		regex-automata-0.3.2 \
+		regex-syntax-0.7.4 \
+		rustix-0.37.23 \
+		rustix-0.38.4 \
+		ryu-1.0.14 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-1.0.9 \
-		serde-1.0.137 \
+		serde-1.0.171 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.137 \
-		serde_json-1.0.80 \
+		serde_derive-1.0.171 \
+		serde_json-1.0.102 \
 		sha-1-0.9.8 \
-		strsim-0.8.0 \
-		structopt-0.3.26 \
-		structopt-derive-0.4.18 \
-		syn-1.0.92 \
-		tempfile-3.3.0 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.25 \
+		tempfile-3.6.0 \
+		termcolor-1.2.0 \
 		terminal_size-0.1.17 \
+		terminal_size-0.2.6 \
+		termtree-0.4.1 \
 		textwrap-0.11.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		thread_local-1.1.4 \
+		thiserror-1.0.43 \
+		thiserror-impl-1.0.43 \
+		thread_local-1.1.7 \
 		tinytemplate-1.2.1 \
-		toml-0.5.9 \
-		typenum-1.15.0 \
-		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.3 \
-		vec_map-0.8.2 \
+		toml-0.5.11 \
+		typenum-1.16.0 \
+		unicase-2.6.0 \
+		unicode-ident-1.0.10 \
+		unicode-width-0.1.10 \
+		utf8parse-0.2.1 \
 		version_check-0.9.4 \
-		walkdir-2.3.2 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.80 \
-		wasm-bindgen-backend-0.2.80 \
-		wasm-bindgen-macro-0.2.80 \
-		wasm-bindgen-macro-support-0.2.80 \
-		wasm-bindgen-shared-0.2.80 \
-		web-sys-0.3.57 \
-		which-4.2.5 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		web-sys-0.3.64 \
+		which-4.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0
 
 PLIST_FILES=	bin/${PORTNAME}
 

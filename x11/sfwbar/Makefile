@@ -1,6 +1,6 @@
 PORTNAME=	sfwbar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0_beta12
+DISTVERSION=	1.0_beta13
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tino.engel@mail.de
@@ -22,15 +22,16 @@ GH_ACCOUNT=	LBCrion
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
+MESON_ARGS=		-Dbsdctl=enabled -Dnetwork=enabled -Dbluez=enabled -Didleinhibit=enabled
+
 SUB_FILES=		pkg-message
 
-OPTIONS_DEFINE=		MPD NETWORK PULSEAUDIO XKB ALSA
-OPTIONS_DEFAULT=	MPD NETWORK PULSEAUDIO XKB ALSA
+OPTIONS_DEFINE=		MPD PULSEAUDIO XKB ALSA
+OPTIONS_DEFAULT=	MPD PULSEAUDIO XKB ALSA
 OPTIONS_SUB=		yes
 
 ALSA_DESC=		ALSA audio volume control
 MPD_DESC=		Music player daemon control
-NETWORK_DESC=		Network interface monitor support
 PULSEAUDIO_DESC=	Pulse audio volume control
 XKB_DESC=		XkbCommon keyboard layout conversion support
 
@@ -40,13 +41,10 @@ ALSA_MESON_ENABLED=	alsa
 MPD_LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient
 MPD_MESON_ENABLED=	mpd
 
-NETWORK_MESON_ENABLED=	network
-
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_MESON_ENABLED=	pulse
 
 XKB_LIB_DEPENDS=	libxkbregistry.so:x11/libxkbcommon
 XKB_MESON_ENABLED=	xkb
-
 
 .include <bsd.port.mk>

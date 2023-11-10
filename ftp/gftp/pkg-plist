@@ -3,7 +3,6 @@ bin/gftp-gtk
 bin/gftp-text
 man/man1/gftp.1.gz
 share/applications/gftp.desktop
-share/pixmaps/gftp.png
 share/icons/hicolor/16x16/apps/gftp.png
 share/icons/hicolor/22x22/apps/gftp.png
 share/icons/hicolor/32x32/apps/gftp.png
@@ -38,15 +37,13 @@ share/icons/hicolor/scalable/apps/gftp.svg
 %%NLS%%share/locale/bn/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/gftp.mo
-%%NLS%%share/locale/ca@valencia/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gftp.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/dz/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gftp.mo
-%%NLS%%share/locale/en_CA/LC_MESSAGES/gftp.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gftp.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gftp.mo

@@ -1,12 +1,13 @@
 PORTNAME=	esda
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Exploratory Spatial Data Analysis
-WWW=		https://pysal.org/esda/
+WWW=		https://pysal.org/esda/ \
+		https://github.com/pysal/esda
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

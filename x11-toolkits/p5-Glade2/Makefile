@@ -10,7 +10,7 @@ DISTNAME=	Gtk2-GladeXML-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Gtk2-Perl bindings to libglade2
-WWW=		http://gtk2-perl.sourceforge.net/
+WWW=		https://gtk2-perl.sourceforge.net/
 
 LICENSE=	GPLv2
 

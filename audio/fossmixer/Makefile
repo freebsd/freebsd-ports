@@ -7,7 +7,7 @@ DISTNAME=	detroit-0.2.3
 
 MAINTAINER=	salojan@goto10.co
 COMMENT=	Graphical mixer application for OSS
-WWW=		http://detroit.sourceforge.net/app_fossmixer.html
+WWW=		https://detroit.sourceforge.net/app_fossmixer.html
 
 LICENSE=	BSD3CLAUSE
 

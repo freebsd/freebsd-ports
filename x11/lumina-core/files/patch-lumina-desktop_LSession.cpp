@@ -112,3 +112,19 @@
          if(charge==100){ iconList << "battery-full-charged"; }
          iconList << "battery-100-charging" << "battery-full-charging"
  		<< "battery-charging-100" << "battery-charging-full";
+@@ -644,9 +694,12 @@ void LSession::adjustWindowGeom(WId win, bool maximize
+       if(DEBUG){ qDebug() << "Y-Diff:" << diff; }
+       if(diff < 0){ diff = -diff; } //need a positive value
+       if( (fgeom.height()+ diff)< desk.height()){
+-        //just move the window - there is room for it above
+-	geom.setBottom(desk.bottom()-frame[1]);
+-	fgeom.setBottom(desk.bottom());
++        // Just move the window - there is room for it above
++        // FIXME: geom calculations appear to be off
++        // This creates a large gap between the bottom of the new window
++        // and the lower panel
++	geom.moveBottom(desk.bottom()-frame[1]);
++	fgeom.moveBottom(desk.bottom());
+       }else if(geom.height() > diff){ //window bigger than the difference
+ 	//Need to resize the window - keeping the origin point the same
+ 	geom.setHeight( geom.height()-diff-1 ); //shrink it by the difference (need an extra pixel somewhere)

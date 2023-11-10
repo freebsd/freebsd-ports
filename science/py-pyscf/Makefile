@@ -1,6 +1,6 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
+DISTVERSION=	2.4.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,6 +15,7 @@ PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5py>=2.7:science/py-h5py@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		cmake:devel/cmake-core \
 		gmake:devel/gmake
 LIB_DEPENDS=	libcint.so:science/libcint \

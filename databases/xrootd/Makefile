@@ -40,7 +40,7 @@ KERBEROS5_LIB_DEPENDS=	libkrb5.so:security/krb5
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
 BROKEN=	fails to build with openssl 3 and later
 .endif
 

@@ -8,7 +8,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Romanian hunspell dictionaries
-WWW=		http://rospell.sourceforge.net/
+WWW=		https://rospell.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

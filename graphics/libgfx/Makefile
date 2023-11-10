@@ -1,6 +1,6 @@
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/
 
@@ -9,6 +9,9 @@ COMMENT=	OpenGL/FLTK development
 WWW=		https://mgarland.org/software/libgfx.html
 
 LICENSE=	MIT
+
+DEPRECATED=		unmaintained upstream since sep 2005
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libtiff.so:graphics/tiff \

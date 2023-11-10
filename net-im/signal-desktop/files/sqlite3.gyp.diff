@@ -1,5 +1,5 @@
---- npm-@signalapp-better-sqlite3-8.4.3-7ffa8d03d2a12543247936bfb7b9f74cdbc6fe9b-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
-+++ npm-@signalapp-better-sqlite3-8.4.3-7ffa8d03d2a12543247936bfb7b9f74cdbc6fe9b-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
+--- npm-@signalapp-better-sqlite3-8.5.2-910669f44e76a46d06df45fabefcd3ac2e7c4cce-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
++++ npm-@signalapp-better-sqlite3-8.5.2-910669f44e76a46d06df45fabefcd3ac2e7c4cce-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
 @@ -100,6 +100,15 @@
              ]
            }

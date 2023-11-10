@@ -9,7 +9,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
-WWW=		http://galaxyhack.sourceforge.net/
+WWW=		https://galaxyhack.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

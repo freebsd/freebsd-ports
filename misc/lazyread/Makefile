@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lazyread can auto-scroll files on your screen in movie credit fashion
-WWW=		http://lazyread.sourceforge.net/
+WWW=		https://lazyread.sourceforge.net/
 
 USES=		ncurses
 

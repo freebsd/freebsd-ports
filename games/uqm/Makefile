@@ -7,7 +7,7 @@ EXTRACT_ONLY=	${DISTNAME}-src.tgz
 
 MAINTAINER=	mail@maxlor.com
 COMMENT=	Space exploration game The Ur-Quan Masters
-WWW=		http://sc2.sourceforge.net
+WWW=		https://sc2.sourceforge.net
 
 LICENSE=	GPLv2+ CC-BY-NC-SA-2.5
 LICENSE_COMB=	multi

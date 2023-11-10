@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Free implementation of the OpenGL Character Renderer
-WWW=		http://quesoglc.sourceforge.net/
+WWW=		https://quesoglc.sourceforge.io/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -1,7 +1,6 @@
 PORTNAME=	novelwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.7
-PORTREVISION=	1
+DISTVERSION=	2.1.1
 CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 
@@ -13,12 +12,14 @@ LICENSE=	GPLv3
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enchant>=3.0.0:textproc/py-enchant@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python pyqt:5
 USE_PYQT=	pyqt5
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	pep517 concurrent autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	vkbo

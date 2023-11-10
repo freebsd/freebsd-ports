@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System tray dockapp similar to the GNOME notification area applet
-WWW=		http://peksystray.sourceforge.net/
+WWW=		https://peksystray.sourceforge.net/
 
 LICENSE=	GPLv2
 

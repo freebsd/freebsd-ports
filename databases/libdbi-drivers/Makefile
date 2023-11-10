@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drivers for libdbi
-WWW=		http://libdbi-drivers.sourceforge.net/
+WWW=		https://libdbi-drivers.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

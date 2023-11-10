@@ -1,11 +1,11 @@
 --- Gemfile.orig
 +++ Gemfile
-@@ -79,7 +79,7 @@
+@@ -96,7 +96,7 @@
  
  # Kerberos authentication. EE-only
- gem 'gssapi', '~> 1.3.1', group: :kerberos
--gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos
-+#gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos
+ gem 'gssapi', '~> 1.3.1', group: :kerberos # rubocop:todo Gemfile/MissingFeatureCategory
+-gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos # rubocop:todo Gemfile/MissingFeatureCategory
++#gem 'timfel-krb5-auth', '~> 0.8', group: :kerberos # rubocop:todo Gemfile/MissingFeatureCategory
  
  # Spam and anti-bot protection
- gem 'recaptcha', '~> 4.11', require: 'recaptcha/rails'
+ gem 'recaptcha', '~> 5.12', require: 'recaptcha/rails' # rubocop:todo Gemfile/MissingFeatureCategory

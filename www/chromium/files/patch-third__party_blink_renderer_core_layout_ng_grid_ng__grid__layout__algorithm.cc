@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/layout/ng/grid/ng_grid_layout_algorithm.cc.orig	2023-09-13 12:11:42 UTC
+--- third_party/blink/renderer/core/layout/ng/grid/ng_grid_layout_algorithm.cc.orig	2023-10-11 18:22:24 UTC
 +++ third_party/blink/renderer/core/layout/ng/grid/ng_grid_layout_algorithm.cc
-@@ -3431,7 +3431,13 @@ void NGGridLayoutAlgorithm::PlaceGridItems(
+@@ -3452,7 +3452,13 @@ void NGGridLayoutAlgorithm::PlaceGridItems(
    DCHECK(out_row_break_between);
  
    const auto& container_space = ConstraintSpace();
@@ -14,7 +14,7 @@
  
    const auto* cached_layout_subtree = container_space.GridLayoutSubtree();
    const auto container_writing_direction =
-@@ -3595,7 +3601,13 @@ void NGGridLayoutAlgorithm::PlaceGridItemsForFragmenta
+@@ -3616,7 +3622,13 @@ void NGGridLayoutAlgorithm::PlaceGridItemsForFragmenta
  
    // TODO(ikilpatrick): Update |SetHasSeenAllChildren| and early exit if true.
    const auto& constraint_space = ConstraintSpace();

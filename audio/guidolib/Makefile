@@ -1,5 +1,5 @@
 PORTNAME=	guidolib
-PORTVERSION=	1.7.1 # https://guido.grame.fr/dox/api/ has version in the format N.N.N
+DISTVERSION=	1.7.7
 PORTEPOCH=	1
 CATEGORIES=	audio graphics print
 
@@ -12,15 +12,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmidisharelight.so:audio/midisharelight
 
-USES=		compiler:c++11-lang gl cmake gnome localbase:ldflags pkgconfig qt:5 xorg
-USE_QT=		core gui widgets printsupport xml buildtools:build qmake:build
-USE_GL=		gl
+USES=		compiler:c++17-lang cmake gnome localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TAGNAME=	v${PORTVERSION:S/.//g}
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/build
 
@@ -31,7 +28,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-BINARY_ALIAS=	qmake=${QMAKE}
+PORTSCOUT=	limit:^.*\..* # prevent tags like v171
 
 post-extract:
 	@${RM} -r ${WRKSRC}/src/midisharelight

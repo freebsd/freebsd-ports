@@ -8,7 +8,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM plugin that display thumbnails of periodically updated images
-WWW=		http://gkrellkam.sourceforge.net/
+WWW=		https://gkrellkam.sourceforge.net/
 
 LICENSE=	GPLv2+
 

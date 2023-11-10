@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	Lightweight GTK clipboard manager
-WWW=		http://parcellite.sourceforge.net
+WWW=		https://parcellite.sourceforge.net
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

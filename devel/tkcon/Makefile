@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tk console for Tcl
-WWW=		http://tkcon.sourceforge.net/
+WWW=		https://tkcon.sourceforge.net/
 
 OPTIONS_DEFINE=	DOCS
 

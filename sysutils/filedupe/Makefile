@@ -6,7 +6,7 @@ MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for quickly finding duplicate files
-WWW=		http://sammy.net/~sammy/hacks/
+WWW=		https://sammy.net/~sammy/hacks/
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 

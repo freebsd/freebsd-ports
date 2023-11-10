@@ -4,6 +4,10 @@ PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	SF
 
+PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/games-board/pokerth/files/ \
+		https://raw.githubusercontent.com/gentoo/gentoo/master/games-board/pokerth/files/
+PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1
+
 MAINTAINER=	tobias.rehbein@web.de
 COMMENT=	Poker game written in C++/Qt
 WWW=		https://www.pokerth.net/
@@ -21,8 +25,6 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libircclient.so:irc/libircclient
 BUILD_DEPENDS=	${LOCALBASE}/include/websocketpp/client.hpp:devel/websocketpp \
 		protoc:devel/protobuf
-
-BROKEN=		error: use of undeclared identifier '_1'
 
 USES=		compiler:c++11-lang gl gmake iconv qmake qt:5 sdl sqlite ssl
 USE_GL=		gl

@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.stellingwerff.com/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clearlooks Metacity theme
-WWW=		http://clearlooks.sourceforge.net/
+WWW=		https://clearlooks.sourceforge.net/
 
 USES=		gnome
 

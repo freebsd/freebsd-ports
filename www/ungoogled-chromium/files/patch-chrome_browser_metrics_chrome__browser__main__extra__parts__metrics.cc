@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2023-11-04 07:08:51 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -79,8 +79,10 @@
+@@ -78,8 +78,10 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +12,7 @@
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -109,7 +111,7 @@
+@@ -108,7 +110,7 @@
  #include "chromeos/crosapi/cpp/crosapi_constants.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -21,7 +21,7 @@
  #include "chrome/browser/metrics/pressure/pressure_metrics_reporter.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -118,7 +120,7 @@
+@@ -117,7 +119,7 @@
  #include "components/user_manager/user_manager.h"
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -30,7 +30,7 @@
  #include "components/power_metrics/system_power_monitor.h"
  #endif
  
-@@ -931,7 +933,7 @@ void RecordStartupMetrics() {
+@@ -917,7 +919,7 @@ void RecordStartupMetrics() {
  
    // Record whether Chrome is the default browser or not.
    // Disabled on Linux due to hanging browser tests, see crbug.com/1216328.
@@ -39,7 +39,7 @@
    shell_integration::DefaultWebClientState default_state =
        shell_integration::GetDefaultBrowser();
    base::UmaHistogramEnumeration("DefaultBrowser.State", default_state,
-@@ -1260,11 +1262,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
+@@ -1239,11 +1241,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  

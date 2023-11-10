@@ -1,7 +1,10 @@
 PORTNAME=	rar
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers pear
+
+PATCH_SITES=	https://github.com/cataphract/php-rar/commit/
+PATCHFILES=	ab26d285759e4c917879967b09976a44829ed570.diff:-p1
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	PECL extension to create and read RAR files
@@ -9,11 +12,7 @@ WWW=		https://pecl.php.net/package/rar
 
 LICENSE=	PHP301
 
-DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
-EXPIRATION_DATE=	2023-12-31
-
 USES=		compiler:c11 php:build,pecl
-IGNORE_WITH_PHP=	81 82 83
 
 CONFIGURE_ARGS=	--enable-rar
 

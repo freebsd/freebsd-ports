@@ -1,179 +1,19 @@
-https://gitlab.com/veloren/veloren/-/issues/1875
+Drop after lang/rust >= 1.74 update
 
---- common/src/lib.rs.orig	2023-09-13 10:25:00 UTC
-+++ common/src/lib.rs
-@@ -14,7 +14,7 @@
-     arbitrary_self_types,
-     int_roundings
- )]
--#![feature(hash_drain_filter)]
-+#![feature(hash_extract_if)]
+error[E0658]: use of unstable library feature 'io_error_other'
+   --> common/assets/src/tar_source.rs:147:42
+    |
+147 |                     entry.path().map_err(io::Error::other)?.as_ref(),
+    |                                          ^^^^^^^^^^^^^^^^
+    |
+    = note: see issue #91946 <https://github.com/rust-lang/rust/issues/91946> for more information
+    = help: add `#![feature(io_error_other)]` to the crate attributes to enable
+
+--- common/assets/src/lib.rs.orig	2023-10-18 12:03:13 UTC
++++ common/assets/src/lib.rs
+@@ -1,4 +1,5 @@
+ //#![warn(clippy::pedantic)]
++#![feature(io_error_other)]
+ //! Load assets (images or voxel data) from files
  
- pub use common_assets as assets;
- pub use uuid;
---- common/systems/src/lib.rs.orig	2023-09-13 10:25:00 UTC
-+++ common/systems/src/lib.rs
-@@ -1,4 +1,4 @@
--#![feature(drain_filter, let_chains)]
-+#![feature(extract_if, let_chains)]
- #![allow(clippy::option_map_unit_fn)]
- 
- mod aura;
---- common/systems/src/mount.rs.orig	2023-09-13 10:25:00 UTC
-+++ common/systems/src/mount.rs
-@@ -61,7 +61,7 @@ impl<'a> System<'a> for Sys {
-                         .map(|c| (
-                             // Only take inputs and actions from the rider if the mount is not intelligent (TODO: expand the definition of 'intelligent').
-                             if !matches!(body, Some(Body::Humanoid(_))) {
--                                let actions = c.actions.drain_filter(|action| match action {
-+                                let actions = c.actions.extract_if(|action| match action {
-                                     ControlAction::StartInput { input: i, .. }
-                                     | ControlAction::CancelInput(i) => matches!(i, InputKind::Jump | InputKind::Fly | InputKind::Roll),
-                                     _ => false
-@@ -151,7 +151,7 @@ impl<'a> System<'a> for Sys {
-             let inputs = controllers.get_mut(entity).map(|c| {
-                 let actions: Vec<_> = c
-                     .actions
--                    .drain_filter(|action| match action {
-+                    .extract_if(|action| match action {
-                         ControlAction::StartInput { input: i, .. }
-                         | ControlAction::CancelInput(i) => {
-                             matches!(i, InputKind::Jump | InputKind::Fly | InputKind::Roll)
---- network/protocol/src/lib.rs.orig	2023-09-13 10:25:00 UTC
-+++ network/protocol/src/lib.rs
-@@ -1,4 +1,4 @@
--#![feature(drain_filter)]
-+#![feature(extract_if)]
- //! Network Protocol
- //!
- //! a I/O-Free protocol for the veloren network crate.
---- network/protocol/src/quic.rs.orig	2023-09-13 10:25:00 UTC
-+++ network/protocol/src/quic.rs
-@@ -388,7 +388,7 @@ where
-             // try to order pending
-             let mut pending_violated = false;
-             let mut reliable = vec![];
--            self.pending_reliable_buffers.drain_filter(|(_, buffer)| {
-+            self.pending_reliable_buffers.extract_if(|(_, buffer)| {
-                 // try to get Sid without touching buffer
-                 let mut testbuffer = buffer.clone();
-                 match ITFrame::read_frame(&mut testbuffer) {
---- server/src/lib.rs.orig	2023-09-13 10:25:00 UTC
-+++ server/src/lib.rs
-@@ -3,13 +3,13 @@
- #![deny(clippy::clone_on_ref_ptr)]
- #![feature(
-     box_patterns,
--    drain_filter,
-+    extract_if,
-     let_chains,
-     never_type,
-     option_zip,
-     unwrap_infallible
- )]
--#![feature(hash_drain_filter)]
-+#![feature(hash_extract_if)]
- 
- pub mod automod;
- mod character_creator;
---- server/src/persistence/character_updater.rs.orig	2023-09-13 10:25:00 UTC
-+++ server/src/persistence/character_updater.rs
-@@ -267,7 +267,7 @@ impl CharacterUpdater {
-     }
- 
-     pub fn process_batch_completion(&mut self, completed_batch_id: u64) {
--        self.pending_database_actions.drain_filter(|_, event| {
-+        self.pending_database_actions.extract_if(|_, event| {
-             matches!(event, DatabaseAction::Submitted {
-                     batch_id,
-             } if completed_batch_id == *batch_id)
---- voxygen/src/lib.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/lib.rs
-@@ -4,8 +4,7 @@
- #![deny(clippy::clone_on_ref_ptr)]
- #![feature(
-     array_methods,
--    array_zip,
--    drain_filter,
-+    extract_if,
-     trait_alias,
-     option_get_or_insert_default,
-     map_try_insert,
---- voxygen/src/render/pipelines/bloom.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/render/pipelines/bloom.rs
-@@ -112,7 +112,7 @@ impl BloomLayout {
-         device: &wgpu::Device,
-         src_color: &wgpu::TextureView,
-         sampler: &wgpu::Sampler,
--        half_pixel: Consts<Locals>,
-+        half_pixel: &Consts<Locals>,
-     ) -> BindGroup {
-         let bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-             label: None,
---- voxygen/src/render/pipelines/trail.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/render/pipelines/trail.rs
-@@ -39,7 +39,7 @@ impl Add<Vertex> for Vertex {
- 
-     fn add(self, other: Self) -> Self::Output {
-         Self {
--            pos: self.pos.zip(other.pos).map(|(a, b)| a + b),
-+            pos: core::array::from_fn(|i| self.pos[i] + other.pos[i]),
-         }
-     }
- }
---- voxygen/src/render/renderer/locals.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/render/renderer/locals.rs
-@@ -58,10 +58,11 @@ impl Locals {
-         );
- 
-         let bloom_binds = bloom.map(|bloom| {
--            bloom
--                .src_views
--                .zip(bloom.locals) // zip arrays
--                .map(|(view, locals)| layouts.bloom.bind(device, view, sampler, locals))
-+            core::array::from_fn(|i| {
-+                layouts
-+                    .bloom
-+                    .bind(device, bloom.src_views[i], sampler, &bloom.locals[i])
-+            })
-         });
- 
-         Self {
-@@ -107,10 +108,11 @@ impl Locals {
-             &self.postprocess,
-         );
-         self.bloom_binds = bloom.map(|bloom| {
--            bloom
--                .src_views
--                .zip(bloom.locals) // zip arrays
--                .map(|(view, locals)| layouts.bloom.bind(device, view, sampler, locals))
-+            core::array::from_fn(|i| {
-+                layouts
-+                    .bloom
-+                    .bind(device, bloom.src_views[i], sampler, &bloom.locals[i])
-+            })
-         });
-     }
- }
---- voxygen/src/scene/math.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/scene/math.rs
-@@ -250,7 +250,7 @@ pub fn clip_object_by_plane<T: Float + MulAdd<T, T, Ou
-     tolerance: T,
- ) {
-     let mut intersection_points = Vec::new();
--    polys.drain_filter(|points| {
-+    polys.extract_if(|points| {
-         let len = intersection_points.len();
-         let outside_first = clip_points_by_plane(points, plane, &mut intersection_points);
-         // Only remember intersections that are not coplanar with this side; i.e. those
---- voxygen/src/scene/mod.rs.orig	2023-09-13 10:25:00 UTC
-+++ voxygen/src/scene/mod.rs
-@@ -763,7 +763,7 @@ impl Scene {
-         renderer.update_consts(&mut self.data.lights, lights);
- 
-         // Update event lights
--        self.event_lights.drain_filter(|el| {
-+        self.event_lights.extract_if(|el| {
-             el.timeout -= dt;
-             el.timeout <= 0.0
-         });
+ use dot_vox::DotVoxData;

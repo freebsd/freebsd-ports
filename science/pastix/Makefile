@@ -31,6 +31,7 @@ USES=		cmake blaslapack:openblas fortran pkgconfig python
 #GL_SUBDIR=	spm:s cmake_modules/morse_cmake:m
 GL_TAG=		87c0b910dce3d81667e760c720e706d1	# tarball with submodules
 
+LDFLAGS+=	-lm
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON	\
 		-DPASTIX_ORDERING_METIS:BOOL=ON
 USE_LDCONFIG=	yes

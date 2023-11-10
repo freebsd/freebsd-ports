@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- net/BUILD.gn.orig	2023-11-03 10:09:45 UTC
 +++ net/BUILD.gn
 @@ -122,7 +122,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1397,7 +1410,7 @@ component("net") {
+@@ -1398,7 +1411,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -47,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2959,6 +2972,10 @@ test("net_unittests") {
+@@ -2963,6 +2976,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -58,7 +58,7 @@
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -3041,7 +3058,7 @@ test("net_unittests") {
+@@ -3044,7 +3061,7 @@ test("net_unittests") {
      ]
    }
  
@@ -67,7 +67,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3176,7 +3193,7 @@ test("net_unittests") {
+@@ -3179,7 +3196,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

@@ -6,47 +6,46 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical multi-player strategy game and game design system
-WWW=		http://xconq.sourceforge.net/
+WWW=		https://xconq.sourceforge.net/
 
 LICENSE=	GPLv2+
 
-OPTIONS_DEFINE=	SDL
-
-USES=		compiler gmake makeinfo tar:bzip2 xorg
+USES=		compiler gmake tar:bzip2 xorg
 USE_CXXSTD=	c++14
 USE_XORG=	x11
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-alternate-scoresdir=${SCOREDIR} \
 		--enable-alternate-gameuser=root \
 		--enable-alternate-gamegroup=games
-CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
-CXXFLAGS_clang=	-Wno-c++11-narrowing
+
 MAKE_ARGS=	GAMEPERM=755 DIRPERM=775 FILEPERM=664
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_SUB=	SCOREDIR="${SCOREDIR}"
-
-INFO=		xconq
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
+CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" \
 		"Game;StrategyGame;" false
 
-SCOREDIR?=	/var/games/xconq
+INFO=		xconq
+PLIST_SUB=	SCOREDIR="${SCOREDIR}"
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	SDL INFO
+OPTIONS_DEFAULT=	INFO
 
-.if ${PORT_OPTIONS:MSDL}
-USES+=		sdl
-USE_SDL=	sdl
-CONFIGURE_ARGS+=--enable-default-ui=sdl
-PLIST_SUB+=	NOSDL="@comment "
-.else
-USES+=		tk
-USE_XORG+=	xext xmu xt xaw
-CONFIGURE_ARGS+=--with-tclconfig=${TCL_LIBDIR} \
+INFO_USES=		makeinfo
+SDL_USES=		sdl
+SDL_USES_OFF=	tk xorg
+SDL_USE=	SDL=sdl
+SDL_USE_OFF=	XORG=xext,xmu,xt,xaw
+SDL_CONFIGURE_ON=--enable-default-ui=sdl
+SDL_CONFIGURE_OFF=--with-tclconfig=${TCL_LIBDIR} \
 		--with-tkconfig=${TK_LIBDIR}
-PLIST_SUB+=	NOSDL=""
-.endif
+SDL_PLIST_SUB=	NOSDL="@comment "
+SDL_PLIST_SUB_OFF=	NOSDL=""
+
+SCOREDIR?=	/var/games/xconq
 
 .include <bsd.port.pre.mk>
 
@@ -59,23 +58,22 @@ CFLAGS+=	-Wno-write-strings
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^HFLAGS/s| $${debugging}||' ${WRKSRC}/configure
-# Fix for gmake >= 3.82
 	@${FIND} ${WRKSRC} -name Makefile.in -print | ${XARGS} \
 		${REINPLACE_CMD} -e 's/^   */	/'
 
-post-build:
+post-build-INFO-on:
 	(cd ${WRKSRC}/doc && makeinfo xconq.texi)
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xconq.info \
 		${STAGEDIR}${PREFIX}/${INFO_PATH}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xconq
-.if empty(PORT_OPTIONS:MSDL)
+	@${FIND} ${STAGEDIR}${DATADIR} -empty -delete
+	@${MKDIR} ${STAGEDIR}${SCOREDIR}
+
+post-install-SDL-off:
 .for i in imf2x imfapp x2imf
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.endif
-	@${FIND} ${STAGEDIR}${DATADIR} -empty -delete
-	@${MKDIR} ${STAGEDIR}${SCOREDIR}
 
 .include <bsd.port.post.mk>

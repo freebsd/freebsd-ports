@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.cc.orig	2023-09-17 07:59:53 UTC
+--- content/renderer/renderer_blink_platform_impl.cc.orig	2023-11-04 07:08:51 UTC
 +++ content/renderer/renderer_blink_platform_impl.cc
 @@ -113,7 +113,7 @@
  

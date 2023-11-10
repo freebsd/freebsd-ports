@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.5.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +10,7 @@ WWW=		https://shiny.rstudio.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CRAN_DEPENDS=	R-cran-bslib>=0.3.0:www/R-cran-bslib \
+RUN_DEPENDS=	R-cran-bslib>=0.3.0:www/R-cran-bslib \
 		R-cran-cachem>0:databases/R-cran-cachem \
 		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
 		R-cran-crayon>0:devel/R-cran-crayon \
@@ -30,8 +30,6 @@ CRAN_DEPENDS=	R-cran-bslib>=0.3.0:www/R-cran-bslib \
 		R-cran-sourcetools>0:devel/R-cran-sourcetools \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-xtable>0:textproc/R-cran-xtable
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist
 

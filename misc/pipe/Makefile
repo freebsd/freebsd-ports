@@ -7,7 +7,7 @@ DISTNAME=	pipe25_rc5
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating and analysing Petri nets
-WWW=		http://pipe2.sourceforge.net/
+WWW=		https://pipe2.sourceforge.net/
 
 USES=		zip
 NO_BUILD=	yes

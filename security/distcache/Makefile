@@ -5,7 +5,7 @@ MASTER_SITES=	SF/distcache/1.%20distcache-devel/1.5.1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Distributed OpenSSL session caching tools
-WWW=		http://distcache.sourceforge.net/
+WWW=		https://distcache.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

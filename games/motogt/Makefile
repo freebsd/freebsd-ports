@@ -7,7 +7,7 @@ DISTNAME=	MotoGT-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
-WWW=		http://motogt.sourceforge.net/
+WWW=		https://motogt.sourceforge.net/
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi

@@ -17,6 +17,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 .include <bsd.port.mk>

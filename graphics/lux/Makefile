@@ -13,7 +13,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv6=	address space exhaustion in compiler
-BROKEN_armv7=	address space exhaustion in compiler
 
 LIB_DEPENDS=	libhwy.so:devel/highway \
 		libsfml-window.so:devel/sfml \

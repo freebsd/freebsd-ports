@@ -10,8 +10,8 @@ if [ -z "${DIALOG4PORTS}" -o -z "${PORTSDIR}" -o -z "${MAKE}" ]; then
 	exit 1
 fi
 
-: ${DIALOGPORT:=ports-mgmt/dialog4ports}
-: ${DIALOGNAME:=dialog4ports}
+: ${DIALOGPORT:=ports-mgmt/portconfig}
+: ${DIALOGNAME:=portconfig}
 
 OPTIONSFILE="$1"
 
@@ -42,9 +42,9 @@ fi
 # Clear environment of PKGNAME or the dialog will show on older versions
 # that do not understand -v.
 if ! env -u PKGNAME ${DIALOG4PORTS} -v > /dev/null 2>&1; then
-	exec $DIALOG4PORTS > $OPTIONSFILE 2>&1
+	exec env LC_ALL=C.UTF-8 $DIALOG4PORTS > $OPTIONSFILE 2>&1
 fi
 
 # Newer versions use stderr to work around a jail issue
 # http://lists.freebsd.org/pipermail/freebsd-ports/2013-March/082383.html
-exec $DIALOG4PORTS 2> $OPTIONSFILE
+exec env LC_ALL=C.UTF-8 $DIALOG4PORTS 2> $OPTIONSFILE

@@ -1,7 +1,6 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	4
+DISTVERSION=	0.8.2
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,8 +11,7 @@ LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/licenses/LICENSE-MIT
 
-LIB_DEPENDS=	libzstd.so:archivers/zstd \
-		libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
@@ -23,7 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fishfolk
 LTO_UNSAFE=	yes # bevy_dylib fails with -C panic=abort
 PLIST_FILES=	bin/${PORTNAME}
-PLIST_FILES+=	"@comment bin/core" # not packaged in vendor binaries
 PORTDATA=	*
 
 .if ${MACHINE_ARCH} == i386
@@ -33,7 +30,7 @@ CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
 
 post-patch:
 # Search assets under PREFIX instead of current directory
-	@${REINPLACE_CMD} 's,assets",../${DATADIR_REL}/&,' \
+	@${REINPLACE_CMD} 's,assets",${DATADIR}/&,' \
 		${WRKSRC}/src/main.rs \
 		${WRKSRC_crate_bevy_asset}/src/lib.rs
 

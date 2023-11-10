@@ -7,7 +7,7 @@ DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetHack derivative
-WWW=		http://falconseye.sourceforge.net/
+WWW=		https://falconseye.sourceforge.net/
 
 RUN_DEPENDS=	timidity:audio/timidity
 

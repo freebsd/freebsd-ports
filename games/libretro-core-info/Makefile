@@ -1,6 +1,6 @@
 PORTNAME=	libretro-core-info
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.15.0
+DISTVERSION=	1.16.0
 CATEGORIES=	games
 
 MAINTAINER=	Clockwork6400@protonmail.com

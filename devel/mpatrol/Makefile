@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
-WWW=		http://mpatrol.sourceforge.net/
+WWW=		https://mpatrol.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/../../COPYING

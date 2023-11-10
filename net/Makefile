@@ -74,7 +74,6 @@
     SUBDIR += c3270
     SUBDIR += calendarsupport
     SUBDIR += ccxstream
-    SUBDIR += ceph14
     SUBDIR += cf
     SUBDIR += charm
     SUBDIR += chrony
@@ -577,7 +576,6 @@
     SUBDIR += openldap26-server
     SUBDIR += openmdns
     SUBDIR += openmpi
-    SUBDIR += openmpi3
     SUBDIR += openntpd
     SUBDIR += openpgm
     SUBDIR += openradius
@@ -930,7 +928,6 @@
     SUBDIR += p5-ldap2pw
     SUBDIR += p5-perl-ldap
     SUBDIR += p5-srv2pf
-    SUBDIR += pacemaker1
     SUBDIR += pacemaker2
     SUBDIR += packetdrill
     SUBDIR += packter-agent
@@ -1221,6 +1218,7 @@
     SUBDIR += remotebox
     SUBDIR += remotedesk
     SUBDIR += repeater
+    SUBDIR += revsocks
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripe-whois
@@ -1241,6 +1239,7 @@
     SUBDIR += rubygem-activestorage60
     SUBDIR += rubygem-activestorage61
     SUBDIR += rubygem-activestorage70
+    SUBDIR += rubygem-activestorage71
     SUBDIR += rubygem-amazon-ec2
     SUBDIR += rubygem-amq-protocol
     SUBDIR += rubygem-amqp

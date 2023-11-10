@@ -1,5 +1,6 @@
 PORTNAME=	sdpa
 DISTVERSION=	7.3.17
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		DEBIAN/pool/main/m/mumps:mumps
@@ -10,7 +11,7 @@ EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
-WWW=		http://sdpa.sourceforge.net/
+WWW=		https://sdpa.sourceforge.net/
 
 LICENSE=	GPLv2 # (or later)
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -25,13 +26,11 @@ PLIST_FILES=	bin/sdpa %%DATADIR%%/param.sdpa
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SINGLE=		BLAS
-OPTIONS_SINGLE_BLAS=	ATLAS GOTOBLAS REFERENCE
+OPTIONS_SINGLE_BLAS=	ATLAS REFERENCE
 OPTIONS_DEFAULT=	REFERENCE
 
 ATLAS_USES=		blaslapack:atlas
 DOCS_DISTFILES=		${MANUALFILE}
-GOTOBLAS_DESC=		GotoBLAS blas implementation
-GOTOBLAS_USES=		blaslapack:gotoblas
 REFERENCE_DESC=		Reference blas implementation
 REFERENCE_USES=		blaslapack
 

@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/enterprise/signals/device_info_fetcher_linux.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/enterprise/signals/device_info_fetcher_linux.cc
 @@ -4,12 +4,23 @@
  
@@ -10,11 +10,11 @@
  #include <gio/gio.h>
  #endif  // defined(USE_GIO)
  #include <sys/stat.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/sysmacros.h>
 +#endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include <sys/types.h>
 +#include <sys/socket.h>
 +#include <ifaddrs.h>
@@ -28,7 +28,7 @@
  // Implements the logic from the native host installation script. First find the
  // root device identifier, then locate its parent and get its type.
  SettingValue GetDiskEncrypted() {
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
    struct stat info;
    // First figure out the device identifier. Fail fast if this fails.
    if (stat("/", &info) != 0)
@@ -42,7 +42,7 @@
  
  std::vector<std::string> GetMacAddresses() {
    std::vector<std::string> result;
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +  struct ifaddrs* ifa = nullptr;
 +
 +  if (getifaddrs(&ifa) != 0)

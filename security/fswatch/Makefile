@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.02beta5
 
 MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	File system checksum checker
-WWW=		http://fswatch.sourceforge.net
+WWW=		https://fswatch.sourceforge.net
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

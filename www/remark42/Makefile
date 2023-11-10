@@ -1,7 +1,7 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -13,10 +13,7 @@ WWW=		https://remark42.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on EOL NodeJS 16
-EXPIRATION_DATE=	2023-10-30
-
-BUILD_DEPENDS+=	npm-node16>0:www/npm-node16
+BUILD_DEPENDS+=	npm-node20>0:www/npm-node20
 
 USES=		cpe go:modules tar:xz
 

@@ -139,6 +139,7 @@
     SUBDIR += pdfarranger
     SUBDIR += pdfbox
     SUBDIR += pdfchain
+    SUBDIR += pdfcpu
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
     SUBDIR += pdfmixtool

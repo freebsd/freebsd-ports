@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shared-memory-based hashmaps
-WWW=		http://shmap.sourceforge.net/
+WWW=		https://shmap.sourceforge.net/
 
 LIB_DEPENDS=	libmm.so:devel/mm
 

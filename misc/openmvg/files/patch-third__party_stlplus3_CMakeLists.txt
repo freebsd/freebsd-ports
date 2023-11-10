@@ -1,0 +1,13 @@
+- workaround for https://github.com/openMVG/openMVG/issues/2256
+
+--- third_party/stlplus3/CMakeLists.txt.orig	2023-10-20 17:19:07 UTC
++++ third_party/stlplus3/CMakeLists.txt
+@@ -6,7 +6,7 @@ file(GLOB LIBSLTPLUS_CPP_FILESYSTEM "${CMAKE_CURRENT_S
+ list(APPEND LIBSLTPLUS_SRCS
+   ${LIBSLTPLUS_HPP_FILESYSTEM} ${LIBSLTPLUS_CPP_FILESYSTEM})
+ 
+-add_library(openMVG_stlplus STATIC ${LIBSLTPLUS_SRCS})
++add_library(openMVG_stlplus ${LIBSLTPLUS_SRCS})
+ if(STLPLUS_INCLUDE_INSTALL_DIR)
+   target_include_directories(openMVG_stlplus PUBLIC
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>

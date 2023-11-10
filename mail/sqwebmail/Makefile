@@ -1,5 +1,5 @@
 PORTNAME=	sqwebmail
-PORTVERSION=	6.0.6
+PORTVERSION=	6.2.4
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -7,12 +7,15 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
 WWW=		https://inter7.com/sqwebmail/
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
 RUN_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg
 LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libcourier-unicode.so:devel/courier-unicode
+		libcourier-unicode.so:devel/courier-unicode \
+		libidn2.so:dns/libidn2
 
 CFLAGS:=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${CFLAGS:S/^[:space:]*//}
 CXXFLAGS:=	-I${LOCALBASE}/include ${CXXFLAGS:S/^[:space:]*//}
@@ -55,7 +58,7 @@ MAILGRP?=	courier
 #
 # End of user variables
 
-USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2
+USES=		compiler:c++11-lang gettext gmake iconv perl5 tar:bzip2 pkgconfig
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 GNU_CONFIGURE=	yes
 

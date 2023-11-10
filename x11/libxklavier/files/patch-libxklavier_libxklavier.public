@@ -1,0 +1,10 @@
+--- libxklavier/libxklavier.public.orig	2012-08-23 22:23:02 UTC
++++ libxklavier/libxklavier.public
+@@ -80,7 +80,6 @@ xkl_engine_ungrab_key
+ xkl_engine_state_change_get_type
+ xkl_engine_stop_listen
+ xkl_engine_ungrab_key
+-xkl_engine_VOID__FLAGS_INT_BOOLEAN
+ xkl_get_country_name
+ xkl_get_language_name
+ xkl_get_last_error

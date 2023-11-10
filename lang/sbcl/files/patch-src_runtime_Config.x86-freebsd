@@ -1,0 +1,12 @@
+--- src/runtime/Config.x86-freebsd.orig	2023-11-03 01:58:54 UTC
++++ src/runtime/Config.x86-freebsd
+@@ -17,7 +17,8 @@ LINKFLAGS += -dynamic -Wl,--export-dynamic -m32
+ # runtime.
+ LINKFLAGS += -dynamic -Wl,--export-dynamic -m32
+ 
+-OS_LIBS += -lutil
++OS_LIBS += -lutil -L/usr/local/lib
++CPPFLAGS += -isystem/usr/local/include
+ 
+ # use libthr (1:1 threading).  libpthread (m:n threading) does not work.
+ ifdef LISP_FEATURE_SB_THREAD

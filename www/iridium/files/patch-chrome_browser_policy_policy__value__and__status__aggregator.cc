@@ -1,6 +1,6 @@
---- chrome/browser/policy/policy_value_and_status_aggregator.cc.orig	2023-07-24 14:27:53 UTC
+--- chrome/browser/policy/policy_value_and_status_aggregator.cc.orig	2023-10-21 11:51:27 UTC
 +++ chrome/browser/policy/policy_value_and_status_aggregator.cc
-@@ -52,7 +52,7 @@
+@@ -53,7 +53,7 @@
  #include "chrome/browser/policy/value_provider/extension_policies_value_provider.h"
  #endif  // BUILDFLAG(ENABLE_EXTENSIONS)
  
@@ -9,7 +9,7 @@
  #include "components/policy/core/common/cloud/profile_cloud_policy_manager.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -98,7 +98,7 @@ std::unique_ptr<policy::PolicyStatusProvider> GetUserP
+@@ -99,7 +99,7 @@ std::unique_ptr<policy::PolicyStatusProvider> GetUserP
  #else  // BUILDFLAG(IS_CHROMEOS_ASH)
    policy::CloudPolicyManager* cloud_policy_manager =
        profile->GetUserCloudPolicyManager();

@@ -1,6 +1,6 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	databases
 
@@ -24,17 +24,17 @@ USE_GITHUB=	yes
 CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-cors-0.6.4 \
 		actix-files-0.6.2 \
-		actix-http-3.3.0 \
+		actix-http-3.4.0 \
 		actix-macros-0.2.3 \
-		actix-multipart-0.6.0 \
-		actix-multipart-derive-0.6.0 \
+		actix-multipart-0.6.1 \
+		actix-multipart-derive-0.6.1 \
 		actix-router-0.5.1 \
 		actix-rt-2.7.0 \
 		actix-server-2.1.1 \
 		actix-service-2.0.2 \
-		actix-tls-3.0.3 \
+		actix-tls-3.1.0 \
 		actix-utils-3.0.1 \
-		actix-web-4.3.1 \
+		actix-web-4.4.0 \
 		actix-web-codegen-4.2.0 \
 		actix-web-validator-5.0.1 \
 		addr2line-0.19.0 \
@@ -48,12 +48,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
-		anstream-0.3.0 \
+		anstream-0.5.0 \
 		anstyle-1.0.0 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.0 \
-		anyhow-1.0.72 \
+		anstyle-wincon-2.1.0 \
+		antidote-1.0.0 \
+		anyhow-1.0.75 \
 		approx-0.5.1 \
 		arc-swap-1.6.0 \
 		arrayvec-0.4.12 \
@@ -61,9 +62,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		askama_escape-0.10.3 \
 		async-stream-0.3.3 \
 		async-stream-impl-0.3.3 \
-		async-trait-0.1.72 \
+		async-trait-0.1.73 \
 		atomic-polyfill-0.1.11 \
-		atomic_refcell-0.1.10 \
+		atomic_refcell-0.1.11 \
 		atomicwrites-0.4.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -92,22 +93,22 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
 		cast-0.3.0 \
-		cc-1.0.78 \
+		cc-1.0.83 \
 		cedarwood-0.4.6 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		cgroups-rs-0.3.3 \
-		charabia-0.8.2 \
-		chrono-0.4.26 \
+		charabia-0.8.3 \
+		chrono-0.4.31 \
 		ci_info-0.10.2 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		cipher-0.4.4 \
 		clang-sys-1.4.0 \
-		clap-4.3.21 \
-		clap_builder-4.3.21 \
-		clap_derive-4.3.12 \
+		clap-4.4.4 \
+		clap_builder-4.4.4 \
+		clap_derive-4.4.2 \
 		clap_lex-0.5.0 \
 		codespan-reporting-0.11.1 \
 		colorchoice-1.0.0 \
@@ -141,9 +142,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		cxx-build-1.0.85 \
 		cxxbridge-flags-1.0.85 \
 		cxxbridge-macro-1.0.85 \
-		darling-0.14.4 \
-		darling_core-0.14.4 \
-		darling_macro-0.14.4 \
+		darling-0.20.3 \
+		darling_core-0.20.3 \
+		darling_macro-0.20.3 \
 		debugid-0.8.0 \
 		derive_more-0.99.17 \
 		deunicode-1.3.3 \
@@ -175,6 +176,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		flate2-1.0.26 \
 		float_next_after-1.0.0 \
 		fnv-1.0.7 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
+		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.0 \
 		fs4-0.6.3 \
 		fs_extra-1.3.0 \
@@ -231,6 +235,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ident_case-1.0.1 \
 		idna-0.4.0 \
 		if_chain-1.0.2 \
+		impl-more-0.1.6 \
 		indexmap-1.9.2 \
 		indicatif-0.17.6 \
 		inferno-0.11.13 \
@@ -238,7 +243,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		instant-0.1.12 \
 		io-lifetimes-0.7.5 \
 		io-lifetimes-1.0.11 \
-		io-uring-0.6.0 \
+		io-uring-0.6.2 \
 		ipnet-2.7.0 \
 		irg-kvariants-0.1.0 \
 		is-terminal-0.4.6 \
@@ -278,7 +283,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		local-channel-0.1.3 \
 		local-waker-0.1.3 \
 		lock_api-0.4.9 \
-		log-0.4.19 \
+		log-0.4.20 \
 		loom-0.5.6 \
 		matchers-0.1.0 \
 		matchit-0.7.0 \
@@ -311,7 +316,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		once_cell-1.18.0 \
 		oorandom-11.1.3 \
 		ordered-float-2.10.0 \
-		ordered-float-3.7.0 \
+		ordered-float-3.9.1 \
 		ordered-multimap-0.4.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
@@ -335,7 +340,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		phf_shared-0.11.2 \
 		pin-project-1.0.12 \
 		pin-project-internal-1.0.12 \
-		pin-project-lite-0.2.9 \
+		pin-project-lite-0.2.12 \
 		pin-utils-0.1.0 \
 		pinyin-0.9.0 \
 		pkg-config-0.3.26 \
@@ -354,9 +359,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		prometheus-0.13.3 \
 		proptest-1.2.0 \
 		prost-0.11.9 \
+		prost-0.12.0 \
 		prost-build-0.11.9 \
+		prost-build-0.12.0 \
 		prost-derive-0.11.9 \
+		prost-derive-0.12.0 \
 		prost-types-0.11.9 \
+		prost-types-0.12.0 \
 		protobuf-2.28.0 \
 		protobuf-build-0.14.0 \
 		pulldown-cmark-0.9.3 \
@@ -385,7 +394,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		regex-syntax-0.6.28 \
 		regex-syntax-0.7.2 \
 		relative-path-1.8.0 \
-		reqwest-0.11.18 \
+		reqwest-0.11.20 \
 		rgb-0.8.34 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
@@ -393,9 +402,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		robust-1.1.0 \
 		rocksdb-0.21.0 \
 		ron-0.7.1 \
+		rstack-0.3.3 \
+		rstack-self-0.3.0 \
 		rstar-0.11.0 \
-		rstest-0.18.1 \
-		rstest_macros-0.18.1 \
+		rstest-0.18.2 \
+		rstest_macros-0.18.2 \
 		rust-ini-0.18.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
@@ -404,18 +415,18 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rustix-0.36.13 \
 		rustix-0.37.19 \
 		rustix-0.38.3 \
-		rustls-0.20.7 \
-		rustls-0.21.0 \
+		rustls-0.21.7 \
 		rustls-pemfile-1.0.3 \
-		rustls-webpki-0.100.1 \
+		rustls-webpki-0.100.2 \
+		rustls-webpki-0.101.4 \
 		rustversion-1.0.11 \
 		rusty-fork-0.3.0 \
 		rusty-forkfork-0.4.0 \
 		rusty-hook-0.11.2 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
-		schemars-0.8.12 \
-		schemars_derive-0.8.12 \
+		schemars-0.8.15 \
+		schemars_derive-0.8.15 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
 		scratch-1.0.3 \
@@ -424,12 +435,12 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		sealed_test-1.0.0 \
 		sealed_test_derive-1.0.0 \
 		semver-1.0.18 \
-		serde-1.0.183 \
+		serde-1.0.188 \
 		serde-value-0.7.0 \
 		serde_cbor-0.11.2 \
-		serde_derive-1.0.183 \
+		serde_derive-1.0.188 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.104 \
+		serde_json-1.0.107 \
 		serde_plain-1.0.1 \
 		serde_qs-0.10.1 \
 		serde_urlencoded-0.7.1 \
@@ -447,8 +458,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		smallvec-1.10.0 \
 		smol_str-0.2.0 \
 		socket2-0.4.9 \
+		socket2-0.5.3 \
 		spin-0.5.2 \
-		spin-0.9.4 \
+		spin-0.9.8 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		str_stack-0.1.0 \
@@ -460,34 +472,33 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		syn-2.0.28 \
 		sync_wrapper-0.1.1 \
 		sys-info-0.9.1 \
-		sysinfo-0.29.7 \
+		sysinfo-0.29.10 \
 		tap-1.0.1 \
 		tar-0.4.40 \
-		tempfile-3.7.1 \
+		tempfile-3.8.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		thiserror-1.0.44 \
-		thiserror-impl-1.0.44 \
+		thiserror-1.0.48 \
+		thiserror-impl-1.0.48 \
 		thread-id-4.0.0 \
 		thread_local-1.1.7 \
 		tikv-jemalloc-sys-0.5.2+5.3.0-patched \
 		tikv-jemallocator-0.5.4 \
-		time-0.1.45 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.29.1 \
+		tokio-1.32.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.1.0 \
-		tokio-rustls-0.23.4 \
-		tokio-rustls-0.24.0 \
+		tokio-rustls-0.24.1 \
 		tokio-stream-0.1.11 \
 		tokio-util-0.7.4 \
 		toml-0.5.10 \
-		tonic-build-0.9.2 \
+		tonic-build-0.10.0 \
+		tonic-reflection-0.9.2 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -496,9 +507,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		tracing-core-0.1.30 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.17 \
-		tracing-tracy-0.10.2 \
-		tracy-client-0.15.2 \
-		tracy-client-sys-0.21.0 \
+		tracing-tracy-0.10.4 \
+		tracy-client-0.16.2 \
+		tracy-client-sys-0.21.2 \
 		try-lock-0.2.3 \
 		typenum-1.16.0 \
 		ucd-trie-0.1.5 \
@@ -509,8 +520,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		untrusted-0.7.1 \
+		unwind-0.4.1 \
+		unwind-sys-0.1.3 \
 		ureq-2.7.1 \
-		url-2.4.0 \
+		url-2.4.1 \
 		utf8parse-0.2.1 \
 		uuid-1.4.1 \
 		validator-0.16.1 \
@@ -520,10 +533,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.3 \
+		walkdir-2.4.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.83 \
 		wasm-bindgen-backend-0.2.83 \
@@ -531,11 +543,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		wasm-bindgen-macro-0.2.83 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
-		wasm-streams-0.2.3 \
+		wasm-streams-0.3.0 \
 		web-sys-0.3.60 \
-		webpki-0.22.0 \
-		webpki-roots-0.22.6 \
 		webpki-roots-0.23.1 \
+		webpki-roots-0.25.2 \
 		whatlang-0.16.2 \
 		which-4.3.0 \
 		winapi-0.3.9 \
@@ -562,7 +573,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		winreg-0.10.1 \
+		winreg-0.50.0 \
 		wyz-0.5.1 \
 		xattr-1.0.1 \
 		yada-0.5.0 \
@@ -573,7 +584,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-safe-6.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.4+zstd.1.5.2 \
-		quantization@git+https://github.com/qdrant/quantization.git\#c4d7db0935b2fd6cbde179c5e65f57e9493e993f \
+		quantization@git+https://github.com/qdrant/quantization.git\#ff306d0d990d7286ee1fa3a603daa7efd343ad0c \
 		wal@git+https://github.com/qdrant/wal.git?rev=a32f6a38acf7ffd761df83b0790eaefeb107cd60\#a32f6a38acf7ffd761df83b0790eaefeb107cd60 \
 		tonic@git+https://github.com/qdrant/tonic?branch=v0.9.2-patched\#060ab88c87955adc59d46a44b4e3b72cb4cc1522
 

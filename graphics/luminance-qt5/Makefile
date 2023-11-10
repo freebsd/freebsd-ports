@@ -6,7 +6,7 @@ MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION}
 
 MAINTAINER=	h2+fbsdports@fsfe.org
 COMMENT=	Complete open source solution for HDR photography
-WWW=		http://qtpfsgui.sourceforge.net/
+WWW=		https://qtpfsgui.sourceforge.net/
 
 LICENSE=	GPLv2
 

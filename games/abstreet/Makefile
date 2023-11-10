@@ -1,7 +1,7 @@
 PORTNAME=	abstreet
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.64
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	games
 MASTER_SITES=	LOCAL/yuri:data
 DISTFILES=	${PORTNAME}-data-${DISTVERSION}.tgz:data # updated by the update-data target
@@ -13,6 +13,8 @@ WWW=		https://github.com/dabreegster/abstreet
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	BROKEN for more than a year and issue does not seem to be resolvable soon
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		fails to build with rust 1.61.0+ # also see the WIP https://github.com/a-b-street/abstreet/issues/959 why it can't be updated yet
 
 BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib

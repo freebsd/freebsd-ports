@@ -1,5 +1,6 @@
 PORTNAME=	pip-audit
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0:www/py-cachecontrol@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>=4.0<5:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cyclonedx-python-lib>=4<6:textproc/py-cyclonedx-python-lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=1.1:www/py-html5lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=23.0.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip-api>=0.0.28:devel/py-pip-api@${PY_FLAVOR} \

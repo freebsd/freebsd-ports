@@ -1,6 +1,6 @@
 PORTNAME=	auctex
-PORTVERSION=	13.1
-PORTREVISION=	5
+PORTVERSION=	13.2
+PORTREVISION=	1
 CATEGORIES=	print elisp
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -17,18 +17,22 @@ BROKEN=		tex.el:0:0: error: wrong-type-argument: (stringp nil)
 
 USES=		emacs ghostscript gmake tex
 USE_TEX=	latex texhash
-TEXHASHDIRS=	${TEXMFDIR}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
 	--with-auto-dir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/auctex/auto \
 	--with-texmf-dir=${PREFIX}/${TEXMFDIR}
-PORTDOCS=	tex-ref.pdf
-INFO=		auctex preview-latex
+
+NO_ARCH=	yes
 SUB_FILES=	pkg-message
+
+INFO=		auctex preview-latex
+PORTDOCS=	tex-ref.pdf
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
 DOCS_CONFIGURE_OFF=	WITHOUT_AUCTEX_DOCSDIR=yes
+
+TEXHASHDIRS=	${TEXMFDIR}
 
 .include <bsd.port.mk>

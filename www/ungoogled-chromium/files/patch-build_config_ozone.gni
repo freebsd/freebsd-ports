@@ -1,6 +1,6 @@
---- build/config/ozone.gni.orig	2022-10-01 07:40:07 UTC
+--- build/config/ozone.gni.orig	2023-10-13 13:20:35 UTC
 +++ build/config/ozone.gni
-@@ -87,7 +87,15 @@ declare_args() {
+@@ -84,7 +84,15 @@ declare_args() {
      } else if (is_chromeos_lacros) {
        ozone_platform = "wayland"
        ozone_platform_wayland = true

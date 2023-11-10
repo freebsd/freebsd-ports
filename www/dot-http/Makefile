@@ -1,7 +1,7 @@
 PORTNAME=	dot-http
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -177,7 +177,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
 BROKEN=	Fails to detect OpenSSL 3  and later
 .endif
 

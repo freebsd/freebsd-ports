@@ -8,37 +8,38 @@ PKGNAMEPREFIX=	mingw32-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF gcc-4 for Windows cross-development
-WWW=		https://www.mingw.org/
+WWW=		https://mingw.osdn.io/
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream release was in 2015 and mingw32 project is defunct
+EXPIRATION_DATE=	2023-11-21
+BROKEN_powerpc64=	fails to configure: error: cannot compute suffix of object files: cannot compile
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:devel/binutils@${PKGNAMEPREFIX:C/-$//} \
 		mingwm10.dll:devel/${PKGNAMEPREFIX}bin-msvcrt \
 		objdump:devel/binutils
-RUN_DEPENDS=	${PKGNAMEPREFIX}as:devel/binutils@${PKGNAMEPREFIX:C/-$//}
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libmpc.so:math/mpc
+RUN_DEPENDS=	${PKGNAMEPREFIX}as:devel/binutils@${PKGNAMEPREFIX:C/-$//}
 
-BROKEN_powerpc64=	fails to configure: error: cannot compute suffix of object files: cannot compile
+USES=		bison cpe iconv gmake libtool makeinfo perl5 tar:bzip2
+CPE_VENDOR=	gnu
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 
-GCCVERSION=	4.8.1
+CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 SSP_UNSAFE=	yes
 
-ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 sparc64
-USE_LDCONFIG=	yes
-USES=		bison cpe iconv gmake libtool makeinfo perl5 tar:bzip2
-CPE_VENDOR=	gnu
-USE_PERL5=	build
-
-GCC_TARG=	${PKGNAMEPREFIX:S/-$//}
-
 PATCH_WRKSRC=	${SRCDIR}
-CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 BINARIES=	c++ cpp g++ gcc gcov gfortran
+GCC_TARG=	${PKGNAMEPREFIX:S/-$//}
+GCCVERSION=	4.8.1
 
 .include <bsd.port.pre.mk>
 
@@ -84,7 +85,7 @@ INFO+=		libquadmath
 INSTALL_TARGET=	install-strip
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
-CPPFLAGS+=  -Wno-error=increment-bool \
+CPPFLAGS+=	-Wno-error=increment-bool \
 			-Dregister=
 .endif
 

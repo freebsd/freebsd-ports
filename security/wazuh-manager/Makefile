@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.5.2
+DISTVERSION=	4.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/22/libraries/sources/:wazuh_sources \
@@ -28,6 +28,7 @@ IGNORE_FreeBSD_12_aarch64=	FreeBSD 12.x is not supported on ${ARCH}
 ONLY_FOR_ARCHS=	amd64 aarch64
 
 USE_GITHUB=	yes
+
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
@@ -83,7 +84,7 @@ GROUPS=		${WAZUH_GROUP}
 SUB_FILES=	pkg-message
 CONFLICTS=	ossec-* wazuh-agent
 
-WZBIN_FILES=	wazuh-logcollector wazuh-syscheckd wazuh-execd  manage_agents wazuh-modulesd \
+WZBIN_FILES=	wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
 		wazuh-agentlessd wazuh-analysisd wazuh-monitord wazuh-reportd wazuh-maild \
 		wazuh-logtest-legacy wazuh-csyslogd wazuh-dbd verify-agent-conf clear_stats \
 		wazuh-regex agent_control wazuh-integratord wazuh-db wazuh-remoted wazuh-authd
@@ -93,7 +94,7 @@ WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account 
 
 WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py3.9 f2py3 f2py fixup_pubsub_v1_keywords.py \
 		flask futurize jp.py jsonschema normalizer openapi-spec-validator pasteurize \
-		plasma_store pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
+		pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
 		pyrsa-verify rstpep2html.py rst2s5.py rst2xetex.py rst2man.py rst2odt.py \
 		rst2latex.py rst2pseudoxml.py rst2odt_prepstyles.py rst2html.py rst2html5.py \
 		rst2html4.py rst2xml.py tabulate wsdump.py
@@ -128,8 +129,8 @@ WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.21.6-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-8.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-13.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		PyYAML-5.3.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
@@ -141,17 +142,21 @@ FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000
-FBSD_VERSION_BASE=freebsd_12_4_release_p1
+FBSD_VERSION_BASE=freebsd_12_4_release
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_2_release
+FBSD_VERSION_BASE=freebsd_13_2_release_p4
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1400000
-FBSD_VERSION_BASE=freebsd_14_0_current
+.elif ${OSVERSION} >= 1400000 && ${OSVERSION} < 1500000
+FBSD_VERSION_BASE=freebsd_14_0_rc1
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
+.elif ${OSVERSION} >= 1500000
+FBSD_VERSION_BASE=freebsd_15_0_current
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
+DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
 IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
@@ -166,6 +171,7 @@ post-extract:
 		@${MV} ${WRKSRC}/src/wazuh-cache-${ARCH}/${FILE} ${WRKSRC}/src/wazuh-cache-${ARCH}/${FILE:S/${FBSD_VERSION_BASE}/${FBSD_RELEASE}/}
 .	endfor
 	@${RM} ${WRKSRC}/src/external/cpython/python
+	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${MV} "{}" "{}.disabled" \;
 
 post-patch:
 	${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_HOST_NAME_MAX|g' ${WRKSRC}/src/wazuh_modules/wm_database.c
@@ -197,6 +203,7 @@ do-install:
 .for FILE in ${WZBIN_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${FILE} ${STAGEDIR}${WAZUHPREFIX}/bin
 .endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/src/syscheckd/build/bin/wazuh-syscheckd ${STAGEDIR}${WAZUHPREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/init/wazuh-server.sh ${STAGEDIR}${WAZUHPREFIX}/bin/wazuh-control
 
 	${TOUCH} ${STAGEDIR}${WAZUHPREFIX}/etc/localtime
@@ -205,7 +212,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/syscollector/norm_config.json ${STAGEDIR}${WAZUHPREFIX}/queue/syscollector
 	${INSTALL_DATA} ${WRKSRC}/etc/local_internal_options.conf ${STAGEDIR}${WAZUHPREFIX}/etc/local_internal_options.conf
 
-	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/etc/client.keys
+	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/etc/client.keys.sample
 
 	${INSTALL_DATA} ${WRKSRC}/etc/ossec-server.conf ${STAGEDIR}${WAZUHPREFIX}/etc/ossec.conf.sample
 
@@ -270,12 +277,13 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle
 
-	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca \;
+	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml.disabled" -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca/ \;
 
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhext.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhshared.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/dbsync/build/lib/libdbsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/rsync/build/lib/librsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/syscheckd/build/lib/libfimdb.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/external/jemalloc/lib/libjemalloc.so.2 ${STAGEDIR}${WAZUHPREFIX}/lib

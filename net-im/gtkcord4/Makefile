@@ -1,6 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.14
+DISTVERSION=	0.0.15-1
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		diamondburned:adaptive:fa139be203a8:diamondburned_adaptive/vendor/github.com/diamondburned/adaptive \
 		diamondburned:arikawa:4224b93c4e01:diamondburned_arikawa_v3/vendor/github.com/diamondburned/arikawa/v3 \
 		diamondburned:chatkit:66a46d3d2a92:diamondburned_chatkit/vendor/github.com/diamondburned/chatkit \
-		diamondburned:gotk4-adwaita:bfe82926e1be:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
+		diamondburned:gotk4-adwaita:20a05fa3a9df:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
 		diamondburned:gotk4:ad325703aa2e:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
 		diamondburned:gotkit:f664ea5c2236:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
 		diamondburned:ningen:f3dbe02c7c8d:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
@@ -51,17 +51,21 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 CGO_LDFLAGS+=	-Wl,--as-needed # gtk4 deps
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/so.libdb.gtkcord4.desktop \
+		share/dbus-1/services/so.libdb.gtkcord4.service \
 		share/icons/hicolor/scalable/apps/${PORTNAME}.svg \
 		share/metainfo/so.libdb.gtkcord4.metainfo.xml
 
 post-extract:
 # Prune after https://github.com/diamondburned/gtkcord4/commit/86b3ea579df1
 	${RM} ${WRKSRC}/nix/xyz.diamondb.gtkcord4.desktop
-	${RM} ${WRKSRC}/xyz.diamondb.gtkcord4.metainfo.xml
+
+post-patch:
+	@${REINPLACE_CMD} 's,/usr/bin,${PREFIX}/bin,' ${WRKSRC}/nix/*.service
 
 post-install:
 # Install extras similar to Nix flake
-.for f in nix/*.desktop *.metainfo.xml internal/icons/hicolor/scalable/apps/logo.svg
+.for f in nix/*.desktop nix/*.service *.metainfo.xml \
+		internal/icons/hicolor/scalable/apps/logo.svg
 	${MKDIR} ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}:H}
 	${INSTALL_DATA} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/${PLIST_FILES:M*.${f:E}}

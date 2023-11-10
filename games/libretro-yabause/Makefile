@@ -1,5 +1,5 @@
 PORTNAME=	libretro-yabause
-PORTVERSION=	0.20220218
+DISTVERSION=	0.20230103
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -14,11 +14,11 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	yabause
-GH_TAGNAME=	17dfcd8
+GH_TAGNAME=	4c96b96f7fbe07223627c469ff33376b2a634748
 
 PLIST_FILES=	lib/libretro/yabause_libretro.so
 
-MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/yabause/src/libretro
 
 .include <bsd.port.pre.mk>
 
@@ -28,7 +28,7 @@ post-patch:
 .endif
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/yabause/src/libretro/yabause_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/yabause/src/libretro/yabause_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.post.mk>

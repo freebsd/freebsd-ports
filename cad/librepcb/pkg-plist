@@ -8,6 +8,7 @@ share/icons/hicolor/32x32/apps/org.librepcb.LibrePCB.png
 share/icons/hicolor/48x48/apps/org.librepcb.LibrePCB.png
 share/icons/hicolor/64x64/apps/org.librepcb.LibrePCB.png
 share/icons/hicolor/scalable/apps/org.librepcb.LibrePCB.svg
+share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-archive.svg
 share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-file.svg
 share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/README.md
@@ -24,11 +25,14 @@ share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/i18n/librepcb_es.qm
 %%DATADIR%%/i18n/librepcb_fr.qm
 %%DATADIR%%/i18n/librepcb_it.qm
+%%DATADIR%%/i18n/librepcb_ko_KR.qm
 %%DATADIR%%/i18n/librepcb_pl.qm
 %%DATADIR%%/i18n/librepcb_ru_RU.qm
 %%DATADIR%%/i18n/librepcb_sk.qm
+%%DATADIR%%/i18n/librepcb_sv.qm
 %%DATADIR%%/i18n/librepcb_tr.qm
 %%DATADIR%%/i18n/librepcb_uk_UA.qm
+%%DATADIR%%/i18n/librepcb_zh-Hans.qm
 %%DATADIR%%/i18n/librepcb_zh_CN.qm
 %%DATADIR%%/i18n/librepcb_zh_TW.qm
 %%DATADIR%%/library/default_image.png
@@ -41,5 +45,6 @@ share/icons/hicolor/scalable/mimetypes/org.librepcb.LibrePCB-project.svg
 %%DATADIR%%/project/gitattributes_template
 %%DATADIR%%/project/gitignore_template
 %%DATADIR%%/project/readme_template
-share/metainfo/org.librepcb.LibrePCB.appdata.xml
+%%DATADIR%%/qml/testwindow.qml
+share/metainfo/org.librepcb.LibrePCB.metainfo.xml
 share/mime/packages/org.librepcb.LibrePCB.xml

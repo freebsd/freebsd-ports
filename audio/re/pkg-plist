@@ -19,7 +19,6 @@ include/re/re_hmac.h
 include/re/re_http.h
 include/re/re_httpauth.h
 include/re/re_ice.h
-include/re/re_jbuf.h
 include/re/re_json.h
 include/re/re_list.h
 include/re/re_main.h
@@ -88,6 +87,6 @@ lib/cmake/libre/libre.cmake
 lib/cmake/re/re-config.cmake
 lib/libre.a
 lib/libre.so
-lib/libre.so.17
-lib/libre.so.17.5.1
+lib/libre.so.18
+lib/libre.so.18.6.2
 libdata/pkgconfig/libre.pc

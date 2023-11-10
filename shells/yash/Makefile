@@ -1,12 +1,11 @@
 PORTNAME=	yash
-DISTVERSION=	2.54
+DISTVERSION=	2.55
 CATEGORIES=	shells
-MASTER_SITES=	OSDN/yash \
-		https://github.com/magicant/${PORTNAME}/releases/download/${DISTVERSION}/
+MASTER_SITES=	https://github.com/magicant/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	POSIX-compliant command line shell
-WWW=		https://yash.osdn.jp/index.html.en
+WWW=		https://magicant.github.io/yash/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

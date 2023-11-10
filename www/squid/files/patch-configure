@@ -1,19 +1,18 @@
---- configure.orig	2021-12-07 14:11:12 UTC
+--- configure.orig	2023-02-28 09:24:52 UTC
 +++ configure
-@@ -36683,8 +36683,10 @@ then :
- #define `printf "%s\n" "HAVE_$ac_header" | $as_tr_cpp` 1
- _ACEOF
+@@ -44124,7 +44124,10 @@ _ACEOF
  
--else $as_nop
+ else $as_nop
+ 
 -  BUILD_HELPER=""
 +# XXX: On FreeBSD we have to do this to make NIS work
 +# until https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=188247
 +# is resolved.
 +  BUILD_HELPER="NIS"
+ 
  fi
  
- done
-@@ -42604,6 +42606,7 @@ fi
+@@ -50983,6 +50986,7 @@ fi
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -21,7 +20,7 @@
  #include <sched.h>
  #endif
  
-@@ -45611,6 +45614,7 @@ else $as_nop
+@@ -54169,6 +54173,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t

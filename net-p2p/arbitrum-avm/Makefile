@@ -14,6 +14,9 @@ WWW=		https://arbitrum.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	BROKEN for more than an year
+EXPIRATION_DATE=	2023-11-30
+
 BUILD_DEPENDS=	ethash>0:net-p2p/ethash \
 		git:devel/git \
 		intx>0:math/intx \

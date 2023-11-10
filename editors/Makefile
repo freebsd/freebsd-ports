@@ -87,6 +87,7 @@
     SUBDIR += lazarus-devel
     SUBDIR += lazarus-qt5
     SUBDIR += lazarus-qt5-devel
+    SUBDIR += lazarus-qt6-devel
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
@@ -222,6 +223,7 @@
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
+    SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
     SUBDIR += orbiton

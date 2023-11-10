@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-alpha-${PORTVERSION}-src
 
 MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	Nice looking OpenGL chess game
-WWW=		http://brutalchess.sourceforge.net/
+WWW=		https://brutalchess.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

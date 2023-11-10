@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bbp2006@columbia.edu
 COMMENT=	Simple yet flexible API for non-XML HL7 applications
-WWW=		http://hl7toolkit.sourceforge.net
+WWW=		https://hl7toolkit.sourceforge.net
 
 LICENSE=	GPLv2
 

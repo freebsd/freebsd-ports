@@ -1,5 +1,5 @@
 PORTNAME=	awscli
-PORTVERSION=	1.29.35
+PORTVERSION=	1.29.81
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}botocore>=1.31.35:devel/py-botocore@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 SUB_FILES=	pkg-message

@@ -1,5 +1,6 @@
 PORTNAME=	postgis
 DISTVERSION=	3.3.4
+PORTREVISION=	2
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
 PKGNAMESUFFIX=	33
@@ -17,13 +18,14 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgdal.so:graphics/gdal \
 		libpcre2-8.so:devel/pcre2
 
-USES=		alias compiler:c++11-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
+USES=		alias compiler:c++14-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:11+ shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE} NUMERICFLAGS=${PORTVERSION}
+USE_CXXSTD=	c++14
 SHEBANG_FILES=	extensions/address_standardizer/*.pl regress/run_test.pl \
 		utils/postgis_restore.pl.in utils/*.pl
 WANT_PGSQL=	server
@@ -49,7 +51,8 @@ JSON_CONFIGURE_WITH=		json
 JSON_LIB_DEPENDS=		libjson-c.so:devel/json-c
 LOADERGUI_CONFIGURE_WITH=	gui
 LOADERGUI_LIB_DEPENDS=		libprotobuf-c.so:devel/protobuf-c
-LOADERGUI_USE=			GNOME=gtk20 desktop-file-utils
+LOADERGUI_USE=			GNOME=gtk20
+LOADERGUI_USES=			desktop-file-utils
 NLS_CONFIGURE_WITH=		nls
 NLS_USES=			gettext
 PROTOBUF_CONFIGURE_WITH=	protobuf

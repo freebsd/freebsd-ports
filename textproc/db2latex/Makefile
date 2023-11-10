@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}-xsl-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook to LaTeX XSL stylesheets
-WWW=		http://db2latex.sourceforge.net/
+WWW=		https://db2latex.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

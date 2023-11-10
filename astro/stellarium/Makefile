@@ -1,5 +1,5 @@
 PORTNAME=	stellarium
-PORTVERSION=	23.1
+PORTVERSION=	23.3
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,8 +15,7 @@ USES=		cmake compiler:c++11-lang desktop-file-utils \
 		perl5 qt:5 shared-mime-info tar:xz
 USE_PERL5=	build
 USE_QT=		qmake:build buildtools:build \
-		charts concurrent core gui network opengl \
-		printsupport widgets
+		charts concurrent core gui network opengl widgets
 CMAKE_OFF=	ENABLE_QT6
 
 GUIDE_VERSION=	${PORTVERSION}
@@ -92,7 +91,6 @@ post-extract-DOCS-on:
 		${WRKSRC}
 
 post-install:
-	@${RM} -r ${STAGEDIR}${DATADIR}/guide
 	@${RMDIR} ${STAGEDIR}${DATADIR}/skycultures/greek_almagest/almstars
 
 post-install-MORE_STARS-on:
@@ -102,6 +100,7 @@ post-install-MORE_STARS-on:
 
 post-install-TEXTURES-on:
 	(cd ${WRKDIR} && for f in *.png; do \
+		${TEST} -z "$${f%neb*}" && continue ; \
 		new=`${STAT} -f '%z' $$f` ; \
 		existing=`${STAT} -f '%z' \
 			${STAGEDIR}${DATADIR}/textures/$$f` ; \

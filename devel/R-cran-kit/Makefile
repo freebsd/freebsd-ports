@@ -1,0 +1,14 @@
+PORTNAME=	kit
+DISTVERSION=	0.0.15
+CATEGORIES=	devel
+DISTNAME=	${PORTNAME}_${DISTVERSION}
+
+MAINTAINER=	eduardo@FreeBSD.org
+COMMENT=	Data Manipulation Functions Implemented in C
+WWW=		https://cran.r-project.org/web/packages/kit/
+
+LICENSE=	GPLv3
+
+USES=		cran:auto-plist,compiles
+
+.include <bsd.port.mk>

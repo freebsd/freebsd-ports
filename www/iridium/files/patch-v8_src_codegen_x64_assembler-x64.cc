@@ -1,6 +1,6 @@
---- v8/src/codegen/x64/assembler-x64.cc.orig	2023-07-24 14:27:53 UTC
+--- v8/src/codegen/x64/assembler-x64.cc.orig	2023-10-21 11:51:27 UTC
 +++ v8/src/codegen/x64/assembler-x64.cc
-@@ -1313,6 +1313,14 @@ void Assembler::hlt() {
+@@ -1316,6 +1316,14 @@ void Assembler::hlt() {
    emit(0xF4);
  }
  
@@ -15,7 +15,7 @@
  void Assembler::emit_idiv(Register src, int size) {
    EnsureSpace ensure_space(this);
    emit_rex(src, size);
-@@ -1580,16 +1588,22 @@ void Assembler::jmp(Handle<Code> target, RelocInfo::Mo
+@@ -1583,16 +1591,22 @@ void Assembler::jmp(Handle<Code> target, RelocInfo::Mo
    emitl(code_target_index);
  }
  

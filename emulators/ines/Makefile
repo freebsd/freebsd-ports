@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System emulator for X11
 WWW=		https://fms.komkon.org/iNES/
 
+DEPRECATED=	Ancient NES emulator that only works on i386, consider using emulators/higan
+EXPIRATION_DATE=2023-11-30
+
 LIB_DEPENDS=	libc.so.5:misc/compat5x
 
 ONLY_FOR_ARCHS=	i386

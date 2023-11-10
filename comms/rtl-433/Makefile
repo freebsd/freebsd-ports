@@ -1,5 +1,6 @@
 PORTNAME=	rtl-433
 PORTVERSION=	22.11
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -9,9 +10,10 @@ WWW=		https://github.com/merbanan/rtl_433
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr
+LIB_DEPENDS=	librtlsdr.so:comms/rtl-sdr \
+		libSoapySDR.so:misc/soapysdr
 
-USES=		cmake
+USES=		cmake pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	merbanan

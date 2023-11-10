@@ -2,16 +2,18 @@
 #
 # Feature:	blaslapack
 # Usage:	USES=blaslapack or USES=blaslapack:ARGS
-# Valid ARGS:	atlas gotoblas netlib (default) openblas
+# Valid ARGS:	atlas blis flexiblas netlib (default) openblas
 #
 # Provides:	BLASLIB and LAPACKLIB
 #
 # Maintainer:	thierry@FreeBSD.org
+#
+# /!\ Avoid mixing libraries using different BLAS-LAPACK implementations!
 
 .if !defined(_INCLUDE_USES_BLASLAPACK_MK)
 _INCLUDE_USES_BLASLAPACK_MK=	yes
 
-_valid_ARGS=	atlas gotoblas netlib openblas
+_valid_ARGS=	atlas blis flexiblas netlib openblas
 
 _DEFAULT_BLASLAPACK=	netlib
 
@@ -28,12 +30,16 @@ LAPACKLIB=	-lalapack -lptcblas
 _ATLASLIB=	atlas
 ATLASLIB=	-l${_ATLASLIB}
 BLA_VENDOR=	ATLAS
-.  elif ${blaslapack_ARGS} == gotoblas
-LIB_DEPENDS+=	libgoto2.so:math/gotoblas
-LIB_DEPENDS+=	liblapack.so:math/lapack
-_BLASLIB=	goto2p
-LAPACKLIB=	-lgoto2p
-BLA_VENDOR=	Goto
+.  elif ${blaslapack_ARGS} == blis
+LIB_DEPENDS+=	libblis.so:math/blis
+LIB_DEPENDS+=	libflame.so:math/libflame
+_BLASLIB=	blis
+LAPACKLIB=	-lflame
+BLA_VENDOR=	FLAME
+.  elif ${blaslapack_ARGS} == flexiblas
+LIB_DEPENDS+=	libflexiblas.so:math/flexiblas
+_BLASLIB=	flexiblas
+BLA_VENDOR=	FlexiBLAS
 .  elif ${blaslapack_ARGS} == netlib
 LIB_DEPENDS+=	libblas.so:math/blas
 LIB_DEPENDS+=	liblapack.so:math/lapack

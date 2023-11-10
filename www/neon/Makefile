@@ -1,5 +1,5 @@
 PORTNAME=	neon
-DISTVERSION=	0.32.4
+DISTVERSION=	0.32.5
 CATEGORIES=	www
 MASTER_SITES=	https://notroj.github.io/neon/
 
@@ -16,22 +16,18 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 
-OPTIONS_DEFINE=		CA_BUNDLE DOCS GSSAPI NLS PROXY
-OPTIONS_DEFAULT=	CA_BUNDLE EXPAT GSSAPI OPENSSL
+OPTIONS_DEFINE=		DOCS GSSAPI NLS PROXY
+OPTIONS_DEFAULT=	EXPAT GSSAPI OPENSSL
 
 OPTIONS_RADIO=		SSL
 OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
 OPTIONS_SINGLE=		XML
 OPTIONS_SINGLE_XML=	EXPAT LIBXML2
 
-CA_BUNDLE_DESC=		Enable CA bundle for GnuTLS/OpenSSL
 DOCS_DESC=		Build and/or install documentation (including manpages)
 LIBXML2_DESC=		libxml2 XML parser support
 PROXY_DESC=		libproxy support
 XML_DESC=		XML parser library
-
-CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
-CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 DOCS_BUILD_DEPENDS=	xmlto:textproc/xmlto \
 			docbook-xml>0:textproc/docbook-xml

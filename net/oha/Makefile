@@ -1,7 +1,6 @@
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.6.5
 CATEGORIES=	net
 
 MAINTAINER=	otis@FreeBSD.org
@@ -14,56 +13,51 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	hatoo
 
-CARGO_CRATES=	addr2line-0.20.0 \
+CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
-		anstream-0.3.2 \
-		anstyle-1.0.1 \
-		anstyle-parse-0.2.1 \
+		aho-corasick-1.1.1 \
+		anstream-0.6.4 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
-		assert_cmd-2.0.11 \
-		async-trait-0.1.71 \
+		anstyle-wincon-3.0.1 \
+		anyhow-1.0.75 \
+		assert_cmd-2.0.12 \
+		async-trait-0.1.73 \
 		autocfg-1.1.0 \
 		average-0.14.1 \
-		backtrace-0.3.68 \
-		base64-0.13.1 \
-		base64-0.21.2 \
+		axum-0.6.20 \
+		axum-core-0.3.4 \
+		backtrace-0.3.69 \
+		base64-0.21.4 \
 		bitflags-1.3.2 \
-		bitflags-2.3.3 \
-		block-buffer-0.10.4 \
-		bstr-1.6.0 \
-		bumpalo-3.13.0 \
+		bitflags-2.4.0 \
+		bstr-1.6.2 \
+		bumpalo-3.14.0 \
 		byte-unit-4.0.19 \
-		byteorder-1.4.3 \
-		bytes-1.4.0 \
+		bytes-1.5.0 \
 		cassowary-0.3.0 \
-		cc-1.0.79 \
+		cc-1.0.83 \
 		cfg-if-1.0.0 \
-		clap-4.3.11 \
-		clap_builder-4.3.11 \
-		clap_derive-4.3.2 \
-		clap_lex-0.5.0 \
+		clap-4.4.6 \
+		clap_builder-4.4.6 \
+		clap_derive-4.4.2 \
+		clap_lex-0.5.1 \
 		colorchoice-1.0.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.9 \
-		crossterm-0.26.1 \
+		crossterm-0.27.0 \
 		crossterm_winapi-0.9.1 \
-		crypto-common-0.1.6 \
 		data-encoding-2.4.0 \
 		difflib-0.4.0 \
-		digest-0.10.7 \
 		doc-comment-0.3.3 \
 		easy-cast-0.5.2 \
-		either-1.8.1 \
-		encoding_rs-0.8.32 \
-		enum-as-inner-0.5.1 \
-		errno-0.3.1 \
-		errno-dragonfly-0.1.2 \
-		fastrand-1.9.0 \
+		either-1.9.0 \
+		enum-as-inner-0.6.0 \
+		errno-0.3.5 \
+		fastrand-2.0.1 \
 		float-ord-0.3.2 \
-		flume-0.10.14 \
+		flume-0.11.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -77,158 +71,145 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		futures-sink-0.3.28 \
 		futures-task-0.3.28 \
 		futures-util-0.3.28 \
-		generic-array-0.14.7 \
-		get-port-4.0.0 \
 		getrandom-0.2.10 \
-		gimli-0.27.3 \
-		h2-0.3.20 \
+		gimli-0.28.0 \
+		h2-0.3.21 \
 		hashbrown-0.12.3 \
-		headers-0.3.8 \
-		headers-core-0.2.0 \
 		heck-0.4.1 \
-		hermit-abi-0.3.2 \
+		hermit-abi-0.3.3 \
 		hostname-0.3.1 \
 		http-0.2.9 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
-		httpdate-1.0.2 \
+		httpdate-1.0.3 \
 		humantime-2.1.0 \
 		hyper-0.14.27 \
-		idna-0.2.3 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.11 \
+		indoc-2.0.4 \
 		ipconfig-0.3.2 \
 		ipnet-2.8.0 \
-		is-terminal-0.4.9 \
-		itertools-0.10.5 \
-		itoa-1.0.8 \
-		jemalloc-sys-0.5.3+5.3.0-patched \
-		jemallocator-0.5.0 \
+		itertools-0.11.0 \
+		itoa-1.0.9 \
+		jemalloc-sys-0.5.4+5.3.0-patched \
+		jemallocator-0.5.4 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.147 \
-		libm-0.2.7 \
+		libc-0.2.149 \
+		libm-0.2.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.3 \
+		linux-raw-sys-0.4.10 \
 		lock_api-0.4.10 \
-		log-0.4.19 \
+		log-0.4.20 \
 		lru-cache-0.1.2 \
 		match_cfg-0.1.0 \
-		matches-0.1.10 \
-		memchr-2.5.0 \
+		matchit-0.7.3 \
+		memchr-2.6.4 \
 		mime-0.3.17 \
-		mime_guess-2.0.4 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
-		multer-2.1.0 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
-		num-traits-0.2.15 \
+		num-traits-0.2.17 \
 		num_cpus-1.16.0 \
-		object-0.31.1 \
+		object-0.32.1 \
 		once_cell-1.18.0 \
-		openssl-0.10.55 \
+		openssl-0.10.57 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.90 \
+		openssl-sys-0.9.93 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.8 \
+		paste-1.0.14 \
 		percent-encoding-2.3.0 \
-		pin-project-1.1.2 \
-		pin-project-internal-1.1.2 \
-		pin-project-lite-0.2.10 \
+		pin-project-1.1.3 \
+		pin-project-internal-1.1.3 \
+		pin-project-lite-0.2.13 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
 		ppv-lite86-0.2.17 \
-		predicates-3.0.3 \
+		predicates-3.0.4 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.64 \
+		proc-macro2-1.0.69 \
 		quick-error-1.2.3 \
-		quote-1.0.29 \
+		quote-1.0.33 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		rand_regex-0.15.1 \
-		ratatui-0.21.0 \
+		rand_regex-0.16.0 \
+		ratatui-0.23.0 \
 		redox_syscall-0.3.5 \
-		regex-automata-0.3.2 \
-		regex-syntax-0.6.29 \
+		regex-1.9.6 \
+		regex-automata-0.3.9 \
+		regex-syntax-0.7.5 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
-		rlimit-0.10.0 \
+		rlimit-0.10.1 \
 		rustc-demangle-0.1.23 \
-		rustix-0.37.23 \
-		rustix-0.38.4 \
-		rustls-0.21.5 \
+		rustix-0.38.17 \
+		rustls-0.21.7 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
-		rustls-webpki-0.101.1 \
-		ryu-1.0.14 \
+		rustls-webpki-0.101.6 \
+		rustversion-1.0.14 \
+		ryu-1.0.15 \
 		schannel-0.1.22 \
-		scoped-tls-1.0.1 \
-		scopeguard-1.1.0 \
+		scopeguard-1.2.0 \
 		sct-0.7.0 \
-		security-framework-2.9.1 \
-		security-framework-sys-2.9.0 \
-		serde-1.0.171 \
-		serde_derive-1.0.171 \
-		serde_json-1.0.102 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
+		serde_json-1.0.107 \
+		serde_path_to_error-0.1.14 \
 		serde_urlencoded-0.7.1 \
-		sha1-0.10.5 \
-		signal-hook-0.3.15 \
+		signal-hook-0.3.17 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		slab-0.4.8 \
-		smallvec-1.11.0 \
+		slab-0.4.9 \
+		smallvec-1.11.1 \
 		socket2-0.4.9 \
-		socket2-0.5.3 \
+		socket2-0.5.4 \
 		spin-0.5.2 \
 		spin-0.9.8 \
 		strsim-0.10.0 \
-		syn-1.0.109 \
-		syn-2.0.25 \
-		tempfile-3.6.0 \
+		strum-0.25.0 \
+		strum_macros-0.25.2 \
+		syn-2.0.38 \
+		sync_wrapper-0.1.2 \
+		tempfile-3.8.0 \
 		termtree-0.4.1 \
-		thiserror-1.0.43 \
-		thiserror-impl-1.0.43 \
+		thiserror-1.0.49 \
+		thiserror-impl-1.0.49 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.29.1 \
+		tokio-1.32.0 \
 		tokio-macros-2.1.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
-		tokio-stream-0.1.14 \
-		tokio-tungstenite-0.18.0 \
-		tokio-util-0.7.8 \
+		tokio-util-0.7.9 \
+		tower-0.4.13 \
+		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.26 \
 		tracing-core-0.1.31 \
-		trust-dns-proto-0.22.0 \
-		trust-dns-resolver-0.22.0 \
+		trust-dns-proto-0.23.0 \
+		trust-dns-resolver-0.23.0 \
 		try-lock-0.2.4 \
-		tungstenite-0.18.0 \
-		typenum-1.16.0 \
-		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.10 \
+		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
-		unicode-width-0.1.10 \
+		unicode-width-0.1.11 \
 		untrusted-0.7.1 \
-		url-2.4.0 \
-		utf-8-0.7.6 \
+		url-2.4.1 \
 		utf8-width-0.1.6 \
 		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		want-0.3.1 \
-		warp-0.3.5 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.87 \
 		wasm-bindgen-backend-0.2.87 \
@@ -241,14 +222,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.48.1 \
-		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.48.5 \
 		winreg-0.50.0
 
 PLIST_FILES=	bin/oha

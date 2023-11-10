@@ -1,5 +1,5 @@
 PORTNAME=	zabbix64
-DISTVERSION=	6.4.7
+DISTVERSION=	6.4.8
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -229,7 +229,7 @@ post-install:
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
 	${MKDIR} ${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database
-	@${RM} ${WRKSRC}/database/*/Makefile*
+	${FIND} ${WRKSRC}/database -name 'Makefile*' -delete
 	(cd ${WRKSRC}/database/ && \
 		${COPYTREE_SHARE} "mysql oracle postgresql sqlite3" \
 		${STAGEDIR}${DATADIR}/${ZABBIX_BUILD:Q}/database/)

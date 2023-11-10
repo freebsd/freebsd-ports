@@ -1,5 +1,5 @@
 PORTNAME=	libnet
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/libnet/libnet/releases/download/v${PORTVERSION}/
@@ -11,7 +11,7 @@ WWW=		https://github.com/libnet/libnet
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe libtool
+USES=		cpe libtool pathfix
 
 CONFIGURE_ARGS=	--disable-doxygen-doc --disable-doxygen-dot --disable-doxygen-html --disable-doxygen-man
 GNU_CONFIGURE=	yes

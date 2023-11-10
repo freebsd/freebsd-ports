@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Qt frontend to the backup utility rsync
-WWW=		http://luckybackup.sourceforge.net/
+WWW=		https://luckybackup.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/license/gpl.txt

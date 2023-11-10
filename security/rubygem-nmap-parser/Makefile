@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to Nmap scan data
-WWW=		http://rubynmap.sourceforge.net
+WWW=		https://rubynmap.sourceforge.net
 
 LICENSE=	MIT
 

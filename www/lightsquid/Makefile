@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light and fast web based squid proxy traffic analyser
-WWW=		http://lightsquid.sourceforge.net/
+WWW=		https://lightsquid.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/gnugpl.txt

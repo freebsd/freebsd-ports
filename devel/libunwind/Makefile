@@ -1,17 +1,13 @@
 PORTNAME=	libunwind
-PORTVERSION=	20211201	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
-PORTREVISION=	2
+PORTVERSION=	20230730	# This is the release date on https://github.com/libunwind/libunwind/releases
 CATEGORIES=	devel
-MASTER_SITES=	SAVANNAH \
-		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-1.6.2
-
-PATCH_SITES=	https://github.com/libunwind/libunwind/commit/
-PATCHFILES=	ce7e1002888a03fde0eea631748489b12ff56490.patch:-p1
+MASTER_SITES=	https://github.com/libunwind/libunwind/releases/download/v${LIBUNWIND_VERSION}/
+DISTNAME=	${PORTNAME}-${LIBUNWIND_VERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
-WWW=		https://www.nongnu.org/libunwind/
+WWW=		https://github.com/libunwind/libunwind \
+		https://www.nongnu.org/libunwind/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -30,6 +26,8 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|ppc64|:S|powerpc|ppc32|}
 
 CPE_VENDOR=	libunwind_project
+
+LIBUNWIND_VERSION=	1.7.2
 
 .include <bsd.port.options.mk>
 

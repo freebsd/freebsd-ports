@@ -6,7 +6,7 @@ MASTER_SITES=	SF/ahh/OldFiles
 
 MAINTAINER=	david@catwhisker.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
-WWW=		http://ahh.sourceforge.net/wol/
+WWW=		https://ahh.sourceforge.net/wol/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

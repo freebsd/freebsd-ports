@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}%20Linux_Unix/${PORTNAME}%20V${PORTVE
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Drive a toy wood train in many levels - snake-like arcade game
-WWW=		http://ri-li.sourceforge.net/
+WWW=		https://ri-li.sourceforge.net/
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual

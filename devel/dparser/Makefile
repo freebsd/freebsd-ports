@@ -5,7 +5,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple but powerful tool for parsing
-WWW=		http://dparser.sourceforge.net/
+WWW=		https://dparser.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

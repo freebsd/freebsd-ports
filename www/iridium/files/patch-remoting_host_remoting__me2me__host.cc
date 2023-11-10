@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2023-03-13 07:33:08 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2023-10-21 11:51:27 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -126,7 +126,7 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -43,7 +43,7 @@
  // The command line switch used to pass name of the pipe to capture audio on
  // linux.
  const char kAudioPipeSwitchName[] = "audio-pipe-name";
-@@ -394,7 +394,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -397,7 +397,7 @@ class HostProcess : public ConfigWatcher::Delegate,
  
    std::unique_ptr<ChromotingHostContext> context_;
  
@@ -52,7 +52,7 @@
    // Watch for certificate changes and kill the host when changes occur
    std::unique_ptr<CertificateWatcher> cert_watcher_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -463,7 +463,7 @@ class HostProcess : public ConfigWatcher::Delegate,
+@@ -466,7 +466,7 @@ class HostProcess : public ConfigWatcher::Delegate,
  
    std::unique_ptr<HostStatusLogger> host_status_logger_;
    std::unique_ptr<HostEventLogger> host_event_logger_;
@@ -61,7 +61,7 @@
    std::unique_ptr<HostUTMPLogger> host_utmp_logger_;
  #endif
    std::unique_ptr<HostPowerSaveBlocker> power_save_blocker_;
-@@ -774,7 +774,7 @@ void HostProcess::StartOnNetworkThread() {
+@@ -775,7 +775,7 @@ void HostProcess::StartOnNetworkThread() {
  void HostProcess::ShutdownOnNetworkThread() {
    DCHECK(context_->network_task_runner()->BelongsToCurrentThread());
    config_watcher_.reset();
@@ -70,7 +70,7 @@
    cert_watcher_.reset();
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  }
-@@ -835,7 +835,7 @@ void HostProcess::CreateAuthenticatorFactory() {
+@@ -836,7 +836,7 @@ void HostProcess::CreateAuthenticatorFactory() {
      DCHECK(third_party_auth_config_.token_url.is_valid());
      DCHECK(third_party_auth_config_.token_validation_url.is_valid());
  
@@ -79,7 +79,7 @@
      if (!cert_watcher_) {
        cert_watcher_ = std::make_unique<CertificateWatcher>(
            base::BindRepeating(&HostProcess::ShutdownHost,
-@@ -954,13 +954,13 @@ void HostProcess::StartOnUiThread() {
+@@ -955,13 +955,13 @@ void HostProcess::StartOnUiThread() {
        base::BindRepeating(&HostProcess::OnPolicyUpdate, base::Unretained(this)),
        base::BindRepeating(&HostProcess::OnPolicyError, base::Unretained(this)));
  
@@ -95,7 +95,7 @@
    // If an audio pipe is specific on the command-line then initialize
    // AudioCapturerLinux to capture from it.
    base::FilePath audio_pipe_name =
-@@ -1032,7 +1032,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -1033,7 +1033,7 @@ void HostProcess::ShutdownOnUiThread() {
    // It is now safe for the HostProcess to be deleted.
    self_ = nullptr;
  
@@ -104,7 +104,7 @@
    // Cause the global AudioPipeReader to be freed, otherwise the audio
    // thread will remain in-use and prevent the process from exiting.
    // TODO(wez): DesktopEnvironmentFactory should own the pipe reader.
-@@ -1040,7 +1040,7 @@ void HostProcess::ShutdownOnUiThread() {
+@@ -1041,7 +1041,7 @@ void HostProcess::ShutdownOnUiThread() {
    AudioCapturerLinux::InitializePipeReader(nullptr, base::FilePath());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
@@ -113,7 +113,7 @@
    context_->input_task_runner()->PostTask(
        FROM_HERE,
        base::BindOnce([]() { delete ui::X11EventSource::GetInstance(); }));
-@@ -1371,7 +1371,7 @@ bool HostProcess::OnUsernamePolicyUpdate(const base::V
+@@ -1392,7 +1392,7 @@ bool HostProcess::OnUsernamePolicyUpdate(const base::V
    // Returns false: never restart the host after this policy update.
    DCHECK(context_->network_task_runner()->BelongsToCurrentThread());
  
@@ -122,7 +122,7 @@
    absl::optional<bool> host_username_match_required =
        policies.FindBool(policy::key::kRemoteAccessHostMatchUsername);
    if (!host_username_match_required.has_value()) {
-@@ -1780,7 +1780,7 @@ void HostProcess::StartHost() {
+@@ -1801,7 +1801,7 @@ void HostProcess::StartHost() {
    // won't be advertised if it's missing a registry key or something.
    desktop_environment_options_.set_enable_remote_open_url(true);
  
@@ -131,7 +131,7 @@
    desktop_environment_options_.set_enable_remote_webauthn(is_googler_);
  #endif
  
-@@ -1813,7 +1813,7 @@ void HostProcess::StartHost() {
+@@ -1834,7 +1834,7 @@ void HostProcess::StartHost() {
    host_status_logger_ = std::make_unique<HostStatusLogger>(
        host_->status_monitor(), log_to_server_.get());
  
@@ -140,7 +140,16 @@
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->HasSwitch(kEnableUtempter)) {
      host_utmp_logger_ =
-@@ -1984,7 +1984,7 @@ int HostProcessMain() {
+@@ -1866,7 +1866,7 @@ void HostProcess::StartHost() {
+ 
+   host_->Start(host_owner_);
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   // For Windows, ChromotingHostServices connections are handled by the daemon
+   // process, then the message pipe is forwarded to the network process.
+   host_->StartChromotingHostServices();
+@@ -1999,7 +1999,7 @@ int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  
@@ -149,7 +158,7 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2033,7 +2033,7 @@ int HostProcessMain() {
+@@ -2048,7 +2048,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  

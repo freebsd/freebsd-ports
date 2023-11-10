@@ -1,0 +1,10 @@
+--- builds/posix/vers.sh.in.orig	2022-06-07 08:18:52 UTC
++++ builds/posix/vers.sh.in
+@@ -57,7 +57,6 @@ platform_linux() {
+ 		echo "${TAB}$i;"
+ 	done
+ 
+-	echo "${TAB}_IO_stdin_used;"
+ 	echo 'local:'
+ 	echo "${TAB}*;"
+ 	echo '};'

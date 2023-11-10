@@ -6,7 +6,7 @@ MASTER_SITES=	http://chaosophia.net/downloads/osmocom/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an implementation of SMPP-3.4 protocol for PDUs handling
-WWW=		http://c-open-smpp-34.sourceforge.net/
+WWW=		https://c-open-smpp-34.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

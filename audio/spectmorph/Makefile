@@ -1,5 +1,5 @@
 PORTNAME=	spectmorph
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/swesterfeld/spectmorph/releases/download/${DISTVERSION}/
 

@@ -6,7 +6,7 @@ MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TCP connection redirection utility
-WWW=		http://sammy.net/~sammy/hacks/
+WWW=		https://sammy.net/~sammy/hacks/
 
 USES=		gmake
 USE_RC_SUBR=	redir

@@ -7,7 +7,7 @@ DIST_SUBDIR=	scourge
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	S.C.O.U.R.G.E data files
-WWW=		http://scourge.sourceforge.net
+WWW=		https://scourge.sourceforge.net
 
 NO_BUILD=	yes
 NO_ARCH=	*

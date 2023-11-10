@@ -9,6 +9,7 @@ include/fio/arch/arch-ia64.h
 include/fio/arch/arch-loongarch64.h
 include/fio/arch/arch-mips.h
 include/fio/arch/arch-ppc.h
+include/fio/arch/arch-riscv64.h
 include/fio/arch/arch-s390.h
 include/fio/arch/arch-sh.h
 include/fio/arch/arch-sparc.h
@@ -274,12 +275,17 @@ man/man1/fio_generate_plots.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-fdp.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-ng.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-ng.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-ext.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-ext.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-sb.fio
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-pi-sb.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uring-cmd-zoned.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/waitfor.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-compare.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-compare.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-fdp.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-zoned.fio
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/xnvme-zoned.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/zbd-rand-write.fio

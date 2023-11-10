@@ -7,10 +7,13 @@ DISTNAME=	TleenX2-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client for polish IM service called Tlen.pl
-WWW=		http://tleenx.sourceforge.net/
+WWW=		https://tleenx.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Last upstream release was in 2004
+EXPIRATION_DATE=	2023-12-05
 
 LIB_DEPENDS=	libtlen.so:polish/libtlen
 

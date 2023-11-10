@@ -9,7 +9,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:source \
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Open source implementation of the ARJ archiver
-WWW=		http://arj.sourceforge.net/
+WWW=		https://arj.sourceforge.net/
 
 LICENSE=	GPLv2
 

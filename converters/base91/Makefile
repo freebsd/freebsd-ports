@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/basE91/${PORTVERSION}/
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	Utility to encode and decode base91 files
-WWW=		http://base91.sourceforge.net/
+WWW=		https://base91.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

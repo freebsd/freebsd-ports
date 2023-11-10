@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	gugod@gugod.org
 COMMENT=	Color vt102 terminal emulator with transparency support
-WWW=		http://aterm.sourceforge.net/
+WWW=		https://aterm.sourceforge.net/
 
 USES=		cpe xorg
 USE_XORG=	xpm

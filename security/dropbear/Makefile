@@ -1,5 +1,6 @@
 PORTNAME=	dropbear
 PORTVERSION=	2022.83
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://matt.ucc.asn.au/dropbear/releases/
 
@@ -18,9 +19,9 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
 ALL_TARGET=	all scp
 
-OPTIONS_DEFINE=		SMALL_CODE STATIC X11FWD
+OPTIONS_DEFINE=		SMALL_CODE PORTS_LIBTOM STATIC X11FWD
 OPTIONS_DEFAULT=	AES128 AES256 CURVE25519 ECDSA ED25519 GCM \
-			GROUP14_SHA256 GROUP16 RSA SHA2_256
+			GROUP14_SHA256 GROUP16 PORTS_LIBTOM RSA SHA2_256
 OPTIONS_MULTI=		ENC KEY KEX MAC MODE
 OPTIONS_MULTI_ENC=	3DES AES128 AES256 CHACHA20POLY1305
 OPTIONS_MULTI_KEY=	DSS ECDSA ED25519 RSA
@@ -46,6 +47,7 @@ GROUP14_SHA256_DESC=	Enable Group14 Diffie-Helman with SHA256
 GROUP16_DESC=		Enable Group16 Diffie-Hellman
 GROUP1_DESC=		Enable Group1 Diffie-Hellman (insecure)
 MD5_DESC=		Enable MD5 MAC (broken)
+PORTS_LIBTOM_DESC=	Use libtomcrypt/libtommath in ports tree
 RSA_DESC=		Enable RSA public key support
 RSA_SHA1_DESC=		Enable RSA SHA1 MAC (insecure)
 SHA1_96_DESC=		Enable SHA1_96 MAC (less secure)
@@ -58,7 +60,23 @@ X11FWD_DESC=		Enable X11 forwarding
 3DES_IMPLIES=	CTR
 CBC_IMPLIES=	CTR
 
+PORTS_LIBTOM_USES=		localbase:ldflags
+PORTS_LIBTOM_CONFIGURE_ON=	--disable-bundled-libtom
+PORTS_LIBTOM_CONFIGURE_OFF=	--enable-bundled-libtom
+
 STATIC_CONFIGURE_ENABLE=	static
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPORTS_LIBTOM} && ${PORT_OPTIONS:MSTATIC}
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtomcrypt.a:security/libtomcrypt \
+		${LOCALBASE}/lib/libtommath.a:math/libtommath
+.endif
+
+.if ${PORT_OPTIONS:MPORTS_LIBTOM} && ! ${PORT_OPTIONS:MSTATIC}
+LIB_DEPENDS=	libtomcrypt.so:security/libtomcrypt \
+		libtommath.so:math/libtommath
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \

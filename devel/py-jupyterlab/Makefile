@@ -1,5 +1,5 @@
 PORTNAME=	jupyterlab
-PORTVERSION=	3.6.3
+PORTVERSION=	4.0.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,18 +12,19 @@ WWW=		https://jupyter.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-packaging>=0.9<2:devel/py-jupyter-packaging@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>=0:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.1:devel/py-Jinja2@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.3.2:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.5.0:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}async-lru>=1.0.0:devel/py-async-lru@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipykernel>=0:devel/py-ipykernel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=0:devel/py-jupyter-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server>=1.16.0<3:devel/py-jupyter-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-server-ydoc>=0.8.0<0.9:devel/py-jupyter-server-ydoc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-ydoc>=0.2.3<0.4.0:devel/py-jupyter-ydoc@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.19<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}nbclassic>=0:devel/py-nbclassic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}notebook>=0<7:www/py-notebook@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-lsp>=2.0.0:devel/py-jupyter-lsp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0<3:devel/py-jupyter-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.19.0<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2:devel/py-notebook-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=6.1.0:www/py-tornado@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=0:devel/py-traitlets@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
@@ -31,6 +32,14 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.4:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
+.if ${PYTHON_REL} < 31000
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8.3:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
 
 .if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0:textproc/py-tomli@${PY_FLAVOR}

@@ -1,6 +1,6 @@
 PORTNAME=	i3lock-color
 DISTVERSION=	2.13.c.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com
@@ -9,7 +9,6 @@ WWW=		https://github.com/Raymo111/i3lock-color
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/pam_helper:security/pam_helper
 LIB_DEPENDS=	libev.so:devel/libev \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libev.so:devel/libev \
 		libxcb-xrm.so:x11/xcb-util-xrm \
 		libxkbcommon.so:x11/libxkbcommon \
 		libxkbfile.so:x11/libxkbfile
+RUN_DEPENDS=	unix-selfauth-helper>0:security/unix-selfauth-helper
 
 USES=		autoreconf gmake gnome iconv jpeg localbase pkgconfig tar:bzip2 xorg
 USE_CSTD=	c99
@@ -38,7 +38,8 @@ LDFLAGS+=	${ICONV_LIB}
 
 CONFLICTS_INSTALL=	i3lock
 
-PLIST_FILES=	"@(,,4755) bin/i3lock" \
+PLIST_FILES=	bin/i3lock \
+		etc/pam.d/i3lock \
 		man/man1/i3lock.1.gz
 
 OPTIONS_DEFINE=	DOCS
@@ -49,6 +50,8 @@ DOCS_PLIST_FILES=	${DOC_FILES:S|^|${DOCSDIR_REL}/|}
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/i3lock
 	@${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
+	@${LN} -s ${LOCALBASE}/etc/pam.d/unix-selfauth \
+		${STAGEDIR}${PREFIX}/etc/pam.d/i3lock
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

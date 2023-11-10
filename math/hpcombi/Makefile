@@ -1,6 +1,5 @@
 PORTNAME=	HPCombi
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math devel
 
@@ -15,11 +14,12 @@ ONLY_FOR_ARCHS_REASON=	uses AVX instruction set
 
 BUILD_DEPENDS=	sparsehash>0:devel/sparsehash
 LIB_DEPENDS=	libbenchmark.so:devel/benchmark
+TEST_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hivert
 
-USES=		cmake compiler:c++11-lang localbase:ldflags
+USES=		cmake:testing compiler:c++11-lang localbase:ldflags pkgconfig
 
 NO_ARCH=	yes
 
@@ -39,7 +39,7 @@ pre-configure-DOXYGEN-off:
 
 post-stage:
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	${MV} ${STAGEDIR}${PREFIX}/VERSION ${STAGEDIR}${DATADIR}/
+	${MV} ${STAGEDIR}${PREFIX}/.VERSION ${STAGEDIR}${DATADIR}/VERSION
 
 post-stage-DOXYGEN-on:
 	${MV} ${STAGEDIR}${PREFIX}/doc/${PORTNAME}/html ${STAGEDIR}${DOCSDIR}/

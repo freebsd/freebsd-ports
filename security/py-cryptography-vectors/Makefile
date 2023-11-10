@@ -1,5 +1,5 @@
 PORTNAME=	cryptography-vectors
-PORTVERSION=	41.0.4
+PORTVERSION=	41.0.5
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	cryptography_vectors-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Test vectors for the cryptography package
-WWW=		https://github.com/pyca/cryptography/tree/main/vectors
+WWW=		https://cryptography.io/en/latest/development/test-vectors/ \
+		https://github.com/pyca/cryptography/tree/main/vectors
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual

@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/prehor/${PORTNAME}/releases/download/${PORTVERS
 
 MAINTAINER=	rx@rx.cz
 COMMENT=	Milter for amavisd-new
-WWW=		http://amavisd-milter.sourceforge.net
+WWW=		https://amavisd-milter.sourceforge.net
 
 RUN_DEPENDS=	amavisd:security/amavisd-new
 

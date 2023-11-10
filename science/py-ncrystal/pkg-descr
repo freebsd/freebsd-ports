@@ -1,0 +1,7 @@
+NCrystal is a library and associated tools which enables calculations for
+Monte Carlo simulations of thermal neutrons in crystals and other materials,
+supporting a range of physics including both coherent, incoherent, elastic and
+inelastic scatterings in a wide range of materials, including crystal powders,
+mosaic single crystals, layered single crystals, amorphous solids, liquids, and
+gasses. Multiphase materials or isotopically enriched materials are supported as
+well, and the framework furthermore supports phase-contrast (SANS) physics.

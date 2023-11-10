@@ -1,12 +1,13 @@
 PORTNAME=	h5py
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General-purpose Python interface to the HDF5 library
-WWW=		https://www.h5py.org/
+WWW=		https://www.h5py.org/ \
+		https://github.com/h5py/h5py
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licenses/license.txt

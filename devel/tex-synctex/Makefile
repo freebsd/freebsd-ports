@@ -9,7 +9,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Synchronization TeXnology parser library
-WWW=		http://itexmac.sourceforge.net/SyncTeX.html
+WWW=		https://itexmac.sourceforge.net/SyncTeX.html
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/synctexdir/README.txt

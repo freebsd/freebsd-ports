@@ -7,7 +7,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
-WWW=		http://minidlna.sourceforge.net
+WWW=		https://minidlna.sourceforge.net
 
 LICENSE=	GPLv2
 

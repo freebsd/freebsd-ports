@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2023-09-17 07:59:53 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2023-10-13 13:20:35 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  #include "components/keyed_service/core/keyed_service.h"
  #include "components/policy/core/common/cloud/cloud_policy_client.h"
  
@@ -9,7 +9,7 @@
  #include "components/device_signals/core/browser/signals_types.h"
  #endif
  
-@@ -194,7 +194,7 @@ class RealtimeReportingClient : public KeyedService,
+@@ -184,7 +184,7 @@ class RealtimeReportingClient : public KeyedService,
    base::WeakPtrFactory<RealtimeReportingClient> weak_ptr_factory_{this};
  };
  

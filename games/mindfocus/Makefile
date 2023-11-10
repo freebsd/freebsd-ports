@@ -7,7 +7,7 @@ DISTFILES=	mindfocus-0.88.tar.gz mindfocus-data1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lovely characters stay on top of active window
-WWW=		http://www.toyoshima-house.net/classic/mf/index.html
+WWW=		https://www.toyoshima-house.net/classic/mf/index.html
 
 # Converted from RESTRICTED
 LICENSE=	mindfocus

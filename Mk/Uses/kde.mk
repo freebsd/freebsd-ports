@@ -75,18 +75,18 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.27.8
+KDE_PLASMA_VERSION?=		5.27.9
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.110.0
-KDE_FRAMEWORKS_BRANCH?= 	stable
+KDE_FRAMEWORKS_VERSION?=	5.111.0
+KDE_FRAMEWORKS_BRANCH?=		stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	23.08.1
-KDE_APPLICATIONS_SHLIB_VER?=	5.24.1
+KDE_APPLICATIONS_VERSION?=	23.08.3
+KDE_APPLICATIONS_SHLIB_VER?=	5.24.3
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS_SHLIB_G_VER?=	23.8.1
+KDE_APPLICATIONS_SHLIB_G_VER?=	23.8.3
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.
@@ -246,7 +246,7 @@ _USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidget
 			people plasma-framework purpose runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
 
-_USE_FRAMEWORKS_TIER4= 	frameworkintegration calendarcore contacts
+_USE_FRAMEWORKS_TIER4=	frameworkintegration calendarcore contacts
 
 # Porting Aids frameworks provide code and utilities to ease the transition from
 # kdelibs 4 to KDE Frameworks 5. Code should aim to port away from this framework,
@@ -270,7 +270,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			kdeplasma-addons kgamma5 kmenuedit kscreen \
 			kscreenlocker ksshaskpass ksysguard ksystemstats kwallet-pam \
 			kwayland-integration kwin kwrited layer-shell-qt libkscreen \
-			libksysguard milou oxygen plasma-browser-integration \
+			libksysguard milou oxygen oxygen-sounds plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
 			plasma-sdk plasma-workspace plasma-workspace-wallpapers \
 			polkit-kde-agent-1 powerdevil systemsettings xdg-desktop-portal-kde
@@ -461,6 +461,10 @@ kde-oxygen-icons5_PORT=		x11-themes/kf5-oxygen-icons5
 kde-oxygen-icons5_PATH=		${KDE_PREFIX}/share/icons/oxygen/index.theme
 kde-oxygen-icons5_TYPE=		run
 
+kde-oxygen-sounds_PORT=		audio/plasma5-oxygen-sounds
+kde-oxygen-sounds_PATH=		${KDE_PREFIX}/share/sounds/Oxygen-Sys-Log-In.ogg
+kde-oxygen-sounds_TYPE=		run
+
 kde-package_PORT=		devel/kf5-kpackage
 kde-package_LIB=		libKF5Package.so
 
@@ -628,8 +632,8 @@ kde-libksysguard_LIB=		libksgrd.so
 kde-milou_PORT=			deskutils/plasma5-milou
 kde-milou_LIB=			libmilou.so.5
 
-kde-oxygen_PORT= 		x11-themes/plasma5-oxygen
-kde-oxygen_PATH=			${QT_PLUGINDIR}/styles/oxygen.so
+kde-oxygen_PORT=		x11-themes/plasma5-oxygen
+kde-oxygen_PATH=		${QT_PLUGINDIR}/styles/oxygen.so
 
 kde-plasma-browser-integration_PORT=	www/plasma5-plasma-browser-integration
 kde-plasma-browser-integration_PATH=	${KDE_PREFIX}/bin/plasma-browser-integration-host

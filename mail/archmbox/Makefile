@@ -6,7 +6,7 @@ MASTER_SITES=	SF/adc-${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Email archiver that parses mailboxes and performs actions
-WWW=		http://adc-archmbox.sourceforge.net/
+WWW=		https://adc-archmbox.sourceforge.net/
 
 LICENSE=	GPLv2
 

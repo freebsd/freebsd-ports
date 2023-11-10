@@ -5,7 +5,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Multithreaded program to crack PKCS#12 files
-WWW=		http://crackpkcs12.sourceforge.net/
+WWW=		https://crackpkcs12.sourceforge.net/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

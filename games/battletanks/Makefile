@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast 2D tank arcade game with multiplayer and split-screen modes
-WWW=		http://btanks.sourceforge.net/
+WWW=		https://btanks.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

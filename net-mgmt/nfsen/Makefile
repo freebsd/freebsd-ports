@@ -7,7 +7,7 @@ MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based frontend to nfdump netflow collector
-WWW=		http://nfsen.sourceforge.net/
+WWW=		https://nfsen.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt

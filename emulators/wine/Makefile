@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
-BROKEN_i386=	fails to build: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=271201\#c6
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
 
@@ -79,7 +78,7 @@ MONO_DESC=	Bundle Mono MSI package for Wine
 
 PORTSCOUT=	limit:^8\.0
 
-ALSA_CONFIGURE_ON=	--with-alsa --without-oss
+ALSA_CONFIGURE_WITH=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 
@@ -95,7 +94,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 MONO_RUN_DEPENDS=	wine-mono>0:emulators/wine-mono
 
-OSS_CONFIGURE_ON=	--without-alsa --with-oss
+OSS_CONFIGURE_WITH=	oss
 
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat

@@ -1,5 +1,6 @@
 PORTNAME=	qgis
-DISTVERSION=	3.32.3
+DISTVERSION=	3.34.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -32,7 +33,8 @@ BUILD_DEPENDS=	gpsbabel>=1.7.0:astro/gpsbabel \
 		${PYTHON_PKGNAMEPREFIX}six>=1.16.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=3.7.16:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
+LIB_DEPENDS=	libdraco.so:archivers/draco \
+		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libgdal.so:graphics/gdal \
 		libgeos.so:graphics/geos \
@@ -113,7 +115,7 @@ USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
 		multimedia network printsupport qmake:build script serialport \
 		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
-		webengine webkit widgets xml
+		webengine widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
@@ -127,9 +129,9 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQWT_INCLUDE_DIR:PATH=${LOCALBASE}/include/qt5/qwt6 \
 		-DQWT_LIBRARY:FILEPATH=${LOCALBASE}/lib/qt5/libqwt6.so \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
-CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS \
-		WITH_COPC WITH_CUSTOM_WIDGETS WITH_EPT  WITH_INTERNAL_LAZPERF \
-		WITH_POSTGRESQL
+CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
+		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
+		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
 CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr

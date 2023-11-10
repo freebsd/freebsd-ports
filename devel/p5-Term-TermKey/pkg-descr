@@ -1,0 +1,6 @@
+This module offers a lightweight Perl wrapper for the libtermkey
+library, which serves as a valuable tool for abstractly handling
+keypress events in terminal-based programs. Instead of delivering raw
+bytes directly from the TTY device, this library furnishes data
+structures that describe keys, facilitating a more organized and
+user-friendly approach to key event processing.

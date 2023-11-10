@@ -1,9 +1,9 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
 CATEGORIES=	print
-MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
+MASTER_SITES=	LOCAL/tex
 PKGNAMESUFFIX=	-texmf
-DISTFILES=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}-freebsd
 DIST_SUBDIR=	TeX
 EXTRACT_ONLY=
 
@@ -11,142 +11,128 @@ MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, texmf Tree
 WWW=		https://tug.org/texlive/
 
-USES=		cpe python:run tar:xz tex
+# Reduce DEPENDS temporarily
+#USES=		cpe python:run tar:xz tex
+USES=		cpe tar:xz tex
 CPE_VENDOR=	tug
-USE_TEX=	base basic:extract texhash tlmgr:run
-
-EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
-			${EXCLUDE_FILES:S,^,--exclude ${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}/,}
+#USE_TEX=	base basic:extract texhash tlmgr:run
+USE_TEX=	texhash tlmgr:run
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
 
-EXCLUDE_FILES=		\*/doc/man texmf-dist/ls-R texmf-dist/doc \
-			texmf-dist/dvipdfm texmf-dist/dvipdfmx texmf-dist/dvips \
-			texmf-dist/fonts/cmap/dvipdfmx \
-			texmf-dist/fonts/cmap/uptex texmf-dist/fonts/enc/dvips \
-			texmf-dist/fonts/map/dvipdfm \
-			texmf-dist/fonts/map/dvipdfmx \
-			texmf-dist/fonts/map/dvips texmf-dist/fonts/map/luatex \
-			texmf-dist/fonts/misc/xetex \
-			texmf-dist/fonts/ofm/public/japanese-otf \
-			texmf-dist/fonts/ovp/public/japanese-otf-uptex \
-			texmf-dist/fonts/source/ptex texmf-dist/fonts/tfm/ptex \
-			texmf-dist/fonts/tfm/public/japanese-otf \
-			texmf-dist/fonts/tfm/public/japanese-otf-uptex \
-			texmf-dist/fonts/tfm/uptex texmf-dist/fonts/type1/ptex \
-			texmf-dist/fonts/vf/ptex \
-			texmf-dist/fonts/vf/public/japanese-otf \
-			texmf-dist/fonts/vf/public/japanese-otf-uptex \
-			texmf-dist/fonts/vf/uptex texmf-dist/scripts/xetex \
-			texmf-dist/source \
-			texmf-dist/tex/generic/config/luatex-unicode-letters.tex \
-			texmf-dist/tex/generic/config/luatexiniconfig.tex \
-			texmf-dist/tex/generic/context/luatex \
-			texmf-dist/tex/generic/dvips \
-			texmf-dist/tex/generic/hyph-utf8/patterns/ptex \
-			texmf-dist/tex/generic/xetexconfig \
-			texmf-dist/tex/jadetex texmf-dist/tex/lambda \
-			texmf-dist/tex/latex/base \
-			texmf-dist/tex/latex/latexconfig/dvilualatex.ini \
-			texmf-dist/tex/latex/latexconfig/lualatex-patch-kernel.tex \
-			texmf-dist/tex/latex/latexconfig/lualatex-reset-codes.tex \
-			texmf-dist/tex/latex/latexconfig/lualatex.ini \
-			texmf-dist/tex/latex/latexconfig/lualatexiniconfig.tex \
-			texmf-dist/tex/latex/latexconfig/lualatexquotejobname.tex \
-			texmf-dist/tex/latex/latexconfig/xelatex.ini \
-			texmf-dist/tex/lualatex texmf-dist/tex/luatex \
-			texmf-dist/tex/plain/config/aleph.ini \
-			texmf-dist/tex/plain/config/dviluatex.ini \
-			texmf-dist/tex/plain/config/luatex.ini \
-			texmf-dist/tex/plain/config/xetex.ini \
-			texmf-dist/tex/platex texmf-dist/tex/ptex \
-			texmf-dist/tex/uplatex texmf-dist/tex/uptex \
-			texmf-dist/tex/xelatex texmf-dist/tex/xetex \
-			texmf-dist/tex/xmltex texmf-dist/web2c/fmtutil-hdr.cnf \
-			texmf-dist/tex/cslatex texmf-dist/web2c/texmf.cnf \
-			texmf-dist/web2c/updmap-hdr.cfg \
-			texmf-dist/web2c/updmap.cfg texmf-dist/xdvi \
-			texmf-dist/scripts/context/stubs/unix/context \
-			texmf-dist/scripts/context/stubs/unix/contextjit \
-			texmf-dist/scripts/context/stubs/unix/luatools \
-			texmf-dist/scripts/context/stubs/unix/mtxrun \
-			texmf-dist/scripts/context/stubs/unix/mtxrunjit \
-			texmf-dist/scripts/context/stubs/unix/texexec \
-			texmf-dist/scripts/context/stubs/unix/texmfstart \
-			texmf-dist/scripts/context/lua \
-			texmf-dist/scripts/jfontmaps/kanji-config-updmap-sys.sh \
-			texmf-dist/scripts/jfontmaps/kanji-config-updmap.pl \
-			texmf-dist/scripts/jfontmaps/kanji-fontmap-creator.pl \
-			texmf-dist/scripts/lua2dox/lua2dox_filter \
-			texmf-dist/scripts/pdfjam/pdf180 \
-			texmf-dist/scripts/pdfjam/pdf270 \
-			texmf-dist/scripts/pdfjam/pdf90 \
-			texmf-dist/scripts/pdfjam/pdfbook \
-			texmf-dist/scripts/pdfjam/pdfflip \
-			texmf-dist/scripts/pdfjam/pdfjam-pocketmod \
-			texmf-dist/scripts/pdfjam/pdfjam-slides3up \
-			texmf-dist/scripts/pdfjam/pdfjam-slides6up \
-			texmf-dist/scripts/pdfjam/pdfjoin \
-			texmf-dist/scripts/pdfjam/pdfnup \
-			texmf-dist/scripts/pdfjam/pdfpun \
-			texmf-dist/scripts/pmx/pmx2pdf.lua \
-			texmf-dist/scripts/texlive/allcm.sh \
-			texmf-dist/scripts/texlive/allneeded.sh \
-			texmf-dist/scripts/texlive/dvi2fax.sh \
-			texmf-dist/scripts/texlive/dvired.sh \
-			texmf-dist/scripts/texlive/e2pall.pl \
-			texmf-dist/scripts/texlive/fontinst.sh \
-			texmf-dist/scripts/texlive/kpsetool.sh \
-			texmf-dist/scripts/texlive/kpsewhere.sh \
-			texmf-dist/scripts/texlive/ps2frag.sh \
-			texmf-dist/scripts/texlive/pslatex.sh \
-			texmf-dist/scripts/texlive/rubibtex.sh \
-			texmf-dist/scripts/texlive/rumakeindex.sh \
-			texmf-dist/scripts/texlive/rungs.tlu \
-			texmf-dist/scripts/texlive/texconfig-dialog.sh \
-			texmf-dist/scripts/texlive/texconfig-sys.sh \
-			texmf-dist/scripts/texlive/texconfig.sh \
-			texmf-dist/scripts/texlive/texlinks.sh \
-			texmf-dist/scripts/texlive/tlmgr.pl \
-			texmf-dist/scripts/texliveonfly/texliveonfly.py \
-			texmf-dist/scripts/crossrefware/bbl2bib.pl \
-			texmf-dist/scripts/crossrefware/bibmradd.pl \
-			texmf-dist/scripts/crossrefware/biburl2doi.pl \
-			${TEXLIVE_BASE_PLIST}
-TEXLIVE_BASE_PLIST!=	grep TEXMFDISTDIR ${.CURDIR}/../texlive-base/pkg-plist | sed 's|%%TEXMFDISTDIR%%|texmf-dist|g'
 PKG_CREATE_VERBOSE=	yes
 TEXHASHDIRS=		${TEXMFDIR} ${TEXMFDISTDIR}
 
 do-install:
-	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}${PKGNAMESUFFIX}${EXTRACT_SUFX} \
-		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${PREFIX}/share \
+	${TAR} -Jxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		-C ${STAGEDIR}${PREFIX}/share \
 		--strip-components 1 --no-same-permission --no-same-owner
-	${MKDIR} ${STAGEDIR}${PREFIX}/${TEXMFDISTDIR}/tex/latex/base
-	${REINPLACE_CMD} -i '' 's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' ${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -type d -empty | ${SORT} -r | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
-post-install:
-	@${REINPLACE_CMD} -i '' -e '1s|/bin/bash|${bash_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/createlpsudoku \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/logicpuzzle/lpsmag
-	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/mycv/mycv_split_contents.pl
+.if defined(MAINTAINER_MODE)
+EXCLUDE_FILES=		\*/doc/man ls-R doc dvipdfm dvipdfmx dvips \
+			fonts/cmap/dvipdfmx fonts/cmap/uptex fonts/enc/dvips \
+			fonts/map/dvipdfm fonts/map/dvipdfmx fonts/map/dvips \
+			fonts/map/luatex fonts/misc/xetex fonts/source/ptex \
+			fonts/tfm/ptex fonts/ofm/public/japanese-otf tex/jadetex \
+			tex/lambda fonts/ovp/public/japanese-otf-uptex source \
+			fonts/tfm/public/japanese-otf fonts/vf/ptex xdvi \
+			fonts/tfm/public/japanese-otf-uptex tex/generic/dvips \
+			tex/latex/base fonts/tfm/uptex fonts/type1/ptex \
+			fonts/vf/public/japanese-otf tex/lualatex tex/luatex \
+			fonts/vf/public/japanese-otf-uptex fonts/vf/uptex \
+			tex/generic/config/luatex-unicode-letters.tex \
+			tex/generic/config/luatexiniconfig.tex scripts/xetex \
+			tex/generic/context/luatex tex/generic/xetexconfig \
+			tex/generic/hyph-utf8/patterns/ptex tex/platex tex/ptex \
+			tex/latex/latexconfig/dvilualatex.ini tex/uplatex \
+			tex/uptex tex/latex/latexconfig/lualatex-patch-kernel.tex \
+			tex/latex/latexconfig/lualatex-reset-codes.tex tex/xelatex \
+			tex/xetex tex/latex/latexconfig/lualatex.ini \
+			tex/latex/latexconfig/lualatexiniconfig.tex \
+			tex/latex/latexconfig/lualatexquotejobname.tex \
+			tex/latex/latexconfig/xelatex.ini scripts/context/lua \
+			tex/plain/config/aleph.ini web2c/updmap-hdr.cfg \
+			tex/plain/config/dviluatex.ini web2c/updmap.cfg \
+			tex/plain/config/luatex.ini tex/plain/config/xetex.ini \
+			tex/xmltex web2c/fmtutil-hdr.cnf tex/cslatex \
+			web2c/texmf.cnf scripts/context/stubs/unix/context \
+			scripts/context/stubs/unix/contextjit \
+			scripts/context/stubs/unix/luatools \
+			scripts/context/stubs/unix/mtxrun \
+			scripts/context/stubs/unix/mtxrunjit \
+			scripts/context/stubs/unix/texexec \
+			scripts/context/stubs/unix/texmfstart \
+			scripts/jfontmaps/kanji-config-updmap-sys.sh \
+			scripts/jfontmaps/kanji-config-updmap.pl \
+			scripts/jfontmaps/kanji-fontmap-creator.pl \
+			scripts/lua2dox/lua2dox_filter scripts/pdfjam/pdfflip \
+			scripts/pdfjam/pdf180 scripts/pdfjam/pdf270 \
+			scripts/pdfjam/pdf90 scripts/pdfjam/pdfbook \
+			scripts/pdfjam/pdfjam-pocketmod scripts/pdfjam/pdfjoin \
+			scripts/pdfjam/pdfjam-slides3up scripts/pdfjam/pdfnup \
+			scripts/pdfjam/pdfjam-slides6up scripts/pdfjam/pdfpun \
+			scripts/pmx/pmx2pdf.lua scripts/texlive/allcm.sh \
+			scripts/texlive/allneeded.sh scripts/texlive/dvi2fax.sh \
+			scripts/texlive/dvired.sh scripts/texlive/e2pall.pl \
+			scripts/texlive/fontinst.sh scripts/texlive/kpsetool.sh \
+			scripts/texlive/kpsewhere.sh scripts/texlive/ps2frag.sh \
+			scripts/texlive/pslatex.sh scripts/texlive/rubibtex.sh \
+			scripts/texlive/rumakeindex.sh scripts/texlive/rungs.tlu \
+			scripts/texlive/texconfig-dialog.sh \
+			scripts/texlive/texconfig-sys.sh scripts/texlive/tlmgr.pl \
+			scripts/texlive/texconfig.sh scripts/texlive/texlinks.sh \
+			scripts/texliveonfly/texliveonfly.py \
+			scripts/crossrefware/bbl2bib.pl \
+			scripts/crossrefware/bibmradd.pl \
+			scripts/crossrefware/biburl2doi.pl \
+			${TEXLIVE_BASE_PLIST}
+TEXLIVE_BASE_PLIST!=	grep TEXMFDISTDIR ${.CURDIR}/../texlive-base/pkg-plist | sed 's|%%TEXMFDISTDIR%%/||g'
+EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
+			${EXCLUDE_FILES:S,^,--exclude ${DISTNAME_TEXMF}/texmf-dist/,}
+
+_maintainer-extract:
+	${MAKE} clean
+	${MKDIR} ${WRKSRC}
+	${CAT} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME_TEXMF}${EXTRACT_SUFX} \
+		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}$ \
+		--strip-components 1 --no-same-permission --no-same-owner
+
+_maintainer-patch: _maintainer-extract
+	${MKDIR} ${WRKSRC}/texmf-dist/tex/latex/base
+	${REINPLACE_CMD} -i '' \
+		's/\\def\\magyar@sugg@ie@low#1#2#3/\\def\\magyar@sugg@ie@low\\protect #1#2#3/' \
+		${WRKSRC}/texmf-dist/tex/generic/babel-hungarian/magyar.ldf
+	${REINPLACE_CMD} -i '' -e '1s|/bin/bash|${bash_CMD}|' \
+		${WRKSRC}/texmf-dist/scripts/logicpuzzle/createlpsudoku \
+		${WRKSRC}/texmf-dist/scripts/logicpuzzle/lpsmag
+	${REINPLACE_CMD} -i '' -e '1s|/usr/bin/perl|${perl_CMD}|' \
+		${WRKSRC}/texmf-dist/scripts/mycv/mycv_split_contents.pl
 	@${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|; \
 		1s|/usr/bin/python|${python_CMD}|;' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/asymptote/GUI/*.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/webquiz/webquiz \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/scripts/*/*.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/latex/wargame/*.py
+		${WRKSRC}/texmf-dist/asymptote/GUI/*.py \
+		${WRKSRC}/texmf-dist/scripts/webquiz/webquiz \
+		${WRKSRC}/texmf-dist/scripts/*/*.py \
+		${WRKSRC}/texmf-dist/tex/latex/wargame/*.py
 	@${REINPLACE_CMD} -i '' -E -e '/ec\.tex/d' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex
+		${WRKSRC}/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-zh-latn-pinyin.tex \
+		${WRKSRC}/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-la-x-liturgic.tex
 	@${REINPLACE_CMD} -i '' -e '1s|/usr/bin/luatex|${LOCALBASE}/bin/luatex|' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/tex/generic/pgfplots/lua/*.lua
+		${WRKSRC}/texmf-dist/tex/generic/pgfplots/lua/*.lua
+
+_maintainer-dist: _maintainer-patch
+	${TAR} --options xz:compression-level=9 -Jcvf \
+		${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+		-C ${WRKDIR} ${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+	scp ${WRKDIR}/texlive-20230313-texmf-freebsd.tar.xz \
+		bofh@freefall.freebsd.org://home/tex/public_distfiles/
+
+.endif
 
 .include <bsd.port.mk>

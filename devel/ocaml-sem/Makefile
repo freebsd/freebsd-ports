@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POSIX semaphores for OCaml
-WWW=		http://ocaml-sem.sourceforge.net/
+WWW=		https://ocaml-sem.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

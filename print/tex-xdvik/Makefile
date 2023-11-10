@@ -8,7 +8,7 @@ DIST_SUBDIR=	TeX
 
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
-WWW=		http://xdvi.sourceforge.net/
+WWW=		https://xdvi.sourceforge.net/
 
 LICENSE=	GPLv2
 

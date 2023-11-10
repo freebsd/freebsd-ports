@@ -6,7 +6,7 @@ DISTNAME=	vmpsd-${PORTVERSION}
 
 MAINTAINER=	vladimir.pushkar@gmail.com
 COMMENT=	GPL implementation of the VMPS protocol
-WWW=		http://vmps.sourceforge.net/
+WWW=		https://vmps.sourceforge.net/
 
 LICENSE=	GPLv2
 

@@ -1,5 +1,5 @@
 PORTNAME=	tiledb
-PORTVERSION=	2.17.1
+PORTVERSION=	2.17.3
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,8 +27,11 @@ RUN_DEPENDS=	capnproto080>=0.8.0:devel/capnproto080 \
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 
 CFLAGS+=	-DSPDLOG_FMT_EXTERNAL=1
+CFLAGS_armv6+=	-Wno-c++11-narrowing
+CFLAGS_armv7+=	-Wno-c++11-narrowing
 CFLAGS_i386+=	-Wno-c++11-narrowing
 CMAKE_ARGS=	-DCATCH_INCLUDE_DIR=${LOCALBASE}/include/catch2 \
+		-DFREEBSD_OPENSSLBASE=${OPENSSLBASE} \
 		-Dlibmagic_DICTIONARY=/usr/share/misc/magic.mgc
 CMAKE_OFF=	TILEDB_ABSEIL \
 		TILEDB_ALLOW_REGEX_CHAR_PATH \
@@ -62,6 +65,12 @@ LDFLAGS+=	-lfmt
 GH_ACCOUNT=	TileDB-Inc
 GH_PROJECT=	TileDB
 USE_GITHUB=	yes
+
+OPTIONS_DEFINE=	AVX2
+OPTIONS_DEFAULT=AVX2
+AVX2_DESC=	AVX2 instructions support
+
+AVX2_CMAKE_BOOL=	COMPILER_SUPPORTS_AVX2
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libbz2.so ${STAGEDIR}${PREFIX}/lib/liblz4.so ${STAGEDIR}${PREFIX}/lib/libzstd.so

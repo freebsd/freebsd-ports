@@ -6,7 +6,7 @@ lib/cmake/UMFPACK/UMFPACKTargets.cmake
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.6
-lib/libumfpack.so.6.2.0
+lib/libumfpack.so.%%VER%%
 libdata/pkgconfig/UMFPACK.pc
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_QuickStart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_README.txt

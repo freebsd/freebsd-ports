@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance, flexible monitoring system
-WWW=		http://cricket.sourceforge.net/
+WWW=		https://cricket.sourceforge.net/
 
 RUN_DEPENDS=	rrdtool>=0:databases/rrdtool \
 		p5-CGI>0:www/p5-CGI \

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/FooBillard-Sources/
 
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Free OpenGL billiards game
-WWW=		http://foobillard.sourceforge.net/
+WWW=		https://foobillard.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

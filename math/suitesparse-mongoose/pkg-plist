@@ -7,6 +7,6 @@ lib/cmake/Mongoose/MongooseTargets.cmake
 lib/libmongoose.a
 lib/libmongoose.so
 lib/libmongoose.so.3
-lib/libmongoose.so.3.2.0
+lib/libmongoose.so.3.2.1
 libdata/pkgconfig/Mongoose.pc
 %%PORTDOCS%%%%DOCSDIR%%/Mongoose_UserGuide.pdf

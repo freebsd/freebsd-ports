@@ -40,7 +40,8 @@ CC=		ada
 _ADAPATH=	${LOCALBASE}/gnat${_ada_version}/bin
 _ADAPORT=	lang/gnat${_ada_version}
 _BINDEP=	${_ADAPATH}/gnat
-CC=		gnatmake -f -u
+GNATMAKE=	gnatmake -f -u
+CC=		gcc
 BINARY_ALIAS+=	ada=${_ADAPATH}/gcc
 .  endif
 

@@ -5,7 +5,7 @@ MASTER_SITES=	https://core.tcl.tk/tcllib/uv/
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
-WWW=		http://tcllib.sourceforge.net/
+WWW=		https://tcllib.sourceforge.net/
 
 LICENSE=	TclTk
 LICENSE_NAME=	Tcl/Tk License

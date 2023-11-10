@@ -1,10 +1,10 @@
 Don't pass --target when CC/CXX contains clang
 
 diff --git third_party/rust/cc/src/lib.rs third_party/rust/cc/src/lib.rs
-index 8cafd2a..f40b746 100644
+index 9d133a0..273e520 100644
 --- third_party/rust/cc/src/lib.rs
 +++ third_party/rust/cc/src/lib.rs
-@@ -2796,24 +2796,7 @@ impl Tool {
+@@ -2667,24 +2667,7 @@ impl Tool {
      }
  
      fn with_features(path: PathBuf, clang_driver: Option<&str>, cuda: bool) -> Self {

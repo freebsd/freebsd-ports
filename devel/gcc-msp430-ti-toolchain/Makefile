@@ -4,7 +4,6 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		SOURCEWARE/binutils/releases:binutils \
-		ftp://sources.redhat.com/pub/:newlib \
 		GNU/gdb:gdb \
 		SOURCEWARE/newlib:newlib \
 		http://software-dl.ti.com/msp430/msp430_public_sw/mcu/msp430/MSPGCC/${TI_VERSION:S/./_/g}/export/:tipatch \

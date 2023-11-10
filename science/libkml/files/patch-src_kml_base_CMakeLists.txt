@@ -1,0 +1,12 @@
+Fix linking with CMake >= 3.27 due to changes [1] in the FindEXPAT module.
+
+[1] https://github.com/Kitware/CMake/commit/13079f382b480c8fe6a68d98afc2cec716a75e59
+
+--- src/kml/base/CMakeLists.txt.orig	2017-01-15 08:52:06 UTC
++++ src/kml/base/CMakeLists.txt
+@@ -49,4 +49,4 @@ build_target(
+   SRCS ${SRCS}
+   INCS ${INCS}
+   DEPENDS ${KMLBASE_DEPENDS}
+-  LINKS ${ZLIB_LIBRARY} ${MINIZIP_LIBRARIES} ${URIPARSER_LIBRARY} ${EXPAT_LIBRARY} )
++  LINKS ${ZLIB_LIBRARY} ${MINIZIP_LIBRARIES} ${URIPARSER_LIBRARY} EXPAT::EXPAT )

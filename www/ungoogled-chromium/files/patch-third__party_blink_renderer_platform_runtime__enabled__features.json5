@@ -1,15 +1,24 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-09-17 07:59:53 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-11-04 07:08:51 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -2667,7 +2667,7 @@
+@@ -1936,7 +1936,7 @@
+       base_feature_status: "enabled",
+       copied_from_base_feature_if: "overridden",
+       origin_trial_feature_name: "FullscreenPopupWindows",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+     },
+     {
+       name: "GamepadButtonAxisEvents",
+@@ -2849,7 +2849,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+       status: "stable",
      },
      {
-       name: "PaymentInstruments",
-@@ -3663,7 +3663,7 @@
+@@ -3874,7 +3874,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -18,7 +27,7 @@
      },
      {
        name: "URLPatternCompareComponent",
-@@ -3857,12 +3857,12 @@
+@@ -4077,12 +4077,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

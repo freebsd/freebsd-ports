@@ -6,7 +6,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Opensource CSS parser and optimiser
-WWW=		http://csstidy.sourceforge.net/
+WWW=		https://csstidy.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/COPYING

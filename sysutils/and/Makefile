@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Auto Nice Daemon
-WWW=		http://and.sourceforge.net/
+WWW=		https://and.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE

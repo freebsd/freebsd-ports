@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}-linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform pong game written in SDL
-WWW=		http://pengpong.sourceforge.net/
+WWW=		https://pengpong.sourceforge.net/
 
 USES=		perl5 sdl
 USE_SDL=	image sdl

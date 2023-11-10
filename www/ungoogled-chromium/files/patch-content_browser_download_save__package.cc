@@ -1,6 +1,6 @@
---- content/browser/download/save_package.cc.orig	2023-09-17 07:59:53 UTC
+--- content/browser/download/save_package.cc.orig	2023-11-04 07:08:51 UTC
 +++ content/browser/download/save_package.cc
-@@ -764,8 +764,13 @@ void SavePackage::Finish() {
+@@ -769,8 +769,13 @@ void SavePackage::Finish() {
    if (download_) {
      std::vector<download::DownloadSaveItemData::ItemInfo> files;
      for (auto& item : saved_success_items_) {

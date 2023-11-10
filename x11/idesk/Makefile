@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
-WWW=		http://idesk.sourceforge.net
+WWW=		https://idesk.sourceforge.net
 
 LIB_DEPENDS=	libXft.so:x11-fonts/libXft \
 		libImlib2.so:graphics/imlib2

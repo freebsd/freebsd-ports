@@ -10,6 +10,7 @@ include/librssguard/services/abstract/gui/formaddeditlabel.h
 include/librssguard/services/abstract/gui/formaddeditprobe.h
 include/librssguard/services/abstract/gui/formcategorydetails.h
 include/librssguard/services/abstract/gui/formfeeddetails.h
+include/librssguard/services/abstract/gui/multifeededitcheckbox.h
 include/librssguard/services/abstract/importantnode.h
 include/librssguard/services/abstract/label.h
 include/librssguard/services/abstract/labelsnode.h

@@ -3,7 +3,7 @@ PORTVERSION=	1.2.4
 CATEGORIES=	devel java
 MASTER_SITES=	http://forge.scilab.org/index.php/p/${PORTNAME}/downloads/get/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Swing windowing and docking framework
 WWW=		https://forge.scilab.org/index.php/p/flexdock/
 

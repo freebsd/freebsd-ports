@@ -1,6 +1,6 @@
---- driver/Makefile.in.orig	2022-09-02 09:08:36 UTC
+--- driver/Makefile.in.orig	2023-10-11 00:37:06 UTC
 +++ driver/Makefile.in
-@@ -78,7 +78,7 @@ INTL_LIBS	= @INTLLIBS@
+@@ -79,7 +79,7 @@ AD_DIR		= @APPDEFAULTS@
  AD_DIR		= @APPDEFAULTS@
  
  # $(sysconfdir) is either /usr/local/etc or /usr/etc but this must be /etc.

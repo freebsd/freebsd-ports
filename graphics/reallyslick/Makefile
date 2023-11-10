@@ -7,7 +7,7 @@ DISTNAME=	rss-glx_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL screensaver collection
-WWW=		http://rss-glx.sourceforge.net/
+WWW=		https://rss-glx.sourceforge.net/
 
 LIB_DEPENDS=	libGLC.so:graphics/quesoglc
 

@@ -1,13 +1,13 @@
 PORTNAME=	biosig
 DISTVERSION=	2.5.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	SF/${PORTNAME}/BioSig%20for%20C_C%2B%2B/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for reading and writing different biosignal data format
-WWW=		http://biosig.sourceforge.net/
+WWW=		https://biosig.sourceforge.net/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

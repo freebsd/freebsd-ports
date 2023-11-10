@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/gahr \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mesh comparison software
-WWW=		http://meshdev.sourceforge.net/
+WWW=		https://meshdev.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt

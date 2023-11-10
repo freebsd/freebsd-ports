@@ -1,9 +1,9 @@
 PORTNAME=	RcppEigen
-PORTVERSION=	0.3.3.9.3
+DISTVERSION=	0.3.3.9.4
 CATEGORIES=	math
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Rcpp integration for the Eigen templated linear algebra library
 WWW=		https://cran.r-project.org/web/packages/RcppEigen/
 

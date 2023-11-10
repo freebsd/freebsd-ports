@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scriptable FTP client
-WWW=		http://quftp.sourceforge.net/
+WWW=		https://quftp.sourceforge.net/
 
 LICENSE=	GPLv2
 

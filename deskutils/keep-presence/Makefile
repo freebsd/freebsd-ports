@@ -1,5 +1,6 @@
 PORTNAME=	keep-presence
-DISTVERSION=	1.0.6 # repo not tagged
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.7
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,6 @@ USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	carrot69
-GH_TAGNAME=	a6cf974
 
 WRKSRC_SUBDIR=	src
 

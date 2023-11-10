@@ -7,7 +7,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 web server
-WWW=		http://mod-tidy.sourceforge.net/
+WWW=		https://mod-tidy.sourceforge.net/
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi

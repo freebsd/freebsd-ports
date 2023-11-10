@@ -1,19 +1,17 @@
 PORTNAME=	cadaver
-PORTVERSION=	0.23.3
-PORTREVISION=	4
+PORTVERSION=	0.24
 CATEGORIES=	www
-MASTER_SITES=	http://www.webdav.org/cadaver/ \
-		http://www.tcbug.org/
+MASTER_SITES=	https://notroj.github.io/cadaver/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commandline client for DAV
-WWW=		http://www.webdav.org/cadaver/
+WWW=		https://notroj.github.io/cadaver/
 
 LIB_DEPENDS=	libneon.so:www/neon
 
+USES=		ssl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-netrc
-ALL_TARGET=	cadaver
+CONFIGURE_ARGS=	--enable-netrc --with-ssl
 
 PLIST_FILES=	bin/cadaver \
 		man/man1/cadaver.1.gz
@@ -34,16 +32,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 USES+=		cpe
 CPE_VENDOR=	webdav
-.if !defined(WITHOUT_OPENSSL)
-USES+=		ssl
-CONFIGURE_ARGS+=	--with-ssl --with-force-ssl
-post-install:
-	#
-	#
-	@${CAT} ${PKGMESSAGE}
-	#
-	#
-.endif
 
 OPTIONS_DEFINE=	NLS
 
@@ -53,7 +41,7 @@ OPTIONS_DEFINE=	NLS
 USES+=		gettext iconv
 CONFIGURE_ARGS+=${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE}
-LANGS=en@quot es it
+LANGS=en@quot es
 .for lang in ${LANGS}
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/cadaver.mo
 .endfor

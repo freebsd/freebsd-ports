@@ -7,6 +7,8 @@ MAINTAINER=	LukeD@pobox.com
 COMMENT=	DockApp showing the state of a wireless network device
 WWW=		http://www.nazgul.ch/dev_wmwlmon.html
 
+DEPRECATED=	BROKEN on all supported versions after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_FreeBSD_13=	does not compile: wl.c:29:10: fatal error: 'dev/wi/if_wavelan_ieee.h' file not found
 BROKEN_FreeBSD_14=	does not compile: wl.c:29:10: fatal error: 'dev/wi/if_wavelan_ieee.h' file not found
 

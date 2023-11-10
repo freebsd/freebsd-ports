@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Perl interface to the Gtk2Spell library
-WWW=		http://gtk2-perl.sourceforge.net/
+WWW=		https://gtk2-perl.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,7 +1,6 @@
 PORTNAME=	hyprpicker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.1
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,9 +12,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
+USES=		compiler:c++11-lib cmake gnome localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm

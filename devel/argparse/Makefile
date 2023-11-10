@@ -1,7 +1,6 @@
 PORTNAME=	argparse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9
-PORTREVISION=	1
+DISTVERSION=	3.0
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,9 +8,9 @@ COMMENT=	Argument Parser for Modern C++
 WWW=		https://github.com/p-ranav/argparse
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake compiler:c++17-lang
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
 

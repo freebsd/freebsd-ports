@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2023-11-07 22:10:54 UTC
++++ pyproject.toml
+@@ -23,7 +23,6 @@
+ requires = [
+     "setuptools>=42",
+     "scikit-build>=0.13",
+-    "cmake>=3.18",
+     "numpy"
+ ]
+ build-backend = "setuptools.build_meta"

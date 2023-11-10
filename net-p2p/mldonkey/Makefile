@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/ygrek/${PORTNAME}/releases/download/release-3-1
 
 MAINTAINER?=	danfe@FreeBSD.org
 COMMENT?=	Multi-protocol peer-to-peer client written in OCaml
-WWW=		http://mldonkey.sourceforge.net/
+WWW=		https://mldonkey.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt

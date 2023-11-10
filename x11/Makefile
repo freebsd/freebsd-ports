@@ -610,12 +610,14 @@
     SUBDIR += xtrans
     SUBDIR += xtrlock
     SUBDIR += xtset
+    SUBDIR += xvattr
     SUBDIR += xvidtune
     SUBDIR += xvinfo
     SUBDIR += xvkbd
     SUBDIR += xvmcinfo
     SUBDIR += xvt
     SUBDIR += xwatchwin
+    SUBDIR += xwaylandvideobridge
     SUBDIR += xwd
     SUBDIR += xwininfo
     SUBDIR += xwinwrap

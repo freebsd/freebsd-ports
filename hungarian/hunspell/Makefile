@@ -6,7 +6,7 @@ DISTNAME=	hu_HU-${PORTVERSION}
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Hunspell Hungarian dictionary
-WWW=		http://magyarispell.sourceforge.net/
+WWW=		https://magyarispell.sourceforge.net/
 
 LICENSE=	GPLv2 LGPL21 MPL11
 LICENSE_COMB=	dual

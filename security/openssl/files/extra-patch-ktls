@@ -1,1261 +1,27 @@
-diff --git CHANGES CHANGES
-index a5522e5fa5..98961effc0 100644
---- CHANGES
-+++ CHANGES
-@@ -606,6 +606,11 @@
-      necessary to configure just to create a source distribution.
-      [Richard Levitte]
- 
-+  *) Added support for Linux Kernel TLS data-path. The Linux Kernel data-path
-+     improves application performance by removing data copies and providing
-+     applications with zero-copy system calls such as sendfile and splice.
-+     [Boris Pismenny]
-+
-  Changes between 1.1.1 and 1.1.1a [20 Nov 2018]
- 
-   *) Timing vulnerability in DSA signature generation
-diff --git Configure Configure
-index 4bea49d7da..e656814a7f 100755
---- Configure
-+++ Configure
-@@ -341,6 +341,7 @@ my @dtls = qw(dtls1 dtls1_2);
- # For developers: keep it sorted alphabetically
- 
- my @disablables = (
-+    "ktls",
-     "afalgeng",
-     "aria",
-     "asan",
-@@ -474,6 +475,7 @@ our %disabled = ( # "what"         => "comment"
-                   "weak-ssl-ciphers"    => "default",
-                   "zlib"                => "default",
-                   "zlib-dynamic"        => "default",
-+		  "ktls"                => "default",
-                 );
- 
- # Note: => pair form used for aesthetics, not to truly make a hash table
-@@ -1583,6 +1585,33 @@ unless ($disabled{devcryptoeng}) {
-     }
- }
- 
-+unless ($disabled{ktls}) {
-+    $config{ktls}="";
-+    if ($target =~ m/^linux/) {
-+        my $usr = "/usr/$config{cross_compile_prefix}";
-+        chop($usr);
-+        if ($config{cross_compile_prefix} eq "") {
-+            $usr = "/usr";
-+        }
-+        my $minver = (4 << 16) + (13 << 8) + 0;
-+        my @verstr = split(" ",`cat $usr/include/linux/version.h | grep LINUX_VERSION_CODE`);
-+
-+        if ($verstr[2] < $minver) {
-+            disable('too-old-kernel', 'ktls');
-+        }
-+    } elsif ($target =~ m/^BSD/) {
-+        my $cc = $config{CROSS_COMPILE}.$config{CC};
-+        system("printf '#include <sys/types.h>\n#include <sys/ktls.h>' | $cc -E - >/dev/null 2>&1");
-+        if ($? != 0) {
-+            disable('too-old-freebsd', 'ktls');
-+        }
-+    } else {
-+        disable('not-linux-or-freebsd', 'ktls');
-+    }
-+}
-+
-+push @{$config{openssl_other_defines}}, "OPENSSL_NO_KTLS" if ($disabled{ktls});
-+
- # Get the extra flags used when building shared libraries and modules.  We
- # do this late because some of them depend on %disabled.
- 
-diff --git INSTALL INSTALL
-index f3ac727183..f6f754fd5e 100644
---- INSTALL
-+++ INSTALL
-@@ -263,6 +263,15 @@
-                    Don't build the AFALG engine. This option will be forced if
-                    on a platform that does not support AFALG.
- 
-+  enable-ktls
-+                   Build with Kernel TLS support. This option will enable the
-+                   use of the Kernel TLS data-path, which can improve
-+                   performance and allow for the use of sendfile and splice
-+                   system calls on TLS sockets. The Kernel may use TLS
-+                   accelerators if any are available on the system.
-+                   This option will be forced off on systems that do not support
-+                   the Kernel TLS data-path.
-+
-   enable-asan
-                    Build with the Address sanitiser. This is a developer option
-                    only. It may not work on all platforms and should never be
-diff --git apps/s_client.c apps/s_client.c
-index 00effc8037..5664e7e04e 100644
---- apps/s_client.c
-+++ apps/s_client.c
-@@ -3295,6 +3295,12 @@ static void print_stuff(BIO *bio, SSL *s, int full)
-     BIO_printf(bio, "Expansion: %s\n",
-                expansion ? SSL_COMP_get_name(expansion) : "NONE");
- #endif
-+#ifndef OPENSSL_NO_KTLS
-+    if (BIO_get_ktls_send(SSL_get_wbio(s)))
-+        BIO_printf(bio_err, "Using Kernel TLS for sending\n");
-+    if (BIO_get_ktls_recv(SSL_get_rbio(s)))
-+        BIO_printf(bio_err, "Using Kernel TLS for receiving\n");
-+#endif
- 
- #ifdef SSL_DEBUG
-     {
-diff --git apps/s_server.c apps/s_server.c
-index 64d53e68d0..9fcb8d7a7b 100644
---- apps/s_server.c
-+++ apps/s_server.c
-@@ -2934,6 +2934,12 @@ static void print_connection_info(SSL *con)
-         }
-         OPENSSL_free(exportedkeymat);
-     }
-+#ifndef OPENSSL_NO_KTLS
-+    if (BIO_get_ktls_send(SSL_get_wbio(con)))
-+        BIO_printf(bio_err, "Using Kernel TLS for sending\n");
-+    if (BIO_get_ktls_recv(SSL_get_rbio(con)))
-+        BIO_printf(bio_err, "Using Kernel TLS for receiving\n");
-+#endif
- 
-     (void)BIO_flush(bio_s_out);
- }
-diff --git crypto/bio/b_sock2.c crypto/bio/b_sock2.c
-index 104ff31b0d..771729880e 100644
---- crypto/bio/b_sock2.c
-+++ crypto/bio/b_sock2.c
-@@ -12,6 +12,7 @@
- #include <errno.h>
- 
- #include "bio_local.h"
-+#include "internal/ktls.h"
- 
- #include <openssl/err.h>
- 
-@@ -50,6 +51,17 @@ int BIO_socket(int domain, int socktype, int protocol, int options)
-         BIOerr(BIO_F_BIO_SOCKET, BIO_R_UNABLE_TO_CREATE_SOCKET);
-         return INVALID_SOCKET;
-     }
-+# ifndef OPENSSL_NO_KTLS
-+    {
-+        /*
-+         * The new socket is created successfully regardless of ktls_enable.
-+         * ktls_enable doesn't change any functionality of the socket, except
-+         * changing the setsockopt to enable the processing of ktls_start.
-+         * Thus, it is not a problem to call it for non-TLS sockets.
-+         */
-+        ktls_enable(sock);
-+    }
-+# endif
- 
-     return sock;
- }
-diff --git crypto/bio/bss_conn.c crypto/bio/bss_conn.c
-index 807a82b23b..10cf20871c 100644
---- crypto/bio/bss_conn.c
-+++ crypto/bio/bss_conn.c
-@@ -11,6 +11,7 @@
- #include <errno.h>
- 
- #include "bio_local.h"
-+#include "internal/ktls.h"
- 
- #ifndef OPENSSL_NO_SOCK
- 
-@@ -20,6 +21,9 @@ typedef struct bio_connect_st {
-     char *param_hostname;
-     char *param_service;
-     int connect_mode;
-+# ifndef OPENSSL_NO_KTLS
-+    unsigned char record_type;
-+# endif
- 
-     BIO_ADDRINFO *addr_first;
-     const BIO_ADDRINFO *addr_iter;
-@@ -320,7 +324,12 @@ static int conn_read(BIO *b, char *out, int outl)
- 
-     if (out != NULL) {
-         clear_socket_error();
--        ret = readsocket(b->num, out, outl);
-+# ifndef OPENSSL_NO_KTLS
-+        if (BIO_get_ktls_recv(b))
-+            ret = ktls_read_record(b->num, out, outl);
-+        else
-+# endif
-+            ret = readsocket(b->num, out, outl);
-         BIO_clear_retry_flags(b);
-         if (ret <= 0) {
-             if (BIO_sock_should_retry(ret))
-@@ -345,7 +354,16 @@ static int conn_write(BIO *b, const char *in, int inl)
-     }
- 
-     clear_socket_error();
--    ret = writesocket(b->num, in, inl);
-+# ifndef OPENSSL_NO_KTLS
-+    if (BIO_should_ktls_ctrl_msg_flag(b)) {
-+        ret = ktls_send_ctrl_message(b->num, data->record_type, in, inl);
-+        if (ret >= 0) {
-+            ret = inl;
-+            BIO_clear_ktls_ctrl_msg_flag(b);
-+        }
-+    } else
-+# endif
-+        ret = writesocket(b->num, in, inl);
-     BIO_clear_retry_flags(b);
-     if (ret <= 0) {
-         if (BIO_sock_should_retry(ret))
-@@ -361,6 +379,9 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
-     const char **pptr = NULL;
-     long ret = 1;
-     BIO_CONNECT *data;
-+# ifndef OPENSSL_NO_KTLS
-+    ktls_crypto_info_t *crypto_info;
-+# endif
- 
-     data = (BIO_CONNECT *)b->ptr;
- 
-@@ -518,8 +539,29 @@ static long conn_ctrl(BIO *b, int cmd, long num, void *ptr)
-         }
-         break;
-     case BIO_CTRL_EOF:
--        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
-+        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0;
-         break;
-+# ifndef OPENSSL_NO_KTLS
-+    case BIO_CTRL_SET_KTLS:
-+        crypto_info = (ktls_crypto_info_t *)ptr;
-+        ret = ktls_start(b->num, crypto_info, num);
-+        if (ret)
-+            BIO_set_ktls_flag(b, num);
-+        break;
-+    case BIO_CTRL_GET_KTLS_SEND:
-+        return BIO_should_ktls_flag(b, 1) != 0;
-+    case BIO_CTRL_GET_KTLS_RECV:
-+        return BIO_should_ktls_flag(b, 0) != 0;
-+    case BIO_CTRL_SET_KTLS_TX_SEND_CTRL_MSG:
-+        BIO_set_ktls_ctrl_msg_flag(b);
-+        data->record_type = num;
-+        ret = 0;
-+        break;
-+    case BIO_CTRL_CLEAR_KTLS_TX_CTRL_MSG:
-+        BIO_clear_ktls_ctrl_msg_flag(b);
-+        ret = 0;
-+        break;
-+# endif
-     default:
-         ret = 0;
-         break;
-diff --git crypto/bio/bss_fd.c crypto/bio/bss_fd.c
-index ccbe1626ba..8d03e48ce9 100644
---- crypto/bio/bss_fd.c
-+++ crypto/bio/bss_fd.c
-@@ -189,7 +189,7 @@ static long fd_ctrl(BIO *b, int cmd, long num, void *ptr)
-         ret = 1;
-         break;
-     case BIO_CTRL_EOF:
--        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
-+        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0;
-         break;
-     default:
-         ret = 0;
-diff --git crypto/bio/bss_sock.c crypto/bio/bss_sock.c
-index 6251f3d46a..8de1f58292 100644
---- crypto/bio/bss_sock.c
-+++ crypto/bio/bss_sock.c
-@@ -11,6 +11,7 @@
- #include <errno.h>
- #include "bio_local.h"
- #include "internal/cryptlib.h"
-+#include "internal/ktls.h"
- 
- #ifndef OPENSSL_NO_SOCK
- 
-@@ -64,6 +65,17 @@ BIO *BIO_new_socket(int fd, int close_flag)
-     if (ret == NULL)
-         return NULL;
-     BIO_set_fd(ret, fd, close_flag);
-+# ifndef OPENSSL_NO_KTLS
-+    {
-+        /*
-+         * The new socket is created successfully regardless of ktls_enable.
-+         * ktls_enable doesn't change any functionality of the socket, except
-+         * changing the setsockopt to enable the processing of ktls_start.
-+         * Thus, it is not a problem to call it for non-TLS sockets.
-+         */
-+        ktls_enable(fd);
-+    }
-+# endif
-     return ret;
- }
- 
-@@ -96,7 +108,12 @@ static int sock_read(BIO *b, char *out, int outl)
- 
-     if (out != NULL) {
-         clear_socket_error();
--        ret = readsocket(b->num, out, outl);
-+# ifndef OPENSSL_NO_KTLS
-+        if (BIO_get_ktls_recv(b))
-+            ret = ktls_read_record(b->num, out, outl);
-+        else
-+# endif
-+            ret = readsocket(b->num, out, outl);
-         BIO_clear_retry_flags(b);
-         if (ret <= 0) {
-             if (BIO_sock_should_retry(ret))
-@@ -110,10 +127,20 @@ static int sock_read(BIO *b, char *out, int outl)
- 
- static int sock_write(BIO *b, const char *in, int inl)
- {
--    int ret;
-+    int ret = 0;
- 
-     clear_socket_error();
--    ret = writesocket(b->num, in, inl);
-+# ifndef OPENSSL_NO_KTLS
-+    if (BIO_should_ktls_ctrl_msg_flag(b)) {
-+        unsigned char record_type = (intptr_t)b->ptr;
-+        ret = ktls_send_ctrl_message(b->num, record_type, in, inl);
-+        if (ret >= 0) {
-+            ret = inl;
-+            BIO_clear_ktls_ctrl_msg_flag(b);
-+        }
-+    } else
-+# endif
-+        ret = writesocket(b->num, in, inl);
-     BIO_clear_retry_flags(b);
-     if (ret <= 0) {
-         if (BIO_sock_should_retry(ret))
-@@ -126,6 +153,9 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
- {
-     long ret = 1;
-     int *ip;
-+# ifndef OPENSSL_NO_KTLS
-+    ktls_crypto_info_t *crypto_info;
-+# endif
- 
-     switch (cmd) {
-     case BIO_C_SET_FD:
-@@ -153,8 +183,29 @@ static long sock_ctrl(BIO *b, int cmd, long num, void *ptr)
-     case BIO_CTRL_FLUSH:
-         ret = 1;
-         break;
-+# ifndef OPENSSL_NO_KTLS
-+    case BIO_CTRL_SET_KTLS:
-+        crypto_info = (ktls_crypto_info_t *)ptr;
-+        ret = ktls_start(b->num, crypto_info, num);
-+        if (ret)
-+            BIO_set_ktls_flag(b, num);
-+        break;
-+    case BIO_CTRL_GET_KTLS_SEND:
-+        return BIO_should_ktls_flag(b, 1) != 0;
-+    case BIO_CTRL_GET_KTLS_RECV:
-+        return BIO_should_ktls_flag(b, 0) != 0;
-+    case BIO_CTRL_SET_KTLS_TX_SEND_CTRL_MSG:
-+        BIO_set_ktls_ctrl_msg_flag(b);
-+        b->ptr = (void *)num;
-+        ret = 0;
-+        break;
-+    case BIO_CTRL_CLEAR_KTLS_TX_CTRL_MSG:
-+        BIO_clear_ktls_ctrl_msg_flag(b);
-+        ret = 0;
-+        break;
-+# endif
-     case BIO_CTRL_EOF:
--        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0 ? 1 : 0;
-+        ret = (b->flags & BIO_FLAGS_IN_EOF) != 0;
-         break;
-     default:
-         ret = 0;
-diff --git crypto/err/openssl.txt crypto/err/openssl.txt
-index 902e97b843..846c896359 100644
---- crypto/err/openssl.txt
-+++ crypto/err/openssl.txt
-@@ -1319,6 +1319,7 @@ SSL_F_SSL_RENEGOTIATE:516:SSL_renegotiate
- SSL_F_SSL_RENEGOTIATE_ABBREVIATED:546:SSL_renegotiate_abbreviated
- SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT:320:*
- SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT:321:*
-+SSL_F_SSL_SENDFILE:639:SSL_sendfile
- SSL_F_SSL_SESSION_DUP:348:ssl_session_dup
- SSL_F_SSL_SESSION_NEW:189:SSL_SESSION_new
- SSL_F_SSL_SESSION_PRINT_FP:190:SSL_SESSION_print_fp
-diff --git crypto/evp/e_aes.c crypto/evp/e_aes.c
-index a1d3ab90fa..715fac9f88 100644
---- crypto/evp/e_aes.c
-+++ crypto/evp/e_aes.c
-@@ -2889,6 +2889,14 @@ static int aes_gcm_ctrl(EVP_CIPHER_CTX *c, int type, int arg, void *ptr)
-         memcpy(ptr, c->buf, arg);
-         return 1;
- 
-+    case EVP_CTRL_GET_IV:
-+        if (gctx->iv_gen != 1)
-+            return 0;
-+        if (gctx->ivlen != arg)
-+            return 0;
-+        memcpy(ptr, gctx->iv, arg);
-+        return 1;
-+
-     case EVP_CTRL_GCM_SET_IV_FIXED:
-         /* Special case: -1 length restores whole IV */
-         if (arg == -1) {
-diff --git doc/man3/BIO_ctrl.pod doc/man3/BIO_ctrl.pod
-index cf6ba135df..fc51173c8d 100644
---- doc/man3/BIO_ctrl.pod
-+++ doc/man3/BIO_ctrl.pod
-@@ -5,7 +5,8 @@
- BIO_ctrl, BIO_callback_ctrl, BIO_ptr_ctrl, BIO_int_ctrl, BIO_reset,
- BIO_seek, BIO_tell, BIO_flush, BIO_eof, BIO_set_close, BIO_get_close,
- BIO_pending, BIO_wpending, BIO_ctrl_pending, BIO_ctrl_wpending,
--BIO_get_info_callback, BIO_set_info_callback, BIO_info_cb
-+BIO_get_info_callback, BIO_set_info_callback, BIO_info_cb, BIO_get_ktls_send,
-+BIO_get_ktls_recv
- - BIO control operations
- 
- =head1 SYNOPSIS
-@@ -34,6 +35,9 @@ BIO_get_info_callback, BIO_set_info_callback, BIO_info_cb
-  int BIO_get_info_callback(BIO *b, BIO_info_cb **cbp);
-  int BIO_set_info_callback(BIO *b, BIO_info_cb *cb);
- 
-+ int BIO_get_ktls_send(BIO *b);
-+ int BIO_get_ktls_recv(BIO *b);
-+
- =head1 DESCRIPTION
- 
- BIO_ctrl(), BIO_callback_ctrl(), BIO_ptr_ctrl() and BIO_int_ctrl()
-@@ -72,6 +76,11 @@ Not all BIOs support these calls. BIO_ctrl_pending() and BIO_ctrl_wpending()
- return a size_t type and are functions, BIO_pending() and BIO_wpending() are
- macros which call BIO_ctrl().
- 
-+BIO_get_ktls_send() returns 1 if the BIO is using the Kernel TLS data-path for
-+sending. Otherwise, it returns zero.
-+BIO_get_ktls_recv() returns 1 if the BIO is using the Kernel TLS data-path for
-+receiving. Otherwise, it returns zero.
-+
- =head1 RETURN VALUES
- 
- BIO_reset() normally returns 1 for success and 0 or -1 for failure. File
-@@ -92,6 +101,11 @@ BIO_get_close() returns the close flag value: BIO_CLOSE or BIO_NOCLOSE.
- BIO_pending(), BIO_ctrl_pending(), BIO_wpending() and BIO_ctrl_wpending()
- return the amount of pending data.
- 
-+BIO_get_ktls_send() returns 1 if the BIO is using the Kernel TLS data-path for
-+sending. Otherwise, it returns zero.
-+BIO_get_ktls_recv() returns 1 if the BIO is using the Kernel TLS data-path for
-+receiving. Otherwise, it returns zero.
-+
- =head1 NOTES
- 
- BIO_flush(), because it can write data may return 0 or -1 indicating
-@@ -124,6 +138,11 @@ particular a return value of 0 can be returned if an operation is not
- supported, if an error occurred, if EOF has not been reached and in
- the case of BIO_seek() on a file BIO for a successful operation.
- 
-+=head1 HISTORY
-+
-+The BIO_get_ktls_send() and BIO_get_ktls_recv() functions were added in
-+OpenSSL 3.0.0.
-+
- =head1 COPYRIGHT
- 
- Copyright 2000-2022 The OpenSSL Project Authors. All Rights Reserved.
-diff --git doc/man3/SSL_CONF_cmd.pod doc/man3/SSL_CONF_cmd.pod
-index 7f0e088687..c7cce5486b 100644
---- doc/man3/SSL_CONF_cmd.pod
-+++ doc/man3/SSL_CONF_cmd.pod
-@@ -495,6 +495,10 @@ specification. Some applications may be able to mitigate the replay risks in
- other ways and in such cases the built-in OpenSSL functionality is not required.
- Disabling anti-replay is equivalent to setting B<SSL_OP_NO_ANTI_REPLAY>.
- 
-+B<KTLS>: Enables kernel TLS if support has been compiled in, and it is supported
-+by the negotiated ciphersuites and extensions. Equivalent to
-+B<SSL_OP_ENABLE_KTLS>.
-+
- =item B<VerifyMode>
- 
- The B<value> argument is a comma separated list of flags to set.
-diff --git doc/man3/SSL_CTX_set_options.pod doc/man3/SSL_CTX_set_options.pod
-index 969e0366c4..231fe92d8e 100644
---- doc/man3/SSL_CTX_set_options.pod
-+++ doc/man3/SSL_CTX_set_options.pod
-@@ -237,6 +237,29 @@ functionality is not required. Those applications can turn this feature off by
- setting this option. This is a server-side opton only. It is ignored by
- clients.
- 
-+=item SSL_OP_ENABLE_KTLS
-+
-+Enable the use of kernel TLS. In order to benefit from kernel TLS OpenSSL must
-+have been compiled with support for it, and it must be supported by the
-+negotiated ciphersuites and extensions. The specific ciphersuites and extensions
-+that are supported may vary by platform and kernel version.
-+
-+The kernel TLS data-path implements the record layer, and the encryption
-+algorithm. The kernel will utilize the best hardware
-+available for encryption. Using the kernel data-path should reduce the memory
-+footprint of OpenSSL because no buffering is required. Also, the throughput
-+should improve because data copy is avoided when user data is encrypted into
-+kernel memory instead of the usual encrypt then copy to kernel.
-+
-+Kernel TLS might not support all the features of OpenSSL. For instance,
-+renegotiation, and setting the maximum fragment size is not possible as of
-+Linux 4.20.
-+
-+Note that with kernel TLS enabled some cryptographic operations are performed
-+by the kernel directly and not via any available OpenSSL Providers. This might
-+be undesirable if, for example, the application requires all cryptographic
-+operations to be performed by the FIPS provider.
-+
- =back
- 
- The following options no longer have any effect but their identifiers are
-diff --git doc/man3/SSL_CTX_set_record_padding_callback.pod doc/man3/SSL_CTX_set_record_padding_callback.pod
-index 13e56f0c57..247a39fc03 100644
---- doc/man3/SSL_CTX_set_record_padding_callback.pod
-+++ doc/man3/SSL_CTX_set_record_padding_callback.pod
-@@ -16,7 +16,7 @@ SSL_set_block_padding - install callback to specify TLS 1.3 record padding
-  #include <openssl/ssl.h>
- 
-  void SSL_CTX_set_record_padding_callback(SSL_CTX *ctx, size_t (*cb)(SSL *s, int type, size_t len, void *arg));
-- void SSL_set_record_padding_callback(SSL *ssl, size_t (*cb)(SSL *s, int type, size_t len, void *arg));
-+ int SSL_set_record_padding_callback(SSL *ssl, size_t (*cb)(SSL *s, int type, size_t len, void *arg));
- 
-  void SSL_CTX_set_record_padding_callback_arg(SSL_CTX *ctx, void *arg);
-  void *SSL_CTX_get_record_padding_callback_arg(const SSL_CTX *ctx);
-@@ -32,6 +32,8 @@ SSL_set_block_padding - install callback to specify TLS 1.3 record padding
- SSL_CTX_set_record_padding_callback() or SSL_set_record_padding_callback()
- can be used to assign a callback function I<cb> to specify the padding
- for TLS 1.3 records. The value set in B<ctx> is copied to a new SSL by SSL_new().
-+Kernel TLS is not possible if the record padding callback is set, and the callback
-+function cannot be set if Kernel TLS is already configured for the current SSL object.
- 
- SSL_CTX_set_record_padding_callback_arg() and SSL_set_record_padding_callback_arg()
- assign a value B<arg> that is passed to the callback when it is invoked. The value
-@@ -64,6 +66,9 @@ indicates no padding will be added. A return value that causes the record to
- exceed the maximum record size (SSL3_RT_MAX_PLAIN_LENGTH) will pad out to the
- maximum record size.
- 
-+The SSL_CTX_get_record_padding_callback_arg() function returns 1 on success or 0 if
-+the callback function is not set because Kernel TLS is configured for the SSL object.
-+
- =head1 NOTES
- 
- The default behavior is to add no padding to the record.
-@@ -84,6 +89,9 @@ L<ssl(7)>, L<SSL_new(3)>
- 
- The record padding API was added for TLS 1.3 support in OpenSSL 1.1.1.
- 
-+The return type of SSL_CTX_set_record_padding_callback() function was
-+changed to int in OpenSSL 3.0.
-+
- =head1 COPYRIGHT
- 
- Copyright 2017-2019 The OpenSSL Project Authors. All Rights Reserved.
-diff --git doc/man3/SSL_write.pod doc/man3/SSL_write.pod
-index 5e3ce1e7e4..9b271d8e65 100644
---- doc/man3/SSL_write.pod
-+++ doc/man3/SSL_write.pod
-@@ -2,12 +2,13 @@
- 
- =head1 NAME
- 
--SSL_write_ex, SSL_write - write bytes to a TLS/SSL connection
-+SSL_write_ex, SSL_write, SSL_sendfile - write bytes to a TLS/SSL connection
- 
- =head1 SYNOPSIS
- 
-  #include <openssl/ssl.h>
- 
-+ ossl_ssize_t SSL_sendfile(SSL *s, int fd, off_t offset, size_t size, int flags);
-  int SSL_write_ex(SSL *s, const void *buf, size_t num, size_t *written);
-  int SSL_write(SSL *ssl, const void *buf, int num);
- 
-@@ -17,6 +18,14 @@ SSL_write_ex() and SSL_write() write B<num> bytes from the buffer B<buf> into
- the specified B<ssl> connection. On success SSL_write_ex() will store the number
- of bytes written in B<*written>.
- 
-+SSL_sendfile() writes B<size> bytes from offset B<offset> in the file
-+descriptor B<fd> to the specified SSL connection B<s>. This function provides
-+efficient zero-copy semantics. SSL_sendfile() is available only when
-+Kernel TLS is enabled, which can be checked by calling BIO_get_ktls_send().
-+It is provided here to allow users to maintain the same interface.
-+The meaning of B<flags> is platform dependent.
-+Currently, under Linux it is ignored.
-+
- =head1 NOTES
- 
- In the paragraphs below a "write function" is defined as one of either
-@@ -104,17 +113,36 @@ You should instead call SSL_get_error() to find out if it's retryable.
- 
- =back
- 
-+For SSL_sendfile(), the following return values can occur:
-+
-+=over 4
-+
-+=item Z<>>= 0
-+
-+The write operation was successful, the return value is the number
-+of bytes of the file written to the TLS/SSL connection. The return
-+value can be less than B<size> for a partial write.
-+
-+=item E<lt> 0
-+
-+The write operation was not successful, because either the connection was
-+closed, an error occured or action must be taken by the calling process.
-+Call SSL_get_error() with the return value to find out the reason.
-+
-+=back
-+
- =head1 SEE ALSO
- 
- L<SSL_get_error(3)>, L<SSL_read_ex(3)>, L<SSL_read(3)>
- L<SSL_CTX_set_mode(3)>, L<SSL_CTX_new(3)>,
- L<SSL_connect(3)>, L<SSL_accept(3)>
--L<SSL_set_connect_state(3)>,
-+L<SSL_set_connect_state(3)>, L<BIO_ctrl(3)>,
- L<ssl(7)>, L<bio(7)>
- 
- =head1 HISTORY
- 
- The SSL_write_ex() function was added in OpenSSL 1.1.1.
-+The SSL_sendfile() function was added in OpenSSL 3.0.0.
- 
- =head1 COPYRIGHT
- 
-diff --git engines/e_afalg.c engines/e_afalg.c
-index 2d16c13834..748969204e 100644
---- engines/e_afalg.c
-+++ engines/e_afalg.c
-@@ -407,7 +407,7 @@ static int afalg_start_cipher_sk(afalg_ctx *actx, const unsigned char *in,
-                                  size_t inl, const unsigned char *iv,
-                                  unsigned int enc)
- {
--    struct msghdr msg = { 0 };
-+    struct msghdr msg;
-     struct cmsghdr *cmsg;
-     struct iovec iov;
-     ssize_t sbytes;
-@@ -416,6 +416,7 @@ static int afalg_start_cipher_sk(afalg_ctx *actx, const unsigned char *in,
- # endif
-     char cbuf[CMSG_SPACE(ALG_IV_LEN(ALG_AES_IV_LEN)) + CMSG_SPACE(ALG_OP_LEN)];
- 
-+    memset(&msg, 0, sizeof(msg));
-     memset(cbuf, 0, sizeof(cbuf));
-     msg.msg_control = cbuf;
-     msg.msg_controllen = sizeof(cbuf);
-diff --git include/internal/bio.h include/internal/bio.h
-index c343b27629..365d41dabb 100644
---- include/internal/bio.h
-+++ include/internal/bio.h
-@@ -7,6 +7,9 @@
-  * https://www.openssl.org/source/license.html
-  */
- 
-+#ifndef HEADER_INTERNAL_BIO_H
-+# define HEADER_INTERNAL_BIO_H
-+
- #include <openssl/bio.h>
- 
- struct bio_method_st {
-@@ -31,3 +34,39 @@ void bio_cleanup(void);
- /* Old style to new style BIO_METHOD conversion functions */
- int bwrite_conv(BIO *bio, const char *data, size_t datal, size_t *written);
- int bread_conv(BIO *bio, char *data, size_t datal, size_t *read);
-+
-+/* Changes to these internal BIOs must also update include/openssl/bio.h */
-+# define BIO_CTRL_SET_KTLS                      72
-+# define BIO_CTRL_SET_KTLS_TX_SEND_CTRL_MSG     74
-+# define BIO_CTRL_CLEAR_KTLS_TX_CTRL_MSG        75
-+
-+/*
-+ * This is used with socket BIOs:
-+ * BIO_FLAGS_KTLS_TX means we are using ktls with this BIO for sending.
-+ * BIO_FLAGS_KTLS_TX_CTRL_MSG means we are about to send a ctrl message next.
-+ * BIO_FLAGS_KTLS_RX means we are using ktls with this BIO for receiving.
-+ */
-+# define BIO_FLAGS_KTLS_TX_CTRL_MSG 0x1000
-+# define BIO_FLAGS_KTLS_RX          0x2000
-+# define BIO_FLAGS_KTLS_TX          0x4000
-+
-+/* KTLS related controls and flags */
-+# define BIO_set_ktls_flag(b, is_tx) \
-+    BIO_set_flags(b, (is_tx) ? BIO_FLAGS_KTLS_TX : BIO_FLAGS_KTLS_RX)
-+# define BIO_should_ktls_flag(b, is_tx) \
-+    BIO_test_flags(b, (is_tx) ? BIO_FLAGS_KTLS_TX : BIO_FLAGS_KTLS_RX)
-+# define BIO_set_ktls_ctrl_msg_flag(b) \
-+    BIO_set_flags(b, BIO_FLAGS_KTLS_TX_CTRL_MSG)
-+# define BIO_should_ktls_ctrl_msg_flag(b) \
-+    BIO_test_flags(b, BIO_FLAGS_KTLS_TX_CTRL_MSG)
-+# define BIO_clear_ktls_ctrl_msg_flag(b) \
-+    BIO_clear_flags(b, BIO_FLAGS_KTLS_TX_CTRL_MSG)
-+
-+#  define BIO_set_ktls(b, keyblob, is_tx)   \
-+     BIO_ctrl(b, BIO_CTRL_SET_KTLS, is_tx, keyblob)
-+#  define BIO_set_ktls_ctrl_msg(b, record_type)   \
-+     BIO_ctrl(b, BIO_CTRL_SET_KTLS_TX_SEND_CTRL_MSG, record_type, NULL)
-+#  define BIO_clear_ktls_ctrl_msg(b) \
-+     BIO_ctrl(b, BIO_CTRL_CLEAR_KTLS_TX_CTRL_MSG, 0, NULL)
-+
-+#endif
 diff --git include/internal/ktls.h include/internal/ktls.h
-new file mode 100644
-index 0000000000..5f9e3f91ed
---- /dev/null
+index 95492fd065..3c82cae26b 100644
+--- include/internal/ktls.h
 +++ include/internal/ktls.h
-@@ -0,0 +1,407 @@
-+/*
-+ * Copyright 2018 The OpenSSL Project Authors. All Rights Reserved.
-+ *
-+ * Licensed under the Apache License 2.0 (the "License").  You may not use
-+ * this file except in compliance with the License.  You can obtain a copy
-+ * in the file LICENSE in the source distribution or at
-+ * https://www.openssl.org/source/license.html
-+ */
-+
-+#if defined(OPENSSL_SYS_LINUX)
-+# ifndef OPENSSL_NO_KTLS
-+#  include <linux/version.h>
-+#  if LINUX_VERSION_CODE < KERNEL_VERSION(4, 13, 0)
-+#   define OPENSSL_NO_KTLS
-+#   ifndef PEDANTIC
-+#    warning "KTLS requires Kernel Headers >= 4.13.0"
-+#    warning "Skipping Compilation of KTLS"
-+#   endif
-+#  endif
-+# endif
-+#endif
-+
-+#ifndef HEADER_INTERNAL_KTLS
-+# define HEADER_INTERNAL_KTLS
-+# ifndef OPENSSL_NO_KTLS
-+
-+#  if defined(__FreeBSD__)
-+#   include <sys/types.h>
-+#   include <sys/socket.h>
-+#   include <sys/ktls.h>
-+#   include <netinet/in.h>
-+#   include <netinet/tcp.h>
-+#   include "openssl/ssl3.h"
-+
-+#   ifndef TCP_RXTLS_ENABLE
-+#    define OPENSSL_NO_KTLS_RX
-+#   endif
-+#   define OPENSSL_KTLS_AES_GCM_128
-+#   define OPENSSL_KTLS_AES_GCM_256
-+#   define OPENSSL_KTLS_TLS13
+@@ -40,6 +40,11 @@
+ #   define OPENSSL_KTLS_AES_GCM_128
+ #   define OPENSSL_KTLS_AES_GCM_256
+ #   define OPENSSL_KTLS_TLS13
 +#   ifdef TLS_CHACHA20_IV_LEN
 +#    ifndef OPENSSL_NO_CHACHA
 +#     define OPENSSL_KTLS_CHACHA20_POLY1305
 +#    endif
 +#   endif
-+
-+typedef struct tls_enable ktls_crypto_info_t;
-+
-+/*
-+ * FreeBSD does not require any additional steps to enable KTLS before
-+ * setting keys.
-+ */
-+static ossl_inline int ktls_enable(int fd)
-+{
-+    return 1;
-+}
-+
-+/*
-+ * The TCP_TXTLS_ENABLE socket option marks the outgoing socket buffer
-+ * as using TLS.  If successful, then data sent using this socket will
-+ * be encrypted and encapsulated in TLS records using the tls_en
-+ * provided here.
-+ *
-+ * The TCP_RXTLS_ENABLE socket option marks the incoming socket buffer
-+ * as using TLS.  If successful, then data received for this socket will
-+ * be authenticated and decrypted using the tls_en provided here.
-+ */
-+static ossl_inline int ktls_start(int fd, ktls_crypto_info_t *tls_en, int is_tx)
-+{
-+    if (is_tx)
-+        return setsockopt(fd, IPPROTO_TCP, TCP_TXTLS_ENABLE,
-+                          tls_en, sizeof(*tls_en)) ? 0 : 1;
-+#   ifndef OPENSSL_NO_KTLS_RX
-+    return setsockopt(fd, IPPROTO_TCP, TCP_RXTLS_ENABLE, tls_en,
-+                      sizeof(*tls_en)) ? 0 : 1;
-+#   else
-+    return 0;
-+#   endif
-+}
-+
-+/*
-+ * Send a TLS record using the tls_en provided in ktls_start and use
-+ * record_type instead of the default SSL3_RT_APPLICATION_DATA.
-+ * When the socket is non-blocking, then this call either returns EAGAIN or
-+ * the entire record is pushed to TCP. It is impossible to send a partial
-+ * record using this control message.
-+ */
-+static ossl_inline int ktls_send_ctrl_message(int fd, unsigned char record_type,
-+                                              const void *data, size_t length)
-+{
-+    struct msghdr msg = { 0 };
-+    int cmsg_len = sizeof(record_type);
-+    struct cmsghdr *cmsg;
-+    char buf[CMSG_SPACE(cmsg_len)];
-+    struct iovec msg_iov;   /* Vector of data to send/receive into */
-+
-+    msg.msg_control = buf;
-+    msg.msg_controllen = sizeof(buf);
-+    cmsg = CMSG_FIRSTHDR(&msg);
-+    cmsg->cmsg_level = IPPROTO_TCP;
-+    cmsg->cmsg_type = TLS_SET_RECORD_TYPE;
-+    cmsg->cmsg_len = CMSG_LEN(cmsg_len);
-+    *((unsigned char *)CMSG_DATA(cmsg)) = record_type;
-+    msg.msg_controllen = cmsg->cmsg_len;
-+
-+    msg_iov.iov_base = (void *)data;
-+    msg_iov.iov_len = length;
-+    msg.msg_iov = &msg_iov;
-+    msg.msg_iovlen = 1;
-+
-+    return sendmsg(fd, &msg, 0);
-+}
-+
-+#   ifdef OPENSSL_NO_KTLS_RX
-+
-+static ossl_inline int ktls_read_record(int fd, void *data, size_t length)
-+{
-+    return -1;
-+}
-+
-+#   else /* !defined(OPENSSL_NO_KTLS_RX) */
-+
-+/*
-+ * Receive a TLS record using the tls_en provided in ktls_start.  The
-+ * kernel strips any explicit IV and authentication tag, but provides
-+ * the TLS record header via a control message.  If there is an error
-+ * with the TLS record such as an invalid header, invalid padding, or
-+ * authentication failure recvmsg() will fail with an error.
-+ */
-+static ossl_inline int ktls_read_record(int fd, void *data, size_t length)
-+{
-+    struct msghdr msg = { 0 };
-+    int cmsg_len = sizeof(struct tls_get_record);
-+    struct tls_get_record *tgr;
-+    struct cmsghdr *cmsg;
-+    char buf[CMSG_SPACE(cmsg_len)];
-+    struct iovec msg_iov;   /* Vector of data to send/receive into */
-+    int ret;
-+    unsigned char *p = data;
-+    const size_t prepend_length = SSL3_RT_HEADER_LENGTH;
-+
-+    if (length <= prepend_length) {
-+        errno = EINVAL;
-+        return -1;
-+    }
-+
-+    msg.msg_control = buf;
-+    msg.msg_controllen = sizeof(buf);
-+
-+    msg_iov.iov_base = p + prepend_length;
-+    msg_iov.iov_len = length - prepend_length;
-+    msg.msg_iov = &msg_iov;
-+    msg.msg_iovlen = 1;
-+
-+    ret = recvmsg(fd, &msg, 0);
-+    if (ret <= 0)
-+        return ret;
-+
-+    if ((msg.msg_flags & (MSG_EOR | MSG_CTRUNC)) != MSG_EOR) {
-+        errno = EMSGSIZE;
-+        return -1;
-+    }
-+
-+    if (msg.msg_controllen == 0) {
-+        errno = EBADMSG;
-+        return -1;
-+    }
-+
-+    cmsg = CMSG_FIRSTHDR(&msg);
-+    if (cmsg->cmsg_level != IPPROTO_TCP || cmsg->cmsg_type != TLS_GET_RECORD
-+        || cmsg->cmsg_len != CMSG_LEN(cmsg_len)) {
-+        errno = EBADMSG;
-+        return -1;
-+    }
-+
-+    tgr = (struct tls_get_record *)CMSG_DATA(cmsg);
-+    p[0] = tgr->tls_type;
-+    p[1] = tgr->tls_vmajor;
-+    p[2] = tgr->tls_vminor;
-+    *(uint16_t *)(p + 3) = htons(ret);
-+
-+    return ret + prepend_length;
-+}
-+
-+#   endif /* OPENSSL_NO_KTLS_RX */
-+
-+/*
-+ * KTLS enables the sendfile system call to send data from a file over
-+ * TLS.
-+ */
-+static ossl_inline ossl_ssize_t ktls_sendfile(int s, int fd, off_t off,
-+                                              size_t size, int flags)
-+{
-+    off_t sbytes = 0;
-+    int ret;
-+
-+    ret = sendfile(fd, s, off, size, NULL, &sbytes, flags);
-+    if (ret == -1 && sbytes == 0)
-+        return -1;
-+    return sbytes;
-+}
-+
-+#  endif                         /* __FreeBSD__ */
-+
-+#  if defined(OPENSSL_SYS_LINUX)
-+
-+#   include <linux/tls.h>
-+#   if LINUX_VERSION_CODE < KERNEL_VERSION(4, 17, 0)
-+#    define OPENSSL_NO_KTLS_RX
-+#    ifndef PEDANTIC
-+#     warning "KTLS requires Kernel Headers >= 4.17.0 for receiving"
-+#     warning "Skipping Compilation of KTLS receive data path"
-+#    endif
-+#   endif
-+#   define OPENSSL_KTLS_AES_GCM_128
-+#   if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 1, 0)
-+#    define OPENSSL_KTLS_AES_GCM_256
-+#    define OPENSSL_KTLS_TLS13
-+#    if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 2, 0)
-+#     define OPENSSL_KTLS_AES_CCM_128
-+#     if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 11, 0)
-+#      ifndef OPENSSL_NO_CHACHA
-+#       define OPENSSL_KTLS_CHACHA20_POLY1305
-+#      endif
-+#     endif
-+#    endif
-+#   endif
-+
-+#   include <sys/sendfile.h>
-+#   include <netinet/tcp.h>
-+#   include <linux/socket.h>
-+#   include "openssl/ssl3.h"
-+#   include "openssl/tls1.h"
-+#   include "openssl/evp.h"
-+
-+#   ifndef SOL_TLS
-+#    define SOL_TLS 282
-+#   endif
-+
-+#   ifndef TCP_ULP
-+#    define TCP_ULP 31
-+#   endif
-+
-+#   ifndef TLS_RX
-+#    define TLS_RX                  2
-+#   endif
-+
-+struct tls_crypto_info_all {
-+    union {
-+#   ifdef OPENSSL_KTLS_AES_GCM_128
-+        struct tls12_crypto_info_aes_gcm_128 gcm128;
-+#   endif
-+#   ifdef OPENSSL_KTLS_AES_GCM_256
-+        struct tls12_crypto_info_aes_gcm_256 gcm256;
-+#   endif
-+#   ifdef OPENSSL_KTLS_AES_CCM_128
-+        struct tls12_crypto_info_aes_ccm_128 ccm128;
-+#   endif
-+#   ifdef OPENSSL_KTLS_CHACHA20_POLY1305
-+        struct tls12_crypto_info_chacha20_poly1305 chacha20poly1305;
-+#   endif
-+    };
-+    size_t tls_crypto_info_len;
-+};
-+
-+typedef struct tls_crypto_info_all ktls_crypto_info_t;
-+
-+/*
-+ * When successful, this socket option doesn't change the behaviour of the
-+ * TCP socket, except changing the TCP setsockopt handler to enable the
-+ * processing of SOL_TLS socket options. All other functionality remains the
-+ * same.
-+ */
-+static ossl_inline int ktls_enable(int fd)
-+{
-+    return setsockopt(fd, SOL_TCP, TCP_ULP, "tls", sizeof("tls")) ? 0 : 1;
-+}
-+
-+/*
-+ * The TLS_TX socket option changes the send/sendmsg handlers of the TCP socket.
-+ * If successful, then data sent using this socket will be encrypted and
-+ * encapsulated in TLS records using the crypto_info provided here.
-+ * The TLS_RX socket option changes the recv/recvmsg handlers of the TCP socket.
-+ * If successful, then data received using this socket will be decrypted,
-+ * authenticated and decapsulated using the crypto_info provided here.
-+ */
-+static ossl_inline int ktls_start(int fd, ktls_crypto_info_t *crypto_info,
-+                                  int is_tx)
-+{
-+    return setsockopt(fd, SOL_TLS, is_tx ? TLS_TX : TLS_RX,
-+                      crypto_info, crypto_info->tls_crypto_info_len) ? 0 : 1;
-+}
-+
-+/*
-+ * Send a TLS record using the crypto_info provided in ktls_start and use
-+ * record_type instead of the default SSL3_RT_APPLICATION_DATA.
-+ * When the socket is non-blocking, then this call either returns EAGAIN or
-+ * the entire record is pushed to TCP. It is impossible to send a partial
-+ * record using this control message.
-+ */
-+static ossl_inline int ktls_send_ctrl_message(int fd, unsigned char record_type,
-+                                              const void *data, size_t length)
-+{
-+    struct msghdr msg;
-+    int cmsg_len = sizeof(record_type);
-+    struct cmsghdr *cmsg;
-+    union {
-+        struct cmsghdr hdr;
-+        char buf[CMSG_SPACE(sizeof(unsigned char))];
-+    } cmsgbuf;
-+    struct iovec msg_iov;       /* Vector of data to send/receive into */
-+
-+    memset(&msg, 0, sizeof(msg));
-+    msg.msg_control = cmsgbuf.buf;
-+    msg.msg_controllen = sizeof(cmsgbuf.buf);
-+    cmsg = CMSG_FIRSTHDR(&msg);
-+    cmsg->cmsg_level = SOL_TLS;
-+    cmsg->cmsg_type = TLS_SET_RECORD_TYPE;
-+    cmsg->cmsg_len = CMSG_LEN(cmsg_len);
-+    *((unsigned char *)CMSG_DATA(cmsg)) = record_type;
-+    msg.msg_controllen = cmsg->cmsg_len;
-+
-+    msg_iov.iov_base = (void *)data;
-+    msg_iov.iov_len = length;
-+    msg.msg_iov = &msg_iov;
-+    msg.msg_iovlen = 1;
-+
-+    return sendmsg(fd, &msg, 0);
-+}
-+
-+/*
-+ * KTLS enables the sendfile system call to send data from a file over TLS.
-+ * @flags are ignored on Linux. (placeholder for FreeBSD sendfile)
-+ * */
-+static ossl_inline ossl_ssize_t ktls_sendfile(int s, int fd, off_t off, size_t size, int flags)
-+{
-+    return sendfile(s, fd, &off, size);
-+}
-+
-+#   ifdef OPENSSL_NO_KTLS_RX
-+
-+
-+static ossl_inline int ktls_read_record(int fd, void *data, size_t length)
-+{
-+    return -1;
-+}
-+
-+#   else /* !defined(OPENSSL_NO_KTLS_RX) */
-+
-+/*
-+ * Receive a TLS record using the crypto_info provided in ktls_start.
-+ * The kernel strips the TLS record header, IV and authentication tag,
-+ * returning only the plaintext data or an error on failure.
-+ * We add the TLS record header here to satisfy routines in rec_layer_s3.c
-+ */
-+static ossl_inline int ktls_read_record(int fd, void *data, size_t length)
-+{
-+    struct msghdr msg;
-+    struct cmsghdr *cmsg;
-+    union {
-+        struct cmsghdr hdr;
-+        char buf[CMSG_SPACE(sizeof(unsigned char))];
-+    } cmsgbuf;
-+    struct iovec msg_iov;
-+    int ret;
-+    unsigned char *p = data;
-+    const size_t prepend_length = SSL3_RT_HEADER_LENGTH;
-+
-+    if (length < prepend_length + EVP_GCM_TLS_TAG_LEN) {
-+        errno = EINVAL;
-+        return -1;
-+    }
-+
-+    memset(&msg, 0, sizeof(msg));
-+    msg.msg_control = cmsgbuf.buf;
-+    msg.msg_controllen = sizeof(cmsgbuf.buf);
-+
-+    msg_iov.iov_base = p + prepend_length;
-+    msg_iov.iov_len = length - prepend_length - EVP_GCM_TLS_TAG_LEN;
-+    msg.msg_iov = &msg_iov;
-+    msg.msg_iovlen = 1;
-+
-+    ret = recvmsg(fd, &msg, 0);
-+    if (ret < 0)
-+        return ret;
-+
-+    if (msg.msg_controllen > 0) {
-+        cmsg = CMSG_FIRSTHDR(&msg);
-+        if (cmsg->cmsg_type == TLS_GET_RECORD_TYPE) {
-+            p[0] = *((unsigned char *)CMSG_DATA(cmsg));
-+            p[1] = TLS1_2_VERSION_MAJOR;
-+            p[2] = TLS1_2_VERSION_MINOR;
-+            /* returned length is limited to msg_iov.iov_len above */
-+            p[3] = (ret >> 8) & 0xff;
-+            p[4] = ret & 0xff;
-+            ret += prepend_length;
-+        }
-+    }
-+
-+    return ret;
-+}
-+
-+#   endif /* OPENSSL_NO_KTLS_RX */
-+
-+#  endif /* OPENSSL_SYS_LINUX */
-+# endif /* OPENSSL_NO_KTLS */
-+#endif /* HEADER_INTERNAL_KTLS */
-diff --git include/openssl/bio.h include/openssl/bio.h
-index ae559a5105..66fc0d7c4a 100644
---- include/openssl/bio.h
-+++ include/openssl/bio.h
-@@ -141,6 +141,26 @@ extern "C" {
  
- # define BIO_CTRL_DGRAM_SET_PEEK_MODE      71
+ typedef struct tls_enable ktls_crypto_info_t;
  
-+/*
-+ * internal BIO see include/internal/bio.h:
-+ * # define BIO_CTRL_SET_KTLS_SEND                 72
-+ * # define BIO_CTRL_SET_KTLS_SEND_CTRL_MSG        74
-+ * # define BIO_CTRL_CLEAR_KTLS_CTRL_MSG           75
-+ */
-+
-+# define BIO_CTRL_GET_KTLS_SEND                 73
-+# define BIO_CTRL_GET_KTLS_RECV                 76
-+
-+# ifndef OPENSSL_NO_KTLS
-+#  define BIO_get_ktls_send(b)         \
-+     BIO_ctrl(b, BIO_CTRL_GET_KTLS_SEND, 0, NULL)
-+#  define BIO_get_ktls_recv(b)         \
-+     BIO_ctrl(b, BIO_CTRL_GET_KTLS_RECV, 0, NULL)
-+# else
-+#  define BIO_get_ktls_send(b)  (0)
-+#  define BIO_get_ktls_recv(b)  (0)
-+# endif
-+
- /* modifiers */
- # define BIO_FP_READ             0x02
- # define BIO_FP_WRITE            0x04
-@@ -171,6 +191,8 @@ extern "C" {
- # define BIO_FLAGS_NONCLEAR_RST  0x400
- # define BIO_FLAGS_IN_EOF        0x800
- 
-+/* the BIO FLAGS values 0x1000 to 0x4000 are reserved for internal KTLS flags */
-+
- typedef union bio_addr_st BIO_ADDR;
- typedef struct bio_addrinfo_st BIO_ADDRINFO;
- 
-diff --git include/openssl/err.h include/openssl/err.h
-index b49f88129e..dce9885d3f 100644
---- include/openssl/err.h
-+++ include/openssl/err.h
-@@ -169,6 +169,7 @@ typedef struct err_state_st {
- # define SYS_F_STAT              22
- # define SYS_F_FCNTL             23
- # define SYS_F_FSTAT             24
-+# define SYS_F_SENDFILE          25
- 
- /* reasons */
- # define ERR_R_SYS_LIB   ERR_LIB_SYS/* 2 */
-diff --git include/openssl/evp.h include/openssl/evp.h
-index a411f3f2f9..60103707d2 100644
---- include/openssl/evp.h
-+++ include/openssl/evp.h
-@@ -352,6 +352,8 @@ int (*EVP_CIPHER_meth_get_ctrl(const EVP_CIPHER *cipher))(EVP_CIPHER_CTX *,
- # define         EVP_CTRL_SET_PIPELINE_INPUT_LENS        0x24
- 
- # define         EVP_CTRL_GET_IVLEN                      0x25
-+/* Get the IV used by the cipher */
-+# define         EVP_CTRL_GET_IV                         0x26
- 
- /* Padding modes */
- #define EVP_PADDING_PKCS7       1
-diff --git include/openssl/ssl.h include/openssl/ssl.h
-index fd0c5a9996..cfb87e6322 100644
---- include/openssl/ssl.h
-+++ include/openssl/ssl.h
-@@ -303,7 +303,9 @@ typedef int (*SSL_verify_cb)(int preverify_ok, X509_STORE_CTX *x509_ctx);
- /* Allow initial connection to servers that don't support RI */
- # define SSL_OP_LEGACY_SERVER_CONNECT                    0x00000004U
- 
--/* Reserved value (until OpenSSL 1.2.0)                  0x00000008U */
-+/* Enable support for Kernel TLS */
-+# define SSL_OP_ENABLE_KTLS                              0x00000008U
-+
- # define SSL_OP_TLSEXT_PADDING                           0x00000010U
- /* Reserved value (until OpenSSL 1.2.0)                  0x00000020U */
- # define SSL_OP_SAFARI_ECDHE_ECDSA_BUG                   0x00000040U
-@@ -1837,6 +1839,8 @@ __owur int SSL_read_early_data(SSL *s, void *buf, size_t num,
-                                size_t *readbytes);
- __owur int SSL_peek(SSL *ssl, void *buf, int num);
- __owur int SSL_peek_ex(SSL *ssl, void *buf, size_t num, size_t *readbytes);
-+__owur ossl_ssize_t SSL_sendfile(SSL *s, int fd, off_t offset, size_t size,
-+                                 int flags);
- __owur int SSL_write(SSL *ssl, const void *buf, int num);
- __owur int SSL_write_ex(SSL *s, const void *buf, size_t num, size_t *written);
- __owur int SSL_write_early_data(SSL *s, const void *buf, size_t num,
-@@ -2123,7 +2127,7 @@ void SSL_CTX_set_record_padding_callback_arg(SSL_CTX *ctx, void *arg);
- void *SSL_CTX_get_record_padding_callback_arg(const SSL_CTX *ctx);
- int SSL_CTX_set_block_padding(SSL_CTX *ctx, size_t block_size);
- 
--void SSL_set_record_padding_callback(SSL *ssl,
-+int SSL_set_record_padding_callback(SSL *ssl,
-                                     size_t (*cb) (SSL *ssl, int type,
-                                                   size_t len, void *arg));
- void SSL_set_record_padding_callback_arg(SSL *ssl, void *arg);
-diff --git include/openssl/sslerr.h include/openssl/sslerr.h
-index 701d61c6e9..c0310941c4 100644
---- include/openssl/sslerr.h
-+++ include/openssl/sslerr.h
-@@ -220,6 +220,7 @@ int ERR_load_SSL_strings(void);
- # define SSL_F_SSL_RENEGOTIATE_ABBREVIATED                546
- # define SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT                320
- # define SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT                321
-+# define SSL_F_SSL_SENDFILE                               639
- # define SSL_F_SSL_SESSION_DUP                            348
- # define SSL_F_SSL_SESSION_NEW                            189
- # define SSL_F_SSL_SESSION_PRINT_FP                       190
-diff --git ssl/build.info ssl/build.info
-index bb2f1deb53..1c49ac9aee 100644
---- ssl/build.info
-+++ ssl/build.info
-@@ -1,4 +1,5 @@
- LIBS=../libssl
-+
- SOURCE[../libssl]=\
-         pqueue.c packet.c \
-         statem/statem_srvr.c statem/statem_clnt.c  s3_lib.c  s3_enc.c record/rec_layer_s3.c \
-@@ -13,3 +14,7 @@ SOURCE[../libssl]=\
-         bio_ssl.c ssl_err.c tls_srp.c t1_trce.c ssl_utst.c \
-         record/ssl3_buffer.c record/ssl3_record.c record/dtls1_bitmap.c \
-         statem/statem.c record/ssl3_record_tls13.c
-+
-+IF[{- !$disabled{ktls} -}]
-+  SOURCE[../libssl]=ktls.c
-+ENDIF
 diff --git ssl/ktls.c ssl/ktls.c
-new file mode 100644
-index 0000000000..68482ac480
---- /dev/null
+index 79d980959e..e343d382cc 100644
+--- ssl/ktls.c
 +++ ssl/ktls.c
-@@ -0,0 +1,321 @@
-+/*
-+ * Copyright 2018-2020 The OpenSSL Project Authors. All Rights Reserved.
-+ *
-+ * Licensed under the Apache License 2.0 (the "License").  You may not use
-+ * this file except in compliance with the License.  You can obtain a copy
-+ * in the file LICENSE in the source distribution or at
-+ * https://www.openssl.org/source/license.html
-+ */
-+
-+#include "ssl_local.h"
-+#include "internal/ktls.h"
-+
+@@ -10,6 +10,67 @@
+ #include "ssl_local.h"
+ #include "internal/ktls.h"
+ 
 +#ifndef OPENSSL_NO_KTLS_RX
 + /*
 +  * Count the number of records that were not processed yet from record boundary.
@@ -1317,624 +83,148 @@ index 0000000000..68482ac480
 +}
 +#endif
 +
-+#if defined(__FreeBSD__)
-+# include <crypto/cryptodev.h>
-+
-+/*-
-+ * Check if a given cipher is supported by the KTLS interface.
-+ * The kernel might still fail the setsockopt() if no suitable
-+ * provider is found, but this checks if the socket option
-+ * supports the cipher suite used at all.
-+ */
-+int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
-+                                const EVP_CIPHER_CTX *dd)
-+{
-+
-+    switch (s->version) {
-+    case TLS1_VERSION:
-+    case TLS1_1_VERSION:
-+    case TLS1_2_VERSION:
-+    case TLS1_3_VERSION:
-+        break;
-+    default:
-+        return 0;
-+    }
-+
-+    switch (s->s3->tmp.new_cipher->algorithm_enc) {
-+    case SSL_AES128GCM:
-+    case SSL_AES256GCM:
-+        return 1;
+ #if defined(__FreeBSD__)
+ # include "crypto/cryptodev.h"
+ 
+@@ -37,6 +98,10 @@ int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
+     case SSL_AES128GCM:
+     case SSL_AES256GCM:
+         return 1;
 +# ifdef OPENSSL_KTLS_CHACHA20_POLY1305
 +    case SSL_CHACHA20POLY1305:
 +        return 1;
 +# endif
-+    case SSL_AES128:
-+    case SSL_AES256:
-+        if (s->ext.use_etm)
-+            return 0;
-+        switch (s->s3->tmp.new_cipher->algorithm_mac) {
-+        case SSL_SHA1:
-+        case SSL_SHA256:
-+        case SSL_SHA384:
-+            return 1;
-+        default:
-+            return 0;
-+        }
-+    default:
-+        return 0;
-+    }
-+}
-+
-+/* Function to configure kernel TLS structure */
+     case SSL_AES128:
+     case SSL_AES256:
+         if (s->ext.use_etm)
+@@ -55,9 +120,9 @@ int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
+ }
+ 
+ /* Function to configure kernel TLS structure */
+-int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
 +int ktls_configure_crypto(SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
-+                          void *rl_sequence, ktls_crypto_info_t *crypto_info,
+                           void *rl_sequence, ktls_crypto_info_t *crypto_info,
+-                          unsigned char **rec_seq, unsigned char *iv,
 +                          int is_tx, unsigned char *iv,
-+                          unsigned char *key, unsigned char *mac_key,
-+                          size_t mac_secret_size)
-+{
-+    memset(crypto_info, 0, sizeof(*crypto_info));
-+    switch (s->s3->tmp.new_cipher->algorithm_enc) {
-+    case SSL_AES128GCM:
-+    case SSL_AES256GCM:
-+        crypto_info->cipher_algorithm = CRYPTO_AES_NIST_GCM_16;
-+        if (s->version == TLS1_3_VERSION)
-+            crypto_info->iv_len = EVP_CIPHER_CTX_iv_length(dd);
-+        else
-+            crypto_info->iv_len = EVP_GCM_TLS_FIXED_IV_LEN;
-+        break;
+                           unsigned char *key, unsigned char *mac_key,
+                           size_t mac_secret_size)
+ {
+@@ -71,6 +136,12 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+         else
+             crypto_info->iv_len = EVP_GCM_TLS_FIXED_IV_LEN;
+         break;
 +# ifdef OPENSSL_KTLS_CHACHA20_POLY1305
 +    case SSL_CHACHA20POLY1305:
 +        crypto_info->cipher_algorithm = CRYPTO_CHACHA20_POLY1305;
-+        crypto_info->iv_len = EVP_CIPHER_CTX_iv_length(dd);
++        crypto_info->iv_len = EVP_CIPHER_CTX_get_iv_length(dd);
 +        break;
 +# endif
-+    case SSL_AES128:
-+    case SSL_AES256:
-+        switch (s->s3->tmp.new_cipher->algorithm_mac) {
-+        case SSL_SHA1:
-+            crypto_info->auth_algorithm = CRYPTO_SHA1_HMAC;
-+            break;
-+        case SSL_SHA256:
-+            crypto_info->auth_algorithm = CRYPTO_SHA2_256_HMAC;
-+            break;
-+        case SSL_SHA384:
-+            crypto_info->auth_algorithm = CRYPTO_SHA2_384_HMAC;
-+            break;
-+        default:
-+            return 0;
-+        }
-+        crypto_info->cipher_algorithm = CRYPTO_AES_CBC;
-+        crypto_info->iv_len = EVP_CIPHER_iv_length(c);
-+        crypto_info->auth_key = mac_key;
-+        crypto_info->auth_key_len = mac_secret_size;
-+        break;
-+    default:
-+        return 0;
-+    }
-+    crypto_info->cipher_key = key;
-+    crypto_info->cipher_key_len = EVP_CIPHER_key_length(c);
-+    crypto_info->iv = iv;
-+    crypto_info->tls_vmajor = (s->version >> 8) & 0x000000ff;
-+    crypto_info->tls_vminor = (s->version & 0x000000ff);
-+# ifdef TCP_RXTLS_ENABLE
-+    memcpy(crypto_info->rec_seq, rl_sequence, sizeof(crypto_info->rec_seq));
+     case SSL_AES128:
+     case SSL_AES256:
+         switch (s->s3.tmp.new_cipher->algorithm_mac) {
+@@ -101,11 +172,11 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+     crypto_info->tls_vminor = (s->version & 0x000000ff);
+ # ifdef TCP_RXTLS_ENABLE
+     memcpy(crypto_info->rec_seq, rl_sequence, sizeof(crypto_info->rec_seq));
+-    if (rec_seq != NULL)
+-        *rec_seq = crypto_info->rec_seq;
 +    if (!is_tx && !check_rx_read_ahead(s, crypto_info->rec_seq))
 +        return 0;
-+# else
+ # else
+-    if (rec_seq != NULL)
+-        *rec_seq = NULL;
 +    if (!is_tx)
 +        return 0;
-+# endif
-+    return 1;
-+};
-+
-+#endif                         /* __FreeBSD__ */
-+
-+#if defined(OPENSSL_SYS_LINUX)
-+
-+/* Function to check supported ciphers in Linux */
-+int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
-+                                const EVP_CIPHER_CTX *dd)
-+{
-+    switch (s->version) {
-+    case TLS1_2_VERSION:
-+    case TLS1_3_VERSION:
-+        break;
-+    default:
-+        return 0;
-+    }
-+
-+    /* check that cipher is AES_GCM_128, AES_GCM_256, AES_CCM_128 
-+     * or Chacha20-Poly1305
-+     */
-+# ifdef OPENSSL_KTLS_AES_CCM_128
-+    if (EVP_CIPHER_is_a(c, "AES-128-CCM")) {
-+        if (s->version == TLS_1_3_VERSION /* broken on 5.x kernels */
-+            || EVP_CIPHER_CTX_get_tag_length(dd) != EVP_CCM_TLS_TAG_LEN)
-+            return 0;
-+        return 1;
-+    } else
-+# endif
-+    if (0
-+# ifdef OPENSSL_KTLS_AES_GCM_128
-+        || EVP_CIPHER_is_a(c, "AES-128-GCM")
-+# endif
-+# ifdef OPENSSL_KTLS_AES_GCM_256
-+        || EVP_CIPHER_is_a(c, "AES-256-GCM")
-+# endif
-+# ifdef OPENSSL_KTLS_CHACHA20_POLY1305
-+        || EVP_CIPHER_is_a(c, "ChaCha20-Poly1305")
-+# endif
-+        ) {
-+        return 1;
-+    }
-+    return 0;
-+}
-+
-+/* Function to configure kernel TLS structure */
+ # endif
+     return 1;
+ };
+@@ -154,15 +225,20 @@ int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
+ }
+ 
+ /* Function to configure kernel TLS structure */
+-int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
 +int ktls_configure_crypto(SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
-+                          void *rl_sequence, ktls_crypto_info_t *crypto_info,
+                           void *rl_sequence, ktls_crypto_info_t *crypto_info,
+-                          unsigned char **rec_seq, unsigned char *iv,
 +                          int is_tx, unsigned char *iv,
-+                          unsigned char *key, unsigned char *mac_key,
-+                          size_t mac_secret_size)
-+{
-+    unsigned char geniv[12];
-+    unsigned char *iiv = iv;
-+
+                           unsigned char *key, unsigned char *mac_key,
+                           size_t mac_secret_size)
+ {
+     unsigned char geniv[12];
+     unsigned char *iiv = iv;
+ 
 +# ifdef OPENSSL_NO_KTLS_RX
 +    if (!is_tx)
 +        return 0;
 +# endif
 +
-+    if (s->version == TLS1_2_VERSION &&
-+        EVP_CIPHER_mode(c) == EVP_CIPH_GCM_MODE) {
-+        EVP_CIPHER_CTX_ctrl(dd, EVP_CTRL_GET_IV,
-+                            EVP_GCM_TLS_FIXED_IV_LEN + EVP_GCM_TLS_EXPLICIT_IV_LEN,
-+                            geniv);
-+        iiv = geniv;
-+    }
-+
-+    memset(crypto_info, 0, sizeof(*crypto_info));
-+    switch (EVP_CIPHER_nid(c))
-+    {
-+# ifdef OPENSSL_KTLS_AES_GCM_128
-+    case NID_aes_128_gcm:
-+        crypto_info->gcm128.info.cipher_type = TLS_CIPHER_AES_GCM_128;
-+        crypto_info->gcm128.info.version = s->version;
-+        crypto_info->tls_crypto_info_len = sizeof(crypto_info->gcm128);
-+        memcpy(crypto_info->gcm128.iv, iiv + EVP_GCM_TLS_FIXED_IV_LEN,
-+               TLS_CIPHER_AES_GCM_128_IV_SIZE);
-+        memcpy(crypto_info->gcm128.salt, iiv, TLS_CIPHER_AES_GCM_128_SALT_SIZE);
-+        memcpy(crypto_info->gcm128.key, key, EVP_CIPHER_key_length(c));
-+        memcpy(crypto_info->gcm128.rec_seq, rl_sequence,
-+               TLS_CIPHER_AES_GCM_128_REC_SEQ_SIZE);
+     if (s->version == TLS1_2_VERSION &&
+         EVP_CIPHER_get_mode(c) == EVP_CIPH_GCM_MODE) {
+         if (!EVP_CIPHER_CTX_get_updated_iv(dd, geniv,
+@@ -186,8 +262,8 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+         memcpy(crypto_info->gcm128.key, key, EVP_CIPHER_get_key_length(c));
+         memcpy(crypto_info->gcm128.rec_seq, rl_sequence,
+                TLS_CIPHER_AES_GCM_128_REC_SEQ_SIZE);
+-        if (rec_seq != NULL)
+-            *rec_seq = crypto_info->gcm128.rec_seq;
 +        if (!is_tx && !check_rx_read_ahead(s, crypto_info->gcm128.rec_seq))
 +            return 0;
-+        return 1;
-+# endif
-+# ifdef OPENSSL_KTLS_AES_GCM_256
-+    case NID_aes_256_gcm:
-+        crypto_info->gcm256.info.cipher_type = TLS_CIPHER_AES_GCM_256;
-+        crypto_info->gcm256.info.version = s->version;
-+        crypto_info->tls_crypto_info_len = sizeof(crypto_info->gcm256);
-+        memcpy(crypto_info->gcm256.iv, iiv + EVP_GCM_TLS_FIXED_IV_LEN,
-+               TLS_CIPHER_AES_GCM_256_IV_SIZE);
-+        memcpy(crypto_info->gcm256.salt, iiv, TLS_CIPHER_AES_GCM_256_SALT_SIZE);
-+        memcpy(crypto_info->gcm256.key, key, EVP_CIPHER_key_length(c));
-+        memcpy(crypto_info->gcm256.rec_seq, rl_sequence,
-+               TLS_CIPHER_AES_GCM_256_REC_SEQ_SIZE);
+         return 1;
+ # endif
+ # ifdef OPENSSL_KTLS_AES_GCM_256
+@@ -201,8 +277,8 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+         memcpy(crypto_info->gcm256.key, key, EVP_CIPHER_get_key_length(c));
+         memcpy(crypto_info->gcm256.rec_seq, rl_sequence,
+                TLS_CIPHER_AES_GCM_256_REC_SEQ_SIZE);
+-        if (rec_seq != NULL)
+-            *rec_seq = crypto_info->gcm256.rec_seq;
 +        if (!is_tx && !check_rx_read_ahead(s, crypto_info->gcm256.rec_seq))
 +            return 0;
-+        return 1;
-+# endif
-+# ifdef OPENSSL_KTLS_AES_CCM_128
-+    case NID_aes_128_ccm:
-+        crypto_info->ccm128.info.cipher_type = TLS_CIPHER_AES_CCM_128;
-+        crypto_info->ccm128.info.version = s->version;
-+        crypto_info->tls_crypto_info_len = sizeof(crypto_info->ccm128);
-+        memcpy(crypto_info->ccm128.iv, iiv + EVP_CCM_TLS_FIXED_IV_LEN,
-+               TLS_CIPHER_AES_CCM_128_IV_SIZE);
-+        memcpy(crypto_info->ccm128.salt, iiv, TLS_CIPHER_AES_CCM_128_SALT_SIZE);
-+        memcpy(crypto_info->ccm128.key, key, EVP_CIPHER_key_length(c));
-+        memcpy(crypto_info->ccm128.rec_seq, rl_sequence,
-+               TLS_CIPHER_AES_CCM_128_REC_SEQ_SIZE);
+         return 1;
+ # endif
+ # ifdef OPENSSL_KTLS_AES_CCM_128
+@@ -216,8 +292,8 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+         memcpy(crypto_info->ccm128.key, key, EVP_CIPHER_get_key_length(c));
+         memcpy(crypto_info->ccm128.rec_seq, rl_sequence,
+                TLS_CIPHER_AES_CCM_128_REC_SEQ_SIZE);
+-        if (rec_seq != NULL)
+-            *rec_seq = crypto_info->ccm128.rec_seq;
 +        if (!is_tx && !check_rx_read_ahead(s, crypto_info->ccm128.rec_seq))
 +            return 0;
-+        return 1;
-+# endif
-+# ifdef OPENSSL_KTLS_CHACHA20_POLY1305
-+    case NID_chacha20_poly1305:
-+        crypto_info->chacha20poly1305.info.cipher_type = TLS_CIPHER_CHACHA20_POLY1305;
-+        crypto_info->chacha20poly1305.info.version = s->version;
-+        crypto_info->tls_crypto_info_len = sizeof(crypto_info->chacha20poly1305);
-+        memcpy(crypto_info->chacha20poly1305.iv, iiv,
-+               TLS_CIPHER_CHACHA20_POLY1305_IV_SIZE);
-+        memcpy(crypto_info->chacha20poly1305.key, key,
-+               EVP_CIPHER_get_key_length(c));
-+        memcpy(crypto_info->chacha20poly1305.rec_seq, rl_sequence,
-+               TLS_CIPHER_CHACHA20_POLY1305_REC_SEQ_SIZE);
+         return 1;
+ # endif
+ # ifdef OPENSSL_KTLS_CHACHA20_POLY1305
+@@ -231,8 +307,10 @@ int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
+                EVP_CIPHER_get_key_length(c));
+         memcpy(crypto_info->chacha20poly1305.rec_seq, rl_sequence,
+                TLS_CIPHER_CHACHA20_POLY1305_REC_SEQ_SIZE);
+-        if (rec_seq != NULL)
+-            *rec_seq = crypto_info->chacha20poly1305.rec_seq;
 +        if (!is_tx
 +                && !check_rx_read_ahead(s,
 +                                        crypto_info->chacha20poly1305.rec_seq))
 +            return 0;
-+        return 1;
-+# endif
-+    default:
-+        return 0;
-+    }
-+
-+}
-+
-+#endif /* OPENSSL_SYS_LINUX */
-diff --git ssl/record/rec_layer_s3.c ssl/record/rec_layer_s3.c
-index 8249b4ace9..1356bd7b7b 100644
---- ssl/record/rec_layer_s3.c
-+++ ssl/record/rec_layer_s3.c
-@@ -281,11 +281,15 @@
-         return -1;
-     }
- 
--    /* We always act like read_ahead is set for DTLS */
--    if (!s->rlayer.read_ahead && !SSL_IS_DTLS(s))
-+    /*
-+     * Ktls always reads full records.
-+     * Also, we always act like read_ahead is set for DTLS.
-+     */
-+    if (!BIO_get_ktls_recv(s->rbio) && !s->rlayer.read_ahead
-+        && !SSL_IS_DTLS(s)) {
-         /* ignore max parameter */
-         max = n;
--    else {
-+    } else {
-         if (max < n)
-             max = n;
-         if (max > rb->len - rb->offset)
-@@ -435,6 +439,7 @@
-         len >= 4 * (max_send_fragment = ssl_get_max_send_fragment(s)) &&
-         s->compress == NULL && s->msg_callback == NULL &&
-         !SSL_WRITE_ETM(s) && SSL_USE_EXPLICIT_IV(s) &&
-+        (BIO_get_ktls_send(s->wbio) == 0) &&
-         EVP_CIPHER_flags(EVP_CIPHER_CTX_cipher(s->enc_write_ctx)) &
-         EVP_CIPH_FLAG_TLS1_1_MULTIBLOCK) {
-         unsigned char aad[13];
-@@ -764,6 +769,19 @@
-         s->s3->empty_fragment_done = 1;
-     }
- 
-+    if (BIO_get_ktls_send(s->wbio)) {
-+        /*
-+         * ktls doesn't modify the buffer, but to avoid a warning we need to
-+         * discard the const qualifier.
-+         * This doesn't leak memory because the buffers have been released when
-+         * switching to ktls.
-+         */
-+        SSL3_BUFFER_set_buf(&s->rlayer.wbuf[0], (unsigned char *)buf);
-+        SSL3_BUFFER_set_offset(&s->rlayer.wbuf[0], 0);
-+        SSL3_BUFFER_set_app_buffer(&s->rlayer.wbuf[0], 1);
-+        goto wpacket_init_complete;
-+    }
-+
-     if (create_empty_fragment) {
-         wb = &s->rlayer.wbuf[0];
- #if defined(SSL3_ALIGN_PAYLOAD) && SSL3_ALIGN_PAYLOAD!=0
-@@ -833,6 +851,8 @@
-         }
-     }
- 
-+ wpacket_init_complete:
-+
-     totlen = 0;
-     /* Clear our SSL3_RECORD structures */
-     memset(wr, 0, sizeof(wr));
-@@ -874,15 +894,19 @@
-         if (s->compress != NULL)
-             maxcomplen += SSL3_RT_MAX_COMPRESSED_OVERHEAD;
- 
--        /* write the header */
--        if (!WPACKET_put_bytes_u8(thispkt, rectype)
-+        /*
-+         * When using offload kernel will write the header.
-+         * Otherwise write the header now
-+         */
-+        if (!BIO_get_ktls_send(s->wbio)
-+                && (!WPACKET_put_bytes_u8(thispkt, rectype)
-                 || !WPACKET_put_bytes_u16(thispkt, version)
-                 || !WPACKET_start_sub_packet_u16(thispkt)
-                 || (eivlen > 0
-                     && !WPACKET_allocate_bytes(thispkt, eivlen, NULL))
-                 || (maxcomplen > 0
-                     && !WPACKET_reserve_bytes(thispkt, maxcomplen,
--                                              &compressdata))) {
-+                                              &compressdata)))) {
-             SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
-                      ERR_R_INTERNAL_ERROR);
-             goto err;
-@@ -908,15 +932,20 @@
-                 goto err;
-             }
-         } else {
--            if (!WPACKET_memcpy(thispkt, thiswr->input, thiswr->length)) {
--                SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
--                         ERR_R_INTERNAL_ERROR);
--                goto err;
-+            if (BIO_get_ktls_send(s->wbio)) {
-+                SSL3_RECORD_reset_data(&wr[j]);
-+            } else {
-+                if (!WPACKET_memcpy(thispkt, thiswr->input, thiswr->length)) {
-+                    SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
-+                            ERR_R_INTERNAL_ERROR);
-+                    goto err;
-+                }
-+                SSL3_RECORD_reset_input(&wr[j]);
-             }
--            SSL3_RECORD_reset_input(&wr[j]);
-         }
- 
-         if (SSL_TREAT_AS_TLS13(s)
-+                && !BIO_get_ktls_send(s->wbio)
-                 && s->enc_write_ctx != NULL
-                 && (s->statem.enc_write_state != ENC_WRITE_STATE_WRITE_PLAIN_ALERTS
-                     || type != SSL3_RT_ALERT)) {
-@@ -972,7 +1001,7 @@
-          * in the wb->buf
-          */
- 
--        if (!SSL_WRITE_ETM(s) && mac_size != 0) {
-+        if (!BIO_get_ktls_send(s->wbio) && !SSL_WRITE_ETM(s) && mac_size != 0) {
-             unsigned char *mac;
- 
-             if (!WPACKET_allocate_bytes(thispkt, mac_size, &mac)
-@@ -989,26 +1018,27 @@
-         * max encrypted overhead does not need to include an allocation for that
-         * MAC
-         */
--        if (!WPACKET_reserve_bytes(thispkt,
--                                   SSL3_RT_SEND_MAX_ENCRYPTED_OVERHEAD
--                                   - mac_size,
--                                   NULL)
--                   /*
--                    * We also need next the amount of bytes written to this
--                    * sub-packet
--                    */
-+        if (!BIO_get_ktls_send(s->wbio)) {
-+            if (!WPACKET_reserve_bytes(thispkt,
-+                                       SSL3_RT_SEND_MAX_ENCRYPTED_OVERHEAD
-+                                       - mac_size,
-+                                        NULL)
-+                /*
-+                 * We also need next the amount of bytes written to this
-+                 * sub-packet
-+                 */
-                 || !WPACKET_get_length(thispkt, &len)) {
-             SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
-                      ERR_R_INTERNAL_ERROR);
-             goto err;
--        }
-+            }
- 
--        /* Get a pointer to the start of this record excluding header */
--        recordstart = WPACKET_get_curr(thispkt) - len;
--
--        SSL3_RECORD_set_data(thiswr, recordstart);
--        SSL3_RECORD_reset_input(thiswr);
--        SSL3_RECORD_set_length(thiswr, len);
-+            /* Get a pointer to the start of this record excluding header */
-+            recordstart = WPACKET_get_curr(thispkt) - len;
-+            SSL3_RECORD_set_data(thiswr, recordstart);
-+            SSL3_RECORD_reset_input(thiswr);
-+            SSL3_RECORD_set_length(thiswr, len);
-+        }
-     }
- 
-     if (s->statem.enc_write_state == ENC_WRITE_STATE_WRITE_PLAIN_ALERTS) {
-@@ -1024,12 +1054,14 @@
-             goto err;
-         }
-     } else {
--        if (s->method->ssl3_enc->enc(s, wr, numpipes, 1) < 1) {
--            if (!ossl_statem_in_error(s)) {
--                SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
--                         ERR_R_INTERNAL_ERROR);
-+        if (!BIO_get_ktls_send(s->wbio)) {
-+            if (s->method->ssl3_enc->enc(s, wr, numpipes, 1) < 1) {
-+                if (!ossl_statem_in_error(s)) {
-+                    SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
-+                            ERR_R_INTERNAL_ERROR);
-+                }
-+                goto err;
-             }
--            goto err;
-         }
-     }
- 
-@@ -1039,6 +1071,9 @@
-         thispkt = &pkt[j];
-         thiswr = &wr[j];
- 
-+       if (BIO_get_ktls_send(s->wbio))
-+            goto mac_done;
-+
-         /* Allocate bytes for the encryption overhead */
-         if (!WPACKET_get_length(thispkt, &origlen)
-                    /* Check we allowed enough room for the encryption growth */
-@@ -1048,7 +1083,8 @@
-                 || origlen > thiswr->length
-                 || (thiswr->length > origlen
-                     && !WPACKET_allocate_bytes(thispkt,
--                                               thiswr->length - origlen, NULL))) {
-+                                               thiswr->length - origlen,
-+                                               NULL))) {
-             SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DO_SSL3_WRITE,
-                      ERR_R_INTERNAL_ERROR);
-             goto err;
-@@ -1093,13 +1129,8 @@
-             goto err;
-         }
- 
--        /*
--         * we should now have thiswr->data pointing to the encrypted data, which
--         * is thiswr->length long
--         */
--        SSL3_RECORD_set_type(thiswr, type); /* not needed but helps for
--                                             * debugging */
--        SSL3_RECORD_add_length(thiswr, SSL3_RT_HEADER_LENGTH);
-+        /* header is added by the kernel when using offload */
-+        SSL3_RECORD_add_length(&wr[j], SSL3_RT_HEADER_LENGTH);
- 
-         if (create_empty_fragment) {
-             /*
-@@ -1116,6 +1147,14 @@
-             return 1;
-         }
- 
-+ mac_done:
-+        /*
-+         * we should now have thiswr->data pointing to the encrypted data, which
-+         * is thiswr->length long
-+         */
-+        SSL3_RECORD_set_type(thiswr, type); /* not needed but helps for
-+                                             * debugging */
-+
-         /* now let's set up wb */
-         SSL3_BUFFER_set_left(&s->rlayer.wbuf[j],
-                              prefix_len + SSL3_RECORD_get_length(thiswr));
-@@ -1169,6 +1208,17 @@
-         clear_sys_error();
-         if (s->wbio != NULL) {
-             s->rwstate = SSL_WRITING;
-+
-+            /*
-+             * To prevent coalescing of control and data messages,
-+             * such as in buffer_write, we flush the BIO
-+             */
-+            if (BIO_get_ktls_send(s->wbio) && type != SSL3_RT_APPLICATION_DATA) {
-+                i = BIO_flush(s->wbio);
-+                if (i <= 0)
-+                    return i;
-+                BIO_set_ktls_ctrl_msg(s->wbio, type);
-+            }
-             /* TODO(size_t): Convert this call */
-             i = BIO_write(s->wbio, (char *)
-                           &(SSL3_BUFFER_get_buf(&wb[currbuf])
-@@ -1181,7 +1231,15 @@
-                      SSL_R_BIO_NOT_SET);
-             i = -1;
-         }
--        if (i > 0 && tmpwrit == SSL3_BUFFER_get_left(&wb[currbuf])) {
-+
-+	/*
-+	 * When an empty fragment is sent on a connection using KTLS,
-+	 * it is sent as a write of zero bytes.  If this zero byte
-+	 * write succeeds, i will be 0 rather than a non-zero value.
-+	 * Treat i == 0 as success rather than an error for zero byte
-+	 * writes to permit this case.
-+	 */
-+        if (i >= 0 && tmpwrit == SSL3_BUFFER_get_left(&wb[currbuf])) {
-             SSL3_BUFFER_set_left(&wb[currbuf], 0);
-             SSL3_BUFFER_add_offset(&wb[currbuf], tmpwrit);
-             if (currbuf + 1 < s->rlayer.numwpipes)
-diff --git ssl/record/record.h ssl/record/record.h
-index af56206e07..10fdde71a8 100644
---- ssl/record/record.h
-+++ ssl/record/record.h
-@@ -25,6 +25,8 @@ typedef struct ssl3_buffer_st {
-     size_t offset;
-     /* how many bytes left */
-     size_t left;
-+    /* 'buf' is from application for KTLS */
-+    int app_buffer;
- } SSL3_BUFFER;
- 
- #define SEQ_NUM_SIZE                            8
-diff --git ssl/record/record_local.h ssl/record/record_local.h
-index 5e8dd7f704..4760eeb7d8 100644
---- ssl/record/record_local.h
-+++ ssl/record/record_local.h
-@@ -65,6 +65,8 @@ void dtls1_record_bitmap_update(SSL *s, DTLS1_BITMAP *bitmap);
- #define SSL3_BUFFER_add_offset(b, o)        ((b)->offset += (o))
- #define SSL3_BUFFER_is_initialised(b)       ((b)->buf != NULL)
- #define SSL3_BUFFER_set_default_len(b, l)   ((b)->default_len = (l))
-+#define SSL3_BUFFER_set_app_buffer(b, l)    ((b)->app_buffer = (l))
-+#define SSL3_BUFFER_is_app_buffer(b)        ((b)->app_buffer)
- 
- void SSL3_BUFFER_clear(SSL3_BUFFER *b);
- void SSL3_BUFFER_set_data(SSL3_BUFFER *b, const unsigned char *d, size_t n);
-@@ -88,6 +90,7 @@ int ssl3_release_write_buffer(SSL *s);
- #define SSL3_RECORD_get_input(r)                ((r)->input)
- #define SSL3_RECORD_set_input(r, i)             ((r)->input = (i))
- #define SSL3_RECORD_reset_input(r)              ((r)->input = (r)->data)
-+#define SSL3_RECORD_reset_data(r)               ((r)->data = (r)->input)
- #define SSL3_RECORD_get_seq_num(r)              ((r)->seq_num)
- #define SSL3_RECORD_get_off(r)                  ((r)->off)
- #define SSL3_RECORD_set_off(r, o)               ((r)->off = (o))
-diff --git ssl/record/ssl3_buffer.c ssl/record/ssl3_buffer.c
-index b9ba25e0c3..10d11ab76c 100644
---- ssl/record/ssl3_buffer.c
-+++ ssl/record/ssl3_buffer.c
-@@ -110,23 +110,27 @@ int ssl3_setup_write_buffer(SSL *s, size_t numwpipes, size_t len)
-     for (currpipe = 0; currpipe < numwpipes; currpipe++) {
-         SSL3_BUFFER *thiswb = &wb[currpipe];
- 
--        if (thiswb->buf != NULL && thiswb->len != len) {
-+        if (thiswb->len != len) {
-             OPENSSL_free(thiswb->buf);
-             thiswb->buf = NULL;         /* force reallocation */
-         }
- 
-         if (thiswb->buf == NULL) {
--            p = OPENSSL_malloc(len);
--            if (p == NULL) {
--                s->rlayer.numwpipes = currpipe;
--                /*
--                 * We've got a malloc failure, and we're still initialising
--                 * buffers. We assume we're so doomed that we won't even be able
--                 * to send an alert.
--                 */
--                SSLfatal(s, SSL_AD_NO_ALERT,
--                         SSL_F_SSL3_SETUP_WRITE_BUFFER, ERR_R_MALLOC_FAILURE);
--                return 0;
-+            if (s->wbio == NULL || !BIO_get_ktls_send(s->wbio)) {
-+                p = OPENSSL_malloc(len);
-+                if (p == NULL) {
-+                    s->rlayer.numwpipes = currpipe;
-+                    /*
-+                     * We've got a malloc failure, and we're still initialising
-+                     * buffers. We assume we're so doomed that we won't even be able
-+                     * to send an alert.
-+                     */
-+                    SSLfatal(s, SSL_AD_NO_ALERT,
-+                            SSL_F_SSL3_SETUP_WRITE_BUFFER, ERR_R_MALLOC_FAILURE);
-+                    return 0;
-+                }
-+            } else {
-+                p = NULL;
-             }
-             memset(thiswb, 0, sizeof(SSL3_BUFFER));
-             thiswb->buf = p;
-@@ -159,7 +163,10 @@ int ssl3_release_write_buffer(SSL *s)
-     while (pipes > 0) {
-         wb = &RECORD_LAYER_get_wbuf(&s->rlayer)[pipes - 1];
- 
--        OPENSSL_free(wb->buf);
-+        if (SSL3_BUFFER_is_app_buffer(wb))
-+            SSL3_BUFFER_set_app_buffer(wb, 0);
-+        else
-+            OPENSSL_free(wb->buf);
-         wb->buf = NULL;
-         pipes--;
-     }
+         return 1;
+ # endif
+     default:
 diff --git ssl/record/ssl3_record.c ssl/record/ssl3_record.c
-index f158544789..da549995e0 100644
+index d8ef018741..63caac080f 100644
 --- ssl/record/ssl3_record.c
 +++ ssl/record/ssl3_record.c
-@@ -186,6 +186,7 @@ int ssl3_get_record(SSL *s)
+@@ -185,18 +185,23 @@ int ssl3_get_record(SSL *s)
+     int imac_size;
      size_t num_recs = 0, max_recs, j;
      PACKET pkt, sslv2pkt;
-     size_t first_rec_len;
+-    int is_ktls_left;
 +    int using_ktls;
+     SSL_MAC_BUF *macbufs = NULL;
+     int ret = -1;
  
      rr = RECORD_LAYER_get_rrec(&s->rlayer);
      rbuf = RECORD_LAYER_get_rbuf(&s->rlayer);
-@@ -194,6 +195,12 @@ int ssl3_get_record(SSL *s)
+-    is_ktls_left = (SSL3_BUFFER_get_left(rbuf) > 0);
+     max_recs = s->max_pipelines;
+     if (max_recs == 0)
          max_recs = 1;
      sess = s->session;
  
@@ -1947,42 +237,7 @@ index f158544789..da549995e0 100644
      do {
          thisrr = &rr[num_recs];
  
-@@ -207,8 +214,32 @@ int ssl3_get_record(SSL *s)
-             rret = ssl3_read_n(s, SSL3_RT_HEADER_LENGTH,
-                                SSL3_BUFFER_get_len(rbuf), 0,
-                                num_recs == 0 ? 1 : 0, &n);
--            if (rret <= 0)
--                return rret;     /* error or non-blocking */
-+            if (rret <= 0) {
-+#ifndef OPENSSL_NO_KTLS
-+                if (!BIO_get_ktls_recv(s->rbio) || rret == 0)
-+                    return rret;     /* error or non-blocking */
-+                switch (errno) {
-+                case EBADMSG:
-+                    SSLfatal(s, SSL_AD_BAD_RECORD_MAC,
-+                             SSL_F_SSL3_GET_RECORD,
-+                             SSL_R_DECRYPTION_FAILED_OR_BAD_RECORD_MAC);
-+                    break;
-+                case EMSGSIZE:
-+                    SSLfatal(s, SSL_AD_RECORD_OVERFLOW,
-+                             SSL_F_SSL3_GET_RECORD,
-+                             SSL_R_PACKET_LENGTH_TOO_LONG);
-+                    break;
-+                case EINVAL:
-+                    SSLfatal(s, SSL_AD_PROTOCOL_VERSION,
-+                             SSL_F_SSL3_GET_RECORD,
-+                             SSL_R_WRONG_VERSION_NUMBER);
-+                    break;
-+                default:
-+                    break;
-+                }
-+#endif
-+                return rret;
-+            }
-             RECORD_LAYER_set_rstate(&s->rlayer, SSL_ST_READ_BODY);
- 
-             p = RECORD_LAYER_get_packet(&s->rlayer);
-@@ -339,7 +370,9 @@ int ssl3_get_record(SSL *s)
+@@ -361,7 +366,9 @@ int ssl3_get_record(SSL *s)
                      }
                  }
  
@@ -1993,7 +248,7 @@ index f158544789..da549995e0 100644
                      if (thisrr->type != SSL3_RT_APPLICATION_DATA
                              && (thisrr->type != SSL3_RT_CHANGE_CIPHER_SPEC
                                  || !SSL_IS_FIRST_HANDSHAKE(s))
-@@ -369,7 +402,13 @@ int ssl3_get_record(SSL *s)
+@@ -391,7 +398,13 @@ int ssl3_get_record(SSL *s)
          }
  
          if (SSL_IS_TLS13(s)) {
@@ -2005,48 +260,32 @@ index f158544789..da549995e0 100644
 +                len = SSL3_RT_MAX_ENCRYPTED_LENGTH;
 +
 +            if (thisrr->length > len) {
-                 SSLfatal(s, SSL_AD_RECORD_OVERFLOW, SSL_F_SSL3_GET_RECORD,
+                 SSLfatal(s, SSL_AD_RECORD_OVERFLOW,
                           SSL_R_ENCRYPTED_LENGTH_TOO_LONG);
                  return -1;
-@@ -386,6 +425,10 @@ int ssl3_get_record(SSL *s)
-                 len -= SSL3_RT_MAX_COMPRESSED_OVERHEAD;
+@@ -409,7 +422,7 @@ int ssl3_get_record(SSL *s)
  #endif
  
-+            /* KTLS may use all of the buffer */
+             /* KTLS may use all of the buffer */
+-            if (BIO_get_ktls_recv(s->rbio) && !is_ktls_left)
 +            if (using_ktls)
-+                len = SSL3_BUFFER_get_left(rbuf);
-+
-             if (thisrr->length > len) {
-                 SSLfatal(s, SSL_AD_RECORD_OVERFLOW, SSL_F_SSL3_GET_RECORD,
-                          SSL_R_ENCRYPTED_LENGTH_TOO_LONG);
-@@ -404,6 +447,7 @@ int ssl3_get_record(SSL *s)
-         } else {
-             more = thisrr->length;
-         }
-+
-         if (more > 0) {
-             /* now s->rlayer.packet_length == SSL3_RT_HEADER_LENGTH */
+                 len = SSL3_BUFFER_get_left(rbuf);
  
-@@ -491,6 +535,9 @@ int ssl3_get_record(SSL *s)
+             if (thisrr->length > len) {
+@@ -518,11 +531,7 @@ int ssl3_get_record(SSL *s)
          return 1;
      }
  
+-    /*
+-     * KTLS reads full records. If there is any data left,
+-     * then it is from before enabling ktls
+-     */
+-    if (BIO_get_ktls_recv(s->rbio) && !is_ktls_left)
 +    if (using_ktls)
-+        goto skip_decryption;
-+
-     /*
-      * If in encrypt-then-mac mode calculate mac from encrypted record. All
-      * the details below are public so no timing details can leak.
-@@ -678,6 +725,8 @@ int ssl3_get_record(SSL *s)
-         return -1;
-     }
+         goto skip_decryption;
  
-+ skip_decryption:
-+
-     for (j = 0; j < num_recs; j++) {
-         thisrr = &rr[j];
- 
-@@ -698,22 +747,30 @@ int ssl3_get_record(SSL *s)
+     if (s->read_hash != NULL) {
+@@ -677,21 +686,29 @@ int ssl3_get_record(SSL *s)
          if (SSL_IS_TLS13(s)
                  && s->enc_read_ctx != NULL
                  && thisrr->type != SSL3_RT_ALERT) {
@@ -2062,14 +301,12 @@ index f158544789..da549995e0 100644
  
 -            if (thisrr->length == 0
 -                    || thisrr->type != SSL3_RT_APPLICATION_DATA) {
--                SSLfatal(s, SSL_AD_UNEXPECTED_MESSAGE, SSL_F_SSL3_GET_RECORD,
--                         SSL_R_BAD_RECORD_TYPE);
--                return -1;
+-                SSLfatal(s, SSL_AD_UNEXPECTED_MESSAGE, SSL_R_BAD_RECORD_TYPE);
+-                goto end;
 +                if (thisrr->length == 0
 +                        || thisrr->type != SSL3_RT_APPLICATION_DATA) {
-+                    SSLfatal(s, SSL_AD_UNEXPECTED_MESSAGE,
-+                             SSL_F_SSL3_GET_RECORD, SSL_R_BAD_RECORD_TYPE);
-+                    return -1;
++                    SSLfatal(s, SSL_AD_UNEXPECTED_MESSAGE, SSL_R_BAD_RECORD_TYPE);
++                    goto end;
 +                }
 +
 +                /* Strip trailing padding */
@@ -2091,7 +328,7 @@ index f158544789..da549995e0 100644
              if (thisrr->type != SSL3_RT_APPLICATION_DATA
                      && thisrr->type != SSL3_RT_ALERT
                      && thisrr->type != SSL3_RT_HANDSHAKE) {
-@@ -723,7 +780,7 @@ int ssl3_get_record(SSL *s)
+@@ -700,7 +717,7 @@ int ssl3_get_record(SSL *s)
              }
              if (s->msg_callback)
                  s->msg_callback(0, s->version, SSL3_RT_INNER_CONTENT_TYPE,
@@ -2100,516 +337,175 @@ index f158544789..da549995e0 100644
          }
  
          /*
-@@ -739,13 +796,25 @@ int ssl3_get_record(SSL *s)
-             return -1;
-         }
- 
--        if (thisrr->length > SSL3_RT_MAX_PLAIN_LENGTH) {
-+        /*
-+         * Usually thisrr->length is the length of a single record, but when
-+         * KTLS handles the decryption, thisrr->length may be larger than
-+         * SSL3_RT_MAX_PLAIN_LENGTH because the kernel may have coalesced
-+         * multiple records.
-+         * Therefore we have to rely on KTLS to check the plaintext length
-+         * limit in the kernel.
-+         */
+@@ -723,8 +740,7 @@ int ssl3_get_record(SSL *s)
+          * Therefore we have to rely on KTLS to check the plaintext length
+          * limit in the kernel.
+          */
+-        if (thisrr->length > SSL3_RT_MAX_PLAIN_LENGTH
+-                && (!BIO_get_ktls_recv(s->rbio) || is_ktls_left)) {
 +        if (thisrr->length > SSL3_RT_MAX_PLAIN_LENGTH && !using_ktls) {
-             SSLfatal(s, SSL_AD_RECORD_OVERFLOW, SSL_F_SSL3_GET_RECORD,
-                      SSL_R_DATA_LENGTH_TOO_LONG);
-             return -1;
+             SSLfatal(s, SSL_AD_RECORD_OVERFLOW, SSL_R_DATA_LENGTH_TOO_LONG);
+             goto end;
          }
- 
--        /* If received packet overflows current Max Fragment Length setting */
-+        /*
-+         * Check if the received packet overflows the current
-+         * Max Fragment Length setting.
-+         * Note: USE_MAX_FRAGMENT_LENGTH_EXT and KTLS are mutually exclusive.
-+         */
-         if (s->session != NULL && USE_MAX_FRAGMENT_LENGTH_EXT(s->session)
-                 && thisrr->length > GET_MAX_FRAGMENT_LENGTH(s->session)) {
-             SSLfatal(s, SSL_AD_RECORD_OVERFLOW, SSL_F_SSL3_GET_RECORD,
-diff --git ssl/ssl_conf.c ssl/ssl_conf.c
-index 0a3fef7c8c..8013c62f07 100644
---- ssl/ssl_conf.c
-+++ ssl/ssl_conf.c
-@@ -391,7 +391,8 @@ static int cmd_Options(SSL_CONF_CTX *cctx, const char *value)
-         SSL_FLAG_TBL("AllowNoDHEKEX", SSL_OP_ALLOW_NO_DHE_KEX),
-         SSL_FLAG_TBL("PrioritizeChaCha", SSL_OP_PRIORITIZE_CHACHA),
-         SSL_FLAG_TBL("MiddleboxCompat", SSL_OP_ENABLE_MIDDLEBOX_COMPAT),
--        SSL_FLAG_TBL_INV("AntiReplay", SSL_OP_NO_ANTI_REPLAY)
-+        SSL_FLAG_TBL_INV("AntiReplay", SSL_OP_NO_ANTI_REPLAY),
-+        SSL_FLAG_TBL("KTLS", SSL_OP_ENABLE_KTLS)
-     };
-     if (value == NULL)
-         return -3;
-diff --git ssl/ssl_err.c ssl/ssl_err.c
-index 324f2ccbb0..03273204ee 100644
---- ssl/ssl_err.c
-+++ ssl/ssl_err.c
-@@ -313,6 +313,7 @@ static const ERR_STRING_DATA SSL_str_functs[] = {
-      "SSL_renegotiate_abbreviated"},
-     {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SCAN_CLIENTHELLO_TLSEXT, 0), ""},
-     {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SCAN_SERVERHELLO_TLSEXT, 0), ""},
-+    {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SENDFILE, 0), "SSL_sendfile"},
-     {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_DUP, 0), "ssl_session_dup"},
-     {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_NEW, 0), "SSL_SESSION_new"},
-     {ERR_PACK(ERR_LIB_SSL, SSL_F_SSL_SESSION_PRINT_FP, 0),
-diff --git ssl/ssl_lib.c ssl/ssl_lib.c
-index 25a1a44785..1fbad29b23 100644
---- ssl/ssl_lib.c
-+++ ssl/ssl_lib.c
-@@ -11,6 +11,7 @@
- 
- #include <stdio.h>
- #include "ssl_local.h"
-+#include "e_os.h"
- #include <openssl/objects.h>
- #include <openssl/x509v3.h>
- #include <openssl/rand.h>
-@@ -22,6 +23,7 @@
- #include <openssl/ct.h>
- #include "internal/cryptlib.h"
- #include "internal/refcount.h"
-+#include "internal/ktls.h"
- 
- const char SSL_version_str[] = OPENSSL_VERSION_TEXT;
- 
-@@ -1159,11 +1161,15 @@ void SSL_free(SSL *s)
-     dane_final(&s->dane);
-     CRYPTO_free_ex_data(CRYPTO_EX_INDEX_SSL, s, &s->ex_data);
- 
-+    RECORD_LAYER_release(&s->rlayer);
-+
-     /* Ignore return value */
-     ssl_free_wbio_buffer(s);
- 
-     BIO_free_all(s->wbio);
-+    s->wbio = NULL;
-     BIO_free_all(s->rbio);
-+    s->rbio = NULL;
- 
-     BUF_MEM_free(s->init_buf);
- 
-@@ -1220,8 +1226,6 @@ void SSL_free(SSL *s)
-     if (s->method != NULL)
-         s->method->ssl_free(s);
- 
--    RECORD_LAYER_release(&s->rlayer);
--
-     SSL_CTX_free(s->ctx);
- 
-     ASYNC_WAIT_CTX_free(s->waitctx);
-@@ -1361,6 +1365,15 @@ int SSL_set_fd(SSL *s, int fd)
-     }
-     BIO_set_fd(bio, fd, BIO_NOCLOSE);
-     SSL_set_bio(s, bio, bio);
-+#ifndef OPENSSL_NO_KTLS
-+    /*
-+     * The new socket is created successfully regardless of ktls_enable.
-+     * ktls_enable doesn't change any functionality of the socket, except
-+     * changing the setsockopt to enable the processing of ktls_start.
-+     * Thus, it is not a problem to call it for non-TLS sockets.
-+     */
-+    ktls_enable(fd);
-+#endif /* OPENSSL_NO_KTLS */
-     ret = 1;
-  err:
-     return ret;
-@@ -1380,6 +1393,15 @@ int SSL_set_wfd(SSL *s, int fd)
-         }
-         BIO_set_fd(bio, fd, BIO_NOCLOSE);
-         SSL_set0_wbio(s, bio);
-+#ifndef OPENSSL_NO_KTLS
-+        /*
-+         * The new socket is created successfully regardless of ktls_enable.
-+         * ktls_enable doesn't change any functionality of the socket, except
-+         * changing the setsockopt to enable the processing of ktls_start.
-+         * Thus, it is not a problem to call it for non-TLS sockets.
-+         */
-+        ktls_enable(fd);
-+#endif /* OPENSSL_NO_KTLS */
-     } else {
-         BIO_up_ref(rbio);
-         SSL_set0_wbio(s, rbio);
-@@ -1963,6 +1985,70 @@ int ssl_write_internal(SSL *s, const void *buf, size_t num, size_t *written)
-     }
- }
- 
-+ossl_ssize_t SSL_sendfile(SSL *s, int fd, off_t offset, size_t size, int flags)
-+{
-+    ossl_ssize_t ret;
-+
-+    if (s->handshake_func == NULL) {
-+        SSLerr(SSL_F_SSL_SENDFILE, SSL_R_UNINITIALIZED);
-+        return -1;
-+    }
-+
-+    if (s->shutdown & SSL_SENT_SHUTDOWN) {
-+        s->rwstate = SSL_NOTHING;
-+        SSLerr(SSL_F_SSL_SENDFILE, SSL_R_PROTOCOL_IS_SHUTDOWN);
-+        return -1;
-+    }
-+
-+    if (!BIO_get_ktls_send(s->wbio)) {
-+        SSLerr(SSL_F_SSL_SENDFILE, SSL_R_UNINITIALIZED);
-+        return -1;
-+    }
-+
-+    /* If we have an alert to send, lets send it */
-+    if (s->s3->alert_dispatch) {
-+        ret = (ossl_ssize_t)s->method->ssl_dispatch_alert(s);
-+        if (ret <= 0) {
-+            /* SSLfatal() already called if appropriate */
-+            return ret;
-+        }
-+        /* if it went, fall through and send more stuff */
-+    }
-+
-+    s->rwstate = SSL_WRITING;
-+    if (BIO_flush(s->wbio) <= 0) {
-+        if (!BIO_should_retry(s->wbio)) {
-+            s->rwstate = SSL_NOTHING;
-+        } else {
-+#ifdef EAGAIN
-+            set_sys_error(EAGAIN);
-+#endif
-+        }
-+        return -1;
-+    }
-+
-+#ifdef OPENSSL_NO_KTLS
-+    SYSerr(SSL_F_SSL_SENDFILE, ERR_R_INTERNAL_ERROR);
-+    ERR_add_error_data(1, "calling sendfile()");
-+    return -1;
-+#else
-+    ret = ktls_sendfile(SSL_get_wfd(s), fd, offset, size, flags);
-+    if (ret < 0) {
-+#if defined(EAGAIN) && defined(EINTR) && defined(EBUSY)
-+        if ((get_last_sys_error() == EAGAIN) ||
-+            (get_last_sys_error() == EINTR) ||
-+            (get_last_sys_error() == EBUSY))
-+            BIO_set_retry_write(s->wbio);
-+        else
-+#endif
-+            SSLerr(SSL_F_SSL_SENDFILE, SSL_R_UNINITIALIZED);
-+        return ret;
-+    }
-+    s->rwstate = SSL_NOTHING;
-+    return ret;
-+#endif
-+}
-+
- int SSL_write(SSL *s, const void *buf, int num)
- {
-     int ret;
-@@ -2213,6 +2299,10 @@ long SSL_ctrl(SSL *s, int cmd, long larg, void *parg)
-     case SSL_CTRL_SET_MAX_SEND_FRAGMENT:
-         if (larg < 512 || larg > SSL3_RT_MAX_PLAIN_LENGTH)
-             return 0;
-+#ifndef OPENSSL_NO_KTLS
-+        if (s->wbio != NULL && BIO_get_ktls_send(s->wbio))
-+            return 0;
-+#endif /* OPENSSL_NO_KTLS */
-         s->max_send_fragment = larg;
-         if (s->max_send_fragment < s->split_send_fragment)
-             s->split_send_fragment = s->max_send_fragment;
-@@ -4471,11 +4561,18 @@ int SSL_CTX_set_block_padding(SSL_CTX *ctx, size_t block_size)
-     return 1;
- }
- 
--void SSL_set_record_padding_callback(SSL *ssl,
-+int SSL_set_record_padding_callback(SSL *ssl,
-                                      size_t (*cb) (SSL *ssl, int type,
-                                                    size_t len, void *arg))
- {
--    ssl->record_padding_cb = cb;
-+    BIO *b;
-+
-+    b = SSL_get_wbio(ssl);
-+    if (b == NULL || !BIO_get_ktls_send(b)) {
-+        ssl->record_padding_cb = cb;
-+        return 1;
-+    }
-+    return 0;
- }
- 
- void SSL_set_record_padding_callback_arg(SSL *ssl, void *arg)
 diff --git ssl/ssl_local.h ssl/ssl_local.h
-index 9f346e30e8..587064cc18 100644
+index 5471e900b8..79ced2f468 100644
 --- ssl/ssl_local.h
 +++ ssl/ssl_local.h
-@@ -34,6 +34,8 @@
- # include "internal/dane.h"
- # include "internal/refcount.h"
- # include "internal/tsan_assist.h"
-+# include "internal/bio.h"
-+# include "internal/ktls.h"
- 
- # ifdef OPENSSL_BUILD_SHLIBSSL
- #  undef OPENSSL_EXTERN
-@@ -2617,6 +2619,17 @@ __owur int ssl_log_secret(SSL *ssl, const char *label,
- #define EARLY_EXPORTER_SECRET_LABEL "EARLY_EXPORTER_SECRET"
- #define EXPORTER_SECRET_LABEL "EXPORTER_SECRET"
- 
-+#  ifndef OPENSSL_NO_KTLS
-+/* ktls.c */
-+int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
-+                                const EVP_CIPHER_CTX *dd);
+@@ -2760,9 +2760,9 @@ __owur int ssl_log_secret(SSL *ssl, const char *label,
+ /* ktls.c */
+ int ktls_check_supported_cipher(const SSL *s, const EVP_CIPHER *c,
+                                 const EVP_CIPHER_CTX *dd);
+-int ktls_configure_crypto(const SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
 +int ktls_configure_crypto(SSL *s, const EVP_CIPHER *c, EVP_CIPHER_CTX *dd,
-+                          void *rl_sequence, ktls_crypto_info_t *crypto_info,
+                           void *rl_sequence, ktls_crypto_info_t *crypto_info,
+-                          unsigned char **rec_seq, unsigned char *iv,
 +                          int is_tx, unsigned char *iv,
-+                          unsigned char *key, unsigned char *mac_key,
-+                          size_t mac_secret_size);
-+#  endif
-+
- /* s3_cbc.c */
- __owur char ssl3_cbc_record_digest_supported(const EVP_MD_CTX *ctx);
- __owur int ssl3_cbc_digest_record(const EVP_MD_CTX *ctx,
+                           unsigned char *key, unsigned char *mac_key,
+                           size_t mac_secret_size);
+ #  endif
 diff --git ssl/t1_enc.c ssl/t1_enc.c
-index f8e53d4efc..46191908ab 100644
+index 237a19cd93..900ba14fbd 100644
 --- ssl/t1_enc.c
 +++ ssl/t1_enc.c
-@@ -10,10 +10,14 @@
+@@ -98,42 +98,6 @@ static int tls1_generate_key_block(SSL *s, unsigned char *km, size_t num)
+     return ret;
+ }
  
- #include <stdio.h>
- #include "ssl_local.h"
-+#include "record/record_local.h"
-+#include "internal/ktls.h"
-+#include "internal/cryptlib.h"
- #include <openssl/comp.h>
- #include <openssl/evp.h>
- #include <openssl/kdf.h>
- #include <openssl/rand.h>
-+#include <openssl/obj_mac.h>
- 
- /* seed1 through seed5 are concatenated */
- static int tls1_PRF(SSL *s,
-@@ -94,6 +98,11 @@ int tls1_change_cipher_state(SSL *s, int which)
-     EVP_PKEY *mac_key;
-     size_t n, i, j, k, cl;
+-#ifndef OPENSSL_NO_KTLS
+- /*
+-  * Count the number of records that were not processed yet from record boundary.
+-  *
+-  * This function assumes that there are only fully formed records read in the
+-  * record layer. If read_ahead is enabled, then this might be false and this
+-  * function will fail.
+-  */
+-# ifndef OPENSSL_NO_KTLS_RX
+-static int count_unprocessed_records(SSL *s)
+-{
+-    SSL3_BUFFER *rbuf = RECORD_LAYER_get_rbuf(&s->rlayer);
+-    PACKET pkt, subpkt;
+-    int count = 0;
+-
+-    if (!PACKET_buf_init(&pkt, rbuf->buf + rbuf->offset, rbuf->left))
+-        return -1;
+-
+-    while (PACKET_remaining(&pkt) > 0) {
+-        /* Skip record type and version */
+-        if (!PACKET_forward(&pkt, 3))
+-            return -1;
+-
+-        /* Read until next record */
+-        if (!PACKET_get_length_prefixed_2(&pkt, &subpkt))
+-            return -1;
+-
+-        count += 1;
+-    }
+-
+-    return count;
+-}
+-# endif
+-#endif
+-
+-
+ int tls_provider_set_tls_params(SSL *s, EVP_CIPHER_CTX *ctx,
+                                 const EVP_CIPHER *ciph,
+                                 const EVP_MD *md)
+@@ -201,12 +165,7 @@ int tls1_change_cipher_state(SSL *s, int which)
      int reuse_dd = 0;
-+#ifndef OPENSSL_NO_KTLS
-+    ktls_crypto_info_t crypto_info;
-+    void *rl_sequence;
-+    BIO *bio;
-+#endif
+ #ifndef OPENSSL_NO_KTLS
+     ktls_crypto_info_t crypto_info;
+-    unsigned char *rec_seq;
+     void *rl_sequence;
+-# ifndef OPENSSL_NO_KTLS_RX
+-    int count_unprocessed;
+-    int bit;
+-# endif
+     BIO *bio;
+ #endif
  
-     c = s->s3->tmp.new_sym_enc;
-     m = s->s3->tmp.new_hash;
-@@ -312,6 +321,62 @@ int tls1_change_cipher_state(SSL *s, int which)
-                  ERR_R_INTERNAL_ERROR);
-         goto err;
-     }
-+#ifndef OPENSSL_NO_KTLS
-+    if (s->compress || (s->options & SSL_OP_ENABLE_KTLS) == 0)
-+        goto skip_ktls;
-+
-+    /* ktls supports only the maximum fragment size */
-+    if (ssl_get_max_send_fragment(s) != SSL3_RT_MAX_PLAIN_LENGTH)
-+        goto skip_ktls;
-+
-+    /* check that cipher is supported */
-+    if (!ktls_check_supported_cipher(s, c, dd))
-+        goto skip_ktls;
-+
-+    if (which & SSL3_CC_WRITE)
-+        bio = s->wbio;
-+    else
-+        bio = s->rbio;
-+
-+    if (!ossl_assert(bio != NULL)) {
-+        SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_TLS1_CHANGE_CIPHER_STATE,
-+                 ERR_R_INTERNAL_ERROR);
-+        goto err;
-+    }
-+
-+    /* All future data will get encrypted by ktls. Flush the BIO or skip ktls */
-+    if (which & SSL3_CC_WRITE) {
-+       if (BIO_flush(bio) <= 0)
-+           goto skip_ktls;
-+    }
-+
-+    /* ktls doesn't support renegotiation */
-+    if ((BIO_get_ktls_send(s->wbio) && (which & SSL3_CC_WRITE)) ||
-+        (BIO_get_ktls_recv(s->rbio) && (which & SSL3_CC_READ))) {
-+        SSLfatal(s, SSL_AD_NO_RENEGOTIATION, SSL_F_TLS1_CHANGE_CIPHER_STATE,
-+                 ERR_R_INTERNAL_ERROR);
-+        goto err;
-+    }
-+
-+    if (which & SSL3_CC_WRITE)
-+        rl_sequence = RECORD_LAYER_get_write_sequence(&s->rlayer);
-+    else
-+        rl_sequence = RECORD_LAYER_get_read_sequence(&s->rlayer);
-+
+@@ -473,30 +432,11 @@ int tls1_change_cipher_state(SSL *s, int which)
+     else
+         rl_sequence = RECORD_LAYER_get_read_sequence(&s->rlayer);
+ 
+-    if (!ktls_configure_crypto(s, c, dd, rl_sequence, &crypto_info, &rec_seq,
+-                               iv, key, ms, *mac_secret_size))
 +    if (!ktls_configure_crypto(s, c, dd, rl_sequence, &crypto_info,
 +                               which & SSL3_CC_WRITE, iv, key, ms,
 +                               *mac_secret_size))
-+        goto skip_ktls;
-+
-+    /* ktls works with user provided buffers directly */
-+    if (BIO_set_ktls(bio, &crypto_info, which & SSL3_CC_WRITE)) {
-+        if (which & SSL3_CC_WRITE)
-+            ssl3_release_write_buffer(s);
-+        SSL_set_options(s, SSL_OP_NO_RENEGOTIATION);
-+    }
-+
-+ skip_ktls:
-+#endif                          /* OPENSSL_NO_KTLS */
-     s->statem.enc_write_state = ENC_WRITE_STATE_VALID;
+         goto skip_ktls;
  
- #ifdef SSL_DEBUG
+-    if (which & SSL3_CC_READ) {
+-# ifndef OPENSSL_NO_KTLS_RX
+-        count_unprocessed = count_unprocessed_records(s);
+-        if (count_unprocessed < 0)
+-            goto skip_ktls;
+-
+-        /* increment the crypto_info record sequence */
+-        while (count_unprocessed) {
+-            for (bit = 7; bit >= 0; bit--) { /* increment */
+-                ++rec_seq[bit];
+-                if (rec_seq[bit] != 0)
+-                    break;
+-            }
+-            count_unprocessed--;
+-        }
+-# else
+-        goto skip_ktls;
+-# endif
+-    }
+-
+     /* ktls works with user provided buffers directly */
+     if (BIO_set_ktls(bio, &crypto_info, which & SSL3_CC_WRITE)) {
+         if (which & SSL3_CC_WRITE)
 diff --git ssl/tls13_enc.c ssl/tls13_enc.c
-index b8fb07f210..109227e556 100644
+index 12388922e3..eaab0e2a74 100644
 --- ssl/tls13_enc.c
 +++ ssl/tls13_enc.c
-@@ -9,6 +9,8 @@
- 
- #include <stdlib.h>
- #include "ssl_local.h"
-+#include "internal/ktls.h"
-+#include "record/record_local.h"
- #include "internal/cryptlib.h"
- #include <openssl/evp.h>
- #include <openssl/kdf.h>
-@@ -363,9 +365,9 @@ static int derive_secret_key_and_iv(SSL *s, int sending, const EVP_MD *md,
-                                     const unsigned char *hash,
-                                     const unsigned char *label,
-                                     size_t labellen, unsigned char *secret,
--                                    unsigned char *iv, EVP_CIPHER_CTX *ciph_ctx)
-+                                    unsigned char *key, unsigned char *iv,
-+                                    EVP_CIPHER_CTX *ciph_ctx)
- {
--    unsigned char key[EVP_MAX_KEY_LENGTH];
-     size_t ivlen, keylen, taglen;
-     int hashleni = EVP_MD_size(md);
-     size_t hashlen;
-@@ -374,14 +376,14 @@ static int derive_secret_key_and_iv(SSL *s, int sending, const EVP_MD *md,
-     if (!ossl_assert(hashleni >= 0)) {
-         SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DERIVE_SECRET_KEY_AND_IV,
-                  ERR_R_EVP_LIB);
--        goto err;
-+        return 0;
-     }
-     hashlen = (size_t)hashleni;
- 
-     if (!tls13_hkdf_expand(s, md, insecret, label, labellen, hash, hashlen,
-                            secret, hashlen, 1)) {
-         /* SSLfatal() already called */
--        goto err;
-+        return 0;
-     }
- 
-     /* TODO(size_t): convert me */
-@@ -401,7 +403,7 @@ static int derive_secret_key_and_iv(SSL *s, int sending, const EVP_MD *md,
-         } else {
-             SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DERIVE_SECRET_KEY_AND_IV,
-                      ERR_R_EVP_LIB);
--            goto err;
-+            return 0;
-         }
-         if (algenc & (SSL_AES128CCM8 | SSL_AES256CCM8))
-             taglen = EVP_CCM8_TLS_TAG_LEN;
-@@ -415,7 +417,7 @@ static int derive_secret_key_and_iv(SSL *s, int sending, const EVP_MD *md,
-     if (!tls13_derive_key(s, md, secret, key, keylen)
-             || !tls13_derive_iv(s, md, secret, iv, ivlen)) {
-         /* SSLfatal() already called */
--        goto err;
-+        return 0;
-     }
- 
-     if (EVP_CipherInit_ex(ciph_ctx, ciph, NULL, NULL, NULL, sending) <= 0
-@@ -425,13 +427,10 @@ static int derive_secret_key_and_iv(SSL *s, int sending, const EVP_MD *md,
-         || EVP_CipherInit_ex(ciph_ctx, NULL, NULL, key, NULL, -1) <= 0) {
-         SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_DERIVE_SECRET_KEY_AND_IV,
-                  ERR_R_EVP_LIB);
--        goto err;
-+        return 0;
-     }
- 
-     return 1;
-- err:
--    OPENSSL_cleanse(key, sizeof(key));
--    return 0;
- }
- 
- int tls13_change_cipher_state(SSL *s, int which)
-@@ -456,6 +455,7 @@ int tls13_change_cipher_state(SSL *s, int which)
-     static const unsigned char early_exporter_master_secret[] = "e exp master";
- #endif
-     unsigned char *iv;
-+    unsigned char key[EVP_MAX_KEY_LENGTH];
-     unsigned char secret[EVP_MAX_MD_SIZE];
-     unsigned char hashval[EVP_MAX_MD_SIZE];
-     unsigned char *hash = hashval;
-@@ -469,6 +469,11 @@ int tls13_change_cipher_state(SSL *s, int which)
-     int ret = 0;
-     const EVP_MD *md = NULL;
+@@ -434,6 +434,7 @@ int tls13_change_cipher_state(SSL *s, int which)
      const EVP_CIPHER *cipher = NULL;
-+#if !defined(OPENSSL_NO_KTLS) && defined(OPENSSL_KTLS_TLS13)
-+    ktls_crypto_info_t crypto_info;
+ #if !defined(OPENSSL_NO_KTLS) && defined(OPENSSL_KTLS_TLS13)
+     ktls_crypto_info_t crypto_info;
 +    void *rl_sequence;
-+    BIO *bio;
-+#endif
+     BIO *bio;
+ #endif
  
-     if (which & SSL3_CC_READ) {
-         if (s->enc_read_ctx != NULL) {
-@@ -671,9 +676,13 @@ int tls13_change_cipher_state(SSL *s, int which)
-         }
-     }
- 
-+    /* check whether cipher is known */
-+    if(!ossl_assert(cipher != NULL))
-+        goto err;
-+
-     if (!derive_secret_key_and_iv(s, which & SSL3_CC_WRITE, md, cipher,
--                                  insecret, hash, label, labellen, secret, iv,
--                                  ciph_ctx)) {
-+                                  insecret, hash, label, labellen, secret, key,
-+                                  iv, ciph_ctx)) {
-         /* SSLfatal() already called */
-         goto err;
-     }
-@@ -714,8 +723,62 @@ int tls13_change_cipher_state(SSL *s, int which)
-         s->statem.enc_write_state = ENC_WRITE_STATE_WRITE_PLAIN_ALERTS;
-     else
+@@ -688,8 +689,7 @@ int tls13_change_cipher_state(SSL *s, int which)
          s->statem.enc_write_state = ENC_WRITE_STATE_VALID;
-+#ifndef OPENSSL_NO_KTLS
-+# if defined(OPENSSL_KTLS_TLS13)
+ #ifndef OPENSSL_NO_KTLS
+ # if defined(OPENSSL_KTLS_TLS13)
+-    if (!(which & SSL3_CC_WRITE)
+-            || !(which & SSL3_CC_APPLICATION)
 +    if (!(which & SSL3_CC_APPLICATION)
-+            || (s->options & SSL_OP_ENABLE_KTLS) == 0)
-+        goto skip_ktls;
-+
-+    /* ktls supports only the maximum fragment size */
-+    if (ssl_get_max_send_fragment(s) != SSL3_RT_MAX_PLAIN_LENGTH)
-+        goto skip_ktls;
-+
-+    /* ktls does not support record padding */
-+    if (s->record_padding_cb != NULL)
-+        goto skip_ktls;
-+
-+    /* check that cipher is supported */
-+    if (!ktls_check_supported_cipher(s, cipher, ciph_ctx))
-+        goto skip_ktls;
-+
+             || (s->options & SSL_OP_ENABLE_KTLS) == 0)
+         goto skip_ktls;
+ 
+@@ -705,7 +705,10 @@ int tls13_change_cipher_state(SSL *s, int which)
+     if (!ktls_check_supported_cipher(s, cipher, ciph_ctx))
+         goto skip_ktls;
+ 
+-    bio = s->wbio;
 +    if (which & SSL3_CC_WRITE)
 +        bio = s->wbio;
 +    else
 +        bio = s->rbio;
-+
-+    if (!ossl_assert(bio != NULL)) {
-+        SSLfatal(s, SSL_AD_INTERNAL_ERROR, SSL_F_TLS13_CHANGE_CIPHER_STATE,
-+                 ERR_R_INTERNAL_ERROR);
-+        goto err;
-+    }
-+
-+    /* All future data will get encrypted by ktls. Flush the BIO or skip ktls */
+ 
+     if (!ossl_assert(bio != NULL)) {
+         SSLfatal(s, SSL_AD_INTERNAL_ERROR, ERR_R_INTERNAL_ERROR);
+@@ -713,18 +716,26 @@ int tls13_change_cipher_state(SSL *s, int which)
+     }
+ 
+     /* All future data will get encrypted by ktls. Flush the BIO or skip ktls */
+-    if (BIO_flush(bio) <= 0)
+-        goto skip_ktls;
 +    if (which & SSL3_CC_WRITE) {
 +        if (BIO_flush(bio) <= 0)
 +            goto skip_ktls;
 +    }
-+
-+    /* configure kernel crypto structure */
+ 
+     /* configure kernel crypto structure */
+-    if (!ktls_configure_crypto(s, cipher, ciph_ctx,
+-                               RECORD_LAYER_get_write_sequence(&s->rlayer),
+-                               &crypto_info, NULL, iv, key, NULL, 0))
 +    if (which & SSL3_CC_WRITE)
 +        rl_sequence = RECORD_LAYER_get_write_sequence(&s->rlayer);
 +    else
@@ -2617,819 +513,28 @@ index b8fb07f210..109227e556 100644
 +
 +    if (!ktls_configure_crypto(s, cipher, ciph_ctx, rl_sequence, &crypto_info,
 +                               which & SSL3_CC_WRITE, iv, key, NULL, 0))
-+        goto skip_ktls;
-+
-+    /* ktls works with user provided buffers directly */
+         goto skip_ktls;
+ 
+     /* ktls works with user provided buffers directly */
+-    if (BIO_set_ktls(bio, &crypto_info, which & SSL3_CC_WRITE))
+-        ssl3_release_write_buffer(s);
 +    if (BIO_set_ktls(bio, &crypto_info, which & SSL3_CC_WRITE)) {
 +        if (which & SSL3_CC_WRITE)
 +            ssl3_release_write_buffer(s);
 +    }
-+skip_ktls:
-+# endif
-+#endif
-     ret = 1;
-  err:
-+    OPENSSL_cleanse(key, sizeof(key));
-     OPENSSL_cleanse(secret, sizeof(secret));
-     return ret;
- }
-@@ -729,6 +792,7 @@ int tls13_update_key(SSL *s, int sending)
+ skip_ktls:
+ # endif
  #endif
-     const EVP_MD *md = ssl_handshake_md(s);
-     size_t hashlen = EVP_MD_size(md);
-+    unsigned char key[EVP_MAX_KEY_LENGTH];
-     unsigned char *insecret, *iv;
-     unsigned char secret[EVP_MAX_MD_SIZE];
-     EVP_CIPHER_CTX *ciph_ctx;
-@@ -753,8 +817,8 @@ int tls13_update_key(SSL *s, int sending)
-     if (!derive_secret_key_and_iv(s, sending, ssl_handshake_md(s),
-                                   s->s3->tmp.new_sym_enc, insecret, NULL,
-                                   application_traffic,
--                                  sizeof(application_traffic) - 1, secret, iv,
--                                  ciph_ctx)) {
-+                                  sizeof(application_traffic) - 1, secret, key,
-+                                  iv, ciph_ctx)) {
-         /* SSLfatal() already called */
-         goto err;
-     }
-@@ -764,6 +828,7 @@ int tls13_update_key(SSL *s, int sending)
-     s->statem.enc_write_state = ENC_WRITE_STATE_VALID;
-     ret = 1;
-  err:
-+    OPENSSL_cleanse(key, sizeof(key));
-     OPENSSL_cleanse(secret, sizeof(secret));
-     return ret;
- }
-diff --git test/build.info test/build.info
-index 6357a7f2fe..3b8d5ee765 100644
---- test/build.info
-+++ test/build.info
-@@ -546,7 +546,7 @@ INCLUDE_MAIN___test_libtestutil_OLB = /INCLUDE=MAIN
-   # We disable this test completely in a shared build because it deliberately
-   # redefines some internal libssl symbols. This doesn't work in a non-shared
-   # build
--  IF[{- !$disabled{shared} -}]
-+  IF[{- !$disabled{shared} && $disabled{ktls} -}]
-     PROGRAMS_NO_INST=tls13secretstest
-     SOURCE[tls13secretstest]=tls13secretstest.c
-     SOURCE[tls13secretstest]= ../ssl/tls13_enc.c ../ssl/packet.c
-diff --git test/recipes/80-test_ssl_old.t test/recipes/80-test_ssl_old.t
-index 19772f61ef..f3cfda0507 100644
---- test/recipes/80-test_ssl_old.t
-+++ test/recipes/80-test_ssl_old.t
-@@ -327,11 +327,9 @@ sub testssl {
-     }
- 
- 
--    # plan tests => 11;
--
-     subtest 'standard SSL tests' => sub {
--	######################################################################
--      plan tests => 13;
-+        ######################################################################
-+        plan tests => 19;
- 
-       SKIP: {
- 	  skip "SSLv3 is not supported by this OpenSSL build", 4
-@@ -356,8 +354,8 @@ sub testssl {
- 	}
- 
-       SKIP: {
--	  skip "Neither SSLv3 nor any TLS version are supported by this OpenSSL build", 8
--	      if $no_anytls;
-+          skip "Neither SSLv3 nor any TLS version are supported by this OpenSSL build", 14
-+              if $no_anytls;
- 
- 	SKIP: {
- 	    skip "skipping test of sslv2/sslv3 w/o (EC)DHE test", 1 if $dsa_cert;
-@@ -378,17 +376,29 @@ sub testssl {
- 	     'test sslv2/sslv3 with both client and server authentication via BIO pair and app verify');
- 
-         SKIP: {
--            skip "No IPv4 available on this machine", 1
-+            skip "No IPv4 available on this machine", 4
-                 unless !disabled("sock") && have_IPv4();
-             ok(run(test([@ssltest, "-ipv4"])),
-                'test TLS via IPv4');
-+            ok(run(test([@ssltest, "-ipv4", "-client_ktls"])),
-+               'test TLS via IPv4 + ktls(client)');
-+            ok(run(test([@ssltest, "-ipv4", "-server_ktls"])),
-+               'test TLS via IPv4 + ktls(server)');
-+            ok(run(test([@ssltest, "-ipv4", "-client_ktls", "-server_ktls"])),
-+               'test TLS via IPv4 + ktls');
-           }
- 
-         SKIP: {
--            skip "No IPv6 available on this machine", 1
-+            skip "No IPv6 available on this machine", 4
-                 unless !disabled("sock") && have_IPv6();
-             ok(run(test([@ssltest, "-ipv6"])),
-                'test TLS via IPv6');
-+            ok(run(test([@ssltest, "-ipv6", "-client_ktls"])),
-+               'test TLS via IPv6 + ktls(client)');
-+            ok(run(test([@ssltest, "-ipv6", "-server_ktls"])),
-+               'test TLS via IPv6 + ktls(client)');
-+            ok(run(test([@ssltest, "-ipv6", "-client_ktls", "-server_ktls"])),
-+               'test TLS via IPv6 + ktls');
-           }
-         }
-     };
-diff --git test/recipes/90-test_tls13secrets.t test/recipes/90-test_tls13secrets.t
-index 5490885309..3478e540ed 100644
---- test/recipes/90-test_tls13secrets.t
-+++ test/recipes/90-test_tls13secrets.t
-@@ -13,7 +13,7 @@ my $test_name = "tls13secrets";
- setup($test_name);
- 
- plan skip_all => "$test_name is not supported in this build"
--    if disabled("tls1_3") || disabled("shared");
-+    if disabled("tls1_3") || disabled("shared") || !disabled("ktls");
- 
- plan tests => 1;
- 
 diff --git test/sslapitest.c test/sslapitest.c
-index 6b5d9449a0..47ba76f0a5 100644
+index 2911d6e94b..faf2eec2bc 100644
 --- test/sslapitest.c
 +++ test/sslapitest.c
-@@ -7,6 +7,7 @@
-  * https://www.openssl.org/source/license.html
-  */
- 
-+#include <stdio.h>
- #include <string.h>
- 
- #include <openssl/opensslconf.h>
-@@ -17,12 +18,14 @@
- #include <openssl/srp.h>
- #include <openssl/txt_db.h>
- #include <openssl/aes.h>
-+#include <openssl/rand.h>
- #include <openssl/x509v3.h>
- 
- #include "ssltestlib.h"
- #include "testutil.h"
- #include "testutil/output.h"
- #include "internal/nelem.h"
-+#include "internal/ktls.h"
- #include "../ssl/ssl_local.h"
- 
- #ifndef OPENSSL_NO_TLS1_3
-@@ -780,6 +783,433 @@ static int execute_test_large_message(const SSL_METHOD *smeth,
-     return testresult;
- }
- 
-+#if !defined(OPENSSL_NO_SOCK) && !defined(OPENSSL_NO_KTLS) && \
-+    !(defined(OPENSSL_NO_TLS1_3) && defined(OPENSSL_NO_TLS1_2))
-+/* sock must be connected */
-+static int ktls_chk_platform(int sock)
-+{
-+    if (!ktls_enable(sock))
-+        return 0;
-+    return 1;
-+}
-+
-+static int ping_pong_query(SSL *clientssl, SSL *serverssl)
-+{
-+    static char count = 1;
-+    unsigned char cbuf[16000] = {0};
-+    unsigned char sbuf[16000];
-+    size_t err = 0;
-+    char crec_wseq_before[SEQ_NUM_SIZE];
-+    char crec_wseq_after[SEQ_NUM_SIZE];
-+    char crec_rseq_before[SEQ_NUM_SIZE];
-+    char crec_rseq_after[SEQ_NUM_SIZE];
-+    char srec_wseq_before[SEQ_NUM_SIZE];
-+    char srec_wseq_after[SEQ_NUM_SIZE];
-+    char srec_rseq_before[SEQ_NUM_SIZE];
-+    char srec_rseq_after[SEQ_NUM_SIZE];
-+
-+    cbuf[0] = count++;
-+    memcpy(crec_wseq_before, &clientssl->rlayer.write_sequence, SEQ_NUM_SIZE);
-+    memcpy(crec_rseq_before, &clientssl->rlayer.read_sequence, SEQ_NUM_SIZE);
-+    memcpy(srec_wseq_before, &serverssl->rlayer.write_sequence, SEQ_NUM_SIZE);
-+    memcpy(srec_rseq_before, &serverssl->rlayer.read_sequence, SEQ_NUM_SIZE);
-+
-+    if (!TEST_true(SSL_write(clientssl, cbuf, sizeof(cbuf)) == sizeof(cbuf)))
-+        goto end;
-+
-+    while ((err = SSL_read(serverssl, &sbuf, sizeof(sbuf))) != sizeof(sbuf)) {
-+        if (SSL_get_error(serverssl, err) != SSL_ERROR_WANT_READ) {
-+            goto end;
-+        }
-+    }
-+
-+    if (!TEST_true(SSL_write(serverssl, sbuf, sizeof(sbuf)) == sizeof(sbuf)))
-+        goto end;
-+
-+    while ((err = SSL_read(clientssl, &cbuf, sizeof(cbuf))) != sizeof(cbuf)) {
-+        if (SSL_get_error(clientssl, err) != SSL_ERROR_WANT_READ) {
-+            goto end;
-+        }
-+    }
-+
-+    memcpy(crec_wseq_after, &clientssl->rlayer.write_sequence, SEQ_NUM_SIZE);
-+    memcpy(crec_rseq_after, &clientssl->rlayer.read_sequence, SEQ_NUM_SIZE);
-+    memcpy(srec_wseq_after, &serverssl->rlayer.write_sequence, SEQ_NUM_SIZE);
-+    memcpy(srec_rseq_after, &serverssl->rlayer.read_sequence, SEQ_NUM_SIZE);
-+
-+    /* verify the payload */
-+    if (!TEST_mem_eq(cbuf, sizeof(cbuf), sbuf, sizeof(sbuf)))
-+        goto end;
-+
-+    /*
-+     * If ktls is used then kernel sequences are used instead of
-+     * OpenSSL sequences
-+     */
-+    if (!BIO_get_ktls_send(clientssl->wbio)) {
-+        if (!TEST_mem_ne(crec_wseq_before, SEQ_NUM_SIZE,
-+                         crec_wseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    } else {
-+        if (!TEST_mem_eq(crec_wseq_before, SEQ_NUM_SIZE,
-+                         crec_wseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    }
-+
-+    if (!BIO_get_ktls_send(serverssl->wbio)) {
-+        if (!TEST_mem_ne(srec_wseq_before, SEQ_NUM_SIZE,
-+                         srec_wseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    } else {
-+        if (!TEST_mem_eq(srec_wseq_before, SEQ_NUM_SIZE,
-+                         srec_wseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    }
-+
-+    if (!BIO_get_ktls_recv(clientssl->wbio)) {
-+        if (!TEST_mem_ne(crec_rseq_before, SEQ_NUM_SIZE,
-+                         crec_rseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    } else {
-+        if (!TEST_mem_eq(crec_rseq_before, SEQ_NUM_SIZE,
-+                         crec_rseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    }
-+
-+    if (!BIO_get_ktls_recv(serverssl->wbio)) {
-+        if (!TEST_mem_ne(srec_rseq_before, SEQ_NUM_SIZE,
-+                         srec_rseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    } else {
-+        if (!TEST_mem_eq(srec_rseq_before, SEQ_NUM_SIZE,
-+                         srec_rseq_after, SEQ_NUM_SIZE))
-+            goto end;
-+    }
-+
-+    return 1;
-+end:
-+    return 0;
-+}
-+
-+static int execute_test_ktls(int cis_ktls, int sis_ktls,
-+                             int tls_version, const char *cipher)
-+{
-+    SSL_CTX *cctx = NULL, *sctx = NULL;
-+    SSL *clientssl = NULL, *serverssl = NULL;
-+    int ktls_used = 0, testresult = 0;
-+    int cfd = -1, sfd = -1;
-+    int rx_supported;
-+
-+    if (!TEST_true(create_test_sockets(&cfd, &sfd)))
-+        goto end;
-+
-+    /* Skip this test if the platform does not support ktls */
-+    if (!ktls_chk_platform(cfd)) {
-+        TEST_info("Kernel does not support KTLS");
-+        testresult = 1;
-+        goto end;
-+    }
-+
-+    /* Create a session based on SHA-256 */
-+    if (!TEST_true(create_ssl_ctx_pair(TLS_server_method(),
-+                                       TLS_client_method(),
-+                                       tls_version, tls_version,
-+                                       &sctx, &cctx, cert, privkey)))
-+        goto end;
-+
-+    if (tls_version == TLS1_3_VERSION) {
-+        if (!TEST_true(SSL_CTX_set_ciphersuites(cctx, cipher))
-+            || !TEST_true(SSL_CTX_set_ciphersuites(sctx, cipher)))
-+            goto end;
-+    } else {
-+        if (!TEST_true(SSL_CTX_set_cipher_list(cctx, cipher))
-+            || !TEST_true(SSL_CTX_set_cipher_list(sctx, cipher)))
-+            goto end;
-+    }
-+
-+    if (!TEST_true(create_ssl_objects2(sctx, cctx, &serverssl,
-+                                       &clientssl, sfd, cfd)))
-+        goto end;
-+
-+    if (cis_ktls) {
-+        if (!TEST_true(SSL_set_options(clientssl, SSL_OP_ENABLE_KTLS)))
-+            goto end;
-+    }
-+
-+    if (sis_ktls) {
-+        if (!TEST_true(SSL_set_options(serverssl, SSL_OP_ENABLE_KTLS)))
-+            goto end;
-+    }
-+
-+    if (!TEST_true(create_ssl_connection(serverssl, clientssl, SSL_ERROR_NONE)))
-+        goto end;
-+
-+    /*
-+     * The running kernel may not support a given cipher suite
-+     * or direction, so just check that KTLS isn't used when it
-+     * isn't enabled.
-+     */
-+    if (!cis_ktls) {
-+        if (!TEST_false(BIO_get_ktls_send(clientssl->wbio)))
-+            goto end;
-+    } else {
-+        if (BIO_get_ktls_send(clientssl->wbio))
-+            ktls_used = 1;
-+    }
-+
-+    if (!sis_ktls) {
-+        if (!TEST_false(BIO_get_ktls_send(serverssl->wbio)))
-+            goto end;
-+    } else {
-+        if (BIO_get_ktls_send(serverssl->wbio))
-+            ktls_used = 1;
-+    }
-+
-+#if defined(OPENSSL_NO_KTLS_RX)
-+    rx_supported = 0;
-+#else
+@@ -1243,7 +1243,7 @@ static int execute_test_ktls(int cis_ktls, int sis_ktls,
+ #if defined(OPENSSL_NO_KTLS_RX)
+     rx_supported = 0;
+ #else
+-    rx_supported = (tls_version != TLS1_3_VERSION);
 +    rx_supported = 1;
-+#endif
-+    if (!cis_ktls || !rx_supported) {
-+        if (!TEST_false(BIO_get_ktls_recv(clientssl->rbio)))
-+            goto end;
-+    } else {
-+        if (BIO_get_ktls_send(clientssl->rbio))
-+            ktls_used = 1;
-+    }
-+
-+    if (!sis_ktls || !rx_supported) {
-+        if (!TEST_false(BIO_get_ktls_recv(serverssl->rbio)))
-+            goto end;
-+    } else {
-+        if (BIO_get_ktls_send(serverssl->rbio))
-+            ktls_used = 1;
-+    }
-+
-+    if ((cis_ktls || sis_ktls) && !ktls_used) {
-+        TEST_info("KTLS not supported for %s cipher %s",
-+                  tls_version == TLS1_3_VERSION ? "TLS 1.3" :
-+                  "TLS 1.2", cipher);
-+        testresult = 1;
-+        goto end;
-+    }
-+
-+    if (!TEST_true(ping_pong_query(clientssl, serverssl)))
-+        goto end;
-+
-+    testresult = 1;
-+end:
-+    if (clientssl) {
-+        SSL_shutdown(clientssl);
-+        SSL_free(clientssl);
-+    }
-+    if (serverssl) {
-+        SSL_shutdown(serverssl);
-+        SSL_free(serverssl);
-+    }
-+    SSL_CTX_free(sctx);
-+    SSL_CTX_free(cctx);
-+    serverssl = clientssl = NULL;
-+    if (cfd != -1)
-+        close(cfd);
-+    if (sfd != -1)
-+        close(sfd);
-+    return testresult;
-+}
-+
-+#define SENDFILE_SZ                     (16 * 4096)
-+#define SENDFILE_CHUNK                  (4 * 4096)
-+#define min(a,b)                        ((a) > (b) ? (b) : (a))
-+
-+static int execute_test_ktls_sendfile(int tls_version, const char *cipher)
-+{
-+    SSL_CTX *cctx = NULL, *sctx = NULL;
-+    SSL *clientssl = NULL, *serverssl = NULL;
-+    unsigned char *buf, *buf_dst;
-+    BIO *out = NULL, *in = NULL;
-+    int cfd = -1, sfd = -1, ffd, err;
-+    ssize_t chunk_size = 0;
-+    off_t chunk_off = 0;
-+    int testresult = 0;
-+    FILE *ffdp;
-+
-+    buf = OPENSSL_zalloc(SENDFILE_SZ);
-+    buf_dst = OPENSSL_zalloc(SENDFILE_SZ);
-+    if (!TEST_ptr(buf) || !TEST_ptr(buf_dst)
-+        || !TEST_true(create_test_sockets(&cfd, &sfd)))
-+        goto end;
-+
-+    /* Skip this test if the platform does not support ktls */
-+    if (!ktls_chk_platform(sfd)) {
-+        TEST_info("Kernel does not support KTLS");
-+        testresult = 1;
-+        goto end;
-+    }
-+
-+    /* Create a session based on SHA-256 */
-+    if (!TEST_true(create_ssl_ctx_pair(TLS_server_method(),
-+                                       TLS_client_method(),
-+                                       tls_version, tls_version,
-+                                       &sctx, &cctx, cert, privkey)))
-+        goto end;
-+
-+    if (tls_version == TLS1_3_VERSION) {
-+        if (!TEST_true(SSL_CTX_set_ciphersuites(cctx, cipher))
-+            || !TEST_true(SSL_CTX_set_ciphersuites(sctx, cipher)))
-+            goto end;
-+    } else {
-+        if (!TEST_true(SSL_CTX_set_cipher_list(cctx, cipher))
-+            || !TEST_true(SSL_CTX_set_cipher_list(sctx, cipher)))
-+            goto end;
-+    }
-+
-+    if (!TEST_true(create_ssl_objects2(sctx, cctx, &serverssl,
-+                                       &clientssl, sfd, cfd)))
-+        goto end;
-+
-+    if (!TEST_true(SSL_set_options(serverssl, SSL_OP_ENABLE_KTLS)))
-+        goto end;
-+
-+    if (!TEST_true(create_ssl_connection(serverssl, clientssl,
-+                                         SSL_ERROR_NONE)))
-+        goto end;
-+
-+    if (!BIO_get_ktls_send(serverssl->wbio)) {
-+        TEST_info("Failed to enable KTLS for %s cipher %s",
-+                  tls_version == TLS1_3_VERSION ? "TLS 1.3" :
-+                  "TLS 1.2", cipher);
-+        testresult = 1;
-+        goto end;
-+    }
-+
-+    RAND_bytes(buf, SENDFILE_SZ);
-+
-+    out = BIO_new_file(tmpfilename, "wb");
-+    if (!TEST_ptr(out))
-+        goto end;
-+
-+    if (BIO_write(out, buf, SENDFILE_SZ) != SENDFILE_SZ)
-+        goto end;
-+
-+    BIO_free(out);
-+    out = NULL;
-+    in = BIO_new_file(tmpfilename, "rb");
-+    BIO_get_fp(in, &ffdp);
-+    ffd = fileno(ffdp);
-+
-+    while (chunk_off < SENDFILE_SZ) {
-+        chunk_size = min(SENDFILE_CHUNK, SENDFILE_SZ - chunk_off);
-+        while ((err = SSL_sendfile(serverssl,
-+                                   ffd,
-+                                   chunk_off,
-+                                   chunk_size,
-+                                   0)) != chunk_size) {
-+            if (SSL_get_error(serverssl, err) != SSL_ERROR_WANT_WRITE)
-+                goto end;
-+        }
-+        while ((err = SSL_read(clientssl,
-+                               buf_dst + chunk_off,
-+                               chunk_size)) != chunk_size) {
-+            if (SSL_get_error(clientssl, err) != SSL_ERROR_WANT_READ)
-+                goto end;
-+        }
-+
-+        /* verify the payload */
-+        if (!TEST_mem_eq(buf_dst + chunk_off,
-+                         chunk_size,
-+                         buf + chunk_off,
-+                         chunk_size))
-+            goto end;
-+
-+        chunk_off += chunk_size;
-+    }
-+
-+    testresult = 1;
-+end:
-+    if (clientssl) {
-+        SSL_shutdown(clientssl);
-+        SSL_free(clientssl);
-+    }
-+    if (serverssl) {
-+        SSL_shutdown(serverssl);
-+        SSL_free(serverssl);
-+    }
-+    SSL_CTX_free(sctx);
-+    SSL_CTX_free(cctx);
-+    serverssl = clientssl = NULL;
-+    BIO_free(out);
-+    BIO_free(in);
-+    if (cfd != -1)
-+        close(cfd);
-+    if (sfd != -1)
-+        close(sfd);
-+    OPENSSL_free(buf);
-+    OPENSSL_free(buf_dst);
-+    return testresult;
-+}
-+
-+static struct ktls_test_cipher {
-+    int tls_version;
-+    const char *cipher;
-+} ktls_test_ciphers[] = {
-+# if !defined(OPENSSL_NO_TLS1_2)
-+#  ifdef OPENSSL_KTLS_AES_GCM_128
-+    { TLS1_2_VERSION, "AES128-GCM-SHA256" },
-+#  endif
-+#  ifdef OPENSSL_KTLS_AES_CCM_128
-+    { TLS1_2_VERSION, "AES128-CCM"},
-+#  endif
-+#  ifdef OPENSSL_KTLS_AES_GCM_256
-+    { TLS1_2_VERSION, "AES256-GCM-SHA384"},
-+#  endif
-+#  ifdef OPENSSL_KTLS_CHACHA20_POLY1305
-+    { TLS1_2_VERSION, "ECDHE-RSA-CHACHA20-POLY1305"},
-+#  endif
-+# endif
-+# if !defined(OPENSSL_NO_TLS1_3)
-+#  ifdef OPENSSL_KTLS_AES_GCM_128
-+    { TLS1_3_VERSION, "TLS_AES_128_GCM_SHA256" },
-+#  endif
-+#  ifdef OPENSSL_KTLS_AES_CCM_128
-+    { TLS1_3_VERSION, "TLS_AES_128_CCM_SHA256" },
-+#  endif
-+#  ifdef OPENSSL_KTLS_AES_GCM_256
-+    { TLS1_3_VERSION, "TLS_AES_256_GCM_SHA384" },
-+#  endif
-+#  ifdef OPENSSL_KTLS_CHACHA20_POLY1305
-+    { TLS1_3_VERSION, "TLS_CHACHA20_POLY1305_SHA256" },
-+#  endif
-+# endif
-+};
-+
-+#define NUM_KTLS_TEST_CIPHERS \
-+    (sizeof(ktls_test_ciphers) / sizeof(ktls_test_ciphers[0]))
-+
-+static int test_ktls(int test)
-+{
-+    struct ktls_test_cipher *cipher;
-+    int cis_ktls, sis_ktls;
-+
-+    OPENSSL_assert(test / 4 < NUM_KTLS_TEST_CIPHERS);
-+    cipher = &ktls_test_ciphers[test / 4];
-+
-+    cis_ktls = (test & 1) != 0;
-+    sis_ktls = (test & 2) != 0;
-+
-+    return execute_test_ktls(cis_ktls, sis_ktls, cipher->tls_version,
-+                             cipher->cipher);
-+}
-+
-+static int test_ktls_sendfile(int tst)
-+{
-+    struct ktls_test_cipher *cipher;
-+
-+    OPENSSL_assert(tst < NUM_KTLS_TEST_CIPHERS);
-+    cipher = &ktls_test_ciphers[tst];
-+
-+    return execute_test_ktls_sendfile(cipher->tls_version, cipher->cipher);
-+}
-+#endif
-+
- static int test_large_message_tls(void)
- {
-     return execute_test_large_message(TLS_server_method(), TLS_client_method(),
-@@ -6944,6 +7374,12 @@ int setup_tests(void)
-         return 0;
-     }
- 
-+#if !defined(OPENSSL_NO_KTLS) && !defined(OPENSSL_NO_SOCK)
-+# if !defined(OPENSSL_NO_TLS1_2) || !defined(OPENSSL_NO_TLS1_3)
-+    ADD_ALL_TESTS(test_ktls, NUM_KTLS_TEST_CIPHERS * 4);
-+    ADD_ALL_TESTS(test_ktls_sendfile, NUM_KTLS_TEST_CIPHERS);
-+# endif
-+#endif
-     ADD_TEST(test_large_message_tls);
-     ADD_TEST(test_large_message_tls_read_ahead);
- #ifndef OPENSSL_NO_DTLS
-diff --git test/ssltest_old.c test/ssltest_old.c
-index 3601066b50..96b38a4636 100644
---- test/ssltest_old.c
-+++ test/ssltest_old.c
-@@ -731,6 +731,8 @@ static void sv_usage(void)
-     fprintf(stderr, " -client_sess_in <file>     - Read the client session from a file\n");
-     fprintf(stderr, " -should_reuse <number>     - The expected state of reusing the session\n");
-     fprintf(stderr, " -no_ticket    - do not issue TLS session ticket\n");
-+    fprintf(stderr, " -client_ktls  - try to enable client KTLS\n");
-+    fprintf(stderr, " -server_ktls  - try to enable server KTLS\n");
- }
- 
- static void print_key_details(BIO *out, EVP_PKEY *key)
-@@ -905,6 +907,7 @@ int main(int argc, char *argv[])
-     int number = 1, reuse = 0;
-     int should_reuse = -1;
-     int no_ticket = 0;
-+    int client_ktls = 0, server_ktls = 0;
-     long bytes = 256L;
- #ifndef OPENSSL_NO_DH
-     DH *dh;
-@@ -1215,6 +1218,10 @@ int main(int argc, char *argv[])
-             should_reuse = !!atoi(*(++argv));
-         } else if (strcmp(*argv, "-no_ticket") == 0) {
-             no_ticket = 1;
-+        } else if (strcmp(*argv, "-client_ktls") == 0) {
-+            client_ktls = 1;
-+        } else if (strcmp(*argv, "-server_ktls") == 0) {
-+            server_ktls = 1;
-         } else {
-             int rv;
-             arg = argv[0];
-@@ -1760,6 +1767,10 @@ int main(int argc, char *argv[])
- 
-     if (sn_client)
-         SSL_set_tlsext_host_name(c_ssl, sn_client);
-+    if (client_ktls)
-+        SSL_set_options(c_ssl, SSL_OP_ENABLE_KTLS);
-+    if (server_ktls)
-+        SSL_set_options(s_ssl, SSL_OP_ENABLE_KTLS);
- 
-     if (!set_protocol_version(server_min_proto, s_ssl, SSL_CTRL_SET_MIN_PROTO_VERSION))
-         goto end;
-diff --git test/ssltestlib.c test/ssltestlib.c
-index 456afdf471..a13fdbc4cc 100644
---- test/ssltestlib.c
-+++ test/ssltestlib.c
-@@ -16,6 +16,14 @@
- 
- #ifdef OPENSSL_SYS_UNIX
- # include <unistd.h>
-+#ifndef OPENSSL_NO_KTLS
-+# include <netinet/in.h>
-+# include <netinet/in.h>
-+# include <arpa/inet.h>
-+# include <sys/socket.h>
-+# include <unistd.h>
-+# include <fcntl.h>
-+#endif
- 
- static ossl_inline void ossl_sleep(unsigned int millis)
- {
-@@ -763,6 +771,113 @@ int create_ssl_ctx_pair(const SSL_METHOD *sm, const SSL_METHOD *cm,
- 
- #define MAXLOOPS    1000000
- 
-+#if !defined(OPENSSL_NO_KTLS) && !defined(OPENSSL_NO_SOCK)
-+static int set_nb(int fd)
-+{
-+    int flags;
-+
-+    flags = fcntl(fd,F_GETFL,0);
-+    if (flags == -1)
-+        return flags;
-+    flags = fcntl(fd, F_SETFL, flags | O_NONBLOCK);
-+    return flags;
-+}
-+
-+int create_test_sockets(int *cfdp, int *sfdp)
-+{
-+    struct sockaddr_in sin;
-+    const char *host = "127.0.0.1";
-+    int cfd_connected = 0, ret = 0;
-+    socklen_t slen = sizeof(sin);
-+    int afd = -1, cfd = -1, sfd = -1;
-+
-+    memset ((char *) &sin, 0, sizeof(sin));
-+    sin.sin_family = AF_INET;
-+    sin.sin_addr.s_addr = inet_addr(host);
-+
-+    afd = socket(AF_INET, SOCK_STREAM, 0);
-+    if (afd < 0)
-+        return 0;
-+
-+    if (bind(afd, (struct sockaddr*)&sin, sizeof(sin)) < 0)
-+        goto out;
-+
-+    if (getsockname(afd, (struct sockaddr*)&sin, &slen) < 0)
-+        goto out;
-+
-+    if (listen(afd, 1) < 0)
-+        goto out;
-+
-+    cfd = socket(AF_INET, SOCK_STREAM, 0);
-+    if (cfd < 0)
-+        goto out;
-+
-+    if (set_nb(afd) == -1)
-+        goto out;
-+
-+    while (sfd == -1 || !cfd_connected ) {
-+        sfd = accept(afd, NULL, 0);
-+        if (sfd == -1 && errno != EAGAIN)
-+            goto out;
-+
-+        if (!cfd_connected && connect(cfd, (struct sockaddr*)&sin, sizeof(sin)) < 0)
-+            goto out;
-+        else
-+            cfd_connected = 1;
-+    }
-+
-+    if (set_nb(cfd) == -1 || set_nb(sfd) == -1)
-+        goto out;
-+    ret = 1;
-+    *cfdp = cfd;
-+    *sfdp = sfd;
-+    goto success;
-+
-+out:
-+    if (cfd != -1)
-+        close(cfd);
-+    if (sfd != -1)
-+        close(sfd);
-+success:
-+    if (afd != -1)
-+        close(afd);
-+    return ret;
-+}
-+
-+int create_ssl_objects2(SSL_CTX *serverctx, SSL_CTX *clientctx, SSL **sssl,
-+                          SSL **cssl, int sfd, int cfd)
-+{
-+    SSL *serverssl = NULL, *clientssl = NULL;
-+    BIO *s_to_c_bio = NULL, *c_to_s_bio = NULL;
-+
-+    if (*sssl != NULL)
-+        serverssl = *sssl;
-+    else if (!TEST_ptr(serverssl = SSL_new(serverctx)))
-+        goto error;
-+    if (*cssl != NULL)
-+        clientssl = *cssl;
-+    else if (!TEST_ptr(clientssl = SSL_new(clientctx)))
-+        goto error;
-+
-+    if (!TEST_ptr(s_to_c_bio = BIO_new_socket(sfd, BIO_NOCLOSE))
-+            || !TEST_ptr(c_to_s_bio = BIO_new_socket(cfd, BIO_NOCLOSE)))
-+        goto error;
-+
-+    SSL_set_bio(clientssl, c_to_s_bio, c_to_s_bio);
-+    SSL_set_bio(serverssl, s_to_c_bio, s_to_c_bio);
-+    *sssl = serverssl;
-+    *cssl = clientssl;
-+    return 1;
-+
-+ error:
-+    SSL_free(serverssl);
-+    SSL_free(clientssl);
-+    BIO_free(s_to_c_bio);
-+    BIO_free(c_to_s_bio);
-+    return 0;
-+}
-+#endif
-+
- /*
-  * NOTE: Transfers control of the BIOs - this function will free them on error
-  */
-diff --git test/ssltestlib.h test/ssltestlib.h
-index 17b278219a..756975435d 100644
---- test/ssltestlib.h
-+++ test/ssltestlib.h
-@@ -20,6 +20,9 @@ int create_ssl_objects(SSL_CTX *serverctx, SSL_CTX *clientctx, SSL **sssl,
-                        SSL **cssl, BIO *s_to_c_fbio, BIO *c_to_s_fbio);
- int create_bare_ssl_connection(SSL *serverssl, SSL *clientssl, int want,
-                                int read);
-+int create_ssl_objects2(SSL_CTX *serverctx, SSL_CTX *clientctx, SSL **sssl,
-+                       SSL **cssl, int sfd, int cfd);
-+int create_test_sockets(int *cfd, int *sfd);
- int create_ssl_connection(SSL *serverssl, SSL *clientssl, int want);
- void shutdown_ssl_connection(SSL *serverssl, SSL *clientssl);
- 
-diff --git util/libssl.num util/libssl.num
-index 297522c363..5b3c048871 100644
---- util/libssl.num
-+++ util/libssl.num
-@@ -498,3 +498,4 @@ SSL_CTX_get_recv_max_early_data         498	1_1_1	EXIST::FUNCTION:
- SSL_CTX_set_recv_max_early_data         499	1_1_1	EXIST::FUNCTION:
- SSL_CTX_set_post_handshake_auth         500	1_1_1	EXIST::FUNCTION:
- SSL_get_signature_type_nid              501	1_1_1a	EXIST::FUNCTION:
-+SSL_sendfile                            502	1_1_1e	EXIST::FUNCTION:
-diff --git util/private.num util/private.num
-index bc7d967b5d..5bfbfc9fa4 100644
---- util/private.num
-+++ util/private.num
-@@ -109,6 +109,8 @@ BIO_get_buffer_num_lines                define
- BIO_get_cipher_ctx                      define
- BIO_get_cipher_status                   define
- BIO_get_close                           define
-+BIO_get_ktls_send                       define
-+BIO_get_ktls_recv                       define
- BIO_get_conn_address                    define
- BIO_get_conn_hostname                   define
- BIO_get_conn_port                       define
+ #endif
+     if (!cis_ktls || !rx_supported) {
+         if (!TEST_false(BIO_get_ktls_recv(clientssl->rbio)))

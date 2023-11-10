@@ -17,6 +17,7 @@ man/man1/ne.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Basics.html
 %%PORTDOCS%%%%DOCSDIR%%/Beep.html
 %%PORTDOCS%%%%DOCSDIR%%/Binary.html
+%%PORTDOCS%%%%DOCSDIR%%/BracketedPaste.html
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CRLF.html
 %%PORTDOCS%%%%DOCSDIR%%/Capitalize.html

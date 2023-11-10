@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION:C/\.[0-9]*$//}
 
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	C++ networking library and application framework
-WWW=		http://libassa.sourceforge.net/
+WWW=		https://libassa.sourceforge.net/
 
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -7,7 +7,7 @@ DISTNAME=	pure-db-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
-WWW=		http://pureftpd.sourceforge.net/puredb/
+WWW=		https://pureftpd.sourceforge.net/puredb/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

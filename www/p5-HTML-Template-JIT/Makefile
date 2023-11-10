@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to compile HTML Templates with Inline::C
-WWW=		http://html-template.sourceforge.net/html_template_jit.html
+WWW=		https://html-template.sourceforge.net/html_template_jit.html
 
 LICENSE=	ARTPERL10
 

@@ -1,5 +1,5 @@
 PORTNAME=	libretro-fbneo
-PORTVERSION=	0.20220925
+DISTVERSION=	0.20231025
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,22 +11,21 @@ LICENSE_NAME=	FBNeo
 LICENSE_FILE=	${WRKSRC}/src/license.txt
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		compiler:c11 gmake gl
+USES=		compiler:c11 gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
 GH_PROJECT=	FBNeo
-GH_TAGNAME=	8678b0f
+GH_TAGNAME=	6f65c17648bb98217d8ddcdc750505d4ac0916e5
 
-USE_GL=		gl
 USE_LDCONFIG=	yes
 
-MAKEFILE=	Makefile.freebsd
+BUILD_WRKSRC=	${WRKSRC}/src/burner/libretro
 
 PLIST_FILES=	lib/libretro/fbneo_libretro.so
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
-	${INSTALL_LIB} ${WRKSRC}/src/burner/libretro/fbneo_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro
+	${INSTALL_LIB} ${WRKSRC}/src/burner/libretro/fbneo_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro
 
 .include <bsd.port.mk>

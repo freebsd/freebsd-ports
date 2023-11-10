@@ -1,6 +1,6 @@
-TIMESTAMP = 1686388865
-SHA256 (elFarto-nvidia-vaapi-driver-v0.0.10_GH0.tar.gz) = df63b0832ccf9f74a90ff8b26d8e069606e0614d1748e35a857d2e53745ab95c
-SIZE (elFarto-nvidia-vaapi-driver-v0.0.10_GH0.tar.gz) = 182313
+TIMESTAMP = 1699098983
+SHA256 (elFarto-nvidia-vaapi-driver-v0.0.11_GH0.tar.gz) = 3e1ed95d7e2b2b1377c9cb59c3e7caaf960134694e9441e1d91c38f224d1d5d9
+SIZE (elFarto-nvidia-vaapi-driver-v0.0.11_GH0.tar.gz) = 182479
 SHA256 (8e8d49e11772.patch) = 7bba9dc7e96961a4e9b7046c192cfe0bde7d76c9765dd3df4ad4c0368378a427
 SIZE (8e8d49e11772.patch) = 1258
 SHA256 (5dc46a5a2fab.patch) = 9d63405e05f60ac702a3842def28645907b5319dbcea124f97b965344f27cbd2

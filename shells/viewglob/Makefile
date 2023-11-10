@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK add-on to bash and zsh
-WWW=		http://viewglob.sourceforge.net/
+WWW=		https://viewglob.sourceforge.net/
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash

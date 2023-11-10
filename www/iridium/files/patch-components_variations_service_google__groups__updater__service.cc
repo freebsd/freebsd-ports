@@ -1,6 +1,6 @@
---- components/variations/service/google_groups_updater_service.cc.orig	2023-08-28 20:17:35 UTC
+--- components/variations/service/google_groups_updater_service.cc.orig	2023-10-21 11:51:27 UTC
 +++ components/variations/service/google_groups_updater_service.cc
-@@ -29,7 +29,7 @@ const char kDogfoodGroupsSyncPrefGaiaIdKey[] = "gaia_i
+@@ -15,7 +15,7 @@
  // information from per-profile data to local-state.
  BASE_FEATURE(kVariationsGoogleGroupFiltering,
               "VariationsGoogleGroupFiltering",

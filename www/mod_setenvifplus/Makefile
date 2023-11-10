@@ -7,7 +7,7 @@ DIST_SUBDIR=	apache2
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Allows setting environment variables based on request attributes
-WWW=		http://modsetenvifplus.sourceforge.net/
+WWW=		https://modsetenvifplus.sourceforge.net/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt

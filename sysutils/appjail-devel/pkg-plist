@@ -10,14 +10,21 @@ etc/rc.d/appjail-health
 etc/rc.d/appjail-natnet
 libexec/appjail/appjail-config/appjail-config
 libexec/appjail/appjail-config/tok
+libexec/appjail/find-number-from-start/find-number-from-start
+libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
+%%DATADIR%%/cmd/apply
+%%DATADIR%%/cmd/checkOld
 %%DATADIR%%/cmd/cmd
 %%DATADIR%%/cmd/cpuset
+%%DATADIR%%/cmd/deleteOld
+%%DATADIR%%/cmd/devfs
 %%DATADIR%%/cmd/disable
 %%DATADIR%%/cmd/enable
 %%DATADIR%%/cmd/enabled
+%%DATADIR%%/cmd/etcupdate
 %%DATADIR%%/cmd/expose
 %%DATADIR%%/cmd/fetch
 %%DATADIR%%/cmd/fstab
@@ -60,6 +67,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/check_func
 %%DATADIR%%/lib/colors
 %%DATADIR%%/lib/copy
+%%DATADIR%%/lib/devfs
 %%DATADIR%%/lib/files
 %%DATADIR%%/lib/jail
 %%DATADIR%%/lib/jail_types
@@ -73,6 +81,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/random
 %%DATADIR%%/lib/repeat
 %%DATADIR%%/lib/replace
+%%DATADIR%%/lib/select
 %%DATADIR%%/lib/strlen
 %%DATADIR%%/lib/sysexits
 %%DATADIR%%/lib/tempfile
@@ -85,6 +94,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/cmd/all/CMD
 %%DATADIR%%/makejail/cmd/all/COPY
 %%DATADIR%%/makejail/cmd/all/DESTROY
+%%DATADIR%%/makejail/cmd/all/DEVICE
 %%DATADIR%%/makejail/cmd/all/ENTRYPOINT
 %%DATADIR%%/makejail/cmd/all/ENV
 %%DATADIR%%/makejail/cmd/all/EXEC
@@ -112,6 +122,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/all/CMD
 %%DATADIR%%/makejail/write/all/COPY
 %%DATADIR%%/makejail/write/all/DESTROY
+%%DATADIR%%/makejail/write/all/DEVICE
 %%DATADIR%%/makejail/write/all/EXEC
 %%DATADIR%%/makejail/write/all/GLOBAL
 %%DATADIR%%/makejail/write/all/MOUNT
@@ -140,9 +151,11 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/dnsmasq-hook.sh
 %%DATADIR%%/scripts/get_depends.sh
 %%DATADIR%%/scripts/kill_child.sh
+%%DATADIR%%/scripts/load-devfs-rules.sh
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
+%%DATADIR%%/scripts/super-mv.sh
 %%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/linux.conf

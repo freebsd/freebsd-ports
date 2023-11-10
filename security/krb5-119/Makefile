@@ -25,7 +25,7 @@ KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			autoreconf compiler:c++11-lang cpe gmake gettext-runtime \
 			gssapi:bootstrap,mit libtool:build localbase \
 			perl5 pkgconfig ssl
-BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL=	openssl openssl31
 BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
 BROKEN_FreeBSD_14=	Incompatible with OpenSSL 3.0 in 14-STABLE
 BROKEN_FreeBSD_15=	Incompatible with OpenSSL 3.0 in 15-CURRENT

@@ -12,6 +12,8 @@ WWW=		https://www.freebsd.org/projects/ideas/ #p-bsdtexttools
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Merged into base from 13
+EXPIRATION_DATE=	2023-12-31
 # This port should be deprecated once stable/12 goes EoL.  bsdgrep shipped by
 # default in FreeBSD 13.0.
 IGNORE_FreeBSD_13=	only for FreeBSD 12.x

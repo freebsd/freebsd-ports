@@ -5,7 +5,7 @@ MASTER_SITES=	SF/tclxml/${PORTNAME}/v${PORTVERSION}
 
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Write XML documents using Tcl
-WWW=		http://tclxml.sourceforge.net/
+WWW=		https://tclxml.sourceforge.net/
 
 USES=		tcl
 NO_BUILD=	yes

@@ -1,0 +1,14 @@
+- workaround for the regression: build breakage in the 'doc' folder in 0.32.0
+- reported to the upstream author Scott Dattalo via e-mail on 2023-11-03.
+
+--- Makefile.in.orig	2023-11-03 16:11:02 UTC
++++ Makefile.in
+@@ -387,7 +387,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4
+ pkgconfig_DATA = @PACKAGE_NAME@.pc
+-SUBDIRS = eXdbm src cli xpms gui modules extras gpsim examples doc regression 
++SUBDIRS = eXdbm src cli xpms gui modules extras gpsim examples regression 
+ EXTRA_DIST = PROCESSORS HISTORY README.EXAMPLES ANNOUNCE README.MODULES \
+ 	README INSTALL.gpsim COPYING.LESSER \
+ 	config_win32.h.in \

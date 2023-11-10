@@ -1,5 +1,6 @@
 PORTNAME=	ntopng
-PORTVERSION=	5.6.d20230920
+PORTVERSION=	6.0.d20231103
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -24,7 +25,7 @@ LIB_DEPENDS=	librrd.so:databases/rrdtool \
 		libhiredis.so:databases/hiredis
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf compiler:c++11-lang cpe gmake ldap libtool localbase \
+USES=		autoreconf compiler:c++11-lang cpe gmake libtool localbase \
 		lua:54 mysql pathfix pkgconfig shebangfix sqlite ssl
 
 SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall pkg-message
@@ -38,9 +39,9 @@ GROUPS=		ntopng
 PLIST_SUB=	NTOPNGUSER="${USERS}" NTOPNGROUP="${GROUPS}"
 
 USE_GITHUB=	yes
-GH_TUPLE=	ntop:ntopng-dist:e7a0d8b:dist/httpdocs/dist
+GH_TUPLE=	ntop:ntopng-dist:5034f89:dist/httpdocs/dist
 GH_ACCOUNT=	ntop
-GH_TAGNAME=	f5d186f
+GH_TAGNAME=	4e18f59
 
 CPE_VENDOR=	ntop
 
@@ -53,9 +54,11 @@ NLS_USES=	gettext
 USE_RC_SUBR=	ntopng
 
 post-patch:
-	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/Makefile.in \
-		${WRKSRC}/configure.ac.in
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|%%SSL_INC%%|${OPENSSLINC}|g' \
+		-e 's|%%SSL_LIB%%|${OPENSSLLIB}|g' \
+			${WRKSRC}/Makefile.in \
+			${WRKSRC}/configure.ac.in
 	cd ${WRKSRC} && ${SH} autogen.sh
 
 post-install:

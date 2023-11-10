@@ -6,9 +6,12 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible plotting language for producing scientific graphs
-WWW=		http://gri.sourceforge.net/
+WWW=		https://gri.sourceforge.net/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Last upstream release was in 2012 and gnuplot generates better results
+EXPIRATION_DATE=	2023-11-26
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 

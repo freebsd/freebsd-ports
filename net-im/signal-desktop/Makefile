@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.30.0
+DISTVERSION=	6.35.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -21,7 +21,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		yarn-node18>0:www/yarn-node18
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl30 \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl \
 		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		${LOCALBASE}/lib/libsignal_tokenizer.a:devel/signal-fts5-extension \
@@ -37,9 +37,11 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcups.so:print/cups \
 		libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
+		libepoll-shim.so:devel/libepoll-shim \
 		libevent.so:devel/libevent \
 		libexpat.so:textproc/expat2 \
 		libFLAC.so:audio/flac \
+		libffi.so:devel/libffi \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
@@ -86,11 +88,11 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	25
 
 # sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.30.2-0a5162271c6c03eaa900036aa9dc34a0e2e5e6ae-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.30.0-9f865006e10fcc905fd901a8d095ff66b8afc907-integrity
-NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.4.3-7ffa8d03d2a12543247936bfb7b9f74cdbc6fe9b-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.31.0-f420a009f97b80ba5da216b9cdaec543f3ef7097-integrity
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.33.0-a18baa71c43e4a4d5ea996febcdfaac4e5a62f51-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.5.2-910669f44e76a46d06df45fabefcd3ac2e7c4cce-integrity
 NPM_ESBUILD_VERS=	0.17.11
-SQLCIPHER=		sqlcipher-4.5.3-fts--3.0.7--0.2.1-b633825cf7e0fdd39a6cdf128f2bd76552a88d325f2b9cd07bb87a457cefb986
+SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
 ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
@@ -100,6 +102,14 @@ PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
 		SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
 
 YARN_TIMESTAMP=	1661146515
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+PLIST_SUB+=	NOT_AARCH64="@comment "
+.elif ${ARCH} == amd64
+PLIST_SUB+=	NOT_AARCH64=""
+.endif
 
 fetch-yarn:
 	if [ ! -f ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz ]; then \
@@ -122,10 +132,6 @@ fetch-yarn:
 			@yarn-offline-cache.mtree; \
 		${RM} -r ${WRKDIR}; \
 	fi
-
-post-patch:
-	${REINPLACE_CMD} "s#%%EPOCH%%#${_BUILD_DATE}#" \
-		${WRKSRC}/ts/scripts/get-expire-time.ts
 
 post-extract:
 	# install yarn modules and fail silently
@@ -227,4 +233,4 @@ create-caches-tarball:
 	cd ${WRKDIR} && \
 		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

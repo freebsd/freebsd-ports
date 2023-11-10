@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.1.3
+PORTVERSION=	9.2.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -35,7 +35,7 @@ DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	f780c664b
+GIT_TAGNAME=	d08ce39b8
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
 CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
@@ -52,7 +52,9 @@ CMAKE_ON+=	WITH_TOOLS_PROJ
 CMAKE_OFF=	WITH_CLIPPER_ONE
 CMAKE_OFF+=	WITH_TOOLS_RIEGL
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/saga-gis
+SUB_FILES=	pkg-message
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}-gis
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
@@ -75,8 +77,6 @@ VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 
 .include <bsd.port.pre.mk>
 
-SUB_FILES=	pkg-message
-
 post-patch:
 .if ${ARCH} == "powerpc"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
@@ -93,10 +93,12 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga*.txt ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.png ${STAGEDIR}${DATADIR}
 	${RM} ${STAGEDIR}${DATADIR}/saga_dic.txt ${STAGEDIR}${DATADIR}/saga_srs.txt
-# toolchains dir was moved in r2805 (and followups r2810,r2811,r2820)
+# Put accessories under share/saga, python/data already under site-packages/PySAGA ;)
+	(cd ${WRKSRC}/src/accessories && ${RM} -R python/data)
 	(cd ${WRKSRC}/src/accessories && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${RM} -R ${STAGEDIR}${DATADIR}/CMakeLists.txt
 	${RM} -R ${STAGEDIR}${DATADIR}/templates/template4saga-tools/my_tool_library/Makefile.bak
+	${RM} -R ${STAGEDIR}${DATADIR}/python/tools
 	${INSTALL_DATA} ${WRKSRC}/src/saga_core/saga_gui/res/saga.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 # library helper files are not needed and cripple some math/qgis extensions

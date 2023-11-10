@@ -1,5 +1,5 @@
 PORTNAME=	openvas
-DISTVERSION=	22.7.5
+DISTVERSION=	22.7.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -44,8 +44,14 @@ GROUPS=		${USERS}
 CFLAGS+=	-Wno-error=strict-prototypes -Wno-error=unused-but-set-variable -Wno-error=invalid-utf8
 .endif
 
+# The struct this error is about is only ever accessed using bcopy() and memset(),
+# so the unaligned structure doesn't matter.  Disable the error, but keep it as a
+# warning so we can see where it is.
+CFLAGS_armv6=	-Wno-error=unaligned-access
+CFLAGS_armv7=	-Wno-error=unaligned-access
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/attack.c ${WRKSRC}/src/nasl_plugins.c
+	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>||g' ${WRKSRC}/src/nasl_plugins.c
 	@${REINPLACE_CMD} -e 's|#include <bsd/unistd.h>|#include <unistd.h>|g' ${WRKSRC}//src/pluginload.c
 	@${REINPLACE_CMD} -e 's|vendor_version_get ()|vendor_version_get (void)|g' ${WRKSRC}/misc/vendorversion.c
 

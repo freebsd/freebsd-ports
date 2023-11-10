@@ -1,5 +1,5 @@
 PORTNAME=	social-auth-app-django
-DISTVERSION=	5.3.0
+DISTVERSION=	5.4.0
 CATEGORIES=	www security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

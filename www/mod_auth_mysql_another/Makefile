@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	_another
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
-WWW=		http://modauthmysql.sourceforge.net/
+WWW=		https://modauthmysql.sourceforge.net/
 
 LICENSE=	APACHE10
 

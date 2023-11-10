@@ -1,3 +1,4 @@
+bin/akonadi_html_to_text
 bin/akonadi_indexing_agent
 include/KPim5/AkonadiSearch/Core/Query
 include/KPim5/AkonadiSearch/Core/ResultIterator

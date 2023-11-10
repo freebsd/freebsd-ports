@@ -11,6 +11,7 @@ include/ftxui/component/screen_interactive.hpp
 include/ftxui/component/task.hpp
 include/ftxui/dom/canvas.hpp
 include/ftxui/dom/deprecated.hpp
+include/ftxui/dom/direction.hpp
 include/ftxui/dom/elements.hpp
 include/ftxui/dom/flexbox_config.hpp
 include/ftxui/dom/linear_gradient.hpp
@@ -31,10 +32,10 @@ lib/cmake/ftxui/ftxui-config-version.cmake
 lib/cmake/ftxui/ftxui-config.cmake
 lib/cmake/ftxui/ftxui-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ftxui/ftxui-targets.cmake
-lib/ftxui.pc
 lib/libftxui-component.so
-lib/libftxui-component.so.4.1.1
+lib/libftxui-component.so.5.0.0
 lib/libftxui-dom.so
-lib/libftxui-dom.so.4.1.1
+lib/libftxui-dom.so.5.0.0
 lib/libftxui-screen.so
-lib/libftxui-screen.so.4.1.1
+lib/libftxui-screen.so.5.0.0
+libdata/pkgconfig/ftxui.pc

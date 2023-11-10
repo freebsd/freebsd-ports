@@ -319,6 +319,7 @@
     SUBDIR += jconvolver
     SUBDIR += jid3lib
     SUBDIR += jmatconvol
+    SUBDIR += jnoisemeter
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += julius
@@ -456,6 +457,7 @@
     SUBDIR += midiomatic-lv2
     SUBDIR += midipp
     SUBDIR += midisharelight
+    SUBDIR += midivisualizer
     SUBDIR += mikmod
     SUBDIR += milkytracker
     SUBDIR += miniaudio
@@ -558,7 +560,7 @@
     SUBDIR += p5-CDDB-File
     SUBDIR += p5-CDDB_get
     SUBDIR += p5-Filesys-Virtual-DAAP
-    SUBDIR += p5-MIDI
+    SUBDIR += p5-MIDI-Perl
     SUBDIR += p5-MP3-Find
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += p5-MP3-Info
@@ -578,6 +580,7 @@
     SUBDIR += p5-Test-Corpus-Audio-MPD
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
+    SUBDIR += pa-applet
     SUBDIR += pacpl
     SUBDIR += padthv1-lv2
     SUBDIR += paman
@@ -598,8 +601,10 @@
     SUBDIR += pianod2
     SUBDIR += picard
     SUBDIR += picard-plugins
+    SUBDIR += pipewire-module-xrdp
     SUBDIR += pithos
     SUBDIR += plasma5-kpipewire
+    SUBDIR += plasma5-oxygen-sounds
     SUBDIR += plasma5-plasma-pa
     SUBDIR += play
     SUBDIR += playgsf
@@ -628,6 +633,7 @@
     SUBDIR += py-apetag
     SUBDIR += py-aubio
     SUBDIR += py-audioread
+    SUBDIR += py-auditok
     SUBDIR += py-discid
     SUBDIR += py-discogs-client
     SUBDIR += py-essentia
@@ -684,7 +690,6 @@
     SUBDIR += rawrec
     SUBDIR += re
     SUBDIR += rebot3
-    SUBDIR += rem
     SUBDIR += resid
     SUBDIR += rexima
     SUBDIR += rezound

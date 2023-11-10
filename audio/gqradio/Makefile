@@ -6,7 +6,7 @@ MASTER_SITES=	SF/gqmpeg/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 based FM tuner
-WWW=		http://gqmpeg.sourceforge.net/radio.html
+WWW=		https://gqmpeg.sourceforge.net/radio.html
 
 LICENSE=	GPLv2
 

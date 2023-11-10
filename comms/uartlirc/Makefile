@@ -11,6 +11,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 WWW=		https://forums.freebsd.org/viewtopic.php?t=31610
 
+DEPRECATED=	BROKEN on all supported versions for more than 2 years after the EOL of 12
+EXPIRATION_DATE=	2023-12-31
 BROKEN_aarch64=		fails to compile: uartlirc_core.c:273:19: expected expression
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 BROKEN_powerpc64=	fails to compile: uart.h: No such file or directory
@@ -22,14 +24,15 @@ BROKEN_FreeBSD_14=	fails to compile: uartlirc_bus_scc.c:101:7: use of undeclared
 
 USES=		kmod
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	${DEBUG_FLAGS}
+
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
 
-PLIST_FILES+=	${KMODDIR}/${PORTNAME}.ko
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-CFLAGS+=	${DEBUG_FLAGS}
+PLIST_FILES+=	${KMODDIR}/${PORTNAME}.ko
 
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}

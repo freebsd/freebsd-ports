@@ -6,7 +6,7 @@ MASTER_SITES=	SF/openjade/${PORTNAME:tl}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of SGML/XML tools
-WWW=		http://openjade.sourceforge.net/doc/
+WWW=		https://openjade.sourceforge.net/doc/
 
 LICENSE=	JamesClark
 LICENSE_NAME=	License of James Clark's Software

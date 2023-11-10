@@ -1,5 +1,6 @@
 PORTNAME=	pipdeptree
 PORTVERSION=	2.13.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,9 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|import __version__|import version as __version__|g' \
+		${WRKSRC}/src/pipdeptree/_cli.py
 
 .include <bsd.port.mk>

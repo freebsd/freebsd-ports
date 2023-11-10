@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	hizel@vyborg.ru
 COMMENT=	Generate rrdtool graphs using performance data from nagios plugins
-WWW=		http://nagiosgraph.sourceforge.net/
+WWW=		https://nagiosgraph.sourceforge.net/
 
 LICENSE=	ART20
 

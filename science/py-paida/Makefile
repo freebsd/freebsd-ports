@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLA
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure Python scientific analysis package
-WWW=		http://paida.sourceforge.net
+WWW=		https://paida.sourceforge.net
 
 USES=		dos2unix python
 USE_PYTHON=	distutils autoplist

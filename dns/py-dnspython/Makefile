@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0.12:devel/py-poetry-core@${P
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
+BINARY_ALIAS=	git=false
 NO_ARCH=	yes
 
 PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py xfr.py \
@@ -28,8 +29,8 @@ OPTIONS_DEFAULT=	DNSSEC DOH DOQ IDNA TRIO
 DNSSEC_DESC=		DNSSEC Support
 DOH_DESC=		DNS over HTTPS Support
 DOQ_DESC=		DNS over QUIC Support
-IDNA_DESC=		Internationalizede Domain Names in Application Support
-TRIO_DESC=		TRIO Support
+IDNA_DESC=		Internationalized Domain Names in Application Support
+TRIO_DESC=		Concurrent async IO library support with TRIO backend
 
 DNSSEC_USE=		PYTHON=cryptography
 DOH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=4.0.0:www/py-h2@${PY_FLAVOR} \

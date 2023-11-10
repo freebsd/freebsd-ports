@@ -10,18 +10,24 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The OpenSSL library cross-compiled for MinGW32
 WWW=		http://sctp.fh-muenster.de/dtls-patches.html
 
+DEPRECATED=	Upstream reached EOL and mingw32 project is defunct
+EXPIRATION_DATE=	2023-11-20
+
 BUILD_DEPENDS=	makedepend:devel/makedepend \
 		${PKGNAMEPREFIX}gcc:devel/${PKGNAMEPREFIX}gcc \
 		${LOCALBASE}/mingw32/include/stdlib.h:devel/${PKGNAMEPREFIX}bin-msvcrt \
 		${LOCALBASE}/mingw32/lib/libz.a:devel/mingw32-zlib
 
 USES=		cpe perl5 shebangfix
-SHEBANG_FILES=	apps/tsget
 USE_PERL5=	build
+
+SHEBANG_FILES=	apps/tsget
+
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=		install_sw
+
 CONFIGURE_PREFIX=	${PREFIX}/mingw32
 OPENSSLDIR=		${CONFIGURE_PREFIX}/openssl
-INSTALL_TARGET=		install_sw
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \

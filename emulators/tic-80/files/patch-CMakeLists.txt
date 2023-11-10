@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-08-27 09:42:28 UTC
+--- CMakeLists.txt.orig	2023-10-22 11:51:43 UTC
 +++ CMakeLists.txt
 @@ -14,7 +14,6 @@ if(CMAKE_BUILD_TYPE)
      string(TOUPPER ${CMAKE_BUILD_TYPE} BUILD_TYPE_UC)
@@ -83,10 +83,31 @@
  # WREN
  ################################
  
-@@ -362,41 +307,6 @@ if (BAREMETALPI)
- endif()
+@@ -341,62 +286,6 @@ target_include_directories(wasm PUBLIC ${THIRDPARTY_DI
+ #target_include_directories(wasm PRIVATE ${THIRDPARTY_DIR}/wasm3/src/vm)
  
  ################################
+-# SCHEME (S7)
+-################################
+-
+-set(SCHEME_DIR ${THIRDPARTY_DIR}/s7)
+-set(SCHEME_SRC
+-    ${SCHEME_DIR}/s7.c
+-)
+-
+-add_library(scheme STATIC ${SCHEME_SRC})
+-set_target_properties(scheme PROPERTIES LINKER_LANGUAGE CXX)
+-target_include_directories(scheme PUBLIC ${SCHEME_DIR})
+-
+-if (N3DS)
+-    target_compile_definitions(scheme PRIVATE S7_N3DS)
+-endif()
+-
+-if (BAREMETALPI)
+-    target_compile_definitions(scheme PRIVATE S7_BAREMETALPI)
+-endif()
+-
+-################################
 -# SQUIRREL
 -################################
 -
@@ -122,11 +143,11 @@
 -target_include_directories(squirrel PRIVATE ${SQUIRREL_DIR}/sqstdlib)
 -
 -################################
- # PocketPy (Python)
+ # pocketpy (Python)
  ################################
  
-@@ -432,27 +342,8 @@ else()
-     target_compile_features(python PRIVATE cxx_std_17)
+@@ -417,27 +306,8 @@ if(EMSCRIPTEN)
+     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fexceptions")
  endif()
  
 -################################
@@ -154,7 +175,7 @@
  ################################
  # Blipbuf
  ################################
-@@ -461,36 +352,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
+@@ -446,36 +316,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
  target_include_directories(blipbuf INTERFACE ${THIRDPARTY_DIR}/blip-buf)
  
  ################################
@@ -191,7 +212,7 @@
  # Janet
  ################################
  
-@@ -529,9 +390,7 @@ if(BUILD_WITH_JANET)
+@@ -514,9 +354,7 @@ if(BUILD_WITH_JANET)
          )
      endif()
  
@@ -202,7 +223,7 @@
  endif()
  
  ################################
-@@ -578,24 +437,26 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -563,24 +401,26 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
  
      target_include_directories(tic80core${SCRIPT}
          PRIVATE
@@ -224,7 +245,8 @@
          squirrel
 +        sqstdlib
          python
-         scheme
+-        scheme
++        s7
          quickjs
          blipbuf
 -        zlib
@@ -232,7 +254,7 @@
      )
  
      if(BUILD_WITH_MRUBY)
-@@ -608,7 +469,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -593,7 +433,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
  
      if(${BUILD_DEPRECATED})
          target_compile_definitions(tic80core${SCRIPT} PRIVATE BUILD_DEPRECATED)
@@ -241,7 +263,7 @@
      endif()
  
      if(LINUX)
-@@ -656,6 +517,8 @@ endif()
+@@ -641,6 +481,8 @@ endif()
  ################################
  if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
  
@@ -250,7 +272,7 @@
      if(WIN32)
          set(HAVE_LIBC TRUE)
      endif()
-@@ -665,10 +528,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
+@@ -650,10 +492,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
          set(SDL_STATIC_PIC ON CACHE BOOL "" FORCE)
      endif()
  
@@ -261,7 +283,7 @@
  endif()
  
  ################################
-@@ -694,7 +553,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
+@@ -679,7 +517,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
          target_link_options(player-sdl PRIVATE -static)
      endif()
  
@@ -270,7 +292,7 @@
  endif()
  
  ################################
-@@ -835,34 +694,8 @@ endif()
+@@ -820,34 +658,8 @@ endif()
  # ZLIB
  ################################
  
@@ -306,7 +328,7 @@
  ################################
  # ZIP
  ################################
-@@ -871,6 +704,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
+@@ -856,6 +668,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
  add_subdirectory(${THIRDPARTY_DIR}/zip)
  
  ################################
@@ -319,7 +341,7 @@
  # bin2txt cart2prj prj2cart xplode wasmp2cart
  ################################
  
-@@ -891,7 +730,7 @@ if(BUILD_DEMO_CARTS)
+@@ -876,7 +694,7 @@ if(BUILD_DEMO_CARTS)
      target_link_libraries(wasmp2cart tic80core)
  
      add_executable(bin2txt ${TOOLS_DIR}/bin2txt.c)
@@ -328,7 +350,7 @@
  
      add_executable(xplode
          ${TOOLS_DIR}/xplode.c
-@@ -997,7 +836,7 @@ if(USE_NAETT)
+@@ -982,7 +800,7 @@ if(USE_NAETT)
  
      if(WIN32)
          target_link_libraries(naett INTERFACE winhttp)
@@ -337,7 +359,7 @@
          find_package(CURL REQUIRED)
          target_include_directories(naett PRIVATE ${CURL_INCLUDE_DIRS})
          target_link_libraries(naett ${CURL_LIBRARIES})
-@@ -1005,40 +844,6 @@ if(USE_NAETT)
+@@ -990,40 +808,6 @@ if(USE_NAETT)
  endif()
  
  ################################
@@ -378,7 +400,7 @@
  # TIC-80 studio
  ################################
  
-@@ -1082,9 +887,9 @@ if(WIN32)
+@@ -1067,9 +851,9 @@ if(WIN32)
      target_include_directories(tic80studio PRIVATE ${THIRDPARTY_DIR}/dirent/include)
  endif()
  
@@ -390,7 +412,7 @@
  
  if(USE_NAETT)
      target_compile_definitions(tic80studio PRIVATE USE_NAETT)
-@@ -1102,80 +907,6 @@ endif()
+@@ -1087,80 +871,6 @@ endif()
  target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
  
  ################################
@@ -471,7 +493,7 @@
  # TIC-80 app
  ################################
  
-@@ -1216,7 +947,7 @@ if(BUILD_SDL)
+@@ -1201,7 +911,7 @@ if(BUILD_SDL)
          endif()
  
      elseif(NOT ANDROID)
@@ -480,7 +502,7 @@
      endif()
  
      target_link_libraries(tic80 tic80studio)
-@@ -1237,13 +968,13 @@ if(BUILD_SDL)
+@@ -1222,13 +932,13 @@ if(BUILD_SDL)
      endif()
  
      if(BUILD_SDLGPU)
@@ -496,7 +518,7 @@
          endif()
      endif()
  
-@@ -1314,7 +1045,7 @@ if(N3DS)
+@@ -1299,7 +1009,7 @@ if(N3DS)
          ${CMAKE_SOURCE_DIR}/src)
  
      target_link_directories(tic80_n3ds PRIVATE ${DEVKITPRO}/libctru/lib ${DEVKITPRO}/portlibs/3ds/lib)
@@ -505,7 +527,7 @@
  
      add_custom_command(TARGET tic80_n3ds
             POST_BUILD
-@@ -1374,7 +1105,7 @@ if(BUILD_STUB)
+@@ -1359,7 +1069,7 @@ if(BUILD_STUB)
              endif()
  
          else()
@@ -514,7 +536,7 @@
          endif()
  
          target_link_libraries(tic80${SCRIPT} tic80core${SCRIPT} argparse)
-@@ -1386,13 +1117,13 @@ if(BUILD_STUB)
+@@ -1371,13 +1081,13 @@ if(BUILD_STUB)
          endif()
  
          if(BUILD_SDLGPU)

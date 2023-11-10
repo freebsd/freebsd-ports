@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stucchi@gufi.org
 COMMENT=	Software modem that connects to IAX channel
-WWW=		http://iaxmodem.sourceforge.net/
+WWW=		https://iaxmodem.sourceforge.net/
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 

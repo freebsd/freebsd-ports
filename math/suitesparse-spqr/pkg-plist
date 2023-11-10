@@ -8,7 +8,7 @@ lib/cmake/SPQR/SPQRTargets.cmake
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.4
-lib/libspqr.so.4.2.0
+lib/libspqr.so.%%VER%%
 libdata/pkgconfig/SPQR.pc
 %%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/spqr_user_guide.pdf

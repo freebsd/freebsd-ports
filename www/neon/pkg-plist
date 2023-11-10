@@ -25,7 +25,7 @@ include/neon/ne_xml.h
 include/neon/ne_xmlreq.h
 lib/libneon.so
 lib/libneon.so.27
-lib/libneon.so.27.5.4
+lib/libneon.so.27.5.5
 libdata/pkgconfig/neon.pc
 %%DOCS%%man/man1/neon-config.1.gz
 %%DOCS%%man/man3/ne_add_request_header.3.gz
@@ -180,6 +180,7 @@ libdata/pkgconfig/neon.pc
 %%NLS%%share/locale/de/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/neon.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/neon.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/neon.mo

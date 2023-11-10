@@ -6,7 +6,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/COPYING
 %%GRASS_INST_DIR%%/GPL.TXT
 %%GRASS_INST_DIR%%/INSTALL.md
-%%GRASS_INST_DIR%%/REQUIREMENTS.html
+%%GRASS_INST_DIR%%/REQUIREMENTS.md
 %%GRASS_INST_DIR%%/bin/d.barscale
 %%GRASS_INST_DIR%%/bin/d.colorlist
 %%GRASS_INST_DIR%%/bin/d.colortable
@@ -669,6 +669,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_python.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_python_code.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_python_code_result.png
+%%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_pywps_code.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_raster.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_raster3d.png
 %%GRASS_INST_DIR%%/docs/html/g_gui_gmodeler_relation.png
@@ -711,11 +712,11 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/gi_temporal.jpg
 %%GRASS_INST_DIR%%/docs/html/gi_vector.jpg
 %%GRASS_INST_DIR%%/docs/html/graphical_index.html
-%%GRASS_INST_DIR%%/docs/html/grass%%MAJVER%%_arch.png
 %%GRASS_INST_DIR%%/docs/html/grass-dbf.html
 %%GRASS_INST_DIR%%/docs/html/grass-ogr.html
 %%GRASS_INST_DIR%%/docs/html/grass-sqlite.html
 %%GRASS_INST_DIR%%/docs/html/grass.html
+%%GRASS_INST_DIR%%/docs/html/grass_arch.png
 %%GRASS_INST_DIR%%/docs/html/grass_database.html
 %%GRASS_INST_DIR%%/docs/html/grass_database.png
 %%GRASS_INST_DIR%%/docs/html/grass_icon.png
@@ -1232,6 +1233,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/r3.univar.html
 %%GRASS_INST_DIR%%/docs/html/r3flow_flowlines.png
 %%GRASS_INST_DIR%%/docs/html/r3flow_flowlines_color.png
+%%GRASS_INST_DIR%%/docs/html/r_blend.png
 %%GRASS_INST_DIR%%/docs/html/r_buffer_road.png
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_carved.png
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_carved_accum.png
@@ -1241,6 +1243,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/r_carve_dem_orig_shaded.png
 %%GRASS_INST_DIR%%/docs/html/r_clump_lakes.png
 %%GRASS_INST_DIR%%/docs/html/r_clump_lsat.png
+%%GRASS_INST_DIR%%/docs/html/r_colors_stddev.png
 %%GRASS_INST_DIR%%/docs/html/r_contour_using_levels.png
 %%GRASS_INST_DIR%%/docs/html/r_drain.png
 %%GRASS_INST_DIR%%/docs/html/r_drain_with_r_watershed_direction.png
@@ -1289,6 +1292,8 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/r_random_surface.jpg
 %%GRASS_INST_DIR%%/docs/html/r_random_surface_hist.png
 %%GRASS_INST_DIR%%/docs/html/r_relief.png
+%%GRASS_INST_DIR%%/docs/html/r_resamp_filter_benchmark_size.png
+%%GRASS_INST_DIR%%/docs/html/r_resamp_interp_benchmark_size.png
 %%GRASS_INST_DIR%%/docs/html/r_resamp_interp_new_250m.png
 %%GRASS_INST_DIR%%/docs/html/r_resamp_interp_orig_500m.png
 %%GRASS_INST_DIR%%/docs/html/r_resamp_stats_6m_20m.png
@@ -1305,6 +1310,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/r_slope_aspect_pcurv.png
 %%GRASS_INST_DIR%%/docs/html/r_slope_aspect_slope.png
 %%GRASS_INST_DIR%%/docs/html/r_slope_aspect_tcurv.png
+%%GRASS_INST_DIR%%/docs/html/r_stats.zonal.png
 %%GRASS_INST_DIR%%/docs/html/r_stream_extract_accum_orig_zoom.png
 %%GRASS_INST_DIR%%/docs/html/r_stream_extract_accum_weighted_zoom.png
 %%GRASS_INST_DIR%%/docs/html/r_stream_extract_streams_noweight.png
@@ -1321,7 +1327,9 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/r_thin_network.png
 %%GRASS_INST_DIR%%/docs/html/r_thin_vectorized.png
 %%GRASS_INST_DIR%%/docs/html/r_topidx.png
+%%GRASS_INST_DIR%%/docs/html/r_univar_benchmark_size.png
 %%GRASS_INST_DIR%%/docs/html/r_volume_lake.png
+%%GRASS_INST_DIR%%/docs/html/r_walk.png
 %%GRASS_INST_DIR%%/docs/html/r_water_outlet.png
 %%GRASS_INST_DIR%%/docs/html/r_watershed_drainage.png
 %%GRASS_INST_DIR%%/docs/html/raster-import.png
@@ -1348,6 +1356,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/rterraflow_accumulation.png
 %%GRASS_INST_DIR%%/docs/html/rterraflow_dir2.png
 %%GRASS_INST_DIR%%/docs/html/rterraflow_dir3.png
+%%GRASS_INST_DIR%%/docs/html/rterraflow_direction_encoding.png
 %%GRASS_INST_DIR%%/docs/html/runivar_basins.png
 %%GRASS_INST_DIR%%/docs/html/runivar_basins_elev_zonal.png
 %%GRASS_INST_DIR%%/docs/html/slope.png
@@ -3696,14 +3705,12 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/gui/wxpython/modules/__pycache__/import_export%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/modules/__pycache__/mapsets_picker%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/modules/__pycache__/mcalc_builder%%PYTHON_EXT_SUFFIX%%.pyc
-%%GRASS_INST_DIR%%/gui/wxpython/modules/__pycache__/vclean%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/modules/colorrules.py
 %%GRASS_INST_DIR%%/gui/wxpython/modules/extensions.py
 %%GRASS_INST_DIR%%/gui/wxpython/modules/histogram.py
 %%GRASS_INST_DIR%%/gui/wxpython/modules/import_export.py
 %%GRASS_INST_DIR%%/gui/wxpython/modules/mapsets_picker.py
 %%GRASS_INST_DIR%%/gui/wxpython/modules/mcalc_builder.py
-%%GRASS_INST_DIR%%/gui/wxpython/modules/vclean.py
 %%GRASS_INST_DIR%%/gui/wxpython/nviz/__init__.py
 %%GRASS_INST_DIR%%/gui/wxpython/nviz/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%GRASS_INST_DIR%%/gui/wxpython/nviz/__pycache__/animation%%PYTHON_EXT_SUFFIX%%.pyc
@@ -4077,7 +4084,8 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/lib/libgrass_interpfl.so
 %%GRASS_INST_DIR%%/lib/libgrass_iortho.%%VERS%%.so
 %%GRASS_INST_DIR%%/lib/libgrass_iortho.so
-%%GRASS_INST_DIR%%/lib/libgrass_iostream.%%VERS%%.a
+%%GRASS_INST_DIR%%/lib/libgrass_iostream.%%VERS%%.so
+%%GRASS_INST_DIR%%/lib/libgrass_iostream.so
 %%GRASS_INST_DIR%%/lib/libgrass_lidar.%%VERS%%.so
 %%GRASS_INST_DIR%%/lib/libgrass_lidar.so
 %%GRASS_INST_DIR%%/lib/libgrass_linkm.%%VERS%%.so

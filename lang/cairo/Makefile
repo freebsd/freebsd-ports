@@ -1,7 +1,6 @@
 PORTNAME=	cairo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-language
 
@@ -71,6 +70,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		colorchoice-1.0.0 \
 		colored-2.0.4 \
 		const-fnv1a-hash-1.1.0 \
+		const_format-0.2.31 \
+		const_format_proc_macros-0.2.31 \
 		convert_case-0.6.0 \
 		cpufeatures-0.2.9 \
 		crossbeam-channel-0.5.8 \
@@ -226,15 +227,15 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		salsa-0.16.1 \
 		salsa-macros-0.16.0 \
 		same-file-1.0.6 \
-		scarb-metadata-1.5.0 \
+		scarb-metadata-1.7.1 \
 		schemars-0.8.12 \
 		schemars_derive-0.8.12 \
 		scopeguard-1.1.0 \
-		semver-1.0.17 \
-		serde-1.0.171 \
-		serde_derive-1.0.171 \
+		semver-1.0.18 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
 		serde_derive_internals-0.26.0 \
-		serde_json-1.0.102 \
+		serde_json-1.0.107 \
 		serde_repr-0.1.14 \
 		serde_spanned-0.6.3 \
 		sha2-0.10.7 \
@@ -256,7 +257,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.25 \
+		syn-2.0.32 \
 		tap-1.0.1 \
 		term-0.7.0 \
 		termcolor-1.2.0 \
@@ -264,8 +265,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		test-case-core-3.1.0 \
 		test-case-macros-3.1.0 \
 		test-log-0.2.12 \
-		thiserror-1.0.44 \
-		thiserror-impl-1.0.44 \
+		thiserror-1.0.48 \
+		thiserror-impl-1.0.48 \
 		thiserror-impl-no-std-2.0.2 \
 		thiserror-no-std-2.0.2 \
 		thread_local-1.1.7 \

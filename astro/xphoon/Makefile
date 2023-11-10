@@ -5,7 +5,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set the root window to the moon in its current phase
-WWW=		http://xphoon.sourceforge.net/
+WWW=		https://xphoon.sourceforge.net/
 
 USES=		imake xorg
 USE_XORG=	x11 xext

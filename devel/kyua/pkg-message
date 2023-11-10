@@ -12,4 +12,4 @@ EOD,
 	type : upgrade,
 	maximum_version: "0.13_5,3"
 }
-}
+]

@@ -6,7 +6,7 @@ MASTER_SITES=	SF/passive/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passively detect network assets
-WWW=		http://passive.sourceforge.net
+WWW=		https://passive.sourceforge.net
 
 USES=		shebangfix
 SHEBANG_FILES=	src/pads-report.pl

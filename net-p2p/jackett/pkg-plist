@@ -78,6 +78,7 @@
 %%DATADIR%%/Definitions/animelayer.yml
 %%DATADIR%%/Definitions/animetime.yml
 %%DATADIR%%/Definitions/animetracker.yml
+%%DATADIR%%/Definitions/animetorrentsro.yml
 %%DATADIR%%/Definitions/animeworld-api.yml
 %%DATADIR%%/Definitions/anirena.yml
 %%DATADIR%%/Definitions/anisource.yml
@@ -118,6 +119,7 @@
 %%DATADIR%%/Definitions/boxingtorrents.yml
 %%DATADIR%%/Definitions/broadcity.yml
 %%DATADIR%%/Definitions/brsociety-api.yml
+%%DATADIR%%/Definitions/btarg.yml
 %%DATADIR%%/Definitions/btetree.yml
 %%DATADIR%%/Definitions/btmet.yml
 %%DATADIR%%/Definitions/btnext.yml
@@ -149,12 +151,11 @@
 %%DATADIR%%/Definitions/cpabien.yml
 %%DATADIR%%/Definitions/cpasbienclone.yml
 %%DATADIR%%/Definitions/crackingpatching.yml
-%%DATADIR%%/Definitions/crazyhd.yml
+%%DATADIR%%/Definitions/crazyspirits.yml
 %%DATADIR%%/Definitions/crnaberza.yml
 %%DATADIR%%/Definitions/crt2fa.yml
 %%DATADIR%%/Definitions/dajiao.yml
 %%DATADIR%%/Definitions/danishbytes-api.yml
-%%DATADIR%%/Definitions/dark-shadow.yml
 %%DATADIR%%/Definitions/datascene-api.yml
 %%DATADIR%%/Definitions/deildu.yml
 %%DATADIR%%/Definitions/demonoid.yml
@@ -167,6 +168,7 @@
 %%DATADIR%%/Definitions/divteam.yml
 %%DATADIR%%/Definitions/dmhy.yml
 %%DATADIR%%/Definitions/docspedia.yml
+%%DATADIR%%/Definitions/dreamingtree.yml
 %%DATADIR%%/Definitions/dreamtracker.yml
 %%DATADIR%%/Definitions/drugari.yml
 %%DATADIR%%/Definitions/dxp.yml
@@ -193,6 +195,7 @@
 %%DATADIR%%/Definitions/fantastiko.yml
 %%DATADIR%%/Definitions/fappaizuri.yml
 %%DATADIR%%/Definitions/fastscene.yml
+%%DATADIR%%/Definitions/fearnopeer.yml
 %%DATADIR%%/Definitions/femdomcult.yml
 %%DATADIR%%/Definitions/file-tracker.yml
 %%DATADIR%%/Definitions/filelisting.yml
@@ -202,6 +205,7 @@
 %%DATADIR%%/Definitions/freefarm.yml
 %%DATADIR%%/Definitions/frozenlayer.yml
 %%DATADIR%%/Definitions/funkytorrents.yml
+%%DATADIR%%/Definitions/fusionmayhem.yml
 %%DATADIR%%/Definitions/futuretorrent.yml
 %%DATADIR%%/Definitions/fuzer.yml
 %%DATADIR%%/Definitions/gamera.yml
@@ -242,8 +246,10 @@
 %%DATADIR%%/Definitions/hdroute.yml
 %%DATADIR%%/Definitions/hdsky.yml
 %%DATADIR%%/Definitions/hdtime.yml
+%%DATADIR%%/Definitions/hdtorrentsit.yml
 %%DATADIR%%/Definitions/hdturk.yml
 %%DATADIR%%/Definitions/hdu.yml
+%%DATADIR%%/Definitions/hdvbits.yml
 %%DATADIR%%/Definitions/hdvideo.yml
 %%DATADIR%%/Definitions/hdzone.yml
 %%DATADIR%%/Definitions/hebits.yml
@@ -327,7 +333,6 @@
 %%DATADIR%%/Definitions/monikadesign-api.yml
 %%DATADIR%%/Definitions/mousebits.yml
 %%DATADIR%%/Definitions/moviesdvdr.yml
-%%DATADIR%%/Definitions/movietorrent.yml
 %%DATADIR%%/Definitions/movietorrentz.yml
 %%DATADIR%%/Definitions/movieworld.yml
 %%DATADIR%%/Definitions/mteamtp.yml
@@ -368,15 +373,12 @@
 %%DATADIR%%/Definitions/peersfm.yml
 %%DATADIR%%/Definitions/pier720.yml
 %%DATADIR%%/Definitions/pignetwork.yml
-%%DATADIR%%/Definitions/piratbit.yml
-%%DATADIR%%/Definitions/piratbitl.yml
 %%DATADIR%%/Definitions/pixelcove.yml
 %%DATADIR%%/Definitions/pixelcove2fa.yml
 %%DATADIR%%/Definitions/polishsource.yml
 %%DATADIR%%/Definitions/polishtracker-api.yml
 %%DATADIR%%/Definitions/pornbay.yml
 %%DATADIR%%/Definitions/pornolab.yml
-%%DATADIR%%/Definitions/pornoslab.yml
 %%DATADIR%%/Definitions/pornotorrent.yml
 %%DATADIR%%/Definitions/portugas-api.yml
 %%DATADIR%%/Definitions/potuk.yml
@@ -458,7 +460,6 @@
 %%DATADIR%%/Definitions/teamos.yml
 %%DATADIR%%/Definitions/tekno3d.yml
 %%DATADIR%%/Definitions/teracod.yml
-%%DATADIR%%/Definitions/the-crazy-ones.yml
 %%DATADIR%%/Definitions/theempire.yml
 %%DATADIR%%/Definitions/thefallingangels.yml
 %%DATADIR%%/Definitions/thegeeks.yml
@@ -469,6 +470,7 @@
 %%DATADIR%%/Definitions/theoldschool-api.yml
 %%DATADIR%%/Definitions/thepiratebay.yml
 %%DATADIR%%/Definitions/theplace.yml
+%%DATADIR%%/Definitions/therarbg.yml
 %%DATADIR%%/Definitions/therebels-api.yml
 %%DATADIR%%/Definitions/thesceneplace.yml
 %%DATADIR%%/Definitions/theshinning-api.yml
@@ -529,16 +531,17 @@
 %%DATADIR%%/Definitions/turkseed.yml
 %%DATADIR%%/Definitions/turktorrent.yml
 %%DATADIR%%/Definitions/tvchaosuk.yml
-%%DATADIR%%/Definitions/tvroad.yml
 %%DATADIR%%/Definitions/u2.yml
 %%DATADIR%%/Definitions/ubits.yml
 %%DATADIR%%/Definitions/uhdbits.yml
+%%DATADIR%%/Definitions/ultra-hd.yml
 %%DATADIR%%/Definitions/ultrahd.yml
 %%DATADIR%%/Definitions/uniondht.yml
 %%DATADIR%%/Definitions/unionfansub.yml
 %%DATADIR%%/Definitions/uniongang.yml
 %%DATADIR%%/Definitions/unleashthecartoons.yml
 %%DATADIR%%/Definitions/unlimitz.yml
+%%DATADIR%%/Definitions/uploadcx.yml
 %%DATADIR%%/Definitions/utopia.yml
 %%DATADIR%%/Definitions/vsthouse.yml
 %%DATADIR%%/Definitions/vstorrent.yml
@@ -559,7 +562,6 @@
 %%DATADIR%%/Definitions/xxxadulttorrent.yml
 %%DATADIR%%/Definitions/xxxclub.yml
 %%DATADIR%%/Definitions/xxxtor.yml
-%%DATADIR%%/Definitions/xxxtorrents.yml
 %%DATADIR%%/Definitions/ydypt.yml
 %%DATADIR%%/Definitions/yggcookie.yml
 %%DATADIR%%/Definitions/yggtorrent.yml
@@ -787,6 +789,7 @@
 %%DATADIR%%/System.Text.Encoding.Extensions.dll
 %%DATADIR%%/System.Text.Encoding.dll
 %%DATADIR%%/System.Text.Encodings.Web.dll
+%%DATADIR%%/System.Text.Json.dll
 %%DATADIR%%/System.Text.RegularExpressions.dll
 %%DATADIR%%/System.Threading.Overlapped.dll
 %%DATADIR%%/System.Threading.Tasks.Extensions.dll

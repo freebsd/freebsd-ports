@@ -1,6 +1,6 @@
---- src/Makefile	2023-09-05 02:28:24.000000000 -0500
-+++ src/Makefile	2023-09-21 16:31:47.443425000 -0500
-@@ -40,9 +40,11 @@
+--- src/Makefile	2023-10-30 12:58:46.000000000 -0500
++++ src/Makefile	2023-11-01 23:49:14.518957000 -0500
+@@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
  HAS_SEMODULE_PACKAGE = $(shell command -v semodule_package > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -241,10 +243,10 @@
+@@ -253,10 +255,10 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -25,7 +25,7 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -860,6 +862,8 @@
+@@ -907,6 +909,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -34,29 +34,30 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1037,9 +1041,13 @@
+@@ -1084,9 +1088,13 @@
  ifeq (${uname_S},Linux)
- 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli
+ 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2
  else
 +ifeq (${uname_S},FreeBSD)
 +	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-pthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp
 +else
- 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2
+ 	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp
  endif
  endif
 +endif
  
  
  #### procps #########
-@@ -2245,10 +2253,33 @@
+@@ -2305,10 +2313,33 @@
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
+-	find ${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} ${INSTALLDIR}/lib/${WLIBPYTHON} \;
 +ifeq (${uname_S},FreeBSD)
 +	mkdir -p $(STAGEDIR)${INSTALLDIR}/lib
 +	find $(STAGEDIR)${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} $(STAGEDIR)${INSTALLDIR}/lib/${WLIBPYTHON} \;
 +else
- 	find ${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} ${INSTALLDIR}/lib/${WLIBPYTHON} \;
++	find ${WPYTHON_DIR} -name "*${WLIBPYTHON}" -exec ln -f {} ${INSTALLDIR}/lib/${WLIBPYTHON} \;
 +endif
  
  python_dependencies := requirements.txt
@@ -82,10 +83,10 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2266,6 +2297,7 @@
+@@ -2325,6 +2356,7 @@
+ 
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db
- 
 +endif
  
  ####################

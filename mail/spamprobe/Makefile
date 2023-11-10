@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam detector using Bayesian analysis of word counts
-WWW=		http://spamprobe.sourceforge.net/
+WWW=		https://spamprobe.sourceforge.net/
 
 USES=	localbase:ldflags
 USE_CXXSTD=	c++14

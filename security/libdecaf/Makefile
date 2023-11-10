@@ -6,7 +6,7 @@ MASTER_SITES=	SF/ed448goldilocks/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Implementation of elliptic curve cryptography
-WWW=		http://ed448goldilocks.sourceforge.net/
+WWW=		https://ed448goldilocks.sourceforge.net/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

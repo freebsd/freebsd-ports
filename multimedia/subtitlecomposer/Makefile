@@ -1,7 +1,7 @@
 PORTNAME=	subtitlecomposer
-DISTVERSION=	0.7.1.20230404
-PORTREVISION=	3
+DISTVERSION=	0.8.0
 CATEGORIES=	multimedia kde
+MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced FFmpeg-based subtitle editor
@@ -14,17 +14,15 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libavcodec.so:multimedia/ffmpeg
 
 USES=		compiler:c++11-lang cmake desktop-file-utils gettext \
-		kde:5 openal pkgconfig qt:5 shared-mime-info tar:xz xorg
-USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons jobwidgets i18n itemviews kio kross \
-		parts service solid sonnet textwidgets widgetsaddons \
+		kde:5 openal pkgconfig qt:5 shared-mime-info ssl tar:xz xorg
+USE_KDE=	bookmarks codecs completion config configwidgets \
+		coreaddons jobwidgets i18n itemviews kio \
+		service solid sonnet textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		buildtools:build qmake:build testlib:build \
-		concurrent core dbus declarative gui network script widgets xml
+		concurrent core dbus declarative gui network widgets xml
 USE_XORG=	x11
-
-KDE_INVENT=	838063e2d6a90a1219b8880ffa71570c9c9c31c0 multimedia subtitlecomposer
 
 # Requires PocketSphinx-5prealpha
 SPHINX_DESC=	Speech recognition via PocketSphinx

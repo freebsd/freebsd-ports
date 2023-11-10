@@ -19,6 +19,7 @@ man/man1/%%PORTNAME%%-mount.1.gz
 man/man1/%%PORTNAME%%-prune.1.gz
 man/man1/%%PORTNAME%%-recover.1.gz
 man/man1/%%PORTNAME%%-repair-index.1.gz
+man/man1/%%PORTNAME%%-repair-packs.1.gz
 man/man1/%%PORTNAME%%-repair-snapshots.1.gz
 man/man1/%%PORTNAME%%-repair.1.gz
 man/man1/%%PORTNAME%%-restore.1.gz

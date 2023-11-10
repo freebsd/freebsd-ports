@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to GNU Gnats daemon
-WWW=		http://gnatsperl.sourceforge.net/
+WWW=		https://gnatsperl.sourceforge.net/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual

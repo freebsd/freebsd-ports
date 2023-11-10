@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation fails: non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t', see https://github.com/dmlc/xgboost/issues/8489
 BROKEN_i386=	compilation fails: non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t', see https://github.com/dmlc/xgboost/issues/8489
+BROKEN_powerpc=	compilation fails: non-constant-expression cannot be narrowed from type 'unsigned long long' to 'size_t', see https://github.com/dmlc/xgboost/issues/8489
 
 LIB_DEPENDS=	libdmlc.so:devel/dmlc-core
 TEST_DEPENDS=	googletest>0:devel/googletest

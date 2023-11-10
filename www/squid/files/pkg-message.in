@@ -22,6 +22,9 @@
          kern.ipc.msgssz=64
          kern.ipc.msgtql=2048
 
+     o The pre-translated error pages are no longer included into the port.
+       If you need them install www/squid-langpack port as well.
+
      o The default configuration will deny everyone but the local host and
        local networks as defined in RFC 1918 for IPv4 and RFCs 4193 and
        4291 for IPv6 access to the proxy service.  Edit the "http_access

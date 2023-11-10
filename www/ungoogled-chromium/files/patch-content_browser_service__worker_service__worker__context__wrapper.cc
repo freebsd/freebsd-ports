@@ -1,6 +1,6 @@
---- content/browser/service_worker/service_worker_context_wrapper.cc.orig	2023-09-17 07:59:53 UTC
+--- content/browser/service_worker/service_worker_context_wrapper.cc.orig	2023-11-04 07:08:51 UTC
 +++ content/browser/service_worker/service_worker_context_wrapper.cc
-@@ -1406,7 +1406,12 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
+@@ -1440,7 +1440,12 @@ void ServiceWorkerContextWrapper::MaybeProcessPendingW
      return;
    }
  

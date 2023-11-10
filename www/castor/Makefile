@@ -1,6 +1,6 @@
 PORTNAME=	castor
 DISTVERSION=	0.8.16
-PORTREVISION=	28
+PORTREVISION=	29
 CATEGORIES=	www
 MASTER_SITES=	https://git.sr.ht/~julienxx/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -129,8 +129,8 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-BROKEN_SSL=	base openssl30 openssl31
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl} || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 library
 .endif
 

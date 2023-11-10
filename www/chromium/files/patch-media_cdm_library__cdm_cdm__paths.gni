@@ -1,11 +1,11 @@
---- media/cdm/library_cdm/cdm_paths.gni.orig	2023-09-04 16:51:48 UTC
+--- media/cdm/library_cdm/cdm_paths.gni.orig	2023-10-11 18:22:24 UTC
 +++ media/cdm/library_cdm/cdm_paths.gni
-@@ -23,6 +23,8 @@ if (is_chromeos) {
-   component_os = "mac"
- } else if (is_fuchsia) {
-   component_os = "fuchsia"
-+} else if (is_freebsd) {
-+  component_os = "linux"
- } else {
-   assert(false, "unsupported_platform")
- }
+@@ -15,7 +15,7 @@ assert(enable_library_cdms)
+ # Explicitly define what we use to avoid confusion.
+ if (is_chromeos) {
+   component_os = "cros"
+-} else if (is_linux) {
++} else if (is_linux || is_bsd) {
+   component_os = "linux"
+ } else if (is_win) {
+   component_os = "win"

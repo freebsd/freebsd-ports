@@ -1,11 +1,11 @@
 PORTNAME=	wine
-DISTVERSION=	8.15
+DISTVERSION=	8.19
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	damjan.jov@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
 WWW=		https://www.winehq.org
 
@@ -14,7 +14,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
-BROKEN_i386=	fails to build: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=271201\#c6
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
 
@@ -37,7 +36,6 @@ CONFIGURE_ARGS+=--verbose \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
 		--without-gssapi \
-		--without-gstreamer \
 		--without-inotify \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" CROSSCFLAGS="-isystem ${FILESDIR}/clang" \
@@ -80,7 +78,8 @@ WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
-ALSA_CONFIGURE_ON=	--with-alsa --without-oss
+ALSA_CONFIGURE_WITH=	alsa
+ALSA_USES=		gstreamer
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 ALSA_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 
@@ -96,7 +95,8 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 MONO_RUN_DEPENDS=	wine-mono-devel>0:emulators/wine-mono-devel
 
-OSS_CONFIGURE_ON=	--without-alsa --with-oss
+OSS_CONFIGURE_WITH=	oss
+OSS_USES=		gstreamer
 
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
@@ -112,6 +112,14 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libvulkan.so:graphics/vulkan-loader
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MALSA} || ${PORT_OPTIONS:MOSS}
+CONFIGURE_ARGS+=	--with-gstreamer
+PLIST_SUB+=		GSTREAMER=""
+.else
+CONFIGURE_ARGS+=	--without-gstreamer
+PLIST_SUB+=		GSTREAMER="@comment "
+.endif
 
 .if (${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
 _LLVM_VERSION=	15
@@ -138,6 +146,7 @@ post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
 
 .else
+EXTRA_PATCHES+=	files/extra-patch-tools-winebuild-res32
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 

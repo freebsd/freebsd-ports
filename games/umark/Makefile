@@ -7,7 +7,7 @@ DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 200x series benchmark utility
-WWW=		http://ut2k3botbench.sourceforge.net/
+WWW=		https://ut2k3botbench.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

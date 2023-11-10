@@ -6,7 +6,7 @@ MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nonsense text generator
-WWW=		http://nonsense.sourceforge.net/
+WWW=		https://nonsense.sourceforge.net/
 
 USES=		shebangfix
 SHEBANG_FILES=	nonsense

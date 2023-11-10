@@ -7,7 +7,7 @@ DISTNAME=	sox-code-42b3557e13e0fe01a83465b672d89faddbe65f49
 
 MAINTAINER=	dnelson@allantgroup.com
 COMMENT=	SOund eXchange - universal sound sample translator
-WWW=		http://sox.sourceforge.net/
+WWW=		https://sox.sourceforge.net/
 
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	dual

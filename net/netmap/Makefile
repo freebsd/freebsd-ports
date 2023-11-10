@@ -6,7 +6,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NetMap%20${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Make a graphical representation of the surrounding network
-WWW=		http://netmap.sourceforge.net/
+WWW=		https://netmap.sourceforge.net/
 
 LICENSE=	GPLv2
 

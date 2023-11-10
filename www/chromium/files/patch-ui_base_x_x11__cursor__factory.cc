@@ -1,4 +1,4 @@
---- ui/base/x/x11_cursor_factory.cc.orig	2023-08-17 07:33:31 UTC
+--- ui/base/x/x11_cursor_factory.cc.orig	2023-11-03 10:09:45 UTC
 +++ ui/base/x/x11_cursor_factory.cc
 @@ -13,7 +13,7 @@
  #include "ui/gfx/geometry/point.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -62,7 +62,7 @@ scoped_refptr<PlatformCursor> X11CursorFactory::Create
+@@ -70,7 +70,7 @@ scoped_refptr<PlatformCursor> X11CursorFactory::Create
  }
  
  void X11CursorFactory::ObserveThemeChanges() {

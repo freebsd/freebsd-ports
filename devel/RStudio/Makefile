@@ -4,7 +4,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2022.12.0+353
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
@@ -71,7 +71,7 @@ GIN_VERSION=	2.1.2
 COMMENT+=	(desktop UI version)
 USES+=		desktop-file-utils qt:5 shared-mime-info
 USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
-		sql svg webchannel webengine webkit widgets xml xmlpatterns buildtools:build qmake:build
+		sql svg webchannel webengine widgets xml xmlpatterns buildtools:build qmake:build
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Desktop
 INSTALL_SUBDIR=	${PORTNAME:tl}
 EXECUTABLE=	${PORTNAME:tl}

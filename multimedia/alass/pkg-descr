@@ -1,0 +1,13 @@
+alass is a command line tool to synchronize subtitles to movies.
+
+It can automatically correct
+- constant offsets
+- splits due to advertisement breaks, directors cut, ...
+- different framerates
+
+The alignment process is not only fast and
+accurate, but also language-agnostic. This means
+you can align subtitles to movies in different
+languages.
+
+'alass' stands for  "Automatic Language-Agnostic Subtitle Synchronization".

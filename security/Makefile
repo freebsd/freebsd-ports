@@ -66,6 +66,7 @@
     SUBDIR += ca_root_nss
     SUBDIR += caesarcipher
     SUBDIR += caldera
+    SUBDIR += caldera-ot
     SUBDIR += calife
     SUBDIR += cardpeek
     SUBDIR += cargo-audit
@@ -123,6 +124,7 @@
     SUBDIR += cyrus-sasl2-saslauthd
     SUBDIR += cyrus-sasl2-sql
     SUBDIR += cyrus-sasl2-srp
+    SUBDIR += cyrus-sasl2-xoauth2
     SUBDIR += d0_blind_id
     SUBDIR += debian-keyring
     SUBDIR += dehydrated
@@ -192,6 +194,7 @@
     SUBDIR += gonepass
     SUBDIR += gopass
     SUBDIR += gorilla
+    SUBDIR += gosec
     SUBDIR += gost-engine
     SUBDIR += gostsum
     SUBDIR += gpa
@@ -420,8 +423,9 @@
     SUBDIR += openssl-agent
     SUBDIR += openssl-quictls
     SUBDIR += openssl-unsafe
-    SUBDIR += openssl30
+    SUBDIR += openssl111
     SUBDIR += openssl31
+    SUBDIR += openssl31-quictls
     SUBDIR += openssl32
     SUBDIR += openvas
     SUBDIR += openvpn
@@ -942,6 +946,7 @@
     SUBDIR += py-keyrings.alt
     SUBDIR += py-krb5
     SUBDIR += py-libnacl
+    SUBDIR += py-liboqs-python
     SUBDIR += py-m2crypto
     SUBDIR += py-maec
     SUBDIR += py-merkletools
@@ -1090,6 +1095,7 @@
     SUBDIR += rubygem-devise-two-factor-rails61
     SUBDIR += rubygem-devise-two-factor-rails70
     SUBDIR += rubygem-devise-two-factor40-rails70
+    SUBDIR += rubygem-devise-two-factor41-rails70
     SUBDIR += rubygem-devise_pam_authenticatable2
     SUBDIR += rubygem-devise_pam_authenticatable2-rails61
     SUBDIR += rubygem-digest
@@ -1191,6 +1197,7 @@
     SUBDIR += rubygem-ruby-hmac
     SUBDIR += rubygem-ruby-rc4
     SUBDIR += rubygem-ruby-saml
+    SUBDIR += rubygem-ruby-saml115
     SUBDIR += rubygem-safety_net_attestation
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-securecompare
@@ -1321,6 +1328,7 @@
     SUBDIR += trezord
     SUBDIR += tripwire
     SUBDIR += trousers
+    SUBDIR += trufflehog
     SUBDIR += tthsum
     SUBDIR += u2f-devd
     SUBDIR += uacme

@@ -1,5 +1,5 @@
 PORTNAME=	fennel
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~technomancy/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 
@@ -10,13 +10,14 @@ WWW=		https://fennel-lang.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake lua:51+
+USES=		gmake lua:51+,build,run
 
 MAKE_ENV=	DESTDIR=${STAGEDIR} \
 		LUA=${LUA_CMD} \
 		LUA_DIR=${LOCALBASE} \
 		LUA_INCLUDE_DIR=${LUA_INCDIR} \
 		LUA_VERSION=${LUA_VER} \
+		MAN_DIR=${PREFIX} \
 		NATIVE_LUA_LIB=${LUA_LIBDIR}/liblua-${LUA_VER}.a \
 		STATIC_LUA_LIB=${LUA_LIBDIR}/liblua-${LUA_VER}.a
 

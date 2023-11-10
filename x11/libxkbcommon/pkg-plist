@@ -31,3 +31,4 @@ man/man1/xkbcli-how-to-type.1.gz
 %%X11%%man/man1/xkbcli-interactive-x11.1.gz
 man/man1/xkbcli-list.1.gz
 man/man1/xkbcli.1.gz
+share/bash-completion/completions/xkbcli

@@ -7,7 +7,7 @@ DISTNAME=	pl${PORTVERSION:S/.//}src
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Generates plots and graphs from data
-WWW=		http://ploticus.sourceforge.net/
+WWW=		https://ploticus.sourceforge.net/
 
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libming.so:graphics/ming \

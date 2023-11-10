@@ -7,7 +7,7 @@ DISTNAME=	SDLmm-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Wrapper for the SDL (Simple DirectMedia Layer)
-WWW=		http://sdlmm.sourceforge.net/
+WWW=		https://sdlmm.sourceforge.net/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING

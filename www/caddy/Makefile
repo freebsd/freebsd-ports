@@ -1,7 +1,6 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.4
-PORTREVISION=	1
+DISTVERSION=	2.7.5
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -14,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
 CPE_VENDOR=	caddyserver
+
+USERS=		www
+GROUPS=		www
 
 USE_RC_SUBR=	caddy
 SUB_FILES=	Caddyfile.sample caddy pkg-message

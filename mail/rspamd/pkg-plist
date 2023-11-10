@@ -312,6 +312,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/rules/html.lua
 %%DATADIR%%/rules/mid.lua
 %%DATADIR%%/rules/misc.lua
+%%DATADIR%%/rules/parts.lua
 %%DATADIR%%/rules/regexp/compromised_hosts.lua
 %%DATADIR%%/rules/regexp/headers.lua
 %%DATADIR%%/rules/regexp/misc.lua

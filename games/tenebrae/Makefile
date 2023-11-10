@@ -8,7 +8,7 @@ DISTFILES=	${PORTNAME}_src${EXTRACT_SUFX} \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quake engine with lighting similar to that in Doom III
-WWW=		http://tenebrae.sourceforge.net/
+WWW=		https://tenebrae.sourceforge.net/
 
 LICENSE=	GPLv2+
 

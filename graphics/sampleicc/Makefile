@@ -7,7 +7,7 @@ DISTNAME=	SampleICC-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for reading, writing, manipulating, and applying ICC profiles
-WWW=		http://sampleicc.sourceforge.net/
+WWW=		https://sampleicc.sourceforge.net/
 
 LICENSE=	ICC
 LICENSE_NAME=	The ICC Software License, Version 0.2

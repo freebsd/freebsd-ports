@@ -1,0 +1,10 @@
+--- cmd/dbtool/manifest.mn.orig	2023-10-17 19:40:13.402222000 +0200
++++ cmd/dbtool/manifest.mn	2023-10-17 19:40:35.457563000 +0200
+@@ -13,6 +13,7 @@
+ # DIRS =
+ 
+ CSRCS	= dbtool.c  sdb.c
++CFLAGS	+= -I${SQLITE_INCLUDE_DIR}
+ 
+ # sdb.c is copied for softoken, clean it up on make clean
+ GARBAGE = sdb.c

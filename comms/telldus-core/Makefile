@@ -11,6 +11,8 @@ WWW=		https://developer.telldus.com/wiki/TellStickInstallationSource
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	BROKEN for more than a year
+EXPIRATION_DATE=	2023-11-30
 BROKEN=		does not build: 'tr1/memory' file not found
 
 BUILD_DEPENDS=	help2man:misc/help2man
