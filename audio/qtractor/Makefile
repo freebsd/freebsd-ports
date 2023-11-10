@@ -1,6 +1,6 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	${PORTNAME}_
-DISTVERSION=	0_9_35
+DISTVERSION=	0_9_36
 CATEGORIES=	audio
 MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
 DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
@@ -28,10 +28,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libogg.so:audio/libogg \
 		librubberband.so:audio/rubberband \
 		libsamplerate.so:audio/libsamplerate \
-		libserd-0.so:devel/serd \
 		libsndfile.so:audio/libsndfile \
-		libsord-0.so:devel/sord \
-		libsratom-0.so:audio/sratom \
 		libsuil-0.so:audio/suil \
 		libvorbis.so:audio/libvorbis \
 		libvorbisenc.so:audio/libvorbis \
