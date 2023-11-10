@@ -1,6 +1,6 @@
 PORTNAME=	zsh
 DISTVERSION=	5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
@@ -73,6 +73,7 @@ DOCS=		LICENCE META-FAQ README \
 		Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ Etc/completion-style-guide \
 		Doc/zsh*.html Doc/zsh.dvi
 DOCS_DISTFILES=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
+DOCS_CONFIGURE_OFF=	--enable-runhelpdir=no
 
 PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
