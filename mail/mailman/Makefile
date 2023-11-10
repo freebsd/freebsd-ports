@@ -1,6 +1,6 @@
 PORTNAME=	mailman
 DISTVERSION=	2.1.39
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	GNU \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION} \
@@ -34,6 +34,12 @@ CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
 		--with-permcheck=no \
 		--with-mailhost=localhost \
 		--with-urlhost=localhost
+# setting these defeats the automated check for users in configure[.in], as of 2.1.39,
+# implemented in MM_FIND_* macros:
+CONFIGURE_ENV+=	CGI_GROUP=${CGI_GID} \
+		MAIL_GROUP=${MAIL_GID} \
+		MAILMAN_USER=${MM_USERNAME} \
+		MAILMAN_GROUP=${MM_GROUPNAME}
 
 CONFLICTS=	ja-mailman-2.1.* mailman*exim* mailman*postfix*
 
