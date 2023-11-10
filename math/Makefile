@@ -276,6 +276,7 @@
     SUBDIR += dionysus
     SUBDIR += disco
     SUBDIR += dqfun
+    SUBDIR += dsfmt
     SUBDIR += drgeo
     SUBDIR += dsdp
     SUBDIR += dune-alugrid
