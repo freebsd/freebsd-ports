@@ -1,5 +1,5 @@
 PORTNAME=	puppetserver
-PORTVERSION=	8.2.1
+PORTVERSION=	8.3.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	8
@@ -26,7 +26,7 @@ USE_RC_SUBR=	puppetserver
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	8+
+JAVA_VERSION=	11+
 
 CONFLICTS_INSTALL=	puppetserver[0-9]
 
