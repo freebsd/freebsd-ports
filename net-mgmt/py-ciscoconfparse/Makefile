@@ -1,5 +1,5 @@
 PORTNAME=	ciscoconfparse
-DISTVERSION=	1.9.16
+DISTVERSION=	1.9.28
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.14:devel/py-deprecated@${PY_
 
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
+# Test fails due missing file: fixtures/configs/sample_01.f5
+PYTEST_BROKEN_TESTS=	testParse_parse_syntax_f5_as_junos_nofactory_ioscfg_01
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
