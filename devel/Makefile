@@ -1030,6 +1030,7 @@
     SUBDIR += isfreedesktop
     SUBDIR += isl
     SUBDIR += ispc
+    SUBDIR += ittapi
     SUBDIR += ivykis
     SUBDIR += jam
     SUBDIR += jansson
