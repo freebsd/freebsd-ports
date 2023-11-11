@@ -1,6 +1,6 @@
 PORTNAME=	julia
 DISTVERSION=	1.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
@@ -18,8 +18,10 @@ ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 MY_DEPENDS=	7zz:archivers/7-zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		cmake:devel/cmake-core \
+		ittapi>0:devel/ittapi \
 		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libdSFMT.so:math/dsfmt \
 		libgit2.so:devel/libgit2 \
 		libgmp.so:math/gmp \
 		libmbedtls.so:security/mbedtls \
@@ -47,7 +49,9 @@ MAKE_ARGS+=	NO_GIT=1 \
 		ARCH=x86_64 \
 		JULIA_CPU_TARGET=generic \
 		USE_SYSTEM_CURL=1 \
+		USE_SYSTEM_DSFMT=1 \
 		USE_SYSTEM_GMP=1 \
+		USE_SYSTEM_ITTAPI=1 \
 		USE_SYSTEM_OPENLIBM=1 \
 		USE_SYSTEM_LAPACK=1 \
 		USE_SYSTEM_LIBGIT2=1 \
@@ -89,7 +93,7 @@ DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 
 DOCS_VARS=		INSTALL_TARGET+=install-docs
 
-post-patch:
+pre-configure:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
 	# unset ARCH for auto-detection
 	# Julia build script uses the name x86_86/x86, which are different from ports framework
@@ -98,8 +102,6 @@ post-patch:
 	echo "LIBBLASNAME=libopenblas" >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACK= $$(LIBBLAS)' >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACKNAME= $$(LIBBLASNAME)' >> ${WRKSRC}/Make.user
-
-post-configure:
 	${CC} ${CFLAGS} -lopenblas ${LDFLAGS} -o ${WRKSRC}/check_openblas \
 		${FILESDIR}/check_openblas.c
 	${WRKSRC}/check_openblas && ( \
@@ -124,7 +126,7 @@ post-install:
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libjulia.so*
-.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
+.for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
 .for bin in lld dsymutil
