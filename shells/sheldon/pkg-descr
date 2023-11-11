@@ -1,0 +1,16 @@
+Fast, configurable, shell plugin manager
+
+Features
+- Plugins from Git repositories.
+  * Branch / tag / commit support.
+  * Submodule support.
+  * First class support for GitHub repositories.
+  * First class support for Gists.
+- Arbitrary remote scripts or binary plugins.
+- Local plugins.
+- Inline plugins.
+- Highly configurable install methods using templates.
+- Shell agnostic, with sensible defaults for Zsh.
+- Super-fast plugin loading and parallel installation
+- Config file using TOML syntax.
+- Clean ~/.zshrc or ~/.bashrc (just add 1 line).
