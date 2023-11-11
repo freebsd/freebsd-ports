@@ -1,0 +1,15 @@
+--- Cargo.toml.orig	2023-11-08 12:15:34 UTC
++++ Cargo.toml
+@@ -140,10 +140,10 @@ cookie_store = "0.19.1"
+ cookie_store = "0.19.1"
+ 
+ # Used by U2F, JWT and PostgreSQL
+-openssl = "0.10.57"
++openssl = "0.10.59"
+ # Set openssl-sys fixed to v0.9.92 to prevent building issues with musl, arm and 32bit pointer width
+ # It will force add a dynamically linked library which prevents the build from being static
+-openssl-sys = "=0.9.92"
++openssl-sys = "=0.9.95"
+ 
+ # CLI argument parsing
+ pico-args = "0.5.0"

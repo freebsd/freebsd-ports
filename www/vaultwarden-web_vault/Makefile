@@ -1,5 +1,5 @@
 PORTNAME=	vaultwarden
-PORTVERSION=	2023.9.1
+PORTVERSION=	2023.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www security
 MASTER_SITES=	https://github.com/dani-garcia/bw_web_builds/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
