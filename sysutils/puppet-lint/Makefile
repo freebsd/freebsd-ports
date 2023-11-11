@@ -1,7 +1,8 @@
 PORTNAME=	puppet-lint
-PORTVERSION=	4.0.1
+PORTVERSION=	5.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
+DISTNAME=	puppetlabs-puppet-lint-${PORTVERSION}
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Checks Puppet manifests against the style guide
