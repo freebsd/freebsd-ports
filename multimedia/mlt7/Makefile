@@ -17,6 +17,9 @@ USES+=			alias cmake compiler:c++11-lang eigen:3 localbase \
 			pathfix pkgconfig
 USE_LDCONFIG=		yes
 
+# Suppress errors with lld >= 17 due to undefined symbols.
+LDFLAGS+=		-Wl,--undefined-version
+
 DATADIR=		${PREFIX}/share/mlt-7
 
 .ifndef(SLAVEPORT) # Master port.
