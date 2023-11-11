@@ -396,6 +396,7 @@
     SUBDIR += py-QSpectrumAnalyzer
     SUBDIR += py-SQCommon
     SUBDIR += py-SQImFil
+    SUBDIR += py-SQSnobFit
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
