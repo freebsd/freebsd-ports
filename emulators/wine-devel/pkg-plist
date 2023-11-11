@@ -1892,6 +1892,7 @@ lib/wine/%%WINEARCH%%-unix/msscript.ocx.so
 lib/wine/%%WINEARCH%%-unix/mssign32.dll.so
 lib/wine/%%WINEARCH%%-unix/mssip32.dll.so
 lib/wine/%%WINEARCH%%-unix/mstask.dll.so
+lib/wine/%%WINEARCH%%-unix/msttsengine.dll.so
 lib/wine/%%WINEARCH%%-unix/msv1_0.dll.so
 lib/wine/%%WINEARCH%%-unix/msv1_0.so
 lib/wine/%%WINEARCH%%-unix/msvcirt.dll.so
@@ -2679,6 +2680,7 @@ lib/wine/%%WINEARCH%%-windows/msscript.ocx
 lib/wine/%%WINEARCH%%-windows/mssign32.dll
 lib/wine/%%WINEARCH%%-windows/mssip32.dll
 lib/wine/%%WINEARCH%%-windows/mstask.dll
+lib/wine/%%WINEARCH%%-windows/msttsengine.dll
 lib/wine/%%WINEARCH%%-windows/msv1_0.dll
 lib/wine/%%WINEARCH%%-windows/msvcirt.dll
 lib/wine/%%WINEARCH%%-windows/msvcm80.dll
