@@ -1,5 +1,5 @@
 PORTNAME=	erlang-native-compiler
-PORTVERSION=	g20210602
+PORTVERSION=	g20211004
 CATEGORIES=	devel
 
 MAINTAINER=	erlang@FreeBSD.org
@@ -10,13 +10,13 @@ LICENSE=	APACHE20
 
 # must always be built against lowest BEAM version available in ports
 # but can be run with any later version without issue
-BUILD_DEPENDS=	erlang-runtime21>21:lang/erlang-runtime21
+BUILD_DEPENDS=	erlang>22:lang/erlang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	davisp
-GH_TAGNAME=	5761afb
+GH_TAGNAME=	2c92afb
 
-MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang21/bin:${PATH}
+MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang/bin:${PATH}
 NO_ARCH=	yes
 PLIST_FILES=	bin/enc
 
