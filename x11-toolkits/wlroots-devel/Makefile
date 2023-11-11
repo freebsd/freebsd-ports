@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.16.0-803
-DISTVERSIONSUFFIX=	-gaf165acb42
+DISTVERSION=	0.16.0-811
+DISTVERSIONSUFFIX=	-g5de9e1a99d
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -79,7 +79,8 @@ post-patch:
 	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1300515 ]; then \
 		${REINPLACE_CMD} -e '/POSIX/s/199309/200112/' \
 		${WRKSRC}/render/gles2/pass.c \
-		${WRKSRC}/render/gles2/renderer.c; \
+		${WRKSRC}/render/gles2/renderer.c \
+		${WRKSRC}/types/wlr_presentation_time.c; \
 	fi
 
 .include <bsd.port.mk>

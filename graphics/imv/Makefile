@@ -1,7 +1,6 @@
 PORTNAME=	imv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.1
-PORTREVISION=	4
+DISTVERSION=	4.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://git.sr.ht/~exec64/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -18,11 +17,9 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 desktop-file-utils gettext-runtime gl gnome meson \
-		pkgconfig shebangfix
+USES=		compiler:c11 desktop-file-utils gl gnome meson pkgconfig
 USE_GL=		egl
-USE_GNOME=	cairo glib20 pango
-SHEBANG_FILES=	contrib/imv-folder
+USE_GNOME=	cairo pango
 
 CONFLICTS_INSTALL=	renameutils
 
@@ -56,7 +53,7 @@ JPEG_MESON_ENABLED=	libjpeg
 NSGIF_LIB_DEPENDS=	libnsgif.so:graphics/libnsgif
 NSGIF_MESON_ENABLED=	libnsgif
 
-PNG_LIB_DEPENDS=	libpng.so:graphics/png
+PNG_LIB_DEPENDS=	libpng16.so:graphics/png
 PNG_MESON_ENABLED=	libpng
 
 SVG_USE=		GNOME=librsvg2
@@ -77,8 +74,5 @@ X11_USES=	xorg
 X11_USE=	GL=glu \
 		XORG=x11,xcb
 X11_MESON_ON=	-Dwindows=x11
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|--sort=version|-V|g' ${WRKSRC}/contrib/imv-folder
 
 .include <bsd.port.mk>

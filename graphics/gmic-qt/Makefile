@@ -1,6 +1,6 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.3.1
+DISTVERSION=	3.3.2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \

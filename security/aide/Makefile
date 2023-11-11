@@ -8,10 +8,10 @@ COMMENT=	File and directory integrity checker
 WWW=		https://aide.github.io/
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libe2p.so:sysutils/e2fsprogs-core
 
-USES=		bison gmake localbase
+USES=		bison gmake localbase pkgconfig:build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \

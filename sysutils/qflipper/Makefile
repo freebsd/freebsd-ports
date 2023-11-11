@@ -19,6 +19,8 @@ USE_GL=		gl
 USE_QT=		concurrent core declarative gui linguisttools network \
 		quickcontrols2 serialport svg widgets buildtools:build
 
+CFLAGS+=	-I${LOCALBASE}/include/nanopb
+
 PLIST_FILES=	bin/qFlipper \
 		bin/qFlipper-cli \
 		lib/qt5/plugins/libflipperproto0.so \

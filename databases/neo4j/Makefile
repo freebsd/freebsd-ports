@@ -1,10 +1,10 @@
 PORTNAME=	neo4j
-DISTVERSION=	4.4.24
+DISTVERSION=	4.4.27
 CATEGORIES=	databases java
 MASTER_SITES=	http://dist.neo4j.org/
 DISTNAME=	${PORTNAME}-community-${DISTVERSION}-unix
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High performance graph store and database
 WWW=		https://neo4j.com
 

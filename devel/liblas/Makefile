@@ -11,6 +11,9 @@ LICENSE=	BSD3CLAUSE BSL MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Upstream no longer continuing
+EXPIRATION_DATE=2024-02-10
+
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libgeotiff.so:graphics/libgeotiff
 

@@ -1,12 +1,12 @@
 bin/imv
-bin/imv-folder
+bin/imv-dir
 bin/imv-msg
 %%ALL%%bin/imv-wayland
 %%ALL%%bin/imv-x11
 etc/imv_config
-man/man1/imv-folder.1.gz
+man/man1/imv-dir.1.gz
 man/man1/imv-msg.1.gz
 man/man1/imv.1.gz
 man/man5/imv.5.gz
-share/applications/imv-folder.desktop
+share/applications/imv-dir.desktop
 share/applications/imv.desktop

@@ -48,6 +48,7 @@
     SUBDIR += rush
     SUBDIR += sash
     SUBDIR += scponly
+    SUBDIR += sheldon
     SUBDIR += shell-hist
     SUBDIR += shellharden
     SUBDIR += starship
