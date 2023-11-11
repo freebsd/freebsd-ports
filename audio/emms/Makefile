@@ -1,9 +1,9 @@
 PORTNAME=	emms
-DISTVERSION=	5.0
-PORTREVISION=	13
+DISTVERSION=	16
 CATEGORIES=	audio elisp
-MASTER_SITES=	GNU
+MASTER_SITES=	https://elpa.gnu.org/packages/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs Multi-Media System
@@ -18,7 +18,8 @@ USES=		emacs gmake
 
 CONFLICTS_INSTALL=	emms emms-emacs_* # share/emacs/site-lisp/emms/emms-auto.el
 
-INFO=		emms
 NO_ARCH=	yes
+
+INFO=		emms
 
 .include <bsd.port.mk>
