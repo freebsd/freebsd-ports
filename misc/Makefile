@@ -394,6 +394,7 @@
     SUBDIR += py-PyUserInput
     SUBDIR += py-PyWavefront
     SUBDIR += py-QSpectrumAnalyzer
+    SUBDIR += py-SQCommon
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
