@@ -1,3 +1,4 @@
+libdata/pkgconfig/xkeyboard-config.pc
 man/man7/xkeyboard-config.7.gz
 share/X11/xkb/compat/README
 share/X11/xkb/compat/accessx
@@ -205,6 +206,7 @@ share/X11/xkb/symbols/nokia_vndr/rx-44
 share/X11/xkb/symbols/nokia_vndr/rx-51
 share/X11/xkb/symbols/nokia_vndr/su-8w
 share/X11/xkb/symbols/np
+share/X11/xkb/symbols/nz
 share/X11/xkb/symbols/olpc
 share/X11/xkb/symbols/parens
 share/X11/xkb/symbols/pc
@@ -293,6 +295,7 @@ share/X11/xkb/types/nokia
 share/X11/xkb/types/numpad
 share/X11/xkb/types/pc
 %%NLS%%share/locale/af/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/az/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/xkeyboard-config.mo
@@ -308,6 +311,7 @@ share/X11/xkb/types/pc
 %%NLS%%share/locale/fr/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/fur/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/xkeyboard-config.mo
+%%NLS%%share/locale/he/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/xkeyboard-config.mo
 %%NLS%%share/locale/id/LC_MESSAGES/xkeyboard-config.mo
