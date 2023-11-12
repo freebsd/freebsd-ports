@@ -1,6 +1,6 @@
 PORTNAME=	numbat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	lang devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		anstyle-wincon-3.0.1 \
 		anyhow-1.0.75 \
 		approx-0.5.1 \
+		arrayvec-0.7.4 \
 		assert_cmd-2.0.12 \
 		attohttpc-0.26.1 \
 		autocfg-1.1.0 \
@@ -67,6 +68,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
 		endian-type-0.1.2 \
+		equivalent-1.0.1 \
 		errno-0.3.5 \
 		error-code-2.3.1 \
 		fd-lock-3.0.13 \
@@ -77,11 +79,13 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		getrandom-0.2.10 \
 		glob-0.3.1 \
 		half-1.8.2 \
+		hashbrown-0.14.2 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
 		home-0.5.5 \
 		http-0.2.9 \
 		idna-0.4.0 \
+		indexmap-2.1.0 \
 		insta-1.34.0 \
 		is-terminal-0.4.9 \
 		itertools-0.10.5 \
@@ -99,6 +103,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		nix-0.26.4 \
 		normalize-line-endings-0.3.0 \
 		num-bigint-0.4.4 \
+		num-format-0.4.4 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.17 \
@@ -141,6 +146,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		serde-1.0.190 \
 		serde_derive-1.0.190 \
 		serde_json-1.0.108 \
+		serde_spanned-0.6.4 \
 		sha2-0.10.8 \
 		shellexpand-2.1.2 \
 		similar-2.3.0 \
@@ -157,6 +163,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
+		toml-0.8.6 \
+		toml_datetime-0.6.5 \
+		toml_edit-0.20.7 \
 		typenum-1.17.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.12 \
@@ -199,6 +208,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.19 \
 		yaml-rust-0.4.5
 
 PLIST_FILES=	bin/${PORTNAME}
