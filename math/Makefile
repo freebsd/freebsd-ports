@@ -884,6 +884,7 @@
     SUBDIR += py-PySCIPOpt
     SUBDIR += py-PyWavelets
     SUBDIR += py-Pyomo
+    SUBDIR += py-SQNomad
     SUBDIR += py-affine
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
