@@ -10,47 +10,45 @@ MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Web reporting and trending analysis for Thunder Cache Pro
 WWW=		http://www.thundercache.com.br
 
-OPTIONS_DEFINE=	APACHE PHP PGSQL DOCS
-OPTIONS_DEFAULT=APACHE PHP PGSQL
-APACHE_DESC=	Install apache for reporting viewing
-PHP_DESC=	Install PHP for reporting generating
-PGSQL_DESC=	Install PostgreSQL (report data storing)
+DEPRECATED=	Depends on deprecated php80
+EXPIRATION_DATE=	2023-12-12
+
+LIB_DEPENDS+=	libcurl.so:ftp/curl
 
 USES=		tar:bzip2
 
-PHP_USES=	php
-PHP_VARS=	IGNORE_WITH_PHP=81 82 83
-
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+SUB_FILES=	pkg-message
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
 PLIST_SUB=	OWNER=${WWWOWN} GROUP=${WWWGRP}
+
+OPTIONS_DEFINE=	APACHE PHP PGSQL DOCS
+OPTIONS_DEFAULT=APACHE PHP PGSQL
+
+APACHE_DESC=	Install apache for reporting viewing
+PGSQL_DESC=	Install PostgreSQL (report data storing)
+PHP_DESC=	Install PHP for reporting generating
+
+APACHE_USES=		apache:run
+PGSQL_USES=		pgsql
+PGSQL_VARS=	WANT_PGSQL=server
+PHP_USES=	php
+# php spl extension is required but it's statically linked in default php
+PHP_USE=	PHP=curl,bcmath,pdo,mcrypt,session,pgsql,dom,xmlrpc,ctype,simplexml,soap
+PHP_VARS=	IGNORE_WITH_PHP="81 82 83"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MAPACHE}
-USES+=		apache:run
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-WANT_PGSQL=	server
-.endif
-
 .if ${PORT_OPTIONS:MPHP}
-# php spl extension is required but it's statically linked in default php
-USE_PHP+=	curl bcmath pdo mcrypt session pgsql dom xmlrpc ctype simplexml soap
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif
 .endif
 
-LIB_DEPENDS+=	libcurl.so:ftp/curl
-
-SUB_FILES=	pkg-message
-
 post-extract:
-	# Present on FreeBSD 8 and 9 after extraction
 	@${RM} ${WRKSRC}/protected/data/bin/._thundersnarf
 
 do-install:
