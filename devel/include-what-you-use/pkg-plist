@@ -21,3 +21,4 @@ share/man/man1/include-what-you-use.1.gz
 %%DATADIR%%/qt5_11.imp
 %%DATADIR%%/qt5_4.imp
 %%DATADIR%%/stl.c.headers.imp
+%%DATADIR%%/stl.public.imp
