@@ -1,6 +1,6 @@
 PORTNAME=	libcint
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.4.0
+DISTVERSION=	6.1.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,6 @@ WWW=		https://github.com/sunqm/libcint
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libopenblas.so:math/openblas
 TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyscf>0:science/py-pyscf@${PY_FLAVOR}
 
@@ -27,10 +26,10 @@ PLIST_FILES=	include/cint.h \
 		lib/libcint.so.${PORTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|numpy\\.ctypeslib\\.load_library('libcint', .*$$|numpy.ctypeslib.load_library('libcint', '${BUILD_WRKSRC}')|" \
-		${WRKSRC}/testsuite/test_cint4c1e.py \
-		${WRKSRC}/testsuite/test_cint.py \
+	@${REINPLACE_CMD} -e "s|\\.\\./\\.\\./build/libcint\\.so|${BUILD_WRKSRC}/libcint.so|" \
 		${WRKSRC}/testsuite/test_3c2e.py
+	@${REINPLACE_CMD} -e "s|os\\.path\\.abspath(os\\.path\\.join(__file__, '\\.\\./\\.\\./build/libcint\\.so'))|'${BUILD_WRKSRC}/libcint.so'|" \
+		${WRKSRC}/testsuite/test_cint.py
 
 do-test: # needs science/py-pyscf, pending https://github.com/pyscf/pyscf/issues/935
 	@cd ${BUILD_WRKSRC} && \
