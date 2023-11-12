@@ -1,0 +1,183 @@
+PORTNAME=	cargo-mutants
+DISTVERSIONPREFIX=	v
+DISTVERSION=	23.11.0
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Mutation testing for Rust
+WWW=		https://mutants.rs/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	sourcefrog
+
+CARGO_CRATES=	aho-corasick-1.0.5 \
+		anstream-0.5.0 \
+		anstyle-1.0.3 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-2.1.0 \
+		anyhow-1.0.75 \
+		assert_cmd-2.0.12 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.0 \
+		bstr-1.6.2 \
+		bumpalo-3.13.0 \
+		camino-1.1.6 \
+		cargo-platform-0.1.3 \
+		cargo_metadata-0.18.0 \
+		cc-1.0.83 \
+		cfg-if-1.0.0 \
+		clap-4.4.3 \
+		clap_builder-4.4.2 \
+		clap_complete-4.4.1 \
+		clap_derive-4.4.2 \
+		clap_lex-0.5.1 \
+		colorchoice-1.0.0 \
+		console-0.15.7 \
+		cp_r-0.5.1 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-utils-0.8.16 \
+		ctrlc-3.4.1 \
+		deranged-0.3.8 \
+		diff-0.1.13 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.9.0 \
+		encode_unicode-0.3.6 \
+		equivalent-1.0.1 \
+		errno-0.3.3 \
+		errno-dragonfly-0.1.2 \
+		fastrand-2.0.0 \
+		filetime-0.2.22 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		fs2-0.4.3 \
+		globset-0.4.13 \
+		hashbrown-0.14.0 \
+		heck-0.4.1 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.3.2 \
+		indexmap-2.0.0 \
+		indoc-2.0.3 \
+		insta-1.31.0 \
+		io-lifetimes-1.0.11 \
+		itertools-0.10.5 \
+		itertools-0.11.0 \
+		itoa-1.0.9 \
+		js-sys-0.3.64 \
+		lazy_static-1.4.0 \
+		libc-0.2.148 \
+		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.7 \
+		lock_api-0.4.10 \
+		log-0.4.20 \
+		memchr-2.6.3 \
+		mutants-0.0.3 \
+		nix-0.27.1 \
+		normalize-line-endings-0.3.0 \
+		nu-ansi-term-0.46.0 \
+		num-traits-0.2.16 \
+		nutmeg-0.1.4 \
+		once_cell-1.18.0 \
+		overload-0.1.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.8 \
+		path-slash-0.2.1 \
+		pin-project-lite-0.2.13 \
+		predicates-3.0.3 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		pretty_assertions-1.4.0 \
+		proc-macro2-1.0.67 \
+		quote-1.0.33 \
+		redox_syscall-0.3.5 \
+		regex-1.9.5 \
+		regex-automata-0.3.8 \
+		regex-syntax-0.7.5 \
+		rustix-0.37.25 \
+		rustix-0.38.13 \
+		ryu-1.0.15 \
+		same-file-1.0.6 \
+		scopeguard-1.2.0 \
+		semver-1.0.18 \
+		serde-1.0.188 \
+		serde_derive-1.0.188 \
+		serde_json-1.0.107 \
+		serde_spanned-0.6.3 \
+		sharded-slab-0.1.4 \
+		similar-2.2.1 \
+		smallvec-1.11.0 \
+		strsim-0.10.0 \
+		subprocess-0.2.9 \
+		syn-2.0.33 \
+		tempfile-3.8.0 \
+		terminal_size-0.2.6 \
+		termtree-0.4.1 \
+		thiserror-1.0.48 \
+		thiserror-impl-1.0.48 \
+		thread_local-1.1.7 \
+		time-0.3.28 \
+		time-core-0.1.1 \
+		time-macros-0.2.14 \
+		toml-0.8.0 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.20.0 \
+		tracing-0.1.37 \
+		tracing-appender-0.2.2 \
+		tracing-attributes-0.1.26 \
+		tracing-core-0.1.31 \
+		tracing-log-0.1.3 \
+		tracing-subscriber-0.3.17 \
+		unicode-ident-1.0.12 \
+		unicode-width-0.1.10 \
+		utf8parse-0.2.1 \
+		valuable-0.1.0 \
+		wait-timeout-0.2.0 \
+		walkdir-2.4.0 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		web-sys-0.3.64 \
+		whoami-1.4.1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.5 \
+		winnow-0.5.15 \
+		yaml-rust-0.4.5 \
+		yansi-0.5.1
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
