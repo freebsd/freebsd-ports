@@ -23,8 +23,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR}
 
 USES=		cpe php python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
-		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
+# php hash/json/openssl extension is required but it's statically linked in default php
+USE_PHP=	ctype curl dom fileinfo filter gd ldap mbstring \
+		mysqli pdo pdo_mysql phar posix session simplexml snmp \
 		sockets tokenizer xml xmlwriter zip zlib
 USE_RC_SUBR=	librenms
 

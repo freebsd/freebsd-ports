@@ -11,8 +11,9 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		php zip
-USE_PHP=	curl ctype dom filter gd imap json mysqli pcre pdo posix \
-		session spl tokenizer xml mbstring zip zlib
+# php json/pcre/spl extension is required but it's statically linked in default php
+USE_PHP=	curl ctype dom filter gd imap mysqli pdo posix \
+		session tokenizer xml mbstring zip zlib
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/SuiteCRM-${PORTVERSION}

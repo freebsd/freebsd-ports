@@ -38,7 +38,8 @@ WANT_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPHP}
-USE_PHP+=	curl bcmath pdo mcrypt session pgsql spl dom xmlrpc ctype simplexml soap
+# php spl extension is required but it's statically linked in default php
+USE_PHP+=	curl bcmath pdo mcrypt session pgsql dom xmlrpc ctype simplexml soap
 .  if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pdo_pgsql pgsql
 .  endif

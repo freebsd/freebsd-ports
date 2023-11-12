@@ -16,8 +16,8 @@ USES=		gettext-tools php:cli,web shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
 GL_TAGNAME=	c779e2ba0d71942579dd27ccdcad0295bd06e45f
-
-USE_PHP=	ctype dom exif fileinfo filter iconv intl json mbstring openssl \
+# phe json/openssl extension is required but it's statically linked in default php
+USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring \
 		pcntl pdo phar posix session simplexml sockets tokenizer xml \
 		xmlwriter zip
 USE_RC_SUBR=	ttrssd

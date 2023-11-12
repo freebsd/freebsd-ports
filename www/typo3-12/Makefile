@@ -16,8 +16,9 @@ IGNORE_WITH_MYSQL=	57
 IGNORE_WITH_PHP=	80 83
 
 USES=		cpe php:web,flavors shebangfix
+# php openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom fileinfo filter gd intl \
-		mbstring openssl pdo session simplexml \
+		mbstring pdo session simplexml \
 		tokenizer xml zip zlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src-${PORTVERSION}

@@ -13,8 +13,9 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 USES=		cpe php:web,flavors zip
-USE_PHP=	ctype dom exif filter gd hash iconv json mbstring mysqli \
-		openssl pcre pdo session simplexml sodium spl tokenizer \
+# php hash/json/openssl/pcre/spl extension is required but it's statically linked in default php
+USE_PHP=	ctype dom exif filter gd iconv mbstring mysqli \
+		pdo session simplexml sodium tokenizer \
 		xml zip zlib
 # sodium is needed for randomisation stuff (prefferred option),
 # 	could be replaced by mcrypt

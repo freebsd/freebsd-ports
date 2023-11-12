@@ -11,8 +11,8 @@ WWW=		https://webtrees.net/
 LICENSE=	GPLv3+
 
 USES=		cpe php shebangfix zip
-
-USE_PHP=	calendar curl dom filter gd iconv pcre pdo_mysql session xml
+# php pcre extension is required but it's statically linked in default php
+USE_PHP=	calendar curl dom filter gd iconv pdo_mysql session xml
 
 SHEBANG_FILES=	webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 
