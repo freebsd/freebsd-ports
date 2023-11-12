@@ -12,8 +12,6 @@ WWW=		https://www.librenms.org
 
 LICENSE=	GPLv3
 
-IGNORE_WITH_PHP=	82
-
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pymysql>0:databases/py-pymysql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dotenv>0:www/py-python-dotenv@${PY_FLAVOR} \
