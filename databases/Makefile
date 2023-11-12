@@ -85,6 +85,7 @@
     SUBDIR += go-pgweb
     SUBDIR += gobang
     SUBDIR += gom
+    SUBDIR += goose
     SUBDIR += gqlplus
     SUBDIR += grass7
     SUBDIR += grass8
