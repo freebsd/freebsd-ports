@@ -880,6 +880,7 @@
     SUBDIR += py-GridDataFormats
     SUBDIR += py-MutatorMath
     SUBDIR += py-PuLP
+    SUBDIR += py-Py-BOBYQA
     SUBDIR += py-PyMetis
     SUBDIR += py-PySCIPOpt
     SUBDIR += py-PyWavelets
