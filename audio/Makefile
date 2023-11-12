@@ -196,11 +196,6 @@
     SUBDIR += fomp-lv2
     SUBDIR += foo-yc20
     SUBDIR += fossmixer
-    SUBDIR += fpc-a52
-    SUBDIR += fpc-mad
-    SUBDIR += fpc-modplug
-    SUBDIR += fpc-oggvorbis
-    SUBDIR += fpc-openal
     SUBDIR += freac
     SUBDIR += freealut
     SUBDIR += freebsd-13-mixer

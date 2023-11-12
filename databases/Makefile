@@ -68,16 +68,6 @@
     SUBDIR += firebird40-server
     SUBDIR += fortytwo-bdb
     SUBDIR += foundationdb
-    SUBDIR += fpc-dblib
-    SUBDIR += fpc-fpindexer
-    SUBDIR += fpc-gdbm
-    SUBDIR += fpc-ibase
-    SUBDIR += fpc-mysql
-    SUBDIR += fpc-odbc
-    SUBDIR += fpc-oracle
-    SUBDIR += fpc-postgres
-    SUBDIR += fpc-pxlib
-    SUBDIR += fpc-sqlite
     SUBDIR += frece
     SUBDIR += freetds
     SUBDIR += freetds-devel

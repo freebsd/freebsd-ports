@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pcap.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/pcap.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pcap/pcap.ppu

@@ -1,7 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/lua.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lauxlib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lauxlib.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lua.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lua.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lualib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/lua/lualib.ppu

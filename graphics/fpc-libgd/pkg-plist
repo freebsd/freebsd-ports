@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libgd.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/gd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libgd/gd.ppu

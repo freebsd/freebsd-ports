@@ -28,7 +28,6 @@
     SUBDIR += fconv
     SUBDIR += fix-mime-charset
     SUBDIR += fondu
-    SUBDIR += fpc-iconvenc
     SUBDIR += fribidi
     SUBDIR += gbase
     SUBDIR += gbsdconv

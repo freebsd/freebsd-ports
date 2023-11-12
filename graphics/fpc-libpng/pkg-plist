@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libpng.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/png.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libpng/png.ppu

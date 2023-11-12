@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/dts.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/dts.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/dts/dts.o

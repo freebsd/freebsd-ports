@@ -1,5 +1,6 @@
 PORTNAME=	cudatext
 PORTVERSION=	1.201.0.2
+PORTREVISION=	1
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -10,7 +11,6 @@ WWW=		https://uvviewsoft.com/
 LICENSE=	MPL20
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors python xorg
-USE_FPC=	chm fcl-base fcl-image fcl-json fcl-stl fcl-xml pasjpeg rtl-objpas x11
 USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alexey-T

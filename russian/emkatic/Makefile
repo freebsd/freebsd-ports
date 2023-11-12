@@ -1,6 +1,6 @@
 PORTNAME=	emkatic
 PORTVERSION=	0.41
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	russian emulators
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 MASTER_SITES=	SF/${PORTNAME}/eMKatic%20Source
@@ -14,8 +14,6 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USES=		fpc lazarus:flavors xorg
-USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-registry fcl-xml \
-		pasjpeg regexpr rtl-extra x11
 USE_XORG=	x11
 
 LAZARUS_PROJECT_FILES=	emkatic.lpi

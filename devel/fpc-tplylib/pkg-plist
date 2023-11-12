@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/tplylib.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tplylib/lexlib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tplylib/lexlib.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tplylib/yacclib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/tplylib/yacclib.ppu

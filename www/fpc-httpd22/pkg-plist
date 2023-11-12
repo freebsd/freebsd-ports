@@ -1,9 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/httpd22.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/apr.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/apr.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/apriconv.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/apriconv.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/aprutil.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/aprutil.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/httpd.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/httpd22/httpd.ppu

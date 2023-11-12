@@ -1,6 +1,6 @@
 PORTNAME=	lazpaint
 PORTVERSION=	7.1.6
-PORTREVISION=	8
+PORTREVISION=	9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -15,8 +15,6 @@ gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 USES=		desktop-file-utils dos2unix fpc gnome lazarus:flavors xorg
-USE_FPC=	chm fcl-base fcl-image fcl-json fcl-net fcl-web fcl-xml \
-		opengl openssl pasjpeg rtl-extra rtl-objpas x11
 USE_XORG=	x11
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt)
 USE_GITHUB=	yes
@@ -25,9 +23,7 @@ GH_ACCOUNT=	bgrabitmap
 GH_TUPLE=	bgrabitmap:bgracontrols:2797120:bgracontrols/bgracontrols \
 		bgrabitmap:bgrabitmap:d52b5b7:bgrabitmap/bgrabitmapnew
 
-USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
-USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
 DESKTOP_ENTRIES="LazPaint" \

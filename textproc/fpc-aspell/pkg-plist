@@ -1,7 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/aspell.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspell.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspelldyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/aspelldyn.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/aspell/spellcheck.ppu

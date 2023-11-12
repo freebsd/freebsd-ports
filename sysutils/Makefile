@@ -421,10 +421,6 @@
     SUBDIR += foremost
     SUBDIR += fortunelock
     SUBDIR += fpart
-    SUBDIR += fpc-syslog
-    SUBDIR += fpc-users
-    SUBDIR += fpc-utmp
-    SUBDIR += fpc-uuid
     SUBDIR += frand
     SUBDIR += freebsd-snapshot
     SUBDIR += freecolor

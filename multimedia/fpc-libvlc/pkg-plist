@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libvlc.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libvlc/libvlc.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libvlc/libvlc.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libvlc/vlc.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libvlc/vlc.ppu

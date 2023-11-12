@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/hermes.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/hermes/hermes.ppu

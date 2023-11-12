@@ -1,6 +1,6 @@
 PORTNAME=	WinFF
 PORTVERSION=	1.5.5
-PORTREVISION=	30
+PORTREVISION=	31
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/thierry
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 USES=		fpc lazarus:flavors xorg
 USE_XORG=	x11
-USE_FPC=	chm fcl-base fcl-image fcl-json fcl-xml pasjpeg regexpr x11
 
 NO_WRKSUBDIR=	yes
 _PORTNAME=	${PORTNAME:tl}
@@ -38,7 +37,6 @@ BUILD_WRKSRC=	${WRKDIR}/${PKGNAME}/${_PORTNAME}
 
 .if ${FLAVOR:Ugtk2:Mgtk2}
 USES+=		gnome
-USE_FPC+=	cairo
 USE_GNOME+=	cairo
 .endif
 

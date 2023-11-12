@@ -1,5 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/oggvorbis.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/ogg.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/ogg.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/vorbis.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/oggvorbis/vorbis.ppu

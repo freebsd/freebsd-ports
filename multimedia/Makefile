@@ -68,8 +68,6 @@
     SUBDIR += flvmeta
     SUBDIR += flvstreamer
     SUBDIR += flvtool++
-    SUBDIR += fpc-dts
-    SUBDIR += fpc-libvlc
     SUBDIR += fswebcam
     SUBDIR += fxtv
     SUBDIR += gaupol

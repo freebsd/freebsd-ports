@@ -12,8 +12,6 @@
     SUBDIR += fltk
     SUBDIR += fox16
     SUBDIR += fox17
-    SUBDIR += fpc-gtk2
-    SUBDIR += fpc-xforms
     SUBDIR += fxscintilla
     SUBDIR += gdl
     SUBDIR += girara

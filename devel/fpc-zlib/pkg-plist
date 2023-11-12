@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/zlib.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zlib/zlib.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/zlib/zlib.ppu

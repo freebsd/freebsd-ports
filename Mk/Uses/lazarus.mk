@@ -2,7 +2,7 @@
 #
 # Feature:      lazarus
 # Usage:        USES=lazarus
-# Valid ARGS:   (none), gtk2, qt5, flavors
+# Valid ARGS:   (none), gtk2, qt5, qt6, flavors
 #
 # (none)    - This automatically build lazarus-app with gtk2 interface
 #
@@ -75,12 +75,18 @@ LAZARUS_DIR?=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}
 ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 
-BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
-			fpcres:lang/fpc-utils
+.  if !defined(WANT_FPC_DEVEL)
+FPC_DEVELSUFFIX=	#
+.  else
+FPC_DEVELSUFFIX=	-devel
+.  endif
 
 BUILDNAME=		${LAZARUS_ARCH}-${OPSYS:tl}
 LCL_UNITS_DIR=		${LOCALBASE}/share/lazarus-${LAZARUS_VER}/lcl/units/${BUILDNAME}
 MKINSTDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/fpmkinst/${BUILDNAME}
+
+BUILD_DEPENDS+=		${LOCALBASE}/bin/as:devel/binutils \
+			${MKINSTDIR}/utils-lexyacc.fpm:lang/fpc${FPC_DEVELSUFFIX}
 
 LAZARUS_FLAVORS=	gtk2 qt5
 
@@ -111,7 +117,6 @@ LAZARUS_DEVELSUFFIX=	-devel
 .  endif
 
 .  if ${lazarus_ARGS:Mgtk2} || ${FLAVOR} == gtk2
-BUILD_DEPENDS+=	${MKINSTDIR}/gtk2.fpm:x11-toolkits/fpc-gtk2
 LIB_DEPENDS+=	libglib-2.0.so:devel/glib20 \
 		libgtk-x11-2.0.so:x11-toolkits/gtk20 \
 		libatk-1.0.so:accessibility/at-spi2-core \

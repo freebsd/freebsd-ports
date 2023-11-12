@@ -185,12 +185,6 @@
     SUBDIR += foreign-cdm
     SUBDIR += formication
     SUBDIR += foswiki
-    SUBDIR += fpc-fastcgi
-    SUBDIR += fpc-googleapi
-    SUBDIR += fpc-httpd22
-    SUBDIR += fpc-httpd24
-    SUBDIR += fpc-libmicrohttpd
-    SUBDIR += fpc-webidl
     SUBDIR += free-sa-devel
     SUBDIR += fswiki
     SUBDIR += fusionpbx

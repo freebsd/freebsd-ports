@@ -1,6 +1,6 @@
 PORTNAME=	cqrlog
 PORTVERSION=	2.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms hamradio
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -23,9 +23,6 @@ GH_ACCOUNT=	ok2cqr
 
 SHEBANG_FILES=	tools/cqrlog-apparmor-fix \
 		voice_keyer/voice_keyer.sh
-USE_FPC=	cairo fcl-base chm fcl-db fcl-image fcl-json fcl-net fcl-web \
-		fcl-registry rtl-extra fcl-xml mysql numlib opengl openssl \
-		pasjpeg regexpr x11
 
 ALL_TARGET=	${PORTNAME}
 
