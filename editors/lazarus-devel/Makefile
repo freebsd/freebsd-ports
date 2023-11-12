@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
 DISTVERSION=	3.0.0.20231028
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -14,7 +14,7 @@ CONFLICTS?=	lazarus-gtk2 lazarus-qt5 lazarus-qt5-devel lazarus-qt6-devel
 BUILD_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils
 RUN_DEPENDS?=	${LOCALBASE}/bin/as:devel/binutils \
 		gmake:devel/gmake \
-		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc-source
+		${LOCALBASE}/share/fpc-source-${FPC_DEFAULT}/Makefile.fpc:lang/fpc${FPC_DEVELSUFFIX}-source
 
 ONLY_FOR_ARCHS=	i386 amd64
 
