@@ -178,6 +178,7 @@
     SUBDIR += mkbold-mkitalic
     SUBDIR += mkfontscale
     SUBDIR += mkitalic
+    SUBDIR += monaspace
     SUBDIR += mondulkiri
     SUBDIR += monoid
     SUBDIR += montecarlo_fonts
