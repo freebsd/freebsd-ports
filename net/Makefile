@@ -1228,6 +1228,7 @@
     SUBDIR += rscsi
     SUBDIR += rsplib
     SUBDIR += rssguard
+    SUBDIR += rsyn
     SUBDIR += rsync
     SUBDIR += rsync-bpc
     SUBDIR += rtg
