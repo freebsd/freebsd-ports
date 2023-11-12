@@ -1,5 +1,3 @@
-TIMESTAMP = 1684733794
-SHA256 (freebsd-portscout-0.8.1.6_GH0.tar.gz) = 419a00fef01492f21c71736b3e8bae8e92377caf218dea2e219d63e09aa9145c
-SIZE (freebsd-portscout-0.8.1.6_GH0.tar.gz) = 58607
-SHA256 (e618f1b.patch) = c0473b3b54eb41c9981e945475bdcd8283af8a187930757e11e9e3d4077a6e8e
-SIZE (e618f1b.patch) = 2304
+TIMESTAMP = 1699815045
+SHA256 (freebsd-portscout-0.8.1.6-f1a90b0_GH0.tar.gz) = 64184c88826dbfcfefa627db8cb2e126468c6b43d4ae50e398dbd3b5c257493e
+SIZE (freebsd-portscout-0.8.1.6-f1a90b0_GH0.tar.gz) = 58755

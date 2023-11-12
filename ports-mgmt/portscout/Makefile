@@ -1,10 +1,7 @@
 PORTNAME=	portscout
 PORTVERSION=	0.8.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e618f1b.patch:-p1 # https://github.com/freebsd/portscout/pull/22
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports
@@ -24,28 +21,27 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 USES=		perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
+GH_TAGNAME=	f1a90b0
+
+SHEBANG_FILES=	${WRKSRC}/portscout.pl
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
 
 OPTIONS_DEFINE=		DOCS HTTPS
 OPTIONS_DEFAULT=	HTTPS PGSQL
-
 OPTIONS_MULTI=		DATABASE
 OPTIONS_MULTI_DATABASE=	SQLITE PGSQL
 
 DATABASE_DESC=	Database Backends
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-SHEBANG_FILES=	${WRKSRC}/portscout.pl
-
-PORTDOCS=	UPDATING portscout-portconfig.txt xml-datasrc-example.xml
-
 HTTPS_RUN_DEPENDS=	p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
-
-SQLITE_USES=		sqlite
-SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
-
-PGSQL_USES=		pgsql
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
+PGSQL_USES=		pgsql
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:databases/p5-DBD-SQLite
+SQLITE_USES=		sqlite
 
 .include <bsd.port.options.mk>
 
