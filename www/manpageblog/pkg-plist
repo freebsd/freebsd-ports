@@ -1,0 +1,15 @@
+bin/manpageblog
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_assets/css/dark.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_assets/css/light.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/feed.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/item.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/item.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/list.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/page.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/post.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/_index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/about.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-11-manpageblog-release-1.0.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/contact.html

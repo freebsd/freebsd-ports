@@ -350,6 +350,7 @@
     SUBDIR += lzr
     SUBDIR += madsonic
     SUBDIR += man2web
+    SUBDIR += manpageblog
     SUBDIR += mathjax
     SUBDIR += mathjax3
     SUBDIR += mathopd
