@@ -118,6 +118,7 @@
     SUBDIR += hyprland-share-picker
     SUBDIR += hyprpaper
     SUBDIR += hyprpicker
+    SUBDIR += i3bar-river
     SUBDIR += i3blocks
     SUBDIR += i3lock-color
     SUBDIR += iceauth
