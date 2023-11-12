@@ -1,7 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.17
-PORTREVISION=	1
+DISTVERSION=	0.11.18
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jonhoo
 
 CARGO_CRATES=	adler32-1.2.0 \
-		ahash-0.8.3 \
+		ahash-0.8.5 \
 		aho-corasick-1.0.4 \
 		anes-0.1.6 \
 		anstream-0.3.2 \
@@ -158,7 +157,9 @@ CARGO_CRATES=	adler32-1.2.0 \
 		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_msvc-0.48.5 \
-		yansi-0.5.1
+		yansi-0.5.1 \
+		zerocopy-0.7.3 \
+		zerocopy-derive-0.7.3
 EXECUTABLES=	inferno-collapse-dtrace \
 		inferno-collapse-ghcprof \
 		inferno-collapse-guess \
