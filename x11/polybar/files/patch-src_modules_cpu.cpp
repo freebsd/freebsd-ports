@@ -1,9 +1,7 @@
-diff --git src/modules/cpu.cpp src/modules/cpu.cpp
-index 527f27fb..179d9221 100644
---- src/modules/cpu.cpp
+--- src/modules/cpu.cpp.orig	2023-11-05 22:37:13 UTC
 +++ src/modules/cpu.cpp
 @@ -2,6 +2,11 @@
-
+ 
  #include <fstream>
  #include <istream>
 +#ifdef __FreeBSD__
@@ -11,12 +9,12 @@ index 527f27fb..179d9221 100644
 +  #include <sys/resource.h>
 +  #include <sys/sysctl.h>
 +#endif
-
+ 
  #include "drawtypes/label.hpp"
  #include "drawtypes/progressbar.hpp"
-@@ -128,6 +133,41 @@ namespace modules {
+@@ -129,6 +134,41 @@ namespace modules {
      m_cputimes.clear();
-
+ 
      try {
 +#ifdef __FreeBSD__
 +      // Get number of CPUs
@@ -55,8 +53,8 @@ index 527f27fb..179d9221 100644
 +#else
        std::ifstream in(PATH_CPU_INFO);
        string str;
-
-@@ -148,6 +188,7 @@ namespace modules {
+ 
+@@ -149,6 +189,7 @@ namespace modules {
          m_cputimes.back()->total = m_cputimes.back()->user + m_cputimes.back()->nice + m_cputimes.back()->system +
                                     m_cputimes.back()->idle + m_cputimes.back()->steal;
        }
