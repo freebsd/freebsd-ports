@@ -1,7 +1,6 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
-DISTVERSION=	0.4
-PORTREVISION=	1
+DISTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
 		${PY_BOOST}
 
-USES=		compiler:c++11-lang cmake qt:5 eigen:3 python gl
+USES=		compiler:c++14-lang cmake qt:5 eigen:3 python gl
 USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_GL=		gl glu
 USE_GITHUB=	yes
@@ -33,8 +32,13 @@ GH_TUPLE=	YosysHQ:nextpnr-tests:00c55a9e:tests/tests
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 CMAKE_ARGS=	-DARCH="ice40;ecp5" -DTRELLIS_ROOT=${LOCALBASE}/share/trellis/
+CMAKE_ON=	BUILD_GUI
 
 PLIST_FILES=	bin/nextpnr-ecp5 \
 		bin/nextpnr-ice40
+
+# Don't create __pycache__ directory when executing blueprint-compiler
+# This is a workaround to avoid filesystem violations during poudriere build
+MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
 
 .include <bsd.port.mk>
