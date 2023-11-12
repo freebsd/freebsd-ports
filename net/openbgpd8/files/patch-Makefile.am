@@ -1,0 +1,26 @@
+--- Makefile.am.orig	2023-11-12 20:11:09.365947000 +0100
++++ Makefile.am	2023-11-12 20:16:27.510527000 +0100
+@@ -23,16 +23,19 @@
+ EXTRA_DIST = README.md LICENSE VERSION bgpd.conf
+ 
+ install-data-hook:
+-	@if [ ! -d "$(DESTDIR)$(runstatedir)" ]; then \
++	if [ ! -d "$(DESTDIR)$(runstatedir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(runstatedir)"; \
+ 	fi
+-	@if [ X"$(wwwrunstatedir)" != X -a ! -d "$(DESTDIR)$(wwwrunstatedir)" ]; then \
++	if [ X"$(wwwrunstatedir)" != X -a ! -d "$(DESTDIR)$(wwwrunstatedir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(wwwrunstatedir)"; \
+ 	fi
+-	@if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
++	if [ ! -d "$(DESTDIR)$(sysconfdir)" ]; then \
+ 		$(INSTALL) -m 755 -d "$(DESTDIR)$(sysconfdir)"; \
+ 	fi
+-	@if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
++	if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf.sample" ]; then \
++		$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf.sample"; \
++	fi
++	if [ ! -f "$(DESTDIR)$(sysconfdir)/bgpd.conf" ]; then \
+ 		$(INSTALL) -m 644 "$(srcdir)/bgpd.conf" "$(DESTDIR)$(sysconfdir)/bgpd.conf"; \
+ 	else \
+ 		echo; \
