@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 INSTALL_TARGET=	install-strip
 
-PORTSCOUT=	limitw:even
+PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
