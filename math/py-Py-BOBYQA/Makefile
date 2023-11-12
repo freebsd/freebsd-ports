@@ -1,5 +1,6 @@
 PORTNAME=	Py-BOBYQA
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +18,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 
 USES=		python
 USE_PYTHON=	distutils autoplist
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
