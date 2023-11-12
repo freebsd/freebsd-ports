@@ -5906,6 +5906,7 @@
     SUBDIR += pyenv
     SUBDIR += pygobject3-common
     SUBDIR += pylint
+    SUBDIR += pylyzer
     SUBDIR += pymsteams
     SUBDIR += pyobfuscate
     SUBDIR += pyotherside-qt5
