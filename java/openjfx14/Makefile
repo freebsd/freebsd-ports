@@ -95,6 +95,9 @@ _INSTALLDIR=	${PREFIX}/${PKGBASE}
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
+# Suppress errors with lld >= 17 due to undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 post-extract:
 	${MKDIR} ${WRKDIR}/jars
 .for f in core grouping queries queryparser sandbox
