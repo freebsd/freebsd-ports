@@ -1,5 +1,6 @@
 PORTNAME=	microcode
 PORTVERSION=	20230808
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
 PKGNAMEPREFIX=	cpu-
@@ -11,7 +12,7 @@ DISTFILES=	microcode_amd.bin?id=${_REV} \
 		microcode_amd_fam19h.bin?id=${_REV}
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-MAINTAINER=	sbruno@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	AMD CPU microcode updates
 
 LICENSE=	EULA

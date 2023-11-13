@@ -3,7 +3,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	cpu-
 
-MAINTAINER=	sbruno@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Meta-package for CPU microcode updates
 
 ONLY_FOR_ARCHS=	amd64 i386

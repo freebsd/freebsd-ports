@@ -1,13 +1,14 @@
 PORTNAME=	microcode
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
+MASTER_SITES=	# none
 PKGNAMEPREFIX=	cpu-
 PKGNAMESUFFIX=	-rc
-MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	sbruno@FreeBSD.org
+MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	RC script for CPU microcode updates
 
 LICENSE=	BSD2CLAUSE
