@@ -79,7 +79,7 @@ KDE_PLASMA_VERSION?=		5.27.9
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
-KDE_FRAMEWORKS_VERSION?=	5.111.0
+KDE_FRAMEWORKS_VERSION?=	5.112.0
 KDE_FRAMEWORKS_BRANCH?=		stable
 
 # Current KDE applications.
