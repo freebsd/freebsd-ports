@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/buildtools/third_party/libc++/BUILD.gn.orig	2021-09-19 10:01:13 UTC
-+++ ../../src/webrtc/src/buildtools/third_party/libc++/BUILD.gn
+--- src/webrtc/src/buildtools/third_party/libc++/BUILD.gn.orig	2021-09-19 10:01:13 UTC
++++ src/webrtc/src/buildtools/third_party/libc++/BUILD.gn
 @@ -21,6 +21,7 @@ config("config") {
        # upstream libc++ requires C++20 so we have to make an exception here.
        # No other target should override the default -std= flag.

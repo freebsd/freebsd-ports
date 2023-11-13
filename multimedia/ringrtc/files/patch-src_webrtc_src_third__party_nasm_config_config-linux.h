@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/third_party/nasm/config/config-linux.h	2021-03-15 17:51:55 UTC
-+++ ../../src/webrtc/src/third_party/nasm/config/config-linux.h
+--- src/webrtc/src/third_party/nasm/config/config-linux.h	2021-03-15 17:51:55 UTC
++++ src/webrtc/src/third_party/nasm/config/config-linux.h
 @@ -160,7 +160,7 @@
  
  /* Define to 1 if you have the declaration of `strlcpy', and to 0 if you

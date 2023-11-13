@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/third_party/nasm/BUILD.gn.orig	2023-02-01 18:45:20 UTC
-+++ ../../src/webrtc/src/third_party/nasm/BUILD.gn
+--- src/webrtc/src/third_party/nasm/BUILD.gn.orig	2023-02-01 18:45:20 UTC
++++ src/webrtc/src/third_party/nasm/BUILD.gn
 @@ -63,6 +63,13 @@ config("nasm_config") {
  
    defines = [ "HAVE_CONFIG_H" ]

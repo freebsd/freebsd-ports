@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/config/features.gni.orig	2020-09-19 19:50:44 UTC
-+++ ../../src/webrtc/src/build/config/features.gni
+--- src/webrtc/src/build/config/features.gni.orig	2020-09-19 19:50:44 UTC
++++ src/webrtc/src/build/config/features.gni
 @@ -31,7 +31,7 @@ declare_args() {
    proprietary_codecs = is_chrome_branded || is_castos || is_cast_android
  

@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/config/BUILDCONFIG.gn.orig	2021-11-15 18:52:18 UTC
-+++ ../../src/webrtc/src/build/config/BUILDCONFIG.gn
+--- src/webrtc/src/build/config/BUILDCONFIG.gn.orig	2021-11-15 18:52:18 UTC
++++ src/webrtc/src/build/config/BUILDCONFIG.gn
 @@ -139,7 +139,8 @@ declare_args() {
    is_official_build = false
  

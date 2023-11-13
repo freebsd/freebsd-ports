@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/config/compiler/compiler.gni.orig	2021-11-15 18:52:18 UTC
-+++ ../../src/webrtc/src/build/config/compiler/compiler.gni
+--- src/webrtc/src/build/config/compiler/compiler.gni.orig	2021-11-15 18:52:18 UTC
++++ src/webrtc/src/build/config/compiler/compiler.gni
 @@ -230,7 +230,7 @@ declare_args() {
  
  declare_args() {

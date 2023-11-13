@@ -1,7 +1,7 @@
 Use VAR_ARRAYS on FreeBSD (same as audio/opus)
 
---- ../../src/webrtc/src/ringrtc/opus/BUILD.gn	2021-03-15 17:51:55 UTC
-+++ ../../src/webrtc/src/ringrtc/opus/BUILD.gn
+--- src/webrtc/src/ringrtc/opus/BUILD.gn	2021-03-15 17:51:55 UTC
++++ src/webrtc/src/ringrtc/opus/BUILD.gn
 @@ -37,10 +37,11 @@ config("opus_private_config") {
      "OPUS_EXPORT=",
      "ENABLE_HARDENING",

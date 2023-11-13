@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/BUILD.gn.orig	2021-03-15 15:09:17 UTC
-+++ ../../src/webrtc/src/BUILD.gn
+--- src/webrtc/src/BUILD.gn.orig	2021-03-15 15:09:17 UTC
++++ src/webrtc/src/BUILD.gn
 @@ -188,6 +188,9 @@ config("common_inherited_config") {
    if (is_linux || is_chromeos) {
      defines += [ "WEBRTC_LINUX" ]

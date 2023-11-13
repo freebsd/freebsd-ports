@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/build/config/linux/BUILD.gn.orig	2021-10-13 07:49:03 UTC
-+++ ../../src/webrtc/src/build/config/linux/BUILD.gn
+--- src/webrtc/src/build/config/linux/BUILD.gn.orig	2021-10-13 07:49:03 UTC
++++ src/webrtc/src/build/config/linux/BUILD.gn
 @@ -41,7 +41,7 @@ config("runtime_library") {
    }
  

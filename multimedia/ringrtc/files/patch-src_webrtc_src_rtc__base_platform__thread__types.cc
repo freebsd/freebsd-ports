@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/rtc_base/platform_thread_types.cc.orig	2021-01-28 23:16:17 UTC
-+++ ../../src/webrtc/src/rtc_base/platform_thread_types.cc
+--- src/webrtc/src/rtc_base/platform_thread_types.cc.orig	2021-01-28 23:16:17 UTC
++++ src/webrtc/src/rtc_base/platform_thread_types.cc
 @@ -11,7 +11,11 @@
  #include "rtc_base/platform_thread_types.h"
  

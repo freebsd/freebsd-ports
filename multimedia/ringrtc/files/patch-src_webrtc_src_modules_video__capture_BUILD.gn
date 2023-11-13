@@ -1,5 +1,5 @@
---- ../../src/webrtc/src/modules/video_capture/BUILD.gn.orig	2021-01-28 23:16:17 UTC
-+++ ../../src/webrtc/src/modules/video_capture/BUILD.gn
+--- src/webrtc/src/modules/video_capture/BUILD.gn.orig	2021-01-28 23:16:17 UTC
++++ src/webrtc/src/modules/video_capture/BUILD.gn
 @@ -69,7 +69,7 @@ if (!build_with_chromium || is_linux || is_chromeos) {
        "video_capture_options.h",
      ]
