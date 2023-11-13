@@ -3,7 +3,7 @@ PORTVERSION=	0.0.2
 PORTREVISION=	17
 CATEGORIES=	audio
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subsonic terminal music player
 WWW=		https://github.com/wildeyedskies/stmp/
 
