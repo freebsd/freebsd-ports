@@ -1,6 +1,6 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2
+DISTVERSION=	0.15.3
 CATEGORIES=	sysutils
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -14,16 +14,22 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	eza-community
 
+OPTIONS_DEFINE=	MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
+
 CARGO_CRATES=	aho-corasick-1.0.5 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
+		ansi_colours-1.2.2 \
 		ansiterm-0.12.2 \
 		anstream-0.6.4 \
 		anstyle-1.0.3 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
+		approx-0.5.1 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitflags-2.4.0 \
@@ -54,6 +60,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		equivalent-1.0.1 \
 		errno-0.3.3 \
 		errno-dragonfly-0.1.2 \
+		fast-srgb8-1.0.0 \
 		fastrand-2.0.0 \
 		filetime-0.2.22 \
 		form_urlencoded-1.0.1 \
@@ -73,10 +80,10 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		itoa-1.0.9 \
 		jobserver-0.1.22 \
 		js-sys-0.3.64 \
-		libc-0.2.149 \
+		libc-0.2.150 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.2 \
-		linux-raw-sys-0.4.7 \
+		linux-raw-sys-0.4.11 \
 		locale-0.2.2 \
 		log-0.4.20 \
 		matches-0.1.8 \
@@ -92,6 +99,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		openssl-src-111.26.0+1.1.1u \
 		openssl-sys-0.9.61 \
 		os_pipe-1.1.4 \
+		palette-0.7.3 \
+		palette_derive-0.7.3 \
 		partition-identity-0.3.0 \
 		percent-encoding-2.3.0 \
 		phf-0.11.2 \
@@ -114,7 +123,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		regex-1.9.5 \
 		regex-automata-0.3.8 \
 		regex-syntax-0.7.5 \
-		rustix-0.38.13 \
+		rustix-0.38.21 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
 		scoped_threadpool-0.1.9 \
@@ -179,6 +188,17 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/completions/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
+_MARKDOWN_FILES=	eza.1 eza_colors-explanation.5 eza_colors.5
+.for i in ${_MARKDOWN_FILES}
+MANPAGES_PLIST_FILES+=	share/man/man${i:C/.*\.//}/${i}.gz
+.endfor
+
+post-build-MANPAGES-on:
+.for i in ${_MARKDOWN_FILES}
+	cd ${WRKSRC}/man && \
+		pandoc ${i}.md -s -t man > ${i}
+.endfor
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/${PORTNAME} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
@@ -187,5 +207,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+post-install-MANPAGES-on:
+.for i in ${_MARKDOWN_FILES}
+	${INSTALL_MAN} ${WRKSRC}/man/${i} ${STAGEDIR}${MANPREFIX}/share/man/man${i:C/.*\.//}
+.endfor
 
 .include <bsd.port.mk>
