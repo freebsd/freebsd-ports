@@ -52,7 +52,6 @@
     SUBDIR += foomatic-db-engine
     SUBDIR += foomatic-db-hpijs
     SUBDIR += foomatic-filters
-    SUBDIR += fpc-libcups
     SUBDIR += fpdf
     SUBDIR += freetype2
     SUBDIR += ft2demos
