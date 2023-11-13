@@ -1,13 +1,13 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.35.0
+DISTVERSION=	6.38.0
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
 		LOCAL/mikael/signal-desktop/:yarn \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
 DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:yarn \
-		signal-desktop-6.4.1-npm-cache.tar.gz:npm \
+		signal-desktop-6.37.0-npm-cache.tar.gz:npm \
 		${SQLCIPHER}.tar.gz:sqlcipher
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -88,10 +88,10 @@ _BUILD_DATE=	$$(date +'%s')
 ELECTRON_VER_MAJOR=	25
 
 # sh get_deps.sh
-NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.31.0-f420a009f97b80ba5da216b9cdaec543f3ef7097-integrity
-NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.33.0-a18baa71c43e4a4d5ea996febcdfaac4e5a62f51-integrity
+NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.32.1-e1ac48debb399ceff8f2868f0b5ecb75c2fc2ed0-integrity
+NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.34.0-a6665fe6587610d9bdf971890249fd5df2207473-integrity
 NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.5.2-910669f44e76a46d06df45fabefcd3ac2e7c4cce-integrity
-NPM_ESBUILD_VERS=	0.17.11
+NPM_ESBUILD_VERS=	0.18.20
 SQLCIPHER=		sqlcipher-4.5.5-fts5-fix--3.0.7--0.2.1-ef53ea45ed92b928ecfd33c552d8d405263e86e63dec38e1ec63e1b0193b630b
 
 ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
@@ -115,6 +115,7 @@ fetch-yarn:
 	if [ ! -f ${DISTDIR}/signal-desktop-${DISTVERSION}-yarn-cache.tar.gz ]; then \
 		${MKDIR} /tmp/signal-desktop; \
 		${FETCH_CMD} -o - https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${DISTVERSION}/package.json | \
+			${PREFIX}/bin/jq '.devDependencies.esbuild = "0.18.20"' | \
 			${PREFIX}/bin/jq '.engines.node = ""' > /tmp/signal-desktop/package.json; \
 		${FETCH_CMD} -o /tmp/signal-desktop/yarn.lock https://raw.githubusercontent.com/signalapp/Signal-Desktop/v${DISTVERSION}/yarn.lock; \
 		${ECHO_CMD} 'yarn-offline-mirror "./yarn-offline-cache"' >> \
@@ -122,7 +123,7 @@ fetch-yarn:
 		${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' /tmp/signal-desktop/package.json > /tmp/signal-desktop/package.json.tmp; \
 		${MV} /tmp/signal-desktop/package.json.tmp /tmp/signal-desktop/package.json; \
 		cd /tmp/signal-desktop && ${SETENV} HOME=/tmp/signal-desktop XDG_CACHE_HOME=/tmp/signal-desktop/.cache \
-			yarn --frozen-lockfile --ignore-scripts; \
+			yarn  --ignore-scripts; \
 		${MTREE_CMD} -cbnSp yarn-offline-cache | ${MTREE_CMD} -C | ${SED} \
 			-e 's:time=[0-9.]*:time=${YARN_TIMESTAMP}.000000000:' \
 			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
@@ -138,13 +139,15 @@ post-extract:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
 	${ECHO_CMD} 'nodedir "${LOCALBASE}"' >> ${WRKSRC}/.yarnrc
 	# Update node engine
-	${PREFIX}/bin/jq '.engines.node = ""' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
+	${PREFIX}/bin/jq '.engines.node = ""' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp.1
+	${PREFIX}/bin/jq '.devDependencies.esbuild = "0.18.20"' ${WRKSRC}/package.json.tmp.1 > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
 	# remove mock-server as it doesn't build and is useless
 	${PREFIX}/bin/jq 'del(.devDependencies."@signalapp/mock-server")' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
+	${CP} ${FILESDIR}/yarn.lock ${WRKSRC}
 	cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline || ${TRUE}
+		${SETENV} ${MAKE_ENV} yarn install --ignore-optional --offline || ${TRUE}
 
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
@@ -224,12 +227,7 @@ do-install:
 create-caches-tarball:
 	# do some cleanup first
 	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp
-	${FIND} ${WRKDIR}/.cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 
-	cd ${WRKDIR} && \
-		${TAR} czf signal-desktop-${DISTVERSION}-yarn-cache.tar.gz .cache yarn-cache
-	cd ${WRKDIR} && \
-		${TAR} czf signal-desktop-${DISTVERSION}-electron-gyp-cache.tar.gz .electron-gyp
 	cd ${WRKDIR} && \
 		${TAR} czf signal-desktop-${DISTVERSION}-npm-cache.tar.gz .npm
 
