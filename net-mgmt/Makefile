@@ -353,6 +353,7 @@
     SUBDIR += routers2-extensions
     SUBDIR += routers2-extras
     SUBDIR += rrdbot
+    SUBDIR += rs-aggregate
     SUBDIR += rtrlib
     SUBDIR += rubygem-blimpy
     SUBDIR += rubygem-checkson

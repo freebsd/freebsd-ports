@@ -1,0 +1,126 @@
+PORTNAME=	rs-aggregate
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.3.0
+CATEGORIES=	net-mgmt
+
+MAINTAINER=	marcel@herrbischoff.com
+COMMENT=	Aggregate IPv4 and/or IPv6 prefixes into their minimal representation
+WWW=		https://github.com/ktims/rs-aggregate
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+USE_GITHUB=	yes
+GH_ACCOUNT=	ktims
+
+CARGO_CRATES=	aho-corasick-1.1.2 \
+		anstream-0.6.4 \
+		anstyle-1.0.4 \
+		anstyle-parse-0.2.2 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-3.0.1 \
+		assert_cmd-2.0.12 \
+		assert_fs-1.0.13 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		bitflags-2.4.1 \
+		bstr-1.7.0 \
+		cfg-if-1.0.0 \
+		clap-4.4.6 \
+		clap_builder-4.4.6 \
+		clap_derive-4.4.2 \
+		clap_lex-0.5.1 \
+		clio-0.3.4 \
+		colorchoice-1.0.0 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.9.0 \
+		errno-0.3.5 \
+		fastrand-2.0.1 \
+		float-cmp-0.9.0 \
+		fnv-1.0.7 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
+		futures-timer-3.0.2 \
+		futures-util-0.3.28 \
+		glob-0.3.1 \
+		globset-0.4.13 \
+		globwalk-0.8.1 \
+		heck-0.4.1 \
+		hermit-abi-0.3.3 \
+		ignore-0.4.20 \
+		ipnet-2.8.0 \
+		is-terminal-0.4.9 \
+		itertools-0.11.0 \
+		lazy_static-1.4.0 \
+		libc-0.2.149 \
+		linux-raw-sys-0.4.10 \
+		log-0.4.20 \
+		memchr-2.6.4 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.17 \
+		once_cell-1.18.0 \
+		pin-project-lite-0.2.13 \
+		pin-utils-0.1.0 \
+		predicates-3.0.4 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-1.0.69 \
+		quote-1.0.33 \
+		redox_syscall-0.3.5 \
+		regex-1.10.2 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
+		rstest-0.16.0 \
+		rstest_macros-0.16.0 \
+		rustc_version-0.4.0 \
+		rustix-0.38.20 \
+		same-file-1.0.6 \
+		semver-1.0.20 \
+		serde-1.0.189 \
+		serde_derive-1.0.189 \
+		slab-0.4.9 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.38 \
+		tempfile-3.8.0 \
+		termtree-0.4.1 \
+		thread_local-1.1.7 \
+		unicode-ident-1.0.12 \
+		utf8parse-0.2.1 \
+		wait-timeout-0.2.0 \
+		walkdir-2.4.0 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.6 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.5 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.5 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.5 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.5 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.5
+
+PLIST_FILES=	bin/rs-aggregate
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rs-aggregate
+
+.include <bsd.port.mk>
