@@ -4870,6 +4870,7 @@
     SUBDIR += py-jsonschema3
     SUBDIR += py-jsonschema417
     SUBDIR += py-jsonsir
+    SUBDIR += py-junitparser
     SUBDIR += py-jupyter-client
     SUBDIR += py-jupyter-collaboration
     SUBDIR += py-jupyter-core
