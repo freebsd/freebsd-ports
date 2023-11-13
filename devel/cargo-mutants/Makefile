@@ -1,6 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.11.0
+DISTVERSION=	23.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sourcefrog
 
 CARGO_CRATES=	aho-corasick-1.0.5 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
 		anstream-0.5.0 \
 		anstyle-1.0.3 \
 		anstyle-parse-0.2.1 \
@@ -29,11 +31,13 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		bitflags-2.4.0 \
 		bstr-1.6.2 \
 		bumpalo-3.13.0 \
+		bytecount-0.6.7 \
 		camino-1.1.6 \
 		cargo-platform-0.1.3 \
 		cargo_metadata-0.18.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
+		chrono-0.4.31 \
 		clap-4.4.3 \
 		clap_builder-4.4.2 \
 		clap_complete-4.4.1 \
@@ -41,6 +45,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		clap_lex-0.5.1 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
+		core-foundation-sys-0.8.4 \
 		cp_r-0.5.1 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-utils-0.8.16 \
@@ -64,6 +69,8 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.2 \
+		iana-time-zone-0.1.58 \
+		iana-time-zone-haiku-0.1.2 \
 		indexmap-2.0.0 \
 		indoc-2.0.3 \
 		insta-1.31.0 \
@@ -80,8 +87,11 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		lock_api-0.4.10 \
 		log-0.4.20 \
 		memchr-2.6.3 \
+		minimal-lexical-0.2.1 \
 		mutants-0.0.3 \
 		nix-0.27.1 \
+		nom-7.1.3 \
+		nom_locate-4.2.0 \
 		normalize-line-endings-0.3.0 \
 		nu-ansi-term-0.46.0 \
 		num-traits-0.2.16 \
@@ -90,6 +100,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.8 \
+		patch-0.7.0 \
 		path-slash-0.2.1 \
 		pin-project-lite-0.2.13 \
 		predicates-3.0.3 \
@@ -153,6 +164,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-core-0.51.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
