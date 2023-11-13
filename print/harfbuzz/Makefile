@@ -47,7 +47,7 @@ OPTIONS_EXCLUDE_purecap=	GOBJECT GLIB
 
 .include <bsd.port.options.mk>
 
-. !${ABI:Mpurecap}
+.if !${ABI:Mpurecap}
 USES+=			gnome
 .endif
 
