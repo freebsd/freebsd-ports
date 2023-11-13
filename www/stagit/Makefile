@@ -1,6 +1,6 @@
 PORTNAME=	stagit
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://codemadness.org/releases/stagit/
 
