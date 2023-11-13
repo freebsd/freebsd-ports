@@ -1,16 +1,19 @@
 %%CLIENT%%bin/alienarena
 %%DEDICATED%%bin/alienarena-ded
+%%LIBDIR%%/arena/default.cfg
+%%LIBDIR%%/arena/maps
+%%LIBDIR%%/arena/maps.lst
 %%LIBDIR%%/arena/motd.txt
+%%LIBDIR%%/arena/scripts
 %%LIBDIR%%/arena/server.cfg
-%%LIBDIR%%/botinfo
-%%LIBDIR%%/data1/default.cfg
+%%LIBDIR%%/data1/botinfo
+%%LIBDIR%%/data1/build-aux
 %%LIBDIR%%/data1/env
 %%LIBDIR%%/data1/fonts
 %%LIBDIR%%/data1/gfx
 %%LIBDIR%%/data1/graphical_presets
 %%LIBDIR%%/data1/levelshots
 %%LIBDIR%%/data1/maps
-%%LIBDIR%%/data1/maps.lst
 %%LIBDIR%%/data1/models
 %%LIBDIR%%/data1/particles
 %%LIBDIR%%/data1/pics
@@ -19,6 +22,8 @@
 %%LIBDIR%%/data1/sound
 %%LIBDIR%%/data1/textures
 %%LIBDIR%%/data1/vehicles
+share/applications/alienarena.desktop
+share/icons/hicolor/256x256/apps/alien-arena.png
 @dir %%LIBDIR%%/data1
 @dir %%LIBDIR%%/arena
 @dir %%LIBDIR%%
