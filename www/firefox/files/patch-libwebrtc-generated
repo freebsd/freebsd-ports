@@ -1,7 +1,7 @@
-commit fdfe9894a5854967e2c8ffb6759ca2e59b9fe6c6
+commit 7f6be72c2d5b9ddb298305edbc5bb9fc1e7a4475
 Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
 
-    regenerate FreeBSD libwebrtc patch for Firefox 119
+    regenerate FreeBSD libwebrtc patch for Firefox 120
 
 diff --git third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build third_party/libwebrtc/api/adaptation/resource_adaptation_api_gn/moz.build
 index cf60c534b8df..e6a2d969a1fd 100644
@@ -55182,7 +55182,7 @@ index 66792f98e923..8c38587543bd 100644
 -
  Library("desktop_capture_differ_sse2_gn")
 diff --git third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
-index 99fd3c74c735..77ef9f7209ee 100644
+index b0a5d1522da8..a2d3109a6492 100644
 --- third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
 +++ third_party/libwebrtc/modules/desktop_capture/desktop_capture_gn/moz.build
 @@ -14,11 +14,20 @@ AllowCompilerWarnings()
@@ -55206,7 +55206,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -70,186 +79,13 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -70,185 +79,13 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -55275,8 +55275,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    SOURCES += [
@@ -55394,7 +55393,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -262,7 +98,8 @@ if CONFIG["CPU_ARCH"] == "arm":
+@@ -261,7 +98,8 @@ if CONFIG["CPU_ARCH"] == "arm":
      ]
  
      SOURCES += [
@@ -55404,7 +55403,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -272,7 +109,9 @@ if CONFIG["CPU_ARCH"] == "arm":
+@@ -271,7 +109,9 @@ if CONFIG["CPU_ARCH"] == "arm":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55415,7 +55414,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
  if CONFIG["CPU_ARCH"] == "mips32":
-@@ -280,7 +119,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -279,7 +119,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
      DEFINES["MIPS32_LE"] = True
      DEFINES["MIPS_FPU_LE"] = True
      DEFINES["WEBRTC_USE_PIPEWIRE"] = True
@@ -55423,7 +55422,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -293,7 +131,8 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -292,7 +131,8 @@ if CONFIG["CPU_ARCH"] == "mips32":
      ]
  
      SOURCES += [
@@ -55433,7 +55432,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -303,13 +142,14 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -302,13 +142,14 @@ if CONFIG["CPU_ARCH"] == "mips32":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55450,7 +55449,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -322,7 +162,8 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -321,7 +162,8 @@ if CONFIG["CPU_ARCH"] == "mips64":
      ]
  
      SOURCES += [
@@ -55460,7 +55459,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -332,128 +173,19 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -331,126 +173,19 @@ if CONFIG["CPU_ARCH"] == "mips64":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55479,8 +55478,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55508,8 +55506,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55593,7 +55590,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -466,7 +198,8 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -463,7 +198,8 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
      ]
  
      SOURCES += [
@@ -55603,7 +55600,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -476,13 +209,15 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -473,13 +209,15 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55622,7 +55619,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
  
      LOCAL_INCLUDES += [
          "/gfx/angle/checkout/include/",
-@@ -495,7 +230,8 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -492,7 +230,8 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
      ]
  
      SOURCES += [
@@ -55632,7 +55629,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
      ]
  
      UNIFIED_SOURCES += [
-@@ -505,97 +241,12 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -502,66 +241,12 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screen_capture_portal_interface.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_portal.cc",
          "/third_party/libwebrtc/modules/desktop_capture/linux/wayland/screencast_stream_utils.cc",
@@ -55651,8 +55648,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55680,37 +55676,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
--    ]
--
--    UNIFIED_SOURCES += [
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/mouse_cursor_monitor_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/screen_capturer_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/shared_x_display.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_capturer_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_finder_x11.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_list_utils.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_atom_cache.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_error_trap.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc",
--        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
--    ]
--
--if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_X11"] = "1"
--    DEFINES["WEBRTC_USE_X11"] = True
--
--    OS_LIBS += [
--        "X11",
--        "Xcomposite",
--        "Xdamage",
--        "Xext",
--        "Xfixes",
--        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -    UNIFIED_SOURCES += [
@@ -55729,16 +55695,16 @@ index 99fd3c74c735..77ef9f7209ee 100644
 +        "/third_party/libwebrtc/modules/desktop_capture/window_capturer_linux.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
      DEFINES["USE_X11"] = "1"
      DEFINES["WEBRTC_USE_X11"] = True
-@@ -624,62 +275,23 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TA
+@@ -589,88 +274,23 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TA
          "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "x86" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 -
 -    DEFINES["USE_X11"] = "1"
 -    DEFINES["WEBRTC_USE_X11"] = True
@@ -55750,8 +55716,7 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 +if CONFIG["CPU_ARCH"] == "ppc64" and not CONFIG["MOZ_X11"] and CONFIG["OS_TARGET"] == "FreeBSD":
  
@@ -55771,12 +55736,12 @@ index 99fd3c74c735..77ef9f7209ee 100644
 +        "/third_party/libwebrtc/modules/desktop_capture/window_capturer_null.cc"
      ]
  
--if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
--
--    DEFINES["USE_X11"] = "1"
--    DEFINES["WEBRTC_USE_X11"] = True
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["CPU_ARCH"] == "ppc64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_USE_X11"] = True
+-
 -    OS_LIBS += [
 -        "X11",
 -        "Xcomposite",
@@ -55784,8 +55749,35 @@ index 99fd3c74c735..77ef9f7209ee 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
+-    ]
+-
+-    UNIFIED_SOURCES += [
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/mouse_cursor_monitor_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/screen_capturer_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/shared_x_display.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_capturer_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_finder_x11.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/window_list_utils.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_atom_cache.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_error_trap.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc",
+-        "/third_party/libwebrtc/modules/desktop_capture/linux/x11/x_window_property.cc"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["WEBRTC_USE_X11"] = True
+-
+-    OS_LIBS += [
+-        "X11",
+-        "Xcomposite",
+-        "Xdamage",
+-        "Xext",
+-        "Xfixes",
+-        "Xrandr",
+-        "Xrender"
 +    SOURCES += [
 +        "/third_party/libwebrtc/modules/desktop_capture/mouse_cursor_monitor_linux.cc"
      ]
@@ -57800,7 +57792,7 @@ index 2e9df3733b6f..3a86740343d2 100644
  
  Library("rtp_rtcp_format_gn")
 diff --git third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
-index 3fca8bb86bb7..8a547c92b18c 100644
+index 3e34426b3ba4..b47ce74d222a 100644
 --- third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
 +++ third_party/libwebrtc/modules/rtp_rtcp/rtp_rtcp_gn/moz.build
 @@ -13,11 +13,20 @@ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
@@ -65702,7 +65694,7 @@ index 935a69e8c86e..0390ceb82364 100644
  
  Library("webrtc_vp9_helpers_gn")
 diff --git third_party/libwebrtc/moz.build third_party/libwebrtc/moz.build
-index 5c9a364dd518..96c9b9570028 100644
+index aa47ddba57a5..2b05bfc1e89b 100644
 --- third_party/libwebrtc/moz.build
 +++ third_party/libwebrtc/moz.build
 @@ -263,6 +263,8 @@ DIRS += [
@@ -65714,7 +65706,7 @@ index 5c9a364dd518..96c9b9570028 100644
      "/third_party/libwebrtc/modules/module_api_gn",
      "/third_party/libwebrtc/modules/module_api_public_gn",
      "/third_party/libwebrtc/modules/module_fec_api_gn",
-@@ -457,102 +459,11 @@ DIRS += [
+@@ -458,102 +460,11 @@ DIRS += [
      "/third_party/libwebrtc/webrtc_gn"
  ]
  
@@ -65818,7 +65810,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -560,26 +471,9 @@ if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -561,26 +472,9 @@ if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65846,7 +65838,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -587,11 +481,9 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["OS_TARGET"] == "Linux":
+@@ -588,11 +482,9 @@ if CONFIG["CPU_ARCH"] == "mips32" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65859,7 +65851,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -599,7 +491,7 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -600,7 +492,7 @@ if CONFIG["CPU_ARCH"] == "mips64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65868,7 +65860,7 @@ index 5c9a364dd518..96c9b9570028 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -607,8 +499,6 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -608,8 +500,6 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
@@ -65877,7 +65869,7 @@ index 5c9a364dd518..96c9b9570028 100644
          "/third_party/libwebrtc/modules/portal/portal_gn",
          "/third_party/libwebrtc/third_party/drm/drm_gn",
          "/third_party/libwebrtc/third_party/gbm/gbm_gn",
-@@ -616,7 +506,7 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
+@@ -617,7 +507,7 @@ if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/third_party/pipewire/pipewire_gn"
      ]
  
@@ -65886,7 +65878,7 @@ index 5c9a364dd518..96c9b9570028 100644
  
      DIRS += [
          "/third_party/libwebrtc/common_audio/common_audio_avx2_gn",
-@@ -624,69 +514,9 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
+@@ -625,69 +515,9 @@ if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
          "/third_party/libwebrtc/modules/audio_processing/aec3/aec3_avx2_gn",
          "/third_party/libwebrtc/modules/audio_processing/agc2/rnn_vad/vector_math_avx2_gn",
          "/third_party/libwebrtc/modules/desktop_capture/desktop_capture_differ_sse2_gn",
@@ -86031,10 +86023,10 @@ index 759f3f6c7cf7..000000000000
 -Library("windows_version_gn")
 diff --git third_party/libwebrtc/rtc_base/win32_gn/moz.build third_party/libwebrtc/rtc_base/win32_gn/moz.build
 deleted file mode 100644
-index f57361432c58..000000000000
+index b134f3004ef5..000000000000
 --- third_party/libwebrtc/rtc_base/win32_gn/moz.build
 +++ /dev/null
-@@ -1,94 +0,0 @@
+@@ -1,93 +0,0 @@
 -# This Source Code Form is subject to the terms of the Mozilla Public
 -# License, v. 2.0. If a copy of the MPL was not distributed with this
 -# file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -86100,8 +86092,7 @@ index f57361432c58..000000000000
 -]
 -
 -UNIFIED_SOURCES += [
--    "/third_party/libwebrtc/rtc_base/win32.cc",
--    "/third_party/libwebrtc/rtc_base/win32_window.cc"
+-    "/third_party/libwebrtc/rtc_base/win32.cc"
 -]
 -
 -if not CONFIG["MOZ_DEBUG"]:
@@ -90645,8 +90636,166 @@ index a15b4f43bbe4..0e364e67c4fc 100644
 +    DEFINES["USE_X11"] = "1"
  
  Library("int128_gn")
+diff --git third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
+index d6622a78f593..f5827b08637a 100644
+--- third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
++++ third_party/libwebrtc/third_party/abseil-cpp/absl/strings/string_view_gn/moz.build
+@@ -10,6 +10,11 @@ COMPILE_FLAGS["OS_INCLUDES"] = []
+ AllowCompilerWarnings()
+ 
+ DEFINES["ABSL_ALLOCATOR_NOTHROW"] = "1"
++DEFINES["USE_GLIB"] = "1"
++DEFINES["USE_OZONE"] = "1"
++DEFINES["_FILE_OFFSET_BITS"] = "64"
++DEFINES["_LARGEFILE64_SOURCE"] = True
++DEFINES["_LARGEFILE_SOURCE"] = True
+ 
+ FINAL_LIBRARY = "webrtc"
+ 
+@@ -36,138 +41,16 @@ if not CONFIG["MOZ_DEBUG"]:
+ if CONFIG["MOZ_DEBUG"] == "1":
+ 
+     DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
+-
+-if CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["ANDROID"] = True
+-    DEFINES["ANDROID_NDK_VERSION_ROLL"] = "r22_1"
+-    DEFINES["HAVE_SYS_UIO_H"] = True
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_LIBCPP_HAS_NO_ALIGNED_ALLOCATION"] = True
+-    DEFINES["__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES"] = "0"
+-
+-if CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_NSS_CERTS"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_UDEV"] = True
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["USE_GLIB"] = "1"
+-    DEFINES["USE_OZONE"] = "1"
+-    DEFINES["USE_X11"] = "1"
+-    DEFINES["_FILE_OFFSET_BITS"] = "64"
+-    DEFINES["_LARGEFILE64_SOURCE"] = True
+-    DEFINES["_LARGEFILE_SOURCE"] = True
+-
+-if CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["CERT_CHAIN_PARA_HAS_EXTRA_FIELDS"] = True
+-    DEFINES["NOMINMAX"] = True
+-    DEFINES["NTDDI_VERSION"] = "0x0A000000"
+-    DEFINES["PSAPI_VERSION"] = "2"
+-    DEFINES["UNICODE"] = True
+-    DEFINES["USE_AURA"] = "1"
+-    DEFINES["WIN32"] = True
+-    DEFINES["WIN32_LEAN_AND_MEAN"] = True
+-    DEFINES["WINAPI_FAMILY"] = "WINAPI_FAMILY_DESKTOP_APP"
+-    DEFINES["WINVER"] = "0x0A00"
+-    DEFINES["_ATL_NO_OPENGL"] = True
+-    DEFINES["_CRT_NONSTDC_NO_DEPRECATE"] = True
+-    DEFINES["_CRT_NONSTDC_NO_WARNINGS"] = True
+-    DEFINES["_CRT_RAND_S"] = True
+-    DEFINES["_CRT_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_ENABLE_EXTENDED_ALIGNED_STORAGE"] = True
+-    DEFINES["_HAS_EXCEPTIONS"] = "0"
+-    DEFINES["_SCL_SECURE_NO_DEPRECATE"] = True
+-    DEFINES["_SECURE_ATL"] = True
+-    DEFINES["_UNICODE"] = True
+-    DEFINES["_WIN32_WINNT"] = "0x0A00"
+-    DEFINES["_WINDOWS"] = True
+-    DEFINES["__STD_C"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm":
+-
+-    CXXFLAGS += [
+-        "-mfpu=neon"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "mips32":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "mips64":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Darwin":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+     DEFINES["_DEBUG"] = True
+ 
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "OpenBSD":
+-
+-    DEFINES["_DEBUG"] = True
+-
+-if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "WINNT":
+-
+-    DEFINES["_HAS_ITERATOR_DEBUGGING"] = "0"
+-
+-if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["USE_X11"] = "1"
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
+-
+-    OS_LIBS += [
+-        "android_support",
+-        "unwind"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Android":
+-
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
+-
+-    OS_LIBS += [
+-        "android_support"
+-    ]
+-
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
+-
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["CPU_ARCH"] == "x86":
+ 
+     CXXFLAGS += [
+         "-msse2"
+     ]
+ 
+-    DEFINES["_GNU_SOURCE"] = True
+-
+-if CONFIG["CPU_ARCH"] == "x86_64" and CONFIG["OS_TARGET"] == "Linux":
++if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
+ 
+-    DEFINES["_GNU_SOURCE"] = True
++    DEFINES["USE_X11"] = "1"
+ 
+ Library("string_view_gn")
 diff --git third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
-index 2a53b9e647f7..71fd3a4a576d 100644
+index 34ac33e234e8..639ee3efe372 100644
 --- third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
 +++ third_party/libwebrtc/third_party/abseil-cpp/absl/strings/strings_gn/moz.build
 @@ -10,6 +10,11 @@ COMPILE_FLAGS["OS_INCLUDES"] = []
@@ -90661,7 +90810,7 @@ index 2a53b9e647f7..71fd3a4a576d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -40,138 +45,16 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -41,138 +46,16 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -92022,7 +92171,7 @@ index 0333e014b67d..dcece6e53f93 100644
 -
  Library("yuv_gn")
 diff --git third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
-index 27095596f717..5394d07cc759 100644
+index a5425c674549..5394d07cc759 100644
 --- third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
 +++ third_party/libwebrtc/third_party/pffft/pffft_gn/moz.build
 @@ -9,6 +9,14 @@
@@ -92040,7 +92189,7 @@ index 27095596f717..5394d07cc759 100644
  FINAL_LIBRARY = "webrtc"
  
  
-@@ -33,151 +41,28 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -33,155 +41,28 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -92131,6 +92280,10 @@ index 27095596f717..5394d07cc759 100644
  
      DEFINES["PFFFT_SIMD_DISABLE"] = True
  
+-if CONFIG["CPU_ARCH"] == "riscv64":
+-
+-    DEFINES["PFFFT_SIMD_DISABLE"] = True
+-
 -if CONFIG["MOZ_DEBUG"] == "1" and CONFIG["OS_TARGET"] == "Android":
 -
 -    DEFINES["_DEBUG"] = True
@@ -92172,10 +92325,10 @@ index 27095596f717..5394d07cc759 100644
 -    OS_LIBS += [
 -        "android_support"
 -    ]
--
--if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
 +if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "FreeBSD":
  
+-if CONFIG["CPU_ARCH"] == "aarch64" and CONFIG["OS_TARGET"] == "Linux":
+-
 -    DEFINES["_GNU_SOURCE"] = True
 -
 -if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Linux":
@@ -96131,7 +96284,7 @@ index 9fd417f96be9..d51109a08c5f 100644
 -
  Library("video_stream_encoder_interface_gn")
 diff --git third_party/libwebrtc/webrtc_gn/moz.build third_party/libwebrtc/webrtc_gn/moz.build
-index 7e3ac4033b69..495fb5b35f3d 100644
+index 3fd9c5c15eca..305f7edc0d03 100644
 --- third_party/libwebrtc/webrtc_gn/moz.build
 +++ third_party/libwebrtc/webrtc_gn/moz.build
 @@ -12,11 +12,20 @@ AllowCompilerWarnings()
@@ -96155,7 +96308,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
  FINAL_LIBRARY = "webrtc"
  
-@@ -39,141 +48,23 @@ if not CONFIG["MOZ_DEBUG"]:
+@@ -39,140 +48,23 @@ if not CONFIG["MOZ_DEBUG"]:
  if CONFIG["MOZ_DEBUG"] == "1":
  
      DEFINES["DYNAMIC_ANNOTATIONS_ENABLED"] = "1"
@@ -96231,8 +96384,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
 -        "Xext",
 -        "Xfixes",
 -        "Xrandr",
--        "Xrender",
--        "Xtst"
+-        "Xrender"
 -    ]
 -
 -if CONFIG["OS_TARGET"] == "WINNT":
@@ -96302,7 +96454,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      LOCAL_INCLUDES += [
          "/third_party/pipewire/"
-@@ -182,7 +73,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
+@@ -181,7 +73,6 @@ if CONFIG["CPU_ARCH"] == "mips32":
  if CONFIG["CPU_ARCH"] == "mips64":
  
      DEFINES["WEBRTC_USE_PIPEWIRE"] = True
@@ -96310,7 +96462,7 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      LOCAL_INCLUDES += [
          "/third_party/pipewire/"
-@@ -191,32 +81,22 @@ if CONFIG["CPU_ARCH"] == "mips64":
+@@ -190,32 +81,22 @@ if CONFIG["CPU_ARCH"] == "mips64":
  if CONFIG["CPU_ARCH"] == "x86":
  
      DEFINES["WEBRTC_ENABLE_AVX2"] = True
@@ -96353,8 +96505,8 @@ index 7e3ac4033b69..495fb5b35f3d 100644
  
      DEFINES["USE_X11"] = "1"
  
-@@ -231,53 +111,4 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
-         "Xtst"
+@@ -229,53 +110,4 @@ if CONFIG["MOZ_X11"] == "1" and CONFIG["OS_TARGET"] == "Linux":
+         "Xrender"
      ]
  
 -if CONFIG["CPU_ARCH"] == "arm" and CONFIG["OS_TARGET"] == "Android":
