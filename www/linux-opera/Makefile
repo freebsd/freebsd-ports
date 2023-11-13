@@ -21,7 +21,7 @@ WWW=		http://www.opera.com/
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
 DEPRECATED=	outdated and unsupported version
-EXPIRATION_DATE=2023-11-31
+EXPIRATION_DATE=2023-11-30
 
 USES=		cpe desktop-file-utils gnome linux shared-mime-info tar:xz
 USE_LINUX=	gtk2 sqlite3 xorglibs
