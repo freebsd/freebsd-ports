@@ -1,5 +1,5 @@
 PORTNAME=	backuppc
-DISTVERSION=	4.3.3.20200531
+DISTVERSION=	4.4.1.20231111
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 
@@ -10,10 +10,10 @@ WWW=		https://backuppc.github.io/backuppc/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.60:sysutils/p5-BackupPC-XS
+EXTRACT_DEPENDS=	p5-BackupPC-XS>=0.62:sysutils/p5-BackupPC-XS
 RUN_DEPENDS=	p5-CGI>0:www/p5-CGI \
 		p5-File-Listing>=0:sysutils/p5-File-Listing \
-		p5-BackupPC-XS>=0.57:sysutils/p5-BackupPC-XS
+		p5-BackupPC-XS>=0.62:sysutils/p5-BackupPC-XS
 
 USES=		cpe perl5
 
@@ -26,7 +26,7 @@ CONFLICTS_INSTALL=	backuppc backuppc4
 CPE_VENDOR=	craig_barratt
 
 USE_GITHUB=	yes
-GH_TAGNAME=	cae051c
+GH_TAGNAME=	174e707
 USE_PERL5=	extract
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -60,7 +60,7 @@ SMB_DESC=		Install Samba (for "smb" transfer and NetBIOS lookup)
 XML_RSS_DESC=		Install Perl extension to manage RSS files
 
 ARCHIVE_ZIP_RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip
-RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.6:net/rsync-bpc
+RSYNC_BPC_RUN_DEPENDS=		rsync-bpc>=3.0.9.15:net/rsync-bpc
 RRDTOOL_RUN_DEPENDS=		rrdtool:databases/rrdtool
 SMB_USES=			samba:run # nmblookup, smbclient
 XML_RSS_RUN_DEPENDS=		p5-XML-RSS>=0:textproc/p5-XML-RSS

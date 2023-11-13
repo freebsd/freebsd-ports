@@ -36,8 +36,8 @@ lib/BackupPC/CGI/GeneralInfo.pm
 lib/BackupPC/CGI/HostInfo.pm
 lib/BackupPC/CGI/LOGlist.pm
 lib/BackupPC/CGI/Lib.pm
+lib/BackupPC/CGI/Metrics.pm
 lib/BackupPC/CGI/Queue.pm
-lib/BackupPC/CGI/RSS.pm
 lib/BackupPC/CGI/ReloadServer.pm
 lib/BackupPC/CGI/Restore.pm
 lib/BackupPC/CGI/RestoreFile.pm
@@ -115,10 +115,12 @@ man/man1/backuppc.1.gz
 %%WWWDIR%%/1111101.gif
 %%WWWDIR%%/1111110.gif
 %%WWWDIR%%/1111111.gif
+%%WWWDIR%%/BackupPC_2020_mod.css
 %%WWWDIR%%/BackupPC.html
-%%WWWDIR%%/BackupPC_stnd.css
+%%WWWDIR%%/BackupPC_mod.css
 %%WWWDIR%%/BackupPC_retro_v2.css
 %%WWWDIR%%/BackupPC_retro_v3.css
+%%WWWDIR%%/BackupPC_stnd.css
 %%WWWDIR%%/apple-touch-icon.png
 %%WWWDIR%%/favicon-16x16.png
 %%WWWDIR%%/favicon-32x32.png
