@@ -1,5 +1,5 @@
 PORTNAME?=		angie
-PORTVERSION=		1.3.0
+PORTVERSION=		1.3.1
 CATEGORIES+=		www
 MASTER_SITES+=		https://download.angie.software/files/:angie
 DISTNAME=		angie-${DISTVERSIONFULL}
@@ -23,7 +23,7 @@ BUILD_DEPENDS+=		pcre2>=0:devel/pcre2
 RUN_DEPENDS+=		angie==${PKGVERSION}:www/angie
 .endif
 
-USES+=			ssl
+USES+=			localbase:ldflags ssl
 USE_GITHUB=		nodefault
 
 HAS_CONFIGURE?=		yes
@@ -107,8 +107,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX}/etc/angie \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
 			--with-threads \
-			--with-cc-opt="-I ${LOCALBASE}/include" \
-			--with-ld-opt="-L ${LOCALBASE}/lib" \
+			--with-cc-opt="${CFLAGS}" \
+			--with-ld-opt="${LDFLAGS}" \
 			${CONFIGURE_ADD}
 
 OPTIONS_DEFINE?=	DEBUG
@@ -176,7 +176,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/example.conf.sample \
 	    ${STAGEDIR}${ETCDIR}/stream.d
 .for i in 50x.html index.html
-	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${WWWDIR}/html/${i}.sample
+	${INSTALL_DATA} ${WRKSRC}/html/${i} ${STAGEDIR}${WWWDIR}/html/${i}
 .endfor
 
 do-install-DEBUG-on:

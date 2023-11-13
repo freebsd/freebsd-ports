@@ -25,5 +25,5 @@ man/man8/angie.8.gz
 @sample %%ETCDIR%%/http.d/default.conf.sample
 @sample %%ETCDIR%%/stream.d/example.conf.sample
 
-@sample %%WWWDIR%%/html/50x.html.sample
-@sample %%WWWDIR%%/html/index.html.sample
+%%WWWDIR%%/html/50x.html
+%%WWWDIR%%/html/index.html
