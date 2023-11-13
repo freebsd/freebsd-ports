@@ -1,7 +1,6 @@
 %%PYTHON_SITELIBDIR%%/symengine/__init__.py
 %%PYTHON_SITELIBDIR%%/symengine/functions.py
 %%PYTHON_SITELIBDIR%%/symengine/lib/__init__.py
-%%PYTHON_SITELIBDIR%%/symengine/lib/config.pxi
 %%PYTHON_SITELIBDIR%%/symengine/lib/pywrapper.h
 %%PYTHON_SITELIBDIR%%/symengine/lib/symengine.pxd
 %%PYTHON_SITELIBDIR%%/symengine/lib/symengine_wrapper%%PYTHON_EXT_SUFFIX%%.so
