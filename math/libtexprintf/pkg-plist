@@ -1,0 +1,10 @@
+bin/utfstringinfo
+bin/utftex
+include/texprintf.h
+lib/libtexprintf.a
+lib/libtexprintf.so
+lib/libtexprintf.so.1
+lib/libtexprintf.so.1.0.0
+man/man1/utfstringinfo.1.gz
+man/man1/utftex.1.gz
+man/man3/texprintf.3.gz
