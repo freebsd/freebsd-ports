@@ -1,5 +1,5 @@
 PORTNAME=	folium
-PORTVERSION=	0.14.0
+PORTVERSION=	0.15.0
 MASTER_SITES=	PYPI
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/python-visualization/folium
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=41.2:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}branca>=0.6.0:www/py-branca@${PY_FLAVOR} \
@@ -26,4 +26,3 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
-
