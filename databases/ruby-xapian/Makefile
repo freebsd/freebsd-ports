@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.23
+PORTVERSION=	1.4.24
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -29,7 +29,6 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--without-lua \
 		--without-perl \
 		--without-php \
-		--without-php7 \
 		--without-python \
 		--without-python3 \
 		--without-tcl
