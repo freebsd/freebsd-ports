@@ -1,15 +1,15 @@
---- configure.ac.orig	2023-05-12 09:25:10 UTC
+--- configure.ac.orig	2023-11-12 04:51:16 UTC
 +++ configure.ac
-@@ -1342,7 +1342,7 @@ AC_CHECK_HEADERS(syscall.h)
- AC_CHECK_HEADERS(time.h)
- AC_CHECK_HEADERS(ucontext.h)
+@@ -1356,7 +1356,7 @@ AC_CHECK_HEADERS(ucontext.h)
  AC_CHECK_HEADERS(utime.h)
+ AC_CHECK_HEADERS(sys/epoll.h)
+ 
 -AS_CASE("$target_cpu", [x64|x86_64|i[3-6]86*], [
 +AS_CASE("$target_cpu", [amd64|x64|x86_64|i[3-6]86*], [
    AC_CHECK_HEADERS(x86intrin.h)
  ])
  RUBY_UNIVERSAL_CHECK_HEADER([x86_64, i386], x86intrin.h)
-@@ -3056,7 +3056,7 @@ AC_SUBST(EXTOBJS)
+@@ -3101,7 +3101,7 @@ AC_SUBST(EXTOBJS)
  			: ${LDSHARED='$(CC) -shared'}
  			AS_IF([test "$rb_cv_binary_elf" = yes], [
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -18,7 +18,7 @@
  			], [
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			])
-@@ -3515,6 +3515,7 @@ AS_CASE("$enable_shared", [yes], [
+@@ -3559,6 +3559,7 @@ AS_CASE("$enable_shared", [yes], [
      [freebsd*|dragonfly*], [
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR)$(MINOR)'
  	LIBRUBY_SONAME='$(LIBRUBY_SO)'
@@ -26,11 +26,11 @@
  	AS_IF([test "$rb_cv_binary_elf" != "yes" ], [
  	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
  	    LIBRUBY_ALIASES=''
-@@ -4325,6 +4326,7 @@ AS_IF([test "${universal_binary-no}" = yes ], [
+@@ -4391,6 +4392,7 @@ AS_IF([test "${universal_binary-no}" = yes ], [
          arch="${target_cpu}-mingw-ucrt"
      ], [
          arch="${target_cpu}-${target_os}"
 +	AS_CASE(["$target_cpu-$target_os"], [x86_64-freebsd*],[arch=amd64-${target_os}])
      ])
      AC_DEFINE_UNQUOTED(RUBY_PLATFORM, "$arch")
- ])
+ 
