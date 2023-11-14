@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq-unique-jobs
-PORTVERSION=	8.0.4
+PORTVERSION=	8.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
