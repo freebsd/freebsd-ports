@@ -83,7 +83,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-python3=${PYTHON_CMD} \
 		--with-ltdl --with-nut-scanner
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lpthread
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -pthread
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 # XXX Remove this when copying this port to sysutils/nut. The GA version
