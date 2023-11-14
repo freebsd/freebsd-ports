@@ -5,7 +5,7 @@
                      SWIG_CXXFLAGS="-fno-strict-aliasing"
  
 -              XAPIAN_LIBS="$XAPIAN_LIBS -lstdc++"
-+              XAPIAN_LIBS="$XAPIAN_LIBS "
++              XAPIAN_LIBS="$XAPIAN_LIBS"
  
  
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
