@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-storage_v1
-PORTVERSION=	0.29.0
+PORTVERSION=	0.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
