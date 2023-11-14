@@ -52,7 +52,7 @@ lib/libnutclientstub.so.1.0.1
 lib/libnutscan.a
 lib/libnutscan.so
 lib/libnutscan.so.2
-lib/libnutscan.so.2.0.2
+lib/libnutscan.so.2.0.3
 %%PYTHON_SITELIBDIR%%/PyNUT.py
 %%PYTHON_SITELIBDIR%%/test_nutclient.py
 %%DEV%%libdata/pkgconfig/libnutclient.pc
