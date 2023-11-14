@@ -1,3 +1,3 @@
-TIMESTAMP = 1690310206
-SHA256 (pytest-asyncio-0.21.1.tar.gz) = 40a7eae6dded22c7b604986855ea48400ab15b069ae38116e8c01238e9eeb64d
-SIZE (pytest-asyncio-0.21.1.tar.gz) = 30492
+TIMESTAMP = 1699954189
+SHA256 (pytest-asyncio-0.22.0.tar.gz) = 01da1bf94ff0b969cc8d760104f7c1011903d0d658bdaef0bbae769660a7fbc4
+SIZE (pytest-asyncio-0.22.0.tar.gz) = 37081
