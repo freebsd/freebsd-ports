@@ -1,0 +1,112 @@
+--- src/libvisa.sym.orig	2013-01-07 10:35:29 UTC
++++ src/libvisa.sym
+@@ -1,109 +1,23 @@
+-viAssertIntrSignal
+-viAssertTrigger
+-viAssertUtilSignal
+-viBufRead
+-viBufWrite
+-viClear
+ viClose
+ viDisableEvent
+-viDiscardEvents
+ viEnableEvent
+ viFindNext
+ viFindRsrc
+ viFlush
+ viGetAttribute
+-viGetDefaultRM
+-viGpibCommand
+-viGpibControlATN
+-viGpibControlREN
+-viGpibPassControl
+-viGpibSendIFC
+-viIn16
+-viIn16Ex
+-viIn32
+-viIn32Ex
+-viIn64
+-viIn64Ex
+-viIn8
+-viIn8Ex
+-viInstallHandler
+ viLock
+-viMapAddress
+-viMapAddressEx
+-viMapTrigger
+-viMemAlloc
+-viMemAllocEx
+-viMemFree
+-viMemFreeEx
+-viMove
+-viMoveAsync
+-viMoveAsyncEx
+-viMoveEx
+-viMoveIn16
+-viMoveIn16Ex
+-viMoveIn32
+-viMoveIn32Ex
+-viMoveIn64
+-viMoveIn64Ex
+-viMoveIn8
+-viMoveIn8Ex
+-viMoveOut16
+-viMoveOut16Ex
+-viMoveOut32
+-viMoveOut32Ex
+-viMoveOut64
+-viMoveOut64Ex
+-viMoveOut8
+-viMoveOut8Ex
+ viOpen
+ viOpenDefaultRM
+-viOpenDefaultRM
+-viOut16
+-viOut16Ex
+-viOut32
+-viOut32Ex
+-viOut64
+-viOut64Ex
+-viOut8
+-viOut8Ex
+ viParseRsrc
+-viParseRsrcEx
+-viPeek16
+-viPeek32
+-viPeek64
+-viPeek8
+-viPoke16
+-viPoke32
+-viPoke64
+-viPoke8
+ viPrintf
+-viPxiReserveTriggers
+-viQueryf
+ viRead
+-viReadAsync
+ viReadSTB
+-viReadToFile
+-viScanf
+ viSetAttribute
+ viSetBuf
+ viSPrintf
+-viSScanf
+-viStatusDesc
+-viTerminate
+-viUninstallHandler
+ viUnlock
+-viUnmapAddress
+-viUnmapTrigger
+-viUsbControlIn
+-viUsbControlOut
+ viVPrintf
+-viVQueryf
+-viVScanf
+ viVSPrintf
+-viVSScanf
+-viVxiCommandQuery
+ viWaitOnEvent
+ viWrite
+-viWriteAsync
+-viWriteFromFile
+ _ZN9librevisa16resource_manager16register_creatorERKNS_16resource_creatorE
