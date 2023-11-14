@@ -106,7 +106,7 @@ lib/libnutscan.so.2.0.2
 %%USB%%libexec/nut/richcomm_usb
 %%SERIAL%%libexec/nut/safenet
 %%SERIAL%%libexec/nut/skel
-libexec/nut/sms_ser
+%%SERIAL%%libexec/nut/sms_ser
 %%SNMP%%libexec/nut/snmp-ups
 %%SERIAL%%libexec/nut/solis
 %%SERIAL%%libexec/nut/tripplite
@@ -265,7 +265,7 @@ libexec/nut/sms_ser
 %%MANPAGES%%%%SERIAL%%man/man8/powerpanel.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/rhino.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/safenet.8.gz
-%%MANPAGES%%man/man8/sms_ser.8.gz
+%%MANPAGES%%%%SERIAL%%man/man8/sms_ser.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/solis.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/tripplite.8.gz
 %%MANPAGES%%%%SERIAL%%man/man8/tripplitesu.8.gz
