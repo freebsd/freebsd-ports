@@ -1,4 +1,2 @@
 The Libxml-Ruby project provides Ruby language bindings for the GNOME Libxml2
 XML toolkit. It is free software, released under the MIT License.
-
-See also: https://github.com/xml4r/libxml-ruby
