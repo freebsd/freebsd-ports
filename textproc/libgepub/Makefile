@@ -1,6 +1,5 @@
 PORTNAME=	libgepub
-PORTVERSION=	0.6.0
-PORTREVISION=	5
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -10,8 +9,8 @@ COMMENT=	GObject based library for handling and rendering epub documents
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
-		libsoup-2.4.so:devel/libsoup
+LIB_DEPENDS=	libwebkit2gtk-4.1.so:www/webkit2-gtk3 \
+		libsoup-3.0.so:devel/libsoup3
 
 USES=		compiler:c11 gettext-runtime gnome libarchive meson pkgconfig \
 		tar:xz
