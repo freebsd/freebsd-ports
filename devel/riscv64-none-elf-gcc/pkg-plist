@@ -522,6 +522,12 @@ lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imac/lp64/crti.o
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imac/lp64/crtn.o
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imac/lp64/libgcc.a
 lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imac/lp64/libgcov.a
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/crtbegin.o
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/crtend.o
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/crti.o
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/crtn.o
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/libgcc.a
+lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/rv64imafdc/lp64d/libgcov.a
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/cc1
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/cc1plus
 libexec/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/collect2
