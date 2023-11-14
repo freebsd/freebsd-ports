@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/scikit-hep/awkward/commit/cac93481d17d54616dd0e8e5edb7bf69fa57adec
+
+--- pyproject.toml.orig	2023-10-26 17:44:38 UTC
++++ pyproject.toml
+@@ -40,7 +40,7 @@ classifiers = [
+     "Topic :: Utilities",
+ ]
+ dependencies = [
+-    "awkward_cpp==25",
++    "awkward_cpp==26",
+     "importlib_metadata>=4.13.0;python_version < \"3.12\"",
+     "numpy>=1.18.0",
+     "packaging",
