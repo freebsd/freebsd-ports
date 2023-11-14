@@ -5,7 +5,7 @@ CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tiny command line DNS client
-WWW=		https://github.com/zmap/zdns
+WWW=		https://github.com/natesales/q
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
