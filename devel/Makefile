@@ -6769,6 +6769,7 @@
     SUBDIR += rubygem-etc
     SUBDIR += rubygem-event_emitter
     SUBDIR += rubygem-event_stream_parser
+    SUBDIR += rubygem-event_stream_parser0
     SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-excon
     SUBDIR += rubygem-execjs
