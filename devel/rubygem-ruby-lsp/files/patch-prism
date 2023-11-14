@@ -1,0 +1,178 @@
+Obtained from:	https://github.com/Shopify/ruby-lsp/commit/8b5a311a4bdc1a73d96c5416a8a8854d98e2c4f3
+
+--- lib/ruby_indexer/lib/ruby_indexer/entry.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_indexer/lib/ruby_indexer/entry.rb
+@@ -136,8 +136,9 @@ module RubyIndexer
+         case node
+         when Prism::RequiredParameterNode
+           node.name
+-        when Prism::RequiredDestructuredParameterNode
+-          names = node.parameters.map { |parameter_node| parameter_name(parameter_node) }
++        when Prism::MultiTargetNode
++          names = [*node.lefts, *node.rest, *node.rights].map { |parameter_node| parameter_name(parameter_node) }
++
+           names_with_commas = names.join(", ")
+           :"(#{names_with_commas})"
+         end
+--- lib/ruby_indexer/lib/ruby_indexer/visitor.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_indexer/lib/ruby_indexer/visitor.rb
+@@ -35,7 +35,7 @@ module RubyIndexer
+       value = node.value
+       values = value.is_a?(Prism::ArrayNode) && value.opening_loc ? value.elements : []
+ 
+-      node.targets.each_with_index do |target, i|
++      [*node.lefts, *node.rest, *node.rights].each_with_index do |target, i|
+         current_value = values[i]
+         # The moment we find a splat on the right hand side of the assignment, we can no longer figure out which value
+         # gets assigned to what
+--- lib/ruby_lsp/requests/code_action_resolve.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_lsp/requests/code_action_resolve.rb
+@@ -87,15 +87,19 @@ module RubyLsp
+             :start,
+             :line,
+           ) && closest_node_loc.end_line - 1 >= source_range.dig(:end, :line)
+-            indentation_line = closest_node_loc.start_line - 1
+-            target_line = indentation_line
++            indentation_line_number = closest_node_loc.start_line - 1
++            target_line = indentation_line_number
+           else
+             target_line = closest_node_loc.end_line
+-            indentation_line = closest_node_loc.end_line - 1
++            indentation_line_number = closest_node_loc.end_line - 1
+           end
+ 
+           lines = @document.source.lines
+-          indentation = T.must(T.must(lines[indentation_line])[/\A */]).size
++
++          indentation_line = lines[indentation_line_number]
++          return Error::InvalidTargetRange unless indentation_line
++
++          indentation = T.must(indentation_line[/\A */]).size
+ 
+           target_range = {
+             start: { line: target_line, character: indentation },
+--- lib/ruby_lsp/requests/document_highlight.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_lsp/requests/document_highlight.rb
+@@ -97,7 +97,8 @@ module RubyLsp
+           Prism::LocalVariableWriteNode,
+           Prism::BlockParameterNode,
+           Prism::RequiredParameterNode,
+-          Prism::KeywordParameterNode,
++          Prism::RequiredKeywordParameterNode,
++          Prism::OptionalKeywordParameterNode,
+           Prism::RestParameterNode,
+           Prism::OptionalParameterNode,
+           Prism::KeywordRestParameterNode,
+@@ -137,8 +138,9 @@ module RubyLsp
+             Prism::ClassVariableReadNode, Prism::ClassVariableTargetNode, Prism::ClassVariableWriteNode,
+             Prism::LocalVariableAndWriteNode, Prism::LocalVariableOperatorWriteNode, Prism::LocalVariableOrWriteNode,
+             Prism::LocalVariableReadNode, Prism::LocalVariableTargetNode, Prism::LocalVariableWriteNode,
+-            Prism::CallNode, Prism::BlockParameterNode, Prism::KeywordParameterNode, Prism::KeywordRestParameterNode,
+-            Prism::OptionalParameterNode, Prism::RequiredParameterNode, Prism::RestParameterNode
++            Prism::CallNode, Prism::BlockParameterNode, Prism::RequiredKeywordParameterNode,
++            Prism::RequiredKeywordParameterNode, Prism::KeywordRestParameterNode, Prism::OptionalParameterNode,
++            Prism::RequiredParameterNode, Prism::RestParameterNode
+             target
+           end
+ 
+@@ -171,7 +173,8 @@ module RubyLsp
+             :on_constant_path_and_write_node_enter,
+             :on_constant_path_operator_write_node_enter,
+             :on_local_variable_write_node_enter,
+-            :on_keyword_parameter_node_enter,
++            :on_required_keyword_parameter_node_enter,
++            :on_optional_keyword_parameter_node_enter,
+             :on_rest_parameter_node_enter,
+             :on_optional_parameter_node_enter,
+             :on_keyword_rest_parameter_node_enter,
+@@ -359,13 +362,20 @@ module RubyLsp
+         add_highlight(Constant::DocumentHighlightKind::WRITE, node.name_loc)
+       end
+ 
+-      sig { params(node: Prism::KeywordParameterNode).void }
+-      def on_keyword_parameter_node_enter(node)
++      sig { params(node: Prism::RequiredKeywordParameterNode).void }
++      def on_required_keyword_parameter_node_enter(node)
+         return unless matches?(node, LOCAL_NODES)
+ 
+         add_highlight(Constant::DocumentHighlightKind::WRITE, node.name_loc)
+       end
+ 
++      sig { params(node: Prism::OptionalKeywordParameterNode).void }
++      def on_optional_keyword_parameter_node_enter(node)
++        return unless matches?(node, LOCAL_NODES)
++
++        add_highlight(Constant::DocumentHighlightKind::WRITE, node.name_loc)
++      end
++
+       sig { params(node: Prism::RestParameterNode).void }
+       def on_rest_parameter_node_enter(node)
+         return unless matches?(node, LOCAL_NODES)
+@@ -551,8 +561,8 @@ module RubyLsp
+           Prism::ClassVariableTargetNode, Prism::ClassVariableWriteNode, Prism::LocalVariableAndWriteNode,
+           Prism::LocalVariableOperatorWriteNode, Prism::LocalVariableOrWriteNode, Prism::LocalVariableReadNode,
+           Prism::LocalVariableTargetNode, Prism::LocalVariableWriteNode, Prism::DefNode, Prism::BlockParameterNode,
+-          Prism::KeywordParameterNode, Prism::KeywordRestParameterNode, Prism::OptionalParameterNode,
+-          Prism::RequiredParameterNode, Prism::RestParameterNode
++          Prism::RequiredKeywordParameterNode, Prism::OptionalKeywordParameterNode, Prism::KeywordRestParameterNode,
++          Prism::OptionalParameterNode, Prism::RequiredParameterNode, Prism::RestParameterNode
+ 
+           node.name.to_s
+         when Prism::CallNode
+--- lib/ruby_lsp/requests/folding_ranges.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_lsp/requests/folding_ranges.rb
+@@ -94,7 +94,7 @@ module RubyLsp
+         opening_loc = node.opening_loc
+         closing_loc = node.closing_loc
+ 
+-        add_lines_range(opening_loc.start_line, closing_loc.end_line - 1) if opening_loc && closing_loc
++        add_lines_range(opening_loc.start_line, closing_loc.start_line - 1) if opening_loc && closing_loc
+       end
+ 
+       sig { params(node: Prism::ArrayNode).void }
+--- lib/ruby_lsp/requests/semantic_highlighting.rb.orig	2023-11-05 06:57:55 UTC
++++ lib/ruby_lsp/requests/semantic_highlighting.rb
+@@ -135,7 +135,8 @@ module RubyLsp
+           :on_local_variable_write_node_enter,
+           :on_local_variable_read_node_enter,
+           :on_block_parameter_node_enter,
+-          :on_keyword_parameter_node_enter,
++          :on_required_keyword_parameter_node_enter,
++          :on_optional_keyword_parameter_node_enter,
+           :on_keyword_rest_parameter_node_enter,
+           :on_optional_parameter_node_enter,
+           :on_required_parameter_node_enter,
+@@ -252,11 +253,18 @@ module RubyLsp
+         @current_scope << name.to_sym if name
+       end
+ 
+-      sig { params(node: Prism::KeywordParameterNode).void }
+-      def on_keyword_parameter_node_enter(node)
+-        name = node.name
+-        @current_scope << name.to_s.delete_suffix(":").to_sym if name
++      sig { params(node: Prism::RequiredKeywordParameterNode).void }
++      def on_required_keyword_parameter_node_enter(node)
++        @current_scope << node.name
++        return unless visible?(node, @range)
+ 
++        location = node.name_loc
++        add_token(location.copy(length: location.length - 1), :parameter)
++      end
++
++      sig { params(node: Prism::OptionalKeywordParameterNode).void }
++      def on_optional_keyword_parameter_node_enter(node)
++        @current_scope << node.name
+         return unless visible?(node, @range)
+ 
+         location = node.name_loc
+--- ruby-lsp.gemspec.orig	2023-11-05 06:57:55 UTC
++++ ruby-lsp.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<language_server-protocol>.freeze, ["~> 3.17.0"])
+-  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.15.1", "< 0.16"])
++  s.add_runtime_dependency(%q<prism>.freeze, [">= 0.17.1", "< 0.18"])
+   s.add_runtime_dependency(%q<sorbet-runtime>.freeze, [">= 0.5.5685"])
+ end
+ 
