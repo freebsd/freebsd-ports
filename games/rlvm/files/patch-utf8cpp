@@ -1,0 +1,99 @@
+--- src/long_operations/textout_long_operation.cc.orig	2021-05-27 12:59:29 UTC
++++ src/long_operations/textout_long_operation.cc
+@@ -39,7 +39,7 @@
+ #include "systems/base/text_page.h"
+ #include "systems/base/text_system.h"
+ #include "utilities/exception.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ 
+ // Timing information must stay the same between individual
+ // TextoutLongOperations. rlBabel compiled games will always display one
+--- src/machine/rlvm_instance.cc.orig	2021-05-27 12:59:29 UTC
++++ src/machine/rlvm_instance.cc
+@@ -43,7 +43,7 @@
+ #include "systems/base/graphics_system.h"
+ #include "systems/base/system_error.h"
+ #include "systems/sdl/sdl_system.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ #include "utilities/exception.h"
+ #include "utilities/file.h"
+ #include "utilities/find_font_file.h"
+--- src/modules/module_sys_save.cc.orig	2021-05-27 12:59:29 UTC
++++ src/modules/module_sys_save.cc
+@@ -54,7 +54,7 @@
+ #include "systems/base/surface.h"
+ #include "systems/base/system.h"
+ #include "libreallive/intmemref.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ 
+ using boost::starts_with;
+ using boost::ends_with;
+--- src/systems/base/text_page.cc.orig	2021-05-27 12:59:29 UTC
++++ src/systems/base/text_page.cc
+@@ -35,7 +35,7 @@
+ #include "systems/base/system.h"
+ #include "systems/base/text_system.h"
+ #include "systems/base/text_window.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ #include "utilities/exception.h"
+ #include "utilities/string_utilities.h"
+ 
+--- src/systems/base/text_system.cc.orig	2021-05-27 12:59:29 UTC
++++ src/systems/base/text_system.cc
+@@ -49,7 +49,7 @@
+ #include "systems/base/text_key_cursor.h"
+ #include "systems/base/text_page.h"
+ #include "systems/base/text_window.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ #include "utilities/exception.h"
+ #include "utilities/string_utilities.h"
+ 
+--- src/systems/base/text_window.cc.orig	2021-05-27 12:59:29 UTC
++++ src/systems/base/text_window.cc
+@@ -45,7 +45,7 @@
+ #include "systems/base/system_error.h"
+ #include "systems/base/text_system.h"
+ #include "systems/base/text_waku.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ #include "utilities/exception.h"
+ #include "utilities/graphics.h"
+ #include "utilities/string_utilities.h"
+--- src/systems/sdl/sdl_text_window.cc.orig	2021-05-27 12:59:29 UTC
++++ src/systems/sdl/sdl_text_window.cc
+@@ -43,7 +43,7 @@
+ #include "systems/sdl/sdl_system.h"
+ #include "systems/sdl/sdl_text_system.h"
+ #include "systems/sdl/sdl_utils.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ #include "utilities/exception.h"
+ #include "utilities/string_utilities.h"
+ 
+--- src/utilities/string_utilities.cc.orig	2021-05-27 12:59:29 UTC
++++ src/utilities/string_utilities.cc
+@@ -31,7 +31,7 @@
+ 
+ #include "encodings/codepage.h"
+ #include "utilities/exception.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ 
+ using std::string;
+ using std::wstring;
+--- test/test_system/test_text_system.cc.orig	2021-05-27 12:59:29 UTC
++++ test/test_system/test_text_system.cc
+@@ -33,7 +33,7 @@
+ #include "test_system/mock_surface.h"
+ #include "test_system/mock_text_window.h"
+ #include "test_system/test_text_window.h"
+-#include "utf8cpp/utf8.h"
++#include "utf8.h"
+ 
+ TestTextSystem::TestTextSystem(System& system, Gameexe& gexe)
+     : TextSystem(system, gexe) {}
