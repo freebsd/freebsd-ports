@@ -1,4 +1,4 @@
---- third_party/CMakeLists.txt.orig	2023-08-17 10:28:49 UTC
+--- third_party/CMakeLists.txt.orig	2023-10-31 14:13:07 UTC
 +++ third_party/CMakeLists.txt
 @@ -15,24 +15,24 @@ if(NOT MSVC)
      set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wno-unused-parameter")
@@ -99,7 +99,7 @@
  
  if(CMAKE_BUILD_TYPE MATCHES Debug)
      set(LIBGTEST_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}gtestd${CMAKE_STATIC_LIBRARY_SUFFIX})
-@@ -81,54 +81,54 @@ else()
+@@ -81,114 +81,114 @@ else()
  endif()
  
  
@@ -165,39 +165,16 @@
  add_dependencies(lib_gmock proj_gtest)
  set_target_properties(lib_gtest lib_gmock proj_gtest PROPERTIES EXCLUDE_FROM_ALL TRUE)
  
--add_library(lib_injection STATIC
--    libinjection/src/xss.c
--    libinjection/src/libinjection_html5.c
--    libinjection/src/libinjection_xss.c
--    libinjection/src/libinjection_sqli.c)
--target_include_directories(lib_injection INTERFACE ${PROJECT_SOURCE_DIR}/libinjection/src)
--set_target_properties(lib_injection PROPERTIES POSITION_INDEPENDENT_CODE 1)
-+#add_library(lib_injection STATIC
-+#    libinjection/src/xss.c
-+#    libinjection/src/libinjection_html5.c
-+#    libinjection/src/libinjection_xss.c
-+#    libinjection/src/libinjection_sqli.c)
-+#target_include_directories(lib_injection INTERFACE ${PROJECT_SOURCE_DIR}/libinjection/src)
-+#set_target_properties(lib_injection PROPERTIES POSITION_INDEPENDENT_CODE 1)
- 
--add_library(lib_ac STATIC
--    lua-aho-corasick/ac_fast.cxx
--    lua-aho-corasick/ac_slow.cxx
--    lua-aho-corasick/ac.cxx)
--target_include_directories(lib_ac INTERFACE ${PROJECT_SOURCE_DIR}/lua-aho-corasick)
--set_target_properties(lib_ac PROPERTIES POSITION_INDEPENDENT_CODE 1)
-+#add_library(lib_ac STATIC
-+#    lua-aho-corasick/ac_fast.cxx
-+#    lua-aho-corasick/ac_slow.cxx
-+#    lua-aho-corasick/ac.cxx)
-+#target_include_directories(lib_ac INTERFACE ${PROJECT_SOURCE_DIR}/lua-aho-corasick)
-+#set_target_properties(lib_ac PROPERTIES POSITION_INDEPENDENT_CODE 1)
- 
- add_library(lib_radix STATIC
-     radixlib/radixlib.c)
-@@ -141,74 +141,74 @@ else ()
-     set(LIBUTF8PROC_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}utf8proc${CMAKE_STATIC_LIBRARY_SUFFIX})
- endif()
+-if (MSVC)
+-    set(LIBUTF8PROC_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}utf8proc_static${CMAKE_STATIC_LIBRARY_SUFFIX})
+-else ()
+-    set(LIBUTF8PROC_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}utf8proc${CMAKE_STATIC_LIBRARY_SUFFIX})
+-endif()
++#if (MSVC)
++#    set(LIBUTF8PROC_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}utf8proc_static${CMAKE_STATIC_LIBRARY_SUFFIX})
++#else ()
++#    set(LIBUTF8PROC_FILENAME ${CMAKE_STATIC_LIBRARY_PREFIX}utf8proc${CMAKE_STATIC_LIBRARY_SUFFIX})
++#endif()
  
 -set(UTF8PROC_VERSION v2.7.0)
 -ExternalProject_Add(proj_utf8proc

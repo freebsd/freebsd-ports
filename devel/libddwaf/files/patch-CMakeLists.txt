@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-08-17 10:28:49 UTC
+--- CMakeLists.txt.orig	2023-10-31 14:13:07 UTC
 +++ CMakeLists.txt
 @@ -7,24 +7,24 @@ set(CMAKE_PROJECT_VERSION ${version})
  
@@ -36,7 +36,7 @@
  
  option(LIBDDWAF_BUILD_SHARED "Build shared library" ON)
  option(LIBDDWAF_BUILD_STATIC "Build shared library" ON)
-@@ -58,7 +58,7 @@ endif()
+@@ -59,7 +59,7 @@ endif()
  
  include(GNUInstallDirs)
  
@@ -45,17 +45,16 @@
  
  add_library(glibc_compat OBJECT ${libddwaf_SOURCE_DIR}/src/glibc-compat/time64.c)
  set_target_properties(glibc_compat PROPERTIES POSITION_INDEPENDENT_CODE 1)
-@@ -143,7 +143,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
+@@ -159,7 +159,7 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
  
  # System dependencies
  set(LIBDDWAF_INTERFACE_LIBRARIES "")
--set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_ac lib_injection lib_radix lib_utf8proc)
-+#set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_ac lib_injection lib_radix lib_utf8proc)
-+set(LIBDDWAF_PRIVATE_LIBRARIES lib_radix)
+-set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_utf8proc)
++#set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_utf8proc)
  
  if(NOT MSVC AND LIBDDWAF_TEST_COVERAGE)
      target_compile_options(libddwaf_objects PRIVATE -ggdb --coverage)
-@@ -176,6 +177,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+@@ -192,6 +192,28 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  elseif(WIN32)
      list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ws2_32)
  endif()
@@ -63,13 +62,14 @@
 +if (LIBAC)
 +    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ac)
 +endif()
++find_library(LIBFMT fmt)
++if (LIBFMT)
++    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES fmt)
++endif()
 +find_library(LIBINJECTION injection)
 +if (LIBINJECTION)
 +    list(APPEND LIBDDWAF_INTERFACE_LIBRARIES injection)
 +endif()
-+add_library(lib_radix STATIC ${PROJECT_SOURCE_DIR}/third_party/radixlib/radixlib.c)
-+target_include_directories(lib_radix INTERFACE ${PROJECT_SOURCE_DIR}/third_party/radixlib)
-+set_target_properties(lib_radix PROPERTIES POSITION_INDEPENDENT_CODE 1)
 +add_library(lib_rapidjson INTERFACE IMPORTED GLOBAL)
 +target_include_directories(lib_rapidjson INTERFACE ${PROJECT_SOURCE_DIR}/third_party/rapidjson/include)
 +find_library(LIBRE2 re2)
@@ -83,7 +83,7 @@
  
  target_link_libraries(libddwaf_objects
      PRIVATE ${LIBDDWAF_PRIVATE_LIBRARIES}
-@@ -200,71 +222,72 @@ if (LIBDDWAF_BUILD_STATIC)
+@@ -216,64 +238,65 @@ if (LIBDDWAF_BUILD_STATIC)
          INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
  
      # Post-processing on the static library
@@ -92,8 +92,7 @@
 -            COMMAND ${CMAKE_COMMAND} -E make_directory lib_comb
 -            COMMAND ${CMAKE_COMMAND} -E chdir lib_comb lib.exe
 -                /OUT:combined${CMAKE_STATIC_LIBRARY_SUFFIX}
--                $<TARGET_FILE:libddwaf_static> $<TARGET_FILE:lib_re2> $<TARGET_FILE:lib_ac>
--                $<TARGET_FILE:lib_injection> $<TARGET_FILE:lib_utf8proc> $<TARGET_FILE:lib_radix>
+-                $<TARGET_FILE:libddwaf_static> $<TARGET_FILE:lib_re2> $<TARGET_FILE:lib_utf8proc>
 -            COMMAND ${CMAKE_COMMAND} -E copy lib_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
 -            WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
 -    else()
@@ -102,10 +101,7 @@
 -              COMMAND ${CMAKE_COMMAND} -E make_directory ar_comb
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:libddwaf_static>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_re2>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_ac>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
 -              COMMAND libtool -static -o ar_comb/combined.a -arch_only ${CMAKE_OSX_ARCHITECTURES} ar_comb/*.o*
 -
 -              COMMAND ${CMAKE_COMMAND} -E copy ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
@@ -116,10 +112,7 @@
 -              COMMAND ${CMAKE_COMMAND} -E make_directory ar_comb
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:libddwaf_static>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_re2>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_ac>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 -              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
--              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
 -              COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_OBJECTS:glibc_compat> ar_comb
 -              COMMAND ${CMAKE_AR} -qcs ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} ar_comb/*.o*
 -
@@ -148,8 +141,7 @@
 +#            COMMAND ${CMAKE_COMMAND} -E make_directory lib_comb
 +#            COMMAND ${CMAKE_COMMAND} -E chdir lib_comb lib.exe
 +#                /OUT:combined${CMAKE_STATIC_LIBRARY_SUFFIX}
-+#                $<TARGET_FILE:libddwaf_static> $<TARGET_FILE:lib_re2> $<TARGET_FILE:lib_ac>
-+#                $<TARGET_FILE:lib_injection> $<TARGET_FILE:lib_utf8proc> $<TARGET_FILE:lib_radix>
++#                $<TARGET_FILE:libddwaf_static> $<TARGET_FILE:lib_re2> $<TARGET_FILE:lib_utf8proc>
 +#            COMMAND ${CMAKE_COMMAND} -E copy lib_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
 +#            WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
 +#    else()
@@ -158,10 +150,7 @@
 +#              COMMAND ${CMAKE_COMMAND} -E make_directory ar_comb
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:libddwaf_static>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_re2>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_ac>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
 +#              COMMAND libtool -static -o ar_comb/combined.a -arch_only ${CMAKE_OSX_ARCHITECTURES} ar_comb/*.o*
 +#
 +#              COMMAND ${CMAKE_COMMAND} -E copy ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} $<TARGET_FILE:libddwaf_static>
@@ -172,10 +161,7 @@
 +#              COMMAND ${CMAKE_COMMAND} -E make_directory ar_comb
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:libddwaf_static>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_re2>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_ac>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_injection>
 +#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_utf8proc>
-+#              COMMAND ${CMAKE_COMMAND} -E chdir ar_comb ${CMAKE_AR} -x $<TARGET_FILE:lib_radix>
 +#              COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_OBJECTS:glibc_compat> ar_comb
 +#              COMMAND ${CMAKE_AR} -qcs ar_comb/combined${CMAKE_STATIC_LIBRARY_SUFFIX} ar_comb/*.o*
 +#
@@ -213,7 +199,7 @@
 +#        OUTPUT_VARIABLE BUILD_ID
 +#        OUTPUT_STRIP_TRAILING_WHITESPACE
 +#    )
-+    set(BUILD_ID "25b0021f1d2ce1eea39a37ad41b6de9eec12ee84")
++    set(BUILD_ID "e7d3c209402b8d81d119584cb147f88efe976965")
      message(STATUS "Build id is ${BUILD_ID}")
      string(SUBSTRING "${BUILD_ID}" 0 2 BUILD_ID_PREFIX)
      string(SUBSTRING "${BUILD_ID}" 2 39 BUILD_ID_SUFFIX)
