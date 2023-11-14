@@ -1,12 +1,12 @@
 PORTNAME=	pdm
-PORTVERSION=	2.10.0
+PORTVERSION=	2.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Development Master
-WWW=		https://pdm.fming.dev/latest/ \
+WWW=		https://pdm-project.org/ \
 		https://github.com/pdm-project/pdm
 
 LICENSE=	MIT
