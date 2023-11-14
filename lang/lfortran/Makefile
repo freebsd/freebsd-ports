@@ -9,7 +9,6 @@ WWW=		https://lfortran.org/
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN_FreeBSD_12=	use of undeclared identifier '_Unwind_Backtrace'
 BROKEN_i386=	sizeof(YYSTYPE) != sizeof(Vec<AST::ast_t*>)
 
 BUILD_DEPENDS=	bash:shells/bash		\
@@ -31,6 +30,9 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 CMAKE_ON=	LFORTRAN_BUILD_ALL WITH_DWARFDUMP WITH_FMT WITH_JSON	\
 		WITH_LINKH WITH_LLVM WITH_STACKTRACE WITH_UNWIND
 USE_LDCONFIG=	yes
+
+CXXFLAGS+=	${CXXFLAGS_${OPSYS}_${OSREL:R}}
+CXXFLAGS_FreeBSD_12=	-D_GNU_SOURCE
 
 LLVM_VERSION=	15	# 16 is supported too
 
