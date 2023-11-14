@@ -1,0 +1,7 @@
+JUCE is a framework for multi-platform audio applications.
+
+It is focused on audio application development and has an extensive set of
+audio-related modules.
+
+It doesn't yet support makefile export or IDE project export on Linux/BSD,
+so for now it can only create .jucer projects.

@@ -1031,6 +1031,7 @@
     SUBDIR += jsonnet
     SUBDIR += jsonrpc-glib
     SUBDIR += juce
+    SUBDIR += juce706
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += kBuild
