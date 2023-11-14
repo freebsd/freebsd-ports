@@ -40,6 +40,8 @@ share/man/man3/es384_pk_to_EVP_PKEY.3.gz
 share/man/man3/fido_assert_allow_cred.3.gz
 share/man/man3/fido_assert_authdata_len.3.gz
 share/man/man3/fido_assert_authdata_ptr.3.gz
+share/man/man3/fido_assert_authdata_raw_len.3.gz
+share/man/man3/fido_assert_authdata_raw_ptr.3.gz
 share/man/man3/fido_assert_blob_len.3.gz
 share/man/man3/fido_assert_blob_ptr.3.gz
 share/man/man3/fido_assert_clientdata_hash_len.3.gz
@@ -68,6 +70,7 @@ share/man/man3/fido_assert_set_rp.3.gz
 share/man/man3/fido_assert_set_sig.3.gz
 share/man/man3/fido_assert_set_up.3.gz
 share/man/man3/fido_assert_set_uv.3.gz
+share/man/man3/fido_assert_set_winhello_appid.3.gz
 share/man/man3/fido_assert_sig_len.3.gz
 share/man/man3/fido_assert_sig_ptr.3.gz
 share/man/man3/fido_assert_sigcount.3.gz
@@ -301,6 +304,8 @@ share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_allow_cred.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_authdata_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_authdata_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_authdata_raw_len.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_authdata_raw_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_blob_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_blob_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_clientdata_hash_len.html
@@ -329,6 +334,7 @@ share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_sig.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_up.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_uv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_set_winhello_appid.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_sig_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_sig_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_sigcount.html
