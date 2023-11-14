@@ -25,7 +25,7 @@ LICENSE_PERMS_VVVVVV=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accep
 IGNORE=		license requires that the license be shipped
 .endif
 
-BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp
+BUILD_DEPENDS=	utf8cpp>=4.0.0:devel/utf8cpp
 LIB_DEPENDS=	libtinyxml2.so:textproc/tinyxml2 \
 		libphysfs.so:devel/physfs
 

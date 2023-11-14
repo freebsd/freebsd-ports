@@ -9,3 +9,12 @@
  	# Add interim commit hash and its date to the build
  
  	# find_package sets GIT_FOUND and GIT_EXECUTABLE
+@@ -296,7 +296,7 @@ if(BUNDLE_DEPENDENCIES)
+ else()
+ 	find_package(utf8cpp CONFIG)
+ 
+-	target_link_libraries(VVVVVV physfs tinyxml2 utf8cpp lodepng-static)
++	target_link_libraries(VVVVVV physfs tinyxml2 lodepng-static)
+ endif()
+ 
+ # SDL2 Dependency (Detection pulled from FAudio)
