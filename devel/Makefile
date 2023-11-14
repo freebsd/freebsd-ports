@@ -7283,6 +7283,7 @@
     SUBDIR += rubygem-ruby-libvirt
     SUBDIR += rubygem-ruby-lsp
     SUBDIR += rubygem-ruby-lsp-rails
+    SUBDIR += rubygem-ruby-lsp-rspec
     SUBDIR += rubygem-ruby-macho
     SUBDIR += rubygem-ruby-magic
     SUBDIR += rubygem-ruby-ole
