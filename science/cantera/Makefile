@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/License.txt
 
 BUILD_DEPENDS=	googletest>0:devel/googletest \
 		${LOCALBASE}/include/boost/algorithm/string.hpp:devel/boost-libs \
-		highfive>0:science/highfive
+		highfive>0:science/highfive \
+		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libhdf5.so:science/hdf5 \
 		libopenblas.so:math/openblas \
@@ -54,6 +55,7 @@ OCTAVE_USES=		octave:env
 OCTAVE_BROKEN=		Octave support needs to be updated
 
 PYTHON_USES=		python
+PYTHON_USES_OFF=	python:env
 PYTHON_USE=		PYTHON=cython
 PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=full
 PYTHON_MAKE_ARGS_OFF=	python_package="none"
