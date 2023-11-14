@@ -1,12 +1,12 @@
 PORTNAME=	google-cloud-speech
-PORTVERSION=	2.21.1
+PORTVERSION=	2.22.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Cloud Speech API client library
-WWW=		https://github.com/googleapis/python-speech
+WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-speech
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
