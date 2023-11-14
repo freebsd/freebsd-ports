@@ -1,30 +1,32 @@
 PORTNAME=	jasper
-PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jasper-software/jasper/releases/download/version-${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Implementation of the codec specified in the JPEG-2000 standard
-WWW=		https://www.ece.uvic.ca/~frodo/jasper/
+WWW=		https://ece.engr.uvic.ca/~frodo/jasper/ \
+		https://github.com/jasper-software/jasper
 
 LICENSE=	JASPER
 LICENSE_NAME=	JasPer License Version 2.0
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake cpe jpeg localbase
+USES=		cmake cpe jpeg localbase pathfix
 
 CMAKE_OFF=	JAS_ENABLE_32BIT \
+		JAS_ENABLE_CONFORMANCE_TESTS \
+		JAS_ENABLE_CXX \
 		JAS_ENABLE_DANGEROUS_INTERNAL_TESTING_MODE \
 		JAS_ENABLE_DOC \
 		JAS_ENABLE_LATEX \
 		JAS_ENABLE_MIF_CODEC \
 		JAS_ENABLE_NON_THREAD_SAFE_DEBUGGING \
-		JAS_ENABLE_PIC \
 		JAS_PREFER_PTHREAD_TSS \
 		JAS_STRICT \
-		JAS_USE_JAS_INIT
+		JAS_USE_JAS_INIT \
+		JAS_WASM
 CMAKE_ON=	JAS_ENABLE_BMP_CODEC \
 		JAS_ENABLE_HIDDEN \
 		JAS_ENABLE_JP2_CODEC \
@@ -46,8 +48,7 @@ CMAKE_ON=	JAS_ENABLE_BMP_CODEC \
 		JAS_INCLUDE_PGX_CODEC \
 		JAS_INCLUDE_PNM_CODEC \
 		JAS_INCLUDE_RAS_CODEC \
-		JAS_PREFER_PTHREAD \
-		JAS_STRICT
+		JAS_PREFER_PTHREAD
 TEST_TARGET=	test
 USE_LDCONFIG=	yes
 
