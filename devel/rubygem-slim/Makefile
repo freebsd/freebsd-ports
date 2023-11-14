@@ -1,11 +1,12 @@
 PORTNAME=	slim
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Template language whose goal is reduce the syntax to essential parts
-WWW=		https://github.com/slim-template/slim
+WWW=		https://slim-template.github.io/ \
+		https://github.com/slim-template/slim
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
