@@ -31,6 +31,8 @@ _ELECTRONFIX_MK_VERSION=	${_ver}
 .    endif
 .  endfor
 
+.  include "${.CURDIR}/../../devel/electron${_ELECTRONFIX_MK_VERSION}/Makefile.version"
+
 BUILD_DEPENDS+=	electron${_ELECTRONFIX_MK_VERSION}:devel/electron${_ELECTRONFIX_MK_VERSION}
 RUN_DEPENDS+=	electron${_ELECTRONFIX_MK_VERSION}:devel/electron${_ELECTRONFIX_MK_VERSION}
 
@@ -47,6 +49,10 @@ ELECTRONFIX_SYMLINK_FILES?= \
 
 _USES_install=		701:electronfix-post-install
 
+.  if defined(DEVELOPER)
+_USES_stage=		995:electronfix-stage-qa
+.  endif
+
 electronfix-post-install:
 	${RM} ${STAGEDIR}${DATADIR}/chrome-sandbox
 	${RM} ${STAGEDIR}${DATADIR}/libvulkan.so.1
@@ -58,4 +64,9 @@ electronfix-post-install:
 # We have to copy the electron binary instead of symlinking
 	${CP} ${LOCALBASE}/share/electron${_ELECTRONFIX_MK_VERSION}/electron ${STAGEDIR}${DATADIR}/${ELECTRONFIX_MAIN_EXECUTABLE}
 .  endif
+
+electronfix-stage-qa:
+	@${ECHO_CMD} "====> Checking for non-FreeBSD ELF binaries"
+	@${FIND} ${STAGEDIR}${DATADIR} -type f -exec brandelf {} ';' 2> /dev/null | grep -v "'FreeBSD' (9)"
+
 .endif
