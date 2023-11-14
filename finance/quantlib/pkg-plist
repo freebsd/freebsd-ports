@@ -42,7 +42,6 @@ bin/quantlib-config
 %%BENCHMARK%%man/man1/quantlib-benchmark.1.gz
 include/ql/any.hpp
 include/ql/auto_link.hpp
-include/ql/auto_ptr.hpp
 include/ql/cashflow.hpp
 include/ql/cashflows/all.hpp
 include/ql/cashflows/averagebmacoupon.hpp
@@ -467,7 +466,9 @@ include/ql/instruments/callabilityschedule.hpp
 include/ql/instruments/capfloor.hpp
 include/ql/instruments/claim.hpp
 include/ql/instruments/cliquetoption.hpp
+include/ql/instruments/complexchooseroption.hpp
 include/ql/instruments/compositeinstrument.hpp
+include/ql/instruments/compoundoption.hpp
 include/ql/instruments/cpicapfloor.hpp
 include/ql/instruments/cpiswap.hpp
 include/ql/instruments/creditdefaultswap.hpp
@@ -479,6 +480,7 @@ include/ql/instruments/doublebarriertype.hpp
 include/ql/instruments/equitytotalreturnswap.hpp
 include/ql/instruments/europeanoption.hpp
 include/ql/instruments/fixedratebondforward.hpp
+include/ql/instruments/fixedvsfloatingswap.hpp
 include/ql/instruments/floatfloatswap.hpp
 include/ql/instruments/floatfloatswaption.hpp
 include/ql/instruments/forward.hpp
@@ -488,6 +490,7 @@ include/ql/instruments/futures.hpp
 include/ql/instruments/impliedvolatility.hpp
 include/ql/instruments/inflationcapfloor.hpp
 include/ql/instruments/lookbackoption.hpp
+include/ql/instruments/margrabeoption.hpp
 include/ql/instruments/makecapfloor.hpp
 include/ql/instruments/makecds.hpp
 include/ql/instruments/makecms.hpp
@@ -505,6 +508,8 @@ include/ql/instruments/payoffs.hpp
 include/ql/instruments/quantobarrieroption.hpp
 include/ql/instruments/quantoforwardvanillaoption.hpp
 include/ql/instruments/quantovanillaoption.hpp
+include/ql/instruments/simplechooseroption.hpp
+include/ql/instruments/simplifynotificationgraph.hpp
 include/ql/instruments/stickyratchet.hpp
 include/ql/instruments/stock.hpp
 include/ql/instruments/swap.hpp
@@ -573,7 +578,6 @@ include/ql/math/fastfouriertransform.hpp
 include/ql/math/functional.hpp
 include/ql/math/generallinearleastsquares.hpp
 include/ql/math/incompletegamma.hpp
-include/ql/math/initializers.hpp
 include/ql/math/integrals/all.hpp
 include/ql/math/integrals/discreteintegrals.hpp
 include/ql/math/integrals/exponentialintegrals.hpp
@@ -684,6 +688,7 @@ include/ql/math/randomnumbers/seedgenerator.hpp
 include/ql/math/randomnumbers/sobolbrownianbridgersg.hpp
 include/ql/math/randomnumbers/sobolrsg.hpp
 include/ql/math/randomnumbers/stochasticcollocationinvcdf.hpp
+include/ql/math/randomnumbers/xoshiro256starstaruniformrng.hpp
 include/ql/math/richardsonextrapolation.hpp
 include/ql/math/rounding.hpp
 include/ql/math/sampledcurve.hpp
@@ -711,7 +716,6 @@ include/ql/math/transformedgrid.hpp
 include/ql/mathconstants.hpp
 include/ql/methods/all.hpp
 include/ql/methods/finitedifferences/all.hpp
-include/ql/methods/finitedifferences/americancondition.hpp
 include/ql/methods/finitedifferences/boundarycondition.hpp
 include/ql/methods/finitedifferences/bsmoperator.hpp
 include/ql/methods/finitedifferences/bsmtermoperator.hpp
@@ -739,7 +743,6 @@ include/ql/methods/finitedifferences/meshers/predefined1dmesher.hpp
 include/ql/methods/finitedifferences/meshers/uniform1dmesher.hpp
 include/ql/methods/finitedifferences/meshers/uniformgridmesher.hpp
 include/ql/methods/finitedifferences/mixedscheme.hpp
-include/ql/methods/finitedifferences/onefactoroperator.hpp
 include/ql/methods/finitedifferences/operators/all.hpp
 include/ql/methods/finitedifferences/operators/fdm2dblackscholesop.hpp
 include/ql/methods/finitedifferences/operators/fdmbatesop.hpp
@@ -1096,6 +1099,12 @@ include/ql/pricingengines/credit/all.hpp
 include/ql/pricingengines/credit/integralcdsengine.hpp
 include/ql/pricingengines/credit/isdacdsengine.hpp
 include/ql/pricingengines/credit/midpointcdsengine.hpp
+include/ql/pricingengines/exotic/all.hpp
+include/ql/pricingengines/exotic/analyticamericanmargrabeengine.hpp
+include/ql/pricingengines/exotic/analyticcomplexchooserengine.hpp
+include/ql/pricingengines/exotic/analyticcompoundoptionengine.hpp
+include/ql/pricingengines/exotic/analyticeuropeanmargrabeengine.hpp
+include/ql/pricingengines/exotic/analyticsimplechooserengine.hpp
 include/ql/pricingengines/forward/all.hpp
 include/ql/pricingengines/forward/forwardengine.hpp
 include/ql/pricingengines/forward/forwardperformanceengine.hpp
@@ -1163,12 +1172,10 @@ include/ql/pricingengines/vanilla/fdcevvanillaengine.hpp
 include/ql/pricingengines/vanilla/fdcirvanillaengine.hpp
 include/ql/pricingengines/vanilla/fdconditions.hpp
 include/ql/pricingengines/vanilla/fddividendengine.hpp
-include/ql/pricingengines/vanilla/fddividendshoutengine.hpp
 include/ql/pricingengines/vanilla/fdhestonhullwhitevanillaengine.hpp
 include/ql/pricingengines/vanilla/fdhestonvanillaengine.hpp
 include/ql/pricingengines/vanilla/fdmultiperiodengine.hpp
 include/ql/pricingengines/vanilla/fdsabrvanillaengine.hpp
-include/ql/pricingengines/vanilla/fdshoutengine.hpp
 include/ql/pricingengines/vanilla/fdsimplebsswingengine.hpp
 include/ql/pricingengines/vanilla/fdstepconditionengine.hpp
 include/ql/pricingengines/vanilla/fdvanillaengine.hpp
@@ -1427,7 +1434,6 @@ include/ql/utilities/all.hpp
 include/ql/utilities/clone.hpp
 include/ql/utilities/dataformatters.hpp
 include/ql/utilities/dataparsers.hpp
-include/ql/utilities/disposable.hpp
 include/ql/utilities/null_deleter.hpp
 include/ql/utilities/null.hpp
 include/ql/utilities/observablevalue.hpp
