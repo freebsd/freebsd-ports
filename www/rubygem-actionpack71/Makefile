@@ -1,5 +1,5 @@
 PORTNAME=	actionpack
-PORTVERSION=	7.1.1
+PORTVERSION=	7.1.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	71
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-actionview71>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-actionview71 \
 		rubygem-activesupport71>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport71 \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
+		rubygem-racc>=0:devel/rubygem-racc \
 		rubygem-rack>=2.2.4,3:www/rubygem-rack \
 		rubygem-rack-session>=1.0.1:www/rubygem-rack-session \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
