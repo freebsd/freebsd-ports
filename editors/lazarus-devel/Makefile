@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
 DISTVERSION=	3.0.0.20231028
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -52,7 +52,7 @@ SUB_LIST+=	PORTSDIR="${PORTSDIR}"
 RUN_DEPENDS+=	${LOCALBASE}/bin/gdb:devel/gdb
 .endif
 
-.if ${PKGNAMESUFFIX} == "-gtk2"
+.if ${PKGNAMESUFFIX} == "-gtk2-devel"
 USES+=		gnome
 USE_GNOME=	cairo gtk20 gdkpixbuf2
 .endif
