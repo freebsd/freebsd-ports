@@ -7611,7 +7611,6 @@ devel/rubygem-aws-sdk-core3171|devel/rubygem-aws-sdk-core|2023-06-05|Remove obso
 net/rubygem-u2f0|net/rubygem-u2f|2023-06-05|Remove obsoleted port. Use net/rubygem-u2f instead
 security/rubygem-omniauth-cas3-oauth2|security/rubygem-omniauth-cas3|2023-06-05|Remove obsoleted port. Use security/rubygem-omniauth-cas3 instead
 textproc/rubygem-loofah220|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
-textproc/rubygem-loofah221|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
 www/rubygem-rack227|www/rubygem-rack22|2023-06-05|Remove obsoleted port. Use www/rubygem-rack22 instead
 databases/rubygem-pg13|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Use databases/rubygem-pg instead
 devel/rubygem-fast_gettext1|devel/rubygem-fast_gettext|2023-06-05|Remove obsoleted port. Use devel/rubygem-fast_gettext instead
