@@ -1,13 +1,13 @@
 PORTNAME=	pep517
-PORTVERSION=	0.13.0
-PORTREVISION=	2
+PORTVERSION=	0.13.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrappers to build Python packages using PEP 517 hooks
-WWW=		https://github.com/pypa/pep517
+WWW=		https://pyproject-hooks.readthedocs.io/en/latest/ \
+		https://github.com/pypa/pyproject-hooks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
