@@ -1,6 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	9.0.1
 DISTVERSIONPREFIX=	frr-
+PORTREVISION=	1
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	9-pythontools
@@ -24,15 +25,14 @@ USES=	python:run shebangfix
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
 		-e 's|/usr/bin|${PREFIX}/bin|g' \
-		-e 's|/usr/local/bin/tail|${TAIL}|g' \
 		${WRKSRC}/tools/frr-reload.py
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
 		${WRKSRC}/tools/generate_support_bundle.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/frr-reload.py ${STAGEDIR}/${PREFIX}/sbin/
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/generate_support_bundle.py ${STAGEDIR}/${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/frr-reload.py ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/generate_support_bundle.py ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_DATA} ${WRKSRC}/tools/etc/frr/support_bundle_commands.conf ${STAGEDIR}${ETCDIR}/
 .else
 
@@ -135,7 +135,7 @@ SHEBANG_FILES=	yang/embedmodel.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/frr|${ETCDIR}|g' \
-		-e 's|/usr/lib/|${PREFIX}/lib/|g' \
+		-e 's|/usr/lib/frr|${PREFIX}/sbin|g' \
 		-e 's|frr-pythontools|frr9-pythontools|g' \
 		${WRKSRC}/tools/frr-reload
 
