@@ -1,12 +1,12 @@
 PORTNAME=	google-cloud-dlp
-PORTVERSION=	3.12.3
+PORTVERSION=	3.13.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cloud Data Loss Prevention (DLP) API API client library
-WWW=		https://github.com/googleapis/python-dlp
+WWW=		https://github.com/googleapis/google-cloud-python/tree/main/packages/google-cloud-dlp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
