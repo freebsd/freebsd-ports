@@ -1,0 +1,11 @@
+--- google-cloud-storage.gemspec.orig	2023-01-05 23:43:22 UTC
++++ google-cloud-storage.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<google-cloud-core>.freeze, ["~> 1.6"])
+   s.add_runtime_dependency(%q<google-apis-iamcredentials_v1>.freeze, ["~> 0.1"])
+-  s.add_runtime_dependency(%q<google-apis-storage_v1>.freeze, ["~> 0.19.0"])
++  s.add_runtime_dependency(%q<google-apis-storage_v1>.freeze, ["~> 0.19"])
+   s.add_runtime_dependency(%q<googleauth>.freeze, [">= 0.16.2", "< 2.a"])
+   s.add_runtime_dependency(%q<digest-crc>.freeze, ["~> 0.4"])
+   s.add_runtime_dependency(%q<addressable>.freeze, ["~> 2.8"])
