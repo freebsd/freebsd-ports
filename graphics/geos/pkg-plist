@@ -479,5 +479,5 @@ lib/libgeos.so
 lib/libgeos.so.%%PORTVERSION%%
 lib/libgeos_c.so
 lib/libgeos_c.so.1
-lib/libgeos_c.so.1.18.0
+lib/libgeos_c.so.1.18.1
 libdata/pkgconfig/geos.pc
