@@ -1,5 +1,5 @@
-TIMESTAMP = 1699774616
-SHA256 (ddtrace-1.20.10.tar.gz) = 80ca4d4b84df34a29c493122e1963c26d69dbfbaaefc439835f1fa5c1f50d058
-SIZE (ddtrace-1.20.10.tar.gz) = 6094514
+TIMESTAMP = 1699985579
+SHA256 (ddtrace-2.1.6.tar.gz) = db2fb526306b84b0f6e0782a4bd54ac4aa78f9001adff85fbe6320e8b1186a5c
+SIZE (ddtrace-2.1.6.tar.gz) = 6326223
 SHA256 (abseil-abseil-cpp-20230802.1_GH0.tar.gz) = 987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed
 SIZE (abseil-abseil-cpp-20230802.1_GH0.tar.gz) = 2157158
