@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_FreeBSD_12_powerpc64=	fails to configure on powerpc64 elfv1: *** unable to locate pcrecpp library ***
 
 BUILD_DEPENDS=	bash:shells/bash \
-		utf8cpp>0:devel/utf8cpp
+		utf8cpp3>0:devel/utf8cpp3
 LIB_DEPENDS=	libicudata.so:devel/icu \
 		liblttoolbox.so:textproc/lttoolbox \
 		libpcre.so:devel/pcre
