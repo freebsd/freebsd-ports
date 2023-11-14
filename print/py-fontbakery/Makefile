@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	print python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -63,7 +63,7 @@ GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.3.0:x11-fonts/py-
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
 ISO15008_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0:print/py-uharfbuzz@${PY_FLAVOR}
 SHAPING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}collidoscope>=0.5.2:print/py-collidoscope@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.2.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}stringbrewer>=0:devel/py-stringbrewer@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.25.2:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
