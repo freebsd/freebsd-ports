@@ -74,6 +74,7 @@ USE_WX=		3.2
 USE_QT=		buildtools core gui xml qmake widgets
 WX_COMPS=	wx python:run
 USE_LDCONFIG=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft\
 		filter pmt qtgui runtime trellis video-sdl\
 		vocoder wavelet
