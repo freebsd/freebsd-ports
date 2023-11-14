@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6'>
+  <node id='1' lat='45' lon='35' version='1' timestamp='2023-01-01T00:00:00Z'/>
+  <node id='2' lat='45' lon='35' version='1' timestamp='2023-01-01T00:00:00Z'/>
+  <node id='3' lat='46' lon='34' version='1' timestamp='2023-01-01T00:00:00Z'/>
+  <node id='4' lat='46' lon='36' version='1' timestamp='2023-01-01T00:00:00Z'/>
+  <way id='5' version='1' timestamp='2023-01-01T00:00:00Z'>
+    <nd ref='1'/>
+    <nd ref='3'/>
+    <tag k='waterway' v='river'/>
+  </way>
+  <way id='6' version='1' timestamp='2023-01-01T00:00:00Z'>
+    <nd ref='2'/>
+    <nd ref='4'/>
+    <tag k='highway' v='primary'/>
+  </way>
+</osm>

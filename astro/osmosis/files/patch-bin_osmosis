@@ -1,0 +1,57 @@
+--- bin/osmosis.orig	2023-11-03 11:05:00 UTC
++++ bin/osmosis
+@@ -67,23 +67,10 @@
+ # Resolve links: $0 may be a link
+ app_path=$0
+ 
+-# Need this for daisy-chained symlinks.
+-while
+-    APP_HOME=${app_path%"${app_path##*/}"}  # leaves a trailing /; empty if no leading path
+-    [ -h "$app_path" ]
+-do
+-    ls=$( ls -ld "$app_path" )
+-    link=${ls#*' -> '}
+-    case $link in             #(
+-      /*)   app_path=$link ;; #(
+-      *)    app_path=$APP_HOME$link ;;
+-    esac
+-done
+-
+ # This is normally unused
+ # shellcheck disable=SC2034
+ APP_BASE_NAME=${0##*/}
+-APP_HOME=$( cd "${APP_HOME:-./}.." && pwd -P ) || exit
++APP_HOME=%%DATADIR%%
+ 
+ # Use the maximum available, or set MAX_FD != -1 to use that value.
+ MAX_FD=maximum
+@@ -113,28 +100,7 @@ esac
+ 
+ CLASSPATH=$APP_HOME/lib/osmosis-0.49.0.jar:$APP_HOME/lib/osmosis-extract-0.49.0.jar:$APP_HOME/lib/osmosis-apidb-0.49.0.jar:$APP_HOME/lib/osmosis-areafilter-0.49.0.jar:$APP_HOME/lib/osmosis-dataset-0.49.0.jar:$APP_HOME/lib/osmosis-pbf-0.49.0.jar:$APP_HOME/lib/osmosis-pbf2-0.49.0.jar:$APP_HOME/lib/osmosis-pgsimple-0.49.0.jar:$APP_HOME/lib/osmosis-pgsnapshot-0.49.0.jar:$APP_HOME/lib/osmosis-replication-0.49.0.jar:$APP_HOME/lib/osmosis-set-0.49.0.jar:$APP_HOME/lib/osmosis-tagfilter-0.49.0.jar:$APP_HOME/lib/osmosis-tagtransform-0.49.0.jar:$APP_HOME/lib/osmosis-xml-0.49.0.jar:$APP_HOME/lib/osmosis-core-0.49.0.jar:$APP_HOME/lib/commons-dbcp-1.4.jar:$APP_HOME/lib/spring-jdbc-5.3.30.jar:$APP_HOME/lib/postgis-jdbc-2021.1.0.jar:$APP_HOME/lib/osmosis-hstore-jdbc-0.49.0.jar:$APP_HOME/lib/postgresql-42.6.0.jar:$APP_HOME/lib/osmpbf-1.5.0.jar:$APP_HOME/lib/mysql-connector-j-8.0.33.jar:$APP_HOME/lib/protobuf-java-3.25.0.jar:$APP_HOME/lib/guava-32.1.3-jre.jar:$APP_HOME/lib/commons-io-2.15.0.jar:$APP_HOME/lib/commons-csv-1.10.0.jar:$APP_HOME/lib/commons-codec-1.16.0.jar:$APP_HOME/lib/commons-compress-1.24.0.jar:$APP_HOME/lib/commons-pool-1.5.4.jar:$APP_HOME/lib/spring-tx-5.3.30.jar:$APP_HOME/lib/spring-beans-5.3.30.jar:$APP_HOME/lib/spring-core-5.3.30.jar:$APP_HOME/lib/checker-qual-3.37.0.jar:$APP_HOME/lib/failureaccess-1.0.1.jar:$APP_HOME/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:$APP_HOME/lib/jsr305-3.0.2.jar:$APP_HOME/lib/error_prone_annotations-2.21.1.jar:$APP_HOME/lib/postgis-geometry-2021.1.0.jar:$APP_HOME/lib/slf4j-api-1.7.32.jar:$APP_HOME/lib/spring-jcl-5.3.30.jar
+ 
+-
+-# Determine the Java command to use to start the JVM.
+-if [ -n "$JAVA_HOME" ] ; then
+-    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+-        # IBM's JDK on AIX uses strange locations for the executables
+-        JAVACMD=$JAVA_HOME/jre/sh/java
+-    else
+-        JAVACMD=$JAVA_HOME/bin/java
+-    fi
+-    if [ ! -x "$JAVACMD" ] ; then
+-        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+-
+-Please set the JAVA_HOME variable in your environment to match the
+-location of your Java installation."
+-    fi
+-else
+-    JAVACMD=java
+-    which java >/dev/null 2>&1 || die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+-
+-Please set the JAVA_HOME variable in your environment to match the
+-location of your Java installation."
+-fi
++JAVACMD=%%JAVA%%
+ 
+ # Increase the maximum file descriptors if we can.
+ if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
