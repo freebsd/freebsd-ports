@@ -7777,6 +7777,7 @@
     SUBDIR += upslug
     SUBDIR += urjtag
     SUBDIR += utf8cpp
+    SUBDIR += utf8cpp3
     SUBDIR += uthash
     SUBDIR += util-linux
     SUBDIR += valgrind
