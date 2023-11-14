@@ -1,10 +1,12 @@
 bin/labelgrep
 bin/miniquark
+bin/renv
 bin/rinstall
 bin/rset
 bin/rsub
 share/man/man1/labelgrep.1.gz
 share/man/man1/miniquark.1.gz
+share/man/man1/renv.1.gz
 share/man/man1/rinstall.1.gz
 share/man/man1/rset.1.gz
 share/man/man1/rsub.1.gz
