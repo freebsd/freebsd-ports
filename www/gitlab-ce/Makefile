@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.5.1
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -106,7 +106,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-fog-local>=0.8<1.0:net/rubygem-fog-local \
 	rubygem-fog-aliyun>=0.4<1.0:net/rubygem-fog-aliyun \
 	rubygem-gitlab-fog-azure-rm>=1.8.0<1.9:net/rubygem-gitlab-fog-azure-rm \
-	rubygem-google-cloud-storage>=1.44.0<1.45:net/rubygem-google-cloud-storage \
+	rubygem-google-cloud-storage144>=1.44.0<1.45:net/rubygem-google-cloud-storage144 \
 	rubygem-google-apis-core>=0.10.0<0.12:devel/rubygem-google-apis-core \
 	rubygem-google-apis-compute_v1_057>=0.57.0<0.58:devel/rubygem-google-apis-compute_v1_057 \
 	rubygem-google-apis-container_v1>=0.43.0<0.44:devel/rubygem-google-apis-container_v1 \
