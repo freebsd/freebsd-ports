@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-11-09 01:11:37 UTC
++++ pyproject.toml
+@@ -54,7 +54,7 @@ dependencies = [
+     "pyhanko-certvalidator>=0.19.5",
+     "pypdf>=3.1.0",
+     "python-bidi>=0.4.2",
+-    "reportlab[pycairo]>=4.0.4",
++    "reportlab[pycairo]>=3.6",
+     "svglib>=1.2.1",
+ ]
+ dynamic = ["version"]
