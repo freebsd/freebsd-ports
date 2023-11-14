@@ -21,7 +21,7 @@ RUN_DEPENDS=	ninja>=1.10.2:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}importlab>=0.8:devel/py-importlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libcst>=1.0.1:devel/py-libcst@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}networkx>=0,1<3.2,1:math/py-networkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}networkx>=0,1:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycnite>=2023.10.11:devel/py-pycnite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydot>=1.4.2:graphics/py-pydot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.9:devel/py-tabulate@${PY_FLAVOR} \
