@@ -8,7 +8,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Package management framework for the Ruby language
-WWW=		https://rubygems.org/
+WWW=		https://rubygems.org/ \
+		https://github.com/rubygems/rubygems
 
 LICENSE=	MIT RUBY
 LICENSE_COMB=	dual
