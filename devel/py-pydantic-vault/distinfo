@@ -1,3 +1,3 @@
-TIMESTAMP = 1695357787
-SHA256 (pydantic_vault-0.8.0.tar.gz) = 9fb0f136100f9f82bc49b8808a3bc88fa65b50ec27d5dc07cf907abe157e9e5e
-SIZE (pydantic_vault-0.8.0.tar.gz) = 15471
+TIMESTAMP = 1699774628
+SHA256 (pydantic_vault-1.0.0.tar.gz) = 82cdfd804e5b5e1597ef98e6181a967472beeb43d03832154df755788e9f395e
+SIZE (pydantic_vault-1.0.0.tar.gz) = 15628
