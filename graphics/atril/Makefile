@@ -3,7 +3,7 @@
 
 PORTNAME=	atril
 PORTVERSION=	1.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
 LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libtiff.so:graphics/tiff \
@@ -81,7 +81,7 @@ XPS_LIB_DEPENDS=	libgxps.so:graphics/libgxps
 
 EPUB_DESC=		Epub support
 EPUB_CONFIGURE_ENABLE=	epub
-EPUB_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3
+EPUB_LIB_DEPENDS=	libwebkit2gtk-4.1.so:www/webkit2-gtk3
 
 DVI_DESC=		DVI viewer support
 DVI_USES=		tex
