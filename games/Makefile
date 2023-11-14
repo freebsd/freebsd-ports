@@ -545,6 +545,7 @@
     SUBDIR += libretro-play
     SUBDIR += libretro-prboom
     SUBDIR += libretro-prosystem
+    SUBDIR += libretro-puae
     SUBDIR += libretro-px68k
     SUBDIR += libretro-quicknes
     SUBDIR += libretro-scummvm
@@ -556,7 +557,6 @@
     SUBDIR += libretro-stella2014
     SUBDIR += libretro-tgbdual
     SUBDIR += libretro-tyrquake
-    SUBDIR += libretro-puae
     SUBDIR += libretro-vba_next
     SUBDIR += libretro-vecx
     SUBDIR += libretro-virtualjaguar
@@ -812,9 +812,9 @@
     SUBDIR += qonk
     SUBDIR += qqwing
     SUBDIR += qstat
+    SUBDIR += quackle
     SUBDIR += quadra
     SUBDIR += quadrapassel
-    SUBDIR += quackle
     SUBDIR += quake-data
     SUBDIR += quake-dpmod
     SUBDIR += quake-source

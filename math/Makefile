@@ -276,9 +276,9 @@
     SUBDIR += dionysus
     SUBDIR += disco
     SUBDIR += dqfun
-    SUBDIR += dsfmt
     SUBDIR += drgeo
     SUBDIR += dsdp
+    SUBDIR += dsfmt
     SUBDIR += dune-alugrid
     SUBDIR += dune-common
     SUBDIR += dune-curvedgeometry
