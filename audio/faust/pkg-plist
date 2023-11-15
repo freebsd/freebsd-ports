@@ -268,7 +268,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.68.1
+lib/libfaust.so.2.69.3
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -400,7 +400,6 @@ lib/libfaust.so.2.68.1
 %%DATADIR%%/ca-qt.cpp
 %%DATADIR%%/cmajor/Makefile
 %%DATADIR%%/cmajor/README.md
-%%DATADIR%%/cmajor/Using-Faust-in-Cmajor.md
 %%DATADIR%%/cmajor/cmajor-faust-editor.cpp
 %%DATADIR%%/cmajor/cmajor-faust-player.cpp
 %%DATADIR%%/cmajor/cmajor-faust-tester.cpp
