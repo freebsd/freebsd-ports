@@ -22,8 +22,8 @@ LICENSE_PERMS_BEERWARE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		fuse tar:bz2
 USE_LDCONFIG=	yes
 
-REVISION_DATE=	20230720
-REVISION_HASH=	4d49ab2
+REVISION_DATE=	20231114
+REVISION_HASH=	7683255
 
 MAKE_ENV=	MANDIR=\${PREFIX}/man
 INSTALL_TARGET=	install-commands install-dev
