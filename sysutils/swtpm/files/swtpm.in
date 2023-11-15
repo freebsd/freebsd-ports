@@ -1,0 +1,120 @@
+#!/bin/sh
+
+# PROVIDE: swtpm
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local, /etc/rc.conf or
+# /etc/rc.conf.d/swtpm to enable this service:
+#
+# swtpm_enable (bool):    Set to NO by default.
+#                               Set it to "YES" to enable swtpm.
+# swtpm_configs (string): List of configurations to use
+#                               Default is "tpm"
+# swtpm_tpm (string):     Arguments passed to swtpm config named tpm
+
+. /etc/rc.subr
+
+name=swtpm
+desc="Software TPM manager"
+rcvar=${name}_enable
+start_precmd="${name}_precmd"
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+command="%%PREFIX%%/bin/swtpm"
+command_args="socket"
+pidpath="/var/run/${name}"
+
+# required_modules="cuse"
+swtpm_default_args="\
+  --daemon \
+  --tpmstate dir=${pidpath} \
+  --tpm2 \
+  --log level=20"
+configs=
+
+load_rc_config $name
+
+: ${swtpm_enable:="NO"}
+: ${swtpm_configs:="tpm"}
+: ${swtpm_tpm:="$swtpm_default_args"}
+
+swtpm_pids()
+{
+  pids=$(pgrep -d ' ' $name)
+  pids=${pids% }
+  printf "${pids}"
+}
+
+swtpm_precmd()
+{
+  /usr/bin/install -d -m 0755 -o root ${pidpath}
+}
+
+start_instance()
+{
+  config=$*
+  instance_args=$(eval "echo \$swtpm_${config}")
+  if [ -z "${instance_args}" ]; then
+    echo "No such config ${config}"
+  else
+    echo -n "Starting SWTPM config ${config} ..."
+    ${command} \
+      ${command_args} \
+      --pid file=${pidpath}/${config}.pid \
+      --ctrl type=unixio,path=${pidpath}/${config} \
+      ${instance_args}
+    echo " done"
+  fi
+}
+
+stop_instance()
+{
+  config=$*
+  instance_args=`eval "echo \$swtpm_${config}"`
+  if [ -z "${instance_args}" ]; then
+    echo "No such config ${config}"
+  elif [ -e "${pidpath}/${config}.pid" ]; then
+    pid=$(check_pidfile ${pidpath}/${config}.pid %%PREFIX%%/bin/swtpm)
+    if [ ! -z "${pid}" ]; then
+      echo -n "Stopping SWTPM config ${config} ... "
+      kill $pid
+      rm -f ${pidpath}/${config}.pid
+      echo "done"
+    fi
+  fi
+}
+
+swtpm_start()
+{
+  configs=$*
+  [ -z "${configs}" ] && configs="${swtpm_configs}"
+  for config in ${configs}; do
+    start_instance $config
+  done
+}
+
+swtpm_stop()
+{
+  configs=$*
+  [ -z "${configs}" ] && configs="${swtpm_configs}"
+  for config in ${configs}; do
+    stop_instance ${config}
+  done
+}
+
+swtpm_status()
+{
+  pids=$(swtpm_pids)
+
+  if [ "${pids}" ]; then
+    echo "${name} is running as pid ${pids}."
+  else
+    echo "${name} is not running."
+    return 1
+  fi
+}
+
+run_rc_command $*
