@@ -5,9 +5,9 @@ COMMENT?=	Qt bindings to AppStream
 
 LIB_DEPENDS=	libappstream.so:devel/appstream
 
-USES=		qt:5
+USES=		qt:6
 
-USE_QT=		core buildtools:build qmake:build testlib:build
+USE_QT=		base tools:build
 
 MESON_ARGS=	-Dqt=true
 

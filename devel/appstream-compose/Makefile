@@ -1,9 +1,12 @@
-PORTREVISION=	1
+PORTREVISION=	0
 PKGNAMESUFFIX=	Compose
 
 COMMENT?=	AppStream Compose application and library
 
-LIB_DEPENDS=	libappstream.so:devel/appstream
+LIB_DEPENDS=	libappstream.so:devel/appstream \
+		libfreetype.so:print/freetype2 \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libyaml.so:textproc/libyaml
 
 USE_GNOME=	cairo gdkpixbuf2 librsvg2 pango
 
