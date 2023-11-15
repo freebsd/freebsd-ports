@@ -1,12 +1,12 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+DISTVERSION=	9.16.45
 PORTREVISION=	0
 CATEGORIES=	dns net
-MASTER_SITES=	ISC/bind9/${ISCVERSION}
+MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMESUFFIX=	916
-DISTNAME=	${PORTNAME}-${ISCVERSION}
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
@@ -24,13 +24,11 @@ LIB_DEPENDS=	libuv.so:devel/libuv \
 RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
-# ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.44
 
 CPE_VENDOR=	isc
-CPE_VERSION=	${ISCVERSION:C/-.*//}
-.if ${ISCVERSION:M*-*}
-CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
+CPE_VERSION=	${DISTVERSION:C/-.*//}
+.if ${DISTVERSION:M*-*}
+CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
 
 GNU_CONFIGURE=	yes
