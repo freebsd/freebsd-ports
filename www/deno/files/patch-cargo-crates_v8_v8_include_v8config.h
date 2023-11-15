@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.79.2/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
-+++ cargo-crates/v8-0.79.2/v8/include/v8config.h
+--- cargo-crates/v8-0.81.0/v8/include/v8config.h.orig	2020-06-26 16:28:04 UTC
++++ cargo-crates/v8-0.81.0/v8/include/v8config.h
 @@ -345,7 +345,18 @@ path. Add it with -I<path> to the command line
      (V8_HAS_CPP_ATTRIBUTE(no_unique_address))
  

@@ -1,6 +1,6 @@
 --- Cargo.lock.orig	2023-06-21 07:20:01 UTC
 +++ Cargo.lock
-@@ -1377,6 +1377,7 @@ dependencies = [
+@@ -1567,6 +1567,7 @@ dependencies = [
   "ring",
   "serde",
   "signal-hook-registry",
@@ -8,10 +8,10 @@
   "termcolor",
   "test_util",
   "tokio",
-@@ -5096,6 +5097,20 @@ dependencies = [
-  "quote 1.0.26",
-  "syn 1.0.109",
-  "unicode-xid 0.2.4",
+@@ -1575,6 +1576,20 @@ dependencies = [
+  "which",
+  "winapi",
+  "winres",
 +]
 +
 +[[package]]
