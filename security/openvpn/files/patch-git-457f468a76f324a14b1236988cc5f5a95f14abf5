@@ -1,0 +1,89 @@
+From 457f468a76f324a14b1236988cc5f5a95f14abf5 Mon Sep 17 00:00:00 2001
+From: Aquila Macedo <aquilamacedo@riseup.net>
+Date: Thu, 19 Oct 2023 16:40:49 -0300
+Subject: [PATCH] doc: Correct typos in multiple documentation files
+
+Fixed typographical errors in various documentation files for improved clarity and readability.
+
+Signed-off-by: Aquila Macedo <aquilamacedo@riseup.net>
+Acked-by: Frank Lichtenheld <frank@lichtenheld.com>
+Message-Id: <4a3a9f1d691704f25f07653bb0de2583@riseup.net>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg27320.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+(cherry picked from commit 20c42b89f6d38a4426b5fe67f59acaadcb9ac314)
+---
+ doc/man-sections/client-options.rst      | 4 ++--
+ doc/man-sections/generic-options.rst     | 2 +-
+ doc/man-sections/server-options.rst      | 2 +-
+ doc/man-sections/vpn-network-options.rst | 2 +-
+ src/openvpn/options.c                    | 2 +-
+ 5 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/doc/man-sections/client-options.rst b/doc/man-sections/client-options.rst
+index 3616ed7f3f8..54c4ec63073 100644
+--- ./doc/man-sections/client-options.rst
++++ b/doc/man-sections/client-options.rst
+@@ -51,9 +51,9 @@ configuration.
+   react according to ``--auth-retry``
+ 
+ --auth-token-user base64username
+-  Companion option to ``--auth-token``. This options allows to override
++  Companion option to ``--auth-token``. This options allows one to override
+   the username used by the client when reauthenticating with the ``auth-token``.
+-  It also allows to use ``--auth-token`` in setups that normally do not use
++  It also allows one to use ``--auth-token`` in setups that normally do not use
+   username and password.
+ 
+   The username has to be base64 encoded.
+diff --git a/doc/man-sections/generic-options.rst b/doc/man-sections/generic-options.rst
+index 97e1b5aa610..95e4ca233bd 100644
+--- ./doc/man-sections/generic-options.rst
++++ b/doc/man-sections/generic-options.rst
+@@ -483,7 +483,7 @@ which mode OpenVPN is configured as.
+ 
+   * :code:`OPENVPN_PLUGIN_AUTH_USER_PASS_VERIFY` plug-in hooks returns
+     success/failure via :code:`auth_control_file` when using deferred auth
+-    method and pending authentification via :code:`pending_auth_file`.
++    method and pending authentication via :code:`pending_auth_file`.
+ 
+ --use-prediction-resistance
+   Enable prediction resistance on mbed TLS's RNG.
+diff --git a/doc/man-sections/server-options.rst b/doc/man-sections/server-options.rst
+index 6b9ad21b816..e7a7b2dba43 100644
+--- ./doc/man-sections/server-options.rst
++++ b/doc/man-sections/server-options.rst
+@@ -739,7 +739,7 @@ fast hardware. SSL/TLS authentication must be used in this mode.
+ 
+ --vlan-pvid v
+   Specifies which VLAN identifier a "port" is associated with. Only valid
+-  when ``--vlan-tagging`` is speficied.
++  when ``--vlan-tagging`` is specified.
+ 
+   In the client context, the setting specifies which VLAN ID a client is
+   associated with. In the global context, the VLAN ID of the server TAP
+diff --git a/doc/man-sections/vpn-network-options.rst b/doc/man-sections/vpn-network-options.rst
+index 3fa3ccf1073..41d367bfd0e 100644
+--- ./doc/man-sections/vpn-network-options.rst
++++ b/doc/man-sections/vpn-network-options.rst
+@@ -548,7 +548,7 @@ routing.
+   It's best to use the ``--fragment`` and/or ``--mssfix`` options to deal
+   with MTU sizing issues.
+ 
+-  Note: Depending on the platform, the operating system allows to receive
++  Note: Depending on the platform, the operating system allows one to receive
+   packets larger than ``tun-mtu`` (e.g. Linux and FreeBSD) but other platforms
+   (like macOS) limit received packets to the same size as the MTU.
+ 
+diff --git a/src/openvpn/options.c b/src/openvpn/options.c
+index 631ac73db8f..895ce830f6a 100644
+--- ./src/openvpn/options.c
++++ b/src/openvpn/options.c
+@@ -598,7 +598,7 @@ static const char usage_message[] =
+     "                  Windows Certificate System Store.\n"
+ #endif
+     "--tls-cipher l  : A list l of allowable TLS ciphers separated by : (optional).\n"
+-    "--tls-ciphersuites l: A list of allowed TLS 1.3 cipher suites seperated by : (optional)\n"
++    "--tls-ciphersuites l: A list of allowed TLS 1.3 cipher suites separated by : (optional)\n"
+     "                : Use --show-tls to see a list of supported TLS ciphers (suites).\n"
+     "--tls-cert-profile p : Set the allowed certificate crypto algorithm profile\n"
+     "                  (default=legacy).\n"

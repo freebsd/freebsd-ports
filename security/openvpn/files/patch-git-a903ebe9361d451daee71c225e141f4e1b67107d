@@ -1,0 +1,48 @@
+From a903ebe9361d451daee71c225e141f4e1b67107d Mon Sep 17 00:00:00 2001
+From: Arne Schwabe <arne@rfc2549.org>
+Date: Wed, 15 Nov 2023 11:33:31 +0100
+Subject: [PATCH] Do not check key_state buffers that are in S_UNDEF state
+
+When a key_state is in S_UNDEF the send_reliable is not initialised. So
+checking it might access invalid memory or null pointers.
+
+Github: fixes OpenVPN/openvpn#449
+
+Change-Id: I226a73d47a2b1b29f7ec175ce23a806593abc2ac
+[a@unstable.cc: add check for !send_reliable and message]
+Signed-off-by: Arne Schwabe <arne@rfc2549.org>
+Acked-by: Gert Doering <gert@greenie.muc.de>
+Message-Id: <20231115103331.18050-1-gert@greenie.muc.de>
+URL: https://www.mail-archive.com/openvpn-devel@lists.sourceforge.net/msg27401.html
+Signed-off-by: Gert Doering <gert@greenie.muc.de>
+---
+ src/openvpn/ssl.c | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/src/openvpn/ssl.c b/src/openvpn/ssl.c
+index cee4afe19f3..b4cd8f5a567 100644
+--- ./src/openvpn/ssl.c
++++ b/src/openvpn/ssl.c
+@@ -3189,6 +3189,22 @@ check_session_buf_not_used(struct buffer *to_link, struct tls_session *session)
+     for (int i = 0; i < KS_SIZE; i++)
+     {
+         struct key_state *ks = &session->key[i];
++        if (ks->state == S_UNDEF)
++        {
++            continue;
++        }
++
++        /* we don't expect send_reliable to be NULL when state is
++         * not S_UNDEF, but people have reported crashes nonetheless,
++         * therefore we better catch this event, report and exit.
++         */
++        if (!ks->send_reliable)
++        {
++            msg(M_FATAL, "ERROR: session->key[%d]->send_reliable is NULL "
++                "while key state is %s. Exiting.",
++                i, state_name(ks->state));
++        }
++
+         for (int j = 0; j < ks->send_reliable->size; j++)
+         {
+             if (ks->send_reliable->array[i].buf.data == dataptr)
