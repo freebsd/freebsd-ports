@@ -21,7 +21,7 @@ LIB_DEPENDS=	libaxom.so:science/axom \
 		libqhull_r.so:math/qhull \
 		libsiloh5.so:science/silo
 
-USES=		cmake:testing compiler:c++14-lang eigen:3 fortran lua mpi:mpich python
+USES=		cmake:testing compiler:c++14-lang eigen:3 fortran localbase:ldflags lua mpi:mpich python
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
