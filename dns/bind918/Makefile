@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-PORTVERSION=	${ISCVERSION:S/-P/P/:S/b/.b/:S/a/.a/:S/rc/.rc/}
+DISTVERSION=	9.18.20
 .if defined(BIND_TOOLS_SLAVE)
 # dns/bind-tools here
 PORTREVISION=	0
@@ -10,13 +10,12 @@ PORTREVISION=	0
 PORTREVISION=	0
 .endif
 CATEGORIES=	dns net
-MASTER_SITES=	ISC/bind9/${ISCVERSION}
+MASTER_SITES=	ISC/bind9/${DISTVERSION}
 .if defined(BIND_TOOLS_SLAVE)
 PKGNAMESUFFIX=	-tools
 .else
 PKGNAMESUFFIX=	918
 .endif
-DISTNAME=	${PORTNAME}-${ISCVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 WWW=		https://www.isc.org/bind/
@@ -43,13 +42,11 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 .endif
 
 USES=		autoreconf compiler:c11 cpe libedit libtool pkgconfig ssl tar:xz
-# ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.18.19
 
 CPE_VENDOR=	isc
-CPE_VERSION=	${ISCVERSION:C/-.*//}
-.if ${ISCVERSION:M*-*}
-CPE_UPDATE=	${ISCVERSION:C/.*-//:tl}
+CPE_VERSION=	${DISTVERSION:C/-.*//}
+.if ${DISTVERSION:M*-*}
+CPE_UPDATE=	${DISTVERSION:C/.*-//:tl}
 .endif
 
 GNU_CONFIGURE=	yes
