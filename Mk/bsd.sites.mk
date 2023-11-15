@@ -102,7 +102,6 @@ MASTER_SITE_CRAN+= \
 	https://cloud.r-project.org/%SUBDIR%/ \
 	https://stat.ethz.ch/CRAN/%SUBDIR%/ \
 	http://cran.utstat.utoronto.ca/%SUBDIR%/ \
-	https://cran.cnr.berkeley.edu/%SUBDIR%/ \
 	https://cran.csiro.au/%SUBDIR%/ \
 	https://mirrors.tuna.tsinghua.edu.cn/CRAN/%SUBDIR%/ \
 	http://camoruco.ing.uc.edu.ve/cran/%SUBDIR%/ \
@@ -740,8 +739,6 @@ MASTER_SITE_NETBSD+= \
 .if !defined(IGNORE_MASTER_SITE_NETLIB)
 MASTER_SITE_NETLIB+= \
 	http://www.netlib.org/%SUBDIR%/ \
-	https://ftp.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
-	https://www.mirrorservice.org/sites/ftp.netlib.org/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/netlib/%SUBDIR%/ \
 	http://netlib.sandia.gov/%SUBDIR%/
 .endif
@@ -1067,7 +1064,6 @@ MASTER_SITE_XORG+= \
 	https://mi.mirror.garr.it/mirrors/x.org/%SUBDIR%/ \
 	https://mirrors.ircam.fr/pub/x.org/%SUBDIR%/ \
 	https://www.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
-	https://mirror.nl.leaseweb.net/xorg/%SUBDIR%/ \
 	https://ftp.yz.yamagata-u.ac.jp/pub/X11/x.org/%SUBDIR%/ \
 	http://piotrkosoft.net/pub/mirrors/ftp.x.org/pub/%SUBDIR%/ \
 	http://xorg.mirrors.pair.com/%SUBDIR%/ \
