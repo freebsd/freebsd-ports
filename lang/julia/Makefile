@@ -1,7 +1,7 @@
 PORTNAME=	julia
 DISTVERSION=	1.9.3
-PORTREVISION=	4
 DISTVERSIONSUFFIX=	-full
+PORTREVISION=	5
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -19,6 +19,7 @@ MY_DEPENDS=	7zz:archivers/7-zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		cmake:devel/cmake-core \
 		ittapi>0:devel/ittapi \
+		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}	\
 		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libdSFMT.so:math/dsfmt \
@@ -32,9 +33,12 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnghttp2.so:www/libnghttp2 \
 		libunwind.so:devel/libunwind \
 		libopenlibm.so:math/openlibm
-RUN_DEPENDS=	${MY_DEPENDS}
+RUN_DEPENDS=	${MY_DEPENDS} \
+		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
 
-USES=		gmake cpe fortran python perl5 blaslapack:openblas
+# Do not set USES=fortran to avoid extra-linkage
+USES=		gmake cpe python perl5 blaslapack:openblas
+_GCC_VER=	${GCC_DEFAULT:S/.//}
 
 CPE_VENDOR=	julialang
 
@@ -98,7 +102,7 @@ pre-configure:
 	# unset ARCH for auto-detection
 	# Julia build script uses the name x86_86/x86, which are different from ports framework
 	echo "ARCH=" >> ${WRKSRC}/Make.user
-	echo "LIBBLAS=-lopenblas -L${LOCALBASE}/lib" >> ${WRKSRC}/Make.user
+	echo "LIBBLAS= -L${LOCALBASE}/lib -lopenblas" >> ${WRKSRC}/Make.user
 	echo "LIBBLASNAME=libopenblas" >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACK= $$(LIBBLAS)' >> ${WRKSRC}/Make.user
 	echo 'LIBLAPACKNAME= $$(LIBBLASNAME)' >> ${WRKSRC}/Make.user
@@ -132,7 +136,6 @@ post-install-DEBUG-off:
 .for bin in lld dsymutil
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
 .endfor
-	${FIND} ${STAGEDIR}${PREFIX}/share/julia/compiled -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
