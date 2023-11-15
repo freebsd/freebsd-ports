@@ -34,7 +34,7 @@ LIB_DEPENDS=	libtbb.so:devel/onetbb \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libfreetype.so:print/freetype2 \
-		libavcodec.so:multimedia/ffmpeg \
+		libavcodec.so:multimedia/ffmpeg4 \
 		libharfbuzz.so:print/harfbuzz \
 		libwayland-egl.so:graphics/wayland
 
