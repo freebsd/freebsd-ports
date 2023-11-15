@@ -48,8 +48,8 @@ LIB_DEPENDS=	libcodec2.so:audio/codec2 \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cmake compiler:c++11-lang desktop-file-utils fortran gnome \
-		iconv perl5 pkgconfig pyqt:5 python qt:5 shared-mime-info \
-		shebangfix
+		iconv localbase:ldflags perl5 pkgconfig pyqt:5 python \
+		qt:5 shared-mime-info shebangfix
 
 SHEBANG_FILES=	grc/scripts/freedesktop/grc_setup_freedesktop.in \
 		gnuradio-runtime/python/gnuradio/ctrlport/gr-ctrlport-monitor \
@@ -74,7 +74,6 @@ USE_WX=		3.2
 USE_QT=		buildtools core gui xml qmake widgets
 WX_COMPS=	wx python:run
 USE_LDCONFIG=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib
 LIBSTRIP_FILES=	analog audio blocks channels digital dtv fec fft\
 		filter pmt qtgui runtime trellis video-sdl\
 		vocoder wavelet
