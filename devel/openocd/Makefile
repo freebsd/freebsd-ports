@@ -3,7 +3,7 @@ PORTVERSION=	0.12.0
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	skreuzer@FreeBSD.org
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Open On-Chip Debugger
 WWW=		http://openocd.sf.net/
 
