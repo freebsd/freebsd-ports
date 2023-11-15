@@ -1,5 +1,5 @@
 PORTNAME=	rss-bridge
-DISTVERSION=	2023-07-13
+DISTVERSION=	2023-09-24
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -36,6 +36,7 @@ do-install:
 	    -or -name composer.lock -or -name docker-bake.hcl \
 	    -or -name docker-entrypoint.sh \
 	    -or -path ./config -or -path ./config/nginx.conf \
+	    -or -path ./config/php-fpm.conf -or -path ./config/php.ini \
 	    -or -regex ./.devcontainer.* -or -regex ./contrib.* \
 	    -or -regex ./doc.* -or -regex ./static/screenshot_.* \
 	    -or -regex ./static/screenshot-.* ) \
