@@ -20,8 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0:devel/py-colorama@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	qt6 qt5
+FLAVOR?=	${FLAVORS:[1]}
 
 USES=		cpe desktop-file-utils python
 USE_PYQT=	webengine
