@@ -1421,6 +1421,7 @@
     SUBDIR += py-markups
     SUBDIR += py-markupsafe
     SUBDIR += py-mathics-pygments
+    SUBDIR += py-mdformat
     SUBDIR += py-mdit-py-plugins
     SUBDIR += py-mdurl
     SUBDIR += py-merge3
