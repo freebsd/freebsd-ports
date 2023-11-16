@@ -1,0 +1,13 @@
+--- qt/cmake/AppStreamQt5Config.cmake.in.orig	2023-11-11 18:48:36 UTC
++++ qt/cmake/AppStreamQt5Config.cmake.in
+@@ -32,8 +32,8 @@ set_target_properties(AppStreamQt PROPERTIES
+ set_target_properties(AppStreamQt PROPERTIES
+   INTERFACE_INCLUDE_DIRECTORIES "${PACKAGE_PREFIX_DIR}/include/"
+   INTERFACE_LINK_LIBRARIES "Qt5::Core"
+-  IMPORTED_LOCATION "@LIBDIR_FULL@/libAppStreamQt5.so.${AppStreamQt_VERSION}"
+-  IMPORTED_SONAME "libAppStreamQt5.${AppStreamQt_VERSION_MAJOR}"
++  IMPORTED_LOCATION "@LIBDIR_FULL@/libAppStreamQt5.so.${AppStreamQt5_VERSION}"
++  IMPORTED_SONAME "libAppStreamQt5.${AppStreamQt5_VERSION_MAJOR}"
+ )
+ 
+ ####################################################################################
