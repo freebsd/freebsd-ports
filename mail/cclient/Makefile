@@ -17,6 +17,9 @@ WWW=		http://www.washington.edu/imap/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Last upstream release was in 2007 so use the fork mail/panda-cclient
+EXPIRATION_DATE=	2023-12-16
+
 CONFLICTS_INSTALL=	panda-cclient-20*
 
 OPTIONS_DEFINE=	SSL SSL_AND_PLAINTEXT IPV6 MBX_DEFAULT
