@@ -1,3 +1,38 @@
+  <vuln vid="0da4db89-84bf-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.159</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.159</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 4 security fixes:</p>
+	 <ul>
+	    <li>[1497997] High CVE-2023-5997: Use after free in Garbage Collection. Reported by Anonymous on 2023-10-31</li>
+	    <li>[1499298] High CVE-2023-6112: Use after free in Navigation. Reported by Sergei Glazunov of Google Project Zero on 2023-11-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5997</cvename>
+      <cvename>CVE-2023-6112</cvename>
+      <url>https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-14</discovery>
+      <entry>2023-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a30f1a12-117f-4dac-a1d0-d65eaf084953">
     <topic>electron{25,26} -- use after free in WebAudio</topic>
     <affects>
