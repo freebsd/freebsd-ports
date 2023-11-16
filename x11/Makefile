@@ -432,6 +432,7 @@
     SUBDIR += wl-clipboard
     SUBDIR += wl-mirror
     SUBDIR += wlogout
+    SUBDIR += wlopm
     SUBDIR += wlr-randr
     SUBDIR += wlr-which-key
     SUBDIR += wlrctl

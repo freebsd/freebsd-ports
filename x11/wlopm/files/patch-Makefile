@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-11-18 08:35:21 UTC
++++ Makefile
+@@ -4,7 +4,7 @@ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/share/man
+ 
+-CFLAGS+=-Wall -Werror -Wextra -Wpedantic -Wno-unused-parameter -Wconversion -Wformat-security -Wformat -Wsign-conversion -Wfloat-conversion -Wunused-result
++CFLAGS+=-Wall -Wextra -Wpedantic -Wno-unused-parameter -Wconversion -Wformat-security -Wformat -Wsign-conversion -Wfloat-conversion -Wunused-result
+ LIBS=-lwayland-client
+ OBJ=wlopm.o wlr-output-power-management-unstable-v1.o
+ GEN=wlr-output-power-management-unstable-v1.c wlr-output-power-management-unstable-v1.h
