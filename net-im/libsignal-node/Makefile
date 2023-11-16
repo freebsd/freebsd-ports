@@ -12,6 +12,8 @@ WWW=		https://github.com/signalapp/libsignal
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 FETCH_DEPENDS=	yarn-node18>0:www/yarn-node18
 EXTRACT_DEPENDS=yarn-node18>0:www/yarn-node18
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
