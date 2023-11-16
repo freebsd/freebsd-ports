@@ -42,7 +42,7 @@ FreeBSD sh(1) does not support the Brace Expansion.
     dnl
     AC_MSG_CHECKING([for c-client library])
 -   for l in `eval "echo {${CCLIENTLOCATIONS}}{,/c-client,/lib/c-client,/lib,/lib64}/{libc-client,libc-client4,c-client}{${SOP}}"` ; do
-+   l=${CCLIENTLOCATIONS}/lib/libc-client4.so
++   l=${CCLIENTLOCATIONS}/lib/libc-client.so
      if test -r "$l" ; then
       AC_MSG_RESULT([found ${l}])
       CCLIENT_LIBS="$l"
