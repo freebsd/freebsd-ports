@@ -11,6 +11,7 @@ bin/vboxautostart
 bin/vboxballoonctrl
 bin/vboxbugreport
 bin/vboxheadless
+%%VBOXIMG%%bin/vboximg-mount
 bin/vboxmanage
 %%X11%%bin/vboxsdl
 %%WEBSERVICE%%bin/vboxwebsrv
@@ -420,6 +421,7 @@ lib/virtualbox/VMMR0.r0
 %%QT%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VirtualBoxVM
 %%QT%%lib/virtualbox/VirtualBoxVM.so
 %%SDK%%lib/virtualbox/sdk
+%%VBOXIMG%%lib/virtualbox/vboximg-mount
 %%WEBSERVICE%%lib/virtualbox/vboxwebsrv
 %%WEBSERVICE%%lib/virtualbox/webtest
 %%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
