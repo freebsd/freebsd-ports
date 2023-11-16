@@ -327,6 +327,7 @@
     SUBDIR += glest-data
     SUBDIR += glightoff
     SUBDIR += glmaze
+    SUBDIR += glob2
     SUBDIR += glsfcave
     SUBDIR += gltron
     SUBDIR += gmastermind
