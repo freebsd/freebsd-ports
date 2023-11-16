@@ -1,6 +1,6 @@
-TIMESTAMP = 1700093404
-SHA256 (ValveSoftware-gamescope-3.13.4_GH0.tar.gz) = a9cd079e500b7b9770598ec9abe17037aab78b7c698efbb2c20ae516e0ea805a
-SIZE (ValveSoftware-gamescope-3.13.4_GH0.tar.gz) = 476342
+TIMESTAMP = 1700095311
+SHA256 (ValveSoftware-gamescope-3.13.5_GH0.tar.gz) = f14e4e08a03c3818ee800363efca9d49375f44aff946f5d91532a8d2679df029
+SIZE (ValveSoftware-gamescope-3.13.5_GH0.tar.gz) = 476468
 SHA256 (nothings-stb-5736b15_GH0.tar.gz) = 8e18fa73396a3206129c55a3bc409401353991470245941d6ba7d8ce57df864f
 SIZE (nothings-stb-5736b15_GH0.tar.gz) = 1392565
 SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-316-gd790ced_GH0.tar.gz) = 4677f51365937acb78df4067359d32742c5c649f2beb8f8afb7e1002329cea46
