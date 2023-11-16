@@ -1,3 +1,36 @@
+  <vuln vid="a30f1a12-117f-4dac-a1d0-d65eaf084953">
+    <topic>electron{25,26} -- use after free in WebAudio</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.5</lt></range>
+      </package>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.5">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5996.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5996</cvename>
+      <url>https://github.com/advisories/GHSA-q3gq-rg4m-vgrp</url>
+    </references>
+    <dates>
+      <discovery>2023-11-15</discovery>
+      <entry>2023-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2fe004f5-83fd-11ee-9f5d-31909fb2f495">
     <topic>openvpn -- 2.6.0...2.6.6 --fragment option division by zero crash, and TLS data leak</topic>
     <affects>
