@@ -1,6 +1,6 @@
---- cmake/ssl.cmake.orig	2019-12-06 10:41:47 UTC
-+++ cmake/ssl.cmake
-@@ -150,22 +150,12 @@ MACRO (MYSQL_CHECK_SSL)
+--- cmake/ssl.cmake.orig	2023-11-10 17:37:52.213133000 +0100
++++ cmake/ssl.cmake	2023-11-10 17:50:19.620626000 +0100
+@@ -232,30 +232,21 @@ MACRO (MYSQL_CHECK_SSL)
        MESSAGE(STATUS "OPENSSL_APPLINK_C ${OPENSSL_APPLINK_C}")
      ENDIF()
  
@@ -22,10 +22,8 @@
 -    ENDIF()
  
      IF(OPENSSL_INCLUDE_DIR)
-       # Verify version number. Version information looks like:
-@@ -193,9 +183,10 @@ MACRO (MYSQL_CHECK_SSL)
-       )
-     SET(OPENSSL_VERSION ${OPENSSL_VERSION} CACHE INTERNAL "")
+       FIND_OPENSSL_VERSION()
+     ENDIF()
  
 -    IF("${OPENSSL_VERSION}" VERSION_GREATER "1.1.0")
 -       ADD_DEFINITIONS(-DHAVE_TLSv13)
@@ -37,11 +35,12 @@
         IF(SOLARIS)
           SET(FORCE_SSL_SOLARIS "-Wl,--undefined,address_of_sk_new_null")
         ENDIF()
-@@ -203,7 +204,13 @@ MACRO (MYSQL_CHECK_SSL)
+@@ -263,8 +254,13 @@ MACRO (MYSQL_CHECK_SSL)
      IF(OPENSSL_INCLUDE_DIR AND
         OPENSSL_LIBRARY   AND
         CRYPTO_LIBRARY      AND
--       OPENSSL_MAJOR_VERSION STREQUAL "1"
+-       (OPENSSL_MAJOR_VERSION STREQUAL "1" OR
+-        OPENSSL_MAJOR_VERSION STREQUAL "3")
 +       OPENSSL_MAJOR_VERSION VERSION_GREATER_EQUAL "1"
 +      )
 +      SET(OPENSSL_FOUND TRUE)
