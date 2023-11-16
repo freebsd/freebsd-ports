@@ -1,0 +1,28 @@
+--- CMakeLists.txt.orig	2023-11-13 18:58:24 UTC
++++ CMakeLists.txt
+@@ -240,7 +240,7 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
+ endif()
+ 
+ find_package(Git)
+-if(Git_FOUND)
++if(FALSE AND Git_FOUND)
+   if (NOT DEFINED GIT_COMMIT_HASH)
+     execute_process(
+             COMMAND ${GIT_EXECUTABLE} log -1 --format=%h
+@@ -279,11 +279,11 @@ if(GIT_RESULT EQUAL "0")
+   endif()
+ else()
+   # fallback for when building from tarball
+-  set(DUCKDB_MAJOR_VERSION 0)
+-  set(DUCKDB_MINOR_VERSION 0)
+-  set(DUCKDB_PATCH_VERSION 1)
+-  set(DUCKDB_DEV_ITERATION 0)
+-  set(DUCKDB_VERSION "v${DUCKDB_MAJOR_VERSION}.${DUCKDB_MINOR_VERSION}.${DUCKDB_PATCH_VERSION}-dev${DUCKDB_DEV_ITERATION}")
++  #set(DUCKDB_MAJOR_VERSION 0)
++  #set(DUCKDB_MINOR_VERSION 0)
++  #set(DUCKDB_PATCH_VERSION 1)
++  #set(DUCKDB_DEV_ITERATION 0)
++  set(DUCKDB_VERSION "v${DUCKDB_MAJOR_VERSION}.${DUCKDB_MINOR_VERSION}.${DUCKDB_PATCH_VERSION}")
+ endif()
+ 
+ message(STATUS "git hash ${GIT_COMMIT_HASH}, version ${DUCKDB_VERSION}")
