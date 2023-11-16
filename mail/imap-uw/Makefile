@@ -17,6 +17,9 @@ WWW=		http://www.washington.edu/imap/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Last upstream release was in 2007 so use the fork mail/panda-imap
+EXPIRATION_DATE=	2023-12-16
+
 LIB_DEPENDS=	libc-client4.so.9:mail/cclient
 
 CONFLICTS_INSTALL=	panda-imap # bin/dmail
