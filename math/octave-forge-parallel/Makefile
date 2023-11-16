@@ -11,6 +11,8 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
+NOT_FOR_ARCHS=	armd64
+
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/struct.tar.gz:math/octave-forge-struct
 
 USES=		compiler:gcc-c++11-lib octave perl5 shebangfix
