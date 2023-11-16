@@ -3,7 +3,7 @@ PORTVERSION=	1.01
 CATEGORIES=	net
 MASTER_SITES=	ftp://bitreich.org/releases/sacc/
 
-MAINTAINER=	sh@codevoid.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console Gopher client
 WWW=		https://git.fifth.space/sacc/
 
