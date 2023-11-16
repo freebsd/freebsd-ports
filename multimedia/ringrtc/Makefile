@@ -38,6 +38,8 @@ WWW=		https://github.com/signalapp/ringrtc
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+
 BUILD_DEPENDS=	gn:devel/gn \
 		protoc:devel/protobuf
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
