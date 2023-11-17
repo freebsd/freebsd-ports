@@ -909,7 +909,7 @@ git_daemon:*:964:
 elasticsearch:*:965:
 ossec:*:966:
 loki:*:967:
-# free: 968
+promtail:*:968:
 kippo:*:969:
 colord:*:970:
 shibd:*:971:
