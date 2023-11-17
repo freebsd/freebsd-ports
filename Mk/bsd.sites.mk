@@ -704,8 +704,7 @@ MASTER_SITE_MOZDEV+= \
 	http://ftp.ntua.gr/pub/www/mozdev/%SUBDIR%/ \
 	http://www.devlib.org/mozdev/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/pub/mozdev/%SUBDIR%/ \
-	http://mirrors.ibiblio.org/mozdev.org/%SUBDIR%/ \
-	https://ftp.osuosl.org/pub/mozdev/%SUBDIR%/
+	http://mirrors.ibiblio.org/mozdev.org/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA)
@@ -749,7 +748,7 @@ MASTER_SITE_NVIDIA+= \
 	http://us.download.nvidia.com/%SUBDIR%/ \
 	https://tw.download.nvidia.com/%SUBDIR%/ \
 	http://download.nvidia.com/%SUBDIR%/ \
-	https://download1.nvidia.com/%SUBDIR%/ \
+	https://http.download.nvidia.com/%SUBDIR%/ \
 	ftp://download.nvidia.com/%SUBDIR%/ \
 	ftp://download1.nvidia.com/%SUBDIR%/
 .endif
@@ -996,6 +995,7 @@ MASTER_SITE_TEX_CTAN+= \
 .endif
 
 # Derived from: https://www.torproject.org/getinvolved/mirrors.html.en
+# Please do not blindly follow and add URLs from the above list
 .if !defined(IGNORE_MASTER_SITE_TOR)
 MASTER_SITE_TOR+= \
 		https://dist.torproject.org/%SUBDIR%/ \
@@ -1007,7 +1007,6 @@ MASTER_SITE_TOR+= \
 		http://mirror.host4site.co.il/torproject.org/dist/%SUBDIR%/ \
 		http://mirror.open-networx.org/torproject.org/dist/%SUBDIR%/ \
 		http://mirror.tor.hu/dist/%SUBDIR%/ \
-		https://mirror.torland.me/torproject.org/dist/%SUBDIR%/ \
 		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/%SUBDIR%/ \
 		http://theonionrouter.com/dist/%SUBDIR%/ \
 		http://tor.amorphis.eu/dist/%SUBDIR%/ \
@@ -1027,7 +1026,6 @@ MASTER_SITE_TOR+= \
 		http://torproject.nwlinux.us/dist/%SUBDIR%/ \
 		https://torproject.ph3x.at/dist/%SUBDIR%/ \
 		http://www.oignon.net/dist/%SUBDIR%/ \
-		https://www.torproject.nl/dist/%SUBDIR%/ \
 		http://www.torproject.org.nyud.net/dist/%SUBDIR%/ \
 		http://www.torproject.us/dist/%SUBDIR%/
 .endif
