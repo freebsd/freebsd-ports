@@ -1,6 +1,18 @@
---- Makefile.orig	2020-09-08 19:35:30 UTC
+--- Makefile.orig	2022-08-22 11:18:44 UTC
 +++ Makefile
-@@ -48,12 +48,6 @@ ifneq ("$(DEBUG)", "")
+@@ -31,9 +31,9 @@ S_SRC+= src/tls_$(TLS_BACKEND).c
+ FEATURES=
+ FEATURES_INC=
+ 
+-CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes
++CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes
+ CFLAGS+=-Wmissing-declarations -Wshadow -Wpointer-arith -Wcast-qual
+-CFLAGS+=-Wsign-compare -Iinclude/kore -I$(OBJDIR) -std=c99 -pedantic
++CFLAGS+=-Wsign-compare -Iinclude/kore -I$(OBJDIR) -pedantic
+ CFLAGS+=-Wtype-limits -fno-common
+ CFLAGS+=-DPREFIX='"$(PREFIX)"' -fstack-protector-all
+ 
+@@ -66,12 +66,6 @@ ifneq ("$(DEBUG)", "")
  	FEATURES+=-DKORE_DEBUG
  endif
  
@@ -13,3 +25,25 @@
  ifneq ("$(NOSENDFILE)", "")
  	CFLAGS+=-DKORE_NO_SENDFILE
  endif
+@@ -120,8 +114,8 @@ endif
+ 
+ OSNAME=$(shell uname -s | sed -e 's/[-_].*//g' | tr A-Z a-z)
+ ifeq ("$(OSNAME)", "freebsd")
+-	KORE_CURL_LIB=-L/usr/local/lib -lcurl
+-	KORE_CURL_INC=-I/usr/local/include
++	KORE_CURL_LIB=-L%%LOCALBASE%%/lib -lcurl
++	KORE_CURL_INC=-I%%LOCALBASE%%/include
+ endif
+ 
+ ifneq ("$(ACME)", "")
+@@ -161,8 +155,8 @@ else ifeq ("$(OSNAME)", "linux")
+ else
+ 	S_SRC+=src/bsd.c
+ 	ifneq ("$(JSONRPC)", "")
+-		CFLAGS+=-I/usr/local/include
+-		LDFLAGS+=-L/usr/local/lib
++		CFLAGS+=-I%%LOCALBASE%%/include
++		LDFLAGS+=-L%%LOCALBASE%%/lib
+ 	endif
+ endif
+ 
