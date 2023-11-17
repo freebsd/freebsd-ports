@@ -1064,7 +1064,6 @@
     SUBDIR += py-iptools
     SUBDIR += py-kafka-python
     SUBDIR += py-kombu
-    SUBDIR += py-ldap
     SUBDIR += py-ldap0
     SUBDIR += py-ldap3
     SUBDIR += py-ldapdomaindump
@@ -1117,6 +1116,7 @@
     SUBDIR += py-python-glanceclient
     SUBDIR += py-python-heatclient
     SUBDIR += py-python-keystoneclient
+    SUBDIR += py-python-ldap
     SUBDIR += py-python-neutronclient
     SUBDIR += py-python-novaclient
     SUBDIR += py-python-openstackclient

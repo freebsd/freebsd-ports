@@ -8078,3 +8078,4 @@ x11-fonts/fpc-libfontconfig|lang/fpc|2023-11-12|This port was merged into lang/f
 x11-toolkits/fpc-xforms|lang/fpc|2023-11-12|This port was merged into lang/fpc
 x11-toolkits/fpc-gtk2|lang/fpc|2023-11-12|This port was merged into lang/fpc
 sysutils/fpc-users|lang/fpc|2023-11-14|This port was merged into lang/fpc
+net/py-ldap|net/py-python-ldap|2023-11-17|Rename to conform upstream name
