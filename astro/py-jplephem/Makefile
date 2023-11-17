@@ -1,6 +1,7 @@
 PORTNAME=	jplephem
-PORTVERSION=	2.19
+PORTVERSION=	2.21
 CATEGORIES=	astro python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,19 +12,13 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	bash:shells/bash	\
-		${PYTHON_PKGNAMEPREFIX}unittest2>0:devel/py-unittest2@${PY_FLAVOR}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	brandon-rhodes
-GH_PROJECT=	python-jplephem
+#USE_GITHUB=	yes
+#GH_ACCOUNT=	brandon-rhodes
+#GH_PROJECT=	python-jplephem
 
-USES=		python shebangfix
+USES=		python
 USE_PYTHON=	distutils
-SHEBANG_FILES=	test.sh	bin/doctest.sh bin/parse_zzidmap.sh bin/benchmark.py
 NO_ARCH=	yes
-
-do-test:	install
-	(cd ${WRKSRC} && ${SETENV} PYTHON=${PYTHON_CMD} ./test.sh)
 
 .include <bsd.port.mk>
