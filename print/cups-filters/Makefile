@@ -1,8 +1,7 @@
 PORTNAME=	cups-filters
-PORTVERSION=	1.28.16
-PORTREVISION=	6
+PORTVERSION=	1.28.17
 CATEGORIES=	print
-MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
+MASTER_SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${DISTVERSION}/
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Additional backends, filters and other software for CUPS
@@ -14,7 +13,7 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libqpdf.so:print/qpdf \
-		libcupsimage.so:print/cups \
+		libcups.so:print/cups \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
