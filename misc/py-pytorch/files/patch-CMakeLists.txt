@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-04-03 19:45:59 UTC
+--- CMakeLists.txt.orig	2023-10-06 19:49:00 UTC
 +++ CMakeLists.txt
-@@ -138,7 +138,7 @@ endif()
+@@ -139,7 +139,7 @@ endif()
  set(CPU_AARCH64 OFF)
  set(CPU_INTEL OFF)
  
@@ -9,7 +9,7 @@
    set(CPU_INTEL ON)
  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64)")
    set(CPU_AARCH64 ON)
-@@ -163,7 +163,7 @@ include(CMakeDependentOption)
+@@ -164,7 +164,7 @@ include(CMakeDependentOption)
  option(ATEN_NO_TEST "Do not build ATen test binaries" OFF)
  option(BUILD_BINARY "Build C++ binaries" OFF)
  option(BUILD_DOCS "Build Caffe2 documentation" OFF)
@@ -18,7 +18,7 @@
  option(BUILD_PYTHON "Build Python binaries" ON)
  option(BUILD_CAFFE2 "Master flag to build Caffe2" OFF)
  option(BUILD_LITE_INTERPRETER "Master flag to build Lite Interpreter" OFF)
-@@ -398,15 +398,15 @@ endif()
+@@ -408,15 +408,15 @@ endif()
  # USE_SYSTEM_LIBS being "OFF".
  option(USE_SYSTEM_LIBS "Use all available system-provided libraries." OFF)
  option(USE_SYSTEM_CPUINFO "Use system-provided cpuinfo." OFF)
@@ -35,5 +35,5 @@
 -option(USE_SYSTEM_ONNX "Use system-provided onnx." OFF)
 +option(USE_SYSTEM_ONNX "Use system-provided onnx." ON)
  option(USE_SYSTEM_XNNPACK "Use system-provided xnnpack." OFF)
+ option(USE_SYSTEM_ZSTD "Use system-provided zstd." OFF)
  option(USE_GOLD_LINKER "Use ld.gold to link" OFF)
- if(USE_SYSTEM_LIBS)
