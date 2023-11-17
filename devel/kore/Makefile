@@ -1,5 +1,6 @@
 PORTNAME=	kore
-PORTVERSION=	4.2.3
+DISTVERSION=	4.2.3
+PORTREVISON=	1
 CATEGORIES=	devel www
 MASTER_SITES=	https://kore.io/releases/
 
@@ -16,9 +17,7 @@ BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_* routines
 USES=		compiler:c11 gmake ssl
 
 MAKE_ARGS=	OPENSSL_PATH=${OPENSSLBASE}
-CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
-# 12.0 + -pedantic
-CFLAGS_clang=	-Wno-error=c11-extensions
+CFLAGS+=	-std=c11
 
 PORTEXAMPLES=	*
 
@@ -49,17 +48,9 @@ PYTHON_BINARY_ALIAS=	python3-config=${PYTHON_CMD}-config
 TASKS_MAKE_ARGS=	TASKS=1
 TLS_MAKE_ARGS_OFF=	NOTLS=1
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
-CFLAGS+=	-Wno-error=deprecated-declarations -Wno-error=incompatible-pointer-types-discards-qualifiers
-.endif
-
-post-patch:
-.if ${LOCALBASE} != /usr/local
-	@${REINPLACE_CMD} 's|/usr/local/|${LOCALBASE}/|g' \
+pre-configure:
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}/|g' \
 		${WRKSRC}/Makefile
-.endif
 	@${REINPLACE_CMD} 's|%%OPENSSLINC%%|${OPENSSLINC}|g' \
 		${WRKSRC}/src/cli.c
 
@@ -71,4 +62,4 @@ post-install-EXAMPLES-on:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
