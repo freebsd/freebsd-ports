@@ -1,5 +1,6 @@
 PORTNAME=	alire
 DISTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/alire-project/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	alr-${DISTVERSION}-full-sources

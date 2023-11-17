@@ -1,6 +1,7 @@
 PORTNAME=	asfml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.5
+PORTREVISION=	1
 CATEGORIES=	devel games graphics multimedia
 
 MAINTAINER=	agh@riseup.net
