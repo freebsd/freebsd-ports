@@ -10,6 +10,9 @@ WWW=		https://ibiblio.org/mp3info/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Last release in 2006 and lacks support for ID3v2
+EXPIRATION_DATE=2023-12-31
+
 USES=		cpe ncurses tar:tgz
 
 ALL_TARGET=	mp3info
