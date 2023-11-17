@@ -1,5 +1,5 @@
-TIMESTAMP = 1698425412
-SHA256 (go/net-mgmt_netdata-go/netdata-go-v0.56.4/v0.56.4.mod) = f9831e34aa9baa94dfe0a19f6c529534d6087400c0e6302759ae82986b5cdca4
-SIZE (go/net-mgmt_netdata-go/netdata-go-v0.56.4/v0.56.4.mod) = 9790
-SHA256 (go/net-mgmt_netdata-go/netdata-go-v0.56.4/v0.56.4.zip) = f4251831b61282010ae3ac2426f8ce4d620dc425c7a399d51915f8d08d768693
-SIZE (go/net-mgmt_netdata-go/netdata-go-v0.56.4/v0.56.4.zip) = 3111877
+TIMESTAMP = 1700251021
+SHA256 (go/net-mgmt_netdata-go/netdata-go-v0.57.0/v0.57.0.mod) = 0fb3847e410de02e8be0923a90bde79caf0e26e8c38f911cdfab946e8fe24add
+SIZE (go/net-mgmt_netdata-go/netdata-go-v0.57.0/v0.57.0.mod) = 6388
+SHA256 (go/net-mgmt_netdata-go/netdata-go-v0.57.0/v0.57.0.zip) = 4a611d32c70922b1681183306d93bee9d9df295c7b261177e559c65022b31991
+SIZE (go/net-mgmt_netdata-go/netdata-go-v0.57.0/v0.57.0.zip) = 3074441
