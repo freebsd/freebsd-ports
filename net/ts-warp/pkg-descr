@@ -1,0 +1,6 @@
+ts-warp - Transparent proxy server and traffic wrapper
+
+It features a proxy services with TCP-traffic redirection to
+external Socks4/5 and HTTPS proxy servers:
+  - Transparent firewall-based traffic redirector
+  - Internal Socks and HTTPS proxy server

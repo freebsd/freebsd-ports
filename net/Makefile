@@ -1555,6 +1555,7 @@
     SUBDIR += trafshow3
     SUBDIR += trickle
     SUBDIR += trippy
+    SUBDIR += ts-warp
     SUBDIR += tsclient
     SUBDIR += tsctp
     SUBDIR += tsocks
