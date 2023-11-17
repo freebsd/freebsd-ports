@@ -1,5 +1,5 @@
 PORTNAME=	cups
-DISTVERSION=	2.4.6
+DISTVERSION=	2.4.7
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/cups/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	-source.tar.gz
