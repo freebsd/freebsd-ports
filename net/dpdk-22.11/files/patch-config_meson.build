@@ -1,0 +1,12 @@
+--- config/meson.build.orig	2023-07-18 14:47:33.929900000 +0100
++++ config/meson.build	2023-07-18 14:47:36.329284000 +0100
+@@ -207,6 +207,9 @@
+ dpdk_conf.set('RTE_BACKTRACE', cc.has_header('execinfo.h') or is_windows)
+ 
+ libarchive = dependency('libarchive', required: false, method: 'pkg-config')
++if not libarchive.found()
++    libarchive = cc.find_library('archive', required: false)
++endif
+ if libarchive.found()
+     dpdk_conf.set('RTE_HAS_LIBARCHIVE', 1)
+     # Push libarchive link dependency at the project level to support

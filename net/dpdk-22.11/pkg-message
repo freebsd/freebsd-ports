@@ -1,0 +1,30 @@
+[
+{ type: install
+  message: <<EOM
+The Intel(R) DPDK requires two kernel modules to be loaded in order to run.
+To load these modules add loading lines to /boot/loader.conf
+
+	contigmem_load="YES"
+	nic_uio_load="YES"
+
+The modules each take a number of parameters. These should be set in loader.conf
+before the above two lines to load the module.
+
+* The "contigmem" module is used to reserve contiguous blocks of physical memory
+  for packet buffer use. It takes parameters for the number and size of blocks
+  to be reserved. An example is below, reserving a single 1G block:
+
+	hw.contigmem.num_buffers=1
+	hw.contigmem.buffer_size=1073741824
+
+* The "nic_uio" module is used to expose the network card (NIC) hardware
+  directly to userspace for use with the Intel(R) DPDK. If the NIC ports to be
+  used are in use by an existing driver, the nic_uio module can unbind the port
+  from its existing driver when requested to do so. This is done by passing the
+  relevant PCI bus, device and function settings to the driver as parameters.
+  For example:
+
+	hw.nic_uio.bdfs="2:0:0,2:0:1"
+EOM
+}
+]
