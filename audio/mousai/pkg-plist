@@ -3,6 +3,8 @@ share/applications/io.github.seadve.Mousai.desktop
 share/icons/hicolor/scalable/apps/io.github.seadve.Mousai.svg
 share/icons/hicolor/symbolic/apps/io.github.seadve.Mousai-symbolic.svg
 share/locale/ar/LC_MESSAGES/mousai.mo
+share/locale/be/LC_MESSAGES/mousai.mo
+share/locale/bqi/LC_MESSAGES/mousai.mo
 share/locale/ca/LC_MESSAGES/mousai.mo
 share/locale/cs/LC_MESSAGES/mousai.mo
 share/locale/de/LC_MESSAGES/mousai.mo
@@ -22,6 +24,7 @@ share/locale/hu/LC_MESSAGES/mousai.mo
 share/locale/id/LC_MESSAGES/mousai.mo
 share/locale/it/LC_MESSAGES/mousai.mo
 share/locale/ja/LC_MESSAGES/mousai.mo
+share/locale/ko/LC_MESSAGES/mousai.mo
 share/locale/ms/LC_MESSAGES/mousai.mo
 share/locale/nb_NO/LC_MESSAGES/mousai.mo
 share/locale/ne/LC_MESSAGES/mousai.mo
@@ -32,6 +35,7 @@ share/locale/pt/LC_MESSAGES/mousai.mo
 share/locale/pt_BR/LC_MESSAGES/mousai.mo
 share/locale/ro/LC_MESSAGES/mousai.mo
 share/locale/ru/LC_MESSAGES/mousai.mo
+share/locale/si/LC_MESSAGES/mousai.mo
 share/locale/sk/LC_MESSAGES/mousai.mo
 share/locale/sr/LC_MESSAGES/mousai.mo
 share/locale/sv/LC_MESSAGES/mousai.mo
