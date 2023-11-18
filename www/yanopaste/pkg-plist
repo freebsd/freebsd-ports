@@ -149,5 +149,5 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/screen.css
 %%WWWDIR%%/upgrade.php
-@exec touch %D/%%WWWDIR%%/config.php;chown www %D/%%WWWDIR%%/config.php
-@unexec if [ ! -s %D/%%WWWDIR%%/config.php ];then rm -f %D/%%WWWDIR%%/config.php;fi
+@postexec touch %D/%%WWWDIR%%/config.php;chown www %D/%%WWWDIR%%/config.php
+@postunexec if [ ! -s %D/%%WWWDIR%%/config.php ];then rm -f %D/%%WWWDIR%%/config.php;fi
