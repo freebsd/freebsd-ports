@@ -1,0 +1,3 @@
+Advocate is a set of tools based around the requests library for
+safely making HTTP requests on behalf of a third party. Specifically,
+it aims to prevent common techniques that enable SSRF attacks.
