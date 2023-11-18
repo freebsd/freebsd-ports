@@ -121,6 +121,6 @@ do-install:
 	${UNZIP_CMD} -o ${DISTDIR}/${i} -d ${STAGEDIR}${WWWDIR}/plugins
 .endfor
 
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@postexec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
