@@ -9,6 +9,9 @@ WWW=		https://dpdk.org/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	End of life since December 2022 upstream, consider migrating to net/dpdk-22.11
+EXPIRATION_DATE=2023-12-31
+
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	only works on 64-bit x86 hardware
 
