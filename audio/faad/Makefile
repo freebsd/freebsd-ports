@@ -1,5 +1,5 @@
 PORTNAME=	faad2
-PORTVERSION=	2.10.1
+DISTVERSION=	2.11.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 
@@ -10,29 +10,16 @@ WWW=		https://github.com/knik0/faad2
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf cpe gmake libtool localbase:ldflags
+USES=		cmake cpe pathfix
 CPE_VENDOR=	audiocoding
 CPE_PRODUCT=	freeware_advanced_audio_decoder_2
-
-INSTALL_TARGET=	install-strip
-
-GNU_CONFIGURE=	yes
-LDFLAGS+=	-lpthread
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	knik0
-GH_TAGNAME=	c626366
-
-post-extract:
-	@${LN} -sf faad.man ${WRKSRC}/frontend/faad.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|faad.man|faad.1|g' \
-		${WRKSRC}/frontend/Makefile.am
-	@${REINPLACE_CMD} -e 's|^AM_CFLAGS|AM_CPPFLAGS|g ; \
-		 s|-iquote |-I|g' ${WRKSRC}/libfaad/Makefile.am
-	@${REINPLACE_CMD} -E -e 's|(FAAD2_VERSION +)"unknown"|\1"${PORTVERSION:R}"|' \
+	@${REINPLACE_CMD} -E -e 's|(FAAD2_VERSION +)"unknown"|\1"${DISTVERSION:R}"|' \
 		${WRKSRC}/include/neaacdec.h
 
 .include <bsd.port.mk>
