@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Command/Runner.pm
+%%SITE_PERL%%/Command/Runner/Format.pm
+%%SITE_PERL%%/Command/Runner/LineBuffer.pm
+%%SITE_PERL%%/Command/Runner/Quote.pm
+%%SITE_PERL%%/Command/Runner/Timeout.pm
+%%PERL5_MAN3%%/Command::Runner.3.gz
