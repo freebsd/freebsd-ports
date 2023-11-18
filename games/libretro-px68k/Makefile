@@ -1,5 +1,6 @@
 PORTNAME=	libretro-px68k
 DISTVERSION=	0.20230114
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,7 +9,7 @@ WWW=		https://github.com/libretro/px68k-libretro
 
 LICENSE=	GPLv2
 
-USES=		compiler:gcc-c++11-lib gmake
+USES=		compiler:c++11-lib gmake
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
