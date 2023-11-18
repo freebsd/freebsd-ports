@@ -1,3 +1,4 @@
+bin/ieee-oui-import
 bin/nd-import-topology
 bin/netdisco-backend
 bin/netdisco-backend-fg
@@ -40,6 +41,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/DB/Result/DeviceSkip.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/DeviceVlan.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Log.pm
+%%SITE_PERL%%/App/Netdisco/DB/Result/Manufacturer.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/NetmapPositions.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/Node.pm
 %%SITE_PERL%%/App/Netdisco/DB/Result/NodeIp.pm
@@ -125,6 +127,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/SSHCollector/Platform/VOSS.pm
 %%SITE_PERL%%/App/Netdisco/Transport/SNMP.pm
 %%SITE_PERL%%/App/Netdisco/Transport/SSH.pm
+%%SITE_PERL%%/App/Netdisco/Util/CustomFields.pm
 %%SITE_PERL%%/App/Netdisco/Util/DNS.pm
 %%SITE_PERL%%/App/Netdisco/Util/Device.pm
 %%SITE_PERL%%/App/Netdisco/Util/DeviceAuth.pm
@@ -140,6 +143,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Util/Port.pm
 %%SITE_PERL%%/App/Netdisco/Util/PortAccessEntity.pm
 %%SITE_PERL%%/App/Netdisco/Util/PortMAC.pm
+%%SITE_PERL%%/App/Netdisco/Util/Snapshot.pm
 %%SITE_PERL%%/App/Netdisco/Util/SNMP.pm
 %%SITE_PERL%%/App/Netdisco/Util/Statistics.pm
 %%SITE_PERL%%/App/Netdisco/Util/Web.pm
@@ -221,6 +225,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Arpwalk.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Contact.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Delete.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Delete/Hooks.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/CanonicalIP.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Entities.pm
@@ -232,6 +237,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/PortProperties.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/PortProperties/PortAccessEntity.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Properties.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Properties/Tags.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Snapshot.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/VLANs.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/Wireless.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Discover/WithNodes.pm
@@ -244,6 +251,8 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook/Exec.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Hook/HTTP.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Internal/BackendFQDN.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Internal/SNMPFastDiscover.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/LoadMIBs.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Location.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Macsuck.pm
@@ -260,8 +269,10 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/PortControl.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/PortName.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Power.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/PrimeSkiplist.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Psql.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Renumber.pm
+%%SITE_PERL%%/App/Netdisco/Worker/Plugin/Scheduler.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Snapshot.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Show.pm
 %%SITE_PERL%%/App/Netdisco/Worker/Plugin/Stats.pm
@@ -477,6 +488,13 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-75-76-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-76-77-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-77-78-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-78-79-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-79-80-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-80-81-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-81-82-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-82-83-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-83-84-PostgreSQL.sql
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/schema_versions/App-Netdisco-DB-84-85-PostgreSQL.sql
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/admintask.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/duplicatedevices.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/admintask/jobqueue.tt
@@ -565,6 +583,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/search/vlan_csv.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/ajax/statistics.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/device.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/externallinks.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/index.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/inventory.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/js/admintask.js
@@ -579,6 +598,7 @@ bin/netdisco-web-fg
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/plugin.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/report.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/search.tt
+%%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/admintask/jobqueue.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/admintask/topology.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/device/netmap.tt
 %%SITE_PERL%%/auto/share/dist/App-Netdisco/views/sidebar/device/ports.tt
@@ -674,6 +694,7 @@ bin/netdisco-web-fg
 %%PERL5_MAN3%%/App::Netdisco::Util::Port.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::PortAccessEntity.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::PortMAC.3.gz
+%%PERL5_MAN3%%/App::Netdisco::Util::Snapshot.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::SNMP.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::Statistics.3.gz
 %%PERL5_MAN3%%/App::Netdisco::Util::Web.3.gz
