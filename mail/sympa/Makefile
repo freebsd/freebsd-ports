@@ -1,8 +1,8 @@
 PORTNAME=	sympa
-DISTVERSION=	6.2.70
+DISTVERSION=	6.2.72
 CATEGORIES=	mail
 
-MAINTAINER=	dgeo@centrale-marseille.fr
+MAINTAINER=	dgeo@centrale-med.fr
 COMMENT=	Electronic mailing list manager
 WWW=		https://www.sympa.org/
 
