@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.11.3
+DISTVERSION=	2023.11.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		anstyle-parse-0.2.2 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-3.0.1 \
-		async-compression-0.4.4 \
+		async-compression-0.4.5 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
 		base64-0.21.5 \
@@ -108,8 +108,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		git2-0.18.1 \
 		globset-0.4.13 \
 		globwalk-0.8.1 \
-		h2-0.3.21 \
-		hashbrown-0.12.3 \
+		h2-0.3.22 \
 		hashbrown-0.14.2 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
@@ -126,7 +125,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		idna-0.4.0 \
 		ignore-0.4.20 \
 		indenter-0.3.3 \
-		indexmap-1.9.3 \
 		indexmap-2.1.0 \
 		indicatif-0.17.7 \
 		indoc-2.0.4 \
@@ -204,7 +202,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.23 \
+		rustix-0.38.24 \
 		rustls-0.21.8 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
