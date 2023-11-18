@@ -15,7 +15,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 
 PORTSCOUT=	limit:^3.
 
-USES=		cpe perl5 php
+USES=		cpe localbase perl5 php
 USE_PERL5=	build
 USE_RC_SUBR=	nagios
 
@@ -38,10 +38,6 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--disable-statuswrl \
 		ac_cv_lib_iconv_main=no
 CONFIGURE_ENV=	PERL=${PERL}
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	${CPPFLAGS}
-LIBS+=		-L${LOCALBASE}/lib
 
 MAKE_JOBS_UNSAFE=	yes
 
