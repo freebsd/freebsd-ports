@@ -18,7 +18,6 @@ ONLY_FOR_ARCHS_REASON=	Has not been ported to this platform for freebsd
 MY_DEPENDS=	7zz:archivers/7-zip
 BUILD_DEPENDS=	patchelf:sysutils/patchelf \
 		cmake:devel/cmake-core \
-		ittapi>0:devel/ittapi \
 		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}	\
 		${MY_DEPENDS}
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -35,6 +34,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopenlibm.so:math/openlibm
 RUN_DEPENDS=	${MY_DEPENDS} \
 		gfortran${_GCC_VER}:lang/gcc${_GCC_VER}
+
+BUILD_DEPENDS_amd64=	ittapi>0:devel/ittapi
+BUILD_DEPENDS_i386=	ittapi>0:devel/ittapi
 
 # Do not set USES=fortran to avoid extra-linkage
 USES=		gmake cpe python perl5 blaslapack:openblas
@@ -55,7 +57,6 @@ MAKE_ARGS+=	NO_GIT=1 \
 		USE_SYSTEM_CURL=1 \
 		USE_SYSTEM_DSFMT=1 \
 		USE_SYSTEM_GMP=1 \
-		USE_SYSTEM_ITTAPI=1 \
 		USE_SYSTEM_OPENLIBM=1 \
 		USE_SYSTEM_LAPACK=1 \
 		USE_SYSTEM_LIBGIT2=1 \
@@ -96,6 +97,12 @@ DEBUG_MAKE_ARGS=	FORCE_ASSERTIONS=1 \
 			BUNDLE_DEBUG_LIBS=1
 
 DOCS_VARS=		INSTALL_TARGET+=install-docs
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+MAKE_ARGS+=	USE_SYSTEM_ITTAPI=1
+.endif
 
 pre-configure:
 	echo "override TAGGED_RELEASE_BANNER=\"FreeBSD port lang/${PORTNAME} build\"" >> ${WRKSRC}/Make.user
@@ -140,4 +147,4 @@ post-install-DEBUG-off:
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
