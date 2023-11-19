@@ -5,6 +5,9 @@ MASTER_SITES=	https://github.com/hluk/CopyQ/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-${FLAVOR}
 DISTNAME=	CopyQ-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/hluk/CopyQ/commit/
+PATCHFILES+=	19e9dd1c2ecb49b14a24159c5ac3bc1b77fdf250.patch:-p1 # Fix build with Qt 6.6.0
+
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt${FLAVOR:S/qt//} based clipboard manager
 WWW=		https://github.com/hluk/CopyQ
