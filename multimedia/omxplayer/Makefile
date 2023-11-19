@@ -13,6 +13,9 @@ WWW=		https://github.com/popcornmix/omxplayer
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=     Depends on legacy APIs and interfaces, functionality is being in integrated into VLC
+EXPIRATION_DATE=2023-12-31
+
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libboost_thread.so:devel/boost-libs \
 		libdbus-1.so:devel/dbus \
