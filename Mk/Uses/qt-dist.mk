@@ -135,7 +135,8 @@ _KDE_translations=	0
 _KDE_virtualkeyboard=	0
 _KDE_wayland=		59
 _KDE_webchannel=	3
-_KDE_webengine=			0
+_KDE_webengine=			11
+_KDE_webengine_BRANCH=		5.15
 _KDE_webengine_ORIGIN_TAG=	v5.15.15-lts
 _KDE_webengine_VERSION=		5.15.15
 _KDE_webglplugin=	0
@@ -146,7 +147,7 @@ _KDE_xmlpatterns=	0
 
 .    if defined(_KDE_${_QT_DIST})
 .      if defined(_KDE_${_QT_DIST}_ORIGIN_TAG)
-_KDE_${_QT_DIST}_BRANCH=	${_KDE_${_QT_DIST}_VERSION}
+_KDE_${_QT_DIST}_BRANCH?=	${_KDE_${_QT_DIST}_VERSION}
 .      else
 _KDE_${_QT_DIST}_BRANCH=	kde/5.15
 COMMENT+=			(KDE patched)

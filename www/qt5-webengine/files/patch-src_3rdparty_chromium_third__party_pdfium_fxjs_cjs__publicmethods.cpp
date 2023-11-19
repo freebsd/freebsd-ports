@@ -22,9 +22,9 @@
 +static char *
 +     ap_cvt(double arg, int ndigits, int *decpt, int *sign, int eflag)
 +{
-+    register int r2;
++    int r2;
 +    double fi, fj;
-+    register char *p, *p1;
++    char *p, *p1;
 +    static char buf[NDIG];
 +
 +    if (ndigits >= NDIG - 1)
