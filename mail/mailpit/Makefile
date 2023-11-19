@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -47,7 +47,7 @@ GH_TUPLE=	\
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.4.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.15.0:golang_tools/vendor/golang.org/x/tools \
-		gomarkdown:markdown:5421fefb8386:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
+		gomarkdown:markdown:a660076da3fd:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.4.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
@@ -56,7 +56,7 @@ GH_TUPLE=	\
 		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/github.com/jaytaylor/html2text \
 		jhillyerd:enmime:v1.0.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.17.2:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.17.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
@@ -82,7 +82,7 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:6a3618b33ec0de5d183b6b9487a37d9aeec2abf3:cznic_libc/vendor/modernc.org/libc \
+		cznic:libc:c626e232ef6a5fb03b5be7338a2c8e1df2b34c41:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
