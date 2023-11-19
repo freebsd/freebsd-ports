@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	2020-12-21 13:13:38 UTC
+--- src/Makefile.in.orig	2023-11-13 08:12:38 UTC
 +++ src/Makefile.in
-@@ -705,10 +705,10 @@ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/src/pref
- 	-I$(top_srcdir)/src/widgets $(GLIB_CFLAGS) $(GTK_CFLAGS) \
- 	$(LIBGSF_CFLAGS) $(GTK_MAC_CFLAGS) $(GOFFICE_CFLAGS) \
- 	-DLOCALEDIR="\"$(localedir)\"" \
+@@ -714,10 +714,10 @@ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/src/etat
+ 	-I$(top_srcdir)/src/prefs -I$(top_srcdir)/src/widgets \
+ 	$(GLIB_CFLAGS) $(GTK_CFLAGS) $(LIBGSF_CFLAGS) \
+ 	$(GTK_MAC_CFLAGS) -DLOCALEDIR="\"$(localedir)\"" \
 -	-DPIXMAPS_DIR="\"$(datadir)/pixmaps/@PACKAGE@\"" \
 -	-DDATA_PATH="\"$(datadir)/@PACKAGE@\"" \
 +	-DPIXMAPS_DIR="\"$(pkgdatadir)/pixmaps/\"" \
