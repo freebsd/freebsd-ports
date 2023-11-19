@@ -1,6 +1,29 @@
---- mkspecs/features/functions.prf.orig	2021-12-15 16:12:54 UTC
+* Rename Python2 related functions to Python generic ones [1]
+* Add support for FreeBSD
+* Add detection for PowerPC64
+
+[1] Obtained from:
+
+https://gitlab.archlinux.org/archlinux/packaging/packages/qt5-webengine/-/raw/main/qt5-webengine-python3.patch?ref_type=heads
+
+--- mkspecs/features/functions.prf.orig	2023-07-20 09:52:10 UTC
 +++ mkspecs/features/functions.prf
-@@ -84,6 +84,10 @@ defineReplace(gnWebEngineArgs) {
+@@ -44,11 +44,11 @@ defineReplace(pythonPath) {
+ 
+ # Returns the unquoted path to the python executable.
+ defineReplace(pythonPath) {
+-    isEmpty(QMAKE_PYTHON2) {
++    isEmpty(QMAKE_PYTHON) {
+         # Fallback for building QtWebEngine with Qt < 5.8
+-        QMAKE_PYTHON2 = python
++        QMAKE_PYTHON = python
+     }
+-    return($$QMAKE_PYTHON2)
++    return($$QMAKE_PYTHON)
+ }
+ 
+ # Returns the python executable for use with shell / make targets.
+@@ -89,6 +89,10 @@ defineReplace(gnWebEngineArgs) {
          include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
          include($$QTWEBENGINE_ROOT/src/core/config/windows.pri)
      }
@@ -11,7 +34,7 @@
      isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
      return($$gn_args)
  }
-@@ -93,6 +97,7 @@ defineReplace(gnPdfArgs) {
+@@ -98,6 +102,7 @@ defineReplace(gnPdfArgs) {
      macos: include($$QTWEBENGINE_ROOT/src/buildtools/config/mac_osx.pri)
      ios: include($$QTWEBENGINE_ROOT/src/pdf/config/ios.pri)
      win32: include($$QTWEBENGINE_ROOT/src/buildtools/config/windows.pri)
@@ -19,7 +42,7 @@
      include($$QTWEBENGINE_ROOT/src/pdf/config/common.pri)
      isEmpty(gn_args): error(No gn_args found please make sure you have valid configuration.)
      return($$gn_args)
-@@ -107,6 +112,7 @@ defineReplace(gnArch) {
+@@ -112,6 +117,7 @@ defineReplace(gnArch) {
      contains(qtArch, "mips"): return(mipsel)
      contains(qtArch, "mips64"): return(mips64el)
      contains(qtArch, "mips64el"): return(mips64el)
@@ -27,7 +50,7 @@
      return(unknown)
  }
  
-@@ -114,6 +120,7 @@ defineReplace(gnOS) {
+@@ -119,6 +125,7 @@ defineReplace(gnOS) {
      macos: return(mac)
      win32: return(win)
      linux: return(linux)

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2021-12-15 16:12:54 UTC
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig	2023-11-09 11:32:20 UTC
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
 @@ -134,7 +134,7 @@ declare_args() {
    #
@@ -26,7 +26,7 @@
        "-Wno-unknown-attributes",
        "-Wno-unknown-pragmas",
        "-Wno-unknown-warning-option"
-@@ -407,7 +408,7 @@ config("compiler") {
+@@ -408,7 +409,7 @@ config("compiler") {
  
      # Compiler instrumentation can introduce dependencies in DSOs to symbols in
      # the executable they are loaded into, so they are unresolved at link-time.
@@ -35,7 +35,25 @@
        ldflags += [
          "-Wl,-z,defs",
          "-Wl,--as-needed",
-@@ -795,7 +796,7 @@ config("compiler_cpu_abi") {
+@@ -566,7 +567,7 @@ config("compiler") {
+       # Override Chromium's default for projects that wish to stay on C++11.
+       cflags_cc += [ "-std=${standard_prefix}++11" ]
+     } else {
+-      cflags_cc += [ "-std=${standard_prefix}++14" ]
++      cflags_cc += [ "-std=${standard_prefix}++17" ]
+     }
+   } else if (!is_win && !is_nacl) {
+     if (target_os == "android") {
+@@ -583,7 +584,7 @@ config("compiler") {
+     if (cxx11_override) {
+       cflags_cc += [ "-std=c++11" ]
+     } else {
+-      cflags_cc += [ "-std=c++14" ]
++      cflags_cc += [ "-std=c++17" ]
+     }
+   }
+ 
+@@ -796,7 +797,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -44,7 +62,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1148,7 +1149,7 @@ config("compiler_deterministic") {
+@@ -1149,7 +1150,7 @@ config("compiler_deterministic") {
        "-Xclang",
        ".",
      ]
@@ -53,7 +71,18 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1550,7 +1551,7 @@ config("default_warnings") {
+@@ -1535,6 +1536,10 @@ config("default_warnings") {
+       # which we no longer use. Check if it makes sense to remove
+       # this as well. http://crbug.com/316352
+       "-Wno-unneeded-internal-declaration",
++
++      # Reduce build log bloat by about 20MB
++      "-Wno-deprecated-copy",
++      "-Wno-implicit-float-conversion",
+     ]
+ 
+     # use_xcode_clang only refers to the iOS toolchain, host binaries use
+@@ -1551,7 +1556,7 @@ config("default_warnings") {
          cflags += [ "-Wno-nonportable-include-path" ]
        }
  
@@ -62,7 +91,7 @@
          # Flags NaCl (Clang 3.7) and Xcode 9.2 (Clang clang-900.0.39.2) do not
          # recognize.
          cflags += [
-@@ -1724,7 +1725,7 @@ config("no_chromium_code") {
+@@ -1725,7 +1730,7 @@ config("no_chromium_code") {
        # suppressing them individually, we just blanket suppress them here.
        "-Wno-unused-variable",
      ]
@@ -71,7 +100,7 @@
        cflags += [
          # TODO(https://crbug.com/1031169): Clean up and enable.
          "-Wno-misleading-indentation",
-@@ -1802,7 +1803,7 @@ config("thin_archive") {
+@@ -1803,7 +1808,7 @@ config("thin_archive") {
    # Mac and iOS use the mac-specific "libtool" command, not ar, which doesn't
    # have a "thin archive" mode (it does accept -T, but it means truncating
    # archive names to 16 characters, which is not what we want).
@@ -80,7 +109,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2343,7 +2344,7 @@ config("symbols") {
+@@ -2344,7 +2349,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if (!is_nacl || is_clang) {
@@ -89,7 +118,7 @@
      }
  
      # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
-@@ -2385,7 +2386,7 @@ config("symbols") {
+@@ -2386,7 +2391,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      if (!is_apple && !is_nacl && current_cpu != "x86" &&

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/program_manager.cc.orig	2021-12-15 16:12:54 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/program_manager.cc.orig	2023-11-09 11:32:20 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/program_manager.cc
 @@ -30,7 +30,11 @@
  #include "gpu/command_buffer/service/program_cache.h"
@@ -12,3 +12,12 @@
  #include "ui/gl/gl_version_info.h"
  #include "ui/gl/progress_reporter.h"
  
+@@ -620,7 +624,7 @@ std::string Program::ProcessLogInfo(const std::string&
+       output += hashed_name;
+   }
+ 
+-  return output + input.as_string();
++  return output + std::string(input);
+ }
+ 
+ void Program::UpdateLogInfo() {
