@@ -1,6 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -85,7 +85,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		syn-2.0.39 \
 		tempfile-3.8.1 \
 		termcolor-1.1.3 \
-		test-case-3.2.1 \
+		test-case-3.3.1 \
 		test-case-core-3.2.1 \
 		test-case-macros-3.2.1 \
 		thiserror-1.0.50 \
