@@ -21,7 +21,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libhdf5.so:science/hdf5 \
 		liblapack.so:math/lapack
 
-USES=		cmake:noninja,testing fortran python shebangfix
+USES=		cmake:noninja,testing fortran localbase:ldflags python shebangfix
 
 #USE_GITLAB=	yes
 #GL_TAGNAME=	37b755410d9fdcd9b5e7bba6e43ceb7d5c7b9dae
