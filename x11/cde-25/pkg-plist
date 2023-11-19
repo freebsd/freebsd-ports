@@ -2623,12 +2623,12 @@ dt%%DT_ID%%/include/Dt/MenuButton.h
 dt%%DT_ID%%/include/Dt/Mmdb.h
 dt%%DT_ID%%/include/Dt/Mrm.h
 dt%%DT_ID%%/include/Dt/MsgLog.h
-dt%%DT_ID%%/include/Dt/PamSvc.h
 dt%%DT_ID%%/include/Dt/Print.h
 dt%%DT_ID%%/include/Dt/Saver.h
 dt%%DT_ID%%/include/Dt/Search.h
 dt%%DT_ID%%/include/Dt/Session.h
 dt%%DT_ID%%/include/Dt/SpinBox.h
+dt%%DT_ID%%/include/Dt/SvcPam.h
 dt%%DT_ID%%/include/Dt/Term.h
 dt%%DT_ID%%/include/Dt/TermPrim.h
 dt%%DT_ID%%/include/Dt/Wsm.h
@@ -2761,6 +2761,7 @@ dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/dbdrv
 dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/valBase
 dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/validator
 dt%%DT_ID%%/libexec/cde/dtdocbook/instant/instant
+dt%%DT_ID%%/man
 dt%%DT_ID%%/palettes
 dt%%DT_ID%%/share/backdrops/Ankh.bm
 dt%%DT_ID%%/share/backdrops/Background.bm
@@ -2914,7 +2915,7 @@ dt%%DT_ID%%/share/man/man1/dtudcexch.1.gz
 dt%%DT_ID%%/share/man/man1/dtudcfonted.1.gz
 dt%%DT_ID%%/share/man/man1/dtwm.1.gz
 dt%%DT_ID%%/share/man/man1/huffcode.1.gz
-dt%%DT_ID%%/share/man/man1/ksh.1.gz
+dt%%DT_ID%%/share/man/man1/ksh-cde.1.gz
 dt%%DT_ID%%/share/man/man1/tt_type_comp.1.gz
 dt%%DT_ID%%/share/man/man1/ttcp.1.gz
 dt%%DT_ID%%/share/man/man1/ttmv.1.gz
