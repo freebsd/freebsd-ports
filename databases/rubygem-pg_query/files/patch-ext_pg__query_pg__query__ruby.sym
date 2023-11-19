@@ -1,5 +1,5 @@
---- ext/pg_query/pg_query_ruby.sym.orig	2023-06-25 07:13:00 UTC
+--- ext/pg_query/pg_query_ruby.sym.orig	2023-11-19 20:29:16 UTC
 +++ ext/pg_query/pg_query_ruby.sym
-@@ -1 +1,2 @@
- _Init_pg_query
+@@ -1 +1 @@
+-_Init_pg_query
 +Init_pg_query
