@@ -109,13 +109,20 @@ PLIST_FILES+=		include/pyldb.h \
 
 .include <bsd.port.pre.mk>
 
+CFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+
+# Some symbols in ldb's linker version scripts are not defined, but since the
+# scripts are generated dynamically, suppress errors with lld >= 17 due to these
+# undefined symbols.
+LDFLAGS+=		-Wl,--undefined-version
+
 .if ! ${PORT_OPTIONS:MMANPAGES}
 CONFIGURE_ENV+=		XSLTPROC="true"
 .else
 BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
 .endif
-CONFIGURE_ENV+=		CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 # No fancy color error messages
 .if ${COMPILER_TYPE} == "clang"
