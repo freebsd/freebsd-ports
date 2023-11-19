@@ -22,10 +22,10 @@ include/zlustruct_gpu.h
 lib/libsuperlu_dist.a
 lib/libsuperlu_dist.so
 lib/libsuperlu_dist.so.8
-lib/libsuperlu_dist.so.8.1.2
+lib/libsuperlu_dist.so.8.2.1
 %%FORTRAN%%lib/libsuperlu_dist_fortran.a
 %%FORTRAN%%lib/libsuperlu_dist_fortran.so
 %%FORTRAN%%lib/libsuperlu_dist_fortran.so.8
-%%FORTRAN%%lib/libsuperlu_dist_fortran.so.8.1.2
+%%FORTRAN%%lib/libsuperlu_dist_fortran.so.8.2.1
 libdata/pkgconfig/superlu_dist.pc
 %%PORTDOCS%%%%DOCSDIR%%/ug.pdf
