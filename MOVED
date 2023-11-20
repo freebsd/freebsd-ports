@@ -6296,7 +6296,6 @@ security/rubygem-bcrypt_pbkdf10|security/rubygem-bcrypt_pbkdf|2022-01-11|Remove 
 math/gotoblas|math/openblas|2022-01-15|Remove obsoleted port. Use math/openblas instead
 net/pipsecd||2022-01-15|Has expired: Abandonware, current release is from 1999 and uses insecure encryption algorithms
 devel/maven31|devel/maven|2022-01-15|Has expired: Outdated, unsupported upstream
-devel/wasi-compiler-rt12||2022-01-15|Has expired: this ports exists solely for building Firefox 95+ in 2021Q4
 devel/e2fsprogs-libss||2022-01-17|Folded back into sysutils/e2fsprogs, which was the sole user
 lang/spidermonkey60|lang/spidermonkey78|2022-01-18|Has expired: Requires python2 to build
 shells/ammonite|devel/ammonite|2022-01-18|Ammonite dropped built-in shell support
@@ -8078,3 +8077,4 @@ x11-toolkits/fpc-xforms|lang/fpc|2023-11-12|This port was merged into lang/fpc
 x11-toolkits/fpc-gtk2|lang/fpc|2023-11-12|This port was merged into lang/fpc
 sysutils/fpc-users|lang/fpc|2023-11-14|This port was merged into lang/fpc
 net/py-ldap|net/py-python-ldap|2023-11-17|Rename to conform upstream name
+devel/wasi-compiler-rt11||2023-11-20|Version no longer supported as a WASI component

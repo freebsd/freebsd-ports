@@ -1,5 +1,5 @@
-# must sync with devel/llvm13
-DISTVERSION=	13.0.1
+# must sync with devel/llvm16
+DISTVERSION=	16.0.6
 
 MASTERDIR=	${.CURDIR}/../wasi-compiler-rt
 
