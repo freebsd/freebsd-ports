@@ -10,6 +10,7 @@ bin/ureadtags
 %%MANPAGES%%man/man7/uctags-incompatibilities.7.gz
 %%MANPAGES%%man/man7/uctags-lang-asm.7.gz
 %%MANPAGES%%man/man7/uctags-lang-autoit.7.gz
+%%MANPAGES%%man/man7/uctags-lang-automake.7.gz
 %%MANPAGES%%man/man7/uctags-lang-elm.7.gz
 %%MANPAGES%%man/man7/uctags-lang-fortran.7.gz
 %%MANPAGES%%man/man7/uctags-lang-gdscript.7.gz
