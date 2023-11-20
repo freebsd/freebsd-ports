@@ -1,5 +1,5 @@
 PORTNAME=	yaf
-PORTVERSION=	2.11.0
+DISTVERSION=	2.13.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://tools.netsa.cert.org/releases/
 
