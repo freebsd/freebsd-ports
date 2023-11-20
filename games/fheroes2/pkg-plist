@@ -8,4 +8,4 @@ bin/fheroes2
 @dir %%DATADIR%%/files/lang
 share/applications/fheroes2.desktop
 share/icons/hicolor/128x128/apps/fheroes2.png
-share/metainfo/fheroes2.appdata.xml
+share/metainfo/fheroes2.metainfo.xml
