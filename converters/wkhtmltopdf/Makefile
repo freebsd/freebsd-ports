@@ -57,7 +57,7 @@ MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	8
+USE_GCC=	10
 .endif
 
 pre-patch:
@@ -69,8 +69,6 @@ post-patch:
 		-e 's|/usr/X11R6/include|${LOCALBASE}/include/X11|g' \
 		-e 's|/usr/X11R6/lib|${LOCALBASE}/lib|g' \
 		${PATCH_WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${PATCH_WRKSRC}/mkspecs/common/gcc-base.conf
 	${REINPLACE_CMD} -e "s|gcc|${CC}|g" -e "s|g++|${CXX}|g" \
 		${PATCH_WRKSRC}/mkspecs/common/g++-base.conf
 	${REINPLACE_CMD} -e "s|share/man|man|g" \
@@ -84,7 +82,6 @@ post-patch:
 	@${FIND} ${PATCH_WRKSRC}/../qt-5db36ec -name "*.cpp" -o -name "*.h" | \
 		${XARGS} ${REINPLACE_CMD} -E 's|register ([a-zA-Z])|\1|g'
 .endif
-
 
 post-build:
 	cd ${WRKSRC}/build/app && ${SETENV} ${MAKE_ENV} \
