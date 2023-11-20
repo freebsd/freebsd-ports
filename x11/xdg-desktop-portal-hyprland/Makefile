@@ -1,6 +1,6 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.4
+DISTVERSION=	1.2.5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,7 +17,9 @@ LIB_DEPENDS=	libsdbus-c++.so:devel/sdbus-cpp \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
 		libpipewire-0.3.so:multimedia/pipewire
-RUN_DEPENDS=	hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR}
+RUN_DEPENDS=	grim:x11/grim \
+		hyprland-share-picker:x11/hyprland-share-picker@${FLAVOR} \
+		slurp:x11/slurp
 
 FLAVORS=	qt5 qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
