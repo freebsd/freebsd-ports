@@ -42,9 +42,10 @@ share/man/man3/khtml_write.3.gz
 share/man/man3/khttp_body.3.gz
 share/man/man3/khttp_datetime2epoch.3.gz
 share/man/man3/khttp_epoch2datetime.3.gz
-share/man/man3/khttp_epoch2tms.3.gz
 share/man/man3/khttp_epoch2str.3.gz
+share/man/man3/khttp_epoch2tms.3.gz
 share/man/man3/khttp_fcgi_free.3.gz
+share/man/man3/khttp_fcgi_getfd.3.gz
 share/man/man3/khttp_fcgi_init.3.gz
 share/man/man3/khttp_fcgi_parse.3.gz
 share/man/man3/khttp_fcgi_test.3.gz
