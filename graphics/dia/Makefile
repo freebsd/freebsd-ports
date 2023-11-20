@@ -1,19 +1,20 @@
 PORTNAME=	dia
 PORTVERSION=	0.97.3
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
-WWW=		https://live.gnome.org/Dia
+WWW=		https://wiki.gnome.org/Apps/Dia
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libicudata.so:devel/icu
 
 USES=		cpe desktop-file-utils gettext gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:xz
