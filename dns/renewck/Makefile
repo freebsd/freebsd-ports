@@ -1,5 +1,6 @@
 PORTNAME=	renewck
-PORTVERSION=	1.01
+DISTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/dnstools/
 
