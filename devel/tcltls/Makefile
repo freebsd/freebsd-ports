@@ -38,15 +38,17 @@ CFLAGS+=       -Wno-error=int-conversion
 
 post-patch:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
-	${CP} ${FILESDIR}/dh_params.h ${WRKSRC}/
 
 # Newer openssl-dhparam has no "-C" option, we emulate it here :-/
 post-configure:
+	${CP} ${FILESDIR}/dh_params.h ${WRKSRC}/
 	${OPENSSLBASE}/bin/openssl dhparam -text 2048 | \
-	    ${SED} -E -e '/^---/,/^---/d' \
-		-e '/(DH|prime|generator)/d' \
-		-e 's/([0-9a-h]{2})(:|$$)/0x\1, /g' \
-		-e w${WRKSRC}/generateddh.txt
+	    ${OPENSSLBASE}/bin/openssl asn1parse | \
+	    ${SED} -E \
+		-e '/^ .*(0|5):d=/d' \
+		-e 's/    4:d=1.*INTEGER *://' \
+		-e 's/([0-9A-H]{2})/0x\1, /g' \
+		-e 'w${WRKSRC}/generateddh.txt'
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
