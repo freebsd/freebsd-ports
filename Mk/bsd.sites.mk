@@ -639,16 +639,6 @@ MASTER_SITE_HACKAGE+= \
 	http://hackage.haskell.org/package/
 .endif
 
-.if !defined(IGNORE_MASTER_SITE_HORDE)
-MASTER_SITE_HORDE+= \
-	https://ftp.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.at.horde.org/infosys/webapps/horde/%SUBDIR%/ \
-	ftp://ftp.se.horde.org/mirror/horde/pub/%SUBDIR%/ \
-	ftp://ftp.tw.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.us.horde.org/pub/software/horde//%SUBDIR%/
-.endif
-
 .if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
 MASTER_SITE_IDSOFTWARE+= \
 	ftp://ftp.gwdg.de/pub/misc2/ftp.idsoftware.com/idstuff/%SUBDIR%/ \
@@ -1112,7 +1102,6 @@ MASTER_SITES_SUBDIRS=	APACHE_COMMONS_BINARIES:${PORTNAME:S,commons-,,} \
 			GNU:${PORTNAME} \
 			GNUPG:${PORTNAME} \
 			GNU_ALPHA:${PORTNAME} \
-			HORDE:${PORTNAME} \
 			LIBREOFFICE_DEV:${PORTNAME} \
 			MATE:${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			MOZDEV:${PORTNAME:tl} \
