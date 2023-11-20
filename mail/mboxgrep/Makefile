@@ -5,7 +5,7 @@ MASTER_SITES=	https://git.datatipp.se/attachments/5e6a5b31-60b9-4fb3-9674-fe1e29
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
-WWW=		https://mboxgrep.sourceforge.net/
+WWW=		https://mboxgrep.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING.md
