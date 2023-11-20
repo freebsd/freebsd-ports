@@ -5,7 +5,7 @@
  
  if host_machine.system() == 'freebsd' or host_machine.system() == 'dragonfly'
 -    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64'
-+    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64' or host_machine.cpu_family() == 'aarch64'
++    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64' or host_machine.cpu_family() == 'aarch64' or host_machine.cpu_family() == 'arm'
          xorg_data.set('USE_DEV_IO', '1')
      endif
  elif host_machine.system() == 'netbsd'
