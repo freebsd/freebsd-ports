@@ -1,7 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.3.3
-PORTREVISION=	1
+DISTVERSION=	3.4.2
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -10,6 +9,9 @@ PATCHFILES+=	4c833569fb12.patch:-p1
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
 WWW=		https://www.audacityteam.org/
+
+BROKEN_FreeBSD_13=	compiler bug
+BROKEN_FreeBSD_12=	compiler bug
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
