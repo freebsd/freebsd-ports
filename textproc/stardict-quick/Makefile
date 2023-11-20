@@ -9,7 +9,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 WWW=		https://stardict.sourceforge.net/
 
-DEPRECATED=	Not updated in last 10 years and upstream has different versions
+BROKEN=		unfetchable
+DEPRECATED=	unfetchable
 EXPIRATION_DATE=	2023-12-12
 
 NO_BUILD=	yes
