@@ -1,11 +1,11 @@
-PORTNAME=	suyimazu
-DISTVERSION=	2023.09
+PORTNAME=	mizuma
+DISTVERSION=	2023.11
 CATEGORIES=	games emulators 
-MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://codeberg.org/Alexander88207/Mizutamari/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	Alexander88207@protonmail.com
-COMMENT=	Wine-based Application Launcher for FreeBSD
-WWW=		https://codeberg.org/Alexander88207/Suyimazu
+COMMENT=	Wine front-end for FreeBSD
+WWW=		https://codeberg.org/Alexander88207/Mizutamari
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,14 +35,14 @@ MESA-DEMOS_DESC=	Use glxinfo from mesa-demos
 GLX-UTILS_RUN_DEPENDS=	glxinfo:graphics/glx-utils
 MESA-DEMOS_RUN_DEPENDS=	glxinfo:graphics/mesa-demos
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/mizutamari
 
-PLIST_FILES=	bin/Suyimazu \
-		share/Suyimazu/Tools/Framework
+PLIST_FILES=	bin/Mizuma \
+		share/Mizutamari/Tools/Framework
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/Suyimazu/Tools
-	${INSTALL_SCRIPT} ${WRKSRC}/Suyimazu ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Tools/Framework ${STAGEDIR}${PREFIX}/share/Suyimazu/Tools
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/Mizutamari/Tools
+	${INSTALL_SCRIPT} ${WRKSRC}/Mizuma ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/Framework ${STAGEDIR}${PREFIX}/share/Mizutamari/Tools
 
 .include <bsd.port.mk>

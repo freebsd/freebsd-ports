@@ -633,6 +633,7 @@
     SUBDIR += minetestmapper
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += mizuma
     SUBDIR += mkhexgrid
     SUBDIR += moagg
     SUBDIR += monsterz
@@ -949,7 +950,6 @@
     SUBDIR += supertux
     SUBDIR += supertux2
     SUBDIR += supertuxkart
-    SUBDIR += suyimazu
     SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += tads

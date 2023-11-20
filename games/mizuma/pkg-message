@@ -1,0 +1,17 @@
+[
+{
+  message: <<EOM
+An application shortcut for the desktop will be not created by the port.
+
+To open the main gui type: Mizuma
+
+For quick commandline taks you can use the following examples:
+
+    To install something use: 		Mizuma Install Steam
+    To launch something use: 		Mizuma Launch Steam
+    To uninstall something use: 	Mizuma Uninstall Steam
+
+Enjoy playing!
+EOM
+}
+]
