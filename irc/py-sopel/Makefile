@@ -1,5 +1,6 @@
 PORTNAME=	sopel
 DISTVERSION=	7.1.9
+PORTREVISION=	1
 CATEGORIES=	irc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,5 +47,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/var/${dir}/sopel
 .endfor
 	@${MKDIR} ${STAGEDIR}/var/db/sopel/www
+.for script in sopel sopel-config sopel-plugins
+	${CP} ${FILESDIR}/${script}.py ${STAGEDIR}${PREFIX}/bin/${script}
+	@${REINPLACE_CMD} -e "s|%%PYTHON_SHEBANG%%|#!${PYTHON_CMD}|" ${STAGEDIR}${PREFIX}/bin/${script}
+	${CHMOD} 555 ${STAGEDIR}${PREFIX}/bin/${script}
+.endfor
 
 .include <bsd.port.mk>
