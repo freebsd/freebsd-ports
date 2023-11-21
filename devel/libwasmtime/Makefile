@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	bytecodealliance
 GH_PROJECT=	wasmtime
 
-CARGO_CARGOTOML=	${WRKSRC}/crates/c-api/artifact/Cargo.toml
+CARGO_BUILD_ARGS=	-p wasmtime-c-api
 
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
