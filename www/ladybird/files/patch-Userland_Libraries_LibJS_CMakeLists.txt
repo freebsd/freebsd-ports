@@ -1,0 +1,17 @@
+--- Userland/Libraries/LibJS/CMakeLists.txt.orig	2023-11-20 19:50:53 UTC
++++ Userland/Libraries/LibJS/CMakeLists.txt
+@@ -270,13 +270,8 @@ set(SOURCES
+ 
+ serenity_lib(LibJS js)
+ target_link_libraries(LibJS PRIVATE LibCore LibCrypto LibFileSystem LibRegex LibSyntax LibLocale LibUnicode LibTimeZone LibJIT)
+-if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "x86_64")
++if("${CMAKE_SYSTEM_PROCESSOR}" STREQUAL "amd64")
+     target_link_libraries(LibJS PRIVATE LibX86)
+-endif()
+-
+-# TODO: This is probably also needed on RISC-V.
+-if("${CMAKE_SYSTEM_PROCESSOR}" MATCHES "i.86.*")
+-    target_link_libraries(LibJS PRIVATE atomic)
+ endif()
+ 
+ target_compile_options(LibJS PRIVATE -fno-omit-frame-pointer)
