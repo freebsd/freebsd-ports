@@ -6,7 +6,7 @@ include/mpv/render_gl.h
 include/mpv/stream_cb.h
 lib/libmpv.so
 lib/libmpv.so.2
-lib/libmpv.so.2.1.0
+lib/libmpv.so.2.2.0
 libdata/pkgconfig/mpv.pc
 %%MANPAGES%%man/man1/mpv.1.gz
 share/applications/mpv.desktop

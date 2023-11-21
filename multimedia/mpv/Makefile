@@ -1,14 +1,8 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.36.0
-PORTREVISION=	6
+DISTVERSION=	0.37.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	3bdf702b1de8.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
-PATCHFILES+=	48eb77207bff.patch:-p1 # https://github.com/mpv-player/mpv/pull/12012
-PATCHFILES+=	f2453b60ee27.patch:-p1 # https://github.com/mpv-player/mpv/pull/11304
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -26,7 +20,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 USES=		compiler:c11 cpe desktop-file-utils iconv jpeg \
 		meson pkgconfig python:build shebangfix tar:bz2
 USE_LDCONFIG=	yes
-SHEBANG_FILES=	*.py TOOLS/*.py
+SHEBANG_FILES=	TOOLS/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
@@ -156,7 +150,7 @@ VDPAU_IMPLIES=			X11
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
 				libvulkan.so:graphics/vulkan-loader
-VULKAN_MESON_ENABLED=		vulkan libplacebo
+VULKAN_MESON_ENABLED=		vulkan
 
 WAYLAND_CATEGORIES=		wayland
 WAYLAND_BUILD_DEPENDS=		wayland-protocols>=1.15:graphics/wayland-protocols \
