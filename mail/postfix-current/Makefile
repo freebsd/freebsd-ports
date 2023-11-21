@@ -29,31 +29,31 @@ default_CONFLICTS_INSTALL=	postfix-current-base-ldap postfix-current-base-sasl \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sqlite postfix-current-base-sqlite
-ldap_PKGNAMESUFFIX=		-ldap
+ldap_PKGNAMESUFFIX=		-current-ldap
 ldap_CONFLICTS_INSTALL=		postfix-current postfix-current-base \
 				postfix-current-base-sasl postfix-current-sasl \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sqlite postfix-current-base-sqlite
-mysql_PKGNAMESUFFIX=		-mysql
+mysql_PKGNAMESUFFIX=		-current-mysql
 mysql_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sasl postfix-current-base-sasl \
 				postfix-current-sqlite postfix-current-base-sqlite
-pgsql_PKGNAMESUFFIX=		-pgsql
+pgsql_PKGNAMESUFFIX=		-current-pgsql
 pgsql_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-sasl postfix-current-base-sasl \
 				postfix-current-sqlite postfix-current-base-sqlite
-sasl_PKGNAMESUFFIX=		-sasl
+sasl_PKGNAMESUFFIX=		-current-sasl
 sasl_CONFLICTS_INSTALL=		postfix-current postfix-current-base \
 				postfix-current-base-ldap postfix-current-ldap \
 				postfix-current-mysql postfix-current-base-mysql \
 				postfix-current-pgsql postfix-current-base-pgsql \
 				postfix-current-sqlite postfix-current-base-sqlite
-sqlite_PKGNAMESUFFIX=		-sqlite
+sqlite_PKGNAMESUFFIX=		-current-sqlite
 sqlite_CONFLICTS_INSTALL=	postfix-current postfix-current-base \
 				postfix-current-ldap postfix-current-base-ldap \
 				postfix-current-mysql postfix-current-base-mysql \
