@@ -230,6 +230,7 @@
     SUBDIR += wlroots
     SUBDIR += wlroots-devel
     SUBDIR += wlroots015
+    SUBDIR += wlroots016
     SUBDIR += wmapp
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32
