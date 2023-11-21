@@ -20,6 +20,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 .if ${DISTVERSION} == 0
 IGNORE=		is a meta-port; there is nothing to build
+PKGNAMESUFFIX=	-master
 .endif
 
 BUILD_DEPENDS=	${WASI_SYSROOT}/include/stdarg.h:devel/wasi-libc
