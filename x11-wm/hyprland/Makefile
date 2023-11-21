@@ -1,7 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.32.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -89,10 +89,4 @@ bundled-libcxx:
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
 .endif # exists(/usr/lib/libc++.so)
-
-post-patch:	wlroots-devel-patch
-wlroots-devel-patch:
-# Prefer <wlr/*> headers (used by <hyprland/*>) from wlroots-devel
-	@${REINPLACE_CMD} -i .devel "/subdirs/s|''|'../wlroots-devel/include', &|" \
-		${WRKSRC}/meson.build
 .include <bsd.port.mk>
