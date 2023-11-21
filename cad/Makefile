@@ -33,7 +33,6 @@
     SUBDIR += feappv
     SUBDIR += fidocadj
     SUBDIR += freecad
-    SUBDIR += freehdl
     SUBDIR += fritzing
     SUBDIR += gds3d
     SUBDIR += gdscpp
