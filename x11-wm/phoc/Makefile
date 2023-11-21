@@ -1,6 +1,7 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.33.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -42,4 +43,5 @@ MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

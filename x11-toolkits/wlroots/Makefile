@@ -1,13 +1,11 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.16.2
-PORTREVISION=	1
+DISTVERSION=	0.17.0
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
-PATCHFILES+=	fc0854d5f256.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	29cb694655db.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	10f80a8f1bb2.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
+PATCHFILES+=	3196c73d487f.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	f3ba14e49133.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3850
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -16,11 +14,9 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
-LIB_DEPENDS=	libudev.so:devel/libudev-devd \
-		libdrm.so:graphics/libdrm \
+BUILD_DEPENDS=	wayland-protocols>=1.32:graphics/wayland-protocols
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
-		libseat.so:sysutils/seatd \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gl meson pkgconfig xorg
@@ -37,7 +33,12 @@ OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
 DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
-DRM_LIB_DEPENDS=	libinput.so:x11/libinput
+DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
+			libliftoff.so:graphics/libliftoff \
+			libdisplay-info.so:sysutils/libdisplay-info \
+			libseat.so:sysutils/seatd \
+			libinput.so:x11/libinput
+DRM_MESON_ENABLED=	session
 DRM_VARS=		BACKENDS+="drm libinput"
 
 OPENGL_RUN_DEPENDS=	mesa-dri>0:graphics/mesa-dri
@@ -65,5 +66,13 @@ post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} "/STR/s/meson.project_version()/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/include/wlr/meson.build
+# XXX Drop after FreeBSD 12.4 EOL around 2023-12-31
+# https://cgit.freebsd.org/src/commit/?id=d7535fb3e3cb
+	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1300515 ]; then \
+		${REINPLACE_CMD} -e '/POSIX/s/199309/200112/' \
+		${WRKSRC}/render/gles2/pass.c \
+		${WRKSRC}/render/gles2/renderer.c \
+		${WRKSRC}/types/wlr_presentation_time.c; \
+	fi
 
 .include <bsd.port.mk>

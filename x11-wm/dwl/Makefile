@@ -1,6 +1,7 @@
 PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -68,4 +69,5 @@ do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" \
 		${STAGEDIR}${DOCSDIR})
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

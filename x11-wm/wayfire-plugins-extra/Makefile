@@ -1,6 +1,7 @@
 PORTNAME=	wayfire-plugins-extra
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -40,4 +41,5 @@ post-patch:
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/subprojects/windecor/deco-icontheme.cpp
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

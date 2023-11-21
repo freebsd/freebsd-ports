@@ -1,7 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.27.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -68,4 +68,5 @@ post-patch:
 	@${REINPLACE_CMD} -e '/mounts/s,/proc,/compat/linux&,' \
 		${WRKSRC}/debug/perf/ftrace_impl.cpp
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

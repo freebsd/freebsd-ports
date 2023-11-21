@@ -1,6 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -64,4 +65,5 @@ pre-test:
 		${TOUCH} ${WRKDIR}/.meson_build_tests; \
 	fi
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>

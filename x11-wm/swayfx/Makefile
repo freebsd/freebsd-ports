@@ -1,5 +1,5 @@
 DISTVERSION=	0.3.2
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	${GH_PROJECT:S/${PORTNAME}//}
 
 PATCHFILES+=	c47aa61c6492.patch:-p1 # https://github.com/WillPower3309/swayfx/pull/209
