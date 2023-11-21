@@ -1,5 +1,5 @@
 PORTNAME=	cbsd
-DISTVERSION=	14.0.1
+DISTVERSION=	14.0.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
@@ -50,22 +50,22 @@ PLIST_SUB+=	FBSD=""
 .endif
 
 do-install:
-	@${ECHO} "Installing in ${CBSD_HOME}"
-	${MKDIR} ${STAGEDIR}${CBSD_HOME}
-	${CP} -a ${WRKSRC}/ ${STAGEDIR}${CBSD_HOME}
-	${INSTALL_PROGRAM} -s ${WRKSRC}/bin/cbsdsh/cbsd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} -s ${WRKSRC}/misc/src/sipcalc/sipcalc \
-		${STAGEDIR}${PREFIX}/cbsd/misc/sipcalc
-	${RM} -rf ${STAGEDIR}${PREFIX}/cbsd/bin/cbsdsh \
+	@${ECHO_MSG} "Installing in ${CBSD_HOME}"
+	${CP} -a ${WRKSRC} ${STAGEDIR}${CBSD_HOME}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/cbsdsh/cbsd \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/misc/src/sipcalc/sipcalc \
+		${STAGEDIR}${PREFIX}/cbsd/misc
+	${RM} -r ${STAGEDIR}${PREFIX}/cbsd/bin/cbsdsh \
 		${STAGEDIR}${PREFIX}/cbsd/bin/src \
 		${STAGEDIR}${PREFIX}/cbsd/lib \
 		${STAGEDIR}${PREFIX}/cbsd/misc/src \
 		${STAGEDIR}${PREFIX}/cbsd/sbin/src \
 		${STAGEDIR}${PREFIX}/cbsd/tools/src
-	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 ${STAGEDIR}${PREFIX}/man/man8/cbsd.8
-
-post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/cbsd.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/bsdconfig
-	@${LN} -sf ${CBSD_HOME}/share/bsdconfig/cbsd ${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd
+	${RLN} ${STAGEDIR}${CBSD_HOME}/share/bsdconfig/cbsd \
+		${STAGEDIR}${PREFIX}/libexec/bsdconfig/cbsd
 
 .include <bsd.port.mk>
