@@ -148,7 +148,8 @@ MLIR_COMMANDS=	\
 		mlir-reduce \
 		mlir-tblgen \
 		mlir-translate \
-		tblgen-lsp-server
+		tblgen-lsp-server \
+		tblgen-to-irdl
 
 OPENMP_COMMANDS=	\
 		llvm-omp-device-info \
