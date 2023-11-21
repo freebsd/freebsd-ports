@@ -1,5 +1,5 @@
 PORTNAME=	thunderbird
-DISTVERSION=	115.4.3
+DISTVERSION=	115.5.0
 CATEGORIES=	mail news net-im wayland
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		MOZILLA/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 SSP_UNSAFE=	yes
 USE_GECKO=	gecko
 # cannot use system icu: calendar is completely broken by
-# https://unicode-org.atlassian.net/browse/ICU-22132 (fix ETA 74.1)
+# https://unicode-org.atlassian.net/browse/ICU-22132 (fix not in 74.1)
 USE_MOZILLA=	-icu -sqlite
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 
