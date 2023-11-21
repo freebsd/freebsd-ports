@@ -11,5 +11,7 @@ bin/manpageblog
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/blog.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/_index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/about.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-11-manpageblog-release-1.0.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-11-manpageblog-release-1-0.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-13-manpageblog-now-available-in-freebsd-ports.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-15-manpageblog-release-1-1.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/contact.html
