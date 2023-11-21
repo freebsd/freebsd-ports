@@ -3,6 +3,7 @@
 lib/ddnet/config_retrieve
 lib/ddnet/config_store
 lib/ddnet/crapnet
+lib/ddnet/demo_extract_chat
 lib/ddnet/dilate
 lib/ddnet/dummy_map
 lib/ddnet/map_convert_07
