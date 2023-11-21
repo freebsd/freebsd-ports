@@ -39,7 +39,6 @@ EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-SUB_FILES=	pkg-message
 SUB_LIST+=	GROUPS=${GROUPS} \
 		JAVA=${JAVA} \
 		JAVA_HOME=${JAVA_HOME} \
