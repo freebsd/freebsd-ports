@@ -370,6 +370,7 @@ post-patch:
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
+	${CP} ${FILESDIR}/powerpc64le-skia.patch.0 ${WRKSRC}/external/skia/
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
