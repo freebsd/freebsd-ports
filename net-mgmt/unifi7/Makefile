@@ -1,5 +1,6 @@
 PORTNAME=	unifi7
 PORTVERSION=	7.5.187
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -30,7 +31,7 @@ JAVA_VERSION=	17
 JAVA_RUN=	jre
 USE_RC_SUBR=	unifi
 
-CONFLICTS_INSTALL=	unifi6
+CONFLICTS_INSTALL=	unifi8
 
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
