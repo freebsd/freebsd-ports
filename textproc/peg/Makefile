@@ -1,5 +1,5 @@
 PORTNAME=	peg
-DISTVERSION=	0.1.18
+DISTVERSION=	0.1.19
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.piumarta.com/software/peg/
 

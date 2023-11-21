@@ -1,5 +1,5 @@
 peg and leg are tools for generating recursive-descent parsers: programs
-that perform pattern matching on text.  They processes a Parsing
+that perform pattern matching on text.  They process a Parsing
 Expression Grammar (PEG) [Ford 2004] to produce a program that
 recognises legal sentences of that grammar.  peg processes PEGs written
 using the original syntax described by Ford; leg processes PEGs written
