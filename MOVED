@@ -8078,3 +8078,13 @@ x11-toolkits/fpc-gtk2|lang/fpc|2023-11-12|This port was merged into lang/fpc
 sysutils/fpc-users|lang/fpc|2023-11-14|This port was merged into lang/fpc
 net/py-ldap|net/py-python-ldap|2023-11-17|Rename to conform upstream name
 devel/wasi-compiler-rt11||2023-11-20|Version no longer supported as a WASI component
+devel/mingw32-libyaml||2023-11-21|Has expired: Last upstream release was in 2014 and mingw32 project is defunct
+devel/mingw32-pdcurses||2023-11-21|Has expired: Last upstream release was in 2009 and mingw32 project is defunct
+devel/mingw32-openssl||2023-11-21|Has expired: Upstream reached EOL and mingw32 project is defunct
+devel/mingw32-pthreads||2023-11-21|Has expired: Last upstream release was in 2012 and mingw32 project is defunct
+devel/mingw32-directx||2023-11-21|Has expired: Last upstream release was in 2002 and mingw32 project is more or less dead
+math/mingw32-libgmp||2023-11-21|Has expired: Broken for more than a year
+devel/mingw32-libffi||2023-11-21|Has expired: Last upstream release was in 2014 and mingw32 project is defunct
+devel/mingw32-bin-msvcrt||2023-11-21|Has expired: Last upstream release was in 2014 and project mingw32 is defunct
+devel/mingw32-zlib||2023-11-21|Has expired: Last upstream release was in 2014 and project mingw32 is defunct
+devel/mingw32-gcc||2023-11-21|Has expired: Upstream release was in 2015 and mingw32 project is defunct

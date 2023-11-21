@@ -1,3 +1,0 @@
-DirectX header files for use with MinGW. These header files are used by
-the SDL project to compile SDL on Cygwin, but can also be used to
-compile native applications for Windows with MinGW.

@@ -1567,15 +1567,6 @@
     SUBDIR += mill
     SUBDIR += mimalloc
     SUBDIR += mimir
-    SUBDIR += mingw32-bin-msvcrt
-    SUBDIR += mingw32-directx
-    SUBDIR += mingw32-gcc
-    SUBDIR += mingw32-libffi
-    SUBDIR += mingw32-libyaml
-    SUBDIR += mingw32-openssl
-    SUBDIR += mingw32-pdcurses
-    SUBDIR += mingw32-pthreads
-    SUBDIR += mingw32-zlib
     SUBDIR += mir-core
     SUBDIR += mk-configure
     SUBDIR += mm
