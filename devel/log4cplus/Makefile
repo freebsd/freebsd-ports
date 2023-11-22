@@ -1,7 +1,7 @@
 PORTNAME=	log4cplus
-PORTVERSION=	2.1.0
+DISTVERSION=	2.1.1
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/REL_${PORTVERSION:S:.:_:g}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/REL_${DISTVERSION:S:.:_:g}/
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Logging library for C++
@@ -10,14 +10,23 @@ WWW=		https://log4cplus.github.io/log4cplus/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++11-lang tar:xz
+TEST_DEPENDS=	catch>=0:devel/catch
 
-OPTIONS_DEFINE=	DOCS
-
+USES=		cmake:testing compiler:c++11-lang pathfix tar:xz
 USE_LDCONFIG=	yes
-CMAKE_OFF=	LOG4CPLUS_BUILD_TESTING
+
+EXTRACT_AFTER_ARGS=	--exclude catch
+
+.if ${.TARGETS} == "test"
+CXXFLAGS+=	-I${LOCALBASE}/include/catch2
+.endif
 
 PORTDOCS=	*
+
+CMAKE_TESTING_ON=	LOG4CPLUS_BUILD_TESTING WITH_UNIT_TESTS
+CMAKE_OFF=	LOG4CPLUS_BUILD_TESTING WITH_UNIT_TESTS
+
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 
@@ -27,5 +36,8 @@ post-build-DOCS-on:
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/html/* ${STAGEDIR}${DOCSDIR}
+
+pre-test:
+	${RM} ${BUILD_WRKSRC}/CMakeCache.txt
 
 .include <bsd.port.mk>
