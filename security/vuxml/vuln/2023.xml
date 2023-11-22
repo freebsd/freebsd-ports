@@ -1,3 +1,36 @@
+  <vuln vid="147353a3-c33b-46d1-b751-e72c0d7f29df">
+    <topic>electron{25,26} -- use after free in Garbage Collection</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.6</lt></range>
+      </package>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.6">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-5997.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-5997</cvename>
+      <url>https://github.com/advisories/GHSA-fggx-frxq-cpx8</url>
+    </references>
+    <dates>
+      <discovery>2023-11-22</discovery>
+      <entry>2023-11-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0da4db89-84bf-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
