@@ -1,5 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	4.4.5
+PORTVERSION=	5.0.4
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -10,10 +10,14 @@ WWW=		https://xpra.org/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
-LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+		libbrotlidec.so:archivers/brotli \
+		libdrm.so:graphics/libdrm \
 		libharfbuzz.so:print/harfbuzz \
 		liblz4.so:archivers/liblz4 \
-		libwebp.so:graphics/webp
+		libopenh264.so:multimedia/openh264 \
+		libwebp.so:graphics/webp \
+		libx264.so:multimedia/libx264
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
@@ -46,11 +50,9 @@ SHEBANG_FILES=	fs/lib/cups/backend/xpraforwarder fs/libexec/xpra/auth_dialog \
 		fs/libexec/xpra/xdg-open fs/libexec/xpra/xpra_signal_listener \
 		fs/libexec/xpra/xpra_udev_product_version
 
-OPTIONS_DEFINE=		AVAHI AVCODEC CUPS DOCS FFMPEG GSTREAMER LIBYUV SWSCALE \
-			WEBCAM X265
-OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER X264
-OPTIONS_RADIO=		CODEC
-OPTIONS_RADIO_CODEC=	VPX X264
+OPTIONS_DEFINE=		AVAHI CUPS DOCS GSTREAMER LIBYUV SWSCALE \
+			WEBCAM
+OPTIONS_DEFAULT=	AVAHI CUPS GSTREAMER
 OPTIONS_SUB=		yes
 
 AVCODEC_DESC=	Enable avcodec2 (FFmpeg) decoder
@@ -59,19 +61,12 @@ FFMPEG_DESC=	Enable FFmpeg encoder
 GSTREAMER_DESC=	Enable GStreamer for sound forwarding
 LIBYUV_DESC=	Enable libyuv CSC module (fastest)
 SWSCALE_DESC=	Enable swscale (FFmpeg) CSC module
-VPX_DESC=	Enable VP8 and VP9 codec
 WEBCAM_DESC=	Enable webcam forwarding (client only)
-X264_DESC=	Enable X264 encoder
-X265_DESC=	Enable X265 encoder
 
 AVAHI_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}avahi>0:net/py-avahi@${PY_FLAVOR}
 AVAHI_VARS=			XPRA_OPTIONS+=mdns
-AVCODEC_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
-AVCODEC_VARS=			XPRA_OPTIONS+=dec_avcodec2
 CUPS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pycups>1:print/py-pycups@${PY_FLAVOR}
 CUPS_VARS=			XPRA_OPTIONS+=printing
-FFMPEG_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg
-FFMPEG_VARS=			XPRA_OPTIONS+=enc_ffmpeg
 GSTREAMER_USES=			gstreamer
 GSTREAMER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
 GSTREAMER_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gstreamer1>1:multimedia/py-gstreamer1@${PY_FLAVOR}
@@ -79,22 +74,16 @@ GSTREAMER_USE=			GSTREAMER=flac,lame,mpg123,ogg,opus,pulse,vorbis,wavpack
 GSTREAMER_VARS=			XPRA_OPTIONS+=sound
 LIBYUV_LIB_DEPENDS=		libyuv.so:graphics/libyuv
 LIBYUV_VARS=			XPRA_OPTIONS+=csc_libyuv
-SWSCALE_LIB_DEPENDS=		libswscale.so:multimedia/ffmpeg
 SWSCALE_VARS=			XPRA_OPTIONS+=csc_swscale
-VPX_LIB_DEPENDS=		libvpx.so:multimedia/libvpx
-VPX_VARS=			XPRA_OPTIONS+=vpx
 WEBCAM_RUN_DEPENDS=		opencv>2:graphics/opencv
 WEBCAM_VARS=			XPRA_OPTIONS+=webcam
-X264_LIB_DEPENDS=		libx264.so:multimedia/libx264
-X264_VARS=			XPRA_OPTIONS+=enc_x264
-X265_LIB_DEPENDS=		libx265.so:multimedia/x265
-X265_VARS=			XPRA_OPTIONS+=enc_x265
 
 PYDISTUTILS_PKGNAME=	xpra_all
 XPRA_OPTIONS_ALL+=	${XPRA_OPTIONS_DISABLED} csc_libyuv csc_swscale \
-			dec_avcodec2 enc_ffmpeg enc_x264 enc_x265 \
-			mdns printing sound vpx webcam
-XPRA_OPTIONS_DISABLED=	strict uinput Xdummy Xdummy_wrapper
+			enc_x264 \
+			mdns printing vpx webcam
+XPRA_OPTIONS=		dec_avcodec2 enc_ffmpeg enc_x264
+XPRA_OPTIONS_DISABLED=	pam strict uinput vpx Xdummy Xdummy_wrapper
 
 .include <bsd.port.options.mk>
 
@@ -111,6 +100,7 @@ PYDISTUTILS_ARGS+=	--with-${opt}
 PYDISTUTILS_BUILDARGS+=	${PYDISTUTILS_ARGS}
 PYDISTUTILS_CONFIGUREARGS+=	${PYDISTUTILS_ARGS}
 PYDISTUTILS_INSTALLARGS+=	${PYDISTUTILS_ARGS}
+#MAKE_ENV=	pkgdir=${STAGEDIR}${PREFIX}/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${LOCALBASE}/share|' \
@@ -119,11 +109,14 @@ post-patch:
 	    ${WRKSRC}/fs/etc/xpra/conf.d/16_printing.conf.in
 
 post-install:
-	@${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${CP} -r ${STAGEDIR}/etc ${STAGEDIR}${PREFIX} && ${RM} -r ${STAGEDIR}/etc
+	${MV} ${STAGEDIR}${ETCDIR}/xorg.conf \
 	    ${STAGEDIR}${ETCDIR}/xorg.conf.sample
-	@${MV} ${STAGEDIR}${ETCDIR}/xpra.conf \
+	${MV} ${STAGEDIR}${ETCDIR}/xpra.conf \
 	    ${STAGEDIR}${ETCDIR}/xpra.conf.sample
-	@${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name '*.so' \
+	${CP} -r ${STAGEDIR}${PREFIX}/etc/dbus-1 ${STAGEDIR}${PREFIX}/share && ${RM} -r ${STAGEDIR}${PREFIX}/dbus-1
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME} -name '*.so' \
 	    -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.post.mk>
