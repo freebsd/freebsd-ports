@@ -1,5 +1,6 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	LOCAL/jkim:jtreg
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
@@ -287,6 +288,10 @@ post-build:
 	    ${JRE_IMAGEDIR}/lib/javazic.jar \
 	    build.tools.tzdb.TzdbZoneRulesCompiler \
 	    -C ${JDK_BUILDDIR}/jdk/btclasses build/tools/tzdb
+.endif
+.if defined(OPENJDK_SYMLINK_CACERTS)
+	@${RM} ${JRE_IMAGEDIR}/lib/security/cacerts
+	@${LN} -sf ${OPENJDK_SYMLINK_CACERTS} ${JRE_IMAGEDIR}/lib/security/cacerts
 .endif
 
 post-build-TZUPDATE-on:
