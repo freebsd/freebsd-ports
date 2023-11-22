@@ -8092,3 +8092,4 @@ x11-toolkits/wlroots-devel|x11-toolkits/wlroots|2023-11-21|Out of date: use x11-
 games/suyimazu|games/mizuma|2023-11-22|Project renamed
 www/dfileserver||2023-11-22|Has expired: Obsolete, consider using www/darkhttpd
 devel/sdts++||2023-11-22|Has expired: Last upstream release was in 2003 and both MASTER_SITES and WWW are unreachable
+databases/postgis30||2023-11-22|Removed

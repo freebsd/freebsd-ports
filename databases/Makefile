@@ -636,7 +636,6 @@
     SUBDIR += plpgsql_check
     SUBDIR += pointcloud
     SUBDIR += postgis-jdbc
-    SUBDIR += postgis30
     SUBDIR += postgis31
     SUBDIR += postgis32
     SUBDIR += postgis33
