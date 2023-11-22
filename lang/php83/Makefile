@@ -1,8 +1,7 @@
 PORTNAME=	php83
-DISTVERSION=	8.3.0RC6
+DISTVERSION=	8.3.0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	https://downloads.php.net/~jakub/ \
-	https://downloads.php.net/~eric/
+MASTER_SITES=	PHP/distributions
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,36 +10,38 @@ WWW=		https://www.php.net/
 
 LICENSE=	PHP301
 
-USES+=		compiler:c11 cpe gnome pkgconfig tar:xz
+USES+=		compiler:c11 cpe gnome localbase pkgconfig tar:xz
 CPE_PRODUCT=	php
 PHP_VER=	83
 
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
 
 .if !defined(PKGNAMESUFFIX)
+BUILD_DEPENDS=	re2c>0:devel/re2c
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
 		libpcre2-8.so:devel/pcre2
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--disable-all \
-			--program-prefix="" \
-			--with-config-file-scan-dir=${PREFIX}/etc/php \
-			--with-layout=GNU \
-			--with-libxml \
-			--with-openssl \
-			--with-password-argon2=${LOCALBASE}
-DESTDIRNAME=		INSTALL_ROOT
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	\
+		--disable-all \
+		--program-prefix="" \
+		--with-config-file-scan-dir=${PREFIX}/etc/php \
+		--with-layout=GNU \
+		--with-libxml \
+		--with-openssl \
+		--with-password-argon2=${LOCALBASE} \
+		--with-external-pcre=${LOCALBASE}
 
-USES+=		autoreconf:build localbase ssl
+USES+=		autoreconf:build ssl
 USE_GNOME=	libxml2
 
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE+=		CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
+OPTIONS_DEFINE+=CGI CLI DEBUG DTRACE EMBED FPM IPV6 LINKTHR \
 				MYSQLND NOASLR PHPDBG ZTS
-OPTIONS_DEFAULT=		CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND
+OPTIONS_DEFAULT=	CGI CLI DTRACE EMBED FPM LINKTHR MYSQLND
 OPTIONS_EXCLUDE_DragonFly=	DTRACE
 # ld(1) fails to link probes: Relocations in generic ELF (EM: 0)
 OPTIONS_EXCLUDE_aarch64=	DTRACE
@@ -87,6 +88,8 @@ PHPDBG_CONFIGURE_ON=	--enable-phpdbg
 PHPDBG_VARS=		PHP_SAPI+=phpdbg
 ZTS_CONFIGURE_ON=	--enable-zts
 ZTS_CONFIGURE_ENV=	pthreads_working="yes"
+
+DESTDIRNAME=	INSTALL_ROOT
 
 .if defined(PKGNAMEPREFIX)
 USES+=			apache
@@ -267,9 +270,9 @@ USE_GNOME=	libxml2
 .endif
 
 .if ${PHP_MODNAME} == "enchant"
-LIB_DEPENDS+=		libenchant.so:textproc/enchant
-CONFIGURE_ARGS+=	--with-enchant=${LOCALBASE}
-USES+=			pkgconfig
+LIB_DEPENDS+=   libenchant-2.so:textproc/enchant2
+CONFIGURE_ARGS+=--with-enchant=${LOCALBASE}
+USES+=		pkgconfig
 .endif
 
 .if ${PHP_MODNAME} == "exif"
@@ -347,13 +350,7 @@ USES+=		iconv:translit
 
 .if ${PHP_MODNAME} == "imap"
 PHP_MOD_PRIO=		30
-OPTIONS_RADIO=		CLIENT
-OPTIONS_RADIO_CLIENT=	CCLIENT PANDA
-OPTIONS_DEFAULT=	PANDA
-CCLIENT_DESC=		Uses the original but unmaintained cclient
-PANDA_DESC=		Uses the forked panda-cclient instead of the original cclient
-PANDA_LIB_DEPENDS=	libc-client.so.2010:mail/panda-cclient
-PANDA_LIB_DEPENDS_OFF=	libc-client4.so.9:mail/cclient
+LIB_DEPENDS+=	libc-client.so.2010:mail/panda-cclient
 
 CONFIGURE_ARGS+=	--with-imap-ssl=${OPENSSLBASE} \
 			--with-imap=${LOCALBASE}
@@ -378,8 +375,8 @@ BUILD_DEPENDS=		re2c:devel/re2c
 .endif
 
 .if ${PHP_MODNAME} == "ldap"
-CONFIGURE_ARGS+=	--with-ldap-sasl=${LOCALBASE} \
-			--with-ldap=${LOCALBASE}
+LIB_DEPENDS+=libsasl2.so:security/cyrus-sasl2
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
 USES+=	ldap
 .endif
 
@@ -398,20 +395,13 @@ PHP_HEADER_DIRS=	libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls
 .endif
 
 .if ${PHP_MODNAME} == "mysqli"
-OPTIONS_DEFINE=		MYSQLND
-OPTIONS_DEFAULT=	MYSQLND
-
-MYSQLND_DESC=		Use MySQL Native Driver
-MYSQLND_CONFIGURE_ON=	--with-mysqli=mysqlnd
-MYSQLND_CONFIGURE_OFF=	--with-mysqli=${LOCALBASE}/bin/mysql_config
-MYSQLND_USES_OFF=	mysql
+CONFIGURE_ARGS+=	--with-mysqli
 .endif
 
 .if ${PHP_MODNAME} == "odbc"
 LIB_DEPENDS+=	libodbc.so:databases/unixODBC
 
-CONFIGURE_ARGS+=	--enable-odbc \
-			--with-unixODBC=${LOCALBASE}
+CONFIGURE_ARGS+= --with-unixODBC=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "opcache"
@@ -504,8 +494,8 @@ CONFIGURE_ARGS+=	--with-pspell=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "readline"
-CONFIGURE_ARGS+=	--with-readline=/usr
-USES+=			readline
+CONFIGURE_ARGS+=--with-libedit
+USES+=		libedit
 .endif
 
 .if ${PHP_MODNAME} == "session"
@@ -622,8 +612,7 @@ USE_PHP=	dom:build xml:build
 .if ${PHP_MODNAME} == "zip"
 LIB_DEPENDS+=	libzip.so:archivers/libzip
 
-CONFIGURE_ARGS+=	--with-zip \
-			--with-zlib-dir=/usr
+CONFIGURE_ARGS+=	--with-zip
 USES+=			pkgconfig
 .endif
 
