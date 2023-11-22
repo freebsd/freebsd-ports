@@ -1,6 +1,7 @@
 bin/manpageblog
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/_assets/css/dark.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_assets/css/grey.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/_assets/css/light.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/feed.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/_templates/item.html
@@ -14,4 +15,6 @@ bin/manpageblog
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-11-manpageblog-release-1-0.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-13-manpageblog-now-available-in-freebsd-ports.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-15-manpageblog-release-1-1.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-21-manpageblog-in-the-1-mb-website-club.md
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/blog/2023-11-22-manpageblog-release-1-2.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/content/contact.html
