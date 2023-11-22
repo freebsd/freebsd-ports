@@ -859,6 +859,7 @@ libexec/julia/lld
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasDepWithExtensions.jl/test/runtests.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/Manifest.toml
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/Project.toml
+%%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/ext/IndirectArraysExt.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/ext/OffsetArraysExt.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/src/HasExtensions.jl
 %%DATADIR%%/stdlib/v%%VERSION%%/Pkg/test/test_packages/ExtensionExamples/HasExtensions.jl/test/runtests.jl
@@ -1283,6 +1284,7 @@ libexec/julia/lld
 %%DATADIR%%/test/broadcast.jl
 %%DATADIR%%/test/cartesian.jl
 %%DATADIR%%/test/ccall.jl
+%%DATADIR%%/test/channel_threadpool.jl
 %%DATADIR%%/test/channels.jl
 %%DATADIR%%/test/char.jl
 %%DATADIR%%/test/checked.jl
