@@ -79,6 +79,8 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/api/AttributeValueSerializer.html
 %%DATADIR%%/doc/api/org/freeplane/api/Attributes.html
 %%DATADIR%%/doc/api/org/freeplane/api/AttributesRO.html
+%%DATADIR%%/doc/api/org/freeplane/api/Border.html
+%%DATADIR%%/doc/api/org/freeplane/api/BorderRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/ChildNodesAlignment.html
 %%DATADIR%%/doc/api/org/freeplane/api/ChildNodesLayout.html
 %%DATADIR%%/doc/api/org/freeplane/api/ChildrenSides.html
@@ -93,6 +95,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/api/ControllerRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/ConversionException.html
 %%DATADIR%%/doc/api/org/freeplane/api/Convertible.html
+%%DATADIR%%/doc/api/org/freeplane/api/Dash.html
 %%DATADIR%%/doc/api/org/freeplane/api/Dependencies.Element.html
 %%DATADIR%%/doc/api/org/freeplane/api/Dependencies.html
 %%DATADIR%%/doc/api/org/freeplane/api/DependencyLookup.html
@@ -106,6 +109,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/api/FreeplaneVersion.html
 %%DATADIR%%/doc/api/org/freeplane/api/HeadlessLoader.html
 %%DATADIR%%/doc/api/org/freeplane/api/HeadlessMapCreator.html
+%%DATADIR%%/doc/api/org/freeplane/api/HorizontalTextAlignment.html
 %%DATADIR%%/doc/api/org/freeplane/api/Icons.html
 %%DATADIR%%/doc/api/org/freeplane/api/IconsRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/LayoutOrientation.html
@@ -137,6 +141,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/api/ReminderRO.html
 %%DATADIR%%/doc/api/org/freeplane/api/Script.html
 %%DATADIR%%/doc/api/org/freeplane/api/Side.html
+%%DATADIR%%/doc/api/org/freeplane/api/TextWritingDirection.html
 %%DATADIR%%/doc/api/org/freeplane/api/package-summary.html
 %%DATADIR%%/doc/api/org/freeplane/api/package-tree.html
 %%DATADIR%%/doc/api/org/freeplane/core/ui/components/UITools.Defaults.html
@@ -164,6 +169,8 @@ share/applications/freeplane.desktop
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Convertible.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Attributes.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.AttributesRO.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Border.html
+%%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.BorderRO.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.Cloud.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStyle.html
 %%DATADIR%%/doc/api/org/freeplane/plugin/script/proxy/Proxy.ConditionalStyleRO.html
