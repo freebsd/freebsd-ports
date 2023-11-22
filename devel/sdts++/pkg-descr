@@ -1,5 +1,0 @@
-SDTS++ is a C++ toolkit that programmers can use to write
-applications that can read or write SDTS datasets. Application
-developers can use SDTS++ library classes to work with the
-logical structure of these datasets without having to worry
-about the physical details of each dataset.
