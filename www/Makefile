@@ -135,7 +135,6 @@
     SUBDIR += deno
     SUBDIR += devd
     SUBDIR += dezoomify-rs
-    SUBDIR += dfileserver
     SUBDIR += dillo2
     SUBDIR += dojo
     SUBDIR += dokuwiki
