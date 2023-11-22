@@ -14,7 +14,8 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/LICENSE.GPL
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LICENSE.LGPL
 
 BUILD_DEPENDS=	ffmpeg>=4.0.2,1:multimedia/ffmpeg
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libplacebo.so:graphics/libplacebo \
+		libavcodec.so:multimedia/ffmpeg \
 		libass.so:multimedia/libass
 
 USES=		compiler:c11 cpe desktop-file-utils iconv jpeg \
@@ -148,8 +149,7 @@ VDPAU_MESON_ENABLED=		vdpau
 VDPAU_IMPLIES=			X11
 
 VULKAN_BUILD_DEPENDS=		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-VULKAN_LIB_DEPENDS=		libplacebo.so:graphics/libplacebo \
-				libvulkan.so:graphics/vulkan-loader
+VULKAN_LIB_DEPENDS=		libvulkan.so:graphics/vulkan-loader
 VULKAN_MESON_ENABLED=		vulkan
 
 WAYLAND_CATEGORIES=		wayland
