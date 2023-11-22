@@ -11,13 +11,22 @@ Index: src/3rdparty/PhysX/pxshared/include/foundation/PxPreprocessor.h
  #elif defined(TARGET_OS_IOS) && TARGET_OS_IOS && defined(__APPLE__) && (defined(__arm__) || defined(__arm64__))
  #define PX_IOS 1
  #elif defined(__APPLE__)
-@@ -187,6 +190,9 @@ define anything not defined on this platform to 0
- #endif
+@@ -188,6 +191,9 @@ define anything not defined on this platform to 0
  #ifndef PX_LINUX
  #define PX_LINUX 0
-+#endif
+ #endif
 +#ifndef PX_FREEBSD
 +#define PX_FREEBSD 0
- #endif
++#endif
  #ifndef PX_IOS
  #define PX_IOS 0
+ #endif
+@@ -278,7 +284,7 @@ family shortcuts
+ // architecture
+ #define PX_INTEL_FAMILY (PX_X64 || PX_X86)
+ #define PX_ARM_FAMILY (PX_ARM || PX_A64)
+-#define PX_P64_FAMILY (PX_X64 || PX_A64 || PX_WASM_64) // shortcut for 64-bit architectures
++#define PX_P64_FAMILY (PX_X64 || PX_A64 || PX_WASM_64 || __powerpc64__) // shortcut for 64-bit architectures
+ 
+ /**
+ C++ standard library defines
