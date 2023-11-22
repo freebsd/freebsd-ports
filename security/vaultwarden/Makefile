@@ -50,6 +50,14 @@ INSTALL_TARGET=	install-strip
 SUB_LIST=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
 
+.include <bsd.port.pre.mk>
+
+# avoid LTO-induced address space exhaustion
+.if ${ARCH:Marmv?} || ${ARCH} == i386
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 #post-patch:
 #	${REINPLACE_CMD} 's/^rust-version = "1.60"/rust-version = "1.59"/' \
 #		${WRKSRC}/Cargo.toml
@@ -58,4 +66,4 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/data
 	${INSTALL} -m0600 ${FILESDIR}/${PORTNAME}_conf.in ${STAGEDIR}/${WWWDIR}/data/config.json.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
