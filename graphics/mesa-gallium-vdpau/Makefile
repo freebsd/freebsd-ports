@@ -1,5 +1,6 @@
 PORTNAME=	mesa-gallium-vdpau
 PORTVERSION=	${MESAVERSION}
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VDPAU drivers
@@ -53,7 +54,8 @@ MESON_ARGS+=	-Dplatforms="x11"
 MESON_ARGS+=	-Dglx=disabled \
 		-Degl=disabled \
 		-Dopengl=false \
-		-Dshared-glapi=disabled
+		-Dshared-glapi=disabled \
+		-Dplatforms=""
 .endif
 
 .include "${MASTERDIR}/Makefile.targets"
