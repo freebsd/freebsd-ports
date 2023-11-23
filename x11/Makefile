@@ -50,6 +50,7 @@
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
     SUBDIR += damask
+    SUBDIR += deforaos-integration
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
     SUBDIR += deforaos-locker
