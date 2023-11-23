@@ -21,6 +21,7 @@ include/hwloc/cudart.h
 include/hwloc/deprecated.h
 include/hwloc/diff.h
 include/hwloc/gl.h
+include/hwloc/glibc-sched.h
 include/hwloc/helper.h
 include/hwloc/inlines.h
 include/hwloc/intel-mic.h
