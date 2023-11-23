@@ -1,12 +1,11 @@
 PORTNAME=	drawio
-PORTVERSION=	22.0.3
+PORTVERSION=	22.1.2
 DISTVERSIONPREFIX=	x86_64-
-PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/jgraph/drawio-desktop/releases/download/v${PORTVERSION}/
 EXTRACT_SUFX=	.rpm
 
-MAINTAINER=	636808@mail.ru
+MAINTAINER=	x636808@gmail.com
 COMMENT=	Diagramming and whiteboarding desktop app
 WWW=		https://drawio.com/
 
