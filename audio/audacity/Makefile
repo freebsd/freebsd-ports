@@ -8,9 +8,6 @@ MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
 WWW=		https://www.audacityteam.org/
 
-BROKEN_FreeBSD_13=	compiler bug
-BROKEN_FreeBSD_12=	compiler bug
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
@@ -151,6 +148,13 @@ VST_CMAKE_BOOL=		audacity_use_vst
 CMAKE_ARGS+=	-DHAVE_MMX:BOOL=OFF \
 		-DHAVE_SSE:BOOL=OFF \
 		-DHAVE_SSE2:BOOL=OFF
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302508
+# Workarounds for buggy libc++ std::conjunction
+EXTRA_PATCHES=	${PATCHDIR}/extra-libraries_lib-utility_TypeList.cpp \
+		${PATCHDIR}/extra-libraries_lib-utility_TypeList.h \
+		${PATCHDIR}/extra-libraries_lib-utility_TypeSwitch.h
 .endif
 
 post-install:
