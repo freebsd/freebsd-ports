@@ -1,6 +1,6 @@
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org
@@ -20,7 +20,8 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png
 
-USES=		compiler gmake iconv jpeg perl5 pkgconfig ssl xorg
+USES=		gmake iconv jpeg perl5 pkgconfig ssl xorg
+USE_GCC=	yes
 USE_XORG=	x11 xext xrender
 USE_PERL5=	build
 USE_LDCONFIG=	yes
@@ -55,10 +56,6 @@ CONFIGURE_ARGS=	-prefix ${WRKSRC}/build/qt \
 MAKE_ARGS=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" || ${ARCH} == "powerpc" || ${CHOSEN_COMPILER_TYPE} == gcc
-USE_GCC=	10
-.endif
 
 pre-patch:
 	${RMDIR} ${WRKSRC}/qt
