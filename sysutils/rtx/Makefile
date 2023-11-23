@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.11.4
+DISTVERSION=	2023.11.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-eyre-0.6.2 \
 		color-print-0.3.5 \
 		color-print-proc-macro-0.3.5 \
-		color-spantrace-0.2.0 \
+		color-spantrace-0.2.1 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
 		const-oid-0.9.5 \
@@ -76,19 +76,19 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		dotenvy-0.15.7 \
 		duct-0.13.6 \
 		ed25519-2.2.3 \
-		ed25519-dalek-2.0.0 \
+		ed25519-dalek-2.1.0 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.6 \
+		errno-0.3.7 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		eyre-0.6.8 \
+		eyre-0.6.9 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
-		fiat-crypto-0.2.4 \
+		fiat-crypto-0.2.5 \
 		filetime-0.2.22 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
@@ -132,6 +132,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
 		itertools-0.11.0 \
+		itertools-0.12.0 \
 		itoa-1.0.9 \
 		jobserver-0.1.27 \
 		js-sys-0.3.65 \
@@ -202,8 +203,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.24 \
-		rustls-0.21.8 \
+		rustix-0.38.25 \
+		rustls-0.21.9 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
@@ -217,8 +218,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		self-replace-1.3.7 \
 		self_update-0.39.0 \
 		semver-1.0.20 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_spanned-0.6.4 \
 		serde_urlencoded-0.7.1 \
@@ -227,7 +228,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		shared_child-1.0.0 \
 		shell-escape-0.1.5 \
 		shell-words-1.1.0 \
-		signature-2.0.0 \
+		signature-2.2.0 \
 		similar-2.3.0 \
 		simplelog-0.12.1 \
 		slab-0.4.9 \
@@ -327,7 +328,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
-		zeroize-1.6.0 \
+		zeroize-1.7.0 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
