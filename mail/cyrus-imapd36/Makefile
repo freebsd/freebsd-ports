@@ -46,7 +46,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
 USES+=		shebangfix
-SHEBANG_FILES=	imap/promdatagen tools/config2header \
+SHEBANG_FILES=	imap/cyr_cd.sh imap/promdatagen tools/config2header \
 		tools/masssievec tools/mkimap tools/translatesieve \
 		perl/sieve/scripts/*.pl
 
