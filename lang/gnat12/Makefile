@@ -61,6 +61,9 @@ OPTIONS_DEFINE=			ASSETS NLS
 OPTIONS_DEFINE_amd64+=	MULTILIB
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
 .endif
+OPTIONS_RADIO=			BOOTSTRAP
+OPTIONS_RADIO_BOOTSTRAP=	GCC6AUX PREVASSET
+OPTIONS_DEFAULT=		GCC6AUX
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=		ASSETS
 .endif
@@ -68,9 +71,6 @@ OPTIONS_DEFAULT+=		ASSETS
 OPTIONS_DEFAULT_amd64+=	MULTILIB
 #OPTIONS_DEFAULT_powerpc64+=	MULTILIB # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=105010
 .endif
-OPTIONS_RADIO=			BOOTSTRAP
-OPTIONS_RADIO_BOOTSTRAP=	GCC6AUX PREVASSET
-OPTIONS_DEFAULT=		GCC6AUX
 OPTIONS_SUB=			yes
 
 ASSETS_DESC=	Build an asset for future bootstrap on the target platform
@@ -111,20 +111,10 @@ _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GCC6AUX_PATH}:${PREFIX}/bin:$
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == aarch64
+.if ${ARCH} == aarch64 && ${OSREL:R} == 15
 _PREV_ASSET_REV?=	_5
-.elif ${ARCH} == i386
-.  if ${OSREL:R} == 14
-_PREV_ASSET_REV?=	_5
-.  else
+.else
 _PREV_ASSET_REV?=	_6
-.  endif
-.else	# amd64
-.  if ${OSREL:R} == 12 || ${OSREL:R} == 14
-_PREV_ASSET_REV?=	_5
-.  else
-_PREV_ASSET_REV?=	_6
-.  endif
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
