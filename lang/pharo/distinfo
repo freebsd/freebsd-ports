@@ -1,2 +1,3 @@
-SHA256 (squeak/Pharo-1.4-14438.zip) = 7f1a3fa43f44f3f4d05955cd1b1191abcdb8f3ee9692eeb55d67ef0122324f1d
-SIZE (squeak/Pharo-1.4-14438.zip) = 13324537
+TIMESTAMP = 1700701195
+SHA256 (PharoVM-10.0.9-de76067-Linux-x86_64-c-src.tar.gz) = e797b3b00be38fbd158ffba732d175307fe9928421529e1f5b96a9e553f018bf
+SIZE (PharoVM-10.0.9-de76067-Linux-x86_64-c-src.tar.gz) = 3875300
