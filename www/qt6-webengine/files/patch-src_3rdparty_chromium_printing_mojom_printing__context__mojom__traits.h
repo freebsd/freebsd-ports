@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.h.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.h
 @@ -158,7 +158,7 @@ struct StructTraits<printing::mojom::PrintSettingsData
      return s.pages_per_sheet();

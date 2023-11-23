@@ -1,6 +1,5 @@
 PORTNAME=	5compat
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
@@ -12,10 +11,12 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libdouble-conversion.so:devel/double-conversion \
 		libpcre.so:devel/pcre \
 		libpcre2-16.so:devel/pcre2 \
+		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang gettext-runtime gnome \
+USES=		cmake compiler:c++17-lang gettext-runtime gl gnome \
 		qt-dist:6
+USE_GL=		gl opengl
 USE_GNOME=	glib20
 USE_QT=		base declarative shadertools
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}

@@ -1,6 +1,6 @@
---- data/shiboken6.pc.in.orig	2020-12-13 08:07:53 UTC
+--- data/shiboken6.pc.in.orig	2023-10-14 09:37:51 UTC
 +++ data/shiboken6.pc.in
-@@ -9,5 +9,5 @@ python_include_dir=@PYTHON_INCLUDE_DIRS@
+@@ -8,5 +8,5 @@ Version: @shiboken6_VERSION@
  Name: shiboken6
  Description: Support library for Python bindings created with the Shiboken6 generator.
  Version: @shiboken6_VERSION@

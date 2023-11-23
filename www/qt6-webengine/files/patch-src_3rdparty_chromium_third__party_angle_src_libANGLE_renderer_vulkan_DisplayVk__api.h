@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
-@@ -23,7 +23,7 @@ DisplayImpl *CreateVulkanWin32Display(const egl::Displ
+@@ -23,7 +23,7 @@ bool IsVulkanWin32DisplayAvailable();
  DisplayImpl *CreateVulkanWin32Display(const egl::DisplayState &state);
  #endif  // defined(ANGLE_PLATFORM_WINDOWS)
  

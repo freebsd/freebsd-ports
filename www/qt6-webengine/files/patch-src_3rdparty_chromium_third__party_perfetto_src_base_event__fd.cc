@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc
 @@ -22,7 +22,8 @@
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_WIN)

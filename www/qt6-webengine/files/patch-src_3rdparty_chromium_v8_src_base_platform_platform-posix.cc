@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-posix.cc
 @@ -53,7 +53,7 @@
  #if V8_OS_DARWIN
@@ -42,7 +42,7 @@
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -650,7 +658,7 @@ bool OS::HasLazyCommits() {
+@@ -661,7 +669,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
@@ -51,7 +51,7 @@
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1227,7 +1235,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1238,7 +1246,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \

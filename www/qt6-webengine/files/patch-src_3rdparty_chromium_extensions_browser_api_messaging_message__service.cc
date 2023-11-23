@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/extensions/browser/api/messaging/message_service.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/browser/api/messaging/message_service.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/extensions/browser/api/messaging/message_service.cc
-@@ -74,7 +74,7 @@ const char kReceivingEndDoesntExistError[] =
+@@ -70,7 +70,7 @@ const char kReceivingEndDoesntExistError[] =
  const char kReceivingEndDoesntExistError[] =
      "Could not establish connection. Receiving end does not exist.";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -442,7 +442,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -468,7 +468,7 @@ void MessageService::OpenChannelToNativeApp(
      return;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

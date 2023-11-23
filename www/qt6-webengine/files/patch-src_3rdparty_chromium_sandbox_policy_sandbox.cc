@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/sandbox/policy/sandbox.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/sandbox/policy/sandbox.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/sandbox/policy/sandbox.cc
 @@ -18,6 +18,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_MAC)
  #include "sandbox/mac/seatbelt.h"
  #endif  // BUILDFLAG(IS_MAC)
-@@ -31,7 +35,7 @@ namespace policy {
+@@ -31,7 +35,7 @@
  namespace sandbox {
  namespace policy {
  

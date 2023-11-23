@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/kill_posix.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/kill_posix.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/process/kill_posix.cc
-@@ -158,7 +158,7 @@ void EnsureProcessTerminated(Process process) {
+@@ -157,7 +157,7 @@ void EnsureProcessTerminated(Process process) {
        0, new BackgroundReaper(std::move(process), Seconds(2)));
  }
  

@@ -11,8 +11,8 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 
 PYQT_DIST=	yes
 
-LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6 \
-		libdbus-1.so:devel/dbus
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libqscintilla2_qt6.so:devel/qscintilla2-qt6
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
 
@@ -20,20 +20,21 @@ USES=		gl pkgconfig python pyqt:6 qt:6
 USE_GL+=	gl opengl
 USE_LOCALE=	C.UTF-8
 USE_PYTHON=	concurrent flavors
-USE_PYQT=	qtbuilder sip pysip
-USE_QT=		5compat base connectivity declarative imageformats \
-		languageserver lottie multimedia positioning quick3d \
-		remoteobjects sensors serialport speech shadertools \
-		svg tools translations webchannel websockets
+USE_PYQT=	pysip qtbuilder sip
+USE_QT=		base connectivity declarative imageformats multimedia \
+		positioning quick3d remoteobjects sensors serialport \
+		shadertools speech svg tools translations webchannel \
+		websockets
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
-PLIST_SUB+=	WEBENGINE=""
 USE_QT+=	webengine
+PLIST_SUB+=	WEBENGINE=""
 .else
+SIP_ARGS+=	--disable QtPdf --disable QtPdfWidgets
 PLIST_SUB+=	WEBENGINE="@comment "
 .endif
 

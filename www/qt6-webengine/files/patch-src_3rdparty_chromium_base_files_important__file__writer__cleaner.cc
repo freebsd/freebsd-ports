@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/files/important_file_writer_cleaner.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/files/important_file_writer_cleaner.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/base/files/important_file_writer_cleaner.cc
-@@ -25,7 +25,8 @@ base::Time GetUpperBoundTime() {
+@@ -25,7 +25,8 @@ namespace base {
  namespace {
  
  base::Time GetUpperBoundTime() {

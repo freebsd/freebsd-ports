@@ -1,4 +1,4 @@
---- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2023-09-21 19:24:26 UTC
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2023-09-13 16:02:48 UTC
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
 @@ -46,6 +46,13 @@ QT_BEGIN_NAMESPACE
  
@@ -117,7 +117,7 @@
  OCSP_CERTID *q_OCSP_cert_to_id(const EVP_MD *dgst, X509 *subject, X509 *issuer);
  void q_OCSP_CERTID_free(OCSP_CERTID *cid);
  int q_OCSP_id_cmp(OCSP_CERTID *a, OCSP_CERTID *b);
-@@ -664,8 +712,14 @@ void *q_CRYPTO_malloc(size_t num, const char *file, in
+@@ -664,8 +712,15 @@ void *q_CRYPTO_malloc(size_t num, const char *file, in
  
  void *q_CRYPTO_malloc(size_t num, const char *file, int line);
  #define q_OPENSSL_malloc(num) q_CRYPTO_malloc(num, "", 0)
@@ -129,10 +129,11 @@
 +void q_CRYPTO_free(void *a);
 +# define q_OPENSSL_free(addr) q_CRYPTO_free(addr)
 +#endif
++
+ int q_CRYPTO_memcmp(const void * in_a, const void * in_b, size_t len);
  
  void q_SSL_set_info_callback(SSL *ssl, void (*cb) (const SSL *ssl, int type, int val));
- const char *q_SSL_alert_type_string(int value);
-@@ -728,7 +782,11 @@ int q_RSA_bits(RSA *a);
+@@ -729,7 +784,11 @@ int q_RSA_bits(RSA *a);
  
  int q_DH_bits(DH *dh);
  int q_RSA_bits(RSA *a);

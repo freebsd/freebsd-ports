@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/nasm/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/nasm/BUILD.gn.orig	2023-01-11 09:17:16 UTC
 +++ src/3rdparty/chromium/third_party/nasm/BUILD.gn
-@@ -59,6 +59,13 @@ config("nasm_config") {
+@@ -63,6 +63,13 @@ config("nasm_config") {
  
    defines = [ "HAVE_CONFIG_H" ]
  

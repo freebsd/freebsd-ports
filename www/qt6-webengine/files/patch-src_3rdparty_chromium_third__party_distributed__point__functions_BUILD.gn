@@ -1,0 +1,12 @@
+--- src/3rdparty/chromium/third_party/distributed_point_functions/BUILD.gn.orig	2023-02-08 09:03:45 UTC
++++ src/3rdparty/chromium/third_party/distributed_point_functions/BUILD.gn
+@@ -61,6 +61,9 @@ source_set("distributed_point_functions") {
+   configs -= [ "//build/config/compiler:chromium_code" ]
+   configs += [ "//build/config/compiler:no_chromium_code" ]
+ 
++  # XXX clang13 crashes with optimizations
++  configs += [ "//build/config/compiler:no_optimize" ]
++
+   public_configs = [ ":distributed_point_functions_includes" ]
+ }
+ 

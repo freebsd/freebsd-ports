@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/gpu/buffer_validation.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/media/gpu/buffer_validation.cc.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/media/gpu/buffer_validation.cc
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/size.h"
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -23,7 +23,7 @@ bool GetFileSize(const int fd, size_t* size) {
+@@ -23,7 +23,7 @@
  namespace media {
  
  bool GetFileSize(const int fd, size_t* size) {

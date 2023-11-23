@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/extensions/renderer/bindings/api_binding_util.cc
 @@ -132,7 +132,7 @@ std::string GetPlatformString() {
    return "lacros";

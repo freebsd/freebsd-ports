@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/process_handle.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/process_handle.h.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/base/process/process_handle.h
-@@ -106,7 +106,7 @@ BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
+@@ -106,7 +106,7 @@ BASE_EXPORT ProcessId GetCurrentProcId();
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  

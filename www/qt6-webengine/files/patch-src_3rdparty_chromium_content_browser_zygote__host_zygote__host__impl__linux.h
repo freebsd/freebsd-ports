@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h
 @@ -47,12 +47,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
                       base::ScopedFD* control_fd,
@@ -7,10 +7,10 @@
 +#if !BUILDFLAG(IS_BSD)
    void AdjustRendererOOMScore(base::ProcessHandle process_handle,
                                int score) override;
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if BUILDFLAG(IS_CHROMEOS)
    void ReinitializeLogging(uint32_t logging_dest,
                             base::PlatformFile log_file_fd) override;
- #endif
+ #endif  // BUILDFLAG(IS_CHROMEOS)
 +#endif
  
    bool HasZygote() { return !zygote_pids_.empty(); }

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2023-07-07 17:40:32 UTC
+--- src/3rdparty/chromium/build/config/BUILDCONFIG.gn.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/build/config/BUILDCONFIG.gn
 @@ -136,7 +136,8 @@ declare_args() {
    is_official_build = false
@@ -10,7 +10,7 @@
               (current_cpu != "s390x" && current_cpu != "s390" &&
                current_cpu != "ppc64" && current_cpu != "ppc" &&
                current_cpu != "mips" && current_cpu != "mips64" &&
-@@ -230,6 +231,10 @@ if (host_toolchain == "") {
+@@ -235,6 +236,10 @@ if (host_toolchain == "") {
      host_toolchain = "//build/toolchain/aix:$host_cpu"
    } else if (host_os == "zos") {
      host_toolchain = "//build/toolchain/zos:$host_cpu"
@@ -21,7 +21,7 @@
    } else {
      assert(false, "Unsupported host_os: $host_os")
    }
-@@ -274,6 +279,8 @@ if (target_os == "android") {
+@@ -278,6 +283,8 @@ if (target_os == "android") {
    _default_toolchain = "//build/toolchain/aix:$target_cpu"
  } else if (target_os == "zos") {
    _default_toolchain = "//build/toolchain/zos:$target_cpu"
@@ -30,7 +30,7 @@
  } else {
    assert(false, "Unsupported target_os: $target_os")
  }
-@@ -308,7 +315,11 @@ is_ios = current_os == "ios"
+@@ -312,7 +319,11 @@ is_ios = current_os == "ios"
  is_chromeos = current_os == "chromeos"
  is_fuchsia = current_os == "fuchsia"
  is_ios = current_os == "ios"

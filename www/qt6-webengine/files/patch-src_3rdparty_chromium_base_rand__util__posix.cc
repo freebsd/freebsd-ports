@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/rand_util_posix.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/rand_util_posix.cc.orig	2022-11-30 08:12:58 UTC
 +++ src/3rdparty/chromium/base/rand_util_posix.cc
 @@ -22,7 +22,7 @@
  #include "base/time/time.h"
@@ -9,7 +9,7 @@
  #include "third_party/lss/linux_syscall_support.h"
  #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/995996): Waiting for this header to appear in the iOS SDK.
-@@ -46,6 +46,7 @@ static constexpr int kOpenFlags = O_RDONLY | O_CLOEXEC
+@@ -46,6 +46,7 @@ static constexpr int kOpenFlags = O_RDONLY;
  static constexpr int kOpenFlags = O_RDONLY | O_CLOEXEC;
  #endif
  
@@ -30,7 +30,7 @@
  // TODO(pasko): Unify reading kernel version numbers in:
  // mojo/core/channel_linux.cc
  // chrome/browser/android/seccomp_support_detector.cc
-@@ -176,6 +178,7 @@ void RandBytes(void* output, size_t output_length, boo
+@@ -176,6 +178,7 @@ bool UseBoringSSLForRandBytes() {
  namespace {
  
  void RandBytes(void* output, size_t output_length, bool avoid_allocation) {

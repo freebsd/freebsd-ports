@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/net/dns/BUILD.gn.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/net/dns/BUILD.gn
-@@ -116,7 +116,7 @@ source_set("dns") {
+@@ -124,7 +124,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
@@ -9,7 +9,7 @@
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -157,6 +157,7 @@ source_set("dns") {
+@@ -165,6 +165,7 @@ source_set("dns") {
      ":host_resolver_manager",
      ":mdns_client",
      "//net:net_public_deps",
@@ -17,7 +17,7 @@
    ]
  
    allow_circular_includes_from = [
-@@ -418,9 +419,9 @@ source_set("tests") {
+@@ -428,9 +429,9 @@ source_set("tests") {
  
    if (is_android) {
      sources += [ "dns_config_service_android_unittest.cc" ]

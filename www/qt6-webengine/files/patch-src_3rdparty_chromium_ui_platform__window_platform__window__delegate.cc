@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/ui/platform_window/platform_window_delegate.cc
-@@ -16,7 +16,7 @@ PlatformWindowDelegate::~PlatformWindowDelegate() = de
+@@ -29,7 +29,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
  
  PlatformWindowDelegate::~PlatformWindowDelegate() = default;
  

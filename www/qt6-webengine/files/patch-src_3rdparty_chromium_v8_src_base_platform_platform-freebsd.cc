@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/v8/src/base/platform/platform-freebsd.cc
 @@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
    return new PosixDefaultTimezoneCache();
@@ -20,7 +20,7 @@
              lib_name = std::string(path);
            }
            result.push_back(SharedLibraryAddress(
-+#if defined(__i386__) || defined(__arm__) || defined(OS_FREEBSD)
++#if defined(__i386__) || defined(OS_FREEBSD)
 +              lib_name, static_cast<uintptr_t>(map->kve_start),
 +              static_cast<uintptr_t>(map->kve_end)));
 +#else

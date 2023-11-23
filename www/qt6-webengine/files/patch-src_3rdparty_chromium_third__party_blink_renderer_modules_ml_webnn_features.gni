@@ -1,0 +1,9 @@
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2023-04-05 11:05:06 UTC
++++ src/3rdparty/chromium/third_party/blink/renderer/modules/ml/webnn/features.gni
+@@ -7,5 +7,5 @@ declare_args() {
+   # This enables building WebNN with XNNPACK. Currently only available for
+   # Windows on x64 or x86.
+   build_webnn_with_xnnpack =
+-      is_win && (current_cpu == "x64" || current_cpu == "x86")
++      !is_bsd && (is_win && (current_cpu == "x64" || current_cpu == "x86"))
+ }

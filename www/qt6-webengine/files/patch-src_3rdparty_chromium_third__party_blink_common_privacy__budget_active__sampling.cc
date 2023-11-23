@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/common/privacy_budget/active_sampling.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/blink/common/privacy_budget/active_sampling.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/third_party/blink/common/privacy_budget/active_sampling.cc
-@@ -24,7 +24,7 @@ bool IdentifiabilityActiveSampler::IsFontFamilyAvailab
+@@ -24,7 +24,7 @@ namespace blink {
  bool IdentifiabilityActiveSampler::IsFontFamilyAvailable(const char* family,
                                                           SkFontMgr* fm) {
    base::ScopedAllowBaseSyncPrimitives allow;

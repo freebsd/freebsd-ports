@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/libsync/src/sync.c.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/libsync/src/sync.c.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/third_party/libsync/src/sync.c
 @@ -17,7 +17,9 @@
   */

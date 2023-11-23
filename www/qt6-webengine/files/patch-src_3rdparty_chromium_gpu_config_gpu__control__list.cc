@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_control_list.cc
-@@ -302,7 +302,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
+@@ -302,7 +302,7 @@ bool GpuControlList::More::GLVersionInfoMismatch(
  GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
  #if BUILDFLAG(IS_CHROMEOS)
    return kGLTypeGL;

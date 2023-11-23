@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc.orig	2022-03-25 21:59:56 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_unique_name_lookup.cc
 @@ -9,7 +9,7 @@
  #if BUILDFLAG(IS_ANDROID)
@@ -9,7 +9,7 @@
  #include "third_party/blink/renderer/platform/fonts/linux/font_unique_name_lookup_linux.h"
  #elif BUILDFLAG(IS_WIN)
  #include "third_party/blink/renderer/platform/fonts/win/font_unique_name_lookup_win.h"
-@@ -24,7 +24,7 @@ FontUniqueNameLookup::GetPlatformUniqueNameLookup() {
+@@ -24,7 +24,7 @@ std::unique_ptr<FontUniqueNameLookup>
  FontUniqueNameLookup::GetPlatformUniqueNameLookup() {
  #if BUILDFLAG(IS_ANDROID)
    return std::make_unique<FontUniqueNameLookupAndroid>();

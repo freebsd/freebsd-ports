@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/synchronization/lock_impl.h
-@@ -107,6 +107,10 @@ void LockImpl::Unlock() {
+@@ -104,6 +104,10 @@ void LockImpl::Unlock() {
  }
  
  #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
@@ -11,7 +11,7 @@
  
  #if DCHECK_IS_ON()
  BASE_EXPORT void dcheck_trylock_result(int rv);
-@@ -127,6 +131,9 @@ void LockImpl::Unlock() {
+@@ -124,6 +128,9 @@ void LockImpl::Unlock() {
    dcheck_unlock_result(rv);
  #endif
  }

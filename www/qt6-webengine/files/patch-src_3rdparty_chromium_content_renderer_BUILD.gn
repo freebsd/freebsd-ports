@@ -1,0 +1,16 @@
+--- src/3rdparty/chromium/content/renderer/BUILD.gn.orig	2023-08-16 19:50:41 UTC
++++ src/3rdparty/chromium/content/renderer/BUILD.gn
+@@ -201,6 +201,13 @@ target(link_target_type, "renderer") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "renderer_thread_type_handler.cc",
++      "renderer_thread_type_handler.h",
++    ]
++  }
++
+   if (is_mac) {
+     sources += [
+       "renderer_main_platform_delegate_mac.mm",

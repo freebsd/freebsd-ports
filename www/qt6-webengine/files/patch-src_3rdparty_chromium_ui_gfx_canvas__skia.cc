@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/canvas_skia.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gfx/canvas_skia.cc.orig	2022-02-28 16:54:41 UTC
 +++ src/3rdparty/chromium/ui/gfx/canvas_skia.cc
 @@ -200,7 +200,7 @@ void Canvas::DrawStringRectWithFlags(const std::u16str
      Range range = StripAcceleratorChars(flags, &adjusted_text);

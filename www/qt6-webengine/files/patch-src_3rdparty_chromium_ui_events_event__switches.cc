@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/events/event_switches.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/events/event_switches.cc.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/ui/events/event_switches.cc
-@@ -21,7 +21,7 @@ const char kTouchSlopDistance[] = "touch-slop-distance
+@@ -21,7 +21,7 @@ const char kCompensateForUnstablePinchZoom[] =
  // value is a floating point number that is interpreted as a distance in pixels.
  const char kTouchSlopDistance[] = "touch-slop-distance";
  

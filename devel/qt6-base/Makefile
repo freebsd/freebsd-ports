@@ -1,11 +1,7 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
-
-PATCH_SITES=	https://github.com/qt/qtbase/commit/
-PATCHFILES=	3f45905953d57e0174059d7d9d6bc75c3c1c406c.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
@@ -60,6 +56,7 @@ USES=		cmake compiler:c++17-lang gl gnome jpeg perl5 pkgconfig python \
 		qt-dist:6 shebangfix ssl
 USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_LOCALE=	C.UTF-8
 CMAKE_ARGS=	-DOPENSSL_ROOT_DIR="${OPENSSLBASE}"
 CMAKE_ON=	QT_AVOID_CMAKE_ARCHIVING_API \
 		QT_FIND_ALL_PACKAGES_ALWAYS \

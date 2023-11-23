@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/skia/font_cache_skia.cc
 @@ -60,7 +60,7 @@ AtomicString ToAtomicString(const SkString& str) {
    return AtomicString::FromUTF8(str.c_str(), str.size());
@@ -9,7 +9,7 @@
  // This function is called on android or when we are emulating android fonts on
  // linux and the embedder has overriden the default fontManager with
  // WebFontRendering::setSkiaFontMgr.
-@@ -236,7 +236,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
+@@ -235,7 +235,7 @@ sk_sp<SkTypeface> FontCache::CreateTypeface(
    }
  #endif
  
@@ -18,7 +18,7 @@
    // On linux if the fontManager has been overridden then we should be calling
    // the embedder provided font Manager rather than calling
    // SkTypeface::CreateFromName which may redirect the call to the default font
-@@ -263,7 +263,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
+@@ -262,7 +262,7 @@ std::unique_ptr<FontPlatformData> FontCache::CreateFon
    std::string name;
  
    sk_sp<SkTypeface> typeface;

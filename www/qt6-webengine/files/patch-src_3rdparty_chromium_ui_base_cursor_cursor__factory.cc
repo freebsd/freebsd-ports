@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/ui/base/cursor/cursor_factory.cc
-@@ -83,7 +83,7 @@ void CursorFactory::SetDeviceScaleFactor(float scale) 
+@@ -89,7 +89,7 @@ void CursorFactory::ObserveThemeChanges() {
  
  void CursorFactory::SetDeviceScaleFactor(float scale) {}
  

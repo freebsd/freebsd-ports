@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/os_crypt/os_crypt.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/components/os_crypt/os_crypt.h.orig	2023-01-11 09:17:16 UTC
 +++ src/3rdparty/chromium/components/os_crypt/os_crypt.h
-@@ -15,7 +15,7 @@
+@@ -14,7 +14,7 @@
  #include "build/build_config.h"
  #include "build/chromecast_buildflags.h"
  
@@ -9,7 +9,7 @@
  class KeyStorageLinux;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -24,7 +24,7 @@ class PrefService;
+@@ -23,7 +23,7 @@ class PrefRegistrySimple;
  class PrefService;
  #endif
  
@@ -18,7 +18,7 @@
  namespace crypto {
  class SymmetricKey;
  }
-@@ -37,7 +37,7 @@ namespace OSCrypt {
+@@ -36,7 +36,7 @@ struct Config;
  // Temporary interface due to OSCrypt refactor. See OSCryptImpl for descriptions
  // of what each function does.
  namespace OSCrypt {
@@ -27,7 +27,7 @@
  COMPONENT_EXPORT(OS_CRYPT)
  void SetConfig(std::unique_ptr<os_crypt::Config> config);
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -82,7 +82,7 @@ COMPONENT_EXPORT(OS_CRYPT) void ResetStateForTesting()
+@@ -81,7 +81,7 @@ COMPONENT_EXPORT(OS_CRYPT) void UseMockKeyForTesting(b
  COMPONENT_EXPORT(OS_CRYPT) void SetLegacyEncryptionForTesting(bool legacy);
  COMPONENT_EXPORT(OS_CRYPT) void ResetStateForTesting();
  #endif  // BUILDFLAG(IS_WIN)
@@ -36,7 +36,7 @@
  COMPONENT_EXPORT(OS_CRYPT)
  void UseMockKeyStorageForTesting(
      base::OnceCallback<std::unique_ptr<KeyStorageLinux>()>
-@@ -109,7 +109,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -108,7 +108,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    // Returns singleton instance of OSCryptImpl.
    static OSCryptImpl* GetInstance();
  
@@ -45,7 +45,7 @@
    // Set the configuration of OSCryptImpl.
    // This method, or SetRawEncryptionKey(), must be called before using
    // EncryptString() and DecryptString().
-@@ -201,7 +201,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -200,7 +200,7 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    void ResetStateForTesting();
  #endif
  
@@ -54,7 +54,7 @@
    // For unit testing purposes, inject methods to be used.
    // |storage_provider_factory| provides the desired |KeyStorage|
    // implementation. If the provider returns |nullptr|, a hardcoded password
-@@ -226,13 +226,13 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
+@@ -225,13 +225,13 @@ class COMPONENT_EXPORT(OS_CRYPT) OSCryptImpl {
    crypto::SymmetricKey* GetEncryptionKey();
  #endif  // BUILDFLAG(IS_APPLE)
  

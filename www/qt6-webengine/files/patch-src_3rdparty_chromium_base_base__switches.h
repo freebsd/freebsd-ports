@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/base_switches.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/base_switches.h.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/base/base_switches.h
-@@ -60,7 +60,7 @@ extern const char kForceFieldTrialParams[];
+@@ -60,7 +60,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  

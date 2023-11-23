@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/core/html/canvas/canvas_async_blob_creator.cc
 @@ -45,7 +45,7 @@ constexpr base::TimeDelta kEncodeRowSlackBeforeDeadlin
  

@@ -1,6 +1,5 @@
 PORTNAME=	3d
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt6-
 
@@ -31,27 +30,12 @@ USE_GNOME=	glib20
 USE_QT=		base declarative shadertools
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
-OPTIONS_DEFINE_i386=	SIMD
-OPTIONS_DEFINE_amd64=	SIMD
-OPTIONS_DEFAULT_i386=	SIMD
-OPTIONS_DEFAULT_amd64=	SIMD
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSIMD}
-.  if !empty(MACHINE_CPU:Mavx2)
-CMAKE_ARGS+=	-DINPUT_qt3d_simd=avx2
-PLIST_SUB+=	AVX2="" SIMD=""
-.  elif !empty(MACHINE_CPU:Msse2)
-CMAKE_ARGS+=	-DINPUT_qt3d_simd=sse2
-PLIST_SUB+=	AVX2="@comment " SIMD=""
-.  else
-CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
-PLIST_SUB+=	SIMD="@comment "
-.  endif
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	SIMD=""
 .else
-CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
 PLIST_SUB+=	SIMD="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

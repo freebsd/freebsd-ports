@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_handle_openbsd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/process_handle_openbsd.cc.orig	2022-04-21 18:48:31 UTC
 +++ src/3rdparty/chromium/base/process/process_handle_openbsd.cc
 @@ -3,8 +3,11 @@
  // found in the LICENSE file.
@@ -12,7 +12,7 @@
  #include <sys/sysctl.h>
  #include <sys/types.h>
  #include <unistd.h>
-@@ -12,39 +15,59 @@ ProcessId GetParentProcessId(ProcessHandle process) {
+@@ -12,39 +15,59 @@
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {

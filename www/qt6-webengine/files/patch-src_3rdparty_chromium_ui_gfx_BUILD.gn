@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/ui/gfx/BUILD.gn.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/ui/gfx/BUILD.gn
-@@ -594,7 +594,7 @@ jumbo_source_set("memory_buffer_sources") {
+@@ -611,7 +611,7 @@ jumbo_source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

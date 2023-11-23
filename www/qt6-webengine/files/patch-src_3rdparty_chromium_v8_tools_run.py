@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/tools/run.py.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/v8/tools/run.py.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/v8/tools/run.py
-@@ -9,7 +9,7 @@ import sys
+@@ -9,7 +9,7 @@ scripts."""
  import subprocess
  import sys
  

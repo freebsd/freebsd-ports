@@ -1,12 +1,15 @@
---- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/content/utility/utility_main.cc
-@@ -31,17 +31,19 @@
+@@ -31,7 +31,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
+ #include "gpu/config/gpu_info_collector.h"
+ #include "media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.h"
+@@ -42,15 +42,21 @@
  #if BUILDFLAG(ENABLE_PRINTING)
  #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
  #endif
@@ -19,11 +22,7 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
- #include "gpu/config/gpu_info_collector.h"
  #include "media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h"
- 
-@@ -50,6 +52,10 @@
- #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
 +#if BUILDFLAG(IS_BSD)
@@ -31,9 +30,31 @@
 +#endif
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)
- #include "ash/services/ime/ime_sandbox_hook.h"
  #include "chromeos/ash/components/assistant/buildflags.h"
-@@ -130,7 +136,7 @@ int UtilityMain(MainFunctionParams parameters) {
+ #include "chromeos/ash/services/ime/ime_sandbox_hook.h"
+@@ -62,7 +68,7 @@
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+ #if (BUILDFLAG(ENABLE_SCREEN_AI_SERVICE) && \
+-     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)))
++     (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)))
+ #include "components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"  // nogncheck
+ #endif
+ 
+@@ -83,10 +89,10 @@ namespace {
+ 
+ namespace {
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ bool ShouldUseAmdGpuPolicy(sandbox::mojom::Sandbox sandbox_type) {
+   const bool obtain_gpu_info =
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
+       sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
+       sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
+@@ -168,7 +174,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -42,7 +63,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -162,7 +168,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -200,7 +206,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #endif
        break;
  #endif
@@ -51,7 +72,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -185,10 +191,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -227,6 +233,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -59,12 +80,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox::policy::SandboxLinux::Options sandbox_options;
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
-     if (sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding) {
-       // The kHardwareVideoDecoding sandbox needs to know the GPU type in order
-       // to select the right policy.
-@@ -201,6 +208,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -235,6 +242,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

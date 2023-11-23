@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/linux/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/sandbox/linux/BUILD.gn.orig	2023-02-08 09:03:45 UTC
 +++ src/3rdparty/chromium/sandbox/linux/BUILD.gn
-@@ -12,12 +12,12 @@ declare_args() {
+@@ -12,11 +12,11 @@ if (is_android) {
  }
  
  declare_args() {
@@ -10,18 +10,15 @@
 -  compile_credentials = is_linux || is_chromeos
 +  compile_credentials = (is_linux || is_chromeos) && !is_bsd
  
-   # On Android, use plain GTest.
--  use_base_test_suite = is_linux || is_chromeos
-+  use_base_test_suite = (is_linux || is_chromeos) && !is_bsd
- }
+-  compile_syscall_broker = is_linux || is_chromeos
++  compile_syscall_broker = (is_linux || is_chromeos) && !is_bsd
  
- # We have two principal targets: sandbox and sandbox_linux_unittests
-@@ -367,6 +367,39 @@ component("sandbox_services") {
-     sources += [
-       "services/libc_interceptor.cc",
+   # On Android, use plain GTest.
+   use_base_test_suite = is_linux || is_chromeos
+@@ -379,6 +379,17 @@ component("sandbox_services") {
        "services/libc_interceptor.h",
-+    ]
-+  }
+     ]
+   }
 +
 +  if (is_bsd) {
 +    sources -= [
@@ -31,28 +28,8 @@
 +      "services/syscall_wrappers.h",
 +      "services/yama.cc",
 +      "services/yama.h",
-+      "syscall_broker/broker_channel.cc",
-+      "syscall_broker/broker_channel.h",
-+      "syscall_broker/broker_client.cc",
-+      "syscall_broker/broker_client.h",
-+      "syscall_broker/broker_command.cc",
-+      "syscall_broker/broker_command.h",
-+      "syscall_broker/broker_file_permission.cc",
-+      "syscall_broker/broker_file_permission.h",
-+      "syscall_broker/broker_host.cc",
-+      "syscall_broker/broker_host.h",
-+      "syscall_broker/broker_permission_list.cc",
-+      "syscall_broker/broker_permission_list.h",
-+      "syscall_broker/broker_process.cc",
-+      "syscall_broker/broker_process.h",
-+      "syscall_broker/broker_sandbox_config.cc",
-+      "syscall_broker/broker_sandbox_config.h",
-+      "syscall_broker/broker_simple_message.cc",
-+      "syscall_broker/broker_simple_message.h",
-+      "syscall_broker/remote_syscall_arg_handler.cc",
-+      "syscall_broker/remote_syscall_arg_handler.h",
-+      "syscall_broker/syscall_dispatcher.cc",
-+      "syscall_broker/syscall_dispatcher.h",
-     ]
-   }
++     ]
++   }
  }
+ 
+ source_set("sandbox_services_headers") {

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h.orig	2022-02-07 13:39:41 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h
 @@ -178,6 +178,10 @@ class multi_threaded_local {
  #endif  // _SIGSLOT_HAS_WIN32_THREADS

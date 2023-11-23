@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc.orig	2022-09-24 10:57:32 UTC
 +++ src/3rdparty/chromium/extensions/shell/browser/shell_browser_main_parts.cc
 @@ -150,7 +150,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
        switches::kAppShellAllowRoaming)) {

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/dns/address_sorter_posix.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/dns/address_sorter_posix.cc.orig	2022-03-25 21:59:56 UTC
 +++ src/3rdparty/chromium/net/dns/address_sorter_posix.cc
 @@ -18,6 +18,7 @@
  #include <ifaddrs.h>

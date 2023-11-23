@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/device/BUILD.gn.orig	2022-11-30 08:12:58 UTC
++++ src/3rdparty/chromium/services/device/BUILD.gn
+@@ -16,7 +16,7 @@ if (is_android) {
+ }
+ 
+ is_serial_enabled_platform =
+-    is_win || ((is_linux || is_chromeos) && use_udev) || is_mac
++    is_win || ((!is_bsd && is_linux || is_chromeos) && use_udev) || is_mac
+ 
+ source_set("lib") {
+   # This should be visible only to embedders of the Device Service, and the

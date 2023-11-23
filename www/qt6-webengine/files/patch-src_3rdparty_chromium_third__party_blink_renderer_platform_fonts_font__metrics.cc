@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2022-03-25 21:59:56 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_metrics.cc
-@@ -39,7 +39,7 @@ namespace blink {
+@@ -39,7 +39,7 @@
  namespace blink {
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

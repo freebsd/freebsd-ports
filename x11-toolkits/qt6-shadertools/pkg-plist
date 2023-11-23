@@ -1,10 +1,10 @@
-%%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qshaderbaker_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qshaderrewriter_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvcompiler_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshader_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qspirvshaderremap_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qtshadertoolsexports_p.h
 %%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/private/qtshadertoolsglobal_p.h
+%%QT_INCDIR%%/QtShaderTools/%%FULLVER%%/QtShaderTools/rhi/qshaderbaker.h
 %%QT_INCDIR%%/QtShaderTools/QtShaderTools
 %%QT_INCDIR%%/QtShaderTools/QtShaderToolsDepends
 %%QT_INCDIR%%/QtShaderTools/QtShaderToolsVersion

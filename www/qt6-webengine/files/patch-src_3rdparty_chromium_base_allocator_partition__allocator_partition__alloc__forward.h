@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_forward.h.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_forward.h.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_forward.h
-@@ -25,9 +25,13 @@ namespace internal {
+@@ -27,9 +27,13 @@ namespace internal {
  // the second one 16. We could technically return something different for
  // malloc() and operator new(), but this would complicate things, and most of
  // our allocations are presumably coming from operator new() anyway.

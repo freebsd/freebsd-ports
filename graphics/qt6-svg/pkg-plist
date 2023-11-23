@@ -1,5 +1,4 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfont_p.h
-%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qtsvgglobal_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvggraphics_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvghandler_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgnode_p.h
@@ -7,6 +6,7 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstyle_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgtinydocument_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qtsvgexports_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qtsvgglobal_p.h
 %%QT_INCDIR%%/QtSvg/QSvgGenerator
 %%QT_INCDIR%%/QtSvg/QSvgRenderer
 %%QT_INCDIR%%/QtSvg/QtSvg

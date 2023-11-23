@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/common/BUILD.gn.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/content/common/BUILD.gn
-@@ -447,6 +447,9 @@ if (is_linux || is_chromeos) {
+@@ -449,6 +449,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
@@ -10,3 +10,12 @@
    }
  }
  
+@@ -497,7 +500,7 @@ mojom("mojo_bindings") {
+   if (enable_ipc_logging) {
+     enabled_features += [ "ipc_logging" ]
+   }
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     enabled_features += [ "supports_thread_types" ]
+   }
+   if (use_clang_profiling_inside_sandbox) {

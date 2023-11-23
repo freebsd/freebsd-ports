@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig	2023-01-11 09:17:16 UTC
++++ src/3rdparty/chromium/third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
+@@ -59,7 +59,7 @@ config("vulkan_internal_config") {
+     defines += [
+       "SYSCONFDIR=\"/etc\"",
+       "FALLBACK_CONFIG_DIRS=\"/etc/xdg\"",
+-      "FALLBACK_DATA_DIRS=\"/usr/local/share:/usr/share\"",
++      "FALLBACK_DATA_DIRS=\"/usr/X11R6/share:/usr/local/share:/usr/share\"",
+     ]
+   }
+ }

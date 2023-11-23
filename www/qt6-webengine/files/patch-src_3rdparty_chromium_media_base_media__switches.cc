@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/media_switches.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/media/base/media_switches.cc.orig	2023-08-16 19:50:41 UTC
 +++ src/3rdparty/chromium/media/base/media_switches.cc
-@@ -10,7 +10,7 @@
+@@ -12,7 +12,7 @@
  #include "components/system_media_controls/linux/buildflags/buildflags.h"
  #include "media/media_buildflags.h"
  
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -485,7 +485,7 @@ CONSTINIT const base::Feature kGlobalMediaControls(
+@@ -586,7 +586,7 @@ CONSTINIT const base::Feature kGlobalMediaControls(
  // Show toolbar button that opens dialog for controlling media sessions.
  CONSTINIT const base::Feature kGlobalMediaControls(
               "GlobalMediaControls",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -526,7 +526,7 @@ CONSTINIT const base::Feature kGlobalMediaControlsPict
+@@ -634,7 +634,7 @@ CONSTINIT const base::Feature kGlobalMediaControlsPict
  CONSTINIT const base::Feature kGlobalMediaControlsPictureInPicture(
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -570,7 +570,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -678,7 +678,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -36,9 +36,9 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  BASE_FEATURE(kVaapiVideoDecodeLinux,
-@@ -1061,14 +1061,14 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
-     "DeprecateLowUsageCodecs", base::FEATURE_ENABLED_BY_DEFAULT};
- #endif  // BUILDFLAG(IS_CHROMEOS)
+@@ -1198,14 +1198,14 @@ BASE_FEATURE(kAllowClearDolbyVisionInMseWhenPlatformEn
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

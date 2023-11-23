@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2022-09-01 17:22:07 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_freebsd.cc
 @@ -9,30 +9,106 @@
  #include <sys/sysctl.h>

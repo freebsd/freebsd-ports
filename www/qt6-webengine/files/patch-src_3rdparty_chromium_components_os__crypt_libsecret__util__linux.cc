@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/os_crypt/libsecret_util_linux.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/components/os_crypt/libsecret_util_linux.cc.orig	2022-06-17 14:20:10 UTC
 +++ src/3rdparty/chromium/components/os_crypt/libsecret_util_linux.cc
 @@ -102,13 +102,13 @@ bool LibsecretLoader::LoadLibsecret() {
    if (libsecret_loaded_)

@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/core/frame/web_frame_test.cc
-@@ -6414,7 +6414,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
-   MoveCaretStaysHorizontallyAlignedWhenMoved
- #endif
- // TODO(crbug.com/1317375): Build these tests on all platforms.
--#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
-+#if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
- TEST_F(WebFrameTest, MAYBE_SelectRangeStaysHorizontallyAlignedWhenMoved) {
-   RegisterMockedHttpURLLoad("move_caret.html");
+@@ -6439,7 +6439,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
+ }
  
-@@ -6811,7 +6811,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionNo
+ #if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS)
++    BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
+ // TODO(crbug.com/1090246): Fix these tests on Fuchsia and re-enable.
+ // TODO(crbug.com/1317375): Build these tests on all platforms.
+ #define MAYBE_SelectRangeStaysHorizontallyAlignedWhenMoved \
+@@ -6847,7 +6847,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
  TEST_F(CompositedSelectionBoundsTest, LargeSelectionNoScroll) {
    RunTest("composited_selection_bounds_large_selection_noscroll.html");
  }

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_iterator_openbsd.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/process_iterator_openbsd.cc.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/base/process/process_iterator_openbsd.cc
 @@ -6,6 +6,9 @@
  
@@ -10,10 +10,10 @@
  #include <sys/sysctl.h>
  
  #include "base/logging.h"
-@@ -18,12 +21,13 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
-     : index_of_kinfo_proc_(),
-       filter_(filter) {
+@@ -16,12 +19,13 @@ namespace base {
  
+ ProcessIterator::ProcessIterator(const ProcessFilter* filter)
+     : filter_(filter) {
 -  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, getuid(),
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, static_cast<int>(getuid()),
                  sizeof(struct kinfo_proc), 0 };
@@ -25,7 +25,7 @@
  
    do {
      size_t len = 0;
-@@ -32,7 +36,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -30,7 +34,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
        kinfo_procs_.resize(0);
        done = true;
      } else {
@@ -34,7 +34,7 @@
        // Leave some spare room for process table growth (more could show up
        // between when we check and now)
        num_of_kinfo_proc += 16;
-@@ -48,7 +52,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
+@@ -46,7 +50,7 @@ ProcessIterator::ProcessIterator(const ProcessFilter* 
          }
        } else {
          // Got the list, just make sure we're sized exactly right

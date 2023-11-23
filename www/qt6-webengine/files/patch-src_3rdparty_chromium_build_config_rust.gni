@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/rust.gni.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/build/config/rust.gni.orig	2023-04-05 11:05:06 UTC
 +++ src/3rdparty/chromium/build/config/rust.gni
-@@ -124,7 +124,7 @@ if (enable_rust) {
+@@ -135,7 +135,7 @@ if (enable_rust) {
      rust_sysroot = "//third_party/rust-toolchain"
      use_unverified_rust_toolchain = false
    } else {

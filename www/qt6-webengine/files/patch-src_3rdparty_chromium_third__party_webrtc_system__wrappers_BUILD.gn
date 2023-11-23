@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/system_wrappers/BUILD.gn
 @@ -64,8 +64,6 @@ rtc_library("system_wrappers") {
      if (!build_with_chromium) {

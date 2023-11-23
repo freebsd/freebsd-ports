@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/boringssl/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/boringssl/BUILD.gn.orig	2022-03-25 21:59:56 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/BUILD.gn
 @@ -92,7 +92,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
          public_configs = [ ":no_asm_config" ]

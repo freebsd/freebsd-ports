@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig	2021-12-31 00:58:29 UTC
++++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
+@@ -142,7 +142,7 @@ config("sqlite_warnings") {
+       ]
+     }
+   }
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     cflags += [
+       # SQLite doesn't believe in compiler warnings, preferring testing.
+       # http://www.sqlite.org/faq.html#q17

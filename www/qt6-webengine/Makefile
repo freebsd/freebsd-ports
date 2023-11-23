@@ -15,7 +15,6 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -43,13 +42,15 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
 		libsnappy.so:archivers/snappy \
+		libtiff.so:graphics/tiff \
 		libvpx.so:multimedia/libvpx \
 		libwebp.so:graphics/webp \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=	bison cmake gl gnome gperf jpeg localbase:ldflags minizip ninja:build \
-	nodejs:build,lts pkgconfig python:build qt-dist:6,webengine xorg
-USE_GL=		gl
+USES=		bison cmake compiler:c++17-lang gl gnome gperf jpeg \
+		localbase:ldflags minizip ninja:build nodejs:build,lts \
+		pkgconfig python:build qt-dist:6,webengine xorg
+USE_GL=		gbm gl
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT=		base declarative:run positioning quick3d:build tools webchannel
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
@@ -85,7 +86,7 @@ DO_MAKE_BUILD=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} -j1 $
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
-QT6_VERSION=	6.5.3
+QT6_VERSION=	6.6.0
 
 OPTIONS_DEFAULT=	ALSA
 OPTIONS_SINGLE=		AUDIO
@@ -118,13 +119,10 @@ post-extract:
 		${WRKSRC}/src/3rdparty/chromium/sandbox/policy/openbsd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|' \
-		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|%%CPPFLAGS%%|${CPPFLAGS}|;s|%%CXXFLAGS%%|${CXXFLAGS}|;s|%%LDFLAGS%%|${LDFLAGS}|' \
 		${WRKSRC}/src/host/BUILD.toolchain.gn.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp \
-		${WRKSRC}/src/3rdparty/chromium/third_party/wayland/features.gni \
 		${WRKSRC}/src/3rdparty/chromium/ui/events/ozone/layout/xkb/xkb_keyboard_layout_engine.cc
 
 pre-configure:

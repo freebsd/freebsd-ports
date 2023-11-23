@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2022-11-17 06:21:59 UTC
+--- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,413 @@
+@@ -0,0 +1,399 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -22,8 +22,6 @@
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/command_line.h"
 +#include "base/debug/stack_trace.h"
 +#include "base/feature_list.h"
@@ -63,10 +61,7 @@
 +
 +#include "third_party/boringssl/src/include/openssl/crypto.h"
 +
-+#include "ui/gfx/x/connection.h"
 +#include "ui/gfx/font_util.h"
-+
-+#include <X11/Xlib.h>
 +
 +#define MAXTOKENS	3
 +
@@ -132,15 +127,6 @@
 +
 +  if (process_type.empty())
 +    CRYPTO_pre_sandbox_init();
-+
-+  // cache the XErrorDB by forcing a read on it
-+  {
-+    auto* connection = x11::Connection::Get();
-+    auto* display = connection->GetXlibDisplay().display();
-+
-+    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
-+  }
 +
 +  if (process_type.empty()) {
 +    base::FilePath cache_directory, local_directory;
@@ -330,7 +316,7 @@
 +    // flock needed by sqlite3 locking
 +    SetPledge("stdio rpath flock prot_exec recvfd sendfd ps", NULL);
 +  } else if (process_type == switches::kGpuProcess) {
-+    SetPledge("stdio rpath cpath wpath getpw drm prot_exec recvfd sendfd tmppath", NULL);
++    SetPledge("stdio rpath flock cpath wpath getpw drm prot_exec recvfd sendfd tmppath", NULL);
 +  } else if (process_type == switches::kPpapiPluginProcess) {
 +    // prot_exec needed by v8
 +    SetPledge("stdio rpath prot_exec recvfd sendfd", NULL);

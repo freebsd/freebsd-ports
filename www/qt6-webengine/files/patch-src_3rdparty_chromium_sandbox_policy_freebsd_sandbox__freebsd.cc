@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2022-11-17 06:20:46 UTC
+--- src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.cc
-@@ -0,0 +1,253 @@
+@@ -0,0 +1,239 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -21,8 +21,6 @@
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/command_line.h"
 +#include "base/debug/stack_trace.h"
 +#include "base/feature_list.h"
@@ -60,10 +58,7 @@
 +#include "crypto/nss_util.h"
 +#endif
 +
-+#include "ui/gfx/x/connection.h"
 +#include "ui/gfx/font_util.h"
-+
-+#include <X11/Xlib.h>
 +
 +#define MAXTOKENS	3
 +
@@ -124,15 +119,6 @@
 +  if (process_type.empty())
 +    crypto::EnsureNSSInit();
 +#endif
-+
-+  // cache the XErrorDB by forcing a read on it
-+  {
-+    auto* connection = x11::Connection::Get();
-+    auto* display = connection->GetXlibDisplay().display();
-+
-+    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
-+  }
 +
 +  if (process_type.empty()) {
 +    base::FilePath cache_directory, local_directory;

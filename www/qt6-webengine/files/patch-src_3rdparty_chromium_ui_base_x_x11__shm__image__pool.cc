@@ -1,14 +1,14 @@
---- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc.orig	2023-03-09 06:31:50 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_shm_image_pool.cc
 @@ -16,6 +16,7 @@
- #include "base/environment.h"
+ #include "base/functional/callback.h"
  #include "base/location.h"
  #include "base/strings/string_util.h"
 +#include "base/system/sys_info.h"
- #include "base/threading/thread_task_runner_handle.h"
  #include "build/build_config.h"
  #include "build/chromeos_buildflags.h"
-@@ -46,10 +47,14 @@ std::size_t MaxShmSegmentSizeImpl() {
+ #include "net/base/url_util.h"
+@@ -45,10 +46,14 @@ constexpr float kShmResizeShrinkThreshold =
      1.0f / (kShmResizeThreshold * kShmResizeThreshold);
  
  std::size_t MaxShmSegmentSizeImpl() {
@@ -23,7 +23,7 @@
  }
  
  std::size_t MaxShmSegmentSize() {
-@@ -66,6 +71,9 @@ bool ShouldUseMitShm(x11::Connection* connection) {
+@@ -65,6 +70,9 @@ bool IsRemoteHost(const std::string& name) {
  }
  
  bool ShouldUseMitShm(x11::Connection* connection) {
@@ -33,7 +33,7 @@
    // MIT-SHM may be available on remote connetions, but it will be unusable.  Do
    // a best-effort check to see if the host is remote to disable the SHM
    // codepath.  It may be possible in contrived cases for there to be a
-@@ -184,7 +192,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -183,7 +191,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          shmctl(state.shmid, IPC_RMID, nullptr);
          return false;
        }
@@ -42,7 +42,7 @@
        // On Linux, a shmid can still be attached after IPC_RMID if otherwise
        // kept alive.  Detach before XShmAttach to prevent a memory leak in case
        // the process dies.
-@@ -203,7 +211,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
+@@ -202,7 +210,7 @@ bool XShmImagePool::Resize(const gfx::Size& pixel_size
          return false;
        state.shmseg = shmseg;
        state.shmem_attached_to_server = true;

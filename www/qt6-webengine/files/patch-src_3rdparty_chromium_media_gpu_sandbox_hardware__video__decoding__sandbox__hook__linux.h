@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h.orig	2022-05-19 14:06:27 UTC
 +++ src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h
 @@ -5,7 +5,13 @@
  #ifndef MEDIA_GPU_SANDBOX_HARDWARE_VIDEO_DECODING_SANDBOX_HOOK_LINUX_H_

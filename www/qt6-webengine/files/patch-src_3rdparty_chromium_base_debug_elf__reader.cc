@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/base/debug/elf_reader.cc.orig	2022-08-31 12:19:35 UTC
 +++ src/3rdparty/chromium/base/debug/elf_reader.cc
 @@ -78,6 +78,7 @@ size_t ReadElfBuildId(const void* elf_mapped_base,
      bool found = false;

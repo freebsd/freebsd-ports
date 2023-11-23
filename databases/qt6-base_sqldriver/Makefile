@@ -15,7 +15,7 @@ FLAVOR?=	sqlite
 
 WRKSRC_SUBDIR=	src/plugins/sqldrivers
 
-USES=		cmake pkgconfig qt-dist:6 \
+USES=		cmake compiler:c++17-lang pkgconfig qt-dist:6 \
 		${${FLAVOR}_USES}
 USE_QT=		base
 

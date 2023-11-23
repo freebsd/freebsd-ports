@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/arenastring.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/arenastring.cc.orig	2022-09-01 14:18:43 UTC
 +++ src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/arenastring.cc
-@@ -64,7 +64,9 @@ constexpr size_t kStringAlign = alignof(std::string);
+@@ -64,7 +64,9 @@ constexpr size_t kNewAlign = alignof(std::max_align_t)
  #endif
  constexpr size_t kStringAlign = alignof(std::string);
  
