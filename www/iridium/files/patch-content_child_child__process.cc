@@ -1,11 +1,11 @@
---- content/child/child_process.cc.orig	2023-10-21 11:51:27 UTC
+--- content/child/child_process.cc.orig	2023-11-22 14:00:11 UTC
 +++ content/child/child_process.cc
-@@ -70,7 +70,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
+@@ -66,7 +66,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
+                                thread_pool_init_params)
+     : resetter_(&child_process, this, nullptr),
        io_thread_(std::make_unique<ChildIOThread>()) {
-   const base::CommandLine& command_line =
-       *base::CommandLine::ForCurrentProcess();
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   const base::CommandLine& command_line =
+       *base::CommandLine::ForCurrentProcess();
    const bool is_embedded_in_browser_process =
-       !command_line.HasSwitch(switches::kProcessType);
-   if (IsMojoCoreSharedLibraryEnabled() && !is_embedded_in_browser_process) {

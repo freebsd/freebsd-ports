@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -6,7 +6,7 @@
  
@@ -9,7 +9,7 @@
  #include "base/base64url.h"
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/policy/chrome_browser_policy_connector.h"
-@@ -24,7 +24,7 @@ namespace utils {
+@@ -29,7 +29,7 @@ namespace utils {
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -92,7 +92,7 @@ connectors_internals::mojom::Int32ValuePtr ToMojomValu
+@@ -97,7 +97,7 @@ connectors_internals::mojom::Int32ValuePtr ToMojomValu
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {

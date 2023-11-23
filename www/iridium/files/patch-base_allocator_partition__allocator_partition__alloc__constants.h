@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2023-10-21 11:51:27 UTC
+--- base/allocator/partition_allocator/partition_alloc_constants.h.orig	2023-11-22 14:00:11 UTC
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
-@@ -95,7 +95,7 @@ PartitionPageShift() {
+@@ -107,7 +107,7 @@ PartitionPageShift() {
    return 18;  // 256 KiB
  }
  #elif (BUILDFLAG(IS_APPLE) && defined(ARCH_CPU_64_BITS)) || \
@@ -9,7 +9,7 @@
  PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR size_t
  PartitionPageShift() {
    return PageAllocationGranularityShift() + 2;
-@@ -297,7 +297,8 @@ constexpr size_t kNumPools = kMaxPoolHandle - 1;
+@@ -309,7 +309,8 @@ constexpr size_t kNumPools = kMaxPoolHandle - 1;
  // 8GB for each of the glued pools).
  #if BUILDFLAG(HAS_64_BIT_POINTERS)
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || \

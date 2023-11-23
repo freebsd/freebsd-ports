@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2023-10-21 11:51:27 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2023-11-22 14:00:11 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -357,7 +357,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    enable_watchdog = false;
@@ -45,7 +45,7 @@
    // Driver may create a compatibility profile context when collect graphics
    // information on Linux platform. Try to collect graphics information
    // based on core profile context after disabling platform extensions.
-@@ -740,7 +740,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
+@@ -741,7 +741,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
        }
      }
    }
@@ -54,7 +54,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -894,7 +894,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -895,7 +895,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
    }
    bool gl_disabled = gl::GetGLImplementation() == gl::kGLImplementationDisabled;
  
@@ -63,7 +63,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -964,7 +964,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -965,7 +965,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
      }
    }
  

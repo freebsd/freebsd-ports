@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-10-21 11:51:27 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-11-22 14:00:11 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -89,7 +89,7 @@ base::flat_map<VkFormat, VkImageUsageFlags> CreateImag
+@@ -99,7 +99,7 @@ base::flat_map<VkFormat, VkImageUsageFlags> CreateImag
  }  // namespace
  
  constexpr uint32_t kSupportedUsage =
@@ -9,7 +9,7 @@
      SHARED_IMAGE_USAGE_WEBGPU | SHARED_IMAGE_USAGE_WEBGPU_SWAP_CHAIN_TEXTURE |
      SHARED_IMAGE_USAGE_WEBGPU_STORAGE_TEXTURE |
  #endif
-@@ -258,7 +258,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
+@@ -268,7 +268,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
      return false;
    }
  

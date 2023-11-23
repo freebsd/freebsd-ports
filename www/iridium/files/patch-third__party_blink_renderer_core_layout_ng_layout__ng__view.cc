@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/layout/ng/layout_ng_view.cc.orig	2023-10-21 11:51:27 UTC
+--- third_party/blink/renderer/core/layout/ng/layout_ng_view.cc.orig	2023-11-22 14:00:11 UTC
 +++ third_party/blink/renderer/core/layout/ng/layout_ng_view.cc
 @@ -15,7 +15,7 @@
  #include "third_party/blink/renderer/core/svg/svg_document_extensions.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -53,7 +53,7 @@ void LayoutNGView::UpdateLayout() {
+@@ -51,7 +51,7 @@ void LayoutNGView::UpdateLayout() {
      fragmentation_context_.Clear();
    }
  

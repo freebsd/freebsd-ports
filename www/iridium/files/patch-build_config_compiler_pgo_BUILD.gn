@@ -1,6 +1,6 @@
---- build/config/compiler/pgo/BUILD.gn.orig	2023-10-21 11:51:27 UTC
+--- build/config/compiler/pgo/BUILD.gn.orig	2023-11-22 14:00:11 UTC
 +++ build/config/compiler/pgo/BUILD.gn
-@@ -143,13 +143,14 @@ config("pgo_optimization_flags") {
+@@ -139,13 +139,14 @@ config("pgo_optimization_flags") {
  
      # Enable basic block layout based on the extended TSP problem. This aims to
      # improve icache utilization and reduce the binary size.

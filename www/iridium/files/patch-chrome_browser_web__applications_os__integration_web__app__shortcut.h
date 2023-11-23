@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2023-10-21 11:51:27 UTC
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.h.orig	2023-11-22 14:00:11 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_shortcut.h
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include "ui/gfx/image/image_family.h"
  #include "url/gurl.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/os_integration/web_app_shortcut_linux.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -70,7 +70,7 @@ struct ShortcutInfo {
+@@ -71,7 +71,7 @@ struct ShortcutInfo {
    std::set<std::string> file_handler_extensions;
    std::set<std::string> file_handler_mime_types;
    std::set<std::string> protocol_handlers;

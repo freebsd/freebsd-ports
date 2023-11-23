@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2023-10-21 11:51:27 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2023-11-22 14:00:11 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -20,7 +20,7 @@
  #endif
@@ -35,7 +35,7 @@
    char hostname[HOST_NAME_MAX];
    if (gethostname(hostname, HOST_NAME_MAX) == 0)  // Success.
      return hostname;
-@@ -144,7 +149,7 @@ std::string GetMachineName() {
+@@ -143,7 +148,7 @@ std::string GetMachineName() {
  
  std::string GetOSVersion() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \
@@ -44,7 +44,7 @@
    return base::SysInfo::OperatingSystemVersion();
  #elif BUILDFLAG(IS_WIN)
    base::win::OSInfo::VersionNumber version_number =
-@@ -167,7 +172,7 @@ std::string GetOSArchitecture() {
+@@ -166,7 +171,7 @@ std::string GetOSArchitecture() {
  }
  
  std::string GetOSUsername() {

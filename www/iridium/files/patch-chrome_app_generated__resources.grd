@@ -1,4 +1,4 @@
---- chrome/app/generated_resources.grd.orig	2023-10-21 11:51:27 UTC
+--- chrome/app/generated_resources.grd.orig	2023-11-22 14:00:11 UTC
 +++ chrome/app/generated_resources.grd
 @@ -2,7 +2,7 @@
  
@@ -9,7 +9,7 @@
  for making strings OS specific.  Other platform defines such as use_titlecase
  are declared in tools/grit/grit_rule.gni.
  -->
-@@ -3601,7 +3601,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -3605,7 +3605,7 @@ are declared in tools/grit/grit_rule.gni.
        </if>
  
        <!-- Bluetooth Device Credentials (i.e. PIN/Passkey) dialog -->
@@ -18,7 +18,7 @@
          <message name="IDS_BLUETOOTH_DEVICE_CREDENTIALS_TITLE" desc="Title of the Bluetooth device credentials prompt dialog.">
            Device Credentials
          </message>
-@@ -5432,7 +5432,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -5445,7 +5445,7 @@ are declared in tools/grit/grit_rule.gni.
              Read information about your browser, OS, device, installed software, registry values and files
            </message>
          </if>
@@ -27,7 +27,7 @@
            <message name="IDS_EXTENSION_PROMPT_WARNING_ENTERPRISE_REPORTING_PRIVATE_ENABLED_LINUX_AND_MACOS" desc="Permission string for enterprise private reporting permission on Linux and MacOS.">
              Read information about your browser, OS, device, installed software and files
            </message>
-@@ -6145,7 +6145,7 @@ Keep your key file in a safe place. You will need it t
+@@ -6158,7 +6158,7 @@ Keep your key file in a safe place. You will need it t
            Old versions of Chrome Apps won't open on Windows devices after December 2022. Contact your administrator to update to a new version or remove this app.
          </message>
        </if>
@@ -36,7 +36,7 @@
          <message name="IDS_FORCE_INSTALLED_DEPRECATED_APPS_CONTENT" desc="Content of the force installed deprecated app dialog">
            Old versions of Chrome Apps won't open on Linux devices after December 2022. Contact your administrator to update to a new version or remove this app.
          </message>
-@@ -6191,7 +6191,7 @@ Keep your key file in a safe place. You will need it t
+@@ -6204,7 +6204,7 @@ Keep your key file in a safe place. You will need it t
            Old versions of Chrome apps won't open on Windows devices after December 2022. You can check if there's a new version available.
          </message>
        </if>
@@ -63,7 +63,7 @@
          <message name="IDS_SHOW_WINDOW_DECORATIONS" desc="The label of a radio button in the options dialog for using the system title bar and borders.">
            Use system title bar and borders
          </message>
-@@ -11728,7 +11728,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
+@@ -11734,7 +11734,7 @@ Check your passwords anytime in <ph name="GOOGLE_PASSW
        </message>
  
        <!-- Device Trust Consent dialog -->
@@ -72,7 +72,7 @@
          <message name="IDS_DEVICE_SIGNALS_CONSENT_DIALOG_TITLE" desc="Title of the dialog shown when user consent is required to share device signals.">
            Share information about your device?
          </message>
-@@ -12136,7 +12136,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -12142,7 +12142,7 @@ Please help our engineers fix this problem. Tell us wh
          Set as default
        </message>
  
@@ -81,7 +81,7 @@
          <message name="IDS_MINIMIZE_WINDOW_MENU" desc="The Linux browser window menu item text for minimizing the window.">
            Minimize
          </message>
-@@ -14346,7 +14346,7 @@ Please help our engineers fix this problem. Tell us wh
+@@ -14349,7 +14349,7 @@ Please help our engineers fix this problem. Tell us wh
        Open Anyway
      </message>
  

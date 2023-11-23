@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2023-10-21 11:51:27 UTC
+--- BUILD.gn.orig	2023-11-22 14:00:11 UTC
 +++ BUILD.gn
 @@ -61,7 +61,7 @@ declare_args() {
    root_extra_deps = []
@@ -57,10 +57,10 @@
  
 -  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos) {
 +  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
-     script_test("webdriver_wpt_tests") {
+     script_test("chrome_wpt_tests") {
        script = "//third_party/blink/tools/run_wpt_tests.py"
        args = [
-@@ -1184,7 +1192,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1167,7 +1175,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1193,7 +1201,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1176,7 +1184,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1653,7 +1661,7 @@ group("chromium_builder_perf") {
+@@ -1637,7 +1645,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

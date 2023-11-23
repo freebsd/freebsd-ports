@@ -1,6 +1,6 @@
---- cc/BUILD.gn.orig	2023-10-21 11:51:27 UTC
+--- cc/BUILD.gn.orig	2023-11-22 14:00:11 UTC
 +++ cc/BUILD.gn
-@@ -674,7 +674,7 @@ cc_test_static_library("test_support") {
+@@ -675,7 +675,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
@@ -9,7 +9,7 @@
      data_deps = [ "//third_party/mesa_headers" ]
    }
    if (skia_use_dawn) {
-@@ -929,7 +929,6 @@ cc_test("cc_unittests") {
+@@ -930,7 +930,6 @@ cc_test("cc_unittests") {
    data = [ "//components/test/data/viz/" ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",
