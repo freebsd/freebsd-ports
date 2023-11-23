@@ -1,6 +1,6 @@
 PORTNAME=	cubicsdr
 PORTVERSION=	0.2.5
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org

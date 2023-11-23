@@ -1,6 +1,6 @@
 PORTNAME=	springlobby
 PORTVERSION=	0.274
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games net
 MASTER_SITES=	https://springlobby.springrts.com/dl/stable/
 
