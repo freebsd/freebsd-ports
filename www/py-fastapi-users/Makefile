@@ -1,5 +1,6 @@
 PORTNAME=	fastapi-users
 DISTVERSION=	12.1.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<2.1:mail/py-email-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0:mail/py-email-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<2.0:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
