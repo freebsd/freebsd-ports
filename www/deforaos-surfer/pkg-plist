@@ -1,0 +1,17 @@
+bin/helper
+bin/htmlapp
+bin/surfer
+%%PORTDOCS%%man/man1/helper.1.gz
+%%PORTDOCS%%man/man1/htmlapp.1.gz
+%%PORTDOCS%%man/man1/surfer.1.gz
+share/applications/org.defora.helper.desktop
+share/applications/org.defora.htmlapp.desktop
+share/applications/org.defora.surfer.desktop
+share/icons/hicolor/16x16/apps/surfer-view-html-source.png
+share/icons/hicolor/24x24/apps/surfer-view-html-source.png
+share/doc/Surfer/COPYING
+share/doc/Surfer/README.md
+share/locale/de/LC_MESSAGES/Surfer.mo
+share/locale/es/LC_MESSAGES/Surfer.mo
+share/locale/fr/LC_MESSAGES/Surfer.mo
+share/locale/it/LC_MESSAGES/Surfer.mo
