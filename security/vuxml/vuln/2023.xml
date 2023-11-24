@@ -1,3 +1,33 @@
+  <vuln vid="a62c0c50-8aa0-11ee-ac0d-00e0670f2660">
+    <topic>strongSwan -- vulnerability in charon-tkm</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>5.3.0</ge><lt>5.9.11_3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan reports:</p>
+	<blockquote cite="https://www.strongswan.org/blog/2023/11/20/strongswan-vulnerability-(cve-2023-41913).html">
+	  <p>A vulnerability in charon-tkm related to processing
+	     DH public values was discovered in strongSwan
+	     that can result in a buffer overflow and potentially
+	     remote code execution. All versions since
+	     5.3.0 are affected.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41913</cvename>
+      <url>https://www.strongswan.org/blog/2023/11/20/strongswan-vulnerability-(cve-2023-41913).html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-20</discovery>
+      <entry>2023-11-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="147353a3-c33b-46d1-b751-e72c0d7f29df">
     <topic>electron{25,26} -- use after free in Garbage Collection</topic>
     <affects>
