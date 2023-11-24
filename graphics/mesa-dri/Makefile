@@ -8,7 +8,7 @@ WWW=		https://www.mesa3d.org/
 
 LIB_DEPENDS+=	libglapi.so:graphics/mesa-libs
 
-USES+=		llvm:lib,noexport
+USES+=		llvm:lib
 
 OPTIONS_GROUP=			PLATFORM
 OPTIONS_GROUP_PLATFORM=		PLATFORM_X11 PLATFORM_WAYLAND

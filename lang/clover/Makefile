@@ -18,7 +18,7 @@ LIB_DEPENDS=	libOpenCL.so:devel/ocl-icd \
 RUN_DEPENDS=	libclc>=0.3.0:devel/libclc \
 		opencl>=0:devel/opencl
 
-USES=		llvm:lib,noexport
+USES=		llvm:lib,max=16
 
 .include <bsd.port.options.mk>
 .include "${.CURDIR:H:H}/graphics/mesa-dri/Makefile.common"

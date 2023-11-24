@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 LIB_DEPENDS=	libvdpau.so:multimedia/libvdpau \
 		libzstd.so:archivers/zstd
 
-USES=		llvm:lib,noexport
+USES=		llvm:lib
 
 OPTIONS_DEFINE=		X11
 OPTIONS_DEFAULT=	X11

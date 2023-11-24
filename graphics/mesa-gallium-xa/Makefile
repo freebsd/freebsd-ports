@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 ONLY_FOR_ARCHS=		amd64 i386
 ONLY_FOR_ARCHS_REASON=	used only by VMware supported architectures
 
-USES=		llvm:lib,noexport xorg
+USES=		llvm:lib xorg
 USE_XORG=	xorgproto
 
 .include <bsd.port.options.mk>
