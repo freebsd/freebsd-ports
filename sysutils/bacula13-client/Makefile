@@ -1,4 +1,4 @@
-yPORTNAME=	bacula
+PORTNAME=	bacula
 PKGNAMESUFFIX=	13-client
 
 COMMENT=	Network backup solution (client)
