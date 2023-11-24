@@ -49,6 +49,7 @@
     SUBDIR += angie-module-rtmp
     SUBDIR += angie-module-set-misc
     SUBDIR += angie-module-subs
+    SUBDIR += angie-module-testcookie
     SUBDIR += angie-module-upload
     SUBDIR += angie-module-vod
     SUBDIR += angie-module-xslt

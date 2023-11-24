@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The testcookie dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_testcookie_access_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/kyprizel/testcookie-nginx-module
+EOM
+}
+]
