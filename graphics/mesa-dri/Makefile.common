@@ -45,7 +45,7 @@ USES+=	xorg
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .endif
 
-USES+=		compiler:c++11-lib bison llvm:noexport meson pathfix pkgconfig \
+USES+=		compiler:c++11-lib bison meson pathfix pkgconfig \
 		python:build shebangfix tar:xz
 
 .if ${/usr/bin/ld:L:tA} != /usr/bin/ld.lld

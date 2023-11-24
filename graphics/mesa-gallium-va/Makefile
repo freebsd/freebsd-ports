@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	used only by AMD/Radeon hardware
 LIB_DEPENDS=	libva.so:multimedia/libva \
 		libzstd.so:archivers/zstd
 
-USES=		llvm:lib
+USES=		llvm:lib,noexport
 
 OPTIONS_DEFINE=		X11
 OPTIONS_DEFAULT=	X11
