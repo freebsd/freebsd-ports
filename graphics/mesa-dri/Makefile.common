@@ -82,6 +82,12 @@ BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
 
+
+# Some symbols in mesa's linker version scripts are not always defined,
+# depending on configuration options. Suppress errors with lld >= 17 due to
+# these undefined symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_VERSION}/lib
 MESON_ARGS+=	-Dllvm=enabled \
 		-Dlibunwind=disabled \
