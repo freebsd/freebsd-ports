@@ -8,6 +8,8 @@ WWW=		https://www.mesa3d.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
+USES=		llvm:noexport
+
 LIB_DEPENDS=	libOpenGL.so:graphics/libglvnd
 
 OPTIONS_GROUP=			PLATFORM
