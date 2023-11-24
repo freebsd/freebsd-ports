@@ -1,8 +1,8 @@
-TIMESTAMP = 1700623062
+TIMESTAMP = 1700802540
 SHA256 (yuzu-s20230424/compatibility_list.json) = 382db629d6b060af722a27dfa9cd6bb60ac16a7544c58322f63aa1be4c0c0fac
 SIZE (yuzu-s20230424/compatibility_list.json) = 1801327
-SHA256 (yuzu-emu-yuzu-s20231121-91c12db070_GH0.tar.gz) = 208c70e05b8be64989f30bce5b67784c45becf5717e4f5796b55c657da26cf54
-SIZE (yuzu-emu-yuzu-s20231121-91c12db070_GH0.tar.gz) = 6502868
+SHA256 (yuzu-emu-yuzu-s20231124-093eb075a6_GH0.tar.gz) = e22da5644f34d4f4852e917b6aa5077bf1d57d8866ebf0e013cfac898efc684f
+SIZE (yuzu-emu-yuzu-s20231124-093eb075a6_GH0.tar.gz) = 6503691
 SHA256 (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 8cd6d075b4da0ad5fb995eb37390e2e6088be8d41ab1cdfc7e7e4256bd991450
 SIZE (yuzu-emu-mbedtls-v2.16.9-115-g8c88150ca_GH0.tar.gz) = 2679189
 SHA256 (yuzu-emu-sirit-ab75463_GH0.tar.gz) = 6b61e265be182b7a78075fc1b98ccf80fd33008343205dd0e22a10a439c45319
