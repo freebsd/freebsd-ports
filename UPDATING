@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20231125:
+  AFFECTS: users of lang/php81
+  AUTHOR: bofh@FreeBSD.org
+
+  The default version of PHP has been switched from 8.1 to 8.2.
+
+  If you use binary packages you should make a list of php packages
+  before running 'pkg upgrade':
+
+  # pkg info \*php81\* > ~/installed-php-ports-list
+
+  After the upgrade, check with such list if all your php extensions
+  are still installed, and reinstall them if needed.
+
+  If you use mod_php81 you need to deinstall it and install mod_php82.
+
 20231104:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
