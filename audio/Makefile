@@ -36,6 +36,7 @@
     SUBDIR += asterisk-espeak
     SUBDIR += asterisk-flite
     SUBDIR += asunder
+    SUBDIR += atracdenc
     SUBDIR += atunes
     SUBDIR += aubio
     SUBDIR += audacity

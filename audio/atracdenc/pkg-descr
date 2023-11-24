@@ -1,0 +1,2 @@
+Audio encoder that supports ATRAC1 and ATRAC3 formats, can decode ATRAC1 and
+following containers: AEA, OMA, RIFF, RealMedia.
