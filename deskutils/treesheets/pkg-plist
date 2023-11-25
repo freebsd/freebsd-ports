@@ -1,9 +1,9 @@
 bin/treesheets
-share/applications/treesheets.desktop
-share/icons/hicolor/scalable/apps/treesheets.svg
+share/applications/com.strlen.TreeSheets.desktop
+share/icons/hicolor/scalable/apps/com.strlen.TreeSheets.svg
 %%NLS%%share/locale/de/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/it/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ts.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/ts.mo
-share/mime/packages/treesheets.xml
+share/mime/packages/com.strlen.TreeSheets.xml
