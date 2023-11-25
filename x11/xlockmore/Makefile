@@ -1,6 +1,5 @@
 PORTNAME=	xlockmore
-PORTVERSION=	5.71
-PORTREVISION=	1
+PORTVERSION=	5.74
 CATEGORIES=	x11
 MASTER_SITES=	http://www.sillycycle.com/xlock/ \
 		SF/bsdsrc/${.CURDIR:T}
@@ -11,10 +10,11 @@ WWW=		https://sillycycle.com/xlockmore.html
 
 LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	libfreetype.so:print/freetype2
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libpng16.so:graphics/png
 
 USES=		cpe tar:xz xorg
-USE_XORG=	ice sm x11 xaw xext xpm xorgproto
+USE_XORG=	ice sm x11 xaw xext xorgproto xpm xt
 
 CPE_VENDOR=	sillycycle
 
