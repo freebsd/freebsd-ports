@@ -1,7 +1,9 @@
 PORTNAME=	gtkwave
 DISTVERSION=	3.3.117
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
+DISTNAME=	${PORTNAME}-gtk3-${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Electronic Waveform Viewer
@@ -10,16 +12,15 @@ WWW=		https://gtkwave.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2 \
-		libharfbuzz.so:print/harfbuzz
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gmake gnome \
 		gperf pkgconfig shared-mime-info
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk30
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mime-update \
+		--enable-gtk3 \
 		--without-gconf
 
 PORTDOCS=	gtkwave.odt

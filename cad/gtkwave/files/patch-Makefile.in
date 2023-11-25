@@ -1,11 +1,11 @@
---- Makefile.in.orig	2017-10-08 05:44:27 UTC
+--- Makefile.in.orig	2023-08-13 22:32:40 UTC
 +++ Makefile.in
-@@ -340,7 +340,7 @@ target_alias = @target_alias@
+@@ -345,7 +345,7 @@ top_srcdir = @top_srcdir@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = doc examples man src contrib share
 +SUBDIRS = examples man src contrib share
  EXTRA_DIST = ChangeLog COPYING INSTALL LICENSE.TXT README NEWS AUTHORS \
- 	autogen.sh wave_locale.h tcl.m4
+ 	autogen.sh wave_locale.h tcl.m4 changes_from_gtk2.txt
  
