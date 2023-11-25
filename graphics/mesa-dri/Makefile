@@ -1,6 +1,6 @@
 PORTNAME=	mesa-dri
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	OpenGL hardware acceleration drivers for DRI2+
@@ -72,6 +72,9 @@ MESA_PLATFORMS+=	wayland
 MESON_ARGS+=	-Dgallium-drivers="${GALLIUM_DRIVERS:ts,:tl}" \
 		-Dvulkan-drivers="${VULKAN_DRIVERS:ts,:tl}" \
 		-Dplatforms="${MESA_PLATFORMS:ts,:tl}"
+
+# Vulkan Video extensions (keep in sync with mesa-gallium-va)
+MESON_ARGS+=	-Dvideo-codecs="vc1dec,h264dec,h264enc,h265dec,h265enc"
 
 # Disable some options
 MESON_ARGS+=	-Dandroid-libbacktrace=disabled \
