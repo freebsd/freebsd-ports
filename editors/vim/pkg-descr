@@ -12,5 +12,3 @@ FreeBSD has the following Vim packages:
 * vim-x11:  Console Vim only, with xclipboard support
 * vim-tiny: Vim binary only, with no runtime files. Not useful for most people;
   intended for minimal (ex. jail) installations
-
-See also: https://github.com/vim/vim
