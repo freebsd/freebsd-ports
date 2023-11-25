@@ -1,5 +1,6 @@
 PORTNAME=	qtcreator
 DISTVERSION=	12.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run,min=15 \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run,min=17 \
 		pkgconfig python qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
