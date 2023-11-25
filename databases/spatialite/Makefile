@@ -1,6 +1,5 @@
 PORTNAME=	spatialite
-PORTVERSION=	5.0.1
-PORTREVISION=	7
+PORTVERSION=	5.1.0
 CATEGORIES=	databases geography
 MASTER_SITES=	http://www.gaia-gis.it/gaia-sins/libspatialite-sources/
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -29,9 +28,7 @@ CONFIGURE_ARGS+=	--enable-gcp=yes --enable-libxml2=yes --enable-rttopo=yes \
 USE_LDCONFIG=	yes
 INSTALL_TARGET=install-strip
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.am
-	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
+#post-patch:
+#	@${REINPLACE_CMD} -e 's|-ldl| |' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
