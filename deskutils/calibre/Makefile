@@ -1,5 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	7.0.0
+PORTVERSION=	7.1.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -76,8 +76,8 @@ USE_RC_SUBR=	calibre
 USE_XORG=	x11 xext xrender
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:79f0906:translations \
-		LibreOffice:dictionaries:3b7e1d2:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:9c92ec3:translations \
+		LibreOffice:dictionaries:d154315:hypenation
 
 SHEBANG_GLOB=	*.py *.recipe *.sh
 python_OLD_CMD=	"/usr/bin/env  python" ${LOCALBASE}/bin/python3
