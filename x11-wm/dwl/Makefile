@@ -2,10 +2,11 @@ PORTNAME=	dwl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5
 CATEGORIES=	x11-wm wayland
+MASTER_SITES=	https://codeberg.org/${PORTNAME}/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	dwm for Wayland
-WWW=		https://github.com/djpohly/dwl
+WWW=		https://codeberg.org/dwl/dwl
 
 LICENSE=	CC0-1.0 GPLv3+ MIT
 LICENSE_COMB=	multi
@@ -22,8 +23,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gmake pkgconfig
-USE_GITHUB=	yes
-GH_ACCOUNT=	djpohly
+WRKSRC=		${WRKDIR}/${PORTNAME}
 EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
 MAKE_ARGS=	VERSION="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
