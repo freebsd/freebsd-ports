@@ -154,13 +154,6 @@ ZSTD_DESC=		Use ZSTD for shader cache
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_MESON_ENABLED=	zstd
 
-.include <bsd.port.options.mk>
-
-# Ignore Mk/bsd.default-versions.mk but respect make.conf(5)
-.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*}
-LLVM_DEFAULT=	15 # chase mesa-dri
-.endif
-
 post-patch:
 # Extract (snapshot) version from the port instead of empty string
 	@${REINPLACE_CMD} '/MESA_GIT_SHA1/s/""/" (git-${DISTVERSIONSUFFIX:C/.*-g//})"/' \
