@@ -1,6 +1,6 @@
 PORTNAME=	gtkcord4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.16
+DISTVERSION=	0.0.16-1
 CATEGORIES=	net-im
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -25,7 +25,7 @@ GH_TUPLE=	alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthom
 		diamondburned:gotk4-adwaita:26f1789529b0:diamondburned_gotk4_adwaita_pkg/vendor/github.com/diamondburned/gotk4-adwaita \
 		diamondburned:gotk4:eb41da62b149:diamondburned_gotk4_pkg/vendor/github.com/diamondburned/gotk4 \
 		diamondburned:gotkit:ace9cfa5e044:diamondburned_gotkit/vendor/github.com/diamondburned/gotkit \
-		diamondburned:ningen:ff2cd6b90304:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
+		diamondburned:ningen:c71ae51f868b:diamondburned_ningen_v3/vendor/github.com/diamondburned/ningen/v3 \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		enescakir:emoji:v1.0.0:enescakir_emoji/vendor/github.com/enescakir/emoji \
