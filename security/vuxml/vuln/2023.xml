@@ -1566,6 +1566,10 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
 	<name>curl</name>
 	<range><gt>7.69.0</gt><lt>8.4.0</lt></range>
       </package>
+      <package>
+        <name>cmake-core</name>
+        <range><lt>3.27.8</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
