@@ -4,7 +4,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-basic.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-chart.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-customSettings.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-full.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-gauges.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-pretty.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
@@ -13,6 +12,7 @@
 %%WWWDIR%%/backend/empty.php
 %%WWWDIR%%/backend/garbage.php
 %%WWWDIR%%/backend/getIP.php
+%%WWWDIR%%/backend/getIP_util.php
 @sample %%WWWDIR%%/backend/getIP_ipInfo_apikey.php.sample
 @dir %%WWWDIR%%/results
 %%WWWDIR%%/results/OpenSans-Light.ttf
@@ -20,12 +20,15 @@
 %%WWWDIR%%/results/idObfuscation.php
 %%WWWDIR%%/results/index.php
 %%WWWDIR%%/results/json.php
+%%WWWDIR%%/results/sanitycheck.php
 %%WWWDIR%%/results/stats.php
 %%WWWDIR%%/results/telemetry.php
 %%WWWDIR%%/results/telemetry_db.php
+%%WWWDIR%%/results/telemetry_mssql.sql
 %%WWWDIR%%/results/telemetry_mysql.sql
 %%WWWDIR%%/results/telemetry_postgresql.sql
 @sample %%WWWDIR%%/results/telemetry_settings.php.sample
 %%WWWDIR%%/favicon.ico
+@sample %%WWWDIR%%/index.html.sample
 %%WWWDIR%%/speedtest.js
 %%WWWDIR%%/speedtest_worker.js
