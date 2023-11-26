@@ -1,6 +1,5 @@
 PORTNAME=	wine
-DISTVERSION=	8.20
-PORTREVISION=	1
+DISTVERSION=	8.21
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/
@@ -53,7 +52,7 @@ CONFIGURE_ARGS+=--verbose \
 		--without-unwind \
 		--without-usb \
 		--without-wayland
-CONFIGURE_ENV=	ac_cv_prog_STRIP="${STRIP_CMD}" CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
+CONFIGURE_ENV=	CPPBIN="${CPP}" FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine

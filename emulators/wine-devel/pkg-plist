@@ -1150,6 +1150,8 @@ include/wine/windows/windows.security.credentials.ui.h
 include/wine/windows/windows.security.credentials.ui.idl
 include/wine/windows/windows.security.cryptography.h
 include/wine/windows/windows.security.cryptography.idl
+include/wine/windows/windows.security.exchangeactivesyncprovisioning.h
+include/wine/windows/windows.security.exchangeactivesyncprovisioning.idl
 include/wine/windows/windows.security.isolation.h
 include/wine/windows/windows.security.isolation.idl
 include/wine/windows/windows.storage.fileproperties.h
@@ -1164,6 +1166,8 @@ include/wine/windows/windows.system.h
 include/wine/windows/windows.system.idl
 include/wine/windows/windows.system.power.h
 include/wine/windows/windows.system.power.idl
+include/wine/windows/windows.system.profile.h
+include/wine/windows/windows.system.profile.idl
 include/wine/windows/windows.system.profile.systemmanufacturers.h
 include/wine/windows/windows.system.profile.systemmanufacturers.idl
 include/wine/windows/windows.system.threading.h
