@@ -1,3 +1,43 @@
+  <vuln vid="388e6557-8c80-11ee-9ee3-84a93843eb75">
+    <topic>MariaDB -- Denial-of-Service vulnerability</topic>
+    <affects>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.23</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.16</lt></range>
+      </package>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/mariadb-10-11-6-release-notes/">
+	  <p>Easily exploitable vulnerability allows high privileged attacker
+	    with network access via multiple protocols to compromise MySQL
+	    Server. Successful attacks of this vulnerability can result in
+	    unauthorized ability to cause a hang or frequently repeatable crash
+	    (complete DOS) of MySQL Server.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22084</cvename>
+      <url>https://mariadb.com/kb/en/mariadb-10-11-6-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb-10-6-16-release-notes/</url>
+      <url>https://mariadb.com/kb/en/mariadb-10-5-23-release-notes/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-13</discovery>
+      <entry>2023-11-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a62c0c50-8aa0-11ee-ac0d-00e0670f2660">
     <topic>strongSwan -- vulnerability in charon-tkm</topic>
     <affects>
