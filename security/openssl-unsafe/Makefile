@@ -38,6 +38,8 @@ CONFIGURE_ARGS+=	enable-ec_nistp_64_gcc_128
 OPENSSLDIR?=	${PREFIX}/openssl-unsafe/etc
 PLIST_SUB+=	OPENSSLDIR=${OPENSSLDIR:S=^${PREFIX}/==}
 
+PORTSCOUT=	ignore
+
 .include "version.mk"
 
 post-patch:
