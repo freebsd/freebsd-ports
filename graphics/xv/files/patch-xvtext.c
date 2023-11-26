@@ -1,6 +1,6 @@
---- xvtext.c.orig	2009-05-20 13:18:36.000000000 +0200
-+++ xvtext.c	2009-05-20 13:22:45.000000000 +0200
-@@ -181,7 +181,7 @@
+--- src/xvtext.c.orig	2023-07-17 01:25:42 UTC
++++ src/xvtext.c
+@@ -181,7 +181,7 @@ static int  selectCodeset         PARM((TVINFO *));
  #endif
  #ifdef TV_MULTILINGUAL
  static void setCodingSpec   PARM((TVINFO *, struct coding_spec *));

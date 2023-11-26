@@ -1,16 +1,9 @@
 PORTNAME=	xv
-PORTVERSION=	3.10a
-PORTREVISION=	22
+PORTVERSION=	4.2.0
+DISTVERSIONPREFIX=	v
+PORTREVISION=	0
 CATEGORIES+=	graphics
-MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/:base \
-		SF/png-mng/XV%20jumbo%20patches/20070520
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:base \
-		${DISTNAME}-jumbo-patches-20070520.tar.gz
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://www.gregroelofs.com/code/
-PATCHFILES=	xv-3.10a-enhancements.20070520-20081216.diff
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	X11 program that displays images of various formats
@@ -18,10 +11,14 @@ WWW=		http://www.trilon.com/xv/
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff \
 		libpng.so:graphics/png \
-		libjasper.so:graphics/jasper
+		libjasper.so:graphics/jasper \
+		libwebp.so:graphics/webp
 
-USES=		cpe imake jpeg xorg
-USE_XORG=	xext x11 xt
+USES=		cpe localbase cmake jpeg xorg
+USE_XORG=	xext x11 xt ice sm
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jasper-software
 
 CPE_VENDOR=	xv_project
 
@@ -30,43 +27,22 @@ M17N_DESC=	build with Multilingualization support
 
 .include <bsd.port.options.mk>
 
-.if defined(CC) && ${CC:T:Mclang}
-# Optimizer crashes with
-# Assertion failed: (isPtrIV == IndVar->getType()->isPointerTy() && "IndVar type must match IVInit type")
-CFLAGS:= ${CFLAGS:S/-O2//g}
-.endif
-
 .if ${PORT_OPTIONS:MM17N}
-MAKE_ENV=	LOCALE_EXTENSION=-DTV_MULTILINGUAL
+CFLAGS+=	-DTV_MULTILINGUAL
 DESCR=	${FILESDIR}/pkg-descr
 CONFLICTS_INSTALL=	xv
 .else
 CONFLICTS_INSTALL=	xv-m17n
 .endif
 
-pre-patch:
-	${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} -p1 < ${WRKDIR}/xv-3.10a-jumbo-fix-enh-patch-20070520.txt
+XV_DOCS=	README.md src/docs/help
 
-post-patch:
-	${REINPLACE_CMD} -e "s@%%LOCALBASE%%@${LOCALBASE}@" \
-		${WRKSRC}/config.h
-.for i in bggen.1 vdcomp.1 xcmap.1 xv.1 xvp2p.1
-	${CP} ${WRKSRC}/docs/${i:R}.man ${WRKSRC}
+do-install-DOCS-on:
+.for i in ${XV_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/
 .endfor
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.jumbo ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README.pcd ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/epsf.ps ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/xpm.ps ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/xvdocs.ps ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/xvtitle.ps ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/help ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/bmp.doc ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/docs/gif* ${STAGEDIR}${DOCSDIR}/
-.endif
+do-install-DOCS-off:
+	${RM} -fr ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

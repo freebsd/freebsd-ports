@@ -1,7 +1,7 @@
---- xvgif.c.orig	2009-05-17 08:25:07.000000000 +0200
-+++ xvgif.c	2009-05-17 09:37:28.000000000 +0200
-@@ -169,8 +169,12 @@
-  
+--- src/xvgif.c.orig	2023-07-17 01:25:42 UTC
++++ src/xvgif.c
+@@ -186,8 +186,12 @@ int LoadGIF(fname, pinfo)
+ 
    aspect = NEXTBYTE;
    if (aspect) {
 +#if 0
@@ -11,5 +11,5 @@
 +    normaspect = (float) (aspect + 15) / 64.0;   /* gif89 aspect ratio */
 +#endif
      if (DEBUG) fprintf(stderr,"GIF89 aspect = %f\n", normaspect);
-   }
- 
+     /* FIXME:  apparently this _should_ apply to all frames in a multi-image
+      *         GIF (i.e., PgUp/PgDn), but it doesn't */
