@@ -50,8 +50,12 @@ EBUR128_DEFAULT?=	legacy
 FIREBIRD_DEFAULT?=	3.0
 # Possible values: gfortran
 FORTRAN_DEFAULT?=	gfortran
-# Possible values: 3.2.2
+# Possible values: 3.2.2, 3.3.1
+.  if !defined(WANT_FPC_DEVEL)
 FPC_DEFAULT?=		3.2.2
+.  else
+FPC_DEFAULT?=		3.3.1
+.  endif
 # Possible values: 8 (last to support powerpcspe), 9, 10, 11, 12
 # (Any other version is completely unsupported and not meant for general use.)
 .  if ${ARCH} == "powerpcspe"

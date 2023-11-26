@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/libfontconfig.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libfontconfig/libfontconfig.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/libfontconfig/libfontconfig.ppu

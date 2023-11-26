@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/pthreads.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/pthreads/pthreads.ppu

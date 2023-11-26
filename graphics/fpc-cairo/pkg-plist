@@ -1,8 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/cairo.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairo.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairo.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoft.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoft.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairogobject.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairogobject.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/cairo/cairoxlib.ppu

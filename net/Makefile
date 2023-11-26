@@ -159,9 +159,6 @@
     SUBDIR += flower
     SUBDIR += foreman-proxy
     SUBDIR += fort
-    SUBDIR += fpc-ldap
-    SUBDIR += fpc-libenet
-    SUBDIR += fpc-pcap
     SUBDIR += fping
     SUBDIR += freebsd-telnetd
     SUBDIR += freebsd-uucp

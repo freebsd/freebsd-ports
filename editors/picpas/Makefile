@@ -1,6 +1,6 @@
 PORTNAME=	picpas
 PORTVERSION=	0.9.0
-PORTREVISION=	10
+PORTREVISION=	11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -15,8 +15,6 @@ gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 USES=		dos2unix fpc gnome lazarus:flavors xorg
-USE_FPC=	chm fcl-base fcl-image fcl-json fcl-registry fcl-xml pasjpeg regexpr \
-		rtl-objpas x11
 USE_XORG=	x11
 DOS2UNIX_REGEX=	.*\.([txt]|pas|lpi|txt|lfm)
 USE_GITHUB=	yes
@@ -31,9 +29,7 @@ GH_TUPLE=	t-edson:MiConfig:a4a988a:miconfig/miconfig \
 		t-edson:ogEditGraf:a19b68a:ogeditgraf/ogeeditgraf \
 		t-edson:t-Xpres:6665922:txpres/txpres
 
-USE_FPC_gtk2=	cairo
 USE_GNOME_gtk2=	cairo
-USE_FPC+=	${USE_FPC_${FLAVOR}}
 USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 
 LAZARUS_PROJECT_FILES=	Source/PicPas.lpi

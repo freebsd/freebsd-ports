@@ -1,7 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/graph.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/ggigraph.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/graph.ppu
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.o
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/graph/sdlgraph.ppu

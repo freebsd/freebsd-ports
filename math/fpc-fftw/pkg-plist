@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/fftw.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/fftw_s.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fftw/fftw_s.ppu

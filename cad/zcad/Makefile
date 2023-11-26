@@ -1,6 +1,6 @@
 PORTNAME=	zcad
 PORTVERSION=	0.9.8.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	cad
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -11,8 +11,6 @@ USES=		dos2unix fpc lazarus:flavors tar:xz
 USE_GITHUB=	yes
 GH_ACCOUNT=	zamtmn
 GH_TAGNAME=	8b8a693
-USE_FPC=	cairo chm fcl-base fcl-image fcl-json fcl-stl fcl-xml opengl \
-		pasjpeg rtl-extra rtl-generics rtl-objpas x11
 
 MAKE_ENV=	LAZBUILD_CMD="${LAZBUILD_CMD}" \
 		LAZBUILD_ARGS="${LAZBUILD_ARGS}" \

@@ -1,3 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/gdbm.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbm/gdbm.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/gdbm/gdbm.ppu

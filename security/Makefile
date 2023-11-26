@@ -157,8 +157,6 @@
     SUBDIR += fizz
     SUBDIR += fl0p
     SUBDIR += flawfinder
-    SUBDIR += fpc-gnutls
-    SUBDIR += fpc-openssl
     SUBDIR += fprint_demo
     SUBDIR += fprintd
     SUBDIR += fragroute

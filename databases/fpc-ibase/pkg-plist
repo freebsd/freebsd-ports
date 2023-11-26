@@ -1,8 +1,0 @@
-lib/fpc/%%PORTVERSION%%/fpmkinst/%%BUILDNAME%%/ibase.fpm
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase40.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase40.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60dyn.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60dyn.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/ibase/ibase60dyn.rsj

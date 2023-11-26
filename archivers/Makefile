@@ -31,8 +31,6 @@
     SUBDIR += engrampa
     SUBDIR += fastjar
     SUBDIR += file-roller
-    SUBDIR += fpc-bzip2
-    SUBDIR += fpc-unzip
     SUBDIR += gcab
     SUBDIR += gcpio
     SUBDIR += gnome-autoar
