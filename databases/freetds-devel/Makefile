@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-PORTVERSION=	1.4.132
+PORTVERSION=	1.4.133
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/ \
@@ -14,7 +14,7 @@ WWW=		http://www.freetds.org/
 LICENSE=	LGPL20
 
 USES=		autoreconf compiler:c11 cpe gettext-tools gmake iconv \
-		libtool:keepla pkgconfig tar:bzip2
+	libtool:keepla localbase:ldflags pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -25,9 +25,6 @@ CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--with-tdsver=${TDS_VER}
 
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	"-I${LOCALBASE}/include"
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	freetds # etc/freetds/freetds.conf.sample
 
