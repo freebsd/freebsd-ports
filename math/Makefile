@@ -380,7 +380,6 @@
     SUBDIR += grace
     SUBDIR += gravity
     SUBDIR += gretl
-    SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += half
