@@ -1,6 +1,6 @@
---- configure.ac.orig	2023-07-07 07:42:32 UTC
+--- configure.ac.orig	2023-09-11 18:30:03 UTC
 +++ configure.ac
-@@ -634,7 +634,7 @@ else
+@@ -620,7 +620,7 @@ else
        if test "x$GUILE_CONFIG" = "x"; then
          use_guile="No (guile not available)"
        else
@@ -9,12 +9,12 @@
          GUILE_VERSION_MAJOR=`echo $GUILE_VERSION | cut -d '.' -f 1`
          GUILE_VERSION_MINOR=`echo $GUILE_VERSION | cut -d '.' -f 2`
          AC_CHECK_PROGS(GUILE,guile$GUILE_VERSION_MAJOR.$GUILE_VERSION_MINOR guile$GUILE_VERSION_MAJOR guile)
-@@ -814,16 +814,16 @@ else
+@@ -800,16 +800,16 @@ else
              if test "x$PKG_CONFIG" != "x"; then
  	        AC_MSG_CHECKING(for Lua headers and libraries with pkg-config)
  	        echo
--	        for l in "$lua_suffix" "" "53" "5.3" "52" "5.2" "51" "5.1" "50" "5.0" ; do
-+	        for l in "$lua_suffix" "" "54" "-5.4" "53" "-5.3" "52" "-5.2" "51" "5.1" "50" "5.0" ; do
+-	        for l in "$lua_suffix" "" "53" "5.3" "52" "5.2" "51" "5.1" ; do
++	        for l in "$lua_suffix" "" "54" "5.4" "53" "5.3" "52" "5.2" "51" "5.1" ; do
  	            pkgconfig_lua_found=`$PKG_CONFIG --exists lua$l 2>/dev/null`
  	            if test "x$?" = "x0" ; then
 -                        LUA_INCLUDES="$LUA_CFLAGS "`$PKG_CONFIG --cflags lua$l`
@@ -29,11 +29,11 @@
  		           LUA_LIBS="$LUA_LFLAGS "`$PKG_CONFIG --libs lualib$l`
  		        fi
                          break
-@@ -1187,6 +1187,7 @@ else
+@@ -1173,6 +1173,7 @@ else
  	    use_ruby="No (ruby not available)"
            else
              RUBY_CFLAGS="-I`$RUBY $srcdir/config/config_ruby.rb archdir`"
 +            RUBY_CFLAGS="${RUBY_CFLAGS} -I`$RUBY $srcdir/config/config_ruby.rb inc`"
- 	    # hack for powerpc-darwin8 (10.4)
- 	    if test "x$DARWIN" = "xyes"; then
- 	      RUBY_CFLAGS=`echo $RUBY_CFLAGS | sed 's/powerpc/universal/'`
+             RUBY_LIBS="-L`$RUBY $srcdir/config/config_ruby.rb lib` `$RUBY -rrbconfig -e \"puts RbConfig::CONFIG[['LIBRUBYARG_SHARED']]\"`"
+             RUBY_INSTALL_DIR="`$RUBY $srcdir/config/config_ruby.rb vendorarchdir`"
+ 	    if test "x$RUBY_INSTALL_DIR" = "x"; then

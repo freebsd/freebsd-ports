@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
-PORTVERSION=	8.1.0
-PORTREVISION=	2
+PORTVERSION=	9.0.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
