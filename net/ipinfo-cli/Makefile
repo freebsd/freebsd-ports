@@ -1,6 +1,6 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
-DISTVERSION=	3.1.2
+DISTVERSION=	3.2.0
 CATEGORIES=	net
 
 MAINTAINER=	nulldutra@proton.me
