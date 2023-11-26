@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.15
+PORTVERSION=	10.6.16
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -210,6 +210,10 @@ SUB_LIST+=	LEGACY_LIMITS="" MODERN_LIMITS="@comment "
 
 .if ${SSL_DEFAULT} != base && ${PORT_OPTIONS:MGSSAPI_BASE}
 GSSAPI_BASE_IGNORE=	GSSAPI_BASE is not compatible with OpenSSL from ports. Use other GSSAPI options or OpenSSL from base system
+.endif
+
+.if ${SSL_DEFAULT:Mlibressl*}
+CFLAGS+=        -Wno-incompatible-function-pointer-types
 .endif
 
 .if ${ARCH} != amd64 && ${ARCH} != aarch64
