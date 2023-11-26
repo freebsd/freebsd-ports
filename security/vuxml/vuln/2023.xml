@@ -72,6 +72,10 @@
        <name>ungoogled-chromium</name>
        <range><lt>119.0.6045.159</lt></range>
       </package>
+      <package>
+       <name>qt5-webengine</name>
+       <range><lt>5.15.16.p5</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
