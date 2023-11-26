@@ -45,6 +45,8 @@ LDFLAGS=	-L${PREFIX}/lib -lqrencode
 
 ALL_TARGET=	unicoderelease
 
+PORTSCOUT=	limit=^1\.
+
 post-patch:
 .	for f in Makefile.freebsd help/Makefile.freebsd src/os/unix/Makefile \
 		src/os/unix/dir.cpp src/ui/wxWidgets/Makefile
