@@ -857,7 +857,6 @@
     SUBDIR += openipmi
     SUBDIR += opensbi
     SUBDIR += openseachest
-    SUBDIR += openshift-install
     SUBDIR += opentofu
     SUBDIR += openupsd
     SUBDIR += openzfs
