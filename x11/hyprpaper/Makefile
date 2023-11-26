@@ -31,9 +31,6 @@ post-patch:
 		-e '/$${GIT_COMMIT_MESSAGE}/d' \
 		-e 's/$${GIT_DIRTY}/portbld/' \
 		${WRKSRC}/CMakeLists.txt
-# https://clang.llvm.org/cxx_status.html#cxx23
-	@${REINPLACE_CMD} -e 's/c++23/c++2b/' \
-		${WRKSRC}/CMakeLists.txt
 # Drop unused dependencies
 	@${REINPLACE_CMD} 's/ wlroots//' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's/ pango pangocairo//' \
