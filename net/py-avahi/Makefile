@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	# empty
@@ -31,10 +31,6 @@ NO_ARCH=	yes
 # See https://github.com/lathiat/avahi/issues/277
 post-extract:
 	${CP} ${FILESDIR}/build-db ${WRKSRC}/service-type-database
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@pkglibdatadir@|${DATADIR}|' \
-		${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
 
 do-build:
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC}
