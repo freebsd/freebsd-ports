@@ -24,7 +24,7 @@ CARGO_CRATES=	anstyle-1.0.4 \
 		glib-macros-0.18.3 \
 		glib-sys-0.18.1 \
 		gobject-sys-0.18.0 \
-		hashbrown-0.14.2 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		indexmap-2.1.0 \
 		itoa-1.0.9 \
@@ -46,12 +46,12 @@ CARGO_CRATES=	anstyle-1.0.4 \
 		proc-macro-crate-2.0.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		quick-xml-0.31.0 \
 		quote-1.0.33 \
 		ryu-1.0.15 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		serde_spanned-0.6.4 \
 		shmemfdrs-0.1.4 \
