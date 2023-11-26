@@ -1,0 +1,37 @@
+--- src/installer/src/redist/targets/GenerateBundledVersions.targets.orig	2023-11-01 21:55:24 UTC
++++ src/installer/src/redist/targets/GenerateBundledVersions.targets
+@@ -160,7 +160,7 @@
+           win-x86;
+           " />
+ 
+-      <NetCore31RuntimePackRids Include="@(NetCore30RuntimePackRids)"/>
++      <NetCore31RuntimePackRids Include="@(NetCore30RuntimePackRids);freebsd-x64"/>
+ 
+       <Net50AppHostRids Include="
+           @(NetCore31RuntimePackRids);
+@@ -281,7 +281,7 @@
+         linux-arm64;
+         " />
+ 
+-      <Net50Crossgen2SupportedRids Include="linux-musl-x64;linux-x64;win-x64" />
++      <Net50Crossgen2SupportedRids Include="linux-musl-x64;linux-x64;win-x64;freebsd-x64" />
+ 
+       <Net60Crossgen2SupportedRids Include="
+           @(Net50Crossgen2SupportedRids);
+@@ -317,6 +317,7 @@
+         @(Net70ILCompilerSupportedRids);
+         osx-x64;
+         osx-arm64;
++        freebsd-x64;
+         " />
+ 
+       <NativeAOTRuntimePackRids Include="
+@@ -335,7 +336,7 @@
+           "
+           />
+ 
+-      <AspNetCore31RuntimePackRids Include="@(AspNetCore30RuntimePackRids)" />
++      <AspNetCore31RuntimePackRids Include="@(AspNetCore30RuntimePackRids);freebsd-x64" />
+       <AspNetCore50RuntimePackRids Include="@(AspNetCore31RuntimePackRids);linux-musl-arm;win-arm64" />
+       <AspNetCore60RuntimePackRids Include="@(AspNetCore50RuntimePackRids);osx-arm64;linux-s390x" />
+       <AspNetCore70RuntimePackRids Include="@(AspNetCore60RuntimePackRids);linux-ppc64le" />

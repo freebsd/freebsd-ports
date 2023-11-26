@@ -1,0 +1,9 @@
+TIMESTAMP = 1703335237
+SHA256 (dotnet/release.json-8.0.0) = dab198858ac1c42ca7157b0d629bc4593e7b946b41c84c176713bbe31d32acbc
+SIZE (dotnet/release.json-8.0.0) = 241
+SHA256 (dotnet/Private.SourceBuilt.Artifacts.8.0.100-rtm.23551.1.freebsd.13-x64.tar.gz) = b91acf8ac130274fb40110f6af1d92f2348613f8cb0943b8b87f853351c8d6d2
+SIZE (dotnet/Private.SourceBuilt.Artifacts.8.0.100-rtm.23551.1.freebsd.13-x64.tar.gz) = 1162274049
+SHA256 (dotnet/dotnet-sdk-8.0.100-freebsd-x64.tar.gz) = d6118ff2cb9ded82eeeb976f3001bdea4ea2904e276b27ef526f458059e04149
+SIZE (dotnet/dotnet-sdk-8.0.100-freebsd-x64.tar.gz) = 385932876
+SHA256 (dotnet/dotnet-dotnet-v8.0.0_GH0.tar.gz) = 84f967761223cfbb287404eae959c2dcd952639d35724bfbacd63edb6ac57c5a
+SIZE (dotnet/dotnet-dotnet-v8.0.0_GH0.tar.gz) = 282103151
