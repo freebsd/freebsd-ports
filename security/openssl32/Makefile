@@ -145,6 +145,8 @@ ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
+PORTSCOUT=		limit=^3\.2\.
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64

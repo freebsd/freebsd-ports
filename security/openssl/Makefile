@@ -132,6 +132,8 @@ ZLIB_CONFIGURE_ON=	zlib-dynamic
 
 SHLIBS=			lib/engines-${OPENSSL_SHLIBVER}/loader_attic.so
 
+PORTSCOUT=		limit:^3\.0\.
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
