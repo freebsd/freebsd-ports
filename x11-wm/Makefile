@@ -76,6 +76,7 @@
     SUBDIR += metacity
     SUBDIR += muffin
     SUBDIR += mutter
+    SUBDIR += niri
     SUBDIR += nscde
     SUBDIR += obconf
     SUBDIR += obconf-qt
