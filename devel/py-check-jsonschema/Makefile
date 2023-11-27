@@ -1,5 +1,5 @@
 PORTNAME=	check-jsonschema
-PORTVERSION=	0.27.1
+PORTVERSION=	0.27.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-jsonschema/check-jsonschema/releases/download/${PORTVERSION}/
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0<5.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}regress>=0.4.0:devel/py-regress@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0<3.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.33:devel/py-ruamel.yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.5:devel/py-ruamel.yaml@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
