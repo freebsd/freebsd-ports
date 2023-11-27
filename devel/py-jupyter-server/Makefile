@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	2.10.0
+PORTVERSION=	2.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
@@ -8,7 +8,8 @@ DISTNAME=	jupyter_server-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The backend to Jupyter web applications
-WWW=		https://github.com/jupyter-server/jupyter_server
+WWW=		https://jupyter-server.readthedocs.io/en/latest/ \
+		https://github.com/jupyter-server/jupyter_server
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.1.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.4:devel/py-jupyter-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.12:devel/py-jupyter-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.6.0:devel/py-jupyter-events@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.9.0:devel/py-jupyter-events@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-terminals>=0:devel/py-jupyter-server-terminals@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=6.4.4:devel/py-nbconvert@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=5.3.0:devel/py-nbformat@${PY_FLAVOR} \
