@@ -8095,3 +8095,4 @@ sysutils/openshift-install||2023-11-26|Has expired: BROKEN for more than a year
 devel/capnproto080|devel/capnproto1|2023-11-27|Remove obsoleted port. Use devel/capnproto1 instead
 devel/py-cachetools3|devel/py-cachetools|2023-11-27|Remove obsoleted port. Use devel/py-cachetools instead
 www/rubygem-asana1|www/rubygem-asana|2023-11-27|Remove obsoleted port. Use www/rubygem-asana instead
+devel/rubygem-rdoc63|devel/rubygem-rdoc|2023-11-27|Remove obsoleted port. Use devel/rubygem-rdoc instead
