@@ -1,5 +1,5 @@
 PORTNAME=	imageio
-PORTVERSION=	2.31.5
+PORTVERSION=	2.33.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/imageio/imageio/releases/download/v${PORTVERSION}/
@@ -31,16 +31,18 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	FFMPEG FITS PYAV TIFFFILE
+OPTIONS_DEFINE=	FFMPEG FITS PILLOW_HEIF PYAV TIFFFILE
 OPTIONS_DEFAULT=FFMPEG
-FFMPEG_DESC=	Read/Write video using FFmpeg
-FITS_DESC=	Read FITS files
-PYAV_DESC=	Read/Write Videos (and images)
-TIFFFILE_DESC=	Read/Write TIFF files
+FFMPEG_DESC=		Read/Write video using FFmpeg
+FITS_DESC=		Read FITS files
+PILLOW_HEIF_DESC=	Read HEIF files
+PYAV_DESC=		Read/Write Videos (and images)
+TIFFFILE_DESC=		Read/Write TIFF files
 
 FFMPEG_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imageio-ffmpeg>=0:graphics/py-imageio-ffmpeg@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 FITS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astropy>=0,2:astro/py-astropy@${PY_FLAVOR}
+PILLOW_HEIF_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}pillow-heif>=0:graphics/py-pillow-heif@${PY_FLAVOR}
 PYAV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}av>=0:multimedia/py-av@${PY_FLAVOR}
 TIFFFILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tifffile>=0:graphics/py-tifffile@${PY_FLAVOR}
 
