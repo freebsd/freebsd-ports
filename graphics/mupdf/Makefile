@@ -1,11 +1,9 @@
 PORTNAME=	mupdf
-DISTVERSION=	1.20.3
-PORTREVISION=	1
+DISTVERSION=	1.23.6
 DISTVERSIONSUFFIX=	-source
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mupdf.com/downloads/ \
-		http://www.mupdf.com/downloads/archive/
+MASTER_SITES=	http://www.mupdf.com/downloads/archive/
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Lightweight PDF viewer and toolkit

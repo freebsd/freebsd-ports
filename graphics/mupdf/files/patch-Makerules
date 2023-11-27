@@ -1,106 +1,46 @@
---- Makerules.orig	2018-10-04 09:19:28 UTC
+--- Makerules.orig	2023-11-24 18:10:54 UTC
 +++ Makerules
-@@ -24,28 +24,28 @@ ifeq ($(build),debug)
-   CFLAGS += -pipe -g
-   LDFLAGS += -g $(LDREMOVEUNREACH)
- else ifeq ($(build),release)
--  CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer
-+  CFLAGS += -DNDEBUG -fomit-frame-pointer
-   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
- else ifeq ($(build),small)
-   CFLAGS += -pipe -Os -DNDEBUG -fomit-frame-pointer
-   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
- else ifeq ($(build),valgrind)
--  CFLAGS += -pipe -O2 -DNDEBUG -DPACIFY_VALGRIND -fno-omit-frame-pointer
-+  CFLAGS += -DNDEBUG -DPACIFY_VALGRIND -fno-omit-frame-pointer
-   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
- else ifeq ($(build),sanitize)
-   CFLAGS += -pipe -g -fno-omit-frame-pointer $(SANITIZE_FLAGS)
-   LDFLAGS += -g $(SANITIZE_FLAGS)
- else ifeq ($(build),sanitize-release)
--  CFLAGS += -pipe -O2 -DNDEBUG -fno-omit-frame-pointer $(SANITIZE_FLAGS)
-+  CFLAGS += -DNDEBUG -fno-omit-frame-pointer $(SANITIZE_FLAGS)
-   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s $(SANITIZE_FLAGS)
- else ifeq ($(build),profile)
--  CFLAGS += -pipe -O2 -DNDEBUG -pg
-+  CFLAGS += -DNDEBUG -pg
-   LDFLAGS += -pg
- else ifeq ($(build),coverage)
-   CFLAGS += -pipe -g -pg -fprofile-arcs -ftest-coverage
-   LIBS += -lgcov
- else ifeq ($(build),native)
--  CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer -march=native
-+  CFLAGS += -DNDEBUG -fomit-frame-pointer -march=native
-   LDFLAGS += $(LDREMOVEUNREACH) -Wl,-s
- else ifeq ($(build),memento)
-   CFLAGS += -pipe -g -DMEMENTO
-@@ -55,7 +55,7 @@ else ifeq ($(build),memento)
-     LIBS += -ldl
-   endif
- else ifeq ($(build),gperf)
--  CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer -DGPERF
-+  CFLAGS += -DNDEBUG -fomit-frame-pointer -DGPERF
-   LIBS += -lprofiler
- else
-   $(error unknown build setting: '$(build)')
-@@ -143,7 +143,59 @@ else ifeq ($(OS),Linux)
- 	PTHREAD_LIBS := -lpthread
-   endif
- 
--endif
-+else ifeq ($(OS),FreeBSD)
-+  PTHREAD_LIBS := -lthr
-+# alphabetical order
-+  # curl
-+  USE_SYSTEM_CURL := yes
-+  SYS_CURL_CFLAGS := $(shell pkg-config --cflags libcurl)
-+  SYS_CURL_LIBS := $(shell pkg-config --libs libcurl)
-+  # freetype
-+  USE_SYSTEM_FREETYPE := yes
-+  SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
-+  SYS_FREETYPE_LIBS := $(shell pkg-config --libs freetype2)
-+  # glut
-+  HAVE_GLUT := yes
-+  USE_SYSTEM_GLUT := yes
-+  SYS_GLUT_CFLAGS :=
-+  SYS_GLUT_LIBS := -lglut -lGL
-+  # harfbuzz
-+  USE_SYSTEM_HARFBUZZ := yes
-+  SYS_HARFBUZZ_CFLAGS := $(shell pkg-config --cflags harfbuzz)
-+  SYS_HARFBUZZ_LIBS := $(shell pkg-config --libs harfbuzz)
-+  # jbig2dec
-+  USE_SYSTEM_JBIG2DEC := yes
-+  SYS_JBIG2DEC_CFLAGS := 
-+  SYS_JIB2DEC_LIBS := -ljbig2dec
-+  # lcms2 - needs a patched version of lcms2
-+  USE_SYSTEM_LCMS2 := no
-+  # libcrypto
-+  HAVE_LIBCRYPTO := no
-+  SYS_LIBCRYPTO_CFLAGS :=
-+  SYS_LIBCRYPTO_LIBS :=
-+  # libjpeg
-+  USE_SYSTEM_LIBJPEG := yes
-+  SYS_LIBJPEG_CFLAGS := $(shell pkg-config --cflags libjpeg)
-+  SYS_LIBJPEG_LIBS := $(shell pkg-config --libs libjpeg)
-+  # openjpeg
-+  USE_SYSTEM_OPENJPEG := yes
-+  SYS_OPENJPEG_CFLAGS := $(shell pkg-config --cflags libopenjp2)
-+  SYS_OPENJPEG_LIBS := $(shell pkg-config --libs libopenjp2)
-+  # openssl
-+  HAVE_OPENSSL_SSL := no
-+  # pthread
-+  HAVE_PTHREAD := yes
-+  SYS_PTHREAD_CFLAGS :=
-+  SYS_PTHREAD_LIBS := -lpthread
-+  # x11
-+  HAVE_X11 := yes
-+  X11_CFLAGS := $(shell pkg-config --cflags x11 xext)
-+  X11_LIBS := $(shell pkg-config --libs x11 xext)
-+  # zlib
-+  USE_SYSTEM_ZLIB := yes
-+  SYS_ZLIB_CFLAGS := $(shell pkg-config --cflags zlib)
-+  SYS_ZLIB_LIBS := $(shell pkg-config --libs zlib)
-+endif # FreeBSD
- 
- # The following section has various cross compilation configurations.
- #
+@@ -331,3 +331,43 @@ ifeq "$(OS)" "ios"
+   LD = xcrun ld
+   RANLIB = xcrun ranlib
+ endif
++
++
++# added from FreeBSD ports
++PTHREAD_LIBS := -lthr
++USE_SYSTEM_CURL := yes
++SYS_CURL_CFLAGS := $(shell pkg-config --cflags libcurl)
++SYS_CURL_LIBS := $(shell pkg-config --libs libcurl)
++USE_SYSTEM_FREETYPE := yes
++SYS_FREETYPE_CFLAGS := $(shell pkg-config --cflags freetype2)
++SYS_FREETYPE_LIBS := $(shell pkg-config --libs freetype2)
++HAVE_GLUT := yes
++USE_SYSTEM_GLUT := yes
++SYS_GLUT_CFLAGS := $(shell pkg-config --cflags gl glut)
++SYS_GLUT_LIBS := $(shell pkg-config --libs gl glut)
++USE_SYSTEM_HARFBUZZ := yes
++SYS_HARFBUZZ_CFLAGS := $(shell pkg-config --cflags harfbuzz)
++SYS_HARFBUZZ_LIBS := $(shell pkg-config --libs harfbuzz)
++USE_SYSTEM_JBIG2DEC := yes
++SYS_JBIG2DEC_CFLAGS := $(shell pkg-config --cflags jbig2dec)
++SYS_JIB2DEC_LIBS := $(shell pkg-config --libs jbig2dec)
++USE_SYSTEM_LCMS2 := no
++HAVE_LIBCRYPTO := no
++SYS_LIBCRYPTO_CFLAGS :=
++SYS_LIBCRYPTO_LIBS :=
++USE_SYSTEM_LIBJPEG := yes
++SYS_LIBJPEG_CFLAGS := $(shell pkg-config --cflags libjpeg)
++SYS_LIBJPEG_LIBS := $(shell pkg-config --libs libjpeg)
++USE_SYSTEM_OPENJPEG := yes
++SYS_OPENJPEG_CFLAGS := $(shell pkg-config --cflags libopenjp2)
++SYS_OPENJPEG_LIBS := $(shell pkg-config --libs libopenjp2)
++HAVE_OPENSSL_SSL := no
++HAVE_PTHREAD := yes
++SYS_PTHREAD_CFLAGS :=
++SYS_PTHREAD_LIBS := -lpthread
++HAVE_X11 := yes
++X11_CFLAGS := $(shell pkg-config --cflags x11 xext)
++X11_LIBS := $(shell pkg-config --libs x11 xext)
++USE_SYSTEM_ZLIB := yes
++SYS_ZLIB_CFLAGS := $(shell pkg-config --cflags zlib)
++SYS_ZLIB_LIBS := $(shell pkg-config --libs zlib)
