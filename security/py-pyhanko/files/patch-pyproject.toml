@@ -23,7 +23,7 @@
 -    "tzlocal>=4.3",
 -    "pyhanko-certvalidator==0.24.*",
 +    "tzlocal>=4.2",
-+    "pyhanko-certvalidator>=0.24,<0.26",
++    "pyhanko-certvalidator>=0.26,<0.27",
      "click>=7.1.2",
      "requests>=2.24.0",
      "pyyaml>=5.3.1",
