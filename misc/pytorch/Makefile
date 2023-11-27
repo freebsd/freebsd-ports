@@ -1,9 +1,8 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.1
-PORTREVISION=	1
+DISTVERSION=	2.1.0
 CATEGORIES=	misc # machine-learning
-MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v1.13.1/
+MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,21 +10,22 @@ COMMENT=	Tensors and dynamic neural networks in Python (C++ library)
 WWW=		https://pytorch.org/
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	configure fails: CMake Error at third_party/XNNPACK/CMakeLists.txt:94 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD
-BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
-BROKEN_FreeBSD_14=	fails to compile calling a private constructor of class
+#BROKEN_aarch64=	configure fails: CMake Error at third_party/XNNPACK/CMakeLists.txt:94 (MESSAGE): Unrecognized CMAKE_SYSTEM_NAME = FreeBSD
+#BROKEN_i386=	compilation fails: error: use of undeclared identifier 'AVX2'
+#BROKEN_FreeBSD_14=	fails to compile calling a private constructor of class
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		${LOCALBASE}/include/fxdiv.h:devel/fxdiv
 LIB_DEPENDS=	libopenblas.so:math/openblas \
 		libmpi.so:net/openmpi \
-		libpthreadpool.so:devel/pthreadpool \
 		libonnx.so:misc/onnx \
+		libpthreadpool.so:devel/pthreadpool \
 		libprotobuf.so:devel/protobuf \
 		libsleef.so:math/sleef
 
-USES=		compiler:c++14-lang cmake localbase:ldflags python # requires python even with PYTHON=off
+USES=		compiler:c++17-lang cmake localbase:ldflags python # requires python even with PYTHON=off
 
 CMAKE_OFF=	BUILD_CUSTOM_PROTOBUF USE_CUDA USE_ROCM  USE_NNPACK USE_QNNPACK USE_PYTORCH_QNNPACK \
 		USE_FBGEMM # workaround recommended by the upstream here: https://github.com/pytorch/pytorch/issues/28337
@@ -33,8 +33,7 @@ CMAKE_ON=	USE_SYSTEM_PYBIND11 \
 		USE_SYSTEM_SLEEF \
 		USE_SYSTEM_ONNX # see other USE_SYSTEM_xx in CMakeLists.txt
 CMAKE_ARGS=	-DPSIMD_SOURCE_DIR=${WRKSRC}/third_party/psimd \
-		-DFREEBSD_PYTHON_VER=${PYTHON_VER} \
-		-DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
+		-DFREEBSD_PYTHON_VER=${PYTHON_VER}
 
 MAKE_ENV=	USE_NINJA=no # ninja breaks for some reason
 LDFLAGS+=	-lexecinfo
