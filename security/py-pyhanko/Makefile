@@ -28,12 +28,16 @@ USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	IMAGE_SUPPORT OPENTYPE PKGCS11 XMP
+OPTIONS_DEFINE=	ASYNC_HTTP ETSI IMAGE_SUPPORT OPENTYPE PKGCS11 XMP
+ASYNC_HTTP_DESC=Asynchronous support
+ETSI_DESC=	European Telecommunications Standards Institute (ETSI)
 IMAGE_SUPPORT_DESC=	Image handling support
 OPENTYPE_DESC=	OpenType/TrueType support
 PKGCS11_DESC=	PKGCS\#11 support
 XMP_DESC=	XMP (Extensible Metadata Platform) support
 
+ASYNC_HTTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.0<3.10:www/py-aiohttp@${PY_FLAVOR}
+ETSI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xsdata>=23.8<4:devel/py-xsdata@${PY_FLAVOR}
 IMAGE_SUPPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=7.2.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-barcode>=0.15.1<0.15.1_99:graphics/py-python-barcode@${PY_FLAVOR}
 OPENTYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.33.3:print/py-fonttools@${PY_FLAVOR} \
