@@ -1,5 +1,5 @@
 PORTNAME=	fnc
-DISTVERSION=	0.15
+DISTVERSION=	0.16
 CATEGORIES=	devel
 MASTER_SITES=	https://fnc.bsdbox.org/tarball/${DISTVERSION}/ \
 		https://distfiles.pirateparty.in/ashish/
@@ -12,6 +12,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ncurses
+MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/fnc \
 		man/man1/fnc.1.gz
@@ -22,7 +23,8 @@ post-extract:
 		${WRKSRC}/fnc.bld.mk
 
 pre-build:
-	${REINPLACE_CMD} -e '/^VERSION/s/%%VERSION%%/${DISTVERSION}$$/' \
+	${REINPLACE_CMD} -e '/^VERSION/s/%%VERSION%%/${DISTVERSION}/' \
+		-e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/fnc.bld.mk
 
 .include <bsd.port.mk>
