@@ -5095,6 +5095,7 @@
     SUBDIR += py-overrides
     SUBDIR += py-ovs
     SUBDIR += py-ovsdbapp
+    SUBDIR += py-oyaml
     SUBDIR += py-p4python
     SUBDIR += py-packaging
     SUBDIR += py-parallax
