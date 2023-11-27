@@ -25,7 +25,7 @@ WRKSRC_SUBDIR=	c++
 
 USE_GITHUB=	yes
 
-CONFLICTS_INSTALL=	capnproto capnproto080
+CONFLICTS_INSTALL=	capnproto
 
 # databases/tiledb requires capnproto 1.0.1
 PORTSCOUT=	ignore:1
