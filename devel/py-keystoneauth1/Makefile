@@ -1,12 +1,13 @@
 PORTNAME=	keystoneauth1
-PORTVERSION=	5.3.0
+PORTVERSION=	5.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Authentication Library for OpenStack Identity
-WWW=		https://docs.openstack.org/keystoneauth/latest/
+WWW=		https://docs.openstack.org/keystoneauth/latest/ \
+		https://github.com/openstack/keystoneauth
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
