@@ -1,4 +1,4 @@
---- setup.py.orig	2023-07-19 00:27:11 UTC
+--- setup.py.orig	2023-11-22 00:46:47 UTC
 +++ setup.py
 @@ -14,7 +14,6 @@ import shutil
  import subprocess
@@ -25,16 +25,7 @@
  def awscrt_ext():
      # fetch the CFLAGS/LDFLAGS from env
      extra_compile_args = os.environ.get('CFLAGS', '').split()
-@@ -360,7 +349,7 @@ def awscrt_ext():
-             # a proper MacOS Universal2 binary. The linker warns us about this,
-             # but WHATEVER. Building everything twice (x86_64 and arm64) takes too long.
-             if not is_macos_universal2():
--                extra_link_args += ['-Wl,-fatal_warnings']
-+                extra_link_args += ['-Wl,-fatal-warnings']
- 
-     if sys.version_info >= (3, 11):
-         define_macros.append(('Py_LIMITED_API', '0x030B0000'))
-@@ -410,6 +399,6 @@ setuptools.setup(
+@@ -415,6 +404,6 @@ setuptools.setup(
      ],
      python_requires='>=3.7',
      ext_modules=[awscrt_ext()],
