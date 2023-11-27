@@ -1,7 +1,6 @@
 PORTNAME=	nuclei
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.11
-PORTREVISION=	1
+DISTVERSION=	3.0.4
 CATEGORIES=	security
 
 MAINTAINER=	nulldutra@proton.me
@@ -10,8 +9,8 @@ WWW=		https://github.com/projectdiscovery/nuclei
 
 LICENSE=	MIT
 
-USES=		go:modules
-GO_MODULE=	github.com/projectdiscovery/nuclei/v2
+USES=		go:1.21,modules
+GO_MODULE=	github.com/projectdiscovery/nuclei/v3
 
 GO_TARGET=	./cmd/${PORTNAME}
 
