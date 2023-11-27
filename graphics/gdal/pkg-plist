@@ -1,6 +1,7 @@
 bin/gdal-config
 bin/gdal_contour
 bin/gdal_create
+bin/gdal_footprint
 bin/gdal_grid
 bin/gdal_rasterize
 bin/gdal_translate
@@ -87,6 +88,7 @@ include/gdaljp2metadata.h
 include/gdaljp2metadatagenerator.h
 include/gdalpansharpen.h
 include/gdalsse_priv.h
+include/gdalsubdatasetinfo.h
 include/gdalwarper.h
 include/gdalwarpkernel_opencl.h
 include/gnm.h
@@ -117,8 +119,8 @@ lib/cmake/gdal/GDALConfig.cmake
 lib/cmake/gdal/GDALConfigVersion.cmake
 lib/gdalplugins/drivers.ini
 lib/libgdal.so
-lib/libgdal.so.33
-lib/libgdal.so.33.%%PORTVERSION%%
+lib/libgdal.so.34
+lib/libgdal.so.34.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 share/bash-completion/completions/gdal-config
 share/bash-completion/completions/gdal2tiles.py
@@ -317,6 +319,7 @@ share/man/man1/gdal_contour.1.gz
 share/man/man1/gdal_create.1.gz
 share/man/man1/gdal_edit.1.gz
 share/man/man1/gdal_fillnodata.1.gz
+share/man/man1/gdal_footprint.1.gz
 share/man/man1/gdal_grid.1.gz
 share/man/man1/gdal_merge.1.gz
 share/man/man1/gdal_pansharpen.1.gz
