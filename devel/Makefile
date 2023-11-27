@@ -4398,7 +4398,6 @@
     SUBDIR += py-cabby
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
-    SUBDIR += py-cachetools3
     SUBDIR += py-cacheyou
     SUBDIR += py-cachy
     SUBDIR += py-cadquery-pywrap
