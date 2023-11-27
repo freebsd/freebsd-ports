@@ -30,6 +30,12 @@ USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 CPE_VENDOR=	aiohttp_project
 
+OPTIONS_DEFINE=	SPEEDUPS
+SPEEDUPS_DESC=	Performance speedups
+
+SPEEDUPS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=0:dns/py-aiodns@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}brotli>=0:archivers/py-brotli@${PY_FLAVOR}
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31100
