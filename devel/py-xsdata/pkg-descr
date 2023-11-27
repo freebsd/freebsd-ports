@@ -1,0 +1,11 @@
+xsData is a complete data binding library for python allowing developers to
+access and use XML and JSON documents as simple objects rather than using DOM.
+
+The code generator supports XML schemas, DTD, WSDL definitions, XML & JSON
+documents. It produces simple dataclasses with type hints and simple binding
+metadata.
+
+The included XML and JSON parser/serializer are highly optimized and adaptable,
+with multiple handlers and configuration properties.
+
+xsData is constantly tested against the W3C XML Schema 1.1 test suite.
