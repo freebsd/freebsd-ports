@@ -8092,3 +8092,4 @@ databases/postgis30||2023-11-22|Removed
 math/gri||2023-11-26|Has expired: Last upstream release was in 2012 and gnuplot generates better results
 comms/telldus-core||2023-11-26|Has expired: BROKEN for more than a year
 sysutils/openshift-install||2023-11-26|Has expired: BROKEN for more than a year
+devel/capnproto080|devel/capnproto1|2023-11-27|Remove obsoleted port. Use devel/capnproto1 instead
