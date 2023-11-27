@@ -4574,6 +4574,7 @@
     SUBDIR += py-dj42-django-rq
     SUBDIR += py-dj42-graphene-django
     SUBDIR += py-django-rq
+    SUBDIR += py-docformatter
     SUBDIR += py-dockerpty
     SUBDIR += py-docopt
     SUBDIR += py-doctest-ignore-unicode
