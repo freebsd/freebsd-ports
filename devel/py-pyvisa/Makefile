@@ -1,5 +1,5 @@
 PORTNAME=	pyvisa
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pyvisa/pyvisa/releases/download/${PORTVERSION}/
