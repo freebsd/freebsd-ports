@@ -1,22 +1,22 @@
 PORTNAME=	tiledb
-PORTVERSION=	2.17.4
+PORTVERSION=	2.18.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TileDB array data management
-WWW=		https://www.tiledb.io/ \
+WWW=		https://tiledb.com/ \
 		https://github.com/TileDB-Inc/TileDB
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libcapnp.so:devel/capnproto080 \
+LIB_DEPENDS=	libcapnp.so:devel/capnproto1 \
 		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	capnproto080>=0.8.0:devel/capnproto080 \
+RUN_DEPENDS=	capnproto1>=1.0.1:devel/capnproto1 \
 		catch2>=3.1:devel/catch2 \
 		clipp>=1.2.3_1:devel/clipp \
 		curl>=7.74.0:ftp/curl \
@@ -49,6 +49,7 @@ CMAKE_OFF=	TILEDB_ABSEIL \
 		TILEDB_SKIP_S3AWSSDK_DIR_LENGTH_CHECK \
 		TILEDB_SUPERBUILD \
 		TILEDB_TESTS \
+		TILEDB_VCPKG \
 		TILEDB_VERBOSE \
 		TILEDB_WEBP \
 		TILEDB_WERROR
