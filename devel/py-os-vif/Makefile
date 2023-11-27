@@ -1,5 +1,5 @@
 PORTNAME=	os-vif
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	os_vif-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for plugging and unplugging virtual interfaces in OpenStack
-WWW=		https://docs.openstack.org/os-vif/latest/
+WWW=		https://docs.openstack.org/os-vif/latest/ \
+		https://github.com/openstack/os-vif
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
