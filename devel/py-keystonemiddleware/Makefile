@@ -1,5 +1,5 @@
 PORTNAME=	keystonemiddleware
-PORTVERSION=	10.4.1
+PORTVERSION=	10.5.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.12.0:devel/py-keystoneauth1
 		${PYTHON_PKGNAMEPREFIX}oslo.utils>=3.33.0:devel/py-oslo.utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycadf>=1.1.0:devel/py-pycadf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.4.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-keystoneclient>=3.20.0:net/py-python-keystoneclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.14.2:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.7.1:www/py-webob@${PY_FLAVOR}
