@@ -910,11 +910,13 @@
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/DanglingIndices.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Enrich.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Eql.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Esql.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Features.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Fleet.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Graph.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ilm.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Indices.php
+%%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Inference.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Ingest.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/License.php
 %%WWWDIR%%/src/libs/elasticsearch/elasticsearch/src/Endpoints/Logstash.php
@@ -1175,7 +1177,10 @@
 %%WWWDIR%%/src/libs/monolog/monolog/LICENSE
 %%WWWDIR%%/src/libs/monolog/monolog/README.md
 %%WWWDIR%%/src/libs/monolog/monolog/composer.json
+%%WWWDIR%%/src/libs/monolog/monolog/favicon.ico
+%%WWWDIR%%/src/libs/monolog/monolog/logo.jpg
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php
+%%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Attribute/WithMonologChannel.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/DateTimeImmutable.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/ErrorHandler.php
 %%WWWDIR%%/src/libs/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php
@@ -1396,6 +1401,7 @@
 %%WWWDIR%%/src/libs/php-http/promise/LICENSE
 %%WWWDIR%%/src/libs/php-http/promise/README.md
 %%WWWDIR%%/src/libs/php-http/promise/composer.json
+%%WWWDIR%%/src/libs/php-http/promise/phpstan.neon.dist
 %%WWWDIR%%/src/libs/php-http/promise/src/FulfilledPromise.php
 %%WWWDIR%%/src/libs/php-http/promise/src/Promise.php
 %%WWWDIR%%/src/libs/php-http/promise/src/RejectedPromise.php
