@@ -337,6 +337,7 @@
     SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
+    SUBDIR += capnproto1
     SUBDIR += capslock
     SUBDIR += capstone
     SUBDIR += capstone4
