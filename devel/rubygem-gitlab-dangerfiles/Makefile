@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-dangerfiles
-PORTVERSION=	4.3.2
+PORTVERSION=	4.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-danger>=9.3.0:devel/rubygem-danger \
 		rubygem-danger-gitlab>=8.0.0:devel/rubygem-danger-gitlab \
-		rubygem-rake>=0:devel/rubygem-rake
+		rubygem-rake>=13<14:devel/rubygem-rake
 
 USES=		gem
 
