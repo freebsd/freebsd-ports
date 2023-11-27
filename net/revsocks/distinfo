@@ -1,6 +1,6 @@
-TIMESTAMP = 1700233244
-SHA256 (kost-revsocks-v2.7_GH0.tar.gz) = cbb16b319f3293d820b2bca4d1bd4587e579538c38140a572c05394bcec59402
-SIZE (kost-revsocks-v2.7_GH0.tar.gz) = 15453
+TIMESTAMP = 1701071195
+SHA256 (kost-revsocks-v2.8_GH0.tar.gz) = 3104e2f90a82ba2a825771dadc5b707f76bf69ec74f84a5aa60d70159ad6283a
+SIZE (kost-revsocks-v2.8_GH0.tar.gz) = 15475
 SHA256 (Jeffail-tunny-v0.1.4_GH0.tar.gz) = 2a4ddc46109e3c3398bec1a091b2b126765a250caa5721e0f69a157c8e1aec7a
 SIZE (Jeffail-tunny-v0.1.4_GH0.tar.gz) = 60016
 SHA256 (acomagu-bufpipe-v1.0.4_GH0.tar.gz) = e0cbe34e710110bf42c961195a968bf6e52f82f23ebf654469a43e645e019c99
