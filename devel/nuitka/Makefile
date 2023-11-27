@@ -1,5 +1,5 @@
 PORTNAME=	nuitka
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -7,7 +7,8 @@ DISTNAME=	Nuitka-${PORTVERSION}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Compatible and efficient Python compiler
-WWW=		https://nuitka.net/
+WWW=		https://nuitka.net/ \
+		https://github.com/Nuitka/Nuitka
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
