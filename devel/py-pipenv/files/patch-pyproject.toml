@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2023-11-15 23:32:06 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-  "setuptools>=67",
++  "setuptools>=61",
+ ]
+ 
+ [project]
+@@ -30,7 +30,7 @@ dynamic = [
+ ]
+ dependencies = [
+   "certifi",
+-  "setuptools>=67",
++  "setuptools>=61",
+   "virtualenv>=20.24.2",
+ ]
+ [project.optional-dependencies]
