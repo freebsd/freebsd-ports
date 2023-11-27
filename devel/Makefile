@@ -4842,6 +4842,7 @@
     SUBDIR += py-jitterentropy
     SUBDIR += py-jmespath
     SUBDIR += py-joblib
+    SUBDIR += py-johnnydep
     SUBDIR += py-jsbeautifier
     SUBDIR += py-jschema-to-python
     SUBDIR += py-jsmin
