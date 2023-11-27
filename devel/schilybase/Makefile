@@ -1,4 +1,5 @@
 PORTNAME=	schilybase
+PORTREVISION=	1
 CATEGORIES=	devel
 
 COMMENT=	Support files and libraries for the schilytools
@@ -45,7 +46,7 @@ post-patch-PROFILE-off:
 	@${REINPLACE_CMD} -e '/^MK_FILES/s, [a-z]*_p.mk,,' ${WRKSRC}/*/Makefile
 
 post-build-NLS-on:
-	${SETENV} LC_ALL=de_DE.ISO8859-1 msgfmt -o ${WRKDIR}/SCHILY_utils.mo ${WRKSRC}/SCHILY_utils.po
+	msgfmt --no-convert -o ${WRKDIR}/SCHILY_utils.mo ${WRKSRC}/SCHILY_utils.po
 
 # all languages supported by FreeBSD
 _LANGUAGES=	C af am ar be bg ca cs da de el en es et eu fi fr ga he hi hr \
