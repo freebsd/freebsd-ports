@@ -1,0 +1,74 @@
+Allow relocation of resource files and translations
+
+--- CMakeLists.txt.orig	2023-10-16 12:57:57 UTC
++++ CMakeLists.txt
+@@ -44,6 +44,9 @@ endif()
+   endif()
+ endif()
+ 
++if(DEFINED DUCKSTATION_APPLICATION_DIR_PATH)
++  add_compile_definitions(DUCKSTATION_APPLICATION_DIR_PATH="${DUCKSTATION_APPLICATION_DIR_PATH}")
++endif()
+ 
+ # Required libraries.
+ if(ENABLE_SDL2)
+--- src/duckstation-qt/qthost.cpp.orig	2023-11-20 14:04:38 UTC
++++ src/duckstation-qt/qthost.cpp
+@@ -259,6 +259,10 @@ void QtHost::SetResourcesDirectory()
+ 
+ void QtHost::SetResourcesDirectory()
+ {
++#ifdef DUCKSTATION_APPLICATION_DIR_PATH
++  // Resources' path specified at compile time
++  EmuFolders::Resources = Path::Canonicalize(DUCKSTATION_APPLICATION_DIR_PATH "/resources");
++#else
+ #ifndef __APPLE__
+   // On Windows/Linux, these are in the binary directory.
+   EmuFolders::Resources = Path::Combine(EmuFolders::AppRoot, "resources");
+@@ -266,6 +270,7 @@ void QtHost::SetResourcesDirectory()
+   // On macOS, this is in the bundle resources directory.
+   EmuFolders::Resources = Path::Canonicalize(Path::Combine(EmuFolders::AppRoot, "../Resources"));
+ #endif
++#endif // DUCKSTATION_APPLICATION_DIR_PATH
+ }
+ 
+ void QtHost::SetDataDirectory()
+--- src/duckstation-nogui/nogui_host.cpp.orig	2023-10-16 12:57:57 UTC
++++ src/duckstation-nogui/nogui_host.cpp
+@@ -156,6 +156,10 @@ void NoGUIHost::SetResourcesDirectory()
+ 
+ void NoGUIHost::SetResourcesDirectory()
+ {
++#ifdef DUCKSTATION_APPLICATION_DIR_PATH
++  // Resources' path specified at compile time
++  EmuFolders::Resources = Path::Canonicalize(DUCKSTATION_APPLICATION_DIR_PATH "/resources");
++#else
+ #ifndef __APPLE__NOT_USED // Not using bundles yet.
+   // On Windows/Linux, these are in the binary directory.
+   EmuFolders::Resources = Path::Combine(EmuFolders::AppRoot, "resources");
+@@ -163,6 +167,7 @@ void NoGUIHost::SetResourcesDirectory()
+   // On macOS, this is in the bundle resources directory.
+   EmuFolders::Resources = Path::Canonicalize(Path::Combine(EmuFolders::AppRoot, "../Resources"));
+ #endif
++#endif // DUCKSTATION_APPLICATION_DIR_PATH
+ }
+ 
+ void NoGUIHost::SetDataDirectory()
+--- src/duckstation-qt/qttranslations.cpp.orig	2023-10-16 12:57:57 UTC
++++ src/duckstation-qt/qttranslations.cpp
+@@ -73,11 +73,15 @@ void QtHost::InstallTranslator()
+     FixLanguageName(QString::fromStdString(Host::GetBaseStringSettingValue("Main", "Language", GetDefaultLanguage())));
+ 
+   // install the base qt translation first
++#ifdef DUCKSTATION_APPLICATION_DIR_PATH
++  const QString base_dir = QStringLiteral(DUCKSTATION_APPLICATION_DIR_PATH "/translations");
++#else
+ #ifndef __APPLE__
+   const QString base_dir = QStringLiteral("%1/translations").arg(qApp->applicationDirPath());
+ #else
+   const QString base_dir = QStringLiteral("%1/../Resources/translations").arg(qApp->applicationDirPath());
+ #endif
++#endif // DUCKSTATION_APPLICATION_DIR_PATH
+ 
+   // Qt base uses underscores instead of hyphens.
+   const QString qt_language = QString(language).replace(QChar('-'), QChar('_'));

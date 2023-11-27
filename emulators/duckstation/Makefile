@@ -1,0 +1,49 @@
+PORTNAME=	duckstation
+PORTVERSION=	20231016
+DISTVERSIONPREFIX=	v
+CATEGORIES=	emulators
+
+MAINTAINER=	martymac@FreeBSD.org
+COMMENT=	Free and open-source PlayStation emulator
+WWW=	https://www.duckstation.org
+
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libbacktrace.so:devel/libbacktrace \
+		libxkbcommon.so:x11/libxkbcommon \
+		libpulse.so:audio/pulseaudio \
+		libjack.so:audio/jack \
+		libsndio.so:audio/sndio \
+		libdbus-1.so:devel/dbus
+# XXX Necessary for Qt6/FindWrapVulkanHeaders.cmake
+BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
+
+USES=		cmake compiler:c++20-lang gl pkgconfig qt:6 sdl xorg
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	stenzek
+# See: https://github.com/stenzek/duckstation/releases/tag/latest
+GH_TAGNAME=	cecae91
+
+USE_GL=		egl
+USE_SDL=	sdl2
+USE_XORG=	ice x11 xext xrandr xrender
+USE_QT=		base tools
+
+CMAKE_ARGS+=	\
+		-DDUCKSTATION_APPLICATION_DIR_PATH:STRING=${DATADIR}
+
+# - Program and resources are copied from target dir ${CONFIGURE_WRKSRC}/bin
+#   because only necessary resources are installed there
+do-install:
+	cd ${CONFIGURE_WRKSRC}/bin && \
+		${COPYTREE_SHARE} resources/ ${STAGEDIR}${DATADIR}/ && \
+		${COPYTREE_SHARE} translations/ ${STAGEDIR}${DATADIR}/
+	${INSTALL_PROGRAM} \
+		${CONFIGURE_WRKSRC}/bin/duckstation-qt ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${CONFIGURE_WRKSRC}/bin/resources/images/duck.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/duckstation.png
+	${INSTALL_DATA} ${FILESDIR}/duckstation.desktop ${STAGEDIR}${DESKTOPDIR}
+
+.include <bsd.port.mk>

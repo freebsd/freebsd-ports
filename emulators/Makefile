@@ -25,6 +25,7 @@
     SUBDIR += dosbox-staging
     SUBDIR += dosbox-x
     SUBDIR += dps8m
+    SUBDIR += duckstation
     SUBDIR += dynamips-community
     SUBDIR += edumips64
     SUBDIR += elliott-803
