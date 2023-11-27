@@ -1,6 +1,5 @@
 PORTNAME=	kphotoalbum
-DISTVERSION=	5.11.0
-PORTREVISION=	2
+DISTVERSION=	5.12.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -12,9 +11,8 @@ WWW=		https://www.kphotoalbum.org/
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
-		libexpat.so:textproc/expat2 \
-		libKF5KDcraw.so:graphics/libkdcraw \
-		libKF5Kipi.so:graphics/libkipi
+		libvlc.so:multimedia/vlc \
+		libKF5KDcraw.so:graphics/libkdcraw
 
 USES=		cmake compiler:c++11-lang desktop-file-utils jpeg kde:5 \
 		pkgconfig qt:5 shebangfix tar:xz xorg
