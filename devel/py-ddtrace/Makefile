@@ -1,5 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -33,7 +33,7 @@ USES=		compiler:c++17-lang python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	abseil:abseil-cpp:20230802.1:abseil_abseil_cpp/ddtrace/appsec/iast/_taint_tracking/
+GH_TUPLE=	abseil:abseil-cpp:20230802.1:abseil_abseil_cpp/ddtrace/appsec/_iast/_taint_tracking
 
 PORTSCOUT=	limit:^[0-9]*\.[0-9]*\.[0-9]*
 
@@ -50,7 +50,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAV
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/ddtrace/appsec/iast/_taint_tracking/abseil-cpp-20230802.1/ ${WRKSRC}/ddtrace/appsec/iast/_taint_tracking/_deps/
+	@${MV} ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/abseil-cpp-20230802.1/ ${WRKSRC}/ddtrace/appsec/_iast/_taint_tracking/_deps/
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
