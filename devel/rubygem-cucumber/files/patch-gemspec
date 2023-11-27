@@ -1,13 +1,16 @@
---- cucumber.gemspec.orig	2023-10-07 11:47:11 UTC
+--- cucumber.gemspec.orig	2023-11-23 20:45:00 UTC
 +++ cucumber.gemspec
-@@ -25,8 +25,8 @@ Gem::Specification.new do |s|
+@@ -24,11 +24,11 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
  
    s.add_runtime_dependency(%q<builder>.freeze, ["~> 3.2", ">= 3.2.4"])
-   s.add_runtime_dependency(%q<cucumber-ci-environment>.freeze, ["~> 9.2", ">= 9.2.0"])
--  s.add_runtime_dependency(%q<cucumber-core>.freeze, ["~> 11.1", ">= 11.1.0"])
--  s.add_runtime_dependency(%q<cucumber-cucumber-expressions>.freeze, ["~> 16.1", ">= 16.1.2"])
-+  s.add_runtime_dependency(%q<cucumber-core>.freeze, [">= 11.1.0", "< 13"])
-+  s.add_runtime_dependency(%q<cucumber-cucumber-expressions>.freeze, [">= 16.1.2"])
-   s.add_runtime_dependency(%q<cucumber-gherkin>.freeze, [">= 24", "< 26.2.1"])
-   s.add_runtime_dependency(%q<cucumber-html-formatter>.freeze, ["~> 20.4", ">= 20.4.0"])
+-  s.add_runtime_dependency(%q<cucumber-ci-environment>.freeze, ["~> 9.2", ">= 9.2.0"])
++  s.add_runtime_dependency(%q<cucumber-ci-environment>.freeze, [">= 9.2.0"])
+   s.add_runtime_dependency(%q<cucumber-core>.freeze, ["~> 12.0"])
+   s.add_runtime_dependency(%q<cucumber-cucumber-expressions>.freeze, ["~> 17.0"])
+   s.add_runtime_dependency(%q<cucumber-gherkin>.freeze, [">= 24", "< 27"])
+-  s.add_runtime_dependency(%q<cucumber-html-formatter>.freeze, ["~> 20.4", ">= 20.4.0"])
++  s.add_runtime_dependency(%q<cucumber-html-formatter>.freeze, [">= 20.4.0"])
    s.add_runtime_dependency(%q<cucumber-messages>.freeze, [">= 19", "< 23"])
+   s.add_runtime_dependency(%q<diff-lcs>.freeze, ["~> 1.5", ">= 1.5.0"])
+   s.add_runtime_dependency(%q<mini_mime>.freeze, ["~> 1.1", ">= 1.1.5"])
