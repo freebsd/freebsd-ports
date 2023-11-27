@@ -1,12 +1,13 @@
 PORTNAME=	osc-lib
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStackClient Library
-WWW=		https://docs.openstack.org/osc-lib/latest/
+WWW=		https://docs.openstack.org/osc-lib/latest/ \
+		https://github.com/openstack/osc-lib
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
