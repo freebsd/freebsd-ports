@@ -1,5 +1,5 @@
 PORTNAME=	python-neutronclient
-PORTVERSION=	11.0.0
+PORTVERSION=	11.1.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cliff>=3.4.0:devel/py-cliff@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.8.0:devel/py-keystoneauth1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.7.18:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openstacksdk>=1.0.2:devel/py-openstacksdk@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openstacksdk>=1.5.0:devel/py-openstacksdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}os-client-config>=1.28.0:devel/py-os-client-config@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}osc-lib>=1.12.0:devel/py-osc-lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oslo.i18n>=3.15.3:devel/py-oslo.i18n@${PY_FLAVOR} \
