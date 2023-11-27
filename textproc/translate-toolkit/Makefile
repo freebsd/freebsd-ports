@@ -1,7 +1,8 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.11.0
+PORTVERSION=	3.11.1
 CATEGORIES=	textproc
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/translate/translate/releases/download/${PORTVERSION}/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and API for translation and localization engineering
