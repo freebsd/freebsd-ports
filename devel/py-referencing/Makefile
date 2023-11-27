@@ -1,7 +1,8 @@
 PORTNAME=	referencing
-PORTVERSION=	0.30.2
+PORTVERSION=	0.31.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/python-jsonschema/referencing/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
