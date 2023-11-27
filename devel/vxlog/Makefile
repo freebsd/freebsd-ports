@@ -9,10 +9,6 @@ MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ logging library
 WWW=		https://sourceforge.net/projects/vxlog/
 
-DEPRECATED=	BROKEN for more than a year
-EXPIRATION_DATE=	2023-11-30
-BROKEN=		does not build: fatal error: 'tr1/memory' file not found
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.txt
 

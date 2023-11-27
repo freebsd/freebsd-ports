@@ -1,6 +1,15 @@
---- src/vxlog/outputter-interface.h.orig	2010-10-18 17:23:04.000000000 +0400
-+++ src/vxlog/outputter-interface.h	2014-12-12 03:46:20.000000000 +0300
-@@ -37,7 +37,11 @@
+--- src/vxlog/outputter-interface.h.orig	2010-10-18 13:23:04 UTC
++++ src/vxlog/outputter-interface.h
+@@ -23,7 +23,7 @@
+ #ifndef VOLVOX_VXLOG_OUTPUTTER_INTERFACE_H_
+ #define VOLVOX_VXLOG_OUTPUTTER_INTERFACE_H_
+ 
+-#include <tr1/memory>
++#include <memory>
+ #include "vxlog/level.h"
+ 
+ namespace vxlog {
+@@ -37,7 +37,11 @@ class OutputterInterface {
    virtual void Flush() = 0;
  };
  
