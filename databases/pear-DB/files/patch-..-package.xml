@@ -1,0 +1,54 @@
+--- ../package.xml.orig	2021-08-11 00:23:52 UTC
++++ ../package.xml
+@@ -76,7 +76,7 @@ DB is compatible with PHP 5 and PHP 7.</description>
+  </notes>
+  <contents>
+   <dir name="/">
+-   <file md5sum="eaf70b943121e9dfa35e4088bd5fd52e" name="DB/common.php" role="php">
++   <file md5sum="a9128c5dfb3a8e474b163d3dcd0f0739" name="DB/common.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file md5sum="10119c4e34daeeb4971e2796fa3921b2" name="DB/dbase.php" role="php">
+@@ -85,34 +85,34 @@ DB is compatible with PHP 5 and PHP 7.</description>
+    <file md5sum="ba5f07380be8b2c03adb1fc09e7db5b8" name="DB/fbsql.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="9819551742b4cdb3a5abf45f471f95b1" name="DB/ibase.php" role="php">
++   <file md5sum="28b82817a9fb0ed6ff7618076ee9a142" name="DB/ibase.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file md5sum="e6981af139e452257dc39bc5350644a3" name="DB/ifx.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="4e8c5a8afc6b5ad37f23bf559201f1f4" name="DB/msql.php" role="php">
++   <file md5sum="d31648f78c41d11fb4f8687b30b602d6" name="DB/msql.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file md5sum="a32af26c00b059f0d8ccfa2662c4cb49" name="DB/mssql.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="55ad1308ffc308267f563789290fdbdf" name="DB/mysql.php" role="php">
++   <file md5sum="870c455db8787da3f97d01f875490545" name="DB/mysql.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="b62a36e1e05ad95af8f39a5a48855ebd" name="DB/mysqli.php" role="php">
++   <file md5sum="fcf77ba6df51d24385061d9e6b4378bc" name="DB/mysqli.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="3aa11d49d1c687e1e1680ed31acd41ab" name="DB/oci8.php" role="php">
++   <file md5sum="1b483906142c176fa510da54fe794aac" name="DB/oci8.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="baf67770a168687ac87faaade1c136ec" name="DB/odbc.php" role="php">
++   <file md5sum="48f18271c1d33dc34e4dce793db3b684" name="DB/odbc.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="50547917ca4cc946aad49e15fd054c0b" name="DB/pgsql.php" role="php">
++   <file md5sum="71c4706666ea849b4bd39cd23e0c5d9f" name="DB/pgsql.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+-   <file md5sum="c653861f7b53a2a095a030fdc191aaa1" name="DB/sqlite.php" role="php">
++   <file md5sum="342cb6f566d22d23eaeef0cde62af33a" name="DB/sqlite.php" role="php">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+    <file md5sum="39c1a57add4b198c8b77349f7955981e" name="DB/storage.php" role="php">

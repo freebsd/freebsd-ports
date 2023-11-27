@@ -1,0 +1,92 @@
+Obtained from:	https://github.com/pear/DB/commit/90010c56379bd2b116172a9ea321282cb8389243
+
+--- DB/common.php.orig	2021-08-11 00:23:52 UTC
++++ DB/common.php
+@@ -1809,6 +1809,23 @@ class DB_common extends PEAR
+     }
+ 
+     // }}}
++    // {{{ lastId()
++
++    /**
++     * Returns the row ID of the most recent INSERT into the database
++     *
++     * @param string  $link_identifier  DBMS link identifier
++     *
++     * @return int the row ID of the most recent INSERT into the database.
++     *             If no successful INSERTs into rowid tables have ever
++     *             occurred on this database connection then returns 0.
++     */
++    function lastId($link_identifier = null)
++    {
++        return $this->raiseError(DB_ERROR_NOT_CAPABLE);
++    }
++
++    // }}}
+     // {{{ createSequence()
+ 
+     /**
+--- DB/mysql.php.orig	2021-08-11 00:23:52 UTC
++++ DB/mysql.php
+@@ -654,6 +654,29 @@ class DB_mysql extends DB_common
+     }
+ 
+     // }}}
++    // {{{ lastId()
++
++    /**
++     * Returns the row ID of the most recent INSERT into the database
++     *
++     * @param string  $link_identifier mysql link identifier
++     *
++     * @return int the row ID of the most recent INSERT into the database.
++     *             If no successful INSERTs into rowid tables have ever
++     *             occurred on this database connection then returns 0.
++     *
++     * @see DB_common::lastID()
++     */
++    function lastId($link_identifier = null)
++    {
++        $id = mysql_insert_id($link_identifier);
++        if(empty($id) || !is_int($id)) {
++            return 0;
++        }
++        return $id;
++    }
++
++    // }}}
+     // {{{ createSequence()
+ 
+     /**
+--- DB/mysqli.php.orig	2021-08-11 00:23:52 UTC
++++ DB/mysqli.php
+@@ -739,6 +739,29 @@ class DB_mysqli extends DB_common
+         return $this->raiseError($result);
+     }
+ 
++    // }}}
++    // {{{ lastId()
++
++    /**
++     * Returns the row ID of the most recent INSERT into the database
++     *
++     * @param string  $link_identifier mysqli link identifier
++     *
++     * @return int the row ID of the most recent INSERT into the database.
++     *             If no successful INSERTs into rowid tables have ever
++     *             occurred on this database connection then returns 0.
++     *
++     * @see DB_common::lastID()
++     */
++    function lastId($link_identifier = null)
++    {
++        $id = $this->connection->insert_id();
++        if(empty($id) || !is_int($id)) {
++            return 0;
++        }
++        return $id;
++    }
++
+     /**
+      * Creates a new sequence
+      *
