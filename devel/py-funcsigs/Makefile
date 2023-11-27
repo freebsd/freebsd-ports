@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python function signatures from PEP362
-WWW=		https://funcsigs.readthedocs.org/
+WWW=		https://funcsigs.readthedocs.io/en/latest/ \
+		https://github.com/harlowja/funcsigs
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
