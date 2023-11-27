@@ -1,7 +1,8 @@
 PORTNAME=	responses
-PORTVERSION=	0.24.0
+PORTVERSION=	0.24.1
 CATEGORIES=	devel www python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/getsentry/responses/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
