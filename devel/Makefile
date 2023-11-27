@@ -7119,6 +7119,7 @@
     SUBDIR += rubygem-opentelemetry-api
     SUBDIR += rubygem-opentelemetry-common
     SUBDIR += rubygem-opentelemetry-instrumentation-base
+    SUBDIR += rubygem-opentelemetry-instrumentation-rack
     SUBDIR += rubygem-opentelemetry-registry
     SUBDIR += rubygem-opentelemetry-sdk
     SUBDIR += rubygem-opentelemetry-semantic_conventions
