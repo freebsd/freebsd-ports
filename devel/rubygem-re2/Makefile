@@ -1,5 +1,5 @@
 PORTNAME=	re2
-PORTVERSION=	2.1.3
+PORTVERSION=	2.3.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libre2.so:devel/re2
-RUN_DEPENDS=	rubygem-mini_portile2>=2.8.4<2.9:devel/rubygem-mini_portile2
+RUN_DEPENDS=	rubygem-mini_portile2>=2.8.5<2.9:devel/rubygem-mini_portile2
 
 USES=		gem
 CONFIGURE_ARGS=	--enable-system-libraries
