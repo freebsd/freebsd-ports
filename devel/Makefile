@@ -7083,6 +7083,7 @@
     SUBDIR += rubygem-mustache-sinatra
     SUBDIR += rubygem-mustermann
     SUBDIR += rubygem-mustermann-grape
+    SUBDIR += rubygem-mustermann-grape10
     SUBDIR += rubygem-mutex_m
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-nakayoshi_fork
