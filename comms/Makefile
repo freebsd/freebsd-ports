@@ -27,8 +27,8 @@
     SUBDIR += cwdaemon
     SUBDIR += cwstudio
     SUBDIR += cyclonedds
-    SUBDIR += deforaos-phone
     SUBDIR += dcf77pi
+    SUBDIR += deforaos-phone
     SUBDIR += dfu-programmer
     SUBDIR += dfu-util
     SUBDIR += digiham
