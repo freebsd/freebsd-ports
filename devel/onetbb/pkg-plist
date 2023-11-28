@@ -113,6 +113,7 @@ include/tbb/flow_graph_abstractions.h
 include/tbb/global_control.h
 include/tbb/info.h
 include/tbb/memory_pool.h
+include/tbb/mutex.h
 include/tbb/null_mutex.h
 include/tbb/null_rw_mutex.h
 include/tbb/parallel_for.h
@@ -126,6 +127,7 @@ include/tbb/partitioner.h
 include/tbb/profiling.h
 include/tbb/queuing_mutex.h
 include/tbb/queuing_rw_mutex.h
+include/tbb/rw_mutex.h
 include/tbb/scalable_allocator.h
 include/tbb/spin_mutex.h
 include/tbb/spin_rw_mutex.h
@@ -144,14 +146,14 @@ lib/cmake/TBB/TBBTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/TBB/TBBTargets.cmake
 lib/libtbb%%DBGSUFX%%.so
 lib/libtbb%%DBGSUFX%%.so.12
-lib/libtbb%%DBGSUFX%%.so.12.10
+lib/libtbb%%DBGSUFX%%.so.12.11
 lib/libtbbbind_2_0%%DBGSUFX%%.so
 lib/libtbbbind_2_0%%DBGSUFX%%.so.3
-lib/libtbbbind_2_0%%DBGSUFX%%.so.3.10
+lib/libtbbbind_2_0%%DBGSUFX%%.so.3.11
 lib/libtbbmalloc%%DBGSUFX%%.so
 lib/libtbbmalloc%%DBGSUFX%%.so.2
-lib/libtbbmalloc%%DBGSUFX%%.so.2.10
+lib/libtbbmalloc%%DBGSUFX%%.so.2.11
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so
 lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2
-lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.10
+lib/libtbbmalloc_proxy%%DBGSUFX%%.so.2.11
 libdata/pkgconfig/tbb%%PCSUFX%%.pc

@@ -1,7 +1,7 @@
 PORTNAME=		geant4
 DISTVERSIONPREFIX=	v
 DISTVERSION=		11.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		science parallel devel cad
 MASTER_SITES=		https://cern.ch/geant4-data/releases/ \
 			https://cern.ch/geant4-data/datasets/:data
