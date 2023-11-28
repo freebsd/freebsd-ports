@@ -9,9 +9,6 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake III engine with Cell Shading capabilities
 WWW=		https://q3cellshading.sourceforge.net/
 
-DEPRECATED=	BROKEN for more than 2 years on all supported versions
-EXPIRATION_DATE=	2023-11-30
-BROKEN=	ld: error: duplicate symbol: re
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	does not run properly; try games/ioquake3 with option
 
@@ -73,14 +70,6 @@ USE_XORG=	xxf86dga xxf86vm
 .if ${PORT_OPTIONS:MGAMELIBS} || !defined(HAVE_VM_COMPILED)
 MAKE_ENV+=	GAMELIBS=YES
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|botlib\.log|/dev/null|' \
-		${WRKSRC}/code/botlib/be_interface.c
-	@${REINPLACE_CMD} -e \
-		's|//[[:blank:]]*\(Swap_Init[[:blank:]]*();\)|\1|' \
-		${WRKSRC}/code/botlib/be_interface.c \
-		${WRKSRC}/code/renderer/tr_init.c
 
 do-install:
 .for bin in ${Q3BIN}
