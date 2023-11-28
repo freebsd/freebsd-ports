@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.34.0
-PORTREVISION=	2
+DISTVERSION=	3.34.1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -69,6 +68,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 		${PYTHON_PKGNAMEPREFIX}httplib2>=0.20.2:www/py-httplib2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.1:devel/py-jedi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}laspy>=2.5.1:misc/py-laspy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.4.3:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=4.0.3:devel/py-mock@${PY_FLAVOR} \
@@ -140,7 +140,7 @@ PLIST_SUB=	DISTVERSION=${PORTVERSION}
 
 .if !defined(MAINTAINER_MODE)
 CMAKE_ARGS+=	-Wno-dev
-CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
+CMAKE_OFF+=	SUPPRESS_QT_WARNINGS WITH_GRASS8
 .endif
 
 OPTIONS_DEFINE=		GRASS SERVER
