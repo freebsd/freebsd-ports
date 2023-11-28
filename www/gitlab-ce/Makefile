@@ -3,6 +3,11 @@ PORTVERSION=	16.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
+# include patch to fix database migration
+https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018.patch
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
+PATCHFILES+=	138018.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018
+
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
 WWW=		https://gitlab.com/
