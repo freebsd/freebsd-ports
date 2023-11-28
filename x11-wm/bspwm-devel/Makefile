@@ -25,9 +25,10 @@ CONFLICTS_INSTALL=	bspwm
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	DOCS EXAMPLES CONTRIB
-OPTIONS_SUB=	yes
-CONTRIB_DESC=	Install contrib (shell completions, etc.)
+OPTIONS_DEFINE=		DOCS EXAMPLES CONTRIB
+OPTIONS_DEFAULT=	CONTRIB
+OPTIONS_SUB=		yes
+CONTRIB_DESC=		Install contrib (shell completions, etc.)
 
 do-install:
 	${MKDIR} ${STAGEDIR}${BINDIR} ${STAGEDIR}${MANPREFIX}/man/man1
