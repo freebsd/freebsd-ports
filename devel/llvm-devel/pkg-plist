@@ -5814,7 +5814,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%POLLY%%llvm-devel/include/polly/isl/version.h
 %%POLLY%%llvm-devel/include/polly/isl/vertices.h
 %%POLLY%%llvm-devel/lib/LLVMPolly.so
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ISO_Fortran_binding.h
+%%CLANG%%%%FLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ISO_Fortran_binding.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/__clang_cuda_builtin_vars.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/__clang_cuda_cmath.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/__clang_cuda_complex_builtins.h
