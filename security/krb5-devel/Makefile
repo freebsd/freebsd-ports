@@ -29,8 +29,7 @@ GNU_CONFIGURE=		yes
 USES=			autoreconf compiler:c11 cpe gmake localbase perl5 \
 			libtool:build gssapi:bootstrap,mit pkgconfig ssl
 CONFIGURE_ARGS?=	--enable-shared --without-system-verto \
-			--disable-rpath --localstatedir="${PREFIX}/var" \
-			--runstatedir="${PREFIX}/var/run"
+			--disable-rpath
 CONFIGURE_ENV=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}" YACC="${YACC}" WARN_CFLAGS=-Wno-strict-prototypes
 MAKE_ARGS=		INSTALL="${INSTALL}" INSTALL_LIB="${INSTALL_LIB}"
 
@@ -64,6 +63,16 @@ LIBEDIT_BASE_DESC=	Use libedit in FreeBSD base
 .if defined(KRB5_HOME)
 PREFIX=			${KRB5_HOME}
 .endif
+.if !defined(KRB5_LOCALSTATEDIR)
+KRB5_LOCALSTATEDIR=	"${PREFIX}/var"
+.endif
+.if !defined(KRB5_RUNSTATEDIR)
+KRB5_RUNSTATEDIR=	"${PREFIX}/var/run"
+.endif
+CONFIGURE_ARGS+=	--runstatedir="${KRB5_RUNSTATEDIR}"
+CONFIGURE_ARGS+=	--localstatedir="${KRB5_LOCALSTATEDIR}"
+PLIST_SUB+=		KRB5_LOCALSTATEDIR=${KRB5_LOCALSTATEDIR}
+PLIST_SUB+=		KRB5_RUNSTATEDIR=${KRB5_RUNSTATEDIR}
 CPPFLAGS+=		-I${OPENSSLINC}
 LDFLAGS+=		-L${OPENSSLLIB}
 
