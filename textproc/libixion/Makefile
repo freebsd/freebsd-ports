@@ -1,5 +1,5 @@
 PORTNAME=	libixion
-PORTVERSION=	0.18.1
+DISTVERSION=	0.19.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://kohei.us/files/ixion/src/
 
@@ -13,12 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	mdds>=2.1:devel/mdds
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		autoreconf libtool pkgconfig tar:xz
+USES=		libtool localbase pathfix pkgconfig tar:xz
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
-PLIST_SUB=	VERSION=${PORTVERSION:R}
+PLIST_SUB=	VERSION=0.18
+#PLIST_SUB=	VERSION=${DISTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-python
 
