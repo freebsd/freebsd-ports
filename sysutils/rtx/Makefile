@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.11.5
+DISTVERSION=	2023.11.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -94,7 +94,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.2.0 \
+		form_urlencoded-1.2.1 \
 		fslock-0.2.1 \
 		futures-channel-0.3.29 \
 		futures-core-0.3.29 \
@@ -104,12 +104,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		futures-util-0.3.29 \
 		generic-array-0.14.7 \
 		getrandom-0.2.11 \
-		gimli-0.28.0 \
+		gimli-0.28.1 \
 		git2-0.18.1 \
-		globset-0.4.13 \
+		globset-0.4.14 \
 		globwalk-0.8.1 \
 		h2-0.3.22 \
-		hashbrown-0.14.2 \
+		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
 		http-0.2.11 \
@@ -122,8 +122,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.58 \
 		iana-time-zone-haiku-0.1.2 \
-		idna-0.4.0 \
-		ignore-0.4.20 \
+		idna-0.5.0 \
+		ignore-0.4.21 \
 		indenter-0.3.3 \
 		indexmap-2.1.0 \
 		indicatif-0.17.7 \
@@ -159,16 +159,16 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		number_prefix-0.4.0 \
 		object-0.32.1 \
 		once_cell-1.18.0 \
-		openssl-0.10.59 \
+		openssl-0.10.60 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.95 \
+		openssl-sys-0.9.96 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.14 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
-		percent-encoding-2.3.0 \
+		percent-encoding-2.3.1 \
 		pest-2.7.5 \
 		pest_derive-2.7.5 \
 		pest_generator-2.7.5 \
@@ -182,7 +182,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		quick-xml-0.23.1 \
 		quote-1.0.33 \
 		rand-0.8.5 \
@@ -282,7 +282,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.11 \
 		untrusted-0.9.0 \
-		url-2.4.1 \
+		url-2.5.0 \
 		urlencoding-2.1.3 \
 		utf8parse-0.2.1 \
 		valuable-0.1.0 \
@@ -299,7 +299,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		wasm-bindgen-macro-support-0.2.88 \
 		wasm-bindgen-shared-0.2.88 \
 		web-sys-0.3.65 \
-		webpki-roots-0.25.2 \
+		webpki-roots-0.25.3 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
