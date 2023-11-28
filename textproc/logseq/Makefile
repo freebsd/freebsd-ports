@@ -15,6 +15,8 @@ WWW=		https://logseq.com
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+RUN_DEPENDS=	git:devel/git
+
 USES=		desktop-file-utils electronfix:25 shared-mime-info zip
 
 ELECTRONFIX_MAIN_EXECUTABLE=	Logseq
@@ -41,6 +43,7 @@ do-install:
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules/better-sqlite3/bin
 	${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules/better-sqlite3/build/Release
 	${INSTALL_PROGRAM} ${WRKDIR}/better_sqlite3.node ${STAGEDIR}${DATADIR}/resources/app/node_modules/better-sqlite3/build
+	${RM} -r ${STAGEDIR}${DATADIR}/resources/app/node_modules/dugite/git
 
 repackage-node-modules:
 	pkg info curl git yarn npm zip > /dev/null
