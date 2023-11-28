@@ -1,4 +1,4 @@
---- Gemfile.orig	2023-09-30 08:40:03 UTC
+--- Gemfile.orig	2023-03-05 21:35:36 UTC
 +++ Gemfile
 @@ -3,30 +3,30 @@ gem 'bundler', '>= 1.12.0'
  ruby '>= 2.5.0', '< 3.2.0'
@@ -39,7 +39,7 @@
  gem 'net-pop', '~> 0.1.1'
  # Rails 6.1.6.1 does not work with Pysch 3.0.2, which is installed by default with Ruby 2.5. See https://github.com/rails/rails/issues/45590
  gem 'psych', '>= 3.1.0' if Gem.ruby_version < Gem::Version.new('2.6.0')
-@@ -40,85 +40,9 @@ group :ldap do
+@@ -40,85 +40,10 @@ group :ldap do
  
  # Optional gem for LDAP authentication
  group :ldap do
@@ -51,7 +51,7 @@
 -group :minimagick do
 -  gem 'mini_magick', '~> 4.11.0'
 -end
--
+ 
 -# Optional Markdown support, not for JRuby
 -# ToDo: Remove common_mark group when common_mark is decoupled from markdown. See defect (#36892) for more details.
 -gem 'redcarpet', '~> 3.5.1', groups: [:markdown, :common_mark]
@@ -126,7 +126,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exist?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -127,4 +51,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
+@@ -127,4 +52,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
