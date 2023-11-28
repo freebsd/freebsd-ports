@@ -1,6 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.1
+DISTVERSION=	1.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		cfg-if-1.0.0 \
 		console-0.15.7 \
 		convert_case-0.6.0 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
 		difflib-0.4.0 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
@@ -37,10 +40,9 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		either-1.9.0 \
 		encode_unicode-0.3.6 \
 		equivalent-1.0.1 \
-		errno-0.3.6 \
+		errno-0.3.7 \
 		fastrand-2.0.1 \
 		float-cmp-0.9.0 \
-		fnv-1.0.7 \
 		futures-0.3.29 \
 		futures-channel-0.3.29 \
 		futures-core-0.3.29 \
@@ -53,12 +55,12 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		futures-util-0.3.29 \
 		getrandom-0.2.11 \
 		glob-0.3.1 \
-		globset-0.4.13 \
+		globset-0.4.14 \
 		globwalk-0.8.1 \
-		hashbrown-0.14.2 \
+		hashbrown-0.14.3 \
 		hermit-abi-0.3.3 \
 		home-0.5.5 \
-		ignore-0.4.20 \
+		ignore-0.4.21 \
 		indexmap-2.1.0 \
 		insta-1.34.0 \
 		itertools-0.11.0 \
@@ -70,6 +72,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		linux-raw-sys-0.4.11 \
 		log-0.4.20 \
 		memchr-2.6.4 \
+		memoffset-0.9.0 \
 		minimal-lexical-0.2.1 \
 		natord-1.0.9 \
 		nom-7.1.3 \
@@ -83,7 +86,7 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		predicates-3.0.4 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.69 \
+		proc-macro2-1.0.70 \
 		quote-1.0.33 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
@@ -94,12 +97,13 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		rstest-0.18.2 \
 		rstest_macros-0.18.2 \
 		rustc_version-0.4.0 \
-		rustix-0.38.21 \
+		rustix-0.38.25 \
 		ryu-1.0.15 \
 		same-file-1.0.6 \
+		scopeguard-1.2.0 \
 		semver-1.0.20 \
-		serde-1.0.192 \
-		serde_derive-1.0.192 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
 		serde_json-1.0.108 \
 		shell-words-1.1.0 \
 		similar-2.3.0 \
@@ -111,7 +115,6 @@ CARGO_CRATES=	aho-corasick-1.1.2 \
 		textwrap-0.16.0 \
 		thiserror-1.0.50 \
 		thiserror-impl-1.0.50 \
-		thread_local-1.1.7 \
 		threadpool-1.8.1 \
 		unicode-ident-1.0.12 \
 		unicode-linebreak-0.1.5 \
