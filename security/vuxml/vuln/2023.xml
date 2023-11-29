@@ -1,3 +1,46 @@
+  <vuln vid="8cdd38c7-8ebb-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>119.0.6045.199</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>119.0.6045.199</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_28.html">
+	 <p>This update includes 7 security fixes:</p>
+	 <ul>
+	    <li>[1491459] High CVE-2023-6348: Type Confusion in Spellcheck. Reported by Mark Brand of Google Project Zero on 2023-10-10</li>
+	    <li>[1494461] High CVE-2023-6347: Use after free in Mojo. Reported by Leecraso and Guang Gong of 360 Vulnerability Research Institute on 2023-10-21</li>
+	    <li>[1500856] High CVE-2023-6346: Use after free in WebAudio. Reported by Huang Xilin of Ant Group Light-Year Security Lab on 2023-11-09</li>
+	    <li>[1501766] High CVE-2023-6350: Out of bounds memory access in libavif. Reported by Fudan University on 2023-11-13</li>
+	    <li>[1501770] High CVE-2023-6351: Use after free in libavif. Reported by Fudan University on 2023-11-13</li>
+	    <li>[1505053] High CVE-2023-6345: Integer overflow in Skia. Reported by Benoît Sevens and Clément Lecigne of Google's Threat Analysis Group on 2023-11-24</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6348</cvename>
+      <cvename>CVE-2023-6347</cvename>
+      <cvename>CVE-2023-6346</cvename>
+      <cvename>CVE-2023-6350</cvename>
+      <cvename>CVE-2023-6351</cvename>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://chromereleases.googleblog.com/2023/11/stable-channel-update-for-desktop_28.html</url>
+    </references>
+    <dates>
+      <discovery>2023-11-28</discovery>
+      <entry>2023-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="388e6557-8c80-11ee-9ee3-84a93843eb75">
     <topic>MariaDB -- Denial-of-Service vulnerability</topic>
     <affects>
@@ -1567,8 +1610,8 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
 	<range><gt>7.69.0</gt><lt>8.4.0</lt></range>
       </package>
       <package>
-        <name>cmake-core</name>
-        <range><lt>3.27.8</lt></range>
+	<name>cmake-core</name>
+	<range><lt>3.27.8</lt></range>
       </package>
     </affects>
     <description>
