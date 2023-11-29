@@ -174,6 +174,12 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with SSL
 .endif
 
+# Update the LD_LIBRARY_PATH environment variable name to the ABI-specific one.
+pre-configure:
+	${REINPLACE_CMD} -i '' \
+	    -e "s@shlibpath_var=LD_LIBRARY_PATH@shlibpath_var=${LD_LIBRARY_PATH_VAR}@" \
+	    ${WRKSRC}/configure
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 
