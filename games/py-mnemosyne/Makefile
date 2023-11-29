@@ -1,6 +1,6 @@
 PORTNAME=	mnemosyne
 PORTVERSION=	2.10.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	games education python
 MASTER_SITES=	SF/mnemosyne-proj/${PORTNAME}/${PORTNAME}-${DISTVERSION}
@@ -24,9 +24,10 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}webob>=1.4:www/py-webob@${PY_FLAVOR}
 
-USES=		pyqt:6 python shebangfix
+USES=		pyqt:6 python qt:6 shebangfix
 USE_PYQT=	pyqt6:run sip:run webengine:run
 USE_PYTHON=	autoplist concurrent distutils
+USE_QT=		sqldriver-sqlite:run
 
 SHEBANG_FILES=	mnemosyne/pyqt_ui/mnemosyne
 
