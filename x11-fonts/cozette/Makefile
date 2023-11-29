@@ -1,6 +1,6 @@
 PORTNAME=	cozette
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	1.22.2
+DISTVERSION=	1.23.1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/slavfox/Cozette/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${FONTNAME}Fonts-v-${DISTVERSION:S/./-/g}
