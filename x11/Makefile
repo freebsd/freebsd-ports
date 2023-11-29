@@ -621,6 +621,7 @@
     SUBDIR += xvt
     SUBDIR += xwatchwin
     SUBDIR += xwaylandvideobridge
+    SUBDIR += xwayland-run
     SUBDIR += xwd
     SUBDIR += xwininfo
     SUBDIR += xwinwrap
