@@ -36,6 +36,7 @@ bin/podboat
 %%PORTDOCS%%%%DOCSDIR%%/contrib/pinboard.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/slashdot.rb
 %%PORTDOCS%%%%DOCSDIR%%/contrib/urls-maintenance.sh
+%%PORTDOCS%%%%DOCSDIR%%/contrib/move_url.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/config
 %%PORTDOCS%%%%DOCSDIR%%/examples/example-bookmark-plugin.sh
 %%PORTDOCS%%%%DOCSDIR%%/examples/example-exec-script.py
