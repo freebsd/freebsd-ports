@@ -8099,3 +8099,4 @@ devel/rubygem-rdoc63|devel/rubygem-rdoc|2023-11-27|Remove obsoleted port. Use de
 security/rubygem-devise-two-factor40-rails70|security/rubygem-devise-two-factor41-rails70|2023-11-27|Remove obsoleted port. Use security/rubygem-devise-two-factor41-rails70 instead
 www/rubygem-rqrcode-rails3|www/rubygem-rqrcode|2023-11-27|Remove obsoleted port. Use www/rubygem-rqrcode instead
 textproc/py-pygments-25|textproc/py-pygments|2023-11-27|Remove obsoleted port. Use textproc/py-pygments instead
+devel/rubygem-devise48-rails70|devel/rubygem-devise-rails70|2023-11-29|Use devel/rubygem-devise-rails70 instead
