@@ -61,6 +61,7 @@
     SUBDIR += docker-tray
     SUBDIR += dsbautostart
     SUBDIR += dsbxinput
+    SUBDIR += dwlb
     SUBDIR += dwmblocks
     SUBDIR += dxpc
     SUBDIR += dzen2
