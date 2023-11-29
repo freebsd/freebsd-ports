@@ -1,5 +1,6 @@
 PORTNAME=	alsa-utils
 PORTVERSION=	1.2.10
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://www.alsa-project.org/files/pub/utils/
 
