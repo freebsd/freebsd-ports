@@ -2346,6 +2346,7 @@
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += swiggle
+    SUBDIR += sws
     SUBDIR += tcexam
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
