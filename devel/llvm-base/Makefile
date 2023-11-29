@@ -14,7 +14,7 @@ LICENSE_FILE=	${FILESDIR}/LICENSE.ETC
 FLAVORS=	base localbase
 FLAVOR?=	${FLAVORS:[1]}
 
-RUN_DEPENDS=	clang:devel/llvm
+RUN_DEPENDS=	${LOCALBASE}/bin/clang:devel/llvm
 
 .if ${FLAVOR:Mlocalbase}
 CONFLICTS_INSTALL=	binutils
