@@ -1,0 +1,70 @@
+--- cmake/modules/FindOpenColorIO.cmake.orig
++++ cmake/modules/FindOpenColorIO.cmake
+@@ -35,10 +35,10 @@
+ #  OPENCOLORIO_FOUND        - True if OpenColorIO found.
+ 
+ # Look for the header file.
+-find_path (OPENCOLORIO_INCLUDE_DIR NAMES OpenColorIO/OpenColorIO.h)
++find_path (OPENCOLORIO_INCLUDE_DIR NAMES OpenColorIOv1/OpenColorIO.h)
+ 
+ # Look for the library.
+-find_library (OPENCOLORIO_LIBRARY NAMES OpenColorIO)
++find_library (OPENCOLORIO_LIBRARY NAMES OpenColorIOv1)
+ 
+ # handle the QUIETLY and REQUIRED arguments and set OPENCOLORIO_FOUND to TRUE if all listed variables are TRUE
+ include (FindPackageHandleStandardArgs)
+--- src/appleseed/foundation/core/thirdparties.cpp.orig
++++ src/appleseed/foundation/core/thirdparties.cpp
+@@ -49,7 +49,7 @@
+ #include <lz4.h>
+ 
+ // OpenColorIO headers.
+-#include <OpenColorIO/OpenColorABI.h>
++#include <OpenColorIOv1/OpenColorABI.h>
+ 
+ // OpenEXR headers.
+ #include "foundation/platform/_beginexrheaders.h"
+--- src/appleseed.studio/mainwindow/mainwindow.h.orig
++++ src/appleseed.studio/mainwindow/mainwindow.h
+@@ -49,7 +49,7 @@
+ #include <QObject>
+ 
+ // OpenColorIO headers.
+-#include <OpenColorIO/OpenColorIO.h>
++#include <OpenColorIOv1/OpenColorIO.h>
+ namespace OCIO = OCIO_NAMESPACE;
+ 
+ // Standard headers.
+--- src/appleseed.studio/mainwindow/rendering/rendertab.cpp.orig
++++ src/appleseed.studio/mainwindow/rendering/rendertab.cpp
+@@ -44,7 +44,7 @@
+ #include "foundation/image/image.h"
+ 
+ // OpenColorIO headers.
+-#include <OpenColorIO/OpenColorIO.h>
++#include <OpenColorIOv1/OpenColorIO.h>
+ 
+ // Qt headers.
+ #include <QComboBox>
+--- src/appleseed.studio/mainwindow/rendering/rendertab.h.orig
++++ src/appleseed.studio/mainwindow/rendering/rendertab.h
+@@ -42,7 +42,7 @@
+ #include "utility/widgetzoomhandler.h"
+ 
+ // OpenColorIO headers.
+-#include <OpenColorIO/OpenColorIO.h>
++#include <OpenColorIOv1/OpenColorIO.h>
+ namespace OCIO = OCIO_NAMESPACE;
+ 
+ // Qt headers.
+--- src/appleseed.studio/mainwindow/rendering/renderwidget.h.orig
++++ src/appleseed.studio/mainwindow/rendering/renderwidget.h
+@@ -38,7 +38,7 @@
+ #include "foundation/math/vector.h"
+ 
+ // OpenColorIO headers.
+-#include <OpenColorIO/OpenColorIO.h>
++#include <OpenColorIOv1/OpenColorIO.h>
+ namespace OCIO = OCIO_NAMESPACE;
+ 
+ // Qt headers.
