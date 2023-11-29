@@ -1,6 +1,5 @@
 PORTNAME=	mpich
-PORTVERSION=	3.4.3
-PORTREVISION=	2
+PORTVERSION=	4.1.2
 CATEGORIES=	net parallel
 MASTER_SITES=	https://www.mpich.org/static/downloads/${DISTVERSION}/
 
@@ -22,12 +21,14 @@ LIB_DEPENDS=	libhwloc.so:devel/hwloc2	\
 		libepoll-shim.so:devel/libepoll-shim
 RUN_DEPENDS=	bash:shells/bash
 
-CONFLICTS=	mpd mpich2
+CONFLICTS=	mpd
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USES=		compiler:c11 libtool perl5 pkgconfig
+USES=		compiler:c11 libtool localbase perl5 pkgconfig python:build
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 OPTIONS_DEFINE=		DOCS FORTRAN L0
 OPTIONS_GROUP=		PM
@@ -54,15 +55,17 @@ DEFAULTPM_DESC=	Default process manager
 DGFORKER_DESC=	Make gforker the default process manager
 DHYDRA_DESC=	Make hydra the default process manager
 
+HYDRA_LIB_DEPENDS=	libtorque.so:sysutils/torque
+
 L0_DESC=		oneAPI Level Zero support
 L0_LIB_DEPENDS=		libze_loader.so:devel/level-zero
 L0_CONFIGURE_OFF=	--without-ze
 
-CONFIGURE_ARGS=	--enable-fast="" --with-hwloc-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--enable-fast=""	\
 		--with-libfabric=${LOCALBASE} \
 		pkgconfigdir="${PREFIX}/libdata/pkgconfig" \
 		MPICHLIB_CFLAGS="${CFLAGS}" \
-		CFLAGS="-I${LOCALBASE}/include/json-c" \
+		CFLAGS="-I${LOCALBASE}/include/json-c ${CFLAGS_F2018}" \
 		MPICHLIB_CPPFLAGS="${CPPFLAGS}" CPPFLAGS="" \
 		MPICHLIB_CXXFLAGS="${CXXFLAGS}" CXXFLAGS="" \
 		MPICHLIB_FFLAGS="${FFLAGS}" FFLAGS="" \
@@ -98,6 +101,9 @@ PLIST_SUB+=	EXECGFORKER=""
 PLIST_SUB+=	EXECGFORKER="@comment "
 .endif
 .endif
+
+post-extract:
+	${FIND} ${WRKSRC} -name "*.orig" -delete
 
 post-patch:
 	${RM} -r ${WRKSRC}/www
