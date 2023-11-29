@@ -598,6 +598,7 @@
     SUBDIR += opencollada
     SUBDIR += opencolorio
     SUBDIR += opencolorio-tools
+    SUBDIR += opencoloriov1
     SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opendx
