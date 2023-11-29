@@ -160,6 +160,7 @@
     SUBDIR += pangomm
     SUBDIR += pangox-compat
     SUBDIR += plasma5-kdeplasma-addons
+    SUBDIR += plasma6-kdeplasma-addons
     SUBDIR += plib
     SUBDIR += py-AnyQt
     SUBDIR += py-Pmw

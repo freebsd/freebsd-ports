@@ -476,6 +476,7 @@
     SUBDIR += libjxr
     SUBDIR += libkdcraw
     SUBDIR += libkexiv2
+    SUBDIR += libkexiv2-devel
     SUBDIR += libkipi
     SUBDIR += libksane
     SUBDIR += libliftoff

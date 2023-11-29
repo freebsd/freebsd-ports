@@ -90,6 +90,10 @@ KDE_APPLICATIONS_SHLIB_G_VER?=	${KDE_APPLICATIONS${_KDE_VERSION}_SHLIB_G_VER}
 KDE_PLASMA5_VERSION?=		5.27.9
 KDE_PLASMA5_BRANCH?=		stable
 
+# Next KDE Plasma desktop
+KDE_PLASMA6_VERSION?=		5.90.0
+KDE_PLASMA6_BRANCH?=		unstable
+
 # Current KDE frameworks.
 KDE_FRAMEWORKS5_VERSION?=	5.112.0
 KDE_FRAMEWORKS5_BRANCH?=	stable
@@ -104,6 +108,13 @@ KDE_APPLICATIONS5_SHLIB_VER?=	5.24.3
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
 KDE_APPLICATIONS5_SHLIB_G_VER?=	23.8.3
 KDE_APPLICATIONS5_BRANCH?=	stable
+
+# Next KDE applications.
+KDE_APPLICATIONS6_VERSION?=	24.01.80
+KDE_APPLICATIONS6_SHLIB_VER?=	5.24.3
+# G as in KDE Gear, and as in "don't make the variable name longer than required"
+KDE_APPLICATIONS6_SHLIB_G_VER?=	24.01.80
+KDE_APPLICATIONS6_BRANCH?=	unstable
 
 # Extended KDE universe applications.
 CALLIGRA_VERSION?=		2.9.11
@@ -189,6 +200,9 @@ PORTVERSION?=		${KDE_PLASMA_VERSION}
 PKGNAMEPREFIX?=		plasma${_KDE_VERSION}-
 MASTER_SITES?=		KDE/${KDE_PLASMA_BRANCH}/plasma/${KDE_PLASMA_VERSION}
 DIST_SUBDIR?=		KDE/plasma/${KDE_PLASMA_VERSION}
+.        if ${_KDE_VERSION:M6}
+DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
+.        endif
 .      elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf${_KDE_VERSION}-
@@ -291,6 +305,7 @@ _USE_FRAMEWORKS6_ALL=	ecm colorscheme \
 			svg \
 			statusnotifieritem \
 			plasma-wayland-protocols \
+			userfeedback \
 			${_USE_FRAMEWORKS_TIER1:Noxygen-icons5:Nwayland} \
 			${_USE_FRAMEWORKS_TIER2} \
 			${_USE_FRAMEWORKS_TIER3:Nkdewebkit:Nemoticons:Ndesignerplugin:Nactivities:Nactivities-stats:Ninit:Nplasma-framework:Nxmlrpcclient:Nkpipewire} \
@@ -308,7 +323,8 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			libksysguard milou oxygen oxygen-sounds plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
 			plasma-sdk plasma-workspace plasma-workspace-wallpapers \
-			polkit-kde-agent-1 powerdevil systemsettings xdg-desktop-portal-kde
+			polkit-kde-agent-1 powerdevil systemsettings xdg-desktop-portal-kde \
+			kirigami-addons
 
 # List of components of the KDE PIM distribution (part of applications).
 _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
@@ -330,14 +346,29 @@ _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
 			${_USE_KDEPIM5_ALL} \
 			${_USE_KDE_BOTH}
-_USE_KDE6_ALL=		${_USE_FRAMEWORKS_ALL}
+# TODO: fix
+_USE_KDE6_ALL=		ecm colorscheme \
+			svg \
+			plasma-wayland-protocols \
+			mediaplayer \
+			${_USE_FRAMEWORKS_ALL}  \
+			${_USE_PLASMA_ALL} \
+			plasma5support activities activities-stats kpipewire wayland globalacceld libplasma 
 
 # ====================== frameworks components =================================
-kde-activities_PORT=	x11/kf${_KDE_VERSION}-kactivities
-kde-activities_LIB=		libKF${_KDE_VERSION}Activities.so
+kde-activities_PORT5=		x11/kf${_KDE_VERSION}-kactivities
+kde-activities_PORT6=		x11/plasma${_KDE_VERSION}-plasma-activities
+kde-activities_PORT=		${kde-activities_PORT${_KDE_VERSION}}
+kde-activities_LIB5=		libKF${_KDE_VERSION}Activities.so
+kde-activities_LIB6=		libPlasmaActivities.so
+kde-activities_LIB=		${kde-activities_LIB${_KDE_VERSION}}
 
-kde-activities-stats_PORT=	x11/kf${_KDE_VERSION}-kactivities-stats
-kde-activities-stats_LIB=	libKF${_KDE_VERSION}ActivitiesStats.so
+kde-activities-stats_PORT5=	x11/kf${_KDE_VERSION}-kactivities-stats
+kde-activities-stats_PORT6=	x11/plasma${_KDE_VERSION}-plasma-activities-stats
+kde-activities-stats_PORT=	${kde-activities-stats_PORT${_KDE_VERSION}}
+kde-activities-stats_LIB5=	libKF${_KDE_VERSION}ActivitiesStats.so
+kde-activities-stats_LIB6=	libPlasmaActivitiesStats.so
+kde-activities-stats_LIB=	${kde-activities-stats_LIB${_KDE_VERSION}}
 
 kde-apidox_PORT=		devel/kf${_KDE_VERSION}-kapidox
 kde-apidox_PATH=		${KDE_PREFIX}/bin/kapidox-generate
@@ -574,8 +605,12 @@ kde-unitconversion_LIB=		libKF${_KDE_VERSION}UnitConversion.so
 kde-wallet_PORT=		sysutils/kf${_KDE_VERSION}-kwallet
 kde-wallet_LIB=			libKF${_KDE_VERSION}Wallet.so
 
-kde-wayland_PORT=		x11/kf${_KDE_VERSION}-kwayland
-kde-wayland_LIB=		libKF${_KDE_VERSION}WaylandClient.so
+kde-wayland_PORT5=		x11/kf${_KDE_VERSION}-kwayland
+kde-wayland_PORT6=		x11/plasma${_KDE_VERSION}-kwayland
+kde-wayland_PORT=		${kde-wayland_PORT${_KDE_VERSION}}
+kde-wayland_LIB5=		libKF${_KDE_VERSION}WaylandClient.so
+kde-wayland_LIB6=		libKWaylandClient.so
+kde-wayland_LIB=		${kde-wayland_LIB${_KDE_VERSION}}
 
 kde-widgetsaddons_PORT=		x11-toolkits/kf${_KDE_VERSION}-kwidgetsaddons
 kde-widgetsaddons_LIB=		libKF${_KDE_VERSION}WidgetsAddons.so
@@ -606,6 +641,10 @@ kde-svg_LIB=			libKF${_KDE_VERSION}Svg.so
 
 kde-statusnotifieritem_PORT=	deskutils/kf6-kstatusnotifieritem
 kde-statusnotifieritem_LIB=	libKF${_KDE_VERSION}StatusNotifierItem.so
+
+kde-userfeedback_PORT=		sysutils/kf6-kuserfeedback
+kde-userfeedback_LIB=		libKF${_KDE_VERSION}UserFeedbackCore.so
+
 # ====================== end of frameworks components ==========================
 
 # ====================== plasma components =====================================
@@ -637,7 +676,7 @@ kde-infocenter_PORT=		sysutils/plasma${_KDE_VERSION}-kinfocenter
 kde-infocenter_PATH=		${KDE_PREFIX}/bin/kinfocenter
 
 kde-kde-cli-tools_PORT=		sysutils/plasma${_KDE_VERSION}-kde-cli-tools
-kde-kde-cli-tools_PATH=		${KDE_PREFIX}/bin/kcmshell5
+kde-kde-cli-tools_PATH=		${KDE_PREFIX}/bin/kde-open
 
 kde-kde-gtk-config_PORT=	x11-themes/plasma${_KDE_VERSION}-kde-gtk-config
 kde-kde-gtk-config_PATH=	${KDE_PREFIX}/lib/kconf_update_bin/gtk_theme
@@ -645,8 +684,12 @@ kde-kde-gtk-config_PATH=	${KDE_PREFIX}/lib/kconf_update_bin/gtk_theme
 kde-kdeplasma-addons_PORT=	x11-toolkits/plasma${_KDE_VERSION}-kdeplasma-addons
 kde-kdeplasma-addons_LIB=	libplasmapotdprovidercore.so
 
-kde-kgamma5_PORT=		x11/plasma${_KDE_VERSION}-kgamma5
+kde-kgamma5_PORT5=		x11/plasma${_KDE_VERSION}-kgamma5
+kde-kgamma5_PORT6=		x11/plasma${_KDE_VERSION}-kgamma
+kde-kgamma5_PORT=		${kde-kgamma5_PORT${_KDE_VERSION}}
 kde-kgamma5_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_kgamma.so
+kde-kgamma5_PATH6=		${QT_PLUGINDIR}/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so
+kde-kgamma5_PATH=		${kde-kgamma5_PATH${_KDE_VERSION}}
 
 kde-kmenuedit_PORT=		sysutils/plasma${_KDE_VERSION}-kmenuedit
 kde-kmenuedit_PATH=		${KDE_PREFIX}/bin/kmenuedit
@@ -667,16 +710,18 @@ kde-ksystemstats_PORT=		sysutils/plasma${_KDE_VERSION}-ksystemstats
 kde-ksystemstats_PATH=		${KDE_PREFIX}/bin/ksystemstats
 
 kde-kwallet-pam_PORT=		security/plasma${_KDE_VERSION}-kwallet-pam
-kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
+kde-kwallet-pam_PATH5=		${KDE_PREFIX}/lib/pam_kwallet5.so
+kde-kwallet-pam_PATH6=		${KDE_PREFIX}/lib/security/pam_kwallet5.so
+kde-kwallet-pam_PATH=		${kde-kwallet-pam_PATH${_KDE_VERSION}}
 
 kde-kwayland-integration_PORT=	x11/plasma${_KDE_VERSION}-kwayland-integration
-kde-kwayland-integration_PATH=	${QT_PLUGINDIR}/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so
+kde-kwayland-integration_PATH=	${QT_PLUGINDIR}/kf${_KDE_VERSION}/kwindowsystem/KF5WindowSystemKWaylandPlugin.so
 
 kde-kwin_PORT=			x11-wm/plasma${_KDE_VERSION}-kwin
 kde-kwin_PATH=			${KDE_PREFIX}/bin/kwin_x11
 
 kde-kwrited_PORT=		devel/plasma${_KDE_VERSION}-kwrited
-kde-kwrited_PATH=		${QT_PLUGINDIR}/kf5/kded/kwrited.so
+kde-kwrited_PATH=		${QT_PLUGINDIR}/kf${_KDE_VERSION}/kded/kwrited.so
 
 kde-libkscreen_PORT=		x11/plasma${_KDE_VERSION}-libkscreen
 kde-libkscreen_LIB=		libKF${_KDE_VERSION}Screen.so
@@ -685,10 +730,14 @@ kde-libksysguard_PORT=		sysutils/plasma${_KDE_VERSION}-libksysguard
 kde-libksysguard_LIB=		libksgrd.so
 
 kde-milou_PORT=			deskutils/plasma${_KDE_VERSION}-milou
-kde-milou_LIB=			libmilou.so.5
+kde-milou_PATH5=			${KDE_PREFIX}/lib/libmilou.so.5
+kde-milou_PATH6=		${QT_QMLDIR}/org/kde/milou/libmilouqmlplugin.so
+kde-milou_PATH=			${kde-milou_PATH${_KDE_VERSION}}
 
 kde-oxygen_PORT=		x11-themes/plasma${_KDE_VERSION}-oxygen
-kde-oxygen_PATH=		${QT_PLUGINDIR}/styles/oxygen.so
+kde-oxygen_PATH5=		${QT_PLUGINDIR}/styles/oxygen.so
+kde-oxygen_PATH6=		${QT_PLUGINDIR}/kstyle_config/kstyle_oxygen_config.so
+kde-oxygen_PATH=		${kde-oxygen_PATH${_KDE_VERSION}}
 
 kde-plasma-browser-integration_PORT=	www/plasma${_KDE_VERSION}-plasma-browser-integration
 kde-plasma-browser-integration_PATH=	${KDE_PREFIX}/bin/plasma-browser-integration-host
@@ -697,10 +746,14 @@ kde-plasma-desktop_PORT=	x11/plasma${_KDE_VERSION}-plasma-desktop
 kde-plasma-desktop_PATH=	${KDE_PREFIX}/bin/kaccess
 
 kde-plasma-disks_PORT=		sysutils/plasma${_KDE_VERSION}-plasma-disks
-kde-plasma-disks_PATH=		${KDE_PREFIX}/lib/libexec/kauth/kded-smart-helper
+kde-plasma-disks_PATH5=		${KDE_PREFIX}/lib/libexec/kauth/kded-smart-helper
+kde-plasma-disks_PATH6=		${KDE_PREFIX}/lib/libexec/kf6/kauth/kded-smart-helper
+kde-plasma-disks_PATH=		${kde-plasma-disks_PATH${_KDE_VERSION}}
 
 kde-plasma-integration_PORT=	x11/plasma${_KDE_VERSION}-plasma-integration
-kde-plasma-integration_PATH=	${QT_PLUGINDIR}/platformthemes/KDEPlasmaPlatformTheme.so
+kde-plasma-integration_PATH5=	${QT_PLUGINDIR}/platformthemes/KDEPlasmaPlatformTheme.so
+kde-plasma-integration_PATH6=	${QT_PLUGINDIR}/platformthemes/KDEPlasmaPlatformTheme6.so
+kde-plasma-integration_PATH=	${kde-plasma-integration_PATH${_KDE_VERSION}}
 
 kde-plasma-pa_PORT=		audio/plasma${_KDE_VERSION}-plasma-pa
 kde-plasma-pa_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_pulseaudio.so
@@ -709,7 +762,7 @@ kde-plasma-sdk_PORT=		devel/plasma${_KDE_VERSION}-plasma-sdk
 kde-plasma-sdk_PATH=		${KDE_PREFIX}/bin/plasmoidviewer
 
 kde-plasma-workspace_PORT=	x11/plasma${_KDE_VERSION}-plasma-workspace
-kde-plasma-workspace_LIB=	libkworkspace5.so
+kde-plasma-workspace_LIB=	libkworkspace${_KDE_VERSION}.so
 
 kde-plasma-workspace-wallpapers_PORT=	x11-themes/plasma${_KDE_VERSION}-plasma-workspace-wallpapers
 kde-plasma-workspace-wallpapers_PATH=	${KDE_PREFIX}/share/wallpapers/Autumn/contents/images/1280x1024.jpg
@@ -721,10 +774,28 @@ kde-powerdevil_PORT=		sysutils/plasma${_KDE_VERSION}-powerdevil
 kde-powerdevil_LIB=		libpowerdevilcore.so
 
 kde-systemsettings_PORT=	sysutils/plasma${_KDE_VERSION}-systemsettings
-kde-systemsettings_PATH=	${KDE_PREFIX}/bin/systemsettings5
+kde-systemsettings_PATH5=	${KDE_PREFIX}/bin/systemsettings5
+kde-systemsettings_PATH6=	${KDE_PREFIX}/bin/systemsettings
+kde-systemsettings_PATH=	${kde-systemsettings_PATH${_KDE_VERSION}}
 
-kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde
+
+
 kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma${_KDE_VERSION}-xdg-desktop-portal-kde
+kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde
+
+kde-plasma5support_PORT=	devel/plasma${_KDE_VERSION}-plasma5support
+kde-plasma5support_LIB=		libKF${_KDE_VERSION}Plasma5Support.so
+
+kde-kirigami-addons_PORT5=	x11-toolkits/kirigami-addons
+kde-kirigami-addons_PORT6=	x11-toolkits/kirigami-addons-devel
+kde-kirigami-addons_PORT=	${kde-kirigami-addons_PORT${_KDE_VERSION}}
+kde-kirigami-addons_PATH=	${QT_QMLDIR}/org/kde/kirigamiaddons/components/libcomponentsplugin.so
+
+kde-globalacceld_PORT=		x11/plasma${_KDE_VERSION}-kglobalacceld
+kde-globalacceld_PATH=		${QT_PLUGINDIR}/org.kde.kglobalacceld.platforms/KGlobalAccelDXcb.so
+
+kde-libplasma_PORT=		x11/plasma${_KDE_VERSION}-libplasma
+kde-libplasma_LIB=		libPlasma.so
 # ====================== end of plasma components ==============================
 
 # ====================== pim5 components =======================================

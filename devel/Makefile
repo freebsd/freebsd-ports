@@ -4145,6 +4145,9 @@
     SUBDIR += plasma5-khotkeys
     SUBDIR += plasma5-kwrited
     SUBDIR += plasma5-plasma-sdk
+    SUBDIR += plasma6-kwrited
+    SUBDIR += plasma6-plasma-sdk
+    SUBDIR += plasma6-plasma5support
     SUBDIR += please
     SUBDIR += pmccabe
     SUBDIR += pmd

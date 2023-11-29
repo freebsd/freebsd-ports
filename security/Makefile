@@ -828,6 +828,9 @@
     SUBDIR += plasma5-kscreenlocker
     SUBDIR += plasma5-ksshaskpass
     SUBDIR += plasma5-kwallet-pam
+    SUBDIR += plasma6-kscreenlocker
+    SUBDIR += plasma6-ksshaskpass
+    SUBDIR += plasma6-kwallet-pam
     SUBDIR += please
     SUBDIR += poly1305aes
     SUBDIR += portacl-rc
