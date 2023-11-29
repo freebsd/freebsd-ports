@@ -17,6 +17,9 @@ GH_TAGNAME=	ddd1b56a1dcec42f549b140dfeee394c93599072
 MAINTAINER=	def@FreeBSD.org
 COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
 
+NOT_FOR_ABIS=	purecap
+NOT_FOR_ABIS_REASON_purecap=is not adapted for CheriABI yet
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
 DATADIR=	${PREFIX}/share/gdb
