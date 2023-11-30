@@ -2,7 +2,7 @@ PORTNAME=	bspwm
 DISTVERSION=	0.9.10
 CATEGORIES=	x11-wm
 
-MAINTAINER=	o.hushchenkov@gmail.com
+MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Tiling window manager based on binary space partitioning
 WWW=		https://github.com/baskerville/bspwm
 
