@@ -126,8 +126,6 @@ anope/lib/modules/m_redis.so
 %%TRE%%anope/lib/modules/m_regex_tre.so
 anope/lib/modules/m_rewrite.so
 anope/lib/modules/m_sasl.so
-%%SASL%%anope/lib/modules/m_sasl_dh-aes.so
-%%SASL%%anope/lib/modules/m_sasl_dh-blowfish.so
 %%GNUTLS%%anope/lib/modules/m_ssl_gnutls.so
 %%OPENSSL%%anope/lib/modules/m_ssl_openssl.so
 %%MYSQL%%anope/lib/modules/m_sql_authentication.so
