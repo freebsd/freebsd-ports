@@ -36,6 +36,7 @@ share/dbus-1/services/org.xfce.Tumbler.Cache1.service
 share/dbus-1/services/org.xfce.Tumbler.Manager1.service
 share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
 share/icons/hicolor/32x32/apps/org.xfce.tumbler.png
+share/icons/hicolor/64x64/apps/org.xfce.tumbler.png
 %%NLS%%share/locale/ar/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/be/LC_MESSAGES/tumbler.mo

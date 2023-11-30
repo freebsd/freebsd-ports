@@ -1,6 +1,5 @@
 PORTNAME=	tumbler
-PORTVERSION=	4.18.1
-PORTREVISION=	4
+PORTVERSION=	4.18.2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE
 PKGNAMEPREFIX=	xfce4-
@@ -14,7 +13,7 @@ LICENSE=	GPLv2+ LGPL20+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpng.so:graphics/png
+LIB_DEPENDS=	libpng16.so:graphics/png
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool \
 		localbase:ldflags pathfix pkgconfig tar:bzip2 xfce
