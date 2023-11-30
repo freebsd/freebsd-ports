@@ -741,7 +741,14 @@
     SUBDIR += gcli
     SUBDIR += gconf2
     SUBDIR += gconfmm26
-    SUBDIR += gdb
+#
+# devel/gdb is replaced by devel/gdb-meta that points at devel/gdb-cheri on
+# CheriBSD.
+#
+# Do not build devel/gdb but leave it in CheriBSD ports to prevent possible
+# upstream merge issues.
+#
+#    SUBDIR += gdb
     SUBDIR += gdb-cheri
     SUBDIR += gdb-meta
     SUBDIR += gdcm
