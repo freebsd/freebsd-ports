@@ -2,6 +2,7 @@ include/aws/s3/exports.h
 include/aws/s3/s3.h
 include/aws/s3/s3_client.h
 include/aws/s3/s3_endpoint_resolver.h
+include/aws/s3/s3express_credentials_provider.h
 lib/aws-c-s3/cmake/aws-c-s3-config.cmake
 lib/aws-c-s3/cmake/shared/aws-c-s3-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-s3/cmake/shared/aws-c-s3-targets.cmake
