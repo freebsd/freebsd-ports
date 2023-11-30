@@ -24,8 +24,11 @@ libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-auth.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-list-methods.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger-rpc-method.png
 libexec/c-lightning/plugins/clnrest/.github/screenshots/Swagger.png
+libexec/c-lightning/plugins/clnrest/Makefile
 libexec/c-lightning/plugins/clnrest/__init__.py
 libexec/c-lightning/plugins/clnrest/clnrest.py
+libexec/c-lightning/plugins/clnrest/poetry.lock
+libexec/c-lightning/plugins/clnrest/pyproject.toml
 libexec/c-lightning/plugins/clnrest/requirements.txt
 libexec/c-lightning/plugins/clnrest/utilities/__init__.py
 libexec/c-lightning/plugins/clnrest/utilities/generate_certs.py
@@ -45,6 +48,7 @@ libexec/c-lightning/plugins/txprepare
 man/man1/lightning-cli.1.gz
 man/man5/lightningd-config.5.gz
 man/man7/lightning-addgossip.7.gz
+man/man7/lightning-addpsbtoutput.7.gz
 man/man7/lightning-autoclean-once.7.gz
 man/man7/lightning-autoclean-status.7.gz
 man/man7/lightning-batching.7.gz
@@ -68,6 +72,7 @@ man/man7/lightning-createinvoice.7.gz
 man/man7/lightning-createonion.7.gz
 man/man7/lightning-createrune.7.gz
 man/man7/lightning-datastore.7.gz
+man/man7/lightning-datastoreusage.7.gz
 man/man7/lightning-decode.7.gz
 man/man7/lightning-decodepay.7.gz
 man/man7/lightning-deldatastore.7.gz
@@ -128,6 +133,7 @@ man/man7/lightning-ping.7.gz
 man/man7/lightning-plugin.7.gz
 man/man7/lightning-preapproveinvoice.7.gz
 man/man7/lightning-preapprovekeysend.7.gz
+man/man7/lightning-recover.7.gz
 man/man7/lightning-recoverchannel.7.gz
 man/man7/lightning-renepay.7.gz
 man/man7/lightning-renepaystatus.7.gz
