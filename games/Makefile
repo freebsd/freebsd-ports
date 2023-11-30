@@ -797,7 +797,7 @@
     SUBDIR += py-cbeams
     SUBDIR += py-discord.py
     SUBDIR += py-fife
-    SUBDIR += py-mnemosyne
+    SUBDIR += py-mnemosyne-proj
     SUBDIR += py-pychess
     SUBDIR += py-pysol-cards
     SUBDIR += py-sgflib
