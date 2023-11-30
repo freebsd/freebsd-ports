@@ -11,10 +11,6 @@ WWW=		https://openage.sft.mx/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3
 
-BROKEN=		fails to build
-DEPRECATED=	Outdated, fails to build and marked broken several months ago
-EXPIRATION_DATE=2023-11-30
-
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PY_PILLOW} \
@@ -48,8 +44,9 @@ CMAKE_ARGS=	-DGLOBAL_CONFIG_DIR:STRING=${ETCDIR}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/openage/codegen/main.py
+post-patch:
+	@${REINPLACE_CMD} -e '/^#include <algorithm>/ { x; s/^/#include <array>/; H; x; }' \
+		${WRKSRC}/libopenage/renderer/vulkan/render_target.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openage
