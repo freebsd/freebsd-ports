@@ -6,6 +6,7 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		autocfg-1.0.1 \
 		base64-0.12.3 \
 		bitflags-1.2.1 \
+		bitflags-2.4.1 \
 		blake2b_simd-0.5.10 \
 		cc-1.0.60 \
 		cfg-if-0.1.10 \
@@ -17,13 +18,13 @@ CARGO_CRATES=	ansi_term-0.11.0 \
 		dirs-2.0.2 \
 		dirs-sys-0.3.5 \
 		getrandom-0.1.15 \
-		git2-0.16.1 \
+		git2-0.18.1 \
 		hermit-abi-0.1.17 \
 		idna-0.2.0 \
 		jobserver-0.1.21 \
 		lazy_static-1.4.0 \
 		libc-0.2.79 \
-		libgit2-sys-0.14.2+1.5.1 \
+		libgit2-sys-0.16.1+1.7.1 \
 		libz-sys-1.1.2 \
 		log-0.4.11 \
 		matches-0.1.8 \
