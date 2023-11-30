@@ -1,0 +1,106 @@
+--- configure.ac.orig	2023-08-21 14:29:00 UTC
++++ configure.ac
+@@ -24,10 +24,13 @@ dnl enable features like htole16()
+ CFLAGS="$CFLAGS -D_DEFAULT_SOURCE=1"
+ dnl Enable features like strndup()
+ CFLAGS="$CFLAGS -D_POSIX_C_SOURCE=200809L"
++dnl Removing this failing hard because on implicit declaration of
++dnl alloca() used several place in the code.
+ dnl fail hard when includes statements are missing
+-CFLAGS="$CFLAGS -Werror=implicit-function-declaration"
++dnl CFLAGS="$CFLAGS -Werror=implicit-function-declaration"
+ 
+ AC_PROG_CC_C99
++AC_GNU_SOURCE
+ AC_DISABLE_STATIC
+ LT_INIT
+ 
+@@ -211,14 +214,7 @@ dnl --------------------------------------------------
+ dnl - Check for libintl
+ dnl ---------------------------------------------------------------------------
+ SAVE_LIBS="$LIBS"
+-LIBINTL_LIBS=
+-AC_CHECK_HEADER(libintl.h, [], [AC_MSG_ERROR([libintl.h not found, please install xgettext])])
+-AC_SEARCH_LIBS([bindtextdomain], [libintl],[], [])
+-if test "x$ac_cv_search_bindtextdomain" = "xno" ; then
+-  AC_MSG_ERROR([libintl is not found and your libc does not support gettext, please install xgettext])
+-elif test "x$ac_cv_search_bindtextdomain" != "xnone required" ; then
+-  LIBINTL_LIBS="$ac_cv_search_bindtextdomain"
+-fi
++LIBINTL_LIBS="-lintl"
+ LIBS="$SAVELIBS"
+ AC_SUBST(LIBINTL_LIBS)
+ 
+@@ -249,32 +245,13 @@ AC_ARG_WITH([runstatedir],
+ AC_SUBST([runstatedir])
+ 
+ dnl ---------------------------------------------------------------------------
+-dnl - Check for systemd directories
+-dnl ---------------------------------------------------------------------------
+-
+-PKG_CHECK_EXISTS([systemd], [], [AC_MSG_ERROR([systemd not found])])
+-AC_ARG_WITH([systemdsystemunitdir],
+-            AS_HELP_STRING([--with-systemdsystemunitdir=DIR],
+-               [Directory for systemd service files]),
+-            [systemdsystemunitdir=$with_systemdsystemunitdir],
+-        [systemdsystemunitdir=$($PKG_CONFIG --define-variable=prefix='${prefix}' --variable=systemdsystemunitdir systemd)])
+-AC_SUBST([systemdsystemunitdir])
+-
+-AC_ARG_WITH([systemdtmpfilesdir],
+-            AS_HELP_STRING([--with-systemdtmpfilesdir=DIR],
+-               [Directory for systemd-tmpfiles configuration files]),
+-            [systemdtmpfilesdir=$with_systemdtmpfilesdir],
+-        [systemdtmpfilesdir=$($PKG_CONFIG --define-variable=prefix='${prefix}' --variable=tmpfilesdir systemd)])
+-AC_SUBST([systemdtmpfilesdir])
+-
+-dnl ---------------------------------------------------------------------------
+ dnl - Server-only configuration
+ dnl ---------------------------------------------------------------------------
+ 
+-AM_COND_IF([ENABLE_SERVER], [
+-    m4_include(server.m4)
+-])
+-AM_CONDITIONAL([USE_SSS_NSS_TIMEOUT], [test "x$ac_cv_have_decl_sss_nss_getpwnam_timeout" = xyes])
++dnl AM_COND_IF([ENABLE_SERVER], [
++dnl     m4_include(server.m4)
++dnl ])
++dnl AM_CONDITIONAL([USE_SSS_NSS_TIMEOUT], [test "x$ac_cv_have_decl_sss_nss_getpwnam_timeout" = xyes])
+ 
+ dnl ---------------------------------------------------------------------------
+ dnl - Check if IPA certauth plugin can be build
+@@ -618,35 +595,11 @@ AC_CONFIG_FILES([
+     client/Makefile
+     client/share/Makefile
+     client/man/Makefile
+-    client/sysconfig/Makefile
+-    client/systemd/Makefile
+     contrib/completion/Makefile
+     contrib/Makefile
+-    daemons/dnssec/Makefile
+     daemons/Makefile
+     daemons/ipa-kdb/Makefile
+     daemons/ipa-sam/Makefile
+-    daemons/ipa-otpd/Makefile
+-    daemons/ipa-slapi-plugins/Makefile
+-    daemons/ipa-slapi-plugins/libotp/Makefile
+-    daemons/ipa-slapi-plugins/ipa-cldap/Makefile
+-    daemons/ipa-slapi-plugins/ipa-dns/Makefile
+-    daemons/ipa-slapi-plugins/ipa-enrollment/Makefile
+-    daemons/ipa-slapi-plugins/ipa-graceperiod/Makefile
+-    daemons/ipa-slapi-plugins/ipa-lockout/Makefile
+-    daemons/ipa-slapi-plugins/ipa-otp-counter/Makefile
+-    daemons/ipa-slapi-plugins/ipa-otp-lasttoken/Makefile
+-    daemons/ipa-slapi-plugins/ipa-pwd-extop/Makefile
+-    daemons/ipa-slapi-plugins/ipa-extdom-extop/Makefile
+-    daemons/ipa-slapi-plugins/ipa-winsync/Makefile
+-    daemons/ipa-slapi-plugins/ipa-version/Makefile
+-    daemons/ipa-slapi-plugins/ipa-uuid/Makefile
+-    daemons/ipa-slapi-plugins/ipa-modrdn/Makefile
+-    daemons/ipa-slapi-plugins/ipa-sidgen/Makefile
+-    daemons/ipa-slapi-plugins/ipa-range-check/Makefile
+-    daemons/ipa-slapi-plugins/topology/Makefile
+-    init/systemd/Makefile
+-    init/tmpfilesd/Makefile
+     init/Makefile
+     install/Makefile
+     install/certmonger/Makefile
