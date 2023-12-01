@@ -8110,3 +8110,4 @@ devel/rubygem-gettext_i18n_rails18|devel/rubygem-gettext_i18n_rails|2023-12-01|R
 sysutils/rubygem-chef17|sysutils/rubygem-chef|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef instead
 sysutils/rubygem-chef-bin17|sysutils/rubygem-chef-bin|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-bin instead
 sysutils/rubygem-chef-config17|sysutils/rubygem-chef-config|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-config instead
+sysutils/rubygem-chef-utils17|sysutils/rubygem-chef-utils|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-utils instead
