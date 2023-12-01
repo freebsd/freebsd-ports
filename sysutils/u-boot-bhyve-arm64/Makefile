@@ -9,4 +9,7 @@ UBOOT_PLIST=	u-boot.bin
 
 EXTRA_PATCHES=	${.CURDIR}/files/
 
+# Config doesn't enable TOOLS_MKEFICAPSULE
+NO_MKEFICAPSULE=
+
 .include "${MASTERDIR}/Makefile"
