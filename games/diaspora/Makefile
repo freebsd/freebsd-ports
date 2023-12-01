@@ -23,8 +23,6 @@ LICENSE_FILE_VOLITION=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKDIR_DIASPORA}/wxlauncher/GPLv2.txt
 LICENSE_PERMS_VOLITION=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-BROKEN_aarch64=		Fails to compile: cast from pointer to smaller type loses information
-
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png \
 		libogg.so:audio/libogg \
