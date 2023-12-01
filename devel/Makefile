@@ -6179,6 +6179,7 @@
     SUBDIR += rubygem-aws-sdk-core2
     SUBDIR += rubygem-aws-sdk-costandusagereportservice
     SUBDIR += rubygem-aws-sdk-costexplorer
+    SUBDIR += rubygem-aws-sdk-costoptimizationhub
     SUBDIR += rubygem-aws-sdk-customerprofiles
     SUBDIR += rubygem-aws-sdk-databasemigrationservice
     SUBDIR += rubygem-aws-sdk-dataexchange
