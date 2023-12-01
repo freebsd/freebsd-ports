@@ -1,0 +1,11 @@
+--- fdtdump.c.orig	2023-12-01 23:17:46 UTC
++++ fdtdump.c
+@@ -21,7 +21,7 @@
+ #define MAX_VERSION 17
+ 
+ #define ALIGN(x, a)	(((x) + ((a) - 1)) & ~((a) - 1))
+-#define PALIGN(p, a)	((void *)(ALIGN((unsigned long)(p), (a))))
++#define PALIGN(p, a)	((void *)(ALIGN((uintptr_t)(p), (a))))
+ #define GET_CELL(p)	(p += 4, *((const fdt32_t *)(p-4)))
+ 
+ static const char *tagname(uint32_t tag)
