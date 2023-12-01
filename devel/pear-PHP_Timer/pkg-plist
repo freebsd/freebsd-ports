@@ -1,0 +1,6 @@
+%%DATADIR%%/Duration.php
+%%DATADIR%%/ResourceUsageFormatter.php
+%%DATADIR%%/Timer.php
+%%DATADIR%%/exceptions/Exception.php
+%%DATADIR%%/exceptions/NoActiveTimerException.php
+%%DATADIR%%/exceptions/TimeSinceStartOfRequestNotAvailableException.php
