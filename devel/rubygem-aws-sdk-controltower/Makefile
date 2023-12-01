@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-controltower
-PORTVERSION=	1.12.0
+PORTVERSION=	1.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
