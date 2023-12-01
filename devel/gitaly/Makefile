@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	16.6.0
+DISTVERSION=	16.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -9,10 +9,6 @@ WWW=		https://gitlab.com/gitlab-org/gitaly
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-# Make sure the following patch is included:
-# https://gitlab.com/gitlab-org/gitaly/-/merge_requests/4108
-# it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
 MY_DEPENDS=	git>=2.42.0:devel/git
