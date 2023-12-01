@@ -1,3 +1,49 @@
+  <vuln vid="3b14b2b4-9014-11ee-98b3-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.6.0</ge><lt>16.6.1</lt></range>
+	<range><ge>16.5.0</ge><lt>16.5.3</lt></range>
+	<range><ge>8.13.0</ge><lt>16.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/11/30/security-release-gitlab-16-6-1-released/">
+	  <p>XSS and ReDoS in Markdown via Banzai pipeline of Jira</p>
+	  <p>Members with admin_group_member custom permission can add members with higher role</p>
+	  <p>Release Description visible in public projects despite release set as project members only through atom response</p>
+	  <p>Manipulate the repository content in the UI (CVE-2023-3401 bypass)</p>
+	  <p>External user can abuse policy bot to gain access to internal projects</p>
+	  <p>Client-side DOS via Mermaid Flowchart</p>
+	  <p>Developers can update pipeline schedules to use protected branches even if they don't have permission to merge</p>
+	  <p>Users can install Composer packages from public projects even when Package registry is turned off</p>
+	  <p>Unauthorized member can gain Allowed to push and merge access and affect integrity of protected branches</p>
+	  <p>Guest users can react (emojis) on confidential work items which they cant see in a project</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6033</cvename>
+      <cvename>CVE-2023-6396</cvename>
+      <cvename>CVE-2023-3949</cvename>
+      <cvename>CVE-2023-5226</cvename>
+      <cvename>CVE-2023-5995</cvename>
+      <cvename>CVE-2023-4912</cvename>
+      <cvename>CVE-2023-4317</cvename>
+      <cvename>CVE-2023-3964</cvename>
+      <cvename>CVE-2023-4658</cvename>
+      <cvename>CVE-2023-3443</cvename>
+      <url>https://about.gitlab.com/releases/2023/11/30/security-release-gitlab-16-6-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-11-30</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e1a508f-7167-47b0-b9fc-95f541933a86">
     <topic>electron26 -- multiple vulnerabilities</topic>
     <affects>
