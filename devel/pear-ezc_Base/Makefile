@@ -10,7 +10,9 @@ WWW=		https://ezcomponents.org/
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pear
+
+NO_ARCH=	yes
 PEAR_CHANNEL=	ezc
-USES=	pear
 
 .include <bsd.port.mk>
