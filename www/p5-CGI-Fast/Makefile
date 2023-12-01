@@ -18,8 +18,6 @@ RUN_DEPENDS=	p5-CGI>=4:www/p5-CGI \
 TEST_DEPENDS=	p5-CPAN-Changes>=0:devel/p5-CPAN-Changes \
 		p5-HTML-Parser>=0:www/p5-HTML-Parser
 
-CONFLICTS=	p5-CGI.pm-[1-3]*
-
 USES=		perl5
 USE_PERL5=	configure
 
