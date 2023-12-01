@@ -1216,7 +1216,6 @@
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-chef-bin
-    SUBDIR += rubygem-chef-bin17
     SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
     SUBDIR += rubygem-chef-config17
