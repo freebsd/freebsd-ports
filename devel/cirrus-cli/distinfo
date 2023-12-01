@@ -1,5 +1,5 @@
-TIMESTAMP = 1700561399
-SHA256 (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.107.2_GH0/go.mod) = ea3d3e7ca031458df4f8c7543b03f955d02eaa30c3e782378de62bcaf5a44938
-SIZE (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.107.2_GH0/go.mod) = 7510
-SHA256 (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.107.2_GH0/cirruslabs-cirrus-cli-v0.107.2_GH0.tar.gz) = 7ff326ab7a35e7ec66aa05a4bf6c6d101421ed3d2dae3bd32784b1d5ffd0e73c
-SIZE (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.107.2_GH0/cirruslabs-cirrus-cli-v0.107.2_GH0.tar.gz) = 724405
+TIMESTAMP = 1701426713
+SHA256 (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.108.0_GH0/go.mod) = 0244c3e48f8cf86e5f8eb5609790e993d6f1989d79bbf0f277a79503b663f17e
+SIZE (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.108.0_GH0/go.mod) = 7500
+SHA256 (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.108.0_GH0/cirruslabs-cirrus-cli-v0.108.0_GH0.tar.gz) = 139bb9b257df0f54602e63e6852ffef348e026f471b9cdb8de7da70d905ba92d
+SIZE (go/devel_cirrus-cli/cirruslabs-cirrus-cli-v0.108.0_GH0/cirruslabs-cirrus-cli-v0.108.0_GH0.tar.gz) = 726646
