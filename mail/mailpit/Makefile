@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.1
+DISTVERSION=	1.10.2
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -39,14 +39,14 @@ GH_TUPLE=	\
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.15.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.16.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:image:v0.14.0:golang_image/vendor/golang.org/x/image \
 		golang:mod:v0.14.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.18.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.14.0:golang_sys/vendor/golang.org/x/sys \
+		golang:net:v0.19.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
-		golang:time:v0.4.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.15.0:golang_tools/vendor/golang.org/x/tools \
+		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
+		golang:tools:v0.16.0:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:a660076da3fd:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.4.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
@@ -82,7 +82,7 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:c626e232ef6a5fb03b5be7338a2c8e1df2b34c41:cznic_libc/vendor/modernc.org/libc \
+		cznic:libc:c8e3674f78495f5e83d23b19312d945c0322bd51:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
