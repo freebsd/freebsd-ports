@@ -5,12 +5,10 @@ PKGNAMEPREFIX=	qt6-
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 library for integration of C++/QML with HTML/js clients
-WWW=		https://qt.io
 
 BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 
-USES=		cmake compiler:c++17-lang gl pkgconfig qt-dist:6
-USE_GL=		gl opengl
-USE_QT=		base declarative websockets
+USES=		cmake compiler:c++17-lang pkgconfig qt-dist:6
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

@@ -1084,6 +1084,7 @@ bin/qmlscene6
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquadpath_p.h
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshape_p.h
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshape_p_p.h
+%%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshapeabstractcurvenode_p.h
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshapecurvenode_p.h
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshapecurvenode_p_p.h
 %%QT_INCDIR%%/QtQuickShapes/%%FULLVER%%/QtQuickShapes/private/qquickshapecurverenderer_p.h

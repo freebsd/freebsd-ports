@@ -7,7 +7,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Accessibilty features for Qt6
 
 USES=		cmake compiler:c++17-lang gl pkgconfig qt-dist:6
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_QT=		base declarative multimedia
 
 OPTIONS_DEFINE=		ALSA

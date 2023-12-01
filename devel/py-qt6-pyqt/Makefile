@@ -1,5 +1,6 @@
 PORTNAME=	pyqt
 PORTVERSION=	${PYQT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -22,21 +23,11 @@ USE_LOCALE=	C.UTF-8
 USE_PYTHON=	concurrent flavors
 USE_PYQT=	pysip qtbuilder sip
 USE_QT=		base connectivity declarative imageformats multimedia \
-		positioning quick3d remoteobjects sensors serialport \
+		pdf positioning quick3d remoteobjects sensors serialport \
 		shadertools speech svg tools translations webchannel \
 		websockets
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64 || ${ARCH} == i386
-USE_QT+=	webengine
-PLIST_SUB+=	WEBENGINE=""
-.else
-SIP_ARGS+=	--disable QtPdf --disable QtPdfWidgets
-PLIST_SUB+=	WEBENGINE="@comment "
-.endif
 
 post-extract:
 	${RM} -r ${WRKSRC}/pyuic/uic/port_v2
@@ -51,4 +42,4 @@ post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt6 \
 		-name '*.so*' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

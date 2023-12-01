@@ -99,8 +99,11 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/QDesignerActionEditorInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerComponents
 %%QT_INCDIR%%/QtDesigner/QDesignerContainerExtension
+%%QT_INCDIR%%/QtDesigner/QDesignerCustomWidgetCollectionInterface
+%%QT_INCDIR%%/QtDesigner/QDesignerCustomWidgetInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerDnDItemInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerDynamicPropertySheetExtension
+%%QT_INCDIR%%/QtDesigner/QDesignerExportWidget
 %%QT_INCDIR%%/QtDesigner/QDesignerExtraInfoExtension
 %%QT_INCDIR%%/QtDesigner/QDesignerFormEditorInterface
 %%QT_INCDIR%%/QtDesigner/QDesignerFormEditorPluginInterface
@@ -157,6 +160,7 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/abstractwidgetdatabase.h
 %%QT_INCDIR%%/QtDesigner/abstractwidgetfactory.h
 %%QT_INCDIR%%/QtDesigner/container.h
+%%QT_INCDIR%%/QtDesigner/customwidget.h
 %%QT_INCDIR%%/QtDesigner/default_extensionfactory.h
 %%QT_INCDIR%%/QtDesigner/dynamicpropertysheet.h
 %%QT_INCDIR%%/QtDesigner/extension.h
@@ -168,6 +172,7 @@ bin/qtplugininfo6
 %%QT_INCDIR%%/QtDesigner/propertysheet.h
 %%QT_INCDIR%%/QtDesigner/qdesigner_components.h
 %%QT_INCDIR%%/QtDesigner/qdesigner_components_global.h
+%%QT_INCDIR%%/QtDesigner/qdesignerexportwidget.h
 %%QT_INCDIR%%/QtDesigner/qextensionmanager.h
 %%QT_INCDIR%%/QtDesigner/qtdesignerversion.h
 %%QT_INCDIR%%/QtDesigner/sdk_global.h

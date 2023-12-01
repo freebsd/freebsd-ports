@@ -1,4 +1,4 @@
---- src/core/api/configure.cmake.orig	2023-09-21 14:52:09 UTC
+--- src/core/api/configure.cmake.orig	2023-11-20 16:08:07 UTC
 +++ src/core/api/configure.cmake
 @@ -10,6 +10,7 @@ if(NOT QT_CONFIGURE_RUNNING)
      if(PkgConfig_FOUND)
@@ -20,16 +20,16 @@
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -163,7 +169,7 @@ qt_feature("webengine-vaapi" PRIVATE
-     LABEL "VA-API support"
+@@ -164,7 +170,7 @@ qt_feature("webengine-vaapi" PRIVATE
      PURPOSE "Enables support for VA-API hardware acceleration"
      AUTODETECT GBM_FOUND AND LIBVA_FOUND AND QT_FEATURE_vulkan
--    CONDITION LINUX
-+    CONDITION UNIX
+     # hardware accelerated encoding requires bundled libvpx
+-    CONDITION LINUX AND NOT QT_FEATURE_webengine_system_libvpx
++    CONDITION UNIX AND NOT QT_FEATURE_webengine_system_libvpx
  )
  # internal testing feature
  qt_feature("webengine-system-poppler" PRIVATE
-@@ -198,15 +204,19 @@ qt_configure_add_summary_entry(
+@@ -199,15 +205,19 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-vaapi"

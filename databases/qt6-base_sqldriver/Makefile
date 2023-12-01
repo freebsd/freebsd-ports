@@ -8,7 +8,6 @@ PKGNAMESUFFIX=	_sqldriver-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (${FLAVOR} sqldriver)
-WWW=		https://www.qt.io/
 
 FLAVORS=	sqlite mysql odbc psql
 FLAVOR?=	sqlite

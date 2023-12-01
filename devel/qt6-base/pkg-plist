@@ -385,6 +385,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QObjectList
 %%QT_INCDIR%%/QtCore/QOperatingSystemVersion
 %%QT_INCDIR%%/QtCore/QOperatingSystemVersionBase
+%%QT_INCDIR%%/QtCore/QOperatingSystemVersionUnexported
 %%QT_INCDIR%%/QtCore/QOverload
 %%QT_INCDIR%%/QtCore/QPair
 %%QT_INCDIR%%/QtCore/QParallelAnimationGroup
@@ -1034,6 +1035,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpaintengineex_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpainter_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpainterpath_p.h
+%%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpalette_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpathclipper_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpathsimplifier_p.h
 %%QT_INCDIR%%/QtGui/%%FULLVER%%/QtGui/private/qpdf_p.h
@@ -3098,10 +3100,6 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/common/msvc-based-version.conf
 %%QT_MKSPECDIR%%/common/msvc-desktop.conf
 %%QT_MKSPECDIR%%/common/msvc-version.conf
-%%QT_MKSPECDIR%%/common/nacl/g++-nacl32.conf
-%%QT_MKSPECDIR%%/common/nacl/g++-nacl64.conf
-%%QT_MKSPECDIR%%/common/nacl/nacl-base.conf
-%%QT_MKSPECDIR%%/common/nacl/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/posix/qplatformdefs.h
 %%QT_MKSPECDIR%%/common/qcc-base-qnx-aarch64le.conf
 %%QT_MKSPECDIR%%/common/qcc-base-qnx-armle-v7.conf
@@ -3251,7 +3249,6 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/features/designer_defines.prf
 %%QT_MKSPECDIR%%/features/device_config.prf
 %%QT_MKSPECDIR%%/features/egl.prf
-%%QT_MKSPECDIR%%/features/entrypoint.prf
 %%QT_MKSPECDIR%%/features/exceptions.prf
 %%QT_MKSPECDIR%%/features/exceptions_off.prf
 %%QT_MKSPECDIR%%/features/exclusive_builds.prf
@@ -3508,10 +3505,6 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/unsupported/macx-watchos-clang/Info.plist.lib
 %%QT_MKSPECDIR%%/unsupported/macx-watchos-clang/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/macx-watchos-clang/qplatformdefs.h
-%%QT_MKSPECDIR%%/unsupported/nacl-g++/qmake.conf
-%%QT_MKSPECDIR%%/unsupported/nacl-g++/qplatformdefs.h
-%%QT_MKSPECDIR%%/unsupported/nacl64-g++/qmake.conf
-%%QT_MKSPECDIR%%/unsupported/nacl64-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/qnx-X11-g++/qmake.conf
 %%QT_MKSPECDIR%%/unsupported/qnx-X11-g++/qplatformdefs.h
 %%QT_MKSPECDIR%%/unsupported/vxworks-ppc-dcc/qmake.conf

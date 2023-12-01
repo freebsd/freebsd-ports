@@ -30,8 +30,8 @@ include/PySide6/QtNetworkAuth/pyside6_qtnetworkauth_python.h
 include/PySide6/QtNfc/pyside6_qtnfc_python.h
 include/PySide6/QtOpenGL/pyside6_qtopengl_python.h
 include/PySide6/QtOpenGLWidgets/pyside6_qtopenglwidgets_python.h
-%%WEBENGINE%%include/PySide6/QtPdf/pyside6_qtpdf_python.h
-%%WEBENGINE%%include/PySide6/QtPdfWidgets/pyside6_qtpdfwidgets_python.h
+include/PySide6/QtPdf/pyside6_qtpdf_python.h
+include/PySide6/QtPdfWidgets/pyside6_qtpdfwidgets_python.h
 include/PySide6/QtPositioning/pyside6_qtpositioning_python.h
 include/PySide6/QtPrintSupport/pyside6_qtprintsupport_python.h
 include/PySide6/QtQml/pyside6_qtqml_python.h
@@ -184,10 +184,10 @@ lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGL.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGLWidgets.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtOpenGLWidgets.pyi
-%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.abi3.so
-%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.pyi
-%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.abi3.so
-%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtPdf.pyi
+%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.abi3.so
+%%PYTHON_SITELIBDIR%%/PySide6/QtPdfWidgets.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtPositioning.abi3.so
 %%PYTHON_SITELIBDIR%%/PySide6/QtPositioning.pyi
 %%PYTHON_SITELIBDIR%%/PySide6/QtPrintSupport.abi3.so
@@ -349,8 +349,8 @@ share/PySide6/typesystems/typesystem_opengl_modifications4_5.xml
 share/PySide6/typesystems/typesystem_opengl_modifications4_5_core.xml
 share/PySide6/typesystems/typesystem_opengl_modifications_va.xml
 share/PySide6/typesystems/typesystem_openglwidgets.xml
-%%WEBENGINE%%share/PySide6/typesystems/typesystem_pdf.xml
-%%WEBENGINE%%share/PySide6/typesystems/typesystem_pdfwidgets.xml
+share/PySide6/typesystems/typesystem_pdf.xml
+share/PySide6/typesystems/typesystem_pdfwidgets.xml
 share/PySide6/typesystems/typesystem_positioning.xml
 share/PySide6/typesystems/typesystem_printsupport.xml
 share/PySide6/typesystems/typesystem_printsupport_common.xml

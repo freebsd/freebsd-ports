@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/containers/checked_iterators.h.orig	2023-09-07 16:02:00 UTC
+--- src/3rdparty/chromium/base/containers/checked_iterators.h.orig	2023-11-20 16:08:07 UTC
 +++ src/3rdparty/chromium/base/containers/checked_iterators.h
-@@ -23,6 +23,9 @@ class CheckedContiguousIterator {
+@@ -24,6 +24,9 @@ class CheckedContiguousIterator {
    using pointer = T*;
    using reference = T&;
    using iterator_category = std::random_access_iterator_tag;
@@ -10,7 +10,7 @@
  
    // Required for converting constructor below.
    template <typename U>
-@@ -30,10 +33,8 @@ class CheckedContiguousIterator {
+@@ -31,10 +34,8 @@ class CheckedContiguousIterator {
  
    // Required for certain libc++ algorithm optimizations that are not available
    // for NaCl.
@@ -21,7 +21,7 @@
  
    constexpr CheckedContiguousIterator() = default;
  
-@@ -217,7 +218,6 @@ using CheckedContiguousConstIterator = CheckedContiguo
+@@ -224,7 +225,6 @@ using CheckedContiguousConstIterator = CheckedContiguo
  
  }  // namespace base
  
@@ -29,7 +29,7 @@
  // Specialize both std::__is_cpp17_contiguous_iterator and std::pointer_traits
  // for CCI in case we compile with libc++ outside of NaCl. The former is
  // required to enable certain algorithm optimizations (e.g. std::copy can be a
-@@ -235,13 +235,35 @@ using CheckedContiguousConstIterator = CheckedContiguo
+@@ -242,13 +242,35 @@ using CheckedContiguousConstIterator = CheckedContiguo
  // [1] https://wg21.link/iterator.concept.contiguous
  // [2] https://wg21.link/std.iterator.tags
  // [3] https://wg21.link/pointer.traits.optmem
@@ -66,7 +66,7 @@
  struct pointer_traits<::base::CheckedContiguousIterator<T>> {
    using pointer = ::base::CheckedContiguousIterator<T>;
    using element_type = T;
-@@ -260,6 +282,5 @@ struct pointer_traits<::base::CheckedContiguousIterato
+@@ -267,6 +289,5 @@ struct pointer_traits<::base::CheckedContiguousIterato
  };
  
  }  // namespace std

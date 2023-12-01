@@ -197,6 +197,7 @@
     SUBDIR += qpdf
     SUBDIR += qpdfview
     SUBDIR += qt5-printsupport
+    SUBDIR += qt6-pdf
     SUBDIR += rlpr
     SUBDIR += rtf2latex2e
     SUBDIR += rubygem-afm

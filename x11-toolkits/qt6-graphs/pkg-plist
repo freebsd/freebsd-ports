@@ -159,6 +159,8 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake
 %%QT_QMLDIR%%/QtGraphs/libgraphsplugin.so
 %%QT_QMLDIR%%/QtGraphs/plugins.qmltypes
 %%QT_QMLDIR%%/QtGraphs/qml/designer/Bars3DSpecifics.qml
+%%QT_QMLDIR%%/QtGraphs/qml/designer/GraphsCameraSection.qml
+%%QT_QMLDIR%%/QtGraphs/qml/designer/GraphsSection.qml
 %%QT_QMLDIR%%/QtGraphs/qml/designer/Scatter3DSpecifics.qml
 %%QT_QMLDIR%%/QtGraphs/qml/designer/Surface3DSpecifics.qml
 %%QT_QMLDIR%%/QtGraphs/qml/designer/default/Bars3D.qml

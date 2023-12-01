@@ -18,7 +18,7 @@
      QDateTime result;
      tm lTime;
  
-+#ifdef LIBRESSL_VERSION_NUMBER
++#if defined(LIBRESSL_VERSION_NUMBER) && (LIBRESSL_VERSION_NUMBER < 0x3060000fL)
 +    const char *data;
 +    size_t len;
 +    int type;

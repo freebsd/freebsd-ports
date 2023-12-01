@@ -8,6 +8,7 @@ DIST_SUBDIR=	KDE/Qt/${QT6_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 examples source code
+WWW=		https://www.qt.io/
 
 NO_ARCH=	yes
 NO_BUILD=	yes
