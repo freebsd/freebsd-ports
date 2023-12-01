@@ -87,6 +87,7 @@ bin/vns
 %%SITE_PERL%%/Venus/Schema.pm
 %%SITE_PERL%%/Venus/Sealed.pm
 %%SITE_PERL%%/Venus/Search.pm
+%%SITE_PERL%%/Venus/Set.pm
 %%SITE_PERL%%/Venus/Space.pm
 %%SITE_PERL%%/Venus/String.pm
 %%SITE_PERL%%/Venus/Task.pm
@@ -189,6 +190,7 @@ bin/vns
 %%PERL5_MAN3%%/Venus::Schema.3.gz
 %%PERL5_MAN3%%/Venus::Sealed.3.gz
 %%PERL5_MAN3%%/Venus::Search.3.gz
+%%PERL5_MAN3%%/Venus::Set.3.gz
 %%PERL5_MAN3%%/Venus::Space.3.gz
 %%PERL5_MAN3%%/Venus::String.3.gz
 %%PERL5_MAN3%%/Venus::Task.3.gz
