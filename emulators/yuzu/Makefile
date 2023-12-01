@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20231129
+PORTVERSION=	s20231201
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -10,7 +10,8 @@ DISTFILES=	${PORTNAME}-s20230424/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	df96caec793f.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/12227
+PATCHFILES+=	270d290e65d1.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/12259
+PATCHFILES+=	01d3e250ab41.patch:-p1 # https://github.com/yuzu-emu/yuzu/pull/12259
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Nintendo Switch emulator/debugger
@@ -49,17 +50,18 @@ qt6_OPTIONS_EXCLUDE=	QT5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	9dc9aaf4af
+GH_TAGNAME=	e9a43bae6f
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yuzu-emu:sirit:ab75463:sirit/externals/sirit \
 		GPUOpen-LibrariesAndSDKs:VulkanMemoryAllocator:v3.0.1-114-g2f382df:VulkanMemoryAllocator/externals/VulkanMemoryAllocator \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-201-gc214f6f:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
-		MerryMage:dynarmic:6.5.0-11-g0df09e2f:dynarmic/externals/dynarmic \
+		merryhime:dynarmic:6.5.0-11-g0df09e2f:dynarmic/externals/dynarmic \
+		merryhime:oaknut:1.2.1-18-g918bd94:oaknut/externals/oaknut \
 		arun11299:cpp-jwt:v1.4-18-g10ef573:cpp_jwt/externals/cpp-jwt \
 		arsenm:sanitizers-cmake:aab6948:sanitizers_cmake/externals/cubeb/cmake/sanitizers-cmake \
 		eggert:tz:2022g-11-g16ce126a:tz/externals/nx_tzdb/tzdb_to_nx/externals/tz/tz \
 		kinetiknz:cubeb:cubeb-0.2-1452-g48689ae:cubeb/externals/cubeb \
-		lat9nq:tzdb_to_nx:221202:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
+		lat9nq:tzdb_to_nx:221202-4-gf668009:tzdb_to_nx/externals/nx_tzdb/tzdb_to_nx \
 		yhirose:cpp-httplib:v0.14.1:cpp_httplib/externals/cpp-httplib
 
 USES=		cmake:testing elfctl localbase:ldflags pkgconfig sdl ssl
