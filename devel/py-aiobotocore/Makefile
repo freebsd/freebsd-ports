@@ -1,5 +1,5 @@
 PORTNAME=	aiobotocore
-PORTVERSION=	2.7.0
+PORTVERSION=	2.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.4<4.0.0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aioitertools>=0.5.1<1.0.0:devel/py-aioitertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}botocore>=1.31.16:devel/py-botocore@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}botocore>=1.32.4:devel/py-botocore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wrapt>=1.10.10<2.0.0:devel/py-wrapt@${PY_FLAVOR}
 
 USES=		python
