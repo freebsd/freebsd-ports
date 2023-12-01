@@ -3,3 +3,5 @@ SHA256 (KhronosGroup-Vulkan-ExtensionLayer-v1.3.271_GH0.tar.gz) = bb4acee7d7aba4
 SIZE (KhronosGroup-Vulkan-ExtensionLayer-v1.3.271_GH0.tar.gz) = 1109059
 SHA256 (KhronosGroup-Vulkan-Utility-Libraries-v1.3.271_GH0.tar.gz) = 81d27b680db1c58a1fbea2918819b4aa62e0e601175bc9e444423d7ce46e5935
 SIZE (KhronosGroup-Vulkan-Utility-Libraries-v1.3.271_GH0.tar.gz) = 166322
+SHA256 (KhronosGroup-Vulkan-Headers-v1.3.271_GH0.tar.gz) = 694223d738729b6d660129efbc876522921e54965f292cf69ec2f15565c6b3dc
+SIZE (KhronosGroup-Vulkan-Headers-v1.3.271_GH0.tar.gz) = 2162105
