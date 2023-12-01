@@ -8112,3 +8112,4 @@ sysutils/rubygem-chef-bin17|sysutils/rubygem-chef-bin|2023-12-01|Remove obsolete
 sysutils/rubygem-chef-config17|sysutils/rubygem-chef-config|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-config instead
 sysutils/rubygem-chef-utils17|sysutils/rubygem-chef-utils|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-utils instead
 sysutils/rubygem-ohai17|sysutils/rubygem-ohai|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-ohai instead
+net-im/scudcloud||2023-12-01|Has expired: Project was abandoned in 2018

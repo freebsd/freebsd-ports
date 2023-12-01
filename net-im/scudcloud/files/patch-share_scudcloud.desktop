@@ -1,8 +1,0 @@
---- share/scudcloud.desktop.orig	2018-01-19 13:45:06 UTC
-+++ share/scudcloud.desktop
-@@ -9,4 +9,4 @@ Comment=ScudCloud is an open-source clie
- Keywords=slack;chat;instant-messaging;collaboration;
- Exec=scudcloud
- StartupWMClass=scudcloud
--Icon=/usr/share/pixmaps/scudcloud.png
-+Icon=%%LOCALBASE%%/share/pixmaps/scudcloud.png

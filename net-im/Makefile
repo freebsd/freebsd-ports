@@ -134,7 +134,6 @@
     SUBDIR += ruqola
     SUBDIR += sayaka
     SUBDIR += scli
-    SUBDIR += scudcloud
     SUBDIR += sendxmpp
     SUBDIR += signal-cli
     SUBDIR += signal-desktop
