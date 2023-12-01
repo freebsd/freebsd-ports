@@ -5,7 +5,7 @@ CATEGORIES=	graphics multimedia
 PKGNAMESUFFIX=	v1
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Complete color management solution v1
+COMMENT=	Complete color management solution (legacy version)
 WWW=		https://opencolorio.org/
 
 LICENSE=	BSD3CLAUSE
@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		alias cmake compiler:c++11-lang localbase:ldflags pkgconfig \
+USES=		alias cmake compiler:c++11-lang pkgconfig \
 		python:build shebangfix
 
 USE_GITHUB=	yes
@@ -42,16 +42,19 @@ CMAKE_ON+=	OCIO_USE_SSE
 CMAKE_OFF+=	OCIO_USE_SSE
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's| : std::binary_function.*||' \
+		${WRKSRC}/src/core/PathUtils.h
+
 post-install:
-	${RM} -R ${STAGEDIR}/${PREFIX}/share/ocio
-	# add v1 suffix
-	${REINPLACE_CMD} -e 's|<OpenColorIO/|<OpenColorIOv1/|g' \
-		${STAGEDIR}/${PREFIX}/include/OpenColorIOv1/*
-	${FIND} ${STAGEDIR}${PREFIX}/include/OpenColorIOv1 -name '*.bak' -delete
-	@(cd ${STAGEDIR}/${PREFIX} && ${MKDIR} lib/cmake/Modules && \
-		${MV} OpenColorIOv1Config.cmake lib/cmake/Modules/ && \
-		${MV} cmake/OpenColorIO-release.cmake lib/cmake/Modules/OpenColorIOv1-release.cmake && \
-		${MV} cmake/OpenColorIO.cmake lib/cmake/Modules/OpenColorIOv1.cmake && \
+	@${REINPLACE_CMD} -e 's|e <OpenColorIO|&v1|' \
+		${STAGEDIR}${PREFIX}/include/OpenColorIOv1/*[Os].h
+	@(cd ${STAGEDIR}${PREFIX} && ${MKDIR} lib/cmake/Modules && \
+		${MV} OpenColorIOv1Config.cmake lib/cmake/Modules && \
+		${MV} cmake/OpenColorIO-release.cmake \
+			lib/cmake/Modules/OpenColorIOv1-release.cmake && \
+		${MV} cmake/OpenColorIO.cmake \
+			lib/cmake/Modules/OpenColorIOv1.cmake && \
 		${RMDIR} cmake)
 
 .include <bsd.port.mk>
