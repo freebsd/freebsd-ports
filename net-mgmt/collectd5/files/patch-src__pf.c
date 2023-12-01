@@ -4,10 +4,10 @@ Date:   Tue Nov 7 03:35:47 2023 -0700
 
     FreeBSD's PF has a new interface so leverage libpfctl to access it so the right interface is used depending on the version
 
-diff --git a/src/pf.c b/src/pf.c
+diff --git src/pf.c src/pf.c
 index 9681d366..eef9540d 100644
---- a/src/pf.c
-+++ b/src/pf.c
+--- src/pf.c
++++ src/pf.c
 @@ -35,6 +35,9 @@
  #endif
  
