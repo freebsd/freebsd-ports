@@ -1,0 +1,15 @@
+%%DATADIR%%/CLI/Application.php
+%%DATADIR%%/CLI/Arguments.php
+%%DATADIR%%/CLI/ArgumentsBuilder.php
+%%DATADIR%%/CodeClone.php
+%%DATADIR%%/CodeCloneFile.php
+%%DATADIR%%/CodeCloneMap.php
+%%DATADIR%%/CodeCloneMapIterator.php
+%%DATADIR%%/Detector/Detector.php
+%%DATADIR%%/Detector/Strategy/AbstractStrategy.php
+%%DATADIR%%/Detector/Strategy/DefaultStrategy.php
+%%DATADIR%%/Exceptions/ArgumentsBuilderException.php
+%%DATADIR%%/Exceptions/Exception.php
+%%DATADIR%%/Log/AbstractXmlLogger.php
+%%DATADIR%%/Log/PMD.php
+%%DATADIR%%/Log/Text.php
