@@ -6227,6 +6227,7 @@
     SUBDIR += rubygem-aws-sdk-forecastqueryservice
     SUBDIR += rubygem-aws-sdk-forecastservice
     SUBDIR += rubygem-aws-sdk-frauddetector
+    SUBDIR += rubygem-aws-sdk-freetier
     SUBDIR += rubygem-aws-sdk-fsx
     SUBDIR += rubygem-aws-sdk-gamelift
     SUBDIR += rubygem-aws-sdk-gamesparks
