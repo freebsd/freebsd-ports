@@ -1,6 +1,5 @@
 PORTNAME=	lazysearch
-PORTVERSION=	3.6.5
-PORTREVISION=	1
+PORTVERSION=	3.6.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.hickinbottom.com/sc-plugins/
 PKGNAMEPREFIX=	logitechmediaserver-
@@ -9,7 +8,7 @@ DIST_SUBDIR=	logitechmediaserver
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logitech Media Server plugin for performing lazy searches
-WWW=		http://www.hickinbottom.com/lazysearch/
+WWW=		https://github.com/hickinbottoms/lazysearch
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LazySearch2/LICENSE
@@ -17,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LazySearch2/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/${SLIMDIR}/slimserver.pl:audio/logitechmediaserver
 
 USES=		zip
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 SLIMDIR?=	share/logitechmediaserver
 PLIST_SUB+=	SLIMDIR=${SLIMDIR}
