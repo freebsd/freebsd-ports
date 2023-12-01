@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.25.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -235,6 +235,10 @@ IGNORE=		required at least GSSAPI_HEIMDAL or \
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
+.endif
+
+.if ${PORT_OPTIONS:MPASSENGER}
+CONFIGURE_ENV+=	EXTRA_PRE_CXXFLAGS="-std=c++14"
 .endif
 
 # Fix build failure on clang >= 12
