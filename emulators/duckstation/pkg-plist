@@ -53,6 +53,7 @@ share/pixmaps/duckstation.png
 %%DATADIR%%/resources/sounds/achievements/lbsubmit.wav
 %%DATADIR%%/resources/sounds/achievements/message.wav
 %%DATADIR%%/resources/sounds/achievements/unlock.wav
+%%DATADIR%%/resources/thirdparty.html
 %%DATADIR%%/translations/duckstation-qt_de.qm
 %%DATADIR%%/translations/duckstation-qt_en.qm
 %%DATADIR%%/translations/duckstation-qt_es-ES.qm

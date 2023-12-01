@@ -1,5 +1,5 @@
 PORTNAME=	duckstation
-PORTVERSION=	20231016
+PORTVERSION=	20231124
 DISTVERSIONPREFIX=	v
 CATEGORIES=	emulators
 
@@ -8,6 +8,9 @@ COMMENT=	Free and open-source PlayStation emulator
 WWW=	https://www.duckstation.org
 
 LICENSE=	GPLv3
+
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	src/common/fastjmp.cpp:186:2: error: Unknown platform
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libbacktrace.so:devel/libbacktrace \
@@ -23,8 +26,8 @@ USES=		cmake compiler:c++20-lang gl pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stenzek
-# See: https://github.com/stenzek/duckstation/releases/tag/latest
-GH_TAGNAME=	cecae91
+# See: https://github.com/stenzek/duckstation/commits/latest
+GH_TAGNAME=	2739794
 
 USE_GL=		egl
 USE_SDL=	sdl2
