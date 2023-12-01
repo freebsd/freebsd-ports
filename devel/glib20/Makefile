@@ -14,6 +14,8 @@ WWW=		https://www.gtk.org/
 
 LICENSE=	LGPL20
 
+BROKEN_purecap=	various patches in-flight
+
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libpcre2-8.so:devel/pcre2
 
