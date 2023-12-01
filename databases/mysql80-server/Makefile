@@ -203,6 +203,11 @@ post-extract:
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-scripts_CMakeLists.txt
 .endif
 
+# XXX MBi alignment issue
+.if ${ARCH} == i386
+EXTRA_PATCHES+=	files/extra-patch-boost-boost_1_77_0-boost-move-detail-type_traits.hpp
+.endif
+
 .if !defined(CLIENT_ONLY)
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
