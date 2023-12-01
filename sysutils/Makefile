@@ -1218,7 +1218,6 @@
     SUBDIR += rubygem-chef-bin
     SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
-    SUBDIR += rubygem-chef-config17
     SUBDIR += rubygem-chef-telemetry
     SUBDIR += rubygem-chef-utils
     SUBDIR += rubygem-chef-utils17

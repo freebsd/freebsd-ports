@@ -8109,3 +8109,4 @@ devel/rubygem-bootsnap116|devel/rubygem-bootsnap|2023-12-01|Remove obsoleted por
 devel/rubygem-gettext_i18n_rails18|devel/rubygem-gettext_i18n_rails|2023-12-01|Remove obsoleted port. Use devel/rubygem-gettext_i18n_rails instead
 sysutils/rubygem-chef17|sysutils/rubygem-chef|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef instead
 sysutils/rubygem-chef-bin17|sysutils/rubygem-chef-bin|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-bin instead
+sysutils/rubygem-chef-config17|sysutils/rubygem-chef-config|2023-12-01|Remove obsoleted port. Use sysutils/rubygem-chef-config instead
