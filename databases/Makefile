@@ -1075,7 +1075,6 @@
     SUBDIR += webdis
     SUBDIR += wfb2sql
     SUBDIR += xapian-bindings
-    SUBDIR += xapian-bindings12
     SUBDIR += xapian-core
     SUBDIR += xapian-core12
     SUBDIR += xls2txt

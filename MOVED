@@ -8102,3 +8102,4 @@ textproc/rubygem-rouge41|textproc/rubygem-rouge|2023-11-29|Use textproc/rubygem-
 devel/rubygem-aws-sdk-s31121|devel/rubygem-aws-sdk-s3|2023-11-29|Use devel/rubygem-aws-sdk-s3 instead
 games/py-mnemosyne|games/py-mnemosyne-proj|2023-11-30|Rename to match PyPI name
 databases/p5-Search-Xapian12|databases/p5-Search-Xapian|2023-12-01|Remove obsoleted port. Use databases/p5-Search-Xapian instead
+databases/xapian-bindings12|databases/xapian-bindings|2023-12-01|Remove obsoleted port. Use databases/xapian-bindings instead
