@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.2.10<3.5:www/py-asgiref@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}brotli>=1.0<1.1:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2019.9.11:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0<8.1:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Flask>=1.1.1<2.1:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flask>=1.1.1<2.1:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h11>=0.11<0.13:net/py-h11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=4.0<5:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hyperframe>=6.0<7:www/py-hyperframe@${PY_FLAVOR} \

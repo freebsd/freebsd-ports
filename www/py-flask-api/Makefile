@@ -11,7 +11,7 @@ WWW=		https://flask-api.github.io/flask-api/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=2.0:www/py-flask@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flask>=2.0:www/py-flask@${PY_FLAVOR}
 
 USES=		python
 USE_GITHUB=	yes
