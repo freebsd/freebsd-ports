@@ -9,5 +9,7 @@ WWW=		http://pear.symfony.com/
 
 PEAR_CHANNEL_HOST=	pear.symfony.com
 
+NO_ARCH=	yes
+
 .include "${.CURDIR}/../../devel/pear/bsd.pear.channel.mk"
 .include <bsd.port.mk>
