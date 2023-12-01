@@ -1,0 +1,11 @@
+--- ruby-lsp-rails.gemspec.orig	2023-12-01 09:46:37 UTC
++++ ruby-lsp-rails.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<rails>.freeze, [">= 6.0"])
+-  s.add_runtime_dependency(%q<ruby-lsp>.freeze, [">= 0.12.0", "< 0.13.0"])
++  s.add_runtime_dependency(%q<ruby-lsp>.freeze, [">= 0.12.0", "< 0.14.0"])
+   s.add_runtime_dependency(%q<sorbet-runtime>.freeze, [">= 0.5.9897"])
+ end
+ 
