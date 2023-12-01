@@ -8106,3 +8106,4 @@ databases/xapian-bindings12|databases/xapian-bindings|2023-12-01|Remove obsolete
 databases/xapian-core12|databases/xapian-core|2023-12-01|Remove obsoleted port. Use databases/xapian-core instead
 www/xapian-omega12|www/xapian-omega|2023-12-01|Remove obsoleted port. Use www/xapian-omega instead
 devel/rubygem-bootsnap116|devel/rubygem-bootsnap|2023-12-01|Remove obsoleted port. Use devel/rubygem-bootsnap instead
+devel/rubygem-gettext_i18n_rails18|devel/rubygem-gettext_i18n_rails|2023-12-01|Remove obsoleted port. Use devel/rubygem-gettext_i18n_rails instead
