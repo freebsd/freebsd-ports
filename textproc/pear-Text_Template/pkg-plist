@@ -1,0 +1,4 @@
+%%DATADIR%%/Template.php
+%%DATADIR%%/exceptions/Exception.php
+%%DATADIR%%/exceptions/InvalidArgumentException.php
+%%DATADIR%%/exceptions/RuntimeException.php
