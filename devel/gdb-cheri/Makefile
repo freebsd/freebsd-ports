@@ -5,14 +5,14 @@
 # [1] https://github.com/CTSRD-CHERI/cheribuild
 
 PORTNAME=	gdb-cheri
-PORTVERSION=	12.1
+PORTVERSION=	${GDB_RELEASE}
 PORTREVISION=	0
 CATEGORIES=	devel
 
 USE_GITHUB=yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	gdb
-GH_TAGNAME=	ddd1b56a1dcec42f549b140dfeee394c93599072
+GH_TAGNAME=	${GDB_COMMIT}
 
 MAINTAINER=	konrad.witaszczyk@cl.cam.ac.uk
 COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
@@ -79,6 +79,8 @@ DEBUG_VARS=	STRIP=
 
 PLIST_SUB=		VER=${VER}
 OPTIONS_SUB=	yes
+
+.include "${.CURDIR}/../gdb-cheri/Makefile.snapshot"
 
 .include <bsd.port.pre.mk>
 
