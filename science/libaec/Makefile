@@ -17,6 +17,4 @@ USES=		cmake
 CMAKE_OFF=	AEC_FUZZING
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	hdf-szip
-
 .include <bsd.port.mk>
