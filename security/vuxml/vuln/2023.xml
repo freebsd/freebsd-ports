@@ -278,6 +278,10 @@
        <name>qt5-webengine</name>
        <range><lt>5.15.16.p5</lt></range>
       </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -823,6 +827,10 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>119.0.6045.105</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
       </package>
     </affects>
     <description>
@@ -1644,6 +1652,10 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
        <name>ungoogled-chromium</name>
        <range><lt>118.0.5993.70</lt></range>
       </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -2119,6 +2131,10 @@ Reported by Niccolo Belli and WIPocket (Github #400, #417).
       <package>
        <name>ungoogled-chromium</name>
        <range><lt>117.0.5938.132</lt></range>
+      </package>
+      <package>
+       <name>qt6-webengine</name>
+       <range><lt>6.6.1</lt></range>
       </package>
     </affects>
     <description>
