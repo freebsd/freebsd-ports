@@ -1345,6 +1345,7 @@
 %%DATADIR%%/utilities/templatetags/buttons.py
 %%DATADIR%%/utilities/templatetags/form_helpers.py
 %%DATADIR%%/utilities/templatetags/helpers.py
+%%DATADIR%%/utilities/templatetags/mptt.py
 %%DATADIR%%/utilities/templatetags/navigation.py
 %%DATADIR%%/utilities/templatetags/perms.py
 %%DATADIR%%/utilities/templatetags/tabs.py

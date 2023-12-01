@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.5
+DISTVERSION=	3.6.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -24,18 +24,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj42-djangorestframework
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.6<4.3:www/py-django42@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.0<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-cors-headers>=4.3.1<5:www/py-dj42-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-debug-toolbar>=4.2.0<5:www/py-dj42-django-debug-toolbar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.3<24:www/py-dj42-django-filter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-filter>=23.4<24:www/py-dj42-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj42-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-mptt>=0.14.0<0.15:www/py-dj42-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-prometheus>=2.3.1<2.4:www/py-dj42-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-redis>=5.4.0<6:www/py-dj42-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-rich>=1.8.0<2:www/py-dj42-django-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-rq>=2.8.1<2.9:devel/py-dj42-django-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-rq>=2.9.0<2.10:devel/py-dj42-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-tables2>=2.6<2.7:www/py-dj42-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-django-taggit>=4.0.0<5:www/py-dj42-django-taggit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj42-django-timezone-field>=6.0.1<7:www/py-dj42-django-timezone-field@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj42-django-timezone-field>=6.1.0<7:www/py-dj42-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-djangorestframework>=3.14.0<3.15.0:www/py-dj42-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular>=0.26.5<1:www/py-dj42-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj42-drf-spectacular-sidecar>=2023.10.1:www/py-dj42-drf-spectacular-sidecar@${PY_FLAVOR} \
@@ -46,7 +46,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=4.2.6<4.3:www/py-django42@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.4:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.4.6<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.23.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.24.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python-legacy>0:textproc/py-mkdocstrings-python-legacy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.9.0<1:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=10.0.1:graphics/py-pillow@${PY_FLAVOR} \
