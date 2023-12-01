@@ -1,96 +1,40 @@
-# This port is based on the devel/gdb port and cheribuild [1].
-#
-# At the moment, it provides the minimal set of features to build an aarch64 package.
-#
-# [1] https://github.com/CTSRD-CHERI/cheribuild
-
 PORTNAME=	gdb-cheri
 PORTVERSION=	${GDB_RELEASE}
 PORTREVISION=	0
 CATEGORIES=	devel
 
-USE_GITHUB=yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	gdb
 GH_TAGNAME=	${GDB_COMMIT}
 
 MAINTAINER=	konrad.witaszczyk@cl.cam.ac.uk
 COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
+WWW=		https://github.com/CTSRD-CHERI/gdb
 
 NOT_FOR_ABIS=	purecap
 NOT_FOR_ABIS_REASON_purecap=is not adapted for CheriABI yet
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING3
 DATADIR=	${PREFIX}/share/gdb
 
-USES=		compiler:c++11-lang gmake libtool makeinfo pkgconfig tar:xz
+# devel/readline defines rl_completer_word_break_characters as const char *.
+OPTIONS_DEFAULT=BUNDLED_READLINE
+OPTIONS_EXCLUDE=PYTHON PORT_READLINE
 
-LIB_DEPENDS=	libgmp.so:math/gmp
+# Use {all,install}-gdb instead of the default all and install targets.
+# gold, ld, libstdcxx and gas cannot be built at the moment.
+ALL_TARGET=	all-gdb
+INSTALL_TARGET=	install-gdb
 
-VER=		${PORTVERSION:S/.//g}
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CONFIGURED_M4=m4 \
-		CONFIGURED_BISON=byacc \
-		gl_cv_func_gettimeofday_clobber=no \
-		lt_cv_sys_max_cmd_len=262144 \
-		am_cv_CC_dependencies_compiler_type=gcc3
-CONFIGURE_ARGS+=--program-suffix=${VER} \
-		--disable-gold \
-		--disable-ld \
-		--disable-libstdcxx \
-		--disable-nls \
-		--disable-sim \
-		--disable-werror \
-		--enable-64-bit-bfd \
-		--enable-targets=all \
-		--enable-tui \
-		--with-gdb-datadir=${PREFIX}/share/gdb \
-		--with-guile=no \
-		--with-libgmp-type=static \
-		--with-separate-debug-dir=/usr/lib/debug \
-		--without-expat \
-		--without-gnu-as \
-		--without-libunwind-ia64 \
-		--without-python
-CONFIGURE_OUTSOURCE=	yes
+# CTSRD-CHERI/gdb does not include gdb.1.
+GDB1_SRC=	${FILESDIR}/gdb.1
+# CTSRD-CHERI/gdb does include kgdb.1.
+KGDB1_SRC=	${WRKSRC}/gdb/doc/kgdb.1
 
-CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
-CFLAGS+=	-fcommon \
-		-fno-strict-aliasing \
-		-static \
-		-DRL_NO_COMPAT \
-		-DLIBICONV_PLUG
+.include "${.CURDIR}/Makefile.snapshot"
 
-LDFLAGS+=	--static \
-		-lelf \
-		-lmd
-
-EXCLUDE=	dejagnu expect sim texinfo intl
-EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
-
-OPTIONS_DEFINE=	DEBUG GDB_LINK
-OPTIONS_DEFAULT=GDB_LINK
-
-GDB_LINK_DESC=		Create ${PREFIX}/bin/gdb symlink
-
-DEBUG_CFLAGS=		-g
-DEBUG_VARS=	STRIP=
-
-PLIST_SUB=		VER=${VER}
-OPTIONS_SUB=	yes
-
-.include "${.CURDIR}/../gdb-cheri/Makefile.snapshot"
-
-.include <bsd.port.pre.mk>
-
-do-install:
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/gdb \
-		${STAGEDIR}${PREFIX}/bin/gdb${VER}
-	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
-
-do-install-GDB_LINK-on:
-	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdb
-
-.include <bsd.port.post.mk>
+SLAVE_PORT=	${PORTNAME}
+GDBDIR=		${.CURDIR}/../gdb
+DESCR=		${GDBDIR}/pkg-descr
+PLIST=		${GDBDIR}/pkg-plist
+.include "${GDBDIR}/Makefile"
