@@ -266,27 +266,27 @@ lib/libns-9.19.3-dev.so
 @comment man/man1/dnssec-settime.1.gz
 @comment man/man1/dnssec-signzone.1.gz
 @comment man/man1/dnssec-verify.1.gz
-%%MANPAGES%%%%DNSTAP%%man/man1/dnstap-read.1.gz
+%%DNSTAP%%man/man1/dnstap-read.1.gz
 @comment man/man1/host.1.gz
 @comment man/man1/mdig.1.gz
-%%MANPAGES%%man/man1/named-checkconf.1.gz
-%%MANPAGES%%man/man1/named-checkzone.1.gz
-%%MANPAGES%%man/man1/named-compilezone.1.gz
-%%MANPAGES%%man/man1/named-journalprint.1.gz
-%%MANPAGES%%%%LMDB%%man/man1/named-nzd2nzf.1.gz
+man/man1/named-checkconf.1.gz
+man/man1/named-checkzone.1.gz
+man/man1/named-compilezone.1.gz
+man/man1/named-journalprint.1.gz
+%%LMDB%%man/man1/named-nzd2nzf.1.gz
 @comment man/man1/named-rrchecker.1.gz
 @comment man/man1/nsec3hash.1.gz
 @comment man/man1/nslookup.1.gz
 @comment man/man1/nsupdate.1.gz
-%%MANPAGES%%man/man5/named.conf.5.gz
-%%MANPAGES%%man/man5/rndc.conf.5.gz
-%%MANPAGES%%man/man8/ddns-confgen.8.gz
-%%MANPAGES%%man/man8/filter-a.8.gz
-%%MANPAGES%%man/man8/filter-aaaa.8.gz
-%%MANPAGES%%man/man8/named.8.gz
-%%MANPAGES%%man/man8/rndc-confgen.8.gz
-%%MANPAGES%%man/man8/rndc.8.gz
-%%MANPAGES%%man/man8/tsig-keygen.8.gz
+man/man5/named.conf.5.gz
+man/man5/rndc.conf.5.gz
+man/man8/ddns-confgen.8.gz
+man/man8/filter-a.8.gz
+man/man8/filter-aaaa.8.gz
+man/man8/named.8.gz
+man/man8/rndc-confgen.8.gz
+man/man8/rndc.8.gz
+man/man8/tsig-keygen.8.gz
 sbin/ddns-confgen
 sbin/named
 sbin/rndc
