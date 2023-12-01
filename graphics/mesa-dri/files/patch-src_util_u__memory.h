@@ -1,7 +1,7 @@
---- src/util/u_memory.h.orig	2023-09-06 23:29:52 UTC
+--- src/util/u_memory.h.orig	2023-11-29 19:30:57 UTC
 +++ src/util/u_memory.h
-@@ -90,7 +90,7 @@ mem_dup(const void *src, size_t size)
- #define Offset(TYPE, MEMBER) ((uintptr_t)&(((TYPE *)NULL)->MEMBER))
+@@ -84,7 +84,7 @@ mem_dup(const void *src, size_t size)
+ }
  
  /* TODO: this could be different on non-x86 architectures. */
 -#define CACHE_LINE_SIZE 64
@@ -9,7 +9,7 @@
  
  /**
   * Declare a variable on its own cache line.
-@@ -107,12 +107,12 @@ mem_dup(const void *src, size_t size)
+@@ -101,12 +101,12 @@ mem_dup(const void *src, size_t size)
   *       aligned, but we only want to align the field.
   */
  #define EXCLUSIVE_CACHELINE(decl) \

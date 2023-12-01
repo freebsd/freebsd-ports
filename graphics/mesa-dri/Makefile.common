@@ -12,7 +12,7 @@
 MESAVERSION=	${MESABASEVERSION}${MESASUBVERSION:C/^(.)/.\1/}
 MESADISTVERSION=${MESABASEVERSION}${MESASUBVERSION:C/^(.)/-\1/}
 
-MESABASEVERSION=	23.1.8
+MESABASEVERSION=	23.3.0
 # if there is a subversion, don't include the '-' between 7.11-rc2.
 MESASUBVERSION=
 
@@ -24,7 +24,6 @@ MASTER_SITES=	https://mesa.freedesktop.org/archive/ \
 DISTFILES=	mesa-${MESADISTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	https://gitlab.freedesktop.org/mesa/mesa/-/commit/
-PATCHFILES+=	9ba416cdc67073cdda9a73fe9d37304b82bdd526.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8671
 PATCHFILES+=	4a253aae7ca437201d2a31d2a11a1a5434fe41f1.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/26284
 
 MAINTAINER=	x11@FreeBSD.org
