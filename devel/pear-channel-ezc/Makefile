@@ -8,5 +8,7 @@ WWW=		https://ezcomponents.org/
 
 PEAR_CHANNEL_HOST=	components.ez.no
 
+NO_ARCH=	yes
+
 .include "${.CURDIR}/../../devel/pear/bsd.pear.channel.mk"
 .include <bsd.port.mk>
