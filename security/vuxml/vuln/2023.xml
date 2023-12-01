@@ -1,3 +1,76 @@
+  <vuln vid="7e1a508f-7167-47b0-b9fc-95f541933a86">
+    <topic>electron26 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron26</name>
+	<range><lt>26.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v26.6.2">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6345.</li>
+	    <li>Security: backported fix for CVE-2023-6346.</li>
+	    <li>Security: backported fix for CVE-2023-6347.</li>
+	    <li>Security: backported fix for CVE-2023-6350.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://github.com/advisories/GHSA-xm5p-7w7v-qqr5</url>
+      <cvename>CVE-2023-6346</cvename>
+      <url>https://github.com/advisories/GHSA-w427-5x7p-xj8x</url>
+      <cvename>CVE-2023-6347</cvename>
+      <url>https://github.com/advisories/GHSA-6jj9-4hh8-6xpv</url>
+      <cvename>CVE-2023-6350</cvename>
+      <url>https://github.com/advisories/GHSA-wmh6-7xp9-5gh8</url>
+    </references>
+    <dates>
+      <discovery>2023-11-30</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="302fc846-860f-482e-a8f6-ee9f254dfacf">
+    <topic>electron25 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.7">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6345.</li>
+	    <li>Security: backported fix for CVE-2023-6346.</li>
+	    <li>Security: backported fix for CVE-2023-6347.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6345</cvename>
+      <url>https://github.com/advisories/GHSA-xm5p-7w7v-qqr5</url>
+      <cvename>CVE-2023-6346</cvename>
+      <url>https://github.com/advisories/GHSA-w427-5x7p-xj8x</url>
+      <cvename>CVE-2023-6347</cvename>
+      <url>https://github.com/advisories/GHSA-6jj9-4hh8-6xpv</url>
+    </references>
+    <dates>
+      <discovery>2023-12-01</discovery>
+      <entry>2023-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8cdd38c7-8ebb-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
