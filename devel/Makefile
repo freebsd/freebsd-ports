@@ -6365,6 +6365,7 @@
     SUBDIR += rubygem-aws-sdk-prometheusservice
     SUBDIR += rubygem-aws-sdk-proton
     SUBDIR += rubygem-aws-sdk-qbusiness
+    SUBDIR += rubygem-aws-sdk-qconnect
     SUBDIR += rubygem-aws-sdk-qldb
     SUBDIR += rubygem-aws-sdk-qldbsession
     SUBDIR += rubygem-aws-sdk-quicksight
