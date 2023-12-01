@@ -1,3 +1,4 @@
+.ifndef SLAVE_PORT
 PORTNAME=	gdb
 DISTVERSION=	13.1
 PORTREVISION=	3
@@ -7,6 +8,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	pizzamig@FreeBSD.org
 COMMENT=	GNU Project Debugger
 WWW=		https://www.gnu.org/software/gdb/
+.endif
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
@@ -35,15 +37,17 @@ CFLAGS:=	${CFLAGS:C/ +$//}	# blanks at EOL creep in sometimes
 CFLAGS+=	-DRL_NO_COMPAT
 EXCLUDE=	dejagnu expect sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
+.ifndef SLAVE_PORT
 EXTRA_PATCHES=	${FILESDIR}/commit-a980a7d24b9
 EXTRA_PATCHES+=	${FILESDIR}/commit-ae61525fcf4
+.endif
 
 VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
 OPTIONS_DEFINE=	GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT \
 		TUI XXHASH
-OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
+OPTIONS_DEFAULT+=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
 			TUI XXHASH
 OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
@@ -130,14 +134,20 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$$| [GDB v${DISTVERSION} for FreeBSD]|' \
 		${WRKSRC}/gdb/version.in
 
+.ifndef SLAVE_PORT
 post-patch-KGDB-on:
 	@${CP} -r ${FILESDIR}/kgdb/*.[ch] ${WRKSRC}/gdb/
 	@${PATCH} -d ${PATCH_WRKSRC} ${PATCH_ARGS} < ${FILESDIR}/extrapatch-kgdb
+.endif
 
+# devel/gdb uses gdb.1 from a distfile.
+GDB1_SRC?=	${WRKSRC}/gdb/doc/gdb.1
+# devel/gdb uses kgdb.1 from the files directory.
+KGDB1_SRC?=	${FILESDIR}/kgdb/kgdb.1
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/gdb \
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
-	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
+	${INSTALL_MAN} ${GDB1_SRC} \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/gdb${VER}.1
 	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
@@ -145,7 +155,7 @@ do-install:
 do-install-KGDB-on:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/kgdb \
 		${STAGEDIR}${PREFIX}/bin/kgdb${VER}
-	${INSTALL_MAN} ${FILESDIR}/kgdb/kgdb.1 \
+	${INSTALL_MAN} ${KGDB1_SRC} \
 		${STAGEDIR}${MAN1PREFIX}/man/man1/kgdb${VER}.1
 
 do-install-TUI-on:
