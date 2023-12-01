@@ -737,7 +737,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/jna-%%JNA%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jna-platform-%%JNA%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/joda-time-2.8.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/json-20230618.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/json-20231013.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/json-lib-2.4.2-%%G%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jsr305-2.0.3.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/jt-affine-%%JT%%.jar
