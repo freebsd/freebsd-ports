@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-redshift
-PORTVERSION=	1.105.0
+PORTVERSION=	1.107.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
