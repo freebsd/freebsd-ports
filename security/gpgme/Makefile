@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	1.23.1
+PORTVERSION=	1.23.2
 PORTREVISION?=	0
 CATEGORIES?=	security
 MASTER_SITES=	GNUPG/gpgme
@@ -92,9 +92,7 @@ PLIST_SUB=	QT_SUFFIX="" qt_SUFFIX=""
 .    else
 USES+=		compiler:c++17-lang pkgconfig qt:6
 USE_CXXSTD=	c++17
-USE_LOCALE=	C.UTF-8
 USE_QT=		base
-CXXFLAGS+=	-fPIC
 PLIST_SUB=	QT_SUFFIX="${QT_STR}" qt_SUFFIX="${FLAVOR}"
 .    endif
 
