@@ -14,7 +14,7 @@ GH_ACCOUNT=	CTSRD-CHERI
 GH_PROJECT=	gdb
 GH_TAGNAME=	ddd1b56a1dcec42f549b140dfeee394c93599072
 
-MAINTAINER=	def@FreeBSD.org
+MAINTAINER=	konrad.witaszczyk@cl.cam.ac.uk
 COMMENT=	GNU Project Debugger with support for the Arm Morello architecture
 
 NOT_FOR_ABIS=	purecap
