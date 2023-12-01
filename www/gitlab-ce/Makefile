@@ -1,6 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.6.1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 # include patch to fix database migration
@@ -89,7 +90,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
 	rubygem-grape17>=1.7.0<1.8:devel/rubygem-grape17 \
 	rubygem-grape-entity>=0.10.0<0.11.0,1:devel/rubygem-grape-entity \
-	rubygem-grape-swagger>=1.6.1<1.7:devel/rubygem-grape-swagger \
+	rubygem-grape-swagger16>=1.6.1<1.7:devel/rubygem-grape-swagger16 \
 	rubygem-grape-swagger-entity>=0.5.1<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=1.7.1<1.8:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
