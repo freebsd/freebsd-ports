@@ -113,7 +113,6 @@
     SUBDIR += wildfly13
     SUBDIR += wildfly14
     SUBDIR += wildfly15
-    SUBDIR += wildfly17
     SUBDIR += wildfly18
     SUBDIR += wildfly25
     SUBDIR += wildfly26
