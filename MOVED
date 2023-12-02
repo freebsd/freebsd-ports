@@ -8141,3 +8141,4 @@ math/py-piranha||2023-12-02|Has expired: BROKEN for more than a year and last up
 games/abstreet||2023-12-02|Has expired: BROKEN for more than a year and issue does not seem to be resolvable soon
 security/tor-devel||2023-12-02|Has expired: Ignored for more than a year and security/tor is more recent than this
 java/wildfly12||2023-12-02|Has expired: End of life upstream
+java/wildfly11||2023-12-02|Has expired: End of life upstream

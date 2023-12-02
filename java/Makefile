@@ -108,7 +108,6 @@
     SUBDIR += veditor
     SUBDIR += visualvm
     SUBDIR += wildfly10
-    SUBDIR += wildfly11
     SUBDIR += wildfly14
     SUBDIR += wildfly18
     SUBDIR += wildfly26
