@@ -8,6 +8,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Cross-platform lobby client for the Spring RTS project
 WWW=		https://springlobby.info/
 
+DEPRECATED=	Depends on expired games/spring
+EXPIRATION_DATE=2023-12-31
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
