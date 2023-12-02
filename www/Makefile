@@ -341,7 +341,6 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lzr
-    SUBDIR += madsonic
     SUBDIR += man2web
     SUBDIR += manpageblog
     SUBDIR += mathjax

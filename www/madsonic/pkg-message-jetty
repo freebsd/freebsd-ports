@@ -1,2 +1,0 @@
-Enable or restart Jetty, then access Madsonic at http://127.0.0.1:8080/madsonic/
-(if using the default Jetty HTTP port).

@@ -1,8 +1,0 @@
-Madsonic instantly transports your media to any HTTP connected device
-regardless of bitrate. You can stream to multiple players simultaneously.
-Madsonic is designed to handle very large music collections. By using
-transcoder plug-ins, Madsonic supports on-the-fly conversion and streaming
-of virtually any audio format, including MP3, OGG, WMA, FLAC, APE and more.
-
-Madsonic is a fork of Subsonic, offering more features and mobile client
-access without the subscription fee.
