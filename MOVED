@@ -8145,3 +8145,4 @@ java/wildfly11||2023-12-02|Has expired: End of life upstream
 net-p2p/arbitrum-avm||2023-12-02|Has expired: BROKEN for more than an year
 www/mozplugger||2023-12-02|Has expired: Obsolete, defunct as Mozilla Firefox dropped support for plugin interface as of ESR 60
 devel/ptmalloc||2023-12-02|Has expired: Abandonware, last release in 2006 and there are other alternative malloc implementations available
+java/wildfly18||2023-12-02|Has expired: End of life upstream
