@@ -346,8 +346,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/themes/syn.cuda-theme-ui
 %%DATADIR%%/data/themes/white.cuda-theme-syntax
 %%DATADIR%%/data/themes/white.cuda-theme-ui
-%%DATADIR%%/data/themes/zeus.cuda-theme-syntax
-%%DATADIR%%/data/themes/zeus.cuda-theme-ui
 %%DATADIR%%/data/toolbaricons/default_24x24/case.png
 %%DATADIR%%/data/toolbaricons/default_24x24/comment.png
 %%DATADIR%%/data/toolbaricons/default_24x24/e_copy.png
@@ -598,7 +596,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/license.idna.txt
 %%DATADIR%%/readme/license.requests.txt
 %%DATADIR%%/readme/license.urllib3.txt
-%%DATADIR%%/readme/license.zeus-theme.txt
 %%DATADIR%%/readme/tutorials/LexerConfig.odt
 %%DATADIR%%/readme/tutorials/LexerIndentFolding.odt
 %%DATADIR%%/readme/tutorials/TutorialLexer1.odt
