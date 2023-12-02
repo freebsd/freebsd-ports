@@ -8128,3 +8128,6 @@ graphics/R-cran-rtiff||2023-12-02|Has expired: Fails to build and abandoned upst
 games/iagno||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for the last 2 years
 emulators/ines||2023-12-02|Has expired: Ancient NES emulator that only works on i386, consider using emulators/higan
 www/varnish-nagios||2023-12-02|Has expired: Marked BROKEN for months, also depends on deprecated version of Varnish
+net/gupnp14||2023-12-02|Has expired: Unsupported legacy version upstream, also fails to build with newer versions of libxml2. Consider migrating to net/gupnp
+net/gupnp-dlna||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+net/gupnp-igd12||2023-12-02|Has expired: Depends on deprecated port net/gupnp14

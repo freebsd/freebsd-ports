@@ -229,11 +229,8 @@
     SUBDIR += guacamole-server
     SUBDIR += gupnp
     SUBDIR += gupnp-av
-    SUBDIR += gupnp-dlna
     SUBDIR += gupnp-igd
-    SUBDIR += gupnp-igd12
     SUBDIR += gupnp-tools
-    SUBDIR += gupnp14
     SUBDIR += gutenfetch
     SUBDIR += gwhois
     SUBDIR += h323plus
