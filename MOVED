@@ -8131,3 +8131,4 @@ www/varnish-nagios||2023-12-02|Has expired: Marked BROKEN for months, also depen
 net/gupnp14||2023-12-02|Has expired: Unsupported legacy version upstream, also fails to build with newer versions of libxml2. Consider migrating to net/gupnp
 net/gupnp-dlna||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
 net/gupnp-igd12||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+irc/irssi-dcc_send_limiter||2023-12-02|Has expired: BROKEN for more than a year
