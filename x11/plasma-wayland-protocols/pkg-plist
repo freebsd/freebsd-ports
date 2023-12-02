@@ -12,7 +12,9 @@ lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/kde-output-management-v2.xml
 %%DATADIR%%/kde-output-order-v1.xml
 %%DATADIR%%/kde-primary-output-v1.xml
+%%DATADIR%%/kde-screen-edge-v1.xml
 %%DATADIR%%/keystate.xml
+%%DATADIR%%/org-kde-plasma-virtual-desktop.xml
 %%DATADIR%%/output-management.xml
 %%DATADIR%%/outputdevice.xml
 %%DATADIR%%/plasma-shell.xml
