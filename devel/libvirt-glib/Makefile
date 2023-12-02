@@ -1,6 +1,5 @@
 PORTNAME=	libvirt-glib
-PORTVERSION=	4.0.0
-PORTREVISION=	3
+PORTVERSION=	5.0.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 
@@ -23,7 +22,7 @@ DOCS_BUILD_DEPENDS=	gtk-doc>=0:textproc/gtk-doc
 VAPI_MESON_ENABLED=	vapi
 VAPI_USES=		vala:build
 
-MESON_ARGS+=	-Dintrospection=enabled
+MESON_ARGS+=	-Dintrospection=enabled -Dgit_werror=disabled
 USE_LDCONFIG=	yes
 USE_GNOME=	intlhack introspection libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include

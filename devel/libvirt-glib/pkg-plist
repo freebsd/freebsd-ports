@@ -12,6 +12,7 @@ include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-capabilities
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address-pci.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address-usb.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-address.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-audio.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-capabilities-os.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-capabilities.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-channel.h
@@ -32,6 +33,7 @@ include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-devic
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-disk-driver.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-disk.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-filesys.h
+include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-dbus.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-desktop.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-rdp.h
 include/libvirt-gconfig-%%VERSION%%/libvirt-gconfig/libvirt-gconfig-domain-graphics-sdl.h
@@ -203,9 +205,15 @@ share/locale/hi/LC_MESSAGES/libvirt-glib.mo
 share/locale/id/LC_MESSAGES/libvirt-glib.mo
 share/locale/it/LC_MESSAGES/libvirt-glib.mo
 share/locale/ja/LC_MESSAGES/libvirt-glib.mo
+share/locale/ka/LC_MESSAGES/libvirt-glib.mo
+share/locale/ko/LC_MESSAGES/libvirt-glib.mo
+share/locale/nl/LC_MESSAGES/libvirt-glib.mo
 share/locale/pl/LC_MESSAGES/libvirt-glib.mo
 share/locale/pt_BR/LC_MESSAGES/libvirt-glib.mo
+share/locale/ro/LC_MESSAGES/libvirt-glib.mo
 share/locale/ru/LC_MESSAGES/libvirt-glib.mo
+share/locale/si/LC_MESSAGES/libvirt-glib.mo
+share/locale/sv/LC_MESSAGES/libvirt-glib.mo
 share/locale/tr/LC_MESSAGES/libvirt-glib.mo
 share/locale/uk/LC_MESSAGES/libvirt-glib.mo
 %%VAPI%%share/vala/vapi/libvirt-gconfig-%%VERSION%%.deps
