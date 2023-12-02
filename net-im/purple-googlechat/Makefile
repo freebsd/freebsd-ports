@@ -1,6 +1,5 @@
 PORTNAME=	purple-googlechat
-DISTVERSION=	g20221106
-PORTREVISION=	1
+DISTVERSION=	g20231026
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 USES=		gmake gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	EionRobb
-GH_TAGNAME=	b6b824a
+GH_TAGNAME=	e48c03c
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
