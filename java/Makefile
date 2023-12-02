@@ -108,7 +108,6 @@
     SUBDIR += veditor
     SUBDIR += visualvm
     SUBDIR += wildfly10
-    SUBDIR += wildfly14
     SUBDIR += wildfly26
 
 .include <bsd.port.subdir.mk>
