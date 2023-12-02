@@ -8157,3 +8157,4 @@ www/jetty9||2023-12-02|Has expired: End of life as of 2022-06-01, consider migra
 multimedia/obs-scrab||2023-12-02|Has expired: Fails to package and marked broken over 10 months ago
 archivers/jzlib||2023-12-02|Has expired: Abandonware, untouched for over 10 years and Java Platform 8+ provides a Deflater class
 java/wildfly26||2023-12-02|Has expired: End of life upstream
+science/libgeodecomp||2023-12-02|Has expired: BROKEN for more than an year

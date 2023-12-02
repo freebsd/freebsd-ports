@@ -1,8 +1,0 @@
-LibGeoDecomp (Library for Geometric Decomposition codes) is an
-auto-parallelizing library for computer simulations. It is specifically targeted
-computational science applications in the context of supercomputers and
-heterogeneous systems. The library eases development of such tightly coupled
-codes by essentially taking over the parallel programming: it handles both, the
-parallelization itself and parameter tuning. This enables scientists to focus on
-their simulation code, rather than the technical details of the parallel
-computer.

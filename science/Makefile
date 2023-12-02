@@ -147,7 +147,6 @@
     SUBDIR += libctl
     SUBDIR += libecpint
     SUBDIR += libefp
-    SUBDIR += libgeodecomp
     SUBDIR += libgetar
     SUBDIR += libghemical
     SUBDIR += libgridxc
