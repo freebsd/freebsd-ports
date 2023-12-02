@@ -4145,7 +4145,6 @@
     SUBDIR += pthsem
     SUBDIR += ptl
     SUBDIR += ptlib
-    SUBDIR += ptmalloc
     SUBDIR += ptypes
     SUBDIR += publib
     SUBDIR += purescript-language-server
