@@ -340,7 +340,6 @@
     SUBDIR += gnome-nibbles
     SUBDIR += gnome-robots
     SUBDIR += gnome-sudoku
-    SUBDIR += gnome-taquin
     SUBDIR += gnome-tetravex
     SUBDIR += gnubg
     SUBDIR += gnubik
