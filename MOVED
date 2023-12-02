@@ -8124,3 +8124,4 @@ astro/ptiger||2023-12-02|Has expired: Depends on expired astro/tkgeomap
 devel/ptmalloc2||2023-12-02|Has expired: Abandonware, last release in 2006 and there are other alternative malloc implementations available
 java/wildfly25||2023-12-02|Has expired: End of life upstream
 net/gupnp-ui||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
+graphics/R-cran-rtiff||2023-12-02|Has expired: Fails to build and abandoned upstream
