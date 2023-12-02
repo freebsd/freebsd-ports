@@ -8154,3 +8154,4 @@ games/gnome-taquin||2023-12-02|Has expired: BROKEN for more than a year and no u
 audio/mous||2023-12-02|Has expired: BROKEN for more than a year
 audio/mixxx22|audio/mixxx|2023-12-02|Has expired: Deprecated upstream, consider migrating to audio/mixxx
 www/jetty9||2023-12-02|Has expired: End of life as of 2022-06-01, consider migrating to www/jetty10
+multimedia/obs-scrab||2023-12-02|Has expired: Fails to package and marked broken over 10 months ago
