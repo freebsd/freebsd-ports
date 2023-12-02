@@ -8133,3 +8133,4 @@ net/gupnp-dlna||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
 net/gupnp-igd12||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
 irc/irssi-dcc_send_limiter||2023-12-02|Has expired: BROKEN for more than a year
 www/linux-opera||2023-12-02|Has expired: outdated and unsupported version
+sysutils/gtk-imonc||2023-12-02|Has expired: BROKEN for more than 2 years
