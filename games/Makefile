@@ -25,7 +25,6 @@
     SUBDIR += SpaceCadetPinball-devel
     SUBDIR += abbayedesmorts
     SUBDIR += abe
-    SUBDIR += abstreet
     SUBDIR += abuse_sdl
     SUBDIR += ace-of-penguins
     SUBDIR += adom
