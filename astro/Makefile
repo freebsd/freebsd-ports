@@ -125,8 +125,6 @@
     SUBDIR += sunclock
     SUBDIR += sunwait
     SUBDIR += swe
-    SUBDIR += tclgeomap
-    SUBDIR += tkgeomap
     SUBDIR += viking
     SUBDIR += wcslib
     SUBDIR += weather
