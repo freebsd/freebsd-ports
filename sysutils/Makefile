@@ -192,6 +192,7 @@
     SUBDIR += cfengine322
     SUBDIR += chaoskube
     SUBDIR += checkrestart
+    SUBDIR += cheri-vm-support
     SUBDIR += chericat
     SUBDIR += chezmoi
     SUBDIR += chgrep
