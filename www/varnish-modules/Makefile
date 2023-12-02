@@ -1,5 +1,6 @@
 PORTNAME=	varnish-modules
 PORTVERSION=	0.23.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	zi@FreeBSD.org
