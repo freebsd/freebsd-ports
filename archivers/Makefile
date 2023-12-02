@@ -43,7 +43,6 @@
     SUBDIR += hlextract
     SUBDIR += innoextract
     SUBDIR += javatar
-    SUBDIR += jzlib
     SUBDIR += kf5-karchive
     SUBDIR += kf6-karchive
     SUBDIR += kzip

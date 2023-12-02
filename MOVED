@@ -8155,3 +8155,4 @@ audio/mous||2023-12-02|Has expired: BROKEN for more than a year
 audio/mixxx22|audio/mixxx|2023-12-02|Has expired: Deprecated upstream, consider migrating to audio/mixxx
 www/jetty9||2023-12-02|Has expired: End of life as of 2022-06-01, consider migrating to www/jetty10
 multimedia/obs-scrab||2023-12-02|Has expired: Fails to package and marked broken over 10 months ago
+archivers/jzlib||2023-12-02|Has expired: Abandonware, untouched for over 10 years and Java Platform 8+ provides a Deflater class
