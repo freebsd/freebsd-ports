@@ -227,7 +227,6 @@
     SUBDIR += gonic
     SUBDIR += goobox
     SUBDIR += gqradio
-    SUBDIR += gradio
     SUBDIR += gramofile
     SUBDIR += grip
     SUBDIR += gsequencer
