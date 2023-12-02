@@ -137,7 +137,6 @@
     SUBDIR += wmspaceweather
     SUBDIR += wmsun
     SUBDIR += xearth
-    SUBDIR += xeartk
     SUBDIR += xephem
     SUBDIR += xmoontool
     SUBDIR += xphoon

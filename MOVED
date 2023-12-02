@@ -8136,3 +8136,4 @@ www/linux-opera||2023-12-02|Has expired: outdated and unsupported version
 sysutils/gtk-imonc||2023-12-02|Has expired: BROKEN for more than 2 years
 audio/gradio||2023-12-02|Has expired: BROKEN for more than a year
 java/wildfly13||2023-12-02|Has expired: End of life upstream
+astro/xeartk||2023-12-02|Has expired: Depends on expired astro/tkgeomap
