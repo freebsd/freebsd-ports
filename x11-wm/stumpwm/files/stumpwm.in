@@ -1,6 +1,0 @@
-#!/bin/sh
-
-%%SBCL%% --eval "(in-package :cl-user)" \
-         --eval "(require :stumpwm)" \
-         --eval "(stumpwm:stumpwm)" \
-         --eval "(quit)"
