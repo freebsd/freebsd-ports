@@ -1,3 +1,5 @@
-TIMESTAMP = 1543666801
-SHA256 (zealdocs-zeal-v0.6.1_GH0.tar.gz) = 095c08f9903071849d5c79878abd48237ce1615f16d324afff1873ab6b5f0026
-SIZE (zealdocs-zeal-v0.6.1_GH0.tar.gz) = 1063963
+TIMESTAMP = 1701538800
+SHA256 (zealdocs-zeal-v0.7.0_GH0.tar.gz) = 937cbfe3ca49a7ee2d908baa3c5b008f425ae88cf2dade0abb2651b14f0f89ca
+SIZE (zealdocs-zeal-v0.7.0_GH0.tar.gz) = 1201193
+SHA256 (9630cc94c155d87295e51b41fbab2bd5798f8229.patch) = e40cef29bd63cd68831f0b4b27429c88dd3249aadf00b2559cc326bb3daeae61
+SIZE (9630cc94c155d87295e51b41fbab2bd5798f8229.patch) = 4768
