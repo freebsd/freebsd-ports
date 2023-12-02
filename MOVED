@@ -8151,3 +8151,4 @@ www/madsonic||2023-12-02|Has expired: Depends on www/jetty8 which has been liste
 www/jetty8||2023-12-02|Has expired: End of life in 2014, consider migrating to www/jetty10
 textproc/bibtool||2023-12-02|Has expired: BROKEN for more than an year
 games/gnome-taquin||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for more than 2 years
+audio/mous||2023-12-02|Has expired: BROKEN for more than a year

@@ -468,7 +468,6 @@
     SUBDIR += modplug-tools
     SUBDIR += moodbar
     SUBDIR += moony-lv2
-    SUBDIR += mous
     SUBDIR += mousai
     SUBDIR += mp-player
     SUBDIR += mp3-archive-tools
