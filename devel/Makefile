@@ -672,7 +672,6 @@
     SUBDIR += flyspray
     SUBDIR += fmake
     SUBDIR += fnc
-    SUBDIR += fnccheck
     SUBDIR += fnm
     SUBDIR += folly
     SUBDIR += forge
