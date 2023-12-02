@@ -8120,3 +8120,4 @@ java/wildfly16||2023-12-02|Has expired: End of life upstream
 java/wildfly90||2023-12-02|Has expired: End of life upstream
 java/wildfly17||2023-12-02|Has expired: End of life upstream
 java/wildfly15||2023-12-02|Has expired: End of life upstream
+astro/ptiger||2023-12-02|Has expired: Depends on expired astro/tkgeomap

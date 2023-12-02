@@ -79,7 +79,6 @@
     SUBDIR += phd2
     SUBDIR += phoon
     SUBDIR += pp3
-    SUBDIR += ptiger
     SUBDIR += py-astlib
     SUBDIR += py-astral
     SUBDIR += py-astroML
