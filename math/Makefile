@@ -1006,7 +1006,6 @@
     SUBDIR += py-pdal
     SUBDIR += py-permutation
     SUBDIR += py-petsc4py
-    SUBDIR += py-piranha
     SUBDIR += py-plastex
     SUBDIR += py-point-annotator
     SUBDIR += py-pplpy
