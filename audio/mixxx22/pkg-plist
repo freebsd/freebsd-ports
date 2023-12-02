@@ -1,7 +1,0 @@
-bin/mixxx
-%%FAAD%%lib/mixxx/plugins/soundsourceqt5/libsoundsourcem4a.so
-%%WAVPACK%%lib/mixxx/plugins/soundsourceqt5/libsoundsourcewv.so
-lib/mixxx/plugins/vampqt5/libmixxxminimal.so
-share/appdata/mixxx.appdata.xml
-share/applications/mixxx.desktop
-share/pixmaps/mixxx_icon.svg
