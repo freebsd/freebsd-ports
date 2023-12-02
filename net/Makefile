@@ -233,7 +233,6 @@
     SUBDIR += gupnp-igd
     SUBDIR += gupnp-igd12
     SUBDIR += gupnp-tools
-    SUBDIR += gupnp-ui
     SUBDIR += gupnp14
     SUBDIR += gutenfetch
     SUBDIR += gwhois
