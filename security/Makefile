@@ -1315,7 +1315,6 @@
     SUBDIR += tls-check
     SUBDIR += tlsc
     SUBDIR += tor
-    SUBDIR += tor-devel
     SUBDIR += totp-cli
     SUBDIR += tpm-quote-tools
     SUBDIR += tpm-tools
