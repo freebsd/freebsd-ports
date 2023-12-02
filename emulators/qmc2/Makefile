@@ -11,7 +11,7 @@ WWW=		https://github.com/qmc2/qmc2-mame-fe
 LICENSE=	GPLv2+
 
 DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 BUILD_DEPENDS=	bash>0:shells/bash \
 		gawk>0:lang/gawk

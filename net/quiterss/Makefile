@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig \
 		qmake:outsource qt:5 sqlite

@@ -12,7 +12,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 DEPRECATED=	Depends on deprecated www/qt5-webkit
-EXPIRATION_DATE=	2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libqt5keychain.so:security/qtkeychain@qt5
 
