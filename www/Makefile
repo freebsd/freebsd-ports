@@ -275,7 +275,6 @@
     SUBDIR += jericho-html
     SUBDIR += jesred
     SUBDIR += jetty10
-    SUBDIR += jetty8
     SUBDIR += jetty9
     SUBDIR += jira-cli
     SUBDIR += jitsi-meet

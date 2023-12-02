@@ -8148,3 +8148,4 @@ devel/ptmalloc||2023-12-02|Has expired: Abandonware, last release in 2006 and th
 java/wildfly18||2023-12-02|Has expired: End of life upstream
 java/wildfly14||2023-12-02|Has expired: End of life upstream
 www/madsonic||2023-12-02|Has expired: Depends on www/jetty8 which has been listed as end of life since 2015
+www/jetty8||2023-12-02|Has expired: End of life in 2014, consider migrating to www/jetty10
