@@ -8142,3 +8142,4 @@ games/abstreet||2023-12-02|Has expired: BROKEN for more than a year and issue do
 security/tor-devel||2023-12-02|Has expired: Ignored for more than a year and security/tor is more recent than this
 java/wildfly12||2023-12-02|Has expired: End of life upstream
 java/wildfly11||2023-12-02|Has expired: End of life upstream
+net-p2p/arbitrum-avm||2023-12-02|Has expired: BROKEN for more than an year

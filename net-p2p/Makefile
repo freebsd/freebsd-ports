@@ -1,7 +1,6 @@
     COMMENT = Peer-to-peer network applications
 
     SUBDIR += amule
-    SUBDIR += arbitrum-avm
     SUBDIR += autoscan
     SUBDIR += awgg
     SUBDIR += bazarr
