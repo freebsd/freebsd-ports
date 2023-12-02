@@ -1,6 +1,6 @@
 PORTNAME=	libnice
 PORTVERSION=	0.1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://nice.freedesktop.org/releases/
 
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 OPTIONS_DEFINE=	GUPNP
 GUPNP_MESON_ENABLED=	gupnp
 GUPNP_DESC=	UPnP IGD port mapping support
-GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.0.so:net/gupnp-igd12
+GUPNP_LIB_DEPENDS+=	libgupnp-igd-1.6.so:net/gupnp-igd
 
 MESON_ARGS+=-Dtests=disabled -Dgtk_doc=disabled -Dcrypto-library=openssl
 
@@ -33,5 +33,8 @@ MESON_ARGS+=-Dgstreamer=enabled
 .else
 MESON_ARGS+=-Dgstreamer=disabled
 .endif
+
+post-patch-GUPNP-on:
+	@${REINPLACE_CMD} -e 's|gupnp-igd-1.0|gupnp-igd-1.6|' ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
