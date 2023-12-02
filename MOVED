@@ -8125,3 +8125,4 @@ devel/ptmalloc2||2023-12-02|Has expired: Abandonware, last release in 2006 and t
 java/wildfly25||2023-12-02|Has expired: End of life upstream
 net/gupnp-ui||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
 graphics/R-cran-rtiff||2023-12-02|Has expired: Fails to build and abandoned upstream
+games/iagno||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for the last 2 years

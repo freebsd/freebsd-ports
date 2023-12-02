@@ -393,7 +393,6 @@
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
     SUBDIR += hyperrogue
-    SUBDIR += iagno
     SUBDIR += icbm3d
     SUBDIR += icebreaker
     SUBDIR += iceicepenguin
