@@ -438,7 +438,6 @@
     SUBDIR += moodle42
     SUBDIR += moodle43
     SUBDIR += morty
-    SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += multiwatch
     SUBDIR += mybb
