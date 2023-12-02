@@ -72,6 +72,7 @@
     SUBDIR += kf6-kwidgetsaddons
     SUBDIR += kf6-kxmlgui
     SUBDIR += kirigami-addons
+    SUBDIR += kirigami-addons-devel
     SUBDIR += kproperty
     SUBDIR += lesstif
     SUBDIR += libXaw
