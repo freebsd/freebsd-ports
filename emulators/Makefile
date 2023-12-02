@@ -49,7 +49,6 @@
     SUBDIR += higan
     SUBDIR += hugo
     SUBDIR += hv_kvp_cmd
-    SUBDIR += ines
     SUBDIR += javatari
     SUBDIR += joytran
     SUBDIR += jzintv

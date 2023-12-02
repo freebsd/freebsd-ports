@@ -8126,3 +8126,4 @@ java/wildfly25||2023-12-02|Has expired: End of life upstream
 net/gupnp-ui||2023-12-02|Has expired: Depends on deprecated port net/gupnp14
 graphics/R-cran-rtiff||2023-12-02|Has expired: Fails to build and abandoned upstream
 games/iagno||2023-12-02|Has expired: BROKEN for more than a year and no upstream activity for the last 2 years
+emulators/ines||2023-12-02|Has expired: Ancient NES emulator that only works on i386, consider using emulators/higan
