@@ -99,6 +99,7 @@ lib/varnish/vmods/libvmod_blob.so
 lib/varnish/vmods/libvmod_cookie.so
 lib/varnish/vmods/libvmod_debug.so
 lib/varnish/vmods/libvmod_directors.so
+lib/varnish/vmods/libvmod_h2.so
 lib/varnish/vmods/libvmod_proxy.so
 lib/varnish/vmods/libvmod_purge.so
 lib/varnish/vmods/libvmod_std.so
@@ -116,6 +117,7 @@ man/man1/varnishtop.1.gz
 man/man3/vmod_blob.3.gz
 man/man3/vmod_cookie.3.gz
 man/man3/vmod_directors.3.gz
+man/man3/vmod_h2.3.gz
 man/man3/vmod_proxy.3.gz
 man/man3/vmod_purge.3.gz
 man/man3/vmod_std.3.gz
@@ -139,6 +141,7 @@ share/aclocal/varnish.m4
 %%DATADIR%%/vcc/vmod_blob.vcc
 %%DATADIR%%/vcc/vmod_cookie.vcc
 %%DATADIR%%/vcc/vmod_directors.vcc
+%%DATADIR%%/vcc/vmod_h2.vcc
 %%DATADIR%%/vcc/vmod_proxy.vcc
 %%DATADIR%%/vcc/vmod_purge.vcc
 %%DATADIR%%/vcc/vmod_std.vcc
