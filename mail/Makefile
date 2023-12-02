@@ -546,7 +546,6 @@
     SUBDIR += qmail-qfilter
     SUBDIR += qmail-rblchk
     SUBDIR += qmail-remove
-    SUBDIR += qmail-spamcontrol
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog

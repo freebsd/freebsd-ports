@@ -8115,3 +8115,4 @@ sysutils/rubygem-ohai17|sysutils/rubygem-ohai|2023-12-01|Remove obsoleted port. 
 net-im/scudcloud||2023-12-01|Has expired: Project was abandoned in 2018
 java/wildfly24||2023-12-02|Has expired: End of life upstream
 devel/fnccheck||2023-12-02|Has expired: BROKEN for more than an year and last upstream release was in 2012
+mail/qmail-spamcontrol||2023-12-02|Has expired: BROKEN for more than 4+ years
