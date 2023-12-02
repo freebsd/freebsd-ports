@@ -86,6 +86,7 @@
     SUBDIR += ipcheck
     SUBDIR += kadnode
     SUBDIR += kf5-kdnssd
+    SUBDIR += kf6-kdnssd
     SUBDIR += knock
     SUBDIR += knot-resolver
     SUBDIR += knot3

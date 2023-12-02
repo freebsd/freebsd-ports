@@ -208,6 +208,7 @@
     SUBDIR += kdeutils
     SUBDIR += kenny
     SUBDIR += kf5-purpose
+    SUBDIR += kf6-purpose
     SUBDIR += kgeography
     SUBDIR += klettres
     SUBDIR += kookbook

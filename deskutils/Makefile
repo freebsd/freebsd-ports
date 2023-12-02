@@ -140,6 +140,7 @@
     SUBDIR += kdepim-runtime
     SUBDIR += keditbookmarks
     SUBDIR += keep-presence
+    SUBDIR += kf6-kstatusnotifieritem
     SUBDIR += kfind
     SUBDIR += kmail
     SUBDIR += kmail-account-wizard

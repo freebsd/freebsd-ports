@@ -1,0 +1,14 @@
+include/KF6/FrameworkIntegration/frameworkintegration_version.h
+include/KF6/KStyle/KStyle
+include/KF6/KStyle/kstyle.h
+include/KF6/KStyle/kstyle_export.h
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationConfig.cmake
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationConfigVersion.cmake
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/KF6FrameworkIntegration/KF6FrameworkIntegrationTargets.cmake
+lib/libKF6Style.so
+lib/libKF6Style.so.%%KDE_FRAMEWORKS_VERSION%%
+lib/libKF6Style.so.6
+lib/libexec/kf6/kpackagehandlers/knshandler
+%%QT_PLUGINDIR%%/kf6/FrameworkIntegrationPlugin.so
+share/knotifications6/plasma_workspace.notifyrc

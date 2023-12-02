@@ -634,6 +634,9 @@
     SUBDIR += keyd
     SUBDIR += kf5-baloo
     SUBDIR += kf5-kwallet
+    SUBDIR += kf6-baloo
+    SUBDIR += kf6-kuserfeedback
+    SUBDIR += kf6-kwallet
     SUBDIR += kfloppy
     SUBDIR += khelpcenter
     SUBDIR += kiconvtool

@@ -320,6 +320,11 @@
     SUBDIR += kf5-kholidays
     SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kf5-syndication
+    SUBDIR += kf6-kcalendarcore
+    SUBDIR += kf6-kcontacts
+    SUBDIR += kf6-kdav
+    SUBDIR += kf6-kholidays
+    SUBDIR += kf6-syndication
     SUBDIR += kget
     SUBDIR += kidentitymanagement
     SUBDIR += kimap

@@ -61,6 +61,16 @@
     SUBDIR += kf5-ktextwidgets
     SUBDIR += kf5-kwidgetsaddons
     SUBDIR += kf5-kxmlgui
+    SUBDIR += kf6-attica
+    SUBDIR += kf6-kcompletion
+    SUBDIR += kf6-kconfigwidgets
+    SUBDIR += kf6-kguiaddons
+    SUBDIR += kf6-kirigami
+    SUBDIR += kf6-kitemviews
+    SUBDIR += kf6-kjobwidgets
+    SUBDIR += kf6-ktextwidgets
+    SUBDIR += kf6-kwidgetsaddons
+    SUBDIR += kf6-kxmlgui
     SUBDIR += kirigami-addons
     SUBDIR += kproperty
     SUBDIR += lesstif

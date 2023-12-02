@@ -258,6 +258,7 @@
     SUBDIR += keyprint
     SUBDIR += keysmith
     SUBDIR += kf5-kdesu
+    SUBDIR += kf6-kdesu
     SUBDIR += kgpg
     SUBDIR += kickpass
     SUBDIR += klee

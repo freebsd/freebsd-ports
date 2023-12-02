@@ -154,6 +154,12 @@
     SUBDIR += kf5-kwayland
     SUBDIR += kf5-kwindowsystem
     SUBDIR += kf5-plasma-framework
+    SUBDIR += kf6-frameworkintegration
+    SUBDIR += kf6-frameworks
+    SUBDIR += kf6-kded
+    SUBDIR += kf6-kglobalaccel
+    SUBDIR += kf6-krunner
+    SUBDIR += kf6-kwindowsystem
     SUBDIR += kickoff
     SUBDIR += kitty
     SUBDIR += konsole
