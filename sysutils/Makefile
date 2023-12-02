@@ -1034,6 +1034,7 @@
     SUBDIR += polkit
     SUBDIR += polkit-gnome
     SUBDIR += polkit-qt
+    SUBDIR += polkit-qt-1-devel
     SUBDIR += pot
     SUBDIR += potnet
     SUBDIR += poweralertd
