@@ -1,5 +1,6 @@
 PORTNAME=	kactivitymanagerd
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	System service to manage user's activities, track the usage patterns etc
@@ -12,7 +13,7 @@ USE_GL=		gl opengl
 USE_KDE=	colorscheme config configwidgets coreaddons crash dbusaddons \
 		globalaccel i18n kio service widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		5compat base
+USE_QT=		5compat base sqldriver-sqlite
 USE_XORG=	x11
 
 .include <bsd.port.mk>
