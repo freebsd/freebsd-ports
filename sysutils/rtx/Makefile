@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.11.8
+DISTVERSION=	2023.12.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -41,8 +41,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.8 \
-		clap_builder-4.4.8 \
+		clap-4.4.10 \
+		clap_builder-4.4.9 \
 		clap_complete-4.4.4 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
@@ -54,8 +54,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		colorchoice-1.0.0 \
 		console-0.15.7 \
 		const-oid-0.9.5 \
-		core-foundation-0.9.3 \
-		core-foundation-sys-0.8.4 \
+		core-foundation-0.9.4 \
+		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.11 \
 		crc32fast-1.3.2 \
 		crossbeam-deque-0.8.3 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		curve25519-dalek-4.1.1 \
 		curve25519-dalek-derive-0.1.1 \
 		der-0.7.8 \
-		deranged-0.3.9 \
+		deranged-0.3.10 \
 		dialoguer-0.11.0 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -82,7 +82,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		encoding_rs-0.8.33 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.7 \
+		errno-0.3.8 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		eyre-0.6.9 \
@@ -112,6 +112,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hashbrown-0.14.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
+		home-0.5.5 \
 		http-0.2.11 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
@@ -135,14 +136,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		itertools-0.12.0 \
 		itoa-1.0.9 \
 		jobserver-0.1.27 \
-		js-sys-0.3.65 \
+		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
 		libc-0.2.150 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libredox-0.0.1 \
 		libz-sys-1.1.12 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.4.11 \
+		linux-raw-sys-0.4.12 \
 		log-0.4.20 \
 		memchr-2.6.4 \
 		memoffset-0.9.0 \
@@ -197,13 +198,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.22 \
-		ring-0.17.5 \
+		ring-0.17.6 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.25 \
+		rustix-0.38.26 \
 		rustls-0.21.9 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
@@ -235,11 +236,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		socket2-0.4.10 \
 		socket2-0.5.5 \
 		spin-0.9.8 \
-		spki-0.7.2 \
+		spki-0.7.3 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
 		syn-2.0.39 \
+		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
 		tar-0.4.40 \
@@ -292,14 +294,15 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		walkdir-2.4.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.88 \
-		wasm-bindgen-backend-0.2.88 \
-		wasm-bindgen-futures-0.4.38 \
-		wasm-bindgen-macro-0.2.88 \
-		wasm-bindgen-macro-support-0.2.88 \
-		wasm-bindgen-shared-0.2.88 \
-		web-sys-0.3.65 \
+		wasm-bindgen-0.2.89 \
+		wasm-bindgen-backend-0.2.89 \
+		wasm-bindgen-futures-0.4.39 \
+		wasm-bindgen-macro-0.2.89 \
+		wasm-bindgen-macro-support-0.2.89 \
+		wasm-bindgen-shared-0.2.89 \
+		web-sys-0.3.66 \
 		webpki-roots-0.25.3 \
+		which-5.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.6 \
@@ -307,22 +310,31 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows-core-0.51.1 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.2 \
 		windows-targets-0.48.5 \
+		windows-targets-0.52.0 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.5 \
+		windows_aarch64_gnullvm-0.52.0 \
 		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.5 \
+		windows_aarch64_msvc-0.52.0 \
 		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.5 \
+		windows_i686_gnu-0.52.0 \
 		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.5 \
+		windows_i686_msvc-0.52.0 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.5 \
+		windows_x86_64_gnu-0.52.0 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.5 \
+		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
+		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.19 \
 		winreg-0.50.0 \
 		xattr-1.0.1 \
