@@ -5,10 +5,15 @@ CATEGORIES=	sysutils kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Tools based on KDE Frameworks to better interact with the system
 
-USES=		cmake gettext kde:6 qt:6 tar:xz
-USE_KDE=	config coreaddons doctools i18n iconthemes kcmutils kdesu kio \
-		parts service windowsystem \
+LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
+
+USES=		cmake desktop-file-utils gettext gl kde:6 qt:6 tar:xz xorg
+USE_GL=		gl opengl
+USE_XORG=	x11
+USE_KDE=	colorscheme completion config configwidgets coreaddons \
+		doctools i18n iconthemes jobwidgets kcmutils kdesu kio parts \
+		pty service solid widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		base svg
+USE_QT=		base declarative svg
 
 .include <bsd.port.mk>

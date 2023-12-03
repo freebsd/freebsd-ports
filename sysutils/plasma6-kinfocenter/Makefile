@@ -18,6 +18,6 @@ USE_KDE=	auth colorscheme completion config configwidgets coreaddons \
 		widgetsaddons \
 		ecm:build \
 		kirigami2:run systemsettings:run
-USE_QT=		base
+USE_QT=		base declarative
 
 .include <bsd.port.mk>

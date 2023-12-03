@@ -11,7 +11,7 @@ LIB_DEPENDS=	libxcb-keysyms.so:x11/xcb-util-keysyms \
 
 USES=		cmake gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
-USE_KDE=	config coreaddons crash dbusaddons globalaccel kio \
+USE_KDE=	config coreaddons crash dbusaddons globalaccel jobwidgets kio \
 		notifications service windowsystem \
 		ecm:build
 USE_QT=		base

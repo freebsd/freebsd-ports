@@ -20,7 +20,7 @@ USE_KDE=	colorscheme config configwidgets coreaddons crash globalaccel \
 		xmlgui \
 		ecm:build
 USE_GL=		gl opengl
-USE_QT=		base
+USE_QT=		base declarative
 USE_XORG=	x11 xcb xext xi
 
 SHEBANG_FILES=	updaters/ksreenlocker_5_3_separate_autologin.pl

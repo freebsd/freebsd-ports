@@ -5,8 +5,11 @@ CATEGORIES=	sysutils kde kde-plasma
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugin based system monitoring daemon
 
-USES=		cmake gettext kde:6 qt:6 tar:xz
-USE_KDE=	coreaddons dbusaddons kio libksysguard solid \
+LIB_DEPENDS=	libudev.so:devel/libudev-devd
+
+USES=		cmake gettext gl kde:6 qt:6 tar:xz
+USE_GL=		gl opengl
+USE_KDE=	coreaddons dbusaddons i18n kio libksysguard solid \
 		ecm:build
 USE_QT=		base
 

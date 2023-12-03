@@ -12,7 +12,7 @@ USE_GL=		gl opengl
 USE_KDE=	coreaddons crash dbusaddons i18n iconthemes widgetsaddons \
 		windowsystem \
 		ecm:build
-USE_QT=		base tools
+USE_QT=		base declarative tools
 USE_XORG=	x11
 
 .include <bsd.port.mk>

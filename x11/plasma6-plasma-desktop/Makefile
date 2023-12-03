@@ -10,6 +10,7 @@ BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput \
 		xf86-input-synaptics>0:x11-drivers/xf86-input-synaptics
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libicuuc.so:devel/icu \
 		liboauth2plugin.so:sysutils/signon-plugin-oauth2 \
 		libwayland-client.so:graphics/wayland \
 		libxcb-util.so:x11/xcb-util \
@@ -27,9 +28,9 @@ USE_KDE=	activities activities-stats attica5 auth baloo5 bookmarks \
 		codecs colorscheme completion config configwidgets coreaddons \
 		crash dbusaddons doctools filemetadata globalaccel guiaddons \
 		i18n iconthemes itemmodels itemviews jobwidgets kcmutils kio \
-		libksysguard newstuff notifications notifyconfig package \
-		plasma-workspace plasma5support runner service solid sonnet \
-		widgetsaddons windowsystem xmlgui \
+		libksysguard libplasma newstuff notifications notifyconfig \
+		package plasma-workspace plasma5support runner service solid \
+		sonnet svg widgetsaddons windowsystem xmlgui \
 		ecm:build \
 		kirigami-addons:run kirigami2:run kpipewire:run \
 		qqc2-desktop-style:run

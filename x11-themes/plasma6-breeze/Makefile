@@ -11,7 +11,7 @@ USE_KDE=	colorscheme config configwidgets coreaddons decoration \
 		guiaddons i18n iconthemes kcmutils kirigami2 widgetsaddons \
 		windowsystem \
 		ecm:build
-USE_QT=		base
+USE_QT=		base declarative
 USE_XORG=	x11
 
 CMAKE_OFF=	BUILD_QT5

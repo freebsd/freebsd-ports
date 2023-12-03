@@ -12,11 +12,11 @@ USES=		cmake gettext gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
 USE_KDE=	activities auth colorscheme completion config configwidgets \
 		coreaddons crash dbusaddons doctools globalaccel i18n idletime \
-		jobwidgets kcmutils kio kirigami2 layer-shell-qt libkscreen \
-		notifications notifyconfig plasma-workspace service solid \
-		widgetsaddons windowsystem xmlgui \
+		itemmodels jobwidgets kcmutils kio kirigami2 layer-shell-qt \
+		libkscreen notifications notifyconfig plasma-workspace service \
+		solid widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		base
+USE_QT=		base declarative
 USE_XORG=	x11 xcb
 
 .include <bsd.port.mk>
