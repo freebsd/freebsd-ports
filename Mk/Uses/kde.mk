@@ -687,7 +687,7 @@ kde-kdeplasma-addons_LIB=	libplasmapotdprovidercore.so
 kde-kgamma5_PORT5=		x11/plasma${_KDE_VERSION}-kgamma5
 kde-kgamma5_PORT6=		x11/plasma${_KDE_VERSION}-kgamma
 kde-kgamma5_PORT=		${kde-kgamma5_PORT${_KDE_VERSION}}
-kde-kgamma5_PATH=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_kgamma.so
+kde-kgamma5_PATH5=		${QT_PLUGINDIR}/plasma/kcms/systemsettings/kcm_kgamma.so
 kde-kgamma5_PATH6=		${QT_PLUGINDIR}/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so
 kde-kgamma5_PATH=		${kde-kgamma5_PATH${_KDE_VERSION}}
 
