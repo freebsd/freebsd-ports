@@ -10,6 +10,6 @@ USE_GL=		gl opengl
 USE_KDE=	colorscheme completion config configwidgets i18n sonnet \
 		widgetsaddons \
 		ecm:build
-USE_QT=		base speech
+USE_QT=		base speech multimedia
 
 .include <bsd.port.mk>

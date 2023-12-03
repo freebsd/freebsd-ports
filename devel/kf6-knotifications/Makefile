@@ -11,7 +11,7 @@ USES=		cmake gl kde:6 qt:6 tar:xz xorg
 USE_GL=		gl opengl
 USE_KDE=	config coreaddons windowsystem \
 		ecm:build
-USE_QT=		base
+USE_QT=		base declarative
 USE_XORG=	x11 xtst
 
 .include <bsd.port.mk>

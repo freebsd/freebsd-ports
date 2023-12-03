@@ -14,7 +14,7 @@ USE_KDE=	archive auth codecs colorscheme completion config \
 		kio parts service solid sonnet syntaxhighlighting textwidgets \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		base declarative
+USE_QT=		base declarative speech multimedia
 USE_XORG=	x11
 
 .include <bsd.port.mk>
