@@ -13,7 +13,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	GENie
-GH_TAGNAME=	7f00dcba5845a0158d53b9b2867f42e6979648ba
+GH_TAGNAME=	7f00dcb
 
 MAKE_ARGS=	-C build/gmake.freebsd \
 		AR=${AR} \
