@@ -1,6 +1,6 @@
 PORTNAME=	kmymoney
 PORTVERSION=	5.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 
 USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
-USE_QT=		buildtools:build core dbus gui network printsupport qmake:build \
-		sql testlib:build xml widgets
+USE_QT=		buildtools:build core dbus gui location network printsupport \
+		qmake:build sql testlib:build xml webchannel webengine widgets
 USE_KDE=	activities archive auth bookmarks codecs completion config \
 		configwidgets coreaddons doctools:build ecm:build i18n \
 		iconthemes itemmodels itemviews jobwidgets kcmutils \
@@ -27,13 +27,12 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	kmymoney/misc/financequote.pl
 
+CMAKE_ON=	ENABLE_WEBENGINE
+
 OPTIONS_GROUP=		PLUGINS
 OPTIONS_GROUP_PLUGINS=	CALENDAR KBANKING OFX SQLCIPHER WOOB
-WEB_DESC=		Web content renderer
-OPTIONS_SINGLE=		WEB
-OPTIONS_SINGLE_WEB=	KDEWEBKIT QTWEBENGINE
 OPTIONS_DEFINE=		ADDRESSBOOK GNUPG HOLIDAYS QUOTES
-OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES QTWEBENGINE
+OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES
 OPTIONS_SUB=		yes
 
 ADDRESSBOOK_DESC=	Address book support
@@ -64,16 +63,9 @@ KBANKING_LIB_DEPENDS=	libgwenhywfar.so:devel/gwenhywfar \
 KBANKING_USE=		qt=declarative
 KBANKING_CMAKE_BOOL=	ENABLE_KBANKING
 
-KDEWEBKIT_DESC=		Web content rendering via KDEWebKit
-KDEWEBKIT_USE=		kde=kdewebkit
-
 OFX_DESC=		OFX (Open Financial Exchange) importer
 OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 OFX_CMAKE_BOOL=		ENABLE_OFXIMPORTER
-
-QTWEBENGINE_DESC=	Web content rendering via QtWebEngine
-QTWEBENGINE_USE=	qt=location,webchannel,webengine
-QTWEBENGINE_CMAKE_BOOL=	ENABLE_WEBENGINE
 
 QUOTES_DESC=		Online stock and currency price quotes
 QUOTES_USES=		perl5
