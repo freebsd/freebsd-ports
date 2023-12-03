@@ -1,8 +1,10 @@
 PORTNAME=	libva
 DISTVERSION=	2.20.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	9ed99b6b0b3b.patch:-p1 # https://github.com/intel/libva/pull/667
 PATCHFILES+=	6b0efda45140.patch:-p1 # https://github.com/intel/libva/pull/758
 
 MAINTAINER=	jbeich@FreeBSD.org
