@@ -9,7 +9,7 @@ Here's a example crontab entry to update it every night:
 
     00 0 * * * root sleep `jot -r 1 0 600` ; %%PREFIX%%/arpwatch/update-ethercodes
 
-The -m flag is deprecated. If you are using the -m watcher flag,
+The -m flag was removed. If you were using the -m watcher flag,
 please switch to -w.
 EOM
 }
