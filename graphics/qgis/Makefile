@@ -1,5 +1,6 @@
 PORTNAME=	qgis
 DISTVERSION=	3.34.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -106,7 +107,6 @@ USES=		bison cmake compiler:features desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
 # math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
-CXXFLAGS+=	-pthread
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -132,7 +132,9 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 CMAKE_ON=	USE_OPENCL WITH_ASTYLE WITH_BINDINGS WITH_COPC \
 		WITH_CUSTOM_WIDGETS WITH_DRACO WITH_EPT \
 		WITH_INTERNAL_LAZPERF WITH_POSTGRESQL
-CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QWTPOLAR
+CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QTWEBKIT WITH_QWTPOLAR
+
+CXXFLAGS+=      -pthread
 
 CONFLICTS_INSTALL=	qgis-ltr
 
