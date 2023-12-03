@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		swig:devel/swig
 
-USES=		python:3.8-3.9
+USES=		python
 USE_PYTHON=	autoplist distutils # autoplist produces incomplete plist, missing files are in pkg-plist. Reported to the upstream author fbergman@caltech.edu on 2021-08-17
 
 MAKE_ENV=	CMAKE_BUILD_PARALLEL_LEVEL=${MAKE_JOBS_NUMBER}
