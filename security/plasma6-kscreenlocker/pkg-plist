@@ -1,3 +1,4 @@
+bin/ck-unlock-session
 etc/pam.d/kde
 include/KScreenLocker/KScreenLocker/KsldApp
 include/KScreenLocker/KScreenLocker/kscreenlocker_export.h
