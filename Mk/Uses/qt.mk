@@ -143,7 +143,7 @@ _QT_MK_POST_INCLUDED=	qt.mk
 
 # The Qt components supported by qt.mk: list of shared, and version specific ones
 _USE_QT_COMMON=		3d charts connectivity datavis3d declarative doc examples imageformats location \
-			multimedia networkauth phonon4 quick3d quicktimeline remoteobjects scxml \
+			multimedia networkauth quick3d quicktimeline remoteobjects scxml \
 			sensors serialbus serialport speech svg virtualkeyboard wayland \
 			webchannel webengine websockets webview
 
@@ -279,9 +279,6 @@ qt-pdf_LIB=		libQt${_QT_LIBVER}Pdf.so
 
 qt-pixeltool_PORT=	graphics/${_QT_RELNAME}-pixeltool
 qt-pixeltool_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/pixeltool
-
-qt-phonon4_PORT=	multimedia/phonon@${_QT_RELNAME}
-qt-phonon4_LIB=		libphonon4${_QT_RELNAME}.so
 
 qt-positioning_PORT=	devel/${_QT_RELNAME}-positioning
 qt-positioning_LIB=	libQt${_QT_LIBVER}Positioning.so

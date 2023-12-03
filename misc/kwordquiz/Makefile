@@ -15,10 +15,10 @@ USE_KDE=	attica auth bookmarks codecs completion config configwidgets \
 		coreaddons crash doctools emoticons guiaddons i18n \
 		iconthemes init itemmodels itemviews jobwidgets kdeclarative \
 		kdelibs4support kio libkeduvocdocument newstuff notifications \
-		notifyconfig parts service solid sonnet textwidgets \
+		notifyconfig parts phonon service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus gui network multimedia phonon4 printsupport widgets xml \
+USE_QT=		core dbus gui network multimedia printsupport widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11
 

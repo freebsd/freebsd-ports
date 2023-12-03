@@ -13,10 +13,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 pkgconfig \
 		qt:5 shared-mime-info tar:xz
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		crash dbusaddons guiaddons i18n iconthemes itemviews \
-		kdeclarative kio libkdegames newstuff notifyconfig service \
+		kdeclarative kio libkdegames newstuff notifyconfig phonon service \
 		textwidgets widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network phonon4 svg widgets xml \
+USE_QT=		concurrent core dbus declarative gui network svg widgets xml \
 		buildtools:build qmake:build testlib:build
 CMAKE_ON=	WITH_BH_SOLVER
 

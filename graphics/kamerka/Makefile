@@ -17,11 +17,11 @@ LIB_DEPENDS=	libv4l2.so:multimedia/libv4l \
 USES=		cmake compiler:c++11-lang kde:5 qt:5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	dos1
-USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport script xml widgets \
+USE_QT=		concurrent core dbus declarative gui network printsupport script xml widgets \
 		qmake:build buildtools:build
 USE_KDE=	auth bookmarks codecs completion config configwidgets coreaddons crash \
 		guiaddons i18n iconthemes init itemviews jobwidgets kdeclarative kdelibs4support \
-		kio notifications package parts service solid sonnet textwidgets \
+		kio notifications package parts phonon service solid sonnet textwidgets \
 		unitconversion xmlgui widgetsaddons windowsystem \
 		doctools:build ecm:build
 USE_XORG=	x11

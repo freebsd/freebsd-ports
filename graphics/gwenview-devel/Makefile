@@ -21,10 +21,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext gl jpeg \
 USE_KDE=	activities baloo5 bookmarks colorscheme completion config \
 		configwidgets coreaddons filemetadata guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets kio notifications \
-		parts purpose service solid wayland widgetsaddons windowsystem \
+		parts phonon purpose service solid wayland widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build
-USE_QT=		base phonon4 svg wayland
+USE_QT=		base svg wayland
 USE_XORG=	x11
 USE_GL=		gl opengl
 

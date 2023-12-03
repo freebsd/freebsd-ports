@@ -19,11 +19,11 @@ USES=		cmake compiler:c++11-lang desktop-file-utils gettext \
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd i18n iconthemes itemviews \
 		jobwidgets kcmutils kio kross notifications \
-		notifyconfig parts plotting service \
+		notifyconfig parts phonon plotting service \
 		solid sonnet syndication textwidgets widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui location network phonon4 printsupport \
+USE_QT=		concurrent core dbus declarative gui location network printsupport \
 		script webchannel widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

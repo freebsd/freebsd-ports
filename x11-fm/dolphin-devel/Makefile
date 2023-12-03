@@ -16,10 +16,10 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl kde:6 \
 USE_KDE=	activities attica5 baloo5 bookmarks codecs colorscheme \
 		completion config configwidgets coreaddons crash dbusaddons \
 		filemetadata i18n iconthemes itemviews jobwidgets kcmutils kio \
-		newstuff notifications parts service solid sonnet textwidgets \
+		newstuff notifications parts phonon service solid sonnet textwidgets \
 		userfeedback widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		base declarative phonon4
+USE_QT=		base declarative
 USE_GL=		gl opengl
 USE_XORG=	x11
 

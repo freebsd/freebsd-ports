@@ -18,13 +18,13 @@ USE_GNOME=	libxml2 libxslt
 USE_KDE=	archive auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons dnssd emoticons guiaddons i18n \
 		iconthemes itemviews jobwidgets js kcmutils kdelibs4support \
-		khtml kio notifications notifyconfig parts service solid sonnet \
+		khtml kio notifications notifyconfig parts phonon service solid sonnet \
 		syntaxhighlighting texteditor textwidgets unitconversion wallet widgetsaddons \
 		windowsystem xmlgui \
 		ecm:build
 # KDE PIM components
 USE_KDE+=	contacts identitymanagement libkleo pimtextedit
-USE_QT=		concurrent core dbus gui network phonon4 printsupport sql widgets xml \
+USE_QT=		concurrent core dbus gui network printsupport sql widgets xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11
 

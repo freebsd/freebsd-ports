@@ -49,11 +49,11 @@ USE_KDE=	activities akonadicontacts archive auth bookmarks calendarcore \
 		crash dbusaddons doctools emoticons guiaddons holidays i18n \
 		iconthemes init itemmodels itemviews jobwidgets js kcmutils \
 		kdelibs4support khtml kio kross notifications notifyconfig \
-		okular parts service solid sonnet texteditor textwidgets \
+		okular parts phonon service solid sonnet texteditor textwidgets \
 		threadweaver unitconversion wallet widgetsaddons windowsystem \
 		xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network opengl phonon4 \
+USE_QT=		concurrent core dbus declarative gui network opengl \
 		printsupport script sql svg testlib widgets x11extras \
 		xml \
 		buildtools:build qmake:build

@@ -8,10 +8,10 @@ WWW=		https://www.kde.org/applications/games/kollision/
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz
 USE_KDE=	auth codecs config configwidgets coreaddons crash dbusaddons \
-		i18n kio libkdegames newstuff notifyconfig textwidgets \
+		i18n kio libkdegames newstuff notifyconfig phonon textwidgets \
 		widgetsaddons xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network phonon4 svg widgets xml \
+USE_QT=		core dbus declarative gui network svg widgets xml \
 		buildtools:build qmake:build
 
 OPTIONS_DEFINE=	DOCS

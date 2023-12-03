@@ -38,7 +38,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		itemviews jobwidgets js jsembed kcmutils kdeclarative kdesu \
 		kio kscreenlocker kwin layer-shell-qt libkscreen \
 		libksysguard newstuff notifications notifyconfig package parts \
-		people plasma-framework plasma-integration prison pty runner \
+		people phonon plasma-framework plasma-integration prison pty runner \
 		service solid sonnet syntaxhighlighting texteditor textwidgets \
 		unitconversion wallet wayland widgetsaddons windowsystem \
 		xmlgui xmlrpcclient \
@@ -46,7 +46,7 @@ USE_KDE=	activities activities-stats activitymanagerd archive attica \
 		breeze-icons:run breeze:run kded:run kquickcharts:run \
 		milou:run oxygen-icons5:run
 USE_QT=		concurrent core dbus declarative graphicaleffects gui network \
-		phonon4 printsupport qdbus script sql svg wayland \
+		printsupport qdbus script sql svg wayland \
 		widgets x11extras xml \
 		buildtools:build qmake:build testlib:build \
 		paths:run quickcontrols:run

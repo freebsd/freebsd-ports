@@ -21,8 +21,8 @@ LIB_DEPENDS=	libvlc.so:multimedia/vlc
 
 USES=		cmake compiler:c++11-lang kde:${FLAVOR:S/qt//} pkgconfig \
 		qt:${FLAVOR:S/qt//} tar:xz
-USE_KDE=	ecm:build
-USE_QT=		${_USE_QT_${FLAVOR}} phonon4
+USE_KDE=	phonon ecm:build
+USE_QT=		${_USE_QT_${FLAVOR}}
 
 CMAKE_ON=	${_CMAKE_ON_${FLAVOR}}
 CMAKE_OFF=	${_CMAKE_OFF_${FLAVOR}}

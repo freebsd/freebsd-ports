@@ -10,10 +10,10 @@ USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons guiaddons i18n iconthemes \
 		itemviews jobwidgets kdelibs4support kio libkdegames \
-		notifications parts service solid sonnet textwidgets \
+		notifications parts phonon service solid sonnet textwidgets \
 		unitconversion widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus declarative gui network phonon4 printsupport \
+USE_QT=		concurrent core dbus declarative gui network printsupport \
 		widgets xml \
 		buildtools:build qmake:build
 

@@ -19,9 +19,9 @@ USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext gnome \
 USE_GNOME=	glib20
 USE_PERL5=	run build
 USE_KDE=	auth codecs config configwidgets coreaddons i18n notifications \
-		service widgetsaddons windowsystem xmlgui \
+		phonon service widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus gui multimedia network phonon4 printsupport sql svg \
+USE_QT=		core dbus gui multimedia network printsupport sql svg \
 		widgets x11extras xml \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xext xrender xscrnsaver

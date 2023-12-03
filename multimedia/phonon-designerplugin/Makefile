@@ -12,8 +12,8 @@ WWW=		https://userbase.kde.org/Phonon
 LICENSE=	LGPL21
 
 USES=		cmake:insource compiler:c++11-lang kde:5 qt:5 tar:xz
-USE_KDE=	ecm:build
-USE_QT=		core designer gui phonon4 uiplugin widgets xml \
+USE_KDE=	phonon ecm:build
+USE_QT=		core designer gui uiplugin widgets xml \
 		buildtools:build qmake:build
 CMAKE_ON=	PHONON_BUILD_QT5
 CMAKE_OFF=	PHONON_BUILD_QT6

@@ -20,8 +20,8 @@ USES=		cmake compiler:c++11-lang gl gnome gstreamer kde:5 pkgconfig \
 		qt:5 tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2
-USE_KDE=	ecm:build
-USE_QT=		core gui opengl phonon4 widgets x11extras \
+USE_KDE=	phonon ecm:build
+USE_QT=		core gui opengl widgets x11extras \
 		buildtools:build qmake:build
 USE_XORG=	x11
 
