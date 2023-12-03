@@ -156,3 +156,4 @@ libexec/appjail/find-smallest-missing-number/find-smallest-missing-number
 %%DATADIR%%/makejail/write/all/DEVICE
 %%DATADIR%%/scripts/load-devfs-rules.sh
 %%DATADIR%%/scripts/super-mv.sh
+%%DATADIR%%/scripts/kill_tree.sh
