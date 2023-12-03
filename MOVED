@@ -8160,3 +8160,4 @@ java/wildfly26||2023-12-02|Has expired: End of life upstream
 science/libgeodecomp||2023-12-02|Has expired: BROKEN for more than an year
 astro/tkgeomap||2023-12-02|Has expired: abandoned
 astro/tclgeomap||2023-12-02|Has expired: abandoned
+devel/electron24||2023-12-03|Has expired: Upstream EOL reached on 2023-10-10
