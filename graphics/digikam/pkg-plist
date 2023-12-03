@@ -327,7 +327,6 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/logo-beta.png
 %%DATADIR%%/data/logo-cimg.png
 %%DATADIR%%/data/logo-digikam.png
-%%DATADIR%%/data/logo-exiv2.png
 %%DATADIR%%/data/logo-gphoto.png
 %%DATADIR%%/data/logo-lcms.png
 %%DATADIR%%/data/logo-piwigo.png
