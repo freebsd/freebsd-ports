@@ -328,6 +328,7 @@
     SUBDIR += guile-cairo
     SUBDIR += guilib
     SUBDIR += gwenview
+    SUBDIR += gwenview-devel
     SUBDIR += h3
     SUBDIR += halftone
     SUBDIR += hdr_tools
