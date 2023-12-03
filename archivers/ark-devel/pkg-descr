@@ -1,0 +1,8 @@
+Ark is a program for managing various archive formats within the KDE
+environment.
+
+Archives can be viewed, extracted, created and modified from within
+Ark. The program can handle various formats such as tar, gzip, bzip2,
+zip, rar and lha (if appropriate command-line programs are
+installed). Ark can work closely with Konqueror and Dolphin in
+a KDE Plasma environment to handle archives.
