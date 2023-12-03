@@ -1,4 +1,4 @@
---- SSLeay.xs.orig	2022-10-17 10:31:55 UTC
+--- SSLeay.xs.orig	2022-01-10 19:05:48 UTC
 +++ SSLeay.xs
 @@ -685,7 +685,6 @@ static int ssleay_ctx_passwd_cb_invoke(char *buf, int 
  }
@@ -323,7 +323,23 @@
  
  int
  X509_VERIFY_PARAM_add1_host(param, name)
-@@ -7197,7 +7193,7 @@ ASN1_OBJECT *
+@@ -7010,6 +7006,7 @@ X509_VERIFY_PARAM_get0_peername(param)
+ 
+ #endif /* OpenSSL 1.0.2-beta2, LibreSSL 2.7.0 */
+ 
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER < 0x3080000fL) /* LibreSSL < 3.8.0 */
+ void
+ X509_policy_tree_free(tree)
+     X509_POLICY_TREE *tree
+@@ -7052,6 +7049,7 @@ const X509_POLICY_NODE *
+ X509_policy_node_get0_parent(node)
+     const X509_POLICY_NODE *node
+ 
++#endif /* !(LibreSSL >= 3.8.0) */
+ #endif
+ 
+ ASN1_OBJECT *
+@@ -7197,7 +7195,7 @@ ASN1_OBJECT *
  P_X509_get_signature_alg(x)
          X509 * x
      CODE:
@@ -332,7 +348,7 @@
          RETVAL = (X509_get0_tbs_sigalg(x)->algorithm);
  #else
          RETVAL = (x->cert_info->signature->algorithm);
-@@ -7239,7 +7235,7 @@ X509_get_X509_PUBKEY(x)
+@@ -7239,7 +7237,7 @@ X509_get_X509_PUBKEY(x)
     XPUSHs(sv_2mortal(newSVpv((char*)pc,len)));
     Safefree(pc);
  
@@ -341,7 +357,7 @@
  
  int
  SSL_CTX_set_next_protos_advertised_cb(ctx,callback,data=&PL_sv_undef)
-@@ -7690,7 +7686,7 @@ OCSP_response_results(rsp,...)
+@@ -7690,7 +7688,7 @@ OCSP_response_results(rsp,...)
  		if (!idsv) {
  		    /* getall: create new SV with OCSP_CERTID */
  		    unsigned char *pi,*pc;
@@ -350,7 +366,7 @@
  		    int len = i2d_OCSP_CERTID((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sir),NULL);
  #else
  		    int len = i2d_OCSP_CERTID(sir->certId,NULL);
-@@ -7699,7 +7695,7 @@ OCSP_response_results(rsp,...)
+@@ -7699,7 +7697,7 @@ OCSP_response_results(rsp,...)
  		    Newx(pc,len,unsigned char);
  		    if (!pc) croak("out of memory");
  		    pi = pc;
