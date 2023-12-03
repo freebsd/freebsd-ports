@@ -163,6 +163,7 @@
     SUBDIR += kickoff
     SUBDIR += kitty
     SUBDIR += konsole
+    SUBDIR += konsole-devel
     SUBDIR += lavalauncher
     SUBDIR += lemonbar
     SUBDIR += lemonbar-xft
