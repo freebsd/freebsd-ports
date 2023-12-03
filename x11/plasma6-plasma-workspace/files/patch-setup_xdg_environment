@@ -1,0 +1,11 @@
+--- startkde/startplasma.cpp.orig	2023-11-29 10:44:01 UTC
++++ startkde/startplasma.cpp
+@@ -341,7 +341,7 @@ void setupPlasmaEnvironment()
+     // Add kdedefaults dir to allow config defaults overriding from a writable location
+     QByteArray currentConfigDirs = qgetenv("XDG_CONFIG_DIRS");
+     if (currentConfigDirs.isEmpty()) {
+-        currentConfigDirs = "/etc/xdg";
++        currentConfigDirs = "%%LOCALBASE%%/etc/xdg:/etc/xdg";
+     }
+     const QString extraConfigDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1String("/kdedefaults");
+     QDir().mkpath(extraConfigDir);

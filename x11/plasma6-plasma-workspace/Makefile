@@ -1,5 +1,6 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 kde kde-plasma
 
 COMMENT=	KDE Plasma Workspace
@@ -38,5 +39,9 @@ USE_KDE=	activities activities-stats archive attica5 auth baloo5 \
 		ecm:build plasma-wayland-protocols:build
 USE_QT=		5compat base declarative phonon4 svg wayland
 USE_XORG=	ice sm x11 xau xcb xcursor xext xfixes xft xi xrender xtst
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/startkde/startplasma.cpp
 
 .include <bsd.port.mk>
