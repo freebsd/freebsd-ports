@@ -25,6 +25,11 @@ CMAKE_ARGS=	-DTJPEG_INCLUDE_DIR=${LOCALBASE}/include \
 		-DCMAKE_INSTALL_DOCDIR=${DOCSDIR}
 CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL
 
+# Some versioned symbols in virtualgl are undefined when libvglfaker.so
+# is linked. Suppress errors with lld >= 17 due to these undefined
+# symbols.
+LDFLAGS+=	-Wl,--undefined-version
+
 DOCSDIR=	${LOCALBASE}/VirtualGL/doc
 
 OPTIONS_DEFINE=	OPENCL OPENSSL XVIDEO DOCS
