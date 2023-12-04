@@ -165,7 +165,6 @@
     SUBDIR += festlex-cmu
     SUBDIR += festlex-czech
     SUBDIR += festlex-oald
-    SUBDIR += festlex-ogi
     SUBDIR += festlex-poslex
     SUBDIR += festvox-cmu_us_awb_arctic
     SUBDIR += festvox-cmu_us_bdl_arctic
