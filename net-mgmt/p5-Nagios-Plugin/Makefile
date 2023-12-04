@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TONVOON
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gjb@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules to streamline writing Nagios plugins
 WWW=		https://metacpan.org/release/Nagios-Plugin
 
