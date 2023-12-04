@@ -81,6 +81,14 @@ BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 CONFIGURE_ENV+=	LLVM_CONFIG=${LLVM_CONFIG}
 
+# Deal with unclean env if the user have elfutils installed
+# and build the port directly without poudriere
+.if exists(${LOCALBASE}/include/libelf.h)
+LIB_DEPENDS+=	libelf.so:devel/elfutils
+MESON_ARGS+=	-Dlibelf=enabled
+.else
+MESON_ARGS+=	-Dlibelf=disabled
+.endif
 
 # Some symbols in mesa's linker version scripts are not always defined,
 # depending on configuration options. Suppress errors with lld >= 17 due to
@@ -89,5 +97,4 @@ LDFLAGS+=	-Wl,--undefined-version
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/llvm${LLVM_VERSION}/lib
 MESON_ARGS+=	-Dllvm=enabled \
-		-Dlibunwind=disabled \
-		-Dlibelf=disabled
+		-Dlibunwind=disabled
