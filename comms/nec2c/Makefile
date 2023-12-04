@@ -7,8 +7,8 @@ MAINTAINER=	hamradio@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 WWW=		https://www.qsl.net/5b4az/
 
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	PD
+LICENSE_FILE=	${WRKSRC}/README
 
 USES=		dos2unix tar:bz2
 
