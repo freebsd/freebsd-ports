@@ -22,8 +22,8 @@
 %%LIBDIR%%/data1/sound
 %%LIBDIR%%/data1/textures
 %%LIBDIR%%/data1/vehicles
-share/applications/alienarena.desktop
-share/icons/hicolor/256x256/apps/alien-arena.png
+%%CLIENT%%share/applications/alienarena.desktop
+%%CLIENT%%share/icons/hicolor/256x256/apps/alien-arena.png
 @dir %%LIBDIR%%/data1
 @dir %%LIBDIR%%/arena
 @dir %%LIBDIR%%

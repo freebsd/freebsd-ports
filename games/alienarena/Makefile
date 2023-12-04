@@ -1,5 +1,6 @@
 PORTNAME=	alienarena
 DISTVERSION=	7.71.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	games
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/../docs/license.txt
 
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/arena/default.cfg:games/alienarena-data
 
-USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake localbase
+USES=		compiler:c++11-lib desktop-file-utils dos2unix gmake localbase pkgconfig
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 
@@ -25,7 +26,7 @@ MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
 		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
 
 # Fix build with clang11
-CFLAGS+=	-fcommon
+CFLAGS+=	-fcommon -Wno-error=int-conversion
 
 EXTRACT_AFTER_ARGS=	--exclude "data1"
 SUB_FILES=	pkg-message
@@ -49,7 +50,7 @@ CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libode.so:devel/ode
-CLIENT_USES=		gl jpeg openal:soft,alut pkgconfig xorg
+CLIENT_USES=		gl jpeg openal:soft,alut minizip xorg
 CLIENT_USE=		GL=glu XORG=x11,xxf86dga,xxf86vm
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
