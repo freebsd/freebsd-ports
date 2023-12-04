@@ -181,6 +181,8 @@ lib/ff++/%%VER%%/lib/Element_QF.so
 lib/ff++/%%VER%%/lib/FreeFemQA.so
 lib/ff++/%%VER%%/lib/Helmholtz_FD.so
 lib/ff++/%%VER%%/lib/IncompleteCholesky.so
+lib/ff++/%%VER%%/lib/MUMPS.so
+lib/ff++/%%VER%%/lib/MUMPS_seq.so
 lib/ff++/%%VER%%/lib/MatD-VFP0.so
 lib/ff++/%%VER%%/lib/MatrixMarket.so
 lib/ff++/%%VER%%/lib/MetricKuate.so
