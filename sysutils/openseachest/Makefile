@@ -1,5 +1,5 @@
 PORTNAME=	openseachest
-PORTVERSION=	23.03.1
+PORTVERSION=	23.12
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -15,10 +15,10 @@ DOS2UNIX_FILES=	src/openseachest_util_options.c
 USE_GITHUB=	yes
 GH_ACCOUNT=	Seagate
 GH_PROJECT=	openSeaChest
-GH_TUPLE=	Seagate:opensea-common:5b65caa:common/subprojects/opensea-common \
-		Seagate:opensea-operations:187570b:operations/subprojects/opensea-operations \
-		Seagate:opensea-transport:cca4059:transport/subprojects/opensea-transport \
-		Seagate:wingetopt:92c217a:wingetopt/subprojects/wingetopt
+GH_TUPLE=	Seagate:opensea-common:fb04a1a:common/subprojects/opensea-common \
+		Seagate:opensea-operations:3dffce6:operations/subprojects/opensea-operations \
+		Seagate:opensea-transport:443c719:transport/subprojects/opensea-transport \
+		Seagate:wingetopt:c68019b:wingetopt/subprojects/wingetopt
 
 MAKE_JOBS_UNSAFE=	yes
 ALL_TARGET=	release
