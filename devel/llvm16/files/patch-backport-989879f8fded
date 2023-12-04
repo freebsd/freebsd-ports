@@ -1,0 +1,38 @@
+commit 989879f8fded41c732db93864461b3a67b9f1501
+Author: Paul Walker <paul.walker@arm.com>
+Date:   Thu Jun 22 14:03:28 2023 +0000
+
+    [Clang] Allow C++11 style initialisation of SVE types.
+    
+    Fixes https://github.com/llvm/llvm-project/issues/63223
+    
+    Differential Revision: https://reviews.llvm.org/D153560
+
+diff --git clang/lib/CodeGen/CGExprScalar.cpp clang/lib/CodeGen/CGExprScalar.cpp
+index 02b80f3aba21..dbba8cc96f81 100644
+--- clang/lib/CodeGen/CGExprScalar.cpp
++++ clang/lib/CodeGen/CGExprScalar.cpp
+@@ -1869,6 +1869,23 @@ Value *ScalarExprEmitter::VisitInitListExpr(InitListExpr *E) {
+     return Visit(E->getInit(0));
+   }
+ 
++  if (isa<llvm::ScalableVectorType>(VType)) {
++    if (NumInitElements == 0) {
++      // C++11 value-initialization for the vector.
++      return EmitNullValue(E->getType());
++    }
++
++    if (NumInitElements == 1) {
++      Expr *InitVector = E->getInit(0);
++
++      // Initialize from another scalable vector of the same type.
++      if (InitVector->getType() == E->getType())
++        return Visit(InitVector);
++    }
++
++    llvm_unreachable("Unexpected initialization of a scalable vector!");
++  }
++
+   unsigned ResElts = cast<llvm::FixedVectorType>(VType)->getNumElements();
+ 
+   // Loop over initializers collecting the Value for each, and remembering
