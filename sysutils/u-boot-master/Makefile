@@ -21,7 +21,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		dtc>=1.4.1:sysutils/dtc \
 		mkimage:sysutils/u-boot-tools \
 		${PYTHON_PKGNAMEPREFIX}setuptools-pkg>=0:devel/py-setuptools-pkg@${PY_FLAVOR}
-BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
+BUILD_DEPENDS+=	${LOCALBASE64}/bin/${COMPILER}:devel/${COMPILER}
 
 .if !defined(NO_MKEFICAPSULE)
 # For mkeficapsule
@@ -38,7 +38,7 @@ UBOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 INST=		${PREFIX}/${UBOOT_DIR}
 DESCR?=		${.CURDIR}/pkg-descr
 
-MAKE_ENV+=	V=1 CROSS_COMPILE=${CROSS_COMPILE} PYTHON=${PYTHON_CMD} CC=clang
+MAKE_ENV+=	V=1 CROSS_COMPILE=${LOCALBASE64}/bin/${CROSS_COMPILE} PYTHON=${PYTHON_CMD} CC=clang
 MAKE_ARGS+=	${ARCHFLAGS}
 MAKE_ARGS+=	HOSTCC="${CC}"
 
