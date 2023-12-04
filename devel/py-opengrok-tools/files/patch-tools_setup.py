@@ -1,6 +1,6 @@
---- opengrok-tools/setup.py.orig	2020-03-26 19:43:15 UTC
-+++ opengrok-tools/setup.py
-@@ -32,7 +32,7 @@ setup(
+--- tools/setup.py.orig	2021-02-17 15:55:36 UTC
++++ tools/setup.py
+@@ -31,7 +31,7 @@ setup(
      long_description=readme(),
      python_requires='>=3.4, <4',
      install_requires=[
