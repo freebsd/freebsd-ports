@@ -1,7 +1,7 @@
 <?php
 chdir("%%WWWDIR%%");
 
-require_once "%%WWWDIR%%/classes/config.php";
+require_once "%%WWWDIR%%/classes/Config.php";
 require_once "%%WWWDIR%%/include/functions.php";
 
 print(strtolower(Config::get(Config::DB_TYPE)));
