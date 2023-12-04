@@ -1,6 +1,6 @@
 PORTNAME=	ncrystal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
+DISTVERSION=	3.8.0
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mctools
 
 SHEBANG_FILES=	scripts/* \
-		cmake/ncrystal-config.in \
-		ncrystal_mcstas/ncrystal_preparemcstasdir
+		cmake/ncrystal-config.in
 
 post-install: # workaround for https://github.com/mctools/ncrystal/issues/150
 	@${RM} ${STAGEDIR}${PREFIX}/*.sh
