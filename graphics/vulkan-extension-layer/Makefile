@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-extension-layer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.271
+DISTVERSION=	1.3.272
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,11 +18,6 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 GH_TUPLE=	KhronosGroup:Vulkan-Utility-Libraries:${DISTVERSIONPREFIX}${DISTVERSION}:utils/Vulkan-Utility-Libraries
 CMAKE_OFF=	BUILD_TESTS
-
-.if ${DISTVERSION:E} < 272
-GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.271:vkheaders/Vulkan-Headers
-CFLAGS+=	-I${WRKSRC_vkheaders}/include
-.endif
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
 OPTIONS_DEFAULT=WAYLAND XCB XLIB
