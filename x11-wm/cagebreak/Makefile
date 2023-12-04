@@ -1,6 +1,5 @@
 PORTNAME=	cagebreak
-DISTVERSION=	2.2.1
-PORTREVISION=	1
+DISTVERSION=	2.2.2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.17.0<0.18.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
 		libwayland-server.so:graphics/wayland \
@@ -49,5 +48,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/install.*licenses/d' \
 		${WRKSRC}/meson.build
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots016/override.mk"
 .include <bsd.port.mk>
