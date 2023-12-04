@@ -1,5 +1,5 @@
 PORTNAME=	pass-audit
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/roddhjav/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,18 +27,5 @@ SHEBANG_FILES=	${WRKSRC}/pass_audit/__main__.py
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:\<python3\>:${PYTHON_CMD}:g' ${WRKSRC}/audit.bash
-
-pre-install:
-	${INSTALL_MAN} ${WRKSRC}/pass-audit.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/pass-audit.1
-	@${MKDIR} ${STAGEDIR}${LOCALBASE}/libexec/password-store/extensions
-	${INSTALL_SCRIPT} ${WRKSRC}/audit.bash \
-		${STAGEDIR}${LOCALBASE}/libexec/password-store/extensions/audit.bash
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/completion/pass-audit.bash \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d/pass-audit
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/completion/pass-audit.zsh \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_pass-audit
 
 .include <bsd.port.mk>
