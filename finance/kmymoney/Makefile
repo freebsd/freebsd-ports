@@ -14,14 +14,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 LIB_DEPENDS=	libalkimia5.so:finance/alkimia \
 		libKChart.so:graphics/kdiagram
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gettext kde:5 \
+USES=		cmake compiler:c++14-lang desktop-file-utils \
+		gettext-runtime:build gettext-tools kde:5 \
 		pkgconfig qt:5 shared-mime-info shebangfix tar:xz
-USE_QT=		buildtools:build core dbus gui location network printsupport \
-		qmake:build sql testlib:build xml webchannel webengine widgets
-USE_KDE=	activities archive auth bookmarks codecs completion config \
+USE_QT=		buildtools:build core dbus gui network printsupport \
+		qmake:build sql testlib:build xml webengine widgets
+USE_KDE=	activities archive codecs completion config \
 		configwidgets coreaddons doctools:build ecm:build i18n \
-		iconthemes itemmodels itemviews jobwidgets kcmutils \
-		kio notifications textwidgets service solid sonnet \
+		itemmodels itemviews jobwidgets kcmutils \
+		kio notifications textwidgets service sonnet \
 		wallet widgetsaddons xmlgui
 USE_LDCONFIG=	yes
 
@@ -36,7 +37,7 @@ OPTIONS_DEFAULT=	CALENDAR GNUPG HOLIDAYS KBANKING OFX QUOTES
 OPTIONS_SUB=		yes
 
 ADDRESSBOOK_DESC=	Address book support
-ADDRESSBOOK_USE=	kde=akonadi,contacts,identitymanagement,pimtextedit
+ADDRESSBOOK_USE=	kde=akonadi,contacts,identitymanagement
 ADDRESSBOOK_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5Akonadi \
 				CMAKE_DISABLE_FIND_PACKAGE_KF5Contacts \
 				CMAKE_DISABLE_FIND_PACKAGE_KF5IdentityManagement
@@ -45,10 +46,7 @@ CALENDAR_DESC=		iCalendar exporter
 CALENDAR_LIB_DEPENDS=	libical.so:devel/libical
 CALENDAR_CMAKE_BOOL=	ENABLE_LIBICAL
 
-GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme \
-			libgpgmepp.so:security/gpgme-cpp \
-			libassuan.so:security/libassuan \
-			libgpg-error.so:security/libgpg-error
+GNUPG_LIB_DEPENDS=	libgpgmepp.so:security/gpgme-cpp
 GNUPG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_Gpgmepp \
 			CMAKE_DISABLE_FIND_PACKAGE_KF5Gpgmepp
 
@@ -84,7 +82,6 @@ WOOB_DESC=		Online banking via Web Outside Of Browsers
 WOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
 WOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
 WOOB_USES=		python
-WOOB_USE=		qt=concurrent
 WOOB_CMAKE_BOOL=	ENABLE_WOOB
 
 .if defined(MAINTAINER_MODE)
