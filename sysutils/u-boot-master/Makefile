@@ -20,7 +20,7 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		swig:devel/swig \
 		dtc>=1.4.1:sysutils/dtc \
 		mkimage:sysutils/u-boot-tools \
-		${PYTHON_PKGNAMEPREFIX}setuptools-pkg>=0:devel/py-setuptools-pkg@${PY_FLAVOR}
+		${PYTHON_SITELIBDIR}/setuptools_pkg:devel/py-setuptools-pkg@${PY_FLAVOR}
 BUILD_DEPENDS+=	${LOCALBASE64}/bin/${COMPILER}:devel/${COMPILER}
 
 .if !defined(NO_MKEFICAPSULE)
