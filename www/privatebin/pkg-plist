@@ -33,7 +33,6 @@
 %%WWWDIR%%/i18n/cs.json
 %%WWWDIR%%/i18n/de.json
 %%WWWDIR%%/i18n/el.json
-%%WWWDIR%%/i18n/en.json
 %%WWWDIR%%/i18n/es.json
 %%WWWDIR%%/i18n/et.json
 %%WWWDIR%%/i18n/fi.json
@@ -101,7 +100,7 @@
 %%WWWDIR%%/js/pastemeta.jsonld
 %%WWWDIR%%/js/prettify.js
 %%WWWDIR%%/js/privatebin.js
-%%WWWDIR%%/js/purify-3.0.4.js
+%%WWWDIR%%/js/purify-3.0.6.js
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
