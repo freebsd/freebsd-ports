@@ -1,6 +1,6 @@
---- configure.orig	2021-04-11 12:58:05 UTC
+--- configure.orig	2023-08-28 16:47:18 UTC
 +++ configure
-@@ -7670,12 +7670,19 @@ case "$host" in
+@@ -8544,12 +8544,20 @@ case "$host" in
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;
@@ -23,6 +23,13 @@
 +  *-*-freebsd12.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="12";;
 +  *-*-freebsd13.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="13";;
 +  *-*-freebsd14.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="14";;
++  *-*-freebsd15.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="15";;
    *-*-kfreebsd*) plat_name="kFreeBSD";  plat_def="__FreeBSD_kernel__";  os_v="6";;
    *-*-netbsd*)   plat_name="NetBSD";   plat_def="__netbsd__";   os_v="1";;
    *-*-openbsd*)  plat_name="OpenBSD";  plat_def="__openbsd__";  os_v="3";;
+@@ -9999,5 +10007,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

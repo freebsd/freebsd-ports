@@ -10,8 +10,6 @@ WWW=		http://omniorb.sourceforge.net/
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_15=	cannot convert 'pthread**' to 'pthread_t' {aka 'pthread*'}
-
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		gmake pkgconfig python shebangfix ssl tar:bzip2
