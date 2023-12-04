@@ -25,6 +25,7 @@ share/ECM/find-modules/FindOpenEXR.cmake
 share/ECM/find-modules/FindPhoneNumber.cmake
 share/ECM/find-modules/FindPoppler.cmake
 share/ECM/find-modules/FindPulseAudio.cmake
+share/ECM/find-modules/Find7Zip.cmake
 share/ECM/find-modules/FindPythonModuleGeneration.cmake
 share/ECM/find-modules/FindQHelpGenerator.cmake
 share/ECM/find-modules/FindQtWaylandScanner.cmake
