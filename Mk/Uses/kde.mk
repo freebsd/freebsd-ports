@@ -220,7 +220,9 @@ MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION
 MASTER_SITES?=		KDE/${KDE_FRAMEWORKS_BRANCH}/frameworks/${KDE_FRAMEWORKS_VERSION}
 .        endif
 DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
+.        if ${_KDE_VERSION:M6}
 DESCR=			${.CURDIR:H:H}/x11/kf6-frameworks/pkg-descr
+.        endif
 .      else
 IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .      endif
