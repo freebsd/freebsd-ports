@@ -3,6 +3,7 @@ include/fizz/client/AsyncFizzClient-inl.h
 include/fizz/client/AsyncFizzClient.h
 include/fizz/client/ClientExtensions.h
 include/fizz/client/ClientProtocol.h
+include/fizz/client/ECHPolicy.h
 include/fizz/client/EarlyDataRejectionPolicy.h
 include/fizz/client/FizzClient-inl.h
 include/fizz/client/FizzClient.h
