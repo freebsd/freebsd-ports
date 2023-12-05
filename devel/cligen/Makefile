@@ -1,5 +1,5 @@
 PORTNAME=	cligen
-PORTVERSION=	6.4.0
+PORTVERSION=	6.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	dave@dogwood.com
