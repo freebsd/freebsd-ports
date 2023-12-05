@@ -1,3 +1,44 @@
+  <vuln vid="9cbbc506-93c1-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- TCP spoofing vulnerability in pf(4)</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.0</ge><lt>14.0_2</lt></range>
+	<range><ge>13.2</ge><lt>13.2_7</lt></range>
+	<range><ge>12.4</ge><lt>12.4_9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>As part of its stateful TCP connection tracking implementation,
+	pf performs sequence number validation on inbound packets.  This
+	makes it difficult for a would-be attacker to spoof the sender and
+	inject packets into a TCP stream, since crafted packets must contain
+	sequence numbers which match the current connection state to avoid
+	being rejected by the firewall.</p>
+	<p>A bug in the implementation of sequence number validation means
+	that the sequence number is not in fact validated, allowing an
+	attacker who is able to impersonate the remote host and guess the
+	connection's port numbers to inject packets into the TCP stream.</p>
+	<h1>Impact:</h1>
+	<p>An attacker can, with relatively little effort, inject packets
+	into a TCP stream destined to a host behind a pf firewall.  This
+	could be used to implement a denial-of-service attack for hosts
+	behind the firewall, for example by sending TCP RST packets to the
+	host.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6534</cvename>
+      <freebsdsa>SA-23:17.pf</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-12-05</discovery>
+      <entry>2023-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f25a34b1-910d-11ee-a1a2-641c67a117d8">
     <topic>varnish -- HTTP/2 Rapid Reset Attack</topic>
     <affects>
