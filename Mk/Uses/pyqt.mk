@@ -89,7 +89,7 @@ SIP_VERSION=		6.8.0	# ,1
 SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.10
-PYQT6_VERSION=		6.6.0
+PYQT6_VERSION=		6.6.1
 PYQT63D_VERSION=	6.6.0
 PYQT5CHART_VERSION=	5.15.6
 PYQT6CHART_VERSION=	6.6.0
@@ -213,7 +213,8 @@ SIP_ARGS+=	--qmake ${QMAKE} \
 		--verbose \
 		--build-dir build \
 		--protected-is-public \
-		--api-dir ${PYQT_APIDIR}
+		--api-dir ${PYQT_APIDIR} \
+		--jobs ${MAKE_JOBS_NUMBER}
 .    if ${PORTNAME} == "pyqt"
 SIP_ARGS+=	--confirm-license
 .    endif
