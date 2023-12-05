@@ -1,6 +1,6 @@
---- bimg/3rdparty/nvtt/nvcore/debug.h.orig	2023-02-07 16:06:32 UTC
+--- bimg/3rdparty/nvtt/nvcore/debug.h.orig	2023-11-23 17:42:13 UTC
 +++ bimg/3rdparty/nvtt/nvcore/debug.h
-@@ -165,7 +165,7 @@ namespace nv
+@@ -166,7 +166,7 @@ NVCORE_API void NV_CDECL nvDebugPrint( const char *msg
  namespace nv
  {
      inline bool isValidPtr(const void * ptr) {
