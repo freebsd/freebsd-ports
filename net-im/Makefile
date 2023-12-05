@@ -32,7 +32,6 @@
     SUBDIR += icqlib
     SUBDIR += jabberd
     SUBDIR += jarl
-    SUBDIR += jggtrans
     SUBDIR += jicofo
     SUBDIR += jitsi-meet-full
     SUBDIR += jitsi-prosody-plugins
