@@ -1,5 +1,5 @@
 PORTNAME=	cagebreak
-DISTVERSION=	2.2.2
+DISTVERSION=	2.2.3
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
