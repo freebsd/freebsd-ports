@@ -1,6 +1,6 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.11.1
+DISTVERSION=	23.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -71,6 +71,7 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		hermit-abi-0.3.2 \
 		iana-time-zone-0.1.58 \
 		iana-time-zone-haiku-0.1.2 \
+		ignore-0.4.20 \
 		indexmap-2.0.0 \
 		indoc-2.0.3 \
 		insta-1.31.0 \
@@ -110,9 +111,10 @@ CARGO_CRATES=	aho-corasick-1.0.5 \
 		proc-macro2-1.0.67 \
 		quote-1.0.33 \
 		redox_syscall-0.3.5 \
-		regex-1.9.5 \
+		regex-1.10.2 \
 		regex-automata-0.3.8 \
-		regex-syntax-0.7.5 \
+		regex-automata-0.4.3 \
+		regex-syntax-0.8.2 \
 		rustix-0.37.25 \
 		rustix-0.38.13 \
 		ryu-1.0.15 \
