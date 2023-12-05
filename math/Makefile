@@ -352,7 +352,6 @@
     SUBDIR += gemmlowp
     SUBDIR += geogebra
     SUBDIR += geogram
-    SUBDIR += geonext
     SUBDIR += gexpr
     SUBDIR += gf2x
     SUBDIR += gfan
