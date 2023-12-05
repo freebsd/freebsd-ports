@@ -462,6 +462,7 @@ include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerFlags.h
 include/thrift/lib/cpp2/server/ServerInstrumentation.h
+include/thrift/lib/cpp2/server/ServerModule.h
 include/thrift/lib/cpp2/server/ServiceHealthPoller.h
 include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
