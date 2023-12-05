@@ -2,7 +2,6 @@
 
     SUBDIR += aspell
     SUBDIR += fortunepl
-    SUBDIR += gnugadu2
     SUBDIR += hunspell
     SUBDIR += hyphen
     SUBDIR += libgadu
