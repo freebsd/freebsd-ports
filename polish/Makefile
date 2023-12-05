@@ -10,7 +10,6 @@
     SUBDIR += mythes
     SUBDIR += napi
     SUBDIR += qnapi
-    SUBDIR += tleenx2
     SUBDIR += trf
     SUBDIR += webalizer2
 
