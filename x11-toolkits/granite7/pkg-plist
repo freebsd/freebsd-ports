@@ -209,6 +209,6 @@ share/locale/zh_CN/LC_MESSAGES/granite-7.mo
 share/locale/zh_HK/LC_MESSAGES/granite-7.mo
 share/locale/zh_TW/LC_MESSAGES/granite-7.mo
 share/locale/zu/LC_MESSAGES/granite-7.mo
-share/metainfo/granite-7.appdata.xml
+share/metainfo/granite-7.metainfo.xml
 share/vala/vapi/granite-7.deps
 share/vala/vapi/granite-7.vapi
