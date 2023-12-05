@@ -6,7 +6,6 @@
     SUBDIR += hyphen
     SUBDIR += libgadu
     SUBDIR += libreoffice
-    SUBDIR += libtlen
     SUBDIR += mythes
     SUBDIR += napi
     SUBDIR += qnapi
