@@ -4,7 +4,6 @@ PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_SIP}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${SIP_DISTNAME}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python to C and C++ bindings generator
@@ -19,12 +18,16 @@ LICENSE_FILE_SIP=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE-GPL2
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE-GPL3
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ply>0:devel/py-ply@${PY_FLAVOR}
 
 USES=		python pyqt:sip
-USE_PYTHON=	autoplist concurrent distutils flavors
+USE_PYTHON=	autoplist concurrent pep517
 USE_PYQT=	#
+
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 

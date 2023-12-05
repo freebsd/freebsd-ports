@@ -85,7 +85,7 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 #
 # Where noted, the ports are epoched and the py-${comp}-PATH variables,
 # below, should have a suitable epoch appended to the version.
-SIP_VERSION=		6.7.12	# ,1
+SIP_VERSION=		6.8.0	# ,1
 SIP4_VERSION=		4.19.25
 QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.10
@@ -102,7 +102,6 @@ PYQT5SIP_VERSION=	12.13.0
 PYQT6SIP_VERSION=	13.6.0
 PYQTBUILDER_VERSION=	1.15.3
 
-SIP_DISTNAME=		sip-${SIP_VERSION}
 SIP4_DISTNAME=		sip-${SIP4_VERSION}
 PYQT5_DISTNAME=		PyQt5-${PYQT5_VERSION}
 PYQT6_DISTNAME=		PyQt6-${PYQT6_VERSION}
