@@ -1,12 +1,12 @@
 - workaround for https://github.com/wrapl/rabs/issues/193
 
---- radb/Makefile.orig	2023-02-18 07:42:57 UTC
+--- radb/Makefile.orig	2023-03-06 14:58:35 UTC
 +++ radb/Makefile
 @@ -13,7 +13,7 @@ CFLAGS += -std=gnu99 -fstrict-aliasing -Wstrict-aliasi
  ifdef DEBUG
  	CFLAGS += -g -DGC_DEBUG -DDEBUG
  else
--	CFLAGS += -O3 -g -momit-leaf-frame-pointer -foptimize-sibling-calls -fcf-protection=none -fno-stack-protector -march=native -mtune=native -mno-sse2 -mno-align-stringops -minline-all-stringops -fno-tree-loop-distribute-patterns
+-	CFLAGS += -O3 -g -momit-leaf-frame-pointer -foptimize-sibling-calls -fno-stack-protector -march=native -mtune=native -mno-sse2 -minline-all-stringops
 +	CFLAGS += -O3 -g -mno-sse2
  endif
  

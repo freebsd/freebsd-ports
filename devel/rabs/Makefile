@@ -1,6 +1,6 @@
 PORTNAME=	rabs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.27.6
+DISTVERSION=	2.30.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +15,11 @@ ONLY_FOR_ARCHS_REASON=	invokes x86 assembly: Error: unrecognized opcode: 'int3'
 
 LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 
-USES=		compiler:c11 gmake localbase:ldflags sqlite
+USES=		compiler:c11 gmake localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	wrapl
-GH_TUPLE=	wrapl:minilang:55e40f4:wrapl_minilang/minilang \
-		rajamukherji:radb:e7d205d:rajamukherji_radb/radb
+GH_TUPLE=	wrapl:minilang:5a55610:wrapl_minilang/minilang \
+		rajamukherji:radb:37fe24d:rajamukherji_radb/radb
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 BINARY_ALIAS=	make=${GMAKE}
