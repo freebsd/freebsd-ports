@@ -47,6 +47,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		lib/libVkLayer_FROG_${PORTNAME}_wsi_${MESON_ARCH_FAMILY}.so \
 		share/vulkan/implicit_layer.d/VkLayer_FROG_${PORTNAME}_wsi.${MESON_ARCH_FAMILY}.json
 
+# https://github.com/freebsd/drm-kmod/issues/271
+PORTSCOUT=	ignore:1
+
 OPTIONS_DEFINE=	PIPEWIRE
 OPTIONS_DEFAULT=PIPEWIRE
 
