@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.7
+DISTVERSION=	2023.12.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,9 +22,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.4 \
 		anstyle-1.0.4 \
-		anstyle-parse-0.2.2 \
-		anstyle-query-1.0.0 \
-		anstyle-wincon-3.0.1 \
+		anstyle-parse-0.2.3 \
+		anstyle-query-1.0.1 \
+		anstyle-wincon-3.0.2 \
 		async-compression-0.4.5 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
@@ -41,8 +41,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		cc-1.0.83 \
 		cfg-if-1.0.0 \
 		chrono-0.4.31 \
-		clap-4.4.10 \
-		clap_builder-4.4.9 \
+		clap-4.4.11 \
+		clap_builder-4.4.11 \
 		clap_complete-4.4.4 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
@@ -52,6 +52,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-print-proc-macro-0.3.5 \
 		color-spantrace-0.2.1 \
 		colorchoice-1.0.0 \
+		confique-0.2.4 \
+		confique-macro-0.0.8 \
 		console-0.15.7 \
 		const-oid-0.9.5 \
 		core-foundation-0.9.4 \
@@ -110,6 +112,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		globwalk-0.8.1 \
 		h2-0.3.22 \
 		hashbrown-0.14.3 \
+		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.3.3 \
 		home-0.5.5 \
@@ -160,10 +163,10 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		number_prefix-0.4.0 \
 		object-0.32.1 \
 		once_cell-1.18.0 \
-		openssl-0.10.60 \
+		openssl-0.10.61 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.96 \
+		openssl-sys-0.9.97 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.14 \
@@ -335,7 +338,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.19 \
+		winnow-0.5.24 \
 		winreg-0.50.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
