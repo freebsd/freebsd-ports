@@ -1,5 +1,5 @@
 PORTNAME=	social-auth-core
-DISTVERSION=	4.4.2
+DISTVERSION=	4.5.1
 CATEGORIES=	security www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.5.0:devel/py-defusedxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python3-openid>=3.0.10:security/py-python3-openid@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0.0:www/py-pyjwt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.7.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oauthlib>=1.0.3:security/py-oauthlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.9.1:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0.6.1:www/py-requests-oauthlib@${PY_FLAVOR}
@@ -28,11 +28,8 @@ TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	OPENID SAML
-OPTIONS_DEFAULT=	OPENID SAML
-
-OPENID_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-jose>=3.0.0:security/py-python-jose@${PY_FLAVOR}
-OPENID_DESC?=	OpenID connect Support
+OPTIONS_DEFINE=	SAML
+OPTIONS_DEFAULT=	SAML
 
 SAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python3-saml>=1.5.0:security/py-python3-saml@${PY_FLAVOR}
 SAML_DESC?=	SAML Support
