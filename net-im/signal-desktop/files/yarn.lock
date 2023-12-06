@@ -3808,10 +3808,10 @@
     node-gyp-build "^4.2.3"
     uuid "^8.3.0"
 
-"@signalapp/ringrtc@2.34.1":
-  version "2.34.1"
-  resolved "https://registry.yarnpkg.com/@signalapp/ringrtc/-/ringrtc-2.34.1.tgz#e2a7ca8f9b1b0de4b51e5a1eec2b158cb1b8df7f"
-  integrity sha512-F7Nzuj+L4ehMP+eK+YQJIFatAckhfGavVfrGUKUf/KOyQHvm87H3Q+BccgXYvtAxAwHKLFjlHA3cuzKpbVOFgA==
+"@signalapp/ringrtc@2.34.3":
+  version "2.34.3"
+  resolved "https://registry.yarnpkg.com/@signalapp/ringrtc/-/ringrtc-2.34.3.tgz#e8a3b81fc05fb63c9aefc15f861658225722253d"
+  integrity sha512-dO/eHbIsbiO3gmrc/N2PSG6ltdHNdU54hPBAM3EoEEfmJRJoC4J2uTDDY1mYBWn9LNXhcs8pr8UObgkMYZEeQw==
   dependencies:
     tar "^6.1.0"
 
@@ -19238,6 +19238,11 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+urlpattern-polyfill@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/urlpattern-polyfill/-/urlpattern-polyfill-9.0.0.tgz#bc7e386bb12fd7898b58d1509df21d3c29ab3460"
+  integrity sha512-WHN8KDQblxd32odxeIgo83rdVDE2bvdkb86it7bMhYZwWKJz0+O0RK/eZiHYnM+zgt/U7hAHOlCQGfjjvSkw2g==
 
 use-callback-ref@^1.3.0:
   version "1.3.0"
