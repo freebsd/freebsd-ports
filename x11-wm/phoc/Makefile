@@ -27,7 +27,7 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:v0.0.1-11-gff85498:gmobile/subprojects/gmobile
+GL_TUPLE=	World/Phosh:gmobile:v0.0.1-11-gff85498:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 MESON_ARGS=	-Dembed-wlroots=disabled
 PLIST_FILES=	bin/${PORTNAME} \
