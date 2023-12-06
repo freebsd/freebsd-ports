@@ -16,6 +16,9 @@ CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
 PKGNAMESUFFIX=	320
 .endif
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2024-03-01
+
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 
 USE_RC_SUBR=	cf-execd cf-serverd cf-monitord
