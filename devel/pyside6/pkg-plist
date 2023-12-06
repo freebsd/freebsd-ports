@@ -260,8 +260,8 @@ lib/libpyside6qml.abi3.so.%%DISTVERSION%%
 %%PYTHON_SITELIBDIR%%/PySide6/support/__pycache__/generate_pyi%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/PySide6/support/deprecated.py
 %%PYTHON_SITELIBDIR%%/PySide6/support/generate_pyi.py
+%%QT_PLUGINDIR%%/designer/libPySidePlugin.so
 libdata/pkgconfig/pyside6.pc
-plugins/designer/libPySidePlugin.so
 share/PySide6/glue/qtcharts.cpp
 share/PySide6/glue/qtcore.cpp
 share/PySide6/glue/qtdatavisualization.cpp
@@ -315,6 +315,7 @@ share/PySide6/typesystems/typesystem_graphs.xml
 share/PySide6/typesystems/typesystem_gui.xml
 share/PySide6/typesystems/typesystem_gui_common.xml
 share/PySide6/typesystems/typesystem_gui_mac.xml
+share/PySide6/typesystems/typesystem_gui_rhi.xml
 share/PySide6/typesystems/typesystem_gui_win.xml
 share/PySide6/typesystems/typesystem_gui_x11.xml
 share/PySide6/typesystems/typesystem_help.xml

@@ -26,7 +26,7 @@ USE_QT=		base declarative languageserver tools
 SHEBANG_FILES=	pyside_tool.py qtpy2cpp_lib/tests/baseline/basic_test.py
 
 PLIST_SUB=	PYSIDE_BINDIR_REL=${PYSIDE_BINDIR_REL}
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION:R}/sources/pyside-tools
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/pyside-tools
 
 PYSIDE_RELNAME=		${PORTNAME}
 PYSIDE_BINDIR_REL?=	bin/${PYSIDE_RELNAME}

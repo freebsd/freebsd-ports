@@ -29,7 +29,7 @@ CMAKE_ARGS=	-DClang_DIR:PATH="${LLVM_PREFIX}/lib/cmake/clang" \
 		-DUSE_PYTHON_VERSION=${PYTHON_VER} \
 		-DBUILD_TESTS:BOOL=false
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION:R}/sources/shiboken6
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/shiboken6
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS

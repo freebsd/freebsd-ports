@@ -1,6 +1,5 @@
 PORTNAME=	pyside6
 DISTVERSION=	${PYSIDE6_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,15 +26,18 @@ USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
 
 CMAKE_ARGS=	-DPYTHON_EXECUTABLE=${PYTHON_CMD}
 
-WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION:R}/sources/pyside6
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${PYSIDE6_VERSION}/sources/pyside6
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	WEBENGINE=""
 USE_QT+=	webengine
 .else
+CMAKE_ON+=	CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineCore \
+		CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineQuick \
+		CMAKE_DISABLE_FIND_PACKAGE_Qt6WebEngineWidgets
 PLIST_SUB+=	WEBENGINE="@comment "
 .endif
 
