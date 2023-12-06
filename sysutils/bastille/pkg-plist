@@ -1,5 +1,6 @@
 @sample %%ETCDIR%%/bastille.conf.sample
 bin/bastille
+etc/rc.d/bastille
 %%DATADIR%%/bootstrap.sh
 %%DATADIR%%/clone.sh
 %%DATADIR%%/cmd.sh
@@ -19,6 +20,7 @@ bin/bastille
 %%DATADIR%%/list.sh
 %%DATADIR%%/mount.sh
 %%DATADIR%%/pkg.sh
+%%DATADIR%%/rcp.sh
 %%DATADIR%%/rdr.sh
 %%DATADIR%%/rename.sh
 %%DATADIR%%/restart.sh
