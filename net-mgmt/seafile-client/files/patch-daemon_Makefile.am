@@ -1,6 +1,6 @@
---- daemon/Makefile.am.orig	2019-06-10 01:56:16 UTC
+--- daemon/Makefile.am.orig	2023-12-06 20:22:32 UTC
 +++ daemon/Makefile.am
-@@ -37,6 +37,10 @@ if LINUX
+@@ -46,6 +46,10 @@ if LINUX
  wt_monitor_src = wt-monitor.c wt-monitor-linux.c wt-monitor-structs.c
  endif
  
@@ -11,12 +11,13 @@
  if WIN32
  wt_monitor_src = wt-monitor.c wt-monitor-win32.c wt-monitor-structs.c
  endif
-@@ -78,6 +82,7 @@ seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_com
- 	@LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ \
+@@ -97,7 +101,7 @@ seaf_daemon_LDADD = $(top_builddir)/lib/libseafile_com
+ 	@LIB_RT@ @LIB_UUID@ -lsqlite3 @LIBEVENT_LIBS@ @LIBEVENT_PTHREADS_LIBS@\
  	$(top_builddir)/common/cdc/libcdc.la \
  	$(top_builddir)/common/index/libindex.la @LIB_WS32@ @LIB_CRYPT32@ \
--	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@
-+	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ \
-+	@CURL_LIBS@ @LIB_INOTIFY@ @BPWRAPPER_LIBS@
+-	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ @BPWRAPPER_LIBS@ \
+-	@WS_LIBS@
++	@SEARPC_LIBS@ @JANSSON_LIBS@ @LIB_MAC@ @ZLIB_LIBS@ @CURL_LIBS@ \
++	@LIB_INOTIFY@ @BPWRAPPER_LIBS@ @WS_LIBS@
  
  seaf_daemon_LDFLAGS = @CONSOLE@
