@@ -1,5 +1,5 @@
 PORTNAME=	vkd3d
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	graphics
 MASTER_SITES=	https://dl.winehq.org/${PORTNAME}/source/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -33,7 +33,7 @@ CONFIGURE_ENV+=	NCURSES_CFLAGS=" " NCURSES_LIBS="-lncurses" NCURSES_VERSION=unus
 # XXX Move to a separate port (a la graphics/vulkan-headers) and maybe make
 #     graphics/spirv-tools depend on it as well
 USE_GITHUB=	nodefault
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-245-g1feaf44:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-323-ge867c06:headers/external/spirv-headers
 CPPFLAGS+=	-isystem${WRKSRC}/external/spirv-headers/include
 
 OPTIONS_DEFINE=	EXAMPLES
