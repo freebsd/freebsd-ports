@@ -1,5 +1,6 @@
 PORTNAME=	rvm
 DISTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.coda.cs.cmu.edu/pub/rvm/src/ \
 		http://ftp.wu-wien.ac.at/pub/systems/coda/src/ \
@@ -12,9 +13,6 @@ WWW=		http://www.coda.cs.cmu.edu/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_aarch64=	Fails to link: missing sbrk
-BROKEN_riscv64=	Fails to link: missing sbrk
 
 LIB_DEPENDS=	liblwp.so:devel/lwp
 
