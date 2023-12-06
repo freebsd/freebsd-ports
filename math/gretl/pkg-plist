@@ -141,13 +141,13 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.45
-lib/libgretl-1.0.so.45.0.0
+lib/libgretl-1.0.so.46
+lib/libgretl-1.0.so.46.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
-%%GUI%%share/appdata/gretl.appdata.xml
 %%GUI%%share/applications/gretl.desktop
 %%GUI%%share/applications/gretl_edit.desktop
+%%GUI%%share/metainfo/gretl.appdata.xml
 %%GUI%%%%DATADIR%%/COPYING
 %%GUI%%%%DATADIR%%/NEWS
 %%GUI%%%%DATADIR%%/data/gnuplot/altpoints.gpsty
@@ -186,6 +186,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/data/misc/bjg.gdt
 %%DATADIR%%/data/misc/brand_cassola.gdt
 %%DATADIR%%/data/misc/broiler.gdt
+%%DATADIR%%/data/misc/card_krueger94.gdt
 %%DATADIR%%/data/misc/chomage.gdt
 %%DATADIR%%/data/misc/credscore.gdt
 %%DATADIR%%/data/misc/denmark.gdt
@@ -535,6 +536,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/scripts/misc/LLTestim.inp
 %%DATADIR%%/scripts/misc/arbond91.inp
 %%DATADIR%%/scripts/misc/armaloop.inp
+%%DATADIR%%/scripts/misc/auto_arima.inp
 %%DATADIR%%/scripts/misc/bbond98.inp
 %%DATADIR%%/scripts/misc/biprobit.inp
 %%DATADIR%%/scripts/misc/biprobit_via_ghk.inp
@@ -564,6 +566,7 @@ man/man1/gretl.1.gz
 %%DATADIR%%/scripts/misc/nile.inp
 %%DATADIR%%/scripts/misc/ooballot.inp
 %%DATADIR%%/scripts/misc/oprobit.inp
+%%DATADIR%%/scripts/misc/panel-robust.inp
 %%DATADIR%%/scripts/misc/penngrow.inp
 %%DATADIR%%/scripts/misc/pensions.inp
 %%DATADIR%%/scripts/misc/perron97.inp
