@@ -1,5 +1,5 @@
 PORTNAME=	omniauth-auth0
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
