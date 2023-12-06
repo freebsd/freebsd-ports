@@ -1082,6 +1082,7 @@
     SUBDIR += sane-airscan
     SUBDIR += sane-backends
     SUBDIR += sane-epkowa
+    SUBDIR += satty
     SUBDIR += scale2x
     SUBDIR += scantailor
     SUBDIR += scr2png
