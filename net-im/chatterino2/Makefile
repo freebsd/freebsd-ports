@@ -1,5 +1,5 @@
 PORTNAME=	chatterino2
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -23,9 +23,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
 GH_TUPLE=	Chatterino:libcommuni:030710a:communi/lib/libcommuni \
 		arsenm:sanitizers-cmake:c3dc841:sanitizers/cmake/sanitizers-cmake \
-		pajlada:serialize:1f99aa8:serialize/lib/serialize \
-		pajlada:settings:04792d8:settings/lib/settings \
-		pajlada:signals:25e4ec3:signals/lib/signals
+		pajlada:serialize:bbf0a34:serialize/lib/serialize \
+		pajlada:settings:f168c09:settings/lib/settings \
+		pajlada:signals:6561aa5:signals/lib/signals
 USE_GL=	gl
 USE_QT=	concurrent core dbus gui multimedia network svg widgets \
 		buildtools:build qmake:build
