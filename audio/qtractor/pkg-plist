@@ -13,6 +13,8 @@ share/man/fr/man1/qtractor.1.gz
 share/man/man1/qtractor.1.gz
 share/metainfo/org.rncbc.qtractor.metainfo.xml
 share/mime/packages/org.rncbc.qtractor.xml
+%%DATADIR%%/audio/metro_bar.wav
+%%DATADIR%%/audio/metro_beat.wav
 %%DATADIR%%/translations/qtractor_cs.qm
 %%DATADIR%%/translations/qtractor_de.qm
 %%DATADIR%%/translations/qtractor_es.qm
