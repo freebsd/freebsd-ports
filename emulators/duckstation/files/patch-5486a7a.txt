@@ -1,6 +1,14 @@
-Fix get_thread_time() declaration on FreeBSD
+Backport 5486a7a from upstream
 
---- src/common/threading.cpp.orig	2023-10-16 12:57:57 UTC
+commit 5486a7a467dc0cd502bd8c4e7eb7a3c95a5a3c02
+Author: Ganael Laplanche <ganael.laplanche@martymac.org>
+Date:   Wed Nov 29 21:05:21 2023 +0100
+
+    Fix get_thread_time() declaration on FreeBSD
+
+diff --git a/src/common/threading.cpp b/src/common/threading.cpp
+index ac272ff1..8dacce83 100644
+--- src/common/threading.cpp
 +++ src/common/threading.cpp
 @@ -64,7 +64,7 @@ static u64 getthreadtime(thread_port_t thread)
  }
