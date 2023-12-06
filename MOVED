@@ -8171,3 +8171,4 @@ net-im/centerim||2023-12-05|Has expired: Last upstream release was in 2011
 net-im/jggtrans||2023-12-05|Has expired: Upstream last release was in 2014
 polish/tleenx2||2023-12-05|Has expired: Last upstream release was in 2004
 polish/libtlen||2023-12-05|Has expired: Last upstream release was in 2004
+devel/rubygem-font-awesome-rails-rails50|devel/rubygem-font-awesome-rails-rails60|2023-12-06|Obsolete, use devel/rubygem-font-awesome-rails-rails60 instead
