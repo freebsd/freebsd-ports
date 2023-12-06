@@ -11,6 +11,4 @@ sbin/nsd-control
 sbin/nsd-control-setup
 %%MUNIN_PLUGIN%%share/munin/plugins/nsd_munin_
 @dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDRUNDIR%%
-@dir(%%NSDUSER%%,%%NSDGROUP%%,0755) %%NSDDBDIR%%
 @postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDRUNDIR%%
-@postexec chown -R %%NSDUSER%%:%%NSDGROUP%% %%NSDDBDIR%%

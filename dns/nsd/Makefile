@@ -1,5 +1,5 @@
 PORTNAME=	nsd
-DISTVERSION=	4.7.0
+DISTVERSION=	4.8.0
 CATEGORIES=	dns
 MASTER_SITES=	https://www.nlnetlabs.nl/downloads/nsd/
 
@@ -20,13 +20,11 @@ USE_RC_SUBR=	nsd
 NSDUSER?=	nsd
 NSDGROUP?=	nsd
 NSDLSDIR=	/var
-NSDDBDIR=	/var/db/nsd
 NSDRUNDIR=	/var/run/nsd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 		--with-configdir=${ETCDIR} \
-		--with-dbfile=${NSDDBDIR}/nsd.db \
 		--with-libevent=${LOCALBASE} \
 		--with-pidfile=${NSDRUNDIR}/nsd.pid \
 		--with-ssl=${OPENSSLBASE} \
@@ -35,8 +33,7 @@ CONFIGURE_ARGS=	--localstatedir=${NSDLSDIR} \
 USERS=		${NSDUSER}
 GROUPS=		${NSDGROUP}
 
-PLIST_SUB=	NSDDBDIR=${NSDDBDIR} \
-		NSDGROUP=${NSDGROUP} \
+PLIST_SUB=	NSDGROUP=${NSDGROUP} \
 		NSDRUNDIR=${NSDRUNDIR} \
 		NSDUSER=${NSDUSER}
 
