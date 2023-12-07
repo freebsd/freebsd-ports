@@ -1,3 +1,35 @@
+  <vuln vid="e07a7754-12a4-4661-b852-fd221d68955f">
+    <topic>electron25 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v25.9.8">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-6350.</li>
+	    <li>Security: backported fix for CVE-2023-6351.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6350</cvename>
+      <url>https://github.com/advisories/GHSA-wmh6-7xp9-5gh8</url>
+      <cvename>CVE-2023-6351</cvename>
+      <url>https://github.com/advisories/GHSA-47vw-3hx2-6877</url>
+    </references>
+    <dates>
+      <discovery>2023-12-06</discovery>
+      <entry>2023-12-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9cbbc506-93c1-11ee-8e38-002590c1f29c">
     <topic>FreeBSD -- TCP spoofing vulnerability in pf(4)</topic>
     <affects>
