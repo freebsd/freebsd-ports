@@ -1,5 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.20.0
+DISTVERSION=	0.21.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,14 +25,11 @@ GH_ACCOUNT=	pika-org
 CMAKE_ON=	PIKA_WITH_MALLOC
 CMAKE_ON+=	PIKA_WITH_GENERIC_CONTEXT_COROUTINES # prerequisite, build breaks on aarch64, armv6 w/out it
 CMAKE_TESTING_ON=	PIKA_WITH_TESTS PIKA_WITH_TESTS_UNIT PIKA_WITH_TESTS_REGRESSIONS # only hellow_world test runs, see https://github.com/pika-org/pika/issues/853
-CMAKE_TESTING_TARGET=	test
+CMAKE_TESTING_TARGET=	test # some tests fail because some executables aren't found, see https://github.com/pika-org/pika/issues/886
 
 BINARY_ALIAS=	git=false
 
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR} # remove copy of license
-
-xpre-test: # unlike most other cmake projects tests fail to build when reconfigured, and require full rebuild
-	@${RM} -r ${BUILD_WRKSRC}/*
 
 .include <bsd.port.mk>
