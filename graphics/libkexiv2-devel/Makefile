@@ -1,7 +1,6 @@
 PORTNAME=	libkexiv2
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	graphics kde kde-applications
-PKGNAMESUFFIX=	-devel
+CATEGORIES=	graphics kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Exiv2 library interface for KDE

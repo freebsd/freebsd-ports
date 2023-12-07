@@ -1,6 +1,6 @@
 PORTNAME=	ark
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	archivers kde kde-applications
+CATEGORIES=	archivers kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE

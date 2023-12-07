@@ -1,6 +1,6 @@
 PORTNAME=	dolphin
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	x11-fm kde kde-applications
+CATEGORIES=	x11-fm kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE filemanager dolphin

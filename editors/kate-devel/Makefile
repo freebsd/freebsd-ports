@@ -1,6 +1,6 @@
 PORTNAME=	kate
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	editors kde kde-applications
+CATEGORIES=	editors kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic editor framework for the KDE system

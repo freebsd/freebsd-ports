@@ -1,6 +1,6 @@
 PORTNAME=	gwenview
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	graphics kde kde-applications
+CATEGORIES=	graphics kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and browser for KDE

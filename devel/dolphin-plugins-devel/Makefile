@@ -1,6 +1,6 @@
 PORTNAME=	dolphin-plugins
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-CATEGORIES=	devel kde kde-applications
+CATEGORIES=	devel kde kde-applications kde-devel
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plugins for Dolphin file manager
