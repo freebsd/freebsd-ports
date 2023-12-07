@@ -600,6 +600,7 @@
     SUBDIR += ogre3d19
     SUBDIR += oidn
     SUBDIR += okular
+    SUBDIR += okular-devel
     SUBDIR += open3d
     SUBDIR += opencollada
     SUBDIR += opencolorio
