@@ -3,9 +3,6 @@ DISTVERSION=	${KDE_PLASMA_VERSION}
 PORTREVISION=	1
 CATEGORIES=	sysutils kde kde-plasma
 
-PATCH_SITES=	https://invent.kde.org/plasma/${PORTNAME}/-/commit/
-PATCHFILES=	105cfe2a6252b06308067037c877c7422d822e17.patch:-p1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 tool to manage the power consumption settings
 WWW=		https://www.kde.org/plasma-desktop

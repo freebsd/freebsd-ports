@@ -127,6 +127,8 @@ share/locale/en_GB/LC_MESSAGES/kcm_mediacenter_wifi.mo
 share/locale/en_GB/LC_MESSAGES/plasma_applet_org.kde.mycroft.bigscreen.homescreen.mo
 share/locale/en_GB/LC_MESSAGES/plasma_lookandfeel_org.kde.plasma.mycroft.bigscreen.mo
 share/locale/en_GB/LC_MESSAGES/plasma_shell_org.kde.plasma.mycroft.bigscreen.mo
+share/locale/eo/LC_MESSAGES/plasma_lookandfeel_org.kde.plasma.mycroft.bigscreen.mo
+share/locale/eo/LC_MESSAGES/plasma_shell_org.kde.plasma.mycroft.bigscreen.mo
 share/locale/es/LC_MESSAGES/kcm_audiodevice.mo
 share/locale/es/LC_MESSAGES/kcm_mediacenter_bigscreen_settings.mo
 share/locale/es/LC_MESSAGES/kcm_mediacenter_kdeconnect.mo
