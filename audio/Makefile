@@ -848,6 +848,7 @@
     SUBDIR += vsound
     SUBDIR += vst3sdk
     SUBDIR += waon
+    SUBDIR += wasabi
     SUBDIR += wavbreaker
     SUBDIR += wavegain
     SUBDIR += wavetral
