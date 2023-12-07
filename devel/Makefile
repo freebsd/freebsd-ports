@@ -4812,6 +4812,7 @@
     SUBDIR += py-immutables
     SUBDIR += py-importlab
     SUBDIR += py-importlib-metadata
+    SUBDIR += py-importlib-metadata6
     SUBDIR += py-importlib-resources
     SUBDIR += py-incremental
     SUBDIR += py-infinity
