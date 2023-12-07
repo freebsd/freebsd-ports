@@ -1,6 +1,6 @@
 PORTNAME=	opensmtpd-filter-senderscore
 PORTVERSION=	0.1.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	mail
 
 MAINTAINER=	manu@FreeBSD.Org

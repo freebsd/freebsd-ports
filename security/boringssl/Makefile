@@ -1,5 +1,6 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.0.0.0.2023.11.29.01
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES+=	https://proxy.golang.org/:gomods
 DISTFILES+=	golang.org/x/crypto/@v/v0.14.0.zip:gomods \
