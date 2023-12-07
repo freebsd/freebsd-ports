@@ -4,7 +4,7 @@
       <package>
 	<name>FreeBSD-kernel</name>
 	<range><ge>14.0</ge><lt>14.0_2</lt></range>
-	<range><ge>13.2</ge><lt>13.2_7</lt></range>
+	<range><ge>13.2</ge><lt>13.2_4</lt></range>
 	<range><ge>12.4</ge><lt>12.4_9</lt></range>
       </package>
     </affects>
@@ -36,6 +36,7 @@
     <dates>
       <discovery>2023-12-05</discovery>
       <entry>2023-12-05</entry>
+      <modified>2023-12-07</modified>
     </dates>
   </vuln>
 
