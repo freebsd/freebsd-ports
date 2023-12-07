@@ -1,4 +1,4 @@
-bin/kde-geo-uri-handler
+%%NO_KF5COMPAT%%bin/kde-geo-uri-handler
 include/KF6/KGuiAddons/KColorCollection
 include/KF6/KGuiAddons/KColorMimeData
 include/KF6/KGuiAddons/KColorSchemeWatcher
@@ -40,8 +40,8 @@ lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets.cmake
 lib/libKF6GuiAddons.so
 lib/libKF6GuiAddons.so.%%KDE_FRAMEWORKS_VERSION%%
 lib/libKF6GuiAddons.so.6
-share/applications/google-maps-geo-handler.desktop
-share/applications/openstreetmap-geo-handler.desktop
-share/applications/qwant-maps-geo-handler.desktop
-share/applications/wheelmap-geo-handler.desktop
+%%NO_KF5COMPAT%%share/applications/google-maps-geo-handler.desktop
+%%NO_KF5COMPAT%%share/applications/openstreetmap-geo-handler.desktop
+%%NO_KF5COMPAT%%share/applications/qwant-maps-geo-handler.desktop
+%%NO_KF5COMPAT%%share/applications/wheelmap-geo-handler.desktop
 share/qlogging-categories6/kguiaddons.categories
