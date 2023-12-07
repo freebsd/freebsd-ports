@@ -1,0 +1,14 @@
+%%PLUGDIR%%/LICENSE
+%%PLUGDIR%%/README.md
+%%PLUGDIR%%/composer.json
+@sample %%PLUGDIR%%/config.inc.php.dist %%PLUGDIR%%/config.inc.php
+%%PLUGDIR%%/gravatar.php
+%%PLUGDIR%%/gravatar_addressbook_backend.php
+%%PLUGDIR%%/localization/ca_ES.inc
+%%PLUGDIR%%/localization/de_DE.inc
+%%PLUGDIR%%/localization/en_US.inc
+%%PLUGDIR%%/localization/es_ES.inc
+%%PLUGDIR%%/localization/fr_FR.inc
+%%PLUGDIR%%/localization/pl_PL.inc
+@dir %%PLUGDIR%%/localization
+@dir %%PLUGDIR%%
