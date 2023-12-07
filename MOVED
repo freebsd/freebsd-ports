@@ -8173,3 +8173,4 @@ polish/tleenx2||2023-12-05|Has expired: Last upstream release was in 2004
 polish/libtlen||2023-12-05|Has expired: Last upstream release was in 2004
 devel/rubygem-font-awesome-rails-rails50|devel/rubygem-font-awesome-rails-rails60|2023-12-06|Obsolete, use devel/rubygem-font-awesome-rails-rails60 instead
 security/rubygem-devise-two-factor-rails61|security/rubygem-devise-two-factor-rails70|2023-12-06|Obsolete, use security/rubygem-devise-two-factor-rails70 instead
+net/py-anonfile||2023-12-07|Has expired: anonfile.com has shut down
