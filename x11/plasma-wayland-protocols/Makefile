@@ -1,11 +1,7 @@
 PORTNAME=	plasma-wayland-protocols
-DISTVERSION=	1.11.1
-PORTREVISION=	1
+DISTVERSION=	1.12.0
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
-
-PATCH_SITES=	https://invent.kde.org/libraries/plasma-wayland-protocols/-/commit/
-PATCHFILES=	a95fc86fba3895308ce803876e0bc4f72e42e658.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma Specific Protocols for Wayland
