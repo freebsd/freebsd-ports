@@ -1,0 +1,13 @@
+--- common_clang.map.orig	2022-08-31 01:41:40 UTC
++++ common_clang.map
+@@ -2,10 +2,7 @@ global:
+ global:
+  extern "C" {
+    CheckCompileOptions;
+-   CheckLinkOptions;
+    Compile;
+-   Link;
+-   GetKernelArgInfo;
+    PCM_OPENCL_C_H*;
+    PCM_OPENCL_C_BASE_H*;
+  };
