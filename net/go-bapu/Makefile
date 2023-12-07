@@ -1,6 +1,6 @@
 PORTNAME=	bapu
 PORTVERSION=	0.3.0
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 MASTER_SITES=	https://bitbucket.org/carlostrub/bapu/get/
 PKGNAMEPREFIX=	go-

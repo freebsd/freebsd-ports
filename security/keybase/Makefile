@@ -1,6 +1,7 @@
 PORTNAME=	keybase
 PORTVERSION=	6.2.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
 CATEGORIES=	security
 DISTFILES=	go.mod:gomod

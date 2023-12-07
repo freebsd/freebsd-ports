@@ -1,7 +1,7 @@
 PORTNAME=	kube-apiserver
 PORTVERSION=	1.27.2
-PORTREVISION=	2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	loic.blot@unix-experience.fr

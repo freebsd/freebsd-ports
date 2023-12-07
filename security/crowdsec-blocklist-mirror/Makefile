@@ -1,8 +1,8 @@
 PORTNAME=	crowdsec-blocklist-mirror
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.2
-PORTREVISION=	2
 DISTVERSIONSUFFIX=	-freebsd
+PORTREVISION=	3
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net

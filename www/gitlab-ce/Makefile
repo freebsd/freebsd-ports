@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.3.5
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -277,7 +277,6 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-net-http011>=0.1.1<0.1.2:www/rubygem-net-http011 \
 	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
 	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2
-
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}

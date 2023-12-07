@@ -1,5 +1,6 @@
 PORTNAME=	fx
 DISTVERSION=	30.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nulldutra@proton.me

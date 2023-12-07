@@ -1,7 +1,7 @@
 PORTNAME=	authelia
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.37.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/authelia/authelia/releases/download/v${DISTVERSION}/:public_html
 DISTFILES=	authelia-${DISTVERSIONFULL}-public_html${EXTRACT_SUFX}:public_html # html root directory needs to be built in a special way

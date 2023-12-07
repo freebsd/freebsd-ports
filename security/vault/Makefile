@@ -1,7 +1,7 @@
 PORTNAME=	vault
 PORTVERSION=	1.14.0
-PORTREVISION=	3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/vault/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
