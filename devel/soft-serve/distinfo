@@ -1,5 +1,5 @@
-TIMESTAMP = 1701163011
-SHA256 (go/devel_soft-serve/soft-serve-v0.7.3/v0.7.3.mod) = 51741940335da1342a119fc705623b7d094aba71ecde2fbbbb28561bd6d1eb20
-SIZE (go/devel_soft-serve/soft-serve-v0.7.3/v0.7.3.mod) = 4657
-SHA256 (go/devel_soft-serve/soft-serve-v0.7.3/v0.7.3.zip) = 2101bf696453cda26d36c779381910743d94fae348b117e02019130c37832478
-SIZE (go/devel_soft-serve/soft-serve-v0.7.3/v0.7.3.zip) = 286590
+TIMESTAMP = 1701963080
+SHA256 (go/devel_soft-serve/soft-serve-v0.7.4/v0.7.4.mod) = 4fa3af7286dd6b6920b6fcd36e4563a45f579ee85cfee75a14abf28fc23a2f18
+SIZE (go/devel_soft-serve/soft-serve-v0.7.4/v0.7.4.mod) = 4657
+SHA256 (go/devel_soft-serve/soft-serve-v0.7.4/v0.7.4.zip) = a85bb377316f925843ae741d59265c9dc924f7325bfa1af94392807fbe075a8d
+SIZE (go/devel_soft-serve/soft-serve-v0.7.4/v0.7.4.zip) = 286778
