@@ -1,6 +1,6 @@
 PORTNAME=	msort
 PORTVERSION=	8.53
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -10,9 +10,6 @@ WWW=		https://billposer.org/Software/msort.html
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_riscv64=		fails to link: missing sbrk
 
 LIB_DEPENDS=	libtre.so:textproc/libtre \
 		libuninum.so:devel/libuninum \
