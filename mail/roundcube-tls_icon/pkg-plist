@@ -1,0 +1,16 @@
+%%PLUGDIR%%/LICENSE
+%%PLUGDIR%%/README.md
+%%PLUGDIR%%/blue_lock.svg
+%%PLUGDIR%%/composer.json
+@sample %%PLUGDIR%%/config.inc.php.dist %%PLUGDIR%%/config.inc.php
+%%PLUGDIR%%/localization/de_DE.inc
+%%PLUGDIR%%/localization/en_US.inc
+%%PLUGDIR%%/localization/fr_FR.inc
+%%PLUGDIR%%/localization/nl_NL.inc
+%%PLUGDIR%%/localization/ru_RU.inc
+%%PLUGDIR%%/lock.svg
+%%PLUGDIR%%/tls_icon.css
+%%PLUGDIR%%/tls_icon.php
+%%PLUGDIR%%/unlock.svg
+@dir %%PLUGDIR%%/localization
+@dir %%PLUGDIR%%
