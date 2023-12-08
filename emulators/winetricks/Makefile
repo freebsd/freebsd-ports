@@ -1,5 +1,6 @@
 PORTNAME=	winetricks
 PORTVERSION=	20230903
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	Alexander88207@protonmail.com
