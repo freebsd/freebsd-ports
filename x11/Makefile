@@ -564,6 +564,7 @@
     SUBDIR += xkbctrl
     SUBDIR += xkbevd
     SUBDIR += xkbind
+    SUBDIR += xkblayout-state
     SUBDIR += xkbprint
     SUBDIR += xkbset
     SUBDIR += xkbutils

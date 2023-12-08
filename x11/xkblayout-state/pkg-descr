@@ -1,0 +1,5 @@
+xkblayout-state is a small command-line program to get/set the current
+XKB keyboard layout.
+
+It is a thin wrapper around a slightly modified version of Jay Bromley's
+XKeyboard class.
