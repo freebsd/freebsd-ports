@@ -1,5 +1,6 @@
 PORTNAME=	musicpd
 PORTVERSION=	0.23.14
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -169,6 +170,7 @@ CDPARANOIA_MESON_ENABLED=	cdio_paranoia
 CDPARANOIA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
 CURL_MESON_ENABLED=	curl webdav
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
+CURL_IMPLIES=		PLAYLISTS
 SMB_MESON_ENABLED=	smbclient
 SMB_USES=		samba:lib
 
