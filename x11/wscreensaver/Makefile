@@ -6,7 +6,7 @@ MASTER_SITES=	https://git.sr.ht/~mstoeckl/${PORTNAME}/archive/${DISTVERSIONFULL}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fork of xscreensaver to draw animated wallpapers on Wayland
-WWW=		https://git.sr.ht/~mstoeckl/wscreensaver
+WWW=		https://sr.ht/~mstoeckl/wscreensaver/
 
 LICENSE=	MIT
 
