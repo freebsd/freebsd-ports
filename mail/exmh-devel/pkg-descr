@@ -1,0 +1,21 @@
+exmh is a TCL/TK based interface to the MH mail system.  It provides
+the usual layer on top of MH commands, as well as many other features:
+
+    MIME support!  Displays richtext and enriched directly.
+    Color feedback in the scan listing.
+    A colour coded folder display with one label per folder.
+    Smart scan caching.  News read/post.  koi8-r support.
+    Facesaver bitmap display.  Ispell support.
+    Background inc.  You can set exmh to run inc periodically.
+    Searching over folder listing and message body.
+    A dialog-box interface to MH pick.
+    An editor with emacs-like bindings and MIME support.
+    Glimpse interface.  You can index all your mail with glimpse
+       and search for messages by content.
+    User preferences.  You can tune exmh through a dialog box.
+    User hacking support.  A user library of TCL routines is supported.
+
+IMPORTANT: exmh depends on the TK send facility for its background
+processing.  With TK 3.3, send now uses xauthority mechanisms by default,
+unless you compile TK with -DTK_NO_SECURITY.  Generally, this means that
+you **MUST** must run xdm to start your Xserver.

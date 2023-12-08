@@ -127,6 +127,7 @@
     SUBDIR += exim-sa-exim
     SUBDIR += exim-sqlite
     SUBDIR += exipick
+    SUBDIR += exmh-devel
     SUBDIR += exmh2
     SUBDIR += ez-pine-gpg
     SUBDIR += ezmlm
