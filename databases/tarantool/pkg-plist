@@ -18,6 +18,7 @@ share/man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/admin/cmd/refresh_cache.lua
 %%DATADIR%%/luarocks/admin/cmd/remove.lua
 %%DATADIR%%/luarocks/admin/index.lua
+%%DATADIR%%/luarocks/argparse.lua
 %%DATADIR%%/luarocks/build.lua
 %%DATADIR%%/luarocks/build/builtin.lua
 %%DATADIR%%/luarocks/build/cmake.lua
@@ -28,7 +29,6 @@ share/man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/cmd/config.lua
 %%DATADIR%%/luarocks/cmd/doc.lua
 %%DATADIR%%/luarocks/cmd/download.lua
-%%DATADIR%%/luarocks/cmd/help.lua
 %%DATADIR%%/luarocks/cmd/init.lua
 %%DATADIR%%/luarocks/cmd/install.lua
 %%DATADIR%%/luarocks/cmd/lint.lua
@@ -55,6 +55,7 @@ share/man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/core/sysdetect.lua
 %%DATADIR%%/luarocks/core/util.lua
 %%DATADIR%%/luarocks/core/vers.lua
+%%DATADIR%%/luarocks/deplocks.lua
 %%DATADIR%%/luarocks/deps.lua
 %%DATADIR%%/luarocks/dir.lua
 %%DATADIR%%/luarocks/download.lua
@@ -72,8 +73,8 @@ share/man/man1/tarantoolctl.1.gz
 %%DATADIR%%/luarocks/fetch/sscm.lua
 %%DATADIR%%/luarocks/fetch/svn.lua
 %%DATADIR%%/luarocks/fs.lua
-%%DATADIR%%/luarocks/fs/freebsd.lua
 %%DATADIR%%/luarocks/fs/lua.lua
+%%DATADIR%%/luarocks/fs/macosx.lua
 %%DATADIR%%/luarocks/fs/tools.lua
 %%DATADIR%%/luarocks/fs/unix.lua
 %%DATADIR%%/luarocks/fs/unix/tools.lua
