@@ -1,0 +1,20 @@
+--- cargo-crates/ring-0.17.6/Cargo.toml.orig	1970-01-01 00:00:01 UTC
++++ cargo-crates/ring-0.17.6/Cargo.toml
+@@ -215,7 +215,7 @@ wasm32_unknown_unknown_js = ["getrandom/js"]
+ unstable-testing-arm-no-neon = []
+ wasm32_unknown_unknown_js = ["getrandom/js"]
+ 
+-[target."cfg(all(any(target_os = \"android\", target_os = \"linux\"), any(target_arch = \"aarch64\", target_arch = \"arm\")))".dependencies.libc]
++[target."cfg(all(any(target_os = \"android\", target_os = \"freebsd\", target_os = \"linux\"), any(target_arch = \"aarch64\", target_arch = \"arm\")))".dependencies.libc]
+ version = "0.2.148"
+ default-features = false
+ 
+@@ -230,7 +230,7 @@ default-features = false
+ version = "0.3.37"
+ default-features = false
+ 
+-[target."cfg(any(target_arch = \"x86\",target_arch = \"x86_64\", all(any(target_arch = \"aarch64\", target_arch = \"arm\"), any(target_os = \"android\", target_os = \"fuchsia\", target_os = \"linux\", target_os = \"windows\"))))".dependencies.spin]
++[target."cfg(any(target_arch = \"x86\",target_arch = \"x86_64\", all(any(target_arch = \"aarch64\", target_arch = \"arm\"), any(target_os = \"android\", target_os = \"fuchsia\", target_os = \"freebsd\", target_os = \"linux\", target_os = \"windows\"))))".dependencies.spin]
+ version = "0.9.8"
+ features = ["once"]
+ default-features = false
