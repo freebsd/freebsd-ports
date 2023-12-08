@@ -1,11 +1,11 @@
---- psi4/CMakeLists.txt.orig	2023-05-11 09:54:27 UTC
+--- psi4/CMakeLists.txt.orig	2023-12-06 06:01:19 UTC
 +++ psi4/CMakeLists.txt
-@@ -204,7 +204,7 @@ else()
-     message(STATUS "Disabled BrianQC")
+@@ -223,7 +223,7 @@ else()
+     message(STATUS "Disabled BrianQC ${BrianQC_DIR}")
  endif()
  
--find_package(Libxc 6.0.0 CONFIG QUIET COMPONENTS C)
-+find_package(Libxc REQUIRED CONFIG QUIET COMPONENTS C)
- if(NOT ${Libxc_FOUND})
-     find_package(Libxc 5.1.2 CONFIG REQUIRED COMPONENTS C)
- endif()
+-find_package(Libxc 6.0.0 CONFIG REQUIRED COMPONENTS C)
++find_package(Libxc REQUIRED CONFIG REQUIRED COMPONENTS C)
+ get_property(_loc TARGET Libxc::xc PROPERTY LOCATION)
+ list(APPEND _addons ${_loc})
+ message(STATUS "${Cyan}Using Libxc${ColourReset}: ${_loc} (version ${Libxc_VERSION})")
