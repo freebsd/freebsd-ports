@@ -1,0 +1,5 @@
+TIMESTAMP = 1701768829
+SHA256 (go/sysutils_autorestic/autorestic-v1.7.9/v1.7.9.mod) = 2383e5eea68c3c314762bdbba3d3173bbb5ff97fccc71d447de8439504336f69
+SIZE (go/sysutils_autorestic/autorestic-v1.7.9/v1.7.9.mod) = 1279
+SHA256 (go/sysutils_autorestic/autorestic-v1.7.9/v1.7.9.zip) = 5c7bb508b1cf60b41e243b32aee8bd945f2e2dc9f0e511a68b75d7995f8ab847
+SIZE (go/sysutils_autorestic/autorestic-v1.7.9/v1.7.9.zip) = 205278
