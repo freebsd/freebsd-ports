@@ -153,4 +153,4 @@ lib/cmake/symengine/SymEngineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/symengine/SymEngineTargets.cmake
 lib/libsymengine.so
 lib/libsymengine.so.0.11
-lib/libsymengine.so.0.11.1
+lib/libsymengine.so.0.11.2
