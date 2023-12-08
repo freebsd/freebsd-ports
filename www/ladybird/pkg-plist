@@ -28,6 +28,9 @@ lib/liblagom-crypto.so.0.0.0
 lib/liblagom-diff.so
 lib/liblagom-diff.so.0
 lib/liblagom-diff.so.0.0.0
+lib/liblagom-elf.so
+lib/liblagom-elf.so.0
+lib/liblagom-elf.so.0.0.0
 lib/liblagom-filesystem.so
 lib/liblagom-filesystem.so.0
 lib/liblagom-filesystem.so.0.0.0
@@ -253,8 +256,6 @@ share/res/fonts/SourceRegular10.font
 share/res/fonts/TengchahRegular12.font
 share/res/fonts/TinierRegular5.font
 share/res/fonts/TinyRegular6.font
-share/res/html/directory.html
-share/res/html/error.html
 share/res/html/misc/90s-bg.png
 share/res/html/misc/accent-color.html
 share/res/html/misc/acid1.html
@@ -454,9 +455,9 @@ share/res/html/misc/margin-collapse-3.html
 share/res/html/misc/margin-collapse-4.html
 share/res/html/misc/media-queries.html
 share/res/html/misc/message-channel.html
+share/res/html/misc/meter.html
 share/res/html/misc/more-attribute-selectors.html
 share/res/html/misc/mouse-events.html
-share/res/html/misc/new-tab.html
 share/res/html/misc/noscript.html
 share/res/html/misc/not-selector.html
 share/res/html/misc/nth-child.html

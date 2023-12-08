@@ -1,5 +1,5 @@
 PORTNAME=	ladybird
-PORTVERSION=	g20231120
+PORTVERSION=	g20231208
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/unicode-org/cldr-json/releases/download/${CLDRVERSION}/:cldr \
 		https://www.unicode.org/Public/${UCDVERSION}/ucd/:ucd \
@@ -22,7 +22,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # see Userland/Libraries/LibWeb/Loader/ResourceLoader.h
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	other architectures not recognised by build system
-BROKEN_FreeBSD_12=	C++ template fuckery
+BROKEN_FreeBSD_12=	C++ template issues
+BROKEN_i386=	Userland/Libraries/LibJIT/GDBElf.cpp:29:24: bit cast source size does not equal destination size
 
 BUILD_DEPENDS=	${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat:dns/public_suffix_list
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
@@ -32,7 +33,7 @@ USES=		cmake:testing compiler:c++20-lang gl localbase:ldflags python:build qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SerenityOS
 GH_PROJECT=	serenity
-GH_TAGNAME=	cc9de38ea4ccf06024913b78b6283d8e4bc26536
+GH_TAGNAME=	29ecb2eda6bedebf04e64b30884010cb056e7f9a
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_QT=		base tools:build wayland multimedia
