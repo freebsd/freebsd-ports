@@ -1,5 +1,6 @@
 PORTNAME=	prql
 DISTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 

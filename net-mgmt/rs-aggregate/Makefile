@@ -1,6 +1,7 @@
 PORTNAME=	rs-aggregate
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	marcel@herrbischoff.com
