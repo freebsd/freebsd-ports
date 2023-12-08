@@ -589,6 +589,7 @@ share/ART/languages/Nederlands
 share/ART/languages/Portugues (Brasil)
 share/ART/languages/README
 share/ART/languages/default
+share/ART/luts/sigmoid.ctl
 share/ART/options
 share/ART/profiles/Auto-Matched Curve.arp
 share/ART/profiles/Noise Reduction High.arp
@@ -645,3 +646,4 @@ share/icons/hicolor/24x24/apps/ART.png
 share/icons/hicolor/256x256/apps/ART.png
 share/icons/hicolor/48x48/apps/ART.png
 share/man/man1/ART.1.gz
+@dir share/ART/ctlscripts
