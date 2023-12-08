@@ -1,0 +1,20 @@
+--- test/mhshow/test-binary.orig	2023-12-04 03:00:44 UTC
++++ test/mhshow/test-binary
+@@ -21,7 +21,7 @@ expected="$MH_TEST_DIR/test-binary$$.expected"
+ 
+ #### Use the printf to output the NUL byte so that this
+ #### file (test-binary) doesn't need to be a binary file.
+-printf '%s\000%s' >"${expected}" \
++printf '%s\x00%s' >"${expected}" \
+ "[ Message inbox:11 ]
+ To:      recipient@example.edu
+ From:    sender@example.edu
+@@ -33,7 +33,7 @@ Here's a null byte: " ".
+ Here's a null byte: " ".
+ "
+ 
+-printf '%s\000%s' >`mhpath new` \
++printf '%s\x00%s' >`mhpath new` \
+ "From: sender@example.edu
+ To: recipient@example.edu
+ Subject: test binary content

@@ -1,0 +1,74 @@
+--- test/post/test-post-basic.orig	2023-12-04 03:00:44 UTC
++++ test/post/test-post-basic
+@@ -143,13 +143,12 @@ check "${testname}.err" "${testname}.err.expected"
+ set +e
+ check "${testname}.err" "${testname}.err.expected"
+ 
+-#### Cheat: SMTPUTF8 enables 8BITMIME in fakestmp.  Set it for each test
+-#### that needs it below.
+-
+ #
+ # 8-bit with 8BITMIME support
+ #
+ start_test '8-bit with 8BITMIME support'
++# Cheat: SMTPUTF8 enables 8BITMIME in fakestmp
++SMTPUTF8=1; export SMTPUTF8
+ cat > "${testname}.expected" <<EOF
+ EHLO nosuchhost.example.com
+ MAIL FROM:<nobody@example.com> BODY=8BITMIME
+@@ -168,8 +167,9 @@ EOF
+ .
+ QUIT
+ EOF
+-SMTPUTF8=1 test_post "${testname}.actual" "${testname}.expected"
++test_post "${testname}.actual" "${testname}.expected"
+ 
++
+ #
+ # 8-bit with 8BITMIME support, inferred from content
+ #
+@@ -202,43 +202,7 @@ EOF
+ .
+ QUIT
+ EOF
+-SMTPUTF8=1 test_post "${testname}.actual" "${testname}.expected"
+-
+-#
+-# binary content containing a NUL
+-#
+-start_test "content containing NUL"
+-#### Use the printf to output the NUL byte so that this
+-#### file (test-binary) doesn't need to be a binary file.
+-printf '%s\000%s' > "${MH_TEST_DIR}/Mail/draft" \
+-"From: Mr Nobody <nobody@example.com>
+-To: Somebody Else <somebody@example.com>
+-Subject: Test
+-MIME-Version: 1.0
+-Content-Type: application/octet-stream
+-Content-Transfer-Encoding: binary
+-
+-This is a test, with a NUL character:  " "
+-"
+-
+-printf '%s\000%s' > "${testname}.expected" \
+-"EHLO nosuchhost.example.com
+-MAIL FROM:<nobody@example.com> BODY=8BITMIME
+-RCPT TO:<somebody@example.com>
+-DATA
+-From: Mr Nobody <nobody@example.com>
+-To: Somebody Else <somebody@example.com>
+-Subject: Test
+-MIME-Version: 1.0
+-Content-Type: application/octet-stream
+-Content-Transfer-Encoding: binary
+-Date:
+-
+-This is a test, with a NUL character:  " "
+-.
+-QUIT
+-"
+-SMTPUTF8=1 test_post "${testname}.actual" "${testname}.expected"
++test_post "${testname}.actual" "${testname}.expected"
+ 
+ 
+ finish_test
