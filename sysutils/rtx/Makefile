@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.9
+DISTVERSION=	2023.12.19
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -91,7 +91,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fiat-crypto-0.2.5 \
-		filetime-0.2.22 \
+		filetime-0.2.23 \
 		flate2-1.0.28 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.9 \
+		mio-0.8.10 \
 		native-tls-0.2.11 \
 		nix-0.27.1 \
 		nom-7.1.3 \
@@ -162,7 +162,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
 		object-0.32.1 \
-		once_cell-1.18.0 \
+		once_cell-1.19.0 \
 		openssl-0.10.61 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
@@ -182,7 +182,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		pkcs8-0.10.2 \
 		pkg-config-0.3.27 \
 		platforms-3.2.0 \
-		portable-atomic-1.5.1 \
+		portable-atomic-1.6.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
@@ -194,14 +194,13 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		rand_core-0.6.4 \
 		rayon-1.8.0 \
 		rayon-core-1.12.0 \
-		redox_syscall-0.3.5 \
 		redox_syscall-0.4.1 \
 		redox_users-0.4.4 \
 		regex-1.10.2 \
 		regex-automata-0.4.3 \
 		regex-syntax-0.8.2 \
 		reqwest-0.11.22 \
-		ring-0.17.6 \
+		ring-0.17.7 \
 		rmp-0.8.12 \
 		rmp-serde-1.1.2 \
 		roff-0.2.1 \
@@ -272,7 +271,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		tracing-core-0.1.32 \
 		tracing-error-0.2.0 \
 		tracing-subscriber-0.3.18 \
-		try-lock-0.2.4 \
+		try-lock-0.2.5 \
 		typenum-1.17.0 \
 		ucd-trie-0.1.6 \
 		unic-char-property-0.9.0 \
@@ -281,7 +280,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		unic-segment-0.9.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-bidi-0.3.13 \
+		unicode-bidi-0.3.14 \
 		unicode-ident-1.0.12 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
@@ -338,7 +337,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.24 \
+		winnow-0.5.26 \
 		winreg-0.50.0 \
 		xattr-1.0.1 \
 		yaml-rust-0.4.5 \
