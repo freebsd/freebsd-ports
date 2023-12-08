@@ -8,7 +8,7 @@ PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/games-board/pokerth
 		https://raw.githubusercontent.com/gentoo/gentoo/master/games-board/pokerth/files/
 PATCHFILES=	pokerth-1.1.2-boost-1.73.patch:-p1
 
-MAINTAINER=	tobias.rehbein@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Poker game written in C++/Qt
 WWW=		https://www.pokerth.net/
 
