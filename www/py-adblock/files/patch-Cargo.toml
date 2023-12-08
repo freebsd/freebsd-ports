@@ -1,0 +1,17 @@
+--- Cargo.toml.orig	2023-11-30 00:15:19 UTC
++++ Cargo.toml
+@@ -9,15 +9,6 @@ repository = "https://github.com/ArniDagur/python-adbl
+ homepage = "https://github.com/ArniDagur/python-adblock"
+ repository = "https://github.com/ArniDagur/python-adblock"
+
+-[package.metadata.maturin]
+-classifier = [
+-    "Programming Language :: Python",
+-    "Programming Language :: Rust",
+-    "License :: OSI Approved :: MIT License",
+-    "License :: OSI Approved :: Apache Software License",
+-]
+-requires-python = ">=3.7"
+-
+ [profile.release]
+ debug = true
