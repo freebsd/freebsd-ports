@@ -25,8 +25,6 @@ CPE_VENDOR=	jetbrains
 USE_JAVA=	yes
 JAVA_VERSION=	17+
 
-#SHEBANG_FILES=	bin/restart.py
-
 WRKSRC=		${WRKDIR}/pycharm-${PORTVERSION}
 
 NO_ARCH=	yes
