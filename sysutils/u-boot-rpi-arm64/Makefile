@@ -1,7 +1,6 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
 EXTRA_PATCHES=	${.CURDIR}/files/
-PATCHFILES+=	939129/raw
 
 MODEL=		rpi-arm64
 BOARD_CONFIG=	rpi_arm64_defconfig

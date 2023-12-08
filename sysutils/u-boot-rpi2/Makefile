@@ -1,7 +1,5 @@
 MASTERDIR=	${.CURDIR}/../u-boot-master
 
-PATCHFILES+=	939129/raw
-
 WWW=		https://wiki.freebsd.org/FreeBSD/arm/Raspberry%20Pi
 
 MODEL=		rpi2
