@@ -1,7 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.2
-PORTREVISION=	1
+DISTVERSION=	1.10.4
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -57,7 +56,7 @@ GH_TUPLE=	\
 		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/github.com/jaytaylor/html2text \
 		jhillyerd:enmime:v1.0.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.17.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.17.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
@@ -83,7 +82,7 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:c8e3674f78495f5e83d23b19312d945c0322bd51:cznic_libc/vendor/modernc.org/libc \
+		cznic:libc:b41ef92a881769af86fb0d922e4f98f2b72e6b51:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
