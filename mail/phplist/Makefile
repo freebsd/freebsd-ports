@@ -1,5 +1,5 @@
 PORTNAME=	phplist
-DISTVERSION=	3.6.12
+DISTVERSION=	3.6.14
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		cpe tar:tgz php:web,flavors
 USE_PHP=	curl gd gettext iconv imap mbstring mysqli session xml zlib
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	83
 
 NO_ARCH=	yes
 NO_BUILD=	yes

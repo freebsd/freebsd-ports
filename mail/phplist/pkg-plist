@@ -120,7 +120,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/export.php
 %%WWWDIR%%/lists/admin/exportuserdata.php
 %%WWWDIR%%/lists/admin/fckphplist.php
-%%WWWDIR%%/lists/admin/gchart.php
 %%WWWDIR%%/lists/admin/generatebouncerules.php
 %%WWWDIR%%/lists/admin/help/.php_cs
 %%WWWDIR%%/lists/admin/help/.travis.yml
@@ -1684,6 +1683,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CKEditorPlugin.php
 %%WWWDIR%%/lists/admin/plugins/Common/about.tpl.php
 %%WWWDIR%%/lists/admin/plugins/Common/BaseController.php
+%%WWWDIR%%/lists/admin/plugins/Common/Cache.php
 %%WWWDIR%%/lists/admin/plugins/Common/Config.php
 %%WWWDIR%%/lists/admin/plugins/Common/Container.php
 %%WWWDIR%%/lists/admin/plugins/Common/Context.php
@@ -1702,6 +1702,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/User.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO/UserTrait.php
 %%WWWDIR%%/lists/admin/plugins/Common/DAO.php
+%%WWWDIR%%/lists/admin/plugins/Common/DatabaseCache.php
 %%WWWDIR%%/lists/admin/plugins/Common/DB.php
 %%WWWDIR%%/lists/admin/plugins/Common/DBResultIterator.php
 %%WWWDIR%%/lists/admin/plugins/Common/depends.php
@@ -1709,6 +1710,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/Common/ExportCSV.php
 %%WWWDIR%%/lists/admin/plugins/Common/ExportCSVAsync.php
 %%WWWDIR%%/lists/admin/plugins/Common/ExportXML.php
+%%WWWDIR%%/lists/admin/plugins/Common/FileCache.php
 %%WWWDIR%%/lists/admin/plugins/Common/FileNotFoundException.php
 %%WWWDIR%%/lists/admin/plugins/Common/FileServer.php
 %%WWWDIR%%/lists/admin/plugins/Common/FPDF.php
@@ -2100,6 +2102,12 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/SegmentPlugin/viewmessage.tpl.php
 %%WWWDIR%%/lists/admin/plugins/SegmentPlugin.php
 %%WWWDIR%%/lists/admin/plugins/subjectLinePlaceholdersPlugin.php
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin/class_map.php
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin/lan/translations_en.php
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin/update.php
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin/Updater.php
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin/version.txt
+%%WWWDIR%%/lists/admin/plugins/UpdaterPlugin.php
 %%WWWDIR%%/lists/admin/plugins.php
 %%WWWDIR%%/lists/admin/preparesend.php
 %%WWWDIR%%/lists/admin/processbounces.php
@@ -2590,6 +2598,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/ui/phplist-ui-bootlist/theme_info
 %%WWWDIR%%/lists/admin/update.php
 %%WWWDIR%%/lists/admin/updateLib.php
+%%WWWDIR%%/lists/admin/Updater.php
 %%WWWDIR%%/lists/admin/updatetlds.php
 %%WWWDIR%%/lists/admin/updatetranslation.php
 %%WWWDIR%%/lists/admin/upgrade.php
@@ -3097,7 +3106,6 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
 %%WWWDIR%%/lists/base/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
 %%WWWDIR%%/lists/base/vendor/doctrine/deprecations/LICENSE
-%%WWWDIR%%/lists/base/vendor/doctrine/deprecations/phpcs.xml
 %%WWWDIR%%/lists/base/vendor/doctrine/deprecations/README.md
 %%WWWDIR%%/lists/base/vendor/doctrine/doctrine-bundle/.doctrine-project.json
 %%WWWDIR%%/lists/base/vendor/doctrine/doctrine-bundle/.github/FUNDING.yml
@@ -5506,6 +5514,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/LICENSE
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Mbstring.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/README.md
+%%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/caseFolding.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/lowerCase.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/titleCaseRegexp.php
 %%WWWDIR%%/lists/base/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
