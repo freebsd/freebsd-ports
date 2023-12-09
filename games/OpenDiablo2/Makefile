@@ -11,6 +11,9 @@ WWW=		https://opendiablo2.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository has been archived on Dec 20, 2021
+EXPIRATION_DATE=	2023-12-31
+
 LIB_DEPENDS=	libglfw.so:graphics/glfw
 
 USES=		gl go:modules openal pkgconfig xorg
