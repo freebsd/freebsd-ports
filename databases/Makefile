@@ -781,6 +781,7 @@
     SUBDIR += py-leveldb
     SUBDIR += py-litecli
     SUBDIR += py-lmdb
+    SUBDIR += py-mariadb
     SUBDIR += py-marshmallow-sqlalchemy
     SUBDIR += py-minidb
     SUBDIR += py-mongoengine
