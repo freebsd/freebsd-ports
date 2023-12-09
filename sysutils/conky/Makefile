@@ -3,7 +3,7 @@ PORTVERSION=	1.19.6
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Advanced, highly configurable system monitor for X11
 WWW=		https://github.com/brndnmtthws/conky
 

@@ -1,6 +1,6 @@
 PKGNAMESUFFIX=	-awesome
 
-MAINTAINER=	madpilot@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced, highly configurable system monitor (configured for x11-wm/awesome)
 
 MASTERDIR=	${.CURDIR}/../conky
