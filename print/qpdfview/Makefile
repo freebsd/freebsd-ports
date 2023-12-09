@@ -1,9 +1,8 @@
 PORTNAME=	qpdfview
-DISTVERSION=	0.4.18
-PORTREVISION=	39
+DISTVERSION=	0.5.0
 CATEGORIES=	print
-MASTER_SITES=	https://launchpadlibrarian.net/294276875/ \
-		https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
+MASTER_SITES=	https://launchpad.net/${PORTNAME}/trunk/${DISTVERSION}/+download/
+DISTNAME=	${PORTNAME}-0.5
 
 MAINTAINER=	salvadore@FreeBSD.org
 COMMENT=	Tabbed DjVu/PDF/PS document viewer
