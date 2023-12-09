@@ -1,5 +1,5 @@
 PORTNAME=	vroom
-DISTVERSION=	1.6.4
+DISTVERSION=	1.6.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -27,7 +27,6 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-testthat>0:devel/R-cran-testthat
-# Some tests failing: https://github.com/tidyverse/vroom/issues/520
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles shebangfix
 
