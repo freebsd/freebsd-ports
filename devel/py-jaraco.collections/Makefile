@@ -1,5 +1,5 @@
 PORTNAME=	jaraco.collections
-DISTVERSION=	4.3.0
+DISTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://github.com/jaraco/jaraco.collections
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.text>=3.11.1:devel/py-jaraco.text@${PY_FLAVOR} \
-		${PY_SETUPTOOLS} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.text>=3.11.1:devel/py-jaraco.text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4.1:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jaraco.text>=3.11.1:devel/py-jaraco.text@${PY_FLAVOR}
