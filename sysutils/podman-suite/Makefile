@@ -1,9 +1,9 @@
 PORTNAME=	podman-suite
-PORTVERSION=	20231103
+PORTVERSION=	20240109
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
-COMMENT=	Metaport of podman and buildah toolkit
+COMMENT=	Metaport of Podman and Buildah toolkit
 WWW=		https://podman.io/
 
 USES=		metaport
