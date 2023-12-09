@@ -1,5 +1,6 @@
 PORTNAME=	dbmail
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	mail
 
@@ -8,8 +9,6 @@ COMMENT=	SQL database-based mail system (POP3 and IMAP)
 WWW=		http://www.dbmail.org/
 
 LICENSE=	GPLv2
-
-BROKEN_aarch64=	Fails to link: missing sbrk
 
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		docbook-sgml>0:textproc/docbook-sgml \
