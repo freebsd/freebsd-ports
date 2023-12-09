@@ -40,7 +40,7 @@ USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
 		WayfireWM:wf-utils:15f8e16:wfutils/subprojects/wf-utils
-MESON_ARGS=	-Dtests=disabled
+MESON_ARGS=	-Dtests=disabled -Dwf-touch:tests=disabled
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -53,6 +53,12 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e 's/git.found()/false/' \
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
+
+.ifdef GH_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
