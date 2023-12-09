@@ -1,7 +1,6 @@
 PORTNAME=	emulationstation
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.4
-PORTREVISION=	5
+DISTVERSION=	2.11.2
 CATEGORIES=	emulators
 
 MAINTAINER=	freebsd@coombscloud.com
