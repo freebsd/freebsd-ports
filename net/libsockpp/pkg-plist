@@ -30,6 +30,7 @@ lib/cmake/sockpp/sockppConfig.cmake
 lib/cmake/sockpp/sockppConfigVersion.cmake
 lib/cmake/sockpp/sockppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/sockpp/sockppTargets.cmake
+%%STATIC%%lib/libsockpp.a
 lib/libsockpp.so
 lib/libsockpp.so.0
-lib/libsockpp.so.0.8.1
+lib/libsockpp.so.0.8.2
