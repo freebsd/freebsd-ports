@@ -149,8 +149,10 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/ascii2oct.sh
 %%DATADIR%%/scripts/dns.sh
 %%DATADIR%%/scripts/dnsmasq-hook.sh
+%%DATADIR%%/scripts/escape-env-val.sh
 %%DATADIR%%/scripts/get_depends.sh
 %%DATADIR%%/scripts/kill_child.sh
+%%DATADIR%%/scripts/kill_tree.sh
 %%DATADIR%%/scripts/load-devfs-rules.sh
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
