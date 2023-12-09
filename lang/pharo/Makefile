@@ -1,6 +1,7 @@
 PORTNAME=	pharo
 DISTVERSION=	10.0.9
 DISTVERSIONSUFFIX=	de76067
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://files.pharo.org/vm/pharo-spur64-headless/Linux-x86_64/source/
 DISTNAME=	PharoVM-${DISTVERSION}-${DISTVERSIONSUFFIX}-Linux-x86_64-c-src
@@ -15,12 +16,11 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libgit2.so:devel/libgit2 \
 		libcairo.so:graphics/cairo \
 		libfreetype.so:print/freetype2 \
-		libssl.so:security/openssl \
 		libpixman-1.so:x11/pixman \
 		libpng.so:graphics/png \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		cmake
+USES=		cmake ssl
 CMAKE_ARGS=	-DFLAVOUR=CoInterpreter \
 		-DPHARO_BIN_LOCATION=${PREFIX}/libexec/pharo10 \
 		-DGENERATED_SOURCE_DIR=.
