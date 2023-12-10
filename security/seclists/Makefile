@@ -1,5 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2023.3
+DISTVERSION=	2023.4
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
