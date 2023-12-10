@@ -1,0 +1,11 @@
+--- Cargo.toml.orig	2023-12-10 01:37:47 UTC
++++ Cargo.toml
+@@ -46,7 +46,7 @@ hypher = "0.1.4"
+ hayagriva = "0.5.1"
+ heck = "0.4"
+ hypher = "0.1.4"
+-iai = { git = "https://github.com/typst/iai", rev = "3f0f927" }
++iai = "0.1.1"
+ icu_properties = { version = "1.4", features = ["serde"] }
+ icu_provider = { version = "1.4", features = ["sync"] }
+ icu_provider_adapters = "1.4"
