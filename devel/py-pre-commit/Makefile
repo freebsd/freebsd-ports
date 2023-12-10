@@ -1,5 +1,5 @@
 PORTNAME=	pre-commit
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,4 +26,10 @@ SHEBANG_FILES=	pre_commit/resources/hook-tmpl
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30900
+IGNORE=	python-3.9 or higher is required
+.endif
+
+.include <bsd.port.post.mk>
