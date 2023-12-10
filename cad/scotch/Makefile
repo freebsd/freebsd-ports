@@ -1,6 +1,6 @@
 PORTNAME=	scotch
 DISTVERSION=	6.0.4-aster7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad science
 
 MAINTAINER=	thierry@FreeBSD.org

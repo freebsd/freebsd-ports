@@ -1,7 +1,7 @@
 PORTNAME=	CombBLAS
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	https://portal.nersc.gov/project/m1982/CombBLAS/:test_data
 CATEGORIES=	math
 DISTFILES=	testdata_combblas1.6.1.tgz:test_data

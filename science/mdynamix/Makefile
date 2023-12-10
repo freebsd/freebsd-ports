@@ -1,6 +1,6 @@
 PORTNAME=	mdynamix
 DISTVERSION=	5.2.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	science
 MASTER_SITES=	http://www.fos.su.se/~sasha/${PORTNAME}/versions/
 DISTNAME=	md${DISTVERSION:S/.//g}
