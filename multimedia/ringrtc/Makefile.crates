@@ -1,4 +1,4 @@
-# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.34.1/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile.crates
+# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.34.4/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile.crates
 CARGO_CRATES=	addr2line-0.21.0 \
 		adler-1.0.2 \
 		aead-0.4.3 \
