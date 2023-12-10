@@ -1,11 +1,8 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.11
-PORTREVISION=	2
+DISTVERSION=	5.9.13
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
-PATCH_SITES=	https://github.com/strongswan/strongswan/commit/
-PATCHFILES=	a619356b5f21bfe3c13f1576eb1d16c015532ceb.patch:-p1
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
