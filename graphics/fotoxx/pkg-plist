@@ -125,6 +125,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/batch.png
 %%DATADIR%%/images/blackball.png
 %%DATADIR%%/images/blank-image.png
+%%DATADIR%%/images/blobs.png
+%%DATADIR%%/images/blobs2.jpg
 %%DATADIR%%/images/blueball.png
 %%DATADIR%%/images/blur.jpg
 %%DATADIR%%/images/bookmarks.png
@@ -137,10 +139,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/cartoon2.jpg
 %%DATADIR%%/images/change-alpha.png
 %%DATADIR%%/images/choose-captions.png
-%%DATADIR%%/images/chromatic1.png
-%%DATADIR%%/images/chromatic1A.png
-%%DATADIR%%/images/chromatic2.png
-%%DATADIR%%/images/chromatic2A.jpg
+%%DATADIR%%/images/chromatic.png
+%%DATADIR%%/images/chromaticA.png
 %%DATADIR%%/images/color-depth1.png
 %%DATADIR%%/images/color-depth2.png
 %%DATADIR%%/images/color-mode.png
