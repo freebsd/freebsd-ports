@@ -347,6 +347,10 @@
     SUBDIR += logcheck
     SUBDIR += lua-argon2
     SUBDIR += lua-bcrypt
+    SUBDIR += lua-resty-hmac
+    SUBDIR += lua-resty-jwt
+    SUBDIR += lua-resty-openidc
+    SUBDIR += lua-resty-openssl
     SUBDIR += luasec
     SUBDIR += lxqt-openssh-askpass
     SUBDIR += lxqt-sudo
