@@ -1,6 +1,6 @@
---- cargo-crates/lindera-unidic-0.27.0/build.rs.orig	2023-08-24 09:55:05 UTC
-+++ cargo-crates/lindera-unidic-0.27.0/build.rs
-@@ -56,7 +56,7 @@ fn main() -> Result<(), Box<dyn Error>> {
+--- cargo-crates/lindera-unidic-0.27.1/build.rs.orig
++++ cargo-crates/lindera-unidic-0.27.1/build.rs
+@@ -56,7 +56,7 @@
          dummy_matrix_def.write_all(b"0 1 0\n")?;
      } else {
          // Source file path for build package
