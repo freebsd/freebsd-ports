@@ -1,0 +1,184 @@
+PORTNAME=	dra
+DISTVERSION=	0.5.1
+CATEGORIES=	devel
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	Command line tool to download release assets from GitHub
+WWW=		https://github.com/devmatteini/dra
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	devmatteini
+
+CARGO_CRATES=	adler-1.0.2 \
+		aho-corasick-0.7.19 \
+		anstream-0.6.4 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-3.0.1 \
+		assert_cmd-2.0.12 \
+		autocfg-1.1.0 \
+		base64-0.21.2 \
+		bitflags-1.3.2 \
+		bitflags-2.4.0 \
+		bstr-1.6.0 \
+		bumpalo-3.12.0 \
+		byteorder-1.4.3 \
+		bzip2-0.4.4 \
+		bzip2-sys-0.1.11+1.0.8 \
+		cc-1.0.72 \
+		cfg-if-1.0.0 \
+		clap-4.4.10 \
+		clap_builder-4.4.9 \
+		clap_complete-4.4.4 \
+		clap_derive-4.4.7 \
+		clap_lex-0.6.0 \
+		colorchoice-1.0.0 \
+		console-0.15.0 \
+		crc32fast-1.3.2 \
+		crossbeam-utils-0.8.12 \
+		ctrlc-3.4.1 \
+		dialoguer-0.11.0 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
+		either-1.8.0 \
+		encode_unicode-0.3.6 \
+		errno-0.3.5 \
+		fastrand-1.9.0 \
+		filetime-0.2.17 \
+		flate2-1.0.28 \
+		float-cmp-0.9.0 \
+		form_urlencoded-1.0.1 \
+		getrandom-0.2.10 \
+		heck-0.4.0 \
+		idna-0.2.3 \
+		indicatif-0.17.7 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.2 \
+		itertools-0.11.0 \
+		itoa-1.0.6 \
+		js-sys-0.3.55 \
+		lazy_static-1.4.0 \
+		libc-0.2.147 \
+		libz-sys-1.1.8 \
+		linux-raw-sys-0.1.3 \
+		log-0.4.14 \
+		lzma-sys-0.1.19 \
+		matches-0.1.9 \
+		memchr-2.5.0 \
+		miniz_oxide-0.7.1 \
+		nix-0.27.1 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.15 \
+		number_prefix-0.4.0 \
+		once_cell-1.13.0 \
+		percent-encoding-2.1.0 \
+		pkg-config-0.3.25 \
+		portable-atomic-1.3.3 \
+		predicates-3.0.4 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.5 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro2-1.0.66 \
+		quote-1.0.32 \
+		redox_syscall-0.2.10 \
+		regex-1.5.6 \
+		regex-automata-0.3.4 \
+		regex-syntax-0.6.26 \
+		ring-0.16.20 \
+		ring-0.17.3 \
+		rustix-0.36.16 \
+		rustls-0.21.9 \
+		rustls-webpki-0.101.7 \
+		ryu-1.0.6 \
+		same-file-1.0.6 \
+		sct-0.7.0 \
+		serde-1.0.193 \
+		serde_derive-1.0.193 \
+		serde_json-1.0.99 \
+		shell-words-1.1.0 \
+		spin-0.5.2 \
+		spin-0.9.8 \
+		strsim-0.10.0 \
+		syn-1.0.104 \
+		syn-2.0.28 \
+		tar-0.4.40 \
+		tempfile-3.4.0 \
+		terminal_size-0.1.17 \
+		termtree-0.2.4 \
+		test-case-3.3.1 \
+		test-case-core-3.2.1 \
+		test-case-macros-3.2.1 \
+		thiserror-1.0.49 \
+		thiserror-impl-1.0.49 \
+		tinyvec-1.5.1 \
+		tinyvec_macros-0.1.0 \
+		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.5 \
+		unicode-normalization-0.1.19 \
+		unicode-width-0.1.9 \
+		untrusted-0.7.1 \
+		untrusted-0.9.0 \
+		ureq-2.9.1 \
+		url-2.2.2 \
+		urlencoding-2.1.3 \
+		utf8parse-0.2.1 \
+		uuid-1.6.1 \
+		vcpkg-0.2.15 \
+		version_check-0.9.3 \
+		wait-timeout-0.2.0 \
+		walkdir-2.4.0 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.78 \
+		wasm-bindgen-backend-0.2.78 \
+		wasm-bindgen-macro-0.2.78 \
+		wasm-bindgen-macro-support-0.2.78 \
+		wasm-bindgen-shared-0.2.78 \
+		web-sys-0.3.55 \
+		webpki-roots-0.25.3 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.1 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.48.0 \
+		xattr-1.0.1 \
+		xz2-0.1.7 \
+		zeroize-1.4.3 \
+		zip-0.6.6
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>
