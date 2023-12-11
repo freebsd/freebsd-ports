@@ -40,36 +40,6 @@
     </dates>
   </vuln>
 
-  <vuln vid="bbda3d16-968e-11ee-b780-b42e991fc52e">
-    <topic>strongswan -- buffer overflow</topic>
-    <affects>
-      <package>
-	<name>null</name>
-	<range><lt>5.9.12</lt></range>
-      </package>
-    </affects>
-    <description>
-	<body xmlns="http://www.w3.org/1999/xhtml">
-	<p>cve@mitre.org reports:</p>
-	<blockquote cite="https://github.com/strongswan/strongswan/releases">
-	  <p>strongSwan before 5.9.12 has a buffer overflow and possible
-	unauthenticated remote code execution via a DH public value that
-	exceeds the internal buffer in charon-tkm&apos;s DH proxy.  The
-	earliest affected version is 5.3.0.  An attack can occur via a
-	crafted IKE_SA_INIT message.</p>
-	</blockquote>
-	</body>
-    </description>
-    <references>
-      <cvename>CVE-2023-41913</cvename>
-      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-41913</url>
-    </references>
-    <dates>
-      <discovery>2023-12-07</discovery>
-      <entry>2023-12-09</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="e07a7754-12a4-4661-b852-fd221d68955f">
     <topic>electron25 -- multiple vulnerabilities</topic>
     <affects>
