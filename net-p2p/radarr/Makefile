@@ -1,5 +1,6 @@
 PORTNAME=	radarr
 DISTVERSION=	5.1.3.8246
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Radarr.master.${DISTVERSION}.freebsd-core-x64
@@ -20,7 +21,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=	ssl:run sqlite:3
+USES=	sqlite:3 ssl:run
 
 USE_RC_SUBR=	${PORTNAME}
 
