@@ -1,4 +1,4 @@
---- cmake/Modules/G4OptionalComponents.cmake.orig	2023-03-31 14:13:37 UTC
+--- cmake/Modules/G4OptionalComponents.cmake.orig	2023-12-10 17:01:37 UTC
 +++ cmake/Modules/G4OptionalComponents.cmake
 @@ -38,8 +38,31 @@ endif()
  
@@ -28,7 +28,7 @@
  if(GEANT4_USE_SYSTEM_CLHEP)
 -  find_package(CLHEP 2.4.6.0 REQUIRED CONFIG)
 +  find_package(CLHEP 2.4.6.0 REQUIRED CONFIG
-+          PATHS ${_paths})
++      PATHS ${_paths}) # PATHS added by port maintainer
 +  unset(_paths)
    geant4_save_package_variables(CLHEP CLHEP_DIR)
  else()
