@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/html/parser/html_document_parser_fastpath.cc.orig	2023-07-16 15:47:57 UTC
+--- third_party/blink/renderer/core/html/parser/html_document_parser_fastpath.cc.orig	2023-12-10 06:10:27 UTC
 +++ third_party/blink/renderer/core/html/parser/html_document_parser_fastpath.cc
-@@ -169,7 +169,11 @@ class HTMLFastPathParser {
+@@ -172,7 +172,11 @@ class HTMLFastPathParser {
    using Span = base::span<const Char>;
    using USpan = base::span<const UChar>;
    // 32 matches that used by HTMLToken::Attribute.

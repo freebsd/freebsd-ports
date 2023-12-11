@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/common/chrome_features.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/common/chrome_features.cc
 @@ -76,7 +76,7 @@ BASE_FEATURE(kAppShimNotificationAttribution,
  BASE_FEATURE(kAsyncDns,
@@ -45,7 +45,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -371,7 +371,7 @@ BASE_FEATURE(kDisruptiveNotificationPermissionRevocati
+@@ -366,7 +366,7 @@ BASE_FEATURE(kDisruptiveNotificationPermissionRevocati
  BASE_FEATURE(kDnsOverHttps,
               "DnsOverHttps",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -54,7 +54,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -387,7 +387,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -382,7 +382,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -63,8 +63,8 @@
        true
  #else
        false
-@@ -894,7 +894,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
-              base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -912,7 +912,7 @@ BASE_FEATURE(kLacrosSharedComponentsDir,
+              base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
@@ -72,7 +72,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -907,7 +907,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -925,7 +925,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

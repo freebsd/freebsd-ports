@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2023-11-03 10:09:45 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2023-12-10 06:10:27 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -24,7 +24,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelFeature);
  BASE_DECLARE_FEATURE(kIPHCompanionSidePanelRegionSearchFeature);
-@@ -226,7 +226,7 @@ extern const base::FeatureParam<int>
+@@ -233,7 +233,7 @@ extern const base::FeatureParam<int>
      kDefaultBrowserEligibilitySlidingWindowParam;
  #endif  // BUILDFLAG(IS_IOS)
  

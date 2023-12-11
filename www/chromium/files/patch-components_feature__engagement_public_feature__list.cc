@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_list.cc.orig	2023-11-03 10:09:45 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2023-12-10 06:10:27 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -143,7 +143,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHiOSChoiceScreenFeature,
+@@ -146,7 +146,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSParcelTrackingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
@@ -9,7 +9,7 @@
      &kIPHBatterySaverModeFeature,
      &kIPHCompanionSidePanelFeature,
      &kIPHCompanionSidePanelRegionSearchFeature,
-@@ -189,7 +189,7 @@ const base::Feature* const kAllFeatures[] = {
+@@ -196,7 +196,7 @@ const base::Feature* const kAllFeatures[] = {
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  

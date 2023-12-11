@@ -1,4 +1,4 @@
---- chrome/browser/download/bubble/download_bubble_update_service.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/download/bubble/download_bubble_update_service.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/download/bubble/download_bubble_update_service.cc
 @@ -89,7 +89,11 @@ ItemSortKey GetSortKey(const Item& item) {
  // Helper to get an iterator to the last element in the cache. The cache
@@ -12,7 +12,7 @@
    CHECK(!cache.empty());
    auto it = cache.end();
    return std::prev(it);
-@@ -1029,9 +1033,17 @@ bool DownloadBubbleUpdateService::CacheManager::Remove
+@@ -1089,9 +1093,17 @@ bool DownloadBubbleUpdateService::CacheManager::Remove
  }
  
  template <typename Id, typename Item>

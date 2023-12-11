@@ -1,6 +1,6 @@
---- chrome/common/media/cdm_registration.cc.orig	2023-10-11 18:22:24 UTC
+--- chrome/common/media/cdm_registration.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/common/media/cdm_registration.cc
-@@ -25,11 +25,11 @@
+@@ -26,11 +26,11 @@
  
  #if BUILDFLAG(ENABLE_WIDEVINE)
  #include "third_party/widevine/cdm/widevine_cdm_common.h"  // nogncheck
@@ -13,7 +13,7 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "base/no_destructor.h"
  #include "chrome/common/media/component_widevine_cdm_hint_file_linux.h"
- #include "components/cdm/common/cdm_manifest.h"
+ #include "media/cdm/supported_audio_codecs.h"
 @@ -56,7 +56,7 @@ using Robustness = content::CdmInfo::Robustness;
  #if BUILDFLAG(ENABLE_WIDEVINE)
  #if (BUILDFLAG(BUNDLE_WIDEVINE_CDM) ||            \

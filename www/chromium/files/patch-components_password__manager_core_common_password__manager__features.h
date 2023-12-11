@@ -1,6 +1,6 @@
---- components/password_manager/core/common/password_manager_features.h.orig	2023-10-27 05:38:38 UTC
+--- components/password_manager/core/common/password_manager_features.h.orig	2023-12-10 06:10:27 UTC
 +++ components/password_manager/core/common/password_manager_features.h
-@@ -24,7 +24,7 @@ namespace password_manager::features {
+@@ -19,7 +19,7 @@ namespace password_manager::features {
  // alongside the definition of their values in the .cc file.
  BASE_DECLARE_FEATURE(kEnableOverwritingPlaceholderUsernames);
  

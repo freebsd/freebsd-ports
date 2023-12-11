@@ -1,6 +1,6 @@
---- ui/gtk/gtk_ui.cc.orig	2023-11-03 10:09:45 UTC
+--- ui/gtk/gtk_ui.cc.orig	2023-12-10 06:10:27 UTC
 +++ ui/gtk/gtk_ui.cc
-@@ -993,11 +993,19 @@ ui::DisplayConfig GtkUi::GetDisplayConfig() const {
+@@ -1013,11 +1013,19 @@ ui::DisplayConfig GtkUi::GetDisplayConfig() const {
      GdkRectangle geometry;
      gdk_monitor_get_geometry(monitor, &geometry);
      int monitor_scale = std::max(1, gdk_monitor_get_scale_factor(monitor));
