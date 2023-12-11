@@ -4,6 +4,7 @@ include/iowow/iwarr.h
 include/iowow/iwavl.h
 include/iowow/iwbinn.h
 include/iowow/iwbits.h
+include/iowow/iwchars.h
 include/iowow/iwconv.h
 include/iowow/iwdlsnr.h
 include/iowow/iwexfile.h
@@ -20,6 +21,7 @@ include/iowow/iwpool.h
 include/iowow/iwrb.h
 include/iowow/iwrdb.h
 include/iowow/iwre.h
+include/iowow/iwrefs.h
 include/iowow/iwstw.h
 include/iowow/iwth.h
 include/iowow/iwtp.h
@@ -28,6 +30,8 @@ include/iowow/iwuuid.h
 include/iowow/iwxstr.h
 include/iowow/murmur3.h
 include/iowow/utf8proc.h
+include/iowow/wyhash.h
+include/iowow/wyhash32.h
 lib/libiowow-1.a
 lib/libiowow.so
 lib/libiowow.so.1
