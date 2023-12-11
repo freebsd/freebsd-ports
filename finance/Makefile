@@ -44,6 +44,7 @@
     SUBDIR += libbtc
     SUBDIR += libofx
     SUBDIR += libstocks
+    SUBDIR += lnd
     SUBDIR += moneymanagerex
     SUBDIR += myphpmoney
     SUBDIR += nextcloud-cospend
