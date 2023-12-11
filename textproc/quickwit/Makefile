@@ -1,7 +1,6 @@
 PORTNAME=	quickwit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.4
-PORTREVISION=	1
+DISTVERSION=	0.6.5
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 USES=			cargo pkgconfig
 USE_GITHUB=		yes
 GH_ACCOUNT=		quickwit-oss
+#GH_TUPLE=		quickwit-oss:rust-sasl:daca921:rust_sasl/cargo-crates/sasl2-sys
 CARGO_CARGOLOCK=	${WRKSRC}/${PORTNAME}/Cargo.lock
 CARGO_CARGOTOML=	${WRKSRC}/${PORTNAME}/Cargo.toml
 CARGO_INSTALL_PATH=	${PORTNAME}/quickwit-cli
