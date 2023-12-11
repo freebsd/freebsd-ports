@@ -36,7 +36,7 @@
 +		/* GICv3 */
 +		.virt = 0x2f100000UL,
 +		.phys = 0x2f100000UL,
-+		.size = 0x20000UL,
++		.size = 0xf00000UL,
 +		.attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
 +			 PTE_BLOCK_NON_SHARE |
 +			 PTE_BLOCK_PXN | PTE_BLOCK_UXN
