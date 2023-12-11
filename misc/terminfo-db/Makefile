@@ -1,5 +1,5 @@
 PORTNAME=	terminfo
-PORTVERSION=	20231111
+PORTVERSION=	20231209
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	misc
 MASTER_SITES=	https://invisible-island.net/archives/ncurses/current/ \
