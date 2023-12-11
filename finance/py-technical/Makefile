@@ -1,6 +1,5 @@
 PORTNAME=	technical
-DISTVERSION=	1.4.0
-PORTREVISION=	2
+DISTVERSION=	1.4.1
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no test data
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest # 16 tests failed, see https://github.com/freqtrade/technical/issues/390
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freqtrade
