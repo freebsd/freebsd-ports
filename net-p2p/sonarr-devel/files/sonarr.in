@@ -48,6 +48,10 @@ start_precmd=${name}_precmd
         export DOTNET_SYSTEM_NET_DISABLEIPV6=1
     fi
 
+    if [ `uname -K` -ge 1400092 ]; then
+        export CLR_OPENSSL_VERSION_OVERRIDE=30
+    fi
+
     rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${%%PORTNAME%%_exec_dir}/Sonarr --data=${%%PORTNAME%%_data_dir} --nobrowser >> /dev/null 2>&1 ${rc_flags}"
 }
 
