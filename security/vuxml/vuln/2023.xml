@@ -1,3 +1,44 @@
+  <vuln vid="4405e9ad-97fe-11ee-86bb-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>120.0.6099.62</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>120.0.6099.62</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	    <li>[1497984] High CVE-2023-6508: Use after free in Media Stream. Reported by Cassidy Kim(@cassidy6564) on 2023-10-31</li>
+	    <li>[1494565] High CVE-2023-6509: Use after free in Side Panel Search. Reported by Khalil Zhani on 2023-10-21</li>
+	    <li>[1480152] Medium CVE-2023-6510: Use after free in Media Capture. Reported by [pwn2car] on 2023-09-08</li>
+	    <li>[1478613] Low CVE-2023-6511: Inappropriate implementation in Autofill. Reported by Ahmed ElMasry on 2023-09-04</li>
+	    <li>[1457702] Low CVE-2023-6512: Inappropriate implementation in Web Browser UI. Reported by Om Apip on 2023-06-24</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6508</cvename>
+      <cvename>CVE-2023-6509</cvename>
+      <cvename>CVE-2023-6510</cvename>
+      <cvename>CVE-2023-6511</cvename>
+      <cvename>CVE-2023-6512</cvename>
+      <url>https://chromereleases.googleblog.com/2023/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-12-05</discovery>
+      <entry>2023-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2bc376c0-977e-11ee-b4bc-b42e991fc52e">
     <topic>apache -- Apache ZooKeeper: Authorization bypass in SASL Quorum Peer Authentication</topic>
     <affects>
