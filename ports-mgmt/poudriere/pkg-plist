@@ -4,20 +4,20 @@ bin/poudriere
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
 @sample etc/poudriered.conf.sample
 etc/rc.d/poudriered
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Caddyfile.sample
 libexec/poudriere/cachec
 libexec/poudriere/cached
 libexec/poudriere/clock
 libexec/poudriere/cpdup
 libexec/poudriere/dirempty
 libexec/poudriere/dirwatch
-libexec/poudriere/jexecd
 libexec/poudriere/locked_mkdir
 libexec/poudriere/nc
 libexec/poudriere/poudriered
 libexec/poudriere/ptsort
 libexec/poudriere/pwait
 libexec/poudriere/rename
-libexec/poudriere/rexec
+libexec/poudriere/setsid
 %%RM%%libexec/poudriere/rm
 libexec/poudriere/sh
 libexec/poudriere/timeout
@@ -38,6 +38,7 @@ man/man8/poudriere-version.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
 %%DATADIR%%/MANIFESTS
+%%DATADIR%%/api.sh
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
@@ -47,7 +48,6 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
 %%DATADIR%%/awk/unique_pkgnames_from_flavored_origins.awk
-%%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/common.sh
 %%DATADIR%%/daemon.sh
@@ -87,6 +87,16 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/html/jail.html
 %%DATADIR%%/html/robots.txt
 %%DATADIR%%/image.sh
+%%DATADIR%%/image_dump.sh
+%%DATADIR%%/image_firmware.sh
+%%DATADIR%%/image_hybridiso.sh
+%%DATADIR%%/image_iso.sh
+%%DATADIR%%/image_mfs.sh
+%%DATADIR%%/image_rawdisk.sh
+%%DATADIR%%/image_tar.sh
+%%DATADIR%%/image_usb.sh
+%%DATADIR%%/image_zfs.sh
+%%DATADIR%%/image_zsnapshot.sh
 %%DATADIR%%/include/cache.sh
 %%DATADIR%%/include/colors.pre.sh
 %%DATADIR%%/include/colors.sh
@@ -97,6 +107,8 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/include/hash.sh
 %%DATADIR%%/include/html.sh
 %%DATADIR%%/include/parallel.sh
+%%DATADIR%%/include/pkg.sh
+%%DATADIR%%/include/pkgqueue.sh
 %%DATADIR%%/include/shared_hash.sh
 %%DATADIR%%/include/util.sh
 %%DATADIR%%/jail.sh
