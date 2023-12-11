@@ -1,6 +1,6 @@
---- ui/gl/gl_context.cc.orig	2023-11-03 10:09:45 UTC
+--- ui/gl/gl_context.cc.orig	2023-12-10 06:10:27 UTC
 +++ ui/gl/gl_context.cc
-@@ -440,7 +440,7 @@ bool GLContext::MakeVirtuallyCurrent(
+@@ -486,7 +486,7 @@ bool GLContext::MakeVirtuallyCurrent(
    DCHECK(virtual_context->IsCurrent(surface));
  
    if (switched_real_contexts || virtual_context != current_virtual_context_) {

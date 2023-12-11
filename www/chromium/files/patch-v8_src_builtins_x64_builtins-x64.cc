@@ -1,4 +1,4 @@
---- v8/src/builtins/x64/builtins-x64.cc.orig	2023-11-03 10:09:45 UTC
+--- v8/src/builtins/x64/builtins-x64.cc.orig	2023-12-10 06:10:27 UTC
 +++ v8/src/builtins/x64/builtins-x64.cc
 @@ -44,6 +44,8 @@ namespace internal {
  #define __ ACCESS_MASM(masm)
@@ -18,7 +18,7 @@
  
    // Store the current pc as the handler offset. It's used later to create the
    // handler table.
-@@ -3324,6 +3326,9 @@ void SwitchBackAndReturnPromise(MacroAssembler* masm, 
+@@ -3339,6 +3341,9 @@ void SwitchBackAndReturnPromise(MacroAssembler* masm, 
  void GenerateExceptionHandlingLandingPad(MacroAssembler* masm,
                                           Label* return_promise) {
    int catch_handler = __ pc_offset();
@@ -28,7 +28,7 @@
    // Restore rsp to free the reserved stack slots for the sections.
    __ leaq(rsp, MemOperand(rbp, StackSwitchFrameConstants::kLastSpillOffset));
  
-@@ -3655,6 +3660,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
+@@ -3696,6 +3701,7 @@ void Builtins::Generate_WasmSuspend(MacroAssembler* ma
    LoadJumpBuffer(masm, jmpbuf, true);
    __ Trap();
    __ bind(&resume);
@@ -36,7 +36,7 @@
    __ LeaveFrame(StackFrame::STACK_SWITCH);
    __ ret(0);
  }
-@@ -3787,6 +3793,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
+@@ -3828,6 +3834,7 @@ void Generate_WasmResumeHelper(MacroAssembler* masm, w
    }
    __ Trap();
    __ bind(&suspend);

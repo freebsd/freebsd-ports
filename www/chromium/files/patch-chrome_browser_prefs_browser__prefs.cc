@@ -1,4 +1,4 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
 @@ -485,18 +485,18 @@
  #endif
@@ -31,7 +31,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -674,7 +674,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
+@@ -652,7 +652,7 @@ const char kPluginsPluginsList[] = "plugins.plugins_li
  const char kPluginsShowDetails[] = "plugins.show_details";
  
  // Deprecated 02/2023.
@@ -40,7 +40,7 @@
  const char kWebAppsUrlHandlerInfo[] = "web_apps.url_handler_info";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -995,7 +995,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
+@@ -982,7 +982,7 @@ void RegisterLocalStatePrefsForMigration(PrefRegistryS
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Deprecated 02/2023.
@@ -49,7 +49,7 @@
    registry->RegisterDictionaryPref(kWebAppsUrlHandlerInfo);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1950,12 +1950,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1959,12 +1959,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -64,7 +64,7 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
    enterprise_signin::RegisterProfilePrefs(registry);
  #endif
-@@ -2110,7 +2110,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
+@@ -2121,7 +2121,7 @@ void MigrateObsoleteLocalStatePrefs(PrefService* local
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
    // Added 02/2023

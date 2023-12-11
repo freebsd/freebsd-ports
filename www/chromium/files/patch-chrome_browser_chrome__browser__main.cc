@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main.cc.orig	2023-11-03 10:09:45 UTC
+--- chrome/browser/chrome_browser_main.cc.orig	2023-12-10 06:10:27 UTC
 +++ chrome/browser/chrome_browser_main.cc
-@@ -248,11 +248,11 @@
+@@ -246,11 +246,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -14,7 +14,7 @@
  #include "components/crash/core/app/crashpad.h"
  #endif
  
-@@ -287,14 +287,14 @@
+@@ -284,14 +284,14 @@
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -31,7 +31,7 @@
  #include "chrome/browser/headless/headless_mode_metrics.h"  // nogncheck
  #include "chrome/browser/headless/headless_mode_util.h"     // nogncheck
  #include "components/headless/select_file_dialog/headless_select_file_dialog.h"
-@@ -1040,7 +1040,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1041,7 +1041,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
        browser_creator_->AddFirstRunTabs(master_prefs_->new_tabs);
      }
  
@@ -40,7 +40,7 @@
      // Create directory for user-level Native Messaging manifest files. This
      // makes it less likely that the directory will be created by third-party
      // software with incorrect owner or permission. See crbug.com/725513 .
-@@ -1096,7 +1096,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
+@@ -1097,7 +1097,7 @@ int ChromeBrowserMainParts::PreCreateThreadsImpl() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -49,7 +49,7 @@
    metrics::DesktopSessionDurationTracker::Initialize();
    ProfileActivityMetricsRecorder::Initialize();
    TouchModeStatsTracker::Initialize(
-@@ -1332,7 +1332,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
+@@ -1333,7 +1333,7 @@ void ChromeBrowserMainParts::PostProfileInit(Profile* 
        *UrlLanguageHistogramFactory::GetForBrowserContext(profile));
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -58,7 +58,7 @@
    if (headless::IsHeadlessMode()) {
      headless::ReportHeadlessActionMetrics();
    }
-@@ -1438,7 +1438,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
+@@ -1439,7 +1439,7 @@ int ChromeBrowserMainParts::PreMainMessageLoopRunImpl(
    // In headless mode provide alternate SelectFileDialog factory overriding
    // any platform specific SelectFileDialog implementation that may have been
    // set.
@@ -67,7 +67,7 @@
    if (headless::IsHeadlessMode()) {
      headless::HeadlessSelectFileDialogFactory::SetUp();
    }
-@@ -2024,7 +2024,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
+@@ -1971,7 +1971,7 @@ bool ChromeBrowserMainParts::ProcessSingletonNotificat
  
    // Drop the request if headless mode is in effect or the request is from
    // a headless Chrome process.

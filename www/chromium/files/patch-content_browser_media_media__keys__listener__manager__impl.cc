@@ -1,6 +1,6 @@
---- content/browser/media/media_keys_listener_manager_impl.cc.orig	2023-08-17 07:33:31 UTC
+--- content/browser/media/media_keys_listener_manager_impl.cc.orig	2023-12-10 06:10:27 UTC
 +++ content/browser/media/media_keys_listener_manager_impl.cc
-@@ -234,7 +234,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
+@@ -252,7 +252,7 @@ void MediaKeysListenerManagerImpl::StartListeningForMe
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \
