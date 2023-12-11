@@ -1,6 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	${PARAVIEW_VER}.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -13,8 +13,6 @@ LICENSE=	ParaView_License_1.2
 LICENSE_NAME=	ParaView_License
 LICENSE_FILE=	${WRKSRC}/License_v1.2.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-
-BROKEN_aarch64=	fails to link: undefined reference to `sbrk'
 
 BUILD_DEPENDS=	${PYNUMPY}	\
 		cli11>0:devel/cli11	\
