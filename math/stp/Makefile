@@ -1,6 +1,6 @@
 PORTNAME=	stp
 DISTVERSION=	2.3.3
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -10,9 +10,6 @@ WWW=		https://stp.github.io/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_aarch64=		fails to link: missing sbrk
-BROKEN_riscv64=		fails to link: missing sbrk
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libminisat.so:math/minisat \
