@@ -3298,6 +3298,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex5f_redundant_4.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex5f_superlu_dist.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex60_1.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex60_1_eigs.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex60_2.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex60_3.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex60_4.out
