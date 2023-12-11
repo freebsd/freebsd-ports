@@ -69,6 +69,7 @@ include/catch2/internal/catch_compare_traits.hpp
 include/catch2/internal/catch_compiler_capabilities.hpp
 include/catch2/internal/catch_config_android_logwrite.hpp
 include/catch2/internal/catch_config_counter.hpp
+include/catch2/internal/catch_config_prefix_messages.hpp
 include/catch2/internal/catch_config_static_analysis_support.hpp
 include/catch2/internal/catch_config_uncaught_exceptions.hpp
 include/catch2/internal/catch_config_wchar.hpp
@@ -88,6 +89,7 @@ include/catch2/internal/catch_floating_point_helpers.hpp
 include/catch2/internal/catch_getenv.hpp
 include/catch2/internal/catch_is_permutation.hpp
 include/catch2/internal/catch_istream.hpp
+include/catch2/internal/catch_jsonwriter.hpp
 include/catch2/internal/catch_lazy_expr.hpp
 include/catch2/internal/catch_leak_detector.hpp
 include/catch2/internal/catch_list.hpp
@@ -104,6 +106,8 @@ include/catch2/internal/catch_polyfills.hpp
 include/catch2/internal/catch_preprocessor.hpp
 include/catch2/internal/catch_preprocessor_internal_stringify.hpp
 include/catch2/internal/catch_preprocessor_remove_parens.hpp
+include/catch2/internal/catch_random_floating_point_helpers.hpp
+include/catch2/internal/catch_random_integer_helpers.hpp
 include/catch2/internal/catch_random_number_generator.hpp
 include/catch2/internal/catch_random_seed_generation.hpp
 include/catch2/internal/catch_reporter_registry.hpp
@@ -133,6 +137,8 @@ include/catch2/internal/catch_test_spec_parser.hpp
 include/catch2/internal/catch_textflow.hpp
 include/catch2/internal/catch_to_string.hpp
 include/catch2/internal/catch_uncaught_exceptions.hpp
+include/catch2/internal/catch_uniform_floating_point_distribution.hpp
+include/catch2/internal/catch_uniform_integer_distribution.hpp
 include/catch2/internal/catch_unique_name.hpp
 include/catch2/internal/catch_unique_ptr.hpp
 include/catch2/internal/catch_void_type.hpp
@@ -159,6 +165,7 @@ include/catch2/reporters/catch_reporter_console.hpp
 include/catch2/reporters/catch_reporter_cumulative_base.hpp
 include/catch2/reporters/catch_reporter_event_listener.hpp
 include/catch2/reporters/catch_reporter_helpers.hpp
+include/catch2/reporters/catch_reporter_json.hpp
 include/catch2/reporters/catch_reporter_junit.hpp
 include/catch2/reporters/catch_reporter_multi.hpp
 include/catch2/reporters/catch_reporter_registrars.hpp
@@ -178,9 +185,9 @@ lib/cmake/Catch2/CatchShardTests.cmake
 lib/cmake/Catch2/CatchShardTestsImpl.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.4.0
+lib/libCatch2.so.3.5.0
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.4.0
+lib/libCatch2Main.so.3.5.0
 libdata/pkgconfig/catch2-with-main.pc
 libdata/pkgconfig/catch2.pc
 share/Catch2/gdbinit
