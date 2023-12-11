@@ -1,0 +1,35 @@
+--- chrome/app/settings_strings.grdp.orig	2023-10-19 19:58:02 UTC
++++ chrome/app/settings_strings.grdp
+@@ -183,12 +183,12 @@
+       Manage accessibility features
+     </message>
+   </if>
+-  <if expr="is_win or is_linux or is_macosx">
++  <if expr="is_win or is_posix or is_macosx">
+     <message name="IDS_SETTINGS_OVERSCROLL_HISTORY_NAVIGATION_TITLE" desc="Title for the overscroll history navigation setting, which allows you to navigate back and forward by swiping left or right with a touch device.">
+       Swipe between pages
+     </message>
+   </if>
+-  <if expr="is_win or is_linux">
++  <if expr="is_win or is_posix">
+     <message name="IDS_SETTINGS_OVERSCROLL_HISTORY_NAVIGATION_SUBTITLE" desc="Subtitle for the overscroll history navigation setting, which allows you to navigate back and forward by swiping left or right with a touch device.">
+       Navigate back and forward with swipe gesture
+     </message>
+@@ -222,7 +222,7 @@
+       Theme
+     </message>
+   </if>
+-  <if expr="is_linux">
++  <if expr="is_posix">
+     <message name="IDS_SETTINGS_GTK_THEME" desc="Text of the label describing the system (GTK) browser theme on Linux">
+       GTK
+     </message>
+@@ -242,7 +242,7 @@
+       Use Classic
+     </message>
+   </if>
+-  <if expr="not is_linux or is_chromeos or is_fuchsia">
++  <if expr="not is_posix or is_chromeos or is_fuchsia">
+     <message name="IDS_SETTINGS_RESET_TO_DEFAULT_THEME" desc="Name of the control which resets the browser theme back to the default theme.">
+       Reset to default
+     </message>

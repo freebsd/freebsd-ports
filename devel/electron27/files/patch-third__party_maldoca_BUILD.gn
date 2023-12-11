@@ -1,0 +1,13 @@
+--- third_party/maldoca/BUILD.gn.orig	2023-03-30 00:34:13 UTC
++++ third_party/maldoca/BUILD.gn
+@@ -264,6 +264,10 @@ source_set("maldoca-public-headers") {
+     ":maldoca_chromium_config",
+     ":maldoca_flags",
+   ]
++
++  if (is_bsd) {
++    libs = [ "iconv" ]
++  }
+ }
+ 
+ static_library("maldoca") {

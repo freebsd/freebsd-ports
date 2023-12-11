@@ -1,0 +1,19 @@
+--- build/config/compiler/pgo/BUILD.gn.orig	2023-10-19 19:57:59 UTC
++++ build/config/compiler/pgo/BUILD.gn
+@@ -143,13 +143,14 @@ config("pgo_optimization_flags") {
+ 
+     # Enable basic block layout based on the extended TSP problem. This aims to
+     # improve icache utilization and reduce the binary size.
+-    if (use_thin_lto) {
++    # __clang_major__ >= 15
++    if (use_thin_lto && !is_bsd) {
+       if (is_win) {
+         ldflags = [ "-mllvm:-enable-ext-tsp-block-placement=1" ]
+       } else {
+         ldflags = [ "-Wl,-mllvm,-enable-ext-tsp-block-placement=1" ]
+       }
+-    } else {
++    } else if (!is_bsd) {
+       cflags += [
+         "-mllvm",
+         "-enable-ext-tsp-block-placement=1",

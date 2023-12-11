@@ -613,6 +613,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += electron25
     SUBDIR += electron26
+    SUBDIR += electron27
     SUBDIR += elf
     SUBDIR += elf-dissector
     SUBDIR += elfcat
