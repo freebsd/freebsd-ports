@@ -64,7 +64,7 @@ if [ -n "${microcode_cpus}" ]; then
 		echo "Warning: Ignoring deprecated rc variable, microcode_cpus."
 	else
 		echo "Warning: rc variable microcode_cpus is deprecated.
-Warning: Set microcode_udpate_cpus instead."
+Warning: Set microcode_update_cpus instead."
 		microcode_update_cpus="${microcode_cpus}"
         fi
 fi
