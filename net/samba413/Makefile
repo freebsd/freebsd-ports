@@ -13,7 +13,7 @@ LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
 DEPRECATED=	Reached its EoL on March 21, 2022
-EXPIRATION_DATE=	2023-12-31
+EXPIRATION_DATE=	2024-03-31
 
 IGNORE_NONTHREAD_PYTHON=	needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 CONFLICTS_INSTALL?=		samba4* # bin/cifsdd bin/dbwrap_tool bin/dumpmscat bin/findsmb bin/gentest
