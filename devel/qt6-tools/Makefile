@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang gl llvm:lib python:build \
+USES=		cmake compiler:c++17-lang gl llvm:lib,noexport python:build \
 		qt-dist:6
 USE_GL=		opengl
 USE_QT=		base declarative
