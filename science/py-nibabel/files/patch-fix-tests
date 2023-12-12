@@ -1,0 +1,37 @@
+- fix for the failing test from https://github.com/nipy/nibabel/issues/1285#issuecomment-1852612513
+
+diff --git nibabel/pkg_info.py nibabel/pkg_info.py
+index 7e816939..7232806a 100644
+--- nibabel/pkg_info.py
++++ nibabel/pkg_info.py
+@@ -1,6 +1,7 @@
+ from __future__ import annotations
+ 
+ import sys
++from contextlib import suppress
+ from subprocess import run
+ 
+ from packaging.version import Version
+@@ -102,14 +103,16 @@ def pkg_commit_hash(pkg_path: str | None = None) -> tuple[str, str]:
+     ver = Version(__version__)
+     if ver.local is not None and ver.local.startswith('g'):
+         return 'installation', ver.local[1:8]
+-    # maybe we are in a repository
+-    proc = run(
+-        ('git', 'rev-parse', '--short', 'HEAD'),
+-        capture_output=True,
+-        cwd=pkg_path,
+-    )
+-    if proc.stdout:
+-        return 'repository', proc.stdout.decode().strip()
++    # maybe we are in a repository, but consider that we may not have git
++    with suppress(FileNotFoundError):
++        proc = run(
++            ('git', 'rev-parse', '--short', 'HEAD'),
++            capture_output=True,
++            cwd=pkg_path,
++        )
++        if proc.stdout:
++            return 'repository', proc.stdout.decode().strip()
++
+     return '(none found)', '<not found>'
