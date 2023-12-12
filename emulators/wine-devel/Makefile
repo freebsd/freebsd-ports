@@ -1,8 +1,8 @@
 PORTNAME=	wine
-DISTVERSION=	8.21
+DISTVERSION=	9.0-rc1
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://dl.winehq.org/wine/source/8.x/
+MASTER_SITES=	https://dl.winehq.org/wine/source/9.0/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
