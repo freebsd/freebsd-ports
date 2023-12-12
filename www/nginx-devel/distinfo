@@ -1,4 +1,4 @@
-TIMESTAMP = 1701549360
+TIMESTAMP = 1702397320
 SHA256 (nginx-1.25.3.tar.gz) = 64c5b975ca287939e828303fa857d22f142b251f17808dfe41733512d9cded86
 SIZE (nginx-1.25.3.tar.gz) = 1216580
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -39,8 +39,8 @@ SHA256 (ogarrett-nginx-fips-check-module-6cb4270_GH0.tar.gz) = d52fbb0f2819cd91b
 SIZE (ogarrett-nginx-fips-check-module-6cb4270_GH0.tar.gz) = 6494
 SHA256 (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 9b059b5ae7b602d12d32d5ebe2700827ea625f22c0fb3b9956242e11de63845b
 SIZE (nieoding-nginx-gridfs-059bdc3_GH0.tar.gz) = 4674
-SHA256 (openresty-headers-more-nginx-module-33b646d_GH0.tar.gz) = 4e68ef77ce8bc3c248c04ddc112bb2230adf2de84c77430cedc8a4458ffb7369
-SIZE (openresty-headers-more-nginx-module-33b646d_GH0.tar.gz) = 28812
+SHA256 (openresty-headers-more-nginx-module-3fb97bc_GH0.tar.gz) = 62a0b84c86908b56fd37af79b440e70ae5b2a460d1dae5d7fabc3996c656ea5b
+SIZE (openresty-headers-more-nginx-module-3fb97bc_GH0.tar.gz) = 29426
 SHA256 (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = a58feb576f2231498b8a3863d3c6fba45c7d48bc48735fa714e07a7bfbedb6e3
 SIZE (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = 3425
 SHA256 (atomx-nginx-http-auth-digest-274490c_GH0.tar.gz) = 0839c33c2f8d519f92daae274f62cf87eb68415d562c6500ee3e3721ce80557c
