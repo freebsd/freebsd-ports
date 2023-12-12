@@ -1,5 +1,6 @@
 PORTNAME=	dbt-core
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}agate>=1.7,<2:textproc/py-agate@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}click>=8.0.2,<9:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>=2.3:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9,<0.5:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pathspec>=0.9,<0.12:devel/py-pathspec@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pathspec>=0.9,<0.13:devel/py-pathspec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6,<0.7:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.3,<0.5:databases/py-sqlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbt-extractor>=0.5:devel/py-dbt-extractor@${PY_FLAVOR} \
