@@ -1,6 +1,6 @@
---- class/LKV/Str.cc	3 Nov 2004 06:57:51 -0000	1.1
-+++ class/LKV/Str.cc	20 Feb 2006 11:11:54 -0000
-@@ -331,8 +331,9 @@
+--- class/LKV/Str.cc.orig	1996-04-04 05:42:56 UTC
++++ class/LKV/Str.cc
+@@ -331,8 +331,9 @@ long long Str::svall(void) const {
  	}
  }
  
@@ -11,7 +11,7 @@
  	char c;
  	unsigned long i;
  	unsigned long j;
-@@ -379,8 +380,9 @@
+@@ -379,8 +380,9 @@ Str Str::next_word(void) return res {
  	return res;
  }
  
@@ -22,7 +22,7 @@
  	unsigned long i = index(0x0a);
  	
  	if (i == (unsigned long)~0) {
-@@ -397,15 +399,18 @@
+@@ -397,15 +399,18 @@ Str Str::next_line(void) return res {
  	}
  	
  	len -= i+1;
@@ -43,7 +43,7 @@
  	if (len) bcopy(adr, res.adr, len);
  	*(res.adr+len) = rv;
  	return res;
-@@ -481,6 +486,26 @@
+@@ -481,6 +486,26 @@ int Str::operator==(const Str & rv) const {
  	return -1;
  }
  
@@ -70,18 +70,30 @@
  int Str::operator<(const Str & rv) const {
  	
  	unsigned long p = (rv.len < len)? rv.len : len;
-@@ -726,7 +751,9 @@
+@@ -632,8 +657,8 @@ Str NtoStr(unsigned long val, short int width) {
+ 	
+ 	char vbuf[20];
+ 	
+-	register short p = 1;
+-	register char * a = vbuf+20;
++	short p = 1;
++	char * a = vbuf+20;
+ 	
+ 	for (;; p++) {
+ 		*(--a) = (char)'0'+(val % 10);
+@@ -726,8 +751,10 @@ Str & Str::to_lower(void) {
  }
  
  
 -Str LtoStr(long num) return res(4) {
 +Str LtoStr(long num) {
-+	
-+	Str res(4);
  	
++	Str res(4);
++	
  	// if (res.fail) return Str();
  	
-@@ -744,10 +771,12 @@
+ 	char * c = (char *)res;
+@@ -744,10 +771,12 @@ Str operator+(const char * lv, const Str & rv) {
  	return Str(lv)+rv;
  }
  
