@@ -6,6 +6,7 @@ man/man7/cmake-buildsystem.7.gz
 man/man7/cmake-commands.7.gz
 man/man7/cmake-compile-features.7.gz
 man/man7/cmake-configure-log.7.gz
+man/man7/cmake-cxxmodules.7.gz
 man/man7/cmake-developer.7.gz
 man/man7/cmake-env-variables.7.gz
 man/man7/cmake-file-api.7.gz

@@ -2,6 +2,10 @@ bin/ccmake
 bin/cmake
 bin/cpack
 bin/ctest
+share/aclocal/cmake.m4
+share/bash-completion/completions/cmake
+share/bash-completion/completions/cpack
+share/bash-completion/completions/ctest
 %%DATADIR%%/Help/command/DEPRECATED_POLICY_VERSIONS.txt
 %%DATADIR%%/Help/command/DEVICE_LINK_OPTIONS.txt
 %%DATADIR%%/Help/command/FIND_XXX.txt
@@ -169,6 +173,7 @@ bin/ctest
 %%DATADIR%%/Help/envvar/CMAKE_COLOR_DIAGNOSTICS.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIGURATION_TYPES.rst
 %%DATADIR%%/Help/envvar/CMAKE_CONFIG_TYPE.rst
+%%DATADIR%%/Help/envvar/CMAKE_CROSSCOMPILING_EMULATOR.rst
 %%DATADIR%%/Help/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst
 %%DATADIR%%/Help/envvar/CMAKE_FRAMEWORK_PATH.rst
 %%DATADIR%%/Help/envvar/CMAKE_GENERATOR.rst
@@ -208,6 +213,7 @@ bin/ctest
 %%DATADIR%%/Help/envvar/FFLAGS.rst
 %%DATADIR%%/Help/envvar/HIPCXX.rst
 %%DATADIR%%/Help/envvar/HIPFLAGS.rst
+%%DATADIR%%/Help/envvar/HIPHOSTCXX.rst
 %%DATADIR%%/Help/envvar/ISPC.rst
 %%DATADIR%%/Help/envvar/ISPCFLAGS.rst
 %%DATADIR%%/Help/envvar/LANG_FLAGS.txt
@@ -265,6 +271,7 @@ bin/ctest
 %%DATADIR%%/Help/manual/cmake-commands.7.rst
 %%DATADIR%%/Help/manual/cmake-compile-features.7.rst
 %%DATADIR%%/Help/manual/cmake-configure-log.7.rst
+%%DATADIR%%/Help/manual/cmake-cxxmodules.7.rst
 %%DATADIR%%/Help/manual/cmake-developer.7.rst
 %%DATADIR%%/Help/manual/cmake-env-variables.7.rst
 %%DATADIR%%/Help/manual/cmake-file-api.7.rst
@@ -713,6 +720,10 @@ bin/ctest
 %%DATADIR%%/Help/policy/CMP0149.rst
 %%DATADIR%%/Help/policy/CMP0150.rst
 %%DATADIR%%/Help/policy/CMP0151.rst
+%%DATADIR%%/Help/policy/CMP0152.rst
+%%DATADIR%%/Help/policy/CMP0153.rst
+%%DATADIR%%/Help/policy/CMP0154.rst
+%%DATADIR%%/Help/policy/CMP0155.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -869,6 +880,7 @@ bin/ctest
 %%DATADIR%%/Help/prop_test/FIXTURES_CLEANUP.rst
 %%DATADIR%%/Help/prop_test/FIXTURES_REQUIRED.rst
 %%DATADIR%%/Help/prop_test/FIXTURES_SETUP.rst
+%%DATADIR%%/Help/prop_test/GENERATED_RESOURCE_SPEC_FILE.rst
 %%DATADIR%%/Help/prop_test/LABELS.rst
 %%DATADIR%%/Help/prop_test/MEASUREMENT.rst
 %%DATADIR%%/Help/prop_test/PASS_REGULAR_EXPRESSION.rst
@@ -1025,6 +1037,11 @@ bin/ctest
 %%DATADIR%%/Help/prop_tgt/IMPORTED.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_CONFIGURATIONS.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_FEATURES.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_OPTIONS.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES.rst
+%%DATADIR%%/Help/prop_tgt/IMPORTED_CXX_MODULES_LINK_LIBRARIES.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_GLOBAL.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB.rst
 %%DATADIR%%/Help/prop_tgt/IMPORTED_IMPLIB_CONFIG.rst
@@ -1301,6 +1318,7 @@ bin/ctest
 %%DATADIR%%/Help/release/3.25.rst
 %%DATADIR%%/Help/release/3.26.rst
 %%DATADIR%%/Help/release/3.27.rst
+%%DATADIR%%/Help/release/3.28.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1527,6 +1545,7 @@ bin/ctest
 %%DATADIR%%/Help/variable/CMAKE_GNUtoMS.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_ARCHITECTURES.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_HIP_PLATFORM.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD.rst
 %%DATADIR%%/Help/variable/CMAKE_HIP_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_HOME_DIRECTORY.rst
@@ -1614,6 +1633,7 @@ bin/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_HOST_COMPILER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IGNORE_EXTENSIONS.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IMPLICIT_INCLUDE_DIRECTORIES.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_IMPLICIT_LINK_DIRECTORIES.rst
@@ -2065,6 +2085,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
 %%DATADIR%%/Modules/CMakeCommonLanguageInclude.cmake
 %%DATADIR%%/Modules/CMakeCompilerABI.h
+%%DATADIR%%/Modules/CMakeCompilerCUDAArch.h
 %%DATADIR%%/Modules/CMakeCompilerIdDetection.cmake
 %%DATADIR%%/Modules/CMakeConfigurableFile.in
 %%DATADIR%%/Modules/CMakeDependentOption.cmake
@@ -2187,7 +2208,6 @@ bin/ctest
 %%DATADIR%%/Modules/CTestScriptMode.cmake
 %%DATADIR%%/Modules/CTestTargets.cmake
 %%DATADIR%%/Modules/CTestUseLaunchers.cmake
-%%DATADIR%%/Modules/CUDA/architectures.cmake
 %%DATADIR%%/Modules/CheckCCompilerFlag.cmake
 %%DATADIR%%/Modules/CheckCSourceCompiles.cmake
 %%DATADIR%%/Modules/CheckCSourceRuns.cmake
@@ -2293,6 +2313,10 @@ bin/ctest
 %%DATADIR%%/Modules/Compiler/Cray-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/Cray-Fortran.cmake
 %%DATADIR%%/Modules/Compiler/Cray.cmake
+%%DATADIR%%/Modules/Compiler/CrayClang-C.cmake
+%%DATADIR%%/Modules/Compiler/CrayClang-CXX.cmake
+%%DATADIR%%/Modules/Compiler/CrayClang-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/CrayClang.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-C.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-CXX.cmake
 %%DATADIR%%/Modules/Compiler/CrayPrgEnv-Fortran.cmake
@@ -2387,10 +2411,17 @@ bin/ctest
 %%DATADIR%%/Modules/Compiler/NVHPC.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-CUDA.cmake
 %%DATADIR%%/Modules/Compiler/NVIDIA-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/NVIDIA-HIP.cmake
+%%DATADIR%%/Modules/Compiler/NVIDIA.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-C.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake
 %%DATADIR%%/Modules/Compiler/OpenWatcom.cmake
+%%DATADIR%%/Modules/Compiler/OrangeC-ASM.cmake
+%%DATADIR%%/Modules/Compiler/OrangeC-C.cmake
+%%DATADIR%%/Modules/Compiler/OrangeC-CXX.cmake
+%%DATADIR%%/Modules/Compiler/OrangeC-DetermineCompiler.cmake
+%%DATADIR%%/Modules/Compiler/OrangeC.cmake
 %%DATADIR%%/Modules/Compiler/PGI-C.cmake
 %%DATADIR%%/Modules/Compiler/PGI-CXX.cmake
 %%DATADIR%%/Modules/Compiler/PGI-DetermineCompiler.cmake
@@ -2696,6 +2727,13 @@ bin/ctest
 %%DATADIR%%/Modules/IntelVSImplicitPath/CMakeLists.txt
 %%DATADIR%%/Modules/IntelVSImplicitPath/detect.cmake
 %%DATADIR%%/Modules/IntelVSImplicitPath/hello.f
+%%DATADIR%%/Modules/Internal/CMakeCUDAArchitecturesAll.cmake
+%%DATADIR%%/Modules/Internal/CMakeCUDAArchitecturesNative.cmake
+%%DATADIR%%/Modules/Internal/CMakeCUDAArchitecturesValidate.cmake
+%%DATADIR%%/Modules/Internal/CMakeCUDAFilterImplicitLibs.cmake
+%%DATADIR%%/Modules/Internal/CMakeCUDAFindToolkit.cmake
+%%DATADIR%%/Modules/Internal/CMakeNVCCFilterImplicitInfo.cmake
+%%DATADIR%%/Modules/Internal/CMakeNVCCParseImplicitInfo.cmake
 %%DATADIR%%/Modules/Internal/CMakeTryCompilerOrLinkerFlag.cmake
 %%DATADIR%%/Modules/Internal/CPack/CPack.DS_Store.in
 %%DATADIR%%/Modules/Internal/CPack/CPack.Description.plist.in
@@ -3107,6 +3145,9 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom-CXX.cmake
 %%DATADIR%%/Modules/Platform/Windows-OpenWatcom.cmake
+%%DATADIR%%/Modules/Platform/Windows-OrangeC-C.cmake
+%%DATADIR%%/Modules/Platform/Windows-OrangeC-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows-OrangeC.cmake
 %%DATADIR%%/Modules/Platform/Windows-PGI-C.cmake
 %%DATADIR%%/Modules/Platform/Windows-PGI-Fortran.cmake
 %%DATADIR%%/Modules/Platform/Windows-PGI.cmake
@@ -3123,6 +3164,10 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/WindowsCE-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/WindowsCE-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/WindowsCE.cmake
+%%DATADIR%%/Modules/Platform/WindowsKernelModeDriver-Initialize.cmake
+%%DATADIR%%/Modules/Platform/WindowsKernelModeDriver-MSVC-C.cmake
+%%DATADIR%%/Modules/Platform/WindowsKernelModeDriver-MSVC-CXX.cmake
+%%DATADIR%%/Modules/Platform/WindowsKernelModeDriver.cmake
 %%DATADIR%%/Modules/Platform/WindowsPaths.cmake
 %%DATADIR%%/Modules/Platform/WindowsPhone-Clang-ASM.cmake
 %%DATADIR%%/Modules/Platform/WindowsPhone-Clang-C.cmake
@@ -3159,6 +3204,9 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/tvOS-Determine-CXX.cmake
 %%DATADIR%%/Modules/Platform/tvOS-Initialize.cmake
 %%DATADIR%%/Modules/Platform/tvOS.cmake
+%%DATADIR%%/Modules/Platform/visionOS-Determine-CXX.cmake
+%%DATADIR%%/Modules/Platform/visionOS-Initialize.cmake
+%%DATADIR%%/Modules/Platform/visionOS.cmake
 %%DATADIR%%/Modules/Platform/watchOS-Determine-CXX.cmake
 %%DATADIR%%/Modules/Platform/watchOS-Initialize.cmake
 %%DATADIR%%/Modules/Platform/watchOS.cmake
@@ -3267,10 +3315,6 @@ bin/ctest
 %%PORTDOCS%%%%DOCSDIR%%/cmcurl/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmnghttp2/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/cmsys/Copyright.txt
-share/aclocal/cmake.m4
-share/bash-completion/completions/cmake
-share/bash-completion/completions/cpack
-share/bash-completion/completions/ctest
 share/emacs/site-lisp/cmake-mode.el
 share/vim/vimfiles/indent/cmake.vim
 share/vim/vimfiles/syntax/cmake.vim

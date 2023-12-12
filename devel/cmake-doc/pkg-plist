@@ -161,6 +161,7 @@
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_COLOR_DIAGNOSTICS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_CONFIGURATION_TYPES.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_CONFIG_TYPE.rst.txt
+%%DOCSDIR%%/html/_sources/envvar/CMAKE_CROSSCOMPILING_EMULATOR.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_FRAMEWORK_PATH.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/CMAKE_GENERATOR.rst.txt
@@ -199,6 +200,7 @@
 %%DOCSDIR%%/html/_sources/envvar/FFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/HIPCXX.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/HIPFLAGS.rst.txt
+%%DOCSDIR%%/html/_sources/envvar/HIPHOSTCXX.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/ISPC.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/ISPCFLAGS.rst.txt
 %%DOCSDIR%%/html/_sources/envvar/LDFLAGS.rst.txt
@@ -263,6 +265,7 @@
 %%DOCSDIR%%/html/_sources/manual/cmake-commands.7.rst.txt
 %%DOCSDIR%%/html/_sources/manual/cmake-compile-features.7.rst.txt
 %%DOCSDIR%%/html/_sources/manual/cmake-configure-log.7.rst.txt
+%%DOCSDIR%%/html/_sources/manual/cmake-cxxmodules.7.rst.txt
 %%DOCSDIR%%/html/_sources/manual/cmake-developer.7.rst.txt
 %%DOCSDIR%%/html/_sources/manual/cmake-env-variables.7.rst.txt
 %%DOCSDIR%%/html/_sources/manual/cmake-file-api.7.rst.txt
@@ -704,6 +707,10 @@
 %%DOCSDIR%%/html/_sources/policy/CMP0149.rst.txt
 %%DOCSDIR%%/html/_sources/policy/CMP0150.rst.txt
 %%DOCSDIR%%/html/_sources/policy/CMP0151.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0152.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0153.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0154.rst.txt
+%%DOCSDIR%%/html/_sources/policy/CMP0155.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/ADVANCED.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/HELPSTRING.rst.txt
 %%DOCSDIR%%/html/_sources/prop_cache/MODIFIED.rst.txt
@@ -857,6 +864,7 @@
 %%DOCSDIR%%/html/_sources/prop_test/FIXTURES_CLEANUP.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/FIXTURES_REQUIRED.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/FIXTURES_SETUP.rst.txt
+%%DOCSDIR%%/html/_sources/prop_test/GENERATED_RESOURCE_SPEC_FILE.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/LABELS.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/MEASUREMENT.rst.txt
 %%DOCSDIR%%/html/_sources/prop_test/PASS_REGULAR_EXPRESSION.rst.txt
@@ -1011,6 +1019,11 @@
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CONFIGURATIONS.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_FEATURES.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_OPTIONS.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES.rst.txt
+%%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_CXX_MODULES_LINK_LIBRARIES.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_GLOBAL.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_IMPLIB.rst.txt
 %%DOCSDIR%%/html/_sources/prop_tgt/IMPORTED_IMPLIB_CONFIG.rst.txt
@@ -1277,6 +1290,7 @@
 %%DOCSDIR%%/html/_sources/release/3.25.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.26.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.27.rst.txt
+%%DOCSDIR%%/html/_sources/release/3.28.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.3.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.4.rst.txt
 %%DOCSDIR%%/html/_sources/release/3.5.rst.txt
@@ -1501,6 +1515,7 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_GNUtoMS.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_HIP_ARCHITECTURES.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_HIP_EXTENSIONS.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_HIP_PLATFORM.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_HIP_STANDARD.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_HIP_STANDARD_REQUIRED.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_HOME_DIRECTORY.rst.txt
@@ -1588,6 +1603,7 @@
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.rst.txt
+%%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_HOST_COMPILER.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_IGNORE_EXTENSIONS.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_IMPLICIT_INCLUDE_DIRECTORIES.rst.txt
 %%DOCSDIR%%/html/_sources/variable/CMAKE_LANG_IMPLICIT_LINK_DIRECTORIES.rst.txt
@@ -2163,6 +2179,7 @@
 %%DOCSDIR%%/html/envvar/CMAKE_COLOR_DIAGNOSTICS.html
 %%DOCSDIR%%/html/envvar/CMAKE_CONFIGURATION_TYPES.html
 %%DOCSDIR%%/html/envvar/CMAKE_CONFIG_TYPE.html
+%%DOCSDIR%%/html/envvar/CMAKE_CROSSCOMPILING_EMULATOR.html
 %%DOCSDIR%%/html/envvar/CMAKE_EXPORT_COMPILE_COMMANDS.html
 %%DOCSDIR%%/html/envvar/CMAKE_FRAMEWORK_PATH.html
 %%DOCSDIR%%/html/envvar/CMAKE_GENERATOR.html
@@ -2201,6 +2218,7 @@
 %%DOCSDIR%%/html/envvar/FFLAGS.html
 %%DOCSDIR%%/html/envvar/HIPCXX.html
 %%DOCSDIR%%/html/envvar/HIPFLAGS.html
+%%DOCSDIR%%/html/envvar/HIPHOSTCXX.html
 %%DOCSDIR%%/html/envvar/ISPC.html
 %%DOCSDIR%%/html/envvar/ISPCFLAGS.html
 %%DOCSDIR%%/html/envvar/LDFLAGS.html
@@ -2266,6 +2284,7 @@
 %%DOCSDIR%%/html/manual/cmake-commands.7.html
 %%DOCSDIR%%/html/manual/cmake-compile-features.7.html
 %%DOCSDIR%%/html/manual/cmake-configure-log.7.html
+%%DOCSDIR%%/html/manual/cmake-cxxmodules.7.html
 %%DOCSDIR%%/html/manual/cmake-developer.7.html
 %%DOCSDIR%%/html/manual/cmake-env-variables.7.html
 %%DOCSDIR%%/html/manual/cmake-file-api.7.html
@@ -2708,6 +2727,10 @@
 %%DOCSDIR%%/html/policy/CMP0149.html
 %%DOCSDIR%%/html/policy/CMP0150.html
 %%DOCSDIR%%/html/policy/CMP0151.html
+%%DOCSDIR%%/html/policy/CMP0152.html
+%%DOCSDIR%%/html/policy/CMP0153.html
+%%DOCSDIR%%/html/policy/CMP0154.html
+%%DOCSDIR%%/html/policy/CMP0155.html
 %%DOCSDIR%%/html/prop_cache/ADVANCED.html
 %%DOCSDIR%%/html/prop_cache/HELPSTRING.html
 %%DOCSDIR%%/html/prop_cache/MODIFIED.html
@@ -2861,6 +2884,7 @@
 %%DOCSDIR%%/html/prop_test/FIXTURES_CLEANUP.html
 %%DOCSDIR%%/html/prop_test/FIXTURES_REQUIRED.html
 %%DOCSDIR%%/html/prop_test/FIXTURES_SETUP.html
+%%DOCSDIR%%/html/prop_test/GENERATED_RESOURCE_SPEC_FILE.html
 %%DOCSDIR%%/html/prop_test/LABELS.html
 %%DOCSDIR%%/html/prop_test/MEASUREMENT.html
 %%DOCSDIR%%/html/prop_test/PASS_REGULAR_EXPRESSION.html
@@ -3015,6 +3039,11 @@
 %%DOCSDIR%%/html/prop_tgt/IMPORTED.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_COMMON_LANGUAGE_RUNTIME.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_CONFIGURATIONS.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_DEFINITIONS.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_FEATURES.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_CXX_MODULES_COMPILE_OPTIONS.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_CXX_MODULES_INCLUDE_DIRECTORIES.html
+%%DOCSDIR%%/html/prop_tgt/IMPORTED_CXX_MODULES_LINK_LIBRARIES.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_GLOBAL.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_IMPLIB.html
 %%DOCSDIR%%/html/prop_tgt/IMPORTED_IMPLIB_CONFIG.html
@@ -3281,6 +3310,7 @@
 %%DOCSDIR%%/html/release/3.25.html
 %%DOCSDIR%%/html/release/3.26.html
 %%DOCSDIR%%/html/release/3.27.html
+%%DOCSDIR%%/html/release/3.28.html
 %%DOCSDIR%%/html/release/3.3.html
 %%DOCSDIR%%/html/release/3.4.html
 %%DOCSDIR%%/html/release/3.5.html
@@ -3507,6 +3537,7 @@
 %%DOCSDIR%%/html/variable/CMAKE_GNUtoMS.html
 %%DOCSDIR%%/html/variable/CMAKE_HIP_ARCHITECTURES.html
 %%DOCSDIR%%/html/variable/CMAKE_HIP_EXTENSIONS.html
+%%DOCSDIR%%/html/variable/CMAKE_HIP_PLATFORM.html
 %%DOCSDIR%%/html/variable/CMAKE_HIP_STANDARD.html
 %%DOCSDIR%%/html/variable/CMAKE_HIP_STANDARD_REQUIRED.html
 %%DOCSDIR%%/html/variable/CMAKE_HOME_DIRECTORY.html
@@ -3594,6 +3625,7 @@
 %%DOCSDIR%%/html/variable/CMAKE_LANG_FLAGS_RELEASE_INIT.html
 %%DOCSDIR%%/html/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO.html
 %%DOCSDIR%%/html/variable/CMAKE_LANG_FLAGS_RELWITHDEBINFO_INIT.html
+%%DOCSDIR%%/html/variable/CMAKE_LANG_HOST_COMPILER.html
 %%DOCSDIR%%/html/variable/CMAKE_LANG_IGNORE_EXTENSIONS.html
 %%DOCSDIR%%/html/variable/CMAKE_LANG_IMPLICIT_INCLUDE_DIRECTORIES.html
 %%DOCSDIR%%/html/variable/CMAKE_LANG_IMPLICIT_LINK_DIRECTORIES.html
