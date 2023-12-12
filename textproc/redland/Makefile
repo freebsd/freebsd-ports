@@ -22,7 +22,8 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 SHEBANG_FILES=	scripts/touch-mtime.pl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-threestore=no
+CONFIGURE_ARGS=	--with-threestore=no \
+		--with-virtuoso=no
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
