@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.21
+DISTVERSION=	2023.12.23
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.6.4 \
+		anstream-0.6.5 \
 		anstyle-1.0.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
@@ -52,8 +52,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		color-print-proc-macro-0.3.5 \
 		color-spantrace-0.2.1 \
 		colorchoice-1.0.0 \
-		confique-0.2.4 \
-		confique-macro-0.0.8 \
+		confique-0.2.5 \
+		confique-macro-0.0.9 \
 		console-0.15.7 \
 		const-oid-0.9.5 \
 		core-foundation-0.9.4 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		hermit-abi-0.3.3 \
 		home-0.5.5 \
 		http-0.2.11 \
-		http-body-0.4.5 \
+		http-body-0.4.6 \
 		httparse-1.8.0 \
 		httpdate-1.0.3 \
 		humantime-2.1.0 \
@@ -135,13 +135,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		insta-1.34.0 \
 		instant-0.1.12 \
 		ipnet-2.9.0 \
-		itertools-0.11.0 \
 		itertools-0.12.0 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		jobserver-0.1.27 \
 		js-sys-0.3.66 \
 		lazy_static-1.4.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		libgit2-sys-0.16.1+1.7.1 \
 		libredox-0.0.1 \
 		libz-sys-1.1.12 \
@@ -206,12 +205,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
-		rustix-0.38.27 \
+		rustix-0.38.28 \
 		rustls-0.21.10 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.4 \
 		rustls-webpki-0.101.7 \
-		ryu-1.0.15 \
+		ryu-1.0.16 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
 		scopeguard-1.2.0 \
@@ -242,7 +241,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.39 \
+		syn-2.0.40 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
@@ -259,7 +258,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		time-macros-0.2.15 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.34.0 \
+		tokio-1.35.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.10 \
@@ -292,7 +291,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
-		versions-5.0.1 \
+		versions-6.0.0 \
 		walkdir-2.4.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -337,9 +336,9 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.26 \
+		winnow-0.5.28 \
 		winreg-0.50.0 \
-		xattr-1.0.1 \
+		xattr-1.1.2 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
