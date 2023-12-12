@@ -1,5 +1,5 @@
 PORTNAME=	freenit
-DISTVERSION=	0.2.29
+DISTVERSION=	0.2.31
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +25,7 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 USE_RC_SUBR=	freenit
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
+TEST_ARGS=	--ignore=${PORTNAME}/project
 NO_ARCH=	yes
 SUB_LIST=	PYTHON_VER=${PYTHON_VER}
 
@@ -34,8 +35,5 @@ OPTIONS_DEFAULT=	ORMAR
 ORMAR_DESC=		Support for SQL databases using Ormar
 ORMAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}alembic>=0:databases/py-alembic@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ormar>0:databases/py-ormar@${PY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest --ignore=freenit/project/ -v -rs -o addopts=
 
 .include <bsd.port.mk>
