@@ -1,5 +1,5 @@
 PORTNAME=	extract-msg
-DISTVERSION=	0.46.2
+DISTVERSION=	0.47.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.11.1:www/py-beautifulsoup@$
 		${PYTHON_PKGNAMEPREFIX}chardet>=4.0.0:textproc/py-chardet@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}compressed-rtf>=1.0.6:archivers/py-compressed-rtf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ebcdic>=1.1.1:textproc/py-ebcdic@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}imapclient>=2.1.0:mail/py-imapclient@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}olefile>=0.46:devel/py-olefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz-deprecation-shim>0:devel/py-pytz-deprecation-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}red-black-tree-mod>=0:devel/py-red-black-tree-mod@${PY_FLAVOR} \
