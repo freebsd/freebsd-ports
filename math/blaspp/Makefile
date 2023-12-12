@@ -1,6 +1,6 @@
 PORTNAME=	blaspp
 DISTVERSION=	2022.05.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://bitbucket.org/icl/blaspp/downloads/
 

@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-ltfat
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/ltfat/ltfat/releases/download/v2.6.0/

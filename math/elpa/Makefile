@@ -1,6 +1,6 @@
 PORTNAME=	elpa
 DISTVERSION=	2021.11.001
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://elpa.mpcdf.mpg.de/software/tarball-archive/Releases/${DISTVERSION}/
 

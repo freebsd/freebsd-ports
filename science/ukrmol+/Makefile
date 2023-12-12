@@ -1,6 +1,6 @@
 PORTNAME=	ukrmol+
 DISTVERSION=	3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science # chemistry, physics
 MASTER_SITES=	https://zenodo.org/record/5799134/files/:out \
 		https://zenodo.org/record/5799110/files/:in # the project is a sum of two projects, "in" and "out"
