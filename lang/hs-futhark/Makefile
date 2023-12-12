@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.8
+DISTVERSION=	0.25.10
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,12 +18,12 @@ USE_CABAL=	Diff-0.5_1 \
 		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_2 \
-		aeson-2.1.2.1_3 \
+		aeson-2.2.1.0_1 \
 		alex-3.4.0.1 \
 		ansi-terminal-1.0 \
 		ansi-terminal-types-0.11.5_1 \
 		assoc-1.1_1 \
-		async-2.2.4_4 \
+		async-2.2.5 \
 		attoparsec-0.14.4_5 \
 		base-compat-0.13.1 \
 		base-compat-batteries-0.13.1 \
@@ -72,27 +72,28 @@ USE_CABAL=	Diff-0.5_1 \
 		futhark-manifest-1.2.0.1 \
 		futhark-server-1.2.2.1 \
 		generic-deriving-1.14.5_1 \
-		generic-lens-2.2.2.0 \
-		generic-lens-core-2.2.1.0_1 \
+		generic-lens-2.2.2.0_1 \
+		generic-lens-core-2.2.1.0_2 \
 		generically-0.1.1_2 \
 		githash-0.1.7.0 \
-		half-0.3.1 \
+		half-0.3.1_1 \
 		happy-1.20.1.1 \
 		hashable-1.4.3.0_1 \
 		haskell-src-exts-1.23.1 \
-		haskell-src-meta-0.8.12 \
+		haskell-src-meta-0.8.13 \
 		hsc2hs-0.68.10_1 \
 		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.3 \
 		indexed-traversable-instances-0.1.1.2_2 \
+		integer-conversion-0.1.0.1_1 \
 		integer-logarithms-1.0.3.1_5 \
 		invariant-0.6.2_1 \
 		kan-extensions-5.2.5_2 \
 		language-c-quote-0.13.0.1_1 \
 		lens-5.2.3_2 \
 		lens-aeson-1.2.3_2 \
-		lsp-2.2.0.0 \
-		lsp-types-2.0.2.0 \
+		lsp-2.3.0.0_1 \
+		lsp-types-2.1.0.0 \
 		mainland-pretty-0.7.1_3 \
 		math-functions-0.3.4.3 \
 		megaparsec-9.6.1 \
@@ -106,7 +107,7 @@ USE_CABAL=	Diff-0.5_1 \
 		parser-combinators-1.3.0_1 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.8.0.0_1 \
+		primitive-0.9.0.0 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_3 \
 		random-1.2.1.1_1 \
@@ -132,9 +133,10 @@ USE_CABAL=	Diff-0.5_1 \
 		tagged-0.8.8 \
 		temporary-1.3 \
 		terminal-size-0.3.4 \
+		text-iso8601-0.1_1 \
 		text-rope-0.2 \
 		text-short-0.1.5_3 \
-		th-abstraction-0.5.0.0 \
+		th-abstraction-0.6.0.0_1 \
 		th-compat-0.1.4_3 \
 		th-expand-syns-0.4.11.0_2 \
 		th-lift-0.8.4 \
