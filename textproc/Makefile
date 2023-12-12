@@ -1992,7 +1992,6 @@
     SUBDIR += ssddiff
     SUBDIR += stardict-dict-fa_IR
     SUBDIR += stardict-dictd_mova
-    SUBDIR += stardict-quick
     SUBDIR += stardict-rptts
     SUBDIR += stardict3
     SUBDIR += sv-aspell
