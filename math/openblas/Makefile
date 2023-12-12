@@ -1,6 +1,6 @@
 PORTNAME=	openblas
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.20
+DISTVERSION=	0.3.25
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	NL/lapack/timing/:lapack_tmg
@@ -20,6 +20,7 @@ USES=		compiler:c11 cpe fortran gmake perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMathLib
 GH_PROJECT=	OpenBLAS
+GH_TAGNAME=	5e1a429
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 CPE_VENDOR=	openblas_project
