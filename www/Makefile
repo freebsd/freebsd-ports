@@ -2359,7 +2359,6 @@
     SUBDIR += thttpd
     SUBDIR += thumbnail_index
     SUBDIR += thundercache
-    SUBDIR += thundersnarf
     SUBDIR += tidy
     SUBDIR += tidy-devel
     SUBDIR += tidy-html5
