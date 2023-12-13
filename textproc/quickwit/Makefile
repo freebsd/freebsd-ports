@@ -1,6 +1,7 @@
 PORTNAME=	quickwit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,8 +12,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE_AGPLv3.0.txt
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/protoc:devel/protobuf
-LIB_DEPENDS=	libonig.so:devel/oniguruma \
-		libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=			cargo pkgconfig
 USE_GITHUB=		yes
