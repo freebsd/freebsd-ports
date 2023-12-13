@@ -1,4 +1,4 @@
-TIMESTAMP = 1702316554
+TIMESTAMP = 1702484561
 SHA256 (meilisearch-mini-dashboard-build-0.2.11.zip) = 9cded8a4e2a2567bf9fbfa6461239292d10c96ead75f3eb6252a2f3b0b634a17
 SIZE (meilisearch-mini-dashboard-build-0.2.11.zip) = 1146148
 SHA256 (mecab-ipadic-2.7.0-20070801.tar.gz) = b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523
@@ -1047,7 +1047,7 @@ SHA256 (meilisearch-nelson-675f13885548fb415ead8fbb447e9e6d9314000a_GH0.tar.gz) 
 SIZE (meilisearch-nelson-675f13885548fb415ead8fbb447e9e6d9314000a_GH0.tar.gz) = 1689
 SHA256 (meilisearch-heed-v0.12.7_GH0.tar.gz) = fe2b02763fd060fa784d5f8a91be607ab0659b35af94eae1f738343b0521ea44
 SIZE (meilisearch-heed-v0.12.7_GH0.tar.gz) = 38203
-SHA256 (meilisearch-meilisearch-v1.5.0_GH0.tar.gz) = 82209896c9aae0d75441efeb1ac477c245033bce859d96af3bf740c7c0d8b012
-SIZE (meilisearch-meilisearch-v1.5.0_GH0.tar.gz) = 14834324
+SHA256 (meilisearch-meilisearch-v1.5.1_GH0.tar.gz) = 1c13850d1735aaaad6e3ff0281ae8ea5868c6a08de04c2c3ee163cadf1dcb434
+SIZE (meilisearch-meilisearch-v1.5.1_GH0.tar.gz) = 14834645
 SHA256 (meilisearch-lmdb-6a01c0a_GH0.tar.gz) = b1b027cd46ad5121e84330fabb84b04466f862189b9b3ac33cb1dc984dfc449e
 SIZE (meilisearch-lmdb-6a01c0a_GH0.tar.gz) = 152993
