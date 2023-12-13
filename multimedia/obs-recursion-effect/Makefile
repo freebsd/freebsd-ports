@@ -1,6 +1,6 @@
 PORTNAME=	obs-recursion-effect
 DISTVERSION=	0.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

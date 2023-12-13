@@ -1,6 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	29.1.3
-PORTREVISION=	3
+DISTVERSION=	30.0.2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +15,7 @@ BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
 		swig:devel/swig
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
+		libdatachannel.so:www/libdatachannel \
 		libdbus-1.so:devel/dbus \
 		libfdk-aac.so:audio/fdk-aac \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -119,7 +119,7 @@ PLIST_SUB+=	LUAJIT="@comment "
 PLIST_SUB+=	LUAJIT=""
 .endif
 
-post-install:
+xpost-install:
 	# https://github.com/obsproject/obs-studio/issues/2625
 	${INSTALL_DATA} ${WRKSRC}/UI/obs-frontend-api/obs-frontend-api.h ${STAGEDIR}${PREFIX}/include/obs
 	# https://github.com/obsproject/obs-studio/issues/2647 (only for multimedia/obs-audio-spectralizer, should be removed later)
