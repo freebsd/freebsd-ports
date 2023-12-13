@@ -8162,7 +8162,7 @@ astro/tkgeomap||2023-12-02|Has expired: abandoned
 astro/tclgeomap||2023-12-02|Has expired: abandoned
 devel/electron24||2023-12-03|Has expired: Upstream EOL reached on 2023-10-10
 audio/festlex-ogi||2023-12-04|Has expired: Both MASTER_SITES and WWW are defunct
-net/libkvontakte||2023-12-04|Has expired: Depends on deprecated www/qt5-webkit
+net/libkvkontakte||2023-12-04|Has expired: Depends on deprecated www/qt5-webkit
 french/geonext||2023-12-05|Has expired: Last upstream release was in 2014
 german/geonext||2023-12-05|Has expired: Last upstream release was in 2014
 math/geonext||2023-12-05|Has expired: Last upstream release was in 2014
