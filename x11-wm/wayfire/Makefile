@@ -1,7 +1,7 @@
 PORTNAME=	wayfire
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -40,7 +40,10 @@ USE_XORG=	pixman
 GH_ACCOUNT=	WayfireWM
 GH_TUPLE=	WayfireWM:wf-touch:8974eb0:wftouch/subprojects/wf-touch \
 		WayfireWM:wf-utils:15f8e16:wfutils/subprojects/wf-utils
-MESON_ARGS=	-Dtests=disabled -Dwf-touch:tests=disabled
+MESON_ARGS=	-Dtests=disabled \
+		-Dwf-touch:tests=disabled \
+		-Dwf-utils:default_library=static \
+		${NULL}
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
