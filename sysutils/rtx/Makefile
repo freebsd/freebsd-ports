@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.23
+DISTVERSION=	2023.12.24
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,7 +64,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.16 \
 		crypto-common-0.1.6 \
-		ctor-0.2.5 \
+		ctor-0.2.6 \
 		ctrlc-3.4.1 \
 		curve25519-dalek-4.1.1 \
 		curve25519-dalek-derive-0.1.1 \
@@ -87,7 +87,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.8 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		eyre-0.6.10 \
+		eyre-0.6.9 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fiat-crypto-0.2.5 \
@@ -338,7 +338,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		windows_x86_64_msvc-0.52.0 \
 		winnow-0.5.28 \
 		winreg-0.50.0 \
-		xattr-1.1.2 \
+		xattr-1.1.3 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
