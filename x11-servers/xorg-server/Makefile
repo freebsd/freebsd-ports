@@ -1,5 +1,5 @@
 PORTNAME=	xorg
-PORTVERSION=	21.1.9
+PORTVERSION=	21.1.10
 PORTEPOCH=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	XORG/individual/xserver
@@ -13,8 +13,6 @@ LICENSE=	MIT
 
 FLAVORS=	xorg xnest xephyr xvfb
 FLAVOR?=	${FLAVORS:[1]}
-
-EXTRA_PATCHES=	${FILESDIR}/0002-xephyr_Dont_check_for_SeatId_anymore.patch:-p1
 
 USES=		compiler:c11 cpe gl meson pkgconfig tar:xz xorg
 USE_GL=		gl
