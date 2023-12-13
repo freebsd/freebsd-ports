@@ -2,7 +2,6 @@ bin/indexlr
 bin/mi_bf_generate
 bin/randseq
 include/btllib/aahash.hpp
-include/btllib/aahash_consts.hpp
 include/btllib/bloom_filter.hpp
 include/btllib/counting_bloom_filter-inl.hpp
 include/btllib/counting_bloom_filter.hpp
@@ -10,12 +9,13 @@ include/btllib/cpptoml.h
 include/btllib/cstring.hpp
 include/btllib/data_stream.hpp
 include/btllib/graph.hpp
+include/btllib/hashing_internals.hpp
 include/btllib/indexlr.hpp
 include/btllib/mi_bloom_filter-inl.hpp
 include/btllib/mi_bloom_filter.hpp
 include/btllib/nthash.hpp
-include/btllib/nthash_consts.hpp
-include/btllib/nthash_lowlevel.hpp
+include/btllib/nthash_kmer.hpp
+include/btllib/nthash_seed.hpp
 include/btllib/order_queue.hpp
 include/btllib/process_pipeline.hpp
 include/btllib/randseq.hpp
