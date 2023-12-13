@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libpipewire-0.3.so:multimedia/pipewire
 
-USES=		cargo desktop-file-utils gnome llvm meson pkgconfig
+USES=		cargo gnome llvm meson pkgconfig
 USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40 libadwaita
 GL_SITE=	https://gitlab.freedesktop.org
@@ -25,6 +25,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
 		${WRKSRC_crate_clang-sys}/build/common.rs \
 		${WRKSRC_crate_clang-sys}/src/support.rs
+	@${REINPLACE_CMD} -e '/update_desktop_database/d' \
+		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
 		${WRKSRC}/src/meson.build
