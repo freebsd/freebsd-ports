@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.11.24
+DISTVERSION=	3.11.26
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
