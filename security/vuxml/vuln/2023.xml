@@ -1,3 +1,76 @@
+  <vuln vid="972568d6-3485-40ab-80ff-994a8aaf9683">
+    <topic>xorg-server -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.10,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nestserver</name>
+	<range><lt>21.1.10,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>23.2.3,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><lt>21.0.99.1.582</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2023-December/003435.html">
+	  <ul>
+	    <li>CVE-2023-6377/ZDI-CAN-22412/ZDI-CAN-22413: X.Org
+	    server: Out-of-bounds memory write in XKB button actions
+
+	    <p>A device has XKB button actions for each button on the
+	    device. When a logical device switch happens (e.g. moving
+	    from a touchpad to a mouse), the server re-calculates the
+	    information available on the respective master device
+	    (typically the Virtual Core Pointer). This re-calculation
+	    only allocated enough memory for a single XKB action
+	    rather instead of enough for the newly active physical
+	    device's number of button. As a result, querying or
+	    changing the XKB button actions results in out-of-bounds
+	    memory reads and writes.</p>
+
+	    <p>This may lead to local privilege escalation if the server is run as root or
+	    remote code execution (e.g. x11 over ssh).</p></li>
+
+	    <li>CVE-2023-6478/ZDI-CAN-22561: X.Org server:
+	    Out-of-bounds memory read in RRChangeOutputProperty and
+	    RRChangeProviderProperty
+
+	    <p>This fixes an OOB read and the resulting information disclosure.</p>
+
+	    <p>Length calculation for the request was clipped to a 32-bit integer. With
+	    the correct stuff->nUnits value the expected request size was
+	    truncated, passing the REQUEST_FIXED_SIZE check.</p>
+
+	    <p>The server then proceeded with reading at least stuff->nUnits bytes
+	    (depending on stuff->format) from the request and stuffing whatever it
+	    finds into the property. In the process it would also allocate at least
+	    stuff->nUnits bytes, i.e. 4GB.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.x.org/archives/xorg-announce/2023-December/003435.html</url>
+      <cvename>CVE-2023-6377</cvename>
+      <cvename>CVE-2023-6478</cvename>
+    </references>
+    <dates>
+      <discovery>2023-12-13</discovery>
+      <entry>2023-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4405e9ad-97fe-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
