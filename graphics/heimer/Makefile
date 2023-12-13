@@ -1,5 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}/
 
@@ -10,9 +10,11 @@ WWW=		https://github.com/juzzlin/Heimer
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing compiler:c++17-lang qt:5
-USE_QT=		core gui network svg widgets xml buildtools:build \
-		linguisttools:build qmake:build testlib:build
+USES=		cmake:testing compiler:c++17-lang gl qt:6
+USE_GL=		opengl
+USE_QT=		base svg translations
+
+CMAKE_ON=	BUILD_WITH_QT6
 
 PORTDOCS=	README.md
 
