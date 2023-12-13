@@ -1,3 +1,54 @@
+  <vuln vid="8eefff69-997f-11ee-8e38-002590c1f29c">
+    <topic>FreeBSD -- NFS client data corruption and kernel memory disclosure</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.0</ge><lt>14.0_3</lt></range>
+	<range><ge>13.2</ge><lt>13.2_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In FreeBSD 13.2 and 14.0, the NFS client was optimized to improve
+	the performance of IO_APPEND writes, that is, writes which add data
+	to the end of a file and so extend its size.  This uncovered an old
+	bug in some routines which copy userspace data into the kernel.
+	The bug also affects the NFS client's implementation of direct I/O;
+	however, this implementation is disabled by default by the
+	vfs.nfs.nfs_directio_enable sysctl and is only used to handle
+	synchronous writes.</p>
+	<h1>Impact:</h1>
+	<p>When a program running on an affected system appends data to a
+	file via an NFS client mount, the bug can cause the NFS client to
+	fail to copy in the data to be written but proceed as though the
+	copy operation had succeeded.  This means that the data to be written
+	is instead replaced with whatever data had been in the packet buffer
+	previously.  Thus, an unprivileged user with access to an affected
+	system may abuse the bug to trigger disclosure of sensitive
+	information.  In particular, the leak is limited to data previously
+	stored in mbufs, which are used for network transmission and
+	reception, and for certain types of inter-process communication.</p>
+	<p>The bug can also be triggered unintentionally by system
+	applications, in which case the data written by the application to an
+	NFS mount may be corrupted.  Corrupted data is written over the
+	network to the NFS server, and thus also susceptible to being snooped
+	by other hosts on the network.</p>
+	<p>Note that the bug exists only in the NFS client; the version and
+	implementation of the server has no effect on whether a given system
+	is affected by the problem.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6660</cvename>
+      <freebsdsa>SA-23:18.nfsclient</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2023-12-12</discovery>
+      <entry>2023-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="972568d6-3485-40ab-80ff-994a8aaf9683">
     <topic>xorg-server -- Multiple vulnerabilities</topic>
     <affects>
