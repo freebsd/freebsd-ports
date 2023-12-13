@@ -143,6 +143,7 @@ share/applications/Logseq.desktop
 %%DATADIR%%/resources/app/css/Inter (web)/Inter-roman.var.woff2
 %%DATADIR%%/resources/app/css/Inter (web)/Inter.var.woff2
 %%DATADIR%%/resources/app/css/LICENSE
+%%DATADIR%%/resources/app/css/codemirror.lsradix.css
 %%DATADIR%%/resources/app/css/fonts/KaTeX_AMS-Regular.woff2
 %%DATADIR%%/resources/app/css/fonts/KaTeX_Caligraphic-Bold.woff2
 %%DATADIR%%/resources/app/css/fonts/KaTeX_Caligraphic-Regular.woff2
@@ -169,6 +170,8 @@ share/applications/Logseq.desktop
 %%DATADIR%%/resources/app/css/fonts/tabler-icons.woff
 %%DATADIR%%/resources/app/css/fonts/tabler-icons.woff2
 %%DATADIR%%/resources/app/css/inter.css
+%%DATADIR%%/resources/app/css/radix.css
+%%DATADIR%%/resources/app/css/shui.css
 %%DATADIR%%/resources/app/css/source-sans-pro-italic.eot
 %%DATADIR%%/resources/app/css/source-sans-pro-italic.ttf
 %%DATADIR%%/resources/app/css/source-sans-pro-italic.woff
@@ -210,6 +213,7 @@ share/applications/Logseq.desktop
 %%DATADIR%%/resources/app/img/broken-avatar.png
 %%DATADIR%%/resources/app/img/checker.png
 %%DATADIR%%/resources/app/img/credits.png
+%%DATADIR%%/resources/app/img/dark-theme.png
 %%DATADIR%%/resources/app/img/dmg-bg.png
 %%DATADIR%%/resources/app/img/file-edn.png
 %%DATADIR%%/resources/app/img/file-sync-unavailale-nonbacker-dark.png
@@ -218,8 +222,10 @@ share/applications/Logseq.desktop
 %%DATADIR%%/resources/app/img/file-sync-welcome-backer-light.png
 %%DATADIR%%/resources/app/img/folder-logo.png
 %%DATADIR%%/resources/app/img/folder.png
+%%DATADIR%%/resources/app/img/light-theme.png
 %%DATADIR%%/resources/app/img/logo.png
 %%DATADIR%%/resources/app/img/screenshot.png
+%%DATADIR%%/resources/app/img/system-theme.png
 %%DATADIR%%/resources/app/img/theme-modes.png
 %%DATADIR%%/resources/app/img/tutorial-thumb.jpg
 %%DATADIR%%/resources/app/img/whiteboard-welcome-dark.png

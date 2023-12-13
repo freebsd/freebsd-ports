@@ -1,6 +1,5 @@
 PORTNAME=	logseq
-PORTVERSION=	0.9.20
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
@@ -24,7 +23,7 @@ SUB_FILES=	Logseq
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Logseq-linux-x64
 
-RSAPI_HASH=	18bd98cfc4d084182b534c1c72a6e473a7174b45
+RSAPI_HASH=	d731cc44acb903a41c5e0b8dc7e576cc2d35ceb4
 BETTER_SQLITE_VERSION=	9.1.1
 
 post-patch:
