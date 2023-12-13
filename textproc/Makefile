@@ -527,6 +527,7 @@
     SUBDIR += openvanilla-framework
     SUBDIR += or-aspell
     SUBDIR += ov
+    SUBDIR += ox-gfm.el
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-CheckDigits
     SUBDIR += p5-Algorithm-RabinKarp
