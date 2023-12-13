@@ -254,7 +254,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/hlsl/syntaxes/hlsl.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/html-language-features/README.md
 %%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/htmlClientMain.js
-%%DATADIR%%/resources/app/extensions/html-language-features/client/dist/node/htmlClientMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/html-language-features/icons/html.png
 %%DATADIR%%/resources/app/extensions/html-language-features/package.json
 %%DATADIR%%/resources/app/extensions/html-language-features/package.nls.json
@@ -299,7 +298,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/javascript/tags-language-configuration.json
 %%DATADIR%%/resources/app/extensions/json-language-features/README.md
 %%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js
-%%DATADIR%%/resources/app/extensions/json-language-features/client/dist/node/jsonClientMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/json-language-features/icons/json.png
 %%DATADIR%%/resources/app/extensions/json-language-features/package.json
 %%DATADIR%%/resources/app/extensions/json-language-features/package.nls.json
@@ -351,7 +349,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-language-features/.eslintignore
 %%DATADIR%%/resources/app/extensions/markdown-language-features/README.md
 %%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js
-%%DATADIR%%/resources/app/extensions/markdown-language-features/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/icon.png
 %%DATADIR%%/resources/app/extensions/markdown-language-features/media/highlight.css
 %%DATADIR%%/resources/app/extensions/markdown-language-features/media/index.js
@@ -417,13 +414,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/media-preview/package.nls.json
 %%DATADIR%%/resources/app/extensions/merge-conflict/README.md
 %%DATADIR%%/resources/app/extensions/merge-conflict/dist/mergeConflictMain.js
-%%DATADIR%%/resources/app/extensions/merge-conflict/dist/mergeConflictMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/merge-conflict/media/icon.png
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.json
 %%DATADIR%%/resources/app/extensions/merge-conflict/package.nls.json
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/README.md
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js
-%%DATADIR%%/resources/app/extensions/microsoft-authentication/dist/extension.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/auth.css
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/favicon.ico
 %%DATADIR%%/resources/app/extensions/microsoft-authentication/media/icon.png
@@ -499,16 +494,18 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/README.md
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ThirdPartyNotices.txt
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/ci.yml
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/84b6bc62673660f3ffa2.module.wasm
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/9.extension.web.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/94625be35e004f01f9d5.module.wasm
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/cpu-client.bundle.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/extension.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/extension.web.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/heap-client.bundle.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/heapsnapshot-client.bundle.js
+%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/out/heapsnapshotWorker.js
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/package.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/resources/icon.png
 %%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/tsconfig.browser.json
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/webpack.cpu-client.js
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/webpack.extension.js
-%%DATADIR%%/resources/app/extensions/ms-vscode.vscode-js-profile-table/webpack.heap-client.js
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/cancellationToken.js
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/cs/diagnosticMessages.generated.json
 %%DATADIR%%/resources/app/extensions/node_modules/typescript/lib/de/diagnosticMessages.generated.json
@@ -719,7 +716,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/sql/package.json
 %%DATADIR%%/resources/app/extensions/sql/package.nls.json
 %%DATADIR%%/resources/app/extensions/sql/syntaxes/sql.tmLanguage.json
-%%DATADIR%%/resources/app/extensions/swift/LICENSE.md
 %%DATADIR%%/resources/app/extensions/swift/language-configuration.json
 %%DATADIR%%/resources/app/extensions/swift/package.json
 %%DATADIR%%/resources/app/extensions/swift/package.nls.json
@@ -855,7 +851,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/node/cpuUsage.sh
 %%DATADIR%%/resources/app/out/vs/base/node/ps.sh
 %%DATADIR%%/resources/app/out/vs/base/node/terminateProcess.sh
-%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload-slim.js
+%%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload-aux.js
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-sandbox/preload.js
 %%DATADIR%%/resources/app/out/vs/base/worker/workerMain.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.js
@@ -946,7 +942,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/extensions-web.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/extensions.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/git.svg
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/interactivePlayground.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/languages.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/learn.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/light-hc.png
@@ -962,7 +957,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/settings.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/settingsSync.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/shortcuts.svg
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/sideBySide.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/terminal.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/workspaceTrust.svg
 %%DATADIR%%/resources/app/out/vs/workbench/services/extensionManagement/common/media/defaultIcon.png

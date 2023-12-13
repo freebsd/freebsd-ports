@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.84.2
-PORTREVISION=	4
+DISTVERSION=	1.85.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -67,7 +66,7 @@ USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	2b35e1e6d88f1ce073683991d1eff5284a32690f
+SOURCE_COMMIT_HASH=	af28b32d7e553898b2a91af498b1fb666fdebe0c
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -114,7 +113,7 @@ pre-everything::
 	@${ECHO_MSG} "opened by a jail (default 1024) is exceeded during the build of ${PORTNAME}."
 	@${ECHO_MSG} "To successfully build ${PORTNAME} with poudriere(8), you must add the following"
 	@${ECHO_MSG} "line to poudriere.conf:"
-	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
+	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=8192"
 	@${ECHO_MSG} ""
 
 post-extract:
