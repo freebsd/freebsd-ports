@@ -1,5 +1,5 @@
 PORTNAME=	folium
-PORTVERSION=	0.15.0
+PORTVERSION=	0.15.1
 MASTER_SITES=	PYPI
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=41.2:devel/py-setuptools@${PY_
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}branca>=0.6.0:www/py-branca@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.9:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xyzservices>=0:www/py-xyzservices@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
