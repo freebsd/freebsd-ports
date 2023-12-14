@@ -14,10 +14,12 @@ BUILD_DEPENDS=	protoc:devel/protobuf
 LIB_DEPENDS=	libprotobuf-lite.so:devel/protobuf
 RUN_DEPENDS=	scamper:net/scamper
 
-USES=		compiler:c++11-lib
+USES=		compiler:c++17-lang localbase
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-development --with-protobuf=${LOCALBASE}
+LDFLAGS+=	-labsl_log_internal_check_op -labsl_log_internal_message
+USE_CXXSTD=	c++17
 
 PORTDOCS=	README
 
