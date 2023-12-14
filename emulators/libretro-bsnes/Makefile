@@ -1,6 +1,7 @@
 PORTNAME=	libretro-bsnes
 DISTVERSIONPREFIX=	v
 DISTVERSION=	115.a.20231101
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators games
 
@@ -11,7 +12,6 @@ WWW=		https://github.com/libretro/bsnes-libretro
 LICENSE=	GPLv3
 
 USES=		gmake
-USE_GCC=	13
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro
