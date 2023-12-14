@@ -1,0 +1,85 @@
+--- pokerth_common.pro.orig	2017-08-16 12:24:03 UTC
++++ pokerth_common.pro
+@@ -1,14 +1,14 @@
+ # QMake pro-file for PokerTH
+ 
+-!c++11 {
++!c++17 {
+ 	system( $$QMAKE_CXX -dumpversion | grep -e "^6.[0-9]" > /dev/null ) {
+ 		greaterThan(QT_MAJOR_VERSION, 5) | equals(QT_MAJOR_VERSION, 5) {
+-			CONFIG += c++11 
++			CONFIG += c++17 
+ 		}
+ 		else { 
+ 			equals(QT_MAJOR_VERSION, 4) : greaterThan(QT_MINOR_VERSION, 7) {
+-				CONFIG += "c++11" 
+-				QMAKE_CXXFLAGS += "-std=gnu++11"
++				CONFIG += "c++17" 
++				QMAKE_CXXFLAGS += "-std=gnu++17"
+ 			}
+ 			else {
+ 				error (QT must be greater and 4.8+) 
+@@ -17,10 +17,10 @@
+ 	}
+ }
+ 
+-c++11 {
++c++17 {
+ 	!system( $$QMAKE_CXX -dumpversion | grep -e "^6.[0-9]" > /dev/null ) {
+ 		equals(QT_MAJOR_VERSION, 4) : greaterThan(QT_MINOR_VERSION, 7) {
+-			QMAKE_CXXFLAGS += "-std=gnu++11"
++			QMAKE_CXXFLAGS += "-std=gnu++17"
+ 		}
+ 	}
+ }
+--- src/engine/local_engine/tools.cpp.orig	2017-08-16 12:24:03 UTC
++++ src/engine/local_engine/tools.cpp
+@@ -43,6 +43,7 @@
+ #include <boost/nondet_random.hpp>
+ #include <boost/random/uniform_int.hpp>
+ #include <boost/random/variate_generator.hpp>
++#include <random>
+ 
+ 
+ using namespace std;
+@@ -68,9 +69,10 @@ static inline void InitRandState()
+ 
+ void Tools::ShuffleArrayNonDeterministic(int *inout, unsigned count)
+ {
++	std::random_device rd;
++	std::mt19937 g(rd());
+ 	InitRandState();
+-	nondet_rng rand(*g_rand_state);
+-	random_shuffle(&inout[0], &inout[count], rand);
++	std::shuffle(&inout[0], &inout[count], g);
+ }
+ 
+ void Tools::GetRand(int minValue, int maxValue, unsigned count, int *out)
+--- src/net/common/servergame.cpp.orig	2017-08-16 12:24:03 UTC
++++ src/net/common/servergame.cpp
+@@ -32,6 +32,7 @@
+ #include <boost/asio.hpp>
+ #include <boost/bind.hpp>
+ #include <algorithm>
++#include <random>
+ 
+ #include <net/servergame.h>
+ #include <net/servergamestate.h>
+@@ -295,6 +296,8 @@ ServerGame::InternalStartGame()
+ {
+ 	// Initialize the game.
+ 	PlayerDataList playerData(GetFullPlayerDataList());
++	std::random_device rd;
++	std::mt19937 g(rd());
+ 
+ 	if (playerData.size() >= 2) {
+ 		// Set DB Backend.
+@@ -307,7 +310,7 @@ ServerGame::InternalStartGame()
+ 		// Note: This does not use a cryptographically strong
+ 		// random number generator.
+ 		vector<boost::shared_ptr<PlayerData> > tmpData(playerData.begin(), playerData.end());
+-		random_shuffle(tmpData.begin(), tmpData.end());
++		std::shuffle(tmpData.begin(), tmpData.end(), g);
+ 		copy(tmpData.begin(), tmpData.end(), playerData.begin());
+ 
+ 		// Set order of players.
