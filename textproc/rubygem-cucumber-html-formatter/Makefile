@@ -1,6 +1,5 @@
 PORTNAME=	cucumber-html-formatter
-PORTVERSION=	21.0.0
-PORTREVISION=	1
+PORTVERSION=	21.1.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/cucumber/html-formatter
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-cucumber-messages23>=19<24:devel/rubygem-cucumber-messages23
+RUN_DEPENDS=	rubygem-cucumber-messages>=19<25:devel/rubygem-cucumber-messages
 
 USES=		gem
 
