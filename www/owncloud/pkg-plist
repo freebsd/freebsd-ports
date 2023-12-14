@@ -4289,6 +4289,7 @@
 %%WWWDIR%%/core/templates/installation.php
 %%WWWDIR%%/core/templates/internalaltmail.php
 %%WWWDIR%%/core/templates/internalmail.php
+%%WWWDIR%%/core/templates/ioc.warning.php
 %%WWWDIR%%/core/templates/layout.base.php
 %%WWWDIR%%/core/templates/layout.guest.php
 %%WWWDIR%%/core/templates/layout.noscript.warning.php
