@@ -1,5 +1,3 @@
-TIMESTAMP = 1689105409
-SHA256 (nu-book-zxing-cpp-v2.1.0_GH0.tar.gz) = 6d54e403592ec7a143791c6526c1baafddf4c0897bb49b1af72b70a0f0c4a3fe
-SIZE (nu-book-zxing-cpp-v2.1.0_GH0.tar.gz) = 866787
-SHA256 (23c19c5f98602a4d69d1667fff99678308b28b5b.diff) = f3b68edc91a55ba24fd5b85f49b66458dab06f9a26ff991509dd13677707c1c8
-SIZE (23c19c5f98602a4d69d1667fff99678308b28b5b.diff) = 727
+TIMESTAMP = 1702517883
+SHA256 (zxing-cpp-zxing-cpp-v2.2.1_GH0.tar.gz) = 02078ae15f19f9d423a441f205b1d1bee32349ddda7467e2c84e8f08876f8635
+SIZE (zxing-cpp-zxing-cpp-v2.2.1_GH0.tar.gz) = 891055

@@ -17,6 +17,7 @@ include/ZXing/Point.h
 include/ZXing/Quadrilateral.h
 include/ZXing/Range.h
 include/ZXing/ReadBarcode.h
+include/ZXing/ReaderOptions.h
 include/ZXing/Result.h
 include/ZXing/StructuredAppend.h
 include/ZXing/TextUtfEncoding.h
@@ -28,6 +29,6 @@ lib/cmake/ZXing/ZXingConfigVersion.cmake
 lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
-lib/libZXing.so.2.1.0
+lib/libZXing.so.2.2.1
 lib/libZXing.so.3
 libdata/pkgconfig/zxing.pc
