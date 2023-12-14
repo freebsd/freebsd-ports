@@ -1,3 +1,45 @@
+  <vuln vid="e2fb85ce-9a3c-11ee-af26-001b217b3468">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.6.0</ge><lt>16.6.2</lt></range>
+	<range><ge>16.5.0</ge><lt>16.5.4</lt></range>
+	<range><ge>8.17.0</ge><lt>16.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/12/13/security-release-gitlab-16-6-2-released/">
+	  <p>Smartcard authentication allows impersonation of arbitrary user using user's public certificate</p>
+	  <p>When subgroup is allowed to merge or push to protected branches, subgroup members with the Developer role may gain the ability to push or merge</p>
+	  <p>The GitLab web interface does not ensure the integrity of information when downloading the source code from installation packages or tags</p>
+	  <p>Project maintainer can escalate to Project owner using project access token rotate API</p>
+	  <p>Omission of Double Encoding in File Names Facilitates the Creation of Repositories with Malicious Content</p>
+	  <p>Unvalidated timeSpent value leads to unable to load issues on Issue board</p>
+	  <p>Developer can bypass predefined variables via REST API</p>
+	  <p>Auditor users can create merge requests on projects they don't have access to</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-6680</cvename>
+      <cvename>CVE-2023-6564</cvename>
+      <cvename>CVE-2023-6051</cvename>
+      <cvename>CVE-2023-3907</cvename>
+      <cvename>CVE-2023-5512</cvename>
+      <cvename>CVE-2023-3904</cvename>
+      <cvename>CVE-2023-5061</cvename>
+      <cvename>CVE-2023-3511</cvename>
+      <url>https://about.gitlab.com/releases/2023/12/13/security-release-gitlab-16-6-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-12-13</discovery>
+      <entry>2023-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="502c9f72-99b3-11ee-86bb-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
