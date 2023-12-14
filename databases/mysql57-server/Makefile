@@ -1,6 +1,6 @@
 PORTNAME?=	mysql
 PORTVERSION=	5.7.44
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/MySQL-5.7
 PKGNAMESUFFIX?=	57-server
@@ -30,8 +30,7 @@ MY_TMPDIR=	/var/db/mysql_tmpdir
 
 LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
-		liblz4.so:archivers/liblz4 \
-		libprotobuf.so:devel/protobuf
+		liblz4.so:archivers/liblz4
 
 CMAKE_BUILD_TYPE=	Release
 
@@ -43,6 +42,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="${INFO_PATH}" \
 		-DINSTALL_LIBDIR="lib/mysql" \
+		-DINSTALL_PRIV_LIBDIR="lib/mysql/private" \
 		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
@@ -60,7 +60,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LIBEVENT=system \
 		-DWITH_LZ4=system \
 		-DWITH_ZLIB=system \
-		-DWITH_PROTOBUF=system \
+		-DWITH_PROTOBUF=bundled \
 		-DWITH_CURL=system \
 		-DINSTALL_MYSQLTESTDIR=0 \
 		-DWITH_DEBUG=0
