@@ -1,7 +1,7 @@
-TIMESTAMP = 1684104314
-SHA256 (grpc-grpc-v1.54.2_GH0.tar.gz) = 3c305f0ca5f98919bc104448f59177e7b936acd5c69c144bf4a548cad723e1e4
-SIZE (grpc-grpc-v1.54.2_GH0.tar.gz) = 8912552
+TIMESTAMP = 1701409461
+SHA256 (grpc-grpc-v1.60.0_GH0.tar.gz) = 437068b8b777d3b339da94d3498f1dc20642ac9bfa76db43abdd522186b1542b
+SIZE (grpc-grpc-v1.60.0_GH0.tar.gz) = 17442762
 SHA256 (census-instrumentation-opencensus-proto-v0.4.1_GH0.tar.gz) = e3d89f7f9ed84c9b6eee818c2e9306950519402bf803698b15c310b77ca2f0f3
 SIZE (census-instrumentation-opencensus-proto-v0.4.1_GH0.tar.gz) = 164379
-SHA256 (cncf-xds-32f1caf_GH0.tar.gz) = 1a4deadcda02a08ccc0a220dbd0cb6dbbb9a051a25d2d8544565703553532ca2
-SIZE (cncf-xds-32f1caf_GH0.tar.gz) = 104130
+SHA256 (cncf-xds-0fa0005_GH0.tar.gz) = bb9e05e048ef35335b70f8c4038e47c0a5586122108738e2bd82f18b57d59885
+SIZE (cncf-xds-0fa0005_GH0.tar.gz) = 105778
