@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2023-11-03 04:00:05.529976000 +0800
++++ CMakeLists.txt	2023-11-03 04:02:22.522059000 +0800
+@@ -23,7 +23,7 @@
+ set(OSGEARTH_SOVERSION 149)
+ 
+ # Require C++11
+-set_property(GLOBAL PROPERTY CXX_STANDARD 11)
++set_property(GLOBAL PROPERTY CXX_STANDARD 17)
+ set_property(GLOBAL PROPERTY CXX_STANDARD_REQUIRED ON)
+ 
+ # Detect out-of-source build. You should always do an out-of-source build!
+--- src/osgEarthDrivers/fastdxt/intrinsic.cpp.orig	2023-05-16 14:53:59 UTC
++++ src/osgEarthDrivers/fastdxt/intrinsic.cpp
+@@ -45,7 +45,7 @@
+ void ExtractBlock_Intrinsics( const byte *inPtr, int width, byte *colorBlock ) 
+ {
+         __m128i t0, t1, t2, t3;
+-	register int w = width << 2;  // width*4
++	int w = width << 2;  // width*4
+ 
+         t0 = _mm_load_si128 ( (__m128i*) inPtr );
+         _mm_store_si128 ( (__m128i*) &colorBlock[0], t0 );   // copy first row, 16bytes
