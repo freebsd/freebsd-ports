@@ -1,0 +1,168 @@
+Obtained from:	https://github.com/dolphin-emu/dolphin/commit/63467559b20682a6b9e4ec43c6b43456e1fca111
+		https://github.com/dolphin-emu/dolphin/commit/b5b28da39d371ff2abbb0855fadc3c748a8a7043
+
+--- CMakeLists.txt.orig	2023-07-23 02:24:09 UTC
++++ CMakeLists.txt
+@@ -630,7 +630,7 @@ if (_M_X86)
+ endif()
+ add_subdirectory(Externals/cpp-optparse)
+ 
+-dolphin_find_optional_system_library(fmt Externals/fmt 8)
++dolphin_find_optional_system_library(fmt Externals/fmt 10.1)
+ 
+ add_subdirectory(Externals/imgui)
+ add_subdirectory(Externals/implot)
+--- Source/Android/jni/GpuDriver.cpp.orig	2023-07-23 02:24:09 UTC
++++ Source/Android/jni/GpuDriver.cpp
+@@ -7,6 +7,7 @@
+ 
+ #include <jni.h>
+ 
++#include "Common/EnumUtils.h"`
+ #include "Common/IniFile.h"
+ #include "jni/AndroidCommon/AndroidCommon.h"
+ #include "jni/AndroidCommon/IDCache.h"
+@@ -69,7 +70,7 @@ Java_org_dolphinemu_dolphinemu_utils_GpuDriverHelper_0
+     properties2.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PROPERTIES_2;
+     properties2.pNext = &driverProperties;
+     vkGetPhysicalDeviceProperties2(gpu_list.front(), &properties2);
+-    driverId = fmt::format("{}", driverProperties.driverID);
++    driverId = fmt::format("{}", Common::ToUnderlying(driverProperties.driverID));
+   }
+   else
+   {
+--- Source/Core/Common/HRWrap.cpp.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/Common/HRWrap.cpp
+@@ -3,13 +3,15 @@
+ 
+ #include "HRWrap.h"
+ 
+-#include <winrt/base.h>
+-
+ namespace Common
+ {
+ std::string GetHResultMessage(HRESULT hr)
+ {
+   auto err = winrt::hresult_error(hr);
+   return winrt::to_string(err.message());
++}
++std::string GetHResultMessage(const winrt::hresult& hr)
++{
++  return GetHResultMessage(hr.value);
+ }
+ }  // namespace Common
+--- Source/Core/Common/HRWrap.h.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/Common/HRWrap.h
+@@ -6,6 +6,7 @@
+ #include <fmt/format.h>
+ #include <string>
+ #include <winerror.h>
++#include <winrt/base.h>
+ 
+ #include "Common/CommonTypes.h"
+ 
+@@ -31,5 +32,16 @@ struct fmt::formatter<Common::HRWrap>
+   {
+     return fmt::format_to(ctx.out(), "{} ({:#010x})", Common::GetHResultMessage(hr.m_hr),
+                           static_cast<u32>(hr.m_hr));
++  }
++};
++
++template <>
++struct fmt::formatter<winrt::hresult>
++{
++  constexpr auto parse(fmt::format_parse_context& ctx) { return ctx.begin(); }
++  template <typename FormatContext>
++  auto format(const winrt::hresult& hr, FormatContext& ctx) const
++  {
++    return fmt::format_to(ctx.out(), "{} ({:#010x})", Common::GetHResultMessage(hr), hr.value);
+   }
+ };
+--- Source/Core/Common/Swap.h.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/Common/Swap.h
+@@ -16,6 +16,8 @@
+ #include <endian.h>
+ #endif
+ 
++#include <fmt/format.h>
++
+ #include "Common/CommonTypes.h"
+ 
+ namespace Common
+@@ -183,3 +185,15 @@ struct BigEndianValue (private)
+   value_type raw;
+ };
+ }  // Namespace Common
++
++template <typename value_type>
++struct fmt::formatter<Common::BigEndianValue<value_type>>
++{
++  fmt::formatter<value_type> m_formatter;
++  constexpr auto parse(format_parse_context& ctx) { return m_formatter.parse(ctx); }
++  template <typename FormatContext>
++  auto format(const Common::BigEndianValue<value_type>& value, FormatContext& ctx) const
++  {
++    return m_formatter.format(value.operator value_type(), ctx);
++  }
++};
+--- Source/Core/InputCommon/ControllerInterface/WGInput/WGInput.cpp.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/InputCommon/ControllerInterface/WGInput/WGInput.cpp
+@@ -23,6 +23,7 @@
+ 
+ #include <fmt/format.h>
+ 
++#include "Common/HRWrap.h"
+ #include "Common/Logging/Log.h"
+ #include "Common/StringUtil.h"
+ #include "InputCommon/ControllerInterface/ControllerInterface.h"
+@@ -506,7 +507,7 @@ class Device : public Core::Device (private)
+     catch (winrt::hresult_error error)
+     {
+       ERROR_LOG_FMT(CONTROLLERINTERFACE,
+-                    "WGInput: IRawGameController::GetCurrentReading failed: {:x}", error.code());
++                    "WGInput: IRawGameController::GetCurrentReading failed: {}", error.code());
+     }
+ 
+     // IGamepad:
+@@ -518,7 +519,7 @@ class Device : public Core::Device (private)
+       }
+       catch (winrt::hresult_error error)
+       {
+-        ERROR_LOG_FMT(CONTROLLERINTERFACE, "WGInput: IGamepad::GetCurrentReading failed: {:x}",
++        ERROR_LOG_FMT(CONTROLLERINTERFACE, "WGInput: IGamepad::GetCurrentReading failed: {}",
+                       error.code());
+       }
+     }
+--- Source/Core/VideoCommon/Assets/DirectFilesystemAssetLibrary.cpp.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/VideoCommon/Assets/DirectFilesystemAssetLibrary.cpp
+@@ -4,7 +4,8 @@
+ #include "VideoCommon/Assets/DirectFilesystemAssetLibrary.h"
+ 
+ #include <algorithm>
+-#include <fmt/os.h>
++
++#include <fmt/std.h>
+ 
+ #include "Common/FileUtil.h"
+ #include "Common/Logging/Log.h"
+--- Source/Core/VideoCommon/BPMemory.h.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/VideoCommon/BPMemory.h
+@@ -1863,7 +1863,7 @@ enum class ColorChannel : u32
+ template <>
+ struct fmt::formatter<ColorChannel> : EnumFormatter<ColorChannel::Alpha>
+ {
+-  formatter() : EnumFormatter({"Red", "Green", "Blue", "Alpha"}) {}
++  constexpr formatter() : EnumFormatter({"Red", "Green", "Blue", "Alpha"}) {}
+ };
+ 
+ enum class KonstSel : u32
+--- Source/Core/VideoCommon/TextureCacheBase.h.orig	2023-07-23 02:24:09 UTC
++++ Source/Core/VideoCommon/TextureCacheBase.h
+@@ -98,7 +98,6 @@ struct EFBCopyParams
+ template <>
+ struct fmt::formatter<EFBCopyParams>
+ {
+-  std::shared_ptr<int> state;
+   constexpr auto parse(format_parse_context& ctx) { return ctx.begin(); }
+   template <typename FormatContext>
+   auto format(const EFBCopyParams& uid, FormatContext& ctx) const
