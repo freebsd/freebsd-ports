@@ -1,6 +1,15 @@
 --- ricochet.pro.orig	2016-11-04 22:05:33 UTC
 +++ ricochet.pro
-@@ -52,18 +52,18 @@ CONFIG(release,debug|release):DEFINES +=
+@@ -36,7 +36,7 @@ lessThan(QT_MAJOR_VERSION,5)|lessThan(QT_MINOR_VERSION
+ TARGET = ricochet
+ TEMPLATE = app
+ QT += core gui network quick widgets multimedia
+-CONFIG += c++11
++CONFIG += c++17
+ 
+ VERSION = 1.1.4
+ 
+@@ -52,18 +52,18 @@ CONFIG(release,debug|release):DEFINES += QT_NO_DEBUG_O
  
  contains(DEFINES, RICOCHET_NO_PORTABLE) {
      unix:!macx {
