@@ -1,0 +1,4 @@
+Centralization of locale data collection for Ruby on Rails.
+
+It provides a set of common locale data and translations to internationalize
+and/or localize your Rails applications.
