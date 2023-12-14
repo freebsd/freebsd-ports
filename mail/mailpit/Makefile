@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.4
+DISTVERSION=	1.11.0
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -46,15 +46,15 @@ GH_TUPLE=	\
 		golang:sys:v0.15.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.14.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.5.0:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.16.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.16.1:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:a660076da3fd:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
-		google:uuid:v1.4.0:google_uuid/vendor/github.com/google/uuid \
+		google:uuid:v1.5.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.1:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:mux:v1.8.1:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.1:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/github.com/jaytaylor/html2text \
-		jhillyerd:enmime:v1.0.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
+		jhillyerd:enmime:v1.1.0:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.17.4:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
@@ -62,7 +62,7 @@ GH_TUPLE=	\
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
-		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
+		mhale:smtpd:v0.8.1:mhale_smtpd/vendor/github.com/mhale/smtpd \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		reiver:go-oi:v1.0.0:reiver_go_oi/vendor/github.com/reiver/go-oi \
@@ -82,7 +82,7 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:62fe9994b77907e147c1317c03f1ab9fe63297da:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:b41ef92a881769af86fb0d922e4f98f2b72e6b51:cznic_libc/vendor/modernc.org/libc \
+		cznic:libc:dad16ccb80bb70c289c319a7ee5509547423f0bf:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:dda74182ee99cca437f9abb436d906192e090c70:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
