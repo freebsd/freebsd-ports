@@ -1,11 +1,11 @@
 PORTNAME=	lua-resty-jwt
 DISTVERSIONPREFIX=v
-DISTVERSION=	0.1.11
+DISTVERSION=	0.2.3
 CATEGORIES=	security
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	JWT for OpenResty / ngx_lua
-WWW=		https://github.com/SkyLothar/lua-resty-jwt
+WWW=		https://github.com/cdbattags/lua-resty-jwt
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,7 +14,7 @@ RUN_DEPENDS=	luajit-openresty>=2.1:lang/luajit-openresty \
 		${LUA_MODSHAREDIR}/resty/hmac.lua:security/lua-resty-hmac
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	SkyLothar
+GH_ACCOUNT=	cdbattags
 
 NO_ARCH=	yes
 NO_BUILD=	yes
