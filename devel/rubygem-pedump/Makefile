@@ -1,11 +1,12 @@
 PORTNAME=	pedump
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Dump headers, sections, extract resources of Win32 PE exe, dll, etc
-WWW=		https://github.com/zed-0xff/pedump
+WWW=		https://pedump.me/ \
+		https://github.com/zed-0xff/pedump
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
