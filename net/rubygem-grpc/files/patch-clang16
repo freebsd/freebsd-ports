@@ -1,6 +1,6 @@
---- src/ruby/ext/grpc/rb_channel.c.orig	2023-05-20 19:48:13 UTC
+--- src/ruby/ext/grpc/rb_channel.c.orig	2023-12-08 17:22:30 UTC
 +++ src/ruby/ext/grpc/rb_channel.c
-@@ -694,7 +694,7 @@ static void run_poll_channels_loop_unblocking_func(voi
+@@ -726,7 +726,7 @@ static void run_poll_channels_loop_unblocking_func(voi
  }
  
  // Poll channel connectivity states in background thread without the GIL.
@@ -9,9 +9,9 @@
    (void)arg;
    gpr_log(
        GPR_DEBUG,
---- src/ruby/ext/grpc/rb_event_thread.c.orig	2023-05-20 19:51:52 UTC
+--- src/ruby/ext/grpc/rb_event_thread.c.orig	2023-12-08 17:22:30 UTC
 +++ src/ruby/ext/grpc/rb_event_thread.c
-@@ -114,7 +114,7 @@ static void grpc_rb_event_unblocking_func(void* arg) {
+@@ -116,7 +116,7 @@ static void grpc_rb_event_unblocking_func(void* arg) {
  
  /* This is the implementation of the thread that handles auth metadata plugin
   * events */
@@ -19,4 +19,4 @@
 +static VALUE grpc_rb_event_thread(void *arg) {
    grpc_rb_event* event;
    (void)arg;
-   grpc_ruby_init();
+   while (true) {
