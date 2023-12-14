@@ -1,6 +1,5 @@
 PORTNAME=	mdynamix
-DISTVERSION=	5.2.8
-PORTREVISION=	6
+DISTVERSION=	5.3.0
 CATEGORIES=	science
 MASTER_SITES=	http://www.fos.su.se/~sasha/${PORTNAME}/versions/
 DISTNAME=	md${DISTVERSION:S/.//g}
@@ -14,6 +13,8 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libmpich.so:net/mpich
 
 USES=		fortran gmake
+
+WRKSRC=		${WRKDIR}/mdynamix
 
 ALL_TARGET=	default mpi
 MAKE_ARGS=	FFLAGS="${FFLAGS} -ffast-math" LDFLAGS="${LDFLAGS}"
