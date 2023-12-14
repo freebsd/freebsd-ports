@@ -1,0 +1,78 @@
+--- src/utils/protobuf.cpp.orig	2022-11-12 00:17:51 UTC
++++ src/utils/protobuf.cpp
+@@ -41,9 +41,8 @@
+ // should be refactored to use the specialized "zero-copy" streams
+ // that ship with protobuf.
+ 
+-namespace pb = google::protobuf;
+-static pb::FieldDescriptor const*
+-get_oneof_field_descriptor(pb::Message const& msg,
++static google::protobuf::FieldDescriptor const*
++get_oneof_field_descriptor(google::protobuf::Message const& msg,
+                            std::string const& oneof_name)
+ {
+   auto oneof_handle = msg.GetDescriptor()->FindOneofByName(oneof_name);
+@@ -52,14 +51,14 @@ get_oneof_field_descriptor(pb::Message const& msg,
+   return msg.GetReflection()->GetOneofFieldDescriptor(msg, oneof_handle);
+ }
+ 
+-bool lbann::protobuf::has_oneof(pb::Message const& msg,
++bool lbann::protobuf::has_oneof(google::protobuf::Message const& msg,
+                                 std::string const& oneof_name)
+ {
+   return (bool)get_oneof_field_descriptor(msg, oneof_name);
+ }
+ 
+-pb::Message const&
+-lbann::protobuf::get_oneof_message(pb::Message const& msg,
++google::protobuf::Message const&
++lbann::protobuf::get_oneof_message(google::protobuf::Message const& msg,
+                                    std::string const& oneof_name)
+ {
+   auto oneof_field = get_oneof_field_descriptor(msg, oneof_name);
+@@ -71,7 +70,7 @@ lbann::protobuf::get_oneof_message(pb::Message const& 
+                 "}\n");
+   }
+ 
+-  if (oneof_field->type() != pb::FieldDescriptor::TYPE_MESSAGE) {
++  if (oneof_field->type() != google::protobuf::FieldDescriptor::TYPE_MESSAGE) {
+     LBANN_ERROR("Oneof \"",
+                 oneof_name,
+                 "\" has field \"",
+@@ -105,15 +104,15 @@ static std::string remove_scope_from_type(std::string 
+     return type.substr(pos + 1);
+ }
+ 
+-std::string lbann::protobuf::message_type(pb::Message const& msg)
++std::string lbann::protobuf::message_type(google::protobuf::Message const& msg)
+ {
+   return msg.GetDescriptor()->name();
+ }
+ 
+-std::string lbann::protobuf::message_type(pb::Any const& msg)
++std::string lbann::protobuf::message_type(google::protobuf::Any const& msg)
+ {
+   std::string full_type;
+-  pb::Any::ParseAnyTypeUrl(msg.type_url(), &full_type);
++  google::protobuf::Any::ParseAnyTypeUrl(msg.type_url(), &full_type);
+   return remove_scope_from_type(full_type);
+ }
+ 
+@@ -171,7 +170,7 @@ void lbann::protobuf::text::fill(std::istream& is,
+ void lbann::protobuf::text::fill(std::string const& str,
+                                  google::protobuf::Message& msg)
+ {
+-  if (!pb::TextFormat::ParseFromString(str, &msg))
++  if (!google::protobuf::TextFormat::ParseFromString(str, &msg))
+     LBANN_ERROR("Unable to parse prototext from string.");
+ }
+ 
+@@ -187,7 +186,7 @@ void lbann::protobuf::text::write(std::ostream& os,
+                                   google::protobuf::Message const& msg)
+ {
+   google::protobuf::io::OstreamOutputStream output(&os);
+-  if (!pb::TextFormat::Print(msg, &output))
++  if (!google::protobuf::TextFormat::Print(msg, &output))
+     LBANN_ERROR("Failed to print prototext to stream.");
+ }
+ 
