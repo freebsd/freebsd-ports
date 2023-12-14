@@ -1,6 +1,6 @@
 PORTNAME=	gemmi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.4
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,6 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	project-gemmi
 
 CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_ARGS=		-DCMAKE_CXX_VISIBILITY_PRESET=default # for the Python extension science/py-gemmi to see all symbols
 CMAKE_TESTING_TARGET=	check
 
 OPTIONS_DEFINE=		FORTRAN

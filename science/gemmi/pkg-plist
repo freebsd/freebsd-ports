@@ -77,6 +77,7 @@ include/gemmi/scaling.hpp
 include/gemmi/select.hpp
 include/gemmi/seqalign.hpp
 include/gemmi/seqid.hpp
+include/gemmi/seqtools.hpp
 include/gemmi/sfcalc.hpp
 include/gemmi/small.hpp
 include/gemmi/smcif.hpp
