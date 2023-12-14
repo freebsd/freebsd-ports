@@ -14,6 +14,8 @@ LICENSE=	UNLICENSE CC-BY-NC-SA-4.0 OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not build with libfmt 10+. See https://github.com/diasurgical/devilutionX/issues/6098
+
 LIB_DEPENDS=	libfmt.so:devel/libfmt
 BUILD_DEPENDS=	${LOCALBASE}/include/SimpleIni.h:devel/simpleini
 
