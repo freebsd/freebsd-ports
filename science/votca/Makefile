@@ -59,7 +59,7 @@ OPTIONS_DEFAULT=	APPS
 OPTIONS_SUB=		yes
 
 APPS_DESC=		Build applications
-APPS_CMAKE_BOOL=	BUILD_CSGAPPS
+APPS_CMAKE_BOOL=	INSTALL_CSGAPPS
 
 do-test: # several tests fail, see https://github.com/votca/votca/issues/1098
 	@cd ${BUILD_WRKSRC} && \
