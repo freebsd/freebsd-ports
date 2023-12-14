@@ -13,12 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		compiler:c++11-lang gmake libtool pkgconfig
+USES=		compiler:c++17-lang gmake libtool pkgconfig
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
+USE_CXXSTD=	c++17
 PORTDOCS=	*
 
 CONFIGURE_ARGS=	--disable-static

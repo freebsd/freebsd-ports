@@ -1,0 +1,505 @@
+--- configure.orig	2022-07-11 01:35:23 UTC
++++ configure
+@@ -683,7 +683,7 @@ BUILD_COMPILER_TRUE
+ PROTOC
+ protobuf_LIBS
+ protobuf_CFLAGS
+-HAVE_CXX11
++HAVE_CXX17
+ pkgconfigdir
+ PKG_CONFIG_LIBDIR
+ PKG_CONFIG_PATH
+@@ -17724,7 +17724,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ 
+-    ax_cxx_compile_alternatives="11 0x"    ax_cxx_compile_cxx11_required=true
++    ax_cxx_compile_alternatives="17 1z"    ax_cxx_compile_cxx17_required=true
+   ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -17737,9 +17737,9 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+     if test x$ac_success = xno; then
+                 for alternative in ${ax_cxx_compile_alternatives}; do
+       for switch in -std=c++${alternative} +std=c++${alternative} "-h std=c++${alternative}"; do
+-        cachevar=`printf "%s\n" "ax_cv_cxx_compile_cxx11_$switch" | $as_tr_sh`
+-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $CXX supports C++11 features with $switch" >&5
+-printf %s "checking whether $CXX supports C++11 features with $switch... " >&6; }
++        cachevar=`printf "%s\n" "ax_cv_cxx_compile_cxx17_$switch" | $as_tr_sh`
++        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $CXX supports C++17 features with $switch" >&5
++printf %s "checking whether $CXX supports C++17 features with $switch... " >&6; }
+ if eval test \${$cachevar+y}
+ then :
+   printf %s "(cached) " >&6
+@@ -18067,19 +18067,19 @@ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_e
+ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+-  if test x$ax_cxx_compile_cxx11_required = xtrue; then
++  if test x$ax_cxx_compile_cxx17_required = xtrue; then
+     if test x$ac_success = xno; then
+-      as_fn_error $? "*** A compiler with support for C++11 language features is required." "$LINENO" 5
++      as_fn_error $? "*** A compiler with support for C++17 language features is required." "$LINENO" 5
+     fi
+   fi
+   if test x$ac_success = xno; then
+-    HAVE_CXX11=0
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: No compiler with C++11 support was found" >&5
+-printf "%s\n" "$as_me: No compiler with C++11 support was found" >&6;}
++    HAVE_CXX17=0
++    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: No compiler with C++17 support was found" >&5
++printf "%s\n" "$as_me: No compiler with C++17 support was found" >&6;}
+   else
+-    HAVE_CXX11=1
++    HAVE_CXX17=1
+ 
+-printf "%s\n" "#define HAVE_CXX11 1" >>confdefs.h
++printf "%s\n" "#define HAVE_CXX17 1" >>confdefs.h
+ 
+   fi
+ 
+@@ -18144,67 +18144,8 @@ fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$protobuf_PKG_ERRORS" >&5
+ 
++	as_fn_error $? "Package requirements (protobuf >= 3.0.0) were not met:
+ 
+-pkg_failed=no
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for protobuf" >&5
+-printf %s "checking for protobuf... " >&6; }
+-
+-if test -n "$protobuf_CFLAGS"; then
+-    pkg_cv_protobuf_CFLAGS="$protobuf_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"protobuf >= 2.6.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "protobuf >= 2.6.0") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_protobuf_CFLAGS=`$PKG_CONFIG --cflags "protobuf >= 2.6.0" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$protobuf_LIBS"; then
+-    pkg_cv_protobuf_LIBS="$protobuf_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"protobuf >= 2.6.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "protobuf >= 2.6.0") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_protobuf_LIBS=`$PKG_CONFIG --libs "protobuf >= 2.6.0" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-   	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        protobuf_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "protobuf >= 2.6.0" 2>&1`
+-        else
+-	        protobuf_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "protobuf >= 2.6.0" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$protobuf_PKG_ERRORS" >&5
+-
+-	as_fn_error $? "Package requirements (protobuf >= 2.6.0) were not met:
+-
+ $protobuf_PKG_ERRORS
+ 
+ Consider adjusting the PKG_CONFIG_PATH environment variable if you
+@@ -18228,109 +18169,6 @@ See the pkg-config man page for more details.
+ 
+ To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+ See \`config.log' for more details" "$LINENO" 5; }
+-else
+-	protobuf_CFLAGS=$pkg_cv_protobuf_CFLAGS
+-	protobuf_LIBS=$pkg_cv_protobuf_LIBS
+-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
+-
+-fi
+-
+-elif test $pkg_failed = untried; then
+-     	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-
+-pkg_failed=no
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for protobuf" >&5
+-printf %s "checking for protobuf... " >&6; }
+-
+-if test -n "$protobuf_CFLAGS"; then
+-    pkg_cv_protobuf_CFLAGS="$protobuf_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"protobuf >= 2.6.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "protobuf >= 2.6.0") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_protobuf_CFLAGS=`$PKG_CONFIG --cflags "protobuf >= 2.6.0" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$protobuf_LIBS"; then
+-    pkg_cv_protobuf_LIBS="$protobuf_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"protobuf >= 2.6.0\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "protobuf >= 2.6.0") 2>&5
+-  ac_status=$?
+-  printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_protobuf_LIBS=`$PKG_CONFIG --libs "protobuf >= 2.6.0" 2>/dev/null`
+-		      test "x$?" != "x0" && pkg_failed=yes
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-   	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        protobuf_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "protobuf >= 2.6.0" 2>&1`
+-        else
+-	        protobuf_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "protobuf >= 2.6.0" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$protobuf_PKG_ERRORS" >&5
+-
+-	as_fn_error $? "Package requirements (protobuf >= 2.6.0) were not met:
+-
+-$protobuf_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables protobuf_CFLAGS
+-and protobuf_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
+-elif test $pkg_failed = untried; then
+-     	{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
+-	{ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-printf "%s\n" "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables protobuf_CFLAGS
+-and protobuf_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-	protobuf_CFLAGS=$pkg_cv_protobuf_CFLAGS
+-	protobuf_LIBS=$pkg_cv_protobuf_LIBS
+-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
+-
+-fi
+-
+ else
+ 	protobuf_CFLAGS=$pkg_cv_protobuf_CFLAGS
+ 	protobuf_LIBS=$pkg_cv_protobuf_LIBS
+--- protoc-c/c_bytes_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_bytes_field.h
+@@ -87,8 +87,6 @@ class BytesFieldGenerator : public FieldGenerator {
+ 
+  private:
+   std::map<std::string, std::string> variables_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(BytesFieldGenerator);
+ };
+ 
+ 
+--- protoc-c/c_enum.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_enum.h
+@@ -106,8 +106,6 @@ class EnumGenerator {
+  private:
+   const EnumDescriptor* descriptor_;
+   std::string dllexport_decl_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(EnumGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_enum_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_enum_field.h
+@@ -85,8 +85,6 @@ class EnumFieldGenerator : public FieldGenerator {
+ 
+  private:
+   std::map<std::string, std::string> variables_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(EnumFieldGenerator);
+ };
+ 
+ 
+--- protoc-c/c_extension.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_extension.h
+@@ -98,8 +98,6 @@ class ExtensionGenerator {
+   const FieldDescriptor* descriptor_;
+   std::string type_traits_;
+   std::string dllexport_decl_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(ExtensionGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_field.cc.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_field.cc
+@@ -231,7 +231,7 @@ FieldGeneratorMap::~FieldGeneratorMap() {}
+ 
+ const FieldGenerator& FieldGeneratorMap::get(
+     const FieldDescriptor* field) const {
+-  GOOGLE_CHECK_EQ(field->containing_type(), descriptor_);
++  ABSL_CHECK_EQ(field->containing_type(), descriptor_);
+   return *field_generators_[field->index()];
+ }
+ 
+--- protoc-c/c_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_field.h
+@@ -103,9 +103,6 @@ class FieldGenerator {
+                                             const std::string &type_macro,
+                                             const std::string &descriptor_addr) const;
+   const FieldDescriptor *descriptor_;
+-
+- private:
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(FieldGenerator);
+ };
+ 
+ // Convenience class which constructs FieldGenerators for a Descriptor.
+@@ -121,8 +118,6 @@ class FieldGeneratorMap {
+   std::unique_ptr<std::unique_ptr<FieldGenerator>[]> field_generators_;
+ 
+   static FieldGenerator* MakeGenerator(const FieldDescriptor* field);
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(FieldGeneratorMap);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_file.cc.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_file.cc
+@@ -119,7 +119,11 @@ void FileGenerator::GenerateHeader(io::Printer* printe
+ 
+   int min_header_version = 1000000;
+ #if defined(HAVE_PROTO3)
++# if GOOGLE_PROTOBUF_VERSION >= 4023000
++  if (FileDescriptorLegacy(file_).syntax() == FileDescriptorLegacy::SYNTAX_PROTO3) {
++# else
+   if (file_->syntax() == FileDescriptor::SYNTAX_PROTO3) {
++#endif
+     min_header_version = 1003000;
+   }
+ #endif
+--- protoc-c/c_file.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_file.h
+@@ -103,8 +103,6 @@ class FileGenerator {
+   std::unique_ptr<std::unique_ptr<EnumGenerator>[]> enum_generators_;
+   std::unique_ptr<std::unique_ptr<ServiceGenerator>[]> service_generators_;
+   std::unique_ptr<std::unique_ptr<ExtensionGenerator>[]> extension_generators_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(FileGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_generator.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_generator.h
+@@ -93,9 +93,6 @@ class PROTOC_C_EXPORT CGenerator : public CodeGenerato
+                 const std::string& parameter,
+                 OutputDirectory* output_directory,
+                 std::string* error) const;
+-
+- private:
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(CGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_helpers.cc.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_helpers.cc
+@@ -286,7 +286,7 @@ const char* const kKeywordList[] = {
+ 
+ std::set<std::string> MakeKeywordsMap() {
+   std::set<std::string> result;
+-  for (int i = 0; i < GOOGLE_ARRAYSIZE(kKeywordList); i++) {
++  for (int i = 0; i < ABSL_ARRAYSIZE(kKeywordList); i++) {
+     result.insert(kKeywordList[i]);
+   }
+   return result;
+@@ -548,7 +548,7 @@ std::string CEscape(const std::string& src) {
+   std::unique_ptr<char[]> dest(new char[dest_length]);
+   const int len = CEscapeInternal(src.data(), src.size(),
+                                   dest.get(), dest_length, false);
+-  GOOGLE_DCHECK_GE(len, 0);
++  ABSL_DCHECK_GE(len, 0);
+   return std::string(dest.get(), len);
+ }
+ 
+--- protoc-c/c_helpers.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_helpers.h
+@@ -70,6 +70,10 @@
+ #include <protobuf-c/protobuf-c.pb.h>
+ #include <google/protobuf/io/printer.h>
+ 
++#if GOOGLE_PROTOBUF_VERSION >= 4023000
++# include <google/protobuf/descriptor_legacy.h>
++#endif
++
+ namespace google {
+ namespace protobuf {
+ namespace compiler {
+@@ -172,7 +176,11 @@ int compare_name_indices_by_name(const void*, const vo
+ // This wrapper is needed to be able to compile against protobuf2.
+ inline int FieldSyntax(const FieldDescriptor* field) {
+ #ifdef HAVE_PROTO3
++# if GOOGLE_PROTOBUF_VERSION >= 4023000
++  return FileDescriptorLegacy(field->file()).syntax() == FileDescriptorLegacy::SYNTAX_PROTO3 ? 3 : 2;
++# else
+   return field->file()->syntax() == FileDescriptor::SYNTAX_PROTO3 ? 3 : 2;
++# endif
+ #else
+   return 2;
+ #endif
+--- protoc-c/c_message.cc.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_message.cc
+@@ -499,7 +499,7 @@ GenerateMessageDescriptor(io::Printer* printer, bool g
+ 	  // NOTE: not supported by protobuf
+ 	  vars["maybe_static"] = "";
+ 	  vars["field_dv_ctype"] = "{ ... }";
+-	  GOOGLE_LOG(DFATAL) << "Messages can't have default values!";
++	  ABSL_LOG(FATAL) << "Messages can't have default values!";
+ 	  break;
+ 	case FieldDescriptor::CPPTYPE_STRING:
+ 	  if (fd->type() == FieldDescriptor::TYPE_BYTES || opt.string_as_bytes())
+@@ -521,7 +521,7 @@ GenerateMessageDescriptor(io::Printer* printer, bool g
+ 	    break;
+ 	  }
+ 	default:
+-	  GOOGLE_LOG(DFATAL) << "Unknown CPPTYPE";
++	  ABSL_LOG(FATAL) << "Unknown CPPTYPE";
+ 	  break;
+ 	}
+ 	if (!already_defined)
+--- protoc-c/c_message.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_message.h
+@@ -136,8 +136,6 @@ class MessageGenerator {
+   std::unique_ptr<std::unique_ptr<MessageGenerator>[]> nested_generators_;
+   std::unique_ptr<std::unique_ptr<EnumGenerator>[]> enum_generators_;
+   std::unique_ptr<std::unique_ptr<ExtensionGenerator>[]> extension_generators_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(MessageGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_message_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_message_field.h
+@@ -82,10 +82,6 @@ class MessageFieldGenerator : public FieldGenerator {
+   void GenerateDescriptorInitializer(io::Printer* printer) const;
+   std::string GetDefaultValue(void) const;
+   void GenerateStaticInit(io::Printer* printer) const;
+-
+- private:
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(MessageFieldGenerator);
+ };
+ 
+ 
+--- protoc-c/c_primitive_field.cc.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_primitive_field.cc
+@@ -99,7 +99,7 @@ void PrimitiveFieldGenerator::GenerateStructMembers(io
+     case FieldDescriptor::TYPE_STRING  :
+     case FieldDescriptor::TYPE_BYTES   :
+     case FieldDescriptor::TYPE_GROUP   :
+-    case FieldDescriptor::TYPE_MESSAGE : GOOGLE_LOG(FATAL) << "not a primitive type"; break;
++    case FieldDescriptor::TYPE_MESSAGE : ABSL_LOG(FATAL) << "not a primitive type"; break;
+ 
+     // No default because we want the compiler to complain if any new
+     // types are added.
+@@ -143,7 +143,7 @@ std::string PrimitiveFieldGenerator::GetDefaultValue()
+     case FieldDescriptor::CPPTYPE_BOOL:
+       return descriptor_->default_value_bool() ? "1" : "0";
+     default:
+-      GOOGLE_LOG(DFATAL) << "unexpected CPPTYPE in c_primitive_field";
++      ABSL_LOG(FATAL) << "unexpected CPPTYPE in c_primitive_field";
+       return "UNEXPECTED_CPPTYPE";
+   }
+ }
+@@ -197,7 +197,7 @@ void PrimitiveFieldGenerator::GenerateDescriptorInitia
+     case FieldDescriptor::TYPE_STRING  :
+     case FieldDescriptor::TYPE_BYTES   :
+     case FieldDescriptor::TYPE_GROUP   :
+-    case FieldDescriptor::TYPE_MESSAGE : GOOGLE_LOG(FATAL) << "not a primitive type"; break;
++    case FieldDescriptor::TYPE_MESSAGE : ABSL_LOG(FATAL) << "not a primitive type"; break;
+ 
+     // No default because we want the compiler to complain if any new
+     // types are added.
+--- protoc-c/c_primitive_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_primitive_field.h
+@@ -82,10 +82,6 @@ class PrimitiveFieldGenerator : public FieldGenerator 
+   void GenerateDescriptorInitializer(io::Printer* printer) const;
+   std::string GetDefaultValue(void) const;
+   void GenerateStaticInit(io::Printer* printer) const;
+-
+- private:
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(PrimitiveFieldGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_service.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_service.h
+@@ -100,8 +100,6 @@ class ServiceGenerator {
+ 
+   const ServiceDescriptor* descriptor_;
+   std::map<std::string, std::string> vars_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(ServiceGenerator);
+ };
+ 
+ }  // namespace c
+--- protoc-c/c_string_field.h.orig	2021-05-19 01:51:00 UTC
++++ protoc-c/c_string_field.h
+@@ -87,8 +87,6 @@ class StringFieldGenerator : public FieldGenerator {
+ 
+  private:
+   std::map<std::string, std::string> variables_;
+-
+-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(StringFieldGenerator);
+ };
+ 
+ 
