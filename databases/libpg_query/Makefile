@@ -1,5 +1,5 @@
 PORTNAME=	libpg_query
-DISTVERSION=	13-2.1.0
+DISTVERSION=	15-4.2.3
 CATEGORIES=	databases devel
 
 MAINTAINER=	mfechner@FreeBSD.org
