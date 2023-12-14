@@ -1,6 +1,5 @@
 PORTNAME=	pastix
-PORTVERSION=	6.3.1
-PORTREVISION=	1
+PORTVERSION=	6.3.2
 CATEGORIES=	science
 MASTER_SITES=	https://gitlab.inria.fr/solverstack/pastix/uploads/${GL_TAG}/
 
@@ -29,11 +28,13 @@ USES=		cmake blaslapack:openblas fortran pkgconfig python
 #		14e36c1586c9ba13f938b1a89f51c080d6551392:s	\
 #		31cd2bbb0d76f2b9fd83011d8f079d97540b0ba8:m
 #GL_SUBDIR=	spm:s cmake_modules/morse_cmake:m
-GL_TAG=		ad8f528a3f6c012762e9a903b28315f8	# tarball with submodules
+GL_TAG=		32711239db22edb6c291282b581b9e0b	# tarball with submodules
 
 LDFLAGS+=	-lm
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON	\
-		-DPASTIX_ORDERING_METIS:BOOL=ON
+		-DPASTIX_ORDERING_METIS:BOOL=ON	\
+		-DPython_VERSION_MAJOR=${PYTHON_MAJOR_VER}	\
+		-DPython_VERSION_MINOR=${PYTHON_VER:E}
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 
@@ -46,6 +47,7 @@ EX2FIX2=	example example/old wrappers/julia wrappers/fortran90 wrappers/python
 pre-configure:
 .for ex in ${EX2FIX}
 	${REINPLACE_CMD} -e 's|DESTINATION examples|DESTINATION ${EXAMPLESDIR}/${ex:C/examples//:C/example//}|'	\
+			-e 's|share/doc/spm/examples|${EXAMPLESDIR}/spm|'	\
 		${WRKSRC}/${ex}/CMakeLists.txt
 .endfor
 .for ex in ${EX2FIX2}
