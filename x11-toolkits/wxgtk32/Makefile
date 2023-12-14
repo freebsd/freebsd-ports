@@ -6,6 +6,9 @@ MASTER_SITES=	https://github.com/wxWidgets/wxWidgets/releases/download/v${DISTVE
 PKGNAMESUFFIX=	${_SHORT_WX_VER}-${FLAVOR}
 DISTNAME=	wxWidgets-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/vadz/wxWidgets/commit/
+PATCHFILES=	b8dc0eeb2fb6c49ae0ac9cbc86bd20c0bf3bdee7.patch:-p1 # https://github.com/wxWidgets/wxWidgets/issues/24076
+
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	GUI toolkit (wxWidgets) with ${FLAVOR:S/k/&+/:tu} bindings
 WWW=		https://www.wxwidgets.org/
