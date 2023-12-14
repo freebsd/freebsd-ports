@@ -1,5 +1,5 @@
 PORTNAME=	recipes
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/recipes/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
+RUN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-clock>=0.6.1:devel/R-cran-clock \
 		R-cran-dplyr>=1.1.0:math/R-cran-dplyr \
 		R-cran-ellipsis>0:devel/R-cran-ellipsis \
@@ -22,15 +22,13 @@ CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
 		R-cran-lubridate>=1.8.0:devel/R-cran-lubridate \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-purrr>=1.0.0:devel/R-cran-purrr \
-		R-cran-rlang>=1.0.3:devel/R-cran-rlang \
+		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
 		R-cran-tibble>0:devel/R-cran-tibble \
 		R-cran-tidyr>=1.0.0:devel/R-cran-tidyr \
 		R-cran-tidyselect>=1.2.0:devel/R-cran-tidyselect \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
 		R-cran-vctrs>=0.5.0:devel/R-cran-vctrs \
 		R-cran-withr>0:devel/R-cran-withr
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist
 
