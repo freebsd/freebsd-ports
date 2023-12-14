@@ -1,5 +1,5 @@
 PORTNAME=	device_detector
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
