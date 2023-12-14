@@ -1,5 +1,5 @@
 PORTNAME=	readline-ext
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
