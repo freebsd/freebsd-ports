@@ -632,7 +632,10 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imap-ssl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imap-store.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/imap-tls.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/interface.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ipv6.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/keepalive.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/localport.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/maxconnects.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-app.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/multi-debugcallback.c
@@ -664,6 +667,7 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/progressfunc.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/protofeats.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/resolve.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rtsp-options.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sendrecv.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sepheaders.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sessioninfo.c
