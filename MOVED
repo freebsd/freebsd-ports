@@ -8177,3 +8177,4 @@ net/py-anonfile||2023-12-07|Has expired: anonfile.com has shut down
 www/thundersnarf||2023-12-12|Has expired: Depends on deprecated php80
 textproc/stardict-quick||2023-12-12|Has expired: unfetchable
 devel/rubygem-view_component-rails61|devel/rubygem-view_component-rails70|2023-12-14|Obsolete, use devel/rubygem-view_component-rails70 instead
+devel/rubygem-cucumber-messages23|devel/rubygem-cucumber-messages|2023-12-14|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
