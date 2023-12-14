@@ -37,7 +37,7 @@ GH_TUPLE=	\
 		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:v0.3.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.13.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:v0.11.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.12.0:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
@@ -90,8 +90,8 @@ GH_TUPLE=	\
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		pquerna:otp:v1.3.0:pquerna_otp/vendor/github.com/pquerna/otp \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
-		quic-go:qtls-go1-20:v0.3.4:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
-		quic-go:quic-go:v0.39.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
+		quic-go:qtls-go1-20:v0.4.1:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
+		quic-go:quic-go:v0.40.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		redis:go-redis:v9.0.3:redis_go_redis/vendor/github.com/redis/go-redis/v9 \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		segmentio:analytics-go:v3.1.0:segmentio_analytics_go/vendor/gopkg.in/segmentio/analytics-go.v3 \
@@ -106,12 +106,13 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:96ee88859b9d:storj_common/vendor/storj.io/common \
+		storj:common:09481ec98b57:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
-		storj:monkit-jaeger:d100d7589f41:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
+		storj:infectious:v0.0.1:storj_infectious/vendor/storj.io/infectious \
+		storj:monkit-jaeger:f15e6e8b7e8c:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:c4ba17033c6c:storj_picobuf/vendor/storj.io/picobuf \
-		storj:private:ca2d4ab44679:storj_private/vendor/storj.io/private \
-		storj:uplink:v1.12.1:storj_uplink/vendor/storj.io/uplink \
+		storj:private:ae62725d6691:storj_private/vendor/storj.io/private \
+		storj:uplink:0de4b39f3dc5:storj_uplink/vendor/storj.io/uplink \
 		stretchr:testify:v1.8.4:stretchr_testify/vendor/github.com/stretchr/testify \
 		stripe:stripe-go:v75.8.0:stripe_stripe_go/vendor/github.com/stripe/stripe-go/v75 \
 		subosito:gotenv:v1.2.0:subosito_gotenv/vendor/github.com/subosito/gotenv \
@@ -120,7 +121,6 @@ GH_TUPLE=	\
 		uber-go:multierr:v1.6.0:uber_go_multierr/vendor/go.uber.org/multierr \
 		uber-go:zap:v1.16.0:uber_go_zap/vendor/go.uber.org/zap \
 		vbauerster:mpb:v8.4.0:vbauerster_mpb/vendor/github.com/vbauerster/mpb/v8 \
-		vivint:infectious:25a574ae18a3:vivint_infectious/vendor/github.com/vivint/infectious \
 		xtgo:uuid:a0b114877d4c:xtgo_uuid/vendor/github.com/xtgo/uuid \
 		yuin:gopher-lua:ab39c6098bdb:yuin_gopher_lua/vendor/github.com/yuin/gopher-lua \
 		zeebo:admission:v3.0.3:zeebo_admission/vendor/github.com/zeebo/admission/v3 \
