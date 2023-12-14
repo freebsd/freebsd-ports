@@ -1,5 +1,5 @@
 PORTNAME=	JSON-Path
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,14 +10,13 @@ WWW=		https://metacpan.org/release/JSON-Path
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Carp-Assert>=0:devel/p5-Carp-Assert \
 		p5-Exporter-Easy>=0:devel/p5-Exporter-Easy \
 		p5-Exporter-Tiny>=0:devel/p5-Exporter-Tiny \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
-		p5-JSON-Parse>=0:devel/p5-JSON-Parse \
 		p5-LV>=0:devel/p5-LV \
 		p5-Readonly>=0:devel/p5-Readonly \
 		p5-Tie-IxHash>=0:devel/p5-Tie-IxHash \
