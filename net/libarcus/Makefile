@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		cmake compiler:c++11-lang python pyqt:5
+USES=		cmake compiler:c++17-lang python pyqt:5
 USE_PYQT=	pysip
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
@@ -24,4 +24,5 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD} \
 				-DPYTHON_INCLUDEDIR:STRING=${PYTHON_INCLUDEDIR}
+
 .include <bsd.port.mk>
