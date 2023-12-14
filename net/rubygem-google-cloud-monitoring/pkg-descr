@@ -1,0 +1,11 @@
+Ruby Client for the Cloud Monitoring API
+
+Cloud Monitoring collects metrics, events, and metadata from Google Cloud,
+Amazon Web Services (AWS), hosted uptime probes, and application
+instrumentation.
+
+Actual client classes for the various versions of this API are defined in
+versioned client gems, with names of the form google-cloud-monitoring-v*. The
+gem google-cloud-monitoring is the main client library that brings the verisoned
+gems in as dependencies, and provides high-level methods for constructing
+clients.
