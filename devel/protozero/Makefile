@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 USE_GITHUB=	yes
 GH_ACCOUNT=	mapbox
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++17-lang
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 TEST_TARGET=	test
 NO_ARCH=	yes  # header only library
 
