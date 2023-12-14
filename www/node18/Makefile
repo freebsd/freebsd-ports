@@ -68,7 +68,7 @@ NLS_LIB_DEPENDS=	libicui18n.so:devel/icu
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && (${ARCH} == aarch64 || ${ARCH:Mpowerpc64*})
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && (${ARCH} == aarch64 || ${ARCH} == armv7 || ${ARCH:Mpowerpc64*})
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 
