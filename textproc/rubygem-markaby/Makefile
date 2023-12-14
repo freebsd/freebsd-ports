@@ -1,5 +1,5 @@
 PORTNAME=	markaby
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
