@@ -15,7 +15,6 @@ lib/node_modules/npm/bin/npm.ps1
 @(,,755) lib/node_modules/npm/bin/npx-cli.js
 lib/node_modules/npm/bin/npx.cmd
 lib/node_modules/npm/bin/npx.ps1
-lib/node_modules/npm/docs/README.md
 lib/node_modules/npm/docs/content/commands/npm-access.md
 lib/node_modules/npm/docs/content/commands/npm-adduser.md
 lib/node_modules/npm/docs/content/commands/npm-audit.md
@@ -99,6 +98,7 @@ lib/node_modules/npm/docs/content/using-npm/removal.md
 lib/node_modules/npm/docs/content/using-npm/scope.md
 lib/node_modules/npm/docs/content/using-npm/scripts.md
 lib/node_modules/npm/docs/content/using-npm/workspaces.md
+lib/node_modules/npm/docs/lib/index.js
 lib/node_modules/npm/docs/output/commands/npm-access.html
 lib/node_modules/npm/docs/output/commands/npm-adduser.html
 lib/node_modules/npm/docs/output/commands/npm-audit.html
@@ -1363,9 +1363,6 @@ lib/node_modules/npm/node_modules/minipass/dist/esm/package.json
 lib/node_modules/npm/node_modules/minipass/package.json
 lib/node_modules/npm/node_modules/minipass-collect/LICENSE
 lib/node_modules/npm/node_modules/minipass-collect/index.js
-lib/node_modules/npm/node_modules/minipass-collect/node_modules/minipass/LICENSE
-lib/node_modules/npm/node_modules/minipass-collect/node_modules/minipass/index.js
-lib/node_modules/npm/node_modules/minipass-collect/node_modules/minipass/package.json
 lib/node_modules/npm/node_modules/minipass-collect/package.json
 lib/node_modules/npm/node_modules/minipass-fetch/LICENSE
 lib/node_modules/npm/node_modules/minipass-fetch/lib/abort-error.js
