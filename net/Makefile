@@ -1316,6 +1316,7 @@
     SUBDIR += rubygem-google-cloud-monitoring
     SUBDIR += rubygem-google-cloud-monitoring-dashboard-v1
     SUBDIR += rubygem-google-cloud-monitoring-metrics_scope-v1
+    SUBDIR += rubygem-google-cloud-monitoring-v3
     SUBDIR += rubygem-google-cloud-pubsub
     SUBDIR += rubygem-google-cloud-pubsub-v1
     SUBDIR += rubygem-google-cloud-resource_manager
