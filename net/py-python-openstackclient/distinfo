@@ -1,3 +1,3 @@
-TIMESTAMP = 1695143349
-SHA256 (python-openstackclient-6.3.0.tar.gz) = 9ba0bdf8d03087e585b40a8dcc429cebbdd5fdec24c1d60a102bf9f331320df1
-SIZE (python-openstackclient-6.3.0.tar.gz) = 899811
+TIMESTAMP = 1702028136
+SHA256 (python-openstackclient-6.4.0.tar.gz) = 0c6ab40168ea51fed68819aa251f8253de9a61dacc96dd1b64739f189fc2183f
+SIZE (python-openstackclient-6.4.0.tar.gz) = 915402
