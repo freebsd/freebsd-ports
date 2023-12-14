@@ -4170,6 +4170,7 @@
     SUBDIR += protobuf-c
     SUBDIR += protobuf-java
     SUBDIR += protobuf25
+    SUBDIR += protobuf3
     SUBDIR += prototool
     SUBDIR += protozero
     SUBDIR += pructl

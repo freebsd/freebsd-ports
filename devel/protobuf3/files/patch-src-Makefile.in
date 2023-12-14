@@ -1,0 +1,124 @@
+--- src/Makefile.in.orig	2022-12-14 14:21:49 UTC
++++ src/Makefile.in
+@@ -492,9 +492,9 @@ protobuf_lazy_descriptor_test_OBJECTS =  \
+ 	$(nodist_protobuf_lazy_descriptor_test_OBJECTS)
+ protobuf_lazy_descriptor_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	libprotobuf.la libprotoc.la \
+-	$(GOOGLETEST_BUILD_DIR)/lib/libgtest.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++	-lgtest \
++	-lgmock \
++	-lgmock_main
+ protobuf_lazy_descriptor_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(protobuf_lazy_descriptor_test_CXXFLAGS) $(CXXFLAGS) \
+@@ -513,9 +513,9 @@ protobuf_lite_arena_test_OBJECTS =  \
+ 	$(am_protobuf_lite_arena_test_OBJECTS) \
+ 	$(nodist_protobuf_lite_arena_test_OBJECTS)
+ protobuf_lite_arena_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	libprotobuf-lite.la $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++	libprotobuf-lite.la -lgtest \
++	-lgmock \
++	-lgmock_main
+ protobuf_lite_arena_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(protobuf_lite_arena_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
+@@ -535,9 +535,9 @@ nodist_protobuf_lite_test_OBJECTS = $(am__objects_11)
+ protobuf_lite_test_OBJECTS = $(am_protobuf_lite_test_OBJECTS) \
+ 	$(nodist_protobuf_lite_test_OBJECTS)
+ protobuf_lite_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+-	libprotobuf-lite.la $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++	libprotobuf-lite.la -lgtest \
++	-lgmock \
++	-lgmock_main
+ protobuf_lite_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(protobuf_lite_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) \
+@@ -681,9 +681,9 @@ nodist_protobuf_test_OBJECTS = $(am__objects_15)
+ protobuf_test_OBJECTS = $(am_protobuf_test_OBJECTS) \
+ 	$(nodist_protobuf_test_OBJECTS)
+ protobuf_test_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
+-	libprotoc.la $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la \
+-	$(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++	libprotoc.la -lgtest \
++	-lgmock \
++	-lgmock_main
+ protobuf_test_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+ 	$(protobuf_test_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+@@ -697,7 +697,7 @@ am_test_plugin_OBJECTS = google/protobuf/compiler/test
+ 	google/protobuf/testing/test_plugin-file.$(OBJEXT)
+ test_plugin_OBJECTS = $(am_test_plugin_OBJECTS)
+ test_plugin_DEPENDENCIES = $(am__DEPENDENCIES_1) libprotobuf.la \
+-	libprotoc.la $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la
++	libprotoc.la -lgtest
+ am__zcgunzip_SOURCES_DIST = google/protobuf/testing/zcgunzip.cc
+ @HAVE_ZLIB_TRUE@am_zcgunzip_OBJECTS =  \
+ @HAVE_ZLIB_TRUE@	google/protobuf/testing/zcgunzip.$(OBJEXT)
+@@ -2346,9 +2346,9 @@ GOOGLEMOCK_BUILD_DIR = ../third_party/googletest/googl
+ GOOGLETEST_SRC_DIR = $(srcdir)/../third_party/googletest/googletest
+ GOOGLEMOCK_SRC_DIR = $(srcdir)/../third_party/googletest/googlemock
+ protobuf_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
+-                      $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la     \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la     \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++                      -lgtest     \
++                      -lgmock     \
++                      -lgmock_main
+ 
+ protobuf_test_CPPFLAGS = -I$(GOOGLETEST_SRC_DIR)/include \
+                          -I$(GOOGLEMOCK_SRC_DIR)/include
+@@ -2446,9 +2446,9 @@ nodist_protobuf_test_SOURCES = $(protoc_outputs)
+ # Run cpp_unittest again with PROTOBUF_TEST_NO_DESCRIPTORS defined.
+ protobuf_lazy_descriptor_test_LDADD = $(PTHREAD_LIBS) libprotobuf.la \
+                       libprotoc.la                                   \
+-                      $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la        \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la        \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++                      -lgtest        \
++                      -lgmock        \
++                      -lgmock_main
+ 
+ protobuf_lazy_descriptor_test_CPPFLAGS = -I$(GOOGLEMOCK_SRC_DIR)/include \
+                                          -I$(GOOGLETEST_SRC_DIR)/include \
+@@ -2475,9 +2475,9 @@ COMMON_LITE_TEST_SOURCES = \
+ # full runtime and we want to make sure this test builds without full
+ # runtime.
+ protobuf_lite_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la     \
+-                           $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la \
+-                           $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la \
+-                           $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++                           -lgtest \
++                           -lgmock \
++                           -lgmock_main
+ 
+ protobuf_lite_test_CPPFLAGS = -I$(GOOGLEMOCK_SRC_DIR)/include \
+                              -I$(GOOGLETEST_SRC_DIR)/include
+@@ -2493,9 +2493,9 @@ nodist_protobuf_lite_test_SOURCES = $(protoc_lite_outp
+ # gtest when building the test internally our memory sanitizer doesn't detect
+ # memory leaks (don't know why).
+ protobuf_lite_arena_test_LDADD = $(PTHREAD_LIBS) libprotobuf-lite.la \
+-                      $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la        \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock.la        \
+-                      $(GOOGLEMOCK_BUILD_DIR)/lib/libgmock_main.la
++                      -lgtest        \
++                      -lgmock        \
++                      -lgmock_main
+ 
+ protobuf_lite_arena_test_CPPFLAGS = -I$(GOOGLEMOCK_SRC_DIR)/include  \
+                                     -I$(GOOGLETEST_SRC_DIR)/include
+@@ -2509,7 +2509,7 @@ nodist_protobuf_lite_arena_test_SOURCES = $(protoc_lit
+ 
+ # Test plugin binary.
+ test_plugin_LDADD = $(PTHREAD_LIBS) libprotobuf.la libprotoc.la \
+-                    $(GOOGLETEST_BUILD_DIR)/lib/libgtest.la
++                    -lgtest
+ 
+ test_plugin_CPPFLAGS = -I$(GOOGLETEST_SRC_DIR)/include
+ test_plugin_SOURCES = \
