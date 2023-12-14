@@ -1,6 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	1.17.0
-PORTREVISION=	1
+PORTVERSION=	1.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 
-RUN_DEPENDS=	rubygem-datadog-ci>=0.4.0<0.5:devel/rubygem-datadog-ci \
+RUN_DEPENDS=	rubygem-datadog-ci>=0.5.0<0.6:devel/rubygem-datadog-ci \
 		rubygem-debase-ruby_core_source>=3.2.3<3.2.3_99:devel/rubygem-debase-ruby_core_source \
 		rubygem-libdatadog>=5.0.0.1.0<5.0.0.2:devel/rubygem-libdatadog \
 		rubygem-libddwaf>=1.14.0.0.0<1.14.0.1:devel/rubygem-libddwaf \
