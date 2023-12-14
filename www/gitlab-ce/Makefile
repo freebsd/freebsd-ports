@@ -1,13 +1,12 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.6.1
+PORTVERSION=	16.6.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	www devel
 
 # include patch to fix database migration
-https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018.patch
-PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
-PATCHFILES+=	138018.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018
+#https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018.patch
+#PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/merge_requests/
+#PATCHFILES+=	138018.patch:-p1 # https://gitlab.com/gitlab-org/gitlab/-/merge_requests/138018
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Web GUI for managing git repositories
