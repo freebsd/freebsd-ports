@@ -1,5 +1,5 @@
 PORTNAME=	fontbakery
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.6
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://github.com/fonttools/fontbakery/releases/download/v${PORTVERSION}/
@@ -50,23 +50,24 @@ TYPENETWORK_DESC=	Checks for Type Network
 UFO_SOURCES_DESC=	Checks for UFO sources
 
 FONTVAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR}
-GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.3.0:x11-fonts/py-axisregistry@${PY_FLAVOR} \
+GOOGLEFONTS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}axisregistry>=0.4.5:x11-fonts/py-axisregistry@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.7.1:www/py-beautifulsoup@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}dehinter>=3.1.0:print/py-dehinter@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}font-v>=0.6.0:print/py-font-v@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}fonttools>=4.39.0:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.3.0:x11-fonts/py-gflanguages@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.5.0:print/py-glyphsets@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}gflanguages>=0.5.10:x11-fonts/py-gflanguages@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}glyphsets>=0.6.6:print/py-glyphsets@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}protobuf>=3.7.0,1:devel/py-protobuf@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.1:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
 ISO15008_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0:print/py-uharfbuzz@${PY_FLAVOR}
 SHAPING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}collidoscope>=0.5.2:print/py-collidoscope@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.1:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}stringbrewer>=0:devel/py-stringbrewer@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.25.2:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
 TYPENETWORK_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.7.1:www/py-beautifulsoup@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.2.0:x11-fonts/py-shaperglot@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}shaperglot>=0.3.1:x11-fonts/py-shaperglot@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ufo2ft>=2.25.2:x11-fonts/py-ufo2ft@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0:print/py-uharfbuzz@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}vharfbuzz>=0.2.0:print/py-vharfbuzz@${PY_FLAVOR}
