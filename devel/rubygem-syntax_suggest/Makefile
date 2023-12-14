@@ -1,5 +1,5 @@
 PORTNAME=	syntax_suggest
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
