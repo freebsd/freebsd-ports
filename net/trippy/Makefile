@@ -21,6 +21,8 @@ SUID_DESC=		Use suid to allow execution as non root
 SUID_PLIST_FILES=	"@(,,4110) bin/trip"
 SUID_PLIST_FILES_OFF=	"@(,,0100) bin/trip"
 
+PORTSCOUT=	skipv:1.0.0
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
 
