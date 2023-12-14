@@ -20,9 +20,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}einops>=0:misc/py-einops@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.9+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31000
+IGNORE=		devel/py-etils requires Python 3.10+
+.endif
+
+.include <bsd.port.post.mk>
