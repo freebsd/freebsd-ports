@@ -2210,6 +2210,7 @@
     SUBDIR += rubygem-rdf-normalize
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-redis-rack
+    SUBDIR += rubygem-redis-rack2
     SUBDIR += rubygem-redis-rails
     SUBDIR += rubygem-redis-rails-rails5
     SUBDIR += rubygem-redis-rails-rails50
