@@ -26,6 +26,7 @@
 %%WWWDIR%%/COPYING.txt
 %%WWWDIR%%/LICENSE.txt
 %%WWWDIR%%/README.md
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/about.php
 %%WWWDIR%%/action.php
 %%WWWDIR%%/admin.php
@@ -290,9 +291,11 @@
 %%WWWDIR%%/admin/themes/default/index.php
 %%WWWDIR%%/admin/themes/default/js/LocalStorageCache.js
 %%WWWDIR%%/admin/themes/default/js/addAlbum.js
+%%WWWDIR%%/admin/themes/default/js/album_selector.js
 %%WWWDIR%%/admin/themes/default/js/albums.js
 %%WWWDIR%%/admin/themes/default/js/batchManagerGlobal.js
 %%WWWDIR%%/admin/themes/default/js/cat_list.js
+%%WWWDIR%%/admin/themes/default/js/cat_modify.js
 %%WWWDIR%%/admin/themes/default/js/common.js
 %%WWWDIR%%/admin/themes/default/js/datepicker.js
 %%WWWDIR%%/admin/themes/default/js/doubleSlider.js
@@ -337,6 +340,7 @@
 %%WWWDIR%%/admin/themes/default/template/help.tpl
 %%WWWDIR%%/admin/themes/default/template/history.tpl
 %%WWWDIR%%/admin/themes/default/template/include/add_album.inc.tpl
+%%WWWDIR%%/admin/themes/default/template/include/album_selector.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/autosize.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/colorbox.inc.tpl
 %%WWWDIR%%/admin/themes/default/template/include/datepicker.inc.tpl
@@ -413,7 +417,6 @@
 %%WWWDIR%%/admin/updates_pwg.php
 %%WWWDIR%%/admin/user_activity.php
 %%WWWDIR%%/admin/user_list.php
-%%WWWDIR%%/admin/user_list_backend.php
 %%WWWDIR%%/admin/user_perm.php
 %%WWWDIR%%/comments.php
 %%WWWDIR%%/doc/COPYING
@@ -476,8 +479,10 @@
 %%WWWDIR%%/include/passwordhash.class.php
 %%WWWDIR%%/include/php_compat/gzopen.php
 %%WWWDIR%%/include/php_compat/index.php
+%%WWWDIR%%/include/phpmailer/DSNConfigurator.php
 %%WWWDIR%%/include/phpmailer/Exception.php
 %%WWWDIR%%/include/phpmailer/OAuth.php
+%%WWWDIR%%/include/phpmailer/OAuthTokenProvider.php
 %%WWWDIR%%/include/phpmailer/PHPMailer.php
 %%WWWDIR%%/include/phpmailer/POP3.php
 %%WWWDIR%%/include/phpmailer/SMTP.php
@@ -495,235 +500,10 @@
 %%WWWDIR%%/include/random_compat/random_bytes_mcrypt.php
 %%WWWDIR%%/include/random_compat/random_int.php
 %%WWWDIR%%/include/section_init.inc.php
-%%WWWDIR%%/include/smarty/.github/workflows/ci.yml
 %%WWWDIR%%/include/smarty/CHANGELOG.md
 %%WWWDIR%%/include/smarty/LICENSE
 %%WWWDIR%%/include/smarty/README.md
 %%WWWDIR%%/include/smarty/SECURITY.md
-%%WWWDIR%%/include/smarty/composer.json
-%%WWWDIR%%/include/smarty/docs/_config.yml
-%%WWWDIR%%/include/smarty/docs/appendixes/tips.md
-%%WWWDIR%%/include/smarty/docs/appendixes/troubleshooting.md
-%%WWWDIR%%/include/smarty/docs/designers/chapter-debugging-console.md
-%%WWWDIR%%/include/smarty/docs/designers/config-files.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-escaping.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-math.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-syntax-attributes.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-syntax-comments.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-syntax-functions.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-syntax-quotes.md
-%%WWWDIR%%/include/smarty/docs/designers/language-basic-syntax/language-syntax-variables.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-append.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-assign.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-block.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-call.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-capture.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-config-load.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-debug.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-extends.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-for.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-foreach.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-function.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-if.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-include-php.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-include.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-insert.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-ldelim.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-literal.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-nocache.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-section.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-setfilter.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-shortform-assign.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-strip.md
-%%WWWDIR%%/include/smarty/docs/designers/language-builtin-functions/language-function-while.md
-%%WWWDIR%%/include/smarty/docs/designers/language-combining-modifiers.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-counter.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-cycle.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-debug.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-eval.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-fetch.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-checkboxes.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-image.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-options.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-radios.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-select-date.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-select-time.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-html-table.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-mailto.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-math.md
-%%WWWDIR%%/include/smarty/docs/designers/language-custom-functions/language-function-textformat.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-capitalize.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-cat.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-count-characters.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-count-paragraphs.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-count-sentences.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-count-words.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-date-format.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-default.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-escape.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-from-charset.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-indent.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-lower.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-nl2br.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-regex-replace.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-replace.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-spacify.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-string-format.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-strip-tags.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-strip.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-to-charset.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-truncate.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-unescape.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-upper.md
-%%WWWDIR%%/include/smarty/docs/designers/language-modifiers/language-modifier-wordwrap.md
-%%WWWDIR%%/include/smarty/docs/designers/language-variables.md
-%%WWWDIR%%/include/smarty/docs/designers/language-variables/language-assigned-variables.md
-%%WWWDIR%%/include/smarty/docs/designers/language-variables/language-config-variables.md
-%%WWWDIR%%/include/smarty/docs/designers/language-variables/language-variable-scopes.md
-%%WWWDIR%%/include/smarty/docs/designers/language-variables/language-variables-smarty.md
-%%WWWDIR%%/include/smarty/docs/features.md
-%%WWWDIR%%/include/smarty/docs/getting-started.md
-%%WWWDIR%%/include/smarty/docs/index.md
-%%WWWDIR%%/include/smarty/docs/philosophy.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-objects.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-outputfilters.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-postfilters.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-prefilters.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-security.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-static-classes.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-streams.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-template-inheritance.md
-%%WWWDIR%%/include/smarty/docs/programmers/advanced-features/advanced-features-template-settings.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-add-config-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-add-plugins-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-add-template-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-append-by-ref.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-append.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-assign-by-ref.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-assign.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-all-assign.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-all-cache.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-assign.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-cache.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-compiled-tpl.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-clear-config.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-compile-all-config.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-compile-all-templates.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-config-load.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-create-data.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-create-template.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-disable-security.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-display.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-enable-security.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-fetch.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-cache-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-compile-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-config-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-config-vars.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-plugins-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-registered-object.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-tags.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-template-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-get-template-vars.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-is-cached.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-load-filter.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-mute-expected-errors.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-cacheresource.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-class.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-default-plugin-handler.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-filter.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-object.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-plugin.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-register-resource.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-set-cache-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-set-compile-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-set-config-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-set-plugins-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-set-template-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-template-exists.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-test-install.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-unregister-cacheresource.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-unregister-filter.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-unregister-object.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-unregister-plugin.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-functions/api-unregister-resource.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-allow-php-templates.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-auto-literal.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-autoload-filters.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-cache-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-cache-id.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-cache-lifetime.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-cache-locking.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-cache-modified-check.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-caching-type.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-caching.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-compile-check.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-compile-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-compile-id.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-compile-locking.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-compiler-class.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-config-booleanize.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-config-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-config-overwrite.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-config-read-hidden.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-debug-template.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-debugging-ctrl.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-debugging.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-default-config-handler-func.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-default-config-type.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-default-modifiers.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-default-resource-type.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-default-template-handler-func.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-direct-access-security.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-error-reporting.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-escape-html.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-force-cache.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-force-compile.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-left-delimiter.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-locking-timeout.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-merge-compiled-includes.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-php-handling.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-plugins-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-right-delimiter.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-smarty-debug-id.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-template-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-trusted-dir.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-use-include-path.md
-%%WWWDIR%%/include/smarty/docs/programmers/api-variables/variable-use-sub-dirs.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching/caching-cacheable.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching/caching-custom.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching/caching-groups.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching/caching-multiple-caches.md
-%%WWWDIR%%/include/smarty/docs/programmers/caching/caching-setting-up.md
-%%WWWDIR%%/include/smarty/docs/programmers/charset.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-block-functions.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-compiler-functions.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-functions.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-howto.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-inserts.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-modifiers.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-naming-conventions.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-outputfilters.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-prefilters-postfilters.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-resources.md
-%%WWWDIR%%/include/smarty/docs/programmers/plugins/plugins-writing.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/resources-custom.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/resources-extends.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/resources-file.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/resources-streams.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/resources-string.md
-%%WWWDIR%%/include/smarty/docs/programmers/resources/template-resources.md
-%%WWWDIR%%/include/smarty/docs/programmers/smarty-constants.md
 %%WWWDIR%%/include/smarty/lexer/smarty_internal_configfilelexer.plex
 %%WWWDIR%%/include/smarty/lexer/smarty_internal_configfileparser.y
 %%WWWDIR%%/include/smarty/lexer/smarty_internal_templatelexer.plex
@@ -732,6 +512,7 @@
 %%WWWDIR%%/include/smarty/libs/Smarty.class.php
 %%WWWDIR%%/include/smarty/libs/bootstrap.php
 %%WWWDIR%%/include/smarty/libs/debug.tpl
+%%WWWDIR%%/include/smarty/libs/functions.php
 %%WWWDIR%%/include/smarty/libs/plugins/block.textformat.php
 %%WWWDIR%%/include/smarty/libs/plugins/function.counter.php
 %%WWWDIR%%/include/smarty/libs/plugins/function.cycle.php
@@ -746,10 +527,13 @@
 %%WWWDIR%%/include/smarty/libs/plugins/function.mailto.php
 %%WWWDIR%%/include/smarty/libs/plugins/function.math.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.capitalize.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifier.count.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.date_format.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.debug_print_var.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.escape.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifier.explode.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.mb_wordwrap.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifier.number_format.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.regex_replace.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.replace.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifier.spacify.php
@@ -764,10 +548,14 @@
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.from_charset.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.indent.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.lower.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.nl2br.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.noprint.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.round.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.str_repeat.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.string_format.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strip.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strip_tags.php
+%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strlen.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.to_charset.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.unescape.php
 %%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.upper.php
@@ -1018,6 +806,12 @@
 %%WWWDIR%%/install/db/162-database.php
 %%WWWDIR%%/install/db/163-database.php
 %%WWWDIR%%/install/db/164-database.php
+%%WWWDIR%%/install/db/165-database.php
+%%WWWDIR%%/install/db/166-database.php
+%%WWWDIR%%/install/db/167-database.php
+%%WWWDIR%%/install/db/168-database.php
+%%WWWDIR%%/install/db/169-database.php
+%%WWWDIR%%/install/db/170-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -1073,6 +867,7 @@
 %%WWWDIR%%/install/upgrade_1.7.0.php
 %%WWWDIR%%/install/upgrade_11.0.0.php
 %%WWWDIR%%/install/upgrade_12.0.0.php
+%%WWWDIR%%/install/upgrade_13.0.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
 %%WWWDIR%%/install/upgrade_2.10.0.php
@@ -1098,7 +893,6 @@
 %%WWWDIR%%/random.php
 %%WWWDIR%%/register.php
 %%WWWDIR%%/search.php
-%%WWWDIR%%/search_rules.php
 %%WWWDIR%%/tags.php
 %%WWWDIR%%/template-extension/distributed/samples/my-picture.tpl
 %%WWWDIR%%/template-extension/distributed/samples/my-thumbnails.tpl
@@ -3095,6 +2889,9 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/main.inc.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/pem_metadata.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/style.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/clear-search.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/dark-search.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/search.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/fix-ie5-ie6.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/fix-ie7.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/fix-khtml.css
@@ -3105,12 +2902,30 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/img_small.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/infos.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/afdesign.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/afphoto.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/afpub.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/ai.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/avi.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/doc.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/docx.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/idml.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/indd.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/mov.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/mp3.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/mp4.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/mpg.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/ogg.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/ppt.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/pptx.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/prpoj.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/psd.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/txt.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/unknown.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/xd.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/xls.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/xlsx.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/mimetypes/zip.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/note.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/icon/piwigo.org-icon 1.svg
@@ -3132,6 +2947,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/jquery.cookie.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/jquery.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/jquery.min.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/mcs.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/plugins/Chart.min.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/plugins/Chart.min.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/js/plugins/Jcrop.gif
@@ -3533,6 +3349,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/identification.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/autosize.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/colorbox.inc.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/search_filters.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/index.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/infos_errors.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/mail/index.php
@@ -3584,8 +3401,25 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/thumbnails.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/theme.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/themeconf.inc.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/LICENSE.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/README.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/config.json
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/animation.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/fontello-codes.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/fontello-embedded.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/fontello-ie7-codes.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/fontello-ie7.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/css/fontello.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/demo.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/font/fontello.eot
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/font/fontello.svg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/font/fontello.ttf
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/font/fontello.woff
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/vendor/fontello/font/fontello.woff2
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/watermarks/Owned_Stamp.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/watermarks/Sample.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/watermarks/copyright-2023.png
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/watermarks/copyright-2024.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/watermarks/copyright.png
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/admin/admin.inc.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/admin/admin.tpl
@@ -3693,6 +3527,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.ttf
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/font/modus.woff2
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/fontello/fontello-cf8883f3.zip
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/hf_base.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconfontello.css.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/css/iconset.css
