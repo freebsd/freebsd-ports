@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-12-13 20:37:19 UTC
++++ pyproject.toml
+@@ -41,7 +41,7 @@ include = [
+ 
+ [tool.poetry.dependencies]
+ python = ">=3.8.0"
+-colorama = {version = ">=0.4.6", optional = true}
++colorama = {version = ">=0.4.5", optional = true}
+ 
+ [tool.poetry.extras]
+ colors = ["colorama"]
