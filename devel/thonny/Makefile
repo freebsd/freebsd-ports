@@ -1,5 +1,6 @@
 PORTNAME=	thonny
 PORTVERSION=	4.1.4
+PORTREVISION=	1
 CATEGORIES=	devel education python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,7 +20,9 @@ RUN_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>=3.4:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}send2trash>=1.5:deskutils/py-send2trash@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asttokens>=2.0:devel/py-asttokens@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pip>=0:devel/py-pip@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist distutils
