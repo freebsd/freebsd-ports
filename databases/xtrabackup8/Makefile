@@ -1,7 +1,7 @@
 PORTNAME=	xtrabackup
 PORTVERSION=	8.0.31
 DISTVERSIONSUFFIX=	-24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/percona/percona-xtrabackup/archive/:percona \
 		SF/boost/boost/${BOOST_VERSION}:boost
