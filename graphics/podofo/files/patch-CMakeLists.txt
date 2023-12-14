@@ -1,18 +1,16 @@
---- CMakeLists.txt.orig	2023-10-29 16:21:49 UTC
+--- CMakeLists.txt.orig	2023-11-28 09:23:37 UTC
 +++ CMakeLists.txt
-@@ -21,9 +21,10 @@ endif()
+@@ -21,8 +21,8 @@ endif()
  set(PODOFO_VERSION_MAJOR "0" CACHE STRING "Major part of podofo version number")
  set(PODOFO_VERSION_MINOR "10" CACHE STRING "Minor part of podofo version number")
- set(PODOFO_VERSION_PATCH "2" CACHE STRING "Patchlevel part of podofo version number")
+ set(PODOFO_VERSION_PATCH "3" CACHE STRING "Patchlevel part of podofo version number")
 -set(PODOFO_VERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  set(PODOFO_SOVERSION "2")
 +set(PODOFO_VERSION "${PODOFO_SOVERSION}.${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  
-+
  #
  # Main includes
- #
-@@ -149,6 +150,7 @@ else()
+@@ -149,6 +149,7 @@ else()
      message("Libidn not found. AES-256 Encryption support will be disabled")
  endif()
  
@@ -20,7 +18,7 @@
  find_package(JPEG)
  
  if(JPEG_FOUND)
-@@ -157,7 +159,9 @@ if(JPEG_FOUND)
+@@ -157,7 +158,9 @@ if(JPEG_FOUND)
  else()
      message("Libjpeg not found. JPEG support will be disabled")
  endif()
@@ -30,7 +28,7 @@
  find_package(TIFF)
  
  if(TIFF_FOUND)
-@@ -166,7 +170,9 @@ if(TIFF_FOUND)
+@@ -166,7 +169,9 @@ if(TIFF_FOUND)
  else()
      message("Libtiff not found. TIFF support will be disabled")
  endif()
@@ -40,7 +38,7 @@
  find_package(PNG)
  
  if(PNG_FOUND)
-@@ -175,6 +181,7 @@ if(PNG_FOUND)
+@@ -175,6 +180,7 @@ if(PNG_FOUND)
  else()
      message("LibPng not found. PNG support will be disabled")
      set(PNG_LIBRARIES "")

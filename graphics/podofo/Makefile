@@ -1,5 +1,5 @@
 PORTNAME=	podofo
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	graphics print
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	fast_float>=0:math/fast_float \
 		date>=0:devel/date \
 		libfmt>=0:devel/libfmt \
-		utf8cpp>=4.0.0:devel/utf8cpp
+		utf8cpp>=4.0.3:devel/utf8cpp
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn
