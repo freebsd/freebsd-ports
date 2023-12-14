@@ -5,7 +5,10 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official library for Google Cloud Storage
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-storage
+WWW=		https://cloud.google.com/ruby/docs/reference/google-cloud-storage/latest/ \
+		https://googleapis.github.io/google-cloud-ruby/docs/ \
+		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-storage \
+		https://github.com/googleapis/google-cloud-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
