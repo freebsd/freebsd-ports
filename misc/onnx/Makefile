@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 #BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		cmake:testing compiler:c++11-lang python:build
+USES=		cmake:testing compiler:c++17-lang python:build
 
 USE_GITHUB=	yes
 

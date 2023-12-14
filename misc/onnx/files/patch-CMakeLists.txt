@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-08-24 22:20:34 UTC
++++ CMakeLists.txt
+@@ -58,7 +58,7 @@ endif()
+ # Required to use /std:c++17 or higher on Windows
+ # For other platforms, set C++11 as standard for the whole project
+ if(NOT MSVC)
+-  set(CMAKE_CXX_STANDARD 11)
++  set(CMAKE_CXX_STANDARD 17)
+ else()
+   string(APPEND CMAKE_CXX_FLAGS " /std:c++17")
+ endif()
