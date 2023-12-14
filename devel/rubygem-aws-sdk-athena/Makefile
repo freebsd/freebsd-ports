@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-athena
-PORTVERSION=	1.78.0
+PORTVERSION=	1.79.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
