@@ -52,7 +52,7 @@ SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_F
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 31000
-IGNORE=         Requires Python-3.10 or later
+IGNORE=		requires Python 3.10 or later
 .endif
 
 post-build-HTMLDOCS-on:
