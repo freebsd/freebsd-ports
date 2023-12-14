@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	scrosby
 GH_PROJECT=	OSM-binary
 
-USES=		cmake compiler:c++11-lang
-USE_CXXSTD=	c++11
+USES=		cmake compiler:c++17-lang
+USE_CXXSTD=	c++17
 
 .include <bsd.port.mk>
