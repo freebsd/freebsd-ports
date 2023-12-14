@@ -1,4 +1,10 @@
 bin/ghemical
+lib/locale/de/LC_MESSAGES/ghemical.mo
+lib/locale/fi/LC_MESSAGES/ghemical.mo
+lib/locale/mk/LC_MESSAGES/ghemical.mo
+lib/locale/pt_BR/LC_MESSAGES/ghemical.mo
+lib/locale/ru/LC_MESSAGES/ghemical.mo
+lib/locale/sq/LC_MESSAGES/ghemical.mo
 %%DATADIR%%/%%GHEMICAL_VERSION%%/examples/2-chlorobutane.gpr
 %%DATADIR%%/%%GHEMICAL_VERSION%%/examples/3-phenylpropanal.gpr
 %%DATADIR%%/%%GHEMICAL_VERSION%%/examples/PeriodicTable.gpr
@@ -145,9 +151,3 @@ bin/ghemical
 %%DATADIR%%/%%GHEMICAL_VERSION%%/user-docs/using_qm.html
 %%DATADIR%%/%%GHEMICAL_VERSION%%/user-docs/using_sf.html
 %%DATADIR%%/%%GHEMICAL_VERSION%%/user-docs/visualization.html
-share/locale/de/LC_MESSAGES/ghemical.mo
-share/locale/fi/LC_MESSAGES/ghemical.mo
-share/locale/mk/LC_MESSAGES/ghemical.mo
-share/locale/pt_BR/LC_MESSAGES/ghemical.mo
-share/locale/ru/LC_MESSAGES/ghemical.mo
-share/locale/sq/LC_MESSAGES/ghemical.mo
