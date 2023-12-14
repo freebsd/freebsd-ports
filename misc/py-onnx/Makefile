@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.2.1:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		compiler:c11 python shebangfix
+USES=		compiler:c++17-lang python shebangfix
 USE_PYTHON=	distutils concurrent autoplist
 
 CXXFLAGS+=	-Dstat64=stat
