@@ -1,5 +1,5 @@
 PORTNAME=	glfw
-DISTVERSION=	3.3.8
+DISTVERSION=	3.3.9
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/glfw/glfw/releases/download/${PORTVERSION}/
 
@@ -10,15 +10,14 @@ WWW=		https://www.glfw.org/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		cmake:insource gl localbase zip
-USE_GL=		glu
+USES=		cmake:insource localbase zip
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 CONFLICTS_INSTALL=	glfw2
 
-PLIST_SUB=	MAJVER="${DISTVERSION:C|\..*||}" \
+PLIST_SUB=	MAJVER=${DISTVERSION:R:R} \
 		VERSION=${DISTVERSION:R}
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -29,9 +28,10 @@ OPTIONS_SINGLE=			PLATFORM
 OPTIONS_SINGLE_PLATFORM=	WAYLAND X11
 PLATFORM_DESC=			Window creation platform
 
-WAYLAND_BUILD_DEPENDS=	wayland-protocols>=0:graphics/wayland-protocols
-WAYLAND_LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
-			libxkbcommon.so:x11/libxkbcommon
+WAYLAND_BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon \
+			wayland-protocols>=0:graphics/wayland-protocols
+WAYLAND_LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
+			libwayland-egl.so:graphics/wayland
 WAYLAND_USES=		kde:5 pkgconfig
 WAYLAND_USE=		KDE=ecm
 WAYLAND_CMAKE_BOOL=	GLFW_USE_WAYLAND
