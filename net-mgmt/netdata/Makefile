@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		bash:shells/bash \
 		curl:ftp/curl
 
-USES=		autoreconf cpe gmake localbase:ldflags pathfix \
+USES=		autoreconf compiler:c++17-lang cpe gmake localbase:ldflags pathfix \
 		pkgconfig:both python shebangfix ssl
 USE_RC_SUBR=	${PORTNAME}
 SHEBANG_GLOB=	*
@@ -36,6 +36,7 @@ CONFIGURE_ARGS=	--disable-h2o --disable-unit-tests --with-user=netdata
 
 INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-D_WANT_VMMETER
+USE_CXXSTD=	c++17
 
 SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
