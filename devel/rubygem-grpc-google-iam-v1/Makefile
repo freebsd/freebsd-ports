@@ -1,12 +1,12 @@
 PORTNAME=	grpc-google-iam-v1
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common protos and gRPC services for Google IAM
-WWW=		https://github.com/googleapis/common-protos-ruby \
-		https://github.com/googleapis/common-protos-ruby/tree/main/grpc-google-iam-v1
+WWW=		https://github.com/googleapis/common-protos-ruby/tree/main/grpc-google-iam-v1 \
+		https://github.com/googleapis/common-protos-ruby
 
 LICENSE=	APACHE20
 
