@@ -1310,6 +1310,7 @@
     SUBDIR += rubygem-google-cloud-core
     SUBDIR += rubygem-google-cloud-env
     SUBDIR += rubygem-google-cloud-errors
+    SUBDIR += rubygem-google-cloud-location
     SUBDIR += rubygem-google-cloud-logging
     SUBDIR += rubygem-google-cloud-logging-v2
     SUBDIR += rubygem-google-cloud-pubsub
