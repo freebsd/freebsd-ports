@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.6.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www devel
 
@@ -189,7 +190,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-rack-proxy>=0.7.7<0.8.0:www/rubygem-rack-proxy \
 	rubygem-sassc-rails-rails70>=2.1.0<2.2.0:textproc/rubygem-sassc-rails-rails70 \
 	rubygem-autoprefixer-rails1025>=10.2.5.1<10.2.6:textproc/rubygem-autoprefixer-rails1025 \
-	rubygem-terser>=1.0.2:textproc/rubygem-terser \
+	rubygem-terser>=1.0.2<1.0.3:textproc/rubygem-terser \
 	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 	rubygem-tanuki_emoji>=0.9<1:graphics/rubygem-tanuki_emoji \
 	rubygem-gon-rails70>=6.4.0<6.5:www/rubygem-gon-rails70 \
@@ -253,7 +254,7 @@ MY_DEPENDS=	git>=2.41.0:devel/git \
 	rubygem-lockbox>=1.3.0<1.4:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-jsonb_accessor>=1.3.10<1.4:www/rubygem-jsonb_accessor \
-	rubygem-json>=2.6.3<3:devel/rubygem-json \
+	rubygem-json26>=2.6.3<2.7:devel/rubygem-json26 \
 	rubygem-json_schemer>=0.2.18<0.3:devel/rubygem-json_schemer \
 	rubygem-oj313>=3.13.21<3.14:devel/rubygem-oj313 \
 	rubygem-oj-introspect>=0.7<1:devel/rubygem-oj-introspect \
