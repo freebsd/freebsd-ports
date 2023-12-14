@@ -1,4 +1,4 @@
-TIMESTAMP = 1702397320
+TIMESTAMP = 1702597223
 SHA256 (nginx-1.25.3.tar.gz) = 64c5b975ca287939e828303fa857d22f142b251f17808dfe41733512d9cded86
 SIZE (nginx-1.25.3.tar.gz) = 1216580
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -111,8 +111,8 @@ SHA256 (nginx-njs-0.8.2_GH0.tar.gz) = 6f17387db8df90b6e3382d280455962ff85fa2b1a3
 SIZE (nginx-njs-0.8.2_GH0.tar.gz) = 733916
 SHA256 (opentracing-contrib-nginx-opentracing-v0.24.0_GH0.tar.gz) = 5328c5f37e0615b5252aed51b9cd40f3d14989d995ad54134076aeda4ab9b280
 SIZE (opentracing-contrib-nginx-opentracing-v0.24.0_GH0.tar.gz) = 679417
-SHA256 (osokin-nginx-otel-dc52126_GH0.tar.gz) = 3f167a1b955864b6a22b9e5206a6cdea5ecc775dffdda66ef8f5b70b20ff701d
-SIZE (osokin-nginx-otel-dc52126_GH0.tar.gz) = 30372
+SHA256 (osokin-nginx-otel-ae5dbab_GH0.tar.gz) = 3509e3fb0c3634fba094f717e59a1865497b8bd068e543228e27197361f0ff27
+SIZE (osokin-nginx-otel-ae5dbab_GH0.tar.gz) = 30154
 SHA256 (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = c69ad4495de7c7883ebc23e1e6c4cc83a4ac6a7fddd4d5c12e49d33b65f7c50b
 SIZE (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = 48544
 SHA256 (openresty-rds-csv-nginx-module-v0.09_GH0.tar.gz) = 896be99c0cad50218417800a159e43ec088d6b58c099472ed3b3d7f179d6c0ea
