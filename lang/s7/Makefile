@@ -1,5 +1,5 @@
 PORTNAME=	s7
-PORTVERSION=	g20231023
+PORTVERSION=	g20231215
 CATEGORIES=	lang lisp
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -12,7 +12,7 @@ USES=		localbase:ldflags
 USE_GITLAB=	yes
 GL_SITE=	https://cm-gitlab.stanford.edu/
 GL_ACCOUNT=	bil
-GL_TAGNAME=	5bba8bca5d6c22001bcf87e63a246eb69163b020
+GL_TAGNAME=	edc6242088978d09bff053726ec2f8a6ea8f8f72
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DS7_LOAD_PATH=\"${DATADIR}\" \
