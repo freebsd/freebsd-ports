@@ -1,6 +1,6 @@
 DISTVERSIONPREFIX=	# empty
-DISTVERSION=	s20231127
-DISTVERSIONSUFFIX=	-0-g3b8da48
+DISTVERSION=	s20231214
+DISTVERSIONSUFFIX=	-0-g37caa0c
 PORTREVISION=	0
 PKGNAMESUFFIX=	-plugin
 
@@ -26,9 +26,6 @@ slave-post-patch:
 # Avoid subdirs to match regular swaylock
 	@${REINPLACE_CMD} "s,\(rename: \['\)[^/]*/,\1," \
 		${WRKSRC}/completions/meson.build
-# Respect renamed PAM config to unlock without regular swaylock installed
-	@${REINPLACE_CMD} '/pam_start/s/${PORTNAME}"/${PKGBASE}"/' \
-		${WRKSRC}/pam.c
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
 	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE 200809L/_XOPEN_SOURCE 700/' \
 		${WRKSRC}/main.c
