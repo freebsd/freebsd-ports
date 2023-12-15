@@ -15,6 +15,8 @@ WWW=		https://www.cis.upenn.edu/~bcpierce/unison/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	More recent versions are in the tree consider using net/unison240
+EXPIRATION_DATE=	2024-01-15
 BROKEN=		fails to build with ocaml 4.08
 
 FLAVORS=	x11 nox11
