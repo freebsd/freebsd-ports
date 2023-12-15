@@ -8,6 +8,6 @@ lib/cmake/vvenc/vvencConfigVersion.cmake
 lib/cmake/vvenc/vvencTargets-shared-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/vvenc/vvencTargets-shared.cmake
 lib/libvvenc.so
-lib/libvvenc.so.1.9
-lib/libvvenc.so.1.9.0
+lib/libvvenc.so.1.10
+lib/libvvenc.so.1.10.0
 libdata/pkgconfig/libvvenc.pc
