@@ -1,5 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.5.1
+DISTVERSION=	1.6.0
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libRMF.so:science/rmf
 
-USES=		cmake compiler:c++11-lang python shebangfix
+USES=		cmake compiler:c++11-lang localbase:ldflags python shebangfix
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes

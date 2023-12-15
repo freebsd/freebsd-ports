@@ -1,6 +1,5 @@
 PORTNAME=	rmf
-DISTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	science graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +10,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libhdf5.so:science/hdf5 \
-		libsz.so:science/libaec
+		libhdf5.so:science/hdf5
 
-USES=		compiler:c++17-lang cmake:testing python:build shebangfix
+USES=		compiler:c++17-lang cmake:testing localbase:ldflags python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
