@@ -104,7 +104,7 @@
 %%WWWDIR%%/js/rawinflate-0.3.js
 %%WWWDIR%%/js/showdown-2.1.0.js
 %%WWWDIR%%/js/types.jsonld
-%%WWWDIR%%/js/zlib-1.2.13.js
+%%WWWDIR%%/js/zlib-1.2.13-1.js
 %%WWWDIR%%/js/zlib-1.2.13.wasm
 %%WWWDIR%%/lib/.htaccess
 %%WWWDIR%%/lib/Configuration.php
