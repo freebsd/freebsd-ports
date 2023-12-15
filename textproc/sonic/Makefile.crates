@@ -29,7 +29,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		constant_time_eq-0.1.5 \
 		cpufeatures-0.2.11 \
 		crc32fast-1.3.2 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-utils-0.8.17 \
 		crypto-common-0.1.6 \
 		csv-1.3.0 \
 		csv-core-0.1.11 \
@@ -68,12 +68,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		indexmap-2.1.0 \
 		inout-0.1.3 \
 		is-terminal-0.4.9 \
-		itoa-1.0.9 \
+		itoa-1.0.10 \
 		jieba-rs-0.6.8 \
 		jobserver-0.1.27 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.150 \
+		libc-0.2.151 \
 		libloading-0.7.4 \
 		librocksdb-sys-0.11.0+8.1.1 \
 		libz-sys-1.1.12 \
@@ -125,10 +125,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		ring-0.17.7 \
 		rocksdb-0.21.0 \
 		rustc-hash-1.1.0 \
-		rustix-0.38.27 \
+		rustix-0.38.28 \
 		rustls-0.21.10 \
 		rustls-webpki-0.101.7 \
-		ryu-1.0.15 \
+		ryu-1.0.16 \
 		sct-0.7.1 \
 		serde-1.0.193 \
 		serde_derive-1.0.193 \
@@ -143,7 +143,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
-		syn-2.0.39 \
+		syn-2.0.41 \
 		termcolor-1.4.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.50 \
@@ -194,10 +194,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.52.0 \
 		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.0 \
-		winnow-0.5.26 \
+		winnow-0.5.28 \
 		yada-0.5.0 \
-		zerocopy-0.7.29 \
-		zerocopy-derive-0.7.29 \
+		zerocopy-0.7.31 \
+		zerocopy-derive-0.7.31 \
 		zip-0.6.6 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
