@@ -3381,8 +3381,10 @@ run-cheri-gnulib-fixup:
 # with an include of the system header until upstream finds a better solution.
 	@for f in `${FIND} ${WRKDIR} -type f -name stdint.in.h` ; do \
 		if grep -q "typedef long int gl_intptr_t" $${f} ; then \
-			echo "Replacing $${f}" ; \
-			echo "#include_next <stdint.h>" > $${f} ; \
+			if ! grep -q "__INTPTR_WIDTH__ != (defined _WIN64 ? LLONG_WIDTH : LONG_WIDTH)" $${f} ; then \
+				echo "Updating $${f}" ; \
+				cp "${TEMPLATES}/gnulib/stdint.in.h" $${f} ; \
+			fi \
 		fi \
 	done
 # Patch rawmemchr not to use uintptr_t to store arbitrary bytes.
