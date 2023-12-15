@@ -1,11 +1,13 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.12.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
 PATCHFILES+=	dd851e58b79b.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/979
 PATCHFILES+=	8a7fa50bb2fc.patch:-p1 # -Dbenchmark=disabled
+PATCHFILES+=	243582c0c762.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/1057
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
