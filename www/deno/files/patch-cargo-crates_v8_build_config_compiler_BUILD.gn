@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.81.0/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09 UTC
-+++ cargo-crates/v8-0.81.0/build/config/compiler/BUILD.gn
+--- cargo-crates/v8-0.82.0/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09 UTC
++++ cargo-crates/v8-0.82.0/build/config/compiler/BUILD.gn
 @@ -135,7 +135,7 @@ declare_args() {
    #
    # TODO(crbug.com/1131993): This regresses binary size by ~1MB on Android and
