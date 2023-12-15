@@ -1,5 +1,6 @@
     COMMENT = Biology
 
+    SUBDIR += R-cran-Biobase
     SUBDIR += R-cran-BiocGenerics
     SUBDIR += R-cran-BiocManager
     SUBDIR += abyss
