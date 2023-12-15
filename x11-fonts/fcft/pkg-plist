@@ -2,7 +2,7 @@ include/fcft/fcft.h
 include/fcft/stride.h
 lib/libfcft.so
 lib/libfcft.so.4
-lib/libfcft.so.4.1.6
+lib/libfcft.so.4.1.7
 libdata/pkgconfig/fcft.pc
 %%PORTDOCS%%man/man3/fcft_capabilities.3.gz
 %%PORTDOCS%%man/man3/fcft_clone.3.gz
