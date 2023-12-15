@@ -1,7 +1,7 @@
 PORTNAME=	sccache
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.15
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	ports-mgmt
 PKGNAMESUFFIX=	-overlay
 
@@ -420,6 +420,7 @@ post-install:
 	@${LN} -Fs ${STAGEDIR}${DATADIR}/overlay/lib /tmp/sccache-overlay
 	ldd -f '%p\n' ${STAGEDIR}${DATADIR}/overlay/bin/sccache | ${GREP} -v '^[ 	]*\[' | \
 		${XARGS} -J% ${INSTALL_LIB} % ${STAGEDIR}${DATADIR}/overlay/lib
+	@chflags -R noschg ${STAGEDIR}${DATADIR}/overlay/lib
 	cd ${STAGEDIR}${PREFIX}; \
 		${FIND} ${DATADIR_REL} -type f >>${TMPPLIST}
 
