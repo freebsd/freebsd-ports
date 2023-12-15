@@ -32,7 +32,7 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-233.11799.259
+%%DATADIR%%/lib/build-marker-PY-233.11799.298
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -453,8 +453,8 @@ share/applications/pycharm-pro.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-67fca87a943a-c986f194a52a.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-67fca87a943a-c986f194a52a.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-7a29c1521ef0-c986f194a52a.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-7a29c1521ef0-c986f194a52a.txt
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/3rdpartylicenses.txt
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/87.js
 %%DATADIR%%/plugins/python-jupyter/jupyter-web/cancel.png

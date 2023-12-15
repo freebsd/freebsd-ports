@@ -1,8 +1,7 @@
 PORTNAME=	pycharm-pro
-DISTVERSION=	2023.3
+DISTVERSION=	2023.3.1
 CATEGORIES=	devel java python
-MASTER_SITES=	https://download.jetbrains.com/python/ \
-		http://download.jetbrains.com/python/
+MASTER_SITES=	https://download.jetbrains.com/python/
 DISTNAME=	pycharm-professional-${PORTVERSION}
 
 MAINTAINER=	rm@FreeBSD.org
