@@ -6,5 +6,5 @@ lib/libhdr10plus.a
 lib/libhdr10plus.so
 lib/libx265.a
 lib/libx265.so
-lib/libx265.so.192
+lib/libx265.so.200
 libdata/pkgconfig/x265.pc

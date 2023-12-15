@@ -8,9 +8,10 @@ See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248479
 
 	-mi
 
---- source/encoder/api.cpp	2020-05-29 13:39:35.000000000 -0400
-+++ source/encoder/api.cpp	2020-08-06 22:51:30.227635000 -0400
-@@ -451,5 +451,7 @@
+--- source/encoder/api.cpp.orig	2023-06-27 14:11:49 UTC
++++ source/encoder/api.cpp
+@@ -449,14 +449,18 @@ int x265_encoder_encode(x265_encoder *enc, x265_nal **
+ 
                  if (pic_in->rpu.payloadSize)
                  {
 +#if ! SVT_CHECK_VERSION(1, 5, 0)
@@ -18,7 +19,8 @@ See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248479
 +#endif
                      memcpy(inputData->dolbyVisionRpu.payload, pic_in->rpu.payload, pic_in->rpu.payloadSize);
                      inputData->dolbyVisionRpu.payloadSize = pic_in->rpu.payloadSize;
-@@ -458,5 +460,7 @@
+                     inputData->dolbyVisionRpu.payloadType = NAL_UNIT_UNSPECIFIED;
+                 }
                  else
                  {
 +#if ! SVT_CHECK_VERSION(1, 5, 0)
@@ -26,7 +28,9 @@ See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248479
 +#endif
                      inputData->dolbyVisionRpu.payloadSize = 0;
                  }
-@@ -696,5 +700,7 @@
+ 
+@@ -702,7 +706,9 @@ void x265_encoder_close(x265_encoder *enc)
+ 
              svt_print_summary(enc);
              EB_H265_ENC_INPUT *inputData = (EB_H265_ENC_INPUT*)encoder->m_svtAppData->inputPictureBuffer->pBuffer;
 +#if ! SVT_CHECK_VERSION(1, 5, 0)
@@ -34,11 +38,14 @@ See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=248479
 +#endif
  
              X265_FREE(inputData);
-@@ -2052,5 +2058,7 @@
+             X265_FREE(encoder->m_svtAppData->inputPictureBuffer);
+@@ -2063,7 +2069,9 @@ int svt_initialise_input_buffer(x265_encoder *enc)
+     inputPtr->pBuffer = (unsigned char*)x265_malloc(sizeof(EB_H265_ENC_INPUT));
  
      EB_H265_ENC_INPUT *inputData = (EB_H265_ENC_INPUT*)inputPtr->pBuffer;
 +#if ! SVT_CHECK_VERSION(1, 5, 0)
      inputData->dolbyVisionRpu.payload = NULL;
 +#endif
      inputData->dolbyVisionRpu.payloadSize = 0;
+ 
  
