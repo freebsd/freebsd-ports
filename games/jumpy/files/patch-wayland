@@ -1,8 +1,8 @@
 https://github.com/bevyengine/bevy/issues/4106
 
---- Cargo.lock.orig	2023-10-15 20:25:49 UTC
+--- Cargo.lock.orig	2023-12-15 22:16:05 UTC
 +++ Cargo.lock
-@@ -220,6 +220,12 @@ dependencies = [
+@@ -221,6 +221,12 @@ dependencies = [
  ]
  
  [[package]]
@@ -15,7 +15,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "arrayvec"
  version = "0.7.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1253,6 +1259,20 @@ checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878
+@@ -1279,6 +1285,20 @@ checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878
  checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223"
  
  [[package]]
@@ -36,7 +36,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "cc"
  version = "1.0.83"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1667,6 +1687,15 @@ dependencies = [
+@@ -1683,6 +1703,15 @@ dependencies = [
  ]
  
  [[package]]
@@ -52,7 +52,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "document-features"
  version = "0.2.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2761,6 +2790,15 @@ checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd7
+@@ -2873,7 +2902,25 @@ checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd7
  checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd71e126420da8274909a0167"
  
  [[package]]
@@ -66,9 +66,24 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
  name = "memoffset"
- version = "0.6.5"
++version = "0.6.5"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "5aa361d4faea93603064a027415f07bd8e1d5c88c9fbf68bf56a285428fd79ce"
++dependencies = [
++ "autocfg",
++]
++
++[[package]]
++name = "memoffset"
+ version = "0.7.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2938,6 +2976,19 @@ name = "nix"
+ checksum = "5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4"
+@@ -3045,10 +3092,24 @@ dependencies = [
+  "bitflags 1.3.2",
+  "cfg-if",
+  "libc",
++ "memoffset 0.6.5",
+ ]
  
  [[package]]
  name = "nix"
@@ -88,7 +103,7 @@ https://github.com/bevyengine/bevy/issues/4106
  version = "0.26.4"
  source = "registry+https://github.com/rust-lang/crates.io-index"
  checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
-@@ -3823,6 +3874,12 @@ dependencies = [
+@@ -3965,6 +4026,12 @@ dependencies = [
  ]
  
  [[package]]
@@ -101,7 +116,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "scopeguard"
  version = "1.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3839,6 +3896,19 @@ dependencies = [
+@@ -3981,6 +4048,19 @@ dependencies = [
  ]
  
  [[package]]
@@ -119,9 +134,9 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
  name = "self_cell"
- version = "0.10.2"
+ version = "0.10.3"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3990,6 +4060,25 @@ dependencies = [
+@@ -4147,6 +4227,25 @@ dependencies = [
  ]
  
  [[package]]
@@ -147,7 +162,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "smol_str"
  version = "0.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4045,6 +4134,12 @@ checksum = "9e08d8363704e6c71fc928674353e6b7c23dcea9d8
+@@ -4208,6 +4307,12 @@ checksum = "9e08d8363704e6c71fc928674353e6b7c23dcea9d8
  checksum = "9e08d8363704e6c71fc928674353e6b7c23dcea9d82d7012c8faf2a3a025f8d0"
  
  [[package]]
@@ -160,7 +175,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "svg_fmt"
  version = "0.4.1"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4232,6 +4327,31 @@ dependencies = [
+@@ -4407,6 +4512,31 @@ dependencies = [
  ]
  
  [[package]]
@@ -190,10 +205,10 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
  name = "tinystr"
- version = "0.7.4"
+ version = "0.7.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4622,6 +4742,57 @@ checksum = "ca6ad05a4870b2bf5fe995117d3728437bd27d7cd5
- checksum = "ca6ad05a4870b2bf5fe995117d3728437bd27d7cd5f06f13c17443ef369775a1"
+@@ -4808,6 +4938,57 @@ checksum = "7ab9b36309365056cd639da3134bf87fa8f3d86008
+ checksum = "7ab9b36309365056cd639da3134bf87fa8f3d86008abf99e612384a6eecd459f"
  
  [[package]]
 +name = "wayland-client"
@@ -250,7 +265,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "wayland-scanner"
  version = "0.29.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4633,6 +4804,17 @@ dependencies = [
+@@ -4819,6 +5000,17 @@ dependencies = [
  ]
  
  [[package]]
@@ -266,9 +281,9 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
  name = "web-sys"
- version = "0.3.64"
+ version = "0.3.66"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -5052,7 +5234,12 @@ dependencies = [
+@@ -5304,7 +5496,12 @@ dependencies = [
   "percent-encoding",
   "raw-window-handle",
   "redox_syscall 0.3.5",
@@ -281,24 +296,21 @@ https://github.com/bevyengine/bevy/issues/4106
   "wayland-scanner",
   "web-sys",
   "windows-sys 0.45.0",
-@@ -5108,6 +5295,15 @@ dependencies = [
- checksum = "56b245751c0ac9db0e006dc812031482784e434630205a93c73cfefcaabeac67"
+@@ -5361,6 +5558,12 @@ dependencies = [
  dependencies = [
-  "nix 0.24.3",
-+]
+  "nix 0.26.4",
+ ]
 +
 +[[package]]
 +name = "xcursor"
-+version = "0.3.4"
++version = "0.3.5"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "463705a63313cd4301184381c5e8042f0a7e9b4bb63653f216311d4ae74690b7"
-+dependencies = [
-+ "nom",
- ]
++checksum = "6a0ccd7b4a5345edfcd0c3535718a4e9ff7798ffc536bb5b5a0e26ff84732911"
  
  [[package]]
---- ../bones-3fd1ace195e2a9ac684c247cd08995b3e5a5b93b/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-10-19 21:40:14 UTC
-+++ ../bones-3fd1ace195e2a9ac684c247cd08995b3e5a5b93b/framework_crates/bones_bevy_renderer/Cargo.toml
+ name = "xml-rs"
+--- ../bones-831a7d83bd427fd89e5bc4de5386089245bf2fff/framework_crates/bones_bevy_renderer/Cargo.toml.orig	2023-12-08 21:06:25 UTC
++++ ../bones-831a7d83bd427fd89e5bc4de5386089245bf2fff/framework_crates/bones_bevy_renderer/Cargo.toml
 @@ -26,7 +26,7 @@ default-features = false
  
  [dependencies.bevy]
