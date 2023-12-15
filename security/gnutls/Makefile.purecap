@@ -1,0 +1,1 @@
+CONFIGURE_ARGS+=--disable-hardware-acceleration
