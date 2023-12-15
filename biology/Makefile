@@ -1,5 +1,6 @@
     COMMENT = Biology
 
+    SUBDIR += R-cran-BiocGenerics
     SUBDIR += R-cran-BiocManager
     SUBDIR += abyss
     SUBDIR += ad2vcf
