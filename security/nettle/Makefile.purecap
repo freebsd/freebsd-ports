@@ -1,1 +1,1 @@
-BROKEN_purecap_failed=1
+CONFIGURE_ARGS+=	--disable-assembler
