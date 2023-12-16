@@ -15,13 +15,17 @@ LICENSE_NAME=	edith
 LICENSE_TEXT=	Redistribution not allowed
 LICENSE_PERMS=	auto-accept
 
-ONLY_FOR_ARCHS=	i386 amd64
+DEPRECATED=	Upstream last release was in 2000
+EXPIRATION_DATE=	2024-01-16
+ONLY_FOR_ARCHS=	amd64 i386
+
 USES=		linux
 USE_LINUX=	xorglibs
 
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/edith
+
 EDITHDIR=	${PREFIX}/lib/edith
 
 do-install:
