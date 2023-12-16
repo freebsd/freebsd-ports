@@ -1,6 +1,6 @@
---- lib/jed.rc~	Tue Jul 20 20:22:46 1999
-+++ lib/jed.rc	Thu Feb  3 19:15:23 2000
-@@ -166,6 +166,19 @@
+--- lib/jed.rc.orig	1999-07-20 11:22:46 UTC
++++ lib/jed.rc
+@@ -166,6 +166,19 @@ C_CONTINUED_OFFSET = 2; % This variable controls the i
                          % that are continued onto the next line.
  %---------------------------------------------------------------------------
  

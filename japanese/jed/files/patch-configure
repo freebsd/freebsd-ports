@@ -1,6 +1,6 @@
---- configure.orig	Tue Jul 20 20:22:45 1999
-+++ configure	Sat Feb  5 23:49:47 2000
-@@ -2580,7 +2580,8 @@
+--- configure.orig	1999-07-20 11:22:45 UTC
++++ configure
+@@ -2580,7 +2580,8 @@ fi
  # the other directories may have a better chance of containing a more recent
  # version.
  
@@ -10,7 +10,7 @@
                  $includedir,$libdir \
                  /usr/local/include,/usr/local/lib \
  		/usr/include,/usr/lib \
-@@ -3176,12 +3177,17 @@
+@@ -3176,12 +3177,17 @@ PROGRAM_OBJECT_RULES="$PROGRAM_OBJECT_RULES
  	cd \$(OBJDIR); \$(COMPILE_CMD) \$(SRCDIR)/vterm.c
  "
  

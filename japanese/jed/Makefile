@@ -1,6 +1,6 @@
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	japanese editors
 MASTER_SITES=	LOCAL/knu \
 		http://www.kondara.org/~g/slang/
@@ -13,59 +13,61 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SLang-based text editor (w/ Japanese support)
 WWW=		http://www.dsl.tutics.tut.ac.jp/~kawamoto/jed/jed.html
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Upstream site vaporized and returns NXDOMAIN consider using editors/jed
+EXPIRATION_DATE=	2024-01-16
+
 LIB_DEPENDS=	libslang.so:japanese/libslang
 
-VERSION=	0.99.8
-JP_VERSION=	067
-
 USES=		ncurses
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lncurses"
 CONFIGURE_ARGS=	--enable-x-locale=no
-ALL_TARGET=	${BINSTUFF} getmail
+CONFIGURE_ENV=	JED_ROOT="${JED_ROOT}" X_EXTRA_LIBS="-lncurses"
+
 MAKE_JOBS_UNSAFE=	yes
-INFO=		jed
+ALL_TARGET=	${BINSTUFF} getmail
 
 CONFLICTS_INSTALL=	jed # bin/jed
 
-JED_ROOT=	${DATADIR}
-BINSTUFF=	jed rgrep
-
-OPTIONS_DEFINE=	DOCS X11 CANNA
-OPTIONS_DEFAULT=CANNA X11
-OPTIONS_SUB=	yes
-
-CANNA_DESC=		Canna support
-CANNA_CONFIGURE_ON=	--with-canna=yes
-CANNA_CONFIGURE_OFF=	--with-canna=no
-CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
-
-X11_USES=	xorg
-X11_USE=	XORG=x11,xext,xt
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-BINSTUFF+=	xjed
-.endif
-
-_OBJDIR=	${WRKSRC}/src/${ARCH}objs
-_DOCDIR=	${WRKSRC}/doc
-_INFODIR=	${WRKSRC}/info
-_LIBDIR=	${WRKSRC}/lib
-
+INFO=		jed
 PORTDOCS=	abbrev.txt color.txt dfa.txt edt.txt emacs.txt fold.txt	\
 	hooks.txt ide-mode.txt jed_faq.txt jedfuns.txt libfuns.txt	\
 	menus.txt mouse.txt pc-keys.txt program.txt rgrep.txt		\
 	rmail.txt script.txt slangfun.txt syntax.txt undo.txt wjed.txt	\
 	wordstar.txt xjed.txt yankpop.txt README jed.tex jed-j.doc
 
+OPTIONS_DEFINE=	DOCS X11 CANNA
+OPTIONS_DEFAULT=CANNA X11
+OPTIONS_SUB=	yes
+
+CANNA_DESC=		Canna support
+
+CANNA_LIB_DEPENDS=	libcanna.so:japanese/canna-lib
+CANNA_CONFIGURE_ON=	--with-canna=yes
+CANNA_CONFIGURE_OFF=	--with-canna=no
+X11_USES=	xorg
+X11_USE=	XORG=x11,xext,xt
+X11_VARS=	BINSTUFF+=xjed
+
+JED_ROOT=	${DATADIR}
+BINSTUFF=	jed rgrep
+VERSION=	0.99.8
+JP_VERSION=	067
+
+_OBJDIR=	${WRKSRC}/src/${ARCH}objs
+_DOCDIR=	${WRKSRC}/doc
+_INFODIR=	${WRKSRC}/info
+_LIBDIR=	${WRKSRC}/lib
+
 post-extract:
 	@cd ${WRKDIR} && ${MV} *.sl ${_LIBDIR}/
 	@${CP} ${WRKSRC}/jed-j.doc ${_DOCDIR}/
 
-post-patch:
-	@${RM} ${_INFODIR}/*.orig
+#post-patch:
+#	@${RM} ${_INFODIR}/*.orig
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JED_ROOT}

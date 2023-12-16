@@ -1,6 +1,6 @@
---- info/jed.info~	Wed Jul 14 06:01:25 1999
-+++ info/jed.info	Fri Feb  4 02:11:19 2000
-@@ -1,6 +1,10 @@
+--- info/jed.info.orig	1999-07-13 21:01:25 UTC
++++ info/jed.info
+@@ -1,6 +1,10 @@ file jed.ti.
  This is Info file jed.info, produced by Makeinfo-1.55 from the input
  file jed.ti.
  

@@ -1,5 +1,5 @@
---- lib/japanese.sl~	Tue Feb  8 16:17:10 2000
-+++ lib/japanese.sl	Tue Feb  8 16:17:49 2000
+--- lib/japanese.sl.orig	1999-07-23 12:05:25 UTC
++++ lib/japanese.sl
 @@ -5,8 +5,10 @@
  %
  

@@ -1,6 +1,6 @@
---- lib/canna.sl~	Sat Aug 14 13:03:12 1999
-+++ lib/canna.sl	Sat Aug 14 13:02:35 1999
-@@ -348,9 +348,10 @@
+--- lib/canna.sl.orig	1999-07-20 12:36:17 UTC
++++ lib/canna.sl
+@@ -348,9 +348,10 @@ define canna_get_buf_id() {  % return -1 if cannot get
  	 message("Canna can not be used in any more buffer. Sorry...");
  	 return -1;
        }
@@ -13,5 +13,3 @@
        return canna_buf_number;
     }
     return get_blocal_var("canna_buf_id");
-
-

@@ -1,6 +1,6 @@
---- lib/abbrev.sl	2000/10/01 17:41:08	1.1
-+++ lib/abbrev.sl	2000/10/01 17:41:46
-@@ -32,16 +32,16 @@
+--- lib/abbrev.sl.orig	1999-07-13 21:01:27 UTC
++++ lib/abbrev.sl
+@@ -32,16 +32,16 @@ define set_abbrev_mode (val)
  define set_abbrev_mode (val)
  {
     getbuf_info ();
