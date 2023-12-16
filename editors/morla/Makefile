@@ -12,6 +12,9 @@ WWW=		http://www.morlardf.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Project is unmaintained and last upstream release was in 2011
+EXPIRATION_DATE=	2024-03-31
+
 BUILD_DEPENDS=	dot:graphics/graphviz
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
