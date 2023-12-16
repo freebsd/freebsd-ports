@@ -1,0 +1,173 @@
+--- NEdit.ad.orig	2023-12-16 13:54:41 UTC
++++ NEdit.ad
+@@ -0,0 +1,170 @@
++! NEDIT IS NOT DESIGNED TO BE USED WITH AN APP-DEFAULTS FILE, and
++! installing this will only cause you grief.  This is provided for
++! documentation, and as recourse when you have no way of removing
++! a system app-defaults file which is preventing you from upgrading
++! your nedit version.
++!
++! Application defaults for NEdit 5.1
++!
++*menuBar.marginHeight: 0
++*menuBar.shadowThickness: 1
++*pane.sashHeight: 11
++*pane.sashWidth: 11
++*text.selectionArrayCount: 3
++*fontList:-adobe-helvetica-medium-r-normal-*-12-*-*-*-*-*-*
++*XmList.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++*XmText.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++    /* This should not be necessary, but some default in lesstif is
++       overriding the resource above, and specifying the app-name fixes it */
++nedit*XmText.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++    /* Same with this, both Solaris Motif and Lesstif seem to have some
++       very specific defaults for file selection box fonts */
++nedit*FileSelect*XmList.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++*XmTextField.fontList:-adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++*background: #b3b3b3
++*foreground: black
++*text.lineNumForeground: #777777
++*text.background: #e5e5e5
++*text.foreground: black
++*text.highlightBackground: red
++*text.highlightForeground: black
++*XmText*foreground: black
++*XmText*background: #cccccc
++*helpText.background: #cccccc
++*helpText.foreground: black
++*helpText.selectBackground: #b3b3b3
++*helpText.font: -adobe-courier-medium-r-normal-*-12-*-*-*-*-*-*
++*XmText.translations: #override \
++Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
++Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
++Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
++*XmTextField.translations: #override \
++Ctrl~Alt~Meta<KeyPress>v: paste-clipboard()\n\
++Ctrl~Alt~Meta<KeyPress>c: copy-clipboard()\n\
++Ctrl~Alt~Meta<KeyPress>x: cut-clipboard()\n
++*XmList*foreground: black
++*XmList*background: #cccccc
++*XmTextField*background: #cccccc
++*XmTextField*foreground: black
++*iSearchForm*highlightThickness: 1
++*fileMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*editMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*searchMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*preferencesMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*windowsMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*shellMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*macroMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*helpMenu.tearOffModel: XmTEAR_OFF_ENABLED
++*fileMenu.mnemonic: F
++*fileMenu.new.accelerator: Ctrl<Key>n
++*fileMenu.new.acceleratorText: Ctrl+N
++*fileMenu.open.accelerator: Ctrl<Key>o
++*fileMenu.open.acceleratorText: Ctrl+O
++*fileMenu.openSelected.accelerator: Ctrl<Key>y
++*fileMenu.openSelected.acceleratorText: Ctrl+Y
++*fileMenu.close.accelerator: Ctrl<Key>w
++*fileMenu.close.acceleratorText: Ctrl+W
++*fileMenu.save.accelerator: Ctrl<Key>s
++*fileMenu.save.acceleratorText: Ctrl+S
++*fileMenu.includeFile.accelerator: Alt<Key>i
++*fileMenu.includeFile.acceleratorText: Alt+I
++*fileMenu.print.accelerator: Ctrl<Key>p
++*fileMenu.print.acceleratorText: Ctrl+P
++*fileMenu.exit.accelerator: Ctrl<Key>q
++*fileMenu.exit.acceleratorText: Ctrl+Q
++*editMenu.mnemonic: E
++*editMenu.undo.accelerator: Ctrl<Key>z
++*editMenu.undo.acceleratorText: Ctrl+Z
++*editMenu.redo.accelerator: Shift Ctrl<Key>z
++*editMenu.redo.acceleratorText: Shift+Ctrl+Z
++*editMenu.cut.accelerator: Ctrl<Key>x
++*editMenu.cut.acceleratorText: Ctrl+X
++*editMenu.copy.accelerator: Ctrl<Key>c
++*editMenu.copy.acceleratorText: Ctrl+C
++*editMenu.paste.accelerator: Ctrl<Key>v
++*editMenu.paste.acceleratorText: Ctrl+V
++*editMenu.pasteColumn.accelerator: Shift Ctrl<Key>v
++*editMenu.pasteColumn.acceleratorText: Ctrl+Shift+V
++*editMenu.delete.acceleratorText: Del
++*editMenu.selectAll.accelerator: Ctrl<Key>a
++*editMenu.selectAll.acceleratorText: Ctrl+A
++*editMenu.shiftLeft.accelerator: Ctrl<Key>9
++*editMenu.shiftLeft.acceleratorText: [Shift]Ctrl+9
++*editMenu.shiftLeftShift.accelerator: Shift Ctrl<Key>9
++*editMenu.shiftRight.accelerator: Ctrl<Key>0
++*editMenu.shiftRight.acceleratorText: [Shift]Ctrl+0
++*editMenu.shiftRightShift.accelerator: Shift Ctrl<Key>0
++*editMenu.upperCase.accelerator: Ctrl<Key>6
++*editMenu.upperCase.acceleratorText: Ctrl+6
++*editMenu.lowerCase.accelerator: Shift Ctrl<Key>6
++*editMenu.lowerCase.acceleratorText: Shift+Ctrl+6
++*editMenu.fillParagraph.accelerator: Ctrl<Key>j
++*editMenu.fillParagraph.acceleratorText: Ctrl+J
++*editMenu.insertFormFeed.accelerator: Alt Ctrl<Key>l
++*editMenu.insertFormFeed.acceleratorText: Alt+Ctrl+L
++*editMenu.insControlCode.accelerator: Alt<Key>i
++*editMenu.insControlCode.acceleratorText: Alt+I
++*searchMenu.mnemonic: S
++*searchMenu.find.accelerator: Ctrl<Key>f
++*searchMenu.find.acceleratorText: [Shift]Ctrl+F
++*searchMenu.findShift.accelerator: Shift Ctrl<Key>f
++*searchMenu.findAgain.accelerator: Ctrl<Key>g
++*searchMenu.findAgain.acceleratorText: [Shift]Ctrl+G
++*searchMenu.findAgainShift.accelerator: Shift Ctrl<Key>g
++*searchMenu.findSelection.accelerator: Ctrl<Key>h
++*searchMenu.findSelection.acceleratorText: [Shift]Ctrl+H
++*searchMenu.findSelectionShift.accelerator: Shift Ctrl<Key>h
++*searchMenu.findIncremental.accelerator: Ctrl<Key>i
++*searchMenu.findIncrementalShift.accelerator: Shift Ctrl<Key>i
++*searchMenu.findIncremental.acceleratorText: [Shift]Ctrl+I
++*searchMenu.replace.accelerator: Ctrl<Key>r
++*searchMenu.replace.acceleratorText: [Shift]Ctrl+R
++*searchMenu.replaceShift.accelerator: Shift Ctrl<Key>r
++*searchMenu.replaceAgain.accelerator: Ctrl<Key>t
++*searchMenu.replaceAgain.acceleratorText: [Shift]Ctrl+T
++*searchMenu.replaceAgainShift.accelerator: Shift Ctrl<Key>t
++*searchMenu.gotoLineNumber.accelerator: Ctrl<Key>l
++*searchMenu.gotoLineNumber.acceleratorText: Ctrl+L
++*searchMenu.gotoSelected.accelerator: Ctrl<Key>e
++*searchMenu.gotoSelected.acceleratorText: Ctrl+E
++*searchMenu.mark.accelerator: Alt<Key>m
++*searchMenu.mark.acceleratorText: Alt+M a-z
++*searchMenu.gotoMark.accelerator: Alt<Key>g
++*searchMenu.gotoMark.acceleratorText: [Shift]Alt+G a-z
++*searchMenu.gotoMarkShift.accelerator: Shift Alt<Key>g
++*searchMenu.gotoMatching.accelerator: Ctrl<Key>m
++*searchMenu.gotoMatching.acceleratorText: [Shift]Ctrl+M
++*searchMenu.gotoMatchingShift.accelerator: Shift Ctrl<Key>m
++*searchMenu.findDefinition.accelerator: Ctrl<Key>d
++*searchMenu.findDefinition.acceleratorText: Ctrl+D
++*preferencesMenu.mnemonic: P
++*preferencesMenu.statisticsLine.accelerator: Alt<Key>a
++*preferencesMenu.statisticsLine.acceleratorText: Alt+A
++*preferencesMenu.overtype.accelerator: Ctrl<Key>b
++*preferencesMenu.overtype.acceleratorText: Ctrl+B
++*shellMenu.mnemonic: l
++*shellMenu.filterSelection.accelerator: Alt<Key>r
++*shellMenu.filterSelection.acceleratorText: Alt+R
++*shellMenu.executeCommand.accelerator: Alt<Key>x
++*shellMenu.executeCommand.acceleratorText: Alt+X
++*shellMenu.executeCommandLine.accelerator: <Key>KP_Enter
++*shellMenu.executeCommandLine.acceleratorText: KP Enter
++*shellMenu.cancelShellCommand.accelerator: Ctrl<Key>period
++*shellMenu.cancelShellCommand.acceleratorText: Ctrl+.
++*macroMenu.mnemonic: c
++*macroMenu.learnKeystrokes.accelerator: Alt<Key>k
++*macroMenu.learnKeystrokes.acceleratorText: Alt+K
++*macroMenu.finishLearn.accelerator: Alt<Key>k
++*macroMenu.finishLearn.acceleratorText: Alt+K
++*macroMenu.cancelLearn.accelerator: Ctrl<Key>period
++*macroMenu.cancelLearn.acceleratorText: Ctrl+.
++*macroMenu.replayKeystrokes.accelerator: Ctrl<Key>k
++*macroMenu.replayKeystrokes.acceleratorText: Ctrl+K
++*macroMenu.repeat.accelerator: Ctrl<Key>comma
++*macroMenu.repeat.acceleratorText: Ctrl+,
++*windowsMenu.mnemonic: W
++*windowsMenu.splitWindow.accelerator: Ctrl<Key>2
++*windowsMenu.splitWindow.acceleratorText: Ctrl+2
++*windowsMenu.closePane.accelerator: Ctrl<Key>1
++*windowsMenu.closePane.acceleratorText: Ctrl+1
++*helpMenu.mnemonic: H
