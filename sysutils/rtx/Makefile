@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.12.24
+DISTVERSION=	2023.12.29
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,11 +20,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		aho-corasick-1.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
+		ansi-str-0.8.0 \
+		ansitok-0.2.0 \
 		anstream-0.6.5 \
 		anstyle-1.0.4 \
 		anstyle-parse-0.2.3 \
 		anstyle-query-1.0.2 \
 		anstyle-wincon-3.0.2 \
+		arrayvec-0.5.2 \
 		async-compression-0.4.5 \
 		autocfg-1.1.0 \
 		backtrace-0.3.69 \
@@ -36,6 +39,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		bstr-1.8.0 \
 		built-0.7.1 \
 		bumpalo-3.14.0 \
+		bytecount-0.6.7 \
 		byteorder-1.5.0 \
 		bytes-1.5.0 \
 		cc-1.0.83 \
@@ -55,14 +59,14 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		confique-0.2.5 \
 		confique-macro-0.0.9 \
 		console-0.15.7 \
-		const-oid-0.9.5 \
+		const-oid-0.9.6 \
 		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.6 \
 		cpufeatures-0.2.11 \
 		crc32fast-1.3.2 \
-		crossbeam-deque-0.8.3 \
-		crossbeam-epoch-0.9.15 \
-		crossbeam-utils-0.8.16 \
+		crossbeam-deque-0.8.4 \
+		crossbeam-epoch-0.9.16 \
+		crossbeam-utils-0.8.17 \
 		crypto-common-0.1.6 \
 		ctor-0.2.6 \
 		ctrlc-3.4.1 \
@@ -87,7 +91,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		errno-0.3.8 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
-		eyre-0.6.9 \
+		eyre-0.6.11 \
 		fastrand-1.9.0 \
 		fastrand-2.0.1 \
 		fiat-crypto-0.2.5 \
@@ -168,6 +172,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		openssl-sys-0.9.97 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
+		papergrid-0.10.0 \
 		paste-1.0.14 \
 		path-absolutize-3.1.1 \
 		path-dedot-3.1.1 \
@@ -185,6 +190,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.17 \
 		pretty_assertions-1.4.0 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.70 \
 		quick-xml-0.23.1 \
 		quote-1.0.33 \
@@ -213,7 +220,6 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		ryu-1.0.16 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
-		scopeguard-1.2.0 \
 		sct-0.7.1 \
 		security-framework-2.9.2 \
 		security-framework-sys-2.9.1 \
@@ -241,10 +247,12 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
 		syn-1.0.109 \
-		syn-2.0.40 \
+		syn-2.0.41 \
 		sys-info-0.9.1 \
 		system-configuration-0.5.1 \
 		system-configuration-sys-0.5.0 \
+		tabled-0.14.0 \
+		tabled_derive-0.6.0 \
 		tar-0.4.40 \
 		tempfile-3.8.1 \
 		tera-1.19.1 \
@@ -292,6 +300,8 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		versions-6.0.0 \
+		vte-0.10.1 \
+		vte_generate_state_changes-0.1.1 \
 		walkdir-2.4.0 \
 		want-0.3.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
@@ -342,6 +352,7 @@ CARGO_CRATES=	addr2line-0.21.0 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.7.0 \
+		zip-0.6.6 \
 		zipsign-api-0.1.1
 
 OPENSSLINC=	/usr/include
