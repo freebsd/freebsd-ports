@@ -1463,6 +1463,8 @@
     SUBDIR += libxalloc
     SUBDIR += libxo
     SUBDIR += libxs
+    SUBDIR += libxsd
+    SUBDIR += libxsd-frontend
     SUBDIR += libxtend
     SUBDIR += libzakalwe
     SUBDIR += libzim

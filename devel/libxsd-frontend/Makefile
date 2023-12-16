@@ -1,18 +1,20 @@
-PORTNAME=	libcutl
-PORTVERSION=	1.11.0
+PORTNAME=	libxsd-frontend
+DISTVERSION=	2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.codesynthesis.com/download/xsd/4.2/
 
-MAINTAINER=	rakuco@FreeBSD.org
-COMMENT=	C++ utility library with generic and independent components
-WWW=		https://www.codesynthesis.com/projects/libcutl/
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	W3C XML Schema compiler frontend
+WWW=		https://www.codesynthesis.com/projects/libxsd-frontend/
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPLv2
 
 BUILD_DEPENDS=	build2>=0.16.0:devel/build2
+LIB_DEPENDS=	libcutl.so:devel/libcutl \
+		libxerces-c.so:textproc/xerces-c3
 
-USES=		compiler:c++2b-lang
+USES=		compiler:c++2b-lang pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 

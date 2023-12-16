@@ -1,22 +1,24 @@
 Rename the xsd binary to xsdcxx, as lang/mono already installs an executable
 called `xsd'.
---- xsd/doc/xsd.xhtml.orig	2017-09-24 00:18:08 UTC
-+++ xsd/doc/xsd.xhtml
-@@ -3,11 +3,11 @@
+
+--- doc/pregenerated/xsd.xhtml.orig	2023-09-28 07:36:28 UTC
++++ doc/pregenerated/xsd.xhtml
+@@ -3,12 +3,12 @@
  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
  
  <head>
--  <title>XSD 4.1.0 Compiler Command Line Manual</title>
-+  <title>XSDCXX 4.1.0 Compiler Command Line Manual</title>
+-  <title>XSD 4.2.0 Compiler Command Line Manual</title>
++  <title>XSDCXX 4.2.0 Compiler Command Line Manual</title>
  
-   <meta name="copyright" content="&copy; 2005-2017 Code Synthesis Tools CC"/>
+   <meta name="version" content="4.2.0"/>
+   <meta name="copyright" content="&#169; 2005-2023 Code Synthesis"/>
    <meta name="keywords" content="xsd,xml,schema,c++,mapping,data,binding,code,generator,manual,man,page"/>
 -  <meta name="description" content="XSD Compiler Command Line Manual"/>
 +  <meta name="description" content="XSDCXX Compiler Command Line Manual"/>
  
    <link rel="stylesheet" type="text/css" href="default.css" />
  
-@@ -52,19 +52,19 @@
+@@ -53,19 +53,19 @@
  
    <h1>NAME</h1>
  
@@ -41,7 +43,7 @@ called `xsd'.
    C++ mapping from W3C XML Schema definitions. Particular mapping to
    produce is selected by a <code><i>command</i></code>. Each mapping has
    a number of mapping-specific <code><i>options</i></code> that should
-@@ -106,7 +106,7 @@
+@@ -107,7 +107,7 @@
  
      <dt><code><b>help</b></code></dt>
      <dd>Print usage information and exit. Use
@@ -50,7 +52,7 @@ called `xsd'.
        for command-specific help.
      </dd>
  
-@@ -218,7 +218,7 @@
+@@ -221,7 +221,7 @@
  
      <p>For example, if you have file <code><b>hello.xsd</b></code> with
      namespace <code><b>http://example.com/hello</b></code> and you run
@@ -58,8 +60,8 @@ called `xsd'.
 +    <code><b>xsdcxx</b></code> on this file, then the string in question will
      be:</p>
  
-     <p><code><b>hello.xsd. http://example.com/hello</b></code></p>
-@@ -1564,7 +1564,7 @@ namespace .*
+     <p class="code"><code><b>hello.xsd.
+@@ -1596,7 +1596,7 @@ namespace .*
    <h1>DIAGNOSTICS</h1>
  
    <p>If the input file is not a valid W3C XML Schema definition,
