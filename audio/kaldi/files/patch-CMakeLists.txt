@@ -1,0 +1,23 @@
+- prevent the fetch of openfst
+- workaround for https://github.com/kaldi-asr/kaldi/issues/4892 (use of C++17 feature while compiling in the C++14 mode)
+
+--- CMakeLists.txt.orig	2023-11-13 04:13:54 UTC
++++ CMakeLists.txt
+@@ -22,7 +22,7 @@ endif()
+ 
+ include(third_party/get_third_party)
+ 
+-include(cmake/third_party/openfst.cmake)
++#include(cmake/third_party/openfst.cmake)
+ 
+ find_package(PythonInterp)
+ if(NOT PYTHON_EXECUTABLE)
+@@ -43,7 +43,7 @@ execute_process(COMMAND ${PYTHON_EXECUTABLE}
+ )
+ unset(IS_LIB_SHARE)
+ 
+-set(CMAKE_CXX_STANDARD 14)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+ set(CMAKE_INSTALL_MESSAGE LAZY) # hide "-- Up-to-date: ..."
+ if(BUILD_SHARED_LIBS)
