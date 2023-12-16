@@ -207,7 +207,6 @@
     SUBDIR += mailpit
     SUBDIR += mailscanner
     SUBDIR += mailslurper
-    SUBDIR += mailsync
     SUBDIR += mailutils
     SUBDIR += mailx
     SUBDIR += mairix
