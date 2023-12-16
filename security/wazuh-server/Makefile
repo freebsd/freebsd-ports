@@ -1,9 +1,9 @@
 PORTNAME=	wazuh
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.0
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/:config_samples \
 		https://packages.wazuh.com/4.x/filebeat/:wazuh_module \
-		https://raw.githubusercontent.com/wazuh/wazuh/v4.6.0/extensions/elasticsearch/7.x/:indexer_template
+		https://raw.githubusercontent.com/wazuh/wazuh/v4.7.0/extensions/elasticsearch/7.x/:indexer_template
 PKGNAMESUFFIX=	-server
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
 
@@ -19,7 +19,7 @@ NO_BUILD=	yes
 DOS2UNIX_FILES=	${WRKDIR}/wazuh-template.json
 
 DISTFILES+=	filebeat.yml:config_samples \
-		logstash.conf:config_samples \
+		logstash-${PORTNAME}-${PORTVERSION}.conf:config_samples \
 		wazuh-filebeat-${WAZUH_MODULE_VER}.tar.gz:wazuh_module \
 		wazuh-template.json:indexer_template
 
@@ -28,7 +28,7 @@ SUB_FILES=	pkg-message
 ETCDIR=		${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
 
 WAZUH_LOCALBASE=	/var/ossec
-WAZUH_MODULE_VER=	0.2
+WAZUH_MODULE_VER=	0.3
 
 OPTIONS_DEFINE=		FILEBEAT LOGSTASH WAZUH-MANAGER
 OPTIONS_DEFAULT=	FILEBEAT LOGSTASH WAZUH-MANAGER

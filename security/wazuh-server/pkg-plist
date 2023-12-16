@@ -1,6 +1,9 @@
 %%ETCDIR%%/filebeat.yml
 %%ETCDIR%%/logstash.conf
 %%ETCDIR%%/wazuh-template.json
+%%FILEBEAT%%share/beats/filebeat/module/wazuh/_meta/config.yml
+%%FILEBEAT%%share/beats/filebeat/module/wazuh/_meta/docs.asciidoc
+%%FILEBEAT%%share/beats/filebeat/module/wazuh/_meta/fields.yml
 %%FILEBEAT%%share/beats/filebeat/module/wazuh/alerts/config/alerts.yml
 %%FILEBEAT%%share/beats/filebeat/module/wazuh/alerts/ingest/pipeline.json
 %%FILEBEAT%%share/beats/filebeat/module/wazuh/alerts/manifest.yml

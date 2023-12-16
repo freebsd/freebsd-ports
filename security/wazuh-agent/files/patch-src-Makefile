@@ -1,5 +1,5 @@
---- src/Makefile	2023-10-30 12:58:46.000000000 -0500
-+++ src/Makefile	2023-11-02 13:03:04.740615000 -0500
+--- src/Makefile	2023-11-23 07:17:53.000000000 -0500
++++ src/Makefile	2023-12-06 17:52:09.798369000 -0500
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -21,7 +21,16 @@
  USE_BIG_ENDIAN=no
  USE_AUDIT=no
  MINGW_HOST=unknown
-@@ -253,10 +255,10 @@
+@@ -163,6 +165,8 @@
+ DEFINES+=-DUSER=\"${WAZUH_USER}\"
+ DEFINES+=-DGROUPGLOBAL=\"${WAZUH_GROUP}\"
+ 
++OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include
++
+ ifneq (${TARGET},winagent)
+ 		DEFINES+=-D${uname_S}
+ ifeq (${uname_S},Linux)
+@@ -253,10 +257,10 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -34,7 +43,15 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -487,8 +489,8 @@
+@@ -390,7 +394,6 @@
+ 
+ OSSEC_CFLAGS+=${DEFINES}
+ OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
+-OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include
+ 
+ OSSEC_CFLAGS += ${CFLAGS}
+ OSSEC_LDFLAGS += ${LDFLAGS}
+@@ -487,8 +490,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -45,7 +62,7 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -907,6 +909,8 @@
+@@ -907,6 +910,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -54,7 +71,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1084,9 +1088,13 @@
+@@ -1084,9 +1089,13 @@
  ifeq (${uname_S},Linux)
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2
  else
@@ -68,7 +85,7 @@
  
  
  #### procps #########
-@@ -2106,7 +2114,7 @@
+@@ -2106,7 +2115,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
@@ -77,7 +94,7 @@
  
  #### Monitor #######
  
-@@ -2305,10 +2313,33 @@
+@@ -2305,10 +2314,33 @@
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
@@ -111,7 +128,7 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2325,6 +2356,7 @@
+@@ -2325,6 +2357,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

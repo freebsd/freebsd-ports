@@ -33,19 +33,18 @@ Wazuh Manager was installed
 
 6) FreeBSD SCA files can be downloaded from the following
 
-  # fetch https://people.freebsd.org/~acm/ports/wazuh/wazuh-freebsd-sca.tar.gz
+  # git clone https://github.com/alonsobsd/wazuh-freebsd.git /root/wazuh-freebsd
 
   Extract and put them to /var/ossec/etc/ruleset/sca. Do not forget change permissions
 
+  # cp /root/wazuh-freebsd/var/ossec/ruleset/sca/cis_freebsd*.yml /var/ossec/ruleset/sca/
   # chown root:wazuh /var/ossec/ruleset/sca/cis_freebsd*.yml
   # chmod 640 /var/ossec/ruleset/sca/cis_freebsd*.yml
 
 7) Aditional decoders and rules files can be download from:
 
-  # fetch https://people.freebsd.org/~acm/ports/wazuh/0600-freebsd_decoders.xml
-  # fetch https://people.freebsd.org/~acm/ports/wazuh/1000-freebsd_rules.xml
-  # cp 0600-freebsd_decoders.xml /var/ossec/ruleset/decoders
-  # cp 1000-freebsd_rules.xml /var/ossec/ruleset/rules
+  # cp /root/wazuh-freebsd/var/ossec/ruleset/decoders/0600-freebsd_decoders.xml /var/ossec/ruleset/decoders
+  # cp /root/wazuh-freebsd/var/ossec/ruleset/rules/1000-freebsd_rules.xml /var/ossec/ruleset/rules
 
   Do not forget change permissions
 

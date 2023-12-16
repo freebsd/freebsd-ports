@@ -1,3 +1,3 @@
-TIMESTAMP = 1698950294
-SHA256 (wazuh-4.6.0/wazuh-indexer.yml) = f6bc1d4de01742268ca42ef285896c31b7a31fb82f0c9f13de32d383fa3669e0
-SIZE (wazuh-4.6.0/wazuh-indexer.yml) = 2123
+TIMESTAMP = 1702742908
+SHA256 (wazuh-4.7.0/wazuh-4.7.0-indexer.yml) = 15290a6e81026d970891d7e1805afe4a87420984893948b5dd7a65789d62f5c5
+SIZE (wazuh-4.7.0/wazuh-4.7.0-indexer.yml) = 2216

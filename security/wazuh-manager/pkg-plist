@@ -4772,11 +4772,11 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/aiosignal/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/aiosignal/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/aiosignal/py.typed
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info/not-zip-safe
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info/not-zip-safe
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -21643,334 +21643,330 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/server.pyx
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pxd
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/sslproto.pyx
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO/PKG-INFO
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO/SOURCES.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO/dependency_links.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO/not-zip-safe
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO/top_level.txt
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/get_agents.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/rules_to_csv.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/agent_groups.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/agent_upgrade.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/cluster_control.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/rbac_control.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/wazuh_clusterd.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/wazuh_logtest.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__main__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/active_response.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/agent.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/cdb_list.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/ciscat.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/cluster.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/InputValidator.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/active_response.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/agent.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cdb_list.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/client.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/cluster.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/cluster.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/common.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/control.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/dapi.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/local_client.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/local_server.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/master.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/server.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/worker.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/common.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/configuration.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/database.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/decoder.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/exception.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/logtest.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/manager.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/mitre.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/pyDaemonModule.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/results.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/rootcheck.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/rule.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/sca.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/security.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/stats.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/syscheck.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/syscollector.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/task.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/vulnerability.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh_queue.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh_socket.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/wdb.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/wlogging.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/decoder.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/event.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/logtest.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/manager.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/mitre.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__init__.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/auth_context.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/decorators.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/policies.yaml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/relationships.yaml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/roles.yaml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/rules.yaml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/users.yaml
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations/__pycache__/env%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations/__pycache__/env%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations/__pycache__/env%%PYTHON_EXT_SUFFIX%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations/env.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/orm.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/preprocessor.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/utils.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rootcheck.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rule.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/sca.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/security.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/stats.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/syscheck.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/syscollector.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/task.py
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/vulnerability.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO/PKG-INFO
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO/SOURCES.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO/dependency_links.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO/not-zip-safe
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/get_agents%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__/rules_to_csv%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/get_agents.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/rules_to_csv.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_groups%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/agent_upgrade%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/cluster_control%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/rbac_control%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_clusterd%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__/wazuh_logtest%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/agent_groups.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/agent_upgrade.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/cluster_control.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/rbac_control.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/wazuh_clusterd.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/wazuh_logtest.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__main__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/ciscat%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/event%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/security%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/task%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/active_response.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/agent.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/cdb_list.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/ciscat.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/cluster.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/InputValidator.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/InputValidator%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/active_response%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/agent%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/cdb_list%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/common%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/configuration%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/database%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/decoder%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/exception%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/logtest%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/manager%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/mitre%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/pyDaemonModule%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/results%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rootcheck%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/rule%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/sca%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/security%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/stats%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscheck%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/syscollector%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/task%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_queue%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wazuh_socket%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wdb%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__/wlogging%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/active_response.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/agent.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cdb_list.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/client%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/cluster%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/common%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/control%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_client%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/local_server%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/master%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/server%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__/worker%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/client.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/cluster.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/cluster.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/common.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/control.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__/dapi%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/dapi.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/local_client.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/local_server.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/master.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/server.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/utils.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/worker.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/common.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/configuration.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/database.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/decoder.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/exception.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/logtest.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/manager.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/mitre.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/pyDaemonModule.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/results.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/rootcheck.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/rule.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/sca.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/security.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/stats.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/syscheck.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/syscollector.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/task.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/utils.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/vulnerability.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh_queue.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/wazuh_socket.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/wdb.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/wlogging.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/decoder.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/event.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/logtest.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/manager.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/mitre.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__init__.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/auth_context%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/decorators%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/orm%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/preprocessor%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/auth_context.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/decorators.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/policies.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/relationships.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/roles.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/rules.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default/users.yaml
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/orm.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/preprocessor.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/utils.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rootcheck.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rule.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/sca.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/security.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/stats.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/syscheck.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/syscollector.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/task.py
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/vulnerability.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__init__.py
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -26359,7 +26355,10 @@
 @mode 750
 @owner root
 @group wazuh
+/var/ossec/integrations/maltiverse
+/var/ossec/integrations/maltiverse.py
 /var/ossec/integrations/pagerduty
+/var/ossec/integrations/pagerduty.py
 /var/ossec/integrations/shuffle
 /var/ossec/integrations/shuffle.py
 /var/ossec/integrations/slack
@@ -26872,6 +26871,7 @@
 /var/ossec/ruleset/rules/0960-macos_rules.xml
 /var/ossec/ruleset/rules/0990-amazon-security-lake_rules.xml
 /var/ossec/ruleset/rules/0995-microsoft-graph_rules.xml
+/var/ossec/ruleset/rules/0997-maltiverse_rules.xml
 /var/ossec/ruleset/sca/cis_amazon_linux_1.yml.disabled
 /var/ossec/ruleset/sca/cis_amazon_linux_2.yml.disabled
 /var/ossec/ruleset/sca/cis_apache_24.yml.disabled
@@ -26961,11 +26961,15 @@
 @dir /var/ossec/api/configuration
 @dir /var/ossec/api/scripts
 @dir /var/ossec/api
+@mode 750
+@owner wazuh
+@group wazuh
 @dir /var/ossec/backup/agents
+@dir /var/ossec/backup/db
 @dir /var/ossec/backup/groups
 @dir /var/ossec/backup/shared
 @dir /var/ossec/backup
-@dir /var/ossec/bin
+@dir(root,wazuh,750) /var/ossec/bin
 @dir(root,wazuh,770) /var/ossec/etc/decoders
 @dir(root,wazuh,770) /var/ossec/etc/lists/amazon
 @dir(root,wazuh,770) /var/ossec/etc/lists
@@ -27123,7 +27127,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/models
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api/spec
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.6.0-py%%PYTHON_VER%%.egg-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/api-4.7.0-py%%PYTHON_VER%%.egg-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asn1crypto/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asn1crypto
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/asn1crypto-1.3.0.dist-info
@@ -28709,25 +28713,23 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop/includes
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/uvloop-0.15.2.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/EGG-INFO
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/examples
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/scripts
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/core
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations/__pycache__
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac/migrations
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh/rbac
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg/wazuh
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.6.0-py%%PYTHON_VER%%.egg
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/EGG-INFO
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/examples
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/scripts
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster/dapi
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core/cluster
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/core
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/__pycache__
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac/default
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh/rbac
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg/wazuh
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/wazuh-4.7.0-py%%PYTHON_VER%%.egg
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/websocket/tests/data

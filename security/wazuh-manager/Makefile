@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.6.0
+DISTVERSION=	4.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/22/libraries/sources/:wazuh_sources \
@@ -105,7 +105,7 @@ WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/queue/syscollector /queue/syscollector/db  /ruleset \
 		/ruleset/decoders /ruleset/rules /ruleset/sca /wodles \
 		/active-response /active-response/bin /agentless /var /backup \
-		/backup/agents /backup/groups /backup/shared /queue/rids \
+		/backup/db /backup/agents /backup/groups /backup/shared /queue/rids \
 		/wodles/aws /wodles/azure /wodles/docker /wodles/gcloud \
 		/wodles/gcloud/buckets /wodles/gcloud/pubsub /wodles/oscap \
 		/wodles/oscap/content /stats /integrations
@@ -238,8 +238,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/audit-keys ${STAGEDIR}${WAZUHPREFIX}/etc/lists/audit-keys
 	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/security-eventchannel ${STAGEDIR}${WAZUHPREFIX}/etc/lists/security-eventchannel
 
-	${INSTALL_SCRIPT} ${WRKSRC}/integrations/pagerduty ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty
-	${INSTALL_SCRIPT} ${WRKSRC}/integrations/slack ${STAGEDIR}${WAZUHPREFIX}/integrations/slack.py
+	${INSTALL_SCRIPT} ${WRKSRC}/integrations/maltiverse.py ${STAGEDIR}${WAZUHPREFIX}/integrations/maltiverse.py
+	${INSTALL_SCRIPT} ${WRKSRC}/integrations/pagerduty.py ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty.py
+	${INSTALL_SCRIPT} ${WRKSRC}/integrations/slack.py ${STAGEDIR}${WAZUHPREFIX}/integrations/slack.py
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/shuffle.py ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle.py
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/virustotal.py ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal.py
 
@@ -273,6 +274,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/orm.py
 
+	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/maltiverse
+	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/slack
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle
