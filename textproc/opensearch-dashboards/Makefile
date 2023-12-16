@@ -1,27 +1,29 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	2.10.0
+DISTVERSION?=	2.11.1
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	opensearch@FreeBSD.org
-COMMENT=	Visualization dashboards for OpenSearch
+COMMENT?=	Visualization dashboards for OpenSearch
 WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+CONFLICTS?=	opensearch-dashboards210
 
 BUILD_DEPENDS=	npm-node18>0:www/npm-node18
 
 USES=		nodejs:18,build,run python:build
 USE_RC_SUBR=	${PORTNAME}
 
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	PORTNAME="${PORTNAME}" \
+		PKGNAMESUFFIX="${PKGNAMESUFFIX}" \
+		WWWDIR=${WWWDIR}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-OPTIONS_DEFINE=	CHROME
-
-CHROME_DESC=	Add dependency on www/chromium (required for PDF reports)
-CHROME_RUN_DEPENDS=chrome:www/chromium
 
 NODE_VER=	18.18.0
 NO_BUILD=	yes

@@ -1,11 +1,11 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.10.0
+DISTVERSION?=	2.11.1
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	opensearch@FreeBSD.org
-COMMENT=	Full-text search engine for Java
+COMMENT?=	Full-text search engine for Java
 WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	bash>0:shells/bash \
 		jna>0:devel/jna
 
-CONFLICTS=	opensearch13
+CONFLICTS?=	opensearch13 opensearch210
 
 USES=		cpe shebangfix
 USE_JAVA=	yes
@@ -91,7 +91,7 @@ post-patch:
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/opensearch
 .for f in ${CONFIG_FILES}
-	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/bin
 .for f in ${BINS}
@@ -112,19 +112,19 @@ do-install-PLUGINS-on:
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler \
 		 ${STAGEDIR}${ETCDIR}/opensearch-security
 .for f in ${PLUGINS_CONFIG_FILES}
-	${INSTALL} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
-	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
+	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "@sample(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 .for f in ${PLUGINS_SAMPLE_CONFIG_FILES}
-	${INSTALL} ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
-	${ECHO} "${ETCDIR}/${f}.sample" >> ${TMPPLIST}
+	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHGROUP} -m 640 ${WRKSRC}/config/${f}.example ${STAGEDIR}${ETCDIR}/${f}.sample
+	${ECHO} "@(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "plugins" ${STAGEDIR}${PREFIX}/lib/opensearch/)
 	(cd ${WRKSRC}/plugins/opensearch-security/tools && ${COPYTREE_BIN} "*.sh" ${STAGEDIR}${PREFIX}/lib/opensearch/plugins/opensearch-security/tools)
 
 post-install:
 .for f in ${CONFIG_FILES}
-	${ECHO} "@sample ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
+	${ECHO} "@sample(opensearch,opensearch,640) ${ETCDIR}/${f}.sample" >> ${TMPPLIST}
 .endfor
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
@@ -133,6 +133,12 @@ post-install:
 	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
 .endif
 	${ECHO} "@dir libexec/opensearch" >> ${TMPPLIST}
-	${ECHO} "@dir(opensearch,opensearch,0755) ${ETCDIR}" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications-core" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-notifications" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-observability" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-performance-analyzer" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-reports-scheduler" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/opensearch-security" >> ${TMPPLIST}
+	${ECHO} "@dir(opensearch,opensearch,0750) ${ETCDIR}/" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
