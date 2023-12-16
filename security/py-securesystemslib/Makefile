@@ -29,4 +29,8 @@ SHEBANG_FILES=	securesystemslib/settings.py \
 
 NO_ARCH=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|hatchling==|hatchling>=|g' \
+		${WRKSRC}/pyproject.toml
+
 .include <bsd.port.mk>
