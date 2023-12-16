@@ -2,7 +2,7 @@
 { type: install
   message: <<EOM
 
-To properly support podman's container restart policy, conmon needs fdescfs(5)
+To properly support Podman's container restart policy, conmon needs fdescfs(5)
 to be mounted on /dev/fd.
 
 If /dev/fd is not already mounted:
