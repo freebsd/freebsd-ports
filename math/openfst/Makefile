@@ -3,7 +3,7 @@ PORTVERSION=	1.8.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for working with weighted finite-state transducers
 WWW=		https://www.openfst.org/
 

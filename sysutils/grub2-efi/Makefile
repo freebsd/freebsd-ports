@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/kevlo
 DISTNAME=	grub-${PORTVERSION}_7
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot EFI boot loader
 WWW=		https://www.gnu.org/software/grub/
 

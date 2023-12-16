@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/kevlo
 DISTNAME=	grub-2.02_8
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiboot boot loader
 WWW=		https://www.gnu.org/software/grub/
 
